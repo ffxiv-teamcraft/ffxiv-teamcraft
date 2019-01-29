@@ -10,10 +10,10 @@ import {
   LoadListCompact,
   LoadListDetails,
   LoadListsWithWriteAccess,
-  LoadMyLists,
+  LoadMyLists, LoadTeamLists,
   NeedsVerification,
   SelectList,
-  SetItemDone,
+  SetItemDone, UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndex
@@ -191,33 +191,8 @@ export class ListsFacade {
     this.store.dispatch(new UpdateList(list, updateCompact));
   }
 
-  updateListUsingCompact(compact: List): void {
-    this.allListDetails$.pipe(
-      map(lists => lists.find(l => l.$key === compact.$key)),
-      tap(l => l === undefined ? this.load(compact.$key) : null),
-      switchMap(details => {
-        if (details === undefined) {
-          return this.allListDetails$.pipe(
-            map(lists => lists.find(l => l.$key === compact.$key)),
-            filter(l => l !== undefined),
-            first()
-          );
-        } else {
-          return of(details);
-        }
-      }),
-      map(details => {
-        Object.keys(compact).forEach(compactProperty => {
-          if (JSON.stringify(details[compactProperty]) !== JSON.stringify(compact[compactProperty])) {
-            details[compactProperty] = compact[compactProperty];
-          }
-        });
-        return details;
-      }),
-      first()
-    ).subscribe((details) => {
-      this.updateList(details, true);
-    });
+  loadTeamLists(teamId: string): void {
+    this.store.dispatch(new LoadTeamLists(teamId));
   }
 
   updateListIndex(list: List): void {
@@ -238,6 +213,10 @@ export class ListsFacade {
 
   load(key: string): void {
     this.store.dispatch(new LoadListDetails(key));
+  }
+
+  unload(key: string): void {
+    this.store.dispatch(new UnloadListDetails(key));
   }
 
   setNeedsverification(needed: boolean): void {

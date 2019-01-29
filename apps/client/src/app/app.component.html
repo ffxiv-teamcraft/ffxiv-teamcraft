@@ -1,4 +1,5 @@
-<nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" class="app-container">
+<nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" class="app-container"
+           [class.no-panel-borders]="settings.noPanelBorders">
   <nz-layout *ngIf="!overlay">
     <nz-header class="header">
       <a class="logo" routerLink="/">
@@ -183,6 +184,13 @@
           </span>
             </a>
             <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+               routerLink="/log-tracker">
+          <span>
+              <i nz-icon iconfont="icon-book"></i>
+              <span class="nav-text">{{'LOG_TRACKER.Title' | translate}}</span>
+          </span>
+            </a>
+            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                routerLink="/macro-translator">
           <span>
               <i nz-icon type="message"></i>
@@ -231,6 +239,14 @@
     </nz-sider>
     <nz-content>
       <div class="page-container" [class.overlay]="overlay">
+        <nz-alert nzType="info" [nzMessage]="message" *ngIf="newVersionAvailable$ | async" class="new-version-alert"
+                  nzShowIcon>
+          <ng-template #message>
+            {{'UPDATE.New_update_available' | translate}}
+            {{(platformService.isDesktop() ? 'UPDATE.Desktop_instructions' : 'UPDATE.Web_instructions') | translate}}
+            <a href="https://ffxivteamcraft.com/desktop" *ngIf="platformService.isDesktop()">https://ffxivteamcraft.com/desktop</a>
+          </ng-template>
+        </nz-alert>
         <nz-spin [nzSize]="'large'" [nzSpinning]="navigating" class="app-container">
           <router-outlet></router-outlet>
         </nz-spin>

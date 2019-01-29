@@ -10,6 +10,7 @@
   "Edit_amount": "総量を編集する",
   "List_fork_in_progress": "このリストをマイアカウントにコピー中です。",
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
+  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -267,6 +268,7 @@
     "General": "一般",
     "Link_base": "アイテムリンク",
     "Theme": "テーマカラー",
+    "no_panel_borders": "Disable borders around various panels",
     "Desktop": "PC版",
     "Always_on_top": "常に最前面",
     "Check_for_update": "アップデートを確認する",
@@ -595,6 +597,8 @@
     "Save_as_new_done": "新たに保存されたスキル回しを呼び寄せました",
     "Change_rotation": "スキル回しを変更する",
     "New_rotation_folder": "新回しフォルダー",
+    "Safe_mode": "Safe mode",
+    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "CUSTOM": {
       "Recipe_configuration": "製作情報",
       "Recipe_level": "レシピLv",
@@ -656,11 +660,13 @@
   },
   "PRICING": {
     "From_vendor": "商店販売価格",
+    "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "販売予定",
     "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
-    "Content_copied": "クリップボードに内容がコピーされました。"
+    "Content_copied": "クリップボードに内容がコピーされました。",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -769,6 +775,25 @@
       "Rotations": "スキル回しを作成し、シミュレーターで確認やカスタムシミュレーターを利用して理論上の制作マクロを構成することができます。",
       "Levequests": "ジョブやレベルに合わせてギルドリーヴを探し、報酬を確認して、リストが作れます。",
       "Macro_translation": "マクロが見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語に合わせて翻訳することができます。"
+    }
+  },
+  "UPDATE": {
+    "New_update_available": "A new update is available ! ",
+    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
+    "Web_instructions": "Please reload the page to get the latest version."
+  },
+  "LOG_TRACKER": {
+    "Title": "Log Tracker",
+    "Mark_page_as_done": "Mark this page as done",
+    "Mark_as_done": "Mark this item as done",
+    "Mark_as_not_done": "Mark this item as not done",
+    "Create_list": "Create a list to complete this page",
+    "PAGE": {
+      "Master_recipes": "Master recipes ({{number}})",
+      "Housing_items": "Housing({{number}})",
+      "Others": "Others",
+      "Dyes": "Dyes",
+      "Other_master_recipes": "Other Master Recipes"
     }
   }
 }

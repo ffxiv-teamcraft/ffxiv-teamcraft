@@ -11,3 +11,4 @@ Data structure is:
  - After page ID 319, the IDS jump to 1000
  - Pages with ID >= 1000 are masterbooks, deliveries and housing
  - There is a total of 19 of these pages per job, didn't find precise ordering for now, TBD
+ - The key for page naming is to use first recipe of a page, property `RecipeLevelTableTargetID`, and same property on last item of the page.

@@ -2,6 +2,110 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.18"></a>
+## [5.0.18](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.17...v5.0.18) (2019-01-27)
+
+
+### Bug Fixes
+
+* **permissions:** fixed an issue with list deletion button ([d3be009](https://github.com/Supamiu/ffxiv-teamcraft/commit/d3be009))
+
+
+
+<a name="5.0.17"></a>
+## [5.0.17](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.16...v5.0.17) (2019-01-27)
+
+
+### Bug Fixes
+
+* **list-panel:** fixed an issue with buttons sometimes hidden even if you had permissions ([ff87bbf](https://github.com/Supamiu/ffxiv-teamcraft/commit/ff87bbf))
+* **perfs:** item names cache is now shared across the app properly ([c37866b](https://github.com/Supamiu/ffxiv-teamcraft/commit/c37866b))
+* **perfs:** lists are now unloaded upon leaving details page ([a0c75d1](https://github.com/Supamiu/ffxiv-teamcraft/commit/a0c75d1))
+
+
+### Features
+
+* **patreon:** added new patreon supporter to loading screen: Qih "Kweh" Mewrilah ([3eb131b](https://github.com/Supamiu/ffxiv-teamcraft/commit/3eb131b))
+
+
+
+<a name="5.0.16"></a>
+## [5.0.16](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.15...v5.0.16) (2019-01-24)
+
+
+### Bug Fixes
+
+* **layout:** fixed an issue with large lists not being shown properly in some cases ([2b1d0d8](https://github.com/Supamiu/ffxiv-teamcraft/commit/2b1d0d8)), closes [#733](https://github.com/Supamiu/ffxiv-teamcraft/issues/733)
+
+
+
+<a name="5.0.15"></a>
+## [5.0.15](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.14...v5.0.15) (2019-01-23)
+
+
+### Bug Fixes
+
+* **layout:** fixed an issue with tomes filter ([9bee1e5](https://github.com/Supamiu/ffxiv-teamcraft/commit/9bee1e5))
+* fixed an issue with desktop app not loading item names properly ([3ee4fb7](https://github.com/Supamiu/ffxiv-teamcraft/commit/3ee4fb7))
+* fixed an issue with some masterbook icons not showing properly ([82bbfe4](https://github.com/Supamiu/ffxiv-teamcraft/commit/82bbfe4))
+
+
+### Features
+
+* **layout:** new `IS_DUNGEON_DROP` filter ([d73e53d](https://github.com/Supamiu/ffxiv-teamcraft/commit/d73e53d))
+
+
+
+<a name="5.0.14"></a>
+## [5.0.14](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.13...v5.0.14) (2019-01-23)
+
+
+### Bug Fixes
+
+* fixed an issue with old /home routes not being redirected properly ([96a234e](https://github.com/Supamiu/ffxiv-teamcraft/commit/96a234e))
+* **layout:** fixed a bug with ASC and DESC being inverted for layout ordering ([d5b27d0](https://github.com/Supamiu/ffxiv-teamcraft/commit/d5b27d0))
+* **pricing:** fixed a bug where filling prices with MB would just load infinitely ([262dddf](https://github.com/Supamiu/ffxiv-teamcraft/commit/262dddf))
+* **profile:** added glamour masterbooks to the profile editor for masterbooks ([4a7c092](https://github.com/Supamiu/ffxiv-teamcraft/commit/4a7c092))
+* **teams:** fixed an issue stopping team lists from loading ([dc94314](https://github.com/Supamiu/ffxiv-teamcraft/commit/dc94314))
+* fixed an issue with tooltip sometimes crashing for no reason ([6382f4a](https://github.com/Supamiu/ffxiv-teamcraft/commit/6382f4a))
+* fixed some issues with search component sometimes firing errors ([0ba46d3](https://github.com/Supamiu/ffxiv-teamcraft/commit/0ba46d3))
+
+
+### Features
+
+* new crafting log tracker ([6b467d0](https://github.com/Supamiu/ffxiv-teamcraft/commit/6b467d0)), closes [#724](https://github.com/Supamiu/ffxiv-teamcraft/issues/724)
+* **layout:** new layout filter available: FROM_BEAST_TRIBE ([9a7db4d](https://github.com/Supamiu/ffxiv-teamcraft/commit/9a7db4d))
+* **layout:** new option to remove duplicates from zone breakdown, per panel ([79e3f5b](https://github.com/Supamiu/ffxiv-teamcraft/commit/79e3f5b)), closes [#723](https://github.com/Supamiu/ffxiv-teamcraft/issues/723)
+* **list-details:** added a way to tag an item as not required HQ at all ([944878d](https://github.com/Supamiu/ffxiv-teamcraft/commit/944878d))
+* **list-panel:** added color change for odd rows to make them easier to read ([8b2c16d](https://github.com/Supamiu/ffxiv-teamcraft/commit/8b2c16d))
+* **log-tracker:** added "*" character next to page names if they are needed for achievement ([aa8e03a](https://github.com/Supamiu/ffxiv-teamcraft/commit/aa8e03a))
+* **pricing:** added a warning for when an item is cheaper at NPC than the current price value ([549e246](https://github.com/Supamiu/ffxiv-teamcraft/commit/549e246))
+* **pricing:** added an icon for when price shown is from crafting ([68692c9](https://github.com/Supamiu/ffxiv-teamcraft/commit/68692c9))
+
+
+
+<a name="5.0.13"></a>
+## [5.0.13](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.12...v5.0.13) (2019-01-20)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with closest aetheryte tp not showing properly ([2add519](https://github.com/Supamiu/ffxiv-teamcraft/commit/2add519))
+* **search:** fixed a bug with some search terms ([9568fdb](https://github.com/Supamiu/ffxiv-teamcraft/commit/9568fdb))
+* **settings:** fixed a missing translation in general settings ([7f39752](https://github.com/Supamiu/ffxiv-teamcraft/commit/7f39752))
+* **simulator:** fixed position of "XIV" inside macro export button ([7b06d75](https://github.com/Supamiu/ffxiv-teamcraft/commit/7b06d75))
+
+
+### Features
+
+* **alarms:** added confirmation message for alarms deletion ([e3b5dec](https://github.com/Supamiu/ffxiv-teamcraft/commit/e3b5dec))
+* added a message in every page to show when a new version is available ([ff7e4a8](https://github.com/Supamiu/ffxiv-teamcraft/commit/ff7e4a8))
+* added new patreon supporter: Morphean Knights ([cf58678](https://github.com/Supamiu/ffxiv-teamcraft/commit/cf58678))
+* **settings:** new option to remove panel borders ([d40baab](https://github.com/Supamiu/ffxiv-teamcraft/commit/d40baab))
+* **simulator:** added new safe mode to make 100% safe rotations easily ([c939f99](https://github.com/Supamiu/ffxiv-teamcraft/commit/c939f99)), closes [#713](https://github.com/Supamiu/ffxiv-teamcraft/issues/713)
+
+
+
 <a name="5.0.12"></a>
 ## [5.0.12](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.11...v5.0.12) (2019-01-17)
 

@@ -10,6 +10,7 @@
   "Edit_amount": "Anzahl ändern",
   "List_fork_in_progress": "Die Liste wird in dein Konto kopiert...",
   "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
+  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -267,6 +268,7 @@
     "General": "Allgemein",
     "Link_base": "Gegenstandslink-Quelle",
     "Theme": "Design",
+    "no_panel_borders": "Deaktiviere Ränder um diverse Elemente",
     "Desktop": "Desktop",
     "Always_on_top": "Immer im Vordergrund",
     "Check_for_update": "Neues Update verfügbar?",
@@ -357,7 +359,7 @@
     "Add_all_alarms": "Erstelle alle Alarme für diese Liste",
     "History": "Historie",
     "Items_count": "{{amount}} Gegenstände",
-    "Show_craftable_amount": "Show craftable amount",
+    "Show_craftable_amount": "Zeige craftbare Mengen",
     "COMPLETION_POPUP": {
       "Title": "Liste fertiggestellt",
       "Content": "Diese Liste ist fertiggestellt, was willst du damit machen?",
@@ -392,7 +394,7 @@
     "Open_in_ffxivgardening": "Auf ffxivgardening.com öffnen",
     "Add_all_item_alarms": "Erstelle alle Alarme für diesen Gegenstand",
     "Adaptative_filter": "Zeige nur, was ich tun kann",
-    "Amount_craftable": "You can craft {{amount}}",
+    "Amount_craftable": "Du kannst {{amount}} herstellen",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -491,7 +493,7 @@
     "Title": "Sammelgegenstand-Suche",
     "No_items": "Nichts zum Sammeln gefunden",
     "Gathering_name": "Sammelgegenstand eingeben",
-    "Ephemeral_node": "Ephemeral node, can be respawned",
+    "Ephemeral_node": "Vergängliches Vorkommen, kann erneut erscheinen",
     "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Standorte anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!"
   },
   "ANNOUNCEMENT": {
@@ -535,7 +537,7 @@
     "Propagate_changes": "Berechtigungen auch auf Listen des Workshops anwenden",
     "Propagate_changes_done": "Änderungen wurden auf Listen des Workshops angewendet",
     "Team_notice": "Das mit dieser Liste verbundene Team hat automatisch das BEITRAGEN Recht",
-    "Default_permission_level": "Default permission level"
+    "Default_permission_level": "Standardberechtigung"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -595,6 +597,8 @@
     "Save_as_new_done": "Du arbeitest jetzt auf einer Kopie deiner Rotation",
     "Change_rotation": "Rotation wechseln",
     "New_rotation_folder": "Neuer Ordner",
+    "Safe_mode": "Sicherer Modus",
+    "Safe_mode_tooltip": "Deaktiviert alle Fähigkeiten, die (inklusive Statuseffekten) keine 100% Erfolgschance haben",
     "CUSTOM": {
       "Recipe_configuration": "Einstellungen für Rezept",
       "Recipe_level": "Level für Rezept",
@@ -656,11 +660,13 @@
   },
   "PRICING": {
     "From_vendor": "Verkäuferpreis",
+    "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Gehe davon aus alles zu verkaufen",
     "Autofill_panel_prices": "Rufe die Preise aus dem Marktbrett ab",
     "Autofill_panel_prices_warning": "Dies ist ein langsamer Prozess und sollte ca. {{time}} Sekunden dauern, bist du sicher?",
     "Copy_earnings_as_text": "Kopiere Inhalt als Text",
-    "Content_copied": "Inhalt wurde in die Zwischenablage kopiert"
+    "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Freibriefe",
@@ -769,6 +775,25 @@
       "Rotations": "Erstelle Rotationen zum Herstellen, teste sie im Simulator, oder teste theoretische Rotationen mit dem benutzerdefinierten Simulator!",
       "Levequests": "Fine Freibriefe für einen bestimmten Job und/oder Stufenbereich, schau dir den Fortschritt an und erstelle daraus Listen.",
       "Macro_translation": "Du hast Macros, die nicht in deiner Sprache sind? Nutze die Makro-Übersetzung und übersetze es in deine Sprache damit es auch in deinem FFXIV funktioniert!"
+    }
+  },
+  "UPDATE": {
+    "New_update_available": "Eine neue Version ist verfügbar!",
+    "Desktop_instructions": "Klicke hier, um die neueste Version herunterladen: ",
+    "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden."
+  },
+  "LOG_TRACKER": {
+    "Title": "Log Tracker",
+    "Mark_page_as_done": "Mark this page as done",
+    "Mark_as_done": "Mark this item as done",
+    "Mark_as_not_done": "Mark this item as not done",
+    "Create_list": "Create a list to complete this page",
+    "PAGE": {
+      "Master_recipes": "Master recipes ({{number}})",
+      "Housing_items": "Housing({{number}})",
+      "Others": "Others",
+      "Dyes": "Dyes",
+      "Other_master_recipes": "Other Master Recipes"
     }
   }
 }

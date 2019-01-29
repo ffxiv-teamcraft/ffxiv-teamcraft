@@ -10,6 +10,7 @@
   "Edit_amount": "Modifier le montant",
   "List_fork_in_progress": "Copie de la liste en cours...",
   "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur Discord de Teamcraft (en anglais ou français).",
+  "Hide_zone_duplicates": "Masquer les duplicatas dans le résumé par zones",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -267,6 +268,7 @@
     "General": "Général",
     "Link_base": "Liens des objets",
     "Theme": "Thème",
+    "no_panel_borders": "Désactiver les bordures autour des panneaux dans les pages du site",
     "Desktop": "Appli",
     "Always_on_top": "Toujours au premier plan",
     "Check_for_update": "Chercher une mise à jour",
@@ -313,7 +315,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "S’il vous plaît vérifier votre compte pour avoir accès aux listes partagées à votre compagnie libre",
+    "Needs_verification": "Merci de vérifier votre personnage dans la page profil afin d'accéder aux listes partagées à votre Compagnie Libre",
     "Regenerate_all": "Regénérer toutes les listes",
     "Regenerated_all": "Vos listes sont maintenant à jour",
     "Merge_lists": "Fusionner des listes",
@@ -369,7 +371,7 @@
       "Add_link_description": "Créé un lien personnalisé pour la liste",
       "Create_template_description": "Créé un lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",
       "Copy_template_url_description": "Copie le lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",
-      "Share_description": "Copie le lien de partage dans le presse-papiers",
+      "Share_description": "Copier le lien de partage dans le presse-papiers",
       "Open": "Ouvrir la liste",
       "Open_description": "Accède à la liste",
       "Delete": "Supprimer la liste",
@@ -595,6 +597,8 @@
     "Save_as_new_done": "Vous êtes maintenant sur la copie de votre rotation",
     "Change_rotation": "Changer de rotation",
     "New_rotation_folder": "Nouveau dossier",
+    "Safe_mode": "Mode garanti",
+    "Safe_mode_tooltip": "Désactive toutes les actions qui n'ont pas 100% de chance de réussite (prend en compte les bonus)",
     "CUSTOM": {
       "Recipe_configuration": "Configuration de la recette",
       "Recipe_level": "Niveau de la recette",
@@ -656,11 +660,13 @@
   },
   "PRICING": {
     "From_vendor": "Prix au vendeur",
+    "From_crafting": "Prix de l’artisanat",
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
     "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?",
     "Copy_earnings_as_text": "Copier le contenu au format texte",
-    "Content_copied": "Contenu copié dans le presse-papiers"
+    "Content_copied": "Contenu copié dans le presse-papiers",
+    "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -769,6 +775,25 @@
       "Rotations": "Créez des rotations pour la synthèse, testez-les dans un simulateur ou créez vos rotations en prévision des nouveaux patchs en utilisant le simulateur configurable !",
       "Levequests": "Trouvez les mandats pour une tranche de niveau donnée, calculez facilement les bénéfices en gils et expérience, puis créez rapidement une liste pour les réaliser.",
       "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue? Le traducteur de macros peut vous les traduire en un clin d’œil pour les rendre utilisables dans votre version de FFXIV !"
+    }
+  },
+  "UPDATE": {
+    "New_update_available": "Une nouvelle mise à jour est disponible ! ",
+    "Desktop_instructions": "Veuillez cliquer sur ce lien pour télécharger la dernière version : ",
+    "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente."
+  },
+  "LOG_TRACKER": {
+    "Title": "Carnet d'artisanat",
+    "Mark_page_as_done": "Marquer cette page comme terminée",
+    "Mark_as_done": "Marquer comme fait",
+    "Mark_as_not_done": "Marquer comme non fait",
+    "Create_list": "Créer une liste pour compléter cette page",
+    "PAGE": {
+      "Master_recipes": "Expert - tome {{number}}",
+      "Housing_items": "Logement ({{number}})",
+      "Others": "Autres",
+      "Dyes": "Teintures",
+      "Other_master_recipes": "Expert - autres"
     }
   }
 }

@@ -10,6 +10,7 @@
   "Edit_amount": "수량 수정",
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
+  "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -130,7 +131,7 @@
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
     "Open_overlay": "오버레이 열기",
-    "More_available": "and {{amount}} more...",
+    "More_available": "{{amount}}번 더...",
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
@@ -267,6 +268,7 @@
     "General": "일반",
     "Link_base": "아이템 링크",
     "Theme": "테마",
+    "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
     "Desktop": "데스크톱",
     "Always_on_top": "항상 위에 표시",
     "Check_for_update": "업데이트 확인",
@@ -357,7 +359,7 @@
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "내역",
     "Items_count": "아이템 {{amount}}개",
-    "Show_craftable_amount": "Show craftable amount",
+    "Show_craftable_amount": "제작 가능한 수량 표시",
     "COMPLETION_POPUP": {
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
@@ -392,7 +394,7 @@
     "Open_in_ffxivgardening": "ffxivgardening.com에서 열기",
     "Add_all_item_alarms": "이 아이템에 대한 알람 추가",
     "Adaptative_filter": "할 수 있는 것만 표시",
-    "Amount_craftable": "You can craft {{amount}}",
+    "Amount_craftable": "{{amount}}개 제작 가능합니다",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -535,7 +537,7 @@
     "Propagate_changes": "공방 내부에 목록에 대한 권한 제공",
     "Propagate_changes_done": "공방 내부 목록에 대한 변경이 적용되었습니다",
     "Team_notice": "이 목록이 할당된 팀은 자동으로 참여 권한을 갖습니다.",
-    "Default_permission_level": "Default permission level"
+    "Default_permission_level": "기본 권한 레벨"
   },
   "WIKI": {
     "Title": "위키",
@@ -595,6 +597,8 @@
     "Save_as_new_done": "새로 저장된 로테이션을 불러왔습니다",
     "Change_rotation": "로테이션 변경",
     "New_rotation_folder": "새 폴더 만들기",
+    "Safe_mode": "안전 모드",
+    "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
     "CUSTOM": {
       "Recipe_configuration": "제작난이도 설정",
       "Recipe_level": "레시피 레벨",
@@ -656,11 +660,13 @@
   },
   "PRICING": {
     "From_vendor": "상인 판매 가격",
+    "From_crafting": "제작 비용",
     "Expect_to_sell_everything": "전체 판매 가정",
     "Autofill_panel_prices": "장터게시판 가격으로 자동입력",
     "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}} 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?",
     "Copy_earnings_as_text": "내용을 텍스트로 복사하기",
-    "Content_copied": "클립보드로 내용이 복사되었습니다."
+    "Content_copied": "클립보드로 내용이 복사되었습니다.",
+    "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)"
   },
   "LEVEQUESTS": {
     "Title": "길드의뢰",
@@ -769,6 +775,25 @@
       "Rotations": "제작 로테이션을 만들고 시뮬레이터에서 확인하거나, 사용자 지정 시뮬레이터를 이용해 이론 상의 로테이션을 구성할 수 있습니다.",
       "Levequests": "직업과 레벨에 맞는 길드의뢰를 찾고, 보상을 확인하고, 목록을 만들 수 있습니다.",
       "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV에 맞는 언어로 매크로를 번역할 수 있습니다."
+    }
+  },
+  "UPDATE": {
+    "New_update_available": "새 업데이트가 있습니다! ",
+    "Desktop_instructions": "최신 버전을 다운로드를 위해 링크로 이동하세요:  ",
+    "Web_instructions": "최신 버전으로 가져오기 위해 페이지를 새로고침 하세요."
+  },
+  "LOG_TRACKER": {
+    "Title": "Log Tracker",
+    "Mark_page_as_done": "이 페이지를 완료됨 으로 표시",
+    "Mark_as_done": "이 아이템을 완료됨 으로 표시",
+    "Mark_as_not_done": "이 아이템을 완료되지 않음 으로 표시",
+    "Create_list": "이 페이지에 완료된 목록 만들기",
+    "PAGE": {
+      "Master_recipes": "비전서 제작법 {{number}}",
+      "Housing_items": "하우징 ({{number}})",
+      "Others": "기타",
+      "Dyes": "염료",
+      "Other_master_recipes": "다른 비전서 제작법"
     }
   }
 }

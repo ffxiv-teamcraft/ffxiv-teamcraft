@@ -151,8 +151,8 @@ export class SearchComponent implements OnInit {
 
   private filtersToForm(filters: SearchFilter[]): { [key: string]: any } {
     const formRawValue = {};
-    filters.forEach(f => {
-      if (f.value.min !== undefined) {
+    (filters || []).forEach(f => {
+      if (f.value !== null && f.value.min !== undefined) {
         formRawValue[`${f.name}Min`] = f.value.min;
         formRawValue[`${f.name}Max`] = f.value.max;
       } else {
@@ -293,7 +293,7 @@ export class SearchComponent implements OnInit {
   }
 
   public selectAll(items: SearchResult[], selected: boolean): void {
-    items.forEach(item => item.selected = selected);
+    (items || []).forEach(item => item.selected = selected);
   }
 
   public openInSimulator(itemId: number, recipeId: string): void {

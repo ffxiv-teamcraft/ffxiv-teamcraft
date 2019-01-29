@@ -20,8 +20,8 @@
           </ng-template>
           <div fxLayout="row wrap" fxLayoutGap="5px">
             <div class="timer">{{row.remainingTime | timer}}</div>
-            <div *ngIf="overlayMode"
-                 class="map">{{(row.alarm.mapId | closestAetheryte: row.alarm.coords | async)?.nameid |  placeName | i18n}}</div>
+            <div
+              class="map">{{(row.alarm.mapId | closestAetheryte: row.alarm.coords | async)?.nameid |  placeName | i18n}}</div>
             <div class="coords">X:{{row.alarm.coords.x}} - Y: {{row.alarm.coords.y}}</div>
           </div>
         </div>
@@ -31,7 +31,8 @@
             <i nz-icon type="environment-o"></i>
           </button>
         </div>
-        <div class="delete-icon" (click)="deleteAlarm(row.alarm)">
+        <div class="delete-icon" nz-popconfirm [nzTitle]="'Confirmation' | translate"
+             (nzOnConfirm)="deleteAlarm(row.alarm)">
           <i nz-icon type="close"></i>
         </div>
       </div>

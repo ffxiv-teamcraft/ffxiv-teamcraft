@@ -65,6 +65,7 @@
 
 .text-icon {
   font-size: 0.8em;
+  line-height: 27px;
 }
 
 .nothing-selected {
@@ -109,6 +110,22 @@
   @media @mobile {
     margin-left: 0;
   }
+}
+
+.mobile-buffs {
+  position: fixed;
+  bottom: 11px;
+  z-index: 1000;
+  width: ~"calc(100% - 60px)";
+  opacity: .8;
+
+  ::ng-deep .ant-card-body {
+    padding: 3px !important;
+  }
+}
+
+.mobile-actions {
+  margin-bottom: 50px;
 }
 
 .buffs-container {

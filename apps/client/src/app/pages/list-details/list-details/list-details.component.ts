@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -34,7 +34,7 @@ import { LinkToolsService } from '../../../core/tools/link-tools.service';
   templateUrl: './list-details.component.html',
   styleUrls: ['./list-details.component.less']
 })
-export class ListDetailsComponent implements OnInit {
+export class ListDetailsComponent implements OnInit, OnDestroy {
 
   public display$: Observable<ListDisplay>;
 
@@ -318,6 +318,12 @@ export class ListDetailsComponent implements OnInit {
 
   trackByDisplayRow(index: number, row: LayoutRowDisplay): string {
     return row.filterChain + row.title;
+  }
+
+  ngOnDestroy(): void {
+    this.list$.pipe(first()).subscribe(list => {
+      this.listsFacade.unload(list.$key);
+    });
   }
 
 }

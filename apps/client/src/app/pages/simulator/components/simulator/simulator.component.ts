@@ -67,6 +67,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   @Input()
   public thresholds: number[] = [];
 
+  public safeMode$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('simulator:safe-mode') === 'true');
+
   private _recipeId: string;
 
   public snapshotMode = false;
@@ -665,18 +667,22 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     return this.registry.getActionsByType(ActionType.OTHER);
   }
 
+  saveSafeMode(value: boolean): void {
+    localStorage.setItem('simulator:safe-mode', value.toString());
+  }
+
   ngOnDestroy(): void {
     this.onDestroy$.next(null);
   }
 
   ngOnInit(): void {
-    this.result$ = combineLatest(this.snapshotStep$, this.simulation$).pipe(
-      map(([snapshotStep, sim]) => {
+    this.result$ = combineLatest(this.snapshotStep$, this.simulation$, this.safeMode$).pipe(
+      map(([snapshotStep, sim, safeMode]) => {
         sim.reset();
         if (this.snapshotMode) {
-          return sim.run(true, snapshotStep);
+          return sim.run(true, snapshotStep, safeMode);
         } else {
-          return sim.run(true);
+          return sim.run(true, Infinity, safeMode);
         }
       }),
       tap(result => this.actionFailed = result.steps.find(step => !step.success) !== undefined),

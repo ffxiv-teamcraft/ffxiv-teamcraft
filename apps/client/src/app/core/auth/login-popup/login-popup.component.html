@@ -13,15 +13,16 @@
   </nz-form-item>
   <nz-form-item nz-row>
     <nz-form-control [nzSpan]="14" [nzOffset]="6">
-      <button nz-button (click)="sendResetPassword()"
-              [disabled]="form.pristine ||(form.errors && form.errors.email)">
-        {{'Forgot_password' | translate}}
-      </button>
+      <button nz-button nzType="primary" [disabled]="!form.valid" type="submit">{{'Submit' | translate}}</button>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item nz-row>
     <nz-form-control [nzSpan]="14" [nzOffset]="6">
-      <button nz-button nzType="primary" [disabled]="!form.valid" type="submit">{{'Submit' | translate}}</button>
+      <button nz-button (click)="sendResetPassword()"
+              type="button"
+              [disabled]="form.pristine ||(form.errors && form.errors.email)">
+        {{'Forgot_password' | translate}}
+      </button>
     </nz-form-control>
   </nz-form-item>
 </form>

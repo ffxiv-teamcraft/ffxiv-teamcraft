@@ -251,6 +251,9 @@ export class List extends DataWithPermissions {
     }
     let canCraft = true;
     for (const requirement of item.requires) {
+      if (canCraft === false) {
+        break;
+      }
       // If the requirement is a crystal, don't mind it.
       if (requirement.id < 20 && requirement.id > 1) {
         continue;
@@ -421,7 +424,7 @@ export class List extends DataWithPermissions {
   }
 
   public isLarge(): boolean {
-    return this.items.length > 100;
+    return this.items.length >= 150;
   }
 
   /**
