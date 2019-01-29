@@ -4,6 +4,7 @@
   "Pick_a_fc": "Выбрать свободную компанию",
   "Pick_a_rotation": "Выбрать вращение",
   "Pick_a_recipe": "Выбрать рецепт",
+  "Pick_an_item": "Pick an item",
   "FC_name": "Название компании",
   "Saving_in_database": "Сохранение данных на сервер",
   "See_on_map": "Посмотреть на карте",
@@ -315,7 +316,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Пожалуйста, подтвердите ваш аккаунт для возможности иметь доступ к общим спискам",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
     "Merge_lists": "Объединить списки",
@@ -395,6 +396,7 @@
     "Add_all_item_alarms": "Создать все оповещения для этого предмета",
     "Adaptative_filter": "Показать только то, что я могу сделать",
     "Amount_craftable": "You can craft {{amount}}",
+    "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -548,6 +550,8 @@
     "Fixed_notification_number": "Уведомление исправлено",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "Дополнительное ожидание",
     "Import_macro": "Импорт из внутриигрового макроса",
     "Ingame_macro": "Внутриигровой макрос",
@@ -656,6 +660,13 @@
         "Craftsmanship": "Мастерство",
         "Control": "Управление"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
     }
   },
   "PRICING": {

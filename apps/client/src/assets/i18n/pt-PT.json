@@ -4,6 +4,7 @@
   "Pick_a_fc": "Escolha uma compania livre",
   "Pick_a_rotation": "Escolha uma sequência",
   "Pick_a_recipe": "Escolha uma fórmula",
+  "Pick_an_item": "Pick an item",
   "FC_name": "Nome da Compania Livre",
   "Saving_in_database": "Os datos estão a ser guardados no servidor",
   "See_on_map": "Ver no mapa",
@@ -59,7 +60,7 @@
   "Requires_x_ventures": "Requer {{amount}} empreendimentos para adequirir tudo",
   "WORKSHOP": {
     "Workshops": "Oficinas",
-    "Add_one_list": "Add a list",
+    "Add_one_list": "Adicionar uma lista",
     "Add_workshop": "Adicionar uma oficina",
     "Delete_message": "Ao eliminar uma oficina não eliminará as listas lá contidas, as mesmas só serão recuperadas em listas sem oficinas",
     "List_selection_title": "Selecione as listas a adicionar à oficina {{workshopName}}",
@@ -131,7 +132,7 @@
     "Volume": "Volume de som",
     "Macro_copied": "Macro copiado para a área de transferência",
     "Open_overlay": "Abrir overlay",
-    "More_available": "and {{amount}} more...",
+    "More_available": "e mais {{amount}}...",
     "CUSTOM": {
       "Title": "Adicionar alarme personalizado",
       "Name": "Nome",
@@ -268,13 +269,13 @@
     "General": "Geral",
     "Link_base": "Links de item",
     "Theme": "Tema",
-    "no_panel_borders": "Disable borders around various panels",
+    "no_panel_borders": "Desativar as bordas em torno de vários painéis",
     "Desktop": "Ambiente de trabalho",
     "Always_on_top": "Sempre visível",
     "Check_for_update": "Procurar actualizações",
     "Downloading_update": "A transferir a actualização",
     "No_update_available": "Não há actualizações disponíveis",
-    "Install_update": "Install update",
+    "Install_update": "Instalar a atualização",
     "Preferred_copy_type": "Tipo de cópia preferida",
     "Auto_open_in_desktop": "Abrir links na aplicação quando estiver iniciada",
     "Account": "Conta",
@@ -286,7 +287,7 @@
     "Nickname": "Nome de utilizador",
     "Nickname_used": "Nome de utilizador já em utilização",
     "No_nickname_warning": "Por favor vá à página de configurações e crie um nome de utilizador novo para aceder às funções exclusivas do patreon.",
-    "Show_devtools": "Show dev tools",
+    "Show_devtools": "Mostrar ferramentas de desenvolvimento",
     "COPY_TYPE": {
       "Classic": "Copiar nome to item",
       "Isearch": "Copiar macro /isearch"
@@ -315,7 +316,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Por favor verifique que sua conta para ter acesso às listas compartilhadas à sua FC",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
     "Regenerate_all": "Regenerar todas as listas",
     "Regenerated_all": "As suas listas estão agora actualizadas",
     "Merge_lists": "Juntar listas",
@@ -329,7 +330,7 @@
     "Add_to_a_list": "Adicionar a uma lista",
     "Please_pick_recipe": "Escolha uma fórmula para este item",
     "Import_description": "Escolha uma fórmula que queira utilizar para os itens que consegue criar e seleccione uma lista, esses itens serão adicionados à lista e será então redireccionado a essa lista.",
-    "Delete_after_merge": "Delete original lists after merge",
+    "Delete_after_merge": "Eliminar listas originais ao juntar",
     "IMPORT": {
       "Title": "Importar lista de um website externo",
       "Paste_link_step_title": "Cole o link da lista externa",
@@ -350,7 +351,7 @@
     "Rename": "Renomear lista",
     "Copied_x_times": "Copiado {{count}} vezes",
     "Enable_crystals_tracking": "Activar rasteamento de cristais",
-    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
+    "Always_show_inventory": "Mostrar sempre o inventário (desativado em ecrãs pequenos, < 600px)",
     "Copy_as_text": "Copiar como texto",
     "Copy_list_as_text": "Copie toda a lista como texto",
     "Copied_as_text": "Conteúdo copiado para a área de transferências",
@@ -358,8 +359,8 @@
     "Total_trade_price": "Total: ",
     "Add_all_alarms": "Adicionar todos os alarmes d'esta lista",
     "History": "Histórico",
-    "Items_count": "{{amount}} items",
-    "Show_craftable_amount": "Show craftable amount",
+    "Items_count": "{{amount}} itens",
+    "Show_craftable_amount": "Mostrar quantidade produzíveis",
     "COMPLETION_POPUP": {
       "Title": "Lista concluída",
       "Content": "Esta lista está concluída, o que quer fazer?",
@@ -395,6 +396,7 @@
     "Add_all_item_alarms": "Add all alarms for this item",
     "Adaptative_filter": "Only show what I can do",
     "Amount_craftable": "You can craft {{amount}}",
+    "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",
@@ -548,6 +550,8 @@
     "Fixed_notification_number": "Fixed notification",
     "Starting_echo_number": "Notification #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "Extra wait",
     "Import_macro": "Import from ingame macro",
     "Ingame_macro": "Ingame macro",
@@ -656,6 +660,13 @@
         "Craftsmanship": "Craftsmanship",
         "Control": "Control"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
     }
   },
   "PRICING": {

@@ -4,6 +4,7 @@
   "Pick_a_fc": "フリーカンパニーを選択する",
   "Pick_a_rotation": "制作スキル回しを選ぶ",
   "Pick_a_recipe": "制作レシピを選ぶ",
+  "Pick_an_item": "Pick an item",
   "FC_name": "フリーカンパニー名",
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図で見る",
@@ -315,7 +316,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "フリーカンパニーにシェアされたリストを確認するために、貴方のアカウントを認証して下さい",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
     "Regenerate_all": "全リストを更新する",
     "Regenerated_all": "リストが更新されました",
     "Merge_lists": "リストを併合する",
@@ -395,6 +396,7 @@
     "Add_all_item_alarms": "このアイテムに対してアラームを追加する",
     "Adaptative_filter": "可能なことのみ表示する",
     "Amount_craftable": "You can craft {{amount}}",
+    "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -548,6 +550,8 @@
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "追加待ち",
     "Import_macro": "ゲームのマクロから取り込む",
     "Ingame_macro": "マクロ",
@@ -656,6 +660,13 @@
         "Craftsmanship": "作業精度",
         "Control": "加工精度"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
     }
   },
   "PRICING": {
