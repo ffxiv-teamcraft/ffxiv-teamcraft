@@ -548,6 +548,8 @@
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "매크로 지연시간",
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
