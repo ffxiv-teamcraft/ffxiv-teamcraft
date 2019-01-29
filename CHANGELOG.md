@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.19"></a>
+## [5.0.19](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.18...v5.0.19) (2019-01-29)
+
+
+### Bug Fixes
+
+* fixed an issue with some items not being added to a list properly ([b7c3fd2](https://github.com/Supamiu/ffxiv-teamcraft/commit/b7c3fd2)), closes [#739](https://github.com/Supamiu/ffxiv-teamcraft/issues/739)
+
+
+### Features
+
+* **list:** you can now add items to a list directly from list details panel ([2d9edce](https://github.com/Supamiu/ffxiv-teamcraft/commit/2d9edce)), closes [#529](https://github.com/Supamiu/ffxiv-teamcraft/issues/529)
+* **simulator:** Add consumables to generated macros ([#717](https://github.com/Supamiu/ffxiv-teamcraft/issues/717)) ([59c0819](https://github.com/Supamiu/ffxiv-teamcraft/commit/59c0819))
+* **simulator:** changed buffs bar for a floating bar on mobile ([46b3384](https://github.com/Supamiu/ffxiv-teamcraft/commit/46b3384))
+* **simulator:** you can now see why a rotation fails ([6b70c97](https://github.com/Supamiu/ffxiv-teamcraft/commit/6b70c97)), closes [#661](https://github.com/Supamiu/ffxiv-teamcraft/issues/661)
+
+
+
 <a name="5.0.18"></a>
 ## [5.0.18](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.17...v5.0.18) (2019-01-27)
 
