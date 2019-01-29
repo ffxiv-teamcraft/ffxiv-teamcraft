@@ -548,6 +548,8 @@
     "Fixed_notification_number": "Уведомление исправлено",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "Дополнительное ожидание",
     "Import_macro": "Импорт из внутриигрового макроса",
     "Ingame_macro": "Внутриигровой макрос",
