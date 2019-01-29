@@ -4,6 +4,7 @@
   "Pick_a_fc": "Escolha uma free company",
   "Pick_a_rotation": "Escolher uma rotação",
   "Pick_a_recipe": "Escolha uma receita",
+  "Pick_an_item": "Pick an item",
   "FC_name": "Nome da Free Company",
   "Saving_in_database": "Salvando os dados no servidor",
   "See_on_map": "Veja no mapa",
@@ -395,6 +396,7 @@
     "Add_all_item_alarms": "Add all alarms for this item",
     "Adaptative_filter": "Only show what I can do",
     "Amount_craftable": "You can craft {{amount}}",
+    "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -658,6 +660,13 @@
         "Craftsmanship": "Craftsmanship",
         "Control": "Control"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
     }
   },
   "PRICING": {
