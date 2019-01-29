@@ -46,6 +46,7 @@ import { CustomLinksModule } from '../custom-links/custom-links.module';
 import { ListCompletionPopupComponent } from './list-completion-popup/list-completion-popup.component';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { LayoutModule } from '../../core/layout/layout.module';
+import { ProgressPopupModule } from '../progress-popup/progress-popup.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -76,6 +77,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     RouterModule,
     PageLoaderModule,
     PermissionsModule,
+    ProgressPopupModule,
     IconsModule,
     UserAvatarModule,
     TeamsModule,
@@ -94,8 +96,6 @@ export const DATA_EXTRACTORS: Provider[] = [
   providers: [
     ...DATA_EXTRACTORS,
     DataExtractorService,
-    ListsFacade,
-    ListManagerService,
     ListCompactsService
   ],
   declarations: [ListPanelComponent, TagsPopupComponent, ListCompletionPopupComponent],

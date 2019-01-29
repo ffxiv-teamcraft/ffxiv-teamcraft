@@ -4,6 +4,7 @@
   "Pick_a_fc": "Pick a free company",
   "Pick_a_rotation": "Pick a rotation",
   "Pick_a_recipe": "Pick a recipe",
+  "Pick_an_item": "Pick an item",
   "FC_name": "Free Company Name",
   "Saving_in_database": "Saving data on server",
   "See_on_map": "See on map",
@@ -395,6 +396,7 @@
     "Add_all_item_alarms": "Add all alarms for this item",
     "Adaptative_filter": "Only show what I can do",
     "Amount_craftable": "You can craft {{amount}}",
+    "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
