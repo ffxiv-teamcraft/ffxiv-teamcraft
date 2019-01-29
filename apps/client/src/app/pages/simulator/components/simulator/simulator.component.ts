@@ -366,7 +366,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       nzComponentParams: {
         rotation: this.actions$.value,
         job: this.job,
-        simulation: simulation.clone()
+        simulation: simulation.clone(),
+        food: this.selectedFood,
+        medicine: this.selectedMedicine,
+        freeCompanyActions: this.selectedFreeCompanyActions
       },
       nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
       nzFooter: null
