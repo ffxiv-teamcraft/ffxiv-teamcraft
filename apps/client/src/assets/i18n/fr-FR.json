@@ -4,6 +4,7 @@
   "Pick_a_fc": "Choisissez une compagnie libre",
   "Pick_a_rotation": "Choisissez une rotation",
   "Pick_a_recipe": "Choisissez une recette",
+  "Pick_an_item": "Choisissez un objet",
   "FC_name": "Nom de la compagnie libre",
   "Saving_in_database": "Sauvegarde en cours",
   "See_on_map": "Voir sur la carte",
@@ -395,6 +396,7 @@
     "Add_all_item_alarms": "Ajouter toutes les alarmes pour cet objet",
     "Adaptative_filter": "N’afficher que ce que je peux faire",
     "Amount_craftable": "Vous pouvez fabriquer {{amount}}",
+    "Add_item": "Ajouter un objet",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -548,6 +550,8 @@
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
     "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
+    "Include_consumables_notification": "Inclure une notification pour les consommables",
+    "Consumable_notification": "Utilisez {{buffs}}",
     "Extra_wait": "Temps d'attente supp.",
     "Import_macro": "Importer une macro du jeu",
     "Ingame_macro": "Macro",
@@ -656,6 +660,13 @@
         "Craftsmanship": "Habileté",
         "Control": "Contrôle"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Action non garantie avec le mode garanti activé",
+      "DURABILITY_REACHED_ZERO": "La solidité a atteint 0 avant que la progression soit terminée",
+      "NOT_ENOUGH_CP": "Pas assez de PS",
+      "MISSING_LEVEL_REQUIREMENT": "Vous n'avez pas le niveau requis",
+      "NOT_SPECIALIST": "Rotation de spécialiste, mais vous n'êtes pas spécialiste"
     }
   },
   "PRICING": {

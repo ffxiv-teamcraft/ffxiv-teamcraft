@@ -14,7 +14,9 @@ import { TeamsFacade } from '../teams/+state/teams.facade';
 import { Team } from '../../model/team/team';
 import { environment } from '../../../environments/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ListManagerService {
 
   constructor(protected db: DataService,

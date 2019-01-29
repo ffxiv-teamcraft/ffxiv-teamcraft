@@ -33,7 +33,9 @@ import { SettingsService } from '../../settings/settings.service';
 
 declare const gtag: Function;
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ListsFacade {
   loadingMyLists$ = this.store.select(listsQuery.getCompactsLoading);
   allListDetails$ = this.store.select(listsQuery.getAllListDetails);

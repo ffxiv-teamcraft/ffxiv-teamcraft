@@ -4,6 +4,7 @@
   "Pick_a_fc": "자유부대 선택",
   "Pick_a_rotation": "로테이션 선택",
   "Pick_a_recipe": "제작법 선택",
+  "Pick_an_item": "Pick an item",
   "FC_name": "자유부대 이름",
   "Saving_in_database": "서버에 데이터를 저장하는 중",
   "See_on_map": "지도에서 보기",
@@ -118,7 +119,7 @@
   },
   "ALARMS": {
     "Title": "알람",
-    "No_alarm": "설정된 알람 없음",
+    "No_alarm": "알람 없음",
     "Add_alarm": "알람 추가",
     "Alarm_created": "알람이 생성되었습니다",
     "Alarms_created": "{{amount}}개의 알람 생성됨",
@@ -194,7 +195,7 @@
   "Submit": "제출",
   "Invalid_credentials": "로그인 정보가 틀립니다",
   "Not_verified": "미인증",
-  "Anonymous_Warning": "목록을 저장하고 적응형 필터와 같은 다양한 기능을 사용하기 위해서는 계정을 생성해야합니다",
+  "Anonymous_Warning": "목록을 저장하고 다양한 기능을 사용하기 위해서는 계정을 생성해야합니다",
   "Game_Term/DoH": "제작자",
   "Game_Term/DoL": "채집가",
   "Reduction": "정제",
@@ -315,7 +316,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "자유부대에 공유된 목록을 확인하기 위해서 당신의 계정을 인증해주세요",
+    "Needs_verification": "자유부대에 공유된 목록을 확인하기 위해서 당신의 캐릭터를 인증해주세요",
     "Regenerate_all": "전체 목록 갱신",
     "Regenerated_all": "목록이 갱신되었습니다.",
     "Merge_lists": "목록 병합",
@@ -395,6 +396,7 @@
     "Add_all_item_alarms": "이 아이템에 대한 알람 추가",
     "Adaptative_filter": "할 수 있는 것만 표시",
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
+    "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -537,7 +539,7 @@
     "Propagate_changes": "공방 내부에 목록에 대한 권한 제공",
     "Propagate_changes_done": "공방 내부 목록에 대한 변경이 적용되었습니다",
     "Team_notice": "이 목록이 할당된 팀은 자동으로 참여 권한을 갖습니다.",
-    "Default_permission_level": "기본 권한 레벨"
+    "Default_permission_level": "기본 권한 수준"
   },
   "WIKI": {
     "Title": "위키",
@@ -548,6 +550,8 @@
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "매크로 지연시간",
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
@@ -656,6 +660,13 @@
         "Craftsmanship": "작업 숙련도",
         "Control": "가공 숙련도"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
     }
   },
   "PRICING": {
@@ -779,21 +790,21 @@
   },
   "UPDATE": {
     "New_update_available": "새 업데이트가 있습니다! ",
-    "Desktop_instructions": "최신 버전을 다운로드를 위해 링크로 이동하세요:  ",
-    "Web_instructions": "최신 버전으로 가져오기 위해 페이지를 새로고침 하세요."
+    "Desktop_instructions": "최신 버전을 다운로드하려면 다음 링크를 클릭하세요: ",
+    "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요."
   },
   "LOG_TRACKER": {
-    "Title": "Log Tracker",
+    "Title": "제작수첩 트래커",
     "Mark_page_as_done": "이 페이지를 완료됨 으로 표시",
     "Mark_as_done": "이 아이템을 완료됨 으로 표시",
     "Mark_as_not_done": "이 아이템을 완료되지 않음 으로 표시",
-    "Create_list": "이 페이지에 완료된 목록 만들기",
+    "Create_list": "이 페이지를 완료하기 위한 목록 만들기",
     "PAGE": {
-      "Master_recipes": "비전서 제작법 {{number}}",
-      "Housing_items": "하우징 ({{number}})",
+      "Master_recipes": "비전서: 제{{number}}권",
+      "Housing_items": "하우징({{number}})",
       "Others": "기타",
       "Dyes": "염료",
-      "Other_master_recipes": "다른 비전서 제작법"
+      "Other_master_recipes": "비전서: 기타"
     }
   }
 }
