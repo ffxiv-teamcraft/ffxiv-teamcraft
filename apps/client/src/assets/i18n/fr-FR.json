@@ -4,6 +4,7 @@
   "Pick_a_fc": "Choisissez une compagnie libre",
   "Pick_a_rotation": "Choisissez une rotation",
   "Pick_a_recipe": "Choisissez une recette",
+  "Pick_an_item": "Pick an item",
   "FC_name": "Nom de la compagnie libre",
   "Saving_in_database": "Sauvegarde en cours",
   "See_on_map": "Voir sur la carte",
@@ -315,7 +316,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
+    "Needs_verification": "S'il vous plaît vérifier votre personnage pour avoir accès aux listes partagées à votre compagnie libre",
     "Regenerate_all": "Regénérer toutes les listes",
     "Regenerated_all": "Vos listes sont maintenant à jour",
     "Merge_lists": "Fusionner des listes",
@@ -395,6 +396,7 @@
     "Add_all_item_alarms": "Ajouter toutes les alarmes pour cet objet",
     "Adaptative_filter": "N’afficher que ce que je peux faire",
     "Amount_craftable": "Vous pouvez fabriquer {{amount}}",
+    "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -548,8 +550,8 @@
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
     "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
-    "Include_consumables_notification": "Include consumables notification",
-    "Consumable_notification": "Use {{buffs}}",
+    "Include_consumables_notification": "Inclure une notification pour les consommables",
+    "Consumable_notification": "Utilisez {{buffs}}",
     "Extra_wait": "Temps d'attente supp.",
     "Import_macro": "Importer une macro du jeu",
     "Ingame_macro": "Macro",
@@ -658,6 +660,13 @@
         "Craftsmanship": "Habileté",
         "Control": "Contrôle"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
     }
   },
   "PRICING": {
