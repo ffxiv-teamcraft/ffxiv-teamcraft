@@ -31,6 +31,7 @@ jobs:
             paths:
             - node_modules
             - functions/node_modules
+            - ~/.cache
         - persist_to_workspace:
             root: /tmp
             paths:
