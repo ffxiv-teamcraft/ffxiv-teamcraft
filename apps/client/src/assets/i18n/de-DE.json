@@ -360,7 +360,7 @@
     "Add_all_alarms": "Erstelle alle Alarme für diese Liste",
     "History": "Historie",
     "Items_count": "{{amount}} Gegenstände",
-    "Show_craftable_amount": "Zeige craftbare Mengen",
+    "Show_craftable_amount": "Zeige herstellbare Mengen",
     "COMPLETION_POPUP": {
       "Title": "Liste fertiggestellt",
       "Content": "Diese Liste ist fertiggestellt, was willst du damit machen?",
