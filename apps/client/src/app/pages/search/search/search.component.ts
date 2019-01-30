@@ -60,7 +60,7 @@ export class SearchComponent implements OnInit {
     clvlMax: [70],
     jobCategories: [[]],
     craftJob: [0],
-    itemCategory: [0]
+    itemCategories: [[0]]
   });
 
   availableJobCategories = [];
@@ -208,11 +208,11 @@ export class SearchComponent implements OnInit {
         value: controls.craftJob.value
       });
     }
-    if (controls.itemCategory.value !== 0) {
+    if (controls.itemCategories.value.length > 0) {
       filters.push({
         minMax: false,
-        name: 'itemCategory',
-        value: controls.itemCategory.value
+        name: 'itemCategories',
+        value: controls.itemCategories.value
       });
     }
     return filters;
