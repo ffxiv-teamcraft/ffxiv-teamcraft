@@ -22,7 +22,7 @@ jobs:
             command: sudo npm i -g npm
         - run:
             name: Install local dependencies
-            command: npm ci && npm run cypress:install
+            command: npm ci
         - run:
             name: Install functions dependencies
             command: cd functions && npm install && cd ../
@@ -144,14 +144,10 @@ workflows:
         - test:
             requires:
               - setup
-        - e2e:
-            requires:
-              - setup
         - build:
               requires:
               - lint
               - test
-              - e2e
         - deploy-web:
               requires:
               - build
