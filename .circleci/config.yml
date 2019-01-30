@@ -15,8 +15,8 @@ jobs:
             command: echo ${CIRCLE_BRANCH}
         - restore_cache:
             keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
+            - v2-dependencies-{{ checksum "package.json" }}
+            - v2-dependencies-
         - run:
             name: Update npm
             command: sudo npm i -g npm
@@ -27,7 +27,7 @@ jobs:
             name: Install functions dependencies
             command: cd functions && npm install && cd ../
         - save_cache:
-            key: v1-dependencies-{{ checksum "package.json" }}
+            key: v2-dependencies-{{ checksum "package.json" }}
             paths:
             - node_modules
             - functions/node_modules
@@ -170,10 +170,4 @@ workflows:
               filters:
                   branches:
                       only: staging
-        - deploy-preview:
-              requires:
-              - build
-              filters:
-                  branches:
-                      only: 5.0.0
 
