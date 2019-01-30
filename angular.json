@@ -9,7 +9,7 @@
       "projectType": "application",
       "prefix": "app",
       "schematics": {
-        "@schematics/angular:component": {
+        "@nrwl/schematics:component": {
           "prefix": "app",
           "styleext": "less",
           "changeDetection": "OnPush",
@@ -167,13 +167,15 @@
       }
     },
     "client-e2e": {
-      "root": "apps/client-e2e/",
+      "root": "apps/client-e2e",
       "projectType": "application",
+      "prefix": "",
       "architect": {
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "@nrwl/builders:cypress",
           "options": {
-            "protractorConfig": "apps/client-e2e/protractor.conf.js",
+            "cypressConfig": "apps/client-e2e/cypress.json",
+            "tsConfig": "apps/client-e2e/tsconfig.e2e.json",
             "devServerTarget": "client:serve"
           },
           "configurations": {
@@ -186,9 +188,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/client-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
