@@ -22,7 +22,7 @@ jobs:
             command: sudo npm i -g npm
         - run:
             name: Install local dependencies
-            command: npm ci
+            command: npm install
         - run:
             name: Install functions dependencies
             command: cd functions && npm install && cd ../
