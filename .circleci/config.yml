@@ -15,19 +15,19 @@ jobs:
             command: echo ${CIRCLE_BRANCH}
         - restore_cache:
             keys:
-            - v2-dependencies-{{ checksum "package.json" }}
-            - v2-dependencies-
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
         - run:
             name: Update npm
             command: sudo npm i -g npm
         - run:
             name: Install local dependencies
-            command: npm install
+            command: npm ci && npm run cypress:install
         - run:
             name: Install functions dependencies
             command: cd functions && npm install && cd ../
         - save_cache:
-            key: v2-dependencies-{{ checksum "package.json" }}
+            key: v1-dependencies-{{ checksum "package.json" }}
             paths:
             - node_modules
             - functions/node_modules
