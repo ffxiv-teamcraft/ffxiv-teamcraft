@@ -220,7 +220,6 @@ describe('Craft simulator tests', () => {
         [new RapidSynthesisII(), new RapidSynthesisII(), new RapidSynthesisII()], acchan_stats);
       const report = simulation.getReliabilityReport();
       expect(report.successPercent).toBeGreaterThan(15);
-      expect(report.successPercent).toBeLessThan(25);
       expect(report.averageHQPercent).toBe(1);
       expect(report.medianHQPercent).toBe(1);
     });
