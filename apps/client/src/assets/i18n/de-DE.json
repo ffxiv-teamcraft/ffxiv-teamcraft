@@ -790,7 +790,7 @@
   },
   "UPDATE": {
     "New_update_available": "Eine neue Version ist verfügbar!",
-    "Desktop_instructions": "Klicke hier, um die neueste Version herunterladen: ",
+    "Desktop_instructions": "Klicke hier, um die neueste Version herunterzuladen: ",
     "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden."
   },
   "LOG_TRACKER": {
