@@ -1,5 +1,5 @@
 defaults: &defaults
-    working_directory: ~/workspace/ffxiv-teamcraft
+    working_directory: ~/ffxiv-teamcraft
     docker:
     - image: supamiu/circleci-node-wine
 
@@ -33,16 +33,17 @@ jobs:
               - ~/.cache
               - ~/.npm
         - persist_to_workspace:
-            root: ~/workspace
+            root: ~/
             paths:
             - ffxiv-teamcraft/*
+            - .cache/*
 
 
     lint:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: ~/workspace
+            at: ~/
         - run:
             name: Lint code and JSON
             command: npm run lint
@@ -52,7 +53,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: ~/workspace
+            at: ~/
         - run:
             name: Testing
             command: npm run test
@@ -64,7 +65,7 @@ jobs:
       <<: *defaults
       steps:
         - attach_workspace:
-            at: ~/workspace
+            at: ~/
         - run:
             name: Testing
             command: npm run e2e:ci
@@ -74,7 +75,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: ~/workspace
+            at: ~/
         - run:
             name: Building
             command: |
@@ -100,7 +101,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: ~/workspace
+            at: ~/
         - run:
             name: Deploying web
             command: ./node_modules/.bin/firebase deploy -P default --token "$FIREBASE_TOKEN"
@@ -109,7 +110,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: ~/workspace
+            at: ~/
         - run:
             name: Deploying desktop
             command: npm run electron:setup:publish
@@ -119,7 +120,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: ~/workspace
+            at: ~/
         - run:
             name: Deploying web
             command: ./node_modules/.bin/firebase deploy -P beta --token "$FIREBASE_TOKEN"
