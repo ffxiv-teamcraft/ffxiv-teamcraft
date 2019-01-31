@@ -662,11 +662,11 @@
       }
     },
     "FAIL_CAUSE": {
-      "UNSAFE_ACTION": "안전 모드 사용 중입니다.(성공률 100%미만의 작업)",
-      "DURABILITY_REACHED_ZERO": "작업이 완료되기 전에 내구도가 0이 되었습니다",
+      "UNSAFE_ACTION": "안전모드에 맞지 않는 스킬이 사용됨",
+      "DURABILITY_REACHED_ZERO": "작업 완료 전에 내구도가 0이 됨",
       "NOT_ENOUGH_CP": "CP부족",
-      "MISSING_LEVEL_REQUIREMENT": "적정 레벨이 아닙니다",
-      "NOT_SPECIALIST": "전문장인 로테이션, 현재 비전문장인 상태입니다"
+      "MISSING_LEVEL_REQUIREMENT": "레벨이 부족함",
+      "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션"
     }
   },
   "PRICING": {
