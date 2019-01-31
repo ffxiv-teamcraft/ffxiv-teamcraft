@@ -89,12 +89,12 @@ jobs:
         - save_cache:
             key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
             paths:
-            - dist
+              - dist
         - persist_to_workspace:
-              root: /tmp
+              root: ~/
               paths:
-                  - ffxiv-teamcraft/*
-                  - ~/.cache/*
+                - ffxiv-teamcraft/*
+                - .cache/*
 
 
     deploy-web:
@@ -129,7 +129,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-              at: /tmp
+              at: ~/
         - run:
               name: Deploying web
               command: ./node_modules/.bin/firebase deploy -P preview --token "$FIREBASE_TOKEN"
