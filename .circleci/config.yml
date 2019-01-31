@@ -15,7 +15,7 @@ jobs:
             command: echo ${CIRCLE_BRANCH}
         - restore_cache:
             keys:
-            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-{{ checksum "package-lock.json" }}
             - v1-dependencies-
         - run:
             name: Update npm
@@ -27,15 +27,15 @@ jobs:
             name: Install functions dependencies
             command: cd functions && npm install && cd ../
         - save_cache:
-            key: v1-dependencies-{{ checksum "package.json" }}
+            key: v1-dependencies-{{ checksum "package-lock.json" }}
             paths:
-            - node_modules
-            - functions/node_modules
             - ~/.cache
+            - ~/.npm
         - persist_to_workspace:
             root: /tmp
             paths:
             - ffxiv-teamcraft/*
+            - ~/.cache
 
 
     lint:
