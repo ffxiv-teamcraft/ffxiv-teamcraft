@@ -15,6 +15,9 @@ export class ByregotsMiracle extends QualityAction {
   }
 
   getFailCause(simulationState: Simulation, linear?: boolean, safeMode?: boolean): SimulationFailCause {
+    if (!simulationState.hasBuff(Buff.INNER_QUIET)) {
+      return SimulationFailCause.NO_INNER_QUIET;
+    }
     if (!simulationState.crafterStats.specialist) {
       return SimulationFailCause.NOT_SPECIALIST;
     }
