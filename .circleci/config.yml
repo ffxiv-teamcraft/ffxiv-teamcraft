@@ -11,37 +11,42 @@ jobs:
         steps:
         - checkout
         - run:
+            name: Create workspace dir
+            command: mkdir ~/workspace
+        - run:
             name: Show current branch
             command: echo ${CIRCLE_BRANCH}
-        - restore_cache:
-            keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-            - v1-dependencies-
         - run:
             name: Update npm
             command: sudo npm i -g npm
+        - restore_cache:
+          keys:
+            - v1-deps-{ .Branch }-{ checksum "package.json" }
+            - v1-deps-{ .Branch }
+            - v1-deps
         - run:
-            name: Install local dependencies
-            command: npm ci
+          name: Install local dependencies
+          command: npm ci
         - run:
             name: Install functions dependencies
             command: cd functions && npm install && cd ../
         - save_cache:
-            key: v1-dependencies-{{ checksum "package-lock.json" }}
-            paths:
+          key: v1-deps-{ .Branch }-{ checksum "package.json" }
+          paths:
             - ~/.cache
             - ~/.npm
         - persist_to_workspace:
-            root: /tmp
+            root: ~/workspace
             paths:
             - ffxiv-teamcraft/*
+            - ../.cache/*
 
 
     lint:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/workspace
         - run:
             name: Lint code and JSON
             command: npm run lint
@@ -51,7 +56,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/workspace
         - run:
             name: Testing
             command: npm run test
@@ -63,7 +68,7 @@ jobs:
       <<: *defaults
       steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/workspace
         - run:
             name: Testing
             command: npm run e2e:ci
@@ -73,7 +78,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/workspace
         - run:
             name: Building
             command: |
@@ -99,7 +104,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/workspace
         - run:
             name: Deploying web
             command: ./node_modules/.bin/firebase deploy -P default --token "$FIREBASE_TOKEN"
@@ -108,7 +113,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/workspace
         - run:
             name: Deploying desktop
             command: npm run electron:setup:publish
@@ -118,7 +123,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/workspace
         - run:
             name: Deploying web
             command: ./node_modules/.bin/firebase deploy -P beta --token "$FIREBASE_TOKEN"
