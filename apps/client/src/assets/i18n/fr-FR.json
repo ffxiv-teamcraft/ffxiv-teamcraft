@@ -316,7 +316,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Merci de vérifier votre personnage dans la page profil afin d'accéder aux listes partagées à votre Compagnie Libre",
+    "Needs_verification": "S'il vous plaît vérifier votre personnage pour avoir accès aux listes partagées à votre compagnie libre",
     "Regenerate_all": "Regénérer toutes les listes",
     "Regenerated_all": "Vos listes sont maintenant à jour",
     "Merge_lists": "Fusionner des listes",
@@ -666,7 +666,8 @@
       "DURABILITY_REACHED_ZERO": "La solidité a atteint 0 avant que la progression soit terminée",
       "NOT_ENOUGH_CP": "Pas assez de PS",
       "MISSING_LEVEL_REQUIREMENT": "Vous n'avez pas le niveau requis",
-      "NOT_SPECIALIST": "Rotation de spécialiste, mais vous n'êtes pas spécialiste"
+      "NOT_SPECIALIST": "Rotation de spécialiste, mais vous n'êtes pas spécialiste",
+      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
   },
   "PRICING": {
