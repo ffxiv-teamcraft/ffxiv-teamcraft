@@ -18,9 +18,9 @@ jobs:
             command: sudo npm i -g npm
         - restore_cache:
             keys:
-              - v1-deps-{ .Branch }-{ checksum "package.json" }
-              - v1-deps-{ .Branch }
-              - v1-deps
+              - v2-deps-{ .Branch }-{ checksum "package.json" }
+              - v2-deps-{ .Branch }
+              - v2-deps
         - run:
             name: Install local dependencies
             command: npm ci
@@ -28,7 +28,7 @@ jobs:
             name: Install functions dependencies
             command: cd functions && npm install && cd ../
         - save_cache:
-            key: v1-deps-{ .Branch }-{ checksum "package.json" }
+            key: v2-deps-{ .Branch }-{ checksum "package.json" }
             paths:
               - ~/.cache
               - ~/.npm
