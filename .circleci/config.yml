@@ -39,7 +39,6 @@ jobs:
             root: ~/workspace
             paths:
             - ffxiv-teamcraft/*
-            - ../.cache/*
 
 
     lint:
