@@ -3,6 +3,7 @@ import { getIntro } from '../support/search.po';
 
 describe('Basic UI tests', () => {
   before(() => {
+    indexedDB.deleteDatabase('firebaseLocalStorageDb');
     cy.visit('/');
     changeLanguage('EN');
   });
