@@ -1,5 +1,5 @@
 defaults: &defaults
-    working_directory: /tmp/ffxiv-teamcraft
+    working_directory: ~/workspace/ffxiv-teamcraft
     docker:
     - image: supamiu/circleci-node-wine
 
@@ -10,9 +10,6 @@ jobs:
         <<: *defaults
         steps:
         - checkout
-        - run:
-            name: Create workspace dir
-            command: mkdir ~/workspace
         - run:
             name: Show current branch
             command: echo ${CIRCLE_BRANCH}
