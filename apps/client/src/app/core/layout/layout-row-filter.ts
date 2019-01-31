@@ -260,7 +260,7 @@ export class LayoutRowFilter {
     const parsed = filterString.split(':');
     const baseFilterString: string = parsed.shift();
     const baseFilter: LayoutRowFilter = LayoutRowFilter[baseFilterString];
-    if (parsed.length > 1) {
+    if (parsed.length > 1 && baseFilter !== undefined) {
       return LayoutRowFilter.processRows(parsed, baseFilter);
     }
     return baseFilter;
@@ -275,7 +275,7 @@ export class LayoutRowFilter {
   private static processRows(stringRows: string[], filter: LayoutRowFilter): LayoutRowFilter {
     const operator = stringRows.shift();
     let filterString = stringRows.shift();
-    if (operator !== undefined && filterString !== undefined) {
+    if (operator !== undefined && filterString !== undefined && filter !== undefined) {
       const notGate = filterString.charAt(0) === '!';
       if (notGate) {
         filterString = filterString.substr(1);
