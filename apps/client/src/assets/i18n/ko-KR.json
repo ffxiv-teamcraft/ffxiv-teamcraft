@@ -4,7 +4,7 @@
   "Pick_a_fc": "자유부대 선택",
   "Pick_a_rotation": "로테이션 선택",
   "Pick_a_recipe": "제작법 선택",
-  "Pick_an_item": "Pick an item",
+  "Pick_an_item": "아이템 선택",
   "FC_name": "자유부대 이름",
   "Saving_in_database": "서버에 데이터를 저장하는 중",
   "See_on_map": "지도에서 보기",
@@ -396,7 +396,7 @@
     "Add_all_item_alarms": "이 아이템에 대한 알람 추가",
     "Adaptative_filter": "할 수 있는 것만 표시",
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
-    "Add_item": "Add an item",
+    "Add_item": "아이템 추가",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -550,8 +550,8 @@
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
-    "Include_consumables_notification": "Include consumables notification",
-    "Consumable_notification": "Use {{buffs}}",
+    "Include_consumables_notification": "소모품 알림 포함",
+    "Consumable_notification": "{{buffs}} 사용",
     "Extra_wait": "매크로 지연시간",
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
@@ -662,11 +662,11 @@
       }
     },
     "FAIL_CAUSE": {
-      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
-      "NOT_ENOUGH_CP": "Not enough CP",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
-      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
+      "UNSAFE_ACTION": "안전 모드 사용 중입니다.(성공률 100%미만의 작업)",
+      "DURABILITY_REACHED_ZERO": "작업이 완료되기 전에 내구도가 0이 되었습니다",
+      "NOT_ENOUGH_CP": "CP부족",
+      "MISSING_LEVEL_REQUIREMENT": "적정 레벨이 아닙니다",
+      "NOT_SPECIALIST": "전문장인 로테이션, 현재 비전문장인 상태입니다"
     }
   },
   "PRICING": {
