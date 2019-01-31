@@ -20,21 +20,21 @@ jobs:
             name: Update npm
             command: sudo npm i -g npm
         - restore_cache:
-          keys:
-            - v1-deps-{ .Branch }-{ checksum "package.json" }
-            - v1-deps-{ .Branch }
-            - v1-deps
+            keys:
+              - v1-deps-{ .Branch }-{ checksum "package.json" }
+              - v1-deps-{ .Branch }
+              - v1-deps
         - run:
-          name: Install local dependencies
-          command: npm ci
+            name: Install local dependencies
+            command: npm ci
         - run:
             name: Install functions dependencies
             command: cd functions && npm install && cd ../
         - save_cache:
-          key: v1-deps-{ .Branch }-{ checksum "package.json" }
-          paths:
-            - ~/.cache
-            - ~/.npm
+            key: v1-deps-{ .Branch }-{ checksum "package.json" }
+            paths:
+              - ~/.cache
+              - ~/.npm
         - persist_to_workspace:
             root: ~/workspace
             paths:
