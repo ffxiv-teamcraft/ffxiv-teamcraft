@@ -127,6 +127,7 @@ export class AuthEffects {
     filter(action => action.type !== AuthActionTypes.NoLinkedCharacter && action.type !== AuthActionTypes.LinkingCharacter),
     withLatestFrom(this.store),
     filter(([action, state]) => {
+      console.log(action, state);
       return !state.auth.loading
         && state.auth.loggedIn
         && (state.auth.user === null || state.auth.user.$key === undefined || state.auth.user.$key === state.auth.uid);
