@@ -667,7 +667,7 @@
       "NOT_ENOUGH_CP": "CP부족",
       "MISSING_LEVEL_REQUIREMENT": "레벨이 부족함",
       "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
-      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
+      "NO_INNER_QUIET": "정신 집중이 없는 상태에서 정신 집중을 소모하는 스킬을 사용함"
     }
   },
   "PRICING": {
