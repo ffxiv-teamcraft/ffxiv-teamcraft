@@ -8,5 +8,8 @@
   "videosFolder": "../../dist/out-tsc/apps/client-e2e/videos",
   "screenshotsFolder": "../../dist/out-tsc/apps/client-e2e/screenshots",
   "chromeWebSecurity": false,
-  "projectId": "gcam61"
+  "projectId": "gcam61",
+  "viewportWidth": 1600,
+  "viewportHeight": 900,
+  "numTestsKeptInMemory": 0
 }

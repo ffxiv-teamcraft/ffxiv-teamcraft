@@ -1,6 +1,5 @@
 import { changeLanguage } from '../support/app.po';
 import { fixtures } from '../fixtures/fixtures';
-import { customCommand } from '../support/commands';
 
 
 describe('Auth tests', () => {

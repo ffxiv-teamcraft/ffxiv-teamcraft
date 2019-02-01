@@ -236,9 +236,14 @@ export class AuthEffects {
   warningOnAnonymousAccount$ = this.actions$.pipe(
     ofType(AuthActionTypes.LoggedInAsAnonymous),
     debounceTime(10000),
-    tap(() => this.notificationService.warning(
-      this.translate.instant('COMMON.Warning'),
-      this.translate.instant('Anonymous_Warning'))),
+    tap(() => {
+      this.notificationService.config({
+        nzPlacement: 'topLeft'
+      });
+      this.notificationService.warning(
+        this.translate.instant('COMMON.Warning'),
+        this.translate.instant('Anonymous_Warning'));
+    }),
     map(() => new AnonymousWarningShown())
   );
 
