@@ -551,7 +551,7 @@
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
     "Include_consumables_notification": "소모품 알림 포함",
-    "Consumable_notification": "{{buffs}}를 사용해야합니다",
+    "Consumable_notification": "{{buffs}} 사용이 필요합니다",
     "Extra_wait": "매크로 지연시간",
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
@@ -667,7 +667,7 @@
       "NOT_ENOUGH_CP": "CP부족",
       "MISSING_LEVEL_REQUIREMENT": "레벨이 부족함",
       "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
-      "NO_INNER_QUIET": "정신 집중이 없는 상태에서 정신 집중을 소모하는 스킬을 사용함"
+      "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함"
     }
   },
   "PRICING": {
