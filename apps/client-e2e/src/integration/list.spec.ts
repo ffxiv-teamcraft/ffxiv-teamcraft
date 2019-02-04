@@ -1,10 +1,10 @@
 import { changeLanguage } from '../support/app.po';
 import { customCommand } from '../support/commands';
 
-function expectItem(name:string, amount: number){
-  cy.get(' nz-collapse > .ant-collapse > .ant-collapse-item > .ant-collapse-content > .ant-collapse-content-box > [style=""] > :nth-child(1) > div > app-item-row.ng-star-inserted > .item-row').within(() => {
-    cy.get('.item-name').contains(name);
-    cy.get('.amount-max').contains(amount);
+function expectItem(name: string, amount: number) {
+  cy.get('.item-row').within(() => {
+    cy.get('.item-name').contains(name).should('exist');
+    cy.get('.amount-max').contains(amount).should('exist');
   });
 }
 
@@ -26,5 +26,17 @@ describe('List tests', () => {
 
   it('should contain proper ingredients', () => {
     expectItem('Rock Salt', 7);
+    expectItem('Stiperstone', 1);
+    expectItem('Raw Kyanite', 3);
+    expectItem('Effervescent Water', 7);
+    expectItem('Manzasiri Hair', 14);
+    expectItem('Halgai Mane', 14);
+    expectItem('Blade of Revelry', 1);
+    expectItem('Blood Pepper', 1);
+    expectItem('Natron', 7);
+    expectItem('Kyanite', 1);
+    expectItem('Worsted Yarn', 7);
+    expectItem('Steppe Serge', 2);
+    expectItem('Wind-up Susano', 1);
   });
 });
