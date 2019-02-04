@@ -667,7 +667,7 @@
       "NOT_ENOUGH_CP": "Pas assez de PS",
       "MISSING_LEVEL_REQUIREMENT": "Vous n'avez pas le niveau requis",
       "NOT_SPECIALIST": "Rotation de spécialiste, mais vous n'êtes pas spécialiste",
-      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
+      "NO_INNER_QUIET": "Essayer d'utiliser l'action Calme Intérieur sans avoir le bonus Calme Intérieur d'activé"
     }
   },
   "PRICING": {
