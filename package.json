@@ -79,7 +79,6 @@
     "update": "ng update @nrwl/schematics",
     "update:check": "ng update",
     "electron-builder": "electron-builder",
-    "bundle-report": "webpack-bundle-analyzer dist/apps/client/stats.json",
     "***********SSR STUFF***************": "",
     "build": "ng build && npm run build:ssr",
     "build:ssr": "ng run client:server && npm run webpack:ssr",
