@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.21"></a>
+## [5.0.21](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.20...v5.0.21) (2019-02-05)
+
+
+### Bug Fixes
+
+* **layout:** fixed an issue with some layout filters breaking the UI ([d3cd623](https://github.com/Supamiu/ffxiv-teamcraft/commit/d3cd623))
+* **simulator:** fixed an issue resetting rotation to last saved state after you apply configuration ([bf602ab](https://github.com/Supamiu/ffxiv-teamcraft/commit/bf602ab))
+
+
+### Features
+
+* **search:** added possibility to have multiple categories selected in filters ([11f830a](https://github.com/Supamiu/ffxiv-teamcraft/commit/11f830a)), closes [#680](https://github.com/Supamiu/ffxiv-teamcraft/issues/680)
+* **simulator:** added new failure condition: missing inner quiet ([01aa35b](https://github.com/Supamiu/ffxiv-teamcraft/commit/01aa35b))
+* added opensearch to the website ([8b0ff5a](https://github.com/Supamiu/ffxiv-teamcraft/commit/8b0ff5a))
+
+
+
 <a name="5.0.20"></a>
 ## [5.0.20](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.19...v5.0.20) (2019-01-29)
 
