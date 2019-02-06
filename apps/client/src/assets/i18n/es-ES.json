@@ -496,7 +496,8 @@
     "No_items": "No se encontró nodo de recolección",
     "Gathering_name": "Ingrese nombre del artículo",
     "Ephemeral_node": "Nodo efímero, puede reaparecer",
-    "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!"
+    "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!",
+    "Hidden_item": "Hidden"
   },
   "ANNOUNCEMENT": {
     "Title": "Anuncio",
