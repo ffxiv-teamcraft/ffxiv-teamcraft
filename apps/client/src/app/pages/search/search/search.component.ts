@@ -60,7 +60,7 @@ export class SearchComponent implements OnInit {
     clvlMax: [70],
     jobCategories: [[]],
     craftJob: [0],
-    itemCategories: [[0]]
+    itemCategories: [[]]
   });
 
   availableJobCategories = [];
