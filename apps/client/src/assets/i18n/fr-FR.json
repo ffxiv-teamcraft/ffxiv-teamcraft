@@ -496,7 +496,8 @@
     "No_items": "Aucune récolte trouvée",
     "Gathering_name": "Nom de l'objet",
     "Ephemeral_node": "Nœud éphémère, peut être re-déclenché",
-    "Intro": "Ici vous pouvez simplement chercher un objet récoltable et voir ses détails, incluant la position, les heures d'apparition et la possibilité de créer une alarme. Commencez à taper un nom et laissez la magie opérer !"
+    "Intro": "Ici vous pouvez simplement chercher un objet récoltable et voir ses détails, incluant la position, les heures d'apparition et la possibilité de créer une alarme. Commencez à taper un nom et laissez la magie opérer !",
+    "Hidden_item": "Hidden"
   },
   "ANNOUNCEMENT": {
     "Title": "Annonce",
