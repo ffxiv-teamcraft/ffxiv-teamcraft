@@ -7,7 +7,7 @@ import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 
 @Injectable()
@@ -56,17 +56,17 @@ export class DataService {
     }
 
     filters.forEach(filter => {
-        if (filter.minMax) {
-          params = params.set(`${filter.name}Min`, filter.value.min)
-            .set(`${filter.name}Max`, filter.value.max);
-        } else if (filter.name === 'jobCategories') {
-          params = params.set(filter.name, this.gt.getJobCategories(filter.value).join(','));
-        } else {
-          params = params.set(filter.name, filter.value);
-        }
-        if (filter.name === 'craftJob') {
-          craftedByFilter = filter;
-        }
+      if (filter.minMax) {
+        params = params.set(`${filter.name}Min`, filter.value.min)
+          .set(`${filter.name}Max`, filter.value.max);
+      } else if (filter.name === 'jobCategories') {
+        params = params.set(filter.name, this.gt.getJobCategories(filter.value).join(','));
+      } else {
+        params = params.set(filter.name, filter.value);
+      }
+      if (filter.name === 'craftJob') {
+        craftedByFilter = filter;
+      }
     });
 
     return this.getGarlandSearch(params)
@@ -127,7 +127,29 @@ export class DataService {
       .set('type', 'item')
       .set('text', name)
       .set('lang', lang);
-    return this.getGarlandSearch(params);
+    return this.getGarlandSearch(params).pipe(
+      switchMap(results => {
+        const itemIds = (results || []).map(item => item.obj.i);
+        if (itemIds.length === 0) {
+          return of([]);
+        }
+        return this.getGarlandData(`/item/en/${this.garlandtoolsVersion}/${itemIds.join(',')}`)
+          .pipe(
+            map(items => {
+              if (!(items instanceof Array)) {
+                items = [{ obj: items }];
+              }
+              return items.map(itemData => {
+                const itemPartial = results.find(res => res.obj.i === itemData.obj.item.id);
+                return {
+                  ...itemPartial,
+                  nodes: itemData.obj.item.nodes
+                };
+              });
+            })
+          );
+      })
+    );
   }
 
   /**
