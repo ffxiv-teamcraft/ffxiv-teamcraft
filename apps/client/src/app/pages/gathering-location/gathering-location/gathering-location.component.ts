@@ -53,10 +53,11 @@ export class GatheringLocationComponent {
       mergeMap(query => this.dataService.searchGathering(query)),
       map(items => {
         const nodesFromPositions = [].concat.apply([], items.map(item => {
-          return Object.keys(nodePositions)
+          const availableNodeIds = item.nodes && item.nodes.length > 0 ? item.nodes : Object.keys(nodePositions)
             .filter(key => {
               return nodePositions[key].items.indexOf(item.obj.i) > -1;
-            })
+            });
+          return availableNodeIds
             .map(key => {
               return { ...item, ...nodePositions[key], nodeId: key };
             })
@@ -74,6 +75,7 @@ export class GatheringLocationComponent {
                   node.slot = slotMatch.slot;
                 }
               }
+              node.hidden = !node.items.some(itemId => itemId === node.itemId);
               node.mapId = node.map;
               const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);
               if (folklore !== undefined) {
@@ -91,35 +93,35 @@ export class GatheringLocationComponent {
             return [].concat.apply([],
               ...[item.obj.i, ...reductions[item.obj.i]].map(itemId => {
                 return this.bell.getNodesByItemId(itemId)
-                .map(node => {
-                  const nodePosition = nodePositions[node.id];
-                  const result = {
-                    ...item,
-                    nodeId: node.id,
-                    zoneid: this.l12n.getAreaIdByENName(node.zone),
-                    mapId: nodePosition ? nodePosition.map : this.l12n.getAreaIdByENName(node.zone),
-                    x: node.coords[0],
-                    y: node.coords[1],
-                    level: node.lvl,
-                    type: node.type,
-                    itemId: node.itemId,
-                    icon: node.icon,
-                    spawnTimes: node.time,
-                    uptime: node.uptime,
-                    slot: node.slot,
-                    timed: true,
-                    reduction: reductions[item.obj.i] && reductions[item.obj.i].indexOf(node.itemId) > -1,
-                    ephemeral: node.name === 'Ephemeral'
-                  };
-                  const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);
-                  if (folklore !== undefined) {
-                    result.folklore = {
-                      id: +folklore,
-                      icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
+                  .map(node => {
+                    const nodePosition = nodePositions[node.id];
+                    const result = {
+                      ...item,
+                      nodeId: node.id,
+                      zoneid: this.l12n.getAreaIdByENName(node.zone),
+                      mapId: nodePosition ? nodePosition.map : this.l12n.getAreaIdByENName(node.zone),
+                      x: node.coords[0],
+                      y: node.coords[1],
+                      level: node.lvl,
+                      type: node.type,
+                      itemId: node.itemId,
+                      icon: node.icon,
+                      spawnTimes: node.time,
+                      uptime: node.uptime,
+                      slot: node.slot,
+                      timed: true,
+                      reduction: reductions[item.obj.i] && reductions[item.obj.i].indexOf(node.itemId) > -1,
+                      ephemeral: node.name === 'Ephemeral'
                     };
-                  }
-                  return result;
-                });
+                    const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);
+                    if (folklore !== undefined) {
+                      result.folklore = {
+                        id: +folklore,
+                        icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
+                      };
+                    }
+                    return result;
+                  });
               })
             );
           })

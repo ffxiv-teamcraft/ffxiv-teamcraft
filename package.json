@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.0.21",
+  "version": "5.0.22",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -27,16 +27,13 @@
     "mac": {
       "category": "public.app-category.games"
     },
-    "publish": {
-      "provider": "github",
-      "releaseType": "release"
-    },
     "win": {
       "icon": "./tools/build/icon.ico",
       "publisherName": "FFXIV Teamcraft",
-      "publish": [
-        "github"
-      ]
+      "publish": {
+        "provider": "github",
+        "releaseType": "release"
+      }
     },
     "nsis": {
       "include": "./tools/build/nsis/include.nsh",

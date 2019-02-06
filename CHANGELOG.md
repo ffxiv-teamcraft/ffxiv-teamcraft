@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.22"></a>
+## [5.0.22](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.21...v5.0.22) (2019-02-06)
+
+
+### Bug Fixes
+
+* **gathering-location:** fixed an issue with hidden items not being found by search system ([5138d7c](https://github.com/Supamiu/ffxiv-teamcraft/commit/5138d7c))
+* **layout:** fixed an issue with completed panels being empty even once collapsed ([75db2ec](https://github.com/Supamiu/ffxiv-teamcraft/commit/75db2ec))
+* **pricing:** fixed a bug with price changing when it shouldn't, due to messy sort ([374be6a](https://github.com/Supamiu/ffxiv-teamcraft/commit/374be6a))
+* **search:** fixed an issue with filters not being initialized properly ([cc22d17](https://github.com/Supamiu/ffxiv-teamcraft/commit/cc22d17))
+* **simulator:** fixed an issue with rotation swap inside simulator ([9cdbe1d](https://github.com/Supamiu/ffxiv-teamcraft/commit/9cdbe1d))
+
+
+
 <a name="5.0.21"></a>
 ## [5.0.21](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.20...v5.0.21) (2019-02-05)
 

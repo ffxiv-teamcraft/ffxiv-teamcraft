@@ -9,7 +9,7 @@ import { SimulationResult } from '../../simulation/simulation-result';
 import { EffectiveBuff } from '../../model/effective-buff';
 import { Buff } from '../../model/buff.enum';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { distinctUntilChanged, filter, first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, pairwise, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { SimulationReliabilityReport } from '../../simulation/simulation-reliability-report';
 import { AuthFacade } from '../../../../+state/auth.facade';
@@ -285,9 +285,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     );
 
     combineLatest(this.rotation$, this.crafterStats$).pipe(
+      pairwise(),
+      map(([before, after]) => {
+        return [...after, before[0] ? before[0].$key !== after[0].$key : true];
+      }),
       takeUntil(this.onDestroy$)
-    ).subscribe(([rotation, stats]) => {
-      if (this.actions$.value.length === 0) {
+    ).subscribe(([rotation, stats, rotationChanged]: [CraftingRotation, CrafterStats, boolean]) => {
+      if (this.actions$.value.length === 0 || rotationChanged) {
         this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
       }
       if (rotation.food && this.selectedFood === undefined) {
