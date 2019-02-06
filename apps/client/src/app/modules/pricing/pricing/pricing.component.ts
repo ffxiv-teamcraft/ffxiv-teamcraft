@@ -113,7 +113,7 @@ export class PricingComponent implements AfterViewInit {
       )
       .subscribe((res) => {
         if (res instanceof Error) {
-          this.message.error(this.translate.instant('MARKETBOARD.'));
+          this.message.error(this.translate.instant('MARKETBOARD.Error'));
         } else {
           stopInterval$.next(null);
           this.pricingService.priceChanged$.next(null);
@@ -123,7 +123,8 @@ export class PricingComponent implements AfterViewInit {
   }
 
   private updateCosts(list: List): void {
-    list.items.forEach(item => {
+    const items = this.topologicalSort(list.items);
+    items.forEach(item => {
       this.costs[item.id] = this._getCraftCost(item, list);
     });
     list.finalItems.forEach(item => {
@@ -229,6 +230,40 @@ export class PricingComponent implements AfterViewInit {
 
   public trackByItemFn(index: number, item: ListRow): number {
     return item.id;
+  }
+
+  private topologicalSort(data: ListRow[]): ListRow[] {
+    const res: ListRow[] = [];
+    const doneList: boolean[] = [];
+    while (data.length > res.length) {
+      let resolved = false;
+
+      for (const item of data) {
+        if (res.indexOf(item) > -1) {
+          // item already in resultset
+          continue;
+        }
+        resolved = true;
+
+        if (item.requires !== undefined) {
+          for (const dep of item.requires) {
+            // We have to check if it's not a precraft, as some dependencies aren't resolvable inside the current array.
+            const depIsInArray = data.find(row => row.id === dep.id) !== undefined;
+            if (!doneList[dep.id] && depIsInArray) {
+              // there is a dependency that is not met:
+              resolved = false;
+              break;
+            }
+          }
+        }
+        if (resolved) {
+          // All dependencies are met:
+          doneList[item.id] = true;
+          res.push(item);
+        }
+      }
+    }
+    return res;
   }
 
   ngAfterViewInit(): void {
