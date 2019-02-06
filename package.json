@@ -27,16 +27,13 @@
     "mac": {
       "category": "public.app-category.games"
     },
-    "publish": {
-      "provider": "github",
-      "releaseType": "release"
-    },
     "win": {
       "icon": "./tools/build/icon.ico",
       "publisherName": "FFXIV Teamcraft",
-      "publish": [
-        "github"
-      ]
+      "publish": {
+        "provider": "github",
+        "releaseType": "release"
+      }
     },
     "nsis": {
       "include": "./tools/build/nsis/include.nsh",
