@@ -69,7 +69,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             storedNode.slot = detailsItem !== undefined ? detailsItem.slot : '?';
             storedNode.time = details.time;
             storedNode.uptime = details.uptime;
-            storedNode.limitType = { en: partial.lt, de: partial.lt, fr: partial.lt, ja: partial.lt };
+            storedNode.limitType = { en: partial.lt, de: partial.lt, fr: partial.lt, ja: partial.lt, zh: partial.lt };
             storedNode.coords = details.coords;
           }
           // If we don't have position for this node in data provided by garlandtools,w e might have it inside our data.

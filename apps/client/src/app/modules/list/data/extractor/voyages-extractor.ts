@@ -31,7 +31,8 @@ export class VoyagesExtractor extends AbstractExtractor<I18nName[]> {
           en: v,
           fr: v,
           de: v,
-          ja: v
+          ja: v,
+          zh: v
         });
       });
     }

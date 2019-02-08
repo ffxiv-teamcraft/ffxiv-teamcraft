@@ -77,7 +77,7 @@ export class SearchComponent implements OnInit {
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
               private message: NzMessageService, private translate: TranslateService) {
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
-      columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
+      columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja', 'Name_zh'],
       max_items: 200
     }).pipe(
       map(contentList => {
@@ -88,7 +88,8 @@ export class SearchComponent implements OnInit {
               en: result.Name_en,
               fr: result.Name_fr,
               de: result.Name_de,
-              ja: result.Name_ja
+              ja: result.Name_ja,
+              zh: result.Name_zh
             }
           };
         });

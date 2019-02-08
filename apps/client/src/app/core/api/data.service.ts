@@ -119,7 +119,7 @@ export class DataService {
       return of([]);
     }
     let lang = this.i18n.currentLang;
-    if (['en', 'fr', 'de', 'ja'].indexOf(lang) === -1) {
+    if (['en', 'fr', 'de', 'ja', 'zh'].indexOf(lang) === -1) {
       lang = 'en';
     }
     const params = new HttpParams()

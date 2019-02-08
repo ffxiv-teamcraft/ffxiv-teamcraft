@@ -34,7 +34,7 @@ export class LocalizedDataService {
   }
 
   public getItemIdsByName(name: string, language: Language): number[] {
-    if (['en', 'fr', 'de', 'ja'].indexOf(language) === -1) {
+    if (['en', 'fr', 'de', 'ja', 'zh'].indexOf(language) === -1) {
       language = 'en';
     }
     const regex = new RegExp(`${name}`, 'i');
@@ -172,7 +172,7 @@ export class LocalizedDataService {
     if (array === undefined) {
       return -1;
     }
-    if (['en', 'fr', 'de', 'ja'].indexOf(language) === -1) {
+    if (['en', 'fr', 'de', 'ja', 'zh'].indexOf(language) === -1) {
       language = 'en';
     }
     let res = -1;

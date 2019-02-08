@@ -236,7 +236,7 @@ export class ListDetailsPanelComponent implements OnChanges {
 
   public getLocation(id: number): I18nName {
     if (id === -1) {
-      return { fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other' };
+      return { fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other', zh: '其他' };
     }
     return this.l12n.getPlace(id);
   }

@@ -115,7 +115,7 @@ export class LevequestsComponent implements OnInit {
             hq: false,
             amount: 1,
             itemQuantity: leve.CraftLeve.ItemCount0,
-            name: { en: leve.Name_en, fr: leve.Name_fr, de: leve.Name_de, ja: leve.Name_ja },
+            name: { en: leve.Name_en, fr: leve.Name_fr, de: leve.Name_de, ja: leve.Name_ja, zh: leve.Name_en },
             startPlaceId: leve.PlaceNameStart.ID,
             deliveryPlaceId: leve.LevelLevemete.Map.PlaceNameTargetID,
             repeats: leve.CraftLeve.Repeats

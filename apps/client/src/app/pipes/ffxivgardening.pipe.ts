@@ -105,7 +105,8 @@ export class FfxivgardeningPipe implements PipeTransform {
         fr: `http://fr.ffxivgardening.com/seed-details.php?SeedID=${seedId.gid}`,
         de: `http://de.ffxivgardening.com/seed-details.php?SeedID=${seedId.gid}`,
         ja: `http://ja.ffxivgardening.com/seed-details.php?SeedID=${seedId.gid}`,
-        ko: `http://ko.ffxivgardening.com/seed-details.php?SeedID=${seedId.gid}`
+        ko: `http://ko.ffxivgardening.com/seed-details.php?SeedID=${seedId.gid}`,
+        zh: `http://zh.ffxivgardening.com/seed-details.php?SeedID=${seedId.gid}`
       };
     }
     // If the id isn't found, go to home page directly
@@ -114,7 +115,8 @@ export class FfxivgardeningPipe implements PipeTransform {
       fr: `http://fr.ffxivgardening.com/`,
       de: `http://de.ffxivgardening.com/`,
       ja: `http://ja.ffxivgardening.com/`,
-      ko: `http://ko.ffxivgardening.com/`
+      ko: `http://ko.ffxivgardening.com/`,
+      zh: `http://zh.ffxivgardening.com/`,
     };
   }
 
