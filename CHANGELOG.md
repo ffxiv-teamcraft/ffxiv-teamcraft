@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.23"></a>
+## [5.0.23](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.22...v5.0.23) (2019-02-07)
+
+
+### Bug Fixes
+
+* **simulator:** fixed an issue with rotations loading inside simulator ([b20da3f](https://github.com/Supamiu/ffxiv-teamcraft/commit/b20da3f))
+
+
+
 <a name="5.0.22"></a>
 ## [5.0.22](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.21...v5.0.22) (2019-02-06)
 
