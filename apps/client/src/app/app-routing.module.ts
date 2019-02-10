@@ -96,6 +96,10 @@ const routes: Routes = [
     path: 'template',
     loadChildren: './pages/template/template.module#TemplateModule'
   },
+  {
+    path: 'custom-items',
+    loadChildren: './pages/custom-items/custom-items.module#CustomItemsModule'
+  },
 ];
 
 @NgModule({
