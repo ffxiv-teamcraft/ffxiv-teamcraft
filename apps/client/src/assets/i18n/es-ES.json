@@ -496,7 +496,8 @@
     "No_items": "No se encontró nodo de recolección",
     "Gathering_name": "Ingrese nombre del artículo",
     "Ephemeral_node": "Nodo efímero, puede reaparecer",
-    "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!"
+    "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!",
+    "Hidden_item": "Hidden"
   },
   "ANNOUNCEMENT": {
     "Title": "Anuncio",
@@ -666,7 +667,8 @@
       "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
       "NOT_ENOUGH_CP": "Not enough CP",
       "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
-      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
+      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
   },
   "PRICING": {
