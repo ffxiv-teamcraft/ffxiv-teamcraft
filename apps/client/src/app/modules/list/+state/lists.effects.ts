@@ -134,6 +134,7 @@ export class ListsEffects {
             of(action.key),
             loggedIn ? this.authFacade.user$ : of(null),
             this.authFacade.userId$,
+            this.teamsFacade.selectedTeam$,
             loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
             this.listService.get(action.key).pipe(catchError(() => of(null)))
           );
@@ -143,7 +144,7 @@ export class ListsEffects {
         ))
       );
     }),
-    map(([listKey, user, userId, fcId, list]: [string, TeamcraftUser | null, string, string | null, List]) => {
+    map(([listKey, user, userId, team, fcId, list]: [string, TeamcraftUser | null, string, Team, string | null, List]) => {
       if (user !== null) {
         const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
         const verified = idEntry && idEntry.verified;
@@ -152,9 +153,12 @@ export class ListsEffects {
         }
       }
       if (list !== null) {
-        const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId));
+        const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), (team !== undefined && list.teamId === team.$key) ? 20 : 0);
         if (permissionLevel >= PermissionLevel.READ) {
           return [listKey, list];
+        }
+        if (team === undefined && list.teamId !== undefined) {
+          this.teamsFacade.select(list.teamId);
         }
       }
       return [listKey, null];
