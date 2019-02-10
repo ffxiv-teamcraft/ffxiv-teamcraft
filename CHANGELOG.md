@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.24"></a>
+## [5.0.24](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.23...v5.0.24) (2019-02-10)
+
+
+### Bug Fixes
+
+* **list:** fixed an issue with display freeze and reordering ([c888309](https://github.com/Supamiu/ffxiv-teamcraft/commit/c888309))
+* **list-details:** fixed an issue with completed panels being empty when opened ([4491c26](https://github.com/Supamiu/ffxiv-teamcraft/commit/4491c26))
+* **list-details:** fixed an issue with teams permissions not being handled properly ([235a3ad](https://github.com/Supamiu/ffxiv-teamcraft/commit/235a3ad))
+* **simulator:** fixed a bug with import from crafting optimizer not working with Basic Synthesis ([4a1e4fc](https://github.com/Supamiu/ffxiv-teamcraft/commit/4a1e4fc))
+
+
+
 <a name="5.0.23"></a>
 ## [5.0.23](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.22...v5.0.23) (2019-02-07)
 
