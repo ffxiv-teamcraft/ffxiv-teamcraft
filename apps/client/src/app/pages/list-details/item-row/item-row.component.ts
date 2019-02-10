@@ -114,6 +114,7 @@ export class ItemRowComponent implements OnInit {
               private commentsService: CommentsService) {
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
+      filter(list => !list.notFound && list.canBeCrafted !== undefined),
       map(list => list.canBeCrafted(this.item)),
       shareReplay(1)
     );

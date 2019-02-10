@@ -86,10 +86,6 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         if (!list.notFound && list.isOutDated() && permissionLevel >= PermissionLevel.WRITE) {
           this.regenerateList(list);
         }
-        if (list.teamId !== undefined) {
-          this.teamsFacade.loadTeam(list.teamId);
-          this.teamsFacade.select(list.teamId);
-        }
         if (!list.notFound) {
           this.listIsLarge = list.isLarge();
         }

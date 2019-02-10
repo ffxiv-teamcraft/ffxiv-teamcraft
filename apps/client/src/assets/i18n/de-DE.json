@@ -360,7 +360,7 @@
     "Add_all_alarms": "Erstelle alle Alarme für diese Liste",
     "History": "Historie",
     "Items_count": "{{amount}} Gegenstände",
-    "Show_craftable_amount": "Zeige craftbare Mengen",
+    "Show_craftable_amount": "Zeige herstellbare Mengen",
     "COMPLETION_POPUP": {
       "Title": "Liste fertiggestellt",
       "Content": "Diese Liste ist fertiggestellt, was willst du damit machen?",
@@ -496,7 +496,8 @@
     "No_items": "Nichts zum Sammeln gefunden",
     "Gathering_name": "Sammelgegenstand eingeben",
     "Ephemeral_node": "Vergängliches Vorkommen, kann erneut erscheinen",
-    "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Standorte anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!"
+    "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Standorte anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!",
+    "Hidden_item": "Hidden"
   },
   "ANNOUNCEMENT": {
     "Title": "Ankündigung",
@@ -666,7 +667,8 @@
       "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
       "NOT_ENOUGH_CP": "Not enough CP",
       "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
-      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
+      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
   },
   "PRICING": {
@@ -790,7 +792,7 @@
   },
   "UPDATE": {
     "New_update_available": "Eine neue Version ist verfügbar!",
-    "Desktop_instructions": "Klicke hier, um die neueste Version herunterladen: ",
+    "Desktop_instructions": "Klicke hier, um die neueste Version herunterzuladen: ",
     "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden."
   },
   "LOG_TRACKER": {
