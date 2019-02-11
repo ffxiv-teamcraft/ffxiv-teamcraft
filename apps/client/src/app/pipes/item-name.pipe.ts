@@ -13,7 +13,7 @@ export class ItemNamePipe implements PipeTransform {
   }
 
   transform(id: number, item: CustomItem): I18nName {
-    if (item.custom === true) {
+    if (item && item.custom === true) {
       return {
         fr: item.name,
         en: item.name,
