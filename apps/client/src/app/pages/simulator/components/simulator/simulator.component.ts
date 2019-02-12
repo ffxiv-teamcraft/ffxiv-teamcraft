@@ -15,7 +15,7 @@ import {
   first,
   map,
   pairwise,
-  shareReplay,
+  shareReplay, skip,
   startWith,
   takeUntil,
   tap
@@ -219,20 +219,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       cp: [180, Validators.required],
       level: [0, Validators.required],
       specialist: [false]
-    });
-
-    this.statsForm.valueChanges.pipe(
-      takeUntil(this.onDestroy$),
-      distinctUntilChanged((prev, next) => prev.specialist === next.specialist)
-    ).subscribe(stats => {
-      if (stats.specialist) {
-        stats.craftsmanship += 20;
-        stats.control += 20;
-      } else if (stats.craftsmanship > 0 && stats.control > 0) {
-        stats.craftsmanship -= 20;
-        stats.control -= 20;
-      }
-      this.statsForm.patchValue(stats, { emitEvent: false });
     });
 
     this.foods = consumablesService.fromData(foods)
@@ -686,6 +672,18 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   saveSafeMode(value: boolean): void {
     localStorage.setItem('simulator:safe-mode', value.toString());
+  }
+
+  toggleSpecialist(): void {
+    const stats = this.statsForm.getRawValue();
+    if (stats.specialist) {
+      stats.craftsmanship += 20;
+      stats.control += 20;
+    } else if (stats.craftsmanship > 0 && stats.control > 0) {
+      stats.craftsmanship -= 20;
+      stats.control -= 20;
+    }
+    this.statsForm.patchValue(stats, { emitEvent: false });
   }
 
   ngOnDestroy(): void {

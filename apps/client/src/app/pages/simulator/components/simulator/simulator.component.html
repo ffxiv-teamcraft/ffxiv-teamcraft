@@ -150,7 +150,8 @@
                   <nz-form-item>
                     <nz-form-control>
                       <label nz-checkbox id="specialist"
-                             formControlName="specialist">{{'SIMULATOR.CONFIGURATION.Specialist'
+                             formControlName="specialist"
+                             (click)="toggleSpecialist()">{{'SIMULATOR.CONFIGURATION.Specialist'
                         | translate}}</label>
                     </nz-form-control>
                   </nz-form-item>
