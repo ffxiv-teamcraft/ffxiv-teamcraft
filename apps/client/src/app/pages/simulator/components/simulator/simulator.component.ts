@@ -594,7 +594,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     if (this.selectedFood !== undefined && this.selectedFood !== null) {
       const foodBonus = this.selectedFood.getBonus(bonusType);
       if (foodBonus !== undefined) {
-        bonusFromFood = Math.ceil(baseValue * foodBonus.value);
+        bonusFromFood = Math.floor(baseValue * foodBonus.value);
         if (bonusFromFood > foodBonus.max) {
           bonusFromFood = foodBonus.max;
         }
@@ -603,7 +603,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     if (this.selectedMedicine !== undefined && this.selectedMedicine !== null) {
       const medicineBonus = this.selectedMedicine.getBonus(bonusType);
       if (medicineBonus !== undefined) {
-        bonusFromMedicine = Math.ceil(baseValue * medicineBonus.value);
+        bonusFromMedicine = Math.floor(baseValue * medicineBonus.value);
         if (bonusFromMedicine > medicineBonus.max) {
           bonusFromMedicine = medicineBonus.max;
         }
