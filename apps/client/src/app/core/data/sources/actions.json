@@ -22292,13 +22292,13 @@
   "3884": {
     "en": "Feather Squall",
     "ja": "フェザースコール",
-    "de": "Federregen",
+    "de": "Federböe",
     "fr": "Bourrasque de plumes"
   },
   "3885": {
     "en": "Feather Squall",
     "ja": "フェザースコール",
-    "de": "Federregen",
+    "de": "Federböe",
     "fr": "Bourrasque de plumes"
   },
   "3886": {
@@ -22418,7 +22418,7 @@
   "3905": {
     "en": "The Scarlet Price",
     "ja": "真紅の珠",
-    "de": "Scharlachroter Preis",
+    "de": "Scharlachrotes Wispern",
     "fr": "Gemme écarlate"
   },
   "3906": {
@@ -35348,13 +35348,13 @@
   "6315": {
     "en": "Akh Morn",
     "ja": "アク・モーン",
-    "de": "Ahk Morn",
+    "de": "Akh Morn",
     "fr": "Akh Morn"
   },
   "6316": {
     "en": "Akh Morn",
     "ja": "アク・モーン",
-    "de": "Ahk Morn",
+    "de": "Akh Morn",
     "fr": "Akh Morn"
   },
   "6317": {
@@ -44456,7 +44456,7 @@
   "7950": {
     "en": "Feather Squall",
     "ja": "フェザースコール",
-    "de": "Federregen",
+    "de": "Federböe",
     "fr": "Bourrasque de plumes"
   },
   "7951": {
@@ -45108,7 +45108,7 @@
     "fr": "Volcan abyssal"
   },
   "8061": {
-    "en": "Eruption",
+    "en": "Geothermal Flatulence",
     "ja": "噴火",
     "de": "Vulkanausbruch",
     "fr": "Éruption volcanique"
@@ -48666,13 +48666,13 @@
     "fr": "Étincelle sans lueur"
   },
   "8693": {
-    "en": "Vein Splitter",
+    "en": "Concentrativity",
     "ja": "圧縮剣気",
     "de": "Konzentriertheit",
     "fr": "Kenki concentré"
   },
   "8694": {
-    "en": "Concentrativity",
+    "en": "Vein Splitter",
     "ja": "地脈断ち",
     "de": "Erdader-Spalter",
     "fr": "Fendeur du sol"
@@ -50334,13 +50334,13 @@
     "fr": "Étincelle sans lueur"
   },
   "8986": {
-    "en": "Vein Splitter",
+    "en": "Concentrativity",
     "ja": "圧縮剣気",
     "de": "Konzentriertheit",
     "fr": "Kenki concentré"
   },
   "8987": {
-    "en": "Concentrativity",
+    "en": "Vein Splitter",
     "ja": "地脈断ち",
     "de": "Erdader-Spalter",
     "fr": "Fendeur du sol"
@@ -52770,7 +52770,7 @@
     "fr": "Missiles magitek de 2 tonz"
   },
   "9431": {
-    "en": "Eruption",
+    "en": "Geothermal Flatulence",
     "ja": "噴火",
     "de": "Vulkanausbruch",
     "fr": "Éruption volcanique"
@@ -71183,6 +71183,18 @@
     "de": "Balsamierender Atem",
     "fr": "Souffle embaumant"
   },
+  "12711": {
+    "en": "Attack",
+    "ja": "攻撃",
+    "de": "Attacke",
+    "fr": "Attaque"
+  },
+  "12712": {
+    "en": "Bombardment",
+    "ja": "爆撃",
+    "de": "Bombardement",
+    "fr": "Bombardement"
+  },
   "12714": {
     "en": "Tail End",
     "ja": "テイルエンド",
@@ -72758,7 +72770,7 @@
   "13005": {
     "en": "Magic Burst L",
     "ja": "ロゴス・マジックバースト",
-    "de": "Logos-Manaeruption",
+    "de": "Logos-Magieexplosion",
     "fr": "Évocation Logos : Explosion magique"
   },
   "13006": {
@@ -73787,6 +73799,18 @@
     "de": "Denaturierung",
     "fr": "Corrupture"
   },
+  "13200": {
+    "en": "Steam",
+    "ja": "蒸気",
+    "de": "Dampf",
+    "fr": "Vapeur"
+  },
+  "13201": {
+    "en": "Crash",
+    "ja": "衝突",
+    "de": "Kollision",
+    "fr": "Collision"
+  },
   "13202": {
     "en": "Firewall",
     "ja": "ガードプログラム",
@@ -74714,13 +74738,13 @@
   "13378": {
     "en": "Feather Squall",
     "ja": "フェザースコール",
-    "de": "Federregen",
+    "de": "Federböe",
     "fr": "Bourrasque de plumes"
   },
   "13379": {
     "en": "Feather Squall",
     "ja": "フェザースコール",
-    "de": "Federregen",
+    "de": "Federböe",
     "fr": "Bourrasque de plumes"
   },
   "13380": {
@@ -78383,6 +78407,312 @@
     "de": "Unverwendbar",
     "fr": "Utilisation impossible"
   },
+  "14214": {
+    "en": "Eidos",
+    "ja": "変異",
+    "de": "Sarva",
+    "fr": "Sarva"
+  },
+  "14215": {
+    "en": "Eidos",
+    "ja": "変異",
+    "de": "Sarva",
+    "fr": "Sarva"
+  },
+  "14216": {
+    "en": "Impact Stream",
+    "ja": "インパクトストリーム",
+    "de": "Durchschlagsstrom",
+    "fr": "Courant d'impact"
+  },
+  "14217": {
+    "en": "Bright Aurora",
+    "ja": "ブライトオーロラ",
+    "de": "Gleißende Aura",
+    "fr": "Aurore dégradante"
+  },
+  "14218": {
+    "en": "Dark Aurora",
+    "ja": "ダークオーロラ",
+    "de": "Gleißende Aura",
+    "fr": "Aurore sombre"
+  },
+  "14219": {
+    "en": "Hostile Aspect",
+    "ja": "極性波動",
+    "de": "Polarisierte Welle",
+    "fr": "Onde polarisée"
+  },
+  "14220": {
+    "en": "Astral Rays",
+    "ja": "光の波動",
+    "de": "Pfad des Lichts",
+    "fr": "Voie de lumière"
+  },
+  "14221": {
+    "en": "Astral Rays",
+    "ja": "光の波動",
+    "de": "Pfad des Lichts",
+    "fr": "Voie de lumière"
+  },
+  "14222": {
+    "en": "Umbral Rays",
+    "ja": "闇の波動",
+    "de": "Pfad der Dunkelheit",
+    "fr": "Voie de ténèbres"
+  },
+  "14223": {
+    "en": "Umbral Rays",
+    "ja": "闇の波動",
+    "de": "Pfad der Dunkelheit",
+    "fr": "Voie de ténèbres"
+  },
+  "14224": {
+    "en": "Turbulent Aether",
+    "ja": "エーテル乱流",
+    "de": "Äthersturm",
+    "fr": "Turbulence éthérée"
+  },
+  "14225": {
+    "en": "Explosion",
+    "ja": "爆発",
+    "de": "Explosion",
+    "fr": "Explosion"
+  },
+  "14226": {
+    "en": "Explosion",
+    "ja": "爆発",
+    "de": "Explosion",
+    "fr": "Explosion"
+  },
+  "14227": {
+    "en": "Explosive Impulse",
+    "ja": "エクスプロシブインパルス",
+    "de": "Explosiver Impuls",
+    "fr": "Impulsion explosive"
+  },
+  "14228": {
+    "en": "Explosive Impulse",
+    "ja": "エクスプロシブインパルス",
+    "de": "Explosiver Impuls",
+    "fr": "Impulsion explosive"
+  },
+  "14229": {
+    "en": "Impact Stream",
+    "ja": "インパクトストリーム",
+    "de": "Durchschlagsstrom",
+    "fr": "Courant d'impact"
+  },
+  "14230": {
+    "en": "Bright Aurora",
+    "ja": "ブライトオーロラ",
+    "de": "Gleißende Aura",
+    "fr": "Aurore dégradante"
+  },
+  "14231": {
+    "en": "Dark Aurora",
+    "ja": "ダークオーロラ",
+    "de": "Düstere Aura",
+    "fr": "Aurore sombre"
+  },
+  "14232": {
+    "en": "Call Wyvern",
+    "ja": "コールワイバーン",
+    "de": "Wyvernruf",
+    "fr": "Appel de wyverne"
+  },
+  "14233": {
+    "en": "Meteor",
+    "ja": "メテオ",
+    "de": "Meteor",
+    "fr": "Météore"
+  },
+  "14234": {
+    "en": "Auroral Wind",
+    "ja": "オーロラルウィンド",
+    "de": "Aurorawind",
+    "fr": "Vent d'aurore"
+  },
+  "14235": {
+    "en": "Medusa Javelin",
+    "ja": "メデューサジャベリン",
+    "de": "Medusenspeer",
+    "fr": "Javelot de Méduse"
+  },
+  "14236": {
+    "en": "Dark Blizzard III",
+    "ja": "ダークブリザガ",
+    "de": "Dunkel-Eisga",
+    "fr": "Méga Glace ténébreuse"
+  },
+  "14237": {
+    "en": "Black Hole",
+    "ja": "ブラックホール",
+    "de": "Schwarzes Loch",
+    "fr": "Trou noir"
+  },
+  "14238": {
+    "en": "Transfiguration",
+    "ja": "形態変化",
+    "de": "Transfiguration",
+    "fr": "Transmutation"
+  },
+  "14239": {
+    "en": "Transfiguration",
+    "ja": "形態変化",
+    "de": "Transfiguration",
+    "fr": "Transmutation"
+  },
+  "14240": {
+    "en": "Flare Star",
+    "ja": "フレアスター",
+    "de": "Flare-Stern",
+    "fr": "Astre flamboyant"
+  },
+  "14241": {
+    "en": "Flare Star",
+    "ja": "フレアスター",
+    "de": "Flare-Stern",
+    "fr": "Astre flamboyant"
+  },
+  "14242": {
+    "en": "Explosion",
+    "ja": "爆発",
+    "de": "Explosion",
+    "fr": "Explosion"
+  },
+  "14243": {
+    "en": "Aethernova",
+    "ja": "エーテルノヴァ",
+    "de": "Äthernova",
+    "fr": "Nova éthérée"
+  },
+  "14244": {
+    "en": "Transfiguration",
+    "ja": "形態変化",
+    "de": "Transfiguration",
+    "fr": "Transmutation"
+  },
+  "14245": {
+    "en": "Transfiguration",
+    "ja": "形態変化",
+    "de": "Transfiguration",
+    "fr": "Transmutation"
+  },
+  "14246": {
+    "en": "Execration",
+    "ja": "エクセクレイション",
+    "de": "Exsekration",
+    "fr": "Exécration"
+  },
+  "14247": {
+    "en": "Execration",
+    "ja": "エクセクレイション",
+    "de": "Exsekration",
+    "fr": "Exécration"
+  },
+  "14248": {
+    "en": "Meteor",
+    "ja": "メテオ",
+    "de": "Meteor",
+    "fr": "Météore"
+  },
+  "14249": {
+    "en": "Holy",
+    "ja": "ホーリー",
+    "de": "Sanctus",
+    "fr": "Miracle"
+  },
+  "14250": {
+    "en": "Acceleration Bomb",
+    "ja": "加速度爆弾",
+    "de": "Beschleunigungsbombe",
+    "fr": "Bombe accélératrice"
+  },
+  "14251": {
+    "en": "Attack",
+    "ja": "攻撃",
+    "de": "Attacke",
+    "fr": "Attaque"
+  },
+  "14252": {
+    "en": "Attack",
+    "ja": "攻撃",
+    "de": "Attacke",
+    "fr": "Attaque"
+  },
+  "14253": {
+    "en": "Attack",
+    "ja": "攻撃",
+    "de": "Attacke",
+    "fr": "Attaque"
+  },
+  "14254": {
+    "en": "Explosion",
+    "ja": "爆発",
+    "de": "Explosion",
+    "fr": "Explosion"
+  },
+  "14255": {
+    "en": "Tornado",
+    "ja": "トルネド",
+    "de": "Tornado",
+    "fr": "Tornade"
+  },
+  "14256": {
+    "en": "Meteor Impact",
+    "ja": "メテオインパクト",
+    "de": "Meteoreinschlag",
+    "fr": "Impact de météore"
+  },
+  "14257": {
+    "en": "Debris Burst",
+    "ja": "デブリバースト",
+    "de": "Gesteinsexplosion",
+    "fr": "Explosion de débris"
+  },
+  "14258": {
+    "en": "Transfiguration",
+    "ja": "形態変化",
+    "de": "Transfiguration",
+    "fr": "Transmutation"
+  },
+  "14259": {
+    "en": "Transfiguration",
+    "ja": "形態変化",
+    "de": "Transfiguration",
+    "fr": "Transmutation"
+  },
+  "14260": {
+    "en": "Mourning Star",
+    "ja": "モーニングスター",
+    "de": "Morgenstern",
+    "fr": "Étoile du matin"
+  },
+  "14261": {
+    "en": "Mourning Star",
+    "ja": "モーニングスター",
+    "de": "Morgenstern",
+    "fr": "Étoile du matin"
+  },
+  "14262": {
+    "en": "Attack",
+    "ja": "攻撃",
+    "de": "Attacke",
+    "fr": "Attaque"
+  },
+  "14263": {
+    "en": "Shooting Star",
+    "ja": "シューティングスター",
+    "de": "Sternschnuppe",
+    "fr": "Étoile filante"
+  },
+  "14264": {
+    "en": "Shooting Star",
+    "ja": "シューティングスター",
+    "de": "Sternschnuppe",
+    "fr": "Étoile filante"
+  },
   "14265": {
     "en": "Golden Tongue",
     "ja": "ゴールデンタン",
@@ -78989,6 +79319,18 @@
     "de": "Aqua Vitae",
     "fr": "Aqua Vitae"
   },
+  "14373": {
+    "en": "Gobrush Rushgob",
+    "ja": "ゴブ流ゴブリンラッシュ",
+    "de": "Indigoblin-Rausch ",
+    "fr": "Gobcharge gobeline"
+  },
+  "14374": {
+    "en": "Bomb Toss",
+    "ja": "爆弾投げ",
+    "de": "Bombenwurf",
+    "fr": "Lancer de bombe"
+  },
   "14414": {
     "en": "Heavenly Sword",
     "ja": "聖剣攻撃",
@@ -79127,11 +79469,149 @@
     "de": "Göttliches Licht",
     "fr": "Onde de lumière évanescente"
   },
+  "14440": {
+    "en": "Ame-no-Sakahoko",
+    "ja": "天逆鉾",
+    "de": "Himmelsriposte",
+    "fr": "Ama-no-sakahoko"
+  },
+  "14441": {
+    "en": "Ame-no-Sakahoko",
+    "ja": "天逆鉾",
+    "de": "Himmelsriposte",
+    "fr": "Ama-no-sakahoko"
+  },
+  "14442": {
+    "en": "Whirling Zantetsuken",
+    "ja": "旋・斬鉄剣",
+    "de": "Sen-Zantetsuken",
+    "fr": "Sen Zantetsuken"
+  },
+  "14443": {
+    "en": "Lateral Zantetsuken",
+    "ja": "片・斬鉄剣",
+    "de": "Kata-Zantetsuken",
+    "fr": "Hen Zantetsuken"
+  },
+  "14444": {
+    "en": "Lateral Zantetsuken",
+    "ja": "片・斬鉄剣",
+    "de": "Kata-Zantetsuken",
+    "fr": "Hen Zantetsuken"
+  },
+  "14445": {
+    "en": "Shock",
+    "ja": "放電",
+    "de": "Gewitterschlag",
+    "fr": "Décharge électrostatique"
+  },
+  "14446": {
+    "en": "Levinwhorl",
+    "ja": "渦雷",
+    "de": "Wirbelsturm",
+    "fr": "Vortex de foudre"
+  },
+  "14447": {
+    "en": "Levinwhorl",
+    "ja": "渦雷",
+    "de": "Wirbelsturm",
+    "fr": "Vortex de foudre"
+  },
+  "14448": {
+    "en": "Cloud to Ground",
+    "ja": "襲雷",
+    "de": "Sturmkonzentration",
+    "fr": "Attaque fulminante"
+  },
+  "14449": {
+    "en": "Cloud to Ground",
+    "ja": "襲雷",
+    "de": "Sturmkonzentration",
+    "fr": "Attaque fulminante"
+  },
+  "14450": {
+    "en": "Cloud to Ground",
+    "ja": "襲雷",
+    "de": "Sturmkonzentration",
+    "fr": "Attaque fulminante"
+  },
+  "14451": {
+    "en": "Silent Levin",
+    "ja": "熱雷",
+    "de": "Feuerblitz",
+    "fr": "Ardeur fulminante"
+  },
+  "14452": {
+    "en": "Bitter Barbs",
+    "ja": "罪の荊棘",
+    "de": "Dornige Schuld",
+    "fr": "Ronce du péché"
+  },
+  "14453": {
+    "en": "Barbs",
+    "ja": "茨の棘",
+    "de": "Dornendickicht",
+    "fr": "Épine de ronce"
+  },
+  "14454": {
+    "en": "Lancing Bolt",
+    "ja": "雷槍",
+    "de": "Donnerlanze",
+    "fr": "Lance fulminante"
+  },
+  "14455": {
+    "en": "Lancing Blow",
+    "ja": "雷槍撃",
+    "de": "Donnerlanzenstoß",
+    "fr": "Coup de lance fulminante"
+  },
+  "14456": {
+    "en": "Ultimate Zantetsuken",
+    "ja": "極・斬鉄剣",
+    "de": "Goku-Zantetsuken",
+    "fr": "Goku Zantetsuken"
+  },
+  "14457": {
+    "en": "Ultimate Zantetsuken",
+    "ja": "極・斬鉄剣",
+    "de": "Goku-Zantetsuken",
+    "fr": "Goku Zantetsuken"
+  },
+  "14458": {
+    "en": "Spirits of the Fallen",
+    "ja": "英霊魂",
+    "de": "Heroische Seele",
+    "fr": "Âme héroïque"
+  },
+  "14459": {
+    "en": "Shingan",
+    "ja": "真眼撃",
+    "de": "Betäubungsschlag",
+    "fr": "Impact oculaire"
+  },
+  "14460": {
+    "en": "For Honor",
+    "ja": "戦死撃",
+    "de": "Hieb der Gefallenen",
+    "fr": "Carnage martial"
+  },
+  "14461": {
+    "en": "Booming Lament",
+    "ja": "哀惜の雷鳴",
+    "de": "Donnerschlag der Trauer",
+    "fr": "Tonnerre du regret"
+  },
   "14462": {
     "en": "Water",
     "ja": "ウォータ",
     "de": "Aqua",
     "fr": "Eau"
+  },
+  "14463": {
+    "en": "Thundercall",
+    "ja": "招雷",
+    "de": "Donnerruf",
+    "fr": "Drain fulminant"
   },
   "14464": {
     "en": "Water II",
@@ -79192,6 +79672,42 @@
     "ja": "月遁血祭",
     "de": "Chimatsuri",
     "fr": "Chimatsuri"
+  },
+  "14476": {
+    "en": "Perception L",
+    "ja": "ロゴス・サイトラ",
+    "de": "Logos-Tigeraugen",
+    "fr": "Évocation Logos : Vision radar"
+  },
+  "14477": {
+    "en": "Wisdom of the Elder",
+    "ja": "賢者の記憶",
+    "de": "Vermächtnis des Weisen",
+    "fr": "Mémoire d'un sage"
+  },
+  "14478": {
+    "en": "Wisdom of the Duelist",
+    "ja": "剣豪の記憶",
+    "de": "Vermächtnis des Fechtmeisters",
+    "fr": "Mémoire d'une fine lame"
+  },
+  "14479": {
+    "en": "Wisdom of the Fiendhunter",
+    "ja": "弓聖の記憶",
+    "de": "Vermächtnis des Bogengeweihten",
+    "fr": "Mémoire d'un archer émérite"
+  },
+  "14480": {
+    "en": "Wisdom of the Indomitable",
+    "ja": "豪傑の記憶",
+    "de": "Vermächtnis des Helden",
+    "fr": "Mémoire d'un héros illustre"
+  },
+  "14481": {
+    "en": "Sacrifice L",
+    "ja": "ロゴス・サクリファイス",
+    "de": "Logos-Aufopferung",
+    "fr": "Évocation Logos : Sacrifice"
   },
   "14484": {
     "en": "Shockwave",
@@ -79349,6 +79865,18 @@
     "de": "Supernova",
     "fr": "Croix suprême"
   },
+  "14511": {
+    "en": "Massive Explosion",
+    "ja": "大爆発",
+    "de": "Detonation",
+    "fr": "Grosse explosion"
+  },
+  "14512": {
+    "en": "Putrefaction",
+    "ja": "有毒物質",
+    "de": "Vergiftende Substanz",
+    "fr": "Corps toxique"
+  },
   "14513": {
     "en": "Searchlight",
     "ja": "サーチライト",
@@ -79444,6 +79972,12 @@
     "ja": "デミ・ヴァルゴ",
     "de": "Demi-Virgo",
     "fr": "Demi-Vierge"
+  },
+  "14532": {
+    "en": "Attack",
+    "ja": "攻撃",
+    "de": "Attacke",
+    "fr": "Attaque"
   },
   "14534": {
     "en": "Holy IV",
@@ -79577,6 +80111,48 @@
     "de": "Extremkante",
     "fr": "Taille suprême"
   },
+  "14558": {
+    "en": "Plannyplot",
+    "ja": "戦術立案",
+    "de": "Gewiefte Taktik",
+    "fr": "Élaboration de tactique"
+  },
+  "14559": {
+    "en": "Gobspin Whooshdrops",
+    "ja": "ゴブ流回転斬り",
+    "de": "Nichtgroße Gobwirbel",
+    "fr": "Gobtoupie coupante"
+  },
+  "14560": {
+    "en": "Gobswipe Conklops",
+    "ja": "ゴブ流乱れ斬り",
+    "de": "Nichtgroße Gobwirbel",
+    "fr": "Gobhachage sauvage"
+  },
+  "14561": {
+    "en": "Discharge",
+    "ja": "銃撃",
+    "de": "Abfeuern",
+    "fr": "Mitraillage"
+  },
+  "14562": {
+    "en": "Iron Kiss",
+    "ja": "着弾",
+    "de": "Einschlag",
+    "fr": "Impact de canon"
+  },
+  "14563": {
+    "en": "Gobfire Shootypops",
+    "ja": "ゴブ流ハンドカノン",
+    "de": "Goblin-Wumme",
+    "fr": "Canon à main gobelin"
+  },
+  "14564": {
+    "en": "Gobfire Shootypops",
+    "ja": "ゴブ流ハンドカノン",
+    "de": "Goblin-Wumme",
+    "fr": "Canon à main gobelin"
+  },
   "14565": {
     "en": "●透明解除",
     "ja": "●透明解除",
@@ -79703,6 +80279,210 @@
     "de": "Woge der Schlange",
     "fr": "Vague de serpents"
   },
+  "14628": {
+    "en": "Acallam na Senorach",
+    "ja": "真妖槍旋",
+    "de": "Legendärer Lanzenwirbel",
+    "fr": "Spirale sépulcrale"
+  },
+  "14629": {
+    "en": "Acallam na Senorach",
+    "ja": "真妖槍旋",
+    "de": "Legendärer Lanzenwirbel",
+    "fr": "Spirale sépulcrale"
+  },
+  "14630": {
+    "en": "Warp",
+    "ja": "デジョン",
+    "de": "Rückführung",
+    "fr": "Rapatriement"
+  },
+  "14631": {
+    "en": "Mythcall",
+    "ja": "幻槍招来",
+    "de": "Mythenruf",
+    "fr": "Invitation fantasmagorique"
+  },
+  "14632": {
+    "en": "Legendcarver",
+    "ja": "妖槍振",
+    "de": "Legendenschnitzer",
+    "fr": "Taillade spectrale"
+  },
+  "14633": {
+    "en": "Legendspinner",
+    "ja": "妖槍旋",
+    "de": "Legendenspinner",
+    "fr": "Spirale spectrale"
+  },
+  "14634": {
+    "en": "Mythcarver",
+    "ja": "幻槍振",
+    "de": "Mythenschnitzer",
+    "fr": "Taillade fantasmagorique"
+  },
+  "14635": {
+    "en": "Mythspinner",
+    "ja": "幻槍旋",
+    "de": "Mythenspinner",
+    "fr": "Spirale fantasmagorique"
+  },
+  "14636": {
+    "en": "Glory Unearthed",
+    "ja": "重力地雷",
+    "de": "Wiedergeborener Ruhm",
+    "fr": "Mine gravitationnelle"
+  },
+  "14637": {
+    "en": "Glory Unearthed",
+    "ja": "重力地雷",
+    "de": "Wiedergeborener Ruhm",
+    "fr": "Mine gravitationnelle"
+  },
+  "14638": {
+    "en": "Jump",
+    "ja": "ジャンプ",
+    "de": "Sprung",
+    "fr": "Saut"
+  },
+  "14639": {
+    "en": "Pitfall",
+    "ja": "強襲",
+    "de": "Berstender Boden",
+    "fr": "Embûche"
+  },
+  "14640": {
+    "en": "Piercing Dark",
+    "ja": "闇の槍",
+    "de": "Lanze der Finsternis",
+    "fr": "Lance des ténèbres"
+  },
+  "14641": {
+    "en": "Piercing Dark",
+    "ja": "闇の槍",
+    "de": "Lanze der Finsternis",
+    "fr": "Lance des ténèbres"
+  },
+  "14642": {
+    "en": "Legendary Geas",
+    "ja": "妖槍乱撃",
+    "de": "Legendenhieb",
+    "fr": "Tuerie spectrale"
+  },
+  "14643": {
+    "en": "Defilers' Deserts",
+    "ja": "処刑場",
+    "de": "Martyrium",
+    "fr": "Échafaud"
+  },
+  "14644": {
+    "en": "Thricecull",
+    "ja": "三連槍",
+    "de": "Dreifachlanze",
+    "fr": "Triple perforation"
+  },
+  "14645": {
+    "en": "Acallam na Senorach",
+    "ja": "真妖槍旋",
+    "de": "Legendärer Lanzenwirbel",
+    "fr": "Spirale sépulcrale"
+  },
+  "14646": {
+    "en": "Mythcall",
+    "ja": "幻槍招来",
+    "de": "Mythenruf",
+    "fr": "Invitation fantasmagorique"
+  },
+  "14647": {
+    "en": "Elemental Shift",
+    "ja": "エレメントスイッチ",
+    "de": "Elementwechsel",
+    "fr": "Changement d'élément"
+  },
+  "14649": {
+    "en": "Elemental Shift",
+    "ja": "エレメントスイッチ",
+    "de": "Elementwechsel",
+    "fr": "Changement d'élément"
+  },
+  "14650": {
+    "en": "Elemental Magicks",
+    "ja": "エレメンタルマジック",
+    "de": "Elementmagie",
+    "fr": "Magie élémentaire"
+  },
+  "14651": {
+    "en": "Elemental Magicks",
+    "ja": "エレメンタルマジック",
+    "de": "Elementmagie",
+    "fr": "Magie élémentaire"
+  },
+  "14652": {
+    "en": "Elemental Magicks",
+    "ja": "エレメンタルマジック",
+    "de": "Elementmagie",
+    "fr": "Magie élémentaire"
+  },
+  "14653": {
+    "en": "Elemental Magicks",
+    "ja": "エレメンタルマジック",
+    "de": "Elementmagie",
+    "fr": "Magie élémentaire"
+  },
+  "14654": {
+    "en": "Spiritcull",
+    "ja": "連装魔",
+    "de": "Kettendämon",
+    "fr": "Salve magique"
+  },
+  "14655": {
+    "en": "Piercing Light",
+    "ja": "光の槍",
+    "de": "Lanze des Lichts",
+    "fr": "Lance de lumière"
+  },
+  "14656": {
+    "en": "Legendary Imbas",
+    "ja": "妖槍邪念",
+    "de": "Legendäre Boshaftigkeit",
+    "fr": "Fiel spectral"
+  },
+  "14657": {
+    "en": "Eurekan Aero",
+    "ja": "エウレカ・エアロ",
+    "de": "Eureka Aero",
+    "fr": "Vent d'Eurêka"
+  },
+  "14658": {
+    "en": "Explosion",
+    "ja": "爆発",
+    "de": "Explosion",
+    "fr": "Explosion"
+  },
+  "14659": {
+    "en": "Jump",
+    "ja": "ジャンプ",
+    "de": "Sprung",
+    "fr": "Saut"
+  },
+  "14660": {
+    "en": "Piercing Light",
+    "ja": "光の槍",
+    "de": "Lanze des Lichts",
+    "fr": "Lance de lumière"
+  },
+  "14661": {
+    "en": "Thricecull",
+    "ja": "三連槍",
+    "de": "Dreifachlanze",
+    "fr": "Triple perforation"
+  },
+  "14662": {
+    "en": "Acallam na Senorach",
+    "ja": "真妖槍旋",
+    "de": "Legendärer Lanzenwirbel",
+    "fr": "Spirale sépulcrale"
+  },
   "14663": {
     "en": "Fast Blade",
     "ja": "ファストブレード",
@@ -79739,6 +80519,12 @@
     "de": "Feuer",
     "fr": "Feu"
   },
+  "14669": {
+    "en": "Pitfall",
+    "ja": "強襲",
+    "de": "Berstender Boden",
+    "fr": "Embûche"
+  },
   "14670": {
     "en": "Magitek Slash",
     "ja": "マジテックスラッシュ",
@@ -79768,6 +80554,12 @@
     "ja": "ランドワスター",
     "de": "Landverwüster",
     "fr": "Dislocation terrestre"
+  },
+  "14676": {
+    "en": "Explosion",
+    "ja": "爆発",
+    "de": "Explosion",
+    "fr": "Explosion"
   },
   "14680": {
     "en": "Burst",
@@ -79865,6 +80657,30 @@
     "de": "Schwerer Beschuss",
     "fr": "Explosion secondaire"
   },
+  "14700": {
+    "en": "Meteor",
+    "ja": "メテオ",
+    "de": "Meteor",
+    "fr": "Météore"
+  },
+  "14701": {
+    "en": "Shooting Star",
+    "ja": "シューティングスター",
+    "de": "Sternschnuppe",
+    "fr": "Étoile filante"
+  },
+  "14702": {
+    "en": "Shooting Star",
+    "ja": "シューティングスター",
+    "de": "Sternschnuppe",
+    "fr": "Étoile filante"
+  },
+  "14703": {
+    "en": "Meteor",
+    "ja": "メテオ",
+    "de": "Meteor",
+    "fr": "Météore"
+  },
   "14704": {
     "en": "Snort",
     "ja": "鼻息",
@@ -79930,6 +80746,18 @@
     "ja": "1万ボルト",
     "de": "Megavolt",
     "fr": "Mégavolt"
+  },
+  "14715": {
+    "en": "Shooting Star",
+    "ja": "シューティングスター",
+    "de": "Sternschnuppe",
+    "fr": "Étoile filante"
+  },
+  "14716": {
+    "en": "Shooting Star",
+    "ja": "シューティングスター",
+    "de": "Sternschnuppe",
+    "fr": "Étoile filante"
   },
   "14717": {
     "en": "Lightning Bolt",
@@ -80020,6 +80848,54 @@
     "ja": "砕氷",
     "de": "Hypothermale Verbrennung",
     "fr": "Combustion hypothermique"
+  },
+  "14733": {
+    "en": "Lovey-dovey",
+    "ja": "しあわせの愛情",
+    "de": "Glückliche Liebe",
+    "fr": "Affection du bonheur"
+  },
+  "14734": {
+    "en": "Healthy and Happy",
+    "ja": "しあわせの癒やし",
+    "de": "Glückliche Heilung",
+    "fr": "Soin du bonheur"
+  },
+  "14736": {
+    "en": "Aqua Roar",
+    "ja": "アクアロア",
+    "de": "Aqua-Gebrüll",
+    "fr": "Aquarugissement"
+  },
+  "14737": {
+    "en": "Flash Flood",
+    "ja": "フラッシュフラッド",
+    "de": "Wasserschwall",
+    "fr": "Déluge soudain"
+  },
+  "14739": {
+    "en": "Spinning Kick",
+    "ja": "スピニングキック",
+    "de": "Rundumschlag",
+    "fr": "Coup de pied tournant"
+  },
+  "14741": {
+    "en": "Flood",
+    "ja": "フラッド",
+    "de": "Flut",
+    "fr": "Déluge"
+  },
+  "14742": {
+    "en": "Water III",
+    "ja": "ウォタガ",
+    "de": "Aquaga",
+    "fr": "Méga Eau"
+  },
+  "14743": {
+    "en": "Water",
+    "ja": "ウォータ",
+    "de": "Aqua",
+    "fr": "Eau"
   },
   "14744": {
     "en": "Imp Song",
@@ -80237,6 +81113,60 @@
     "de": "Einsaugen",
     "fr": "Aspiration"
   },
+  "14782": {
+    "en": "Pull of the Void",
+    "ja": "吸引",
+    "de": "Einsaugen",
+    "fr": "Aspiration"
+  },
+  "14783": {
+    "en": "Concussive Oscillation",
+    "ja": "オシレーション",
+    "de": "Oszillation",
+    "fr": "Oscillation"
+  },
+  "14784": {
+    "en": "Megastorm",
+    "ja": "メガストーム",
+    "de": "Megasturm",
+    "fr": "Méga tempête"
+  },
+  "14785": {
+    "en": "Torrential Torment",
+    "ja": "トレンチャートーメント",
+    "de": "Aufbrausen",
+    "fr": "Supplice de la trancheuse"
+  },
+  "14786": {
+    "en": "Rock Hard",
+    "ja": "ロッククラッシャー",
+    "de": "Felsspalter",
+    "fr": "Brise-roc"
+  },
+  "14787": {
+    "en": "Ion Shower",
+    "ja": "イオンシャワー",
+    "de": "Ionenschwarm",
+    "fr": "Douche d'ions"
+  },
+  "14788": {
+    "en": "Ion Storm",
+    "ja": "イオンストーム",
+    "de": "Ionensturm",
+    "fr": "Tempête d'ions"
+  },
+  "14789": {
+    "en": "Fluorescence",
+    "ja": "フロレセンス",
+    "de": "Floreszenz",
+    "fr": "Fluorescence"
+  },
+  "14790": {
+    "en": "Vitriolic Barrage",
+    "ja": "ヴィトリオリクバラージ",
+    "de": "Vitriol-Beschuss",
+    "fr": "Barrage au vitriol"
+  },
   "14849": {
     "en": "Onmyo Sigil",
     "ja": "陰陽の印",
@@ -80284,6 +81214,36 @@
     "ja": "蛇眼の印",
     "de": "Siegel des Schlangenauges",
     "fr": "Œil de serpent"
+  },
+  "14860": {
+    "en": "Mantle Drill",
+    "ja": "マントルドリル",
+    "de": "Mantelbohrer",
+    "fr": "Manteau forant"
+  },
+  "14861": {
+    "en": "Waterga III",
+    "ja": "ウォタガIII",
+    "de": "Aquaga III",
+    "fr": "OmniEau III"
+  },
+  "14863": {
+    "en": "Mantle Drill",
+    "ja": "マントルドリル",
+    "de": "Mantelbohrer",
+    "fr": "Manteau forant"
+  },
+  "14865": {
+    "en": "Riptide",
+    "ja": "引潮",
+    "de": "Ebbe",
+    "fr": "Reflux"
+  },
+  "14866": {
+    "en": "Watery Grave",
+    "ja": "水牢",
+    "de": "Wasserkäfig",
+    "fr": "Geôle aqueuse"
   },
   "14867": {
     "en": "Attack",
@@ -80525,6 +81485,198 @@
     "de": "Laufgraben",
     "fr": "Sapement"
   },
+  "14908": {
+    "en": "Main Trap",
+    "ja": "メイントラップ",
+    "de": "Verlockende Falle",
+    "fr": "Piège principal"
+  },
+  "14909": {
+    "en": "Sweet Nectar",
+    "ja": "スウィートネクター",
+    "de": "Süßer Nektar",
+    "fr": "Nectar sucré"
+  },
+  "14910": {
+    "en": "Sweet Nectar",
+    "ja": "スウィートネクター",
+    "de": "Süßer Nektar",
+    "fr": "Nectar sucré"
+  },
+  "14911": {
+    "en": "Sweet Nectar",
+    "ja": "スウィートネクター",
+    "de": "Süßer Nektar",
+    "fr": "Nectar sucré"
+  },
+  "14912": {
+    "en": "Fermata",
+    "ja": "フェルマータ",
+    "de": "Fermate",
+    "fr": "Point d'orgue"
+  },
+  "14913": {
+    "en": "Shockwave",
+    "ja": "ショックウェーブ",
+    "de": "Schocknetz",
+    "fr": "Onde de choc"
+  },
+  "14914": {
+    "en": "Dissever",
+    "ja": "ディッセバー",
+    "de": "Abtrennung",
+    "fr": "Division"
+  },
+  "14916": {
+    "en": "Nectar Refill",
+    "ja": "スウィートネクター・リフィル",
+    "de": "Nektarnachschub",
+    "fr": "Recharge en nectar"
+  },
+  "14917": {
+    "en": "Nectar Refill",
+    "ja": "スウィートネクター・リフィル",
+    "de": "Nektarnachschub",
+    "fr": "Recharge en nectar"
+  },
+  "14918": {
+    "en": "Nectar Refill",
+    "ja": "スウィートネクター・リフィル",
+    "de": "Nektarnachschub",
+    "fr": "Recharge en nectar"
+  },
+  "14920": {
+    "en": "Shock Spikes",
+    "ja": "ショックスパイク",
+    "de": "Schockstachel",
+    "fr": "Pointes de foudre"
+  },
+  "14921": {
+    "en": "Spine Lash",
+    "ja": "スパインラッシュ",
+    "de": "Rückenstich",
+    "fr": "Coup de fouet épineux"
+  },
+  "14922": {
+    "en": "Waterga III",
+    "ja": "ウォタガIII",
+    "de": "Aquaga III",
+    "fr": "OmniEau III"
+  },
+  "14924": {
+    "en": "Spine Lash",
+    "ja": "スパインラッシュ",
+    "de": "Rückenstich",
+    "fr": "Coup de fouet épineux"
+  },
+  "14925": {
+    "en": "Flood",
+    "ja": "フラッド",
+    "de": "Flut",
+    "fr": "Déluge"
+  },
+  "14929": {
+    "en": "Dunur Strike",
+    "ja": "デゥヌルストライク",
+    "de": "Grabschlag",
+    "fr": "Frappe foudroyante"
+  },
+  "14930": {
+    "en": "Thundris Shriek",
+    "ja": "鮮血の饗宴",
+    "de": "Blutmahl",
+    "fr": "Orgie sanglante"
+  },
+  "14931": {
+    "en": "Necromancy",
+    "ja": "ネクロマンシー",
+    "de": "Nekromantie",
+    "fr": "Nécromancie"
+  },
+  "14932": {
+    "en": "Dunur Strike",
+    "ja": "デゥヌルストライク",
+    "de": "Grabschlag",
+    "fr": "Frappe foudroyante"
+  },
+  "14933": {
+    "en": "Hellsnap",
+    "ja": "ヘルスナップ",
+    "de": "Höllenhieb",
+    "fr": "Coup infernal"
+  },
+  "14934": {
+    "en": "Hellclap",
+    "ja": "ヘルクラップ",
+    "de": "Höllenhieb",
+    "fr": "Soufflet infernal"
+  },
+  "14935": {
+    "en": "Dead or Undead",
+    "ja": "ゾンビーアタック",
+    "de": "Zombieklauen",
+    "fr": "Attaque zombie"
+  },
+  "14936": {
+    "en": "Dead or Undead",
+    "ja": "ゾンビーアタック",
+    "de": "Zombieklauen",
+    "fr": "Attaque zombie"
+  },
+  "14937": {
+    "en": "Dead or Undead",
+    "ja": "ゾンビーアタック",
+    "de": "Zombieklauen",
+    "fr": "Attaque zombie"
+  },
+  "14938": {
+    "en": "Trunk Tawse",
+    "ja": "トランクターズ",
+    "de": "Rüsselknute",
+    "fr": "Fouetté de trompe"
+  },
+  "14939": {
+    "en": "Tusk Charge",
+    "ja": "タスクチャージ",
+    "de": "Gehörnter Ansturm",
+    "fr": "Défenses offensives"
+  },
+  "14940": {
+    "en": "Tusk Charge",
+    "ja": "タスクチャージ",
+    "de": "Gehörnter Ansturm",
+    "fr": "Défenses offensives"
+  },
+  "14941": {
+    "en": "Siphon",
+    "ja": "バキューム",
+    "de": "Vakuum",
+    "fr": "Vidage"
+  },
+  "14942": {
+    "en": "Tusk Butt",
+    "ja": "タスクバット",
+    "de": "Donnerzahn",
+    "fr": "Coup de défense"
+  },
+  "14944": {
+    "en": "Mean Thrash",
+    "ja": "ミアンスラッシュ",
+    "de": "Saftige Abreibung",
+    "fr": "Attaque vicieuse"
+  },
+  "14945": {
+    "en": "Tusk Charge",
+    "ja": "タスクチャージ",
+    "de": "Gehörnter Ansturm",
+    "fr": "Défenses offensives"
+  },
+  "14946": {
+    "en": "Tusk Charge",
+    "ja": "タスクチャージ",
+    "de": "Gehörnter Ansturm",
+    "fr": "Défenses offensives"
+  },
   "14947": {
     "en": "Attack",
     "ja": "攻撃",
@@ -80554,6 +81706,18 @@
     "ja": "魔の誘惑",
     "de": "Fatale Verlockung",
     "fr": "Attraction fatale"
+  },
+  "14953": {
+    "en": "Rear",
+    "ja": "リア―",
+    "de": "Aufbäumen",
+    "fr": "Ruade"
+  },
+  "14954": {
+    "en": "Rock of Ages",
+    "ja": "ロック・オブ・エイジズ",
+    "de": "Steinzeitstein",
+    "fr": "Âge de pierre"
   },
   "14955": {
     "en": "Ballast",
@@ -80651,11 +81815,77 @@
     "de": "Sturm der Zerstörung",
     "fr": "Tempête dévastatrice"
   },
+  "14972": {
+    "en": "11-tonze Swipe",
+    "ja": "11トンズ・スワイプ",
+    "de": "11-Tonzen-Hieb",
+    "fr": "Fauche de 11 tonz"
+  },
+  "14973": {
+    "en": "111-tonze Swing",
+    "ja": "111トンズ・スイング",
+    "de": "111-Tonzen-Schwung",
+    "fr": "Swing de 111 tonz"
+  },
+  "14974": {
+    "en": "111-tonze Swing",
+    "ja": "1111トンズ・スイング",
+    "de": "1111-Tonzen-Schwung",
+    "fr": "Swing de 1111 tonz"
+  },
+  "14975": {
+    "en": "Order to Assault",
+    "ja": "突撃号令",
+    "de": "Sturmangriffsbefehl",
+    "fr": "Ordre d'attaque"
+  },
+  "14976": {
+    "en": "Order to Stand Fast",
+    "ja": "妨害号令",
+    "de": "Interventionsbefehl",
+    "fr": "Ordre d'obstruction"
+  },
+  "14977": {
+    "en": "11-tonze Cyclone",
+    "ja": "11トンズ・サイクロン",
+    "de": "11-Tonzen-Zyklon",
+    "fr": "Cyclone de 11 tonz"
+  },
+  "14978": {
+    "en": "11-tonze Swipe",
+    "ja": "11トンズ・スワイプ",
+    "de": "11-Tonzen-Hieb",
+    "fr": "Fauche de 11 tonz"
+  },
+  "14979": {
+    "en": "111-tonze Swing",
+    "ja": "111トンズ・スイング",
+    "de": "111-Tonzen-Schwung",
+    "fr": "Swing de 111 tonz"
+  },
+  "14980": {
+    "en": "Zoom In",
+    "ja": "ズームイン",
+    "de": "Anstürmen",
+    "fr": "Charge"
+  },
   "14982": {
     "en": "Northswain's Strike",
     "ja": "北斗骨砕打",
     "de": "Schlag des Polarsterns",
     "fr": "Frappe de l'Étoile Polaire"
+  },
+  "14985": {
+    "en": "リフォージ",
+    "ja": "リフォージ",
+    "de": "Rückkehr zur Esse",
+    "fr": "Reforge"
+  },
+  "14987": {
+    "en": "Reforge",
+    "ja": "リフォージ",
+    "de": "Rückkehr zur Esse",
+    "fr": "Reforge"
   },
   "14988": {
     "en": "Serpent's Fang",
@@ -80669,11 +81899,293 @@
     "de": "Schlangenmaul",
     "fr": "Crochet de serpent"
   },
+  "14992": {
+    "en": "Euhedral Swat",
+    "ja": "ユヘドラルスワット",
+    "de": "Automorph-Schlag",
+    "fr": "Frappe automorphe"
+  },
+  "14993": {
+    "en": "Touchdown",
+    "ja": "タッチダウン",
+    "de": "Himmelssturz",
+    "fr": "Atterrissage"
+  },
+  "14994": {
+    "en": "Akh Morn",
+    "ja": "アク・モーン",
+    "de": "Akh Morn",
+    "fr": "Akh Morn"
+  },
+  "14995": {
+    "en": "Akh Morn",
+    "ja": "アク・モーン",
+    "de": "Akh Morn",
+    "fr": "Akh Morn"
+  },
+  "14996": {
+    "en": "Ice and Wind",
+    "ja": "アイス・アンド・ウィンド",
+    "de": "Eis und Wind",
+    "fr": "Glace et vent"
+  },
+  "14997": {
+    "en": "Ice and Levin",
+    "ja": "アイス・アンド・ライトニング",
+    "de": "Eis und Blitz",
+    "fr": "Glace et éclair"
+  },
+  "14998": {
+    "en": "Diffractive Break",
+    "ja": "ディフラクトブレイク",
+    "de": "Defraktion",
+    "fr": "Fracture diffractive"
+  },
+  "14999": {
+    "en": "Hot Tail",
+    "ja": "ヒートテイル",
+    "de": "Schwelender Schweif",
+    "fr": "Queue calorifique"
+  },
+  "15000": {
+    "en": "The Scarlet Whisper",
+    "ja": "真紅の吐息",
+    "de": "Drakonischer Atem",
+    "fr": "Souffle écarlate"
+  },
+  "15001": {
+    "en": "The Scarlet Price",
+    "ja": "真紅の珠",
+    "de": "Scharlachrotes Wispern",
+    "fr": "Gemme écarlate"
+  },
+  "15002": {
+    "en": "Charybdis",
+    "ja": "ミールストーム",
+    "de": "Charybdis",
+    "fr": "Charybde"
+  },
   "15003": {
     "en": "Ultimate Illusion",
     "ja": "究極幻想",
     "de": "Ultimative Illusion",
     "fr": "Fantaisie finale"
+  },
+  "15004": {
+    "en": "フェーゾンビーム",
+    "ja": "フェーゾンビーム",
+    "de": "フェーゾンビーム",
+    "fr": "Rayon de phasons"
+  },
+  "15005": {
+    "en": "Thunderstorm",
+    "ja": "サンダーストーム",
+    "de": "Gewitter",
+    "fr": "Tempête de foudre"
+  },
+  "15006": {
+    "en": "Chillstorm",
+    "ja": "ブリザードストーム",
+    "de": "Entfesselter Blizzard",
+    "fr": "Blizzard tempétueux"
+  },
+  "15007": {
+    "en": "Hot Tail",
+    "ja": "ヒートテイル",
+    "de": "Schwelender Schweif",
+    "fr": "Queue calorifique"
+  },
+  "15008": {
+    "en": "Mark of the Beast",
+    "ja": "ビーストクロー",
+    "de": "Messerscharfe Pranke",
+    "fr": "Griffes bestiales"
+  },
+  "15009": {
+    "en": "Firespit",
+    "ja": "ファイアースピット",
+    "de": "Feuerspucke",
+    "fr": "Crachat embrasé"
+  },
+  "15010": {
+    "en": "Blistering Roar",
+    "ja": "ブリスターロア",
+    "de": "Glühendes Gebrüll",
+    "fr": "Rugissement torride"
+  },
+  "15011": {
+    "en": "Volcanic Bomb",
+    "ja": "ヴォルカニックボム",
+    "de": "Vulkanische Bombe",
+    "fr": "Bombe volcanique"
+  },
+  "15012": {
+    "en": "Encinder",
+    "ja": "インシネレーター",
+    "de": "Einäscherung",
+    "fr": "Incinérateur"
+  },
+  "15013": {
+    "en": "Pyroclastic Surge",
+    "ja": "パイロクラストサージ",
+    "de": "Pyroklastischer Schub",
+    "fr": "Poussée pyroclastique"
+  },
+  "15014": {
+    "en": "Pyroclastic Surge",
+    "ja": "パイロクラストサージ",
+    "de": "Pyroklastischer Schub",
+    "fr": "Poussée pyroclastique"
+  },
+  "15015": {
+    "en": "Lava Dome",
+    "ja": "ラヴァドーム",
+    "de": "Lavakuppel",
+    "fr": "Dôme de lave"
+  },
+  "15016": {
+    "en": "Burn",
+    "ja": "燃焼",
+    "de": "Verbrennung",
+    "fr": "Combustion"
+  },
+  "15017": {
+    "en": "Blaze Spikes",
+    "ja": "ブレイズスパイク",
+    "de": "Feuerstachel",
+    "fr": "Pointes de feu"
+  },
+  "15018": {
+    "en": "Firespit",
+    "ja": "ファイアースピット",
+    "de": "Feuerspucke",
+    "fr": "Crachat embrasé"
+  },
+  "15019": {
+    "en": "Pyroclastic Flow",
+    "ja": "パイロクラスティックフロウ",
+    "de": "Pyroklastisches Gebrüll",
+    "fr": "Flot pyroclastique"
+  },
+  "15020": {
+    "en": "Incinerate",
+    "ja": "焼却",
+    "de": "Einäscherung",
+    "fr": "Crémation"
+  },
+  "15021": {
+    "en": "Volcanic Glow",
+    "ja": "ヴォルカニックグロウ",
+    "de": "Vulkanisches Gebrüll",
+    "fr": "Lueur volcanique"
+  },
+  "15022": {
+    "en": "Magma Chamber",
+    "ja": "マグマチャンバー",
+    "de": "Magmasprung",
+    "fr": "Chambre magmatique"
+  },
+  "15023": {
+    "en": "Volcanic Glow",
+    "ja": "ヴォルカニックグロウ",
+    "de": "Vulkanisches Gebrüll",
+    "fr": "Lueur volcanique"
+  },
+  "15024": {
+    "en": "Magma Chamber",
+    "ja": "マグマチャンバー",
+    "de": "Magmasprung",
+    "fr": "Chambre magmatique"
+  },
+  "15025": {
+    "en": "Upburst",
+    "ja": "突出",
+    "de": "Quantengravitation",
+    "fr": "Saillie"
+  },
+  "15026": {
+    "en": "Wallop",
+    "ja": "叩きつけ",
+    "de": "Eindreschen",
+    "fr": "Rossée"
+  },
+  "15027": {
+    "en": "Wallop",
+    "ja": "叩きつけ",
+    "de": "Eindreschen",
+    "fr": "Rossée"
+  },
+  "15028": {
+    "en": "Clearout",
+    "ja": "なぎ払い",
+    "de": "Kreisfeger",
+    "fr": "Fauchage"
+  },
+  "15029": {
+    "en": "Roiling Reach",
+    "ja": "乱撃",
+    "de": "Wilder Angriff",
+    "fr": "Tuerie"
+  },
+  "15030": {
+    "en": "Chilling Glare",
+    "ja": "恐怖の魔眼",
+    "de": "Blick des Grauens",
+    "fr": "Œil magique terrifiant"
+  },
+  "15031": {
+    "en": "Spellwind",
+    "ja": "魔台風",
+    "de": "Magischer Taifun",
+    "fr": "Typhon magique"
+  },
+  "15032": {
+    "en": "Spellwind",
+    "ja": "魔台風",
+    "de": "Magischer Taifun",
+    "fr": "Typhon magique"
+  },
+  "15033": {
+    "en": "Netherwater",
+    "ja": "異界の汚水",
+    "de": "Kloake des Nichts",
+    "fr": "Eaux d'outre-monde"
+  },
+  "15034": {
+    "en": "Flailing Tentacles",
+    "ja": "触手",
+    "de": "Tentakel",
+    "fr": "Tentacule"
+  },
+  "15035": {
+    "en": "Netherfall",
+    "ja": "異界の暴雨",
+    "de": "Wolkenbruch des Nichts",
+    "fr": "Déluge d'outre-monde"
+  },
+  "15036": {
+    "en": "Netherflow",
+    "ja": "異界の激流",
+    "de": "Strömung des Nichts",
+    "fr": "Torrent d'outre-monde"
+  },
+  "15037": {
+    "en": "Netherwater",
+    "ja": "異界の汚水",
+    "de": "Kloake des Nichts",
+    "fr": "Eaux d'outre-monde"
+  },
+  "15038": {
+    "en": "Netherfall",
+    "ja": "異界の暴雨",
+    "de": "Wolkenbruch des Nichts",
+    "fr": "Déluge d'outre-monde"
+  },
+  "15039": {
+    "en": "Netherflow",
+    "ja": "異界の激流",
+    "de": "Strömung des Nichts",
+    "fr": "Torrent d'outre-monde"
   },
   "15040": {
     "en": "Ignition",
@@ -80861,6 +82373,1038 @@
     "de": "Widderhüter",
     "fr": "Gardien du bélier"
   },
+  "15084": {
+    "en": "Lumisphere",
+    "ja": "ルミスフィア",
+    "de": "Lumisphäre",
+    "fr": "Lumisphère"
+  },
+  "15085": {
+    "en": "Brackish Rain",
+    "ja": "ブラキッシュレイン",
+    "de": "Brackiger Regen",
+    "fr": "Pluie saumâtre"
+  },
+  "15086": {
+    "en": "Critical Bite",
+    "ja": "クリティカルバイト",
+    "de": "Kritischer Biss",
+    "fr": "Morsure critique"
+  },
+  "15087": {
+    "en": "Zillion Needles",
+    "ja": "針幾万本",
+    "de": "Zigtausend Nadeln",
+    "fr": "Trouze mille aiguilles"
+  },
+  "15088": {
+    "en": "Soul Drain",
+    "ja": "ソウルドレイン",
+    "de": "Seelensauger",
+    "fr": "Aspiration d'âme"
+  },
+  "15089": {
+    "en": "Ruin",
+    "ja": "ルイン",
+    "de": "Ruin",
+    "fr": "Ruine"
+  },
+  "15090": {
+    "en": "Aqueous Discharge",
+    "ja": "液汁散布",
+    "de": "Wässriges Exkret",
+    "fr": "Décharge aqueuse"
+  },
+  "15091": {
+    "en": "Amorphic Flail",
+    "ja": "アモーフィックフレイル",
+    "de": "Amorphe Dresche",
+    "fr": "Agitation amorphe"
+  },
+  "15092": {
+    "en": "Pounce",
+    "ja": "パウンス",
+    "de": "Raubtiertatze",
+    "fr": "Attaque subite"
+  },
+  "15093": {
+    "en": "Megablaster",
+    "ja": "メガブラスター",
+    "de": "Megaschlag",
+    "fr": "Méga électrochoc"
+  },
+  "15094": {
+    "en": "Sticky Tongue",
+    "ja": "スティッキータン",
+    "de": "Spitze Zunge",
+    "fr": "Langue poisseuse"
+  },
+  "15095": {
+    "en": "Proboscis",
+    "ja": "プロビスカス",
+    "de": "Proboscis",
+    "fr": "Probiscis"
+  },
+  "15096": {
+    "en": "Proboscis",
+    "ja": "プロビスカス",
+    "de": "Proboscis",
+    "fr": "Probiscis"
+  },
+  "15097": {
+    "en": "Petribreath",
+    "ja": "ペトロブレス",
+    "de": "Petri-Atem",
+    "fr": "Pétrihaleine"
+  },
+  "15098": {
+    "en": "Blizzard",
+    "ja": "ブリザド",
+    "de": "Eis",
+    "fr": "Glace"
+  },
+  "15099": {
+    "en": "Water",
+    "ja": "ウォータ",
+    "de": "Aqua",
+    "fr": "Eau"
+  },
+  "15100": {
+    "en": "Yowl",
+    "ja": "鳴き声",
+    "de": "Jaulen",
+    "fr": "Miaulement"
+  },
+  "15101": {
+    "en": "Burst",
+    "ja": "大爆発",
+    "de": "Detonation",
+    "fr": "Grosse explosion"
+  },
+  "15102": {
+    "en": "Burst",
+    "ja": "大爆発",
+    "de": "Detonation",
+    "fr": "Grosse explosion"
+  },
+  "15103": {
+    "en": "Screwdriver",
+    "ja": "スクリュードライバー",
+    "de": "Schraubenzieher",
+    "fr": "Tournevis"
+  },
+  "15104": {
+    "en": "Blizzard",
+    "ja": "ブリザド",
+    "de": "Eis",
+    "fr": "Glace"
+  },
+  "15105": {
+    "en": "Thunder",
+    "ja": "サンダー",
+    "de": "Blitz",
+    "fr": "Foudre"
+  },
+  "15106": {
+    "en": "Shock Spikes",
+    "ja": "ショックスパイク",
+    "de": "Schockstachel",
+    "fr": "Pointes de foudre"
+  },
+  "15107": {
+    "en": "Somersault Slash",
+    "ja": "サマーソルトスラッシュ",
+    "de": "Salto mortale",
+    "fr": "Pirouette tranchante"
+  },
+  "15108": {
+    "en": "Somersault Slash",
+    "ja": "サマーソルトスラッシュ",
+    "de": "Salto mortale",
+    "fr": "Pirouette tranchante"
+  },
+  "15109": {
+    "en": "Nutshell",
+    "ja": "ナットシェル",
+    "de": "Nussschale",
+    "fr": "Coquille"
+  },
+  "15110": {
+    "en": "Caustic Vomit",
+    "ja": "コースティックヴォミット",
+    "de": "Kaustischer Auswurf",
+    "fr": "Vomi caustique"
+  },
+  "15111": {
+    "en": "Flash Flood",
+    "ja": "フラッシュフラッド",
+    "de": "Wasserschwall ",
+    "fr": "Déluge soudain"
+  },
+  "15112": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15113": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15114": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15115": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15116": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15117": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15118": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15119": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15120": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15121": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15122": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15123": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15124": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15125": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15126": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
+  },
+  "15127": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15128": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15129": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15130": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15131": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15132": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15133": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15134": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15135": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15136": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15137": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15138": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15139": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15140": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15141": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15142": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15143": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15144": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15145": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15146": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15147": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15148": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15149": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15150": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15151": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15152": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15153": {
+    "en": "Mutation",
+    "ja": "突然変異",
+    "de": "Mutation",
+    "fr": "Mutation"
+  },
+  "15154": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15155": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15156": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15157": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15158": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15159": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15160": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15161": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15162": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15163": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15164": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15165": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15166": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15167": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15168": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15169": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15170": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15171": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15172": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15173": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15174": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15175": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15176": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15177": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15178": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15179": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15180": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15181": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15182": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15183": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15184": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15185": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15186": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15187": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15188": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15189": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15190": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15191": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15192": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15193": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15194": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15195": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15196": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15197": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15198": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15199": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15200": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15201": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15202": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15203": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15204": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15205": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15206": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15207": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15208": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15209": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15210": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15211": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15212": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15213": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15214": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15215": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15216": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15217": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15218": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15219": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15220": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15221": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15222": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15223": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15224": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15225": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15226": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15227": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15228": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15229": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15230": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15231": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15232": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15233": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15234": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15235": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15236": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15237": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15238": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15239": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15240": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15241": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15242": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15243": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15244": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15245": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15246": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15247": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15248": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15249": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15250": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15251": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15252": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15253": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15254": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15255": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
   "15256": {
     "en": "Trounce",
     "ja": "トラウンス",
@@ -80897,11 +83441,329 @@
     "de": "Komet",
     "fr": "Comète"
   },
+  "15262": {
+    "en": "Mighty Strikes",
+    "ja": "マイティストライク",
+    "de": "Mächtiger Schlag",
+    "fr": "Frappe puissante"
+  },
+  "15263": {
+    "en": "Absolute Benediction",
+    "ja": "女神の祝福",
+    "de": "Segen der Göttin",
+    "fr": "Bénédiction"
+  },
+  "15264": {
+    "en": "Hallowed Ground",
+    "ja": "インビンシブル",
+    "de": "Heiliger Boden",
+    "fr": "Invincible"
+  },
+  "15265": {
+    "en": "Meteor",
+    "ja": "メテオ",
+    "de": "Meteor",
+    "fr": "Météore"
+  },
+  "15266": {
+    "en": "Auroral Wind",
+    "ja": "オーロラルウィンド",
+    "de": "Aurorawind",
+    "fr": "Vent d'aurore"
+  },
+  "15267": {
+    "en": "Dualcast",
+    "ja": "連続魔",
+    "de": "Doppelzauber",
+    "fr": "Chaîne de sorts"
+  },
   "15268": {
     "en": "10-tonze Wave",
     "ja": "10トンズ・ウェーブ",
     "de": "10-Tonzen-Welle",
     "fr": "Vague de 10 tonz"
+  },
+  "15269": {
+    "en": "Feathercut",
+    "ja": "フェザーカッター",
+    "de": "Federschnitt",
+    "fr": "Coupe de plumes"
+  },
+  "15270": {
+    "en": "Feather Breeze",
+    "ja": "フェザーブリーズ",
+    "de": "Federsturm",
+    "fr": "Brise plumeuse"
+  },
+  "15271": {
+    "en": "Wingbeat",
+    "ja": "ウィングガスト",
+    "de": "Flügelschlag",
+    "fr": "Battement d'ailes"
+  },
+  "15272": {
+    "en": "Eye of the Fierce",
+    "ja": "猛禽の眼",
+    "de": "Grimmiger Blick",
+    "fr": "Œil de rapace"
+  },
+  "15273": {
+    "en": "Wind Unbound",
+    "ja": "ウィンドアンバウンド",
+    "de": "Entfesselter Wind",
+    "fr": "Relâche de vent"
+  },
+  "15274": {
+    "en": "Thermal Tumult",
+    "ja": "サーマルタマルト",
+    "de": "Frühlingswind",
+    "fr": "Tumulte thermique"
+  },
+  "15275": {
+    "en": "ギガストーム",
+    "ja": "ギガストーム",
+    "de": "Gigasturm",
+    "fr": "ギガストーム"
+  },
+  "15276": {
+    "en": "Wings of Woe",
+    "ja": "ウィング・オブ・ウォウ",
+    "de": "Schwingen des Leids",
+    "fr": "Ailes d'adversité"
+  },
+  "15277": {
+    "en": "Terror Eye",
+    "ja": "テラーアイ",
+    "de": "Terrorauge",
+    "fr": "Œil de la terreur"
+  },
+  "15278": {
+    "en": "Mantle Pierce",
+    "ja": "マントルピアス",
+    "de": "Mantelstich",
+    "fr": "Mante percée"
+  },
+  "15279": {
+    "en": "Spin",
+    "ja": "ぶん回す",
+    "de": "Verwirbeln",
+    "fr": "Gyrocoup"
+  },
+  "15280": {
+    "en": "Barbarous Scream",
+    "ja": "野蛮な咆哮",
+    "de": "Barbarisches Brüllen",
+    "fr": "Hurlement barbare"
+  },
+  "15281": {
+    "en": "Foreburst",
+    "ja": "フォーバースト",
+    "de": "Vorschnellen",
+    "fr": "Avancée explosive"
+  },
+  "15282": {
+    "en": "Brightflame",
+    "ja": "ブライトフレイム",
+    "de": "Helle Flamme",
+    "fr": "Flamme brillante"
+  },
+  "15283": {
+    "en": "Stampede",
+    "ja": "スタンピード",
+    "de": "Stampede",
+    "fr": "Débandade"
+  },
+  "15284": {
+    "en": "Hoofkick",
+    "ja": "フーキック",
+    "de": "Huftritt",
+    "fr": "Coup de sabot"
+  },
+  "15285": {
+    "en": "Stampede",
+    "ja": "スタンピード",
+    "de": "Stampede",
+    "fr": "Débandade"
+  },
+  "15286": {
+    "en": "Hoofkick",
+    "ja": "フーキック",
+    "de": "Huftritt",
+    "fr": "Coup de sabot"
+  },
+  "15287": {
+    "en": "Trunk Tawse",
+    "ja": "トランクターズ",
+    "de": "Rüsselknute",
+    "fr": "Fouetté de trompe"
+  },
+  "15288": {
+    "en": "Rout",
+    "ja": "猛進",
+    "de": "Kolossgalopp",
+    "fr": "Irruption"
+  },
+  "15289": {
+    "en": "Rear",
+    "ja": "リアー",
+    "de": "Aufbäumen",
+    "fr": "Ruade"
+  },
+  "15290": {
+    "en": "Hall of Sorrow",
+    "ja": "ホール・オブ・ソロウ",
+    "de": "Halle des Schmerzes ",
+    "fr": "Hall du chagrin"
+  },
+  "15291": {
+    "en": "Valfodr",
+    "ja": "ヴァルファズル",
+    "de": "Valfodr",
+    "fr": "Valfodr"
+  },
+  "15292": {
+    "en": "Shuck",
+    "ja": "シェルブレイカー",
+    "de": "Enthülsen",
+    "fr": "Décorticage"
+  },
+  "15293": {
+    "en": "Impale",
+    "ja": "串刺し",
+    "de": "Aufspießen",
+    "fr": "Embrochement"
+  },
+  "15294": {
+    "en": "Damnation Dive",
+    "ja": "ダムネーションダイブ",
+    "de": "Verdammnissturz",
+    "fr": "Plongeon de damnation"
+  },
+  "15295": {
+    "en": "Deeproot",
+    "ja": "ディープルート",
+    "de": "Tiefe Verwurzelung ",
+    "fr": "Racines profondes"
+  },
+  "15296": {
+    "en": "Odious Air",
+    "ja": "オディアスエアー",
+    "de": "Abstoßender Odem",
+    "fr": "Pestilence"
+  },
+  "15297": {
+    "en": "Valfodr",
+    "ja": "ヴァルファズル",
+    "de": "Valfodr",
+    "fr": "Valfodr"
+  },
+  "15298": {
+    "en": "Peck",
+    "ja": "つっつき",
+    "de": "Picken",
+    "fr": "Picorage"
+  },
+  "15299": {
+    "en": "Scission Thrust",
+    "ja": "シジョンスラスト",
+    "de": "Spaltschub",
+    "fr": "Coup scindant"
+  },
+  "15300": {
+    "en": "Scission Thrust",
+    "ja": "シジョンスラスト",
+    "de": "Spaltschub",
+    "fr": "Coup scindant"
+  },
+  "15301": {
+    "en": "Fire Dust",
+    "ja": "火の粉",
+    "de": "Feuerstaub",
+    "fr": "Poussière de feu"
+  },
+  "15302": {
+    "en": "Rotoswipe",
+    "ja": "ロトスワイプ",
+    "de": "Rotorschlag",
+    "fr": "Rotofauche"
+  },
+  "15303": {
+    "en": "Rotoswipe",
+    "ja": "ロトスワイプ",
+    "de": "Rotorschlag",
+    "fr": "Rotofauche"
+  },
+  "15304": {
+    "en": "Wrecking Ball",
+    "ja": "粉砕鉄球",
+    "de": "Mörser",
+    "fr": "Boule de démolition"
+  },
+  "15305": {
+    "en": "Whipcrack",
+    "ja": "ウィップクラック",
+    "de": "Schmetterpeitsche",
+    "fr": "Claquement de fouet"
+  },
+  "15306": {
+    "en": "Aetherial Blast",
+    "ja": "エーテルブラスト",
+    "de": "Ätherexplosion",
+    "fr": "Explosion d'éther"
+  },
+  "15307": {
+    "en": "Whipcrack",
+    "ja": "ウィップクラック",
+    "de": "Schmetterpeitsche",
+    "fr": "Claquement de fouet"
+  },
+  "15308": {
+    "en": "Isso",
+    "ja": "一掃",
+    "de": "Isso",
+    "fr": "Isso"
+  },
+  "15309": {
+    "en": "Isso",
+    "ja": "一掃",
+    "de": "Isso",
+    "fr": "Isso"
+  },
+  "15310": {
+    "en": "Catching Claws",
+    "ja": "キャッチクロウ",
+    "de": "Bohrgriff",
+    "fr": "Griffes étripeuses"
+  },
+  "15311": {
+    "en": "Frumious Jaws",
+    "ja": "フリューミアスジョーズ",
+    "de": "Mampfes Maul",
+    "fr": "Mâchoires furieuses"
+  },
+  "15312": {
+    "en": "Entropic Flame",
+    "ja": "エントロピックフレイム",
+    "de": "Entropische Flamme",
+    "fr": "Flamme entropique"
+  },
+  "15313": {
+    "en": "Accursed Pox",
+    "ja": "悪疫の呪詛",
+    "de": "Seuche",
+    "fr": "Vérole maudite"
+  },
+  "15314": {
+    "en": "Ancient Eruption",
+    "ja": "エンシェントエラプション",
+    "de": "Antike Eruption",
+    "fr": "Éruption ancienne"
+  },
+  "15315": {
+    "en": "Adaptation",
+    "ja": "環境適応",
+    "de": "Adaptierung",
+    "fr": "Adaptation"
   },
   "15316": {
     "en": "Raging Axe",
@@ -80987,11 +83849,341 @@
     "de": "Zerbersten",
     "fr": "Auto-atomisation"
   },
+  "15330": {
+    "en": "Ruin",
+    "ja": "ルイン",
+    "de": "Ruin",
+    "fr": "Ruine"
+  },
+  "15331": {
+    "en": "Ruin",
+    "ja": "ルイン",
+    "de": "Ruin",
+    "fr": "Ruine"
+  },
+  "15332": {
+    "en": "Ruin",
+    "ja": "ルイン",
+    "de": "Ruin",
+    "fr": "Ruine"
+  },
+  "15333": {
+    "en": "Wind Unbound",
+    "ja": "ウィンドアンバウンド",
+    "de": "Entfesselter Wind",
+    "fr": "Relâche de vent"
+  },
+  "15334": {
+    "en": "Molt",
+    "ja": "モルト",
+    "de": "Mort",
+    "fr": "Trépas"
+  },
+  "15335": {
+    "en": "Feathercut",
+    "ja": "フェザーカッター",
+    "de": "Federschnitt",
+    "fr": "Coupe de plumes"
+  },
+  "15336": {
+    "en": "Ripper Claw",
+    "ja": "リッパークロウ",
+    "de": "Fetzklaue",
+    "fr": "Griffe éventreuse"
+  },
+  "15337": {
+    "en": "Tail Smash",
+    "ja": "テールスマッシュ",
+    "de": "Schweifschlag",
+    "fr": "Queue fracassante"
+  },
+  "15338": {
+    "en": "Tail Swing",
+    "ja": "テールスイング",
+    "de": "Schwanzfeger",
+    "fr": "Queue balayante"
+  },
+  "15339": {
+    "en": "Head Down",
+    "ja": "ビーストチャージ",
+    "de": "Scharrende Hufe",
+    "fr": "Charge bestiale"
+  },
+  "15340": {
+    "en": "Bloodboil",
+    "ja": "大興奮",
+    "de": "Kochendes Blut",
+    "fr": "Surexcitation"
+  },
+  "15341": {
+    "en": "Big Ripper Claw",
+    "ja": "ビッグ・リッパークロウ",
+    "de": "Kochendes Blut",
+    "fr": "Grande griffe éventreuse"
+  },
+  "15342": {
+    "en": "Heavy Tail Smash",
+    "ja": "ヘヴィ・テールスマッシュ",
+    "de": "Schwerer Schweifschlag",
+    "fr": "Queue fracassante lourde"
+  },
+  "15343": {
+    "en": "Heavy Tail Swing",
+    "ja": "ヘヴィ・テールスイング",
+    "de": "Schwerer Schweifschwung",
+    "fr": "Queue balayante lourde"
+  },
+  "15344": {
+    "en": "Pillar Pierce",
+    "ja": "激突",
+    "de": "Durchschlag",
+    "fr": "Frappe puissante"
+  },
+  "15345": {
+    "en": "Stool Pelt",
+    "ja": "岩石投げ",
+    "de": "Steinschleudern",
+    "fr": "Catapultage"
+  },
+  "15346": {
+    "en": "Pillar Impact",
+    "ja": "崩落",
+    "de": "Säuleneinschlag",
+    "fr": "Chute"
+  },
+  "15347": {
+    "en": "Build Up",
+    "ja": "ビルドアップ",
+    "de": "Angriffsvorbereitung",
+    "fr": "Affermissement"
+  },
+  "15348": {
+    "en": "Smash",
+    "ja": "スマッシュ",
+    "de": "Schmettern",
+    "fr": "Fracassement"
+  },
+  "15349": {
+    "en": "Raging Axe",
+    "ja": "レイジングアクス",
+    "de": "Wütende Axt",
+    "fr": "Hache enragée"
+  },
+  "15350": {
+    "en": "Starstorm",
+    "ja": "プチメテオ",
+    "de": "Sternensturm",
+    "fr": "Tempête d'étoiles"
+  },
+  "15351": {
+    "en": "Lightning Spark",
+    "ja": "プチサンダー",
+    "de": "Kleiner Blitz",
+    "fr": "Petite foudre"
+  },
+  "15352": {
+    "en": "Stone",
+    "ja": "ストーン",
+    "de": "Stein",
+    "fr": "Terre"
+  },
+  "15353": {
+    "en": "Condensed Libra",
+    "ja": "プチライブラ",
+    "de": "Kurzanalyse",
+    "fr": "Acuité concentrée"
+  },
+  "15354": {
+    "en": "Triple Hit",
+    "ja": "3回ヒット",
+    "de": "Dreifachschlag",
+    "fr": "Triple coup"
+  },
+  "15355": {
+    "en": "Page Tear",
+    "ja": "かぎ爪",
+    "de": "Pergamentfetzer",
+    "fr": "Griffure"
+  },
+  "15356": {
+    "en": "Tail Smash",
+    "ja": "テールスマッシュ",
+    "de": "Schweifschlag",
+    "fr": "Queue fracassante"
+  },
+  "15357": {
+    "en": "Magic Hammer",
+    "ja": "マジックハンマー",
+    "de": "Zauberhammer",
+    "fr": "Marteau magique"
+  },
+  "15358": {
+    "en": "Berserk",
+    "ja": "ベルセルク",
+    "de": "Berserker",
+    "fr": "Furie"
+  },
+  "15359": {
+    "en": "Rear",
+    "ja": "リアー",
+    "de": "Aufbäumen",
+    "fr": "Ruade"
+  },
+  "15360": {
+    "en": "Thrub",
+    "ja": "ブン殴り",
+    "de": "Randalieren",
+    "fr": "Bourrade"
+  },
+  "15361": {
+    "en": "Deep Darkness",
+    "ja": "ディープヴォイドオーラ",
+    "de": "Zwielicht-Aura",
+    "fr": "Aura du néant profond"
+  },
+  "15362": {
+    "en": "Magic Burst",
+    "ja": "マジックバースト",
+    "de": "Magieexplosion",
+    "fr": "Explosion magique"
+  },
+  "15363": {
+    "en": "Toy Hammer",
+    "ja": "トイハンマー",
+    "de": "Spielzeughammer",
+    "fr": "Jouet marteau"
+  },
+  "15364": {
+    "en": "Flood",
+    "ja": "フラッド",
+    "de": "Flut",
+    "fr": "Déluge"
+  },
+  "15365": {
+    "en": "Water III",
+    "ja": "ウォタガ",
+    "de": "Aquaga",
+    "fr": "Méga Eau"
+  },
+  "15366": {
+    "en": "Terrifying Glance",
+    "ja": "恐怖の瞳",
+    "de": "Schauerlicher Blick",
+    "fr": "Yeux terrifiants"
+  },
   "15367": {
     "en": "Holy IV",
     "ja": "ホーリジャ",
     "de": "Giga-Sanctus",
     "fr": "Giga Miracle"
+  },
+  "15368": {
+    "en": "Slapstick",
+    "ja": "スラップスティック",
+    "de": "Puppenpritsche",
+    "fr": "Férule"
+  },
+  "15369": {
+    "en": "Iron Justice",
+    "ja": "アイアンジャスティス",
+    "de": "Eiserne Gerechtigkeit",
+    "fr": "Justice de fer"
+  },
+  "15370": {
+    "en": "Cloudcover",
+    "ja": "クラウドカバー",
+    "de": "Wolkendecke",
+    "fr": "Couvre-nuage"
+  },
+  "15371": {
+    "en": "Tight Tornado",
+    "ja": "タイトトルネード",
+    "de": "Tobender Tornado",
+    "fr": "Tornade tendue"
+  },
+  "15372": {
+    "en": "Ancient Aero III",
+    "ja": "エンシェントエアロガ",
+    "de": "Antikes Windga",
+    "fr": "Méga Vent ancien"
+  },
+  "15373": {
+    "en": "On the Properties of Darkness",
+    "ja": "ダークラの章",
+    "de": "Theorie der Dunkelung II",
+    "fr": "Des propriétés d'Extra Obscurité"
+  },
+  "15376": {
+    "en": "Paralyze",
+    "ja": "パライズ",
+    "de": "Paralyse",
+    "fr": "Paralysie"
+  },
+  "15377": {
+    "en": "Chirp",
+    "ja": "チャープ",
+    "de": "Fiepsen",
+    "fr": "Gazouillement"
+  },
+  "15378": {
+    "en": "Heat Gaze",
+    "ja": "ヒートゲイズ",
+    "de": "Brennender Blick",
+    "fr": "Regard de chaleur"
+  },
+  "15379": {
+    "en": "Heat Gaze",
+    "ja": "ヒートゲイズ",
+    "de": "Brennender Blick",
+    "fr": "Regard de chaleur"
+  },
+  "15380": {
+    "en": "Terror Eye",
+    "ja": "テラーアイ",
+    "de": "Terrorauge",
+    "fr": "Œil de la terreur"
+  },
+  "15381": {
+    "en": "Dread Gaze",
+    "ja": "恐怖の視線",
+    "de": "Blick des Grauens",
+    "fr": "Regard terrifiant"
+  },
+  "15382": {
+    "en": "Fire",
+    "ja": "ファイア",
+    "de": "Feuer",
+    "fr": "Feu"
+  },
+  "15383": {
+    "en": "Banish III",
+    "ja": "バニシュガ",
+    "de": "Verbannga",
+    "fr": "Méga Bannissement"
+  },
+  "15384": {
+    "en": "Banish",
+    "ja": "バニシュ",
+    "de": "Verbannga",
+    "fr": "Bannissement"
+  },
+  "15385": {
+    "en": "Dark",
+    "ja": "ダーク",
+    "de": "Dunkelung",
+    "fr": "Ténèbres"
+  },
+  "15386": {
+    "en": "Ram",
+    "ja": "頭突き",
+    "de": "Kohlkopfstoß",
+    "fr": "Coup de boule"
+  },
+  "15387": {
+    "en": "Stone",
+    "ja": "ストーン",
+    "de": "Stein",
+    "fr": "Terre"
   },
   "15388": {
     "en": "Blue Bolt",
@@ -81053,11 +84245,491 @@
     "de": "Aufstieg der Schlange",
     "fr": "Dragon levant"
   },
+  "15398": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15399": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15400": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15401": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15402": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15403": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15404": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15405": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15406": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15407": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15408": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15409": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15410": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15411": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15412": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15413": {
+    "en": "攻撃",
+    "ja": "攻撃",
+    "de": "攻撃",
+    "fr": "攻撃"
+  },
+  "15414": {
+    "en": "Water",
+    "ja": "ウォータ",
+    "de": "Aqua",
+    "fr": "Eau"
+  },
+  "15415": {
+    "en": "Sucker",
+    "ja": "サッカー",
+    "de": "Sauger",
+    "fr": "Succion"
+  },
+  "15416": {
+    "en": "Flood",
+    "ja": "フラッド",
+    "de": "Flut",
+    "fr": "Déluge"
+  },
+  "15417": {
+    "en": "Spiritus",
+    "ja": "霊水",
+    "de": "Wunderwasser",
+    "fr": "Spiritus"
+  },
+  "15418": {
+    "en": "どろんこ遊び",
+    "ja": "どろんこ遊び",
+    "de": "Schlammpfützen",
+    "fr": "どろんこ遊び"
+  },
+  "15419": {
+    "en": "Standing Chine",
+    "ja": "スタンディングチャイン",
+    "de": "Erhobene Schere",
+    "fr": "Échine verticale"
+  },
+  "15420": {
+    "en": "Standing Chine",
+    "ja": "スタンディングチャイン",
+    "de": "Erhobene Schere",
+    "fr": "Échine verticale"
+  },
+  "15421": {
+    "en": "Puncture",
+    "ja": "パンクチャー",
+    "de": "Punktion",
+    "fr": "Ponction"
+  },
+  "15422": {
+    "en": "Splatter",
+    "ja": "体液飛散",
+    "de": "Schleimspritzer",
+    "fr": "Projection de mucus"
+  },
+  "15423": {
+    "en": "Rush",
+    "ja": "突進",
+    "de": "Stürmen",
+    "fr": "Ruée"
+  },
+  "15424": {
+    "en": "Mole-a-whack",
+    "ja": "デスストンプ",
+    "de": "Todesstopper",
+    "fr": "Piétinement de la mort"
+  },
+  "15425": {
+    "en": "Head Butt",
+    "ja": "ヘッドバット",
+    "de": "Kopfstoß",
+    "fr": "Coup de tête"
+  },
+  "15426": {
+    "en": "Trounce",
+    "ja": "トラウンス",
+    "de": "Fetzenreißer",
+    "fr": "Écrabouillement"
+  },
+  "15427": {
+    "en": "Spinning Kick",
+    "ja": "スピニングキック",
+    "de": "Rundumschlag",
+    "fr": "Coup de pied tournant"
+  },
+  "15428": {
+    "en": "Lightning Bolt",
+    "ja": "いなずま",
+    "de": "Blitzschlag",
+    "fr": "Fulguration"
+  },
+  "15429": {
+    "en": "Fluid Swing",
+    "ja": "フルイドスイング",
+    "de": "Flüssiger Schwung",
+    "fr": "Coup fluide"
+  },
+  "15430": {
+    "en": "Straight Punch",
+    "ja": "ボーンブレイカー",
+    "de": "Gerade",
+    "fr": "Direct"
+  },
+  "15431": {
+    "en": "Plain Pound",
+    "ja": "プレインパウンド",
+    "de": "Wuchtiges Stampfen",
+    "fr": "Martèlement violent"
+  },
+  "15432": {
+    "en": "Straight Punch",
+    "ja": "ボーンブレイカー",
+    "de": "Gerade",
+    "fr": "Direct"
+  },
+  "15433": {
+    "en": "Heartburn",
+    "ja": "ハートバーン",
+    "de": "Sodbrennen",
+    "fr": "Brûlures d'estomac"
+  },
+  "15434": {
+    "en": "Spinal Tap",
+    "ja": "スパイナルタップ",
+    "de": "Lumbalpunktion",
+    "fr": "Ponction lombaire"
+  },
+  "15435": {
+    "en": "Apitoxin",
+    "ja": "アピトキシンスプレー",
+    "de": "Apitoxin",
+    "fr": "Apitoxine"
+  },
+  "15436": {
+    "en": "Butcher",
+    "ja": "ブッチャークロー",
+    "de": "Metzgern",
+    "fr": "Griffe massacrante"
+  },
+  "15437": {
+    "en": "Rip",
+    "ja": "リッパークロー",
+    "de": "Fetzen",
+    "fr": "Griffe éventreuse"
+  },
+  "15438": {
+    "en": "Twister",
+    "ja": "大竜巻",
+    "de": "Wilder Wirbelwind ",
+    "fr": "Grande tornade"
+  },
+  "15439": {
+    "en": "Tenka Goken",
+    "ja": "天下五剣",
+    "de": "Tenka Goken",
+    "fr": "Tenka Goken"
+  },
+  "15440": {
+    "en": "Pounce",
+    "ja": "パウンス",
+    "de": "Raubtiertatze",
+    "fr": "Attaque subite"
+  },
+  "15441": {
+    "en": "Mark of the Beast",
+    "ja": "ビーストクロー",
+    "de": "Messerscharfe Pranke",
+    "fr": "Griffes bestiales"
+  },
+  "15442": {
+    "en": "Transonic Blast",
+    "ja": "トランソニックブラスト",
+    "de": "Transschall",
+    "fr": "Explosion transsonique"
+  },
+  "15443": {
+    "en": "Flying Frenzy",
+    "ja": "狂乱",
+    "de": "Rasender Sturz",
+    "fr": "Démence"
+  },
+  "15444": {
+    "en": "Foul Bite",
+    "ja": "ファウルバイト",
+    "de": "Fäulnisbiss",
+    "fr": "Morsure fétide"
+  },
+  "15445": {
+    "en": "Arcane Howl",
+    "ja": "魔の遠吠え",
+    "de": "Arkanes Heulen",
+    "fr": "Hurlement diabolique"
+  },
+  "15446": {
+    "en": "Ecliptic Bite",
+    "ja": "エクリプスバイト",
+    "de": "Ekliptik-Biss",
+    "fr": "Morsure écliptique"
+  },
+  "15447": {
+    "en": "Fluid Strike",
+    "ja": "フルイドストライク",
+    "de": "Flüssiger Schlag",
+    "fr": "Frappe fluide"
+  },
+  "15448": {
+    "en": "Circle Blade",
+    "ja": "サークルブレード",
+    "de": "Kreisklinge",
+    "fr": "Lame circulaire"
+  },
+  "15449": {
+    "en": "Fire Toss",
+    "ja": "ファイアトス",
+    "de": "Feuriger Wurf",
+    "fr": "Projection ardente"
+  },
+  "15450": {
+    "en": "Grim Cleaver",
+    "ja": "グリムクリーバー",
+    "de": "Grausamer Schlitzer",
+    "fr": "Couperet funeste"
+  },
+  "15451": {
+    "en": "Grim Fate",
+    "ja": "グリムフェイト",
+    "de": "Bitteres Los",
+    "fr": "Destin funeste"
+  },
+  "15452": {
+    "en": "Grim Halo",
+    "ja": "グリムヘイロー",
+    "de": "Grollschein",
+    "fr": "Halo funeste"
+  },
+  "15453": {
+    "en": "Desolation",
+    "ja": "デソレーション",
+    "de": "Desolation",
+    "fr": "Affliction"
+  },
+  "15454": {
+    "en": "Body Slam",
+    "ja": "ボディスラム",
+    "de": "Bodenwelle",
+    "fr": "Charge physique"
+  },
+  "15455": {
+    "en": "Cold Gaze",
+    "ja": "コールドゲイズ",
+    "de": "Kalter Blick",
+    "fr": "Regard tétanisant"
+  },
+  "15456": {
+    "en": "Body Slam",
+    "ja": "ボディスラム",
+    "de": "Bodenwelle",
+    "fr": "Charge physique"
+  },
+  "15457": {
+    "en": "Stone Gaze",
+    "ja": "ストーンゲイズ",
+    "de": "Versteinernder Blick",
+    "fr": "Regard pétrifiant"
+  },
+  "15458": {
+    "en": "Seismic Rift",
+    "ja": "サイズミックリフト",
+    "de": "Seismischer Bruch",
+    "fr": "Fissure sismique"
+  },
+  "15459": {
+    "en": "Trunk Tawse",
+    "ja": "トランクターズ",
+    "de": "Rüsselknute",
+    "fr": "Fouetté de trompe"
+  },
+  "15460": {
+    "en": "Rock of Ages",
+    "ja": "ロック・オブ・エイジズ",
+    "de": "Steinzeitstein",
+    "fr": "Âge de pierre"
+  },
+  "15461": {
+    "en": "Collapse",
+    "ja": "カラップス",
+    "de": "Kollabieren",
+    "fr": "Effondrement"
+  },
+  "15462": {
+    "en": "Collapse",
+    "ja": "カラップス",
+    "de": "Kollabieren",
+    "fr": "Effondrement"
+  },
+  "15463": {
+    "en": "Blazing Trail",
+    "ja": "ブレイジングトレイル",
+    "de": "Feuerschweif",
+    "fr": "Trace embrasée"
+  },
+  "15464": {
+    "en": "Crystal Needle",
+    "ja": "クリスタルニードル",
+    "de": "Kristallnadel",
+    "fr": "Aiguille cristalline"
+  },
+  "15465": {
+    "en": "Silkscreen",
+    "ja": "シルクスクリーン",
+    "de": "Seidenschirm",
+    "fr": "Écran de soie"
+  },
+  "15466": {
+    "en": "Sickle Strike",
+    "ja": "シックルストライク",
+    "de": "Sichelschlag",
+    "fr": "Frappe de faucille"
+  },
+  "15467": {
+    "en": "Nemesis Burst",
+    "ja": "ネメシスバースト",
+    "de": "Nemesis-Knall",
+    "fr": "Explosion vindicative"
+  },
+  "15468": {
+    "en": "Abyssal Reaper",
+    "ja": "アビサルリーパー",
+    "de": "Abyssalriss",
+    "fr": "Faucheur des abysses"
+  },
+  "15469": {
+    "en": "Petrifaction",
+    "ja": "ペトリファクション",
+    "de": "Versteinerung",
+    "fr": "Pétrification"
+  },
+  "15470": {
+    "en": "Circle Blade",
+    "ja": "サークルブレード",
+    "de": "Kreisklinge",
+    "fr": "Lame circulaire"
+  },
+  "15471": {
+    "en": "Tail Slap",
+    "ja": "テールスラップ",
+    "de": "Schweifklapser",
+    "fr": "Gifle caudale"
+  },
+  "15472": {
+    "en": "Circle of Flames",
+    "ja": "サークル・オブ・フレイム",
+    "de": "Feuerkreis",
+    "fr": "Cercle de flammes"
+  },
+  "15473": {
+    "en": "Petrattraction",
+    "ja": "ペトリアトラクト",
+    "de": "Petrifikation",
+    "fr": "Attraction pétrifiante"
+  },
   "15474": {
     "en": "Forbidden Arts",
     "ja": "刀禁呪",
     "de": "Verbotene Künste",
     "fr": "Lame interdite"
+  },
+  "15475": {
+    "en": "Petrifaction",
+    "ja": "ペトリファクション",
+    "de": "Versteinerung",
+    "fr": "Pétrification"
+  },
+  "15476": {
+    "en": "Petrattraction",
+    "ja": "ペトリアトラクト",
+    "de": "Petrifikation",
+    "fr": "Attraction pétrifiante"
+  },
+  "15477": {
+    "en": "Wile of the Tengu",
+    "ja": "天狗の仕業",
+    "de": "Tricks des Tengu",
+    "fr": "Malice de tengu"
+  },
+  "15478": {
+    "en": "Brutal Beast Charge",
+    "ja": "ブルータル・ビーストチャージ",
+    "de": "Brutaler Bestiensturm",
+    "fr": "Charge bestiale brutale"
   },
   "15479": {
     "en": "Eruption",
@@ -81071,16 +84743,22 @@
     "de": "Eruption",
     "fr": "Éruption"
   },
+  "15481": {
+    "en": "Pebble",
+    "ja": "石つぶて",
+    "de": "Kiesel",
+    "fr": "Caillou"
+  },
   "15482": {
     "en": "魔導プラズマ",
     "ja": "魔導プラズマ",
-    "de": "魔導プラズマ",
+    "de": "Magitek-Plasma",
     "fr": "魔導プラズマ"
   },
   "15483": {
     "en": "魔導プラズマ",
     "ja": "魔導プラズマ",
-    "de": "魔導プラズマ",
+    "de": "Magitek-Plasma",
     "fr": "魔導プラズマ"
   },
   "15484": {
@@ -81095,11 +84773,23 @@
     "de": "Imperiale Autorität",
     "fr": "Autorité impériale"
   },
+  "15487": {
+    "en": "Buller's Drop",
+    "ja": "弾丸",
+    "de": "Lotos-Flip",
+    "fr": "Goutte de Buller"
+  },
   "15488": {
     "en": "Crossbones",
     "ja": "クロスボーン",
     "de": "Totenschädel",
     "fr": "Tête de mort"
+  },
+  "15489": {
+    "en": "Ruin",
+    "ja": "ルイン",
+    "de": "Ruin",
+    "fr": "Ruine"
   },
   "15490": {
     "en": "Forbidden Arts",
@@ -81112,5 +84802,53 @@
     "ja": "陰陽五行",
     "de": "Fünftes Element",
     "fr": "Cinq éléments"
+  },
+  "15549": {
+    "en": "Silence",
+    "ja": "サイレス",
+    "de": "Schweigen",
+    "fr": "Silence"
+  },
+  "15909": {
+    "en": "Dualcast",
+    "ja": "連続魔",
+    "de": "Doppelzauber",
+    "fr": "Chaîne de sorts"
+  },
+  "15910": {
+    "en": "Mighty Strikes",
+    "ja": "マイティストライク",
+    "de": "Mächtiger Schlag",
+    "fr": "Frappe puissante"
+  },
+  "15911": {
+    "en": "Meteor",
+    "ja": "メテオ",
+    "de": "Sternschnuppe",
+    "fr": "Météore"
+  },
+  "15912": {
+    "en": "Aeroga IV",
+    "ja": "エアロガIV",
+    "de": "Aeroga IV",
+    "fr": "OmniVent IV"
+  },
+  "15913": {
+    "en": "Aeroga IV",
+    "ja": "エアロガIV",
+    "de": "Aeroga IV",
+    "fr": "OmniVent IV"
+  },
+  "15914": {
+    "en": "Tornado II",
+    "ja": "トルネドII",
+    "de": "Tornado II",
+    "fr": "Tornade II"
+  },
+  "15915": {
+    "en": "Tornado II",
+    "ja": "トルネドII",
+    "de": "Tornado II",
+    "fr": "Tornade II"
   }
 }

@@ -15,7 +15,7 @@ import {
   first,
   map,
   pairwise,
-  shareReplay,
+  shareReplay, skip,
   startWith,
   takeUntil,
   tap
@@ -219,20 +219,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       cp: [180, Validators.required],
       level: [0, Validators.required],
       specialist: [false]
-    });
-
-    this.statsForm.valueChanges.pipe(
-      takeUntil(this.onDestroy$),
-      distinctUntilChanged((prev, next) => prev.specialist === next.specialist)
-    ).subscribe(stats => {
-      if (stats.specialist) {
-        stats.craftsmanship += 20;
-        stats.control += 20;
-      } else if (stats.craftsmanship > 0 && stats.control > 0) {
-        stats.craftsmanship -= 20;
-        stats.control -= 20;
-      }
-      this.statsForm.patchValue(stats, { emitEvent: false });
     });
 
     this.foods = consumablesService.fromData(foods)
@@ -594,7 +580,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     if (this.selectedFood !== undefined && this.selectedFood !== null) {
       const foodBonus = this.selectedFood.getBonus(bonusType);
       if (foodBonus !== undefined) {
-        bonusFromFood = Math.ceil(baseValue * foodBonus.value);
+        bonusFromFood = Math.floor(baseValue * foodBonus.value);
         if (bonusFromFood > foodBonus.max) {
           bonusFromFood = foodBonus.max;
         }
@@ -603,7 +589,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     if (this.selectedMedicine !== undefined && this.selectedMedicine !== null) {
       const medicineBonus = this.selectedMedicine.getBonus(bonusType);
       if (medicineBonus !== undefined) {
-        bonusFromMedicine = Math.ceil(baseValue * medicineBonus.value);
+        bonusFromMedicine = Math.floor(baseValue * medicineBonus.value);
         if (bonusFromMedicine > medicineBonus.max) {
           bonusFromMedicine = medicineBonus.max;
         }
@@ -686,6 +672,18 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   saveSafeMode(value: boolean): void {
     localStorage.setItem('simulator:safe-mode', value.toString());
+  }
+
+  toggleSpecialist(): void {
+    const stats = this.statsForm.getRawValue();
+    if (stats.specialist) {
+      stats.craftsmanship += 20;
+      stats.control += 20;
+    } else if (stats.craftsmanship > 0 && stats.control > 0) {
+      stats.craftsmanship -= 20;
+      stats.control -= 20;
+    }
+    this.statsForm.patchValue(stats, { emitEvent: false });
   }
 
   ngOnDestroy(): void {

@@ -82,17 +82,6 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  communityLists$ = this.store.select(listsQuery.getCompacts).pipe(
-    map((compacts) => {
-      return compacts
-        .filter(c => {
-          return c.public;
-        })
-        .sort((a, b) => a.$key > b.$key ? -1 : 1);
-    }),
-    shareReplay(1)
-  );
-
   selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(filter(list => list !== undefined));
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(

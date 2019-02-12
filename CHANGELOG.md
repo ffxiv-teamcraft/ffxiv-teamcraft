@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.25"></a>
+## [5.0.25](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.24...v5.0.25) (2019-02-12)
+
+
+### Bug Fixes
+
+* **gathering-location:** fixed an issue with ephemeral node status ([28a722e](https://github.com/Supamiu/ffxiv-teamcraft/commit/28a722e))
+* **list:** fixed an issue with some lists being deleted in details while they still exist ([d268520](https://github.com/Supamiu/ffxiv-teamcraft/commit/d268520))
+* **simulator:** fixed an issue with specialist stats toggle ([f82421b](https://github.com/Supamiu/ffxiv-teamcraft/commit/f82421b))
+* **simulator:** fixed an issue with the bonus from consumables being ceiled instead of floored ([aab8b88](https://github.com/Supamiu/ffxiv-teamcraft/commit/aab8b88))
+
+
+### Features
+
+* support for 4.55 update ([c825217](https://github.com/Supamiu/ffxiv-teamcraft/commit/c825217))
+
+
+
 <a name="5.0.24"></a>
 ## [5.0.24](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.23...v5.0.24) (2019-02-10)
 

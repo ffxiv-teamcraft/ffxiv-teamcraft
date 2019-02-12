@@ -88,10 +88,10 @@ export class GatheringLocationComponent {
             });
         }));
 
-        const nodesFromGarlandBell = [].concat.apply([], ...items
+        const nodesFromGarlandBell = [].concat.apply([], items
           .map(item => {
             return [].concat.apply([],
-              ...[item.obj.i, ...reductions[item.obj.i]].map(itemId => {
+              [item.obj.i, ...reductions[item.obj.i]].map(itemId => {
                 return this.bell.getNodesByItemId(itemId)
                   .map(node => {
                     const nodePosition = nodePositions[node.id];
@@ -173,15 +173,26 @@ export class GatheringLocationComponent {
           return [];
         }).filter(res => res !== undefined));
 
-        const results = [...nodesFromPositions, ...nodesFromGarlandBell, ...nodesFromFishing];
+        const results = [...nodesFromGarlandBell,
+          ...nodesFromPositions,
+          ...nodesFromFishing];
 
         //Once we have the resulting nodes, we need to remove the ones that appear twice or more for the same item.
         const finalNodes = [];
-        results.forEach(row => {
-          if (finalNodes.find(node => node.itemId === row.itemId && node.zoneid === row.zoneid && node.type === row.type) === undefined) {
-            finalNodes.push(row);
-          }
-        });
+        results
+          .sort((a, b) => {
+            if (a.ephemeral && !b.ephemeral) {
+              return -1;
+            } else if (b.ephemeral && !a.ephemeral) {
+              return 1;
+            }
+            return 0;
+          })
+          .forEach(row => {
+            if (!finalNodes.some(node => node.itemId === row.itemId && node.zoneid === row.zoneid && node.type === row.type)) {
+              finalNodes.push(row);
+            }
+          });
 
         return finalNodes;
       }),
