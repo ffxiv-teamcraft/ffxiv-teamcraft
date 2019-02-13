@@ -24,8 +24,24 @@ function getCompact(list) {
   return compact;
 }
 
+function registerItemsCreation(items) {
+  return Promise.all(items.map(item => {
+    return admin.database().ref('/stats').transaction(current => {
+      current = current || {};
+      const entry = current[`${item.id}:${item.recipeId}`];
+      if (entry === undefined) {
+        current[`${item.id}:${item.recipeId}`] = [Date.now()];
+      } else {
+        entry.push(Date.now());
+        current[`${item.id}:${item.recipeId}`] = entry;
+      }
+      return current;
+    });
+  }));
+}
+
 // Firestore counts
-exports.firestoreCountlistsCreate = functions.firestore.document('/lists/{uid}').onCreate(() => {
+exports.firestoreCountlistsCreate = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
   const ref = admin.database().ref('/list_count');
   const creationsRef = admin.database().ref('/lists_created');
   // Increment the number of lists created using the tool.
@@ -46,11 +62,16 @@ exports.firestoreCountlistsDelete = functions.firestore.document('/lists/{uid}')
 
 exports.createListCompacts = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
   const compact = getCompact(snap.data.data());
+  registerItemsCreation(snap.data.data().finalItems);
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
 });
 
 exports.updateListCompacts = functions.firestore.document('/lists/{uid}').onUpdate((snap) => {
   const compact = getCompact(snap.data.data());
+  const diff = snap.after.data().finalItems.filter(item => !snap.before.data().finalItems.some(i => i.id === item.id));
+  if (diff.length > 0) {
+    registerItemsCreation(diff);
+  }
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
 });
 

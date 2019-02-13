@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.26"></a>
+## [5.0.26](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.25...v5.0.26) (2019-02-13)
+
+
+### Bug Fixes
+
+* **list-details:** fixed an issue with team members assignment ([4f95d63](https://github.com/Supamiu/ffxiv-teamcraft/commit/4f95d63))
+
+
+
 <a name="5.0.25"></a>
 ## [5.0.25](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.24...v5.0.25) (2019-02-12)
 
