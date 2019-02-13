@@ -124,6 +124,19 @@ export class ListDetailsComponent extends TeamcraftComponent implements OnInit, 
     ).subscribe(regeneratedList => {
       this.listsFacade.updateList(regeneratedList);
     });
+
+    combineLatest(this.list$, this.teamsFacade.allTeams$, this.teamsFacade.selectedTeam$).pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(([list, teams, selectedTeam]) => {
+      if (list.teamId !== undefined) {
+        if (!teams.some(team => team.$key === list.teamId)) {
+          this.teamsFacade.loadTeam(list.teamId);
+        }
+        if (selectedTeam === undefined || selectedTeam.$key !== list.teamId) {
+          this.teamsFacade.select(list.teamId);
+        }
+      }
+    });
   }
 
   ngOnInit() {
