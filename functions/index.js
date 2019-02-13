@@ -27,6 +27,7 @@ function getCompact(list) {
 function registerItemsCreation(items) {
   return Promise.all(items.map(item => {
     return admin.database().ref('/stats').transaction(current => {
+      current = current || {};
       const entry = current[`${item.id}:${item.recipeId}`];
       if (entry === undefined) {
         current[`${item.id}:${item.recipeId}`] = [Date.now()];
