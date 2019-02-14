@@ -10,17 +10,19 @@ import {
   LoadListCompact,
   LoadListDetails,
   LoadListsWithWriteAccess,
-  LoadMyLists, LoadTeamLists,
+  LoadMyLists,
+  LoadTeamLists,
   NeedsVerification,
   SelectList,
-  SetItemDone, UnloadListDetails,
+  SetItemDone,
+  UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -47,7 +49,11 @@ export class ListsFacade {
     }),
     map(lists => {
       return lists.sort((a, b) => {
-        return a.index - b.index;
+        let res = a.index - b.index;
+        if (res === 0) {
+          res = new Date(a.createdAt).getTime() > new Date(b.createdAt).getTime() ? -1 : 1;
+        }
+        return res;
       });
     }),
     shareReplay(1)
