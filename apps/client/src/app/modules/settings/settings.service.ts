@@ -24,6 +24,14 @@ export class SettingsService {
     this.setSetting('base-link', base);
   }
 
+  public get timeFormat(): '24H' | '12H' {
+    return this.getSetting('time-format', '24H') as '24H' | '12H';
+  }
+
+  public set timeFormat(format: '24H' | '12H') {
+    this.setSetting('time-format', format);
+  }
+
   public get autoOpenInDesktop(): boolean {
     return this.getSetting('auto-open-in-desktop', 'true') === 'true';
   }
@@ -82,7 +90,7 @@ export class SettingsService {
   }
 
   public get theme(): Theme {
-    const themeName =  this.getSetting('theme', 'DEFAULT');
+    const themeName = this.getSetting('theme', 'DEFAULT');
     return Theme.byName(themeName);
   }
 
