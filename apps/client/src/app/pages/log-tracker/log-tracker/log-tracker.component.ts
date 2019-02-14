@@ -14,8 +14,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-log-tracker',
   templateUrl: './log-tracker.component.html',
-  styleUrls: ['./log-tracker.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./log-tracker.component.less']
 })
 export class LogTrackerComponent {
 
@@ -75,6 +74,10 @@ export class LogTrackerComponent {
     ).subscribe((list) => {
       this.router.navigate(['/list', list.$key]);
     });
+  }
+
+  public getPageCompletion(page: any): string {
+    return `${page.recipes.filter(recipe => this.userCompletion[recipe.recipeId]).length}/${page.recipes.length}`;
   }
 
   public getIcon(index: number): string {

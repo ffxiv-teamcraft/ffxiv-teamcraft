@@ -68,7 +68,7 @@ exports.createListCompacts = functions.firestore.document('/lists/{uid}').onCrea
 
 exports.updateListCompacts = functions.firestore.document('/lists/{uid}').onUpdate((snap) => {
   const compact = getCompact(snap.data.data());
-  const diff = snap.after.data().finalItems.filter(item => !snap.before.data().finalItems.some(i => i.id === item.id));
+  const diff = snap.data.data().finalItems.filter(item => !snap.data.previous.data().finalItems.some(i => i.id === item.id));
   if (diff.length > 0) {
     registerItemsCreation(diff);
   }

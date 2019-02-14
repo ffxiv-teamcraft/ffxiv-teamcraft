@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-pricing-row',
@@ -40,7 +41,8 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   private onDestroy$: Subject<void> = new Subject<void>();
 
   constructor(private pricingService: PricingService, private message: NzMessageService,
-              private translator: TranslateService, private cd: ChangeDetectorRef) {
+              private translator: TranslateService, private cd: ChangeDetectorRef,
+              public settings: SettingsService) {
   }
 
   public _craftCost: number;

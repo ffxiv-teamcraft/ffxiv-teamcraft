@@ -79,6 +79,8 @@ export class AppComponent implements OnInit {
 
   public time$: Observable<string>;
 
+  private reloadTime$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+
   public desktop = false;
 
   public hasDesktop$: Observable<boolean>;
@@ -115,11 +117,20 @@ export class AppComponent implements OnInit {
       })
     );
 
-    this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
-      map(date => {
-        const minutes = date.getUTCMinutes();
-        const minutesStr = minutes < 10 ? '0' + minutes : minutes;
-        return `${date.getUTCHours()}:${minutesStr}`;
+    this.time$ = this.reloadTime$.pipe(
+      switchMap(() => {
+        return this.eorzeanTime.getEorzeanTime().pipe(
+          map(date => {
+            const minutes = date.getUTCMinutes();
+            const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+            if (this.settings.timeFormat === '24H') {
+              return `${date.getUTCHours()}:${minutesStr}`;
+            }
+            const rawHours = date.getUTCHours();
+            const suffix = rawHours >= 12 ? 'PM' : 'AM';
+            return `${rawHours % 12}:${minutesStr} ${suffix}`;
+          })
+        );
       })
     );
 
@@ -241,6 +252,15 @@ export class AppComponent implements OnInit {
       this.renderer.removeClass(document.body, change.previous.className);
       this.renderer.addClass(document.body, change.next.className);
     }));
+  }
+
+  public toggleTimeFormat(): void {
+    if (this.settings.timeFormat === '24H') {
+      this.settings.timeFormat = '12H';
+    } else {
+      this.settings.timeFormat = '24H';
+    }
+    this.reloadTime$.next(null);
   }
 
   public onNavLinkClick(): void {

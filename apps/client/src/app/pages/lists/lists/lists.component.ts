@@ -133,15 +133,6 @@ export class ListsComponent {
           otherLists: lists.filter(l => !l.public)
         };
       }),
-      tap(display => {
-        display.otherLists
-          .forEach((l, i) => {
-            if ((l.index === -1 || l.index !== i) && !this.regenerating) {
-              l.index = i;
-              this.listsFacade.updateListIndex(l);
-            }
-          });
-      }),
       shareReplay(1)
     );
     this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(

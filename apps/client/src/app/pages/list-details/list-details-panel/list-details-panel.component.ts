@@ -18,6 +18,7 @@ import { ItemPickerService } from '../../../modules/item-picker/item-picker.serv
 import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -49,7 +50,7 @@ export class ListDetailsPanelComponent implements OnChanges {
               private message: NzMessageService, private translate: TranslateService,
               private dialog: NzModalService, private listsFacade: ListsFacade,
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
-              private progress: ProgressPopupService) {
+              private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService) {
     this.permissionLevel$ = this.listsFacade.selectedListPermissionLevel$;
   }
 
@@ -177,6 +178,9 @@ export class ListDetailsPanelComponent implements OnChanges {
         this.tiers = this.setTier(row, this.tiers);
       });
     }
+    this.tiers = this.tiers.map(tier => {
+      return this.layoutOrderService.order(tier, this.displayRow.layoutRow.orderBy, this.displayRow.layoutRow.order);
+    })
   }
 
   private topologicalSort(data: ListRow[]): ListRow[] {
