@@ -11,6 +11,8 @@ export class LayoutRowFilter {
 
   static IS_GATHERING = new LayoutRowFilter(row => row.gatheredBy !== undefined, 'IS_GATHERING');
 
+  static IS_TRADE = new LayoutRowFilter(row => row.tradeSources !== undefined && row.tradeSources.length > 0, 'IS_TRADE');
+
   static CAN_BE_BOUGHT = new LayoutRowFilter(row => {
     return row.vendors !== undefined && row.vendors.length > 0;
   }, 'CAN_BE_BOUGHT');
