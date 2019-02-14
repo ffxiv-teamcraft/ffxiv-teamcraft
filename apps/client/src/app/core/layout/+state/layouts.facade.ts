@@ -70,7 +70,8 @@ export class LayoutsFacade {
               .map(row => {
                 const result: FilterResult = row.filter.filter(unfilteredRows);
                 unfilteredRows = result.rejected;
-                let orderedAccepted = this.layoutOrder.order(result.accepted, row.orderBy, row.order);
+                // If it's using a tiers display, don't sort now, we'll sort later on, inside the display.
+                let orderedAccepted = row.tiers ? result.accepted : this.layoutOrder.order(result.accepted, row.orderBy, row.order);
                 if (row.hideCompletedRows || overrideHideCompleted) {
                   orderedAccepted = orderedAccepted.filter(item => item.done < item.amount);
                 }

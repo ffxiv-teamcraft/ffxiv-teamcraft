@@ -83,6 +83,7 @@ const routes: Routes = [
     NumberQuestionPopupModule,
     FishingBaitModule,
     ItemPickerModule,
+    LayoutModule,
 
     FlexLayoutModule,
 
