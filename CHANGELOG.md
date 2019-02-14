@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.27"></a>
+## [5.0.27](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.26...v5.0.27) (2019-02-14)
+
+
+### Bug Fixes
+
+* fixed an issue with cloud functions crashing for list compacts update ([4c1a61c](https://github.com/Supamiu/ffxiv-teamcraft/commit/4c1a61c))
+* **layout:** fixed an issue with tiers system breaking items ordering ([a5ff317](https://github.com/Supamiu/ffxiv-teamcraft/commit/a5ff317))
+* **lists:** fixed an issue with lists order breaking after adding a new list ([204fa2b](https://github.com/Supamiu/ffxiv-teamcraft/commit/204fa2b))
+* **permissions:** fixed an issue with readonly permission ([5d4172a](https://github.com/Supamiu/ffxiv-teamcraft/commit/5d4172a))
+* **pricing:** fixed an issue with preferred copy type not implemented properly ([e8a49ab](https://github.com/Supamiu/ffxiv-teamcraft/commit/e8a49ab))
+
+
+### Features
+
+* **layout:** added new layout filter: IS_TRADE, matches all trades but gil ones ([2352a7c](https://github.com/Supamiu/ffxiv-teamcraft/commit/2352a7c))
+* **log-tracker:** added completion count next to each page name ([712b1fc](https://github.com/Supamiu/ffxiv-teamcraft/commit/712b1fc))
+* **time:** added a click action on eorzean clock to change format ([ab18c48](https://github.com/Supamiu/ffxiv-teamcraft/commit/ab18c48))
+
+
+
 <a name="5.0.26"></a>
 ## [5.0.26](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.25...v5.0.26) (2019-02-13)
 
