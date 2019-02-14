@@ -22,7 +22,7 @@
       </div>
       <div fxFlex="1 1 auto" *ngIf="!platformService.isDesktop()"></div>
       <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
-        <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex>
+        <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex (click)="toggleTimeFormat()">
           {{time$ | async}}
         </li>
         <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex *ngIf="!platformService.isDesktop()" nz-tooltip
@@ -262,7 +262,7 @@
     </nz-sider>
   </nz-layout>
   <nz-footer [fxHide]="!overlay" fxShow.lt-sm class="footer">
-    <span class="timer">{{time$ | async}}</span>
+    <span class="timer" (click)="toggleTimeFormat()">{{time$ | async}}</span>
   </nz-footer>
 </nz-layout>
 <ng-template #desktopOpenedMessage>
