@@ -154,6 +154,7 @@
     </div>
     <div class="amount-input">
       <button nz-button nzSize="small" nz-popover [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate"
+              [disabled]="(permissionLevel$ | async) < 20"
               [nzContent]="calculator" nzTrigger="click">
         <i nz-icon type="calculator"></i>
         <ng-template #calculator>
