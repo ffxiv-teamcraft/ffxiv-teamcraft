@@ -4,7 +4,13 @@
   </a>
   <nz-divider [nzText]="'Or' | translate"></nz-divider>
 </ng-container>
-
+<nz-input-group [nzSuffix]="suffixIconSearch">
+  <input type="text" [ngModel]="query$ | async" (ngModelChange)="query$.next($event)" nz-input
+         [placeholder]="'SIMULATOR.ROTATIONS.Search_placeholder' | translate">
+</nz-input-group>
+<ng-template #suffixIconSearch>
+  <i nz-icon type="search"></i>
+</ng-template>
 <div *ngIf="rotations$ | async as rotations">
   <nz-list [nzDataSource]="rotations" [nzRenderItem]="rotation" [nzHeader]="header">
     <ng-template #rotation let-rotation>
