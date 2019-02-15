@@ -613,6 +613,7 @@
       "Recipe_durability": "내구도"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "로테이션 폴더",
         "Rename": "폴더 이름 변경",
