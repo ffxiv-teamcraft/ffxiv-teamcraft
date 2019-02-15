@@ -42,7 +42,7 @@
   "Copy_isearch": "复制搜索宏",
   "Isearch_copied": "/isearch {{itemname}} 已经复制到剪贴板",
   "Required_for_final_craft": "{{amount}} needed for final items",
-  "Mark_HQ": "Mark as HQ required",
+  "Mark_HQ": "标记为需要高品质",
   "Unmark_HQ": "移除HQ需求",
   "Compact_sidebar_toggle": "Toggle compact sidebar",
   "Confirmation": "您确定吗？",
@@ -122,7 +122,7 @@
     "No_alarm": "未设置闹钟",
     "Add_alarm": "添加闹钟",
     "Alarm_created": "闹钟已创建",
-    "Alarms_created": "{{amount}} alarms created",
+    "Alarms_created": "创建闹钟数量{{amount}}",
     "Alarm_already_created": "Alarm already set",
     "Custom_sound": "Custom alarm sound",
     "New_group": "新建闹钟组",
@@ -606,7 +606,7 @@
     "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
-      "Recipe_level": "Recipe level",
+      "Recipe_level": "配方等级",
       "Recipe_progress": "Max progress",
       "Recipe_quality": "Max quality",
       "Recipe_durability": "耐久度"
@@ -628,11 +628,11 @@
     "CATEGORY": {
       "Progression": "Progression",
       "Quality": "Quality",
-      "Cp_recovery": "CP Recovery",
+      "Cp_recovery": "CP回复",
       "Buff": "Buff",
       "Specialty": "Specialty",
-      "Repair": "Repair",
-      "Other": "Other"
+      "Repair": "耐久回复",
+      "Other": "其他"
     },
     "CONFIGURATION": {
       "Job": "Job",
@@ -642,7 +642,7 @@
       "Craftsmanship": "Craftsmanship",
       "Control": "Control",
       "Specialist": "Specialist",
-      "Ingredients": "HQ Ingredients",
+      "Ingredients": "HQ材料",
       "Consumables": "Consumables",
       "Apply_stats": "Apply stats",
       "Apply_ingredients": "Apply HQ ingredients",
