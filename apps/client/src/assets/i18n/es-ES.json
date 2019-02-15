@@ -4,14 +4,14 @@
   "Pick_a_fc": "Escoja un Gremio Independiente (FC)",
   "Pick_a_rotation": "Elegir una rotación",
   "Pick_a_recipe": "Elegir una receta",
-  "Pick_an_item": "Pick an item",
+  "Pick_an_item": "Seleccione un artículo",
   "FC_name": "Nombre de Gremio Independiente (FC)",
   "Saving_in_database": "Guardando datos en el servidor",
   "See_on_map": "Ver en mapa",
   "Edit_amount": "Editar cantidad",
   "List_fork_in_progress": "Copiando la lista a su cuenta...",
   "Network_error_logged_out": "Se ha detectado un error de red. Se ha cerrado su sesión. Si este problema persiste, póngase en contacto con Miu en el servidor de Discord.",
-  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
+  "Hide_zone_duplicates": "Ocultar zonas duplicadas (artículos que se encuentran en varias zonas se muestran sólo una vez)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
@@ -316,7 +316,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
+    "Needs_verification": "Por favor verifique su personaje para tener acceso a las listas compartidas de su FC",
     "Regenerate_all": "Regenerar todas las listas",
     "Regenerated_all": "Sus listas están actualizadas",
     "Merge_lists": "Mezclar listas",
@@ -396,7 +396,7 @@
     "Add_all_item_alarms": "Agregar todas las alarmas para este artículo",
     "Adaptative_filter": "Sólo mostrar lo que puedo hacer",
     "Amount_craftable": "Puede crear {{amount}}",
-    "Add_item": "Add an item",
+    "Add_item": "Agregar un artículo",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -497,7 +497,7 @@
     "Gathering_name": "Ingrese nombre del artículo",
     "Ephemeral_node": "Nodo efímero, puede reaparecer",
     "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!",
-    "Hidden_item": "Hidden"
+    "Hidden_item": "Oculto"
   },
   "ANNOUNCEMENT": {
     "Title": "Anuncio",
@@ -551,8 +551,8 @@
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
-    "Include_consumables_notification": "Include consumables notification",
-    "Consumable_notification": "Use {{buffs}}",
+    "Include_consumables_notification": "Incluir notificación de consumibles",
+    "Consumable_notification": "Usar {{buffs}}",
     "Extra_wait": "Espera extra",
     "Import_macro": "Importar desde macro",
     "Ingame_macro": "Macro para el juego",
@@ -663,23 +663,23 @@
       }
     },
     "FAIL_CAUSE": {
-      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
-      "NOT_ENOUGH_CP": "Not enough CP",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
-      "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
-      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
+      "UNSAFE_ACTION": "Acción no segura con modo seguro activado",
+      "DURABILITY_REACHED_ZERO": "La durabilidad alcanzó 0 antes de llegar a la progresión máxima",
+      "NOT_ENOUGH_CP": "CP Insuficiente",
+      "MISSING_LEVEL_REQUIREMENT": "No tiene el nivel requerido",
+      "NOT_SPECIALIST": "Rotación de especialista pero no especialista",
+      "NO_INNER_QUIET": "Intento de usar acción de Inner Quiet sin tener Inner Quiet habilitado"
     }
   },
   "PRICING": {
     "From_vendor": "Precio del vendedor",
-    "From_crafting": "Price from crafting",
+    "From_crafting": "Precio de fabricación",
     "Expect_to_sell_everything": "Asumir que se vende todo",
     "Autofill_panel_prices": "Llenar precios basado en precios del mercado",
     "Autofill_panel_prices_warning": "Este es un proceso lento y debería tomar alrededor de {{time}} segundos para completarse. ¿Está seguro?",
     "Copy_earnings_as_text": "Copiar contenido como texto",
     "Content_copied": "Contenido copiado a su portapapeles",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
+    "Cheaper_at_vendor": "Más barato si compra de NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -796,17 +796,17 @@
     "Web_instructions": "Por favor refresque la página para obtener la última versión."
   },
   "LOG_TRACKER": {
-    "Title": "Log Tracker",
-    "Mark_page_as_done": "Mark this page as done",
-    "Mark_as_done": "Mark this item as done",
-    "Mark_as_not_done": "Mark this item as not done",
-    "Create_list": "Create a list to complete this page",
+    "Title": "Seguidor de registro",
+    "Mark_page_as_done": "Marcar esta página como hecho",
+    "Mark_as_done": "Marcar este artículo como hecho",
+    "Mark_as_not_done": "Marcar este artículo como no hecho",
+    "Create_list": "Crear una lista para completar esta página",
     "PAGE": {
-      "Master_recipes": "Master recipes ({{number}})",
-      "Housing_items": "Housing({{number}})",
-      "Others": "Others",
-      "Dyes": "Dyes",
-      "Other_master_recipes": "Other Master Recipes"
+      "Master_recipes": "Recetas maestras ({{number}})",
+      "Housing_items": "Artículos de vivienda({{number}})",
+      "Others": "Otros",
+      "Dyes": "Tintes",
+      "Other_master_recipes": "Otras recetas maestras"
     }
   }
 }
