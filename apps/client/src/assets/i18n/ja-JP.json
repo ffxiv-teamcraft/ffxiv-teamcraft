@@ -41,7 +41,7 @@
   "Timers": "タイマー",
   "Copy_isearch": "/isearchマクロをコピーする",
   "Isearch_copied": "/isearch {{itemname}} がクリップボードにコピーされました",
-  "Required_for_final_craft": "目的アイテム完成には残り {{amount}} 個必要です",
+  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
   "Mark_HQ": "必要なHQ要求量を表示する",
   "Unmark_HQ": "HQ要求量を消す",
   "Compact_sidebar_toggle": "コンパクトサイドバーに切り替える",
@@ -395,6 +395,7 @@
     "Open_in_ffxivgardening": "ffxivgardening.comに開く",
     "Add_all_item_alarms": "このアイテムに対してアラームを追加する",
     "Adaptative_filter": "可能なことのみ表示する",
+    "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "You can craft {{amount}}",
     "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
@@ -612,6 +613,7 @@
       "Recipe_durability": "耐久"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "スキル回しフォルダー",
         "Rename": "フォルダー名を変更する",
