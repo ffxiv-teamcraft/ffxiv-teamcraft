@@ -134,7 +134,7 @@
     "Open_overlay": "Open overlay",
     "More_available": "and {{amount}} more...",
     "CUSTOM": {
-      "Title": "Add custom alarm",
+      "Title": "添加自定义闹钟",
       "Name": "名称",
       "Spawn": "生成",
       "Spawns_twice": "出现2次",
@@ -203,7 +203,7 @@
   "List_recreated": "Recreated list properly",
   "List_popup_title": "重新生成列表, 请稍候",
   "Please_wait": "应该快的，等一下吧！",
-  "Not_own_list_outdated": "This list is outdated, please ask the owner to regenerate it",
+  "Not_own_list_outdated": "此列表已过期, 请要求所有者重新生成",
   "Import": "导入",
   "Favorites": "收藏",
   "Favorite": "收藏",
