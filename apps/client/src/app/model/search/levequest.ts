@@ -5,7 +5,6 @@ export interface Levequest {
   jobId: number;
   itemId: number;
   itemIcon: string;
-  recipes: { recipeId: string, jobId: number }[];
   exp: number;
   gil: number;
   hq: boolean;
