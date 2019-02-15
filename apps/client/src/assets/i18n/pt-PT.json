@@ -462,14 +462,14 @@
     "FSH": "FSH"
   },
   "MACRO_TRANSLATION": {
-    "Title": "Macro translator",
-    "Macro_language": "Macro language",
-    "Macro_to_translate": "Macro to translate",
-    "Do_translate": "Translate !",
-    "Invalid_macro_or_language": "Invalid macro or language."
+    "Title": "Tradutor de macro",
+    "Macro_language": "Idioma do Macro",
+    "Macro_to_translate": "Macro para traduzir",
+    "Do_translate": "Traduzir !",
+    "Invalid_macro_or_language": "Macro ou idioma inválido."
   },
   "CUSTOM_LINKS": {
-    "Title": "Custom Links",
+    "Title": "Links personalizados",
     "Not_found": "Link not found",
     "Add_link": "Create a custom link",
     "Link_created": "Custom link created, click the share button to copy it",
