@@ -41,7 +41,7 @@
   "Timers": "Таймеры",
   "Copy_isearch": "Копирование isearch макрос",
   "Isearch_copied": "/Isearch {{itemname}} скопирован в буфер обмена",
-  "Required_for_final_craft": "{{amount}} необходимо для конечного предмета",
+  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
   "Mark_HQ": "Пометить как нужен HQ",
   "Unmark_HQ": "Удаление требования HQ",
   "Compact_sidebar_toggle": "Включить боковую панель",
@@ -395,6 +395,7 @@
     "Open_in_ffxivgardening": "Открыть в ffxivgardening.com",
     "Add_all_item_alarms": "Создать все оповещения для этого предмета",
     "Adaptative_filter": "Показать только то, что я могу сделать",
+    "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "You can craft {{amount}}",
     "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
