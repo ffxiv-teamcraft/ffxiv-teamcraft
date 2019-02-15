@@ -613,6 +613,7 @@
       "Recipe_durability": "Solidité"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "Dossiers de rotation",
         "Rename": "Renommer le dossier",
