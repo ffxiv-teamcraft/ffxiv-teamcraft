@@ -87,7 +87,7 @@
                     [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                     *ngIf="(permissionLevel$ | async) > 10"
                     ngxClipboard [cbContent]="getLink(list)"
-                    nzSize="small"(cbOnSuccess)="afterLinkCopy()">
+                    nzSize="small" (cbOnSuccess)="afterLinkCopy()">
               <i nz-icon type="share-alt"></i>
             </button>
             <button nz-button nzShape="circle" nzSize="small" nz-tooltip
@@ -111,6 +111,13 @@
           <div>
             <label nz-checkbox [(ngModel)]="adaptativeFilter"
                    *ngIf="loggedIn$ | async">{{'LIST_DETAILS.Adaptative_filter' | translate}}</label>
+          </div>
+          <div>
+            <label nz-checkbox [(ngModel)]="list.disableHQSuggestions"
+                   (ngModelChange)="save(list)"
+                   *ngIf="(loggedIn$ | async) && (permissionLevel$ | async) >= 40">
+              {{'LIST_DETAILS.Disable_HQ_suggestions' | translate}}
+            </label>
           </div>
           <div>
             <label nz-checkbox [ngModel]="hideCompletedGlobal$ | async"

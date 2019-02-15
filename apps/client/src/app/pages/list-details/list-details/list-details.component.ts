@@ -163,6 +163,10 @@ export class ListDetailsComponent extends TeamcraftComponent implements OnInit, 
     });
   }
 
+  save(list: List): void {
+    this.listsFacade.updateList(list);
+  }
+
   getLink(list: List): string {
     return this.linkTools.getLink(`/list/${list.$key}`);
   }
