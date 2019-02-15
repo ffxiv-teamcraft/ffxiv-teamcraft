@@ -540,7 +540,7 @@
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
     "Propagate_changes_done": "Changes propagated to lists inside the workshop",
     "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
-    "Default_permission_level": "Default permission level"
+    "Default_permission_level": "默认权限级别"
   },
   "WIKI": {
     "Title": "维基百科",
@@ -572,7 +572,7 @@
     "Level": "等级",
     "Reliability": "Reliability",
     "Average_hq": "平均HQ",
-    "Specialist": "Specialist",
+    "Specialist": "专家",
     "New_rotation": "New rotation",
     "Rotations": "Crafting rotations",
     "Favorite_Rotations": "Favorite Rotations",
