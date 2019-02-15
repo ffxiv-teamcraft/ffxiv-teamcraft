@@ -41,7 +41,7 @@
   "Timers": "Temporizadores",
   "Copy_isearch": "Copiar macro de isearch",
   "Isearch_copied": "/isearch {{itemname}} copiado al portapapeles",
-  "Required_for_final_craft": "{{amount}} necesario(s) para los artículos finales",
+  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
   "Mark_HQ": "Marcar como HQ requerido",
   "Unmark_HQ": "Quitar requisito de HQ",
   "Compact_sidebar_toggle": "Alternar barra lateral compacta",
@@ -395,6 +395,7 @@
     "Open_in_ffxivgardening": "Abrir en ffxivgardening.com",
     "Add_all_item_alarms": "Agregar todas las alarmas para este artículo",
     "Adaptative_filter": "Sólo mostrar lo que puedo hacer",
+    "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "Puede crear {{amount}}",
     "Add_item": "Agregar un artículo",
     "LAYOUT_DIALOG": {
