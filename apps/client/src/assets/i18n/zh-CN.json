@@ -41,7 +41,7 @@
   "Timers": "定时器",
   "Copy_isearch": "复制搜索宏",
   "Isearch_copied": "/isearch {{itemname}} 已经复制到剪贴板",
-  "Required_for_final_craft": "{{amount}} needed for final items",
+  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
   "Mark_HQ": "标记为需要高品质",
   "Unmark_HQ": "移除HQ需求",
   "Compact_sidebar_toggle": "Toggle compact sidebar",
@@ -395,6 +395,7 @@
     "Open_in_ffxivgardening": "在 ffxivdruging.com 中打开",
     "Add_all_item_alarms": "Add all alarms for this item",
     "Adaptative_filter": "Only show what I can do",
+    "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "You can craft {{amount}}",
     "Add_item": "添加物品",
     "LAYOUT_DIALOG": {
