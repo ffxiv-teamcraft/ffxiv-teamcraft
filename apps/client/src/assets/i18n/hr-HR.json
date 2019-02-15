@@ -41,7 +41,7 @@
   "Timers": "Tajmeri",
   "Copy_isearch": "Kopirajte isearch makronaredbe",
   "Isearch_copied": "/isearch {{itemname}} je kopiran u međuspremnik",
-  "Required_for_final_craft": "{{amount}} potrebno za završni proizvod",
+  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
   "Mark_HQ": "Označite kao HQ potrebno",
   "Unmark_HQ": "Uklonite HQ uvjet",
   "Compact_sidebar_toggle": "Uključite / Isključite kompaktnu rubnu traku",
@@ -395,6 +395,7 @@
     "Open_in_ffxivgardening": "Open in ffxivgardening.com",
     "Add_all_item_alarms": "Add all alarms for this item",
     "Adaptative_filter": "Only show what I can do",
+    "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "You can craft {{amount}}",
     "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
