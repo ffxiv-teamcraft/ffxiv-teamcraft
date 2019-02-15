@@ -97,7 +97,7 @@
     "Tags_filter_placeholder": "使用名称筛选",
     "Tags_filter_reset": "重置标签",
     "Name_filter_placeholder": "使用名称筛选",
-    "No_lists_matching": "No lists matching your filters"
+    "No_lists_matching": "没有符合的搜索结果。"
   },
   "COMMON": {
     "Save": "保存",
@@ -113,7 +113,7 @@
     "Success": "成功",
     "Copy_to_clipboard": "复制到剪贴板",
     "Language": "语言",
-    "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
+    "Opened_in_desktop": "此页面已在您的桌面应用程序中打开，您可以现在关闭它。",
     "Open_in_desktop": "在桌面应用中打开",
     "Admin": "管理员"
   },
@@ -124,10 +124,10 @@
     "Alarm_created": "闹钟已创建",
     "Alarms_created": "创建闹钟数量{{amount}}",
     "Alarm_already_created": "闹钟已设置",
-    "Custom_sound": "Custom alarm sound",
+    "Custom_sound": "自定义闹钟声音",
     "New_group": "新建闹钟组",
     "Confirm_group_delete": "确定要删除这个分组吗？",
-    "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
+    "Confirm_group_delete_with_alarms": "您确定要删除此组及其中的所有闹钟吗？",
     "Add_note": "增加注释",
     "Volume": "音量",
     "Macro_copied": "复制宏到剪贴板",
@@ -137,17 +137,17 @@
       "Title": "Add custom alarm",
       "Name": "名称",
       "Spawn": "生成",
-      "Spawns_twice": "Spawns twice",
-      "Spawns_twice_description": "Spawns twice per eorzean day (One spawn AM, one PM)",
+      "Spawns_twice": "出现2次",
+      "Spawns_twice_description": "每艾欧泽亚日出现2次（早上，下午）",
       "Duration": "持续时间",
       "Slot": "格数",
-      "Type": "Node type",
+      "Type": "节点类型",
       "Map": "地图",
       "TYPE": {
-        "Mineral": "Mineral Deposit",
-        "Rocky": "Rocky Outcrop",
-        "Tree": "Mature Tree",
-        "Vegetation": "Lush Vegetation Patch",
+        "Mineral": "石场",
+        "Rocky": "石场",
+        "Tree": "良材",
+        "Vegetation": "草场",
         "Fishing": "钓鱼"
       }
     }
@@ -155,7 +155,7 @@
   "Item_name": "物品名称",
   "No_items_found": "未找到物品",
   "Select_all": "全选",
-  "Do you really want to reset the list?": "Do you really want to reset the list?",
+  "Do you really want to reset the list?": "您确定要重置列表吗？",
   "Yes": "是",
   "No": "否",
   "Crystals": "水晶",
@@ -191,7 +191,7 @@
   "Login": "登录",
   "Disconnect": "断开连接",
   "Password": "密码",
-  "Password_Confirmation": "Confirmation",
+  "Password_Confirmation": "确认",
   "Submit": "提交",
   "Invalid_credentials": "Invalid credentials",
   "Not_verified": "Not verified",
@@ -213,7 +213,7 @@
   "filters/worn_by": "Worn by",
   "filters/crafted_by": "Crafted by",
   "filters/item_category": "物品类型",
-  "Adding_recipes": "Adding {{amount}} recipes to list {{listname}}",
+  "Adding_recipes": "添加 {{amount}} 个配方到列表 {{listname}}",
   "Recipe_Added": "一个物品已经被添加到清单 {{listname}}",
   "Recipes_Added": "{{itemcount}} items added to list {{listname}}",
   "Character_name": "角色名",
@@ -267,13 +267,13 @@
   "SETTINGS": {
     "Title": "设置",
     "General": "一般",
-    "Link_base": "Item links",
+    "Link_base": "物品链接",
     "Theme": "界面主题",
     "no_panel_borders": "Disable borders around various panels",
     "Desktop": "桌面",
     "Always_on_top": "总在最上层",
     "Check_for_update": "Check for update",
-    "Downloading_update": "Downloading update",
+    "Downloading_update": "正在下载更新",
     "No_update_available": "没有可用的更新",
     "Install_update": "安装更新",
     "Preferred_copy_type": "Preferred copy type",
@@ -281,16 +281,16 @@
     "Account": "帐户",
     "Reset_password": "重置密码",
     "Reset_password_warning": "您确定要重置密码吗？",
-    "Password_reset_mail_sent": "Password reset email sent",
+    "Password_reset_mail_sent": "密码重置邮件已发送",
     "Connect_with_patreon": "Connect with patreon",
     "Connected_with_patreon": "Connected with patreon",
     "Nickname": "昵称",
     "Nickname_used": "昵称已被使用",
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
-    "Show_devtools": "Show dev tools",
+    "Show_devtools": "显示DevTools",
     "COPY_TYPE": {
       "Classic": "复制项目名称",
-      "Isearch": "Copy /isearch macro"
+      "Isearch": "复制/isearch宏"
     }
   },
   "PROFILE": {
@@ -330,7 +330,7 @@
     "Add_to_a_list": "添加到列表",
     "Please_pick_recipe": "Please pick a recipe for this item",
     "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
-    "Delete_after_merge": "Delete original lists after merge",
+    "Delete_after_merge": "合并后删除原始列表",
     "IMPORT": {
       "Title": "Import list from external website",
       "Paste_link_step_title": "Paste your link to the external list",
@@ -353,13 +353,13 @@
     "Enable_crystals_tracking": "Enable crystals tracking",
     "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
     "Copy_as_text": "复制为文本",
-    "Copy_list_as_text": "Copy the whole list as text",
+    "Copy_list_as_text": "将整个列表复制为文本",
     "Copied_as_text": "Content copied in clipboard",
     "Total_price": "Total trades (gils and currencies)",
     "Total_trade_price": "合计: ",
     "Add_all_alarms": "添加所有闹钟到此列表",
     "History": "历史记录",
-    "Items_count": "{{amount}} items",
+    "Items_count": "{{amount}} 个物品",
     "Show_craftable_amount": "Show craftable amount",
     "COMPLETION_POPUP": {
       "Title": "列表已完成",
@@ -404,7 +404,7 @@
       "Import_string": "布局导入码",
       "Import_string_copied": "已复制布局导入码！",
       "Layout_name": "布局名称",
-      "Invalid_import": "Invalid import code",
+      "Invalid_import": "无效的导入代码",
       "Global_options": "General options",
       "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
     },
@@ -463,7 +463,7 @@
   },
   "MACRO_TRANSLATION": {
     "Title": "Macro translator",
-    "Macro_language": "Macro language",
+    "Macro_language": "宏语言",
     "Macro_to_translate": "Macro to translate",
     "Do_translate": "翻译！",
     "Invalid_macro_or_language": "Invalid macro or language."
@@ -477,7 +477,7 @@
     "Link_type": "Link type",
     "Link_name": "链接名称",
     "target": "链接目标",
-    "Share_link_copied": "Custom link copied to clipboard",
+    "Share_link_copied": "链接已复制到剪贴板",
     "Copy_custom_link": "复制自定义链接",
     "No_links": "无自定义链接"
   },
@@ -506,7 +506,7 @@
   "LIST_TEMPLATE": {
     "Create_template": "Create a list template for this list",
     "Template_created": "List template created",
-    "Dialog_title": "Template creation",
+    "Dialog_title": "模板创建",
     "Link_name": "模版名称",
     "target": "目标列表",
     "Share_link_copied": "Template share link copied to the clipboard",
@@ -535,7 +535,7 @@
     "Bind_free_company": "Bind some permissions to your Free Company",
     "User_not_found": "找不到用户",
     "User_id_tip": "The user ID can be found in profile page in bottom-right corner",
-    "Saving": "Saving permissions",
+    "Saving": "保存权限",
     "No_anonymous": "您需要一个账户来管理权限",
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
     "Propagate_changes_done": "Changes propagated to lists inside the workshop",
