@@ -41,7 +41,7 @@
   "Timers": "타이머",
   "Copy_isearch": "아이템검색 매크로 복사",
   "Isearch_copied": "/아이템검색 {{itemname}} 클립보드에 복사되었습니다",
-  "Required_for_final_craft": "최종 제작물에 {{amount}}개 필요",
+  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
   "Mark_HQ": "HQ 요구 표시",
   "Unmark_HQ": "HQ 요구 지우기",
   "Compact_sidebar_toggle": "메뉴 펼치기/숨기기",
@@ -395,6 +395,7 @@
     "Open_in_ffxivgardening": "ffxivgardening.com에서 열기",
     "Add_all_item_alarms": "이 아이템에 대한 알람 추가",
     "Adaptative_filter": "할 수 있는 것만 표시",
+    "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
     "Add_item": "아이템 추가",
     "LAYOUT_DIALOG": {
