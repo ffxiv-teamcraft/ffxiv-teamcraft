@@ -613,6 +613,7 @@
       "Recipe_durability": "耐久度"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "Rotation folders",
         "Rename": "重命名文件夹",
