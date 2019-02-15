@@ -355,7 +355,7 @@
     "Copy_as_text": "复制为文本",
     "Copy_list_as_text": "将整个列表复制为文本",
     "Copied_as_text": "内容已复制到剪贴板",
-    "Total_price": "Total trades (gils and currencies)",
+    "Total_price": "总费用(金币+其他通货)",
     "Total_trade_price": "合计: ",
     "Add_all_alarms": "添加所有闹钟到此列表",
     "History": "历史记录",
@@ -363,7 +363,7 @@
     "Show_craftable_amount": "Show craftable amount",
     "COMPLETION_POPUP": {
       "Title": "列表已完成",
-      "Content": "This list is now completed, what do you want to do with it?",
+      "Content": "这个列表现已完成，您想要做什么？",
       "Delete": "删除列表",
       "Reset": "重置列表",
       "Nothing": "无"
@@ -385,7 +385,7 @@
     "Public_list_description": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
     "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
     "Missing_tags_after_button": " 按钮",
-    "Add_remove_amount": "Add/remove a given amount",
+    "Add_remove_amount": "添加/移除给定的金额",
     "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
     "No_note": "无备注",
     "Edit_note": "无备注",
@@ -405,7 +405,7 @@
       "Import_string_copied": "已复制布局导入码！",
       "Layout_name": "布局名称",
       "Invalid_import": "无效的导入代码",
-      "Global_options": "General options",
+      "Global_options": "常规选项",
       "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
     },
     "LAYOUT": {
@@ -622,7 +622,7 @@
         "Created_by": "Created by {{name}}",
         "Copy_folder": "Copy this folder and its content to your account",
         "Folder_copied": "Folder copied to your account",
-        "Favorite_folders": "Favorite folders"
+        "Favorite_folders": "收藏夹"
       }
     },
     "CATEGORY": {
@@ -635,13 +635,13 @@
       "Other": "其他"
     },
     "CONFIGURATION": {
-      "Job": "Job",
+      "Job": "职业",
       "Job_not_configured": "It seems like you don't have configured this job yet, go to your profile page to configure it properly and set stats",
       "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
       "Select_job": "Select a job",
       "Craftsmanship": "Craftsmanship",
       "Control": "加工精度",
-      "Specialist": "Specialist",
+      "Specialist": "专家",
       "Ingredients": "HQ材料",
       "Consumables": "Consumables",
       "Apply_stats": "Apply stats",
@@ -702,24 +702,24 @@
     "Title": "Notifications",
     "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
-    "Mark_all_as_read": "Mark all as read"
+    "Mark_all_as_read": "全部标记为已读"
   },
   "TEAMS": {
     "Title": "团队",
     "Leader": "Leader",
     "Member": "成员",
-    "Enable_discord_updates": "Enable Discord updates",
-    "Disable_discord_updates": "Disable Discord updates",
+    "Enable_discord_updates": "启用Discord更新",
+    "Disable_discord_updates": "禁用Discord更新",
     "Webhook_error": "There was an error while creating the Discord webhook:",
-    "Create_team": "Create a team",
-    "Create_invite_one_day": "Create a new invite (expires in 1 day)",
-    "Create_invite_infinite": "Create a new invite (permanent)",
+    "Create_team": "创建一个团队",
+    "Create_invite_one_day": "创建新邀请(1天到期)",
+    "Create_invite_infinite": "创建新邀请(永久)",
     "No_teams": "没有团队",
     "Invites": "邀请",
     "Assign_list": "Assign this list to a team",
     "Assign_team_member": "Assign to a team member",
     "Detach_team": "Detach team",
-    "Delete_confirmation": "Are you sure you want to delete this team?",
+    "Delete_confirmation": "确实要删除此物品吗?",
     "Invite_expires": "Expires",
     "Invite_error": "团队邀请未找到或已过期",
     "Invite_link_copied": "邀请链接已复制到剪贴板",
