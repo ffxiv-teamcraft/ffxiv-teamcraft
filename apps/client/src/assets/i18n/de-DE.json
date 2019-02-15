@@ -41,7 +41,7 @@
   "Timers": "Alarme",
   "Copy_isearch": "isearch Makro kopieren",
   "Isearch_copied": "/isearch {{itemname}} in Zwischenablage kopiert",
-  "Required_for_final_craft": "{{amount}} für das finale Item erforderlich",
+  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
   "Mark_HQ": "Markieren als HQ erforderlich",
   "Unmark_HQ": "HQ-Erfordernis entfernen",
   "Compact_sidebar_toggle": "Kompakte Seitenleiste umschalten",
@@ -395,6 +395,7 @@
     "Open_in_ffxivgardening": "Auf ffxivgardening.com öffnen",
     "Add_all_item_alarms": "Erstelle alle Alarme für diesen Gegenstand",
     "Adaptative_filter": "Zeige nur, was ich tun kann",
+    "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "Du kannst {{amount}} herstellen",
     "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
