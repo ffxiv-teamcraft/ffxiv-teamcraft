@@ -613,6 +613,7 @@
       "Recipe_durability": "Прочность"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "Папки поворота",
         "Rename": "Переименовать папку",
