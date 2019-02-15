@@ -613,6 +613,7 @@
       "Recipe_durability": "Durabilidad"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "Carpetas de rotación",
         "Rename": "Renombrar carpeta",
