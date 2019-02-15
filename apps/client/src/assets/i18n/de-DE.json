@@ -613,6 +613,7 @@
       "Recipe_durability": "Belastbarkeit"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "Rotations-Ordner",
         "Rename": "Ordner umbenennen",
