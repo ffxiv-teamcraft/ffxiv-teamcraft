@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.28"></a>
+## [5.0.28](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.27...v5.0.28) (2019-02-15)
+
+
+### Bug Fixes
+
+* **levequests:** fixed an issue with new data structure changes ([ae71229](https://github.com/Supamiu/ffxiv-teamcraft/commit/ae71229))
+* **pricing:** fixed an issue with minimum craft cost being wrong when nq price > hq price ([ae1fc12](https://github.com/Supamiu/ffxiv-teamcraft/commit/ae1fc12))
+
+
+### Features
+
+* **list-details:** added a toggle to disable auto HQ flags ([4e9d865](https://github.com/Supamiu/ffxiv-teamcraft/commit/4e9d865))
+* **rotations:** new search input box inside the rotation picker drawer ([17ed767](https://github.com/Supamiu/ffxiv-teamcraft/commit/17ed767))
+
+
+
 <a name="5.0.27"></a>
 ## [5.0.27](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.26...v5.0.27) (2019-02-14)
 
