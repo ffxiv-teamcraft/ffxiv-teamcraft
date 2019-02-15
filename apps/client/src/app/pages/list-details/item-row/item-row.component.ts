@@ -152,14 +152,14 @@ export class ItemRowComponent implements OnInit {
 
     this.requiredForFinalCraft$ = this.listsFacade.selectedList$.pipe(
       map(list => {
-        if (list.disableHQSuggestions) {
-          return 0;
-        }
         const recipesNeedingItem = list.finalItems
           .filter(item => item.requires !== undefined)
           .filter(item => item.requires.some(req => req.id === this.item.id));
         if (this.item.requiredAsHQ) {
           return this.item.amount;
+        }
+        if (list.disableHQSuggestions) {
+          return 0;
         }
         if (recipesNeedingItem.length === 0 || this.item.requiredAsHQ === false) {
           return 0;
