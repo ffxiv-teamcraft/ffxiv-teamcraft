@@ -613,6 +613,7 @@
       "Recipe_durability": "耐久"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "スキル回しフォルダー",
         "Rename": "フォルダー名を変更する",
