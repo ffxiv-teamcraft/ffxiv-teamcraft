@@ -360,7 +360,7 @@
     "Add_all_alarms": "添加所有闹钟到此列表",
     "History": "历史记录",
     "Items_count": "{{amount}} 个物品",
-    "Show_craftable_amount": "Show craftable amount",
+    "Show_craftable_amount": "显示可制作的数量",
     "COMPLETION_POPUP": {
       "Title": "列表已完成",
       "Content": "这个列表现已完成，您想要做什么？",
@@ -470,12 +470,12 @@
     "Invalid_macro_or_language": "Invalid macro or language."
   },
   "CUSTOM_LINKS": {
-    "Title": "Custom Links",
+    "Title": "自定义链接",
     "Not_found": "未找到链接",
     "Add_link": "Create a custom link",
     "Link_created": "Custom link created, click the share button to copy it",
     "Dialog_title": "自定义链接",
-    "Link_type": "Link type",
+    "Link_type": "链接类型",
     "Link_name": "链接名称",
     "target": "链接目标",
     "Share_link_copied": "链接已复制到剪贴板",
@@ -493,7 +493,7 @@
     }
   },
   "GATHERING_LOCATIONS": {
-    "Title": "Gathering items",
+    "Title": "采集物品",
     "No_items": "未找到采集点",
     "Gathering_name": "输入物品名称",
     "Ephemeral_node": "Ephemeral node, can be respawned",
@@ -516,7 +516,7 @@
     "Redirect_notice": "You'll be redirected to the list once the clone is created",
     "Not_found": "未找到模板",
     "STATUS": {
-      "Loading": "Loading template from database",
+      "Loading": "从数据库加载模板",
       "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
     }
   },
@@ -654,7 +654,7 @@
       "Action": "Choose free company actions",
       "Save_on_profile": "Save on profile",
       "Reset_set": "Reset these stats",
-      "Save_consumables": "Save these consumables as default",
+      "Save_consumables": "将这些消耗品保存为默认",
       "No_food": "无料理",
       "No_medicine": "无强化药",
       "No_fc_buffs": "没有部队特效",
@@ -701,7 +701,7 @@
     }
   },
   "NOTIFICATIONS": {
-    "Title": "Notifications",
+    "Title": "通知",
     "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
     "Mark_all_as_read": "全部标记为已读"
@@ -743,8 +743,8 @@
     "PERMISSIONS": {
       "MEMBER_JOINED": "成员已加入",
       "MEMBER_LEFT": "剩余成员",
-      "ITEM_ADDED": "Item added",
-      "ITEM_REMOVED": "Item removed",
+      "ITEM_ADDED": "物品已添加",
+      "ITEM_REMOVED": "物品已删除",
       "LIST_ADDED": "列表已添加",
       "LIST_REMOVED": "列表已删除",
       "LIST_PROGRESSION": "List progression",
@@ -795,7 +795,7 @@
   "UPDATE": {
     "New_update_available": "有一个新的更新可用！ ",
     "Desktop_instructions": "Please navigate to the following link to download latest version: ",
-    "Web_instructions": "Please reload the page to get the latest version."
+    "Web_instructions": "请重新载入页面以获取最新版本。"
   },
   "LOG_TRACKER": {
     "Title": "日志追踪器",
