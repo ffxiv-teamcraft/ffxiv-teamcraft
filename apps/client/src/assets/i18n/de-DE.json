@@ -4,7 +4,7 @@
   "Pick_a_fc": "Wähle eine freie Gesellschaft",
   "Pick_a_rotation": "Wähle eine Rotation",
   "Pick_a_recipe": "Wähle ein Rezept",
-  "Pick_an_item": "Pick an item",
+  "Pick_an_item": "Wähle ein Item",
   "FC_name": "Name der freien Gesellschaft",
   "Saving_in_database": "Speichere Daten auf dem Server",
   "See_on_map": "Auf der Karte anzeigen",
@@ -397,7 +397,7 @@
     "Adaptative_filter": "Zeige nur, was ich tun kann",
     "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "Du kannst {{amount}} herstellen",
-    "Add_item": "Add an item",
+    "Add_item": "Füge ein Item hinzu",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -498,7 +498,7 @@
     "Gathering_name": "Sammelgegenstand eingeben",
     "Ephemeral_node": "Vergängliches Vorkommen, kann erneut erscheinen",
     "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Standorte anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!",
-    "Hidden_item": "Hidden"
+    "Hidden_item": "Versteckt"
   },
   "ANNOUNCEMENT": {
     "Title": "Ankündigung",
@@ -806,7 +806,7 @@
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
-      "Others": "Others",
+      "Others": "Weitere",
       "Dyes": "Farben",
       "Other_master_recipes": "Other Master Recipes"
     }
