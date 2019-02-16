@@ -41,7 +41,7 @@
   "Timers": "타이머",
   "Copy_isearch": "아이템검색 매크로 복사",
   "Isearch_copied": "/아이템검색 {{itemname}} 클립보드에 복사되었습니다",
-  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
+  "Required_for_final_craft": "만약 HQ를 원할경우, {{amount}} 개의 아이템이 필요함",
   "Mark_HQ": "HQ 요구 표시",
   "Unmark_HQ": "HQ 요구 지우기",
   "Compact_sidebar_toggle": "메뉴 펼치기/숨기기",
