@@ -667,7 +667,7 @@
     "FAIL_CAUSE": {
       "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
       "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
-      "NOT_ENOUGH_CP": "Not enough CP",
+      "NOT_ENOUGH_CP": "Nicht genug CP",
       "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
       "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
@@ -800,9 +800,9 @@
   "LOG_TRACKER": {
     "Title": "Log Tracker",
     "Mark_page_as_done": "Diese Seite als erledigt markieren",
-    "Mark_as_done": "Mark this item as done",
-    "Mark_as_not_done": "Mark this item as not done",
-    "Create_list": "Create a list to complete this page",
+    "Mark_as_done": "Als erledigt markieren",
+    "Mark_as_not_done": "Als nicht erledigt markieren",
+    "Create_list": "Erstelle eine List um diese Seite vervollständigen",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
