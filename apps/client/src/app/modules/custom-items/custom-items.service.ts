@@ -2,9 +2,10 @@ import { FirestoreRelationalStorage } from '../../core/database/storage/firestor
 import { CustomItem } from './model/custom-item';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { NgZone } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { PendingChangesService } from '../../core/database/pending-changes/pending-changes.service';
 
+@Injectable({ providedIn: 'root' })
 export class CustomItemsService extends FirestoreRelationalStorage<CustomItem> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService,

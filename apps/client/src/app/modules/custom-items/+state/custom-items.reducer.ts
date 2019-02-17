@@ -34,6 +34,51 @@ export function customItemsReducer(
       };
       break;
     }
+
+    case CustomItemsActionTypes.UpdateCustomItem: {
+      state = {
+        ...state,
+        list: [
+          ...state.list.map(item => {
+            if (item.authorId === action.payload.$key) {
+              return action.payload;
+            }
+            return item;
+          })
+        ],
+        loaded: true
+      };
+      break;
+    }
+
+    case CustomItemsActionTypes.CreateCustomItem: {
+      state = {
+        ...state,
+        list: [
+          ...state.list,
+          action.payload
+        ]
+      };
+      break;
+    }
+
+    case CustomItemsActionTypes.SelectCustomItem: {
+      state = {
+        ...state,
+        selectedId: action.key
+      };
+      break;
+    }
+
+    case CustomItemsActionTypes.DeleteCustomItem: {
+      state = {
+        ...state,
+        list: [
+          ...state.list.filter(item => item.$key !== action.key)
+        ]
+      };
+      break;
+    }
   }
   return state;
 }
