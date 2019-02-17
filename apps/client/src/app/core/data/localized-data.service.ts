@@ -24,7 +24,7 @@ export class LocalizedDataService {
 
   constructor(private http: HttpClient) {
     this.http.get('./assets/data/items.json').subscribe(i => this.items = i);
-    this.http.get('./assets/data/zh-items-bk.json').subscribe(i => this.zhItems = i);
+    this.http.get('./assets/data/zh-items.json').subscribe(i => this.zhItems = i);
   }
 
   public getItem(id: number): I18nName {
