@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.29"></a>
+## [5.0.29](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.28...v5.0.29) (2019-02-17)
+
+
+### Bug Fixes
+
+* **levequests:** fixed an issue with item count not always accurate ([6dfa822](https://github.com/Supamiu/ffxiv-teamcraft/commit/6dfa822))
+* **pricing:** fixed an issue with items that cannot be HQ being priced wrong ([75224fb](https://github.com/Supamiu/ffxiv-teamcraft/commit/75224fb))
+
+
+
 <a name="5.0.28"></a>
 ## [5.0.28](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.27...v5.0.28) (2019-02-15)
 
