@@ -5,6 +5,8 @@ describe('Basic UI tests', () => {
   before(() => {
     indexedDB.deleteDatabase('firebaseLocalStorageDb');
     cy.visit('/');
+    // Let's wait for the anonymous warning to hide.
+    cy.wait(20000);
     changeLanguage('EN');
   });
 
