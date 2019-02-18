@@ -320,6 +320,7 @@
     "Regenerate_all": "Regenerar todas las listas",
     "Regenerated_all": "Sus listas están actualizadas",
     "Merge_lists": "Mezclar listas",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "¡Listas mezcladas con éxito!",
     "Shared_lists": "Listas compartidas con usted",
     "Add_selection": "Agregar selección a la lista",
@@ -810,5 +811,8 @@
       "Dyes": "Tintes",
       "Other_master_recipes": "Otras recetas maestras"
     }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
   }
 }
