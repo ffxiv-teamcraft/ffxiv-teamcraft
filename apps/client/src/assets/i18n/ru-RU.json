@@ -320,6 +320,7 @@
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
     "Merge_lists": "Объединить списки",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "Списки успешно соединены!",
     "Shared_lists": "Списки к которым у вас есть доступ",
     "Add_selection": "Добавить выбранное в список",
@@ -810,5 +811,8 @@
       "Dyes": "Dyes",
       "Other_master_recipes": "Other Master Recipes"
     }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
   }
 }
