@@ -320,6 +320,7 @@
     "Regenerate_all": "全リストを更新する",
     "Regenerated_all": "リストが更新されました",
     "Merge_lists": "リストを併合する",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "リスト併合が完了されました！",
     "Shared_lists": "書く権限があるリスト",
     "Add_selection": "選択項目をリストに追加する",
@@ -810,5 +811,8 @@
       "Dyes": "Dyes",
       "Other_master_recipes": "Other Master Recipes"
     }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
   }
 }
