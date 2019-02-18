@@ -320,6 +320,7 @@
     "Regenerate_all": "Regénérer toutes les listes",
     "Regenerated_all": "Vos listes sont maintenant à jour",
     "Merge_lists": "Fusionner des listes",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "Listes fusionnées avec succès !",
     "Shared_lists": "Listes sur lesquelles vous avez le droit d'écriture",
     "Add_selection": "Ajouter la sélection à une liste",
@@ -810,5 +811,8 @@
       "Dyes": "Teintures",
       "Other_master_recipes": "Expert - autres"
     }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
   }
 }
