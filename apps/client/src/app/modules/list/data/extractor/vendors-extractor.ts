@@ -28,8 +28,16 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
     const vendors: Vendor[] = [];
     for (const vendorId of item.vendors) {
       let itemPartial = itemData.getPartial(item.id.toString(), 'item');
+      const vendor: Vendor = {
+        npcId: vendorId,
+        price: -1
+      };
+      if (item.price !== undefined) {
+        // If the item already has its own price data, don't search inside partials, we already have everything.
+        vendor.price = item.price;
+      }
       // If we didn't find the item in partials, get it from ingredients
-      if (itemPartial === undefined) {
+      else if (itemPartial === undefined) {
         if (itemData.ingredients === undefined) {
           // if this has no partial nor ingredients, we can go to the next one.
           break;
@@ -44,10 +52,9 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
         if (itemPartial.p === undefined) {
           continue;
         }
-        const vendor: Vendor = {
-          npcId: vendorId,
-          price: itemPartial.p
-        };
+        vendor.price = itemPartial.p;
+      }
+      if (vendor.price > -1) {
         const npcEntry = npcs[vendorId];
         if (npcEntry && npcEntry.position !== null) {
           const npcPosition = npcEntry.position;

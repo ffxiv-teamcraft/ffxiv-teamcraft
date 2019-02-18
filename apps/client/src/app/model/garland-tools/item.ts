@@ -15,6 +15,7 @@ export class Item implements I18nData {
 
   id: number;
   patch: number;
+  price?: number;
   patchCategory: number;
   ilvl: number;
   category: number;
