@@ -320,6 +320,7 @@
     "Regenerate_all": "Alle Listen neugenerieren",
     "Regenerated_all": "Deine Listen sind jetzt aktuell",
     "Merge_lists": "Listen zusammenfassen",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "Listen erfolgreich zusammengefasst!",
     "Shared_lists": "Listen mit Schreibzugriff",
     "Add_selection": "Auswahl zu einer Liste hinzufügen",
@@ -810,5 +811,8 @@
       "Dyes": "Farben",
       "Other_master_recipes": "Other Master Recipes"
     }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
   }
 }
