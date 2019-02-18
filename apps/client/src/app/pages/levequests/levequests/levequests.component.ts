@@ -13,6 +13,7 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { Levequest } from '../../../model/search/levequest';
+import { DataService } from '../../../core/api/data.service';
 
 @Component({
   selector: 'app-levequests',
@@ -57,7 +58,8 @@ export class LevequestsComponent implements OnInit {
               private router: Router, private route: ActivatedRoute, private listManager: ListManagerService,
               private notificationService: NzNotificationService, private gt: GarlandToolsService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService,
-              private listPicker: ListPickerService, private progressService: ProgressPopupService) {
+              private listPicker: ListPickerService, private progressService: ProgressPopupService,
+              private dataService: DataService) {
     this.jobList = this.gt.getJobs().slice(8, 16);
   }
 
@@ -92,9 +94,9 @@ export class LevequestsComponent implements OnInit {
 
         return this.xivapi.search({
           indexes: [SearchIndex.LEVE], string: query, filters: filters,
-          columns: ['LevelLevemete.Map.ID', 'CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon', 'CraftLeve.ItemCount0',
-            'CraftLeve.Item0Recipes.*2.ID', 'CraftLeve.Item0Recipes.*2.ClassJob', 'CraftLeve.Repeats',
-            'Name_*', 'GilReward', 'ExpReward', 'ClassJobCategoryTargetID', 'ClassJobLevel',
+          columns: ['LevelLevemete.Map.ID', 'CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon',
+            'CraftLeve.ItemCount0', 'CraftLeve.ItemCount1', 'CraftLeve.ItemCount2', 'CraftLeve.ItemCount3',
+            'CraftLeve.Repeats', 'Name_*', 'GilReward', 'ExpReward', 'ClassJobCategoryTargetID', 'ClassJobLevel',
             'LevelLevemete.Map.PlaceNameTargetID', 'LevelLevemete.Y', 'PlaceNameStart.ID'],
           // 105 is the amount of leves from 1 to 70 for a single job
           limit: 105
@@ -108,13 +110,14 @@ export class LevequestsComponent implements OnInit {
             jobId: leve.ClassJobCategoryTargetID - 1,
             itemId: leve.CraftLeve.Item0TargetID,
             itemIcon: leve.CraftLeve.Item0.Icon,
-            recipes: leve.CraftLeve.Item0Recipes.filter(recipe => recipe.ID !== null)
-              .map(recipe => ({ recipeId: recipe.ID, jobId: recipe.ClassJob })),
             exp: leve.ExpReward,
             gil: leve.GilReward,
             hq: false,
             amount: 1,
-            itemQuantity: leve.CraftLeve.ItemCount0,
+            itemQuantity: leve.CraftLeve.ItemCount0
+              + leve.CraftLeve.ItemCount1
+              + leve.CraftLeve.ItemCount2
+              + leve.CraftLeve.ItemCount3,
             name: { en: leve.Name_en, fr: leve.Name_fr, de: leve.Name_de, ja: leve.Name_ja },
             startPlaceId: leve.PlaceNameStart.ID,
             deliveryPlaceId: leve.LevelLevemete.Map.PlaceNameTargetID,
@@ -190,9 +193,13 @@ export class LevequestsComponent implements OnInit {
       mergeMap(list => {
         const operation$ = concat(
           ...leves.map(leve => {
-            const recipe = leve.recipes.find(r => r.jobId === leve.jobId);
-            return this.listManager.addToList(leve.itemId, list, recipe.recipeId,
-              leve.itemQuantity * this.craftAmount(leve));
+            return this.dataService.getItem(leve.itemId).pipe(
+              switchMap(itemData => {
+                const craft = itemData.item.craft.find(c => c.job === leve.jobId);
+                return this.listManager.addToList(leve.itemId, list, craft.id,
+                  leve.itemQuantity * this.craftAmount(leve));
+              })
+            );
           })
         );
         return this.progressService.showProgress(operation$, leves.length, 'Adding_recipes',
@@ -216,19 +223,24 @@ export class LevequestsComponent implements OnInit {
 
   public createQuickList(leve: Levequest): void {
     const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(leve.itemId)));
-    const recipe = leve.recipes[0];
-    const operation$ = this.listManager
-      .addToList(leve.itemId, list, recipe.recipeId, leve.itemQuantity * this.craftAmount(leve))
-      .pipe(
-        tap(resultList => this.listsFacade.addList(resultList)),
-        mergeMap(resultList => {
-          return this.listsFacade.myLists$.pipe(
-            map(lists => lists.find(l => l.createdAt === resultList.createdAt && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
+
+    const operation$ = this.dataService.getItem(leve.itemId).pipe(
+      switchMap(itemData => {
+        const craft = itemData.item.craft.find(c => c.job === leve.jobId);
+        return this.listManager
+          .addToList(leve.itemId, list, craft.id, leve.itemQuantity * this.craftAmount(leve))
+          .pipe(
+            tap(resultList => this.listsFacade.addList(resultList)),
+            mergeMap(resultList => {
+              return this.listsFacade.myLists$.pipe(
+                map(lists => lists.find(l => l.createdAt === resultList.createdAt && l.$key !== undefined)),
+                filter(l => l !== undefined),
+                first()
+              );
+            })
           );
-        })
-      );
+      })
+    );
 
     this.progressService.showProgress(operation$, 1)
       .subscribe((newList) => {

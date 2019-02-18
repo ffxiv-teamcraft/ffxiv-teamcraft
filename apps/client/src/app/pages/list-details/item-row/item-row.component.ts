@@ -154,9 +154,12 @@ export class ItemRowComponent implements OnInit {
       map(list => {
         const recipesNeedingItem = list.finalItems
           .filter(item => item.requires !== undefined)
-          .filter(item => item.requires.find(req => req.id === this.item.id) !== undefined);
+          .filter(item => item.requires.some(req => req.id === this.item.id));
         if (this.item.requiredAsHQ) {
           return this.item.amount;
+        }
+        if (list.disableHQSuggestions) {
+          return 0;
         }
         if (recipesNeedingItem.length === 0 || this.item.requiredAsHQ === false) {
           return 0;

@@ -29,6 +29,9 @@ export class List extends DataWithPermissions {
   // noinspection JSUnusedGlobalSymbols
   createdAt: string = new Date().toISOString();
 
+  // Should we disable HQ suggestions for this list?
+  disableHQSuggestions = false;
+
   version: string = environment.version;
 
   tags: ListTag[] = [];
