@@ -20,13 +20,18 @@ export class LocalizedDataService {
   indentRegexp = new RegExp('<Indent/>', 'i');
 
   private items: any = {};
+  private zhItems: any = {};
 
   constructor(private http: HttpClient) {
     this.http.get('./assets/data/items.json').subscribe(i => this.items = i);
+    this.http.get('./assets/data/zh-items.json').subscribe(i => this.zhItems = i);
   }
 
   public getItem(id: number): I18nName {
+    const zhRow = this.getRow(this.zhItems,id);
     const row = this.getRow(this.items, id);
+    row.zh = zhRow.zh
+
     if (row !== undefined) {
       row.fr = row.fr.replace(this.indentRegexp, '');
     }
@@ -34,7 +39,7 @@ export class LocalizedDataService {
   }
 
   public getItemIdsByName(name: string, language: Language): number[] {
-    if (['en', 'fr', 'de', 'ja'].indexOf(language) === -1) {
+    if (['en', 'fr', 'de', 'ja', 'zh'].indexOf(language) === -1) {
       language = 'en';
     }
     const regex = new RegExp(`${name}`, 'i');
