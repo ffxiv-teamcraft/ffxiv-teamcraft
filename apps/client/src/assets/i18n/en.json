@@ -811,5 +811,8 @@
       "Dyes": "Dyes",
       "Other_master_recipes": "Other Master Recipes"
     }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
   }
 }
