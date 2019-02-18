@@ -233,21 +233,6 @@ export class AuthEffects {
   );
 
   @Effect()
-  warningOnAnonymousAccount$ = this.actions$.pipe(
-    ofType(AuthActionTypes.LoggedInAsAnonymous),
-    debounceTime(10000),
-    tap(() => {
-      this.notificationService.config({
-        nzPlacement: 'topLeft'
-      });
-      this.notificationService.warning(
-        this.translate.instant('COMMON.Warning'),
-        this.translate.instant('Anonymous_Warning'));
-    }),
-    map(() => new AnonymousWarningShown())
-  );
-
-  @Effect()
   fetchAlarmsOnUserAuth$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated, AuthActionTypes.LoggedInAsAnonymous),
     map(() => new LoadAlarms())
