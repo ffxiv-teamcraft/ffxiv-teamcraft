@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.30"></a>
+## [5.0.30](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.29...v5.0.30) (2019-02-18)
+
+
+### Bug Fixes
+
+* remove the unsupported zh search in garland and fix the wrong file name ([c1a80eb](https://github.com/Supamiu/ffxiv-teamcraft/commit/c1a80eb))
+* **favorites:** fixed an issue with favorites not loading in desktop app ([f53fc0b](https://github.com/Supamiu/ffxiv-teamcraft/commit/f53fc0b)), closes [#768](https://github.com/Supamiu/ffxiv-teamcraft/issues/768)
+* **list-merge:** added an information about big lists not being mergeable ([eaab1e5](https://github.com/Supamiu/ffxiv-teamcraft/commit/eaab1e5))
+* **vendors:** fixed an issue with vendors extractor and some items ([1d50192](https://github.com/Supamiu/ffxiv-teamcraft/commit/1d50192))
+
+
+### Features
+
+* big data chunks are now lazy loaded, for better build performances ([c2e1218](https://github.com/Supamiu/ffxiv-teamcraft/commit/c2e1218)), closes [#767](https://github.com/Supamiu/ffxiv-teamcraft/issues/767)
+* support Chinese item names ([8213caf](https://github.com/Supamiu/ffxiv-teamcraft/commit/8213caf))
+
+
+
 <a name="5.0.29"></a>
 ## [5.0.29](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.28...v5.0.29) (2019-02-17)
 
