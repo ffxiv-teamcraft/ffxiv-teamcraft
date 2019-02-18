@@ -30,7 +30,7 @@ export class FavoritesComponent {
   constructor(private authFacade: AuthFacade, private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade,
               private rotationsFacade: RotationsFacade, private rotationFoldersFacade: RotationFoldersFacade) {
     this.lists$ = this.authFacade.favorites$.pipe(
-      map(favorites => favorites.lists),
+      map(favorites => (favorites.lists || [])),
       tap(lists => lists.forEach(list => this.listsFacade.loadCompact(list))),
       mergeMap(lists => {
         return this.listsFacade.compacts$.pipe(
@@ -41,7 +41,7 @@ export class FavoritesComponent {
 
     this.rotations$ = this.authFacade.favorites$.pipe(
       distinctUntilChanged((a, b) => JSON.stringify(a.rotations) === JSON.stringify(b.rotations)),
-      map(favorites => favorites.rotations),
+      map(favorites => (favorites.rotations || [])),
       tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
       mergeMap(rotations => {
         return this.rotationsFacade.allRotations$.pipe(
@@ -51,7 +51,7 @@ export class FavoritesComponent {
     );
 
     const favoriteWorkshops$ = this.authFacade.favorites$.pipe(
-      map(favorites => favorites.workshops),
+      map(favorites => (favorites.workshops || [])),
       tap(workshops => workshops.forEach(workshop => this.workshopsFacade.loadWorkshop(workshop))),
       mergeMap(workshops => {
         return this.workshopsFacade.allWorkshops$.pipe(

@@ -1,3 +1,5 @@
+<nz-alert nzType="info" nzShowIcon [nzMessage]="'LISTS.Merge_lists_warning' | translate"></nz-alert>
+
 <div *ngIf="lists$ | async as lists">
   <h3>{{'LISTS.Your_lists' | translate}}</h3>
   <ng-container *ngTemplateOutlet="listsDisplay; context: {$implicit: lists}"></ng-container>
