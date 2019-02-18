@@ -320,6 +320,7 @@
     "Regenerate_all": "전체 목록 갱신",
     "Regenerated_all": "목록이 갱신되었습니다.",
     "Merge_lists": "목록 병합",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "목록 병합이 완료되었습니다!",
     "Shared_lists": "쓰기 권한이 있는 목록",
     "Add_selection": "선택항목을 목록에 추가",
@@ -810,5 +811,8 @@
       "Dyes": "염료",
       "Other_master_recipes": "비전서: 기타"
     }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
   }
 }
