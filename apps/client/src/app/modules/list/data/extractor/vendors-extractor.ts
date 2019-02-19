@@ -47,7 +47,7 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
         // Else, simply bind the obj property to the effective partial
         itemPartial = itemPartial.obj;
       }
-      if (itemPartial !== undefined) {
+      if (itemPartial !== undefined && vendor.price === -1) {
         // If we have an undefined price, this is not what we want
         if (itemPartial.p === undefined) {
           continue;
