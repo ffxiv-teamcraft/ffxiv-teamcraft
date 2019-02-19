@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.31"></a>
+## [5.0.31](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.30...v5.0.31) (2019-02-19)
+
+
+### Bug Fixes
+
+* fixed an issue breaking display after zh items addition ([41988ed](https://github.com/Supamiu/ffxiv-teamcraft/commit/41988ed))
+
+
+
 <a name="5.0.30"></a>
 ## [5.0.30](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.29...v5.0.30) (2019-02-18)
 
