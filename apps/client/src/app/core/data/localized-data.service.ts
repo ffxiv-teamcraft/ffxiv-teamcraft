@@ -17,13 +17,13 @@ export class LocalizedDataService {
   indentRegexp = new RegExp('<Indent/>', 'i');
 
   constructor(private lazyData: LazyDataService) {
-
   }
 
   public getItem(id: number): I18nName {
     const zhRow = this.getRow(this.lazyData.zhItems, id);
     const row = this.getRow(this.lazyData.items, id);
-    row.zh = zhRow.zh;
+    // If an item doesn't exist yet inside zh items, use english name instead.
+    row.zh = zhRow !== undefined ? zhRow.zh : row.en;
 
     if (row !== undefined) {
       row.fr = row.fr.replace(this.indentRegexp, '');
