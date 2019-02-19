@@ -22,10 +22,10 @@ export class LocalizedDataService {
   public getItem(id: number): I18nName {
     const zhRow = this.getRow(this.lazyData.zhItems, id);
     const row = this.getRow(this.lazyData.items, id);
-    // If an item doesn't exist yet inside zh items, use english name instead.
-    row.zh = zhRow !== undefined ? zhRow.zh : row.en;
 
     if (row !== undefined) {
+      // If an item doesn't exist yet inside zh items, use english name instead.
+      row.zh = zhRow !== undefined ? zhRow.zh : row.en;
       row.fr = row.fr.replace(this.indentRegexp, '');
     }
     return row;
