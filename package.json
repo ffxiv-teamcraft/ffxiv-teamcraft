@@ -9,7 +9,6 @@
   "build": {
     "appId": "ffxivteamcraft",
     "artifactName": "${productName}-setup.${ext}",
-    "forceCodeSigning": true,
     "directories": {
       "output": "release"
     },
