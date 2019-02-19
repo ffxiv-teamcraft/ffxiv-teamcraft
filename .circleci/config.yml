@@ -153,6 +153,7 @@ workflows:
               requires:
               - lint
               - test
+              - e2e
         - deploy-web:
               requires:
               - build
