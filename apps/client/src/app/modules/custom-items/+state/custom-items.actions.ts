@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 import { CustomItem } from '../model/custom-item';
+import { CustomItemFolder } from '../model/custom-item-folder';
 
 export enum CustomItemsActionTypes {
   LoadCustomItems = '[CustomItems] Load CustomItems',
@@ -8,7 +9,13 @@ export enum CustomItemsActionTypes {
   CreateCustomItem = '[CustomItems] Create CustomItem',
   UpdateCustomItem = '[CustomItems] Update CustomItem',
   DeleteCustomItem = '[CustomItems] Delete CustomItem',
-  SelectCustomItem = '[CustomItems] Select CustomItem',
+
+  LoadCustomItemFolders = '[CustomItems] Load CustomItem Folders',
+  CustomItemFoldersLoaded = '[CustomItems] CustomItem Folders Loaded',
+
+  CreateCustomItemFolder = '[CustomItems] Create CustomItem Folder',
+  UpdateCustomItemFolder = '[CustomItems] Update CustomItem Folder',
+  DeleteCustomItemFolder = '[CustomItems] Delete CustomItem Folder',
 }
 
 export class LoadCustomItems implements Action {
@@ -35,8 +42,27 @@ export class DeleteCustomItem implements Action {
   constructor(public key:string) {}
 }
 
-export class SelectCustomItem implements Action {
-  readonly type = CustomItemsActionTypes.SelectCustomItem;
+export class LoadCustomItemFolders implements Action {
+  readonly type = CustomItemsActionTypes.LoadCustomItemFolders;
+}
+
+export class CustomItemFoldersLoaded implements Action {
+  readonly type = CustomItemsActionTypes.CustomItemFoldersLoaded;
+  constructor(public payload: CustomItemFolder[]) {}
+}
+
+export class CreateCustomItemFolder implements Action {
+  readonly type = CustomItemsActionTypes.CreateCustomItemFolder;
+  constructor(public payload: CustomItemFolder) {}
+}
+
+export class UpdateCustomItemFolder implements Action {
+  readonly type = CustomItemsActionTypes.UpdateCustomItemFolder;
+  constructor(public payload: CustomItemFolder) {}
+}
+
+export class DeleteCustomItemFolder implements Action {
+  readonly type = CustomItemsActionTypes.DeleteCustomItemFolder;
   constructor(public key:string) {}
 }
 
@@ -46,4 +72,8 @@ export type CustomItemsAction =
   | CreateCustomItem
   | UpdateCustomItem
   | DeleteCustomItem
-  | SelectCustomItem;
+  | LoadCustomItemFolders
+  | CustomItemFoldersLoaded
+  | CreateCustomItemFolder
+  | UpdateCustomItemFolder
+  | DeleteCustomItemFolder;

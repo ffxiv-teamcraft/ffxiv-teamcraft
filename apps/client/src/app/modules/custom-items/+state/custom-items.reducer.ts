@@ -1,15 +1,14 @@
-import {
-  CustomItemsAction,
-  CustomItemsActionTypes
-} from './custom-items.actions';
+import { CustomItemsAction, CustomItemsActionTypes } from './custom-items.actions';
 import { CustomItem } from '../model/custom-item';
+import { CustomItemFolder } from '../model/custom-item-folder';
 
 export const CUSTOMITEMS_FEATURE_KEY = 'customItems';
 
 export interface CustomItemsState {
   list: CustomItem[]; // list of CustomItems; analogous to a sql normalized table
-  selectedId?: string; // which CustomItems record has been selected
+  folders: CustomItemFolder[]; // list of CustomItemFolders; analogous to a sql normalized table
   loaded: boolean; // has the CustomItems list been loaded
+  foldersLoaded: boolean; // has the CustomItems list been loaded
 }
 
 export interface CustomItemsPartialState {
@@ -18,7 +17,9 @@ export interface CustomItemsPartialState {
 
 export const customItemsInitialState: CustomItemsState = {
   list: [],
-  loaded: false
+  folders: [],
+  loaded: false,
+  foldersLoaded: false
 };
 
 export function customItemsReducer(
@@ -62,19 +63,57 @@ export function customItemsReducer(
       break;
     }
 
-    case CustomItemsActionTypes.SelectCustomItem: {
-      state = {
-        ...state,
-        selectedId: action.key
-      };
-      break;
-    }
-
     case CustomItemsActionTypes.DeleteCustomItem: {
       state = {
         ...state,
         list: [
           ...state.list.filter(item => item.$key !== action.key)
+        ]
+      };
+      break;
+    }
+
+    case CustomItemsActionTypes.CustomItemFoldersLoaded: {
+      state = {
+        ...state,
+        folders: action.payload,
+        foldersLoaded: true
+      };
+      break;
+    }
+
+    case CustomItemsActionTypes.UpdateCustomItemFolder: {
+      state = {
+        ...state,
+        folders: [
+          ...state.folders.map(folder => {
+            if (folder.authorId === action.payload.$key) {
+              return action.payload;
+            }
+            return folder;
+          })
+        ],
+        loaded: true
+      };
+      break;
+    }
+
+    case CustomItemsActionTypes.CreateCustomItemFolder: {
+      state = {
+        ...state,
+        folders: [
+          ...state.folders,
+          action.payload
+        ]
+      };
+      break;
+    }
+
+    case CustomItemsActionTypes.DeleteCustomItemFolder: {
+      state = {
+        ...state,
+        folders: [
+          ...state.folders.filter(folder => folder.$key !== action.key)
         ]
       };
       break;

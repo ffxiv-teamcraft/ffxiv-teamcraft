@@ -21,20 +21,22 @@ const getAllCustomItems = createSelector(
     return isLoaded ? state.list : [];
   }
 );
-const getSelectedId = createSelector(
+const getFoldersLoaded = createSelector(
   getCustomItemsState,
-  (state: CustomItemsState) => state.selectedId
+  (state: CustomItemsState) => state.foldersLoaded
 );
-const getSelectedCustomItems = createSelector(
-  getAllCustomItems,
-  getSelectedId,
-  (customItems, id) => {
-    return customItems.find(it => it.$key === id);
+
+const getAllCustomItemFolders = createSelector(
+  getCustomItemsState,
+  getLoaded,
+  (state: CustomItemsState, isLoaded) => {
+    return isLoaded ? state.folders : [];
   }
 );
 
 export const customItemsQuery = {
   getLoaded,
   getAllCustomItems,
-  getSelectedCustomItems
+  getFoldersLoaded,
+  getAllCustomItemFolders
 };

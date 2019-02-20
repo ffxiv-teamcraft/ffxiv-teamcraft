@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import {
-  CreateCustomItem,
+  CreateCustomItem, CreateCustomItemFolder, CustomItemFoldersLoaded,
   CustomItemsActionTypes,
   CustomItemsLoaded,
   DeleteCustomItem,
-  UpdateCustomItem
+  UpdateCustomItem, UpdateCustomItemFolder
 } from './custom-items.actions';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { CustomItemsService } from '../custom-items.service';
 import { distinctUntilChanged, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { CustomItemFoldersService } from '../custom-item-folders.service';
 
 @Injectable()
 export class CustomItemsEffects {
@@ -52,9 +53,47 @@ export class CustomItemsEffects {
     switchMap(action => this.customItemsService.remove(action.key))
   );
 
+  @Effect()
+  loadCustomItemFolders$ = this.actions$.pipe(
+    ofType(CustomItemsActionTypes.LoadCustomItemFolders),
+    switchMap(() => this.authFacade.userId$),
+    distinctUntilChanged(),
+    switchMap((userId) => {
+      return this.customItemFoldersService.getByForeignKey(TeamcraftUser, userId)
+        .pipe(
+          map(folders => new CustomItemFoldersLoaded(folders))
+        );
+    })
+  );
+
+  @Effect({ dispatch: false })
+  createCustomItemFolder$ = this.actions$.pipe(
+    ofType<CreateCustomItemFolder>(CustomItemsActionTypes.CreateCustomItemFolder),
+    withLatestFrom(this.authFacade.userId$),
+    switchMap(([action, userId]) => {
+      action.payload.authorId = userId;
+      return this.customItemFoldersService.add(action.payload);
+    })
+  );
+
+
+  @Effect({ dispatch: false })
+  updateCustomItemFolder$ = this.actions$.pipe(
+    ofType<UpdateCustomItemFolder>(CustomItemsActionTypes.UpdateCustomItemFolder),
+    switchMap(action => this.customItemFoldersService.update(action.payload.$key, action.payload))
+  );
+
+
+  @Effect({ dispatch: false })
+  deleteCustomItemFolder$ = this.actions$.pipe(
+    ofType<DeleteCustomItem>(CustomItemsActionTypes.DeleteCustomItem),
+    switchMap(action => this.customItemFoldersService.remove(action.key))
+  );
+
   constructor(
     private actions$: Actions,
     private customItemsService: CustomItemsService,
+    private customItemFoldersService: CustomItemFoldersService,
     private authFacade: AuthFacade
   ) {
   }
