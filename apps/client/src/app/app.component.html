@@ -241,13 +241,18 @@
       </nz-sider>
       <nz-content>
         <div class="page-container" [class.overlay]="overlay">
-          <nz-alert nzType="info" [nzMessage]="message" *ngIf="newVersionAvailable$ | async" class="new-version-alert"
+          <nz-alert nzType="info" nzBanner [nzMessage]="message" *ngIf="newVersionAvailable$ | async" class="new-version-alert"
                     nzShowIcon>
             <ng-template #message>
               {{'UPDATE.New_update_available' | translate}}
               {{(platformService.isDesktop() ? 'UPDATE.Desktop_instructions' : 'UPDATE.Web_instructions') | translate}}
               <a href="https://ffxivteamcraft.com/desktop" *ngIf="platformService.isDesktop()">https://ffxivteamcraft.com/desktop</a>
             </ng-template>
+          </nz-alert>
+          <nz-alert nzType="info" nzBanner [nzMessage]="'GIVEAWAY.Discord_1K.Title' | translate"
+                    [nzDescription]="'GIVEAWAY.Discord_1K.Description' | translate" *ngIf="showGiveaway"
+                    class="new-version-alert"
+                    nzShowIcon (click)="goToDiscord1kGiveaway()">
           </nz-alert>
           <nz-spin [nzSize]="'large'" [nzSpinning]="navigating" class="app-container">
             <router-outlet></router-outlet>
