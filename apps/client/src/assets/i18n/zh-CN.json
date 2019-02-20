@@ -423,7 +423,7 @@
     "CONSUMABLE": "消耗品",
     "LOG": "日志",
     "LEVE": "理符",
-    "GLAMOUR": "Glamour",
+    "GLAMOUR": "投影",
     "HOUSING": "住房",
     "MISC": "其它",
     "QUEST": "任务",
@@ -734,10 +734,10 @@
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
       "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "The **{{teamName}}** team will now be tracked in this channel.",
-      "List_added_notification": "The list **[{{listName}}]({{listUrl}})** has been added to the team.",
+      "List_added_notification": "列表 **[{{listName}}] ({{listUrl}}) ** 已添加到团队中。",
       "List_removed_notification": "The list **[{{listName}}]({{listUrl}})** has been removed from the team.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** has joined the team!",
-      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
+      "Member_removed": "**[{{memberName}}] ({{memberProfileUrl}}) ** 已从团队中删除。",
       "Name_changed": "**{{oldName}}**团队已重命名为 **{{newName}}**",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
@@ -795,7 +795,7 @@
   },
   "UPDATE": {
     "New_update_available": "有一个新的更新可用！ ",
-    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
+    "Desktop_instructions": "请跳转到以下链接以下载最新版本： ",
     "Web_instructions": "请重新载入页面以获取最新版本。"
   },
   "LOG_TRACKER": {
