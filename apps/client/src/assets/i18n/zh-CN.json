@@ -322,7 +322,7 @@
     "Merge_lists": "合并清单",
     "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "清单合并成功！",
-    "Shared_lists": "Lists you have write access to",
+    "Shared_lists": "您具有写入权限的列表",
     "Add_selection": "添加选择项目到列表",
     "Your_lists": "您的列表",
     "Outdated_tag": "已过期",
@@ -558,7 +558,7 @@
     "Extra_wait": "Extra wait",
     "Import_macro": "Import from ingame macro",
     "Ingame_macro": "Ingame macro",
-    "Min_stats": "Minimum stats",
+    "Min_stats": "最小参数",
     "Progress": "进度",
     "Quality": "品质",
     "Step_counter": "工次",
@@ -738,7 +738,7 @@
       "List_removed_notification": "The list **[{{listName}}]({{listUrl}})** has been removed from the team.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** has joined the team!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
-      "Name_changed": "The **{{oldName}}** team has been renamed to **{{newName}}**.",
+      "Name_changed": "**{{oldName}}**团队已重命名为 **{{newName}}**",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
