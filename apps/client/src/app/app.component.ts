@@ -94,6 +94,8 @@ export class AppComponent implements OnInit {
 
   public dataLoaded = false;
 
+  public showGiveaway = false;
+
   get desktopUrl(): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(`teamcraft://${window.location.pathname}`);
   }
@@ -107,6 +109,11 @@ export class AppComponent implements OnInit {
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService) {
+
+    this.showGiveaway = +localStorage.getItem('giveaway:1kdiscord') < 5
+      && Date.now() < new Date(2019, 3, 31, 23, 59, 59).getTime();
+
+    localStorage.setItem('giveaway:1kdiscord', (+localStorage.getItem('giveaway:1kdiscord') + 1).toString());
 
     this.lazyData.loaded$.subscribe(loaded => this.dataLoaded = loaded);
 
@@ -323,5 +330,10 @@ export class AppComponent implements OnInit {
 
   openSettings(): void {
     this.settingsPopupService.openSettings();
+  }
+
+  public goToDiscord1kGiveaway():void{
+    window.open('https://gleam.io/J1tAD/ffxiv-teamcrafts-final-fantasy-xiv-shadowbringers-collectors-edition-giveaway', '_blank');
+    localStorage.setItem('giveaway:1kdiscord', '5');
   }
 }
