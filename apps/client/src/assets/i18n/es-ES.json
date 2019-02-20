@@ -41,7 +41,7 @@
   "Timers": "Temporizadores",
   "Copy_isearch": "Copiar macro de isearch",
   "Isearch_copied": "/isearch {{itemname}} copiado al portapapeles",
-  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
+  "Required_for_final_craft": "{{amount}} necesarios para los artículos finales, tal vez los quiera HQ",
   "Mark_HQ": "Marcar como HQ requerido",
   "Unmark_HQ": "Quitar requisito de HQ",
   "Compact_sidebar_toggle": "Alternar barra lateral compacta",
@@ -320,7 +320,7 @@
     "Regenerate_all": "Regenerar todas las listas",
     "Regenerated_all": "Sus listas están actualizadas",
     "Merge_lists": "Mezclar listas",
-    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
+    "Merge_lists_warning": "Las listas grandes no se muestran porque no se puede combinar listas que son demasiado grandes debido a limitaciones de la base de datos.",
     "Lists_merged": "¡Listas mezcladas con éxito!",
     "Shared_lists": "Listas compartidas con usted",
     "Add_selection": "Agregar selección a la lista",
@@ -396,7 +396,7 @@
     "Open_in_ffxivgardening": "Abrir en ffxivgardening.com",
     "Add_all_item_alarms": "Agregar todas las alarmas para este artículo",
     "Adaptative_filter": "Sólo mostrar lo que puedo hacer",
-    "Disable_HQ_suggestions": "Disable automatic HQ flags",
+    "Disable_HQ_suggestions": "Desactivar las banderas HQ automáticas",
     "Amount_craftable": "Puede crear {{amount}}",
     "Add_item": "Agregar un artículo",
     "LAYOUT_DIALOG": {
@@ -614,7 +614,7 @@
       "Recipe_durability": "Durabilidad"
     },
     "ROTATIONS": {
-      "Search_placeholder": "Search a rotation",
+      "Search_placeholder": "Buscar una rotación",
       "FOLDERS": {
         "Folders": "Carpetas de rotación",
         "Rename": "Renombrar carpeta",
@@ -813,12 +813,12 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more !"
+    "Loading_data": "¡Cargando artículos, acciones y más!"
   },
   "GIVEAWAY": {
     "Discord_1K": {
-      "Title": "1000 Discord members giveaway !",
-      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+      "Title": "¡Sorteo por 1000 miembros de Discord!",
+      "Description": "Haga clic en este banner para ir a la página de registro para el sorteo de la edición de colección de FINAL FANTASY XIV: Shadowbringers creada para celebrar la meta de 1000 miembros alcanzada en el servidor de Discord."
     }
   }
 }
