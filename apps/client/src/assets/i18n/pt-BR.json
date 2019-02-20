@@ -785,40 +785,40 @@
     "Features_header": "Começar!",
     "DESCRIPTION": {
       "Lists": "Crie listas para obter informações sobre todos os materiais, compartilhe-os com seus amigos, tudo começa aqui! Basta procurar um item, expandir filtros para obter itens específicos e começar a criar coisas.",
-      "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
-      "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame, everything is possible.",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
-      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
-      "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
-      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your ffxiv !"
+      "Public_lists": "Listas de clones criadas pela comunidade que ajudam a construir coisas, levekits, conclusão de log, dirigíveis, equipamento BiS, tudo pode ser encontrado aqui.",
+      "Alarms": "Crie alarmes para garantir que você não perca um spawn de node, organize-os em grupos, importe-os em um jogo, tudo é possível.",
+      "Gathering_location": "Encontre informações sobre qualquer item de coleta, crie um alarme, obtenha coordenadas instantâneas, aetheryte mais próximo, livro necessário para criação e muito mais!",
+      "Rotations": "Criar rotações de criação, teste-as dentro do simulador ou faça rotações de theorycraft usando o simulador personalizado !",
+      "Levequests": "Crie algumas levequests para qualquer job/nível, veja os benefícios delas e crie listas para as mesmas.",
+      "Macro_translation": "Tem algum macro que não está na sua língua? Vá para o tradutor de macro e traduza de volta a seu idioma para que funcione no seu FFXIV!"
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available ! ",
-    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
-    "Web_instructions": "Please reload the page to get the latest version."
+    "New_update_available": "Uma nova atualização está disponível",
+    "Desktop_instructions": "Por favor, navegue para o seguinte link para baixar a versão mais recente: ",
+    "Web_instructions": "Por favor, recarregue a página para obter a versão mais recente."
   },
   "LOG_TRACKER": {
-    "Title": "Log Tracker",
-    "Mark_page_as_done": "Mark this page as done",
-    "Mark_as_done": "Mark this item as done",
-    "Mark_as_not_done": "Mark this item as not done",
-    "Create_list": "Create a list to complete this page",
+    "Title": "Rastreador de Log",
+    "Mark_page_as_done": "Marcar esta página como concluída",
+    "Mark_as_done": "Marcar este item como concluído",
+    "Mark_as_not_done": "Marcar este item como não concluído",
+    "Create_list": "Criar uma lista para completar esta página",
     "PAGE": {
-      "Master_recipes": "Master recipes ({{number}})",
-      "Housing_items": "Housing({{number}})",
-      "Others": "Others",
-      "Dyes": "Dyes",
-      "Other_master_recipes": "Other Master Recipes"
+      "Master_recipes": "Receitas de mestre ({{number}})",
+      "Housing_items": "Casa({{number}})",
+      "Others": "Outros",
+      "Dyes": "Tintas",
+      "Other_master_recipes": "Outras Receitas Mestres"
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more !"
+    "Loading_data": "Carregando itens, ações e muito mais!"
   },
   "GIVEAWAY": {
     "Discord_1K": {
-      "Title": "1000 Discord members giveaway !",
-      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+      "Title": "1000 membros do Discord!",
+      "Description": "Clique neste banner para ir para a página de registro do giveaway para o FINAL FANTASY XIV: Shadowbringers Collector's Edition criado para celebrar o limite de 1000 membros alcançado no servidor discord."
     }
   }
 }
