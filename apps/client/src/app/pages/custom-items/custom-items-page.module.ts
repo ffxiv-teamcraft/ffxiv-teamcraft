@@ -7,6 +7,9 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
+import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { CustomItemsModule } from '../../modules/custom-items/custom-items.module';
 
 const routes: Routes = [{
   path: '',
@@ -22,9 +25,12 @@ const routes: Routes = [{
     NgZorroAntdModule,
     FlexLayoutModule,
     NameQuestionPopupModule,
+    PageLoaderModule,
+    FullpageMessageModule,
 
+    CustomItemsModule,
     RouterModule.forChild(routes)
   ]
 })
-export class CustomItemsModule {
+export class CustomItemsPageModule {
 }

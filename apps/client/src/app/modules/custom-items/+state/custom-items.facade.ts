@@ -17,6 +17,7 @@ import { CustomItem } from '../model/custom-item';
 import { CustomItemFolder } from '../model/custom-item-folder';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { CustomItemsDisplay } from './custom-items-display';
 
 @Injectable({
   providedIn: 'root'
@@ -27,14 +28,17 @@ export class CustomItemsFacade {
   allCustomItems$ = this.store.pipe(select(customItemsQuery.getAllCustomItems));
   allCustomItemFolders$ = this.store.pipe(select(customItemsQuery.getAllCustomItemFolders));
 
-  customItemsPerFolder$: Observable<{ folder: CustomItemFolder, items: CustomItem[] }[]> = combineLatest(this.allCustomItems$, this.allCustomItemFolders$).pipe(
+  customItemsDisplay$: Observable<CustomItemsDisplay> = combineLatest(this.allCustomItems$, this.allCustomItemFolders$).pipe(
     map(([items, folders]) => {
-      return folders.map(folder => {
-        return {
-          folder: folder,
-          items: folder.items.map(id => items.find(item => item.$key === id)).filter(item => item !== undefined)
-        };
-      });
+      return {
+        otherItems: items.filter(item => !folders.some(folder => folder.items.some(key => key === item.$key))),
+        folders: folders.map(folder => {
+          return {
+            folder: folder,
+            items: folder.items.map(id => items.find(item => item.$key === id)).filter(item => item !== undefined)
+          };
+        })
+      };
     })
   );
 

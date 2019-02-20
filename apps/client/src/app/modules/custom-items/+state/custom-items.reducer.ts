@@ -2,7 +2,7 @@ import { CustomItemsAction, CustomItemsActionTypes } from './custom-items.action
 import { CustomItem } from '../model/custom-item';
 import { CustomItemFolder } from '../model/custom-item-folder';
 
-export const CUSTOMITEMS_FEATURE_KEY = 'customItems';
+export const CUSTOMITEMS_FEATURE_KEY = 'custom-items';
 
 export interface CustomItemsState {
   list: CustomItem[]; // list of CustomItems; analogous to a sql normalized table

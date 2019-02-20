@@ -98,7 +98,7 @@ const routes: Routes = [
   },
   {
     path: 'custom-items',
-    loadChildren: './pages/custom-items/custom-items.module#CustomItemsModule'
+    loadChildren: './pages/custom-items/custom-items-page.module#CustomItemsPageModule'
   },
 ];
 
