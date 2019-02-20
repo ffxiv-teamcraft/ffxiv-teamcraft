@@ -17,7 +17,6 @@ import { BehaviorSubject, combineLatest, EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
   AddCharacter,
-  AnonymousWarningShown,
   AuthActionTypes,
   Authenticated,
   CharactersLoaded,
@@ -123,8 +122,7 @@ export class AuthEffects {
 
   @Effect()
   watchNoLinkedCharacter$ = this.actions$.pipe(
-    // Avoid recursion
-    filter(action => action.type !== AuthActionTypes.NoLinkedCharacter && action.type !== AuthActionTypes.LinkingCharacter),
+    ofType(AuthActionTypes.CharactersLoaded, AuthActionTypes.UpdateUser, AuthActionTypes.UserFetched),
     withLatestFrom(this.store),
     filter(([action, state]) => {
       return !state.auth.loading
