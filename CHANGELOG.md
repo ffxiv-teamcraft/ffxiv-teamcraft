@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.33"></a>
+## [5.0.33](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.32...v5.0.33) (2019-02-20)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with alarms spawning at 12AM ([e4eed0b](https://github.com/Supamiu/ffxiv-teamcraft/commit/e4eed0b))
+* **auth:** character association popup showing up after each login ([760933a](https://github.com/Supamiu/ffxiv-teamcraft/commit/760933a)), closes [#777](https://github.com/Supamiu/ffxiv-teamcraft/issues/777)
+
+
+### Features
+
+* added banner announcement for 1k discord members giveaway ([e3b1ce1](https://github.com/Supamiu/ffxiv-teamcraft/commit/e3b1ce1))
+
+
+
 <a name="5.0.32"></a>
 ## [5.0.32](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.30...v5.0.32) (2019-02-19)
 
