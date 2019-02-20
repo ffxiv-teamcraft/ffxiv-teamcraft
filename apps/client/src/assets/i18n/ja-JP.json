@@ -320,6 +320,7 @@
     "Regenerate_all": "全リストを更新する",
     "Regenerated_all": "リストが更新されました",
     "Merge_lists": "リストを併合する",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "リスト併合が完了されました！",
     "Shared_lists": "書く権限があるリスト",
     "Add_selection": "選択項目をリストに追加する",
@@ -804,11 +805,20 @@
     "Mark_as_not_done": "Mark this item as not done",
     "Create_list": "Create a list to complete this page",
     "PAGE": {
-      "Master_recipes": "Master recipes ({{number}})",
-      "Housing_items": "Housing({{number}})",
-      "Others": "Others",
-      "Dyes": "Dyes",
+      "Master_recipes": "秘伝書 ({{number}})",
+      "Housing_items": "ハウジング ({{number}})",
+      "Others": "その他",
+      "Dyes": "染料",
       "Other_master_recipes": "Other Master Recipes"
+    }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
+  },
+  "GIVEAWAY": {
+    "Discord_1K": {
+      "Title": "1000 Discord members giveaway !",
+      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
     }
   }
 }
