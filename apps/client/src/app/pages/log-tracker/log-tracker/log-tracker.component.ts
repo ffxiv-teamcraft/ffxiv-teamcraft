@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { craftingLogPages } from '../../../core/data/sources/crafting-log-pages';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
@@ -86,7 +86,11 @@ export class LogTrackerComponent {
 
   public markAsDone(recipeId: number, done: boolean): void {
     this.authFacade.user$.pipe(first()).subscribe(user => {
-      user.logProgression.push(recipeId);
+      if (done) {
+        user.logProgression.push(recipeId);
+      } else {
+        user.logProgression = user.logProgression.filter(entry => entry !== recipeId);
+      }
       this.userCompletion[recipeId] = done;
       this.authFacade.updateUser(user);
     });
