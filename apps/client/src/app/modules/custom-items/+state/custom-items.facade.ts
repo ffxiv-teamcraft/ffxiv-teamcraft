@@ -13,7 +13,9 @@ import {
 } from './custom-items.actions';
 import { CustomItem } from '../model/custom-item';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CustomItemsFacade {
   loaded$ = this.store.pipe(select(customItemsQuery.getLoaded));
   allCustomItems$ = this.store.pipe(select(customItemsQuery.getAllCustomItems));
@@ -24,7 +26,7 @@ export class CustomItemsFacade {
   constructor(private store: Store<CustomItemsPartialState>) {
   }
 
-  selectCustomItem(key:string):void{
+  selectCustomItem(key: string): void {
     this.store.dispatch(new SelectCustomItem(key));
   }
 
