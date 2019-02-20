@@ -308,7 +308,7 @@
     "Save_for_all": "保存所有",
     "User_not_verified": "用户未验证, 单击以验证用户",
     "VERIFICATION": {
-      "Title": "Character verification",
+      "Title": "验证码验证",
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
       "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
@@ -370,10 +370,10 @@
       "Nothing": "无"
     },
     "BUTTONS": {
-      "Add_link_description": "Create a custom link for this list",
+      "Add_link_description": "为此列表创建自定义链接",
       "Create_template_description": "Create a template link for this list, which will create a copy of the list for whoever opens it",
       "Copy_template_url_description": "Copy the template link for this list, which will create a copy of the list for whoever opens it",
-      "Share_description": "Copy share link to your clipboard",
+      "Share_description": "将共享链接复制到剪贴板",
       "Open": "打开列表",
       "Open_description": "访问列表",
       "Delete": "删除列表",
@@ -397,7 +397,7 @@
     "Add_all_item_alarms": "Add all alarms for this item",
     "Adaptative_filter": "Only show what I can do",
     "Disable_HQ_suggestions": "禁用自动HQ标志",
-    "Amount_craftable": "You can craft {{amount}}",
+    "Amount_craftable": "您可以制作 {{amount}} 个",
     "Add_item": "添加物品",
     "LAYOUT_DIALOG": {
       "Title": "布局",
@@ -468,12 +468,12 @@
     "Macro_language": "宏语言",
     "Macro_to_translate": "Macro to translate",
     "Do_translate": "翻译！",
-    "Invalid_macro_or_language": "Invalid macro or language."
+    "Invalid_macro_or_language": "无效的宏或语言。"
   },
   "CUSTOM_LINKS": {
     "Title": "自定义链接",
     "Not_found": "未找到链接",
-    "Add_link": "Create a custom link",
+    "Add_link": "创建自定义链接",
     "Link_created": "Custom link created, click the share button to copy it",
     "Dialog_title": "自定义链接",
     "Link_type": "链接类型",
@@ -488,7 +488,7 @@
     "Steps": "步骤",
     "STEP": {
       "Gathering": "采集{{amount}}",
-      "Hunting": "Get {{amount}} on monsters",
+      "Hunting": "在怪物上获取 {{amount}} 个",
       "Vendor": "购买{{amount}}",
       "Trade": "交换 {{amount}} 个"
     }
@@ -524,7 +524,7 @@
   "PERMISSIONS": {
     "Read": "查看",
     "Read_description": "The ability to see the list",
-    "Participate": "Participate",
+    "Participate": "参与",
     "Participate_description": "This gives you permission to tick items and modify amounts done",
     "Write": "写入",
     "Write_description": "This gives you the permission to add items, add lists (for workshops)",
@@ -581,7 +581,7 @@
     "No_rotations": "No rotations",
     "Create_a_custom_rotation": "Create a custom rotation",
     "Reset": "Reset rotation",
-    "Import_from_crafting_optimizer": "Import from crafting optimizer",
+    "Import_from_crafting_optimizer": "从制作模拟器导入",
     "Export_crafting_optimizer": "Export using crafting optimizer format",
     "Export_copied": "Crafting optimizer export code copied to your clipboard",
     "Unsaved_changes": "You have unsaved changes, please save before leaving this page or changes will be lost.",
@@ -595,7 +595,7 @@
     "Confirm_delete": "Do you really want to delete this rotation?",
     "Toggle_snapshot_mode": "Toggle snapshot mode",
     "Open_in_external": "Open in {{name}}'s sim",
-    "Select_job_please": "Please select a job",
+    "Select_job_please": "请选择一个职业",
     "Rename_rotation": "Rename Rotation",
     "Cross_class_setup": "Cross-class skills setup",
     "Include_sound_end": "包含宏结束提示音",
@@ -646,8 +646,8 @@
       "Control": "加工精度",
       "Specialist": "专家",
       "Ingredients": "HQ材料",
-      "Consumables": "Consumables",
-      "Apply_stats": "Apply stats",
+      "Consumables": "消耗品",
+      "Apply_stats": "应用参数",
       "Apply_ingredients": "使用高品质原料",
       "Apply_foods": "Apply consumables",
       "Food": "选择料理",
@@ -721,7 +721,7 @@
     "Invites": "邀请",
     "Assign_list": "Assign this list to a team",
     "Assign_team_member": "Assign to a team member",
-    "Detach_team": "Detach team",
+    "Detach_team": "拆分团队",
     "Delete_confirmation": "确实要删除此物品吗?",
     "Invite_expires": "Expires",
     "Invite_error": "团队邀请未找到或已过期",
@@ -730,7 +730,7 @@
     "Already_in_team": "您已经在这个团队中",
     "Webhook_configuration": "Webhook settings",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}个x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 已加入列表 **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
       "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "The **{{teamName}}** team will now be tracked in this channel.",
@@ -780,7 +780,7 @@
     "Slogan": "Craft, share, contribute",
     "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
     "Support_patreon": "Support us on patreon",
-    "Donation_button": "Make a one time donation",
+    "Donation_button": "进行一次性捐赠",
     "Buy_a_tshirt": "购买Teamcraft的T恤",
     "Features_header": "开始吧！",
     "DESCRIPTION": {
