@@ -464,9 +464,9 @@
     "FSH": "捕鱼人"
   },
   "MACRO_TRANSLATION": {
-    "Title": "Macro translator",
+    "Title": "宏转换器",
     "Macro_language": "宏语言",
-    "Macro_to_translate": "Macro to translate",
+    "Macro_to_translate": "要转换的宏",
     "Do_translate": "翻译！",
     "Invalid_macro_or_language": "无效的宏或语言。"
   },
@@ -474,7 +474,7 @@
     "Title": "自定义链接",
     "Not_found": "未找到链接",
     "Add_link": "创建自定义链接",
-    "Link_created": "Custom link created, click the share button to copy it",
+    "Link_created": "自定义链接已创建，点击共享按钮复制",
     "Dialog_title": "自定义链接",
     "Link_type": "链接类型",
     "Link_name": "链接名称",
