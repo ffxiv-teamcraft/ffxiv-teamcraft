@@ -241,7 +241,8 @@
       </nz-sider>
       <nz-content>
         <div class="page-container" [class.overlay]="overlay">
-          <nz-alert nzType="info" nzBanner [nzMessage]="message" *ngIf="newVersionAvailable$ | async" class="new-version-alert"
+          <nz-alert nzType="info" nzBanner [nzMessage]="message" *ngIf="newVersionAvailable$ | async"
+                    class="new-version-alert"
                     nzShowIcon>
             <ng-template #message>
               {{'UPDATE.New_update_available' | translate}}
@@ -252,7 +253,9 @@
           <nz-alert nzType="info" nzBanner [nzMessage]="'GIVEAWAY.Discord_1K.Title' | translate"
                     [nzDescription]="'GIVEAWAY.Discord_1K.Description' | translate" *ngIf="showGiveaway"
                     class="new-version-alert"
-                    nzShowIcon (click)="goToDiscord1kGiveaway()">
+                    [nzCloseText]="'Close' | translate"
+                    (nzOnClose)="closeDiscord1kGiveaway()"
+                    nzShowIcon (click)="goToDiscord1kGiveaway($event)">
           </nz-alert>
           <nz-spin [nzSize]="'large'" [nzSpinning]="navigating" class="app-container">
             <router-outlet></router-outlet>
