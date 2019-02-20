@@ -210,7 +210,7 @@
   "filters/ilvl": "物品等级",
   "filters/lvl": "等级要求：",
   "filters/craft_lvl": "配方等级",
-  "filters/worn_by": "装备耐久度",
+  "filters/worn_by": "装备职业",
   "filters/crafted_by": "制作者：",
   "filters/item_category": "物品类型",
   "Adding_recipes": "添加 {{amount}} 个配方到列表 {{listname}}",
@@ -649,12 +649,12 @@
       "Consumables": "消耗品",
       "Apply_stats": "应用参数",
       "Apply_ingredients": "使用高品质原料",
-      "Apply_foods": "Apply consumables",
+      "Apply_foods": "应用消耗品",
       "Food": "选择料理",
       "Medicine": "选择强化药",
-      "Action": "Choose free company actions",
+      "Action": "选择部队特效",
       "Save_on_profile": "Save on profile",
-      "Reset_set": "Reset these stats",
+      "Reset_set": "重置参数",
       "Save_consumables": "将这些消耗品保存为默认",
       "No_food": "无料理",
       "No_medicine": "无强化药",
@@ -685,8 +685,8 @@
     "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
-    "Title": "Levequests",
-    "Levequest_name": "Levequest name",
+    "Title": "理符任务",
+    "Levequest_name": "理符任务名",
     "No_results": "No levequests found",
     "Add_to_list": "Add this levequest's items to a list",
     "Quantity": "数量",
@@ -695,7 +695,7 @@
     "More_on_gamerescape": "More details on gamerescape",
     "Deliver_to": "发送到 {{placename}}",
     "INTRO": {
-      "Title": "Levequests",
+      "Title": "理符任务",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
       "Second_line": "Select a job, input a level range, you'll get a listing of the corresponding leves that you can check and add to a list, recipes will be automatically added to the selected list.",
       "Third_line": "如果您知道您正在寻找什么，您也可以通过名称搜索。"
@@ -709,7 +709,7 @@
   },
   "TEAMS": {
     "Title": "团队",
-    "Leader": "Leader",
+    "Leader": "团长",
     "Member": "成员",
     "Enable_discord_updates": "启用Discord更新",
     "Disable_discord_updates": "禁用Discord更新",
@@ -777,7 +777,7 @@
     "Defense_mag": "魔法防御力"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craft, share, contribute",
+    "Slogan": "制作，分享，贡献",
     "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
     "Support_patreon": "Support us on patreon",
     "Donation_button": "进行一次性捐赠",
