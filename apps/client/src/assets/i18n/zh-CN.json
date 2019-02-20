@@ -233,13 +233,13 @@
   "Timer_options": "Timer options",
   "Early_by": "提前 (艾欧泽亚小时)",
   "Sound": "声音",
-  "Share_link_copied": "List link copied in the clipboard",
+  "Share_link_copied": "链接已复制到剪贴板",
   "Share": "分享",
   "Close": "关闭",
   "Forgot_password": "忘记密码",
   "Email_enter": "电子邮箱",
   "Email_not_found": "没有找到该电子邮件地址",
-  "Email_sent": "An email has been sent with instructions to change your password.",
+  "Email_sent": "邮件已发送，指示更改您的密码。",
   "ALARM": {
     "Spawned": "{{itemName}} will spawn !",
     "See_on_map": "坐标",
@@ -514,11 +514,11 @@
     "Share_link_copied": "Template share link copied to the clipboard",
     "Copy_template_url": "复制模板链接",
     "Cloning_list": "Creating a copy of the list to your account",
-    "Redirect_notice": "You'll be redirected to the list once the clone is created",
+    "Redirect_notice": "一旦复制完成，您将被重定向到复制后的列表",
     "Not_found": "未找到模板",
     "STATUS": {
       "Loading": "从数据库加载模板",
-      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+      "Copying": "正在您的账户中创建列表副本，一旦完成，您将被重定向到副本"
     }
   },
   "PERMISSIONS": {
@@ -528,7 +528,7 @@
     "Participate_description": "This gives you permission to tick items and modify amounts done",
     "Write": "写入",
     "Write_description": "This gives you the permission to add items, add lists (for workshops)",
-    "Title": "Permissions management",
+    "Title": "权限管理",
     "Everyone": "所有人",
     "You": "自己",
     "Add_new": "添加一个用户",
@@ -553,7 +553,7 @@
     "Fixed_notification_number": "Fixed notification",
     "Starting_echo_number": "Notification #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
-    "Include_consumables_notification": "Include consumables notification",
+    "Include_consumables_notification": "包含的消耗品提示",
     "Consumable_notification": "使用 {{buffs}}",
     "Extra_wait": "Extra wait",
     "Import_macro": "从ingame宏导入",
@@ -713,7 +713,7 @@
     "Member": "成员",
     "Enable_discord_updates": "启用Discord更新",
     "Disable_discord_updates": "禁用Discord更新",
-    "Webhook_error": "There was an error while creating the Discord webhook:",
+    "Webhook_error": "创建Discord webhook时出错：",
     "Create_team": "创建一个团队",
     "Create_invite_one_day": "创建新邀请(1天到期)",
     "Create_invite_infinite": "创建新邀请(永久)",
@@ -731,7 +731,7 @@
     "Webhook_configuration": "Webhook settings",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}个x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 已加入列表 **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}个x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 已从列表 **[{{listName}}]({{listUrl}})** 删除。",
       "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "The **{{teamName}}** team will now be tracked in this channel.",
       "List_added_notification": "列表 **[{{listName}}] ({{listUrl}}) ** 已添加到团队中。",
