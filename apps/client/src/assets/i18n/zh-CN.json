@@ -225,7 +225,7 @@
   "Character_not_found": "没有找到角色",
   "Use_lodestoneId": "使用lodestone ID",
   "LodestoneId": "LodestoneID",
-  "List_forked": "List copied to your account",
+  "List_forked": "列表已复制到您的账户",
   "List_fork": "将此列表复制到您的帐户",
   "List_not_found": "List not found or you don't have access to it",
   "Requirements_for_craft": "See requirements",
@@ -506,7 +506,7 @@
     "Read_more": "更多"
   },
   "LIST_TEMPLATE": {
-    "Create_template": "Create a list template for this list",
+    "Create_template": "为此列表创建列表模板",
     "Template_created": "List template created",
     "Dialog_title": "模板创建",
     "Link_name": "模版名称",
@@ -564,8 +564,8 @@
     "Step_counter": "工次",
     "Durability": "耐久",
     "Hq": "高品质",
-    "Cp_amount": "CP",
-    "Simulate_tooltip": "Craft in simulator",
+    "Cp_amount": "制作力",
+    "Simulate_tooltip": "用模拟器生产",
     "Change_recipe": "改变配方",
     "Changing_recipe_save_warning": "Your changes will be lost if you don't save them before picking a recipe",
     "Too_many_aactions": "You have more than 10 cross-class actions used for this macro",
@@ -703,7 +703,7 @@
   },
   "NOTIFICATIONS": {
     "Title": "通知",
-    "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
+    "List_comment_added": "在列表 {{listName}} 上评论: \"{{content}}\"",
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
     "Mark_all_as_read": "全部标记为已读"
   },
