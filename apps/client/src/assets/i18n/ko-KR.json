@@ -320,7 +320,7 @@
     "Regenerate_all": "전체 목록 갱신",
     "Regenerated_all": "목록이 갱신되었습니다.",
     "Merge_lists": "목록 병합",
-    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
+    "Merge_lists_warning": "대규모 목록은 데이터베이스의 한계로 인해 병합이 불가능하기 때문에 여기에 표시되지 않습니다.",
     "Lists_merged": "목록 병합이 완료되었습니다!",
     "Shared_lists": "쓰기 권한이 있는 목록",
     "Add_selection": "선택항목을 목록에 추가",
@@ -813,11 +813,11 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more !"
+    "Loading_data": "아이템, 기술, 그 이상을 불러오는 중"
   },
   "GIVEAWAY": {
     "Discord_1K": {
-      "Title": "1000 Discord members giveaway !",
+      "Title": "Discord 멤버 1000명 달성 행사!",
       "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
     }
   }
