@@ -670,27 +670,27 @@
       "DURABILITY_REACHED_ZERO": "Durabilidade chegou a 0 antes do progresso chegar ao máximo",
       "NOT_ENOUGH_CP": "CP insuficiente",
       "MISSING_LEVEL_REQUIREMENT": "Você não tem nível requerido",
-      "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
-      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
+      "NOT_SPECIALIST": "Rotação de Especialista, mas você não é especialista",
+      "NO_INNER_QUIET": "Tentativa de usar Inner Quiet sem o buff do Inner Quiet ativo"
     }
   },
   "PRICING": {
-    "From_vendor": "Price from vendor",
-    "From_crafting": "Price from crafting",
-    "Expect_to_sell_everything": "Expect to sell everything",
-    "Autofill_panel_prices": "Fill prices based on marketboard prices",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
-    "Copy_earnings_as_text": "Copy content as text",
-    "Content_copied": "Content copied in your clipboard",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
+    "From_vendor": "Preço do fornecedor",
+    "From_crafting": "Preço da criação",
+    "Expect_to_sell_everything": "Esperar vender tudo",
+    "Autofill_panel_prices": "Preencher preços com base nos preços do mercado",
+    "Autofill_panel_prices_warning": "Este é um processo lento e deve levar cerca de {{time}} segundos para concluir, tem certeza?",
+    "Copy_earnings_as_text": "Copiar conteúdo como texto",
+    "Content_copied": "Conteúdo copiado para a área de transferências",
+    "Cheaper_at_vendor": "Mais barato se você comprar pelo NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
-    "Levequest_name": "Levequest name",
-    "No_results": "No levequests found",
-    "Add_to_list": "Add this levequest's items to a list",
-    "Quantity": "Quantity",
-    "All_deliveries": "All {{value}} Deliveries",
+    "Levequest_name": "Nome da levequest",
+    "No_results": "Nenhuma levequest encontrada",
+    "Add_to_list": "Adicionar os itens dessa levequest a uma lista",
+    "Quantity": "Quantidade",
+    "All_deliveries": "Todas as {{value}} entregas",
     "Compute_exp": "Show impact on xp",
     "More_on_gamerescape": "More details on gamerescape",
     "Deliver_to": "Deliver to {{placename}}",
@@ -753,38 +753,38 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Informations",
-    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
-    "Amount": "Quantity",
+    "Title": "Informações do Marketboard",
+    "Error": "A API XIVAPI ou Companion está desligada, por favor aguarde um momento antes de tentar novamente.",
+    "Amount": "Quantidade",
     "HQ": "HQ",
-    "Total_price": "Total price",
-    "Unit_price": "Unit price",
-    "History": "History",
-    "Purchase_date": "Date",
-    "More_on_mogboard": "More details on mogboard"
+    "Total_price": "Preço total",
+    "Unit_price": "Preço unitário",
+    "History": "Histórico",
+    "Purchase_date": "Data",
+    "More_on_mogboard": "Mais detalhes no mogboard"
   },
   "COMMENTS": {
-    "Title": "Comments"
+    "Title": "Comentários"
   },
   "TOOLTIP": {
-    "Level": "Level",
+    "Level": "Nível",
     "Ilvl": "ilvl",
-    "Cost": "Cost",
+    "Cost": "Custo",
     "Class_job": "Class/Job",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense"
+    "Damage_phys": "Dano Físico",
+    "Damage_mag": "Dano Mágico",
+    "Defense_phys": "Defesa Física",
+    "Defense_mag": "Defesa Mágica"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craft, share, contribute",
-    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
-    "Support_patreon": "Support us on patreon",
-    "Donation_button": "Make a one time donation",
-    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
-    "Features_header": "Get started !",
+    "Slogan": "Crafte, compartilhe, contribua",
+    "Lists_created_counter": "{{amount}} listas criadas usando o FFXIV Teamcraft",
+    "Support_patreon": "Apoie-nos no patreon",
+    "Donation_button": "Faça uma doação de uma vez",
+    "Buy_a_tshirt": "Compre uma camiseta do Teamcraft",
+    "Features_header": "Começar!",
     "DESCRIPTION": {
-      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
+      "Lists": "Crie listas para obter informações sobre todos os materiais, compartilhe-os com seus amigos, tudo começa aqui! Basta procurar um item, expandir filtros para obter itens específicos e começar a criar coisas.",
       "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
       "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame, everything is possible.",
       "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
