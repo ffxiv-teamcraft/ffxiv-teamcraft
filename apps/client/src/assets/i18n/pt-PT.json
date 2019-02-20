@@ -394,10 +394,10 @@
     "Tags_popup": "Tags",
     "Inventory_breakdown": "Inventário",
     "Open_in_ffxivgardening": "Aberto em ffxivgardening.com",
-    "Add_all_item_alarms": "Add all alarms for this item",
-    "Adaptative_filter": "Only show what I can do",
-    "Disable_HQ_suggestions": "Disable automatic HQ flags",
-    "Amount_craftable": "You can craft {{amount}}",
+    "Add_all_item_alarms": "Adicionar todos os alarmes d'esta lista",
+    "Adaptative_filter": "Mostrar só o que posso fazer",
+    "Disable_HQ_suggestions": "Desativar automáticas sinalizadores de HQ",
+    "Amount_craftable": "Pode criar {{amount}}",
     "Add_item": "Adicionar um item",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
@@ -408,7 +408,7 @@
       "Layout_name": "Nome do layout",
       "Invalid_import": "Código de importação inválido",
       "Global_options": "Opções gerais",
-      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
+      "Default_readonly_message": "Layout padrão é só de leitura, para poder personalizá-lo deve criar um novo layout usando o botão +."
     },
     "LAYOUT": {
       "Filter": "Filtro",
@@ -472,34 +472,34 @@
   },
   "CUSTOM_LINKS": {
     "Title": "Links personalizados",
-    "Not_found": "Link not found",
-    "Add_link": "Create a custom link",
-    "Link_created": "Custom link created, click the share button to copy it",
-    "Dialog_title": "Custom link",
-    "Link_type": "Link type",
-    "Link_name": "Link name",
-    "target": "Link target",
-    "Share_link_copied": "Custom link copied to clipboard",
-    "Copy_custom_link": "Copy custom link",
-    "No_links": "No custom links"
+    "Not_found": "Link não encontrado",
+    "Add_link": "Criar um link personalizado",
+    "Link_created": "Link personalizado criado, clique no botão share para copiá-lo",
+    "Dialog_title": "Link personalizado",
+    "Link_type": "Tipo de link",
+    "Link_name": "Nome do link",
+    "target": "Destino do link",
+    "Share_link_copied": "Link personalizado copiado para a área de transferência",
+    "Copy_custom_link": "Copiar link personalizado",
+    "No_links": "Não há links personalizados"
   },
   "NAVIGATION": {
-    "Title": "Optimized navigation route",
-    "Steps": "Steps",
+    "Title": "Rota de navegação optimizada",
+    "Steps": "Passos",
     "STEP": {
-      "Gathering": "Gather {{amount}}",
-      "Hunting": "Get {{amount}} on monsters",
-      "Vendor": "Buy {{amount}}",
-      "Trade": "Trade {{amount}}"
+      "Gathering": "Colectar {{amount}}",
+      "Hunting": "Obtenha {{amount}} dos monstros",
+      "Vendor": "Comprar {{amount}}",
+      "Trade": "Trocar {{amount}}"
     }
   },
   "GATHERING_LOCATIONS": {
-    "Title": "Gathering items",
+    "Title": "Itens a colher",
     "No_items": "No gathering node found",
-    "Gathering_name": "Enter item name",
+    "Gathering_name": "Escreva o nome do item",
     "Ephemeral_node": "Ephemeral node, can be respawned",
     "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !",
-    "Hidden_item": "Hidden"
+    "Hidden_item": "Escondido"
   },
   "ANNOUNCEMENT": {
     "Title": "Announcement",
