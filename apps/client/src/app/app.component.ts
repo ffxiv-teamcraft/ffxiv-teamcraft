@@ -332,8 +332,15 @@ export class AppComponent implements OnInit {
     this.settingsPopupService.openSettings();
   }
 
-  public goToDiscord1kGiveaway():void{
+  public goToDiscord1kGiveaway(event: MouseEvent): void {
+    if (event.srcElement.tagName === 'A') {
+      return;
+    }
     window.open('https://gleam.io/J1tAD/ffxiv-teamcrafts-final-fantasy-xiv-shadowbringers-collectors-edition-giveaway', '_blank');
+    localStorage.setItem('giveaway:1kdiscord', '5');
+  }
+
+  public closeDiscord1kGiveaway(): void {
     localStorage.setItem('giveaway:1kdiscord', '5');
   }
 }

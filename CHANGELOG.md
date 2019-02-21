@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.34"></a>
+## [5.0.34](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.33...v5.0.34) (2019-02-21)
+
+
+### Bug Fixes
+
+* **list-details:** added scrollbar to user assignment menu ([2d5bf4d](https://github.com/Supamiu/ffxiv-teamcraft/commit/2d5bf4d)), closes [#781](https://github.com/Supamiu/ffxiv-teamcraft/issues/781)
+* **log-tracker:** fixed an issue with log progression not being saved properly in some cases ([f6695ac](https://github.com/Supamiu/ffxiv-teamcraft/commit/f6695ac))
+* **simulator:** actions that need GOOD or EXCELLENT are now disabled in safe mode ([c868cf0](https://github.com/Supamiu/ffxiv-teamcraft/commit/c868cf0))
+
+
+### Features
+
+* added close button to giveaway announcement ([afbb1c0](https://github.com/Supamiu/ffxiv-teamcraft/commit/afbb1c0))
+* **lists:** you can now copy a list directly from /lists page ([5f28db7](https://github.com/Supamiu/ffxiv-teamcraft/commit/5f28db7))
+* **tooltips:** added tooltips details for foods ([9633464](https://github.com/Supamiu/ffxiv-teamcraft/commit/9633464))
+
+
+
 <a name="5.0.33"></a>
 ## [5.0.33](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.32...v5.0.33) (2019-02-20)
 
