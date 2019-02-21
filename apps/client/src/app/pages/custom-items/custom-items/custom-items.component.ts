@@ -4,10 +4,11 @@ import { combineLatest, Observable } from 'rxjs';
 import { CustomItemsFacade } from '../../../modules/custom-items/+state/custom-items.facade';
 import { NzModalService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, map } from 'rxjs/operators';
+import { filter, first, map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
 import { CustomItemsDisplay } from '../../../modules/custom-items/+state/custom-items-display';
+import { DataModel } from '../../../core/database/storage/data-model';
 
 @Component({
   selector: 'app-custom-items',
@@ -21,6 +22,8 @@ export class CustomItemsComponent {
   public loading$: Observable<boolean> = combineLatest(this.customItemsFacade.loaded$, this.customItemsFacade.foldersLoaded$).pipe(
     map(([itemsLoaded, foldersLoaded]) => !itemsLoaded || !foldersLoaded)
   );
+
+  private folders$ = this.customItemsFacade.allCustomItemFolders$;
 
   constructor(private customItemsFacade: CustomItemsFacade, private dialog: NzModalService,
               private translate: TranslateService) {
@@ -74,6 +77,66 @@ export class CustomItemsComponent {
 
   public importItems(): void {
     //TODO
+  }
+
+  public setItemIndex(item: CustomItem, index: number, array: CustomItem[], folderId: string | undefined): void {
+    // If it comes from a folder and we're not inside a folder, remove it from the previous folder :D
+    if (item.folderId !== folderId) {
+      this.folders$.pipe(first()).subscribe(folders => {
+        if (item.folderId !== undefined) {
+          const previousFolder = folders.find(f => f.$key === item.folderId);
+          previousFolder.items = previousFolder.items.filter(key => key !== item.$key);
+          this.customItemsFacade.updateCustomItemFolder(previousFolder);
+          delete item.folderId;
+        }
+        if (folderId !== undefined) {
+          item.folderId = folderId;
+          const newFolder = folders.find(f => f.$key === item.folderId);
+          newFolder.items.push(item.$key);
+          this.customItemsFacade.updateCustomItemFolder(newFolder);
+        }
+      });
+    }
+    // Remove item from the array
+    array = array.filter(i => i.$key !== item.$key);
+    // Insert it at new index
+    array.splice(index, 0, item);
+    // Update indexes and persist
+    array
+      .map((row, i) => {
+        if (row.index !== i) {
+          row.index = i;
+        }
+        return row;
+      })
+      .forEach(i => {
+        this.customItemsFacade.updateCustomItem(i);
+      });
+  }
+
+  public setFolderIndex(folder: CustomItemFolder, index: number, array: CustomItemFolder[]): void {
+    // Remove item from the array
+    array = array.filter(i => i.$key !== folder.$key);
+    // Insert it at new index
+    array.splice(index, 0, folder);
+    // Update indexes and persist
+    array
+      .map((row, i) => {
+        if (row.index !== i) {
+          row.index = i;
+        }
+        return row;
+      })
+      .forEach(f => {
+        this.customItemsFacade.updateCustomItemFolder(f);
+      });
+  }
+
+  public trackByKey(index: number, data: DataModel): string {
+    return data.$key;
+  }
+  public trackByFolderKey(index: number, data: any): string {
+    return data.folder.$key;
   }
 
 }

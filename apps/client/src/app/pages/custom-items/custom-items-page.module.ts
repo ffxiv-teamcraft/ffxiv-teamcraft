@@ -10,6 +10,7 @@ import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { CustomItemsModule } from '../../modules/custom-items/custom-items.module';
+import { NgxDnDModule } from '@swimlane/ngx-dnd';
 
 const routes: Routes = [{
   path: '',
@@ -27,6 +28,7 @@ const routes: Routes = [{
     NameQuestionPopupModule,
     PageLoaderModule,
     FullpageMessageModule,
+    NgxDnDModule,
 
     CustomItemsModule,
     RouterModule.forChild(routes)

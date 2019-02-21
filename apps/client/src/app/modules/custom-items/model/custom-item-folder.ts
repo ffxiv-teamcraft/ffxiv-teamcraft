@@ -4,11 +4,11 @@ import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 export class CustomItemFolder extends DataModel {
   @ForeignKey(TeamcraftUser)
-  public userId: string;
+  public authorId: string;
 
   public name: string;
 
   public items: string[] = [];
 
-  public authorId: string;
+  public index: number;
 }

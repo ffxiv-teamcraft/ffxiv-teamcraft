@@ -7,4 +7,7 @@ export class CustomItem extends ListRow {
   authorId: string;
   name: string;
   custom = true;
+  index = -1;
+  // Mainly used for display, in order to remove an item from its folder on drag out.
+  folderId?: string;
 }

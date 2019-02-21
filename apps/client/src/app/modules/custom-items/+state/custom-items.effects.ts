@@ -43,7 +43,10 @@ export class CustomItemsEffects {
   @Effect({ dispatch: false })
   updateCustomItem$ = this.actions$.pipe(
     ofType<UpdateCustomItem>(CustomItemsActionTypes.UpdateCustomItem),
-    switchMap(action => this.customItemsService.update(action.payload.$key, action.payload))
+    switchMap(action => {
+      delete action.payload.folderId;
+      return this.customItemsService.update(action.payload.$key, action.payload)
+    })
   );
 
 

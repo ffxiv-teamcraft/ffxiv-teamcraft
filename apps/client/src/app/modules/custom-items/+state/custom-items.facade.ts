@@ -25,8 +25,12 @@ import { CustomItemsDisplay } from './custom-items-display';
 export class CustomItemsFacade {
   loaded$ = this.store.pipe(select(customItemsQuery.getLoaded));
   foldersLoaded$ = this.store.pipe(select(customItemsQuery.getFoldersLoaded));
-  allCustomItems$ = this.store.pipe(select(customItemsQuery.getAllCustomItems));
-  allCustomItemFolders$ = this.store.pipe(select(customItemsQuery.getAllCustomItemFolders));
+  allCustomItems$ = this.store.pipe(select(customItemsQuery.getAllCustomItems)).pipe(
+    map(items => items.sort((a, b) => a.index - b.index))
+  );
+  allCustomItemFolders$ = this.store.pipe(select(customItemsQuery.getAllCustomItemFolders)).pipe(
+    map(folders => folders.sort((a, b) => a.index - b.index))
+  );
 
   customItemsDisplay$: Observable<CustomItemsDisplay> = combineLatest(this.allCustomItems$, this.allCustomItemFolders$).pipe(
     map(([items, folders]) => {
@@ -35,7 +39,13 @@ export class CustomItemsFacade {
         folders: folders.map(folder => {
           return {
             folder: folder,
-            items: folder.items.map(id => items.find(item => item.$key === id)).filter(item => item !== undefined)
+            items: folder.items.map(id => {
+              return items.find(item => item.$key === id);
+            }).filter(item => item !== undefined)
+              .map(item => {
+                item.folderId = folder.$key;
+                return item;
+              })
           };
         })
       };

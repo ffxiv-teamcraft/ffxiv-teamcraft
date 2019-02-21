@@ -1,25 +1,80 @@
-<app-page-loader *ngIf="loading$ | async; else items">
+<app-page-loader *ngIf="loading$ | async; else pageContent">
 </app-page-loader>
-<div *ngIf="display$ | async as display">
-  <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
-    <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createCustomItem()" nz-tooltip
-            [nzTitle]="'New_List' | translate">
-      <i nz-icon type="file-add"></i>
-    </button>
-    <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createFolder()" nz-tooltip
-            [nzTitle]="'WORKSHOP.Add_workshop' | translate">
-      <i nz-icon type="folder-add"></i>
-    </button>
-    <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip (click)="importItems()"
-            [nzTitle]="'LISTS.IMPORT.Title' | translate">
-      <i nz-icon type="download"></i>
-    </button>
-  </div>
+<ng-template #pageContent>
+  <div *ngIf="display$ | async as display">
+    <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
+      <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createCustomItem()" nz-tooltip
+              [nzTitle]="'CUSTOM_ITEMS.New_item' | translate">
+        <i nz-icon type="file-add"></i>
+      </button>
+      <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createFolder()" nz-tooltip
+              [nzTitle]="'CUSTOM_ITEMS.New_folder' | translate">
+        <i nz-icon type="folder-add"></i>
+      </button>
+      <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip (click)="importItems()"
+              [nzTitle]="'CUSTOM_ITEMS.Import_items' | translate">
+        <i nz-icon type="download"></i>
+      </button>
+    </div>
 
-  <div *ngIf="display.otherItems.length === 0 && display.folders.length === 0">
-    <app-fullpage-message height="300px">{{'CUSTOM_ITEMS.No_items' | translate}}</app-fullpage-message>
+    <div *ngIf="display.otherItems.length === 0 && display.folders.length === 0; else itemsDisplay">
+      <app-fullpage-message height="300px">{{'CUSTOM_ITEMS.No_items' | translate}}</app-fullpage-message>
+    </div>
+    <ng-template #itemsDisplay>
+      <div fxLayout="column" fxLayoutGap="20px">
+        <div class="ngx-dnd-container" ngxDroppable="item"
+             fxLayout="column" fxLayoutGap="10px"
+             (drop)="setItemIndex($event.value, $event.dropIndex, display.otherItems, undefined)">
+          <div class="ngx-dnd-item" *ngFor="let item of display.otherItems; trackBy: trackByKey"
+               ngxDraggable="item"
+               [model]="item">
+            <ng-container *ngTemplateOutlet="itemDisplay;context:{$implicit: item}"></ng-container>
+          </div>
+        </div>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <div class="ngx-dnd-container" ngxDroppable="folder"
+               fxLayout="column" fxLayoutGap="10px"
+               (drop)="setFolderIndex($event.value, $event.dropIndex, display.folders)">
+            <div class="ngx-dnd-item" *ngFor="let folderDisplay of display.folders; trackBy: trackByFolderKey"
+                 ngxDraggable="folder"
+                 [model]="folderDisplay.folder">
+              <nz-collapse>
+                <nz-collapse-panel [nzHeader]="folderHeader">
+                  <ng-template #folderHeader>
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <i nz-icon type="folder"></i>
+                        <div>{{folderDisplay.folder.name}}</div>
+                      </div>
+                      <div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
+                        <button nz-button nz-popconfirm [nzTitle]="'Confirm' | translate"
+                                nzShape="circle"
+                                nzType="danger"
+                                (nzOnConfirm)="deleteCustomItemFolder(folderDisplay.folder.$key)">
+                          <i nz-icon type="delete"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </ng-template>
+                  <div class="ngx-dnd-container folder-items-container" ngxDroppable="item"
+                       fxLayout="column" fxLayoutGap="10px"
+                       (drop)="setItemIndex($event.value, $event.dropIndex, display.otherItems, folderDisplay.folder.$key)">
+                    <div class="ngx-dnd-item" *ngFor="let item of folderDisplay.items; trackBy: trackByKey"
+                         ngxDraggable="item"
+                         [model]="item">
+                      <ng-container *ngTemplateOutlet="itemDisplay;context:{$implicit: item}"></ng-container>
+                    </div>
+                  </div>
+                </nz-collapse-panel>
+              </nz-collapse>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </ng-template>
   </div>
-</div>
+</ng-template>
 
 <ng-template #itemDisplay let-item>
   <nz-collapse>
@@ -29,7 +84,7 @@
           <div>{{item.name}}</div>
           <div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
             <button nz-button nz-popconfirm [nzTitle]="'Confirm' | translate"
-                    nzShape="circle" nzSize="small"
+                    nzShape="circle"
                     nzType="danger"
                     (nzOnConfirm)="deleteCustomItem(item.$key)">
               <i nz-icon type="delete"></i>
