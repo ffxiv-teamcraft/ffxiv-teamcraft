@@ -92,6 +92,73 @@
           </div>
         </div>
       </ng-template>
+      <div class="item-form" fxLayout="column" fxLayoutGap="5px">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>{{'CUSTOM_ITEMS.Details' | translate}}</div>
+          <div>
+            <nz-dropdown [nzTrigger]="'click'" nz-tooltip [nzTitle]="'CUSTOM_ITEMS.Add_details' | translate">
+              <button nz-dropdown nz-button nzShape="circle" nzSize="small">
+                <i nz-icon type="plus"></i>
+              </button>
+              <ul nz-menu>
+                <li nz-menu-item
+                    (click)="addGathering(item)">{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</li>
+              </ul>
+            </nz-dropdown>
+          </div>
+        </div>
+        <div *ngIf="item.gatheredBy !== undefined" fxFlex="column">
+          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate" nzOrientation="left"></nz-divider>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
+            <nz-form-item>
+              <nz-form-label [nzSm]="8"
+                             [nzXs]="24">{{'CUSTOM_ITEMS.DETAILS.GATHERING.Type' | translate}}</nz-form-label>
+              <nz-form-control [nzSm]="16" [nzXs]="24">
+                <nz-select [(ngModel)]="item.gatheredBy.type">
+                  <nz-option [nzValue]="0" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(0 | nodeTypeName)) | translate">
+                  </nz-option>
+                  <nz-option [nzValue]="1" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(1 | nodeTypeName)) | translate">
+                  </nz-option>
+                  <nz-option [nzValue]="2" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(2 | nodeTypeName)) | translate">
+                  </nz-option>
+                  <nz-option [nzValue]="3" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(3 | nodeTypeName)) | translate">
+                  </nz-option>
+                  <nz-option [nzValue]="4" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(4 | nodeTypeName)) | translate">
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired
+                             nzFor="level">{{'CUSTOM_ITEMS.DETAILS.Level' | translate}}</nz-form-label>
+              <nz-form-control [nzSm]="16" [nzXs]="24">
+                <nz-input-number [(ngModel)]="item.gatheredBy.level" [nzMin]="1" [nzStep]="1"></nz-input-number>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="8"
+                             [nzXs]="24">{{'CUSTOM_ITEMS.DETAILS.GATHERING.Stars' | translate}}</nz-form-label>
+              <nz-form-control [nzSm]="16" [nzXs]="24">
+                <nz-select [(ngModel)]="item.gatheredBy.stars_tooltip">
+                  <nz-option [nzValue]="''" [nzLabel]="'CUSTOM_ITEMS.DETAILS.None' | translate">
+                  </nz-option>
+                  <nz-option [nzValue]="'★'" [nzLabel]="'★'">
+                  </nz-option>
+                  <nz-option [nzValue]="'★★'" [nzLabel]="'★★'">
+                  </nz-option>
+                  <nz-option [nzValue]="'★★★'" [nzLabel]="'★★★'">
+                  </nz-option>
+                  <nz-option [nzValue]="'★★★★'" [nzLabel]="'★★★★'">
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <button nz-button nzBlock nzType="primary" (click)="updateCustomItem(item)">
+          {{'CUSTOM_ITEMS.Save' | translate}}
+        </button>
+      </div>
     </nz-collapse-panel>
   </nz-collapse>
 </ng-template>

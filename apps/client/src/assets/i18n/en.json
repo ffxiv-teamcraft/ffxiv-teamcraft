@@ -810,5 +810,22 @@
       "Dyes": "Dyes",
       "Other_master_recipes": "Other Master Recipes"
     }
+  },
+  "CUSTOM_ITEMS": {
+    "New_item": "Create new custom item",
+    "New_folder": "Create new folder",
+    "Import_items": "Import custom items",
+    "Save": "Save item",
+    "Details": "Item details",
+    "DETAILS": {
+      "Level": "Level",
+      "None": "none",
+      "GATHERING": {
+        "Title": "Gathered by",
+        "Type": "Node type",
+        "Stars": "Stars",
+        "Folklore": "Folklore"
+      }
+    }
   }
 }

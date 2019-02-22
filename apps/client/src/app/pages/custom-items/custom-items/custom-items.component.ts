@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
 import { CustomItemsDisplay } from '../../../modules/custom-items/+state/custom-items-display';
 import { DataModel } from '../../../core/database/storage/data-model';
+import { NodeTypeIconPipe } from '../../../pipes/node-type-icon.pipe';
+import { folklores } from '../../../core/data/sources/folklores';
 
 @Component({
   selector: 'app-custom-items',
@@ -50,7 +52,7 @@ export class CustomItemsComponent {
   }
 
   public updateCustomItem(item: CustomItem): void {
-    this.customItemsFacade.updateCustomItem(item);
+    this.customItemsFacade.updateCustomItem(this.beforeSave(item));
   }
 
   public createFolder(): void {
@@ -135,8 +137,30 @@ export class CustomItemsComponent {
   public trackByKey(index: number, data: DataModel): string {
     return data.$key;
   }
+
   public trackByFolderKey(index: number, data: any): string {
     return data.folder.$key;
+  }
+
+  private beforeSave(item: CustomItem): CustomItem {
+    if (item.gatheredBy !== undefined) {
+      item.gatheredBy.icon = NodeTypeIconPipe.icons[item.gatheredBy.type];
+    }
+    return item;
+  }
+
+  /**
+   * Details writing
+   */
+  public addGathering(item: CustomItem): void {
+    item.gatheredBy = {
+      type: 0,
+      folklore: 0,
+      icon: '',
+      level: 70,
+      nodes: [],
+      stars_tooltip: ''
+    };
   }
 
 }
