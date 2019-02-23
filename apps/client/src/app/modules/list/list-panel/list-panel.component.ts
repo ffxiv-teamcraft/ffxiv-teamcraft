@@ -259,7 +259,7 @@ export class ListPanelComponent {
 
   openCommentsPopup(list: List, isAuthor: boolean): void {
     this.dialog.create({
-      nzTitle: this.translate.instant('COMMENTS.Title'),
+      nzTitle: `${list.name} - ${this.translate.instant('COMMENTS.Title')}`,
       nzFooter: null,
       nzContent: CommentsPopupComponent,
       nzComponentParams: {
