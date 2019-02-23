@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.35"></a>
+## [5.0.35](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.34...v5.0.35) (2019-02-23)
+
+
+### Bug Fixes
+
+* **aetheryte:** added missing Ok'undu aetheryte entry manually ([ab00f99](https://github.com/Supamiu/ffxiv-teamcraft/commit/ab00f99)), closes [#649](https://github.com/Supamiu/ffxiv-teamcraft/issues/649)
+* **alarms:** fixed alarms sound modification spamming preview sound ([cf07ff4](https://github.com/Supamiu/ffxiv-teamcraft/commit/cf07ff4))
+* **comments:** added target name (list or item) inside comment popup ([95a549e](https://github.com/Supamiu/ffxiv-teamcraft/commit/95a549e))
+* **list-details:** fixed an issue with crystals count not being reduced properly ([6e59a32](https://github.com/Supamiu/ffxiv-teamcraft/commit/6e59a32))
+* **lists:** removed count from own lists's copy button ([786ba4c](https://github.com/Supamiu/ffxiv-teamcraft/commit/786ba4c))
+
+
+
 <a name="5.0.34"></a>
 ## [5.0.34](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.33...v5.0.34) (2019-02-21)
 
