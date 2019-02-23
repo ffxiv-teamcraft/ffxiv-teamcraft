@@ -52,13 +52,20 @@
                 ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
           <i nz-icon type="share-alt"></i>
         </button>
-        <nz-badge [nzCount]="_list.forks" [nzShowZero]="true"
+        <nz-badge *ngIf="_list.public; else copyNoCount"
+                  [nzCount]="_list.forks" [nzShowZero]="true"
                   [nzOverflowCount]="999" class="fork-count">
           <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
                   [nzTitle]="'List_fork' | translate" (click)="cloneList(_list)">
             <i nz-icon type="copy" theme="outline"></i>
           </button>
         </nz-badge>
+        <ng-template #copyNoCount>
+          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+                  [nzTitle]="'List_fork' | translate" (click)="cloneList(_list)">
+            <i nz-icon type="copy" theme="outline"></i>
+          </button>
+        </ng-template>
         <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'LIST.BUTTONS.Open' | translate" nz-button
            *ngIf="(permissionLevel$ | async) > 10"
            [nzShape]="'circle'"

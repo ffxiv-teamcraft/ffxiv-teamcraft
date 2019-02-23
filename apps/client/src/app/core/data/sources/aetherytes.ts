@@ -90,6 +90,16 @@ export const aetherytes = [
     'nameid': 2116
   },
   {
+    'id': 73,
+    'zoneid': 2100,
+    'map': 215,
+    'placenameid': 2100,
+    'x': 11,
+    'y': 14,
+    'type': 0,
+    'nameid': 2123
+  },
+  {
     'id': 109,
     'zoneid': 2411,
     'map': 372,
