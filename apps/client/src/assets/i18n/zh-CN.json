@@ -803,7 +803,7 @@
     "Mark_page_as_done": "将此页标记为已完成",
     "Mark_as_done": "将此物品标记为已完成",
     "Mark_as_not_done": "将此物品标记为未完成",
-    "Create_list": "Create a list to complete this page",
+    "Create_list": "创建一个列表以完成这个页面",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
