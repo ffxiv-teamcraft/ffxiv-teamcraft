@@ -4,13 +4,13 @@ import { combineLatest, Observable } from 'rxjs';
 import { CustomItemsFacade } from '../../../modules/custom-items/+state/custom-items.facade';
 import { NzModalService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, first, map } from 'rxjs/operators';
+import { filter, first, map, shareReplay } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
 import { CustomItemsDisplay } from '../../../modules/custom-items/+state/custom-items-display';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { NodeTypeIconPipe } from '../../../pipes/node-type-icon.pipe';
-import { folklores } from '../../../core/data/sources/folklores';
+import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 
 @Component({
   selector: 'app-custom-items',
@@ -27,10 +27,16 @@ export class CustomItemsComponent {
 
   private folders$ = this.customItemsFacade.allCustomItemFolders$;
 
+  public maps$: Observable<{ ID: number, PlaceName: any }[]>;
+
   constructor(private customItemsFacade: CustomItemsFacade, private dialog: NzModalService,
-              private translate: TranslateService) {
+              private translate: TranslateService, private xivapi: XivapiService) {
     this.customItemsFacade.loadAll();
     this.customItemsFacade.loadAllFolders();
+    this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, { columns: ['ID', 'PlaceName.Name_*'], max_items: 1000 }).pipe(
+      map(list => list.Results),
+      shareReplay(1)
+    );
   }
 
   public createCustomItem(): void {
@@ -145,6 +151,9 @@ export class CustomItemsComponent {
   private beforeSave(item: CustomItem): CustomItem {
     if (item.gatheredBy !== undefined) {
       item.gatheredBy.icon = NodeTypeIconPipe.icons[item.gatheredBy.type];
+      item.gatheredBy.nodes[0].zoneid = item.gatheredBy.nodes[0].mapid;
+      item.gatheredBy.nodes[0].areaid = item.gatheredBy.nodes[0].mapid;
+      item.gatheredBy.nodes[0].level = item.gatheredBy.level;
     }
     return item;
   }
@@ -158,7 +167,15 @@ export class CustomItemsComponent {
       folklore: 0,
       icon: '',
       level: 70,
-      nodes: [],
+      nodes: [
+        {
+          mapid: 0,
+          zoneid: 0,
+          areaid: 1,
+          level: 1,
+          coords: [0, 0]
+        }
+      ],
       stars_tooltip: ''
     };
   }

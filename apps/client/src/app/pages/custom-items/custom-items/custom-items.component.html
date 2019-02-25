@@ -111,9 +111,9 @@
           <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate" nzOrientation="left"></nz-divider>
           <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
             <nz-form-item>
-              <nz-form-label [nzSm]="8"
-                             [nzXs]="24">{{'CUSTOM_ITEMS.DETAILS.GATHERING.Type' | translate}}</nz-form-label>
-              <nz-form-control [nzSm]="16" [nzXs]="24">
+              <nz-form-label
+              >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Type' | translate}}</nz-form-label>
+              <nz-form-control>
                 <nz-select [(ngModel)]="item.gatheredBy.type">
                   <nz-option [nzValue]="0" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(0 | nodeTypeName)) | translate">
                   </nz-option>
@@ -129,16 +129,16 @@
               </nz-form-control>
             </nz-form-item>
             <nz-form-item>
-              <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired
+              <nz-form-label nzRequired
                              nzFor="level">{{'CUSTOM_ITEMS.DETAILS.Level' | translate}}</nz-form-label>
-              <nz-form-control [nzSm]="16" [nzXs]="24">
+              <nz-form-control>
                 <nz-input-number [(ngModel)]="item.gatheredBy.level" [nzMin]="1" [nzStep]="1"></nz-input-number>
               </nz-form-control>
             </nz-form-item>
             <nz-form-item>
-              <nz-form-label [nzSm]="8"
-                             [nzXs]="24">{{'CUSTOM_ITEMS.DETAILS.GATHERING.Stars' | translate}}</nz-form-label>
-              <nz-form-control [nzSm]="16" [nzXs]="24">
+              <nz-form-label
+              >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Stars' | translate}}</nz-form-label>
+              <nz-form-control>
                 <nz-select [(ngModel)]="item.gatheredBy.stars_tooltip">
                   <nz-option [nzValue]="''" [nzLabel]="'CUSTOM_ITEMS.DETAILS.None' | translate">
                   </nz-option>
@@ -151,6 +151,31 @@
                   <nz-option [nzValue]="'★★★★'" [nzLabel]="'★★★★'">
                   </nz-option>
                 </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-select [(ngModel)]="item.gatheredBy.nodes[0].mapid" *ngIf="maps$ | async as maps; else loading"
+                           nzAllowClear nzShowSearch class="maps-select">
+                  <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
+                             [nzValue]="map.ID"></nz-option>
+                </nz-select>
+                <ng-template #loading>
+                  <nz-spin></nz-spin>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label>X</nz-form-label>
+              <nz-form-control>
+                <nz-input-number [nzMin]="0" [(ngModel)]="item.gatheredBy.nodes[0].coords[0]"></nz-input-number>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label>Y</nz-form-label>
+              <nz-form-control>
+                <nz-input-number [nzMin]="0" [(ngModel)]="item.gatheredBy.nodes[0].coords[1]"></nz-input-number>
               </nz-form-control>
             </nz-form-item>
           </div>

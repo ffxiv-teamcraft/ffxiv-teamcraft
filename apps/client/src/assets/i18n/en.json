@@ -812,6 +812,7 @@
     }
   },
   "CUSTOM_ITEMS": {
+    "Title": "Custom items",
     "New_item": "Create new custom item",
     "New_folder": "Create new folder",
     "Import_items": "Import custom items",
