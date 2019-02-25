@@ -13,6 +13,8 @@ import { CustomItemsModule } from '../../modules/custom-items/custom-items.modul
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { FormsModule } from '@angular/forms';
 import { PipesModule } from '../../pipes/pipes.module';
+import { CustomAlarmPopupModule } from '../../modules/custom-alarm-popup/custom-alarm-popup.module';
+import { MapModule } from '../../modules/map/map.module';
 
 const routes: Routes = [{
   path: '',
@@ -23,18 +25,21 @@ const routes: Routes = [{
   declarations: [CustomItemsComponent],
   imports: [
     CommonModule,
-    CoreModule,
     FormsModule,
+    CoreModule,
+    NgxDnDModule,
+
     PipesModule,
-    TranslateModule,
-    NgZorroAntdModule,
-    FlexLayoutModule,
     NameQuestionPopupModule,
     PageLoaderModule,
     FullpageMessageModule,
-    NgxDnDModule,
-
     CustomItemsModule,
+    CustomAlarmPopupModule,
+    MapModule,
+
+    TranslateModule,
+    NgZorroAntdModule,
+    FlexLayoutModule,
     RouterModule.forChild(routes)
   ]
 })

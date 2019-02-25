@@ -825,7 +825,12 @@
         "Title": "Gathered by",
         "Type": "Node type",
         "Stars": "Stars",
-        "Folklore": "Folklore"
+        "Folklore": "Folklore",
+        "Slot": "Slot"
+      },
+      "ALARMS": {
+        "Title": "Alarms",
+        "Add_alarm": "Add alarm"
       }
     }
   }

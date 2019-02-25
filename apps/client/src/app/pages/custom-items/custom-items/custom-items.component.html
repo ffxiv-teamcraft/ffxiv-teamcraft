@@ -81,7 +81,7 @@
     <nz-collapse-panel [nzHeader]="header">
       <ng-template #header>
         <div fxLayout="row" fxLayoutAlign="space-between center">
-          <div>{{item.name}}</div>
+          <div>{{item.name}}<span *ngIf="item.dirty">*</span></div>
           <div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
             <button nz-button nz-popconfirm [nzTitle]="'Confirm' | translate"
                     nzShape="circle"
@@ -103,18 +103,20 @@
               <ul nz-menu>
                 <li nz-menu-item
                     (click)="addGathering(item)">{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</li>
+                <li nz-menu-item
+                    (click)="addAlarm(item)">{{'CUSTOM_ITEMS.DETAILS.ALARMS.Title' | translate}}</li>
               </ul>
             </nz-dropdown>
           </div>
         </div>
-        <div *ngIf="item.gatheredBy !== undefined" fxFlex="column">
+        <div *ngIf="item.gatheredBy !== undefined">
           <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate" nzOrientation="left"></nz-divider>
           <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
             <nz-form-item>
               <nz-form-label
               >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Type' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select [(ngModel)]="item.gatheredBy.type">
+                <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.type">
                   <nz-option [nzValue]="0" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(0 | nodeTypeName)) | translate">
                   </nz-option>
                   <nz-option [nzValue]="1" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(1 | nodeTypeName)) | translate">
@@ -132,14 +134,15 @@
               <nz-form-label nzRequired
                              nzFor="level">{{'CUSTOM_ITEMS.DETAILS.Level' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-input-number [(ngModel)]="item.gatheredBy.level" [nzMin]="1" [nzStep]="1"></nz-input-number>
+                <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.level" [nzMin]="1"
+                                 [nzStep]="1"></nz-input-number>
               </nz-form-control>
             </nz-form-item>
             <nz-form-item>
               <nz-form-label
               >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Stars' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select [(ngModel)]="item.gatheredBy.stars_tooltip">
+                <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.stars_tooltip">
                   <nz-option [nzValue]="''" [nzLabel]="'CUSTOM_ITEMS.DETAILS.None' | translate">
                   </nz-option>
                   <nz-option [nzValue]="'★'" [nzLabel]="'★'">
@@ -156,7 +159,8 @@
             <nz-form-item>
               <nz-form-label>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select [(ngModel)]="item.gatheredBy.nodes[0].mapid" *ngIf="maps$ | async as maps; else loading"
+                <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.nodes[0].mapid"
+                           *ngIf="maps$ | async as maps; else loading"
                            nzAllowClear nzShowSearch class="maps-select">
                   <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
                              [nzValue]="map.ID"></nz-option>
@@ -169,18 +173,81 @@
             <nz-form-item>
               <nz-form-label>X</nz-form-label>
               <nz-form-control>
-                <nz-input-number [nzMin]="0" [(ngModel)]="item.gatheredBy.nodes[0].coords[0]"></nz-input-number>
+                <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
+                                 [(ngModel)]="item.gatheredBy.nodes[0].coords[0]"></nz-input-number>
               </nz-form-control>
             </nz-form-item>
             <nz-form-item>
               <nz-form-label>Y</nz-form-label>
               <nz-form-control>
-                <nz-input-number [nzMin]="0" [(ngModel)]="item.gatheredBy.nodes[0].coords[1]"></nz-input-number>
+                <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
+                                 [(ngModel)]="item.gatheredBy.nodes[0].coords[1]"></nz-input-number>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label
+              >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Slot' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.nodes[0].slot" class="slot-select">
+                  <nz-option [nzValue]="'?'" [nzLabel]="'?'">
+                  </nz-option>
+                  <nz-option [nzValue]="1" [nzLabel]="1"></nz-option>
+                  <nz-option [nzValue]="2" [nzLabel]="2"></nz-option>
+                  <nz-option [nzValue]="3" [nzLabel]="3"></nz-option>
+                  <nz-option [nzValue]="4" [nzLabel]="4"></nz-option>
+                  <nz-option [nzValue]="5" [nzLabel]="5"></nz-option>
+                  <nz-option [nzValue]="6" [nzLabel]="6"></nz-option>
+                  <nz-option [nzValue]="7" [nzLabel]="7"></nz-option>
+                  <nz-option [nzValue]="8" [nzLabel]="8"></nz-option>
+                </nz-select>
               </nz-form-control>
             </nz-form-item>
           </div>
         </div>
-        <button nz-button nzBlock nzType="primary" (click)="updateCustomItem(item)">
+        <div *ngIf="item.alarms !== undefined && item.alarms.length > 0">
+          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.ALARMS.Title' | translate" nzOrientation="left"></nz-divider>
+          <nz-list [nzDataSource]="item.alarms"
+                   [nzRenderItem]="alarmTemplate">
+            <ng-template #alarmTemplate let-alarm>
+              <nz-list-item [nzContent]="alarmContent" [nzActions]="[editAlarmAction, deleteAlarmAction]">
+                <ng-template #alarmContent>
+                  <app-map-position [mapId]="alarm.mapId" [marker]="alarm.coords"></app-map-position>
+                </ng-template>
+                <ng-template #editAlarmAction>
+                  <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
+                          (click)="editAlarm(item, alarm)">
+                    <i nz-icon type="edit"></i>
+                  </button>
+                </ng-template>
+                <ng-template #deleteAlarmAction>
+                  <button nz-button nzShape="circle" nzSize="small" nzType="danger" nz-tooltip
+                          [nzTitle]="'Confirm' | translate"
+                          nz-popconfirm (nzOnConfirm)="deleteAlarm(item, alarm)">
+                    <i nz-icon type="delete"></i>
+                  </button>
+                </ng-template>
+                <nz-list-item-meta
+                  [nzTitle]="alarmTitle"
+                  [nzDescription]="alarmDescription">
+                  <ng-template #alarmTitle>
+                    {{alarm.name}} ({{alarm.slot || '?'}})
+                  </ng-template>
+                  <ng-template #alarmDescription>
+                    <div fxLayout="row">
+                      <div *ngFor="let spawn of alarm.spawns; let last = last">
+                        {{spawn}}:00 - {{(spawn + alarm.duration) % 24}}:00<span *ngIf="!last">/</span>
+                      </div>
+                    </div>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+          <button nz-button (click)="addAlarm(item)">
+            <i nz-icon type="plus"></i> {{'CUSTOM_ITEMS.DETAILS.ALARMS.Add_alarm' | translate}}
+          </button>
+        </div>
+        <button nz-button nzBlock nzType="primary" (click)="updateCustomItem(item)" [disabled]="!item.dirty">
           {{'CUSTOM_ITEMS.Save' | translate}}
         </button>
       </div>

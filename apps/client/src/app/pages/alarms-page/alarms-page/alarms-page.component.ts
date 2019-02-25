@@ -17,7 +17,7 @@ import { AlarmsOptionsPopupComponent } from '../alarms-options-popup/alarms-opti
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { EorzeanTimeService } from '../../../core/time/eorzean-time.service';
-import { CustomAlarmPopupComponent } from '../custom-alarm-popup/custom-alarm-popup.component';
+import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 

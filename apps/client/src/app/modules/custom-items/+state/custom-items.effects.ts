@@ -45,6 +45,7 @@ export class CustomItemsEffects {
     ofType<UpdateCustomItem>(CustomItemsActionTypes.UpdateCustomItem),
     switchMap(action => {
       delete action.payload.folderId;
+      delete action.payload.dirty;
       return this.customItemsService.update(action.payload.$key, action.payload)
     })
   );

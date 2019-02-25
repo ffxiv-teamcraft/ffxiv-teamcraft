@@ -11,6 +11,8 @@ import { CustomItemsDisplay } from '../../../modules/custom-items/+state/custom-
 import { DataModel } from '../../../core/database/storage/data-model';
 import { NodeTypeIconPipe } from '../../../pipes/node-type-icon.pipe';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
+import { Alarm } from '../../../core/alarms/alarm';
 
 @Component({
   selector: 'app-custom-items',
@@ -119,6 +121,7 @@ export class CustomItemsComponent {
       })
       .forEach(i => {
         this.customItemsFacade.updateCustomItem(i);
+        i.dirty = false;
       });
   }
 
@@ -173,11 +176,73 @@ export class CustomItemsComponent {
           zoneid: 0,
           areaid: 1,
           level: 1,
-          coords: [0, 0]
+          coords: [0, 0],
+          slot: '?'
         }
       ],
       stars_tooltip: ''
     };
+    item.dirty = true;
+  }
+
+  public addAlarm(item: CustomItem): void {
+    item.alarms = item.alarms || [];
+    let componentParams: Partial<CustomAlarmPopupComponent> = { returnAlarm: true, name: item.name };
+    if (item.gatheredBy !== undefined) {
+      componentParams = {
+        ...componentParams,
+        x: item.gatheredBy.nodes[0].coords[0],
+        y: item.gatheredBy.nodes[0].coords[1],
+        mapId: item.gatheredBy.nodes[0].mapid,
+        type: item.gatheredBy.type
+      };
+    }
+    this.dialog.create({
+      nzTitle: this.translate.instant('CUSTOM_ITEMS.DETAILS.ALARMS.Add_alarm'),
+      nzFooter: null,
+      nzContent: CustomAlarmPopupComponent,
+      nzComponentParams: componentParams
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined)
+      )
+      .subscribe(alarm => {
+        item.alarms.push(alarm);
+        item.dirty = true;
+      });
+  }
+
+  public editAlarm(item: CustomItem, alarm: Alarm): void {
+    const alarmIndex = item.alarms.indexOf(alarm);
+    this.dialog.create({
+      nzTitle: this.translate.instant('CUSTOM_ITEMS.DETAILS.ALARMS.Edit_alarm'),
+      nzFooter: null,
+      nzContent: CustomAlarmPopupComponent,
+      nzComponentParams: {
+        returnAlarm: true,
+        spawn: alarm.spawns[0],
+        duration: alarm.duration,
+        spawnsTwice: alarm.spawns.length > 1,
+        x: alarm.coords.x,
+        y: alarm.coords.y,
+        type: alarm.type,
+        mapId: alarm.mapId,
+        slot: alarm.slot,
+        name: alarm.name
+      }
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined)
+      )
+      .subscribe(edited => {
+        item.alarms[alarmIndex] = edited;
+        item.dirty = true;
+      });
+  }
+
+  public deleteAlarm(item: CustomItem, alarm: Alarm): void {
+    item.alarms = item.alarms.filter(a => a !== alarm);
+    item.dirty = true;
   }
 
 }
