@@ -21,23 +21,25 @@ export class LocalizedDataService {
 
   public getItem(id: number): I18nName {
     const zhRow = this.getRow(this.lazyData.zhItems, id);
+    const koRow = this.getRow(this.lazyData.koItems, id);
     const row = this.getRow(this.lazyData.items, id);
 
     if (row !== undefined) {
-      // If an item doesn't exist yet inside zh items, use english name instead.
+      // If an item doesn't exist yet inside zh and ko items, use english name instead.
       row.zh = zhRow !== undefined ? zhRow.zh : row.en;
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
       row.fr = row.fr.replace(this.indentRegexp, '');
     }
     return row;
   }
 
   public getItemIdsByName(name: string, language: Language): number[] {
-    if (['en', 'fr', 'de', 'ja', 'zh'].indexOf(language) === -1) {
+    if (['en', 'fr', 'de', 'ja', 'zh', 'ko'].indexOf(language) === -1) {
       language = 'en';
     }
     const regex = new RegExp(`${name}`, 'i');
     const res = [];
-    const keys = Object.keys({ ...this.lazyData.items, ...this.lazyData.zhItems });
+    const keys = Object.keys({ ...this.lazyData.items, ...this.lazyData.zhItems, ...this.lazyData.koItems });
     for (const key of keys) {
       if (regex.test(this.lazyData.items[key][language])) {
         res.push(key);

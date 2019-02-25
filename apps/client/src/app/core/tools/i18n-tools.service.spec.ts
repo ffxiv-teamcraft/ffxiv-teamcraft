@@ -28,13 +28,17 @@ describe('I18nToolsService', () => {
       },
       zh: {
         name: 'ZH'
+      },
+      ko: {
+        name: 'KO'
       }
     })).toEqual({
       fr: 'FR',
       en: 'EN',
       de: 'DE',
       ja: 'JA',
-      zh: 'ZH'
+      zh: 'ZH',
+      ko: 'KO'
     });
   });
 
@@ -44,7 +48,8 @@ describe('I18nToolsService', () => {
       en: 'EN',
       de: 'DE',
       ja: 'JA',
-      zh: 'ZH'
+      zh: 'ZH',
+      ko: 'KO'
     });
     expect(name).toEqual('EN');
   });
