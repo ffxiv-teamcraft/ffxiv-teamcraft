@@ -431,6 +431,17 @@ export class List extends DataWithPermissions {
   }
 
   /**
+   * Gets payload size for firestore database.
+   */
+  public getSize(): number {
+    return JSON.stringify(this).length;
+  }
+
+  public isTooLarge(): boolean {
+    return this.getSize() > 300000;
+  }
+
+  /**
    * Gets the total amount needed for a given item based on requirements of the crafts in the list.
    * @param {ListRow} item
    * @returns {number}

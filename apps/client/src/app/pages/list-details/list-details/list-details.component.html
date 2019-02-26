@@ -143,6 +143,11 @@
           </ng-template>
         </nz-alert>
       </div>
+      <div class="alert" *ngIf="list.isTooLarge()">
+        <nz-alert nzType="warning" nzShowIcon [nzMessage]="'LIST_DETAILS.List_too_large' | translate"
+                  [nzDescription]="'LIST_DETAILS.List_too_large_description' | translate">
+        </nz-alert>
+      </div>
       <div *ngIf="(outDated$ | async) && (permissionLevel$ | async) < 40" class="alert">
         <nz-alert nzType="error" nzShowIcon [nzMessage]="'Not_own_list_outdated' | translate"></nz-alert>
       </div>
