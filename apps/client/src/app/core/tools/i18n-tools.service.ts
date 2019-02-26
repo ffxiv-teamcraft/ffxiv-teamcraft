@@ -24,7 +24,8 @@ export class I18nToolsService {
       en: item.en.name,
       de: item.de.name,
       ja: item.ja.name,
-      zh: item.zh.name
+      zh: item.zh.name,
+      ko: item.ko.name
     };
   }
 

@@ -13,6 +13,8 @@ export class LazyDataService {
 
   public zhItems: any = {};
 
+  public koItems: any ={};
+
   public craftActions: any = {};
 
   public actions: any = {};
@@ -21,11 +23,13 @@ export class LazyDataService {
     combineLatest(
       this.http.get('./assets/data/items.json'),
       this.http.get('./assets/data/zh-items.json'),
+      this.http.get('./assets/data/ko-items.json'),
       this.http.get('./assets/data/actions.json'),
       this.http.get('./assets/data/craft-actions.json')
-    ).subscribe(([items, zhItems, actions, craftActions]) => {
+    ).subscribe(([items, zhItems, koItems, actions, craftActions]) => {
       this.items = items;
       this.zhItems = zhItems;
+      this.koItems = koItems;
       this.actions = actions;
       this.craftActions = craftActions;
       this.loaded$.next(true);
