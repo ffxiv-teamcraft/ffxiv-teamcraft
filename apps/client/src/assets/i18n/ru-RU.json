@@ -26,7 +26,7 @@
     "Crafts_amount": "# крафтов",
     "Add_to_list": "Добавить предмет в список",
     "Apply_filters": "Применить фильтры",
-    "Too_many_results_warning": "В поимке более 50 предметов. Поскольку наш источник данных ограничен 50 результатами, вам могут понадобиться дополнительные фильтры для поиска конкретного элемента.",
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copy search url to your clipboard",
     "Share_url_copied": "Search url copied to your clipboard"
   },
