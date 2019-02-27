@@ -427,7 +427,7 @@ export class List extends DataWithPermissions {
   }
 
   public isLarge(): boolean {
-    return this.items.length >= 100 || this.finalItems.length > 80;
+    return this.items && this.items.length >= 100 || this.finalItems && this.finalItems.length > 80;
   }
 
   /**
