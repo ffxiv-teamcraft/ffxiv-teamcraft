@@ -26,7 +26,7 @@
     "Crafts_amount": "# of crafts",
     "Add_to_list": "将此物品加入到清单",
     "Apply_filters": "应用过滤",
-    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item.",
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "将搜索URL复制到您的剪贴板",
     "Share_url_copied": "Search url copied to your clipboard"
   },
@@ -230,7 +230,7 @@
   "List_not_found": "List not found or you don't have access to it",
   "Requirements_for_craft": "查看要求",
   "Zone_breakdown": "Area breakdown",
-  "Timer_options": "Timer options",
+  "Timer_options": "闹钟选项",
   "Early_by": "提前 (艾欧泽亚小时)",
   "Sound": "声音",
   "Share_link_copied": "链接已复制到剪贴板",
@@ -245,7 +245,7 @@
     "See_on_map": "坐标",
     "Note": "备注"
   },
-  "Pricing_mode": "Pricing mode",
+  "Pricing_mode": "定价模式",
   "Back_to_list": "返回列表　",
   "Spending": "费用",
   "Pricing": "定价",
@@ -399,6 +399,8 @@
     "Disable_HQ_suggestions": "禁用自动HQ标志",
     "Amount_craftable": "您可以制作 {{amount}} 个",
     "Add_item": "添加物品",
+    "List_too_large": "List too large",
+    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "Add Panel",
@@ -803,7 +805,7 @@
     "Mark_page_as_done": "将此页标记为已完成",
     "Mark_as_done": "将此物品标记为已完成",
     "Mark_as_not_done": "将此物品标记为未完成",
-    "Create_list": "Create a list to complete this page",
+    "Create_list": "创建一个列表以完成这个页面",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",

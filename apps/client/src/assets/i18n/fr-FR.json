@@ -26,7 +26,7 @@
     "Crafts_amount": "Nb de crafts",
     "Add_to_list": "Ajouter cet élément à une liste",
     "Apply_filters": "Appliquer les filtres",
-    "Too_many_results_warning": "Cette recherche a donné plus de 50 résultats. Notre source de données est limitée à 50 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
+    "Too_many_results_warning": "Cette recherche a donné plus de 100 résultats. Notre source de données est limitée à 100 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
     "Share_url": "Copier l'url de recherche dans le presse-papiers",
     "Share_url_copied": "Url de recherche copié dans le presse-papiers"
   },
@@ -399,6 +399,8 @@
     "Disable_HQ_suggestions": "Désactiver les suggestions HQ",
     "Amount_craftable": "Vous pouvez fabriquer {{amount}}",
     "Add_item": "Ajouter un objet",
+    "List_too_large": "Liste trop longue",
+    "List_too_large_description": "Cette liste est trop longue et pourrait être supprimée automatiquement par le système de base de données en raison de quotas imposés si vous y ajoutez plus d'objets.",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
