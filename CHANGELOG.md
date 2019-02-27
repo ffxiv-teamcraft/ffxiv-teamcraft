@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.36"></a>
+## [5.0.36](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.35...v5.0.36) (2019-02-27)
+
+
+### Bug Fixes
+
+* **list:** fixed an issue with the "isLarge" method sometimes crashing ([6fe7c44](https://github.com/Supamiu/ffxiv-teamcraft/commit/6fe7c44))
+
+
+### Features
+
+* support for Korean 4.40 update ([dd501cd](https://github.com/Supamiu/ffxiv-teamcraft/commit/dd501cd))
+* support Korean item names ([c3d07d7](https://github.com/Supamiu/ffxiv-teamcraft/commit/c3d07d7))
+* you cannot add items to lists larger than 300kB anymore to avoid data loss ([1f81998](https://github.com/Supamiu/ffxiv-teamcraft/commit/1f81998))
+* **search:** added support for KO and ZH items search ([b770290](https://github.com/Supamiu/ffxiv-teamcraft/commit/b770290))
+* **search:** search cap raised to 100 items instead of 50 ([0601cc5](https://github.com/Supamiu/ffxiv-teamcraft/commit/0601cc5))
+
+
+
 <a name="5.0.35"></a>
 ## [5.0.35](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.34...v5.0.35) (2019-02-23)
 
