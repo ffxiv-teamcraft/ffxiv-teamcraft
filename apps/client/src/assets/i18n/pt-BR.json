@@ -26,7 +26,7 @@
     "Crafts_amount": "# de tarefas",
     "Add_to_list": "Adicionar esse item para uma lista",
     "Apply_filters": "Aplicar filtros",
-    "Too_many_results_warning": "Esta pesquisa retornou mais de 50 itens. Uma vez que nossa fonte de dados é limitada a 50 resultados, você pode precisar de filtros adicionais para encontrar um item específico.",
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copiar url da pesquisa para sua área de transferência",
     "Share_url_copied": "Url de busca copiado para sua área de transferência"
   },
@@ -399,6 +399,8 @@
     "Disable_HQ_suggestions": "Desativar ícones HQ automáticos",
     "Amount_craftable": "Você pode criar {{amount}}",
     "Add_item": "Adicionar um item",
+    "List_too_large": "List too large",
+    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",

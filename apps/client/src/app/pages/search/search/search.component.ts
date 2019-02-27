@@ -105,7 +105,13 @@ export class SearchComponent implements OnInit {
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
     });
     this.results$ = combineLatest(this.query$, this.onlyRecipes$, this.filters$).pipe(
-      filter(([query, , filters]) => query.length > 3 || filters.length > 0),
+      filter(([query, , filters]) => {
+        if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
+          // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
+          return query.length > 0 || filters.length > 0;
+        }
+        return query.length > 3 || filters.length > 0;
+      }),
       debounceTime(500),
       tap(([query, onlyRecipes, filters]) => {
         this.allSelected = false;

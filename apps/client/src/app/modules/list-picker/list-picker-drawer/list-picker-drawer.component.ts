@@ -27,7 +27,7 @@ export class ListPickerDrawerComponent {
   constructor(private listsFacade: ListsFacade, private drawerRef: NzDrawerRef<List>, private workshopsFacade: WorkshopsFacade) {
 
     this.listsWithWriteAccess$ = combineLatest(this.listsFacade.listsWithWriteAccess$, this.query$).pipe(
-      map(([lists, query]) => lists.filter(l => !l.notFound && l.name !== undefined && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1))
+      map(([lists, query]) => lists.filter(l => !l.notFound && !l.isTooLarge() && l.name !== undefined && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1))
     );
 
     this.workshops$ = combineLatest(this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$, this.query$).pipe(
@@ -46,7 +46,7 @@ export class ListPickerDrawerComponent {
                   return list;
                 })
                 .filter(l => l !== undefined)
-                .filter(l => !l.notFound && l.name !== undefined && l.name.toLowerCase().indexOf((query || '').toLowerCase()) > -1)
+                .filter(l => !l.notFound && !l.isTooLarge() && l.name !== undefined && l.name.toLowerCase().indexOf((query || '').toLowerCase()) > -1)
             };
           })
           .sort((a, b) => a.workshop.index - b.workshop.index);
@@ -63,7 +63,7 @@ export class ListPickerDrawerComponent {
           .filter(l => {
             return workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined;
           })
-          .filter(l => !l.notFound && l.name !== undefined && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
+          .filter(l => !l.notFound && !l.isTooLarge() && l.name !== undefined && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
           .map(l => {
             delete l.workshopId;
             return l;
