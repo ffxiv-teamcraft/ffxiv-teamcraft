@@ -116,7 +116,7 @@
     <button nz-button (click)="addSelectedItemsToList(results)">{{'LISTS.Add_selection' | translate}}</button>
   </div>
   <nz-alert nzType="warning" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" nzShowIcon
-            *ngIf="results.length >= 50"></nz-alert>
+            *ngIf="results.length >= 100"></nz-alert>
   <div class="results">
     <app-page-loader [loading]="loading">
       <div *ngFor="let item of results; trackBy: trackByItem; let odd = odd" fxLayout="row" fxLayout.lt-md="column"
