@@ -26,7 +26,7 @@
     "Crafts_amount": "# de tarefas",
     "Add_to_list": "Adicionar esse item para uma lista",
     "Apply_filters": "Aplicar filtros",
-    "Too_many_results_warning": "Esta pesquisa retornou mais de 50 itens. Uma vez que nossa fonte de dados é limitada a 50 resultados, você pode precisar de filtros adicionais para encontrar um item específico.",
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copiar url da pesquisa para sua área de transferência",
     "Share_url_copied": "Url de busca copiado para sua área de transferência"
   },
