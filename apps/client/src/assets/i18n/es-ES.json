@@ -26,7 +26,7 @@
     "Crafts_amount": "# de elaboraciones",
     "Add_to_list": "Agregar este elemento a una lista",
     "Apply_filters": "Aplicar filtros",
-    "Too_many_results_warning": "Esta búsqueda devuelve más de 50 artículos. Como nuestro origen de datos esta limitado a 50 resultados, puede que necesite filtros adicionales para encontrar un artículo específico.",
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copiar el url de búsqueda al portapapeles",
     "Share_url_copied": "URL de búsqueda copiado al portapapeles"
   },
