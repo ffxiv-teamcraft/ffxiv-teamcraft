@@ -22,6 +22,8 @@ export class LayoutEditorRowComponent implements OnInit {
   @Output()
   delete: EventEmitter<void> = new EventEmitter<void>();
 
+  isOtherRow = false;
+
   public filter: { isBooleanGate: boolean, reversed: boolean, value: string }[] = [];
 
   filterChange(): void {
@@ -67,6 +69,7 @@ export class LayoutEditorRowComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.isOtherRow = this.row.filter.name === "ANYTHING";
     this.filter = this.row.filterName.split(':').map(fragment => {
       const result = {
         isBooleanGate: fragment === 'or' || fragment === 'and',

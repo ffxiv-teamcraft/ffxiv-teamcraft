@@ -11,7 +11,7 @@
   "Edit_amount": "Editar a quantidade",
   "List_fork_in_progress": "A copiar a lista para a sua conta...",
   "Network_error_logged_out": "Foi detectado um erro de ligação, portanto foi desligado. Se o problema persistir contacte Miu no Discord.",
-  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
+  "Hide_zone_duplicates": "Esconder zonas duplicada (itens que estão em várias zonas são exibidos apenas uma vez)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já está a ser utilizada",
     "auth/email-already-in-use": "Email já está a ser utilizado",
@@ -26,9 +26,9 @@
     "Crafts_amount": "# de tarefas",
     "Add_to_list": "Adicionar esse item para uma lista",
     "Apply_filters": "Aplicar filtros",
-    "Too_many_results_warning": "Esta pesquisa mostra mais de 50 resultados. Devido ao facto que a fonte de dados é limitada a 50 é sugerido que especifique mais os filtros.",
-    "Share_url": "Copy search url to your clipboard",
-    "Share_url_copied": "Search url copied to your clipboard"
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Share_url": "Cópia o url da pesquisa para sua área de transferência",
+    "Share_url_copied": "Pesquisar url copiado para a área de transferência"
   },
   "Use_as_default_character": "Usar como personagem de padrão",
   "Download_desktop_app": "Descarregar aplicação para desktop",
@@ -41,7 +41,7 @@
   "Timers": "Temporizadores",
   "Copy_isearch": "Copiar o macro isearch",
   "Isearch_copied": "/isearch {{itemname}} copiado para a área de transferência",
-  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
+  "Required_for_final_craft": "É necessário {{amount}} para itens finais, convém tê-los HQ (alta qualidate)",
   "Mark_HQ": "Seleccionar como HQ obrigatório",
   "Unmark_HQ": "Remover o requisito de HQ",
   "Compact_sidebar_toggle": "Mudar barra lateral compacta",
@@ -316,10 +316,11 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
+    "Needs_verification": "Por favor, verifique a sua personagem para ter acesso às listas partilhadas á sua FC",
     "Regenerate_all": "Regenerar todas as listas",
     "Regenerated_all": "As suas listas estão agora actualizadas",
     "Merge_lists": "Juntar listas",
+    "Merge_lists_warning": "Listas grandes não estão aqui listadas, porque não é possível juntar listas que são muito grandes devido às limitações da base de dados.",
     "Lists_merged": "Listas juntadas com sucesso!",
     "Shared_lists": "Listas às quais tem acesso de escrita",
     "Add_selection": "Adicionar selecção a uma lista",
@@ -382,22 +383,24 @@
   },
   "LIST_DETAILS": {
     "List_finished": "Lista concluída",
-    "Public_list_description": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
-    "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
+    "Public_list_description": "Publicar uma lista adiciona-a à secção de listas públicas, ISTO NÃO É NECESSÁRIO PARA PARTILHAR UMA LISTA",
+    "Missing_tags_before_button": "Esta lista é mostrada como lista pública mas não tem tags, por favor, adicione algumas tags ",
     "Missing_tags_after_button": " botão",
-    "Add_remove_amount": "Add/remove a given amount",
-    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
+    "Add_remove_amount": "Adicionar ou remover uma dada quantidade",
+    "Missing_masterbook": "Não tem este masterbook no seu perfil, clique para adicioná-lo ao perfil.",
     "No_note": "Sem nota",
     "Edit_note": "Sem nota",
     "Note_placeholder": "Nota",
     "Tags_popup": "Tags",
     "Inventory_breakdown": "Inventário",
     "Open_in_ffxivgardening": "Aberto em ffxivgardening.com",
-    "Add_all_item_alarms": "Add all alarms for this item",
-    "Adaptative_filter": "Only show what I can do",
-    "Disable_HQ_suggestions": "Disable automatic HQ flags",
-    "Amount_craftable": "You can craft {{amount}}",
+    "Add_all_item_alarms": "Adicionar todos os alarmes d'esta lista",
+    "Adaptative_filter": "Mostrar só o que posso fazer",
+    "Disable_HQ_suggestions": "Desativar automáticas sinalizadores de HQ",
+    "Amount_craftable": "Pode criar {{amount}}",
     "Add_item": "Adicionar um item",
+    "List_too_large": "List too large",
+    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",
@@ -407,7 +410,7 @@
       "Layout_name": "Nome do layout",
       "Invalid_import": "Código de importação inválido",
       "Global_options": "Opções gerais",
-      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
+      "Default_readonly_message": "Layout padrão é só de leitura, para poder personalizá-lo deve criar um novo layout usando o botão +."
     },
     "LAYOUT": {
       "Filter": "Filtro",
@@ -471,34 +474,34 @@
   },
   "CUSTOM_LINKS": {
     "Title": "Links personalizados",
-    "Not_found": "Link not found",
-    "Add_link": "Create a custom link",
-    "Link_created": "Custom link created, click the share button to copy it",
-    "Dialog_title": "Custom link",
-    "Link_type": "Link type",
-    "Link_name": "Link name",
-    "target": "Link target",
-    "Share_link_copied": "Custom link copied to clipboard",
-    "Copy_custom_link": "Copy custom link",
-    "No_links": "No custom links"
+    "Not_found": "Link não encontrado",
+    "Add_link": "Criar um link personalizado",
+    "Link_created": "Link personalizado criado, clique no botão share para copiá-lo",
+    "Dialog_title": "Link personalizado",
+    "Link_type": "Tipo de link",
+    "Link_name": "Nome do link",
+    "target": "Destino do link",
+    "Share_link_copied": "Link personalizado copiado para a área de transferência",
+    "Copy_custom_link": "Copiar link personalizado",
+    "No_links": "Não há links personalizados"
   },
   "NAVIGATION": {
-    "Title": "Optimized navigation route",
-    "Steps": "Steps",
+    "Title": "Rota de navegação optimizada",
+    "Steps": "Passos",
     "STEP": {
-      "Gathering": "Gather {{amount}}",
-      "Hunting": "Get {{amount}} on monsters",
-      "Vendor": "Buy {{amount}}",
-      "Trade": "Trade {{amount}}"
+      "Gathering": "Colectar {{amount}}",
+      "Hunting": "Obtenha {{amount}} dos monstros",
+      "Vendor": "Comprar {{amount}}",
+      "Trade": "Trocar {{amount}}"
     }
   },
   "GATHERING_LOCATIONS": {
-    "Title": "Gathering items",
+    "Title": "Itens a colher",
     "No_items": "No gathering node found",
-    "Gathering_name": "Enter item name",
+    "Gathering_name": "Escreva o nome do item",
     "Ephemeral_node": "Ephemeral node, can be respawned",
     "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !",
-    "Hidden_item": "Hidden"
+    "Hidden_item": "Escondido"
   },
   "ANNOUNCEMENT": {
     "Title": "Announcement",
@@ -809,6 +812,15 @@
       "Others": "Others",
       "Dyes": "Dyes",
       "Other_master_recipes": "Other Master Recipes"
+    }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
+  },
+  "GIVEAWAY": {
+    "Discord_1K": {
+      "Title": "1000 Discord members giveaway !",
+      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
     }
   }
 }

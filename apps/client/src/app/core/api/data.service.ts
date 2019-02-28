@@ -9,6 +9,7 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
 import { map, switchMap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
+import { LazyDataService } from '../data/lazy-data.service';
 
 @Injectable()
 export class DataService {
@@ -20,7 +21,8 @@ export class DataService {
   constructor(private http: HttpClient,
               private i18n: TranslateService,
               private gt: GarlandToolsService,
-              private serializer: NgSerializerService) {
+              private serializer: NgSerializerService,
+              private lazyData: LazyDataService) {
   }
 
   /**
@@ -41,9 +43,14 @@ export class DataService {
    * @returns {Observable<Recipe[]>}
    */
   public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean): Observable<SearchResult[]> {
+    let lang = this.i18n.currentLang;
+    const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1;
+    if (isKoOrZh) {
+      lang = 'en';
+    }
     let params = new HttpParams()
       .set('type', 'item')
-      .set('lang', this.i18n.currentLang);
+      .set('lang', lang);
 
     if (onlyCraftable) {
       params = params.set('craftable', '1');
@@ -51,7 +58,13 @@ export class DataService {
 
     let craftedByFilter: SearchFilter;
 
-    if (query !== undefined) {
+    // If the lang is korean, handle it properly to map to item ids.
+    if (isKoOrZh) {
+      const ids = this.mapToItemIds(query, this.i18n.currentLang as 'ko' | 'zh');
+      params = params.set('ids', ids.join(','));
+    }
+
+    if (query !== undefined && !isKoOrZh) {
       params = params.set('text', query);
     }
 
@@ -168,5 +181,14 @@ export class DataService {
    */
   private getGarlandSearch(query: HttpParams): Observable<any> {
     return this.http.get<any>(`${this.garlandApiUrl}/search.php`, { params: query });
+  }
+
+  private mapToItemIds(terms: string, lang: 'ko' | 'zh'): number[] {
+    const data = lang === 'ko' ? this.lazyData.koItems : this.lazyData.zhItems;
+    return Object.keys(data)
+      .filter(key => {
+        return data[key][lang].indexOf(terms) > -1;
+      })
+      .map(key => +key);
   }
 }

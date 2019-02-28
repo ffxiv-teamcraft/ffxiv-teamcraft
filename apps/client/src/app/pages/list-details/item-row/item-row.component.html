@@ -69,7 +69,7 @@
         <ng-container *ngIf="team$ | async as team">
           <li nz-submenu *ngIf="team.leader === userId">
             <span title>{{'TEAMS.Assign_team_member' | translate}}</span>
-            <ul nz-menu>
+            <ul nz-menu class="team-members">
               <ng-container *ngFor="let member of team.members">
                 <li nz-menu-item *ngIf="member | characterName | async as charName"
                     (click)="assignTeamMember(team, member)">{{charName}}

@@ -26,7 +26,7 @@
     "Crafts_amount": "クラフトの数",
     "Add_to_list": "このアイテムをリストに追加する",
     "Apply_filters": "フィルターを適用する",
-    "Too_many_results_warning": "検索結果が50件以上超えてます。データソースの制限による正確なアイテムを探すためには、追加フィルター設定が必要です。",
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "検索URLをクリップボードにコピーする",
     "Share_url_copied": "検索URLがクリップボードにコピーされました"
   },
@@ -320,6 +320,7 @@
     "Regenerate_all": "全リストを更新する",
     "Regenerated_all": "リストが更新されました",
     "Merge_lists": "リストを併合する",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "リスト併合が完了されました！",
     "Shared_lists": "書く権限があるリスト",
     "Add_selection": "選択項目をリストに追加する",
@@ -398,6 +399,8 @@
     "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "You can craft {{amount}}",
     "Add_item": "Add an item",
+    "List_too_large": "List too large",
+    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -804,11 +807,20 @@
     "Mark_as_not_done": "Mark this item as not done",
     "Create_list": "Create a list to complete this page",
     "PAGE": {
-      "Master_recipes": "Master recipes ({{number}})",
-      "Housing_items": "Housing({{number}})",
-      "Others": "Others",
-      "Dyes": "Dyes",
+      "Master_recipes": "秘伝書 ({{number}})",
+      "Housing_items": "ハウジング ({{number}})",
+      "Others": "その他",
+      "Dyes": "染料",
       "Other_master_recipes": "Other Master Recipes"
+    }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
+  },
+  "GIVEAWAY": {
+    "Discord_1K": {
+      "Title": "1000 Discord members giveaway !",
+      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
     }
   }
 }

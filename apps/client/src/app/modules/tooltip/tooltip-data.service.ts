@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { shareReplay } from 'rxjs/operators';
+import { map, mergeMap, shareReplay } from 'rxjs/operators';
 
 @Injectable()
 export class TooltipDataService {
@@ -13,7 +13,20 @@ export class TooltipDataService {
   }
 
   getItemTooltipData(id: number): Observable<any> {
-    return this.xivapi.get(XivapiEndpoint.Item, id);
+    return this.xivapi.get(XivapiEndpoint.Item, id).pipe(
+      mergeMap((item) => {
+        // If it's a  consumable, get item action details and put it inside item action itself.
+        if (item.ItemAction.Type === 844) {
+          return this.xivapi.get(XivapiEndpoint.ItemFood, item.ItemAction.Data1).pipe(
+            map(itemFood => {
+              item.ItemFood = itemFood;
+              return item;
+            })
+          );
+        }
+        return of(item);
+      })
+    );
   }
 
   getActionTooltipData(id: number): Observable<any> {

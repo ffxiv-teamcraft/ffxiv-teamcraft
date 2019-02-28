@@ -39,6 +39,7 @@ import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.fa
 import { ObservableMedia } from '@angular/flex-layout';
 import { LayoutsFacade } from './core/layout/+state/layouts.facade';
 import * as semver from 'semver';
+import { LazyDataService } from './core/data/lazy-data.service';
 
 declare const gtag: Function;
 
@@ -91,6 +92,10 @@ export class AppComponent implements OnInit {
 
   public newVersionAvailable$: Observable<boolean>;
 
+  public dataLoaded = false;
+
+  public showGiveaway = false;
+
   get desktopUrl(): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(`teamcraft://${window.location.pathname}`);
   }
@@ -103,7 +108,14 @@ export class AppComponent implements OnInit {
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
-              private layoutsFacade: LayoutsFacade) {
+              private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService) {
+
+    this.showGiveaway = +localStorage.getItem('giveaway:1kdiscord') < 5
+      && Date.now() < new Date(2019, 3, 31, 23, 59, 59).getTime();
+
+    localStorage.setItem('giveaway:1kdiscord', (+localStorage.getItem('giveaway:1kdiscord') + 1).toString());
+
+    this.lazyData.loaded$.subscribe(loaded => this.dataLoaded = loaded);
 
     this.renderer.addClass(document.body, this.settings.theme.className);
 
@@ -318,5 +330,17 @@ export class AppComponent implements OnInit {
 
   openSettings(): void {
     this.settingsPopupService.openSettings();
+  }
+
+  public goToDiscord1kGiveaway(event: MouseEvent): void {
+    if (event.srcElement.tagName === 'A') {
+      return;
+    }
+    window.open('https://gleam.io/J1tAD/ffxiv-teamcrafts-final-fantasy-xiv-shadowbringers-collectors-edition-giveaway', '_blank');
+    localStorage.setItem('giveaway:1kdiscord', '5');
+  }
+
+  public closeDiscord1kGiveaway(): void {
+    localStorage.setItem('giveaway:1kdiscord', '5');
   }
 }

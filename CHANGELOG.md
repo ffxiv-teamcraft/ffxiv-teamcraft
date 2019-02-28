@@ -2,6 +2,115 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.36"></a>
+## [5.0.36](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.35...v5.0.36) (2019-02-27)
+
+
+### Bug Fixes
+
+* **list:** fixed an issue with the "isLarge" method sometimes crashing ([6fe7c44](https://github.com/Supamiu/ffxiv-teamcraft/commit/6fe7c44))
+
+
+### Features
+
+* support for Korean 4.40 update ([dd501cd](https://github.com/Supamiu/ffxiv-teamcraft/commit/dd501cd))
+* support Korean item names ([c3d07d7](https://github.com/Supamiu/ffxiv-teamcraft/commit/c3d07d7))
+* you cannot add items to lists larger than 300kB anymore to avoid data loss ([1f81998](https://github.com/Supamiu/ffxiv-teamcraft/commit/1f81998))
+* **search:** added support for KO and ZH items search ([b770290](https://github.com/Supamiu/ffxiv-teamcraft/commit/b770290))
+* **search:** search cap raised to 100 items instead of 50 ([0601cc5](https://github.com/Supamiu/ffxiv-teamcraft/commit/0601cc5))
+
+
+
+<a name="5.0.35"></a>
+## [5.0.35](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.34...v5.0.35) (2019-02-23)
+
+
+### Bug Fixes
+
+* **aetheryte:** added missing Ok'undu aetheryte entry manually ([ab00f99](https://github.com/Supamiu/ffxiv-teamcraft/commit/ab00f99)), closes [#649](https://github.com/Supamiu/ffxiv-teamcraft/issues/649)
+* **alarms:** fixed alarms sound modification spamming preview sound ([cf07ff4](https://github.com/Supamiu/ffxiv-teamcraft/commit/cf07ff4))
+* **comments:** added target name (list or item) inside comment popup ([95a549e](https://github.com/Supamiu/ffxiv-teamcraft/commit/95a549e))
+* **list-details:** fixed an issue with crystals count not being reduced properly ([6e59a32](https://github.com/Supamiu/ffxiv-teamcraft/commit/6e59a32))
+* **lists:** removed count from own lists's copy button ([786ba4c](https://github.com/Supamiu/ffxiv-teamcraft/commit/786ba4c))
+
+
+
+<a name="5.0.34"></a>
+## [5.0.34](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.33...v5.0.34) (2019-02-21)
+
+
+### Bug Fixes
+
+* **list-details:** added scrollbar to user assignment menu ([2d5bf4d](https://github.com/Supamiu/ffxiv-teamcraft/commit/2d5bf4d)), closes [#781](https://github.com/Supamiu/ffxiv-teamcraft/issues/781)
+* **log-tracker:** fixed an issue with log progression not being saved properly in some cases ([f6695ac](https://github.com/Supamiu/ffxiv-teamcraft/commit/f6695ac))
+* **simulator:** actions that need GOOD or EXCELLENT are now disabled in safe mode ([c868cf0](https://github.com/Supamiu/ffxiv-teamcraft/commit/c868cf0))
+
+
+### Features
+
+* added close button to giveaway announcement ([afbb1c0](https://github.com/Supamiu/ffxiv-teamcraft/commit/afbb1c0))
+* **lists:** you can now copy a list directly from /lists page ([5f28db7](https://github.com/Supamiu/ffxiv-teamcraft/commit/5f28db7))
+* **tooltips:** added tooltips details for foods ([9633464](https://github.com/Supamiu/ffxiv-teamcraft/commit/9633464))
+
+
+
+<a name="5.0.33"></a>
+## [5.0.33](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.32...v5.0.33) (2019-02-20)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with alarms spawning at 12AM ([e4eed0b](https://github.com/Supamiu/ffxiv-teamcraft/commit/e4eed0b))
+* **auth:** character association popup showing up after each login ([760933a](https://github.com/Supamiu/ffxiv-teamcraft/commit/760933a)), closes [#777](https://github.com/Supamiu/ffxiv-teamcraft/issues/777)
+
+
+### Features
+
+* added banner announcement for 1k discord members giveaway ([e3b1ce1](https://github.com/Supamiu/ffxiv-teamcraft/commit/e3b1ce1))
+
+
+
+<a name="5.0.32"></a>
+## [5.0.32](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.30...v5.0.32) (2019-02-19)
+
+
+### Bug Fixes
+
+* final fix for external languages system ([38d60e1](https://github.com/Supamiu/ffxiv-teamcraft/commit/38d60e1))
+* fixed an issue breaking display after zh items addition ([41988ed](https://github.com/Supamiu/ffxiv-teamcraft/commit/41988ed))
+* **vendors:** fixed an issue with vendors extraction not being done properly in some cases ([b5374d6](https://github.com/Supamiu/ffxiv-teamcraft/commit/b5374d6))
+
+
+
+<a name="5.0.31"></a>
+## [5.0.31](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.30...v5.0.31) (2019-02-19)
+
+
+### Bug Fixes
+
+* fixed an issue breaking display after zh items addition ([41988ed](https://github.com/Supamiu/ffxiv-teamcraft/commit/41988ed))
+
+
+
+<a name="5.0.30"></a>
+## [5.0.30](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.29...v5.0.30) (2019-02-18)
+
+
+### Bug Fixes
+
+* remove the unsupported zh search in garland and fix the wrong file name ([c1a80eb](https://github.com/Supamiu/ffxiv-teamcraft/commit/c1a80eb))
+* **favorites:** fixed an issue with favorites not loading in desktop app ([f53fc0b](https://github.com/Supamiu/ffxiv-teamcraft/commit/f53fc0b)), closes [#768](https://github.com/Supamiu/ffxiv-teamcraft/issues/768)
+* **list-merge:** added an information about big lists not being mergeable ([eaab1e5](https://github.com/Supamiu/ffxiv-teamcraft/commit/eaab1e5))
+* **vendors:** fixed an issue with vendors extractor and some items ([1d50192](https://github.com/Supamiu/ffxiv-teamcraft/commit/1d50192))
+
+
+### Features
+
+* big data chunks are now lazy loaded, for better build performances ([c2e1218](https://github.com/Supamiu/ffxiv-teamcraft/commit/c2e1218)), closes [#767](https://github.com/Supamiu/ffxiv-teamcraft/issues/767)
+* support Chinese item names ([8213caf](https://github.com/Supamiu/ffxiv-teamcraft/commit/8213caf))
+
+
+
 <a name="5.0.29"></a>
 ## [5.0.29](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.28...v5.0.29) (2019-02-17)
 

@@ -17,7 +17,6 @@ import { BehaviorSubject, combineLatest, EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
   AddCharacter,
-  AnonymousWarningShown,
   AuthActionTypes,
   Authenticated,
   CharactersLoaded,
@@ -123,8 +122,7 @@ export class AuthEffects {
 
   @Effect()
   watchNoLinkedCharacter$ = this.actions$.pipe(
-    // Avoid recursion
-    filter(action => action.type !== AuthActionTypes.NoLinkedCharacter && action.type !== AuthActionTypes.LinkingCharacter),
+    ofType(AuthActionTypes.CharactersLoaded, AuthActionTypes.UpdateUser, AuthActionTypes.UserFetched),
     withLatestFrom(this.store),
     filter(([action, state]) => {
       return !state.auth.loading
@@ -230,21 +228,6 @@ export class AuthEffects {
       return this.userService.set(action.user.$key, action.user);
     }),
     map(() => new UserPersisted())
-  );
-
-  @Effect()
-  warningOnAnonymousAccount$ = this.actions$.pipe(
-    ofType(AuthActionTypes.LoggedInAsAnonymous),
-    debounceTime(10000),
-    tap(() => {
-      this.notificationService.config({
-        nzPlacement: 'topLeft'
-      });
-      this.notificationService.warning(
-        this.translate.instant('COMMON.Warning'),
-        this.translate.instant('Anonymous_Warning'));
-    }),
-    map(() => new AnonymousWarningShown())
   );
 
   @Effect()

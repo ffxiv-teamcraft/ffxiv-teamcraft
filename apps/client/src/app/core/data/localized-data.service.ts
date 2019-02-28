@@ -1,47 +1,47 @@
 import { Injectable } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
-import * as items from '../../../assets/data/items.json';
 import * as places from './sources/places.json';
 import * as mobs from './sources/mobs.json';
 import * as weathers from './sources/weathers.json';
 import * as npcs from './sources/npcs.json';
-import * as craftingActions from './sources/craft-actions.json';
-import * as actions from './sources/actions.json';
 import * as ventures from './sources/ventures.json';
 import * as freeCompanyActions from './sources/free-company-actions.json';
 import { Language } from './language';
 import { koActions } from './sources/ko-actions';
 import { mapIds } from './sources/map-ids';
-import { HttpClient } from '@angular/common/http';
+import { LazyDataService } from './lazy-data.service';
 
 @Injectable()
 export class LocalizedDataService {
 
   indentRegexp = new RegExp('<Indent/>', 'i');
 
-  private items: any = {};
-
-  constructor(private http: HttpClient) {
-    this.http.get('./assets/data/items.json').subscribe(i => this.items = i);
+  constructor(private lazyData: LazyDataService) {
   }
 
   public getItem(id: number): I18nName {
-    const row = this.getRow(this.items, id);
+    const zhRow = this.getRow(this.lazyData.zhItems, id);
+    const koRow = this.getRow(this.lazyData.koItems, id);
+    const row = this.getRow(this.lazyData.items, id);
+
     if (row !== undefined) {
+      // If an item doesn't exist yet inside zh and ko items, use english name instead.
+      row.zh = zhRow !== undefined ? zhRow.zh : row.en;
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
       row.fr = row.fr.replace(this.indentRegexp, '');
     }
     return row;
   }
 
   public getItemIdsByName(name: string, language: Language): number[] {
-    if (['en', 'fr', 'de', 'ja'].indexOf(language) === -1) {
+    if (['en', 'fr', 'de', 'ja', 'zh', 'ko'].indexOf(language) === -1) {
       language = 'en';
     }
     const regex = new RegExp(`${name}`, 'i');
     const res = [];
-    const keys = Object.keys(this.items);
+    const keys = Object.keys({ ...this.lazyData.items, ...this.lazyData.zhItems, ...this.lazyData.koItems });
     for (const key of keys) {
-      if (regex.test(this.items[key][language])) {
+      if (regex.test(this.lazyData.items[key][language])) {
         res.push(key);
       }
     }
@@ -97,9 +97,9 @@ export class LocalizedDataService {
         language = 'en';
       }
     }
-    let res = this.getIndexByName(craftingActions, name, language);
+    let res = this.getIndexByName(this.lazyData.craftActions, name, language);
     if (res === -1) {
-      res = this.getIndexByName(actions, name, language);
+      res = this.getIndexByName(this.lazyData.actions, name, language);
     }
     if (res === -1) {
       throw new Error('Data row not found.');
@@ -115,7 +115,7 @@ export class LocalizedDataService {
         language = 'en';
       }
     }
-    const result = this.getRowByName(craftingActions, name, language) || this.getRowByName(actions, name, language);
+    const result = this.getRowByName(this.lazyData.craftActions, name, language) || this.getRowByName(this.lazyData.actions, name, language);
     if (result === undefined) {
       throw new Error('Data row not found.');
     }
@@ -127,7 +127,7 @@ export class LocalizedDataService {
   }
 
   public getCraftingAction(id: number): I18nName {
-    const result = this.getRow(craftingActions, id) || this.getRow(actions, id);
+    const result = this.getRow(this.lazyData.craftActions, id) || this.getRow(this.lazyData.actions, id);
     if (result === undefined) {
       throw new Error('Data row not found.');
     }

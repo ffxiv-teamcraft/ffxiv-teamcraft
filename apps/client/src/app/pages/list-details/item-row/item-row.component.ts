@@ -236,7 +236,7 @@ export class ItemRowComponent implements OnInit {
 
   openCommentsPopup(list: List, isAuthor: boolean): void {
     this.modal.create({
-      nzTitle: this.translate.instant('COMMENTS.Title'),
+      nzTitle: `${this.i18n.getName(this.l12n.getItem(this.item.id))} - ${this.translate.instant('COMMENTS.Title')}`,
       nzFooter: null,
       nzContent: CommentsPopupComponent,
       nzComponentParams: {

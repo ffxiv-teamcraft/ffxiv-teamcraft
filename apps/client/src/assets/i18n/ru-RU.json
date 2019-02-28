@@ -26,7 +26,7 @@
     "Crafts_amount": "# крафтов",
     "Add_to_list": "Добавить предмет в список",
     "Apply_filters": "Применить фильтры",
-    "Too_many_results_warning": "В поимке более 50 предметов. Поскольку наш источник данных ограничен 50 результатами, вам могут понадобиться дополнительные фильтры для поиска конкретного элемента.",
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copy search url to your clipboard",
     "Share_url_copied": "Search url copied to your clipboard"
   },
@@ -320,6 +320,7 @@
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
     "Merge_lists": "Объединить списки",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "Списки успешно соединены!",
     "Shared_lists": "Списки к которым у вас есть доступ",
     "Add_selection": "Добавить выбранное в список",
@@ -398,6 +399,8 @@
     "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "You can craft {{amount}}",
     "Add_item": "Add an item",
+    "List_too_large": "List too large",
+    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -809,6 +812,15 @@
       "Others": "Others",
       "Dyes": "Dyes",
       "Other_master_recipes": "Other Master Recipes"
+    }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
+  },
+  "GIVEAWAY": {
+    "Discord_1K": {
+      "Title": "1000 Discord members giveaway !",
+      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
     }
   }
 }
