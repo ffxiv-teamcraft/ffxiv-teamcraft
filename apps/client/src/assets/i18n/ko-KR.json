@@ -26,7 +26,7 @@
     "Crafts_amount": "제작 횟수",
     "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용",
-    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Too_many_results_warning": "검색 결과가 100개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다.",
     "Share_url": "검색URL을 클립보드로 복사하기",
     "Share_url_copied": "검색URL이 클립보드에 복사되었습니다"
   },
@@ -399,8 +399,8 @@
     "Disable_HQ_suggestions": "HQ 자동표시 해제",
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
     "Add_item": "아이템 추가",
-    "List_too_large": "List too large",
-    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "List_too_large": "너무 큰 목록",
+    "List_too_large_description": "이 목록은 너무 크고 데이터베이스 제한에 도달했습니다. 목록의 손실을 막기위해 아이템을 목록에 더 추가할 수 없습니다.",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
