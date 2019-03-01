@@ -288,6 +288,7 @@
     "Nickname_used": "Benutzername wird bereits verwendet",
     "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Patreon-Funktionen vollständig nutzen zu können.",
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "Gegenstandsnamen kopieren",
       "Isearch": "/isearch Makro kopieren"
