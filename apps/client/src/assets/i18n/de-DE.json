@@ -288,6 +288,7 @@
     "Nickname_used": "Benutzername wird bereits verwendet",
     "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Patreon-Funktionen vollständig nutzen zu können.",
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "Gegenstandsnamen kopieren",
       "Isearch": "/isearch Makro kopieren"
@@ -707,7 +708,8 @@
     "Title": "Mitteilungen",
     "List_comment_added": "Ein Kommentar wurde der Liste {{listName}} hinzugefügt: \"{{content}}\"",
     "List_item_comment_added": "Ein Kommentar wurde dem Gegenstand {{itemName}} auf der Liste {{listName}} hinzugefügt: \"{{content}}\"",
-    "Mark_all_as_read": "Alle als gelesen markieren"
+    "Mark_all_as_read": "Alle als gelesen markieren",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "Teams",
