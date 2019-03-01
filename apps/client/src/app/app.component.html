@@ -39,7 +39,11 @@
               <i nz-icon type="notification"></i>
             </nz-badge>
             <ng-template #notificationsTemplate>
-              <nz-list [nzDataSource]="notifications" [nzRenderItem]="notificationTemplate">
+              <nz-list [nzDataSource]="notifications" [nzRenderItem]="notificationTemplate"
+                       [nzNoResult]="noNotifications">
+                <ng-template #noNotifications>
+                  <nz-empty [nzNotFoundContent]="'NOTIFICATIONS.No_notifications' | translate"></nz-empty>
+                </ng-template>
                 <ng-template #notificationTemplate let-notification>
                   <nz-list-item [nzActions]="[actionOpen, actionClose]">
                     <nz-list-item-meta [nzTitle]="notification.content"
