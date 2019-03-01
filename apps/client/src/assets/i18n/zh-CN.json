@@ -707,7 +707,8 @@
     "Title": "通知",
     "List_comment_added": "在列表 {{listName}} 上评论: \"{{content}}\"",
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
-    "Mark_all_as_read": "全部标记为已读"
+    "Mark_all_as_read": "全部标记为已读",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "团队",
