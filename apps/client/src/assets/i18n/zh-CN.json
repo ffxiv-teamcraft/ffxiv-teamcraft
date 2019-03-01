@@ -288,6 +288,7 @@
     "Nickname_used": "昵称已被使用",
     "No_nickname_warning": "请到设置页面设置一个昵称以使用赞助人专属功能",
     "Show_devtools": "显示DevTools",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "复制项目名称",
       "Isearch": "复制/isearch宏"
