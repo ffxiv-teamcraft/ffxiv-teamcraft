@@ -1,4 +1,4 @@
-const { app, ipcMain, BrowserWindow, Tray, nativeImage, dialog, protocol } = require('electron');
+const { app, ipcMain, BrowserWindow, Tray, nativeImage, dialog, protocol, remote } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const path = require('path');
 const Config = require('electron-config');
@@ -233,6 +233,13 @@ ipcMain.on('notification', (event, config) => {
   // Override icon for now, as getting the icon from url doesn't seem to be working properly.
   config.icon = nativeIcon;
   tray.displayBalloon(config);
+});
+
+ipcMain.on('clear-cache', () => {
+  win.webContents.session.clearStorageData(() => {
+    app.relaunch();
+    app.exit(0);
+  });
 });
 
 ipcMain.on('run-update', () => {
