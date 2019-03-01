@@ -288,6 +288,7 @@
     "Nickname_used": "El apodo ya está en uso",
     "No_nickname_warning": "Por favor vaya a la página de configuración y configure un apodo para poder usar correctamente las características exclusivas de patron.",
     "Show_devtools": "Mostrar herramientas de desarrollador",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
