@@ -707,7 +707,8 @@
     "Title": "Notificaciones",
     "List_comment_added": "Comentario publicado en la lista {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comentario publicado en {{itemName}}, lista {{listName}}: \"{{content}}\"",
-    "Mark_all_as_read": "Marcar todo como leído"
+    "Mark_all_as_read": "Marcar todo como leído",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "Equipos",
