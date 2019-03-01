@@ -707,7 +707,8 @@
     "Title": "알림",
     "List_comment_added": "{{listName}}에 댓글이 달렸습니다 : \"{{content}}\"",
     "List_item_comment_added": "{{listName}}의 {{itemName}}에 댓글이 달렸습니다 : \"{{content}}\"",
-    "Mark_all_as_read": "모두 읽음으로 표시"
+    "Mark_all_as_read": "모두 읽음으로 표시",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "팀",
