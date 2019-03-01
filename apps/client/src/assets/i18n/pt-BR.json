@@ -288,6 +288,7 @@
     "Nickname_used": "Esse apelido já está sendo usado",
     "No_nickname_warning": "Por favor, navegue para a página de configurações e configure um apelido para poder usar os recursos exclusivos do patreon corretamente.",
     "Show_devtools": "Mostrar ferramentas de desenvolvimento",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "Copiar nome do item",
       "Isearch": "Copiar macro /isearch"
