@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.37"></a>
+## [5.0.37](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.36...v5.0.37) (2019-03-01)
+
+
+### Bug Fixes
+
+* fixed an issue with KO/ZH items search not available inside recipe picker ([6cfc840](https://github.com/Supamiu/ffxiv-teamcraft/commit/6cfc840))
+* **desktop:** fixed auto updater ([8fa3bcc](https://github.com/Supamiu/ffxiv-teamcraft/commit/8fa3bcc))
+* **layout:** "Other" layout panel display can now be edited properly ([10330a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/10330a6))
+* **layout:** fixed an issue with NOT operator on first filter of a chain ([25b30fe](https://github.com/Supamiu/ffxiv-teamcraft/commit/25b30fe))
+* **lists:** small fix for list compacts update GCF ([7a20c65](https://github.com/Supamiu/ffxiv-teamcraft/commit/7a20c65))
+* **simulator:** rotation macros using 9 cross class skills not adding Reclaim to aactions ([be20b28](https://github.com/Supamiu/ffxiv-teamcraft/commit/be20b28))
+
+
+### Features
+
+* changed empty message for notifications banner button ([868bf0c](https://github.com/Supamiu/ffxiv-teamcraft/commit/868bf0c))
+* updated ant design to 7.0.0 ([4738034](https://github.com/Supamiu/ffxiv-teamcraft/commit/4738034))
+* **desktop:** added a button to clear cache inside setting ([0e22826](https://github.com/Supamiu/ffxiv-teamcraft/commit/0e22826))
+* **simulator:** updated formulas with latest data input ([5f0e533](https://github.com/Supamiu/ffxiv-teamcraft/commit/5f0e533))
+
+
+
 <a name="5.0.36"></a>
 ## [5.0.36](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.35...v5.0.36) (2019-02-27)
 

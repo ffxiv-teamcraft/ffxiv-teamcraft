@@ -288,6 +288,7 @@
     "Nickname_used": "Nome de utilizador já em utilização",
     "No_nickname_warning": "Por favor vá à página de configurações e crie um nome de utilizador novo para aceder às funções exclusivas do patreon.",
     "Show_devtools": "Mostrar ferramentas de desenvolvimento",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "Copiar nome to item",
       "Isearch": "Copiar macro /isearch"
@@ -707,7 +708,8 @@
     "Title": "Notifications",
     "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
-    "Mark_all_as_read": "Mark all as read"
+    "Mark_all_as_read": "Mark all as read",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "Teams",

@@ -288,6 +288,7 @@
     "Nickname_used": "通称名は既に使用されてる",
     "No_nickname_warning": "後援者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
     "Show_devtools": "Devツールを表示",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
       "Isearch": "/isearchマクロをコピーする"
@@ -707,7 +708,8 @@
     "Title": "お知らせ",
     "List_comment_added": "{{listName}} にコメントが追加されました: \"{{content}}\"",
     "List_item_comment_added": "{{listName}} の {{itemName}} にコメントが追加されました: \"{{content}}\"",
-    "Mark_all_as_read": "全て既読にする"
+    "Mark_all_as_read": "全て既読にする",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "チーム",
