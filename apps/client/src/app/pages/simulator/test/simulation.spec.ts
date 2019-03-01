@@ -234,7 +234,7 @@ describe('Craft simulator tests', () => {
         new CarefulSynthesisIII()];
       const simulation = new Simulation(gradeII_infusion_of_str_Recipe, acchan_macro, acchan_stats);
       simulation.run(true);
-      expect(simulation.progression).toBe(3557);
+      expect(simulation.progression).toBe(3555);
       expect(simulation.quality).toBe(24831);
       expect(simulation.availableCP).toBe(0);
     });
