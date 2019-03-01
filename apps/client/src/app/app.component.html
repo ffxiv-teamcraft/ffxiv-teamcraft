@@ -270,8 +270,12 @@
                 *ngIf="!overlay"
                 class="right-sider"
                 [nzWidth]="230"
+                [nzZeroTrigger]="alarmsTrigger"
                 [(nzCollapsed)]="collapsedAlarmsBar"
                 [nzCollapsedWidth]="0">
+        <ng-template #alarmsTrigger>
+          <i nz-icon type="bell"></i>
+        </ng-template>
         <app-alarms-sidebar *ngIf="!(loading$ | async)"></app-alarms-sidebar>
       </nz-sider>
     </nz-layout>
