@@ -288,6 +288,7 @@
     "Nickname_used": "Nome de utilizador já em utilização",
     "No_nickname_warning": "Por favor vá à página de configurações e crie um nome de utilizador novo para aceder às funções exclusivas do patreon.",
     "Show_devtools": "Mostrar ferramentas de desenvolvimento",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "Copiar nome to item",
       "Isearch": "Copiar macro /isearch"
