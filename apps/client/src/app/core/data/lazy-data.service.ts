@@ -13,15 +13,15 @@ export class LazyDataService {
 
   public zhItems: any = {};
 
-  public koItems: any ={};
-  public koActions: any ={};
-  public koFCActions: any ={};
-  public koWeathers: any ={};
-  public koPlaces: any ={};
-  public koNpc: any ={};
-  public koMobs: any ={};
-  public koJobName: any ={};
-  public koJobAbbr: any ={};
+  public koItems: any = {};
+  public koActions: any = {};
+  public koFCActions: any = {};
+  public koWeathers: any = {};
+  public koPlaces: any = {};
+  public koNpc: any = {};
+  public koMobs: any = {};
+  public koJobName: any = {};
+  public koJobAbbr: any = {};
 
   public craftActions: any = {};
 
@@ -31,18 +31,32 @@ export class LazyDataService {
     combineLatest(
       this.http.get('./assets/data/items.json'),
       this.http.get('./assets/data/zh-items.json'),
-      this.http.get('./assets/data/ko-items.json'),
-      this.http.get('./assets/data/ko-actions.json'),
-      this.http.get('./app/core/data/sources/ko-free-company-actions.json'),
-      this.http.get('./app/core/data/sources/ko-weathers.json'),
-      this.http.get('./app/core/data/sources/ko-places.json'),
-      this.http.get('./app/core/data/sources/ko-npc.json'),
-      this.http.get('./app/core/data/sources/ko-mobs.json'),
-      this.http.get('./app/core/data/sources/ko-job-name.json'),
-      this.http.get('./app/core/data/sources/ko-job-abbr.json'),
+      this.http.get('./assets/data/ko/ko-items.json'),
+      this.http.get('./assets/data/ko/ko-actions.json'),
+      this.http.get('./assets/data/ko/ko-free-company-actions.json'),
+      this.http.get('./assets/data/ko/ko-weathers.json'),
+      this.http.get('./assets/data/ko/ko-places.json'),
+      this.http.get('./assets/data/ko/ko-npc.json'),
+      this.http.get('./assets/data/ko/ko-mobs.json'),
+      this.http.get('./assets/data/ko/ko-job-name.json'),
+      this.http.get('./assets/data/ko/ko-job-abbr.json'),
       this.http.get('./assets/data/actions.json'),
       this.http.get('./assets/data/craft-actions.json')
-    ).subscribe(([items, zhItems, koItems, koActions, koFCActions, koWeathers, koPlaces, koNpc, koMobs, koJobName, koJobAbbr, actions, craftActions]) => {
+    ).subscribe(([
+                   items,
+                   zhItems,
+                   koItems,
+                   koActions,
+                   koFCActions,
+                   koWeathers,
+                   koPlaces,
+                   koNpc,
+                   koMobs,
+                   koJobName,
+                   koJobAbbr,
+                   actions,
+                   craftActions
+                 ]) => {
       this.items = items;
       this.zhItems = zhItems;
       this.koItems = koItems;
