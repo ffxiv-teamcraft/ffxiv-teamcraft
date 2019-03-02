@@ -50,15 +50,33 @@ export class LocalizedDataService {
   }
 
   public getPlace(id: number): I18nName {
-    return this.getRow(places, id);
+    const row = this.getRow(places, id);
+    const koRow = this.getRow(this.lazyData.koPlaces, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
   }
 
   public getNpc(id: number): I18nName {
-    return this.getRow(npcs, id);
+    const row = this.getRow(npcs, id);
+    const koRow = this.getRow(this.lazyData.koNpc, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
   }
 
   public getMob(id: number): I18nName {
-    return this.getRow(mobs, id);
+    const row = this.getRow(mobs, id);
+    const koRow = this.getRow(this.lazyData.koMobs, Math.floor(id % 1000000));
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
   }
 
   public getVenture(id: number): I18nName {
@@ -66,7 +84,13 @@ export class LocalizedDataService {
   }
 
   public getWeather(id: number): I18nName {
-    return this.getRow(weathers, id);
+    const row = this.getRow(weathers, id);
+    const koRow = this.getRow(this.lazyData.koWeathers, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
   }
 
   public getWeatherId(name: string): number {
@@ -78,7 +102,13 @@ export class LocalizedDataService {
   }
 
   public getFreeCompanyAction(id: number): I18nName {
-    return this.getRow(freeCompanyActions, id);
+    const row = this.getRow(freeCompanyActions, id);
+    const koRow = this.getRow(this.lazyData.koFCActions, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
   }
 
   public getMapId(name: string): number {
