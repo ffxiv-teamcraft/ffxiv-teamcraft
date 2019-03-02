@@ -6,12 +6,12 @@ import { Trade } from '../../model/trade';
 import { Item } from '../../../../model/garland-tools/item';
 import { TradeNpc } from '../../model/trade-npc';
 import { TradeEntry } from '../../model/trade-entry';
-import * as npcs from '../../../../core/data/sources/npcs.json';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
 
-  constructor(gt: GarlandToolsService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
     super(gt);
   }
 
@@ -32,7 +32,7 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
       return {
         npcs: ts.npcs.map(npcId => {
           const npc: TradeNpc = { id: npcId };
-          const npcEntry = npcs[npcId];
+          const npcEntry = this.lazyData.npcs[npcId];
           if (npcEntry.position !== null) {
             npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
             npc.zoneId = npcEntry.position.zoneid;

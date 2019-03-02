@@ -105,12 +105,23 @@
                     (click)="addGathering(item)">{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</li>
                 <li nz-menu-item
                     (click)="addAlarm(item)">{{'CUSTOM_ITEMS.DETAILS.ALARMS.Title' | translate}}</li>
+                <li nz-menu-item
+                    (click)="addVendor(item)">{{'CUSTOM_ITEMS.DETAILS.VENDORS.Title' | translate}}</li>
               </ul>
             </nz-dropdown>
           </div>
         </div>
         <div *ngIf="item.gatheredBy !== undefined">
-          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate" nzOrientation="left"></nz-divider>
+          <nz-divider [nzText]="gatheringHeader" nzOrientation="left">
+            <ng-template #gatheringHeader>
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div>{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</div>
+                <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
+                        nzSize="small" nzShape="circle"
+                        (nzOnConfirm)="deleteGathering(item)"><i nz-icon type="close"></i></button>
+              </div>
+            </ng-template>
+          </nz-divider>
           <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
             <nz-form-item>
               <nz-form-label
@@ -188,7 +199,8 @@
               <nz-form-label
               >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Slot' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.nodes[0].slot" class="slot-select">
+                <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.nodes[0].slot"
+                           class="slot-select">
                   <nz-option [nzValue]="'?'" [nzLabel]="'?'">
                   </nz-option>
                   <nz-option [nzValue]="1" [nzLabel]="1"></nz-option>
@@ -246,6 +258,22 @@
           <button nz-button (click)="addAlarm(item)">
             <i nz-icon type="plus"></i> {{'CUSTOM_ITEMS.DETAILS.ALARMS.Add_alarm' | translate}}
           </button>
+        </div>
+        <div *ngIf="item.vendors !== undefined && item.vendors.length > 0">
+          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.VENDORS.Title' | translate" nzOrientation="left"></nz-divider>
+          <div *ngFor="let vendor of item.vendors">
+            <div class="npc-name">
+              <nz-form-item>
+                <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.VENDORS.Npc_name' | translate}}</nz-form-label>
+                <!--
+                TODO:
+                 - Custom npc name input.
+                 - A button to select a known npc, opens a npc picker.
+                 - Other classic values (coords, map, etc).
+                -->
+              </nz-form-item>
+            </div>
+          </div>
         </div>
         <button nz-button nzBlock nzType="primary" (click)="updateCustomItem(item)" [disabled]="!item.dirty">
           {{'CUSTOM_ITEMS.Save' | translate}}

@@ -11,9 +11,11 @@ export class LazyDataService {
 
   public items: any = {};
 
+  public npcs: any = {};
+
   public zhItems: any = {};
 
-  public koItems: any ={};
+  public koItems: any = {};
 
   public craftActions: any = {};
 
@@ -25,13 +27,15 @@ export class LazyDataService {
       this.http.get('./assets/data/zh-items.json'),
       this.http.get('./assets/data/ko-items.json'),
       this.http.get('./assets/data/actions.json'),
-      this.http.get('./assets/data/craft-actions.json')
-    ).subscribe(([items, zhItems, koItems, actions, craftActions]) => {
+      this.http.get('./assets/data/craft-actions.json'),
+      this.http.get('./assets/data/npcs.json')
+    ).subscribe(([items, zhItems, koItems, actions, craftActions, npcs]) => {
       this.items = items;
       this.zhItems = zhItems;
       this.koItems = koItems;
       this.actions = actions;
       this.craftActions = craftActions;
+      this.npcs = npcs;
       this.loaded$.next(true);
     });
   }

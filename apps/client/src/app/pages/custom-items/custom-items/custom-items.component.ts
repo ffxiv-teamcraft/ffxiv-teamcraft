@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, Subject } from 'rxjs';
 import { CustomItemsFacade } from '../../../modules/custom-items/+state/custom-items.facade';
 import { NzModalService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, first, map, shareReplay } from 'rxjs/operators';
+import { debounceTime, filter, first, map, shareReplay } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
 import { CustomItemsDisplay } from '../../../modules/custom-items/+state/custom-items-display';
@@ -13,6 +13,7 @@ import { NodeTypeIconPipe } from '../../../pipes/node-type-icon.pipe';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
 import { Alarm } from '../../../core/alarms/alarm';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-custom-items',
@@ -32,7 +33,8 @@ export class CustomItemsComponent {
   public maps$: Observable<{ ID: number, PlaceName: any }[]>;
 
   constructor(private customItemsFacade: CustomItemsFacade, private dialog: NzModalService,
-              private translate: TranslateService, private xivapi: XivapiService) {
+              private translate: TranslateService, private xivapi: XivapiService,
+              private lazyData: LazyDataService) {
     this.customItemsFacade.loadAll();
     this.customItemsFacade.loadAllFolders();
     this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, { columns: ['ID', 'PlaceName.Name_*'], max_items: 1000 }).pipe(
@@ -185,6 +187,11 @@ export class CustomItemsComponent {
     item.dirty = true;
   }
 
+  public deleteGathering(item: CustomItem): void {
+    delete item.gatheredBy;
+    item.dirty = true;
+  }
+
   public addAlarm(item: CustomItem): void {
     item.alarms = item.alarms || [];
     let componentParams: Partial<CustomAlarmPopupComponent> = { returnAlarm: true, name: item.name };
@@ -242,6 +249,24 @@ export class CustomItemsComponent {
 
   public deleteAlarm(item: CustomItem, alarm: Alarm): void {
     item.alarms = item.alarms.filter(a => a !== alarm);
+    item.dirty = true;
+  }
+
+  public addVendor(item: CustomItem): void {
+    item.vendors = item.vendors || [];
+    item.vendors.push({
+      npcId: -1,
+      areaId: 0,
+      mapId: 1,
+      coords: { x: 0, y: 0 },
+      price: 1,
+      zoneId: 0
+    });
+    item.dirty = true;
+  }
+
+  public deleteVendor(item: CustomItem, alarm: Alarm): void {
+    delete item.vendors;
     item.dirty = true;
   }
 
