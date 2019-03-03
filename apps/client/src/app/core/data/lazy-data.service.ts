@@ -15,6 +15,7 @@ export class LazyDataService {
 
   public koItems: any = {};
   public koActions: any = {};
+  public koActionDescriptions: any = {};
   public koCraftActions: any = {};
   public koCraftDescriptions: any = {};
   public koFCActions: any = {};
@@ -36,6 +37,7 @@ export class LazyDataService {
       this.http.get('./assets/data/zh-items.json'),
       this.http.get('./assets/data/ko/ko-items.json'),
       this.http.get('./assets/data/ko/ko-actions.json'),
+      this.http.get('./assets/data/ko/ko-action-descriptions.json'),
       this.http.get('./assets/data/ko/ko-craft-actions.json'),
       this.http.get('./assets/data/ko/ko-craft-descriptions.json'),
       this.http.get('./assets/data/ko/ko-free-company-actions.json'),
@@ -53,6 +55,7 @@ export class LazyDataService {
                    zhItems,
                    koItems,
                    koActions,
+                   koActionDescriptions,
                    koCraftActions,
                    koCraftDescriptions,
                    koFCActions,
@@ -70,6 +73,7 @@ export class LazyDataService {
       this.zhItems = zhItems;
       this.koItems = koItems;
       this.koActions = koActions;
+      this.koActionDescriptions = koActionDescriptions;
       this.koCraftActions = koCraftActions;
       this.koCraftDescriptions = koCraftDescriptions;
       this.koFCActions = koFCActions;
