@@ -14,6 +14,8 @@ import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
 import { Alarm } from '../../../core/alarms/alarm';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { NpcPickerComponent } from '../npc-picker/npc-picker.component';
+import { Vendor } from '../../../modules/list/model/vendor';
 
 @Component({
   selector: 'app-custom-items',
@@ -153,12 +155,23 @@ export class CustomItemsComponent {
     return data.folder.$key;
   }
 
+  public trackByVendor(index: number, vendor: Vendor): number {
+    return vendor.npcId;
+  }
+
+
   private beforeSave(item: CustomItem): CustomItem {
     if (item.gatheredBy !== undefined) {
       item.gatheredBy.icon = NodeTypeIconPipe.icons[item.gatheredBy.type];
       item.gatheredBy.nodes[0].zoneid = item.gatheredBy.nodes[0].mapid;
       item.gatheredBy.nodes[0].areaid = item.gatheredBy.nodes[0].mapid;
       item.gatheredBy.nodes[0].level = item.gatheredBy.level;
+    }
+    if (item.vendors && item.vendors.length > 0) {
+      item.vendors = item.vendors.map(vendor => {
+        vendor.areaId = vendor.zoneId = vendor.mapId;
+        return vendor;
+      });
     }
     return item;
   }
@@ -254,19 +267,30 @@ export class CustomItemsComponent {
 
   public addVendor(item: CustomItem): void {
     item.vendors = item.vendors || [];
-    item.vendors.push({
-      npcId: -1,
-      areaId: 0,
-      mapId: 1,
-      coords: { x: 0, y: 0 },
-      price: 1,
-      zoneId: 0
-    });
-    item.dirty = true;
+    this.dialog.create({
+      nzTitle: this.translate.instant('CUSTOM_ITEMS.NPC_PICKER.Title'),
+      nzFooter: null,
+      nzContent: NpcPickerComponent
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined)
+      )
+      .subscribe(npc => {
+        item.vendors.push({
+          // 21 is "eorzea" :)
+          zoneId: npc.position === null ? 21 : npc.position.zoneid,
+          price: 1,
+          coords: npc.position === null ? { x: 1, y: 1 } : { x: npc.position.x, y: npc.position.y },
+          mapId: npc.position === null ? 2 : npc.position.map,
+          areaId: npc.position === null ? 21 : npc.position.zoneid,
+          npcId: npc.id
+        });
+        item.dirty = true;
+      });
   }
 
-  public deleteVendor(item: CustomItem, alarm: Alarm): void {
-    delete item.vendors;
+  public deleteVendor(item: CustomItem, vendor: Vendor): void {
+    item.vendors = item.vendors.filter(v => v !== vendor);
     item.dirty = true;
   }
 

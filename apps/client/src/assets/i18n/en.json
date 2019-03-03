@@ -843,9 +843,18 @@
         "Slot": "Slot"
       },
       "ALARMS": {
-        "Title": "Alarms",
-        "Add_alarm": "Add alarm"
+        "Title": "Alarms"
+      },
+      "VENDORS": {
+        "Title": "Vendors",
+        "Npc_name": "NPC name",
+        "Price": "Price",
+        "Delete_vendor": "Delete vendor"
       }
+    },
+    "NPC_PICKER": {
+      "Title": "Find a NPC",
+      "Npc_name": "NPC name"
     }
   }
 }

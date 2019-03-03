@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CustomAlarmPopupModule } from '../../modules/custom-alarm-popup/custom-alarm-popup.module';
 import { MapModule } from '../../modules/map/map.module';
+import { NpcPickerComponent } from './npc-picker/npc-picker.component';
 
 const routes: Routes = [{
   path: '',
@@ -22,7 +23,8 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  declarations: [CustomItemsComponent],
+  declarations: [CustomItemsComponent, NpcPickerComponent],
+  entryComponents: [NpcPickerComponent],
   imports: [
     CommonModule,
     FormsModule,

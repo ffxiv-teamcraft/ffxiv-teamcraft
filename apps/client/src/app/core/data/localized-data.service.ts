@@ -59,8 +59,8 @@ export class LocalizedDataService {
   }
 
   public getNpc(id: number): I18nName {
-    const row = this.getRow(this.lazyData.npcs, id;
-    const koRow = this.getRow(this.lazyData.koNpc, id);
+    const row = this.getRow(this.lazyData.npcs, id);
+    const koRow = this.getRow(this.lazyData.koNpcs, id);
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;

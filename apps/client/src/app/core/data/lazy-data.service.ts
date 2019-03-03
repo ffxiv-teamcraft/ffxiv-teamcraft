@@ -16,13 +16,12 @@ export class LazyDataService {
   public zhItems: any = {};
 
   public koItems: any = {};
-  public koItems: any = {};
   public koActions: any = {};
   public koCraftActions: any = {};
   public koFCActions: any = {};
   public koWeathers: any = {};
   public koPlaces: any = {};
-  public koNpc: any = {};
+  public koNpcs: any = {};
   public koMobs: any = {};
   public koJobName: any = {};
   public koJobAbbr: any = {};
@@ -73,7 +72,7 @@ export class LazyDataService {
       this.koFCActions = koFCActions;
       this.koWeathers = koWeathers;
       this.koPlaces = koPlaces;
-      this.koNpc = koNpc;
+      this.koNpcs = koNpc;
       this.koMobs = koMobs;
       this.koJobName = koJobName;
       this.koJobAbbr = koJobAbbr;
