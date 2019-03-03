@@ -161,8 +161,7 @@ export class LocalizedDataService {
     if (result === undefined) {
       throw new Error('Data row not found.');
     }
-    const name = result.en;
-    const koRow = koActions.find(a => a.en === name);
+    const koRow = this.getRow(this.lazyData.koCraftActions, id) || this.getRow(this.lazyData.koActions, id);
     if (koRow !== undefined) {
       result.ko = koRow.ko;
     }
@@ -202,7 +201,7 @@ export class LocalizedDataService {
     if (array === undefined) {
       return -1;
     }
-    if (['en', 'fr', 'de', 'ja'].indexOf(language) === -1) {
+    if (['en', 'fr', 'de', 'ja', 'ko', 'zh'].indexOf(language) === -1) {
       language = 'en';
     }
     let res = -1;
@@ -212,6 +211,9 @@ export class LocalizedDataService {
         res = +key;
         break;
       }
+    }
+    if (['ko', 'zh'].indexOf(language) > -1 && res === -1) {
+      return this.getIndexByName(array, name, 'en');
     }
     return res;
   }
