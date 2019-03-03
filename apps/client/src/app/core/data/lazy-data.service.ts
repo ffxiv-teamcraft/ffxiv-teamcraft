@@ -16,6 +16,16 @@ export class LazyDataService {
   public zhItems: any = {};
 
   public koItems: any = {};
+  public koItems: any = {};
+  public koActions: any = {};
+  public koCraftActions: any = {};
+  public koFCActions: any = {};
+  public koWeathers: any = {};
+  public koPlaces: any = {};
+  public koNpc: any = {};
+  public koMobs: any = {};
+  public koJobName: any = {};
+  public koJobAbbr: any = {};
 
   public craftActions: any = {};
 
@@ -25,14 +35,48 @@ export class LazyDataService {
     combineLatest(
       this.http.get('./assets/data/items.json'),
       this.http.get('./assets/data/zh-items.json'),
-      this.http.get('./assets/data/ko-items.json'),
+      this.http.get('./assets/data/ko/ko-items.json'),
+      this.http.get('./assets/data/ko/ko-actions.json'),
+      this.http.get('./assets/data/ko/ko-craft-actions.json'),
+      this.http.get('./assets/data/ko/ko-free-company-actions.json'),
+      this.http.get('./assets/data/ko/ko-weathers.json'),
+      this.http.get('./assets/data/ko/ko-places.json'),
+      this.http.get('./assets/data/ko/ko-npc.json'),
+      this.http.get('./assets/data/ko/ko-mobs.json'),
+      this.http.get('./assets/data/ko/ko-job-name.json'),
+      this.http.get('./assets/data/ko/ko-job-abbr.json'),
       this.http.get('./assets/data/actions.json'),
       this.http.get('./assets/data/craft-actions.json'),
       this.http.get('./assets/data/npcs.json')
-    ).subscribe(([items, zhItems, koItems, actions, craftActions, npcs]) => {
+    ).subscribe(([
+                   items,
+                   zhItems,
+                   koItems,
+                   koActions,
+                   koCraftActions,
+                   koFCActions,
+                   koWeathers,
+                   koPlaces,
+                   koNpc,
+                   koMobs,
+                   koJobName,
+                   koJobAbbr,
+                   actions,
+                   craftActions,
+                   npcs
+                 ]) => {
       this.items = items;
       this.zhItems = zhItems;
       this.koItems = koItems;
+      this.koActions = koActions;
+      this.koCraftActions = koCraftActions;
+      this.koFCActions = koFCActions;
+      this.koWeathers = koWeathers;
+      this.koPlaces = koPlaces;
+      this.koNpc = koNpc;
+      this.koMobs = koMobs;
+      this.koJobName = koJobName;
+      this.koJobAbbr = koJobAbbr;
       this.actions = actions;
       this.craftActions = craftActions;
       this.npcs = npcs;

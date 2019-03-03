@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { AuthState } from './auth.reducer';
-import { Character } from '@xivapi/angular-client';
+import { Character, CharacterResponse } from '@xivapi/angular-client';
 
 // Lookup the 'Auth' feature state managed by NgRx
 const getAuthState = createFeatureSelector<AuthState>('auth');
@@ -10,23 +10,29 @@ const getLoaded = createSelector(
   (state: AuthState) => !state.loading
 );
 
-const getMainCharacter = createSelector(
+const getCharacters = createSelector(
   getAuthState,
   (state: AuthState) => {
-    const character = state.characters.find(char => char.Character.ID === state.user.defaultLodestoneId);
+    if(state.characters.find(c => c.Character === null)){
+      console.error(`Ghost character detected: user ${state.uid}`)
+    }
+    return state.characters.filter(c => c.Character !== null);
+  }
+);
+
+const getMainCharacter = createSelector(
+  getAuthState,
+  getCharacters,
+  (state: AuthState, characters: CharacterResponse[]) => {
+    const character = characters
+      .filter(c => c.Character !== null)
+      .find(char => char.Character.ID === state.user.defaultLodestoneId);
     // If we couldn't find it, it's maybe because it's a custom one (for KR servers)
     if (character === undefined && state.user !== null) {
       const custom = <Character>state.user.customCharacters.find(c => c.ID === state.user.defaultLodestoneId);
       return custom? custom : null;
     }
     return character ? character.Character : null;
-  }
-);
-
-const getCharacters = createSelector(
-  getAuthState,
-  (state: AuthState) => {
-    return state.characters;
   }
 );
 

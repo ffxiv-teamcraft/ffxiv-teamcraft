@@ -89,6 +89,10 @@ export class SettingsPopupComponent {
     this.ipc.send('show-devtools');
   }
 
+  clearCache(): void {
+    this.ipc.send('clear-cache');
+  }
+
   patreonOauth(): void {
     if (this.platform.isDesktop()) {
       this.ipc.on('oauth-reply', (event, code) => {

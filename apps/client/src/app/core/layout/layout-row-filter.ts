@@ -261,7 +261,7 @@ export class LayoutRowFilter {
 
   static fromString(filterString: string): LayoutRowFilter {
     const parsed = filterString.split(':');
-    const baseFilterString: string = parsed.shift();
+    const baseFilterString: string = parsed.shift().replace('!', '');
     const baseFilter: LayoutRowFilter = LayoutRowFilter[baseFilterString];
     if (parsed.length > 1 && baseFilter !== undefined) {
       return LayoutRowFilter.processRows(parsed, baseFilter);

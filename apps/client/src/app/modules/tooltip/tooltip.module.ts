@@ -13,6 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PipesModule } from '../../pipes/pipes.module';
 import { UiColorsService } from './ui-colors.service';
 import { UiTextPipe } from './xiv-ui-text.pipe';
+import { CoreModule } from '../../core/core.module';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { UiTextPipe } from './xiv-ui-text.pipe';
     FlexLayoutModule,
     NgZorroAntdModule,
     TranslateModule,
-    PipesModule
+    PipesModule,
+    CoreModule
   ],
   declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe],
   exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective],

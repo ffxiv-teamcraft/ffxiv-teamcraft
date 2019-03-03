@@ -26,7 +26,7 @@
     "Crafts_amount": "제작 횟수",
     "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용",
-    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Too_many_results_warning": "검색 결과가 100개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다.",
     "Share_url": "검색URL을 클립보드로 복사하기",
     "Share_url_copied": "검색URL이 클립보드에 복사되었습니다"
   },
@@ -288,6 +288,7 @@
     "Nickname_used": "이미 사용중인 닉네임입니다.",
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "Show_devtools": "개발 도구 표시",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -399,8 +400,8 @@
     "Disable_HQ_suggestions": "HQ 자동표시 해제",
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
     "Add_item": "아이템 추가",
-    "List_too_large": "List too large",
-    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "List_too_large": "너무 큰 목록",
+    "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -707,7 +708,8 @@
     "Title": "알림",
     "List_comment_added": "{{listName}}에 댓글이 달렸습니다 : \"{{content}}\"",
     "List_item_comment_added": "{{listName}}의 {{itemName}}에 댓글이 달렸습니다 : \"{{content}}\"",
-    "Mark_all_as_read": "모두 읽음으로 표시"
+    "Mark_all_as_read": "모두 읽음으로 표시",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "팀",
@@ -820,7 +822,7 @@
   "GIVEAWAY": {
     "Discord_1K": {
       "Title": "Discord 멤버 1000명 달성 이벤트!",
-      "Description": "이 배너를 클릭해서 FINAL FANTASY XIV: 칠흑의 반역자 소장판 증정 이벤트에 등록하세요! 이 이벤트는 TC Discord 서버의 멤버 수가 한계치인 1000명 달성을 기념하기 위한 것입니다."
+      "Description": "이 배너를 클릭해서 FINAL FANTASY XIV: 칠흑의 반역자 소장판 증정 이벤트에 등록하세요! 이 이벤트는 TC Discord 서버의 멤버 수가 한계치인 1000명에 달성한 것을 기념하기 위한 것입니다."
     }
   }
 }
