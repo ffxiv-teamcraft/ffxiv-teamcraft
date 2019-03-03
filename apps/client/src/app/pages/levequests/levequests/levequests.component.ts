@@ -14,6 +14,7 @@ import { List } from '../../../modules/list/model/list';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { Levequest } from '../../../model/search/levequest';
 import { DataService } from '../../../core/api/data.service';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-levequests',
@@ -59,7 +60,7 @@ export class LevequestsComponent implements OnInit {
               private notificationService: NzNotificationService, private gt: GarlandToolsService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
-              private dataService: DataService) {
+              private dataService: DataService, private lazyData: LazyDataService) {
     this.jobList = this.gt.getJobs().slice(8, 16);
   }
 
@@ -97,7 +98,7 @@ export class LevequestsComponent implements OnInit {
           columns: ['LevelLevemete.Map.ID', 'CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon',
             'CraftLeve.ItemCount0', 'CraftLeve.ItemCount1', 'CraftLeve.ItemCount2', 'CraftLeve.ItemCount3',
             'CraftLeve.Repeats', 'Name_*', 'GilReward', 'ExpReward', 'ClassJobCategoryTargetID', 'ClassJobLevel',
-            'LevelLevemete.Map.PlaceNameTargetID', 'LevelLevemete.Y', 'PlaceNameStart.ID'],
+            'LevelLevemete.Map.PlaceNameTargetID', 'LevelLevemete.Y', 'PlaceNameStart.ID', 'ID'],
           // 105 is the amount of leves from 1 to 70 for a single job
           limit: 105
         });
@@ -118,7 +119,13 @@ export class LevequestsComponent implements OnInit {
               + leve.CraftLeve.ItemCount1
               + leve.CraftLeve.ItemCount2
               + leve.CraftLeve.ItemCount3,
-            name: { en: leve.Name_en, fr: leve.Name_fr, de: leve.Name_de, ja: leve.Name_ja },
+            name: {
+              en: leve.Name_en,
+              fr: leve.Name_fr,
+              de: leve.Name_de,
+              ja: leve.Name_ja,
+              ko: this.lazyData.koLeves[leve.ID] ? this.lazyData.koLeves[leve.ID].ko : leve.Name_en
+            },
             startPlaceId: leve.PlaceNameStart.ID,
             deliveryPlaceId: leve.LevelLevemete.Map.PlaceNameTargetID,
             repeats: leve.CraftLeve.Repeats
