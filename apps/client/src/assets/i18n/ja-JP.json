@@ -608,7 +608,7 @@
     "Change_rotation": "スキル回しを変更する",
     "New_rotation_folder": "新回しフォルダー",
     "Safe_mode": "セーフモード",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Safe_mode_tooltip": "成功率100％ではないスキルは使用不可(バフを含む)",
     "CUSTOM": {
       "Recipe_configuration": "製作情報",
       "Recipe_level": "レシピLv",
@@ -674,7 +674,7 @@
       "NOT_ENOUGH_CP": "CP不足",
       "MISSING_LEVEL_REQUIREMENT": "レベル不足",
       "NOT_SPECIALIST": "非マイスターは、使用できないマイスタースキル回し",
-      "NO_INNER_QUIET": "インナーク ワイエットを使わずに、インナーク ワイエットを要求するスキルを使用"
+      "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用"
     }
   },
   "PRICING": {
