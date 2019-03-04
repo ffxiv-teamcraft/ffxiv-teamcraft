@@ -41,7 +41,7 @@
   "Timers": "タイマー",
   "Copy_isearch": "/isearchマクロをコピーする",
   "Isearch_copied": "/isearch {{itemname}} がクリップボードにコピーされました",
-  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
+  "Required_for_final_craft": "HQに制作したいアイテムに {{amount}} が使われる。",
   "Mark_HQ": "必要なHQ要求量を表示する",
   "Unmark_HQ": "HQ要求量を消す",
   "Compact_sidebar_toggle": "コンパクトサイドバーに切り替える",
