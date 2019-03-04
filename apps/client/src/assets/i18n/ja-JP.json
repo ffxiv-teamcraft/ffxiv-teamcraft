@@ -805,7 +805,7 @@
   "LOG_TRACKER": {
     "Title": "Log Tracker",
     "Mark_page_as_done": "Mark this page as done",
-    "Mark_as_done": "Mark this item as done",
+    "Mark_as_done": "このアイテムに完了として表示する",
     "Mark_as_not_done": "このアイテムを未完了として表示する",
     "Create_list": "このページを完成させるためのリストを作成する",
     "PAGE": {
