@@ -617,7 +617,7 @@
       "Recipe_durability": "耐久"
     },
     "ROTATIONS": {
-      "Search_placeholder": "Search a rotation",
+      "Search_placeholder": "制作スキル回しを検索",
       "FOLDERS": {
         "Folders": "スキル回しフォルダー",
         "Rename": "フォルダー名を変更する",
@@ -669,12 +669,12 @@
       }
     },
     "FAIL_CAUSE": {
-      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
-      "NOT_ENOUGH_CP": "Not enough CP",
+      "UNSAFE_ACTION": "セーフモードに合わないスキルが使用される",
+      "DURABILITY_REACHED_ZERO": "作業完了の直前に耐久度が0になった",
+      "NOT_ENOUGH_CP": "CP不足",
       "MISSING_LEVEL_REQUIREMENT": "レベル不足",
       "NOT_SPECIALIST": "非マイスターは、使用できないマイスタースキル回し",
-      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
+      "NO_INNER_QUIET": "インナーク ワイエットを使わずに、インナーク ワイエットを要求するスキルを使用"
     }
   },
   "PRICING": {
