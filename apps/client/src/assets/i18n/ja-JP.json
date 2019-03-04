@@ -288,7 +288,7 @@
     "Nickname_used": "通称名は既に使用されてる",
     "No_nickname_warning": "後援者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
     "Show_devtools": "Devツールを表示",
-    "Clear_cache": "Clear cache (will restart the app)",
+    "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
       "Isearch": "/isearchマクロをコピーする"
@@ -685,7 +685,7 @@
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
+    "Cheaper_at_vendor": "NPC から購入した方が安い ({{price}} ギル)"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -709,7 +709,7 @@
     "List_comment_added": "{{listName}} にコメントが追加されました: \"{{content}}\"",
     "List_item_comment_added": "{{listName}} の {{itemName}} にコメントが追加されました: \"{{content}}\"",
     "Mark_all_as_read": "全て既読にする",
-    "No_notifications": "No notifications"
+    "No_notifications": "通知無し"
   },
   "TEAMS": {
     "Title": "チーム",
@@ -798,8 +798,8 @@
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available ! ",
-    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
+    "New_update_available": "新しいアップデートがあります! ",
+    "Desktop_instructions": "最新バージョンをダウンロードするには、次のリンクに接続してください： ",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。"
   },
   "LOG_TRACKER": {
