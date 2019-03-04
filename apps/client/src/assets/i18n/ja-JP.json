@@ -557,7 +557,7 @@
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
     "Include_consumables_notification": "消耗品の通知を含める",
-    "Consumable_notification": "{{buffs}} を使用します。",
+    "Consumable_notification": "{{buffs}} を使用が必要します",
     "Extra_wait": "追加待ち",
     "Import_macro": "ゲームのマクロから取り込む",
     "Ingame_macro": "マクロ",
@@ -679,7 +679,7 @@
   },
   "PRICING": {
     "From_vendor": "商店販売価格",
-    "From_crafting": "Price from crafting",
+    "From_crafting": "制作費用",
     "Expect_to_sell_everything": "販売予定",
     "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
@@ -817,7 +817,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more !"
+    "Loading_data": "アイテム、スキル、詳細を読み込み中"
   },
   "GIVEAWAY": {
     "Discord_1K": {
