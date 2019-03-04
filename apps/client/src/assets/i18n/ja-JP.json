@@ -500,9 +500,9 @@
     "Title": "ギャザラーマップ",
     "No_items": "採集場所が見つかりませんでした。",
     "Gathering_name": "アイテム名を入力してください",
-    "Ephemeral_node": "Ephemeral node, can be respawned",
+    "Ephemeral_node": "リスポン可能な、時間制採集場所",
     "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
-    "Hidden_item": "Hidden"
+    "Hidden_item": "隠し資源"
   },
   "ANNOUNCEMENT": {
     "Title": "お知らせ",
@@ -545,7 +545,7 @@
     "Propagate_changes": "工房内でリストアップする権限の提案する",
     "Propagate_changes_done": "工房内のリストに変更が反映されました",
     "Team_notice": "このリストに割り当てられたチームは、自動に参加権限が付与されます。",
-    "Default_permission_level": "Default permission level"
+    "Default_permission_level": "デフォルトの権限レベル"
   },
   "WIKI": {
     "Title": "ウィキ",
@@ -672,8 +672,8 @@
       "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
       "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
       "NOT_ENOUGH_CP": "Not enough CP",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
-      "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
+      "MISSING_LEVEL_REQUIREMENT": "レベル不足",
+      "NOT_SPECIALIST": "非マイスターは、使用できないマイスタースキル回し",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
   },
