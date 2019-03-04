@@ -556,8 +556,8 @@
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
-    "Include_consumables_notification": "Include consumables notification",
-    "Consumable_notification": "Use {{buffs}}",
+    "Include_consumables_notification": "消耗品の通知を含める",
+    "Consumable_notification": "{{buffs}} を使用します。",
     "Extra_wait": "追加待ち",
     "Import_macro": "ゲームのマクロから取り込む",
     "Ingame_macro": "マクロ",
@@ -607,7 +607,7 @@
     "Save_as_new_done": "新たに保存されたスキル回しを呼び寄せました",
     "Change_rotation": "スキル回しを変更する",
     "New_rotation_folder": "新回しフォルダー",
-    "Safe_mode": "Safe mode",
+    "Safe_mode": "セーフモード",
     "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "CUSTOM": {
       "Recipe_configuration": "製作情報",
@@ -822,7 +822,7 @@
   "GIVEAWAY": {
     "Discord_1K": {
       "Title": "ディスコードメンバー1000人達成イベント!",
-      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+      "Description": "このバナーをクリックして、Final Fantasy XIV: 漆黑の反逆者の所蔵版の贈呈イベントに登録してください！ このイベントは、TC discord サーバーのメンバー数が限界値の1000名を達成したのを祝うためのものです。"
     }
   }
 }
