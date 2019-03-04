@@ -321,7 +321,7 @@
     "Regenerate_all": "全リストを更新する",
     "Regenerated_all": "リストが更新されました",
     "Merge_lists": "リストを併合する",
-    "Merge_lists_warning": "大規模のリストはデータベースの限界のため、マージすることはできませんのでここに表示されません。",
+    "Merge_lists_warning": "大規模のリストはデータベースの制限で、まとめることはできないため、表示できません。",
     "Lists_merged": "リスト併合が完了されました！",
     "Shared_lists": "書く権限があるリスト",
     "Add_selection": "選択項目をリストに追加する",
@@ -332,7 +332,7 @@
     "Add_to_a_list": "リストに追加する",
     "Please_pick_recipe": "このアイテムに対する、制作レシピを選択して下さい。",
     "Import_description": "制作しようとする、アイテムに対する制作レシピを選び、リストを選択して下さい。そうすれば、アイテムがリストに追加され、自動にリストに移動されます。",
-    "Delete_after_merge": "マージ後に既存のリストを削除する",
+    "Delete_after_merge": "併合後に既存のリストを削除する",
     "IMPORT": {
       "Title": "外部サイトからリストを取り込む",
       "Paste_link_step_title": "外部サイトのリンクをペーストする",
@@ -401,7 +401,7 @@
     "Amount_craftable": "{{amount}} 個 作られます",
     "Add_item": "アイテムを追加する",
     "List_too_large": "リストが大き過ぎます",
-    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
