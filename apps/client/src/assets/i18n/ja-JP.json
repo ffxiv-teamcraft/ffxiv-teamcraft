@@ -132,7 +132,7 @@
     "Volume": "ボリューム",
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイ開く",
-    "More_available": "and {{amount}} more...",
+    "More_available": "{{amount}} 回 もっと",
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
       "Name": "名前",
@@ -269,7 +269,7 @@
     "General": "一般",
     "Link_base": "アイテムリンク",
     "Theme": "テーマカラー",
-    "no_panel_borders": "Disable borders around various panels",
+    "no_panel_borders": "パネルの枠線を無効にする",
     "Desktop": "PC版",
     "Always_on_top": "常に最前面",
     "Check_for_update": "アップデートを確認する",
