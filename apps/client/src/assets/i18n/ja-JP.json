@@ -806,14 +806,14 @@
     "Title": "Log Tracker",
     "Mark_page_as_done": "Mark this page as done",
     "Mark_as_done": "Mark this item as done",
-    "Mark_as_not_done": "Mark this item as not done",
-    "Create_list": "Create a list to complete this page",
+    "Mark_as_not_done": "このアイテムを未完了として表示する",
+    "Create_list": "このページを完成させるためのリストを作成する",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
       "Housing_items": "ハウジング ({{number}})",
       "Others": "その他",
       "Dyes": "染料",
-      "Other_master_recipes": "Other Master Recipes"
+      "Other_master_recipes": "秘伝書: その他"
     }
   },
   "LOADING_SCREEN": {
@@ -821,7 +821,7 @@
   },
   "GIVEAWAY": {
     "Discord_1K": {
-      "Title": "1000 Discord members giveaway !",
+      "Title": "ディスコードメンバー1000人達成イベント!",
       "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
     }
   }
