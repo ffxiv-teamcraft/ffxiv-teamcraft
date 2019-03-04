@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';
-import { combineLatest, Observable, Subject } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { CustomItemsFacade } from '../../../modules/custom-items/+state/custom-items.facade';
 import { NzModalService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { debounceTime, filter, first, map, shareReplay } from 'rxjs/operators';
+import { filter, first, map, shareReplay } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
 import { CustomItemsDisplay } from '../../../modules/custom-items/+state/custom-items-display';
@@ -16,6 +16,11 @@ import { Alarm } from '../../../core/alarms/alarm';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { NpcPickerComponent } from '../npc-picker/npc-picker.component';
 import { Vendor } from '../../../modules/list/model/vendor';
+import { TradeSource } from '../../../modules/list/model/trade-source';
+import { ItemPickerComponent } from '../../../modules/item-picker/item-picker/item-picker.component';
+import { Trade } from '../../../modules/list/model/trade';
+import { SearchResult } from '../../../model/search/search-result';
+import { TradeEntry } from '../../../modules/list/model/trade-entry';
 
 @Component({
   selector: 'app-custom-items',
@@ -159,6 +164,10 @@ export class CustomItemsComponent {
     return vendor.npcId;
   }
 
+  public trackByTradeSource(index: number, source: TradeSource): number {
+    return index;
+  }
+
 
   private beforeSave(item: CustomItem): CustomItem {
     if (item.gatheredBy !== undefined) {
@@ -173,11 +182,23 @@ export class CustomItemsComponent {
         return vendor;
       });
     }
+    if (item.tradeSources && item.tradeSources.length > 0) {
+      item.tradeSources = item.tradeSources.map(tradeSource => {
+        tradeSource.npcs[0].areaId = tradeSource.npcs[0].zoneId = tradeSource.npcs[0].mapId;
+        return tradeSource;
+      });
+    }
     return item;
   }
 
   /**
    * Details writing
+   */
+
+  /**
+   *
+   *  GATHERING
+   *
    */
   public addGathering(item: CustomItem): void {
     item.gatheredBy = {
@@ -204,6 +225,12 @@ export class CustomItemsComponent {
     delete item.gatheredBy;
     item.dirty = true;
   }
+
+  /**
+   *
+   *  ALARMS
+   *
+   */
 
   public addAlarm(item: CustomItem): void {
     item.alarms = item.alarms || [];
@@ -265,6 +292,12 @@ export class CustomItemsComponent {
     item.dirty = true;
   }
 
+  /**
+   *
+   *  VENDORS
+   *
+   */
+
   public addVendor(item: CustomItem): void {
     item.vendors = item.vendors || [];
     this.dialog.create({
@@ -291,6 +324,86 @@ export class CustomItemsComponent {
 
   public deleteVendor(item: CustomItem, vendor: Vendor): void {
     item.vendors = item.vendors.filter(v => v !== vendor);
+    item.dirty = true;
+  }
+
+  /**
+   *
+   *  TRADE SOURCES
+   *
+   */
+
+  public addTrade(item: CustomItem): void {
+    item.tradeSources = item.tradeSources || [];
+    this.dialog.create({
+      nzTitle: this.translate.instant('CUSTOM_ITEMS.NPC_PICKER.Title'),
+      nzFooter: null,
+      nzContent: NpcPickerComponent
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined)
+      )
+      .subscribe(npc => {
+        item.tradeSources.push({
+          npcs: [
+            {
+              id: npc.id,
+              coords: npc.position === null ? { x: 1, y: 1 } : { x: npc.position.x, y: npc.position.y },
+              mapId: npc.position === null ? 2 : npc.position.map,
+              zoneId: npc.position === null ? 21 : npc.position.zoneid,
+              areaId: npc.position === null ? 21 : npc.position.zoneid
+            }
+          ],
+          shopName: '',
+          trades: [
+            {
+              currencies: [],
+              items: [
+                {
+                  id: item.$key,
+                  amount: 1,
+                  hq: false,
+                  // TODO: connect custom item icon here
+                  icon: 20
+                }
+              ]
+            }
+          ]
+        });
+        item.dirty = true;
+      });
+  }
+
+  public addCurrency(item: CustomItem, trade: Trade): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('Pick_an_item'),
+      nzFooter: null,
+      nzContent: ItemPickerComponent,
+      nzComponentParams: {
+        onlyCraftable: false
+      }
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined)
+      )
+      .subscribe((res: SearchResult) => {
+        trade.currencies.push({
+          id: res.itemId,
+          icon: res.icon,
+          hq: false,
+          amount: res.amount
+        });
+        item.dirty = true;
+      });
+  }
+
+  public deleteCurrency(item: CustomItem, trade: Trade, currency: TradeEntry): void {
+    trade.currencies = trade.currencies.filter(c => c !== currency);
+    item.dirty = true;
+  }
+
+  public deleteTrade(item: CustomItem, tradeSources: TradeSource): void {
+    item.tradeSources = item.tradeSources.filter(t => t !== tradeSources);
     item.dirty = true;
   }
 

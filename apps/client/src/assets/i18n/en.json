@@ -850,6 +850,14 @@
         "Npc_name": "NPC name",
         "Price": "Price",
         "Delete_vendor": "Delete vendor"
+      },
+      "TRADES": {
+        "Title": "Trade sources",
+        "Npc_name": "NPC name",
+        "Shop_name": "Shop name",
+        "Delete_trade": "Delete trade",
+        "Trade_details": "Trade details",
+        "Add_currency": "Add a currency"
       }
     },
     "NPC_PICKER": {

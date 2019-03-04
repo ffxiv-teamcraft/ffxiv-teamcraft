@@ -16,6 +16,8 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { CustomAlarmPopupModule } from '../../modules/custom-alarm-popup/custom-alarm-popup.module';
 import { MapModule } from '../../modules/map/map.module';
 import { NpcPickerComponent } from './npc-picker/npc-picker.component';
+import { ItemPickerModule } from '../../modules/item-picker/item-picker.module';
+import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 
 const routes: Routes = [{
   path: '',
@@ -38,6 +40,8 @@ const routes: Routes = [{
     CustomItemsModule,
     CustomAlarmPopupModule,
     MapModule,
+    ItemPickerModule,
+    ItemIconModule,
 
     TranslateModule,
     NgZorroAntdModule,

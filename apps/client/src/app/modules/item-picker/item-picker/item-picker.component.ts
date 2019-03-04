@@ -18,6 +18,8 @@ export class ItemPickerComponent {
 
   public results$: Observable<SearchResult[]>;
 
+  public onlyCraftable = true;
+
   loading = false;
 
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
@@ -27,7 +29,7 @@ export class ItemPickerComponent {
       filter(query => query.length > 3),
       tap(() => this.loading = true),
       switchMap(query => {
-        return this.dataService.searchItem(query, [], true);
+        return this.dataService.searchItem(query, [], this.onlyCraftable);
       }),
       tap(() => this.loading = false),
       startWith([])

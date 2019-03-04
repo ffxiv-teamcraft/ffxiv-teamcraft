@@ -207,7 +207,7 @@ export class TradeIconPipe implements PipeTransform {
   };
 
   transform(tradeSources: TradeSource[]): number {
-    const res = { priority: 0, icon: 0 };
+    const res: any = { priority: 0, icon: 0 };
     tradeSources.forEach(ts => {
       ts.trades.forEach(trade => {
         trade.currencies.forEach(currency => {

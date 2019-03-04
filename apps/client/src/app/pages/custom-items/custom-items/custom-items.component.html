@@ -108,6 +108,8 @@
                     (click)="addAlarm(item)">{{'CUSTOM_ITEMS.DETAILS.ALARMS.Title' | translate}}</li>
                 <li nz-menu-item
                     (click)="addVendor(item)">{{'CUSTOM_ITEMS.DETAILS.VENDORS.Title' | translate}}</li>
+                <li nz-menu-item
+                    (click)="addTrade(item)">{{'CUSTOM_ITEMS.DETAILS.TRADES.Title' | translate}}</li>
               </ul>
             </nz-dropdown>
           </div>
@@ -312,6 +314,112 @@
                       <i nz-icon type="delete"></i> {{'CUSTOM_ITEMS.DETAILS.VENDORS.Delete_vendor' | translate}}
                     </button>
                   </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="item.tradeSources !== undefined && item.tradeSources.length > 0">
+          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.TRADES.Title' | translate" nzOrientation="left"></nz-divider>
+          <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start flex-start">
+            <div *ngFor="let tradeSource of item.tradeSources; trackBy: trackByTradeSource" fxLayout="column">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
+                <nz-form-item>
+                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Npc_name' | translate}}</nz-form-label>
+                  <nz-form-control>
+                    <input type="text" nz-input disabled [ngModel]="tradeSource.npcs[0].id | npcName | i18n">
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Shop_name' | translate}}</nz-form-label>
+                  <nz-form-control>
+                    <input type="text" nz-input [(ngModel)]="tradeSource.shopName">
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="tradeSource.npcs[0].mapId"
+                               *ngIf="maps$ | async as maps; else loading"
+                               nzAllowClear nzShowSearch class="maps-select">
+                      <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
+                                 [nzValue]="map.ID"></nz-option>
+                    </nz-select>
+                    <ng-template #loading>
+                      <nz-spin></nz-spin>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label>X</nz-form-label>
+                  <nz-form-control>
+                    <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
+                                     [(ngModel)]="tradeSource.npcs[0].coords.x"></nz-input-number>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label>Y</nz-form-label>
+                  <nz-form-control>
+                    <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
+                                     [(ngModel)]="tradeSource.npcs[0].coords.y"></nz-input-number>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label class="fake-form-label"></nz-form-label>
+                  <nz-form-control>
+                    <button nz-button nzType="danger"
+                            [nzTitle]="'Confirm' | translate"
+                            nz-popconfirm (nzOnConfirm)="deleteTrade(item, tradeSource)">
+                      <i nz-icon type="delete"></i> {{'CUSTOM_ITEMS.DETAILS.TRADES.Delete_trade' | translate}}
+                    </button>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" *ngFor="let trade of tradeSource.trades">
+                <nz-form-item>
+                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Trade_details' | translate}}</nz-form-label>
+                  <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                    <div fxLayout="column" fxLayoutGap="5px">
+                      <div *ngFor="let currency of trade.currencies" fxLayout="row" fxLayoutAlign="flex-start center"
+                           fxLayoutGap="5px">
+                        <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
+                          <input type="text" nz-input [(ngModel)]="currency.amount" (ngModelChange)="item.dirty = true">
+                        </nz-input-group>
+                        <ng-template #addOnBeforeTemplate>
+                          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                            <app-item-icon [itemId]="currency.id" [icon]="currency.icon" [width]="14"></app-item-icon>
+                            <div>{{currency.id | itemName | i18n}}</div>
+                          </div>
+                        </ng-template>
+                        <ng-template #addOnAfterTemplate>
+                          <label nz-checkbox [(ngModel)]="currency.hq"
+                                 (ngModelChange)="item.dirty = true">{{'HQ' | translate}}</label>
+                        </ng-template>
+                        <button nz-button nzType="danger"
+                                nzShape="circle"
+                                nzSize="small"
+                                [nzTitle]="'Confirm' | translate"
+                                nz-popconfirm (nzOnConfirm)="deleteCurrency(item, trade, currency)">
+                          <i nz-icon type="delete"></i>
+                        </button>
+                      </div>
+                      <button nz-button (click)="addCurrency(item, trade)" nzType="dashed">
+                        <i nz-icon type="plus"></i>{{'CUSTOM_ITEMS.DETAILS.TRADES.Add_currency' | translate}}
+                      </button>
+                    </div>
+                    <i nz-icon type="arrow-down"></i>
+                    <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
+                      <input type="number" nz-input [(ngModel)]="trade.items[0].amount"
+                             (ngModelChange)="item.dirty = true">
+                    </nz-input-group>
+                    <ng-template #addOnBeforeTemplate>
+                      {{item.name}}
+                    </ng-template>
+                    <ng-template #addOnAfterTemplate>
+                      <label nz-checkbox [(ngModel)]="trade.items[0].hq"
+                             (ngModelChange)="item.dirty = true">{{'HQ' | translate}}</label>
+                    </ng-template>
+                  </div>
                 </nz-form-item>
               </div>
             </div>

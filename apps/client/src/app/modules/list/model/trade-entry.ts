@@ -1,6 +1,6 @@
 export interface TradeEntry {
-  id:number;
-  icon: number;
+  id: number | string;
+  icon: number | string;
   amount: number;
   hq?: boolean;
 }
