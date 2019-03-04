@@ -399,8 +399,8 @@
     "Adaptative_filter": "可能なことのみ表示する",
     "Disable_HQ_suggestions": "HQ自動表示を解除する",
     "Amount_craftable": "{{amount}} 個 作られます",
-    "Add_item": "Add an item",
-    "List_too_large": "List too large",
+    "Add_item": "アイテムを追加する",
+    "List_too_large": "リストが大き過ぎます",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
