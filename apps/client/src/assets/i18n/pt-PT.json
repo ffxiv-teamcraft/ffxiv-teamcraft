@@ -400,7 +400,7 @@
     "Disable_HQ_suggestions": "Desativar automáticas sinalizadores de HQ",
     "Amount_craftable": "Pode criar {{amount}}",
     "Add_item": "Adicionar um item",
-    "List_too_large": "List too large",
+    "List_too_large": "Lista é demasiado grande",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
