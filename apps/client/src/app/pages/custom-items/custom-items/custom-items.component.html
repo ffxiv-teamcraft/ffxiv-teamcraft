@@ -102,6 +102,9 @@
               </button>
               <ul nz-menu>
                 <li nz-menu-item
+                    (click)="addCraft(item)"
+                    *ngIf="item.craftedBy === undefined || item.craftedBy.length === 0">{{'CUSTOM_ITEMS.DETAILS.CRAFT.Title' | translate}}</li>
+                <li nz-menu-item
                     (click)="addGathering(item)"
                     *ngIf="item.gatheredBy === undefined">{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</li>
                 <li nz-menu-item
@@ -114,6 +117,52 @@
                     (click)="addReduction(item)">{{'CUSTOM_ITEMS.DETAILS.REDUCTION.Title' | translate}}</li>
               </ul>
             </nz-dropdown>
+          </div>
+        </div>
+        <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0">
+          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.CRAFT.Title' | translate" nzOrientation="left"></nz-divider>
+          <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start flex-start">
+            <div *ngIf="item.craftedBy[0] as craft" fxLayout="column">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
+                <nz-form-item>
+                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Job' | translate}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="craft.jobId">
+                      <nz-option *ngFor="let job of availableCraftJobs" [nzValue]="job.id"
+                                 [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
+                        <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
+                        {{job.id | jobAbbr | i18n}}
+                      </nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Level' | translate}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="craft.level" [nzMin]="1"
+                                     [nzStep]="1"></nz-input-number>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Stars' | translate}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="craft.stars_tooltip">
+                      <nz-option [nzValue]="''" [nzLabel]="'CUSTOM_ITEMS.DETAILS.None' | translate">
+                      </nz-option>
+                      <nz-option [nzValue]="'★'" [nzLabel]="'★'">
+                      </nz-option>
+                      <nz-option [nzValue]="'★★'" [nzLabel]="'★★'">
+                      </nz-option>
+                      <nz-option [nzValue]="'★★★'" [nzLabel]="'★★★'">
+                      </nz-option>
+                      <nz-option [nzValue]="'★★★★'" [nzLabel]="'★★★★'">
+                      </nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <!--TODO Recipe details-->
+            </div>
           </div>
         </div>
         <div *ngIf="item.gatheredBy !== undefined">
@@ -147,8 +196,7 @@
               </nz-form-control>
             </nz-form-item>
             <nz-form-item>
-              <nz-form-label nzRequired
-                             nzFor="level">{{'CUSTOM_ITEMS.DETAILS.Level' | translate}}</nz-form-label>
+              <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.level" [nzMin]="1"
                                  [nzStep]="1"></nz-input-number>
@@ -156,7 +204,7 @@
             </nz-form-item>
             <nz-form-item>
               <nz-form-label
-              >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Stars' | translate}}</nz-form-label>
+              >{{'CUSTOM_ITEMS.DETAILS.Stars' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.stars_tooltip">
                   <nz-option [nzValue]="''" [nzLabel]="'CUSTOM_ITEMS.DETAILS.None' | translate">
@@ -446,7 +494,8 @@
             </ng-template>
           </nz-list>
         </div>
-        <button nz-button nzBlock nzType="primary" (click)="updateCustomItem(item)" [disabled]="!item.dirty">
+        <button nz-button nzBlock nzType="primary" (click)="updateCustomItem(item)" [disabled]="!item.dirty"
+                class="save-button">
           {{'CUSTOM_ITEMS.Save' | translate}}
         </button>
       </div>

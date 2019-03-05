@@ -835,10 +835,14 @@
     "DETAILS": {
       "Level": "Level",
       "None": "none",
+      "Stars": "Stars",
+      "CRAFT": {
+        "Title": "Crafted by",
+        "Job": "Job"
+      },
       "GATHERING": {
         "Title": "Gathered by",
         "Type": "Node type",
-        "Stars": "Stars",
         "Folklore": "Folklore",
         "Slot": "Slot"
       },

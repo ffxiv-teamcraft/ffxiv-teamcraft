@@ -21,6 +21,7 @@ import { ItemPickerComponent } from '../../../modules/item-picker/item-picker/it
 import { Trade } from '../../../modules/list/model/trade';
 import { SearchResult } from '../../../model/search/search-result';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
+import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 
 @Component({
   selector: 'app-custom-items',
@@ -39,15 +40,20 @@ export class CustomItemsComponent {
 
   public maps$: Observable<{ ID: number, PlaceName: any }[]>;
 
+  public availableCraftJobs: any[] = [];
+
   constructor(private customItemsFacade: CustomItemsFacade, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService, private gt: GarlandToolsService) {
     this.customItemsFacade.loadAll();
     this.customItemsFacade.loadAllFolders();
     this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, { columns: ['ID', 'PlaceName.Name_*'], max_items: 1000 }).pipe(
       map(list => list.Results),
       shareReplay(1)
     );
+    this.gt.onceLoaded$.pipe(first()).subscribe(() => {
+      this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
+    });
   }
 
   public createCustomItem(): void {
@@ -194,6 +200,29 @@ export class CustomItemsComponent {
   /**
    * Details writing
    */
+
+  /**
+   *
+   *  CRAFTING
+   *
+   */
+  public addCraft(item: CustomItem): void {
+    // We allow only one craft for now, handling multiple ones would be kinda hard and p much useless.
+    item.craftedBy = [{
+      jobId: 8,
+      level: 1,
+      icon: '',
+      stars_tooltip: '',
+      itemId: item.$key,
+      recipeId: `${item.$key}:recipe`
+    }];
+    item.dirty = true;
+  }
+
+  public deleteCraft(item: CustomItem): void {
+    delete item.craftedBy;
+    item.dirty = true;
+  }
 
   /**
    *
