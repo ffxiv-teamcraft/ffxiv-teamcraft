@@ -4,7 +4,7 @@
   <ng-template #itemTemplate let-result>
     <nz-list-item [nzContent]="content">
       <nz-list-item-meta [nzAvatar]="avatar"
-                         [nzTitle]="result.itemId | itemName | i18n"
+                         [nzTitle]="result.isCustom ? (result.itemId | customItemName | async) : (result.itemId | itemName | i18n)"
                          [nzDescription]="result.recipe !== undefined?description:null">
         <ng-template #avatar>
           <app-item-icon [itemId]="result.itemId" [icon]="result.icon" [width]="32"></app-item-icon>

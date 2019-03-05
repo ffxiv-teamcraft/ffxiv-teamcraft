@@ -24,6 +24,7 @@ import { XivapiI18nPipe } from './xivapi-i18n.pipe';
 import { WeatherNamePipe } from './weather-name.pipe';
 import { WeatherIconPipe } from './weather-icon.pipe';
 import { ActionNamePipe } from './action-name.pipe';
+import { CustomItemNamePipe } from './custom-item-name.pipe';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ActionNamePipe } from './action-name.pipe';
     FfxivgardeningPipe,
     XivapiI18nPipe,
     WeatherNamePipe,
-    WeatherIconPipe
+    WeatherIconPipe,
+    CustomItemNamePipe
   ],
   exports: [
     ItemNamePipe,
@@ -78,7 +80,8 @@ import { ActionNamePipe } from './action-name.pipe';
     FfxivgardeningPipe,
     XivapiI18nPipe,
     WeatherNamePipe,
-    WeatherIconPipe
+    WeatherIconPipe,
+    CustomItemNamePipe
   ]
 })
 export class PipesModule {

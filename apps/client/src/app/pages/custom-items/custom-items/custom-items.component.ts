@@ -172,7 +172,7 @@ export class CustomItemsComponent {
     return vendor.npcId;
   }
 
-  public trackByTradeSource(index: number, source: TradeSource): number {
+  public trackByTradeSource(index: number): number {
     return index;
   }
 
@@ -231,7 +231,8 @@ export class CustomItemsComponent {
       nzFooter: null,
       nzContent: ItemPickerComponent,
       nzComponentParams: {
-        onlyCraftable: false
+        onlyCraftable: false,
+        includeCustomItems: true
       }
     }).afterClose
       .pipe(
@@ -261,6 +262,7 @@ export class CustomItemsComponent {
     } else {
       item.requires = item.requires.filter(r => r !== ingredient);
     }
+    item.dirty = true;
   }
 
   public deleteCraft(item: CustomItem): void {

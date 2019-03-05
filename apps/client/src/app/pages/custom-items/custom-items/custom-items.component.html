@@ -50,6 +50,7 @@
                         <button nz-button nz-popconfirm [nzTitle]="'Confirm' | translate"
                                 nzShape="circle"
                                 nzType="danger"
+                                (click)="$event.stopPropagation()"
                                 (nzOnConfirm)="deleteCustomItemFolder(folderDisplay.folder.$key)">
                           <i nz-icon type="delete"></i>
                         </button>
@@ -86,6 +87,7 @@
             <button nz-button nz-popconfirm [nzTitle]="'Confirm' | translate"
                     nzShape="circle"
                     nzType="danger"
+                    (click)="$event.stopPropagation()"
                     (nzOnConfirm)="deleteCustomItem(item.$key)">
               <i nz-icon type="delete"></i>
             </button>
@@ -183,13 +185,14 @@
                       <ng-template #addOnBeforeTemplate>
                         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                           <div *ngIf="ingredient.id !== undefined">{{ingredient.id | itemName | i18n}}</div>
+                          <div *ngIf="ingredient.key !== undefined">{{ingredient.key | customItemName | async}}</div>
                         </div>
                       </ng-template>
                       <button nz-button nzType="danger"
                               nzShape="circle"
                               nzSize="small"
                               [nzTitle]="'Confirm' | translate"
-                              nz-popconfirm (nzOnConfirm)="deleteIngredient(item, ingredient)">
+                              nz-popconfirm (nzOnConfirm)="deleteIngredient(ingredient, item)">
                         <i nz-icon type="delete"></i>
                       </button>
                     </div>
