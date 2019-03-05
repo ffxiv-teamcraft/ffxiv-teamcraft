@@ -11,7 +11,11 @@ export class CustomItem extends ListRow {
 
   name: string;
 
-  customRequires: (CustomIngredient | Ingredient)[];
+  customRequires: CustomIngredient[] = [];
+
+  public get allRequirements():(CustomIngredient | Ingredient)[] {
+    return [...this.requires, ...this.customRequires];
+  }
 
   custom = true;
 

@@ -22,6 +22,8 @@ import { Trade } from '../../../modules/list/model/trade';
 import { SearchResult } from '../../../model/search/search-result';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
+import { CustomIngredient } from '../../../modules/custom-items/model/custom-ingredient';
+import { Ingredient } from '../../../model/garland-tools/ingredient';
 
 @Component({
   selector: 'app-custom-items',
@@ -174,6 +176,10 @@ export class CustomItemsComponent {
     return index;
   }
 
+  public trackByRequirement(index: number, req: CustomIngredient | Ingredient): number | string {
+    return (<Ingredient>req).id || (<CustomIngredient>req).key;
+  }
+
 
   private beforeSave(item: CustomItem): CustomItem {
     if (item.gatheredBy !== undefined) {
@@ -217,6 +223,44 @@ export class CustomItemsComponent {
       recipeId: `${item.$key}:recipe`
     }];
     item.dirty = true;
+  }
+
+  public addIngredient(item: CustomItem): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('Pick_an_item'),
+      nzFooter: null,
+      nzContent: ItemPickerComponent,
+      nzComponentParams: {
+        onlyCraftable: false
+      }
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined)
+      )
+      .subscribe((res: SearchResult) => {
+        item.customRequires = item.customRequires || [];
+        item.requires = item.requires || [];
+        if (res.isCustom) {
+          item.customRequires.push({
+            amount: res.amount,
+            key: res.itemId.toString()
+          });
+        } else {
+          item.requires.push({
+            amount: res.amount,
+            id: +res.itemId
+          });
+        }
+        item.dirty = true;
+      });
+  }
+
+  public deleteIngredient(ingredient: CustomIngredient | Ingredient, item: CustomItem): void {
+    if ((<CustomIngredient>ingredient).key !== undefined) {
+      item.customRequires = item.customRequires.filter(r => r !== ingredient);
+    } else {
+      item.requires = item.requires.filter(r => r !== ingredient);
+    }
   }
 
   public deleteCraft(item: CustomItem): void {

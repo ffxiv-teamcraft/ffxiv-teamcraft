@@ -838,7 +838,9 @@
       "Stars": "Stars",
       "CRAFT": {
         "Title": "Crafted by",
-        "Job": "Job"
+        "Job": "Job",
+        "Ingredients": "Ingredients",
+        "Add_ingredient": "Add ingredient"
       },
       "GATHERING": {
         "Title": "Gathered by",

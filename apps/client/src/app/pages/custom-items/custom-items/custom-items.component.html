@@ -120,14 +120,23 @@
           </div>
         </div>
         <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0">
-          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.CRAFT.Title' | translate" nzOrientation="left"></nz-divider>
+          <nz-divider [nzText]="gatheringHeader" nzOrientation="left">
+            <ng-template #gatheringHeader>
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Title' | translate}}</div>
+                <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
+                        nzSize="small" nzShape="circle"
+                        (nzOnConfirm)="deleteCraft(item)"><i nz-icon type="delete"></i></button>
+              </div>
+            </ng-template>
+          </nz-divider>
           <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start flex-start">
             <div *ngIf="item.craftedBy[0] as craft" fxLayout="column">
               <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
                 <nz-form-item>
                   <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Job' | translate}}</nz-form-label>
                   <nz-form-control>
-                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="craft.jobId">
+                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="craft.jobId" class="job-select">
                       <nz-option *ngFor="let job of availableCraftJobs" [nzValue]="job.id"
                                  [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
                         <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
@@ -161,7 +170,35 @@
                   </nz-form-control>
                 </nz-form-item>
               </div>
-              <!--TODO Recipe details-->
+              <nz-form-item>
+                <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Ingredients' | translate}}</nz-form-label>
+                <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                  <div fxLayout="column" fxLayoutGap="5px">
+                    <div *ngFor="let ingredient of item.allRequirements, trackBy: trackByRequirement" fxLayout="row"
+                         fxLayoutAlign="flex-start center"
+                         fxLayoutGap="5px">
+                      <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+                        <input type="text" nz-input [(ngModel)]="ingredient.amount" (ngModelChange)="item.dirty = true">
+                      </nz-input-group>
+                      <ng-template #addOnBeforeTemplate>
+                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                          <div *ngIf="ingredient.id !== undefined">{{ingredient.id | itemName | i18n}}</div>
+                        </div>
+                      </ng-template>
+                      <button nz-button nzType="danger"
+                              nzShape="circle"
+                              nzSize="small"
+                              [nzTitle]="'Confirm' | translate"
+                              nz-popconfirm (nzOnConfirm)="deleteIngredient(item, ingredient)">
+                        <i nz-icon type="delete"></i>
+                      </button>
+                    </div>
+                    <button nz-button (click)="addIngredient(item)" nzType="dashed">
+                      <i nz-icon type="plus"></i>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Add_ingredient' | translate}}
+                    </button>
+                  </div>
+                </div>
+              </nz-form-item>
             </div>
           </div>
         </div>
