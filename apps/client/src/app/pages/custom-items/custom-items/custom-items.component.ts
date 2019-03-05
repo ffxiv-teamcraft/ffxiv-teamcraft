@@ -239,29 +239,18 @@ export class CustomItemsComponent {
         filter(res => res !== undefined)
       )
       .subscribe((res: SearchResult) => {
-        item.customRequires = item.customRequires || [];
         item.requires = item.requires || [];
-        if (res.isCustom) {
-          item.customRequires.push({
-            amount: res.amount,
-            key: res.itemId.toString()
-          });
-        } else {
-          item.requires.push({
-            amount: res.amount,
-            id: +res.itemId
-          });
-        }
+        item.requires.push({
+          id: res.itemId,
+          amount: res.amount,
+          custom: res.isCustom
+        });
         item.dirty = true;
       });
   }
 
   public deleteIngredient(ingredient: CustomIngredient | Ingredient, item: CustomItem): void {
-    if ((<CustomIngredient>ingredient).key !== undefined) {
-      item.customRequires = item.customRequires.filter(r => r !== ingredient);
-    } else {
-      item.requires = item.requires.filter(r => r !== ingredient);
-    }
+    item.requires = item.requires.filter(r => r !== ingredient);
     item.dirty = true;
   }
 

@@ -840,7 +840,8 @@
         "Title": "Crafted by",
         "Job": "Job",
         "Ingredients": "Ingredients",
-        "Add_ingredient": "Add ingredient"
+        "Add_ingredient": "Add ingredient",
+        "Yields": "Yields"
       },
       "GATHERING": {
         "Title": "Gathered by",

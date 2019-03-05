@@ -256,7 +256,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       map(recipe => {
         return (recipe.ingredients || [])
           .filter(i => i.id > 20 && i.quality !== undefined && !fakeHQItems.some(id => i.id === id))
-          .map(ingredient => ({ id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
+          .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
       })
     );
 

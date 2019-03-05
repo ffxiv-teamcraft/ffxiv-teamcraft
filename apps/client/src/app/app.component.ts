@@ -40,6 +40,7 @@ import { ObservableMedia } from '@angular/flex-layout';
 import { LayoutsFacade } from './core/layout/+state/layouts.facade';
 import * as semver from 'semver';
 import { LazyDataService } from './core/data/lazy-data.service';
+import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
 
 declare const gtag: Function;
 
@@ -108,7 +109,7 @@ export class AppComponent implements OnInit {
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
-              private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService) {
+              private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade) {
 
     this.showGiveaway = +localStorage.getItem('giveaway:1kdiscord') < 5
       && Date.now() < new Date(2019, 3, 31, 23, 59, 59).getTime();
@@ -255,6 +256,7 @@ export class AppComponent implements OnInit {
     this.rotationsFacade.loadMyRotations();
     this.customLinksFacade.loadMyCustomLinks();
     this.layoutsFacade.loadAll();
+    this.customItemsFacade.loadAll();
 
     if (this.media.isActive('lt-md')) {
       this.collapsedSidebar = true;
