@@ -20,6 +20,8 @@ export class ItemPickerComponent {
 
   public onlyCraftable = true;
 
+  public hideAmount = false;
+
   loading = false;
 
   constructor(private dataService: DataService, private dialogRef: NzModalRef,

@@ -110,6 +110,8 @@
                     (click)="addVendor(item)">{{'CUSTOM_ITEMS.DETAILS.VENDORS.Title' | translate}}</li>
                 <li nz-menu-item
                     (click)="addTrade(item)">{{'CUSTOM_ITEMS.DETAILS.TRADES.Title' | translate}}</li>
+                <li nz-menu-item
+                    (click)="addReduction(item)">{{'CUSTOM_ITEMS.DETAILS.REDUCTION.Title' | translate}}</li>
               </ul>
             </nz-dropdown>
           </div>
@@ -424,6 +426,25 @@
               </div>
             </div>
           </div>
+        </div>
+        <div *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0">
+          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.REDUCTION.Title' | translate" nzOrientation="left"></nz-divider>
+          <nz-list [nzDataSource]="item.reducedFrom"
+                   [nzRenderItem]="reductionTemplate">
+            <ng-template #reductionTemplate let-reduction>
+              <nz-list-item [nzActions]="[deleteReductionAction]">
+                <ng-template #deleteReductionAction>
+                  <button nz-button nzShape="circle" nzSize="small" nzType="danger" nz-tooltip
+                          [nzTitle]="'Confirm' | translate"
+                          nz-popconfirm (nzOnConfirm)="deleteReduction(item, reduction)">
+                    <i nz-icon type="delete"></i>
+                  </button>
+                </ng-template>
+                <nz-list-item-meta [nzAvatar]="reduction.obj.c | icon"
+                                   [nzTitle]="reduction.obj.i | itemName | i18n"></nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
         </div>
         <button nz-button nzBlock nzType="primary" (click)="updateCustomItem(item)" [disabled]="!item.dirty">
           {{'CUSTOM_ITEMS.Save' | translate}}

@@ -858,6 +858,9 @@
         "Delete_trade": "Delete trade",
         "Trade_details": "Trade details",
         "Add_currency": "Add a currency"
+      },
+      "REDUCTION": {
+        "Title": "Reduced from"
       }
     },
     "NPC_PICKER": {

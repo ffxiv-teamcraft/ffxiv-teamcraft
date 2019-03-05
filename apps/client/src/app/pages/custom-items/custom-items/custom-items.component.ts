@@ -407,4 +407,38 @@ export class CustomItemsComponent {
     item.dirty = true;
   }
 
+  /**
+   *
+   *  REDUCTIONS
+   *
+   */
+  public addReduction(item: CustomItem): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('Pick_an_item'),
+      nzFooter: null,
+      nzContent: ItemPickerComponent,
+      nzComponentParams: {
+        onlyCraftable: false,
+        hideAmount: true
+      }
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined)
+      )
+      .subscribe((res: SearchResult) => {
+        item.reducedFrom.push({
+          obj: {
+            i: res.itemId,
+            c: res.icon
+          }
+        });
+        item.dirty = true;
+      });
+  }
+
+  public deleteReduction(item: CustomItem, reduction: any): void {
+    item.reducedFrom = item.reducedFrom.filter(r => r !== reduction);
+    item.dirty = true;
+  }
+
 }
