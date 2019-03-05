@@ -777,16 +777,16 @@
     "Class_job": "Class/Job",
     "Damage_phys": "Phys. Damage",
     "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense"
+    "Defense_phys": "Defesa Física",
+    "Defense_mag": "Defesa Mágica"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craft, share, contribute",
-    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
-    "Support_patreon": "Support us on patreon",
-    "Donation_button": "Make a one time donation",
-    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
-    "Features_header": "Get started !",
+    "Slogan": "Crie, partilhe, contribua",
+    "Lists_created_counter": "Foram criadas {{amount}} listas usando FFXIV Teamcraft",
+    "Support_patreon": "Apoie-nos no patreon",
+    "Donation_button": "Faça uma doação singular",
+    "Buy_a_tshirt": "Comprar uma t-shirt Teamcraft",
+    "Features_header": "Começar!",
     "DESCRIPTION": {
       "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
@@ -804,16 +804,16 @@
   },
   "LOG_TRACKER": {
     "Title": "Log Tracker",
-    "Mark_page_as_done": "Mark this page as done",
-    "Mark_as_done": "Mark this item as done",
-    "Mark_as_not_done": "Mark this item as not done",
-    "Create_list": "Create a list to complete this page",
+    "Mark_page_as_done": "Marcar esta página como concluída",
+    "Mark_as_done": "Marcar este item como concluído",
+    "Mark_as_not_done": "Marcar este item como não concluído",
+    "Create_list": "Crie uma lista para completar esta página",
     "PAGE": {
-      "Master_recipes": "Master recipes ({{number}})",
-      "Housing_items": "Housing({{number}})",
-      "Others": "Others",
-      "Dyes": "Dyes",
-      "Other_master_recipes": "Other Master Recipes"
+      "Master_recipes": "Receitas de mestre ({{number}})",
+      "Housing_items": "Habitação ({{number}})",
+      "Others": "Outros",
+      "Dyes": "Tintas",
+      "Other_master_recipes": "Outras Receitas Mestre"
     }
   },
   "LOADING_SCREEN": {
@@ -821,7 +821,7 @@
   },
   "GIVEAWAY": {
     "Discord_1K": {
-      "Title": "1000 Discord members giveaway !",
+      "Title": "Doação de 1000 membros do Discord!",
       "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
     }
   }
