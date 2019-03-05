@@ -9,7 +9,7 @@
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図で見る",
   "Edit_amount": "総量を編集する",
-  "List_fork_in_progress": "このリストをマイアカウントにコピー中です。",
+  "List_fork_in_progress": "このリストをマイアカウントにコピー中",
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
   "Hide_zone_duplicates": "複数エリアを隠す(複数エリアにあるアイテムの場合、一度だけ表示される)",
   "AUTH_ERRORS": {
