@@ -22,7 +22,7 @@
     "Title": "Pesquisa",
     "No_match": "Não há itens correspondentes",
     "Item_name": "Nome do item",
-    "Only_recipes": "Só fórmulas",
+    "Only_recipes": "Só receitas",
     "Crafts_amount": "# de tarefas",
     "Add_to_list": "Adicionar esse item para uma lista",
     "Apply_filters": "Aplicar filtros",
@@ -506,7 +506,7 @@
   },
   "ANNOUNCEMENT": {
     "Title": "Announcement",
-    "Read_more": "Read more"
+    "Read_more": "Ler mais"
   },
   "LIST_TEMPLATE": {
     "Create_template": "Create a list template for this list",
@@ -525,27 +525,27 @@
     }
   },
   "PERMISSIONS": {
-    "Read": "Read",
-    "Read_description": "The ability to see the list",
-    "Participate": "Participate",
+    "Read": "Ler",
+    "Read_description": "A autorização de ver a lista",
+    "Participate": "Participar",
     "Participate_description": "This gives you permission to tick items and modify amounts done",
-    "Write": "Write",
+    "Write": "Escrever",
     "Write_description": "This gives you the permission to add items, add lists (for workshops)",
     "Title": "Permissions management",
     "Everyone": "Everyone",
-    "You": "You",
+    "You": "Você",
     "Add_new": "Adicionar um utilizador",
     "Add_new_fc": "Add a Free Company",
     "Placeholder": "ID de utilizador ou email",
     "Bind_free_company": "Bind some permissions to your Free Company",
     "User_not_found": "Utilizador não encontrado",
     "User_id_tip": "O ID de utilizador pode ser encontrado na página de perfil, no canto inferior direito",
-    "Saving": "Saving permissions",
+    "Saving": "Salvando permissões",
     "No_anonymous": "You need an account to manage permissions",
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
     "Propagate_changes_done": "Changes propagated to lists inside the workshop",
     "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
-    "Default_permission_level": "Default permission level"
+    "Default_permission_level": "Nível de autorização padrão"
   },
   "WIKI": {
     "Title": "Wiki",
