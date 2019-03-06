@@ -13,9 +13,10 @@ import { Team } from '../../../model/team/team';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
 import { CustomItem } from '../../custom-items/model/custom-item';
 import { ItemData } from '../../../model/garland-tools/item-data';
-import { combineLatest, EMPTY, Observable, of, Subject } from 'rxjs';
-import { debounceTime, expand, map, skipUntil } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, EMPTY, Observable, of, Subject } from 'rxjs';
+import { debounceTime, expand, map, skip, skipUntil, skipWhile, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
+import { Ingredient } from '../../../model/garland-tools/ingredient';
 
 declare const gtag: Function;
 
@@ -356,16 +357,24 @@ export class List extends DataWithPermissions {
           done$.next();
           return EMPTY;
         }
-        return combineLatest(todo.map(addition => {
-          if (addition.data instanceof ItemData) {
-            return of(this.addNormalCraft(addition, gt, recipeId));
-          } else {
-            return this.addCustomCraft(addition, gt, customItems, dataService);
-          }
-        })).pipe(
-          map(res => {
-            return [].concat.apply([], res.filter(a => a !== null));
-          })
+        let index = 0;
+        const queue$ = new BehaviorSubject<CraftAddition>(todo[0]);
+        return queue$.pipe(
+          switchMap(addition => {
+            if (addition.data instanceof ItemData) {
+              return of(this.addNormalCraft(addition, gt, recipeId));
+            } else {
+              return this.addCustomCraft(addition, gt, customItems, dataService);
+            }
+          }),
+          tap((res) => {
+            todo.push(...res.filter(r => r !== null));
+            index++;
+            if (todo[index] !== undefined) {
+              queue$.next(todo[index]);
+            }
+          }),
+          skipWhile(() => todo[index] !== undefined)
         );
       }),
       debounceTime(100),
@@ -434,8 +443,11 @@ export class List extends DataWithPermissions {
 
   private addCustomCraft(addition: CraftAddition, gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService): Observable<CraftAddition[]> {
     const item: CustomItem = addition.data as CustomItem;
-    return combineLatest(
-      item.requires.map(element => {
+    const nextIteration: CraftAddition[] = [];
+    let index = 0;
+    const queue$ = new BehaviorSubject<Ingredient>(item.requires[0]);
+    return queue$.pipe(
+      switchMap(element => {
         if (element.id < 20 && element.id > 1) {
           const crystal = gt.getCrystalDetails(+element.id);
           this.add(this.items, {
@@ -489,6 +501,16 @@ export class List extends DataWithPermissions {
             );
           }
         }
+      }),
+      tap(() => {
+        index++;
+        if (item.requires[index] !== undefined) {
+          queue$.next(item.requires[index]);
+        }
+      }),
+      skip(item.requires.length - 1),
+      map(() => {
+        return nextIteration;
       })
     );
   }
