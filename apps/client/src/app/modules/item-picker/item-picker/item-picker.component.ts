@@ -37,7 +37,7 @@ export class ItemPickerComponent implements OnInit {
       switchMap(query => {
         return this.dataService.searchItem(query, [], this.onlyCraftable).pipe(
           switchMap(results => {
-            if(!this.includeCustomItems){
+            if (!this.includeCustomItems) {
               return of(results);
             }
             return this.customItemsFacade.allCustomItems$.pipe(
@@ -45,17 +45,18 @@ export class ItemPickerComponent implements OnInit {
                 return customItems
                   .filter(item => item.name.indexOf(query) > -1)
                   .map(item => {
-                    return {
+                    return <SearchResult>{
                       itemId: item.$key,
                       // TODO put custom item icon here
                       icon: '',
                       amount: 1,
                       isCustom: true
-                    }
+                    };
                   })
+                  .concat(results);
               })
-            )
-          }),
+            );
+          })
         );
       }),
       tap(() => this.loading = false),

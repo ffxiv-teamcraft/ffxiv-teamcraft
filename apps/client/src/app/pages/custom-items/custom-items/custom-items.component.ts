@@ -176,8 +176,8 @@ export class CustomItemsComponent {
     return index;
   }
 
-  public trackByRequirement(index: number, req: CustomIngredient | Ingredient): number | string {
-    return (<Ingredient>req).id || (<CustomIngredient>req).key;
+  public trackByRequirement(index: number, req: Ingredient): number | string {
+    return req.id;
   }
 
 

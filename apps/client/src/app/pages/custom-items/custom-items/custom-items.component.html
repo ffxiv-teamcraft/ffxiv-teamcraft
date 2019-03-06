@@ -117,6 +117,8 @@
                     (click)="addTrade(item)">{{'CUSTOM_ITEMS.DETAILS.TRADES.Title' | translate}}</li>
                 <li nz-menu-item
                     (click)="addReduction(item)">{{'CUSTOM_ITEMS.DETAILS.REDUCTION.Title' | translate}}</li>
+                <li nz-menu-item
+                    (click)="addIngredient(item)">{{'CUSTOM_ITEMS.DETAILS.Requirements' | translate}}</li>
               </ul>
             </nz-dropdown>
           </div>
@@ -134,6 +136,10 @@
           </nz-divider>
           <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start flex-start">
             <div *ngIf="item.craftedBy[0] as craft" fxLayout="column">
+              <nz-alert nzType="warning" nzShowIcon
+                        *ngIf="item.requires === undefined || item.requires.length === 0"
+                        [nzMessage]="'CUSTOM_ITEMS.DETAILS.CRAFT.No_requirement_warning' | translate"
+              ></nz-alert>
               <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
                 <nz-form-item>
                   <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Job' | translate}}</nz-form-label>
@@ -179,36 +185,36 @@
                   </nz-form-control>
                 </nz-form-item>
               </div>
-              <nz-form-item>
-                <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Ingredients' | translate}}</nz-form-label>
-                <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                  <div fxLayout="column" fxLayoutGap="5px">
-                    <div *ngFor="let ingredient of item.allRequirements, trackBy: trackByRequirement" fxLayout="row"
-                         fxLayoutAlign="flex-start center"
-                         fxLayoutGap="5px">
-                      <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
-                        <input type="text" nz-input [(ngModel)]="ingredient.amount" (ngModelChange)="item.dirty = true">
-                      </nz-input-group>
-                      <ng-template #addOnBeforeTemplate>
-                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                          <div *ngIf="ingredient.custom">{{ingredient.key | customItemName | async}}</div>
-                          <div *ngIf="!ingredient.custom">{{ingredient.id | itemName | i18n}}</div>
-                        </div>
-                      </ng-template>
-                      <button nz-button nzType="danger"
-                              nzShape="circle"
-                              nzSize="small"
-                              [nzTitle]="'Confirm' | translate"
-                              nz-popconfirm (nzOnConfirm)="deleteIngredient(ingredient, item)">
-                        <i nz-icon type="delete"></i>
-                      </button>
-                    </div>
-                    <button nz-button (click)="addIngredient(item)" nzType="dashed">
-                      <i nz-icon type="plus"></i>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Add_ingredient' | translate}}
-                    </button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="item.requires !== undefined && item.requires.length > 0">
+          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.Requirements' | translate" nzOrientation="left"></nz-divider>
+          <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start">
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div *ngFor="let ingredient of item.requires, trackBy: trackByRequirement" fxLayout="row"
+                   fxLayoutAlign="flex-start center"
+                   fxLayoutGap="5px">
+                <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+                  <input type="text" nz-input [(ngModel)]="ingredient.amount" (ngModelChange)="item.dirty = true">
+                </nz-input-group>
+                <ng-template #addOnBeforeTemplate>
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <div *ngIf="ingredient.custom">{{ingredient.id | customItemName | async}}</div>
+                    <div *ngIf="!ingredient.custom">{{ingredient.id | itemName | i18n}}</div>
                   </div>
-                </div>
-              </nz-form-item>
+                </ng-template>
+                <button nz-button nzType="danger"
+                        nzShape="circle"
+                        nzSize="small"
+                        [nzTitle]="'Confirm' | translate"
+                        nz-popconfirm (nzOnConfirm)="deleteIngredient(ingredient, item)">
+                  <i nz-icon type="delete"></i>
+                </button>
+              </div>
+              <button nz-button (click)="addIngredient(item)" nzType="dashed">
+                <i nz-icon type="plus"></i>{{'CUSTOM_ITEMS.DETAILS.Add_requirement' | translate}}
+              </button>
             </div>
           </div>
         </div>
