@@ -12,22 +12,26 @@ import {
   ListsWithWriteAccessLoaded,
   LoadListCompact,
   LoadListDetails,
+  LoadTeamLists,
   MyListsLoaded,
-  SetItemDone, TeamListsLoaded,
+  SetItemDone,
+  TeamListsLoaded,
+  UnloadListDetails,
   UpdateItem,
   UpdateList,
-  UpdateListIndex,
-  LoadTeamLists, UnloadListDetails
+  UpdateListIndex
 } from './lists.actions';
 import {
   catchError,
-  debounceTime, delay,
+  debounceTime,
+  delay,
   distinctUntilChanged,
   filter,
   first,
   map,
   mergeMap,
-  switchMap, takeUntil,
+  switchMap,
+  takeUntil,
   tap,
   withLatestFrom
 } from 'rxjs/operators';
@@ -217,13 +221,21 @@ export class ListsEffects {
     switchMap(() => EMPTY)
   );
 
-  @Effect()
+  @Effect({ dispatch: false })
   deleteListFromDatabase$ = this.actions$.pipe(
     ofType<DeleteList>(ListsActionTypes.DeleteList),
     mergeMap(action => {
-      return combineLatest(this.listService.remove(action.key), this.listCompactsService.remove(action.key));
-    }),
-    switchMap(() => EMPTY)
+      return combineLatest(this.listService.remove(action.key), this.listCompactsService.remove(action.key))
+        .pipe(
+          catchError((error) => {
+            if (error.message.indexOf('Permission') > -1) {
+              // If it's a permission Error, let's try again just in case.
+              return combineLatest(this.listService.remove(action.key), this.listCompactsService.remove(action.key));
+            }
+            return EMPTY;
+          })
+        );
+    })
   );
 
   @Effect()
