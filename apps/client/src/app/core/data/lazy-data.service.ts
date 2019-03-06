@@ -22,10 +22,11 @@ export class LazyDataService {
   public koLeves: any = {};
   public koWeathers: any = {};
   public koPlaces: any = {};
-  public koNpc: any = {};
+  public koNpcs: any = {};
   public koMobs: any = {};
-  public koJobName: any = {};
-  public koJobAbbr: any = {};
+  public koJobNames: any = {};
+  public koJobAbbrs: any = {};
+  public koJobCategories: any = {};
 
   public craftActions: any = {};
 
@@ -44,10 +45,11 @@ export class LazyDataService {
       this.http.get('./assets/data/ko/ko-leves.json'),
       this.http.get('./assets/data/ko/ko-weathers.json'),
       this.http.get('./assets/data/ko/ko-places.json'),
-      this.http.get('./assets/data/ko/ko-npc.json'),
+      this.http.get('./assets/data/ko/ko-npcs.json'),
       this.http.get('./assets/data/ko/ko-mobs.json'),
       this.http.get('./assets/data/ko/ko-job-name.json'),
       this.http.get('./assets/data/ko/ko-job-abbr.json'),
+      this.http.get('./assets/data/ko/ko-job-category.json'),
       this.http.get('./assets/data/actions.json'),
       this.http.get('./assets/data/craft-actions.json')
     ).subscribe(([
@@ -62,10 +64,11 @@ export class LazyDataService {
                    koLeves,
                    koWeathers,
                    koPlaces,
-                   koNpc,
+                   koNpcs,
                    koMobs,
-                   koJobName,
-                   koJobAbbr,
+                   koJobNames,
+                   koJobAbbrs,
+                   koJobCategories,
                    actions,
                    craftActions
                  ]) => {
@@ -80,10 +83,11 @@ export class LazyDataService {
       this.koLeves = koLeves;
       this.koWeathers = koWeathers;
       this.koPlaces = koPlaces;
-      this.koNpc = koNpc;
+      this.koNpcs = koNpcs;
       this.koMobs = koMobs;
-      this.koJobName = koJobName;
-      this.koJobAbbr = koJobAbbr;
+      this.koJobNames = koJobNames;
+      this.koJobAbbrs = koJobAbbrs;
+      this.koJobCategories = koJobCategories;
       this.actions = actions;
       this.craftActions = craftActions;
       this.loaded$.next(true);
