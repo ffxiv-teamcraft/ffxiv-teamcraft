@@ -99,6 +99,10 @@
                 *ngIf="!publicDisplay">
               {{'PERMISSIONS.Title' | translate}}
             </li>
+            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="removeEphemeral(_list)"
+                *ngIf="!publicDisplay && _list.ephemeral">
+              {{'Remove_ephemeral' | translate}}
+            </li>
             <ng-container *ngIf="!publicDisplay">
               <li nz-submenu *ngIf="teams$ | async as teams">
                 <span title>{{'TEAMS.Assign_list' | translate}}</span>

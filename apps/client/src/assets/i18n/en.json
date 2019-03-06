@@ -86,6 +86,7 @@
   "No_favorites": "No Favorite",
   "Ephemeral_list": "Will be deleted once completed",
   "Ephemeral_tag": "ephemeral",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Create quick list (deleted once completed)",
   "Tag_filter": "Tags",
   "Public_lists": "Community lists",
