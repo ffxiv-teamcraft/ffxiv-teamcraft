@@ -86,6 +86,7 @@
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
   "Ephemeral_tag": "vergänglich",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Erstelle eine Kurzzeit-Liste (wird gelöscht wenn sie komplett ist)",
   "Tag_filter": "Markierungen",
   "Public_lists": "Communitylisten",
