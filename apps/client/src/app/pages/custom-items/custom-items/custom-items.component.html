@@ -96,7 +96,7 @@
       </ng-template>
       <div class="item-form" fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <div>{{'CUSTOM_ITEMS.Details' | translate}}</div>
+          <h2>{{'CUSTOM_ITEMS.Details' | translate}}</h2>
           <div>
             <nz-dropdown [nzTrigger]="'click'" nz-tooltip [nzTitle]="'CUSTOM_ITEMS.Add_details' | translate">
               <button nz-dropdown nz-button nzShape="circle" nzSize="small">
@@ -122,6 +122,14 @@
               </ul>
             </nz-dropdown>
           </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
+          <nz-form-item>
+            <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Name' | translate}}</nz-form-label>
+            <nz-form-control>
+              <input type="text" nz-input [(ngModel)]="item.name" (ngModelChange)="item.dirty = true">
+            </nz-form-control>
+          </nz-form-item>
         </div>
         <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0">
           <nz-divider [nzText]="gatheringHeader" nzOrientation="left">
@@ -436,7 +444,7 @@
                 <nz-form-item>
                   <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Shop_name' | translate}}</nz-form-label>
                   <nz-form-control>
-                    <input type="text" nz-input [(ngModel)]="tradeSource.shopName">
+                    <input type="text" nz-input [(ngModel)]="tradeSource.shopName" (ngModelChange)="item.dirty = true">
                   </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
