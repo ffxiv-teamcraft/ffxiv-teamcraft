@@ -351,18 +351,21 @@ export class List extends DataWithPermissions {
     const done$ = new Subject<void>();
     return of(_additions).pipe(
       expand(additions => {
-        if (additions.length === 0) {
+        const todo = additions.filter(a => a !== null);
+        if (todo.length === 0) {
           done$.next();
           return EMPTY;
         }
-        return combineLatest(additions.map(addition => {
+        return combineLatest(todo.map(addition => {
           if (addition.data instanceof ItemData) {
             return of(this.addNormalCraft(addition, gt, recipeId));
           } else {
             return this.addCustomCraft(addition, gt, customItems, dataService);
           }
         })).pipe(
-          map(res => [].concat.apply([], res))
+          map(res => {
+            return [].concat.apply([], res.filter(a => a !== null));
+          })
         );
       }),
       debounceTime(100),
@@ -449,6 +452,7 @@ export class List extends DataWithPermissions {
           if (element.custom) {
             const itemDetails = customItems.find(i => i.$key === element.id);
             // TODO Custom items integration here
+            return of(null);
           } else {
             return dataService.getItem(+element.id).pipe(
               map(elementItemData => {
@@ -467,7 +471,7 @@ export class List extends DataWithPermissions {
                   });
                   return {
                     item: elementDetails,
-                    data: addition.data,
+                    data: elementItemData,
                     amount: added
                   };
                 } else {
@@ -492,7 +496,7 @@ export class List extends DataWithPermissions {
   private add(array: ListRow[], data: ListRow, recipe = false): number {
     let previousAmount = 0;
     let row = array.find(r => {
-      return r.id === data.id && r.recipeId === data.recipeId;
+      return (r.id === data.id && r.recipeId === data.recipeId) || (r.$key !== undefined && row.$key === data.$key);
     });
     if (row === undefined) {
       array.push(data);
@@ -501,7 +505,7 @@ export class List extends DataWithPermissions {
       row.amount = MathTools.absoluteCeil(row.amount + data.amount);
       previousAmount = row.amount_needed;
     }
-    row.amount_needed = Math.ceil(row.amount / row.yield);
+    row.amount_needed = Math.ceil(row.amount / (row.yield || 1));
     const added = row.amount_needed - previousAmount;
     if (added < 0 && recipe) {
       const previousDone = row.done;

@@ -84,7 +84,10 @@ export class ListManagerService {
     const itemClone = new CustomItem();
     Object.assign(itemClone, item);
     itemClone.amount = amount;
-    const added = addition.addToFinalItems(item);
+    itemClone.done = 0;
+    itemClone.used = 0;
+    itemClone.usePrice = true;
+    const added = addition.addToFinalItems(itemClone);
     if (itemClone.requires.length > 0) {
       return addition.addCraft([
         {

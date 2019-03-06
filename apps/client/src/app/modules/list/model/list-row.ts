@@ -22,7 +22,7 @@ export class ListRow extends DataModel {
   used: number;
   requires?: Ingredient[] = [];
   recipeId?: string;
-  yield: number;
+  yield = 1;
 
   craftedBy?: CraftedBy[] = [];
   gatheredBy?: GatheredBy;

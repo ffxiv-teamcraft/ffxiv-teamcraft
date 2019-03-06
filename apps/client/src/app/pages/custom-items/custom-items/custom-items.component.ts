@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, concat, Observable, of } from 'rxjs';
 import { CustomItemsFacade } from '../../../modules/custom-items/+state/custom-items.facade';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, first, map, shareReplay } from 'rxjs/operators';
+import { filter, first, map, mergeMap, shareReplay, tap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
 import { CustomItemsDisplay } from '../../../modules/custom-items/+state/custom-items-display';
@@ -24,6 +24,11 @@ import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { CustomIngredient } from '../../../modules/custom-items/model/custom-ingredient';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
+import { ListsFacade } from '../../../modules/list/+state/lists.facade';
+import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
+import { ListManagerService } from '../../../modules/list/list-manager.service';
+import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { List } from '../../../modules/list/model/list';
 
 @Component({
   selector: 'app-custom-items',
@@ -44,9 +49,17 @@ export class CustomItemsComponent {
 
   public availableCraftJobs: any[] = [];
 
+  @ViewChild('notificationRef')
+  notification: TemplateRef<any>;
+
+  public modifiedList: List;
+
   constructor(private customItemsFacade: CustomItemsFacade, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
-              private lazyData: LazyDataService, private gt: GarlandToolsService) {
+              private lazyData: LazyDataService, private gt: GarlandToolsService,
+              private listsFacade: ListsFacade, private listPicker: ListPickerService,
+              private listManager: ListManagerService, private progressService: ProgressPopupService,
+              private notificationService: NzNotificationService) {
     this.customItemsFacade.loadAll();
     this.customItemsFacade.loadAllFolders();
     this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, { columns: ['ID', 'PlaceName.Name_*'], max_items: 1000 }).pipe(
@@ -201,6 +214,31 @@ export class CustomItemsComponent {
       });
     }
     return item;
+  }
+
+  public addToList(item: CustomItem, amount: string): void {
+    this.listPicker.pickList().pipe(
+      mergeMap(list => {
+        return this.progressService.showProgress(this.listManager.addToList(item.$key, list, '', +amount),
+          1,
+          'Adding_recipes',
+          { amount: 1, listname: list.name });
+      }),
+      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
+      mergeMap(list => {
+        // We want to get the list created before calling it a success, let's be pessimistic !
+        return this.progressService.showProgress(
+          combineLatest(this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$).pipe(
+            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
+            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          ), 1, 'Saving_in_database');
+      })
+    ).subscribe((list) => {
+      this.modifiedList = list;
+      this.notificationService.template(this.notification);
+    });
   }
 
   /**

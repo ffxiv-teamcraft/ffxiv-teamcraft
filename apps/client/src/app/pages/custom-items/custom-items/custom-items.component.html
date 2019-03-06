@@ -84,6 +84,22 @@
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <div>{{item.name}}<span *ngIf="item.dirty">*</span></div>
           <div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
+            <button nz-button nz-popover [nzTitle]="'CUSTOM_ITEMS.Add_to_list' | translate"
+                    nzShape="circle" nzType="primary"
+                    (click)="$event.stopPropagation()"
+                    [nzContent]="calculator" nzTrigger="click">
+              <i nz-icon type="plus"></i>
+              <ng-template #calculator>
+                <div fxLayout="row" fxLayoutGap="5px">
+                  <nz-input-number [nzMin]="1" [nzStep]="1"
+                                   [ngModel]="1" #numberInput
+                                   nzAutoFocus></nz-input-number>
+                  <button nz-button (click)="addToList(item, numberInput.value)" nzType="primary">
+                    <i nz-icon type="caret-right"></i>
+                  </button>
+                </div>
+              </ng-template>
+            </button>
             <button nz-button nz-popconfirm [nzTitle]="'Confirm' | translate"
                     nzShape="circle"
                     nzType="danger"
@@ -562,4 +578,22 @@
       </div>
     </nz-collapse-panel>
   </nz-collapse>
+</ng-template>
+
+<ng-template #notificationRef let-notification>
+  <div class="ant-notification-notice-content ant-notification-notice-with-icon">
+    <span class="ant-notification-notice-icon"><i nz-icon type="check-circle"
+                                                  class="ant-notification-notice-icon-success"></i></span>
+    <div>
+      <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
+      <div class="ant-notification-notice-description">
+        <span>{{'Recipe_Added' | translate: { listname: modifiedList.name } }}</span>
+      </div>
+      <span class="ant-notification-notice-btn">
+            <a nz-button nzType="primary" (click)="notification.close();" routerLink="/list/{{modifiedList.$key}}">
+              <span>{{'Open' | translate}}</span>
+            </a>
+          </span>
+    </div>
+  </div>
 </ng-template>

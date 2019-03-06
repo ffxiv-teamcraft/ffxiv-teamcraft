@@ -18,6 +18,8 @@ import { MapModule } from '../../modules/map/map.module';
 import { NpcPickerComponent } from './npc-picker/npc-picker.component';
 import { ItemPickerModule } from '../../modules/item-picker/item-picker.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
+import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
+import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 
 const routes: Routes = [{
   path: '',
@@ -42,6 +44,8 @@ const routes: Routes = [{
     MapModule,
     ItemPickerModule,
     ItemIconModule,
+    ListPickerModule,
+    ProgressPopupModule,
 
     TranslateModule,
     NgZorroAntdModule,
