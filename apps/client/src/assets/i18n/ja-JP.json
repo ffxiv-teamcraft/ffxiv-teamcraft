@@ -86,6 +86,7 @@
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
   "Ephemeral_tag": "刻限",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "簡易リストを作成する　(完了した後、削除)",
   "Tag_filter": "タグ",
   "Public_lists": "コミュニティリスト",
