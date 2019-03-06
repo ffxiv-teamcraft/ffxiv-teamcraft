@@ -5,5 +5,5 @@
   <Description>Search for an item on FFXIV Teamcraft</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Url method="get" type="text/html"
-       template="https://ffxivteamcraft.com/search?query={searchTerms}"/>
+       template="https://ffxivteamcraft.com/search?query={searchTerms}&onlyRecipes=false"/>
 </OpenSearchDescription>
