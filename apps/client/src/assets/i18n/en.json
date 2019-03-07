@@ -833,7 +833,9 @@
     "Save": "Save item",
     "Details": "Item details",
     "Export_item": "Export item",
+    "Export_items": "Export multiple items",
     "Add_to_list": "Add to a list",
+    "No_items": "You have no custom items",
     "DETAILS": {
       "Level": "Level",
       "None": "none",
@@ -881,7 +883,8 @@
     },
     "IMPORT": {
       "Corrupted_file": "Import file is corrupted or wrong format",
-      "Drag_or_click": "Drag the file here or click to select it"
+      "Drag_or_click": "Drag the file here or click to select it",
+      "Format": "Format"
     }
   }
 }

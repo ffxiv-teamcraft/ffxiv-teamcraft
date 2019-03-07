@@ -1,8 +1,13 @@
 <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
-  <nz-select [(ngModel)]="format">
-    <nz-option [nzValue]="'TC'" nzLabel="Teamcraft">
-    </nz-option>
-  </nz-select>
+  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+    <div>
+      {{'CUSTOM_ITEMS.IMPORT.Format' | translate}}:
+    </div>
+    <nz-select [(ngModel)]="format">
+      <nz-option [nzValue]="'TC'" nzLabel="Teamcraft">
+      </nz-option>
+    </nz-select>
+  </div>
   <nz-upload
     *ngIf="!hideUpload"
     nzType="drag"
@@ -17,5 +22,6 @@
   <div>
     <nz-spin *ngIf="hideUpload && !error"></nz-spin>
   </div>
-  <nz-alert *ngIf="error" [nzMessage]="error | translate" nzShowIcon nzType="error"></nz-alert>
+  <nz-alert *ngIf="error" [nzMessage]="error | translate" [nzDescription]="errorDetails" nzShowIcon
+            nzType="error"></nz-alert>
 </div>

@@ -4,7 +4,7 @@ import {
   CreateCustomItem, CreateCustomItemFolder, CustomItemFoldersLoaded,
   CustomItemsActionTypes,
   CustomItemsLoaded,
-  DeleteCustomItem,
+  DeleteCustomItem, DeleteCustomItemFolder,
   UpdateCustomItem, UpdateCustomItemFolder
 } from './custom-items.actions';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -90,7 +90,7 @@ export class CustomItemsEffects {
 
   @Effect({ dispatch: false })
   deleteCustomItemFolder$ = this.actions$.pipe(
-    ofType<DeleteCustomItem>(CustomItemsActionTypes.DeleteCustomItem),
+    ofType<DeleteCustomItemFolder>(CustomItemsActionTypes.DeleteCustomItemFolder),
     switchMap(action => this.customItemFoldersService.remove(action.key))
   );
 

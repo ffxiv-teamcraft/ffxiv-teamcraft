@@ -32,6 +32,7 @@ import { List } from '../../../modules/list/model/list';
 import { saveAs } from 'file-saver';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { CustomItemsImportPopupComponent } from '../custom-items-import-popup/custom-items-import-popup.component';
+import { CustomItemsExportPopupComponent } from '../custom-items-export-popup/custom-items-export-popup.component';
 
 @Component({
   selector: 'app-custom-items',
@@ -123,7 +124,19 @@ export class CustomItemsComponent {
       nzContent: CustomItemsImportPopupComponent,
       nzFooter: null,
       nzTitle: this.translate.instant('CUSTOM_ITEMS.Import_items')
-    })
+    });
+  }
+
+  public exportMultipleItems(allItems: CustomItemsDisplay): void {
+    this.dialog.create({
+      nzContent: CustomItemsExportPopupComponent,
+      nzFooter: null,
+      nzTitle: this.translate.instant('CUSTOM_ITEMS.Export_items')
+    }).afterClose
+      .pipe(filter(res => res !== undefined))
+      .subscribe(items => {
+        this.exportItems(items, allItems);
+      });
   }
 
   public autoCompleteItemID(name: string, item: CustomItem): void {
@@ -264,12 +277,18 @@ export class CustomItemsComponent {
     });
   }
 
-  public exportItem(item: CustomItem, display: CustomItemsDisplay): void {
+  public exportItems(items: CustomItem[], display: CustomItemsDisplay): void {
     const allItems = display.otherItems.concat(...display.folders.map(f => f.items));
-    const reqs = item.requires.filter(req => req.custom).map(req => allItems.find(i => i.$key === req.id));
-    const data = [item, ...reqs];
-    const blob = new Blob([btoa(JSON.stringify(data))], { type: 'text/plain;charset:utf-8' });
-    saveAs(blob, `${item.name.split(' ').join('-')}.tcitem`);
+    const reqs = items.map(item => {
+      return item.requires.filter(req => req.custom)
+        .map(req => allItems.find(i => i.$key === req.id));
+    });
+    const data = [].concat.apply([], [...items, ...reqs]).filter((item, index, array) => {
+      // Remove duplicates
+      return array.indexOf(item) === index;
+    });
+    const blob = new Blob([btoa(unescape(encodeURIComponent(JSON.stringify(data))))], { type: 'text/plain;charset:utf-8' });
+    saveAs(blob, `${items.map(i => i.name).join('&').split(' ').join('-')}.tcitem`);
   }
 
   /**

@@ -25,4 +25,6 @@ export class CustomItem extends ListRow {
 
   // Used for display too
   dirty?: boolean;
+
+  createdAt: string = new Date().toISOString();
 }

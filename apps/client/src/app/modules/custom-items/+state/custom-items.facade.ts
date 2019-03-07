@@ -7,7 +7,7 @@ import { customItemsQuery } from './custom-items.selectors';
 import {
   CreateCustomItem,
   CreateCustomItemFolder,
-  DeleteCustomItem,
+  DeleteCustomItem, DeleteCustomItemFolder,
   LoadCustomItemFolders,
   LoadCustomItems,
   UpdateCustomItem,
@@ -80,7 +80,7 @@ export class CustomItemsFacade {
   }
 
   deleteCustomItemFolder(key: string): void {
-    this.store.dispatch(new DeleteCustomItem(key));
+    this.store.dispatch(new DeleteCustomItemFolder(key));
   }
 
   loadAllFolders() {
