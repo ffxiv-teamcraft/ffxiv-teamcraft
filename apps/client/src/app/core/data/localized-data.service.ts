@@ -229,7 +229,7 @@ export class LocalizedDataService {
     let res = -1;
     const keys = Object.keys(array);
     for (const key of keys) {
-      if (array[key][language] === name) {
+      if (array[key][language].toLowerCase() === name.toLowerCase()) {
         res = +key;
         break;
       }
