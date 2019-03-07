@@ -16,7 +16,6 @@
         <i nz-icon type="download"></i>
       </button>
     </div>
-
     <div *ngIf="display.otherItems.length === 0 && display.folders.length === 0; else itemsDisplay">
       <app-fullpage-message height="300px">{{'CUSTOM_ITEMS.No_items' | translate}}</app-fullpage-message>
     </div>
@@ -144,9 +143,17 @@
             </div>
             <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
               <nz-form-item>
+                <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.ID' | translate}}</nz-form-label>
+                <nz-form-control>
+                  <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
+                                   [(ngModel)]="item.realItemId"></nz-input-number>
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item>
                 <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Name' | translate}}</nz-form-label>
                 <nz-form-control>
-                  <input type="text" nz-input [(ngModel)]="item.name" (ngModelChange)="item.dirty = true">
+                  <input type="text" nz-input [(ngModel)]="item.name"
+                         (ngModelChange)="item.dirty = true; autoCompleteItemID($event, item)">
                 </nz-form-control>
               </nz-form-item>
             </div>
@@ -174,7 +181,8 @@
                         <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="craft.jobId" class="job-select">
                           <nz-option *ngFor="let job of availableCraftJobs" [nzValue]="job.id"
                                      [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
-                            <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
+                            <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt=""
+                                 class="job-icon">
                             {{job.id | jobAbbr | i18n}}
                           </nz-option>
                         </nz-select>
@@ -463,7 +471,8 @@
                     <nz-form-item>
                       <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Shop_name' | translate}}</nz-form-label>
                       <nz-form-control>
-                        <input type="text" nz-input [(ngModel)]="tradeSource.shopName" (ngModelChange)="item.dirty = true">
+                        <input type="text" nz-input [(ngModel)]="tradeSource.shopName"
+                               (ngModelChange)="item.dirty = true">
                       </nz-form-control>
                     </nz-form-item>
                     <nz-form-item>
@@ -505,19 +514,23 @@
                       </nz-form-control>
                     </nz-form-item>
                   </div>
-                  <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" *ngFor="let trade of tradeSource.trades">
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column"
+                       *ngFor="let trade of tradeSource.trades">
                     <nz-form-item>
                       <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Trade_details' | translate}}</nz-form-label>
                       <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                         <div fxLayout="column" fxLayoutGap="5px">
-                          <div *ngFor="let currency of trade.currencies" fxLayout="row" fxLayoutAlign="flex-start center"
+                          <div *ngFor="let currency of trade.currencies" fxLayout="row"
+                               fxLayoutAlign="flex-start center"
                                fxLayoutGap="5px">
                             <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
-                              <input type="text" nz-input [(ngModel)]="currency.amount" (ngModelChange)="item.dirty = true">
+                              <input type="text" nz-input [(ngModel)]="currency.amount"
+                                     (ngModelChange)="item.dirty = true">
                             </nz-input-group>
                             <ng-template #addOnBeforeTemplate>
                               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                                <app-item-icon [itemId]="currency.id" [icon]="currency.icon" [width]="14"></app-item-icon>
+                                <app-item-icon [itemId]="currency.id" [icon]="currency.icon"
+                                               [width]="14"></app-item-icon>
                                 <div>{{currency.id | itemName | i18n}}</div>
                               </div>
                             </ng-template>
@@ -556,7 +569,8 @@
               </div>
             </div>
             <div *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0">
-              <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.REDUCTION.Title' | translate" nzOrientation="left"></nz-divider>
+              <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.REDUCTION.Title' | translate"
+                          nzOrientation="left"></nz-divider>
               <nz-list [nzDataSource]="item.reducedFrom"
                        [nzRenderItem]="reductionTemplate">
                 <ng-template #reductionTemplate let-reduction>

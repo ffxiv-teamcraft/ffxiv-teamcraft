@@ -6,6 +6,11 @@ import { CustomIngredient } from './custom-ingredient';
 
 export class CustomItem extends ListRow {
 
+  /**
+   * The id of the real item if it's known.
+   */
+  realItemId?: number;
+
   @ForeignKey(TeamcraftUser)
   authorId: string;
 

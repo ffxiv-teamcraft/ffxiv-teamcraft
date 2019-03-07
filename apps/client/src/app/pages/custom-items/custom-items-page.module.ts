@@ -20,6 +20,7 @@ import { ItemPickerModule } from '../../modules/item-picker/item-picker.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
+import { CustomItemsImportPopupComponent } from './custom-items-import-popup/custom-items-import-popup.component';
 
 const routes: Routes = [{
   path: '',
@@ -27,8 +28,8 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  declarations: [CustomItemsComponent, NpcPickerComponent],
-  entryComponents: [NpcPickerComponent],
+  declarations: [CustomItemsComponent, NpcPickerComponent, CustomItemsImportPopupComponent],
+  entryComponents: [NpcPickerComponent, CustomItemsImportPopupComponent],
   imports: [
     CommonModule,
     FormsModule,

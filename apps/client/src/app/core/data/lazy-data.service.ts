@@ -30,6 +30,25 @@ export class LazyDataService {
 
   public actions: any = {};
 
+  public get allItems(): any {
+    const res = { ...this.items };
+    Object.keys(this.koItems).forEach(koKey => {
+      if (res[koKey] !== undefined) {
+        res[koKey].ko = this.koItems[koKey].ko;
+      } else {
+        res[koKey] = this.koItems[koKey];
+      }
+    });
+    Object.keys(this.zhItems).forEach(zhKey => {
+      if (res[zhKey] !== undefined) {
+        res[zhKey].zh = this.zhItems[zhKey].zh;
+      } else {
+        res[zhKey] = this.zhItems[zhKey];
+      }
+    });
+    return res;
+  }
+
   constructor(private http: HttpClient) {
     combineLatest(
       this.http.get('./assets/data/items.json'),

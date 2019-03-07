@@ -832,6 +832,8 @@
     "Import_items": "Import custom items",
     "Save": "Save item",
     "Details": "Item details",
+    "Export_item": "Export item",
+    "Add_to_list": "Add to a list",
     "DETAILS": {
       "Level": "Level",
       "None": "none",
@@ -840,6 +842,7 @@
       "Add_requirement": "Add requirement",
       "Yields": "Yields",
       "Name": "Name",
+      "ID": "Item ID",
       "CRAFT": {
         "Title": "Crafted by",
         "Job": "Job",
@@ -875,6 +878,10 @@
     "NPC_PICKER": {
       "Title": "Find a NPC",
       "Npc_name": "NPC name"
+    },
+    "IMPORT": {
+      "Corrupted_file": "Import file is corrupted or wrong format",
+      "Drag_or_click": "Drag the file here or click to select it"
     }
   }
 }

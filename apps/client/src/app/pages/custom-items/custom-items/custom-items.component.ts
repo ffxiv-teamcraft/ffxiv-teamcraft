@@ -30,6 +30,8 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { List } from '../../../modules/list/model/list';
 import { saveAs } from 'file-saver';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { CustomItemsImportPopupComponent } from '../custom-items-import-popup/custom-items-import-popup.component';
 
 @Component({
   selector: 'app-custom-items',
@@ -60,7 +62,7 @@ export class CustomItemsComponent {
               private lazyData: LazyDataService, private gt: GarlandToolsService,
               private listsFacade: ListsFacade, private listPicker: ListPickerService,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private notificationService: NzNotificationService) {
+              private notificationService: NzNotificationService, private i18n: I18nToolsService) {
     this.customItemsFacade.loadAll();
     this.customItemsFacade.loadAllFolders();
     this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, { columns: ['ID', 'PlaceName.Name_*'], max_items: 1000 }).pipe(
@@ -117,7 +119,21 @@ export class CustomItemsComponent {
   }
 
   public importItems(): void {
-    //TODO
+    this.dialog.create({
+      nzContent: CustomItemsImportPopupComponent,
+      nzFooter: null,
+      nzTitle: this.translate.instant('CUSTOM_ITEMS.Import_items')
+    })
+  }
+
+  public autoCompleteItemID(name: string, item: CustomItem): void {
+    const allItems = this.lazyData.allItems;
+    const matches = Object.keys(allItems).filter(key => {
+      return this.i18n.getName(allItems[key]).toLowerCase() === name.toLowerCase();
+    });
+    if (matches.length === 1) {
+      item.realItemId = +matches[0];
+    }
   }
 
   public setItemIndex(item: CustomItem, index: number, array: CustomItem[], folderId: string | undefined): void {

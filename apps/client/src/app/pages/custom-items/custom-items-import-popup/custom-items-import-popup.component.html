@@ -1,0 +1,21 @@
+<div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+  <nz-select [(ngModel)]="format">
+    <nz-option [nzValue]="'TC'" nzLabel="Teamcraft">
+    </nz-option>
+  </nz-select>
+  <nz-upload
+    *ngIf="!hideUpload"
+    nzType="drag"
+    [nzCustomRequest]="handleFile">
+    <div class="upload-content">
+      <p class="ant-upload-drag-icon">
+        <i nz-icon type="inbox"></i>
+      </p>
+      <p class="ant-upload-text">{{'CUSTOM_ITEMS.IMPORT.Drag_or_click' | translate}}</p>
+    </div>
+  </nz-upload>
+  <div>
+    <nz-spin *ngIf="hideUpload && !error"></nz-spin>
+  </div>
+  <nz-alert *ngIf="error" [nzMessage]="error | translate" nzShowIcon nzType="error"></nz-alert>
+</div>
