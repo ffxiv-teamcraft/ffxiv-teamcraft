@@ -123,9 +123,9 @@ export class List extends DataWithPermissions {
    * Iterates on recipes and preCrafts.
    * @param {(arg: ListRow) => void} method
    */
-  public forEachCraft(method: (arg: ListRow) => void): void {
-    (this.items || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
-    (this.finalItems || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
+  public forEachItemWithRequirement(method: (arg: ListRow) => void): void {
+    (this.items || []).filter(row => row.requires !== undefined && row.requires.length > 0).forEach(method);
+    (this.finalItems || []).filter(row => row.requires !== undefined && row.requires.length > 0).forEach(method);
   }
 
   public addToFinalItems(data: ListRow): number {
@@ -152,15 +152,16 @@ export class List extends DataWithPermissions {
    * @returns {List}
    */
   public clean(): List {
+    console.log('BEFORE', JSON.parse(JSON.stringify(this)));
     for (const prop of Object.keys(this)) {
       if (['finalItems', 'items'].indexOf(prop) > -1) {
         // We don't want to check the amount of items required for recipes, as they can't be wrong (provided by the user only).
         if (prop !== 'finalItems') {
           this[prop].forEach(row => {
             if (row.craftedBy === undefined || row.craftedBy.length === 0) {
-              row.amount = row.amount_needed = this.totalAmountRequired(<ListRow>row);
+              row.amount = row.amount_needed = this.totalAmountRequired(row);
             } else {
-              row.amount = this.totalAmountRequired(<ListRow>row);
+              row.amount = this.totalAmountRequired(row);
               row.amount_needed = Math.ceil(row.amount / row.yield);
             }
           });
@@ -168,6 +169,7 @@ export class List extends DataWithPermissions {
         this[prop] = this[prop].filter(row => row.amount > 0);
       }
     }
+    console.log('AFTER', JSON.parse(JSON.stringify(this)));
     return this;
   }
 
@@ -178,7 +180,8 @@ export class List extends DataWithPermissions {
   public getItemById(id: number | string, excludeFinalItems: boolean = false, recipeId?: string): ListRow {
     const array = excludeFinalItems ? this.items : this.items.concat(this.finalItems);
     return array.find(row => {
-      let matches = row.id === id || row.id === +id;
+      console.log(row, id);
+      let matches = row.id === id || row.id === +id || (row.$key !== undefined && row.$key === id);
       if (recipeId !== undefined) {
         matches = matches && row.recipeId === recipeId;
       }
@@ -462,7 +465,20 @@ export class List extends DataWithPermissions {
         } else {
           if (element.custom) {
             const itemDetails = customItems.find(i => i.$key === element.id);
-            // TODO Custom items integration here
+            const itemDetailsClone = new CustomItem();
+            Object.assign(itemDetailsClone, itemDetails);
+            itemDetailsClone.amount = element.amount * addition.amount;
+            itemDetailsClone.done = 0;
+            itemDetailsClone.used = 0;
+            itemDetailsClone.usePrice = true;
+            itemDetailsClone.id = itemDetails.$key;
+            const added = this.add(this.items, itemDetailsClone);
+            if (itemDetailsClone.requires !== undefined) {
+              return of([{
+                data: itemDetailsClone,
+                amount: added
+              }]);
+            }
             return of(null);
           } else {
             return dataService.getItem(+element.id).pipe(
@@ -562,7 +578,7 @@ export class List extends DataWithPermissions {
       return 0;
     }
     let count = 0;
-    this.forEachCraft(craft => {
+    this.forEachItemWithRequirement(craft => {
       // We have to use filter because some items (airships) might require twice the same item.
       const requirements = (craft.requires || []).filter(req => req.id === item.id || +req.id === item.id);
       if (requirements.length > 0) {

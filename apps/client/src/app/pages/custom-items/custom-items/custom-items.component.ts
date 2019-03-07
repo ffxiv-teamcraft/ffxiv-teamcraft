@@ -472,7 +472,7 @@ export class CustomItemsComponent {
                   amount: 1,
                   hq: false,
                   // TODO: connect custom item icon here
-                  icon: 20
+                  icon: ''
                 }
               ]
             }

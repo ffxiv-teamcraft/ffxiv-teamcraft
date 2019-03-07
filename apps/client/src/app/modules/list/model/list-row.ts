@@ -13,7 +13,7 @@ import { CustomIngredient } from '../../custom-items/model/custom-ingredient';
 
 export class ListRow extends DataModel {
   icon?: number;
-  id: number;
+  id: any; // can be string or number, but we use any so less refactoring is needed.
   // The amount of items needed for the craft.
   amount: number;
   // The amount of crafts needed to get the amount of items needed.

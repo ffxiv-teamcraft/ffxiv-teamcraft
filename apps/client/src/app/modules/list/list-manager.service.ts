@@ -87,6 +87,7 @@ export class ListManagerService {
     itemClone.done = 0;
     itemClone.used = 0;
     itemClone.usePrice = true;
+    itemClone.id = itemClone.$key;
     const added = addition.addToFinalItems(itemClone);
     if (itemClone.requires.length > 0) {
       return addition.addCraft([

@@ -39,6 +39,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { Craft } from '../../../model/garland-tools/craft';
 import { CommentsService } from '../../../modules/comments/comments.service';
 import { ListLayout } from '../../../core/layout/list-layout';
+import { CustomItem } from '../../../modules/custom-items/model/custom-item';
 
 @Component({
   selector: 'app-item-row',
@@ -369,7 +370,7 @@ export class ItemRowComponent implements OnInit {
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>): void {
     this.modal.create({
-      nzTitle: this.i18n.getName(this.l12n.getItem(this.item.id)),
+      nzTitle: this.i18n.getName(this.l12n.getItem(this.item.id), this.item as CustomItem),
       nzContent: component,
       nzComponentParams: { item: this.item },
       nzFooter: null
