@@ -838,11 +838,11 @@
       "Stars": "Stars",
       "Requirements": "Requirements",
       "Add_requirement": "Add requirement",
+      "Yields": "Yields",
       "Name": "Name",
       "CRAFT": {
         "Title": "Crafted by",
         "Job": "Job",
-        "Yields": "Yields",
         "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
       },
       "GATHERING": {

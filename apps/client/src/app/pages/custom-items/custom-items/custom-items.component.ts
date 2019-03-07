@@ -1,6 +1,6 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';
-import { combineLatest, concat, Observable, of } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { CustomItemsFacade } from '../../../modules/custom-items/+state/custom-items.facade';
 import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
@@ -211,6 +211,12 @@ export class CustomItemsComponent {
       item.tradeSources = item.tradeSources.map(tradeSource => {
         tradeSource.npcs[0].areaId = tradeSource.npcs[0].zoneId = tradeSource.npcs[0].mapId;
         return tradeSource;
+      });
+    }
+    if (item.craftedBy !== undefined) {
+      item.craftedBy = item.craftedBy.map(craft => {
+        craft.icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === craft.jobId).abbreviation}.png`;
+        return craft;
       });
     }
     return item;

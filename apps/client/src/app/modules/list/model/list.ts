@@ -1,7 +1,6 @@
 import { ListRow } from './list-row';
 import { CraftAddition } from './craft-addition';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import * as semver from 'semver';
 import { ListTag } from './list-tag.enum';
 import { Craft } from '../../../model/garland-tools/craft';
@@ -13,7 +12,7 @@ import { Team } from '../../../model/team/team';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
 import { CustomItem } from '../../custom-items/model/custom-item';
 import { ItemData } from '../../../model/garland-tools/item-data';
-import { BehaviorSubject, combineLatest, EMPTY, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, EMPTY, Observable, of, Subject } from 'rxjs';
 import { debounceTime, expand, map, skip, skipUntil, skipWhile, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
@@ -179,7 +178,7 @@ export class List extends DataWithPermissions {
   public getItemById(id: number | string, excludeFinalItems: boolean = false, recipeId?: string): ListRow {
     const array = excludeFinalItems ? this.items : this.items.concat(this.finalItems);
     return array.find(row => {
-      let matches = row.id === id;
+      let matches = row.id === id || row.id === +id;
       if (recipeId !== undefined) {
         matches = matches && row.recipeId === recipeId;
       }
@@ -565,7 +564,7 @@ export class List extends DataWithPermissions {
     let count = 0;
     this.forEachCraft(craft => {
       // We have to use filter because some items (airships) might require twice the same item.
-      const requirements = (craft.requires || []).filter(req => req.id === item.id);
+      const requirements = (craft.requires || []).filter(req => req.id === item.id || +req.id === item.id);
       if (requirements.length > 0) {
         requirements.forEach(requirement => {
           count += craft.amount_needed * requirement.amount;

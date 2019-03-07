@@ -5,7 +5,7 @@
            [class.odd]="odd"
            *ngFor="let item of listContent$ | async; trackBy: trackByItem; let odd = odd">
         <app-item-icon [width]="32" [itemId]="item.id" [icon]="item.icon"></app-item-icon>
-        <div>{{item.id | itemName | i18n}}</div>
+        <div>{{item.id | itemName:item | i18n}}</div>
         <div class="spacer"></div>
         <nz-input-number [disabled]="(permissionLevel$ | async) < 30" class="amount-input" type="number"
                          *ngIf="(permissionLevel$ | async) > 10; else publicAmountDisplay"

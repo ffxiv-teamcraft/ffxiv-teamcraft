@@ -93,8 +93,9 @@
                 <div fxLayout="row" fxLayoutGap="5px">
                   <nz-input-number [nzMin]="1" [nzStep]="1"
                                    [ngModel]="1" #numberInput
+                                   (keypress.enter)="addToList(item, numberInput.value);calculator.hide()"
                                    nzAutoFocus></nz-input-number>
-                  <button nz-button (click)="addToList(item, numberInput.value)" nzType="primary">
+                  <button nz-button (click)="addToList(item, numberInput.value);calculator.hide()" nzType="primary">
                     <i nz-icon type="caret-right"></i>
                   </button>
                 </div>

@@ -1,7 +1,7 @@
 <div class="item-row" [class.odd]="odd" nz-row fxLayout="row wrap" [class.done]="item.amount <= item.done"
      [class.craftable]="canBeCrafted$ | async" [class.has-all-ingredients]="hasAllBaseIngredients$ | async">
   <div class="block left-block" nz-col nzXs="24" [nzSm]="item.alarms && item.alarms.length > 0?12:6" nzMd="6">
-    <div class="icon">
+    <div class="icon" *ngIf="!item.custom">
       <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName: item | i18n" [itemId]="item.id"
                      [width]="24"></app-item-icon>
     </div>
@@ -10,7 +10,7 @@
             *ngIf="settings.preferredCopyType === 'classic'"
             [nzTitle]="'Copy_item_name_to_clipboard' | translate"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
-        {{item.id | itemName | i18n}}
+        {{item.id | itemName: item | i18n}}
       </span>
       <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;" nz-tooltip
             *ngIf="settings.preferredCopyType === 'isearch'"
