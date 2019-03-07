@@ -29,6 +29,7 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { List } from '../../../modules/list/model/list';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-custom-items',
@@ -245,6 +246,14 @@ export class CustomItemsComponent {
       this.modifiedList = list;
       this.notificationService.template(this.notification);
     });
+  }
+
+  public exportItem(item: CustomItem, display: CustomItemsDisplay): void {
+    const allItems = display.otherItems.concat(...display.folders.map(f => f.items));
+    const reqs = item.requires.filter(req => req.custom).map(req => allItems.find(i => i.$key === req.id));
+    const data = [item, ...reqs];
+    const blob = new Blob([btoa(JSON.stringify(data))], { type: 'text/plain;charset:utf-8' });
+    saveAs(blob, `${item.name.split(' ').join('-')}.tcitem`);
   }
 
   /**

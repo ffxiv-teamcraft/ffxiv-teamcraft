@@ -74,106 +74,203 @@
         </div>
       </div>
     </ng-template>
-  </div>
-</ng-template>
-
-<ng-template #itemDisplay let-item>
-  <nz-collapse>
-    <nz-collapse-panel [nzHeader]="header">
-      <ng-template #header>
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-          <div>{{item.name}}<span *ngIf="item.dirty">*</span></div>
-          <div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
-            <button nz-button nz-popover [nzTitle]="'CUSTOM_ITEMS.Add_to_list' | translate"
-                    nzShape="circle" nzType="primary"
-                    (click)="$event.stopPropagation()"
-                    [nzContent]="calculator" nzTrigger="click">
-              <i nz-icon type="plus"></i>
-              <ng-template #calculator>
-                <div fxLayout="row" fxLayoutGap="5px">
-                  <nz-input-number [nzMin]="1" [nzStep]="1"
-                                   [ngModel]="1" #numberInput
-                                   (keypress.enter)="addToList(item, numberInput.value);"
-                                   nzAutoFocus></nz-input-number>
-                  <button nz-button (click)="addToList(item, numberInput.value);" nzType="primary">
-                    <i nz-icon type="caret-right"></i>
+    <ng-template #itemDisplay let-item>
+      <nz-collapse>
+        <nz-collapse-panel [nzHeader]="header">
+          <ng-template #header>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <div>{{item.name}}<span *ngIf="item.dirty">*</span></div>
+              <div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
+                <button nz-button nz-tooltip [nzTitle]="'CUSTOM_ITEMS.Export_item' | translate"
+                        nzShape="circle"
+                        (click)="$event.stopPropagation();exportItem(item, display)">
+                  <i nz-icon type="export"></i>
+                </button>
+                <button nz-button nz-popover [nzTitle]="'CUSTOM_ITEMS.Add_to_list' | translate"
+                        nzShape="circle" nzType="primary"
+                        (click)="$event.stopPropagation()"
+                        [nzContent]="calculator" nzTrigger="click">
+                  <i nz-icon type="plus"></i>
+                  <ng-template #calculator>
+                    <div fxLayout="row" fxLayoutGap="5px">
+                      <nz-input-number [nzMin]="1" [nzStep]="1"
+                                       [ngModel]="1" #numberInput
+                                       (keypress.enter)="addToList(item, numberInput.value);"
+                                       nzAutoFocus></nz-input-number>
+                      <button nz-button (click)="addToList(item, numberInput.value);" nzType="primary">
+                        <i nz-icon type="caret-right"></i>
+                      </button>
+                    </div>
+                  </ng-template>
+                </button>
+                <button nz-button nz-popconfirm [nzTitle]="'Confirm' | translate"
+                        nzShape="circle"
+                        nzType="danger"
+                        (click)="$event.stopPropagation()"
+                        (nzOnConfirm)="deleteCustomItem(item.$key)">
+                  <i nz-icon type="delete"></i>
+                </button>
+              </div>
+            </div>
+          </ng-template>
+          <div class="item-form" fxLayout="column" fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <h2>{{'CUSTOM_ITEMS.Details' | translate}}</h2>
+              <div>
+                <nz-dropdown [nzTrigger]="'click'" nz-tooltip [nzTitle]="'CUSTOM_ITEMS.Add_details' | translate">
+                  <button nz-dropdown nz-button nzShape="circle" nzSize="small">
+                    <i nz-icon type="plus"></i>
+                  </button>
+                  <ul nz-menu>
+                    <li nz-menu-item
+                        (click)="addCraft(item)"
+                        *ngIf="item.craftedBy === undefined || item.craftedBy.length === 0">{{'CUSTOM_ITEMS.DETAILS.CRAFT.Title' | translate}}</li>
+                    <li nz-menu-item
+                        (click)="addGathering(item)"
+                        *ngIf="item.gatheredBy === undefined">{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</li>
+                    <li nz-menu-item
+                        (click)="addAlarm(item)">{{'CUSTOM_ITEMS.DETAILS.ALARMS.Title' | translate}}</li>
+                    <li nz-menu-item
+                        (click)="addVendor(item)">{{'CUSTOM_ITEMS.DETAILS.VENDORS.Title' | translate}}</li>
+                    <li nz-menu-item
+                        (click)="addTrade(item)">{{'CUSTOM_ITEMS.DETAILS.TRADES.Title' | translate}}</li>
+                    <li nz-menu-item
+                        (click)="addReduction(item)">{{'CUSTOM_ITEMS.DETAILS.REDUCTION.Title' | translate}}</li>
+                    <li nz-menu-item
+                        (click)="addIngredient(item)">{{'CUSTOM_ITEMS.DETAILS.Requirements' | translate}}</li>
+                  </ul>
+                </nz-dropdown>
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
+              <nz-form-item>
+                <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Name' | translate}}</nz-form-label>
+                <nz-form-control>
+                  <input type="text" nz-input [(ngModel)]="item.name" (ngModelChange)="item.dirty = true">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0">
+              <nz-divider [nzText]="gatheringHeader" nzOrientation="left">
+                <ng-template #gatheringHeader>
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                    <div>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Title' | translate}}</div>
+                    <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
+                            nzSize="small" nzShape="circle"
+                            (nzOnConfirm)="deleteCraft(item)"><i nz-icon type="delete"></i></button>
+                  </div>
+                </ng-template>
+              </nz-divider>
+              <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start flex-start">
+                <div *ngIf="item.craftedBy[0] as craft" fxLayout="column">
+                  <nz-alert nzType="warning" nzShowIcon
+                            *ngIf="item.requires === undefined || item.requires.length === 0"
+                            [nzMessage]="'CUSTOM_ITEMS.DETAILS.CRAFT.No_requirement_warning' | translate"
+                  ></nz-alert>
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
+                    <nz-form-item>
+                      <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Job' | translate}}</nz-form-label>
+                      <nz-form-control>
+                        <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="craft.jobId" class="job-select">
+                          <nz-option *ngFor="let job of availableCraftJobs" [nzValue]="job.id"
+                                     [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
+                            <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
+                            {{job.id | jobAbbr | i18n}}
+                          </nz-option>
+                        </nz-select>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Level' | translate}}</nz-form-label>
+                      <nz-form-control>
+                        <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="craft.level" [nzMin]="1"
+                                         [nzStep]="1"></nz-input-number>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Stars' | translate}}</nz-form-label>
+                      <nz-form-control>
+                        <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="craft.stars_tooltip">
+                          <nz-option [nzValue]="''" [nzLabel]="'CUSTOM_ITEMS.DETAILS.None' | translate">
+                          </nz-option>
+                          <nz-option [nzValue]="'★'" [nzLabel]="'★'">
+                          </nz-option>
+                          <nz-option [nzValue]="'★★'" [nzLabel]="'★★'">
+                          </nz-option>
+                          <nz-option [nzValue]="'★★★'" [nzLabel]="'★★★'">
+                          </nz-option>
+                          <nz-option [nzValue]="'★★★★'" [nzLabel]="'★★★★'">
+                          </nz-option>
+                        </nz-select>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Yields' | translate}}</nz-form-label>
+                      <nz-form-control>
+                        <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="item.yield" [nzMin]="1"
+                                         [nzStep]="1"></nz-input-number>
+                      </nz-form-control>
+                    </nz-form-item>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="item.requires !== undefined && item.requires.length > 0">
+              <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.Requirements' | translate" nzOrientation="left"></nz-divider>
+              <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start">
+                <div fxLayout="column" fxLayoutGap="5px">
+                  <div *ngFor="let ingredient of item.requires, trackBy: trackByRequirement" fxLayout="row"
+                       fxLayoutAlign="flex-start center"
+                       fxLayoutGap="5px">
+                    <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+                      <input type="text" nz-input [(ngModel)]="ingredient.amount" (ngModelChange)="item.dirty = true">
+                    </nz-input-group>
+                    <ng-template #addOnBeforeTemplate>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <div *ngIf="ingredient.custom">{{ingredient.id | customItemName | async}}</div>
+                        <div *ngIf="!ingredient.custom">{{ingredient.id | itemName | i18n}}</div>
+                      </div>
+                    </ng-template>
+                    <button nz-button nzType="danger"
+                            nzShape="circle"
+                            nzSize="small"
+                            [nzTitle]="'Confirm' | translate"
+                            nz-popconfirm (nzOnConfirm)="deleteIngredient(ingredient, item)">
+                      <i nz-icon type="delete"></i>
+                    </button>
+                  </div>
+                  <button nz-button (click)="addIngredient(item)" nzType="dashed">
+                    <i nz-icon type="plus"></i>{{'CUSTOM_ITEMS.DETAILS.Add_requirement' | translate}}
                   </button>
                 </div>
-              </ng-template>
-            </button>
-            <button nz-button nz-popconfirm [nzTitle]="'Confirm' | translate"
-                    nzShape="circle"
-                    nzType="danger"
-                    (click)="$event.stopPropagation()"
-                    (nzOnConfirm)="deleteCustomItem(item.$key)">
-              <i nz-icon type="delete"></i>
-            </button>
-          </div>
-        </div>
-      </ng-template>
-      <div class="item-form" fxLayout="column" fxLayoutGap="5px">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <h2>{{'CUSTOM_ITEMS.Details' | translate}}</h2>
-          <div>
-            <nz-dropdown [nzTrigger]="'click'" nz-tooltip [nzTitle]="'CUSTOM_ITEMS.Add_details' | translate">
-              <button nz-dropdown nz-button nzShape="circle" nzSize="small">
-                <i nz-icon type="plus"></i>
-              </button>
-              <ul nz-menu>
-                <li nz-menu-item
-                    (click)="addCraft(item)"
-                    *ngIf="item.craftedBy === undefined || item.craftedBy.length === 0">{{'CUSTOM_ITEMS.DETAILS.CRAFT.Title' | translate}}</li>
-                <li nz-menu-item
-                    (click)="addGathering(item)"
-                    *ngIf="item.gatheredBy === undefined">{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</li>
-                <li nz-menu-item
-                    (click)="addAlarm(item)">{{'CUSTOM_ITEMS.DETAILS.ALARMS.Title' | translate}}</li>
-                <li nz-menu-item
-                    (click)="addVendor(item)">{{'CUSTOM_ITEMS.DETAILS.VENDORS.Title' | translate}}</li>
-                <li nz-menu-item
-                    (click)="addTrade(item)">{{'CUSTOM_ITEMS.DETAILS.TRADES.Title' | translate}}</li>
-                <li nz-menu-item
-                    (click)="addReduction(item)">{{'CUSTOM_ITEMS.DETAILS.REDUCTION.Title' | translate}}</li>
-                <li nz-menu-item
-                    (click)="addIngredient(item)">{{'CUSTOM_ITEMS.DETAILS.Requirements' | translate}}</li>
-              </ul>
-            </nz-dropdown>
-          </div>
-        </div>
-        <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
-          <nz-form-item>
-            <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Name' | translate}}</nz-form-label>
-            <nz-form-control>
-              <input type="text" nz-input [(ngModel)]="item.name" (ngModelChange)="item.dirty = true">
-            </nz-form-control>
-          </nz-form-item>
-        </div>
-        <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0">
-          <nz-divider [nzText]="gatheringHeader" nzOrientation="left">
-            <ng-template #gatheringHeader>
-              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                <div>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Title' | translate}}</div>
-                <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
-                        nzSize="small" nzShape="circle"
-                        (nzOnConfirm)="deleteCraft(item)"><i nz-icon type="delete"></i></button>
               </div>
-            </ng-template>
-          </nz-divider>
-          <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start flex-start">
-            <div *ngIf="item.craftedBy[0] as craft" fxLayout="column">
-              <nz-alert nzType="warning" nzShowIcon
-                        *ngIf="item.requires === undefined || item.requires.length === 0"
-                        [nzMessage]="'CUSTOM_ITEMS.DETAILS.CRAFT.No_requirement_warning' | translate"
-              ></nz-alert>
+            </div>
+            <div *ngIf="item.gatheredBy !== undefined">
+              <nz-divider [nzText]="gatheringHeader" nzOrientation="left">
+                <ng-template #gatheringHeader>
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                    <div>{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</div>
+                    <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
+                            nzSize="small" nzShape="circle"
+                            (nzOnConfirm)="deleteGathering(item)"><i nz-icon type="delete"></i></button>
+                  </div>
+                </ng-template>
+              </nz-divider>
               <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
                 <nz-form-item>
-                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Job' | translate}}</nz-form-label>
+                  <nz-form-label
+                  >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Type' | translate}}</nz-form-label>
                   <nz-form-control>
-                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="craft.jobId" class="job-select">
-                      <nz-option *ngFor="let job of availableCraftJobs" [nzValue]="job.id"
-                                 [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
-                        <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
-                        {{job.id | jobAbbr | i18n}}
+                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.type">
+                      <nz-option [nzValue]="0" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(0 | nodeTypeName)) | translate">
+                      </nz-option>
+                      <nz-option [nzValue]="1" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(1 | nodeTypeName)) | translate">
+                      </nz-option>
+                      <nz-option [nzValue]="2" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(2 | nodeTypeName)) | translate">
+                      </nz-option>
+                      <nz-option [nzValue]="3" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(3 | nodeTypeName)) | translate">
+                      </nz-option>
+                      <nz-option [nzValue]="4" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(4 | nodeTypeName)) | translate">
                       </nz-option>
                     </nz-select>
                   </nz-form-control>
@@ -181,14 +278,15 @@
                 <nz-form-item>
                   <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Level' | translate}}</nz-form-label>
                   <nz-form-control>
-                    <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="craft.level" [nzMin]="1"
+                    <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.level" [nzMin]="1"
                                      [nzStep]="1"></nz-input-number>
                   </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
-                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Stars' | translate}}</nz-form-label>
+                  <nz-form-label
+                  >{{'CUSTOM_ITEMS.DETAILS.Stars' | translate}}</nz-form-label>
                   <nz-form-control>
-                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="craft.stars_tooltip">
+                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.stars_tooltip">
                       <nz-option [nzValue]="''" [nzLabel]="'CUSTOM_ITEMS.DETAILS.None' | translate">
                       </nz-option>
                       <nz-option [nzValue]="'★'" [nzLabel]="'★'">
@@ -203,382 +301,288 @@
                   </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
-                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Yields' | translate}}</nz-form-label>
+                  <nz-form-label>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
                   <nz-form-control>
-                    <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="item.yield" [nzMin]="1"
-                                     [nzStep]="1"></nz-input-number>
+                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.nodes[0].mapid"
+                               *ngIf="maps$ | async as maps; else loading"
+                               nzAllowClear nzShowSearch class="maps-select">
+                      <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
+                                 [nzValue]="map.ID"></nz-option>
+                    </nz-select>
+                    <ng-template #loading>
+                      <nz-spin></nz-spin>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label>X</nz-form-label>
+                  <nz-form-control>
+                    <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
+                                     [(ngModel)]="item.gatheredBy.nodes[0].coords[0]"></nz-input-number>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label>Y</nz-form-label>
+                  <nz-form-control>
+                    <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
+                                     [(ngModel)]="item.gatheredBy.nodes[0].coords[1]"></nz-input-number>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label
+                  >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Slot' | translate}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.nodes[0].slot"
+                               class="slot-select">
+                      <nz-option [nzValue]="'?'" [nzLabel]="'?'">
+                      </nz-option>
+                      <nz-option [nzValue]="1" [nzLabel]="1"></nz-option>
+                      <nz-option [nzValue]="2" [nzLabel]="2"></nz-option>
+                      <nz-option [nzValue]="3" [nzLabel]="3"></nz-option>
+                      <nz-option [nzValue]="4" [nzLabel]="4"></nz-option>
+                      <nz-option [nzValue]="5" [nzLabel]="5"></nz-option>
+                      <nz-option [nzValue]="6" [nzLabel]="6"></nz-option>
+                      <nz-option [nzValue]="7" [nzLabel]="7"></nz-option>
+                      <nz-option [nzValue]="8" [nzLabel]="8"></nz-option>
+                    </nz-select>
                   </nz-form-control>
                 </nz-form-item>
               </div>
             </div>
-          </div>
-        </div>
-        <div *ngIf="item.requires !== undefined && item.requires.length > 0">
-          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.Requirements' | translate" nzOrientation="left"></nz-divider>
-          <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start">
-            <div fxLayout="column" fxLayoutGap="5px">
-              <div *ngFor="let ingredient of item.requires, trackBy: trackByRequirement" fxLayout="row"
-                   fxLayoutAlign="flex-start center"
-                   fxLayoutGap="5px">
-                <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
-                  <input type="text" nz-input [(ngModel)]="ingredient.amount" (ngModelChange)="item.dirty = true">
-                </nz-input-group>
-                <ng-template #addOnBeforeTemplate>
-                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                    <div *ngIf="ingredient.custom">{{ingredient.id | customItemName | async}}</div>
-                    <div *ngIf="!ingredient.custom">{{ingredient.id | itemName | i18n}}</div>
+            <div *ngIf="item.alarms !== undefined && item.alarms.length > 0">
+              <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.ALARMS.Title' | translate" nzOrientation="left"></nz-divider>
+              <nz-list [nzDataSource]="item.alarms"
+                       [nzRenderItem]="alarmTemplate">
+                <ng-template #alarmTemplate let-alarm>
+                  <nz-list-item [nzContent]="alarmContent" [nzActions]="[editAlarmAction, deleteAlarmAction]">
+                    <ng-template #alarmContent>
+                      <app-map-position [mapId]="alarm.mapId" [marker]="alarm.coords"></app-map-position>
+                    </ng-template>
+                    <ng-template #editAlarmAction>
+                      <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
+                              (click)="editAlarm(item, alarm)">
+                        <i nz-icon type="edit"></i>
+                      </button>
+                    </ng-template>
+                    <ng-template #deleteAlarmAction>
+                      <button nz-button nzShape="circle" nzSize="small" nzType="danger" nz-tooltip
+                              [nzTitle]="'Confirm' | translate"
+                              nz-popconfirm (nzOnConfirm)="deleteAlarm(item, alarm)">
+                        <i nz-icon type="delete"></i>
+                      </button>
+                    </ng-template>
+                    <nz-list-item-meta
+                      [nzTitle]="alarmTitle"
+                      [nzDescription]="alarmDescription">
+                      <ng-template #alarmTitle>
+                        {{alarm.name}} ({{alarm.slot || '?'}})
+                      </ng-template>
+                      <ng-template #alarmDescription>
+                        <div fxLayout="row">
+                          <div *ngFor="let spawn of alarm.spawns; let last = last">
+                            {{spawn}}:00 - {{(spawn + alarm.duration) % 24}}:00<span *ngIf="!last">/</span>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </nz-list-item-meta>
+                  </nz-list-item>
+                </ng-template>
+              </nz-list>
+            </div>
+            <div *ngIf="item.vendors !== undefined && item.vendors.length > 0">
+              <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.VENDORS.Title' | translate" nzOrientation="left"></nz-divider>
+              <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start flex-start">
+                <div *ngFor="let vendor of item.vendors; trackBy: trackByVendor" fxLayout="column">
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
+                    <nz-form-item>
+                      <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.VENDORS.Npc_name' | translate}}</nz-form-label>
+                      <nz-form-control>
+                        <input type="text" nz-input disabled [ngModel]="vendor.npcId | npcName | i18n">
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.VENDORS.Price' | translate}}</nz-form-label>
+                      <nz-form-control>
+                        <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="vendor.price" [nzMin]="0"
+                                         [nzStep]="1"></nz-input-number>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
+                      <nz-form-control>
+                        <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="vendor.mapId"
+                                   *ngIf="maps$ | async as maps; else loading"
+                                   nzAllowClear nzShowSearch class="maps-select">
+                          <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
+                                     [nzValue]="map.ID"></nz-option>
+                        </nz-select>
+                        <ng-template #loading>
+                          <nz-spin></nz-spin>
+                        </ng-template>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label>X</nz-form-label>
+                      <nz-form-control>
+                        <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
+                                         [(ngModel)]="vendor.coords.x"></nz-input-number>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label>Y</nz-form-label>
+                      <nz-form-control>
+                        <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
+                                         [(ngModel)]="vendor.coords.y"></nz-input-number>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label class="fake-form-label"></nz-form-label>
+                      <nz-form-control>
+                        <button nz-button nzType="danger"
+                                [nzTitle]="'Confirm' | translate"
+                                nz-popconfirm (nzOnConfirm)="deleteVendor(item, vendor)">
+                          <i nz-icon type="delete"></i> {{'CUSTOM_ITEMS.DETAILS.VENDORS.Delete_vendor' | translate}}
+                        </button>
+                      </nz-form-control>
+                    </nz-form-item>
                   </div>
-                </ng-template>
-                <button nz-button nzType="danger"
-                        nzShape="circle"
-                        nzSize="small"
-                        [nzTitle]="'Confirm' | translate"
-                        nz-popconfirm (nzOnConfirm)="deleteIngredient(ingredient, item)">
-                  <i nz-icon type="delete"></i>
-                </button>
-              </div>
-              <button nz-button (click)="addIngredient(item)" nzType="dashed">
-                <i nz-icon type="plus"></i>{{'CUSTOM_ITEMS.DETAILS.Add_requirement' | translate}}
-              </button>
-            </div>
-          </div>
-        </div>
-        <div *ngIf="item.gatheredBy !== undefined">
-          <nz-divider [nzText]="gatheringHeader" nzOrientation="left">
-            <ng-template #gatheringHeader>
-              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                <div>{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</div>
-                <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
-                        nzSize="small" nzShape="circle"
-                        (nzOnConfirm)="deleteGathering(item)"><i nz-icon type="delete"></i></button>
-              </div>
-            </ng-template>
-          </nz-divider>
-          <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
-            <nz-form-item>
-              <nz-form-label
-              >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Type' | translate}}</nz-form-label>
-              <nz-form-control>
-                <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.type">
-                  <nz-option [nzValue]="0" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(0 | nodeTypeName)) | translate">
-                  </nz-option>
-                  <nz-option [nzValue]="1" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(1 | nodeTypeName)) | translate">
-                  </nz-option>
-                  <nz-option [nzValue]="2" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(2 | nodeTypeName)) | translate">
-                  </nz-option>
-                  <nz-option [nzValue]="3" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(3 | nodeTypeName)) | translate">
-                  </nz-option>
-                  <nz-option [nzValue]="4" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(4 | nodeTypeName)) | translate">
-                  </nz-option>
-                </nz-select>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Level' | translate}}</nz-form-label>
-              <nz-form-control>
-                <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.level" [nzMin]="1"
-                                 [nzStep]="1"></nz-input-number>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-label
-              >{{'CUSTOM_ITEMS.DETAILS.Stars' | translate}}</nz-form-label>
-              <nz-form-control>
-                <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.stars_tooltip">
-                  <nz-option [nzValue]="''" [nzLabel]="'CUSTOM_ITEMS.DETAILS.None' | translate">
-                  </nz-option>
-                  <nz-option [nzValue]="'★'" [nzLabel]="'★'">
-                  </nz-option>
-                  <nz-option [nzValue]="'★★'" [nzLabel]="'★★'">
-                  </nz-option>
-                  <nz-option [nzValue]="'★★★'" [nzLabel]="'★★★'">
-                  </nz-option>
-                  <nz-option [nzValue]="'★★★★'" [nzLabel]="'★★★★'">
-                  </nz-option>
-                </nz-select>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-label>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
-              <nz-form-control>
-                <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.nodes[0].mapid"
-                           *ngIf="maps$ | async as maps; else loading"
-                           nzAllowClear nzShowSearch class="maps-select">
-                  <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
-                             [nzValue]="map.ID"></nz-option>
-                </nz-select>
-                <ng-template #loading>
-                  <nz-spin></nz-spin>
-                </ng-template>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-label>X</nz-form-label>
-              <nz-form-control>
-                <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
-                                 [(ngModel)]="item.gatheredBy.nodes[0].coords[0]"></nz-input-number>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-label>Y</nz-form-label>
-              <nz-form-control>
-                <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
-                                 [(ngModel)]="item.gatheredBy.nodes[0].coords[1]"></nz-input-number>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-label
-              >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Slot' | translate}}</nz-form-label>
-              <nz-form-control>
-                <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.nodes[0].slot"
-                           class="slot-select">
-                  <nz-option [nzValue]="'?'" [nzLabel]="'?'">
-                  </nz-option>
-                  <nz-option [nzValue]="1" [nzLabel]="1"></nz-option>
-                  <nz-option [nzValue]="2" [nzLabel]="2"></nz-option>
-                  <nz-option [nzValue]="3" [nzLabel]="3"></nz-option>
-                  <nz-option [nzValue]="4" [nzLabel]="4"></nz-option>
-                  <nz-option [nzValue]="5" [nzLabel]="5"></nz-option>
-                  <nz-option [nzValue]="6" [nzLabel]="6"></nz-option>
-                  <nz-option [nzValue]="7" [nzLabel]="7"></nz-option>
-                  <nz-option [nzValue]="8" [nzLabel]="8"></nz-option>
-                </nz-select>
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-        </div>
-        <div *ngIf="item.alarms !== undefined && item.alarms.length > 0">
-          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.ALARMS.Title' | translate" nzOrientation="left"></nz-divider>
-          <nz-list [nzDataSource]="item.alarms"
-                   [nzRenderItem]="alarmTemplate">
-            <ng-template #alarmTemplate let-alarm>
-              <nz-list-item [nzContent]="alarmContent" [nzActions]="[editAlarmAction, deleteAlarmAction]">
-                <ng-template #alarmContent>
-                  <app-map-position [mapId]="alarm.mapId" [marker]="alarm.coords"></app-map-position>
-                </ng-template>
-                <ng-template #editAlarmAction>
-                  <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
-                          (click)="editAlarm(item, alarm)">
-                    <i nz-icon type="edit"></i>
-                  </button>
-                </ng-template>
-                <ng-template #deleteAlarmAction>
-                  <button nz-button nzShape="circle" nzSize="small" nzType="danger" nz-tooltip
-                          [nzTitle]="'Confirm' | translate"
-                          nz-popconfirm (nzOnConfirm)="deleteAlarm(item, alarm)">
-                    <i nz-icon type="delete"></i>
-                  </button>
-                </ng-template>
-                <nz-list-item-meta
-                  [nzTitle]="alarmTitle"
-                  [nzDescription]="alarmDescription">
-                  <ng-template #alarmTitle>
-                    {{alarm.name}} ({{alarm.slot || '?'}})
-                  </ng-template>
-                  <ng-template #alarmDescription>
-                    <div fxLayout="row">
-                      <div *ngFor="let spawn of alarm.spawns; let last = last">
-                        {{spawn}}:00 - {{(spawn + alarm.duration) % 24}}:00<span *ngIf="!last">/</span>
-                      </div>
-                    </div>
-                  </ng-template>
-                </nz-list-item-meta>
-              </nz-list-item>
-            </ng-template>
-          </nz-list>
-        </div>
-        <div *ngIf="item.vendors !== undefined && item.vendors.length > 0">
-          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.VENDORS.Title' | translate" nzOrientation="left"></nz-divider>
-          <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start flex-start">
-            <div *ngFor="let vendor of item.vendors; trackBy: trackByVendor" fxLayout="column">
-              <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
-                <nz-form-item>
-                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.VENDORS.Npc_name' | translate}}</nz-form-label>
-                  <nz-form-control>
-                    <input type="text" nz-input disabled [ngModel]="vendor.npcId | npcName | i18n">
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.VENDORS.Price' | translate}}</nz-form-label>
-                  <nz-form-control>
-                    <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="vendor.price" [nzMin]="0"
-                                     [nzStep]="1"></nz-input-number>
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
-                  <nz-form-control>
-                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="vendor.mapId"
-                               *ngIf="maps$ | async as maps; else loading"
-                               nzAllowClear nzShowSearch class="maps-select">
-                      <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
-                                 [nzValue]="map.ID"></nz-option>
-                    </nz-select>
-                    <ng-template #loading>
-                      <nz-spin></nz-spin>
-                    </ng-template>
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label>X</nz-form-label>
-                  <nz-form-control>
-                    <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
-                                     [(ngModel)]="vendor.coords.x"></nz-input-number>
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label>Y</nz-form-label>
-                  <nz-form-control>
-                    <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
-                                     [(ngModel)]="vendor.coords.y"></nz-input-number>
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label class="fake-form-label"></nz-form-label>
-                  <nz-form-control>
-                    <button nz-button nzType="danger"
-                            [nzTitle]="'Confirm' | translate"
-                            nz-popconfirm (nzOnConfirm)="deleteVendor(item, vendor)">
-                      <i nz-icon type="delete"></i> {{'CUSTOM_ITEMS.DETAILS.VENDORS.Delete_vendor' | translate}}
-                    </button>
-                  </nz-form-control>
-                </nz-form-item>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div *ngIf="item.tradeSources !== undefined && item.tradeSources.length > 0">
-          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.TRADES.Title' | translate" nzOrientation="left"></nz-divider>
-          <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start flex-start">
-            <div *ngFor="let tradeSource of item.tradeSources; trackBy: trackByTradeSource" fxLayout="column">
-              <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
-                <nz-form-item>
-                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Npc_name' | translate}}</nz-form-label>
-                  <nz-form-control>
-                    <input type="text" nz-input disabled [ngModel]="tradeSource.npcs[0].id | npcName | i18n">
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Shop_name' | translate}}</nz-form-label>
-                  <nz-form-control>
-                    <input type="text" nz-input [(ngModel)]="tradeSource.shopName" (ngModelChange)="item.dirty = true">
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
-                  <nz-form-control>
-                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="tradeSource.npcs[0].mapId"
-                               *ngIf="maps$ | async as maps; else loading"
-                               nzAllowClear nzShowSearch class="maps-select">
-                      <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
-                                 [nzValue]="map.ID"></nz-option>
-                    </nz-select>
-                    <ng-template #loading>
-                      <nz-spin></nz-spin>
-                    </ng-template>
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label>X</nz-form-label>
-                  <nz-form-control>
-                    <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
-                                     [(ngModel)]="tradeSource.npcs[0].coords.x"></nz-input-number>
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label>Y</nz-form-label>
-                  <nz-form-control>
-                    <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
-                                     [(ngModel)]="tradeSource.npcs[0].coords.y"></nz-input-number>
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label class="fake-form-label"></nz-form-label>
-                  <nz-form-control>
-                    <button nz-button nzType="danger"
-                            [nzTitle]="'Confirm' | translate"
-                            nz-popconfirm (nzOnConfirm)="deleteTrade(item, tradeSource)">
-                      <i nz-icon type="delete"></i> {{'CUSTOM_ITEMS.DETAILS.TRADES.Delete_trade' | translate}}
-                    </button>
-                  </nz-form-control>
-                </nz-form-item>
-              </div>
-              <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" *ngFor="let trade of tradeSource.trades">
-                <nz-form-item>
-                  <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Trade_details' | translate}}</nz-form-label>
-                  <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                    <div fxLayout="column" fxLayoutGap="5px">
-                      <div *ngFor="let currency of trade.currencies" fxLayout="row" fxLayoutAlign="flex-start center"
-                           fxLayoutGap="5px">
+            <div *ngIf="item.tradeSources !== undefined && item.tradeSources.length > 0">
+              <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.TRADES.Title' | translate" nzOrientation="left"></nz-divider>
+              <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start flex-start">
+                <div *ngFor="let tradeSource of item.tradeSources; trackBy: trackByTradeSource" fxLayout="column">
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">
+                    <nz-form-item>
+                      <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Npc_name' | translate}}</nz-form-label>
+                      <nz-form-control>
+                        <input type="text" nz-input disabled [ngModel]="tradeSource.npcs[0].id | npcName | i18n">
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Shop_name' | translate}}</nz-form-label>
+                      <nz-form-control>
+                        <input type="text" nz-input [(ngModel)]="tradeSource.shopName" (ngModelChange)="item.dirty = true">
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
+                      <nz-form-control>
+                        <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="tradeSource.npcs[0].mapId"
+                                   *ngIf="maps$ | async as maps; else loading"
+                                   nzAllowClear nzShowSearch class="maps-select">
+                          <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
+                                     [nzValue]="map.ID"></nz-option>
+                        </nz-select>
+                        <ng-template #loading>
+                          <nz-spin></nz-spin>
+                        </ng-template>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label>X</nz-form-label>
+                      <nz-form-control>
+                        <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
+                                         [(ngModel)]="tradeSource.npcs[0].coords.x"></nz-input-number>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label>Y</nz-form-label>
+                      <nz-form-control>
+                        <nz-input-number [nzMin]="0" (ngModelChange)="item.dirty = true"
+                                         [(ngModel)]="tradeSource.npcs[0].coords.y"></nz-input-number>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label class="fake-form-label"></nz-form-label>
+                      <nz-form-control>
+                        <button nz-button nzType="danger"
+                                [nzTitle]="'Confirm' | translate"
+                                nz-popconfirm (nzOnConfirm)="deleteTrade(item, tradeSource)">
+                          <i nz-icon type="delete"></i> {{'CUSTOM_ITEMS.DETAILS.TRADES.Delete_trade' | translate}}
+                        </button>
+                      </nz-form-control>
+                    </nz-form-item>
+                  </div>
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" *ngFor="let trade of tradeSource.trades">
+                    <nz-form-item>
+                      <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Trade_details' | translate}}</nz-form-label>
+                      <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                        <div fxLayout="column" fxLayoutGap="5px">
+                          <div *ngFor="let currency of trade.currencies" fxLayout="row" fxLayoutAlign="flex-start center"
+                               fxLayoutGap="5px">
+                            <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
+                              <input type="text" nz-input [(ngModel)]="currency.amount" (ngModelChange)="item.dirty = true">
+                            </nz-input-group>
+                            <ng-template #addOnBeforeTemplate>
+                              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                                <app-item-icon [itemId]="currency.id" [icon]="currency.icon" [width]="14"></app-item-icon>
+                                <div>{{currency.id | itemName | i18n}}</div>
+                              </div>
+                            </ng-template>
+                            <ng-template #addOnAfterTemplate>
+                              <label nz-checkbox [(ngModel)]="currency.hq"
+                                     (ngModelChange)="item.dirty = true">{{'HQ' | translate}}</label>
+                            </ng-template>
+                            <button nz-button nzType="danger"
+                                    nzShape="circle"
+                                    nzSize="small"
+                                    [nzTitle]="'Confirm' | translate"
+                                    nz-popconfirm (nzOnConfirm)="deleteCurrency(item, trade, currency)">
+                              <i nz-icon type="delete"></i>
+                            </button>
+                          </div>
+                          <button nz-button (click)="addCurrency(item, trade)" nzType="dashed">
+                            <i nz-icon type="plus"></i>{{'CUSTOM_ITEMS.DETAILS.TRADES.Add_currency' | translate}}
+                          </button>
+                        </div>
+                        <i nz-icon type="arrow-down"></i>
                         <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
-                          <input type="text" nz-input [(ngModel)]="currency.amount" (ngModelChange)="item.dirty = true">
+                          <input type="number" nz-input [(ngModel)]="trade.items[0].amount"
+                                 (ngModelChange)="item.dirty = true">
                         </nz-input-group>
                         <ng-template #addOnBeforeTemplate>
-                          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                            <app-item-icon [itemId]="currency.id" [icon]="currency.icon" [width]="14"></app-item-icon>
-                            <div>{{currency.id | itemName | i18n}}</div>
-                          </div>
+                          {{item.name}}
                         </ng-template>
                         <ng-template #addOnAfterTemplate>
-                          <label nz-checkbox [(ngModel)]="currency.hq"
+                          <label nz-checkbox [(ngModel)]="trade.items[0].hq"
                                  (ngModelChange)="item.dirty = true">{{'HQ' | translate}}</label>
                         </ng-template>
-                        <button nz-button nzType="danger"
-                                nzShape="circle"
-                                nzSize="small"
-                                [nzTitle]="'Confirm' | translate"
-                                nz-popconfirm (nzOnConfirm)="deleteCurrency(item, trade, currency)">
-                          <i nz-icon type="delete"></i>
-                        </button>
                       </div>
-                      <button nz-button (click)="addCurrency(item, trade)" nzType="dashed">
-                        <i nz-icon type="plus"></i>{{'CUSTOM_ITEMS.DETAILS.TRADES.Add_currency' | translate}}
-                      </button>
-                    </div>
-                    <i nz-icon type="arrow-down"></i>
-                    <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
-                      <input type="number" nz-input [(ngModel)]="trade.items[0].amount"
-                             (ngModelChange)="item.dirty = true">
-                    </nz-input-group>
-                    <ng-template #addOnBeforeTemplate>
-                      {{item.name}}
-                    </ng-template>
-                    <ng-template #addOnAfterTemplate>
-                      <label nz-checkbox [(ngModel)]="trade.items[0].hq"
-                             (ngModelChange)="item.dirty = true">{{'HQ' | translate}}</label>
-                    </ng-template>
+                    </nz-form-item>
                   </div>
-                </nz-form-item>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0">
-          <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.REDUCTION.Title' | translate" nzOrientation="left"></nz-divider>
-          <nz-list [nzDataSource]="item.reducedFrom"
-                   [nzRenderItem]="reductionTemplate">
-            <ng-template #reductionTemplate let-reduction>
-              <nz-list-item [nzActions]="[deleteReductionAction]">
-                <ng-template #deleteReductionAction>
-                  <button nz-button nzShape="circle" nzSize="small" nzType="danger" nz-tooltip
-                          [nzTitle]="'Confirm' | translate"
-                          nz-popconfirm (nzOnConfirm)="deleteReduction(item, reduction)">
-                    <i nz-icon type="delete"></i>
-                  </button>
+            <div *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0">
+              <nz-divider [nzText]="'CUSTOM_ITEMS.DETAILS.REDUCTION.Title' | translate" nzOrientation="left"></nz-divider>
+              <nz-list [nzDataSource]="item.reducedFrom"
+                       [nzRenderItem]="reductionTemplate">
+                <ng-template #reductionTemplate let-reduction>
+                  <nz-list-item [nzActions]="[deleteReductionAction]">
+                    <ng-template #deleteReductionAction>
+                      <button nz-button nzShape="circle" nzSize="small" nzType="danger" nz-tooltip
+                              [nzTitle]="'Confirm' | translate"
+                              nz-popconfirm (nzOnConfirm)="deleteReduction(item, reduction)">
+                        <i nz-icon type="delete"></i>
+                      </button>
+                    </ng-template>
+                    <nz-list-item-meta [nzAvatar]="reduction.obj.c | icon"
+                                       [nzTitle]="reduction.obj.i | itemName | i18n"></nz-list-item-meta>
+                  </nz-list-item>
                 </ng-template>
-                <nz-list-item-meta [nzAvatar]="reduction.obj.c | icon"
-                                   [nzTitle]="reduction.obj.i | itemName | i18n"></nz-list-item-meta>
-              </nz-list-item>
-            </ng-template>
-          </nz-list>
-        </div>
-        <button nz-button nzBlock nzType="primary" (click)="updateCustomItem(item)" [disabled]="!item.dirty"
-                class="save-button">
-          {{'CUSTOM_ITEMS.Save' | translate}}
-        </button>
-      </div>
-    </nz-collapse-panel>
-  </nz-collapse>
+              </nz-list>
+            </div>
+            <button nz-button nzBlock nzType="primary" (click)="updateCustomItem(item)" [disabled]="!item.dirty"
+                    class="save-button">
+              {{'CUSTOM_ITEMS.Save' | translate}}
+            </button>
+          </div>
+        </nz-collapse-panel>
+      </nz-collapse>
+    </ng-template>
+  </div>
 </ng-template>
 
 <ng-template #notificationRef let-notification>

@@ -125,6 +125,7 @@
     "electron-oauth-helper": "^2.0.3",
     "electron-updater": "3.2.3",
     "express": "^4.16.4",
+    "file-saver": "^2.0.1",
     "firebase": "^5.5.0",
     "hammerjs": "^2.0.8",
     "jwt-decode": "^2.2.0",
