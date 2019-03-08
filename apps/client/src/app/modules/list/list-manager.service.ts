@@ -231,7 +231,7 @@ export class ListManagerService {
         skip(add.length - 1),
         map((resultList: List) => {
           backup.forEach(row => {
-            const listRow = resultList[row.array].find(item => item.id === row.item.id);
+            const listRow = resultList[row.array].find(item => item.id === row.item.id || item.id === row.realItemId);
             if (listRow !== undefined) {
               if (row.item.comments !== undefined) {
                 listRow.comments = row.item.comments;
