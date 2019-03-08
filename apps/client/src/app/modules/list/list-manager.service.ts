@@ -6,7 +6,7 @@ import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { Ingredient } from '../../model/garland-tools/ingredient';
 import { DataExtractorService } from './data/data-extractor.service';
-import { filter, first, map, skip, switchMap, tap } from 'rxjs/operators';
+import { catchError, filter, first, map, skip, switchMap, tap } from 'rxjs/operators';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
@@ -74,7 +74,18 @@ export class ListManagerService {
           if (data instanceof ItemData) {
             return this.processItemAddition(data, +itemId, amount, collectible, recipeId);
           } else {
-            return this.processCustomItemAddition(data as CustomItem, amount);
+            if (data.realItemId !== undefined) {
+              return this.db.getItem(data.realItemId).pipe(
+                switchMap(itemData => {
+                  return this.processItemAddition(itemData, data.realItemId, amount, collectible, recipeId);
+                }),
+                catchError(() => {
+                  return this.processCustomItemAddition(data as CustomItem, amount);
+                }),
+              );
+            } else {
+              return this.processCustomItemAddition(data as CustomItem, amount);
+            }
           }
         }),
         // merge the addition list with the list we want to add items in.
