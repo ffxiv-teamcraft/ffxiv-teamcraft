@@ -152,7 +152,6 @@ export class List extends DataWithPermissions {
    * @returns {List}
    */
   public clean(): List {
-    console.log('BEFORE', JSON.parse(JSON.stringify(this)));
     for (const prop of Object.keys(this)) {
       if (['finalItems', 'items'].indexOf(prop) > -1) {
         // We don't want to check the amount of items required for recipes, as they can't be wrong (provided by the user only).
@@ -169,7 +168,6 @@ export class List extends DataWithPermissions {
         this[prop] = this[prop].filter(row => row.amount > 0);
       }
     }
-    console.log('AFTER', JSON.parse(JSON.stringify(this)));
     return this;
   }
 
@@ -180,7 +178,6 @@ export class List extends DataWithPermissions {
   public getItemById(id: number | string, excludeFinalItems: boolean = false, recipeId?: string): ListRow {
     const array = excludeFinalItems ? this.items : this.items.concat(this.finalItems);
     return array.find(row => {
-      console.log(row, id);
       let matches = row.id === id || row.id === +id || (row.$key !== undefined && row.$key === id);
       if (recipeId !== undefined) {
         matches = matches && row.recipeId === recipeId;

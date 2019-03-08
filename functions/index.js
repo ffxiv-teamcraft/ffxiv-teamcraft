@@ -16,11 +16,12 @@ function getCompact(list) {
     };
     if (item.custom) {
       entry.$key = item.$key;
+      entry.id = item.id;
       entry.custom = true;
       entry.name = item.name;
     } else {
       entry.id = item.id;
-      entry.icon = item.icon;
+      entry.icon = item.icon || '';
     }
     if (item.recipeId !== undefined) {
       entry.recipeId = item.recipeId;

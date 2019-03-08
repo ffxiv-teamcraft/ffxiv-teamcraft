@@ -67,6 +67,9 @@ export class ListManagerService {
           }
         }),
         switchMap(([, data]: [Team, ItemData | CustomItem]) => {
+          if (data === undefined) {
+            return of(new List());
+          }
           // If it's a standard item, add it with the classic implementation.
           if (data instanceof ItemData) {
             return this.processItemAddition(data, +itemId, amount, collectible, recipeId);
