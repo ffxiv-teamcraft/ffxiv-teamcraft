@@ -122,6 +122,9 @@ export class CustomItemsComponent {
   public importItems(): void {
     this.dialog.create({
       nzContent: CustomItemsImportPopupComponent,
+      nzComponentParams: {
+        availableCraftJobs: this.availableCraftJobs
+      },
       nzFooter: null,
       nzTitle: this.translate.instant('CUSTOM_ITEMS.Import_items')
     });

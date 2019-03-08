@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import {
-  CreateCustomItem, CreateCustomItemFolder, CustomItemFoldersLoaded,
+  CreateCustomItem,
+  CreateCustomItemFolder,
+  CustomItemFoldersLoaded,
   CustomItemsActionTypes,
   CustomItemsLoaded,
-  DeleteCustomItem, DeleteCustomItemFolder,
-  UpdateCustomItem, UpdateCustomItemFolder
+  DeleteCustomItem,
+  DeleteCustomItemFolder,
+  UpdateCustomItem,
+  UpdateCustomItemFolder
 } from './custom-items.actions';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { CustomItemsService } from '../custom-items.service';
@@ -35,7 +39,11 @@ export class CustomItemsEffects {
     withLatestFrom(this.authFacade.userId$),
     switchMap(([action, userId]) => {
       action.payload.authorId = userId;
-      return this.customItemsService.add(action.payload);
+      if (action.payload.$key === undefined) {
+        return this.customItemsService.add(action.payload);
+      } else {
+        return this.customItemsService.set(action.payload.$key, action.payload).pipe(map(() => action.payload.$key));
+      }
     })
   );
 
@@ -46,7 +54,7 @@ export class CustomItemsEffects {
     switchMap(action => {
       delete action.payload.folderId;
       delete action.payload.dirty;
-      return this.customItemsService.update(action.payload.$key, action.payload)
+      return this.customItemsService.update(action.payload.$key, action.payload);
     })
   );
 

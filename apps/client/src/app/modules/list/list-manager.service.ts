@@ -35,7 +35,7 @@ export class ListManagerService {
     this.customItemsFacade.allCustomItems$.subscribe(items => this.customItemsSync = items);
   }
 
-  public addToList(itemId: number | string, list: List, recipeId: string | number, amount = 1, collectible = false, ignoreHooks = false): Observable<List> {
+  public addToList(itemId: number | string, list: List, recipeId: string | number, amount = 1, collectible = false, ignoreHooks = false, upgradeCustom = false): Observable<List> {
     let team$ = of(null);
     if (list.teamId && !ignoreHooks) {
       this.teamsFacade.loadTeam(list.teamId);
@@ -74,7 +74,7 @@ export class ListManagerService {
           if (data instanceof ItemData) {
             return this.processItemAddition(data, +itemId, amount, collectible, recipeId);
           } else {
-            if (data.realItemId !== undefined) {
+            if (data.realItemId !== undefined && upgradeCustom) {
               return this.db.getItem(data.realItemId).pipe(
                 switchMap(itemData => {
                   return this.processItemAddition(itemData, data.realItemId, amount, collectible, recipeId);
@@ -220,7 +220,7 @@ export class ListManagerService {
     });
     const add: Observable<List>[] = [];
     list.finalItems.forEach((recipe) => {
-      add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount, recipe.yield === 1, true));
+      add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount, recipe.yield === 1, true, true));
     });
     list.items = [];
     list.finalItems = [];

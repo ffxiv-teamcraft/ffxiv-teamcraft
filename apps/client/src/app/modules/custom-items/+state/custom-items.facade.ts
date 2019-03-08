@@ -7,7 +7,8 @@ import { customItemsQuery } from './custom-items.selectors';
 import {
   CreateCustomItem,
   CreateCustomItemFolder,
-  DeleteCustomItem, DeleteCustomItemFolder,
+  DeleteCustomItem,
+  DeleteCustomItemFolder,
   LoadCustomItemFolders,
   LoadCustomItems,
   UpdateCustomItem,
@@ -18,6 +19,7 @@ import { CustomItemFolder } from '../model/custom-item-folder';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CustomItemsDisplay } from './custom-items-display';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +54,7 @@ export class CustomItemsFacade {
     })
   );
 
-  constructor(private store: Store<CustomItemsPartialState>) {
+  constructor(private store: Store<CustomItemsPartialState>, private firestore: AngularFirestore) {
   }
 
   addCustomItem(item: CustomItem): void {
@@ -85,5 +87,9 @@ export class CustomItemsFacade {
 
   loadAllFolders() {
     this.store.dispatch(new LoadCustomItemFolders());
+  }
+
+  createId(): string {
+    return this.firestore.createId();
   }
 }
