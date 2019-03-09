@@ -15,9 +15,9 @@
       <div>
         {{'CUSTOM_ITEMS.IMPORT.Folder' | translate}}:
       </div>
-      <nz-select [(ngModel)]="folder">
-        <nz-option [nzValue]="''" [nzLabel]="'CUSTOM_ITEMS.IMPORT.No_folder'"></nz-option>
-        <nz-option *ngFor="let folder of folders" [nzValue]="folder.$key" [nzLabel]="folder.name"></nz-option>
+      <nz-select [(ngModel)]="folder" nzAllowClear [nzPlaceHolder]="'CUSTOM_ITEMS.IMPORT.No_folder' | translate"
+      class="folder-select">
+        <nz-option *ngFor="let folder of folders" [nzValue]="folder" [nzLabel]="folder.name"></nz-option>
       </nz-select>
     </div>
   </ng-container>

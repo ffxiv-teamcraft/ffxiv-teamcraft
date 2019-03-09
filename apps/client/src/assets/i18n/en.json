@@ -884,7 +884,9 @@
     "IMPORT": {
       "Corrupted_file": "Import file is corrupted or wrong format",
       "Drag_or_click": "Drag the file here or click to select it",
-      "Format": "Format"
+      "Format": "Format",
+      "Folder": "Folder",
+      "No_folder": "No folder"
     }
   }
 }

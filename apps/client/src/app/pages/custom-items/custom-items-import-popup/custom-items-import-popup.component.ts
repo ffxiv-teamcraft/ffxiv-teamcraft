@@ -4,12 +4,13 @@ import { combineLatest, EMPTY, Observable, of, Subscription } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';
 import { CustomItemsFacade } from '../../../modules/custom-items/+state/custom-items.facade';
-import { catchError, expand, filter, first, map, tap } from 'rxjs/operators';
+import { catchError, expand, filter, first, map, switchMap, tap } from 'rxjs/operators';
 import * as Papa from 'papaparse';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
 import { DataService } from '../../../core/api/data.service';
+import { Ingredient } from '../../../model/garland-tools/ingredient';
 
 @Component({
   selector: 'app-custom-items-import-popup',
@@ -20,7 +21,7 @@ export class CustomItemsImportPopupComponent {
 
   public format = 'TC';
 
-  public folder = '';
+  public folder: CustomItemFolder;
 
   public hideUpload = false;
 
@@ -115,10 +116,7 @@ export class CustomItemsImportPopupComponent {
         Object.assign(item, itemData);
         delete item.authorId;
         delete item.folderId;
-        delete item.$key;
-        if (this.folder !== '') {
-          item.folderId = this.folder;
-        }
+        item.$key = this.customItemsFacade.createId();
         // If it has requirements, map them to the new items.
         if (item.requires !== undefined) {
           item.requires = item.requires.map(req => {
@@ -134,6 +132,10 @@ export class CustomItemsImportPopupComponent {
           });
         }
         this.customItemsFacade.addCustomItem(item);
+        if (this.folder !== undefined) {
+          this.folder.items.push(item.$key);
+          this.customItemsFacade.updateCustomItemFolder(this.folder);
+        }
         return this.customItemsFacade.allCustomItems$.pipe(
           filter(availableItems => {
             return availableItems.some(i => i.name === item.name && i.$key !== undefined && i.createdAt === item.createdAt);
@@ -190,37 +192,31 @@ export class CustomItemsImportPopupComponent {
       item.$key = this.customItemsFacade.createId();
       item.name = row[4];
       item.yield = +row[5];
+      item.realItemId = +row[45];
       item.craftedBy = [{
         recipeId: row[2],
-        jobId: this.craftTypes.indexOf(row[3]) + 8,
+        jobId: +this.craftTypes.indexOf(row[2]) + 8,
         icon: '',
-        itemId: item.$key,
+        itemId: +row[45],
         level: 70,
         stars_tooltip: ''
       }];
       item.craftedBy[0].icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === item.craftedBy[0].jobId).abbreviation}.png`;
-      const matches = Object.keys(allItems).filter(key => {
-        return this.i18n.getName(allItems[key]).toLowerCase() === item.name.toLowerCase();
-      });
-      if (this.folder !== '') {
-        item.folderId = this.folder;
-      }
-      if (matches) {
-        item.realItemId = +matches;
-        item.craftedBy[0].itemId = +matches;
-      }
       return { item: item, meta: row };
     });
     // Then, for each parsed row, let's populate an ingredient array, for the same purpose (will contain only the ones that aren't listed as recipe already)
     const ingredients: CustomItem[] = [];
     parsedToItems.forEach(entry => {
       for (let ingredientIndex = 6; ingredientIndex < 25; ingredientIndex += 2) {
+        if (entry.meta[ingredientIndex] === '') {
+          continue;
+        }
         const ingredient = new CustomItem();
         ingredient.name = entry.meta[ingredientIndex];
         const matches = Object.keys(allItems).filter(key => {
           return this.i18n.getName(allItems[key]).toLowerCase() === ingredient.name.toLowerCase();
         });
-        if (!ingredients.some(i => i.name === entry.item.name)) {
+        if (!ingredients.some(i => i.name === ingredient.name)) {
           ingredients.push(ingredient);
         }
         if (matches) {
@@ -229,10 +225,10 @@ export class CustomItemsImportPopupComponent {
       }
     });
     // Once ingredients are ready, let's see what needs to be custom or what is already an item
-    combineLatest(
+    return combineLatest(
       ingredients.map(ingredient => {
         // If it has no real item id found, it's a custom one.
-        if (ingredient.realItemId === undefined) {
+        if (ingredient.realItemId === undefined || ingredient.realItemId === 0) {
           return of({ ingredient: ingredient, isCustom: true });
         }
         // Else try to get it on GT
@@ -248,10 +244,58 @@ export class CustomItemsImportPopupComponent {
       })
     ).pipe(
       map(ingredientEntries => {
-        // TODO
+        const reqs = ingredientEntries.map(entry => {
+          if (entry.isCustom) {
+            entry.ingredient.$key = this.customItemsFacade.createId();
+          }
+          return entry;
+        });
+        return this.topologicalSort(parsedToItems.map(({ item, meta }) => {
+          for (let ingredientIndex = 6; ingredientIndex < 25; ingredientIndex += 2) {
+            if (meta[ingredientIndex] === '') {
+              continue;
+            }
+            const ingredientName = meta[ingredientIndex];
+            item.requires = item.requires || [];
+            const ingredientEntry = ingredientEntries.find(i => i.ingredient.name === ingredientName);
+            const req: Ingredient = {
+              id: ingredientEntry.isCustom ? ingredientEntry.ingredient.$key : ingredientEntry.ingredient.realItemId,
+              amount: meta[ingredientIndex + 1]
+            };
+            if (ingredientEntry.isCustom) {
+              req.custom = true;
+            }
+          }
+          return item;
+        }).concat(reqs.filter(entry => entry.isCustom).map(entry => entry.ingredient)));
+      }),
+      switchMap(sortedItems => {
+        let index = -1;
+        return this.customItemsFacade.allCustomItems$.pipe(
+          first(),
+          expand(() => {
+            if (sortedItems[index] === undefined) {
+              return EMPTY;
+            }
+            const item = sortedItems[index];
+            this.customItemsFacade.addCustomItem(item);
+            if (this.folder !== undefined) {
+              this.folder.items.push(item.$key);
+              this.customItemsFacade.updateCustomItemFolder(this.folder);
+            }
+            return this.customItemsFacade.allCustomItems$.pipe(
+              filter(availableItems => {
+                return availableItems.some(i => i.name === item.name && i.$key !== undefined && i.createdAt === item.createdAt);
+              }),
+              first()
+            );
+          }),
+          tap(() => {
+            index++;
+          })
+        );
       })
     );
-    return of(null);
   }
 
 }
