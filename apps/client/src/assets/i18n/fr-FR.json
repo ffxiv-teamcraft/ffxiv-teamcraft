@@ -86,7 +86,7 @@
   "No_favorites": "Aucun favori",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
   "Ephemeral_tag": "éphémère",
-  "Remove_ephemeral": "Upgrade to permanent list",
+  "Remove_ephemeral": "Changer en liste permanente",
   "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
   "Tag_filter": "Tags",
   "Public_lists": "Listes communautaires",
@@ -289,7 +289,7 @@
     "Nickname_used": "Pseudo déjà utilisé",
     "No_nickname_warning": "Accédez à la page paramètres et configurer un pseudo pour pouvoir utiliser les fonctionnalités exclusives aux supporters patron correctement.",
     "Show_devtools": "Afficher les outils de debug",
-    "Clear_cache": "Clear cache (will restart the app)",
+    "Clear_cache": "Vider le cache (l'application va redémarrer)",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
@@ -710,7 +710,7 @@
     "List_comment_added": "Commentaire sur la liste {{listName}} : \"{{content}}\"",
     "List_item_comment_added": "Commentaire posté sur {{itemName}}, liste {{listName}} : \"{{content}} \"",
     "Mark_all_as_read": "Tout marquer comme lu",
-    "No_notifications": "No notifications"
+    "No_notifications": "Pas de notifications"
   },
   "TEAMS": {
     "Title": "Équipes",
