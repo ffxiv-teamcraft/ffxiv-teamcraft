@@ -403,7 +403,7 @@
     "Amount_craftable": "Puede crear {{amount}}",
     "Add_item": "Agregar un artículo",
     "List_too_large": "Lista demasiado larga",
-    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "List_too_large_description": "Esta lista es muy larga y puede llegar al limite de tamaño de la base de datos debido a toda la información que lleva. No le será permitido añadir más elementos para asegurar que no pierda la lista.",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -688,7 +688,7 @@
     "Copy_earnings_as_text": "Copiar contenido como texto",
     "Content_copied": "Contenido copiado a su portapapeles",
     "Cheaper_at_vendor": "Más barato si compra de NPC ({{price}} gil)",
-    "Copy_panel_as_text": "Copy this panel as text"
+    "Copy_panel_as_text": "Copiar este panel como texto"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -712,7 +712,7 @@
     "List_comment_added": "Comentario publicado en la lista {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comentario publicado en {{itemName}}, lista {{listName}}: \"{{content}}\"",
     "Mark_all_as_read": "Marcar todo como leído",
-    "No_notifications": "No notifications"
+    "No_notifications": "No hay notificaciones"
   },
   "TEAMS": {
     "Title": "Equipos",
