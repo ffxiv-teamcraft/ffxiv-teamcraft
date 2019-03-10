@@ -687,7 +687,8 @@
     "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?",
     "Copy_earnings_as_text": "Copier le contenu au format texte",
     "Content_copied": "Contenu copié dans le presse-papiers",
-    "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)"
+    "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)",
+    "Copy_panel_as_text": "Copy this panel as text"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
