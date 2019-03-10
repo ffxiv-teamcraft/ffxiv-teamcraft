@@ -26,6 +26,7 @@
     "Crafts_amount": "Nb de crafts",
     "Add_to_list": "Ajouter cet élément à une liste",
     "Apply_filters": "Appliquer les filtres",
+    "Reset_filters": "Reset filters",
     "Too_many_results_warning": "Cette recherche a donné plus de 100 résultats. Notre source de données est limitée à 100 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
     "Share_url": "Copier l'url de recherche dans le presse-papiers",
     "Share_url_copied": "Url de recherche copié dans le presse-papiers"
