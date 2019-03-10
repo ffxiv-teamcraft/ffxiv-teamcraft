@@ -687,7 +687,8 @@
     "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
     "Copy_earnings_as_text": "Copy content as text",
     "Content_copied": "Content copied in your clipboard",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)",
+    "Copy_panel_as_text": "Copy this panel as text"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
