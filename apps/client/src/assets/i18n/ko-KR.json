@@ -86,6 +86,7 @@
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
   "Ephemeral_tag": "간이 목록",
+  "Remove_ephemeral": "간이 목록을 일반 목록으로 변경",
   "Quick_list_create": "간이 목록 생성 (완료시 삭제)",
   "Tag_filter": "태그",
   "Public_lists": "커뮤니티 목록",
@@ -288,7 +289,7 @@
     "Nickname_used": "이미 사용중인 닉네임입니다.",
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "Show_devtools": "개발 도구 표시",
-    "Clear_cache": "Clear cache (will restart the app)",
+    "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -709,7 +710,7 @@
     "List_comment_added": "{{listName}}에 댓글이 달렸습니다 : \"{{content}}\"",
     "List_item_comment_added": "{{listName}}의 {{itemName}}에 댓글이 달렸습니다 : \"{{content}}\"",
     "Mark_all_as_read": "모두 읽음으로 표시",
-    "No_notifications": "No notifications"
+    "No_notifications": "알림 없음"
   },
   "TEAMS": {
     "Title": "팀",

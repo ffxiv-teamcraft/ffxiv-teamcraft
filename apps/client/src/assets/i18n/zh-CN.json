@@ -86,6 +86,7 @@
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
   "Ephemeral_tag": "短暂",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "创建快速清单(完成后删除)",
   "Tag_filter": "标签",
   "Public_lists": "Community lists",
