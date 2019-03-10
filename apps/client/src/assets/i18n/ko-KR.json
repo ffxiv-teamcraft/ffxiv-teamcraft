@@ -687,7 +687,8 @@
     "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}} 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?",
     "Copy_earnings_as_text": "내용을 텍스트로 복사하기",
     "Content_copied": "클립보드로 내용이 복사되었습니다.",
-    "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)"
+    "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)",
+    "Copy_panel_as_text": "Copy this panel as text"
   },
   "LEVEQUESTS": {
     "Title": "길드의뢰",
