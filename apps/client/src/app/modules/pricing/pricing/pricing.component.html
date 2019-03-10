@@ -18,16 +18,24 @@
     <nz-collapse class="collapse-container" *ngIf="list.items.length > 0">
       <nz-collapse-panel *ngIf="crystals$ | async as crystals" [nzHeader]="header">
         <ng-template #header>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
             <div>{{'Crystals' | translate}}</div>
-            <button nz-button nz-popconfirm nzType="primary"
-                    *ngIf="loggedIn$ | async"
-                    class="fill-prices-button"
-                    (nzOnConfirm)="fillMbCosts(crystals)"
-                    (click)="$event.stopPropagation()"
-                    [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (crystals.length / 2 | ceil)}">
-              {{'PRICING.Autofill_panel_prices' | translate}}
-            </button>
+            <div>
+              <button nz-button nz-popconfirm nzType="primary"
+                      *ngIf="loggedIn$ | async"
+                      class="fill-prices-button"
+                      (nzOnConfirm)="fillMbCosts(crystals)"
+                      (click)="$event.stopPropagation()"
+                      [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (crystals.length / 2 | ceil)}">
+                {{'PRICING.Autofill_panel_prices' | translate}}
+              </button>
+              <button nz-button ngxClipboard nz-tooltip nzShape="circle"
+                      (click)="$event.stopPropagation()"
+                      [nzTitle]="'PRICING.Copy_panel_as_text' | translate"
+                      [cbContent]="getSpendingText(crystals, list)" (cbOnSuccess)="afterCopy()">
+                <i nz-icon type="copy"></i>
+              </button>
+            </div>
           </div>
         </ng-template>
         <app-pricing-row *ngFor="let row of crystals; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
@@ -37,16 +45,24 @@
 
       <nz-collapse-panel *ngIf="items$ | async as items" [nzHeader]="header">
         <ng-template #header>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
             <div>{{'Other' | translate}}</div>
-            <button nz-button nz-popconfirm nzType="primary"
-                    *ngIf="loggedIn$ | async"
-                    class="fill-prices-button"
-                    (nzOnConfirm)="fillMbCosts(items)"
-                    (click)="$event.stopPropagation()"
-                    [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (items.length / 2 | ceil)}">
-              {{'PRICING.Autofill_panel_prices' | translate}}
-            </button>
+            <div>
+              <button nz-button nz-popconfirm nzType="primary"
+                      *ngIf="loggedIn$ | async"
+                      class="fill-prices-button"
+                      (nzOnConfirm)="fillMbCosts(items)"
+                      (click)="$event.stopPropagation()"
+                      [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (items.length / 2 | ceil)}">
+                {{'PRICING.Autofill_panel_prices' | translate}}
+              </button>
+              <button nz-button ngxClipboard nz-tooltip nzShape="circle"
+                      (click)="$event.stopPropagation()"
+                      [nzTitle]="'PRICING.Copy_panel_as_text' | translate"
+                      [cbContent]="getSpendingText(items, list)" (cbOnSuccess)="afterCopy()">
+                <i nz-icon type="copy"></i>
+              </button>
+            </div>
           </div>
         </ng-template>
         <app-pricing-row *ngFor="let row of items; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
@@ -56,16 +72,24 @@
 
       <nz-collapse-panel *ngIf="preCrafts$ | async as preCrafts" [nzHeader]="header">
         <ng-template #header>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
             <div>{{'Pre_crafts' | translate}}</div>
-            <button nz-button nz-popconfirm nzType="primary"
-                    *ngIf="loggedIn$ | async"
-                    class="fill-prices-button"
-                    (nzOnConfirm)="fillMbCosts(preCrafts)"
-                    (click)="$event.stopPropagation()"
-                    [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}">
-              {{'PRICING.Autofill_panel_prices' | translate}}
-            </button>
+            <div>
+              <button nz-button nz-popconfirm nzType="primary"
+                      *ngIf="loggedIn$ | async"
+                      class="fill-prices-button"
+                      (nzOnConfirm)="fillMbCosts(preCrafts)"
+                      (click)="$event.stopPropagation()"
+                      [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}">
+                {{'PRICING.Autofill_panel_prices' | translate}}
+              </button>
+              <button nz-button ngxClipboard nz-tooltip nzShape="circle"
+                      (click)="$event.stopPropagation()"
+                      [nzTitle]="'PRICING.Copy_panel_as_text' | translate"
+                      [cbContent]="getSpendingText(preCrafts, list)" (cbOnSuccess)="afterCopy()">
+                <i nz-icon type="copy"></i>
+              </button>
+            </div>
           </div>
         </ng-template>
 
