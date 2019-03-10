@@ -26,6 +26,7 @@
     "Crafts_amount": "# of crafts",
     "Add_to_list": "将此物品加入到清单",
     "Apply_filters": "应用过滤",
+    "Reset_filters": "Reset filters",
     "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "将搜索URL复制到您的剪贴板",
     "Share_url_copied": "Search url copied to your clipboard"
