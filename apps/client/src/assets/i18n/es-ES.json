@@ -26,8 +26,8 @@
     "Crafts_amount": "# de elaboraciones",
     "Add_to_list": "Agregar este elemento a una lista",
     "Apply_filters": "Aplicar filtros",
-    "Reset_filters": "Reset filters",
-    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Reset_filters": "Resetear filtros",
+    "Too_many_results_warning": "Esta búsqueda devuelve más de 100 artículos. Como nuestro origen de datos esta limitado a 100 resultados, puede que necesite filtros adicionales para encontrar un artículo específico.",
     "Share_url": "Copiar el url de búsqueda al portapapeles",
     "Share_url_copied": "URL de búsqueda copiado al portapapeles"
   },
@@ -87,7 +87,7 @@
   "No_favorites": "No hay favoritos",
   "Ephemeral_list": "Será borrada al completarse",
   "Ephemeral_tag": "efímero",
-  "Remove_ephemeral": "Upgrade to permanent list",
+  "Remove_ephemeral": "Convertir a lista permanente",
   "Quick_list_create": "Crear lista rápida (borrada al completarse)",
   "Tag_filter": "Etiquetas",
   "Public_lists": "Listas Comunitarias",
@@ -290,7 +290,7 @@
     "Nickname_used": "El apodo ya está en uso",
     "No_nickname_warning": "Por favor vaya a la página de configuración y configure un apodo para poder usar correctamente las características exclusivas de patron.",
     "Show_devtools": "Mostrar herramientas de desarrollador",
-    "Clear_cache": "Clear cache (will restart the app)",
+    "Clear_cache": "Borrar caché (reiniciará la aplicación)",
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
@@ -402,7 +402,7 @@
     "Disable_HQ_suggestions": "Desactivar las banderas HQ automáticas",
     "Amount_craftable": "Puede crear {{amount}}",
     "Add_item": "Agregar un artículo",
-    "List_too_large": "List too large",
+    "List_too_large": "Lista demasiado larga",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
