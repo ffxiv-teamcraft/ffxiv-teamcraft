@@ -26,6 +26,7 @@
     "Crafts_amount": "クラフトの数",
     "Add_to_list": "このアイテムをリストに追加する",
     "Apply_filters": "フィルターを適用する",
+    "Reset_filters": "Reset filters",
     "Too_many_results_warning": "検索結果が100件を超えてます。データソースの制限のため、正確なアイテムを探すためには、追加フィルター設定が必要とします。",
     "Share_url": "検索URLをクリップボードにコピーする",
     "Share_url_copied": "検索URLがクリップボードにコピーされました"
