@@ -217,7 +217,7 @@ export class ListsEffects {
     ofType(ListsActionTypes.UpdateList),
     debounceTime(100),
     map(action => action as UpdateList),
-    switchMap(action => this.listService.set(action.payload.$key, action.payload)),
+    switchMap(action => this.listService.update(action.payload.$key, action.payload)),
     switchMap(() => EMPTY)
   );
 
