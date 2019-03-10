@@ -23,6 +23,7 @@ import { NodeTypeNamePipe } from './node-type-name';
 import { XivapiI18nPipe } from './xivapi-i18n.pipe';
 import { WeatherNamePipe } from './weather-name.pipe';
 import { WeatherIconPipe } from './weather-icon.pipe';
+import { ActionNamePipe } from './action-name.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { WeatherIconPipe } from './weather-icon.pipe';
     MobNamePipe,
     VentureNamePipe,
     ActionIconPipe,
+    ActionNamePipe,
     JobAbbrIconPipe,
     JobNameIconPipe,
     AbsolutePipe,
@@ -60,6 +62,7 @@ import { WeatherIconPipe } from './weather-icon.pipe';
     MobNamePipe,
     VentureNamePipe,
     ActionIconPipe,
+    ActionNamePipe,
     JobAbbrIconPipe,
     JobNameIconPipe,
     AbsolutePipe,

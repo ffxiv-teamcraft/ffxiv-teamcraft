@@ -6,6 +6,8 @@ import * as weathers from './sources/weathers.json';
 import * as npcs from './sources/npcs.json';
 import * as ventures from './sources/ventures.json';
 import * as freeCompanyActions from './sources/free-company-actions.json';
+import * as jobNames from './sources/job-name.json';
+import * as jobAbbrs from './sources/job-abbr.json';
 import { Language } from './language';
 import { koActions } from './sources/ko-actions';
 import { mapIds } from './sources/map-ids';
@@ -50,15 +52,53 @@ export class LocalizedDataService {
   }
 
   public getPlace(id: number): I18nName {
-    return this.getRow(places, id);
+    const row = this.getRow(places, id);
+    const koRow = this.getRow(this.lazyData.koPlaces, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
   }
 
   public getNpc(id: number): I18nName {
-    return this.getRow(npcs, id);
+    const row = this.getRow(npcs, id);
+    const koRow = this.getRow(this.lazyData.koNpcs, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
+  public getJobName(id: number): I18nName {
+    const row = this.getRow(jobNames, id);
+    const koRow = this.getRow(this.lazyData.koJobNames, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
+  public getJobAbbr(id: number): I18nName {
+    const row = this.getRow(jobAbbrs, id);
+    const koRow = this.getRow(this.lazyData.koJobAbbrs, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
   }
 
   public getMob(id: number): I18nName {
-    return this.getRow(mobs, id);
+    const row = this.getRow(mobs, id);
+    const koRow = this.getRow(this.lazyData.koMobs, Math.floor(id % 1000000));
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
   }
 
   public getVenture(id: number): I18nName {
@@ -66,7 +106,13 @@ export class LocalizedDataService {
   }
 
   public getWeather(id: number): I18nName {
-    return this.getRow(weathers, id);
+    const row = this.getRow(weathers, id);
+    const koRow = this.getRow(this.lazyData.koWeathers, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
   }
 
   public getWeatherId(name: string): number {
@@ -78,7 +124,13 @@ export class LocalizedDataService {
   }
 
   public getFreeCompanyAction(id: number): I18nName {
-    return this.getRow(freeCompanyActions, id);
+    const row = this.getRow(freeCompanyActions, id);
+    const koRow = this.getRow(this.lazyData.koFCActions, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
   }
 
   public getMapId(name: string): number {
@@ -131,8 +183,7 @@ export class LocalizedDataService {
     if (result === undefined) {
       throw new Error('Data row not found.');
     }
-    const name = result.en;
-    const koRow = koActions.find(a => a.en === name);
+    const koRow = this.getRow(this.lazyData.koCraftActions, id) || this.getRow(this.lazyData.koActions, id);
     if (koRow !== undefined) {
       result.ko = koRow.ko;
     }
@@ -172,16 +223,19 @@ export class LocalizedDataService {
     if (array === undefined) {
       return -1;
     }
-    if (['en', 'fr', 'de', 'ja'].indexOf(language) === -1) {
+    if (['en', 'fr', 'de', 'ja', 'ko', 'zh'].indexOf(language) === -1) {
       language = 'en';
     }
     let res = -1;
     const keys = Object.keys(array);
     for (const key of keys) {
-      if (array[key][language] === name) {
+      if (array[key][language].toLowerCase() === name.toLowerCase()) {
         res = +key;
         break;
       }
+    }
+    if (['ko', 'zh'].indexOf(language) > -1 && res === -1) {
+      return this.getIndexByName(array, name, 'en');
     }
     return res;
   }

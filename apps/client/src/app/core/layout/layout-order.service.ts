@@ -26,8 +26,14 @@ export class LayoutOrderService {
 
   private orderFunctions: { [index: string]: (rowA: ListRow, rowB: ListRow) => number } = {
     'NAME': (a, b) => {
-      const aName: string = this.i18n.getName(this.localizedData.getItem(a.id));
-      const bName: string = this.i18n.getName(this.localizedData.getItem(b.id));
+      let aName: string = this.i18n.getName(this.localizedData.getItem(a.id));
+      let bName: string = this.i18n.getName(this.localizedData.getItem(b.id));
+      if(aName === bName){
+        // If this happens, it means that they are the same item with different recipe,
+        // let's just add recipe id to distinguish them.
+        aName += a.recipeId;
+        bName += b.recipeId;
+      }
       return aName > bName ? 1 : -1;
     },
     'LEVEL': (a, b) => {
@@ -42,7 +48,7 @@ export class LayoutOrderService {
       if (aJobId === bJobId) {
         const aIndex = this.getLogIndex(a);
         const bIndex = this.getLogIndex(b);
-        if (aIndex > -1 && bIndex > -1) {
+        if (aIndex > -1 && bIndex > -1 && aIndex !== bIndex) {
           return aIndex - bIndex;
         }
         return this.orderFunctions['LEVEL'](a, b);

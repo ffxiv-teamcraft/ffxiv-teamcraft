@@ -257,6 +257,11 @@ export class ListPanelComponent {
     });
   }
 
+  removeEphemeral(list: List): void {
+    list.ephemeral = false;
+    this.listsFacade.updateList(list);
+  }
+
   openCommentsPopup(list: List, isAuthor: boolean): void {
     this.dialog.create({
       nzTitle: `${list.name} - ${this.translate.instant('COMMENTS.Title')}`,

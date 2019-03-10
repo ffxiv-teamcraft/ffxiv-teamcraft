@@ -125,7 +125,7 @@ export class SettingsService {
   }
 
   public get alarmVolume(): number {
-    return +this.getSetting('alarm:volume', '1');
+    return +this.getSetting('alarm:volume', '0.5');
   }
 
   public set alarmVolume(volume: number) {

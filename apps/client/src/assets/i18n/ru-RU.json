@@ -86,6 +86,7 @@
   "No_favorites": "Нет избранного",
   "Ephemeral_list": "Будут удалены после завершения",
   "Ephemeral_tag": "эфемерный",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Создать быстрый список (удаляется после завершения)",
   "Tag_filter": "Теги",
   "Public_lists": "Списки сообщества",

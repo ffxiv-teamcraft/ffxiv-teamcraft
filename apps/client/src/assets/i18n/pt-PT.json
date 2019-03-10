@@ -22,7 +22,7 @@
     "Title": "Pesquisa",
     "No_match": "Não há itens correspondentes",
     "Item_name": "Nome do item",
-    "Only_recipes": "Só fórmulas",
+    "Only_recipes": "Só receitas",
     "Crafts_amount": "# de tarefas",
     "Add_to_list": "Adicionar esse item para uma lista",
     "Apply_filters": "Aplicar filtros",
@@ -86,6 +86,7 @@
   "No_favorites": "Não favorito",
   "Ephemeral_list": "Será eliminado assim que completo",
   "Ephemeral_tag": "efémero",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Criar uma lista rápida (removida assim que se completar)",
   "Tag_filter": "Tags",
   "Public_lists": "Listas públicas",
@@ -400,7 +401,7 @@
     "Disable_HQ_suggestions": "Desativar automáticas sinalizadores de HQ",
     "Amount_craftable": "Pode criar {{amount}}",
     "Add_item": "Adicionar um item",
-    "List_too_large": "List too large",
+    "List_too_large": "Lista é demasiado grande",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
@@ -505,8 +506,8 @@
     "Hidden_item": "Escondido"
   },
   "ANNOUNCEMENT": {
-    "Title": "Announcement",
-    "Read_more": "Read more"
+    "Title": "Anúncio",
+    "Read_more": "Ler mais"
   },
   "LIST_TEMPLATE": {
     "Create_template": "Create a list template for this list",
@@ -525,27 +526,27 @@
     }
   },
   "PERMISSIONS": {
-    "Read": "Read",
-    "Read_description": "The ability to see the list",
-    "Participate": "Participate",
+    "Read": "Ler",
+    "Read_description": "A autorização de ver a lista",
+    "Participate": "Participar",
     "Participate_description": "This gives you permission to tick items and modify amounts done",
-    "Write": "Write",
+    "Write": "Escrever",
     "Write_description": "This gives you the permission to add items, add lists (for workshops)",
     "Title": "Permissions management",
     "Everyone": "Everyone",
-    "You": "You",
+    "You": "Você",
     "Add_new": "Adicionar um utilizador",
     "Add_new_fc": "Add a Free Company",
     "Placeholder": "ID de utilizador ou email",
     "Bind_free_company": "Bind some permissions to your Free Company",
     "User_not_found": "Utilizador não encontrado",
     "User_id_tip": "O ID de utilizador pode ser encontrado na página de perfil, no canto inferior direito",
-    "Saving": "Saving permissions",
+    "Saving": "Salvando permissões",
     "No_anonymous": "You need an account to manage permissions",
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
     "Propagate_changes_done": "Changes propagated to lists inside the workshop",
     "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
-    "Default_permission_level": "Default permission level"
+    "Default_permission_level": "Nível de autorização padrão"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -768,7 +769,7 @@
     "More_on_mogboard": "More details on mogboard"
   },
   "COMMENTS": {
-    "Title": "Comments"
+    "Title": "Comentários"
   },
   "TOOLTIP": {
     "Level": "Level",
@@ -777,16 +778,16 @@
     "Class_job": "Class/Job",
     "Damage_phys": "Phys. Damage",
     "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense"
+    "Defense_phys": "Defesa Física",
+    "Defense_mag": "Defesa Mágica"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craft, share, contribute",
-    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
-    "Support_patreon": "Support us on patreon",
-    "Donation_button": "Make a one time donation",
-    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
-    "Features_header": "Get started !",
+    "Slogan": "Crie, partilhe, contribua",
+    "Lists_created_counter": "Foram criadas {{amount}} listas usando FFXIV Teamcraft",
+    "Support_patreon": "Apoie-nos no patreon",
+    "Donation_button": "Faça uma doação singular",
+    "Buy_a_tshirt": "Comprar uma t-shirt Teamcraft",
+    "Features_header": "Começar!",
     "DESCRIPTION": {
       "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
@@ -804,16 +805,16 @@
   },
   "LOG_TRACKER": {
     "Title": "Log Tracker",
-    "Mark_page_as_done": "Mark this page as done",
-    "Mark_as_done": "Mark this item as done",
-    "Mark_as_not_done": "Mark this item as not done",
-    "Create_list": "Create a list to complete this page",
+    "Mark_page_as_done": "Marcar esta página como concluída",
+    "Mark_as_done": "Marcar este item como concluído",
+    "Mark_as_not_done": "Marcar este item como não concluído",
+    "Create_list": "Crie uma lista para completar esta página",
     "PAGE": {
-      "Master_recipes": "Master recipes ({{number}})",
-      "Housing_items": "Housing({{number}})",
-      "Others": "Others",
-      "Dyes": "Dyes",
-      "Other_master_recipes": "Other Master Recipes"
+      "Master_recipes": "Receitas de mestre ({{number}})",
+      "Housing_items": "Habitação ({{number}})",
+      "Others": "Outros",
+      "Dyes": "Tintas",
+      "Other_master_recipes": "Outras Receitas Mestre"
     }
   },
   "LOADING_SCREEN": {
@@ -821,7 +822,7 @@
   },
   "GIVEAWAY": {
     "Discord_1K": {
-      "Title": "1000 Discord members giveaway !",
+      "Title": "Doação de 1000 membros do Discord!",
       "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
     }
   }

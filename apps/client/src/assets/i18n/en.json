@@ -26,6 +26,7 @@
     "Crafts_amount": "# of crafts",
     "Add_to_list": "Add this item to a list",
     "Apply_filters": "Apply filters",
+    "Reset_filters": "Reset filters",
     "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copy search url to your clipboard",
     "Share_url_copied": "Search url copied to your clipboard"
@@ -86,6 +87,7 @@
   "No_favorites": "No Favorite",
   "Ephemeral_list": "Will be deleted once completed",
   "Ephemeral_tag": "ephemeral",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Create quick list (deleted once completed)",
   "Tag_filter": "Tags",
   "Public_lists": "Community lists",
