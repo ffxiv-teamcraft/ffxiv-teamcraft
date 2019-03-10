@@ -402,7 +402,7 @@
     "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "Du kannst {{amount}} herstellen",
     "Add_item": "Füge ein Item hinzu",
-    "List_too_large": "List too large",
+    "List_too_large": "Liste zu lang",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
@@ -559,7 +559,7 @@
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Teile Makros am letzten möglichen Schritt für Reklamation",
     "Include_consumables_notification": "Include consumables notification",
-    "Consumable_notification": "Use {{buffs}}",
+    "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
@@ -619,7 +619,7 @@
       "Recipe_durability": "Belastbarkeit"
     },
     "ROTATIONS": {
-      "Search_placeholder": "Search a rotation",
+      "Search_placeholder": "Suche eine Rotation",
       "FOLDERS": {
         "Folders": "Rotations-Ordner",
         "Rename": "Ordner umbenennen",
@@ -681,7 +681,7 @@
   },
   "PRICING": {
     "From_vendor": "Verkäuferpreis",
-    "From_crafting": "Price from crafting",
+    "From_crafting": "Herstellungspreis",
     "Expect_to_sell_everything": "Gehe davon aus alles zu verkaufen",
     "Autofill_panel_prices": "Rufe die Preise aus dem Marktbrett ab",
     "Autofill_panel_prices_warning": "Dies ist ein langsamer Prozess und sollte ca. {{time}} Sekunden dauern, bist du sicher?",
@@ -711,7 +711,7 @@
     "List_comment_added": "Ein Kommentar wurde der Liste {{listName}} hinzugefügt: \"{{content}}\"",
     "List_item_comment_added": "Ein Kommentar wurde dem Gegenstand {{itemName}} auf der Liste {{listName}} hinzugefügt: \"{{content}}\"",
     "Mark_all_as_read": "Alle als gelesen markieren",
-    "No_notifications": "No notifications"
+    "No_notifications": "Keine Benachrichtigungen"
   },
   "TEAMS": {
     "Title": "Teams",
