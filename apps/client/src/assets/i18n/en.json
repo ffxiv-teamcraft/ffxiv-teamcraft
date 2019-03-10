@@ -886,7 +886,9 @@
       "Drag_or_click": "Drag the file here or click to select it",
       "Format": "Format",
       "Folder": "Folder",
-      "No_folder": "No folder"
+      "No_folder": "No folder",
+      "Parsing_file": "Parsing file content...",
+      "Saving_items": "Saving items ({{done}}/{{todo}})"
     }
   }
 }

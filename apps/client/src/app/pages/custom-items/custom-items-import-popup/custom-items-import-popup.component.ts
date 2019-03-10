@@ -1,10 +1,22 @@
 import { Component } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd';
-import { combineLatest, EMPTY, Observable, of, Subscription } from 'rxjs';
+import { BehaviorSubject, combineLatest, EMPTY, Observable, of, Subject, Subscription } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';
 import { CustomItemsFacade } from '../../../modules/custom-items/+state/custom-items.facade';
-import { catchError, expand, filter, first, map, switchMap, tap } from 'rxjs/operators';
+import {
+  catchError,
+  delay,
+  expand,
+  filter,
+  first,
+  map,
+  mergeMap,
+  skip,
+  skipUntil,
+  switchMap,
+  tap
+} from 'rxjs/operators';
 import * as Papa from 'papaparse';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -32,6 +44,12 @@ export class CustomItemsImportPopupComponent {
   public folders$: Observable<CustomItemFolder[]> = this.customItemsFacade.allCustomItemFolders$;
 
   public availableCraftJobs: any[] = [];
+
+  public state: 'PARSING' | 'SAVING' = 'PARSING';
+
+  public totalSaving = 1;
+
+  public savingDone = 0;
 
   private craftTypes: string[] = [
     'Woodworking',
@@ -89,7 +107,7 @@ export class CustomItemsImportPopupComponent {
           operation$ = this.processCSVEMImport(content);
           break;
       }
-      operation$.subscribe(() => {
+      operation$.pipe(first()).subscribe(() => {
         this.modalRef.close();
       });
     } catch (err) {
@@ -105,6 +123,7 @@ export class CustomItemsImportPopupComponent {
     const items: CustomItem[] = this.serializer.deserialize<CustomItem>(data, [CustomItem]);
     const sortedItems = this.topologicalSort(items);
     let index = -1;
+    this.totalSaving = sortedItems.length;
     return this.customItemsFacade.allCustomItems$.pipe(
       first(),
       expand((allItems) => {
@@ -144,8 +163,10 @@ export class CustomItemsImportPopupComponent {
         );
       }),
       tap(() => {
+        this.savingDone++;
         index++;
-      })
+      }),
+      skip(sortedItems.length - 1)
     );
   }
 
@@ -227,73 +248,93 @@ export class CustomItemsImportPopupComponent {
     // Once ingredients are ready, let's see what needs to be custom or what is already an item
     return combineLatest(
       ingredients.map(ingredient => {
+        const meta = parsed.data.find(row => row[4] === ingredient.name);
         // If it has no real item id found, it's a custom one.
         if (ingredient.realItemId === undefined || ingredient.realItemId === 0) {
-          return of({ ingredient: ingredient, isCustom: true });
+          return of({ item: ingredient, meta: meta, isCustom: true });
         }
         // Else try to get it on GT
         return this.db.getItem(ingredient.realItemId).pipe(
           map(() => {
-            return { ingredient: ingredient, isCustom: false };
+            return { item: ingredient, meta: meta, isCustom: false };
           }),
           // Error = 404 = custom item
           catchError(() => {
-            return of({ ingredient: ingredient, isCustom: true });
+            return of({ item: ingredient, meta: meta, isCustom: true });
           })
         );
       })
     ).pipe(
       map(ingredientEntries => {
-        const reqs = ingredientEntries.map(entry => {
+        const allCustomItems = [];
+        parsedToItems.concat(ingredientEntries.filter((entry) => entry.isCustom)).forEach(entry => {
           if (entry.isCustom) {
-            entry.ingredient.$key = this.customItemsFacade.createId();
+            entry.item.$key = this.customItemsFacade.createId();
           }
-          return entry;
+          if (!allCustomItems.some(i => i.item.name === entry.item.name)) {
+            allCustomItems.push(entry);
+          }
         });
-        return this.topologicalSort(parsedToItems.map(({ item, meta }) => {
+        return this.topologicalSort(allCustomItems.map(({ item, meta }) => {
           for (let ingredientIndex = 6; ingredientIndex < 25; ingredientIndex += 2) {
-            if (meta[ingredientIndex] === '') {
+            if (meta === undefined || meta[ingredientIndex] === '') {
               continue;
             }
             const ingredientName = meta[ingredientIndex];
             item.requires = item.requires || [];
-            const ingredientEntry = ingredientEntries.find(i => i.ingredient.name === ingredientName);
+            const ingredientEntry = allCustomItems.find(i => i.item.name === ingredientName);
+            const realIngredientId = Object.keys(allItems).filter(key => {
+              return this.i18n.getName(allItems[key]).toLowerCase() === ingredientName.toLowerCase();
+            });
+            const ingredientId = ingredientEntry ? ingredientEntry.item.$key || ingredientEntry.item.realItemId : realIngredientId;
             const req: Ingredient = {
-              id: ingredientEntry.isCustom ? ingredientEntry.ingredient.$key : ingredientEntry.ingredient.realItemId,
+              id: ingredientId,
               amount: meta[ingredientIndex + 1]
             };
-            if (ingredientEntry.isCustom) {
+            if (ingredientEntry) {
               req.custom = true;
             }
+            item.requires.push(req);
           }
           return item;
-        }).concat(reqs.filter(entry => entry.isCustom).map(entry => entry.ingredient)));
+        }));
       }),
-      switchMap(sortedItems => {
-        let index = -1;
-        return this.customItemsFacade.allCustomItems$.pipe(
-          first(),
-          expand(() => {
-            if (sortedItems[index] === undefined) {
-              return EMPTY;
-            }
+      tap(sortedItems => {
+        this.totalSaving = sortedItems.length;
+        sortedItems.forEach(item => {
+          if (this.folder !== undefined && this.folder !== null) {
+            this.folder.items.push(item.$key);
+          }
+        });
+      }),
+      switchMap((sortedItems) => {
+        this.state = 'SAVING';
+        const doing$ = new BehaviorSubject(0);
+        const complete$ = new Subject();
+        return doing$.pipe(
+          delay(250),
+          mergeMap(index => {
             const item = sortedItems[index];
             this.customItemsFacade.addCustomItem(item);
-            if (this.folder !== undefined) {
-              this.folder.items.push(item.$key);
-              this.customItemsFacade.updateCustomItemFolder(this.folder);
-            }
             return this.customItemsFacade.allCustomItems$.pipe(
-              filter(availableItems => {
-                return availableItems.some(i => i.name === item.name && i.$key !== undefined && i.createdAt === item.createdAt);
-              }),
-              first()
+              first(),
+              tap(() => {
+                this.savingDone++;
+                if (sortedItems[index + 1] !== undefined) {
+                  doing$.next(index + 1);
+                } else {
+                  complete$.next();
+                }
+              })
             );
           }),
-          tap(() => {
-            index++;
-          })
+          skipUntil(complete$)
         );
+      }),
+      tap(() => {
+        if (this.folder !== undefined) {
+          this.customItemsFacade.updateCustomItemFolder(this.folder);
+        }
       })
     );
   }

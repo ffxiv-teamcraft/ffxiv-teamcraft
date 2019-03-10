@@ -37,7 +37,7 @@ export class CustomItemsFacade {
   customItemsDisplay$: Observable<CustomItemsDisplay> = combineLatest(this.allCustomItems$, this.allCustomItemFolders$).pipe(
     map(([items, folders]) => {
       return {
-        otherItems: items.filter(item => !folders.some(folder => folder.items.some(key => key === item.$key))),
+        otherItems: items.filter(item => item !== undefined && !folders.some(folder => folder.items.some(key => key === item.$key))),
         folders: folders.map(folder => {
           return {
             folder: folder,

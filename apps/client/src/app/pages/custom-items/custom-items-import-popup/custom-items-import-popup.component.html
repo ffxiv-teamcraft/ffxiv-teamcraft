@@ -16,7 +16,7 @@
         {{'CUSTOM_ITEMS.IMPORT.Folder' | translate}}:
       </div>
       <nz-select [(ngModel)]="folder" nzAllowClear [nzPlaceHolder]="'CUSTOM_ITEMS.IMPORT.No_folder' | translate"
-      class="folder-select">
+                 class="folder-select">
         <nz-option *ngFor="let folder of folders" [nzValue]="folder" [nzLabel]="folder.name"></nz-option>
       </nz-select>
     </div>
@@ -33,8 +33,14 @@
       <p class="ant-upload-text">{{'CUSTOM_ITEMS.IMPORT.Drag_or_click' | translate}}</p>
     </div>
   </nz-upload>
-  <div>
-    <nz-spin *ngIf="hideUpload && !error"></nz-spin>
+  <div class="state" *ngIf="hideUpload && !error">
+    <nz-spin class="spin" [nzTip]="'CUSTOM_ITEMS.IMPORT.Parsing_file' | translate"
+             *ngIf="state === 'PARSING'"></nz-spin>
+    <div *ngIf="state === 'SAVING'">
+      <div>{{'CUSTOM_ITEMS.IMPORT.Saving_items' | translate:{ done: savingDone, todo: totalSaving } }}</div>
+      <nz-progress class="progress" nzStatus="active"
+                   [nzPercent]="(100 * savingDone / totalSaving) | number:'1.0-0'"></nz-progress>
+    </div>
   </div>
   <nz-alert *ngIf="error" [nzMessage]="error | translate" [nzDescription]="errorDetails" nzShowIcon
             nzType="error"></nz-alert>
