@@ -291,7 +291,32 @@ export class CustomItemsComponent {
       return array.indexOf(item) === index;
     });
     const blob = new Blob([btoa(unescape(encodeURIComponent(JSON.stringify(data))))], { type: 'text/plain;charset:utf-8' });
-    saveAs(blob, `${items.map(i => i.name).join('&').split(' ').join('-')}.tcitem`);
+    saveAs(blob,
+      // We're creating a hash to avoid too large file names.
+      `${items.map(i => i.name)
+        .join('&')
+        .split('')
+        .reduce((a, b) => {
+          a = ((a << 5) - a) + b.charCodeAt(0);
+          return a & a;
+        }, 0)
+        }.tcitem`);
+  }
+
+  renameFolder(folder: CustomItemFolder): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzFooter: null,
+      nzTitle: this.translate.instant('CUSTOM_ITEMS.Rename_folder'),
+      nzComponentParams: {
+        baseName: folder.name
+      }
+    }).afterClose.pipe(
+      filter(name => name !== undefined)
+    ).subscribe((name) => {
+      folder.name = name;
+      this.customItemsFacade.updateCustomItemFolder(folder);
+    });
   }
 
   /**

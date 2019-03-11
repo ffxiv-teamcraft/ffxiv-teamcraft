@@ -48,6 +48,13 @@
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                         <i nz-icon type="folder"></i>
                         <div>{{folderDisplay.folder.name}}</div>
+                        <button nz-button nzShape="circle"
+                                nzSize="small"
+                                nz-tooltip
+                                [nzTitle]="'CUSTOM_ITEMS.Rename_folder' | translate"
+                                (click)="$event.stopPropagation();renameFolder(folderDisplay.folder)">
+                          <i nz-icon type="edit"></i>
+                        </button>
                       </div>
                       <div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
                         <button nz-button nz-popconfirm [nzTitle]="'Confirm' | translate"
