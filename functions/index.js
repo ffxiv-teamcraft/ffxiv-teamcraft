@@ -19,6 +19,7 @@ function getCompact(list) {
       entry.id = item.id;
       entry.custom = true;
       entry.name = item.name;
+      entry.icon = item.icon || '';
     } else {
       entry.id = item.id;
       entry.icon = item.icon || '';
