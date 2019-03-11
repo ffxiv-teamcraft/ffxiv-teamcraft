@@ -688,7 +688,7 @@
     "Copy_earnings_as_text": "내용을 텍스트로 복사하기",
     "Content_copied": "클립보드로 내용이 복사되었습니다.",
     "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)",
-    "Copy_panel_as_text": "Copy this panel as text"
+    "Copy_panel_as_text": "이 패널을 텍스트로 복사"
   },
   "LEVEQUESTS": {
     "Title": "길드의뢰",
