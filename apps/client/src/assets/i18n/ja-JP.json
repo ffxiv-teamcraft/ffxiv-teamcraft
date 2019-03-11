@@ -688,7 +688,7 @@
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。",
     "Cheaper_at_vendor": "NPC から購入した方が安い ({{price}} ギル)",
-    "Copy_panel_as_text": "Copy this panel as text"
+    "Copy_panel_as_text": "このパネルをテキストとしてコピーする"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
