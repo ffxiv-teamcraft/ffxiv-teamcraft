@@ -56,4 +56,6 @@ export class ListRow extends DataModel {
    * @type {boolean}
    */
   usePrice?: boolean;
+
+  custom?: boolean;
 }
