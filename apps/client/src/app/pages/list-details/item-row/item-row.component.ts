@@ -52,7 +52,7 @@ export class ItemRowComponent implements OnInit {
   private _item: ListRow | CustomItem;
 
   @Input()
-  public set item(item: ListRow) {
+  public set item(item: ListRow | CustomItem) {
     this._item = item;
     this.handleAlarms(item);
     this.cdRef.detectChanges();
