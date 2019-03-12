@@ -59,7 +59,7 @@ export class ItemRowComponent implements OnInit {
     this.item$.next(item);
   }
 
-  public get item(): ListRow {
+  public get item(): ListRow | CustomItem {
     return this._item;
   }
 
