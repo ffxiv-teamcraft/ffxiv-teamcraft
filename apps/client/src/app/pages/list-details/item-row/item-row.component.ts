@@ -49,7 +49,7 @@ import { CustomItem } from '../../../modules/custom-items/model/custom-item';
 })
 export class ItemRowComponent implements OnInit {
 
-  private _item: ListRow;
+  private _item: ListRow | CustomItem;
 
   @Input()
   public set item(item: ListRow) {

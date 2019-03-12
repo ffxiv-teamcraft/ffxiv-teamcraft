@@ -12,7 +12,7 @@ export class CustomItemsExportPopupComponent {
 
   public items$ = this.customItemsFacade.allCustomItems$;
 
-  private selectedItems: CustomItem[] = [];
+  public selectedItems: CustomItem[] = [];
 
   constructor(private customItemsFacade: CustomItemsFacade, private modalRef: NzModalRef) {
   }
