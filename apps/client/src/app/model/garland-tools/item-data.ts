@@ -9,7 +9,7 @@ export class ItemData {
   item: Item;
 
   @DeserializeAs([Item])
-  ingredients: Item[];
+  ingredients: Item[] = [];
 
   partials: any[];
 

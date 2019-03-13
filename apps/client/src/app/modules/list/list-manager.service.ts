@@ -81,7 +81,7 @@ export class ListManagerService {
                 }),
                 catchError(() => {
                   return this.processCustomItemAddition(data as CustomItem, amount);
-                }),
+                })
               );
             } else {
               return this.processCustomItemAddition(data as CustomItem, amount);
@@ -110,7 +110,7 @@ export class ListManagerService {
           data: itemClone,
           item: null
         }
-      ], this.gt, this.customItemsSync, this.db);
+      ], this.gt, this.customItemsSync, this.db, this);
     }
     return of(addition);
   }
@@ -176,37 +176,42 @@ export class ListManagerService {
         item: data.item,
         data: data,
         amount: added
-      }], this.gt, this.customItemsSync, this.db, recipeId.toString());
+      }], this.gt, this.customItemsSync, this.db, this, recipeId.toString());
     } else {
       addition$ = of(addition);
     }
-    return addition$.pipe(
-      map(additionToParse => {
-        // Process items to add details.
-        additionToParse.forEach(item => {
-          if (data.isCraft() && recipeId !== undefined && data.item.id === item.id) {
-            item.craftedBy = this.extractor.extractCraftedBy(item.id, data).filter(row => {
-              return row.recipeId.toString() === recipeId.toString();
-            });
-          } else {
-            item.craftedBy = this.extractor.extractCraftedBy(item.id, data);
-          }
-          item.vendors = this.extractor.extractVendors(item.id, data);
-          item.tradeSources = this.extractor.extractTradeSources(item.id, data);
-          item.reducedFrom = this.extractor.extractReducedFrom(item.id, data);
-          item.desynths = this.extractor.extractDesynths(item.id, data);
-          item.instances = this.extractor.extractInstances(item.id, data);
-          item.gardening = this.extractor.extractGardening(item.id, data);
-          item.voyages = this.extractor.extractVoyages(item.id, data);
-          item.drops = this.extractor.extractDrops(item.id, data);
-          item.ventures = this.extractor.extractVentures(item.id, data);
-          item.gatheredBy = this.extractor.extractGatheredBy(item.id, data);
-          item.alarms = this.extractor.extractAlarms(item.id, data, item);
-          item.masterbooks = this.extractor.extractMasterBooks(item.id, data, item);
-        });
-        return addition;
-      })
-    );
+    return addition$;
+  }
+
+  public addDetails(list: List, data: ItemData, recipeId?: string | number): List {
+    list.forEach(item => {
+      // If it's not inside data and it isn't a crystal, we can already skip.
+      if (item.id > 20 && data.item.id !== item.id && !data.ingredients.some(i => i.id === item.id)) {
+        return;
+      }
+      if (data.isCraft()) {
+        if (recipeId !== undefined && data.item.id === item.id) {
+          item.craftedBy = this.extractor.extractCraftedBy(item.id, data).filter(row => {
+            return row.recipeId.toString() === recipeId.toString();
+          });
+        } else {
+          item.craftedBy = this.extractor.extractCraftedBy(item.id, data);
+        }
+      }
+      item.vendors = this.extractor.extractVendors(item.id, data);
+      item.tradeSources = this.extractor.extractTradeSources(item.id, data);
+      item.reducedFrom = this.extractor.extractReducedFrom(item.id, data);
+      item.desynths = this.extractor.extractDesynths(item.id, data);
+      item.instances = this.extractor.extractInstances(item.id, data);
+      item.gardening = this.extractor.extractGardening(item.id, data);
+      item.voyages = this.extractor.extractVoyages(item.id, data);
+      item.drops = this.extractor.extractDrops(item.id, data);
+      item.ventures = this.extractor.extractVentures(item.id, data);
+      item.gatheredBy = this.extractor.extractGatheredBy(item.id, data);
+      item.alarms = this.extractor.extractAlarms(item.id, data, item);
+      item.masterbooks = this.extractor.extractMasterBooks(item.id, data, item);
+    });
+    return list;
   }
 
   public upgradeList(list: List): Observable<List> {

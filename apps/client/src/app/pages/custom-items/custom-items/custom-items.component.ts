@@ -115,10 +115,6 @@ export class CustomItemsComponent {
     this.customItemsFacade.deleteCustomItemFolder(key);
   }
 
-  public updateCustomItemFolder(folder: CustomItemFolder): void {
-    this.customItemsFacade.updateCustomItemFolder(folder);
-  }
-
   public importItems(): void {
     this.dialog.create({
       nzContent: CustomItemsImportPopupComponent,
@@ -289,6 +285,9 @@ export class CustomItemsComponent {
     const data = [].concat.apply([], [...items, ...reqs]).filter((item, index, array) => {
       // Remove duplicates
       return array.indexOf(item) === index;
+    }).map(item => {
+      item.dirty = false;
+      return item;
     });
     const blob = new Blob([btoa(unescape(encodeURIComponent(JSON.stringify(data))))], { type: 'text/plain;charset:utf-8' });
     saveAs(blob,

@@ -12,10 +12,11 @@ import { Team } from '../../../model/team/team';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
 import { CustomItem } from '../../custom-items/model/custom-item';
 import { ItemData } from '../../../model/garland-tools/item-data';
-import { BehaviorSubject, EMPTY, Observable, of, Subject } from 'rxjs';
-import { debounceTime, expand, map, skip, skipUntil, skipWhile, switchMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, concat, EMPTY, Observable, of, Subject } from 'rxjs';
+import { bufferCount, debounceTime, expand, map, skip, skipUntil, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
+import { ListManagerService } from '../list-manager.service';
 
 declare const gtag: Function;
 
@@ -347,33 +348,25 @@ export class List extends DataWithPermissions {
     }
   }
 
-  public addCraft(_additions: CraftAddition[], gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService, recipeId?: string): Observable<List> {
+  public addCraft(_additions: CraftAddition[], gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService, recipeId?: string): Observable<List> {
     const done$ = new Subject<void>();
     return of(_additions).pipe(
       expand(additions => {
-        const todo = additions.filter(a => a !== null);
-        if (todo.length === 0) {
+        if (additions.length === 0) {
           done$.next();
           return EMPTY;
         }
-        let index = 0;
-        const queue$ = new BehaviorSubject<CraftAddition>(todo[0]);
-        return queue$.pipe(
-          switchMap(addition => {
+        return concat(
+          ...additions.map(addition => {
             if (addition.data instanceof ItemData) {
-              return of(this.addNormalCraft(addition, gt, recipeId));
+              return of(this.addNormalCraft(addition, gt, listManager, recipeId));
             } else {
-              return this.addCustomCraft(addition, gt, customItems, dataService);
+              return this.addCustomCraft(addition, gt, customItems, dataService, listManager);
             }
-          }),
-          tap((res) => {
-            todo.push(...res.filter(r => r !== null));
-            index++;
-            if (todo[index] !== undefined) {
-              queue$.next(todo[index]);
-            }
-          }),
-          skipWhile(() => todo[index] !== undefined)
+          })
+        ).pipe(
+          bufferCount(additions.length),
+          map(res => [].concat.apply([], res.filter(r => r !== null)))
         );
       }),
       debounceTime(100),
@@ -384,7 +377,7 @@ export class List extends DataWithPermissions {
     );
   }
 
-  private addNormalCraft(addition: CraftAddition, gt: GarlandToolsService, recipeId?: string): CraftAddition[] {
+  private addNormalCraft(addition: CraftAddition, gt: GarlandToolsService, listManager: ListManagerService, recipeId?: string): CraftAddition[] {
     const nextIteration: CraftAddition[] = [];
     let craft: Craft;
     if (recipeId !== undefined) {
@@ -405,6 +398,7 @@ export class List extends DataWithPermissions {
           yield: 1,
           usePrice: true
         });
+        listManager.addDetails(this, crystal);
       } else {
         const elementDetails = (<ItemData>addition.data).getIngredient(+element.id);
         if (elementDetails.isCraft()) {
@@ -435,12 +429,13 @@ export class List extends DataWithPermissions {
             usePrice: true
           });
         }
+        listManager.addDetails(this, <ItemData>addition.data);
       }
     }
     return nextIteration;
   }
 
-  private addCustomCraft(addition: CraftAddition, gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService): Observable<CraftAddition[]> {
+  private addCustomCraft(addition: CraftAddition, gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService): Observable<CraftAddition[]> {
     const item: CustomItem = addition.data as CustomItem;
     const nextIteration: CraftAddition[] = [];
     let index = 0;
@@ -458,6 +453,7 @@ export class List extends DataWithPermissions {
             yield: 1,
             usePrice: true
           });
+          listManager.addDetails(this, crystal);
           return of(null);
         } else {
           if (element.custom) {
@@ -471,10 +467,10 @@ export class List extends DataWithPermissions {
             itemDetailsClone.id = itemDetails.$key;
             const added = this.add(this.items, itemDetailsClone);
             if (itemDetailsClone.requires !== undefined) {
-              return of([{
+              return of({
                 data: itemDetailsClone,
                 amount: added
-              }]);
+              });
             }
             return of(null);
           } else {
@@ -509,12 +505,16 @@ export class List extends DataWithPermissions {
                     usePrice: true
                   });
                 }
+                listManager.addDetails(this, elementItemData);
               })
             );
           }
         }
       }),
-      tap(() => {
+      tap((res) => {
+        if (res !== null && res !== undefined) {
+          nextIteration.push(res);
+        }
         index++;
         if (item.requires[index] !== undefined) {
           queue$.next(item.requires[index]);
