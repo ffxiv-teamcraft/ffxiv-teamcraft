@@ -664,7 +664,7 @@
       "No_food": "음식 없음",
       "No_medicine": "약차 없음",
       "No_fc_buffs": "부대버프 없음",
-      "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
+      "Quest_warning": "70레벨 퀘스트로 얻을 수 있는 [명인의 발상] 을 꼭 획득하세요!",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "작업 숙련도",
@@ -847,7 +847,7 @@
       "Stars": "난이도",
       "Requirements": "재료",
       "Add_requirement": "재료 추가",
-      "Yields": "Yields",
+      "Yields": "제작/채집 갯수",
       "Name": "이름",
       "ID": "아이템 ID",
       "CRAFT": {
@@ -858,7 +858,7 @@
       "GATHERING": {
         "Title": "채집 직업",
         "Type": "채집물 유형",
-        "Folklore": "Folklore",
+        "Folklore": "전승록",
         "Slot": "슬롯"
       },
       "ALARMS": {
@@ -871,12 +871,12 @@
         "Delete_vendor": "상인 삭제"
       },
       "TRADES": {
-        "Title": "Trade sources",
+        "Title": "교환 정보",
         "Npc_name": "NPC 이름",
         "Shop_name": "상점 이름",
         "Delete_trade": "교환 삭제",
         "Trade_details": "Trade details",
-        "Add_currency": "Add a currency"
+        "Add_currency": "화폐 추가"
       },
       "REDUCTION": {
         "Title": "Reduced from"
