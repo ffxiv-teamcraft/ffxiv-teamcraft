@@ -399,11 +399,11 @@
     "Open_in_ffxivgardening": "Открыть в ffxivgardening.com",
     "Add_all_item_alarms": "Создать все оповещения для этого предмета",
     "Adaptative_filter": "Показать только то, что я могу сделать",
-    "Disable_HQ_suggestions": "Disable automatic HQ flags",
-    "Amount_craftable": "You can craft {{amount}}",
-    "Add_item": "Add an item",
-    "List_too_large": "List too large",
-    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "Disable_HQ_suggestions": "Отключить автоматические флаги HQ",
+    "Amount_craftable": "Вы сожете сделать {{amount}}",
+    "Add_item": "Добавить предмет",
+    "List_too_large": "Список слишком большой",
+    "List_too_large_description": "Этот список слишком велик и может достичь ограничений размера базы данных из-за всей информации, которую он несет. Вы не можете добавить больше предметов, дабы избежать потери списка.",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -413,7 +413,7 @@
       "Layout_name": "Название макета",
       "Invalid_import": "Неверный файл импорта",
       "Global_options": "Главные настройки",
-      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
+      "Default_readonly_message": "Макет по умолчанию доступен только для чтения, вы должны создать новый макет с помощью кнопки +, чтобы иметь возможность настроить его."
     },
     "LAYOUT": {
       "Filter": "Фильтр",
