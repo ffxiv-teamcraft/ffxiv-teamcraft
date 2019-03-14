@@ -94,6 +94,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   public actions$ = new BehaviorSubject<CraftingAction[]>([]);
 
+  private draggedAction$: CraftingAction;
+
+  private draggedIndex$: number;
+
   public crafterStats$: Observable<CrafterStats>;
 
   public stats$: Observable<CrafterStats>;
@@ -499,6 +503,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   addAction(action: CraftingAction, index?: number) {
+    console.log("action added");
     if (index === undefined) {
       this.actions$.next([...this.actions$.value, action]);
     } else {
@@ -509,11 +514,26 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.dirty = true;
   }
 
+  actionDrag(index: number): void {
+    this.draggedAction$ = this.actions$.value[index];
+    this.draggedIndex$ = index;
+    this.removeAction(index);
+  }
+
   actionDrop(event: any): void {
     if (event.el.parentNode.classList.contains('actions-container')) {
       event.el.parentNode.removeChild(event.el);
     }
     this.addAction(event.value, event.dropIndex);
+    this.draggedAction$ = null;
+  }
+  
+  dragCancel(event: any): void {
+    if (event.el.parentNode.classList.contains('actions-container')) {
+      event.el.parentNode.removeChild(event.el);
+    }
+    this.addAction(this.draggedAction$, this.draggedIndex$);
+    this.draggedAction$ = null;
   }
 
   removeAction(index: number): void {
