@@ -503,7 +503,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   addAction(action: CraftingAction, index?: number) {
-    console.log("action added");
     if (index === undefined) {
       this.actions$.next([...this.actions$.value, action]);
     } else {
