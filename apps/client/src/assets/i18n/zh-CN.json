@@ -675,6 +675,7 @@
       "NOT_ENOUGH_CP": "制作力不足",
       "MISSING_LEVEL_REQUIREMENT": "等级不够",
       "NOT_SPECIALIST": "使用了专家工序，但你不是专家",
+      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
   },

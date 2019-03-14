@@ -39,6 +39,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { Craft } from '../../../model/garland-tools/craft';
 import { CommentsService } from '../../../modules/comments/comments.service';
 import { ListLayout } from '../../../core/layout/list-layout';
+import { CustomItem } from '../../../modules/custom-items/model/custom-item';
 
 @Component({
   selector: 'app-item-row',
@@ -48,17 +49,17 @@ import { ListLayout } from '../../../core/layout/list-layout';
 })
 export class ItemRowComponent implements OnInit {
 
-  private _item: ListRow;
+  private _item: ListRow | CustomItem;
 
   @Input()
-  public set item(item: ListRow) {
+  public set item(item: ListRow | CustomItem) {
     this._item = item;
     this.handleAlarms(item);
     this.cdRef.detectChanges();
     this.item$.next(item);
   }
 
-  public get item(): ListRow {
+  public get item(): ListRow | CustomItem {
     return this._item;
   }
 
@@ -369,7 +370,7 @@ export class ItemRowComponent implements OnInit {
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>): void {
     this.modal.create({
-      nzTitle: this.i18n.getName(this.l12n.getItem(this.item.id)),
+      nzTitle: this.i18n.getName(this.l12n.getItem(this.item.id), this.item as CustomItem),
       nzContent: component,
       nzComponentParams: { item: this.item },
       nzFooter: null

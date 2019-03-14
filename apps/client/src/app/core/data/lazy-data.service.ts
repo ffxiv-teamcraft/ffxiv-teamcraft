@@ -11,6 +11,8 @@ export class LazyDataService {
 
   public items: any = {};
 
+  public npcs: any = {};
+
   public zhItems: any = {};
 
   public koItems: any = {};
@@ -32,6 +34,25 @@ export class LazyDataService {
 
   public actions: any = {};
 
+  public get allItems(): any {
+    const res = { ...this.items };
+    Object.keys(this.koItems).forEach(koKey => {
+      if (res[koKey] !== undefined) {
+        res[koKey].ko = this.koItems[koKey].ko;
+      } else {
+        res[koKey] = this.koItems[koKey];
+      }
+    });
+    Object.keys(this.zhItems).forEach(zhKey => {
+      if (res[zhKey] !== undefined) {
+        res[zhKey].zh = this.zhItems[zhKey].zh;
+      } else {
+        res[zhKey] = this.zhItems[zhKey];
+      }
+    });
+    return res;
+  }
+
   constructor(private http: HttpClient) {
     combineLatest(
       this.http.get('./assets/data/items.json'),
@@ -51,7 +72,8 @@ export class LazyDataService {
       this.http.get('./assets/data/ko/ko-job-abbr.json'),
       this.http.get('./assets/data/ko/ko-job-category.json'),
       this.http.get('./assets/data/actions.json'),
-      this.http.get('./assets/data/craft-actions.json')
+      this.http.get('./assets/data/craft-actions.json'),
+      this.http.get('./assets/data/npcs.json')
     ).subscribe(([
                    items,
                    zhItems,
@@ -70,7 +92,8 @@ export class LazyDataService {
                    koJobAbbrs,
                    koJobCategories,
                    actions,
-                   craftActions
+                   craftActions,
+                   npcs
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -90,6 +113,7 @@ export class LazyDataService {
       this.koJobCategories = koJobCategories;
       this.actions = actions;
       this.craftActions = craftActions;
+      this.npcs = npcs;
       this.loaded$.next(true);
     });
   }

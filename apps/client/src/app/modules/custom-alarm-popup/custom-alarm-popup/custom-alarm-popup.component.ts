@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
@@ -12,28 +12,40 @@ import { NzModalRef } from 'ng-zorro-antd';
   templateUrl: './custom-alarm-popup.component.html',
   styleUrls: ['./custom-alarm-popup.component.less']
 })
-export class CustomAlarmPopupComponent {
+export class CustomAlarmPopupComponent implements OnInit {
 
   form: FormGroup;
 
   public maps$: Observable<any[]>;
+
+  /**
+   * Should we just return the alarm instead of creating it directly?
+   */
+  public returnAlarm = false;
+
+  public name = '';
+
+  public mapId: number;
+
+  public type: number;
+
+  public x: number;
+
+  public y: number;
+
+  public slot: string | number;
+
+  public spawnsTwice = false;
+
+  public spawn = 0;
+
+  public duration = 1;
 
   constructor(private fb: FormBuilder, private xivapi: XivapiService, private alarmsFacade: AlarmsFacade, private modalRef: NzModalRef) {
     this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, { columns: ['ID', 'PlaceName.Name_*'], max_items: 1000 }).pipe(
       map(list => list.Results),
       shareReplay(1)
     );
-    this.form = this.fb.group({
-      name: ['', Validators.required],
-      spawn: [0, [Validators.min(0), Validators.max(24)]],
-      spawnsTwice: [false],
-      duration: [1, Validators.required],
-      slot: [undefined],
-      type: [undefined, [Validators.min(0), Validators.max(4)]],
-      mapId: [undefined],
-      x: [undefined],
-      y: [undefined]
-    });
   }
 
   submit(): void {
@@ -55,8 +67,26 @@ export class CustomAlarmPopupComponent {
     if (data.x !== undefined || data.y !== undefined) {
       alarm.coords = { x: data.x || 0, y: data.y || 0 };
     }
-    this.alarmsFacade.addAlarms(<Alarm>alarm);
-    this.modalRef.close();
+    if (this.returnAlarm) {
+      this.modalRef.close(<Alarm>alarm);
+    } else {
+      this.alarmsFacade.addAlarms(<Alarm>alarm);
+      this.modalRef.close();
+    }
+  }
+
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      name: [this.name, Validators.required],
+      spawn: [this.spawn, [Validators.min(0), Validators.max(24)]],
+      spawnsTwice: [this.spawnsTwice],
+      duration: [this.duration, Validators.required],
+      slot: [this.slot],
+      type: [this.type, [Validators.min(0), Validators.max(4)]],
+      mapId: [this.mapId],
+      x: [this.x],
+      y: [this.y]
+    });
   }
 
 }

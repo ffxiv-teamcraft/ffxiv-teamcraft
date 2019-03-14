@@ -3,12 +3,12 @@ import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Vendor } from '../../model/vendor';
 import { Item } from '../../../../model/garland-tools/item';
-import * as npcs from '../../../../core/data/sources/npcs.json';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
 
-  constructor(gt: GarlandToolsService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
     super(gt);
   }
 
@@ -55,7 +55,7 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
         vendor.price = itemPartial.p;
       }
       if (vendor.price > -1) {
-        const npcEntry = npcs[vendorId];
+        const npcEntry = this.lazyData.npcs[vendorId];
         if (npcEntry && npcEntry.position !== null) {
           const npcPosition = npcEntry.position;
           vendor.coords = { x: npcPosition.x, y: npcPosition.y };

@@ -120,6 +120,49 @@ export class DiscordWebhookService {
     ).subscribe();
   }
 
+  notifyCustomItemAddition(itemName: string, itemIcon: number, amount: number, list: List, team: Team): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.ITEM_ADDED)) {
+      return;
+    }
+    this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_added', {
+      amount: amount,
+      itemName: itemName,
+      listName: list.name,
+      listUrl: this.linkTools.getLink(`/list/${list.$key}`)
+    }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`);
+  }
+
+  notifyCustomItemDeletion(itemName: string, itemIcon: number, amount: number, list: List, team: Team): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.ITEM_REMOVED)) {
+      return;
+    }
+    this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_removed', {
+      amount: amount,
+      itemName: itemName,
+      listName: list.name,
+      listUrl: this.linkTools.getLink(`/list/${list.$key}`)
+    }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`);
+  }
+
+  notifyCustomItemChecked(team: Team, itemIcon: number, list: List, memberId: string, amount: number, itemName: string): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION)) {
+      return;
+    }
+    this.characterService.getCharacter(memberId).pipe(
+      first(),
+      map(character => {
+        this.sendMessage(team, 'TEAMS.NOTIFICATIONS.List_progress', {
+          characterName: character.character.Name,
+          memberProfileUrl: this.linkTools.getLink(`/profile/${memberId}`),
+          amount: amount,
+          itemName: itemName,
+          listName: list.name,
+          listUrl: this.linkTools.getLink(`/list/${list.$key}`)
+        }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`, character.character.Avatar);
+      })
+    ).subscribe();
+  }
+
   notifyMemberJoined(team: Team, memberId: string): void {
     if (!team.hasSettingEnabled(WebhookSettingType.MEMBER_JOINED)) {
       return;

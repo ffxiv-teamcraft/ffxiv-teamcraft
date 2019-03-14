@@ -52,6 +52,7 @@ import { NameQuestionPopupComponent } from '../../../../modules/name-question-po
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
+import { fakeHQItems } from '../../../../core/data/sources/fake-hq-items';
 
 @Component({
   selector: 'app-simulator',
@@ -254,8 +255,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.hqIngredientsData$ = this.recipe$.pipe(
       map(recipe => {
         return (recipe.ingredients || [])
-          .filter(i => i.id > 20 && i.quality !== undefined)
-          .map(ingredient => ({ id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
+          .filter(i => i.id > 20 && i.quality !== undefined && !fakeHQItems.some(id => i.id === id))
+          .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
       })
     );
 
