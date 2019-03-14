@@ -122,9 +122,9 @@ handleNpc = (row) => {
 
 const mapIds = [];
 
-getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en&key=63cc0045d7e847149c3f').subscribe(res => {
+getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en,TerritoryType.WeatherRate&key=63cc0045d7e847149c3f').subscribe(res => {
   res.Results.forEach(map => {
-    mapIds.push({ id: +map.ID, name: map.PlaceName.Name_en });
+    mapIds.push({ id: +map.ID, name: map.PlaceName.Name_en, weatherRate: map.TerritoryType.WeatherRate });
   });
 }, null, () => {
   persistToTypescript('map-ids', 'mapIds', mapIds);
@@ -143,6 +143,7 @@ const craftingLog = [
   []
 ];
 
+
 const craftingLogPages = [
   [],
   [],
@@ -153,6 +154,7 @@ const craftingLogPages = [
   [],
   []
 ];
+
 
 
 function addToLogPage(entry, pageId) {
@@ -196,4 +198,47 @@ getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', t
   });
   persistToTypescript('crafting-log', 'craftingLog', craftingLog);
   persistToTypescript('crafting-log-pages', 'craftingLogPages', craftingLogPages);
+});
+
+// Weather index extraction
+const weatherIndexes = [];
+
+const weatherIndexData = {};
+
+const weatherColumns = [
+  'ID',
+  'Rate0',
+  'Rate1',
+  'Rate2',
+  'Rate3',
+  'Rate4',
+  'Rate5',
+  'Rate6',
+  'Rate7',
+  'Weather0TargetID',
+  'Weather1TargetID',
+  'Weather2TargetID',
+  'Weather3TargetID',
+  'Weather4TargetID',
+  'Weather5TargetID',
+  'Weather6TargetID',
+  'Weather7TargetID'
+];
+
+getAllPages(`https://xivapi.com/weatherrate?columns=${weatherColumns.join(',')}&key=63cc0045d7e847149c3f`).subscribe(res => {
+  weatherIndexes.push(...res.Results);
+}, null, () => {
+  weatherIndexes.forEach(weatherIndex => {
+    weatherIndexData[weatherIndex.ID] = {
+      [weatherIndex.Rate0]: weatherIndex.Weather0TargetID,
+      [weatherIndex.Rate1]: weatherIndex.Weather1TargetID,
+      [weatherIndex.Rate2]: weatherIndex.Weather2TargetID,
+      [weatherIndex.Rate3]: weatherIndex.Weather3TargetID,
+      [weatherIndex.Rate4]: weatherIndex.Weather4TargetID,
+      [weatherIndex.Rate5]: weatherIndex.Weather5TargetID,
+      [weatherIndex.Rate6]: weatherIndex.Weather6TargetID,
+      [weatherIndex.Rate7]: weatherIndex.Weather7TargetID
+    };
+  });
+  persistToTypescript('weather-index', 'weatherIndex', weatherIndexData);
 });

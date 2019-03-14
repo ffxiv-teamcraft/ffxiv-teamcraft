@@ -18,11 +18,12 @@ import { Alarm } from '../alarm';
 import { filter, first, map } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
-import { EorzeanTimeService } from '../../time/eorzean-time.service';
+import { EorzeanTimeService } from '../../eorzea/eorzean-time.service';
 import { AlarmsPageDisplay } from '../alarms-page-display';
 import { AlarmGroupDisplay } from '../alarm-group-display';
 import { AlarmGroup } from '../alarm-group';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { WeatherService } from '../../eorzea/weather.service';
 
 @Injectable({
   providedIn: 'root'
@@ -64,7 +65,7 @@ export class AlarmsFacade {
   );
 
   constructor(private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
-              private settings: SettingsService) {
+              private settings: SettingsService, private weatherService: WeatherService) {
   }
 
   public addAlarms(...alarms: Alarm[]): void {
@@ -192,6 +193,11 @@ export class AlarmsFacade {
   }
 
   public getNextSpawn(alarm: Alarm, time: Date): number {
+    if (alarm.weathers) {
+      alarm.weathers.forEach(weather => {
+        console.log(this.weatherService.getNextWeatherStart(alarm.mapId, weather, time));
+      });
+    }
     return alarm.spawns.sort((a, b) => {
       const timeBeforeA = this.getMinutesBefore(time, a);
       const timeBeforeADespawns = this.getMinutesBefore(time, (a + alarm.duration) % 24);
