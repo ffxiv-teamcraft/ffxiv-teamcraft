@@ -11,7 +11,7 @@
   "Edit_amount": "Изменить размер",
   "List_fork_in_progress": "Копирование списка на ваш аккаунт...",
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема не устранится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
-  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
+  "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон показаны единожды)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -26,10 +26,10 @@
     "Crafts_amount": "# крафтов",
     "Add_to_list": "Добавить предмет в список",
     "Apply_filters": "Применить фильтры",
-    "Reset_filters": "Reset filters",
-    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
-    "Share_url": "Copy search url to your clipboard",
-    "Share_url_copied": "Search url copied to your clipboard"
+    "Reset_filters": "Сбросить фильтры",
+    "Too_many_results_warning": "Этот поиск вернул более 100 элементов. Поскольку наш источник данных ограничен 100 результатами, вам могут потребоваться дополнительные фильтры чтобы найти конкретный предмет.",
+    "Share_url": "Скопировать ссылку в буфер",
+    "Share_url_copied": "Ссылка скопирована в буфер"
   },
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте приложение",
