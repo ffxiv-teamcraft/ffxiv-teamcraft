@@ -664,6 +664,7 @@
       "No_food": "飯なし",
       "No_medicine": "薬なし",
       "No_fc_buffs": "フリーカンパニーのバフなし",
+      "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "作業精度",
