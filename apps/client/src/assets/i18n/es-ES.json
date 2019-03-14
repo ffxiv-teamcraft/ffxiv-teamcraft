@@ -846,7 +846,7 @@
       "None": "ninguno",
       "Stars": "Estrellas",
       "Requirements": "Requisitos",
-      "Add_requirement": "Añadir requisito",
+      "Add_requirement": "Agregar requisito",
       "Yields": "Rendimiento",
       "Name": "Nombre",
       "ID": "ID del artículo",
@@ -859,40 +859,40 @@
         "Title": "Recogido por",
         "Type": "Tipo de nodo",
         "Folklore": "Folklore",
-        "Slot": "Slot"
+        "Slot": "Ranura"
       },
       "ALARMS": {
-        "Title": "Alarms"
+        "Title": "Alarmas"
       },
       "VENDORS": {
-        "Title": "Vendors",
-        "Npc_name": "NPC name",
-        "Price": "Price",
-        "Delete_vendor": "Delete vendor"
+        "Title": "Vendedores",
+        "Npc_name": "Nombre de NPC",
+        "Price": "Precio",
+        "Delete_vendor": "Eliminar vendedor"
       },
       "TRADES": {
-        "Title": "Trade sources",
-        "Npc_name": "NPC name",
-        "Shop_name": "Shop name",
-        "Delete_trade": "Delete trade",
-        "Trade_details": "Trade details",
-        "Add_currency": "Add a currency"
+        "Title": "Fuentes comerciales",
+        "Npc_name": "Nombre de NPC",
+        "Shop_name": "Nombre de la tienda",
+        "Delete_trade": "Eliminar comercio",
+        "Trade_details": "Detalles del comercio",
+        "Add_currency": "Agregar una moneda"
       },
       "REDUCTION": {
-        "Title": "Reduced from"
+        "Title": "Reducido de"
       }
     },
     "NPC_PICKER": {
-      "Title": "Find a NPC",
-      "Npc_name": "NPC name"
+      "Title": "Encuentre un NPC",
+      "Npc_name": "Nombre de NPC"
     },
     "IMPORT": {
-      "Corrupted_file": "Import file is corrupted or wrong format",
-      "Drag_or_click": "Drag the file here or click to select it",
-      "Format": "Format",
-      "Folder": "Folder",
-      "No_folder": "No folder",
-      "Parsing_file": "Parsing file content...",
+      "Corrupted_file": "El archivo de importación está corrupto o incorrecto",
+      "Drag_or_click": "Arrastre el archivo aquí o haga clic para seleccionarlo",
+      "Format": "Formato",
+      "Folder": "Carpeta",
+      "No_folder": "Ninguna carpeta",
+      "Parsing_file": "Procesando contenido de archivo...",
       "Saving_items": "Saving items ({{done}}/{{todo}})"
     }
   }
