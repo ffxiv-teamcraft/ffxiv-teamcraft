@@ -152,7 +152,7 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   getIngameAlarmMacro(display: AlarmDisplay): string {
-    return `/alarm "${display.alarm.itemId ? this.i18n.getName(this.l12n.getItem(display.alarm.itemId)) : display.alarm.name}" et rp ${display.nextSpawn < 10 ? '0' : ''}${display.nextSpawn}00 ${
+    return `/alarm "${display.alarm.itemId ? this.i18n.getName(this.l12n.getItem(display.alarm.itemId)) : display.alarm.name}" et rp ${display.nextSpawn.hours < 10 ? '0' : ''}${display.nextSpawn.hours}00 ${
       Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
   }
 

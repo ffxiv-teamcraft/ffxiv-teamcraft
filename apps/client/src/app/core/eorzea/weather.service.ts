@@ -23,18 +23,16 @@ export class WeatherService {
     // 0x64 = 100
     const calcBase = totalDays * 100 + increment;
     // 0xB = 11
-    const step1 = (calcBase << 11) ^ calcBase;
-    const step2 = (step1 >>> 8) ^ step1;
+    const step1 = ((calcBase << 11) ^ calcBase) >>> 0;
+    const step2 = ((step1 >>> 8) ^ step1) >>> 0;
     // 0x64 = 100
     return step2 % 100;
   }
 
   public getWeather(mapId: number, date: Date): number {
     const weatherRate = weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
-    const weatherRateValue = this.getWeatherRateValue(date);
+    const weatherRateValue = this.getWeatherRateValue(new Date(date));
     const rates = Object.keys(weatherRate);
-    console.log(weatherRateValue, rates);
-    return;
     for (const rate of rates) {
       if (weatherRateValue <= +rate) {
         return weatherRate[rate];
@@ -51,8 +49,14 @@ export class WeatherService {
     if (this.getWeather(mapId, date) === weatherId) {
       return date;
     }
-    return;
-    date.setHours((date.getHours() + 8) % 8);
-    return this.getNextWeatherStart(mapId, weatherId, date, weatherRate);
+    return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(date), weatherRate);
+  }
+
+  public nextWeatherTime(date: Date) {
+    date = new Date(date);
+    const hoursPast = date.getUTCHours() % 8;
+    const difference = (((8 - hoursPast) * 60 - date.getUTCMinutes()) * 60 - date.getUTCSeconds()) * 1000 - date.getUTCMilliseconds();
+    date.setTime(date.getTime() + difference);
+    return date;
   }
 }
