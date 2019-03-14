@@ -1,4 +1,4 @@
-import { EMPTY, from, Observable } from 'rxjs';
+import { EMPTY, from, Observable, of } from 'rxjs';
 import { DataModel } from '../data-model';
 import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
@@ -24,7 +24,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
         }),
         catchError(err => {
           console.error(`ADD ${this.getBaseUri(uriParams)} : ${err.message}`);
-          return EMPTY;
+          return of(null);
         }));
   }
 
@@ -41,7 +41,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
         }),
         catchError(err => {
           console.error(`GET ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
-          return EMPTY;
+          return of(null);
         })
       );
   }
@@ -59,7 +59,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       }),
       catchError(err => {
         console.error(`UPDATE ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
-        return EMPTY;
+        return of(null);
       }));
   }
 
@@ -76,7 +76,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       }),
       catchError(err => {
         console.error(`SET ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
-        return EMPTY;
+        return of(null);
       }));
   }
 
@@ -93,7 +93,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
         }),
         catchError(err => {
           console.error(`DELETE ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
-          return EMPTY;
+          return of(null);
         }));
   }
 
