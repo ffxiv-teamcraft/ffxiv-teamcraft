@@ -1,0 +1,14 @@
+<nz-list [nzDataSource]="items$ | async" [nzRenderItem]="itemTemplate">
+  <ng-template #itemTemplate let-item>
+    <nz-list-item>
+      <nz-list-item-meta [nzTitle]="item.name" [nzDescription]="item.$key" [nzAvatar]="checkbox">
+        <ng-template #checkbox>
+          <label nz-checkbox [ngModel]="false" (ngModelChange)="setSelection(item, $event === true)"></label>
+        </ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+  </ng-template>
+</nz-list>
+
+<button [disabled]="selectedItems.length === 0" nz-button (click)="exportItems()">{{'Confirm' | translate}}
+</button>

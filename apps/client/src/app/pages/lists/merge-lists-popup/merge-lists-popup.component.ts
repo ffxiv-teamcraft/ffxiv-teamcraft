@@ -32,7 +32,7 @@ export class MergeListsPopupComponent implements OnInit {
               private translate: TranslateService, private workshopsFacade: WorkshopsFacade) {
   }
 
-  public setSelection(list: List, selected: true): void {
+  public setSelection(list: List, selected: boolean): void {
     if (selected) {
       this.selectedLists.push(list);
       this.listsFacade.load(list.$key);

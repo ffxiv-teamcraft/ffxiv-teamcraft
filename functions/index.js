@@ -11,11 +11,19 @@ function getCompact(list) {
   delete compact.items;
   compact.finalItems = (compact.finalItems || []).map(item => {
     const entry = {
-      id: item.id,
-      icon: item.icon,
       amount: item.amount,
       amount_needed: item.amount_needed
     };
+    if (item.custom) {
+      entry.$key = item.$key;
+      entry.id = item.id;
+      entry.custom = true;
+      entry.name = item.name;
+      entry.icon = item.icon || '';
+    } else {
+      entry.id = item.id;
+      entry.icon = item.icon || '';
+    }
     if (item.recipeId !== undefined) {
       entry.recipeId = item.recipeId;
     }
@@ -25,7 +33,7 @@ function getCompact(list) {
 }
 
 function registerItemsCreation(items) {
-  return Promise.all(items.map(item => {
+  return Promise.all(items.filter(i => !i.custom).map(item => {
     return admin.database().ref('/stats').transaction(current => {
       current = current || {};
       const entry = current[`${item.id}:${item.recipeId}`];

@@ -67,7 +67,7 @@ fs.existsSync('output') || fs.mkdirSync('output');
 //         console.log('nodes written');
 //         persistToTypescript('aetherytes', 'aetherytes', aetherytes);
 //         console.log('aetherytes written');
-//         persistToJson('npcs', npcs);
+//         persistToJsonAsset('npcs', npcs);
 //         console.log('npcs written');
 //         persistToJson('monsters', monsters);
 //         console.log('monsters written');
