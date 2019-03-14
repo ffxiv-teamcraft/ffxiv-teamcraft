@@ -21,11 +21,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       .pipe(
         map((ref: any) => {
           return ref.id;
-        }),
-        catchError(err => {
-          console.error(`ADD ${this.getBaseUri(uriParams)} : ${err.message}`);
-          return of(null);
-        }));
+        })
+      );
   }
 
   get(uid: string, uriParams?: any): Observable<T> {
@@ -38,10 +35,6 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
           }
           delete snap.payload;
           return this.serializer.deserialize<T>(valueWithKey, this.getClass());
-        }),
-        catchError(err => {
-          console.error(`GET ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
-          return of(null);
         })
       );
   }
@@ -56,10 +49,6 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).update(toUpdate)).pipe(
       tap(() => {
         this.pendingChangesService.removePendingChange(`update ${this.getBaseUri(uriParams)}/${uid}`);
-      }),
-      catchError(err => {
-        console.error(`UPDATE ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
-        return of(null);
       }));
   }
 
@@ -73,10 +62,6 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).set(toSet)).pipe(
       tap(() => {
         this.pendingChangesService.removePendingChange(`set ${this.getBaseUri(uriParams)}/${uid}`);
-      }),
-      catchError(err => {
-        console.error(`SET ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
-        return of(null);
       }));
   }
 
@@ -90,10 +75,6 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
         tap(() => {
           // If there's cache information, delete it.
           this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri(uriParams)}/${uid}`);
-        }),
-        catchError(err => {
-          console.error(`DELETE ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
-          return of(null);
         }));
   }
 
