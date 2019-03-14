@@ -893,7 +893,7 @@
       "Folder": "Carpeta",
       "No_folder": "Ninguna carpeta",
       "Parsing_file": "Procesando contenido de archivo...",
-      "Saving_items": "Saving items ({{done}}/{{todo}})"
+      "Saving_items": "Guardando artículos ({{done}}/{{todo}})"
     }
   }
 }
