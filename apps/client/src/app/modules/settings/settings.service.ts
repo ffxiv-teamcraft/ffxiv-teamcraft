@@ -13,7 +13,7 @@ export class SettingsService {
   }
 
   public get availableLocales(): string[] {
-    return ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko', 'zh'];
+    return ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko', 'zh', 'ru'];
   }
 
   public get baseLink(): string {
