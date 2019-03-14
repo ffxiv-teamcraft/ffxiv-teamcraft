@@ -5,9 +5,8 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { NzMessageService, NzModalRef } from 'ng-zorro-antd';
 import { debounceTime, filter, first, map, skip, switchMap, tap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, concat } from 'rxjs';
+import { combineLatest, concat, Observable } from 'rxjs';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
-import { Observable } from 'rxjs/Observable';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 
 @Component({
@@ -33,7 +32,7 @@ export class MergeListsPopupComponent implements OnInit {
               private translate: TranslateService, private workshopsFacade: WorkshopsFacade) {
   }
 
-  public setSelection(list: List, selected: true): void {
+  public setSelection(list: List, selected: boolean): void {
     if (selected) {
       this.selectedLists.push(list);
       this.listsFacade.load(list.$key);
@@ -58,7 +57,8 @@ export class MergeListsPopupComponent implements OnInit {
                   }
                   return list;
                 })
-                .filter(l => l !== undefined)
+                .filter(l => l !== undefined && l.name)
+                .filter((l: List) => !l.isLarge())
             };
           })
           .filter(display => display.lists.length > 0)
@@ -79,7 +79,7 @@ export class MergeListsPopupComponent implements OnInit {
           });
       }),
       map(lists => {
-        return lists.sort((a, b) => b.index - a.index);
+        return lists.sort((a, b) => b.index - a.index).filter((l: List) => !l.isLarge() && l.name);
       })
     );
   }

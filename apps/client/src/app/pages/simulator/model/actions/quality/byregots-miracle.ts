@@ -2,6 +2,7 @@ import { Simulation } from '../../../simulation/simulation';
 import { Buff } from '../../buff.enum';
 import { QualityAction } from '../quality-action';
 import { CraftingJob } from '../../crafting-job.enum';
+import { SimulationFailCause } from '../../simulation-fail-cause.enum';
 
 export class ByregotsMiracle extends QualityAction {
 
@@ -11,6 +12,16 @@ export class ByregotsMiracle extends QualityAction {
 
   _canBeUsed(simulationState: Simulation): boolean {
     return simulationState.hasBuff(Buff.INNER_QUIET) && simulationState.crafterStats.specialist;
+  }
+
+  getFailCause(simulationState: Simulation, linear?: boolean, safeMode?: boolean): SimulationFailCause {
+    if (!simulationState.hasBuff(Buff.INNER_QUIET)) {
+      return SimulationFailCause.NO_INNER_QUIET;
+    }
+    if (!simulationState.crafterStats.specialist) {
+      return SimulationFailCause.NOT_SPECIALIST;
+    }
+    super.getFailCause(simulationState, linear, safeMode);
   }
 
   execute(simulation: Simulation): void {

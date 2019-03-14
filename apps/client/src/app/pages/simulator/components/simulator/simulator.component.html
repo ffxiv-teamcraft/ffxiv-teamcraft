@@ -150,8 +150,10 @@
                   <nz-form-item>
                     <nz-form-control>
                       <label nz-checkbox id="specialist"
-                             formControlName="specialist">{{'SIMULATOR.CONFIGURATION.Specialist'
+                             formControlName="specialist"
+                             (click)="toggleSpecialist()">{{'SIMULATOR.CONFIGURATION.Specialist'
                         | translate}}</label>
+                      <nz-form-extra>{{'SIMULATOR.CONFIGURATION.Quest_warning' | translate}}</nz-form-extra>
                     </nz-form-control>
                   </nz-form-item>
                 </div>
@@ -409,7 +411,7 @@
           </div>
         </nz-card>
 
-        <nz-card>
+        <nz-card [class.mobile-buffs]="false | ifMobile: true">
           <div fxLayout="row" fxLayoutGap="px" fxLayoutAlign="flex-starts center" class="buffs-container">
             <div class="buff-container" *ngFor="let buff of resultData.simulation.buffs">
               <span class="stacks" *ngIf="buff.stacks > 0">{{buff.stacks}}</span>
@@ -436,9 +438,12 @@
                           [failed]="!step.success"></app-action>
             </div>
           </div>
+          <div *ngIf="resultData.failCause !== undefined" class="fail-reason">
+            {{('SIMULATOR.FAIL_CAUSE.' + resultData.failCause) | translate}}
+          </div>
         </nz-card>
 
-        <nz-card>
+        <nz-card [class.mobile-actions]="false | ifMobile: true">
           <div class="category-row">
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>

@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import * as jobAbbrs from '../core/data/sources/job-abbr.json';
+import { LocalizedDataService } from '../core/data/localized-data.service';
 import { I18nName } from '../model/common/i18n-name';
 
 @Pipe({
@@ -7,9 +8,11 @@ import { I18nName } from '../model/common/i18n-name';
 })
 export class JobAbbrIconPipe implements PipeTransform {
 
+  constructor(private l12n: LocalizedDataService) {
+  }
 
   transform(id: number, fallback?: string): I18nName {
-    return jobAbbrs[id] || fallback;
+    return this.l12n.getJobAbbr(id);
   }
 
 }

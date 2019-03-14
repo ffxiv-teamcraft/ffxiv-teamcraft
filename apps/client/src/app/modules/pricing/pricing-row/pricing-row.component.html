@@ -3,11 +3,18 @@
     <label nz-checkbox [(ngModel)]="item.usePrice" (ngModelChange)="save.emit()"></label>
     <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
                    [width]="24"></app-item-icon>
-    <span ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
+    <span class="item-name" ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
+          *ngIf="settings.preferredCopyType === 'classic'"
           [nzTitle]="'Copy_item_name_to_clipboard' | translate"
           (cbOnSuccess)="afterNameCopy($event.content)">
-      {{item.id | itemName | i18n}}
-    </span>
+        {{item.id | itemName | i18n}}
+      </span>
+    <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;" nz-tooltip
+          *ngIf="settings.preferredCopyType === 'isearch'"
+          [nzTitle]="'Copy_isearch' | translate"
+          (cbOnSuccess)="afterNameCopy($event.content)">
+        {{item.id | itemName | i18n}}
+      </span>
     <i *ngIf="_craftCost !== undefined"
        nz-tooltip
        nzTitle="{{'Minimal_craft_cost' | translate}}: {{_craftCost | number:'1.0-0'}} gil"
@@ -17,6 +24,13 @@
     <i *ngIf="price.fromVendor" class="from-vendor material-icons" nz-tooltip
        nzTitle="{{'PRICING.From_vendor' | translate}}">
       group
+    </i>
+    <i class="material-icons" nz-tooltip
+       *ngIf="priceFromCrafting"
+       nzTitle="{{'PRICING.From_crafting' | translate}}">gavel</i>
+    <i *ngIf="vendorPrice?.nq > 0 && vendorPrice?.nq < price?.nq" nz-icon type="warning" theme="twotone" nz-tooltip
+       [twoToneColor]="'#eb4141'"
+       nzTitle="{{'PRICING.Cheaper_at_vendor' | translate: {price: vendorPrice?.nq } }}">
     </i>
     <app-marketboard-icon [itemId]="item.id" [showHistory]="true"></app-marketboard-icon>
   </div>

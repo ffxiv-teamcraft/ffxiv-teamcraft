@@ -1,10 +1,10 @@
-import { from, Observable } from 'rxjs';
+import { EMPTY, from, Observable } from 'rxjs';
 import { DataModel } from '../data-model';
 import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { map, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { Action, AngularFirestore } from '@angular/fire/firestore';
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
@@ -21,6 +21,10 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       .pipe(
         map((ref: any) => {
           return ref.id;
+        }),
+        catchError(err => {
+          console.error(`ADD ${this.getBaseUri(uriParams)} : ${err.message}`);
+          return EMPTY;
         }));
   }
 
@@ -34,6 +38,10 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
           }
           delete snap.payload;
           return this.serializer.deserialize<T>(valueWithKey, this.getClass());
+        }),
+        catchError(err => {
+          console.error(`GET ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
+          return EMPTY;
         })
       );
   }
@@ -48,6 +56,10 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).update(toUpdate)).pipe(
       tap(() => {
         this.pendingChangesService.removePendingChange(`update ${this.getBaseUri(uriParams)}/${uid}`);
+      }),
+      catchError(err => {
+        console.error(`UPDATE ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
+        return EMPTY;
       }));
   }
 
@@ -61,6 +73,10 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).set(toSet)).pipe(
       tap(() => {
         this.pendingChangesService.removePendingChange(`set ${this.getBaseUri(uriParams)}/${uid}`);
+      }),
+      catchError(err => {
+        console.error(`SET ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
+        return EMPTY;
       }));
   }
 
@@ -70,10 +86,15 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       throw new Error('Empty uid');
     }
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).delete())
-      .pipe(tap(() => {
-        // If there's cache information, delete it.
-        this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri(uriParams)}/${uid}`);
-      }));
+      .pipe(
+        tap(() => {
+          // If there's cache information, delete it.
+          this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri(uriParams)}/${uid}`);
+        }),
+        catchError(err => {
+          console.error(`DELETE ${this.getBaseUri(uriParams)}/${uid} : ${err.message}`);
+          return EMPTY;
+        }));
   }
 
 }

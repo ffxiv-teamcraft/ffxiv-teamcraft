@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
@@ -28,13 +28,14 @@ import { TextQuestionPopupComponent } from '../../../modules/text-question-popup
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
   selector: 'app-list-details',
   templateUrl: './list-details.component.html',
   styleUrls: ['./list-details.component.less']
 })
-export class ListDetailsComponent implements OnInit {
+export class ListDetailsComponent extends TeamcraftComponent implements OnInit, OnDestroy {
 
   public display$: Observable<ListDisplay>;
 
@@ -80,15 +81,12 @@ export class ListDetailsComponent implements OnInit {
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
               private l12n: LocalizedDataService, private linkTools: LinkToolsService) {
+    super();
     this.list$ = combineLatest(this.listsFacade.selectedList$, this.permissionLevel$).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {
         if (!list.notFound && list.isOutDated() && permissionLevel >= PermissionLevel.WRITE) {
           this.regenerateList(list);
-        }
-        if (list.teamId !== undefined) {
-          this.teamsFacade.loadTeam(list.teamId);
-          this.teamsFacade.select(list.teamId);
         }
         if (!list.notFound) {
           this.listIsLarge = list.isLarge();
@@ -115,6 +113,30 @@ export class ListDetailsComponent implements OnInit {
       .pipe(
         map(([team, userId, permissionsLevel]) => team.leader === userId || permissionsLevel >= PermissionLevel.OWNER)
       );
+
+    combineLatest(this.list$, this.listsFacade.compacts$).pipe(
+      filter(([list, compacts]) => list.notFound && compacts.some(l => l.$key === list.$key)),
+      switchMap(([list, compacts]) => {
+        const listCompact = compacts.find(l => l.$key === list.$key);
+        return this.listManager.upgradeList(listCompact);
+      }),
+      takeUntil(this.onDestroy$)
+    ).subscribe(regeneratedList => {
+      this.listsFacade.updateList(regeneratedList);
+    });
+
+    combineLatest(this.list$, this.teamsFacade.allTeams$, this.teamsFacade.selectedTeam$).pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(([list, teams, selectedTeam]) => {
+      if (list.teamId !== undefined) {
+        if (!teams.some(team => team.$key === list.teamId)) {
+          this.teamsFacade.loadTeam(list.teamId);
+        }
+        if (selectedTeam === undefined || selectedTeam.$key !== list.teamId) {
+          this.teamsFacade.select(list.teamId);
+        }
+      }
+    });
   }
 
   ngOnInit() {
@@ -123,7 +145,8 @@ export class ListDetailsComponent implements OnInit {
     this.activatedRoute.paramMap
       .pipe(
         map(params => params.get('listId')),
-        tap((listId: string) => this.listsFacade.load(listId))
+        tap((listId: string) => this.listsFacade.load(listId)),
+        takeUntil(this.onDestroy$)
       )
       .subscribe(listId => {
         this.listsFacade.select(listId);
@@ -132,11 +155,16 @@ export class ListDetailsComponent implements OnInit {
       filter(team => team && team.notFound),
       switchMap(() => {
         return this.list$.pipe(first());
-      })
+      }),
+      takeUntil(this.onDestroy$)
     ).subscribe(list => {
       delete list.teamId;
       this.listsFacade.updateList(list);
     });
+  }
+
+  save(list: List): void {
+    this.listsFacade.updateList(list);
   }
 
   getLink(list: List): string {
@@ -292,7 +320,8 @@ export class ListDetailsComponent implements OnInit {
       first(),
       switchMap(() => {
         return modalRef.getContentComponent().changes$;
-      })
+      }),
+      takeUntil(this.onDestroy$)
     ).subscribe(() => {
       this.listsFacade.updateList(list);
     });
@@ -318,6 +347,13 @@ export class ListDetailsComponent implements OnInit {
 
   trackByDisplayRow(index: number, row: LayoutRowDisplay): string {
     return row.filterChain + row.title;
+  }
+
+  ngOnDestroy(): void {
+    this.list$.pipe(first()).subscribe(list => {
+      this.listsFacade.unload(list.$key);
+    });
+    super.ngOnDestroy();
   }
 
 }

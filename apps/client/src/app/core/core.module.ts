@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GarlandToolsService } from './api/garland-tools.service';
 import { DataService } from './api/data.service';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
-import { I18nPipe } from '../pipes/i18n.pipe';
+import { I18nPipe } from './i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocalizedDataService } from './data/localized-data.service';
 import { PushNotificationsModule } from 'ng-push';
@@ -65,7 +65,6 @@ import { WeatherService } from './eorzea/weather.service';
     PlatformService,
     DataService,
     MathToolsService,
-    LocalizedDataService,
     I18nToolsService,
     BellNodesService,
     HtmlToolsService,
@@ -97,7 +96,8 @@ export class CoreModule {
         GarlandToolsService,
         EorzeanTimeService,
         CharacterService,
-        IpcService
+        IpcService,
+        LocalizedDataService
       ]
     };
   }

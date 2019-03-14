@@ -14645,6 +14645,12 @@
     "de": "Garten des Trotzes",
     "fr": "Jardin du Brocard"
   },
+  "2545": {
+    "en": "Eureka Hydatos",
+    "ja": "エウレカ：ヒュダトス帯",
+    "de": "Eureka Hydatos",
+    "fr": "Eurêka Hydatos"
+  },
   "2546": {
     "en": "The Partisan's Proof",
     "ja": "偏屈者の実験場",
@@ -14710,6 +14716,84 @@
     "ja": "ギムリトダーク",
     "de": "Ghimlyt-Finsternis",
     "fr": "Les Ténèbres de Ghimlyt"
+  },
+  "2587": {
+    "en": "North Mercenary Base",
+    "ja": "ノース・マーシナリーベース",
+    "de": "Söldnerlager Nord",
+    "fr": "Base nord des mercenaires"
+  },
+  "2588": {
+    "en": "South Mercenary Base",
+    "ja": "サウス・マーシナリーベース",
+    "de": "Söldnerlager Süd",
+    "fr": "Base sud des mercenaires"
+  },
+  "2589": {
+    "en": "Hidden Gorge",
+    "ja": "ヒドゥンゴージ",
+    "de": "Verborgene Schlucht",
+    "fr": "Gorge dérobée"
+  },
+  "2590": {
+    "en": "The Left Wing of Avis",
+    "ja": "凶鳥の左翼",
+    "de": "Linke Schwinge",
+    "fr": "Aile gauche de l'Avis"
+  },
+  "2591": {
+    "en": "The Right Wing of Avis",
+    "ja": "凶鳥の右翼",
+    "de": "Rechte Schwinge",
+    "fr": "Aile droite de l'Avis"
+  },
+  "2592": {
+    "en": "Avis's Back",
+    "ja": "凶鳥の背",
+    "de": "Schnabel",
+    "fr": "Dos de l'Avis"
+  },
+  "2593": {
+    "en": "Falcon Base",
+    "ja": "ファルコンベース",
+    "de": "Falkennest",
+    "fr": "Base des Faucons"
+  },
+  "2594": {
+    "en": "South Falcon Tower",
+    "ja": "ノース・ファルコンタワー",
+    "de": "Falkenturm Nord",
+    "fr": "Tour nord des Faucons"
+  },
+  "2595": {
+    "en": "North Falcon Tower",
+    "ja": "サウス・ファルコンタワー",
+    "de": "Falkenturm Süd",
+    "fr": "Tour sud des Faucons"
+  },
+  "2596": {
+    "en": "Raven Base",
+    "ja": "レイヴンベース",
+    "de": "Rabennest",
+    "fr": "Base des Corbeaux"
+  },
+  "2597": {
+    "en": "North Raven Tower",
+    "ja": "ノース・レイヴンタワー",
+    "de": "Rabenturm Nord",
+    "fr": "Tour nord des Corbeaux"
+  },
+  "2598": {
+    "en": "South Raven Tower",
+    "ja": "サウス・レイヴンタワー",
+    "de": "Rabenturm Süd",
+    "fr": "Tour sud des Corbeaux"
+  },
+  "2599": {
+    "en": "Loading Station",
+    "ja": "ステーション",
+    "de": "Verladestation",
+    "fr": "Gare"
   },
   "2600": {
     "en": "East End",
@@ -16366,6 +16450,150 @@
     "ja": "古の闘技場",
     "de": "Vergessene Arena",
     "fr": "Arène abandonnée"
+  },
+  "2876": {
+    "en": "Central Point",
+    "ja": "セントラルポイント",
+    "de": "Zentraler Sammelpunkt",
+    "fr": "Le Mitan"
+  },
+  "2877": {
+    "en": "The West Val River Bank",
+    "ja": "バル川西岸",
+    "de": "Westufer des Val",
+    "fr": "Rive ouest"
+  },
+  "2878": {
+    "en": "The Val River Source",
+    "ja": "バル川源流域",
+    "de": "Val-Delta",
+    "fr": "Source de la Val"
+  },
+  "2879": {
+    "en": "The East Val River Bank",
+    "ja": "バル川東岸",
+    "de": "Ostufer des Val",
+    "fr": "Rive est"
+  },
+  "2880": {
+    "en": "Headquarters Entrance",
+    "ja": "本部塔エントランス",
+    "de": "Haupteingang des Hauptquartiers",
+    "fr": "Entrée de la tour centrale"
+  },
+  "2881": {
+    "en": "The Basement",
+    "ja": "バルデシオンアーセナル：最下層",
+    "de": "Grundstratum des Arsenals",
+    "fr": "Niveau plancher"
+  },
+  "2882": {
+    "en": "The Belly",
+    "ja": "バルデシオンアーセナル：中層",
+    "de": "Zentralstratum des Arsenals",
+    "fr": "Niveau médian"
+  },
+  "2883": {
+    "en": "The Umbral Tier",
+    "ja": "バルデシオンアーセナル：霊極層",
+    "de": "Seelenstratum des Arsenals",
+    "fr": "Niveau ombral"
+  },
+  "2884": {
+    "en": "The Astral Tier",
+    "ja": "バルデシオンアーセナル：星極層",
+    "de": "Astralstratum des Arsenals",
+    "fr": "Niveau astral"
+  },
+  "2885": {
+    "en": "The Loft",
+    "ja": "バルデシオンアーセナル：最上層",
+    "de": "Primäres Stratum des Arsenals",
+    "fr": "Sommet"
+  },
+  "2886": {
+    "en": "The Western Columns",
+    "ja": "西部魔力橋脚",
+    "de": "Westplattform",
+    "fr": "Éthéroduc ouest"
+  },
+  "2887": {
+    "en": "The Central Columns",
+    "ja": "中央魔力橋脚",
+    "de": "Zentralplattform",
+    "fr": "Éthéroduc central"
+  },
+  "2888": {
+    "en": "The Eastern Columns",
+    "ja": "東部魔力橋脚",
+    "de": "Ostplattform",
+    "fr": "Éthéroduc est"
+  },
+  "2889": {
+    "en": "The Aetherbridge Foundation",
+    "ja": "魔力橋基部",
+    "de": "Transportplattform",
+    "fr": "Socle du pont éthéré"
+  },
+  "2890": {
+    "en": "The Crystal Dragon's Bloom",
+    "ja": "水晶龍の縄張り",
+    "de": "Kristalldrachenhort",
+    "fr": "Territoire du dragon de cristal"
+  },
+  "2891": {
+    "en": "Unverified Research",
+    "ja": "封印術研究棟跡",
+    "de": "Ruine des Siegelmagielabors",
+    "fr": "Ancien atelier de recherche"
+  },
+  "2892": {
+    "en": "Dormitory",
+    "ja": "崩壊した学寮",
+    "de": "Verfallenes Wohnquartier",
+    "fr": "Dortoir en ruine"
+  },
+  "2893": {
+    "en": "Board Room",
+    "ja": "委員長の執務室",
+    "de": "Galufs Arbeitszimmer",
+    "fr": "Bureau du doyen"
+  },
+  "2894": {
+    "en": "Entranceway",
+    "ja": "エントランス",
+    "de": "Eingangshalle",
+    "fr": "Entrée"
+  },
+  "2895": {
+    "en": "Orlasrach Containment Unit",
+    "ja": "妖槍オールラスラッハ封印区",
+    "de": "Orlasrach-Quarantäneblock",
+    "fr": "Enceinte de confinement d'Orlasrach"
+  },
+  "2896": {
+    "en": "Munderg Containment Unit",
+    "ja": "妖槍ムンジャルグ封印区",
+    "de": "Munderg-Quarantäneblock",
+    "fr": "Enceinte de confinement de Munderg"
+  },
+  "2897": {
+    "en": "Shin-Zantetsuken Containment Unit",
+    "ja": "真・斬鉄剣封印区",
+    "de": "Shin-Zantetsuken-Quarantäneblock",
+    "fr": "Enceinte de confinement de Shin-Zantetsuken"
+  },
+  "2898": {
+    "en": "Lance of Virtue Containment Unit",
+    "ja": "ランス・オブ・ヴァーチュー封印区",
+    "de": "Lanze der Tugend-Quarantäneblock",
+    "fr": "Enceinte de confinement de la lance de la vertu"
+  },
+  "2899": {
+    "en": "Proto Ozma Containment Unit",
+    "ja": "プロトオズマ封印区",
+    "de": "Proto-Yadis-Quarantäneblock",
+    "fr": "Enceinte de confinement de Proto-Ozma"
   },
   "2900": {
     "en": "Pier #2",

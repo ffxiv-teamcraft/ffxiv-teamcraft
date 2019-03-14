@@ -78,6 +78,9 @@ export class PricingComponent implements AfterViewInit {
         const price = this.pricingService.getPrice(row);
         return !price.fromVendor;
       });
+    if (rowsToFill.length === 0) {
+      return;
+    }
     const operations = interval(250).pipe(
       takeUntil(stopInterval$),
       filter(index => rowsToFill[index] !== undefined),
@@ -110,7 +113,7 @@ export class PricingComponent implements AfterViewInit {
       )
       .subscribe((res) => {
         if (res instanceof Error) {
-          this.message.error(this.translate.instant('MARKETBOARD.'));
+          this.message.error(this.translate.instant('MARKETBOARD.Error'));
         } else {
           stopInterval$.next(null);
           this.pricingService.priceChanged$.next(null);
@@ -120,7 +123,8 @@ export class PricingComponent implements AfterViewInit {
   }
 
   private updateCosts(list: List): void {
-    list.items.forEach(item => {
+    const items = this.topologicalSort(list.items);
+    items.forEach(item => {
       this.costs[item.id] = this._getCraftCost(item, list);
     });
     list.finalItems.forEach(item => {
@@ -143,6 +147,24 @@ export class PricingComponent implements AfterViewInit {
         if (price.hq > 0 && amount.hq > 0) {
           priceString = `${price.hq.toLocaleString()}gil x${amount.hq}(HQ)`;
           if (price.nq > 0 && amount.nq > 0) {
+            priceString += `, ${price.nq.toLocaleString()}gil x${amount.nq}(NQ)`;
+          }
+        } else {
+          priceString = `${price.nq}gil x${amount.nq}(NQ)`;
+        }
+        return `${total}\n ${this.i18n.getName(this.l12n.getItem(row.id))}: ${priceString}`;
+      }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
+  }
+
+  public getSpendingText(rows: ListRow[], list: List): string {
+    return rows.filter(row => row.usePrice)
+      .reduce((total, row) => {
+        const price = this.pricingService.getPrice(row);
+        const amount = this.pricingService.getAmount(list.$key, row, true);
+        let priceString: string;
+        if (price.hq > 0 && amount.hq > 0) {
+          priceString = `${price.hq.toLocaleString()}gil x${amount.hq}(HQ)`;
+          if (price.nq > 0 || amount.nq > 0) {
             priceString += `, ${price.nq.toLocaleString()}gil x${amount.nq}(NQ)`;
           }
         } else {
@@ -211,6 +233,9 @@ export class PricingComponent implements AfterViewInit {
     if (this.pricingService.isCustomPrice(row) || price === 0 || this.pricingService.getPrice(row).fromVendor) {
       const prices = this.pricingService.getPrice(row);
       const amounts = this.pricingService.getAmount(list.$key, row);
+      if (prices.hq > 0 && prices.hq < prices.nq) {
+        return prices.hq * amounts.nq * amounts.hq;
+      }
       return ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);
     }
     return price;
@@ -226,6 +251,40 @@ export class PricingComponent implements AfterViewInit {
 
   public trackByItemFn(index: number, item: ListRow): number {
     return item.id;
+  }
+
+  private topologicalSort(data: ListRow[]): ListRow[] {
+    const res: ListRow[] = [];
+    const doneList: boolean[] = [];
+    while (data.length > res.length) {
+      let resolved = false;
+
+      for (const item of data) {
+        if (res.indexOf(item) > -1) {
+          // item already in resultset
+          continue;
+        }
+        resolved = true;
+
+        if (item.requires !== undefined) {
+          for (const dep of item.requires) {
+            // We have to check if it's not a precraft, as some dependencies aren't resolvable inside the current array.
+            const depIsInArray = data.find(row => row.id === dep.id) !== undefined;
+            if (!doneList[dep.id] && depIsInArray) {
+              // there is a dependency that is not met:
+              resolved = false;
+              break;
+            }
+          }
+        }
+        if (resolved) {
+          // All dependencies are met:
+          doneList[item.id] = true;
+          res.push(item);
+        }
+      }
+    }
+    return res;
   }
 
   ngAfterViewInit(): void {

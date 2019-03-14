@@ -52,6 +52,7 @@
                nz-tooltip [nzTitle]="'Reduction' | translate">
           <img *ngIf="node.folklore !== undefined" src="{{node.folklore.icon | icon}}" nz-tooltip
                [nzTitle]="node.folklore.id | itemName | i18n" alt="" class="folklore">
+          <i *ngIf="node.hidden">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</i>
           <app-fishing-bait *ngIf="node.baits !== undefined" [baits]="node.baits"></app-fishing-bait>
         </div>
       </div>

@@ -145,16 +145,25 @@ export class Simulation {
         this.availableCP += 15;
         this.maxCP += 15;
       }
+      let result: ActionResult;
+      let failCause: SimulationFailCause;
+      const canUseAction = action.canBeUsed(this, linear);
+      if (!canUseAction) {
+        failCause = action.getFailCause(this, linear, safeMode);
+      }
+      const hasEnoughCP = action.getBaseCPCost(this) <= this.availableCP;
+      if (!hasEnoughCP) {
+        failCause = SimulationFailCause.NOT_ENOUGH_CP;
+      }
       // If we can use the action
-      if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this, linear)
-        && this.steps.length < maxTurns) {
-        this.runAction(action, linear, safeMode);
+      if (this.success === undefined && hasEnoughCP && this.steps.length < maxTurns && canUseAction) {
+        result = this.runAction(action, linear, safeMode);
         if (reclaimAction.getBaseCPCost(this) <= this.availableCP && reclaimAction.canBeUsed(this, linear)) {
           this.lastPossibleReclaimStep = index;
         }
       } else {
         // If we can't, add the step to the result but skip it.
-        this.steps.push({
+        result = {
           action: action,
           success: null,
           addedQuality: 0,
@@ -162,26 +171,48 @@ export class Simulation {
           cpDifference: 0,
           skipped: true,
           solidityDifference: 0,
-          state: this.state
-        });
+          state: this.state,
+          failCause: failCause
+        };
       }
       if (this.steps.length <= maxTurns) {
+        const qualityBefore = this.quality;
+        const progressionBefore = this.progression;
+        const durabilityBefore = this.durability;
+        const cpBefore = this.availableCP;
         // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
         this.tickBuffs(linear);
+        result.afterBuffTick = {
+          // Amount of progression added to the craft
+          addedProgression: this.progression - progressionBefore,
+          // Amount of quality added to the craft
+          addedQuality: this.quality - qualityBefore,
+          // CP added to the craft (negative if removed)
+          cpDifference: this.availableCP - cpBefore,
+          // Solidity added to the craft (negative if removed)
+          solidityDifference: this.durability - durabilityBefore
+        };
       }
       // Tick state to change it for next turn if not in linear mode
       if (!linear) {
         this.tickState();
       }
+
+      this.steps.push(result);
     });
     // HQ percent to quality percent formulae: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1455
 
-    return {
+    const failedAction = this.steps.find(step => step.failCause !== undefined);
+    const res: SimulationResult = {
       steps: this.steps,
       hqPercent: this.getHQPercent(),
       success: this.progression >= this.recipe.progress,
       simulation: this
     };
+    if (failedAction !== undefined) {
+      res.failCause = SimulationFailCause[failedAction.failCause];
+    }
+    return res;
   }
 
   /**
@@ -190,15 +221,17 @@ export class Simulation {
    * @param {boolean} linear
    * @param {boolean} safeMode
    */
-  public runAction(action: CraftingAction, linear = false, safeMode = false): void {
+  public runAction(action: CraftingAction, linear = false, safeMode = false): ActionResult {
     // The roll for the current action's success rate, 0 if ideal mode, as 0 will even match a 1% chances.
     const probabilityRoll = linear ? 0 : Math.random() * 100;
     const qualityBefore = this.quality;
     const progressionBefore = this.progression;
     const durabilityBefore = this.durability;
     const cpBefore = this.availableCP;
+    let failCause: SimulationFailCause;
     let success = false;
     if (safeMode && action.getSuccessRate(this) < 100) {
+      failCause = SimulationFailCause.UNSAFE_ACTION;
       action.onFail(this);
       this.safe = false;
     } else {
@@ -214,8 +247,15 @@ export class Simulation {
     this.durability -= action.getDurabilityCost(this);
     // Even if the action failed, CP has to be consumed too
     this.availableCP -= action.getCPCost(this, linear);
-    // Push the result to the result array
-    this.steps.push({
+    if (this.progression >= this.recipe.progress) {
+      this.success = true;
+    } else if (this.durability <= 0) {
+      failCause = SimulationFailCause.DURABILITY_REACHED_ZERO;
+      // Check durability to see if the craft is failed or not
+      this.success = false;
+    }
+    // return action result
+    return {
       action: action,
       success: success,
       addedQuality: this.quality - qualityBefore,
@@ -224,14 +264,8 @@ export class Simulation {
       skipped: false,
       solidityDifference: this.durability - durabilityBefore,
       state: this.state,
-      failCause: success || !safeMode ? undefined : SimulationFailCause.UNSAFE_ACTION
-    });
-    if (this.progression >= this.recipe.progress) {
-      this.success = true;
-    } else if (this.durability <= 0) {
-      // Check durability to see if the craft is failed or not
-      this.success = false;
-    }
+      failCause: failCause
+    };
   }
 
   public hasBuff(buff: Buff): boolean {
@@ -268,7 +302,7 @@ export class Simulation {
     for (const effectiveBuff of this.buffs) {
       // We are checking the appliedStep because ticks only happen at the beginning of the second turn after the application,
       // For instance, Great strides launched at turn 1 will start to loose duration at the beginning of turn 3
-      if (effectiveBuff.appliedStep + 1 < this.steps.length) {
+      if (effectiveBuff.appliedStep < this.steps.length) {
         // If the buff has something to do, let it do it
         if (effectiveBuff.tick !== undefined) {
           effectiveBuff.tick(this, linear);

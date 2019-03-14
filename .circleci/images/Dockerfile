@@ -6,7 +6,7 @@ RUN echo "deb http://httpredir.debian.org/debian stretch-backports main" | sudo 
  && echo "deb http://security.debian.org/debian-security jessie/updates main" | sudo tee -a /etc/apt/sources.list \
  && sudo dpkg --add-architecture i386 \
  && sudo apt-get update && sudo apt-get upgrade \
- && sudo apt-get install \
+ && sudo apt-get install -y \
       wine/stretch-backports \
       wine32/stretch-backports \
       wine64/stretch-backports \
@@ -14,6 +14,13 @@ RUN echo "deb http://httpredir.debian.org/debian stretch-backports main" | sudo 
       libwine:i386/stretch-backports \
       fonts-wine/stretch-backports\
       libssl1.0.0\
-      libssl-dev
+      libssl-dev\
+      libgtk2.0-0 \
+      libnotify-dev \
+      libgconf-2-4 \
+      libnss3 \
+      libxss1 \
+      libasound2 \
+      xvfb
 
 LABEL com.circleci.preserve-entrypoint=true

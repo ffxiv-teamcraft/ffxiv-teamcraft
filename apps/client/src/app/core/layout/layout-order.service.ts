@@ -4,6 +4,7 @@ import { ListRow } from '../../modules/list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizedDataService } from '../data/localized-data.service';
 import { craftingLog } from '../data/sources/crafting-log';
+import { I18nToolsService } from '../tools/i18n-tools.service';
 
 @Injectable()
 export class LayoutOrderService {
@@ -25,8 +26,14 @@ export class LayoutOrderService {
 
   private orderFunctions: { [index: string]: (rowA: ListRow, rowB: ListRow) => number } = {
     'NAME': (a, b) => {
-      const aName: string = this.localizedData.getItem(a.id)[this.translate.currentLang];
-      const bName: string = this.localizedData.getItem(b.id)[this.translate.currentLang];
+      let aName: string = this.i18n.getName(this.localizedData.getItem(a.id));
+      let bName: string = this.i18n.getName(this.localizedData.getItem(b.id));
+      if(aName === bName){
+        // If this happens, it means that they are the same item with different recipe,
+        // let's just add recipe id to distinguish them.
+        aName += a.recipeId;
+        bName += b.recipeId;
+      }
       return aName > bName ? 1 : -1;
     },
     'LEVEL': (a, b) => {
@@ -41,7 +48,7 @@ export class LayoutOrderService {
       if (aJobId === bJobId) {
         const aIndex = this.getLogIndex(a);
         const bIndex = this.getLogIndex(b);
-        if (aIndex > -1 && bIndex > -1) {
+        if (aIndex > -1 && bIndex > -1 && aIndex !== bIndex) {
           return aIndex - bIndex;
         }
         return this.orderFunctions['LEVEL'](a, b);
@@ -51,7 +58,8 @@ export class LayoutOrderService {
     },
   };
 
-  constructor(private translate: TranslateService, private localizedData: LocalizedDataService) {
+  constructor(private translate: TranslateService, private localizedData: LocalizedDataService,
+              private i18n: I18nToolsService) {
   }
 
   public order(data: ListRow[], orderBy: string, order: LayoutRowOrder): ListRow[] {

@@ -4,12 +4,14 @@
   "Pick_a_fc": "Escolha uma compania livre",
   "Pick_a_rotation": "Escolha uma sequência",
   "Pick_a_recipe": "Escolha uma fórmula",
+  "Pick_an_item": "Escolha um item",
   "FC_name": "Nome da Compania Livre",
   "Saving_in_database": "Os datos estão a ser guardados no servidor",
   "See_on_map": "Ver no mapa",
   "Edit_amount": "Editar a quantidade",
   "List_fork_in_progress": "A copiar a lista para a sua conta...",
   "Network_error_logged_out": "Foi detectado um erro de ligação, portanto foi desligado. Se o problema persistir contacte Miu no Discord.",
+  "Hide_zone_duplicates": "Esconder zonas duplicada (itens que estão em várias zonas são exibidos apenas uma vez)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já está a ser utilizada",
     "auth/email-already-in-use": "Email já está a ser utilizado",
@@ -20,13 +22,13 @@
     "Title": "Pesquisa",
     "No_match": "Não há itens correspondentes",
     "Item_name": "Nome do item",
-    "Only_recipes": "Só fórmulas",
+    "Only_recipes": "Só receitas",
     "Crafts_amount": "# de tarefas",
     "Add_to_list": "Adicionar esse item para uma lista",
     "Apply_filters": "Aplicar filtros",
-    "Too_many_results_warning": "Esta pesquisa mostra mais de 50 resultados. Devido ao facto que a fonte de dados é limitada a 50 é sugerido que especifique mais os filtros.",
-    "Share_url": "Copy search url to your clipboard",
-    "Share_url_copied": "Search url copied to your clipboard"
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Share_url": "Cópia o url da pesquisa para sua área de transferência",
+    "Share_url_copied": "Pesquisar url copiado para a área de transferência"
   },
   "Use_as_default_character": "Usar como personagem de padrão",
   "Download_desktop_app": "Descarregar aplicação para desktop",
@@ -39,7 +41,7 @@
   "Timers": "Temporizadores",
   "Copy_isearch": "Copiar o macro isearch",
   "Isearch_copied": "/isearch {{itemname}} copiado para a área de transferência",
-  "Required_for_final_craft": "{{amount}} necessário para os itens finais",
+  "Required_for_final_craft": "É necessário {{amount}} para itens finais, convém tê-los HQ (alta qualidate)",
   "Mark_HQ": "Seleccionar como HQ obrigatório",
   "Unmark_HQ": "Remover o requisito de HQ",
   "Compact_sidebar_toggle": "Mudar barra lateral compacta",
@@ -58,7 +60,7 @@
   "Requires_x_ventures": "Requer {{amount}} empreendimentos para adequirir tudo",
   "WORKSHOP": {
     "Workshops": "Oficinas",
-    "Add_one_list": "Add a list",
+    "Add_one_list": "Adicionar uma lista",
     "Add_workshop": "Adicionar uma oficina",
     "Delete_message": "Ao eliminar uma oficina não eliminará as listas lá contidas, as mesmas só serão recuperadas em listas sem oficinas",
     "List_selection_title": "Selecione as listas a adicionar à oficina {{workshopName}}",
@@ -84,6 +86,7 @@
   "No_favorites": "Não favorito",
   "Ephemeral_list": "Será eliminado assim que completo",
   "Ephemeral_tag": "efémero",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Criar uma lista rápida (removida assim que se completar)",
   "Tag_filter": "Tags",
   "Public_lists": "Listas públicas",
@@ -130,7 +133,7 @@
     "Volume": "Volume de som",
     "Macro_copied": "Macro copiado para a área de transferência",
     "Open_overlay": "Abrir overlay",
-    "More_available": "and {{amount}} more...",
+    "More_available": "e mais {{amount}}...",
     "CUSTOM": {
       "Title": "Adicionar alarme personalizado",
       "Name": "Nome",
@@ -267,13 +270,13 @@
     "General": "Geral",
     "Link_base": "Links de item",
     "Theme": "Tema",
-    "no_panel_borders": "Disable borders around various panels",
+    "no_panel_borders": "Desativar as bordas em torno de vários painéis",
     "Desktop": "Ambiente de trabalho",
     "Always_on_top": "Sempre visível",
     "Check_for_update": "Procurar actualizações",
     "Downloading_update": "A transferir a actualização",
     "No_update_available": "Não há actualizações disponíveis",
-    "Install_update": "Install update",
+    "Install_update": "Instalar a atualização",
     "Preferred_copy_type": "Tipo de cópia preferida",
     "Auto_open_in_desktop": "Abrir links na aplicação quando estiver iniciada",
     "Account": "Conta",
@@ -285,7 +288,8 @@
     "Nickname": "Nome de utilizador",
     "Nickname_used": "Nome de utilizador já em utilização",
     "No_nickname_warning": "Por favor vá à página de configurações e crie um nome de utilizador novo para aceder às funções exclusivas do patreon.",
-    "Show_devtools": "Show dev tools",
+    "Show_devtools": "Mostrar ferramentas de desenvolvimento",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "Copiar nome to item",
       "Isearch": "Copiar macro /isearch"
@@ -314,10 +318,11 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Por favor verifique que sua conta para ter acesso às listas compartilhadas à sua FC",
+    "Needs_verification": "Por favor, verifique a sua personagem para ter acesso às listas partilhadas á sua FC",
     "Regenerate_all": "Regenerar todas as listas",
     "Regenerated_all": "As suas listas estão agora actualizadas",
     "Merge_lists": "Juntar listas",
+    "Merge_lists_warning": "Listas grandes não estão aqui listadas, porque não é possível juntar listas que são muito grandes devido às limitações da base de dados.",
     "Lists_merged": "Listas juntadas com sucesso!",
     "Shared_lists": "Listas às quais tem acesso de escrita",
     "Add_selection": "Adicionar selecção a uma lista",
@@ -328,7 +333,7 @@
     "Add_to_a_list": "Adicionar a uma lista",
     "Please_pick_recipe": "Escolha uma fórmula para este item",
     "Import_description": "Escolha uma fórmula que queira utilizar para os itens que consegue criar e seleccione uma lista, esses itens serão adicionados à lista e será então redireccionado a essa lista.",
-    "Delete_after_merge": "Delete original lists after merge",
+    "Delete_after_merge": "Eliminar listas originais ao juntar",
     "IMPORT": {
       "Title": "Importar lista de um website externo",
       "Paste_link_step_title": "Cole o link da lista externa",
@@ -349,7 +354,7 @@
     "Rename": "Renomear lista",
     "Copied_x_times": "Copiado {{count}} vezes",
     "Enable_crystals_tracking": "Activar rasteamento de cristais",
-    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
+    "Always_show_inventory": "Mostrar sempre o inventário (desativado em ecrãs pequenos, < 600px)",
     "Copy_as_text": "Copiar como texto",
     "Copy_list_as_text": "Copie toda a lista como texto",
     "Copied_as_text": "Conteúdo copiado para a área de transferências",
@@ -357,8 +362,8 @@
     "Total_trade_price": "Total: ",
     "Add_all_alarms": "Adicionar todos os alarmes d'esta lista",
     "History": "Histórico",
-    "Items_count": "{{amount}} items",
-    "Show_craftable_amount": "Show craftable amount",
+    "Items_count": "{{amount}} itens",
+    "Show_craftable_amount": "Mostrar quantidade produzíveis",
     "COMPLETION_POPUP": {
       "Title": "Lista concluída",
       "Content": "Esta lista está concluída, o que quer fazer?",
@@ -380,41 +385,45 @@
   },
   "LIST_DETAILS": {
     "List_finished": "Lista concluída",
-    "Public_list_description": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
-    "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
+    "Public_list_description": "Publicar uma lista adiciona-a à secção de listas públicas, ISTO NÃO É NECESSÁRIO PARA PARTILHAR UMA LISTA",
+    "Missing_tags_before_button": "Esta lista é mostrada como lista pública mas não tem tags, por favor, adicione algumas tags ",
     "Missing_tags_after_button": " botão",
-    "Add_remove_amount": "Add/remove a given amount",
-    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
+    "Add_remove_amount": "Adicionar ou remover uma dada quantidade",
+    "Missing_masterbook": "Não tem este masterbook no seu perfil, clique para adicioná-lo ao perfil.",
     "No_note": "Sem nota",
     "Edit_note": "Sem nota",
     "Note_placeholder": "Nota",
     "Tags_popup": "Tags",
     "Inventory_breakdown": "Inventário",
     "Open_in_ffxivgardening": "Aberto em ffxivgardening.com",
-    "Add_all_item_alarms": "Add all alarms for this item",
-    "Adaptative_filter": "Only show what I can do",
-    "Amount_craftable": "You can craft {{amount}}",
+    "Add_all_item_alarms": "Adicionar todos os alarmes d'esta lista",
+    "Adaptative_filter": "Mostrar só o que posso fazer",
+    "Disable_HQ_suggestions": "Desativar automáticas sinalizadores de HQ",
+    "Amount_craftable": "Pode criar {{amount}}",
+    "Add_item": "Adicionar um item",
+    "List_too_large": "Lista é demasiado grande",
+    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",
-      "Import_layout": "Import a layout",
-      "Import_string": "Layout import code",
-      "Import_string_copied": "Layout import code copied !",
-      "Layout_name": "Layout name",
-      "Invalid_import": "Invalid import code",
-      "Global_options": "General options",
-      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
+      "Import_layout": "Importar um layout",
+      "Import_string": "Código de importação do layout",
+      "Import_string_copied": "Código de importação de layout copiado!",
+      "Layout_name": "Nome do layout",
+      "Invalid_import": "Código de importação inválido",
+      "Global_options": "Opções gerais",
+      "Default_readonly_message": "Layout padrão é só de leitura, para poder personalizá-lo deve criar um novo layout usando o botão +."
     },
     "LAYOUT": {
       "Filter": "Filtro",
-      "Panel_name": "Panel name",
-      "Order_by": "Sort by",
+      "Panel_name": "Nome do painel",
+      "Order_by": "Ordenar por",
       "Order": "Ordenar"
     }
   },
   "LIST_TAGS": {
-    "OUTDATED": "Outdated",
-    "GEAR": "Gear",
+    "OUTDATED": "Desactualizado",
+    "GEAR": "Equipamento",
     "CONSUMABLE": "Consumível",
     "LOG": "Log",
     "LEVE": "Leve",
@@ -459,45 +468,46 @@
     "FSH": "FSH"
   },
   "MACRO_TRANSLATION": {
-    "Title": "Macro translator",
-    "Macro_language": "Macro language",
-    "Macro_to_translate": "Macro to translate",
-    "Do_translate": "Translate !",
-    "Invalid_macro_or_language": "Invalid macro or language."
+    "Title": "Tradutor de macro",
+    "Macro_language": "Idioma do Macro",
+    "Macro_to_translate": "Macro para traduzir",
+    "Do_translate": "Traduzir !",
+    "Invalid_macro_or_language": "Macro ou idioma inválido."
   },
   "CUSTOM_LINKS": {
-    "Title": "Custom Links",
-    "Not_found": "Link not found",
-    "Add_link": "Create a custom link",
-    "Link_created": "Custom link created, click the share button to copy it",
-    "Dialog_title": "Custom link",
-    "Link_type": "Link type",
-    "Link_name": "Link name",
-    "target": "Link target",
-    "Share_link_copied": "Custom link copied to clipboard",
-    "Copy_custom_link": "Copy custom link",
-    "No_links": "No custom links"
+    "Title": "Links personalizados",
+    "Not_found": "Link não encontrado",
+    "Add_link": "Criar um link personalizado",
+    "Link_created": "Link personalizado criado, clique no botão share para copiá-lo",
+    "Dialog_title": "Link personalizado",
+    "Link_type": "Tipo de link",
+    "Link_name": "Nome do link",
+    "target": "Destino do link",
+    "Share_link_copied": "Link personalizado copiado para a área de transferência",
+    "Copy_custom_link": "Copiar link personalizado",
+    "No_links": "Não há links personalizados"
   },
   "NAVIGATION": {
-    "Title": "Optimized navigation route",
-    "Steps": "Steps",
+    "Title": "Rota de navegação optimizada",
+    "Steps": "Passos",
     "STEP": {
-      "Gathering": "Gather {{amount}}",
-      "Hunting": "Get {{amount}} on monsters",
-      "Vendor": "Buy {{amount}}",
-      "Trade": "Trade {{amount}}"
+      "Gathering": "Colectar {{amount}}",
+      "Hunting": "Obtenha {{amount}} dos monstros",
+      "Vendor": "Comprar {{amount}}",
+      "Trade": "Trocar {{amount}}"
     }
   },
   "GATHERING_LOCATIONS": {
-    "Title": "Gathering items",
+    "Title": "Itens a colher",
     "No_items": "No gathering node found",
-    "Gathering_name": "Enter item name",
+    "Gathering_name": "Escreva o nome do item",
     "Ephemeral_node": "Ephemeral node, can be respawned",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !"
+    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !",
+    "Hidden_item": "Escondido"
   },
   "ANNOUNCEMENT": {
-    "Title": "Announcement",
-    "Read_more": "Read more"
+    "Title": "Anúncio",
+    "Read_more": "Ler mais"
   },
   "LIST_TEMPLATE": {
     "Create_template": "Create a list template for this list",
@@ -516,27 +526,27 @@
     }
   },
   "PERMISSIONS": {
-    "Read": "Read",
-    "Read_description": "The ability to see the list",
-    "Participate": "Participate",
+    "Read": "Ler",
+    "Read_description": "A autorização de ver a lista",
+    "Participate": "Participar",
     "Participate_description": "This gives you permission to tick items and modify amounts done",
-    "Write": "Write",
+    "Write": "Escrever",
     "Write_description": "This gives you the permission to add items, add lists (for workshops)",
     "Title": "Permissions management",
     "Everyone": "Everyone",
-    "You": "You",
+    "You": "Você",
     "Add_new": "Adicionar um utilizador",
     "Add_new_fc": "Add a Free Company",
     "Placeholder": "ID de utilizador ou email",
     "Bind_free_company": "Bind some permissions to your Free Company",
     "User_not_found": "Utilizador não encontrado",
     "User_id_tip": "O ID de utilizador pode ser encontrado na página de perfil, no canto inferior direito",
-    "Saving": "Saving permissions",
+    "Saving": "Salvando permissões",
     "No_anonymous": "You need an account to manage permissions",
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
     "Propagate_changes_done": "Changes propagated to lists inside the workshop",
     "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
-    "Default_permission_level": "Default permission level"
+    "Default_permission_level": "Nível de autorização padrão"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -547,6 +557,8 @@
     "Fixed_notification_number": "Fixed notification",
     "Starting_echo_number": "Notification #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "Extra wait",
     "Import_macro": "Import from ingame macro",
     "Ingame_macro": "Ingame macro",
@@ -606,6 +618,7 @@
       "Recipe_durability": "Durability"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "Rotation folders",
         "Rename": "Rename folder",
@@ -655,15 +668,25 @@
         "Craftsmanship": "Craftsmanship",
         "Control": "Control"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
+      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
   },
   "PRICING": {
     "From_vendor": "Price from vendor",
+    "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Expect to sell everything",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
     "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
     "Copy_earnings_as_text": "Copy content as text",
-    "Content_copied": "Content copied in your clipboard"
+    "Content_copied": "Content copied in your clipboard",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -686,7 +709,8 @@
     "Title": "Notifications",
     "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
-    "Mark_all_as_read": "Mark all as read"
+    "Mark_all_as_read": "Mark all as read",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "Teams",
@@ -745,7 +769,7 @@
     "More_on_mogboard": "More details on mogboard"
   },
   "COMMENTS": {
-    "Title": "Comments"
+    "Title": "Comentários"
   },
   "TOOLTIP": {
     "Level": "Level",
@@ -754,16 +778,16 @@
     "Class_job": "Class/Job",
     "Damage_phys": "Phys. Damage",
     "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense"
+    "Defense_phys": "Defesa Física",
+    "Defense_mag": "Defesa Mágica"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craft, share, contribute",
-    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
-    "Support_patreon": "Support us on patreon",
-    "Donation_button": "Make a one time donation",
-    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
-    "Features_header": "Get started !",
+    "Slogan": "Crie, partilhe, contribua",
+    "Lists_created_counter": "Foram criadas {{amount}} listas usando FFXIV Teamcraft",
+    "Support_patreon": "Apoie-nos no patreon",
+    "Donation_button": "Faça uma doação singular",
+    "Buy_a_tshirt": "Comprar uma t-shirt Teamcraft",
+    "Features_header": "Começar!",
     "DESCRIPTION": {
       "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
@@ -778,5 +802,28 @@
     "New_update_available": "A new update is available ! ",
     "Desktop_instructions": "Please navigate to the following link to download latest version: ",
     "Web_instructions": "Please reload the page to get the latest version."
+  },
+  "LOG_TRACKER": {
+    "Title": "Log Tracker",
+    "Mark_page_as_done": "Marcar esta página como concluída",
+    "Mark_as_done": "Marcar este item como concluído",
+    "Mark_as_not_done": "Marcar este item como não concluído",
+    "Create_list": "Crie uma lista para completar esta página",
+    "PAGE": {
+      "Master_recipes": "Receitas de mestre ({{number}})",
+      "Housing_items": "Habitação ({{number}})",
+      "Others": "Outros",
+      "Dyes": "Tintas",
+      "Other_master_recipes": "Outras Receitas Mestre"
+    }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
+  },
+  "GIVEAWAY": {
+    "Discord_1K": {
+      "Title": "Doação de 1000 membros do Discord!",
+      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+    }
   }
 }

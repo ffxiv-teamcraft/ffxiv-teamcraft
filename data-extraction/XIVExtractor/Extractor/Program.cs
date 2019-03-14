@@ -18,19 +18,15 @@ namespace Extractor
       ARealmReversed realm = new ARealmReversed(GameDirectory, "SaintCoinach.History.zip", SaintCoinach.Ex.Language.English, "app_data.sqlite");
       Localize localize = new Localize(realm);
       ExtractItemNames(localize, realm);
-      ExtractNames(localize, realm.GameData.GetSheet<PlaceName>(), "Name", "places");
-      ExtractNames(localize, realm.GameData.GetSheet<Weather>(), "Name", "weathers");
-      //ExtractMobNames(localize, realm);
-      ExtractNames(localize, realm.GameData.GetSheet<CraftAction>(), "Name", "craft-actions");
-      ExtractNames(localize, realm.GameData.GetSheet<SaintCoinach.Xiv.Action>(), "Name", "actions");
-      //ExtractAetheryteNames(localize, realm);
+      ExtractNames(localize, realm.GameData.GetSheet<PlaceName>(), "Name", "places", false);
+      ExtractNames(localize, realm.GameData.GetSheet<Weather>(), "Name", "weathers", false);
+      ExtractNames(localize, realm.GameData.GetSheet<CraftAction>(), "Name", "craft-actions", true);
+      ExtractNames(localize, realm.GameData.GetSheet<SaintCoinach.Xiv.Action>(), "Name", "actions", true);
       ExtractVentureNames(localize, realm);
-      //ExtractNodesPosition(realm.GameData.GetSheet<GatheringPoint>());
       ExtractActionIcons(realm.GameData);
-      ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Abbreviation", "job-abbr");
-      ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Name", "job-name");
+      ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Abbreviation", "job-abbr", false);
+      ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Name", "job-name", false);
       ExtractConsumables(realm.GameData);
-      //ExtractNpcs(localize, realm);
     }
 
     static void ExtractConsumables(XivCollection gameData)
@@ -120,65 +116,6 @@ namespace Extractor
       return int.Parse(System.IO.Path.GetFileNameWithoutExtension(icon.Path));
     }
 
-    static void ExtractNpcs(Localize localize, ARealmReversed realm)
-    {
-      JObject npcs = JObject.Parse(File.ReadAllText(@"..\..\..\..\xivapi\output\npcs.json"));
-      JObject res = new JObject();
-      var sheet = realm.GameData.GetSheet<ENpcResident>();
-      foreach (var npc in sheet)
-      {
-        JObject npcData = localize.Strings(npc, "Singular");
-        if (npcData != null)
-        {
-          npcData.Add("position", npcs.GetValue(npc.Key.ToString()));
-          res.Add(npc.Key.ToString(), npcData);
-        }
-      }
-      File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\npcs.json", res.ToString(Newtonsoft.Json.Formatting.Indented));
-    }
-
-    static void ExtractAetheryteNames(Localize localize, ARealmReversed realm)
-    {
-      JArray aetherytes = JArray.Parse(File.ReadAllText(@"..\..\..\..\xivapi\output\aetherytes.json"));
-      JArray res = new JArray();
-      var sheet = realm.GameData.GetSheet("Aetheryte");
-      foreach (var row in aetherytes)
-      {
-        JObject jRow = row.Value<JObject>();
-        jRow.Add("nameid", ((SaintCoinach.Xiv.PlaceName)sheet[Int32.Parse(jRow.GetValue("id").ToString())]["PlaceName"]).Key);
-        res.Add(row);
-      }
-      WriteTypescript(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\aetherytes.ts", "aetherytes", res);
-    }
-
-    static void ExtractNodesPosition(IEnumerable<GatheringPoint> rows)
-    {
-      JObject positions = JObject.Parse(File.ReadAllText(@"..\..\..\..\xivapi\output\nodes-position.json"));
-      JObject res = new JObject();
-      foreach (var row in rows)
-      {
-        if (positions.GetValue(row.Key.ToString()) != null && res.GetValue(row.Base.Key.ToString()) == null && row.TerritoryType != null)
-        {
-          JToken nodeInformations = positions.GetValue(row.Key.ToString());
-          JObject node = new JObject();
-          node.Merge(nodeInformations);
-          JArray items = new JArray();
-          foreach (var item in row.Base.Items)
-          {
-            if (item.Key > 0)
-            {
-              items.Add(item.Item.Key);
-            }
-          }
-          node.Add("level", row.Base.GatheringLevel);
-          node.Add("type", row.Base.Type.Key);
-          node.Add("items", items);
-          res.Add(row.Base.Key.ToString(), node);
-        }
-      }
-      File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\node-positions.json", res.ToString(Newtonsoft.Json.Formatting.Indented));
-    }
-
     static void ExtractItemNames(Localize localize, ARealmReversed realm)
     {
       JObject res = new JObject();
@@ -201,23 +138,7 @@ namespace Extractor
         }
       }
       string json = Regex.Replace(res.ToString(Newtonsoft.Json.Formatting.Indented), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-      File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\items.json", json);
-    }
-
-    static void ExtractMobNames(Localize localize, ARealmReversed realm)
-    {
-      // , realm.GameData.BNpcs.NameSheet, "Singular", "mobs"
-      JObject res = new JObject();
-      foreach (var bnpc in realm.GameData.BNpcs)
-      {
-        JObject itemName = localize.Strings(bnpc.Name, "Singular");
-        if (itemName != null)
-        {
-          res.Add(bnpc.Key.ToString(), itemName);
-        }
-      }
-      string json = Regex.Replace(res.ToString(Newtonsoft.Json.Formatting.Indented), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-      File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\mobs.json", json);
+      File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\assets\\data\\items.json", json);
     }
 
     static void ExtractVentureNames(Localize localize, ARealmReversed realm)
@@ -252,7 +173,7 @@ namespace Extractor
 
     }
 
-    static void ExtractNames(Localize localize, IEnumerable<IXivRow> rows, string col, string fileName)
+    static void ExtractNames(Localize localize, IEnumerable<IXivRow> rows, string col, string fileName, bool lazy)
     {
       JObject res = new JObject();
       foreach (var item in rows)
@@ -264,7 +185,14 @@ namespace Extractor
         }
       }
       string json = Regex.Replace(res.ToString(Newtonsoft.Json.Formatting.Indented), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-      File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\" + fileName + ".json", json);
+      if (lazy)
+      {
+        File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\assets\\data\\" + fileName + ".json", json);
+      }
+      else
+      {
+        File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\" + fileName + ".json", json);
+      }
     }
 
     static void WriteTypescript(string path, string contentName, JToken content)

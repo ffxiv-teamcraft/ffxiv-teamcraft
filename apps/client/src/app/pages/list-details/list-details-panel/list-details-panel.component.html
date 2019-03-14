@@ -1,39 +1,46 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="!displayRow.collapsed || collapsed">
-    <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown">
-      <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd"
-                    [layout]="displayRow.layout"
-                    [item]="item"
-                    [finalItem]="finalItems" [odd]="odd"></app-item-row>
-    </div>
-    <div *ngIf="displayRow.tiers">
-      <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
-        <span class="tier-title">{{'Precraft_tier' | translate}} {{index + 1}}</span>
-        <nz-divider></nz-divider>
-        <app-item-row *ngFor="let item of tier; trackBy: trackByItem; let odd = odd"
+  <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="!(displayRow.collapsed || collapsed)"
+                     (nzActiveChange)="collapsed = !$event">
+    <div>
+      <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown">
+        <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd"
                       [layout]="displayRow.layout"
                       [item]="item"
                       [finalItem]="finalItems" [odd]="odd"></app-item-row>
       </div>
-    </div>
-    <div *ngIf="displayRow.zoneBreakdown">
-      <div *ngFor="let row of zoneBreakdown?.rows; trackBy: trackByZone">
-        <div *ngIf="row.items.length > 0">
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <span class="zone-title">{{getLocation(row.zoneId) | i18n}}</span>
-            <button nz-button *ngIf="hasNavigationMap" nzShape="circle" nzSize="small" (click)="openNavigationMap(row)"
-                    nz-tooltip [nzTitle]="'NAVIGATION.Title' | translate">
-              <i nz-icon type="gateway"></i>
-            </button>
-          </div>
+      <div *ngIf="displayRow.tiers">
+        <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
+          <span class="tier-title">{{'Precraft_tier' | translate}} {{index + 1}}</span>
           <nz-divider></nz-divider>
-          <app-item-row *ngFor="let item of row.items; trackBy: trackByItem; let odd = odd"
+          <app-item-row *ngFor="let item of tier; trackBy: trackByItem; let odd = odd"
                         [layout]="displayRow.layout"
                         [item]="item"
                         [finalItem]="finalItems" [odd]="odd"></app-item-row>
         </div>
       </div>
+      <div *ngIf="displayRow.zoneBreakdown">
+        <div *ngFor="let row of zoneBreakdown?.rows; trackBy: trackByZone">
+          <div *ngIf="row.items.length > 0">
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <span class="zone-title">{{getLocation(row.zoneId) | i18n}}</span>
+              <button nz-button *ngIf="hasNavigationMap" nzShape="circle" nzSize="small"
+                      (click)="openNavigationMap(row)"
+                      nz-tooltip [nzTitle]="'NAVIGATION.Title' | translate">
+                <i nz-icon type="gateway"></i>
+              </button>
+            </div>
+            <nz-divider></nz-divider>
+            <app-item-row *ngFor="let item of row.items; trackBy: trackByItem; let odd = odd"
+                          [layout]="displayRow.layout"
+                          [item]="item"
+                          [finalItem]="finalItems" [odd]="odd"></app-item-row>
+          </div>
+        </div>
+      </div>
     </div>
+    <button nz-button nzBlock *ngIf="finalItems && (permissionLevel$ | async) >= 30" (click)="addItem()">
+      + {{'LIST_DETAILS.Add_item' | translate}}
+    </button>
   </nz-collapse-panel>
   <ng-template #panelHeader>
     <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">

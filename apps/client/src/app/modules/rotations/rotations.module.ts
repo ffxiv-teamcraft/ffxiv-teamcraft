@@ -10,11 +10,13 @@ import { CoreModule } from '../../core/core.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { RotationPickerDrawerComponent } from './rotation-picker-drawer/rotation-picker-drawer.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
+    FormsModule,
     TranslateModule,
     NgZorroAntdModule,
     RouterModule,

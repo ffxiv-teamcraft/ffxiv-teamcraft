@@ -87,7 +87,7 @@
                     [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                     *ngIf="(permissionLevel$ | async) > 10"
                     ngxClipboard [cbContent]="getLink(list)"
-                    nzSize="small"(cbOnSuccess)="afterLinkCopy()">
+                    nzSize="small" (cbOnSuccess)="afterLinkCopy()">
               <i nz-icon type="share-alt"></i>
             </button>
             <button nz-button nzShape="circle" nzSize="small" nz-tooltip
@@ -113,6 +113,13 @@
                    *ngIf="loggedIn$ | async">{{'LIST_DETAILS.Adaptative_filter' | translate}}</label>
           </div>
           <div>
+            <label nz-checkbox [(ngModel)]="list.disableHQSuggestions"
+                   (ngModelChange)="save(list)"
+                   *ngIf="(loggedIn$ | async) && (permissionLevel$ | async) >= 40">
+              {{'LIST_DETAILS.Disable_HQ_suggestions' | translate}}
+            </label>
+          </div>
+          <div>
             <label nz-checkbox [ngModel]="hideCompletedGlobal$ | async"
                    (ngModelChange)="setHideCompleted($event)" nz-tooltip>
               {{'Hide_completed' | translate}}
@@ -134,6 +141,11 @@
             {{'LIST_DETAILS.Missing_tags_before_button' | translate}} <i nz-icon type="tags-o"></i>
             {{'LIST_DETAILS.Missing_tags_after_button' | translate}}
           </ng-template>
+        </nz-alert>
+      </div>
+      <div class="alert" *ngIf="list.isTooLarge()">
+        <nz-alert nzType="warning" nzShowIcon [nzMessage]="'LIST_DETAILS.List_too_large' | translate"
+                  [nzDescription]="'LIST_DETAILS.List_too_large_description' | translate">
         </nz-alert>
       </div>
       <div *ngIf="(outDated$ | async) && (permissionLevel$ | async) < 40" class="alert">

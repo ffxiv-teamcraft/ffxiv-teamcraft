@@ -38,12 +38,12 @@ export class RotationFoldersFacade {
   favoriteRotationFolders$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]> =
     combineLatest(this.allRotationFolders$, this.authFacade.favorites$, this.rotationsFacade.allRotations$).pipe(
       map(([folders, favorites, rotations]) => {
-        favorites.rotationFolders.forEach(folder => {
+        (favorites.rotationFolders || []).forEach(folder => {
           if (folders.find(f => f.$key === folder) === undefined) {
             this.store.dispatch(new LoadRotationFolder(folder));
           }
         });
-        return favorites.rotationFolders
+        return (favorites.rotationFolders || [])
           .map(folderId => folders.find(folder => folder.$key === folderId))
           .filter(f => f !== undefined && !f.notFound)
           .map(folder => {

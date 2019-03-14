@@ -45,6 +45,17 @@ export function listsReducer(
       break;
     }
 
+    case ListsActionTypes.TeamListsLoaded: {
+      state = {
+        ...state,
+        compacts: [
+          ...state.compacts.filter(compact => compact.teamId !== action.teamId),
+          ...action.payload
+        ]
+      };
+      break;
+    }
+
     case ListsActionTypes.ListCompactLoaded: {
       state = {
         ...state,
@@ -104,6 +115,16 @@ export function listsReducer(
         listDetails: [
           ...state.listDetails.filter(list => list.$key !== action.payload.$key),
           <List>action.payload
+        ]
+      };
+      break;
+    }
+
+    case ListsActionTypes.UnloadListDetails: {
+      state = {
+        ...state,
+        listDetails: [
+          ...state.listDetails.filter(list => list.$key !== action.key)
         ]
       };
       break;

@@ -18,6 +18,9 @@ export class XivapiItemTooltipComponent implements OnInit {
   public stats = [];
 
   ngOnInit(): void {
+    if (this.item === undefined) {
+      return;
+    }
     this.mainAttributes.push({
       name: 'TOOLTIP.Level',
       value: this.item.LevelEquip
@@ -56,8 +59,8 @@ export class XivapiItemTooltipComponent implements OnInit {
       });
     }
     // Handle stats
-    this.stats = Object.keys(this.item)
-      .filter(key => /^BaseParam\d+$/.test(key) && this.item[key])
+    this.stats.push(...Object.keys(this.item)
+      .filter(key => /^BaseParam\d+$/.test(key) && this.item[key] && key !== undefined)
       .map(key => {
         const statIndex = key.match(/(\d+)/)[0];
         const res: any = {
@@ -74,7 +77,31 @@ export class XivapiItemTooltipComponent implements OnInit {
           res.valueHq = res.value + this.item[`BaseParamValueSpecial${specialParamIndex}`];
         }
         return res;
-      });
+      })
+    );
+
+    if (this.item.ItemFood !== undefined) {
+      const food = this.item.ItemFood;
+      for (let i = 0; i < 2; i++) {
+        const statsEntry: any = {};
+        const value = food[`Value${i}`];
+        const valueHq = food[`ValueHQ${i}`];
+        const isRelative = food[`IsRelative${i}`] === 1;
+        const max = food[`Max${i}`];
+        const maxHq = food[`MaxHQ${i}`];
+        if (value > 0) {
+          statsEntry.name = food[`BaseParam${i}`];
+          statsEntry.requiresPipe = true;
+          if (isRelative) {
+            statsEntry.value = `${value}% (${max})`;
+            statsEntry.valueHq = `${valueHq}% (${maxHq})`;
+          } else {
+            statsEntry.value = value.toString();
+          }
+          this.stats.push(statsEntry);
+        }
+      }
+    }
   }
 
 

@@ -46,13 +46,15 @@ import { CustomLinksModule } from '../custom-links/custom-links.module';
 import { ListCompletionPopupComponent } from './list-completion-popup/list-completion-popup.component';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { LayoutModule } from '../../core/layout/layout.module';
+import { ProgressPopupModule } from '../progress-popup/progress-popup.module';
+import { LazyDataService } from '../../core/data/lazy-data.service';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, HtmlToolsService], multi: true },
   { provide: EXTRACTORS, useClass: GatheredByExtractor, deps: [GarlandToolsService, HtmlToolsService, LocalizedDataService], multi: true },
-  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
+  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: ReducedFromExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: DesynthsExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: InstancesExtractor, deps: [GarlandToolsService], multi: true },
@@ -76,6 +78,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     RouterModule,
     PageLoaderModule,
     PermissionsModule,
+    ProgressPopupModule,
     IconsModule,
     UserAvatarModule,
     TeamsModule,
@@ -94,8 +97,6 @@ export const DATA_EXTRACTORS: Provider[] = [
   providers: [
     ...DATA_EXTRACTORS,
     DataExtractorService,
-    ListsFacade,
-    ListManagerService,
     ListCompactsService
   ],
   declarations: [ListPanelComponent, TagsPopupComponent, ListCompletionPopupComponent],

@@ -6,6 +6,10 @@ import { CraftingJob } from '../../crafting-job.enum';
 
 export class ManipulationII extends BuffAction {
 
+  getWaitDuration(): number {
+    return 2;
+  }
+
   getLevelRequirement(): { job: CraftingJob; level: number } {
     return { job: CraftingJob.ANY, level: 65 };
   }

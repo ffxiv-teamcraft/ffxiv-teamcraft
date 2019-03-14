@@ -4,6 +4,7 @@
   "Pick_a_fc": "Pick a free company",
   "Pick_a_rotation": "Pick a rotation",
   "Pick_a_recipe": "Pick a recipe",
+  "Pick_an_item": "Pick an item",
   "FC_name": "Free Company Name",
   "Saving_in_database": "Saving data on server",
   "See_on_map": "See on map",
@@ -25,7 +26,8 @@
     "Crafts_amount": "# of crafts",
     "Add_to_list": "Add this item to a list",
     "Apply_filters": "Apply filters",
-    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item.",
+    "Reset_filters": "Reset filters",
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copy search url to your clipboard",
     "Share_url_copied": "Search url copied to your clipboard"
   },
@@ -40,7 +42,7 @@
   "Timers": "Timers",
   "Copy_isearch": "Copy isearch macro",
   "Isearch_copied": "/isearch {{itemname}} copied to clipboard",
-  "Required_for_final_craft": "{{amount}} needed for final items",
+  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
   "Mark_HQ": "Mark as HQ required",
   "Unmark_HQ": "Remove HQ requirement",
   "Compact_sidebar_toggle": "Toggle compact sidebar",
@@ -85,6 +87,7 @@
   "No_favorites": "No Favorite",
   "Ephemeral_list": "Will be deleted once completed",
   "Ephemeral_tag": "ephemeral",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Create quick list (deleted once completed)",
   "Tag_filter": "Tags",
   "Public_lists": "Community lists",
@@ -287,6 +290,7 @@
     "Nickname_used": "Nickname already used",
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
     "Show_devtools": "Show dev tools",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "Copy item name",
       "Isearch": "Copy /isearch macro"
@@ -315,10 +319,11 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Please verify your account to have access to the lists shared to your FC",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
     "Regenerate_all": "Regenerate all lists",
     "Regenerated_all": "Your lists are now up to date",
     "Merge_lists": "Merge lists",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "Lists merged with success !",
     "Shared_lists": "Lists you have write access to",
     "Add_selection": "Add selection to a list",
@@ -394,7 +399,11 @@
     "Open_in_ffxivgardening": "Open in ffxivgardening.com",
     "Add_all_item_alarms": "Add all alarms for this item",
     "Adaptative_filter": "Only show what I can do",
+    "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "You can craft {{amount}}",
+    "Add_item": "Add an item",
+    "List_too_large": "List too large",
+    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -494,7 +503,8 @@
     "No_items": "No gathering node found",
     "Gathering_name": "Enter item name",
     "Ephemeral_node": "Ephemeral node, can be respawned",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !"
+    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !",
+    "Hidden_item": "Hidden"
   },
   "ANNOUNCEMENT": {
     "Title": "Announcement",
@@ -548,6 +558,8 @@
     "Fixed_notification_number": "Fixed notification",
     "Starting_echo_number": "Notification #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "Extra wait",
     "Import_macro": "Import from ingame macro",
     "Ingame_macro": "Ingame macro",
@@ -607,6 +619,7 @@
       "Recipe_durability": "Durability"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "Rotation folders",
         "Rename": "Rename folder",
@@ -651,20 +664,32 @@
       "No_food": "No food",
       "No_medicine": "No medicine",
       "No_fc_buffs": "No FC buffs",
+      "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Craftsmanship",
         "Control": "Control"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
+      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
   },
   "PRICING": {
     "From_vendor": "Price from vendor",
+    "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Expect to sell everything",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
     "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
     "Copy_earnings_as_text": "Copy content as text",
-    "Content_copied": "Content copied in your clipboard"
+    "Content_copied": "Content copied in your clipboard",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)",
+    "Copy_panel_as_text": "Copy this panel as text"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -687,7 +712,8 @@
     "Title": "Notifications",
     "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
-    "Mark_all_as_read": "Mark all as read"
+    "Mark_all_as_read": "Mark all as read",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "Teams",
@@ -779,5 +805,95 @@
     "New_update_available": "A new update is available ! ",
     "Desktop_instructions": "Please navigate to the following link to download latest version: ",
     "Web_instructions": "Please reload the page to get the latest version."
+  },
+  "LOG_TRACKER": {
+    "Title": "Log Tracker",
+    "Mark_page_as_done": "Mark this page as done",
+    "Mark_as_done": "Mark this item as done",
+    "Mark_as_not_done": "Mark this item as not done",
+    "Create_list": "Create a list to complete this page",
+    "PAGE": {
+      "Master_recipes": "Master recipes ({{number}})",
+      "Housing_items": "Housing({{number}})",
+      "Others": "Others",
+      "Dyes": "Dyes",
+      "Other_master_recipes": "Other Master Recipes"
+    }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
+  },
+  "GIVEAWAY": {
+    "Discord_1K": {
+      "Title": "1000 Discord members giveaway !",
+      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+    }
+  },
+  "CUSTOM_ITEMS": {
+    "Title": "Custom items",
+    "New_item": "Create new custom item",
+    "New_folder": "Create new folder",
+    "Rename_folder": "Rename folder",
+    "Import_items": "Import custom items",
+    "Save": "Save item",
+    "Details": "Item details",
+    "Export_item": "Export item",
+    "Export_items": "Export multiple items",
+    "Add_to_list": "Add to a list",
+    "No_items": "You have no custom items",
+    "DETAILS": {
+      "Level": "Level",
+      "None": "none",
+      "Stars": "Stars",
+      "Requirements": "Requirements",
+      "Add_requirement": "Add requirement",
+      "Yields": "Yields",
+      "Name": "Name",
+      "ID": "Item ID",
+      "CRAFT": {
+        "Title": "Crafted by",
+        "Job": "Job",
+        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+      },
+      "GATHERING": {
+        "Title": "Gathered by",
+        "Type": "Node type",
+        "Folklore": "Folklore",
+        "Slot": "Slot"
+      },
+      "ALARMS": {
+        "Title": "Alarms"
+      },
+      "VENDORS": {
+        "Title": "Vendors",
+        "Npc_name": "NPC name",
+        "Price": "Price",
+        "Delete_vendor": "Delete vendor"
+      },
+      "TRADES": {
+        "Title": "Trade sources",
+        "Npc_name": "NPC name",
+        "Shop_name": "Shop name",
+        "Delete_trade": "Delete trade",
+        "Trade_details": "Trade details",
+        "Add_currency": "Add a currency"
+      },
+      "REDUCTION": {
+        "Title": "Reduced from"
+      }
+    },
+    "NPC_PICKER": {
+      "Title": "Find a NPC",
+      "Npc_name": "NPC name"
+    },
+    "IMPORT": {
+      "Corrupted_file": "Import file is corrupted or wrong format",
+      "Drag_or_click": "Drag the file here or click to select it",
+      "Format": "Format",
+      "Folder": "Folder",
+      "No_folder": "No folder",
+      "Parsing_file": "Parsing file content...",
+      "Saving_items": "Saving items ({{done}}/{{todo}})"
+    }
   }
 }

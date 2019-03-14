@@ -1,13 +1,10 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/apps/client-e2e",
-    "module": "commonjs",
-    "target": "es5",
-    "types": [
-      "jasmine",
-      "jasminewd2",
-      "node"
-    ]
-  }
+    "sourceMap": false,
+    "outDir": "../../dist/out-tsc/apps/client-e2e/src",
+    "lib": ["es2015", "dom"],
+    "types": ["cypress", "node"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.json", "../../node_modules/cypress"]
 }

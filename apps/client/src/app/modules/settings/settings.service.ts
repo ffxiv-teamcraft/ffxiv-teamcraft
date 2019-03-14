@@ -13,7 +13,7 @@ export class SettingsService {
   }
 
   public get availableLocales(): string[] {
-    return ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko'];
+    return ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko', 'zh'];
   }
 
   public get baseLink(): string {
@@ -22,6 +22,14 @@ export class SettingsService {
 
   public set baseLink(base: string) {
     this.setSetting('base-link', base);
+  }
+
+  public get timeFormat(): '24H' | '12H' {
+    return this.getSetting('time-format', '24H') as '24H' | '12H';
+  }
+
+  public set timeFormat(format: '24H' | '12H') {
+    this.setSetting('time-format', format);
   }
 
   public get autoOpenInDesktop(): boolean {
@@ -82,7 +90,7 @@ export class SettingsService {
   }
 
   public get theme(): Theme {
-    const themeName =  this.getSetting('theme', 'DEFAULT');
+    const themeName = this.getSetting('theme', 'DEFAULT');
     return Theme.byName(themeName);
   }
 
@@ -117,7 +125,7 @@ export class SettingsService {
   }
 
   public get alarmVolume(): number {
-    return +this.getSetting('alarm:volume', '1');
+    return +this.getSetting('alarm:volume', '0.5');
   }
 
   public set alarmVolume(volume: number) {

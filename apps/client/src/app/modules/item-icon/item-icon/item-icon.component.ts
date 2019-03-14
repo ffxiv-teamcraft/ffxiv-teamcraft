@@ -12,7 +12,7 @@ export class ItemIconComponent {
    * The id of the icon of the item.
    */
   @Input()
-  icon: number;
+  icon: number | string;
 
   /**
    * name of the item, used as alt attribute for the icon.
@@ -32,11 +32,15 @@ export class ItemIconComponent {
   @Input()
   width = 48;
 
-  constructor(private settings: SettingsService) {
-  }
-
   getLink(): string {
     return `https://garlandtools.org/db/#item/${this.itemId}`;
+  }
+
+  getIcon(): string {
+    if (this.icon && this.icon.toString() === this.icon && this.icon.indexOf('custom/') === -1) {
+      return this.icon;
+    }
+    return `https://www.garlandtools.org/files/icons/item/${this.icon}.png`;
   }
 
 }

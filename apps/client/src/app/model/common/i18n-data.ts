@@ -5,4 +5,6 @@ export interface I18nData {
   en: I18nDataRow;
   de: I18nDataRow;
   ja: I18nDataRow;
+  ko?: I18nDataRow;
+  zh?: I18nDataRow;
 }

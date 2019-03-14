@@ -6,6 +6,8 @@ import { CraftingJob } from '../../model/crafting-job.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { Reclaim } from '../../model/actions/buff/reclaim';
 import { Simulation } from '../../simulation/simulation';
+import { Consumable } from '../../model/consumable';
+import { FreeCompanyAction } from '../../model/free-company-action';
 
 @Component({
   selector: 'app-macro-popup',
@@ -29,12 +31,18 @@ export class MacroPopupComponent implements OnInit {
   public extraWait = 0;
 
   public breakOnReclaim = false;
+  
+  public addConsumables = false;
 
   rotation: CraftingAction[];
 
   job: CraftingJob;
 
   simulation: Simulation;
+
+  food: Consumable;
+  medicine: Consumable;
+  freeCompanyActions: FreeCompanyAction[] = [];
 
   tooManyAactions = false;
 
@@ -94,15 +102,65 @@ export class MacroPopupComponent implements OnInit {
       }
       this.macro[this.macro.length - 1].push(`/echo Craft finished <se.${seNumber}>`);
     }
-    if (this.aactionsMacro.length < 10) {
+    // 11 not 10 because /aactions clear takes the first line :)
+    if (this.aactionsMacro.length < 11) {
       this.aactionsMacro.push(`/aaction ${this.i18n.getName(this.l12n.getCraftingAction(new Reclaim().getIds()[0]))}`);
     }
-    if (this.aactionsMacro.length > 10) {
+    if (this.aactionsMacro.length > 11) {
       this.tooManyAactions = true;
     }
     if (this.aactionsMacro.length > 0) {
       this.aactionsMacro.push('/echo Cross class setup finished <se.4>');
     }
+
+    const consumablesNotification = this.getConsumablesNotification();
+    if (consumablesNotification !== undefined) {
+      this.aactionsMacro.push(consumablesNotification)
+    }
+  }
+
+  /**
+   * Returns a full macro line, as a string, if one should be added to notify
+   * the user of their choice in buffs. This will return `undefined` if either
+   * the user has disabled this notification, or if there is no notification to
+   * add (no buffs selected).
+   */
+  private getConsumablesNotification(): string {
+    if (!this.addConsumables) {
+      return undefined;
+    }
+
+    const hqTag = " " + this.translator.instant('SIMULATOR.Hq');
+    const necessaryBuffs = []
+
+    if (this.food) {
+      let foodBuff = this.i18n.getName(this.l12n.getItem(this.food.itemId));
+      if (this.food.hq) {
+        foodBuff += hqTag
+      }
+      necessaryBuffs.push(foodBuff)
+    }
+
+    if (this.medicine) {
+      let medicineBuff = this.i18n.getName(this.l12n.getItem(this.medicine.itemId));
+      if (this.medicine.hq) {
+        medicineBuff += hqTag
+      }
+      necessaryBuffs.push(medicineBuff)
+    }
+
+    if (this.freeCompanyActions && this.freeCompanyActions.length > 0) {
+      this.freeCompanyActions.forEach(action =>
+        necessaryBuffs.push(this.i18n.getName(this.l12n.getFreeCompanyAction(action.actionId)))
+      );
+    }
+
+    if (necessaryBuffs.length > 0) {
+      const notification = this.translator.instant('SIMULATOR.Consumable_notification',
+                                                   {buffs: necessaryBuffs.join(", ")});
+      return `/echo ${notification} <se.5>`;
+    }
+    return undefined;
   }
 
   getText(macro: string[]): string {

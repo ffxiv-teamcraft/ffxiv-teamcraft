@@ -39,6 +39,8 @@ import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.fa
 import { ObservableMedia } from '@angular/flex-layout';
 import { LayoutsFacade } from './core/layout/+state/layouts.facade';
 import * as semver from 'semver';
+import { LazyDataService } from './core/data/lazy-data.service';
+import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
 
 declare const gtag: Function;
 
@@ -79,6 +81,8 @@ export class AppComponent implements OnInit {
 
   public time$: Observable<string>;
 
+  private reloadTime$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+
   public desktop = false;
 
   public hasDesktop$: Observable<boolean>;
@@ -88,6 +92,10 @@ export class AppComponent implements OnInit {
   public navigating = true;
 
   public newVersionAvailable$: Observable<boolean>;
+
+  public dataLoaded = false;
+
+  public showGiveaway = false;
 
   get desktopUrl(): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(`teamcraft://${window.location.pathname}`);
@@ -101,13 +109,20 @@ export class AppComponent implements OnInit {
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
-              private layoutsFacade: LayoutsFacade) {
+              private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade) {
+
+    this.showGiveaway = +localStorage.getItem('giveaway:1kdiscord') < 5
+      && Date.now() < new Date(2019, 3, 31, 23, 59, 59).getTime();
+
+    localStorage.setItem('giveaway:1kdiscord', (+localStorage.getItem('giveaway:1kdiscord') + 1).toString());
+
+    this.lazyData.loaded$.subscribe(loaded => this.dataLoaded = loaded);
 
     this.renderer.addClass(document.body, this.settings.theme.className);
 
     this.desktop = this.platformService.isDesktop();
 
-    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_pxv80d5yyj8.js' });
+    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_z644tpcbtjr.js' });
 
     this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(
       map((value: string) => {
@@ -115,11 +130,20 @@ export class AppComponent implements OnInit {
       })
     );
 
-    this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
-      map(date => {
-        const minutes = date.getUTCMinutes();
-        const minutesStr = minutes < 10 ? '0' + minutes : minutes;
-        return `${date.getUTCHours()}:${minutesStr}`;
+    this.time$ = this.reloadTime$.pipe(
+      switchMap(() => {
+        return this.eorzeanTime.getEorzeanTime().pipe(
+          map(date => {
+            const minutes = date.getUTCMinutes();
+            const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+            if (this.settings.timeFormat === '24H') {
+              return `${date.getUTCHours()}:${minutesStr}`;
+            }
+            const rawHours = date.getUTCHours();
+            const suffix = rawHours >= 12 ? 'PM' : 'AM';
+            return `${rawHours % 12}:${minutesStr} ${suffix}`;
+          })
+        );
       })
     );
 
@@ -232,6 +256,7 @@ export class AppComponent implements OnInit {
     this.rotationsFacade.loadMyRotations();
     this.customLinksFacade.loadMyCustomLinks();
     this.layoutsFacade.loadAll();
+    this.customItemsFacade.loadAll();
 
     if (this.media.isActive('lt-md')) {
       this.collapsedSidebar = true;
@@ -241,6 +266,15 @@ export class AppComponent implements OnInit {
       this.renderer.removeClass(document.body, change.previous.className);
       this.renderer.addClass(document.body, change.next.className);
     }));
+  }
+
+  public toggleTimeFormat(): void {
+    if (this.settings.timeFormat === '24H') {
+      this.settings.timeFormat = '12H';
+    } else {
+      this.settings.timeFormat = '24H';
+    }
+    this.reloadTime$.next(null);
   }
 
   public onNavLinkClick(): void {
@@ -266,6 +300,9 @@ export class AppComponent implements OnInit {
       nzTitle: this.translate.instant('Login'),
       nzContent: LoginPopupComponent,
       nzFooter: null
+    }).afterClose.subscribe(() => {
+      // HOTFIX
+      window.location.reload();
     });
   }
 
@@ -298,5 +335,17 @@ export class AppComponent implements OnInit {
 
   openSettings(): void {
     this.settingsPopupService.openSettings();
+  }
+
+  public goToDiscord1kGiveaway(event: MouseEvent): void {
+    if (event.srcElement.tagName === 'A') {
+      return;
+    }
+    window.open('https://gleam.io/J1tAD/ffxiv-teamcrafts-final-fantasy-xiv-shadowbringers-collectors-edition-giveaway', '_blank');
+    localStorage.setItem('giveaway:1kdiscord', '5');
+  }
+
+  public closeDiscord1kGiveaway(): void {
+    localStorage.setItem('giveaway:1kdiscord', '5');
   }
 }

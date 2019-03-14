@@ -4,12 +4,14 @@
   "Pick_a_fc": "Escoja un Gremio Independiente (FC)",
   "Pick_a_rotation": "Elegir una rotación",
   "Pick_a_recipe": "Elegir una receta",
+  "Pick_an_item": "Seleccione un artículo",
   "FC_name": "Nombre de Gremio Independiente (FC)",
   "Saving_in_database": "Guardando datos en el servidor",
   "See_on_map": "Ver en mapa",
   "Edit_amount": "Editar cantidad",
   "List_fork_in_progress": "Copiando la lista a su cuenta...",
   "Network_error_logged_out": "Se ha detectado un error de red. Se ha cerrado su sesión. Si este problema persiste, póngase en contacto con Miu en el servidor de Discord.",
+  "Hide_zone_duplicates": "Ocultar zonas duplicadas (artículos que se encuentran en varias zonas se muestran sólo una vez)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
@@ -24,7 +26,7 @@
     "Crafts_amount": "# de elaboraciones",
     "Add_to_list": "Agregar este elemento a una lista",
     "Apply_filters": "Aplicar filtros",
-    "Too_many_results_warning": "Esta búsqueda devuelve más de 50 artículos. Como nuestro origen de datos esta limitado a 50 resultados, puede que necesite filtros adicionales para encontrar un artículo específico.",
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copiar el url de búsqueda al portapapeles",
     "Share_url_copied": "URL de búsqueda copiado al portapapeles"
   },
@@ -39,7 +41,7 @@
   "Timers": "Temporizadores",
   "Copy_isearch": "Copiar macro de isearch",
   "Isearch_copied": "/isearch {{itemname}} copiado al portapapeles",
-  "Required_for_final_craft": "{{amount}} necesario(s) para los artículos finales",
+  "Required_for_final_craft": "{{amount}} necesarios para los artículos finales, tal vez los quiera HQ",
   "Mark_HQ": "Marcar como HQ requerido",
   "Unmark_HQ": "Quitar requisito de HQ",
   "Compact_sidebar_toggle": "Alternar barra lateral compacta",
@@ -84,6 +86,7 @@
   "No_favorites": "No hay favoritos",
   "Ephemeral_list": "Será borrada al completarse",
   "Ephemeral_tag": "efímero",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Crear lista rápida (borrada al completarse)",
   "Tag_filter": "Etiquetas",
   "Public_lists": "Listas Comunitarias",
@@ -267,7 +270,7 @@
     "General": "General",
     "Link_base": "Vínculos de artículos",
     "Theme": "Tema",
-    "no_panel_borders": "Disable borders around various panels",
+    "no_panel_borders": "Desactivar bordes alrededor de varios paneles",
     "Desktop": "Escritorio",
     "Always_on_top": "Siempre arriba",
     "Check_for_update": "Buscar actualizaciones",
@@ -286,6 +289,7 @@
     "Nickname_used": "El apodo ya está en uso",
     "No_nickname_warning": "Por favor vaya a la página de configuración y configure un apodo para poder usar correctamente las características exclusivas de patron.",
     "Show_devtools": "Mostrar herramientas de desarrollador",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
@@ -314,10 +318,11 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Por favor, compruebe su cuenta para tener acceso a las listas compartidas para su FC",
+    "Needs_verification": "Por favor verifique su personaje para tener acceso a las listas compartidas de su FC",
     "Regenerate_all": "Regenerar todas las listas",
     "Regenerated_all": "Sus listas están actualizadas",
     "Merge_lists": "Mezclar listas",
+    "Merge_lists_warning": "Las listas grandes no se muestran porque no se puede combinar listas que son demasiado grandes debido a limitaciones de la base de datos.",
     "Lists_merged": "¡Listas mezcladas con éxito!",
     "Shared_lists": "Listas compartidas con usted",
     "Add_selection": "Agregar selección a la lista",
@@ -358,7 +363,7 @@
     "Add_all_alarms": "Agregar todas las alarmas de esta lista",
     "History": "Historial",
     "Items_count": "{{amount}} artículos",
-    "Show_craftable_amount": "Show craftable amount",
+    "Show_craftable_amount": "Mostrar cantidad fabricable",
     "COMPLETION_POPUP": {
       "Title": "Lista completada",
       "Content": "Esta lista esta ahora completada. ¿Qué quiere hacer con ella?",
@@ -393,7 +398,11 @@
     "Open_in_ffxivgardening": "Abrir en ffxivgardening.com",
     "Add_all_item_alarms": "Agregar todas las alarmas para este artículo",
     "Adaptative_filter": "Sólo mostrar lo que puedo hacer",
-    "Amount_craftable": "You can craft {{amount}}",
+    "Disable_HQ_suggestions": "Desactivar las banderas HQ automáticas",
+    "Amount_craftable": "Puede crear {{amount}}",
+    "Add_item": "Agregar un artículo",
+    "List_too_large": "List too large",
+    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -492,8 +501,9 @@
     "Title": "Recolección de artículos",
     "No_items": "No se encontró nodo de recolección",
     "Gathering_name": "Ingrese nombre del artículo",
-    "Ephemeral_node": "Ephemeral node, can be respawned",
-    "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!"
+    "Ephemeral_node": "Nodo efímero, puede reaparecer",
+    "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!",
+    "Hidden_item": "Oculto"
   },
   "ANNOUNCEMENT": {
     "Title": "Anuncio",
@@ -536,7 +546,7 @@
     "Propagate_changes": "Propagar permisos a las listas dentro del taller",
     "Propagate_changes_done": "Cambios propagados a las listas dentro del taller",
     "Team_notice": "El equipo asociado a esta lista automáticamente tiene el permiso de PARTICIPAR",
-    "Default_permission_level": "Default permission level"
+    "Default_permission_level": "Nivel de permiso predeterminado"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -547,6 +557,8 @@
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
+    "Include_consumables_notification": "Incluir notificación de consumibles",
+    "Consumable_notification": "Usar {{buffs}}",
     "Extra_wait": "Espera extra",
     "Import_macro": "Importar desde macro",
     "Ingame_macro": "Macro para el juego",
@@ -596,8 +608,8 @@
     "Save_as_new_done": "Usted está ahora en una copia de su rotación",
     "Change_rotation": "Escoger rotación",
     "New_rotation_folder": "Nueva carpeta",
-    "Safe_mode": "Safe mode",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Safe_mode": "Modo seguro",
+    "Safe_mode_tooltip": "Deshabilita todas las habilidades que no tienen 100% de probabilidad de tener éxito (toma mejoras/bonos en cuenta)",
     "CUSTOM": {
       "Recipe_configuration": "Configuración de receta",
       "Recipe_level": "Nivel de receta",
@@ -606,6 +618,7 @@
       "Recipe_durability": "Durabilidad"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Buscar una rotación",
       "FOLDERS": {
         "Folders": "Carpetas de rotación",
         "Rename": "Renombrar carpeta",
@@ -655,15 +668,25 @@
         "Craftsmanship": "Artesanía",
         "Control": "Control"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Acción no segura con modo seguro activado",
+      "DURABILITY_REACHED_ZERO": "La durabilidad alcanzó 0 antes de llegar a la progresión máxima",
+      "NOT_ENOUGH_CP": "CP Insuficiente",
+      "MISSING_LEVEL_REQUIREMENT": "No tiene el nivel requerido",
+      "NOT_SPECIALIST": "Rotación de especialista pero no especialista",
+      "NO_INNER_QUIET": "Intento de usar acción de Inner Quiet sin tener Inner Quiet habilitado"
     }
   },
   "PRICING": {
     "From_vendor": "Precio del vendedor",
+    "From_crafting": "Precio de fabricación",
     "Expect_to_sell_everything": "Asumir que se vende todo",
     "Autofill_panel_prices": "Llenar precios basado en precios del mercado",
     "Autofill_panel_prices_warning": "Este es un proceso lento y debería tomar alrededor de {{time}} segundos para completarse. ¿Está seguro?",
     "Copy_earnings_as_text": "Copiar contenido como texto",
-    "Content_copied": "Contenido copiado a su portapapeles"
+    "Content_copied": "Contenido copiado a su portapapeles",
+    "Cheaper_at_vendor": "Más barato si compra de NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -686,7 +709,8 @@
     "Title": "Notificaciones",
     "List_comment_added": "Comentario publicado en la lista {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comentario publicado en {{itemName}}, lista {{listName}}: \"{{content}}\"",
-    "Mark_all_as_read": "Marcar todo como leído"
+    "Mark_all_as_read": "Marcar todo como leído",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "Equipos",
@@ -775,8 +799,31 @@
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available ! ",
-    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
-    "Web_instructions": "Please reload the page to get the latest version."
+    "New_update_available": "¡Nueva actualización disponible! ",
+    "Desktop_instructions": "Por favor siga el siguiente enlace para descargar la última versión: ",
+    "Web_instructions": "Por favor refresque la página para obtener la última versión."
+  },
+  "LOG_TRACKER": {
+    "Title": "Seguidor de registro",
+    "Mark_page_as_done": "Marcar esta página como hecho",
+    "Mark_as_done": "Marcar este artículo como hecho",
+    "Mark_as_not_done": "Marcar este artículo como no hecho",
+    "Create_list": "Crear una lista para completar esta página",
+    "PAGE": {
+      "Master_recipes": "Recetas maestras ({{number}})",
+      "Housing_items": "Artículos de vivienda({{number}})",
+      "Others": "Otros",
+      "Dyes": "Tintes",
+      "Other_master_recipes": "Otras recetas maestras"
+    }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "¡Cargando artículos, acciones y más!"
+  },
+  "GIVEAWAY": {
+    "Discord_1K": {
+      "Title": "¡Sorteo por 1000 miembros de Discord!",
+      "Description": "Haga clic en este banner para ir a la página de registro para el sorteo de la edición de colección de FINAL FANTASY XIV: Shadowbringers creada para celebrar la meta de 1000 miembros alcanzada en el servidor de Discord."
+    }
   }
 }

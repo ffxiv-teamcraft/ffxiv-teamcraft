@@ -4,6 +4,7 @@ import { ActionType } from '../action-type';
 import { Tables } from '../../tables';
 import { Buff } from '../../buff.enum';
 import { CraftingJob } from '../../crafting-job.enum';
+import { SimulationFailCause } from '../../simulation-fail-cause.enum';
 
 export class NymeiasWheel extends CraftingAction {
 
@@ -13,6 +14,13 @@ export class NymeiasWheel extends CraftingAction {
 
   _canBeUsed(simulationState: Simulation, linear?: boolean): boolean {
     return simulationState.crafterStats.specialist && simulationState.hasBuff(Buff.WHISTLE_WHILE_YOU_WORK);
+  }
+
+  getFailCause(simulationState: Simulation, linear?: boolean, safeMode?: boolean): SimulationFailCause {
+    if (!simulationState.crafterStats.specialist) {
+      return SimulationFailCause.NOT_SPECIALIST;
+    }
+    super.getFailCause(simulationState, linear, safeMode);
   }
 
   execute(simulation: Simulation): void {

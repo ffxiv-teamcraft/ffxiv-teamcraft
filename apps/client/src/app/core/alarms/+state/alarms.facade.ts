@@ -226,7 +226,7 @@ export class AlarmsFacade {
     if (hours === 0) {
       hours = 24;
     }
-    const resHours = hours - currentTime.getUTCHours();
+    const resHours = (hours - currentTime.getUTCHours()) % 24;
     let resMinutes = resHours * 60 + minutes - currentTime.getUTCMinutes();
     let resSeconds = resHours * 3600 + minutes * 60 - currentTime.getUTCSeconds();
     if (resMinutes < 0) {

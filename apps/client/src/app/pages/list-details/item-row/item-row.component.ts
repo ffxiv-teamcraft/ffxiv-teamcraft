@@ -39,6 +39,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { Craft } from '../../../model/garland-tools/craft';
 import { CommentsService } from '../../../modules/comments/comments.service';
 import { ListLayout } from '../../../core/layout/list-layout';
+import { CustomItem } from '../../../modules/custom-items/model/custom-item';
 
 @Component({
   selector: 'app-item-row',
@@ -48,17 +49,17 @@ import { ListLayout } from '../../../core/layout/list-layout';
 })
 export class ItemRowComponent implements OnInit {
 
-  private _item: ListRow;
+  private _item: ListRow | CustomItem;
 
   @Input()
-  public set item(item: ListRow) {
+  public set item(item: ListRow | CustomItem) {
     this._item = item;
     this.handleAlarms(item);
     this.cdRef.detectChanges();
     this.item$.next(item);
   }
 
-  public get item(): ListRow {
+  public get item(): ListRow | CustomItem {
     return this._item;
   }
 
@@ -114,6 +115,7 @@ export class ItemRowComponent implements OnInit {
               private commentsService: CommentsService) {
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
+      filter(list => !list.notFound && list.canBeCrafted !== undefined),
       map(list => list.canBeCrafted(this.item)),
       shareReplay(1)
     );
@@ -153,11 +155,14 @@ export class ItemRowComponent implements OnInit {
       map(list => {
         const recipesNeedingItem = list.finalItems
           .filter(item => item.requires !== undefined)
-          .filter(item => item.requires.find(req => req.id === this.item.id) !== undefined);
+          .filter(item => item.requires.some(req => req.id === this.item.id));
         if (this.item.requiredAsHQ) {
           return this.item.amount;
         }
-        if (recipesNeedingItem.length === 0) {
+        if (list.disableHQSuggestions) {
+          return 0;
+        }
+        if (recipesNeedingItem.length === 0 || this.item.requiredAsHQ === false) {
           return 0;
         } else {
           let count = 0;
@@ -232,7 +237,7 @@ export class ItemRowComponent implements OnInit {
 
   openCommentsPopup(list: List, isAuthor: boolean): void {
     this.modal.create({
-      nzTitle: this.translate.instant('COMMENTS.Title'),
+      nzTitle: `${this.i18n.getName(this.l12n.getItem(this.item.id))} - ${this.translate.instant('COMMENTS.Title')}`,
       nzFooter: null,
       nzContent: CommentsPopupComponent,
       nzComponentParams: {
@@ -365,7 +370,7 @@ export class ItemRowComponent implements OnInit {
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>): void {
     this.modal.create({
-      nzTitle: this.i18n.getName(this.l12n.getItem(this.item.id)),
+      nzTitle: this.i18n.getName(this.l12n.getItem(this.item.id), this.item as CustomItem),
       nzContent: component,
       nzComponentParams: { item: this.item },
       nzFooter: null

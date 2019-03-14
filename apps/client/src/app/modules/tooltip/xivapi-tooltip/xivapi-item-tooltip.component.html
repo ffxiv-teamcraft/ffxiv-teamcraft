@@ -55,7 +55,13 @@
       </div>
       <div nz-col [nzXs]="12">
         <p class="detail-value">
-          {{row.value}} <span class="hq-value" *ngIf="item.CanBeHq">({{row.valueHq}})</span>
+          {{row.value}}
+          <span class="hq-value" *ngIf="item.CanBeHq">
+            <span *ngIf="item.ItemFood === undefined; else itemFoodHQ">({{row.valueHq}})</span>
+            <ng-template #itemFoodHQ>
+              {{row.valueHq}}
+            </ng-template>
+          </span>
         </p>
       </div>
     </div>

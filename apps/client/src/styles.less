@@ -21,6 +21,10 @@ h1, h2, h3, h4, h5 {
   margin-top: 25px;
 }
 
+.fake-form-label {
+  visibility: hidden;
+}
+
 // Let's have nicer scrollbars ! credits to angular/aio: https://github.com/angular/angular/blob/3a30f5d937e64289ad9a89a1cbc4bd66d8a8867a/aio/src/styles/2-modules/_scrollbar.scss
 *::-webkit-scrollbar, *::-webkit-scrollbar, *::-webkit-scrollbar {
   height: 10px;
@@ -96,6 +100,16 @@ h1, h2, h3, h4, h5 {
     color: #ffa39e;
     background-color: #352525;
   }
+
+  &-info, &-warning, &-error {
+    .ant-alert-message {
+      color: black !important;
+    }
+
+    .ant-alert-description {
+      color: black;
+    }
+  }
 }
 
 .ant-table-thead > tr.ant-table-row-hover > td, .ant-table-tbody > tr.ant-table-row-hover > td, .ant-table-thead > tr:hover > td, .ant-table-tbody > tr:hover > td {
@@ -112,21 +126,28 @@ h1, h2, h3, h4, h5 {
   border-radius: 4px 0 0 4px;
 }
 
-.ant-btn-circle {
-  font-size: 20px;
-  box-shadow: 0 0 .5px 0 white;
-
-  &:not(.ant-btn-primary) {
-    box-shadow: 0 0 .5px 0 white inset;
+.ant-btn {
+  &-background-ghost:not(.ant-btn-primary) {
+    color: @text-color !important;
+    border-color: @text-color !important;
   }
 
-  > i.material-icons {
-    margin-top: 6px;
-  }
+  &-circle {
+    font-size: 20px;
+    box-shadow: 0 0 .5px 0 white;
 
-  &.ant-btn-sm {
+    &:not(.ant-btn-primary) {
+      box-shadow: 0 0 .5px 0 white inset;
+    }
+
     > i.material-icons {
-      margin-top: 2px;
+      margin-top: 6px;
+    }
+
+    &.ant-btn-sm {
+      > i.material-icons {
+        margin-top: 2px;
+      }
     }
   }
 }
@@ -153,6 +174,10 @@ h1, h2, h3, h4, h5 {
 }
 
 .ant-menu-item-selected:not(.menu-link) {
+  background-color: unset !important;
+}
+
+.ant-menu-item-active:not(.menu-link) {
   background-color: unset !important;
 }
 

@@ -8,7 +8,7 @@
           [itemName]="crystal.id | itemName| i18n"
           [itemId]="crystal.id"
           [width]="32"></app-item-icon>
-        <span>x{{crystal.amount}}</span>
+        <span>x{{crystal.amount - crystal.done}}</span>
       </div>
     </div>
   </nz-collapse-panel>

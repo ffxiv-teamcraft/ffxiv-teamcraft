@@ -1,15 +1,17 @@
 <nz-card [nzTitle]="title">
   <div fxLayout="column" fxLayoutGap="10px">
-    <div class="filter" fxLayout="column" fxLayoutGap="5px" *ngIf="!readonly">
+    <div class="filter" fxLayout="column" fxLayoutGap="5px" *ngIf="!readonly && !isOtherRow">
       <div *ngFor="let fragment of filter; let last = last" fxLayout="row">
         <div *ngIf="!fragment.isBooleanGate" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="flex-start center"
              fxFlex="1 1 auto" fxLayoutGap="5px">
-          <label nz-checkbox [nzDisabled]="readonly" [(ngModel)]="fragment.reversed" (ngModelChange)="filterChange()">NOT</label>
+          <label nz-checkbox [nzDisabled]="readonly  || isOtherRow" [(ngModel)]="fragment.reversed"
+                 (ngModelChange)="filterChange()">NOT</label>
           <nz-select [(ngModel)]="fragment.value" (ngModelChange)="filterChange()" fxFlex="1 1 auto" nzShowSearch
-                     [nzDisabled]="readonly">
+                     [nzDisabled]="readonly  || isOtherRow">
             <nz-option *ngFor="let filter of getAllFilters()" [nzValue]="filter" [nzLabel]="filter"></nz-option>
           </nz-select>
-          <button nz-button [disabled]="readonly" [nzBlock]="false | ifMobile: true" nzGhost nzType="danger"
+          <button nz-button [disabled]="readonly || isOtherRow" [nzBlock]="false | ifMobile: true" nzGhost
+                  nzType="danger"
                   *ngIf="last && filter.length > 1"
                   (click)="removeFragment()">
             <i nz-icon type="delete"></i>
@@ -58,8 +60,8 @@
         <nz-option nzValue="INGAME_LOG" nzLabel="INGAME_LOG"></nz-option>
       </nz-select>
       <nz-select [(ngModel)]="row.order" (ngModelChange)="rowChange.emit(row)" [nzDisabled]="readonly">
-        <nz-option [nzValue]="0" nzLabel="DESC"></nz-option>
-        <nz-option [nzValue]="1" nzLabel="ASC"></nz-option>
+        <nz-option [nzValue]="0" nzLabel="ASC"></nz-option>
+        <nz-option [nzValue]="1" nzLabel="DESC"></nz-option>
       </nz-select>
     </div>
   </div>
@@ -70,9 +72,10 @@
       <ng-template #icon>
         <i nz-icon type="edit"></i>
       </ng-template>
-      <input [disabled]="readonly" type="text" nz-input [(ngModel)]="row.name" (ngModelChange)="rowChange.emit(row)">
+      <input [disabled]="readonly  || isOtherRow" type="text" nz-input [(ngModel)]="row.name"
+             (ngModelChange)="rowChange.emit(row)">
     </nz-input-group>
-    <button nz-button nzType="danger" *ngIf="!readonly" (click)="delete.emit()">
+    <button nz-button nzType="danger" *ngIf="!readonly && !isOtherRow" (click)="delete.emit()">
       <i nz-icon type="delete"></i>
     </button>
   </div>

@@ -1,0 +1,29 @@
+<input type="text" placeholder="{{'ITEMS.Item_name' | translate}}" #searchInput nz-input
+       (keyup)="query$.next(searchInput.value)" nzAutoFocus>
+<nz-list [nzLoading]="loading" [nzRenderItem]="itemTemplate" [nzDataSource]="results$ | async">
+  <ng-template #itemTemplate let-result>
+    <nz-list-item [nzContent]="content">
+      <nz-list-item-meta [nzAvatar]="avatar"
+                         [nzTitle]="result.isCustom ? (result.itemId | customItemName | async) : (result.itemId | itemName | i18n)"
+                         [nzDescription]="result.recipe !== undefined?description:null">
+        <ng-template #avatar>
+          <app-item-icon [itemId]="result.itemId" [icon]="result.icon" [width]="32"></app-item-icon>
+        </ng-template>
+        <ng-template #description>
+          <img src="https://www.garlandtools.org/db/images/{{getJob(result.recipe.job)?.abbreviation}}.png"
+               alt="getJob(item.job)?.abbreviation" class="crafted-by">
+          {{result.recipe.lvl}}
+          {{getStars(result.recipe.stars)}}
+        </ng-template>
+      </nz-list-item-meta>
+      <ng-template #content>
+        <div fxLayout="row" fxLayoutGap="5px">
+          <nz-input-number [(ngModel)]="result.amount" [nzMin]="1" *ngIf="!hideAmount"></nz-input-number>
+          <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="close(result)">
+            <i nz-icon type="check"></i>
+          </button>
+        </div>
+      </ng-template>
+    </nz-list-item>
+  </ng-template>
+</nz-list>

@@ -17,6 +17,9 @@ export class TricksOfTheTrade extends CraftingAction {
     if (linear) {
       return true;
     }
+    if (simulationState.safe) {
+      return false;
+    }
     return simulationState.state === 'GOOD' || simulationState.state === 'EXCELLENT';
   }
 

@@ -6,6 +6,7 @@ import { Recipe } from '../../../../model/search/recipe';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-recipe-choice-popup',
@@ -27,10 +28,17 @@ export class RecipeChoicePopupComponent {
   rotationId: string;
 
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
-              private gt: GarlandToolsService, private htmlTools: HtmlToolsService) {
+              private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
+              private translate: TranslateService) {
     this.results$ = this.query$.pipe(
       debounceTime(500),
-      filter(query => query.length > 3),
+      filter(query => {
+        if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
+          // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
+          return query.length > 0;
+        }
+        return query.length > 3;
+      }),
       tap(() => this.loading = true),
       switchMap(query => {
         return this.dataService.searchItem(query, [], true);

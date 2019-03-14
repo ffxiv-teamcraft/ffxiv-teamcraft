@@ -8,6 +8,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'home',
+    redirectTo: 'search',
+    pathMatch: 'full'
+  },
+  {
     path: 'lists',
     loadChildren: './pages/lists/lists-page.module#ListsPageModule'
   },
@@ -30,6 +35,10 @@ const routes: Routes = [
   {
     path: 'levequests',
     loadChildren: './pages/levequests/levequests.module#LevequestsModule'
+  },
+  {
+    path: 'log-tracker',
+    loadChildren: './pages/log-tracker/log-tracker.module#LogTrackerModule'
   },
   {
     path: 'alarms',
@@ -86,6 +95,10 @@ const routes: Routes = [
   {
     path: 'template',
     loadChildren: './pages/template/template.module#TemplateModule'
+  },
+  {
+    path: 'custom-items',
+    loadChildren: './pages/custom-items/custom-items-page.module#CustomItemsPageModule'
   },
 ];
 

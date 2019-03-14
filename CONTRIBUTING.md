@@ -56,8 +56,9 @@ We're using gitflow for this, more informations on [https://github.com/nvie/gitf
   - search
   - commissions
   - alarms
-  - gathering-locations
-  - public-lists
+  - gathering-location
+  - list-details
+  - crafting-log
   - pricing
  
  Examples:
@@ -69,3 +70,27 @@ We're using gitflow for this, more informations on [https://github.com/nvie/gitf
  
  For our http calls, rxjs can make us save a lot of time, it had to be updated.
  ```
+
+## Tests
+
+Teamcraft has some tests to ensure non regression, you might want to implement more tests instead of creating some features, to help with application reliability, to make sure nothing breaks with a given update.
+
+Test are separated into two categories, Unit and End-to-End.
+
+### Unit tests
+
+Unit tests are used to test the simulator, as the `Simulation` class is pure typescript, with no Angular stuff at all. 
+
+The tests are using karma runner and [jasmine](https://jasmine.github.io/) for specs and can be found [here](https://github.com/Supamiu/ffxiv-teamcraft/tree/staging/apps/client/src/app/pages/simulator/test) with the mock file.
+
+To run unit tests, use `npm test`.
+
+### End-to-end tests
+
+End-to-end tests (e2e) are here to make sure that the end user integration is good, they are here to reproduce user behavior and expect given results.
+
+They are pretty muched used as integration tests in our case, because implementing them properly is easier than doing integration tests using karma runner.
+
+E2e tests are using [cypress](https://www.cypress.io/), a nice library that has some features such as time travelling for debugging purpose, video recording, selector generator (to find quickly how to match a given element) and is way faster than most of the selenium wrappers.
+
+You can start e2e tests with a watcher to debug and create them easily, just run `npm run e2e:watch`.

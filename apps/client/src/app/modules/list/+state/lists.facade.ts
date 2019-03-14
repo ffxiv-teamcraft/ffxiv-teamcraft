@@ -11,16 +11,18 @@ import {
   LoadListDetails,
   LoadListsWithWriteAccess,
   LoadMyLists,
+  LoadTeamLists,
   NeedsVerification,
   SelectList,
   SetItemDone,
+  UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -33,7 +35,9 @@ import { SettingsService } from '../../settings/settings.service';
 
 declare const gtag: Function;
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ListsFacade {
   loadingMyLists$ = this.store.select(listsQuery.getCompactsLoading);
   allListDetails$ = this.store.select(listsQuery.getAllListDetails);
@@ -45,7 +49,11 @@ export class ListsFacade {
     }),
     map(lists => {
       return lists.sort((a, b) => {
-        return a.index - b.index;
+        let res = a.index - b.index;
+        if (res === 0) {
+          res = new Date(a.createdAt).getTime() > new Date(b.createdAt).getTime() ? -1 : 1;
+        }
+        return res;
       });
     }),
     shareReplay(1)
@@ -76,17 +84,6 @@ export class ListsFacade {
           }).sort((a, b) => a.$key > b.$key ? -1 : 1);
         })
       );
-    }),
-    shareReplay(1)
-  );
-
-  communityLists$ = this.store.select(listsQuery.getCompacts).pipe(
-    map((compacts) => {
-      return compacts
-        .filter(c => {
-          return c.public;
-        })
-        .sort((a, b) => a.$key > b.$key ? -1 : 1);
     }),
     shareReplay(1)
   );
@@ -191,33 +188,8 @@ export class ListsFacade {
     this.store.dispatch(new UpdateList(list, updateCompact));
   }
 
-  updateListUsingCompact(compact: List): void {
-    this.allListDetails$.pipe(
-      map(lists => lists.find(l => l.$key === compact.$key)),
-      tap(l => l === undefined ? this.load(compact.$key) : null),
-      switchMap(details => {
-        if (details === undefined) {
-          return this.allListDetails$.pipe(
-            map(lists => lists.find(l => l.$key === compact.$key)),
-            filter(l => l !== undefined),
-            first()
-          );
-        } else {
-          return of(details);
-        }
-      }),
-      map(details => {
-        Object.keys(compact).forEach(compactProperty => {
-          if (JSON.stringify(details[compactProperty]) !== JSON.stringify(compact[compactProperty])) {
-            details[compactProperty] = compact[compactProperty];
-          }
-        });
-        return details;
-      }),
-      first()
-    ).subscribe((details) => {
-      this.updateList(details, true);
-    });
+  loadTeamLists(teamId: string): void {
+    this.store.dispatch(new LoadTeamLists(teamId));
   }
 
   updateListIndex(list: List): void {
@@ -238,6 +210,10 @@ export class ListsFacade {
 
   load(key: string): void {
     this.store.dispatch(new LoadListDetails(key));
+  }
+
+  unload(key: string): void {
+    this.store.dispatch(new UnloadListDetails(key));
   }
 
   setNeedsverification(needed: boolean): void {

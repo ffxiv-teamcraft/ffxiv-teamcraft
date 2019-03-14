@@ -3,7 +3,7 @@ import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { Observable } from 'rxjs/Observable';
 import { List } from '../../../modules/list/model/list';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, switchMap, tap, mergeMap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { combineLatest } from 'rxjs/internal/observable/combineLatest';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
@@ -30,9 +30,9 @@ export class FavoritesComponent {
   constructor(private authFacade: AuthFacade, private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade,
               private rotationsFacade: RotationsFacade, private rotationFoldersFacade: RotationFoldersFacade) {
     this.lists$ = this.authFacade.favorites$.pipe(
-      map(favorites => favorites.lists),
+      map(favorites => (favorites.lists || [])),
       tap(lists => lists.forEach(list => this.listsFacade.loadCompact(list))),
-      switchMap(lists => {
+      mergeMap(lists => {
         return this.listsFacade.compacts$.pipe(
           map(compacts => compacts.filter(c => lists.indexOf(c.$key) > -1 && !c.notFound))
         );
@@ -41,9 +41,9 @@ export class FavoritesComponent {
 
     this.rotations$ = this.authFacade.favorites$.pipe(
       distinctUntilChanged((a, b) => JSON.stringify(a.rotations) === JSON.stringify(b.rotations)),
-      map(favorites => favorites.rotations),
+      map(favorites => (favorites.rotations || [])),
       tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
-      switchMap(rotations => {
+      mergeMap(rotations => {
         return this.rotationsFacade.allRotations$.pipe(
           map(loadedRotations => loadedRotations.filter(r => rotations.indexOf(r.$key) > -1&& !r.notFound))
         );
@@ -51,9 +51,9 @@ export class FavoritesComponent {
     );
 
     const favoriteWorkshops$ = this.authFacade.favorites$.pipe(
-      map(favorites => favorites.workshops),
+      map(favorites => (favorites.workshops || [])),
       tap(workshops => workshops.forEach(workshop => this.workshopsFacade.loadWorkshop(workshop))),
-      switchMap(workshops => {
+      mergeMap(workshops => {
         return this.workshopsFacade.allWorkshops$.pipe(
           map(ws => ws.filter(w => workshops.indexOf(w.$key) > -1)),
           filter(ws => ws.length === workshops.length),

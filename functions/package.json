@@ -1,12 +1,15 @@
 {
-    "name": "list-count",
-    "description": "Firebase cloud function to count the amount of list created",
-    "private": true,
-    "dependencies": {
-        "firebase": "5.5.0",
-        "firebase-admin": "^6.2.0",
-        "firebase-functions": "^0.8.1",
-        "grpc": "1.9.0",
-        "protobufjs": "^6.8.4"
-    }
+  "name": "list-count",
+  "description": "Firebase cloud function to count the amount of list created",
+  "private": true,
+  "dependencies": {
+    "firebase": "5.5.0",
+    "firebase-admin": "^6.2.0",
+    "firebase-functions": "^0.8.1",
+    "grpc": "1.9.0",
+    "protobufjs": "^6.8.4",
+    "express": "^4.16.4",
+    "node-fetch": "^2.3.0",
+    "url": "^0.11.0"
+  }
 }

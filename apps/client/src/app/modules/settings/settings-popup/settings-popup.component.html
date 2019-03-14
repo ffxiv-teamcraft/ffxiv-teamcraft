@@ -103,23 +103,22 @@
         <div *ngIf="updateAvailable === true">
           {{'SETTINGS.Downloading_update' | translate}}
           <nz-progress [nzPercent]="downloadProgress.percent"></nz-progress>
-          <span>{{downloadProgress.transferred / 1000000 | number}}/{{downloadProgress.total / 1000000 | number}}
-            - {{downloadProgress.bytesPerSecond / 100000 | number}}MBps</span>
+          <span>{{downloadProgress.transferred / 1000000 | number}}/{{downloadProgress.total / 1000000 | number}}MB
+            - {{downloadProgress.bytesPerSecond / 1000000 | number}}MBps</span>
         </div>
         <div *ngIf="updateAvailable === false && !checkingForUpdate">
           {{'SETTINGS.No_update_available' | translate}}
         </div>
         <button nz-button nzType="primary" (click)="installUpdate()"
-                *ngIf="updateAvailable && !checkingForUpdate && downloadProgress.total / 1000000 >= 1">
+                *ngIf="updateAvailable && !checkingForUpdate && downloadProgress.transferred / downloadProgress.total >= 1">
           {{'SETTINGS.Install_update' | translate}}
         </button>
-        <p>
-          Auto updater is a bit broken at the moment, you might need to download latest build manually at <a
-          href="https://ffxivteamcraft.com/desktop">https://ffxivteamcraft.com/desktop</a> until this message disappears
-        </p>
       </div>
       <button nz-button (click)="openDesktopConsole()">
         {{'SETTINGS.Show_devtools' | translate}}
+      </button>
+      <button nz-button (click)="clearCache()">
+        {{'SETTINGS.Clear_cache' | translate}}
       </button>
     </div>
   </nz-tab>

@@ -97,6 +97,9 @@ export class ListsComponent {
         if (teams.length === 0) {
           return of([]);
         }
+        teams.forEach(team => {
+          this.listsFacade.loadTeamLists(team.$key);
+        });
         return combineLatest(teams.map(team => this.listsFacade.getTeamLists(team).pipe(
           map(lists => {
             return { team: team, lists: lists.sort((a, b) => a.$key > b.$key ? -1 : 1) };
@@ -129,15 +132,6 @@ export class ListsComponent {
           communityLists: lists.filter(l => l.public),
           otherLists: lists.filter(l => !l.public)
         };
-      }),
-      tap(display => {
-        display.otherLists
-          .forEach((l, i) => {
-            if ((l.index === -1 || l.index !== i) && !this.regenerating) {
-              l.index = i;
-              this.listsFacade.updateListIndex(l);
-            }
-          });
       }),
       shareReplay(1)
     );

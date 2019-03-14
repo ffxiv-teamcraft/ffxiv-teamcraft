@@ -36,7 +36,7 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       return { ...state, loading: true };
 
     case AuthActionTypes.UserFetched:
-      return { ...state, user: action.user };
+      return { ...state, user: action.user, loading: false };
 
     case AuthActionTypes.LinkingCharacter:
       return { ...state, linkingCharacter: true };

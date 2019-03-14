@@ -6,6 +6,8 @@ import { Observable } from 'rxjs/Observable';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { RotationFoldersFacade } from '../../rotation-folders/+state/rotation-folders.facade';
+import { BehaviorSubject, combineLatest } from 'rxjs';
+import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
 
 @Component({
   selector: 'app-rotation-picker-drawer',
@@ -13,8 +15,6 @@ import { RotationFoldersFacade } from '../../rotation-folders/+state/rotation-fo
   styleUrls: ['./rotation-picker-drawer.component.less']
 })
 export class RotationPickerDrawerComponent {
-
-  rotations$ = this.rotationsFacade.myRotations$;
 
   public itemId: number;
 
@@ -26,7 +26,15 @@ export class RotationPickerDrawerComponent {
 
   favoriteRotations$: Observable<CraftingRotation[]>;
 
-  favoriteFolders$;
+  favoriteFolders$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
+
+  query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
+  rotations$ = combineLatest(this.rotationsFacade.myRotations$, this.query$).pipe(
+    map(([rotations, query]) => {
+      return rotations.filter(rotation => rotation.getName().toLowerCase().indexOf((query || '').toLowerCase()) > -1);
+    })
+  );
 
   constructor(private rotationsFacade: RotationsFacade, private authFacade: AuthFacade,
               private rotationFoldersFacade: RotationFoldersFacade, public ref: NzDrawerRef<CraftingRotation>) {
@@ -41,6 +49,17 @@ export class RotationPickerDrawerComponent {
       })
     );
 
-    this.favoriteFolders$ = this.rotationFoldersFacade.favoriteRotationFolders$;
+    this.favoriteFolders$ = combineLatest(this.rotationFoldersFacade.favoriteRotationFolders$, this.query$).pipe(
+      map(([folders, query]) => {
+        return folders
+          .filter(folder => {
+            return folder.rotations.some(rotation => rotation.getName().toLowerCase().indexOf((query || '').toLowerCase()) > -1);
+          })
+          .map(folder => {
+            folder.rotations = folder.rotations.filter(rotation => rotation.getName().toLowerCase().indexOf((query || '').toLowerCase()) > -1);
+            return folder;
+          });
+      })
+    );
   }
 }

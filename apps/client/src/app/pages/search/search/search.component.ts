@@ -60,7 +60,7 @@ export class SearchComponent implements OnInit {
     clvlMax: [70],
     jobCategories: [[]],
     craftJob: [0],
-    itemCategory: [0]
+    itemCategories: [[]]
   });
 
   availableJobCategories = [];
@@ -105,7 +105,13 @@ export class SearchComponent implements OnInit {
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
     });
     this.results$ = combineLatest(this.query$, this.onlyRecipes$, this.filters$).pipe(
-      filter(([query, , filters]) => query.length > 3 || filters.length > 0),
+      filter(([query, , filters]) => {
+        if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
+          // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
+          return query.length > 0 || filters.length > 0;
+        }
+        return query.length > 3 || filters.length > 0;
+      }),
       debounceTime(500),
       tap(([query, onlyRecipes, filters]) => {
         this.allSelected = false;
@@ -113,7 +119,8 @@ export class SearchComponent implements OnInit {
         this.loading = true;
         const queryParams: any = {
           query: query,
-          onlyRecipes: onlyRecipes
+          onlyRecipes: onlyRecipes,
+          filters: null
         };
         if (filters.length > 0) {
           queryParams.filters = btoa(JSON.stringify(filters));
@@ -145,6 +152,21 @@ export class SearchComponent implements OnInit {
     });
   }
 
+  resetFilters(): void {
+    this.form.reset({
+      ilvlMin: 0,
+      ilvlMax: 999,
+      elvlMin: 0,
+      elvlMax: 70,
+      clvlMin: 0,
+      clvlMax: 70,
+      jobCategories: [],
+      craftJob: 0,
+      itemCategories: []
+    });
+    this.submitFilters();
+  }
+
   submitFilters(): void {
     this.filters$.next(this.getFilters(this.form.controls));
   }
@@ -152,10 +174,10 @@ export class SearchComponent implements OnInit {
   private filtersToForm(filters: SearchFilter[]): { [key: string]: any } {
     const formRawValue = {};
     (filters || []).forEach(f => {
-      if (f.value.min !== undefined) {
+      if (f.value !== null && f.value.min !== undefined) {
         formRawValue[`${f.name}Min`] = f.value.min;
         formRawValue[`${f.name}Max`] = f.value.max;
-      } else {
+      } else if (f.value !== null) {
         formRawValue[f.name] = f.value;
       }
     });
@@ -194,25 +216,25 @@ export class SearchComponent implements OnInit {
         }
       });
     }
-    if (controls.jobCategories.value.length > 0) {
+    if (controls.jobCategories.value.length > 0 && controls.jobCategories.value[0].length > 0) {
       filters.push({
         minMax: false,
         name: 'jobCategories',
         value: controls.jobCategories.value
       });
     }
-    if (controls.craftJob.value !== 0) {
+    if (controls.craftJob.value[0] !== 0 && controls.craftJob.value !== 0) {
       filters.push({
         minMax: false,
         name: 'craftJob',
         value: controls.craftJob.value
       });
     }
-    if (controls.itemCategory.value !== 0) {
+    if (controls.itemCategories.value.length > 0 && controls.itemCategories.value[0].length > 0) {
       filters.push({
         minMax: false,
-        name: 'itemCategory',
-        value: controls.itemCategory.value
+        name: 'itemCategories',
+        value: controls.itemCategories.value
       });
     }
     return filters;
@@ -223,8 +245,8 @@ export class SearchComponent implements OnInit {
   }
 
   public createQuickList(item: SearchResult): void {
-    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(item.itemId)));
-    const operation$ = this.listManager.addToList(item.itemId, list, item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)
+    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
+    const operation$ = this.listManager.addToList(+item.itemId, list, item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
         mergeMap(resultList => {
@@ -246,7 +268,7 @@ export class SearchComponent implements OnInit {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = items.map(item => {
-          return this.listManager.addToList(item.itemId, list,
+          return this.listManager.addToList(+item.itemId, list,
             item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
         });
         let operation$: Observable<any>;
@@ -305,6 +327,6 @@ export class SearchComponent implements OnInit {
   }
 
   trackByItem(index: number, item: SearchResult): number {
-    return item.itemId;
+    return +item.itemId;
   }
 }

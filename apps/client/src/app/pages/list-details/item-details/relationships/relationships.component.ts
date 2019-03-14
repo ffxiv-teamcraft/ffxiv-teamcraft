@@ -28,7 +28,7 @@ export class RelationshipsComponent implements OnInit {
     this.requires$ = this.list$.pipe(
       map(list => {
         return this.item.requires
-          .sort((a, b) => a.id - b.id)
+          .sort((a, b) => a.id < b.id ? -1 : 1)
           .map(req => {
             const item = list.getItemById(req.id, true);
             return { ...item, reqAmount: req.amount, canBeCrafted: list.canBeCrafted(item) };

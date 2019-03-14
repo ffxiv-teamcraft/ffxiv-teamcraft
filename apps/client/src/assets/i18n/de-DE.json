@@ -4,12 +4,14 @@
   "Pick_a_fc": "Wähle eine freie Gesellschaft",
   "Pick_a_rotation": "Wähle eine Rotation",
   "Pick_a_recipe": "Wähle ein Rezept",
+  "Pick_an_item": "Wähle ein Item",
   "FC_name": "Name der freien Gesellschaft",
   "Saving_in_database": "Speichere Daten auf dem Server",
   "See_on_map": "Auf der Karte anzeigen",
   "Edit_amount": "Anzahl ändern",
   "List_fork_in_progress": "Die Liste wird in dein Konto kopiert...",
   "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
+  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -24,7 +26,7 @@
     "Crafts_amount": "# der Herstellungen",
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
-    "Too_many_results_warning": "Die Suche hatte mehr als 50 Ergebnisse. Da unsere Datenquelle maximal 50 Ergebnisse liefert, sind eventuell weitere Filter nötig um einen bestimmten Gegenstand zu finden.",
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Kopiere Link zur Suche in die Zwischenablage",
     "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert"
   },
@@ -39,7 +41,7 @@
   "Timers": "Alarme",
   "Copy_isearch": "isearch Makro kopieren",
   "Isearch_copied": "/isearch {{itemname}} in Zwischenablage kopiert",
-  "Required_for_final_craft": "{{amount}} für das finale Item erforderlich",
+  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
   "Mark_HQ": "Markieren als HQ erforderlich",
   "Unmark_HQ": "HQ-Erfordernis entfernen",
   "Compact_sidebar_toggle": "Kompakte Seitenleiste umschalten",
@@ -84,6 +86,7 @@
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
   "Ephemeral_tag": "vergänglich",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Erstelle eine Kurzzeit-Liste (wird gelöscht wenn sie komplett ist)",
   "Tag_filter": "Markierungen",
   "Public_lists": "Communitylisten",
@@ -286,6 +289,7 @@
     "Nickname_used": "Benutzername wird bereits verwendet",
     "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Patreon-Funktionen vollständig nutzen zu können.",
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "Gegenstandsnamen kopieren",
       "Isearch": "/isearch Makro kopieren"
@@ -314,10 +318,11 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Bitte verifiziere dein Konto um Zugriff auf die Listen deiner Freien Gesellschaft zu erhalten",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
     "Regenerate_all": "Alle Listen neugenerieren",
     "Regenerated_all": "Deine Listen sind jetzt aktuell",
     "Merge_lists": "Listen zusammenfassen",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "Listen erfolgreich zusammengefasst!",
     "Shared_lists": "Listen mit Schreibzugriff",
     "Add_selection": "Auswahl zu einer Liste hinzufügen",
@@ -358,7 +363,7 @@
     "Add_all_alarms": "Erstelle alle Alarme für diese Liste",
     "History": "Historie",
     "Items_count": "{{amount}} Gegenstände",
-    "Show_craftable_amount": "Zeige craftbare Mengen",
+    "Show_craftable_amount": "Zeige herstellbare Mengen",
     "COMPLETION_POPUP": {
       "Title": "Liste fertiggestellt",
       "Content": "Diese Liste ist fertiggestellt, was willst du damit machen?",
@@ -393,7 +398,11 @@
     "Open_in_ffxivgardening": "Auf ffxivgardening.com öffnen",
     "Add_all_item_alarms": "Erstelle alle Alarme für diesen Gegenstand",
     "Adaptative_filter": "Zeige nur, was ich tun kann",
+    "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "Du kannst {{amount}} herstellen",
+    "Add_item": "Füge ein Item hinzu",
+    "List_too_large": "List too large",
+    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -493,7 +502,8 @@
     "No_items": "Nichts zum Sammeln gefunden",
     "Gathering_name": "Sammelgegenstand eingeben",
     "Ephemeral_node": "Vergängliches Vorkommen, kann erneut erscheinen",
-    "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Standorte anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!"
+    "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Standorte anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!",
+    "Hidden_item": "Versteckt"
   },
   "ANNOUNCEMENT": {
     "Title": "Ankündigung",
@@ -547,6 +557,8 @@
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Teile Makros am letzten möglichen Schritt für Reklamation",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "Extra Wartezeit",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
@@ -597,7 +609,7 @@
     "Change_rotation": "Rotation wechseln",
     "New_rotation_folder": "Neuer Ordner",
     "Safe_mode": "Sicherer Modus",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Safe_mode_tooltip": "Deaktiviert alle Fähigkeiten, die (inklusive Statuseffekten) keine 100% Erfolgschance haben",
     "CUSTOM": {
       "Recipe_configuration": "Einstellungen für Rezept",
       "Recipe_level": "Level für Rezept",
@@ -606,6 +618,7 @@
       "Recipe_durability": "Belastbarkeit"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "Rotations-Ordner",
         "Rename": "Ordner umbenennen",
@@ -655,15 +668,25 @@
         "Craftsmanship": "Kunstfertigkeit",
         "Control": "Kontrolle"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Nicht genug CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
+      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
   },
   "PRICING": {
     "From_vendor": "Verkäuferpreis",
+    "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Gehe davon aus alles zu verkaufen",
     "Autofill_panel_prices": "Rufe die Preise aus dem Marktbrett ab",
     "Autofill_panel_prices_warning": "Dies ist ein langsamer Prozess und sollte ca. {{time}} Sekunden dauern, bist du sicher?",
     "Copy_earnings_as_text": "Kopiere Inhalt als Text",
-    "Content_copied": "Inhalt wurde in die Zwischenablage kopiert"
+    "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Freibriefe",
@@ -686,7 +709,8 @@
     "Title": "Mitteilungen",
     "List_comment_added": "Ein Kommentar wurde der Liste {{listName}} hinzugefügt: \"{{content}}\"",
     "List_item_comment_added": "Ein Kommentar wurde dem Gegenstand {{itemName}} auf der Liste {{listName}} hinzugefügt: \"{{content}}\"",
-    "Mark_all_as_read": "Alle als gelesen markieren"
+    "Mark_all_as_read": "Alle als gelesen markieren",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "Teams",
@@ -776,7 +800,30 @@
   },
   "UPDATE": {
     "New_update_available": "Eine neue Version ist verfügbar!",
-    "Desktop_instructions": "Klicke hier, um die neueste Version herunterladen: ",
+    "Desktop_instructions": "Klicke hier, um die neueste Version herunterzuladen: ",
     "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden."
+  },
+  "LOG_TRACKER": {
+    "Title": "Log Tracker",
+    "Mark_page_as_done": "Diese Seite als erledigt markieren",
+    "Mark_as_done": "Als erledigt markieren",
+    "Mark_as_not_done": "Als nicht erledigt markieren",
+    "Create_list": "Erstelle eine List um diese Seite vervollständigen",
+    "PAGE": {
+      "Master_recipes": "Master recipes ({{number}})",
+      "Housing_items": "Housing({{number}})",
+      "Others": "Weitere",
+      "Dyes": "Farben",
+      "Other_master_recipes": "Other Master Recipes"
+    }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
+  },
+  "GIVEAWAY": {
+    "Discord_1K": {
+      "Title": "1000 Discord members giveaway !",
+      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+    }
   }
 }

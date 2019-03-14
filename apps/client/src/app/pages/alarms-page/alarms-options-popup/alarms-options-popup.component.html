@@ -1,6 +1,6 @@
 <p>{{'ALARMS.Volume' | translate}}</p>
 <nz-slider [nzMin]="1" [nzMax]="100" [nzStep]="1" [ngModel]="settings.alarmVolume * 100"
-           (ngModelChange)="setVolume($event/100)"></nz-slider>
+           (nzOnAfterChange)="setVolume($event/100)"></nz-slider>
 
 <div *ngIf="platform.isDesktop()">
   <nz-switch [(ngModel)]="enableCustomSound"></nz-switch>

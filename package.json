@@ -3,12 +3,11 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.0.13",
+  "version": "5.0.38",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
     "appId": "ffxivteamcraft",
-    "artifactName": "${productName}-setup.${ext}",
     "forceCodeSigning": true,
     "directories": {
       "output": "release"
@@ -30,9 +29,10 @@
     "win": {
       "icon": "./tools/build/icon.ico",
       "publisherName": "FFXIV Teamcraft",
-      "publish": [
-        "github"
-      ]
+      "publish": {
+        "provider": "github",
+        "releaseType": "release"
+      }
     },
     "nsis": {
       "include": "./tools/build/nsis/include.nsh",
@@ -57,7 +57,9 @@
     "test": "node ./tools/build/prebuild.js && ng test --project=client --watch=false --code-coverage",
     "codecov": "cat coverage/lcov.info | codecov",
     "lint": "ng lint && jsonlint-cli ./src/assets/i18n/*.json",
-    "e2e": "ng e2e",
+    "e2e": "node ./tools/build/prebuild.js && ng e2e client-e2e",
+    "e2e:watch": "node ./tools/build/prebuild.js && ng e2e client-e2e --watch",
+    "e2e:ci": "node ./tools/build/prebuild.js && ng e2e client-e2e --headless",
     "commitmsg": "validate-commit-msg",
     "prerelease": "npm test",
     "commit": "git-cz",
@@ -73,7 +75,6 @@
     "update": "ng update @nrwl/schematics",
     "update:check": "ng update",
     "electron-builder": "electron-builder",
-    "bundle-report": "webpack-bundle-analyzer dist/apps/client/stats.json",
     "***********SSR STUFF***************": "",
     "build": "ng build && npm run build:ssr",
     "build:ssr": "ng run client:server && npm run webpack:ssr",
@@ -109,7 +110,7 @@
     "@ngrx/store": "7.0.0",
     "@ngx-translate/core": "^10.0.1",
     "@ngx-translate/http-loader": "^3.0.1",
-    "@nrwl/nx": "6.2.1",
+    "@nrwl/nx": "7.5.1",
     "@swimlane/dragula": "^3.7.3",
     "@swimlane/ngx-dnd": "^5.1.0",
     "@types/jwt-decode": "^2.2.1",
@@ -122,8 +123,9 @@
     "electron-is-dev": "^1.0.1",
     "electron-log": "^2.2.17",
     "electron-oauth-helper": "^2.0.3",
-    "electron-updater": "^4.0.6",
+    "electron-updater": "3.2.3",
     "express": "^4.16.4",
+    "file-saver": "^2.0.1",
     "firebase": "^5.5.0",
     "hammerjs": "^2.0.8",
     "jwt-decode": "^2.2.0",
@@ -131,9 +133,10 @@
     "lodash": "^4.17.10",
     "ng-drag-drop": "^5.0.0",
     "ng-push": "^0.2.1",
-    "ng-zorro-antd": "7.0.0-rc.0",
+    "ng-zorro-antd": "7.0.0",
     "ngx-clipboard": "11.0.0",
     "ngx-markdown": "^1.6.0",
+    "papaparse": "^4.6.3",
     "rxjs": "^6.0.0",
     "semver": "^5.4.1",
     "tslib": "^1.9.0",
@@ -141,15 +144,17 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
+    "@angular/cli": "~7.2.2",
+    "@nrwl/schematics": "7.5.1",
+    "cypress": "^3.1.5",
+    "@nrwl/builders": "7.5.1",
     "@angular-devkit/build-angular": "~0.11.0",
     "@angular-devkit/schematics": "^0.8.8",
-    "@angular/cli": "7.2.1",
     "@angular/compiler-cli": "^7.2.1",
     "@angular/language-service": "^7.2.1",
     "@firebase/auth-types": "^0.4.0",
     "@ngrx/schematics": "^7.0.0",
     "@ngrx/store-devtools": "7.0.0",
-    "@nrwl/schematics": "7.1.1",
     "@types/electron": "^1.6.10",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
@@ -161,7 +166,7 @@
     "cz-conventional-changelog": "^2.1.0",
     "del-cli": "^1.1.0",
     "electron": "^2.0.14",
-    "electron-builder": "20.38.4",
+    "electron-builder": "20.34.0",
     "electron-reload": "^1.2.2",
     "firebase-tools": "^4.0.1",
     "husky": "^0.14.3",

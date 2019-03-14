@@ -28,7 +28,8 @@ export class ProgressPopupComponent implements OnInit {
       map(counter => Math.ceil(100 * counter / this.count))
     );
     this.operation$.pipe(
-      catchError(() => {
+      catchError((err) => {
+        console.error(err);
         this.modalRef.close(new Error());
         return EMPTY;
       }),

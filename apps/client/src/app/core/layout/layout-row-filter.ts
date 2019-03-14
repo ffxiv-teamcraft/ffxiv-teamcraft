@@ -11,11 +11,51 @@ export class LayoutRowFilter {
 
   static IS_GATHERING = new LayoutRowFilter(row => row.gatheredBy !== undefined, 'IS_GATHERING');
 
+  static IS_TRADE = new LayoutRowFilter(row => row.tradeSources !== undefined && row.tradeSources.length > 0, 'IS_TRADE');
+
   static CAN_BE_BOUGHT = new LayoutRowFilter(row => {
     return row.vendors !== undefined && row.vendors.length > 0;
   }, 'CAN_BE_BOUGHT');
 
+  static FROM_BEAST_TRIBE = new LayoutRowFilter(row => {
+    if (row.tradeSources === undefined || row.vendors === undefined) {
+      return false;
+    }
+    const beastTribeNpcs = [
+      // Sylphic Vendor
+      1005569,
+      // Kobald Vendor
+      1008909,
+      // Sahagin Vendo
+      1008907,
+      // Amalj'aa Vendor
+      1005554,
+      // Ixali Vendor
+      1009205,
+      // Vath Stickpeddler
+      1016804,
+      // Luna Vanu
+      1016093,
+      // Mogmul Mogbelly
+      1017172,
+      // Shikitahe
+      1024219,
+      // Madhura
+      1024774,
+      // Gyosho
+      1025604];
+    return row.vendors.some(vendor => {
+      return beastTribeNpcs.indexOf(vendor.npcId) > -1;
+    }) || row.tradeSources.some(trade => {
+      return trade.npcs.some(npc => {
+        return beastTribeNpcs.indexOf(npc.id) > -1;
+      });
+    });
+  }, 'FROM_BEAST_TRIBE');
+
   static IS_MONSTER_DROP = new LayoutRowFilter(row => row.drops !== undefined && row.drops.length > 0, 'IS_MONSTER_DROP');
+
+  static IS_DUNGEON_DROP = new LayoutRowFilter(row => row.instances !== undefined && row.instances.length > 0, 'IS_DUNGEON_DROP');
 
   static IS_GC_TRADE = new LayoutRowFilter(row => row.tradeSources !== undefined && row.tradeSources
     .find(source => source.trades
@@ -44,6 +84,7 @@ export class LayoutRowFilter {
         28,
         35,
         36,
+        37,
         7811,
         9383,
         14298,
@@ -54,8 +95,10 @@ export class LayoutRowFilter {
 
       for (const tokenId of tomeIds) {
         if (row.tradeSources
-          .find(source => source.trades
-            .find(trade => +trade.currencies.find(c => c.id === tokenId) !== undefined) !== undefined) !== undefined) {
+          .some(source => source.trades
+            .some(trade => trade.currencies.some(c => c.id === tokenId)
+            )
+          )) {
           return true;
         }
       }
@@ -218,9 +261,9 @@ export class LayoutRowFilter {
 
   static fromString(filterString: string): LayoutRowFilter {
     const parsed = filterString.split(':');
-    const baseFilterString: string = parsed.shift();
+    const baseFilterString: string = parsed.shift().replace('!', '');
     const baseFilter: LayoutRowFilter = LayoutRowFilter[baseFilterString];
-    if (parsed.length > 1) {
+    if (parsed.length > 1 && baseFilter !== undefined) {
       return LayoutRowFilter.processRows(parsed, baseFilter);
     }
     return baseFilter;
@@ -235,7 +278,7 @@ export class LayoutRowFilter {
   private static processRows(stringRows: string[], filter: LayoutRowFilter): LayoutRowFilter {
     const operator = stringRows.shift();
     let filterString = stringRows.shift();
-    if (operator !== undefined && filterString !== undefined) {
+    if (operator !== undefined && filterString !== undefined && filter !== undefined) {
       const notGate = filterString.charAt(0) === '!';
       if (notGate) {
         filterString = filterString.substr(1);

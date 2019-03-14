@@ -1,5 +1,5 @@
 defaults: &defaults
-    working_directory: /tmp/ffxiv-teamcraft
+    working_directory: ~/ffxiv-teamcraft
     docker:
     - image: supamiu/circleci-node-wine
 
@@ -13,13 +13,14 @@ jobs:
         - run:
             name: Show current branch
             command: echo ${CIRCLE_BRANCH}
-        - restore_cache:
-            keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
         - run:
             name: Update npm
             command: sudo npm i -g npm
+        - restore_cache:
+            keys:
+              - v2-deps-{ .Branch }-{ checksum "package.json" }
+              - v2-deps-{ .Branch }
+              - v2-deps
         - run:
             name: Install local dependencies
             command: npm ci
@@ -27,21 +28,22 @@ jobs:
             name: Install functions dependencies
             command: cd functions && npm install && cd ../
         - save_cache:
-            key: v1-dependencies-{{ checksum "package.json" }}
+            key: v2-deps-{ .Branch }-{ checksum "package.json" }
             paths:
-            - node_modules
-            - functions/node_modules
+              - ~/.cache
+              - ~/.npm
         - persist_to_workspace:
-            root: /tmp
+            root: ~/
             paths:
             - ffxiv-teamcraft/*
+            - .cache/*
 
 
     lint:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/
         - run:
             name: Lint code and JSON
             command: npm run lint
@@ -51,7 +53,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/
         - run:
             name: Testing
             command: npm run test
@@ -59,12 +61,21 @@ jobs:
             name: Codecov upload
             command: npm run codecov
 
+    e2e:
+      <<: *defaults
+      steps:
+        - attach_workspace:
+            at: ~/
+        - run:
+            name: Testing
+            command: npm run e2e:ci
+
 
     build:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/
         - run:
             name: Building
             command: |
@@ -78,18 +89,19 @@ jobs:
         - save_cache:
             key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
             paths:
-            - dist
+              - dist
         - persist_to_workspace:
-              root: /tmp
+              root: ~/
               paths:
-                  - ffxiv-teamcraft/*
+                - ffxiv-teamcraft/*
+                - .cache/*
 
 
     deploy-web:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/
         - run:
             name: Deploying web
             command: ./node_modules/.bin/firebase deploy -P default --token "$FIREBASE_TOKEN"
@@ -98,7 +110,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/
         - run:
             name: Deploying desktop
             command: npm run electron:setup:publish
@@ -108,7 +120,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+            at: ~/
         - run:
             name: Deploying web
             command: ./node_modules/.bin/firebase deploy -P beta --token "$FIREBASE_TOKEN"
@@ -117,7 +129,7 @@ jobs:
         <<: *defaults
         steps:
         - attach_workspace:
-              at: /tmp
+              at: ~/
         - run:
               name: Deploying web
               command: ./node_modules/.bin/firebase deploy -P preview --token "$FIREBASE_TOKEN"
@@ -131,9 +143,16 @@ workflows:
         - lint:
               requires:
               - setup
+        - test:
+            requires:
+              - setup
+        - e2e:
+            requires:
+              - setup
         - build:
               requires:
               - lint
+              - test
         - deploy-web:
               requires:
               - build
@@ -152,10 +171,4 @@ workflows:
               filters:
                   branches:
                       only: staging
-        - deploy-preview:
-              requires:
-              - build
-              filters:
-                  branches:
-                      only: 5.0.0
 

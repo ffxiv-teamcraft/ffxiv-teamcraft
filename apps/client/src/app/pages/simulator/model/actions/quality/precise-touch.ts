@@ -20,6 +20,9 @@ export class PreciseTouch extends QualityAction {
     if (linear) {
       return true;
     }
+    if (simulationState.safe) {
+      return false;
+    }
     return simulationState.state === 'GOOD' || simulationState.state === 'EXCELLENT';
   }
 

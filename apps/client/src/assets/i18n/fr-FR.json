@@ -4,12 +4,14 @@
   "Pick_a_fc": "Choisissez une compagnie libre",
   "Pick_a_rotation": "Choisissez une rotation",
   "Pick_a_recipe": "Choisissez une recette",
+  "Pick_an_item": "Choisissez un objet",
   "FC_name": "Nom de la compagnie libre",
   "Saving_in_database": "Sauvegarde en cours",
   "See_on_map": "Voir sur la carte",
   "Edit_amount": "Modifier le montant",
   "List_fork_in_progress": "Copie de la liste en cours...",
   "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur Discord de Teamcraft (en anglais ou français).",
+  "Hide_zone_duplicates": "Masquer les duplicatas dans le résumé par zones",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -24,7 +26,7 @@
     "Crafts_amount": "Nb de crafts",
     "Add_to_list": "Ajouter cet élément à une liste",
     "Apply_filters": "Appliquer les filtres",
-    "Too_many_results_warning": "Cette recherche a donné plus de 50 résultats. Notre source de données est limitée à 50 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
+    "Too_many_results_warning": "Cette recherche a donné plus de 100 résultats. Notre source de données est limitée à 100 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
     "Share_url": "Copier l'url de recherche dans le presse-papiers",
     "Share_url_copied": "Url de recherche copié dans le presse-papiers"
   },
@@ -39,7 +41,7 @@
   "Timers": "Alarmes",
   "Copy_isearch": "Copier la macro de recherche en jeu",
   "Isearch_copied": "/isearch {{itemname}} copié dans le presse-papiers",
-  "Required_for_final_craft": "{{amount}} nécessaire pour les crafts finaux",
+  "Required_for_final_craft": "{{amount}} nécessaire pour les éléments finaux, vous pourriez les vouloir en HQ",
   "Mark_HQ": "Marquer comme requis en HQ",
   "Unmark_HQ": "Supprimer l’exigence de HQ",
   "Compact_sidebar_toggle": "Activer/Désactiver le menu compact",
@@ -84,6 +86,7 @@
   "No_favorites": "Aucun favori",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
   "Ephemeral_tag": "éphémère",
+  "Remove_ephemeral": "Changer en liste permanente",
   "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
   "Tag_filter": "Tags",
   "Public_lists": "Listes communautaires",
@@ -286,6 +289,7 @@
     "Nickname_used": "Pseudo déjà utilisé",
     "No_nickname_warning": "Accédez à la page paramètres et configurer un pseudo pour pouvoir utiliser les fonctionnalités exclusives aux supporters patron correctement.",
     "Show_devtools": "Afficher les outils de debug",
+    "Clear_cache": "Vider le cache (l'application va redémarrer)",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
@@ -314,10 +318,11 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "S’il vous plaît vérifier votre compte pour avoir accès aux listes partagées à votre compagnie libre",
+    "Needs_verification": "S'il vous plaît vérifier votre personnage pour avoir accès aux listes partagées à votre compagnie libre",
     "Regenerate_all": "Regénérer toutes les listes",
     "Regenerated_all": "Vos listes sont maintenant à jour",
     "Merge_lists": "Fusionner des listes",
+    "Merge_lists_warning": "Les grandes listes ne sont pas listées ici car vous ne pouvez pas fusionner les listes qui sont trop grandes en raison des limitations de base de données.",
     "Lists_merged": "Listes fusionnées avec succès !",
     "Shared_lists": "Listes sur lesquelles vous avez le droit d'écriture",
     "Add_selection": "Ajouter la sélection à une liste",
@@ -393,7 +398,11 @@
     "Open_in_ffxivgardening": "Ouvrir dans ffxivgardening.com",
     "Add_all_item_alarms": "Ajouter toutes les alarmes pour cet objet",
     "Adaptative_filter": "N’afficher que ce que je peux faire",
+    "Disable_HQ_suggestions": "Désactiver les suggestions HQ",
     "Amount_craftable": "Vous pouvez fabriquer {{amount}}",
+    "Add_item": "Ajouter un objet",
+    "List_too_large": "Liste trop longue",
+    "List_too_large_description": "Cette liste est trop longue et pourrait être supprimée automatiquement par le système de base de données en raison de quotas imposés si vous y ajoutez plus d'objets.",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -493,7 +502,8 @@
     "No_items": "Aucune récolte trouvée",
     "Gathering_name": "Nom de l'objet",
     "Ephemeral_node": "Nœud éphémère, peut être re-déclenché",
-    "Intro": "Ici vous pouvez simplement chercher un objet récoltable et voir ses détails, incluant la position, les heures d'apparition et la possibilité de créer une alarme. Commencez à taper un nom et laissez la magie opérer !"
+    "Intro": "Ici vous pouvez simplement chercher un objet récoltable et voir ses détails, incluant la position, les heures d'apparition et la possibilité de créer une alarme. Commencez à taper un nom et laissez la magie opérer !",
+    "Hidden_item": "Caché"
   },
   "ANNOUNCEMENT": {
     "Title": "Annonce",
@@ -547,6 +557,8 @@
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
     "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
+    "Include_consumables_notification": "Inclure une notification pour les consommables",
+    "Consumable_notification": "Utilisez {{buffs}}",
     "Extra_wait": "Temps d'attente supp.",
     "Import_macro": "Importer une macro du jeu",
     "Ingame_macro": "Macro",
@@ -606,6 +618,7 @@
       "Recipe_durability": "Solidité"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Rechercher une rotation",
       "FOLDERS": {
         "Folders": "Dossiers de rotation",
         "Rename": "Renommer le dossier",
@@ -655,15 +668,25 @@
         "Craftsmanship": "Habileté",
         "Control": "Contrôle"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Action non garantie avec le mode garanti activé",
+      "DURABILITY_REACHED_ZERO": "La solidité a atteint 0 avant que la progression soit terminée",
+      "NOT_ENOUGH_CP": "Pas assez de PS",
+      "MISSING_LEVEL_REQUIREMENT": "Vous n'avez pas le niveau requis",
+      "NOT_SPECIALIST": "Rotation de spécialiste, mais vous n'êtes pas spécialiste",
+      "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé"
     }
   },
   "PRICING": {
     "From_vendor": "Prix au vendeur",
+    "From_crafting": "Prix de l’artisanat",
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
     "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?",
     "Copy_earnings_as_text": "Copier le contenu au format texte",
-    "Content_copied": "Contenu copié dans le presse-papiers"
+    "Content_copied": "Contenu copié dans le presse-papiers",
+    "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -686,7 +709,8 @@
     "Title": "Notifications",
     "List_comment_added": "Commentaire sur la liste {{listName}} : \"{{content}}\"",
     "List_item_comment_added": "Commentaire posté sur {{itemName}}, liste {{listName}} : \"{{content}} \"",
-    "Mark_all_as_read": "Tout marquer comme lu"
+    "Mark_all_as_read": "Tout marquer comme lu",
+    "No_notifications": "Pas de notifications"
   },
   "TEAMS": {
     "Title": "Équipes",
@@ -778,5 +802,28 @@
     "New_update_available": "Une nouvelle mise à jour est disponible ! ",
     "Desktop_instructions": "Veuillez cliquer sur ce lien pour télécharger la dernière version : ",
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente."
+  },
+  "LOG_TRACKER": {
+    "Title": "Carnet d'artisanat",
+    "Mark_page_as_done": "Marquer cette page comme terminée",
+    "Mark_as_done": "Marquer comme fait",
+    "Mark_as_not_done": "Marquer comme non fait",
+    "Create_list": "Créer une liste pour compléter cette page",
+    "PAGE": {
+      "Master_recipes": "Expert - tome {{number}}",
+      "Housing_items": "Logement ({{number}})",
+      "Others": "Autres",
+      "Dyes": "Teintures",
+      "Other_master_recipes": "Expert - autres"
+    }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Chargement des objets, actions, et plus encore !"
+  },
+  "GIVEAWAY": {
+    "Discord_1K": {
+      "Title": "Concours 1000 membres discord !",
+      "Description": "Cliquez sur cette bannière pour accéder à la page d'inscription au concours pour gagner FANTASY XIV FINAL : Shadowbringers Edition Collector Digitale, créée pour célébrer le cap des 1000 membres atteint sur le serveur discord."
+    }
   }
 }

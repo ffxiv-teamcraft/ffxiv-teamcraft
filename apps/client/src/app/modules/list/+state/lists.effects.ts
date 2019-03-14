@@ -12,21 +12,26 @@ import {
   ListsWithWriteAccessLoaded,
   LoadListCompact,
   LoadListDetails,
+  LoadTeamLists,
   MyListsLoaded,
   SetItemDone,
+  TeamListsLoaded,
+  UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
 import {
   catchError,
-  debounceTime, delay,
+  debounceTime,
+  delay,
   distinctUntilChanged,
   filter,
   first,
   map,
   mergeMap,
   switchMap,
+  takeUntil,
   tap,
   withLatestFrom
 } from 'rxjs/operators';
@@ -57,6 +62,18 @@ export class ListsEffects {
       return this.listCompactsService.getByForeignKey(TeamcraftUser, userId)
         .pipe(
           map(lists => new MyListsLoaded(lists, userId))
+        );
+    })
+  );
+
+  @Effect()
+  loadTeamLists$ = this.actions$.pipe(
+    ofType<LoadTeamLists>(ListsActionTypes.LoadTeamLists),
+    distinctUntilChanged(),
+    switchMap((action) => {
+      return this.listCompactsService.getByForeignKey(Team, action.teamId)
+        .pipe(
+          map(lists => new TeamListsLoaded(lists, action.teamId))
         );
     })
   );
@@ -103,6 +120,11 @@ export class ListsEffects {
     map(lists => new ListsForTeamsLoaded(lists))
   );
 
+  unloadListDetails$ = this.actions$.pipe(
+    ofType<UnloadListDetails>(ListsActionTypes.UnloadListDetails),
+    map(action => action.key)
+  );
+
   @Effect()
   loadListDetails$ = this.actions$.pipe(
     ofType<LoadListDetails>(ListsActionTypes.LoadListDetails),
@@ -116,13 +138,17 @@ export class ListsEffects {
             of(action.key),
             loggedIn ? this.authFacade.user$ : of(null),
             this.authFacade.userId$,
+            this.teamsFacade.selectedTeam$,
             loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
             this.listService.get(action.key).pipe(catchError(() => of(null)))
           );
-        })
+        }),
+        takeUntil(this.unloadListDetails$.pipe(
+          filter(key => key === action.key)
+        ))
       );
     }),
-    map(([listKey, user, userId, fcId, list]: [string, TeamcraftUser | null, string, string | null, List]) => {
+    map(([listKey, user, userId, team, fcId, list]: [string, TeamcraftUser | null, string, Team, string | null, List]) => {
       if (user !== null) {
         const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
         const verified = idEntry && idEntry.verified;
@@ -131,9 +157,12 @@ export class ListsEffects {
         }
       }
       if (list !== null) {
-        const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId));
+        const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), (team !== undefined && list.teamId === team.$key) ? 20 : 0);
         if (permissionLevel >= PermissionLevel.READ) {
           return [listKey, list];
+        }
+        if (team === undefined && list.teamId !== undefined) {
+          this.teamsFacade.select(list.teamId);
         }
       }
       return [listKey, null];
@@ -188,17 +217,25 @@ export class ListsEffects {
     ofType(ListsActionTypes.UpdateList),
     debounceTime(100),
     map(action => action as UpdateList),
-    switchMap(action => this.listService.set(action.payload.$key, action.payload)),
+    switchMap(action => this.listService.update(action.payload.$key, action.payload)),
     switchMap(() => EMPTY)
   );
 
-  @Effect()
+  @Effect({ dispatch: false })
   deleteListFromDatabase$ = this.actions$.pipe(
     ofType<DeleteList>(ListsActionTypes.DeleteList),
     mergeMap(action => {
-      return combineLatest(this.listService.remove(action.key), this.listCompactsService.remove(action.key));
-    }),
-    switchMap(() => EMPTY)
+      return combineLatest(this.listService.remove(action.key), this.listCompactsService.remove(action.key))
+        .pipe(
+          catchError((error) => {
+            if (error.message.indexOf('Permission') > -1) {
+              // If it's a permission Error, let's try again just in case.
+              return combineLatest(this.listService.remove(action.key), this.listCompactsService.remove(action.key));
+            }
+            return EMPTY;
+          })
+        );
+    })
   );
 
   @Effect()

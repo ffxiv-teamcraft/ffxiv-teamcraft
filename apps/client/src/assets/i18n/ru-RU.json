@@ -4,12 +4,14 @@
   "Pick_a_fc": "Выбрать свободную компанию",
   "Pick_a_rotation": "Выбрать вращение",
   "Pick_a_recipe": "Выбрать рецепт",
+  "Pick_an_item": "Pick an item",
   "FC_name": "Название компании",
   "Saving_in_database": "Сохранение данных на сервер",
   "See_on_map": "Посмотреть на карте",
   "Edit_amount": "Изменить размер",
   "List_fork_in_progress": "Копирование списка на ваш аккаунт...",
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема не устранится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
+  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -24,7 +26,7 @@
     "Crafts_amount": "# крафтов",
     "Add_to_list": "Добавить предмет в список",
     "Apply_filters": "Применить фильтры",
-    "Too_many_results_warning": "В поимке более 50 предметов. Поскольку наш источник данных ограничен 50 результатами, вам могут понадобиться дополнительные фильтры для поиска конкретного элемента.",
+    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copy search url to your clipboard",
     "Share_url_copied": "Search url copied to your clipboard"
   },
@@ -39,7 +41,7 @@
   "Timers": "Таймеры",
   "Copy_isearch": "Копирование isearch макрос",
   "Isearch_copied": "/Isearch {{itemname}} скопирован в буфер обмена",
-  "Required_for_final_craft": "{{amount}} необходимо для конечного предмета",
+  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
   "Mark_HQ": "Пометить как нужен HQ",
   "Unmark_HQ": "Удаление требования HQ",
   "Compact_sidebar_toggle": "Включить боковую панель",
@@ -84,6 +86,7 @@
   "No_favorites": "Нет избранного",
   "Ephemeral_list": "Будут удалены после завершения",
   "Ephemeral_tag": "эфемерный",
+  "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Создать быстрый список (удаляется после завершения)",
   "Tag_filter": "Теги",
   "Public_lists": "Списки сообщества",
@@ -286,6 +289,7 @@
     "Nickname_used": "Имя уже используется",
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
     "Show_devtools": "Show dev tools",
+    "Clear_cache": "Clear cache (will restart the app)",
     "COPY_TYPE": {
       "Classic": "Копировать имя предмета",
       "Isearch": "Копировать /isearch макрос"
@@ -314,10 +318,11 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Пожалуйста, подтвердите ваш аккаунт для возможности иметь доступ к общим спискам",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
     "Merge_lists": "Объединить списки",
+    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "Списки успешно соединены!",
     "Shared_lists": "Списки к которым у вас есть доступ",
     "Add_selection": "Добавить выбранное в список",
@@ -393,7 +398,11 @@
     "Open_in_ffxivgardening": "Открыть в ffxivgardening.com",
     "Add_all_item_alarms": "Создать все оповещения для этого предмета",
     "Adaptative_filter": "Показать только то, что я могу сделать",
+    "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "You can craft {{amount}}",
+    "Add_item": "Add an item",
+    "List_too_large": "List too large",
+    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -493,7 +502,8 @@
     "No_items": "Нечего собирать",
     "Gathering_name": "Введите имя предмета",
     "Ephemeral_node": "Ephemeral node, can be respawned",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !"
+    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !",
+    "Hidden_item": "Hidden"
   },
   "ANNOUNCEMENT": {
     "Title": "Объявление",
@@ -547,6 +557,8 @@
     "Fixed_notification_number": "Уведомление исправлено",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "Дополнительное ожидание",
     "Import_macro": "Импорт из внутриигрового макроса",
     "Ingame_macro": "Внутриигровой макрос",
@@ -606,6 +618,7 @@
       "Recipe_durability": "Прочность"
     },
     "ROTATIONS": {
+      "Search_placeholder": "Search a rotation",
       "FOLDERS": {
         "Folders": "Папки поворота",
         "Rename": "Переименовать папку",
@@ -655,15 +668,25 @@
         "Craftsmanship": "Мастерство",
         "Control": "Управление"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
+      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
   },
   "PRICING": {
     "From_vendor": "Цена продавца",
+    "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Ожидайте, чтобы продать все",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
     "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
     "Copy_earnings_as_text": "Копировать как текст",
-    "Content_copied": "Скопировано в буфер обмена"
+    "Content_copied": "Скопировано в буфер обмена",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -686,7 +709,8 @@
     "Title": "Уведомления",
     "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
-    "Mark_all_as_read": "Отметить все как прочитанные"
+    "Mark_all_as_read": "Отметить все как прочитанные",
+    "No_notifications": "No notifications"
   },
   "TEAMS": {
     "Title": "Команды",
@@ -778,5 +802,28 @@
     "New_update_available": "A new update is available ! ",
     "Desktop_instructions": "Please navigate to the following link to download latest version: ",
     "Web_instructions": "Please reload the page to get the latest version."
+  },
+  "LOG_TRACKER": {
+    "Title": "Log Tracker",
+    "Mark_page_as_done": "Mark this page as done",
+    "Mark_as_done": "Mark this item as done",
+    "Mark_as_not_done": "Mark this item as not done",
+    "Create_list": "Create a list to complete this page",
+    "PAGE": {
+      "Master_recipes": "Master recipes ({{number}})",
+      "Housing_items": "Housing({{number}})",
+      "Others": "Others",
+      "Dyes": "Dyes",
+      "Other_master_recipes": "Other Master Recipes"
+    }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "Loading items, actions, and more !"
+  },
+  "GIVEAWAY": {
+    "Discord_1K": {
+      "Title": "1000 Discord members giveaway !",
+      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+    }
   }
 }

@@ -71,8 +71,8 @@
           <nz-select [(ngModel)]="layout.recipeOrder"
                      [nzDisabled]="layout.name === 'Default Layout'"
                      (ngModelChange)="dirty = true">
-            <nz-option [nzValue]="0" nzLabel="DESC"></nz-option>
-            <nz-option [nzValue]="1" nzLabel="ASC"></nz-option>
+            <nz-option [nzValue]="0" nzLabel="ASC"></nz-option>
+            <nz-option [nzValue]="1" nzLabel="DESC"></nz-option>
           </nz-select>
         </div>
         <nz-radio-group [ngModel]="getItemsLayoutType(layout)"
@@ -90,7 +90,7 @@
     <div ngxDroppable fxLayout="column" fxLayoutGap="10px" (drop)="moveRow($event.value, $event.dropIndex, layout)">
       <div *ngFor="let row of layout.rows; trackBy: trackByRow" ngxDraggable [model]="row">
         <app-layout-editor-row [row]="row" (rowChange)="updatePanel(layout, $event)"
-                               [readonly]="row.name === 'Other' || layout.name === 'Default Layout'"
+                               [readonly]="layout.name === 'Default Layout'"
                                (delete)="removePanel(layout, row)"></app-layout-editor-row>
       </div>
     </div>

@@ -4,12 +4,14 @@
   "Pick_a_fc": "자유부대 선택",
   "Pick_a_rotation": "로테이션 선택",
   "Pick_a_recipe": "제작법 선택",
+  "Pick_an_item": "아이템 선택",
   "FC_name": "자유부대 이름",
   "Saving_in_database": "서버에 데이터를 저장하는 중",
   "See_on_map": "지도에서 보기",
   "Edit_amount": "수량 수정",
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
+  "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -24,7 +26,7 @@
     "Crafts_amount": "제작 횟수",
     "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용",
-    "Too_many_results_warning": "검색 결과가 50개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다.",
+    "Too_many_results_warning": "검색 결과가 100개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다.",
     "Share_url": "검색URL을 클립보드로 복사하기",
     "Share_url_copied": "검색URL이 클립보드에 복사되었습니다"
   },
@@ -39,7 +41,7 @@
   "Timers": "타이머",
   "Copy_isearch": "아이템검색 매크로 복사",
   "Isearch_copied": "/아이템검색 {{itemname}} 클립보드에 복사되었습니다",
-  "Required_for_final_craft": "최종 제작물에 {{amount}}개 필요",
+  "Required_for_final_craft": "HQ로 제작하기를 원하는 아이템에 {{amount}}개 사용됨",
   "Mark_HQ": "HQ 요구 표시",
   "Unmark_HQ": "HQ 요구 지우기",
   "Compact_sidebar_toggle": "메뉴 펼치기/숨기기",
@@ -84,6 +86,7 @@
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
   "Ephemeral_tag": "간이 목록",
+  "Remove_ephemeral": "간이 목록을 일반 목록으로 변경",
   "Quick_list_create": "간이 목록 생성 (완료시 삭제)",
   "Tag_filter": "태그",
   "Public_lists": "커뮤니티 목록",
@@ -117,7 +120,7 @@
   },
   "ALARMS": {
     "Title": "알람",
-    "No_alarm": "설정된 알람 없음",
+    "No_alarm": "알람 없음",
     "Add_alarm": "알람 추가",
     "Alarm_created": "알람이 생성되었습니다",
     "Alarms_created": "{{amount}}개의 알람 생성됨",
@@ -193,7 +196,7 @@
   "Submit": "제출",
   "Invalid_credentials": "로그인 정보가 틀립니다",
   "Not_verified": "미인증",
-  "Anonymous_Warning": "목록을 저장하고 적응형 필터와 같은 다양한 기능을 사용하기 위해서는 계정을 생성해야합니다",
+  "Anonymous_Warning": "목록을 저장하고 다양한 기능을 사용하기 위해서는 계정을 생성해야합니다",
   "Game_Term/DoH": "제작자",
   "Game_Term/DoL": "채집가",
   "Reduction": "정제",
@@ -267,7 +270,7 @@
     "General": "일반",
     "Link_base": "아이템 링크",
     "Theme": "테마",
-    "no_panel_borders": "Disable borders around various panels",
+    "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
     "Desktop": "데스크톱",
     "Always_on_top": "항상 위에 표시",
     "Check_for_update": "업데이트 확인",
@@ -286,6 +289,7 @@
     "Nickname_used": "이미 사용중인 닉네임입니다.",
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "Show_devtools": "개발 도구 표시",
+    "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -314,10 +318,11 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "자유부대에 공유된 목록을 확인하기 위해서 당신의 계정을 인증해주세요",
+    "Needs_verification": "자유부대에 공유된 목록을 확인하기 위해서 당신의 캐릭터를 인증해주세요",
     "Regenerate_all": "전체 목록 갱신",
     "Regenerated_all": "목록이 갱신되었습니다.",
     "Merge_lists": "목록 병합",
+    "Merge_lists_warning": "대규모 목록은 데이터베이스의 한계로 인해 병합이 불가능하기 때문에 여기에 표시되지 않습니다.",
     "Lists_merged": "목록 병합이 완료되었습니다!",
     "Shared_lists": "쓰기 권한이 있는 목록",
     "Add_selection": "선택항목을 목록에 추가",
@@ -393,7 +398,11 @@
     "Open_in_ffxivgardening": "ffxivgardening.com에서 열기",
     "Add_all_item_alarms": "이 아이템에 대한 알람 추가",
     "Adaptative_filter": "할 수 있는 것만 표시",
+    "Disable_HQ_suggestions": "HQ 자동표시 해제",
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
+    "Add_item": "아이템 추가",
+    "List_too_large": "너무 큰 목록",
+    "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -493,7 +502,8 @@
     "No_items": "채집 장소를 찾을 수 없습니다.",
     "Gathering_name": "아이템 이름을 입력하세요",
     "Ephemeral_node": "재등장 가능한 시간제 채집 장소",
-    "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!"
+    "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
+    "Hidden_item": "숨은 자원"
   },
   "ANNOUNCEMENT": {
     "Title": "공지사항",
@@ -536,7 +546,7 @@
     "Propagate_changes": "공방 내부에 목록에 대한 권한 제공",
     "Propagate_changes_done": "공방 내부 목록에 대한 변경이 적용되었습니다",
     "Team_notice": "이 목록이 할당된 팀은 자동으로 참여 권한을 갖습니다.",
-    "Default_permission_level": "기본 권한 레벨"
+    "Default_permission_level": "기본 권한 수준"
   },
   "WIKI": {
     "Title": "위키",
@@ -547,6 +557,8 @@
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
+    "Include_consumables_notification": "소모품 알림 포함",
+    "Consumable_notification": "{{buffs}} 사용이 필요합니다",
     "Extra_wait": "매크로 지연시간",
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
@@ -596,8 +608,8 @@
     "Save_as_new_done": "새로 저장된 로테이션을 불러왔습니다",
     "Change_rotation": "로테이션 변경",
     "New_rotation_folder": "새 폴더 만들기",
-    "Safe_mode": "Safe mode",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Safe_mode": "안전 모드",
+    "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
     "CUSTOM": {
       "Recipe_configuration": "제작난이도 설정",
       "Recipe_level": "레시피 레벨",
@@ -606,6 +618,7 @@
       "Recipe_durability": "내구도"
     },
     "ROTATIONS": {
+      "Search_placeholder": "로테이션 검색",
       "FOLDERS": {
         "Folders": "로테이션 폴더",
         "Rename": "폴더 이름 변경",
@@ -655,15 +668,25 @@
         "Craftsmanship": "작업 숙련도",
         "Control": "가공 숙련도"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "안전모드에 맞지 않는 스킬이 사용됨",
+      "DURABILITY_REACHED_ZERO": "작업 완료 전에 내구도가 0이 됨",
+      "NOT_ENOUGH_CP": "CP부족",
+      "MISSING_LEVEL_REQUIREMENT": "레벨이 부족함",
+      "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
+      "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함"
     }
   },
   "PRICING": {
     "From_vendor": "상인 판매 가격",
+    "From_crafting": "제작 비용",
     "Expect_to_sell_everything": "전체 판매 가정",
     "Autofill_panel_prices": "장터게시판 가격으로 자동입력",
     "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}} 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?",
     "Copy_earnings_as_text": "내용을 텍스트로 복사하기",
-    "Content_copied": "클립보드로 내용이 복사되었습니다."
+    "Content_copied": "클립보드로 내용이 복사되었습니다.",
+    "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)"
   },
   "LEVEQUESTS": {
     "Title": "길드의뢰",
@@ -686,7 +709,8 @@
     "Title": "알림",
     "List_comment_added": "{{listName}}에 댓글이 달렸습니다 : \"{{content}}\"",
     "List_item_comment_added": "{{listName}}의 {{itemName}}에 댓글이 달렸습니다 : \"{{content}}\"",
-    "Mark_all_as_read": "모두 읽음으로 표시"
+    "Mark_all_as_read": "모두 읽음으로 표시",
+    "No_notifications": "알림 없음"
   },
   "TEAMS": {
     "Title": "팀",
@@ -775,8 +799,31 @@
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available ! ",
-    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
-    "Web_instructions": "Please reload the page to get the latest version."
+    "New_update_available": "새 업데이트가 있습니다! ",
+    "Desktop_instructions": "최신 버전을 다운로드하려면 다음 링크를 클릭하세요: ",
+    "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요."
+  },
+  "LOG_TRACKER": {
+    "Title": "제작수첩 트래커",
+    "Mark_page_as_done": "이 페이지를 완료됨 으로 표시",
+    "Mark_as_done": "이 아이템을 완료됨 으로 표시",
+    "Mark_as_not_done": "이 아이템을 완료되지 않음 으로 표시",
+    "Create_list": "이 페이지를 완료하기 위한 목록 만들기",
+    "PAGE": {
+      "Master_recipes": "비전서: 제{{number}}권",
+      "Housing_items": "하우징({{number}})",
+      "Others": "기타",
+      "Dyes": "염료",
+      "Other_master_recipes": "비전서: 기타"
+    }
+  },
+  "LOADING_SCREEN": {
+    "Loading_data": "아이템, 기술, 그 이상을 불러오는 중"
+  },
+  "GIVEAWAY": {
+    "Discord_1K": {
+      "Title": "Discord 멤버 1000명 달성 이벤트!",
+      "Description": "이 배너를 클릭해서 FINAL FANTASY XIV: 칠흑의 반역자 소장판 증정 이벤트에 등록하세요! 이 이벤트는 TC Discord 서버의 멤버 수가 한계치인 1000명에 달성한 것을 기념하기 위한 것입니다."
+    }
   }
 }

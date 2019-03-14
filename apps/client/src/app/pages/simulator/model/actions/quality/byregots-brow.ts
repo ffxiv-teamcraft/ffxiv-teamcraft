@@ -2,6 +2,7 @@ import { ByregotsBlessing } from './byregots-blessing';
 import { Simulation } from '../../../simulation/simulation';
 import { Buff } from '../../buff.enum';
 import { CraftingJob } from '../../crafting-job.enum';
+import { SimulationFailCause } from '../../simulation-fail-cause.enum';
 
 export class ByregotsBrow extends ByregotsBlessing {
 
@@ -11,6 +12,13 @@ export class ByregotsBrow extends ByregotsBlessing {
 
   _canBeUsed(simulation: Simulation): boolean {
     return super._canBeUsed(simulation) && simulation.getBuff(Buff.INNER_QUIET).stacks >= 2;
+  }
+
+  getFailCause(simulationState: Simulation, linear?: boolean, safeMode?: boolean): SimulationFailCause {
+    if (!simulationState.hasBuff(Buff.INNER_QUIET)) {
+      return SimulationFailCause.NO_INNER_QUIET;
+    }
+    return super.getFailCause(simulationState, linear, safeMode);
   }
 
   getBaseCPCost(simulationState: Simulation): number {

@@ -11,7 +11,7 @@ import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, sw
 import { ListManagerService } from '../list-manager.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
+import { combineLatest, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { PermissionsBoxComponent } from '../../permissions/permissions-box/permissions-box.component';
 import { CommentsPopupComponent } from '../../comments/comments-popup/comments-popup.component';
 import { CommentTargetType } from '../../comments/comment-target-type';
@@ -65,16 +65,30 @@ export class ListPanelComponent {
 
   private updateAmountDebounces: { [index: number]: Subject<any> } = {};
 
-  permissionLevel$: Observable<PermissionLevel> = combineLatest(this.authFacade.userId$, this.list$).pipe(
-    map(([userId, list]) => list.getPermissionLevel(userId)),
-    map(permissionLevel => {
-      if (this.publicDisplay && permissionLevel < 40) {
-        return 0;
-      }
-      return permissionLevel;
-    }),
-    distinctUntilChanged(),
-    shareReplay(1)
+  permissionLevel$: Observable<PermissionLevel> = this.authFacade.loggedIn$.pipe(
+    switchMap(loggedIn => {
+      return combineLatest(
+        this.authFacade.userId$,
+        loggedIn ? this.authFacade.user$ : of(null),
+        this.list$
+      ).pipe(
+        map(([userId, user, list]) => {
+          if (user !== null) {
+            return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(user.currentFcId));
+          } else {
+            return list.getPermissionLevel(userId);
+          }
+        }),
+        map(permissionLevel => {
+          if (this.publicDisplay && permissionLevel < 40) {
+            return 0;
+          }
+          return permissionLevel;
+        }),
+        distinctUntilChanged(),
+        shareReplay(1)
+      );
+    })
   );
 
   constructor(private listsFacade: ListsFacade, private message: NzMessageService,
@@ -243,9 +257,14 @@ export class ListPanelComponent {
     });
   }
 
+  removeEphemeral(list: List): void {
+    list.ephemeral = false;
+    this.listsFacade.updateList(list);
+  }
+
   openCommentsPopup(list: List, isAuthor: boolean): void {
     this.dialog.create({
-      nzTitle: this.translate.instant('COMMENTS.Title'),
+      nzTitle: `${list.name} - ${this.translate.instant('COMMENTS.Title')}`,
       nzFooter: null,
       nzContent: CommentsPopupComponent,
       nzComponentParams: {

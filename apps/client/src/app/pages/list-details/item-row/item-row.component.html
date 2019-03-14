@@ -1,22 +1,22 @@
 <div class="item-row" [class.odd]="odd" nz-row fxLayout="row wrap" [class.done]="item.amount <= item.done"
      [class.craftable]="canBeCrafted$ | async" [class.has-all-ingredients]="hasAllBaseIngredients$ | async">
   <div class="block left-block" nz-col nzXs="24" [nzSm]="item.alarms && item.alarms.length > 0?12:6" nzMd="6">
-    <div class="icon">
-      <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
+    <div class="icon" *ngIf="!item.custom">
+      <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName: item | i18n" [itemId]="item.id"
                      [width]="24"></app-item-icon>
     </div>
     <div>
-      <span class="item-name" ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
+      <span class="item-name" ngxClipboard [cbContent]="item.id | itemName: item | i18n" nz-tooltip
             *ngIf="settings.preferredCopyType === 'classic'"
             [nzTitle]="'Copy_item_name_to_clipboard' | translate"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
-        {{item.id | itemName | i18n}}
+        {{item.id | itemName: item | i18n}}
       </span>
-      <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;" nz-tooltip
+      <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;" nz-tooltip
             *ngIf="settings.preferredCopyType === 'isearch'"
             [nzTitle]="'Copy_isearch' | translate"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
-        {{item.id | itemName | i18n}}
+        {{item.id | itemName: item | i18n}}
       </span>
       <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
         <img src="./assets/icons/HQ.png" alt="" nz-tooltip
@@ -37,12 +37,12 @@
         </nz-badge>
       </button>
       <ul nz-menu *ngIf="userId$ | async as userId">
-        <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
+        <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
             *ngIf="settings.preferredCopyType === 'classic'"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
           {{'Copy_isearch' | translate}}
         </li>
-        <li nz-menu-item ngxClipboard [cbContent]="item.id | itemName | i18n"
+        <li nz-menu-item ngxClipboard [cbContent]="item.id | itemName: item | i18n"
             *ngIf="settings.preferredCopyType === 'isearch'"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
           {{'Copy_item_name_to_clipboard' | translate}}
@@ -69,7 +69,7 @@
         <ng-container *ngIf="team$ | async as team">
           <li nz-submenu *ngIf="team.leader === userId">
             <span title>{{'TEAMS.Assign_team_member' | translate}}</span>
-            <ul nz-menu>
+            <ul nz-menu class="team-members">
               <ng-container *ngFor="let member of team.members">
                 <li nz-menu-item *ngIf="member | characterName | async as charName"
                     (click)="assignTeamMember(team, member)">{{charName}}
@@ -87,7 +87,8 @@
             (click)="item.requiredAsHQ = true; saveItem()">
           {{'Mark_HQ' | translate}}
         </li>
-        <li nz-menu-item *ngIf="item.requiredAsHQ && (permissionLevel$ | async) >= 30"
+        <li nz-menu-item
+            *ngIf="((requiredForFinalCraft$ | async) >= 0 || item.requiredAsHQ) && (permissionLevel$ | async) >= 30"
             (click)="item.requiredAsHQ = false; saveItem()">
           {{'Unmark_HQ' | translate}}
         </li>
@@ -134,11 +135,12 @@
         </nz-button-group>
       </div>
       <nz-tag
-        *ngIf="moreAlarmsAvailable > 0" class="more-badge">{{'ALARMS.More_available' | translate: { amount: moreAlarmsAvailable } }}</nz-tag>
+        *ngIf="moreAlarmsAvailable > 0"
+        class="more-badge">{{'ALARMS.More_available' | translate: { amount: moreAlarmsAvailable } }}</nz-tag>
     </div>
     <div *ngIf="layout?.showCraftableAmount && item.craftedBy !== undefined && item.craftedBy.length > 0">
       <div *ngIf="craftableAmount$ | async as craftableAmount" class="craftable-amount">
-        {{'LIST_DETAILS.Amount_craftable' | translate:{amount: craftableAmount} }}
+        {{'LIST_DETAILS.Amount_craftable' | translate:{ amount: craftableAmount } }}
       </div>
     </div>
   </div>
@@ -152,6 +154,7 @@
     </div>
     <div class="amount-input">
       <button nz-button nzSize="small" nz-popover [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate"
+              [disabled]="(permissionLevel$ | async) < 20"
               [nzContent]="calculator" nzTrigger="click">
         <i nz-icon type="calculator"></i>
         <ng-template #calculator>

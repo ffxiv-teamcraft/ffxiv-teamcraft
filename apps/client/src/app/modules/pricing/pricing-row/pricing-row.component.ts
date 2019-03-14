@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-pricing-row',
@@ -27,8 +28,10 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   @Input()
   odd = false;
   price: Price = { hq: 0, nq: 0, fromVendor: false };
+  vendorPrice: Price;
   customPrice = false;
   amount: ItemAmount;
+  priceFromCrafting = false;
   @Output()
   save: EventEmitter<void> = new EventEmitter<void>();
 
@@ -38,7 +41,8 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   private onDestroy$: Subject<void> = new Subject<void>();
 
   constructor(private pricingService: PricingService, private message: NzMessageService,
-              private translator: TranslateService, private cd: ChangeDetectorRef) {
+              private translator: TranslateService, private cd: ChangeDetectorRef,
+              public settings: SettingsService) {
   }
 
   public _craftCost: number;
@@ -93,6 +97,7 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   }
 
   private updatePrice(): void {
+    this.vendorPrice = this.pricingService.getVendorPrice(this.item);
     this.customPrice = this.pricingService.isCustomPrice(this.item);
     if (this.earning) {
       this.price = this.pricingService.getEarnings(this.item);
@@ -112,6 +117,7 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   private setAutoCost(): void {
     if (this.preCraft && !this.customPrice && this.item.vendors.length === 0) {
       this.price.nq = this.price.hq = Math.ceil(this._craftCost) || 0;
+      this.priceFromCrafting = true;
     }
   }
 

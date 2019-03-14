@@ -9,7 +9,17 @@ import { SimulationResult } from '../../simulation/simulation-result';
 import { EffectiveBuff } from '../../model/effective-buff';
 import { Buff } from '../../model/buff.enum';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { distinctUntilChanged, filter, first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
+import {
+  distinctUntilChanged,
+  filter,
+  first,
+  map,
+  pairwise,
+  shareReplay, skip,
+  startWith,
+  takeUntil,
+  tap
+} from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { SimulationReliabilityReport } from '../../simulation/simulation-reliability-report';
 import { AuthFacade } from '../../../../+state/auth.facade';
@@ -42,6 +52,7 @@ import { NameQuestionPopupComponent } from '../../../../modules/name-question-po
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
+import { fakeHQItems } from '../../../../core/data/sources/fake-hq-items';
 
 @Component({
   selector: 'app-simulator',
@@ -211,20 +222,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       specialist: [false]
     });
 
-    this.statsForm.valueChanges.pipe(
-      takeUntil(this.onDestroy$),
-      distinctUntilChanged((prev, next) => prev.specialist === next.specialist)
-    ).subscribe(stats => {
-      if (stats.specialist) {
-        stats.craftsmanship += 20;
-        stats.control += 20;
-      } else if (stats.craftsmanship > 0 && stats.control > 0) {
-        stats.craftsmanship -= 20;
-        stats.control -= 20;
-      }
-      this.statsForm.patchValue(stats, { emitEvent: false });
-    });
-
     this.foods = consumablesService.fromData(foods)
       .sort(this.consumablesSortFn);
     this.medicines = consumablesService.fromData(medicines)
@@ -258,8 +255,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.hqIngredientsData$ = this.recipe$.pipe(
       map(recipe => {
         return (recipe.ingredients || [])
-          .filter(i => i.id > 20 && i.quality !== undefined)
-          .map(ingredient => ({ id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
+          .filter(i => i.id > 20 && i.quality !== undefined && !fakeHQItems.some(id => i.id === id))
+          .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
       })
     );
 
@@ -285,9 +282,16 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     );
 
     combineLatest(this.rotation$, this.crafterStats$).pipe(
+      startWith([]),
+      pairwise(),
+      map(([before, after]) => {
+        return [...after, before[0] ? before[0].$key !== after[0].$key : true];
+      }),
       takeUntil(this.onDestroy$)
-    ).subscribe(([rotation, stats]) => {
-      this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
+    ).subscribe(([rotation, stats, rotationChanged]: [CraftingRotation, CrafterStats, boolean]) => {
+      if (this.actions$.value.length === 0 || rotationChanged) {
+        this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
+      }
       if (rotation.food && this.selectedFood === undefined) {
         this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);
       }
@@ -366,7 +370,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       nzComponentParams: {
         rotation: this.actions$.value,
         job: this.job,
-        simulation: simulation.clone()
+        simulation: simulation.clone(),
+        food: this.selectedFood,
+        medicine: this.selectedMedicine,
+        freeCompanyActions: this.selectedFreeCompanyActions
       },
       nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
       nzFooter: null
@@ -574,7 +581,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     if (this.selectedFood !== undefined && this.selectedFood !== null) {
       const foodBonus = this.selectedFood.getBonus(bonusType);
       if (foodBonus !== undefined) {
-        bonusFromFood = Math.ceil(baseValue * foodBonus.value);
+        bonusFromFood = Math.floor(baseValue * foodBonus.value);
         if (bonusFromFood > foodBonus.max) {
           bonusFromFood = foodBonus.max;
         }
@@ -583,7 +590,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     if (this.selectedMedicine !== undefined && this.selectedMedicine !== null) {
       const medicineBonus = this.selectedMedicine.getBonus(bonusType);
       if (medicineBonus !== undefined) {
-        bonusFromMedicine = Math.ceil(baseValue * medicineBonus.value);
+        bonusFromMedicine = Math.floor(baseValue * medicineBonus.value);
         if (bonusFromMedicine > medicineBonus.max) {
           bonusFromMedicine = medicineBonus.max;
         }
@@ -666,6 +673,18 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   saveSafeMode(value: boolean): void {
     localStorage.setItem('simulator:safe-mode', value.toString());
+  }
+
+  toggleSpecialist(): void {
+    const stats = this.statsForm.getRawValue();
+    if (stats.specialist) {
+      stats.craftsmanship += 20;
+      stats.control += 20;
+    } else if (stats.craftsmanship > 0 && stats.control > 0) {
+      stats.craftsmanship -= 20;
+      stats.control -= 20;
+    }
+    this.statsForm.patchValue(stats, { emitEvent: false });
   }
 
   ngOnDestroy(): void {

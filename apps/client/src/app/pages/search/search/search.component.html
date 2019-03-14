@@ -90,7 +90,7 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/item_category' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="itemCategory" nzShowSearch nzAllowClear>
+                <nz-select formControlName="itemCategories" nzShowSearch nzAllowClear nzMode="multiple">
                   <nz-option *ngFor="let uiCategory of uiCategories$ | async" [nzValue]="uiCategory.id"
                              [nzLabel]="uiCategory.name | i18n">
                   </nz-option>
@@ -98,9 +98,14 @@
               </nz-form-control>
             </nz-form-item>
           </div>
-          <button nz-button nzType="primary" nzBlock type="submit">
-            <i nz-icon type="filter"></i> {{'ITEMS.Apply_filters' | translate}}
-          </button>
+          <div fxLayout="column" fxLayoutGap="5px">
+            <button nz-button nzType="dashed" nzBlock type="button" (click)="resetFilters()">
+              <i nz-icon type="reload"></i> {{'ITEMS.Reset_filters' | translate}}
+            </button>
+            <button nz-button nzType="primary" nzBlock type="submit">
+              <i nz-icon type="filter"></i> {{'ITEMS.Apply_filters' | translate}}
+            </button>
+          </div>
         </form>
       </nz-collapse-panel>
     </nz-collapse>
@@ -116,7 +121,7 @@
     <button nz-button (click)="addSelectedItemsToList(results)">{{'LISTS.Add_selection' | translate}}</button>
   </div>
   <nz-alert nzType="warning" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" nzShowIcon
-            *ngIf="results.length >= 50"></nz-alert>
+            *ngIf="results.length >= 100"></nz-alert>
   <div class="results">
     <app-page-loader [loading]="loading">
       <div *ngFor="let item of results; trackBy: trackByItem; let odd = odd" fxLayout="row" fxLayout.lt-md="column"

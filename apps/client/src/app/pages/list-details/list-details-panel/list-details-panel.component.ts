@@ -11,6 +11,14 @@ import { ZoneBreakdown } from '../../../model/common/zone-breakdown';
 import { TotalPanelPricePopupComponent } from '../total-panel-price-popup/total-panel-price-popup.component';
 import { NavigationMapComponent } from '../../../modules/map/navigation-map/navigation-map.component';
 import { NavigationObjective } from '../../../modules/map/navigation-objective';
+import { ListsFacade } from '../../../modules/list/+state/lists.facade';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { combineLatest, Observable } from 'rxjs';
+import { ItemPickerService } from '../../../modules/item-picker/item-picker.service';
+import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { ListManagerService } from '../../../modules/list/list-manager.service';
+import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -36,9 +44,41 @@ export class ListDetailsPanelComponent implements OnChanges {
 
   hasNavigationMap = false;
 
+  permissionLevel$: Observable<PermissionLevel>;
+
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
               private message: NzMessageService, private translate: TranslateService,
-              private dialog: NzModalService) {
+              private dialog: NzModalService, private listsFacade: ListsFacade,
+              private itemPicker: ItemPickerService, private listManager: ListManagerService,
+              private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService) {
+    this.permissionLevel$ = this.listsFacade.selectedListPermissionLevel$;
+  }
+
+  addItem(): void {
+    this.listsFacade.selectedList$.pipe(
+      first(),
+      switchMap(list => {
+        return this.itemPicker.pickItem().pipe(
+          filter(item => item !== undefined),
+          switchMap((item) => {
+            const operation = this.listManager.addToList(+item.itemId, list,
+              item.recipe ? item.recipe.recipeId : '', item.amount);
+            return this.progress.showProgress(operation, 1);
+          })
+        );
+      }),
+      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
+      mergeMap(list => {
+        // We want to get the list created before calling it a success, let's be pessimistic !
+        return this.progress.showProgress(
+          combineLatest(this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$).pipe(
+            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
+            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          ), 1, 'Saving_in_database');
+      })
+    ).subscribe();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -138,6 +178,9 @@ export class ListDetailsPanelComponent implements OnChanges {
         this.tiers = this.setTier(row, this.tiers);
       });
     }
+    this.tiers = this.tiers.map(tier => {
+      return this.layoutOrderService.order(tier, this.displayRow.layoutRow.orderBy, this.displayRow.layoutRow.order);
+    })
   }
 
   private topologicalSort(data: ListRow[]): ListRow[] {
@@ -197,7 +240,7 @@ export class ListDetailsPanelComponent implements OnChanges {
 
   public getLocation(id: number): I18nName {
     if (id === -1) {
-      return { fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other' };
+      return { fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other', zh: '其他', ko: '기타' };
     }
     return this.l12n.getPlace(id);
   }
