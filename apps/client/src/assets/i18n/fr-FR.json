@@ -26,7 +26,7 @@
     "Crafts_amount": "Nb de crafts",
     "Add_to_list": "Ajouter cet élément à une liste",
     "Apply_filters": "Appliquer les filtres",
-    "Reset_filters": "Reset filters",
+    "Reset_filters": "Réinitialiser les filtres",
     "Too_many_results_warning": "Cette recherche a donné plus de 100 résultats. Notre source de données est limitée à 100 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
     "Share_url": "Copier l'url de recherche dans le presse-papiers",
     "Share_url_copied": "Url de recherche copié dans le presse-papiers"
@@ -688,7 +688,7 @@
     "Copy_earnings_as_text": "Copier le contenu au format texte",
     "Content_copied": "Contenu copié dans le presse-papiers",
     "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)",
-    "Copy_panel_as_text": "Copy this panel as text"
+    "Copy_panel_as_text": "Copier ce panneau sous forme de texte"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -829,70 +829,70 @@
     }
   },
   "CUSTOM_ITEMS": {
-    "Title": "Custom items",
-    "New_item": "Create new custom item",
-    "New_folder": "Create new folder",
-    "Rename_folder": "Rename folder",
-    "Import_items": "Import custom items",
-    "Save": "Save item",
-    "Details": "Item details",
-    "Export_item": "Export item",
-    "Export_items": "Export multiple items",
-    "Add_to_list": "Add to a list",
-    "No_items": "You have no custom items",
+    "Title": "Objets personnalisés",
+    "New_item": "Créer un nouvel objet personnalisé",
+    "New_folder": "Créer un nouveau dossier",
+    "Rename_folder": "Renommer le dossier",
+    "Import_items": "Importer des objets personnalisés",
+    "Save": "Enregistrer",
+    "Details": "Détails de l'objet",
+    "Export_item": "Exporter l'objet",
+    "Export_items": "Exporter plusieurs objets",
+    "Add_to_list": "Ajouter à une liste",
+    "No_items": "Vous n'avez pas d'objets personnalisés",
     "DETAILS": {
-      "Level": "Level",
-      "None": "none",
-      "Stars": "Stars",
-      "Requirements": "Requirements",
-      "Add_requirement": "Add requirement",
-      "Yields": "Yields",
-      "Name": "Name",
-      "ID": "Item ID",
+      "Level": "Niveau",
+      "None": "aucun",
+      "Stars": "Étoiles",
+      "Requirements": "Prérequis",
+      "Add_requirement": "Ajouter un prérequis",
+      "Yields": "Production",
+      "Name": "Nom",
+      "ID": "ID de l'objet",
       "CRAFT": {
-        "Title": "Crafted by",
+        "Title": "Fabriqué par",
         "Job": "Job",
-        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+        "No_requirement_warning": "Vous n'avez pas de prérequis pour cet objet, cela signifie que vous créez une recette avec 0 ingrédients."
       },
       "GATHERING": {
-        "Title": "Gathered by",
-        "Type": "Node type",
+        "Title": "Récolté par",
+        "Type": "Type de nœud",
         "Folklore": "Folklore",
-        "Slot": "Slot"
+        "Slot": "Emplacement"
       },
       "ALARMS": {
-        "Title": "Alarms"
+        "Title": "Alarmes"
       },
       "VENDORS": {
-        "Title": "Vendors",
-        "Npc_name": "NPC name",
-        "Price": "Price",
-        "Delete_vendor": "Delete vendor"
+        "Title": "Marchands",
+        "Npc_name": "Nom du PNJ",
+        "Price": "Prix",
+        "Delete_vendor": "Supprimer le marchand"
       },
       "TRADES": {
-        "Title": "Trade sources",
-        "Npc_name": "NPC name",
-        "Shop_name": "Shop name",
-        "Delete_trade": "Delete trade",
-        "Trade_details": "Trade details",
-        "Add_currency": "Add a currency"
+        "Title": "Échanges",
+        "Npc_name": "Nom du PNJ",
+        "Shop_name": "Nom de la boutique",
+        "Delete_trade": "Supprimer l'échange",
+        "Trade_details": "Détails de l'échange",
+        "Add_currency": "Ajouter une devise"
       },
       "REDUCTION": {
-        "Title": "Reduced from"
+        "Title": "Réduit de"
       }
     },
     "NPC_PICKER": {
-      "Title": "Find a NPC",
-      "Npc_name": "NPC name"
+      "Title": "Trouver un PNJ",
+      "Npc_name": "Nom du PNJ"
     },
     "IMPORT": {
-      "Corrupted_file": "Import file is corrupted or wrong format",
-      "Drag_or_click": "Drag the file here or click to select it",
+      "Corrupted_file": "Le fichier d'import est corrompu ou mauvais format",
+      "Drag_or_click": "Déposez un fichier ici ou cliquez pour en sélectionner un",
       "Format": "Format",
-      "Folder": "Folder",
-      "No_folder": "No folder",
-      "Parsing_file": "Parsing file content...",
-      "Saving_items": "Saving items ({{done}}/{{todo}})"
+      "Folder": "Dossier",
+      "No_folder": "Aucun dossier",
+      "Parsing_file": "Analyse du contenu du fichier...",
+      "Saving_items": "Sauvegarde des objets ({{done}}/{{todo}})"
     }
   }
 }
