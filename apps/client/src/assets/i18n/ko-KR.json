@@ -664,7 +664,7 @@
       "No_food": "음식 없음",
       "No_medicine": "약차 없음",
       "No_fc_buffs": "부대버프 없음",
-      "Quest_warning": "70레벨 퀘스트로 얻을 수 있는 [명인의 발상] 을 꼭 획득하세요!",
+      "Quest_warning": "70레벨 직업 퀘스트로 '명인의 발상'을 획득했는지 꼭 확인하세요",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "작업 숙련도",
@@ -847,7 +847,7 @@
       "Stars": "난이도",
       "Requirements": "재료",
       "Add_requirement": "재료 추가",
-      "Yields": "제작/채집 갯수",
+      "Yields": "1회 제작시 결과물",
       "Name": "이름",
       "ID": "아이템 ID",
       "CRAFT": {
@@ -875,11 +875,11 @@
         "Npc_name": "NPC 이름",
         "Shop_name": "상점 이름",
         "Delete_trade": "교환 삭제",
-        "Trade_details": "Trade details",
-        "Add_currency": "화폐 추가"
+        "Trade_details": "교환 세부내역",
+        "Add_currency": "교환에 필요한 아이템추가"
       },
       "REDUCTION": {
-        "Title": "Reduced from"
+        "Title": "정제"
       }
     },
     "NPC_PICKER": {
@@ -888,7 +888,7 @@
     },
     "IMPORT": {
       "Corrupted_file": "가져오기 파일이 손상되었거나 잘못된 형식입니다",
-      "Drag_or_click": "파일을 드래그 하거나 클릭하여 선택하세요",
+      "Drag_or_click": "이곳에 파일을 드래그하거나 클릭하여 선택하세요",
       "Format": "형식",
       "Folder": "폴더",
       "No_folder": "폴더 없음",
