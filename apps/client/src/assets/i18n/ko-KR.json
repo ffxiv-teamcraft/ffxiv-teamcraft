@@ -664,6 +664,7 @@
       "No_food": "음식 없음",
       "No_medicine": "약차 없음",
       "No_fc_buffs": "부대버프 없음",
+      "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "작업 숙련도",
@@ -829,34 +830,34 @@
     }
   },
   "CUSTOM_ITEMS": {
-    "Title": "Custom items",
-    "New_item": "Create new custom item",
-    "New_folder": "Create new folder",
-    "Rename_folder": "Rename folder",
-    "Import_items": "Import custom items",
-    "Save": "Save item",
-    "Details": "Item details",
-    "Export_item": "Export item",
-    "Export_items": "Export multiple items",
-    "Add_to_list": "Add to a list",
-    "No_items": "You have no custom items",
+    "Title": "사용자 지정 아이템",
+    "New_item": "사용자 지정 아이템 만들기",
+    "New_folder": "새 폴더 만들기",
+    "Rename_folder": "폴더 이름 변경",
+    "Import_items": "사용자 지정 아이템 불러오기",
+    "Save": "아이템 저장",
+    "Details": "아이템 세부 정보",
+    "Export_item": "아이템 내보내기",
+    "Export_items": "여러 아이템 내보내기",
+    "Add_to_list": "목록에 추가",
+    "No_items": "사용자 지정 아이템이 없습니다",
     "DETAILS": {
-      "Level": "Level",
-      "None": "none",
-      "Stars": "Stars",
+      "Level": "레벨",
+      "None": "없음",
+      "Stars": "난이도",
       "Requirements": "Requirements",
       "Add_requirement": "Add requirement",
       "Yields": "Yields",
-      "Name": "Name",
-      "ID": "Item ID",
+      "Name": "이름",
+      "ID": "아이템 ID",
       "CRAFT": {
-        "Title": "Crafted by",
-        "Job": "Job",
+        "Title": "제작 직업",
+        "Job": "직업",
         "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
       },
       "GATHERING": {
-        "Title": "Gathered by",
-        "Type": "Node type",
+        "Title": "채집 직업",
+        "Type": "채집물 유형",
         "Folklore": "Folklore",
         "Slot": "Slot"
       },
@@ -864,8 +865,8 @@
         "Title": "Alarms"
       },
       "VENDORS": {
-        "Title": "Vendors",
-        "Npc_name": "NPC name",
+        "Title": "상인",
+        "Npc_name": "NPC 이름",
         "Price": "Price",
         "Delete_vendor": "Delete vendor"
       },
