@@ -5,6 +5,8 @@ import * as mobs from './sources/mobs.json';
 import * as weathers from './sources/weathers.json';
 import * as ventures from './sources/ventures.json';
 import * as freeCompanyActions from './sources/free-company-actions.json';
+import * as jobNames from './sources/job-name.json';
+import * as jobAbbrs from './sources/job-abbr.json';
 import { Language } from './language';
 import { koActions } from './sources/ko-actions';
 import { mapIds } from './sources/map-ids';
@@ -61,6 +63,26 @@ export class LocalizedDataService {
   public getNpc(id: number): I18nName {
     const row = this.getRow(this.lazyData.npcs, id);
     const koRow = this.getRow(this.lazyData.koNpcs, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
+  public getJobName(id: number): I18nName {
+    const row = this.getRow(jobNames, id);
+    const koRow = this.getRow(this.lazyData.koJobNames, id);
+
+    if (row !== undefined) {
+      row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
+  public getJobAbbr(id: number): I18nName {
+    const row = this.getRow(jobAbbrs, id);
+    const koRow = this.getRow(this.lazyData.koJobAbbrs, id);
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
@@ -206,7 +228,7 @@ export class LocalizedDataService {
     let res = -1;
     const keys = Object.keys(array);
     for (const key of keys) {
-      if (array[key][language] === name) {
+      if (array[key][language].toLowerCase() === name.toLowerCase()) {
         res = +key;
         break;
       }

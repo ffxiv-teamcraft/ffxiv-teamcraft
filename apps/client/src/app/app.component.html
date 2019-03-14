@@ -262,7 +262,7 @@
             </ng-template>
           </nz-alert>
           <nz-alert nzType="info" nzBanner [nzMessage]="'GIVEAWAY.Discord_1K.Title' | translate"
-                    [nzDescription]="'GIVEAWAY.Discord_1K.Description' | translate" *ngIf="showGiveaway"
+                    [nzDescription]="'GIVEAWAY.Discord_1K.Description' | translate" *ngIf="showGiveaway && !overlay"
                     class="new-version-alert"
                     [nzCloseText]="'Close' | translate"
                     (nzOnClose)="closeDiscord1kGiveaway()"

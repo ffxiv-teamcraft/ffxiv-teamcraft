@@ -300,6 +300,9 @@ export class AppComponent implements OnInit {
       nzTitle: this.translate.instant('Login'),
       nzContent: LoginPopupComponent,
       nzFooter: null
+    }).afterClose.subscribe(() => {
+      // HOTFIX
+      window.location.reload();
     });
   }
 

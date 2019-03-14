@@ -119,7 +119,8 @@ export class SearchComponent implements OnInit {
         this.loading = true;
         const queryParams: any = {
           query: query,
-          onlyRecipes: onlyRecipes
+          onlyRecipes: onlyRecipes,
+          filters: null
         };
         if (filters.length > 0) {
           queryParams.filters = btoa(JSON.stringify(filters));
@@ -151,6 +152,21 @@ export class SearchComponent implements OnInit {
     });
   }
 
+  resetFilters(): void {
+    this.form.reset({
+      ilvlMin: 0,
+      ilvlMax: 999,
+      elvlMin: 0,
+      elvlMax: 70,
+      clvlMin: 0,
+      clvlMax: 70,
+      jobCategories: [],
+      craftJob: 0,
+      itemCategories: []
+    });
+    this.submitFilters();
+  }
+
   submitFilters(): void {
     this.filters$.next(this.getFilters(this.form.controls));
   }
@@ -161,7 +177,7 @@ export class SearchComponent implements OnInit {
       if (f.value !== null && f.value.min !== undefined) {
         formRawValue[`${f.name}Min`] = f.value.min;
         formRawValue[`${f.name}Max`] = f.value.max;
-      } else {
+      } else if (f.value !== null) {
         formRawValue[f.name] = f.value;
       }
     });
@@ -200,21 +216,21 @@ export class SearchComponent implements OnInit {
         }
       });
     }
-    if (controls.jobCategories.value.length > 0) {
+    if (controls.jobCategories.value.length > 0 && controls.jobCategories.value[0].length > 0) {
       filters.push({
         minMax: false,
         name: 'jobCategories',
         value: controls.jobCategories.value
       });
     }
-    if (controls.craftJob.value !== 0) {
+    if (controls.craftJob.value[0] !== 0 && controls.craftJob.value !== 0) {
       filters.push({
         minMax: false,
         name: 'craftJob',
         value: controls.craftJob.value
       });
     }
-    if (controls.itemCategories.value.length > 0) {
+    if (controls.itemCategories.value.length > 0 && controls.itemCategories.value[0].length > 0) {
       filters.push({
         minMax: false,
         name: 'itemCategories',

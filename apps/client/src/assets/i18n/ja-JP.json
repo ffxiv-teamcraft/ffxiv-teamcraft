@@ -4,14 +4,14 @@
   "Pick_a_fc": "フリーカンパニーを選択する",
   "Pick_a_rotation": "制作スキル回しを選ぶ",
   "Pick_a_recipe": "制作レシピを選ぶ",
-  "Pick_an_item": "Pick an item",
+  "Pick_an_item": "アイテムを選択する",
   "FC_name": "フリーカンパニー名",
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図で見る",
   "Edit_amount": "総量を編集する",
-  "List_fork_in_progress": "このリストをマイアカウントにコピー中です。",
+  "List_fork_in_progress": "このリストをマイアカウントにコピー中",
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
-  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
+  "Hide_zone_duplicates": "複数エリアを隠す(複数エリアにあるアイテムの場合、一度だけ表示される)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -26,7 +26,7 @@
     "Crafts_amount": "クラフトの数",
     "Add_to_list": "このアイテムをリストに追加する",
     "Apply_filters": "フィルターを適用する",
-    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Too_many_results_warning": "検索結果が100件を超えてます。データソースの制限のため、正確なアイテムを探すためには、追加フィルター設定が必要とします。",
     "Share_url": "検索URLをクリップボードにコピーする",
     "Share_url_copied": "検索URLがクリップボードにコピーされました"
   },
@@ -41,7 +41,7 @@
   "Timers": "タイマー",
   "Copy_isearch": "/isearchマクロをコピーする",
   "Isearch_copied": "/isearch {{itemname}} がクリップボードにコピーされました",
-  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
+  "Required_for_final_craft": "HQに制作したいアイテムに {{amount}} が使われる。",
   "Mark_HQ": "必要なHQ要求量を表示する",
   "Unmark_HQ": "HQ要求量を消す",
   "Compact_sidebar_toggle": "コンパクトサイドバーに切り替える",
@@ -86,6 +86,7 @@
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
   "Ephemeral_tag": "刻限",
+  "Remove_ephemeral": "永続リストへのアップグレード",
   "Quick_list_create": "簡易リストを作成する　(完了した後、削除)",
   "Tag_filter": "タグ",
   "Public_lists": "コミュニティリスト",
@@ -132,7 +133,7 @@
     "Volume": "ボリューム",
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイ開く",
-    "More_available": "and {{amount}} more...",
+    "More_available": "{{amount}} 回 もっと",
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
       "Name": "名前",
@@ -269,7 +270,7 @@
     "General": "一般",
     "Link_base": "アイテムリンク",
     "Theme": "テーマカラー",
-    "no_panel_borders": "Disable borders around various panels",
+    "no_panel_borders": "パネルの枠線を無効にする",
     "Desktop": "PC版",
     "Always_on_top": "常に最前面",
     "Check_for_update": "アップデートを確認する",
@@ -288,7 +289,7 @@
     "Nickname_used": "通称名は既に使用されてる",
     "No_nickname_warning": "後援者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
     "Show_devtools": "Devツールを表示",
-    "Clear_cache": "Clear cache (will restart the app)",
+    "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
       "Isearch": "/isearchマクロをコピーする"
@@ -317,11 +318,11 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
+    "Needs_verification": "フリーカンパニーにシェアされたリストを確認するためには、あなたのキャラクターを認証してください",
     "Regenerate_all": "全リストを更新する",
     "Regenerated_all": "リストが更新されました",
     "Merge_lists": "リストを併合する",
-    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
+    "Merge_lists_warning": "大規模のリストはデータベースの制限で、まとめることはできないため、表示できません。",
     "Lists_merged": "リスト併合が完了されました！",
     "Shared_lists": "書く権限があるリスト",
     "Add_selection": "選択項目をリストに追加する",
@@ -332,7 +333,7 @@
     "Add_to_a_list": "リストに追加する",
     "Please_pick_recipe": "このアイテムに対する、制作レシピを選択して下さい。",
     "Import_description": "制作しようとする、アイテムに対する制作レシピを選び、リストを選択して下さい。そうすれば、アイテムがリストに追加され、自動にリストに移動されます。",
-    "Delete_after_merge": "マージ後に既存のリストを削除する",
+    "Delete_after_merge": "併合後に既存のリストを削除する",
     "IMPORT": {
       "Title": "外部サイトからリストを取り込む",
       "Paste_link_step_title": "外部サイトのリンクをペーストする",
@@ -362,7 +363,7 @@
     "Add_all_alarms": "このリストに対する、アラームを追加する",
     "History": "履歴",
     "Items_count": "{{amount}} アイテム",
-    "Show_craftable_amount": "Show craftable amount",
+    "Show_craftable_amount": "制作可能な数量を表示する",
     "COMPLETION_POPUP": {
       "Title": "リスト完成しました",
       "Content": "このリストは完了されました。何をしますか?",
@@ -397,11 +398,11 @@
     "Open_in_ffxivgardening": "ffxivgardening.comに開く",
     "Add_all_item_alarms": "このアイテムに対してアラームを追加する",
     "Adaptative_filter": "可能なことのみ表示する",
-    "Disable_HQ_suggestions": "Disable automatic HQ flags",
-    "Amount_craftable": "You can craft {{amount}}",
-    "Add_item": "Add an item",
-    "List_too_large": "List too large",
-    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "Disable_HQ_suggestions": "HQ自動表示を解除する",
+    "Amount_craftable": "{{amount}} 個 作られます",
+    "Add_item": "アイテムを追加する",
+    "List_too_large": "リストが大き過ぎます",
+    "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -500,9 +501,9 @@
     "Title": "ギャザラーマップ",
     "No_items": "採集場所が見つかりませんでした。",
     "Gathering_name": "アイテム名を入力してください",
-    "Ephemeral_node": "Ephemeral node, can be respawned",
+    "Ephemeral_node": "リスポン可能な、時間制採集場所",
     "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
-    "Hidden_item": "Hidden"
+    "Hidden_item": "隠し資源"
   },
   "ANNOUNCEMENT": {
     "Title": "お知らせ",
@@ -545,7 +546,7 @@
     "Propagate_changes": "工房内でリストアップする権限の提案する",
     "Propagate_changes_done": "工房内のリストに変更が反映されました",
     "Team_notice": "このリストに割り当てられたチームは、自動に参加権限が付与されます。",
-    "Default_permission_level": "Default permission level"
+    "Default_permission_level": "デフォルトの権限レベル"
   },
   "WIKI": {
     "Title": "ウィキ",
@@ -556,8 +557,8 @@
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
-    "Include_consumables_notification": "Include consumables notification",
-    "Consumable_notification": "Use {{buffs}}",
+    "Include_consumables_notification": "消耗品の通知を含める",
+    "Consumable_notification": "{{buffs}} を使用が必要します",
     "Extra_wait": "追加待ち",
     "Import_macro": "ゲームのマクロから取り込む",
     "Ingame_macro": "マクロ",
@@ -607,8 +608,8 @@
     "Save_as_new_done": "新たに保存されたスキル回しを呼び寄せました",
     "Change_rotation": "スキル回しを変更する",
     "New_rotation_folder": "新回しフォルダー",
-    "Safe_mode": "Safe mode",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Safe_mode": "セーフモード",
+    "Safe_mode_tooltip": "成功率100％ではないスキルは使用不可(バフを含む)",
     "CUSTOM": {
       "Recipe_configuration": "製作情報",
       "Recipe_level": "レシピLv",
@@ -617,7 +618,7 @@
       "Recipe_durability": "耐久"
     },
     "ROTATIONS": {
-      "Search_placeholder": "Search a rotation",
+      "Search_placeholder": "制作スキル回しを検索",
       "FOLDERS": {
         "Folders": "スキル回しフォルダー",
         "Rename": "フォルダー名を変更する",
@@ -669,23 +670,23 @@
       }
     },
     "FAIL_CAUSE": {
-      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
-      "NOT_ENOUGH_CP": "Not enough CP",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
-      "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
-      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
+      "UNSAFE_ACTION": "セーフモードに合わないスキルが使用される",
+      "DURABILITY_REACHED_ZERO": "作業完了の直前に耐久度が0になった",
+      "NOT_ENOUGH_CP": "CP不足",
+      "MISSING_LEVEL_REQUIREMENT": "レベル不足",
+      "NOT_SPECIALIST": "非マイスターは、使用できないマイスタースキル回し",
+      "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用"
     }
   },
   "PRICING": {
     "From_vendor": "商店販売価格",
-    "From_crafting": "Price from crafting",
+    "From_crafting": "制作費用",
     "Expect_to_sell_everything": "販売予定",
     "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
+    "Cheaper_at_vendor": "NPC から購入した方が安い ({{price}} ギル)"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -709,7 +710,7 @@
     "List_comment_added": "{{listName}} にコメントが追加されました: \"{{content}}\"",
     "List_item_comment_added": "{{listName}} の {{itemName}} にコメントが追加されました: \"{{content}}\"",
     "Mark_all_as_read": "全て既読にする",
-    "No_notifications": "No notifications"
+    "No_notifications": "通知無し"
   },
   "TEAMS": {
     "Title": "チーム",
@@ -798,31 +799,31 @@
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available ! ",
-    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
-    "Web_instructions": "Please reload the page to get the latest version."
+    "New_update_available": "新しいアップデートがあります! ",
+    "Desktop_instructions": "最新バージョンをダウンロードするには、次のリンクに接続してください： ",
+    "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。"
   },
   "LOG_TRACKER": {
-    "Title": "Log Tracker",
-    "Mark_page_as_done": "Mark this page as done",
-    "Mark_as_done": "Mark this item as done",
-    "Mark_as_not_done": "Mark this item as not done",
-    "Create_list": "Create a list to complete this page",
+    "Title": "制作手帳トラッカー",
+    "Mark_page_as_done": "このページを完了として表示する",
+    "Mark_as_done": "このアイテムに完了として表示する",
+    "Mark_as_not_done": "このアイテムを未完了として表示する",
+    "Create_list": "このページを完成させるためのリストを作成する",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
       "Housing_items": "ハウジング ({{number}})",
       "Others": "その他",
       "Dyes": "染料",
-      "Other_master_recipes": "Other Master Recipes"
+      "Other_master_recipes": "秘伝書: その他"
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more !"
+    "Loading_data": "アイテム、スキル、詳細を読み込み中"
   },
   "GIVEAWAY": {
     "Discord_1K": {
-      "Title": "1000 Discord members giveaway !",
-      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+      "Title": "ディスコードメンバー1000名達成イベント!",
+      "Description": "このバナーをクリックして、Final Fantasy XIV: 漆黑の反逆者の所蔵版の贈呈イベントに登録してください！ このイベントは、TC discord サーバーのメンバー数が限界値の1000名を達成したのを祝うためのものです。"
     }
   }
 }

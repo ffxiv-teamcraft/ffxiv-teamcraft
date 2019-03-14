@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.38"></a>
+## [5.0.38](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.37...v5.0.38) (2019-03-10)
+
+
+### Bug Fixes
+
+* fix wrong index ([53c9635](https://github.com/Supamiu/ffxiv-teamcraft/commit/53c9635))
+* fixed an issue with some users having ghost characters breaking the app ([916669e](https://github.com/Supamiu/ffxiv-teamcraft/commit/916669e))
+* remove header ([7ae0ad6](https://github.com/Supamiu/ffxiv-teamcraft/commit/7ae0ad6))
+* **alarms:** default volume is now 50% ([6b366cb](https://github.com/Supamiu/ffxiv-teamcraft/commit/6b366cb))
+* **auth:** hotfix for logging action asking for character directly ([894d831](https://github.com/Supamiu/ffxiv-teamcraft/commit/894d831))
+* **layout:** fixed an issue with items reordering constantly in some cases ([c8eacfd](https://github.com/Supamiu/ffxiv-teamcraft/commit/c8eacfd))
+* **list:** possible fix for "ghost lists" bug ([e09f3bb](https://github.com/Supamiu/ffxiv-teamcraft/commit/e09f3bb))
+* **lists:** another try to fix the ghost lists bug ([d8edcbc](https://github.com/Supamiu/ffxiv-teamcraft/commit/d8edcbc))
+* **macro-translator:** fixed an issue where skill name match was not case-independent ([dde5e0f](https://github.com/Supamiu/ffxiv-teamcraft/commit/dde5e0f))
+* **overlay:** removed giveaway banner from overlay mode ([967e4d4](https://github.com/Supamiu/ffxiv-teamcraft/commit/967e4d4))
+
+
+### Features
+
+* add class/job in korean ([6a7d3bf](https://github.com/Supamiu/ffxiv-teamcraft/commit/6a7d3bf))
+* add Korean resources ([a3183d6](https://github.com/Supamiu/ffxiv-teamcraft/commit/a3183d6))
+* add more Korean ([d2a72e9](https://github.com/Supamiu/ffxiv-teamcraft/commit/d2a72e9))
+* add more Korean data ([11391ac](https://github.com/Supamiu/ffxiv-teamcraft/commit/11391ac))
+* **list:** you can now upgrade an ephemeral list to a permanent one ([f5e45c0](https://github.com/Supamiu/ffxiv-teamcraft/commit/f5e45c0))
+* **search:** you can now reset filters (also fixes some filters interactions) ([e1d2400](https://github.com/Supamiu/ffxiv-teamcraft/commit/e1d2400))
+
+
+
 <a name="5.0.37"></a>
 ## [5.0.37](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.36...v5.0.37) (2019-03-01)
 
