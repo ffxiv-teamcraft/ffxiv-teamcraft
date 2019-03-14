@@ -872,9 +872,9 @@
       },
       "TRADES": {
         "Title": "Trade sources",
-        "Npc_name": "NPC name",
-        "Shop_name": "Shop name",
-        "Delete_trade": "Delete trade",
+        "Npc_name": "NPC 이름",
+        "Shop_name": "상점 이름",
+        "Delete_trade": "교환 삭제",
         "Trade_details": "Trade details",
         "Add_currency": "Add a currency"
       },
@@ -883,7 +883,7 @@
       }
     },
     "NPC_PICKER": {
-      "Title": "Find a NPC",
+      "Title": "NPC 찾기",
       "Npc_name": "NPC 이름"
     },
     "IMPORT": {
