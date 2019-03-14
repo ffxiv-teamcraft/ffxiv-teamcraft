@@ -128,18 +128,31 @@ export class DataService {
    * @returns {Observable<ItemData[]>}
    */
   public searchGathering(name: string): Observable<any[]> {
-    if (name.length < 3) {
+    let lang = this.i18n.currentLang;
+    const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1;
+    if (isKoOrZh) {
+      if (name.length > 0) {
+      lang = 'en';
+      } else {
+        return of([]);
+      }
+    } else if (name.length < 3) {
       return of([]);
     }
-    let lang = this.i18n.currentLang;
-    if (['en', 'fr', 'de', 'ja'].indexOf(lang) === -1) {
-      lang = 'en';
-    }
-    const params = new HttpParams()
+
+    let params = new HttpParams()
       .set('gatherable', '1')
       .set('type', 'item')
-      .set('text', name)
       .set('lang', lang);
+
+    // If the lang is korean, handle it properly to map to item ids.
+    if (isKoOrZh) {
+      const ids = this.mapToItemIds(name, this.i18n.currentLang as 'ko' | 'zh');
+      params = params.set('ids', ids.join(','));
+    } else {
+      params = params.set('text', name);
+    }
+
     return this.getGarlandSearch(params).pipe(
       switchMap(results => {
         const itemIds = (results || []).map(item => item.obj.i);
