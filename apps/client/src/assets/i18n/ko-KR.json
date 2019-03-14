@@ -827,5 +827,72 @@
       "Title": "Discord 멤버 1000명 달성 이벤트!",
       "Description": "이 배너를 클릭해서 FINAL FANTASY XIV: 칠흑의 반역자 소장판 증정 이벤트에 등록하세요! 이 이벤트는 TC Discord 서버의 멤버 수가 한계치인 1000명에 달성한 것을 기념하기 위한 것입니다."
     }
+  },
+  "CUSTOM_ITEMS": {
+    "Title": "Custom items",
+    "New_item": "Create new custom item",
+    "New_folder": "Create new folder",
+    "Rename_folder": "Rename folder",
+    "Import_items": "Import custom items",
+    "Save": "Save item",
+    "Details": "Item details",
+    "Export_item": "Export item",
+    "Export_items": "Export multiple items",
+    "Add_to_list": "Add to a list",
+    "No_items": "You have no custom items",
+    "DETAILS": {
+      "Level": "Level",
+      "None": "none",
+      "Stars": "Stars",
+      "Requirements": "Requirements",
+      "Add_requirement": "Add requirement",
+      "Yields": "Yields",
+      "Name": "Name",
+      "ID": "Item ID",
+      "CRAFT": {
+        "Title": "Crafted by",
+        "Job": "Job",
+        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+      },
+      "GATHERING": {
+        "Title": "Gathered by",
+        "Type": "Node type",
+        "Folklore": "Folklore",
+        "Slot": "Slot"
+      },
+      "ALARMS": {
+        "Title": "Alarms"
+      },
+      "VENDORS": {
+        "Title": "Vendors",
+        "Npc_name": "NPC name",
+        "Price": "Price",
+        "Delete_vendor": "Delete vendor"
+      },
+      "TRADES": {
+        "Title": "Trade sources",
+        "Npc_name": "NPC name",
+        "Shop_name": "Shop name",
+        "Delete_trade": "Delete trade",
+        "Trade_details": "Trade details",
+        "Add_currency": "Add a currency"
+      },
+      "REDUCTION": {
+        "Title": "Reduced from"
+      }
+    },
+    "NPC_PICKER": {
+      "Title": "Find a NPC",
+      "Npc_name": "NPC name"
+    },
+    "IMPORT": {
+      "Corrupted_file": "Import file is corrupted or wrong format",
+      "Drag_or_click": "Drag the file here or click to select it",
+      "Format": "Format",
+      "Folder": "Folder",
+      "No_folder": "No folder",
+      "Parsing_file": "Parsing file content...",
+      "Saving_items": "Saving items ({{done}}/{{todo}})"
+    }
   }
 }
