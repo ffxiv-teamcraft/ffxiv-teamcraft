@@ -34,6 +34,11 @@ export class AlarmDisplay {
    */
   registered?: boolean;
 
+  /**
+   * Is it a weather-required spawn?
+   */
+  weather?: number;
+
   constructor(public readonly alarm: Alarm) {
   }
 }
