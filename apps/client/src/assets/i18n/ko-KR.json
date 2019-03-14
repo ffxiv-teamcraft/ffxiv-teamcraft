@@ -845,30 +845,30 @@
       "Level": "레벨",
       "None": "없음",
       "Stars": "난이도",
-      "Requirements": "Requirements",
-      "Add_requirement": "Add requirement",
+      "Requirements": "재료",
+      "Add_requirement": "재료 추가",
       "Yields": "Yields",
       "Name": "이름",
       "ID": "아이템 ID",
       "CRAFT": {
         "Title": "제작 직업",
         "Job": "직업",
-        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+        "No_requirement_warning": "아이템에 필요한 재료를 설정하지 않았습니다. 이것은 어떠한 재료도 없이 제작한다는 것을 의미합니다."
       },
       "GATHERING": {
         "Title": "채집 직업",
         "Type": "채집물 유형",
         "Folklore": "Folklore",
-        "Slot": "Slot"
+        "Slot": "슬롯"
       },
       "ALARMS": {
-        "Title": "Alarms"
+        "Title": "알람"
       },
       "VENDORS": {
         "Title": "상인",
         "Npc_name": "NPC 이름",
-        "Price": "Price",
-        "Delete_vendor": "Delete vendor"
+        "Price": "판매가:",
+        "Delete_vendor": "상인 삭제"
       },
       "TRADES": {
         "Title": "Trade sources",
@@ -884,16 +884,16 @@
     },
     "NPC_PICKER": {
       "Title": "Find a NPC",
-      "Npc_name": "NPC name"
+      "Npc_name": "NPC 이름"
     },
     "IMPORT": {
-      "Corrupted_file": "Import file is corrupted or wrong format",
-      "Drag_or_click": "Drag the file here or click to select it",
-      "Format": "Format",
-      "Folder": "Folder",
-      "No_folder": "No folder",
-      "Parsing_file": "Parsing file content...",
-      "Saving_items": "Saving items ({{done}}/{{todo}})"
+      "Corrupted_file": "가져오기 파일이 손상되었거나 잘못된 형식입니다",
+      "Drag_or_click": "파일을 드래그 하거나 클릭하여 선택하세요",
+      "Format": "형식",
+      "Folder": "폴더",
+      "No_folder": "폴더 없음",
+      "Parsing_file": "파일 내용 분석중..",
+      "Saving_items": "({{done}}{{todo}}) 를 저장하였습니다"
     }
   }
 }
