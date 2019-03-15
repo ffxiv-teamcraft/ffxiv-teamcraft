@@ -609,8 +609,8 @@
     "Save_as_new_done": "Теперь вы в копии своей ротации",
     "Change_rotation": "Изменить ротацию",
     "New_rotation_folder": "Новая папка",
-    "Safe_mode": "Safe mode",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Safe_mode": "Безопасный режим",
+    "Safe_mode_tooltip": "Выключает все навыки, шанс успеха которых не 100% (учитывает баффы)",
     "CUSTOM": {
       "Recipe_configuration": "Конфигурация рецепта",
       "Recipe_level": "Уровень рецепта",
@@ -619,13 +619,13 @@
       "Recipe_durability": "Прочность"
     },
     "ROTATIONS": {
-      "Search_placeholder": "Search a rotation",
+      "Search_placeholder": "Поиск ротации",
       "FOLDERS": {
         "Folders": "Папки поворота",
         "Rename": "Переименовать папку",
         "New_folder": "Новая папка",
-        "Delete_message": "Deleting a folder won't delete the rotations inside.",
-        "Share_link_copied": "Rotation folder share link copied to your clipboard",
+        "Delete_message": "Удаление папки не удалит ротации внутри.",
+        "Share_link_copied": "Ссылка на папку ротаций скопирована в буфер",
         "Shared_by": "Поделился {{name}}",
         "Created_by": "Создано {{name}}",
         "Copy_folder": "Копировать эту папку и контент на ваш аккаунт",
@@ -644,8 +644,8 @@
     },
     "CONFIGURATION": {
       "Job": "Работа",
-      "Job_not_configured": "It seems like you don't have configured this job yet, go to your profile page to configure it properly and set stats",
-      "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
+      "Job_not_configured": "Похоже, что вы еще не настроили эту профессию, перейдите на страницу профиля, чтобы настроить ее и установить характеристики",
+      "Job_not_configured_anonymous": "Пожалуйста, введите свои характеристики, чтобы получать точные симуляции или войдите в свою учетную запись",
       "Select_job": "Выбрать роль",
       "Craftsmanship": "Мастерство",
       "Control": "Управление",
@@ -664,7 +664,7 @@
       "No_food": "Нет еды",
       "No_medicine": "Нет медикаментов",
       "No_fc_buffs": "Нет FC баффов",
-      "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
+      "Quest_warning": "Убедитесь, что вы выполнили задание 70 ур. для \"Stroke of Genius\"",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Мастерство",
@@ -672,9 +672,9 @@
       }
     },
     "FAIL_CAUSE": {
-      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
-      "NOT_ENOUGH_CP": "Not enough CP",
+      "UNSAFE_ACTION": "Использованы небезопасные действия в безопасном режиме",
+      "DURABILITY_REACHED_ZERO": "Durability достигла 0 до заполнения progress'а",
+      "NOT_ENOUGH_CP": "Недостаточно CP",
       "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
       "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
