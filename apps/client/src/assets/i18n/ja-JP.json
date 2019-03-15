@@ -879,7 +879,7 @@
         "Add_currency": "交換向けアイテム追加"
       },
       "REDUCTION": {
-        "Title": "Reduced from"
+        "Title": "分解/精選で獲得"
       }
     },
     "NPC_PICKER": {
@@ -892,7 +892,7 @@
       "Format": "形式",
       "Folder": "フォルダー",
       "No_folder": "フォルダー無し",
-      "Parsing_file": "ファイル内容を分析中",
+      "Parsing_file": "ファイルの内容を分析中",
       "Saving_items": "({{done}}{{todo}}) を保存しました"
     }
   }
