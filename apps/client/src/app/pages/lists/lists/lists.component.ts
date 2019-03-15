@@ -102,7 +102,7 @@ export class ListsComponent {
         });
         return combineLatest(teams.map(team => this.listsFacade.getTeamLists(team).pipe(
           map(lists => {
-            return { team: team, lists: lists.sort((a, b) => a.index - b.index) };
+            return { team: team, lists: this.listsFacade.sortLists(lists) };
           })
         )));
       }),
@@ -126,7 +126,7 @@ export class ListsComponent {
             return l;
           });
       }),
-      map(lists => lists.sort((a, b) => a.index - b.index)),
+      map(lists => this.listsFacade.sortLists(lists)),
       map(lists => {
         return {
           communityLists: lists.filter(l => l.public),

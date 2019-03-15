@@ -48,13 +48,7 @@ export class ListsFacade {
       return compacts.filter(c => c.authorId === userId);
     }),
     map(lists => {
-      return lists.sort((a, b) => {
-        let res = a.index - b.index;
-        if (res === 0) {
-          res = new Date(a.createdAt).getTime() > new Date(b.createdAt).getTime() ? -1 : 1;
-        }
-        return res;
-      });
+      return this.sortLists(lists);
     }),
     shareReplay(1)
   );
@@ -79,9 +73,11 @@ export class ListsFacade {
               fcId = null;
             }
           }
-          return compacts.filter(c => {
-            return !c.notFound && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId;
-          }).sort((a, b) => a.$key > b.$key ? -1 : 1);
+          return this.sortLists(
+            compacts.filter(c => {
+              return !c.notFound && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId;
+            })
+          );
         })
       );
     }),
@@ -232,5 +228,14 @@ export class ListsFacade {
 
   select(key: string): void {
     this.store.dispatch(new SelectList(key));
+  }
+
+  sortLists(lists: List[]): List[] {
+    return lists.sort((a, b) => {
+      if (a.index === b.index) {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+      }
+      return a.index - b.index;
+    });
   }
 }
