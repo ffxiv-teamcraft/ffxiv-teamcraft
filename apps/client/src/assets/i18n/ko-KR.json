@@ -875,7 +875,7 @@
         "Npc_name": "NPC 이름",
         "Shop_name": "상점 이름",
         "Delete_trade": "교환 정보 삭제",
-        "Trade_details": "교환 세부내역",
+        "Trade_details": "교환 세부내용",
         "Add_currency": "교환용 아이템 추가"
       },
       "REDUCTION": {
