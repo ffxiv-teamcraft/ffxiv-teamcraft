@@ -47,7 +47,10 @@ export class WeatherService {
       return null;
     }
     if (this.getWeather(mapId, date) === weatherId) {
-      return date;
+      const resultDate = new Date(date);
+      resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
+      resultDate.setUTCMinutes(0);
+      return resultDate;
     }
     return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(date), weatherRate);
   }

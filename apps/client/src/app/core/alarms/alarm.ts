@@ -47,6 +47,8 @@ export class Alarm extends DataModel {
 
   ephemeral?: boolean;
 
+  nodeContent?: any;
+
   constructor(alarmData?: Partial<Alarm>) {
     super();
     if (alarmData) {
