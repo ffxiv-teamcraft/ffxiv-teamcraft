@@ -154,6 +154,19 @@
         <div>{{row.remainingTime | timer}}</div>
         <img *ngIf="row.weather" [src]="row.weather | weatherIcon" alt="{{row.weather | weatherName | i18n}}" nz-tooltip
              [nzTitle]="row.weather | weatherName | i18n">
+        <div *ngIf="row.alarm.nodeContent" nz-popover
+             [nzTitle]="'ALARMS.Node_content' | translate"
+             [nzContent]="nodeContent">
+          <ng-template #nodeContent>
+            <ul>
+              <li *ngFor="let item of row.alarm.nodeContent">
+                {{item.id | itemName | i18n}} <span *ngIf="item.slot">({{item.slot}})</span>
+              </li>
+            </ul>
+          </ng-template>
+          <i nz-icon type="question-circle" theme="outline">
+          </i>
+        </div>
       </div>
       <br>
       <div *ngIf="row.alarm.baits !== undefined" class="baits">

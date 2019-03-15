@@ -135,6 +135,7 @@
     "Macro_copied": "Macro copied to your clipboard",
     "Open_overlay": "Open overlay",
     "More_available": "and {{amount}} more...",
+    "Node_content": "Node content",
     "CUSTOM": {
       "Title": "Add custom alarm",
       "Name": "Name",

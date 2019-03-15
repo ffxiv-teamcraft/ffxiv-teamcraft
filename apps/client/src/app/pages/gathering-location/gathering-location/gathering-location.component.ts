@@ -111,7 +111,8 @@ export class GatheringLocationComponent {
                       slot: node.slot,
                       timed: true,
                       reduction: reductions[item.obj.i] && reductions[item.obj.i].indexOf(node.itemId) > -1,
-                      ephemeral: node.name === 'Ephemeral'
+                      ephemeral: node.name === 'Ephemeral',
+                      items: node.items
                     };
                     const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);
                     if (folklore !== undefined) {
@@ -261,7 +262,8 @@ export class GatheringLocationComponent {
       },
       folklore: node.folklore,
       reduction: node.reduction,
-      ephemeral: node.ephemeral
+      ephemeral: node.ephemeral,
+      nodeContent: node.items
     };
   }
 
