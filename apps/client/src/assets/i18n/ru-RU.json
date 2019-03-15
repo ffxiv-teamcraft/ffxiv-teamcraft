@@ -390,7 +390,7 @@
     "Missing_tags_before_button": "Этот список отображается как список сообщества, но без тегов, добавьте несколько тегов ",
     "Missing_tags_after_button": " кнопка",
     "Add_remove_amount": "Добавить/удалить данное количество",
-    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
+    "Missing_masterbook": "У вас нет этого masterbook'а в профиле. Нажмите здесь чтоб добавить его.",
     "No_note": "Нет заметки",
     "Edit_note": "Нет заметки",
     "Note_placeholder": "Заметка",
@@ -544,10 +544,10 @@
     "User_id_tip": "ID пользователя можно найти на странице профиля в правом нижнем углу",
     "Saving": "Сохранить разрешения",
     "No_anonymous": "Вам нужен аккаунт для управления разрешениями",
-    "Propagate_changes": "Propagate permissions to lists inside the workshop",
-    "Propagate_changes_done": "Changes propagated to lists inside the workshop",
-    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
-    "Default_permission_level": "Default permission level"
+    "Propagate_changes": "Распространить разрешения для списков внутри workshop'а",
+    "Propagate_changes_done": "Изменения распространены на списки внутри workshop'а",
+    "Team_notice": "Команда, связанная с этим списком, автоматически имеет разрешение PARTICIPATE",
+    "Default_permission_level": "Уровень разрешений по умолчанию"
   },
   "WIKI": {
     "Title": "Wiki",
