@@ -889,11 +889,11 @@
     "IMPORT": {
       "Corrupted_file": "Import file is corrupted or wrong format",
       "Drag_or_click": "Drag the file here or click to select it",
-      "Format": "Format",
-      "Folder": "Folder",
-      "No_folder": "No folder",
-      "Parsing_file": "Parsing file content...",
-      "Saving_items": "Saving items ({{done}}/{{todo}})"
+      "Format": "形式",
+      "Folder": "フォルダー",
+      "No_folder": "フォルダー無し",
+      "Parsing_file": "ファイル内容を分析中",
+      "Saving_items": "({{done}}{{todo}}) を保存しました"
     }
   }
 }
