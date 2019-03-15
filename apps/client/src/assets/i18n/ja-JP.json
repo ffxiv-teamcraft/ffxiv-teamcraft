@@ -876,7 +876,7 @@
         "Shop_name": "商店名",
         "Delete_trade": "交換情報を削除",
         "Trade_details": "交換詳細",
-        "Add_currency": "Add a currency"
+        "Add_currency": "交換向けアイテム追加"
       },
       "REDUCTION": {
         "Title": "Reduced from"
