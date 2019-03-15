@@ -883,12 +883,12 @@
       }
     },
     "NPC_PICKER": {
-      "Title": "Find a NPC",
-      "Npc_name": "NPC name"
+      "Title": "NPCを検索",
+      "Npc_name": "NPC 名"
     },
     "IMPORT": {
-      "Corrupted_file": "Import file is corrupted or wrong format",
-      "Drag_or_click": "Drag the file here or click to select it",
+      "Corrupted_file": "インポートファイルが破損しているか、形式が間違っています",
+      "Drag_or_click": "ここでファイルをドラッグするか、クリックして選択して下さい",
       "Format": "形式",
       "Folder": "フォルダー",
       "No_folder": "フォルダー無し",
