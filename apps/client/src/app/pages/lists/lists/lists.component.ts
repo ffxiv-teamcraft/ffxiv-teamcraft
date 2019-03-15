@@ -106,6 +106,7 @@ export class ListsComponent {
           })
         )));
       }),
+      tap(console.log),
       shareReplay(1)
     );
 
