@@ -26,6 +26,7 @@
     "Crafts_amount": "제작 횟수",
     "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용",
+    "Reset_filters": "필터 초기화",
     "Too_many_results_warning": "검색 결과가 100개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다.",
     "Share_url": "검색URL을 클립보드로 복사하기",
     "Share_url_copied": "검색URL이 클립보드에 복사되었습니다"
@@ -663,6 +664,7 @@
       "No_food": "음식 없음",
       "No_medicine": "약차 없음",
       "No_fc_buffs": "부대버프 없음",
+      "Quest_warning": "70레벨 직업 퀘스트로 '명인의 발상'을 획득했는지 꼭 확인하세요",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "작업 숙련도",
@@ -686,7 +688,8 @@
     "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}} 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?",
     "Copy_earnings_as_text": "내용을 텍스트로 복사하기",
     "Content_copied": "클립보드로 내용이 복사되었습니다.",
-    "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)"
+    "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)",
+    "Copy_panel_as_text": "이 패널을 텍스트로 복사"
   },
   "LEVEQUESTS": {
     "Title": "길드의뢰",
@@ -824,6 +827,73 @@
     "Discord_1K": {
       "Title": "Discord 멤버 1000명 달성 이벤트!",
       "Description": "이 배너를 클릭해서 FINAL FANTASY XIV: 칠흑의 반역자 소장판 증정 이벤트에 등록하세요! 이 이벤트는 TC Discord 서버의 멤버 수가 한계치인 1000명에 달성한 것을 기념하기 위한 것입니다."
+    }
+  },
+  "CUSTOM_ITEMS": {
+    "Title": "사용자 지정 아이템",
+    "New_item": "사용자 지정 아이템 만들기",
+    "New_folder": "새 폴더 만들기",
+    "Rename_folder": "폴더 이름 변경",
+    "Import_items": "사용자 지정 아이템 불러오기",
+    "Save": "아이템 저장",
+    "Details": "아이템 세부 정보",
+    "Export_item": "아이템 내보내기",
+    "Export_items": "여러 아이템 내보내기",
+    "Add_to_list": "목록에 추가",
+    "No_items": "사용자 지정 아이템이 없습니다",
+    "DETAILS": {
+      "Level": "레벨",
+      "None": "없음",
+      "Stars": "난이도",
+      "Requirements": "재료",
+      "Add_requirement": "재료 추가",
+      "Yields": "제작갯수",
+      "Name": "이름",
+      "ID": "아이템 ID",
+      "CRAFT": {
+        "Title": "제작 방법",
+        "Job": "직업",
+        "No_requirement_warning": "아이템에 필요한 재료를 설정하지 않았습니다. 이것은 어떠한 재료도 없이 제작한다는 것을 의미합니다."
+      },
+      "GATHERING": {
+        "Title": "채집 방법",
+        "Type": "채집물 유형",
+        "Folklore": "전승록",
+        "Slot": "슬롯"
+      },
+      "ALARMS": {
+        "Title": "알람"
+      },
+      "VENDORS": {
+        "Title": "상인",
+        "Npc_name": "NPC 이름",
+        "Price": "판매가:",
+        "Delete_vendor": "상인 삭제"
+      },
+      "TRADES": {
+        "Title": "교환 정보",
+        "Npc_name": "NPC 이름",
+        "Shop_name": "상점 이름",
+        "Delete_trade": "교환 삭제",
+        "Trade_details": "교환 세부내역",
+        "Add_currency": "교환용 아이템 추가"
+      },
+      "REDUCTION": {
+        "Title": "정제"
+      }
+    },
+    "NPC_PICKER": {
+      "Title": "NPC 찾기",
+      "Npc_name": "NPC 이름"
+    },
+    "IMPORT": {
+      "Corrupted_file": "가져오기 파일이 손상되었거나 잘못된 형식입니다",
+      "Drag_or_click": "이곳에 파일을 드래그하거나 클릭하여 선택하세요",
+      "Format": "형식",
+      "Folder": "폴더",
+      "No_folder": "폴더 없음",
+      "Parsing_file": "파일 내용 분석중..",
+      "Saving_items": "({{done}}{{todo}}) 를 저장하였습니다"
     }
   }
 }

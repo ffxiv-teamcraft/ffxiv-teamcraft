@@ -26,6 +26,7 @@
     "Crafts_amount": "# de tarefas",
     "Add_to_list": "Adicionar esse item para uma lista",
     "Apply_filters": "Aplicar filtros",
+    "Reset_filters": "Reset filters",
     "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copiar url da pesquisa para sua área de transferência",
     "Share_url_copied": "Url de busca copiado para sua área de transferência"
@@ -663,6 +664,7 @@
       "No_food": "Sem comida",
       "No_medicine": "Nenhum remédio",
       "No_fc_buffs": "Sem buffs FC",
+      "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Craftsmanship",
@@ -686,7 +688,8 @@
     "Autofill_panel_prices_warning": "Este é um processo lento e deve levar cerca de {{time}} segundos para concluir, tem certeza?",
     "Copy_earnings_as_text": "Copiar conteúdo como texto",
     "Content_copied": "Conteúdo copiado para a área de transferências",
-    "Cheaper_at_vendor": "Mais barato se você comprar pelo NPC ({{price}} gil)"
+    "Cheaper_at_vendor": "Mais barato se você comprar pelo NPC ({{price}} gil)",
+    "Copy_panel_as_text": "Copy this panel as text"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -824,6 +827,73 @@
     "Discord_1K": {
       "Title": "1000 membros do Discord!",
       "Description": "Clique neste banner para ir para a página de registro do giveaway para o FINAL FANTASY XIV: Shadowbringers Collector's Edition criado para celebrar o limite de 1000 membros alcançado no servidor discord."
+    }
+  },
+  "CUSTOM_ITEMS": {
+    "Title": "Custom items",
+    "New_item": "Create new custom item",
+    "New_folder": "Create new folder",
+    "Rename_folder": "Rename folder",
+    "Import_items": "Import custom items",
+    "Save": "Save item",
+    "Details": "Item details",
+    "Export_item": "Export item",
+    "Export_items": "Export multiple items",
+    "Add_to_list": "Add to a list",
+    "No_items": "You have no custom items",
+    "DETAILS": {
+      "Level": "Level",
+      "None": "none",
+      "Stars": "Stars",
+      "Requirements": "Requirements",
+      "Add_requirement": "Add requirement",
+      "Yields": "Yields",
+      "Name": "Name",
+      "ID": "Item ID",
+      "CRAFT": {
+        "Title": "Crafted by",
+        "Job": "Job",
+        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+      },
+      "GATHERING": {
+        "Title": "Gathered by",
+        "Type": "Node type",
+        "Folklore": "Folklore",
+        "Slot": "Slot"
+      },
+      "ALARMS": {
+        "Title": "Alarms"
+      },
+      "VENDORS": {
+        "Title": "Vendors",
+        "Npc_name": "NPC name",
+        "Price": "Price",
+        "Delete_vendor": "Delete vendor"
+      },
+      "TRADES": {
+        "Title": "Trade sources",
+        "Npc_name": "NPC name",
+        "Shop_name": "Shop name",
+        "Delete_trade": "Delete trade",
+        "Trade_details": "Trade details",
+        "Add_currency": "Add a currency"
+      },
+      "REDUCTION": {
+        "Title": "Reduced from"
+      }
+    },
+    "NPC_PICKER": {
+      "Title": "Find a NPC",
+      "Npc_name": "NPC name"
+    },
+    "IMPORT": {
+      "Corrupted_file": "Import file is corrupted or wrong format",
+      "Drag_or_click": "Drag the file here or click to select it",
+      "Format": "Format",
+      "Folder": "Folder",
+      "No_folder": "No folder",
+      "Parsing_file": "Parsing file content...",
+      "Saving_items": "Saving items ({{done}}/{{todo}})"
     }
   }
 }

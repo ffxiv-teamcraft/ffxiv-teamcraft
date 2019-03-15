@@ -26,6 +26,7 @@
     "Crafts_amount": "クラフトの数",
     "Add_to_list": "このアイテムをリストに追加する",
     "Apply_filters": "フィルターを適用する",
+    "Reset_filters": "フィルターをリセットする",
     "Too_many_results_warning": "検索結果が100件を超えてます。データソースの制限のため、正確なアイテムを探すためには、追加フィルター設定が必要とします。",
     "Share_url": "検索URLをクリップボードにコピーする",
     "Share_url_copied": "検索URLがクリップボードにコピーされました"
@@ -663,6 +664,7 @@
       "No_food": "飯なし",
       "No_medicine": "薬なし",
       "No_fc_buffs": "フリーカンパニーのバフなし",
+      "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "作業精度",
@@ -686,7 +688,8 @@
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。",
-    "Cheaper_at_vendor": "NPC から購入した方が安い ({{price}} ギル)"
+    "Cheaper_at_vendor": "NPC から購入した方が安い ({{price}} ギル)",
+    "Copy_panel_as_text": "このパネルをテキストとしてコピーする"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -824,6 +827,73 @@
     "Discord_1K": {
       "Title": "ディスコードメンバー1000名達成イベント!",
       "Description": "このバナーをクリックして、Final Fantasy XIV: 漆黑の反逆者の所蔵版の贈呈イベントに登録してください！ このイベントは、TC discord サーバーのメンバー数が限界値の1000名を達成したのを祝うためのものです。"
+    }
+  },
+  "CUSTOM_ITEMS": {
+    "Title": "Custom items",
+    "New_item": "Create new custom item",
+    "New_folder": "Create new folder",
+    "Rename_folder": "Rename folder",
+    "Import_items": "Import custom items",
+    "Save": "Save item",
+    "Details": "Item details",
+    "Export_item": "Export item",
+    "Export_items": "Export multiple items",
+    "Add_to_list": "Add to a list",
+    "No_items": "You have no custom items",
+    "DETAILS": {
+      "Level": "Level",
+      "None": "none",
+      "Stars": "Stars",
+      "Requirements": "Requirements",
+      "Add_requirement": "Add requirement",
+      "Yields": "Yields",
+      "Name": "Name",
+      "ID": "Item ID",
+      "CRAFT": {
+        "Title": "Crafted by",
+        "Job": "Job",
+        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+      },
+      "GATHERING": {
+        "Title": "Gathered by",
+        "Type": "Node type",
+        "Folklore": "Folklore",
+        "Slot": "Slot"
+      },
+      "ALARMS": {
+        "Title": "Alarms"
+      },
+      "VENDORS": {
+        "Title": "Vendors",
+        "Npc_name": "NPC name",
+        "Price": "Price",
+        "Delete_vendor": "Delete vendor"
+      },
+      "TRADES": {
+        "Title": "Trade sources",
+        "Npc_name": "NPC name",
+        "Shop_name": "Shop name",
+        "Delete_trade": "Delete trade",
+        "Trade_details": "Trade details",
+        "Add_currency": "Add a currency"
+      },
+      "REDUCTION": {
+        "Title": "Reduced from"
+      }
+    },
+    "NPC_PICKER": {
+      "Title": "Find a NPC",
+      "Npc_name": "NPC name"
+    },
+    "IMPORT": {
+      "Corrupted_file": "Import file is corrupted or wrong format",
+      "Drag_or_click": "Drag the file here or click to select it",
+      "Format": "Format",
+      "Folder": "Folder",
+      "No_folder": "No folder",
+      "Parsing_file": "Parsing file content...",
+      "Saving_items": "Saving items ({{done}}/{{todo}})"
     }
   }
 }
