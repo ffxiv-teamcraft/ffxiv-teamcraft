@@ -70,16 +70,16 @@ exports.firestoreCountlistsDelete = functions.firestore.document('/lists/{uid}')
 
 exports.createListCompacts = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
   const compact = getCompact(snap.data.data());
-  registerItemsCreation(snap.data.data().finalItems);
+  // registerItemsCreation(snap.data.data().finalItems);
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
 });
 
 exports.updateListCompacts = functions.firestore.document('/lists/{uid}').onUpdate((snap) => {
   const compact = getCompact(snap.data.data());
   const diff = snap.data.data().finalItems.filter(item => !snap.data.previous.data().finalItems.some(i => i.id === item.id));
-  if (diff.length > 0) {
-    registerItemsCreation(diff);
-  }
+  // if (diff.length > 0) {
+  //   registerItemsCreation(diff);
+  // }
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).update(compact);
 });
 
