@@ -131,7 +131,7 @@ export class SearchComponent implements OnInit {
           relativeTo: this.route
         });
       }),
-      switchMap(([query, onlyRecipes, filters]) => this.data.searchItem(query, filters, onlyRecipes)),
+      mergeMap(([query, onlyRecipes, filters]) => this.data.searchItem(query, filters, onlyRecipes)),
       tap(() => {
         this.loading = false;
       })
