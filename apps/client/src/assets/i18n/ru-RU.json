@@ -439,7 +439,7 @@
     "CASTER": "Маг",
     "CRAFTER": "Крафтер",
     "GATHERER": "Сборщик",
-    "SCRIPTS": "Scrips",
+    "SCRIPTS": "Skrip'ы",
     "PLD": "PLD",
     "WAR": "WAR",
     "DRK": "DRK",
@@ -502,9 +502,9 @@
     "Title": "Полученные предметы",
     "No_items": "Нечего собирать",
     "Gathering_name": "Введите имя предмета",
-    "Ephemeral_node": "Ephemeral node, can be respawned",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !",
-    "Hidden_item": "Hidden"
+    "Ephemeral_node": "Эфемерная нода, можно респаунить",
+    "Intro": "Место сбора позволяет легко найти собираемый предмет и увидеть подробности о нём, где его найти и создать уведомление для нужной ноды. Просто введите название в поле выше и оно найдёт то что вы ищете!",
+    "Hidden_item": "Скрытый"
   },
   "ANNOUNCEMENT": {
     "Title": "Объявление",
@@ -523,7 +523,7 @@
     "Not_found": "Шаблон не найден",
     "STATUS": {
       "Loading": "Загрузка шаблона",
-      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+      "Copying": "Создание копии списка в ваш аккаунт, вы будете перенаправлены на него после завершения"
     }
   },
   "PERMISSIONS": {
