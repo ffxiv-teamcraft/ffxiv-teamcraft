@@ -845,37 +845,37 @@
       "Level": "レベル",
       "None": "無し",
       "Stars": "難易度",
-      "Requirements": "Requirements",
-      "Add_requirement": "Add requirement",
-      "Yields": "Yields",
-      "Name": "Name",
-      "ID": "Item ID",
+      "Requirements": "材料",
+      "Add_requirement": "材料追加",
+      "Yields": "制作個数",
+      "Name": "名",
+      "ID": "アイテム名",
       "CRAFT": {
-        "Title": "Crafted by",
-        "Job": "Job",
-        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+        "Title": "制作方法",
+        "Job": "ジョブ",
+        "No_requirement_warning": "アイテムに必要な材料を設定していません。どんな材料も無しで制作するって意味です。"
       },
       "GATHERING": {
-        "Title": "Gathered by",
-        "Type": "Node type",
-        "Folklore": "Folklore",
-        "Slot": "Slot"
+        "Title": "採集方法",
+        "Type": "採集物類型",
+        "Folklore": "伝承録",
+        "Slot": "スロット"
       },
       "ALARMS": {
-        "Title": "Alarms"
+        "Title": "アラーム"
       },
       "VENDORS": {
-        "Title": "Vendors",
-        "Npc_name": "NPC name",
-        "Price": "Price",
-        "Delete_vendor": "Delete vendor"
+        "Title": "商人",
+        "Npc_name": "NPC 名",
+        "Price": "販売価格:",
+        "Delete_vendor": "商人を削除"
       },
       "TRADES": {
-        "Title": "Trade sources",
-        "Npc_name": "NPC name",
-        "Shop_name": "Shop name",
-        "Delete_trade": "Delete trade",
-        "Trade_details": "Trade details",
+        "Title": "交換情報",
+        "Npc_name": "NPC 名",
+        "Shop_name": "商店名",
+        "Delete_trade": "交換情報を削除",
+        "Trade_details": "交換詳細",
         "Add_currency": "Add a currency"
       },
       "REDUCTION": {
