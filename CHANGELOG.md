@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.0"></a>
+# [5.1.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.38...v5.1.0) (2019-03-16)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with some data not loaded properly ([b309073](https://github.com/Supamiu/ffxiv-teamcraft/commit/b309073))
+* **list:** fixed an issue with total trade popup not doing proper math ([c73d324](https://github.com/Supamiu/ffxiv-teamcraft/commit/c73d324))
+* **search:** fixed a possible issue with search input in some cases ([66b587d](https://github.com/Supamiu/ffxiv-teamcraft/commit/66b587d))
+* **search:** fixed an issue with search filters ([0342868](https://github.com/Supamiu/ffxiv-teamcraft/commit/0342868))
+* **simulator:** dragging the last action doesn't make it immovable ([17eb9ba](https://github.com/Supamiu/ffxiv-teamcraft/commit/17eb9ba))
+
+
+### Features
+
+* added russian to the list of available translation languages ([8017e90](https://github.com/Supamiu/ffxiv-teamcraft/commit/8017e90))
+* you can now create custom items ([#804](https://github.com/Supamiu/ffxiv-teamcraft/issues/804)) ([afb27c0](https://github.com/Supamiu/ffxiv-teamcraft/commit/afb27c0)), closes [#579](https://github.com/Supamiu/ffxiv-teamcraft/issues/579)
+* **lists:** updated lists page display for more usability with teams ([6893cb9](https://github.com/Supamiu/ffxiv-teamcraft/commit/6893cb9))
+* **localisation:** you can now search in Korean from Gathering items ([71a7cc7](https://github.com/Supamiu/ffxiv-teamcraft/commit/71a7cc7))
+* **log-tracker:** added a confirmation box for the "mark page as done" action ([dae54ee](https://github.com/Supamiu/ffxiv-teamcraft/commit/dae54ee))
+* **pricing:** you can now copy a pricing panel content as string ([96015a0](https://github.com/Supamiu/ffxiv-teamcraft/commit/96015a0))
+* **simulator:** added a warning message about level 70 quest for stroke of genius ([2e069fb](https://github.com/Supamiu/ffxiv-teamcraft/commit/2e069fb))
+* **workshop:** workshop panel now has list count shown ([788d040](https://github.com/Supamiu/ffxiv-teamcraft/commit/788d040))
+
+
+
 <a name="5.0.38"></a>
 ## [5.0.38](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.37...v5.0.38) (2019-03-10)
 
