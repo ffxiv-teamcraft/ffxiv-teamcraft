@@ -664,7 +664,7 @@
       "No_food": "飯なし",
       "No_medicine": "薬なし",
       "No_fc_buffs": "フリーカンパニーのバフなし",
-      "Quest_warning": "レベル70のジョブクエストから '魔匠の閃き' を獲得しましたか、ご確認下さい",
+      "Quest_warning": "レベル70のジョブクエストから '魔匠の閃き' を獲得しましたか、必ずご確認下さい",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "作業精度",
@@ -853,7 +853,7 @@
       "CRAFT": {
         "Title": "制作方法",
         "Job": "ジョブ",
-        "No_requirement_warning": "アイテムに必要な材料を設定していません。どんな材料も無しで制作するって意味です。"
+        "No_requirement_warning": "アイテムに必要な材料を設定していません。どんな材料も無しで制作する事を意味します。"
       },
       "GATHERING": {
         "Title": "採集方法",
@@ -876,7 +876,7 @@
         "Shop_name": "商店名",
         "Delete_trade": "交換情報を削除",
         "Trade_details": "交換詳細",
-        "Add_currency": "交換向けアイテム追加"
+        "Add_currency": "交換用アイテム追加"
       },
       "REDUCTION": {
         "Title": "分解/精選で獲得"
