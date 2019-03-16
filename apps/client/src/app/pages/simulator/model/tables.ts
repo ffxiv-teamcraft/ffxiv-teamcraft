@@ -48,10 +48,21 @@ export class Tables {
     67: 282,
     68: 285,
     69: 288,
-    70: 290
+    70: 290,
+    71: 385,
+    72: 395,
+    73: 400,
+    74: 403,
+    75: 406,
+    76: 409,
+    77: 412,
+    78: 415,
+    79: 418,
+    80: 420
   };
 
   // source: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1956
+  // 80 1-3 star is 430/450/480, not sure if 4-star will be 510 or 520
   public static readonly PROGRESS_PENALTY_TABLE = {
     180: -0.02,
     210: -0.035,
