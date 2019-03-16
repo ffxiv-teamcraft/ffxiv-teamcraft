@@ -195,6 +195,13 @@
               <i nz-icon iconfont="icon-book"></i>
               <span class="nav-text">{{'LOG_TRACKER.Title' | translate}}</span>
           </span>
+            </a>
+            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+               routerLink="/custom-items">
+          <span>
+              <i nz-icon iconfont="icon-custom"></i>
+              <span class="nav-text">{{'CUSTOM_ITEMS.Title' | translate}}</span>
+          </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/macro-translator">

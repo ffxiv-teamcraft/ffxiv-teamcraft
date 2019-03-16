@@ -48,7 +48,7 @@ export class LayoutsFacade {
         map(([layout, characterEntry]) => {
           let unfilteredRows: ListRow[];
           if (!layout.considerCrystalsAsItems) {
-            unfilteredRows = list.items.filter(row => row.hidden !== true && (row.id < 1 || row.id > 20));
+            unfilteredRows = list.items.filter(row => row.hidden !== true && (row.id < 1 || row.id > 20) || row.id === row.$key);
           } else {
             unfilteredRows = list.items.filter(row => row.hidden !== true);
           }

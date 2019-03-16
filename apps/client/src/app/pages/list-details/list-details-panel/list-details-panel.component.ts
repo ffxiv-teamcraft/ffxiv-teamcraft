@@ -61,7 +61,7 @@ export class ListDetailsPanelComponent implements OnChanges {
         return this.itemPicker.pickItem().pipe(
           filter(item => item !== undefined),
           switchMap((item) => {
-            const operation = this.listManager.addToList(item.itemId, list,
+            const operation = this.listManager.addToList(+item.itemId, list,
               item.recipe ? item.recipe.recipeId : '', item.amount);
             return this.progress.showProgress(operation, 1);
           })

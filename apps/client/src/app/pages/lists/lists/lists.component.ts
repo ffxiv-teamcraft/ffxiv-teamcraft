@@ -102,7 +102,7 @@ export class ListsComponent {
         });
         return combineLatest(teams.map(team => this.listsFacade.getTeamLists(team).pipe(
           map(lists => {
-            return { team: team, lists: lists.sort((a, b) => a.$key > b.$key ? -1 : 1) };
+            return { team: team, lists: lists.sort((a, b) => a.index - b.index) };
           })
         )));
       }),

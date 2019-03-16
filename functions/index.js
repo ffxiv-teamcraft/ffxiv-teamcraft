@@ -11,11 +11,19 @@ function getCompact(list) {
   delete compact.items;
   compact.finalItems = (compact.finalItems || []).map(item => {
     const entry = {
-      id: item.id,
-      icon: item.icon,
       amount: item.amount,
       amount_needed: item.amount_needed
     };
+    if (item.custom) {
+      entry.$key = item.$key;
+      entry.id = item.id;
+      entry.custom = true;
+      entry.name = item.name;
+      entry.icon = item.icon || '';
+    } else {
+      entry.id = item.id;
+      entry.icon = item.icon || '';
+    }
     if (item.recipeId !== undefined) {
       entry.recipeId = item.recipeId;
     }
@@ -25,7 +33,7 @@ function getCompact(list) {
 }
 
 function registerItemsCreation(items) {
-  return Promise.all(items.map(item => {
+  return Promise.all(items.filter(i => !i.custom).map(item => {
     return admin.database().ref('/stats').transaction(current => {
       current = current || {};
       const entry = current[`${item.id}:${item.recipeId}`];
@@ -62,16 +70,16 @@ exports.firestoreCountlistsDelete = functions.firestore.document('/lists/{uid}')
 
 exports.createListCompacts = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
   const compact = getCompact(snap.data.data());
-  registerItemsCreation(snap.data.data().finalItems);
+  // registerItemsCreation(snap.data.data().finalItems);
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
 });
 
 exports.updateListCompacts = functions.firestore.document('/lists/{uid}').onUpdate((snap) => {
   const compact = getCompact(snap.data.data());
   const diff = snap.data.data().finalItems.filter(item => !snap.data.previous.data().finalItems.some(i => i.id === item.id));
-  if (diff.length > 0) {
-    registerItemsCreation(diff);
-  }
+  // if (diff.length > 0) {
+  //   registerItemsCreation(diff);
+  // }
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).update(compact);
 });
 

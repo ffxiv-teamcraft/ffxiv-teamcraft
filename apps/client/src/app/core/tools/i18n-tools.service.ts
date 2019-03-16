@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { I18nData } from '../../model/common/i18n-data';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
+import { CustomItem } from '../../modules/custom-items/model/custom-item';
 
 @Injectable()
 export class I18nToolsService {
@@ -11,8 +12,11 @@ export class I18nToolsService {
   constructor(private translator: TranslateService) {
   }
 
-  public getName(i18nName: I18nName): string {
+  public getName(i18nName: I18nName, item?: CustomItem): string {
     if (i18nName === undefined) {
+      if (item !== undefined && item.name !== undefined) {
+        return item.name;
+      }
       return 'missing name';
     }
     return i18nName[this.translator.currentLang] || i18nName.en || 'missing name';

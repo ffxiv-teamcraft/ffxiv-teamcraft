@@ -32,6 +32,8 @@ export class TranslationsLoader implements TranslateLoader {
         return 'pt-BR';
       case 'zh':
         return 'zh-CN';
+      case 'ru':
+        return 'ru-RU';
       default:
         return 'en';
     }

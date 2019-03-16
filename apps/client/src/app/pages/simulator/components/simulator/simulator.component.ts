@@ -52,6 +52,7 @@ import { NameQuestionPopupComponent } from '../../../../modules/name-question-po
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
+import { fakeHQItems } from '../../../../core/data/sources/fake-hq-items';
 
 @Component({
   selector: 'app-simulator',
@@ -92,6 +93,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public result$: Observable<SimulationResult>;
 
   public actions$ = new BehaviorSubject<CraftingAction[]>([]);
+
+  private draggedAction$: CraftingAction;
+
+  private draggedIndex$: number;
 
   public crafterStats$: Observable<CrafterStats>;
 
@@ -254,8 +259,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.hqIngredientsData$ = this.recipe$.pipe(
       map(recipe => {
         return (recipe.ingredients || [])
-          .filter(i => i.id > 20 && i.quality !== undefined)
-          .map(ingredient => ({ id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
+          .filter(i => i.id > 20 && i.quality !== undefined && !fakeHQItems.some(id => i.id === id))
+          .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
       })
     );
 
@@ -508,11 +513,26 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.dirty = true;
   }
 
+  actionDrag(index: number): void {
+    this.draggedAction$ = this.actions$.value[index];
+    this.draggedIndex$ = index;
+    this.removeAction(index);
+  }
+
   actionDrop(event: any): void {
     if (event.el.parentNode.classList.contains('actions-container')) {
       event.el.parentNode.removeChild(event.el);
     }
     this.addAction(event.value, event.dropIndex);
+    this.draggedAction$ = null;
+  }
+  
+  dragCancel(event: any): void {
+    if (event.el.parentNode.classList.contains('actions-container')) {
+      event.el.parentNode.removeChild(event.el);
+    }
+    this.addAction(this.draggedAction$, this.draggedIndex$);
+    this.draggedAction$ = null;
   }
 
   removeAction(index: number): void {

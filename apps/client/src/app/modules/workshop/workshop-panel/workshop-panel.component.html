@@ -11,7 +11,7 @@
   <ng-template #panelHeader>
     <div class="panel-header" fxLayout="row wrap" fxLayoutAlign="space-between center">
       <div>
-        {{_workshop.name}}
+        {{_workshop.name}} ({{lists.length}})
       </div>
       <div nz-col nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
         <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip

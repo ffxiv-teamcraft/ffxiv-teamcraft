@@ -48,15 +48,20 @@
         {{'LISTS.No_lists' | translate}}
       </app-fullpage-message>
     </div>
-    <div *ngFor="let teamDisplay of teamsDisplays$ | async;trackBy: trackByTeam">
-      <div *ngIf="teamDisplay.lists.length > 0">
-        <h3>{{teamDisplay.team.name}}</h3>
-        <div class="list-panel" *ngFor="let list of teamDisplay.lists; trackBy: trackByList">
-          <app-list-panel [list]="list"></app-list-panel>
+    <nz-divider [nzText]="'TEAMS.Title' | translate" nzOrientation="left"></nz-divider>
+    <nz-collapse *ngFor="let teamDisplay of teamsDisplays$ | async;trackBy: trackByTeam">
+      <nz-collapse-panel nzHeader="{{teamDisplay.team.name}} ({{teamDisplay.lists.length}})">
+        <div class="ngx-dnd-container" ngxDroppable="communityList"
+             (drop)="setListIndex($event.value, $event.dropIndex, lists.lists)">
+          <div class="ngx-dnd-item list-panel" *ngFor="let list of teamDisplay.lists; trackBy: trackByList"
+               ngxDraggable="team-{{teamDisplay.team.$key}}"
+               [model]="list">
+            <app-list-panel [list]="list"></app-list-panel>
+          </div>
         </div>
-      </div>
-    </div>
-    <nz-divider></nz-divider>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <nz-divider [nzText]="'Your_public_lists' | translate" nzOrientation="left"></nz-divider>
     <nz-collapse *ngIf="lists.communityLists.length > 0">
       <nz-collapse-panel nzHeader="{{'Your_public_lists' | translate}} ({{lists.communityLists.length}})"
                          #communityListsPanel>
@@ -74,7 +79,7 @@
   </div>
   <div *ngIf="listsWithWriteAccess$ | async as listsWithWriteAccess">
     <div *ngIf="listsWithWriteAccess.length > 0">
-      <h2>{{'LISTS.Shared_lists' | translate}}</h2>
+      <nz-divider [nzText]="'LISTS.Shared_lists' | translate" nzOrientation="left"></nz-divider>
       <div class="list-panel" *ngFor="let list of listsWithWriteAccess; trackBy: trackByList">
         <app-list-panel [list]="list"></app-list-panel>
       </div>
@@ -82,7 +87,7 @@
   </div>
   <div *ngIf="workshops$ | async as workshops">
     <div *ngIf="workshops.length > 0">
-      <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
+      <nz-divider [nzText]="'WORKSHOP.Workshops' | translate" nzOrientation="left"></nz-divider>
       <div class="ngx-dnd-container" (drop)="setWorkshopIndex($event.value, $event.dropIndex, workshops)"
            ngxDroppable="workshop">
         <div class="ngx-dnd-item workshop-panel" *ngFor="let workshopDisplay of workshops; trackBy: trackByList"
@@ -95,7 +100,7 @@
   </div>
   <div *ngIf="workshopsWithWriteAccess$ | async as workshopsWithWriteAccess">
     <div *ngIf="workshopsWithWriteAccess.length > 0">
-      <h2>{{'WORKSHOP.Shared_workshops' | translate}}</h2>
+      <nz-divider [nzText]="'WORKSHOP.Shared_workshops' | translate" nzOrientation="left"></nz-divider>
       <div class="workshop-panel" *ngFor="let workshopDisplay of workshopsWithWriteAccess; trackBy: trackByList">
         <app-workshop-panel [workshop]="workshopDisplay.workshop" [lists]="workshopDisplay.lists"></app-workshop-panel>
       </div>

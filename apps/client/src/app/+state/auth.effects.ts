@@ -88,7 +88,7 @@ export class AuthEffects {
     debounceTime(10000),
     tap((action: UserFetched) => {
       const user = action.user;
-      if (!this.nickNameWarningShown && (user.patron || user.admin) && user.nickname === undefined) {
+      if (!this.nickNameWarningShown && user !== null && (user.patron || user.admin) && user.nickname === undefined) {
         this.notificationService.warning(this.translate.instant('COMMON.Warning'), this.translate.instant('SETTINGS.No_nickname_warning'));
         this.nickNameWarningShown = true;
       }
@@ -99,7 +99,7 @@ export class AuthEffects {
   fetchUserOnAuthenticated$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated),
     switchMap((action: Authenticated) => this.userService.get(action.uid).pipe(
-      filter(user => user.$key !== undefined)
+      filter(user => user && user.$key !== undefined)
     )),
     catchError((error) => {
       if (error.message.toLowerCase().indexOf('not found') > -1) {
@@ -159,9 +159,9 @@ export class AuthEffects {
     }),
     withLatestFrom(this.store),
     mergeMap(([, state]) => {
-      const missingCharacters = state.auth.user.lodestoneIds.filter(lodestoneId => {
+      const missingCharacters = state.auth.user ? state.auth.user.lodestoneIds.filter(lodestoneId => {
         return lodestoneId.id > 0 && state.auth.characters.find(char => char.Character.ID === lodestoneId.id) === undefined;
-      });
+      }) : [];
       const getMissingCharacters$ = missingCharacters.map(lodestoneId => {
         const reloader = new BehaviorSubject<void>(null);
         return reloader.pipe(

@@ -1,7 +1,6 @@
 import { ListRow } from './list-row';
 import { CraftAddition } from './craft-addition';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import * as semver from 'semver';
 import { ListTag } from './list-tag.enum';
 import { Craft } from '../../../model/garland-tools/craft';
@@ -11,6 +10,13 @@ import { MathTools } from '../../../tools/math-tools';
 import { environment } from '../../../../environments/environment';
 import { Team } from '../../../model/team/team';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
+import { CustomItem } from '../../custom-items/model/custom-item';
+import { ItemData } from '../../../model/garland-tools/item-data';
+import { BehaviorSubject, concat, EMPTY, Observable, of, Subject } from 'rxjs';
+import { bufferCount, debounceTime, expand, map, skip, skipUntil, switchMap, tap } from 'rxjs/operators';
+import { DataService } from '../../../core/api/data.service';
+import { Ingredient } from '../../../model/garland-tools/ingredient';
+import { ListManagerService } from '../list-manager.service';
 
 declare const gtag: Function;
 
@@ -118,9 +124,9 @@ export class List extends DataWithPermissions {
    * Iterates on recipes and preCrafts.
    * @param {(arg: ListRow) => void} method
    */
-  public forEachCraft(method: (arg: ListRow) => void): void {
-    (this.items || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
-    (this.finalItems || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
+  public forEachItemWithRequirement(method: (arg: ListRow) => void): void {
+    (this.items || []).filter(row => row.requires !== undefined && row.requires.length > 0).forEach(method);
+    (this.finalItems || []).filter(row => row.requires !== undefined && row.requires.length > 0).forEach(method);
   }
 
   public addToFinalItems(data: ListRow): number {
@@ -153,9 +159,9 @@ export class List extends DataWithPermissions {
         if (prop !== 'finalItems') {
           this[prop].forEach(row => {
             if (row.craftedBy === undefined || row.craftedBy.length === 0) {
-              row.amount = row.amount_needed = this.totalAmountRequired(<ListRow>row);
+              row.amount = row.amount_needed = this.totalAmountRequired(row);
             } else {
-              row.amount = this.totalAmountRequired(<ListRow>row);
+              row.amount = this.totalAmountRequired(row);
               row.amount_needed = Math.ceil(row.amount / row.yield);
             }
           });
@@ -170,10 +176,10 @@ export class List extends DataWithPermissions {
     return this.finalItems.length === 0;
   }
 
-  public getItemById(id: number, excludeFinalItems: boolean = false, recipeId?: string): ListRow {
+  public getItemById(id: number | string, excludeFinalItems: boolean = false, recipeId?: string): ListRow {
     const array = excludeFinalItems ? this.items : this.items.concat(this.finalItems);
     return array.find(row => {
-      let matches = row.id === id;
+      let matches = row.id === id || row.id === +id || (row.$key !== undefined && row.$key === id);
       if (recipeId !== undefined) {
         matches = matches && row.recipeId === recipeId;
       }
@@ -194,7 +200,7 @@ export class List extends DataWithPermissions {
    * @param recipeId
    * @param initialAddition
    */
-  public setDone(itemId: number, amount: number, excludeFinalItems = false, setUsed = false, recipeId?: string, initialAddition = amount): void {
+  public setDone(itemId: number | string, amount: number, excludeFinalItems = false, setUsed = false, recipeId?: string, initialAddition = amount): void {
     const item = this.getItemById(itemId, excludeFinalItems, recipeId);
     const previousDone = MathTools.absoluteCeil(item.done / item.yield);
     if (setUsed) {
@@ -342,21 +348,104 @@ export class List extends DataWithPermissions {
     }
   }
 
-  public addCraft(additions: CraftAddition[], gt: GarlandToolsService, i18n: I18nToolsService, recipeId?: string): List {
+  public addCraft(_additions: CraftAddition[], gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService, recipeId?: string): Observable<List> {
+    const done$ = new Subject<void>();
+    return of(_additions).pipe(
+      expand(additions => {
+        if (additions.length === 0) {
+          done$.next();
+          return EMPTY;
+        }
+        return concat(
+          ...additions.map(addition => {
+            if (addition.data instanceof ItemData) {
+              return of(this.addNormalCraft(addition, gt, listManager, recipeId));
+            } else {
+              return this.addCustomCraft(addition, gt, customItems, dataService, listManager);
+            }
+          })
+        ).pipe(
+          bufferCount(additions.length),
+          map(res => [].concat.apply([], res.filter(r => r !== null)))
+        );
+      }),
+      debounceTime(100),
+      skipUntil(done$),
+      map(() => {
+        return this;
+      })
+    );
+  }
+
+  private addNormalCraft(addition: CraftAddition, gt: GarlandToolsService, listManager: ListManagerService, recipeId?: string): CraftAddition[] {
     const nextIteration: CraftAddition[] = [];
-    for (const addition of additions) {
-      let craft: Craft;
-      if (recipeId !== undefined) {
-        craft = addition.item.craft.find(c => c.id.toString() === recipeId.toString());
+    let craft: Craft;
+    if (recipeId !== undefined) {
+      craft = addition.item.craft.find(c => c.id.toString() === recipeId.toString()) || addition.item.craft[0];
+    } else {
+      craft = addition.item.craft[0];
+    }
+    for (const element of craft.ingredients) {
+      // If this is a crystal
+      if (element.id < 20 && element.id > 1) {
+        const crystal = gt.getCrystalDetails(+element.id);
+        this.add(this.items, {
+          id: +element.id,
+          icon: crystal.item.icon,
+          amount: element.amount * addition.amount,
+          done: 0,
+          used: 0,
+          yield: 1,
+          usePrice: true
+        });
+        listManager.addDetails(this, crystal);
       } else {
-        craft = addition.item.craft[0];
-      }
-      for (const element of craft.ingredients) {
-        // If this is a crystal
-        if (element.id < 20 && element.id > 1) {
-          const crystal = gt.getCrystalDetails(element.id);
+        const elementDetails = (<ItemData>addition.data).getIngredient(+element.id);
+        if (elementDetails.isCraft()) {
+          const yields = elementDetails.craft[0].yield || 1;
+          const added = this.add(this.items, {
+            id: elementDetails.id,
+            icon: elementDetails.icon,
+            amount: element.amount * addition.amount,
+            requires: elementDetails.craft[0].ingredients,
+            done: 0,
+            used: 0,
+            yield: yields,
+            usePrice: true
+          });
+          nextIteration.push({
+            item: elementDetails,
+            data: addition.data,
+            amount: added
+          });
+        } else {
           this.add(this.items, {
-            id: element.id,
+            id: elementDetails.id,
+            icon: elementDetails.icon,
+            amount: element.amount * addition.amount,
+            done: 0,
+            used: 0,
+            yield: 1,
+            usePrice: true
+          });
+        }
+        listManager.addDetails(this, <ItemData>addition.data);
+      }
+    }
+    return nextIteration;
+  }
+
+  private addCustomCraft(addition: CraftAddition, gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService): Observable<CraftAddition[]> {
+    const item: CustomItem = addition.data as CustomItem;
+    const nextIteration: CraftAddition[] = [];
+    let index = 0;
+    const queue$ = new BehaviorSubject<Ingredient>(item.requires[0]);
+    return queue$.pipe(
+      switchMap(element => {
+        if (element.id < 20 && element.id > 1) {
+          const crystal = gt.getCrystalDetails(+element.id);
+          this.add(this.items, {
+            id: +element.id,
             icon: crystal.item.icon,
             amount: element.amount * addition.amount,
             done: 0,
@@ -364,49 +453,84 @@ export class List extends DataWithPermissions {
             yield: 1,
             usePrice: true
           });
+          listManager.addDetails(this, crystal);
+          return of(null);
         } else {
-          const elementDetails = addition.data.getIngredient(element.id);
-          if (elementDetails.isCraft()) {
-            const yields = elementDetails.craft[0].yield || 1;
-            const added = this.add(this.items, {
-              id: elementDetails.id,
-              icon: elementDetails.icon,
-              amount: element.amount * addition.amount,
-              requires: elementDetails.craft[0].ingredients,
-              done: 0,
-              used: 0,
-              yield: yields,
-              usePrice: true
-            });
-            nextIteration.push({
-              item: elementDetails,
-              data: addition.data,
-              amount: added
-            });
+          if (element.custom) {
+            const itemDetails = customItems.find(i => i.$key === element.id);
+            const itemDetailsClone = new CustomItem();
+            Object.assign(itemDetailsClone, itemDetails);
+            itemDetailsClone.amount = element.amount * addition.amount;
+            itemDetailsClone.done = 0;
+            itemDetailsClone.used = 0;
+            itemDetailsClone.usePrice = true;
+            itemDetailsClone.id = itemDetails.$key;
+            const added = this.add(this.items, itemDetailsClone);
+            if (itemDetailsClone.requires !== undefined) {
+              return of({
+                data: itemDetailsClone,
+                amount: added
+              });
+            }
+            return of(null);
           } else {
-            this.add(this.items, {
-              id: elementDetails.id,
-              icon: elementDetails.icon,
-              amount: element.amount * addition.amount,
-              done: 0,
-              used: 0,
-              yield: 1,
-              usePrice: true
-            });
+            return dataService.getItem(+element.id).pipe(
+              map(elementItemData => {
+                const elementDetails = elementItemData.item;
+                if (elementDetails.isCraft()) {
+                  const yields = elementDetails.craft[0].yield || 1;
+                  const added = this.add(this.items, {
+                    id: elementDetails.id,
+                    icon: elementDetails.icon,
+                    amount: element.amount * addition.amount,
+                    requires: elementDetails.craft[0].ingredients,
+                    done: 0,
+                    used: 0,
+                    yield: yields,
+                    usePrice: true
+                  });
+                  return {
+                    item: elementDetails,
+                    data: elementItemData,
+                    amount: added
+                  };
+                } else {
+                  this.add(this.items, {
+                    id: elementDetails.id,
+                    icon: elementDetails.icon,
+                    amount: element.amount * addition.amount,
+                    done: 0,
+                    used: 0,
+                    yield: 1,
+                    usePrice: true
+                  });
+                }
+                listManager.addDetails(this, elementItemData);
+              })
+            );
           }
         }
-      }
-    }
-    if (nextIteration.length > 0) {
-      return this.addCraft(nextIteration, gt, i18n);
-    }
-    return this;
+      }),
+      tap((res) => {
+        if (res !== null && res !== undefined) {
+          nextIteration.push(res);
+        }
+        index++;
+        if (item.requires[index] !== undefined) {
+          queue$.next(item.requires[index]);
+        }
+      }),
+      skip(item.requires.length - 1),
+      map(() => {
+        return nextIteration;
+      })
+    );
   }
 
   private add(array: ListRow[], data: ListRow, recipe = false): number {
     let previousAmount = 0;
     let row = array.find(r => {
-      return r.id === data.id && r.recipeId === data.recipeId;
+      return (r.id === data.id && r.recipeId === data.recipeId) || (r.$key !== undefined && row.$key === data.$key);
     });
     if (row === undefined) {
       array.push(data);
@@ -415,7 +539,7 @@ export class List extends DataWithPermissions {
       row.amount = MathTools.absoluteCeil(row.amount + data.amount);
       previousAmount = row.amount_needed;
     }
-    row.amount_needed = Math.ceil(row.amount / row.yield);
+    row.amount_needed = Math.ceil(row.amount / (row.yield || 1));
     const added = row.amount_needed - previousAmount;
     if (added < 0 && recipe) {
       const previousDone = row.done;
@@ -451,9 +575,9 @@ export class List extends DataWithPermissions {
       return 0;
     }
     let count = 0;
-    this.forEachCraft(craft => {
+    this.forEachItemWithRequirement(craft => {
       // We have to use filter because some items (airships) might require twice the same item.
-      const requirements = (craft.requires || []).filter(req => req.id === item.id);
+      const requirements = (craft.requires || []).filter(req => req.id === item.id || +req.id === item.id);
       if (requirements.length > 0) {
         requirements.forEach(requirement => {
           count += craft.amount_needed * requirement.amount;

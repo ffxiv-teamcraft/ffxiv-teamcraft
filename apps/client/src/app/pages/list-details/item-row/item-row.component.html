@@ -1,22 +1,22 @@
 <div class="item-row" [class.odd]="odd" nz-row fxLayout="row wrap" [class.done]="item.amount <= item.done"
      [class.craftable]="canBeCrafted$ | async" [class.has-all-ingredients]="hasAllBaseIngredients$ | async">
   <div class="block left-block" nz-col nzXs="24" [nzSm]="item.alarms && item.alarms.length > 0?12:6" nzMd="6">
-    <div class="icon">
-      <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
+    <div class="icon" *ngIf="!item.custom">
+      <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName: item | i18n" [itemId]="item.id"
                      [width]="24"></app-item-icon>
     </div>
     <div>
-      <span class="item-name" ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
+      <span class="item-name" ngxClipboard [cbContent]="item.id | itemName: item | i18n" nz-tooltip
             *ngIf="settings.preferredCopyType === 'classic'"
             [nzTitle]="'Copy_item_name_to_clipboard' | translate"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
-        {{item.id | itemName | i18n}}
+        {{item.id | itemName: item | i18n}}
       </span>
-      <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;" nz-tooltip
+      <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;" nz-tooltip
             *ngIf="settings.preferredCopyType === 'isearch'"
             [nzTitle]="'Copy_isearch' | translate"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
-        {{item.id | itemName | i18n}}
+        {{item.id | itemName: item | i18n}}
       </span>
       <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
         <img src="./assets/icons/HQ.png" alt="" nz-tooltip
@@ -37,12 +37,12 @@
         </nz-badge>
       </button>
       <ul nz-menu *ngIf="userId$ | async as userId">
-        <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
+        <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
             *ngIf="settings.preferredCopyType === 'classic'"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
           {{'Copy_isearch' | translate}}
         </li>
-        <li nz-menu-item ngxClipboard [cbContent]="item.id | itemName | i18n"
+        <li nz-menu-item ngxClipboard [cbContent]="item.id | itemName: item | i18n"
             *ngIf="settings.preferredCopyType === 'isearch'"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
           {{'Copy_item_name_to_clipboard' | translate}}

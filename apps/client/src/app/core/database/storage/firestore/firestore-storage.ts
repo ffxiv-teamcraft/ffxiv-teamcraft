@@ -1,10 +1,10 @@
-import { from, Observable } from 'rxjs';
+import { EMPTY, from, Observable, of } from 'rxjs';
 import { DataModel } from '../data-model';
 import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { map, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { Action, AngularFirestore } from '@angular/fire/firestore';
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
@@ -21,7 +21,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       .pipe(
         map((ref: any) => {
           return ref.id;
-        }));
+        })
+      );
   }
 
   get(uid: string, uriParams?: any): Observable<T> {
@@ -70,10 +71,11 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       throw new Error('Empty uid');
     }
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).delete())
-      .pipe(tap(() => {
-        // If there's cache information, delete it.
-        this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri(uriParams)}/${uid}`);
-      }));
+      .pipe(
+        tap(() => {
+          // If there's cache information, delete it.
+          this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri(uriParams)}/${uid}`);
+        }));
   }
 
 }

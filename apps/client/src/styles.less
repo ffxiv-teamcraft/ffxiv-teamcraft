@@ -21,6 +21,10 @@ h1, h2, h3, h4, h5 {
   margin-top: 25px;
 }
 
+.fake-form-label {
+  visibility: hidden;
+}
+
 // Let's have nicer scrollbars ! credits to angular/aio: https://github.com/angular/angular/blob/3a30f5d937e64289ad9a89a1cbc4bd66d8a8867a/aio/src/styles/2-modules/_scrollbar.scss
 *::-webkit-scrollbar, *::-webkit-scrollbar, *::-webkit-scrollbar {
   height: 10px;
@@ -97,7 +101,7 @@ h1, h2, h3, h4, h5 {
     background-color: #352525;
   }
 
-  &-info, &-warning {
+  &-info, &-warning, &-error {
     .ant-alert-message {
       color: black !important;
     }

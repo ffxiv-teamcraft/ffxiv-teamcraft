@@ -36,6 +36,9 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
   public get(uid: string): Observable<TeamcraftUser> {
     return super.get(uid).pipe(
       switchMap(user => {
+        if (user === null) {
+          return of(new TeamcraftUser());
+        }
         if (user.patreonToken === undefined) {
           user.patron = false;
           return of(user);

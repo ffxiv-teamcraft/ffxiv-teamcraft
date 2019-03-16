@@ -47,6 +47,7 @@ import { PageLoaderModule } from './modules/page-loader/page-loader.module';
 import { MapModule } from './modules/map/map.module';
 import { LayoutModule } from './core/layout/layout.module';
 import { LoadingScreenModule } from './pages/loading-screen/loading-screen.module';
+import { CustomItemsModule } from './modules/custom-items/custom-items.module';
 
 registerLocaleData(en);
 
@@ -108,6 +109,7 @@ registerLocaleData(en);
     SimulatorModule,
     RotationsModule,
     CustomLinksModule,
+    CustomItemsModule,
     PageLoaderModule,
     LoadingScreenModule,
 

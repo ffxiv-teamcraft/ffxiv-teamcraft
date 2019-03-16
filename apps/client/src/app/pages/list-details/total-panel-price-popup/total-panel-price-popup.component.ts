@@ -40,9 +40,11 @@ export class TotalPanelPricePopupComponent implements OnInit {
       } else if (row.tradeSources !== undefined && row.tradeSources.length > 0) {
         const tradeSource = this.getTradeSourceByPriority(row.tradeSources);
         const trade = tradeSource.trades[0];
+        const itemsPerTrade = trade.items.find(item => item.id === row.id).amount;
         const costs = tradeSource.trades.sort((ta) => ta.items[0].hq ? 1 : -1).map(t => {
-          return t.currencies[0].amount * (row.amount - row.done);
+          return Math.ceil(t.currencies[0].amount * (row.amount - row.done) / itemsPerTrade);
         });
+
         const tradeRow = result.find(r => r.currencyId === trade.currencies[0].id);
 
         if (tradeRow === undefined) {

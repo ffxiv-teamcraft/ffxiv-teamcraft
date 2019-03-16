@@ -3,7 +3,6 @@ import { I18nName } from '../../model/common/i18n-name';
 import * as places from './sources/places.json';
 import * as mobs from './sources/mobs.json';
 import * as weathers from './sources/weathers.json';
-import * as npcs from './sources/npcs.json';
 import * as ventures from './sources/ventures.json';
 import * as freeCompanyActions from './sources/free-company-actions.json';
 import * as jobNames from './sources/job-name.json';
@@ -62,7 +61,7 @@ export class LocalizedDataService {
   }
 
   public getNpc(id: number): I18nName {
-    const row = this.getRow(npcs, id);
+    const row = this.getRow(this.lazyData.npcs, id);
     const koRow = this.getRow(this.lazyData.koNpcs, id);
 
     if (row !== undefined) {

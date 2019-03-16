@@ -156,6 +156,24 @@ export class PricingComponent implements AfterViewInit {
       }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
   }
 
+  public getSpendingText(rows: ListRow[], list: List): string {
+    return rows.filter(row => row.usePrice)
+      .reduce((total, row) => {
+        const price = this.pricingService.getPrice(row);
+        const amount = this.pricingService.getAmount(list.$key, row, true);
+        let priceString: string;
+        if (price.hq > 0 && amount.hq > 0) {
+          priceString = `${price.hq.toLocaleString()}gil x${amount.hq}(HQ)`;
+          if (price.nq > 0 || amount.nq > 0) {
+            priceString += `, ${price.nq.toLocaleString()}gil x${amount.nq}(NQ)`;
+          }
+        } else {
+          priceString = `${price.nq}gil x${amount.nq}(NQ)`;
+        }
+        return `${total}\n ${this.i18n.getName(this.l12n.getItem(row.id))}: ${priceString}`;
+      }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
+  }
+
   public afterCopy(): void {
     this.message.success(this.translate.instant('PRICING.Content_copied'));
   }
