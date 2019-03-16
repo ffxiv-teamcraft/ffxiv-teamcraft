@@ -664,7 +664,7 @@
       "No_food": "飯なし",
       "No_medicine": "薬なし",
       "No_fc_buffs": "フリーカンパニーのバフなし",
-      "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
+      "Quest_warning": "レベル70のジョブクエストから '魔匠の閃き' を獲得しましたか、必ずご確認下さい",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "作業精度",
@@ -830,70 +830,70 @@
     }
   },
   "CUSTOM_ITEMS": {
-    "Title": "Custom items",
-    "New_item": "Create new custom item",
-    "New_folder": "Create new folder",
-    "Rename_folder": "Rename folder",
-    "Import_items": "Import custom items",
-    "Save": "Save item",
-    "Details": "Item details",
-    "Export_item": "Export item",
-    "Export_items": "Export multiple items",
-    "Add_to_list": "Add to a list",
-    "No_items": "You have no custom items",
+    "Title": "カスタムアイテム",
+    "New_item": "カスタムアイテムを作成する",
+    "New_folder": "新規フォルダーを作成",
+    "Rename_folder": "フォルダー名を変更する",
+    "Import_items": "カスタムアイテムをインポート",
+    "Save": "アイテムを保存する",
+    "Details": "アイテムの詳細",
+    "Export_item": "アイテムをエクスポート",
+    "Export_items": "複数のアイテムをエクスポート",
+    "Add_to_list": "リストに追加する",
+    "No_items": "カスタムアイテムがありません",
     "DETAILS": {
-      "Level": "Level",
-      "None": "none",
-      "Stars": "Stars",
-      "Requirements": "Requirements",
-      "Add_requirement": "Add requirement",
-      "Yields": "Yields",
-      "Name": "Name",
-      "ID": "Item ID",
+      "Level": "レベル",
+      "None": "無し",
+      "Stars": "難易度",
+      "Requirements": "材料",
+      "Add_requirement": "材料追加",
+      "Yields": "制作個数",
+      "Name": "名",
+      "ID": "アイテム名",
       "CRAFT": {
-        "Title": "Crafted by",
-        "Job": "Job",
-        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+        "Title": "制作方法",
+        "Job": "ジョブ",
+        "No_requirement_warning": "アイテムに必要な材料を設定していません。どんな材料も無しで制作する事を意味します。"
       },
       "GATHERING": {
-        "Title": "Gathered by",
-        "Type": "Node type",
-        "Folklore": "Folklore",
-        "Slot": "Slot"
+        "Title": "採集方法",
+        "Type": "採集物類型",
+        "Folklore": "伝承録",
+        "Slot": "スロット"
       },
       "ALARMS": {
-        "Title": "Alarms"
+        "Title": "アラーム"
       },
       "VENDORS": {
-        "Title": "Vendors",
-        "Npc_name": "NPC name",
-        "Price": "Price",
-        "Delete_vendor": "Delete vendor"
+        "Title": "商人",
+        "Npc_name": "NPC 名",
+        "Price": "販売価格:",
+        "Delete_vendor": "商人を削除"
       },
       "TRADES": {
-        "Title": "Trade sources",
-        "Npc_name": "NPC name",
-        "Shop_name": "Shop name",
-        "Delete_trade": "Delete trade",
-        "Trade_details": "Trade details",
-        "Add_currency": "Add a currency"
+        "Title": "交換情報",
+        "Npc_name": "NPC 名",
+        "Shop_name": "商店名",
+        "Delete_trade": "交換情報を削除",
+        "Trade_details": "交換詳細",
+        "Add_currency": "交換用アイテム追加"
       },
       "REDUCTION": {
-        "Title": "Reduced from"
+        "Title": "精選で獲得"
       }
     },
     "NPC_PICKER": {
-      "Title": "Find a NPC",
-      "Npc_name": "NPC name"
+      "Title": "NPCを検索",
+      "Npc_name": "NPC 名"
     },
     "IMPORT": {
-      "Corrupted_file": "Import file is corrupted or wrong format",
-      "Drag_or_click": "Drag the file here or click to select it",
-      "Format": "Format",
-      "Folder": "Folder",
-      "No_folder": "No folder",
-      "Parsing_file": "Parsing file content...",
-      "Saving_items": "Saving items ({{done}}/{{todo}})"
+      "Corrupted_file": "インポートファイルが破損しているか、形式が間違っています",
+      "Drag_or_click": "ここでファイルをドラッグするか、クリックして選択して下さい",
+      "Format": "形式",
+      "Folder": "フォルダー",
+      "No_folder": "フォルダー無し",
+      "Parsing_file": "ファイルの内容を分析中",
+      "Saving_items": "({{done}}{{todo}}) を保存しました"
     }
   }
 }
