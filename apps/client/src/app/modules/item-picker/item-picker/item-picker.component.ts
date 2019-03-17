@@ -7,6 +7,7 @@ import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { SearchResult } from '../../../model/search/search-result';
 import { CustomItemsFacade } from '../../custom-items/+state/custom-items.facade';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-item-picker',
@@ -29,10 +30,16 @@ export class ItemPickerComponent implements OnInit {
 
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
               private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
-              private customItemsFacade: CustomItemsFacade) {
+              private customItemsFacade: CustomItemsFacade, private translate: TranslateService) {
     this.results$ = this.query$.pipe(
       debounceTime(500),
-      filter(query => query.length > 3),
+      filter(query => {
+        if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
+          // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
+          return query.length > 0;
+        }
+        return query.length > 3;
+      }),
       tap(() => this.loading = true),
       switchMap(query => {
         return this.dataService.searchItem(query, [], this.onlyCraftable).pipe(
@@ -47,8 +54,6 @@ export class ItemPickerComponent implements OnInit {
                   .map(item => {
                     return <SearchResult>{
                       itemId: item.$key,
-                      // TODO put custom item icon here
-                      icon: '',
                       amount: 1,
                       isCustom: true
                     };
