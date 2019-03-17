@@ -44,10 +44,10 @@
            [model]="list">
         <app-list-panel [list]="list" [hideAvatar]="true"></app-list-panel>
       </div>
-      <app-fullpage-message *ngIf="lists.otherLists.length === 0 && !(loading$ | async)" height="150px">
-        {{'LISTS.No_lists' | translate}}
-      </app-fullpage-message>
     </div>
+    <app-fullpage-message *ngIf="lists.otherLists.length === 0 && !(loading$ | async)" height="150px">
+      {{'LISTS.No_lists' | translate}}
+    </app-fullpage-message>
     <nz-divider [nzText]="'TEAMS.Title' | translate" nzOrientation="left"></nz-divider>
     <nz-collapse *ngFor="let teamDisplay of teamsDisplays$ | async;trackBy: trackByTeam">
       <nz-collapse-panel nzHeader="{{teamDisplay.team.name}} ({{teamDisplay.lists.length}})">
