@@ -155,9 +155,19 @@ const craftingLogPages = [
   []
 ];
 
+const gatheringLog = [
+  [],
+  []
+];
 
 
-function addToLogPage(entry, pageId) {
+const gatheringLogPages = [
+  [],
+  []
+];
+
+
+function addToCraftingLogPage(entry, pageId) {
   let page = craftingLogPages[entry.CraftType.ID].find(page => page.id === pageId);
   if (page === undefined) {
     craftingLogPages[entry.CraftType.ID].push({
@@ -177,6 +187,26 @@ function addToLogPage(entry, pageId) {
   });
 }
 
+function addToGatheringLogPage(entry, pageId, gathererIndex) {
+  let page = gatheringLogPages[gathererIndex].find(page => page.id === pageId);
+  if (page === undefined) {
+    gatheringLogPages[gathererIndex].push({
+      id: pageId,
+      startLevel: entry.GatheringItemLevel.GatheringItemLevel,
+      items: []
+    });
+    page = gatheringLogPages[gathererIndex].find(page => page.id === pageId);
+  }
+  page.items.push({
+    itemId: entry.Item,
+    ilvl: entry.GatheringItemLevelTargetID,
+    lvl: entry.GatheringItemLevel.GatheringItemLevel,
+    //TODO icon
+    stars: entry.GatheringItemLevel.Stars,
+    hidden: entry.IsHidden
+  });
+}
+
 getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
   completeFetch.forEach(page => {
     // If it's an empty page, don't go further
@@ -193,7 +223,43 @@ getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', t
       .forEach(key => {
         const entry = page[key];
         craftingLog[entry.CraftType.ID].push(entry.ID);
-        addToLogPage(entry, page.ID);
+        addToCraftingLogPage(entry, page.ID);
+      });
+  });
+  persistToTypescript('crafting-log', 'craftingLog', craftingLog);
+  persistToTypescript('crafting-log-pages', 'craftingLogPages', craftingLogPages);
+});
+
+getAllEntries('https://xivapi.com/GatheringNotebookList', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+  completeFetch.forEach(page => {
+    // If it's an empty page, don't go further
+    if (!page.GatheringItem0 || page.GatheringItem0.ID === -1) {
+      return;
+    }
+    Object.keys(page)
+      .filter(key => {
+        return /^GatheringItem\d+$/.test(key) && page[key] && page[key].ID !== -1 && page[key].ID !== null;
+      })
+      .sort((a, b) => {
+        return +a.match(/^GatheringItem(\d+)$/)[1] - +b.match(/^GatheringItem(\d+)$/)[1];
+      })
+      .forEach(key => {
+        const entry = page[key];
+        // 0 = MIN, 1 = BTN
+        let gathererIndex = -1;
+        if (page.ID < 80) {
+          gathererIndex = 0;
+        } else if (page.ID < 200) {
+          gathererIndex = 1;
+        } else {
+          if ([2000, 2001, 2004, 2005, 2008, 2009, 2010, 2012, 2016].indexOf(page.ID)) {
+            gathererIndex = 0;
+          } else {
+            gathererIndex = 1;
+          }
+        }
+        gatheringLog[gathererIndex].push(entry.Item);
+        addToGatheringLogPage(entry, page.ID, gathererIndex);
       });
   });
   persistToTypescript('crafting-log', 'craftingLog', craftingLog);
