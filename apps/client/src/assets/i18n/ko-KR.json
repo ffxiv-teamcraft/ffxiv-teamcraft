@@ -879,7 +879,7 @@
         "Add_currency": "교환용 아이템 추가"
       },
       "REDUCTION": {
-        "Title": "정제로 얻기"
+        "Title": "정제 방식"
       }
     },
     "NPC_PICKER": {
@@ -893,7 +893,7 @@
       "Folder": "폴더",
       "No_folder": "폴더 없음",
       "Parsing_file": "파일 내용 분석중..",
-      "Saving_items": "({{done}}{{todo}}) 를 저장하였습니다"
+      "Saving_items": "아이템 저장 중 ({{done}}/{{todo}})"
     }
   }
 }
