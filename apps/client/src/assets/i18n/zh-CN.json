@@ -677,7 +677,6 @@
       "NOT_ENOUGH_CP": "制作力不足",
       "MISSING_LEVEL_REQUIREMENT": "等级不够",
       "NOT_SPECIALIST": "使用了专家工序，但你不是专家",
-      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
   },
@@ -813,6 +812,7 @@
     "Mark_as_done": "将此物品标记为已完成",
     "Mark_as_not_done": "将此物品标记为未完成",
     "Create_list": "创建一个列表以完成这个页面",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
