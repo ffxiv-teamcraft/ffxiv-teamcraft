@@ -262,8 +262,8 @@ getAllEntries('https://xivapi.com/GatheringNotebookList', '63cc0045d7e847149c3f'
         addToGatheringLogPage(entry, page.ID, gathererIndex);
       });
   });
-  persistToTypescript('crafting-log', 'craftingLog', craftingLog);
-  persistToTypescript('crafting-log-pages', 'craftingLogPages', craftingLogPages);
+  persistToTypescript('gathering-log', 'gatheringLog', gatheringLog);
+  persistToTypescript('gathering-log-pages', 'gatheringLogPages', gatheringLogPages);
 });
 
 // Weather index extraction
