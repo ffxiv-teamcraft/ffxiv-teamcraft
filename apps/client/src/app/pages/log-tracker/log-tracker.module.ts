@@ -15,6 +15,11 @@ import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'DoH',
+    pathMatch: 'full'
+  },
+  {
+    path: ':type',
     component: LogTrackerComponent,
     canActivate: [MaintenanceGuard]
   }

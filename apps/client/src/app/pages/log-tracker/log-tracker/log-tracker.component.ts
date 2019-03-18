@@ -9,7 +9,7 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { combineLatest, concat, Observable, of } from 'rxjs';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-tracker',
@@ -18,18 +18,20 @@ import { Router } from '@angular/router';
 })
 export class LogTrackerComponent {
 
-  public tabs: any[];
+  public dohTabs: any[];
 
-  private pageNameCache: { [index: number]: string } = {};
+  private dohPageNameCache: { [index: number]: string } = {};
 
   public userCompletion: { [index: number]: boolean } = {};
 
-  public selectedPage = 0;
+  public dohSelectedPage = 0;
+
+  public type$: Observable<number>;
 
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
-              private progressService: ProgressPopupService, private router: Router) {
-    this.tabs = [...craftingLogPages];
+              private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute) {
+    this.dohTabs = [...craftingLogPages];
     this.authFacade.user$.pipe(
       map(user => user.logProgression)
     ).subscribe(completion => {
@@ -37,6 +39,19 @@ export class LogTrackerComponent {
       completion.forEach(recipeId => {
         this.userCompletion[recipeId] = true;
       });
+    });
+    this.type$ = this.route.paramMap.pipe(
+      map(params => {
+        const type = params.get('type');
+        // We have to +1 it because javascript evaluates 0 as false and we use it inside a *ngIf
+        return ['DoH', 'DoL', 'FSH'].indexOf(type) + 1;
+      })
+    );
+  }
+
+  public setType(index: number): void {
+    this.router.navigate(['../', ['DoH', 'DoL', 'FSH'][index]], {
+      relativeTo: this.route
     });
   }
 
@@ -107,10 +122,10 @@ export class LogTrackerComponent {
   }
 
   public getPageName(page: any): string {
-    if (this.pageNameCache[page.id] === undefined) {
-      this.pageNameCache[page.id] = this._getPageName(page);
+    if (this.dohPageNameCache[page.id] === undefined) {
+      this.dohPageNameCache[page.id] = this._getPageName(page);
     }
-    return this.pageNameCache[page.id];
+    return this.dohPageNameCache[page.id];
   }
 
   public isRequiredForAchievement(page: any): boolean {
