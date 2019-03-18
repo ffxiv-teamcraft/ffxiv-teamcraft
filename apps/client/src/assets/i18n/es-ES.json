@@ -812,6 +812,7 @@
     "Mark_as_done": "Marcar este artículo como hecho",
     "Mark_as_not_done": "Marcar este artículo como no hecho",
     "Create_list": "Crear una lista para completar esta página",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Recetas maestras ({{number}})",
       "Housing_items": "Artículos de vivienda({{number}})",
