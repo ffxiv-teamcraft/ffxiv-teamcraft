@@ -812,6 +812,7 @@
     "Mark_as_done": "Marcar este item como concluído",
     "Mark_as_not_done": "Marcar este item como não concluído",
     "Create_list": "Criar uma lista para completar esta página",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Receitas de mestre ({{number}})",
       "Housing_items": "Casa({{number}})",
