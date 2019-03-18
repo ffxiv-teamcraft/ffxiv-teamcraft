@@ -530,7 +530,7 @@ export class List extends DataWithPermissions {
   private add(array: ListRow[], data: ListRow, recipe = false): number {
     let previousAmount = 0;
     let row = array.find(r => {
-      return (r.id === data.id && r.recipeId === data.recipeId) || (r.$key !== undefined && row.$key === data.$key);
+      return (r.id === data.id && r.recipeId === data.recipeId) || (r.$key !== undefined && r.$key === data.$key);
     });
     if (row === undefined) {
       array.push(data);

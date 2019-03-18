@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.2"></a>
+## [5.1.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.1...v5.1.2) (2019-03-18)
+
+
+### Bug Fixes
+
+* **custom-items:** fixed an issue preventing addition of multiple custom items inside a list ([1983dee](https://github.com/Supamiu/ffxiv-teamcraft/commit/1983dee))
+* **desktop:** removed update message banner now that auto updater is fixed ([3e17aa1](https://github.com/Supamiu/ffxiv-teamcraft/commit/3e17aa1))
+
+
+
 <a name="5.1.1"></a>
 ## [5.1.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.0...v5.1.1) (2019-03-17)
 
