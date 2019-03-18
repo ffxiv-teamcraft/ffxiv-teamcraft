@@ -812,6 +812,7 @@
     "Mark_as_done": "Marquer comme fait",
     "Mark_as_not_done": "Marquer comme non fait",
     "Create_list": "Créer une liste pour compléter cette page",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
