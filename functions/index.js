@@ -14,6 +14,9 @@ function getCompact(list) {
       amount: item.amount,
       amount_needed: item.amount_needed
     };
+    if (item.craftedBy) {
+      entry.craftedBy = item.craftedBy;
+    }
     if (item.custom) {
       entry.$key = item.$key;
       entry.id = item.id;

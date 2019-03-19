@@ -54,7 +54,6 @@
   "Collectable_flag": "Collectable",
   "Compact_display": "Compact display",
   "Mute_alarms": "Mute alarms",
-  "Unmute_alarms": "Unmute alarms",
   "Hide_used": "Hide used rows",
   "Collapse_if_done": "Collapse if done",
   "Retainer_ventures": "Retainer ventures",
@@ -515,7 +514,6 @@
     "Template_created": "List template created",
     "Dialog_title": "Template creation",
     "Link_name": "Template name",
-    "target": "Target list",
     "Share_link_copied": "Template share link copied to the clipboard",
     "Copy_template_url": "Copy template url",
     "Cloning_list": "Creating a copy of the list to your account",
@@ -812,6 +810,7 @@
     "Mark_as_done": "Mark this item as done",
     "Mark_as_not_done": "Mark this item as not done",
     "Create_list": "Create a list to complete this page",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",

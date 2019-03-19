@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.3"></a>
+## [5.1.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.2...v5.1.3) (2019-03-19)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with closest aetheryte missing when created from list ([01a9364](https://github.com/Supamiu/ffxiv-teamcraft/commit/01a9364))
+* **alarms:** mute toggle is now a proper toggle instead of a confusing button ([1875db3](https://github.com/Supamiu/ffxiv-teamcraft/commit/1875db3))
+* **auth:** fixed an issue with character being asked while it shouldn't be ([0e49219](https://github.com/Supamiu/ffxiv-teamcraft/commit/0e49219))
+* **custom-items:** inverted both export and import button icons ([353fb35](https://github.com/Supamiu/ffxiv-teamcraft/commit/353fb35))
+* **lists:** lists and their content aren't reordered anymore when editing amounts (not retroactive) ([0053aa6](https://github.com/Supamiu/ffxiv-teamcraft/commit/0053aa6))
+* **log-tracker:** added translation entry for the * character tooltip ([cfd64be](https://github.com/Supamiu/ffxiv-teamcraft/commit/cfd64be))
+
+
+### Features
+
+* support for Korean 4.41 update ([16d6cd2](https://github.com/Supamiu/ffxiv-teamcraft/commit/16d6cd2))
+
+
+
 <a name="5.1.2"></a>
 ## [5.1.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.1...v5.1.2) (2019-03-18)
 
