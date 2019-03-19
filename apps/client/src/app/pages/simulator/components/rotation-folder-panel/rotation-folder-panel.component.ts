@@ -107,7 +107,11 @@ export class RotationFolderPanelComponent {
     });
   }
 
-  onCraftingRotationDrop(rotation: CraftingRotation, index: number): void {
+  onCraftingRotationDrop(event: any): void {
+    const index = event.dropIndex;
+    const rotation = event.value;
+    // Remove the node we just created, we don't need it.
+    event.el.parentNode.removeChild(event.el);
     this._folder.rotationIds = this._folder.rotationIds.filter(key => key !== rotation.$key);
     this._folder.rotationIds.splice(index, 0, rotation.$key);
     this.foldersFacade.updateFolder(this._folder);

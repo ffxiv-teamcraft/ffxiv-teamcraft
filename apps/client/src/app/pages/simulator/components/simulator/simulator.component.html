@@ -425,9 +425,9 @@
           <i nz-icon type="exclamation-circle" theme="twotone" [twoToneColor]="'#aa9400'" class="warning-icon"
              nz-tooltip [nzTitle]="'SIMULATOR.Unsaved_changes' | translate" *ngIf="dirty"></i>
           <div fxLayout="row wrap" ngxDroppable="action" fxLayoutGap="10px" class="actions-container ngx-dnd-container"
-               (drop)="actionDrop($event)">
+               (drop)="actionDrop($event)" (cancel)="dragCancel($event)">
             <div *ngFor="let step of resultData.steps;let i = index;" [ngxDraggable]="['action']"
-                 class="ngx-dnd-item action-container" [model]="step.action" (drag)="removeAction(i)"
+                 class="ngx-dnd-item action-container" [model]="step.action" (drag)="actionDrag(i)" 
                  [moves]="step.action.canBeMoved()">
               <app-action [action]="step.action"
                           [simulation]="resultData.simulation"

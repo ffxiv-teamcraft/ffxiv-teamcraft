@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { EorzeanTimeService } from '../time/eorzean-time.service';
 import { AlarmsFacade } from './+state/alarms.facade';
-import { combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { combineLatest, of } from 'rxjs';
+import { first, map, switchMap } from 'rxjs/operators';
 import { Alarm } from './alarm';
 import { LocalizedDataService } from '../data/localized-data.service';
 import { SettingsService } from '../../modules/settings/settings.service';
@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { PushNotificationsService } from 'ng-push';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { I18nToolsService } from '../tools/i18n-tools.service';
+import { MapService } from '../../modules/map/map.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class AlarmBellService {
   constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade, private l12n: LocalizedDataService,
               private settings: SettingsService, private platform: PlatformService, private ipc: IpcService,
               private localizedData: LocalizedDataService, private translate: TranslateService, private pushNotificationsService: PushNotificationsService,
-              private notificationService: NzNotificationService, private i18n: I18nToolsService) {
+              private notificationService: NzNotificationService, private i18n: I18nToolsService, private mapService: MapService) {
     this.initBell();
   }
 
@@ -77,33 +78,55 @@ export class AlarmBellService {
     localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
   }
 
-  public notify(alarm: Alarm): void {
-    let aetheryteName;
-    if (alarm.aetheryte) {
-      aetheryteName = this.i18n.getName(this.localizedData.getPlace(alarm.aetheryte.nameid));
-    }
-    const notificationIcon = alarm.icon ? `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png` : 'https://ffxivteamcraft.com/assets/logo.png';
-    const notificationTitle = alarm.itemId ? this.i18n.getName(this.localizedData.getItem(alarm.itemId)) : alarm.name;
-    const notificationBody = `${this.i18n.getName(this.localizedData.getPlace(alarm.zoneId || alarm.mapId))} - `
-      + `${aetheryteName ? aetheryteName : ''}` +
-      (alarm.slot !== undefined ? ` - Slot ${alarm.slot}` : '');
-    if (this.platform.isDesktop()) {
-      this.ipc.send('notification', {
-        title: notificationTitle,
-        content: notificationBody,
-        icon: notificationIcon
-      });
-    } else {
-      this.pushNotificationsService.create(notificationTitle,
-        {
-          icon: notificationIcon,
-          sticky: false,
-          renotify: false,
-          body: notificationBody
+  public notify(_alarm: Alarm): void {
+    of(_alarm).pipe(
+      switchMap(alarm => {
+        if (alarm.aetheryte) {
+          return of(alarm);
         }
-      );
-      this.notificationService.info(notificationTitle, notificationBody);
-    }
+        return this.mapService.getMapById(alarm.mapId)
+          .pipe(
+            map((mapData) => {
+              if (mapData !== undefined) {
+                return this.mapService.getNearestAetheryte(mapData, alarm.coords);
+              } else {
+                return undefined;
+              }
+            }),
+            map(aetheryte => {
+              if (aetheryte !== undefined) {
+                alarm.aetheryte = aetheryte;
+              }
+              return alarm;
+            })
+          );
+      }),
+      first()
+    ).subscribe(alarm => {
+      const aetheryteName = this.i18n.getName(this.localizedData.getPlace(alarm.aetheryte.nameid));
+      const notificationIcon = alarm.icon ? `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png` : 'https://ffxivteamcraft.com/assets/logo.png';
+      const notificationTitle = alarm.itemId ? this.i18n.getName(this.localizedData.getItem(alarm.itemId)) : alarm.name;
+      const notificationBody = `${this.i18n.getName(this.localizedData.getPlace(alarm.zoneId || alarm.mapId))} - `
+        + `${aetheryteName ? aetheryteName : ''}` +
+        (alarm.slot !== undefined && alarm.slot !== null ? ` - Slot ${alarm.slot}` : '');
+      if (this.platform.isDesktop()) {
+        this.ipc.send('notification', {
+          title: notificationTitle,
+          content: notificationBody,
+          icon: notificationIcon
+        });
+      } else {
+        this.pushNotificationsService.create(notificationTitle,
+          {
+            icon: notificationIcon,
+            sticky: false,
+            renotify: false,
+            body: notificationBody
+          }
+        );
+        this.notificationService.info(notificationTitle, notificationBody);
+      }
+    });
   }
 
   private getLastPlayed(alarm: Alarm): number {
