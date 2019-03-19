@@ -500,10 +500,10 @@
   },
   "GATHERING_LOCATIONS": {
     "Title": "Itens a colheita",
-    "No_items": "No gathering node found",
+    "No_items": "Nenhum node de colheita encontrado",
     "Gathering_name": "Escreva o nome do item",
     "Ephemeral_node": "Node temporária, pode reaparecer",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !",
+    "Intro": "A localização de colheita tanto-lhe permite facilmente encontrar um item colhível, como informações sobre o mesmo, e criar um alarme para um determinado node. Basta inserir um nome no campo acima e deixe-o encontrar o que está á procura!",
     "Hidden_item": "Escondido"
   },
   "ANNOUNCEMENT": {
@@ -511,10 +511,10 @@
     "Read_more": "Ler mais"
   },
   "LIST_TEMPLATE": {
-    "Create_template": "Create a list template for this list",
-    "Template_created": "List template created",
-    "Dialog_title": "Template creation",
-    "Link_name": "Template name",
+    "Create_template": "Criar um modelo para esta lista",
+    "Template_created": "Modelo de lista criado",
+    "Dialog_title": "Criação de modelo",
+    "Link_name": "Nome do modelo",
     "target": "Target list",
     "Share_link_copied": "Template share link copied to the clipboard",
     "Copy_template_url": "Copy template url",
@@ -794,7 +794,7 @@
     "DESCRIPTION": {
       "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
-      "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame, everything is possible.",
+      "Alarms": "Crie alarmes para garantir que não perca um aparecimento de um node, organize-os em grupos, importe-os para o jogo, tudo é possível.",
       "Gathering_location": "Encontre informações sobre qualquer item de colheita, crie um alarme, obtenha coordenadas instantâneas, aetheryte mais próximo, livro necessário e muito mais !",
       "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
       "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
