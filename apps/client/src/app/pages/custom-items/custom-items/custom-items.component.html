@@ -13,11 +13,11 @@
       </button>
       <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip (click)="importItems()"
               [nzTitle]="'CUSTOM_ITEMS.Import_items' | translate">
-        <i nz-icon type="upload"></i>
+        <i nz-icon type="download"></i>
       </button>
       <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip (click)="exportMultipleItems(display)"
               [nzTitle]="'CUSTOM_ITEMS.Export_items' | translate">
-        <i nz-icon type="download"></i>
+        <i nz-icon type="upload"></i>
       </button>
     </div>
     <div *ngIf="display.otherItems.length === 0 && display.folders.length === 0; else itemsDisplay">
