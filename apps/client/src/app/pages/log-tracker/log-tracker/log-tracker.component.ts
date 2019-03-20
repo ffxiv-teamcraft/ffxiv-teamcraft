@@ -16,6 +16,10 @@ import { folklores } from '../../../core/data/sources/folklores';
 import { reductions } from '../../../core/data/sources/reductions';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { Alarm } from '../../../core/alarms/alarm';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 
 @Component({
   selector: 'app-log-tracker',
@@ -43,12 +47,18 @@ export class LogTrackerComponent {
 
   public type$: Observable<number>;
 
+  public alarmsLoaded$: Observable<boolean>;
+  public alarms$: Observable<Alarm[]>;
+  public alarmGroups$: Observable<AlarmGroup[]>;
+
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
-              private bell: BellNodesService, private l12n: LocalizedDataService) {
+              private bell: BellNodesService, private l12n: LocalizedDataService, private alarmsFacade: AlarmsFacade) {
     this.dohTabs = [...craftingLogPages];
     this.dolTabs = [...gatheringLogPages];
+    this.alarmsLoaded$ = this.alarmsFacade.loaded$;
+    this.alarms$ = this.alarmsFacade.allAlarms$;
     this.authFacade.user$.pipe(
     ).subscribe(user => {
       this.userCompletion = {};
@@ -218,7 +228,7 @@ export class LogTrackerComponent {
         return { ...nodePositions[key], nodeId: key };
       })
       .filter(node => {
-        return node.type  === tab;
+        return node.type === tab;
       })
       .map(node => {
         const bellNode = this.bell.getNode(+node.nodeId);
@@ -245,43 +255,36 @@ export class LogTrackerComponent {
         }
         return node;
       });
-    const nodesFromGarlandBell = [].concat.apply([],
-      [itemId, ...reductions[itemId]].map(reductionItemId => {
-        return this.bell.getNodesByItemId(reductionItemId)
-          .filter(node => {
-            return node.type === tab;
-          })
-          .map(node => {
-            const nodePosition = nodePositions[node.id];
-            const result: any = {
-              nodeId: node.id,
-              zoneid: this.l12n.getAreaIdByENName(node.zone),
-              mapId: nodePosition ? nodePosition.map : this.l12n.getAreaIdByENName(node.zone),
-              x: node.coords[0],
-              y: node.coords[1],
-              level: node.lvl,
-              type: node.type,
-              itemId: node.itemId,
-              icon: node.icon,
-              spawnTimes: node.time,
-              uptime: node.uptime,
-              slot: node.slot,
-              timed: true,
-              reduction: reductions[itemId] && reductions[itemId].indexOf(node.itemId) > -1,
-              ephemeral: node.name === 'Ephemeral',
-              items: node.items
-            };
-            const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(itemId) > -1);
-            if (folklore !== undefined) {
-              result.folklore = {
-                id: +folklore,
-                icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
-              };
-            }
-            return result;
-          });
-      })
-    );
+    const nodesFromGarlandBell = this.bell.getNodesByItemId(itemId)
+      .map(node => {
+        const nodePosition = nodePositions[node.id];
+        const result: any = {
+          nodeId: node.id,
+          zoneid: this.l12n.getAreaIdByENName(node.zone),
+          mapId: nodePosition ? nodePosition.map : this.l12n.getAreaIdByENName(node.zone),
+          x: node.coords[0],
+          y: node.coords[1],
+          level: node.lvl,
+          type: node.type,
+          itemId: node.itemId,
+          icon: node.icon,
+          spawnTimes: node.time,
+          uptime: node.uptime,
+          slot: node.slot,
+          timed: true,
+          reduction: reductions[itemId] && reductions[itemId].indexOf(node.itemId) > -1,
+          ephemeral: node.name === 'Ephemeral',
+          items: node.items
+        };
+        const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(itemId) > -1);
+        if (folklore !== undefined) {
+          result.folklore = {
+            id: +folklore,
+            icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
+          };
+        }
+        return result;
+      });
     const results = [...nodesFromPositions, ...nodesFromGarlandBell];
     const finalNodes = [];
     results
@@ -299,6 +302,41 @@ export class LogTrackerComponent {
         }
       });
     return finalNodes;
+  }
+
+  public getAlarm(node: any): Partial<Alarm> | null {
+    if (!node.timed) {
+      return null;
+    }
+    return {
+      itemId: node.itemId,
+      icon: node.icon,
+      duration: node.uptime / 60,
+      zoneId: node.zoneid,
+      areaId: node.areaid,
+      slot: +node.slot,
+      type: node.type,
+      coords: {
+        x: node.x,
+        y: node.y
+      },
+      folklore: node.folklore,
+      reduction: node.reduction,
+      ephemeral: node.ephemeral,
+      nodeContent: node.items,
+      spawns: node.spawnTimes,
+      mapId: node.mapId,
+      baits: node.baits || [],
+      weathers: node.weathers
+    };
+  }
+
+  public toggleAlarm(display: AlarmDisplay): void {
+    //TODO
+  }
+
+  public addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
+    //TODO
   }
 
   private _getDohPageName(page: any): string {

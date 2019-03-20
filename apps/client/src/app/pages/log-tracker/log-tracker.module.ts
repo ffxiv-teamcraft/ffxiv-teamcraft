@@ -13,6 +13,7 @@ import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { MapPositionComponent } from '../../modules/map/map-position/map-position.component';
 import { MapModule } from '../../modules/map/map.module';
+import { AlarmsModule } from '../../core/alarms/alarms.module';
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ const routes: Routes = [
     ListPickerModule,
     ProgressPopupModule,
     MapModule,
+    AlarmsModule,
     RouterModule.forChild(routes),
 
     NgZorroAntdModule
