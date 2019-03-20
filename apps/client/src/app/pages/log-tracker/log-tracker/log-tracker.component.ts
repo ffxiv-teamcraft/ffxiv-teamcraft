@@ -332,11 +332,16 @@ export class LogTrackerComponent {
   }
 
   public toggleAlarm(display: AlarmDisplay): void {
-    //TODO
+    if (display.registered) {
+      this.alarmsFacade.deleteAlarm(display.alarm);
+    } else {
+      this.alarmsFacade.addAlarms(display.alarm);
+    }
   }
 
   public addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
-    //TODO
+    alarm.groupId = group.$key;
+    this.alarmsFacade.addAlarms(alarm);
   }
 
   private _getDohPageName(page: any): string {
@@ -361,7 +366,7 @@ export class LogTrackerComponent {
   }
 
   private _getDolPageName(page: any): string {
-    return `${Math.floor(page.startLevel / 5) * 5 + 1} - ${Math.floor((page.startLevel + 4) / 5) * 5}`;
+    return `${page.id} ${Math.floor(page.startLevel / 5) * 5 + 1} - ${Math.floor((page.startLevel + 4) / 5) * 5}`;
   }
 
   private getMasterbookIndex(page: any): number {

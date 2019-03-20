@@ -84,7 +84,7 @@
             </ng-template>
             <nz-spin [nzSpinning]="userCompletion === {}">
               <div fxLayout="column" *ngIf="dolSelectedPage === page.id">
-                <div class="toolbar" fxLayout="row" fxLayoutGap="5px" fxLayout.lt-md="column">
+                <div class="toolbar" fxLayout="row" fxLayoutAlign="flex-end" fxLayoutGap="5px" fxLayout.lt-md="column">
                   <button nz-button (click)="markDolPageAsDone(page)">
                     <i nz-icon type="check"></i> {{'LOG_TRACKER.Mark_page_as_done' | translate}}
                   </button>
@@ -98,46 +98,49 @@
                       </div>
                       <div class="recipe-details">lvl {{item.ilvl}} {{item.stars | ingameStars}}</div>
                     </div>
-                    <div nz-col [nzMd]="16" fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column">
+                    <div nz-col [nzMd]="16" fxLayout="row" fxLayout.lt-md="column">
                       <ng-container *ngIf="getNodeData(item.itemId, dolSelectedPage) as nodeData">
-                        <div *ngFor="let node of nodeData" fxLayout="column" fxLayoutAlign="center center"
-                             fxLayoutGap="5px">
-                          <div>
-                            <app-map-position [showZoneName]="true"
-                                              [mapId]="node.mapId"
-                                              [zoneId]="node.zoneid"
-                                              [marker]="{x: node.x, y: node.y}"></app-map-position>
+                        <div *ngFor="let node of nodeData; let last = last" fxLayout="row"
+                             fxLayoutAlign="flex-start center">
+                          <div fxLayout="column" fxLayoutAlign="center center">
+                            <div>
+                              <app-map-position [showZoneName]="true"
+                                                [mapId]="node.mapId"
+                                                [zoneId]="node.zoneid"
+                                                [marker]="{x: node.x, y: node.y}"></app-map-position>
+                            </div>
+                            <div *ngIf="node.timed">
+                              <ng-container *ngIf="getAlarm(node) as alarm">
+                                <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
+                                  <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"
+                                          nz-tooltip
+                                          [nzGhost]="!display.registered"
+                                          (click)="toggleAlarm(display)">
+                                    <i nz-icon type="clock-circle-o" *ngIf="!display.registered"></i>
+                                    <i nz-icon type="close-circle-o" *ngIf="display.registered"></i>
+                                    {{display.remainingTime | timer}}
+                                    <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
+                                    <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
+                                  </button>
+                                  <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
+                                    <nz-dropdown *ngIf="!display.registered && alarmGroups.length > 0"
+                                                 [nzPlacement]="'bottomCenter'">
+                                      <button nz-button [nzSize]="'small'" nz-dropdown>
+                                        <i nz-icon type="ellipsis"></i>
+                                      </button>
+                                      <ul nz-menu>
+                                        <li nz-menu-item *ngFor="let group of alarmGroups"
+                                            (click)="addAlarmWithGroup(alarm, group)">
+                                          {{group.name}}
+                                        </li>
+                                      </ul>
+                                    </nz-dropdown>
+                                  </ng-container>
+                                </nz-button-group>
+                              </ng-container>
+                            </div>
                           </div>
-                          <div *ngIf="node.timed">
-                            <ng-container *ngIf="getAlarm(node) as alarm">
-                              <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
-                                <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"
-                                        nz-tooltip
-                                        [nzGhost]="!display.registered"
-                                        (click)="toggleAlarm(display)">
-                                  <i nz-icon type="clock-circle-o" *ngIf="!display.registered"></i>
-                                  <i nz-icon type="close-circle-o" *ngIf="display.registered"></i>
-                                  {{display.remainingTime | timer}}
-                                  <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
-                                  <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
-                                </button>
-                                <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
-                                  <nz-dropdown *ngIf="!display.registered && alarmGroups.length > 0"
-                                               [nzPlacement]="'bottomCenter'">
-                                    <button nz-button [nzSize]="'small'" nz-dropdown>
-                                      <i nz-icon type="ellipsis"></i>
-                                    </button>
-                                    <ul nz-menu>
-                                      <li nz-menu-item *ngFor="let group of alarmGroups"
-                                          (click)="addAlarmWithGroup(alarm, group)">
-                                        {{group.name}}
-                                      </li>
-                                    </ul>
-                                  </nz-dropdown>
-                                </ng-container>
-                              </nz-button-group>
-                            </ng-container>
-                          </div>
+                          <nz-divider *ngIf="!last" nzType="vertical"></nz-divider>
                         </div>
                       </ng-container>
                     </div>

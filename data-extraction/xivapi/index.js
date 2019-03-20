@@ -278,14 +278,16 @@ if (hasTodo('gatheringLog')) {
           } else if (page.ID < 200) {
             gathererIndex = 3;
           } else {
-            gathererIndex = 0;
-            if ([2000, 2001, 2004, 2005, 2008, 2009, 2010, 2012, 2016].indexOf(page.ID)) {
-              page.ID = 2000;
-              gathererIndex = 0;
-            } else {
-              page.ID = 2001;
-              gathererIndex = 1;
-            }
+            gathererIndex = (page.ID - 2000) % 4;
+            // if ([2001, 2005, 2009].indexOf(page.ID) > -1) {
+            //   gathererIndex = 0;
+            // } else if ([2000, 2004, 2008, 2012, 2016].indexOf(page.ID) > -1) {
+            //   gathererIndex = 1;
+            // } else if ([2006, 2010, 2014].indexOf(page.ID) > -1) {
+            //   gathererIndex = 2;
+            // } else if ([2003, 2007, 2011, 2015, 2019].indexOf(page.ID) > -1) {
+            //   gathererIndex = 3;
+            // }
           }
           gatheringLog[gathererIndex].push(entry.Item);
           addToGatheringLogPage(entry, page.ID, gathererIndex);
