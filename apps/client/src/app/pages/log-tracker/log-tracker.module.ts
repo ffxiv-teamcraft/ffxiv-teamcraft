@@ -11,6 +11,8 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
+import { MapPositionComponent } from '../../modules/map/map-position/map-position.component';
+import { MapModule } from '../../modules/map/map.module';
 
 const routes: Routes = [
   {
@@ -36,6 +38,7 @@ const routes: Routes = [
     ItemIconModule,
     ListPickerModule,
     ProgressPopupModule,
+    MapModule,
     RouterModule.forChild(routes),
 
     NgZorroAntdModule

@@ -1,25 +1,27 @@
-<nz-tabset nzAnimated="false" *ngIf="type$ | async as trackerType" [nzSelectedIndex]="trackerType - 1" (nzSelectedIndexChange)="setType($event)">
+<nz-tabset nzAnimated="false" *ngIf="type$ | async as trackerType" [nzSelectedIndex]="trackerType - 1"
+           (nzSelectedIndexChange)="setType($event)">
   <nz-tab [nzTitle]="'Game_Term/DoH' | translate">
     <nz-tabset nzSize="small" nzAnimated="false"
                (nzSelectedIndexChange)="dohSelectedPage = dohTabs[$event][0].id">
       <nz-tab *ngFor="let tab of dohTabs; let index = index" [nzTitle]="titleTemplate">
         <ng-template #titleTemplate>
-          <img [src]="getIcon(index)" alt="" class="job-icon" [class.small-icon]="false | ifMobile: true">{{ tab.name }}
+          <img [src]="getDohIcon(index)" alt="" class="job-icon"
+               [class.small-icon]="false | ifMobile: true">{{ tab.name }}
         </ng-template>
         <nz-tabset nzSize="small" nzAnimated="false" nzTabPosition="left"
                    (nzSelectedIndexChange)="dohSelectedPage = tab[$event].id">
           <nz-tab *ngFor="let page of tab;" [nzTitle]="titleTemplate">
             <ng-template #titleTemplate>
-          <span [class.not-required]="!isRequiredForAchievement(page)">{{ getPageName(page) }}<span
+          <span [class.not-required]="!isRequiredForAchievement(page)">{{ getDohPageName(page) }}<span
             *ngIf="isRequiredForAchievement(page)" nz-tooltip
             [nzTitle]="'LOG_TRACKER.Required_for_achievement' | translate">*</span>
-            ({{getPageCompletion(page)}})
+            ({{getDohPageCompletion(page)}})
           </span>
             </ng-template>
             <nz-spin [nzSpinning]="userCompletion === {}">
               <div fxLayout="column" *ngIf="dohSelectedPage === page.id">
                 <div class="toolbar" fxLayout="row" fxLayoutGap="5px" fxLayout.lt-md="column">
-                  <button nz-button (click)="markPageAsDone(page)">
+                  <button nz-button (click)="markDohPageAsDone(page)">
                     <i nz-icon type="check"></i> {{'LOG_TRACKER.Mark_page_as_done' | translate}}
                   </button>
                   <button nz-button (click)="createList(page)">
@@ -40,14 +42,14 @@
                     <div class="recipe-details">rlvl {{recipe.rlvl}}</div>
                   </div>
                   <div>
-                    <button nz-button (click)="markAsDone(recipe.recipeId, true)" nz-tooltip
+                    <button nz-button (click)="markDohAsDone(recipe.recipeId, true)" nz-tooltip
                             nzSize="small"
                             nzShape="circle"
                             *ngIf="!userCompletion[recipe.recipeId]"
                             [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate">
                       <i nz-icon type="check"></i>
                     </button>
-                    <button nz-button (click)="markAsDone(recipe.recipeId, false)" nz-tooltip
+                    <button nz-button (click)="markDohAsDone(recipe.recipeId, false)" nz-tooltip
                             nzSize="small"
                             nzShape="circle"
                             nzType="danger"
@@ -64,8 +66,73 @@
       </nz-tab>
     </nz-tabset>
   </nz-tab>
-  <nz-tab [nzTitle]="'Game_Term/DoL' | translate">
-    TODO
+  <nz-tab [nzTitle]="'MIN/BTN' | translate">
+    <nz-tabset nzSize="small" nzAnimated="false"
+               (nzSelectedIndexChange)="dolSelectedPage = dolTabs[$event][0].id">
+      <nz-tab *ngFor="let tab of dolTabs; let index = index" [nzTitle]="titleTemplate">
+        <ng-template #titleTemplate>
+          <img [src]="getDolIcon(index)" alt="" class="job-icon"
+               [class.small-icon]="false | ifMobile: true">{{ tab.name }}
+        </ng-template>
+        <nz-tabset nzSize="small" nzAnimated="false" nzTabPosition="left"
+                   (nzSelectedIndexChange)="dolSelectedPage = tab[$event].id">
+          <nz-tab *ngFor="let page of tab;" [nzTitle]="titleTemplate">
+            <ng-template #titleTemplate>
+          <span>{{ getDolPageName(page) }}
+            ({{getDolPageCompletion(page)}})
+          </span>
+            </ng-template>
+            <nz-spin [nzSpinning]="userCompletion === {}">
+              <div fxLayout="column" *ngIf="dolSelectedPage === page.id">
+                <div class="toolbar" fxLayout="row" fxLayoutGap="5px" fxLayout.lt-md="column">
+                  <button nz-button (click)="markDolPageAsDone(page)">
+                    <i nz-icon type="check"></i> {{'LOG_TRACKER.Mark_page_as_done' | translate}}
+                  </button>
+                </div>
+                <div *ngFor="let item of page.items; let last = last">
+                  <div nz-row fxLayoutAlign="flex-start center">
+                    <div nz-col [nzMd]="6" fxLayout="column" fxLayoutAlign="flex-start flex-start">
+                      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                        <div class="recipe-name">{{item.itemId | itemName | i18n}}</div>
+                        <i nz-icon type="check" *ngIf="userCompletion[item.itemId]"></i>
+                      </div>
+                      <div class="recipe-details">lvl {{item.ilvl}} {{item.stars | ingameStars}}</div>
+                    </div>
+                    <div nz-col [nzMd]="16" fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column">
+                      <ng-container *ngIf="getNodeData(item.itemId, dolSelectedPage) as nodeData">
+                        <nz-card *ngFor="let node of nodeData">
+                          <app-map-position [showZoneName]="true"
+                                            [mapId]="node.mapId"
+                                            [zoneId]="node.zoneid"
+                                            [marker]="{x: node.x, y: node.y}"></app-map-position>
+                        </nz-card>
+                      </ng-container>
+                    </div>
+                    <div nz-col [nzMd]="2">
+                      <button nz-button (click)="markDolAsDone(item.itemId, true)" nz-tooltip
+                              nzShape="circle"
+                              nzType="primary"
+                              *ngIf="!userGatheringCompletion[item.itemId]"
+                              [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate">
+                        <i nz-icon type="check"></i>
+                      </button>
+                      <button nz-button (click)="markDolAsDone(item.itemId, false)" nz-tooltip
+                              nzShape="circle"
+                              nzType="danger"
+                              *ngIf="userGatheringCompletion[item.itemId]"
+                              [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate">
+                        <i nz-icon type="close"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <nz-divider *ngIf="!last"></nz-divider>
+                </div>
+              </div>
+            </nz-spin>
+          </nz-tab>
+        </nz-tabset>
+      </nz-tab>
+    </nz-tabset>
   </nz-tab>
   <nz-tab [nzTitle]="'Game_Term/FSH' | translate">
     TODO

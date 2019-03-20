@@ -11,6 +11,17 @@ const aetherytes = [];
 const monsters = {};
 const npcs = {};
 
+let todo = ['gatheringLog', 'map', 'craftingLog', 'weather'];
+
+const onlyIndex = process.argv.indexOf('--only');
+if (onlyIndex > -1) {
+  todo = [process.argv[onlyIndex + 1]];
+}
+
+function hasTodo(operation) {
+  return todo.indexOf(operation) > -1;
+}
+
 fs.existsSync('output') || fs.mkdirSync('output');
 
 
@@ -120,16 +131,17 @@ handleNpc = (row) => {
 
 // Map ids extraction
 
-const mapIds = [];
+if (hasTodo('map')) {
+  const mapIds = [];
 
-getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en,TerritoryType.WeatherRate&key=63cc0045d7e847149c3f').subscribe(res => {
-  res.Results.forEach(map => {
-    mapIds.push({ id: +map.ID, name: map.PlaceName.Name_en, weatherRate: map.TerritoryType.WeatherRate });
+  getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en,TerritoryType.WeatherRate&key=63cc0045d7e847149c3f').subscribe(res => {
+    res.Results.forEach(map => {
+      mapIds.push({ id: +map.ID, name: map.PlaceName.Name_en, weatherRate: map.TerritoryType.WeatherRate });
+    });
+  }, null, () => {
+    persistToTypescript('map-ids', 'mapIds', mapIds);
   });
-}, null, () => {
-  persistToTypescript('map-ids', 'mapIds', mapIds);
-});
-
+}
 // Crafting log extraction
 
 const craftingLog = [
@@ -157,11 +169,15 @@ const craftingLogPages = [
 
 const gatheringLog = [
   [],
+  [],
+  [],
   []
 ];
 
 
 const gatheringLogPages = [
+  [],
+  [],
   [],
   []
 ];
@@ -207,104 +223,122 @@ function addToGatheringLogPage(entry, pageId, gathererIndex) {
   });
 }
 
-getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
-  completeFetch.forEach(page => {
-    // If it's an empty page, don't go further
-    if (!page.Recipe0 || page.Recipe0.ID === -1) {
-      return;
-    }
-    Object.keys(page)
-      .filter(key => {
-        return /^Recipe\d+$/.test(key) && page[key] && page[key].ID !== -1 && page[key].ID !== null;
-      })
-      .sort((a, b) => {
-        return +a.match(/^Recipe(\d+)$/)[1] - +b.match(/^Recipe(\d+)$/)[1];
-      })
-      .forEach(key => {
-        const entry = page[key];
-        craftingLog[entry.CraftType.ID].push(entry.ID);
-        addToCraftingLogPage(entry, page.ID);
-      });
-  });
-  persistToTypescript('crafting-log', 'craftingLog', craftingLog);
-  persistToTypescript('crafting-log-pages', 'craftingLogPages', craftingLogPages);
-});
 
-getAllEntries('https://xivapi.com/GatheringNotebookList', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
-  completeFetch.forEach(page => {
-    // If it's an empty page, don't go further
-    if (!page.GatheringItem0 || page.GatheringItem0.ID === -1) {
-      return;
-    }
-    Object.keys(page)
-      .filter(key => {
-        return /^GatheringItem\d+$/.test(key) && page[key] && page[key].ID !== -1 && page[key].ID !== null;
-      })
-      .sort((a, b) => {
-        return +a.match(/^GatheringItem(\d+)$/)[1] - +b.match(/^GatheringItem(\d+)$/)[1];
-      })
-      .forEach(key => {
-        const entry = page[key];
-        // 0 = MIN, 1 = BTN
-        let gathererIndex = -1;
-        if (page.ID < 80) {
-          gathererIndex = 0;
-        } else if (page.ID < 200) {
-          gathererIndex = 1;
-        } else {
-          if ([2000, 2001, 2004, 2005, 2008, 2009, 2010, 2012, 2016].indexOf(page.ID)) {
+if (hasTodo('craftingLog')) {
+  getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+    completeFetch.forEach(page => {
+      // If it's an empty page, don't go further
+      if (!page.Recipe0 || page.Recipe0.ID === -1) {
+        return;
+      }
+      Object.keys(page)
+        .filter(key => {
+          return /^Recipe\d+$/.test(key) && page[key] && page[key].ID !== -1 && page[key].ID !== null;
+        })
+        .sort((a, b) => {
+          return +a.match(/^Recipe(\d+)$/)[1] - +b.match(/^Recipe(\d+)$/)[1];
+        })
+        .forEach(key => {
+          const entry = page[key];
+          craftingLog[entry.CraftType.ID].push(entry.ID);
+          addToCraftingLogPage(entry, page.ID);
+        });
+    });
+    persistToTypescript('crafting-log', 'craftingLog', craftingLog);
+    persistToTypescript('crafting-log-pages', 'craftingLogPages', craftingLogPages);
+  });
+}
+
+
+if (hasTodo('gatheringLog')) {
+
+  getAllEntries('https://xivapi.com/GatheringNotebookList', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+    completeFetch.forEach(page => {
+      // If it's an empty page, don't go further
+      if (!page.GatheringItem0 || page.GatheringItem0.ID === -1) {
+        return;
+      }
+      Object.keys(page)
+        .filter(key => {
+          return /^GatheringItem\d+$/.test(key) && page[key] && page[key].ID !== -1 && page[key].ID !== null;
+        })
+        .sort((a, b) => {
+          return +a.match(/^GatheringItem(\d+)$/)[1] - +b.match(/^GatheringItem(\d+)$/)[1];
+        })
+        .forEach(key => {
+          const entry = page[key];
+          // 0 = MIN, 1 = MIN (quarrying), 2 = BTN, 3 = BTN (grass thing)
+          let gathererIndex = -1;
+          if (page.ID < 40) {
             gathererIndex = 0;
-          } else {
+          } else if (page.ID < 80) {
             gathererIndex = 1;
+          } else if (page.ID < 120) {
+            gathererIndex = 2;
+          } else if (page.ID < 200) {
+            gathererIndex = 3;
+          } else {
+            gathererIndex = 0;
+            if ([2000, 2001, 2004, 2005, 2008, 2009, 2010, 2012, 2016].indexOf(page.ID)) {
+              page.ID = 2000;
+              gathererIndex = 0;
+            } else {
+              page.ID = 2001;
+              gathererIndex = 1;
+            }
           }
-        }
-        gatheringLog[gathererIndex].push(entry.Item);
-        addToGatheringLogPage(entry, page.ID, gathererIndex);
-      });
+          gatheringLog[gathererIndex].push(entry.Item);
+          addToGatheringLogPage(entry, page.ID, gathererIndex);
+        });
+    });
+    persistToTypescript('gathering-log', 'gatheringLog', gatheringLog);
+    persistToTypescript('gathering-log-pages', 'gatheringLogPages', gatheringLogPages);
   });
-  persistToTypescript('gathering-log', 'gatheringLog', gatheringLog);
-  persistToTypescript('gathering-log-pages', 'gatheringLogPages', gatheringLogPages);
-});
 
+}
+
+
+if (hasTodo('weather')) {
 // Weather index extraction
-const weatherIndexes = [];
+  const weatherIndexes = [];
 
-const weatherIndexData = {};
+  const weatherIndexData = {};
 
-const weatherColumns = [
-  'ID',
-  'Rate0',
-  'Rate1',
-  'Rate2',
-  'Rate3',
-  'Rate4',
-  'Rate5',
-  'Rate6',
-  'Rate7',
-  'Weather0TargetID',
-  'Weather1TargetID',
-  'Weather2TargetID',
-  'Weather3TargetID',
-  'Weather4TargetID',
-  'Weather5TargetID',
-  'Weather6TargetID',
-  'Weather7TargetID'
-];
+  const weatherColumns = [
+    'ID',
+    'Rate0',
+    'Rate1',
+    'Rate2',
+    'Rate3',
+    'Rate4',
+    'Rate5',
+    'Rate6',
+    'Rate7',
+    'Weather0TargetID',
+    'Weather1TargetID',
+    'Weather2TargetID',
+    'Weather3TargetID',
+    'Weather4TargetID',
+    'Weather5TargetID',
+    'Weather6TargetID',
+    'Weather7TargetID'
+  ];
 
-getAllPages(`https://xivapi.com/weatherrate?columns=${weatherColumns.join(',')}&key=63cc0045d7e847149c3f`).subscribe(res => {
-  weatherIndexes.push(...res.Results);
-}, null, () => {
-  weatherIndexes.forEach(weatherIndex => {
-    weatherIndexData[weatherIndex.ID] = {
-      [weatherIndex.Rate0]: weatherIndex.Weather0TargetID,
-      [weatherIndex.Rate1]: weatherIndex.Weather1TargetID,
-      [weatherIndex.Rate2]: weatherIndex.Weather2TargetID,
-      [weatherIndex.Rate3]: weatherIndex.Weather3TargetID,
-      [weatherIndex.Rate4]: weatherIndex.Weather4TargetID,
-      [weatherIndex.Rate5]: weatherIndex.Weather5TargetID,
-      [weatherIndex.Rate6]: weatherIndex.Weather6TargetID,
-      [weatherIndex.Rate7]: weatherIndex.Weather7TargetID
-    };
+  getAllPages(`https://xivapi.com/weatherrate?columns=${weatherColumns.join(',')}&key=63cc0045d7e847149c3f`).subscribe(res => {
+    weatherIndexes.push(...res.Results);
+  }, null, () => {
+    weatherIndexes.forEach(weatherIndex => {
+      weatherIndexData[weatherIndex.ID] = {
+        [weatherIndex.Rate0]: weatherIndex.Weather0TargetID,
+        [weatherIndex.Rate1]: weatherIndex.Weather1TargetID,
+        [weatherIndex.Rate2]: weatherIndex.Weather2TargetID,
+        [weatherIndex.Rate3]: weatherIndex.Weather3TargetID,
+        [weatherIndex.Rate4]: weatherIndex.Weather4TargetID,
+        [weatherIndex.Rate5]: weatherIndex.Weather5TargetID,
+        [weatherIndex.Rate6]: weatherIndex.Weather6TargetID,
+        [weatherIndex.Rate7]: weatherIndex.Weather7TargetID
+      };
+    });
+    persistToTypescript('weather-index', 'weatherIndex', weatherIndexData);
   });
-  persistToTypescript('weather-index', 'weatherIndex', weatherIndexData);
-});
+}

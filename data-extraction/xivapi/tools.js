@@ -45,11 +45,13 @@ const getAllPages = (endpoint, body) => {
       }
       return get(url, body).pipe(
         tap(result => {
+          console.log(`${url} : ${result.Pagination.Page}/${result.Pagination.PageTotal}`);
           if (result.Pagination.PageNext > page) {
             page$.next(result.Pagination.PageNext);
-            console.log(`${url} : ${result.Pagination.Page}/${result.Pagination.PageTotal}`);
           } else {
-            complete$.next(null);
+            setTimeout(() => {
+              complete$.next(null);
+            }, 250);
           }
         })
       );
