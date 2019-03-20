@@ -266,6 +266,7 @@ if (hasTodo('gatheringLog')) {
           return +a.match(/^GatheringItem(\d+)$/)[1] - +b.match(/^GatheringItem(\d+)$/)[1];
         })
         .forEach(key => {
+          let pageId = page.ID;
           const entry = page[key];
           // 0 = MIN, 1 = MIN (quarrying), 2 = BTN, 3 = BTN (grass thing)
           let gathererIndex = -1;
@@ -279,6 +280,7 @@ if (hasTodo('gatheringLog')) {
             gathererIndex = 3;
           } else {
             gathererIndex = (page.ID - 2000) % 4;
+            pageId = 9999;
             // if ([2001, 2005, 2009].indexOf(page.ID) > -1) {
             //   gathererIndex = 0;
             // } else if ([2000, 2004, 2008, 2012, 2016].indexOf(page.ID) > -1) {
@@ -290,7 +292,7 @@ if (hasTodo('gatheringLog')) {
             // }
           }
           gatheringLog[gathererIndex].push(entry.Item);
-          addToGatheringLogPage(entry, page.ID, gathererIndex);
+          addToGatheringLogPage(entry, pageId, gathererIndex);
         });
     });
     persistToTypescript('gathering-log', 'gatheringLog', gatheringLog);

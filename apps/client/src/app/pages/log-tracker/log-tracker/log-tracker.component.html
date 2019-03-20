@@ -98,11 +98,11 @@
                       </div>
                       <div class="recipe-details">lvl {{item.ilvl}} {{item.stars | ingameStars}}</div>
                     </div>
-                    <div nz-col [nzMd]="16" fxLayout="row" fxLayout.lt-md="column">
+                    <div nz-col [nzMd]="12" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center">
                       <ng-container *ngIf="getNodeData(item.itemId, dolSelectedPage) as nodeData">
                         <div *ngFor="let node of nodeData; let last = last" fxLayout="row"
                              fxLayoutAlign="flex-start center">
-                          <div fxLayout="column" fxLayoutAlign="center center">
+                          <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
                             <div>
                               <app-map-position [showZoneName]="true"
                                                 [mapId]="node.mapId"
@@ -144,6 +144,7 @@
                         </div>
                       </ng-container>
                     </div>
+                    <div nz-col [nzMd]="4"></div>
                     <div nz-col [nzMd]="2">
                       <button nz-button (click)="markDolAsDone(item.itemId, true)" nz-tooltip
                               nzShape="circle"

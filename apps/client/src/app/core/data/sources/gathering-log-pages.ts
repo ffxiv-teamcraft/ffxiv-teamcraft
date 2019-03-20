@@ -1023,7 +1023,7 @@ export const gatheringLogPages = [
       ]
     },
     {
-      'id': 2000,
+      'id': 9999,
       'startLevel': 60,
       'items': [
         {
@@ -1032,13 +1032,7 @@ export const gatheringLogPages = [
           'lvl': 60,
           'stars': 3,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2004,
-      'startLevel': 60,
-      'items': [
+        },
         {
           'itemId': 12536,
           'ilvl': 180,
@@ -1052,13 +1046,7 @@ export const gatheringLogPages = [
           'lvl': 60,
           'stars': 1,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2008,
-      'startLevel': 60,
-      'items': [
+        },
         {
           'itemId': 12945,
           'ilvl': 175,
@@ -1086,13 +1074,7 @@ export const gatheringLogPages = [
           'lvl': 60,
           'stars': 3,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2012,
-      'startLevel': 70,
-      'items': [
+        },
         {
           'itemId': 19959,
           'ilvl': 300,
@@ -1120,13 +1102,7 @@ export const gatheringLogPages = [
           'lvl': 70,
           'stars': 3,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2016,
-      'startLevel': 70,
-      'items': [
+        },
         {
           'itemId': 19958,
           'ilvl': 300,
@@ -1938,7 +1914,7 @@ export const gatheringLogPages = [
       ]
     },
     {
-      'id': 2001,
+      'id': 9999,
       'startLevel': 60,
       'items': [
         {
@@ -1954,13 +1930,7 @@ export const gatheringLogPages = [
           'lvl': 60,
           'stars': 1,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2005,
-      'startLevel': 60,
-      'items': [
+        },
         {
           'itemId': 5160,
           'ilvl': 180,
@@ -1974,13 +1944,7 @@ export const gatheringLogPages = [
           'lvl': 60,
           'stars': 3,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2009,
-      'startLevel': 60,
-      'items': [
+        },
         {
           'itemId': 12540,
           'ilvl': 180,
@@ -2924,7 +2888,7 @@ export const gatheringLogPages = [
       ]
     },
     {
-      'id': 2006,
+      'id': 9999,
       'startLevel': 60,
       'items': [
         {
@@ -2954,13 +2918,7 @@ export const gatheringLogPages = [
           'lvl': 60,
           'stars': 3,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2010,
-      'startLevel': 60,
-      'items': [
+        },
         {
           'itemId': 12902,
           'ilvl': 180,
@@ -2974,13 +2932,7 @@ export const gatheringLogPages = [
           'lvl': 60,
           'stars': 1,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2014,
-      'startLevel': 70,
-      'items': [
+        },
         {
           'itemId': 19934,
           'ilvl': 300,
@@ -4576,7 +4528,7 @@ export const gatheringLogPages = [
       ]
     },
     {
-      'id': 2003,
+      'id': 9999,
       'startLevel': 60,
       'items': [
         {
@@ -4599,13 +4551,7 @@ export const gatheringLogPages = [
           'lvl': 60,
           'stars': 1,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2007,
-      'startLevel': 60,
-      'items': [
+        },
         {
           'itemId': 12904,
           'ilvl': 180,
@@ -4626,39 +4572,21 @@ export const gatheringLogPages = [
           'lvl': 60,
           'stars': 3,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2011,
-      'startLevel': 60,
-      'items': [
+        },
         {
           'itemId': 16721,
           'ilvl': 200,
           'lvl': 60,
           'stars': 3,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2015,
-      'startLevel': 70,
-      'items': [
+        },
         {
           'itemId': 22420,
           'ilvl': 320,
           'lvl': 70,
           'stars': 2,
           'hidden': 0
-        }
-      ]
-    },
-    {
-      'id': 2019,
-      'startLevel': 70,
-      'items': [
+        },
         {
           'itemId': 19991,
           'ilvl': 300,

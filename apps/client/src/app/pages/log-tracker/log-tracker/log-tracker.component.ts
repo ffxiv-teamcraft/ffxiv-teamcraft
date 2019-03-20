@@ -228,7 +228,7 @@ export class LogTrackerComponent {
         return { ...nodePositions[key], nodeId: key };
       })
       .filter(node => {
-        return node.type === tab;
+        return tab > 10 || node.type === tab;
       })
       .map(node => {
         const bellNode = this.bell.getNode(+node.nodeId);
@@ -256,6 +256,9 @@ export class LogTrackerComponent {
         return node;
       });
     const nodesFromGarlandBell = this.bell.getNodesByItemId(itemId)
+      .filter(node => {
+        return tab > 10 || node.type === tab;
+      })
       .map(node => {
         const nodePosition = nodePositions[node.id];
         const result: any = {
@@ -297,11 +300,11 @@ export class LogTrackerComponent {
         return 0;
       })
       .forEach(row => {
-        if (!finalNodes.some(node => node.itemId === row.itemId && node.zoneid === row.zoneid && node.type === row.type)) {
+        if (!finalNodes.some(node => node.nodeId)) {
           finalNodes.push(row);
         }
       });
-    return finalNodes;
+    return finalNodes.slice(0, 3);
   }
 
   public getAlarm(node: any): Partial<Alarm> | null {
@@ -366,7 +369,10 @@ export class LogTrackerComponent {
   }
 
   private _getDolPageName(page: any): string {
-    return `${page.id} ${Math.floor(page.startLevel / 5) * 5 + 1} - ${Math.floor((page.startLevel + 4) / 5) * 5}`;
+    if (page.id === 9999) {
+      return this.translate.instant('LOG_TRACKER.Folklore');
+    }
+    return `${Math.floor(page.startLevel / 5) * 5 + 1} - ${Math.floor((page.startLevel + 4) / 5) * 5}`;
   }
 
   private getMasterbookIndex(page: any): number {
