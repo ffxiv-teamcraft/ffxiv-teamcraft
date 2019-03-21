@@ -11,7 +11,7 @@ const aetherytes = [];
 const monsters = {};
 const npcs = {};
 
-let todo = ['gatheringLog', 'map', 'craftingLog', 'weather'];
+let todo = ['gatheringLog', 'map', 'craftingLog', 'weather', 'fishingLog'];
 
 const onlyIndex = process.argv.indexOf('--only');
 if (onlyIndex > -1) {
@@ -297,6 +297,59 @@ if (hasTodo('gatheringLog')) {
     });
     persistToTypescript('gathering-log', 'gatheringLog', gatheringLog);
     persistToTypescript('gathering-log-pages', 'gatheringLogPages', gatheringLogPages);
+  });
+
+}
+
+if (hasTodo('fishingLog')) {
+
+  const fishingLog = [];
+
+  const spearFishingLog = [];
+
+  getAllEntries('https://xivapi.com/FishParameter', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+    completeFetch
+      .filter(fish => fish.Item !== null)
+      .forEach(fish => {
+        const entry = {
+          id: fish.ID,
+          itemId: fish.Item.ID,
+          level: fish.GatheringItemLevel,
+          icon: fish.Item.Icon,
+          mapId: fish.TerritoryType.Map.ID,
+          zoneId: fish.TerritoryType.PlaceName.ID,
+          timed: fish.TimeRestricted,
+          weathered: fish.WeatherRestricted
+        };
+        if (fish.FishingRecordType && fish.FishingRecordType.Addon) {
+          entry.recordType = {
+            en: fish.FishingRecordType.Addon.Text_en,
+            de: fish.FishingRecordType.Addon.Text_de,
+            ja: fish.FishingRecordType.Addon.Text_ja,
+            fr: fish.FishingRecordType.Addon.Text_fr
+          };
+        }
+        fishingLog.push(entry);
+      });
+    persistToTypescript('fishing-log', 'fishingLog', fishingLog);
+  });
+
+  getAllEntries('https://xivapi.com/SpearfishingItem', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+    completeFetch
+      .filter(fish => fish.Item !== null)
+      .forEach(fish => {
+        const entry = {
+          id: fish.ID,
+          itemId: fish.ItemTargetID,
+          level: fish.GatheringItemLevel.GatheringItemLevel,
+          stars: fish.GatheringItemLevel.Stars,
+          icon: fish.Item.Icon,
+          mapId: fish.TerritoryType.Map.ID,
+          zoneId: fish.TerritoryType.PlaceName.ID
+        };
+        spearFishingLog.push(entry);
+      });
+    persistToTypescript('spear-fishing-log', 'spearFishingLog', spearFishingLog);
   });
 
 }
