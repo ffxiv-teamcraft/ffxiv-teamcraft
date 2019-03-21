@@ -172,6 +172,15 @@
     </nz-tabset>
   </nz-tab>
   <nz-tab [nzTitle]="'Game_Term/FSH' | translate">
-    TODO
+    <nz-tabset nzSize="small" nzAnimated="false"
+               (nzSelectedIndexChange)="dolSelectedPage = dolTabs[$event][0].id">
+      <nz-tab *ngFor="let tab of fshTabs; let index = index" [nzTitle]="titleTemplate">
+        <ng-template #titleTemplate>
+          <img [src]="getFshIcon(index)" alt="" class="job-icon"
+               [class.small-icon]="false | ifMobile: true">{{ tab.name }}
+        </ng-template>
+        TODO
+      </nz-tab>
+    </nz-tabset>
   </nz-tab>
 </nz-tabset>

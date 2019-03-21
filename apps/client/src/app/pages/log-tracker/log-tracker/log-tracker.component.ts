@@ -20,6 +20,8 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
+import { fishingLog } from '../../../core/data/sources/fishing-log';
+import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
 
 @Component({
   selector: 'app-log-tracker',
@@ -32,6 +34,7 @@ export class LogTrackerComponent {
 
   public dohTabs: any[];
   public dolTabs: any[];
+  public fshTabs: any[];
 
   private dohPageNameCache: { [index: number]: string } = {};
   private dolPageNameCache: { [index: number]: string } = {};
@@ -57,6 +60,7 @@ export class LogTrackerComponent {
               private bell: BellNodesService, private l12n: LocalizedDataService, private alarmsFacade: AlarmsFacade) {
     this.dohTabs = [...craftingLogPages];
     this.dolTabs = [...gatheringLogPages];
+    this.fshTabs = [[...fishingLog], [...spearFishingLog]];
     this.alarmsLoaded$ = this.alarmsFacade.loaded$;
     this.alarms$ = this.alarmsFacade.allAlarms$;
     this.authFacade.user$.pipe(
@@ -139,6 +143,13 @@ export class LogTrackerComponent {
       './assets/icons/MIN.png',
       './assets/icons/Mature_Tree.png',
       './assets/icons/BTN.png'
+    ][index];
+  }
+
+  public getFshIcon(index: number): string {
+    return [
+      './assets/icons/angling.png',
+      './assets/icons/spearfishing.png'
     ][index];
   }
 
