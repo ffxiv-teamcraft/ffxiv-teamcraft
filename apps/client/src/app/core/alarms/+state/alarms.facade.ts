@@ -227,6 +227,7 @@ export class AlarmsFacade {
     const weatherSpawns = alarm.weathers.map(weather => {
       return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration) };
     })
+      .filter(spawn => spawn.spawn !== null)
       .sort((a, b) => a.spawn.getTime() - b.spawn.getTime());
     for (const spawn of sortedSpawns) {
       const despawn = (spawn + alarm.duration) % 24;
@@ -243,7 +244,12 @@ export class AlarmsFacade {
           const realSpawn = new Date(weatherSpawn.spawn);
           realSpawn.setUTCHours(spawn);
           const days = Math.max(Math.floor((realSpawn.getTime() - time.getTime()) / 86400000), 0);
-          return { hours: spawn, days: days, despawn: Math.min(weatherStop, despawn || 24), weather: weatherSpawn.weather };
+          return {
+            hours: spawn,
+            days: days,
+            despawn: Math.min(weatherStop, despawn || 24),
+            weather: weatherSpawn.weather
+          };
         }
       }
     }

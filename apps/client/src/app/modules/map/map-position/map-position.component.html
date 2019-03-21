@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutAlign="flex-start center">
+<div [fxLayout]="flex" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
   <div *ngIf="showZoneName">{{zoneId | placeName | i18n}}</div>
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
     <div>X: {{getMarker().x}} - Y: {{getMarker().y}}</div>

@@ -14,6 +14,7 @@ import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup
 import { MapPositionComponent } from '../../modules/map/map-position/map-position.component';
 import { MapModule } from '../../modules/map/map.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
+import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 
 const routes: Routes = [
   {
@@ -41,6 +42,7 @@ const routes: Routes = [
     ProgressPopupModule,
     MapModule,
     AlarmsModule,
+    FishingBaitModule,
     RouterModule.forChild(routes),
 
     NgZorroAntdModule

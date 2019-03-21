@@ -22,6 +22,7 @@ import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { fishingLog } from '../../../core/data/sources/fishing-log';
 import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
+import _ = require('lodash');
 
 @Component({
   selector: 'app-log-tracker',
@@ -43,10 +44,14 @@ export class LogTrackerComponent {
   public userGatheringCompletion: { [index: number]: boolean } = {};
 
   public nodeDataCache: any[][] = [];
+  public fshDataCache: any[] = [];
 
   public dohSelectedPage = 0;
   public dolSelectedPage = 0;
   public fshSelectedPage = 0;
+
+  public anglingPage = 1;
+  public spearFishingPage = 1;
 
   public type$: Observable<number>;
 
@@ -60,7 +65,7 @@ export class LogTrackerComponent {
               private bell: BellNodesService, private l12n: LocalizedDataService, private alarmsFacade: AlarmsFacade) {
     this.dohTabs = [...craftingLogPages];
     this.dolTabs = [...gatheringLogPages];
-    this.fshTabs = [[...fishingLog], [...spearFishingLog]];
+    this.fshTabs = [[..._.chunk(fishingLog, 10)], [..._.chunk(spearFishingLog, 10)]];
     this.alarmsLoaded$ = this.alarmsFacade.loaded$;
     this.alarms$ = this.alarmsFacade.allAlarms$;
     this.authFacade.user$.pipe(
@@ -133,6 +138,12 @@ export class LogTrackerComponent {
     return `${page.items.filter(item => this.userGatheringCompletion[item.itemId]).length}/${page.items.length}`;
   }
 
+  public getFshProgress(tab: any): string {
+    const total = [].concat.apply([], tab);
+    const done = total.filter(item => this.userGatheringCompletion[item.itemId]);
+    return `${done.length}/${total.length}`;
+  }
+
   public getDohIcon(index: number): string {
     return `./assets/icons/classjob/${this.gt.getJob(index + 8).name.toLowerCase()}.png`;
   }
@@ -170,7 +181,7 @@ export class LogTrackerComponent {
       if (done) {
         user.gatheringLogProgression.push(recipeId);
       } else {
-        user.logProgression = user.gatheringLogProgression.filter(entry => entry !== recipeId);
+        user.gatheringLogProgression = user.gatheringLogProgression.filter(entry => entry !== recipeId);
       }
       this.userGatheringCompletion[recipeId] = done;
       this.authFacade.updateUser(user);
@@ -216,6 +227,59 @@ export class LogTrackerComponent {
       && page.startLevel.ClassJobLevel !== 50
       && page.startLevel.ClassJobLevel !== 30)
       || (page.id > 1055 && page.id < 1072);
+  }
+
+  public getFshData(fish: any): any[] {
+    if (this.fshDataCache[fish.id] === undefined) {
+      this.fshDataCache[fish.id] = this._getFshData(fish);
+    }
+    return this.fshDataCache[fish.id];
+  }
+
+  private _getFshData(fish: any): any[] {
+    const spots = this.gt.getFishingSpots(fish.itemId);
+    if (spots.length > 0) {
+      return spots.map(spot => {
+        const mapId = this.l12n.getMapId(spot.zone);
+        const zoneId = this.l12n.getAreaIdByENName(spot.title);
+        if (mapId !== undefined) {
+          const result: any = {
+            zoneid: zoneId,
+            mapId: mapId,
+            x: spot.coords[0],
+            y: spot.coords[1],
+            level: spot.lvl,
+            type: 4,
+            itemId: spot.id,
+            icon: spot.icon,
+            timed: spot.during !== undefined
+          };
+          if (spot.during !== undefined) {
+            result.spawnTimes = [spot.during.start];
+            result.uptime = spot.during.end - spot.during.start;
+            // Just in case it despawns the day after.
+            result.uptime = result.uptime < 0 ? result.uptime + 24 : result.uptime;
+            // As uptimes are always in minutes, gotta convert to minutes here too.
+            result.uptime *= 60;
+          }
+          result.baits = spot.bait.map(bait => {
+            const baitData = this.gt.getBait(bait);
+            return {
+              icon: baitData.icon,
+              id: baitData.id
+            };
+          });
+          if (spot.weather) {
+            result.weathers = spot.weather.map(w => this.l12n.getWeatherId(w));
+          }
+          return result;
+        }
+        return undefined;
+      })
+        .filter(res => res !== undefined)
+        .slice(0, 3);
+    }
+    return [];
   }
 
   public getNodeData(itemId: number, tab: number): any {
