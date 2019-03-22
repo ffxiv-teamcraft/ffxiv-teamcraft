@@ -26,6 +26,7 @@ import { WeatherIconPipe } from './weather-icon.pipe';
 import { ActionNamePipe } from './action-name.pipe';
 import { CustomItemNamePipe } from './custom-item-name.pipe';
 import { IngameStarsPipe } from './ingame-stars.pipe';
+import { LazyIconPipe } from './lazy-icon.pipe';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { IngameStarsPipe } from './ingame-stars.pipe';
     WeatherNamePipe,
     WeatherIconPipe,
     CustomItemNamePipe,
-    IngameStarsPipe
+    IngameStarsPipe,
+    LazyIconPipe
   ],
   exports: [
     ItemNamePipe,
@@ -84,7 +86,8 @@ import { IngameStarsPipe } from './ingame-stars.pipe';
     WeatherNamePipe,
     WeatherIconPipe,
     CustomItemNamePipe,
-    IngameStarsPipe
+    IngameStarsPipe,
+    LazyIconPipe
   ]
 })
 export class PipesModule {

@@ -93,10 +93,18 @@
                   <div nz-row fxLayoutAlign="flex-start center">
                     <div nz-col [nzMd]="6" fxLayout="column" fxLayoutAlign="flex-start flex-start">
                       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                        <div class="recipe-name">{{item.itemId | itemName | i18n}}</div>
-                        <i nz-icon type="check" *ngIf="userCompletion[item.itemId]"></i>
+                        <app-item-icon *ngIf="true | ifMobile: false"
+                                       [width]="32"
+                                       [itemId]="item.itemId"
+                                       [icon]="item.itemId | lazyIcon"></app-item-icon>
+                        <div fxLayout="column" fxLayoutAlign="center flex-start" fxLayoutGap="5px">
+                          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                            <div class="recipe-name">{{item.itemId | itemName | i18n}}</div>
+                            <i nz-icon type="check" *ngIf="userCompletion[item.itemId]"></i>
+                          </div>
+                          <div class="recipe-details">ilvl {{item.ilvl}} {{item.stars | ingameStars}}</div>
+                        </div>
                       </div>
-                      <div class="recipe-details">lvl {{item.ilvl}} {{item.stars | ingameStars}}</div>
                     </div>
                     <div nz-col [nzMd]="12" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center">
                       <ng-container *ngIf="getNodeData(item.itemId, dolSelectedPage) as nodeData">
@@ -193,9 +201,9 @@
                 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                   <div class="recipe-name">{{item.itemId | itemName | i18n}}</div>
                   <i nz-icon type="clock-circle" theme="outline" *ngIf="item.timed"
-                  nz-tooltip [nzTitle]="'LOG_TRACKER.Timed' | translate"></i>
+                     nz-tooltip [nzTitle]="'LOG_TRACKER.Timed' | translate"></i>
                   <i nz-icon type="cloud" theme="outline" *ngIf="item.weathered"
-                  nz-tooltip [nzTitle]="'LOG_TRACKER.Weather_dependant' | translate"></i>
+                     nz-tooltip [nzTitle]="'LOG_TRACKER.Weather_dependant' | translate"></i>
                   <i nz-icon type="check" *ngIf="userCompletion[item.itemId]"></i>
                 </div>
                 <div class="recipe-details">lvl {{item.level}} {{item.stars | ingameStars}}</div>

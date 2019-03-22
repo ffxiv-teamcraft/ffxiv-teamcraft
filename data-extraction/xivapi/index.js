@@ -4,14 +4,14 @@ const fs = require('fs');
 const http = require('https');
 const Rx = require('rxjs');
 const { switchMap, map } = require('rxjs/operators');
-const { getAllPages, getOnePage, persistToJsonAsset, persistToTypescript, get, getAllEntries } = require('./tools.js');
+const { getAllPages, getOnePage, persistToJsonAsset, persistToTypescript, get, getAllEntries, addQueryParam } = require('./tools.js');
 
 const nodes = {};
 const aetherytes = [];
 const monsters = {};
 const npcs = {};
 
-let todo = ['gatheringLog', 'map', 'craftingLog', 'weather', 'fishingLog'];
+let todo = ['gatheringLog', 'map', 'craftingLog', 'weather', 'fishingLog', 'itemIcons'];
 
 const onlyIndex = process.argv.indexOf('--only');
 if (onlyIndex > -1) {
@@ -217,7 +217,6 @@ function addToGatheringLogPage(entry, pageId, gathererIndex) {
     itemId: entry.Item,
     ilvl: entry.GatheringItemLevelTargetID,
     lvl: entry.GatheringItemLevel.GatheringItemLevel,
-    //TODO icon
     stars: entry.GatheringItemLevel.Stars,
     hidden: entry.IsHidden
   });
@@ -281,15 +280,6 @@ if (hasTodo('gatheringLog')) {
           } else {
             gathererIndex = (page.ID - 2000) % 4;
             pageId = 9999;
-            // if ([2001, 2005, 2009].indexOf(page.ID) > -1) {
-            //   gathererIndex = 0;
-            // } else if ([2000, 2004, 2008, 2012, 2016].indexOf(page.ID) > -1) {
-            //   gathererIndex = 1;
-            // } else if ([2006, 2010, 2014].indexOf(page.ID) > -1) {
-            //   gathererIndex = 2;
-            // } else if ([2003, 2007, 2011, 2015, 2019].indexOf(page.ID) > -1) {
-            //   gathererIndex = 3;
-            // }
           }
           gatheringLog[gathererIndex].push(entry.Item);
           addToGatheringLogPage(entry, pageId, gathererIndex);
@@ -309,7 +299,7 @@ if (hasTodo('fishingLog')) {
 
   getAllEntries('https://xivapi.com/FishParameter', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
     completeFetch
-      .filter(fish => fish.Item !== null)
+      .filter(fish => fish.Item !== null && fish.IsInLog === 1)
       .forEach(fish => {
         const entry = {
           id: fish.ID,
@@ -397,5 +387,16 @@ if (hasTodo('weather')) {
       };
     });
     persistToTypescript('weather-index', 'weatherIndex', weatherIndexData);
+  });
+}
+
+if (hasTodo('itemIcons')) {
+  const itemIcons = {};
+  getAllPages('https://xivapi.com/Item?key=63cc0045d7e847149c3f&columns=ID,Icon').subscribe(page => {
+    page.Results.forEach(row => {
+      itemIcons[row.ID] = row.Icon;
+    });
+  }, null, () => {
+    persistToJsonAsset('item-icons', itemIcons);
   });
 }

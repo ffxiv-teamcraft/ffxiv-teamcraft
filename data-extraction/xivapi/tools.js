@@ -91,6 +91,8 @@ module.exports.getOnePage = (endpoint) => {
   return get(endpoint);
 };
 
+module.exports.addQueryParam = (url, paramName, paramValue) => addQueryParam(url, paramName, paramValue);
+
 module.exports.persistToJson = (fileName, content) => fs.writeFileSync(path.join(outputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
 module.exports.persistToJsonAsset = (fileName, content) => fs.writeFileSync(path.join(assetOutputFolder, `${fileName}.json`), JSON.stringify(content));
 module.exports.persistToTypescript = (fileName, variableName, content) => {
