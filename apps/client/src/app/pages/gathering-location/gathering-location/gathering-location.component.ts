@@ -165,6 +165,9 @@ export class GatheringLocationComponent {
                 if (spot.weather) {
                   result.weathers = spot.weather.map(w => this.l12n.getWeatherId(w));
                 }
+                if (spot.transition) {
+                  result.weathersFrom = spot.transition.map(w => this.l12n.getWeatherId(w));
+                }
                 return result;
               }
               return undefined;
@@ -214,6 +217,7 @@ export class GatheringLocationComponent {
     alarm.mapId = node.mapId;
     alarm.baits = node.baits;
     alarm.weathers = node.weathers;
+    alarm.weathersFrom = node.weathersFrom;
     this.mapService.getMapById(alarm.mapId)
       .pipe(
         map((mapData) => {

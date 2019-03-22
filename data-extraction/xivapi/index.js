@@ -375,16 +375,17 @@ if (hasTodo('weather')) {
     weatherIndexes.push(...res.Results);
   }, null, () => {
     weatherIndexes.forEach(weatherIndex => {
-      weatherIndexData[weatherIndex.ID] = {
-        [weatherIndex.Rate0]: weatherIndex.Weather0TargetID,
-        [weatherIndex.Rate1]: weatherIndex.Weather1TargetID,
-        [weatherIndex.Rate2]: weatherIndex.Weather2TargetID,
-        [weatherIndex.Rate3]: weatherIndex.Weather3TargetID,
-        [weatherIndex.Rate4]: weatherIndex.Weather4TargetID,
-        [weatherIndex.Rate5]: weatherIndex.Weather5TargetID,
-        [weatherIndex.Rate6]: weatherIndex.Weather6TargetID,
-        [weatherIndex.Rate7]: weatherIndex.Weather7TargetID
-      };
+      const entry = {};
+      let previousRate = 0;
+      for (let i = 0; i <= 7; i++) {
+        const rate = weatherIndex[`Rate${i}`];
+        const rateValue = rate + previousRate;
+        previousRate = rateValue;
+        if (rate > 0) {
+          entry[rateValue] = weatherIndex[`Weather${i}TargetID`];
+        }
+      }
+      weatherIndexData[weatherIndex.ID] = entry;
     });
     persistToTypescript('weather-index', 'weatherIndex', weatherIndexData);
   });

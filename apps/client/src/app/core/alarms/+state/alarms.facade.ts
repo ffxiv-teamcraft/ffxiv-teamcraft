@@ -225,6 +225,12 @@ export class AlarmsFacade {
 
   private findWeatherSpawnCombination(alarm: Alarm, sortedSpawns: number[], time: Date, iteration = time): NextSpawn {
     const weatherSpawns = alarm.weathers.map(weather => {
+      if (alarm.weathersFrom !== undefined && alarm.weathersFrom.length > 0) {
+        return {
+          weather: weather,
+          spawn: this.weatherService.getNextWeatherTransition(alarm.mapId, alarm.weathersFrom, weather, iteration)
+        };
+      }
       return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration) };
     })
       .filter(spawn => spawn.spawn !== null)
@@ -278,7 +284,7 @@ export class AlarmsFacade {
       resSeconds += 360;
     }
     resMinutes += (resSeconds % 60) / 60;
-    return resMinutes + (spawn.days * 1440 / EorzeanTimeService.EPOCH_TIME_FACTOR);
+    return resMinutes + (spawn.days * 1440);
   }
 
 }

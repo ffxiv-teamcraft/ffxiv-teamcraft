@@ -11,5 +11,5 @@ export const fakeHQItems = [
   21301, // Crimson Pepper
   22438, // Dzo Sirloin
   22439, // Doman rice
-  22446, // Honeydew Honey
+  22446 // Honeydew Honey
 ];

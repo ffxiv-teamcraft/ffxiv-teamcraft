@@ -55,6 +55,23 @@ export class WeatherService {
     return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(date), weatherRate);
   }
 
+  public getNextWeatherTransition(mapId: number, fromWeatherIds: number[], weatherId: number, date: Date, weatherRate?: any): Date | null {
+    weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
+    if (!Object.keys(weatherRate).some(key => weatherRate[key] === weatherId)) {
+      return null;
+    }
+    // 8 hours before
+    const dateForPreviousWeather = new Date(date.getTime() - 8 * 60 * 60 * 1000);
+    const previousWeather = this.getWeather(mapId, dateForPreviousWeather);
+    if (fromWeatherIds.indexOf(previousWeather) > -1 && this.getWeather(mapId, date) === weatherId) {
+      const resultDate = new Date(date);
+      resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
+      resultDate.setUTCMinutes(0);
+      return resultDate;
+    }
+    return this.getNextWeatherTransition(mapId, fromWeatherIds, weatherId, this.nextWeatherTime(date), weatherRate);
+  }
+
   public nextWeatherTime(date: Date) {
     date = new Date(date);
     const hoursPast = date.getUTCHours() % 8;

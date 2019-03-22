@@ -152,8 +152,6 @@
            [nzTitle]="row.alarm.folklore.id | itemName | i18n" alt="" class="folklore"><br>
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <div>{{row.remainingTime | timer}}</div>
-        <img *ngIf="row.weather" [src]="row.weather | weatherIcon" alt="{{row.weather | weatherName | i18n}}" nz-tooltip
-             [nzTitle]="row.weather | weatherName | i18n">
         <div *ngIf="row.alarm.nodeContent" nz-popover
              [nzTitle]="'ALARMS.Node_content' | translate"
              [nzContent]="nodeContent">
@@ -169,14 +167,25 @@
         </div>
       </div>
       <br>
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+        <div *ngIf="row.alarm.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+          <div *ngFor="let weather of row.alarm.weathersFrom">
+            <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+                 [nzTitle]="weather | weatherName | i18n">
+          </div>
+        </div>
+        <div *ngIf="row.alarm.weathersFrom !== undefined">
+          <i nz-icon type="right" theme="outline"></i>
+        </div>
+        <div *ngIf="row.alarm.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+          <div *ngFor="let weather of row.alarm.weathers">
+            <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+                 [nzTitle]="weather | weatherName | i18n">
+          </div>
+        </div>
+      </div>
       <div *ngIf="row.alarm.baits !== undefined" class="baits">
         <app-fishing-bait [baits]="row.alarm.baits"></app-fishing-bait>
-      </div>
-      <div *ngIf="row.alarm.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
-        <div *ngFor="let weather of row.alarm.weathers">
-          <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
-               [nzTitle]="weather | weatherName | i18n">
-        </div>
       </div>
       <button *ngIf="row.alarm.note === undefined || row.alarm.note.length === 0; else note" nz-button nzGhost
               nz-tooltip nzTitle="{{'ALARMS.Add_note' | translate}}"
