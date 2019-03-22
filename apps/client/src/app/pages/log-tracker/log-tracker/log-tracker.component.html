@@ -206,11 +206,11 @@
                      nz-tooltip [nzTitle]="'LOG_TRACKER.Weather_dependant' | translate"></i>
                   <i nz-icon type="check" *ngIf="userCompletion[item.itemId]"></i>
                 </div>
-                <div class="recipe-details">lvl {{item.level}} {{item.stars | ingameStars}}</div>
+                <div class="recipe-details">ilvl {{item.level}}</div>
               </div>
             </div>
             <div nz-col [nzMd]="12" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center">
-              <ng-container *ngIf="getFshData(item) as nodeData">
+              <ng-container *ngIf="getFshData(item) as nodeData; else baseData">
                 <div *ngFor="let node of nodeData; let last = last" fxLayout="row"
                      fxLayoutAlign="flex-start center">
                   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
@@ -257,6 +257,11 @@
                   <nz-divider *ngIf="!last" nzType="vertical"></nz-divider>
                 </div>
               </ng-container>
+              <ng-template #baseData>
+                <div>
+                  {{item.zoneId | placeName | i18n}}
+                </div>
+              </ng-template>
             </div>
             <div nz-col [nzMd]="4"></div>
             <div nz-col [nzMd]="2">
@@ -278,7 +283,9 @@
           </div>
           <nz-divider *ngIf="!last"></nz-divider>
         </div>
-        <nz-pagination [(nzPageIndex)]="anglingPage" nzPageSize="1"
+        <nz-pagination *ngIf="fshSelectedPage === 0" [(nzPageIndex)]="anglingPage" nzPageSize="1"
+                       [nzTotal]="fshTabs[fshSelectedPage].length"></nz-pagination>
+        <nz-pagination *ngIf="fshSelectedPage === 1" [(nzPageIndex)]="spearFishingPage" nzPageSize="1"
                        [nzTotal]="fshTabs[fshSelectedPage].length"></nz-pagination>
       </nz-tab>
     </nz-tabset>

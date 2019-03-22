@@ -331,8 +331,7 @@ if (hasTodo('fishingLog')) {
         const entry = {
           id: fish.ID,
           itemId: fish.ItemTargetID,
-          level: fish.GatheringItemLevel.GatheringItemLevel,
-          stars: fish.GatheringItemLevel.Stars,
+          level: fish.GatheringItemLevel.ID,
           icon: fish.Item.Icon,
           mapId: fish.TerritoryType.Map.ID,
           zoneId: fish.TerritoryType.PlaceName.ID

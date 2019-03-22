@@ -279,7 +279,7 @@ export class LogTrackerComponent {
         .filter(res => res !== undefined)
         .slice(0, 3);
     }
-    return [];
+    return null;
   }
 
   public getNodeData(itemId: number, tab: number): any {
