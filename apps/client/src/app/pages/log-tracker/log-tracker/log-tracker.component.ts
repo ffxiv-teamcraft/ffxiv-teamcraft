@@ -405,7 +405,8 @@ export class LogTrackerComponent {
       spawns: node.spawnTimes,
       mapId: node.mapId,
       baits: node.baits || [],
-      weathers: node.weathers
+      weathers: node.weathers,
+      weathersFrom: node.weathersFrom
     };
   }
 
