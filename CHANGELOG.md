@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.4"></a>
+## [5.1.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.3...v5.1.4) (2019-03-23)
+
+
+### Bug Fixes
+
+* **lists:** better support for big lists, they shouldn't disappear anymore ([a971634](https://github.com/Supamiu/ffxiv-teamcraft/commit/a971634))
+* **teams:** fixed an issue with wrong permissions being resolved for team list ([a84e4dc](https://github.com/Supamiu/ffxiv-teamcraft/commit/a84e4dc))
+
+
+### Features
+
+* **list:** you can now add an item from a list to another list ([caa2042](https://github.com/Supamiu/ffxiv-teamcraft/commit/caa2042))
+
+
+
 <a name="5.1.3"></a>
 ## [5.1.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.2...v5.1.3) (2019-03-19)
 
