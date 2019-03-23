@@ -54,7 +54,6 @@
   "Collectable_flag": "Kolekcijski",
   "Compact_display": "Kompaktni zaslon",
   "Mute_alarms": "Isključite alarme",
-  "Unmute_alarms": "Uključite alarme",
   "Hide_used": "Sakrijte korištene redove",
   "Collapse_if_done": "Minimalizirajte nakon dovršetka",
   "Retainer_ventures": "Retainerovi zadatci",
@@ -404,6 +403,7 @@
     "Add_item": "Add an item",
     "List_too_large": "List too large",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -515,7 +515,6 @@
     "Template_created": "List template created",
     "Dialog_title": "Template creation",
     "Link_name": "Template name",
-    "target": "Target list",
     "Share_link_copied": "Template share link copied to the clipboard",
     "Copy_template_url": "Copy template url",
     "Cloning_list": "Creating a copy of the list to your account",
@@ -812,6 +811,7 @@
     "Mark_as_done": "Mark this item as done",
     "Mark_as_not_done": "Mark this item as not done",
     "Create_list": "Create a list to complete this page",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",

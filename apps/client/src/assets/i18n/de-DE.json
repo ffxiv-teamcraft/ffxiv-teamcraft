@@ -54,7 +54,6 @@
   "Collectable_flag": "Sammlerstücke",
   "Compact_display": "Komptaktansicht",
   "Mute_alarms": "Benachrichtigung stummschalten",
-  "Unmute_alarms": "Alarm reaktivieren",
   "Hide_used": "Verwendete Reihen ausblenden",
   "Collapse_if_done": "Bei Fertigstellung zusammenklappen",
   "Retainer_ventures": "Gehilfen-Unternehmungen",
@@ -404,6 +403,7 @@
     "Add_item": "Füge ein Item hinzu",
     "List_too_large": "Liste zu lang",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -515,7 +515,6 @@
     "Template_created": "Listenvorlage erstellt",
     "Dialog_title": "Vorlagenerstellung",
     "Link_name": "Vorlagenname",
-    "target": "Zielliste",
     "Share_link_copied": "Vorlagenverknüpfung wurde in die Zwischenablage kopiert",
     "Copy_template_url": "Vorlagen-URL kopieren",
     "Cloning_list": "Eine Kopie der Liste wird deinem Account hinzugefügt",
@@ -812,6 +811,7 @@
     "Mark_as_done": "Als erledigt markieren",
     "Mark_as_not_done": "Als nicht erledigt markieren",
     "Create_list": "Erstelle eine List um diese Seite vervollständigen",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",

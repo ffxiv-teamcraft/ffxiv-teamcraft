@@ -54,7 +54,6 @@
   "Collectable_flag": "Коллекция",
   "Compact_display": "Компактный дисплей",
   "Mute_alarms": "Скрыть оповещения",
-  "Unmute_alarms": "Включить оповещения",
   "Hide_used": "Скрыть используемые строки",
   "Collapse_if_done": "Крах, если сделано",
   "Retainer_ventures": "Авантюрист",
@@ -404,6 +403,7 @@
     "Add_item": "Добавить предмет",
     "List_too_large": "Список слишком большой",
     "List_too_large_description": "Этот список слишком велик и может достичь ограничений размера базы данных из-за всей информации, которую он несет. Вы не можете добавить больше предметов, дабы избежать потери списка.",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -515,7 +515,6 @@
     "Template_created": "Список шаблона создан",
     "Dialog_title": "Создание шаблона",
     "Link_name": "Имя шаблона",
-    "target": "Цель списка",
     "Share_link_copied": "Ссылка на шаблон скопирована в буфер обмена",
     "Copy_template_url": "Копировать шаблон url",
     "Cloning_list": "Создать копию списка на ваш аккаунт",
@@ -812,6 +811,7 @@
     "Mark_as_done": "Mark this item as done",
     "Mark_as_not_done": "Mark this item as not done",
     "Create_list": "Create a list to complete this page",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
