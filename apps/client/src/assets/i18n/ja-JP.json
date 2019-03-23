@@ -54,7 +54,6 @@
   "Collectable_flag": "蒐集品",
   "Compact_display": "コンパクト表示",
   "Mute_alarms": "アラームをミュートする",
-  "Unmute_alarms": "アラームのミュートを解除する",
   "Hide_used": "使用された項目を隠す",
   "Collapse_if_done": "完了しならパネルを隠す",
   "Retainer_ventures": "リテイナーベンチャー",
@@ -404,6 +403,7 @@
     "Add_item": "アイテムを追加する",
     "List_too_large": "リストが大き過ぎます",
     "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -515,7 +515,6 @@
     "Template_created": "リストの書式が生成されました。",
     "Dialog_title": "テンプレートの生成",
     "Link_name": "テンプレート名",
-    "target": "対象のリスト",
     "Share_link_copied": "テンプレートシェアリンクがクリップボードにコピーされました",
     "Copy_template_url": "テンプレートのURLをコピーする",
     "Cloning_list": "マイアカウントにリストのコピー本を生成する",
@@ -812,6 +811,7 @@
     "Mark_as_done": "このアイテムに完了として表示する",
     "Mark_as_not_done": "このアイテムを未完了として表示する",
     "Create_list": "このページを完成させるためのリストを作成する",
+    "Required_for_achievement": "アチーブメントに適用された",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
       "Housing_items": "ハウジング ({{number}})",

@@ -65,8 +65,8 @@ export class ListPanelComponent {
 
   private updateAmountDebounces: { [index: number]: Subject<any> } = {};
 
-  permissionLevel$: Observable<PermissionLevel> = this.authFacade.loggedIn$.pipe(
-    switchMap(loggedIn => {
+  permissionLevel$: Observable<PermissionLevel> = combineLatest(this.teamsFacade.myTeams$, this.authFacade.loggedIn$).pipe(
+    switchMap(([teams, loggedIn]) => {
       return combineLatest(
         this.authFacade.userId$,
         loggedIn ? this.authFacade.user$ : of(null),
@@ -74,7 +74,12 @@ export class ListPanelComponent {
       ).pipe(
         map(([userId, user, list]) => {
           if (user !== null) {
-            return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(user.currentFcId));
+            const isTeamList = list.teamId && teams.some(team => list.teamId === team.$key);
+            return Math.max(
+              list.getPermissionLevel(userId),
+              list.getPermissionLevel(user.currentFcId),
+              isTeamList ? PermissionLevel.PARTICIPATE : PermissionLevel.NONE
+            );
           } else {
             return list.getPermissionLevel(userId);
           }

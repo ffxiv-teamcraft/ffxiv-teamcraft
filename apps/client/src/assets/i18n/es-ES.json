@@ -54,7 +54,6 @@
   "Collectable_flag": "Coleccionable",
   "Compact_display": "Presentación compacta",
   "Mute_alarms": "Silenciar alarmas",
-  "Unmute_alarms": "Activar alarmas",
   "Hide_used": "Esconder filas usadas",
   "Collapse_if_done": "Colapsar completados",
   "Retainer_ventures": "Aventuras de sirviente",
@@ -404,6 +403,7 @@
     "Add_item": "Agregar un artículo",
     "List_too_large": "Lista demasiado larga",
     "List_too_large_description": "Esta lista es muy larga y puede llegar al limite de tamaño de la base de datos debido a toda la información que lleva. No le será permitido añadir más elementos para asegurar que no pierda la lista.",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -515,7 +515,6 @@
     "Template_created": "Plantilla de lista creada",
     "Dialog_title": "Creación de plantilla",
     "Link_name": "Nombre de la plantilla",
-    "target": "Lista objetivo",
     "Share_link_copied": "Vínculo para compartir plantilla copiado a portapapeles",
     "Copy_template_url": "Copiar url de la plantilla",
     "Cloning_list": "Creando una copia de la lista a su cuenta",
@@ -812,6 +811,7 @@
     "Mark_as_done": "Marcar este artículo como hecho",
     "Mark_as_not_done": "Marcar este artículo como no hecho",
     "Create_list": "Crear una lista para completar esta página",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Recetas maestras ({{number}})",
       "Housing_items": "Artículos de vivienda({{number}})",

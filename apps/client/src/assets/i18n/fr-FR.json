@@ -54,7 +54,6 @@
   "Collectable_flag": "Collectionnable",
   "Compact_display": "Affichage compact",
   "Mute_alarms": "Mettre en sourdine",
-  "Unmute_alarms": "Réactiver les alarmes sonores",
   "Hide_used": "Masquer les éléments utilisés",
   "Collapse_if_done": "Réduire une fois complété",
   "Retainer_ventures": "Tâches de servant",
@@ -404,6 +403,7 @@
     "Add_item": "Ajouter un objet",
     "List_too_large": "Liste trop longue",
     "List_too_large_description": "Cette liste est trop longue et pourrait être supprimée automatiquement par le système de base de données en raison de quotas imposés si vous y ajoutez plus d'objets.",
+    "Add_to_another_list": "Ajouter à une autre liste",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -515,7 +515,6 @@
     "Template_created": "Modèle de liste créé",
     "Dialog_title": "Création du modèle",
     "Link_name": "Nom du modèle",
-    "target": "Liste cible",
     "Share_link_copied": "Lien de partage du modèle copié dans le presse-papiers",
     "Copy_template_url": "Copier l'url du modèle",
     "Cloning_list": "Création d'une copie de la liste sur votre compte",
@@ -812,6 +811,7 @@
     "Mark_as_done": "Marquer comme fait",
     "Mark_as_not_done": "Marquer comme non fait",
     "Create_list": "Créer une liste pour compléter cette page",
+    "Required_for_achievement": "Requis pour les haut faits",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
