@@ -403,6 +403,7 @@
     "Add_item": "アイテムを追加する",
     "List_too_large": "リストが大き過ぎます",
     "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
