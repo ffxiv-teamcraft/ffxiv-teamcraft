@@ -403,6 +403,7 @@
     "Add_item": "Adicionar um item",
     "List_too_large": "Lista é demasiado grande",
     "List_too_large_description": "Esta lista é muito grande e pode atingir a limitação de tamanho da base de dados por causa de todas as informações que carrega. Não pode adicionar mais itens para se certificar de que a lista não perca informações.",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",
