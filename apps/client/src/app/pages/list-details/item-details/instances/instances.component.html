@@ -1,7 +1,8 @@
 <nz-list [nzRenderItem]="instanceTemplate" [nzDataSource]="item.instances">
   <ng-template #instanceTemplate let-instance>
     <nz-list-item>
-      <nz-list-item-meta [nzTitle]="instance.id | placeName | i18n" [nzAvatar]="instance.icon | instanceIcon">
+      <nz-list-item-meta [nzTitle]="(instance.id | placeName | i18n) || instance.name"
+                         [nzAvatar]="instance.icon | instanceIcon">
       </nz-list-item-meta>
     </nz-list-item>
   </ng-template>
