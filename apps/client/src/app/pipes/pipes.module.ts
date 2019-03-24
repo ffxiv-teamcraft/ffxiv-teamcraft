@@ -25,6 +25,7 @@ import { WeatherNamePipe } from './weather-name.pipe';
 import { WeatherIconPipe } from './weather-icon.pipe';
 import { ActionNamePipe } from './action-name.pipe';
 import { CustomItemNamePipe } from './custom-item-name.pipe';
+import { PermissionLevelPipe } from './permission-level.pipe';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { CustomItemNamePipe } from './custom-item-name.pipe';
     XivapiI18nPipe,
     WeatherNamePipe,
     WeatherIconPipe,
-    CustomItemNamePipe
+    CustomItemNamePipe,
+    PermissionLevelPipe
   ],
   exports: [
     ItemNamePipe,
@@ -81,7 +83,8 @@ import { CustomItemNamePipe } from './custom-item-name.pipe';
     XivapiI18nPipe,
     WeatherNamePipe,
     WeatherIconPipe,
-    CustomItemNamePipe
+    CustomItemNamePipe,
+    PermissionLevelPipe
   ]
 })
 export class PipesModule {
