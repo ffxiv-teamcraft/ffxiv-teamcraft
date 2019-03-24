@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.5"></a>
+## [5.1.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.4...v5.1.5) (2019-03-24)
+
+
+### Bug Fixes
+
+* **alarms:** fixed a display issue when two alarms have same remaining time ([5de91c2](https://github.com/Supamiu/ffxiv-teamcraft/commit/5de91c2))
+* **core:** fixed an error message poping because of last firestore update ([3ae1c8c](https://github.com/Supamiu/ffxiv-teamcraft/commit/3ae1c8c))
+* **list:** fixed an issue with missing instance name, needs list regeneration ([a48210f](https://github.com/Supamiu/ffxiv-teamcraft/commit/a48210f))
+* **map:** fixed an issue with platinum ore's location ([bfc6eb2](https://github.com/Supamiu/ffxiv-teamcraft/commit/bfc6eb2))
+* **merge:** fixed an issue with merge dialog box when closing new list name input ([ea3baba](https://github.com/Supamiu/ffxiv-teamcraft/commit/ea3baba))
+
+
+### Features
+
+* **list:** permission level for everyone is now shown on both panel and list details using an icon ([80841bd](https://github.com/Supamiu/ffxiv-teamcraft/commit/80841bd))
+
+
+
 <a name="5.1.4"></a>
 ## [5.1.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.3...v5.1.4) (2019-03-23)
 

@@ -73,6 +73,15 @@
            fxLayoutAlign.lt-md="center center"
            fxLayoutAlign="flex-start center">
         <h2>{{list.name}}</h2>
+        <div class="permission-icon" nz-tooltip
+             *ngIf="(permissionLevel$ | async) === 40"
+             [nzTitle]="'PERMISSIONS.List_tooltip' | translate: { level: list.everyone | permissionLevel }">
+          <div [ngSwitch]="list.everyone">
+            <i nz-icon type="eye-invisible" theme="outline" *ngSwitchCase="1"></i>
+            <i nz-icon type="eye" theme="outline" *ngSwitchCase="10"></i>
+            <i nz-icon type="file-done" theme="outline" *ngSwitchCase="20"></i>
+          </div>
+        </div>
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
           <div fxLayout="row" fxLayoutGap="5px">
             <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"

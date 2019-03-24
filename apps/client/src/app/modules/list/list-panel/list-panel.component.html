@@ -23,13 +23,25 @@
   </nz-collapse-panel>
   <ng-template #panelHeader>
     <div class="panel-header" nz-row fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px">
-      <div nz-col nzSm="22" nzMd="4" (dblclick)="openList()">
-        {{_list.name}} - {{'LIST.Items_count' | translate:{ amount: _list.finalItems.length } }}
+      <div nz-col nzSm="20" nzMd="4" (dblclick)="openList()" fxLayout="row" fxLayoutAlign="flex-start center"
+           fxLayoutGap="5px">
+        <div>
+          {{_list.name}} - {{'LIST.Items_count' | translate:{ amount: _list.finalItems.length } }}
+        </div>
+        <div class="permission-icon" nz-tooltip
+             *ngIf="(permissionLevel$ | async) === 40"
+             [nzTitle]="'PERMISSIONS.List_tooltip' | translate: { level: _list.everyone | permissionLevel }">
+          <div [ngSwitch]="_list.everyone">
+            <i nz-icon type="eye-invisible" theme="outline" *ngSwitchCase="1"></i>
+            <i nz-icon type="eye" theme="outline" *ngSwitchCase="10"></i>
+            <i nz-icon type="file-done" theme="outline" *ngSwitchCase="20"></i>
+          </div>
+        </div>
       </div>
       <div class="author-avatar" *ngIf="!hideAvatar && _list.authorId !== undefined">
         <app-user-avatar [userId]="_list.authorId" [width]="24"></app-user-avatar>
       </div>
-      <div nz-col nzSm="24" nzMd="16" class="panel-middle-content">
+      <div nz-col nzSm="24" nzMd="15" class="panel-middle-content">
         <div class="tags">
           <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
             {{'Ephemeral_tag' | translate}}
