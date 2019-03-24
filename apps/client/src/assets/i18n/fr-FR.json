@@ -547,7 +547,7 @@
     "Propagate_changes_done": "Permissions propagées avec succès",
     "Team_notice": "L'équipe associée à cette liste a la permission PARTICIPATE de façon automatique",
     "Default_permission_level": "Niveau de permission par défaut",
-    "List_tooltip": "Permission level for everyone: {{level}}"
+    "List_tooltip": "Niveau d'autorisation pour tout le monde : {{level}}"
   },
   "WIKI": {
     "Title": "Wiki",
