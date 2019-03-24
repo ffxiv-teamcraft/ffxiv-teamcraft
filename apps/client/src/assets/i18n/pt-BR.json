@@ -546,7 +546,8 @@
     "Propagate_changes": "Propagar permissões para listas dentro da oficina",
     "Propagate_changes_done": "Alterações propagadas para listas dentro da oficina",
     "Team_notice": "A equipe associada a esta lista tem automaticamente permissão PARTICIPATE",
-    "Default_permission_level": "Nível de Permissão Padrão"
+    "Default_permission_level": "Nível de Permissão Padrão",
+    "List_tooltip": "Permission level for everyone: {{level}}"
   },
   "WIKI": {
     "Title": "Wiki",
