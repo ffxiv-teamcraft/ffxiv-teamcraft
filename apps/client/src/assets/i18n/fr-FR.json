@@ -546,7 +546,8 @@
     "Propagate_changes": "Propager les permissions aux listes dans l'atelier",
     "Propagate_changes_done": "Permissions propagées avec succès",
     "Team_notice": "L'équipe associée à cette liste a la permission PARTICIPATE de façon automatique",
-    "Default_permission_level": "Niveau de permission par défaut"
+    "Default_permission_level": "Niveau de permission par défaut",
+    "List_tooltip": "Permission level for everyone: {{level}}"
   },
   "WIKI": {
     "Title": "Wiki",
