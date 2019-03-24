@@ -54,7 +54,6 @@
   "Collectable_flag": "收藏品",
   "Compact_display": "紧凑显示",
   "Mute_alarms": "静音",
-  "Unmute_alarms": "取消闹钟静音",
   "Hide_used": "隐藏被使用的行",
   "Collapse_if_done": "折叠已完成项",
   "Retainer_ventures": "雇员委托",
@@ -404,6 +403,7 @@
     "Add_item": "添加物品",
     "List_too_large": "List too large",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "Add Panel",
@@ -515,7 +515,6 @@
     "Template_created": "List template created",
     "Dialog_title": "模板创建",
     "Link_name": "模版名称",
-    "target": "目标列表",
     "Share_link_copied": "Template share link copied to the clipboard",
     "Copy_template_url": "复制模板链接",
     "Cloning_list": "Creating a copy of the list to your account",
@@ -677,7 +676,6 @@
       "NOT_ENOUGH_CP": "制作力不足",
       "MISSING_LEVEL_REQUIREMENT": "等级不够",
       "NOT_SPECIALIST": "使用了专家工序，但你不是专家",
-      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
   },
@@ -813,6 +811,7 @@
     "Mark_as_done": "将此物品标记为已完成",
     "Mark_as_not_done": "将此物品标记为未完成",
     "Create_list": "创建一个列表以完成这个页面",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
