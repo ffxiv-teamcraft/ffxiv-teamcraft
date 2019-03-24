@@ -546,7 +546,8 @@
     "Propagate_changes": "Berechtigungen auch auf Listen des Workshops anwenden",
     "Propagate_changes_done": "Änderungen wurden auf Listen des Workshops angewendet",
     "Team_notice": "Das mit dieser Liste verbundene Team hat automatisch das BEITRAGEN Recht",
-    "Default_permission_level": "Standardberechtigung"
+    "Default_permission_level": "Standardberechtigung",
+    "List_tooltip": "Permission level for everyone: {{level}}"
   },
   "WIKI": {
     "Title": "Wiki",
