@@ -546,7 +546,8 @@
     "Propagate_changes": "Propagar permisos a las listas dentro del taller",
     "Propagate_changes_done": "Cambios propagados a las listas dentro del taller",
     "Team_notice": "El equipo asociado a esta lista automáticamente tiene el permiso de PARTICIPAR",
-    "Default_permission_level": "Nivel de permiso predeterminado"
+    "Default_permission_level": "Nivel de permiso predeterminado",
+    "List_tooltip": "Permission level for everyone: {{level}}"
   },
   "WIKI": {
     "Title": "Wiki",
