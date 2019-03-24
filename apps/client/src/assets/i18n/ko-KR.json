@@ -403,7 +403,7 @@
     "Add_item": "아이템 추가",
     "List_too_large": "너무 큰 목록",
     "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
-    "Add_to_another_list": "Add to another list",
+    "Add_to_another_list": "다른 목록에 추가",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
