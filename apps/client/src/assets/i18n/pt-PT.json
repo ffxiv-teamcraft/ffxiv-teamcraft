@@ -546,7 +546,8 @@
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
     "Propagate_changes_done": "Changes propagated to lists inside the workshop",
     "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
-    "Default_permission_level": "Nível de autorização padrão"
+    "Default_permission_level": "Nível de autorização padrão",
+    "List_tooltip": "Permission level for everyone: {{level}}"
   },
   "WIKI": {
     "Title": "Wiki",
