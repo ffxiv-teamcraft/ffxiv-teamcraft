@@ -1,5 +1,6 @@
 import { Complexity } from './complexity';
 import { Ingredient } from './ingredient';
+import { RecipeElement } from './recipe-element';
 
 export interface Craft {
   id: string;
@@ -19,4 +20,5 @@ export interface Craft {
   complexity: Complexity;
   fc?: number;
   yield?: number;
+  element?: RecipeElement;
 }

@@ -1,6 +1,7 @@
 import { BrandAction } from './brand-action';
 import { Buff } from '../../buff.enum';
 import { CraftingJob } from '../../crafting-job.enum';
+import { RecipeElement } from '../../../../../model/garland-tools/recipe-element';
 
 export class BrandOfWind extends BrandAction {
 
@@ -14,5 +15,9 @@ export class BrandOfWind extends BrandAction {
 
   getIds(): number[] {
     return [100006];
+  }
+
+  getElement(): RecipeElement {
+    return RecipeElement.WIND;
   }
 }

@@ -302,6 +302,9 @@
               <div fxLayout="column">
                 <div fxLayout="row" fxLayoutGap="5px">
                   <div>{{item.id | itemName | i18n}}</div>
+                  <div *ngIf="resultData.simulation.recipe.element">
+                    <img [src]="resultData.simulation.recipe.element | elementIcon" alt="" class="affinity-icon">
+                  </div>
                   <button nz-button nzSize="small" nzShape="circle" (click)="changeRecipe(rotation)" nz-tooltip
                           [nzTitle]="'SIMULATOR.Change_recipe' | translate">
                     <i nz-icon iconfont="icon-exchange"></i>

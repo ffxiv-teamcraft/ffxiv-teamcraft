@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.6"></a>
+## [5.1.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.5...v5.1.6) (2019-03-25)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with ingame macro generation on DE version ([c4c802b](https://github.com/Supamiu/ffxiv-teamcraft/commit/c4c802b))
+* **lists:** fixed an issue with data extraction on final items ([ffbe1e4](https://github.com/Supamiu/ffxiv-teamcraft/commit/ffbe1e4))
+* **permissions:** fixed an issue with workshop permissions propagation ([4ed8c68](https://github.com/Supamiu/ffxiv-teamcraft/commit/4ed8c68))
+
+
+### Features
+
+* **desktop:** settings changes are now applied to the overlay too ([dc711f1](https://github.com/Supamiu/ffxiv-teamcraft/commit/dc711f1))
+* **sidebar:** added tooltips on navigation icons when sidebar is collapsed ([18a3a13](https://github.com/Supamiu/ffxiv-teamcraft/commit/18a3a13))
+* **simulator:** proper implementation for recipe affinity ([36f1200](https://github.com/Supamiu/ffxiv-teamcraft/commit/36f1200))
+
+
+
 <a name="5.1.5"></a>
 ## [5.1.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.4...v5.1.5) (2019-03-24)
 

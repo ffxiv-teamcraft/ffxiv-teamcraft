@@ -121,34 +121,22 @@ export class WorkshopPanelComponent implements OnChanges {
       switchMap(() => {
         return modalRef.getContentComponent().propagateChanges$;
       }),
-      tap((workshop: Workshop) => {
-        workshop.listIds.forEach(id => {
-          this.listsFacade.load(id);
-        });
-      }),
-      withLatestFrom(this.authFacade.userId$),
-      switchMap(([workshop, userId]) => {
-        return this.listsFacade.allListDetails$.pipe(
-          filter(details => {
-            return workshop.listIds.reduce((loaded, key) => {
-              return loaded && details.some(list => list.$key === key);
-            }, true);
-          }),
-          map(details => {
-            return workshop.listIds
-              .map(key => {
-                return details.find(l => l.$key === key);
-              })
-              .filter(list => {
-                return list.getPermissionLevel(userId) >= 40;
-              })
-              .map(list => {
-                list.mergePermissions(workshop, true);
-                return list;
-              });
-          }),
-          first()
-        );
+      switchMap((workshop: Workshop) => {
+        return combineLatest(workshop.listIds.map(key => this.listsFacade.loadAndWait(key)))
+          .pipe(
+            first(),
+            withLatestFrom(this.authFacade.userId$),
+            map(([lists, userId]) => {
+              return lists
+                .filter(list => {
+                  return list.getPermissionLevel(userId) >= 40;
+                })
+                .map(list => {
+                  list.mergePermissions(workshop, true);
+                  return list;
+                });
+            })
+          )
       })
     ).subscribe((updatedLists: List[]) => {
       updatedLists.forEach(list => {

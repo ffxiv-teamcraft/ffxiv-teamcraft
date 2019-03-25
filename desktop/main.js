@@ -225,6 +225,18 @@ autoUpdater.on('update-downloaded', () => {
   });
 });
 
+ipcMain.on('apply-settings', (event, settings) => {
+  Object.keys(openedOverlays).forEach(key => {
+    openedOverlays[key].webContents.send('update-settings', settings);
+  });
+});
+
+ipcMain.on('language', (event, lang) => {
+  Object.keys(openedOverlays).forEach(key => {
+    openedOverlays[key].webContents.send('apply-language', lang);
+  });
+});
+
 ipcMain.on('show-devtools', () => {
   win.webContents.openDevTools();
 });
