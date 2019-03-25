@@ -101,6 +101,24 @@
                   "with": "apps/client/src/environments/environment.beta.ts"
                 }
               ]
+            },
+            "preview": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "baseHref": "/",
+              "fileReplacements": [
+                {
+                  "replace": "apps/client/src/environments/environment.ts",
+                  "with": "apps/client/src/environments/environment.preview.ts"
+                }
+              ]
             }
           }
         },
