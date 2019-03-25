@@ -231,6 +231,10 @@ export class AppComponent implements OnInit {
       this.locale = change.lang;
     });
 
+    this.ipc.on('apply-language', (e, newLang) => {
+      this.use(newLang, true);
+    });
+
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
 
     this.firebase.object('maintenance').valueChanges().subscribe(maintenance => {
@@ -316,13 +320,16 @@ export class AppComponent implements OnInit {
     }, 30000);
   }
 
-  use(lang: string): void {
+  use(lang: string, fromIpc = false): void {
     if (this.settings.availableLocales.indexOf(lang) === -1) {
       lang = 'en';
     }
     this.locale = lang;
     localStorage.setItem('locale', lang);
     this.translate.use(lang);
+    if (!fromIpc) {
+      this.ipc.send('language', lang);
+    }
   }
 
   public back(): void {

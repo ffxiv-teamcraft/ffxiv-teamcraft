@@ -150,6 +150,7 @@ export class SettingsPopupComponent {
   setLanguage(lang: string): void {
     localStorage.setItem('locale', lang);
     this.translate.use(lang);
+    this.ipc.send('language', lang);
   }
 
 }
