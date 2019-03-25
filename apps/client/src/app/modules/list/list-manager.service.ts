@@ -180,7 +180,11 @@ export class ListManagerService {
     } else {
       addition$ = of(addition);
     }
-    return addition$;
+    return addition$.pipe(
+      map(wipList => {
+        return this.addDetails(wipList, data, recipeId);
+      })
+    );
   }
 
   public addDetails(list: List, data: ItemData, recipeId?: string | number): List {

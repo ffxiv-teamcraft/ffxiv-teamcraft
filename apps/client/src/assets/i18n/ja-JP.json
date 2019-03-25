@@ -26,6 +26,7 @@
     "Crafts_amount": "クラフトの数",
     "Add_to_list": "このアイテムをリストに追加する",
     "Apply_filters": "フィルターを適用する",
+    "Reset_filters": "フィルターをリセットする",
     "Too_many_results_warning": "検索結果が100件を超えてます。データソースの制限のため、正確なアイテムを探すためには、追加フィルター設定が必要とします。",
     "Share_url": "検索URLをクリップボードにコピーする",
     "Share_url_copied": "検索URLがクリップボードにコピーされました"
@@ -53,7 +54,6 @@
   "Collectable_flag": "蒐集品",
   "Compact_display": "コンパクト表示",
   "Mute_alarms": "アラームをミュートする",
-  "Unmute_alarms": "アラームのミュートを解除する",
   "Hide_used": "使用された項目を隠す",
   "Collapse_if_done": "完了しならパネルを隠す",
   "Retainer_ventures": "リテイナーベンチャー",
@@ -403,6 +403,7 @@
     "Add_item": "アイテムを追加する",
     "List_too_large": "リストが大き過ぎます",
     "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -514,7 +515,6 @@
     "Template_created": "リストの書式が生成されました。",
     "Dialog_title": "テンプレートの生成",
     "Link_name": "テンプレート名",
-    "target": "対象のリスト",
     "Share_link_copied": "テンプレートシェアリンクがクリップボードにコピーされました",
     "Copy_template_url": "テンプレートのURLをコピーする",
     "Cloning_list": "マイアカウントにリストのコピー本を生成する",
@@ -663,6 +663,7 @@
       "No_food": "飯なし",
       "No_medicine": "薬なし",
       "No_fc_buffs": "フリーカンパニーのバフなし",
+      "Quest_warning": "レベル70のジョブクエストから '魔匠の閃き' を獲得しましたか、必ずご確認下さい",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "作業精度",
@@ -686,7 +687,8 @@
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。",
-    "Cheaper_at_vendor": "NPC から購入した方が安い ({{price}} ギル)"
+    "Cheaper_at_vendor": "NPC から購入した方が安い ({{price}} ギル)",
+    "Copy_panel_as_text": "このパネルをテキストとしてコピーする"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -809,6 +811,7 @@
     "Mark_as_done": "このアイテムに完了として表示する",
     "Mark_as_not_done": "このアイテムを未完了として表示する",
     "Create_list": "このページを完成させるためのリストを作成する",
+    "Required_for_achievement": "アチーブメントに適用された",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
       "Housing_items": "ハウジング ({{number}})",
@@ -824,6 +827,73 @@
     "Discord_1K": {
       "Title": "ディスコードメンバー1000名達成イベント!",
       "Description": "このバナーをクリックして、Final Fantasy XIV: 漆黑の反逆者の所蔵版の贈呈イベントに登録してください！ このイベントは、TC discord サーバーのメンバー数が限界値の1000名を達成したのを祝うためのものです。"
+    }
+  },
+  "CUSTOM_ITEMS": {
+    "Title": "カスタムアイテム",
+    "New_item": "カスタムアイテムを作成する",
+    "New_folder": "新規フォルダーを作成",
+    "Rename_folder": "フォルダー名を変更する",
+    "Import_items": "カスタムアイテムをインポート",
+    "Save": "アイテムを保存する",
+    "Details": "アイテムの詳細",
+    "Export_item": "アイテムをエクスポート",
+    "Export_items": "複数のアイテムをエクスポート",
+    "Add_to_list": "リストに追加する",
+    "No_items": "カスタムアイテムがありません",
+    "DETAILS": {
+      "Level": "レベル",
+      "None": "無し",
+      "Stars": "難易度",
+      "Requirements": "材料",
+      "Add_requirement": "材料追加",
+      "Yields": "制作個数",
+      "Name": "名",
+      "ID": "アイテム名",
+      "CRAFT": {
+        "Title": "制作方法",
+        "Job": "ジョブ",
+        "No_requirement_warning": "アイテムに必要な材料を設定していません。どんな材料も無しで制作する事を意味します。"
+      },
+      "GATHERING": {
+        "Title": "採集方法",
+        "Type": "採集物類型",
+        "Folklore": "伝承録",
+        "Slot": "スロット"
+      },
+      "ALARMS": {
+        "Title": "アラーム"
+      },
+      "VENDORS": {
+        "Title": "商人",
+        "Npc_name": "NPC 名",
+        "Price": "販売価格:",
+        "Delete_vendor": "商人を削除"
+      },
+      "TRADES": {
+        "Title": "交換情報",
+        "Npc_name": "NPC 名",
+        "Shop_name": "商店名",
+        "Delete_trade": "交換情報を削除",
+        "Trade_details": "交換詳細",
+        "Add_currency": "交換用アイテム追加"
+      },
+      "REDUCTION": {
+        "Title": "精選で獲得"
+      }
+    },
+    "NPC_PICKER": {
+      "Title": "NPCを検索",
+      "Npc_name": "NPC 名"
+    },
+    "IMPORT": {
+      "Corrupted_file": "インポートファイルが破損しているか、形式が間違っています",
+      "Drag_or_click": "ここでファイルをドラッグするか、クリックして選択して下さい",
+      "Format": "形式",
+      "Folder": "フォルダー",
+      "No_folder": "フォルダー無し",
+      "Parsing_file": "ファイルの内容を分析中",
+      "Saving_items": "({{done}}{{todo}}) を保存しました"
     }
   }
 }

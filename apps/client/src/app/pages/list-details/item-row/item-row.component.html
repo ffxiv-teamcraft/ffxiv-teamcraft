@@ -12,7 +12,8 @@
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
         {{item.id | itemName: item | i18n}}
       </span>
-      <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;" nz-tooltip
+      <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
+            nz-tooltip
             *ngIf="settings.preferredCopyType === 'isearch'"
             [nzTitle]="'Copy_isearch' | translate"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
@@ -91,6 +92,9 @@
             *ngIf="((requiredForFinalCraft$ | async) >= 0 || item.requiredAsHQ) && (permissionLevel$ | async) >= 30"
             (click)="item.requiredAsHQ = false; saveItem()">
           {{'Unmark_HQ' | translate}}
+        </li>
+        <li nz-menu-item (click)="addToList(item)">
+          {{'LIST_DETAILS.Add_to_another_list' | translate}}
         </li>
       </ul>
     </nz-dropdown>

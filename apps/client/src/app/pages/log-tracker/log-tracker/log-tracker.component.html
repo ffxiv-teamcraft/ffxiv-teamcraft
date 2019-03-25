@@ -21,7 +21,7 @@
             <nz-spin [nzSpinning]="userCompletion === {}">
               <div fxLayout="column" *ngIf="dohSelectedPage === page.id">
                 <div class="toolbar" fxLayout="row" fxLayoutGap="5px" fxLayout.lt-md="column">
-                  <button nz-button (click)="markDohPageAsDone(page)">
+                  <button nz-button nz-popconfirm [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="markDohPageAsDone(page)">
                     <i nz-icon type="check"></i> {{'LOG_TRACKER.Mark_page_as_done' | translate}}
                   </button>
                   <button nz-button (click)="createList(page)">

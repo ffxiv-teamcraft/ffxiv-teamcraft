@@ -26,7 +26,8 @@
     "Crafts_amount": "# de elaboraciones",
     "Add_to_list": "Agregar este elemento a una lista",
     "Apply_filters": "Aplicar filtros",
-    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Reset_filters": "Resetear filtros",
+    "Too_many_results_warning": "Esta búsqueda devuelve más de 100 artículos. Como nuestro origen de datos esta limitado a 100 resultados, puede que necesite filtros adicionales para encontrar un artículo específico.",
     "Share_url": "Copiar el url de búsqueda al portapapeles",
     "Share_url_copied": "URL de búsqueda copiado al portapapeles"
   },
@@ -53,7 +54,6 @@
   "Collectable_flag": "Coleccionable",
   "Compact_display": "Presentación compacta",
   "Mute_alarms": "Silenciar alarmas",
-  "Unmute_alarms": "Activar alarmas",
   "Hide_used": "Esconder filas usadas",
   "Collapse_if_done": "Colapsar completados",
   "Retainer_ventures": "Aventuras de sirviente",
@@ -86,7 +86,7 @@
   "No_favorites": "No hay favoritos",
   "Ephemeral_list": "Será borrada al completarse",
   "Ephemeral_tag": "efímero",
-  "Remove_ephemeral": "Upgrade to permanent list",
+  "Remove_ephemeral": "Convertir a lista permanente",
   "Quick_list_create": "Crear lista rápida (borrada al completarse)",
   "Tag_filter": "Etiquetas",
   "Public_lists": "Listas Comunitarias",
@@ -289,7 +289,7 @@
     "Nickname_used": "El apodo ya está en uso",
     "No_nickname_warning": "Por favor vaya a la página de configuración y configure un apodo para poder usar correctamente las características exclusivas de patron.",
     "Show_devtools": "Mostrar herramientas de desarrollador",
-    "Clear_cache": "Clear cache (will restart the app)",
+    "Clear_cache": "Borrar caché (reiniciará la aplicación)",
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
@@ -401,8 +401,9 @@
     "Disable_HQ_suggestions": "Desactivar las banderas HQ automáticas",
     "Amount_craftable": "Puede crear {{amount}}",
     "Add_item": "Agregar un artículo",
-    "List_too_large": "List too large",
-    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "List_too_large": "Lista demasiado larga",
+    "List_too_large_description": "Esta lista es muy larga y puede llegar al limite de tamaño de la base de datos debido a toda la información que lleva. No le será permitido añadir más elementos para asegurar que no pierda la lista.",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -514,7 +515,6 @@
     "Template_created": "Plantilla de lista creada",
     "Dialog_title": "Creación de plantilla",
     "Link_name": "Nombre de la plantilla",
-    "target": "Lista objetivo",
     "Share_link_copied": "Vínculo para compartir plantilla copiado a portapapeles",
     "Copy_template_url": "Copiar url de la plantilla",
     "Cloning_list": "Creando una copia de la lista a su cuenta",
@@ -663,6 +663,7 @@
       "No_food": "Sin comida",
       "No_medicine": "Sin medicina",
       "No_fc_buffs": "Sin bonos de Gremio Independiente (FC)",
+      "Quest_warning": "Asegúrese de que ha hecho la misión nivel 70 para \"Stroke of Genius\"",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Artesanía",
@@ -686,7 +687,8 @@
     "Autofill_panel_prices_warning": "Este es un proceso lento y debería tomar alrededor de {{time}} segundos para completarse. ¿Está seguro?",
     "Copy_earnings_as_text": "Copiar contenido como texto",
     "Content_copied": "Contenido copiado a su portapapeles",
-    "Cheaper_at_vendor": "Más barato si compra de NPC ({{price}} gil)"
+    "Cheaper_at_vendor": "Más barato si compra de NPC ({{price}} gil)",
+    "Copy_panel_as_text": "Copiar este panel como texto"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -710,7 +712,7 @@
     "List_comment_added": "Comentario publicado en la lista {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comentario publicado en {{itemName}}, lista {{listName}}: \"{{content}}\"",
     "Mark_all_as_read": "Marcar todo como leído",
-    "No_notifications": "No notifications"
+    "No_notifications": "No hay notificaciones"
   },
   "TEAMS": {
     "Title": "Equipos",
@@ -809,6 +811,7 @@
     "Mark_as_done": "Marcar este artículo como hecho",
     "Mark_as_not_done": "Marcar este artículo como no hecho",
     "Create_list": "Crear una lista para completar esta página",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Recetas maestras ({{number}})",
       "Housing_items": "Artículos de vivienda({{number}})",
@@ -824,6 +827,73 @@
     "Discord_1K": {
       "Title": "¡Sorteo por 1000 miembros de Discord!",
       "Description": "Haga clic en este banner para ir a la página de registro para el sorteo de la edición de colección de FINAL FANTASY XIV: Shadowbringers creada para celebrar la meta de 1000 miembros alcanzada en el servidor de Discord."
+    }
+  },
+  "CUSTOM_ITEMS": {
+    "Title": "Artículos personalizados",
+    "New_item": "Crear nuevo artículo personalizado",
+    "New_folder": "Crear nueva carpeta",
+    "Rename_folder": "Renombrar carpeta",
+    "Import_items": "Importar artículos personalizados",
+    "Save": "Guardar artículo",
+    "Details": "Detalles del artículo",
+    "Export_item": "Exportar artículo",
+    "Export_items": "Exportar varios artículos",
+    "Add_to_list": "Agregar a una lista",
+    "No_items": "No tiene artículos personalizados",
+    "DETAILS": {
+      "Level": "Nivel",
+      "None": "ninguno",
+      "Stars": "Estrellas",
+      "Requirements": "Requisitos",
+      "Add_requirement": "Agregar requisito",
+      "Yields": "Rendimiento",
+      "Name": "Nombre",
+      "ID": "ID del artículo",
+      "CRAFT": {
+        "Title": "Fabricado por",
+        "Job": "Profesión",
+        "No_requirement_warning": "No tiene configurado ningún requisito para este artículo, significa que estás creando una artesanía con 0 ingredientes."
+      },
+      "GATHERING": {
+        "Title": "Recogido por",
+        "Type": "Tipo de nodo",
+        "Folklore": "Folklore",
+        "Slot": "Ranura"
+      },
+      "ALARMS": {
+        "Title": "Alarmas"
+      },
+      "VENDORS": {
+        "Title": "Vendedores",
+        "Npc_name": "Nombre de NPC",
+        "Price": "Precio",
+        "Delete_vendor": "Eliminar vendedor"
+      },
+      "TRADES": {
+        "Title": "Fuentes comerciales",
+        "Npc_name": "Nombre de NPC",
+        "Shop_name": "Nombre de la tienda",
+        "Delete_trade": "Eliminar comercio",
+        "Trade_details": "Detalles del comercio",
+        "Add_currency": "Agregar una moneda"
+      },
+      "REDUCTION": {
+        "Title": "Reducido de"
+      }
+    },
+    "NPC_PICKER": {
+      "Title": "Encuentre un NPC",
+      "Npc_name": "Nombre de NPC"
+    },
+    "IMPORT": {
+      "Corrupted_file": "El archivo de importación está corrupto o incorrecto",
+      "Drag_or_click": "Arrastre el archivo aquí o haga clic para seleccionarlo",
+      "Format": "Formato",
+      "Folder": "Carpeta",
+      "No_folder": "Ninguna carpeta",
+      "Parsing_file": "Procesando contenido de archivo...",
+      "Saving_items": "Guardando artículos ({{done}}/{{todo}})"
     }
   }
 }

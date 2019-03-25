@@ -45,6 +45,7 @@ import { NumberQuestionPopupModule } from '../../modules/number-question-popup/n
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { ItemPickerModule } from '../../modules/item-picker/item-picker.module';
+import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 
 const routes: Routes = [
   {
@@ -84,6 +85,7 @@ const routes: Routes = [
     FishingBaitModule,
     ItemPickerModule,
     LayoutModule,
+    ListPickerModule,
 
     FlexLayoutModule,
 

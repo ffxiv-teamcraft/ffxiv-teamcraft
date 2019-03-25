@@ -16,10 +16,12 @@ import { TextQuestionPopupComponent } from '../../../modules/text-question-popup
 import { AlarmsOptionsPopupComponent } from '../alarms-options-popup/alarms-options-popup.component';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
+import { EorzeanTimeService } from '../../../core/time/eorzean-time.service';
+import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
+import { I18nName } from '../../../model/common/i18n-name';
 
 @Component({
   selector: 'app-alarms-page',
@@ -152,7 +154,14 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   getIngameAlarmMacro(display: AlarmDisplay): string {
-    return `/alarm "${display.alarm.itemId ? this.i18n.getName(this.l12n.getItem(display.alarm.itemId)) : display.alarm.name}" et rp ${display.nextSpawn.hours < 10 ? '0' : ''}${display.nextSpawn.hours}00 ${
+    const rp: I18nName = {
+      en: 'rp',
+      de: 'wh',
+      fr: 'rp',
+      ja: 'rp'
+    };
+    return `/alarm "${display.alarm.itemId ? this.i18n.getName(this.l12n.getItem(display.alarm.itemId)).slice(0, 10) : display.alarm.name.slice(0, 10)
+      }" et ${this.i18n.getName(rp)} ${display.nextSpawn < 10 ? '0' : ''}${display.nextSpawn}00 ${
       Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
   }
 

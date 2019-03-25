@@ -4,15 +4,15 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { Alarm } from '../../../core/alarms/alarm';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
-import { filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { HuntingComponent } from '../item-details/hunting/hunting.component';
 import { InstancesComponent } from '../item-details/instances/instances.component';
 import { ReducedFromComponent } from '../item-details/reduced-from/reduced-from.component';
@@ -40,6 +40,8 @@ import { Craft } from '../../../model/garland-tools/craft';
 import { CommentsService } from '../../../modules/comments/comments.service';
 import { ListLayout } from '../../../core/layout/list-layout';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';
+import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
+import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 
 @Component({
   selector: 'app-item-row',
@@ -112,7 +114,10 @@ export class ItemRowComponent implements OnInit {
               public settings: SettingsService,
               private listManager: ListManagerService,
               private rotationPicker: RotationPickerService,
-              private commentsService: CommentsService) {
+              private commentsService: CommentsService,
+              private listPicker: ListPickerService,
+              private progressService: ProgressPopupService,
+              private notificationService: NzNotificationService) {
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
       filter(list => !list.notFound && list.canBeCrafted !== undefined),
@@ -307,6 +312,35 @@ export class ItemRowComponent implements OnInit {
 
   success(key: string, args?: any): void {
     this.messageService.success(this.translate.instant(key, args));
+  }
+
+  addToList(item: ListRow): void {
+    this.listPicker.pickList().pipe(
+      mergeMap(list => {
+        const operation = this.listManager.addToList(item.id, list,
+          item.recipeId ? item.recipeId : '', item.amount);
+        return this.progressService.showProgress(operation,
+          1,
+          'Adding_recipes',
+          { amount: 1, listname: list.name });
+      }),
+      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
+      mergeMap(list => {
+        // We want to get the list created before calling it a success, let's be pessimistic !
+        return this.progressService.showProgress(
+          combineLatest(this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$).pipe(
+            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
+            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          ), 1, 'Saving_in_database');
+      })
+    ).subscribe((list) => {
+      this.notificationService.success(
+        this.translate.instant('Success'),
+        this.translate.instant('Recipe_Added', { listname: list.name })
+      );
+    });
   }
 
   addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {

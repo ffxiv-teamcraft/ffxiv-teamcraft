@@ -26,6 +26,7 @@
     "Crafts_amount": "제작 횟수",
     "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용",
+    "Reset_filters": "필터 초기화",
     "Too_many_results_warning": "검색 결과가 100개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다.",
     "Share_url": "검색URL을 클립보드로 복사하기",
     "Share_url_copied": "검색URL이 클립보드에 복사되었습니다"
@@ -53,7 +54,6 @@
   "Collectable_flag": "소장품",
   "Compact_display": "간소화",
   "Mute_alarms": "알람 음소거",
-  "Unmute_alarms": "알람 음소거 해제",
   "Hide_used": "사용된 행 숨기기",
   "Collapse_if_done": "완료시 삭제",
   "Retainer_ventures": "집사 수행",
@@ -403,6 +403,7 @@
     "Add_item": "아이템 추가",
     "List_too_large": "너무 큰 목록",
     "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -514,7 +515,6 @@
     "Template_created": "목록 서식이 생성되었습니다.",
     "Dialog_title": "템플릿 생성",
     "Link_name": "템플릿 이름",
-    "target": "대상 목록",
     "Share_link_copied": "템플릿 공유링크가 클립보드에 복사되었습니다",
     "Copy_template_url": "템플릿 url 복사",
     "Cloning_list": "내 계정으로 목록 복사본 생성",
@@ -663,6 +663,7 @@
       "No_food": "음식 없음",
       "No_medicine": "약차 없음",
       "No_fc_buffs": "부대버프 없음",
+      "Quest_warning": "70레벨 직업 퀘스트로 '명인의 발상'을 획득했는지 꼭 확인하세요",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "작업 숙련도",
@@ -686,7 +687,8 @@
     "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}} 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?",
     "Copy_earnings_as_text": "내용을 텍스트로 복사하기",
     "Content_copied": "클립보드로 내용이 복사되었습니다.",
-    "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)"
+    "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)",
+    "Copy_panel_as_text": "이 패널을 텍스트로 복사"
   },
   "LEVEQUESTS": {
     "Title": "길드의뢰",
@@ -809,6 +811,7 @@
     "Mark_as_done": "이 아이템을 완료됨 으로 표시",
     "Mark_as_not_done": "이 아이템을 완료되지 않음 으로 표시",
     "Create_list": "이 페이지를 완료하기 위한 목록 만들기",
+    "Required_for_achievement": "업적에 적용됨",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
@@ -824,6 +827,73 @@
     "Discord_1K": {
       "Title": "Discord 멤버 1000명 달성 이벤트!",
       "Description": "이 배너를 클릭해서 FINAL FANTASY XIV: 칠흑의 반역자 소장판 증정 이벤트에 등록하세요! 이 이벤트는 TC Discord 서버의 멤버 수가 한계치인 1000명에 달성한 것을 기념하기 위한 것입니다."
+    }
+  },
+  "CUSTOM_ITEMS": {
+    "Title": "사용자 지정 아이템",
+    "New_item": "사용자 지정 아이템 만들기",
+    "New_folder": "새 폴더 만들기",
+    "Rename_folder": "폴더 이름 변경",
+    "Import_items": "사용자 지정 아이템 불러오기",
+    "Save": "아이템 저장",
+    "Details": "아이템 세부 정보",
+    "Export_item": "아이템 내보내기",
+    "Export_items": "여러 아이템 내보내기",
+    "Add_to_list": "목록에 추가",
+    "No_items": "사용자 지정 아이템이 없습니다",
+    "DETAILS": {
+      "Level": "레벨",
+      "None": "없음",
+      "Stars": "난이도",
+      "Requirements": "재료",
+      "Add_requirement": "재료 추가",
+      "Yields": "제작갯수",
+      "Name": "이름",
+      "ID": "아이템 ID",
+      "CRAFT": {
+        "Title": "제작 방법",
+        "Job": "직업",
+        "No_requirement_warning": "아이템에 필요한 재료를 설정하지 않았습니다. 이것은 어떠한 재료도 없이 제작한다는 것을 의미합니다."
+      },
+      "GATHERING": {
+        "Title": "채집 방법",
+        "Type": "채집물 유형",
+        "Folklore": "전승록",
+        "Slot": "슬롯"
+      },
+      "ALARMS": {
+        "Title": "알람"
+      },
+      "VENDORS": {
+        "Title": "상인",
+        "Npc_name": "NPC 이름",
+        "Price": "판매가:",
+        "Delete_vendor": "상인 삭제"
+      },
+      "TRADES": {
+        "Title": "교환 정보",
+        "Npc_name": "NPC 이름",
+        "Shop_name": "상점 이름",
+        "Delete_trade": "교환 정보 삭제",
+        "Trade_details": "교환 세부내용",
+        "Add_currency": "교환용 아이템 추가"
+      },
+      "REDUCTION": {
+        "Title": "정제 방식"
+      }
+    },
+    "NPC_PICKER": {
+      "Title": "NPC 찾기",
+      "Npc_name": "NPC 이름"
+    },
+    "IMPORT": {
+      "Corrupted_file": "가져오기 파일이 손상되었거나 잘못된 형식입니다",
+      "Drag_or_click": "이곳에 파일을 드래그하거나 클릭하여 선택하세요",
+      "Format": "형식",
+      "Folder": "폴더",
+      "No_folder": "폴더 없음",
+      "Parsing_file": "파일 내용 분석중..",
+      "Saving_items": "아이템 저장 중 ({{done}}/{{todo}})"
     }
   }
 }

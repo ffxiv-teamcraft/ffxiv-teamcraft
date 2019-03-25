@@ -38,6 +38,7 @@ export class ItemData {
     }
     return {
       id: raw.obj.i,
+      name: raw.obj.n,
       icon: +raw.obj.c
     };
   }

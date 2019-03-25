@@ -31,7 +31,7 @@ import { ListModule } from './modules/list/list.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { XivapiClientModule } from '@xivapi/angular-client';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { WorkshopModule } from './modules/workshop/workshop.module';
@@ -69,7 +69,8 @@ registerLocaleData(en);
         nzBottom: '24px',
         nzPlacement: 'topRight'
       }
-    }
+    },
+    { provide: FirestoreSettingsToken, useValue: {} }
   ],
   imports: [
     FlexLayoutModule,

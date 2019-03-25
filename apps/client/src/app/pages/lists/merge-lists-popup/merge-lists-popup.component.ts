@@ -85,12 +85,12 @@ export class MergeListsPopupComponent implements OnInit {
   }
 
   public merge(): void {
-    this.merging = true;
     concat(...this.selectedLists.map(list => this.listsFacade.loadAndWait(list.$key)))
       .pipe(
         skip(this.selectedLists.length - 1),
         switchMap(() => this.listsFacade.newList()),
         switchMap(list => {
+          this.merging = true;
           return this.listsFacade.allListDetails$.pipe(
             filter(listsDetails => {
               return this.selectedLists.reduce((res, l) => res && listsDetails.find(ld => ld.$key === l.$key) !== undefined, true);

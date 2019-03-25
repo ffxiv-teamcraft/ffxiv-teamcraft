@@ -162,6 +162,9 @@ export class AlarmsFacade {
       if (b.spawned) {
         return 1;
       }
+      if (a.remainingTime === b.remainingTime) {
+        return a.alarm.itemId < b.alarm.itemId ? -1 : 1;
+      }
       return a.remainingTime < b.remainingTime ? -1 : 1;
     });
   }

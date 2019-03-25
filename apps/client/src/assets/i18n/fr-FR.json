@@ -26,6 +26,7 @@
     "Crafts_amount": "Nb de crafts",
     "Add_to_list": "Ajouter cet élément à une liste",
     "Apply_filters": "Appliquer les filtres",
+    "Reset_filters": "Réinitialiser les filtres",
     "Too_many_results_warning": "Cette recherche a donné plus de 100 résultats. Notre source de données est limitée à 100 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
     "Share_url": "Copier l'url de recherche dans le presse-papiers",
     "Share_url_copied": "Url de recherche copié dans le presse-papiers"
@@ -53,7 +54,6 @@
   "Collectable_flag": "Collectionnable",
   "Compact_display": "Affichage compact",
   "Mute_alarms": "Mettre en sourdine",
-  "Unmute_alarms": "Réactiver les alarmes sonores",
   "Hide_used": "Masquer les éléments utilisés",
   "Collapse_if_done": "Réduire une fois complété",
   "Retainer_ventures": "Tâches de servant",
@@ -403,6 +403,7 @@
     "Add_item": "Ajouter un objet",
     "List_too_large": "Liste trop longue",
     "List_too_large_description": "Cette liste est trop longue et pourrait être supprimée automatiquement par le système de base de données en raison de quotas imposés si vous y ajoutez plus d'objets.",
+    "Add_to_another_list": "Ajouter à une autre liste",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -514,7 +515,6 @@
     "Template_created": "Modèle de liste créé",
     "Dialog_title": "Création du modèle",
     "Link_name": "Nom du modèle",
-    "target": "Liste cible",
     "Share_link_copied": "Lien de partage du modèle copié dans le presse-papiers",
     "Copy_template_url": "Copier l'url du modèle",
     "Cloning_list": "Création d'une copie de la liste sur votre compte",
@@ -663,6 +663,7 @@
       "No_food": "Pas de nourriture",
       "No_medicine": "Aucune boisson",
       "No_fc_buffs": "Aucun bienfait",
+      "Quest_warning": "Assurez-vous d'avoir fait la quête niveau 70 pour le buff Coup de génie",
       "STATS": {
         "CP": "PS",
         "Craftsmanship": "Habileté",
@@ -686,7 +687,8 @@
     "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?",
     "Copy_earnings_as_text": "Copier le contenu au format texte",
     "Content_copied": "Contenu copié dans le presse-papiers",
-    "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)"
+    "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)",
+    "Copy_panel_as_text": "Copier ce panneau sous forme de texte"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -809,6 +811,7 @@
     "Mark_as_done": "Marquer comme fait",
     "Mark_as_not_done": "Marquer comme non fait",
     "Create_list": "Créer une liste pour compléter cette page",
+    "Required_for_achievement": "Requis pour les haut faits",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
@@ -824,6 +827,73 @@
     "Discord_1K": {
       "Title": "Concours 1000 membres discord !",
       "Description": "Cliquez sur cette bannière pour accéder à la page d'inscription au concours pour gagner FANTASY XIV FINAL : Shadowbringers Edition Collector Digitale, créée pour célébrer le cap des 1000 membres atteint sur le serveur discord."
+    }
+  },
+  "CUSTOM_ITEMS": {
+    "Title": "Objets personnalisés",
+    "New_item": "Créer un nouvel objet personnalisé",
+    "New_folder": "Créer un nouveau dossier",
+    "Rename_folder": "Renommer le dossier",
+    "Import_items": "Importer des objets personnalisés",
+    "Save": "Enregistrer",
+    "Details": "Détails de l'objet",
+    "Export_item": "Exporter l'objet",
+    "Export_items": "Exporter plusieurs objets",
+    "Add_to_list": "Ajouter à une liste",
+    "No_items": "Vous n'avez pas d'objets personnalisés",
+    "DETAILS": {
+      "Level": "Niveau",
+      "None": "aucun",
+      "Stars": "Étoiles",
+      "Requirements": "Prérequis",
+      "Add_requirement": "Ajouter un prérequis",
+      "Yields": "Production",
+      "Name": "Nom",
+      "ID": "ID de l'objet",
+      "CRAFT": {
+        "Title": "Fabriqué par",
+        "Job": "Job",
+        "No_requirement_warning": "Vous n'avez pas de prérequis pour cet objet, cela signifie que vous créez une recette avec 0 ingrédients."
+      },
+      "GATHERING": {
+        "Title": "Récolté par",
+        "Type": "Type de nœud",
+        "Folklore": "Folklore",
+        "Slot": "Emplacement"
+      },
+      "ALARMS": {
+        "Title": "Alarmes"
+      },
+      "VENDORS": {
+        "Title": "Marchands",
+        "Npc_name": "Nom du PNJ",
+        "Price": "Prix",
+        "Delete_vendor": "Supprimer le marchand"
+      },
+      "TRADES": {
+        "Title": "Échanges",
+        "Npc_name": "Nom du PNJ",
+        "Shop_name": "Nom de la boutique",
+        "Delete_trade": "Supprimer l'échange",
+        "Trade_details": "Détails de l'échange",
+        "Add_currency": "Ajouter une devise"
+      },
+      "REDUCTION": {
+        "Title": "Réduit de"
+      }
+    },
+    "NPC_PICKER": {
+      "Title": "Trouver un PNJ",
+      "Npc_name": "Nom du PNJ"
+    },
+    "IMPORT": {
+      "Corrupted_file": "Le fichier d'import est corrompu ou mauvais format",
+      "Drag_or_click": "Déposez un fichier ici ou cliquez pour en sélectionner un",
+      "Format": "Format",
+      "Folder": "Dossier",
+      "No_folder": "Aucun dossier",
+      "Parsing_file": "Analyse du contenu du fichier...",
+      "Saving_items": "Sauvegarde des objets ({{done}}/{{todo}})"
     }
   }
 }

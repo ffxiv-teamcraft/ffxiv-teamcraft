@@ -44,7 +44,7 @@ export class DataService {
    */
   public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean): Observable<SearchResult[]> {
     let lang = this.i18n.currentLang;
-    const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1;
+    const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1 && query.length > 0;
     if (isKoOrZh) {
       lang = 'en';
     }
@@ -132,7 +132,7 @@ export class DataService {
     const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1;
     if (isKoOrZh) {
       if (name.length > 0) {
-      lang = 'en';
+        lang = 'en';
       } else {
         return of([]);
       }
@@ -200,8 +200,10 @@ export class DataService {
     const data = lang === 'ko' ? this.lazyData.koItems : this.lazyData.zhItems;
     return Object.keys(data)
       .filter(key => {
-        return data[key][lang].indexOf(terms) > -1;
+        return data[key][lang].indexOf(terms) > -1 && !/(\D+)/.test(key);
       })
-      .map(key => +key);
+      .map(key => {
+        return +key;
+      });
   }
 }

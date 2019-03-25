@@ -26,6 +26,7 @@
     "Crafts_amount": "# der Herstellungen",
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
+    "Reset_filters": "Reset filters",
     "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Kopiere Link zur Suche in die Zwischenablage",
     "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert"
@@ -53,7 +54,6 @@
   "Collectable_flag": "Sammlerstücke",
   "Compact_display": "Komptaktansicht",
   "Mute_alarms": "Benachrichtigung stummschalten",
-  "Unmute_alarms": "Alarm reaktivieren",
   "Hide_used": "Verwendete Reihen ausblenden",
   "Collapse_if_done": "Bei Fertigstellung zusammenklappen",
   "Retainer_ventures": "Gehilfen-Unternehmungen",
@@ -401,8 +401,9 @@
     "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "Du kannst {{amount}} herstellen",
     "Add_item": "Füge ein Item hinzu",
-    "List_too_large": "List too large",
+    "List_too_large": "Liste zu lang",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -514,7 +515,6 @@
     "Template_created": "Listenvorlage erstellt",
     "Dialog_title": "Vorlagenerstellung",
     "Link_name": "Vorlagenname",
-    "target": "Zielliste",
     "Share_link_copied": "Vorlagenverknüpfung wurde in die Zwischenablage kopiert",
     "Copy_template_url": "Vorlagen-URL kopieren",
     "Cloning_list": "Eine Kopie der Liste wird deinem Account hinzugefügt",
@@ -558,7 +558,7 @@
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Teile Makros am letzten möglichen Schritt für Reklamation",
     "Include_consumables_notification": "Include consumables notification",
-    "Consumable_notification": "Use {{buffs}}",
+    "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
@@ -618,7 +618,7 @@
       "Recipe_durability": "Belastbarkeit"
     },
     "ROTATIONS": {
-      "Search_placeholder": "Search a rotation",
+      "Search_placeholder": "Suche eine Rotation",
       "FOLDERS": {
         "Folders": "Rotations-Ordner",
         "Rename": "Ordner umbenennen",
@@ -663,6 +663,7 @@
       "No_food": "Kein Gericht",
       "No_medicine": "Keine Arznei",
       "No_fc_buffs": "Keine FG Buffs",
+      "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
       "STATS": {
         "CP": "HP",
         "Craftsmanship": "Kunstfertigkeit",
@@ -680,13 +681,14 @@
   },
   "PRICING": {
     "From_vendor": "Verkäuferpreis",
-    "From_crafting": "Price from crafting",
+    "From_crafting": "Herstellungspreis",
     "Expect_to_sell_everything": "Gehe davon aus alles zu verkaufen",
     "Autofill_panel_prices": "Rufe die Preise aus dem Marktbrett ab",
     "Autofill_panel_prices_warning": "Dies ist ein langsamer Prozess und sollte ca. {{time}} Sekunden dauern, bist du sicher?",
     "Copy_earnings_as_text": "Kopiere Inhalt als Text",
     "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)",
+    "Copy_panel_as_text": "Copy this panel as text"
   },
   "LEVEQUESTS": {
     "Title": "Freibriefe",
@@ -710,7 +712,7 @@
     "List_comment_added": "Ein Kommentar wurde der Liste {{listName}} hinzugefügt: \"{{content}}\"",
     "List_item_comment_added": "Ein Kommentar wurde dem Gegenstand {{itemName}} auf der Liste {{listName}} hinzugefügt: \"{{content}}\"",
     "Mark_all_as_read": "Alle als gelesen markieren",
-    "No_notifications": "No notifications"
+    "No_notifications": "Keine Benachrichtigungen"
   },
   "TEAMS": {
     "Title": "Teams",
@@ -809,6 +811,7 @@
     "Mark_as_done": "Als erledigt markieren",
     "Mark_as_not_done": "Als nicht erledigt markieren",
     "Create_list": "Erstelle eine List um diese Seite vervollständigen",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
@@ -824,6 +827,73 @@
     "Discord_1K": {
       "Title": "1000 Discord members giveaway !",
       "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+    }
+  },
+  "CUSTOM_ITEMS": {
+    "Title": "Custom items",
+    "New_item": "Create new custom item",
+    "New_folder": "Create new folder",
+    "Rename_folder": "Rename folder",
+    "Import_items": "Import custom items",
+    "Save": "Save item",
+    "Details": "Item details",
+    "Export_item": "Export item",
+    "Export_items": "Export multiple items",
+    "Add_to_list": "Add to a list",
+    "No_items": "You have no custom items",
+    "DETAILS": {
+      "Level": "Level",
+      "None": "none",
+      "Stars": "Stars",
+      "Requirements": "Requirements",
+      "Add_requirement": "Add requirement",
+      "Yields": "Yields",
+      "Name": "Name",
+      "ID": "Item ID",
+      "CRAFT": {
+        "Title": "Crafted by",
+        "Job": "Job",
+        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+      },
+      "GATHERING": {
+        "Title": "Gathered by",
+        "Type": "Node type",
+        "Folklore": "Folklore",
+        "Slot": "Slot"
+      },
+      "ALARMS": {
+        "Title": "Alarms"
+      },
+      "VENDORS": {
+        "Title": "Vendors",
+        "Npc_name": "NPC name",
+        "Price": "Price",
+        "Delete_vendor": "Delete vendor"
+      },
+      "TRADES": {
+        "Title": "Trade sources",
+        "Npc_name": "NPC name",
+        "Shop_name": "Shop name",
+        "Delete_trade": "Delete trade",
+        "Trade_details": "Trade details",
+        "Add_currency": "Add a currency"
+      },
+      "REDUCTION": {
+        "Title": "Reduced from"
+      }
+    },
+    "NPC_PICKER": {
+      "Title": "Find a NPC",
+      "Npc_name": "NPC name"
+    },
+    "IMPORT": {
+      "Corrupted_file": "Import file is corrupted or wrong format",
+      "Drag_or_click": "Drag the file here or click to select it",
+      "Format": "Format",
+      "Folder": "Folder",
+      "No_folder": "No folder",
+      "Parsing_file": "Parsing file content...",
+      "Saving_items": "Saving items ({{done}}/{{todo}})"
     }
   }
 }

@@ -4,14 +4,14 @@
   "Pick_a_fc": "Выбрать свободную компанию",
   "Pick_a_rotation": "Выбрать вращение",
   "Pick_a_recipe": "Выбрать рецепт",
-  "Pick_an_item": "Pick an item",
+  "Pick_an_item": "Выбрать предмет",
   "FC_name": "Название компании",
   "Saving_in_database": "Сохранение данных на сервер",
   "See_on_map": "Посмотреть на карте",
   "Edit_amount": "Изменить размер",
   "List_fork_in_progress": "Копирование списка на ваш аккаунт...",
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема не устранится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
-  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
+  "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон показаны единожды)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -26,9 +26,10 @@
     "Crafts_amount": "# крафтов",
     "Add_to_list": "Добавить предмет в список",
     "Apply_filters": "Применить фильтры",
-    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
-    "Share_url": "Copy search url to your clipboard",
-    "Share_url_copied": "Search url copied to your clipboard"
+    "Reset_filters": "Сбросить фильтры",
+    "Too_many_results_warning": "Этот поиск вернул более 100 элементов. Поскольку наш источник данных ограничен 100 результатами, вам могут потребоваться дополнительные фильтры чтобы найти конкретный предмет.",
+    "Share_url": "Скопировать ссылку в буфер",
+    "Share_url_copied": "Ссылка скопирована в буфер"
   },
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте приложение",
@@ -41,7 +42,7 @@
   "Timers": "Таймеры",
   "Copy_isearch": "Копирование isearch макрос",
   "Isearch_copied": "/Isearch {{itemname}} скопирован в буфер обмена",
-  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
+  "Required_for_final_craft": "Нужно {{amount}} для предмета, они вам могут понадобиться в HQ",
   "Mark_HQ": "Пометить как нужен HQ",
   "Unmark_HQ": "Удаление требования HQ",
   "Compact_sidebar_toggle": "Включить боковую панель",
@@ -53,14 +54,13 @@
   "Collectable_flag": "Коллекция",
   "Compact_display": "Компактный дисплей",
   "Mute_alarms": "Скрыть оповещения",
-  "Unmute_alarms": "Включить оповещения",
   "Hide_used": "Скрыть используемые строки",
   "Collapse_if_done": "Крах, если сделано",
   "Retainer_ventures": "Авантюрист",
   "Requires_x_ventures": "Требуется {{amount}} предприятий чтобы получить все",
   "WORKSHOP": {
     "Workshops": "Мастерские",
-    "Add_one_list": "Add a list",
+    "Add_one_list": "Добавить список",
     "Add_workshop": "Добавить мастерскую",
     "Delete_message": "Удаление мастерской не удалит в нем списки, они будут перемещены",
     "List_selection_title": "Выберите списки для добавлению в мастерскую {{workshopName}}",
@@ -86,7 +86,7 @@
   "No_favorites": "Нет избранного",
   "Ephemeral_list": "Будут удалены после завершения",
   "Ephemeral_tag": "эфемерный",
-  "Remove_ephemeral": "Upgrade to permanent list",
+  "Remove_ephemeral": "Преобразовать в постоянный список",
   "Quick_list_create": "Создать быстрый список (удаляется после завершения)",
   "Tag_filter": "Теги",
   "Public_lists": "Списки сообщества",
@@ -133,7 +133,7 @@
     "Volume": "Громкость",
     "Macro_copied": "Макрос сохранён в буфер обмена",
     "Open_overlay": "Открыть оверлей",
-    "More_available": "and {{amount}} more...",
+    "More_available": "добавить ещё {{amount}}...",
     "CUSTOM": {
       "Title": "Добавить настраиваемое оповещение",
       "Name": "Имя",
@@ -270,13 +270,13 @@
     "General": "Главные",
     "Link_base": "Ссылка на предмет",
     "Theme": "Тема",
-    "no_panel_borders": "Disable borders around various panels",
+    "no_panel_borders": "Отключить рамки вокруг различных панелей",
     "Desktop": "Рабочий стол",
     "Always_on_top": "Всегда наверху",
     "Check_for_update": "Проверить обновления",
     "Downloading_update": "Загрузка обновления",
     "No_update_available": "Нет доступных обновлений",
-    "Install_update": "Install update",
+    "Install_update": "Установить обновление",
     "Preferred_copy_type": "Предпочитаемый тип сети",
     "Auto_open_in_desktop": "Открыть ссылки в приложении, когда запустилось",
     "Account": "Аккаунт",
@@ -287,9 +287,9 @@
     "Connected_with_patreon": "Подключено с patreon",
     "Nickname": "Имя",
     "Nickname_used": "Имя уже используется",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
-    "Show_devtools": "Show dev tools",
-    "Clear_cache": "Clear cache (will restart the app)",
+    "No_nickname_warning": "Пожалуйста, перейдите на страницу настроек и установите псевдоним, чтобы иметь возможность использовать эксклюзивные функции Patreon'а.",
+    "Show_devtools": "Показать инструменты разработчика",
+    "Clear_cache": "Очистить кэш (перезапустит приложение)",
     "COPY_TYPE": {
       "Classic": "Копировать имя предмета",
       "Isearch": "Копировать /isearch макрос"
@@ -311,18 +311,18 @@
     "User_not_verified": "Пользователь не подтвержден, нажмите, чтобы подтвердить",
     "VERIFICATION": {
       "Title": "Подтверждение персонажа",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
-      "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
-      "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
+      "Guide": "Чтобы подтвердить свой аккаунт, вставьте этот код: \"{{userId}}\" в вашей биографии профиля Lodestone и нажмите кнопку ниже.",
+      "Success": "Персонаж подтверждён! Теперь вы можете закрыть это окно. Не стесняйтесь удалить код из вашего профиля, он больше не нужен.",
+      "Error": "Не удалось найти код в вашем профиле, пожалуйста, убедитесь, что вы вставили его и применили изменения, а затем подождите ~30 сек и повторите попытку.",
       "Validate": "Утвердить"
     }
   },
   "LISTS": {
-    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
+    "Needs_verification": "Пожалуйста, подтвердите персонажа чтоб иметь доступ к своей FC",
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
     "Merge_lists": "Объединить списки",
-    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
+    "Merge_lists_warning": "Большие списки не указаны здесь, потому что вы не можете объединить слишком большие списки из-за ограничений базы данных.",
     "Lists_merged": "Списки успешно соединены!",
     "Shared_lists": "Списки к которым у вас есть доступ",
     "Add_selection": "Добавить выбранное в список",
@@ -332,8 +332,8 @@
     "Lists_search_placeholder": "Искать список...",
     "Add_to_a_list": "Добавить в список",
     "Please_pick_recipe": "Пожалуйста, выберите рецепт для этого предмета",
-    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
-    "Delete_after_merge": "Delete original lists after merge",
+    "Import_description": "Выберите рецепт, который вы хотите использовать для предметов, которые можно создать и выберите список. Предметы будут добавлены в этот список и вы будете перенаправлены в него.",
+    "Delete_after_merge": "Удалить исходные списки после объединения",
     "IMPORT": {
       "Title": "Импорт списка из внешнего веб-сайта",
       "Paste_link_step_title": "Вставьте вашу ссылку для внешнего списка",
@@ -354,7 +354,7 @@
     "Rename": "Переименовать список",
     "Copied_x_times": "Скопировано {{count}} раз",
     "Enable_crystals_tracking": "Включить отслеживание кристаллов",
-    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
+    "Always_show_inventory": "Всегда показывать инвентарь (отключен на маленьких экранах < 600 пикселей)",
     "Copy_as_text": "Копировать как текст",
     "Copy_list_as_text": "Копировать весь список как текст",
     "Copied_as_text": "Скопировано в буфер обмена",
@@ -362,7 +362,7 @@
     "Total_trade_price": "Всего: ",
     "Add_all_alarms": "Создать оповещения для этого списка",
     "History": "История",
-    "Items_count": "{{amount}} items",
+    "Items_count": "{{amount}} предметов",
     "Show_craftable_amount": "Show craftable amount",
     "COMPLETION_POPUP": {
       "Title": "Список завершен",
@@ -373,8 +373,8 @@
     },
     "BUTTONS": {
       "Add_link_description": "Создать кастомную ссылку для этого списка",
-      "Create_template_description": "Create a template link for this list, which will create a copy of the list for whoever opens it",
-      "Copy_template_url_description": "Copy the template link for this list, which will create a copy of the list for whoever opens it",
+      "Create_template_description": "Создать ссылку на шаблон для этого списка, которая создаст копию списка тем, кто её откроет",
+      "Copy_template_url_description": "Скопировать ссылку на шаблон для этого списка, которая создаст копию списка тем, кто её откроет",
       "Share_description": "Скопировать ссылку в буфер обмена",
       "Open": "Открыть список",
       "Open_description": "Доступ к списку",
@@ -389,7 +389,7 @@
     "Missing_tags_before_button": "Этот список отображается как список сообщества, но без тегов, добавьте несколько тегов ",
     "Missing_tags_after_button": " кнопка",
     "Add_remove_amount": "Добавить/удалить данное количество",
-    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
+    "Missing_masterbook": "У вас нет этого masterbook'а в профиле. Нажмите здесь чтоб добавить его.",
     "No_note": "Нет заметки",
     "Edit_note": "Нет заметки",
     "Note_placeholder": "Заметка",
@@ -398,11 +398,12 @@
     "Open_in_ffxivgardening": "Открыть в ffxivgardening.com",
     "Add_all_item_alarms": "Создать все оповещения для этого предмета",
     "Adaptative_filter": "Показать только то, что я могу сделать",
-    "Disable_HQ_suggestions": "Disable automatic HQ flags",
-    "Amount_craftable": "You can craft {{amount}}",
-    "Add_item": "Add an item",
-    "List_too_large": "List too large",
-    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "Disable_HQ_suggestions": "Отключить автоматические флаги HQ",
+    "Amount_craftable": "Вы сожете сделать {{amount}}",
+    "Add_item": "Добавить предмет",
+    "List_too_large": "Список слишком большой",
+    "List_too_large_description": "Этот список слишком велик и может достичь ограничений размера базы данных из-за всей информации, которую он несет. Вы не можете добавить больше предметов, дабы избежать потери списка.",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -412,7 +413,7 @@
       "Layout_name": "Название макета",
       "Invalid_import": "Неверный файл импорта",
       "Global_options": "Главные настройки",
-      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
+      "Default_readonly_message": "Макет по умолчанию доступен только для чтения, вы должны создать новый макет с помощью кнопки +, чтобы иметь возможность настроить его."
     },
     "LAYOUT": {
       "Filter": "Фильтр",
@@ -438,7 +439,7 @@
     "CASTER": "Маг",
     "CRAFTER": "Крафтер",
     "GATHERER": "Сборщик",
-    "SCRIPTS": "Scrips",
+    "SCRIPTS": "Skrip'ы",
     "PLD": "PLD",
     "WAR": "WAR",
     "DRK": "DRK",
@@ -501,9 +502,9 @@
     "Title": "Полученные предметы",
     "No_items": "Нечего собирать",
     "Gathering_name": "Введите имя предмета",
-    "Ephemeral_node": "Ephemeral node, can be respawned",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !",
-    "Hidden_item": "Hidden"
+    "Ephemeral_node": "Эфемерная нода, можно респаунить",
+    "Intro": "Место сбора позволяет легко найти собираемый предмет и увидеть подробности о нём, где его найти и создать уведомление для нужной ноды. Просто введите название в поле выше и оно найдёт то что вы ищете!",
+    "Hidden_item": "Скрытый"
   },
   "ANNOUNCEMENT": {
     "Title": "Объявление",
@@ -514,7 +515,6 @@
     "Template_created": "Список шаблона создан",
     "Dialog_title": "Создание шаблона",
     "Link_name": "Имя шаблона",
-    "target": "Цель списка",
     "Share_link_copied": "Ссылка на шаблон скопирована в буфер обмена",
     "Copy_template_url": "Копировать шаблон url",
     "Cloning_list": "Создать копию списка на ваш аккаунт",
@@ -522,7 +522,7 @@
     "Not_found": "Шаблон не найден",
     "STATUS": {
       "Loading": "Загрузка шаблона",
-      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+      "Copying": "Создание копии списка в ваш аккаунт, вы будете перенаправлены на него после завершения"
     }
   },
   "PERMISSIONS": {
@@ -531,7 +531,7 @@
     "Participate": "Участвовать",
     "Participate_description": "This gives you permission to tick items and modify amounts done",
     "Write": "Записать",
-    "Write_description": "This gives you the permission to add items, add lists (for workshops)",
+    "Write_description": "Это дает вам право добавлять элементы, добавлять списки (для workshop'ов)",
     "Title": "Управление разрешениями",
     "Everyone": "Всем",
     "You": "Вы",
@@ -540,13 +540,13 @@
     "Placeholder": "Email или ID пользователя",
     "Bind_free_company": "Назначить некоторые привилегии в вашу свободную компанию",
     "User_not_found": "Пользователь не найден",
-    "User_id_tip": "The user ID can be found in profile page in bottom-right corner",
+    "User_id_tip": "ID пользователя можно найти на странице профиля в правом нижнем углу",
     "Saving": "Сохранить разрешения",
-    "No_anonymous": "You need an account to manage permissions",
-    "Propagate_changes": "Propagate permissions to lists inside the workshop",
-    "Propagate_changes_done": "Changes propagated to lists inside the workshop",
-    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
-    "Default_permission_level": "Default permission level"
+    "No_anonymous": "Вам нужен аккаунт для управления разрешениями",
+    "Propagate_changes": "Распространить разрешения для списков внутри workshop'а",
+    "Propagate_changes_done": "Изменения распространены на списки внутри workshop'а",
+    "Team_notice": "Команда, связанная с этим списком, автоматически имеет разрешение PARTICIPATE",
+    "Default_permission_level": "Уровень разрешений по умолчанию"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -558,7 +558,7 @@
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
     "Include_consumables_notification": "Include consumables notification",
-    "Consumable_notification": "Use {{buffs}}",
+    "Consumable_notification": "Используйте {{buffs}}",
     "Extra_wait": "Дополнительное ожидание",
     "Import_macro": "Импорт из внутриигрового макроса",
     "Ingame_macro": "Внутриигровой макрос",
@@ -571,8 +571,8 @@
     "Cp_amount": "CP",
     "Simulate_tooltip": "Крафт в симуляторе",
     "Change_recipe": "Изменить рецепт",
-    "Changing_recipe_save_warning": "Your changes will be lost if you don't save them before picking a recipe",
-    "Too_many_aactions": "You have more than 10 cross-class actions used for this macro",
+    "Changing_recipe_save_warning": "Ваши изменения будут потеряны, если вы не сохраните их до выбора рецепта",
+    "Too_many_aactions": "Для этого макроса используется больше 10 кросс-класс действий",
     "Convert_rotation": "Открыть в стандартом симуляторе",
     "Configuration": "Настройки",
     "Level": "Уровень",
@@ -585,31 +585,31 @@
     "No_rotations": "Нет ротаций",
     "Create_a_custom_rotation": "Создать кастомную ротацию",
     "Reset": "Сбросить ротацию",
-    "Import_from_crafting_optimizer": "Import from crafting optimizer",
-    "Export_crafting_optimizer": "Export using crafting optimizer format",
-    "Export_copied": "Crafting optimizer export code copied to your clipboard",
-    "Unsaved_changes": "You have unsaved changes, please save before leaving this page or changes will be lost.",
-    "Crafting_optimizer_code": "Crafting optimizer import code",
+    "Import_from_crafting_optimizer": "Импортировать из crafting optimizer",
+    "Export_crafting_optimizer": "Экспортировать используя формать crafting optimizer",
+    "Export_copied": "Код экспорта для crafting optimizer'а скопирован в буфер",
+    "Unsaved_changes": "У вас есть несохраненные изменения, пожалуйста, сохраните их, прежде чем оставить эту страницу, иначе изменения будут потеряны.",
+    "Crafting_optimizer_code": "Код импорта crafting optimizer'а",
     "Generated_macro": "Внутриигровой макрос",
     "Generate_ingame_macro": "Сгенерировать внутриигровой макрос",
     "Share_button_tooltip": "Копировать ссылку",
-    "Share_link_copied": "Rotation share link copied to clipboard",
+    "Share_link_copied": "Ссылка на ротацию скопирована в буфер",
     "Persist": "Сохранить эту ротацию",
     "Rotation_not_found": "Ротация не найдена",
     "Confirm_delete": "Вы действительно хотите удалить ротацию?",
     "Toggle_snapshot_mode": "Переключить мод снапшота",
-    "Open_in_external": "Open in {{name}}'s sim",
+    "Open_in_external": "Открыть в симуляции {{name}}",
     "Select_job_please": "Пожалуйста, выберите роль",
     "Rename_rotation": "Переименовать ротацию",
-    "Cross_class_setup": "Cross-class skills setup",
-    "Include_sound_end": "Include end of macro sound",
-    "Step_by_step_report": "Step by step report",
-    "Save_as_new": "Save as new (navigates to the newly created rotation)",
-    "Save_as_new_done": "You're now on a copy of your rotation",
+    "Cross_class_setup": "Настройка кросс-класс навыков",
+    "Include_sound_end": "Включить звук в конце макроса",
+    "Step_by_step_report": "Пошаговый отчёт",
+    "Save_as_new": "Сохранить как новый (переходит к вновь созданной ротации)",
+    "Save_as_new_done": "Теперь вы в копии своей ротации",
     "Change_rotation": "Изменить ротацию",
     "New_rotation_folder": "Новая папка",
-    "Safe_mode": "Safe mode",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Safe_mode": "Безопасный режим",
+    "Safe_mode_tooltip": "Выключает все навыки, шанс успеха которых не 100% (учитывает баффы)",
     "CUSTOM": {
       "Recipe_configuration": "Конфигурация рецепта",
       "Recipe_level": "Уровень рецепта",
@@ -618,13 +618,13 @@
       "Recipe_durability": "Прочность"
     },
     "ROTATIONS": {
-      "Search_placeholder": "Search a rotation",
+      "Search_placeholder": "Поиск ротации",
       "FOLDERS": {
         "Folders": "Папки поворота",
         "Rename": "Переименовать папку",
         "New_folder": "Новая папка",
-        "Delete_message": "Deleting a folder won't delete the rotations inside.",
-        "Share_link_copied": "Rotation folder share link copied to your clipboard",
+        "Delete_message": "Удаление папки не удалит ротации внутри.",
+        "Share_link_copied": "Ссылка на папку ротаций скопирована в буфер",
         "Shared_by": "Поделился {{name}}",
         "Created_by": "Создано {{name}}",
         "Copy_folder": "Копировать эту папку и контент на ваш аккаунт",
@@ -643,8 +643,8 @@
     },
     "CONFIGURATION": {
       "Job": "Работа",
-      "Job_not_configured": "It seems like you don't have configured this job yet, go to your profile page to configure it properly and set stats",
-      "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
+      "Job_not_configured": "Похоже, что вы еще не настроили эту профессию, перейдите на страницу профиля, чтобы настроить ее и установить характеристики",
+      "Job_not_configured_anonymous": "Пожалуйста, введите свои характеристики, чтобы получать точные симуляции или войдите в свою учетную запись",
       "Select_job": "Выбрать роль",
       "Craftsmanship": "Мастерство",
       "Control": "Управление",
@@ -663,6 +663,7 @@
       "No_food": "Нет еды",
       "No_medicine": "Нет медикаментов",
       "No_fc_buffs": "Нет FC баффов",
+      "Quest_warning": "Убедитесь, что вы выполнили задание 70 ур. для \"Stroke of Genius\"",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Мастерство",
@@ -670,9 +671,9 @@
       }
     },
     "FAIL_CAUSE": {
-      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
-      "NOT_ENOUGH_CP": "Not enough CP",
+      "UNSAFE_ACTION": "Использованы небезопасные действия в безопасном режиме",
+      "DURABILITY_REACHED_ZERO": "Durability достигла 0 до заполнения progress'а",
+      "NOT_ENOUGH_CP": "Недостаточно CP",
       "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
       "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
@@ -686,7 +687,8 @@
     "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
     "Copy_earnings_as_text": "Копировать как текст",
     "Content_copied": "Скопировано в буфер обмена",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)",
+    "Copy_panel_as_text": "Copy this panel as text"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -809,6 +811,7 @@
     "Mark_as_done": "Mark this item as done",
     "Mark_as_not_done": "Mark this item as not done",
     "Create_list": "Create a list to complete this page",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
@@ -824,6 +827,73 @@
     "Discord_1K": {
       "Title": "1000 Discord members giveaway !",
       "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+    }
+  },
+  "CUSTOM_ITEMS": {
+    "Title": "Custom items",
+    "New_item": "Create new custom item",
+    "New_folder": "Create new folder",
+    "Rename_folder": "Rename folder",
+    "Import_items": "Import custom items",
+    "Save": "Save item",
+    "Details": "Item details",
+    "Export_item": "Export item",
+    "Export_items": "Export multiple items",
+    "Add_to_list": "Add to a list",
+    "No_items": "You have no custom items",
+    "DETAILS": {
+      "Level": "Level",
+      "None": "none",
+      "Stars": "Stars",
+      "Requirements": "Requirements",
+      "Add_requirement": "Add requirement",
+      "Yields": "Yields",
+      "Name": "Name",
+      "ID": "Item ID",
+      "CRAFT": {
+        "Title": "Crafted by",
+        "Job": "Job",
+        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+      },
+      "GATHERING": {
+        "Title": "Gathered by",
+        "Type": "Node type",
+        "Folklore": "Folklore",
+        "Slot": "Slot"
+      },
+      "ALARMS": {
+        "Title": "Alarms"
+      },
+      "VENDORS": {
+        "Title": "Vendors",
+        "Npc_name": "NPC name",
+        "Price": "Price",
+        "Delete_vendor": "Delete vendor"
+      },
+      "TRADES": {
+        "Title": "Trade sources",
+        "Npc_name": "NPC name",
+        "Shop_name": "Shop name",
+        "Delete_trade": "Delete trade",
+        "Trade_details": "Trade details",
+        "Add_currency": "Add a currency"
+      },
+      "REDUCTION": {
+        "Title": "Reduced from"
+      }
+    },
+    "NPC_PICKER": {
+      "Title": "Find a NPC",
+      "Npc_name": "NPC name"
+    },
+    "IMPORT": {
+      "Corrupted_file": "Import file is corrupted or wrong format",
+      "Drag_or_click": "Drag the file here or click to select it",
+      "Format": "Format",
+      "Folder": "Folder",
+      "No_folder": "No folder",
+      "Parsing_file": "Parsing file content...",
+      "Saving_items": "Saving items ({{done}}/{{todo}})"
     }
   }
 }

@@ -195,9 +195,9 @@
               <i nz-icon iconfont="icon-book"></i>
               <span class="nav-text">{{'LOG_TRACKER.Title' | translate}}</span>
           </span>
-            </a>
-            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-               routerLink="/custom-items">
+              </a>
+              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                 routerLink="/custom-items">
           <span>
               <i nz-icon iconfont="icon-custom"></i>
               <span class="nav-text">{{'CUSTOM_ITEMS.Title' | translate}}</span>
@@ -252,13 +252,13 @@
       </nz-sider>
       <nz-content>
         <div class="page-container" [class.overlay]="overlay">
-          <nz-alert nzType="info" nzBanner [nzMessage]="message" *ngIf="newVersionAvailable$ | async"
+          <nz-alert nzType="info" nzBanner [nzMessage]="message"
+                    *ngIf="(newVersionAvailable$ | async) && !platformService.isDesktop()"
                     class="new-version-alert"
                     nzShowIcon>
             <ng-template #message>
               {{'UPDATE.New_update_available' | translate}}
-              {{(platformService.isDesktop() ? 'UPDATE.Desktop_instructions' : 'UPDATE.Web_instructions') | translate}}
-              <a href="https://ffxivteamcraft.com/desktop" *ngIf="platformService.isDesktop()">https://ffxivteamcraft.com/desktop</a>
+              {{'UPDATE.Web_instructions' | translate}}
             </ng-template>
           </nz-alert>
           <nz-alert nzType="info" nzBanner [nzMessage]="'GIVEAWAY.Discord_1K.Title' | translate"

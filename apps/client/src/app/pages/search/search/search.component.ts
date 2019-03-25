@@ -131,7 +131,7 @@ export class SearchComponent implements OnInit {
           relativeTo: this.route
         });
       }),
-      switchMap(([query, onlyRecipes, filters]) => this.data.searchItem(query, filters, onlyRecipes)),
+      mergeMap(([query, onlyRecipes, filters]) => this.data.searchItem(query, filters, onlyRecipes)),
       tap(() => {
         this.loading = false;
       })
@@ -216,21 +216,21 @@ export class SearchComponent implements OnInit {
         }
       });
     }
-    if (controls.jobCategories.value.length > 0 && controls.jobCategories.value[0].length > 0) {
+    if (controls.jobCategories.value.length > 0) {
       filters.push({
         minMax: false,
         name: 'jobCategories',
         value: controls.jobCategories.value
       });
     }
-    if (controls.craftJob.value[0] !== 0 && controls.craftJob.value !== 0) {
+    if (controls.craftJob.value !== 0) {
       filters.push({
         minMax: false,
         name: 'craftJob',
         value: controls.craftJob.value
       });
     }
-    if (controls.itemCategories.value.length > 0 && controls.itemCategories.value[0].length > 0) {
+    if (controls.itemCategories.value.length > 0) {
       filters.push({
         minMax: false,
         name: 'itemCategories',

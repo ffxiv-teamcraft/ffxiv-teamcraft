@@ -2,6 +2,111 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.5"></a>
+## [5.1.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.4...v5.1.5) (2019-03-24)
+
+
+### Bug Fixes
+
+* **alarms:** fixed a display issue when two alarms have same remaining time ([5de91c2](https://github.com/Supamiu/ffxiv-teamcraft/commit/5de91c2))
+* **core:** fixed an error message poping because of last firestore update ([3ae1c8c](https://github.com/Supamiu/ffxiv-teamcraft/commit/3ae1c8c))
+* **list:** fixed an issue with missing instance name, needs list regeneration ([a48210f](https://github.com/Supamiu/ffxiv-teamcraft/commit/a48210f))
+* **map:** fixed an issue with platinum ore's location ([bfc6eb2](https://github.com/Supamiu/ffxiv-teamcraft/commit/bfc6eb2))
+* **merge:** fixed an issue with merge dialog box when closing new list name input ([ea3baba](https://github.com/Supamiu/ffxiv-teamcraft/commit/ea3baba))
+
+
+### Features
+
+* **list:** permission level for everyone is now shown on both panel and list details using an icon ([80841bd](https://github.com/Supamiu/ffxiv-teamcraft/commit/80841bd))
+
+
+
+<a name="5.1.4"></a>
+## [5.1.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.3...v5.1.4) (2019-03-23)
+
+
+### Bug Fixes
+
+* **lists:** better support for big lists, they shouldn't disappear anymore ([a971634](https://github.com/Supamiu/ffxiv-teamcraft/commit/a971634))
+* **teams:** fixed an issue with wrong permissions being resolved for team list ([a84e4dc](https://github.com/Supamiu/ffxiv-teamcraft/commit/a84e4dc))
+
+
+### Features
+
+* **list:** you can now add an item from a list to another list ([caa2042](https://github.com/Supamiu/ffxiv-teamcraft/commit/caa2042))
+
+
+
+<a name="5.1.3"></a>
+## [5.1.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.2...v5.1.3) (2019-03-19)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with closest aetheryte missing when created from list ([01a9364](https://github.com/Supamiu/ffxiv-teamcraft/commit/01a9364))
+* **alarms:** mute toggle is now a proper toggle instead of a confusing button ([1875db3](https://github.com/Supamiu/ffxiv-teamcraft/commit/1875db3))
+* **auth:** fixed an issue with character being asked while it shouldn't be ([0e49219](https://github.com/Supamiu/ffxiv-teamcraft/commit/0e49219))
+* **custom-items:** inverted both export and import button icons ([353fb35](https://github.com/Supamiu/ffxiv-teamcraft/commit/353fb35))
+* **lists:** lists and their content aren't reordered anymore when editing amounts (not retroactive) ([0053aa6](https://github.com/Supamiu/ffxiv-teamcraft/commit/0053aa6))
+* **log-tracker:** added translation entry for the * character tooltip ([cfd64be](https://github.com/Supamiu/ffxiv-teamcraft/commit/cfd64be))
+
+
+### Features
+
+* support for Korean 4.41 update ([16d6cd2](https://github.com/Supamiu/ffxiv-teamcraft/commit/16d6cd2))
+
+
+
+<a name="5.1.2"></a>
+## [5.1.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.1...v5.1.2) (2019-03-18)
+
+
+### Bug Fixes
+
+* **custom-items:** fixed an issue preventing addition of multiple custom items inside a list ([1983dee](https://github.com/Supamiu/ffxiv-teamcraft/commit/1983dee))
+* **desktop:** removed update message banner now that auto updater is fixed ([3e17aa1](https://github.com/Supamiu/ffxiv-teamcraft/commit/3e17aa1))
+
+
+
+<a name="5.1.1"></a>
+## [5.1.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.0...v5.1.1) (2019-03-17)
+
+
+### Bug Fixes
+
+* **custom-items:** fixed korean and chinese search for item picker ([9182ba8](https://github.com/Supamiu/ffxiv-teamcraft/commit/9182ba8))
+* **lists:** "You have no lists" message isn't draggable anymore ([f6d037e](https://github.com/Supamiu/ffxiv-teamcraft/commit/f6d037e))
+* **rotations:** fixed an issue duplicating the rotation panel when using drag and drop ([70d8676](https://github.com/Supamiu/ffxiv-teamcraft/commit/70d8676))
+* **search:** fixed an issue with korean and chinese search filters ([723b57b](https://github.com/Supamiu/ffxiv-teamcraft/commit/723b57b))
+
+
+
+<a name="5.1.0"></a>
+# [5.1.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.38...v5.1.0) (2019-03-16)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with some data not loaded properly ([b309073](https://github.com/Supamiu/ffxiv-teamcraft/commit/b309073))
+* **list:** fixed an issue with total trade popup not doing proper math ([c73d324](https://github.com/Supamiu/ffxiv-teamcraft/commit/c73d324))
+* **search:** fixed a possible issue with search input in some cases ([66b587d](https://github.com/Supamiu/ffxiv-teamcraft/commit/66b587d))
+* **search:** fixed an issue with search filters ([0342868](https://github.com/Supamiu/ffxiv-teamcraft/commit/0342868))
+* **simulator:** dragging the last action doesn't make it immovable ([17eb9ba](https://github.com/Supamiu/ffxiv-teamcraft/commit/17eb9ba))
+
+
+### Features
+
+* added russian to the list of available translation languages ([8017e90](https://github.com/Supamiu/ffxiv-teamcraft/commit/8017e90))
+* you can now create custom items ([#804](https://github.com/Supamiu/ffxiv-teamcraft/issues/804)) ([afb27c0](https://github.com/Supamiu/ffxiv-teamcraft/commit/afb27c0)), closes [#579](https://github.com/Supamiu/ffxiv-teamcraft/issues/579)
+* **lists:** updated lists page display for more usability with teams ([6893cb9](https://github.com/Supamiu/ffxiv-teamcraft/commit/6893cb9))
+* **localisation:** you can now search in Korean from Gathering items ([71a7cc7](https://github.com/Supamiu/ffxiv-teamcraft/commit/71a7cc7))
+* **log-tracker:** added a confirmation box for the "mark page as done" action ([dae54ee](https://github.com/Supamiu/ffxiv-teamcraft/commit/dae54ee))
+* **pricing:** you can now copy a pricing panel content as string ([96015a0](https://github.com/Supamiu/ffxiv-teamcraft/commit/96015a0))
+* **simulator:** added a warning message about level 70 quest for stroke of genius ([2e069fb](https://github.com/Supamiu/ffxiv-teamcraft/commit/2e069fb))
+* **workshop:** workshop panel now has list count shown ([788d040](https://github.com/Supamiu/ffxiv-teamcraft/commit/788d040))
+
+
+
 <a name="5.0.38"></a>
 ## [5.0.38](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.37...v5.0.38) (2019-03-10)
 

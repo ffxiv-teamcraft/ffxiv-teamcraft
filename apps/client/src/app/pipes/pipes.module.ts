@@ -27,6 +27,8 @@ import { ActionNamePipe } from './action-name.pipe';
 import { CustomItemNamePipe } from './custom-item-name.pipe';
 import { IngameStarsPipe } from './ingame-stars.pipe';
 import { LazyIconPipe } from './lazy-icon.pipe';
+import { PermissionLevelPipe } from './permission-level.pipe';
+import { ElementIconPipe } from './element-icon.pipe';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,10 @@ import { LazyIconPipe } from './lazy-icon.pipe';
     WeatherIconPipe,
     CustomItemNamePipe,
     IngameStarsPipe,
-    LazyIconPipe
+    LazyIconPipe,
+    CustomItemNamePipe,
+    PermissionLevelPipe,
+    ElementIconPipe
   ],
   exports: [
     ItemNamePipe,
@@ -85,6 +90,9 @@ import { LazyIconPipe } from './lazy-icon.pipe';
     XivapiI18nPipe,
     WeatherNamePipe,
     WeatherIconPipe,
+    CustomItemNamePipe,
+    PermissionLevelPipe,
+    ElementIconPipe,
     CustomItemNamePipe,
     IngameStarsPipe,
     LazyIconPipe

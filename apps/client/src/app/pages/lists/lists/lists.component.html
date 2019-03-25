@@ -44,19 +44,26 @@
            [model]="list">
         <app-list-panel [list]="list" [hideAvatar]="true"></app-list-panel>
       </div>
-      <app-fullpage-message *ngIf="lists.otherLists.length === 0 && !(loading$ | async)" height="150px">
-        {{'LISTS.No_lists' | translate}}
-      </app-fullpage-message>
     </div>
-    <div *ngFor="let teamDisplay of teamsDisplays$ | async;trackBy: trackByTeam">
-      <div *ngIf="teamDisplay.lists.length > 0">
-        <h3>{{teamDisplay.team.name}}</h3>
-        <div class="list-panel" *ngFor="let list of teamDisplay.lists; trackBy: trackByList">
-          <app-list-panel [list]="list"></app-list-panel>
-        </div>
-      </div>
+    <app-fullpage-message *ngIf="lists.otherLists.length === 0 && !(loading$ | async)" height="150px">
+      {{'LISTS.No_lists' | translate}}
+    </app-fullpage-message>
+    <nz-divider [nzText]="'TEAMS.Title' | translate" nzOrientation="left"></nz-divider>
+    <div fxLayout="column" fxLayoutGap="5px">
+      <nz-collapse *ngFor="let teamDisplay of teamsDisplays$ | async;trackBy: trackByTeam">
+        <nz-collapse-panel nzHeader="{{teamDisplay.team.name}} ({{teamDisplay.lists.length}})">
+          <div class="ngx-dnd-container" ngxDroppable="communityList"
+               (drop)="setListIndex($event.value, $event.dropIndex, lists.lists)">
+            <div class="ngx-dnd-item list-panel" *ngFor="let list of teamDisplay.lists; trackBy: trackByList"
+                 ngxDraggable="team-{{teamDisplay.team.$key}}"
+                 [model]="list">
+              <app-list-panel [list]="list"></app-list-panel>
+            </div>
+          </div>
+        </nz-collapse-panel>
+      </nz-collapse>
     </div>
-    <nz-divider></nz-divider>
+    <nz-divider [nzText]="'Your_public_lists' | translate" nzOrientation="left"></nz-divider>
     <nz-collapse *ngIf="lists.communityLists.length > 0">
       <nz-collapse-panel nzHeader="{{'Your_public_lists' | translate}} ({{lists.communityLists.length}})"
                          #communityListsPanel>

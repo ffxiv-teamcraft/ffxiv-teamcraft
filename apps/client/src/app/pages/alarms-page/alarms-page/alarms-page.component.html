@@ -14,12 +14,6 @@
                 (click)="showSettings()">
           <i nz-icon type="setting"></i>
         </button>
-        <button nz-button nzShape="circle" nzType="primary" nz-tooltip
-                nzTitle="{{(settings.alarmsMuted?'Unmute_alarms':'Mute_alarms') | translate}}"
-                (click)="settings.alarmsMuted = !settings.alarmsMuted">
-          <i nz-icon iconfont="icon-bell" *ngIf="settings.alarmsMuted"></i>
-          <i nz-icon iconfont="icon-bell-mute" *ngIf="!settings.alarmsMuted"></i>
-        </button>
         <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.CUSTOM.Title' | translate}}"
                 (click)="newCustomAlarm()">
           <i nz-icon type="form"></i>
@@ -31,10 +25,16 @@
                 (click)="openOverlay()" *ngIf="platform.isDesktop()">
           <i nz-icon type="desktop"></i>
         </button>
-        <span>
-        <nz-switch [(ngModel)]="settings.compactAlarms"></nz-switch>
-          {{'Compact_display' | translate}}
-      </span>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <nz-switch [(ngModel)]="settings.alarmsMuted"></nz-switch>
+            <div>{{'Mute_alarms' | translate}} </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <nz-switch [(ngModel)]="settings.compactAlarms"></nz-switch>
+            <div>{{'Compact_display' | translate}} </div>
+          </div>
+        </div>
       </div>
     </div>
 

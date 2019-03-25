@@ -54,7 +54,6 @@
   "Collectable_flag": "Collectable",
   "Compact_display": "Compact display",
   "Mute_alarms": "Mute alarms",
-  "Unmute_alarms": "Unmute alarms",
   "Hide_used": "Hide used rows",
   "Collapse_if_done": "Collapse if done",
   "Retainer_ventures": "Retainer ventures",
@@ -407,6 +406,7 @@
     "Add_item": "Add an item",
     "List_too_large": "List too large",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "Add_to_another_list": "Add to another list",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -518,7 +518,6 @@
     "Template_created": "List template created",
     "Dialog_title": "Template creation",
     "Link_name": "Template name",
-    "target": "Target list",
     "Share_link_copied": "Template share link copied to the clipboard",
     "Copy_template_url": "Copy template url",
     "Cloning_list": "Creating a copy of the list to your account",
@@ -550,7 +549,8 @@
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
     "Propagate_changes_done": "Changes propagated to lists inside the workshop",
     "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
-    "Default_permission_level": "Default permission level"
+    "Default_permission_level": "Default permission level",
+    "List_tooltip": "Permission level for everyone: {{level}}"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -819,6 +819,7 @@
     "Timed": "Timed",
     "Weather_dependant": "Only with some weathers",
     "View_on_ff14angler": "More details on ff14angler",
+    "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
