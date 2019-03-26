@@ -10,10 +10,10 @@ export class WeatherService {
   /**
    * Gets weather rate for a given time,
    * see https://github.com/viion/ffxiv-datamining/blob/master/docs/Weather.md for implementation details
-   * @param date
+   * @param timestamp
    */
-  private getWeatherRateValue(date: Date): number {
-    const unixSeconds = Math.round(date.getTime() / EorzeanTimeService.EPOCH_TIME_FACTOR / 1000);
+  private getWeatherRateValue(timestamp: number): number {
+    const unixSeconds = Math.round(timestamp / EorzeanTimeService.EPOCH_TIME_FACTOR / 1000);
     const eorzeanHour = unixSeconds / 175;
     // Do the magic 'cause for calculations 16:00 is 0, 00:00 is 8 and 08:00 is 16
     const increment = (eorzeanHour + 8 - (eorzeanHour % 8)) % 24;
@@ -29,54 +29,43 @@ export class WeatherService {
     return step2 % 100;
   }
 
-  public getWeather(mapId: number, date: Date): number {
-    const weatherRate = weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
-    const weatherRateValue = this.getWeatherRateValue(new Date(date));
-    const rates = Object.keys(weatherRate);
-    for (const rate of rates) {
-      if (weatherRateValue <= +rate) {
-        return weatherRate[rate];
-      }
+  public getWeather(mapId: number, timestamp: number, weatherRate: any): number {
+    const weatherRateValue = this.getWeatherRateValue(timestamp);
+    const match = weatherRate.find(rate => weatherRateValue <= rate.rate);
+    if (match !== undefined) {
+      return match.weatherId;
     }
     return 1;
   }
 
-  public getNextWeatherStart(mapId: number, weatherId: number, date: Date, weatherRate?: any): Date | null {
+  public getNextWeatherStart(mapId: number, weatherId: number, timestamp: number, weatherRate?: any): Date | null {
     weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
-    if (!Object.keys(weatherRate).some(key => weatherRate[key] === weatherId)) {
-      return null;
-    }
-    if (this.getWeather(mapId, date) === weatherId) {
-      const resultDate = new Date(date);
+    if (this.getWeather(mapId, timestamp, weatherRate) === weatherId) {
+      const resultDate = new Date(timestamp);
       resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
       resultDate.setUTCMinutes(0);
       return resultDate;
     }
-    return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(date), weatherRate);
+    return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(timestamp), weatherRate);
   }
 
-  public getNextWeatherTransition(mapId: number, fromWeatherIds: number[], weatherId: number, date: Date, weatherRate?: any): Date | null {
-    weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
-    if (!Object.keys(weatherRate).some(key => weatherRate[key] === weatherId)) {
-      return null;
-    }
+  public getNextWeatherTransition(mapId: number, fromWeatherIds: number[], weatherId: number, timestamp: number, weatherRate: any, iteration = 0): Date | null {
     // 8 hours before
-    const dateForPreviousWeather = new Date(date.getTime() - 8 * 60 * 60 * 1000);
-    const previousWeather = this.getWeather(mapId, dateForPreviousWeather);
-    if (fromWeatherIds.indexOf(previousWeather) > -1 && this.getWeather(mapId, date) === weatherId) {
-      const resultDate = new Date(date);
+    const dateForPreviousWeather = timestamp - 8 * 60 * 60 * 1000 - 1;
+    const previousWeather = this.getWeather(mapId, dateForPreviousWeather, weatherRate);
+    if (fromWeatherIds.indexOf(previousWeather) > -1 && this.getWeather(mapId, timestamp, weatherRate) === weatherId) {
+      const resultDate = new Date(timestamp);
       resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
       resultDate.setUTCMinutes(0);
       return resultDate;
     }
-    return this.getNextWeatherTransition(mapId, fromWeatherIds, weatherId, this.nextWeatherTime(date), weatherRate);
+    return this.getNextWeatherTransition(mapId, fromWeatherIds, weatherId, this.nextWeatherTime(timestamp), weatherRate, iteration + 1);
   }
 
-  public nextWeatherTime(date: Date) {
-    date = new Date(date);
+  public nextWeatherTime(timestamp: number): number {
+    const date = new Date(timestamp);
     const hoursPast = date.getUTCHours() % 8;
     const difference = (((8 - hoursPast) * 60 - date.getUTCMinutes()) * 60 - date.getUTCSeconds()) * 1000 - date.getUTCMilliseconds();
-    date.setTime(date.getTime() + difference);
-    return date;
+    return date.getTime() + difference;
   }
 }

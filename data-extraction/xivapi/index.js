@@ -365,14 +365,14 @@ if (hasTodo('weather')) {
     weatherIndexes.push(...res.Results);
   }, null, () => {
     weatherIndexes.forEach(weatherIndex => {
-      const entry = {};
+      const entry = [];
       let previousRate = 0;
       for (let i = 0; i <= 7; i++) {
         const rate = weatherIndex[`Rate${i}`];
         const rateValue = rate + previousRate;
         previousRate = rateValue;
         if (rate > 0) {
-          entry[rateValue] = weatherIndex[`Weather${i}TargetID`];
+          entry.push({ rate: rateValue, weatherId: weatherIndex[`Weather${i}TargetID`] });
         }
       }
       weatherIndexData[weatherIndex.ID] = entry;

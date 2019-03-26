@@ -135,6 +135,7 @@
     "Open_overlay": "Open overlay",
     "More_available": "and {{amount}} more...",
     "Node_content": "Node content",
+    "More_than_three_days": "> 3 days",
     "CUSTOM": {
       "Title": "Add custom alarm",
       "Name": "Name",
