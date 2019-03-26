@@ -543,7 +543,7 @@
     "User_id_tip": "사용자 ID는 프로필 페이지 오른쪽 하단에 있습니다",
     "Saving": "권한 설정을 저장중",
     "No_anonymous": "권한을 관리하려면 계정이 필요합니다",
-    "Propagate_changes": "공방 내부에 목록에 대한 권한 제공",
+    "Propagate_changes": "공방 내부 목록들의 권한을 변경",
     "Propagate_changes_done": "공방 내부 목록에 대한 변경이 적용되었습니다",
     "Team_notice": "이 목록이 할당된 팀은 자동으로 참여 권한을 갖습니다.",
     "Default_permission_level": "기본 권한 수준",
