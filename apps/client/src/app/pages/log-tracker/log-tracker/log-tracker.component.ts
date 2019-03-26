@@ -387,7 +387,7 @@ export class LogTrackerComponent {
   }
 
   public getAlarm(node: any): Partial<Alarm> | null {
-    if (!node.timed && (!node.weathers || node.weathers.length === 0)) {
+    if (!node.timed && (node.weathers === undefined || node.weathers.length === 0)) {
       return null;
     }
     if (this.alarmsCache[`${node.itemId}-${node.type}`] === undefined) {

@@ -21,7 +21,8 @@
             <nz-spin [nzSpinning]="userCompletion === {}">
               <div fxLayout="column" *ngIf="dohSelectedPage === page.id">
                 <div class="toolbar" fxLayout="row" fxLayoutGap="5px" fxLayout.lt-md="column">
-                  <button nz-button nz-popconfirm [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="markDohPageAsDone(page)">
+                  <button nz-button nz-popconfirm [nzTitle]="'Confirmation' | translate"
+                          (nzOnConfirm)="markDohPageAsDone(page)">
                     <i nz-icon type="check"></i> {{'LOG_TRACKER.Mark_page_as_done' | translate}}
                   </button>
                   <button nz-button (click)="createList(page)">
@@ -118,7 +119,7 @@
                                                 flex="row"
                                                 [marker]="{x: node.x, y: node.y}"></app-map-position>
                             </div>
-                            <div *ngIf="node.timed || node.weathers?.length > 0">
+                            <div *ngIf="node.timed">
                               <ng-container *ngIf="getAlarm(node) as alarm">
                                 <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
                                   <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"
@@ -220,7 +221,7 @@
                                         [zoneId]="node.zoneid"
                                         flex="row"
                                         [marker]="{x: node.x, y: node.y}"></app-map-position>
-                      <div *ngIf="node.timed">
+                      <div *ngIf="node.timed || node.weathers?.length > 0">
                         <ng-container *ngIf="getAlarm(node) as alarm">
                           <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
                             <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"

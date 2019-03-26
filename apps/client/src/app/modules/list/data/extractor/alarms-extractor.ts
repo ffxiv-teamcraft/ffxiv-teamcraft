@@ -30,7 +30,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
     const alarms: Partial<Alarm>[] = [];
     if (row.gatheredBy !== undefined) {
       alarms.push(...row.gatheredBy.nodes
-        .filter(node => node.uptime !== undefined)
+        .filter(node => node.uptime !== undefined || node.weathers !== undefined)
         .map(node => {
           const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(row.id) > -1);
           const alarm: Partial<Alarm> = {

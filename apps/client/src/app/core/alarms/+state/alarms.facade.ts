@@ -133,11 +133,15 @@ export class AlarmsFacade {
 
   public createDisplay(alarm: Alarm, date: Date): AlarmDisplay {
     const display = new AlarmDisplay(alarm);
-    const nextSpawn = this.getNextSpawn(alarm, date);
+    const nextSpawn = {...this.getNextSpawn(alarm, date)};
     display.spawned = this.isSpawned(alarm, date);
     display.played = this.isPlayed(alarm, date);
     if (display.spawned) {
-      nextSpawn.hours = (nextSpawn.hours + alarm.duration) % 24;
+      if (alarm.duration === null) {
+        nextSpawn.hours = nextSpawn.despawn;
+      } else {
+        nextSpawn.hours = (nextSpawn.hours + alarm.duration) % 24;
+      }
       display.remainingTime = this.getMinutesBefore(date, nextSpawn);
     } else {
       display.remainingTime = this.getMinutesBefore(date, nextSpawn);
