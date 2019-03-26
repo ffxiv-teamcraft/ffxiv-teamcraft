@@ -145,7 +145,7 @@ export class AlarmsFacade {
   }
 
   public createDisplayArray(alarms: Alarm[], date: Date): AlarmDisplay[] {
-    return this.sortAlarmDisplays(alarms.filter(alarm => alarm.spawns !== undefined)
+    return this.sortAlarmDisplays(alarms.filter(alarm => alarm.spawns !== undefined || alarm.weathers !== undefined)
       .map(alarm => {
         return this.createDisplay(alarm, date);
       }));
@@ -205,7 +205,7 @@ export class AlarmsFacade {
   }
 
   public getNextSpawn(alarm: Alarm, time: Date): NextSpawn {
-    const sortedSpawns = alarm.spawns.sort((a, b) => {
+    const sortedSpawns = (alarm.spawns || []).sort((a, b) => {
       const timeBeforeA = this.getMinutesBefore(time, { hours: a, days: 0 });
       const timeBeforeADespawns = this.getMinutesBefore(time, { hours: (a + alarm.duration) % 24, days: 0 });
       const timeBeforeB = this.getMinutesBefore(time, { hours: b, days: 0 });
@@ -261,6 +261,16 @@ export class AlarmsFacade {
           };
         }
       }
+    }
+    if (sortedSpawns.length === 0) {
+      const weatherSpawn = weatherSpawns[weatherSpawns.length - 1];
+      const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time.getTime()) / 86400000), 0);
+      return {
+        hours: weatherSpawn.spawn.getUTCHours(),
+        days: days,
+        despawn: this.weatherService.nextWeatherTime(weatherSpawn.spawn).getUTCHours() || 24,
+        weather: weatherSpawn.weather
+      };
     }
     return this.findWeatherSpawnCombination(alarm, sortedSpawns, time, new Date(weatherSpawns[weatherSpawns.length - 1].spawn.getTime() + 86400000));
   }

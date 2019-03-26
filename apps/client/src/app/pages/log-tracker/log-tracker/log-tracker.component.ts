@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { craftingLogPages } from '../../../core/data/sources/crafting-log-pages';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
@@ -22,12 +22,14 @@ import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { fishingLog } from '../../../core/data/sources/fishing-log';
 import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 import _ = require('lodash');
 
 @Component({
   selector: 'app-log-tracker',
   templateUrl: './log-tracker.component.html',
-  styleUrls: ['./log-tracker.component.less']
+  styleUrls: ['./log-tracker.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LogTrackerComponent {
 
@@ -46,6 +48,8 @@ export class LogTrackerComponent {
   public nodeDataCache: any[][] = [];
   public fshDataCache: any[] = [];
 
+  public alarmsCache: any = {};
+
   public dohSelectedPage = 0;
   public dolSelectedPage = 0;
   public fshSelectedPage = 0;
@@ -62,7 +66,8 @@ export class LogTrackerComponent {
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
-              private bell: BellNodesService, private l12n: LocalizedDataService, private alarmsFacade: AlarmsFacade) {
+              private bell: BellNodesService, private l12n: LocalizedDataService, private alarmsFacade: AlarmsFacade,
+              private lazyData: LazyDataService) {
     this.dohTabs = [...craftingLogPages];
     this.dolTabs = [...gatheringLogPages];
     this.fshTabs = [[..._.chunk(fishingLog, 10)], [..._.chunk(spearFishingLog, 10)]];
@@ -309,8 +314,7 @@ export class LogTrackerComponent {
         const bellNode = this.bell.getNode(+node.nodeId);
         node.timed = bellNode !== undefined;
         node.itemId = itemId;
-        // TODO
-        // node.icon = item.obj.c;
+        node.icon = this.lazyData.icons[itemId];
         if (node.timed) {
           const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === itemId);
           node.spawnTimes = bellNode.time;
@@ -383,31 +387,34 @@ export class LogTrackerComponent {
   }
 
   public getAlarm(node: any): Partial<Alarm> | null {
-    if (!node.timed) {
+    if (!node.timed && (!node.weathers || node.weathers.length === 0)) {
       return null;
     }
-    return {
-      itemId: node.itemId,
-      icon: node.icon,
-      duration: node.uptime / 60,
-      zoneId: node.zoneid,
-      areaId: node.areaid,
-      slot: +node.slot,
-      type: node.type,
-      coords: {
-        x: node.x,
-        y: node.y
-      },
-      folklore: node.folklore,
-      reduction: node.reduction,
-      ephemeral: node.ephemeral,
-      nodeContent: node.items,
-      spawns: node.spawnTimes,
-      mapId: node.mapId,
-      baits: node.baits || [],
-      weathers: node.weathers,
-      weathersFrom: node.weathersFrom
-    };
+    if (this.alarmsCache[`${node.itemId}-${node.type}`] === undefined) {
+      this.alarmsCache[`${node.itemId}-${node.type}`] = {
+        itemId: node.itemId,
+        icon: node.icon,
+        duration: node.uptime / 60,
+        zoneId: node.zoneid,
+        areaId: node.areaid,
+        slot: +node.slot,
+        type: node.type,
+        coords: {
+          x: node.x,
+          y: node.y
+        },
+        folklore: node.folklore,
+        reduction: node.reduction,
+        ephemeral: node.ephemeral,
+        nodeContent: node.items,
+        spawns: node.spawnTimes,
+        mapId: node.mapId,
+        baits: node.baits || [],
+        weathers: node.weathers,
+        weathersFrom: node.weathersFrom
+      };
+    }
+    return this.alarmsCache[`${node.itemId}-${node.type}`];
   }
 
   public toggleAlarm(display: AlarmDisplay): void {

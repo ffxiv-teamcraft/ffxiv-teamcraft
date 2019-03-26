@@ -2498,5 +2498,140 @@ export const mapIds = [
     'id': 500,
     'name': 'The Ghimlyt Dark',
     'weatherRate': 0
+  },
+  {
+    'id': 501,
+    'name': 'Psiscape V2.0',
+    'weatherRate': 92
+  },
+  {
+    'id': 502,
+    'name': 'The Interdimensional Rift',
+    'weatherRate': 92
+  },
+  {
+    'id': 503,
+    'name': 'Hells\' Kier',
+    'weatherRate': 98
+  },
+  {
+    'id': 504,
+    'name': 'The Haunted Manor',
+    'weatherRate': 0
+  },
+  {
+    'id': 505,
+    'name': 'The Haunted Manor',
+    'weatherRate': 0
+  },
+  {
+    'id': 506,
+    'name': 'The Haunted Manor',
+    'weatherRate': 0
+  },
+  {
+    'id': 507,
+    'name': 'The Fall of Belah\'dia',
+    'weatherRate': 0
+  },
+  {
+    'id': 508,
+    'name': 'The Interdimensional Rift',
+    'weatherRate': 92
+  },
+  {
+    'id': 509,
+    'name': 'The Interdimensional Rift',
+    'weatherRate': 92
+  },
+  {
+    'id': 510,
+    'name': null,
+    'weatherRate': 0
+  },
+  {
+    'id': 511,
+    'name': null,
+    'weatherRate': 0
+  },
+  {
+    'id': 512,
+    'name': 'The Orbonne Monastery',
+    'weatherRate': 0
+  },
+  {
+    'id': 513,
+    'name': 'The Orbonne Monastery',
+    'weatherRate': 0
+  },
+  {
+    'id': 514,
+    'name': 'The Orbonne Monastery',
+    'weatherRate': 0
+  },
+  {
+    'id': 515,
+    'name': 'Eureka Hydatos',
+    'weatherRate': 100
+  },
+  {
+    'id': 516,
+    'name': 'The Wreath of Snakes',
+    'weatherRate': 99
+  },
+  {
+    'id': 517,
+    'name': 'Garlean Legion Tents',
+    'weatherRate': 0
+  },
+  {
+    'id': 518,
+    'name': 'Eorzean Alliance Headquarters',
+    'weatherRate': 0
+  },
+  {
+    'id': 519,
+    'name': 'The Orbonne Monastery',
+    'weatherRate': 0
+  },
+  {
+    'id': 520,
+    'name': 'Eureka Hydatos',
+    'weatherRate': 100
+  },
+  {
+    'id': 521,
+    'name': 'Eureka Hydatos',
+    'weatherRate': 100
+  },
+  {
+    'id': 522,
+    'name': 'The Orbonne Monastery',
+    'weatherRate': 0
+  },
+  {
+    'id': 523,
+    'name': 'The Orbonne Monastery',
+    'weatherRate': 0
+  },
+  {
+    'id': 524,
+    'name': 'Eureka Hydatos',
+    'weatherRate': 100
+  },
+  {
+    'id': 525,
+    'name': 'Eureka Hydatos',
+    'weatherRate': 100
+  },
+  {
+    'id': 526,
+    'name': 'Eureka Hydatos',
+    'weatherRate': 100
+  },
+  {
+    'id': 527,
+    'name': 'Eureka Hydatos',
+    'weatherRate': 100
   }
 ];

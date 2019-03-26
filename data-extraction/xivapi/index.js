@@ -167,13 +167,6 @@ const craftingLogPages = [
   []
 ];
 
-const gatheringLog = [
-  [],
-  [],
-  [],
-  []
-];
-
 
 const gatheringLogPages = [
   [],
@@ -281,11 +274,9 @@ if (hasTodo('gatheringLog')) {
             gathererIndex = (page.ID - 2000) % 4;
             pageId = 9999;
           }
-          gatheringLog[gathererIndex].push(entry.Item);
           addToGatheringLogPage(entry, pageId, gathererIndex);
         });
     });
-    persistToTypescript('gathering-log', 'gatheringLog', gatheringLog);
     persistToTypescript('gathering-log-pages', 'gatheringLogPages', gatheringLogPages);
   });
 

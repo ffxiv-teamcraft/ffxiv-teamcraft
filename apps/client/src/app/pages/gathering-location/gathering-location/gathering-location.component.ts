@@ -267,7 +267,9 @@ export class GatheringLocationComponent {
       folklore: node.folklore,
       reduction: node.reduction,
       ephemeral: node.ephemeral,
-      nodeContent: node.items
+      nodeContent: node.items,
+      weathers: node.weathers,
+      weathersFrom: node.weathersFrom
     };
   }
 

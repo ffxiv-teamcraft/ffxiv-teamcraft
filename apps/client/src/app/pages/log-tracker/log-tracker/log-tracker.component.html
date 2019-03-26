@@ -118,7 +118,7 @@
                                                 flex="row"
                                                 [marker]="{x: node.x, y: node.y}"></app-map-position>
                             </div>
-                            <div *ngIf="node.timed">
+                            <div *ngIf="node.timed || node.weathers?.length > 0">
                               <ng-container *ngIf="getAlarm(node) as alarm">
                                 <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
                                   <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"
