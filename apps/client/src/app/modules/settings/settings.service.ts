@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Theme } from './theme';
+import { IpcService } from '../../core/electron/ipc.service';
 
 @Injectable()
 export class SettingsService {
 
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
-  private readonly cache: { [id: string]: string };
+  private cache: { [id: string]: string };
 
-  constructor() {
+  constructor(private ipc: IpcService) {
     this.cache = JSON.parse(localStorage.getItem('settings')) || {};
+    this.ipc.on('update-settings', (e, settings) => {
+      this.cache = settings;
+      localStorage.setItem('settings', JSON.stringify(this.cache));
+    });
   }
 
   public get availableLocales(): string[] {
@@ -163,6 +168,7 @@ export class SettingsService {
   private setSetting(name: string, value: string): void {
     this.cache[name] = value;
     localStorage.setItem('settings', JSON.stringify(this.cache));
+    this.ipc.send('apply-settings', this.cache);
   }
 
 }

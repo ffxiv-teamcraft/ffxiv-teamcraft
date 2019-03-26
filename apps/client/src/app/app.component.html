@@ -142,78 +142,91 @@
                 [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/search">
-          <span>
-              <i nz-icon type="search"></i>
+          <span nz-tooltip nzPlacement="right"
+                 [nzTitle]="collapsedSidebar ? ('ITEMS.Title' | translate) : null">
+              <i nz-icon  type="search"></i>
               <span class="nav-text">{{'ITEMS.Title' | translate}}</span>
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/lists">
-          <span>
-              <i nz-icon type="profile"></i>
+          <span nz-tooltip nzPlacement="right"
+                 [nzTitle]="collapsedSidebar ? ('Lists' | translate) : null">
+              <i nz-icon
+                 type="profile"></i>
               <span class="nav-text">{{'Lists' | translate}}</span>
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/alarms">
-          <span>
-              <i nz-icon type="bell"></i>
+          <span nz-tooltip nzPlacement="right"
+                 [nzTitle]="collapsedSidebar ? ('ALARMS.Title' | translate) : null">
+              <i nz-icon  type="bell"></i>
               <span class="nav-text">{{'ALARMS.Title' | translate}}</span>
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/rotations">
-          <span>
-              <i nz-icon type="build"></i>
+          <span nz-tooltip nzPlacement="right"
+                 [nzTitle]="collapsedSidebar ? ('SIMULATOR.Rotations' | translate) : null">
+              <i nz-icon  type="build"></i>
               <span class="nav-text">{{'SIMULATOR.Rotations' | translate}}</span>
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/community-lists">
-          <span>
-              <i nz-icon type="solution"></i>
+          <span nz-tooltip nzPlacement="right"
+                 [nzTitle]="collapsedSidebar ? ('Public_lists' | translate) : null">
+              <i nz-icon  type="solution"></i>
               <span class="nav-text">{{'Public_lists' | translate}}</span>
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/gathering-location">
-          <span>
-              <i nz-icon type="environment-o"></i>
+          <span nz-tooltip nzPlacement="right"
+                 [nzTitle]="collapsedSidebar ? ('GATHERING_LOCATIONS.Title' | translate) : null">
+              <i nz-icon
+                 type="environment-o"></i>
               <span class="nav-text">{{'GATHERING_LOCATIONS.Title' | translate}}</span>
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/levequests">
-          <span>
-              <i nz-icon type="book"></i>
+          <span nz-tooltip nzPlacement="right"
+                 [nzTitle]="collapsedSidebar ? ('LEVEQUESTS.Title' | translate) : null">
+              <i nz-icon  type="book"></i>
               <span class="nav-text">{{'LEVEQUESTS.Title' | translate}}</span>
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/log-tracker">
-          <span>
-              <i nz-icon iconfont="icon-book"></i>
+          <span nz-tooltip nzPlacement="right"
+                 [nzTitle]="collapsedSidebar ? ('LOG_TRACKER.Title' | translate) : null">
+              <i nz-icon  iconfont="icon-book"></i>
               <span class="nav-text">{{'LOG_TRACKER.Title' | translate}}</span>
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/custom-items">
-          <span>
-              <i nz-icon iconfont="icon-custom"></i>
+          <span nz-tooltip nzPlacement="right"
+                 [nzTitle]="collapsedSidebar ? ('CUSTOM_ITEMS.Title' | translate) : null">
+              <i nz-icon  iconfont="icon-custom"></i>
               <span class="nav-text">{{'CUSTOM_ITEMS.Title' | translate}}</span>
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/macro-translator">
-          <span>
-              <i nz-icon type="message"></i>
+          <span nz-tooltip nzPlacement="right"
+                 [nzTitle]="collapsedSidebar ? ('MACRO_TRANSLATION.Title' | translate) : null">
+              <i nz-icon  type="message"></i>
               <span class="nav-text">{{'MACRO_TRANSLATION.Title' | translate}}</span>
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/about">
-          <span>
-              <i nz-icon type="info-circle-o"></i>
+          <span nz-tooltip nzPlacement="right"
+                 [nzTitle]="collapsedSidebar ? ('ABOUT.title' | translate) : null">
+              <i nz-icon  type="info-circle-o"></i>
               <span class="nav-text">{{'ABOUT.title' | translate}}</span>
           </span>
               </a>
@@ -262,7 +275,7 @@
             </ng-template>
           </nz-alert>
           <nz-alert nzType="info" nzBanner [nzMessage]="'GIVEAWAY.Discord_1K.Title' | translate"
-                    [nzDescription]="'GIVEAWAY.Discord_1K.Description' | translate" *ngIf="showGiveaway && !overlay"
+                    [nzDescription]="'GIVEAWAY.Discord_1K.Description' | translate" *ngIf="false"
                     class="new-version-alert"
                     [nzCloseText]="'Close' | translate"
                     (nzOnClose)="closeDiscord1kGiveaway()"
