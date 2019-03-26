@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.7"></a>
+## [5.1.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.6...v5.1.7) (2019-03-26)
+
+
+### Features
+
+* **core:** updated data with 4.56 patch content ([3fa19ea](https://github.com/Supamiu/ffxiv-teamcraft/commit/3fa19ea))
+
+
+
 <a name="5.1.6"></a>
 ## [5.1.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.5...v5.1.6) (2019-03-25)
 
