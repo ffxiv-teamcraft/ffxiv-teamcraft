@@ -741,8 +741,8 @@
     "No_anonymous_join": "You have to create an account to be able to join a team",
     "Already_in_team": "You are already in this team",
     "Webhook_configuration": "Webhook settings",
-    "Officier": "Officier",
-    "Promote_officier": "Promote to officier",
+    "Officer": "Officer",
+    "Promote_officer": "Promote to officer",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",

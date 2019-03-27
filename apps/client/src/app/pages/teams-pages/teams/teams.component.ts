@@ -64,13 +64,13 @@ export class TeamsComponent implements OnInit {
     }
   }
 
-  public addOfficier(team: Team, member: string): void {
-    team.officiers.push(member);
+  public addOfficer(team: Team, member: string): void {
+    team.officers.push(member);
     this.updateTeam(team);
   }
 
-  public removeOfficier(team: Team, member: string): void {
-    team.officiers = team.officiers.filter(m => m !== member);
+  public removeOfficer(team: Team, member: string): void {
+    team.officers = team.officers.filter(m => m !== member);
     this.updateTeam(team);
   }
 

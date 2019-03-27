@@ -12,7 +12,7 @@ export class Team extends DataModel {
 
   members: string[] = [];
 
-  officiers: string[] = [];
+  officers: string[] = [];
 
   // To test it: https://discordapp.com/api/webhooks/508611709179789313/jUdVJshi-_EOHnawfijbfF4OJRKAalYtw76AycUw0fk5X5BFJWcWCYd1DWG8gKAQNX0X
   webhook?: string;
@@ -21,8 +21,8 @@ export class Team extends DataModel {
     return { name: <WebhookSettingType>type, value: true };
   });
 
-  isOfficier(member: string): boolean {
-    return this.members.indexOf(member) > -1 && this.officiers.indexOf(member) > -1;
+  isOfficer(member: string): boolean {
+    return this.members.indexOf(member) > -1 && this.officers.indexOf(member) > -1;
   }
 
   hasSettingEnabled(setting: WebhookSettingType): boolean {

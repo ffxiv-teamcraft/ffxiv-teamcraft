@@ -113,8 +113,8 @@
                         <nz-tag *ngIf="team.leader === member"
                                 [nzColor]="'geekblue'">{{'TEAMS.Leader' | translate}}</nz-tag>
                         <nz-tag [nzMode]="userId === team.leader?'closeable':'default'"
-                                *ngIf="team.isOfficier(member)"
-                                (nzOnClose)="removeOfficier(team, member)">{{'TEAMS.Officier' | translate}}</nz-tag>
+                                *ngIf="team.isOfficer(member)"
+                                (nzOnClose)="removeOfficer(team, member)">{{'TEAMS.Officer' | translate}}</nz-tag>
                       </div>
                     </div>
                   </ng-template>
@@ -126,13 +126,13 @@
                       <div fxLayout="row" fxLayoutAlign="center center">
                         <button nz-button [nzShape]="'circle'"
                                 nz-tooltip nzSize="small"
-                                *ngIf="userId === team.leader && !team.isOfficier(member) && member !== team.leader"
-                                [nzTitle]="'TEAMS.Promote_officier' | translate"
-                                (click)="addOfficier(team, member)">
+                                *ngIf="userId === team.leader && !team.isOfficer(member) && member !== team.leader"
+                                [nzTitle]="'TEAMS.Promote_officer' | translate"
+                                (click)="addOfficer(team, member)">
                           <i nz-icon type="star"></i>
                         </button>
                         <nz-divider nzType="vertical"
-                                    *ngIf="userId === team.leader && !team.isOfficier(member) && member !== team.leader"></nz-divider>
+                                    *ngIf="userId === team.leader && !team.isOfficer(member) && member !== team.leader"></nz-divider>
                         <button nz-button [nzShape]="'circle'" [nzType]="'danger'"
                                 nz-popconfirm nzSize="small" *ngIf="userId === team.leader || userId === member"
                                 [nzTitle]="'Confirmation' | translate"
