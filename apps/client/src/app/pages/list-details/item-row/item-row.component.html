@@ -68,7 +68,7 @@
         </li>
         <li nz-menu-item (click)="openRequirementsPopup()">{{'Requirements_for_craft' | translate}}</li>
         <ng-container *ngIf="team$ | async as team">
-          <li nz-submenu *ngIf="team.leader === userId">
+          <li nz-submenu *ngIf="team.leader === userId || team.isOfficier(userId)">
             <span title>{{'TEAMS.Assign_team_member' | translate}}</span>
             <ul nz-menu class="team-members">
               <ng-container *ngFor="let member of team.members">
