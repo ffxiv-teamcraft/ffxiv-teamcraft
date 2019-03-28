@@ -265,9 +265,10 @@
               </ng-template>
             </div>
             <div nz-col [nzMd]="4">
-              <a href="http://ff14angler.com/fish/{{item.id}}"
-                 *ngIf="item.id < 20000"
-                 target="_blank">{{'LOG_TRACKER.View_on_ff14angler' | translate}}</a>
+              <!--TODO: ff14angler link, because they have a strange id system that prevents links like below for big fishes-->
+              <!--<a href="http://ff14angler.com/fish/{{item.id}}"-->
+                 <!--*ngIf="item.id < 20000"-->
+                 <!--target="_blank">{{'LOG_TRACKER.View_on_ff14angler' | translate}}</a>-->
             </div>
             <div nz-col [nzMd]="2">
               <button nz-button (click)="markDolAsDone(item.itemId, true)" nz-tooltip
