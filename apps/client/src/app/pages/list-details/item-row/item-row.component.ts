@@ -1,10 +1,19 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, Type } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  Type,
+  ViewChild
+} from '@angular/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { BehaviorSubject, combineLatest, concat, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { Alarm } from '../../../core/alarms/alarm';
 import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
@@ -103,6 +112,20 @@ export class ItemRowComponent implements OnInit {
   commentBadge$: Observable<boolean>;
 
   commentBadgeReloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+
+  tagInputVisible = false;
+
+  newTag: string;
+
+  @ViewChild('inputElement') inputElement: ElementRef;
+
+  itemTags$ = combineLatest(this.item$, this.authFacade.user$).pipe(
+    map(([item, user]) => {
+      return (user.itemTags || [])
+        .filter(entry => entry.id === item.id)
+        .map(entry => entry.tag);
+    })
+  );
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
@@ -204,6 +227,35 @@ export class ItemRowComponent implements OnInit {
       map(comments => comments.length > 0),
       startWith(false)
     );
+  }
+
+  showTagInput(): void {
+    this.tagInputVisible = true;
+    setTimeout(() => {
+      this.inputElement.nativeElement.focus();
+    }, 10);
+  }
+
+  addTag(): void {
+    this.authFacade.user$.pipe(
+      first()
+    ).subscribe(user => {
+      if (this.newTag && !user.itemTags.some(entry => entry.id === this.item.id && entry.tag === this.newTag)) {
+        user.itemTags.push({ id: this.item.id, tag: this.newTag });
+      }
+      this.authFacade.updateUser(user);
+      this.newTag = '';
+      this.tagInputVisible = false;
+    });
+  }
+
+  removeTag(tag: string): void {
+    this.authFacade.user$.pipe(
+      first()
+    ).subscribe(user => {
+      user.itemTags = user.itemTags.filter(entry => entry.id !== this.item.id || entry.tag !== tag);
+      this.authFacade.updateUser(user);
+    });
   }
 
   checkMasterbooks(books: number[]): void {

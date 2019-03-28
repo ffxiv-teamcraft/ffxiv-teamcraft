@@ -5,27 +5,52 @@
       <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName: item | i18n" [itemId]="item.id"
                      [width]="24"></app-item-icon>
     </div>
-    <div>
+    <div fxLayout="column" fxLayoutAlign="center flex-start">
+      <div>
       <span class="item-name" ngxClipboard [cbContent]="item.id | itemName: item | i18n" nz-tooltip
             *ngIf="settings.preferredCopyType === 'classic'"
             [nzTitle]="'Copy_item_name_to_clipboard' | translate"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
         {{item.id | itemName: item | i18n}}
       </span>
-      <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
-            nz-tooltip
-            *ngIf="settings.preferredCopyType === 'isearch'"
-            [nzTitle]="'Copy_isearch' | translate"
-            (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
+        <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
+              nz-tooltip
+              *ngIf="settings.preferredCopyType === 'isearch'"
+              [nzTitle]="'Copy_isearch' | translate"
+              (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
         {{item.id | itemName: item | i18n}}
       </span>
-      <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
+        <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
         <img src="./assets/icons/HQ.png" alt="" nz-tooltip
              [nzTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}"/>
       </span>
-      <span class="needed" *ngIf="item.amount > item.done">x{{item.amount - item.done}}<span
-        *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
+        <span class="needed" *ngIf="item.amount > item.done">x{{item.amount - item.done}}<span
+          *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
       </span>
+      </div>
+      <div *ngIf="settings.itemTagsEnabled && (loggedIn$ | async)">
+        <nz-tag
+          *ngFor="let tag of itemTags$ | async"
+          [nzMode]="'closeable'"
+          (nzAfterClose)="removeTag(tag)"
+        >
+          {{ tag }}
+        </nz-tag>
+        <nz-tag *ngIf="!tagInputVisible" class="editable-tag" nzNoAnimation (click)="showTagInput()">
+          <i nz-icon type="plus"></i> New Tag
+        </nz-tag>
+        <input
+          #inputElement
+          nz-input
+          nzSize="small"
+          *ngIf="tagInputVisible"
+          type="text"
+          [(ngModel)]="newTag"
+          style="width: 78px;"
+          (blur)="addTag()"
+          (keydown.enter)="addTag()"
+        />
+      </div>
     </div>
     <app-user-avatar class="working-on-it" *ngIf="item.workingOnIt !== undefined" messageKey="Is_working_on_it"
                      [userId]="item.workingOnIt" [width]="24"></app-user-avatar>

@@ -14,7 +14,9 @@ export class LayoutRow {
               public hideCompletedRows = false,
               public hideUsedRows = false,
               public collapseIfDone = false,
-              public hideZoneDuplicates = false) {
+              public hideZoneDuplicates = false,
+              public hasTag?: boolean,
+              public tag?: string) {
   }
 
   public get filter(): LayoutRowFilter {

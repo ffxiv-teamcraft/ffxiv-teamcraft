@@ -294,6 +294,7 @@
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
     "Show_devtools": "Show dev tools",
     "Clear_cache": "Clear cache (will restart the app)",
+    "Enable_item_tags": "Enable item tags",
     "COPY_TYPE": {
       "Classic": "Copy item name",
       "Isearch": "Copy /isearch macro"

@@ -110,6 +110,15 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       };
     }
 
+    case AuthActionTypes.UpdateUser: {
+      return {
+        ...state,
+        user: {
+          ...action.user
+        }
+      };
+    }
+
     case AuthActionTypes.SaveDefaultConsumables: {
       return {
         ...state,
