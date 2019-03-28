@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { LayoutRowFilter } from '../../../core/layout/layout-row-filter';
 import { LayoutRow } from '../../../core/layout/layout-row';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-layout-editor-row',
@@ -26,6 +27,9 @@ export class LayoutEditorRowComponent implements OnInit {
 
   public filter: { isBooleanGate: boolean, reversed: boolean, value: string }[] = [];
 
+  constructor(public settings: SettingsService) {
+  }
+
   filterChange(): void {
     this.row.filterName = this.filterToName();
     this.rowChange.emit(this.row);
@@ -40,7 +44,11 @@ export class LayoutEditorRowComponent implements OnInit {
   }
 
   public addFragment(): void {
-    this.filter.push({ isBooleanGate: true, reversed: false, value: 'or' }, { isBooleanGate: false, reversed: false, value: 'NONE' });
+    this.filter.push({ isBooleanGate: true, reversed: false, value: 'or' }, {
+      isBooleanGate: false,
+      reversed: false,
+      value: 'NONE'
+    });
     this.rowChange.emit(this.row);
   }
 
@@ -69,7 +77,7 @@ export class LayoutEditorRowComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.isOtherRow = this.row.filter.name === "ANYTHING";
+    this.isOtherRow = this.row.isOtherRow();
     this.filter = this.row.filterName.split(':').map(fragment => {
       const result = {
         isBooleanGate: fragment === 'or' || fragment === 'and',

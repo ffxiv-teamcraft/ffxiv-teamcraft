@@ -1,5 +1,7 @@
 import { LayoutRowOrder } from './layout-row-order.enum';
 import { LayoutRowFilter } from './layout-row-filter';
+import { FilterResult } from './filter-result';
+import { ListRow } from '../../modules/list/model/list-row';
 
 export class LayoutRow {
 
@@ -15,7 +17,7 @@ export class LayoutRow {
               public hideUsedRows = false,
               public collapseIfDone = false,
               public hideZoneDuplicates = false,
-              public hasTag?: boolean,
+              public hasTag = null,
               public tag?: string) {
   }
 
@@ -57,5 +59,31 @@ export class LayoutRow {
 
   public set order(newOrder: LayoutRowOrder) {
     this._order = newOrder;
+  }
+
+  public doFilter(rows: ListRow[], userTags: { id: number, tag: string }[]): FilterResult {
+    const filterResult = this.filter.filter(rows);
+    if (this.hasTag !== null) {
+      const rejected: ListRow[] = [];
+      filterResult.accepted.forEach(row => {
+        let matches: boolean;
+        const rowTags = userTags.filter(entry => entry.id === row.id).map(entry => entry.tag);
+        if (this.hasTag) {
+          matches = rowTags.some(tag => tag.toLowerCase() === this.tag.toLowerCase());
+        } else {
+          matches = !rowTags.some(tag => tag.toLowerCase() === this.tag.toLowerCase());
+        }
+        if (!matches) {
+          rejected.push(row);
+        }
+      });
+      filterResult.accepted = filterResult.accepted.filter(r => !rejected.some(reject => reject.id === r.id));
+      filterResult.rejected.push(...rejected);
+    }
+    return filterResult;
+  }
+
+  public isOtherRow(): boolean {
+    return this.filter.name === 'ANYTHING' && this.name === 'Other';
   }
 }
