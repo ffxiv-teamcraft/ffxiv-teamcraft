@@ -8,11 +8,15 @@
         <nz-list-item-meta [nzTitle]="node.zoneid | placeName | i18n" [nzDescription]="description">
           <ng-template #description>
             <div fxLayout="column" fxLayoutGap="5px">
-              <div fxLayout="row" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                 <span>{{node.areaid | placeName | i18n}} - lvl {{node.level}}</span>
                 <nz-tag *ngIf="node.limitType !== undefined" nzColor="orange">
                   {{node.limitType | i18n}}
                 </nz-tag>
+                <img *ngIf="node.fishEyes" src="/assets/icons/status/fish_eyes.png" alt="" nz-tooltip
+                     [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+                <img *ngIf="node.snagging" src="/assets/icons/status/snagging.png" alt="" nz-tooltip
+                     [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
               </div>
               <div fxLayout="row wrap" fxLayoutGap="5px">
                 <span *ngIf="node.slot !== undefined">Slot {{node.slot}}</span>
@@ -22,12 +26,20 @@
                   </i>
                 </span>
               </div>
-              <div *ngIf="node.weathers !== undefined" fxLayout="column" fxLayoutGap="5px">
-                <div *ngFor="let weather of node.weathers" fxLayout="row" fxLayoutGap="5px"
-                     fxLayoutAlign="flex-start center">
-                  <img [src]="weather | weatherIcon" alt="">
-                  <div>
-                    {{weather | weatherName | i18n}}
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+                <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+                  <div *ngFor="let weather of node.weathersFrom">
+                    <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+                         [nzTitle]="weather | weatherName | i18n">
+                  </div>
+                </div>
+                <div *ngIf="node.weathersFrom !== undefined">
+                  <i nz-icon type="right" theme="outline"></i>
+                </div>
+                <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+                  <div *ngFor="let weather of node.weathers">
+                    <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+                         [nzTitle]="weather | weatherName | i18n">
                   </div>
                 </div>
               </div>
@@ -47,6 +59,16 @@
             <ng-container *ngIf="node.baits !== undefined">
               <app-fishing-bait [baits]="node.baits"></app-fishing-bait>
             </ng-container>
+            <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
+                 fxLayoutAlign="flex-start center">
+              <img src="/assets/icons/status/predators.png" alt="" nz-tooltip
+                   [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate">
+              <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutGap="5px"
+                   fxLayoutAlign="flex-start center">
+                <div>{{predator.amount}}x</div>
+                <app-item-icon [width]="32" [icon]="predator.icon" [itemId]="predator.id"></app-item-icon>
+              </div>
+            </div>
           </ng-template>
         </nz-list-item-meta>
       </nz-list-item>

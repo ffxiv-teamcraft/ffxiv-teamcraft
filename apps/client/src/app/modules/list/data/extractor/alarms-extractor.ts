@@ -47,7 +47,10 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
               x: node.coords[0],
               y: node.coords[1]
             },
-            spawns: node.time
+            spawns: node.time,
+            snagging: node.snagging,
+            fishEyes: node.fishEyes,
+            predators: node.predators || []
           };
           if (node.baits !== undefined) {
             alarm.baits = node.baits;

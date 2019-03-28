@@ -103,7 +103,9 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             areaid: mapId,
             zoneid: zoneId,
             coords: spot.coords as number[],
-            level: spot.lvl
+            level: spot.lvl,
+            fishEyes: spot.fishEyes,
+            snagging: spot.snagging
           };
           if (spot.during !== undefined) {
             node.time = [spot.during.start];
@@ -113,9 +115,22 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             // As uptimes are always in minutes, gotta convert to minutes here too.
             node.uptime *= 60;
           }
+
+          if (spot.predator) {
+            node.predators = spot.predator.map(predator => {
+              return {
+                id: predator.id,
+                icon: predator.icon,
+                amount: predator.predatorAmount
+              };
+            });
+          }
           node.baits = this.getBaits(spot.bait);
           if (spot.weather) {
             node.weathers = spot.weather.map(w => this.localized.getWeatherId(w));
+          }
+          if (spot.transition) {
+            node.weathersFrom = spot.transition.map(w => this.localized.getWeatherId(w));
           }
           gatheredBy.nodes.push(node);
         }

@@ -511,7 +511,10 @@
     "Gathering_name": "Enter item name",
     "Ephemeral_node": "Ephemeral node, can be respawned",
     "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !",
-    "Hidden_item": "Hidden"
+    "Hidden_item": "Hidden",
+    "Fish_eyes": "Requires fish eyes",
+    "Snagging": "Requires snagging",
+    "Predators": "Fish those fishes before (predators)"
   },
   "ANNOUNCEMENT": {
     "Title": "Announcement",

@@ -37,6 +37,9 @@ export class Alarm extends DataModel {
   baits?: FishingBait[];
   weathers?: number[];
   weathersFrom?: number[];
+  snagging?: boolean;
+  fishEyes?: boolean;
+  predators?: { id: number, icon: number, amount: number }[];
 
   note: string;
 

@@ -1,6 +1,7 @@
 <div class="search-box">
   <nz-input-group>
     <input type="text" placeholder="{{'GATHERING_LOCATIONS.Gathering_name' | translate}}" nz-input
+           [ngModel]="query$.value"
            #searchInput (keyup)="query$.next(searchInput.value)" autofocus>
   </nz-input-group>
 </div>
@@ -58,13 +59,29 @@
           </div>
         </div>
         <div fxLayout="column" fxLayoutGap="5px">
-          <img *ngIf="node.type !== undefined" src="{{node.type | nodeTypeIcon}}" alt="" class="node-type">
-          <img *ngIf="node.reduction" class="reduction-icon" src="https://www.garlandtools.org/db/images/Reduce.png"
-               nz-tooltip [nzTitle]="'Reduction' | translate">
-          <img *ngIf="node.folklore !== undefined" src="{{node.folklore.icon | icon}}" nz-tooltip
-               [nzTitle]="node.folklore.id | itemName | i18n" alt="" class="folklore">
-          <i *ngIf="node.hidden">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</i>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <img *ngIf="node.type !== undefined" src="{{node.type | nodeTypeIcon}}" alt="" class="node-type">
+            <img *ngIf="node.reduction" class="reduction-icon" src="https://www.garlandtools.org/db/images/Reduce.png"
+                 nz-tooltip [nzTitle]="'Reduction' | translate">
+            <img *ngIf="node.folklore !== undefined" src="{{node.folklore.icon | icon}}" nz-tooltip
+                 [nzTitle]="node.folklore.id | itemName | i18n" alt="" class="folklore">
+            <i *ngIf="node.hidden">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</i>
+            <img *ngIf="node.fishEyes" src="/assets/icons/status/fish_eyes.png" alt="" nz-tooltip
+                 [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+            <img *ngIf="node.snagging" src="/assets/icons/status/snagging.png" alt="" nz-tooltip
+                 [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
+          </div>
           <app-fishing-bait *ngIf="node.baits !== undefined" [baits]="node.baits"></app-fishing-bait>
+          <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
+               fxLayoutAlign="flex-start center">
+            <img src="/assets/icons/status/predators.png" alt="" nz-tooltip
+                 [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate">
+            <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutGap="5px"
+                 fxLayoutAlign="flex-start center">
+              <div>{{predator.amount}}x</div>
+              <app-item-icon [width]="32" [icon]="predator.icon" [itemId]="predator.id"></app-item-icon>
+            </div>
+          </div>
         </div>
       </div>
     </ng-template>

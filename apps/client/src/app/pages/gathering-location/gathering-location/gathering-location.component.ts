@@ -12,6 +12,8 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { folklores } from '../../../core/data/sources/folklores';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { reductions } from '../../../core/data/sources/reductions';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-gathering-location',
@@ -21,7 +23,7 @@ import { reductions } from '../../../core/data/sources/reductions';
 })
 export class GatheringLocationComponent {
 
-  query$: Subject<string> = new Subject<string>();
+  query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   results$: Observable<any[]>;
 
@@ -36,7 +38,8 @@ export class GatheringLocationComponent {
   compactDisplay = false;
 
   constructor(private dataService: DataService, private bell: BellNodesService, private alarmsFacade: AlarmsFacade,
-              private mapService: MapService, private l12n: LocalizedDataService, private gt: GarlandToolsService) {
+              private mapService: MapService, private l12n: LocalizedDataService, private gt: GarlandToolsService,
+              private router: Router, private route: ActivatedRoute) {
 
     this.alarmsLoaded$ = this.alarmsFacade.loaded$;
 
@@ -46,7 +49,12 @@ export class GatheringLocationComponent {
 
     this.results$ = this.query$.pipe(
       debounceTime(500),
-      tap(() => {
+      tap((query) => {
+        this.router.navigate([], {
+          queryParamsHandling: 'merge',
+          queryParams: { query: query.length > 0 ? query : null },
+          relativeTo: this.route
+        });
         this.showIntro = false;
         this.loading = true;
       }),
@@ -145,7 +153,9 @@ export class GatheringLocationComponent {
                   type: 4,
                   itemId: spot.id,
                   icon: spot.icon,
-                  timed: spot.during !== undefined
+                  timed: spot.during !== undefined,
+                  fishEyes: spot.fishEyes,
+                  snagging: spot.snagging
                 };
                 if (spot.during !== undefined) {
                   result.spawnTimes = [spot.during.start];
@@ -155,6 +165,17 @@ export class GatheringLocationComponent {
                   // As uptimes are always in minutes, gotta convert to minutes here too.
                   result.uptime *= 60;
                 }
+
+                if (spot.predator) {
+                  result.predators = spot.predator.map(predator => {
+                    return {
+                      id: predator.id,
+                      icon: predator.icon,
+                      amount: predator.predatorAmount
+                    };
+                  });
+                }
+
                 result.baits = spot.bait.map(bait => {
                   const baitData = this.gt.getBait(bait);
                   return {
@@ -202,6 +223,11 @@ export class GatheringLocationComponent {
       }),
       tap(() => this.loading = false)
     );
+
+    this.route.queryParams
+      .subscribe(params => {
+        this.query$.next(params.query || '');
+      });
   }
 
   public getNodeSpawns(node: any): string {
@@ -269,7 +295,10 @@ export class GatheringLocationComponent {
       ephemeral: node.ephemeral,
       nodeContent: node.items,
       weathers: node.weathers,
-      weathersFrom: node.weathersFrom
+      weathersFrom: node.weathersFrom,
+      snagging: node.snagging,
+      fishEyes: node.fishEyes,
+      predators: node.predators || []
     };
   }
 

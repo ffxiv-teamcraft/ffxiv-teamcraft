@@ -257,7 +257,9 @@ export class LogTrackerComponent {
             type: 4,
             itemId: spot.id,
             icon: spot.icon,
-            timed: spot.during !== undefined
+            timed: spot.during !== undefined,
+            fishEyes: spot.fishEyes,
+            snagging: spot.snagging
           };
           if (spot.during !== undefined) {
             result.spawnTimes = [spot.during.start];
@@ -267,6 +269,17 @@ export class LogTrackerComponent {
             // As uptimes are always in minutes, gotta convert to minutes here too.
             result.uptime *= 60;
           }
+
+          if (spot.predator) {
+            result.predators = spot.predator.map(predator => {
+              return {
+                id: predator.id,
+                icon: predator.icon,
+                predatorAmount: predator.amount
+              }
+            })
+          }
+
           result.baits = spot.bait.map(bait => {
             const baitData = this.gt.getBait(bait);
             return {
@@ -411,7 +424,10 @@ export class LogTrackerComponent {
         mapId: node.mapId,
         baits: node.baits || [],
         weathers: node.weathers,
-        weathersFrom: node.weathersFrom
+        weathersFrom: node.weathersFrom,
+        snagging: node.snagging,
+        fishEyes: node.fishEyes,
+        predators: node.predators || []
       };
     }
     return this.alarmsCache[`${node.itemId}-${node.type}`];
