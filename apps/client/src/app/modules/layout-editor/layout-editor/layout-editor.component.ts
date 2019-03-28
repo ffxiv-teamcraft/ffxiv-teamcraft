@@ -90,7 +90,7 @@ export class LayoutEditorComponent {
   }
 
   addPanel(layout: ListLayout): void {
-    layout.rows.push(new LayoutRow('', 'NAME', LayoutRowOrder.DESC, 'NONE', layout.rows.length));
+    layout.rows.unshift(new LayoutRow('', 'NAME', LayoutRowOrder.DESC, 'NONE', layout.rows.length));
     this.dirty = true;
   }
 

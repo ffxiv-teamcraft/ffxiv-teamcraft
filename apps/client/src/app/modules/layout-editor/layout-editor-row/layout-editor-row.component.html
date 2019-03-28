@@ -78,7 +78,14 @@
           </nz-select>
         </ng-template>
         <input [disabled]="readonly || row.hasTag === null" type="text" nz-input [(ngModel)]="row.tag"
-               (ngModelChange)="rowChange.emit(row)">
+               (input)="tagInput$.next($event.target?.value)"
+               (ngModelChange)="rowChange.emit(row)" [nzAutocomplete]="tagsComplete"
+        />
+        <nz-autocomplete nzBackfill #tagsComplete>
+          <nz-auto-option *ngFor="let option of availableTags$ | async" [nzValue]="option">
+            {{ option }}
+          </nz-auto-option>
+        </nz-autocomplete>
       </nz-input-group>
     </div>
   </div>
