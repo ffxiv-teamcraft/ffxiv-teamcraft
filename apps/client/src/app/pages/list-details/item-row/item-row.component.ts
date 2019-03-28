@@ -127,6 +127,16 @@ export class ItemRowComponent implements OnInit {
     })
   );
 
+  tagInput$ = new BehaviorSubject<string>('');
+
+  availableTags$ = combineLatest(this.tagInput$, this.authFacade.user$).pipe(
+    map(([input, user]) => {
+      return user.itemTags
+        .filter(entry => entry.tag.toLowerCase().indexOf(input.toLowerCase()) > -1)
+        .map(entry => entry.tag)
+    })
+  );
+
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
@@ -246,6 +256,7 @@ export class ItemRowComponent implements OnInit {
       this.authFacade.updateUser(user);
       this.newTag = '';
       this.tagInputVisible = false;
+      this.tagInput$.next('');
     });
   }
 

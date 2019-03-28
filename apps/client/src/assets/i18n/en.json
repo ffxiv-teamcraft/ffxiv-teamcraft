@@ -409,6 +409,7 @@
     "List_too_large": "List too large",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "Add_to_another_list": "Add to another list",
+    "New_tag": "New tag",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -424,7 +425,8 @@
       "Filter": "Filter",
       "Panel_name": "Panel name",
       "Order_by": "Sort by",
-      "Order": "Order"
+      "Order": "Order",
+      "Tag_filter": "Tag filter"
     }
   },
   "LIST_TAGS": {

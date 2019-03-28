@@ -37,7 +37,7 @@
           {{ tag }}
         </nz-tag>
         <nz-tag *ngIf="!tagInputVisible" class="editable-tag" nzNoAnimation (click)="showTagInput()">
-          <i nz-icon type="plus"></i> New Tag
+          <i nz-icon type="plus"></i> {{'LIST_DETAILS.New_tag' | translate}}
         </nz-tag>
         <input
           #inputElement
@@ -49,7 +49,14 @@
           style="width: 78px;"
           (blur)="addTag()"
           (keydown.enter)="addTag()"
+          (input)="tagInput$.next($event.target?.value)"
+          [nzAutocomplete]="tagsComplete"
         />
+        <nz-autocomplete nzBackfill #tagsComplete>
+          <nz-auto-option *ngFor="let option of availableTags$ | async" [nzValue]="option">
+            {{ option }}
+          </nz-auto-option>
+        </nz-autocomplete>
       </div>
     </div>
     <app-user-avatar class="working-on-it" *ngIf="item.workingOnIt !== undefined" messageKey="Is_working_on_it"
