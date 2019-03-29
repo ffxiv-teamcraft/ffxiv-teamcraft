@@ -51,6 +51,7 @@ import { ListLayout } from '../../../core/layout/list-layout';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { ItemRowMenuElement } from '../../../model/display/item-row-menu-element';
 
 @Component({
   selector: 'app-item-row',
@@ -133,9 +134,11 @@ export class ItemRowComponent implements OnInit {
     map(([input, user]) => {
       return user.itemTags
         .filter(entry => entry.tag.toLowerCase().indexOf(input.toLowerCase()) > -1)
-        .map(entry => entry.tag)
+        .map(entry => entry.tag);
     })
   );
+
+  itemRowTypes = ItemRowMenuElement;
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
@@ -406,6 +409,7 @@ export class ItemRowComponent implements OnInit {
     });
   }
 
+
   addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
     alarm.groupId = group.$key;
     this.alarmsFacade.addAlarms(alarm);
@@ -472,6 +476,10 @@ export class ItemRowComponent implements OnInit {
       nzComponentParams: { item: this.item },
       nzFooter: null
     });
+  }
+
+  public isButton(element: ItemRowMenuElement): boolean {
+    return this.layout && this.layout.rowsDisplay.buttons.indexOf(element) > -1;
   }
 
   public trackByCraft(index: number, craft: Craft): string {

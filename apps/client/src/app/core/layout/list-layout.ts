@@ -4,6 +4,7 @@ import { LayoutRowOrder } from './layout-row-order.enum';
 import { ForeignKey } from '../database/relational/foreign-key';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { DataModel } from '../database/storage/data-model';
+import { ItemRowMenuElement } from '../../model/display/item-row-menu-element';
 
 export class ListLayout extends DataModel {
 
@@ -30,6 +31,24 @@ export class ListLayout extends DataModel {
   public recipeHideZoneDuplicates = false;
 
   public name: string;
+
+  public rowsDisplay: {
+    buttons: ItemRowMenuElement[];
+    menu: ItemRowMenuElement[];
+  } = {
+    buttons: [],
+    menu: [
+      ItemRowMenuElement.COMMENTS,
+      ItemRowMenuElement.COPY_NAME_NOT_FAVORITE,
+      ItemRowMenuElement.ADD_ALL_ALARMS,
+      ItemRowMenuElement.WORK_ON_IT,
+      ItemRowMenuElement.ASSIGN_TEAM_MEMBER,
+      ItemRowMenuElement.EDIT_AMOUNT,
+      ItemRowMenuElement.MARK_HQ,
+      ItemRowMenuElement.ADD_TO_ANOTHER_LIST,
+      ItemRowMenuElement.REQUIREMENTS
+    ]
+  };
 
   get base64(): string {
     const exportLayout = { ...this as any };

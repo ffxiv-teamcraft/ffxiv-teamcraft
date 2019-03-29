@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../text-question-popup/text-question-popup/text-question-popup.component';
 import { filter } from 'rxjs/operators';
 import { NgSerializerService } from '@kaiu/ng-serializer';
+import { LayoutRowDisplayEditorComponent } from '../layout-row-display-editor/layout-row-display-editor.component';
 
 @Component({
   selector: 'app-layout-editor',
@@ -102,6 +103,20 @@ export class LayoutEditorComponent {
   updatePanel(layout: ListLayout, row: LayoutRow): void {
     layout.rows = layout.rows.map(r => r.name === row.name ? row : r);
     this.dirty = true;
+  }
+
+  editRowButtons(layout: ListLayout): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.LAYOUT_DIALOG.Edit_row_buttons_display'),
+      nzContent: LayoutRowDisplayEditorComponent,
+      nzComponentParams: {
+        layout: layout
+      },
+      nzFooter: null
+    }).afterClose
+      .subscribe(() => {
+        this.dirty = true;
+      });
   }
 
   save(layout: ListLayout): void {

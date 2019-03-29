@@ -419,7 +419,21 @@
       "Layout_name": "Layout name",
       "Invalid_import": "Invalid import code",
       "Global_options": "General options",
-      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
+      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it.",
+      "Buttons": "Buttons",
+      "Menu": "Menu",
+      "Edit_row_buttons_display": "Edit row buttons display",
+      "ITEMS": {
+        "COMMENTS": "Comments",
+        "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
+        "ADD_ALL_ALARMS": "Add all alarms",
+        "WORK_ON_IT": "Work on it",
+        "ASSIGN_TEAM_MEMBER": "Assign team members",
+        "EDIT_AMOUNT": "Edit amount",
+        "MARK_HQ": "Mark HQ",
+        "ADD_TO_ANOTHER_LIST": "Add to another list",
+        "REQUIREMENTS": "Requirements"
+      }
     },
     "LAYOUT": {
       "Filter": "Filter",

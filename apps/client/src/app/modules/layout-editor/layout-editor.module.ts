@@ -13,6 +13,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ClipboardModule } from 'ngx-clipboard';
 import { TextQuestionPopupModule } from '../text-question-popup/text-question-popup.module';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
+import { LayoutRowDisplayEditorComponent } from './layout-row-display-editor/layout-row-display-editor.component';
 
 @NgModule({
   imports: [
@@ -32,9 +33,9 @@ import { NgSerializerModule } from '@kaiu/ng-serializer';
     TranslateModule,
     NgZorroAntdModule
   ],
-  declarations: [LayoutEditorComponent, LayoutEditorRowComponent],
-  exports: [LayoutEditorComponent],
-  entryComponents: [LayoutEditorComponent]
+  declarations: [LayoutEditorComponent, LayoutEditorRowComponent, LayoutRowDisplayEditorComponent],
+  exports: [LayoutEditorComponent, LayoutRowDisplayEditorComponent],
+  entryComponents: [LayoutEditorComponent, LayoutRowDisplayEditorComponent]
 })
 export class LayoutEditorModule {
 }
