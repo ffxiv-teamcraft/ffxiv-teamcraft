@@ -547,7 +547,7 @@
     "Propagate_changes_done": "工房内のリストに変更が反映されました",
     "Team_notice": "このリストに割り当てられたチームは、自動に参加権限が付与されます。",
     "Default_permission_level": "デフォルトの権限レベル",
-    "List_tooltip": "Permission level for everyone: {{level}}"
+    "List_tooltip": "全てのユーザーに関する権限レベル: {{level}}"
   },
   "WIKI": {
     "Title": "ウィキ",
