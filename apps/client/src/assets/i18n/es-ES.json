@@ -403,7 +403,7 @@
     "Add_item": "Agregar un artículo",
     "List_too_large": "Lista demasiado larga",
     "List_too_large_description": "Esta lista es muy larga y puede llegar al limite de tamaño de la base de datos debido a toda la información que lleva. No le será permitido añadir más elementos para asegurar que no pierda la lista.",
-    "Add_to_another_list": "Add to another list",
+    "Add_to_another_list": "Añadir a otra lista",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -547,7 +547,7 @@
     "Propagate_changes_done": "Cambios propagados a las listas dentro del taller",
     "Team_notice": "El equipo asociado a esta lista automáticamente tiene el permiso de PARTICIPAR",
     "Default_permission_level": "Nivel de permiso predeterminado",
-    "List_tooltip": "Permission level for everyone: {{level}}"
+    "List_tooltip": "Nivel de permisos para todos: {{level}}"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -812,7 +812,7 @@
     "Mark_as_done": "Marcar este artículo como hecho",
     "Mark_as_not_done": "Marcar este artículo como no hecho",
     "Create_list": "Crear una lista para completar esta página",
-    "Required_for_achievement": "Required for the achievements",
+    "Required_for_achievement": "Requerido para los logros",
     "PAGE": {
       "Master_recipes": "Recetas maestras ({{number}})",
       "Housing_items": "Artículos de vivienda({{number}})",
