@@ -23,6 +23,7 @@ import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { fishingLog } from '../../../core/data/sources/fishing-log';
 import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
 import _ = require('lodash');
 
 @Component({
@@ -70,7 +71,7 @@ export class LogTrackerComponent {
               private lazyData: LazyDataService) {
     this.dohTabs = [...craftingLogPages];
     this.dolTabs = [...gatheringLogPages];
-    this.fshTabs = [[..._.chunk(fishingLog, 10)], [..._.chunk(spearFishingLog, 10)]];
+    this.fshTabs = [[..._.chunk(fishingLog, 10)], [..._.chunk(spearFishingNodes, 10)]];
     this.alarmsLoaded$ = this.alarmsFacade.loaded$;
     this.alarms$ = this.alarmsFacade.allAlarms$;
     this.authFacade.user$.pipe(
@@ -243,59 +244,76 @@ export class LogTrackerComponent {
 
   private _getFshData(fish: any): any[] {
     const spots = this.gt.getFishingSpots(fish.itemId);
-    if (spots.length > 0) {
-      return spots.map(spot => {
-        const mapId = this.l12n.getMapId(spot.zone);
-        const zoneId = this.l12n.getAreaIdByENName(spot.title);
-        if (mapId !== undefined) {
-          const result: any = {
-            zoneid: zoneId,
-            mapId: mapId,
-            x: spot.coords[0],
-            y: spot.coords[1],
-            level: spot.lvl,
-            type: 4,
-            itemId: spot.id,
-            icon: spot.icon,
-            timed: spot.during !== undefined,
-            fishEyes: spot.fishEyes,
-            snagging: spot.snagging
-          };
-          if (spot.during !== undefined) {
-            result.spawnTimes = [spot.during.start];
-            result.uptime = spot.during.end - spot.during.start;
-            // Just in case it despawns the day after.
-            result.uptime = result.uptime < 0 ? result.uptime + 24 : result.uptime;
-            // As uptimes are always in minutes, gotta convert to minutes here too.
-            result.uptime *= 60;
-          }
-
-          if (spot.predator) {
-            result.predators = spot.predator.map(predator => {
-              return {
-                id: predator.id,
-                icon: predator.icon,
-                predatorAmount: predator.amount
-              }
-            })
-          }
-
-          result.baits = spot.bait.map(bait => {
-            const baitData = this.gt.getBait(bait);
-            return {
-              icon: baitData.icon,
-              id: baitData.id
+    if (fish.id >= 20000) {
+      const logEntries = spearFishingLog.filter(entry => entry.itemId === fish.id);
+      return logEntries.map(entry => {
+        return {
+          zoneid: entry.zoneId,
+          mapId: entry.mapId,
+          x: entry.coords.x,
+          y: entry.coords.y,
+          level: entry.level,
+          type: 4,
+          itemId: fish.itemId,
+          icon: fish.icon,
+          timed: false
+        };
+      });
+    } else {
+      if (spots.length > 0) {
+        return spots.map(spot => {
+          const mapId = this.l12n.getMapId(spot.zone);
+          const zoneId = this.l12n.getAreaIdByENName(spot.title);
+          if (mapId !== undefined) {
+            const result: any = {
+              zoneid: zoneId,
+              mapId: mapId,
+              x: spot.coords[0],
+              y: spot.coords[1],
+              level: spot.lvl,
+              type: 4,
+              itemId: spot.id,
+              icon: spot.icon,
+              timed: spot.during !== undefined,
+              fishEyes: spot.fishEyes,
+              snagging: spot.snagging
             };
-          });
-          if (spot.weather) {
-            result.weathers = spot.weather.map(w => this.l12n.getWeatherId(w));
+            if (spot.during !== undefined) {
+              result.spawnTimes = [spot.during.start];
+              result.uptime = spot.during.end - spot.during.start;
+              // Just in case it despawns the day after.
+              result.uptime = result.uptime < 0 ? result.uptime + 24 : result.uptime;
+              // As uptimes are always in minutes, gotta convert to minutes here too.
+              result.uptime *= 60;
+            }
+
+            if (spot.predator) {
+              result.predators = spot.predator.map(predator => {
+                return {
+                  id: predator.id,
+                  icon: predator.icon,
+                  predatorAmount: predator.amount
+                };
+              });
+            }
+
+            result.baits = spot.bait.map(bait => {
+              const baitData = this.gt.getBait(bait);
+              return {
+                icon: baitData.icon,
+                id: baitData.id
+              };
+            });
+            if (spot.weather) {
+              result.weathers = spot.weather.map(w => this.l12n.getWeatherId(w));
+            }
+            return result;
           }
-          return result;
-        }
-        return undefined;
-      })
-        .filter(res => res !== undefined)
-        .slice(0, 3);
+          return undefined;
+        })
+          .filter(res => res !== undefined)
+          .slice(0, 3);
+      }
     }
     return null;
   }

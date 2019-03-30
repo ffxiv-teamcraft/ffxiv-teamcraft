@@ -11,7 +11,7 @@ const aetherytes = [];
 const monsters = {};
 const npcs = {};
 
-let todo = ['gatheringLog', 'map', 'craftingLog', 'weather', 'fishingLog', 'itemIcons'];
+let todo = ['gatheringLog', 'map', 'craftingLog', 'weather', 'fishingLog', 'itemIcons', 'spearFishingLog'];
 
 const onlyIndex = process.argv.indexOf('--only');
 if (onlyIndex > -1) {
@@ -286,8 +286,6 @@ if (hasTodo('fishingLog')) {
 
   const fishingLog = [];
 
-  const spearFishingLog = [];
-
   getAllEntries('https://xivapi.com/FishParameter', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
     completeFetch
       .filter(fish => fish.Item !== null && fish.IsInLog === 1)
@@ -315,6 +313,39 @@ if (hasTodo('fishingLog')) {
     persistToTypescript('fishing-log', 'fishingLog', fishingLog);
   });
 
+}
+
+if(hasTodo('spearFishingLog')) {
+
+  const spearFishingLog = [];
+
+  getAllEntries('https://xivapi.com/SpearfishingNotebook', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+    completeFetch
+      .forEach(entry => {
+        const entries = Object.keys(entry.GatheringPointBase)
+          .filter(key => /Item\d/.test(key))
+          .filter(key => entry.GatheringPointBase[key] !== 0)
+          .map(key => {
+            const c = entry.TerritoryType.Map.SizeFactor / 100.0;
+            return {
+              id: entry.ID,
+              itemId: entry.GatheringPointBase[key],
+              level: entry.GatheringLevel,
+              mapId: entry.TerritoryType.Map.ID,
+              zoneId: entry.TerritoryType.PlaceName.ID,
+              coords: {
+                x: (41.0 / c) * ((entry.X) / 2048.0) + 1,
+                y: (41.0 / c) * ((entry.Y) / 2048.0) + 1
+              }
+            };
+          });
+        spearFishingLog.push(...entries);
+      });
+    persistToTypescript('spear-fishing-log', 'spearFishingLog', spearFishingLog);
+  });
+
+  const spearFishingNodes = [];
+
   getAllEntries('https://xivapi.com/SpearfishingItem', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
     completeFetch
       .filter(fish => fish.Item !== null)
@@ -327,11 +358,10 @@ if (hasTodo('fishingLog')) {
           mapId: fish.TerritoryType.Map.ID,
           zoneId: fish.TerritoryType.PlaceName.ID
         };
-        spearFishingLog.push(entry);
+        spearFishingNodes.push(entry);
       });
-    persistToTypescript('spear-fishing-log', 'spearFishingLog', spearFishingLog);
+    persistToTypescript('spear-fishing-nodes', 'spearFishingNodes', spearFishingNodes);
   });
-
 }
 
 
