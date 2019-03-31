@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.8"></a>
+## [5.1.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.7...v5.1.8) (2019-03-31)
+
+
+### Bug Fixes
+
+* **market:** fixed marketboard interactions (popup and pricing mode) ([d5aea99](https://github.com/Supamiu/ffxiv-teamcraft/commit/d5aea99))
+* **overlay:** clicking on the item icon wont open garlandtools anymore inside overlay ([23c993c](https://github.com/Supamiu/ffxiv-teamcraft/commit/23c993c))
+
+
+### Features
+
+* **search:** support Korean item type ([916a995](https://github.com/Supamiu/ffxiv-teamcraft/commit/916a995))
+
+
+
 <a name="5.1.7"></a>
 ## [5.1.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.6...v5.1.7) (2019-03-26)
 

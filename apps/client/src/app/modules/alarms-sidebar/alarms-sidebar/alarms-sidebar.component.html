@@ -8,13 +8,13 @@
              [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate"></i>
         </div>
         <div class="item-icon">
-          <app-item-icon [icon]="row.alarm.icon" [itemName]="row.alarm.itemId | itemName | i18n"
-                         [itemId]="row.alarm.itemId" [width]="32"></app-item-icon>
+          <app-item-icon [icon]="row.alarm.icon" [itemName]="row.alarm.itemId | itemName: row.alarm | i18n"
+                         [itemId]="row.alarm.itemId" [width]="32" [disableClick]="overlayMode"></app-item-icon>
           <img src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type">
         </div>
         <div class="center-content">
           <span class="item-name"
-                *ngIf="row.alarm.itemId; else customName">{{row.alarm.itemId | itemName | i18n}}</span>
+                *ngIf="row.alarm.itemId; else customName">{{row.alarm.itemId | itemName: row.alarm | i18n}}</span>
           <ng-template #customName>
             <span class="item-name">{{row.alarm.name}}</span>
           </ng-template>
