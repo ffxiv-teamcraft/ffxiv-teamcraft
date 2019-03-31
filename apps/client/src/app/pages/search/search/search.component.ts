@@ -21,6 +21,7 @@ import { I18nName } from '../../../model/common/i18n-name';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateService } from '@ngx-translate/core';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-search',
@@ -75,7 +76,7 @@ export class SearchComponent implements OnInit {
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
-              private message: NzMessageService, private translate: TranslateService) {
+              private message: NzMessageService, private translate: TranslateService, private lazyData: LazyDataService) {
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
@@ -88,7 +89,8 @@ export class SearchComponent implements OnInit {
               en: result.Name_en,
               fr: result.Name_fr,
               de: result.Name_de,
-              ja: result.Name_ja
+              ja: result.Name_ja,
+              ko: this.lazyData.koItemUiCategories[result.ID] !== undefined ? this.lazyData.koItemUiCategories[result.ID].ko : result.Name_en
             }
           };
         });
