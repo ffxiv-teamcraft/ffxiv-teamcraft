@@ -38,6 +38,7 @@ import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-f
 import { RotationFolderPanelComponent } from './components/rotation-folder-panel/rotation-folder-panel.component';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { CustomLinksModule } from '../../modules/custom-links/custom-links.module';
+import { RotationTipsPopupComponent } from './components/rotation-tips-popup/rotation-tips-popup.component';
 
 const routes: Routes = [
   {
@@ -120,7 +121,8 @@ const routes: Routes = [
     RotationPanelComponent,
     RotationFolderPageComponent,
     StepByStepReportComponent,
-    RotationFolderPanelComponent
+    RotationFolderPanelComponent,
+    RotationTipsPopupComponent
   ],
   exports: [
     RotationPanelComponent,

@@ -15,7 +15,7 @@ import {
   first,
   map,
   pairwise,
-  shareReplay, skip,
+  shareReplay,
   startWith,
   takeUntil,
   tap
@@ -53,6 +53,8 @@ import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { fakeHQItems } from '../../../../core/data/sources/fake-hq-items';
+import { RotationTip } from '../../rotation-tips/rotation-tip';
+import { RotationTipsService } from '../../rotation-tips/rotation-tips.service';
 
 @Component({
   selector: 'app-simulator',
@@ -109,6 +111,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public simulation$: Observable<Simulation>;
 
   public report$: Observable<SimulationReliabilityReport>;
+
+  public tips$: Observable<RotationTip[]>;
 
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
 
@@ -203,7 +207,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
-              private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService) {
+              private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
+              private rotationTipsService: RotationTipsService) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$),
       filter(key => key !== undefined)
@@ -526,7 +531,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.addAction(event.value, event.dropIndex);
     this.draggedAction$ = null;
   }
-  
+
   dragCancel(event: any): void {
     if (event.el.parentNode.classList.contains('actions-container')) {
       event.el.parentNode.removeChild(event.el);
@@ -736,6 +741,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         } else {
           return simulation.clone().getReliabilityReport();
         }
+      })
+    );
+
+    this.tips$ = this.result$.pipe(
+      map((result) => {
+        return this.rotationTipsService.getTips(result);
       })
     );
   }

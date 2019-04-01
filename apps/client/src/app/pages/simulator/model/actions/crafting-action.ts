@@ -8,6 +8,7 @@ import { progressFormulas } from '../formulas/progress-formulas';
 import { qualityFormulas } from '../formulas/quality-formulas';
 import { ingenuityData } from '../formulas/ingenuity-data';
 import { SimulationFailCause } from '../simulation-fail-cause.enum';
+import { Class, Instantiable } from '@kaiu/serializer';
 
 /**
  * This is the parent class of all actions in the simulator.
@@ -256,5 +257,13 @@ export abstract class CraftingAction {
       levelCorrectionFactor = 0.05 * Math.max(levelDifference, -10);
     }
     return baseQuality * (1 + levelCorrectionFactor) * (1 + recipeLevelPenalty);
+  }
+
+  /**
+   * Checks if this action is an instance of a given other action.
+   * @param actionClass
+   */
+  is(actionClass: Class<CraftingAction>): boolean {
+    return this instanceof actionClass;
   }
 }
