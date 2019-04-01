@@ -265,7 +265,8 @@
                       <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutGap="5px"
                            fxLayoutAlign="flex-start center">
                         <div>{{predator.amount}}x</div>
-                        <app-item-icon [width]="32" [icon]="predator.icon" [itemId]="predator.id"></app-item-icon>
+                        <app-item-icon [width]="32" [icon]="predator.icon" [itemId]="predator.id"
+                                       [tooltipDisabled]="true" [appFishTooltip]="predator.id"></app-item-icon>
                       </div>
                     </div>
                     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">

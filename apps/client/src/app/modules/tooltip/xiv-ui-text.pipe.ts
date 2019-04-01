@@ -18,7 +18,7 @@ export class UiTextPipe implements PipeTransform, OnDestroy {
     this.subscription = this.uiColorsService.getColors().subscribe(colors => this.colors = colors);
   }
 
-  transform(value: string): SafeHtml {
+  transform(value = ''): SafeHtml {
     value = value.replace(/<73>(.*?)<\/73>/gi, '');
     value = value.replace(/<72>01<\/72>/gi, '</span>');
     value = value.replace(/<UI\w+>01<\/UI\w+>/gi, '</span>');
