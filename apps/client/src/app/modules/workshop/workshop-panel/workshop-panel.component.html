@@ -19,6 +19,11 @@
                 ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
           <i nz-icon type="share-alt"></i>
         </button>
+        <button nz-button (click)="$event.stopPropagation(); addLists()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+                *ngIf="(permissionLevel$ | async) >= 30"
+                [nzTitle]="'WORKSHOP.Add_lists' | translate">
+          <i nz-icon type="plus"></i>
+        </button>
         <button nz-button [nzType]="'danger'" [nzShape]="'circle'" [nzTitle]="'WORKSHOP.Delete_message' | translate"
                 [disabled]="(permissionLevel$ | async) < 30" nz-popconfirm (nzOnConfirm)="deleteWorkshop()">
           <i nz-icon type="delete"></i>
@@ -32,9 +37,6 @@
             </li>
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="openPermissionsPopup()">
               {{'PERMISSIONS.Title' | translate}}
-            </li>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 30" (click)="addList()">
-              {{'WORKSHOP.Add_one_list' | translate}}
             </li>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">

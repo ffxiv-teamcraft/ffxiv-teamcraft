@@ -55,7 +55,7 @@ export class GatheringLocationComponent {
           queryParams: { query: query.length > 0 ? query : null },
           relativeTo: this.route
         });
-        this.showIntro = false;
+        this.showIntro = query.length === 0;
         this.loading = true;
       }),
       mergeMap(query => this.dataService.searchGathering(query)),

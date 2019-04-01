@@ -16,6 +16,7 @@ import { CoreModule } from '../../core/core.module';
 import { ClipboardModule } from 'ngx-clipboard';
 import { CustomLinksModule } from '../custom-links/custom-links.module';
 import { ListPickerModule } from '../list-picker/list-picker.module';
+import { FolderAdditionPickerModule } from '../folder-addition-picker/folder-addition-picker.module';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ListPickerModule } from '../list-picker/list-picker.module';
     CoreModule,
     ClipboardModule,
     CustomLinksModule,
+    FolderAdditionPickerModule,
 
     DatabaseModule,
     ListModule,
