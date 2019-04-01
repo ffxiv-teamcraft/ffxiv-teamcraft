@@ -16,7 +16,6 @@ export class RotationTip {
     (result) => {
       const iqIndex = result.steps.findIndex(step => step.action.is(InnerQuiet));
       const firstQualityAction = result.steps.findIndex(step => step.addedQuality > 0);
-      console.log(iqIndex, firstQualityAction);
       return iqIndex > firstQualityAction;
     },
     RotationTipType.WARNING,
