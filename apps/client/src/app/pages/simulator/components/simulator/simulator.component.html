@@ -360,31 +360,38 @@
                       class="progress-progressbar">
                     </nz-progress>
                     <div
-                      class="progress-value">{{barFormat(resultData.simulation.progression, resultData.simulation.recipe.progress)()}}</div>
+                      class="progress-value">{{barFormat(resultData.simulation.progression,
+                      resultData.simulation.recipe.progress)()}}
+                    </div>
                   </div>
                 </div>
                 <div fxLayout="column">
                   <h3>{{'SIMULATOR.Quality' | translate}}</h3>
-                  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                    <div class="quality-bar" fxFlex="1 1 auto">
-                      <div *ngFor="let threshold of thresholds"
-                           [ngStyle]="{left: 100 * threshold / resultData.simulation.recipe.quality + '%'}"
-                           class="threshold-marker" fxLayout="row" fxLayoutAlign="flex-start flex-start">
-                        <div class="marker"></div>
-                        <div class="value">{{(threshold / 10) | number: '1.0-0'}}</div>
+                  <div fxLayout="column" class="quality-display">
+                    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                      <div class="quality-bar" fxFlex="1 1 auto">
+                        <div *ngFor="let threshold of thresholds"
+                             [ngStyle]="{left: 100 * threshold / resultData.simulation.recipe.quality + '%'}"
+                             class="threshold-marker" fxLayout="row" fxLayoutAlign="flex-start flex-start">
+                          <div class="marker"></div>
+                          <div class="value">{{(threshold / 10) | number: '1.0-0'}}</div>
+                        </div>
+                        <nz-progress
+                          fxFlex="1 1 auto"
+                          [nzShowInfo]="false"
+                          [nzPercent]="barPercent(resultData.simulation.quality, resultData.simulation.recipe.quality)"
+                          [nzFormat]="barFormat(resultData.simulation.quality, resultData.simulation.recipe.quality)"></nz-progress>
                       </div>
-                      <nz-progress
-                        fxFlex="1 1 auto"
-                        [nzShowInfo]="false"
-                        [nzPercent]="barPercent(resultData.simulation.quality,resultData.simulation.recipe.quality)"
-                        [nzFormat]="barFormat(resultData.simulation.quality, resultData.simulation.recipe.quality)"></nz-progress>
+                      <div
+                        class="progress-value">{{barFormat(resultData.simulation.quality,
+                        resultData.simulation.recipe.quality)()}}
+                      </div>
                     </div>
-                    <div
-                      class="progress-value">{{barFormat(resultData.simulation.quality, resultData.simulation.recipe.quality)()}}</div>
+                    <div>{{ 'SIMULATOR.Quality_needed' | translate: { amount: resultData.simulation.recipe.quality - resultData.simulation.quality > 0 ? resultData.simulation.recipe.quality - resultData.simulation.quality : 0 } }}</div>
                   </div>
                 </div>
               </div>
-              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between center">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between center" >
                 <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex="1 1 auto">
                   <div class="hq-chances">
                     {{'SIMULATOR.Hq' | translate}}:
@@ -430,7 +437,7 @@
           <div fxLayout="row wrap" ngxDroppable="action" fxLayoutGap="10px" class="actions-container ngx-dnd-container"
                (drop)="actionDrop($event)" (cancel)="dragCancel($event)">
             <div *ngFor="let step of resultData.steps;let i = index;" [ngxDraggable]="['action']"
-                 class="ngx-dnd-item action-container" [model]="step.action" (drag)="actionDrag(i)" 
+                 class="ngx-dnd-item action-container" [model]="step.action" (drag)="actionDrag(i)"
                  [moves]="step.action.canBeMoved()">
               <app-action [action]="step.action"
                           [simulation]="resultData.simulation"

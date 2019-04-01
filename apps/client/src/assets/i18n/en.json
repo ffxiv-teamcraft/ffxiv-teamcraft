@@ -611,6 +611,7 @@
     "New_rotation_folder": "New folder",
     "Safe_mode": "Safe mode",
     "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Quality_needed": "{{amount}} more quality to reach 100%",
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
       "Recipe_level": "Recipe level",
