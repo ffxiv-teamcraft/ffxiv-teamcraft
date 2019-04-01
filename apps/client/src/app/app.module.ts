@@ -93,7 +93,7 @@ registerLocaleData(en);
     AngularFireAuthModule,
     AngularFirestoreModule,
 
-    XivapiClientModule.forRoot(null),
+    XivapiClientModule.forRoot(),
 
     RouterModule.forRoot([], { useHash: IS_ELECTRON }),
 

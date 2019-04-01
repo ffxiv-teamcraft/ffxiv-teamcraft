@@ -44,11 +44,14 @@ export class MarketboardPopupComponent implements OnInit {
       shareReplay(1)
     );
 
-    this.prices$ = combineLatest(this.server$
+    const data$ = this.server$.pipe(
+      switchMap(server => {
+        return this.xivapi.getMarketBoardItem(server, this.itemId);
+      })
+    );
+
+    this.prices$ = combineLatest(data$
         .pipe(
-          switchMap(server => {
-            return this.xivapi.getMarketBoardItem(server, this.itemId);
-          }),
           map(item => item.Prices),
           tap(() => this.loading = false),
           catchError((err) => {
@@ -77,11 +80,8 @@ export class MarketboardPopupComponent implements OnInit {
       })
     );
 
-    this.history$ = this.server$.pipe(
-      switchMap(server => {
-        return this.xivapi.getMarketBoardItemHistory(server, this.itemId);
-      }),
-      map(itemHistory => itemHistory.History),
+    this.history$ = data$.pipe(
+      map(item => item.History),
       catchError((err) => {
         console.error(err);
         this.error = true;
