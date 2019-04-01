@@ -2,7 +2,7 @@
           [nzMessage]="'MARKETBOARD.Error' | translate"></nz-alert>
 <ng-template #content>
   <div fxLayout="column" fxLayoutGap="15px">
-    <nz-table #pricesTable nzSize="small" [nzData]="prices$ | async" [nzLoading]="loading">
+    <nz-table #pricesTable nzSize="small" *ngIf="prices$ | async as prices" [nzData]="prices" [nzLoading]="loading">
       <thead nzSingleSort (nzSortChange)="sort($event)">
       <tr>
         <th nzShowSort nzSortKey="Quantity">{{'MARKETBOARD.Amount' | translate}}</th>
@@ -22,7 +22,8 @@
     </nz-table>
     <div *ngIf="showHistory">
       <h3>{{'MARKETBOARD.History' | translate}}</h3>
-      <nz-table #historyTable nzSize="small" [nzData]="history$ | async" [nzLoading]="loadingHistory">
+      <nz-table #historyTable nzSize="small" *ngIf="history$ | async as history" [nzData]="history"
+                [nzLoading]="loadingHistory">
         <thead>
         <tr>
           <th>{{'MARKETBOARD.Purchase_date' | translate}}</th>

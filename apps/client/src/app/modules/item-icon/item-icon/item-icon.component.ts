@@ -32,6 +32,9 @@ export class ItemIconComponent {
   @Input()
   width = 48;
 
+  @Input()
+  disableClick = false;
+
   getLink(): string {
     return `https://garlandtools.org/db/#item/${this.itemId}`;
   }

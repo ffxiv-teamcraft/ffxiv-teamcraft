@@ -16,6 +16,7 @@ export class LazyDataService {
   public zhItems: any = {};
 
   public koItems: any = {};
+  public koItemUiCategories: any = {};
   public koActions: any = {};
   public koActionDescriptions: any = {};
   public koCraftActions: any = {};
@@ -58,6 +59,7 @@ export class LazyDataService {
       this.http.get('./assets/data/items.json'),
       this.http.get('./assets/data/zh-items.json'),
       this.http.get('./assets/data/ko/ko-items.json'),
+      this.http.get('./assets/data/ko/ko-item-ui-categories.json'),
       this.http.get('./assets/data/ko/ko-actions.json'),
       this.http.get('./assets/data/ko/ko-action-descriptions.json'),
       this.http.get('./assets/data/ko/ko-craft-actions.json'),
@@ -70,7 +72,7 @@ export class LazyDataService {
       this.http.get('./assets/data/ko/ko-mobs.json'),
       this.http.get('./assets/data/ko/ko-job-name.json'),
       this.http.get('./assets/data/ko/ko-job-abbr.json'),
-      this.http.get('./assets/data/ko/ko-job-category.json'),
+      this.http.get('./assets/data/ko/ko-job-categories.json'),
       this.http.get('./assets/data/actions.json'),
       this.http.get('./assets/data/craft-actions.json'),
       this.http.get('./assets/data/npcs.json')
@@ -78,6 +80,7 @@ export class LazyDataService {
                    items,
                    zhItems,
                    koItems,
+                   koItemUiCategories,
                    koActions,
                    koActionDescriptions,
                    koCraftActions,
@@ -98,6 +101,7 @@ export class LazyDataService {
       this.items = items;
       this.zhItems = zhItems;
       this.koItems = koItems;
+      this.koItemUiCategories = koItemUiCategories;
       this.koActions = koActions;
       this.koActionDescriptions = koActionDescriptions;
       this.koCraftActions = koCraftActions;
