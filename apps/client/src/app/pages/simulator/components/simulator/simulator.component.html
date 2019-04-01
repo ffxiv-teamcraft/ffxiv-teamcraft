@@ -61,6 +61,16 @@
               ngxClipboard [cbContent]="getLink(rotation)" (cbOnSuccess)="afterLinkCopy()">
         <i nz-icon type="share-alt"></i>
       </button>
+      <ng-container *ngIf="tips$ | async as tips">
+        <nz-badge [nzCount]="tips.length">
+        <button nz-button *ngIf="result$ | async as result" (click)="showRotationTips(tips, result)" [nzShape]="'circle'"
+                [nzType]="'primary'" nz-tooltip
+                [disabled]="tips?.length === 0"
+                [nzTitle]="'SIMULATOR.Rotation_tips' | translate">
+            <i nz-icon type="bulb"></i>
+        </button>
+        </nz-badge>
+      </ng-container>
       <app-favorite-button *ngIf="rotation.$key" type="rotations" [key]="rotation.$key"></app-favorite-button>
     </div>
     <div fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 auto" class="simulator">
@@ -391,7 +401,7 @@
                   </div>
                 </div>
               </div>
-              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between center" >
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between center">
                 <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex="1 1 auto">
                   <div class="hq-chances">
                     {{'SIMULATOR.Hq' | translate}}:
