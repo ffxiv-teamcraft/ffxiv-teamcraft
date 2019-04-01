@@ -637,6 +637,7 @@
     "Safe_mode": "Safe mode",
     "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "Quality_needed": "{{amount}} more quality to reach 100%",
+    "Rotation_tips": "Rotation tips",
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
       "Recipe_level": "Recipe level",
@@ -705,6 +706,10 @@
       "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
       "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
+    },
+    "ROTATION_TIPS": {
+      "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
+      "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks."
     }
   },
   "PRICING": {

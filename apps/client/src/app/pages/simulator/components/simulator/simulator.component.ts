@@ -55,6 +55,7 @@ import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice
 import { fakeHQItems } from '../../../../core/data/sources/fake-hq-items';
 import { RotationTip } from '../../rotation-tips/rotation-tip';
 import { RotationTipsService } from '../../rotation-tips/rotation-tips.service';
+import { RotationTipsPopupComponent } from '../rotation-tips-popup/rotation-tips-popup.component';
 
 @Component({
   selector: 'app-simulator',
@@ -335,6 +336,18 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         warning: this.dirty ? 'SIMULATOR.Changing_recipe_save_warning' : null
       },
       nzTitle: this.translate.instant('Pick_a_recipe')
+    });
+  }
+
+  showRotationTips(tips: RotationTip[], result: SimulationResult): void {
+    this.dialog.create({
+      nzFooter: null,
+      nzContent: RotationTipsPopupComponent,
+      nzComponentParams: {
+        tips: tips,
+        result: result
+      },
+      nzTitle: this.translate.instant('SIMULATOR.Rotation_tips')
     });
   }
 

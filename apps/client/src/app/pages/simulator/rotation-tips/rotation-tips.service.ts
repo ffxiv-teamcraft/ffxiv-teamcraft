@@ -7,6 +7,9 @@ import { RotationTip } from './rotation-tip';
 })
 export class RotationTipsService {
   public getTips(result: SimulationResult): RotationTip[] {
+    if (result.steps.length === 0) {
+      return [];
+    }
     return RotationTip.ALL_TIPS.filter(tip => {
       return tip.matches(result);
     });

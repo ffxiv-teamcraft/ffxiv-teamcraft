@@ -132,7 +132,8 @@ const routes: Routes = [
     MacroPopupComponent,
     SimulationMinStatsPopupComponent,
     RecipeChoicePopupComponent,
-    StepByStepReportComponent
+    StepByStepReportComponent,
+    RotationTipsPopupComponent
   ],
   providers: [
     CraftingActionsRegistry,

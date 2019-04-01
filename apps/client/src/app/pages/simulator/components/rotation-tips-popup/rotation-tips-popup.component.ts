@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RotationTip } from '../../rotation-tips/rotation-tip';
+import { SimulationResult } from '../../simulation/simulation-result';
 
 @Component({
   selector: 'app-rotation-tips-popup',
   templateUrl: './rotation-tips-popup.component.html',
   styleUrls: ['./rotation-tips-popup.component.less']
 })
-export class RotationTipsPopupComponent implements OnInit {
+export class RotationTipsPopupComponent {
 
-  constructor() { }
+  public tips: RotationTip[] = [];
 
-  ngOnInit() {
-  }
-
+  result: SimulationResult;
 }
