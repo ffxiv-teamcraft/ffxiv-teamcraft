@@ -15,6 +15,7 @@ import { MapPositionComponent } from '../../modules/map/map-position/map-positio
 import { MapModule } from '../../modules/map/map.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
+import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 
 const routes: Routes = [
   {
@@ -44,6 +45,7 @@ const routes: Routes = [
     AlarmsModule,
     FishingBaitModule,
     RouterModule.forChild(routes),
+    TooltipModule,
 
     NgZorroAntdModule
   ]
