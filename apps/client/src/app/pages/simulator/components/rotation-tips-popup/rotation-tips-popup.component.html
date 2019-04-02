@@ -7,7 +7,7 @@
         <i nz-icon *ngSwitchCase="2" nzType="info-circle" nzTheme="twotone"></i>
       </div>
     </div>
-    <div>{{tip.message | translate: tip.messageParams(result)}}</div>
+    <div>{{('SIMULATOR.ROTATION_TIPS.' + tip.message) | translate: tip.messageParams(result)}}</div>
     <nz-divider *ngIf="!last"></nz-divider>
   </div>
 </div>

@@ -6,7 +6,7 @@ import { SimulationResult } from '../../simulation/simulation-result';
 export class UseInnerQuiet extends RotationTip {
 
   constructor() {
-    super(RotationTipType.WARNING, 'SIMULATOR.ROTATION_TIPS.Use_inner_quiet');
+    super(RotationTipType.WARNING, 'Use_inner_quiet');
   }
 
   canBeAppliedTo(simulationResult: SimulationResult): boolean {

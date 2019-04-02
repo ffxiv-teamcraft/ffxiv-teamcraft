@@ -6,7 +6,7 @@ import { RotationTipType } from '../rotation-tip-type';
 
 export class UseIngenuityIInstead extends RotationTip {
   constructor(){
-    super(RotationTipType.WARNING, 'SIMULATOR.ROTATION_TIPS.Use_ingenuity_I_instead')
+    super(RotationTipType.WARNING, 'Use_ingenuity_I_instead')
   }
 
   canBeAppliedTo(simulationResult: SimulationResult): boolean {
