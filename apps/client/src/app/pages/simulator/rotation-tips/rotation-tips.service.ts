@@ -9,10 +9,7 @@ import { ROTATION_TIPS } from './rotation-tips.module';
 })
 export class RotationTipsService {
 
-  private tips: RotationTip[] = [];
-
-  constructor(@Inject(ROTATION_TIPS) tipClasses: Class<RotationTip>[]) {
-    this.tips = tipClasses.map(clazz => new (<Instantiable>clazz)());
+  constructor(@Inject(ROTATION_TIPS) private tips: Class<RotationTip>[]) {
   }
 
   public getTips(result: SimulationResult): RotationTip[] {
@@ -20,6 +17,7 @@ export class RotationTipsService {
       return [];
     }
     return this.tips
+      .map(clazz => new (<Instantiable>clazz)())
       .filter(tip => tip.canBeAppliedTo(result))
       .filter(tip => tip.matches(result));
   }

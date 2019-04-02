@@ -714,7 +714,14 @@
       "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
       "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
       "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
-      "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft"
+      "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
+      "Use_byregot_brow_low_iq_stacks": "You used Byregot's Blessing with less than 6 stacks. Using Byregot's Brow is better in this case as it will produce more quality.",
+      "Use_byregot_blessing_high_iq_stacks": "You used Byregot's Brow with more than 6 stacks. Using Byregot's Blessing is better in this case as it will produce more quality.",
+      "Use_sh1_instead": "You used Steady Hand II at step {{index}} while using Steady Hand I would be enough and would cost 3 less CP.",
+      "Use_sh2_instead": "You used Steady Hand I at step {{index}} while using Steady Hand II give you more reliability at the cost of 3 CP.",
+      "Use_pbp_first": "You should use Piece by Piece before any other synthesis action, as it scales on the remaining progress to do",
+      "Use_mume_if_pbp": "You should use Muscle Memory at step 1 in order to replace one Piece by Piece and gain 9 extra CP",
+      "Use_observe_before_focused": "You should use Observe before the Focused action at step {{index}} in order to get a free 100% success rate."
     }
   },
   "PRICING": {

@@ -5,12 +5,12 @@ import { Ingenuity } from '../../model/actions/buff/ingenuity';
 import { RotationTipType } from '../rotation-tip-type';
 
 export class UseIngenuityIInstead extends RotationTip {
-  constructor(){
-    super(RotationTipType.WARNING, 'Use_ingenuity_I_instead')
+  constructor() {
+    super(RotationTipType.WARNING, 'Use_ingenuity_I_instead');
   }
 
   canBeAppliedTo(simulationResult: SimulationResult): boolean {
-    return simulationResult.steps.some(step => step.action.is(IngenuityII));
+    return this.simulationHasAction(simulationResult, IngenuityII);
   }
 
   matches(simulationResult: SimulationResult): boolean {

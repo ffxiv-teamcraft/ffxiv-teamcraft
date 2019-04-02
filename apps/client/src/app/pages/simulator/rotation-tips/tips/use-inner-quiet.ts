@@ -10,7 +10,7 @@ export class UseInnerQuiet extends RotationTip {
   }
 
   canBeAppliedTo(simulationResult: SimulationResult): boolean {
-    return simulationResult.steps.some(step => step.addedQuality > 0);
+    return simulationResult.steps.some(step => step.addedQuality > 0) && this.crafterHasActions(simulationResult, InnerQuiet);
   }
 
   matches(simulationResult: SimulationResult): boolean {

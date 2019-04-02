@@ -10,11 +10,10 @@ export class UseReclaim extends RotationTip {
   }
 
   canBeAppliedTo(simulationResult: SimulationResult): boolean {
-    return simulationResult.success;
+    return simulationResult.success && this.crafterHasActions(simulationResult, Reclaim);
   }
 
   matches(simulationResult: SimulationResult): boolean {
-    console.log(simulationResult.simulation.availableCP);
     return simulationResult.simulation.availableCP > new Reclaim().getBaseCPCost(simulationResult.simulation);
   }
 
