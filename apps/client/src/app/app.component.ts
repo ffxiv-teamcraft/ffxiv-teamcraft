@@ -184,6 +184,10 @@ export class AppComponent implements OnInit {
         });
         this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
       }
+      const languageIndex = event.url.indexOf('?lang=');
+      if (languageIndex > -1) {
+        this.use(event.url.substr(languageIndex + 6, 2), false, true);
+      }
       gtag('set', 'page', event.url);
       gtag('send', 'pageview');
     });
@@ -320,12 +324,14 @@ export class AppComponent implements OnInit {
     }, 30000);
   }
 
-  use(lang: string, fromIpc = false): void {
+  use(lang: string, fromIpc = false, skipStorage = false): void {
     if (this.settings.availableLocales.indexOf(lang) === -1) {
       lang = 'en';
     }
     this.locale = lang;
-    localStorage.setItem('locale', lang);
+    if (!skipStorage) {
+      localStorage.setItem('locale', lang);
+    }
     this.translate.use(lang);
     if (!fromIpc) {
       this.ipc.send('language', lang);
