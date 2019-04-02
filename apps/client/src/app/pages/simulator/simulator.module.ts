@@ -39,6 +39,7 @@ import { RotationFolderPanelComponent } from './components/rotation-folder-panel
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { CustomLinksModule } from '../../modules/custom-links/custom-links.module';
 import { RotationTipsPopupComponent } from './components/rotation-tips-popup/rotation-tips-popup.component';
+import { RotationTipsModule } from './rotation-tips/rotation-tips.module';
 
 const routes: Routes = [
   {
@@ -98,6 +99,7 @@ const routes: Routes = [
     FavoritesModule,
     UserAvatarModule,
     CustomLinksModule,
+    RotationTipsModule,
 
     NgZorroAntdModule,
 
