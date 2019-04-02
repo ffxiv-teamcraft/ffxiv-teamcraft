@@ -117,7 +117,8 @@
     "Language": "Language",
     "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
     "Open_in_desktop": "Open in desktop app",
-    "Admin": "Administrator"
+    "Admin": "Administrator",
+    "Minutes_duration": "{{amount}} minutes"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -529,7 +530,8 @@
     "Hidden_item": "Hidden",
     "Fish_eyes": "Requires fish eyes",
     "Snagging": "Requires snagging",
-    "Predators": "Fish these fish before"
+    "Predators": "Fish these fish before",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish"
   },
   "ANNOUNCEMENT": {
     "Title": "Announcement",

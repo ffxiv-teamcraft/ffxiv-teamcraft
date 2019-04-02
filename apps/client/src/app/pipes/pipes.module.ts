@@ -29,6 +29,7 @@ import { IngameStarsPipe } from './ingame-stars.pipe';
 import { LazyIconPipe } from './lazy-icon.pipe';
 import { PermissionLevelPipe } from './permission-level.pipe';
 import { ElementIconPipe } from './element-icon.pipe';
+import { FishEyesDurationPipe } from './fish-eyes-duration.pipe';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ElementIconPipe } from './element-icon.pipe';
     LazyIconPipe,
     CustomItemNamePipe,
     PermissionLevelPipe,
-    ElementIconPipe
+    ElementIconPipe,
+    FishEyesDurationPipe
   ],
   exports: [
     ItemNamePipe,
@@ -91,11 +93,12 @@ import { ElementIconPipe } from './element-icon.pipe';
     WeatherNamePipe,
     WeatherIconPipe,
     CustomItemNamePipe,
+    IngameStarsPipe,
+    LazyIconPipe,
+    CustomItemNamePipe,
     PermissionLevelPipe,
     ElementIconPipe,
-    CustomItemNamePipe,
-    IngameStarsPipe,
-    LazyIconPipe
+    FishEyesDurationPipe
   ]
 })
 export class PipesModule {
