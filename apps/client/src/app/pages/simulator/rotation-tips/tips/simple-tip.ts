@@ -18,4 +18,8 @@ export class SimpleTip extends RotationTip {
   messageParams(simulationResult: SimulationResult): any {
     return this._messageParams(simulationResult)
   }
+
+  canBeAppliedTo(simulationResult: SimulationResult): boolean {
+    return true;
+  }
 }

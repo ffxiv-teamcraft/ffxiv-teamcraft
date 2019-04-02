@@ -31,6 +31,8 @@ export abstract class RotationTip {
 
   public abstract matches(simulationResult: SimulationResult): boolean;
 
+  public abstract canBeAppliedTo(simulationResult: SimulationResult): boolean;
+
   public messageParams(simulationResult: SimulationResult): any {
     return {};
   }

@@ -10,8 +10,8 @@ export class RotationTipsService {
     if (result.steps.length === 0) {
       return [];
     }
-    return RotationTip.ALL_TIPS.filter(tip => {
-      return tip.matches(result);
-    });
+    return RotationTip.ALL_TIPS
+      .filter(tip => tip.canBeAppliedTo(result))
+      .filter(tip => tip.matches(result));
   }
 }
