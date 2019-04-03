@@ -646,29 +646,29 @@
       "Job": "Профессия",
       "Job_not_configured": "Похоже, что вы еще не настроили эту профессию, перейдите на страницу профиля, чтобы настроить ее и установить характеристики",
       "Job_not_configured_anonymous": "Пожалуйста, введите свои характеристики, чтобы получать точные симуляции или войдите в свою учетную запись",
-      "Select_job": "Выбрать роль",
+      "Select_job": "Выбрать профессию",
       "Craftsmanship": "Мастерство",
-      "Control": "Управление",
+      "Control": "Контроль",
       "Specialist": "Специалист",
-      "Ingredients": "Ингредиенты HQ",
-      "Consumables": "Расходники",
+      "Ingredients": "HQ Ингредиенты",
+      "Consumables": "Расходные материалы",
       "Apply_stats": "Применить характеристики",
-      "Apply_ingredients": "Применить ингредиенты HQ",
-      "Apply_foods": "Применить расходники",
+      "Apply_ingredients": "Использовать HQ ингредиенты",
+      "Apply_foods": "Использовать расходные материалы",
       "Food": "Выбрать еду",
       "Medicine": "Выбрать медикамент",
-      "Action": "Выберите действия свободной компании",
+      "Action": "Выберите баффы ФК",
       "Save_on_profile": "Сохранить в профиль",
-      "Reset_set": "Сбросить статистику",
-      "Save_consumables": "Сохранить эти расходники по умолчанию",
-      "No_food": "Нет еды",
+      "Reset_set": "Сбросить характеристики",
+      "Save_consumables": "Сохранить эти расходные материалы по умолчанию",
+      "No_food": "Без еды",
       "No_medicine": "Нет медикаментов",
-      "No_fc_buffs": "Нет FC баффов",
+      "No_fc_buffs": "Нет ФК баффов",
       "Quest_warning": "Убедитесь, что вы выполнили задание 70 ур. для \"Stroke of Genius\"",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Мастерство",
-        "Control": "Управление"
+        "Control": "Контроль"
       }
     },
     "FAIL_CAUSE": {
@@ -692,17 +692,17 @@
     "Copy_panel_as_text": "Copy this panel as text"
   },
   "LEVEQUESTS": {
-    "Title": "Levequests",
-    "Levequest_name": "Название Levequest",
-    "No_results": "Не найдено Levequests",
-    "Add_to_list": "Добавить Levequest предмет в список",
+    "Title": "Ливквесты",
+    "Levequest_name": "Название ливквеста",
+    "No_results": "Ливквест не найден",
+    "Add_to_list": "Добавить предмет ливквеста в список",
     "Quantity": "Количество",
     "All_deliveries": "Все {{value}} доставлено",
     "Compute_exp": "Show impact on xp",
     "More_on_gamerescape": "More details on gamerescape",
     "Deliver_to": "Deliver to {{placename}}",
     "INTRO": {
-      "Title": "Levequests",
+      "Title": "Ливквесты",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
       "Second_line": "Select a job, input a level range, you'll get a listing of the corresponding leves that you can check and add to a list, recipes will be automatically added to the selected list.",
       "Third_line": "You can also search by name, in case you know what you're looking for."
@@ -761,7 +761,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Информация о рынке",
+    "Title": "Информация о MB",
     "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
     "Amount": "Количество",
     "HQ": "HQ",
@@ -769,7 +769,7 @@
     "Unit_price": "Цена единицы",
     "History": "История",
     "Purchase_date": "Дата",
-    "More_on_mogboard": "Более подробная инфа на доске"
+    "More_on_mogboard": "Подробнее на mogboard'е"
   },
   "COMMENTS": {
     "Title": "Комментарии"
@@ -778,7 +778,7 @@
     "Level": "Уровень",
     "Ilvl": "ilvl",
     "Cost": "Стоимость",
-    "Class_job": "Класс/Роль",
+    "Class_job": "Класс/Профессия",
     "Damage_phys": "Физ. урон",
     "Damage_mag": "Маг. урон",
     "Defense_phys": "Физ. защита",
