@@ -14,6 +14,7 @@ import { UsePbpFirst } from './tips/use-pbp-first';
 import { UseMumeIfPbp } from './tips/use-mume-if-pbp';
 import { UseObserveBeforeFocused } from './tips/use-observe-before-focused';
 import { UseDurabilityRestorationLater } from './tips/use-durability-restoration-later';
+import { UsePatientTouchFaster } from './tips/use-patient-touch-faster';
 
 export const ROTATION_TIPS = new InjectionToken('ROTATION_TIPS');
 
@@ -30,7 +31,8 @@ const tips: Class<RotationTip>[] = [
   UsePbpFirst,
   UseMumeIfPbp,
   UseObserveBeforeFocused,
-  UseDurabilityRestorationLater
+  UseDurabilityRestorationLater,
+  UsePatientTouchFaster
 ];
 
 @NgModule({
