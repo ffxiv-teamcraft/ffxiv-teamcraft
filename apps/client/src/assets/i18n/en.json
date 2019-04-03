@@ -434,7 +434,8 @@
         "EDIT_AMOUNT": "Edit amount",
         "MARK_HQ": "Mark HQ",
         "ADD_TO_ANOTHER_LIST": "Add to another list",
-        "REQUIREMENTS": "Requirements"
+        "REQUIREMENTS": "Requirements",
+        "REMOVE_ITEM": "Remove item from the list"
       }
     },
     "LAYOUT": {

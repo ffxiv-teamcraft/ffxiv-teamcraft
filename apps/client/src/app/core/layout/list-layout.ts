@@ -46,7 +46,8 @@ export class ListLayout extends DataModel {
       ItemRowMenuElement.EDIT_AMOUNT,
       ItemRowMenuElement.MARK_HQ,
       ItemRowMenuElement.ADD_TO_ANOTHER_LIST,
-      ItemRowMenuElement.REQUIREMENTS
+      ItemRowMenuElement.REQUIREMENTS,
+      ItemRowMenuElement.REMOVE_ITEM
     ]
   };
 

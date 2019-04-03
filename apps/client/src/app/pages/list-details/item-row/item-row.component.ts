@@ -301,6 +301,17 @@ export class ItemRowComponent implements OnInit {
       });
   }
 
+  removeItem(): void {
+    this.listsFacade.selectedList$.pipe(
+      first(),
+      switchMap(list => {
+        return this.listManager.addToList(this.item.id, list, this.item.recipeId, -this.item.amount);
+      })
+    ).subscribe((list) => {
+      this.listsFacade.updateList(list, true);
+    });
+  }
+
   removeWorkingOnIt(): void {
     delete this.item.workingOnIt;
     this.saveItem();

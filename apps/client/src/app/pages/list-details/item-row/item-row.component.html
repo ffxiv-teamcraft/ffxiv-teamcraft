@@ -173,6 +173,16 @@
         </button>
       </ng-container>
 
+      <ng-container *ngIf="isButton(itemRowTypes.REMOVE_ITEM) && finalItem && (permissionLevel$ | async) >= 30">
+        <button nz-button nzSize="small" nzShape="circle"
+                nzType="danger"
+                [nzTitle]="'Confirmation' | translate"
+                nz-popconfirm
+                (click)="removeItem()">
+          <i nz-icon type="delete"></i>
+        </button>
+      </ng-container>
+
       <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
         <button nz-dropdown nzSize="small" [disabled]="(permissionLevel$ | async) < 20"
                 (click)="$event.stopPropagation()"
@@ -262,6 +272,11 @@
           <ng-container *ngIf="!isButton(itemRowTypes.ADD_TO_ANOTHER_LIST)">
             <li nz-menu-item (click)="addToList(item)">
               {{'LIST_DETAILS.Add_to_another_list' | translate}}
+            </li>
+          </ng-container>
+          <ng-container *ngIf="!isButton(itemRowTypes.REMOVE_ITEM) && finalItem && (permissionLevel$ | async) >= 30">
+            <li nz-menu-item (click)="removeItem()">
+              {{'LIST_DETAILS.LAYOUT_DIALOG.ITEMS.REMOVE_ITEM' | translate}}
             </li>
           </ng-container>
         </ul>
