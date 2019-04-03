@@ -777,7 +777,7 @@
   "TOOLTIP": {
     "Level": "레벨",
     "Ilvl": "아이템레벨",
-    "Cost": "비용",
+    "Cost": "CP",
     "Class_job": "클래스/직업",
     "Damage_phys": "물리 공격력",
     "Damage_mag": "공격마법 위력",
