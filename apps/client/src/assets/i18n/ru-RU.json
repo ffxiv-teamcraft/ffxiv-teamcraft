@@ -403,7 +403,7 @@
     "Add_item": "Добавить предмет",
     "List_too_large": "Список слишком большой",
     "List_too_large_description": "Этот список слишком велик и может достичь ограничений размера базы данных из-за всей информации, которую он несет. Вы не можете добавить больше предметов, дабы избежать потери списка.",
-    "Add_to_another_list": "Add to another list",
+    "Add_to_another_list": "Добавить в другой список",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -802,7 +802,7 @@
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available ! ",
+    "New_update_available": "Доступно новое обновление!",
     "Desktop_instructions": "Please navigate to the following link to download latest version: ",
     "Web_instructions": "Please reload the page to get the latest version."
   },
