@@ -547,7 +547,7 @@
     "Propagate_changes_done": "Изменения распространены на списки внутри workshop'а",
     "Team_notice": "Команда, связанная с этим списком, автоматически имеет разрешение PARTICIPATE",
     "Default_permission_level": "Уровень разрешений по умолчанию",
-    "List_tooltip": "Permission level for everyone: {{level}}"
+    "List_tooltip": "Уровень разрешений для всех: {{level}}"
   },
   "WIKI": {
     "Title": "Wiki",
