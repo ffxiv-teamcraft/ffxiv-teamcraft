@@ -1,4 +1,4 @@
-const { app, ipcMain, BrowserWindow, Tray, nativeImage, dialog, protocol, remote } = require('electron');
+const { app, ipcMain, BrowserWindow, Tray, nativeImage, dialog, protocol, Menu } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const path = require('path');
 const Config = require('electron-config');
@@ -137,8 +137,6 @@ function createWindow() {
 
   const iconPath = path.join(BASE_APP_PATH, 'assets/app-icon.png');
   nativeIcon = nativeImage.createFromPath(iconPath);
-  const trayIcon = nativeIcon.resize({ width: 16, height: 16 });
-  tray = new Tray(trayIcon);
 
   const handleRedirect = (e, url) => {
     if (url !== win.webContents.getURL()) {
@@ -149,19 +147,61 @@ function createWindow() {
 
   win.webContents.on('will-navigate', handleRedirect);
   win.webContents.on('new-window', handleRedirect);
-
-  tray.on('click', () => {
-    win.isVisible() ? win.hide() : win.show();
-  });
   win.on('show', () => {
     tray.setHighlightMode('always');
   });
   win.on('hide', () => {
     tray.setHighlightMode('never');
   });
+}
+
+function openOverlay(url) {
+  let opts = {
+    show: false,
+    resizable: true,
+    frame: false,
+    alwaysOnTop: true,
+    autoHideMenuBar: true
+  };
+  Object.assign(opts, config.get(`overlay:${url}:bounds`));
+  opts.opacity = config.get(`overlay:${url}:opacity`) || 1;
+  const overlay = new BrowserWindow(opts);
+
+  overlay.once('ready-to-show', () => {
+    overlay.show();
+  });
+
+  // save window size and position
+  overlay.on('close', () => {
+    config.set(`overlay:${url}:bounds`, overlay.getBounds());
+    config.set(`overlay:${url}:opacity`, overlay.getOpacity());
+  });
+
+
+  overlay.loadURL(`file://${BASE_APP_PATH}/index.html#${url}?overlay=true`);
+  openedOverlays[url] = overlay;
+}
+
+function createTray() {
+  const trayIcon = nativeIcon.resize({ width: 16, height: 16 });
+  tray = new Tray(trayIcon);
   tray.on('balloon-click', () => {
     !win.isVisible() ? win.show() : null;
   });
+  tray.on('click', () => {
+    win.isVisible() ? win.hide() : win.show();
+  });
+  tray.setToolTip('FFXIV Teamcraft');
+  const contextMenu = Menu.buildFromTemplate([
+    {
+      label: 'Alarm Overlay',
+      type: 'normal',
+      click: () => {
+        openOverlay('/alarms-overlay');
+      }
+    }
+  ]);
+  tray.setContextMenu(contextMenu);
 }
 
 ipcMain.on('app-ready', (event) => {
@@ -173,6 +213,7 @@ ipcMain.on('app-ready', (event) => {
 // Create window on electron intialization
 app.on('ready', () => {
   createWindow();
+  createTray();
 });
 
 // Quit when all windows are closed.
@@ -276,30 +317,7 @@ ipcMain.on('always-on-top:get', (event) => {
 });
 
 ipcMain.on('overlay', (event, url) => {
-  let opts = {
-    show: false,
-    resizable: true,
-    frame: false,
-    alwaysOnTop: true,
-    autoHideMenuBar: true
-  };
-  Object.assign(opts, config.get(`overlay:${url}:bounds`));
-  opts.opacity = config.get(`overlay:${url}:opacity`) || 1;
-  const overlay = new BrowserWindow(opts);
-
-  overlay.once('ready-to-show', () => {
-    overlay.show();
-  });
-
-  // save window size and position
-  overlay.on('close', () => {
-    config.set(`overlay:${url}:bounds`, overlay.getBounds());
-    config.set(`overlay:${url}:opacity`, overlay.getOpacity());
-  });
-
-
-  overlay.loadURL(`file://${BASE_APP_PATH}/index.html#${url}?overlay=true`);
-  openedOverlays[url] = overlay;
+  openOverlay(url);
 });
 
 ipcMain.on('overlay:set-opacity', (event, data) => {
