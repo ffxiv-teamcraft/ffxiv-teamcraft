@@ -710,8 +710,8 @@
   },
   "NOTIFICATIONS": {
     "Title": "Уведомления",
-    "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
-    "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
+    "List_comment_added": "Комментарий опубликован в списке {{listName}}: \"{{content}}\"",
+    "List_item_comment_added": "Комментарий опубликован в списке {{listName}}: \"{{content}}\"",
     "Mark_all_as_read": "Отметить все как прочитанные",
     "No_notifications": "Уведомлений нет"
   },
@@ -721,7 +721,7 @@
     "Member": "Участник",
     "Enable_discord_updates": "Включить обновление дискорда",
     "Disable_discord_updates": "Выключить обновление дискорда",
-    "Webhook_error": "There was an error while creating the Discord webhook:",
+    "Webhook_error": "Произошла ошибка при создании веб-хука Discord:",
     "Create_team": "Создать команду",
     "Create_invite_one_day": "Создать новый инвайт (истекает через 1 день)",
     "Create_invite_infinite": "Создать новый инвайт (бессрочно)",
@@ -732,9 +732,9 @@
     "Detach_team": "Отделить группу",
     "Delete_confirmation": "Вы действительно хотите удалить эту группу?",
     "Invite_expires": "Истекает",
-    "Invite_error": "Team invite not found or expired.",
-    "Invite_link_copied": "Team invite link copied to your clipboard",
-    "No_anonymous_join": "You have to create an account to be able to join a team",
+    "Invite_error": "Приглашение в группу не найдено или истекло.",
+    "Invite_link_copied": "Приглашение в группу скопировано в буфер обмена",
+    "No_anonymous_join": "Вы должны создать аккаунт, чтобы иметь возможность присоединиться к группе",
     "Already_in_team": "Вы уже состоите в этой группе",
     "Webhook_configuration": "Настройки вебхуков",
     "NOTIFICATIONS": {
@@ -798,31 +798,31 @@
       "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
       "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
       "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
-      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your ffxiv !"
+      "Macro_translation": "У вас есть макросы на иностранном языке? Перейдите на страницу макрос переводчика и переведите его на ваш язык, чтобы он работал в FFXIV!"
     }
   },
   "UPDATE": {
     "New_update_available": "Доступно новое обновление!",
-    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
-    "Web_instructions": "Please reload the page to get the latest version."
+    "Desktop_instructions": "Пожалуйста, перейдите по следующей ссылке для загрузки последней версии: ",
+    "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию."
   },
   "LOG_TRACKER": {
     "Title": "Log Tracker",
-    "Mark_page_as_done": "Mark this page as done",
-    "Mark_as_done": "Mark this item as done",
-    "Mark_as_not_done": "Mark this item as not done",
-    "Create_list": "Create a list to complete this page",
-    "Required_for_achievement": "Required for the achievements",
+    "Mark_page_as_done": "Отметить эту страницу как выполненную",
+    "Mark_as_done": "Отметить этот предмет как выполненный",
+    "Mark_as_not_done": "Отметить этот предмет как невыполненный",
+    "Create_list": "Создать список для завершения этой страницы",
+    "Required_for_achievement": "Требуется для получения achievement'a",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
-      "Others": "Others",
-      "Dyes": "Dyes",
+      "Others": "Прочее",
+      "Dyes": "Краски",
       "Other_master_recipes": "Other Master Recipes"
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more !"
+    "Loading_data": "Загружаем предметы, действия и прочее!"
   },
   "GIVEAWAY": {
     "Discord_1K": {
@@ -833,17 +833,17 @@
   "CUSTOM_ITEMS": {
     "Title": "Custom items",
     "New_item": "Create new custom item",
-    "New_folder": "Create new folder",
-    "Rename_folder": "Rename folder",
+    "New_folder": "Создать новую папку",
+    "Rename_folder": "Переименовать папку",
     "Import_items": "Import custom items",
-    "Save": "Save item",
-    "Details": "Item details",
-    "Export_item": "Export item",
-    "Export_items": "Export multiple items",
-    "Add_to_list": "Add to a list",
+    "Save": "Сохранить предмет",
+    "Details": "Информация о предмете",
+    "Export_item": "Экспортировать предмет",
+    "Export_items": "Экспортировать несколько предметов",
+    "Add_to_list": "Добавить в список",
     "No_items": "You have no custom items",
     "DETAILS": {
-      "Level": "Level",
+      "Level": "Уровень",
       "None": "none",
       "Stars": "Звезды",
       "Requirements": "Требования",
