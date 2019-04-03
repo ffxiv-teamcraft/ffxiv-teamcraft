@@ -675,7 +675,7 @@
       "UNSAFE_ACTION": "Использованы небезопасные действия в безопасном режиме",
       "DURABILITY_REACHED_ZERO": "Durability достигла 0 до заполнения progress'а",
       "NOT_ENOUGH_CP": "Недостаточно CP",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "MISSING_LEVEL_REQUIREMENT": "Ваш уровень слишком низок",
       "NOT_SPECIALIST": "Ротация специалиста, но вы не являетесь специалистом",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
     }
@@ -684,8 +684,8 @@
     "From_vendor": "Цена продавца",
     "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Ожидайте, чтобы продать все",
-    "Autofill_panel_prices": "Fill prices based on marketboard prices",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
+    "Autofill_panel_prices": "Заполнить цены на основе цен MB",
+    "Autofill_panel_prices_warning": "Это медленный процесс и должен занять около {{time}} секунд, вы уверены?",
     "Copy_earnings_as_text": "Копировать как текст",
     "Content_copied": "Скопировано в буфер обмена",
     "Cheaper_at_vendor": "Дешевле, если покупать у NPC ({{price}} gil)",
@@ -705,7 +705,7 @@
       "Title": "Ливквесты",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
       "Second_line": "Select a job, input a level range, you'll get a listing of the corresponding leves that you can check and add to a list, recipes will be automatically added to the selected list.",
-      "Third_line": "You can also search by name, in case you know what you're looking for."
+      "Third_line": "Вы также можете искать по названию, если знаете, что именно ищете."
     }
   },
   "NOTIFICATIONS": {
