@@ -40,32 +40,39 @@ import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { CustomLinksModule } from '../../modules/custom-links/custom-links.module';
 import { RotationTipsPopupComponent } from './components/rotation-tips-popup/rotation-tips-popup.component';
 import { RotationTipsModule } from './rotation-tips/rotation-tips.module';
+import { DirtyModule } from '../../core/dirty/dirty.module';
+import { DirtyGuard } from '../../core/dirty/dirty-guard';
 
 const routes: Routes = [
   {
     path: 'simulator/custom/:rotationId',
     component: CustomSimulatorPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard],
+    canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator/custom',
     component: CustomSimulatorPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard],
+    canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator/:itemId/:recipeId',
     component: SimulatorPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard],
+    canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator/:itemId/:recipeId/:rotationId',
     component: SimulatorPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard],
+    canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator/:itemId',
     component: SimulatorPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard],
+    canDeactivate: [DirtyGuard]
   },
   {
     path: 'rotations',
@@ -109,7 +116,8 @@ const routes: Routes = [
     TooltipModule,
     PipesModule,
     CoreModule,
-    SettingsModule
+    SettingsModule,
+    DirtyModule
   ],
   declarations: [
     CustomSimulatorPageComponent,

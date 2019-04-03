@@ -16,7 +16,7 @@
         <i nz-icon type="redo"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'SIMULATOR.Reset' | translate"
-              nz-popconfirm (nzOnConfirm)="actions$.next([]);this.dirty = true">
+              nz-popconfirm (nzOnConfirm)="actions$.next([]);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);">
         <i nz-icon type="reload"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
@@ -288,7 +288,7 @@
                 </div>
               </div>
               <div fxLayout="column" fxLayoutGap="5px" fxFlexAlign="flex-end flex-end" class="apply">
-                <button nz-button nzType="primary" nzBlock (click)="applyConsumables(crafterStats);this.dirty = true">
+                <button nz-button nzType="primary" nzBlock (click)="applyConsumables(crafterStats);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);">
                   {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
                 </button>
                 <button nz-button nzBlock (click)="saveDefaultConsumables()">

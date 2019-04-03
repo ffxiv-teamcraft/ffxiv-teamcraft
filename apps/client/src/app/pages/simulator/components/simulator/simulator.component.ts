@@ -56,6 +56,8 @@ import { fakeHQItems } from '../../../../core/data/sources/fake-hq-items';
 import { RotationTip } from '../../rotation-tips/rotation-tip';
 import { RotationTipsService } from '../../rotation-tips/rotation-tips.service';
 import { RotationTipsPopupComponent } from '../rotation-tips-popup/rotation-tips-popup.component';
+import { DirtyScope } from '../../../../core/dirty/dirty-scope';
+import { DirtyFacade } from '../../../../core/dirty/+state/dirty.facade';
 
 @Component({
   selector: 'app-simulator',
@@ -63,6 +65,8 @@ import { RotationTipsPopupComponent } from '../rotation-tips-popup/rotation-tips
   styleUrls: ['./simulator.component.less']
 })
 export class SimulatorComponent implements OnInit, OnDestroy {
+
+  public dirtyScope = DirtyScope;
 
   @Input()
   public custom = false;
@@ -121,6 +125,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     tap(rotation => {
       if (rotation.$key === undefined && rotation.rotation.length > 0) {
         this.dirty = true;
+        this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
       }
     })
   );
@@ -209,7 +214,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
-              private rotationTipsService: RotationTipsService) {
+              private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$),
       filter(key => key !== undefined)
@@ -366,6 +371,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     ).subscribe(r => {
       this.saveRotation(r);
       this.dirty = false;
+      this.dirtyFacade.removeEntry('simulator', DirtyScope.PAGE);
     });
   }
 
@@ -512,6 +518,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       rotation.freeCompanyActions = <[number, number]>this.selectedFreeCompanyActions.map(action => action.actionId);
       this.rotationsFacade.updateRotation(rotation);
       this.dirty = false;
+      this.dirtyFacade.removeEntry('simulator', DirtyScope.PAGE);
     });
   }
 
@@ -529,6 +536,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.actions$.next([...actions]);
     }
     this.dirty = true;
+    this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
   }
 
   actionDrag(index: number): void {
@@ -558,6 +566,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     actions.splice(index, 1);
     this.actions$.next([...actions]);
     this.dirty = true;
+    this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
   }
 
   applyStats(): void {
