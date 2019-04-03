@@ -794,7 +794,7 @@
     "DESCRIPTION": {
       "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
-      "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame, everything is possible.",
+      "Alarms": "Настройте оповещения, чтобы не пропустить ни одного спауна ноды, сортируйте их по группам, импортируйте в игру, возможно всё.",
       "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
       "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
       "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
@@ -845,9 +845,9 @@
     "DETAILS": {
       "Level": "Level",
       "None": "none",
-      "Stars": "Stars",
-      "Requirements": "Requirements",
-      "Add_requirement": "Add requirement",
+      "Stars": "Звезды",
+      "Requirements": "Требования",
+      "Add_requirement": "Добавить требование",
       "Yields": "Yields",
       "Name": "Name",
       "ID": "Item ID",
@@ -863,12 +863,12 @@
         "Slot": "Slot"
       },
       "ALARMS": {
-        "Title": "Alarms"
+        "Title": "Оповещения"
       },
       "VENDORS": {
         "Title": "Vendors",
-        "Npc_name": "NPC name",
-        "Price": "Price",
+        "Npc_name": "Имя NPC",
+        "Price": "Цена",
         "Delete_vendor": "Delete vendor"
       },
       "TRADES": {
