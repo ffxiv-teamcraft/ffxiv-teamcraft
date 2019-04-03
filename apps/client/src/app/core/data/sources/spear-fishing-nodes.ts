@@ -5,7 +5,8 @@ export const spearFishingNodes = [
     'level': 205,
     'icon': '/i/029000/029108.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Small'
   },
   {
     'id': 20001,
@@ -13,7 +14,8 @@ export const spearFishingNodes = [
     'level': 205,
     'icon': '/i/029000/029118.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Normal'
   },
   {
     'id': 20002,
@@ -21,7 +23,8 @@ export const spearFishingNodes = [
     'level': 205,
     'icon': '/i/029000/029130.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large'
   },
   {
     'id': 20003,
@@ -29,7 +32,8 @@ export const spearFishingNodes = [
     'level': 205,
     'icon': '/i/029000/029125.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Small'
   },
   {
     'id': 20004,
@@ -37,7 +41,8 @@ export const spearFishingNodes = [
     'level': 205,
     'icon': '/i/029000/029127.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Normal'
   },
   {
     'id': 20005,
@@ -45,7 +50,8 @@ export const spearFishingNodes = [
     'level': 205,
     'icon': '/i/029000/029473.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Small'
   },
   {
     'id': 20006,
@@ -53,7 +59,8 @@ export const spearFishingNodes = [
     'level': 205,
     'icon': '/i/029000/029511.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Large'
   },
   {
     'id': 20007,
@@ -61,7 +68,8 @@ export const spearFishingNodes = [
     'level': 205,
     'icon': '/i/029000/029504.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Normal'
   },
   {
     'id': 20008,
@@ -69,7 +77,8 @@ export const spearFishingNodes = [
     'level': 205,
     'icon': '/i/029000/029507.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Large'
   },
   {
     'id': 20009,
@@ -77,7 +86,8 @@ export const spearFishingNodes = [
     'level': 205,
     'icon': '/i/029000/029442.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Small'
   },
   {
     'id': 20010,
@@ -85,7 +95,8 @@ export const spearFishingNodes = [
     'level': 210,
     'icon': '/i/029000/029111.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large'
   },
   {
     'id': 20011,
@@ -93,7 +104,8 @@ export const spearFishingNodes = [
     'level': 210,
     'icon': '/i/029000/029099.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Normal'
   },
   {
     'id': 20012,
@@ -101,7 +113,8 @@ export const spearFishingNodes = [
     'level': 210,
     'icon': '/i/029000/029105.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large'
   },
   {
     'id': 20013,
@@ -109,7 +122,8 @@ export const spearFishingNodes = [
     'level': 210,
     'icon': '/i/029000/029122.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large'
   },
   {
     'id': 20014,
@@ -117,7 +131,8 @@ export const spearFishingNodes = [
     'level': 210,
     'icon': '/i/029000/029107.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Small'
   },
   {
     'id': 20015,
@@ -125,7 +140,8 @@ export const spearFishingNodes = [
     'level': 210,
     'icon': '/i/029000/029505.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Normal'
   },
   {
     'id': 20016,
@@ -133,7 +149,8 @@ export const spearFishingNodes = [
     'level': 210,
     'icon': '/i/029000/029490.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Small'
   },
   {
     'id': 20017,
@@ -141,7 +158,8 @@ export const spearFishingNodes = [
     'level': 210,
     'icon': '/i/029000/029460.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Large'
   },
   {
     'id': 20018,
@@ -149,7 +167,8 @@ export const spearFishingNodes = [
     'level': 215,
     'icon': '/i/029000/029104.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Small'
   },
   {
     'id': 20019,
@@ -157,7 +176,8 @@ export const spearFishingNodes = [
     'level': 215,
     'icon': '/i/029000/029124.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Normal'
   },
   {
     'id': 20020,
@@ -165,7 +185,8 @@ export const spearFishingNodes = [
     'level': 215,
     'icon': '/i/029000/029131.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Small'
   },
   {
     'id': 20021,
@@ -173,7 +194,8 @@ export const spearFishingNodes = [
     'level': 215,
     'icon': '/i/029000/029113.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Small'
   },
   {
     'id': 20022,
@@ -181,7 +203,8 @@ export const spearFishingNodes = [
     'level': 215,
     'icon': '/i/029000/029102.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large'
   },
   {
     'id': 20023,
@@ -189,7 +212,8 @@ export const spearFishingNodes = [
     'level': 215,
     'icon': '/i/029000/029100.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Normal'
   },
   {
     'id': 20024,
@@ -197,7 +221,8 @@ export const spearFishingNodes = [
     'level': 215,
     'icon': '/i/029000/029508.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Small'
   },
   {
     'id': 20025,
@@ -205,7 +230,8 @@ export const spearFishingNodes = [
     'level': 215,
     'icon': '/i/029000/029475.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Large'
   },
   {
     'id': 20026,
@@ -213,7 +239,8 @@ export const spearFishingNodes = [
     'level': 215,
     'icon': '/i/029000/029503.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Small'
   },
   {
     'id': 20027,
@@ -221,7 +248,8 @@ export const spearFishingNodes = [
     'level': 220,
     'icon': '/i/029000/029142.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large'
   },
   {
     'id': 20028,
@@ -229,7 +257,8 @@ export const spearFishingNodes = [
     'level': 220,
     'icon': '/i/029000/029114.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large'
   },
   {
     'id': 20029,
@@ -237,7 +266,8 @@ export const spearFishingNodes = [
     'level': 220,
     'icon': '/i/029000/029134.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large'
   },
   {
     'id': 20030,
@@ -245,7 +275,8 @@ export const spearFishingNodes = [
     'level': 220,
     'icon': '/i/029000/029112.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Small'
   },
   {
     'id': 20031,
@@ -253,7 +284,8 @@ export const spearFishingNodes = [
     'level': 220,
     'icon': '/i/029000/029109.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Small'
   },
   {
     'id': 20032,
@@ -261,7 +293,8 @@ export const spearFishingNodes = [
     'level': 220,
     'icon': '/i/029000/029441.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Small'
   },
   {
     'id': 20033,
@@ -269,7 +302,8 @@ export const spearFishingNodes = [
     'level': 220,
     'icon': '/i/029000/029493.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Normal'
   },
   {
     'id': 20034,
@@ -277,7 +311,8 @@ export const spearFishingNodes = [
     'level': 220,
     'icon': '/i/029000/029489.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Large'
   },
   {
     'id': 20035,
@@ -285,7 +320,8 @@ export const spearFishingNodes = [
     'level': 225,
     'icon': '/i/029000/029132.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Normal'
   },
   {
     'id': 20036,
@@ -293,7 +329,8 @@ export const spearFishingNodes = [
     'level': 225,
     'icon': '/i/029000/029135.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Normal'
   },
   {
     'id': 20037,
@@ -301,7 +338,8 @@ export const spearFishingNodes = [
     'level': 225,
     'icon': '/i/029000/029110.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Normal'
   },
   {
     'id': 20038,
@@ -309,7 +347,8 @@ export const spearFishingNodes = [
     'level': 225,
     'icon': '/i/029000/029117.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large'
   },
   {
     'id': 20039,
@@ -317,7 +356,8 @@ export const spearFishingNodes = [
     'level': 225,
     'icon': '/i/029000/029467.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Normal'
   },
   {
     'id': 20040,
@@ -325,7 +365,8 @@ export const spearFishingNodes = [
     'level': 225,
     'icon': '/i/029000/029449.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Large'
   },
   {
     'id': 20041,
@@ -333,7 +374,8 @@ export const spearFishingNodes = [
     'level': 225,
     'icon': '/i/029000/029482.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Normal'
   },
   {
     'id': 20042,
@@ -341,7 +383,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029119.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Normal'
   },
   {
     'id': 20043,
@@ -349,7 +392,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029145.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Small'
   },
   {
     'id': 20044,
@@ -357,7 +401,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029480.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Normal'
   },
   {
     'id': 20045,
@@ -365,7 +410,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029491.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Small'
   },
   {
     'id': 20046,
@@ -373,7 +419,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029456.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Large'
   },
   {
     'id': 20047,
@@ -381,7 +428,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029443.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Small'
   },
   {
     'id': 20048,
@@ -389,7 +437,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029514.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Large'
   },
   {
     'id': 20049,
@@ -397,7 +446,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029450.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Normal'
   },
   {
     'id': 20050,
@@ -405,7 +455,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029908.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Small'
   },
   {
     'id': 20051,
@@ -413,7 +464,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029903.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Large'
   },
   {
     'id': 20052,
@@ -421,7 +473,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029918.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Normal'
   },
   {
     'id': 20053,
@@ -429,7 +482,8 @@ export const spearFishingNodes = [
     'level': 230,
     'icon': '/i/029000/029910.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Large'
   },
   {
     'id': 20054,
@@ -437,7 +491,8 @@ export const spearFishingNodes = [
     'level': 245,
     'icon': '/i/029000/029137.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Small'
   },
   {
     'id': 20055,
@@ -445,7 +500,8 @@ export const spearFishingNodes = [
     'level': 245,
     'icon': '/i/029000/029140.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large'
   },
   {
     'id': 20056,
@@ -453,7 +509,8 @@ export const spearFishingNodes = [
     'level': 245,
     'icon': '/i/029000/029499.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Large'
   },
   {
     'id': 20057,
@@ -461,7 +518,8 @@ export const spearFishingNodes = [
     'level': 245,
     'icon': '/i/029000/029481.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Normal'
   },
   {
     'id': 20058,
@@ -469,7 +527,8 @@ export const spearFishingNodes = [
     'level': 245,
     'icon': '/i/029000/029506.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Normal'
   },
   {
     'id': 20059,
@@ -477,7 +536,8 @@ export const spearFishingNodes = [
     'level': 245,
     'icon': '/i/029000/029510.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Small'
   },
   {
     'id': 20060,
@@ -485,7 +545,8 @@ export const spearFishingNodes = [
     'level': 245,
     'icon': '/i/029000/029477.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Large'
   },
   {
     'id': 20061,
@@ -493,7 +554,8 @@ export const spearFishingNodes = [
     'level': 245,
     'icon': '/i/029000/029924.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Normal'
   },
   {
     'id': 20062,
@@ -501,7 +563,8 @@ export const spearFishingNodes = [
     'level': 245,
     'icon': '/i/029000/029916.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Small'
   },
   {
     'id': 20063,
@@ -509,7 +572,8 @@ export const spearFishingNodes = [
     'level': 245,
     'icon': '/i/029000/029925.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Small'
   },
   {
     'id': 20064,
@@ -517,7 +581,8 @@ export const spearFishingNodes = [
     'level': 245,
     'icon': '/i/029000/029907.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Normal'
   },
   {
     'id': 20065,
@@ -525,7 +590,8 @@ export const spearFishingNodes = [
     'level': 260,
     'icon': '/i/029000/029138.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Normal'
   },
   {
     'id': 20066,
@@ -533,7 +599,14 @@ export const spearFishingNodes = [
     'level': 260,
     'icon': '/i/029000/029146.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large',
+    'predator': [
+      {
+        'name': 'Bashful Batfish',
+        'predatorAmount': 10
+      }
+    ]
   },
   {
     'id': 20067,
@@ -541,7 +614,8 @@ export const spearFishingNodes = [
     'level': 260,
     'icon': '/i/029000/029509.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Small'
   },
   {
     'id': 20068,
@@ -549,7 +623,8 @@ export const spearFishingNodes = [
     'level': 260,
     'icon': '/i/029000/029513.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Small'
   },
   {
     'id': 20069,
@@ -557,7 +632,8 @@ export const spearFishingNodes = [
     'level': 260,
     'icon': '/i/029000/029500.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Small'
   },
   {
     'id': 20070,
@@ -565,7 +641,8 @@ export const spearFishingNodes = [
     'level': 260,
     'icon': '/i/029000/029902.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Small'
   },
   {
     'id': 20071,
@@ -573,7 +650,8 @@ export const spearFishingNodes = [
     'level': 260,
     'icon': '/i/029000/029913.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Large'
   },
   {
     'id': 20072,
@@ -581,7 +659,8 @@ export const spearFishingNodes = [
     'level': 260,
     'icon': '/i/029000/029812.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Large'
   },
   {
     'id': 20073,
@@ -589,7 +668,8 @@ export const spearFishingNodes = [
     'level': 275,
     'icon': '/i/029000/029106.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Small'
   },
   {
     'id': 20074,
@@ -597,7 +677,8 @@ export const spearFishingNodes = [
     'level': 275,
     'icon': '/i/029000/029470.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Normal'
   },
   {
     'id': 20075,
@@ -605,7 +686,8 @@ export const spearFishingNodes = [
     'level': 275,
     'icon': '/i/029000/029502.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Large'
   },
   {
     'id': 20076,
@@ -613,7 +695,14 @@ export const spearFishingNodes = [
     'level': 275,
     'icon': '/i/029000/029448.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Normal',
+    'predator': [
+      {
+        'name': 'Ichthyosaur',
+        'predatorAmount': 10
+      }
+    ]
   },
   {
     'id': 20077,
@@ -621,7 +710,8 @@ export const spearFishingNodes = [
     'level': 275,
     'icon': '/i/029000/029501.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Normal'
   },
   {
     'id': 20078,
@@ -629,7 +719,8 @@ export const spearFishingNodes = [
     'level': 275,
     'icon': '/i/029000/029476.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Large'
   },
   {
     'id': 20079,
@@ -637,7 +728,8 @@ export const spearFishingNodes = [
     'level': 275,
     'icon': '/i/029000/029905.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Normal'
   },
   {
     'id': 20080,
@@ -645,7 +737,8 @@ export const spearFishingNodes = [
     'level': 275,
     'icon': '/i/029000/029919.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Small'
   },
   {
     'id': 20081,
@@ -653,7 +746,8 @@ export const spearFishingNodes = [
     'level': 275,
     'icon': '/i/029000/029921.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Normal'
   },
   {
     'id': 20082,
@@ -661,7 +755,8 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029120.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large'
   },
   {
     'id': 20083,
@@ -669,7 +764,14 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029116.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large',
+    'predator': [
+      {
+        'name': 'Bashful Batfish',
+        'predatorAmount': 10
+      }
+    ]
   },
   {
     'id': 20084,
@@ -677,7 +779,8 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029478.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Large'
   },
   {
     'id': 20085,
@@ -685,7 +788,8 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029494.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Normal'
   },
   {
     'id': 20086,
@@ -693,7 +797,14 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029486.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Normal',
+    'predator': [
+      {
+        'name': 'Ichthyosaur',
+        'predatorAmount': 10
+      }
+    ]
   },
   {
     'id': 20087,
@@ -701,7 +812,8 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029462.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Large'
   },
   {
     'id': 20088,
@@ -709,7 +821,8 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029129.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Normal'
   },
   {
     'id': 20089,
@@ -717,7 +830,14 @@ export const spearFishingNodes = [
     'level': 275,
     'icon': '/i/029000/029469.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Small',
+    'predator': [
+      {
+        'name': 'Glaring Perch',
+        'predatorAmount': 10
+      }
+    ]
   },
   {
     'id': 20090,
@@ -725,7 +845,14 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029484.png',
     'mapId': 372,
-    'zoneId': 2411
+    'zoneId': 2411,
+    'gig': 'Small',
+    'predator': [
+      {
+        'name': 'Glaring Perch',
+        'predatorAmount': 10
+      }
+    ]
   },
   {
     'id': 20091,
@@ -733,7 +860,8 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029920.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Large'
   },
   {
     'id': 20092,
@@ -741,7 +869,8 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029911.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Normal'
   },
   {
     'id': 20093,
@@ -749,7 +878,8 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029915.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Small'
   },
   {
     'id': 20094,
@@ -757,7 +887,14 @@ export const spearFishingNodes = [
     'level': 275,
     'icon': '/i/029000/029912.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Large',
+    'predator': [
+      {
+        'name': 'Mercenary Crab',
+        'predatorAmount': 10
+      }
+    ]
   },
   {
     'id': 20095,
@@ -765,7 +902,14 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029904.png',
     'mapId': 369,
-    'zoneId': 2408
+    'zoneId': 2408,
+    'gig': 'Large',
+    'predator': [
+      {
+        'name': 'Mercenary Crab',
+        'predatorAmount': 10
+      }
+    ]
   },
   {
     'id': 20096,
@@ -773,7 +917,14 @@ export const spearFishingNodes = [
     'level': 290,
     'icon': '/i/029000/029149.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large',
+    'predator': [
+      {
+        'name': 'Bashful Batfish',
+        'predatorAmount': 10
+      }
+    ]
   },
   {
     'id': 20097,
@@ -781,7 +932,10 @@ export const spearFishingNodes = [
     'level': 300,
     'icon': '/i/029000/029151.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Large',
+    'spawn': 2,
+    'duration': 10
   },
   {
     'id': 20098,
@@ -789,7 +943,16 @@ export const spearFishingNodes = [
     'level': 300,
     'icon': '/i/029000/029136.png',
     'mapId': 371,
-    'zoneId': 2409
+    'zoneId': 2409,
+    'gig': 'Normal',
+    'predator': [
+      {
+        'name': 'Ichimonji',
+        'predatorAmount': 10
+      }
+    ],
+    'spawn': 2,
+    'duration': 10
   },
   {
     'id': 30000,
@@ -813,6 +976,13 @@ export const spearFishingNodes = [
     'level': 260,
     'icon': '/i/029000/029486.png',
     'mapId': 354,
-    'zoneId': 2410
+    'zoneId': 2410,
+    'gig': 'Small',
+    'predator': [
+      {
+        'name': 'Ichthyosaur',
+        'predatorAmount': 10
+      }
+    ]
   }
 ];

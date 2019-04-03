@@ -67,14 +67,14 @@ export class AlarmsEffects {
       withLatestFrom(this.alarmsFacade.allAlarms$),
       map(([alarms, allAlarms]: [Alarm[], Alarm[]]) => {
         return alarms.filter(alarm => {
-          return !allAlarms.some(a => {
+          return allAlarms.filter(a => {
             return a.mapId === alarm.mapId
               && a.weathers === alarm.weathers
               && a.itemId === alarm.itemId
               && a.duration === alarm.duration
               && a.coords === alarm.coords
               && a.zoneId === alarm.zoneId;
-          });
+          }).length === 1;
         });
       }),
       switchMap((alarms: Alarm[]) => {

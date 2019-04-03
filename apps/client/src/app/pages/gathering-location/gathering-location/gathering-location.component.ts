@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { debounceTime, map, mergeMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
@@ -14,6 +13,9 @@ import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { reductions } from '../../../core/data/sources/reductions';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
+import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-gathering-location',
@@ -39,7 +41,7 @@ export class GatheringLocationComponent {
 
   constructor(private dataService: DataService, private bell: BellNodesService, private alarmsFacade: AlarmsFacade,
               private mapService: MapService, private l12n: LocalizedDataService, private gt: GarlandToolsService,
-              private router: Router, private route: ActivatedRoute) {
+              private router: Router, private route: ActivatedRoute, private lazyData: LazyDataService) {
 
     this.alarmsLoaded$ = this.alarmsFacade.loaded$;
 
@@ -214,6 +216,31 @@ export class GatheringLocationComponent {
             return 0;
           })
           .forEach(row => {
+            const spearFishingSpot = spearFishingNodes.find(node => node.itemId === row.itemId);
+            // If it's a spearfishing node, we have some data to add.
+            if (spearFishingSpot !== undefined) {
+              row.gig = spearFishingSpot.gig;
+              if (spearFishingSpot.spawn !== undefined) {
+                row.timed = true;
+                row.spawnTimes = [spearFishingSpot.spawn];
+                row.uptime = spearFishingSpot.duration;
+                // Just in case it despawns the day after.
+                row.uptime = row.uptime < 0 ? row.uptime + 24 : row.uptime;
+                // As uptimes are always in minutes, gotta convert to minutes here too.
+                row.uptime *= 60;
+              }
+
+              if (spearFishingSpot.predator) {
+                row.predators = spearFishingSpot.predator.map(predator => {
+                  const itemId = +Object.keys(this.lazyData.items).find(key => this.lazyData.items[key].en === predator.name);
+                  return {
+                    id: itemId,
+                    icon: this.lazyData.icons[itemId],
+                    predatorAmount: predator.predatorAmount
+                  };
+                });
+              }
+            }
             if (!finalNodes.some(node => node.itemId === row.itemId && node.zoneid === row.zoneid && node.type === row.type)) {
               finalNodes.push(row);
             }
@@ -278,13 +305,12 @@ export class GatheringLocationComponent {
   }
 
   private generateAlarm(node: any): Partial<Alarm> {
-    return {
+    const alarm: any =  {
       itemId: node.itemId,
       icon: node.icon,
       duration: node.uptime / 60,
       zoneId: node.zoneid,
       areaId: node.areaid,
-      slot: +node.slot,
       type: node.type,
       coords: {
         x: node.x,
@@ -300,6 +326,13 @@ export class GatheringLocationComponent {
       fishEyes: node.fishEyes,
       predators: node.predators || []
     };
+    if(node.slot){
+      alarm.slot = +node.slot;
+    }
+    if(node.gig){
+      alarm.gig = node.gig;
+    }
+    return alarm;
   }
 
 }

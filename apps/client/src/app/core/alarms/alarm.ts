@@ -35,6 +35,7 @@ export class Alarm extends DataModel {
   type: number;
 
   baits?: FishingBait[];
+  gig?: string;
   weathers?: number[];
   weathersFrom?: number[];
   snagging?: boolean;

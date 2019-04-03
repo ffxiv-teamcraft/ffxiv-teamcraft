@@ -263,6 +263,8 @@
                     </div>
                     <app-fishing-bait *ngIf="node.baits !== undefined" [baits]="node.baits"
                                       flex="row"></app-fishing-bait>
+                    <img *ngIf="node.gig" src="/assets/icons/gig/{{node.gig}}.png" nz-tooltip
+                         [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate" class="gig-icon">
                     <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
                          fxLayoutAlign="flex-start center">
                       <img src="/assets/icons/status/predators.png" alt="" nz-tooltip

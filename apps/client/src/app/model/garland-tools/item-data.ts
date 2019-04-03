@@ -27,7 +27,7 @@ export class ItemData {
       .find(craft => recipeId.toString() === craft.id.toString());
   }
 
-  public getPartial(id: string, type?: string): any {
+  public getPartial(id: string, type?: string): any | undefined {
     return this.partials.filter(p => type !== undefined ? p.type === type : true).find(p => p.id === id);
   }
 

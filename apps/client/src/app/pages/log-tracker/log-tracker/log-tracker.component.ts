@@ -246,8 +246,9 @@ export class LogTrackerComponent {
     const spots = this.gt.getFishingSpots(fish.itemId);
     if (fish.id >= 20000) {
       const logEntries = spearFishingLog.filter(entry => entry.itemId === fish.id);
+      const spot = spearFishingNodes.find(node => node.itemId === fish.itemId);
       return logEntries.map(entry => {
-        return {
+        const result: any = {
           zoneid: entry.zoneId,
           mapId: entry.mapId,
           x: entry.coords.x,
@@ -256,8 +257,33 @@ export class LogTrackerComponent {
           type: 4,
           itemId: fish.itemId,
           icon: fish.icon,
-          timed: false
+          timed: fish.spawn !== undefined
         };
+
+        if (spot !== undefined) {
+          result.gig = spot.gig;
+        }
+
+        if (spot.spawn !== undefined) {
+          result.spawnTimes = [spot.spawn];
+          result.uptime = spot.duration;
+          // Just in case it despawns the day after.
+          result.uptime = result.uptime < 0 ? result.uptime + 24 : result.uptime;
+          // As uptimes are always in minutes, gotta convert to minutes here too.
+          result.uptime *= 60;
+        }
+
+        if (spot.predator) {
+          result.predators = spot.predator.map(predator => {
+            const itemId = +Object.keys(this.lazyData.items).find(key => this.lazyData.items[key].en === predator.name);
+            return {
+              id: itemId,
+              icon: this.lazyData.icons[itemId],
+              predatorAmount: predator.predatorAmount
+            };
+          });
+        }
+        return result;
       });
     } else {
       if (spots.length > 0) {

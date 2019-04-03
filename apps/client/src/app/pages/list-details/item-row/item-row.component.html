@@ -178,7 +178,7 @@
                 nzType="danger"
                 [nzTitle]="'Confirmation' | translate"
                 nz-popconfirm
-                (click)="removeItem()">
+                (nzOnConfirm)="removeItem()">
           <i nz-icon type="delete"></i>
         </button>
       </ng-container>

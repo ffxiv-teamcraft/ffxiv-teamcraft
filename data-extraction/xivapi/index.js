@@ -1,4 +1,5 @@
 const csv = require('csv-parser');
+const path = require('path');
 const request = require('request');
 const fs = require('fs');
 const http = require('https');
@@ -315,53 +316,85 @@ if (hasTodo('fishingLog')) {
 
 }
 
-if(hasTodo('spearFishingLog')) {
+if (hasTodo('spearFishingLog')) {
 
-  const spearFishingLog = [];
+  const sheetEntries = [];
 
-  getAllEntries('https://xivapi.com/SpearfishingNotebook', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
-    completeFetch
-      .forEach(entry => {
-        const entries = Object.keys(entry.GatheringPointBase)
-          .filter(key => /Item\d/.test(key))
-          .filter(key => entry.GatheringPointBase[key] !== 0)
-          .map(key => {
-            const c = entry.TerritoryType.Map.SizeFactor / 100.0;
-            return {
-              id: entry.ID,
-              itemId: entry.GatheringPointBase[key],
-              level: entry.GatheringLevel,
-              mapId: entry.TerritoryType.Map.ID,
-              zoneId: entry.TerritoryType.PlaceName.ID,
-              coords: {
-                x: (41.0 / c) * ((entry.X) / 2048.0) + 1,
-                y: (41.0 / c) * ((entry.Y) / 2048.0) + 1
-              }
-            };
+  fs.createReadStream(path.join(__dirname, 'csv/FFXIV Data - Fishing.csv'))
+    .pipe(csv())
+    .on('data', (data) => sheetEntries.push(data))
+    .on('end', () => {
+
+      const spearFishingLog = [];
+
+      getAllEntries('https://xivapi.com/SpearfishingNotebook', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+        completeFetch
+          .forEach(entry => {
+            const entries = Object.keys(entry.GatheringPointBase)
+              .filter(key => /Item\d/.test(key))
+              .filter(key => entry.GatheringPointBase[key] !== 0)
+              .map(key => {
+                const c = entry.TerritoryType.Map.SizeFactor / 100.0;
+                return {
+                  id: entry.ID,
+                  itemId: entry.GatheringPointBase[key],
+                  level: entry.GatheringLevel,
+                  mapId: entry.TerritoryType.Map.ID,
+                  zoneId: entry.TerritoryType.PlaceName.ID,
+                  coords: {
+                    x: (41.0 / c) * ((entry.X) / 2048.0) + 1,
+                    y: (41.0 / c) * ((entry.Y) / 2048.0) + 1
+                  }
+                };
+              });
+            spearFishingLog.push(...entries);
           });
-        spearFishingLog.push(...entries);
+        persistToTypescript('spear-fishing-log', 'spearFishingLog', spearFishingLog);
       });
-    persistToTypescript('spear-fishing-log', 'spearFishingLog', spearFishingLog);
-  });
 
-  const spearFishingNodes = [];
+      const spearFishingNodes = [];
 
-  getAllEntries('https://xivapi.com/SpearfishingItem', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
-    completeFetch
-      .filter(fish => fish.Item !== null)
-      .forEach(fish => {
-        const entry = {
-          id: fish.ID,
-          itemId: fish.ItemTargetID,
-          level: fish.GatheringItemLevel.ID,
-          icon: fish.Item.Icon,
-          mapId: fish.TerritoryType.Map.ID,
-          zoneId: fish.TerritoryType.PlaceName.ID
-        };
-        spearFishingNodes.push(entry);
+      getAllEntries('https://xivapi.com/SpearfishingItem', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+        completeFetch
+          .filter(fish => fish.Item !== null)
+          .forEach(fish => {
+            const sheetEntry = sheetEntries.find(entry => {
+              return entry.Fish === fish.Item.Name_en;
+            });
+            const entry = {
+              id: fish.ID,
+              itemId: fish.ItemTargetID,
+              level: fish.GatheringItemLevel.ID,
+              icon: fish.Item.Icon,
+              mapId: fish.TerritoryType.Map.ID,
+              zoneId: fish.TerritoryType.PlaceName.ID
+            };
+            if (sheetEntry !== undefined) {
+              entry.gig = sheetEntry.Bait.split(' ')[0];
+              if(sheetEntry.Start){
+                entry.spawn = +sheetEntry.Start;
+                entry.duration = +sheetEntry.End > +sheetEntry.Start ? +sheetEntry.End - +sheetEntry.Start : +sheetEntry.Start - +sheetEntry.End;
+              }
+              if (sheetEntry['Predator, Amount']) {
+                const split = sheetEntry['Predator, Amount'].split(', ');
+                const predatorSheetEntry = sheetEntries.find(entry => {
+                  return entry.Fish === split[0];
+                });
+                entry.predator = [{
+                  name: split[0],
+                  predatorAmount: +split[1]
+                }];
+                if(predatorSheetEntry && predatorSheetEntry.Start){
+                  entry.spawn = +predatorSheetEntry.Start;
+                  entry.duration = +predatorSheetEntry.End > +predatorSheetEntry.Start ? +predatorSheetEntry.End - +predatorSheetEntry.Start : +predatorSheetEntry.Start - +predatorSheetEntry.End;
+                }
+              }
+            }
+            spearFishingNodes.push(entry);
+          });
+        persistToTypescript('spear-fishing-nodes', 'spearFishingNodes', spearFishingNodes);
       });
-    persistToTypescript('spear-fishing-nodes', 'spearFishingNodes', spearFishingNodes);
-  });
+    });
 }
 
 

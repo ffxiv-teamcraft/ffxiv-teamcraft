@@ -77,6 +77,8 @@
                  [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
           </div>
           <app-fishing-bait *ngIf="node.baits !== undefined" [baits]="node.baits"></app-fishing-bait>
+          <img *ngIf="node.gig" src="/assets/icons/gig/{{node.gig}}.png" nz-tooltip class="gig-icon"
+               [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate">
           <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
                fxLayoutAlign="flex-start center">
             <img src="/assets/icons/status/predators.png" alt="" nz-tooltip

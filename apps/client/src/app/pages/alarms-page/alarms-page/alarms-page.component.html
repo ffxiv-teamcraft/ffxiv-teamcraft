@@ -131,7 +131,7 @@
           <ng-template #customName>
             <span class="alarm-item-name" fxFlex="1 1 auto">{{row.alarm.name}}</span>
           </ng-template>
-          <span *ngIf="row.alarm.slot !== null" fxFlex="0 0 auto">({{row.alarm.slot}})</span>
+          <span *ngIf="row.alarm.slot" fxFlex="0 0 auto">({{row.alarm.slot}})</span>
         </div>
         <img *ngIf="row.alarm.type !== undefined" src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type">
       </div>
@@ -166,7 +166,7 @@
           <ng-template #nodeContent>
             <ul>
               <li *ngFor="let item of row.alarm.nodeContent">
-                {{item.id | itemName | i18n}} <span *ngIf="item.slot">({{item.slot}})</span>
+                {{(item.id || item) | itemName | i18n}} <span *ngIf="item.slot">({{item.slot}})</span>
               </li>
             </ul>
           </ng-template>
@@ -194,6 +194,10 @@
       </div>
       <div *ngIf="row.alarm.baits !== undefined" class="baits">
         <app-fishing-bait [baits]="row.alarm.baits"></app-fishing-bait>
+      </div>
+      <div *ngIf="row.alarm.gig">
+        <img  src="/assets/icons/gig/{{row.alarm.gig}}.png" nz-tooltip class="gig-icon"
+             [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + row.alarm.gig) | translate">
       </div>
       <div *ngIf="row.alarm.predators && row.alarm.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
            fxLayoutAlign="flex-start center">

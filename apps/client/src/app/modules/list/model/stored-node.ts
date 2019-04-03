@@ -17,4 +17,5 @@ export interface StoredNode {
   fishEyes?: boolean;
   snagging?: boolean;
   predators?: { id: number, icon: number, amount: number }[];
+  gig?: string;
 }
