@@ -555,7 +555,7 @@
     "Not_found": "Cтраница не найдена"
   },
   "SIMULATOR": {
-    "Fixed_notification_number": "Уведомление исправлено",
+    "Fixed_notification_number": "Фиксированное уведомление",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
     "Include_consumables_notification": "Include consumables notification",
@@ -594,13 +594,13 @@
     "Generated_macro": "Внутриигровой макрос",
     "Generate_ingame_macro": "Сгенерировать внутриигровой макрос",
     "Share_button_tooltip": "Копировать ссылку",
-    "Share_link_copied": "Ссылка на ротацию скопирована в буфер",
+    "Share_link_copied": "Ссылка на ротацию скопирована в буфер обмена",
     "Persist": "Сохранить эту ротацию",
     "Rotation_not_found": "Ротация не найдена",
     "Confirm_delete": "Вы действительно хотите удалить ротацию?",
     "Toggle_snapshot_mode": "Переключить мод снапшота",
-    "Open_in_external": "Открыть в симуляции {{name}}",
-    "Select_job_please": "Пожалуйста, выберите роль",
+    "Open_in_external": "Открыть в симуляторе {{name}}",
+    "Select_job_please": "Пожалуйста, выберите профессию",
     "Rename_rotation": "Переименовать ротацию",
     "Cross_class_setup": "Настройка кросс-класс навыков",
     "Include_sound_end": "Включить звук в конце макроса",
@@ -621,14 +621,14 @@
     "ROTATIONS": {
       "Search_placeholder": "Поиск ротации",
       "FOLDERS": {
-        "Folders": "Папки поворота",
+        "Folders": "Папки ротаций",
         "Rename": "Переименовать папку",
         "New_folder": "Новая папка",
         "Delete_message": "Удаление папки не удалит ротации внутри.",
         "Share_link_copied": "Ссылка на папку ротаций скопирована в буфер",
         "Shared_by": "Поделился {{name}}",
         "Created_by": "Создано {{name}}",
-        "Copy_folder": "Копировать эту папку и контент на ваш аккаунт",
+        "Copy_folder": "Копировать эту папку её содержимое на ваш аккаунт",
         "Folder_copied": "Папка скопирована на ваш аккаунт",
         "Favorite_folders": "Избранные папки"
       }
@@ -636,14 +636,14 @@
     "CATEGORY": {
       "Progression": "Прогресс",
       "Quality": "Качество",
-      "Cp_recovery": "восстановление CP",
+      "Cp_recovery": "Восстановление CP",
       "Buff": "Бафф",
       "Specialty": "Специальность",
       "Repair": "Починить",
       "Other": "Другое"
     },
     "CONFIGURATION": {
-      "Job": "Работа",
+      "Job": "Профессия",
       "Job_not_configured": "Похоже, что вы еще не настроили эту профессию, перейдите на страницу профиля, чтобы настроить ее и установить характеристики",
       "Job_not_configured_anonymous": "Пожалуйста, введите свои характеристики, чтобы получать точные симуляции или войдите в свою учетную запись",
       "Select_job": "Выбрать роль",
@@ -652,7 +652,7 @@
       "Specialist": "Специалист",
       "Ingredients": "Ингредиенты HQ",
       "Consumables": "Расходники",
-      "Apply_stats": "Применить статы",
+      "Apply_stats": "Применить характеристики",
       "Apply_ingredients": "Применить ингредиенты HQ",
       "Apply_foods": "Применить расходники",
       "Food": "Выбрать еду",
