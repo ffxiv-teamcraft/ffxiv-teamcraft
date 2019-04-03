@@ -741,13 +741,13 @@
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** добавлен в **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** удален из **[{{listName}}]({{listUrl}})**.",
       "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** пометил {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** как выполненный в **[{{listName}}]({{listUrl}})**.",
-      "Webhook_setup_complete": "The **{{teamName}}** team will now be tracked in this channel.",
-      "List_added_notification": "The list **[{{listName}}]({{listUrl}})** has been added to the team.",
-      "List_removed_notification": "The list **[{{listName}}]({{listUrl}})** has been removed from the team.",
-      "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** has joined the team!",
-      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
-      "Name_changed": "The **{{oldName}}** team has been renamed to **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+      "Webhook_setup_complete": "Группа **{{teamName}}** теперь будет отслеживаться в этом канале.",
+      "List_added_notification": "Список **[{{listName}}]({{listUrl}})** добавлен в группу.",
+      "List_removed_notification": "Список **[{{listName}}]({{listUrl}})** удален из группы.",
+      "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** присоединился к группе!",
+      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** был удален из группы.",
+      "Name_changed": "Группа **{{oldName}}** переименована в **{{newName}}**.",
+      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** был назначен **[{{memberName}}]({{memberProfileUrl}})** в **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Участник присоединился",
@@ -762,7 +762,7 @@
   },
   "MARKETBOARD": {
     "Title": "Информация о MB",
-    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
+    "Error": "XIVAPI или Companion API в настоящее время не работают, пожалуйста, повторите запрос позже.",
     "Amount": "Количество",
     "HQ": "HQ",
     "Total_price": "Итоговая цена",
@@ -786,7 +786,7 @@
   },
   "SEARCH_INTRO": {
     "Slogan": "Создавай, делись, участвуй",
-    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
+    "Lists_created_counter": "{{amount}} списков создано с помощью FFXIV Teamcraft",
     "Support_patreon": "Поддержать нас в patreon",
     "Donation_button": "Сделать одноразовое пожертвование",
     "Buy_a_tshirt": "Купить футболку Teamcraft",
