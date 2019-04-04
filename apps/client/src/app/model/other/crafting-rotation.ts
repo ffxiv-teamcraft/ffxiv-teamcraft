@@ -34,6 +34,8 @@ export class CraftingRotation extends DataWithPermissions {
 
   public custom = false;
 
+  public public = false;
+
   public getName(): string {
     if (this.recipe) {
       return this.name || `rlvl${this.recipe.rlvl} - ${this.rotation.length} steps, ${this.recipe.durability} dur`;

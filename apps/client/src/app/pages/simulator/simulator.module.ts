@@ -42,6 +42,7 @@ import { RotationTipsPopupComponent } from './components/rotation-tips-popup/rot
 import { RotationTipsModule } from './rotation-tips/rotation-tips.module';
 import { DirtyModule } from '../../core/dirty/dirty.module';
 import { DirtyGuard } from '../../core/dirty/dirty-guard';
+import { CommunityRotationsPageComponent } from './components/community-rotations-page/community-rotations-page.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,11 @@ const routes: Routes = [
   {
     path: 'rotations',
     component: RotationsPageComponent,
+    canActivate: [MaintenanceGuard]
+  },
+  {
+    path: 'community-rotations',
+    component: CommunityRotationsPageComponent,
     canActivate: [MaintenanceGuard]
   },
   {
@@ -132,7 +138,8 @@ const routes: Routes = [
     RotationFolderPageComponent,
     StepByStepReportComponent,
     RotationFolderPanelComponent,
-    RotationTipsPopupComponent
+    RotationTipsPopupComponent,
+    CommunityRotationsPageComponent
   ],
   exports: [
     RotationPanelComponent,

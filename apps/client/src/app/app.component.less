@@ -12,6 +12,47 @@
   }
 }
 
+.man-attacked-by-tetris-block {
+  position: relative;
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+
+  .build {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .blur {
+    position: absolute;
+    filter: blur(1px);
+    width: 11px;
+    height: 11px;
+    background-color: #001529;
+    transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+    border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+    padding 0.15s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+    bottom: 0;
+  }
+
+  .user {
+    position: absolute;
+    bottom: 0;
+    left: 7px;
+    font-size: 11px !important;
+  }
+}
+
+.ant-menu-item-selected {
+  .man-attacked-by-tetris-block {
+    .blur {
+      background-color: var(--primary-color);
+    }
+  }
+}
+
 .opened-in-desktop {
   height: 100%;
 
