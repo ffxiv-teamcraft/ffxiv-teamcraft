@@ -704,7 +704,7 @@
     "INTRO": {
       "Title": "Ливквесты",
       "First_line": "На этой странице вы можете найти один или несколько levequest'ов, и создать список согласно результатам поиска",
-      "Second_line": "Select a job, input a level range, you'll get a listing of the corresponding leves that you can check and add to a list, recipes will be automatically added to the selected list.",
+      "Second_line": "Выберите профессию, введите диапазон уровней, и вы увидите ряд соответствующих levequest'ов, которые вы сможете добавить в список. Рецепты для предметов levequest'а будут автоматически внесены в список.",
       "Third_line": "Вы также можете искать по названию, если знаете, что именно ищете."
     }
   },
@@ -792,8 +792,8 @@
     "Buy_a_tshirt": "Купить футболку Teamcraft",
     "Features_header": "Вперёд!",
     "DESCRIPTION": {
-      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
-      "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
+      "Lists": "Создавайте списки, чтобы получить информацию о всех материалов, делитесь ими со своими друзьями, всё начинается именно здесь! Просто введите название предмета в поиск, настройте фильтры, чтобы найти нужный предмет и можете начать крафтить.",
+      "Public_lists": "Копируй списки, созданные сообществом, чтобы крафтить предметы для levequest'ов, заполнения логов, кораблей, BiS оружия и доспехов. Здесь можно найти всё что угодно.",
       "Alarms": "Настройте оповещения, чтобы не пропустить ни одного спауна ноды, сортируйте их по группам, импортируйте в игру, возможно всё.",
       "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
       "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
