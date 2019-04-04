@@ -557,7 +557,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "Фиксированное уведомление",
     "Starting_echo_number": "Уведомление #",
-    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Break_on_reclaim": "Разделить макросы на этапе невозвратности Reclaim'а",
     "Include_consumables_notification": "Включить уведомления о расходных материалах",
     "Consumable_notification": "Используйте {{buffs}}",
     "Extra_wait": "Дополнительное ожидание",
