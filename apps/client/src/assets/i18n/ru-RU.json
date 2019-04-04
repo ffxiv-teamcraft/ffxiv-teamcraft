@@ -677,7 +677,7 @@
       "NOT_ENOUGH_CP": "Недостаточно CP",
       "MISSING_LEVEL_REQUIREMENT": "Ваш уровень слишком низок",
       "NOT_SPECIALIST": "Ротация специалиста, но вы не являетесь специалистом",
-      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
+      "NO_INNER_QUIET": "Попытка использования действия, связанного с Inner Quiet без включённого Inner Quiet"
     }
   },
   "PRICING": {
@@ -703,7 +703,7 @@
     "Deliver_to": "Доставить в {{placename}}",
     "INTRO": {
       "Title": "Ливквесты",
-      "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
+      "First_line": "На этой странице вы можете найти один или несколько levequest'ов, и создать список согласно результатам поиска",
       "Second_line": "Select a job, input a level range, you'll get a listing of the corresponding leves that you can check and add to a list, recipes will be automatically added to the selected list.",
       "Third_line": "Вы также можете искать по названию, если знаете, что именно ищете."
     }
