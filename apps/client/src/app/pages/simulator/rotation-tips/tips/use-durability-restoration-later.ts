@@ -11,7 +11,7 @@ export class UseDurabilityRestorationLater extends RotationTip {
   private matchingIndex: number;
 
   constructor() {
-    super(RotationTipType.WARNING, 'Use_durability_restoration_later');
+    super(RotationTipType.INFO, 'Use_durability_restoration_later');
   }
 
   canBeAppliedTo(simulationResult: SimulationResult): boolean {

@@ -2,7 +2,6 @@ import { SimulationResult } from '../simulation/simulation-result';
 import { RotationTipType } from './rotation-tip-type';
 import { CraftingAction } from '../model/actions/crafting-action';
 import { Class, Instantiable } from '@kaiu/serializer';
-import { ComfortZone } from '../model/actions/buff/comfort-zone';
 import { CraftingJob } from '../model/crafting-job.enum';
 
 export abstract class RotationTip {

@@ -729,7 +729,8 @@
       "Use_mume_if_pbp": "You should use Muscle Memory at step 1 in order to replace one Piece by Piece and gain 9 extra CP",
       "Use_observe_before_focused": "You should use Observe before the Focused action at step {{index}} in order to get a free 100% success rate.",
       "Use_durability_restoration_later": "You should use the durability restoration action at step {{index}} later in order to avoid wasting durability restoration.",
-      "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails."
+      "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
+      "Use_advanced_touch_instead": "You used Basic Touch then Advanced Touch one after another at step {{index}}, you should use two Standard Touches instead to get same potency for 2 less CP."
     }
   },
   "PRICING": {
