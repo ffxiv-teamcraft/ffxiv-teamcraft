@@ -21,7 +21,7 @@ export class WasteNotII extends BuffAction {
     return [285];
   }
 
-  protected getOverrides(): Buff[] {
+  public getOverrides(): Buff[] {
     return super.getOverrides().concat(Buff.WASTE_NOT);
   }
 

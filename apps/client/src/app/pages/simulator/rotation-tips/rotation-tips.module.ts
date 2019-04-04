@@ -16,6 +16,7 @@ import { UseObserveBeforeFocused } from './tips/use-observe-before-focused';
 import { UseDurabilityRestorationLater } from './tips/use-durability-restoration-later';
 import { UsePatientTouchFaster } from './tips/use-patient-touch-faster';
 import { UseAdvancedTouchInstead } from './tips/use-advanced-touch-instead';
+import { DoNotOverlapBuffs } from './tips/do-not-overlap-buffs';
 
 export const ROTATION_TIPS = new InjectionToken('ROTATION_TIPS');
 
@@ -34,7 +35,8 @@ const tips: Class<RotationTip>[] = [
   UseObserveBeforeFocused,
   UseDurabilityRestorationLater,
   UsePatientTouchFaster,
-  UseAdvancedTouchInstead
+  UseAdvancedTouchInstead,
+  DoNotOverlapBuffs
 ];
 
 @NgModule({

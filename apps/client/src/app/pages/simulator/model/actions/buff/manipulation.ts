@@ -26,7 +26,7 @@ export class Manipulation extends BuffAction {
     return [278];
   }
 
-  protected getOverrides(): Buff[] {
+  public getOverrides(): Buff[] {
     return super.getOverrides().concat(Buff.MANIPULATION_II);
   }
 

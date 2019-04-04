@@ -19,13 +19,13 @@ export class UseSh2Instead extends RotationTip {
 
   matches(simulationResult: SimulationResult): boolean {
     const allsh1Indexes = this.getAllActionIndexes(simulationResult, SteadyHand);
-    return allsh1Indexes.some(sh2Index => {
-      const actionsUsedWithSh1 = simulationResult.steps.slice(sh2Index, 5) || [];
+    return allsh1Indexes.some(sh1Index => {
+      const actionsUsedWithSh1 = simulationResult.steps.slice(sh1Index, sh1Index + 5) || [];
       const clone = simulationResult.simulation.clone();
       clone.removeBuff(Buff.STEADY_HAND);
       const result = actionsUsedWithSh1.some(step => step.action.getSuccessRate(clone) < 80);
       if (result) {
-        this.matchingIndex = sh2Index + 1;
+        this.matchingIndex = sh1Index;
       }
       return result;
     });

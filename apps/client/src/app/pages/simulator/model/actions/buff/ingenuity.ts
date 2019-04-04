@@ -21,7 +21,7 @@ export class Ingenuity extends BuffAction {
     return [277];
   }
 
-  protected getOverrides(): Buff[] {
+  public getOverrides(): Buff[] {
     return super.getOverrides().concat(Buff.INGENUITY_II);
   }
 
