@@ -646,7 +646,9 @@
     "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "Quality_needed": "{{amount}} more quality to reach 100%",
     "Rotation_tips": "Rotation tips",
-    "Community_rotations": "Community rotations",
+    "COMMUNITY_ROTATIONS":{
+      "Title": "Community rotations"
+    },
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
       "Recipe_level": "Recipe level",

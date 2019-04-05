@@ -1,0 +1,6 @@
+export interface CommunityRotationFilters {
+  tags: string[];
+  name: string;
+  rlvl: number;
+  durability: number;
+}
