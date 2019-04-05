@@ -3,33 +3,27 @@
   <input nz-input type="text" class="filter-input"
          [placeholder]="'SIMULATOR.COMMUNITY_ROTATIONS.Name_filter_placeholder' | translate"
          [ngModel]="nameFilter$ | async" (ngModelChange)="nameFilter$.next($event)" autofocus>
-  <div fxLayout="row" class="filter-input" fxLayoutGap="5px">
+  <div fxLayout="row" class="filter-input" fxLayoutAlign="center center" fxLayoutGap="10px">
     <nz-select fxFlex="1 1 auto" nzMode="multiple"
                [nzPlaceHolder]="'SIMULATOR.COMMUNITY_ROTATIONS.Tags_filter_placeholder' | translate"
                [ngModel]="tagsFilter$ | async"
                (ngModelChange)="tagsFilter$.next($event)">
       <nz-option *ngFor="let tag of tags" [nzLabel]="tag.label | translate" [nzValue]="tag.value"></nz-option>
     </nz-select>
-    <button nz-button (click)="tagsFilter$.next([])" nz-tooltip
-            [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Tags_filter_reset' | translate">
-      <i nz-icon type="reload"></i>
-    </button>
-  </div>
-  <div class="filter-input" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
     <nz-select nzShowSearch
                nzAllowClear
                fxFlex="0 0 150px"
-               [nzPlaceHolder]="'SIMULATOR.COMMUNITY_ROTATIONS.Durability_filter_placeholder' | translate"
-               [ngModel]="durabilityFilter$ | async"
-               (ngModelChange)="durabilityFilter$.next($event)">
+               [nzPlaceHolder]="'SIMULATOR.COMMUNITY_ROTATIONS.Rlvl_filter_placeholder' | translate"
+               [ngModel]="rlvlFilter$ | async"
+               (ngModelChange)="rlvlFilter$.next($event)">
       <nz-option *ngFor="let rlvl of rlvls" [nzLabel]="rlvl.label" [nzValue]="rlvl.value"></nz-option>
     </nz-select>
     <nz-select nzShowSearch
                nzAllowClear
-               fxFlex="0 0 100px"
-               [nzPlaceHolder]="'SIMULATOR.COMMUNITY_ROTATIONS.Rlvl_filter_placeholder' | translate"
-               [ngModel]="rlvlFilter$ | async"
-               (ngModelChange)="rlvlFilter$.next($event)">
+               fxFlex="0 0 120px"
+               [nzPlaceHolder]="'SIMULATOR.COMMUNITY_ROTATIONS.Durability_filter_placeholder' | translate"
+               [ngModel]="durabilityFilter$ | async"
+               (ngModelChange)="durabilityFilter$.next($event)">
       <nz-option nzLabel="30" [nzValue]="30"></nz-option>
       <nz-option nzLabel="35" [nzValue]="35"></nz-option>
       <nz-option nzLabel="40" [nzValue]="40"></nz-option>
@@ -37,6 +31,10 @@
       <nz-option nzLabel="70" [nzValue]="70"></nz-option>
       <nz-option nzLabel="80" [nzValue]="80"></nz-option>
     </nz-select>
+    <button nz-button (click)="resetFilters()" nz-tooltip
+            [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Filters_reset' | translate">
+      <i nz-icon type="reload"></i>
+    </button>
   </div>
   <app-page-loader [loading]="loading" class="rotations-container">
     <div fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 auto" *ngIf="filteredRotations$ | async as rotations">

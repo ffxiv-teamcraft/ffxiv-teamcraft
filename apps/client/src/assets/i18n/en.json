@@ -646,8 +646,24 @@
     "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "Quality_needed": "{{amount}} more quality to reach 100%",
     "Rotation_tips": "Rotation tips",
-    "COMMUNITY_ROTATIONS":{
-      "Title": "Community rotations"
+    "COMMUNITY_ROTATIONS": {
+      "Title": "Community rotations",
+      "No_rotations_matching": "No rotations matching",
+      "Name_filter_placeholder": "Rotation name",
+      "Tags_filter_placeholder": "Tags",
+      "Durability_filter_placeholder": "Durability",
+      "Rlvl_filter_placeholder": "Recipe lvl",
+      "Filters_reset": "Reset filters",
+      "TAGS": {
+        "High_control": "High control",
+        "Low_control": "Low control",
+        "High_craftsmanship": "High craftsmanship",
+        "Low_craftsmanship": "Low craftsmanship",
+        "Specialist": "Specialist",
+        "Not_specialist": "Not specialist",
+        "Tealess": "Tealess",
+        "Foodless": "Foodless"
+      }
     },
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",

@@ -147,7 +147,6 @@ export class CommunityRotationsPageComponent {
           queryParams['durability'] = durability;
         }
         router.navigate([], {
-          queryParamsHandling: 'merge',
           queryParams: queryParams,
           relativeTo: route
         });
@@ -176,7 +175,7 @@ export class CommunityRotationsPageComponent {
       switchMap((filters) => {
         return this.rotationsService.getCommunityRotations({
           ...filters,
-          tags: filters.tags.map(tag => RotationTag[tag]),
+          tags: filters.tags.map(tag => RotationTag[tag])
         }).pipe(
           tap(rotations => {
             this.totalLength = rotations.length;
@@ -191,6 +190,12 @@ export class CommunityRotationsPageComponent {
       }),
       tap(() => setTimeout(() => this.loading = false))
     );
+  }
+
+  resetFilters(): void {
+    this.tagsFilter$.next([]);
+    this.rlvlFilter$.next(null);
+    this.durabilityFilter$.next(null);
   }
 
   trackByRotation(index: number, rotation: CraftingRotation): string {
