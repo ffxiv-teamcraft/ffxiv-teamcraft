@@ -41,7 +41,6 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
     };
     // If it's a node gather (not a fish)
     if (item.hasNodes()) {
-      console.log('hasNodes');
       for (const node of item.nodes) {
         const nodePartialEntry = itemData.getPartial(node.toString(), 'node');
         if (nodePartialEntry === undefined) {
