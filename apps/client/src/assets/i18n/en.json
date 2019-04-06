@@ -648,21 +648,25 @@
     "Rotation_tips": "Rotation tips",
     "COMMUNITY_ROTATIONS": {
       "Title": "Community rotations",
+      "Community_rotation": "Community rotation",
       "No_rotations_matching": "No rotations matching",
       "Name_filter_placeholder": "Rotation name",
       "Tags_filter_placeholder": "Tags",
       "Durability_filter_placeholder": "Durability",
       "Rlvl_filter_placeholder": "Recipe lvl",
       "Filters_reset": "Reset filters",
+      "Configuration_popup": "Share with the community",
+      "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
+      "Min_control_filter_placeholder": "Min. Control",
+      "Min_cp_filter_placeholder": "Min. CP",
+      "Intro": "Input some filters to get started",
       "TAGS": {
-        "High_control": "High control",
-        "Low_control": "Low control",
-        "High_craftsmanship": "High craftsmanship",
-        "Low_craftsmanship": "Low craftsmanship",
-        "Specialist": "Specialist",
-        "Not_specialist": "Not specialist",
-        "Tealess": "Tealess",
-        "Foodless": "Foodless"
+        "SPECIALIST": "Specialist",
+        "NOT_SPECIALIST": "Not specialist",
+        "TEALESS": "Tealess",
+        "FOODLESS": "Foodless",
+        "MAKERS_MARK": "Maker's Mark",
+        "MUSCLE_MEMORY": "Muscle Memory"
       }
     },
     "CUSTOM": {

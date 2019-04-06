@@ -1,11 +1,10 @@
 export enum RotationTag {
-  HIGH_CONTROL = 'High_control',
-  LOW_CONTROL = 'Low_control',
-  HIGH_CRAFTSMANSHIP = 'High_craftsmanship',
-  LOW_CRAFTSMANSHIP = 'Low_craftsmanship',
   SPECIALIST = 'Specialist',
-  NOTSPECIALIST = 'Not_specialist',
+  NOT_SPECIALIST = 'Not_specialist',
 
   TEALESS = 'Tealess',
-  FOODLESS = 'Foodless'
+  FOODLESS = 'Foodless',
+
+  MAKERS_MARK = 'Makers_Mark',
+  MUSCLE_MEMORY = 'Muscle_memory'
 }

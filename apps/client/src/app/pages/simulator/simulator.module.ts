@@ -43,6 +43,7 @@ import { RotationTipsModule } from './rotation-tips/rotation-tips.module';
 import { DirtyModule } from '../../core/dirty/dirty.module';
 import { DirtyGuard } from '../../core/dirty/dirty-guard';
 import { CommunityRotationsPageComponent } from './components/community-rotations-page/community-rotations-page.component';
+import { CommunityRotationPopupComponent } from './components/community-rotation-popup/community-rotation-popup.component';
 
 const routes: Routes = [
   {
@@ -139,7 +140,8 @@ const routes: Routes = [
     StepByStepReportComponent,
     RotationFolderPanelComponent,
     RotationTipsPopupComponent,
-    CommunityRotationsPageComponent
+    CommunityRotationsPageComponent,
+    CommunityRotationPopupComponent
   ],
   exports: [
     RotationPanelComponent,
@@ -150,7 +152,8 @@ const routes: Routes = [
     SimulationMinStatsPopupComponent,
     RecipeChoicePopupComponent,
     StepByStepReportComponent,
-    RotationTipsPopupComponent
+    RotationTipsPopupComponent,
+    CommunityRotationPopupComponent
   ],
   providers: [
     CraftingActionsRegistry,

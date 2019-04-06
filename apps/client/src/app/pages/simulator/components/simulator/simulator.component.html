@@ -16,7 +16,8 @@
         <i nz-icon type="redo"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'SIMULATOR.Reset' | translate"
-              nz-popconfirm (nzOnConfirm)="actions$.next([]);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);">
+              nz-popconfirm
+              (nzOnConfirm)="actions$.next([]);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);">
         <i nz-icon type="reload"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
@@ -63,18 +64,33 @@
       </button>
       <ng-container *ngIf="tips$ | async as tips">
         <nz-badge [nzCount]="tips.length">
-        <button nz-button *ngIf="result$ | async as result" (click)="showRotationTips(tips, result)" [nzShape]="'circle'"
-                [nzType]="'primary'" nz-tooltip
-                [disabled]="tips?.length === 0"
-                [nzTitle]="'SIMULATOR.Rotation_tips' | translate">
+          <button nz-button *ngIf="result$ | async as result" (click)="showRotationTips(tips, result)"
+                  [nzShape]="'circle'"
+                  [nzType]="'primary'" nz-tooltip
+                  [disabled]="tips?.length === 0"
+                  [nzTitle]="'SIMULATOR.Rotation_tips' | translate">
             <i nz-icon type="bulb"></i>
-        </button>
+          </button>
         </nz-badge>
       </ng-container>
       <app-favorite-button *ngIf="rotation.$key" type="rotations" [key]="rotation.$key"></app-favorite-button>
+      <ng-container *ngIf="simulation$ | async as simulation">
+        <ng-container *ngIf="crafterStats$ | async as stats">
+          <button nz-button (click)="openCommunityRotationConfiguration(rotation, simulation, stats)" [nzShape]="'circle'"
+                  nzType="primary"
+                  nz-tooltip
+                  *ngIf="rotation.$key && ((permissionLevel$ | async) === 40)"
+                  [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup' | translate">
+            <img class="man-attacked-by-tetris-block button-icon" src="/assets/icons/thing.svg"/>
+          </button>
+        </ng-container>
+      </ng-container>
     </div>
     <div fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 auto" class="simulator">
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+        <nz-tag *ngIf="rotation.public" [nzColor]="'geekblue'">
+          {{'SIMULATOR.COMMUNITY_ROTATIONS.Community_rotation' | translate}}
+        </nz-tag>
         <div>{{rotation.getName()}}<span *ngIf="dirty">*</span></div>
         <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
                 (click)="renameRotation(rotation)" [disabled]="(permissionLevel$ | async) < 40">
@@ -288,7 +304,8 @@
                 </div>
               </div>
               <div fxLayout="column" fxLayoutGap="5px" fxFlexAlign="flex-end flex-end" class="apply">
-                <button nz-button nzType="primary" nzBlock (click)="applyConsumables(crafterStats);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);">
+                <button nz-button nzType="primary" nzBlock
+                        (click)="applyConsumables(crafterStats);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);">
                   {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
                 </button>
                 <button nz-button nzBlock (click)="saveDefaultConsumables()">

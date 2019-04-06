@@ -16,29 +16,7 @@ import { CommunityRotationFilters } from '../../../../core/database/crafting-rot
 })
 export class CommunityRotationsPageComponent {
 
-  public tags: any[];
-
-  private filters$: Observable<CommunityRotationFilters>;
-
-  public tagsFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
-
-  public nameFilter$: BehaviorSubject<string> = new BehaviorSubject<string>('');
-
-  public rlvlFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
-
-  public durabilityFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
-
-  public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
-
-  public pageSize = 20;
-
-  public totalLength = 0;
-
-  loading = true;
-
-  filteredRotations$: Observable<CraftingRotation[]>;
-
-  public rlvls = [
+  public static RLVLS = [
     ...Object.keys(Tables.LEVEL_TABLE)
       .map(level => {
         return {
@@ -123,6 +101,36 @@ export class CommunityRotationsPageComponent {
     }
   ].sort((a, b) => a.value - b.value);
 
+  public tags: any[];
+
+  private filters$: Observable<CommunityRotationFilters>;
+
+  public tagsFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+
+  public nameFilter$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
+  public rlvlFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
+
+  public durabilityFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
+
+  public craftsmanshipFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
+  public controlFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
+  public cpFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
+
+  public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+
+  public pageSize = 20;
+
+  public totalLength = 0;
+
+  loading = true;
+
+  filteredRotations$: Observable<CraftingRotation[]>;
+
+  public rlvls = CommunityRotationsPageComponent.RLVLS;
+
+  public firstDisplay = true;
+
   constructor(private rotationsFacade: RotationsFacade, private rotationsService: CraftingRotationService, route: ActivatedRoute, router: Router) {
     this.tags = Object.keys(RotationTag).map(key => {
       return {
@@ -130,29 +138,54 @@ export class CommunityRotationsPageComponent {
         label: `SIMULATOR.COMMUNITY_ROTATIONS.TAGS.${key}`
       };
     });
-    this.filters$ = combineLatest(this.nameFilter$, this.tagsFilter$, this.rlvlFilter$, this.durabilityFilter$).pipe(
-      tap(([name, tags, rlvl, durability]) => {
+    this.filters$ = combineLatest(this.nameFilter$, this.tagsFilter$, this.rlvlFilter$, this.durabilityFilter$,
+      this.craftsmanshipFilter$, this.controlFilter$, this.cpFilter$).pipe(
+      tap(([name, tags, rlvl, durability, craftsmanship, control, cp]) => {
         this.page$.next(1);
         const queryParams = {};
         if (name !== '') {
+          this.firstDisplay = false;
           queryParams['name'] = name;
         }
         if (tags.length > 0) {
+          this.firstDisplay = false;
           queryParams['tags'] = tags.join(',');
         }
         if (rlvl !== null) {
+          this.firstDisplay = false;
           queryParams['rlvl'] = rlvl;
         }
         if (durability !== null) {
+          this.firstDisplay = false;
           queryParams['durability'] = durability;
+        }
+        if (craftsmanship !== null) {
+          this.firstDisplay = false;
+          queryParams['craftsmanship'] = craftsmanship;
+        }
+        if (control !== null) {
+          this.firstDisplay = false;
+          queryParams['control'] = control;
+        }
+        if (cp !== null) {
+          this.firstDisplay = false;
+          queryParams['cp'] = cp;
         }
         router.navigate([], {
           queryParams: queryParams,
           relativeTo: route
         });
       }),
-      map(([name, tags, rlvl, durability]) => {
-        return { name: name, tags: tags, rlvl: rlvl, durability: durability };
+      map(([name, tags, rlvl, durability, craftsmanship, control, cp]) => {
+        return {
+          name: name,
+          tags: tags,
+          rlvl: rlvl,
+          durability: durability,
+          craftsmanship: craftsmanship,
+          control: control,
+          cp: cp
+        };
       })
     );
     route.queryParamMap
@@ -167,6 +200,15 @@ export class CommunityRotationsPageComponent {
         }
         if (query.get('durability') !== null) {
           this.durabilityFilter$.next(+query.get('durability'));
+        }
+        if (query.get('craftsmanship') !== null) {
+          this.craftsmanshipFilter$.next(+query.get('craftsmanship'));
+        }
+        if (query.get('control') !== null) {
+          this.controlFilter$.next(+query.get('control'));
+        }
+        if (query.get('cp') !== null) {
+          this.cpFilter$.next(+query.get('cp'));
         }
       });
     this.filteredRotations$ = this.filters$.pipe(
@@ -196,6 +238,10 @@ export class CommunityRotationsPageComponent {
     this.tagsFilter$.next([]);
     this.rlvlFilter$.next(null);
     this.durabilityFilter$.next(null);
+    this.craftsmanshipFilter$.next(null);
+    this.controlFilter$.next(null);
+    this.cpFilter$.next(null);
+    this.firstDisplay = true;
   }
 
   trackByRotation(index: number, rotation: CraftingRotation): string {

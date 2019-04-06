@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CraftingAction } from '../../model/actions/crafting-action';
 import { ActionType } from '../../model/actions/action-type';
 import { CraftingActionsRegistry } from '../../model/crafting-actions-registry';
@@ -58,6 +58,7 @@ import { RotationTipsService } from '../../rotation-tips/rotation-tips.service';
 import { RotationTipsPopupComponent } from '../rotation-tips-popup/rotation-tips-popup.component';
 import { DirtyScope } from '../../../../core/dirty/dirty-scope';
 import { DirtyFacade } from '../../../../core/dirty/+state/dirty.facade';
+import { CommunityRotationPopupComponent } from '../community-rotation-popup/community-rotation-popup.component';
 
 @Component({
   selector: 'app-simulator',
@@ -214,7 +215,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
-              private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade) {
+              private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$),
       filter(key => key !== undefined)
@@ -275,7 +276,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.crafterStats$ = merge(statsFromRecipe$, this.customStats$);
+    this.crafterStats$ = merge(statsFromRecipe$, this.customStats$).pipe(shareReplay(1));
 
     this.stats$ = combineLatest(this.crafterStats$, this.bonuses$, this.loggedIn$).pipe(
       map(([stats, bonuses, loggedIn]) => {
@@ -731,6 +732,28 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       stats.control -= 20;
     }
     this.statsForm.patchValue(stats, { emitEvent: false });
+  }
+
+  openCommunityRotationConfiguration(rotation: CraftingRotation, simulation: Simulation, stats: CrafterStats): void {
+    this.cd.detach();
+    this.dialog.create({
+      nzContent: CommunityRotationPopupComponent,
+      nzComponentParams: {
+        rotation: rotation,
+        simulation: simulation.clone(),
+        bonuses: {
+          craftsmanship: this.getBonusValue('Craftsmanship', stats.craftsmanship),
+          control: this.getBonusValue('Control', stats._control),
+          cp: this.getBonusValue('CP', stats.cp)
+        }
+      },
+      nzTitle: this.translate.instant('SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup'),
+      nzFooter: null
+    }).afterClose.subscribe(() => {
+      this.cd.reattach();
+      this.cd.markForCheck();
+      this.saveRotation(rotation);
+    });
   }
 
   ngOnDestroy(): void {

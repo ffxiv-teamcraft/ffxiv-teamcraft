@@ -3,4 +3,7 @@ export interface CommunityRotationFilters {
   name: string;
   rlvl: number;
   durability: number;
+  craftsmanship: number;
+  control: number;
+  cp: number;
 }
