@@ -234,7 +234,7 @@ export class PricingComponent implements AfterViewInit {
       const prices = this.pricingService.getPrice(row);
       const amounts = this.pricingService.getAmount(list.$key, row);
       if (prices.hq > 0 && prices.hq < prices.nq) {
-        return prices.hq * amounts.nq * amounts.hq;
+        return prices.hq * (amounts.nq || 1) * (amounts.hq || 1);
       }
       return ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);
     }
