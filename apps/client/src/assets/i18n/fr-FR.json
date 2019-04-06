@@ -70,7 +70,7 @@
     "Not_found": "Atelier introuvable ou vous n'avez pas les droits d'accès",
     "Shared_workshops": "Ateliers sur lesquels vous avez le droit d'écriture",
     "Rename": "Renommer l'atelier",
-    "Add_lists": "Add lists"
+    "Add_lists": "Ajouter des listes"
   },
   "ABOUT": {
     "title": "À propos",
@@ -136,8 +136,8 @@
     "Macro_copied": "Macro copiée dans votre presse-papiers",
     "Open_overlay": "Ouvrir l'overlay",
     "More_available": "et {{amount}} autres...",
-    "Node_content": "Node content",
-    "More_than_three_days": "> 3 days",
+    "Node_content": "Contenu du point de récolte",
+    "More_than_three_days": "> 3 jours",
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
@@ -203,7 +203,7 @@
   "Anonymous_Warning": "Créer un compte permet de conserver ses listes et d'activer plus de fonctionnalités comme le filtre automatique",
   "Game_Term/DoH": "Disciples de la main",
   "Game_Term/DoL": "Disciples de la terre",
-  "MIN/BTN": "Miner / Botanist",
+  "MIN/BTN": "Mineur / Botaniste",
   "Game_Term/FSH": "Fisher",
   "Reduction": "Éthérolyse",
   "Upgrade_list": "Regénérer la liste avec la dernière version de l'application",
