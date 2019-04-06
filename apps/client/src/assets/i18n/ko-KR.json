@@ -740,7 +740,7 @@
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "거의 모든 로테이션은 HQ제작을 목표로 한다면 '정신집중'이 포함되어야합니다. 이것은 품질을 향상 시켜주며, '비레고의 축복'과 같은 스킬들을 사용할 수 있게 해줍니다.",
-      "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
+      "Use_inner_quiet_before_quality_increase": "품질을 향상시키기 전에 '정신집중' 을 사용해야합니다. 사용하지 않을 경우, '정신집중' 스택이 낭비됩니다.",
       "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
       "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
       "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
