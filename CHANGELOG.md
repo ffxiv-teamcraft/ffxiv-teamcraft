@@ -2249,7 +2249,6 @@ All notable changes to this project will be documented in this file. See [standa
 * item relationships (requires/requiredBy) dialog box ([43affd3](https://github.com/Supamiu/ffxiv-teamcraft/commit/43affd3))
 * item row states (craftable, has all base ingredients) ([ff3782e](https://github.com/Supamiu/ffxiv-teamcraft/commit/ff3782e))
 * KO support in macro translator ([41710bf](https://github.com/Supamiu/ffxiv-teamcraft/commit/41710bf))
-* layout export button ([bec2ac7](https://github.com/Supamiu/ffxiv-teamcraft/commit/bec2ac7))
 * layout import ([b1b7012](https://github.com/Supamiu/ffxiv-teamcraft/commit/b1b7012))
 * levequests ([f7ffe4d](https://github.com/Supamiu/ffxiv-teamcraft/commit/f7ffe4d))
 * levequests page improvements ([a6d3425](https://github.com/Supamiu/ffxiv-teamcraft/commit/a6d3425))
