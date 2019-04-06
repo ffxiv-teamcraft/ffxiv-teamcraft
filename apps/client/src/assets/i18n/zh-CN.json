@@ -69,7 +69,8 @@
     "Share_link_copied": "工坊分享链接已复制",
     "Not_found": "没有发现工坊或者您没有权限访问",
     "Shared_workshops": "有写入权限的工坊",
-    "Rename": "重命名工坊"
+    "Rename": "重命名工坊",
+    "Add_lists": "Add lists"
   },
   "ABOUT": {
     "title": "关于",
@@ -116,7 +117,8 @@
     "Language": "语言",
     "Opened_in_desktop": "此页面已在您的桌面应用程序中打开，您可以现在关闭它。",
     "Open_in_desktop": "在桌面应用中打开",
-    "Admin": "管理员"
+    "Admin": "管理员",
+    "Minutes_duration": "{{amount}} minutes"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -134,6 +136,8 @@
     "Macro_copied": "复制宏到剪贴板",
     "Open_overlay": "Open overlay",
     "More_available": "and {{amount}} more...",
+    "Node_content": "Node content",
+    "More_than_three_days": "> 3 days",
     "CUSTOM": {
       "Title": "添加自定义闹钟",
       "Name": "名称",
@@ -199,6 +203,8 @@
   "Anonymous_Warning": "你应该创建一个账号来避免丢失你的清单并开启更多的功能，比如自定义过滤器",
   "Game_Term/DoH": "能工巧匠",
   "Game_Term/DoL": "大地使者",
+  "MIN/BTN": "Miner / Botanist",
+  "Game_Term/FSH": "Fisher",
   "Reduction": "精炼",
   "Upgrade_list": "用最新的app圣洁重新创建清单",
   "List_recreated": "清单已重建",
@@ -290,6 +296,7 @@
     "No_nickname_warning": "请到设置页面设置一个昵称以使用赞助人专属功能",
     "Show_devtools": "显示DevTools",
     "Clear_cache": "Clear cache (will restart the app)",
+    "Enable_item_tags": "Enable item tags",
     "COPY_TYPE": {
       "Classic": "复制项目名称",
       "Isearch": "复制/isearch宏"
@@ -404,6 +411,7 @@
     "List_too_large": "List too large",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "Add_to_another_list": "Add to another list",
+    "New_tag": "New tag",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "Add Panel",
@@ -413,13 +421,29 @@
       "Layout_name": "布局名称",
       "Invalid_import": "无效的导入代码",
       "Global_options": "常规选项",
-      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
+      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it.",
+      "Buttons": "Buttons",
+      "Menu": "Menu",
+      "Edit_row_buttons_display": "Edit row buttons display",
+      "ITEMS": {
+        "COMMENTS": "Comments",
+        "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
+        "ADD_ALL_ALARMS": "Add all alarms",
+        "WORK_ON_IT": "Work on it",
+        "ASSIGN_TEAM_MEMBER": "Assign team members",
+        "EDIT_AMOUNT": "Edit amount",
+        "MARK_HQ": "Mark HQ",
+        "ADD_TO_ANOTHER_LIST": "Add to another list",
+        "REQUIREMENTS": "Requirements",
+        "REMOVE_ITEM": "Remove item from the list"
+      }
     },
     "LAYOUT": {
       "Filter": "过滤器",
       "Panel_name": "Panel name",
       "Order_by": "排序方式",
-      "Order": "顺序"
+      "Order": "顺序",
+      "Tag_filter": "Tag filter"
     }
   },
   "LIST_TAGS": {
@@ -504,7 +528,16 @@
     "Gathering_name": "输入物品名称",
     "Ephemeral_node": "Ephemeral node, can be respawned",
     "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !",
-    "Hidden_item": "隐藏"
+    "Hidden_item": "隐藏",
+    "Fish_eyes": "Requires fish eyes",
+    "Snagging": "Requires snagging",
+    "Predators": "Fish these fish before",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
+    "GIG_HEAD": {
+      "Small": "Small Gig Head",
+      "Medium": "Medium Gig Head",
+      "Large": "Large Gig Head"
+    }
   },
   "ANNOUNCEMENT": {
     "Title": "公告",
@@ -546,7 +579,8 @@
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
     "Propagate_changes_done": "Changes propagated to lists inside the workshop",
     "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
-    "Default_permission_level": "默认权限级别"
+    "Default_permission_level": "默认权限级别",
+    "List_tooltip": "Permission level for everyone: {{level}}"
   },
   "WIKI": {
     "Title": "维基百科",
@@ -610,6 +644,31 @@
     "New_rotation_folder": "新文件夹",
     "Safe_mode": "安全模式",
     "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Quality_needed": "{{amount}} more quality to reach 100%",
+    "Rotation_tips": "Rotation tips",
+    "COMMUNITY_ROTATIONS": {
+      "Title": "Community rotations",
+      "Community_rotation": "Community rotation",
+      "No_rotations_matching": "No rotations matching",
+      "Name_filter_placeholder": "Rotation name",
+      "Tags_filter_placeholder": "Tags",
+      "Durability_filter_placeholder": "Durability",
+      "Rlvl_filter_placeholder": "Recipe lvl",
+      "Filters_reset": "Reset filters",
+      "Configuration_popup": "Share with the community",
+      "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
+      "Min_control_filter_placeholder": "Min. Control",
+      "Min_cp_filter_placeholder": "Min. CP",
+      "Intro": "Input some filters to get started",
+      "TAGS": {
+        "SPECIALIST": "Specialist",
+        "NOT_SPECIALIST": "Not specialist",
+        "TEALESS": "Tealess",
+        "FOODLESS": "Foodless",
+        "MAKERS_MARK": "Maker's Mark",
+        "MUSCLE_MEMORY": "Muscle Memory"
+      }
+    },
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
       "Recipe_level": "配方等级",
@@ -629,7 +688,8 @@
         "Created_by": "由 {{name}} 创建",
         "Copy_folder": "复制此文件夹及其内容到您的帐户",
         "Folder_copied": "文件夹已复制到您的帐户",
-        "Favorite_folders": "收藏夹"
+        "Favorite_folders": "收藏夹",
+        "Add_rotations": "Add rotations"
       }
     },
     "CATEGORY": {
@@ -677,6 +737,24 @@
       "MISSING_LEVEL_REQUIREMENT": "等级不够",
       "NOT_SPECIALIST": "使用了专家工序，但你不是专家",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled"
+    },
+    "ROTATION_TIPS": {
+      "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
+      "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
+      "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
+      "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
+      "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
+      "Use_byregot_brow_low_iq_stacks": "You used Byregot's Blessing with less than 6 stacks. Using Byregot's Brow is better in this case as it will produce more quality.",
+      "Use_byregot_blessing_high_iq_stacks": "You used Byregot's Brow with more than 6 stacks. Using Byregot's Blessing is better in this case as it will produce more quality.",
+      "Use_sh1_instead": "You used Steady Hand II at step {{index}} while using Steady Hand I would be enough and would cost 3 less CP.",
+      "Use_sh2_instead": "You used Steady Hand I at step {{index}} while using Steady Hand II give you more reliability at the cost of 3 CP.",
+      "Use_pbp_first": "You should use Piece by Piece before any other synthesis action, as it scales on the remaining progress to do",
+      "Use_mume_if_pbp": "You should use Muscle Memory at step 1 in order to replace one Piece by Piece and gain 9 extra CP",
+      "Use_observe_before_focused": "You should use Observe before the Focused action at step {{index}} in order to get a free 100% success rate.",
+      "Use_durability_restoration_later": "You should use the durability restoration action at step {{index}} later in order to avoid wasting durability restoration.",
+      "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
+      "Use_advanced_touch_instead": "You used Basic Touch then Advanced Touch one after another at step {{index}}, you should use two Standard Touches instead to get same potency for 2 less CP.",
+      "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs."
     }
   },
   "PRICING": {
@@ -736,6 +814,8 @@
     "No_anonymous_join": "您必须创建一个帐户才能加入团队",
     "Already_in_team": "您已经在这个团队中",
     "Webhook_configuration": "Webhook settings",
+    "Officer": "Officer",
+    "Promote_officer": "Promote to officer",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}个x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 已加入列表 **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}个x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 已从列表 **[{{listName}}]({{listUrl}})** 删除。",
@@ -811,6 +891,10 @@
     "Mark_as_done": "将此物品标记为已完成",
     "Mark_as_not_done": "将此物品标记为未完成",
     "Create_list": "创建一个列表以完成这个页面",
+    "Folklore": "Regional Folklore",
+    "Timed": "Timed",
+    "Weather_dependant": "Only with some weathers",
+    "View_on_ff14angler": "More details on ff14angler",
     "Required_for_achievement": "Required for the achievements",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
@@ -895,5 +979,9 @@
       "Parsing_file": "Parsing file content...",
       "Saving_items": "Saving items ({{done}}/{{todo}})"
     }
+  },
+  "DIRTY": {
+    "Dialog_title": "You have unsaved changes",
+    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
   }
 }
