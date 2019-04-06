@@ -69,7 +69,8 @@
     "Share_link_copied": "工房シェアリンクにコピーされました",
     "Not_found": "この工房に無いか、アクセスする権限がありません",
     "Shared_workshops": "書く権限がある工房",
-    "Rename": "工房名を変更する"
+    "Rename": "工房名を変更する",
+    "Add_lists": "Add lists"
   },
   "ABOUT": {
     "title": "当サイトについて",
@@ -116,7 +117,8 @@
     "Language": "言語",
     "Opened_in_desktop": "このページはPCアプリ内に開きました。このページを閉じることが出来ます。",
     "Open_in_desktop": "PCアプリで開く",
-    "Admin": "管理者"
+    "Admin": "管理者",
+    "Minutes_duration": "{{amount}} minutes"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -134,6 +136,8 @@
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイ開く",
     "More_available": "{{amount}} 回 もっと",
+    "Node_content": "Node content",
+    "More_than_three_days": "> 3 days",
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
       "Name": "名前",
@@ -199,6 +203,8 @@
   "Anonymous_Warning": "リストを保存して適応型フィルターと同じような様々な機能を使用するためには、アカウントを生成しなければなりません",
   "Game_Term/DoH": "クラフター",
   "Game_Term/DoL": "ギャザラー",
+  "MIN/BTN": "Miner / Botanist",
+  "Game_Term/FSH": "Fisher",
   "Reduction": "精錬",
   "Upgrade_list": "最新アプリのバージョンにリストを再生成する",
   "List_recreated": "リストが改築されました",
@@ -290,6 +296,7 @@
     "No_nickname_warning": "後援者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
     "Show_devtools": "Devツールを表示",
     "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
+    "Enable_item_tags": "Enable item tags",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
       "Isearch": "/isearchマクロをコピーする"
@@ -403,7 +410,8 @@
     "Add_item": "アイテムを追加する",
     "List_too_large": "リストが大き過ぎます",
     "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
-    "Add_to_another_list": "Add to another list",
+    "Add_to_another_list": "別のリストに追加",
+    "New_tag": "New tag",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -413,13 +421,29 @@
       "Layout_name": "レイアウト名",
       "Invalid_import": "無効な取り込みコードです",
       "Global_options": "一般設定",
-      "Default_readonly_message": "デフォルトのレイアウトは読み取り専用です。カスタマイズを使用するためには、＋ボタンを押してください"
+      "Default_readonly_message": "デフォルトのレイアウトは読み取り専用です。カスタマイズを使用するためには、＋ボタンを押してください",
+      "Buttons": "Buttons",
+      "Menu": "Menu",
+      "Edit_row_buttons_display": "Edit row buttons display",
+      "ITEMS": {
+        "COMMENTS": "Comments",
+        "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
+        "ADD_ALL_ALARMS": "Add all alarms",
+        "WORK_ON_IT": "Work on it",
+        "ASSIGN_TEAM_MEMBER": "Assign team members",
+        "EDIT_AMOUNT": "Edit amount",
+        "MARK_HQ": "Mark HQ",
+        "ADD_TO_ANOTHER_LIST": "Add to another list",
+        "REQUIREMENTS": "Requirements",
+        "REMOVE_ITEM": "Remove item from the list"
+      }
     },
     "LAYOUT": {
       "Filter": "フィルター",
       "Panel_name": "パネル名",
       "Order_by": "整列基準",
-      "Order": "順番"
+      "Order": "順番",
+      "Tag_filter": "Tag filter"
     }
   },
   "LIST_TAGS": {
@@ -504,7 +528,16 @@
     "Gathering_name": "アイテム名を入力してください",
     "Ephemeral_node": "リスポン可能な、時間制採集場所",
     "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
-    "Hidden_item": "隠し資源"
+    "Hidden_item": "隠し資源",
+    "Fish_eyes": "Requires fish eyes",
+    "Snagging": "Requires snagging",
+    "Predators": "Fish these fish before",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
+    "GIG_HEAD": {
+      "Small": "Small Gig Head",
+      "Medium": "Medium Gig Head",
+      "Large": "Large Gig Head"
+    }
   },
   "ANNOUNCEMENT": {
     "Title": "お知らせ",
@@ -546,7 +579,8 @@
     "Propagate_changes": "工房内でリストアップする権限の提案する",
     "Propagate_changes_done": "工房内のリストに変更が反映されました",
     "Team_notice": "このリストに割り当てられたチームは、自動に参加権限が付与されます。",
-    "Default_permission_level": "デフォルトの権限レベル"
+    "Default_permission_level": "デフォルトの権限レベル",
+    "List_tooltip": "全てのユーザーに関する権限レベル: {{level}}"
   },
   "WIKI": {
     "Title": "ウィキ",
@@ -610,6 +644,31 @@
     "New_rotation_folder": "新回しフォルダー",
     "Safe_mode": "セーフモード",
     "Safe_mode_tooltip": "成功率100％ではないスキルは使用不可(バフを含む)",
+    "Quality_needed": "{{amount}} more quality to reach 100%",
+    "Rotation_tips": "Rotation tips",
+    "COMMUNITY_ROTATIONS": {
+      "Title": "Community rotations",
+      "Community_rotation": "Community rotation",
+      "No_rotations_matching": "No rotations matching",
+      "Name_filter_placeholder": "Rotation name",
+      "Tags_filter_placeholder": "Tags",
+      "Durability_filter_placeholder": "Durability",
+      "Rlvl_filter_placeholder": "Recipe lvl",
+      "Filters_reset": "Reset filters",
+      "Configuration_popup": "Share with the community",
+      "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
+      "Min_control_filter_placeholder": "Min. Control",
+      "Min_cp_filter_placeholder": "Min. CP",
+      "Intro": "Input some filters to get started",
+      "TAGS": {
+        "SPECIALIST": "Specialist",
+        "NOT_SPECIALIST": "Not specialist",
+        "TEALESS": "Tealess",
+        "FOODLESS": "Foodless",
+        "MAKERS_MARK": "Maker's Mark",
+        "MUSCLE_MEMORY": "Muscle Memory"
+      }
+    },
     "CUSTOM": {
       "Recipe_configuration": "製作情報",
       "Recipe_level": "レシピLv",
@@ -629,7 +688,8 @@
         "Created_by": "{{name}} で作成された",
         "Copy_folder": "このフォルダーと内容を自分のアカウントにコピーする",
         "Folder_copied": "フォルダーがマイアカウントにコピーされました",
-        "Favorite_folders": "お気に入りのフォルダー"
+        "Favorite_folders": "お気に入りのフォルダー",
+        "Add_rotations": "Add rotations"
       }
     },
     "CATEGORY": {
@@ -677,6 +737,24 @@
       "MISSING_LEVEL_REQUIREMENT": "レベル不足",
       "NOT_SPECIALIST": "非マイスターは、使用できないマイスタースキル回し",
       "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用"
+    },
+    "ROTATION_TIPS": {
+      "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
+      "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
+      "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
+      "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
+      "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
+      "Use_byregot_brow_low_iq_stacks": "You used Byregot's Blessing with less than 6 stacks. Using Byregot's Brow is better in this case as it will produce more quality.",
+      "Use_byregot_blessing_high_iq_stacks": "You used Byregot's Brow with more than 6 stacks. Using Byregot's Blessing is better in this case as it will produce more quality.",
+      "Use_sh1_instead": "You used Steady Hand II at step {{index}} while using Steady Hand I would be enough and would cost 3 less CP.",
+      "Use_sh2_instead": "You used Steady Hand I at step {{index}} while using Steady Hand II give you more reliability at the cost of 3 CP.",
+      "Use_pbp_first": "You should use Piece by Piece before any other synthesis action, as it scales on the remaining progress to do",
+      "Use_mume_if_pbp": "You should use Muscle Memory at step 1 in order to replace one Piece by Piece and gain 9 extra CP",
+      "Use_observe_before_focused": "You should use Observe before the Focused action at step {{index}} in order to get a free 100% success rate.",
+      "Use_durability_restoration_later": "You should use the durability restoration action at step {{index}} later in order to avoid wasting durability restoration.",
+      "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
+      "Use_advanced_touch_instead": "You used Basic Touch then Advanced Touch one after another at step {{index}}, you should use two Standard Touches instead to get same potency for 2 less CP.",
+      "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs."
     }
   },
   "PRICING": {
@@ -736,6 +814,8 @@
     "No_anonymous_join": "チームに参加するためには、アカウントが必要です",
     "Already_in_team": "既にチームに参加しています",
     "Webhook_configuration": "Webhook設定",
+    "Officer": "Officer",
+    "Promote_officer": "Promote to officer",
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加されました。",
       "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を削除されました。",
@@ -811,6 +891,10 @@
     "Mark_as_done": "このアイテムに完了として表示する",
     "Mark_as_not_done": "このアイテムを未完了として表示する",
     "Create_list": "このページを完成させるためのリストを作成する",
+    "Folklore": "Regional Folklore",
+    "Timed": "Timed",
+    "Weather_dependant": "Only with some weathers",
+    "View_on_ff14angler": "More details on ff14angler",
     "Required_for_achievement": "アチーブメントに適用された",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
@@ -895,5 +979,9 @@
       "Parsing_file": "ファイルの内容を分析中",
       "Saving_items": "({{done}}{{todo}}) を保存しました"
     }
+  },
+  "DIRTY": {
+    "Dialog_title": "You have unsaved changes",
+    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
   }
 }
