@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { debounceTime, map, mergeMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, map, mergeMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import * as nodePositions from '../../../core/data/sources/node-positions.json';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
@@ -13,7 +13,6 @@ import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { reductions } from '../../../core/data/sources/reductions';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
 import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 
@@ -60,6 +59,7 @@ export class GatheringLocationComponent {
         this.showIntro = query.length === 0;
         this.loading = true;
       }),
+      filter(query => query.length > 0),
       mergeMap(query => this.dataService.searchGathering(query)),
       map(items => {
         const nodesFromPositions = [].concat.apply([], items.map(item => {
@@ -305,7 +305,7 @@ export class GatheringLocationComponent {
   }
 
   private generateAlarm(node: any): Partial<Alarm> {
-    const alarm: any =  {
+    const alarm: any = {
       itemId: node.itemId,
       icon: node.icon,
       duration: node.uptime / 60,
@@ -326,10 +326,10 @@ export class GatheringLocationComponent {
       fishEyes: node.fishEyes,
       predators: node.predators || []
     };
-    if(node.slot){
+    if (node.slot) {
       alarm.slot = +node.slot;
     }
-    if(node.gig){
+    if (node.gig) {
       alarm.gig = node.gig;
     }
     return alarm;
