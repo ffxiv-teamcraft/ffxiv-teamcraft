@@ -70,7 +70,7 @@
     "Not_found": "Oficina não encontrada ou não há acesso à mesma",
     "Shared_workshops": "Oficinas ás quais tem acesso de escrita",
     "Rename": "Renomear oficina",
-    "Add_lists": "Add lists"
+    "Add_lists": "Adicionar listas"
   },
   "ABOUT": {
     "title": "Sobre",
@@ -118,7 +118,7 @@
     "Opened_in_desktop": "Esta página foi aberta na app do desktop, pode agora fecha-la.",
     "Open_in_desktop": "Abrir na app do desktop",
     "Admin": "Administrador",
-    "Minutes_duration": "{{amount}} minutes"
+    "Minutes_duration": "{{amount}} minutos"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -136,8 +136,8 @@
     "Macro_copied": "Macro copiado para a área de transferência",
     "Open_overlay": "Abrir overlay",
     "More_available": "e mais {{amount}}...",
-    "Node_content": "Node content",
-    "More_than_three_days": "> 3 days",
+    "Node_content": "Conteúdo do node",
+    "More_than_three_days": "> 3 dias",
     "CUSTOM": {
       "Title": "Adicionar alarme personalizado",
       "Name": "Nome",
@@ -203,8 +203,8 @@
   "Anonymous_Warning": "Você precisa criar uma conta para evitar perder suas listas e permitir mais funcionalidades como filtro adaptativo.",
   "Game_Term/DoH": "Discípulos da Mão",
   "Game_Term/DoL": "Discípulos da Terra",
-  "MIN/BTN": "Miner / Botanist",
-  "Game_Term/FSH": "Fisher",
+  "MIN/BTN": "Mineiro / Botanista",
+  "Game_Term/FSH": "Pescador",
   "Reduction": "Redução",
   "Upgrade_list": "Recria a lista com a última versão da aplicação",
   "List_recreated": "Lista recriada com sucesso",
@@ -296,7 +296,7 @@
     "No_nickname_warning": "Por favor vá à página de configurações e crie um nome de utilizador novo para aceder às funções exclusivas do patreon.",
     "Show_devtools": "Mostrar ferramentas de desenvolvimento",
     "Clear_cache": "Limpar a cache (a app será reiniciada)",
-    "Enable_item_tags": "Enable item tags",
+    "Enable_item_tags": "Ligar tags de item",
     "COPY_TYPE": {
       "Classic": "Copiar nome to item",
       "Isearch": "Copiar macro /isearch"
@@ -410,8 +410,8 @@
     "Add_item": "Adicionar um item",
     "List_too_large": "Lista é demasiado grande",
     "List_too_large_description": "Esta lista é muito grande e pode atingir a limitação de tamanho da base de dados por causa de todas as informações que carrega. Não pode adicionar mais itens para se certificar de que a lista não perca informações.",
-    "Add_to_another_list": "Add to another list",
-    "New_tag": "New tag",
+    "Add_to_another_list": "Adicionar a outra lista",
+    "New_tag": "Tag nova",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",
@@ -422,14 +422,14 @@
       "Invalid_import": "Código de importação inválido",
       "Global_options": "Opções gerais",
       "Default_readonly_message": "Layout padrão é só de leitura, para poder personalizá-lo deve criar um novo layout usando o botão +.",
-      "Buttons": "Buttons",
+      "Buttons": "Botões",
       "Menu": "Menu",
-      "Edit_row_buttons_display": "Edit row buttons display",
+      "Edit_row_buttons_display": "Editar aspecto da barra de botões",
       "ITEMS": {
-        "COMMENTS": "Comments",
-        "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
-        "ADD_ALL_ALARMS": "Add all alarms",
-        "WORK_ON_IT": "Work on it",
+        "COMMENTS": "Comentários",
+        "COPY_NAME_NOT_FAVORITE": "Modo de cópia não-favorita",
+        "ADD_ALL_ALARMS": "Adicionar todos os alarmes",
+        "WORK_ON_IT": "Trabalhar nisto",
         "ASSIGN_TEAM_MEMBER": "Assign team members",
         "EDIT_AMOUNT": "Edit amount",
         "MARK_HQ": "Mark HQ",
