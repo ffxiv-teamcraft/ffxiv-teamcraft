@@ -656,15 +656,15 @@
       "Rlvl_filter_placeholder": "Уровень рецепта",
       "Filters_reset": "Сбросить фильтры",
       "Configuration_popup": "Поделиться с сообществом",
-      "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
-      "Min_control_filter_placeholder": "Min. Control",
-      "Min_cp_filter_placeholder": "Min. CP",
-      "Intro": "Input some filters to get started",
+      "Min_craftsmanship_filter_placeholder": "Мин. Мастерство",
+      "Min_control_filter_placeholder": "Мин. Контроль",
+      "Min_cp_filter_placeholder": "Мин. CP",
+      "Intro": "Добавьте фильтры, чтобы начать",
       "TAGS": {
         "SPECIALIST": "Специалист",
         "NOT_SPECIALIST": "Не специалист",
         "TEALESS": "Tealess",
-        "FOODLESS": "Foodless",
+        "FOODLESS": "Без еды",
         "MAKERS_MARK": "Maker's Mark",
         "MUSCLE_MEMORY": "Muscle Memory"
       }
@@ -689,7 +689,7 @@
         "Copy_folder": "Копировать эту папку её содержимое на ваш аккаунт",
         "Folder_copied": "Папка скопирована на ваш аккаунт",
         "Favorite_folders": "Избранные папки",
-        "Add_rotations": "Add rotations"
+        "Add_rotations": "Добавить ротацию"
       }
     },
     "CATEGORY": {
