@@ -746,14 +746,14 @@
       "Use_reclaim": "'재활용'을 사용할 CP가 충분하기 때문에, 만약 제작이 실패했다면, 재료회수를 위해 '재활용' 을 공정에 추가해야 합니다.",
       "Use_byregot_brow_low_iq_stacks": "'정신집중' 6스택 이하에서 '비레고의 축복'을 사용했습니다. 이 경우에는 '비레고의 기교'가 더 나은 품질을 제공합니다.",
       "Use_byregot_blessing_high_iq_stacks": "'정신집중' 7스택 이상에서 '비레고의 기교'을 사용했습니다. 이 경우에는 '비레고의 축복'이 더 나은 품질을 제공합니다.",
-      "Use_sh1_instead": "{{index}} 에서는 '안정된 솜씨' 를 사용하는 것이 '안정된 솜씨 2'를 사용하는 것보다 CP 3을 절약할 수 있습니다.",
-      "Use_sh2_instead": "{{index}} 에서는 CP 3을 더 소모하여 '안정된 솜씨 2'를 사용하는 것이 '안정된 솜씨'를 사용하는 것보다 신뢰도가 더 높습니다.",
+      "Use_sh1_instead": "{{index}} 번째 공정에서 '안정된 솜씨' 를 사용하는 것이 '안정된 솜씨 2'를 사용하는 것보다 CP 3을 절약할 수 있습니다.",
+      "Use_sh2_instead": "{{index}} 번째 공정에서 CP 3을 더 소모하여 '안정된 솜씨 2'를 사용하는 것이 '안정된 솜씨'를 사용하는 것보다 신뢰도가 더 높습니다.",
       "Use_pbp_first": "'꾸준한 진척'을 다른 작업공정을 진행하기 전에 사용하세요. 이 스킬은 남은 작업량에 따라 효과가 다르기 때문입니다.",
       "Use_mume_if_pbp": "첫 공정에서는 '확신' 을 사용해야 합니다. 이 스킬은 '꾸준한 진척'을 대신하면서도 CP 9를 확보할 수 있습니다.",
-      "Use_observe_before_focused": "주시작업/가공을 100% 성공을 하기 위해서는 {{index}} 에서 '경과 관찰' 을 사용해야 합니다.",
-      "Use_durability_restoration_later": "내구도 회복스킬을 낭비하지 않기 위해서는 {{index}} 에서 내구도 회복스킬을 사용하세요.",
+      "Use_observe_before_focused": "주시작업/가공을 100% 성공을 하기 위해서는 {{index}} 번째 공정에서 '경과 관찰' 을 사용해야 합니다.",
+      "Use_durability_restoration_later": "내구도 회복스킬을 낭비하지 않기 위해서는 {{index}} 번째 공정에서 내구도 회복스킬을 사용하세요.",
       "Use_patient_touch_faster": "'전념 가공'은 '정신집중'의 스택이 쌓이기 전에 사용하세요. 만약 스킬이 실패한다면 스택이 낭비될 수도 있습니다.",
-      "Use_advanced_touch_instead": "You used Basic Touch then Advanced Touch one after another at step {{index}}, you should use two Standard Touches instead to get same potency for 2 less CP.",
+      "Use_advanced_touch_instead": "{{index}} 번째 공정에서 '가공' 과 '고급 가공' 을 사용했습니다. '중급 가공' 을 두번 사용할 경우 CP 2를 절약하면서도 같은 효과를 발휘할 수 있습니다.",
       "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs."
     }
   },
@@ -982,6 +982,6 @@
   },
   "DIRTY": {
     "Dialog_title": "변경 내용이 저장되지 않았습니다",
-    "Dialog_description": "이 페이지를 종료하면 저장되지 않은 모든 변경 내용이 삭제됩니다, 진행하시겠습니까?"
+    "Dialog_description": "이 페이지를 종료하면 저장되지 않은 모든 변경 내용이 삭제됩니다, 계속하시겠습니까?"
   }
 }
