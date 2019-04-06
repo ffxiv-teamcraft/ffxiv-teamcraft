@@ -380,7 +380,7 @@ export class LogTrackerComponent {
             node.slot = slotMatch.slot;
           }
         }
-        node.hidden = !node.items.some(i => i === node.itemId);
+        node.hidden = node.items && !node.items.some(i => i === node.itemId);
         node.mapId = node.map;
         const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(itemId) > -1);
         if (folklore !== undefined) {
