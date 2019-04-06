@@ -430,12 +430,12 @@
         "COPY_NAME_NOT_FAVORITE": "Modo de cópia não-favorita",
         "ADD_ALL_ALARMS": "Adicionar todos os alarmes",
         "WORK_ON_IT": "Trabalhar nisto",
-        "ASSIGN_TEAM_MEMBER": "Assign team members",
-        "EDIT_AMOUNT": "Edit amount",
-        "MARK_HQ": "Mark HQ",
-        "ADD_TO_ANOTHER_LIST": "Add to another list",
-        "REQUIREMENTS": "Requirements",
-        "REMOVE_ITEM": "Remove item from the list"
+        "ASSIGN_TEAM_MEMBER": "Atribuir membros da equipa",
+        "EDIT_AMOUNT": "Editar quantidade",
+        "MARK_HQ": "Marcar como HQ",
+        "ADD_TO_ANOTHER_LIST": "Adicionar a outra lista",
+        "REQUIREMENTS": "Requisitos",
+        "REMOVE_ITEM": "Remover item da lista"
       }
     },
     "LAYOUT": {
