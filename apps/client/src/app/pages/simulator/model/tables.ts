@@ -48,10 +48,21 @@ export class Tables {
     67: 282,
     68: 285,
     69: 288,
-    70: 290
+    70: 290,
+    71: 385,
+    72: 395,
+    73: 400,
+    74: 403,
+    75: 406,
+    76: 409,
+    77: 412,
+    78: 415,
+    79: 418,
+    80: 420
   };
 
   // source: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1956
+  // 80 1-3 star is 430/450/480, not sure if 4-star will be 510 or 520
   public static readonly PROGRESS_PENALTY_TABLE = {
     180: -0.02,
     210: -0.035,
@@ -109,7 +120,21 @@ export class Tables {
     300: 291,   // 70_1star
     320: 292,   // 70_2star
     350: 293,   // 70_3star
-    380: 294   // 70_4star theory
+    380: 294,   // 70_4star
+    385: 368,   // 71 40-dura projection
+    390: 370,   // 71 80-dura projection
+    395: 372,   // 72 projection
+    400: 380,   // 73 projection
+    403: 381,   // 74 projection
+    406: 382,   // 75 projection
+    409: 396,   // 76 projection
+    412: 401,   // 77 projection
+    415: 404,   // 78 projection
+    418: 407,   // 79 projection
+    420: 410,   // 80 projection
+    430: 421,   // 80_1star projection
+    450: 422,   // 80_2star projection
+    480: 423,   // 80_3star projection
   };
 
   // source: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1894
@@ -159,7 +184,21 @@ export class Tables {
     300: 290,   // 70_1star
     320: 291,   // 70_2star
     350: 292,   // 70_3star
-    380: 293   // 70_4star theory
+    380: 293,   // 70_4star
+    385: 367,   // 71 40-dura projection
+    390: 369,   // 71 80-dura projection
+    395: 371,   // 72 projection
+    400: 379,   // 73 projection
+    403: 380,   // 74 projection
+    406: 381,   // 75 projection
+    409: 395,   // 76 projection
+    412: 400,   // 77 projection
+    415: 403,   // 78 projection
+    418: 406,   // 79 projection
+    420: 409,   // 80 projection
+    430: 420,   // 80_1star projection
+    450: 421,   // 80_2star projection
+    480: 422,   // 80_3star projection
   };
 
   // source: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1965
