@@ -204,7 +204,7 @@
   "Game_Term/DoH": "Disciples de la main",
   "Game_Term/DoL": "Disciples de la terre",
   "MIN/BTN": "Mineur / Botaniste",
-  "Game_Term/FSH": "Fisher",
+  "Game_Term/FSH": "Pêcheur",
   "Reduction": "Éthérolyse",
   "Upgrade_list": "Regénérer la liste avec la dernière version de l'application",
   "List_recreated": "Liste regénérée avec succès",
@@ -296,7 +296,7 @@
     "No_nickname_warning": "Accédez à la page paramètres et configurer un pseudo pour pouvoir utiliser les fonctionnalités exclusives aux supporters patron correctement.",
     "Show_devtools": "Afficher les outils de debug",
     "Clear_cache": "Vider le cache (l'application va redémarrer)",
-    "Enable_item_tags": "Enable item tags",
+    "Enable_item_tags": "Activer les tags d'objets",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
@@ -411,7 +411,7 @@
     "List_too_large": "Liste trop longue",
     "List_too_large_description": "Cette liste est trop longue et pourrait être supprimée automatiquement par le système de base de données en raison de quotas imposés si vous y ajoutez plus d'objets.",
     "Add_to_another_list": "Ajouter à une autre liste",
-    "New_tag": "New tag",
+    "New_tag": "Nouveau tag",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -422,20 +422,20 @@
       "Invalid_import": "Code d'import invalide",
       "Global_options": "Options générales",
       "Default_readonly_message": "Le template par défaut est en lecture seule, vous devez créer un nouveau template et utiliser le bouton + pour le modifier.",
-      "Buttons": "Buttons",
+      "Buttons": "Boutons",
       "Menu": "Menu",
-      "Edit_row_buttons_display": "Edit row buttons display",
+      "Edit_row_buttons_display": "Modifier les boutons de raccourci",
       "ITEMS": {
-        "COMMENTS": "Comments",
-        "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
-        "ADD_ALL_ALARMS": "Add all alarms",
-        "WORK_ON_IT": "Work on it",
-        "ASSIGN_TEAM_MEMBER": "Assign team members",
-        "EDIT_AMOUNT": "Edit amount",
-        "MARK_HQ": "Mark HQ",
-        "ADD_TO_ANOTHER_LIST": "Add to another list",
-        "REQUIREMENTS": "Requirements",
-        "REMOVE_ITEM": "Remove item from the list"
+        "COMMENTS": "Commentaires",
+        "COPY_NAME_NOT_FAVORITE": "Mode de copie non favori",
+        "ADD_ALL_ALARMS": "Ajouter toutes les alarmes",
+        "WORK_ON_IT": "Travailler dessus",
+        "ASSIGN_TEAM_MEMBER": "Assigner des objets à des membres",
+        "EDIT_AMOUNT": "Modifier le montant",
+        "MARK_HQ": "Marquer HQ",
+        "ADD_TO_ANOTHER_LIST": "Ajouter à une autre liste",
+        "REQUIREMENTS": "Prérequis",
+        "REMOVE_ITEM": "Supprimer l’élément de la liste"
       }
     },
     "LAYOUT": {
@@ -443,7 +443,7 @@
       "Panel_name": "Nom de la catégorie",
       "Order_by": "Trier par",
       "Order": "Ordre",
-      "Tag_filter": "Tag filter"
+      "Tag_filter": "Filtre de tags"
     }
   },
   "LIST_TAGS": {
@@ -529,14 +529,14 @@
     "Ephemeral_node": "Nœud éphémère, peut être re-déclenché",
     "Intro": "Ici vous pouvez simplement chercher un objet récoltable et voir ses détails, incluant la position, les heures d'apparition et la possibilité de créer une alarme. Commencez à taper un nom et laissez la magie opérer !",
     "Hidden_item": "Caché",
-    "Fish_eyes": "Requires fish eyes",
-    "Snagging": "Requires snagging",
-    "Predators": "Fish these fish before",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
+    "Fish_eyes": "Nécessite les yeux de poisson",
+    "Snagging": "Requiert casaquage",
+    "Predators": "Pêcher ces poissons avant",
+    "Fish_eyes_duration": "Vos yeux de poisson doivent avoir cette durée pour obtenir le poisson",
     "GIG_HEAD": {
-      "Small": "Small Gig Head",
-      "Medium": "Medium Gig Head",
-      "Large": "Large Gig Head"
+      "Small": "Petite pointe de harpon",
+      "Medium": "Pointe de harpon moyenne",
+      "Large": "Pointe de harpon large"
     }
   },
   "ANNOUNCEMENT": {
@@ -644,29 +644,29 @@
     "New_rotation_folder": "Nouveau dossier",
     "Safe_mode": "Mode garanti",
     "Safe_mode_tooltip": "Désactive toutes les actions qui n'ont pas 100% de chance de réussite (prend en compte les bonus)",
-    "Quality_needed": "{{amount}} more quality to reach 100%",
-    "Rotation_tips": "Rotation tips",
+    "Quality_needed": "{{amount}} plus de qualité pour atteindre 100 %",
+    "Rotation_tips": "Conseils de rotation",
     "COMMUNITY_ROTATIONS": {
-      "Title": "Community rotations",
-      "Community_rotation": "Community rotation",
-      "No_rotations_matching": "No rotations matching",
-      "Name_filter_placeholder": "Rotation name",
+      "Title": "Rotations communautaires",
+      "Community_rotation": "Rotation communautaire",
+      "No_rotations_matching": "Aucune rotation correspondante",
+      "Name_filter_placeholder": "Nom de la rotation",
       "Tags_filter_placeholder": "Tags",
-      "Durability_filter_placeholder": "Durability",
-      "Rlvl_filter_placeholder": "Recipe lvl",
-      "Filters_reset": "Reset filters",
-      "Configuration_popup": "Share with the community",
-      "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
-      "Min_control_filter_placeholder": "Min. Control",
-      "Min_cp_filter_placeholder": "Min. CP",
-      "Intro": "Input some filters to get started",
+      "Durability_filter_placeholder": "Solidité",
+      "Rlvl_filter_placeholder": "Niveau de la recette",
+      "Filters_reset": "Réinitialiser les filtres",
+      "Configuration_popup": "Partager avec la communauté",
+      "Min_craftsmanship_filter_placeholder": "Habileté min",
+      "Min_control_filter_placeholder": "Contrôle min",
+      "Min_cp_filter_placeholder": "PS min",
+      "Intro": "Saisir quelques filtres pour commencer",
       "TAGS": {
-        "SPECIALIST": "Specialist",
-        "NOT_SPECIALIST": "Not specialist",
-        "TEALESS": "Tealess",
-        "FOODLESS": "Foodless",
-        "MAKERS_MARK": "Maker's Mark",
-        "MUSCLE_MEMORY": "Muscle Memory"
+        "SPECIALIST": "Spécialiste",
+        "NOT_SPECIALIST": "Non spécialiste",
+        "TEALESS": "Sans médicament",
+        "FOODLESS": "Sans nourriture",
+        "MAKERS_MARK": "Marque du fabricant",
+        "MUSCLE_MEMORY": "Mémoire musculaire"
       }
     },
     "CUSTOM": {
@@ -689,7 +689,7 @@
         "Copy_folder": "Copier ce dossier et son contenu dans votre compte",
         "Folder_copied": "Dossier copié sur votre compte",
         "Favorite_folders": "Dossiers favoris",
-        "Add_rotations": "Add rotations"
+        "Add_rotations": "Ajouter des rotations"
       }
     },
     "CATEGORY": {
@@ -814,8 +814,8 @@
     "No_anonymous_join": "Vous devez créer un compte pour pouvoir rejoindre une équipe",
     "Already_in_team": "Vous êtes déjà dans cette équipe",
     "Webhook_configuration": "Paramètres du bot",
-    "Officer": "Officer",
-    "Promote_officer": "Promote to officer",
+    "Officer": "Officier",
+    "Promote_officer": "Promouvoir officier",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été ajouté à ** [{{listName}}] ({{listUrl}}) **.",
       "Item_removed": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été retiré de ** [{{listName}}] ({{listUrl}})**.",
