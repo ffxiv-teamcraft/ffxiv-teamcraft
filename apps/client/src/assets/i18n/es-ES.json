@@ -69,7 +69,8 @@
     "Share_link_copied": "Vínculo para compartir taller copiado",
     "Not_found": "Taller no encontrado o no tiene acceso a él",
     "Shared_workshops": "Talleres compartidos contigo",
-    "Rename": "Renombrar taller"
+    "Rename": "Renombrar taller",
+    "Add_lists": "Add lists"
   },
   "ABOUT": {
     "title": "Acerca de",
@@ -116,7 +117,8 @@
     "Language": "Idioma",
     "Opened_in_desktop": "Esta página ha sido abierta en su aplicación de escritorio, ahora puede cerrarla.",
     "Open_in_desktop": "Abrir en la aplicación de escritorio",
-    "Admin": "Administrador"
+    "Admin": "Administrador",
+    "Minutes_duration": "{{amount}} minutes"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -134,6 +136,8 @@
     "Macro_copied": "Macro copiada al portapapeles",
     "Open_overlay": "Abrir capa sobrepuesta",
     "More_available": "y {{amount}} más...",
+    "Node_content": "Node content",
+    "More_than_three_days": "> 3 days",
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
@@ -199,6 +203,8 @@
   "Anonymous_Warning": "Debería crear una cuenta para evitar perder sus listas y activar más características como filtro adaptable",
   "Game_Term/DoH": "Discípulos de la Mano",
   "Game_Term/DoL": "Discípulos de la Tierra",
+  "MIN/BTN": "Miner / Botanist",
+  "Game_Term/FSH": "Fisher",
   "Reduction": "Reducción",
   "Upgrade_list": "Recrear listas con la última actualización de la aplicación",
   "List_recreated": "Lista recreada apropiadamente",
@@ -290,6 +296,7 @@
     "No_nickname_warning": "Por favor vaya a la página de configuración y configure un apodo para poder usar correctamente las características exclusivas de patron.",
     "Show_devtools": "Mostrar herramientas de desarrollador",
     "Clear_cache": "Borrar caché (reiniciará la aplicación)",
+    "Enable_item_tags": "Enable item tags",
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
@@ -403,7 +410,8 @@
     "Add_item": "Agregar un artículo",
     "List_too_large": "Lista demasiado larga",
     "List_too_large_description": "Esta lista es muy larga y puede llegar al limite de tamaño de la base de datos debido a toda la información que lleva. No le será permitido añadir más elementos para asegurar que no pierda la lista.",
-    "Add_to_another_list": "Add to another list",
+    "Add_to_another_list": "Añadir a otra lista",
+    "New_tag": "New tag",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -413,13 +421,29 @@
       "Layout_name": "Nombre del diseño",
       "Invalid_import": "Código de importación invalido",
       "Global_options": "Opciones generales",
-      "Default_readonly_message": "El diseño predeterminado es de sólo lectura, tiene que crear un nuevo diseño con el botón + para poder personalizarlo."
+      "Default_readonly_message": "El diseño predeterminado es de sólo lectura, tiene que crear un nuevo diseño con el botón + para poder personalizarlo.",
+      "Buttons": "Buttons",
+      "Menu": "Menu",
+      "Edit_row_buttons_display": "Edit row buttons display",
+      "ITEMS": {
+        "COMMENTS": "Comments",
+        "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
+        "ADD_ALL_ALARMS": "Add all alarms",
+        "WORK_ON_IT": "Work on it",
+        "ASSIGN_TEAM_MEMBER": "Assign team members",
+        "EDIT_AMOUNT": "Edit amount",
+        "MARK_HQ": "Mark HQ",
+        "ADD_TO_ANOTHER_LIST": "Add to another list",
+        "REQUIREMENTS": "Requirements",
+        "REMOVE_ITEM": "Remove item from the list"
+      }
     },
     "LAYOUT": {
       "Filter": "Filtro",
       "Panel_name": "Nombre del panel",
       "Order_by": "Ordenar por",
-      "Order": "Orden"
+      "Order": "Orden",
+      "Tag_filter": "Tag filter"
     }
   },
   "LIST_TAGS": {
@@ -504,7 +528,16 @@
     "Gathering_name": "Ingrese nombre del artículo",
     "Ephemeral_node": "Nodo efímero, puede reaparecer",
     "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!",
-    "Hidden_item": "Oculto"
+    "Hidden_item": "Oculto",
+    "Fish_eyes": "Requires fish eyes",
+    "Snagging": "Requires snagging",
+    "Predators": "Fish these fish before",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
+    "GIG_HEAD": {
+      "Small": "Small Gig Head",
+      "Medium": "Medium Gig Head",
+      "Large": "Large Gig Head"
+    }
   },
   "ANNOUNCEMENT": {
     "Title": "Anuncio",
@@ -546,7 +579,8 @@
     "Propagate_changes": "Propagar permisos a las listas dentro del taller",
     "Propagate_changes_done": "Cambios propagados a las listas dentro del taller",
     "Team_notice": "El equipo asociado a esta lista automáticamente tiene el permiso de PARTICIPAR",
-    "Default_permission_level": "Nivel de permiso predeterminado"
+    "Default_permission_level": "Nivel de permiso predeterminado",
+    "List_tooltip": "Nivel de permisos para todos: {{level}}"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -610,6 +644,31 @@
     "New_rotation_folder": "Nueva carpeta",
     "Safe_mode": "Modo seguro",
     "Safe_mode_tooltip": "Deshabilita todas las habilidades que no tienen 100% de probabilidad de tener éxito (toma mejoras/bonos en cuenta)",
+    "Quality_needed": "{{amount}} more quality to reach 100%",
+    "Rotation_tips": "Rotation tips",
+    "COMMUNITY_ROTATIONS": {
+      "Title": "Community rotations",
+      "Community_rotation": "Community rotation",
+      "No_rotations_matching": "No rotations matching",
+      "Name_filter_placeholder": "Rotation name",
+      "Tags_filter_placeholder": "Tags",
+      "Durability_filter_placeholder": "Durability",
+      "Rlvl_filter_placeholder": "Recipe lvl",
+      "Filters_reset": "Reset filters",
+      "Configuration_popup": "Share with the community",
+      "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
+      "Min_control_filter_placeholder": "Min. Control",
+      "Min_cp_filter_placeholder": "Min. CP",
+      "Intro": "Input some filters to get started",
+      "TAGS": {
+        "SPECIALIST": "Specialist",
+        "NOT_SPECIALIST": "Not specialist",
+        "TEALESS": "Tealess",
+        "FOODLESS": "Foodless",
+        "MAKERS_MARK": "Maker's Mark",
+        "MUSCLE_MEMORY": "Muscle Memory"
+      }
+    },
     "CUSTOM": {
       "Recipe_configuration": "Configuración de receta",
       "Recipe_level": "Nivel de receta",
@@ -629,7 +688,8 @@
         "Created_by": "Creado por {{name}}",
         "Copy_folder": "Copiar esta carpeta y su contenido a su cuenta",
         "Folder_copied": "Carpeta copiada a su cuenta",
-        "Favorite_folders": "Carpeta de favoritos"
+        "Favorite_folders": "Carpeta de favoritos",
+        "Add_rotations": "Add rotations"
       }
     },
     "CATEGORY": {
@@ -677,6 +737,24 @@
       "MISSING_LEVEL_REQUIREMENT": "No tiene el nivel requerido",
       "NOT_SPECIALIST": "Rotación de especialista pero no especialista",
       "NO_INNER_QUIET": "Intento de usar acción de Inner Quiet sin tener Inner Quiet habilitado"
+    },
+    "ROTATION_TIPS": {
+      "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
+      "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
+      "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
+      "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
+      "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
+      "Use_byregot_brow_low_iq_stacks": "You used Byregot's Blessing with less than 6 stacks. Using Byregot's Brow is better in this case as it will produce more quality.",
+      "Use_byregot_blessing_high_iq_stacks": "You used Byregot's Brow with more than 6 stacks. Using Byregot's Blessing is better in this case as it will produce more quality.",
+      "Use_sh1_instead": "You used Steady Hand II at step {{index}} while using Steady Hand I would be enough and would cost 3 less CP.",
+      "Use_sh2_instead": "You used Steady Hand I at step {{index}} while using Steady Hand II give you more reliability at the cost of 3 CP.",
+      "Use_pbp_first": "You should use Piece by Piece before any other synthesis action, as it scales on the remaining progress to do",
+      "Use_mume_if_pbp": "You should use Muscle Memory at step 1 in order to replace one Piece by Piece and gain 9 extra CP",
+      "Use_observe_before_focused": "You should use Observe before the Focused action at step {{index}} in order to get a free 100% success rate.",
+      "Use_durability_restoration_later": "You should use the durability restoration action at step {{index}} later in order to avoid wasting durability restoration.",
+      "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
+      "Use_advanced_touch_instead": "You used Basic Touch then Advanced Touch one after another at step {{index}}, you should use two Standard Touches instead to get same potency for 2 less CP.",
+      "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs."
     }
   },
   "PRICING": {
@@ -736,6 +814,8 @@
     "No_anonymous_join": "Debe crear una cuenta para poder unirse a un equipo",
     "Already_in_team": "Usted ya está en este equipo",
     "Webhook_configuration": "Configuración de Webhook",
+    "Officer": "Officer",
+    "Promote_officer": "Promote to officer",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han añadido a **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han quitado de **[{{listName}}]({{listUrl}})**.",
@@ -811,7 +891,11 @@
     "Mark_as_done": "Marcar este artículo como hecho",
     "Mark_as_not_done": "Marcar este artículo como no hecho",
     "Create_list": "Crear una lista para completar esta página",
-    "Required_for_achievement": "Required for the achievements",
+    "Folklore": "Regional Folklore",
+    "Timed": "Timed",
+    "Weather_dependant": "Only with some weathers",
+    "View_on_ff14angler": "More details on ff14angler",
+    "Required_for_achievement": "Requerido para los logros",
     "PAGE": {
       "Master_recipes": "Recetas maestras ({{number}})",
       "Housing_items": "Artículos de vivienda({{number}})",
@@ -895,5 +979,9 @@
       "Parsing_file": "Procesando contenido de archivo...",
       "Saving_items": "Guardando artículos ({{done}}/{{todo}})"
     }
+  },
+  "DIRTY": {
+    "Dialog_title": "You have unsaved changes",
+    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
   }
 }
