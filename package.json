@@ -146,7 +146,7 @@
   "devDependencies": {
     "@angular/cli": "~7.2.2",
     "@nrwl/schematics": "7.5.1",
-    "cypress": "3.1.5",
+    "cypress": "3.2.0",
     "@nrwl/builders": "7.5.1",
     "@angular-devkit/build-angular": "~0.11.0",
     "@angular-devkit/schematics": "^0.8.8",
