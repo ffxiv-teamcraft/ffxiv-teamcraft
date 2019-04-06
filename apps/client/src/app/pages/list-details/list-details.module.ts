@@ -46,6 +46,7 @@ import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.modul
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { ItemPickerModule } from '../../modules/item-picker/item-picker.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
+import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 
 const routes: Routes = [
   {
@@ -86,6 +87,7 @@ const routes: Routes = [
     ItemPickerModule,
     LayoutModule,
     ListPickerModule,
+    TooltipModule,
 
     FlexLayoutModule,
 

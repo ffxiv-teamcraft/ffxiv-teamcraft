@@ -21,14 +21,6 @@ export class SettingsService {
     return ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko', 'zh', 'ru'];
   }
 
-  public get baseLink(): string {
-    return this.getSetting('base-link', 'Garlandtools');
-  }
-
-  public set baseLink(base: string) {
-    this.setSetting('base-link', base);
-  }
-
   public get timeFormat(): '24H' | '12H' {
     return this.getSetting('time-format', '24H') as '24H' | '12H';
   }
@@ -78,14 +70,6 @@ export class SettingsService {
     this.setSetting('compact-alarms', compact.toString());
   }
 
-  public get notificationsMuted(): boolean {
-    return this.getSetting('notifications-muted', 'false') === 'true';
-  }
-
-  public set notificationsMuted(compact: boolean) {
-    this.setSetting('notifications-muted', compact.toString());
-  }
-
   public get expectToSellEverything(): boolean {
     return this.getSetting('pricing:expect-sell-all', 'false') === 'true';
   }
@@ -112,15 +96,6 @@ export class SettingsService {
     this.setSetting('alarm:hours-before', hours.toString());
   }
 
-  public get preferredStartingPoint(): number {
-    // Default value is Rhalgr's reach, 2403
-    return +this.getSetting('preferred-starting-point', '2403');
-  }
-
-  public set preferredStartingPoint(id: number) {
-    this.setSetting('preferred-starting-point', id.toString());
-  }
-
   public get alarmSound(): string {
     return this.getSetting('alarm:sound', 'Notification');
   }
@@ -145,20 +120,20 @@ export class SettingsService {
     this.setSetting('alarms:muted', muted.toString());
   }
 
-  public get ffxivcraftingDisplay(): boolean {
-    return this.getSetting('ffxivcrafting-display', 'false') === 'true';
-  }
-
-  public set ffxivcraftingDisplay(display: boolean) {
-    this.setSetting('ffxivcrafting-display', display.toString());
-  }
-
   public get noPanelBorders(): boolean {
     return this.getSetting('noPanelBorders', 'false') === 'true';
   }
 
   public set noPanelBorders(borders: boolean) {
     this.setSetting('noPanelBorders', borders.toString());
+  }
+
+  public get itemTagsEnabled(): boolean {
+    return this.getSetting('itemTagsEnabled', 'false') === 'true';
+  }
+
+  public set itemTagsEnabled(tagsEnabled: boolean) {
+    this.setSetting('itemTagsEnabled', tagsEnabled.toString());
   }
 
   private getSetting(name: string, defaultValue: string): string {

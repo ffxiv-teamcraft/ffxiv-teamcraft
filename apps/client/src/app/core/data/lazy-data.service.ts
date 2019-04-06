@@ -35,6 +35,8 @@ export class LazyDataService {
 
   public actions: any = {};
 
+  public icons: any = {};
+
   public get allItems(): any {
     const res = { ...this.items };
     Object.keys(this.koItems).forEach(koKey => {
@@ -75,7 +77,8 @@ export class LazyDataService {
       this.http.get('./assets/data/ko/ko-job-categories.json'),
       this.http.get('./assets/data/actions.json'),
       this.http.get('./assets/data/craft-actions.json'),
-      this.http.get('./assets/data/npcs.json')
+      this.http.get('./assets/data/npcs.json'),
+      this.http.get('./assets/data/item-icons.json')
     ).subscribe(([
                    items,
                    zhItems,
@@ -96,7 +99,8 @@ export class LazyDataService {
                    koJobCategories,
                    actions,
                    craftActions,
-                   npcs
+                   npcs,
+                   icons
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -118,6 +122,7 @@ export class LazyDataService {
       this.actions = actions;
       this.craftActions = craftActions;
       this.npcs = npcs;
+      this.icons = icons;
       this.loaded$.next(true);
     });
   }

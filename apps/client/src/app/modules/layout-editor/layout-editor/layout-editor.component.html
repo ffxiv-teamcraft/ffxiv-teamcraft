@@ -36,6 +36,9 @@
       <input type="text" nz-input [(ngModel)]="layout.name"
              [disabled]="layout.name === 'Default Layout'" (ngModelChange)="dirty = true">
     </nz-input-group>
+    <button nz-button nzBlock (click)="editRowButtons(layout)">
+      {{'LIST_DETAILS.LAYOUT_DIALOG.Edit_row_buttons_display' | translate}}
+    </button>
     <nz-card [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Global_options' | translate">
       <div fxLayout="column" fxLayoutGap="10px">
         <label nz-checkbox [nzDisabled]="layout.name === 'Default Layout'"
@@ -88,6 +91,10 @@
       </div>
     </nz-card>
     <div ngxDroppable fxLayout="column" fxLayoutGap="10px" (drop)="moveRow($event.value, $event.dropIndex, layout)">
+      <button nz-button nzType="primary" nzBlock (click)="addPanel(layout)"
+              [disabled]="layout.name === 'Default Layout'">
+        <i nz-icon type="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
+      </button>
       <div *ngFor="let row of layout.rows; trackBy: trackByRow" ngxDraggable [model]="row">
         <app-layout-editor-row [row]="row" (rowChange)="updatePanel(layout, $event)"
                                [readonly]="layout.name === 'Default Layout'"
@@ -95,7 +102,4 @@
       </div>
     </div>
   </div>
-  <button nz-button nzType="primary" nzBlock (click)="addPanel(layout)" [disabled]="layout.name === 'Default Layout'">
-    <i nz-icon type="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
-  </button>
 </div>

@@ -1,0 +1,15 @@
+<div fxLayout="column">
+  <div *ngFor="let tip of tips; let last = last">
+    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="24px">
+      <div>
+        <div [ngSwitch]="tip.type">
+          <i nz-icon *ngSwitchCase="0" nzType="exclamation-circle" nzTheme="twotone" [nzTwotoneColor]="'red'"></i>
+          <i nz-icon *ngSwitchCase="1" nzType="warning" nzTheme="twotone" [nzTwotoneColor]="'yellow'"></i>
+          <i nz-icon *ngSwitchCase="2" nzType="info-circle" nzTheme="twotone"></i>
+        </div>
+      </div>
+      <div>{{('SIMULATOR.ROTATION_TIPS.' + tip.message) | translate: tip.messageParams(result)}}</div>
+    </div>
+    <nz-divider *ngIf="!last"></nz-divider>
+  </div>
+</div>

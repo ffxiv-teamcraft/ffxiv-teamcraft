@@ -1,6 +1,10 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { LayoutRowFilter } from '../../../core/layout/layout-row-filter';
 import { LayoutRow } from '../../../core/layout/layout-row';
+import { SettingsService } from '../../settings/settings.service';
+import { BehaviorSubject, combineLatest } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-layout-editor-row',
@@ -24,7 +28,20 @@ export class LayoutEditorRowComponent implements OnInit {
 
   isOtherRow = false;
 
+  tagInput$ = new BehaviorSubject<string>('');
+
+  availableTags$ = combineLatest(this.tagInput$, this.authFacade.user$).pipe(
+    map(([input, user]) => {
+      return user.itemTags
+        .filter(entry => entry.tag.toLowerCase().indexOf(input.toLowerCase()) > -1)
+        .map(entry => entry.tag);
+    })
+  );
+
   public filter: { isBooleanGate: boolean, reversed: boolean, value: string }[] = [];
+
+  constructor(public settings: SettingsService, private authFacade: AuthFacade) {
+  }
 
   filterChange(): void {
     this.row.filterName = this.filterToName();
@@ -40,7 +57,11 @@ export class LayoutEditorRowComponent implements OnInit {
   }
 
   public addFragment(): void {
-    this.filter.push({ isBooleanGate: true, reversed: false, value: 'or' }, { isBooleanGate: false, reversed: false, value: 'NONE' });
+    this.filter.push({ isBooleanGate: true, reversed: false, value: 'or' }, {
+      isBooleanGate: false,
+      reversed: false,
+      value: 'NONE'
+    });
     this.rowChange.emit(this.row);
   }
 
@@ -69,7 +90,7 @@ export class LayoutEditorRowComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.isOtherRow = this.row.filter.name === "ANYTHING";
+    this.isOtherRow = this.row.isOtherRow();
     this.filter = this.row.filterName.split(':').map(fragment => {
       const result = {
         isBooleanGate: fragment === 'or' || fragment === 'and',

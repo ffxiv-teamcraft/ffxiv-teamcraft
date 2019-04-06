@@ -146,9 +146,6 @@ workflows:
         - test:
             requires:
               - setup
-        - e2e:
-            requires:
-              - setup
         - build:
               requires:
               - lint

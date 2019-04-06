@@ -45,11 +45,13 @@ const getAllPages = (endpoint, body) => {
       }
       return get(url, body).pipe(
         tap(result => {
+          console.log(`${url} : ${result.Pagination.Page}/${result.Pagination.PageTotal}`);
           if (result.Pagination.PageNext > page) {
             page$.next(result.Pagination.PageNext);
-            console.log(`${url} : ${result.Pagination.Page}/${result.Pagination.PageTotal}`);
           } else {
-            complete$.next(null);
+            setTimeout(() => {
+              complete$.next(null);
+            }, 250);
           }
         })
       );
@@ -88,6 +90,8 @@ module.exports.getAllEntries = (endpoint, key, startsAt0) => {
 module.exports.getOnePage = (endpoint) => {
   return get(endpoint);
 };
+
+module.exports.addQueryParam = (url, paramName, paramValue) => addQueryParam(url, paramName, paramValue);
 
 module.exports.persistToJson = (fileName, content) => fs.writeFileSync(path.join(outputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
 module.exports.persistToJsonAsset = (fileName, content) => fs.writeFileSync(path.join(assetOutputFolder, `${fileName}.json`), JSON.stringify(content));

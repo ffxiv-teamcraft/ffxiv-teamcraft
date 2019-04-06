@@ -30,7 +30,7 @@ export class ManipulationII extends BuffAction {
     return [4574, 4575, 4576, 4577, 4578, 4579, 4580, 4581];
   }
 
-  protected getOverrides(): Buff[] {
+  public getOverrides(): Buff[] {
     return super.getOverrides().concat(Buff.MANIPULATION);
   }
 

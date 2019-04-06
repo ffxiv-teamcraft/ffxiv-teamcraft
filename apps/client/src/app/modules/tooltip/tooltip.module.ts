@@ -14,6 +14,8 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { UiColorsService } from './ui-colors.service';
 import { UiTextPipe } from './xiv-ui-text.pipe';
 import { CoreModule } from '../../core/core.module';
+import { FishTooltipComponent } from './fish-tooltip/fish-tooltip.component';
+import { FishTooltipDirective } from './fish-tooltip/fish-tooltip.directive';
 
 @NgModule({
   imports: [
@@ -26,9 +28,9 @@ import { CoreModule } from '../../core/core.module';
     PipesModule,
     CoreModule
   ],
-  declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe],
-  exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective],
-  entryComponents: [XivapiActionTooltipComponent, XivapiItemTooltipComponent],
+  declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, FishTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, FishTooltipDirective, UiTextPipe],
+  exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, FishTooltipDirective],
+  entryComponents: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, FishTooltipComponent],
   providers: [TooltipDataService, UiColorsService]
 })
 export class TooltipModule {

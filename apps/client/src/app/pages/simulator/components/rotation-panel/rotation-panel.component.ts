@@ -44,6 +44,9 @@ export class RotationPanelComponent {
 
   private syncLinkUrl: string;
 
+  @Input()
+  public publicDisplay = false;
+
   constructor(private registry: CraftingActionsRegistry, private linkTools: LinkToolsService,
               private rotationsFacade: RotationsFacade, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,

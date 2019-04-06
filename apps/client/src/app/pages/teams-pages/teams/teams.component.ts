@@ -64,6 +64,16 @@ export class TeamsComponent implements OnInit {
     }
   }
 
+  public addOfficer(team: Team, member: string): void {
+    team.officers.push(member);
+    this.updateTeam(team);
+  }
+
+  public removeOfficer(team: Team, member: string): void {
+    team.officers = team.officers.filter(m => m !== member);
+    this.updateTeam(team);
+  }
+
   private setWebhook(key: string, hook: string): Observable<any> {
     return this.myTeams$.pipe(
       map(teams => teams.find(team => team.$key === key)),

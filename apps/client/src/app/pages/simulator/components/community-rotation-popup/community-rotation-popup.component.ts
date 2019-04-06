@@ -1,0 +1,55 @@
+import { Component, OnInit } from '@angular/core';
+import { Simulation } from '../../simulation/simulation';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
+import { RotationTag } from '../community-rotations-page/rotation-tag';
+import { CommunityRotationsPageComponent } from '../community-rotations-page/community-rotations-page.component';
+import { MuscleMemory } from '../../model/actions/progression/muscle-memory';
+import { MakersMark } from '../../model/actions/buff/makers-mark';
+
+@Component({
+  selector: 'app-community-rotation-popup',
+  templateUrl: './community-rotation-popup.component.html',
+  styleUrls: ['./community-rotation-popup.component.less']
+})
+export class CommunityRotationPopupComponent implements OnInit {
+
+  public rotation: CraftingRotation;
+
+  public simulation: Simulation;
+
+  public bonuses: any;
+
+  public tags: any[];
+
+  public rlvls = CommunityRotationsPageComponent.RLVLS;
+
+  constructor() {
+    this.tags = Object.keys(RotationTag).map(key => {
+      return {
+        value: key,
+        label: `SIMULATOR.COMMUNITY_ROTATIONS.TAGS.${key}`
+      };
+    });
+  }
+
+  ngOnInit(): void {
+    const minStats = this.simulation.getMinStats();
+    this.rotation.community = this.rotation.community || {
+      rlvl: this.rotation.recipe.rlvl < 50 ? Math.floor(this.rotation.recipe.rlvl / 10) * 10 : this.rotation.recipe.rlvl,
+      durability: this.rotation.recipe.durability,
+      minControl: minStats.control - this.bonuses.control,
+      minCraftsmanship: minStats.craftsmanship - this.bonuses.craftsmanship,
+      minCp: Math.max(minStats.cp - this.bonuses.cp, 180)
+    };
+    if (this.rotation.tags.length === 0) {
+      const actions = this.simulation.steps.map(step => step.action);
+      if (actions.some(action => action.is(MuscleMemory)) && this.rotation.tags.indexOf('MUSCLE_MEMORY') === -1) {
+        this.rotation.tags.push('MUSCLE_MEMORY');
+      }
+      if (actions.some(action => action.is(MakersMark)) && this.rotation.tags.indexOf('MAKERS_MARK') === -1) {
+        this.rotation.tags.push('MAKERS_MARK');
+      }
+    }
+  }
+
+}

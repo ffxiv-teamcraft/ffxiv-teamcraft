@@ -21,7 +21,7 @@ export class SteadyHand extends BuffAction {
     return [244, 245, 246, 247, 248, 249, 250, 251];
   }
 
-  protected getOverrides(): Buff[] {
+  public getOverrides(): Buff[] {
     return super.getOverrides().concat(Buff.STEADY_HAND_II);
   }
 

@@ -64,6 +64,30 @@
         <nz-option [nzValue]="1" nzLabel="DESC"></nz-option>
       </nz-select>
     </div>
+    <div class="tags" *ngIf="settings.itemTagsEnabled && !isOtherRow">
+      {{'LIST_DETAILS.LAYOUT.Tag_filter' | translate}}
+      <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+        <ng-template #addOnBeforeTemplate>
+          <nz-select [(ngModel)]="row.hasTag"
+                     (ngModelChange)="$event === null? row.tag = '':null; rowChange.emit(row)"
+                     [nzDisabled]="readonly"
+          class="tag-filter-select">
+            <nz-option [nzValue]="null" nzLabel="NONE"></nz-option>
+            <nz-option [nzValue]="true" nzLabel="INCLUDES"></nz-option>
+            <nz-option [nzValue]="false" nzLabel="DOESN'T INCLUDE"></nz-option>
+          </nz-select>
+        </ng-template>
+        <input [disabled]="readonly || row.hasTag === null" type="text" nz-input [(ngModel)]="row.tag"
+               (input)="tagInput$.next($event.target?.value)"
+               (ngModelChange)="rowChange.emit(row)" [nzAutocomplete]="tagsComplete"
+        />
+        <nz-autocomplete nzBackfill #tagsComplete>
+          <nz-auto-option *ngFor="let option of availableTags$ | async" [nzValue]="option">
+            {{ option }}
+          </nz-auto-option>
+        </nz-autocomplete>
+      </nz-input-group>
+    </div>
   </div>
 </nz-card>
 <ng-template #title>

@@ -38,36 +38,52 @@ import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-f
 import { RotationFolderPanelComponent } from './components/rotation-folder-panel/rotation-folder-panel.component';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { CustomLinksModule } from '../../modules/custom-links/custom-links.module';
+import { RotationTipsPopupComponent } from './components/rotation-tips-popup/rotation-tips-popup.component';
+import { RotationTipsModule } from './rotation-tips/rotation-tips.module';
+import { DirtyModule } from '../../core/dirty/dirty.module';
+import { DirtyGuard } from '../../core/dirty/dirty-guard';
+import { CommunityRotationsPageComponent } from './components/community-rotations-page/community-rotations-page.component';
+import { CommunityRotationPopupComponent } from './components/community-rotation-popup/community-rotation-popup.component';
 
 const routes: Routes = [
   {
     path: 'simulator/custom/:rotationId',
     component: CustomSimulatorPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard],
+    canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator/custom',
     component: CustomSimulatorPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard],
+    canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator/:itemId/:recipeId',
     component: SimulatorPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard],
+    canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator/:itemId/:recipeId/:rotationId',
     component: SimulatorPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard],
+    canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator/:itemId',
     component: SimulatorPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard],
+    canDeactivate: [DirtyGuard]
   },
   {
     path: 'rotations',
     component: RotationsPageComponent,
+    canActivate: [MaintenanceGuard]
+  },
+  {
+    path: 'community-rotations',
+    component: CommunityRotationsPageComponent,
     canActivate: [MaintenanceGuard]
   },
   {
@@ -97,6 +113,7 @@ const routes: Routes = [
     FavoritesModule,
     UserAvatarModule,
     CustomLinksModule,
+    RotationTipsModule,
 
     NgZorroAntdModule,
 
@@ -106,7 +123,8 @@ const routes: Routes = [
     TooltipModule,
     PipesModule,
     CoreModule,
-    SettingsModule
+    SettingsModule,
+    DirtyModule
   ],
   declarations: [
     CustomSimulatorPageComponent,
@@ -120,7 +138,10 @@ const routes: Routes = [
     RotationPanelComponent,
     RotationFolderPageComponent,
     StepByStepReportComponent,
-    RotationFolderPanelComponent
+    RotationFolderPanelComponent,
+    RotationTipsPopupComponent,
+    CommunityRotationsPageComponent,
+    CommunityRotationPopupComponent
   ],
   exports: [
     RotationPanelComponent,
@@ -130,7 +151,9 @@ const routes: Routes = [
     MacroPopupComponent,
     SimulationMinStatsPopupComponent,
     RecipeChoicePopupComponent,
-    StepByStepReportComponent
+    StepByStepReportComponent,
+    RotationTipsPopupComponent,
+    CommunityRotationPopupComponent
   ],
   providers: [
     CraftingActionsRegistry,

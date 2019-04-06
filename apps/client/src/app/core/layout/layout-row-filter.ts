@@ -252,7 +252,7 @@ export class LayoutRowFilter {
 
   static get ALL_NAMES(): string[] {
     return Object.keys(LayoutRowFilter)
-      .filter(key => ['ALL', 'ALL_NAMES', 'ANYTHING', 'fromString', 'processRows', 'not'].indexOf(key) === -1);
+      .filter(key => ['ALL', 'ALL_NAMES', 'fromString', 'processRows', 'not'].indexOf(key) === -1);
   }
 
   public get name(): string {

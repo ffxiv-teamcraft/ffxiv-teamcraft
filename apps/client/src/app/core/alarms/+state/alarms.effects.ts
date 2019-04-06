@@ -12,7 +12,16 @@ import {
   UpdateAlarm,
   UpdateAlarmGroup
 } from './alarms.actions';
-import { bufferTime, debounceTime, distinctUntilChanged, filter, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import {
+  bufferTime,
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  map,
+  switchMap,
+  tap,
+  withLatestFrom
+} from 'rxjs/operators';
 import { combineLatest, EMPTY } from 'rxjs';
 import { AlarmsFacade } from './alarms.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -53,6 +62,19 @@ export class AlarmsEffects {
       map(([action, userId]) => {
         return (<AddAlarms>action).payload.map(alarm => {
           return new Alarm({ ...alarm, userId: userId });
+        });
+      }),
+      withLatestFrom(this.alarmsFacade.allAlarms$),
+      map(([alarms, allAlarms]: [Alarm[], Alarm[]]) => {
+        return alarms.filter(alarm => {
+          return allAlarms.filter(a => {
+            return a.mapId === alarm.mapId
+              && a.weathers === alarm.weathers
+              && a.itemId === alarm.itemId
+              && a.duration === alarm.duration
+              && a.coords === alarm.coords
+              && a.zoneId === alarm.zoneId;
+          }).length === 1;
         });
       }),
       switchMap((alarms: Alarm[]) => {

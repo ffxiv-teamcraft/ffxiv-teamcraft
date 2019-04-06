@@ -21,6 +21,12 @@ export class MapPositionComponent {
   @Input()
   mapId: number;
 
+  @Input()
+  showZoneName = false;
+
+  @Input()
+  flex = 'column';
+
   constructor(private dialog: NzModalService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService) {
   }

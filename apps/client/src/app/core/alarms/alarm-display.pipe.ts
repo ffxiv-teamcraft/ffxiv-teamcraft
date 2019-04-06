@@ -3,7 +3,7 @@ import { AlarmDisplay } from './alarm-display';
 import { Alarm } from './alarm';
 import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, Observable } from 'rxjs';
-import { EorzeanTimeService } from '../time/eorzean-time.service';
+import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { map } from 'rxjs/operators';
 
 @Pipe({

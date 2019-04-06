@@ -16,8 +16,8 @@ import { PlatformService } from './tools/platform.service';
 import { MathToolsService } from './tools/math-tools';
 import { I18nToolsService } from './tools/i18n-tools.service';
 import { BellNodesService } from './data/bell-nodes.service';
-import { EorzeanTimeService } from './time/eorzean-time.service';
-import { TimerPipe } from './time/timer.pipe';
+import { EorzeanTimeService } from './eorzea/eorzean-time.service';
+import { TimerPipe } from './eorzea/timer.pipe';
 import { HtmlToolsService } from './tools/html-tools.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -31,6 +31,7 @@ import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
 import { PatreonService } from './patreon/patreon.service';
 import { CustomLink } from './database/custom-links/custom-link';
 import { ListTemplate } from './database/custom-links/list-template';
+import { WeatherService } from './eorzea/weather.service';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { ListTemplate } from './database/custom-links/list-template';
     HtmlToolsService,
     LinkToolsService,
     DiscordWebhookService,
-    PatreonService
+    PatreonService,
+    WeatherService
   ],
   declarations: [
     I18nPipe,

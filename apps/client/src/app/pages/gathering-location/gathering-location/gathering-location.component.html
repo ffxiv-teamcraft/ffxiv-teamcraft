@@ -1,6 +1,7 @@
 <div class="search-box">
   <nz-input-group>
     <input type="text" placeholder="{{'GATHERING_LOCATIONS.Gathering_name' | translate}}" nz-input
+           [ngModel]="query$.value"
            #searchInput (keyup)="query$.next(searchInput.value)" autofocus>
   </nz-input-group>
 </div>
@@ -13,7 +14,7 @@
 <div class="results" *ngIf="results$ | async as results; else noResults">
   <div *ngFor="let node of results" [class.compact-node]="compactDisplay">
     <nz-card [nzCover]="compactDisplay?null:map"
-             [nzActions]="(canCreateAlarm(alarms$ | async, node) && node.timed)?[actionAlarm]:[]">
+             [nzActions]="(canCreateAlarm(alarms$ | async, node) && (node.timed || node.weathers?.length > 0))?[actionAlarm]:[]">
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title" [nzDescription]="description">
       </nz-card-meta>
       <ng-template #itemIcon>
@@ -39,21 +40,56 @@
           X: {{node.x}}, Y: {{node.y}}<br>
           {{getNodeSpawns(node)}} <i nz-icon type="clock-circle" *ngIf="node.ephemeral" nz-tooltip
                                      [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate"></i>
-          <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
-            <div *ngFor="let weather of node.weathers">
-              <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
-                   [nzTitle]="weather | weatherName | i18n">
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+            <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+              <div *ngFor="let weather of node.weathersFrom">
+                <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+                     [nzTitle]="weather | weatherName | i18n">
+              </div>
+            </div>
+            <div *ngIf="node.weathersFrom !== undefined">
+              <i nz-icon type="right" theme="outline"></i>
+            </div>
+            <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+              <div *ngFor="let weather of node.weathers">
+                <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+                     [nzTitle]="weather | weatherName | i18n">
+              </div>
             </div>
           </div>
         </div>
         <div fxLayout="column" fxLayoutGap="5px">
-          <img *ngIf="node.type !== undefined" src="{{node.type | nodeTypeIcon}}" alt="" class="node-type">
-          <img *ngIf="node.reduction" class="reduction-icon" src="https://www.garlandtools.org/db/images/Reduce.png"
-               nz-tooltip [nzTitle]="'Reduction' | translate">
-          <img *ngIf="node.folklore !== undefined" src="{{node.folklore.icon | icon}}" nz-tooltip
-               [nzTitle]="node.folklore.id | itemName | i18n" alt="" class="folklore">
-          <i *ngIf="node.hidden">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</i>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <img *ngIf="node.type !== undefined" src="{{node.type | nodeTypeIcon}}" alt="" class="node-type">
+            <img *ngIf="node.reduction" class="reduction-icon" src="https://www.garlandtools.org/db/images/Reduce.png"
+                 nz-tooltip [nzTitle]="'Reduction' | translate">
+            <img *ngIf="node.folklore !== undefined" src="{{node.folklore.icon | icon}}" nz-tooltip
+                 [nzTitle]="node.folklore.id | itemName | i18n" alt="" class="folklore">
+            <i *ngIf="node.hidden">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</i>
+            <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+              <img src="/assets/icons/status/fish_eyes.png" alt="" nz-tooltip
+                   [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+              <div
+                *ngIf="node.itemId | fishEyesDuration as duration" nz-tooltip
+                [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate">{{'COMMON.Minutes_duration' | translate: { amount: duration } }}</div>
+            </div>
+            <img *ngIf="node.snagging" src="/assets/icons/status/snagging.png" alt="" nz-tooltip
+                 [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
+          </div>
           <app-fishing-bait *ngIf="node.baits !== undefined" [baits]="node.baits"></app-fishing-bait>
+          <img *ngIf="node.gig" src="/assets/icons/gig/{{node.gig}}.png" nz-tooltip class="gig-icon"
+               [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate">
+          <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
+               fxLayoutAlign="flex-start center">
+            <img src="/assets/icons/status/predators.png" alt="" nz-tooltip
+                 [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate">
+            <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutGap="5px"
+                 fxLayoutAlign="flex-start center">
+              <div>{{predator.amount}}x</div>
+              <app-item-icon [width]="32" [icon]="predator.icon" [itemId]="predator.id"
+                             [tooltipDisabled]="true" [appFishTooltip]="predator.id"></app-item-icon>
+            </div>
+          </div>
         </div>
       </div>
     </ng-template>

@@ -19,7 +19,7 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item>
+      <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
           <label nz-checkbox
@@ -45,11 +45,18 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item *ngIf="!platform.isDesktop()">
+      <nz-form-item *ngIf="!platform.isDesktop()" class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
           <label nz-checkbox
                  [(ngModel)]="settings.autoOpenInDesktop">{{'SETTINGS.Auto_open_in_desktop' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item *ngIf="loggedIn$ | async" class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label nz-checkbox
+                 [(ngModel)]="settings.itemTagsEnabled">{{'SETTINGS.Enable_item_tags' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
     </div>

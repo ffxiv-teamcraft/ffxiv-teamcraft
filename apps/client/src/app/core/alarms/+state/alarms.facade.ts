@@ -18,11 +18,15 @@ import { Alarm } from '../alarm';
 import { filter, first, map } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
-import { EorzeanTimeService } from '../../time/eorzean-time.service';
+import { EorzeanTimeService } from '../../eorzea/eorzean-time.service';
 import { AlarmsPageDisplay } from '../alarms-page-display';
 import { AlarmGroupDisplay } from '../alarm-group-display';
 import { AlarmGroup } from '../alarm-group';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { WeatherService } from '../../eorzea/weather.service';
+import { NextSpawn } from '../next-spawn';
+import { weatherIndex } from '../../data/sources/weather-index';
+import { mapIds } from '../../data/sources/map-ids';
 
 @Injectable({
   providedIn: 'root'
@@ -63,8 +67,10 @@ export class AlarmsFacade {
     })
   );
 
+  private nextSpawnCache: any = {};
+
   constructor(private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
-              private settings: SettingsService) {
+              private settings: SettingsService, private weatherService: WeatherService) {
   }
 
   public addAlarms(...alarms: Alarm[]): void {
@@ -127,20 +133,27 @@ export class AlarmsFacade {
 
   public createDisplay(alarm: Alarm, date: Date): AlarmDisplay {
     const display = new AlarmDisplay(alarm);
+    const nextSpawn = {...this.getNextSpawn(alarm, date)};
     display.spawned = this.isSpawned(alarm, date);
     display.played = this.isPlayed(alarm, date);
     if (display.spawned) {
-      display.remainingTime = this.getMinutesBefore(date, (this.getNextSpawn(alarm, date) + alarm.duration) % 24);
+      if (alarm.duration === null) {
+        nextSpawn.hours = nextSpawn.despawn;
+      } else {
+        nextSpawn.hours = (nextSpawn.hours + alarm.duration) % 24;
+      }
+      display.remainingTime = this.getMinutesBefore(date, nextSpawn);
     } else {
-      display.remainingTime = this.getMinutesBefore(date, this.getNextSpawn(alarm, date));
+      display.remainingTime = this.getMinutesBefore(date, nextSpawn);
     }
     display.remainingTime = this.etime.toEarthTime(display.remainingTime);
-    display.nextSpawn = this.getNextSpawn(alarm, date);
+    display.nextSpawn = nextSpawn;
+    display.weather = nextSpawn.weather;
     return display;
   }
 
   public createDisplayArray(alarms: Alarm[], date: Date): AlarmDisplay[] {
-    return this.sortAlarmDisplays(alarms.filter(alarm => alarm.spawns !== undefined)
+    return this.sortAlarmDisplays(alarms.filter(alarm => alarm.spawns !== undefined || alarm.weathers !== undefined)
       .map(alarm => {
         return this.createDisplay(alarm, date);
       }));
@@ -170,8 +183,13 @@ export class AlarmsFacade {
    * @param time
    */
   private isSpawned(alarm: Alarm, time: Date): boolean {
-    let spawn = this.getNextSpawn(alarm, time);
-    let despawn = (spawn + alarm.duration) % 24;
+    const nextSpawn = this.getNextSpawn(alarm, time);
+    if (nextSpawn.days > 0) {
+      // Nothing spawns for more than a day.
+      return false;
+    }
+    let spawn = nextSpawn.hours;
+    let despawn = nextSpawn.despawn;
     despawn = despawn === 0 ? 24 : despawn;
     spawn = spawn === 0 ? 24 : spawn;
     // If spawn is greater than despawn, it means that it spawns before midnight and despawns after, which is during the next day.
@@ -194,31 +212,108 @@ export class AlarmsFacade {
     return this.getMinutesBefore(time, this.getNextSpawn(alarm, time)) < this.settings.alarmHoursBefore * 60;
   }
 
-  public getNextSpawn(alarm: Alarm, time: Date): number {
-    return alarm.spawns.sort((a, b) => {
-      const timeBeforeA = this.getMinutesBefore(time, a);
-      const timeBeforeADespawns = this.getMinutesBefore(time, (a + alarm.duration) % 24);
-      const timeBeforeB = this.getMinutesBefore(time, b);
-      const timeBeforeBDespawns = this.getMinutesBefore(time, (b + alarm.duration) % 24);
-      // If time before next spawn is greater than time before next despawn, this node is spawned !
-      if (timeBeforeADespawns < timeBeforeA) {
-        return -1;
+  public getNextSpawn(alarm: Alarm, time: Date): NextSpawn {
+    if (this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] === undefined || this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`].expires.getTime() < Date.now()) {
+      const sortedSpawns = (alarm.spawns || []).sort((a, b) => {
+        const timeBeforeA = this.getMinutesBefore(time, { hours: a, days: 0 });
+        const timeBeforeADespawns = this.getMinutesBefore(time, { hours: (a + alarm.duration) % 24, days: 0 });
+        const timeBeforeB = this.getMinutesBefore(time, { hours: b, days: 0 });
+        const timeBeforeBDespawns = this.getMinutesBefore(time, { hours: (b + alarm.duration) % 24, days: 0 });
+        // If time before next spawn is greater than time before next despawn, this node is spawned !
+        if (timeBeforeADespawns < timeBeforeA) {
+          return -1;
+        }
+        if (timeBeforeBDespawns < timeBeforeB) {
+          return 1;
+        }
+        // Else just compare remaining time.
+        return timeBeforeA < timeBeforeB ? -1 : 1;
+      });
+      if (alarm.weathers) {
+        try {
+          this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
+            spawn: this.findWeatherSpawnCombination(alarm, sortedSpawns, time.getTime()),
+            expires: time
+          };
+        } catch (e) {
+          // Maximum call stack size...
+          // So we're just returning a date very far, in order to detect it inside the display system.
+          this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
+            spawn: { hours: 0, days: 99, despawn: 0 },
+            expires: new Date(Date.now() + 60000000)
+          };
+        }
+
+      } else {
+        this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
+          spawn: {
+            hours: sortedSpawns[0],
+            days: 0,
+            despawn: (sortedSpawns[0] + alarm.duration) % 24
+          }, expires: new Date(Date.now() + ((alarm.duration / EorzeanTimeService.EPOCH_TIME_FACTOR) * 60000000))
+        };
       }
-      if (timeBeforeBDespawns < timeBeforeB) {
-        return 1;
+    }
+    return this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`].spawn;
+  }
+
+  private findWeatherSpawnCombination(alarm: Alarm, sortedSpawns: number[], time: number, iteration = time): NextSpawn {
+    const weatherSpawns = alarm.weathers.map(weather => {
+      if (alarm.weathersFrom !== undefined && alarm.weathersFrom.length > 0) {
+        return {
+          weather: weather,
+          spawn: this.weatherService.getNextWeatherTransition(alarm.mapId, alarm.weathersFrom, weather, iteration, weatherIndex[mapIds.find(m => m.id === alarm.mapId).weatherRate])
+        };
       }
-      // Else just compare remaining time.
-      return timeBeforeA < timeBeforeB ? -1 : 1;
-    })[0];
+      return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration) };
+    })
+      .filter(spawn => spawn.spawn !== null)
+      .sort((a, b) => a.spawn.getTime() - b.spawn.getTime());
+    for (const spawn of sortedSpawns) {
+      const despawn = (spawn + alarm.duration) % 24;
+      for (const weatherSpawn of weatherSpawns) {
+        const weatherStart = weatherSpawn.spawn.getUTCHours();
+        const weatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
+        if (weatherStart < despawn && weatherStart >= spawn) {
+          // If it spawns during the alarm spawn, return weather spawn time.
+          const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
+          return { hours: weatherStart, days: days, despawn: despawn, weather: weatherSpawn.weather };
+        } else if (weatherStart < spawn && weatherStop > spawn) {
+          // If it spawns before the alarm and despawns during the alarm or after,
+          // set spawn day hour to spawn hour for days math.
+          const realSpawn = new Date(weatherSpawn.spawn);
+          realSpawn.setUTCHours(spawn);
+          const days = Math.max(Math.floor((realSpawn.getTime() - time) / 86400000), 0);
+          return {
+            hours: spawn,
+            days: days,
+            despawn: Math.min(weatherStop, despawn || 24),
+            weather: weatherSpawn.weather
+          };
+        }
+      }
+    }
+    if (sortedSpawns.length === 0) {
+      const weatherSpawn = weatherSpawns[weatherSpawns.length - 1];
+      const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
+      return {
+        hours: weatherSpawn.spawn.getUTCHours(),
+        days: days,
+        despawn: new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24,
+        weather: weatherSpawn.weather
+      };
+    }
+    return this.findWeatherSpawnCombination(alarm, sortedSpawns, time, weatherSpawns[weatherSpawns.length - 1].spawn.getTime() + 86400000);
   }
 
   /**
    * Get the amount of minutes before a given hour happens.
    * @param currentTime
-   * @param hours
+   * @param spawn
    * @param minutes
    */
-  public getMinutesBefore(currentTime: Date, hours: number, minutes = 0): number {
+  public getMinutesBefore(currentTime: Date, spawn: NextSpawn, minutes = 0): number {
+    let hours = spawn.hours;
     // Convert 0 to 24 for spawn timers
     if (hours === 0) {
       hours = 24;
@@ -233,7 +328,7 @@ export class AlarmsFacade {
       resSeconds += 360;
     }
     resMinutes += (resSeconds % 60) / 60;
-    return resMinutes;
+    return resMinutes + (spawn.days * 1440);
   }
 
 }

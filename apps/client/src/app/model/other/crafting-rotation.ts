@@ -2,6 +2,8 @@ import { Craft } from '../garland-tools/craft';
 import { ConsumableRow } from '../user/consumable-row';
 import { DataWithPermissions } from '../../core/database/permissions/data-with-permissions';
 import { GearSet } from '../../pages/simulator/model/gear-set';
+import { RotationTag } from '../../pages/simulator/components/community-rotations-page/rotation-tag';
+import { CommunityRotationData } from './community-rotation-data';
 
 export class CraftingRotation extends DataWithPermissions {
 
@@ -33,6 +35,12 @@ export class CraftingRotation extends DataWithPermissions {
   public stats: GearSet;
 
   public custom = false;
+
+  public public = false;
+
+  public tags: string[] = [];
+
+  public community: CommunityRotationData;
 
   public getName(): string {
     if (this.recipe) {

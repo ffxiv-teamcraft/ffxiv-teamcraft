@@ -1,10 +1,19 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, Type } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  Type,
+  ViewChild
+} from '@angular/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { BehaviorSubject, combineLatest, concat, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { Alarm } from '../../../core/alarms/alarm';
 import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
@@ -42,6 +51,7 @@ import { ListLayout } from '../../../core/layout/list-layout';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { ItemRowMenuElement } from '../../../model/display/item-row-menu-element';
 
 @Component({
   selector: 'app-item-row',
@@ -103,6 +113,32 @@ export class ItemRowComponent implements OnInit {
   commentBadge$: Observable<boolean>;
 
   commentBadgeReloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+
+  tagInputVisible = false;
+
+  newTag: string;
+
+  @ViewChild('inputElement') inputElement: ElementRef;
+
+  itemTags$ = combineLatest(this.item$, this.authFacade.user$).pipe(
+    map(([item, user]) => {
+      return (user.itemTags || [])
+        .filter(entry => entry.id === item.id)
+        .map(entry => entry.tag);
+    })
+  );
+
+  tagInput$ = new BehaviorSubject<string>('');
+
+  availableTags$ = combineLatest(this.tagInput$, this.authFacade.user$).pipe(
+    map(([input, user]) => {
+      return user.itemTags
+        .filter(entry => entry.tag.toLowerCase().indexOf(input.toLowerCase()) > -1)
+        .map(entry => entry.tag);
+    })
+  );
+
+  itemRowTypes = ItemRowMenuElement;
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
@@ -206,6 +242,36 @@ export class ItemRowComponent implements OnInit {
     );
   }
 
+  showTagInput(): void {
+    this.tagInputVisible = true;
+    setTimeout(() => {
+      this.inputElement.nativeElement.focus();
+    }, 10);
+  }
+
+  addTag(): void {
+    this.authFacade.user$.pipe(
+      first()
+    ).subscribe(user => {
+      if (this.newTag && !user.itemTags.some(entry => entry.id === this.item.id && entry.tag === this.newTag)) {
+        user.itemTags.push({ id: this.item.id, tag: this.newTag });
+      }
+      this.authFacade.updateUser(user);
+      this.newTag = '';
+      this.tagInputVisible = false;
+      this.tagInput$.next('');
+    });
+  }
+
+  removeTag(tag: string): void {
+    this.authFacade.user$.pipe(
+      first()
+    ).subscribe(user => {
+      user.itemTags = user.itemTags.filter(entry => entry.id !== this.item.id || entry.tag !== tag);
+      this.authFacade.updateUser(user);
+    });
+  }
+
   checkMasterbooks(books: number[]): void {
     this.authFacade.saveMasterbooks(books.map(book => ({ id: book, checked: true })));
   }
@@ -233,6 +299,17 @@ export class ItemRowComponent implements OnInit {
       .subscribe((list) => {
         this.listsFacade.updateList(list, true);
       });
+  }
+
+  removeItem(): void {
+    this.listsFacade.selectedList$.pipe(
+      first(),
+      switchMap(list => {
+        return this.listManager.addToList(this.item.id, list, this.item.recipeId, -this.item.amount);
+      })
+    ).subscribe((list) => {
+      this.listsFacade.updateList(list, true);
+    });
   }
 
   removeWorkingOnIt(): void {
@@ -343,6 +420,7 @@ export class ItemRowComponent implements OnInit {
     });
   }
 
+
   addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
     alarm.groupId = group.$key;
     this.alarmsFacade.addAlarms(alarm);
@@ -409,6 +487,10 @@ export class ItemRowComponent implements OnInit {
       nzComponentParams: { item: this.item },
       nzFooter: null
     });
+  }
+
+  public isButton(element: ItemRowMenuElement): boolean {
+    return this.layout && this.layout.rowsDisplay.buttons.indexOf(element) > -1;
   }
 
   public trackByCraft(index: number, craft: Craft): string {

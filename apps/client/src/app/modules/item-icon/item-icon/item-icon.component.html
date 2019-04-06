@@ -1,5 +1,5 @@
 <span *ngIf="disableClick; else anchor" class="icon-container"
-      [appXivApiTooltip]="itemId">
+      [appXivApiTooltip]="itemId" [appXivApiTooltipDisabled]="tooltipDisabled">
   <img [src]="getIcon()" alt="{{itemName}}" class="item-icon"
        [style.width.px]="width">
   <img *ngIf="hq" src="https://www.garlandtools.org/db/images/HQOverlay.png" class="hq-overlay"
@@ -7,7 +7,7 @@
 </span>
 <ng-template #anchor>
   <a class="icon-container" [href]="disableClick?null:getLink()" target="_blank"
-     [appXivApiTooltip]="itemId">
+     [appXivApiTooltip]="itemId" [appXivApiTooltipDisabled]="tooltipDisabled">
     <img [src]="getIcon()" alt="{{itemName}}" class="item-icon"
          [style.width.px]="width">
     <img *ngIf="hq" src="https://www.garlandtools.org/db/images/HQOverlay.png" class="hq-overlay"

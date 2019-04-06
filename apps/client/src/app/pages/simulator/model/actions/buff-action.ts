@@ -36,7 +36,7 @@ export abstract class BuffAction extends CraftingAction {
    * Don't forget to add super.getOverrides() to the array you'll return
    * @returns {Buff | null}
    */
-  protected getOverrides(): Buff[] {
+  public getOverrides(): Buff[] {
     return [this.getBuff()];
   }
 

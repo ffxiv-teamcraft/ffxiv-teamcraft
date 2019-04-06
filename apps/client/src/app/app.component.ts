@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -21,7 +21,7 @@ import { Character } from '@xivapi/angular-client';
 import { NzIconService, NzModalService } from 'ng-zorro-antd';
 import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
-import { EorzeanTimeService } from './core/time/eorzean-time.service';
+import { EorzeanTimeService } from './core/eorzea/eorzean-time.service';
 import { ListsFacade } from './modules/list/+state/lists.facade';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
@@ -41,6 +41,7 @@ import { LayoutsFacade } from './core/layout/+state/layouts.facade';
 import * as semver from 'semver';
 import { LazyDataService } from './core/data/lazy-data.service';
 import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
+import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 
 declare const gtag: Function;
 
@@ -97,6 +98,8 @@ export class AppComponent implements OnInit {
 
   public showGiveaway = false;
 
+  private dirty = false;
+
   get desktopUrl(): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(`teamcraft://${window.location.pathname}`);
   }
@@ -109,7 +112,10 @@ export class AppComponent implements OnInit {
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
-              private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade) {
+              private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
+              private dirtyFacade: DirtyFacade) {
+
+    this.dirtyFacade.hasEntries$.subscribe(dirty => this.dirty = dirty);
 
     this.showGiveaway = +localStorage.getItem('giveaway:1kdiscord') < 5
       && Date.now() < new Date(2019, 3, 31, 23, 59, 59).getTime();
@@ -183,6 +189,10 @@ export class AppComponent implements OnInit {
           this.overlayOpacity = value;
         });
         this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
+      }
+      const languageIndex = event.url.indexOf('?lang=');
+      if (languageIndex > -1) {
+        this.use(event.url.substr(languageIndex + 6, 2), false, true);
       }
       gtag('set', 'page', event.url);
       gtag('send', 'pageview');
@@ -320,12 +330,14 @@ export class AppComponent implements OnInit {
     }, 30000);
   }
 
-  use(lang: string, fromIpc = false): void {
+  use(lang: string, fromIpc = false, skipStorage = false): void {
     if (this.settings.availableLocales.indexOf(lang) === -1) {
       lang = 'en';
     }
     this.locale = lang;
-    localStorage.setItem('locale', lang);
+    if (!skipStorage) {
+      localStorage.setItem('locale', lang);
+    }
     this.translate.use(lang);
     if (!fromIpc) {
       this.ipc.send('language', lang);
@@ -354,5 +366,12 @@ export class AppComponent implements OnInit {
 
   public closeDiscord1kGiveaway(): void {
     localStorage.setItem('giveaway:1kdiscord', '5');
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  onBeforeUnload($event: Event): void {
+    if (this.dirty) {
+      $event.returnValue = true;
+    }
   }
 }

@@ -1,5 +1,6 @@
 import { Alarm } from './alarm';
 import { Aetheryte } from '../data/aetheryte';
+import { NextSpawn } from './next-spawn';
 
 export class AlarmDisplay {
 
@@ -26,12 +27,17 @@ export class AlarmDisplay {
   /**
    * Next spawn for the ingame alarm macro generator.
    */
-  nextSpawn: number;
+  nextSpawn: NextSpawn;
 
   /**
    * Is the alarm registered in store?
    */
   registered?: boolean;
+
+  /**
+   * Is it a weather-required spawn?
+   */
+  weather?: number;
 
   constructor(public readonly alarm: Alarm) {
   }
