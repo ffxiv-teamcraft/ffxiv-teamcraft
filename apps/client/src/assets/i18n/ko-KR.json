@@ -70,7 +70,7 @@
     "Not_found": "해당 공방이 없거나 접근할 권한이 없습니다",
     "Shared_workshops": "쓰기 권한이 있는 공방",
     "Rename": "공방 이름변경",
-    "Add_lists": "Add lists"
+    "Add_lists": "목록 추가"
   },
   "ABOUT": {
     "title": "TC에 대하여",
@@ -136,7 +136,7 @@
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
     "Open_overlay": "오버레이 열기",
     "More_available": "{{amount}}번 더...",
-    "Node_content": "Node content",
+    "Node_content": "채집물 정보",
     "More_than_three_days": "> 3 days",
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
@@ -203,8 +203,8 @@
   "Anonymous_Warning": "목록을 저장하고 다양한 기능을 사용하기 위해서는 계정을 생성해야합니다",
   "Game_Term/DoH": "제작자",
   "Game_Term/DoL": "채집가",
-  "MIN/BTN": "Miner / Botanist",
-  "Game_Term/FSH": "Fisher",
+  "MIN/BTN": "광부 / 원예가",
+  "Game_Term/FSH": "어부",
   "Reduction": "정제",
   "Upgrade_list": "최신 앱 버전으로 목록 재생성하기",
   "List_recreated": "목록이 재생성되었습니다",
@@ -411,7 +411,7 @@
     "List_too_large": "너무 큰 목록",
     "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
     "Add_to_another_list": "다른 목록에 추가",
-    "New_tag": "New tag",
+    "New_tag": "새 태그",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -423,18 +423,18 @@
       "Global_options": "일반 설정",
       "Default_readonly_message": "기본 레이아웃은 읽기전용이며, + 버튼을 눌러 편집 가능한 새 레이아웃을 만들 수 있습니다.",
       "Buttons": "Buttons",
-      "Menu": "Menu",
-      "Edit_row_buttons_display": "Edit row buttons display",
+      "Menu": "메뉴",
+      "Edit_row_buttons_display": "행 버튼 편집",
       "ITEMS": {
-        "COMMENTS": "Comments",
+        "COMMENTS": "댓글",
         "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
-        "ADD_ALL_ALARMS": "Add all alarms",
-        "WORK_ON_IT": "Work on it",
-        "ASSIGN_TEAM_MEMBER": "Assign team members",
-        "EDIT_AMOUNT": "Edit amount",
-        "MARK_HQ": "Mark HQ",
-        "ADD_TO_ANOTHER_LIST": "Add to another list",
-        "REQUIREMENTS": "Requirements",
+        "ADD_ALL_ALARMS": "모든 알람 추가",
+        "WORK_ON_IT": "작업중",
+        "ASSIGN_TEAM_MEMBER": "팀 멤버에게 할당",
+        "EDIT_AMOUNT": "수량 수정",
+        "MARK_HQ": "HQ 표시",
+        "ADD_TO_ANOTHER_LIST": "다른 목록에 추가",
+        "REQUIREMENTS": "재료",
         "REMOVE_ITEM": "Remove item from the list"
       }
     },
@@ -443,7 +443,7 @@
       "Panel_name": "패널 이름",
       "Order_by": "정렬 기준",
       "Order": "순서",
-      "Tag_filter": "Tag filter"
+      "Tag_filter": "태그 필터"
     }
   },
   "LIST_TAGS": {
@@ -649,16 +649,16 @@
     "COMMUNITY_ROTATIONS": {
       "Title": "Community rotations",
       "Community_rotation": "Community rotation",
-      "No_rotations_matching": "No rotations matching",
-      "Name_filter_placeholder": "Rotation name",
-      "Tags_filter_placeholder": "Tags",
-      "Durability_filter_placeholder": "Durability",
-      "Rlvl_filter_placeholder": "Recipe lvl",
-      "Filters_reset": "Reset filters",
-      "Configuration_popup": "Share with the community",
-      "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
-      "Min_control_filter_placeholder": "Min. Control",
-      "Min_cp_filter_placeholder": "Min. CP",
+      "No_rotations_matching": "조건에 맞는 로테이션 없음",
+      "Name_filter_placeholder": "로테이션 이름",
+      "Tags_filter_placeholder": "태그",
+      "Durability_filter_placeholder": "내구도",
+      "Rlvl_filter_placeholder": "제작 레벨",
+      "Filters_reset": "필터 초기화",
+      "Configuration_popup": "커뮤니티에 공유하기",
+      "Min_craftsmanship_filter_placeholder": "작업 숙련도",
+      "Min_control_filter_placeholder": "가공 숙련도",
+      "Min_cp_filter_placeholder": "CP",
       "Intro": "Input some filters to get started",
       "TAGS": {
         "SPECIALIST": "Specialist",
