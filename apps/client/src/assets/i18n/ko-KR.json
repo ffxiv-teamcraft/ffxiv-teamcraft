@@ -118,7 +118,7 @@
     "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
     "Open_in_desktop": "데스크톱 앱에서 열기",
     "Admin": "관리자",
-    "Minutes_duration": "{{amount}} minutes"
+    "Minutes_duration": "{{amount}} 분"
   },
   "ALARMS": {
     "Title": "알람",
@@ -296,7 +296,7 @@
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
-    "Enable_item_tags": "Enable item tags",
+    "Enable_item_tags": "아이템 태그 사용",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -435,7 +435,7 @@
         "MARK_HQ": "HQ 표시",
         "ADD_TO_ANOTHER_LIST": "다른 목록에 추가",
         "REQUIREMENTS": "재료",
-        "REMOVE_ITEM": "Remove item from the list"
+        "REMOVE_ITEM": "목록에서 이 아이템을 제거"
       }
     },
     "LAYOUT": {
@@ -644,11 +644,11 @@
     "New_rotation_folder": "새 폴더 만들기",
     "Safe_mode": "안전 모드",
     "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
-    "Quality_needed": "{{amount}} more quality to reach 100%",
-    "Rotation_tips": "Rotation tips",
+    "Quality_needed": "HQ 100%를 위해선 {{amount}} 만큼의 품질이 더 필요",
+    "Rotation_tips": "로테이션 팁",
     "COMMUNITY_ROTATIONS": {
-      "Title": "Community rotations",
-      "Community_rotation": "Community rotation",
+      "Title": "커뮤니티 로테이션",
+      "Community_rotation": "커뮤니티 로테이션",
       "No_rotations_matching": "조건에 맞는 로테이션 없음",
       "Name_filter_placeholder": "로테이션 이름",
       "Tags_filter_placeholder": "태그",
@@ -661,12 +661,12 @@
       "Min_cp_filter_placeholder": "CP",
       "Intro": "Input some filters to get started",
       "TAGS": {
-        "SPECIALIST": "Specialist",
-        "NOT_SPECIALIST": "Not specialist",
-        "TEALESS": "Tealess",
-        "FOODLESS": "Foodless",
-        "MAKERS_MARK": "Maker's Mark",
-        "MUSCLE_MEMORY": "Muscle Memory"
+        "SPECIALIST": "전문장인",
+        "NOT_SPECIALIST": "비전문장인",
+        "TEALESS": "약차 사용안함",
+        "FOODLESS": "음식 사용안함",
+        "MAKERS_MARK": "견실한 마음가짐",
+        "MUSCLE_MEMORY": "확신"
       }
     },
     "CUSTOM": {
@@ -689,7 +689,7 @@
         "Copy_folder": "이 폴더와 내용을 내 계정으로 복사",
         "Folder_copied": "폴더가 내 계정에 복사되었습니다",
         "Favorite_folders": "즐겨찾기 폴더",
-        "Add_rotations": "Add rotations"
+        "Add_rotations": "로테이션 추가"
       }
     },
     "CATEGORY": {
@@ -739,7 +739,7 @@
       "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
+      "Use_inner_quiet": "거의 모든 로테이션은 HQ제작을 목표로 한다면 '정신집중'이 포함되어야합니다. 이것은 품질을 향상 시켜주며, '비레고의 축복'과 같은 스킬들을 사용할 수 있게 해줍니다.",
       "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
       "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
       "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
@@ -894,7 +894,7 @@
     "Folklore": "Regional Folklore",
     "Timed": "Timed",
     "Weather_dependant": "Only with some weathers",
-    "View_on_ff14angler": "More details on ff14angler",
+    "View_on_ff14angler": "ff14angler에서 자세한 정보 보기",
     "Required_for_achievement": "업적에 적용됨",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
@@ -981,7 +981,7 @@
     }
   },
   "DIRTY": {
-    "Dialog_title": "You have unsaved changes",
-    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
+    "Dialog_title": "변경 내용이 저장되지 않았습니다",
+    "Dialog_description": "이 페이지를 종료하면 저장되지 않은 모든 변경 내용이 삭제됩니다, 진행하시겠습니까?"
   }
 }
