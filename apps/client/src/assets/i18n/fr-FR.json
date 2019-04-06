@@ -739,10 +739,10 @@
       "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
-      "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
-      "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
-      "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
+      "Use_inner_quiet": "Si vous souhaitez ajouter de la qualité sur votre rotation, elle se doit d'intégrer Calme Intérieur afin d'ajouter un bonus non négligeable et de pouvoir utiliser des actions comme la Bénédiction de Byregot.",
+      "Use_inner_quiet_before_quality_increase": "Calme Intérieur doit être appliqué avant toute autre action afin de maximiser le gain en qualité.",
+      "Use_ingenuity_I_instead": "Utiliser Ingéniosité I au lieu d'Ingéniosité II est suffisant pour finir la fabrication et ainsi économiser 8 PS.",
+      "Use_cz_earlier": "Zone de confort devrait être placé plus tôt dans la rotation pour profiter plus rapidement de l'effet de restauration",
       "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
       "Use_byregot_brow_low_iq_stacks": "You used Byregot's Blessing with less than 6 stacks. Using Byregot's Brow is better in this case as it will produce more quality.",
       "Use_byregot_blessing_high_iq_stacks": "You used Byregot's Brow with more than 6 stacks. Using Byregot's Blessing is better in this case as it will produce more quality.",
@@ -891,10 +891,10 @@
     "Mark_as_done": "Marquer comme fait",
     "Mark_as_not_done": "Marquer comme non fait",
     "Create_list": "Créer une liste pour compléter cette page",
-    "Folklore": "Regional Folklore",
-    "Timed": "Timed",
-    "Weather_dependant": "Only with some weathers",
-    "View_on_ff14angler": "More details on ff14angler",
+    "Folklore": "Légendes locales",
+    "Timed": "Timé",
+    "Weather_dependant": "Uniquement avec certains climats",
+    "View_on_ff14angler": "Plus de détails sur ff14angler",
     "Required_for_achievement": "Requis pour les haut faits",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
@@ -981,7 +981,7 @@
     }
   },
   "DIRTY": {
-    "Dialog_title": "You have unsaved changes",
-    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
+    "Dialog_title": "Vous avez des modifications non enregistrées",
+    "Dialog_description": "Quitter cette page supprimera toutes vos modifications non enregistrées, êtes-vous sûr ?"
   }
 }
