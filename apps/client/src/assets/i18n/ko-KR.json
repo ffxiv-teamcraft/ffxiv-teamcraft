@@ -529,14 +529,14 @@
     "Ephemeral_node": "재등장 가능한 시간제 채집 장소",
     "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
     "Hidden_item": "숨은 자원",
-    "Fish_eyes": "Requires fish eyes",
-    "Snagging": "Requires snagging",
-    "Predators": "Fish these fish before",
+    "Fish_eyes": "물고기의 눈 필요",
+    "Snagging": "갈고리 낚시 필요",
+    "Predators": "사전에 낚아야 할 물고기",
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
     "GIG_HEAD": {
-      "Small": "Small Gig Head",
-      "Medium": "Medium Gig Head",
-      "Large": "Large Gig Head"
+      "Small": "소형 입질",
+      "Medium": "중형 입질",
+      "Large": "대형 입질"
     }
   },
   "ANNOUNCEMENT": {
