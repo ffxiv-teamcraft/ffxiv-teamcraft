@@ -137,7 +137,7 @@
     "Open_overlay": "오버레이 열기",
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
-    "More_than_three_days": "> 3 days",
+    "More_than_three_days": "3일 이상",
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
@@ -534,9 +534,9 @@
     "Predators": "사전에 낚아야 할 물고기",
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
     "GIG_HEAD": {
-      "Small": "소형 입질",
-      "Medium": "중형 입질",
-      "Large": "대형 입질"
+      "Small": "소형 작살",
+      "Medium": "중형 작살",
+      "Large": "대형 작살"
     }
   },
   "ANNOUNCEMENT": {
@@ -886,14 +886,14 @@
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요."
   },
   "LOG_TRACKER": {
-    "Title": "제작수첩 트래커",
+    "Title": "제작/채집수첩 트래커",
     "Mark_page_as_done": "이 페이지를 완료됨 으로 표시",
     "Mark_as_done": "이 아이템을 완료됨 으로 표시",
     "Mark_as_not_done": "이 아이템을 완료되지 않음 으로 표시",
     "Create_list": "이 페이지를 완료하기 위한 목록 만들기",
     "Folklore": "전승록",
-    "Timed": "Timed",
-    "Weather_dependant": "Only with some weathers",
+    "Timed": "시간제한 있음",
+    "Weather_dependant": "특정 날씨에서만 가능",
     "View_on_ff14angler": "ff14angler에서 자세한 정보 보기",
     "Required_for_achievement": "업적에 적용됨",
     "PAGE": {
