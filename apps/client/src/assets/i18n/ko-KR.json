@@ -69,7 +69,8 @@
     "Share_link_copied": "공방 공유링크 복사됨",
     "Not_found": "해당 공방이 없거나 접근할 권한이 없습니다",
     "Shared_workshops": "쓰기 권한이 있는 공방",
-    "Rename": "공방 이름변경"
+    "Rename": "공방 이름변경",
+    "Add_lists": "Add lists"
   },
   "ABOUT": {
     "title": "TC에 대하여",
@@ -116,7 +117,8 @@
     "Language": "언어",
     "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
     "Open_in_desktop": "데스크톱 앱에서 열기",
-    "Admin": "관리자"
+    "Admin": "관리자",
+    "Minutes_duration": "{{amount}} minutes"
   },
   "ALARMS": {
     "Title": "알람",
@@ -134,6 +136,8 @@
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
     "Open_overlay": "오버레이 열기",
     "More_available": "{{amount}}번 더...",
+    "Node_content": "Node content",
+    "More_than_three_days": "> 3 days",
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
@@ -199,6 +203,8 @@
   "Anonymous_Warning": "목록을 저장하고 다양한 기능을 사용하기 위해서는 계정을 생성해야합니다",
   "Game_Term/DoH": "제작자",
   "Game_Term/DoL": "채집가",
+  "MIN/BTN": "Miner / Botanist",
+  "Game_Term/FSH": "Fisher",
   "Reduction": "정제",
   "Upgrade_list": "최신 앱 버전으로 목록 재생성하기",
   "List_recreated": "목록이 재생성되었습니다",
@@ -290,6 +296,7 @@
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
+    "Enable_item_tags": "Enable item tags",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -361,7 +368,7 @@
     "Total_price": "총 비용 (길 및 화폐)",
     "Total_trade_price": "총합: ",
     "Add_all_alarms": "이 목록에 대한 알람 추가",
-    "History": "내역",
+    "History": "목록 변경내역",
     "Items_count": "아이템 {{amount}}개",
     "Show_craftable_amount": "제작 가능한 수량 표시",
     "COMPLETION_POPUP": {
@@ -403,7 +410,8 @@
     "Add_item": "아이템 추가",
     "List_too_large": "너무 큰 목록",
     "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
-    "Add_to_another_list": "Add to another list",
+    "Add_to_another_list": "다른 목록에 추가",
+    "New_tag": "New tag",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -413,13 +421,29 @@
       "Layout_name": "레이아웃 이름",
       "Invalid_import": "유효하지 않은 불러오기 코드입니다",
       "Global_options": "일반 설정",
-      "Default_readonly_message": "기본 레이아웃은 읽기전용이며, + 버튼을 눌러 편집 가능한 새 레이아웃을 만들 수 있습니다."
+      "Default_readonly_message": "기본 레이아웃은 읽기전용이며, + 버튼을 눌러 편집 가능한 새 레이아웃을 만들 수 있습니다.",
+      "Buttons": "Buttons",
+      "Menu": "Menu",
+      "Edit_row_buttons_display": "Edit row buttons display",
+      "ITEMS": {
+        "COMMENTS": "Comments",
+        "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
+        "ADD_ALL_ALARMS": "Add all alarms",
+        "WORK_ON_IT": "Work on it",
+        "ASSIGN_TEAM_MEMBER": "Assign team members",
+        "EDIT_AMOUNT": "Edit amount",
+        "MARK_HQ": "Mark HQ",
+        "ADD_TO_ANOTHER_LIST": "Add to another list",
+        "REQUIREMENTS": "Requirements",
+        "REMOVE_ITEM": "Remove item from the list"
+      }
     },
     "LAYOUT": {
       "Filter": "필터",
       "Panel_name": "패널 이름",
       "Order_by": "정렬 기준",
-      "Order": "순서"
+      "Order": "순서",
+      "Tag_filter": "Tag filter"
     }
   },
   "LIST_TAGS": {
@@ -504,7 +528,16 @@
     "Gathering_name": "아이템 이름을 입력하세요",
     "Ephemeral_node": "재등장 가능한 시간제 채집 장소",
     "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
-    "Hidden_item": "숨은 자원"
+    "Hidden_item": "숨은 자원",
+    "Fish_eyes": "Requires fish eyes",
+    "Snagging": "Requires snagging",
+    "Predators": "Fish these fish before",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
+    "GIG_HEAD": {
+      "Small": "Small Gig Head",
+      "Medium": "Medium Gig Head",
+      "Large": "Large Gig Head"
+    }
   },
   "ANNOUNCEMENT": {
     "Title": "공지사항",
@@ -543,10 +576,11 @@
     "User_id_tip": "사용자 ID는 프로필 페이지 오른쪽 하단에 있습니다",
     "Saving": "권한 설정을 저장중",
     "No_anonymous": "권한을 관리하려면 계정이 필요합니다",
-    "Propagate_changes": "공방 내부에 목록에 대한 권한 제공",
+    "Propagate_changes": "공방 내부 목록들의 권한을 변경",
     "Propagate_changes_done": "공방 내부 목록에 대한 변경이 적용되었습니다",
     "Team_notice": "이 목록이 할당된 팀은 자동으로 참여 권한을 갖습니다.",
-    "Default_permission_level": "기본 권한 수준"
+    "Default_permission_level": "기본 권한 수준",
+    "List_tooltip": "모든 유저에 대한 권한 수준 : {{level}}"
   },
   "WIKI": {
     "Title": "위키",
@@ -610,6 +644,31 @@
     "New_rotation_folder": "새 폴더 만들기",
     "Safe_mode": "안전 모드",
     "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
+    "Quality_needed": "{{amount}} more quality to reach 100%",
+    "Rotation_tips": "Rotation tips",
+    "COMMUNITY_ROTATIONS": {
+      "Title": "Community rotations",
+      "Community_rotation": "Community rotation",
+      "No_rotations_matching": "No rotations matching",
+      "Name_filter_placeholder": "Rotation name",
+      "Tags_filter_placeholder": "Tags",
+      "Durability_filter_placeholder": "Durability",
+      "Rlvl_filter_placeholder": "Recipe lvl",
+      "Filters_reset": "Reset filters",
+      "Configuration_popup": "Share with the community",
+      "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
+      "Min_control_filter_placeholder": "Min. Control",
+      "Min_cp_filter_placeholder": "Min. CP",
+      "Intro": "Input some filters to get started",
+      "TAGS": {
+        "SPECIALIST": "Specialist",
+        "NOT_SPECIALIST": "Not specialist",
+        "TEALESS": "Tealess",
+        "FOODLESS": "Foodless",
+        "MAKERS_MARK": "Maker's Mark",
+        "MUSCLE_MEMORY": "Muscle Memory"
+      }
+    },
     "CUSTOM": {
       "Recipe_configuration": "제작난이도 설정",
       "Recipe_level": "레시피 레벨",
@@ -629,7 +688,8 @@
         "Created_by": "제작자: {{name}}",
         "Copy_folder": "이 폴더와 내용을 내 계정으로 복사",
         "Folder_copied": "폴더가 내 계정에 복사되었습니다",
-        "Favorite_folders": "즐겨찾기 폴더"
+        "Favorite_folders": "즐겨찾기 폴더",
+        "Add_rotations": "Add rotations"
       }
     },
     "CATEGORY": {
@@ -677,6 +737,24 @@
       "MISSING_LEVEL_REQUIREMENT": "레벨이 부족함",
       "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
       "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함"
+    },
+    "ROTATION_TIPS": {
+      "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
+      "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
+      "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
+      "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
+      "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
+      "Use_byregot_brow_low_iq_stacks": "You used Byregot's Blessing with less than 6 stacks. Using Byregot's Brow is better in this case as it will produce more quality.",
+      "Use_byregot_blessing_high_iq_stacks": "You used Byregot's Brow with more than 6 stacks. Using Byregot's Blessing is better in this case as it will produce more quality.",
+      "Use_sh1_instead": "You used Steady Hand II at step {{index}} while using Steady Hand I would be enough and would cost 3 less CP.",
+      "Use_sh2_instead": "You used Steady Hand I at step {{index}} while using Steady Hand II give you more reliability at the cost of 3 CP.",
+      "Use_pbp_first": "You should use Piece by Piece before any other synthesis action, as it scales on the remaining progress to do",
+      "Use_mume_if_pbp": "You should use Muscle Memory at step 1 in order to replace one Piece by Piece and gain 9 extra CP",
+      "Use_observe_before_focused": "You should use Observe before the Focused action at step {{index}} in order to get a free 100% success rate.",
+      "Use_durability_restoration_later": "You should use the durability restoration action at step {{index}} later in order to avoid wasting durability restoration.",
+      "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
+      "Use_advanced_touch_instead": "You used Basic Touch then Advanced Touch one after another at step {{index}}, you should use two Standard Touches instead to get same potency for 2 less CP.",
+      "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs."
     }
   },
   "PRICING": {
@@ -736,6 +814,8 @@
     "No_anonymous_join": "팀에 참가하기 위해서는 계정이 필요합니다",
     "Already_in_team": "이미 팀에 참여한 상태입니다",
     "Webhook_configuration": "Webhook 설정",
+    "Officer": "Officer",
+    "Promote_officer": "Promote to officer",
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 추가하였습니다.",
       "Item_removed": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 삭제하였습니다.",
@@ -776,7 +856,7 @@
   "TOOLTIP": {
     "Level": "레벨",
     "Ilvl": "아이템레벨",
-    "Cost": "비용",
+    "Cost": "CP",
     "Class_job": "클래스/직업",
     "Damage_phys": "물리 공격력",
     "Damage_mag": "공격마법 위력",
@@ -811,6 +891,10 @@
     "Mark_as_done": "이 아이템을 완료됨 으로 표시",
     "Mark_as_not_done": "이 아이템을 완료되지 않음 으로 표시",
     "Create_list": "이 페이지를 완료하기 위한 목록 만들기",
+    "Folklore": "Regional Folklore",
+    "Timed": "Timed",
+    "Weather_dependant": "Only with some weathers",
+    "View_on_ff14angler": "More details on ff14angler",
     "Required_for_achievement": "업적에 적용됨",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
@@ -895,5 +979,9 @@
       "Parsing_file": "파일 내용 분석중..",
       "Saving_items": "아이템 저장 중 ({{done}}/{{todo}})"
     }
+  },
+  "DIRTY": {
+    "Dialog_title": "You have unsaved changes",
+    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
   }
 }
