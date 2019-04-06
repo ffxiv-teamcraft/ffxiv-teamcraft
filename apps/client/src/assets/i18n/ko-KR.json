@@ -739,10 +739,10 @@
       "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "거의 모든 로테이션은 HQ제작을 목표로 한다면 '정신집중'이 포함되어야합니다. 이것은 품질을 향상 시켜주며, '비레고의 축복'과 같은 스킬들을 사용할 수 있게 해줍니다.",
-      "Use_inner_quiet_before_quality_increase": "품질을 향상시키기 전에 '정신집중' 을 사용해야합니다. 사용하지 않을 경우, '정신집중' 스택이 낭비됩니다.",
-      "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
-      "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
+      "Use_inner_quiet": "거의 모든 로테이션은 HQ제작을 목표로 한다면 '정신집중'이 포함되어야 합니다. 이것은 품질을 향상 시켜주며, '비레고의 축복'과 같은 스킬들을 사용할 수 있게 해줍니다.",
+      "Use_inner_quiet_before_quality_increase": "품질을 향상시키기 전에 '정신집중' 을 사용해야 합니다. 사용하지 않을 경우, '정신집중' 스택이 낭비됩니다.",
+      "Use_ingenuity_I_instead": "제작을 완성하는데 충분하기 때문에, '독창적 발상 2' 대신 CP 8을 덜 소모하는 '독창적 발상 1'을 사용해야 합니다.",
+      "Use_cz_earlier": "CP회복효과를 빨리 적용받기 위해선 '작업 요령'을 좀 더 일찍 사용해야 합니다.",
       "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
       "Use_byregot_brow_low_iq_stacks": "You used Byregot's Blessing with less than 6 stacks. Using Byregot's Brow is better in this case as it will produce more quality.",
       "Use_byregot_blessing_high_iq_stacks": "You used Byregot's Brow with more than 6 stacks. Using Byregot's Blessing is better in this case as it will produce more quality.",
