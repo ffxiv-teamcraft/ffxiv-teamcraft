@@ -896,6 +896,7 @@
     "Weather_dependant": "Uniquement avec certains climats",
     "View_on_ff14angler": "Plus de détails sur ff14angler",
     "Required_for_achievement": "Requis pour les haut faits",
+    "Select_spot": "Select a spot to see its details",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
