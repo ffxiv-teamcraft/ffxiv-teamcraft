@@ -896,6 +896,7 @@
     "Weather_dependant": "특정 날씨에서만 가능",
     "View_on_ff14angler": "ff14angler에서 자세한 정보 보기",
     "Required_for_achievement": "업적에 적용됨",
+    "Select_spot": "Select a spot to see its details",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
