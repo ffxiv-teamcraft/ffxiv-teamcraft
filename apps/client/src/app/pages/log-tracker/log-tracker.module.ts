@@ -11,11 +11,12 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
-import { MapPositionComponent } from '../../modules/map/map-position/map-position.component';
 import { MapModule } from '../../modules/map/map.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
+import { FishingLogTrackerComponent } from './fishing-log-tracker/fishing-log-tracker.component';
+import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 
 const routes: Routes = [
   {
@@ -31,7 +32,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [LogTrackerComponent],
+  declarations: [LogTrackerComponent, FishingLogTrackerComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
@@ -46,6 +47,7 @@ const routes: Routes = [
     FishingBaitModule,
     RouterModule.forChild(routes),
     TooltipModule,
+    FullpageMessageModule,
 
     NgZorroAntdModule
   ]

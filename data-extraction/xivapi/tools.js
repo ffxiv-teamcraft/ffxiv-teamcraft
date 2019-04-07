@@ -35,7 +35,7 @@ const getAllPages = (endpoint, body) => {
   const page$ = new Rx.BehaviorSubject(1);
   const complete$ = new Rx.Subject();
   return page$.pipe(
-    delay(250),
+    delay(100),
     mergeMap(page => {
       let url = endpoint;
       if (body !== undefined) {

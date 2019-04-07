@@ -15,13 +15,13 @@ export class AlarmDisplayPipe implements PipeTransform {
   constructor(private alarmsFacade: AlarmsFacade, private etime: EorzeanTimeService) {
   }
 
-  transform(alarm: Alarm): Observable<AlarmDisplay> {
+  transform(alarm: Partial<Alarm>): Observable<AlarmDisplay> {
     return combineLatest(
       this.alarmsFacade.getRegisteredAlarm(alarm),
       this.etime.getEorzeanTime()
     ).pipe(
       map(([registeredAlarm, date]) => {
-        const display = this.alarmsFacade.createDisplay(alarm, date);
+        const display = this.alarmsFacade.createDisplay(<Alarm>alarm, date);
         display.registered = registeredAlarm !== undefined;
         if (display.registered) {
           display.alarm.$key = registeredAlarm.$key;

@@ -287,29 +287,69 @@ if (hasTodo('fishingLog')) {
 
   const fishingLog = [];
 
-  getAllEntries('https://xivapi.com/FishParameter', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
-    completeFetch
-      .filter(fish => fish.Item !== null && fish.IsInLog === 1)
-      .forEach(fish => {
-        const entry = {
-          id: fish.ID,
-          itemId: fish.Item.ID,
-          level: fish.GatheringItemLevel,
-          icon: fish.Item.Icon,
-          mapId: fish.TerritoryType.Map.ID,
-          zoneId: fish.TerritoryType.PlaceName.ID,
-          timed: fish.TimeRestricted,
-          weathered: fish.WeatherRestricted
-        };
-        if (fish.FishingRecordType && fish.FishingRecordType.Addon) {
-          entry.recordType = {
-            en: fish.FishingRecordType.Addon.Text_en,
-            de: fish.FishingRecordType.Addon.Text_de,
-            ja: fish.FishingRecordType.Addon.Text_ja,
-            fr: fish.FishingRecordType.Addon.Text_fr
+  getAllEntries('https://xivapi.com/FishParameter', '63cc0045d7e847149c3f', true).pipe(
+    map(completeFetch => {
+      const fishParameter = {};
+      completeFetch
+        .filter(fish => fish.Item !== null && fish.IsInLog === 1)
+        .forEach(fish => {
+          const entry = {
+            id: fish.ID,
+            itemId: fish.Item.ID,
+            level: fish.GatheringItemLevel,
+            icon: fish.Item.Icon,
+            mapId: fish.TerritoryType.Map.ID,
+            zoneId: fish.TerritoryType.PlaceName.ID,
+            timed: fish.TimeRestricted,
+            weathered: fish.WeatherRestricted
           };
-        }
-        fishingLog.push(entry);
+          if (fish.FishingRecordType && fish.FishingRecordType.Addon) {
+            entry.recordType = {
+              en: fish.FishingRecordType.Addon.Text_en,
+              de: fish.FishingRecordType.Addon.Text_de,
+              ja: fish.FishingRecordType.Addon.Text_ja,
+              fr: fish.FishingRecordType.Addon.Text_fr
+            };
+          }
+          fishParameter[fish.Item.ID] = entry;
+        });
+      return fishParameter;
+    })
+  ).subscribe(fishParameter => {
+    persistToTypescript('fish-parameter', 'fishParameter', fishParameter);
+  });
+
+  getAllEntries('https://xivapi.com/FishingSpot', '63cc0045d7e847149c3f', true).subscribe((completeFetch) => {
+    completeFetch
+      .filter(spot => spot.Item0 !== null && spot.TerritoryType !== null)
+      .forEach(spot => {
+        Object.keys(spot)
+          .filter(key => {
+            return /^Item\d+$/.test(key) && spot[key] && spot[key].ID !== -1 && spot[key].ID !== null;
+          })
+          .sort((a, b) => {
+            return +a.match(/^Item(\d+)$/)[1] - +b.match(/^Item(\d+)$/)[1];
+          })
+          .forEach(key => {
+            const fish = spot[key];
+            const c = spot.TerritoryType.Map.SizeFactor / 100.0;
+            const entry = {
+              itemId: fish.ID,
+              level: spot.GatheringLevel,
+              icon: fish.Icon,
+              mapId: spot.TerritoryType.Map.ID,
+              placeId: spot.TerritoryType.PlaceName.ID,
+              zoneId: spot.PlaceName.ID,
+              spot: {
+                id: spot.ID,
+                coords: {
+                  x: (41.0 / c) * ((spot.X) / 2048.0) + 1,
+                  y: (41.0 / c) * ((spot.Z) / 2048.0) + 1
+                }
+              }
+            };
+            fishingLog.push(entry);
+          });
       });
     persistToTypescript('fishing-log', 'fishingLog', fishingLog);
   });
@@ -340,7 +380,8 @@ if (hasTodo('spearFishingLog')) {
                   itemId: entry.GatheringPointBase[key],
                   level: entry.GatheringLevel,
                   mapId: entry.TerritoryType.Map.ID,
-                  zoneId: entry.TerritoryType.PlaceName.ID,
+                  placeId: entry.TerritoryType.PlaceName.ID,
+                  zoneId: entry.PlaceName.ID,
                   coords: {
                     x: (41.0 / c) * ((entry.X) / 2048.0) + 1,
                     y: (41.0 / c) * ((entry.Y) / 2048.0) + 1
@@ -371,7 +412,7 @@ if (hasTodo('spearFishingLog')) {
             };
             if (sheetEntry !== undefined) {
               entry.gig = sheetEntry.Bait.split(' ')[0];
-              if(sheetEntry.Start){
+              if (sheetEntry.Start) {
                 entry.spawn = +sheetEntry.Start;
                 entry.duration = +sheetEntry.End > +sheetEntry.Start ? +sheetEntry.End - +sheetEntry.Start : +sheetEntry.Start - +sheetEntry.End;
               }
@@ -384,7 +425,7 @@ if (hasTodo('spearFishingLog')) {
                   name: split[0],
                   predatorAmount: +split[1]
                 }];
-                if(predatorSheetEntry && predatorSheetEntry.Start){
+                if (predatorSheetEntry && predatorSheetEntry.Start) {
                   entry.spawn = +predatorSheetEntry.Start;
                   entry.duration = +predatorSheetEntry.End > +predatorSheetEntry.Start ? +predatorSheetEntry.End - +predatorSheetEntry.Start : +predatorSheetEntry.Start - +predatorSheetEntry.End;
                 }

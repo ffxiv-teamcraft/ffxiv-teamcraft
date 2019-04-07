@@ -17,14 +17,8 @@ import { reductions } from '../../../core/data/sources/reductions';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { Alarm } from '../../../core/alarms/alarm';
-import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { AlarmDisplay } from '../../../core/alarms/alarm-display';
-import { fishingLog } from '../../../core/data/sources/fishing-log';
-import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
-import _ = require('lodash');
+import { TrackerComponent } from '../tracker-component';
 
 @Component({
   selector: 'app-log-tracker',
@@ -32,13 +26,12 @@ import _ = require('lodash');
   styleUrls: ['./log-tracker.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LogTrackerComponent {
+export class LogTrackerComponent extends TrackerComponent {
 
   private static PAGE_TABS = ['DoH', 'MIN-BTN', 'FSH'];
 
   public dohTabs: any[];
   public dolTabs: any[];
-  public fshTabs: any[];
 
   private dohPageNameCache: { [index: number]: string } = {};
   private dolPageNameCache: { [index: number]: string } = {};
@@ -47,33 +40,20 @@ export class LogTrackerComponent {
   public userGatheringCompletion: { [index: number]: boolean } = {};
 
   public nodeDataCache: any[][] = [];
-  public fshDataCache: any[] = [];
-
-  public alarmsCache: any = {};
 
   public dohSelectedPage = 0;
   public dolSelectedPage = 0;
-  public fshSelectedPage = 0;
-
-  public anglingPage = 1;
-  public spearFishingPage = 1;
 
   public type$: Observable<number>;
-
-  public alarmsLoaded$: Observable<boolean>;
-  public alarms$: Observable<Alarm[]>;
-  public alarmGroups$: Observable<AlarmGroup[]>;
 
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
-              private bell: BellNodesService, private l12n: LocalizedDataService, private alarmsFacade: AlarmsFacade,
+              private bell: BellNodesService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
               private lazyData: LazyDataService) {
+    super(alarmsFacade);
     this.dohTabs = [...craftingLogPages];
     this.dolTabs = [...gatheringLogPages];
-    this.fshTabs = [[..._.chunk(fishingLog, 10)], [..._.chunk(spearFishingNodes, 10)]];
-    this.alarmsLoaded$ = this.alarmsFacade.loaded$;
-    this.alarms$ = this.alarmsFacade.allAlarms$;
     this.authFacade.user$.pipe(
     ).subscribe(user => {
       this.userCompletion = {};
@@ -144,12 +124,6 @@ export class LogTrackerComponent {
     return `${page.items.filter(item => this.userGatheringCompletion[item.itemId]).length}/${page.items.length}`;
   }
 
-  public getFshProgress(tab: any): string {
-    const total = [].concat.apply([], tab);
-    const done = total.filter(item => this.userGatheringCompletion[item.itemId]);
-    return `${done.length}/${total.length}`;
-  }
-
   public getDohIcon(index: number): string {
     return `./assets/icons/classjob/${this.gt.getJob(index + 8).name.toLowerCase()}.png`;
   }
@@ -160,13 +134,6 @@ export class LogTrackerComponent {
       './assets/icons/MIN.png',
       './assets/icons/Mature_Tree.png',
       './assets/icons/BTN.png'
-    ][index];
-  }
-
-  public getFshIcon(index: number): string {
-    return [
-      './assets/icons/angling.png',
-      './assets/icons/spearfishing.png'
     ][index];
   }
 
@@ -233,115 +200,6 @@ export class LogTrackerComponent {
       && page.startLevel.ClassJobLevel !== 50
       && page.startLevel.ClassJobLevel !== 30)
       || (page.id > 1055 && page.id < 1072);
-  }
-
-  public getFshData(fish: any): any[] {
-    if (this.fshDataCache[fish.id] === undefined) {
-      this.fshDataCache[fish.id] = this._getFshData(fish);
-    }
-    return this.fshDataCache[fish.id];
-  }
-
-  private _getFshData(fish: any): any[] {
-    const spots = this.gt.getFishingSpots(fish.itemId);
-    if (fish.id >= 20000) {
-      const logEntries = spearFishingLog.filter(entry => entry.itemId === fish.id);
-      const spot = spearFishingNodes.find(node => node.itemId === fish.itemId);
-      return logEntries.map(entry => {
-        const result: any = {
-          zoneid: entry.zoneId,
-          mapId: entry.mapId,
-          x: entry.coords.x,
-          y: entry.coords.y,
-          level: entry.level,
-          type: 4,
-          itemId: fish.itemId,
-          icon: fish.icon,
-          timed: fish.spawn !== undefined
-        };
-
-        if (spot !== undefined) {
-          result.gig = spot.gig;
-        }
-
-        if (spot.spawn !== undefined) {
-          result.spawnTimes = [spot.spawn];
-          result.uptime = spot.duration;
-          // Just in case it despawns the day after.
-          result.uptime = result.uptime < 0 ? result.uptime + 24 : result.uptime;
-          // As uptimes are always in minutes, gotta convert to minutes here too.
-          result.uptime *= 60;
-        }
-
-        if (spot.predator) {
-          result.predators = spot.predator.map(predator => {
-            const itemId = +Object.keys(this.lazyData.items).find(key => this.lazyData.items[key].en === predator.name);
-            return {
-              id: itemId,
-              icon: this.lazyData.icons[itemId],
-              predatorAmount: predator.predatorAmount
-            };
-          });
-        }
-        return result;
-      });
-    } else {
-      if (spots.length > 0) {
-        return spots.map(spot => {
-          const mapId = this.l12n.getMapId(spot.zone);
-          const zoneId = this.l12n.getAreaIdByENName(spot.title);
-          if (mapId !== undefined) {
-            const result: any = {
-              zoneid: zoneId,
-              mapId: mapId,
-              x: spot.coords[0],
-              y: spot.coords[1],
-              level: spot.lvl,
-              type: 4,
-              itemId: spot.id,
-              icon: spot.icon,
-              timed: spot.during !== undefined,
-              fishEyes: spot.fishEyes,
-              snagging: spot.snagging
-            };
-            if (spot.during !== undefined) {
-              result.spawnTimes = [spot.during.start];
-              result.uptime = spot.during.end - spot.during.start;
-              // Just in case it despawns the day after.
-              result.uptime = result.uptime < 0 ? result.uptime + 24 : result.uptime;
-              // As uptimes are always in minutes, gotta convert to minutes here too.
-              result.uptime *= 60;
-            }
-
-            if (spot.predator) {
-              result.predators = spot.predator.map(predator => {
-                return {
-                  id: predator.id,
-                  icon: predator.icon,
-                  predatorAmount: predator.amount
-                };
-              });
-            }
-
-            result.baits = spot.bait.map(bait => {
-              const baitData = this.gt.getBait(bait);
-              return {
-                icon: baitData.icon,
-                id: baitData.id
-              };
-            });
-            if (spot.weather) {
-              result.weathers = spot.weather.map(w => this.l12n.getWeatherId(w));
-            }
-            return result;
-          }
-          return undefined;
-        })
-          .filter(res => res !== undefined)
-          .slice(0, 3);
-      }
-    }
-    return null;
   }
 
   public getNodeData(itemId: number, tab: number): any {
@@ -441,53 +299,6 @@ export class LogTrackerComponent {
         }
       });
     return finalNodes.slice(0, 3);
-  }
-
-  public getAlarm(node: any): Partial<Alarm> | null {
-    if (!node.timed && (node.weathers === undefined || node.weathers.length === 0)) {
-      return null;
-    }
-    if (this.alarmsCache[`${node.itemId}-${node.type}`] === undefined) {
-      this.alarmsCache[`${node.itemId}-${node.type}`] = {
-        itemId: node.itemId,
-        icon: node.icon,
-        duration: node.uptime / 60,
-        zoneId: node.zoneid,
-        areaId: node.areaid,
-        slot: +node.slot,
-        type: node.type,
-        coords: {
-          x: node.x,
-          y: node.y
-        },
-        folklore: node.folklore,
-        reduction: node.reduction,
-        ephemeral: node.ephemeral,
-        nodeContent: node.items,
-        spawns: node.spawnTimes,
-        mapId: node.mapId,
-        baits: node.baits || [],
-        weathers: node.weathers,
-        weathersFrom: node.weathersFrom,
-        snagging: node.snagging,
-        fishEyes: node.fishEyes,
-        predators: node.predators || []
-      };
-    }
-    return this.alarmsCache[`${node.itemId}-${node.type}`];
-  }
-
-  public toggleAlarm(display: AlarmDisplay): void {
-    if (display.registered) {
-      this.alarmsFacade.deleteAlarm(display.alarm);
-    } else {
-      this.alarmsFacade.addAlarms(display.alarm);
-    }
-  }
-
-  public addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
-    alarm.groupId = group.$key;
-    this.alarmsFacade.addAlarms(alarm);
   }
 
   private _getDohPageName(page: any): string {
