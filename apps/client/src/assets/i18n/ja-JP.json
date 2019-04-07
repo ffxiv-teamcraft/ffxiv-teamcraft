@@ -896,6 +896,7 @@
     "Weather_dependant": "Only with some weathers",
     "View_on_ff14angler": "FF14anglerの詳細",
     "Required_for_achievement": "アチーブメントに適用された",
+    "Select_spot": "Select a spot to see its details",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
       "Housing_items": "ハウジング ({{number}})",
