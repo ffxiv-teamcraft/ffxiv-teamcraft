@@ -70,7 +70,7 @@
     "Not_found": "この工房に無いか、アクセスする権限がありません",
     "Shared_workshops": "書く権限がある工房",
     "Rename": "工房名を変更する",
-    "Add_lists": "Add lists"
+    "Add_lists": "リストを追加する"
   },
   "ABOUT": {
     "title": "当サイトについて",
@@ -118,7 +118,7 @@
     "Opened_in_desktop": "このページはPCアプリ内に開きました。このページを閉じることが出来ます。",
     "Open_in_desktop": "PCアプリで開く",
     "Admin": "管理者",
-    "Minutes_duration": "{{amount}} minutes"
+    "Minutes_duration": "{{amount}} 分"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -136,8 +136,8 @@
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイ開く",
     "More_available": "{{amount}} 回 もっと",
-    "Node_content": "Node content",
-    "More_than_three_days": "> 3 days",
+    "Node_content": "採取物情報",
+    "More_than_three_days": "> 3日",
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
       "Name": "名前",
@@ -203,8 +203,8 @@
   "Anonymous_Warning": "リストを保存して適応型フィルターと同じような様々な機能を使用するためには、アカウントを生成しなければなりません",
   "Game_Term/DoH": "クラフター",
   "Game_Term/DoL": "ギャザラー",
-  "MIN/BTN": "Miner / Botanist",
-  "Game_Term/FSH": "Fisher",
+  "MIN/BTN": "採掘師 / 園芸師",
+  "Game_Term/FSH": "漁師",
   "Reduction": "精錬",
   "Upgrade_list": "最新アプリのバージョンにリストを再生成する",
   "List_recreated": "リストが改築されました",
@@ -296,7 +296,7 @@
     "No_nickname_warning": "後援者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
     "Show_devtools": "Devツールを表示",
     "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
-    "Enable_item_tags": "Enable item tags",
+    "Enable_item_tags": "アイテムダグを使用",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
       "Isearch": "/isearchマクロをコピーする"
@@ -411,7 +411,7 @@
     "List_too_large": "リストが大き過ぎます",
     "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
     "Add_to_another_list": "別のリストに追加",
-    "New_tag": "New tag",
+    "New_tag": "新しいタグ",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -422,20 +422,20 @@
       "Invalid_import": "無効な取り込みコードです",
       "Global_options": "一般設定",
       "Default_readonly_message": "デフォルトのレイアウトは読み取り専用です。カスタマイズを使用するためには、＋ボタンを押してください",
-      "Buttons": "Buttons",
-      "Menu": "Menu",
-      "Edit_row_buttons_display": "Edit row buttons display",
+      "Buttons": "ボタン",
+      "Menu": "メニュー",
+      "Edit_row_buttons_display": "行ボタンの編集画面",
       "ITEMS": {
-        "COMMENTS": "Comments",
-        "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
-        "ADD_ALL_ALARMS": "Add all alarms",
-        "WORK_ON_IT": "Work on it",
-        "ASSIGN_TEAM_MEMBER": "Assign team members",
-        "EDIT_AMOUNT": "Edit amount",
-        "MARK_HQ": "Mark HQ",
-        "ADD_TO_ANOTHER_LIST": "Add to another list",
-        "REQUIREMENTS": "Requirements",
-        "REMOVE_ITEM": "Remove item from the list"
+        "COMMENTS": "コメント",
+        "COPY_NAME_NOT_FAVORITE": "お気に入りでないコピーモード",
+        "ADD_ALL_ALARMS": "全てのアラームを追加する",
+        "WORK_ON_IT": "作業中",
+        "ASSIGN_TEAM_MEMBER": "チームメンバーに割り当てる",
+        "EDIT_AMOUNT": "数量を編集",
+        "MARK_HQ": "HQ表示",
+        "ADD_TO_ANOTHER_LIST": "他のリストに追加する",
+        "REQUIREMENTS": "材料",
+        "REMOVE_ITEM": "リストからこのアイテムを削除"
       }
     },
     "LAYOUT": {
@@ -443,7 +443,7 @@
       "Panel_name": "パネル名",
       "Order_by": "整列基準",
       "Order": "順番",
-      "Tag_filter": "Tag filter"
+      "Tag_filter": "タグフィルター"
     }
   },
   "LIST_TAGS": {
