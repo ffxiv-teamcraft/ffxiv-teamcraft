@@ -644,24 +644,24 @@
     "New_rotation_folder": "新回しフォルダー",
     "Safe_mode": "セーフモード",
     "Safe_mode_tooltip": "成功率100％ではないスキルは使用不可(バフを含む)",
-    "Quality_needed": "{{amount}} more quality to reach 100%",
+    "Quality_needed": "HQ 100%に到達するためには {{amount}} 程の品質が必要",
     "Rotation_tips": "Rotation tips",
     "COMMUNITY_ROTATIONS": {
       "Title": "Community rotations",
       "Community_rotation": "Community rotation",
       "No_rotations_matching": "No rotations matching",
       "Name_filter_placeholder": "Rotation name",
-      "Tags_filter_placeholder": "Tags",
-      "Durability_filter_placeholder": "Durability",
-      "Rlvl_filter_placeholder": "Recipe lvl",
-      "Filters_reset": "Reset filters",
-      "Configuration_popup": "Share with the community",
+      "Tags_filter_placeholder": "タグ",
+      "Durability_filter_placeholder": "耐久性",
+      "Rlvl_filter_placeholder": "制作レベル",
+      "Filters_reset": "フィルターリセット",
+      "Configuration_popup": "コミュニティーにシェアする",
       "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
       "Min_control_filter_placeholder": "Min. Control",
       "Min_cp_filter_placeholder": "Min. CP",
       "Intro": "Input some filters to get started",
       "TAGS": {
-        "SPECIALIST": "Specialist",
+        "SPECIALIST": "マイスター",
         "NOT_SPECIALIST": "Not specialist",
         "TEALESS": "Tealess",
         "FOODLESS": "Foodless",
@@ -814,8 +814,8 @@
     "No_anonymous_join": "チームに参加するためには、アカウントが必要です",
     "Already_in_team": "既にチームに参加しています",
     "Webhook_configuration": "Webhook設定",
-    "Officer": "Officer",
-    "Promote_officer": "Promote to officer",
+    "Officer": "オフィサー",
+    "Promote_officer": "オフィサーに昇格",
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加されました。",
       "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を削除されました。",
@@ -891,10 +891,10 @@
     "Mark_as_done": "このアイテムに完了として表示する",
     "Mark_as_not_done": "このアイテムを未完了として表示する",
     "Create_list": "このページを完成させるためのリストを作成する",
-    "Folklore": "Regional Folklore",
-    "Timed": "Timed",
+    "Folklore": "伝承録",
+    "Timed": "タイム・リミットあり",
     "Weather_dependant": "Only with some weathers",
-    "View_on_ff14angler": "More details on ff14angler",
+    "View_on_ff14angler": "FF14anglerの詳細",
     "Required_for_achievement": "アチーブメントに適用された",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
@@ -981,7 +981,7 @@
     }
   },
   "DIRTY": {
-    "Dialog_title": "You have unsaved changes",
-    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
+    "Dialog_title": "未保存の変更があります",
+    "Dialog_description": "このページを離れると、保存されていない変更がすべて削除されます。"
   }
 }
