@@ -896,6 +896,7 @@
     "Weather_dependant": "Only with some weathers",
     "View_on_ff14angler": "Подробнее на ff14angler",
     "Required_for_achievement": "Требуется для получения achievement'a",
+    "Select_spot": "Select a spot to see its details",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
