@@ -234,7 +234,7 @@ export class FishingLogTrackerComponent extends TrackerComponent {
             return {
               id: itemId,
               icon: this.lazyData.icons[itemId],
-              predatorAmount: predator.predatorAmount
+              amount: predator.predatorAmount
             };
           });
         }
