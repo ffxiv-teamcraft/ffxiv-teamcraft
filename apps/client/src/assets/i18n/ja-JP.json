@@ -529,12 +529,12 @@
     "Ephemeral_node": "リスポン可能な、時間制採集場所",
     "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
     "Hidden_item": "隠し資源",
-    "Fish_eyes": "Requires fish eyes",
-    "Snagging": "Requires snagging",
-    "Predators": "Fish these fish before",
+    "Fish_eyes": "フィッシュアイが必要",
+    "Snagging": "引掛釣りが必要",
+    "Predators": "前もってこの魚を釣る",
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
     "GIG_HEAD": {
-      "Small": "Small Gig Head",
+      "Small": "スモールギグヘッド",
       "Normal": "Normal Gig Head",
       "Large": "Large Gig Head"
     }
@@ -665,7 +665,7 @@
         "NOT_SPECIALIST": "非マイスター",
         "TEALESS": "薬品非使用",
         "FOODLESS": "食事非使用",
-        "MAKERS_MARK": "Maker's Mark",
+        "MAKERS_MARK": "堅実の心得",
         "MUSCLE_MEMORY": "確信"
       }
     },
@@ -886,7 +886,7 @@
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。"
   },
   "LOG_TRACKER": {
-    "Title": "制作手帳トラッカー",
+    "Title": "制作/採集手帳トラッカー",
     "Mark_page_as_done": "このページを完了として表示する",
     "Mark_as_done": "このアイテムに完了として表示する",
     "Mark_as_not_done": "このアイテムを未完了として表示する",
