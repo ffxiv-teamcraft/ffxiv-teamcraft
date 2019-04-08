@@ -13,6 +13,10 @@
           <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
                      [nzValue]="locale"></nz-option>
         </nz-select>
+        <a href="https://wiki.ffxivteamcraft.com" target="_blank" class="wiki-link"
+           nz-tooltip [nzTitle]="'WIKI.Title' | translate">
+          <i nz-icon type="question-circle"></i>
+        </a>
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="1 1 auto" fxLayoutGap="5px"
              *ngIf="platformService.isDesktop()">
           <button nz-button nzShape="circle" (click)="back()">
