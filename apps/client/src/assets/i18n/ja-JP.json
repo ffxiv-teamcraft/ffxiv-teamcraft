@@ -739,7 +739,7 @@
       "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
+      "Use_inner_quiet": "殆どのすべてのスキル回しは、HQ制作を目指しにするには '精神集中' が含まれるべきです。このスキルは、品質を向上させつつありながら 'ビエルゴの祝福' と同じようなスキルが使うことができます。",
       "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
       "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
       "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
@@ -896,7 +896,7 @@
     "Weather_dependant": "Only with some weathers",
     "View_on_ff14angler": "FF14anglerの詳細",
     "Required_for_achievement": "アチーブメントに適用された",
-    "Select_spot": "Select a spot to see its details",
+    "Select_spot": "詳細を表示するところを選択します。",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
       "Housing_items": "ハウジング ({{number}})",
