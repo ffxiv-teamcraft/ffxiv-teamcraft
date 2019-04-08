@@ -116,12 +116,18 @@
               {{'Remove_ephemeral' | translate}}
             </li>
             <ng-container *ngIf="!publicDisplay">
-              <li nz-submenu *ngIf="teams$ | async as teams">
-                <span title>{{'TEAMS.Assign_list' | translate}}</span>
-                <ul>
-                  <li *ngFor="let team of teams" nz-menu-item (click)="assignTeam(_list, team)">{{team.name}}</li>
-                </ul>
-              </li>
+              <ng-container *ngIf="teams$ | async as teams">
+                <li nz-submenu *ngIf="_list.teamId === undefined">
+                  <span title>{{'TEAMS.Assign_list' | translate}}</span>
+                  <ul>
+                    <li *ngFor="let team of teams" nz-menu-item (click)="assignTeam(_list, team)">{{team.name}}</li>
+                  </ul>
+                </li>
+                <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 30" (click)="removeTeam(_list, teams)"
+                    *ngIf="!publicDisplay && _list.teamId">
+                  {{'TEAMS.Detach_team' | translate}}
+                </li>
+              </ng-container>
             </ng-container>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">

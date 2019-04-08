@@ -12,7 +12,7 @@ export class ItemNamePipe implements PipeTransform {
   constructor(private data: LocalizedDataService) {
   }
 
-  transform(id: number, item: { name: string, custom?: boolean }): I18nName {
+  transform(id: number, item?: { name: string, custom?: boolean }): I18nName {
     if (item && item.custom === true) {
       return {
         fr: item.name,

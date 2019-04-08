@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
+import { DirtyFacade } from '../../dirty/+state/dirty.facade';
+import { DirtyScope } from '../../dirty/dirty-scope';
 
 @Injectable()
 export class PendingChangesService {
 
-  public pendingChanges: string[] = [];
-
-  public hasPendingChanges(): boolean {
-    return this.pendingChanges.length > 0;
+  constructor(private dirtyFacade: DirtyFacade) {
   }
 
   public addPendingChange(id: string): void {
-    this.pendingChanges.push(id);
+    this.dirtyFacade.addEntry(id, DirtyScope.APP);
   }
 
   public removePendingChange(id: string): void {
-    this.pendingChanges = this.pendingChanges.filter(row => row !== id);
+    this.dirtyFacade.removeEntry(id, DirtyScope.APP);
   }
 }

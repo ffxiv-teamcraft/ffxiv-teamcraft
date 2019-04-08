@@ -14,6 +14,8 @@ import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+sta
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../../../modules/custom-links/+state/custom-links.facade';
 import { CustomLink } from '../../../../core/database/custom-links/custom-link';
+import { FolderAdditionPickerComponent } from '../../../../modules/folder-addition-picker/folder-addition-picker/folder-addition-picker.component';
+import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 
 @Component({
   selector: 'app-rotation-folder-panel',
@@ -49,13 +51,43 @@ export class RotationFolderPanelComponent {
 
   constructor(private foldersFacade: RotationFoldersFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,
               private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
-              private customLinksFacade: CustomLinksFacade) {
+              private customLinksFacade: CustomLinksFacade, private rotationsFacade: RotationsFacade) {
 
     this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.folder$).pipe(
       map(([links, folder]) => links.find(link => link.redirectTo === `rotation-folder/${folder.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
     );
+  }
+
+  addRotations(): void {
+    combineLatest(this.rotationsFacade.myRotations$, this.foldersFacade.myRotationFolders$).pipe(
+      first(),
+      switchMap(([rotations, folders]) => {
+        const elements = rotations
+          .filter(rotation => {
+            return folders.find(f => f.rotationIds.indexOf(rotation.$key) > -1) === undefined;
+          });
+        return this.dialog.create({
+          nzTitle: this.translate.instant('SIMULATOR.ROTATIONS.FOLDERS.Add_rotations'),
+          nzContent: FolderAdditionPickerComponent,
+          nzComponentParams: {
+            elements: elements.map(rotation => {
+              return {
+                $key: rotation.$key,
+                name: rotation.getName()
+              }
+            })
+          },
+          nzFooter: null
+        }).afterClose;
+      })
+    ).subscribe(rotations => {
+      if (rotations && rotations.length > 0) {
+        this._folder.rotationIds.push(...rotations.map(rotation => rotation.$key));
+        this.foldersFacade.updateFolder(this._folder);
+      }
+    });
   }
 
   createCustomLink(folder: CraftingRotationsFolder, user: TeamcraftUser): void {

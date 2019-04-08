@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CraftingAction } from '../../model/actions/crafting-action';
 import { ActionType } from '../../model/actions/action-type';
 import { CraftingActionsRegistry } from '../../model/crafting-actions-registry';
@@ -15,7 +15,7 @@ import {
   first,
   map,
   pairwise,
-  shareReplay, skip,
+  shareReplay,
   startWith,
   takeUntil,
   tap
@@ -53,6 +53,12 @@ import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { fakeHQItems } from '../../../../core/data/sources/fake-hq-items';
+import { RotationTip } from '../../rotation-tips/rotation-tip';
+import { RotationTipsService } from '../../rotation-tips/rotation-tips.service';
+import { RotationTipsPopupComponent } from '../rotation-tips-popup/rotation-tips-popup.component';
+import { DirtyScope } from '../../../../core/dirty/dirty-scope';
+import { DirtyFacade } from '../../../../core/dirty/+state/dirty.facade';
+import { CommunityRotationPopupComponent } from '../community-rotation-popup/community-rotation-popup.component';
 
 @Component({
   selector: 'app-simulator',
@@ -60,6 +66,8 @@ import { fakeHQItems } from '../../../../core/data/sources/fake-hq-items';
   styleUrls: ['./simulator.component.less']
 })
 export class SimulatorComponent implements OnInit, OnDestroy {
+
+  public dirtyScope = DirtyScope;
 
   @Input()
   public custom = false;
@@ -110,12 +118,15 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   public report$: Observable<SimulationReliabilityReport>;
 
+  public tips$: Observable<RotationTip[]>;
+
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
 
   public rotation$ = this.rotationsFacade.selectedRotation$.pipe(
     tap(rotation => {
       if (rotation.$key === undefined && rotation.rotation.length > 0) {
         this.dirty = true;
+        this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
       }
     })
   );
@@ -203,7 +214,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
-              private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService) {
+              private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
+              private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$),
       filter(key => key !== undefined)
@@ -236,7 +248,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     const job$ = merge(this.recipe$.pipe(map(r => r.job || 8)), this.customJob$).pipe(tap(job => this.job = job));
 
     const statsFromRecipe$: Observable<CrafterStats> = combineLatest(this.recipe$, job$, this.authFacade.gearSets$).pipe(
-      map(([recipe, job, sets]) => {
+      map(([, job, sets]) => {
         const set = sets.find(s => s.jobId === job);
         return new CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.level, <CrafterLevels>sets.map(s => s.level));
       }),
@@ -264,7 +276,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.crafterStats$ = merge(statsFromRecipe$, this.customStats$);
+    this.crafterStats$ = merge(statsFromRecipe$, this.customStats$).pipe(shareReplay(1));
 
     this.stats$ = combineLatest(this.crafterStats$, this.bonuses$, this.loggedIn$).pipe(
       map(([stats, bonuses, loggedIn]) => {
@@ -274,7 +286,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           stats._control + bonuses.control,
           stats.cp + bonuses.cp,
           stats.specialist,
-          loggedIn ? stats.level : 70,
+          stats.level,
           loggedIn ? stats.levels : [70, 70, 70, 70, 70, 70, 70, 70]);
       })
     );
@@ -333,6 +345,18 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     });
   }
 
+  showRotationTips(tips: RotationTip[], result: SimulationResult): void {
+    this.dialog.create({
+      nzFooter: null,
+      nzContent: RotationTipsPopupComponent,
+      nzComponentParams: {
+        tips: tips,
+        result: result
+      },
+      nzTitle: this.translate.instant('SIMULATOR.Rotation_tips')
+    });
+  }
+
   renameRotation(rotation: CraftingRotation): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
@@ -348,6 +372,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     ).subscribe(r => {
       this.saveRotation(r);
       this.dirty = false;
+      this.dirtyFacade.removeEntry('simulator', DirtyScope.PAGE);
     });
   }
 
@@ -494,6 +519,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       rotation.freeCompanyActions = <[number, number]>this.selectedFreeCompanyActions.map(action => action.actionId);
       this.rotationsFacade.updateRotation(rotation);
       this.dirty = false;
+      this.dirtyFacade.removeEntry('simulator', DirtyScope.PAGE);
     });
   }
 
@@ -511,6 +537,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.actions$.next([...actions]);
     }
     this.dirty = true;
+    this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
   }
 
   actionDrag(index: number): void {
@@ -526,7 +553,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.addAction(event.value, event.dropIndex);
     this.draggedAction$ = null;
   }
-  
+
   dragCancel(event: any): void {
     if (event.el.parentNode.classList.contains('actions-container')) {
       event.el.parentNode.removeChild(event.el);
@@ -540,6 +567,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     actions.splice(index, 1);
     this.actions$.next([...actions]);
     this.dirty = true;
+    this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
   }
 
   applyStats(): void {
@@ -706,6 +734,28 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.statsForm.patchValue(stats, { emitEvent: false });
   }
 
+  openCommunityRotationConfiguration(rotation: CraftingRotation, simulation: Simulation, stats: CrafterStats): void {
+    this.cd.detach();
+    this.dialog.create({
+      nzContent: CommunityRotationPopupComponent,
+      nzComponentParams: {
+        rotation: rotation,
+        simulation: simulation.clone(),
+        bonuses: {
+          craftsmanship: this.getBonusValue('Craftsmanship', stats.craftsmanship),
+          control: this.getBonusValue('Control', stats._control),
+          cp: this.getBonusValue('CP', stats.cp)
+        }
+      },
+      nzTitle: this.translate.instant('SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup'),
+      nzFooter: null
+    }).afterClose.subscribe(() => {
+      this.cd.reattach();
+      this.cd.markForCheck();
+      this.saveRotation(rotation);
+    });
+  }
+
   ngOnDestroy(): void {
     this.onDestroy$.next(null);
   }
@@ -736,6 +786,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         } else {
           return simulation.clone().getReliabilityReport();
         }
+      })
+    );
+
+    this.tips$ = this.result$.pipe(
+      map((result) => {
+        return this.rotationTipsService.getTips(result);
       })
     );
   }

@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-item-icon',
@@ -31,6 +30,9 @@ export class ItemIconComponent {
 
   @Input()
   width = 48;
+
+  @Input()
+  tooltipDisabled = false;
 
   @Input()
   disableClick = false;

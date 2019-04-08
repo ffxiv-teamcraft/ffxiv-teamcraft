@@ -31,4 +31,7 @@ export class TeamcraftUser extends DataModel {
   nickname: string;
 
   logProgression: number[] = [];
+  gatheringLogProgression: number[] = [];
+
+  itemTags: { id: number, tag: string }[] = [];
 }

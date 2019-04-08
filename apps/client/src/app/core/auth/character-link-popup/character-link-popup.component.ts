@@ -91,14 +91,7 @@ export class CharacterLinkPopupComponent {
 
   selectCharacter(character: CharacterSearchResultRow): void {
     this.store.dispatch(new AddCharacter(character.ID, this.useAsDefault));
-    if (this.mandatory) {
-      // Hotfix for first login character addition.
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
-    } else {
-      this.modalRef.close();
-    }
+    this.modalRef.close();
   }
 
 }

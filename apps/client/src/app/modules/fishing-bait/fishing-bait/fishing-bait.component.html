@@ -1,10 +1,11 @@
-<div fxLayout="column" fxLayoutAlign="flex-start">
-  <div *ngFor="let bait of baits; let index = index; let last = last" fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="center center">
+<div [fxLayout]="flex" fxLayoutAlign="flex-start">
+  <div *ngFor="let bait of baits; let index = index; let last = last" [fxLayout]="flex" fxLayoutGap="5px"
+       fxLayoutAlign="center center">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <app-item-icon [hq]="baits.length > 1 && index > 0" [itemId]="bait.id" [icon]="bait.icon"
-                     [width]="32"></app-item-icon>
+                     [width]="32" [tooltipDisabled]="true" [appFishTooltip]="bait.id"></app-item-icon>
       <div>{{bait.id | itemName | i18n}}</div>
     </div>
-    <i nz-icon type="caret-down" theme="outline" *ngIf="!last"></i>
+    <i nz-icon [type]="flex === 'column'?'caret-down':'caret-right'" theme="outline" *ngIf="!last"></i>
   </div>
 </div>

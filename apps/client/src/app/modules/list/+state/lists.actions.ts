@@ -30,6 +30,7 @@ export enum ListsActionTypes {
   UpdateList = '[Lists] Update List',
   UpdateListIndex = '[Lists] Update List Index',
   DeleteList = '[Lists] Delete List',
+  ConvertLists = '[Lists] Convert Lists',
 
   NeedsVerification = '[Lists] Needs character verification'
 }
@@ -177,6 +178,13 @@ export class DeleteList implements Action {
   }
 }
 
+export class ConvertLists implements Action {
+  readonly type = ListsActionTypes.ConvertLists;
+
+  constructor(public readonly uid: string) {
+  }
+}
+
 export type ListsAction =
   LoadMyLists
   | MyListsLoaded
@@ -198,4 +206,5 @@ export type ListsAction =
   | NeedsVerification
   | LoadTeamLists
   | TeamListsLoaded
-  | UnloadListDetails;
+  | UnloadListDetails
+  | ConvertLists;

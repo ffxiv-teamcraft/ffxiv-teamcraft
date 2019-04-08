@@ -9,10 +9,13 @@ import { Item } from '../../../../model/garland-tools/item';
 import * as nodePositions from '../../../../core/data/sources/node-positions.json';
 import { StoredNode } from '../../model/stored-node';
 import { FishingBait } from '../../model/fishing-bait';
+import { spearFishingNodes } from '../../../../core/data/sources/spear-fishing-nodes';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
 
-  constructor(protected gt: GarlandToolsService, private htmlTools: HtmlToolsService, private localized: LocalizedDataService) {
+  constructor(protected gt: GarlandToolsService, private htmlTools: HtmlToolsService, private localized: LocalizedDataService,
+              private lazyData: LazyDataService) {
     super(gt);
   }
 
@@ -86,6 +89,30 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
               delete storedNode[key];
             }
           });
+          const spearFishingSpot = spearFishingNodes.find(n => n.itemId === item.id);
+          // If it's a spearfishing node, we have some data to add.
+          if (spearFishingSpot !== undefined) {
+            storedNode.gig = spearFishingSpot.gig;
+            if (spearFishingSpot.spawn !== undefined) {
+              storedNode.time = [spearFishingSpot.spawn];
+              storedNode.uptime = spearFishingSpot.duration;
+              // Just in case it despawns the day after.
+              storedNode.uptime = storedNode.uptime < 0 ? storedNode.uptime + 24 : storedNode.uptime;
+              // As uptimes are always in minutes, gotta convert to minutes here too.
+              storedNode.uptime *= 60;
+            }
+
+            if (spearFishingSpot.predator) {
+              storedNode.predators = spearFishingSpot.predator.map(predator => {
+                const itemId = +Object.keys(this.lazyData.items).find(key => this.lazyData.items[key].en === predator.name);
+                return {
+                  id: itemId,
+                  icon: this.lazyData.icons[itemId],
+                  amount: predator.predatorAmount
+                };
+              });
+            }
+          }
           gatheredBy.nodes.push(<StoredNode>storedNode);
         }
       }
@@ -103,7 +130,9 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             areaid: mapId,
             zoneid: zoneId,
             coords: spot.coords as number[],
-            level: spot.lvl
+            level: spot.lvl,
+            fishEyes: spot.fishEyes,
+            snagging: spot.snagging
           };
           if (spot.during !== undefined) {
             node.time = [spot.during.start];
@@ -113,9 +142,24 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             // As uptimes are always in minutes, gotta convert to minutes here too.
             node.uptime *= 60;
           }
+          if (spot.hookset) {
+            node.hookset = spot.hookset.split(' ')[0].toLowerCase();
+          }
+          if (spot.predator) {
+            node.predators = spot.predator.map(predator => {
+              return {
+                id: predator.id,
+                icon: predator.icon,
+                amount: predator.predatorAmount
+              };
+            });
+          }
           node.baits = this.getBaits(spot.bait);
           if (spot.weather) {
             node.weathers = spot.weather.map(w => this.localized.getWeatherId(w));
+          }
+          if (spot.transition) {
+            node.weathersFrom = spot.transition.map(w => this.localized.getWeatherId(w));
           }
           gatheredBy.nodes.push(node);
         }

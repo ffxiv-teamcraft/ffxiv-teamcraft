@@ -69,7 +69,8 @@
     "Share_link_copied": "공방 공유링크 복사됨",
     "Not_found": "해당 공방이 없거나 접근할 권한이 없습니다",
     "Shared_workshops": "쓰기 권한이 있는 공방",
-    "Rename": "공방 이름변경"
+    "Rename": "공방 이름변경",
+    "Add_lists": "목록 추가"
   },
   "ABOUT": {
     "title": "TC에 대하여",
@@ -116,7 +117,9 @@
     "Language": "언어",
     "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
     "Open_in_desktop": "데스크톱 앱에서 열기",
-    "Admin": "관리자"
+    "Admin": "관리자",
+    "Minutes_duration": "{{amount}} 분",
+    "Seconds_duration": "{{amount}} seconds"
   },
   "ALARMS": {
     "Title": "알람",
@@ -134,6 +137,8 @@
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
     "Open_overlay": "오버레이 열기",
     "More_available": "{{amount}}번 더...",
+    "Node_content": "채집물 정보",
+    "More_than_three_days": "3일 이상",
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
@@ -199,6 +204,8 @@
   "Anonymous_Warning": "목록을 저장하고 다양한 기능을 사용하기 위해서는 계정을 생성해야합니다",
   "Game_Term/DoH": "제작자",
   "Game_Term/DoL": "채집가",
+  "MIN/BTN": "광부 / 원예가",
+  "Game_Term/FSH": "어부",
   "Reduction": "정제",
   "Upgrade_list": "최신 앱 버전으로 목록 재생성하기",
   "List_recreated": "목록이 재생성되었습니다",
@@ -290,6 +297,7 @@
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
+    "Enable_item_tags": "아이템 태그 사용",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -361,7 +369,7 @@
     "Total_price": "총 비용 (길 및 화폐)",
     "Total_trade_price": "총합: ",
     "Add_all_alarms": "이 목록에 대한 알람 추가",
-    "History": "내역",
+    "History": "목록 변경내역",
     "Items_count": "아이템 {{amount}}개",
     "Show_craftable_amount": "제작 가능한 수량 표시",
     "COMPLETION_POPUP": {
@@ -403,7 +411,8 @@
     "Add_item": "아이템 추가",
     "List_too_large": "너무 큰 목록",
     "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
-    "Add_to_another_list": "Add to another list",
+    "Add_to_another_list": "다른 목록에 추가",
+    "New_tag": "새 태그",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -413,13 +422,29 @@
       "Layout_name": "레이아웃 이름",
       "Invalid_import": "유효하지 않은 불러오기 코드입니다",
       "Global_options": "일반 설정",
-      "Default_readonly_message": "기본 레이아웃은 읽기전용이며, + 버튼을 눌러 편집 가능한 새 레이아웃을 만들 수 있습니다."
+      "Default_readonly_message": "기본 레이아웃은 읽기전용이며, + 버튼을 눌러 편집 가능한 새 레이아웃을 만들 수 있습니다.",
+      "Buttons": "버튼",
+      "Menu": "메뉴",
+      "Edit_row_buttons_display": "행 버튼 편집",
+      "ITEMS": {
+        "COMMENTS": "댓글",
+        "COPY_NAME_NOT_FAVORITE": "선호하지 않는 복사 모드",
+        "ADD_ALL_ALARMS": "모든 알람 추가",
+        "WORK_ON_IT": "작업중",
+        "ASSIGN_TEAM_MEMBER": "팀 멤버에게 할당",
+        "EDIT_AMOUNT": "수량 수정",
+        "MARK_HQ": "HQ 표시",
+        "ADD_TO_ANOTHER_LIST": "다른 목록에 추가",
+        "REQUIREMENTS": "재료",
+        "REMOVE_ITEM": "목록에서 이 아이템을 제거"
+      }
     },
     "LAYOUT": {
       "Filter": "필터",
       "Panel_name": "패널 이름",
       "Order_by": "정렬 기준",
-      "Order": "순서"
+      "Order": "순서",
+      "Tag_filter": "태그 필터"
     }
   },
   "LIST_TAGS": {
@@ -504,7 +529,16 @@
     "Gathering_name": "아이템 이름을 입력하세요",
     "Ephemeral_node": "재등장 가능한 시간제 채집 장소",
     "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
-    "Hidden_item": "숨은 자원"
+    "Hidden_item": "숨은 자원",
+    "Fish_eyes": "물고기의 눈 필요",
+    "Snagging": "갈고리 낚시 필요",
+    "Predators": "사전에 낚아야 할 물고기",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
+    "GIG_HEAD": {
+      "Small": "소형 작살",
+      "Normal": "중형 작살",
+      "Large": "대형 작살"
+    }
   },
   "ANNOUNCEMENT": {
     "Title": "공지사항",
@@ -543,10 +577,11 @@
     "User_id_tip": "사용자 ID는 프로필 페이지 오른쪽 하단에 있습니다",
     "Saving": "권한 설정을 저장중",
     "No_anonymous": "권한을 관리하려면 계정이 필요합니다",
-    "Propagate_changes": "공방 내부에 목록에 대한 권한 제공",
+    "Propagate_changes": "공방 내부 목록들의 권한을 변경",
     "Propagate_changes_done": "공방 내부 목록에 대한 변경이 적용되었습니다",
     "Team_notice": "이 목록이 할당된 팀은 자동으로 참여 권한을 갖습니다.",
-    "Default_permission_level": "기본 권한 수준"
+    "Default_permission_level": "기본 권한 수준",
+    "List_tooltip": "모든 유저에 대한 권한 수준 : {{level}}"
   },
   "WIKI": {
     "Title": "위키",
@@ -610,6 +645,31 @@
     "New_rotation_folder": "새 폴더 만들기",
     "Safe_mode": "안전 모드",
     "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
+    "Quality_needed": "HQ 100%에 도달하기 위해선 {{amount}} 만큼의 품질이 더 필요",
+    "Rotation_tips": "로테이션 팁",
+    "COMMUNITY_ROTATIONS": {
+      "Title": "커뮤니티 로테이션",
+      "Community_rotation": "커뮤니티 로테이션",
+      "No_rotations_matching": "조건에 맞는 로테이션 없음",
+      "Name_filter_placeholder": "로테이션 이름",
+      "Tags_filter_placeholder": "태그",
+      "Durability_filter_placeholder": "내구도",
+      "Rlvl_filter_placeholder": "제작 레벨",
+      "Filters_reset": "필터 초기화",
+      "Configuration_popup": "커뮤니티에 공유하기",
+      "Min_craftsmanship_filter_placeholder": "최소 작업 숙련도",
+      "Min_control_filter_placeholder": "최소 가공 숙련도",
+      "Min_cp_filter_placeholder": "최소 CP",
+      "Intro": "시작하기 위해 몇가지 필터를 입력하세요",
+      "TAGS": {
+        "SPECIALIST": "전문장인",
+        "NOT_SPECIALIST": "비전문장인",
+        "TEALESS": "약차 사용안함",
+        "FOODLESS": "음식 사용안함",
+        "MAKERS_MARK": "견실한 마음가짐",
+        "MUSCLE_MEMORY": "확신"
+      }
+    },
     "CUSTOM": {
       "Recipe_configuration": "제작난이도 설정",
       "Recipe_level": "레시피 레벨",
@@ -629,7 +689,8 @@
         "Created_by": "제작자: {{name}}",
         "Copy_folder": "이 폴더와 내용을 내 계정으로 복사",
         "Folder_copied": "폴더가 내 계정에 복사되었습니다",
-        "Favorite_folders": "즐겨찾기 폴더"
+        "Favorite_folders": "즐겨찾기 폴더",
+        "Add_rotations": "로테이션 추가"
       }
     },
     "CATEGORY": {
@@ -677,6 +738,24 @@
       "MISSING_LEVEL_REQUIREMENT": "레벨이 부족함",
       "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
       "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함"
+    },
+    "ROTATION_TIPS": {
+      "Use_inner_quiet": "거의 모든 로테이션은 HQ제작을 목표로 한다면 '정신집중'이 포함되어야 합니다. 이 스킬은 품질을 향상 시켜주며, '비레고의 축복'과 같은 스킬들을 사용할 수 있게 해줍니다.",
+      "Use_inner_quiet_before_quality_increase": "품질을 향상시키기 전에 '정신 집중' 을 사용해야 합니다. 사용하지 않을 경우, '정신 집중' 스택이 낭비됩니다.",
+      "Use_ingenuity_I_instead": "제작을 완성하는데 충분하기 때문에, '독창적 발상 2' 대신 CP 8을 덜 소모하는 '독창적 발상 1'을 사용해야 합니다.",
+      "Use_cz_earlier": "CP회복효과를 빨리 적용받기 위해선 '작업 요령'을 좀 더 일찍 사용해야 합니다.",
+      "Use_reclaim": "'재활용'을 사용할 CP가 충분하기 때문에, 만약 제작이 실패했다면, 재료회수를 위해 '재활용' 을 공정에 추가해야 합니다.",
+      "Use_byregot_brow_low_iq_stacks": "'정신 집중' 6스택 이하에서 '비레고의 축복'을 사용했습니다. 이 경우에는 '비레고의 기교'가 더 나은 품질을 제공합니다.",
+      "Use_byregot_blessing_high_iq_stacks": "'정신 집중' 7스택 이상에서 '비레고의 기교'을 사용했습니다. 이 경우에는 '비레고의 축복'이 더 나은 품질을 제공합니다.",
+      "Use_sh1_instead": "{{index}} 번째 공정에서 '안정된 솜씨' 를 사용하는 것이 '안정된 솜씨 2'를 사용하는 것보다 CP 3을 절약할 수 있습니다.",
+      "Use_sh2_instead": "{{index}} 번째 공정에서 CP 3을 더 소모하여 '안정된 솜씨 2'를 사용하는 것이 '안정된 솜씨'를 사용하는 것보다 신뢰도가 더 높습니다.",
+      "Use_pbp_first": "'꾸준한 진척'을 다른 작업공정을 진행하기 전에 사용하세요. 이 스킬은 남은 작업량에 따라 효과가 다르기 때문입니다.",
+      "Use_mume_if_pbp": "첫 공정에서는 '확신' 을 사용해야 합니다. 이 스킬은 '꾸준한 진척'을 대신하면서도 CP 9를 확보할 수 있습니다.",
+      "Use_observe_before_focused": "주시작업/가공을 100% 성공을 하기 위해서는 {{index}} 번째 공정에서 '경과 관찰' 을 사용해야 합니다.",
+      "Use_durability_restoration_later": "내구도 회복스킬을 낭비하지 않기 위해서는 {{index}} 번째 공정에서 내구도 회복스킬을 사용하세요.",
+      "Use_patient_touch_faster": "'전념 가공'은 '정신집중'의 스택이 쌓이기 전에 사용하세요. 만약 스킬이 실패한다면 스택이 낭비될 수도 있습니다.",
+      "Use_advanced_touch_instead": "{{index}} 번째 공정에서 '가공' 과 '고급 가공' 을 사용했습니다. '중급 가공' 을 두번 사용할 경우 CP 2를 절약하면서도 같은 효과를 발휘할 수 있습니다.",
+      "Do_not_overlap_buffs": "{{overlappedIndex}} 번째 공정에서 사용한 버프가 {{overlappingIndex}} 번째 공정에서 사용한 버프와 중복됩니다. 버프의 효과를 최대한 받을 수 있도록 조금 늦게 사용해야 합니다."
     }
   },
   "PRICING": {
@@ -736,6 +815,8 @@
     "No_anonymous_join": "팀에 참가하기 위해서는 계정이 필요합니다",
     "Already_in_team": "이미 팀에 참여한 상태입니다",
     "Webhook_configuration": "Webhook 설정",
+    "Officer": "관리자",
+    "Promote_officer": "관리자로 승급",
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 추가하였습니다.",
       "Item_removed": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 삭제하였습니다.",
@@ -776,7 +857,7 @@
   "TOOLTIP": {
     "Level": "레벨",
     "Ilvl": "아이템레벨",
-    "Cost": "비용",
+    "Cost": "CP",
     "Class_job": "클래스/직업",
     "Damage_phys": "물리 공격력",
     "Damage_mag": "공격마법 위력",
@@ -806,12 +887,17 @@
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요."
   },
   "LOG_TRACKER": {
-    "Title": "제작수첩 트래커",
+    "Title": "제작/채집수첩 트래커",
     "Mark_page_as_done": "이 페이지를 완료됨 으로 표시",
     "Mark_as_done": "이 아이템을 완료됨 으로 표시",
     "Mark_as_not_done": "이 아이템을 완료되지 않음 으로 표시",
     "Create_list": "이 페이지를 완료하기 위한 목록 만들기",
+    "Folklore": "전승록",
+    "Timed": "시간제한 있음",
+    "Weather_dependant": "특정 날씨에서만 가능",
+    "View_on_ff14angler": "ff14angler에서 자세한 정보 보기",
     "Required_for_achievement": "업적에 적용됨",
+    "Select_spot": "상세정보를 표시할 곳을 선택",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
@@ -895,5 +981,9 @@
       "Parsing_file": "파일 내용 분석중..",
       "Saving_items": "아이템 저장 중 ({{done}}/{{todo}})"
     }
+  },
+  "DIRTY": {
+    "Dialog_title": "저장되지 않은 변경점이 있습니다",
+    "Dialog_description": "이 페이지를 종료하면 저장되지 않은 모든 변경 내용이 삭제됩니다, 계속하시겠습니까?"
   }
 }

@@ -21,7 +21,7 @@
       <nz-pagination [nzPageIndex]="page$ | async" (nzPageIndexChange)="page$.next($event)" [nzTotal]="totalLength"
                      *ngIf="totalLength > 0"
                      [nzPageSize]="pageSize" fxLayout="row"
-                     fxLayoutAlign="flex-end flex-end"></nz-pagination>
+                     fxLayoutAlign="center center"></nz-pagination>
       <app-fullpage-message *ngIf="lists.length === 0">{{'COMMUNITY_LISTS.No_lists_matching' | translate}}
       </app-fullpage-message>
     </div>

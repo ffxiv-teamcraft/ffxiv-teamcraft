@@ -11,7 +11,7 @@ import {
 } from './rotations.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { catchError, filter, map, switchMap, withLatestFrom, mergeMap } from 'rxjs/operators';
-import { CraftingRotationService } from '../../../core/database/crafting-rotation.service';
+import { CraftingRotationService } from '../../../core/database/crafting-rotation/crafting-rotation.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { of } from 'rxjs';
 import { EMPTY } from 'rxjs/internal/observable/empty';

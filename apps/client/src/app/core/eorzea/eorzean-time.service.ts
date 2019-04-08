@@ -7,7 +7,7 @@ import { shareReplay } from 'rxjs/operators';
 })
 export class EorzeanTimeService {
 
-  private static EPOCH_TIME_FACTOR = 20.571428571428573;
+  public static readonly EPOCH_TIME_FACTOR = 20.571428571428573;
 
   private _timerObservable: BehaviorSubject<Date> = new BehaviorSubject<Date>(this.toEorzeanDate(new Date()));
 

@@ -48,6 +48,7 @@ import { MapModule } from './modules/map/map.module';
 import { LayoutModule } from './core/layout/layout.module';
 import { LoadingScreenModule } from './pages/loading-screen/loading-screen.module';
 import { CustomItemsModule } from './modules/custom-items/custom-items.module';
+import { DirtyModule } from './core/dirty/dirty.module';
 
 registerLocaleData(en);
 
@@ -96,6 +97,7 @@ registerLocaleData(en);
     XivapiClientModule.forRoot(),
 
     RouterModule.forRoot([], { useHash: IS_ELECTRON }),
+    DirtyModule,
 
     AppRoutingModule,
     AuthModule,

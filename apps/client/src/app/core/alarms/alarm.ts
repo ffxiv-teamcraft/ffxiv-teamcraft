@@ -35,7 +35,12 @@ export class Alarm extends DataModel {
   type: number;
 
   baits?: FishingBait[];
+  gig?: string;
   weathers?: number[];
+  weathersFrom?: number[];
+  snagging?: boolean;
+  fishEyes?: boolean;
+  predators?: { id: number, icon: number, amount: number }[];
 
   note: string;
 
@@ -46,6 +51,8 @@ export class Alarm extends DataModel {
   reduction?: boolean;
 
   ephemeral?: boolean;
+
+  nodeContent?: any;
 
   constructor(alarmData?: Partial<Alarm>) {
     super();

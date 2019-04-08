@@ -16,6 +16,7 @@ import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade';
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { ListPickerService } from '../../list-picker/list-picker.service';
+import { FolderAdditionPickerComponent } from '../../folder-addition-picker/folder-addition-picker/folder-addition-picker.component';
 
 @Component({
   selector: 'app-workshop-panel',
@@ -65,6 +66,37 @@ export class WorkshopPanelComponent implements OnChanges {
     this.listPicker.pickList(true).subscribe(list => {
       this._workshop.listIds.push(list.$key);
       this.workshopsFacade.updateWorkshop(this._workshop);
+    });
+  }
+
+  addLists(): void {
+    combineLatest(this.listsFacade.myLists$, this.workshopsFacade.myWorkshops$).pipe(
+      first(),
+      switchMap(([lists, workshops]) => {
+        const elements = lists
+          .filter(l => {
+            return workshops.find(w => w.listIds.indexOf(l.$key) > -1) === undefined && l.name !== undefined && l.name.length > 0;
+          });
+        return this.dialog.create({
+          nzTitle: this.translate.instant('WORKSHOP.Add_lists'),
+          nzContent: FolderAdditionPickerComponent,
+          nzComponentParams: {
+            elements: elements.map(list => {
+              return {
+                $key: list.$key,
+                name: list.name,
+                description: list.note
+              }
+            })
+          },
+          nzFooter: null
+        }).afterClose;
+      })
+    ).subscribe(lists => {
+      if (lists && lists.length > 0) {
+        this._workshop.listIds.push(...lists.map(list => list.$key));
+        this.workshopsFacade.updateWorkshop(this._workshop);
+      }
     });
   }
 
@@ -136,7 +168,7 @@ export class WorkshopPanelComponent implements OnChanges {
                   return list;
                 });
             })
-          )
+          );
       })
     ).subscribe((updatedLists: List[]) => {
       updatedLists.forEach(list => {

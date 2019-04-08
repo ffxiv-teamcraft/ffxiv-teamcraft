@@ -34,7 +34,7 @@ export class Simulation {
 
   public safe = false;
 
-  constructor(public readonly recipe: Craft, public readonly actions: CraftingAction[], private _crafterStats: CrafterStats,
+  constructor(public readonly recipe: Craft, public actions: CraftingAction[], private _crafterStats: CrafterStats,
               private hqIngredients: { id: number, amount: number }[] = []) {
     this.durability = recipe.durability;
     this.availableCP = this._crafterStats.cp;

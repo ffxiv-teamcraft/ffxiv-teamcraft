@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ListService } from '../list.service';
 import {
+  ConvertLists,
   CreateList,
   CreateOptimisticListCompact,
   DeleteList,
@@ -49,6 +50,7 @@ import { Router } from '@angular/router';
 import { NzModalService } from 'ng-zorro-antd';
 import { ListCompletionPopupComponent } from '../list-completion-popup/list-completion-popup.component';
 import { TranslateService } from '@ngx-translate/core';
+import { from } from 'rxjs/internal/observable/from';
 
 @Injectable()
 export class ListsEffects {
@@ -219,6 +221,20 @@ export class ListsEffects {
     map(action => action as UpdateList),
     switchMap(action => this.listService.update(action.payload.$key, action.payload)),
     switchMap(() => EMPTY)
+  );
+
+  @Effect()
+  convertListsAfterRegister$ = this.actions$.pipe(
+    ofType<ConvertLists>(ListsActionTypes.ConvertLists),
+    withLatestFrom(this.listsFacade.myLists$),
+    switchMap(([action, lists]) => {
+      return from(
+        lists.map(list => {
+          list.authorId = action.uid;
+          return new UpdateList(list, true);
+        })
+      );
+    })
   );
 
   @Effect({ dispatch: false })

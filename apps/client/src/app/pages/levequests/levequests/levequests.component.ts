@@ -61,7 +61,7 @@ export class LevequestsComponent implements OnInit {
               private l12n: LocalizedDataService, private i18n: I18nToolsService,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
               private dataService: DataService, private lazyData: LazyDataService) {
-    this.jobList = this.gt.getJobs().slice(8, 16);
+    this.jobList = this.gt.getJobs().slice(8, 16).concat([this.gt.getJob(18)]);
   }
 
   ngOnInit(): void {
@@ -105,6 +105,7 @@ export class LevequestsComponent implements OnInit {
       }),
       map(list => {
         const results: Levequest[] = [];
+        console.log(list);
         (<any>list).Results.forEach(leve => {
           results.push({
             level: leve.ClassJobLevel,
@@ -202,9 +203,14 @@ export class LevequestsComponent implements OnInit {
           ...leves.map(leve => {
             return this.dataService.getItem(leve.itemId).pipe(
               switchMap(itemData => {
-                const craft = itemData.item.craft.find(c => c.job === leve.jobId);
-                return this.listManager.addToList(leve.itemId, list, craft.id,
-                  leve.itemQuantity * this.craftAmount(leve));
+                if(itemData.isCraft()){
+                  const craft = itemData.item.craft.find(c => c.job === leve.jobId);
+                  return this.listManager.addToList(leve.itemId, list, craft.id,
+                    leve.itemQuantity * this.craftAmount(leve));
+                }else {
+                  return this.listManager.addToList(leve.itemId, list, null,
+                    leve.itemQuantity * this.craftAmount(leve));
+                }
               })
             );
           })

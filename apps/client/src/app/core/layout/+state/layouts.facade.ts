@@ -7,7 +7,7 @@ import { layoutsQuery } from './layouts.selectors';
 import { CreateLayout, DeleteLayout, LoadLayouts, SelectLayout, UpdateLayout } from './layouts.actions';
 import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
-import { Observable, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { LayoutRowDisplay } from '../layout-row-display';
 import { map, shareReplay, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
@@ -16,6 +16,7 @@ import { LayoutService } from '../layout.service';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ListDisplay } from '../list-display';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { LayoutRow } from '../layout-row';
 
 @Injectable()
 export class LayoutsFacade {
@@ -42,10 +43,10 @@ export class LayoutsFacade {
   }
 
   public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false): Observable<ListDisplay> {
-    return this.selectedLayout$
+    return combineLatest(this.selectedLayout$, this.authFacade.user$)
       .pipe(
         withLatestFrom(adaptativeFilter ? this.authFacade.mainCharacterEntry$ : of(null)),
-        map(([layout, characterEntry]) => {
+        map(([[layout, user], characterEntry]) => {
           let unfilteredRows: ListRow[];
           if (!layout.considerCrystalsAsItems) {
             unfilteredRows = list.items.filter(row => row.hidden !== true && (row.id < 1 || row.id > 20) || row.id === row.$key);
@@ -58,17 +59,17 @@ export class LayoutsFacade {
             rows: layout.rows
               .filter(row => row !== undefined)
               .sort((a, b) => {
-                // ANYTHING has to be last filter applied, as it rejects nothing.
-                if (a.filter.name === 'ANYTHING') {
+                // Other has to be last filter applied, as it rejects nothing.
+                if (a.isOtherRow()) {
                   return 1;
                 }
-                if (b.filter.name === 'ANYTHING') {
+                if (b.isOtherRow()) {
                   return -1;
                 }
                 return a.index - b.index;
               })
-              .map(row => {
-                const result: FilterResult = row.filter.filter(unfilteredRows);
+              .map((row: LayoutRow) => {
+                const result: FilterResult = row.doFilter(unfilteredRows, user.itemTags);
                 unfilteredRows = result.rejected;
                 // If it's using a tiers display, don't sort now, we'll sort later on, inside the display.
                 let orderedAccepted = row.tiers ? result.accepted : this.layoutOrder.order(result.accepted, row.orderBy, row.order);

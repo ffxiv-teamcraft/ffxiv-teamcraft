@@ -87,6 +87,9 @@ export class DataService {
         map(garlandResults => {
           const results: SearchResult[] = [];
           garlandResults.forEach(item => {
+            if (item.id.indexOf('draft') > -1) {
+              return;
+            }
             if (item.obj.f !== undefined) {
               item.obj.f.forEach(recipe => {
                 if (craftedByFilter !== undefined && craftedByFilter.value !== recipe.job) {

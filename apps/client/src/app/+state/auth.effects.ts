@@ -24,6 +24,7 @@ import {
   LoggedInAsAnonymous,
   LoginAsAnonymous,
   NoLinkedCharacter,
+  RegisterUser,
   SetDefaultCharacter,
   UpdateUser,
   UserFetched,
@@ -75,8 +76,14 @@ export class AuthEffects {
   @Effect()
   fetchUserOnAnonymous$ = this.actions$.pipe(
     ofType(AuthActionTypes.LoggedInAsAnonymous),
-    switchMap((action: Authenticated) => this.userService.get(action.uid)),
-    catchError(() => of(new TeamcraftUser())),
+    switchMap((action: Authenticated) => {
+      return this.userService.get(action.uid).pipe(
+        catchError(() => {
+          this.userService.set(action.uid, new TeamcraftUser());
+          return of(new TeamcraftUser());
+        })
+      );
+    }),
     map(user => new UserFetched(user))
   );
 
@@ -123,6 +130,7 @@ export class AuthEffects {
   @Effect()
   watchNoLinkedCharacter$ = this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
+    debounceTime(1000),
     withLatestFrom(this.authFacade.loggedIn$),
     filter(([action, loggedIn]) => {
       return loggedIn && action.user && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0;
@@ -223,6 +231,15 @@ export class AuthEffects {
     ofType<UpdateUser>(AuthActionTypes.UpdateUser),
     switchMap((action) => {
       return this.userService.set(action.user.$key, action.user);
+    }),
+    map(() => new UserPersisted())
+  );
+
+  @Effect()
+  registerUser$ = this.actions$.pipe(
+    ofType<RegisterUser>(AuthActionTypes.RegisterUser),
+    switchMap((action) => {
+      return this.userService.set(action.uid, action.user);
     }),
     map(() => new UserPersisted())
   );

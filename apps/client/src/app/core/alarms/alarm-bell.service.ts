@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EorzeanTimeService } from '../time/eorzean-time.service';
+import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, of } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';
@@ -47,8 +47,7 @@ export class AlarmBellService {
             // Irl alarm duration in ms
             const irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
             return Date.now() - lastPlayed >= irlAlarmDuration
-              && timeBeforePlay <= 0
-              && date.getUTCMinutes() === 0;
+              && timeBeforePlay <= 0;
           });
         })
       ).subscribe(alarmsToPlay => alarmsToPlay.forEach(alarm => {

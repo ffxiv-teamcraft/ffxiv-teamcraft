@@ -10,4 +10,7 @@ export class FishingBaitComponent {
 
   @Input()
   baits: FishingBait[];
+
+  @Input()
+  flex = 'column';
 }

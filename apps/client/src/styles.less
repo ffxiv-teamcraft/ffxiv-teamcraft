@@ -25,6 +25,24 @@ h1, h2, h3, h4, h5 {
   visibility: hidden;
 }
 
+.man-attacked-by-tetris-block {
+  width: 18px;
+  height: 18px;
+  opacity: 0.65;
+
+  &.anticon {
+    margin-right: 10px;
+  }
+
+  &.button-icon {
+    margin-bottom: 6px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 // Let's have nicer scrollbars ! credits to angular/aio: https://github.com/angular/angular/blob/3a30f5d937e64289ad9a89a1cbc4bd66d8a8867a/aio/src/styles/2-modules/_scrollbar.scss
 *::-webkit-scrollbar, *::-webkit-scrollbar, *::-webkit-scrollbar {
   height: 10px;

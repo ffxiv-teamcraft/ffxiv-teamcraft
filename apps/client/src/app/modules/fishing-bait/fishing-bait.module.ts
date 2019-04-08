@@ -6,6 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { TooltipModule } from '../tooltip/tooltip.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     FlexLayoutModule,
     ItemIconModule,
     PipesModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    TooltipModule
   ],
   declarations: [FishingBaitComponent],
   exports: [FishingBaitComponent]

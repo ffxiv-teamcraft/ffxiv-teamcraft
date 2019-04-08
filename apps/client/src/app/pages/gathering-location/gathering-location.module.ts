@@ -15,6 +15,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { FormsModule } from '@angular/forms';
+import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 
 const routes: Routes = [
   {
@@ -42,6 +43,7 @@ const routes: Routes = [
     PageLoaderModule,
     FullpageMessageModule,
     FishingBaitModule,
+    TooltipModule,
 
     NgZorroAntdModule
   ],
