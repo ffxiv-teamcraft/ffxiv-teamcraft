@@ -535,7 +535,7 @@
     "Fish_eyes_duration": "Vos yeux de poisson doivent avoir cette durée pour obtenir le poisson",
     "GIG_HEAD": {
       "Small": "Petite pointe de harpon",
-      "Medium": "Pointe de harpon moyenne",
+      "Normal": "Normal Gig Head",
       "Large": "Pointe de harpon large"
     }
   },
