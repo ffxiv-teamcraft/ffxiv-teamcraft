@@ -534,9 +534,9 @@
     "Predators": "사전에 낚아야 할 물고기",
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
     "GIG_HEAD": {
-      "Small": "소형 작살",
-      "Medium": "중형 작살",
-      "Large": "대형 작살"
+      "Small": "작은 작살",
+      "Medium": "중간 작살",
+      "Large": "큰 작살"
     }
   },
   "ANNOUNCEMENT": {
@@ -644,7 +644,7 @@
     "New_rotation_folder": "새 폴더 만들기",
     "Safe_mode": "안전 모드",
     "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
-    "Quality_needed": "HQ 100%를 위해선 {{amount}} 만큼의 품질이 더 필요",
+    "Quality_needed": "HQ 100%에 도달하기 위해선 {{amount}} 만큼의 품질이 더 필요",
     "Rotation_tips": "로테이션 팁",
     "COMMUNITY_ROTATIONS": {
       "Title": "커뮤니티 로테이션",
@@ -740,12 +740,12 @@
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "거의 모든 로테이션은 HQ제작을 목표로 한다면 '정신집중'이 포함되어야 합니다. 이 스킬은 품질을 향상 시켜주며, '비레고의 축복'과 같은 스킬들을 사용할 수 있게 해줍니다.",
-      "Use_inner_quiet_before_quality_increase": "품질을 향상시키기 전에 '정신집중' 을 사용해야 합니다. 사용하지 않을 경우, '정신집중' 스택이 낭비됩니다.",
+      "Use_inner_quiet_before_quality_increase": "품질을 향상시키기 전에 '정신 집중' 을 사용해야 합니다. 사용하지 않을 경우, '정신 집중' 스택이 낭비됩니다.",
       "Use_ingenuity_I_instead": "제작을 완성하는데 충분하기 때문에, '독창적 발상 2' 대신 CP 8을 덜 소모하는 '독창적 발상 1'을 사용해야 합니다.",
       "Use_cz_earlier": "CP회복효과를 빨리 적용받기 위해선 '작업 요령'을 좀 더 일찍 사용해야 합니다.",
       "Use_reclaim": "'재활용'을 사용할 CP가 충분하기 때문에, 만약 제작이 실패했다면, 재료회수를 위해 '재활용' 을 공정에 추가해야 합니다.",
-      "Use_byregot_brow_low_iq_stacks": "'정신집중' 6스택 이하에서 '비레고의 축복'을 사용했습니다. 이 경우에는 '비레고의 기교'가 더 나은 품질을 제공합니다.",
-      "Use_byregot_blessing_high_iq_stacks": "'정신집중' 7스택 이상에서 '비레고의 기교'을 사용했습니다. 이 경우에는 '비레고의 축복'이 더 나은 품질을 제공합니다.",
+      "Use_byregot_brow_low_iq_stacks": "'정신 집중' 6스택 이하에서 '비레고의 축복'을 사용했습니다. 이 경우에는 '비레고의 기교'가 더 나은 품질을 제공합니다.",
+      "Use_byregot_blessing_high_iq_stacks": "'정신 집중' 7스택 이상에서 '비레고의 기교'을 사용했습니다. 이 경우에는 '비레고의 축복'이 더 나은 품질을 제공합니다.",
       "Use_sh1_instead": "{{index}} 번째 공정에서 '안정된 솜씨' 를 사용하는 것이 '안정된 솜씨 2'를 사용하는 것보다 CP 3을 절약할 수 있습니다.",
       "Use_sh2_instead": "{{index}} 번째 공정에서 CP 3을 더 소모하여 '안정된 솜씨 2'를 사용하는 것이 '안정된 솜씨'를 사용하는 것보다 신뢰도가 더 높습니다.",
       "Use_pbp_first": "'꾸준한 진척'을 다른 작업공정을 진행하기 전에 사용하세요. 이 스킬은 남은 작업량에 따라 효과가 다르기 때문입니다.",
