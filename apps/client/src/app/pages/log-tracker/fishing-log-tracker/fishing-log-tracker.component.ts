@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -6,23 +6,20 @@ import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { first, map, shareReplay } from 'rxjs/operators';
-import { BehaviorSubject, Observable, of, ReplaySubject } from 'rxjs';
+import { first, map, shareReplay, startWith, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, of, ReplaySubject, combineLatest } from 'rxjs';
 import { fishingLog } from '../../../core/data/sources/fishing-log';
-import { combineLatest } from 'rxjs/internal/observable/combineLatest';
 import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
 import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
 import { fishParameter } from '../../../core/data/sources/fish-parameter';
-import { tap } from 'rxjs/internal/operators/tap';
 import { TrackerComponent } from '../tracker-component';
-import { startWith } from 'rxjs/internal/operators/startWith';
 
 @Component({
   selector: 'app-fishing-log-tracker',
   templateUrl: './fishing-log-tracker.component.html',
   styleUrls: ['./fishing-log-tracker.component.less']
 })
-export class FishingLogTrackerComponent extends TrackerComponent {
+export class FishingLogTrackerComponent extends TrackerComponent implements OnInit {
 
   private completion$ = this.authFacade.user$.pipe(
     map(user => user.gatheringLogProgression),
@@ -49,129 +46,6 @@ export class FishingLogTrackerComponent extends TrackerComponent {
               private bell: BellNodesService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
               private lazyData: LazyDataService) {
     super(alarmsFacade);
-    const completeDisplay$ = of([fishingLog, spearFishingLog]).pipe(
-      map((logs) => {
-        return logs.map((log: any[], type) => {
-          const display = { tabs: [], total: 0, done: 0 };
-          log.forEach(entry => {
-            let row = display.tabs.find(e => e.mapId === entry.mapId);
-            if (row === undefined) {
-              display.tabs.push({
-                mapId: entry.mapId,
-                placeId: entry.placeId,
-                done: 0,
-                total: 0,
-                spots: []
-              });
-              row = display.tabs[display.tabs.length - 1];
-            }
-            const spotId = entry.spot ? entry.spot.id : entry.id;
-            let spot = row.spots.find(s => s.id === spotId);
-            if (spot === undefined) {
-              const coords = entry.spot ? entry.spot.coords : entry.coords;
-              row.spots.push({
-                id: spotId,
-                placeId: entry.zoneId,
-                mapId: entry.mapId,
-                done: 0,
-                total: 0,
-                coords: coords,
-                fishes: []
-              });
-              spot = row.spots[row.spots.length - 1];
-            }
-            if (type === 0) {
-              const parameter = fishParameter[entry.id];
-              const fish: any = {
-                id: spot.id,
-                itemId: entry.itemId,
-                level: entry.level,
-                icon: entry.icon,
-                data: this.getFshData({ ...entry, id: entry.spot.id })
-              };
-              if (parameter) {
-                fish.timed = parameter.timed;
-                fish.weathered = parameter.weathered;
-              }
-              spot.fishes.push(fish);
-            } else {
-              const node = spearFishingNodes.find(n => n.id === entry.itemId);
-              const data = this.getFshData(node);
-              spot.fishes.push({
-                id: spot.id,
-                itemId: node.itemId,
-                level: node.level,
-                icon: node.icon,
-                data: data,
-                timed: data[0] && data[0].timed
-              });
-            }
-          });
-          return display;
-        });
-      }),
-      tap(() => this.loading = false),
-      shareReplay(1)
-    );
-
-    this.display$ = combineLatest(completeDisplay$, this.completion$).pipe(
-      map(([completeDisplay, completion]: [any, number[]]) => {
-        return completeDisplay.map(display => {
-          const uniqueDisplayDone = [];
-          const uniqueDisplayTotal = [];
-          display.tabs.forEach(area => {
-            const uniqueMapDone = [];
-            const uniqueMapTotal = [];
-            area.spots.forEach(spot => {
-              const uniqueSpotDone = [];
-              const uniqueSpotTotal = [];
-              spot.fishes.forEach(fish => {
-                fish.done = completion.indexOf(fish.itemId) > -1;
-                if (uniqueMapTotal.indexOf(fish.itemId) === -1) {
-                  uniqueMapTotal.push(fish.itemId);
-                }
-                if (uniqueDisplayTotal.indexOf(fish.itemId) === -1) {
-                  uniqueDisplayTotal.push(fish.itemId);
-                }
-                if (uniqueSpotTotal.indexOf(fish.itemId) === -1) {
-                  uniqueSpotTotal.push(fish.itemId);
-                }
-                if (fish.done) {
-                  if (uniqueDisplayDone.indexOf(fish.itemId) === -1) {
-                    uniqueDisplayDone.push(fish.itemId);
-                  }
-                  if (uniqueMapDone.indexOf(fish.itemId) === -1) {
-                    uniqueMapDone.push(fish.itemId);
-                  }
-                  if (uniqueSpotDone.indexOf(fish.itemId) === -1) {
-                    uniqueSpotDone.push(fish.itemId);
-                  }
-                }
-              });
-              spot.total = uniqueSpotTotal.length;
-              spot.done = uniqueSpotDone.length;
-            });
-            area.total = uniqueMapTotal.length;
-            area.done = uniqueMapDone.length;
-          });
-          display.total = uniqueDisplayTotal.length;
-          display.done = uniqueDisplayDone.length;
-          return display;
-        });
-      }),
-      shareReplay(1)
-    );
-
-    this.tabsDisplay$ = combineLatest(this.display$, this.type$).pipe(
-      map(([display, type]) => display[type])
-    );
-
-    this.pageDisplay$ = combineLatest(this.tabsDisplay$, this.spotId$).pipe(
-      map(([display, spotId]) => {
-        const area = display.tabs.find(a => a.spots.some(spot => spot.id === spotId));
-        return area.spots.find(spot => spot.id === spotId);
-      })
-    );
   }
 
   public getFshIcon(index: number): string {
@@ -305,6 +179,132 @@ export class FishingLogTrackerComponent extends TrackerComponent {
       }
     }
     return null;
+  }
+
+  ngOnInit(): void {
+    const completeDisplay$ = of([fishingLog, spearFishingLog]).pipe(
+      map((logs) => {
+        return logs.map((log: any[], type) => {
+          const display = { tabs: [], total: 0, done: 0 };
+          log.forEach(entry => {
+            let row = display.tabs.find(e => e.mapId === entry.mapId);
+            if (row === undefined) {
+              display.tabs.push({
+                mapId: entry.mapId,
+                placeId: entry.placeId,
+                done: 0,
+                total: 0,
+                spots: []
+              });
+              row = display.tabs[display.tabs.length - 1];
+            }
+            const spotId = entry.spot ? entry.spot.id : entry.id;
+            let spot = row.spots.find(s => s.id === spotId);
+            if (spot === undefined) {
+              const coords = entry.spot ? entry.spot.coords : entry.coords;
+              row.spots.push({
+                id: spotId,
+                placeId: entry.zoneId,
+                mapId: entry.mapId,
+                done: 0,
+                total: 0,
+                coords: coords,
+                fishes: []
+              });
+              spot = row.spots[row.spots.length - 1];
+            }
+            if (type === 0) {
+              const parameter = fishParameter[entry.id];
+              const fish: any = {
+                id: spot.id,
+                itemId: entry.itemId,
+                level: entry.level,
+                icon: entry.icon,
+                data: this.getFshData({ ...entry, id: entry.spot.id })
+              };
+              if (parameter) {
+                fish.timed = parameter.timed;
+                fish.weathered = parameter.weathered;
+              }
+              spot.fishes.push(fish);
+            } else {
+              const node = spearFishingNodes.find(n => n.id === entry.itemId);
+              const data = this.getFshData(node);
+              spot.fishes.push({
+                id: spot.id,
+                itemId: node.itemId,
+                level: node.level,
+                icon: node.icon,
+                data: data,
+                timed: data[0] && data[0].timed
+              });
+            }
+          });
+          return display;
+        });
+      }),
+      tap(() => this.loading = false),
+      shareReplay(1)
+    );
+
+    this.display$ = combineLatest(completeDisplay$, this.completion$).pipe(
+      map(([completeDisplay, completion]: [any, number[]]) => {
+        return completeDisplay.map(display => {
+          const uniqueDisplayDone = [];
+          const uniqueDisplayTotal = [];
+          display.tabs.forEach(area => {
+            const uniqueMapDone = [];
+            const uniqueMapTotal = [];
+            area.spots.forEach(spot => {
+              const uniqueSpotDone = [];
+              const uniqueSpotTotal = [];
+              spot.fishes.forEach(fish => {
+                fish.done = completion.indexOf(fish.itemId) > -1;
+                if (uniqueMapTotal.indexOf(fish.itemId) === -1) {
+                  uniqueMapTotal.push(fish.itemId);
+                }
+                if (uniqueDisplayTotal.indexOf(fish.itemId) === -1) {
+                  uniqueDisplayTotal.push(fish.itemId);
+                }
+                if (uniqueSpotTotal.indexOf(fish.itemId) === -1) {
+                  uniqueSpotTotal.push(fish.itemId);
+                }
+                if (fish.done) {
+                  if (uniqueDisplayDone.indexOf(fish.itemId) === -1) {
+                    uniqueDisplayDone.push(fish.itemId);
+                  }
+                  if (uniqueMapDone.indexOf(fish.itemId) === -1) {
+                    uniqueMapDone.push(fish.itemId);
+                  }
+                  if (uniqueSpotDone.indexOf(fish.itemId) === -1) {
+                    uniqueSpotDone.push(fish.itemId);
+                  }
+                }
+              });
+              spot.total = uniqueSpotTotal.length;
+              spot.done = uniqueSpotDone.length;
+            });
+            area.total = uniqueMapTotal.length;
+            area.done = uniqueMapDone.length;
+          });
+          display.total = uniqueDisplayTotal.length;
+          display.done = uniqueDisplayDone.length;
+          return display;
+        });
+      }),
+      shareReplay(1)
+    );
+
+    this.tabsDisplay$ = combineLatest(this.display$, this.type$).pipe(
+      map(([display, type]) => display[type])
+    );
+
+    this.pageDisplay$ = combineLatest(this.tabsDisplay$, this.spotId$).pipe(
+      map(([display, spotId]) => {
+        const area = display.tabs.find(a => a.spots.some(spot => spot.id === spotId));
+        return area.spots.find(spot => spot.id === spotId);
+      })
+    );
   }
 
 }
