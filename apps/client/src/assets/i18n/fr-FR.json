@@ -661,6 +661,9 @@
       "Min_control_filter_placeholder": "Contrôle min",
       "Min_cp_filter_placeholder": "PS min",
       "Intro": "Saisir quelques filtres pour commencer",
+      "Result_tooltip": "Result of a simulation run using this rotation and your stats",
+      "Fail": "Fail",
+      "Success": "Success: {{HQ}}% HQ",
       "TAGS": {
         "SPECIALIST": "Spécialiste",
         "NOT_SPECIALIST": "Non spécialiste",
