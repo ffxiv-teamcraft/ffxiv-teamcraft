@@ -741,7 +741,7 @@
     "ROTATION_TIPS": {
       "Use_inner_quiet": "殆どのすべてのスキル回しは、HQ制作を目指しにするには '精神集中' が含まれるべきです。このスキルは、品質を向上させつつありながら 'ビエルゴの祝福' と同じようなスキルが使うことができます。",
       "Use_inner_quiet_before_quality_increase": "品質を向上される前に '精神集中' スキルを使用しなければなりません。使用しない場合 '精神集中' スキルのスタックが、無駄遣いになります。",
-      "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
+      "Use_ingenuity_I_instead": "制作を完成するのに十分のため、'工面算段Ⅱ' の代わりに、CP 8を節約する '工面算段' を使わなければなりません。",
       "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
       "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
       "Use_byregot_brow_low_iq_stacks": "You used Byregot's Blessing with less than 6 stacks. Using Byregot's Brow is better in this case as it will produce more quality.",
