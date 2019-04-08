@@ -119,7 +119,7 @@
     "Open_in_desktop": "PCアプリで開く",
     "Admin": "管理者",
     "Minutes_duration": "{{amount}} 分",
-    "Seconds_duration": "{{amount}} seconds"
+    "Seconds_duration": "{{amount}} 秒"
   },
   "ALARMS": {
     "Title": "アラーム",
