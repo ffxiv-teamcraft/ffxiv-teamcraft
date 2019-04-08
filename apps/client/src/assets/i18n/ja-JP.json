@@ -535,7 +535,7 @@
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
-      "Medium": "Medium Gig Head",
+      "Normal": "Normal Gig Head",
       "Large": "Large Gig Head"
     }
   },
@@ -749,8 +749,8 @@
       "Use_sh1_instead": "You used Steady Hand II at step {{index}} while using Steady Hand I would be enough and would cost 3 less CP.",
       "Use_sh2_instead": "You used Steady Hand I at step {{index}} while using Steady Hand II give you more reliability at the cost of 3 CP.",
       "Use_pbp_first": "You should use Piece by Piece before any other synthesis action, as it scales on the remaining progress to do",
-      "Use_mume_if_pbp": "You should use Muscle Memory at step 1 in order to replace one Piece by Piece and gain 9 extra CP",
-      "Use_observe_before_focused": "You should use Observe before the Focused action at step {{index}} in order to get a free 100% success rate.",
+      "Use_mume_if_pbp": "初工程で '確信' を使用して下さい。このスキルは 'ピース・バイ・ピース' の変わりにしつつ CP 9が確保できます。",
+      "Use_observe_before_focused": "注視作業/加工を100％の成功率を得るためには {{index}} 回目の工程で '経過観察' を使用して下さい。",
       "Use_durability_restoration_later": "耐久度の回復スキルを無駄遣いにしないためには、{{index}} 回目の工程で耐久度の回復スキルを使用して下さい。",
       "Use_patient_touch_faster": "'専心加工' は '精神集中' のスタックが積もる前に使用して下さい。もしスキルが失敗したら、スタックが無駄遣いになる恐れがあります。",
       "Use_advanced_touch_instead": "{{index}} 回目の工程で '加工' と '上級加工' を使用しました。 '中級加工' を2回使用する場合、 CP 2を節約しつつ同じような効果が発揮できます。",
