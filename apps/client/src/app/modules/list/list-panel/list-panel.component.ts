@@ -75,10 +75,12 @@ export class ListPanelComponent {
         map(([userId, user, list]) => {
           if (user !== null) {
             const isTeamList = list.teamId && teams.some(team => list.teamId === team.$key);
+            const teamLeader = isTeamList && (teams.find(team => list.teamId === team.$key).leader === userId)
             return Math.max(
               list.getPermissionLevel(userId),
               list.getPermissionLevel(user.currentFcId),
-              isTeamList ? PermissionLevel.PARTICIPATE : PermissionLevel.NONE
+              isTeamList ? PermissionLevel.PARTICIPATE : PermissionLevel.NONE,
+              teamLeader ? PermissionLevel.WRITE : PermissionLevel.NONE
             );
           } else {
             return list.getPermissionLevel(userId);
@@ -205,6 +207,25 @@ export class ListPanelComponent {
       this.listsFacade.updateList(list);
       if (team.webhook !== undefined) {
         this.discordWebhookService.notifyListAddedToTeam(team, list);
+      }
+    });
+  }
+
+  removeTeam(compact: List, teams: Team[]): void {
+    const team = teams.find(t => t.$key === compact.teamId);
+    this.listsFacade.load(compact.$key);
+    this.listsFacade.allListDetails$.pipe(
+      map(details => details.find(l => l.$key === this._list.$key)),
+      filter(l => l !== undefined),
+      first(),
+      map(list => {
+        delete list.teamId;
+        return list;
+      })
+    ).subscribe(list => {
+      this.listsFacade.updateList(list);
+      if (team.webhook !== undefined) {
+        this.discordWebhookService.notifyListRemovedFromTeam(team, list);
       }
     });
   }
