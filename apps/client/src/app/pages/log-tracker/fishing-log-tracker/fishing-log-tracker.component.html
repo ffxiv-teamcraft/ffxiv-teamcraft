@@ -9,7 +9,8 @@
         {{display[tab].done}}/{{display[tab].total}}
       </ng-template>
       <div fxLayout="row" fxLayoutGap="10px">
-        <ul nz-menu nzMode="inline" [nzTheme]="'light'" *ngIf="tabsDisplay$ | async as tabsDisplay" class="log-container">
+        <ul nz-menu nzMode="inline" [nzTheme]="'light'" *ngIf="tabsDisplay$ | async as tabsDisplay"
+            class="log-container">
           <li nz-submenu *ngFor="let area of tabsDisplay.tabs">
             <span title>{{area.placeId | placeName | i18n}} ({{area.done}}/{{area.total}})</span>
             <ul>
@@ -89,7 +90,10 @@
                                    [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
                               <div
                                 *ngIf="node.itemId | fishEyesDuration as duration" nz-tooltip
-                                [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate">{{'COMMON.Minutes_duration' | translate: { amount: duration } }}</div>
+                                [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate"
+                                (click)="toggleFishEyesFormat()">
+                                {{(fishEyesFormat === 1 ? 'COMMON.Minutes_duration' : 'COMMON.Seconds_duration') | translate: { amount: duration * fishEyesFormat } }}
+                              </div>
                             </div>
                             <img *ngIf="node.snagging" src="/assets/icons/status/snagging.png" alt="" nz-tooltip
                                  [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
@@ -161,7 +165,8 @@
           </div>
         </div>
         <ng-template #noSelectedSpot>
-          <app-fullpage-message fxFlex="1 1 auto" height="300px">{{'LOG_TRACKER.Select_spot' | translate}}</app-fullpage-message>
+          <app-fullpage-message fxFlex="1 1 auto"
+                                height="300px">{{'LOG_TRACKER.Select_spot' | translate}}</app-fullpage-message>
         </ng-template>
       </div>
     </nz-tab>

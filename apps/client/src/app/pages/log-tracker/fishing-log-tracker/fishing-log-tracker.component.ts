@@ -43,6 +43,8 @@ export class FishingLogTrackerComponent extends TrackerComponent {
 
   public loading = true;
 
+  public fishEyesFormat = 1;
+
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private bell: BellNodesService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
               private lazyData: LazyDataService) {
@@ -177,6 +179,10 @@ export class FishingLogTrackerComponent extends TrackerComponent {
       './assets/icons/angling.png',
       './assets/icons/spearfishing.png'
     ][index];
+  }
+
+  public toggleFishEyesFormat(): void {
+    this.fishEyesFormat = this.fishEyesFormat === 1 ? 60 : 1;
   }
 
   public markAsDone(itemId: number, done: boolean): void {
