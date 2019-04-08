@@ -118,7 +118,8 @@
     "Opened_in_desktop": "Ova stranica je otvorena na vašoj radnoj površini, možete je odmah zatvoriti.",
     "Open_in_desktop": "Otvorite na radnoj površini",
     "Admin": "Administrator",
-    "Minutes_duration": "{{amount}} minutes"
+    "Minutes_duration": "{{amount}} minutes",
+    "Seconds_duration": "{{amount}} seconds"
   },
   "ALARMS": {
     "Title": "Alarmi",
@@ -532,7 +533,7 @@
     "Fish_eyes": "Requires fish eyes",
     "Snagging": "Requires snagging",
     "Predators": "Fish these fish before",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
       "Normal": "Normal Gig Head",
