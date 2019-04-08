@@ -645,9 +645,9 @@
     "Safe_mode": "セーフモード",
     "Safe_mode_tooltip": "成功率100％ではないスキルは使用不可(バフを含む)",
     "Quality_needed": "HQ 100%に到達するためには {{amount}} 程の品質が必要",
-    "Rotation_tips": "Rotation tips",
+    "Rotation_tips": "スキル回しのヒント",
     "COMMUNITY_ROTATIONS": {
-      "Title": "Community rotations",
+      "Title": "コミュニティースキル回し",
       "Community_rotation": "コミュニティースキル回し",
       "No_rotations_matching": "条件に一致するスキル回しがない",
       "Name_filter_placeholder": "スキル回し名",
@@ -659,12 +659,12 @@
       "Min_craftsmanship_filter_placeholder": "作業精度",
       "Min_control_filter_placeholder": "加工精度",
       "Min_cp_filter_placeholder": "CP",
-      "Intro": "Input some filters to get started",
+      "Intro": "一部のフィルターを入力して開始",
       "TAGS": {
         "SPECIALIST": "マイスター",
         "NOT_SPECIALIST": "非マイスター",
-        "TEALESS": "Tealess",
-        "FOODLESS": "Foodless",
+        "TEALESS": "薬品非使用",
+        "FOODLESS": "食事非使用",
         "MAKERS_MARK": "Maker's Mark",
         "MUSCLE_MEMORY": "Muscle Memory"
       }
@@ -751,8 +751,8 @@
       "Use_pbp_first": "You should use Piece by Piece before any other synthesis action, as it scales on the remaining progress to do",
       "Use_mume_if_pbp": "You should use Muscle Memory at step 1 in order to replace one Piece by Piece and gain 9 extra CP",
       "Use_observe_before_focused": "You should use Observe before the Focused action at step {{index}} in order to get a free 100% success rate.",
-      "Use_durability_restoration_later": "You should use the durability restoration action at step {{index}} later in order to avoid wasting durability restoration.",
-      "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
+      "Use_durability_restoration_later": "耐久度の回復スキルを無駄遣いにしないためには、{{index}} 回目の工程で耐久度の回復スキルを使用して下さい。",
+      "Use_patient_touch_faster": "'専心加工' は '精神集中' のスタックが積もる前に使用して下さい。もしスキルが失敗したら、スタックが無駄遣いになる恐れがあります。",
       "Use_advanced_touch_instead": "{{index}} 回目の工程で '加工' と '上級加工' を使用しました。 '中級加工' を2回使用する場合、 CP 2を節約しつつ同じような効果が発揮できます。",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 回目の工程で使用したバフが {{overlappingIndex}} 回目の工程で使用したバフと重複されます。バフの効果が最大限貰えるように、少し遅れて使わなければなりません。"
     }
