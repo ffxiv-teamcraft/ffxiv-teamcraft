@@ -118,7 +118,8 @@
     "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
     "Open_in_desktop": "데스크톱 앱에서 열기",
     "Admin": "관리자",
-    "Minutes_duration": "{{amount}} 분"
+    "Minutes_duration": "{{amount}} 분",
+    "Seconds_duration": "{{amount}} seconds"
   },
   "ALARMS": {
     "Title": "알람",
@@ -532,7 +533,7 @@
     "Fish_eyes": "물고기의 눈 필요",
     "Snagging": "갈고리 낚시 필요",
     "Predators": "사전에 낚아야 할 물고기",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
     "GIG_HEAD": {
       "Small": "소형 작살",
       "Normal": "중형 작살",
