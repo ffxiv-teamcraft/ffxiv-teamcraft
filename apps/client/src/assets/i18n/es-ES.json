@@ -70,7 +70,7 @@
     "Not_found": "Taller no encontrado o no tiene acceso a él",
     "Shared_workshops": "Talleres compartidos contigo",
     "Rename": "Renombrar taller",
-    "Add_lists": "Add lists"
+    "Add_lists": "Agregar listas"
   },
   "ABOUT": {
     "title": "Acerca de",
@@ -118,8 +118,8 @@
     "Opened_in_desktop": "Esta página ha sido abierta en su aplicación de escritorio, ahora puede cerrarla.",
     "Open_in_desktop": "Abrir en la aplicación de escritorio",
     "Admin": "Administrador",
-    "Minutes_duration": "{{amount}} minutes",
-    "Seconds_duration": "{{amount}} seconds"
+    "Minutes_duration": "{{amount}} minutos",
+    "Seconds_duration": "{{amount}} segundos"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -137,8 +137,8 @@
     "Macro_copied": "Macro copiada al portapapeles",
     "Open_overlay": "Abrir capa sobrepuesta",
     "More_available": "y {{amount}} más...",
-    "Node_content": "Node content",
-    "More_than_three_days": "> 3 days",
+    "Node_content": "Contenido del nodo",
+    "More_than_three_days": "> 3 días",
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
@@ -204,8 +204,8 @@
   "Anonymous_Warning": "Debería crear una cuenta para evitar perder sus listas y activar más características como filtro adaptable",
   "Game_Term/DoH": "Discípulos de la Mano",
   "Game_Term/DoL": "Discípulos de la Tierra",
-  "MIN/BTN": "Miner / Botanist",
-  "Game_Term/FSH": "Fisher",
+  "MIN/BTN": "Minero / Botánico",
+  "Game_Term/FSH": "Pescador",
   "Reduction": "Reducción",
   "Upgrade_list": "Recrear listas con la última actualización de la aplicación",
   "List_recreated": "Lista recreada apropiadamente",
@@ -297,7 +297,7 @@
     "No_nickname_warning": "Por favor vaya a la página de configuración y configure un apodo para poder usar correctamente las características exclusivas de patron.",
     "Show_devtools": "Mostrar herramientas de desarrollador",
     "Clear_cache": "Borrar caché (reiniciará la aplicación)",
-    "Enable_item_tags": "Enable item tags",
+    "Enable_item_tags": "Activar etiquetas de artículo",
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
@@ -412,7 +412,7 @@
     "List_too_large": "Lista demasiado larga",
     "List_too_large_description": "Esta lista es muy larga y puede llegar al limite de tamaño de la base de datos debido a toda la información que lleva. No le será permitido añadir más elementos para asegurar que no pierda la lista.",
     "Add_to_another_list": "Añadir a otra lista",
-    "New_tag": "New tag",
+    "New_tag": "Nueva etiqueta",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -423,20 +423,20 @@
       "Invalid_import": "Código de importación invalido",
       "Global_options": "Opciones generales",
       "Default_readonly_message": "El diseño predeterminado es de sólo lectura, tiene que crear un nuevo diseño con el botón + para poder personalizarlo.",
-      "Buttons": "Buttons",
-      "Menu": "Menu",
-      "Edit_row_buttons_display": "Edit row buttons display",
+      "Buttons": "Botones",
+      "Menu": "Menú",
+      "Edit_row_buttons_display": "Editar botones a mostrar",
       "ITEMS": {
-        "COMMENTS": "Comments",
-        "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
-        "ADD_ALL_ALARMS": "Add all alarms",
-        "WORK_ON_IT": "Work on it",
-        "ASSIGN_TEAM_MEMBER": "Assign team members",
-        "EDIT_AMOUNT": "Edit amount",
-        "MARK_HQ": "Mark HQ",
-        "ADD_TO_ANOTHER_LIST": "Add to another list",
-        "REQUIREMENTS": "Requirements",
-        "REMOVE_ITEM": "Remove item from the list"
+        "COMMENTS": "Comentarios",
+        "COPY_NAME_NOT_FAVORITE": "Modo de copia no favorito",
+        "ADD_ALL_ALARMS": "Agregar todas las alarmas",
+        "WORK_ON_IT": "Trabajar en ello",
+        "ASSIGN_TEAM_MEMBER": "Asignar miembros del equipo",
+        "EDIT_AMOUNT": "Editar cantidad",
+        "MARK_HQ": "Marcar como HQ",
+        "ADD_TO_ANOTHER_LIST": "Añadir a otra lista",
+        "REQUIREMENTS": "Requisitos",
+        "REMOVE_ITEM": "Quitar elemento de la lista"
       }
     },
     "LAYOUT": {
@@ -444,7 +444,7 @@
       "Panel_name": "Nombre del panel",
       "Order_by": "Ordenar por",
       "Order": "Orden",
-      "Tag_filter": "Tag filter"
+      "Tag_filter": "Filtro de etiquetas"
     }
   },
   "LIST_TAGS": {
@@ -530,14 +530,14 @@
     "Ephemeral_node": "Nodo efímero, puede reaparecer",
     "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!",
     "Hidden_item": "Oculto",
-    "Fish_eyes": "Requires fish eyes",
-    "Snagging": "Requires snagging",
-    "Predators": "Fish these fish before",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
+    "Fish_eyes": "Requiere \"fish eyes\"",
+    "Snagging": "Requiere \"snagging\"",
+    "Predators": "Pescar estos peces antes de",
+    "Fish_eyes_duration": "Su \"fish eyes\" necesita esta duración para obtener el pescado. Haga clic para cambiar el formato.",
     "GIG_HEAD": {
-      "Small": "Small Gig Head",
-      "Normal": "Normal Gig Head",
-      "Large": "Large Gig Head"
+      "Small": "Cabeza de anzuelo pequeña",
+      "Normal": "Cabeza de anzuelo normal",
+      "Large": "Cabeza de anzuelo grande"
     }
   },
   "ANNOUNCEMENT": {
@@ -645,30 +645,30 @@
     "New_rotation_folder": "Nueva carpeta",
     "Safe_mode": "Modo seguro",
     "Safe_mode_tooltip": "Deshabilita todas las habilidades que no tienen 100% de probabilidad de tener éxito (toma mejoras/bonos en cuenta)",
-    "Quality_needed": "{{amount}} more quality to reach 100%",
-    "Rotation_tips": "Rotation tips",
+    "Quality_needed": "{{amount}} más calidad para llegar a 100%",
+    "Rotation_tips": "Consejos de rotación",
     "COMMUNITY_ROTATIONS": {
-      "Title": "Community rotations",
-      "Community_rotation": "Community rotation",
-      "No_rotations_matching": "No rotations matching",
-      "Name_filter_placeholder": "Rotation name",
-      "Tags_filter_placeholder": "Tags",
-      "Durability_filter_placeholder": "Durability",
-      "Rlvl_filter_placeholder": "Recipe lvl",
-      "Filters_reset": "Reset filters",
-      "Configuration_popup": "Share with the community",
-      "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
-      "Min_control_filter_placeholder": "Min. Control",
-      "Min_cp_filter_placeholder": "Min. CP",
-      "Intro": "Input some filters to get started",
-      "Result_tooltip": "Result of a simulation run using this rotation and your stats",
-      "Fail": "Fail",
-      "Success": "Success: {{HQ}}% HQ",
+      "Title": "Rotaciones de la comunidad",
+      "Community_rotation": "Rotación de la comunidad",
+      "No_rotations_matching": "No hay rotaciones que coincidan",
+      "Name_filter_placeholder": "Nombre de rotación",
+      "Tags_filter_placeholder": "Etiquetas",
+      "Durability_filter_placeholder": "Durabilidad",
+      "Rlvl_filter_placeholder": "Nivel de la receta",
+      "Filters_reset": "Resetear filtros",
+      "Configuration_popup": "Compartir con la comunidad",
+      "Min_craftsmanship_filter_placeholder": "Artesanía Min.",
+      "Min_control_filter_placeholder": "Control Min.",
+      "Min_cp_filter_placeholder": "CP Min.",
+      "Intro": "Ingrese algunos filtros para empezar",
+      "Result_tooltip": "Resultado de una simulación usando esta rotación y sus atributos",
+      "Fail": "Falla",
+      "Success": "Éxito: {{HQ}}% HQ",
       "TAGS": {
-        "SPECIALIST": "Specialist",
-        "NOT_SPECIALIST": "Not specialist",
-        "TEALESS": "Tealess",
-        "FOODLESS": "Foodless",
+        "SPECIALIST": "Especialista",
+        "NOT_SPECIALIST": "No especialista",
+        "TEALESS": "Sin té",
+        "FOODLESS": "Sin comida",
         "MAKERS_MARK": "Maker's Mark",
         "MUSCLE_MEMORY": "Muscle Memory"
       }
@@ -693,7 +693,7 @@
         "Copy_folder": "Copiar esta carpeta y su contenido a su cuenta",
         "Folder_copied": "Carpeta copiada a su cuenta",
         "Favorite_folders": "Carpeta de favoritos",
-        "Add_rotations": "Add rotations"
+        "Add_rotations": "Agregar rotaciones"
       }
     },
     "CATEGORY": {
@@ -743,8 +743,8 @@
       "NO_INNER_QUIET": "Intento de usar acción de Inner Quiet sin tener Inner Quiet habilitado"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
-      "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
+      "Use_inner_quiet": "Casi todas las rotaciones deberían incluir \"Inner Quiet\" si su objetivo es un objeto HQ. Proporciona un buen impulso de calidad y permite acciones como \"Byregot's Blessing\".",
+      "Use_inner_quiet_before_quality_increase": "Debería aplicar \"Inner Quiet\" antes de cualquier aumento de calidad, no hacerlo significa que está desperdiciando puntos de \"Inner Quiet\".",
       "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
       "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
       "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
