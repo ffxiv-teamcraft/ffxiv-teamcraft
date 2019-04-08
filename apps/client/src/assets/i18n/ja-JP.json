@@ -648,21 +648,21 @@
     "Rotation_tips": "Rotation tips",
     "COMMUNITY_ROTATIONS": {
       "Title": "Community rotations",
-      "Community_rotation": "Community rotation",
-      "No_rotations_matching": "No rotations matching",
-      "Name_filter_placeholder": "Rotation name",
+      "Community_rotation": "コミュニティースキル回し",
+      "No_rotations_matching": "条件に一致するスキル回しがない",
+      "Name_filter_placeholder": "スキル回し名",
       "Tags_filter_placeholder": "タグ",
       "Durability_filter_placeholder": "耐久性",
       "Rlvl_filter_placeholder": "制作レベル",
       "Filters_reset": "フィルターリセット",
       "Configuration_popup": "コミュニティーにシェアする",
-      "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
-      "Min_control_filter_placeholder": "Min. Control",
-      "Min_cp_filter_placeholder": "Min. CP",
+      "Min_craftsmanship_filter_placeholder": "作業精度",
+      "Min_control_filter_placeholder": "加工精度",
+      "Min_cp_filter_placeholder": "CP",
       "Intro": "Input some filters to get started",
       "TAGS": {
         "SPECIALIST": "マイスター",
-        "NOT_SPECIALIST": "Not specialist",
+        "NOT_SPECIALIST": "非マイスター",
         "TEALESS": "Tealess",
         "FOODLESS": "Foodless",
         "MAKERS_MARK": "Maker's Mark",
@@ -689,7 +689,7 @@
         "Copy_folder": "このフォルダーと内容を自分のアカウントにコピーする",
         "Folder_copied": "フォルダーがマイアカウントにコピーされました",
         "Favorite_folders": "お気に入りのフォルダー",
-        "Add_rotations": "Add rotations"
+        "Add_rotations": "スキル回し追加"
       }
     },
     "CATEGORY": {
