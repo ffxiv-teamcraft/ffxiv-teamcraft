@@ -23,6 +23,19 @@
           </ng-container>
         </div>
         <div fxLayout="row" fxLayoutGap="5px">
+          <ng-container *ngIf="publicDisplay && authFacade.loggedIn$ | async">
+            <div *ngIf="simulation$ | async as result" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+              <div nz-tooltip [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Result_tooltip' | translate">
+                <nz-tag *ngIf="result.success" nzColor="darkgreen">{{'SIMULATOR.COMMUNITY_ROTATIONS.Success' | translate: {HQ: result.hqPercent} }}</nz-tag>
+                <nz-tag *ngIf="!result.success" nzColor="magenta">{{'SIMULATOR.COMMUNITY_ROTATIONS.Fail' | translate}}</nz-tag>
+              </div>
+              <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+                      (click)="openMacroPopup(result.simulation)"
+                      [nzTitle]="'SIMULATOR.Generate_ingame_macro' | translate">
+                <span class="text-icon">XIV</span>
+              </button>
+            </div>
+          </ng-container>
           <button nz-button nzShape="circle" nz-tooltip [nzTitle]="'SIMULATOR.Rename_rotation' | translate"
                   *ngIf="(permissionLevel$ | async) >= 40"
                   (click)="$event.stopPropagation();renameRotation(rotation)">

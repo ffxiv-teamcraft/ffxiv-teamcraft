@@ -2,6 +2,56 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.1"></a>
+## [5.2.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.8...v5.2.1) (2019-04-08)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with "early by 0.5 Eorzean hours" setting ([45da636](https://github.com/Supamiu/ffxiv-teamcraft/commit/45da636)), closes [#827](https://github.com/Supamiu/ffxiv-teamcraft/issues/827)
+* **fishing-log:** fixed bad imports causing random loading issues ([bdb9d02](https://github.com/Supamiu/ffxiv-teamcraft/commit/bdb9d02))
+* **layout:** adding a new panel now adds it at the beginning of the panels display ([311f38f](https://github.com/Supamiu/ffxiv-teamcraft/commit/311f38f))
+* **list:** fixed an issue with lists not being detached from the team properly in some cases ([ae1ca5c](https://github.com/Supamiu/ffxiv-teamcraft/commit/ae1ca5c))
+* **pricing:** fixed an issue with items having low hq price and hq amount set to 0 ([26b852b](https://github.com/Supamiu/ffxiv-teamcraft/commit/26b852b))
+* **search:** draft items can't be searched anymore, as they aren't real items ([5194f4b](https://github.com/Supamiu/ffxiv-teamcraft/commit/5194f4b))
+* **simulator:** fixed an issue with anonymous and level form ([e36b015](https://github.com/Supamiu/ffxiv-teamcraft/commit/e36b015))
+
+
+### Features
+
+* **alarms:** added support for weather inside alarms ([e4f5db5](https://github.com/Supamiu/ffxiv-teamcraft/commit/e4f5db5))
+* **alarms:** better support for long timers ([e84f367](https://github.com/Supamiu/ffxiv-teamcraft/commit/e84f367))
+* **alarms:** show more details about timed nodes for other items on same node ([90a51df](https://github.com/Supamiu/ffxiv-teamcraft/commit/90a51df)), closes [#751](https://github.com/Supamiu/ffxiv-teamcraft/issues/751)
+* **alarms:** support for weather transitions inside alarms ([c84b7aa](https://github.com/Supamiu/ffxiv-teamcraft/commit/c84b7aa))
+* **alarms:** you can now create alarms for weather-dependant items ([63bb18b](https://github.com/Supamiu/ffxiv-teamcraft/commit/63bb18b))
+* **auth:** creating an account from an anonymous access now transfers lists and user data ([8c39a7d](https://github.com/Supamiu/ffxiv-teamcraft/commit/8c39a7d))
+* **community-rotations:** added simulation result and macro copy button ([614261e](https://github.com/Supamiu/ffxiv-teamcraft/commit/614261e))
+* **core:** added a link to the wiki inside the header bar ([8aebb86](https://github.com/Supamiu/ffxiv-teamcraft/commit/8aebb86))
+* **core:** added a warning dialog if you're leaving a page with unsaved changes ([f677939](https://github.com/Supamiu/ffxiv-teamcraft/commit/f677939)), closes [#749](https://github.com/Supamiu/ffxiv-teamcraft/issues/749)
+* **desktop:** added context menu on tray icon to open alarm overlay ([ca3d09e](https://github.com/Supamiu/ffxiv-teamcraft/commit/ca3d09e))
+* **fishing:** added more data for fishing, inside lists, gathering-locations and log ([3d577d5](https://github.com/Supamiu/ffxiv-teamcraft/commit/3d577d5))
+* **fishing:** added more data for the spearfishing items ([d17cf65](https://github.com/Supamiu/ffxiv-teamcraft/commit/d17cf65))
+* **fishing:** new tooltips for fishes to show basic informations about them ([e4b2da9](https://github.com/Supamiu/ffxiv-teamcraft/commit/e4b2da9))
+* **fsh:** added support for fish eyes duration ([c5e93c4](https://github.com/Supamiu/ffxiv-teamcraft/commit/c5e93c4)), closes [#732](https://github.com/Supamiu/ffxiv-teamcraft/issues/732)
+* **gathering-location:** added hookset to fish data display ([c7c208d](https://github.com/Supamiu/ffxiv-teamcraft/commit/c7c208d))
+* **layout:** added item row buttons customization ([a9d138f](https://github.com/Supamiu/ffxiv-teamcraft/commit/a9d138f)), closes [#782](https://github.com/Supamiu/ffxiv-teamcraft/issues/782)
+* **levequests:** you can now plan leves for FSH too ([642484a](https://github.com/Supamiu/ffxiv-teamcraft/commit/642484a))
+* **list:** you can now remove an item from a list directly inside list details page ([192329d](https://github.com/Supamiu/ffxiv-teamcraft/commit/192329d))
+* **log-tracker:** you can now properly track BTN/MIN progression inside log tracker ([60ffc63](https://github.com/Supamiu/ffxiv-teamcraft/commit/60ffc63)), closes [#732](https://github.com/Supamiu/ffxiv-teamcraft/issues/732)
+* **simulator:** added community rotations system ([52cf4cd](https://github.com/Supamiu/ffxiv-teamcraft/commit/52cf4cd)), closes [#764](https://github.com/Supamiu/ffxiv-teamcraft/issues/764)
+* **simulator:** added durability timing rotation tip ([c9b8050](https://github.com/Supamiu/ffxiv-teamcraft/commit/c9b8050))
+* **simulator:** added information label about how much quality is missing to reach 100% ([fb0f7c5](https://github.com/Supamiu/ffxiv-teamcraft/commit/fb0f7c5))
+* **simulator:** added patient touch timing tip ([a634131](https://github.com/Supamiu/ffxiv-teamcraft/commit/a634131))
+* added auto completion on tags input box ([30c25e4](https://github.com/Supamiu/ffxiv-teamcraft/commit/30c25e4)), closes [#774](https://github.com/Supamiu/ffxiv-teamcraft/issues/774)
+* **simulator:** new rotation tips system to help people with rotations creation ([96d0725](https://github.com/Supamiu/ffxiv-teamcraft/commit/96d0725)), closes [#714](https://github.com/Supamiu/ffxiv-teamcraft/issues/714)
+* **teams:** added officier member level to give permission to assign items to members ([38250f0](https://github.com/Supamiu/ffxiv-teamcraft/commit/38250f0)), closes [#722](https://github.com/Supamiu/ffxiv-teamcraft/issues/722)
+* **ux:** you can now add lists to workshops using a selection dialog box ([af73b59](https://github.com/Supamiu/ffxiv-teamcraft/commit/af73b59)), closes [#796](https://github.com/Supamiu/ffxiv-teamcraft/issues/796)
+* **ux:** you can now add rotations to folders using a selection dialog box ([2aaa511](https://github.com/Supamiu/ffxiv-teamcraft/commit/2aaa511)), closes [#810](https://github.com/Supamiu/ffxiv-teamcraft/issues/810)
+* you can now add tags on items ([441b110](https://github.com/Supamiu/ffxiv-teamcraft/commit/441b110)), closes [#774](https://github.com/Supamiu/ffxiv-teamcraft/issues/774)
+* you can now filter inside panels based on tags ([f735da4](https://github.com/Supamiu/ffxiv-teamcraft/commit/f735da4)), closes [#774](https://github.com/Supamiu/ffxiv-teamcraft/issues/774)
+
+
+
 <a name="5.2.0"></a>
 # [5.2.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.8...v5.2.0) (2019-04-08)
 

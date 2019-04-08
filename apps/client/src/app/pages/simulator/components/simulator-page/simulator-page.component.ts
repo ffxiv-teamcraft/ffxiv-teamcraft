@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from '../../../../model/garland-tools/item';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
