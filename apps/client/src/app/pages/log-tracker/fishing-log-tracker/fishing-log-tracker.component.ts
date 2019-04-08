@@ -283,6 +283,9 @@ export class FishingLogTrackerComponent extends TrackerComponent {
                   };
                 });
               }
+              if (spot.hookset) {
+                result.hookset = spot.hookset.split(' ')[0].toLowerCase();
+              }
               result.baits = spot.bait.map(bait => {
                 const baitData = this.gt.getBait(bait);
                 return {

@@ -142,7 +142,9 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             // As uptimes are always in minutes, gotta convert to minutes here too.
             node.uptime *= 60;
           }
-
+          if (spot.hookset) {
+            node.hookset = spot.hookset.split(' ')[0].toLowerCase();
+          }
           if (spot.predator) {
             node.predators = spot.predator.map(predator => {
               return {
