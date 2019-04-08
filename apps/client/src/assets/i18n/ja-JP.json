@@ -532,7 +532,7 @@
     "Fish_eyes": "フィッシュアイが必要",
     "Snagging": "引掛釣りが必要",
     "Predators": "前もってこの魚を釣る",
-    "Fish_eyes_duration": "魚を捕まえるには、フィッシュアイが必要です。",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
     "GIG_HEAD": {
       "Small": "スモールギグヘッド",
       "Normal": "ミドルギグヘッド",
