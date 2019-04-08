@@ -666,7 +666,7 @@
         "TEALESS": "薬品非使用",
         "FOODLESS": "食事非使用",
         "MAKERS_MARK": "Maker's Mark",
-        "MUSCLE_MEMORY": "Muscle Memory"
+        "MUSCLE_MEMORY": "確信"
       }
     },
     "CUSTOM": {
@@ -742,10 +742,10 @@
       "Use_inner_quiet": "殆どのすべてのスキル回しは、HQ制作を目指しにするには '精神集中' が含まれるべきです。このスキルは、品質を向上させつつありながら 'ビエルゴの祝福' と同じようなスキルが使うことができます。",
       "Use_inner_quiet_before_quality_increase": "品質を向上される前に '精神集中' スキルを使用しなければなりません。使用しない場合 '精神集中' スキルのスタックが、無駄遣いになります。",
       "Use_ingenuity_I_instead": "制作を完成するのに十分のため、'工面算段Ⅱ' の代わりに、CP 8を節約する '工面算段' を使わなければなりません。",
-      "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
-      "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
-      "Use_byregot_brow_low_iq_stacks": "You used Byregot's Blessing with less than 6 stacks. Using Byregot's Brow is better in this case as it will produce more quality.",
-      "Use_byregot_blessing_high_iq_stacks": "'精神集中' 7スタック以上で 'ビエルゴの技巧' を使用しました。この場合は 'ビエルゴの祝福' がより良い品質となります。",
+      "Use_cz_earlier": "CP回復効果を早めに得るためには 'コンファートゾーン' をもっと早めに使用する必要があります。",
+      "Use_reclaim": "'リクレイム' を使用する CPが十分のため、もし制作が失敗した場合、素材回収のために 'リクレイム' を工程に追加する必要があります。",
+      "Use_byregot_brow_low_iq_stacks": "'精神集中' 6スタック以下で 'ビエルゴの祝福' を使用しました。この場合には 'ビエルゴの技巧' の方がより良い品質となります。",
+      "Use_byregot_blessing_high_iq_stacks": "'精神集中' 7スタック以上で 'ビエルゴの技巧' を使用しました。この場合は 'ビエルゴの祝福' の方がより良い品質となります。",
       "Use_sh1_instead": "{{index}} 回目の工程で 'ステディハンド' を使用するのが 'ステディハンドII' を使用するより CP 3が節約できます。",
       "Use_sh2_instead": "{{index}} 回目の工程で CP 3を消耗して 'ステディハンドⅡ' を使用するのが 'ステディハンド' を使用することより信頼が高いです。",
       "Use_pbp_first": "'ピース・バイ・ピース' を他の工程を進む前に使用して下さい。このスキルは残りの作業量によって効果が違います。",
@@ -982,7 +982,7 @@
     }
   },
   "DIRTY": {
-    "Dialog_title": "未保存の変更があります",
-    "Dialog_description": "このページを離れると、保存されていない変更がすべて削除されます。"
+    "Dialog_title": "保存していない変更があります",
+    "Dialog_description": "このページを離れると、保存されていない変更がすべて削除されます。よろしいですか？"
   }
 }
