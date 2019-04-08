@@ -661,8 +661,8 @@
       "Min_control_filter_placeholder": "최소 가공 숙련도",
       "Min_cp_filter_placeholder": "최소 CP",
       "Intro": "시작하기 위해 몇가지 필터를 입력하세요",
-      "Result_tooltip": "Result of a simulation run using this rotation and your stats",
-      "Fail": "Fail",
+      "Result_tooltip": "이 결과값은 현재 로테이션과 자신의 스탯을 기준으로 합니다",
+      "Fail": "실패",
       "Success": "Success: {{HQ}}% HQ",
       "TAGS": {
         "SPECIALIST": "전문장인",
