@@ -535,7 +535,7 @@
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
-      "Medium": "Medium Gig Head",
+      "Normal": "Normal Gig Head",
       "Large": "Large Gig Head"
     }
   },
