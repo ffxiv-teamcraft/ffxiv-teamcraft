@@ -118,7 +118,8 @@
     "Opened_in_desktop": "Эта страница была открыта внутри десктопного приложения, теперь вы можете закрыть её.",
     "Open_in_desktop": "Открыть в десктопном приложении",
     "Admin": "Администратор",
-    "Minutes_duration": "{{amount}} минут"
+    "Minutes_duration": "{{amount}} минут",
+    "Seconds_duration": "{{amount}} seconds"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -532,7 +533,7 @@
     "Fish_eyes": "Requires fish eyes",
     "Snagging": "Requires snagging",
     "Predators": "Fish these fish before",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
       "Normal": "Normal Gig Head",
