@@ -535,7 +535,7 @@
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
     "GIG_HEAD": {
       "Small": "작은 작살",
-      "Medium": "중간 작살",
+      "Normal": "Normal Gig Head",
       "Large": "큰 작살"
     }
   },
