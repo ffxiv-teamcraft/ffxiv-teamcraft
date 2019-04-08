@@ -118,7 +118,8 @@
     "Opened_in_desktop": "このページはPCアプリ内に開きました。このページを閉じることが出来ます。",
     "Open_in_desktop": "PCアプリで開く",
     "Admin": "管理者",
-    "Minutes_duration": "{{amount}} 分"
+    "Minutes_duration": "{{amount}} 分",
+    "Seconds_duration": "{{amount}} seconds"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -532,7 +533,7 @@
     "Fish_eyes": "フィッシュアイが必要",
     "Snagging": "引掛釣りが必要",
     "Predators": "前もってこの魚を釣る",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
     "GIG_HEAD": {
       "Small": "スモールギグヘッド",
       "Normal": "ミドルギグヘッド",
