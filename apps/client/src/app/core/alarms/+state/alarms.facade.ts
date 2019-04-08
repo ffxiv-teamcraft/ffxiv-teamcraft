@@ -230,19 +230,19 @@ export class AlarmsFacade {
         return timeBeforeA < timeBeforeB ? -1 : 1;
       });
       if (alarm.weathers) {
-        try {
+        // try {
           this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
             spawn: this.findWeatherSpawnCombination(alarm, sortedSpawns, time.getTime()),
             expires: time
           };
-        } catch (e) {
-          // Maximum call stack size...
-          // So we're just returning a date very far, in order to detect it inside the display system.
-          this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
-            spawn: { hours: 0, days: 99, despawn: 0 },
-            expires: new Date(Date.now() + 60000000)
-          };
-        }
+        // } catch (e) {
+        //   // Maximum call stack size...
+        //   // So we're just returning a date very far, in order to detect it inside the display system.
+        //   this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
+        //     spawn: { hours: 0, days: 99, despawn: 0 },
+        //     expires: new Date(Date.now() + 60000000)
+        //   };
+        // }
 
       } else {
         this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
