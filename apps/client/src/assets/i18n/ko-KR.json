@@ -663,7 +663,7 @@
       "Intro": "시작하기 위해 몇가지 필터를 입력하세요",
       "Result_tooltip": "이 결과값은 현재 로테이션과 자신의 스탯을 기준으로 합니다",
       "Fail": "실패",
-      "Success": "Success: {{HQ}}% HQ",
+      "Success": "HQ확률: {{HQ}}%",
       "TAGS": {
         "SPECIALIST": "전문장인",
         "NOT_SPECIALIST": "비전문장인",
