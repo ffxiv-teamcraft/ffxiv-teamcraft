@@ -75,8 +75,14 @@ export class AuthEffects {
   @Effect()
   fetchUserOnAnonymous$ = this.actions$.pipe(
     ofType(AuthActionTypes.LoggedInAsAnonymous),
-    switchMap((action: Authenticated) => this.userService.get(action.uid)),
-    catchError(() => of(new TeamcraftUser())),
+    switchMap((action: Authenticated) => {
+      return this.userService.get(action.uid).pipe(
+        catchError(() => {
+          this.userService.set(action.uid, new TeamcraftUser());
+          return of(new TeamcraftUser());
+        })
+      );
+    }),
     map(user => new UserFetched(user))
   );
 

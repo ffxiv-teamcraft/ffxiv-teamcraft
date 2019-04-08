@@ -15,6 +15,7 @@ import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
 import { fishParameter } from '../../../core/data/sources/fish-parameter';
 import { tap } from 'rxjs/internal/operators/tap';
 import { TrackerComponent } from '../tracker-component';
+import { startWith } from 'rxjs/internal/operators/startWith';
 
 @Component({
   selector: 'app-fishing-log-tracker',
@@ -24,7 +25,8 @@ import { TrackerComponent } from '../tracker-component';
 export class FishingLogTrackerComponent extends TrackerComponent {
 
   private completion$ = this.authFacade.user$.pipe(
-    map(user => user.gatheringLogProgression)
+    map(user => user.gatheringLogProgression),
+    startWith([])
   );
 
   public type$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
