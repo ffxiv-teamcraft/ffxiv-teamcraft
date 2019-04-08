@@ -12,6 +12,7 @@ export enum AuthActionTypes {
 
   UserFetched = '[Auth] User fetched',
   UpdateUser = '[Auth] Update User',
+  RegisterUser = '[Auth] Register User',
 
   LoginAsAnonymous = '[Auth] Login as Anonymous',
   LoggedInAsAnonymous = '[Auth] Logged in as Anonymous',
@@ -79,6 +80,13 @@ export class UpdateUser implements Action {
   readonly type = AuthActionTypes.UpdateUser;
 
   constructor(public user: TeamcraftUser) {
+  }
+}
+
+export class RegisterUser implements Action {
+  readonly type = AuthActionTypes.RegisterUser;
+
+  constructor(public uid: string, public user: TeamcraftUser) {
   }
 }
 
@@ -252,4 +260,5 @@ export type AuthActions = GetUser
   | VerifyCharacter
   | AddCustomCharacter
   | SaveDefaultConsumables
-  | UpdateUser;
+  | UpdateUser
+  | RegisterUser;

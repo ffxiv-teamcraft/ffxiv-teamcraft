@@ -7,7 +7,7 @@ import { authQuery } from './auth.selectors';
 import {
   GetUser,
   LinkingCharacter,
-  Logout,
+  Logout, RegisterUser,
   RemoveCharacter,
   SaveDefaultConsumables,
   SaveSet,
@@ -35,6 +35,9 @@ import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
 import { LodestoneIdEntry } from '../model/user/lodestone-id-entry';
 import { OauthService } from '../core/auth/oauth.service';
+import { first } from 'rxjs/internal/operators/first';
+import { from } from 'rxjs/internal/observable/from';
+import { ConvertLists } from '../modules/list/+state/lists.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -177,7 +180,17 @@ export class AuthFacade {
   }
 
   public register(email: string, password: string): Promise<any> {
-    return this.af.auth.createUserWithEmailAndPassword(email, password);
+    return this.user$.pipe(
+      first(),
+      switchMap((user) => {
+        return from(this.af.auth.createUserWithEmailAndPassword(email, password)).pipe(
+          tap(auth => {
+            this.store.dispatch(new RegisterUser(auth.user.uid, user));
+            this.store.dispatch(new ConvertLists(auth.user.uid))
+          })
+        );
+      }),
+    ).toPromise();
   }
 
   public googleOauth(): Observable<UserCredential> {
