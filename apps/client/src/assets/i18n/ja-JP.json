@@ -661,6 +661,9 @@
       "Min_control_filter_placeholder": "最小加工精度",
       "Min_cp_filter_placeholder": "最小CP",
       "Intro": "一部のフィルターを入力して開始",
+      "Result_tooltip": "Result of a simulation run using this rotation and your stats",
+      "Fail": "Fail",
+      "Success": "Success: {{HQ}}% HQ",
       "TAGS": {
         "SPECIALIST": "マイスター",
         "NOT_SPECIALIST": "非マイスター",
