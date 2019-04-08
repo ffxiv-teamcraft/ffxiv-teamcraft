@@ -136,7 +136,7 @@
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイ開く",
     "More_available": "{{amount}} 回 もっと",
-    "Node_content": "採取物情報",
+    "Node_content": "採集物情報",
     "More_than_three_days": "> 3日",
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
@@ -166,7 +166,7 @@
   "Crystals": "クリスタル",
   "Gathering": "採集",
   "Other": "その他",
-  "Pre_crafts": "下位材料",
+  "Pre_crafts": "下位素材",
   "Items": "アイテム",
   "New_List": "新リスト",
   "Please_enter_a_name": "名前を入力してください",
@@ -265,7 +265,7 @@
   "Hide_completed": "完了された項目を隠す",
   "Required_crafts_amount": "制作に必要な量",
   "Missing_crafts_amount": "{{amount}} 個不足",
-  "Requires": "材料",
+  "Requires": "素材",
   "Copy_item_name_to_clipboard": "アイテム名をクリップボードにコピーする",
   "Item_name_copied": "{{itemname}} はクリップボードにコピーされました",
   "Tier_display_toggle": "制作段階を表示する",
@@ -434,7 +434,7 @@
         "EDIT_AMOUNT": "数量を編集",
         "MARK_HQ": "HQ表示",
         "ADD_TO_ANOTHER_LIST": "他のリストに追加する",
-        "REQUIREMENTS": "材料",
+        "REQUIREMENTS": "素材",
         "REMOVE_ITEM": "リストからこのアイテムを削除"
       }
     },
@@ -532,7 +532,7 @@
     "Fish_eyes": "フィッシュアイが必要",
     "Snagging": "引掛釣りが必要",
     "Predators": "前もってこの魚を釣る",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
+    "Fish_eyes_duration": "魚を捕まえるには、フィッシュアイが必要です。",
     "GIG_HEAD": {
       "Small": "スモールギグヘッド",
       "Normal": "ミドルギグヘッド",
@@ -712,7 +712,7 @@
       "Ingredients": "HQ材料",
       "Consumables": "薬品・調理品",
       "Apply_stats": "サブステを適用する",
-      "Apply_ingredients": "HQ材料を適用する",
+      "Apply_ingredients": "HQ素材を適用する",
       "Apply_foods": "飯と薬を適用する",
       "Food": "飯を選び出します",
       "Medicine": "薬を選び出します",
@@ -930,15 +930,15 @@
       "Level": "レベル",
       "None": "無し",
       "Stars": "難易度",
-      "Requirements": "材料",
-      "Add_requirement": "材料追加",
+      "Requirements": "素材",
+      "Add_requirement": "素材追加",
       "Yields": "制作個数",
       "Name": "名",
       "ID": "アイテム名",
       "CRAFT": {
         "Title": "制作方法",
         "Job": "ジョブ",
-        "No_requirement_warning": "アイテムに必要な材料を設定していません。どんな材料も無しで制作する事を意味します。"
+        "No_requirement_warning": "アイテムに必要な素材を設定していません。どんな素材も無しで制作する事を意味します。"
       },
       "GATHERING": {
         "Title": "採集方法",
