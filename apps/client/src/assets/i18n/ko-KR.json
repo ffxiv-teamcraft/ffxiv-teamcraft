@@ -532,7 +532,7 @@
     "Fish_eyes": "물고기의 눈 필요",
     "Snagging": "갈고리 낚시 필요",
     "Predators": "사전에 낚아야 할 물고기",
-    "Fish_eyes_duration": "물고기를 잡으려면, 물고기의 눈이 필요합니다.",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
     "GIG_HEAD": {
       "Small": "소형 작살",
       "Normal": "중형 작살",
