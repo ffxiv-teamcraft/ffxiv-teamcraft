@@ -754,7 +754,7 @@
       "Use_durability_restoration_later": "You should use the durability restoration action at step {{index}} later in order to avoid wasting durability restoration.",
       "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
       "Use_advanced_touch_instead": "You used Basic Touch then Advanced Touch one after another at step {{index}}, you should use two Standard Touches instead to get same potency for 2 less CP.",
-      "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs."
+      "Do_not_overlap_buffs": "{{overlappedIndex}} 回目の工程で使用したバフが {{overlappingIndex}} 回目の工程で使用したバフと重複されます。バフの効果が最大限貰えるように、少し遅れて使わなければなりません。"
     }
   },
   "PRICING": {
@@ -893,7 +893,7 @@
     "Create_list": "このページを完成させるためのリストを作成する",
     "Folklore": "伝承録",
     "Timed": "タイム・リミットあり",
-    "Weather_dependant": "Only with some weathers",
+    "Weather_dependant": "特定の天気のみ可能",
     "View_on_ff14angler": "FF14anglerの詳細",
     "Required_for_achievement": "アチーブメントに適用された",
     "Select_spot": "詳細を表示するところを選択します。",
