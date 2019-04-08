@@ -535,7 +535,7 @@
     "Fish_eyes_duration": "Vos yeux de poisson doivent avoir cette durée pour obtenir le poisson",
     "GIG_HEAD": {
       "Small": "Petite pointe de harpon",
-      "Normal": "Normal Gig Head",
+      "Normal": "Pointe de harpon normale",
       "Large": "Pointe de harpon large"
     }
   },
@@ -886,7 +886,7 @@
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente."
   },
   "LOG_TRACKER": {
-    "Title": "Carnet d'artisanat",
+    "Title": "Carnets",
     "Mark_page_as_done": "Marquer cette page comme terminée",
     "Mark_as_done": "Marquer comme fait",
     "Mark_as_not_done": "Marquer comme non fait",
