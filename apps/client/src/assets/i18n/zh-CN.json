@@ -118,7 +118,8 @@
     "Opened_in_desktop": "此页面已在您的桌面应用程序中打开，您可以现在关闭它。",
     "Open_in_desktop": "在桌面应用中打开",
     "Admin": "管理员",
-    "Minutes_duration": "{{amount}} minutes"
+    "Minutes_duration": "{{amount}} minutes",
+    "Seconds_duration": "{{amount}} seconds"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -532,7 +533,7 @@
     "Fish_eyes": "Requires fish eyes",
     "Snagging": "Requires snagging",
     "Predators": "Fish these fish before",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish",
+    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
       "Normal": "Normal Gig Head",
