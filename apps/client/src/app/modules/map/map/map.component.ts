@@ -3,7 +3,7 @@ import { MapData } from '../map-data';
 import { Observable, ReplaySubject } from 'rxjs';
 import { MapService } from '../map.service';
 import { Vector2 } from '../../../core/tools/vector2';
-import { switchMap } from 'rxjs/internal/operators/switchMap';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-map',

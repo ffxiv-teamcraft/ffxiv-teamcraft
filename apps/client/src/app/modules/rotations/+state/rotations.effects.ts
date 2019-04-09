@@ -10,11 +10,10 @@ import {
   UpdateRotation
 } from './rotations.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { catchError, filter, map, switchMap, withLatestFrom, mergeMap } from 'rxjs/operators';
+import { catchError, filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation/crafting-rotation.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { of } from 'rxjs';
-import { EMPTY } from 'rxjs/internal/observable/empty';
+import { EMPTY, of } from 'rxjs';
 
 @Injectable()
 export class RotationsEffects {
@@ -35,7 +34,7 @@ export class RotationsEffects {
     ofType<GetRotation>(RotationsActionTypes.GetRotation),
     mergeMap(action => {
       return this.rotationsService.get(action.key).pipe(
-        catchError(() => of({$key: action.key, notFound: true}))
+        catchError(() => of({ $key: action.key, notFound: true }))
       );
     }),
     map(rotation => new RotationLoaded(rotation))

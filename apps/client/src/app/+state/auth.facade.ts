@@ -28,15 +28,14 @@ import { IpcService } from '../core/electron/ipc.service';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, Observable, of } from 'rxjs';
+import { combineLatest, Observable, of, from } from 'rxjs';
 import { GearSet } from '../pages/simulator/model/gear-set';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
 import { LodestoneIdEntry } from '../model/user/lodestone-id-entry';
 import { OauthService } from '../core/auth/oauth.service';
-import { first } from 'rxjs/internal/operators/first';
-import { from } from 'rxjs/internal/observable/from';
+import { first } from 'rxjs/operators';
 import { ConvertLists } from '../modules/list/+state/lists.actions';
 
 @Injectable({

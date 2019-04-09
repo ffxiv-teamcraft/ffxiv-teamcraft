@@ -38,7 +38,7 @@ import {
 } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, EMPTY, of } from 'rxjs';
+import { combineLatest, EMPTY, of, from } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { ListCompactsService } from '../list-compacts.service';
 import { List } from '../model/list';
@@ -50,7 +50,6 @@ import { Router } from '@angular/router';
 import { NzModalService } from 'ng-zorro-antd';
 import { ListCompletionPopupComponent } from '../list-completion-popup/list-completion-popup.component';
 import { TranslateService } from '@ngx-translate/core';
-import { from } from 'rxjs/internal/observable/from';
 
 @Injectable()
 export class ListsEffects {
