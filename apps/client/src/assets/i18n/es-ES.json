@@ -664,7 +664,7 @@
       "Result_tooltip": "Resultado de una simulación usando esta rotación y sus atributos",
       "Fail": "Falla",
       "Success": "Éxito: {{HQ}}% HQ",
-      "Set_to_simulate": "Stats",
+      "Set_to_simulate": "Atributos",
       "TAGS": {
         "SPECIALIST": "Especialista",
         "NOT_SPECIALIST": "No especialista",
