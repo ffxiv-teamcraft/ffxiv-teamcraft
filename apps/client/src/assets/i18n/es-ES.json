@@ -756,7 +756,7 @@
       "Use_mume_if_pbp": "Debería usar \"Muscle Memory\" en el paso 1 para reemplazar un \"Piece by Piece\" y obtener 9 CP extra",
       "Use_observe_before_focused": "Debería usar \"Observe\" antes de la acción \"enfocada\" en el paso {{index}} para obtener una tasa de éxito del 100% gratis.",
       "Use_durability_restoration_later": "Debería usar la acción de restauración de durabilidad en el paso {{index}} más tarde para evitar desperdiciar la restauración de durabilidad.",
-      "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
+      "Use_patient_touch_faster": "Debería usar \"Patient Touch\" antes de añadir puntos de \"Inner Quiet\", para minimizar los puntos desperdiciados si la acción falla.",
       "Use_advanced_touch_instead": "You used Basic Touch then Advanced Touch one after another at step {{index}}, you should use two Standard Touches instead to get same potency for 2 less CP.",
       "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs."
     }
@@ -896,7 +896,7 @@
     "Mark_as_not_done": "Marcar este artículo como no hecho",
     "Create_list": "Crear una lista para completar esta página",
     "Folklore": "Regional Folklore",
-    "Timed": "Timed",
+    "Timed": "Por tiempo limitado",
     "Weather_dependant": "Only with some weathers",
     "View_on_ff14angler": "More details on ff14angler",
     "Required_for_achievement": "Requerido para los logros",
