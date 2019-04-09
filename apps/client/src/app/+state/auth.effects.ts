@@ -117,10 +117,13 @@ export class AuthEffects {
         return EMPTY;
       }
     }),
-    tap(user => {
+    tap((user: TeamcraftUser) => {
       // If token has been refreshed more than 3 weeks ago, refresh it now.
       if (Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
         this.patreonService.refreshToken(user);
+      }
+      if (user.defaultLodestoneId === undefined && user.lodestoneIds.length > 0) {
+        user.defaultLodestoneId = user.lodestoneIds[0].id;
       }
     }),
     distinctUntilChanged((a, b) => JSON.stringify(a) === JSON.stringify(b)),
@@ -130,7 +133,7 @@ export class AuthEffects {
   @Effect()
   watchNoLinkedCharacter$ = this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
-    debounceTime(1000),
+    debounceTime(2000),
     withLatestFrom(this.authFacade.loggedIn$),
     filter(([action, loggedIn]) => {
       return loggedIn && action.user && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0;

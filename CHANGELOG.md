@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.2"></a>
+## [5.2.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.1...v5.2.2) (2019-04-09)
+
+
+### Bug Fixes
+
+* **alarms:** better display for long timers ([d1ce8b8](https://github.com/Supamiu/ffxiv-teamcraft/commit/d1ce8b8))
+* **alarms:** fixed a timer with nodes that spawn twice a day ([cc5257f](https://github.com/Supamiu/ffxiv-teamcraft/commit/cc5257f))
+* **alarms:** fixed an issue with some alarm timers not being accurate at all ([1565f51](https://github.com/Supamiu/ffxiv-teamcraft/commit/1565f51))
+* **alarms:** fixed an issue with weather-only based alarms not showing up properly ([bffb60c](https://github.com/Supamiu/ffxiv-teamcraft/commit/bffb60c)), closes [#833](https://github.com/Supamiu/ffxiv-teamcraft/issues/833)
+* **auth:** fixed an issue that randomly prevents a user from loading the website ([086da6b](https://github.com/Supamiu/ffxiv-teamcraft/commit/086da6b))
+* **core:** fixed wrong imports issue causing some pages and features to break randomly ([5580693](https://github.com/Supamiu/ffxiv-teamcraft/commit/5580693))
+* **desktop:** fixed an issue with desktop app not being closed properly ([2accce0](https://github.com/Supamiu/ffxiv-teamcraft/commit/2accce0))
+* **desktop:** fixed missing community rotation icon on desktop app ([cca383f](https://github.com/Supamiu/ffxiv-teamcraft/commit/cca383f))
+* **desktop:** fixed missing icons on desktop app ([b0e4afa](https://github.com/Supamiu/ffxiv-teamcraft/commit/b0e4afa)), closes [#836](https://github.com/Supamiu/ffxiv-teamcraft/issues/836)
+* **layout:** fixed an issue with specific tag panels not being added properly ([4e1c35d](https://github.com/Supamiu/ffxiv-teamcraft/commit/4e1c35d))
+* **log-tracker:** fixed an issue with map not changing properly when switching fishing hole ([74ce69f](https://github.com/Supamiu/ffxiv-teamcraft/commit/74ce69f))
+
+
+### Features
+
+* **alarms:** added mute toggle inside sidebar and overlay ([df5e934](https://github.com/Supamiu/ffxiv-teamcraft/commit/df5e934))
+* **community-rotations:** you can now select which stats set is used for the simulation ([b066890](https://github.com/Supamiu/ffxiv-teamcraft/commit/b066890))
+* **list:** item tags button is now handled as a standard button ([d38397f](https://github.com/Supamiu/ffxiv-teamcraft/commit/d38397f))
+* **simulator:** custom rotations now save stats to the rotation to reuse them ([98519f8](https://github.com/Supamiu/ffxiv-teamcraft/commit/98519f8))
+
+
+
 <a name="5.2.1"></a>
 ## [5.2.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.1.8...v5.2.1) (2019-04-08)
 

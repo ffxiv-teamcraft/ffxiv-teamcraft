@@ -88,7 +88,6 @@ export class LayoutEditorRowComponent implements OnInit {
     this.rowChange.emit(this.row);
   }
 
-
   ngOnInit(): void {
     this.isOtherRow = this.row.isOtherRow();
     this.filter = this.row.filterName.split(':').map(fragment => {

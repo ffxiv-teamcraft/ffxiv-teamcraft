@@ -70,7 +70,7 @@ export class LayoutEditorComponent {
 
   moveRow(row: LayoutRow, index: number, layout: ListLayout): void {
     // Remove list from the array
-    layout.rows = layout.rows.filter(r => r.filterName !== row.filterName && r.name !== row.name);
+    layout.rows = layout.rows.filter(r => r.filterName !== row.filterName || r.name !== row.name);
     // Insert it at new index
     layout.rows.splice(index, 0, row);
     // Update indexes and persist
@@ -91,12 +91,12 @@ export class LayoutEditorComponent {
   }
 
   addPanel(layout: ListLayout): void {
-    layout.rows.unshift(new LayoutRow('', 'NAME', LayoutRowOrder.DESC, 'NONE', layout.rows.length));
+    layout.rows.unshift(new LayoutRow('New layout row', 'NAME', LayoutRowOrder.DESC, 'NONE', layout.rows.length));
     this.dirty = true;
   }
 
   removePanel(layout: ListLayout, row: LayoutRow): void {
-    layout.rows = layout.rows.filter(r => r.name !== row.name && r.filterName !== row.filterName);
+    layout.rows = layout.rows.filter(r => r.name !== row.name || r.filterName !== row.filterName);
     this.dirty = true;
   }
 

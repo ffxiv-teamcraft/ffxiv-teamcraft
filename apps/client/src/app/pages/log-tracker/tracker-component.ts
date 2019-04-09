@@ -25,7 +25,7 @@ export class TrackerComponent {
       this.alarmsCache[`${node.itemId}-${node.type}`] = {
         itemId: node.itemId,
         icon: node.icon,
-        duration: node.uptime / 60,
+        duration: node.uptime / 60 || 8,
         zoneId: node.zoneid,
         areaId: node.areaid,
         slot: +node.slot,

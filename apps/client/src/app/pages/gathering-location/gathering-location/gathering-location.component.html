@@ -67,23 +67,23 @@
                  [nzTitle]="node.folklore.id | itemName | i18n" alt="" class="folklore">
             <i *ngIf="node.hidden">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</i>
             <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-              <img src="/assets/icons/status/fish_eyes.png" alt="" nz-tooltip
+              <img src="./assets/icons/status/fish_eyes.png" alt="" nz-tooltip
                    [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
               <div
                 *ngIf="node.itemId | fishEyesDuration as duration" nz-tooltip
                 [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate">{{'COMMON.Minutes_duration' | translate: { amount: duration } }}</div>
             </div>
-            <img *ngIf="node.snagging" src="/assets/icons/status/snagging.png" alt="" nz-tooltip
+            <img *ngIf="node.snagging" src="./assets/icons/status/snagging.png" alt="" nz-tooltip
                  [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
           </div>
           <app-fishing-bait *ngIf="node.baits !== undefined" [baits]="node.baits"></app-fishing-bait>
-          <img *ngIf="node.gig" src="/assets/icons/gig/{{node.gig}}.png" nz-tooltip class="gig-icon"
+          <img *ngIf="node.gig" src="./assets/icons/gig/{{node.gig}}.png" nz-tooltip class="gig-icon"
                [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate">
-          <img *ngIf="node.hookset" src="/assets/icons/hookset/{{node.hookset}}.png" nz-tooltip class="gig-icon"
+          <img *ngIf="node.hookset" src="./assets/icons/hookset/{{node.hookset}}.png" nz-tooltip class="gig-icon"
                [nzTitle]="(node.hookset === 'precision'? 4179 : 4103) | actionName | i18n">
           <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
                fxLayoutAlign="flex-start center">
-            <img src="/assets/icons/status/predators.png" alt="" nz-tooltip
+            <img src="./assets/icons/status/predators.png" alt="" nz-tooltip
                  [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate">
             <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutGap="5px"
                  fxLayoutAlign="flex-start center">

@@ -8,6 +8,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { Alarm } from '../../../core/alarms/alarm';
 import { MapComponent } from '../../map/map/map.component';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-alarms-sidebar',
@@ -25,7 +26,7 @@ export class AlarmsSidebarComponent implements OnInit {
 
   constructor(private alarmBell: AlarmBellService, private alarmsFacade: AlarmsFacade,
               private dialog: NzModalService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService) {
+              private i18n: I18nToolsService, public settings: SettingsService) {
   }
 
   trackByAlarm(index: number, display: AlarmDisplay): string {

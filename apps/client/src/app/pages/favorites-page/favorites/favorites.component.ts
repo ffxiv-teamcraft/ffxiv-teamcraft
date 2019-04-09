@@ -5,7 +5,7 @@ import { List } from '../../../modules/list/model/list';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { debounceTime, distinctUntilChanged, filter, map, switchMap, tap, mergeMap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { combineLatest } from 'rxjs/internal/observable/combineLatest';
+import { combineLatest } from 'rxjs';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { RotationsFacade } from '../../../modules/rotations/+state/rotations.facade';

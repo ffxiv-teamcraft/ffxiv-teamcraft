@@ -252,19 +252,26 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         const set = sets.find(s => s.jobId === job);
         return new CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.level, <CrafterLevels>sets.map(s => s.level));
       }),
-      tap(stats => {
-        this.availableLevels = stats.levels;
-        this.statsForm.reset({
-          job: stats.jobId,
-          craftsmanship: stats.craftsmanship,
-          control: stats._control,
-          cp: stats.cp,
-          level: stats.level,
-          specialist: stats.specialist
-        }, { emitEvent: false });
-      }),
       distinctUntilChanged((before, after) => {
         return JSON.stringify(before) === JSON.stringify(after);
+      })
+    );
+
+    const statsFromRotation$ = this.rotation$.pipe(
+      map(rotation => {
+        const stats = rotation.stats;
+        if (rotation.stats) {
+          return new CrafterStats(
+            stats.jobId,
+            stats.craftsmanship,
+            stats.control,
+            stats.cp,
+            stats.specialist,
+            stats.level,
+            [70, 70, 70, 70, 70, 70, 70, 70]
+          );
+        }
+        return undefined;
       })
     );
 
@@ -276,7 +283,26 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.crafterStats$ = merge(statsFromRecipe$, this.customStats$).pipe(shareReplay(1));
+    this.crafterStats$ = combineLatest(merge(statsFromRecipe$, this.customStats$), statsFromRotation$, this.route.queryParamMap, this.authFacade.userId$, this.rotation$).pipe(
+      map(([generated, fromRotation, query, userId, rotation]) => {
+        if (query.has('includeStats') || (rotation.authorId === userId && rotation.custom)) {
+          return fromRotation || generated;
+        }
+        return generated;
+      }),
+      shareReplay(1),
+      tap(stats => {
+        this.availableLevels = stats.levels;
+        this.statsForm.reset({
+          job: stats.jobId,
+          craftsmanship: stats.craftsmanship,
+          control: stats._control,
+          cp: stats.cp,
+          level: stats.level,
+          specialist: stats.specialist
+        }, { emitEvent: false });
+      })
+    );
 
     this.stats$ = combineLatest(this.crafterStats$, this.bonuses$, this.loggedIn$).pipe(
       map(([stats, bonuses, loggedIn]) => {

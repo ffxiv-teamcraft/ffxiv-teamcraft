@@ -11,8 +11,8 @@
                  (ngModelChange)="tagsFilter$.next($event)">
         <nz-option *ngFor="let tag of tags" [nzLabel]="tag.label | translate" [nzValue]="tag.value"></nz-option>
       </nz-select>
-      <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="10px">
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+      <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px">
+        <div class="filter-element" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Rlvl_filter_placeholder' | translate}}:</div>
           <nz-select nzShowSearch
                      nzAllowClear
@@ -23,7 +23,7 @@
             <nz-option *ngFor="let rlvl of rlvls" [nzLabel]="rlvl.label" [nzValue]="rlvl.value"></nz-option>
           </nz-select>
         </div>
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+        <div class="filter-element" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Durability_filter_placeholder' | translate}}:</div>
           <nz-select nzShowSearch
                      nzAllowClear
@@ -39,23 +39,34 @@
             <nz-option nzLabel="80" [nzValue]="80"></nz-option>
           </nz-select>
         </div>
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+        <div class="filter-element" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_craftsmanship_filter_placeholder' | translate}}:</div>
           <nz-input-number name="minCraft" [ngModel]="craftsmanshipFilter$ | async"
                            (ngModelChange)="craftsmanshipFilter$.next($event)"
                            [nzMin]="1" [nzStep]="1"></nz-input-number>
         </div>
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+        <div class="filter-element" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_control_filter_placeholder' | translate}}:</div>
           <nz-input-number name="minCraft" [ngModel]="controlFilter$ | async"
                            (ngModelChange)="controlFilter$.next($event)"
                            [nzMin]="1" [nzStep]="1"></nz-input-number>
         </div>
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+        <div class="filter-element" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_cp_filter_placeholder' | translate}}:</div>
           <nz-input-number name="minCraft" [ngModel]="cpFilter$ | async"
                            (ngModelChange)="cpFilter$.next($event)"
                            [nzMin]="1" [nzStep]="1"></nz-input-number>
+        </div>
+        <div class="filter-element" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" *ngIf="sets$ | async as sets">
+          <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Set_to_simulate' | translate}}:</div>
+          <nz-select nzShowSearch
+                     fxFlex="0 0 200px"
+                     [ngModel]="setIndex$ | async"
+                     (ngModelChange)="setIndex$.next($event)">
+            <nz-option *ngFor="let set of sets; let index = index"
+                       nzLabel="{{set.jobId | jobAbbr | i18n}} - {{set.craftsmanship}}/{{set.control}}/{{set.cp}}"
+                       [nzValue]="index"></nz-option>
+          </nz-select>
         </div>
       </div>
     </div>
@@ -67,7 +78,7 @@
   <app-page-loader [loading]="loading" class="rotations-container">
     <div fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 auto" *ngIf="filteredRotations$ | async as rotations">
       <app-rotation-panel *ngFor="let rotation of rotations; trackBy: trackByRotation" [rotation]="rotation"
-                          [publicDisplay]="true"></app-rotation-panel>
+                          [publicDisplay]="true" [simulationSet]="set$ | async"></app-rotation-panel>
       <nz-pagination [nzPageIndex]="page$ | async" (nzPageIndexChange)="page$.next($event)" [nzTotal]="totalLength"
                      *ngIf="totalLength > pageSize"
                      [nzPageSize]="pageSize" fxLayout="row"

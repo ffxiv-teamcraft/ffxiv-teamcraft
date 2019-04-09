@@ -64,17 +64,9 @@ export class AlarmsEffects {
           return new Alarm({ ...alarm, userId: userId });
         });
       }),
-      withLatestFrom(this.alarmsFacade.allAlarms$),
-      map(([alarms, allAlarms]: [Alarm[], Alarm[]]) => {
+      map((alarms) => {
         return alarms.filter(alarm => {
-          return allAlarms.filter(a => {
-            return a.mapId === alarm.mapId
-              && a.weathers === alarm.weathers
-              && a.itemId === alarm.itemId
-              && a.duration === alarm.duration
-              && a.coords === alarm.coords
-              && a.zoneId === alarm.zoneId;
-          }).length === 1;
+          return alarm.$key === undefined;
         });
       }),
       switchMap((alarms: Alarm[]) => {

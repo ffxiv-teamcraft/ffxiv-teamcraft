@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MapData } from '../map-data';
-import { Observable } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { MapService } from '../map.service';
 import { Vector2 } from '../../../core/tools/vector2';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-map',
@@ -12,7 +13,18 @@ import { Vector2 } from '../../../core/tools/vector2';
 export class MapComponent implements OnInit {
 
   @Input()
-  mapId: number;
+  public set mapId(id: number) {
+    this._mapId = id;
+    this.mapId$.next(id);
+  }
+
+  public get mapId(): number {
+    return this._mapId;
+  }
+
+  private mapId$: ReplaySubject<number> = new ReplaySubject<number>();
+
+  private _mapId: number;
 
   @Input()
   markers: Vector2[] = [];
@@ -26,7 +38,11 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mapData = this.mapService.getMapById(this.mapId);
+    this.mapData = this.mapId$.pipe(
+      switchMap(mapId => {
+        return this.mapService.getMapById(mapId);
+      })
+    );
   }
 
   getMarkerPosition(map: MapData, marker: Vector2, offset = { x: 0, y: 0 }): { top: string, left: string } {

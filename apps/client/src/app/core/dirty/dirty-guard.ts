@@ -1,13 +1,11 @@
 import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { DirtyFacade } from './+state/dirty.facade';
 import { Injectable } from '@angular/core';
-import { switchMap } from 'rxjs/internal/operators/switchMap';
-import { of } from 'rxjs/internal/observable/of';
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd';
 import { DirtyScope } from './dirty-scope';
-import { tap } from 'rxjs/internal/operators/tap';
+import { switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
 export class DirtyGuard implements CanDeactivate<any> {
@@ -31,15 +29,16 @@ export class DirtyGuard implements CanDeactivate<any> {
           nzOnOk: () => result$.next(true),
           nzOnCancel: () => result$.next(false)
         });
-        return result$.pipe(tap(res => {
-          if (res) {
-            entries
-              .filter(entry => entry.scope === DirtyScope.PAGE)
-              .forEach(entry => {
-                this.dirtyFacade.removeEntry(entry.id, entry.scope);
-              });
-          }
-        }));
+        return result$.pipe(
+          tap(res => {
+            if (res) {
+              entries
+                .filter(entry => entry.scope === DirtyScope.PAGE)
+                .forEach(entry => {
+                  this.dirtyFacade.removeEntry(entry.id, entry.scope);
+                });
+            }
+          }));
       })
     );
   }

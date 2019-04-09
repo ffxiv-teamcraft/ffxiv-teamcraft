@@ -105,7 +105,6 @@ export class LevequestsComponent implements OnInit {
       }),
       map(list => {
         const results: Levequest[] = [];
-        console.log(list);
         (<any>list).Results.forEach(leve => {
           results.push({
             level: leve.ClassJobLevel,

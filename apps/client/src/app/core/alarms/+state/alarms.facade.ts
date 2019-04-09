@@ -133,7 +133,7 @@ export class AlarmsFacade {
 
   public createDisplay(alarm: Alarm, date: Date): AlarmDisplay {
     const display = new AlarmDisplay(alarm);
-    const nextSpawn = {...this.getNextSpawn(alarm, date)};
+    const nextSpawn = { ...this.getNextSpawn(alarm, date) };
     display.spawned = this.isSpawned(alarm, date);
     display.played = this.isPlayed(alarm, date);
     if (display.spawned) {
@@ -231,10 +231,10 @@ export class AlarmsFacade {
       });
       if (alarm.weathers) {
         // try {
-          this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
-            spawn: this.findWeatherSpawnCombination(alarm, sortedSpawns, time.getTime()),
-            expires: time
-          };
+        this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
+          spawn: this.findWeatherSpawnCombination(alarm, sortedSpawns, time.getTime()),
+          expires: time
+        };
         // } catch (e) {
         //   // Maximum call stack size...
         //   // So we're just returning a date very far, in order to detect it inside the display system.
@@ -250,7 +250,8 @@ export class AlarmsFacade {
             hours: sortedSpawns[0],
             days: 0,
             despawn: (sortedSpawns[0] + alarm.duration) % 24
-          }, expires: new Date(Date.now() + ((alarm.duration / EorzeanTimeService.EPOCH_TIME_FACTOR) * 60000000))
+          },
+          expires: new Date()
         };
       }
     }
@@ -258,43 +259,68 @@ export class AlarmsFacade {
   }
 
   private findWeatherSpawnCombination(alarm: Alarm, sortedSpawns: number[], time: number, iteration = time): NextSpawn {
-    const weatherSpawns = alarm.weathers.map(weather => {
-      if (alarm.weathersFrom !== undefined && alarm.weathersFrom.length > 0) {
-        return {
-          weather: weather,
-          spawn: this.weatherService.getNextWeatherTransition(alarm.mapId, alarm.weathersFrom, weather, iteration, weatherIndex[mapIds.find(m => m.id === alarm.mapId).weatherRate])
-        };
-      }
-      return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration) };
-    })
+    const weatherSpawns = alarm.weathers
+      .map(weather => {
+        if (alarm.weathersFrom !== undefined && alarm.weathersFrom.length > 0) {
+          return {
+            weather: weather,
+            spawn: this.weatherService.getNextWeatherTransition(alarm.mapId, alarm.weathersFrom, weather, iteration, weatherIndex[mapIds.find(m => m.id === alarm.mapId).weatherRate])
+          };
+        }
+        return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration) };
+      })
       .filter(spawn => spawn.spawn !== null)
       .sort((a, b) => a.spawn.getTime() - b.spawn.getTime());
-    for (const spawn of sortedSpawns) {
-      const despawn = (spawn + alarm.duration) % 24;
-      for (const weatherSpawn of weatherSpawns) {
+    for (const weatherSpawn of weatherSpawns) {
+      for (const spawn of sortedSpawns) {
+        const despawn = (spawn + alarm.duration) % 24;
         const weatherStart = weatherSpawn.spawn.getUTCHours();
         const weatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
-        if (weatherStart < despawn && weatherStart >= spawn) {
-          // If it spawns during the alarm spawn, return weather spawn time.
-          const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
-          return { hours: weatherStart, days: days, despawn: despawn, weather: weatherSpawn.weather };
-        } else if (weatherStart < spawn && weatherStop > spawn) {
-          // If it spawns before the alarm and despawns during the alarm or after,
-          // set spawn day hour to spawn hour for days math.
-          const realSpawn = new Date(weatherSpawn.spawn);
-          realSpawn.setUTCHours(spawn);
-          const days = Math.max(Math.floor((realSpawn.getTime() - time) / 86400000), 0);
-          return {
-            hours: spawn,
-            days: days,
-            despawn: Math.min(weatherStop, despawn || 24),
-            weather: weatherSpawn.weather
-          };
+        if (spawn < despawn) {
+          if (weatherStart < despawn && weatherStart >= spawn) {
+            // If it spawns during the alarm spawn, return weather spawn time.
+            const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
+            return { hours: weatherStart, days: days, despawn: despawn, weather: weatherSpawn.weather };
+          } else if (weatherStart < spawn && weatherStop > spawn) {
+            // If it spawns before the alarm and despawns during the alarm or after,
+            // set spawn day hour to spawn hour for days math.
+            const realSpawn = new Date(weatherSpawn.spawn);
+            realSpawn.setUTCHours(spawn);
+            const days = Math.max(Math.floor((realSpawn.getTime() - time) / 86400000), 0);
+            return {
+              hours: spawn,
+              days: days,
+              despawn: Math.min(weatherStop, despawn || 24),
+              weather: weatherSpawn.weather
+            };
+          }
+        } else {
+          const base48Spawn = spawn || 24;
+          const base48Despawn = despawn + 24;
+          const base48WeatherStart = weatherStart || 24;
+          const base48WeatherStop = base48WeatherStart + 8;
+          if (base48WeatherStart < base48Despawn && base48WeatherStart >= base48Spawn) {
+            // If it spawns during the alarm spawn, return weather spawn time.
+            const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
+            return { hours: weatherStart, days: days, despawn: despawn, weather: weatherSpawn.weather };
+          } else if (base48WeatherStart < base48Spawn && base48WeatherStop > base48Spawn) {
+            // If it spawns before the alarm and despawns during the alarm or after,
+            // set spawn day hour to spawn hour for days math.
+            const realSpawn = new Date(weatherSpawn.spawn);
+            realSpawn.setUTCHours(spawn);
+            const days = Math.max(Math.floor((realSpawn.getTime() - time) / 86400000), 0);
+            return {
+              hours: spawn,
+              days: days,
+              despawn: Math.min(weatherStop, despawn || 24),
+              weather: weatherSpawn.weather
+            };
+          }
         }
       }
     }
     if (sortedSpawns.length === 0) {
-      const weatherSpawn = weatherSpawns[weatherSpawns.length - 1];
+      const weatherSpawn = weatherSpawns[0];
       const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
       return {
         hours: weatherSpawn.spawn.getUTCHours(),
@@ -303,7 +329,7 @@ export class AlarmsFacade {
         weather: weatherSpawn.weather
       };
     }
-    return this.findWeatherSpawnCombination(alarm, sortedSpawns, time, weatherSpawns[weatherSpawns.length - 1].spawn.getTime() + 86400000);
+    return this.findWeatherSpawnCombination(alarm, sortedSpawns, time, this.weatherService.nextWeatherTime(weatherSpawns[0].spawn.getTime()));
   }
 
   /**

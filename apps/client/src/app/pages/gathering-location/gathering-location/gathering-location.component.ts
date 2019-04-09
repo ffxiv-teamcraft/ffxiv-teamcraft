@@ -15,6 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { fishEyes } from '../../../core/data/sources/fish-eyes';
 
 @Component({
   selector: 'app-gathering-location',
@@ -156,7 +157,7 @@ export class GatheringLocationComponent {
                   itemId: spot.id,
                   icon: spot.icon,
                   timed: spot.during !== undefined,
-                  fishEyes: spot.fishEyes,
+                  fishEyes: spot.fishEyes || fishEyes[item.obj.i] !== undefined,
                   snagging: spot.snagging
                 };
                 if (spot.during !== undefined) {
@@ -179,7 +180,6 @@ export class GatheringLocationComponent {
                 }
 
                 if (spot.hookset) {
-                  console.log(spot.hookset);
                   result.hookset = spot.hookset.split(' ')[0].toLowerCase();
                 }
 
