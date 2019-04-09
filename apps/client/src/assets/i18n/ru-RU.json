@@ -661,6 +661,10 @@
       "Min_control_filter_placeholder": "Мин. Контроль",
       "Min_cp_filter_placeholder": "Мин. CP",
       "Intro": "Добавьте фильтры, чтобы начать",
+      "Result_tooltip": "Result of a simulation run using this rotation and your stats",
+      "Fail": "Fail",
+      "Success": "Success: {{HQ}}% HQ",
+      "Set_to_simulate": "Stats",
       "TAGS": {
         "SPECIALIST": "Специалист",
         "NOT_SPECIALIST": "Не специалист",
