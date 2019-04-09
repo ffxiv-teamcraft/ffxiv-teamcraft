@@ -13,6 +13,7 @@ import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-node
 import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
 import { fishParameter } from '../../../core/data/sources/fish-parameter';
 import { TrackerComponent } from '../tracker-component';
+import { fishEyes } from '../../../core/data/sources/fish-eyes';
 
 @Component({
   selector: 'app-fishing-log-tracker',
@@ -137,7 +138,7 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
                 itemId: spot.id,
                 icon: spot.icon,
                 timed: spot.during !== undefined,
-                fishEyes: spot.fishEyes,
+                fishEyes: spot.fishEyes || fishEyes[fish.itemId] !== undefined,
                 snagging: spot.snagging
               };
               if (spot.during !== undefined) {

@@ -11,6 +11,7 @@ import { StoredNode } from '../../model/stored-node';
 import { FishingBait } from '../../model/fishing-bait';
 import { spearFishingNodes } from '../../../../core/data/sources/spear-fishing-nodes';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { fishEyes } from '../../../../core/data/sources/fish-eyes';
 
 export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
 
@@ -131,7 +132,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             zoneid: zoneId,
             coords: spot.coords as number[],
             level: spot.lvl,
-            fishEyes: spot.fishEyes,
+            fishEyes: spot.fishEyes || fishEyes[item.id] !== undefined,
             snagging: spot.snagging
           };
           if (spot.during !== undefined) {
