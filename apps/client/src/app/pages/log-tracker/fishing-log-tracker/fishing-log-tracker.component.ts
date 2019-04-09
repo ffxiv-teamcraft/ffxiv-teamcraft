@@ -153,7 +153,7 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
                   return {
                     id: predator.id,
                     icon: predator.icon,
-                    predatorAmount: predator.amount
+                    amount: predator.predatorAmount
                   };
                 });
               }

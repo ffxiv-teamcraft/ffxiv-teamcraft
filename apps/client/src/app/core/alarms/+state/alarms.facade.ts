@@ -319,7 +319,7 @@ export class AlarmsFacade {
       }
     }
     if (sortedSpawns.length === 0) {
-      const weatherSpawn = weatherSpawns[weatherSpawns.length - 1];
+      const weatherSpawn = weatherSpawns[0];
       const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
       return {
         hours: weatherSpawn.spawn.getUTCHours(),
