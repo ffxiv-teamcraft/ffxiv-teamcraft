@@ -758,7 +758,7 @@
       "Use_durability_restoration_later": "Debería usar la acción de restauración de durabilidad en el paso {{index}} más tarde para evitar desperdiciar la restauración de durabilidad.",
       "Use_patient_touch_faster": "Debería usar \"Patient Touch\" antes de añadir puntos de \"Inner Quiet\", para minimizar los puntos desperdiciados si la acción falla.",
       "Use_advanced_touch_instead": "Usó \"Basic Touch\" seguido de \"Advanced Touch\" en el paso {{index}}, debería usar dos \"Standard Touch\" en su lugar para obtener la misma potencia por 2 CP menos.",
-      "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs."
+      "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos."
     }
   },
   "PRICING": {
@@ -818,8 +818,8 @@
     "No_anonymous_join": "Debe crear una cuenta para poder unirse a un equipo",
     "Already_in_team": "Usted ya está en este equipo",
     "Webhook_configuration": "Configuración de Webhook",
-    "Officer": "Officer",
-    "Promote_officer": "Promote to officer",
+    "Officer": "Oficial",
+    "Promote_officer": "Promover a oficial",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han añadido a **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han quitado de **[{{listName}}]({{listUrl}})**.",
@@ -895,12 +895,12 @@
     "Mark_as_done": "Marcar este artículo como hecho",
     "Mark_as_not_done": "Marcar este artículo como no hecho",
     "Create_list": "Crear una lista para completar esta página",
-    "Folklore": "Regional Folklore",
+    "Folklore": "Folklore regional",
     "Timed": "Por tiempo limitado",
-    "Weather_dependant": "Only with some weathers",
-    "View_on_ff14angler": "More details on ff14angler",
+    "Weather_dependant": "Sólo con algunos climas",
+    "View_on_ff14angler": "Más detalles en ff14angler",
     "Required_for_achievement": "Requerido para los logros",
-    "Select_spot": "Select a spot to see its details",
+    "Select_spot": "Seleccione un lugar para ver sus detalles",
     "PAGE": {
       "Master_recipes": "Recetas maestras ({{number}})",
       "Housing_items": "Artículos de vivienda({{number}})",
@@ -986,7 +986,7 @@
     }
   },
   "DIRTY": {
-    "Dialog_title": "You have unsaved changes",
-    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
+    "Dialog_title": "Tiene cambios sin guardar",
+    "Dialog_description": "Dejar esta página eliminará todos sus cambios no guardados, ¿está seguro?"
   }
 }
