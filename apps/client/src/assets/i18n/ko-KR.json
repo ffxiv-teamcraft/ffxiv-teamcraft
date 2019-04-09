@@ -99,7 +99,7 @@
     "Tags_filter_placeholder": "태그를 사용하여 필터링",
     "Tags_filter_reset": "필터 초기화",
     "Name_filter_placeholder": "이름을 사용하여 필터링",
-    "No_lists_matching": "필터에 일치하는 내용이 없습니다"
+    "No_lists_matching": "필터와 일치하는 내용이 없습니다"
   },
   "COMMON": {
     "Save": "저장",
@@ -118,7 +118,7 @@
     "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
     "Open_in_desktop": "데스크톱 앱에서 열기",
     "Admin": "관리자",
-    "Minutes_duration": "{{amount}} 분",
+    "Minutes_duration": "{{amount}}분",
     "Seconds_duration": "{{amount}} 초"
   },
   "ALARMS": {
@@ -269,7 +269,7 @@
   "Requires": "재료",
   "Copy_item_name_to_clipboard": "아이템 이름을 클립보드로 복사",
   "Item_name_copied": "{{itemname}} 클립보드에 복사됨",
-  "Tier_display_toggle": "제작 단계를 표시",
+  "Tier_display_toggle": "제작 단계 표시",
   "Precraft_tier": "단계",
   "Regenerating_lists": "목록 갱신",
   "SETTINGS": {
@@ -429,7 +429,7 @@
       "ITEMS": {
         "COMMENTS": "댓글",
         "COPY_NAME_NOT_FAVORITE": "선호하지 않는 복사 모드",
-        "ADD_ALL_ALARMS": "모든 알람 추가",
+        "ADD_ALL_ALARMS": "알람 추가",
         "WORK_ON_IT": "작업중",
         "ASSIGN_TEAM_MEMBER": "팀 멤버에게 할당",
         "EDIT_AMOUNT": "수량 수정",
@@ -533,7 +533,7 @@
     "Fish_eyes": "물고기의 눈 필요",
     "Snagging": "갈고리 낚시 필요",
     "Predators": "사전에 낚아야 할 물고기",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
+    "Fish_eyes_duration": "이 물고기를 낚기 위해서는 해당 지속시간만큼의 물고기의 눈이 필요합니다. 형식을 변경하려면 클릭하세요.",
     "GIG_HEAD": {
       "Small": "작은 작살",
       "Normal": "중간 작살",
@@ -661,7 +661,7 @@
       "Min_control_filter_placeholder": "최소 가공 숙련도",
       "Min_cp_filter_placeholder": "최소 CP",
       "Intro": "시작하기 위해 몇가지 필터를 입력하세요",
-      "Result_tooltip": "이 결과값은 현재 로테이션과 자신의 스탯을 기준으로 합니다",
+      "Result_tooltip": "시뮬레이션 결과는 현재 로테이션과 자신의 스탯을 바탕으로 도출됩니다",
       "Fail": "실패",
       "Success": "HQ확률: {{HQ}}%",
       "TAGS": {
@@ -900,7 +900,7 @@
     "Weather_dependant": "특정 날씨에서만 가능",
     "View_on_ff14angler": "ff14angler에서 자세한 정보 보기",
     "Required_for_achievement": "업적에 적용됨",
-    "Select_spot": "표시 할 정보를 선택해주세요",
+    "Select_spot": "표시할 장소를 선택해주세요",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
