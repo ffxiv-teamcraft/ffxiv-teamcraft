@@ -754,8 +754,8 @@
       "Use_sh2_instead": "Utilizó \"Steady Hand I\" en el paso {{index}} mientras que utilizar \"Steady Hand II\" le daría más confiabilidad por 3 CP.",
       "Use_pbp_first": "Debería usar \"Piece by Piece\" antes de cualquier otra acción de síntesis, ya que se escala con el progreso que falta por hacer",
       "Use_mume_if_pbp": "Debería usar \"Muscle Memory\" en el paso 1 para reemplazar un \"Piece by Piece\" y obtener 9 CP extra",
-      "Use_observe_before_focused": "You should use Observe before the Focused action at step {{index}} in order to get a free 100% success rate.",
-      "Use_durability_restoration_later": "You should use the durability restoration action at step {{index}} later in order to avoid wasting durability restoration.",
+      "Use_observe_before_focused": "Debería usar \"Observe\" antes de la acción \"enfocada\" en el paso {{index}} para obtener una tasa de éxito del 100% gratis.",
+      "Use_durability_restoration_later": "Debería usar la acción de restauración de durabilidad en el paso {{index}} más tarde para evitar desperdiciar la restauración de durabilidad.",
       "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
       "Use_advanced_touch_instead": "You used Basic Touch then Advanced Touch one after another at step {{index}}, you should use two Standard Touches instead to get same potency for 2 less CP.",
       "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs."
