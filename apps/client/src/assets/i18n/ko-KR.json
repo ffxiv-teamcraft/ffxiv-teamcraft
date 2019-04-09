@@ -119,7 +119,7 @@
     "Open_in_desktop": "데스크톱 앱에서 열기",
     "Admin": "관리자",
     "Minutes_duration": "{{amount}} 분",
-    "Seconds_duration": "{{amount}} seconds"
+    "Seconds_duration": "{{amount}} 초"
   },
   "ALARMS": {
     "Title": "알람",
@@ -138,7 +138,7 @@
     "Open_overlay": "오버레이 열기",
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
-    "More_than_three_days": "> 3 days",
+    "More_than_three_days": "> 3일",
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
@@ -535,9 +535,9 @@
     "Predators": "사전에 낚아야 할 물고기",
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
     "GIG_HEAD": {
-      "Small": "소형 작살",
+      "Small": "작은 작살",
       "Normal": "중간 작살",
-      "Large": "대형 작살"
+      "Large": "큰 작살"
     }
   },
   "ANNOUNCEMENT": {
@@ -645,7 +645,7 @@
     "New_rotation_folder": "새 폴더 만들기",
     "Safe_mode": "안전 모드",
     "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
-    "Quality_needed": "HQ 100%에 도달하기 위해선 {{amount}} 만큼의 품질이 더 필요",
+    "Quality_needed": "HQ 100%까지 품질 {{amount}} 남음",
     "Rotation_tips": "로테이션 팁",
     "COMMUNITY_ROTATIONS": {
       "Title": "커뮤니티 로테이션",
@@ -667,8 +667,8 @@
       "TAGS": {
         "SPECIALIST": "전문장인",
         "NOT_SPECIALIST": "비전문장인",
-        "TEALESS": "약차 사용안함",
-        "FOODLESS": "음식 사용안함",
+        "TEALESS": "약차 미사용",
+        "FOODLESS": "음식 미사용",
         "MAKERS_MARK": "견실한 마음가짐",
         "MUSCLE_MEMORY": "확신"
       }
@@ -896,7 +896,7 @@
     "Mark_as_not_done": "이 아이템을 완료되지 않음 으로 표시",
     "Create_list": "이 페이지를 완료하기 위한 목록 만들기",
     "Folklore": "전승록",
-    "Timed": "시간제한 있음",
+    "Timed": "시간제",
     "Weather_dependant": "특정 날씨에서만 가능",
     "View_on_ff14angler": "ff14angler에서 자세한 정보 보기",
     "Required_for_achievement": "업적에 적용됨",
