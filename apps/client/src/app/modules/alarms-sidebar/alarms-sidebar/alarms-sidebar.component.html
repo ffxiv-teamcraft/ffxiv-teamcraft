@@ -1,4 +1,8 @@
 <ng-container *ngIf="loaded$ | async; else loading">
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+    <nz-switch [(ngModel)]="settings.alarmsMuted"></nz-switch>
+    <div>{{'Mute_alarms' | translate}} </div>
+  </div>
   <div class="alarms-container" *ngIf="alarms$ | async as alarms">
     <div *ngFor="let row of alarms; trackBy: trackByAlarm; let last = last">
       <div class="alarm-row" [class.spawned]="row.spawned" [class.played]="row.played && !row.spawned" fxLayout="row"

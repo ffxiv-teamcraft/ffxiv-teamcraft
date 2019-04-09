@@ -11,6 +11,7 @@ import { MapModule } from '../map/map.module';
 import { FullpageMessageModule } from '../fullpage-message/fullpage-message.module';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CoreModule,
     ItemIconModule,
     FlexLayoutModule,
+    FormsModule,
 
     AlarmsModule,
     MapModule,
