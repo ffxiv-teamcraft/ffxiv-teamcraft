@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { debounceTime, first, map, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { RotationTag } from './rotation-tag';
 import { CraftingRotationService } from '../../../../core/database/crafting-rotation/crafting-rotation.service';
 import { Tables } from '../../model/tables';
 import { CommunityRotationFilters } from '../../../../core/database/crafting-rotation/community-rotation-filters';
+import { AuthFacade } from '../../../../+state/auth.facade';
 
 @Component({
   selector: 'app-community-rotations-page',
@@ -123,6 +124,14 @@ export class CommunityRotationsPageComponent {
 
   public totalLength = 0;
 
+  public sets$ = this.authFacade.gearSets$;
+  public setIndex$ = new BehaviorSubject<number>(0);
+
+  public set$ = combineLatest(this.setIndex$, this.sets$).pipe(
+    filter(([, sets]) => sets !== null),
+    map(([index, sets]) => sets[index])
+  );
+
   loading = true;
 
   filteredRotations$: Observable<CraftingRotation[]>;
@@ -131,7 +140,8 @@ export class CommunityRotationsPageComponent {
 
   public firstDisplay = true;
 
-  constructor(private rotationsFacade: RotationsFacade, private rotationsService: CraftingRotationService, route: ActivatedRoute, router: Router) {
+  constructor(private rotationsFacade: RotationsFacade, private rotationsService: CraftingRotationService,
+              private authFacade: AuthFacade, route: ActivatedRoute, router: Router) {
     this.tags = Object.keys(RotationTag).map(key => {
       return {
         value: key,

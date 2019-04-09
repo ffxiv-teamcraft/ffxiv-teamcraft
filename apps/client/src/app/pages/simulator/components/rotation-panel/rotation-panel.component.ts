@@ -9,7 +9,7 @@ import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { BehaviorSubject, combineLatest } from 'rxjs';
+import { BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { CustomLink } from '../../../../core/database/custom-links/custom-link';
@@ -29,6 +29,7 @@ import { SimulationResult } from '../../simulation/simulation-result';
 import { CrafterStats } from '../../model/crafter-stats';
 import { BonusType } from '../../model/consumable-bonus';
 import { Craft } from '../../../../model/garland-tools/craft';
+import { GearSet } from '../../model/gear-set';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -47,6 +48,13 @@ export class RotationPanelComponent implements OnInit {
   }
 
   rotation$: BehaviorSubject<CraftingRotation> = new BehaviorSubject<CraftingRotation>(null);
+
+  @Input()
+  public set simulationSet(set: GearSet) {
+    this.simulationSet$.next(set);
+  }
+
+  simulationSet$: ReplaySubject<GearSet> = new ReplaySubject<GearSet>();
 
   actions$: Observable<CraftingAction[]>;
 
@@ -94,13 +102,12 @@ export class RotationPanelComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.simulation$ = combineLatest(this.rotation$, this.authFacade.gearSets$).pipe(
+    this.simulation$ = combineLatest(this.rotation$, this.authFacade.gearSets$, this.simulationSet$).pipe(
       filter(([rotation]) => rotation !== null),
-      map(([rotation, gearSets]) => {
+      map(([rotation, gearSets, stats]) => {
         const food = this.foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq);
         const medicine = this.medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq);
         const fcActions = this.freeCompanyActions.filter(action => this.rotation.freeCompanyActions.indexOf(action.actionId) > -1);
-        const stats = gearSets.find(stat => stat.jobId === rotation.recipe.job);
         const crafterStats = new CrafterStats(
           stats.jobId,
           stats.craftsmanship + this.getBonusValue('Craftsmanship', stats.craftsmanship, food, medicine, fcActions),
