@@ -370,7 +370,7 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:beforeunload', ['$event'])
   onBeforeUnload($event: Event): void {
-    if (this.dirty) {
+    if (this.dirty && !this.platformService.isDesktop()) {
       $event.returnValue = true;
     }
   }
