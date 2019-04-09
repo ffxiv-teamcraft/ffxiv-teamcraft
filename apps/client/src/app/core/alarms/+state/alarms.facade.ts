@@ -250,7 +250,8 @@ export class AlarmsFacade {
             hours: sortedSpawns[0],
             days: 0,
             despawn: (sortedSpawns[0] + alarm.duration) % 24
-          }, expires: new Date(Date.now() + ((alarm.duration / EorzeanTimeService.EPOCH_TIME_FACTOR) * 60000000))
+          },
+          expires: new Date()
         };
       }
     }
