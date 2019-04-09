@@ -52,6 +52,7 @@ import { CustomItem } from '../../../modules/custom-items/model/custom-item';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ItemRowMenuElement } from '../../../model/display/item-row-menu-element';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-item-row',
@@ -132,9 +133,9 @@ export class ItemRowComponent implements OnInit {
 
   availableTags$ = combineLatest(this.tagInput$, this.authFacade.user$).pipe(
     map(([input, user]) => {
-      return user.itemTags
+      return _.uniq(user.itemTags
         .filter(entry => entry.tag.toLowerCase().indexOf(input.toLowerCase()) > -1)
-        .map(entry => entry.tag);
+        .map(entry => entry.tag));
     })
   );
 

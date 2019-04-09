@@ -8,5 +8,6 @@ export enum ItemRowMenuElement {
   MARK_HQ,
   ADD_TO_ANOTHER_LIST,
   REQUIREMENTS,
-  REMOVE_ITEM
+  REMOVE_ITEM,
+  ADD_TAG
 }
