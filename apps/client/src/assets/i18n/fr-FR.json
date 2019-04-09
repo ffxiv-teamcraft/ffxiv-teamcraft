@@ -119,7 +119,7 @@
     "Open_in_desktop": "Ouvrir dans l'application bureau",
     "Admin": "Administrateur",
     "Minutes_duration": "{{amount}} minutes",
-    "Seconds_duration": "{{amount}} seconds"
+    "Seconds_duration": "{{amount}} secondes"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -533,7 +533,7 @@
     "Fish_eyes": "Nécessite les yeux de poisson",
     "Snagging": "Requiert casaquage",
     "Predators": "Pêcher ces poissons avant",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
+    "Fish_eyes_duration": "Vos yeux de poisson doivent avoir cette durée pour obtenir le poisson. Cliquez vous changer le format.",
     "GIG_HEAD": {
       "Small": "Petite pointe de harpon",
       "Normal": "Pointe de harpon normale",
@@ -661,6 +661,10 @@
       "Min_control_filter_placeholder": "Contrôle min",
       "Min_cp_filter_placeholder": "PS min",
       "Intro": "Saisir quelques filtres pour commencer",
+      "Result_tooltip": "Résultat d'une simulation exécutée en utilisant cette rotation et vos statistiques",
+      "Fail": "Echec",
+      "Success": "Succès : {{HQ}}% HQ",
+      "Set_to_simulate": "Stats",
       "TAGS": {
         "SPECIALIST": "Spécialiste",
         "NOT_SPECIALIST": "Non spécialiste",
