@@ -38,9 +38,9 @@
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
           <img *ngIf="node.folklore !== undefined" src="{{node.folklore.icon | icon}}" nz-tooltip
                [nzTitle]="node.folklore.id | itemName | i18n" alt="" class="folklore">
-          <img *ngIf="node.fishEyes" src="/assets/icons/status/fish_eyes.png" alt="" nz-tooltip
+          <img *ngIf="node.fishEyes" src="./assets/icons/status/fish_eyes.png" alt="" nz-tooltip
                [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
-          <img *ngIf="node.snagging" src="/assets/icons/status/snagging.png" alt="" nz-tooltip
+          <img *ngIf="node.snagging" src="./assets/icons/status/snagging.png" alt="" nz-tooltip
                [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-start">
@@ -59,7 +59,7 @@
         </div>
         <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
              fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/status/predators.png" alt="" nz-tooltip
+          <img src="./assets/icons/status/predators.png" alt="" nz-tooltip
                [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate">
           <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutGap="5px"
                fxLayoutAlign="flex-start center">

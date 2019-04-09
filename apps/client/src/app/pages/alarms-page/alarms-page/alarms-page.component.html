@@ -147,9 +147,9 @@
                           [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y}"></app-map-position>
         <img *ngIf="row.alarm.folklore !== undefined" src="{{row.alarm.folklore.icon | icon}}" nz-tooltip
              [nzTitle]="row.alarm.folklore.id | itemName | i18n" alt="" class="folklore">
-        <img *ngIf="row.alarm.fishEyes" src="/assets/icons/status/fish_eyes.png" alt="" nz-tooltip
+        <img *ngIf="row.alarm.fishEyes" src="./assets/icons/status/fish_eyes.png" alt="" nz-tooltip
              [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
-        <img *ngIf="row.alarm.snagging" src="/assets/icons/status/snagging.png" alt="" nz-tooltip
+        <img *ngIf="row.alarm.snagging" src="./assets/icons/status/snagging.png" alt="" nz-tooltip
              [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
       </div>
       <div>
@@ -196,12 +196,12 @@
         <app-fishing-bait [baits]="row.alarm.baits"></app-fishing-bait>
       </div>
       <div *ngIf="row.alarm.gig">
-        <img  src="/assets/icons/gig/{{row.alarm.gig}}.png" nz-tooltip class="gig-icon"
+        <img  src="./assets/icons/gig/{{row.alarm.gig}}.png" nz-tooltip class="gig-icon"
              [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + row.alarm.gig) | translate">
       </div>
       <div *ngIf="row.alarm.predators && row.alarm.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
            fxLayoutAlign="flex-start center">
-        <img src="/assets/icons/status/predators.png" alt="" nz-tooltip
+        <img src="./assets/icons/status/predators.png" alt="" nz-tooltip
              [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate">
         <div *ngFor="let predator of row.alarm.predators" fxLayout="row" fxLayoutGap="5px"
              fxLayoutAlign="flex-start center">
