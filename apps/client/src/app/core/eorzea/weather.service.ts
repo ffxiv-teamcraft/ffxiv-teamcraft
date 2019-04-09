@@ -19,7 +19,7 @@ export class WeatherService {
     const increment = (eorzeanHour + 8 - (eorzeanHour % 8)) % 24;
     // Take Eorzea days since unix epoch
     let totalDays = unixSeconds / 4200;
-    totalDays = (totalDays << 32) >>> 0; // Convert to uint
+    totalDays = (totalDays << 0) >>> 0; // Convert to uint
     // 0x64 = 100
     const calcBase = totalDays * 100 + increment;
     // 0xB = 11
@@ -31,7 +31,7 @@ export class WeatherService {
 
   public getWeather(mapId: number, timestamp: number, weatherRate: any): number {
     const weatherRateValue = this.getWeatherRateValue(timestamp);
-    const match = weatherRate.find(rate => weatherRateValue <= rate.rate);
+    const match = weatherRate.find(rate => weatherRateValue < rate.rate);
     if (match !== undefined) {
       return match.weatherId;
     }
