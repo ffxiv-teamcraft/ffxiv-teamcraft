@@ -665,6 +665,8 @@
       "Fail": "Fail",
       "Success": "Success: {{HQ}}% HQ",
       "Set_to_simulate": "Stats",
+      "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
+      "Steps_count": "{{count}} steps",
       "TAGS": {
         "SPECIALIST": "Specialist",
         "NOT_SPECIALIST": "Not specialist",
