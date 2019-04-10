@@ -97,7 +97,7 @@ export class SetItemDone implements Action {
 
   constructor(public readonly itemId: number, public readonly itemIcon: number,
               public readonly finalItem: boolean, public readonly doneDelta: number,
-              public readonly recipeId: string) {
+              public readonly recipeId: string, public readonly totalNeeded: number) {
   }
 }
 

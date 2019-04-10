@@ -84,7 +84,6 @@ export class LayoutRow {
   }
 
   public isOtherRow(): boolean {
-    console.log(this.filter.name, this.name);
     return this.filter.name === 'ANYTHING' && this.name === 'Other';
   }
 }
