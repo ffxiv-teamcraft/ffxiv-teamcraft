@@ -665,6 +665,8 @@
       "Fail": "失敗",
       "Success": "HQ確率: {{HQ}}%",
       "Set_to_simulate": "サブステ",
+      "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
+      "Steps_count": "{{count}} steps",
       "TAGS": {
         "SPECIALIST": "マイスター",
         "NOT_SPECIALIST": "非マイスター",
