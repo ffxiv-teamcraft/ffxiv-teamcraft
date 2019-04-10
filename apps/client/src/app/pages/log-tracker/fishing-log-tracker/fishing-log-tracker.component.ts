@@ -7,7 +7,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { first, map, shareReplay, startWith, tap } from 'rxjs/operators';
-import { BehaviorSubject, Observable, of, ReplaySubject, combineLatest } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
 import { fishingLog } from '../../../core/data/sources/fishing-log';
 import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
 import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
@@ -303,7 +303,10 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
     this.pageDisplay$ = combineLatest(this.tabsDisplay$, this.spotId$).pipe(
       map(([display, spotId]) => {
         const area = display.tabs.find(a => a.spots.some(spot => spot.id === spotId));
-        return area.spots.find(spot => spot.id === spotId);
+        if (area !== undefined) {
+          return area.spots.find(spot => spot.id === spotId);
+        }
+        return null;
       })
     );
   }
