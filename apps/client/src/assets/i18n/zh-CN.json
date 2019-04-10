@@ -826,7 +826,7 @@
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}个x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 已加入列表 **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}个x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 已从列表 **[{{listName}}]({{listUrl}})** 删除。",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** as done on **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "The **{{teamName}}** team will now be tracked in this channel.",
       "List_added_notification": "列表 **[{{listName}}] ({{listUrl}}) ** 已添加到团队中。",
       "List_removed_notification": "列表 **[{{listName}}] ({{listUrl}}) ** 已从团队中删除。",
