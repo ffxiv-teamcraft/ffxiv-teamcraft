@@ -826,7 +826,7 @@
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** foi adicionado a **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** foi removido de **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marcou {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** como aconteceu em **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "A equipe **{{teamName}}** será rastreada neste canal.",
       "List_added_notification": "A lista **[{{listName}}]({{listUrl}})** foi adicionada à equipe.",
       "List_removed_notification": "A lista **[{{listName}}]({{listUrl}})** foi removida da equipe.",
