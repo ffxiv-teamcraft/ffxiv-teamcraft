@@ -542,21 +542,21 @@
   },
   "ANNOUNCEMENT": {
     "Title": "お知らせ",
-    "Read_more": "詳細に見る"
+    "Read_more": "詳細を見る"
   },
   "LIST_TEMPLATE": {
-    "Create_template": "該当リストに対する、リストのテンプレート生成する",
-    "Template_created": "リストの書式が生成されました。",
-    "Dialog_title": "テンプレートの生成",
+    "Create_template": "該当リストに対する、リストのテンプレート作成する",
+    "Template_created": "リストの書式が作成されました。",
+    "Dialog_title": "テンプレートの作成",
     "Link_name": "テンプレート名",
     "Share_link_copied": "テンプレートシェアリンクがクリップボードにコピーされました",
     "Copy_template_url": "テンプレートのURLをコピーする",
-    "Cloning_list": "マイアカウントにリストのコピー本を生成する",
-    "Redirect_notice": "コピー本を生成する時にリストに移動されます。",
-    "Not_found": "テンプレートが見つかりません",
+    "Cloning_list": "マイアカウントにリストのコピーを作成する",
+    "Redirect_notice": "コピーが作成されると、リストにリダイレクトされます。",
+    "Not_found": "テンプレートが見つかりませんでした",
     "STATUS": {
-      "Loading": "データベースからのテンプレートを読込み中です",
-      "Copying": "リストのコピー本をアカウントに生成中です。完了したら自動に移動します。"
+      "Loading": "データベースからのテンプレートを読込み中",
+      "Copying": "アカウントでリストのコピーを作成すると、リストが終了するとリストにリダイレクトされます。"
     }
   },
   "PERMISSIONS": {
