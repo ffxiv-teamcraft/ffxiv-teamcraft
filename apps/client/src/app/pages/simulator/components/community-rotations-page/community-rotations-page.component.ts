@@ -227,7 +227,7 @@ export class CommunityRotationsPageComponent {
       switchMap((filters) => {
         return this.rotationsService.getCommunityRotations({
           ...filters,
-          tags: filters.tags.map(tag => RotationTag[tag])
+          tags: filters.tags
         }).pipe(
           tap(rotations => {
             this.totalLength = rotations.length;

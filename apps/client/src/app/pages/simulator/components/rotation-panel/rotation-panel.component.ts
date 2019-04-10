@@ -103,7 +103,7 @@ export class RotationPanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.simulation$ = combineLatest(this.rotation$, this.authFacade.gearSets$, this.simulationSet$).pipe(
-      filter(([rotation, stats]) => rotation !== null && stats !== null),
+      filter(([rotation, , stats]) => rotation !== null && stats !== null),
       map(([rotation, gearSets, stats]) => {
         const food = this.foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq);
         const medicine = this.medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq);
