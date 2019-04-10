@@ -556,6 +556,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   saveRotationAsNew(rotation: CraftingRotation): void {
     delete rotation.$key;
+    delete rotation.community;
+    delete rotation.public;
     this.saveRotation(rotation);
   }
 

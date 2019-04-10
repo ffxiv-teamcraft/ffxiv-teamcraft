@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.4"></a>
+## [5.2.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.3...v5.2.4) (2019-04-10)
+
+
+### Bug Fixes
+
+* **fishing-log:** fixed an issue with spearfishing log not being loaded properly ([bf17350](https://github.com/Supamiu/ffxiv-teamcraft/commit/bf17350))
+* **rotations:** saving a community rotation as new doesn't create a community rotation anymore ([529c71f](https://github.com/Supamiu/ffxiv-teamcraft/commit/529c71f))
+
+
+
 <a name="5.2.3"></a>
 ## [5.2.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.2...v5.2.3) (2019-04-10)
 
