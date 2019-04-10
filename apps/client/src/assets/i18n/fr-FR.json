@@ -665,8 +665,8 @@
       "Fail": "Echec",
       "Success": "Succès : {{HQ}}% HQ",
       "Set_to_simulate": "Stats",
-      "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
-      "Steps_count": "{{count}} steps",
+      "Specialist_rotation_warning": "Le résultat affiché utilise un set non spécialiste pour une rotation spécialiste, ce qui produit un résultat bien plus faible que si le set était spécialiste.",
+      "Steps_count": "{{count}} tours",
       "TAGS": {
         "SPECIALIST": "Spécialiste",
         "NOT_SPECIALIST": "Non spécialiste",
@@ -826,7 +826,7 @@
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été ajouté à ** [{{listName}}] ({{listUrl}}) **.",
       "Item_removed": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été retiré de ** [{{listName}}] ({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "** [{{characterName}}] ({{memberProfileUrl}}) ** marqué {{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** sur {{totalNeeded}} comme fait sur la liste * * [{{listName}}], ({{listUrl}}) **.",
       "Webhook_setup_complete": "Ce salon a été défini comme salon de suivi pour l'équipe **{{teamName}}**.",
       "List_added_notification": "La liste ** [{{listName}}] ({{listUrl}}) ** a été ajoutée à l’équipe.",
       "List_removed_notification": "La liste ** [{{listName}}] ({{listUrl}}) ** a été retirée de l’équipe.",
