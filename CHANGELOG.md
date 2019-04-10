@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.3"></a>
+## [5.2.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.2...v5.2.3) (2019-04-10)
+
+
+### Bug Fixes
+
+* **community-rotations:** fixed an issue with tags filter not working ([3ba6c0a](https://github.com/Supamiu/ffxiv-teamcraft/commit/3ba6c0a))
+* **community-rotations:** you cannot select DoL sets for simulation anymore ([dceccc0](https://github.com/Supamiu/ffxiv-teamcraft/commit/dceccc0))
+* **custom-simulator:** rotation stats are now only applied the first time ([1c95c81](https://github.com/Supamiu/ffxiv-teamcraft/commit/1c95c81))
+* **layout:** fixed an issue with layout with korean names not being exportable ([f7c2867](https://github.com/Supamiu/ffxiv-teamcraft/commit/f7c2867))
+
+
+### Features
+
+* **profile:** added job levels to public profile page ([9f8a357](https://github.com/Supamiu/ffxiv-teamcraft/commit/9f8a357))
+* **rotations:** added a warning if the set used for simulation isn't spec on spec rotation ([a2fe5e0](https://github.com/Supamiu/ffxiv-teamcraft/commit/a2fe5e0))
+* **teams:** discord notification for progress now includes total required ([7209e44](https://github.com/Supamiu/ffxiv-teamcraft/commit/7209e44))
+
+
+
 <a name="5.2.2"></a>
 ## [5.2.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.1...v5.2.2) (2019-04-09)
 
