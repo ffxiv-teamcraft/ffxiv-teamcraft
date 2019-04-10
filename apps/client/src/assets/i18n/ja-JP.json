@@ -826,7 +826,7 @@
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加されました。",
       "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を削除されました。",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**が **[{{listName}}]({{listUrl}})**にある {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を完了に表示する",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "**{{teamName}}** チームをこのチャンネルから追跡し始めました。",
       "List_added_notification": "リスト **[{{listName}}]({{listUrl}})**がチームに追加されました。",
       "List_removed_notification": "リスト **[{{listName}}]({{listUrl}})**がチームから外されました。",
