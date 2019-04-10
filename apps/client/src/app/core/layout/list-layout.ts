@@ -56,6 +56,6 @@ export class ListLayout extends DataModel {
   get base64(): string {
     const exportLayout = { ...this as any };
     delete exportLayout.userId;
-    return btoa(JSON.stringify(exportLayout));
+    return btoa(escape(JSON.stringify(exportLayout)));
   }
 }

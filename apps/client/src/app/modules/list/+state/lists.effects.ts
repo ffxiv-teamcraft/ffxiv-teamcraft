@@ -266,7 +266,7 @@ export class ListsEffects {
         userId: userId
       });
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
-        this.discordWebhookService.notifyItemChecked(team, action.itemIcon, list, userId, action.doneDelta, action.itemId);
+        this.discordWebhookService.notifyItemChecked(team, action.itemIcon, list, userId, action.doneDelta, action.itemId, action.totalNeeded);
       }
       return [action, list];
     }),
