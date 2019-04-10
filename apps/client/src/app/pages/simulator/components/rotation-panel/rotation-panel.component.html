@@ -20,14 +20,22 @@
               : {{rotation.community.minControl}}</nz-tag>
             <nz-tag nzColor="purple">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}
               : {{rotation.community.minCp}}</nz-tag>
+            <nz-tag nzColor="geekblue">{{'SIMULATOR.COMMUNITY_ROTATIONS.Steps_count' | translate: {count: rotation.rotation.length} }}</nz-tag>
           </ng-container>
         </div>
         <div fxLayout="row" fxLayoutGap="5px">
           <ng-container *ngIf="publicDisplay && authFacade.loggedIn$ | async">
             <div *ngIf="simulation$ | async as result" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+              <div *ngIf="rotation.tags.indexOf('SPECIALIST') > -1 && !((simulationSet$ | async)?.specialist)">
+                <i nz-icon
+                   type="exclamation-circle" theme="twotone" [twoToneColor]="'#aa9400'"
+                   nz-tooltip [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Specialist_rotation_warning' | translate"></i>
+              </div>
               <div nz-tooltip [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Result_tooltip' | translate">
-                <nz-tag *ngIf="result.success" nzColor="darkgreen">{{'SIMULATOR.COMMUNITY_ROTATIONS.Success' | translate: {HQ: result.hqPercent} }}</nz-tag>
-                <nz-tag *ngIf="!result.success" nzColor="magenta">{{'SIMULATOR.COMMUNITY_ROTATIONS.Fail' | translate}}</nz-tag>
+                <nz-tag *ngIf="result.success"
+                        nzColor="darkgreen">{{'SIMULATOR.COMMUNITY_ROTATIONS.Success' | translate: { HQ: result.hqPercent } }}</nz-tag>
+                <nz-tag *ngIf="!result.success"
+                        nzColor="magenta">{{'SIMULATOR.COMMUNITY_ROTATIONS.Fail' | translate}}</nz-tag>
               </div>
               <button nz-button nzType="primary" nzShape="circle" nz-tooltip
                       (click)="openMacroPopup(result.simulation)"
