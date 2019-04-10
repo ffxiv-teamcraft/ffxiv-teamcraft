@@ -10,6 +10,7 @@ import { EffectiveBuff } from '../../model/effective-buff';
 import { Buff } from '../../model/buff.enum';
 import { Craft } from '../../../../model/garland-tools/craft';
 import {
+  debounceTime,
   distinctUntilChanged,
   filter,
   first,
@@ -182,6 +183,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   private findActionsAutoTranslatedRegex: RegExp =
     new RegExp(/\/(ac|action)[\s]+([^<]+)?.*/, 'i');
 
+  private statsFromRotationApplied = false;
+
   public permissionLevel$ = combineLatest(this.rotation$, this.authFacade.userId$).pipe(
     map(([rotation, userId]) => {
       return rotation.authorId === undefined ? 40 : rotation.getPermissionLevel(userId);
@@ -284,8 +287,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     );
 
     this.crafterStats$ = combineLatest(merge(statsFromRecipe$, this.customStats$), statsFromRotation$, this.route.queryParamMap, this.authFacade.userId$, this.rotation$).pipe(
+      debounceTime(1000),
       map(([generated, fromRotation, query, userId, rotation]) => {
-        if (query.has('includeStats') || (rotation.authorId === userId && rotation.custom)) {
+        if (!this.statsFromRotationApplied && (query.has('includeStats') || (rotation.authorId === userId && rotation.custom))) {
+          this.statsFromRotationApplied = true;
           return fromRotation || generated;
         }
         return generated;

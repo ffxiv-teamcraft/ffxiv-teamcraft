@@ -14,6 +14,12 @@
         <nz-tag [nzColor]="'magenta'" *ngIf="user.admin">{{'COMMON.Admin' | translate}}</nz-tag>
         <nz-tag [nzColor]="'purple'" *ngIf="user.patron">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
       </div>
+      <div *ngIf="gearSets$ | async as sets" fxLayout="row wrap" fxLayoutAlign="space-evenly">
+        <div class="stat-row" *ngFor="let set of sets" fxLayout="column" fxLayoutAlign="center center">
+          <img src="https://garlandtools.org/db/images/{{(set.jobId | jobAbbr)?.en}}.png" alt="" class="job-icon">
+          <div>{{set.level}}</div>
+        </div>
+      </div>
       <nz-list [nzHeader]="'Public_lists' | translate" [nzDataSource]="communityLists$ | async" [nzRenderItem]="list">
         <ng-template #list let-list>
           <app-list-panel [list]="list" [publicDisplay]="true" [hideAvatar]="true"></app-list-panel>

@@ -664,7 +664,9 @@
       "Result_tooltip": "Resultado de una simulación usando esta rotación y sus atributos",
       "Fail": "Falla",
       "Success": "Éxito: {{HQ}}% HQ",
-      "Set_to_simulate": "Stats",
+      "Set_to_simulate": "Atributos",
+      "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
+      "Steps_count": "{{count}} steps",
       "TAGS": {
         "SPECIALIST": "Especialista",
         "NOT_SPECIALIST": "No especialista",
@@ -824,7 +826,7 @@
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han añadido a **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han quitado de **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marcó {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** como completados en **[[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "El equipo **{{teamName}}** será seguido ahora en este canal.",
       "List_added_notification": "La lista **[{{listName}}]({{listUrl}})** ha sido agregada al equipo.",
       "List_removed_notification": "La lista **[{{listName}}]({{listUrl}})** ha sido quitada del equipo.",

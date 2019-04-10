@@ -29,17 +29,13 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
       return of([]);
     }
     const query: QueryFn = ref => {
-      let baseQuery = ref.where(`public`, '==', true);
-      if (filters.tags.length > 0) {
-        baseQuery = baseQuery.where('tags', 'array-contains', filters.tags[0]);
-      }
-      return baseQuery;
+      return ref.where(`public`, '==', true);
     };
     return this.firestore.collection(this.getBaseUri(), query)
       .snapshotChanges()
       .pipe(
         map((snaps: DocumentChangeAction<CraftingRotation>[]) => {
-          const lists = snaps
+          const rotations = snaps
             .map((snap: DocumentChangeAction<any>) => {
               const valueWithKey: CraftingRotation = <CraftingRotation>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
               delete snap.payload;
@@ -48,9 +44,14 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
             .filter(rotation => {
               return filters.tags.reduce((res, tag) => res && rotation.tags.indexOf(<RotationTag>tag) > -1, true);
             });
-          return this.serializer.deserialize<CraftingRotation>(lists, [this.getClass()])
+          return this.serializer.deserialize<CraftingRotation>(rotations, [this.getClass()])
             .filter(rotation => {
               let matches = rotation.getName().toLowerCase().indexOf(filters.name.toLowerCase()) > -1;
+              if (filters.tags.length > 0) {
+                matches = matches && filters.tags.reduce((res, tag) => {
+                  return res && rotation.tags.indexOf(tag) > -1;
+                }, true);
+              }
               if (filters.durability) {
                 matches = matches && rotation.community.durability === filters.durability;
               }

@@ -124,7 +124,7 @@ export class CommunityRotationsPageComponent {
 
   public totalLength = 0;
 
-  public sets$ = this.authFacade.gearSets$;
+  public sets$ = this.authFacade.gearSets$.pipe(map(sets => sets.filter(set => set.jobId <= 15)));
   public setIndex$ = new BehaviorSubject<number>(0);
 
   public set$ = combineLatest(this.setIndex$, this.sets$).pipe(
@@ -227,7 +227,7 @@ export class CommunityRotationsPageComponent {
       switchMap((filters) => {
         return this.rotationsService.getCommunityRotations({
           ...filters,
-          tags: filters.tags.map(tag => RotationTag[tag])
+          tags: filters.tags
         }).pipe(
           tap(rotations => {
             this.totalLength = rotations.length;

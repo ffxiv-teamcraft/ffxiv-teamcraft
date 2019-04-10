@@ -665,6 +665,8 @@
       "Fail": "Fail",
       "Success": "Success: {{HQ}}% HQ",
       "Set_to_simulate": "Stats",
+      "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
+      "Steps_count": "{{count}} steps",
       "TAGS": {
         "SPECIALIST": "Specialist",
         "NOT_SPECIALIST": "Not specialist",
@@ -824,7 +826,7 @@
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** as done on **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "The **{{teamName}}** team will now be tracked in this channel.",
       "List_added_notification": "The list **[{{listName}}]({{listUrl}})** has been added to the team.",
       "List_removed_notification": "The list **[{{listName}}]({{listUrl}})** has been removed from the team.",
