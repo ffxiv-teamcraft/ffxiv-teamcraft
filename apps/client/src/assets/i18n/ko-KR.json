@@ -665,7 +665,7 @@
       "Fail": "실패",
       "Success": "HQ확률: {{HQ}}%",
       "Set_to_simulate": "능력치",
-      "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
+      "Specialist_rotation_warning": "보여주는 결과값은 비전문장인 상태로 전문장인 로테이션을 사용하기 때문에 HQ확률이 예상보다 훨씬 더 낮을 수 있습니다",
       "Steps_count": "{{count}} 공정",
       "TAGS": {
         "SPECIALIST": "전문장인",
