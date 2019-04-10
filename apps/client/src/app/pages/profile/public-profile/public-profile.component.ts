@@ -9,6 +9,7 @@ import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { UserService } from '../../../core/database/user.service';
 import { ListCompactsService } from '../../../modules/list/list-compacts.service';
+import { GearSet } from '../../simulator/model/gear-set';
 
 @Component({
   selector: 'app-public-profile',
@@ -20,6 +21,8 @@ export class PublicProfileComponent {
   public characterEntry$: Observable<{ character: Character, verified: boolean }>;
 
   public user$: Observable<TeamcraftUser>;
+
+  public gearSets$: Observable<GearSet[]>;
 
   public communityLists$: Observable<List[]>;
 
@@ -38,7 +41,13 @@ export class PublicProfileComponent {
         return EMPTY;
       })
     );
-    this.user$ = userId$.pipe(switchMap(uid => this.userService.get(uid)));
+    this.user$ = userId$.pipe(switchMap(uid => this.userService.get(uid)), shareReplay(1));
+    this.gearSets$ = this.user$.pipe(
+      map(user => {
+        const lodestoneId = user.defaultLodestoneId ? user.defaultLodestoneId : user.lodestoneIds[0].id;
+        return user.lodestoneIds.find(entry => entry.id === lodestoneId).stats;
+      })
+    );
     this.communityLists$ = userId$.pipe(
       switchMap(userId => {
         return this.listCompactsService.getUserCommunityLists(userId);
