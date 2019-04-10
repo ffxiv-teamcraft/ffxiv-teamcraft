@@ -497,13 +497,13 @@
     "Title": "マクロ翻訳",
     "Macro_language": "マクロの言語",
     "Macro_to_translate": "マクロの原文",
-    "Do_translate": "翻訳する！",
-    "Invalid_macro_or_language": "有効しないマクロまたは、言語です。"
+    "Do_translate": "翻訳！",
+    "Invalid_macro_or_language": "有効でないマクロまたは、言語です。"
   },
   "CUSTOM_LINKS": {
     "Title": "カスタムリンク",
-    "Not_found": "リンクが見つかりません",
-    "Add_link": "カスタムリンクを作る",
+    "Not_found": "リンクが見つかりませんでした。",
+    "Add_link": "カスタムリンクを作成する",
     "Link_created": "カスタムリンクが生成されました。コピーするためには、シェアボタンを押して下さい。",
     "Dialog_title": "カスタムリンク",
     "Link_type": "リンクタイプ",
