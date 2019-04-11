@@ -6,12 +6,6 @@ All notable changes to this project will be documented in this file. See [standa
 ## [5.2.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.3...v5.2.5) (2019-04-11)
 
 
-### Bug Fixes
-
-* **fishing-log:** fixed an issue with spearfishing log not being loaded properly ([bf17350](https://github.com/Supamiu/ffxiv-teamcraft/commit/bf17350))
-* **rotations:** saving a community rotation as new doesn't create a community rotation anymore ([529c71f](https://github.com/Supamiu/ffxiv-teamcraft/commit/529c71f))
-
-
 ### Features
 
 * new feature: GC supply list generator ([fe2f1a0](https://github.com/Supamiu/ffxiv-teamcraft/commit/fe2f1a0)), closes [#596](https://github.com/Supamiu/ffxiv-teamcraft/issues/596)
