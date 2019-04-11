@@ -62,7 +62,12 @@ export class AlarmsFacade {
         ...alarmsPageDisplay.noGroup,
         ...[].concat.apply([], alarmsPageDisplay.groupedAlarms
           .filter(groupedAlarms => groupedAlarms.group.enabled)
-          .map(grouped => grouped.alarms))
+          .map(grouped => {
+            return grouped.alarms.map(alarm => {
+              alarm.groupName = grouped.group.name;
+              return alarm;
+            });
+          }))
       ]);
     })
   );
