@@ -119,7 +119,7 @@
     "Open_in_desktop": "Abrir na app do desktop",
     "Admin": "Administrador",
     "Minutes_duration": "{{amount}} minutos",
-    "Seconds_duration": "{{amount}} seconds"
+    "Seconds_duration": "{{amount}} segundos"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -444,7 +444,7 @@
       "Panel_name": "Nome do painel",
       "Order_by": "Ordenar por",
       "Order": "Ordenar",
-      "Tag_filter": "Tag filter"
+      "Tag_filter": "Filtro de tags"
     }
   },
   "LIST_TAGS": {
@@ -991,5 +991,11 @@
   "DIRTY": {
     "Dialog_title": "You have unsaved changes",
     "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
+  },
+  "GC_SUPPLY": {
+    "Title": "Grand Company Supplies",
+    "Search": "Search",
+    "Generate_list": "Add to a list",
+    "Intro": "Input your levels and click search to get started"
   }
 }
