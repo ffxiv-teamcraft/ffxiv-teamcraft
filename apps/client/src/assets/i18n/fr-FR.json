@@ -138,7 +138,7 @@
     "Open_overlay": "Ouvrir l'overlay",
     "More_available": "et {{amount}} autres...",
     "Node_content": "Contenu du point de récolte",
-    "More_than_three_days": "> 3 jours",
+    "Toggle_collapse": "Toggle groups collapse",
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
@@ -993,9 +993,9 @@
     "Dialog_description": "Quitter cette page supprimera toutes vos modifications non enregistrées, êtes-vous sûr ?"
   },
   "GC_SUPPLY": {
-    "Title": "Grand Company Supplies",
-    "Search": "Search",
-    "Generate_list": "Add to a list",
-    "Intro": "Input your levels and click search to get started"
+    "Title": "Livraisons de grande compagnie",
+    "Search": "Recherche",
+    "Generate_list": "Ajouter à une liste",
+    "Intro": "Saisissez vos niveaux et cliquez sur recherche pour commencer"
   }
 }
