@@ -991,5 +991,11 @@
   "DIRTY": {
     "Dialog_title": "Tiene cambios sin guardar",
     "Dialog_description": "Dejar esta página eliminará todos sus cambios no guardados, ¿está seguro?"
+  },
+  "GC_SUPPLY": {
+    "Title": "Grand Company Supplies",
+    "Search": "Search",
+    "Generate_list": "Add to a list",
+    "Intro": "Input your levels and click search to get started"
   }
 }
