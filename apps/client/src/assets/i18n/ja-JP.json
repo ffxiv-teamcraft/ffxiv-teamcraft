@@ -138,7 +138,7 @@
     "Open_overlay": "オーバーレイ開く",
     "More_available": "{{amount}} 回 もっと",
     "Node_content": "採集物情報",
-    "More_than_three_days": "> 3日",
+    "Toggle_collapse": "Toggle groups collapse",
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
       "Name": "名前",
