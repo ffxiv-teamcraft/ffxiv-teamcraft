@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.6"></a>
+## [5.2.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.5...v5.2.6) (2019-04-11)
+
+
+### Bug Fixes
+
+* **gc-supply:** fixed an issue with wrong import breaking the page ([3c8a447](https://github.com/Supamiu/ffxiv-teamcraft/commit/3c8a447))
+
+
+
 <a name="5.2.5"></a>
 ## [5.2.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.3...v5.2.5) (2019-04-11)
 
