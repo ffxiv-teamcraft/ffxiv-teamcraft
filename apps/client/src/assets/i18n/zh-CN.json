@@ -138,7 +138,7 @@
     "Open_overlay": "Open overlay",
     "More_available": "and {{amount}} more...",
     "Node_content": "Node content",
-    "More_than_three_days": "> 3 days",
+    "Toggle_collapse": "Toggle groups collapse",
     "CUSTOM": {
       "Title": "添加自定义闹钟",
       "Name": "名称",
