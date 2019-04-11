@@ -991,5 +991,11 @@
   "DIRTY": {
     "Dialog_title": "Vous avez des modifications non enregistrées",
     "Dialog_description": "Quitter cette page supprimera toutes vos modifications non enregistrées, êtes-vous sûr ?"
+  },
+  "GC_SUPPLY": {
+    "Title": "Grand Company Supplies",
+    "Search": "Search",
+    "Generate_list": "Add to a list",
+    "Intro": "Input your levels and click search to get started"
   }
 }
