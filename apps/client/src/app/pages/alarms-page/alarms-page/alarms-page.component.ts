@@ -33,6 +33,8 @@ export class AlarmsPageComponent implements OnInit {
 
   public loaded$: Observable<boolean>;
 
+  public expanded = true;
+
   constructor(private alarmBell: AlarmBellService, private alarmsFacade: AlarmsFacade,
               private _settings: SettingsService, private dialog: NzModalService,
               private translate: TranslateService, private l12n: LocalizedDataService,
@@ -88,6 +90,10 @@ export class AlarmsPageComponent implements OnInit {
       nzFooter: null,
       nzContent: CustomAlarmPopupComponent
     });
+  }
+
+  toggleCollapse(): void {
+    this.expanded = !this.expanded;
   }
 
   editNote(alarm: Alarm): void {

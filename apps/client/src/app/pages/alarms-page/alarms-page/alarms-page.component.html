@@ -18,6 +18,10 @@
                 (click)="newCustomAlarm()">
           <i nz-icon type="form"></i>
         </button>
+        <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.Toggle_collapse' | translate}}"
+                (click)="toggleCollapse()">
+          <i nz-icon type="sliders"></i>
+        </button>
       </div>
       <div class="spacer"></div>
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
@@ -53,7 +57,8 @@
           <nz-collapse-panel [nzHeader]="panelTitle" class="alarm-group-panel"
                              draggable dragScope="group"
                              [dragData]="group"
-                             [class.empty-group]="group.alarms.length === 0" [nzActive]="!group.group.muted">
+                             [class.empty-group]="group.alarms.length === 0"
+                             [nzActive]="!group.group.muted && this.expanded">
             <div class="alarms-container" droppable dropScope="alarm"
                  fxLayout="row wrap"
                  fxLayoutGap="5px"
