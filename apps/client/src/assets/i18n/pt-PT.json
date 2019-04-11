@@ -138,7 +138,7 @@
     "Open_overlay": "Abrir overlay",
     "More_available": "e mais {{amount}}...",
     "Node_content": "Conteúdo do node",
-    "More_than_three_days": "> 3 dias",
+    "Toggle_collapse": "Toggle groups collapse",
     "CUSTOM": {
       "Title": "Adicionar alarme personalizado",
       "Name": "Nome",
