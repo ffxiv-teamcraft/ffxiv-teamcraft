@@ -991,5 +991,11 @@
   "DIRTY": {
     "Dialog_title": "저장되지 않은 변경점이 있습니다",
     "Dialog_description": "이 페이지를 종료하면 저장되지 않은 모든 변경 내용이 삭제됩니다, 계속하시겠습니까?"
+  },
+  "GC_SUPPLY": {
+    "Title": "Grand Company Supplies",
+    "Search": "Search",
+    "Generate_list": "Add to a list",
+    "Intro": "Input your levels and click search to get started"
   }
 }
