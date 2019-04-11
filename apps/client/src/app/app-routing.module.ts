@@ -33,6 +33,10 @@ const routes: Routes = [
     loadChildren: './pages/gathering-location/gathering-location.module#GatheringLocationModule'
   },
   {
+    path: 'gc-supply',
+    loadChildren: './pages/gc-supply/gc-supply.module#GcSupplyModule'
+  },
+  {
     path: 'levequests',
     loadChildren: './pages/levequests/levequests.module#LevequestsModule'
   },

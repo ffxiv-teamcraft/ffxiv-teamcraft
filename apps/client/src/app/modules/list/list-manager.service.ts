@@ -122,7 +122,12 @@ export class ListManagerService {
     // If this is a craft
     if (data.isCraft()) {
       if (!recipeId) {
-        recipeId = data.item.craft[0].toString();
+        const firstCraft = data.item.craft[0];
+        if (firstCraft.id !== undefined) {
+          recipeId = firstCraft.id.toString();
+        } else {
+          recipeId = data.item.craft[0].toString();
+        }
       }
       const craft = data.getCraft(recipeId.toString());
       const ingredients: Ingredient[] = [];
