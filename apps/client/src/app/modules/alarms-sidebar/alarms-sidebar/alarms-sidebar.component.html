@@ -17,9 +17,13 @@
           <img src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type">
         </div>
         <div class="center-content">
-          <span class="item-name"
-                *ngIf="row.alarm.itemId; else customName">{{row.alarm.itemId | itemName: row.alarm | i18n}}</span>
+          <span class="item-name" *ngIf="row.alarm.itemId; else customName">
+            <i nz-icon type="folder-open" nz-tooltip [nzTitle]="row.groupName"
+               *ngIf="row.groupName" class="folder-icon"></i>{{row.alarm.itemId | itemName: row.alarm | i18n}}
+          </span>
           <ng-template #customName>
+            <i nz-icon type="folder-open" nz-tooltip [nzTitle]="row.groupName"
+               *ngIf="row.groupName" class="folder-icon"></i>
             <span class="item-name">{{row.alarm.name}}</span>
           </ng-template>
           <div fxLayout="row wrap" fxLayoutGap="5px">

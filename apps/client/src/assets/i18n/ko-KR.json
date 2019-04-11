@@ -138,7 +138,7 @@
     "Open_overlay": "오버레이 열기",
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
-    "More_than_three_days": "> 3일",
+    "Toggle_collapse": "Toggle groups collapse",
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
@@ -665,8 +665,8 @@
       "Fail": "실패",
       "Success": "HQ확률: {{HQ}}%",
       "Set_to_simulate": "능력치",
-      "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
-      "Steps_count": "{{count}} steps",
+      "Specialist_rotation_warning": "보여주는 결과값은 비전문장인 상태로 전문장인 로테이션을 사용하기 때문에 HQ확률이 예상보다 훨씬 더 낮을 수 있습니다",
+      "Steps_count": "{{count}} 공정",
       "TAGS": {
         "SPECIALIST": "전문장인",
         "NOT_SPECIALIST": "비전문장인",
@@ -826,7 +826,7 @@
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 추가하였습니다.",
       "Item_removed": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 삭제하였습니다.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**이/가 **[{{listName}}]({{listUrl}})**에 있는 {{totalNeeded}}개 중에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 을/를 완료로 표시함",
       "Webhook_setup_complete": "**{{teamName}}** 팀을 이 채널에서 추적하기 시작합니다.",
       "List_added_notification": "목록 **[{{listName}}]({{listUrl}})**이/가 팀에 추가되었습니다.",
       "List_removed_notification": "목록 **[{{listName}}]({{listUrl}})**이/가 팀에서 제거되었습니다.",
@@ -991,5 +991,11 @@
   "DIRTY": {
     "Dialog_title": "저장되지 않은 변경점이 있습니다",
     "Dialog_description": "이 페이지를 종료하면 저장되지 않은 모든 변경 내용이 삭제됩니다, 계속하시겠습니까?"
+  },
+  "GC_SUPPLY": {
+    "Title": "Grand Company Supplies",
+    "Search": "Search",
+    "Generate_list": "Add to a list",
+    "Intro": "Input your levels and click search to get started"
   }
 }

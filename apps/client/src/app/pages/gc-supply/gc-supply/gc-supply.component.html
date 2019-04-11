@@ -1,0 +1,46 @@
+<h1>{{'GC_SUPPLY.Title' | translate}}</h1>
+<form nz-form [nzLayout]="'inline'" [formGroup]="form" (ngSubmit)="getSupplies(form)" *ngIf="form$ | async as form">
+  <nz-form-item *ngFor="let control of form.controls | keys">
+    <nz-form-control>
+      <nz-input-group [nzPrefix]="jobIcon">
+        <input [formControlName]="control" nz-input required type="number" min="0" nz-tooltip
+               [nzTitle]="+control | jobName | i18n" class="lvl-input"/>
+      </nz-input-group>
+      <ng-template #jobIcon>
+        <img src="https://garlandtools.org/db/images/{{(+control | jobAbbr)?.en}}.png" alt="" class="job-icon">
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button nzType="primary" [disabled]="!form.valid">
+        <i nz-icon type="search"></i>{{'GC_SUPPLY.Search' | translate}}
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+<div *ngIf="items$ | async as supplies" class="results">
+  <div *ngFor="let row of supplies" nz-row>
+    <div nz-col nzMd="6" nzSm="24" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+      <img src="https://garlandtools.org/db/images/{{(row.job | jobAbbr)?.en}}.png" alt="" class="job-icon">
+      <div>{{row.job | jobName | i18n}}</div>
+    </div>
+    <div *ngFor="let item of row.items" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" nz-col
+         nzMd="6" nzSm="24">
+      <label nz-checkbox (nzCheckedChange)="onCheckboxChange(item.itemId, item.count, $event)"></label>
+      <app-item-icon [itemId]="item.itemId" [icon]="item.icon | xivapiIcon" [width]="32"
+                     [tooltipDisabled]="row.job === 18" [appFishTooltip]="item.itemId"
+                     [appFishTooltipDisabled]="row.job !== 18"></app-item-icon>
+      <div fxLayout="column" fxLayoutGap="5px">
+        <div>{{item.itemId | itemName | i18n}}</div>
+        <div>x{{item.count}}</div>
+      </div>
+    </div>
+  </div>
+  <button nz-button nzBlock [disabled]="selection.length === 0"
+          (click)="generateList()">{{'GC_SUPPLY.Generate_list' | translate}}</button>
+</div>
+<app-fullpage-message *ngIf="pristine" height="300px">
+  {{'GC_SUPPLY.Intro' | translate}}
+</app-fullpage-message>
+<app-page-loader *ngIf="loading"></app-page-loader>

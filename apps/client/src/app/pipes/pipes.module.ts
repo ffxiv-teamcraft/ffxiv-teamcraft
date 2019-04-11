@@ -30,6 +30,7 @@ import { LazyIconPipe } from './lazy-icon.pipe';
 import { PermissionLevelPipe } from './permission-level.pipe';
 import { ElementIconPipe } from './element-icon.pipe';
 import { FishEyesDurationPipe } from './fish-eyes-duration.pipe';
+import { KeysPipe } from './keys.pipe';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { FishEyesDurationPipe } from './fish-eyes-duration.pipe';
     CustomItemNamePipe,
     PermissionLevelPipe,
     ElementIconPipe,
-    FishEyesDurationPipe
+    FishEyesDurationPipe,
+    KeysPipe
   ],
   exports: [
     ItemNamePipe,
@@ -98,7 +100,8 @@ import { FishEyesDurationPipe } from './fish-eyes-duration.pipe';
     CustomItemNamePipe,
     PermissionLevelPipe,
     ElementIconPipe,
-    FishEyesDurationPipe
+    FishEyesDurationPipe,
+    KeysPipe
   ]
 })
 export class PipesModule {

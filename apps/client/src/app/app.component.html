@@ -219,6 +219,14 @@
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                 routerLink="/gc-supply">
+          <span nz-tooltip nzPlacement="right"
+                [nzTitle]="collapsedSidebar ? ('GC_SUPPLY.Title' | translate) : null">
+              <i nz-icon type="file-done"></i>
+              <span class="nav-text">{{'GC_SUPPLY.Title' | translate}}</span>
+          </span>
+              </a>
+              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/custom-items">
           <span nz-tooltip nzPlacement="right"
                 [nzTitle]="collapsedSidebar ? ('CUSTOM_ITEMS.Title' | translate) : null">

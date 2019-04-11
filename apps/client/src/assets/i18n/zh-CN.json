@@ -138,7 +138,7 @@
     "Open_overlay": "Open overlay",
     "More_available": "and {{amount}} more...",
     "Node_content": "Node content",
-    "More_than_three_days": "> 3 days",
+    "Toggle_collapse": "Toggle groups collapse",
     "CUSTOM": {
       "Title": "添加自定义闹钟",
       "Name": "名称",
@@ -991,5 +991,11 @@
   "DIRTY": {
     "Dialog_title": "You have unsaved changes",
     "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
+  },
+  "GC_SUPPLY": {
+    "Title": "Grand Company Supplies",
+    "Search": "Search",
+    "Generate_list": "Add to a list",
+    "Intro": "Input your levels and click search to get started"
   }
 }

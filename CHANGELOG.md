@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.5"></a>
+## [5.2.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.3...v5.2.5) (2019-04-11)
+
+
+### Features
+
+* new feature: GC supply list generator ([fe2f1a0](https://github.com/Supamiu/ffxiv-teamcraft/commit/fe2f1a0)), closes [#596](https://github.com/Supamiu/ffxiv-teamcraft/issues/596)
+* **alarms:** added a folder icon to sidebar to show folder name ([c22c807](https://github.com/Supamiu/ffxiv-teamcraft/commit/c22c807))
+* **alarms:** new button to toggle groups collapse state ([f03a1f1](https://github.com/Supamiu/ffxiv-teamcraft/commit/f03a1f1))
+
+
+
 <a name="5.2.4"></a>
 ## [5.2.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.3...v5.2.4) (2019-04-10)
 
