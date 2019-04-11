@@ -138,7 +138,7 @@
     "Open_overlay": "Abrir capa sobrepuesta",
     "More_available": "y {{amount}} más...",
     "Node_content": "Contenido del nodo",
-    "More_than_three_days": "> 3 días",
+    "Toggle_collapse": "Toggle groups collapse",
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
