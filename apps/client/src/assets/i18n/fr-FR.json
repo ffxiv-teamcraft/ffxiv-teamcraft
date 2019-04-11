@@ -138,7 +138,7 @@
     "Open_overlay": "Ouvrir l'overlay",
     "More_available": "et {{amount}} autres...",
     "Node_content": "Contenu du point de récolte",
-    "Toggle_collapse": "Toggle groups collapse",
+    "Toggle_collapse": "Ouvrir/fermer tous les groupes",
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
