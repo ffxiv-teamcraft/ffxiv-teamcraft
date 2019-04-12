@@ -666,7 +666,7 @@
       "Success": "HQ確率: {{HQ}}%",
       "Set_to_simulate": "サブステ",
       "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
-      "Steps_count": "{{count}} steps",
+      "Steps_count": "{{count}} 工程",
       "TAGS": {
         "SPECIALIST": "マイスター",
         "NOT_SPECIALIST": "非マイスター",
@@ -826,7 +826,7 @@
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加されました。",
       "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を削除されました。",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**が **[{{listName}}]({{listUrl}})**にある {{totalNeeded}}個中に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** を完了に表示する",
       "Webhook_setup_complete": "**{{teamName}}** チームをこのチャンネルから追跡し始めました。",
       "List_added_notification": "リスト **[{{listName}}]({{listUrl}})**がチームに追加されました。",
       "List_removed_notification": "リスト **[{{listName}}]({{listUrl}})**がチームから外されました。",
@@ -993,9 +993,9 @@
     "Dialog_description": "このページを離れると、保存されていない変更がすべて削除されます。よろしいですか？"
   },
   "GC_SUPPLY": {
-    "Title": "Grand Company Supplies",
-    "Search": "Search",
-    "Generate_list": "Add to a list",
-    "Intro": "Input your levels and click search to get started"
+    "Title": "調達任務",
+    "Search": "検索",
+    "Generate_list": "リストに追加",
+    "Intro": "レベルを入力し、検索をクリックして開始します。"
   }
 }
