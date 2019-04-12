@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.7"></a>
+## [5.2.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.6...v5.2.7) (2019-04-12)
+
+
+### Features
+
+* **gc-supply:** reworked display for item selection and fixed a bug with level ranges ([bf2a10b](https://github.com/Supamiu/ffxiv-teamcraft/commit/bf2a10b))
+
+
+
 <a name="5.2.6"></a>
 ## [5.2.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.5...v5.2.6) (2019-04-11)
 
