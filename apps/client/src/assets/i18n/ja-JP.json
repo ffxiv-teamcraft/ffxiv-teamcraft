@@ -665,7 +665,7 @@
       "Fail": "失敗",
       "Success": "HQ確率: {{HQ}}%",
       "Set_to_simulate": "サブステ",
-      "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
+      "Specialist_rotation_warning": "表示された結果では、非マイスターの状態でマイスター用スキル回しを使用しているため、結果的にHQ確率が予想より非常に低くなる恐れがあります。",
       "Steps_count": "{{count}} 工程",
       "TAGS": {
         "SPECIALIST": "マイスター",
