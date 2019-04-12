@@ -19,21 +19,26 @@
     </nz-form-control>
   </nz-form-item>
 </form>
-<div *ngIf="items$ | async as supplies" class="results">
-  <div *ngFor="let row of supplies" nz-row>
+<div *ngIf="items$ | async as supplies" class="results" fxLayout="column" fxLayoutGap="10px">
+  <div *ngFor="let row of supplies" nz-row nzGutter="10">
     <div nz-col nzMd="6" nzSm="24" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
       <img src="https://garlandtools.org/db/images/{{(row.job | jobAbbr)?.en}}.png" alt="" class="job-icon">
       <div>{{row.job | jobName | i18n}}</div>
     </div>
-    <div *ngFor="let item of row.items" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" nz-col
-         nzMd="6" nzSm="24">
-      <label nz-checkbox (nzCheckedChange)="onCheckboxChange(item.itemId, item.count, $event)"></label>
-      <app-item-icon [itemId]="item.itemId" [icon]="item.icon | xivapiIcon" [width]="32"
-                     [tooltipDisabled]="row.job === 18" [appFishTooltip]="item.itemId"
-                     [appFishTooltipDisabled]="row.job !== 18"></app-item-icon>
-      <div fxLayout="column" fxLayoutGap="5px">
-        <div>{{item.itemId | itemName | i18n}}</div>
-        <div>x{{item.count}}</div>
+    <nz-select nz-col nzMd="6" nzSm="24" [ngModel]="null" (ngModelChange)="select(row.job, $event.itemId, $event.count)"
+               nzAllowClear nzShowSearch #selectBox
+               class="item-select">
+      <nz-option *ngFor="let item of row.items" [nzValue]="item" [nzLabel]="item.itemId | itemName | i18n"></nz-option>
+    </nz-select>
+    <div nz-col nzMd="6" nzSm="24" *ngIf="selectBox.value" fxLayout="row" fxLayoutGap="5px"
+         fxLayoutAlign="flex-start center">
+      <img src="https://www.garlandtools.org/files/icons/item/20.png" alt="" class="reward-icon">
+      <div>
+        {{selectBox.value.reward.seals}}
+      </div>
+      <img src="https://xivapi.com/img-misc/exp.png" alt="" class="reward-icon">
+      <div>
+        {{selectBox.value.reward.xp}}
       </div>
     </div>
   </div>
