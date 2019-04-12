@@ -62,10 +62,8 @@ export class GcSupplyComponent {
           ];
         }));
         const uniqLevels = _.uniq(levelsArray.map(entry => entry.level));
-        const requests = uniqLevels.map(level => {
-          return combineLatest(this.xivapi.get(XivapiEndpoint.GCSupplyDuty, level), this.xivapi.get(XivapiEndpoint.GCSupplyDutyReward, level)).pipe(
-            delay(100)
-          );
+        const requests = uniqLevels.map((level: number) => {
+          return combineLatest(this.xivapi.get(XivapiEndpoint.GCSupplyDuty, level), this.xivapi.get(XivapiEndpoint.GCSupplyDutyReward, level));
         });
         return requestsWithDelay(requests, 50).pipe(
           map((data: any[]) => {
