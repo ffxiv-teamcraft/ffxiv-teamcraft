@@ -13,7 +13,8 @@
     "forin": true,
     "import-blacklist": [
       true,
-      "rxjs/Rx"
+      "rxjs/Rx",
+      "rxjs/internal"
     ],
     "interface-over-type-literal": true,
     "member-access": false,

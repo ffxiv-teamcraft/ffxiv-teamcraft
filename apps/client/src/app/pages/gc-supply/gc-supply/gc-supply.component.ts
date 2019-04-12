@@ -3,7 +3,7 @@ import { combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { GearSet } from '../../simulator/model/gear-set';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { filter, first, map, mergeMap, tap, switchMap } from 'rxjs/operators';
+import { delay, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
@@ -11,6 +11,7 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { Router } from '@angular/router';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
+import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 
 @Component({
   selector: 'app-gc-supply',
@@ -23,7 +24,7 @@ export class GcSupplyComponent {
 
   public form$: Observable<FormGroup>;
 
-  public items$: Observable<{ job: number, reward: { xp: number, seals: number }, items: { count: number, itemId: number, icon: string }[] }[]>;
+  public items$: Observable<{ job: number, items: { count: number, itemId: number, icon: string, reward: { xp: number, seals: number } }[] }[]>;
 
   private levels$: Subject<any> = new Subject<any>();
 
@@ -53,38 +54,55 @@ export class GcSupplyComponent {
         this.loading = true;
       }),
       switchMap(levels => {
-        const levelsArray = Object.keys(levels).map(key => {
-          return { jobId: +key, level: levels[key] };
-        });
-        const uniqLevels = _.uniq(Object.keys(levels).map(key => levels[key]));
+        const levelsArray = [].concat.apply([], Object.keys(levels).map(key => {
+          return [
+            { jobId: +key, level: levels[key] },
+            { jobId: +key, level: Math.max(levels[key] - 1, 1) },
+            { jobId: +key, level: Math.max(levels[key] - 2, 1) }
+          ];
+        }));
+        const uniqLevels = _.uniq(levelsArray.map(entry => entry.level));
         const requests = uniqLevels.map(level => {
-          return combineLatest(this.xivapi.get(XivapiEndpoint.GCSupplyDuty, level), this.xivapi.get(XivapiEndpoint.GCSupplyDutyReward, level));
+          return combineLatest(this.xivapi.get(XivapiEndpoint.GCSupplyDuty, level), this.xivapi.get(XivapiEndpoint.GCSupplyDutyReward, level)).pipe(
+            delay(100)
+          );
         });
-        return combineLatest(requests).pipe(
+        return requestsWithDelay(requests, 50).pipe(
           map((data: any[]) => {
-            return levelsArray.map(entry => {
-              const dataEntry = data.find(row => row[0].ID === entry.level);
-              const duty = dataEntry[0];
-              const reward = dataEntry[1];
-              const finalEntry = {
-                job: entry.jobId,
-                items: [],
-                reward: { xp: reward.ExperienceSupply, seals: reward.SealsSupply }
-              };
-              for (let i = 0; i < 3; i++) {
-                const item = duty[`Item${i}${this.idToIndex.indexOf(entry.jobId)}`];
-                const itemCount = duty[`ItemCount${i}${this.idToIndex.indexOf(entry.jobId)}`];
-                if (item === null) {
-                  break;
+            return levelsArray
+              .map(entry => {
+                const finalEntry = {
+                  job: entry.jobId,
+                  items: []
+                };
+                const dataEntry = data.find(row => row[0].ID === entry.level);
+                const duty = dataEntry[0];
+                const reward = dataEntry[1];
+                for (let j = 0; j < 3; j++) {
+                  const item = duty[`Item${j}${this.idToIndex.indexOf(entry.jobId)}`];
+                  const itemCount = duty[`ItemCount${j}${this.idToIndex.indexOf(entry.jobId)}`];
+                  if (item === null) {
+                    break;
+                  }
+                  finalEntry.items.push({
+                    count: itemCount,
+                    itemId: item.ID,
+                    icon: item.Icon,
+                    reward: { xp: reward.ExperienceSupply, seals: reward.SealsSupply }
+                  });
                 }
-                finalEntry.items.push({
-                  count: itemCount,
-                  itemId: item.ID,
-                  icon: item.Icon
-                });
-              }
-              return finalEntry;
-            });
+                return finalEntry;
+              })
+              .reduce((entriesByJob, entry) => {
+                const jobEntry = entriesByJob.find(e => e.job === entry.job);
+                if (jobEntry !== undefined) {
+                  jobEntry.items.push(...entry.items);
+                } else {
+                  entriesByJob.push(entry);
+                }
+                return entriesByJob;
+              }, [])
+              .sort((a, b) => a.job - b.job);
           })
         );
       }),
@@ -98,11 +116,10 @@ export class GcSupplyComponent {
     this.levels$.next(form.getRawValue());
   }
 
-  public onCheckboxChange(itemId: number, count: number, checked: boolean): void {
-    if (checked) {
-      this.selection.push({ itemId: itemId, count: count });
-    } else {
-      this.selection = this.selection.filter(row => row.itemId !== itemId);
+  public select(jobId: number, itemId: number, count: number): void {
+    this.selection = this.selection.filter(row => row.jobId !== jobId);
+    if (itemId !== null) {
+      this.selection.push({ jobId: jobId, itemId: itemId, count: count });
     }
   }
 
