@@ -18,7 +18,8 @@
                 (click)="newCustomAlarm()">
           <i nz-icon type="form"></i>
         </button>
-        <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.Toggle_collapse' | translate}}"
+        <button nz-button nzShape="circle" nzType="primary" nz-tooltip
+                nzTitle="{{'ALARMS.Toggle_collapse' | translate}}"
                 (click)="toggleCollapse()">
           <i nz-icon type="sliders"></i>
         </button>
@@ -88,6 +89,11 @@
                       [nzTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
                       (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)">
                 <i nz-icon iconfont="icon-delete_all"></i>
+              </button>
+              <button nz-button (click)="$event.stopPropagation(); addAlarmsToGroup(group.group)" [nzShape]="'circle'"
+                      [nzType]="'primary'" nzSize="small" nz-tooltip
+                      [nzTitle]="'ALARMS.Add_alarms_to_group' | translate">
+                <i nz-icon type="plus"></i>
               </button>
               <div class="spacer"></div>
               <nz-switch [(ngModel)]="group.group.enabled"
@@ -201,7 +207,7 @@
         <app-fishing-bait [baits]="row.alarm.baits"></app-fishing-bait>
       </div>
       <div *ngIf="row.alarm.gig">
-        <img  src="./assets/icons/gig/{{row.alarm.gig}}.png" nz-tooltip class="gig-icon"
+        <img src="./assets/icons/gig/{{row.alarm.gig}}.png" nz-tooltip class="gig-icon"
              [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + row.alarm.gig) | translate">
       </div>
       <div *ngIf="row.alarm.predators && row.alarm.predators.length > 0" fxLayout="row" fxLayoutGap="10px"

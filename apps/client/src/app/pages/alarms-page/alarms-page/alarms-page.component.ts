@@ -10,7 +10,7 @@ import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter } from 'rxjs/operators';
+import { filter, first, map, switchMap } from 'rxjs/operators';
 import { AlarmGroupDisplay } from '../../../core/alarms/alarm-group-display';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { AlarmsOptionsPopupComponent } from '../alarms-options-popup/alarms-options-popup.component';
@@ -21,6 +21,7 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
 import { I18nName } from '../../../model/common/i18n-name';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
+import { FolderAdditionPickerComponent } from '../../../modules/folder-addition-picker/folder-addition-picker/folder-addition-picker.component';
 
 @Component({
   selector: 'app-alarms-page',
@@ -168,6 +169,39 @@ export class AlarmsPageComponent implements OnInit {
     return `/alarm "${display.alarm.itemId ? this.i18n.getName(this.l12n.getItem(display.alarm.itemId)).slice(0, 10) : display.alarm.name.slice(0, 10)
       }" et ${this.i18n.getName(rp)} ${display.nextSpawn.hours < 10 ? '0' : ''}${display.nextSpawn.hours}00 ${
       Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
+  }
+
+  addAlarmsToGroup(group: AlarmGroup): void {
+    this.display$.pipe(
+      first(),
+      switchMap((display: AlarmsPageDisplay) => {
+        return this.dialog.create({
+          nzTitle: this.translate.instant('SIMULATOR.ROTATIONS.FOLDERS.Add_rotations'),
+          nzContent: FolderAdditionPickerComponent,
+          nzComponentParams: {
+            elements: display.noGroup.map(row => {
+              return {
+                $key: row.alarm.$key,
+                name: this.i18n.getName(this.l12n.getItem(row.alarm.itemId)) || row.alarm.name
+              };
+            })
+          },
+          nzFooter: null
+        }).afterClose
+          .pipe(
+            map(picked => {
+              return picked
+                .map(a => display.noGroup.find(row => row.alarm.$key === a.$key))
+                .map(displayRow => displayRow.alarm);
+            })
+          );
+      })
+    ).subscribe(alarms => {
+      alarms.forEach(alarm => {
+        alarm.groupId = group.$key;
+        this.alarmsFacade.updateAlarm(alarm);
+      });
+    });
   }
 
   macroCopied(): void {
