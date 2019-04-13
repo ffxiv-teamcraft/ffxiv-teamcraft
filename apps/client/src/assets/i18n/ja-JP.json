@@ -139,6 +139,7 @@
     "More_available": "{{amount}} 回 もっと",
     "Node_content": "採集物情報",
     "Toggle_collapse": "Toggle groups collapse",
+    "Add_alarms_to_group": "Add alarms to this group",
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
       "Name": "名前",
