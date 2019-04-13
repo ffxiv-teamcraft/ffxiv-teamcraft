@@ -3,7 +3,7 @@ import { combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { GearSet } from '../../simulator/model/gear-set';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { delay, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';

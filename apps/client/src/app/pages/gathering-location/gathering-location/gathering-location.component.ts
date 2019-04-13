@@ -16,6 +16,7 @@ import { BehaviorSubject } from 'rxjs';
 import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { fishEyes } from '../../../core/data/sources/fish-eyes';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
 
 @Component({
   selector: 'app-gathering-location',
@@ -32,6 +33,8 @@ export class GatheringLocationComponent {
   alarmsLoaded$: Observable<boolean>;
 
   alarms$: Observable<Alarm[]>;
+
+  alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
   loading = false;
 
@@ -269,7 +272,7 @@ export class GatheringLocationComponent {
     return node.spawnTimes.reduce((res, current) => `${res}${current}:00 - ${(current + node.uptime / 60) % 24}:00, `, ``).slice(0, -2);
   }
 
-  public addAlarm(node: any): void {
+  public addAlarm(node: any, group?: AlarmGroup): void {
     const alarm: Partial<Alarm> = this.generateAlarm(node);
     alarm.spawns = node.spawnTimes;
     alarm.mapId = node.mapId;
@@ -292,6 +295,9 @@ export class GatheringLocationComponent {
           return alarm;
         })
       ).subscribe((result: Alarm) => {
+      if (group) {
+        alarm.groupId = group.$key;
+      }
       this.alarmsFacade.addAlarms(result);
     });
   }
