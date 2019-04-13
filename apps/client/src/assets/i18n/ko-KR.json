@@ -139,6 +139,7 @@
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
+    "Add_alarms_to_group": "Add alarms to this group",
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
