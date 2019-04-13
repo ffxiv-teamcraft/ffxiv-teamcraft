@@ -139,6 +139,7 @@
     "More_available": "добавить ещё {{amount}}...",
     "Node_content": "Node content",
     "Toggle_collapse": "Toggle groups collapse",
+    "Add_alarms_to_group": "Add alarms to this group",
     "CUSTOM": {
       "Title": "Добавить настраиваемое оповещение",
       "Name": "Название",
