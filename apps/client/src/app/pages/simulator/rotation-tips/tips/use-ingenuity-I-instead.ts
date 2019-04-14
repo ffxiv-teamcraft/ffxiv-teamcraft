@@ -21,7 +21,8 @@ export class UseIngenuityIInstead extends RotationTip {
       }
       return action;
     });
-    return simulation.run(true).success;
+    const res = simulation.run(true);
+    return res.success && res.hqPercent === simulationResult.hqPercent;
   }
 
 }
