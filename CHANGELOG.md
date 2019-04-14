@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.8"></a>
+## [5.2.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.7...v5.2.8) (2019-04-14)
+
+
+### Bug Fixes
+
+* **gc-supply:** level range is now 0 - (-3), was 0 - (-2) ([4be0428](https://github.com/Supamiu/ffxiv-teamcraft/commit/4be0428))
+* **icon:** better res icon for community rotations menu ([a841699](https://github.com/Supamiu/ffxiv-teamcraft/commit/a841699))
+* **lists:** fixed an issue with team detach feature that didn't save properly ([599c14b](https://github.com/Supamiu/ffxiv-teamcraft/commit/599c14b))
+* **rotation-tips:** ingenuity I tip now only shows if it doesn't affect HQ% ([92260d1](https://github.com/Supamiu/ffxiv-teamcraft/commit/92260d1))
+
+
+### Features
+
+* **alarms:** added a button on alarm group panels to add multiple alarms at once to the group ([4f2399a](https://github.com/Supamiu/ffxiv-teamcraft/commit/4f2399a))
+* **gathering-location:** added a new button to add alarm directly to a group ([056afa1](https://github.com/Supamiu/ffxiv-teamcraft/commit/056afa1))
+
+
+
 <a name="5.2.7"></a>
 ## [5.2.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.6...v5.2.7) (2019-04-12)
 
