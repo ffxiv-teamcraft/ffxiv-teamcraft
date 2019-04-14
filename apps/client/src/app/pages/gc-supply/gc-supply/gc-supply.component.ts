@@ -58,7 +58,8 @@ export class GcSupplyComponent {
           return [
             { jobId: +key, level: levels[key] },
             { jobId: +key, level: Math.max(levels[key] - 1, 1) },
-            { jobId: +key, level: Math.max(levels[key] - 2, 1) }
+            { jobId: +key, level: Math.max(levels[key] - 2, 1) },
+            { jobId: +key, level: Math.max(levels[key] - 3, 1) }
           ];
         }));
         const uniqLevels = _.uniq(levelsArray.map(entry => entry.level));
