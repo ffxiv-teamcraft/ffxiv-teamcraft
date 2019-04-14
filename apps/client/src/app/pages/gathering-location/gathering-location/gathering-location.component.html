@@ -14,7 +14,9 @@
 <div class="results" *ngIf="results$ | async as results; else noResults">
   <div *ngFor="let node of results" [class.compact-node]="compactDisplay">
     <nz-card [nzCover]="compactDisplay?null:map"
-             [nzActions]="(canCreateAlarm(alarms$ | async, node) && (node.timed || node.weathers?.length > 0))?[actionAlarm]:[]">
+             [nzActions]="(canCreateAlarm(alarms$ | async, node) && (node.timed || node.weathers?.length > 0))?
+             (alarmGroups$ | async)?.length > 0?[actionAlarm, actionAlarmToGroup]:[actionAlarm]
+             :[]">
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title" [nzDescription]="description">
       </nz-card-meta>
       <ng-template #itemIcon>
@@ -99,6 +101,18 @@
       <i class="material-icons create-alarm" *ngIf="alarmsLoaded$ | async" (click)="addAlarm(node)">
         alarm_add
       </i>
+    </ng-template>
+    <ng-template #actionAlarmToGroup>
+      <ng-container *ngIf="alarmGroups$ | async as groups">
+        <nz-dropdown *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'">
+          <i nz-icon type="folder-open" nz-dropdown class="add-to-group"></i>
+          <ul nz-menu>
+            <li nz-menu-item *ngFor="let group of groups" (click)="addAlarm(node, group)">
+              {{group.name}}
+            </li>
+          </ul>
+        </nz-dropdown>
+      </ng-container>
     </ng-template>
   </div>
   <app-fullpage-message *ngIf="results.length === 0">{{'No_items_found' | translate}}</app-fullpage-message>

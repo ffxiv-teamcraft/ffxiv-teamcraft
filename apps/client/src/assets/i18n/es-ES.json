@@ -139,6 +139,7 @@
     "More_available": "y {{amount}} más...",
     "Node_content": "Contenido del nodo",
     "Toggle_collapse": "Toggle groups collapse",
+    "Add_alarms_to_group": "Add alarms to this group",
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
