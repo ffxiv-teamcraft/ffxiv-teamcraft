@@ -204,7 +204,7 @@ export class ListPanelComponent {
         return list;
       })
     ).subscribe(list => {
-      this.listsFacade.updateList(list);
+      this.listsFacade.updateList(list, true);
       if (team.webhook !== undefined) {
         this.discordWebhookService.notifyListAddedToTeam(team, list);
       }
@@ -223,7 +223,7 @@ export class ListPanelComponent {
         return list;
       })
     ).subscribe(list => {
-      this.listsFacade.updateList(list);
+      this.listsFacade.updateList(list, true);
       if (team.webhook !== undefined) {
         this.discordWebhookService.notifyListRemovedFromTeam(team, list);
       }
