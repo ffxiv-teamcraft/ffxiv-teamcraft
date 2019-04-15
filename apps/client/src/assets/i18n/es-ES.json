@@ -318,6 +318,8 @@
     "Add_new_contact": "Nuevo contacto",
     "Save_for_all": "Guardar para todos",
     "User_not_verified": "Usuario no verificado, haga clic para verificar",
+    "More_than_100_lists_created": "More than 100 lists created",
+    "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "Verificación de personaje",
       "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" en la biografia de su perfil de Lodestone y haga clic en el botón de abajo.",
@@ -535,6 +537,8 @@
     "Snagging": "Requiere \"snagging\"",
     "Predators": "Pescar estos peces antes de",
     "Fish_eyes_duration": "Su \"fish eyes\" necesita esta duración para obtener el pescado. Haga clic para cambiar el formato.",
+    "Spawned_for": "Will despawn in {{timer}}",
+    "Will_spawn_in": "Will spawn in {{timer}}",
     "GIG_HEAD": {
       "Small": "Cabeza de anzuelo pequeña",
       "Normal": "Cabeza de anzuelo normal",
@@ -996,7 +1000,8 @@
   "GC_SUPPLY": {
     "Title": "Grand Company Supplies",
     "Search": "Search",
-    "Generate_list": "Add to a list",
-    "Intro": "Input your levels and click search to get started"
+    "Generate_list": "Create a quick list",
+    "Intro": "Input your levels and click search to get started",
+    "Loading_message": "Loading possible deliveries, this can take up to a minute"
   }
 }
