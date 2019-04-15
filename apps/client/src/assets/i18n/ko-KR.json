@@ -139,7 +139,7 @@
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
-    "Add_alarms_to_group": "Add alarms to this group",
+    "Add_alarms_to_group": "이 그룹에 알람 추가",
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
@@ -318,6 +318,8 @@
     "Add_new_contact": "새 연락처",
     "Save_for_all": "모두 저장",
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요",
+    "More_than_100_lists_created": "More than 100 lists created",
+    "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile Biography에 다음의 코드를 붙여넣으세요. \"{{userId}}\" 그리고 아래의 버튼을 눌러주세요.",
@@ -535,6 +537,8 @@
     "Snagging": "갈고리 낚시 필요",
     "Predators": "사전에 낚아야 할 물고기",
     "Fish_eyes_duration": "이 물고기를 낚기 위해서는 해당 지속시간만큼의 물고기의 눈이 필요합니다. 형식을 변경하려면 클릭하세요.",
+    "Spawned_for": "Will despawn in {{timer}}",
+    "Will_spawn_in": "Will spawn in {{timer}}",
     "GIG_HEAD": {
       "Small": "작은 작살",
       "Normal": "중간 작살",
@@ -996,7 +1000,8 @@
   "GC_SUPPLY": {
     "Title": "조달 임무",
     "Search": "검색",
-    "Generate_list": "목록에 추가",
-    "Intro": "시작하기 위해 레벨을 입력하고 검색을 클릭하세요"
+    "Generate_list": "Create a quick list",
+    "Intro": "시작하기 위해 레벨을 입력하고 검색을 클릭하세요",
+    "Loading_message": "Loading possible deliveries, this can take up to a minute"
   }
 }
