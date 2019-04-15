@@ -996,7 +996,8 @@
   "GC_SUPPLY": {
     "Title": "Grand Company Supplies",
     "Search": "Search",
-    "Generate_list": "Add to a list",
-    "Intro": "Input your levels and click search to get started"
+    "Generate_list": "Create a quick list",
+    "Intro": "Input your levels and click search to get started",
+    "Loading_message": "Loading possible deliveries, this can take up to a minute"
   }
 }

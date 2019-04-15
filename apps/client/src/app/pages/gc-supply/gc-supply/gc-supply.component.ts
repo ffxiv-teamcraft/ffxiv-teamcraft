@@ -123,36 +123,35 @@ export class GcSupplyComponent {
   }
 
   public generateList(): void {
-    this.listPicker.pickList().pipe(
-      mergeMap(list => {
-        const operations = this.selection.map(row => {
-          return this.listManager.addToList(row.itemId, list, '', row.count);
-        });
-        let operation$: Observable<any>;
-        if (operations.length > 0) {
-          operation$ = concat(
-            ...operations
-          );
-        } else {
-          operation$ = of(list);
-        }
-        return this.progressService.showProgress(operation$,
-          this.selection.length,
-          'Adding_recipes',
-          { amount: this.selection.length, listname: list.name });
-      }),
-      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
-        // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progressService.showProgress(
-          combineLatest(this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$).pipe(
-            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
-          ), 1, 'Saving_in_database');
-      })
-    ).subscribe((list) => {
+    const quickList = this.listsFacade.newEphemeralList(`GC Supply ${new Date().toLocaleDateString()}`);
+    const operations = this.selection.map(row => {
+      return this.listManager.addToList(row.itemId, quickList, '', row.count);
+    });
+    let operation$: Observable<any>;
+    if (operations.length > 0) {
+      operation$ = concat(
+        ...operations
+      );
+    } else {
+      operation$ = of(quickList);
+    }
+    this.progressService.showProgress(operation$,
+      this.selection.length,
+      'Adding_recipes',
+      { amount: this.selection.length, listname: quickList.name })
+      .pipe(
+        tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
+        mergeMap(list => {
+          // We want to get the list created before calling it a success, let's be pessimistic !
+          return this.progressService.showProgress(
+            combineLatest(this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$).pipe(
+              map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
+              map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
+              filter(l => l !== undefined),
+              first()
+            ), 1, 'Saving_in_database');
+        })
+      ).subscribe((list) => {
       this.router.navigate(['/list', list.$key]);
     });
   }
