@@ -218,7 +218,8 @@ export class AlarmsFacade {
   }
 
   public getNextSpawn(alarm: Alarm, time: Date): NextSpawn {
-    if (this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] === undefined || this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`].expires.getTime() < Date.now()) {
+    const cacheKey = `${alarm.itemId}-${alarm.zoneId}-${alarm.spawns.join(',')}`;
+    if (this.nextSpawnCache[cacheKey] === undefined || this.nextSpawnCache[cacheKey].expires.getTime() < Date.now()) {
       const sortedSpawns = (alarm.spawns || []).sort((a, b) => {
         const timeBeforeA = this.getMinutesBefore(time, { hours: a, days: 0 });
         const timeBeforeADespawns = this.getMinutesBefore(time, { hours: (a + alarm.duration) % 24, days: 0 });
@@ -236,21 +237,12 @@ export class AlarmsFacade {
       });
       if (alarm.weathers) {
         // try {
-        this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
+        this.nextSpawnCache[cacheKey] = {
           spawn: this.findWeatherSpawnCombination(alarm, sortedSpawns, time.getTime()),
           expires: time
         };
-        // } catch (e) {
-        //   // Maximum call stack size...
-        //   // So we're just returning a date very far, in order to detect it inside the display system.
-        //   this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
-        //     spawn: { hours: 0, days: 99, despawn: 0 },
-        //     expires: new Date(Date.now() + 60000000)
-        //   };
-        // }
-
       } else {
-        this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`] = {
+        this.nextSpawnCache[cacheKey] = {
           spawn: {
             hours: sortedSpawns[0],
             days: 0,
@@ -260,7 +252,7 @@ export class AlarmsFacade {
         };
       }
     }
-    return this.nextSpawnCache[`${alarm.itemId}-${alarm.zoneId}`].spawn;
+    return this.nextSpawnCache[cacheKey].spawn;
   }
 
   private findWeatherSpawnCombination(alarm: Alarm, sortedSpawns: number[], time: number, iteration = time): NextSpawn {
