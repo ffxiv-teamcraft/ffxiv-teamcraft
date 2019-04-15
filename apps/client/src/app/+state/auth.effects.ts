@@ -56,7 +56,8 @@ export class AuthEffects {
         return new LoginAsAnonymous();
       } else {
         const payload: Partial<AuthState> = {
-          uid: authState.uid
+          uid: authState.uid,
+          createdAt: new Date(authState.metadata.creationTime)
         };
         if (authState.isAnonymous) {
           return new LoggedInAsAnonymous(authState.uid);

@@ -63,6 +63,7 @@ export class AuthFacade {
     })
   );
   characters$ = this.store.select(authQuery.getCharacters);
+  creationDate$ = this.store.select(authQuery.getCreationDate);
   mainCharacterEntry$ = combineLatest(this.mainCharacter$, this.user$).pipe(
     map(([char, user]) => {
       const lodestoneIdEntry = user.lodestoneIds.find(entry => entry.id === user.defaultLodestoneId);

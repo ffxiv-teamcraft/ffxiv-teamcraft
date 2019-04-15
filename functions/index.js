@@ -70,6 +70,18 @@ exports.deleteListCompacts = functions.firestore.document('/lists/{uid}').onDele
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).delete();
 });
 
+exports.updateUserListCount = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
+  return firestore.runTransaction(transaction => {
+    const userRef = firestore.collection('users').doc(snap.data.data().authorId);
+    return transaction.get(userRef).then(user => {
+      user.stats = user.stats || {};
+      user.stats.listsCreated = user.stats.listsCreated || 0;
+      user.stats.listsCreated += 1;
+      return transaction.update(userRef, {stats: user.stats})
+    });
+  });
+});
+
 
 // SSR Stuff
 const express = require('express');

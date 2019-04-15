@@ -15,6 +15,7 @@ export interface AuthState {
   uid: string;
   loggedIn: boolean;
   user: TeamcraftUser | null;
+  createdAt: Date;
   characters: CharacterResponse[];
   loading: boolean;
   linkingCharacter: boolean;
@@ -23,6 +24,7 @@ export interface AuthState {
 export const initialState: AuthState = {
   uid: null,
   user: null,
+  createdAt: null,
   characters: [],
   loggedIn: false,
   loading: false,

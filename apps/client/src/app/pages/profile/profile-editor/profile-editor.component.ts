@@ -24,6 +24,8 @@ export class ProfileEditorComponent {
 
   mainCharacter$ = this.authFacade.mainCharacterEntry$;
 
+  creationDate$ = this.authFacade.creationDate$;
+
   characters$ = combineLatest(this.authFacade.characters$, this.authFacade.user$).pipe(
     map(([chars, user]) => {
       return chars
@@ -40,6 +42,8 @@ export class ProfileEditorComponent {
   );
 
   gearSets$ = this.authFacade.gearSets$;
+
+  now = Math.floor(Date.now() / 1000);
 
   constructor(private authFacade: AuthFacade, private dialog: NzModalService, private translate: TranslateService,
               private userPicker: UserPickerService) {
