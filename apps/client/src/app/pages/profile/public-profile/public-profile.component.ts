@@ -28,6 +28,8 @@ export class PublicProfileComponent {
 
   notFound = false;
 
+  now = Math.floor(Date.now() / 1000);
+
   constructor(private route: ActivatedRoute, private characterService: CharacterService,
               private listCompactsService: ListCompactsService, private authFacade: AuthFacade, private userService: UserService) {
     const userId$ = this.route.paramMap.pipe(

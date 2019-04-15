@@ -37,11 +37,19 @@
     </ng-template>
     <ng-template #description>
       <div fxLayout="row" fxLayoutAlign="space-between flex-start">
-        <div>
-          {{node.zoneid | placeName | i18n}}<br>
-          X: {{node.x}}, Y: {{node.y}}<br>
-          {{getNodeSpawns(node)}} <i nz-icon type="clock-circle" *ngIf="node.ephemeral" nz-tooltip
-                                     [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate"></i>
+        <div fxLayout="column">
+          <div>{{node.zoneid | placeName | i18n}}</div>
+          <div>X: {{node.x}}, Y: {{node.y}}</div>
+          <div>
+            {{getNodeSpawns(node)}} <i nz-icon type="clock-circle" *ngIf="node.ephemeral" nz-tooltip
+                                       [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate"></i>
+          </div>
+          <ng-container *ngIf="getNodeSpawns(node) !== ''">
+            <div *ngIf="(generateAlarm(node) | alarmDisplay | async) as alarm" [class.spawned-timer]="alarm.spawned"
+                 [class.played-timer]="alarm.played">
+              {{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}
+            </div>
+          </ng-container>
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
             <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
               <div *ngFor="let weather of node.weathersFrom">

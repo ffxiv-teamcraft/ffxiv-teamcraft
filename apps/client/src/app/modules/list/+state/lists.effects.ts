@@ -38,7 +38,7 @@ import {
 } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, EMPTY, of, from } from 'rxjs';
+import { combineLatest, EMPTY, from, of } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { ListCompactsService } from '../list-compacts.service';
 import { List } from '../model/list';
@@ -213,13 +213,31 @@ export class ListsEffects {
     )
   );
 
-  @Effect()
+  @Effect({ dispatch: false })
   updateListInDatabase$ = this.actions$.pipe(
-    ofType(ListsActionTypes.UpdateList),
+    ofType<UpdateList>(ListsActionTypes.UpdateList),
     debounceTime(100),
-    map(action => action as UpdateList),
-    switchMap(action => this.listService.update(action.payload.$key, action.payload)),
-    switchMap(() => EMPTY)
+    switchMap(action => {
+      if (action.force) {
+        return this.listService.set(action.payload.$key, action.payload);
+      } else {
+        return this.listService.update(action.payload.$key, action.payload);
+      }
+    })
+  );
+
+  @Effect({ dispatch: false })
+  updateCompactInDatabase$ = this.actions$.pipe(
+    ofType<UpdateList>(ListsActionTypes.UpdateList),
+    filter(action => action.updateCompact),
+    debounceTime(100),
+    switchMap(action => {
+      if (action.force) {
+        return this.listCompactsService.set(action.payload.$key, action.payload.getCompact());
+      } else {
+        return this.listCompactsService.update(action.payload.$key, action.payload.getCompact());
+      }
+    })
   );
 
   @Effect()

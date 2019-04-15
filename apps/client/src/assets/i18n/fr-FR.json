@@ -139,7 +139,7 @@
     "More_available": "et {{amount}} autres...",
     "Node_content": "Contenu du point de récolte",
     "Toggle_collapse": "Ouvrir/fermer tous les groupes",
-    "Add_alarms_to_group": "Add alarms to this group",
+    "Add_alarms_to_group": "Ajouter des alarmes à ce groupe",
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
@@ -318,6 +318,8 @@
     "Add_new_contact": "Nouveau contact",
     "Save_for_all": "Sauvegarder pour tous",
     "User_not_verified": "Utilisateur non vérifié, cliquez pour vérifier",
+    "More_than_100_lists_created": "Plus de 100 listes créées",
+    "Veteran": "Vétéran",
     "VERIFICATION": {
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code : \"{{userId}}\" dans votre biographie sur Lodestone et cliquez sur le bouton ci-dessous pour valider.",
@@ -535,6 +537,8 @@
     "Snagging": "Requiert casaquage",
     "Predators": "Pêcher ces poissons avant",
     "Fish_eyes_duration": "Vos yeux de poisson doivent avoir cette durée pour obtenir le poisson. Cliquez vous changer le format.",
+    "Spawned_for": "Disparaîtra dans {{timer}}",
+    "Will_spawn_in": "Apparaît dans {{timer}}",
     "GIG_HEAD": {
       "Small": "Petite pointe de harpon",
       "Normal": "Pointe de harpon normale",
@@ -996,7 +1000,8 @@
   "GC_SUPPLY": {
     "Title": "Livraisons de grande compagnie",
     "Search": "Recherche",
-    "Generate_list": "Ajouter à une liste",
-    "Intro": "Saisissez vos niveaux et cliquez sur recherche pour commencer"
+    "Generate_list": "Créer une liste rapide",
+    "Intro": "Saisissez vos niveaux et cliquez sur recherche pour commencer",
+    "Loading_message": "Chargement des livraisons possibles, cela peut prendre jusqu'à une minute"
   }
 }

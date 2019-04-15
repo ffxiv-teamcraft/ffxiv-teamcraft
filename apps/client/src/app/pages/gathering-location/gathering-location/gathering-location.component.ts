@@ -274,11 +274,6 @@ export class GatheringLocationComponent {
 
   public addAlarm(node: any, group?: AlarmGroup): void {
     const alarm: Partial<Alarm> = this.generateAlarm(node);
-    alarm.spawns = node.spawnTimes;
-    alarm.mapId = node.mapId;
-    alarm.baits = node.baits;
-    alarm.weathers = node.weathers;
-    alarm.weathersFrom = node.weathersFrom;
     this.mapService.getMapById(alarm.mapId)
       .pipe(
         map((mapData) => {
@@ -315,11 +310,12 @@ export class GatheringLocationComponent {
     localStorage.setItem('gathering-location:compact', value.toString());
   }
 
-  private generateAlarm(node: any): Partial<Alarm> {
+  public generateAlarm(node: any): Partial<Alarm> {
     const alarm: any = {
       itemId: node.itemId,
       icon: node.icon,
       duration: node.uptime / 60,
+      mapId: node.mapId,
       zoneId: node.zoneid,
       areaId: node.areaid,
       type: node.type,
@@ -327,6 +323,7 @@ export class GatheringLocationComponent {
         x: node.x,
         y: node.y
       },
+      spawns: node.spawnTimes,
       folklore: node.folklore,
       reduction: node.reduction,
       ephemeral: node.ephemeral,
@@ -342,6 +339,9 @@ export class GatheringLocationComponent {
     }
     if (node.gig) {
       alarm.gig = node.gig;
+    }
+    if (node.baits) {
+      alarm.baits = node.baits;
     }
     return alarm;
   }

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { Vector2 } from '../../../core/tools/vector2';
 import { MapData } from '../map-data';
 import { first } from 'rxjs/operators';
+import { ListsFacade } from '../../list/+state/lists.facade';
 
 @Component({
   selector: 'app-navigation-map',
@@ -27,7 +28,9 @@ export class NavigationMapComponent implements OnInit {
   @ViewChild('container')
   public containerRef: ElementRef;
 
-  constructor(private mapService: MapService) {
+  markedAsDone = [];
+
+  constructor(private mapService: MapService, private listsFacade: ListsFacade) {
   }
 
   ngOnInit() {
@@ -43,6 +46,11 @@ export class NavigationMapComponent implements OnInit {
       x: positionPercents.x * this.containerRef.nativeElement.offsetWidth / 100,
       y: positionPercents.y * this.containerRef.nativeElement.offsetHeight / 100
     };
+  }
+
+  markStepAsDone(step: NavigationStep): void {
+    this.markedAsDone.push(step.itemId);
+    this.listsFacade.setItemDone(step.itemId, step.iconid, false, step.item_amount, null, step.total_item_amount);
   }
 
 }

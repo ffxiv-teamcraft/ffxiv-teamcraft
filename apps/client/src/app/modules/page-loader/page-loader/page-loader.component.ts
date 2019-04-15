@@ -10,4 +10,7 @@ export class PageLoaderComponent {
   @Input()
   loading = true;
 
+  @Input()
+  message: string;
+
 }

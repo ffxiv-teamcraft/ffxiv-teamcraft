@@ -126,13 +126,8 @@ export class MapService {
     // First of all, compile all steps we have available
     let availablePoints: NavigationStep[] =
       objectives.map(point => ({
-        x: point.x,
-        y: point.y,
+        ...point,
         isTeleport: false,
-        name: point.name,
-        iconid: point.iconid,
-        item_amount: point.item_amount,
-        type: point.type
       }));
     const availableAetherytesPoints: NavigationStep[] = availableAetherytes.map(aetheryte => ({
       x: aetheryte.x,

@@ -41,6 +41,8 @@ export class ProfileEditorComponent {
 
   gearSets$ = this.authFacade.gearSets$;
 
+  now = Math.floor(Date.now() / 1000);
+
   constructor(private authFacade: AuthFacade, private dialog: NzModalService, private translate: TranslateService,
               private userPicker: UserPickerService) {
   }

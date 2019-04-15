@@ -180,8 +180,8 @@ export class ListsFacade {
     gtag('send', 'event', 'List', 'deletion');
   }
 
-  updateList(list: List, updateCompact = false): void {
-    this.store.dispatch(new UpdateList(list, updateCompact));
+  updateList(list: List, updateCompact = false, force = false): void {
+    this.store.dispatch(new UpdateList(list, updateCompact, force));
   }
 
   loadTeamLists(teamId: string): void {

@@ -48,4 +48,4 @@
 <app-fullpage-message *ngIf="pristine" height="300px">
   {{'GC_SUPPLY.Intro' | translate}}
 </app-fullpage-message>
-<app-page-loader *ngIf="loading"></app-page-loader>
+<app-page-loader *ngIf="loading" [message]="'GC_SUPPLY.Loading_message' | translate"></app-page-loader>

@@ -23,10 +23,21 @@
   </div>
   <nz-list [nzHeader]="'NAVIGATION.Steps' | translate" [nzDataSource]="path" [nzRenderItem]="stepTemplate">
     <ng-template #stepTemplate let-step>
-      <nz-list-item
-        [nzContent]="step.type !== undefined?(('NAVIGATION.STEP.'+step.type) | translate: {amount: step.item_amount}):null">
+      <nz-list-item [nzContent]="rowContent">
         <nz-list-item-meta [nzAvatar]="avatar" nzDescription="X: {{step.x}} - Y: {{step.y}}"
                            [nzTitle]="step.name | i18n">
+          <ng-template #rowContent>
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+              <div *ngIf="step.type !== undefined && markedAsDone.indexOf(step.itemId) === -1">
+                {{('NAVIGATION.STEP.' + step.type) | translate: { amount: step.item_amount } }}
+              </div>
+              <button nz-button nzShape="circle" nzType="primary" nzSize="small"
+                      *ngIf="step.type !== undefined && markedAsDone.indexOf(step.itemId) === -1"
+                      (click)="markStepAsDone(step)">
+                <i nz-icon type="check"></i>
+              </button>
+            </div>
+          </ng-template>
           <ng-template #avatar>
             <img src="./assets/icons/Aetheryte.png" alt="" *ngIf="step.isTeleport">
             <img class="item-icon" src="{{step.iconid | icon}}" alt=""

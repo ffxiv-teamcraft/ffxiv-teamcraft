@@ -182,7 +182,7 @@ export class List extends DataWithPermissions {
     const array = excludeFinalItems ? this.items : this.items.concat(this.finalItems);
     return array.find(row => {
       let matches = row.id === id || row.id === +id || (row.$key !== undefined && row.$key === id);
-      if (recipeId !== undefined) {
+      if (recipeId) {
         matches = matches && row.recipeId === recipeId;
       }
       return matches;

@@ -318,6 +318,8 @@
     "Add_new_contact": "New contact",
     "Save_for_all": "Save for all",
     "User_not_verified": "User not verified, click to verify user",
+    "More_than_100_lists_created": "More than 100 lists created",
+    "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "Character verification",
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
@@ -535,6 +537,8 @@
     "Snagging": "Requires snagging",
     "Predators": "Fish these fish before",
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
+    "Spawned_for": "Will despawn in {{timer}}",
+    "Will_spawn_in": "Will spawn in {{timer}}",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
       "Normal": "Normal Gig Head",
@@ -996,7 +1000,8 @@
   "GC_SUPPLY": {
     "Title": "Grand Company Supplies",
     "Search": "Search",
-    "Generate_list": "Add to a list",
-    "Intro": "Input your levels and click search to get started"
+    "Generate_list": "Create a quick list",
+    "Intro": "Input your levels and click search to get started",
+    "Loading_message": "Loading possible deliveries, this can take up to a minute"
   }
 }

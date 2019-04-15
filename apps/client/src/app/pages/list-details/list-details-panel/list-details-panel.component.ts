@@ -123,6 +123,8 @@ export class ListDetailsPanelComponent implements OnChanges {
                 y: partial.y,
                 name: this.l12n.getItem(item.id),
                 iconid: item.icon,
+                itemId: item.id,
+                total_item_amount: item.amount,
                 item_amount: item.amount_needed - item.done,
                 type: partial.type
               };
