@@ -318,6 +318,8 @@
     "Add_new_contact": "新联系人",
     "Save_for_all": "保存所有",
     "User_not_verified": "用户未验证, 单击以验证用户",
+    "More_than_100_lists_created": "More than 100 lists created",
+    "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "验证码验证",
       "Guide": "若要验证您的帐户，请将此代码“{{userId}}”粘贴到你的 Lodestone 个人资料中，然后单击下面的按钮。",
@@ -535,6 +537,8 @@
     "Snagging": "需要钓组",
     "Predators": "需要前置鱼",
     "Fish_eyes_duration": "你的鱼眼需要持续这个时间才能钓上该鱼。点击改变显示格式。",
+    "Spawned_for": "Will despawn in {{timer}}",
+    "Will_spawn_in": "Will spawn in {{timer}}",
     "GIG_HEAD": {
       "Small": "小型渔叉尖",
       "Normal": "中型渔叉尖",
@@ -996,7 +1000,8 @@
   "GC_SUPPLY": {
     "Title": "军队筹备",
     "Search": "搜索",
-    "Generate_list": "添加到列表",
-    "Intro": "输入等级并点击搜索"
+    "Generate_list": "Create a quick list",
+    "Intro": "输入等级并点击搜索",
+    "Loading_message": "Loading possible deliveries, this can take up to a minute"
   }
 }
