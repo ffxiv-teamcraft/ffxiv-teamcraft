@@ -70,7 +70,7 @@
     "Not_found": "没有发现工坊或者您没有权限访问",
     "Shared_workshops": "有写入权限的工坊",
     "Rename": "重命名工坊",
-    "Add_lists": "Add lists"
+    "Add_lists": "新建列表"
   },
   "ABOUT": {
     "title": "关于",
@@ -135,11 +135,11 @@
     "Add_note": "增加注释",
     "Volume": "音量",
     "Macro_copied": "复制宏到剪贴板",
-    "Open_overlay": "Open overlay",
-    "More_available": "and {{amount}} more...",
-    "Node_content": "Node content",
-    "Toggle_collapse": "Toggle groups collapse",
-    "Add_alarms_to_group": "Add alarms to this group",
+    "Open_overlay": "打开弹窗",
+    "More_available": "添加 {{amount}} 个",
+    "Node_content": "采集点物品",
+    "Toggle_collapse": "折叠/展开分组",
+    "Add_alarms_to_group": "增加闹钟到本组",
     "CUSTOM": {
       "Title": "添加自定义闹钟",
       "Name": "名称",
@@ -205,7 +205,7 @@
   "Anonymous_Warning": "你应该创建一个账号来避免丢失你的清单并开启更多的功能，比如自定义过滤器",
   "Game_Term/DoH": "能工巧匠",
   "Game_Term/DoL": "大地使者",
-  "MIN/BTN": "Miner / Botanist",
+  "MIN/BTN": "采矿 / 园艺",
   "Game_Term/FSH": "捕鱼人",
   "Reduction": "精炼",
   "Upgrade_list": "用最新的app圣洁重新创建清单",
@@ -236,9 +236,9 @@
   "LodestoneId": "LodestoneID",
   "List_forked": "列表已复制到您的账户",
   "List_fork": "将此列表复制到您的帐户",
-  "List_not_found": "List not found or you don't have access to it",
+  "List_not_found": "没有找到列表或者您没有权限访问",
   "Requirements_for_craft": "查看要求",
-  "Zone_breakdown": "Area breakdown",
+  "Zone_breakdown": "区域视图",
   "Timer_options": "闹钟选项",
   "Early_by": "提前 (艾欧泽亚小时)",
   "Sound": "声音",
@@ -250,7 +250,7 @@
   "Email_not_found": "没有找到该电子邮件地址",
   "Email_sent": "邮件已发送，指示更改您的密码。",
   "ALARM": {
-    "Spawned": "{{itemName}} will spawn !",
+    "Spawned": "{{itemName}} 即将出现",
     "See_on_map": "坐标",
     "Note": "备注"
   },
@@ -297,8 +297,8 @@
     "Nickname_used": "昵称已被使用",
     "No_nickname_warning": "请到设置页面设置一个昵称以使用赞助人专属功能",
     "Show_devtools": "显示DevTools",
-    "Clear_cache": "Clear cache (will restart the app)",
-    "Enable_item_tags": "Enable item tags",
+    "Clear_cache": "清除缓存 (将重新启动应用程序)",
+    "Enable_item_tags": "启用物品标签",
     "COPY_TYPE": {
       "Classic": "复制项目名称",
       "Isearch": "复制/isearch宏"
@@ -313,25 +313,25 @@
     "View_on_apkallu_falls": "在Apkallu Falls中打开",
     "Masterbooks": "秘籍",
     "Patreon_supporter": "Patreon支持者",
-    "Patreon_features": "Patreon supporter features",
+    "Patreon_features": "Patreon 支持者功能",
     "Contacts": "联系人",
     "Add_new_contact": "新联系人",
     "Save_for_all": "保存所有",
     "User_not_verified": "用户未验证, 单击以验证用户",
     "VERIFICATION": {
       "Title": "验证码验证",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
-      "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
-      "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
-      "Validate": "Validate"
+      "Guide": "若要验证您的帐户，请将此代码“{{userId}}”粘贴到你的 Lodestone 个人资料中，然后单击下面的按钮。",
+      "Success": "角色已验证！你现在可以关闭该窗口。现在你可以从你的 Lodestone 资料中移除验证代码了。",
+      "Error": "无法在你的资料中找到代码。请确认你已经粘贴并保存，然后等待约 30 秒后重试。",
+      "Validate": "验证"
     }
   },
   "LISTS": {
-    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
+    "Needs_verification": "请验证您的角色，以确认是否有权访问共享到部队的列表",
     "Regenerate_all": "重新生成列表",
     "Regenerated_all": "您的列表现已更新",
     "Merge_lists": "合并清单",
-    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
+    "Merge_lists_warning": "此处未列出过长的列表，因为由于数据库限制，无法合并太大的列表。",
     "Lists_merged": "清单合并成功！",
     "Shared_lists": "您具有写入权限的列表",
     "Add_selection": "添加选择项目到列表",
@@ -341,11 +341,11 @@
     "Lists_search_placeholder": "搜索列表...",
     "Add_to_a_list": "添加到列表",
     "Please_pick_recipe": "请选择一个配方",
-    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Import_description": "选择你想制作这个物品的配方，然后选择一个列表。这些物品将被添加到该列表，然后你会被带到列表页。",
     "Delete_after_merge": "合并后删除原始列表",
     "IMPORT": {
       "Title": "从外部网站导入列表",
-      "Paste_link_step_title": "Paste your link to the external list",
+      "Paste_link_step_title": "粘贴您的链接到外部列表",
       "Paste_link_step_placeholder": "列表链接",
       "Link_not_supported": "不支持此页面。",
       "Links_supported": "支持的链接: {{links}}",
@@ -362,7 +362,7 @@
     "Regenerate": "更新列表到最新的 Teamcraft 版本",
     "Rename": "重命名列表",
     "Copied_x_times": "复制 {{count}} 次",
-    "Enable_crystals_tracking": "Enable crystals tracking",
+    "Enable_crystals_tracking": "启用水晶跟踪",
     "Always_show_inventory": "始终显示库存 (在小屏幕上禁用, < 600px)",
     "Copy_as_text": "复制为文本",
     "Copy_list_as_text": "将整个列表复制为文本",
@@ -382,8 +382,8 @@
     },
     "BUTTONS": {
       "Add_link_description": "为此列表创建自定义链接",
-      "Create_template_description": "Create a template link for this list, which will create a copy of the list for whoever opens it",
-      "Copy_template_url_description": "Copy the template link for this list, which will create a copy of the list for whoever opens it",
+      "Create_template_description": "复制该列表的模板链接，打开模板的人会复制该列表到自己的帐号。",
+      "Copy_template_url_description": "为该列表的创建模板链接，打开模板的人会复制该列表到自己的帐号。",
       "Share_description": "将共享链接复制到剪贴板",
       "Open": "打开列表",
       "Open_description": "访问列表",
@@ -585,7 +585,7 @@
     "List_tooltip": "Permission level for everyone: {{level}}"
   },
   "WIKI": {
-    "Title": "维基百科",
+    "Title": "百科",
     "Not_found_in_current_lang": "此页面没有您当前使用的语言，将显示英文版本",
     "Not_found": "找不到页面"
   },
@@ -770,10 +770,10 @@
     "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "期望出售一切",
     "Autofill_panel_prices": "基于市场物价填充售价",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
+    "Autofill_panel_prices_warning": "本操作为耗时操作，大约需要 {{time}} 秒来完成，确定吗？",
     "Copy_earnings_as_text": "将内容复制为文本",
     "Content_copied": "已将内容复制到剪贴板",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)",
+    "Cheaper_at_vendor": "NPC 卖得更便宜 ({{price}} gil)",
     "Copy_panel_as_text": "复制为文本"
   },
   "LEVEQUESTS": {
@@ -900,7 +900,7 @@
     "Mark_as_not_done": "将此物品标记为未完成",
     "Create_list": "创建一个列表以完成这个页面",
     "Folklore": "Regional Folklore",
-    "Timed": "Timed",
+    "Timed": "限时",
     "Weather_dependant": "Only with some weathers",
     "View_on_ff14angler": "More details on ff14angler",
     "Required_for_achievement": "Required for the achievements",
