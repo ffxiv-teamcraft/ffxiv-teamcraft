@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.10"></a>
+## [5.2.10](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.9...v5.2.10) (2019-04-15)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with alarms page not loading ([6d3ad18](https://github.com/Supamiu/ffxiv-teamcraft/commit/6d3ad18))
+
+
+
 <a name="5.2.9"></a>
 ## [5.2.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.8...v5.2.9) (2019-04-15)
 
