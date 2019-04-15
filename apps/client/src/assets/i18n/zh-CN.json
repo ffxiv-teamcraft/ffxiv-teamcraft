@@ -394,8 +394,8 @@
   },
   "LIST_DETAILS": {
     "List_finished": "列表已完成",
-    "Public_list_description": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
-    "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
+    "Public_list_description": "将该列表设为公开；<b>分享列表不需要将其设为公开</b>。",
+    "Missing_tags_before_button": "此列表已公开为社区列表，但它没有标签，请添加标签 ",
     "Missing_tags_after_button": " 按钮",
     "Add_remove_amount": "添加/移除给定的金额",
     "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
