@@ -160,7 +160,7 @@ export class CreateOptimisticListCompact implements Action {
 export class UpdateList implements Action {
   readonly type = ListsActionTypes.UpdateList;
 
-  constructor(public readonly payload: List, public readonly updateCompact = false) {
+  constructor(public readonly payload: List, public readonly updateCompact = false, public force = false) {
   }
 }
 

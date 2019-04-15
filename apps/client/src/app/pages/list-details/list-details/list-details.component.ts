@@ -193,7 +193,7 @@ export class ListDetailsComponent extends TeamcraftComponent implements OnInit, 
     if (team.webhook !== undefined) {
       this.discordWebhookService.notifyListRemovedFromTeam(team, list);
     }
-    this.listsFacade.updateList(list);
+    this.listsFacade.updateList(list, true, true);
   }
 
   renameList(list: List): void {
