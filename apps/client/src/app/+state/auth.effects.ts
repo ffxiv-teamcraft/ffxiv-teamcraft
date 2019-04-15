@@ -56,13 +56,12 @@ export class AuthEffects {
         return new LoginAsAnonymous();
       } else {
         const payload: Partial<AuthState> = {
-          uid: authState.uid,
-          createdAt: new Date(authState.metadata.creationTime)
+          uid: authState.uid
         };
         if (authState.isAnonymous) {
           return new LoggedInAsAnonymous(authState.uid);
         }
-        return new Authenticated(payload, payload.uid);
+        return new Authenticated(payload, payload.uid, new Date(authState.metadata.creationTime));
       }
     })
   );
@@ -107,7 +106,11 @@ export class AuthEffects {
   fetchUserOnAuthenticated$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated),
     switchMap((action: Authenticated) => this.userService.get(action.uid).pipe(
-      filter(user => user && user.$key !== undefined)
+      filter(user => user && user.$key !== undefined),
+      map(user => {
+        user.createdAt = action.createdAt;
+        return user;
+      })
     )),
     catchError((error) => {
       if (error.message.toLowerCase().indexOf('not found') > -1) {

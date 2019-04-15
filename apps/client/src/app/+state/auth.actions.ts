@@ -58,7 +58,7 @@ export class GetUser implements Action {
 export class Authenticated implements Action {
   readonly type = AuthActionTypes.Authenticated;
 
-  constructor(public payload: Partial<AuthState>, public uid: string) {
+  constructor(public payload: Partial<AuthState>, public uid: string, public createdAt?: Date) {
   }
 }
 

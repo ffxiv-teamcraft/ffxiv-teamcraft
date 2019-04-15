@@ -39,6 +39,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         if (user === null) {
           return of(new TeamcraftUser());
         }
+        user.createdAt = new Date(user.createdAt);
         if (user.patreonToken === undefined) {
           user.patron = false;
           return of(user);

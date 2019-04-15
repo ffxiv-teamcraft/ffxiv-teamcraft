@@ -24,8 +24,6 @@ export class ProfileEditorComponent {
 
   mainCharacter$ = this.authFacade.mainCharacterEntry$;
 
-  creationDate$ = this.authFacade.creationDate$;
-
   characters$ = combineLatest(this.authFacade.characters$, this.authFacade.user$).pipe(
     map(([chars, user]) => {
       return chars

@@ -56,11 +56,6 @@ const getUser = createSelector(
   (state: AuthState) => state.user
 );
 
-const getCreationDate = createSelector(
-  getAuthState,
-  (state: AuthState) => state.createdAt
-);
-
 export const authQuery = {
   getLoaded,
   getMainCharacter,
@@ -68,6 +63,5 @@ export const authQuery = {
   getLoggedIn,
   getUser,
   getUserId,
-  getCharacters,
-  getCreationDate
+  getCharacters
 };

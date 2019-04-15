@@ -5,6 +5,7 @@ import { Character } from '@xivapi/angular-client';
 import { DefaultConsumables } from './default-consumables';
 
 export class TeamcraftUser extends DataModel {
+  createdAt: Date;
   defaultLodestoneId: number;
   // FC of the character currently selected
   currentFcId: string;
@@ -34,4 +35,6 @@ export class TeamcraftUser extends DataModel {
   gatheringLogProgression: number[] = [];
 
   itemTags: { id: number, tag: string }[] = [];
+
+  stats: any = {};
 }
