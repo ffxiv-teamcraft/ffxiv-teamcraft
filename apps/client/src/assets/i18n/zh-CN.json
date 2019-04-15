@@ -578,9 +578,9 @@
     "User_id_tip": "用户ID可以在右下角的个人资料页面中找到",
     "Saving": "保存权限",
     "No_anonymous": "您需要一个账户来管理权限",
-    "Propagate_changes": "Propagate permissions to lists inside the workshop",
-    "Propagate_changes_done": "Changes propagated to lists inside the workshop",
-    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
+    "Propagate_changes": "将权限应用到工房内的列表",
+    "Propagate_changes_done": "权限已应用到工房内的列表",
+    "Team_notice": "与本列表关联的团队自动获得参加权限",
     "Default_permission_level": "默认权限级别",
     "List_tooltip": "所有人的权限：{{level}}"
   },
@@ -592,7 +592,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "固定提示音",
     "Starting_echo_number": "提示音",
-    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Break_on_reclaim": "在可能无法回收的地方拆分宏",
     "Include_consumables_notification": "包含的消耗品提示",
     "Consumable_notification": "使用 {{buffs}}",
     "Extra_wait": "单独延迟",
@@ -673,7 +673,7 @@
         "NOT_SPECIALIST": "非专家",
         "TEALESS": "无药品",
         "FOODLESS": "无食品",
-        "MAKERS_MARK": "Maker's Mark",
+        "MAKERS_MARK": "坚实的心得",
         "MUSCLE_MEMORY": "坚信"
       }
     },
@@ -904,64 +904,64 @@
     "Weather_dependant": "需要天气",
     "View_on_ff14angler": "ff14angler 上的更多详情",
     "Required_for_achievement": "成就所需",
-    "Select_spot": "Select a spot to see its details",
+    "Select_spot": "选择地点以查看其详情",
     "PAGE": {
-      "Master_recipes": "Master recipes ({{number}})",
-      "Housing_items": "Housing({{number}})",
+      "Master_recipes": "秘籍 ({{number}})",
+      "Housing_items": "房屋 ({{number}})",
       "Others": "其他",
       "Dyes": "染料",
-      "Other_master_recipes": "Other Master Recipes"
+      "Other_master_recipes": "秘籍：其它"
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more !"
+    "Loading_data": "正在载入物品、技能和其它信息"
   },
   "GIVEAWAY": {
     "Discord_1K": {
-      "Title": "1000 Discord members giveaway !",
-      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+      "Title": "庆祝 1000 Discord 成员！",
+      "Description": "点击这里前往注册庆祝 Discord 1000 成员的抽奖，赢取《FINAL FANTASY XIV: Shadowbringers Collector's Edition》"
     }
   },
   "CUSTOM_ITEMS": {
-    "Title": "Custom items",
-    "New_item": "Create new custom item",
-    "New_folder": "Create new folder",
-    "Rename_folder": "Rename folder",
-    "Import_items": "Import custom items",
-    "Save": "Save item",
-    "Details": "Item details",
-    "Export_item": "Export item",
-    "Export_items": "Export multiple items",
-    "Add_to_list": "Add to a list",
-    "No_items": "You have no custom items",
+    "Title": "自定义物品",
+    "New_item": "新建自定义物品",
+    "New_folder": "新建文件夹",
+    "Rename_folder": "重命名",
+    "Import_items": "导入自定义物品",
+    "Save": "保存物品",
+    "Details": "物品详情",
+    "Export_item": "导出物品",
+    "Export_items": "批量导出物品",
+    "Add_to_list": "添加到列表",
+    "No_items": "没有自定义物品",
     "DETAILS": {
-      "Level": "Level",
-      "None": "none",
-      "Stars": "Stars",
-      "Requirements": "Requirements",
-      "Add_requirement": "Add requirement",
-      "Yields": "Yields",
-      "Name": "Name",
-      "ID": "Item ID",
+      "Level": "等级",
+      "None": "无",
+      "Stars": "星级",
+      "Requirements": "素材",
+      "Add_requirement": "添加素材",
+      "Yields": "制作个数",
+      "Name": "名称",
+      "ID": "物品 ID",
       "CRAFT": {
-        "Title": "Crafted by",
-        "Job": "Job",
-        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+        "Title": "制作方法",
+        "Job": "职业",
+        "No_requirement_warning": "没有素材设置，意味着你将使用 0 个素材制作物品。"
       },
       "GATHERING": {
-        "Title": "Gathered by",
-        "Type": "Node type",
-        "Folklore": "Folklore",
-        "Slot": "Slot"
+        "Title": "采集方法",
+        "Type": "采集类型",
+        "Folklore": "传承录",
+        "Slot": "栏位"
       },
       "ALARMS": {
-        "Title": "Alarms"
+        "Title": "闹钟"
       },
       "VENDORS": {
-        "Title": "Vendors",
-        "Npc_name": "NPC name",
-        "Price": "Price",
-        "Delete_vendor": "Delete vendor"
+        "Title": "商人",
+        "Npc_name": "NPC",
+        "Price": "价格",
+        "Delete_vendor": "删除商人"
       },
       "TRADES": {
         "Title": "交易来源",
