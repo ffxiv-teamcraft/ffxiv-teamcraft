@@ -318,6 +318,8 @@
     "Add_new_contact": "新しい連絡先",
     "Save_for_all": "全て保存する",
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
+    "More_than_100_lists_created": "More than 100 lists created",
+    "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "キャラクター認証",
       "Guide": "アカウントの認証のために Lodestone Profile Biographyに次のコードを貼り付けて下さい。 \"{{userId}}\" そして、下のボタンを押して下さい。",
@@ -535,6 +537,8 @@
     "Snagging": "引掛釣りが必要",
     "Predators": "前にこの魚を釣る",
     "Fish_eyes_duration": "この魚を釣るためには、持続時間ほどのフィッシュアイが必要とします。形式を変更するにはクリックして下さい。",
+    "Spawned_for": "Will despawn in {{timer}}",
+    "Will_spawn_in": "Will spawn in {{timer}}",
     "GIG_HEAD": {
       "Small": "スモールギグヘッド",
       "Normal": "ミドルギグヘッド",
@@ -996,7 +1000,8 @@
   "GC_SUPPLY": {
     "Title": "調達任務",
     "Search": "検索",
-    "Generate_list": "リストに追加",
-    "Intro": "レベルを入力し、検索をクリックして開始します。"
+    "Generate_list": "Create a quick list",
+    "Intro": "レベルを入力し、検索をクリックして開始します。",
+    "Loading_message": "Loading possible deliveries, this can take up to a minute"
   }
 }
