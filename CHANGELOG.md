@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.9"></a>
+## [5.2.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.8...v5.2.9) (2019-04-15)
+
+
+### Bug Fixes
+
+* **teams:** better fix for cases where team doesn't detach properly ([155df8b](https://github.com/Supamiu/ffxiv-teamcraft/commit/155df8b))
+
+
+### Features
+
+* **gathering-location:** added timer display to search results ([9b19476](https://github.com/Supamiu/ffxiv-teamcraft/commit/9b19476))
+* **gc-supply:** GC supply page now generated a quicklist directly ([38d62c9](https://github.com/Supamiu/ffxiv-teamcraft/commit/38d62c9))
+* **list-row:** added more details to the gatheredBy details box for timed nodes ([8796904](https://github.com/Supamiu/ffxiv-teamcraft/commit/8796904))
+* **navigation:** you can now check items as done from navigation popup ([84480a4](https://github.com/Supamiu/ffxiv-teamcraft/commit/84480a4)), closes [#510](https://github.com/Supamiu/ffxiv-teamcraft/issues/510)
+* **profile:** badges system for a sense of pride and accomplishment ([199278b](https://github.com/Supamiu/ffxiv-teamcraft/commit/199278b)), closes [#322](https://github.com/Supamiu/ffxiv-teamcraft/issues/322)
+
+
+
 <a name="5.2.8"></a>
 ## [5.2.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.7...v5.2.8) (2019-04-14)
 
