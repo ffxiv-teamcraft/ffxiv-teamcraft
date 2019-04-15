@@ -318,6 +318,8 @@
     "Add_new_contact": "Nouveau contact",
     "Save_for_all": "Sauvegarder pour tous",
     "User_not_verified": "Utilisateur non vérifié, cliquez pour vérifier",
+    "More_than_100_lists_created": "More than 100 lists created",
+    "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code : \"{{userId}}\" dans votre biographie sur Lodestone et cliquez sur le bouton ci-dessous pour valider.",
@@ -535,6 +537,8 @@
     "Snagging": "Requiert casaquage",
     "Predators": "Pêcher ces poissons avant",
     "Fish_eyes_duration": "Vos yeux de poisson doivent avoir cette durée pour obtenir le poisson. Cliquez vous changer le format.",
+    "Spawned_for": "Will despawn in {{timer}}",
+    "Will_spawn_in": "Will spawn in {{timer}}",
     "GIG_HEAD": {
       "Small": "Petite pointe de harpon",
       "Normal": "Pointe de harpon normale",
@@ -996,7 +1000,8 @@
   "GC_SUPPLY": {
     "Title": "Livraisons de grande compagnie",
     "Search": "Recherche",
-    "Generate_list": "Ajouter à une liste",
-    "Intro": "Saisissez vos niveaux et cliquez sur recherche pour commencer"
+    "Generate_list": "Create a quick list",
+    "Intro": "Saisissez vos niveaux et cliquez sur recherche pour commencer",
+    "Loading_message": "Loading possible deliveries, this can take up to a minute"
   }
 }
