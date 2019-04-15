@@ -562,11 +562,11 @@
   },
   "PERMISSIONS": {
     "Read": "查看",
-    "Read_description": "The ability to see the list",
+    "Read_description": "查看列表的权限",
     "Participate": "参与",
-    "Participate_description": "This gives you permission to tick items and modify amounts done",
+    "Participate_description": "这将授予你标记物品完成、修改数量的权限",
     "Write": "写入",
-    "Write_description": "This gives you the permission to add items, add lists (for workshops)",
+    "Write_description": "这将授予你添加物品和列表的权限",
     "Title": "权限管理",
     "Everyone": "所有人",
     "You": "自己",
@@ -582,7 +582,7 @@
     "Propagate_changes_done": "Changes propagated to lists inside the workshop",
     "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
     "Default_permission_level": "默认权限级别",
-    "List_tooltip": "Permission level for everyone: {{level}}"
+    "List_tooltip": "所有人的权限：{{level}}"
   },
   "WIKI": {
     "Title": "百科",
