@@ -775,7 +775,7 @@
     "Expect_to_sell_everything": "期望出售一切",
     "Autofill_panel_prices": "基于市场物价填充售价",
     "Autofill_panel_prices_warning": "本操作为耗时操作，大约需要 {{time}} 秒来完成，确定吗？",
-    "Copy_earnings_as_text": "将内容复制为文本",
+    "Copy_earnings_as_text": "复制为文本",
     "Content_copied": "已将内容复制到剪贴板",
     "Cheaper_at_vendor": "NPC 卖得更便宜 ({{price}} gil)",
     "Copy_panel_as_text": "复制为文本"
@@ -860,7 +860,7 @@
     "Unit_price": "单价",
     "History": "历史记录",
     "Purchase_date": "日期",
-    "More_on_mogboard": "mogboard上更多详情"
+    "More_on_mogboard": "去莫古站查看详情"
   },
   "COMMENTS": {
     "Title": "评论"
@@ -877,10 +877,10 @@
   },
   "SEARCH_INTRO": {
     "Slogan": "制作，分享，贡献",
-    "Lists_created_counter": "使用FFXIV Teamcraft创建了{{amount}} 个列表",
-    "Support_patreon": "在patreon支持我们",
+    "Lists_created_counter": "使用 FFXIV Teamcraft 创建了{{amount}} 个列表",
+    "Support_patreon": "在 Patreon 上支持我们",
     "Donation_button": "进行一次性捐赠",
-    "Buy_a_tshirt": "购买Teamcraft的T恤",
+    "Buy_a_tshirt": "购买 Teamcraft 的T恤",
     "Features_header": "开始吧！",
     "DESCRIPTION": {
       "Lists": "创建列表，查看所有原料，与你的朋友分享，从这里开始！只需要搜索并筛选一个物品，然后开始制造。",
