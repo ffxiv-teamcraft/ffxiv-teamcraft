@@ -906,6 +906,7 @@
     "Mark_as_done_external": "Mark this item as done inside the log",
     "Mark_as_not_done": "Mark this item as not done",
     "Create_list": "Create a list to complete this page",
+    "Create_list_limited": "Create a list to complete this page (50 items max)",
     "Folklore": "Regional Folklore",
     "Timed": "Timed",
     "Weather_dependant": "Only with some weathers",

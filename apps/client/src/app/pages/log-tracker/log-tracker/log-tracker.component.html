@@ -28,6 +28,9 @@
                   <button nz-button (click)="createList(page)">
                     <i nz-icon type="check"></i> {{'LOG_TRACKER.Create_list' | translate}}
                   </button>
+                  <button nz-button (click)="createList(page, 50)">
+                    <i nz-icon type="check"></i> {{'LOG_TRACKER.Create_list_limited' | translate}}
+                  </button>
                   <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
                     <nz-switch [(ngModel)]="hideCompleted"></nz-switch>
                     <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
