@@ -185,7 +185,7 @@
   "Desynth": "分解",
   "Vendors": "商人",
   "Open": "打开",
-  "Trade": "交易",
+  "Trade": "兑换",
   "Filters": "筛选",
   "Check_all": "全选",
   "Uncheck_all": "全不选",
@@ -285,8 +285,8 @@
     "Downloading_update": "正在下载更新",
     "No_update_available": "没有可用的更新",
     "Install_update": "安装更新",
-    "Preferred_copy_type": "首选赋值类型",
-    "Auto_open_in_desktop": "启动桌面应用时打开链接",
+    "Preferred_copy_type": "默认复制类型",
+    "Auto_open_in_desktop": "启动客户端时打开链接",
     "Account": "帐户",
     "Reset_password": "重置密码",
     "Reset_password_warning": "您确定要重置密码吗？",
@@ -300,7 +300,7 @@
     "Clear_cache": "清除缓存 (将重新启动应用程序)",
     "Enable_item_tags": "启用物品标签",
     "COPY_TYPE": {
-      "Classic": "复制项目名称",
+      "Classic": "复制物品名称",
       "Isearch": "复制/isearch宏"
     }
   },
@@ -968,10 +968,10 @@
         "Delete_vendor": "删除商人"
       },
       "TRADES": {
-        "Title": "交易来源",
+        "Title": "兑换来源",
         "Npc_name": "NPC",
         "Shop_name": "商店名",
-        "Delete_trade": "删除购买",
+        "Delete_trade": "删除兑换",
         "Trade_details": "购买详情",
         "Add_currency": "增加货币"
       },
