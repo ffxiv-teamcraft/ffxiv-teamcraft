@@ -440,8 +440,8 @@
         "ADD_TO_ANOTHER_LIST": "Ajouter à une autre liste",
         "REQUIREMENTS": "Prérequis",
         "REMOVE_ITEM": "Supprimer l’élément de la liste",
-        "ADD_TAG": "Add tag to item",
-        "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
+        "ADD_TAG": "Ajouter un tag à l'élément",
+        "MARK_AS_DONE_IN_LOG": "Marquer comme fait dans le livre de recettes"
       }
     },
     "LAYOUT": {
@@ -903,17 +903,17 @@
     "Title": "Carnets",
     "Mark_page_as_done": "Marquer cette page comme terminée",
     "Mark_as_done": "Marquer comme fait",
-    "Mark_as_done_external": "Mark this item as done inside the log",
+    "Mark_as_done_external": "Marquer comme fait dans le livre de recettes",
     "Mark_as_not_done": "Marquer comme non fait",
     "Create_list": "Créer une liste pour compléter cette page",
-    "Create_list_limited": "Create a list to complete this page (50 items max)",
+    "Create_list_limited": "Créer une liste pour compléter cette page (50 objets max)",
     "Folklore": "Légendes locales",
     "Timed": "Timé",
     "Weather_dependant": "Uniquement avec certains climats",
     "View_on_ff14angler": "Plus de détails sur ff14angler",
     "Required_for_achievement": "Requis pour les haut faits",
     "Select_spot": "Sélectionnez un point de pêche pour en voir les détails",
-    "Hide_completed": "Hide completed recipes",
+    "Hide_completed": "Masquer les éléments complétés",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
