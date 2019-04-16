@@ -1002,6 +1002,6 @@
     "Search": "검색",
     "Generate_list": "빠른 목록 만들기",
     "Intro": "시작하기 위해 레벨을 입력하고 검색을 클릭하세요",
-    "Loading_message": "Loading possible deliveries, this can take up to a minute"
+    "Loading_message": "가능한 조달품을 불러오는 중... 시간이 조금 소요됩니다"
   }
 }
