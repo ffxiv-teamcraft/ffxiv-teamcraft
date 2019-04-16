@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.11"></a>
+## [5.2.11](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.10...v5.2.11) (2019-04-16)
+
+
+### Features
+
+* **log-tracker:** added a menu item on item rows to mark item as done in the log ([80f7770](https://github.com/Supamiu/ffxiv-teamcraft/commit/80f7770))
+* **log-tracker:** you can now generate a list for the 50 first uncompleted items ([141f39e](https://github.com/Supamiu/ffxiv-teamcraft/commit/141f39e))
+* **log-tracker:** you can now hide completed recipes ([7ed8d95](https://github.com/Supamiu/ffxiv-teamcraft/commit/7ed8d95))
+
+
+
 <a name="5.2.10"></a>
 ## [5.2.10](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.9...v5.2.10) (2019-04-15)
 
