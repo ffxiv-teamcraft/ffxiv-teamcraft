@@ -81,7 +81,8 @@ function createWindow() {
     show: false,
     backgroundColor: '#000',
     frame: true,
-    icon: `file://${BASE_APP_PATH}/assets/app-icon.png`
+    icon: `file://${BASE_APP_PATH}/assets/app-icon.png`,
+    title: 'FFXIV Teamcraft'
   };
   Object.assign(opts, config.get('win:bounds'));
   if (config.get('win:alwaysOnTop')) {
@@ -157,6 +158,7 @@ function createWindow() {
 
 function openOverlay(url) {
   let opts = {
+    title: `FFXIV Teamcraft overlay - ${url}`,
     show: false,
     resizable: true,
     frame: false,
