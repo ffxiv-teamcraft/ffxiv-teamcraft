@@ -439,7 +439,9 @@
         "MARK_HQ": "Отметить как HQ",
         "ADD_TO_ANOTHER_LIST": "Добавить в другой список",
         "REQUIREMENTS": "Требования",
-        "REMOVE_ITEM": "Удалить предмет из списка"
+        "REMOVE_ITEM": "Удалить предмет из списка",
+        "ADD_TAG": "Add tag to item",
+        "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
       }
     },
     "LAYOUT": {
@@ -901,14 +903,17 @@
     "Title": "Log Tracker",
     "Mark_page_as_done": "Отметить эту страницу как выполненную",
     "Mark_as_done": "Отметить этот предмет как выполненный",
+    "Mark_as_done_external": "Mark this item as done inside the log",
     "Mark_as_not_done": "Отметить этот предмет как невыполненный",
     "Create_list": "Создать список для завершения этой страницы",
+    "Create_list_limited": "Create a list to complete this page (50 items max)",
     "Folklore": "Regional Folklore",
     "Timed": "Timed",
     "Weather_dependant": "Only with some weathers",
     "View_on_ff14angler": "Подробнее на ff14angler",
     "Required_for_achievement": "Требуется для получения achievement'a",
     "Select_spot": "Select a spot to see its details",
+    "Hide_completed": "Hide completed recipes",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",

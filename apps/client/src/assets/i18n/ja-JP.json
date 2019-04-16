@@ -439,7 +439,9 @@
         "MARK_HQ": "HQ表示",
         "ADD_TO_ANOTHER_LIST": "他のリストに追加する",
         "REQUIREMENTS": "素材",
-        "REMOVE_ITEM": "リストからこのアイテムを削除"
+        "REMOVE_ITEM": "リストからこのアイテムを削除",
+        "ADD_TAG": "Add tag to item",
+        "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
       }
     },
     "LAYOUT": {
@@ -901,14 +903,17 @@
     "Title": "制作/採集手帳トラッカー",
     "Mark_page_as_done": "このページを完了として表示する",
     "Mark_as_done": "このアイテムに完了として表示する",
+    "Mark_as_done_external": "Mark this item as done inside the log",
     "Mark_as_not_done": "このアイテムを未完了として表示する",
     "Create_list": "このページを完成させるためのリストを作成する",
+    "Create_list_limited": "Create a list to complete this page (50 items max)",
     "Folklore": "伝承録",
     "Timed": "タイムリミットあり",
     "Weather_dependant": "特殊天候のみ可能",
     "View_on_ff14angler": "FF14anglerの詳細",
     "Required_for_achievement": "アチーブメントに適用された",
     "Select_spot": "詳細を表示するところを選択します。",
+    "Hide_completed": "Hide completed recipes",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
       "Housing_items": "ハウジング ({{number}})",
