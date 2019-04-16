@@ -28,38 +28,45 @@
                   <button nz-button (click)="createList(page)">
                     <i nz-icon type="check"></i> {{'LOG_TRACKER.Create_list' | translate}}
                   </button>
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+                    <nz-switch [(ngModel)]="hideCompleted"></nz-switch>
+                    <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
+                  </div>
                 </div>
-                <div fxLayout="row" *ngFor="let recipe of page.recipes" fxLayoutAlign="flex-start center"
-                     fxLayoutGap="5px">
-                  <app-item-icon *ngIf="true | ifMobile: false"
-                                 [width]="32"
-                                 [itemId]="recipe.itemId"
-                                 [icon]="recipe.icon | xivapiIcon"></app-item-icon>
-                  <div fxLayout="column">
-                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                      <div class="recipe-name">{{recipe.itemId | itemName | i18n}}</div>
-                      <i nz-icon type="check" *ngIf="userCompletion[recipe.recipeId]"></i>
+                <ng-container *ngFor="let recipe of page.recipes">
+                  <div fxLayout="row" fxLayoutAlign="flex-start center"
+                       *ngIf="!userCompletion[recipe.recipeId] || !hideCompleted"
+                       fxLayoutGap="5px">
+                    <app-item-icon *ngIf="true | ifMobile: false"
+                                   [width]="32"
+                                   [itemId]="recipe.itemId"
+                                   [icon]="recipe.icon | xivapiIcon"></app-item-icon>
+                    <div fxLayout="column">
+                      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                        <div class="recipe-name">{{recipe.itemId | itemName | i18n}}</div>
+                        <i nz-icon type="check" *ngIf="userCompletion[recipe.recipeId]"></i>
+                      </div>
+                      <div class="recipe-details">rlvl {{recipe.rlvl}}</div>
                     </div>
-                    <div class="recipe-details">rlvl {{recipe.rlvl}}</div>
+                    <div>
+                      <button nz-button (click)="markDohAsDone(recipe.recipeId, true)" nz-tooltip
+                              nzSize="small"
+                              nzShape="circle"
+                              *ngIf="!userCompletion[recipe.recipeId]"
+                              [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate">
+                        <i nz-icon type="check"></i>
+                      </button>
+                      <button nz-button (click)="markDohAsDone(recipe.recipeId, false)" nz-tooltip
+                              nzSize="small"
+                              nzShape="circle"
+                              nzType="danger"
+                              *ngIf="userCompletion[recipe.recipeId]"
+                              [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate">
+                        <i nz-icon type="close"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div>
-                    <button nz-button (click)="markDohAsDone(recipe.recipeId, true)" nz-tooltip
-                            nzSize="small"
-                            nzShape="circle"
-                            *ngIf="!userCompletion[recipe.recipeId]"
-                            [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate">
-                      <i nz-icon type="check"></i>
-                    </button>
-                    <button nz-button (click)="markDohAsDone(recipe.recipeId, false)" nz-tooltip
-                            nzSize="small"
-                            nzShape="circle"
-                            nzType="danger"
-                            *ngIf="userCompletion[recipe.recipeId]"
-                            [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate">
-                      <i nz-icon type="close"></i>
-                    </button>
-                  </div>
-                </div>
+                </ng-container>
               </div>
             </nz-spin>
           </nz-tab>

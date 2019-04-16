@@ -46,6 +46,8 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public type$: Observable<number>;
 
+  public hideCompleted = false;
+
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
