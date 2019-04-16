@@ -439,7 +439,9 @@
         "MARK_HQ": "Marcar como HQ",
         "ADD_TO_ANOTHER_LIST": "Añadir a otra lista",
         "REQUIREMENTS": "Requisitos",
-        "REMOVE_ITEM": "Quitar elemento de la lista"
+        "REMOVE_ITEM": "Quitar elemento de la lista",
+        "ADD_TAG": "Add tag to item",
+        "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
       }
     },
     "LAYOUT": {
@@ -901,14 +903,17 @@
     "Title": "Seguidor de registro",
     "Mark_page_as_done": "Marcar esta página como hecho",
     "Mark_as_done": "Marcar este artículo como hecho",
+    "Mark_as_done_external": "Mark this item as done inside the log",
     "Mark_as_not_done": "Marcar este artículo como no hecho",
     "Create_list": "Crear una lista para completar esta página",
+    "Create_list_limited": "Create a list to complete this page (50 items max)",
     "Folklore": "Folklore regional",
     "Timed": "Por tiempo limitado",
     "Weather_dependant": "Sólo con algunos climas",
     "View_on_ff14angler": "Más detalles en ff14angler",
     "Required_for_achievement": "Requerido para los logros",
     "Select_spot": "Seleccione un lugar para ver sus detalles",
+    "Hide_completed": "Hide completed recipes",
     "PAGE": {
       "Master_recipes": "Recetas maestras ({{number}})",
       "Housing_items": "Artículos de vivienda({{number}})",
