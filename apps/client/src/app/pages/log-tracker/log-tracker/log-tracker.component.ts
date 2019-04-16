@@ -46,6 +46,8 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public type$: Observable<number>;
 
+  public hideCompleted = false;
+
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
@@ -80,8 +82,11 @@ export class LogTrackerComponent extends TrackerComponent {
     });
   }
 
-  public createList(page: any): void {
-    const recipesToAdd = page.recipes.filter(recipe => !this.userCompletion[recipe.recipeId]);
+  public createList(page: any, limit?: number): void {
+    let recipesToAdd = page.recipes.filter(recipe => !this.userCompletion[recipe.recipeId]);
+    if (limit) {
+      recipesToAdd = recipesToAdd.slice(0, limit);
+    }
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = recipesToAdd.map(recipe => {

@@ -141,6 +141,18 @@ export class ItemRowComponent implements OnInit {
 
   itemRowTypes = ItemRowMenuElement;
 
+  showLogCompletionButton$ = combineLatest(this.authFacade.user$, this.item$).pipe(
+    map(([user, item]) => {
+      if(item.craftedBy !== undefined && item.craftedBy.length > 0){
+        return user.logProgression.indexOf(+item.recipeId || +item.craftedBy[0].recipeId) === -1;
+      } else if (item.gatheredBy !== undefined){
+        return user.gatheringLogProgression.indexOf(+item.id) === -1;
+      }
+      return false;
+    }),
+    shareReplay(1)
+  );
+
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
@@ -248,6 +260,19 @@ export class ItemRowComponent implements OnInit {
     setTimeout(() => {
       this.inputElement.nativeElement.focus();
     }, 10);
+  }
+
+  markAsDoneInLog(item: ListRow): void {
+    this.authFacade.user$.pipe(
+      first()
+    ).subscribe(user => {
+      if(item.craftedBy !== undefined && item.craftedBy.length > 0){
+        user.logProgression.push(+item.recipeId);
+      } else if (item.gatheredBy !== undefined){
+        user.gatheringLogProgression.push(+item.id);
+      }
+      this.authFacade.updateUser(user);
+    });
   }
 
   addTag(): void {

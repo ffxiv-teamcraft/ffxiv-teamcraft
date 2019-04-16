@@ -161,6 +161,15 @@
               <i nz-icon type="delete"></i>
             </button>
           </ng-container>
+          <ng-container *ngIf="showLogCompletionButton$ | async">
+            <button nz-button nzSize="small" nzShape="circle"
+                    *ngIf="isButton(itemRowTypes.MARK_AS_DONE_IN_LOG)"
+                    [nzTitle]="'LOG_TRACKER.Mark_as_done_external' | translate"
+                    nz-tooltip
+                    (click)="markAsDoneInLog(item)">
+              <i nz-icon type="file-done"></i>
+            </button>
+          </ng-container>
 
           <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
             <button nz-dropdown nzSize="small" [disabled]="(permissionLevel$ | async) < 20"
@@ -263,6 +272,12 @@
               <ng-container *ngIf="!isButton(itemRowTypes.ADD_TAG) && settings.itemTagsEnabled">
                 <li nz-menu-item (click)="showTagInput()">
                   {{'LIST_DETAILS.New_tag' | translate}}
+                </li>
+              </ng-container>
+
+              <ng-container *ngIf="showLogCompletionButton$ | async">
+                <li nz-menu-item (click)="markAsDoneInLog(item)" *ngIf="!isButton(itemRowTypes.MARK_AS_DONE_IN_LOG)">
+                  {{'LOG_TRACKER.Mark_as_done_external' | translate}}
                 </li>
               </ng-container>
             </ul>
