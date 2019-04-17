@@ -19,7 +19,7 @@ export class UsePatientTouchFaster extends RotationTip {
     return patientTouchIndexes.some(index => {
       const clone = simulationResult.simulation.clone();
       clone.run(true, index);
-      return clone.getBuff(Buff.INNER_QUIET).stacks > 1;
+      return clone.getBuff(Buff.INNER_QUIET) && clone.getBuff(Buff.INNER_QUIET).stacks > 1;
     });
   }
 
