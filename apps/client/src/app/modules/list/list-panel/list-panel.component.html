@@ -58,7 +58,7 @@
         </div>
       </div>
       <div nz-col nzSm="24" nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
-        <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+        <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                 *ngIf="(permissionLevel$ | async) > 10"
                 ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
@@ -67,13 +67,13 @@
         <nz-badge *ngIf="_list.public; else copyNoCount"
                   [nzCount]="_list.forks" [nzShowZero]="true"
                   [nzOverflowCount]="999" class="fork-count">
-          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
                   [nzTitle]="'List_fork' | translate" (click)="cloneList(_list)">
             <i nz-icon type="copy" theme="outline"></i>
           </button>
         </nz-badge>
         <ng-template #copyNoCount>
-          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
                   [nzTitle]="'List_fork' | translate" (click)="cloneList(_list)">
             <i nz-icon type="copy" theme="outline"></i>
           </button>
