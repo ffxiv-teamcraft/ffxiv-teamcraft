@@ -440,8 +440,8 @@
         "ADD_TO_ANOTHER_LIST": "添加到其它列表",
         "REQUIREMENTS": "要求",
         "REMOVE_ITEM": "从列表中删除项目",
-        "ADD_TAG": "Add tag to item",
-        "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
+        "ADD_TAG": "添加标签到物品",
+        "MARK_AS_DONE_IN_LOG": "在日志中标为已完成"
       }
     },
     "LAYOUT": {
@@ -903,17 +903,17 @@
     "Title": "日志追踪器",
     "Mark_page_as_done": "将此页标记为已完成",
     "Mark_as_done": "将此物品标记为已完成",
-    "Mark_as_done_external": "Mark this item as done inside the log",
+    "Mark_as_done_external": "将该物品在日志中标为已完成",
     "Mark_as_not_done": "将此物品标记为未完成",
     "Create_list": "创建一个列表以完成这个页面",
-    "Create_list_limited": "Create a list to complete this page (50 items max)",
+    "Create_list_limited": "新建完成此页的清单(最多 50 个物品)",
     "Folklore": "传承录",
     "Timed": "限时",
     "Weather_dependant": "需要天气",
     "View_on_ff14angler": "ff14angler 上的更多详情",
     "Required_for_achievement": "成就所需",
     "Select_spot": "选择地点以查看其详情",
-    "Hide_completed": "Hide completed recipes",
+    "Hide_completed": "隐藏已完成的配方",
     "PAGE": {
       "Master_recipes": "秘籍 ({{number}})",
       "Housing_items": "房屋 ({{number}})",
