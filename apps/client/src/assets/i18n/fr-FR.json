@@ -379,6 +379,7 @@
       "Title": "Liste terminée",
       "Content": "Cette liste est maintenant terminée, que voulez-vous en faire ?",
       "Delete": "Supprimer la liste",
+      "Clear": "Empty the list",
       "Reset": "Réinitialiser la liste",
       "Nothing": "Rien"
     },

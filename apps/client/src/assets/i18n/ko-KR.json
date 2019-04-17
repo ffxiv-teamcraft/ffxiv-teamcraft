@@ -379,6 +379,7 @@
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
       "Delete": "목록 삭제",
+      "Clear": "Empty the list",
       "Reset": "목록 초기화",
       "Nothing": "없음"
     },
@@ -913,7 +914,7 @@
     "View_on_ff14angler": "ff14angler에서 자세한 정보 보기",
     "Required_for_achievement": "업적에 적용됨",
     "Select_spot": "표시할 장소를 선택해주세요",
-    "Hide_completed": "완료힌 제작법 숨기기",
+    "Hide_completed": "완료한 제작법 숨기기",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
