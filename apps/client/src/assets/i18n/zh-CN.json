@@ -96,9 +96,9 @@
   "Profile": "个人档案",
   "X_for_total": "一共 {{amount}} 个",
   "COMMUNITY_LISTS": {
-    "Tags_filter_placeholder": "使用名称筛选",
+    "Tags_filter_placeholder": "标签",
     "Tags_filter_reset": "重置标签",
-    "Name_filter_placeholder": "使用名称筛选",
+    "Name_filter_placeholder": "清单名",
     "No_lists_matching": "没有符合的搜索结果。"
   },
   "COMMON": {
@@ -441,7 +441,7 @@
         "REQUIREMENTS": "要求",
         "REMOVE_ITEM": "从列表中删除项目",
         "ADD_TAG": "添加标签到物品",
-        "MARK_AS_DONE_IN_LOG": "在日志中标为已完成"
+        "MARK_AS_DONE_IN_LOG": "在制作笔记中标为已完成"
       }
     },
     "LAYOUT": {
