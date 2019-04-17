@@ -31,4 +31,11 @@ export class ListCompletionPopupComponent {
     this.listsFacade.updateList(this.list);
     this.close();
   }
+
+  clearList():void{
+    this.list.finalItems = [];
+    this.list.items = [];
+    this.listsFacade.updateList(this.list, true, true);
+    this.close();
+  }
 }
