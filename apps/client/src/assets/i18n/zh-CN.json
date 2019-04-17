@@ -500,7 +500,7 @@
   },
   "MACRO_TRANSLATION": {
     "Title": "宏转换器",
-    "Macro_language": "宏语言",
+    "Macro_language": "源语言",
     "Macro_to_translate": "要转换的宏",
     "Do_translate": "转换！",
     "Invalid_macro_or_language": "无效的宏或语言。"
@@ -985,8 +985,8 @@
       }
     },
     "NPC_PICKER": {
-      "Title": "寻找 NPC",
-      "Npc_name": "NPC"
+      "Title": "查找 NPC",
+      "Npc_name": "NPC 名"
     },
     "IMPORT": {
       "Corrupted_file": "导入的文件已损坏或格式错误",
