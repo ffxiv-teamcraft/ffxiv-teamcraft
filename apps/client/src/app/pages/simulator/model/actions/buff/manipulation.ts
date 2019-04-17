@@ -22,6 +22,10 @@ export class Manipulation extends BuffAction {
     return 3;
   }
 
+  getWaitDuration(): number {
+    return 2;
+  }
+
   getIds(): number[] {
     return [278];
   }
