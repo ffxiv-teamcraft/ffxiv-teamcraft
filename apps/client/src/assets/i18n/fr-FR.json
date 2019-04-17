@@ -299,6 +299,7 @@
     "Show_devtools": "Afficher les outils de debug",
     "Clear_cache": "Vider le cache (l'application va redémarrer)",
     "Enable_item_tags": "Activer les tags d'objets",
+    "Show_copy_list_own_list": "Show copy button on own list panels",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
