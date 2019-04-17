@@ -299,6 +299,7 @@
     "Show_devtools": "显示开发者工具",
     "Clear_cache": "清除缓存 (将重新启动应用程序)",
     "Enable_item_tags": "启用物品标签",
+    "Show_copy_list_own_list": "Show copy button on own list panels",
     "COPY_TYPE": {
       "Classic": "复制物品名称",
       "Isearch": "复制搜索宏"
