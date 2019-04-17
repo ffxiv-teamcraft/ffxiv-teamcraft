@@ -211,7 +211,7 @@
   "Upgrade_list": "升级清单到最新版本",
   "List_recreated": "清单已重建",
   "List_popup_title": "重新生成清单，请稍候",
-  "Please_wait": "应该快的，等一下吧！",
+  "Please_wait": "马上就好，请稍等片刻",
   "Not_own_list_outdated": "此清单已过期，请要求创建者重新生成",
   "Import": "导入",
   "Favorites": "收藏",
@@ -439,13 +439,13 @@
         "MARK_HQ": "标为 HQ",
         "ADD_TO_ANOTHER_LIST": "添加到其它列表",
         "REQUIREMENTS": "要求",
-        "REMOVE_ITEM": "从列表中删除项目",
+        "REMOVE_ITEM": "从清单中删除物品",
         "ADD_TAG": "添加标签到物品",
         "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成"
       }
     },
     "LAYOUT": {
-      "Filter": "过滤器",
+      "Filter": "筛选",
       "Panel_name": "面板名",
       "Order_by": "排序方式",
       "Order": "顺序",
@@ -598,7 +598,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "固定提示音",
     "Starting_echo_number": "提示音",
-    "Break_on_reclaim": "在可能无法回收的地方拆分宏",
+    "Break_on_reclaim": "在无法使用回收前拆分宏",
     "Include_consumables_notification": "包含的消耗品提示",
     "Consumable_notification": "使用 {{buffs}}",
     "Extra_wait": "单独延迟",
