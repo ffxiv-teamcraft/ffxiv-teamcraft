@@ -34,8 +34,21 @@ export class CommunityRotationPopupComponent implements OnInit {
 
   ngOnInit(): void {
     const minStats = this.simulation.getMinStats();
+    let rlvl = this.rotation.recipe.rlvl;
+    if (rlvl >= 120 && rlvl <= 150) {
+      rlvl = 150;
+    }
+    if (rlvl >= 260 && rlvl <= 290) {
+      rlvl = 290;
+    }
+    if (rlvl >= 390 && rlvl <= 420) {
+      rlvl = 420;
+    }
+    if (rlvl < 50) {
+      rlvl = Math.floor(rlvl / 10) * 10;
+    }
     this.rotation.community = this.rotation.community || {
-      rlvl: this.rotation.recipe.rlvl < 50 ? Math.floor(this.rotation.recipe.rlvl / 10) * 10 : this.rotation.recipe.rlvl,
+      rlvl: rlvl,
       durability: this.rotation.recipe.durability,
       minControl: minStats.control - this.bonuses.control,
       minCraftsmanship: minStats.craftsmanship - this.bonuses.craftsmanship,
