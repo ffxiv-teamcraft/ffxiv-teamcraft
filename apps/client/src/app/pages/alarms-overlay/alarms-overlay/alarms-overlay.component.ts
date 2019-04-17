@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-alarms-overlay',
@@ -10,7 +11,7 @@ export class AlarmsOverlayComponent {
 
   public overlayOpacity = 100;
 
-  constructor(private ipc: IpcService) {
+  constructor(private ipc: IpcService, public settings: SettingsService) {
     this.ipc.overlayUri = '/alarms-overlay';
     this.ipc.on(`overlay:/alarms-overlay:opacity`, (event, value) => {
       this.overlayOpacity = value * 100;
