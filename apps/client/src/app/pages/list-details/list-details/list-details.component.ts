@@ -28,14 +28,16 @@ import { TextQuestionPopupComponent } from '../../../modules/text-question-popup
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
-import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { SeoService } from '../../../core/seo/seo.service';
+import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
+import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 
 @Component({
   selector: 'app-list-details',
   templateUrl: './list-details.component.html',
   styleUrls: ['./list-details.component.less']
 })
-export class ListDetailsComponent extends TeamcraftComponent implements OnInit, OnDestroy {
+export class ListDetailsComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
 
   public display$: Observable<ListDisplay>;
 
@@ -80,8 +82,8 @@ export class ListDetailsComponent extends TeamcraftComponent implements OnInit, 
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
-              private l12n: LocalizedDataService, private linkTools: LinkToolsService) {
-    super();
+              private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService) {
+    super(seoService);
     this.list$ = combineLatest(this.listsFacade.selectedList$, this.permissionLevel$).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {
@@ -140,6 +142,7 @@ export class ListDetailsComponent extends TeamcraftComponent implements OnInit, 
   }
 
   ngOnInit() {
+    super.ngOnInit();
     this.layoutsFacade.loadAll();
     this.teamsFacade.loadMyTeams();
     this.activatedRoute.paramMap
@@ -354,6 +357,18 @@ export class ListDetailsComponent extends TeamcraftComponent implements OnInit, 
       this.listsFacade.unload(list.$key);
     });
     super.ngOnDestroy();
+  }
+
+  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
+    return this.list$.pipe(
+      map(list => {
+        return {
+          title: list.name,
+          description: list.note,
+          url: `https://ffxivteamcraft.com/list/${list.$key}`
+        }
+      })
+    );
   }
 
 }
