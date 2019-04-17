@@ -299,6 +299,7 @@
     "Show_devtools": "Показать инструменты разработчика",
     "Clear_cache": "Очистить кэш (перезапустит приложение)",
     "Enable_item_tags": "Включить теги предметов",
+    "Show_copy_list_own_list": "Show copy button on own list panels",
     "COPY_TYPE": {
       "Classic": "Копировать имя предмета",
       "Isearch": "Копировать /isearch макрос"
