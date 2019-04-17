@@ -299,6 +299,7 @@
     "Show_devtools": "Mostrar ferramentas de desenvolvimento",
     "Clear_cache": "Limpar a cache (a app será reiniciada)",
     "Enable_item_tags": "Ligar tags de item",
+    "Show_copy_list_own_list": "Show copy button on own list panels",
     "COPY_TYPE": {
       "Classic": "Copiar nome to item",
       "Isearch": "Copiar macro /isearch"
