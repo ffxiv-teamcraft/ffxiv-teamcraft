@@ -441,7 +441,7 @@
         "REQUIREMENTS": "要求",
         "REMOVE_ITEM": "从列表中删除项目",
         "ADD_TAG": "添加标签到物品",
-        "MARK_AS_DONE_IN_LOG": "在制作笔记中标为已完成"
+        "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成"
       }
     },
     "LAYOUT": {
@@ -456,7 +456,7 @@
     "OUTDATED": "已过期",
     "GEAR": "装备",
     "CONSUMABLE": "消耗品",
-    "LOG": "日志",
+    "LOG": "笔记",
     "LEVE": "理符",
     "GLAMOUR": "投影",
     "HOUSING": "住房",
@@ -900,10 +900,10 @@
     "Web_instructions": "请重新载入页面以获取最新版本。"
   },
   "LOG_TRACKER": {
-    "Title": "日志追踪器",
+    "Title": "笔记追踪",
     "Mark_page_as_done": "将此页标记为已完成",
     "Mark_as_done": "将此物品标记为已完成",
-    "Mark_as_done_external": "将该物品在日志中标为已完成",
+    "Mark_as_done_external": "将该物品在笔记中标为已完成",
     "Mark_as_not_done": "将此物品标记为未完成",
     "Create_list": "创建一个列表以完成这个页面",
     "Create_list_limited": "新建完成此页的清单(最多 50 个物品)",
