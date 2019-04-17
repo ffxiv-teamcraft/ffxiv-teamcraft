@@ -299,6 +299,7 @@
     "Show_devtools": "Devツールを表示",
     "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
     "Enable_item_tags": "アイテムダグを使用",
+    "Show_copy_list_own_list": "Show copy button on own list panels",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
       "Isearch": "/isearchマクロをコピーする"
