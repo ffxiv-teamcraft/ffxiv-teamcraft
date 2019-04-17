@@ -42,6 +42,7 @@ import * as semver from 'semver';
 import { LazyDataService } from './core/data/lazy-data.service';
 import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
 import { DirtyFacade } from './core/dirty/+state/dirty.facade';
+import { SeoService } from './core/seo/seo.service';
 
 declare const gtag: Function;
 
@@ -113,7 +114,7 @@ export class AppComponent implements OnInit {
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
-              private dirtyFacade: DirtyFacade) {
+              private dirtyFacade: DirtyFacade, private seoService: SeoService) {
 
     this.dirtyFacade.hasEntries$.subscribe(dirty => this.dirty = dirty);
 
@@ -128,7 +129,7 @@ export class AppComponent implements OnInit {
 
     this.desktop = this.platformService.isDesktop();
 
-    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_z644tpcbtjr.js' });
+    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_xf1jq6cvm7.js' });
 
     this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(
       map((value: string) => {
@@ -179,6 +180,7 @@ export class AppComponent implements OnInit {
           return true;
         })
       ).subscribe((event: any) => {
+      this.seoService.resetConfig();
       this.overlay = event.url.indexOf('?overlay') > -1;
       this.ipc.send('navigated', event.url);
       this.ipc.on('window-decorator', (e, value) => {

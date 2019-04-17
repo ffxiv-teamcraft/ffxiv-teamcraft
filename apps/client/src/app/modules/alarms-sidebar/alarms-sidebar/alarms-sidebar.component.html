@@ -1,5 +1,5 @@
 <ng-container *ngIf="loaded$ | async; else loading">
-  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px" *ngIf="!overlayMode">
     <nz-switch [(ngModel)]="settings.alarmsMuted"></nz-switch>
     <div>{{'Mute_alarms' | translate}} </div>
   </div>

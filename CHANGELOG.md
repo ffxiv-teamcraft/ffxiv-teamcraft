@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.12"></a>
+## [5.2.12](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.11...v5.2.12) (2019-04-17)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with alarms toggle sometimes not adding the alarm to database ([b3570c7](https://github.com/Supamiu/ffxiv-teamcraft/commit/b3570c7))
+* **rotation-tips:** fixed an issue with some tips crashing with specific rotations ([be00e6e](https://github.com/Supamiu/ffxiv-teamcraft/commit/be00e6e))
+* **simulation:** fixed wrong wait duration for Manipulation ([46aed8f](https://github.com/Supamiu/ffxiv-teamcraft/commit/46aed8f))
+* **simulator:** better drag and drop behavior ([b5630db](https://github.com/Supamiu/ffxiv-teamcraft/commit/b5630db))
+
+
+### Features
+
+* **community-rotations:** added a tag to show rotation's targeted durability ([a349291](https://github.com/Supamiu/ffxiv-teamcraft/commit/a349291))
+* **community-rotations:** better rlvl search ranges for rotations ([44315aa](https://github.com/Supamiu/ffxiv-teamcraft/commit/44315aa))
+* **list:** new button in completion popup to empty the list ([9c34c9c](https://github.com/Supamiu/ffxiv-teamcraft/commit/9c34c9c))
+* **overlay:** moved the mute toggle to topbar for better layout inside overlay ([2ae80aa](https://github.com/Supamiu/ffxiv-teamcraft/commit/2ae80aa))
+* **seo:** better seo for better link previews on discord ([b8ee1b8](https://github.com/Supamiu/ffxiv-teamcraft/commit/b8ee1b8))
+
+
+
 <a name="5.2.11"></a>
 ## [5.2.11](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.10...v5.2.11) (2019-04-16)
 

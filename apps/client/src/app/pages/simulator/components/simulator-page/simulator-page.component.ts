@@ -6,13 +6,17 @@ import { Item } from '../../../../model/garland-tools/item';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { DataService } from '../../../../core/api/data.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
+import { SeoPageComponent } from '../../../../core/seo/seo-page-component';
+import { SeoService } from '../../../../core/seo/seo.service';
+import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
+import { combineLatest } from 'rxjs/internal/observable/combineLatest';
 
 @Component({
   selector: 'app-simulator-page',
   templateUrl: './simulator-page.component.html',
   styleUrls: ['./simulator-page.component.less']
 })
-export class SimulatorPageComponent {
+export class SimulatorPageComponent extends SeoPageComponent {
 
   recipe$: Observable<Craft>;
 
@@ -21,8 +25,9 @@ export class SimulatorPageComponent {
   thresholds$: Observable<number[]>;
 
   constructor(private route: ActivatedRoute, private dataService: DataService,
-              private rotationsFacade: RotationsFacade, private router: Router) {
-
+              private rotationsFacade: RotationsFacade, private router: Router,
+              protected seo: SeoService) {
+    super(seo);
     this.route.paramMap.pipe(
       map(params => params.get('rotationId'))
     ).subscribe(id => {
@@ -68,6 +73,19 @@ export class SimulatorPageComponent {
             return item.craft.find(c => c.id.toString() === params.get('recipeId'));
           })
         );
+      })
+    );
+  }
+
+
+  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
+    return combineLatest(this.rotationsFacade.selectedRotation$, this.recipe$, this.item$).pipe(
+      map(([rotation, recipe, item]) => {
+        return {
+          title: rotation.getName(),
+          description: `rlvl ${recipe.rlvl}, ${recipe.durability} durability, ${rotation.rotation.length} steps`,
+          url: `https://ffxivteamcraft.com/simulator/${item.id}/${recipe.id}/${rotation.$key}`
+        };
       })
     );
   }

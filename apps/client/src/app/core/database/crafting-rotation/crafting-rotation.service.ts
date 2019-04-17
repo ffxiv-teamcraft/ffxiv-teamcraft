@@ -56,7 +56,11 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
                 matches = matches && rotation.community.durability === filters.durability;
               }
               if (filters.rlvl) {
-                matches = matches && rotation.community.rlvl === filters.rlvl;
+                if ([150, 290, 420].indexOf(filters.rlvl) > -1) {
+                  matches = matches && rotation.community.rlvl >= filters.rlvl - 30 && rotation.community.rlvl <= filters.rlvl;
+                } else {
+                  matches = matches && rotation.community.rlvl === filters.rlvl;
+                }
               }
               if (filters.craftsmanship) {
                 matches = matches && rotation.community.minCraftsmanship <= filters.craftsmanship;

@@ -6,6 +6,8 @@
     <i nz-icon type="eye"></i>
     <nz-slider fxFlex="1 1 auto" [nzMin]="20" [nzMax]="100" [ngModel]="overlayOpacity"
                (ngModelChange)="setOverlayOpacity($event)"></nz-slider>
+    <i nz-icon type="sound" *ngIf="!settings.alarmsMuted" (click)="settings.alarmsMuted = true"></i>
+    <i nz-icon iconfont="icon-mute" *ngIf="settings.alarmsMuted" (click)="settings.alarmsMuted = false"></i>
   </div>
   <div class="close-button">
     <i nz-icon type="close" (click)="close()"></i>

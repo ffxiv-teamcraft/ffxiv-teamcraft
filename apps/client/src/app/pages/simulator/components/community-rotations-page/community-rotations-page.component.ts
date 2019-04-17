@@ -18,14 +18,6 @@ import { AuthFacade } from '../../../../+state/auth.facade';
 export class CommunityRotationsPageComponent {
 
   public static RLVLS = [
-    ...Object.keys(Tables.LEVEL_TABLE)
-      .map(level => {
-        return {
-          label: level,
-          value: +Tables.LEVEL_TABLE[level]
-        };
-      }),
-
     {
       label: '1 - 10',
       value: 10
@@ -64,6 +56,10 @@ export class CommunityRotationsPageComponent {
       label: '50 ★★★★',
       value: 110
     },
+    {
+      label: '51 - 60',
+      value: 150
+    },
 
     // 60 stars
     {
@@ -82,6 +78,10 @@ export class CommunityRotationsPageComponent {
       label: '60 ★★★★',
       value: 250
     },
+    {
+      label: '61 - 70',
+      value: 290
+    },
 
     // 70 stars
     {
@@ -99,7 +99,11 @@ export class CommunityRotationsPageComponent {
     {
       label: '70 ★★★★',
       value: 380
-    }
+    },
+    {
+      label: '71 - 80',
+      value: 420
+    },
   ].sort((a, b) => a.value - b.value);
 
   public tags: any[];

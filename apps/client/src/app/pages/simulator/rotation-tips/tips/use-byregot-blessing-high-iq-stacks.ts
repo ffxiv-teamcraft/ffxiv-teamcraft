@@ -19,7 +19,7 @@ export class UseByregotBlessingHighIqStacks extends RotationTip {
     const blessingIndex = simulationResult.steps.findIndex(step => step.action.is(ByregotsBrow));
     const clone = simulationResult.simulation.clone();
     clone.run(true, blessingIndex - 1);
-    return clone.getBuff(Buff.INNER_QUIET).stacks > 6 && simulationResult.simulation.quality < simulationResult.simulation.recipe.quality;
+    return clone.getBuff(Buff.INNER_QUIET) && clone.getBuff(Buff.INNER_QUIET).stacks > 6 && simulationResult.simulation.quality < simulationResult.simulation.recipe.quality;
   }
 
 }
