@@ -379,6 +379,7 @@
       "Title": "清单已完成",
       "Content": "这个清单现已完成，你想要做什么？",
       "Delete": "删除清单",
+      "Clear": "Empty the list",
       "Reset": "重置清单",
       "Nothing": "什么都不做"
     },
@@ -509,14 +510,14 @@
     "Title": "自定义链接",
     "Not_found": "未找到链接",
     "Add_link": "创建自定义链接",
-    "Link_created": "自定义链接已创建，点击共享按钮复制",
+    "Link_created": "自定义链接已创建，点击分享按钮复制",
     "Dialog_title": "自定义链接",
     "Link_type": "链接类型",
     "Link_name": "链接名称",
     "target": "链接目标",
     "Share_link_copied": "链接已复制到剪贴板",
     "Copy_custom_link": "复制自定义链接",
-    "No_links": "无自定义链接"
+    "No_links": "没有自定义链接"
   },
   "NAVIGATION": {
     "Title": "最优路线",
@@ -638,18 +639,18 @@
     "Share_link_copied": "工序共享链接已复制到剪贴板",
     "Persist": "保存这个工序",
     "Rotation_not_found": "未找到工序",
-    "Confirm_delete": "您确定要删除这个工序吗？",
+    "Confirm_delete": "确定要删除这个工序吗？",
     "Toggle_snapshot_mode": "开关快照模式",
     "Open_in_external": "在 {{name}} 的模拟器中打开",
-    "Select_job_please": "请选择一个职业",
+    "Select_job_please": "请选择职业",
     "Rename_rotation": "重命名工序",
     "Cross_class_setup": "共通技能设置",
-    "Include_sound_end": "包含宏结束提示音",
+    "Include_sound_end": "添加宏结束提示音",
     "Step_by_step_report": "逐步报告",
     "Save_as_new": "保存为新的 (跳转到新创建的工序)",
-    "Save_as_new_done": "你正在复制你的工序",
+    "Save_as_new_done": "已复制你的工序",
     "Change_rotation": "更改工序",
-    "New_rotation_folder": "新文件夹",
+    "New_rotation_folder": "新建文件夹",
     "Safe_mode": "安全模式",
     "Safe_mode_tooltip": "禁用所有被 buff 后仍低于 100% 成功率的技能",
     "Quality_needed": "需要 {{amount}} 品质以达成 100%",
@@ -775,10 +776,10 @@
     "From_vendor": "商店价格",
     "From_crafting": "制作价格",
     "Expect_to_sell_everything": "期望出售一切",
-    "Autofill_panel_prices": "基于市场物价填充售价",
+    "Autofill_panel_prices": "基于市场物价填充价格",
     "Autofill_panel_prices_warning": "本操作为耗时操作，大约需要 {{time}} 秒来完成，确定吗？",
     "Copy_earnings_as_text": "复制为文本",
-    "Content_copied": "已将内容复制到剪贴板",
+    "Content_copied": "已复制",
     "Cheaper_at_vendor": "NPC 卖得更便宜 ({{price}} gil)",
     "Copy_panel_as_text": "复制为文本"
   },
@@ -786,17 +787,17 @@
     "Title": "理符任务",
     "Levequest_name": "理符任务名",
     "No_results": "没有找到理符任务",
-    "Add_to_list": "添加此理符任务物品到列表",
+    "Add_to_list": "添加此理符任务物品到清单",
     "Quantity": "数量",
     "All_deliveries": "共可交付 {{value}} 次",
     "Compute_exp": "显示经验值变化",
-    "More_on_gamerescape": "Gamerescape上的更多详情",
-    "Deliver_to": "发送到 {{placename}}",
+    "More_on_gamerescape": "Gamer Escape 上的详细信息",
+    "Deliver_to": "交付到 {{placename}}",
     "INTRO": {
       "Title": "理符任务",
-      "First_line": "在此页面您可以搜索一个或多个理符，并将结果添加至列表",
-      "Second_line": "选择职业，输入等级范围，此处会列出所有理符列表；你可以将其添加到你的列表中，而配方会自动加入到对应的列表里。",
-      "Third_line": "如果您知道您正在寻找什么，您也可以通过名称搜索。"
+      "First_line": "在此页面您可以搜索一个或多个理符，并将结果添加至清单",
+      "Second_line": "选择职业，输入等级范围，此处会列出所有理符列表；你可以将其添加到你的清单中，而配方会自动加入到对应的清单里。",
+      "Third_line": "如果你知道任务名，也可以通过任务名来搜索。"
     }
   },
   "NOTIFICATIONS": {
@@ -870,7 +871,7 @@
   "TOOLTIP": {
     "Level": "等级",
     "Ilvl": "装等",
-    "Cost": "费用",
+    "Cost": "消耗",
     "Class_job": "职业/特职",
     "Damage_phys": "物理伤害",
     "Damage_mag": "魔法伤害",
@@ -887,17 +888,17 @@
     "DESCRIPTION": {
       "Lists": "创建列表，查看所有原料，与你的朋友分享，从这里开始！只需要搜索并筛选一个物品，然后开始制造。",
       "Public_lists": "从社区共享复制列表可以帮你制造家具、理符物品、完成笔记、飞空艇、毕业套等各种你想要的东西。",
-      "Alarms": "闹钟使你不会错过限时采集点，分组组织闹钟，导入到游戏，一切皆有可能。",
+      "Alarms": "闹钟使你不会错过限时采集点，分文件夹组织闹钟，导入到游戏，一切皆有可能。",
       "Gathering_location": "寻找采集点信息，创建闹钟，获得即时位置、最近传送点、所需传承录，还有更多！",
       "Rotations": "使用自定义模拟器创建制作工序，在模拟器中测试，或者验证工序理论！",
-      "Levequests": "找到特定职业的理符，查看他们的即时报酬，并为他们创建列表。",
-      "Macro_translation": "看到了宏但不是你的语言？使用宏转换器可以将其转换为你的语言！"
+      "Levequests": "找到特定职业的理符，查看报酬，并创建清单。",
+      "Macro_translation": "拿到一个制作宏但不是中文的？使用宏转换器可以将其转换为中文！"
     }
   },
   "UPDATE": {
-    "New_update_available": "有一个新的更新可用！ ",
-    "Desktop_instructions": "请跳转到以下链接以下载最新版本： ",
-    "Web_instructions": "请重新载入页面以获取最新版本。"
+    "New_update_available": "发现新版本！ ",
+    "Desktop_instructions": "请打开以下链接以下载最新版本： ",
+    "Web_instructions": "请刷新页面以使用最新版本。"
   },
   "LOG_TRACKER": {
     "Title": "笔记追踪",
