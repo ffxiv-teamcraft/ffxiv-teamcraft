@@ -64,11 +64,6 @@ export class AlarmsEffects {
           return new Alarm({ ...alarm, userId: userId });
         });
       }),
-      map((alarms) => {
-        return alarms.filter(alarm => {
-          return alarm.$key === undefined;
-        });
-      }),
       switchMap((alarms: Alarm[]) => {
         return combineLatest(
           alarms.map(alarm => {
