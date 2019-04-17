@@ -52,7 +52,7 @@
                   (click)="$event.stopPropagation();renameRotation(rotation)">
             <i nz-icon type="edit"></i>
           </button>
-          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
                   [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
                   ngxClipboard [cbContent]="getLink(rotation)" (cbOnSuccess)="afterLinkCopy()">
             <i nz-icon type="share-alt"></i>

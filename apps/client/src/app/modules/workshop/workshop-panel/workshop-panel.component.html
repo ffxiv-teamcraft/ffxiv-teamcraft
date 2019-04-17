@@ -14,7 +14,7 @@
         {{_workshop.name}} ({{lists.length}})
       </div>
       <div nz-col nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
-        <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+        <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                 ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
           <i nz-icon type="share-alt"></i>
