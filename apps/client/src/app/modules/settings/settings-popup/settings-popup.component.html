@@ -59,6 +59,14 @@
                  [(ngModel)]="settings.itemTagsEnabled">{{'SETTINGS.Enable_item_tags' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
+
+      <nz-form-item *ngIf="loggedIn$ | async" class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label nz-checkbox
+                 [(ngModel)]="settings.showCopyOnOwnList">{{'SETTINGS.Show_copy_list_own_list' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
     </div>
   </nz-tab>
   <nz-tab [nzTitle]="'SETTINGS.Account' | translate" *ngIf="loggedIn$ | async">

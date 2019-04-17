@@ -26,6 +26,7 @@ import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { Router } from '@angular/router';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-list-panel',
@@ -104,7 +105,7 @@ export class ListPanelComponent {
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
               private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade,
               private router: Router, private layoutsFacade: LayoutsFacade, private layoutOrderService: LayoutOrderService,
-              private cd: ChangeDetectorRef) {
+              private cd: ChangeDetectorRef, public settings: SettingsService) {
     this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
       map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),

@@ -136,6 +136,14 @@ export class SettingsService {
     this.setSetting('itemTagsEnabled', tagsEnabled.toString());
   }
 
+  public get showCopyOnOwnList(): boolean {
+    return this.getSetting('showCopyOnOwnList', 'false') === 'true';
+  }
+
+  public set showCopyOnOwnList(tagsEnabled: boolean) {
+    this.setSetting('showCopyOnOwnList', tagsEnabled.toString());
+  }
+
   private getSetting(name: string, defaultValue: string): string {
     return this.cache[name] || defaultValue;
   }

@@ -67,14 +67,15 @@
         <nz-badge *ngIf="_list.public; else copyNoCount"
                   [nzCount]="_list.forks" [nzShowZero]="true"
                   [nzOverflowCount]="999" class="fork-count">
-          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
-                  [nzTitle]="'List_fork' | translate" (click)="cloneList(_list)">
+          <button nz-button [nzShape]="'circle'" nz-tooltip
+                  [nzTitle]="'List_fork' | translate" (click)="$event.stopPropagation();cloneList(_list)">
             <i nz-icon type="copy" theme="outline"></i>
           </button>
         </nz-badge>
         <ng-template #copyNoCount>
-          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
-                  [nzTitle]="'List_fork' | translate" (click)="cloneList(_list)">
+          <button nz-button [nzShape]="'circle'" nz-tooltip
+                  *ngIf="settings.showCopyOnOwnList"
+                  [nzTitle]="'List_fork' | translate" (click)="$event.stopPropagation();cloneList(_list)">
             <i nz-icon type="copy" theme="outline"></i>
           </button>
         </ng-template>
