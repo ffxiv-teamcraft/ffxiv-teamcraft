@@ -921,7 +921,9 @@
       "Housing_items": "Habitação ({{number}})",
       "Others": "Outros",
       "Dyes": "Tintas",
-      "Other_master_recipes": "Outras Receitas Mestre"
+      "Other_master_recipes": "Outras Receitas Mestre",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {
