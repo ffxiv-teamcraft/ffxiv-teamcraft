@@ -300,6 +300,12 @@
     "Clear_cache": "Borrar caché (reiniciará la aplicación)",
     "Enable_item_tags": "Activar etiquetas de artículo",
     "Show_copy_list_own_list": "Show copy button on own list panels",
+    "Custom_theme": "Custom theme",
+    "COLORS": {
+      "Primary": "Primary color",
+      "Highlight": "Highlight color",
+      "Text": "Buttons content color"
+    },
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
