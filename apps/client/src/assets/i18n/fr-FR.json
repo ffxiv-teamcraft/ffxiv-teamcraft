@@ -921,7 +921,9 @@
       "Housing_items": "Logement ({{number}})",
       "Others": "Autres",
       "Dyes": "Teintures",
-      "Other_master_recipes": "Expert - autres"
+      "Other_master_recipes": "Expert - autres",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {
