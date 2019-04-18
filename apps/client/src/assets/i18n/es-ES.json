@@ -921,7 +921,9 @@
       "Housing_items": "Artículos de vivienda({{number}})",
       "Others": "Otros",
       "Dyes": "Tintes",
-      "Other_master_recipes": "Otras recetas maestras"
+      "Other_master_recipes": "Otras recetas maestras",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {
