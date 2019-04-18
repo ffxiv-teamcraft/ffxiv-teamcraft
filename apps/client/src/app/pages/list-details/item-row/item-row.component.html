@@ -101,23 +101,25 @@
           </ng-container>
 
           <ng-container *ngIf="!isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)">
-            <ng-container *ngIf="team$ | async as team">
-              <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options"
-                           *ngIf="team.leader === userId || team.isOfficer(userId)">
-                <button nz-dropdown nzSize="small"
-                        (click)="$event.stopPropagation()"
-                        nz-tooltip [nzTitle]="'TEAMS.Assign_team_member' | translate"
-                        nz-button [nzShape]="'circle'">
-                  <i nz-icon type="team"></i>
-                </button>
-                <ul nz-menu class="team-members">
-                  <ng-container *ngFor="let member of team.members">
-                    <li nz-menu-item *ngIf="member | characterName | async as charName"
-                        (click)="assignTeamMember(team, member)">{{charName}}
-                    </li>
-                  </ng-container>
-                </ul>
-              </nz-dropdown>
+            <ng-container *ngIf="userId$ | async as userId">
+              <ng-container *ngIf="team$ | async as team">
+                <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options"
+                             *ngIf="team.leader === userId || team.isOfficer(userId)">
+                  <button nz-dropdown nzSize="small"
+                          (click)="$event.stopPropagation()"
+                          nz-tooltip [nzTitle]="'TEAMS.Assign_team_member' | translate"
+                          nz-button [nzShape]="'circle'">
+                    <i nz-icon type="team"></i>
+                  </button>
+                  <ul nz-menu class="team-members">
+                    <ng-container *ngFor="let member of team.members">
+                      <li nz-menu-item *ngIf="member | characterName | async as charName"
+                          (click)="assignTeamMember(team, member)">{{charName}}
+                      </li>
+                    </ng-container>
+                  </ul>
+                </nz-dropdown>
+              </ng-container>
             </ng-container>
           </ng-container>
 

@@ -299,6 +299,13 @@
     "Show_devtools": "Mostrar ferramentas de desenvolvimento",
     "Clear_cache": "Limpar a cache (a app será reiniciada)",
     "Enable_item_tags": "Ligar tags de item",
+    "Show_copy_list_own_list": "Show copy button on own list panels",
+    "Custom_theme": "Custom theme",
+    "COLORS": {
+      "Primary": "Primary color",
+      "Highlight": "Highlight color",
+      "Text": "Buttons content color"
+    },
     "COPY_TYPE": {
       "Classic": "Copiar nome to item",
       "Isearch": "Copiar macro /isearch"
@@ -920,7 +927,9 @@
       "Housing_items": "Habitação ({{number}})",
       "Others": "Outros",
       "Dyes": "Tintas",
-      "Other_master_recipes": "Outras Receitas Mestre"
+      "Other_master_recipes": "Outras Receitas Mestre",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {

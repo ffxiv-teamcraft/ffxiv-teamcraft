@@ -201,10 +201,15 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public isRequiredForAchievement(page: any): boolean {
-    return (!page.masterbook
-      && page.startLevel.ClassJobLevel !== 50
-      && page.startLevel.ClassJobLevel !== 30)
-      || (page.id > 1055 && page.id < 1072);
+    return (
+        (
+          !page.masterbook
+          && page.startLevel.ClassJobLevel !== 50
+          && page.startLevel.ClassJobLevel !== 30
+        )
+        || (page.id > 1055 && page.id < 1072)
+      ) &&
+      page.id < 1088;
   }
 
   public getNodeData(itemId: number, tab: number): any {
@@ -317,6 +322,12 @@ export class LogTrackerComponent extends TrackerComponent {
     }
     if (page.id > 1055 && page.id < 1072) {
       return `${this.translate.instant('LOG_TRACKER.PAGE.Housing_items', { number: page.id < 1064 ? 1 : 2 })}`;
+    }
+    if (page.id >= 1088 && page.id <= 1095) {
+      return this.translate.instant('LOG_TRACKER.PAGE.Quests');
+    }
+    if (page.id >= 1096) {
+      return this.translate.instant('LOG_TRACKER.PAGE.Deliveries');
     }
     if (page.startLevel.ClassJobLevel === 50) {
       return this.translate.instant('LOG_TRACKER.PAGE.Others');

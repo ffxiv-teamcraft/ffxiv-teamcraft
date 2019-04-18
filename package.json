@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.2.12",
+  "version": "5.2.13",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -136,6 +136,7 @@
     "ng-push": "^0.2.1",
     "ng-zorro-antd": "7.1.0",
     "ngx-clipboard": "11.0.0",
+    "ngx-color-picker": "^7.5.0",
     "ngx-markdown": "^1.6.0",
     "papaparse": "^4.6.3",
     "rxjs": "^6.0.0",

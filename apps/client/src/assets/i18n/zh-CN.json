@@ -299,6 +299,13 @@
     "Show_devtools": "显示开发者工具",
     "Clear_cache": "清除缓存 (将重新启动应用程序)",
     "Enable_item_tags": "启用物品标签",
+    "Show_copy_list_own_list": "在自己的清单页也显示复制清单按钮",
+    "Custom_theme": "Custom theme",
+    "COLORS": {
+      "Primary": "Primary color",
+      "Highlight": "Highlight color",
+      "Text": "Buttons content color"
+    },
     "COPY_TYPE": {
       "Classic": "复制物品名称",
       "Isearch": "复制搜索宏"
@@ -379,7 +386,7 @@
       "Title": "清单已完成",
       "Content": "这个清单现已完成，你想要做什么？",
       "Delete": "删除清单",
-      "Clear": "Empty the list",
+      "Clear": "清空清单",
       "Reset": "重置清单",
       "Nothing": "什么都不做"
     },
@@ -403,7 +410,7 @@
     "Add_remove_amount": "增加/减少",
     "Missing_masterbook": "你没有这本秘籍，点击添加这本秘籍至你的资料。",
     "No_note": "无备注",
-    "Edit_note": "无备注",
+    "Edit_note": "编辑备注",
     "Note_placeholder": "备注",
     "Tags_popup": "标签",
     "Inventory_breakdown": "背包",
@@ -819,7 +826,7 @@
     "Create_invite_infinite": "新建邀请链接(永久)",
     "No_teams": "没有团队",
     "Invites": "邀请",
-    "Assign_list": "将此列表分配给团队",
+    "Assign_list": "将此清单分配给团队",
     "Assign_team_member": "分配给团队成员",
     "Detach_team": "拆分团队",
     "Delete_confirmation": "确定要解散此团队吗？",
@@ -920,7 +927,9 @@
       "Housing_items": "房屋 ({{number}})",
       "Others": "其他",
       "Dyes": "染料",
-      "Other_master_recipes": "秘籍：其它"
+      "Other_master_recipes": "秘籍：其它",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {

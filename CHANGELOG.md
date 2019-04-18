@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.13"></a>
+## [5.2.13](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.12...v5.2.13) (2019-04-18)
+
+
+### Bug Fixes
+
+* **gc-supply:** fixed missing deliveries for DoL ([af8c98a](https://github.com/Supamiu/ffxiv-teamcraft/commit/af8c98a))
+* **layout:** fixed wrong label on some default layout panel ([88fcbc7](https://github.com/Supamiu/ffxiv-teamcraft/commit/88fcbc7))
+* **log-tracker:** fixed an issue with "mark as done" button inside list details on crafts ([41794f4](https://github.com/Supamiu/ffxiv-teamcraft/commit/41794f4))
+* **log-tracker:** fixed wrong page labeling for deliveries ([eaaa5e4](https://github.com/Supamiu/ffxiv-teamcraft/commit/eaaa5e4)), closes [#866](https://github.com/Supamiu/ffxiv-teamcraft/issues/866)
+* **overlay:** changed title inside html for alarms overlay window ([4f9eb23](https://github.com/Supamiu/ffxiv-teamcraft/commit/4f9eb23)), closes [#859](https://github.com/Supamiu/ffxiv-teamcraft/issues/859)
+* **ux:** "open list" button is now the only primary button on list panel header ([7a5e67e](https://github.com/Supamiu/ffxiv-teamcraft/commit/7a5e67e))
+* **ux:** changed button colors on some panels for better attention management ([cc1d075](https://github.com/Supamiu/ffxiv-teamcraft/commit/cc1d075))
+* **ux:** copy list button on own list panel is now a setting ([f8464fc](https://github.com/Supamiu/ffxiv-teamcraft/commit/f8464fc))
+
+
+### Features
+
+* **theme:** new custom theme feature for patreon users ([b5d27c6](https://github.com/Supamiu/ffxiv-teamcraft/commit/b5d27c6))
+
+
+
 <a name="5.2.12"></a>
 ## [5.2.12](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.11...v5.2.12) (2019-04-17)
 

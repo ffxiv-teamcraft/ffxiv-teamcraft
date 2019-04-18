@@ -299,6 +299,13 @@
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
     "Enable_item_tags": "아이템 태그 사용",
+    "Show_copy_list_own_list": "Show copy button on own list panels",
+    "Custom_theme": "Custom theme",
+    "COLORS": {
+      "Primary": "Primary color",
+      "Highlight": "Highlight color",
+      "Text": "Buttons content color"
+    },
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -920,7 +927,9 @@
       "Housing_items": "하우징({{number}})",
       "Others": "기타",
       "Dyes": "염료",
-      "Other_master_recipes": "비전서: 기타"
+      "Other_master_recipes": "비전서: 기타",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {

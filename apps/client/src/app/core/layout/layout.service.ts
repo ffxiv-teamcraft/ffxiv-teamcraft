@@ -30,7 +30,7 @@ export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
         3, false, false, true, false, false, true),
       new LayoutRow('Fishing', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERED_BY_FSH.name,
         4, false, false, true, false, false, true),
-      new LayoutRow('Gatherings', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERING.name,
+      new LayoutRow('Gathering', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERING.name,
         5, true, false, true, false, false, true),
       new LayoutRow('Dungeons/Drops or GC', 'NAME', LayoutRowOrder.DESC,
         LayoutRowFilter.IS_MONSTER_DROP.name + ':or:' + LayoutRowFilter.IS_GC_TRADE.name,

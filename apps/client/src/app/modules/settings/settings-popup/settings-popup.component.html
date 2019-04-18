@@ -10,15 +10,47 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item>
-        <nz-form-label [nzSpan]="5">{{'SETTINGS.Theme' | translate}}</nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <nz-select [(ngModel)]="settings.theme">
-            <nz-option *ngFor="let theme of availableThemes" [nzLabel]="theme.name"
-                       [nzValue]="theme"></nz-option>
-          </nz-select>
-        </nz-form-control>
-      </nz-form-item>
+      <ng-container *ngIf="user$ | async as user">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="5">{{'SETTINGS.Theme' | translate}}</nz-form-label>
+          <nz-form-control [nzSpan]="12">
+            <nz-select [ngModel]="settings.theme.name" (ngModelChange)="setTheme($event)">
+              <nz-option *ngFor="let theme of availableThemes" [nzLabel]="theme.name"
+                         [nzValue]="theme.name"></nz-option>
+              <nz-option *ngIf="user.patron || user.admin" [nzLabel]="'CUSTOM'"
+                         [nzValue]="'CUSTOM'"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="empty-label" *ngIf="(user.patron || user.admin) && settings.theme.name === 'CUSTOM'">
+          <nz-form-label [nzSpan]="5">{{'SETTINGS.Theme' | translate}}</nz-form-label>
+          <nz-form-control [nzSpan]="12">
+            <div fxLayout="column" fxLayoutGap="5px" class="custom-theme-editor">
+              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                <div fxLayout="1 1 auto">{{'SETTINGS.COLORS.Primary' | translate}}</div>
+                <div class="color-container color-picker">
+                  <div [(colorPicker)]="customTheme.primary" (colorPickerChange)="saveCustomTheme()"
+                       [style.background]="customTheme.primary" class="color-picker"></div>
+                </div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                <div fxLayout="1 1 auto">{{'SETTINGS.COLORS.Highlight' | translate}}</div>
+                <div class="color-container color-picker">
+                  <div [(colorPicker)]="customTheme.highlight" (colorPickerChange)="saveCustomTheme()"
+                       [style.background]="customTheme.highlight" class="color-picker"></div>
+                </div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                <div fxLayout="1 1 auto">{{'SETTINGS.COLORS.Text' | translate}}</div>
+                <div class="color-container color-picker">
+                  <div [(colorPicker)]="customTheme.text" (colorPickerChange)="saveCustomTheme()"
+                       [style.background]="customTheme.text" class="color-picker"></div>
+                </div>
+              </div>
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+      </ng-container>
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
@@ -57,6 +89,14 @@
         <nz-form-control [nzSpan]="12">
           <label nz-checkbox
                  [(ngModel)]="settings.itemTagsEnabled">{{'SETTINGS.Enable_item_tags' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item *ngIf="loggedIn$ | async" class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label nz-checkbox
+                 [(ngModel)]="settings.showCopyOnOwnList">{{'SETTINGS.Show_copy_list_own_list' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
     </div>

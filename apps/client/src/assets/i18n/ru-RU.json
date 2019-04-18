@@ -299,6 +299,13 @@
     "Show_devtools": "Показать инструменты разработчика",
     "Clear_cache": "Очистить кэш (перезапустит приложение)",
     "Enable_item_tags": "Включить теги предметов",
+    "Show_copy_list_own_list": "Show copy button on own list panels",
+    "Custom_theme": "Custom theme",
+    "COLORS": {
+      "Primary": "Primary color",
+      "Highlight": "Highlight color",
+      "Text": "Buttons content color"
+    },
     "COPY_TYPE": {
       "Classic": "Копировать имя предмета",
       "Isearch": "Копировать /isearch макрос"
@@ -920,7 +927,9 @@
       "Housing_items": "Housing({{number}})",
       "Others": "Прочее",
       "Dyes": "Краски",
-      "Other_master_recipes": "Other Master Recipes"
+      "Other_master_recipes": "Other Master Recipes",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {

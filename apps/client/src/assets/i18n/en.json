@@ -299,6 +299,13 @@
     "Show_devtools": "Show dev tools",
     "Clear_cache": "Clear cache (will restart the app)",
     "Enable_item_tags": "Enable item tags",
+    "Show_copy_list_own_list": "Show copy button on own list panels",
+    "Custom_theme": "Custom theme",
+    "COLORS": {
+      "Primary": "Primary color",
+      "Highlight": "Highlight color",
+      "Text": "Buttons content color"
+    },
     "COPY_TYPE": {
       "Classic": "Copy item name",
       "Isearch": "Copy /isearch macro"
@@ -920,7 +927,9 @@
       "Housing_items": "Housing({{number}})",
       "Others": "Others",
       "Dyes": "Dyes",
-      "Other_master_recipes": "Other Master Recipes"
+      "Other_master_recipes": "Other Master Recipes",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {
