@@ -921,7 +921,9 @@
       "Housing_items": "Housing({{number}})",
       "Others": "Weitere",
       "Dyes": "Farben",
-      "Other_master_recipes": "Other Master Recipes"
+      "Other_master_recipes": "Other Master Recipes",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {
