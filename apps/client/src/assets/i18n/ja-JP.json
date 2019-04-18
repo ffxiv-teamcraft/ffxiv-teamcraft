@@ -299,6 +299,13 @@
     "Show_devtools": "Devツールを表示",
     "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
     "Enable_item_tags": "アイテムダグを使用",
+    "Show_copy_list_own_list": "Show copy button on own list panels",
+    "Custom_theme": "Custom theme",
+    "COLORS": {
+      "Primary": "Primary color",
+      "Highlight": "Highlight color",
+      "Text": "Buttons content color"
+    },
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
       "Isearch": "/isearchマクロをコピーする"
@@ -920,7 +927,9 @@
       "Housing_items": "ハウジング ({{number}})",
       "Others": "その他",
       "Dyes": "染料",
-      "Other_master_recipes": "秘伝書: その他"
+      "Other_master_recipes": "秘伝書: その他",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {
