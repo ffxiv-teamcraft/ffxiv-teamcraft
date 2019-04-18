@@ -136,6 +136,7 @@
     "ng-push": "^0.2.1",
     "ng-zorro-antd": "7.1.0",
     "ngx-clipboard": "11.0.0",
+    "ngx-color-picker": "^7.5.0",
     "ngx-markdown": "^1.6.0",
     "papaparse": "^4.6.3",
     "rxjs": "^6.0.0",

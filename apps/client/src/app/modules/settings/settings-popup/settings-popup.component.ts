@@ -47,6 +47,8 @@ export class SettingsPopupComponent {
     transferred: 0
   };
 
+  customTheme: Theme;
+
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,
@@ -71,6 +73,8 @@ export class SettingsPopupComponent {
       progress.percent = Math.round(progress.percent);
       this.downloadProgress = progress;
     });
+
+    this.customTheme = this.settings.customTheme;
   }
 
   alwaysOnTopChange(value: boolean): void {
@@ -151,6 +155,17 @@ export class SettingsPopupComponent {
     localStorage.setItem('locale', lang);
     this.translate.use(lang);
     this.ipc.send('language', lang);
+  }
+
+  saveCustomTheme(): void {
+    this.settings.customTheme = this.customTheme;
+  }
+
+  setTheme(themeName: string): void {
+    this.settings.theme = Theme.byName(themeName) || this.settings.customTheme;
+    if (themeName === 'CUSTOM') {
+      this.saveCustomTheme();
+    }
   }
 
 }

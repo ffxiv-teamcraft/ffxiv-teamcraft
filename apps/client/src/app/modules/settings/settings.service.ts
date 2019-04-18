@@ -80,12 +80,15 @@ export class SettingsService {
 
   public get theme(): Theme {
     const themeName = this.getSetting('theme', 'DEFAULT');
+    if (themeName === 'CUSTOM') {
+      return this.customTheme;
+    }
     return Theme.byName(themeName);
   }
 
   public set theme(theme: Theme) {
-    this.themeChange$.next({ previous: this.theme, next: theme });
-    this.setSetting('theme', theme.name);
+    this.themeChange$.next({ previous: this.theme, next: theme || this.customTheme });
+    this.setSetting('theme', theme ? theme.name : 'CUSTOM');
   }
 
   public get alarmHoursBefore(): number {
@@ -142,6 +145,15 @@ export class SettingsService {
 
   public set showCopyOnOwnList(tagsEnabled: boolean) {
     this.setSetting('showCopyOnOwnList', tagsEnabled.toString());
+  }
+
+  public get customTheme(): Theme {
+    return JSON.parse(this.getSetting('customTheme', '{"name":"CUSTOM", "primary": "#F57C00", "highlight": "#009688", "text": "rgba(255, 255, 255, 0.85)"}'));
+  }
+
+  public set customTheme(theme: Theme) {
+    this.themeChange$.next({ previous: this.customTheme, next: theme });
+    this.setSetting('customTheme', JSON.stringify(theme));
   }
 
   private getSetting(name: string, defaultValue: string): string {
