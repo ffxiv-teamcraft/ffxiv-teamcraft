@@ -124,13 +124,13 @@ function dectectBot(userAgent) {
   const agent = userAgent.toLowerCase();
 
   for (const bot of bots) {
-    if (agent.indexOf(bot) > -1) {
+    if (agent.indexOf(bot.toLowerCase()) > -1) {
       console.log('bot detected', bot, agent);
       return true;
     }
   }
 
-  console.log('no bots found');
+  console.log('no bots found', agent);
   return false;
 
 }
