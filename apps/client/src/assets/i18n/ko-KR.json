@@ -921,7 +921,9 @@
       "Housing_items": "하우징({{number}})",
       "Others": "기타",
       "Dyes": "염료",
-      "Other_master_recipes": "비전서: 기타"
+      "Other_master_recipes": "비전서: 기타",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {
