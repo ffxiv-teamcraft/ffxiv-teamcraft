@@ -921,7 +921,9 @@
       "Housing_items": "房屋 ({{number}})",
       "Others": "其他",
       "Dyes": "染料",
-      "Other_master_recipes": "秘籍：其它"
+      "Other_master_recipes": "秘籍：其它",
+      "Deliveries": "Deliveries",
+      "Quests": "Quests"
     }
   },
   "LOADING_SCREEN": {
