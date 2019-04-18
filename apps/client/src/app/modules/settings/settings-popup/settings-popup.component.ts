@@ -163,6 +163,9 @@ export class SettingsPopupComponent {
 
   setTheme(themeName: string): void {
     this.settings.theme = Theme.byName(themeName) || this.settings.customTheme;
+    if (themeName === 'CUSTOM') {
+      this.saveCustomTheme();
+    }
   }
 
 }

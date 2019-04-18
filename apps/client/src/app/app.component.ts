@@ -280,8 +280,14 @@ export class AppComponent implements OnInit {
     }
 
     this.settings.themeChange$.subscribe((change => {
-      this.applyTheme(change.next)
+      this.applyTheme(change.next);
     }));
+
+    this.user$.subscribe(user => {
+      if (!user.patron && !user.admin && this.settings.theme.name === 'CUSTOM') {
+        this.settings.theme = Theme.DEFAULT;
+      }
+    });
   }
 
   private applyTheme(theme: Theme): void {
