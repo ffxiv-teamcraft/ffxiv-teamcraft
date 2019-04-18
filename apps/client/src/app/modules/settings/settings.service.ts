@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
-import { CustomTheme } from './custom-theme';
 
 @Injectable()
 export class SettingsService {
@@ -81,12 +80,15 @@ export class SettingsService {
 
   public get theme(): Theme {
     const themeName = this.getSetting('theme', 'DEFAULT');
+    if (themeName === 'CUSTOM') {
+      return this.customTheme;
+    }
     return Theme.byName(themeName);
   }
 
   public set theme(theme: Theme) {
-    this.themeChange$.next({ previous: this.theme, next: theme });
-    this.setSetting('theme', theme.name);
+    this.themeChange$.next({ previous: this.theme, next: theme || this.customTheme });
+    this.setSetting('theme', theme ? theme.name : 'CUSTOM');
   }
 
   public get alarmHoursBefore(): number {
@@ -145,11 +147,12 @@ export class SettingsService {
     this.setSetting('showCopyOnOwnList', tagsEnabled.toString());
   }
 
-  public get customTheme(): CustomTheme {
-    return JSON.parse(this.getSetting('customTheme', '{"primary": "#F57C00", "highlight": "#009688", "text": "rgba(255, 255, 255, 0.85)"}'));
+  public get customTheme(): Theme {
+    return JSON.parse(this.getSetting('customTheme', '{"name":"CUSTOM", "primary": "#F57C00", "highlight": "#009688", "text": "rgba(255, 255, 255, 0.85)"}'));
   }
 
-  public set customTheme(theme: CustomTheme) {
+  public set customTheme(theme: Theme) {
+    this.themeChange$.next({ previous: this.customTheme, next: theme });
     this.setSetting('customTheme', JSON.stringify(theme));
   }
 

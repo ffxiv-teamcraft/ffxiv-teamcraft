@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SettingsPopupService } from './settings-popup.service';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NgZorroAntdModule,
     FlexLayoutModule,
     TranslateModule,
-    FormsModule
+    FormsModule,
+    ColorPickerModule
   ],
   declarations: [
     SettingsPopupComponent

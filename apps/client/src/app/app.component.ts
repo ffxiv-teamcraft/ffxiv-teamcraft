@@ -43,6 +43,7 @@ import { LazyDataService } from './core/data/lazy-data.service';
 import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
 import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
+import { Theme } from './modules/settings/theme';
 
 declare const gtag: Function;
 
@@ -125,7 +126,7 @@ export class AppComponent implements OnInit {
 
     this.lazyData.loaded$.subscribe(loaded => this.dataLoaded = loaded);
 
-    this.renderer.addClass(document.body, this.settings.theme.className);
+    this.applyTheme(this.settings.theme);
 
     this.desktop = this.platformService.isDesktop();
 
@@ -279,9 +280,14 @@ export class AppComponent implements OnInit {
     }
 
     this.settings.themeChange$.subscribe((change => {
-      this.renderer.removeClass(document.body, change.previous.className);
-      this.renderer.addClass(document.body, change.next.className);
+      this.applyTheme(change.next)
     }));
+  }
+
+  private applyTheme(theme: Theme): void {
+    document.documentElement.style.setProperty('--primary-color', theme.primary);
+    document.documentElement.style.setProperty('--highlight-color', theme.highlight);
+    document.documentElement.style.setProperty('--text-color', theme.text);
   }
 
   public toggleTimeFormat(): void {
