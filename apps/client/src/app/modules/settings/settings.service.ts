@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
+import { CustomTheme } from './custom-theme';
 
 @Injectable()
 export class SettingsService {
@@ -142,6 +143,14 @@ export class SettingsService {
 
   public set showCopyOnOwnList(tagsEnabled: boolean) {
     this.setSetting('showCopyOnOwnList', tagsEnabled.toString());
+  }
+
+  public get customTheme(): CustomTheme {
+    return JSON.parse(this.getSetting('customTheme', '{"primary": "#F57C00", "highlight": "#009688", "text": "rgba(255, 255, 255, 0.85)"}'));
+  }
+
+  public set customTheme(theme: CustomTheme) {
+    this.setSetting('customTheme', JSON.stringify(theme));
   }
 
   private getSetting(name: string, defaultValue: string): string {
