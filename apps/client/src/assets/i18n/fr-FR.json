@@ -300,11 +300,11 @@
     "Clear_cache": "Vider le cache (l'application va redémarrer)",
     "Enable_item_tags": "Activer les tags d'objets",
     "Show_copy_list_own_list": "Afficher le bouton copie sur les panneaux de mes listes",
-    "Custom_theme": "Custom theme",
+    "Custom_theme": "Thème personnalisé",
     "COLORS": {
-      "Primary": "Primary color",
-      "Highlight": "Highlight color",
-      "Text": "Buttons content color"
+      "Primary": "Couleur principale",
+      "Highlight": "Couleur de surbrillance",
+      "Text": "Couleur des icônes des boutons"
     },
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
