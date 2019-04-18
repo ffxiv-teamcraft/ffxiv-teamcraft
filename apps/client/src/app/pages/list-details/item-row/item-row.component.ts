@@ -267,7 +267,7 @@ export class ItemRowComponent implements OnInit {
       first()
     ).subscribe(user => {
       if(item.craftedBy !== undefined && item.craftedBy.length > 0){
-        user.logProgression.push(+item.recipeId);
+        user.logProgression.push(+(item.recipeId || item.craftedBy[0].recipeId));
       } else if (item.gatheredBy !== undefined){
         user.gatheringLogProgression.push(+item.id);
       }
