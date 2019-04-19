@@ -300,7 +300,9 @@
     "Show_copy_list_own_list": "내 목록 패널에 복사 버튼 표시",
     "Custom_theme": "사용자 지정 테마",
     "Show_all_alarms": "Always show all alarms",
-    "Display_remaining_todo": "Show remaining amount instead of total",
+    "Amount_display_mode": "List amounts display mode",
+    "Amount_display_mode_remaining": "Remaining",
+    "Amount_display_mode_total": "Total",
     "COLORS": {
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
