@@ -7,6 +7,7 @@ import { IpcService } from '../../core/electron/ipc.service';
 export class SettingsService {
 
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
+  public settingsChange$ = new Subject<void>();
   private cache: { [id: string]: string };
 
   constructor(private ipc: IpcService) {
@@ -139,6 +140,22 @@ export class SettingsService {
     this.setSetting('itemTagsEnabled', tagsEnabled.toString());
   }
 
+  public get showAllAlarms(): boolean {
+    return this.getSetting('showAllAlarms', 'false') === 'true';
+  }
+
+  public set showAllAlarms(showAllAlarms: boolean) {
+    this.setSetting('showAllAlarms', showAllAlarms.toString());
+  }
+
+  public get displayRemaining(): boolean {
+    return this.getSetting('displayRemaining', 'false') === 'true';
+  }
+
+  public set displayRemaining(displayRemaining: boolean) {
+    this.setSetting('displayRemaining', displayRemaining.toString());
+  }
+
   public get showCopyOnOwnList(): boolean {
     return this.getSetting('showCopyOnOwnList', 'false') === 'true';
   }
@@ -164,6 +181,7 @@ export class SettingsService {
     this.cache[name] = value;
     localStorage.setItem('settings', JSON.stringify(this.cache));
     this.ipc.send('apply-settings', this.cache);
+    this.settingsChange$.next();
   }
 
 }

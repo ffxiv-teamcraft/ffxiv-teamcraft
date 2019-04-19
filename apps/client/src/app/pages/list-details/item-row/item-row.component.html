@@ -374,6 +374,21 @@
                      [width]="24"></app-item-icon>
     </div>
     <div class="amount-input">
+      <span nz-tooltip [nzTitle]="'LIST_DETAILS.Add_from_external' | translate"
+            *ngIf="item.requires !== undefined && item.requires.length > 0">
+        <button nz-button nzSize="small" nz-popover
+                [disabled]="(permissionLevel$ | async) < 20"
+                [nzContent]="externalCalc" nzTrigger="click">
+          <i nz-icon type="select"></i>
+          <ng-template #externalCalc>
+            <nz-input-number [nzMin]="0" [nzStep]="1"
+                             [ngModel]="0" #numberInput
+                             nzAutoFocus></nz-input-number>
+            <button nz-button (click)="add(numberInput.value, true)" nzType="primary">+</button>
+            <button nz-button (click)="remove(numberInput.value, true)" nzType="warn">-</button>
+          </ng-template>
+        </button>
+      </span>
       <button nz-button nzSize="small" nz-popover [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate"
               [disabled]="(permissionLevel$ | async) < 20"
               [nzContent]="calculator" nzTrigger="click">
@@ -390,9 +405,13 @@
                        [disabled]="(permissionLevel$ | async) < 20"
                        (keypress.enter)="itemDoneChanged(input.ngModel)"
                        #input
-                       [ngModel]="item.done" (ngModelChange)="itemDoneChanged($event)"></nz-input-number>
-      <span class="amount-max">
+                       [ngModel]="settings.displayRemaining? item.done - item.used : item.done"
+                       (ngModelChange)="itemDoneChanged($event)"></nz-input-number>
+      <span class="amount-max" *ngIf="!settings.displayRemaining">
         /{{item.amount}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
+      </span>
+      <span class="amount-max" *ngIf="settings.displayRemaining">
+        /{{item.amount - item.used}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
       </span>
       <button nz-button [disabled]="(permissionLevel$ | async) < 20" [nzSize]="'small'" [nzShape]="'circle'"
               [nzType]="'primary'" class="done-button"

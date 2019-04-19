@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { BellNodesService } from '../../../../core/data/bell-nodes.service';
+import { Alarm } from '../../../../core/alarms/alarm';
 
 @Component({
   selector: 'app-reduced-from',
@@ -16,6 +17,42 @@ export class ReducedFromComponent extends ItemDetailsPopup {
 
   getNodes(reduction: any): any[] {
     return this.bell.getNodesByItemId(reduction.obj.i);
+  }
+
+  public generateAlarm(node: any): Partial<Alarm> {
+    const alarm: any = {
+      itemId: node.itemId,
+      icon: node.icon,
+      duration: node.uptime / 60,
+      mapId: node.mapId,
+      zoneId: node.zoneid,
+      areaId: node.areaid,
+      type: node.type,
+      coords: {
+        x: node.coords[0],
+        y: node.coords[1]
+      },
+      spawns: node.time,
+      folklore: node.folklore,
+      reduction: node.reduction,
+      ephemeral: node.ephemeral,
+      nodeContent: node.items,
+      weathers: node.weathers,
+      weathersFrom: node.weathersFrom,
+      snagging: node.snagging,
+      fishEyes: node.fishEyes,
+      predators: node.predators || []
+    };
+    if (node.slot) {
+      alarm.slot = +node.slot;
+    }
+    if (node.gig) {
+      alarm.gig = node.gig;
+    }
+    if (node.baits) {
+      alarm.baits = node.baits;
+    }
+    return alarm;
   }
 
   getDespawnTime(time: number, uptime: number): string {

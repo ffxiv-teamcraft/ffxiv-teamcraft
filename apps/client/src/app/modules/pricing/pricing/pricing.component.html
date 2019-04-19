@@ -7,7 +7,7 @@
       {{'Back_to_list' | translate}}
     </button>
 
-    <label nz-checkbox [(ngModel)]="settings.expectToSellEverything">
+    <label nz-checkbox [(ngModel)]="settings.expectToSellEverything" (ngModelChange)="updateCosts(list)">
       {{'PRICING.Expect_to_sell_everything' | translate}}
     </label>
   </div>

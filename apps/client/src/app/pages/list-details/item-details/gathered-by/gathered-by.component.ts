@@ -22,10 +22,11 @@ export class GatheredByComponent extends ItemDetailsPopup {
 
 
   public generateAlarm(node: StoredNode): Partial<Alarm> {
-    const alarm: any = {
+    const alarm: Partial<Alarm> = {
       duration: node.uptime / 60,
       zoneId: node.zoneid,
       areaId: node.areaid,
+      mapId: node.mapid,
       spawns: node.time,
       weathers: node.weathers,
       weathersFrom: node.weathersFrom,

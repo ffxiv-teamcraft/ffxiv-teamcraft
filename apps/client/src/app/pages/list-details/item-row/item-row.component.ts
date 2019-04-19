@@ -21,7 +21,18 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
-import { filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import {
+  filter,
+  first,
+  map,
+  mergeMap,
+  shareReplay,
+  startWith,
+  switchMap,
+  takeUntil,
+  tap,
+  withLatestFrom
+} from 'rxjs/operators';
 import { HuntingComponent } from '../item-details/hunting/hunting.component';
 import { InstancesComponent } from '../item-details/instances/instances.component';
 import { ReducedFromComponent } from '../item-details/reduced-from/reduced-from.component';
@@ -53,6 +64,7 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ItemRowMenuElement } from '../../../model/display/item-row-menu-element';
 import * as _ from 'lodash';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
   selector: 'app-item-row',
@@ -60,7 +72,7 @@ import * as _ from 'lodash';
   styleUrls: ['./item-row.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemRowComponent implements OnInit {
+export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   private _item: ListRow | CustomItem;
 
@@ -143,9 +155,9 @@ export class ItemRowComponent implements OnInit {
 
   showLogCompletionButton$ = combineLatest(this.authFacade.user$, this.item$).pipe(
     map(([user, item]) => {
-      if(item.craftedBy !== undefined && item.craftedBy.length > 0){
+      if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
         return user.logProgression.indexOf(+item.recipeId || +item.craftedBy[0].recipeId) === -1;
-      } else if (item.gatheredBy !== undefined){
+      } else if (item.gatheredBy !== undefined) {
         return user.gatheringLogProgression.indexOf(+item.id) === -1;
       }
       return false;
@@ -167,12 +179,18 @@ export class ItemRowComponent implements OnInit {
               private listPicker: ListPickerService,
               private progressService: ProgressPopupService,
               private notificationService: NzNotificationService) {
+    super();
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
       filter(list => !list.notFound && list.canBeCrafted !== undefined),
       map(list => list.canBeCrafted(this.item)),
       shareReplay(1)
     );
+
+    this.settings.settingsChange$.pipe(takeUntil(this.onDestroy$)).subscribe(() => {
+      this.handleAlarms(this.item);
+      this.cdRef.detectChanges();
+    });
 
     this.missingBooks$ = this.authFacade.mainCharacterEntry$.pipe(
       map(entry => {
@@ -266,9 +284,9 @@ export class ItemRowComponent implements OnInit {
     this.authFacade.user$.pipe(
       first()
     ).subscribe(user => {
-      if(item.craftedBy !== undefined && item.craftedBy.length > 0){
+      if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
         user.logProgression.push(+(item.recipeId || item.craftedBy[0].recipeId));
-      } else if (item.gatheredBy !== undefined){
+      } else if (item.gatheredBy !== undefined) {
         user.gatheringLogProgression.push(+item.id);
       }
       this.authFacade.updateUser(user);
@@ -383,18 +401,21 @@ export class ItemRowComponent implements OnInit {
   }
 
   itemDoneChanged(newValue: number): void {
+    if (this.settings.displayRemaining) {
+      newValue += this.item.used;
+    }
     this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, newValue - this.item.done, this.item.recipeId, this.item.amount);
   }
 
 
-  add(amount: string): void {
+  add(amount: string, external = false): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, +amount, this.item.recipeId, this.item.amount);
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, +amount, this.item.recipeId, this.item.amount, external);
   }
 
-  remove(amount: string): void {
+  remove(amount: string, external = false): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, -1 * (+amount), this.item.recipeId, this.item.amount);
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, -1 * (+amount), this.item.recipeId, this.item.amount, external);
   }
 
   markAsDone(): void {
@@ -454,10 +475,18 @@ export class ItemRowComponent implements OnInit {
 
   private handleAlarms(item: ListRow): void {
     // We don't want to display more than 6 alarms, else it becomes a large shitfest
-    if (!item.alarms || item.alarms.length < 8) {
-      this.alarms = item.alarms;
+    if (!item.alarms || item.alarms.length < 8 || this.settings.showAllAlarms) {
+      this.alarms = item.alarms.sort((a, b) => {
+        if (a.spawns === undefined || b.spawns === undefined) {
+          return a.zoneId - b.zoneId;
+        }
+        if (a.spawns[0] === b.spawns[0]) {
+          return a.zoneId - b.zoneId;
+        }
+        return a.spawns[0] - b.spawns[0];
+      });
     } else {
-      this.alarms = item.alarms.slice(0, 8);
+      this.alarms = _.uniqBy(item.alarms, alarm => alarm.zoneId).slice(0, 8);
       this.moreAlarmsAvailable = item.alarms.length - 8;
     }
   }

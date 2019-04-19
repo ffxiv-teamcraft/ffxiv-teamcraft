@@ -14,12 +14,12 @@
     </nz-form-label>
     <input type="text" id="characterName" nz-input [formControl]="characterName">
   </nz-form-item>
-  <button nz-button nzType="primary" (click)="setKoreanCharacter()" *ngIf="selectedServer.value === 'Korean Server'">
+  <button nz-button nzType="primary" (click)="setKoreanCharacter()" *ngIf="selectedServer.value && selectedServer.value.toString().toLowerCase().indexOf('korean server') !== -1">
     {{'Add_manual_character' | translate}}
   </button>
 </div>
 
-<div *ngIf="selectedServer.value !== 'Korean Server'">
+<div *ngIf="selectedServer.value && selectedServer.value.toString().toLowerCase().indexOf('korean server') === -1">
   <div class="results">
     <nz-list [nzDataSource]="result$ | async"
              [nzItemLayout]="'horizontal'"
