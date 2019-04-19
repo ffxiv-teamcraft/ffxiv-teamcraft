@@ -20,7 +20,6 @@ export class ReducedFromComponent extends ItemDetailsPopup {
   }
 
   public generateAlarm(node: any): Partial<Alarm> {
-    console.log(node);
     const alarm: any = {
       itemId: node.itemId,
       icon: node.icon,
