@@ -7,6 +7,7 @@ import { IpcService } from '../../core/electron/ipc.service';
 export class SettingsService {
 
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
+  public settingsChange$ = new Subject<void>();
   private cache: { [id: string]: string };
 
   constructor(private ipc: IpcService) {
@@ -172,6 +173,7 @@ export class SettingsService {
     this.cache[name] = value;
     localStorage.setItem('settings', JSON.stringify(this.cache));
     this.ipc.send('apply-settings', this.cache);
+    this.settingsChange$.next();
   }
 
 }
