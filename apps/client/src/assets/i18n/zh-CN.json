@@ -300,6 +300,7 @@
     "Show_copy_list_own_list": "在自己的清单页也显示复制清单按钮",
     "Custom_theme": "自定义主题",
     "Show_all_alarms": "Always show all alarms",
+    "Display_remaining_todo": "Show remaining amount instead of total",
     "COLORS": {
       "Primary": "主体色",
       "Highlight": "高亮色",
