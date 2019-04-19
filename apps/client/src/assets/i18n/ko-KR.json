@@ -297,7 +297,7 @@
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
     "Enable_item_tags": "아이템 태그 사용",
-    "Show_copy_list_own_list": "Show copy button on own list panels",
+    "Show_copy_list_own_list": "내 목록 패널에 복사 버튼 표시",
     "Custom_theme": "사용자 지정 테마",
     "Show_all_alarms": "Always show all alarms",
     "COLORS": {
