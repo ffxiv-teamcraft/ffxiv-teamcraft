@@ -300,10 +300,10 @@
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
     "Enable_item_tags": "아이템 태그 사용",
     "Show_copy_list_own_list": "Show copy button on own list panels",
-    "Custom_theme": "Custom theme",
+    "Custom_theme": "사용자 지정 테마",
     "COLORS": {
-      "Primary": "Primary color",
-      "Highlight": "Highlight color",
+      "Primary": "기본 색상",
+      "Highlight": "하이라이트 색상",
       "Text": "Buttons content color"
     },
     "COPY_TYPE": {
