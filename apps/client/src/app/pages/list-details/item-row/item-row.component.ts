@@ -189,6 +189,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
     this.settings.settingsChange$.pipe(takeUntil(this.onDestroy$)).subscribe(() => {
       this.handleAlarms(this.item);
+      this.cdRef.detectChanges();
     });
 
     this.missingBooks$ = this.authFacade.mainCharacterEntry$.pipe(
@@ -400,6 +401,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   itemDoneChanged(newValue: number): void {
+    if (this.settings.displayRemaining) {
+      newValue += this.item.used;
+    }
     this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, newValue - this.item.done, this.item.recipeId, this.item.amount);
   }
 

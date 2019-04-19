@@ -148,6 +148,14 @@ export class SettingsService {
     this.setSetting('showAllAlarms', showAllAlarms.toString());
   }
 
+  public get displayRemaining(): boolean {
+    return this.getSetting('displayRemaining', 'false') === 'true';
+  }
+
+  public set displayRemaining(displayRemaining: boolean) {
+    this.setSetting('displayRemaining', displayRemaining.toString());
+  }
+
   public get showCopyOnOwnList(): boolean {
     return this.getSetting('showCopyOnOwnList', 'false') === 'true';
   }

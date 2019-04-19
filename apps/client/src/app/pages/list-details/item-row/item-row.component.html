@@ -375,7 +375,7 @@
     </div>
     <div class="amount-input">
       <span nz-tooltip [nzTitle]="'LIST_DETAILS.Add_from_external' | translate"
-           *ngIf="item.requires !== undefined && item.requires.length > 0">
+            *ngIf="item.requires !== undefined && item.requires.length > 0">
         <button nz-button nzSize="small" nz-popover
                 [disabled]="(permissionLevel$ | async) < 20"
                 [nzContent]="externalCalc" nzTrigger="click">
@@ -405,9 +405,13 @@
                        [disabled]="(permissionLevel$ | async) < 20"
                        (keypress.enter)="itemDoneChanged(input.ngModel)"
                        #input
-                       [ngModel]="item.done" (ngModelChange)="itemDoneChanged($event)"></nz-input-number>
-      <span class="amount-max">
+                       [ngModel]="settings.displayRemaining? item.done - item.used : item.done"
+                       (ngModelChange)="itemDoneChanged($event)"></nz-input-number>
+      <span class="amount-max" *ngIf="!settings.displayRemaining">
         /{{item.amount}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
+      </span>
+      <span class="amount-max" *ngIf="settings.displayRemaining">
+        /{{item.amount - item.used}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
       </span>
       <button nz-button [disabled]="(permissionLevel$ | async) < 20" [nzSize]="'small'" [nzShape]="'circle'"
               [nzType]="'primary'" class="done-button"
