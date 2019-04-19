@@ -300,6 +300,7 @@
     "Show_copy_list_own_list": "Show copy button on own list panels",
     "Custom_theme": "Custom theme",
     "Show_all_alarms": "Always show all alarms",
+    "Display_remaining_todo": "Show remaining amount instead of total",
     "COLORS": {
       "Primary": "Primary color",
       "Highlight": "Highlight color",
