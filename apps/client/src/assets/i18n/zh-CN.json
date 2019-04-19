@@ -680,7 +680,7 @@
       "Fail": "失败",
       "Success": "成功：{{HQ}}% HQ",
       "Set_to_simulate": "属性",
-      "Specialist_rotation_warning": "该结果使用通用的数据模拟特定工序，所以结果的 HQ% 可能比预期要低。",
+      "Specialist_rotation_warning": "该结果使用非专家的数据模拟专家工序，所以结果的 HQ% 可能比预期要低。",
       "Steps_count": "{{count}} 工次",
       "TAGS": {
         "SPECIALIST": "专家",
