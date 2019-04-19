@@ -23,7 +23,6 @@
     "No_match": "일치하는 아이템이 없습니다",
     "Item_name": "아이템 이름",
     "Only_recipes": "제작법만 검색",
-    "Crafts_amount": "제작 횟수",
     "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용",
     "Reset_filters": "필터 초기화",
@@ -39,7 +38,6 @@
   "Support_on_patreon": "Patreon에서 프로젝트 후원",
   "Default": "기본 설정",
   "Delete": "삭제",
-  "Timers": "타이머",
   "Copy_isearch": "아이템검색 매크로 복사",
   "Isearch_copied": "/아이템검색 {{itemname}} 클립보드에 복사되었습니다",
   "Required_for_final_craft": "HQ로 제작하기를 원하는 아이템에 {{amount}}개 사용됨",
@@ -299,12 +297,16 @@
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
     "Enable_item_tags": "아이템 태그 사용",
-    "Show_copy_list_own_list": "Show copy button on own list panels",
-    "Custom_theme": "Custom theme",
+    "Show_copy_list_own_list": "내 목록 패널에 복사 버튼 표시",
+    "Custom_theme": "사용자 지정 테마",
+    "Show_all_alarms": "Always show all alarms",
+    "Amount_display_mode": "List amounts display mode",
+    "Amount_display_mode_remaining": "Remaining",
+    "Amount_display_mode_total": "Total",
     "COLORS": {
-      "Primary": "Primary color",
-      "Highlight": "Highlight color",
-      "Text": "Buttons content color"
+      "Primary": "기본 색상",
+      "Highlight": "하이라이트 색상",
+      "Text": "버튼 속 색상"
     },
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
@@ -386,7 +388,7 @@
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
       "Delete": "목록 삭제",
-      "Clear": "Empty the list",
+      "Clear": "목록 비우기",
       "Reset": "목록 초기화",
       "Nothing": "없음"
     },
@@ -408,6 +410,7 @@
     "Missing_tags_before_button": "커뮤니티 목록에 등록된 목록에 태그가 없습니다. 태그를 달아주세요. ",
     "Missing_tags_after_button": " 버튼",
     "Add_remove_amount": "현재 수량에 추가/제거",
+    "Add_from_external": "Add as external (you didn't use materials for it)",
     "Missing_masterbook": "이 비전서를 보유하고 있지 않습니다. 프로필에 추가하려면 클릭해주세요.",
     "No_note": "메모 없음",
     "Edit_note": "메모 수정",
@@ -908,7 +911,7 @@
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요."
   },
   "LOG_TRACKER": {
-    "Title": "제작/채집수첩 트래커",
+    "Title": "수첩 트래커",
     "Mark_page_as_done": "이 페이지를 완료됨 으로 표시",
     "Mark_as_done": "이 아이템을 완료됨 으로 표시",
     "Mark_as_done_external": "이 아이템을 수첩에 완료됨으로 표시",
@@ -928,8 +931,8 @@
       "Others": "기타",
       "Dyes": "염료",
       "Other_master_recipes": "비전서: 기타",
-      "Deliveries": "Deliveries",
-      "Quests": "Quests"
+      "Deliveries": "야만족/단골 거래",
+      "Quests": "직업 퀘스트"
     }
   },
   "LOADING_SCREEN": {
