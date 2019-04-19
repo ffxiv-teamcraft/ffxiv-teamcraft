@@ -407,6 +407,7 @@
     "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
     "Missing_tags_after_button": " button",
     "Add_remove_amount": "Add/remove a given amount",
+    "Add_from_external": "Add as external (you didn't use materials for it)",
     "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
     "No_note": "No note",
     "Edit_note": "No note",

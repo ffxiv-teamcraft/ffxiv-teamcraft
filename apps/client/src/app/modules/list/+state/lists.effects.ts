@@ -289,7 +289,7 @@ export class ListsEffects {
       return [action, list];
     }),
     map(([action, list]: [SetItemDone, List]) => {
-      list.setDone(action.itemId, action.doneDelta, !action.finalItem, false, action.recipeId);
+      list.setDone(action.itemId, action.doneDelta, !action.finalItem, false, action.recipeId, action.external);
       return list;
     }),
     map(list => new UpdateList(list))

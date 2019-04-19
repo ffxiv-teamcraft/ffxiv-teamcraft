@@ -200,9 +200,10 @@ export class List extends DataWithPermissions {
    * @param {boolean} setUsed
    * @param {boolean} excludeFinalItems
    * @param recipeId
+   * @param external
    * @param initialAddition
    */
-  public setDone(itemId: number | string, amount: number, excludeFinalItems = false, setUsed = false, recipeId?: string, initialAddition = amount): void {
+  public setDone(itemId: number | string, amount: number, excludeFinalItems = false, setUsed = false, recipeId?: string, external = false, initialAddition = amount): void {
     const item = this.getItemById(itemId, excludeFinalItems, recipeId);
     const previousDone = MathTools.absoluteCeil(item.done / item.yield);
     if (setUsed) {
@@ -210,7 +211,7 @@ export class List extends DataWithPermissions {
       const previousUsed = item.used;
       // Update used amount
       item.used += amount;
-      if (item.used > previousUsed && item.used !== Math.min(item.done + amount, item.amount)) {
+      if (!external && item.used > previousUsed && item.used !== Math.min(item.done + amount, item.amount)) {
         // Set amount to the amount of items to add to the total.
         amount = Math.max(0, amount - (item.done - previousUsed));
       }
@@ -249,7 +250,7 @@ export class List extends DataWithPermissions {
             && (newDone - previousDone <= 0) === (initialAddition <= 0)) {
             // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
             // as we didn't use more.
-            this.setDone(requirement.id, nextAmount, true, previousDone !== item.done, undefined, initialAddition);
+            this.setDone(requirement.id, nextAmount, true, previousDone !== item.done, undefined, external, initialAddition);
           }
         }
       }

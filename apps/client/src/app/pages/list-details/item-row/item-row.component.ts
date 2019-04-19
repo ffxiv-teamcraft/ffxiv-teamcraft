@@ -404,14 +404,14 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
 
-  add(amount: string): void {
+  add(amount: string, external = false): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, +amount, this.item.recipeId, this.item.amount);
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, +amount, this.item.recipeId, this.item.amount, external);
   }
 
-  remove(amount: string): void {
+  remove(amount: string, external = false): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, -1 * (+amount), this.item.recipeId, this.item.amount);
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, -1 * (+amount), this.item.recipeId, this.item.amount, external);
   }
 
   markAsDone(): void {
