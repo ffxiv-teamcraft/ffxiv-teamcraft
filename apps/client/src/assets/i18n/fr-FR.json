@@ -300,7 +300,9 @@
     "Show_copy_list_own_list": "Afficher le bouton copie sur les panneaux de mes listes",
     "Custom_theme": "Thème personnalisé",
     "Show_all_alarms": "Always show all alarms",
-    "Display_remaining_todo": "Show remaining amount instead of total",
+    "Amount_display_mode": "List amounts display mode",
+    "Amount_display_mode_remaining": "Remaining",
+    "Amount_display_mode_total": "Total",
     "COLORS": {
       "Primary": "Couleur principale",
       "Highlight": "Couleur de surbrillance",
