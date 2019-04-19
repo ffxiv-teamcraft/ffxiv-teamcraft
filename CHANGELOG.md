@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.14"></a>
+## [5.2.14](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.13...v5.2.14) (2019-04-19)
+
+
+### Bug Fixes
+
+* **fishing:** fixed an issue with some fishes' details popup inside list ([af6a587](https://github.com/Supamiu/ffxiv-teamcraft/commit/af6a587))
+
+
+### Features
+
+* **alarms:** alarms buttons inside list details are now sorted by spawn hour ([5ef3b78](https://github.com/Supamiu/ffxiv-teamcraft/commit/5ef3b78))
+* **kr:** added korean servers to the servers list when adding a character ([b46c47a](https://github.com/Supamiu/ffxiv-teamcraft/commit/b46c47a))
+* **list:** added a button to input items as "obtained from external source" to improve tracking ([8ff34f0](https://github.com/Supamiu/ffxiv-teamcraft/commit/8ff34f0))
+* **list:** new setting to show remaining todo amount instead of total ([8a73a87](https://github.com/Supamiu/ffxiv-teamcraft/commit/8a73a87))
+* **reduction:** added integrated timers to reduction details popup ([d7e4cbe](https://github.com/Supamiu/ffxiv-teamcraft/commit/d7e4cbe))
+* **settings:** added a setting to always show all alarms no matter how much are available ([e21ef56](https://github.com/Supamiu/ffxiv-teamcraft/commit/e21ef56))
+
+
+
 <a name="5.2.13"></a>
 ## [5.2.13](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.12...v5.2.13) (2019-04-18)
 
