@@ -454,7 +454,7 @@ export class ItemRowComponent implements OnInit {
 
   private handleAlarms(item: ListRow): void {
     // We don't want to display more than 6 alarms, else it becomes a large shitfest
-    if (!item.alarms || item.alarms.length < 8) {
+    if (!item.alarms || item.alarms.length < 8 || this.settings.showAllAlarms) {
       this.alarms = item.alarms;
     } else {
       this.alarms = item.alarms.slice(0, 8);

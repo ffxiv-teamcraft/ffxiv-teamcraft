@@ -139,6 +139,14 @@ export class SettingsService {
     this.setSetting('itemTagsEnabled', tagsEnabled.toString());
   }
 
+  public get showAllAlarms(): boolean {
+    return this.getSetting('showAllAlarms', 'false') === 'true';
+  }
+
+  public set showAllAlarms(showAllAlarms: boolean) {
+    this.setSetting('showAllAlarms', showAllAlarms.toString());
+  }
+
   public get showCopyOnOwnList(): boolean {
     return this.getSetting('showCopyOnOwnList', 'false') === 'true';
   }

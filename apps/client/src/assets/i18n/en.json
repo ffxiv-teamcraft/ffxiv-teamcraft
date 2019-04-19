@@ -301,6 +301,7 @@
     "Enable_item_tags": "Enable item tags",
     "Show_copy_list_own_list": "Show copy button on own list panels",
     "Custom_theme": "Custom theme",
+    "Show_all_alarms": "Always show all alarms",
     "COLORS": {
       "Primary": "Primary color",
       "Highlight": "Highlight color",

@@ -58,6 +58,13 @@
                  [(ngModel)]="settings.noPanelBorders">{{'SETTINGS.no_panel_borders' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label nz-checkbox
+                 [(ngModel)]="settings.showAllAlarms">{{'SETTINGS.Show_all_alarms' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Preferred_copy_type' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
