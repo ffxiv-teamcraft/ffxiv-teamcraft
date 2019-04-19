@@ -300,11 +300,11 @@
     "Clear_cache": "清除缓存 (将重新启动应用程序)",
     "Enable_item_tags": "启用物品标签",
     "Show_copy_list_own_list": "在自己的清单页也显示复制清单按钮",
-    "Custom_theme": "Custom theme",
+    "Custom_theme": "自定义主题",
     "COLORS": {
-      "Primary": "Primary color",
-      "Highlight": "Highlight color",
-      "Text": "Buttons content color"
+      "Primary": "主体色",
+      "Highlight": "高亮色",
+      "Text": "按钮文本色"
     },
     "COPY_TYPE": {
       "Classic": "复制物品名称",
@@ -928,8 +928,8 @@
       "Others": "其他",
       "Dyes": "染料",
       "Other_master_recipes": "秘籍：其它",
-      "Deliveries": "Deliveries",
-      "Quests": "Quests"
+      "Deliveries": "交付",
+      "Quests": "任务"
     }
   },
   "LOADING_SCREEN": {
