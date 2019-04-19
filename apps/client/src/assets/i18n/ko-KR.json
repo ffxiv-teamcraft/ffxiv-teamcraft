@@ -304,7 +304,7 @@
     "COLORS": {
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
-      "Text": "Buttons content color"
+      "Text": "버튼 속 색상"
     },
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
@@ -386,7 +386,7 @@
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
       "Delete": "목록 삭제",
-      "Clear": "Empty the list",
+      "Clear": "목록 비우기",
       "Reset": "목록 초기화",
       "Nothing": "없음"
     },
@@ -928,8 +928,8 @@
       "Others": "기타",
       "Dyes": "염료",
       "Other_master_recipes": "비전서: 기타",
-      "Deliveries": "Deliveries",
-      "Quests": "Quests"
+      "Deliveries": "부가퀘스트",
+      "Quests": "잡퀘스트"
     }
   },
   "LOADING_SCREEN": {
