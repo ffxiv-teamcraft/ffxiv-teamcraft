@@ -908,7 +908,7 @@
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요."
   },
   "LOG_TRACKER": {
-    "Title": "제작/채집수첩 트래커",
+    "Title": "수첩 트래커",
     "Mark_page_as_done": "이 페이지를 완료됨 으로 표시",
     "Mark_as_done": "이 아이템을 완료됨 으로 표시",
     "Mark_as_done_external": "이 아이템을 수첩에 완료됨으로 표시",
@@ -928,7 +928,7 @@
       "Others": "기타",
       "Dyes": "염료",
       "Other_master_recipes": "비전서: 기타",
-      "Deliveries": "단골 거래",
+      "Deliveries": "야만족/단골 거래",
       "Quests": "직업 퀘스트"
     }
   },
