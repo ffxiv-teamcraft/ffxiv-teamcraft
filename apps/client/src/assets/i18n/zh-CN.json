@@ -410,7 +410,7 @@
     "Missing_tags_before_button": "此清单已公开分享为社区清单，但它没有标签，请使用 ",
     "Missing_tags_after_button": " 按钮添加标签。",
     "Add_remove_amount": "增加/减少",
-    "Add_from_external": "添加为外部物品 (不使用自己的材料)",
+    "Add_from_external": "增加外部来源数量 (并非使用自己的材料制作的)",
     "Missing_masterbook": "你没有这本秘籍，点击添加这本秘籍至你的资料。",
     "No_note": "无备注",
     "Edit_note": "编辑备注",
