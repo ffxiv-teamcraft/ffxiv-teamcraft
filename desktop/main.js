@@ -188,9 +188,15 @@ function createTray() {
   const trayIcon = nativeIcon.resize({ width: 16, height: 16 });
   tray = new Tray(trayIcon);
   tray.on('balloon-click', () => {
+    if (win === null) {
+      createWindow();
+    }
     !win.isVisible() ? win.show() : null;
   });
   tray.on('click', () => {
+    if (win === null) {
+      createWindow();
+    }
     win.isVisible() ? win.hide() : win.show();
   });
   tray.setToolTip('FFXIV Teamcraft');
