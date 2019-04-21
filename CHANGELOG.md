@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.15"></a>
+## [5.2.15](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.14...v5.2.15) (2019-04-21)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with some accounts missing defaultLodestoneId ([dcda153](https://github.com/Supamiu/ffxiv-teamcraft/commit/dcda153))
+* **desktop:** fixed an issue for window show event when you only have overlay ([fb7f0ae](https://github.com/Supamiu/ffxiv-teamcraft/commit/fb7f0ae))
+* **overlay:** fixed extra blank space in alarm overlay ([843889b](https://github.com/Supamiu/ffxiv-teamcraft/commit/843889b))
+
+
+### Features
+
+* **reduction:** added node data (including FSH) to reduction dialog box ([98b0f81](https://github.com/Supamiu/ffxiv-teamcraft/commit/98b0f81))
+
+
+
 <a name="5.2.14"></a>
 ## [5.2.14](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.13...v5.2.14) (2019-04-19)
 

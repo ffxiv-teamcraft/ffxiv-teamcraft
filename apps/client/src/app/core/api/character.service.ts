@@ -31,7 +31,7 @@ export class CharacterService {
                     })
                   );
                 }
-                return this.xivapi.getCharacter(user.defaultLodestoneId).pipe(
+                return this.xivapi.getCharacter(user.defaultLodestoneId || user.lodestoneIds[0].id).pipe(
                   tap(res => {
                     // If state is 1, then try again in 2 minutes
                     if (res.Info.Character.State === 1) {
