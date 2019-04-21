@@ -3,7 +3,7 @@
     <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="reduction.obj.i | itemName | i18n">
       <ng-template #itemIcon>
         <app-item-icon [icon]="reduction.obj.c" [itemName]="reduction.obj.i | itemName | i18n"
-                       [width]="32"></app-item-icon>
+                       [width]="32" [itemId]="reduction.obj.i"></app-item-icon>
       </ng-template>
     </nz-card-meta>
     <nz-list [nzDataSource]="getNodes(reduction)" [nzRenderItem]="nodeTemplate">
@@ -12,39 +12,84 @@
           <nz-list-item-meta [nzTitle]="node.zoneid | placeName | i18n" [nzDescription]="description">
             <ng-template #description>
               <div fxLayout="column" fxLayoutGap="5px">
-                <div fxLayout="row" fxLayoutGap="5px">
-                  <span>{{node.areaid | placeName | i18n}}</span>
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                  <span>{{node.mapId | placeName | i18n}} - lvl {{node.level}}</span>
                   <nz-tag *ngIf="node.limitType !== undefined" nzColor="orange">
                     {{node.limitType | i18n}}
                   </nz-tag>
+                  <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                    <img src="./assets/icons/status/fish_eyes.png" alt="" nz-tooltip
+                         [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+                    <div
+                      *ngIf="node.itemId | fishEyesDuration as duration" nz-tooltip
+                      [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate">{{'COMMON.Minutes_duration' | translate: { amount: duration } }}</div>
+                  </div>
+                  <img *ngIf="node.snagging" src="./assets/icons/status/snagging.png" alt="" nz-tooltip
+                       [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
                 </div>
+
                 <div fxLayout="row wrap" fxLayoutGap="5px">
                   <span *ngIf="node.slot !== undefined">Slot {{node.slot}}</span>
                   <span *ngIf="node.time !== undefined">
-                <i *ngFor="let time of node.time">
-                  {{time}}:00 - {{getDespawnTime(time, node.uptime)}}:00
-                </i>
-              </span>
+                    <i *ngFor="let time of node.time">
+                      {{time}}:00 - {{getDespawnTime(time, node.uptime)}}:00
+                    </i>
+                  </span>
                 </div>
                 <ng-container *ngIf="node.time !== undefined || node.weathers !== undefined">
-                  <div *ngIf="(generateAlarm(node) | alarmDisplay | async) as alarm" [class.spawned-timer]="alarm.spawned"
+                  <div *ngIf="(generateAlarm(node) | alarmDisplay | async) as alarm"
+                       [class.spawned-timer]="alarm.spawned"
                        [class.played-timer]="alarm.played">
                     {{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}
                   </div>
                 </ng-container>
+                <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+                  <div *ngFor="let weather of node.weathersFrom">
+                    <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+                         [nzTitle]="weather | weatherName | i18n">
+                  </div>
+                </div>
+                <div *ngIf="node.weathersFrom !== undefined">
+                  <i nz-icon type="right" theme="outline"></i>
+                </div>
+                <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+                  <div *ngFor="let weather of node.weathers">
+                    <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+                         [nzTitle]="weather | weatherName | i18n">
+                  </div>
+                </div>
               </div>
             </ng-template>
             <ng-template #openMap>
               <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
-                <app-map-position [marker]="{x:node.coords[0], y: node.coords[1]}"
-                                  [mapId]="node.mapid"
+                <app-map-position [marker]="{x:node.x, y: node.y}"
+                                  [mapId]="node.mapId"
                                   [zoneId]="node.zoneid"></app-map-position>
                 <div
-                  *ngIf="node.mapid | closestAetheryte: { x: node.coords[0], y: node.coords[1] } | async as aetheryte"
+                  *ngIf="node.mapId | closestAetheryte: { x: node.x, y: node.y } | async as aetheryte"
                   class="closest-tp">
-                  <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName
-                  |
-                  i18n}}
+                  <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon">
+                  {{aetheryte.nameid | placeName | i18n}}
+                </div>
+                <ng-container *ngIf="node.baits !== undefined">
+                  <app-fishing-bait [baits]="node.baits"></app-fishing-bait>
+                </ng-container>
+                <div *ngIf="node.gig">
+                  <img src="./assets/icons/gig/{{node.gig}}.png" nz-tooltip class="gig-icon"
+                       [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate">
+                  <img *ngIf="node.hookset" src="./assets/icons/hookset/{{node.hookset}}.png" nz-tooltip class="gig-icon"
+                       [nzTitle]="(node.hookset === 'precision'? 4179 : 4103) | actionName | i18n">
+                </div>
+                <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
+                     fxLayoutAlign="flex-start center">
+                  <img src="./assets/icons/status/predators.png" alt="" nz-tooltip
+                       [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate">
+                  <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutGap="5px"
+                       fxLayoutAlign="flex-start center">
+                    <div>{{predator.amount}}x</div>
+                    <app-item-icon [width]="32" [icon]="predator.icon" [itemId]="predator.id"
+                                   [tooltipDisabled]="true" [appFishTooltip]="predator.id"></app-item-icon>
+                  </div>
                 </div>
               </div>
             </ng-template>

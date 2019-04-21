@@ -16,7 +16,7 @@ export class ReducedFromComponent extends ItemDetailsPopup {
   }
 
   getNodes(reduction: any): any[] {
-    return this.bell.getNodesByItemId(reduction.obj.i);
+    return this.bell.getAllNodes(reduction);
   }
 
   public generateAlarm(node: any): Partial<Alarm> {
