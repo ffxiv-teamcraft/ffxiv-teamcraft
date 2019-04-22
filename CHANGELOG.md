@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.16"></a>
+## [5.2.16](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.15...v5.2.16) (2019-04-22)
+
+
+### Bug Fixes
+
+* **log-tracker:** fixed a display issue with first selected tab ([31c00f0](https://github.com/Supamiu/ffxiv-teamcraft/commit/31c00f0))
+* **zone-breakdown:** fixed an issue with zones reordering themselves randomly ([f519f41](https://github.com/Supamiu/ffxiv-teamcraft/commit/f519f41))
+
+
+
 <a name="5.2.15"></a>
 ## [5.2.15](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.14...v5.2.15) (2019-04-21)
 
