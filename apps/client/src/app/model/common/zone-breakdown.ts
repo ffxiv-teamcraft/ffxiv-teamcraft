@@ -50,5 +50,6 @@ export class ZoneBreakdown {
         existingRow.items.push(item);
       }
     }
+    this._rows = this._rows.sort((a, b) => a.zoneId - b.zoneId);
   }
 }
