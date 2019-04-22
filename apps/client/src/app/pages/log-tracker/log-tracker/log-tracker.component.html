@@ -79,6 +79,7 @@
   </nz-tab>
   <nz-tab [nzTitle]="'MIN/BTN' | translate">
     <nz-tabset nzSize="small" nzAnimated="false"
+               [nzSelectedIndex]="dolSelectedPage"
                (nzSelectedIndexChange)="dolSelectedPage = dolTabs[$event][0].id">
       <nz-tab *ngFor="let tab of dolTabs; let index = index" [nzTitle]="titleTemplate">
         <ng-template #titleTemplate>
