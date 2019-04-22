@@ -78,6 +78,9 @@
     </nz-tabset>
   </nz-tab>
   <nz-tab [nzTitle]="'MIN/BTN' | translate">
+    <button nz-button (click)="showOptimizedMap(0)">
+      <i nz-icon iconfont="icon-map"></i>
+    </button>
     <nz-tabset nzSize="small" nzAnimated="false"
                [nzSelectedIndex]="dolSelectedPage"
                (nzSelectedIndexChange)="dolSelectedPage = dolTabs[$event][0].id">
@@ -90,9 +93,9 @@
                    (nzSelectedIndexChange)="dolSelectedPage = tab[$event].id">
           <nz-tab *ngFor="let page of tab;" [nzTitle]="titleTemplate">
             <ng-template #titleTemplate>
-          <span>{{ getDolPageName(page) }}
-            ({{getDolPageCompletion(page)}})
-          </span>
+              <span>{{ getDolPageName(page) }}
+                ({{getDolPageCompletion(page)}})
+              </span>
             </ng-template>
             <nz-spin [nzSpinning]="userCompletion === {}">
               <div fxLayout="column" *ngIf="dolSelectedPage === page.id">

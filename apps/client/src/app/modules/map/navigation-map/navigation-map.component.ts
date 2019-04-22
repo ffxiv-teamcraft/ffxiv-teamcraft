@@ -34,7 +34,7 @@ export class NavigationMapComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.optimizedPath$ = this.mapService.getOptimizedPath(this.mapId, this.points);
+    this.optimizedPath$ = this.mapService.getOptimizedPathOnMap(this.mapId, this.points);
     setTimeout(() => {
       this.mapService.getMapById(this.mapId).pipe(first()).subscribe(map => this.map = map);
     }, 50);

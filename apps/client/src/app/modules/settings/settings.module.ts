@@ -8,6 +8,8 @@ import { SettingsPopupService } from './settings-popup.service';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { PipesModule } from '../../pipes/pipes.module';
+import { CoreModule } from '../../core/core.module';
 
 @NgModule({
   imports: [
@@ -16,7 +18,9 @@ import { ColorPickerModule } from 'ngx-color-picker';
     FlexLayoutModule,
     TranslateModule,
     FormsModule,
-    ColorPickerModule
+    ColorPickerModule,
+    PipesModule,
+    CoreModule
   ],
   declarations: [
     SettingsPopupComponent

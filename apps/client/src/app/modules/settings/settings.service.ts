@@ -55,6 +55,14 @@ export class SettingsService {
     this.setSetting('default-permission-level', level.toString());
   }
 
+  public get startingPlace(): number {
+    return +this.getSetting('startingPlace', '12');
+  }
+
+  public set startingPlace(startingPlace: number) {
+    this.setSetting('startingPlace', startingPlace.toString());
+  }
+
   public get compactSidebar(): boolean {
     return this.getSetting('compact-sidebar', 'false') === 'true';
   }

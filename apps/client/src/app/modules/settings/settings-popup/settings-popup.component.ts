@@ -49,6 +49,8 @@ export class SettingsPopupComponent {
 
   customTheme: Theme;
 
+  startingPlaces = [12, 13, 2];
+
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,

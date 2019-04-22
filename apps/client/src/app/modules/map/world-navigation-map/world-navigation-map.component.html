@@ -1,6 +1,15 @@
-<div *ngIf="optimizedPath$ | async as path">
+<div *ngIf="optimizedPath$ | async as paths">
+  <div fxLayout="row" fxLayoutGap="10px">
+    <button nz-button (click)="currentPath = paths[paths.indexOf(path) - 1]"
+            [disabled]="paths.indexOf(path) <= 0"></button>
+    <nz-select style="width: 120px;" [(ngModel)]="currentPath">
+      <nz-option *ngFor="let path of paths" [nzValue]="path" [nzLabel]="path.map.id | placeName | i18n"></nz-option>
+    </nz-select>
+    <button nz-button (click)="currentPath = paths[paths.indexOf(path) + 1]"
+            [disabled]="paths.indexOf(path) >= paths.length - 1"></button>
+  </div>
   <div class="navigation-container" #container>
-    <app-map [mapId]="mapId"></app-map>
+    <app-map [mapId]="currentPath.map.id"></app-map>
     <svg style="width:100%;height:100%;" class="navigation-svg">
       <defs>
         <marker id="walkarrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
@@ -12,9 +21,10 @@
       </defs>
       <g *ngFor="let step of path; let i = index">
         <line *ngIf="i > 0 && map !== undefined && containerRef !== undefined"
-              [attr.x1]="getPositionPercent(path[i-1]).x"
-              [attr.y1]="getPositionPercent(path[i-1]).y"
-              [attr.x2]="getPositionPercent(step).x" [attr.y2]="getPositionPercent(step).y" stroke-width="2"
+              [attr.x1]="getPositionPercent(currentPath.map, currentPath[i-1]).x"
+              [attr.y1]="getPositionPercent(currentPath.map, currentPath[i-1]).y"
+              [attr.x2]="getPositionPercent(currentPath.map, step).x" [attr.y2]="getPositionPercent(currentPath.map, step).y"
+              stroke-width="2"
               [attr.stroke]="step.isTeleport?'blue':'red'"
               [attr.marker-end]="'url('+(step.isTeleport?'#tparrow':'#walkarrow')+')'">
         </line>
@@ -28,11 +38,11 @@
                            [nzTitle]="step.name | i18n">
           <ng-template #rowContent>
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
-              <div *ngIf="step.type !== undefined && markedAsDone.indexOf(step) === -1">
+              <div *ngIf="step.type !== undefined && markedAsDone.indexOf(step.itemId) === -1">
                 {{('NAVIGATION.STEP.' + step.type) | translate: { amount: step.item_amount } }}
               </div>
               <button nz-button nzShape="circle" nzType="primary" nzSize="small"
-                      *ngIf="step.type !== undefined && markedAsDone.indexOf(step) === -1"
+                      *ngIf="step.type !== undefined && markedAsDone.indexOf(step.itemId) === -1"
                       (click)="markStepAsDone(step)">
                 <i nz-icon type="check"></i>
               </button>
