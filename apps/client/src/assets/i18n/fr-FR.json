@@ -303,6 +303,8 @@
     "Amount_display_mode": "Mode d’affichage des montants",
     "Amount_display_mode_remaining": "Restant",
     "Amount_display_mode_total": "Total",
+    "Starting_place": "Starting place",
+    "Starting_place_explain": "Used for path optimization features",
     "COLORS": {
       "Primary": "Couleur principale",
       "Highlight": "Couleur de surbrillance",
@@ -384,6 +386,7 @@
     "History": "Historique",
     "Items_count": "{{amount}} items",
     "Show_craftable_amount": "Voir la quantité fabricable",
+    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "COMPLETION_POPUP": {
       "Title": "Liste terminée",
       "Content": "Cette liste est maintenant terminée, que voulez-vous en faire ?",
@@ -532,6 +535,7 @@
   "NAVIGATION": {
     "Title": "Parcours optimisé",
     "Steps": "Étapes",
+    "Loading_path": "Loading optimized path (can take several seconds)",
     "STEP": {
       "Gathering": "Récolter {{amount}}",
       "Hunting": "Obtenez {{amount}} sur des monstres",
@@ -925,6 +929,8 @@
     "Required_for_achievement": "Requis pour les haut faits",
     "Select_spot": "Sélectionnez un point de pêche pour en voir les détails",
     "Hide_completed": "Masquer les éléments complétés",
+    "MIN_optimized_path": "Optimized path for all MIN nodes",
+    "BTN_optimized_path": "Optimized path for all BTN nodes",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
