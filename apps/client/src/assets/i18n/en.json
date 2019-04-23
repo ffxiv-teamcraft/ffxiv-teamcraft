@@ -534,6 +534,7 @@
   "NAVIGATION": {
     "Title": "Optimized navigation route",
     "Steps": "Steps",
+    "Loading_path": "Loading optimized path (can take several seconds)",
     "STEP": {
       "Gathering": "Gather {{amount}}",
       "Hunting": "Get {{amount}} on monsters",
@@ -927,6 +928,8 @@
     "Required_for_achievement": "Required for the achievements",
     "Select_spot": "Select a spot to see its details",
     "Hide_completed": "Hide completed recipes",
+    "MIN_optimized_path": "Optimized path for all MIN nodes",
+    "BTN_optimized_path": "Optimized path for all BTN nodes",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",

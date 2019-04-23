@@ -78,11 +78,21 @@
     </nz-tabset>
   </nz-tab>
   <nz-tab [nzTitle]="'MIN/BTN' | translate">
-    <button nz-button (click)="showOptimizedMap(0)">
-      <i nz-icon iconfont="icon-map"></i>
-    </button>
+    <ng-template #extraTemplate>
+      <div fxLayout="row" fxLayoutGap="5px" class="dol-path-buttons">
+        <button nz-button (click)="showOptimizedMap(0)" nz-tooltip [nzTitle]="'LOG_TRACKER.MIN_optimized_path' | translate">
+          <i nz-icon iconfont="icon-map"></i>
+          <img src="./assets/icons/MIN.png" alt="MIN" class="job-icon">
+        </button>
+        <button nz-button (click)="showOptimizedMap(2)" nz-tooltip [nzTitle]="'LOG_TRACKER.BTN_optimized_path' | translate">
+          <i nz-icon iconfont="icon-map"></i>
+          <img src="./assets/icons/BTN.png" alt="BTN" class="job-icon">
+        </button>
+
+      </div>
+    </ng-template>
     <nz-tabset nzSize="small" nzAnimated="false"
-               [nzSelectedIndex]="dolSelectedPage"
+               [nzTabBarExtraContent]="extraTemplate"
                (nzSelectedIndexChange)="dolSelectedPage = dolTabs[$event][0].id">
       <nz-tab *ngFor="let tab of dolTabs; let index = index" [nzTitle]="titleTemplate">
         <ng-template #titleTemplate>

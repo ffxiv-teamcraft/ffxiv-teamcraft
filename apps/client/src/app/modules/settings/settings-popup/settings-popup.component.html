@@ -123,7 +123,7 @@
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Starting_place' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
           <nz-select [(ngModel)]="settings.startingPlace">
-            <nz-option [nzLabel]="place | placeName | i18n" [nzValue]="place"
+            <nz-option [nzLabel]="place.placenameId | placeName | i18n" [nzValue]="place.id"
                        *ngFor="let place of startingPlaces"></nz-option>
           </nz-select>
           <nz-form-explain>{{'SETTINGS.Starting_place_explain' | translate}}</nz-form-explain>

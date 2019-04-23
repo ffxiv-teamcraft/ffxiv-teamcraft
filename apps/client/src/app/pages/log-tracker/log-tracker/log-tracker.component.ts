@@ -3,7 +3,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { craftingLogPages } from '../../../core/data/sources/crafting-log-pages';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { filter, first, map, mergeMap, tap, switchMap, takeUntil } from 'rxjs/operators';
+import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { combineLatest, concat, Observable, of } from 'rxjs';
@@ -363,25 +363,28 @@ export class LogTrackerComponent extends TrackerComponent {
     const steps: NavigationObjective[] = [].concat.apply([], [...gatheringLogPages[index], ...gatheringLogPages[index + 1]]
       .map(page => {
         return page.items
-          .filter(item => this.getNodeData(item.itemId, page.id).length > 0)
+          .filter(item => {
+            return !this.userGatheringCompletion[item.itemId] && this.getNodeData(item.itemId, page.id).length > 0;
+          })
           .map(item => {
-          const node = this.getNodeData(item.itemId, page.id)[0];
-          return <NavigationObjective>{
-            mapId: node.mapId,
-            iconid: null,
-            item_amount: 1,
-            name: this.l12n.getItem(item.itemId),
-            itemId: item.itemId,
-            total_item_amount: 1,
-            type: 'Gathering',
-            x: node.x,
-            y: node.y
-          };
-        });
+            const node = this.getNodeData(item.itemId, page.id)[0];
+            return <NavigationObjective>{
+              mapId: node.mapId,
+              zoneId: node.zoneid,
+              iconid: null,
+              item_amount: 1,
+              name: this.l12n.getItem(item.itemId),
+              itemId: item.itemId,
+              total_item_amount: 1,
+              type: 'Gathering',
+              x: node.x,
+              y: node.y
+            };
+          });
       })
     );
     const ref = this.dialog.create({
-      nzTitle: this.translate.instant('LOG_TRACKER.Optimized_map'),
+      nzTitle: this.translate.instant('NAVIGATION.Title'),
       nzContent: WorldNavigationMapComponent,
       nzComponentParams: {
         points: steps

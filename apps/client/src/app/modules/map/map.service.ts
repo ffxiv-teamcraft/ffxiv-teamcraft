@@ -9,13 +9,15 @@ import { NavigationStep } from './navigation-step';
 import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { NavigationObjective } from './navigation-objective';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { XivapiService } from '@xivapi/angular-client';
 import * as _ from 'lodash';
 import { WorldNavigationStep } from './world-navigation-step';
 import { requestsWithDelay } from '../../core/rxjs/requests-with-delay';
 import { aetherstream } from '../../core/data/sources/aetherstream';
 import { combineLatest } from 'rxjs/internal/observable/combineLatest';
 import { SettingsService } from '../settings/settings.service';
+import { LazyDataService } from '../../core/data/lazy-data.service';
+import { of } from 'rxjs/internal/observable/of';
 
 @Injectable()
 export class MapService {
@@ -29,26 +31,17 @@ export class MapService {
   private cache: { [index: number]: Observable<MapData> } = {};
 
   constructor(private xivapi: XivapiService, private mathService: MathToolsService, private l12n: LocalizedDataService,
-              private settings: SettingsService) {
+              private settings: SettingsService, private lazyData: LazyDataService) {
   }
 
   getMapById(mapId: number): Observable<MapData> {
     if (this.cache[mapId] === undefined) {
-      this.cache[mapId] = this.xivapi.get(XivapiEndpoint.Map, mapId).pipe(
+      const _mapData = this.lazyData.maps[mapId];
+      this.cache[mapId] = of(_mapData).pipe(
         map(mapData => {
           return {
-            id: mapId,
-            aetherytes: this.getAetherytes(mapId),
-            hierarchy: mapData.Hierarchy,
-            image: `https://xivapi.com${mapData.MapFilename}`,
-            offset_x: mapData.OffsetX,
-            offset_y: mapData.OffsetY,
-            map_marker_range: mapData.MapMarkerRange,
-            placename_id: mapData.PlaceNameTargetID,
-            region_id: mapData.PlaceNameRegionTargetID,
-            zone_id: mapData.PlaceNameSubTargetID,
-            size_factor: mapData.SizeFactor,
-            territory_id: mapData.TerritoryTypeTargetID
+            ...mapData,
+            aetherytes: this.getAetherytes(mapId)
           };
         }),
         shareReplay(1)
@@ -93,14 +86,14 @@ export class MapService {
                 const aCost = this.getTpCost(startingPoint.aethernetCoords, a.map.aetherytes[0].aethernetCoords);
                 const bCost = this.getTpCost(startingPoint.aethernetCoords, b.map.aetherytes[0].aethernetCoords);
                 return aCost - bCost;
-              })[0]);
+              }).shift());
               while (pool.length > 0) {
                 res.push(
                   pool.sort((a, b) => {
                     const aCost = this.getTpCost(res[res.length - 1].map.aetherytes[0].aethernetCoords, a.map.aetherytes[0].aethernetCoords);
                     const bCost = this.getTpCost(res[res.length - 1].map.aetherytes[0].aethernetCoords, b.map.aetherytes[0].aethernetCoords);
                     return aCost - bCost;
-                  })[0]
+                  }).shift()
                 );
               }
               return res;

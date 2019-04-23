@@ -12,7 +12,17 @@ const aetherytes = [];
 const monsters = {};
 const npcs = {};
 
-let todo = ['gatheringLog', 'map', 'craftingLog', 'weather', 'fishingLog', 'itemIcons', 'spearFishingLog', 'aetherstream'];
+let todo = [
+  'gatheringLog',
+  'map',
+  'craftingLog',
+  'weather',
+  'fishingLog',
+  'itemIcons',
+  'spearFishingLog',
+  'aetherstream',
+  'maps'
+];
 
 const onlyIndex = process.argv.indexOf('--only');
 if (onlyIndex > -1) {
@@ -504,5 +514,28 @@ if (hasTodo('aetherstream')) {
     });
   }, null, () => {
     persistToTypescript('aetherstream', 'aetherstream', aetherstream);
+  });
+}
+
+if (hasTodo('maps')) {
+  const maps = {};
+  getAllPages('https://xivapi.com/Map?columns=ID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID').subscribe(page => {
+    page.Results.forEach(mapData => {
+      maps[mapData.ID] = {
+        id: mapData.ID,
+        hierarchy: mapData.Hierarchy,
+        image: `https://xivapi.com${mapData.MapFilename}`,
+        offset_x: mapData.OffsetX,
+        offset_y: mapData.OffsetY,
+        map_marker_range: mapData.MapMarkerRange,
+        placename_id: mapData.PlaceNameTargetID,
+        region_id: mapData.PlaceNameRegionTargetID,
+        zone_id: mapData.PlaceNameSubTargetID,
+        size_factor: mapData.SizeFactor,
+        territory_id: mapData.TerritoryTypeTargetID
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('maps', maps);
   });
 }

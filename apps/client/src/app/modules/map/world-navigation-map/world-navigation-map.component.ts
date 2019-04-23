@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 import { Vector2 } from '../../../core/tools/vector2';
 import { MapData } from '../map-data';
 import { first } from 'rxjs/operators';
-import { ListsFacade } from '../../list/+state/lists.facade';
 import { WorldNavigationStep } from '../world-navigation-step';
 import { Subject } from 'rxjs';
 import { tap } from 'rxjs/internal/operators/tap';
@@ -23,8 +22,14 @@ export class WorldNavigationMapComponent implements OnInit {
 
   optimizedPath$: Observable<WorldNavigationStep[]>;
 
-  @ViewChild('container')
   public containerRef: ElementRef;
+
+  @ViewChild('container')
+  public set _containerRef(ref: ElementRef) {
+    setTimeout(() => {
+      this.containerRef = ref;
+    });
+  }
 
   public currentPath: WorldNavigationStep;
 

@@ -49,7 +49,7 @@ export class SettingsPopupComponent {
 
   customTheme: Theme;
 
-  startingPlaces = [12, 13, 2];
+  startingPlaces = [{ id: 12, placenameId: 500 }, { id: 13, placenameId: 504 }, { id: 2, placenameId: 506 }];
 
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
