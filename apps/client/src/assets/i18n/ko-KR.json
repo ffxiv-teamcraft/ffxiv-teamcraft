@@ -1041,9 +1041,9 @@
       "Good_exp": "적당한 분해 숙련도",
       "Lower_chances": "낮은 분해 확률",
       "Higher_exp": "높은 분해 숙련도",
-      "Very_common": "Very common",
-      "Common": "Common",
-      "Rare": "Rare"
+      "Very_common": "일반",
+      "Common": "던전/제작",
+      "Rare": "희귀"
     }
   }
 }
