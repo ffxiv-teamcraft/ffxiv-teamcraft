@@ -303,6 +303,8 @@
     "Amount_display_mode": "List amounts display mode",
     "Amount_display_mode_remaining": "Remaining",
     "Amount_display_mode_total": "Total",
+    "Starting_place": "Starting place",
+    "Starting_place_explain": "Used for path optimization features",
     "COLORS": {
       "Primary": "Primary color",
       "Highlight": "Highlight color",
@@ -384,6 +386,7 @@
     "History": "Historial",
     "Items_count": "{{amount}} artículos",
     "Show_craftable_amount": "Mostrar cantidad fabricable",
+    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "COMPLETION_POPUP": {
       "Title": "Lista completada",
       "Content": "Esta lista esta ahora completada. ¿Qué quiere hacer con ella?",
@@ -532,6 +535,7 @@
   "NAVIGATION": {
     "Title": "Ruta de navegación optimizada",
     "Steps": "Pasos",
+    "Loading_path": "Loading optimized path (can take several seconds)",
     "STEP": {
       "Gathering": "Recolectar {{amount}}",
       "Hunting": "Obtener {{amount}} de monstruos",
@@ -925,6 +929,8 @@
     "Required_for_achievement": "Requerido para los logros",
     "Select_spot": "Seleccione un lugar para ver sus detalles",
     "Hide_completed": "Hide completed recipes",
+    "MIN_optimized_path": "Optimized path for all MIN nodes",
+    "BTN_optimized_path": "Optimized path for all BTN nodes",
     "PAGE": {
       "Master_recipes": "Recetas maestras ({{number}})",
       "Housing_items": "Artículos de vivienda({{number}})",
