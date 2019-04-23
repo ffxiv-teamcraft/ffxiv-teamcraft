@@ -255,26 +255,31 @@
           <div class="social-buttons" [fxLayout]="collapsedSidebar?'column':'row'" fxLayoutGap="5px"
                fxLayoutAlign="center center">
             <a nz-button nzShape="circle" href="https://twitter.com/FFXIVTeamcraft" nz-tooltip
+               *ngIf="!collapsedSidebar"
                nzTitle="{{'Find_us_on_twitter' | translate}}"
                class="social-fab twitter" target="_blank">
               <i class="fab fa-twitter"></i>
             </a>
             <a nz-button nzShape="circle" href="https://discord.gg/r6qxt6P" class="social-fab discord" nz-tooltip
+               *ngIf="!collapsedSidebar"
                nzTitle="{{'Join_discord_server' | translate}}"
                target="_blank">
               <i class="fab fa-discord"></i>
             </a>
             <a nz-button nzShape="circle" href="https://ffxivteamcraft.com/desktop" nz-tooltip
+               *ngIf="!collapsedSidebar && !desktop"
                nzTitle="{{'Download_desktop_app' | translate}}"
-               target="_blank" *ngIf="!desktop">
+               target="_blank">
               <i nz-icon type="desktop"></i>
             </a>
             <a nz-button nzShape="circle" href="https://github.com/supamiu/ffxiv-teamcraft" nz-tooltip
+               *ngIf="!collapsedSidebar"
                nzTitle="{{'See_code_github' | translate}}"
                class="social-fab github"
                target="_blank"><i class="fab fa-github"></i>
             </a>
             <a nz-button nzShape="circle" href="https://www.patreon.com/ffxivteamcraft" class="social-fab patreon"
+               *ngIf="!collapsedSidebar"
                nz-tooltip
                nzTitle="{{'Support_on_patreon' | translate}}"
                target="_blank">
