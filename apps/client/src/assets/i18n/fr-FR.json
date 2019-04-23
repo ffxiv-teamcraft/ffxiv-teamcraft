@@ -1027,5 +1027,23 @@
     "Generate_list": "Créer une liste rapide",
     "Intro": "Saisissez vos niveaux et cliquez sur recherche pour commencer",
     "Loading_message": "Chargement des livraisons possibles, cela peut prendre jusqu'à une minute"
+  },
+  "DESYNTH": {
+    "Title": "Desynth guide",
+    "Job": "Job",
+    "Level": "Level",
+    "Intro": "Select a job and input a level to find best items to level up your desynth",
+    "Loading_message": "Loading...",
+    "TAGS": {
+      "Higher_chances": "Higher chances",
+      "Lower_exp": "Lower exp",
+      "Good_chances": "Good chances",
+      "Good_exp": "Good exp",
+      "Lower_chances": "Lower chances",
+      "Higher_exp": "Higher exp",
+      "Very_common": "Very common",
+      "Common": "Common",
+      "Rare": "Rare"
+    }
   }
 }
