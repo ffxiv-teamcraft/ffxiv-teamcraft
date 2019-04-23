@@ -1027,5 +1027,23 @@
     "Generate_list": "Create a quick list",
     "Intro": "レベルを入力し、検索をクリックして開始します。",
     "Loading_message": "Loading possible deliveries, this can take up to a minute"
+  },
+  "DESYNTH": {
+    "Title": "Desynth guide",
+    "Job": "Job",
+    "Level": "Level",
+    "Intro": "Select a job and input a level to find best items to level up your desynth",
+    "Loading_message": "Loading...",
+    "TAGS": {
+      "Higher_chances": "Higher chances",
+      "Lower_exp": "Lower exp",
+      "Good_chances": "Good chances",
+      "Good_exp": "Good exp",
+      "Lower_chances": "Lower chances",
+      "Higher_exp": "Higher exp",
+      "Very_common": "Very common",
+      "Common": "Common",
+      "Rare": "Rare"
+    }
   }
 }
