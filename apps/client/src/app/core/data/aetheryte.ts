@@ -1,3 +1,5 @@
+import { Vector2 } from '../tools/vector2';
+
 export interface Aetheryte {
   zoneid: number;
   placenameid: number;
@@ -6,4 +8,5 @@ export interface Aetheryte {
   y: number;
   type: number;
   nameid: number;
+  aethernetCoords?: Vector2;
 }

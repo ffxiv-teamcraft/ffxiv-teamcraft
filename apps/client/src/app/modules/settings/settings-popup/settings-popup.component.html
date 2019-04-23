@@ -118,6 +118,17 @@
                  [(ngModel)]="settings.showCopyOnOwnList">{{'SETTINGS.Show_copy_list_own_list' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Starting_place' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-select [(ngModel)]="settings.startingPlace">
+            <nz-option [nzLabel]="place | placeName | i18n" [nzValue]="place"
+                       *ngFor="let place of startingPlaces"></nz-option>
+          </nz-select>
+          <nz-form-explain>{{'SETTINGS.Starting_place_explain' | translate}}</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
     </div>
   </nz-tab>
   <nz-tab [nzTitle]="'SETTINGS.Account' | translate" *ngIf="loggedIn$ | async">

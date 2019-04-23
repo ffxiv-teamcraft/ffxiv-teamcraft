@@ -12,7 +12,7 @@ const aetherytes = [];
 const monsters = {};
 const npcs = {};
 
-let todo = ['gatheringLog', 'map', 'craftingLog', 'weather', 'fishingLog', 'itemIcons', 'spearFishingLog'];
+let todo = ['gatheringLog', 'map', 'craftingLog', 'weather', 'fishingLog', 'itemIcons', 'spearFishingLog', 'aetherstream'];
 
 const onlyIndex = process.argv.indexOf('--only');
 if (onlyIndex > -1) {
@@ -493,5 +493,16 @@ if (hasTodo('itemIcons')) {
     });
   }, null, () => {
     persistToJsonAsset('item-icons', itemIcons);
+  });
+}
+
+if (hasTodo('aetherstream')) {
+  const aetherstream = {};
+  getAllPages('https://xivapi.com/Aetheryte?columns=ID,AetherstreamX,AetherstreamY').subscribe(page => {
+    page.Results.forEach(row => {
+      aetherstream[row.ID] = { x: row.AetherstreamX, y: row.AetherstreamY };
+    });
+  }, null, () => {
+    persistToTypescript('aetherstream', 'aetherstream', aetherstream);
   });
 }
