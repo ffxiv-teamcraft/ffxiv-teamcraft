@@ -227,6 +227,14 @@
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                 routerLink="/desynth">
+          <span nz-tooltip nzPlacement="right"
+                [nzTitle]="collapsedSidebar ? ('DESYNTH.Title' | translate) : null">
+              <i nz-icon iconfont="icon-vectorcombine"></i>
+              <span class="nav-text">{{'DESYNTH.Title' | translate}}</span>
+          </span>
+              </a>
+              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/custom-items">
           <span nz-tooltip nzPlacement="right"
                 [nzTitle]="collapsedSidebar ? ('CUSTOM_ITEMS.Title' | translate) : null">
@@ -267,7 +275,7 @@
               <i class="fab fa-discord"></i>
             </a>
             <a nz-button nzShape="circle" href="https://ffxivteamcraft.com/desktop" nz-tooltip
-               *ngIf="!collapsedSidebar && !desktop"
+               *ngIf="!desktop"
                nzTitle="{{'Download_desktop_app' | translate}}"
                target="_blank">
               <i nz-icon type="desktop"></i>
