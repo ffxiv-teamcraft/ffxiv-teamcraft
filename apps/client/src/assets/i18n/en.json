@@ -386,6 +386,7 @@
     "History": "History",
     "Items_count": "{{amount}} items",
     "Show_craftable_amount": "Show craftable amount",
+    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "COMPLETION_POPUP": {
       "Title": "List completed",
       "Content": "This list is now completed, what do you want to do with it?",
