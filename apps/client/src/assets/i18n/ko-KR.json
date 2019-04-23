@@ -303,8 +303,8 @@
     "Amount_display_mode": "수량 표시 모드",
     "Amount_display_mode_remaining": "잔여수량",
     "Amount_display_mode_total": "총 수량",
-    "Starting_place": "Starting place",
-    "Starting_place_explain": "Used for path optimization features",
+    "Starting_place": "시작 지점",
+    "Starting_place_explain": "최적화 경로 기능 사용",
     "COLORS": {
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
@@ -929,8 +929,8 @@
     "Required_for_achievement": "업적에 적용됨",
     "Select_spot": "표시할 장소를 선택해주세요",
     "Hide_completed": "완료한 제작법 숨기기",
-    "MIN_optimized_path": "Optimized path for all MIN nodes",
-    "BTN_optimized_path": "Optimized path for all BTN nodes",
+    "MIN_optimized_path": "모든 광부 채집물에 대한 최적화 경로",
+    "BTN_optimized_path": "모든 원예가 채집물에 대한 최적화 경로",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
@@ -1029,10 +1029,10 @@
     "Loading_message": "가능한 조달품을 불러오는 중... 시간이 조금 소요됩니다"
   },
   "DESYNTH": {
-    "Title": "Desynth guide",
+    "Title": "분해 가이드",
     "Job": "직업",
     "Level": "레벨",
-    "Intro": "Select a job and input a level to find best items to level up your desynth",
+    "Intro": "직업을 선택하고 레벨을 입력해서 분해 레벨링에 최적화된 아이템을 찾으세요",
     "Loading_message": "불러오는 중...",
     "TAGS": {
       "Higher_chances": "Higher chances",
