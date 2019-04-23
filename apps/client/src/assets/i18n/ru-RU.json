@@ -303,6 +303,8 @@
     "Amount_display_mode": "List amounts display mode",
     "Amount_display_mode_remaining": "Remaining",
     "Amount_display_mode_total": "Total",
+    "Starting_place": "Starting place",
+    "Starting_place_explain": "Used for path optimization features",
     "COLORS": {
       "Primary": "Primary color",
       "Highlight": "Highlight color",
@@ -384,6 +386,7 @@
     "History": "История",
     "Items_count": "{{amount}} предметов",
     "Show_craftable_amount": "Показать количество, которое можно скрафтить",
+    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "COMPLETION_POPUP": {
       "Title": "Список завершен",
       "Content": "Этот лист завершен, что вы хотите с ним сделать?",
@@ -532,6 +535,7 @@
   "NAVIGATION": {
     "Title": "Оптимизировать навигационный маршрут",
     "Steps": "Шаги",
+    "Loading_path": "Loading optimized path (can take several seconds)",
     "STEP": {
       "Gathering": "Собрать {{amount}}",
       "Hunting": "Получить {{amount}} с монстров",
@@ -925,6 +929,8 @@
     "Required_for_achievement": "Требуется для получения achievement'a",
     "Select_spot": "Select a spot to see its details",
     "Hide_completed": "Hide completed recipes",
+    "MIN_optimized_path": "Optimized path for all MIN nodes",
+    "BTN_optimized_path": "Optimized path for all BTN nodes",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
