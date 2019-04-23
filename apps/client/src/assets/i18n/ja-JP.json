@@ -303,6 +303,8 @@
     "Amount_display_mode": "List amounts display mode",
     "Amount_display_mode_remaining": "Remaining",
     "Amount_display_mode_total": "Total",
+    "Starting_place": "Starting place",
+    "Starting_place_explain": "Used for path optimization features",
     "COLORS": {
       "Primary": "Primary color",
       "Highlight": "Highlight color",
@@ -384,6 +386,7 @@
     "History": "履歴",
     "Items_count": "{{amount}} アイテム",
     "Show_craftable_amount": "制作可能な数量を表示する",
+    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "COMPLETION_POPUP": {
       "Title": "リスト完成しました",
       "Content": "このリストは完了されました。何をしますか?",
@@ -532,6 +535,7 @@
   "NAVIGATION": {
     "Title": "最適化されたルート",
     "Steps": "段階",
+    "Loading_path": "Loading optimized path (can take several seconds)",
     "STEP": {
       "Gathering": "{{amount}} 個採集",
       "Hunting": "戦闘で {{amount}} 個 獲得した",
@@ -925,6 +929,8 @@
     "Required_for_achievement": "アチーブメントに適用された",
     "Select_spot": "詳細を表示するところを選択します。",
     "Hide_completed": "Hide completed recipes",
+    "MIN_optimized_path": "Optimized path for all MIN nodes",
+    "BTN_optimized_path": "Optimized path for all BTN nodes",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
       "Housing_items": "ハウジング ({{number}})",
