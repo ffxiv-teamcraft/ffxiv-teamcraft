@@ -368,7 +368,7 @@
       "Give_list_name": "새 목록 이름 설정",
       "Final_step": "확인",
       "Creating_list": "목록 생성",
-      "Loading_items": "아이템 정보 로딩중"
+      "Loading_items": "아이템 정보 불러오는 중"
     }
   },
   "LIST": {
@@ -535,7 +535,7 @@
   "NAVIGATION": {
     "Title": "최적화 경로",
     "Steps": "단계",
-    "Loading_path": "Loading optimized path (can take several seconds)",
+    "Loading_path": "최적화 경로 불러오는 중 (몇 초 정도 소요될 수 있습니다)",
     "STEP": {
       "Gathering": "{{amount}}개 채집",
       "Hunting": "전투로 {{amount}}개 획득",
@@ -1030,10 +1030,10 @@
   },
   "DESYNTH": {
     "Title": "Desynth guide",
-    "Job": "Job",
-    "Level": "Level",
+    "Job": "직업",
+    "Level": "레벨",
     "Intro": "Select a job and input a level to find best items to level up your desynth",
-    "Loading_message": "Loading...",
+    "Loading_message": "불러오는 중...",
     "TAGS": {
       "Higher_chances": "Higher chances",
       "Lower_exp": "Lower exp",
