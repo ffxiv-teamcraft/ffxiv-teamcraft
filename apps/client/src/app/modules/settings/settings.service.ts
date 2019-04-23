@@ -68,7 +68,7 @@ export class SettingsService {
   }
 
   public set freeAetheryte(freeAetheryte: number) {
-    this.setSetting('freeAetheryte', freeAetheryte.toString());
+    this.setSetting('freeAetheryte', (freeAetheryte || 0).toString());
   }
 
   public get favoriteAetherytes(): number[] {
