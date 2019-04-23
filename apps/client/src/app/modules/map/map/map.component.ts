@@ -50,7 +50,7 @@ export class MapComponent implements OnInit {
     return { top: `${positionPercents.y + offset.y}%`, left: `${positionPercents.x + offset.y}%` };
   }
 
-  getIcon(type: 0 | 1): string {
+  getIcon(type: number): string {
     return `./assets/icons/Aetheryte${type === 1 ? '_Shard' : ''}.png`;
   }
 

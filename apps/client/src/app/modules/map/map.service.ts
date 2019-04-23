@@ -83,15 +83,15 @@ export class MapService {
               const pool = [...optimizedPaths];
               const startingPoint = this.getAetherytes(this.settings.startingPlace)[0];
               res.push(pool.sort((a, b) => {
-                const aCost = this.getTpCost(startingPoint.aethernetCoords, a.map.aetherytes[0].aethernetCoords);
-                const bCost = this.getTpCost(startingPoint.aethernetCoords, b.map.aetherytes[0].aethernetCoords);
+                const aCost = this.getTpCost(startingPoint, a.map.aetherytes[0]);
+                const bCost = this.getTpCost(startingPoint, b.map.aetherytes[0]);
                 return aCost - bCost;
               }).shift());
               while (pool.length > 0) {
                 res.push(
                   pool.sort((a, b) => {
-                    const aCost = this.getTpCost(res[res.length - 1].map.aetherytes[0].aethernetCoords, a.map.aetherytes[0].aethernetCoords);
-                    const bCost = this.getTpCost(res[res.length - 1].map.aetherytes[0].aethernetCoords, b.map.aetherytes[0].aethernetCoords);
+                    const aCost = this.getTpCost(res[res.length - 1].map.aetherytes[0], a.map.aetherytes[0]);
+                    const bCost = this.getTpCost(res[res.length - 1].map.aetherytes[0], b.map.aetherytes[0]);
                     return aCost - bCost;
                   }).shift()
                 );
@@ -103,12 +103,20 @@ export class MapService {
       );
   }
 
-  private getTpCost(from: Vector2, to: Vector2): number {
+  private getTpCost(from: Aetheryte, to: Aetheryte): number {
     if (from === undefined || to === undefined) {
       return 999;
     }
-    const base = (Math.sqrt(Math.pow(from.x - to.x, 2) + Math.pow(from.y - to.y, 2)) / 2) + 100;
-    return Math.min(base, 999);
+    if (this.settings.freeAetheryte === to.nameid) {
+      return 0;
+    }
+    const fromCoords = from.aethernetCoords;
+    const toCoords = to.aethernetCoords;
+    const base = (Math.sqrt(Math.pow(fromCoords.x - toCoords.x, 2) + Math.pow(fromCoords.y - toCoords.y, 2)) / 2) + 100;
+    if (this.settings.favoriteAetherytes.indexOf(to.nameid) > -1) {
+      return Math.floor(Math.min(base, 999) / 2);
+    }
+    return Math.floor(Math.min(base, 999));
   }
 
   public getOptimizedPathOnMap(mapId: number, points: NavigationObjective[], startPoint?: NavigationObjective): Observable<NavigationStep[]> {
