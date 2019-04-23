@@ -303,6 +303,8 @@
     "Amount_display_mode": "수량 표시 모드",
     "Amount_display_mode_remaining": "잔여수량",
     "Amount_display_mode_total": "총 수량",
+    "Starting_place": "Starting place",
+    "Starting_place_explain": "Used for path optimization features",
     "COLORS": {
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
@@ -384,6 +386,7 @@
     "History": "목록 변경내역",
     "Items_count": "아이템 {{amount}}개",
     "Show_craftable_amount": "제작 가능한 수량 표시",
+    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "COMPLETION_POPUP": {
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
@@ -532,6 +535,7 @@
   "NAVIGATION": {
     "Title": "최적화 경로",
     "Steps": "단계",
+    "Loading_path": "Loading optimized path (can take several seconds)",
     "STEP": {
       "Gathering": "{{amount}}개 채집",
       "Hunting": "전투로 {{amount}}개 획득",
@@ -925,6 +929,8 @@
     "Required_for_achievement": "업적에 적용됨",
     "Select_spot": "표시할 장소를 선택해주세요",
     "Hide_completed": "완료한 제작법 숨기기",
+    "MIN_optimized_path": "Optimized path for all MIN nodes",
+    "BTN_optimized_path": "Optimized path for all BTN nodes",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
