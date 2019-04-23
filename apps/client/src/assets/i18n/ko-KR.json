@@ -1035,12 +1035,12 @@
     "Intro": "직업을 선택하고 레벨을 입력해서 분해 레벨링에 최적화된 아이템을 찾으세요",
     "Loading_message": "불러오는 중...",
     "TAGS": {
-      "Higher_chances": "Higher chances",
-      "Lower_exp": "Lower exp",
-      "Good_chances": "Good chances",
-      "Good_exp": "Good exp",
-      "Lower_chances": "Lower chances",
-      "Higher_exp": "Higher exp",
+      "Higher_chances": "높은 분해 확률",
+      "Lower_exp": "낮은 분해 숙련도",
+      "Good_chances": "적당한 분해 확률",
+      "Good_exp": "적당한 분해 숙련도",
+      "Lower_chances": "낮은 분해 확률",
+      "Higher_exp": "높은 분해 숙련도",
       "Very_common": "Very common",
       "Common": "Common",
       "Rare": "Rare"
