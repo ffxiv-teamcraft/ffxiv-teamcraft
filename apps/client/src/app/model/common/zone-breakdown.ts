@@ -1,5 +1,6 @@
 import { ZoneBreakdownRow } from './zone-breakdown-row';
 import { ListRow } from '../../modules/list/model/list-row';
+import { tpWindowEntries } from '../../core/data/sources/tp-window-entries';
 
 export class ZoneBreakdown {
 
@@ -50,6 +51,9 @@ export class ZoneBreakdown {
         existingRow.items.push(item);
       }
     }
-    this._rows = this._rows.sort((a, b) => a.zoneId - b.zoneId);
+    this._rows = this._rows.sort((a, b) => {
+      return tpWindowEntries.indexOf(a.zoneId) - tpWindowEntries.indexOf(b.zoneId)
+        || a.zoneId - b.zoneId;
+    });
   }
 }
