@@ -5,10 +5,9 @@ import { NavigationStep } from '../navigation-step';
 import { Observable } from 'rxjs/Observable';
 import { Vector2 } from '../../../core/tools/vector2';
 import { MapData } from '../map-data';
-import { first } from 'rxjs/operators';
+import { first, tap } from 'rxjs/operators';
 import { WorldNavigationStep } from '../world-navigation-step';
 import { Subject } from 'rxjs';
-import { tap } from 'rxjs/internal/operators/tap';
 
 @Component({
   selector: 'app-world-navigation-map',

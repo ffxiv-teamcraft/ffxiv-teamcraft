@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.1"></a>
+## [5.3.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.0...v5.3.1) (2019-04-24)
+
+
+### Bug Fixes
+
+* **core:** fixed a wrong import breaking live maps ([9de9fce](https://github.com/Supamiu/ffxiv-teamcraft/commit/9de9fce))
+
+
+
 <a name="5.3.0"></a>
 # [5.3.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.16...v5.3.0) (2019-04-24)
 
