@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { craftingLogPages } from '../../../core/data/sources/crafting-log-pages';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
@@ -20,8 +20,9 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TrackerComponent } from '../tracker-component';
 import { NavigationObjective } from '../../../modules/map/navigation-objective';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
+import { List } from '../../../modules/list/model/list';
 
 @Component({
   selector: 'app-log-tracker',
@@ -51,11 +52,20 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public hideCompleted = false;
 
+
+  @ViewChild('notificationRef')
+  notification: TemplateRef<any>;
+
+  // Notification data
+  itemsAdded = 0;
+
+  modifiedList: List;
+
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
               private bell: BellNodesService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
-              private lazyData: LazyDataService, private dialog: NzModalService) {
+              private lazyData: LazyDataService, private dialog: NzModalService, private notificationService: NzNotificationService) {
     super(alarmsFacade);
     this.dohTabs = [...craftingLogPages];
     this.dolTabs = [...gatheringLogPages];
@@ -120,7 +130,9 @@ export class LogTrackerComponent extends TrackerComponent {
           ), 1, 'Saving_in_database');
       })
     ).subscribe((list) => {
-      this.router.navigate(['/list', list.$key]);
+      this.itemsAdded = recipesToAdd.length;
+      this.modifiedList = list;
+      this.notificationService.template(this.notification);
     });
   }
 
