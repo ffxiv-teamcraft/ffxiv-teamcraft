@@ -36,7 +36,7 @@
   "Join_discord_server": "Discord 참여",
   "See_code_github": "Github에서 코드 보기",
   "Support_on_patreon": "Patreon에서 프로젝트 후원",
-  "Access_patreon_page": "Go to our Patreon page",
+  "Access_patreon_page": "Patreon 페이지로 이동",
   "Default": "기본 설정",
   "Delete": "삭제",
   "Copy_isearch": "아이템검색 매크로 복사",
@@ -1048,16 +1048,16 @@
     }
   },
   "SUPPORT_US": {
-    "Title": "Help us grow !",
-    "Communication_title": "Talk about the project",
-    "Communication_description": "Let people know about the tool, share rotations, lists. Create videos, blog posts, tweets, everything that lets more people know about Teamcraft really helps the project more than you would think.\n\nWe even prepared a macro for you so you can shout your love everywhere !\n",
-    "Contribute_title": "Contribute to the project",
-    "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
+    "Title": "우리가 성장하도록 도와주세요!",
+    "Communication_title": "프로젝트에 대한 얘기",
+    "Communication_description": "이 도구를 알려주고 로테이션과 목록을 공유해주세요. 많은 사람들이 Teamcraft를 알 수 있게 비디오를 만들고 블로그에 포스트하고 트윗을 하는 모든 것은 여러분이 생각하는 것 보다 프로젝트에 정말 많은 도움이 됩니다.\n\n여러분을 위한 매크로를 준비했으니 여러분의 사랑을 어디서나 외칠 수 있습니다 !\n",
+    "Contribute_title": "프로젝트에 기여",
+    "Contribute_description": "초보자라 할지라도 프로젝트에 기여하기 위한 Github를 찾을 수 있습니다. 모두 환영합니다!\n\n코드만이 기여하는 것이 아니라, 기능 요청과 버그 보고는 모두에게 최고품질의 기능을 제공하는데 많은 도움이 됩니다. 시간을 들여 테스트를 하고 버그를 찾아 주시는 분들께 감사드립니다.",
     "Patreon_title": "Patreon으로 후원하기",
     "Patreon_description": "Patreon은 매달 프로젝트를 후원할 수 있는 플랫폼입니다. 이 후원금은 서버, 인증서, 나눔에 사용되고 프로젝트를 작업하는 개발자들이 더 많은 시간을 할애하는 데 사용됩니다.\n\n후원금에 따라 이에 보답하기 위한 몇몇 좋은 혜택을 받을 수 있습니다:",
     "PATREON_BENEFITS": {
-      "Discord_rank": "작업중인 것을 볼 수 있는 후원자 채널에 접근 가능한 Discord 서버의 특별한 역할 지급 (${{price}})",
-      "Profile_badge": "Teamcraft 프로필에 특별한 배지(${{price}})",
+      "Discord_rank": "진행 중인 작업을 볼 수 있는 후원자 채널에 접근 가능한 Discord 서버의 특별한 역할 지급 (${{price}})",
+      "Profile_badge": "Teamcraft 프로필에 특별한 배지 부여 (${{price}})",
       "Custom_theme": "사용자 지정 색상을 포함한 더 좋은 테마 맞춤화 (${{price}})",
       "Pins_badge": "독점적인 Teamcraft 배지를 배송 (${{price}}) (Patreon에 배송 정보 입력 필수)",
       "Loading_screen_message": "\"Brought to you by ...\" 로딩 메시지에 추가하고 싶은 이름, 자유부대명, 링크셸명 등 새 항목 추가! (${{price}})"
