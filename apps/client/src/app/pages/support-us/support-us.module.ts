@@ -5,7 +5,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClipboardModule } from 'ngx-clipboard';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-import { FlexModule } from '@angular/flex-layout';
 import { PipesModule } from '../../pipes/pipes.module';
 
 const routes: Routes = [
@@ -25,7 +24,7 @@ const routes: Routes = [
     NgZorroAntdModule,
 
     RouterModule.forChild(routes),
-    FlexModule
+    FlexLayoutModule
   ]
 })
 export class SupportUsModule {
