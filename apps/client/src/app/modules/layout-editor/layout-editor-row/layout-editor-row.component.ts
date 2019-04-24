@@ -5,6 +5,7 @@ import { SettingsService } from '../../settings/settings.service';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-layout-editor-row',
@@ -32,9 +33,9 @@ export class LayoutEditorRowComponent implements OnInit {
 
   availableTags$ = combineLatest(this.tagInput$, this.authFacade.user$).pipe(
     map(([input, user]) => {
-      return user.itemTags
+      return _.uniq(user.itemTags
         .filter(entry => entry.tag.toLowerCase().indexOf(input.toLowerCase()) > -1)
-        .map(entry => entry.tag);
+        .map(entry => entry.tag));
     })
   );
 
