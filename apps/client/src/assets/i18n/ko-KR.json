@@ -36,6 +36,7 @@
   "Join_discord_server": "Discord 참여",
   "See_code_github": "Github에서 코드 보기",
   "Support_on_patreon": "Patreon에서 프로젝트 후원",
+  "Access_patreon_page": "Patreon 페이지로 이동",
   "Default": "기본 설정",
   "Delete": "삭제",
   "Copy_isearch": "아이템검색 매크로 복사",
@@ -303,6 +304,8 @@
     "Amount_display_mode": "수량 표시 모드",
     "Amount_display_mode_remaining": "잔여수량",
     "Amount_display_mode_total": "총 수량",
+    "Starting_place": "시작 지점",
+    "Starting_place_explain": "추천 경로 기능 사용",
     "COLORS": {
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
@@ -366,7 +369,7 @@
       "Give_list_name": "새 목록 이름 설정",
       "Final_step": "확인",
       "Creating_list": "목록 생성",
-      "Loading_items": "아이템 정보 로딩중"
+      "Loading_items": "아이템 정보 불러오는 중"
     }
   },
   "LIST": {
@@ -384,6 +387,7 @@
     "History": "목록 변경내역",
     "Items_count": "아이템 {{amount}}개",
     "Show_craftable_amount": "제작 가능한 수량 표시",
+    "Optimized_full_path": "추천 경로 표시 (빠르고 가성비 높은 경로)",
     "COMPLETION_POPUP": {
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
@@ -530,8 +534,9 @@
     "No_links": "사용자 지정 링크 없음"
   },
   "NAVIGATION": {
-    "Title": "최적화 경로",
+    "Title": "추천 경로",
     "Steps": "단계",
+    "Loading_path": "추천 경로 불러오는 중 (몇 초 정도 소요될 수 있습니다)",
     "STEP": {
       "Gathering": "{{amount}}개 채집",
       "Hunting": "전투로 {{amount}}개 획득",
@@ -925,6 +930,8 @@
     "Required_for_achievement": "업적에 적용됨",
     "Select_spot": "표시할 장소를 선택해주세요",
     "Hide_completed": "완료한 제작법 숨기기",
+    "MIN_optimized_path": "모든 광부 채집물의 추천 경로",
+    "BTN_optimized_path": "모든 원예가 채집물의 추천 경로",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
@@ -1021,5 +1028,39 @@
     "Generate_list": "빠른 목록 만들기",
     "Intro": "시작하기 위해 레벨을 입력하고 검색을 클릭하세요",
     "Loading_message": "가능한 조달품을 불러오는 중... 시간이 조금 소요됩니다"
+  },
+  "DESYNTH": {
+    "Title": "분해 가이드",
+    "Job": "직업",
+    "Level": "레벨",
+    "Intro": "직업을 선택하고 레벨을 입력해서 분해 레벨링에 최적화된 아이템을 찾으세요",
+    "Loading_message": "불러오는 중...",
+    "TAGS": {
+      "Higher_chances": "높은 분해 확률",
+      "Lower_exp": "낮은 분해 숙련도",
+      "Good_chances": "적당한 분해 확률",
+      "Good_exp": "적당한 분해 숙련도",
+      "Lower_chances": "낮은 분해 확률",
+      "Higher_exp": "높은 분해 숙련도",
+      "Very_common": "일반",
+      "Common": "고급",
+      "Rare": "희귀"
+    }
+  },
+  "SUPPORT_US": {
+    "Title": "우리가 성장하도록 도와주세요!",
+    "Communication_title": "프로젝트에 대한 얘기",
+    "Communication_description": "이 도구를 알려주고 로테이션과 목록을 공유해주세요. 많은 사람들이 Teamcraft를 알 수 있게 비디오를 만들고 블로그에 포스트하고 트윗을 하는 모든 것은 여러분이 생각하는 것 보다 프로젝트에 정말 많은 도움이 됩니다.\n\n여러분을 위한 매크로를 준비했으니 여러분의 사랑을 어디서나 외칠 수 있습니다 !\n",
+    "Contribute_title": "프로젝트에 기여",
+    "Contribute_description": "초보자라 할지라도 프로젝트에 기여하기 위한 Github를 찾을 수 있습니다. 모두 환영합니다!\n\n코드만이 기여하는 것이 아니라, 기능 요청과 버그 보고는 모두에게 최고품질의 기능을 제공하는데 많은 도움이 됩니다. 시간을 들여 테스트를 하고 버그를 찾아 주시는 분들께 감사드립니다.",
+    "Patreon_title": "Patreon으로 후원하기",
+    "Patreon_description": "Patreon은 매달 프로젝트를 후원할 수 있는 플랫폼입니다. 이 후원금은 서버, 인증서, 나눔에 사용되고 프로젝트를 작업하는 개발자들이 더 많은 시간을 할애하는 데 사용됩니다.\n\n후원금에 따라 이에 보답하기 위한 몇몇 좋은 혜택을 받을 수 있습니다:",
+    "PATREON_BENEFITS": {
+      "Discord_rank": "진행 중인 작업을 볼 수 있는 후원자 채널에 접근 가능한 Discord 서버의 특별한 역할 지급 (${{price}})",
+      "Profile_badge": "Teamcraft 프로필에 특별한 배지 부여 (${{price}})",
+      "Custom_theme": "사용자 지정 색상을 포함한 더 좋은 테마 맞춤화 (${{price}})",
+      "Pins_badge": "독점적인 Teamcraft 배지를 배송 (${{price}}) (Patreon에 배송 정보 입력 필수)",
+      "Loading_screen_message": "\"Brought to you by ...\" 로딩 메시지에 추가하고 싶은 이름, 자유부대명, 링크셸명 등 새 항목 추가! (${{price}})"
+    }
   }
 }

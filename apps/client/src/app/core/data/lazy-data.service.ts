@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { MapData } from '../../modules/map/map-data';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +37,8 @@ export class LazyDataService {
   public actions: any = {};
 
   public icons: any = {};
+
+  public maps: { [index: number]: MapData } = {};
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -78,7 +81,8 @@ export class LazyDataService {
       this.http.get('./assets/data/actions.json'),
       this.http.get('./assets/data/craft-actions.json'),
       this.http.get('./assets/data/npcs.json'),
-      this.http.get('./assets/data/item-icons.json')
+      this.http.get('./assets/data/item-icons.json'),
+      this.http.get('./assets/data/maps.json')
     ).subscribe(([
                    items,
                    zhItems,
@@ -100,7 +104,8 @@ export class LazyDataService {
                    actions,
                    craftActions,
                    npcs,
-                   icons
+                   icons,
+                   maps
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -123,6 +128,7 @@ export class LazyDataService {
       this.craftActions = craftActions;
       this.npcs = npcs;
       this.icons = icons;
+      this.maps = maps as { [index: number]: MapData };
       this.loaded$.next(true);
     });
   }

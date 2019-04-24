@@ -34,7 +34,7 @@ export class CharacterLinkPopupComponent {
 
   public mandatory = false;
 
-  private koreanServers = ['초코보', '모그리', '카벙클', '톤베리', '모그리'];
+  private koreanServers = ['초코보', '모그리', '카벙클', '톤베리'];
 
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef) {
     this.servers$ = this.xivapi.getServerList().pipe(

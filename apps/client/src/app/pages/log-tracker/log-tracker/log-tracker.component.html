@@ -78,8 +78,21 @@
     </nz-tabset>
   </nz-tab>
   <nz-tab [nzTitle]="'MIN/BTN' | translate">
+    <ng-template #extraTemplate>
+      <div fxLayout="row" fxLayoutGap="5px" class="dol-path-buttons">
+        <button nz-button (click)="showOptimizedMap(0)" nz-tooltip [nzTitle]="'LOG_TRACKER.MIN_optimized_path' | translate">
+          <i nz-icon iconfont="icon-map"></i>
+          <img src="./assets/icons/MIN.png" alt="MIN" class="job-icon">
+        </button>
+        <button nz-button (click)="showOptimizedMap(2)" nz-tooltip [nzTitle]="'LOG_TRACKER.BTN_optimized_path' | translate">
+          <i nz-icon iconfont="icon-map"></i>
+          <img src="./assets/icons/BTN.png" alt="BTN" class="job-icon">
+        </button>
+
+      </div>
+    </ng-template>
     <nz-tabset nzSize="small" nzAnimated="false"
-               [nzSelectedIndex]="dolSelectedPage"
+               [nzTabBarExtraContent]="extraTemplate"
                (nzSelectedIndexChange)="dolSelectedPage = dolTabs[$event][0].id">
       <nz-tab *ngFor="let tab of dolTabs; let index = index" [nzTitle]="titleTemplate">
         <ng-template #titleTemplate>
@@ -90,9 +103,9 @@
                    (nzSelectedIndexChange)="dolSelectedPage = tab[$event].id">
           <nz-tab *ngFor="let page of tab;" [nzTitle]="titleTemplate">
             <ng-template #titleTemplate>
-          <span>{{ getDolPageName(page) }}
-            ({{getDolPageCompletion(page)}})
-          </span>
+              <span>{{ getDolPageName(page) }}
+                ({{getDolPageCompletion(page)}})
+              </span>
             </ng-template>
             <nz-spin [nzSpinning]="userCompletion === {}">
               <div fxLayout="column" *ngIf="dolSelectedPage === page.id">
@@ -196,3 +209,24 @@
     <app-fishing-log-tracker></app-fishing-log-tracker>
   </nz-tab>
 </nz-tabset>
+<ng-template #notificationRef let-notification>
+  <div class="ant-notification-notice-content ant-notification-notice-with-icon">
+    <span class="ant-notification-notice-icon"><i nz-icon type="check-circle"
+                                                  class="ant-notification-notice-icon-success"></i></span>
+    <div>
+      <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
+      <div class="ant-notification-notice-description">
+        <span *ngIf="itemsAdded === 1">{{'Recipe_Added' | translate: { listname: modifiedList.name } }}</span>
+        <span *ngIf="itemsAdded !== 1">{{'Recipes_Added' | translate: {
+          itemcount: itemsAdded,
+          listname: modifiedList.name
+        } }}</span>
+      </div>
+      <span class="ant-notification-notice-btn">
+            <a nz-button nzType="primary" (click)="notification.close();" routerLink="/list/{{modifiedList.$key}}">
+              <span>{{'Open' | translate}}</span>
+            </a>
+          </span>
+    </div>
+  </div>
+</ng-template>

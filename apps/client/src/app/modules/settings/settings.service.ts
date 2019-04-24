@@ -55,6 +55,30 @@ export class SettingsService {
     this.setSetting('default-permission-level', level.toString());
   }
 
+  public get startingPlace(): number {
+    return +this.getSetting('startingPlace', '12');
+  }
+
+  public set startingPlace(startingPlace: number) {
+    this.setSetting('startingPlace', startingPlace.toString());
+  }
+
+  public get freeAetheryte(): number {
+    return +this.getSetting('freeAetheryte', '-1');
+  }
+
+  public set freeAetheryte(freeAetheryte: number) {
+    this.setSetting('freeAetheryte', (freeAetheryte || 0).toString());
+  }
+
+  public get favoriteAetherytes(): number[] {
+    return JSON.parse(this.getSetting('favoriteAetherytes', '[]'));
+  }
+
+  public set favoriteAetherytes(favoriteAetherytes: number[]) {
+    this.setSetting('favoriteAetherytes', JSON.stringify(favoriteAetherytes));
+  }
+
   public get compactSidebar(): boolean {
     return this.getSetting('compact-sidebar', 'false') === 'true';
   }

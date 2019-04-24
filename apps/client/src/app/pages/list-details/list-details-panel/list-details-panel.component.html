@@ -50,6 +50,11 @@
            *ngIf="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)"></i>
       </div>
       <div fxLayout="row" fxLayoutGap="10px">
+        <button nz-button (click)="$event.stopPropagation()" *ngIf="displayRow.zoneBreakdown"
+                nzSize="small" nzShape="circle" nz-tooltip (click)="openFullPathPopup(zoneBreakdown)"
+                [nzTitle]="'LIST.Optimized_full_path' | translate">
+          <i nz-icon iconfont="icon-map"></i>
+        </button>
         <button nz-button (click)="$event.stopPropagation()" *ngIf="hasTrades"
                 nzSize="small" nzShape="circle" nz-tooltip (click)="openTotalPricePopup()"
                 [nzTitle]="'LIST.Total_price' | translate">

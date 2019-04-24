@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { craftingLogPages } from '../../../core/data/sources/crafting-log-pages';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { filter, first, map, mergeMap, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { combineLatest, concat, Observable, of } from 'rxjs';
@@ -19,6 +19,10 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TrackerComponent } from '../tracker-component';
+import { NavigationObjective } from '../../../modules/map/navigation-objective';
+import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
+import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
+import { List } from '../../../modules/list/model/list';
 
 @Component({
   selector: 'app-log-tracker',
@@ -48,11 +52,20 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public hideCompleted = false;
 
+
+  @ViewChild('notificationRef')
+  notification: TemplateRef<any>;
+
+  // Notification data
+  itemsAdded = 0;
+
+  modifiedList: List;
+
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
               private bell: BellNodesService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService, private dialog: NzModalService, private notificationService: NzNotificationService) {
     super(alarmsFacade);
     this.dohTabs = [...craftingLogPages];
     this.dolTabs = [...gatheringLogPages];
@@ -117,7 +130,9 @@ export class LogTrackerComponent extends TrackerComponent {
           ), 1, 'Saving_in_database');
       })
     ).subscribe((list) => {
-      this.router.navigate(['/list', list.$key]);
+      this.itemsAdded = recipesToAdd.length;
+      this.modifiedList = list;
+      this.notificationService.template(this.notification);
     });
   }
 
@@ -354,6 +369,48 @@ export class LogTrackerComponent extends TrackerComponent {
       return baseValue + 1;
     }
     return baseValue;
+  }
+
+  public showOptimizedMap(index: number): void {
+    const steps: NavigationObjective[] = [].concat.apply([], [...gatheringLogPages[index], ...gatheringLogPages[index + 1]]
+      .map(page => {
+        return page.items
+          .filter(item => {
+            return !this.userGatheringCompletion[item.itemId] && this.getNodeData(item.itemId, page.id).length > 0;
+          })
+          .map(item => {
+            const node = this.getNodeData(item.itemId, page.id)[0];
+            return <NavigationObjective>{
+              mapId: node.mapId,
+              zoneId: node.zoneid,
+              iconid: null,
+              item_amount: 1,
+              name: this.l12n.getItem(item.itemId),
+              itemId: item.itemId,
+              total_item_amount: 1,
+              type: 'Gathering',
+              x: node.x,
+              y: node.y
+            };
+          });
+      })
+    );
+    const ref = this.dialog.create({
+      nzTitle: this.translate.instant('NAVIGATION.Title'),
+      nzContent: WorldNavigationMapComponent,
+      nzComponentParams: {
+        points: steps
+      },
+      nzFooter: null
+    });
+    ref.afterOpen.pipe(
+      switchMap(() => {
+        return ref.getContentComponent().markAsDone$;
+      }),
+      takeUntil(ref.afterClose)
+    ).subscribe(step => {
+      this.markDolAsDone(step.itemId, true);
+    });
   }
 
 }

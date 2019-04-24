@@ -15,10 +15,11 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { combineLatest, Observable } from 'rxjs';
 import { ItemPickerService } from '../../../modules/item-picker/item-picker.service';
-import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
+import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -137,6 +138,48 @@ export class ListDetailsPanelComponent implements OnChanges {
     });
   }
 
+  public openFullPathPopup(zoneBreakdown: ZoneBreakdown): void {
+    const ref = this.dialog.create({
+      nzTitle: this.translate.instant('LIST.Optimized_full_path'),
+      nzContent: WorldNavigationMapComponent,
+      nzComponentParams: {
+        points: <NavigationObjective[]>[].concat
+          .apply([],
+            zoneBreakdown.rows.map(zoneBreakdownRow => {
+              return zoneBreakdownRow.items.filter(item => item.done < item.amount)
+                .map(item => {
+                  const partial = this.getPosition(item, zoneBreakdownRow);
+                  if (partial !== undefined) {
+                    return <NavigationObjective>{
+                      mapId: zoneBreakdownRow.mapId,
+                      x: partial.x,
+                      y: partial.y,
+                      name: this.l12n.getItem(item.id),
+                      iconid: item.icon,
+                      itemId: item.id,
+                      total_item_amount: item.amount,
+                      item_amount: item.amount_needed - item.done,
+                      type: partial.type
+                    };
+                  }
+                  return undefined;
+                })
+                .filter(row => row !== undefined)
+            })
+          )
+      },
+      nzFooter: null
+    });
+    ref.afterOpen.pipe(
+      switchMap(() => {
+        return ref.getContentComponent().markAsDone$;
+      }),
+      takeUntil(ref.afterClose)
+    ).subscribe(step => {
+      this.listsFacade.setItemDone(step.itemId, step.iconid, false, step.item_amount, null, step.total_item_amount);
+    });
+  }
+
   private getPosition(row: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Partial<NavigationObjective> {
     if (row.vendors && row.vendors.some(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId)) {
       const vendor = row.vendors.find(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId);
@@ -182,7 +225,7 @@ export class ListDetailsPanelComponent implements OnChanges {
     }
     this.tiers = this.tiers.map(tier => {
       return this.layoutOrderService.order(tier, this.displayRow.layoutRow.orderBy, this.displayRow.layoutRow.order);
-    })
+    });
   }
 
   private topologicalSort(data: ListRow[]): ListRow[] {

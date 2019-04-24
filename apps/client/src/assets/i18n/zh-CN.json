@@ -36,6 +36,7 @@
   "Join_discord_server": "加入 Discord 服务器",
   "See_code_github": "查看 Github 上的代码",
   "Support_on_patreon": "在 Patreon 上支持我们的项目",
+  "Access_patreon_page": "Go to our Patreon page",
   "Default": "默认",
   "Delete": "删除",
   "Copy_isearch": "复制搜索宏",
@@ -303,6 +304,8 @@
     "Amount_display_mode": "列表数量显示模式",
     "Amount_display_mode_remaining": "剩余",
     "Amount_display_mode_total": "合计",
+    "Starting_place": "Starting place",
+    "Starting_place_explain": "Used for path optimization features",
     "COLORS": {
       "Primary": "主体色",
       "Highlight": "高亮色",
@@ -384,6 +387,7 @@
     "History": "历史记录",
     "Items_count": "{{amount}} 个物品",
     "Show_craftable_amount": "显示可制作的数量",
+    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "COMPLETION_POPUP": {
       "Title": "清单已完成",
       "Content": "这个清单现已完成，你想要做什么？",
@@ -532,6 +536,7 @@
   "NAVIGATION": {
     "Title": "最优路线",
     "Steps": "步骤",
+    "Loading_path": "Loading optimized path (can take several seconds)",
     "STEP": {
       "Gathering": "采集 {{amount}} 个",
       "Hunting": "怪物掉落 {{amount}} 个",
@@ -925,6 +930,8 @@
     "Required_for_achievement": "成就所需",
     "Select_spot": "选择地点以查看其详情",
     "Hide_completed": "隐藏已完成的配方",
+    "MIN_optimized_path": "Optimized path for all MIN nodes",
+    "BTN_optimized_path": "Optimized path for all BTN nodes",
     "PAGE": {
       "Master_recipes": "秘籍 ({{number}})",
       "Housing_items": "房屋 ({{number}})",
@@ -1021,5 +1028,39 @@
     "Generate_list": "新建快速清单",
     "Intro": "输入等级并点击搜索",
     "Loading_message": "正在加载筹备列表，可能需要一分钟"
+  },
+  "DESYNTH": {
+    "Title": "Desynth guide",
+    "Job": "Job",
+    "Level": "Level",
+    "Intro": "Select a job and input a level to find best items to level up your desynth",
+    "Loading_message": "Loading...",
+    "TAGS": {
+      "Higher_chances": "Higher chances",
+      "Lower_exp": "Lower exp",
+      "Good_chances": "Good chances",
+      "Good_exp": "Good exp",
+      "Lower_chances": "Lower chances",
+      "Higher_exp": "Higher exp",
+      "Very_common": "Very common",
+      "Common": "Common",
+      "Rare": "Rare"
+    }
+  },
+  "SUPPORT_US": {
+    "Title": "Help us grow !",
+    "Communication_title": "Talk about the project",
+    "Communication_description": "Let people know about the tool, share rotations, lists. Create videos, blog posts, tweets, everything that lets more people know about Teamcraft really helps the project more than you would think.\n\nWe even prepared a macro for you so you can shout your love everywhere !\n",
+    "Contribute_title": "Contribute to the project",
+    "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
+    "Patreon_title": "Support us on patreon",
+    "Patreon_description": "Patreon is a platform where you can give a money to support a project every month. This money is used to pay for servers, certificates, giveaways and to free more and more time for the developer to work on the project.\n\nDepending on the amount you pledge, you can get some nice benefits in order to thank your contribution:",
+    "PATREON_BENEFITS": {
+      "Discord_rank": "Special rank on the discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
+      "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
+      "Custom_theme": "Better theme customization, with custom color input (${{price}})",
+      "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
+    }
   }
 }

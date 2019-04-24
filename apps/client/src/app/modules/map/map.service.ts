@@ -8,8 +8,16 @@ import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
 import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { NavigationObjective } from './navigation-objective';
-import { map, shareReplay } from 'rxjs/operators';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
+import { XivapiService } from '@xivapi/angular-client';
+import * as _ from 'lodash';
+import { WorldNavigationStep } from './world-navigation-step';
+import { requestsWithDelay } from '../../core/rxjs/requests-with-delay';
+import { aetherstream } from '../../core/data/sources/aetherstream';
+import { combineLatest } from 'rxjs/internal/observable/combineLatest';
+import { SettingsService } from '../settings/settings.service';
+import { LazyDataService } from '../../core/data/lazy-data.service';
+import { of } from 'rxjs/internal/observable/of';
 
 @Injectable()
 export class MapService {
@@ -22,26 +30,18 @@ export class MapService {
 
   private cache: { [index: number]: Observable<MapData> } = {};
 
-  constructor(private xivapi: XivapiService, private mathService: MathToolsService, private l12n: LocalizedDataService) {
+  constructor(private xivapi: XivapiService, private mathService: MathToolsService, private l12n: LocalizedDataService,
+              private settings: SettingsService, private lazyData: LazyDataService) {
   }
 
   getMapById(mapId: number): Observable<MapData> {
     if (this.cache[mapId] === undefined) {
-      this.cache[mapId] = this.xivapi.get(XivapiEndpoint.Map, mapId).pipe(
+      const _mapData = this.lazyData.maps[mapId];
+      this.cache[mapId] = of(_mapData).pipe(
         map(mapData => {
           return {
-            id: mapId,
-            aetherytes: this.getAetherytes(mapId),
-            hierarchy: mapData.Hierarchy,
-            image: `https://xivapi.com${mapData.MapFilename}`,
-            offset_x: mapData.OffsetX,
-            offset_y: mapData.OffsetY,
-            map_marker_range: mapData.MapMarkerRange,
-            placename_id: mapData.PlaceNameTargetID,
-            region_id: mapData.PlaceNameRegionTargetID,
-            zone_id: mapData.PlaceNameSubTargetID,
-            size_factor: mapData.SizeFactor,
-            territory_id: mapData.TerritoryTypeTargetID
+            ...mapData,
+            aetherytes: this.getAetherytes(mapId)
           };
         }),
         shareReplay(1)
@@ -60,7 +60,66 @@ export class MapService {
     return nearest;
   }
 
-  public getOptimizedPath(mapId: number, points: NavigationObjective[], startPoint?: NavigationObjective): Observable<NavigationStep[]> {
+  public getOptimizedPathInWorld(points: NavigationObjective[]): Observable<WorldNavigationStep[]> {
+    const allMaps = _.uniq(points.map(point => point.mapId));
+    return requestsWithDelay(allMaps.map(mapId => this.getMapById(mapId)), 250)
+      .pipe(
+        switchMap(maps => {
+          return combineLatest(
+            maps.map(mapData => {
+              return this.getOptimizedPathOnMap(mapData.id, points.filter(point => point.mapId === mapData.id))
+                .pipe(
+                  map(steps => {
+                    return {
+                      map: mapData,
+                      steps: steps
+                    };
+                  })
+                );
+            })
+          ).pipe(
+            map((optimizedPaths: WorldNavigationStep[]) => {
+              const res: WorldNavigationStep[] = [];
+              const pool = [...optimizedPaths];
+              const startingPoint = this.getAetherytes(this.settings.startingPlace)[0];
+              res.push(pool.sort((a, b) => {
+                const aCost = this.getTpCost(startingPoint, a.map.aetherytes[0]);
+                const bCost = this.getTpCost(startingPoint, b.map.aetherytes[0]);
+                return aCost - bCost;
+              }).shift());
+              while (pool.length > 0) {
+                res.push(
+                  pool.sort((a, b) => {
+                    const aCost = this.getTpCost(res[res.length - 1].map.aetherytes[0], a.map.aetherytes[0]);
+                    const bCost = this.getTpCost(res[res.length - 1].map.aetherytes[0], b.map.aetherytes[0]);
+                    return aCost - bCost;
+                  }).shift()
+                );
+              }
+              return res;
+            })
+          );
+        })
+      );
+  }
+
+  private getTpCost(from: Aetheryte, to: Aetheryte): number {
+    if (from === undefined || to === undefined) {
+      return 999;
+    }
+    if (this.settings.freeAetheryte === to.nameid) {
+      return 0;
+    }
+    const fromCoords = from.aethernetCoords;
+    const toCoords = to.aethernetCoords;
+    const base = (Math.sqrt(Math.pow(fromCoords.x - toCoords.x, 2) + Math.pow(fromCoords.y - toCoords.y, 2)) / 2) + 100;
+    if (this.settings.favoriteAetherytes.indexOf(to.nameid) > -1) {
+      return Math.floor(Math.min(base, 999) / 2);
+    }
+    return Math.floor(Math.min(base, 999));
+  }
+
+  public getOptimizedPathOnMap(mapId: number, points: NavigationObjective[], startPoint?: NavigationObjective): Observable<NavigationStep[]> {
     return this.getMapById(mapId)
       .pipe(
         map(mapData => {
@@ -98,10 +157,15 @@ export class MapService {
 
   private getAetherytes(id: number): Aetheryte[] {
     // If it's dravanian forelandes, use Idyllshire id instead.
-    if(id === 213){
+    if (id === 213) {
       id = 257;
     }
-    return aetherytes.filter(aetheryte => aetheryte.map === id);
+    return aetherytes
+      .filter((aetheryte) => aetheryte.map === id)
+      .map((aetheryte: Aetheryte) => {
+        aetheryte.aethernetCoords = aetherstream[id];
+        return aetheryte;
+      });
   }
 
   private totalDuration(path: NavigationStep[]): number {
@@ -127,7 +191,7 @@ export class MapService {
     let availablePoints: NavigationStep[] =
       objectives.map(point => ({
         ...point,
-        isTeleport: false,
+        isTeleport: false
       }));
     const availableAetherytesPoints: NavigationStep[] = availableAetherytes.map(aetheryte => ({
       x: aetheryte.x,

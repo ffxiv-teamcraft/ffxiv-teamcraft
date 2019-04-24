@@ -104,6 +104,14 @@ const routes: Routes = [
     path: 'custom-items',
     loadChildren: './pages/custom-items/custom-items-page.module#CustomItemsPageModule'
   },
+  {
+    path: 'desynth',
+    loadChildren: './pages/desynth/desynth.module#DesynthModule'
+  },
+  {
+    path: 'support-us',
+    loadChildren: './pages/support-us/support-us.module#SupportUsModule'
+  },
 ];
 
 @NgModule({

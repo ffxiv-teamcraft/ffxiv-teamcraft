@@ -130,7 +130,7 @@ export class AppComponent implements OnInit {
 
     this.desktop = this.platformService.isDesktop();
 
-    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_xf1jq6cvm7.js' });
+    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_8rqcxqh08v6.js' });
 
     this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(
       map((value: string) => {

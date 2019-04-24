@@ -10,6 +10,8 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { XivapiClientModule } from '@xivapi/angular-client';
 import { NavigationMapComponent } from './navigation-map/navigation-map.component';
+import { WorldNavigationMapComponent } from './world-navigation-map/world-navigation-map.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -17,6 +19,7 @@ import { NavigationMapComponent } from './navigation-map/navigation-map.componen
     HttpClientModule,
     FlexLayoutModule,
     XivapiClientModule,
+    FormsModule,
 
     NgZorroAntdModule,
 
@@ -26,7 +29,8 @@ import { NavigationMapComponent } from './navigation-map/navigation-map.componen
   declarations: [
     MapPositionComponent,
     MapComponent,
-    NavigationMapComponent
+    NavigationMapComponent,
+    WorldNavigationMapComponent
   ],
   exports: [
     MapPositionComponent,
@@ -34,7 +38,8 @@ import { NavigationMapComponent } from './navigation-map/navigation-map.componen
   ],
   entryComponents: [
     MapComponent,
-    NavigationMapComponent
+    NavigationMapComponent,
+    WorldNavigationMapComponent
   ]
 })
 export class MapModule {
