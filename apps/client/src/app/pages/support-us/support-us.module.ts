@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClipboardModule } from 'ngx-clipboard';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { PipesModule } from '../../pipes/pipes.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {
