@@ -41,7 +41,7 @@
   "Delete": "Löschen",
   "Copy_isearch": "isearch Makro kopieren",
   "Isearch_copied": "/isearch {{itemname}} in Zwischenablage kopiert",
-  "Required_for_final_craft": "{{amount}} needed for final items, you might want them HQ",
+  "Required_for_final_craft": "{{amount}} werden für die finalen Gegenstände benötigt, du möchtest diese vielleicht in HQ haben",
   "Mark_HQ": "Markieren als HQ erforderlich",
   "Unmark_HQ": "HQ-Erfordernis entfernen",
   "Compact_sidebar_toggle": "Kompakte Seitenleiste umschalten",
@@ -69,7 +69,7 @@
     "Not_found": "Workshop nicht gefunden oder du hast keinen Zugriff darauf",
     "Shared_workshops": "Workshops mit Schreibzugriff",
     "Rename": "Werkstatt umbenennen",
-    "Add_lists": "Add lists"
+    "Add_lists": "Listen hinzufügen"
   },
   "ABOUT": {
     "title": "Über FFXIVTeamcraft",
@@ -86,7 +86,7 @@
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
   "Ephemeral_tag": "vergänglich",
-  "Remove_ephemeral": "Upgrade to permanent list",
+  "Remove_ephemeral": "Upgrade zu dauerhafter Liste",
   "Quick_list_create": "Erstelle eine Kurzzeit-Liste (wird gelöscht wenn sie komplett ist)",
   "Tag_filter": "Markierungen",
   "Public_lists": "Communitylisten",
@@ -117,8 +117,8 @@
     "Opened_in_desktop": "Diese Seite wurde in der Desktop-App geöffnet und kann jetzt geschlossen werden.",
     "Open_in_desktop": "In der Desktop-App öffnen",
     "Admin": "Administrator",
-    "Minutes_duration": "{{amount}} minutes",
-    "Seconds_duration": "{{amount}} seconds"
+    "Minutes_duration": "{{amount}} Minuten",
+    "Seconds_duration": "{{amount}} Sekunden"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -136,9 +136,9 @@
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert",
     "Open_overlay": "Overlay öffnen",
     "More_available": "und {{amount}} mehr...",
-    "Node_content": "Node content",
-    "Toggle_collapse": "Toggle groups collapse",
-    "Add_alarms_to_group": "Add alarms to this group",
+    "Node_content": "Knoteninhalt",
+    "Toggle_collapse": "Gruppen zusammenfalten umschalten",
+    "Add_alarms_to_group": "Alarme für diese Gruppe hinzufügen",
     "CUSTOM": {
       "Title": "Eigenen Alarm hinzufügen",
       "Name": "Name",
@@ -204,8 +204,8 @@
   "Anonymous_Warning": "Erstelle dir einen Account damit du deine Listen speichern kannst und andere Features nutzen kannst, wie den anpassbaren Filter",
   "Game_Term/DoH": "Handwerker",
   "Game_Term/DoL": "Sammler",
-  "MIN/BTN": "Miner / Botanist",
-  "Game_Term/FSH": "Fisher",
+  "MIN/BTN": "Minenarbeiter / Gärtner",
+  "Game_Term/FSH": "Fischer",
   "Reduction": "Raffinieren",
   "Upgrade_list": "Liste mit aktuellem App-Update regenerieren",
   "List_recreated": "Liste korrekt regeneriert",
