@@ -11,7 +11,7 @@
   "Edit_amount": "Anzahl ändern",
   "List_fork_in_progress": "Die Liste wird in dein Konto kopiert...",
   "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
-  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
+  "Hide_zone_duplicates": "Zonen-Dubletten ausblenden (Gegenstände aus mehreren Zonen werden nur einmal angezeigt)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -25,7 +25,7 @@
     "Only_recipes": "Nur Rezepte",
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
-    "Reset_filters": "Reset filters",
+    "Reset_filters": "Filter zurücksetzen",
     "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Kopiere Link zur Suche in die Zwischenablage",
     "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert"
