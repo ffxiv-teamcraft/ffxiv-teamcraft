@@ -441,19 +441,19 @@
       "Invalid_import": "Ungültiger Layout Import Code!",
       "Global_options": "Allgemeine Optionen",
       "Default_readonly_message": "\"Default Layout\" ist schreibgeschützt. Erstelle mit dem + Button ein neues, um es zu ändern.",
-      "Buttons": "Buttons",
-      "Menu": "Menu",
-      "Edit_row_buttons_display": "Edit row buttons display",
+      "Buttons": "Schaltflächen",
+      "Menu": "Menü",
+      "Edit_row_buttons_display": "Anzeige der Zeilenschaltflächen bearbeiten",
       "ITEMS": {
-        "COMMENTS": "Comments",
-        "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
-        "ADD_ALL_ALARMS": "Add all alarms",
-        "WORK_ON_IT": "Work on it",
-        "ASSIGN_TEAM_MEMBER": "Assign team members",
-        "EDIT_AMOUNT": "Edit amount",
-        "MARK_HQ": "Mark HQ",
-        "ADD_TO_ANOTHER_LIST": "Add to another list",
-        "REQUIREMENTS": "Requirements",
+        "COMMENTS": "Kommentare",
+        "COPY_NAME_NOT_FAVORITE": "Nicht-bevorzugter Kopiermodus",
+        "ADD_ALL_ALARMS": "Alle Alarme hinzufügen",
+        "WORK_ON_IT": "Bearbeite es",
+        "ASSIGN_TEAM_MEMBER": "Teammitglied zuweisen",
+        "EDIT_AMOUNT": "Anzahl bearbeiten",
+        "MARK_HQ": "Als HQ markieren",
+        "ADD_TO_ANOTHER_LIST": "Zu einer anderen Liste hinzufügen",
+        "REQUIREMENTS": "Voraussetzungen",
         "REMOVE_ITEM": "Remove item from the list",
         "ADD_TAG": "Add tag to item",
         "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
@@ -961,36 +961,36 @@
     "Details": "Item details",
     "Export_item": "Export item",
     "Export_items": "Export multiple items",
-    "Add_to_list": "Add to a list",
-    "No_items": "You have no custom items",
+    "Add_to_list": "Zu Liste hinzufügen",
+    "No_items": "Du hast keine benutzerdefinierten Gegenstände",
     "DETAILS": {
-      "Level": "Level",
-      "None": "none",
-      "Stars": "Stars",
-      "Requirements": "Requirements",
-      "Add_requirement": "Add requirement",
-      "Yields": "Yields",
+      "Level": "Stufe",
+      "None": "keine",
+      "Stars": "Sterne",
+      "Requirements": "Voraussetzungen",
+      "Add_requirement": "Voraussetzung hinzufügen",
+      "Yields": "Ertrag",
       "Name": "Name",
-      "ID": "Item ID",
+      "ID": "Gegenstands-ID",
       "CRAFT": {
-        "Title": "Crafted by",
+        "Title": "Hergestellt von",
         "Job": "Job",
-        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+        "No_requirement_warning": "Du hast keine Voraussetzungen für diesen Gegenstand angegeben, das heißt du erstellst ein Rezept mit 0 Zutaten."
       },
       "GATHERING": {
-        "Title": "Gathered by",
-        "Type": "Node type",
+        "Title": "Gesammelt von",
+        "Type": "Knotentyp",
         "Folklore": "Folklore",
         "Slot": "Slot"
       },
       "ALARMS": {
-        "Title": "Alarms"
+        "Title": "Alarme"
       },
       "VENDORS": {
-        "Title": "Vendors",
-        "Npc_name": "NPC name",
-        "Price": "Price",
-        "Delete_vendor": "Delete vendor"
+        "Title": "Verkäufer",
+        "Npc_name": "NPC Name",
+        "Price": "Preis",
+        "Delete_vendor": "Verkäufer löschen"
       },
       "TRADES": {
         "Title": "Trade sources",
