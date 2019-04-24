@@ -1053,8 +1053,8 @@
     "Communication_description": "Let people know about the tool, share rotations, lists. Create videos, blog posts, tweets, everything that lets more people know about Teamcraft really helps the project more than you would think.\n\nWe even prepared a macro for you so you can shout your love everywhere !\n",
     "Contribute_title": "Contribute to the project",
     "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
-    "Patreon_title": "Support us on patreon",
-    "Patreon_description": "Patreon is a platform where you can give a money to support a project every month. This money is used to pay for servers, certificates, giveaways and to free more and more time for the developer to work on the project.\n\nDepending on the amount you pledge, you can get some nice benefits in order to thank your contribution:",
+    "Patreon_title": "Patreon으로 후원하기",
+    "Patreon_description": "Patreon은 매달 프로젝트를 후원할 수 있는 플랫폼입니다. 이 후원금은 서버, 인증서, 나눔에 사용되고 프로젝트를 작업하는 개발자들이 더 많은 시간을 할애하는 데 사용됩니다.\n\n후원금에 따라 이에 보답하기 위한 몇몇 좋은 혜택을 받을 수 있습니다:",
     "PATREON_BENEFITS": {
       "Discord_rank": "작업중인 것을 볼 수 있는 후원자 채널에 접근 가능한 Discord 서버의 특별한 역할 지급 (${{price}})",
       "Profile_badge": "Teamcraft 프로필에 특별한 배지(${{price}})",
