@@ -28,6 +28,10 @@
         </div>
         <div fxFlex="1 1 auto" *ngIf="!platformService.isDesktop()"></div>
         <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
+          <li class="ant-menu-item" fxShow fxHide.lt-sm fxFlex fxLayout="column" routerLink="/support-us"
+              routerLinkActive="ant-menu-item-selected">
+            {{'SUPPORT_US.Title' | translate}}
+          </li>
           <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex (click)="toggleTimeFormat()">
             {{time$ | async}}
           </li>

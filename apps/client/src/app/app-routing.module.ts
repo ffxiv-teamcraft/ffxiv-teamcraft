@@ -108,6 +108,10 @@ const routes: Routes = [
     path: 'desynth',
     loadChildren: './pages/desynth/desynth.module#DesynthModule'
   },
+  {
+    path: 'support-us',
+    loadChildren: './pages/support-us/support-us.module#SupportUsModule'
+  },
 ];
 
 @NgModule({
