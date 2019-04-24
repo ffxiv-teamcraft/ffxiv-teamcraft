@@ -1059,8 +1059,8 @@
       "Discord_rank": "Special rank on the discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
       "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
       "Custom_theme": "Better theme customization, with custom color input (${{price}})",
-      "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
+      "Pins_badge": "독점적인 Teamcraft 배지를 배송 (${{price}}) (Patreon에 배송 정보 입력 필수)",
+      "Loading_screen_message": "\"Brought to you by ...\" 로딩 메시지에 추가하고 싶은 이름, 자유부대명, 링크셸명 등 새 항목 추가! (${{price}})"
     }
   }
 }
