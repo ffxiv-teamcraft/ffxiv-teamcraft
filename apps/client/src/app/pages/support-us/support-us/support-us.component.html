@@ -1,77 +1,67 @@
-<div fxLayout="column" fxLayoutGap="40px" fxLayoutAlign="center center" class="container">
-  <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
-    <h2>{{'SUPPORT_US.Free_options' | translate}}</h2>
-    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start" fxLayout.lt-md="column"
-         fxLayoutAlign.lt-md="center center">
-      <nz-card [nzTitle]="comTitle" fxFlex="1 1 50%">
-        <ng-template #comTitle>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-            <i nz-icon type="message"></i>
-            <div>{{'SUPPORT_US.Communication_title' | translate}}</div>
-          </div>
-        </ng-template>
-        <div>
-          {{'SUPPORT_US.Communication_description' | translate}}
+<div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center center" class="container">
+  <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="flex-start" fxLayout.lt-md="column"
+       fxLayoutAlign.lt-md="center center">
+    <nz-card [nzTitle]="comTitle" fxFlex="1 1 50%">
+      <ng-template #comTitle>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+          <i nz-icon type="message"></i>
+          <div>{{'SUPPORT_US.Communication_title' | translate}}</div>
         </div>
-        <div class="macro">
-          <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard
-                  [cbContent]="macro">
-            <i nz-icon type="copy"></i>
-          </button>
-          <div *ngFor="let line of macro.split('\n')" class="macro-line">
-            {{line}}
-          </div>
+      </ng-template>
+      <div>
+        {{'SUPPORT_US.Communication_description' | translate}}
+      </div>
+      <div class="macro">
+        <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard
+                [cbContent]="macro">
+          <i nz-icon type="copy"></i>
+        </button>
+        <div *ngFor="let line of macro.split('\n')" class="macro-line">
+          {{line}}
         </div>
-      </nz-card>
+      </div>
+    </nz-card>
 
-      <nz-card [nzTitle]="contributeTitle" [nzActions]="[github, discord]" fxFlex="1 1 50%">
-        <ng-template #contributeTitle>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-            <i class="fab fa-github"></i>
-            <div>{{'SUPPORT_US.Contribute_title' | translate}}</div>
-          </div>
-        </ng-template>
-        <div>{{'SUPPORT_US.Contribute_description' | translate}}</div>
-        <ng-template #github>
-          <a href="https://github.com/supamiu/ffxiv-teamcraft" target="_blank">
-            {{'See_code_github' | translate}}
-          </a>
-        </ng-template>
-        <ng-template #discord>
-          <a href="https://discordapp.com/invite/r6qxt6P" target="_blank">
-            {{'Join_discord_server' | translate}}
-          </a>
-        </ng-template>
-      </nz-card>
-    </div>
+    <nz-card [nzTitle]="contributeTitle" [nzActions]="[github, discord]" fxFlex="1 1 50%">
+      <ng-template #contributeTitle>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+          <i class="fab fa-github"></i>
+          <div>{{'SUPPORT_US.Contribute_title' | translate}}</div>
+        </div>
+      </ng-template>
+      <div>{{'SUPPORT_US.Contribute_description' | translate}}</div>
+      <ng-template #github>
+        <a href="https://github.com/supamiu/ffxiv-teamcraft" target="_blank">
+          {{'See_code_github' | translate}}
+        </a>
+      </ng-template>
+      <ng-template #discord>
+        <a href="https://discordapp.com/invite/r6qxt6P" target="_blank">
+          {{'Join_discord_server' | translate}}
+        </a>
+      </ng-template>
+    </nz-card>
   </div>
-
-  <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
-    <h2>{{'SUPPORT_US.Donation' | translate}}</h2>
-    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start" fxLayout.lt-md="column"
-         fxLayoutAlign.lt-md="center center">
-      <nz-card [nzTitle]="patreonTitle" [nzActions]="[patreon]">
-        <ng-template #patreonTitle>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-            <i class="fab fa-patreon"></i>
-            <div>{{'SUPPORT_US.Patreon_title' | translate}}</div>
-          </div>
-        </ng-template>
-        <div>{{'SUPPORT_US.Patreon_description' | translate}}</div>
-        <ul>
-          <li>{{'SUPPORT_US.PATREON_BENEFITS.Discord_rank' | translate: { price: 1 } }}</li>
-          <li>{{'SUPPORT_US.PATREON_BENEFITS.Profile_badge' | translate: { price: 1 } }}</li>
-          <li>{{'SUPPORT_US.PATREON_BENEFITS.Custom_theme' | translate: { price: 1 } }}</li>
-          <!--<li>{{'SUPPORT_US.PATREON_BENEFITS.Bot_access' | translate: { price: 5 } }}</li>-->
-          <li>{{'SUPPORT_US.PATREON_BENEFITS.Pins_badge' | translate: { price: 10 } }}</li>
-          <li>{{'SUPPORT_US.PATREON_BENEFITS.Loading_screen_message' | translate: { price: 10 } }}</li>
-        </ul>
-        <ng-template #patreon>
-          <a href="https://www.patreon.com/bePatron?u=702160" target="_blank">
-            {{'Access_patreon_page' | translate}}
-          </a>
-        </ng-template>
-      </nz-card>
-    </div>
-  </div>
+  <nz-card [nzTitle]="patreonTitle" [nzActions]="[patreon]" fxFlex="1 1 100%" style="width: 100%">
+    <ng-template #patreonTitle>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+        <i class="fab fa-patreon"></i>
+        <div>{{'SUPPORT_US.Patreon_title' | translate}}</div>
+      </div>
+    </ng-template>
+    <div>{{'SUPPORT_US.Patreon_description' | translate}}</div>
+    <ul>
+      <li>{{'SUPPORT_US.PATREON_BENEFITS.Discord_rank' | translate: { price: 1 } }}</li>
+      <li>{{'SUPPORT_US.PATREON_BENEFITS.Profile_badge' | translate: { price: 1 } }}</li>
+      <li>{{'SUPPORT_US.PATREON_BENEFITS.Custom_theme' | translate: { price: 1 } }}</li>
+      <!--<li>{{'SUPPORT_US.PATREON_BENEFITS.Bot_access' | translate: { price: 5 } }}</li>-->
+      <li>{{'SUPPORT_US.PATREON_BENEFITS.Pins_badge' | translate: { price: 10 } }}</li>
+      <li>{{'SUPPORT_US.PATREON_BENEFITS.Loading_screen_message' | translate: { price: 10 } }}</li>
+    </ul>
+    <ng-template #patreon>
+      <a href="https://www.patreon.com/bePatron?u=702160" target="_blank">
+        {{'Access_patreon_page' | translate}}
+      </a>
+    </ng-template>
+  </nz-card>
 </div>
