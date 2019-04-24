@@ -305,11 +305,11 @@
     "Amount_display_mode_remaining": "Verbleibend",
     "Amount_display_mode_total": "Gesamt",
     "Starting_place": "Startort",
-    "Starting_place_explain": "Used for path optimization features",
+    "Starting_place_explain": "Genutzt für Pfadoptimierungsfunktionen",
     "COLORS": {
-      "Primary": "Primary color",
-      "Highlight": "Highlight color",
-      "Text": "Buttons content color"
+      "Primary": "Hauptfarbe",
+      "Highlight": "Hervorhebungsfarbe",
+      "Text": "Schaltflächenfarbe"
     },
     "COPY_TYPE": {
       "Classic": "Gegenstandsnamen kopieren",
@@ -330,7 +330,7 @@
     "Add_new_contact": "Neuer Kontakt",
     "Save_for_all": "Für alle speichern",
     "User_not_verified": "Benutzer nicht verifiziert, klicke zum Verifizieren.",
-    "More_than_100_lists_created": "More than 100 lists created",
+    "More_than_100_lists_created": "Mehr als 100 Listen erzeugt",
     "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
@@ -341,11 +341,11 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
+    "Needs_verification": "Bitte verifiziere deinen Charakter, um Zugriff auf die geteilten Listen deiner FG zubekommen",
     "Regenerate_all": "Alle Listen neugenerieren",
     "Regenerated_all": "Deine Listen sind jetzt aktuell",
     "Merge_lists": "Listen zusammenfassen",
-    "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
+    "Merge_lists_warning": "Große Listen werden nicht angezeigt, da diese aufgrund von Datenbanklimitierungen nicht zusammengefügt werden können.",
     "Lists_merged": "Listen erfolgreich zusammengefasst!",
     "Shared_lists": "Listen mit Schreibzugriff",
     "Add_selection": "Auswahl zu einer Liste hinzufügen",
@@ -387,12 +387,12 @@
     "History": "Historie",
     "Items_count": "{{amount}} Gegenstände",
     "Show_craftable_amount": "Zeige herstellbare Mengen",
-    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
+    "Optimized_full_path": "Zeige den volloptimierten Pfad an (am günstigsten und schnellsten)",
     "COMPLETION_POPUP": {
       "Title": "Liste fertiggestellt",
       "Content": "Diese Liste ist fertiggestellt, was willst du damit machen?",
       "Delete": "Liste löschen",
-      "Clear": "Empty the list",
+      "Clear": "Liste leeren",
       "Reset": "Liste zurücksetzen",
       "Nothing": "Nichts"
     },
@@ -414,7 +414,7 @@
     "Missing_tags_before_button": "Deine Communityliste scheint keine Tags zu haben, bitte füge einige Tags mit der Schaltfläche ",
     "Missing_tags_after_button": " hinzu.",
     "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
-    "Add_from_external": "Add as external (you didn't use materials for it)",
+    "Add_from_external": "Als extern hinzufügen (du hast keine Materialien dafür verwendet)",
     "Missing_masterbook": "Du hast dieses Meisterbuch laut deinem Profil nicht, klicke um es hinzuzufügen.",
     "No_note": "Keine Notiz",
     "Edit_note": "Keine Notiz",
@@ -424,11 +424,11 @@
     "Open_in_ffxivgardening": "Auf ffxivgardening.com öffnen",
     "Add_all_item_alarms": "Erstelle alle Alarme für diesen Gegenstand",
     "Adaptative_filter": "Zeige nur, was ich tun kann",
-    "Disable_HQ_suggestions": "Disable automatic HQ flags",
+    "Disable_HQ_suggestions": "Automatische HQ-Markierungen ausschalten",
     "Amount_craftable": "Du kannst {{amount}} herstellen",
     "Add_item": "Füge ein Item hinzu",
     "List_too_large": "Liste zu lang",
-    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
+    "List_too_large_description": "Diese Liste ist zu groß und stößt möglicherweise an die Datenbanklimitierungen aufgrund der vielen Informationen. Du darfst keine weiteren Gegenstände hinzufügen, um zu verhindern, dass du die Liste verlierst.",
     "Add_to_another_list": "Add to another list",
     "New_tag": "New tag",
     "LAYOUT_DIALOG": {
