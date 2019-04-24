@@ -26,7 +26,7 @@
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
     "Reset_filters": "Filter zurücksetzen",
-    "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Too_many_results_warning": "Die Suche lieferte über 100 Gegenstände. Da unsere Datenquelle auf 100 Einträge begrenzt ist, brauchst du möglicherweise weitere Filter um einen bestimmten Gegenstand zu finden.",
     "Share_url": "Kopiere Link zur Suche in die Zwischenablage",
     "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert"
   },
@@ -36,7 +36,7 @@
   "Join_discord_server": "Trete unserem Discord Server bei",
   "See_code_github": "Quellcode auf Github ansehen",
   "Support_on_patreon": "Unterstütze das Projekt auf Patreon",
-  "Access_patreon_page": "Go to our Patreon page",
+  "Access_patreon_page": "Gehe zu unserer Patreon-Seite",
   "Default": "Standard",
   "Delete": "Löschen",
   "Copy_isearch": "isearch Makro kopieren",
