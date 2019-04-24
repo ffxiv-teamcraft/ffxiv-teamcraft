@@ -14,10 +14,9 @@ import * as _ from 'lodash';
 import { WorldNavigationStep } from './world-navigation-step';
 import { requestsWithDelay } from '../../core/rxjs/requests-with-delay';
 import { aetherstream } from '../../core/data/sources/aetherstream';
-import { combineLatest } from 'rxjs/internal/observable/combineLatest';
+import { combineLatest, of } from 'rxjs';
 import { SettingsService } from '../settings/settings.service';
 import { LazyDataService } from '../../core/data/lazy-data.service';
-import { of } from 'rxjs/internal/observable/of';
 
 @Injectable()
 export class MapService {

@@ -9,7 +9,7 @@ import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.
 import { SeoPageComponent } from '../../../../core/seo/seo-page-component';
 import { SeoService } from '../../../../core/seo/seo.service';
 import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
-import { combineLatest } from 'rxjs/internal/observable/combineLatest';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-simulator-page',
