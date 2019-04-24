@@ -36,7 +36,7 @@
   "Join_discord_server": "Rejoindre notre serveur Discord",
   "See_code_github": "Voir le code sur github",
   "Support_on_patreon": "Soutenir le projet sur patreon",
-  "Access_patreon_page": "Go to our Patreon page",
+  "Access_patreon_page": "Rendez-vous sur notre page Patreon",
   "Default": "Défaut",
   "Delete": "Supprimer",
   "Copy_isearch": "Copier la macro de recherche en jeu",
@@ -304,8 +304,8 @@
     "Amount_display_mode": "Mode d’affichage des montants",
     "Amount_display_mode_remaining": "Restant",
     "Amount_display_mode_total": "Total",
-    "Starting_place": "Starting place",
-    "Starting_place_explain": "Used for path optimization features",
+    "Starting_place": "Lieu de départ",
+    "Starting_place_explain": "Utilisée pour les fonctionnalités d’optimisation de trajectoire",
     "COLORS": {
       "Primary": "Couleur principale",
       "Highlight": "Couleur de surbrillance",
@@ -387,7 +387,7 @@
     "History": "Historique",
     "Items_count": "{{amount}} items",
     "Show_craftable_amount": "Voir la quantité fabricable",
-    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
+    "Optimized_full_path": "Afficher le chemin optimisé complet (le moins cher et le plus rapide)",
     "COMPLETION_POPUP": {
       "Title": "Liste terminée",
       "Content": "Cette liste est maintenant terminée, que voulez-vous en faire ?",
@@ -536,7 +536,7 @@
   "NAVIGATION": {
     "Title": "Parcours optimisé",
     "Steps": "Étapes",
-    "Loading_path": "Loading optimized path (can take several seconds)",
+    "Loading_path": "Chargement du chemin optimisé (peut prendre plusieurs secondes)",
     "STEP": {
       "Gathering": "Récolter {{amount}}",
       "Hunting": "Obtenez {{amount}} sur des monstres",
@@ -930,8 +930,8 @@
     "Required_for_achievement": "Requis pour les haut faits",
     "Select_spot": "Sélectionnez un point de pêche pour en voir les détails",
     "Hide_completed": "Masquer les éléments complétés",
-    "MIN_optimized_path": "Optimized path for all MIN nodes",
-    "BTN_optimized_path": "Optimized path for all BTN nodes",
+    "MIN_optimized_path": "Chemin optimisé pour tous les nœuds MIN",
+    "BTN_optimized_path": "Chemin optimisé pour tous les nœuds BTN",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
@@ -1030,9 +1030,9 @@
     "Loading_message": "Chargement des livraisons possibles, cela peut prendre jusqu'à une minute"
   },
   "DESYNTH": {
-    "Title": "Desynth guide",
+    "Title": "Guide de recyclage",
     "Job": "Job",
-    "Level": "Level",
+    "Level": "Niveau",
     "Intro": "Select a job and input a level to find best items to level up your desynth",
     "Loading_message": "Loading...",
     "TAGS": {
