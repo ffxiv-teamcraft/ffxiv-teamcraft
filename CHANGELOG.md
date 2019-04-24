@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.0"></a>
+# [5.3.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.16...v5.3.0) (2019-04-24)
+
+
+### Bug Fixes
+
+* **gathering-location:** fixed an issue with smaller window sizes display ([4f71710](https://github.com/Supamiu/ffxiv-teamcraft/commit/4f71710))
+* **item-tags:** fixed an issue with duplicated tags inside autocompletion ([2e05bca](https://github.com/Supamiu/ffxiv-teamcraft/commit/2e05bca))
+
+
+### Features
+
+* new desynth guide page to provide easy desynth leveling guidance ([c54efd8](https://github.com/Supamiu/ffxiv-teamcraft/commit/c54efd8))
+* new page to explain how to help the project, with or without money :) ([83a28f5](https://github.com/Supamiu/ffxiv-teamcraft/commit/83a28f5))
+* **log-tracker:** you are no longer redirected to the list when adding items to a list ([9bf1622](https://github.com/Supamiu/ffxiv-teamcraft/commit/9bf1622))
+* **sidebar:** removed social fabs with collapsed sidebar ([adad3aa](https://github.com/Supamiu/ffxiv-teamcraft/commit/adad3aa))
+
+
+
 <a name="5.2.16"></a>
 ## [5.2.16](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.2.15...v5.2.16) (2019-04-22)
 
