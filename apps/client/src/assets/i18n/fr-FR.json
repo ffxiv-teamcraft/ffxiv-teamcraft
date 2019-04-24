@@ -36,6 +36,7 @@
   "Join_discord_server": "Rejoindre notre serveur Discord",
   "See_code_github": "Voir le code sur github",
   "Support_on_patreon": "Soutenir le projet sur patreon",
+  "Access_patreon_page": "Go to our Patreon page",
   "Default": "Défaut",
   "Delete": "Supprimer",
   "Copy_isearch": "Copier la macro de recherche en jeu",
@@ -1044,6 +1045,24 @@
       "Very_common": "Very common",
       "Common": "Common",
       "Rare": "Rare"
+    }
+  },
+  "SUPPORT_US": {
+    "Title": "Help us grow !",
+    "Free_options": "For free !",
+    "Communication_title": "Talk about the project",
+    "Communication_description": "Let people know about the tool, share rotations, lists. Create videos, blog posts, tweets, everything that lets more people know about Teamcraft really helps the project more than you would think.\n\nWe even prepared a macro for you so you can shout your love everywhere !\n",
+    "Contribute_title": "Contribute to the project",
+    "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
+    "Donation": "Or",
+    "Patreon_title": "Support us on patreon",
+    "Patreon_description": "Patreon is a platform where you can give a money to support a project every month. This money is used to pay for servers, certificates, giveaways and to free more and more time for the developer to work on the project.\n\nDepending on the amount you pledge, you can get some nice benefits in order to thank your contribution:",
+    "PATREON_BENEFITS": {
+      "Discord_rank": "Special rank on the discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
+      "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
+      "Custom_theme": "Better theme customization, with custom color input (${{price}})",
+      "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
     }
   }
 }
