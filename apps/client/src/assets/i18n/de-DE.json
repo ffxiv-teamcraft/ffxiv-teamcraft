@@ -429,8 +429,8 @@
     "Add_item": "Füge ein Item hinzu",
     "List_too_large": "Liste zu lang",
     "List_too_large_description": "Diese Liste ist zu groß und stößt möglicherweise an die Datenbanklimitierungen aufgrund der vielen Informationen. Du darfst keine weiteren Gegenstände hinzufügen, um zu verhindern, dass du die Liste verlierst.",
-    "Add_to_another_list": "Add to another list",
-    "New_tag": "New tag",
+    "Add_to_another_list": "Zu einer anderen Liste hinzufügen",
+    "New_tag": "Neues Tag",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
