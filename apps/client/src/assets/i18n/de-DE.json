@@ -993,33 +993,33 @@
         "Delete_vendor": "Verkäufer löschen"
       },
       "TRADES": {
-        "Title": "Trade sources",
-        "Npc_name": "NPC name",
-        "Shop_name": "Shop name",
-        "Delete_trade": "Delete trade",
-        "Trade_details": "Trade details",
-        "Add_currency": "Add a currency"
+        "Title": "Handelsquellen",
+        "Npc_name": "NPC Name",
+        "Shop_name": "Shopname",
+        "Delete_trade": "Handel löschen",
+        "Trade_details": "Handeldetails",
+        "Add_currency": "Währung hinzufügen"
       },
       "REDUCTION": {
-        "Title": "Reduced from"
+        "Title": "Reduziert aus"
       }
     },
     "NPC_PICKER": {
-      "Title": "Find a NPC",
-      "Npc_name": "NPC name"
+      "Title": "NPC finden",
+      "Npc_name": "NPC Name"
     },
     "IMPORT": {
-      "Corrupted_file": "Import file is corrupted or wrong format",
-      "Drag_or_click": "Drag the file here or click to select it",
+      "Corrupted_file": "Die Importdatei ist beschädigt oder im falschen Format",
+      "Drag_or_click": "Datei hier her ziehen oder hier klicken zur Auswahl",
       "Format": "Format",
-      "Folder": "Folder",
-      "No_folder": "No folder",
-      "Parsing_file": "Parsing file content...",
-      "Saving_items": "Saving items ({{done}}/{{todo}})"
+      "Folder": "Verzeichnis",
+      "No_folder": "Kein Verzeichnis",
+      "Parsing_file": "Analysiere Dateiinhalt...",
+      "Saving_items": "Speichere Gegenstände ({{done}}/{{todo}})"
     }
   },
   "DIRTY": {
-    "Dialog_title": "You have unsaved changes",
+    "Dialog_title": "Du hast ungespeicherte Änderungen",
     "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
   },
   "GC_SUPPLY": {
