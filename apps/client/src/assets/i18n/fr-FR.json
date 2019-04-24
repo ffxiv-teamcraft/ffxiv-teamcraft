@@ -1049,12 +1049,10 @@
   },
   "SUPPORT_US": {
     "Title": "Aidez-nous à grandir !",
-    "Free_options": "Gratuitement",
     "Communication_title": "En parlant du projet",
     "Communication_description": "Faites savoir à vos utilisateurs de l'outil, partagez des rotations, des listes. Créez des vidéos, des billets de blog, des tweets, tout ce qui permet à plus de gens de savoir que Teamcraft existe aide vraiment le projet plus que vous ne le pensez.\n\nNous avons même préparé une macro pour vous afin de pouvoir crier votre amour partout !\n",
     "Contribute_title": "En contribuant au projet",
     "Contribute_description": "Vous pouvez nous trouver sur github pour contribuer au projet, même si vous êtes débutant, tout le monde est le bienvenu !\n\nMais contribuer n'est pas seulement développer, c'est aussi des demandes de fonctionnalités et des rapports de bug qui aident beaucoup l'outil en fournissant un contenu de meilleure qualité, grâce à ceux qui prennent un certain temps pour le tester et trouver des bugs.",
-    "Donation": "Ou",
     "Patreon_title": "Soutenez-nous sur patreon",
     "Patreon_description": "Patreon est une plate-forme où vous pouvez donner pour soutenir un projet chaque mois. Cet argent est utilisé pour payer des serveurs, les certificats, les concours et pour libérer de plus en plus de temps pour que le développeur travaille sur le projet.\n\nSelon le montant que vous donnez par mois, vous pouvez obtenir des avantages intéressants pour vous remercier de votre contribution :",
     "PATREON_BENEFITS": {
