@@ -149,6 +149,8 @@
       "Slot": "Position",
       "Type": "Art des Vorkommens",
       "Map": "Karte",
+      "Weather": "Weather",
+      "Weather_from": "Transition from",
       "TYPE": {
         "Mineral": "Lagerstätte",
         "Rocky": "Steinbruch",
@@ -388,6 +390,7 @@
     "Items_count": "{{amount}} Gegenstände",
     "Show_craftable_amount": "Zeige herstellbare Mengen",
     "Optimized_full_path": "Zeige den volloptimierten Pfad an (am günstigsten und schnellsten)",
+    "Quick_layout_swap": "Quick layout swap",
     "INVENTORY": {
       "Show_final_items": "Show final items",
       "Hide_final_items": "Hide final items"
