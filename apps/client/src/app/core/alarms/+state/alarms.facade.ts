@@ -236,10 +236,9 @@ export class AlarmsFacade {
         return timeBeforeA < timeBeforeB ? -1 : 1;
       });
       if (alarm.weathers) {
-        // try {
         this.nextSpawnCache[cacheKey] = {
           spawn: this.findWeatherSpawnCombination(alarm, sortedSpawns, time.getTime()),
-          expires: time
+          expires: this.etime.toEarthDate(time)
         };
       } else {
         this.nextSpawnCache[cacheKey] = {
