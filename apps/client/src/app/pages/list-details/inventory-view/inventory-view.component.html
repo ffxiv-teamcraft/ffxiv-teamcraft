@@ -1,4 +1,12 @@
 <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start center" class="inventory-container">
+  <nz-switch
+    [ngModel]="showFinalItems$ | async"
+    (ngModelChange)="showFinalItems$.next($event)"
+    [nzCheckedChildren]="checkedTemplate"
+    [nzUnCheckedChildren]="unCheckedTemplate"
+  ></nz-switch>
+  <ng-template #checkedTemplate>{{'LIST.INVENTORY.Show_final_items' | translate}}</ng-template>
+  <ng-template #unCheckedTemplate>{{'LIST.INVENTORY.Hide_final_items' | translate}}</ng-template>
   <div *ngFor="let tab of display$ | async" fxLayout="row wrap" fxLayoutGap="5px" class="tab">
     <div *ngFor="let slot of tab" class="slot" [class.empty]="slot === undefined" nz-tooltip
          [nzTitle]="slot?.id | itemName| i18n">
