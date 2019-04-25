@@ -149,6 +149,8 @@
       "Slot": "Ranura",
       "Type": "Tipo de nodo",
       "Map": "Mapa",
+      "Weather": "Weather",
+      "Weather_from": "Transition from",
       "TYPE": {
         "Mineral": "Depósito de minerales",
         "Rocky": "Afloramiento rocoso",
@@ -306,6 +308,8 @@
     "Amount_display_mode_total": "Total",
     "Starting_place": "Starting place",
     "Starting_place_explain": "Used for path optimization features",
+    "Free_aetheryte": "Free Aetheryte",
+    "Favorite_aetherytes": "Favorite Aetherytes",
     "COLORS": {
       "Primary": "Primary color",
       "Highlight": "Highlight color",
@@ -388,6 +392,11 @@
     "Items_count": "{{amount}} artículos",
     "Show_craftable_amount": "Mostrar cantidad fabricable",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
+    "Quick_layout_swap": "Quick layout swap",
+    "INVENTORY": {
+      "Show_final_items": "Show final items",
+      "Hide_final_items": "Hide final items"
+    },
     "COMPLETION_POPUP": {
       "Title": "Lista completada",
       "Content": "Esta lista esta ahora completada. ¿Qué quiere hacer con ella?",
@@ -878,7 +887,8 @@
     "Unit_price": "Precio unitario",
     "History": "Historial",
     "Purchase_date": "Fecha",
-    "More_on_mogboard": "Más detalles en mogboard"
+    "More_on_mogboard": "Más detalles en mogboard",
+    "Server": "Server"
   },
   "COMMENTS": {
     "Title": "Comentarios"

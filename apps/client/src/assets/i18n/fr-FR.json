@@ -149,6 +149,8 @@
       "Slot": "Emplacement",
       "Type": "Type de nœud",
       "Map": "Carte",
+      "Weather": "Météo",
+      "Weather_from": "Transition depuis",
       "TYPE": {
         "Mineral": "Filon de minerai",
         "Rocky": "Carrière de pierre",
@@ -306,6 +308,8 @@
     "Amount_display_mode_total": "Total",
     "Starting_place": "Lieu de départ",
     "Starting_place_explain": "Utilisée pour les fonctionnalités d’optimisation de trajectoire",
+    "Free_aetheryte": "Éthérite gratuite",
+    "Favorite_aetherytes": "Éthérites favorites",
     "COLORS": {
       "Primary": "Couleur principale",
       "Highlight": "Couleur de surbrillance",
@@ -388,6 +392,11 @@
     "Items_count": "{{amount}} items",
     "Show_craftable_amount": "Voir la quantité fabricable",
     "Optimized_full_path": "Afficher le chemin optimisé complet (le moins cher et le plus rapide)",
+    "Quick_layout_swap": "Changement de layout rapide",
+    "INVENTORY": {
+      "Show_final_items": "Afficher les éléments finaux",
+      "Hide_final_items": "Masquer les éléments finaux"
+    },
     "COMPLETION_POPUP": {
       "Title": "Liste terminée",
       "Content": "Cette liste est maintenant terminée, que voulez-vous en faire ?",
@@ -878,7 +887,8 @@
     "Unit_price": "Prix unitaire",
     "History": "Historique",
     "Purchase_date": "Date",
-    "More_on_mogboard": "Plus de détails sur mogboard"
+    "More_on_mogboard": "Plus de détails sur mogboard",
+    "Server": "Serveur"
   },
   "COMMENTS": {
     "Title": "Commentaires"
