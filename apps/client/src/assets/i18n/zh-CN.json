@@ -388,6 +388,10 @@
     "Items_count": "{{amount}} 个物品",
     "Show_craftable_amount": "显示可制作的数量",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
+    "INVENTORY": {
+      "Show_final_items": "Show final items",
+      "Hide_final_items": "Hide final items"
+    },
     "COMPLETION_POPUP": {
       "Title": "清单已完成",
       "Content": "这个清单现已完成，你想要做什么？",
@@ -878,7 +882,8 @@
     "Unit_price": "单价",
     "History": "历史记录",
     "Purchase_date": "日期",
-    "More_on_mogboard": "在 MogBoard 上查看"
+    "More_on_mogboard": "在 MogBoard 上查看",
+    "Server": "Server"
   },
   "COMMENTS": {
     "Title": "评论"
