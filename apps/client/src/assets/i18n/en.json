@@ -149,6 +149,8 @@
       "Slot": "Slot",
       "Type": "Node type",
       "Map": "Map",
+      "Weather": "Weather",
+      "Weather_from": "Transition from",
       "TYPE": {
         "Mineral": "Mineral Deposit",
         "Rocky": "Rocky Outcrop",
