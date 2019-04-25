@@ -78,9 +78,8 @@ export class PricingComponent implements AfterViewInit {
     const rowsToFill = rows
       .filter(row => {
         const price = this.pricingService.getPrice(row);
-        return !price.fromVendor;
+        return !price.fromVendor || finalItems;
       });
-    console.log(rowsToFill);
     if (rowsToFill.length === 0) {
       return;
     }
@@ -102,7 +101,7 @@ export class PricingComponent implements AfterViewInit {
                   });
                 }));
                 if (finalItems) {
-                  prices = prices.filter(price => price.server === server);
+                  prices = prices.filter(price => price.Server === server);
                 }
                 const cheapestHq = prices.filter(p => p.IsHQ)
                   .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
