@@ -5,7 +5,7 @@
     </div>
     <div class="name" fxLayout="column">
       <span>{{item | xivapiI18n}}</span>
-      <span class="item-kind">{{item.ItemKind | xivapiI18n}}</span>
+      <span class="item-kind">{{item.ItemKind | xivapiI18n}} > {{item.ItemSearchCategory | xivapiI18n}}</span>
     </div>
   </div>
   <div class="description" *ngIf="item.Description !== undefined && item.Description.length > 0">
