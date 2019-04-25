@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.2"></a>
+## [5.3.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.1...v5.3.2) (2019-04-25)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with cache breaking some weather-dependant alarms ([ce82dcb](https://github.com/Supamiu/ffxiv-teamcraft/commit/ce82dcb))
+* **desynth:** fixed an issue with lower levels and better formula accuracy ([346a51f](https://github.com/Supamiu/ffxiv-teamcraft/commit/346a51f))
+* **marketboard:** fixed an issue with vendor final items not priced properly ([11a11da](https://github.com/Supamiu/ffxiv-teamcraft/commit/11a11da))
+* **teams:** fixed a permission issue with lists linked to teams ([2cc2d39](https://github.com/Supamiu/ffxiv-teamcraft/commit/2cc2d39))
+
+
+### Features
+
+* **alarms:** added support for weather and transition on custom alarms ([ef5d43f](https://github.com/Supamiu/ffxiv-teamcraft/commit/ef5d43f))
+* **inventory:** added a toggle button in inventory view to hide final items ([3c0e2b3](https://github.com/Supamiu/ffxiv-teamcraft/commit/3c0e2b3))
+* **layout:** added a quick layout swap menu in list details ([0ee7b33](https://github.com/Supamiu/ffxiv-teamcraft/commit/0ee7b33))
+* **marketboard:** added support for cross world marketbard data ([0260cbd](https://github.com/Supamiu/ffxiv-teamcraft/commit/0260cbd))
+* **tooltip:** added item search category to tooltip data ([77e5f74](https://github.com/Supamiu/ffxiv-teamcraft/commit/77e5f74))
+
+
+
 <a name="5.3.1"></a>
 ## [5.3.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.0...v5.3.1) (2019-04-24)
 

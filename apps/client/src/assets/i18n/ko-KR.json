@@ -149,6 +149,8 @@
       "Slot": "슬롯",
       "Type": "채집물 유형",
       "Map": "지도",
+      "Weather": "Weather",
+      "Weather_from": "Transition from",
       "TYPE": {
         "Mineral": "광맥",
         "Rocky": "바위터",
@@ -305,7 +307,9 @@
     "Amount_display_mode_remaining": "잔여수량",
     "Amount_display_mode_total": "총 수량",
     "Starting_place": "시작 지점",
-    "Starting_place_explain": "추천 경로 기능 사용",
+    "Starting_place_explain": "추천 경로 기능에 사용",
+    "Free_aetheryte": "Free Aetheryte",
+    "Favorite_aetherytes": "Favorite Aetherytes",
     "COLORS": {
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
@@ -387,7 +391,12 @@
     "History": "목록 변경내역",
     "Items_count": "아이템 {{amount}}개",
     "Show_craftable_amount": "제작 가능한 수량 표시",
-    "Optimized_full_path": "추천 경로 표시 (빠르고 가성비 높은 경로)",
+    "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
+    "Quick_layout_swap": "Quick layout swap",
+    "INVENTORY": {
+      "Show_final_items": "Show final items",
+      "Hide_final_items": "Hide final items"
+    },
     "COMPLETION_POPUP": {
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
@@ -878,7 +887,8 @@
     "Unit_price": "개당 가격",
     "History": "최근 기록",
     "Purchase_date": "날짜",
-    "More_on_mogboard": "Mogboard에서 자세한 정보 보기(한국서버 미지원)"
+    "More_on_mogboard": "Mogboard에서 자세한 정보 보기(한국서버 미지원)",
+    "Server": "Server"
   },
   "COMMENTS": {
     "Title": "댓글"
@@ -1033,13 +1043,13 @@
     "Title": "분해 가이드",
     "Job": "직업",
     "Level": "레벨",
-    "Intro": "직업을 선택하고 레벨을 입력해서 분해 레벨링에 최적화된 아이템을 찾으세요",
+    "Intro": "직업을 선택하고 분해 레벨을 입력해서 분해 레벨링에 최적화된 아이템을 찾으세요",
     "Loading_message": "불러오는 중...",
     "TAGS": {
       "Higher_chances": "높은 분해 확률",
       "Lower_exp": "낮은 분해 숙련도",
-      "Good_chances": "적당한 분해 확률",
-      "Good_exp": "적당한 분해 숙련도",
+      "Good_chances": "적절한 분해 확률",
+      "Good_exp": "적절한 분해 숙련도",
       "Lower_chances": "낮은 분해 확률",
       "Higher_exp": "높은 분해 숙련도",
       "Very_common": "일반",
@@ -1052,14 +1062,14 @@
     "Communication_title": "프로젝트에 대한 얘기",
     "Communication_description": "이 도구를 알려주고 로테이션과 목록을 공유해주세요. 많은 사람들이 Teamcraft를 알 수 있게 비디오를 만들고 블로그에 포스트하고 트윗을 하는 모든 것은 여러분이 생각하는 것 보다 프로젝트에 정말 많은 도움이 됩니다.\n\n여러분을 위한 매크로를 준비했으니 여러분의 사랑을 어디서나 외칠 수 있습니다 !\n",
     "Contribute_title": "프로젝트에 기여",
-    "Contribute_description": "초보자라 할지라도 프로젝트에 기여하기 위한 Github를 찾을 수 있습니다. 모두 환영합니다!\n\n코드만이 기여하는 것이 아니라, 기능 요청과 버그 보고는 모두에게 최고품질의 기능을 제공하는데 많은 도움이 됩니다. 시간을 들여 테스트를 하고 버그를 찾아 주시는 분들께 감사드립니다.",
+    "Contribute_description": "Github에서 이 프로젝트에 기여할 수 있습니다. 초보자여도 언제든 환영합니다!\n\n코드 기여뿐만 아니라, 기능 요청과 버그 제보는 모두에게 최상의 기능을 제공하는데 큰 도움을 줍니다. 시간을 들여 테스트를 하고 버그를 찾아 주시는 모든 분들께 감사드립니다.",
     "Patreon_title": "Patreon으로 후원하기",
     "Patreon_description": "Patreon은 매달 프로젝트를 후원할 수 있는 플랫폼입니다. 이 후원금은 서버, 인증서, 나눔에 사용되고 프로젝트를 작업하는 개발자들이 더 많은 시간을 할애하는 데 사용됩니다.\n\n후원금에 따라 이에 보답하기 위한 몇몇 좋은 혜택을 받을 수 있습니다:",
     "PATREON_BENEFITS": {
-      "Discord_rank": "진행 중인 작업을 볼 수 있는 후원자 채널에 접근 가능한 Discord 서버의 특별한 역할 지급 (${{price}})",
+      "Discord_rank": "현재 진행 중인 작업을 볼 수 있는 후원자 채널에 접근 가능한 Discord서버 특별 등급 (${{price}})",
       "Profile_badge": "Teamcraft 프로필에 특별한 배지 부여 (${{price}})",
-      "Custom_theme": "사용자 지정 색상을 포함한 더 좋은 테마 맞춤화 (${{price}})",
-      "Pins_badge": "독점적인 Teamcraft 배지를 배송 (${{price}}) (Patreon에 배송 정보 입력 필수)",
+      "Custom_theme": "사용자 지정 색상을 포함한 더 좋은 테마 커스터마이즈 (${{price}})",
+      "Pins_badge": "한정판 Teamcraft 배지 배송 (${{price}}) (Patreon에 배송 정보 입력 필수)",
       "Loading_screen_message": "\"Brought to you by ...\" 로딩 메시지에 추가하고 싶은 이름, 자유부대명, 링크셸명 등 새 항목 추가! (${{price}})"
     }
   }

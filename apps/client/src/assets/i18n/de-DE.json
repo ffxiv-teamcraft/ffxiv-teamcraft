@@ -149,6 +149,8 @@
       "Slot": "Position",
       "Type": "Art des Vorkommens",
       "Map": "Karte",
+      "Weather": "Weather",
+      "Weather_from": "Transition from",
       "TYPE": {
         "Mineral": "Lagerstätte",
         "Rocky": "Steinbruch",
@@ -306,6 +308,8 @@
     "Amount_display_mode_total": "Gesamt",
     "Starting_place": "Startort",
     "Starting_place_explain": "Genutzt für Pfadoptimierungsfunktionen",
+    "Free_aetheryte": "Free Aetheryte",
+    "Favorite_aetherytes": "Favorite Aetherytes",
     "COLORS": {
       "Primary": "Hauptfarbe",
       "Highlight": "Hervorhebungsfarbe",
@@ -388,6 +392,11 @@
     "Items_count": "{{amount}} Gegenstände",
     "Show_craftable_amount": "Zeige herstellbare Mengen",
     "Optimized_full_path": "Zeige den volloptimierten Pfad an (am günstigsten und schnellsten)",
+    "Quick_layout_swap": "Quick layout swap",
+    "INVENTORY": {
+      "Show_final_items": "Show final items",
+      "Hide_final_items": "Hide final items"
+    },
     "COMPLETION_POPUP": {
       "Title": "Liste fertiggestellt",
       "Content": "Diese Liste ist fertiggestellt, was willst du damit machen?",
@@ -878,7 +887,8 @@
     "Unit_price": "Einzelpreis",
     "History": "Historie",
     "Purchase_date": "Datum",
-    "More_on_mogboard": "Mehr Details auf mogboard.com"
+    "More_on_mogboard": "Mehr Details auf mogboard.com",
+    "Server": "Server"
   },
   "COMMENTS": {
     "Title": "Kommentare"

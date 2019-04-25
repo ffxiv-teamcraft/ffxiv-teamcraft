@@ -26,6 +26,16 @@ export class EorzeanTimeService {
   }
 
   /**
+   * Converts an eorzean date to an earth date.
+   * @param {Date} date
+   * @returns {Date}
+   */
+  public toEarthDate(date: Date): Date {
+    // 60 * 24 Eorzean minutes (one day) per 70 real-world minutes.
+    return new Date(date.getTime() / EorzeanTimeService.EPOCH_TIME_FACTOR);
+  }
+
+  /**
    * Converts an eorzean minutes amount to an earth seconds amount.
    * @returns {Date}
    * @param minutes
@@ -40,10 +50,10 @@ export class EorzeanTimeService {
 
   private tick(): void {
     // How to mock time:
-    // const mockDate = new Date();
+    // const mockDate = new Date('25 April 2019 15:30 UTC+2');
     // mockDate.setUTCHours(0);
     // mockDate.setUTCMinutes(0);
-    // this._timerObservable.next(mockDate);
+    // this._timerObservable.next(this.toEorzeanDate(mockDate));
     // console.log(this.toEorzeanDate(new Date()));
     this._timerObservable.next(this.toEorzeanDate(new Date()));
   }

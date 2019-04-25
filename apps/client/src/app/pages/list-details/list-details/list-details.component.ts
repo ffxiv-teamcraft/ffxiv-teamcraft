@@ -31,6 +31,7 @@ import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
+import { ListLayout } from '../../../core/layout/list-layout';
 
 @Component({
   selector: 'app-list-details',
@@ -67,6 +68,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   public hideCompletedGlobal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('hide-completed-rows') === 'true');
 
+  public layouts$: Observable<ListLayout[]>;
+
+  public selectedLayout$: Observable<ListLayout>;
+
   public get adaptativeFilter(): boolean {
     return this.adaptativeFilter$.value;
   }
@@ -97,6 +102,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       map(([list]) => list),
       shareReplay(1)
     );
+    this.layouts$ = this.layoutsFacade.allLayouts$;
+    this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
     this.finalItemsRow$ = combineLatest(this.list$, this.adaptativeFilter$).pipe(
       mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter))
     );
@@ -129,14 +136,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
     combineLatest(this.list$, this.teamsFacade.allTeams$, this.teamsFacade.selectedTeam$).pipe(
       takeUntil(this.onDestroy$)
-    ).subscribe(([list, teams, selectedTeam]) => {
+    ).subscribe(([list, teams]) => {
       if (list.teamId !== undefined) {
         if (!teams.some(team => team.$key === list.teamId)) {
           this.teamsFacade.loadTeam(list.teamId);
         }
-        if (selectedTeam === undefined || selectedTeam.$key !== list.teamId) {
-          this.teamsFacade.select(list.teamId);
-        }
+        this.teamsFacade.select(list.teamId);
       }
     });
   }
@@ -164,6 +169,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       delete list.teamId;
       this.listsFacade.updateList(list);
     });
+  }
+
+  public selectLayout(layout: ListLayout): void {
+    this.layoutsFacade.select(layout);
   }
 
   save(list: List): void {
@@ -366,7 +375,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           title: list.name,
           description: list.note,
           url: `https://ffxivteamcraft.com/list/${list.$key}`
-        }
+        };
       })
     );
   }

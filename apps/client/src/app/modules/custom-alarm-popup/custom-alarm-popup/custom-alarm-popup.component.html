@@ -6,7 +6,7 @@
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>{{'ALARMS.CUSTOM.Spawn' | translate}}</nz-form-label>
+    <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Spawn' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-input-group nzAddOnAfter=":00" class="spawn-input">
         <nz-input-number class="input-number-with-addon" [nzMin]="0" [nzStep]="1" [nzMax]="23" id="spawn"
@@ -22,7 +22,7 @@
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>{{'ALARMS.CUSTOM.Duration' | translate}}</nz-form-label>
+    <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Duration' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-input-number formControlName="duration" [nzMin]="0" [nzStep]="1"></nz-input-number>
     </nz-form-control>
@@ -51,7 +51,7 @@
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
+    <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="mapId" *ngIf="maps$ | async as maps; else loading" nzAllowClear nzShowSearch>
         <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n" [nzValue]="map.ID"></nz-option>
@@ -59,6 +59,22 @@
       <ng-template #loading>
         <nz-spin></nz-spin>
       </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Weather' | translate}}</nz-form-label>
+    <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-select formControlName="weathers" nzAllowClear nzMode="multiple">
+        <nz-option *ngFor="let weather of weatherIds" [nzLabel]="weather | weatherName | i18n" [nzValue]="weather"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Weather_from' | translate}}</nz-form-label>
+    <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-select formControlName="weathersFrom" nzAllowClear nzMode="multiple">
+        <nz-option *ngFor="let weather of weatherIds" [nzLabel]="weather | weatherName | i18n" [nzValue]="weather"></nz-option>
+      </nz-select>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>

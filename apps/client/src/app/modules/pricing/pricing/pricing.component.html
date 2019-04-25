@@ -121,7 +121,7 @@
             <button nz-button nz-popconfirm nzType="primary"
                     *ngIf="loggedIn$ | async"
                     class="fill-prices-button"
-                    (nzOnConfirm)="fillMbCosts(list.finalItems)"
+                    (nzOnConfirm)="fillMbCosts(list.finalItems, true)"
                     (click)="$event.stopPropagation()"
                     [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}">
               {{'PRICING.Autofill_panel_prices' | translate}}

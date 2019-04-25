@@ -65,18 +65,19 @@ export class DesynthComponent {
         });
       }),
       switchMap(([job, level]) => {
+        const dlvl = Math.round(level / 10) * 10;
         return this.xivapi.search({
           indexes: [SearchIndex.ITEM],
           filters: [
             {
               column: 'Salvage.OptimalSkill',
               operator: '>=',
-              value: level - 10
+              value: Math.max(dlvl - 10, 0)
             },
             {
               column: 'Salvage.OptimalSkill',
               operator: '<=',
-              value: level + 10
+              value: dlvl + 10
             },
             {
               column: 'ClassJobRepairTargetID',
