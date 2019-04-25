@@ -37,7 +37,8 @@ export class MarketboardIconComponent {
         itemId: this.itemId,
         showHistory: true
       },
-      nzFooter: null
+      nzFooter: null,
+      nzWidth: '80vw'
     });
   }
 

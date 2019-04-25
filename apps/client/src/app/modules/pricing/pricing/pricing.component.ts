@@ -14,6 +14,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-pricing',
@@ -46,7 +47,8 @@ export class PricingComponent implements AfterViewInit {
   constructor(private pricingService: PricingService, private media: ObservableMedia, public settings: SettingsService,
               private listsFacade: ListsFacade, private xivapi: XivapiService, private authFacade: AuthFacade,
               private progressService: ProgressPopupService, private l12n: LocalizedDataService, private i18n: I18nToolsService,
-              private translate: TranslateService, private message: NzMessageService, private cd: ChangeDetectorRef) {
+              private translate: TranslateService, private message: NzMessageService, private cd: ChangeDetectorRef,
+              private lazyData: LazyDataService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       tap(list => {
         this.updateCosts(list);
@@ -71,13 +73,14 @@ export class PricingComponent implements AfterViewInit {
     );
   }
 
-  public fillMbCosts(rows: ListRow[]): void {
+  public fillMbCosts(rows: ListRow[], finalItems = false): void {
     const stopInterval$ = new Subject<void>();
     const rowsToFill = rows
       .filter(row => {
         const price = this.pricingService.getPrice(row);
         return !price.fromVendor;
       });
+    console.log(rowsToFill);
     if (rowsToFill.length === 0) {
       return;
     }
@@ -87,23 +90,45 @@ export class PricingComponent implements AfterViewInit {
       mergeMap(index => {
         const row = rowsToFill[index];
         return this.server$.pipe(
-          mergeMap(server => this.xivapi.getMarketBoardItem(server, row.id)),
-          map(mbItem => {
-            const prices = mbItem.Prices;
-            const cheapestHq = prices.filter(p => p.IsHQ)
-              .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
-            const cheapestNq = prices.filter(p => !p.IsHQ)
-              .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
-            return {
-              item: row,
-              hq: cheapestHq ? cheapestHq.PricePerUnit : this.pricingService.getPrice(row).hq,
-              nq: cheapestNq ? cheapestNq.PricePerUnit : this.pricingService.getPrice(row).nq
-            };
+          mergeMap(server => {
+            return this.xivapi.getMarketBoardItemCrossServer(Object.keys(this.lazyData.datacenters).find(dc => {
+              return this.lazyData.datacenters[dc].indexOf(server) > -1;
+            }), row.id).pipe(
+              map(res => {
+                let prices: any[] = [].concat.apply([], Object.keys(res).map(serverName => {
+                  return res[serverName].Prices.map(price => {
+                    (<any>price).Server = serverName;
+                    return price;
+                  });
+                }));
+                if (finalItems) {
+                  prices = prices.filter(price => price.server === server);
+                }
+                const cheapestHq = prices.filter(p => p.IsHQ)
+                  .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
+                const cheapestNq = prices.filter(p => !p.IsHQ)
+                  .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
+                return {
+                  item: row,
+                  hq: cheapestHq ? cheapestHq.PricePerUnit : this.pricingService.getPrice(row).hq,
+                  hqServer: cheapestHq ? cheapestHq.Server : null,
+                  nq: cheapestNq ? cheapestNq.PricePerUnit : this.pricingService.getPrice(row).nq,
+                  nqServer: cheapestNq ? cheapestNq.Server : null
+                };
+              })
+            );
           })
         );
       }),
       tap((res) => {
-        this.pricingService.savePrice(res.item, { nq: res.nq, hq: res.hq, fromVendor: false });
+        this.pricingService.savePrice(res.item, {
+          nq: res.nq,
+          nqServer: res.nqServer,
+          hq: res.hq,
+          hqServer: res.hqServer,
+          fromVendor: false,
+          fromMB: true
+        });
       })
     );
     this.progressService.showProgress(operations, rowsToFill.length)

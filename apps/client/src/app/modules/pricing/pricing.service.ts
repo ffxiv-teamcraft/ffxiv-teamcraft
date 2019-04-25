@@ -88,9 +88,9 @@ export class PricingService {
       const cheapest = item.vendors.sort((a, b) => {
         return a.price - b.price;
       })[0];
-      return { nq: cheapest.price, hq: 0, fromVendor: true };
+      return { nq: cheapest.price, hq: 0, fromVendor: true, fromMB: false };
     }
-    return { nq: 0, hq: 0, fromVendor: false };
+    return { nq: 0, hq: 0, fromVendor: false, fromMB: false };
   }
 
   /**
@@ -105,18 +105,18 @@ export class PricingService {
       const cheapest = item.vendors.sort((a, b) => {
         return a.price - b.price;
       })[0];
-      return { nq: cheapest.price, hq: 0, fromVendor: true };
+      return { nq: cheapest.price, hq: 0, fromVendor: true, fromMB: false };
     }
-    return { nq: 0, hq: 0, fromVendor: false };
+    return { nq: 0, hq: 0, fromVendor: false, fromMB: false };
   }
 
   /**
-   * Gets the earning price of an item, doesn't need crafting computing so it's easier to implmeent and faster to execute.
+   * Gets the earning price of an item, doesn't need crafting computing so it's easier to implement and faster to execute.
    * @param {ListRow} item
    * @returns {Price}
    */
   getEarnings(item: ListRow): Price {
-    return this.prices[item.id] || { nq: 0, hq: 0, fromVendor: false };
+    return this.prices[item.id] || { nq: 0, hq: 0, fromVendor: false, fromMB: false };
   }
 
   /**
@@ -160,7 +160,7 @@ export class PricingService {
    * @param {string} data
    */
   private parsePrices(data: string): { [index: number]: Price } {
-    const result = {};
+    const result: { [index: number]: Price } = {};
     if (data === null) {
       return result;
     }
@@ -171,11 +171,17 @@ export class PricingService {
       }
       const rowId = +row.split(':')[0];
       const rowData = row.split(':')[1].split(',');
-      result[rowId] = {
+      const price: Price = {
         nq: +rowData[0],
         hq: +rowData[1],
-        fromvendor: +rowData[2] === 1
+        fromVendor: +rowData[2] === 1,
+        fromMB: rowData[3] !== undefined
       };
+      if (price.fromMB) {
+        price.nqServer = rowData[3];
+        price.hqServer = rowData[4];
+      }
+      result[rowId] = price;
     });
     return result;
   }
@@ -189,7 +195,8 @@ export class PricingService {
     let resultString = '';
     for (const index in data) {
       if (data.hasOwnProperty(index)) {
-        resultString += `${index.toString()}:${data[index].nq},${data[index].hq},${data[index].fromVendor ? 1 : 0};`;
+        const entry = data[index];
+        resultString += `${index.toString()}:${entry.nq},${entry.hq},${entry.fromVendor ? 1 : 0}${entry.fromMB ? `,${entry.nqServer},${entry.hqServer}` : ''};`;
       }
     }
     return resultString;

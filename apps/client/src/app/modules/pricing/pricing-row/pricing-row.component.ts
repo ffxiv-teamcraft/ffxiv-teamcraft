@@ -27,7 +27,7 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   preCraft = false;
   @Input()
   odd = false;
-  price: Price = { hq: 0, nq: 0, fromVendor: false };
+  price: Price = { hq: 0, nq: 0, fromVendor: false, fromMB: false };
   vendorPrice: Price;
   customPrice = false;
   amount: ItemAmount;

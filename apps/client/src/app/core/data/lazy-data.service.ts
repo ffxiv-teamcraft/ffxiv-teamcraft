@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MapData } from '../../modules/map/map-data';
+import { XivapiService } from '@xivapi/angular-client';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,8 @@ export class LazyDataService {
 
   public maps: { [index: number]: MapData } = {};
 
+  public datacenters: { [index: string]: string[] } = {};
+
   public get allItems(): any {
     const res = { ...this.items };
     Object.keys(this.koItems).forEach(koKey => {
@@ -59,7 +62,7 @@ export class LazyDataService {
     return res;
   }
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private xivapi: XivapiService) {
     combineLatest(
       this.http.get('./assets/data/items.json'),
       this.http.get('./assets/data/zh-items.json'),
@@ -82,7 +85,8 @@ export class LazyDataService {
       this.http.get('./assets/data/craft-actions.json'),
       this.http.get('./assets/data/npcs.json'),
       this.http.get('./assets/data/item-icons.json'),
-      this.http.get('./assets/data/maps.json')
+      this.http.get('./assets/data/maps.json'),
+      this.xivapi.getDCList()
     ).subscribe(([
                    items,
                    zhItems,
@@ -105,7 +109,8 @@ export class LazyDataService {
                    craftActions,
                    npcs,
                    icons,
-                   maps
+                   maps,
+                   dcList
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -129,6 +134,7 @@ export class LazyDataService {
       this.npcs = npcs;
       this.icons = icons;
       this.maps = maps as { [index: number]: MapData };
+      this.datacenters = dcList as { [index: string]: string[] };
       this.loaded$.next(true);
     });
   }

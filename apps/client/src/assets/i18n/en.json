@@ -878,7 +878,8 @@
     "Unit_price": "Unit price",
     "History": "History",
     "Purchase_date": "Date",
-    "More_on_mogboard": "More details on mogboard"
+    "More_on_mogboard": "More details on mogboard",
+    "Server": "Server"
   },
   "COMMENTS": {
     "Title": "Comments"
