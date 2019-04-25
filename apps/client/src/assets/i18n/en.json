@@ -390,6 +390,7 @@
     "Items_count": "{{amount}} items",
     "Show_craftable_amount": "Show craftable amount",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
+    "Quick_layout_swap": "Quick layout swap",
     "INVENTORY": {
       "Show_final_items": "Show final items",
       "Hide_final_items": "Hide final items"

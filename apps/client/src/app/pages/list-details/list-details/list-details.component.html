@@ -7,6 +7,20 @@
       <div class="toolbar" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px"
            fxLayoutAlign.lt-md="center center" fxLayoutAlign="center center">
         <div fxLayout="row" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
+          <ng-container *ngIf="layouts$ | async as layouts">
+            <nz-dropdown *ngIf="layouts.length > 1">
+              <button nz-button nz-dropdown nz-tooltip
+                      nzShape="circle"
+                      [nzTitle]="'LIST_DETAILS.Quick_layout_swap' | translate">
+                <i nz-icon type="interation"></i>
+              </button>
+              <ul nz-menu *ngIf="selectedLayout$ | async as selectedLayout">
+                <li nz-menu-item *ngFor="let layout of layouts" (click)="selectLayout(layout)">
+                  {{layout.name}}<i *ngIf="layout.$key === selectedLayout.$key" nz-icon type="check"></i>
+                </li>
+              </ul>
+            </nz-dropdown>
+          </ng-container>
           <button nz-button nzType="primary" nzShape="circle" (click)="openLayoutOptions()" nz-tooltip
                   [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Title' | translate">
             <i-layout></i-layout>
