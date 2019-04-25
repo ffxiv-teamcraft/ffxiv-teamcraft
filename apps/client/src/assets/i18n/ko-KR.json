@@ -308,6 +308,8 @@
     "Amount_display_mode_total": "총 수량",
     "Starting_place": "시작 지점",
     "Starting_place_explain": "추천 경로 기능에 사용",
+    "Free_aetheryte": "Free Aetheryte",
+    "Favorite_aetherytes": "Favorite Aetherytes",
     "COLORS": {
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
