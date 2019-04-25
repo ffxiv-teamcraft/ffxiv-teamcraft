@@ -41,6 +41,10 @@ export class CustomAlarmPopupComponent implements OnInit {
 
   public duration = 1;
 
+  public weathers: number[];
+
+  public weathersFrom: number[];
+
   constructor(private fb: FormBuilder, private xivapi: XivapiService, private alarmsFacade: AlarmsFacade, private modalRef: NzModalRef) {
     this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, { columns: ['ID', 'PlaceName.Name_*'], max_items: 1000 }).pipe(
       map(list => list.Results),
@@ -85,7 +89,9 @@ export class CustomAlarmPopupComponent implements OnInit {
       type: [this.type, [Validators.min(0), Validators.max(4)]],
       mapId: [this.mapId],
       x: [this.x],
-      y: [this.y]
+      y: [this.y],
+      weathers: [this.weathers],
+      weathersFrom: [this.weathersFrom]
     });
   }
 
