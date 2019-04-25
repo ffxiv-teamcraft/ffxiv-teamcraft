@@ -388,6 +388,10 @@
     "Items_count": "아이템 {{amount}}개",
     "Show_craftable_amount": "제작 가능한 수량 표시",
     "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
+    "INVENTORY": {
+      "Show_final_items": "Show final items",
+      "Hide_final_items": "Hide final items"
+    },
     "COMPLETION_POPUP": {
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
@@ -878,7 +882,8 @@
     "Unit_price": "개당 가격",
     "History": "최근 기록",
     "Purchase_date": "날짜",
-    "More_on_mogboard": "Mogboard에서 자세한 정보 보기(한국서버 미지원)"
+    "More_on_mogboard": "Mogboard에서 자세한 정보 보기(한국서버 미지원)",
+    "Server": "Server"
   },
   "COMMENTS": {
     "Title": "댓글"
