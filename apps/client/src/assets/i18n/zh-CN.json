@@ -308,6 +308,8 @@
     "Amount_display_mode_total": "合计",
     "Starting_place": "Starting place",
     "Starting_place_explain": "Used for path optimization features",
+    "Free_aetheryte": "Free Aetheryte",
+    "Favorite_aetherytes": "Favorite Aetherytes",
     "COLORS": {
       "Primary": "主体色",
       "Highlight": "高亮色",
