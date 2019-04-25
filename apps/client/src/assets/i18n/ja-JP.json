@@ -388,6 +388,10 @@
     "Items_count": "{{amount}} アイテム",
     "Show_craftable_amount": "制作可能な数量を表示する",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
+    "INVENTORY": {
+      "Show_final_items": "Show final items",
+      "Hide_final_items": "Hide final items"
+    },
     "COMPLETION_POPUP": {
       "Title": "リスト完成しました",
       "Content": "このリストは完了されました。何をしますか?",
@@ -878,7 +882,8 @@
     "Unit_price": "単価格",
     "History": "取引履歴",
     "Purchase_date": "日付",
-    "More_on_mogboard": "Mogboardで詳しく情報を見る"
+    "More_on_mogboard": "Mogboardで詳しく情報を見る",
+    "Server": "Server"
   },
   "COMMENTS": {
     "Title": "コメント"
