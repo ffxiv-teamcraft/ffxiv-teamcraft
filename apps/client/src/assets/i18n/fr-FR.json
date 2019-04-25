@@ -388,6 +388,10 @@
     "Items_count": "{{amount}} items",
     "Show_craftable_amount": "Voir la quantité fabricable",
     "Optimized_full_path": "Afficher le chemin optimisé complet (le moins cher et le plus rapide)",
+    "INVENTORY": {
+      "Show_final_items": "Show final items",
+      "Hide_final_items": "Hide final items"
+    },
     "COMPLETION_POPUP": {
       "Title": "Liste terminée",
       "Content": "Cette liste est maintenant terminée, que voulez-vous en faire ?",
@@ -878,7 +882,8 @@
     "Unit_price": "Prix unitaire",
     "History": "Historique",
     "Purchase_date": "Date",
-    "More_on_mogboard": "Plus de détails sur mogboard"
+    "More_on_mogboard": "Plus de détails sur mogboard",
+    "Server": "Server"
   },
   "COMMENTS": {
     "Title": "Commentaires"
