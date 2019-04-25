@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { MapData } from './map-data';
 import { Aetheryte } from '../../core/data/aetheryte';
 import { aetherytes } from '../../core/data/sources/aetherytes';
@@ -14,7 +14,6 @@ import * as _ from 'lodash';
 import { WorldNavigationStep } from './world-navigation-step';
 import { requestsWithDelay } from '../../core/rxjs/requests-with-delay';
 import { aetherstream } from '../../core/data/sources/aetherstream';
-import { combineLatest, of } from 'rxjs';
 import { SettingsService } from '../settings/settings.service';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 
@@ -111,6 +110,9 @@ export class MapService {
     }
     const fromCoords = from.aethernetCoords;
     const toCoords = to.aethernetCoords;
+    if (fromCoords === undefined || toCoords === undefined) {
+      return 999;
+    }
     const base = (Math.sqrt(Math.pow(fromCoords.x - toCoords.x, 2) + Math.pow(fromCoords.y - toCoords.y, 2)) / 2) + 100;
     if (this.settings.favoriteAetherytes.indexOf(to.nameid) > -1) {
       return Math.floor(Math.min(base, 999) / 2);
