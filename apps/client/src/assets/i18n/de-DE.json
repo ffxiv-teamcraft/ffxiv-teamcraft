@@ -308,6 +308,8 @@
     "Amount_display_mode_total": "Gesamt",
     "Starting_place": "Startort",
     "Starting_place_explain": "Genutzt für Pfadoptimierungsfunktionen",
+    "Free_aetheryte": "Free Aetheryte",
+    "Favorite_aetherytes": "Favorite Aetherytes",
     "COLORS": {
       "Primary": "Hauptfarbe",
       "Highlight": "Hervorhebungsfarbe",
