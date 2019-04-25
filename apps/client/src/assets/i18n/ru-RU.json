@@ -388,6 +388,10 @@
     "Items_count": "{{amount}} предметов",
     "Show_craftable_amount": "Показать количество, которое можно скрафтить",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
+    "INVENTORY": {
+      "Show_final_items": "Show final items",
+      "Hide_final_items": "Hide final items"
+    },
     "COMPLETION_POPUP": {
       "Title": "Список завершен",
       "Content": "Этот лист завершен, что вы хотите с ним сделать?",
@@ -878,7 +882,8 @@
     "Unit_price": "Цена единицы",
     "History": "История",
     "Purchase_date": "Дата",
-    "More_on_mogboard": "Подробнее на mogboard'е"
+    "More_on_mogboard": "Подробнее на mogboard'е",
+    "Server": "Server"
   },
   "COMMENTS": {
     "Title": "Комментарии"
