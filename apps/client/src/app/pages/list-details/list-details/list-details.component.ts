@@ -136,14 +136,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
     combineLatest(this.list$, this.teamsFacade.allTeams$, this.teamsFacade.selectedTeam$).pipe(
       takeUntil(this.onDestroy$)
-    ).subscribe(([list, teams, selectedTeam]) => {
+    ).subscribe(([list, teams]) => {
       if (list.teamId !== undefined) {
         if (!teams.some(team => team.$key === list.teamId)) {
           this.teamsFacade.loadTeam(list.teamId);
         }
-        if (selectedTeam === undefined || selectedTeam.$key !== list.teamId) {
-          this.teamsFacade.select(list.teamId);
-        }
+        this.teamsFacade.select(list.teamId);
       }
     });
   }
