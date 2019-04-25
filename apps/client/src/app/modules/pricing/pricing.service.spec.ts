@@ -18,7 +18,7 @@ describe('PricingService', () => {
   it('should be able to store a given price', inject([PricingService], (service: PricingService) => {
     const mockListRow = new ListRow();
     mockListRow.id = 12345;
-    service.savePrice(mockListRow, { nq: 1450, hq: 0, fromVendor: false });
+    service.savePrice(mockListRow, { nq: 1450, hq: 0, fromVendor: false, fromMB: false });
     expect(service.getPrice(mockListRow).nq).toBe(1450);
   }));
 
