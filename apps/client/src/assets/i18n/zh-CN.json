@@ -361,6 +361,8 @@
     "Please_pick_recipe": "请为该物品选择配方",
     "Import_description": "选择你想制作这个物品的配方，然后选择一个清单。这些物品将被添加到该清单，然后你会被带到清单页。",
     "Delete_after_merge": "合并后删除原始清单",
+    "Favorite_lists": "Favorite lists",
+    "No_favorite_lists": "You have no favorite lists",
     "IMPORT": {
       "Title": "从外部网站导入清单",
       "Paste_link_step_title": "粘贴您的链接到外部清单",
