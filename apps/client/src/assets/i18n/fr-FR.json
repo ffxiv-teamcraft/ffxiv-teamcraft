@@ -361,6 +361,8 @@
     "Please_pick_recipe": "Veuillez choisir une recette pour cet objet",
     "Import_description": "Choisissez une recette pour chaque objet qui peut être fabriqué et choisissez une liste, les objets seront alors ajoutés à la liste et vous serez redirigé sur celle-ci.",
     "Delete_after_merge": "Supprimer les listes originales après la fusion",
+    "Favorite_lists": "Favorite lists",
+    "No_favorite_lists": "You have no favorite lists",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
