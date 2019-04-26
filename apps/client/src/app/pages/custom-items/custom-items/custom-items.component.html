@@ -397,9 +397,24 @@
                         {{alarm.name}} ({{alarm.slot || '?'}})
                       </ng-template>
                       <ng-template #alarmDescription>
-                        <div fxLayout="row">
+                        <div fxLayout="row" fxLayoutAlign="flex-start center">
                           <div *ngFor="let spawn of alarm.spawns; let last = last">
                             {{spawn}}:00 - {{(spawn + alarm.duration) % 24}}:00<span *ngIf="!last">/</span>
+                          </div>
+                          <div *ngIf="alarm.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+                            <div *ngFor="let weather of alarm.weathersFrom">
+                              <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+                                   [nzTitle]="weather | weatherName | i18n">
+                            </div>
+                          </div>
+                          <div *ngIf="alarm.weathersFrom !== undefined">
+                            <i nz-icon type="right" theme="outline"></i>
+                          </div>
+                          <div *ngIf="alarm.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+                            <div *ngFor="let weather of alarm.weathers">
+                              <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+                                   [nzTitle]="weather | weatherName | i18n">
+                            </div>
                           </div>
                         </div>
                       </ng-template>
