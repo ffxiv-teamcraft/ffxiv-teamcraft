@@ -36,7 +36,7 @@
   "Join_discord_server": "加入 Discord 服务器",
   "See_code_github": "查看 Github 上的代码",
   "Support_on_patreon": "在 Patreon 上支持我们的项目",
-  "Access_patreon_page": "Go to our Patreon page",
+  "Access_patreon_page": "打开我们的 Patreon 页",
   "Default": "默认",
   "Delete": "删除",
   "Copy_isearch": "复制搜索宏",
@@ -149,8 +149,8 @@
       "Slot": "栏位",
       "Type": "采集类型",
       "Map": "地图",
-      "Weather": "Weather",
-      "Weather_from": "Transition from",
+      "Weather": "天气",
+      "Weather_from": "变化从",
       "TYPE": {
         "Mineral": "矿脉",
         "Rocky": "石场",
@@ -306,10 +306,10 @@
     "Amount_display_mode": "列表数量显示模式",
     "Amount_display_mode_remaining": "剩余",
     "Amount_display_mode_total": "合计",
-    "Starting_place": "Starting place",
-    "Starting_place_explain": "Used for path optimization features",
-    "Free_aetheryte": "Free Aetheryte",
-    "Favorite_aetherytes": "Favorite Aetherytes",
+    "Starting_place": "开始地图",
+    "Starting_place_explain": "用于路径优化功能",
+    "Free_aetheryte": "免费传送点",
+    "Favorite_aetherytes": "收藏传送点",
     "COLORS": {
       "Primary": "主体色",
       "Highlight": "高亮色",
@@ -361,8 +361,8 @@
     "Please_pick_recipe": "请为该物品选择配方",
     "Import_description": "选择你想制作这个物品的配方，然后选择一个清单。这些物品将被添加到该清单，然后你会被带到清单页。",
     "Delete_after_merge": "合并后删除原始清单",
-    "Favorite_lists": "Favorite lists",
-    "No_favorite_lists": "You have no favorite lists",
+    "Favorite_lists": "收藏列表",
+    "No_favorite_lists": "没有收藏列表",
     "IMPORT": {
       "Title": "从外部网站导入清单",
       "Paste_link_step_title": "粘贴您的链接到外部清单",
@@ -393,11 +393,11 @@
     "History": "历史记录",
     "Items_count": "{{amount}} 个物品",
     "Show_craftable_amount": "显示可制作的数量",
-    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
-    "Quick_layout_swap": "Quick layout swap",
+    "Optimized_full_path": "显示完整最优路径 (最便宜且最快)",
+    "Quick_layout_swap": "快速布局切换",
     "INVENTORY": {
-      "Show_final_items": "Show final items",
-      "Hide_final_items": "Hide final items"
+      "Show_final_items": "显示最终物品",
+      "Hide_final_items": "隐藏最终物品"
     },
     "COMPLETION_POPUP": {
       "Title": "清单已完成",
@@ -547,7 +547,7 @@
   "NAVIGATION": {
     "Title": "最优路线",
     "Steps": "步骤",
-    "Loading_path": "Loading optimized path (can take several seconds)",
+    "Loading_path": "正在加载最优路径 (可能需要几秒)",
     "STEP": {
       "Gathering": "采集 {{amount}} 个",
       "Hunting": "怪物掉落 {{amount}} 个",
@@ -890,7 +890,7 @@
     "History": "历史记录",
     "Purchase_date": "日期",
     "More_on_mogboard": "在 MogBoard 上查看",
-    "Server": "Server"
+    "Server": "服务器"
   },
   "COMMENTS": {
     "Title": "评论"
@@ -942,8 +942,8 @@
     "Required_for_achievement": "成就所需",
     "Select_spot": "选择地点以查看其详情",
     "Hide_completed": "隐藏已完成的配方",
-    "MIN_optimized_path": "Optimized path for all MIN nodes",
-    "BTN_optimized_path": "Optimized path for all BTN nodes",
+    "MIN_optimized_path": "为所有采矿工采集点优化的路径",
+    "BTN_optimized_path": "为所有园艺工采集点优化的路径",
     "PAGE": {
       "Master_recipes": "秘籍 ({{number}})",
       "Housing_items": "房屋 ({{number}})",
@@ -1042,7 +1042,7 @@
     "Loading_message": "正在加载筹备列表，可能需要一分钟"
   },
   "DESYNTH": {
-    "Title": "Desynth guide",
+    "Title": "分解查询",
     "Job": "Job",
     "Level": "Level",
     "Intro": "Select a job and input a level to find best items to level up your desynth",
