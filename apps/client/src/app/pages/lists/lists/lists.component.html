@@ -48,6 +48,16 @@
     <app-fullpage-message *ngIf="lists.otherLists.length === 0 && !(loading$ | async)" height="150px">
       {{'LISTS.No_lists' | translate}}
     </app-fullpage-message>
+    <ng-container *ngIf="favoriteLists$ | async as favoriteLists">
+      <ng-container *ngIf="favoriteLists?.length > 0">
+        <nz-divider [nzText]="'LISTS.Favorite_lists' | translate" nzOrientation="left"></nz-divider>
+        <div *ngIf="favoriteLists.length > 0">
+          <div class="list-panel" *ngFor="let list of favoriteLists; trackBy: trackByList">
+            <app-list-panel [list]="list"></app-list-panel>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
     <nz-divider [nzText]="'TEAMS.Title' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="column" fxLayoutGap="5px">
       <nz-collapse *ngFor="let teamDisplay of teamsDisplays$ | async;trackBy: trackByTeam">
