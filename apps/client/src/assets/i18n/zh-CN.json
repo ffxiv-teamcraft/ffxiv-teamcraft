@@ -1043,36 +1043,36 @@
   },
   "DESYNTH": {
     "Title": "分解查询",
-    "Job": "Job",
-    "Level": "Level",
-    "Intro": "Select a job and input a level to find best items to level up your desynth",
-    "Loading_message": "Loading...",
+    "Job": "职业",
+    "Level": "分解品级",
+    "Intro": "选择职业并输入分解等级，即可找到最适合你的升级物品",
+    "Loading_message": "正在加载……",
     "TAGS": {
-      "Higher_chances": "Higher chances",
-      "Lower_exp": "Lower exp",
-      "Good_chances": "Good chances",
-      "Good_exp": "Good exp",
-      "Lower_chances": "Lower chances",
-      "Higher_exp": "Higher exp",
-      "Very_common": "Very common",
-      "Common": "Common",
-      "Rare": "Rare"
+      "Higher_chances": "成功率高",
+      "Lower_exp": "经验少",
+      "Good_chances": "成功率较高",
+      "Good_exp": "经验较多",
+      "Lower_chances": "成功率低",
+      "Higher_exp": "经验多",
+      "Very_common": "非常常见",
+      "Common": "常见",
+      "Rare": "稀有"
     }
   },
   "SUPPORT_US": {
-    "Title": "Help us grow !",
-    "Communication_title": "Talk about the project",
-    "Communication_description": "Let people know about the tool, share rotations, lists. Create videos, blog posts, tweets, everything that lets more people know about Teamcraft really helps the project more than you would think.\n\nWe even prepared a macro for you so you can shout your love everywhere !\n",
-    "Contribute_title": "Contribute to the project",
-    "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
-    "Patreon_title": "Support us on patreon",
-    "Patreon_description": "Patreon is a platform where you can give a money to support a project every month. This money is used to pay for servers, certificates, giveaways and to free more and more time for the developer to work on the project.\n\nDepending on the amount you pledge, you can get some nice benefits in order to thank your contribution:",
+    "Title": "帮助我们！",
+    "Communication_title": "宣传本项目",
+    "Communication_description": "通过做视频、写帖子、发微博等等让大家都知道这个工具，并在这里分享循环、清单。这对本项目的帮助超出了你的想象。\n\n我们甚至为你准备了一个宏，所以你可以到处去喊你有多爱这个工具！\n",
+    "Contribute_title": "为项目做出贡献",
+    "Contribute_description": "你可以在 Github 上找到本项目并进行贡献。即使你是初学者也没有关系，我们欢迎每一个人！\n\n贡献不仅仅是说写代码。请求添加功能或者是报告 Bug 也能帮助我们为每个人提供质量最好的工具。感谢每一个愿意花时间测试本工具并找到 Bug 的人。",
+    "Patreon_title": "在 Patreon 上支持我们",
+    "Patreon_description": "Patreon 是一个可以每个月固定捐助一定数额的钱帮助项目开发的平台。这些钱会用来支付服务器、证书、抽奖的费用，而且作者也能有更多的时间用来开发这个工具。\n\n根据你捐赠的金额，为了感谢你的贡献你可以获得一些福利：",
     "PATREON_BENEFITS": {
-      "Discord_rank": "Special rank on the discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
-      "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
-      "Custom_theme": "Better theme customization, with custom color input (${{price}})",
-      "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
+      "Discord_rank": "在 Discord 上获得一个特殊的权限，可以查看支持者频道并了解我们正在做什么。(${{price}})",
+      "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
+      "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 ({{price}})",
+      "Pins_badge": "邮寄给你的限定的 Teamcraft 别针徽章 (${{price}}) (需要你在 Patreon 上填写收货地址)",
+      "Loading_screen_message": "在加载界面的 \"Brought to you by ...\" 载入信息里，添加你的名字、部队名字、通讯贝名字或者任何你想加的信息！(${{price}})"
     }
   }
 }
