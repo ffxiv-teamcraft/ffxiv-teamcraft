@@ -361,6 +361,8 @@
     "Please_pick_recipe": "Por favor, escolha uma receita para este item",
     "Import_description": "Escolha a receita que você deseja usar para os itens que podem ser fabricados e selecionar uma lista, os itens serão adicionados a esta lista e você será redirecionado para ela.",
     "Delete_after_merge": "Eliminar listas originais ao juntar",
+    "Favorite_lists": "Favorite lists",
+    "No_favorite_lists": "You have no favorite lists",
     "IMPORT": {
       "Title": "Importar lista de um website externo",
       "Paste_link_step_title": "Cole o link da lista externa",

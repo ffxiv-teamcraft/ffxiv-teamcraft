@@ -3,7 +3,7 @@ import { List } from '../../../modules/list/model/list';
 import { Inventory } from '../../../model/other/inventory';
 import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { combineLatest } from 'rxjs/internal/observable/combineLatest';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-inventory-view',

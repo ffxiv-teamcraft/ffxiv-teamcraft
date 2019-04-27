@@ -361,6 +361,8 @@
     "Please_pick_recipe": "Por favor elija una receta para este artículo",
     "Import_description": "Escoja la receta que quiera usar para los artículos que pueden ser elaborados y seleccione una lista. Los artículos serán agregados a la lista y será redirigido a ella.",
     "Delete_after_merge": "Borrar listas originales después de combinar",
+    "Favorite_lists": "Favorite lists",
+    "No_favorite_lists": "You have no favorite lists",
     "IMPORT": {
       "Title": "Importar listas de sitio externo",
       "Paste_link_step_title": "Pegue su vínculo a su lista externa",

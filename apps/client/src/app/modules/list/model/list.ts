@@ -565,7 +565,7 @@ export class List extends DataWithPermissions {
   }
 
   public isTooLarge(): boolean {
-    return this.getSize() > 300000;
+    return this.getSize() > 800000;
   }
 
   /**

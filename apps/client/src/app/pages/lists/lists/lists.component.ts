@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
-import { debounceTime, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
@@ -15,6 +15,7 @@ import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
 import { MergeListsPopupComponent } from '../merge-lists-popup/merge-lists-popup.component';
 import { ListImportPopupComponent } from '../list-import-popup/list-import-popup.component';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-lists',
@@ -28,6 +29,8 @@ export class ListsComponent {
   public teamsDisplays$: Observable<{ team: Team, lists: List[] }[]>;
 
   public listsWithWriteAccess$: Observable<List[]>;
+
+  public favoriteLists$: Observable<List[]>;
 
   public workshops$: Observable<WorkshopDisplay[]>;
 
@@ -46,7 +49,8 @@ export class ListsComponent {
   constructor(private listsFacade: ListsFacade, private progress: ProgressPopupService,
               private listManager: ListManagerService, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,
-              private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade) {
+              private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade,
+              private authFacade: AuthFacade) {
     this.workshops$ = combineLatest(this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$).pipe(
       debounceTime(100),
       map(([workshops, compacts]) => {
@@ -68,6 +72,16 @@ export class ListsComponent {
           .sort((a, b) => a.workshop.index - b.workshop.index);
       }),
       shareReplay(1)
+    );
+
+    this.favoriteLists$ = this.authFacade.favorites$.pipe(
+      map(favorites => (favorites.lists || [])),
+      tap(lists => lists.forEach(list => this.listsFacade.loadCompact(list))),
+      mergeMap(lists => {
+        return this.listsFacade.compacts$.pipe(
+          map(compacts => compacts.filter(c => lists.indexOf(c.$key) > -1 && !c.notFound))
+        );
+      })
     );
 
     this.workshopsWithWriteAccess$ = combineLatest(this.workshopsFacade.workshopsWithWriteAccess$, this.listsFacade.compacts$).pipe(

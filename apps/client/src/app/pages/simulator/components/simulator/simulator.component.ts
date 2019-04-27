@@ -309,10 +309,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.stats$ = combineLatest(this.crafterStats$, this.bonuses$, this.loggedIn$).pipe(
-      map(([stats, bonuses, loggedIn]) => {
+    this.stats$ = combineLatest(this.crafterStats$, this.bonuses$, this.loggedIn$, job$).pipe(
+      map(([stats, bonuses, loggedIn, job]) => {
         return new CrafterStats(
-          stats.jobId,
+          job || stats.jobId,
           stats.craftsmanship + bonuses.craftsmanship,
           stats._control + bonuses.control,
           stats.cp + bonuses.cp,
