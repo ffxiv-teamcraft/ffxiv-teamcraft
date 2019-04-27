@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.3"></a>
+## [5.3.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.2...v5.3.3) (2019-04-27)
+
+
+### Bug Fixes
+
+* **community-rotations:** changed labels colors for easier reading ([2221ef6](https://github.com/Supamiu/ffxiv-teamcraft/commit/2221ef6))
+* **inventory:** fixed wrong import breaking inventory view ([f497434](https://github.com/Supamiu/ffxiv-teamcraft/commit/f497434))
+* **pricing:** better alignment for prices labels ([47fda21](https://github.com/Supamiu/ffxiv-teamcraft/commit/47fda21))
+* **settings:** favorite aetherytes max count is now 4 ([2066bf4](https://github.com/Supamiu/ffxiv-teamcraft/commit/2066bf4))
+* **simulator:** fixed an issue with job not being swapped properly on recipe change ([605e028](https://github.com/Supamiu/ffxiv-teamcraft/commit/605e028))
+* **simulator:** tablets will now use mobile display too ([5106776](https://github.com/Supamiu/ffxiv-teamcraft/commit/5106776))
+* **translation:** fixed a wrong translation label ([48c8312](https://github.com/Supamiu/ffxiv-teamcraft/commit/48c8312))
+
+
+### Features
+
+* **custom-items:** added weathers display in custom alarms display ([445e4db](https://github.com/Supamiu/ffxiv-teamcraft/commit/445e4db))
+* **list:** max list size is now 800kB, was 300kB ([71966a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/71966a6))
+* **lists:** favorite lists now show in the lists page ([475bf95](https://github.com/Supamiu/ffxiv-teamcraft/commit/475bf95))
+
+
+
 <a name="5.3.2"></a>
 ## [5.3.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.1...v5.3.2) (2019-04-25)
 
