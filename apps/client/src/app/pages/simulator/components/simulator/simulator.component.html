@@ -1,6 +1,6 @@
 <ng-container *ngIf="rotation$ | async as rotation">
-  <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-sm="column" *ngIf="!rotation.notFound; else notFound">
-    <div class="buttons" fxLayout.lt-sm="row wrap" fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="10px">
+  <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column" *ngIf="!rotation.notFound; else notFound">
+    <div class="buttons" fxLayout.lt-md="row wrap" fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="10px">
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
               *ngIf="rotation.$key !== undefined"
               [nzTitle]="'SIMULATOR.Save_as_new' | translate" (click)="saveRotationAsNew(rotation)">
@@ -112,8 +112,8 @@
       <nz-collapse>
         <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate"
                            [nzActive]="custom || (loggedIn$ | async) === false">
-          <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly" fxLayout.lt-sm="column"
-               fxLayoutGap.lt-sm="16px" fxLayoutAlign.lt-sm="center center">
+          <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly" fxLayout.lt-md="column"
+               fxLayoutGap.lt-md="16px" fxLayoutAlign.lt-md="center center">
             <div [fxFlex]="custom?'1 1 48%':'1 0 30%'" fxLayout="column">
               <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
               <nz-select [nzDisabled]="!custom" [ngModel]="(stats$ | async)?.jobId"
@@ -132,7 +132,7 @@
                     fxLayout="column"
                     id="ngForm"
                     fxLayoutAlign="space-between">
-                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign.lt-sm="center center"
+                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutAlign.lt-md="center center"
                      fxLayoutAlign="space-evenly center">
                   <nz-form-item>
                     <nz-form-label nzRequired nzFor="craftsmanship">{{'SIMULATOR.CONFIGURATION.Craftsmanship' |
@@ -165,7 +165,7 @@
                     </nz-form-control>
                   </nz-form-item>
                 </div>
-                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign.lt-sm="center center"
+                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutAlign.lt-md="center center"
                      fxLayoutAlign="space-evenly center">
                   <nz-form-item>
                     <nz-form-label nzRequired nzFor="level">{{'SIMULATOR.Level' | translate}}</nz-form-label>
@@ -227,7 +227,7 @@
 
               <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
               <div>
-                <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="center center">
+                <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center">
                   <div fxLayout="column" fxFlex="1 1 auto" fxLayoutGap="10px" class="consumable-col">
                     <nz-select [(ngModel)]="selectedFood" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
                                nzAllowClear nzShowSearch>
@@ -319,8 +319,8 @@
 
       <div fxLayout="column" fxLayoutGap="10px" *ngIf="result$ | async as resultData">
         <nz-card>
-          <div class="card-header" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between center"
-               fxLayoutGap.lt-sm="10px">
+          <div class="card-header" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+               fxLayoutGap.lt-md="10px">
             <div fxLayout="row" fxLayoutGap="10px" *ngIf="!custom">
               <div class="avatar">
                 <app-item-icon [icon]="item.icon" [itemId]="item.id" [width]="42"
@@ -368,7 +368,7 @@
               </div>
             </div>
           </div>
-          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
             <div class="durability" fxLayout="column" fxLayoutAlign="center center">
               <h3>{{'SIMULATOR.Durability' | translate}}</h3>
               <span class="durability-value">{{resultData.simulation.durability}}
@@ -378,7 +378,7 @@
               <div class="top-bars">
                 <div fxLayout="column">
                   <h3>{{'SIMULATOR.Progress' | translate}}</h3>
-                  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px">
                     <nz-progress
                       fxFlex="1 1 auto"
                       [nzShowInfo]="false"
@@ -395,7 +395,7 @@
                 <div fxLayout="column">
                   <h3>{{'SIMULATOR.Quality' | translate}}</h3>
                   <div fxLayout="column" class="quality-display">
-                    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px">
                       <div class="quality-bar" fxFlex="1 1 auto">
                         <div *ngFor="let threshold of thresholds"
                              [ngStyle]="{left: 100 * threshold / resultData.simulation.recipe.quality + '%'}"
@@ -418,15 +418,15 @@
                   </div>
                 </div>
               </div>
-              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between center">
-                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex="1 1 auto">
+              <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center">
+                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxFlex="1 1 auto">
                   <div class="hq-chances">
                     {{'SIMULATOR.Hq' | translate}}:
                     <span class="hq-chances-value">
                   {{resultData.hqPercent}}%
                 </span>
                   </div>
-                  <div class="cp-progress" fxFlex="1 1 300px" fxFlex.lt-sm="1 1 auto">
+                  <div class="cp-progress" fxFlex="1 1 300px" fxFlex.lt-md="1 1 auto">
                     <span>{{'SIMULATOR.Cp_amount' | translate}}</span>
                     <nz-progress
                       class="cp-amount"
@@ -434,7 +434,7 @@
                       [nzFormat]="barFormat(resultData.simulation.availableCP,resultData.simulation.maxCP)"></nz-progress>
                   </div>
                 </div>
-                <div class="report" *ngIf="report$ | async as report" fxFlex="1 1 300px" fxFlex.lt-sm="1 1 auto"
+                <div class="report" *ngIf="report$ | async as report" fxFlex="1 1 300px" fxFlex.lt-md="1 1 auto"
                      fxLayoutGap="10px">
                 <span class="report-row">
                     {{'SIMULATOR.Reliability' | translate}}: {{report.successPercent}}%
