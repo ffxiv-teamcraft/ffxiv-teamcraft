@@ -36,7 +36,7 @@
   "Join_discord_server": "加入 Discord 服务器",
   "See_code_github": "查看 Github 上的代码",
   "Support_on_patreon": "在 Patreon 上支持我们的项目",
-  "Access_patreon_page": "Go to our Patreon page",
+  "Access_patreon_page": "打开我们的 Patreon 页",
   "Default": "默认",
   "Delete": "删除",
   "Copy_isearch": "复制搜索宏",
@@ -149,8 +149,8 @@
       "Slot": "栏位",
       "Type": "采集类型",
       "Map": "地图",
-      "Weather": "Weather",
-      "Weather_from": "Transition from",
+      "Weather": "天气",
+      "Weather_from": "变化从",
       "TYPE": {
         "Mineral": "矿脉",
         "Rocky": "石场",
@@ -306,10 +306,10 @@
     "Amount_display_mode": "列表数量显示模式",
     "Amount_display_mode_remaining": "剩余",
     "Amount_display_mode_total": "合计",
-    "Starting_place": "Starting place",
-    "Starting_place_explain": "Used for path optimization features",
-    "Free_aetheryte": "Free Aetheryte",
-    "Favorite_aetherytes": "Favorite Aetherytes",
+    "Starting_place": "开始地图",
+    "Starting_place_explain": "用于路径优化功能",
+    "Free_aetheryte": "免费传送点",
+    "Favorite_aetherytes": "收藏传送点",
     "COLORS": {
       "Primary": "主体色",
       "Highlight": "高亮色",
@@ -353,7 +353,7 @@
     "Lists_merged": "清单合并成功！",
     "Shared_lists": "有写入权限的清单",
     "Add_selection": "添加选中物品到清单",
-    "Your_lists": "你的清单",
+    "Your_lists": "我的清单",
     "Outdated_tag": "已过期",
     "No_lists": "你没有清单",
     "Lists_search_placeholder": "搜索清单…",
@@ -361,6 +361,8 @@
     "Please_pick_recipe": "请为该物品选择配方",
     "Import_description": "选择你想制作这个物品的配方，然后选择一个清单。这些物品将被添加到该清单，然后你会被带到清单页。",
     "Delete_after_merge": "合并后删除原始清单",
+    "Favorite_lists": "收藏列表",
+    "No_favorite_lists": "没有收藏列表",
     "IMPORT": {
       "Title": "从外部网站导入清单",
       "Paste_link_step_title": "粘贴您的链接到外部清单",
@@ -391,11 +393,11 @@
     "History": "历史记录",
     "Items_count": "{{amount}} 个物品",
     "Show_craftable_amount": "显示可制作的数量",
-    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
-    "Quick_layout_swap": "Quick layout swap",
+    "Optimized_full_path": "显示完整最优路径 (最便宜且最快)",
+    "Quick_layout_swap": "快速布局切换",
     "INVENTORY": {
-      "Show_final_items": "Show final items",
-      "Hide_final_items": "Hide final items"
+      "Show_final_items": "显示最终物品",
+      "Hide_final_items": "隐藏最终物品"
     },
     "COMPLETION_POPUP": {
       "Title": "清单已完成",
@@ -545,7 +547,7 @@
   "NAVIGATION": {
     "Title": "最优路线",
     "Steps": "步骤",
-    "Loading_path": "Loading optimized path (can take several seconds)",
+    "Loading_path": "正在加载最优路径 (可能需要几秒)",
     "STEP": {
       "Gathering": "采集 {{amount}} 个",
       "Hunting": "怪物掉落 {{amount}} 个",
@@ -888,7 +890,7 @@
     "History": "历史记录",
     "Purchase_date": "日期",
     "More_on_mogboard": "在 MogBoard 上查看",
-    "Server": "Server"
+    "Server": "服务器"
   },
   "COMMENTS": {
     "Title": "评论"
@@ -940,8 +942,8 @@
     "Required_for_achievement": "成就所需",
     "Select_spot": "选择地点以查看其详情",
     "Hide_completed": "隐藏已完成的配方",
-    "MIN_optimized_path": "Optimized path for all MIN nodes",
-    "BTN_optimized_path": "Optimized path for all BTN nodes",
+    "MIN_optimized_path": "为所有采矿工采集点优化的路径",
+    "BTN_optimized_path": "为所有园艺工采集点优化的路径",
     "PAGE": {
       "Master_recipes": "秘籍 ({{number}})",
       "Housing_items": "房屋 ({{number}})",
@@ -1040,37 +1042,37 @@
     "Loading_message": "正在加载筹备列表，可能需要一分钟"
   },
   "DESYNTH": {
-    "Title": "Desynth guide",
-    "Job": "Job",
-    "Level": "Level",
-    "Intro": "Select a job and input a level to find best items to level up your desynth",
-    "Loading_message": "Loading...",
+    "Title": "分解查询",
+    "Job": "职业",
+    "Level": "分解品级",
+    "Intro": "选择职业并输入分解等级，即可找到最适合你的升级物品",
+    "Loading_message": "正在加载……",
     "TAGS": {
-      "Higher_chances": "Higher chances",
-      "Lower_exp": "Lower exp",
-      "Good_chances": "Good chances",
-      "Good_exp": "Good exp",
-      "Lower_chances": "Lower chances",
-      "Higher_exp": "Higher exp",
-      "Very_common": "Very common",
-      "Common": "Common",
-      "Rare": "Rare"
+      "Higher_chances": "成功率高",
+      "Lower_exp": "经验少",
+      "Good_chances": "成功率较高",
+      "Good_exp": "经验较多",
+      "Lower_chances": "成功率低",
+      "Higher_exp": "经验多",
+      "Very_common": "非常常见",
+      "Common": "常见",
+      "Rare": "稀有"
     }
   },
   "SUPPORT_US": {
-    "Title": "Help us grow !",
-    "Communication_title": "Talk about the project",
-    "Communication_description": "Let people know about the tool, share rotations, lists. Create videos, blog posts, tweets, everything that lets more people know about Teamcraft really helps the project more than you would think.\n\nWe even prepared a macro for you so you can shout your love everywhere !\n",
-    "Contribute_title": "Contribute to the project",
-    "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
-    "Patreon_title": "Support us on patreon",
-    "Patreon_description": "Patreon is a platform where you can give a money to support a project every month. This money is used to pay for servers, certificates, giveaways and to free more and more time for the developer to work on the project.\n\nDepending on the amount you pledge, you can get some nice benefits in order to thank your contribution:",
+    "Title": "帮助我们！",
+    "Communication_title": "宣传本项目",
+    "Communication_description": "通过做视频、写帖子、发微博等等让大家都知道这个工具，并在这里分享循环、清单。这对本项目的帮助超出了你的想象。\n\n我们甚至为你准备了一个宏，所以你可以到处去喊你有多爱这个工具！\n",
+    "Contribute_title": "为项目做出贡献",
+    "Contribute_description": "你可以在 Github 上找到本项目并进行贡献。即使你是初学者也没有关系，我们欢迎每一个人！\n\n贡献不仅仅是说写代码。请求添加功能或者是报告 Bug 也能帮助我们为每个人提供质量最好的工具。感谢每一个愿意花时间测试本工具并找到 Bug 的人。",
+    "Patreon_title": "在 Patreon 上支持我们",
+    "Patreon_description": "Patreon 是一个可以每个月固定捐助一定数额的钱帮助项目开发的平台。这些钱会用来支付服务器、证书、抽奖的费用，而且作者也能有更多的时间用来开发这个工具。\n\n根据你捐赠的金额，为了感谢你的贡献你可以获得一些福利：",
     "PATREON_BENEFITS": {
-      "Discord_rank": "Special rank on the discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
-      "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
-      "Custom_theme": "Better theme customization, with custom color input (${{price}})",
-      "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
+      "Discord_rank": "在 Discord 上获得一个特殊的权限，可以查看支持者频道并了解我们正在做什么。(${{price}})",
+      "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
+      "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 ({{price}})",
+      "Pins_badge": "邮寄给你的限定的 Teamcraft 别针徽章 (${{price}}) (需要你在 Patreon 上填写收货地址)",
+      "Loading_screen_message": "在加载界面的 \"Brought to you by ...\" 载入信息里，添加你的名字、部队名字、通讯贝名字或者任何你想加的信息！(${{price}})"
     }
   }
 }

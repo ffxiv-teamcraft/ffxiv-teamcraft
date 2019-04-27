@@ -361,6 +361,8 @@
     "Please_pick_recipe": "Bitte wähle ein Rezept für diesen Gegenstand",
     "Import_description": "Wähle das Rezept, das du für den herstellbaren Gegenstand nutzen möchtest und wähle eine Liste. Die Gegenstände werden der Liste hinzugefügt und du wirst weitergeleitet.",
     "Delete_after_merge": "Ursprüngliche Listen nach Zusammenfassung löschen",
+    "Favorite_lists": "Favorite lists",
+    "No_favorite_lists": "You have no favorite lists",
     "IMPORT": {
       "Title": "Liste von externer Website importieren",
       "Paste_link_step_title": "Füge deinen link der externen Liste ein",

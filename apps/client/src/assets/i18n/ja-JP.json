@@ -361,6 +361,8 @@
     "Please_pick_recipe": "このアイテムに対する、制作レシピを選択して下さい。",
     "Import_description": "制作しようとする、アイテムに対する制作レシピを選び、リストを選択して下さい。そうすれば、アイテムがリストに追加され、自動にリストに移動されます。",
     "Delete_after_merge": "併合後に既存のリストを削除する",
+    "Favorite_lists": "Favorite lists",
+    "No_favorite_lists": "You have no favorite lists",
     "IMPORT": {
       "Title": "外部サイトからリストを取り込む",
       "Paste_link_step_title": "外部サイトのリンクをペーストする",

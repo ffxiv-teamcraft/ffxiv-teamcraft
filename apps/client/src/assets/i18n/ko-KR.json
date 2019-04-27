@@ -149,7 +149,7 @@
       "Slot": "슬롯",
       "Type": "채집물 유형",
       "Map": "지도",
-      "Weather": "Weather",
+      "Weather": "날씨",
       "Weather_from": "Transition from",
       "TYPE": {
         "Mineral": "광맥",
@@ -308,8 +308,8 @@
     "Amount_display_mode_total": "총 수량",
     "Starting_place": "시작 지점",
     "Starting_place_explain": "추천 경로 기능에 사용",
-    "Free_aetheryte": "Free Aetheryte",
-    "Favorite_aetherytes": "Favorite Aetherytes",
+    "Free_aetheryte": "무료 에테라이트",
+    "Favorite_aetherytes": "에테라이트 즐겨찾기",
     "COLORS": {
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
@@ -361,6 +361,8 @@
     "Please_pick_recipe": "이 아이템에 대한 제작법을 선택해주세요.",
     "Import_description": "만들고자 하는 아이템에 대한 제작법을 고르고 목록을 선택하세요. 그러면 아이템이 목록에 추가되고 자동으로 해당 목록으로 이동합니다.",
     "Delete_after_merge": "병합 후 기존 목록 삭제",
+    "Favorite_lists": "선호 목록",
+    "No_favorite_lists": "선호 목록이 없습니다",
     "IMPORT": {
       "Title": "외부 사이트에서 목록 가져오기",
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
@@ -392,10 +394,10 @@
     "Items_count": "아이템 {{amount}}개",
     "Show_craftable_amount": "제작 가능한 수량 표시",
     "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
-    "Quick_layout_swap": "Quick layout swap",
+    "Quick_layout_swap": "빠른 레이아웃 전환",
     "INVENTORY": {
-      "Show_final_items": "Show final items",
-      "Hide_final_items": "Hide final items"
+      "Show_final_items": "최종 아이템 표시",
+      "Hide_final_items": "최종 아이템 숨기기"
     },
     "COMPLETION_POPUP": {
       "Title": "완료된 목록",
@@ -888,7 +890,7 @@
     "History": "최근 기록",
     "Purchase_date": "날짜",
     "More_on_mogboard": "Mogboard에서 자세한 정보 보기(한국서버 미지원)",
-    "Server": "Server"
+    "Server": "서버"
   },
   "COMMENTS": {
     "Title": "댓글"
@@ -1068,7 +1070,7 @@
     "PATREON_BENEFITS": {
       "Discord_rank": "현재 진행 중인 작업을 볼 수 있는 후원자 채널에 접근 가능한 Discord서버 특별 등급 (${{price}})",
       "Profile_badge": "Teamcraft 프로필에 특별한 배지 부여 (${{price}})",
-      "Custom_theme": "사용자 지정 색상을 포함한 더 좋은 테마 커스터마이즈 (${{price}})",
+      "Custom_theme": "사용자 지정 색상을 포함한 개선된 테마 커스터마이즈 (${{price}})",
       "Pins_badge": "한정판 Teamcraft 배지 배송 (${{price}}) (Patreon에 배송 정보 입력 필수)",
       "Loading_screen_message": "\"Brought to you by ...\" 로딩 메시지에 추가하고 싶은 이름, 자유부대명, 링크셸명 등 새 항목 추가! (${{price}})"
     }
