@@ -425,7 +425,7 @@
     "Missing_tags_before_button": "Esta lista se muestra como una lista de la comunidad pero no tiene etiquetas, por favor agregue algunas etiquetas usando ",
     "Missing_tags_after_button": " botón",
     "Add_remove_amount": "Agregar/Quitar cierta cantidad",
-    "Add_from_external": "Add as external (you didn't use materials for it)",
+    "Add_from_external": "Añadir como externo (no utilizó materiales para esto)",
     "Missing_masterbook": "No tiene este libre de maestría en su perfil, haga clic para agregar al perfil.",
     "No_note": "No hay nota",
     "Edit_note": "No hay nota",
@@ -466,8 +466,8 @@
         "ADD_TO_ANOTHER_LIST": "Añadir a otra lista",
         "REQUIREMENTS": "Requisitos",
         "REMOVE_ITEM": "Quitar elemento de la lista",
-        "ADD_TAG": "Add tag to item",
-        "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
+        "ADD_TAG": "Añadir etiqueta al artículo",
+        "MARK_AS_DONE_IN_LOG": "Marcar como hecho en el registro"
       }
     },
     "LAYOUT": {
@@ -547,7 +547,7 @@
   "NAVIGATION": {
     "Title": "Ruta de navegación optimizada",
     "Steps": "Pasos",
-    "Loading_path": "Loading optimized path (can take several seconds)",
+    "Loading_path": "Cargando ruta optimizada (puede tomar varios segundos)",
     "STEP": {
       "Gathering": "Recolectar {{amount}}",
       "Hunting": "Obtener {{amount}} de monstruos",
@@ -566,8 +566,8 @@
     "Snagging": "Requiere \"snagging\"",
     "Predators": "Pescar estos peces antes de",
     "Fish_eyes_duration": "Su \"fish eyes\" necesita esta duración para obtener el pescado. Haga clic para cambiar el formato.",
-    "Spawned_for": "Will despawn in {{timer}}",
-    "Will_spawn_in": "Will spawn in {{timer}}",
+    "Spawned_for": "Desaparecerá en {{timer}}",
+    "Will_spawn_in": "Aparecerá en {{timer}}",
     "GIG_HEAD": {
       "Small": "Cabeza de anzuelo pequeña",
       "Normal": "Cabeza de anzuelo normal",
@@ -699,8 +699,8 @@
       "Fail": "Falla",
       "Success": "Éxito: {{HQ}}% HQ",
       "Set_to_simulate": "Atributos",
-      "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
-      "Steps_count": "{{count}} steps",
+      "Specialist_rotation_warning": "El resultado mostrado utiliza un conjunto de atributos de no especialista para una rotación de especialista, por lo que el HQ% resultante podría ser inferior al esperado.",
+      "Steps_count": "{{count}} pasos",
       "TAGS": {
         "SPECIALIST": "Especialista",
         "NOT_SPECIALIST": "No especialista",
@@ -860,7 +860,7 @@
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han añadido a **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han quitado de **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marcó {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** de {{totalNeeded}} como completados en **[[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "El equipo **{{teamName}}** será seguido ahora en este canal.",
       "List_added_notification": "La lista **[{{listName}}]({{listUrl}})** ha sido agregada al equipo.",
       "List_removed_notification": "La lista **[{{listName}}]({{listUrl}})** ha sido quitada del equipo.",
@@ -890,7 +890,7 @@
     "History": "Historial",
     "Purchase_date": "Fecha",
     "More_on_mogboard": "Más detalles en mogboard",
-    "Server": "Server"
+    "Server": "Servidor"
   },
   "COMMENTS": {
     "Title": "Comentarios"
@@ -931,27 +931,27 @@
     "Title": "Seguidor de registro",
     "Mark_page_as_done": "Marcar esta página como hecho",
     "Mark_as_done": "Marcar este artículo como hecho",
-    "Mark_as_done_external": "Mark this item as done inside the log",
+    "Mark_as_done_external": "Marcar este artículo como hecho dentro del registro",
     "Mark_as_not_done": "Marcar este artículo como no hecho",
     "Create_list": "Crear una lista para completar esta página",
-    "Create_list_limited": "Create a list to complete this page (50 items max)",
+    "Create_list_limited": "Crear una lista para completar esta página (50 artículos max.)",
     "Folklore": "Folklore regional",
     "Timed": "Por tiempo limitado",
     "Weather_dependant": "Sólo con algunos climas",
     "View_on_ff14angler": "Más detalles en ff14angler",
     "Required_for_achievement": "Requerido para los logros",
     "Select_spot": "Seleccione un lugar para ver sus detalles",
-    "Hide_completed": "Hide completed recipes",
-    "MIN_optimized_path": "Optimized path for all MIN nodes",
-    "BTN_optimized_path": "Optimized path for all BTN nodes",
+    "Hide_completed": "Ocultar recetas completadas",
+    "MIN_optimized_path": "Ruta optimizada para todos los nodos de minería",
+    "BTN_optimized_path": "Ruta optimizada para todos los nodos de botanista",
     "PAGE": {
       "Master_recipes": "Recetas maestras ({{number}})",
       "Housing_items": "Artículos de vivienda({{number}})",
       "Others": "Otros",
       "Dyes": "Tintes",
       "Other_master_recipes": "Otras recetas maestras",
-      "Deliveries": "Deliveries",
-      "Quests": "Quests"
+      "Deliveries": "Entregas",
+      "Quests": "Misiones"
     }
   },
   "LOADING_SCREEN": {
@@ -1035,35 +1035,35 @@
     "Dialog_description": "Dejar esta página eliminará todos sus cambios no guardados, ¿está seguro?"
   },
   "GC_SUPPLY": {
-    "Title": "Grand Company Supplies",
-    "Search": "Search",
-    "Generate_list": "Create a quick list",
-    "Intro": "Input your levels and click search to get started",
-    "Loading_message": "Loading possible deliveries, this can take up to a minute"
+    "Title": "Suministros de la gran compañia",
+    "Search": "Busqueda",
+    "Generate_list": "Crear una lista rápida",
+    "Intro": "Ingrese sus niveles y haga clic en buscar para empezar",
+    "Loading_message": "Cargando posibles entregas, esto puede tardar hasta un minuto"
   },
   "DESYNTH": {
-    "Title": "Desynth guide",
-    "Job": "Job",
-    "Level": "Level",
-    "Intro": "Select a job and input a level to find best items to level up your desynth",
-    "Loading_message": "Loading...",
+    "Title": "Guía de desíntesis",
+    "Job": "Profesión",
+    "Level": "Nivel",
+    "Intro": "Seleccione una profesión e introduzca un nivel para encontrar los mejores artículos para subir el nivel de su desíntesis",
+    "Loading_message": "Cargando...",
     "TAGS": {
-      "Higher_chances": "Higher chances",
-      "Lower_exp": "Lower exp",
-      "Good_chances": "Good chances",
-      "Good_exp": "Good exp",
-      "Lower_chances": "Lower chances",
-      "Higher_exp": "Higher exp",
-      "Very_common": "Very common",
-      "Common": "Common",
-      "Rare": "Rare"
+      "Higher_chances": "Mejores probabilidades",
+      "Lower_exp": "Menor exp",
+      "Good_chances": "Buenas probabilidades",
+      "Good_exp": "Buena exp",
+      "Lower_chances": "Menores probabilidades",
+      "Higher_exp": "Mejor exp",
+      "Very_common": "Muy común",
+      "Common": "Común",
+      "Rare": "Raro"
     }
   },
   "SUPPORT_US": {
-    "Title": "Help us grow !",
-    "Communication_title": "Talk about the project",
-    "Communication_description": "Let people know about the tool, share rotations, lists. Create videos, blog posts, tweets, everything that lets more people know about Teamcraft really helps the project more than you would think.\n\nWe even prepared a macro for you so you can shout your love everywhere !\n",
-    "Contribute_title": "Contribute to the project",
+    "Title": "¡Ayúdanos a crecer!",
+    "Communication_title": "Hablar sobre el proyecto",
+    "Communication_description": "Deje que la gente conozca la herramienta, comparta rotaciones, listas. Cree videos, entradas de blog, tweets, todo lo que permita a más gente saber sobre Teamcraft realmente ayuda al proyecto más de lo que cree.\n\n¡Incluso preparamos una macro para usted para que pueda gritar su amor en todas partes!\n",
+    "Contribute_title": "Contribuir al proyecto",
     "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
     "Patreon_title": "Support us on patreon",
     "Patreon_description": "Patreon is a platform where you can give a money to support a project every month. This money is used to pay for servers, certificates, giveaways and to free more and more time for the developer to work on the project.\n\nDepending on the amount you pledge, you can get some nice benefits in order to thank your contribution:",
