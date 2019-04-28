@@ -455,6 +455,7 @@
       "Buttons": "Кнопки",
       "Menu": "Меню",
       "Edit_row_buttons_display": "Редактировать отображение кнопок строки",
+      "Reorder_panels": "Reorder panels",
       "ITEMS": {
         "COMMENTS": "Комментарии",
         "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
