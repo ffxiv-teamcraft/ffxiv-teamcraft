@@ -14,6 +14,8 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { TextQuestionPopupModule } from '../text-question-popup/text-question-popup.module';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { LayoutRowDisplayEditorComponent } from './layout-row-display-editor/layout-row-display-editor.component';
+import { LayoutOrderPopupComponent } from './layout-order-popup/layout-order-popup.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   imports: [
@@ -21,6 +23,7 @@ import { LayoutRowDisplayEditorComponent } from './layout-row-display-editor/lay
     FormsModule,
     FlexLayoutModule,
     ClipboardModule,
+    DragDropModule,
 
     CoreModule,
     LayoutModule,
@@ -33,9 +36,9 @@ import { LayoutRowDisplayEditorComponent } from './layout-row-display-editor/lay
     TranslateModule,
     NgZorroAntdModule
   ],
-  declarations: [LayoutEditorComponent, LayoutEditorRowComponent, LayoutRowDisplayEditorComponent],
+  declarations: [LayoutEditorComponent, LayoutEditorRowComponent, LayoutRowDisplayEditorComponent, LayoutOrderPopupComponent],
   exports: [LayoutEditorComponent, LayoutRowDisplayEditorComponent],
-  entryComponents: [LayoutEditorComponent, LayoutRowDisplayEditorComponent]
+  entryComponents: [LayoutEditorComponent, LayoutRowDisplayEditorComponent, LayoutOrderPopupComponent]
 })
 export class LayoutEditorModule {
 }

@@ -10,6 +10,7 @@ import { TextQuestionPopupComponent } from '../../text-question-popup/text-quest
 import { filter } from 'rxjs/operators';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { LayoutRowDisplayEditorComponent } from '../layout-row-display-editor/layout-row-display-editor.component';
+import { LayoutOrderPopupComponent } from '../layout-order-popup/layout-order-popup.component';
 
 @Component({
   selector: 'app-layout-editor',
@@ -31,6 +32,20 @@ export class LayoutEditorComponent {
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
     this.allLayouts$ = this.layoutsFacade.allLayouts$;
     this.layoutsFacade.loadAll();
+  }
+
+  openReorderPopup(layout: ListLayout): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.LAYOUT_DIALOG.Reorder_panels'),
+      nzContent: LayoutOrderPopupComponent,
+      nzComponentParams: {
+        layout: layout
+      },
+      nzFooter: null
+    }).afterClose
+      .subscribe(() => {
+        this.dirty = true;
+      });
   }
 
   importLayout(): void {
