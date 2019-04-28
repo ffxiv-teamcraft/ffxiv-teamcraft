@@ -1071,8 +1071,8 @@
       "Discord_rank": "Rango especial en el servidor discord, dándole acceso al canal de patrocinadores para ver en qué estamos trabajando (${{price}})",
       "Profile_badge": "Insignia especial en su perfil de Teamcraft (${{price}})",
       "Custom_theme": "Mejor personalización del tema, con entrada de color personalizada (${{price}})",
-      "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
+      "Pins_badge": "Botón de pin de Teamcraft exclusivo enviado a usted (${{price}}) (require que rellene los detalles del envío en Patreon)",
+      "Loading_screen_message": "Añade una nueva entrada al mensaje de carga de \"Traído a usted por ...\", con su nombre, el nombre de su FC, nombre de LS, ¡lo que quiera añadir! (${{price}})"
     }
   }
 }
