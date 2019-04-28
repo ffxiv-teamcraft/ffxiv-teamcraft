@@ -492,7 +492,16 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   addAllAlarms() {
-    this.alarmsFacade.addAlarmsAndGroup(this.item.alarms, this.i18n.getName(this.l12n.getItem(this.item.id)));
+    this.alarmsFacade.allAlarms$
+      .pipe(first())
+      .subscribe(allAlarms => {
+        const alarmsToAdd = this.item.alarms.filter(a => {
+          return allAlarms.some(alarm => {
+            return alarm.itemId === a.itemId && alarm.spawns === a.spawns && alarm.zoneId === a.zoneId;
+          })
+        });
+        this.alarmsFacade.addAlarmsAndGroup(alarmsToAdd, this.i18n.getName(this.l12n.getItem(this.item.id)));
+      });
   }
 
   public openGatheredByPopup(): void {

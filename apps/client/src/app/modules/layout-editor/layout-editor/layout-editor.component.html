@@ -36,8 +36,11 @@
       <input type="text" nz-input [(ngModel)]="layout.name"
              [disabled]="layout.name === 'Default Layout'" (ngModelChange)="dirty = true">
     </nz-input-group>
-    <button nz-button nzBlock (click)="editRowButtons(layout)">
+    <button nz-button nzBlock (click)="editRowButtons(layout)" [disabled]="layout.name === 'Default Layout'">
       {{'LIST_DETAILS.LAYOUT_DIALOG.Edit_row_buttons_display' | translate}}
+    </button>
+    <button nz-button nzBlock (click)="openReorderPopup(layout)" [disabled]="layout.name === 'Default Layout'">
+      {{'LIST_DETAILS.LAYOUT_DIALOG.Reorder_panels' | translate}}
     </button>
     <nz-card [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Global_options' | translate">
       <div fxLayout="column" fxLayoutGap="10px">

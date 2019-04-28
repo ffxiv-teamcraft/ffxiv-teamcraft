@@ -361,8 +361,8 @@
     "Please_pick_recipe": "Veuillez choisir une recette pour cet objet",
     "Import_description": "Choisissez une recette pour chaque objet qui peut être fabriqué et choisissez une liste, les objets seront alors ajoutés à la liste et vous serez redirigé sur celle-ci.",
     "Delete_after_merge": "Supprimer les listes originales après la fusion",
-    "Favorite_lists": "Favorite lists",
-    "No_favorite_lists": "You have no favorite lists",
+    "Favorite_lists": "Listes favorites",
+    "No_favorite_lists": "Vous n'avez pas de liste favorite",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
@@ -455,6 +455,7 @@
       "Buttons": "Boutons",
       "Menu": "Menu",
       "Edit_row_buttons_display": "Modifier les boutons de raccourci",
+      "Reorder_panels": "Réordonner les panneaux",
       "ITEMS": {
         "COMMENTS": "Commentaires",
         "COPY_NAME_NOT_FAVORITE": "Mode de copie non favori",

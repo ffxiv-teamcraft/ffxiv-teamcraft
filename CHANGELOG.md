@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.4"></a>
+## [5.3.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.3...v5.3.4) (2019-04-28)
+
+
+### Bug Fixes
+
+* **alarms:** "add all alarms" button now can't add an already registered alarm ([df3f42d](https://github.com/Supamiu/ffxiv-teamcraft/commit/df3f42d))
+* **simulator:** fixed an issue with custom rotations sometimes not user correct stats ([b585b8c](https://github.com/Supamiu/ffxiv-teamcraft/commit/b585b8c))
+
+
+### Features
+
+* **layout:** new dialog box in layout editor to easily reorder panels ([8eb3e7c](https://github.com/Supamiu/ffxiv-teamcraft/commit/8eb3e7c))
+* **requirements:** added recipe requirement amount ([0e366e5](https://github.com/Supamiu/ffxiv-teamcraft/commit/0e366e5))
+
+
+
 <a name="5.3.3"></a>
 ## [5.3.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.2...v5.3.3) (2019-04-27)
 

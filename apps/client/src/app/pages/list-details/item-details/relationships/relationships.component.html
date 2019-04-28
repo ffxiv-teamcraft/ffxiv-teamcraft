@@ -6,7 +6,7 @@
     <ng-template #requirement let-req>
       <nz-list-item class="item-row" [class.done]="req.amount <= req.done" [class.craftable]="req.canBeCrafted">
         <nz-list-item-meta [nzAvatar]="itemIcon" [nzTitle]="req.id | itemName | i18n"
-                           nzDescription="x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}">
+                           nzDescription="x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}} x {{((item.amount_needed - item.done / item.yield) | ceil)}})">
         </nz-list-item-meta>
         <ng-template #itemIcon>
           <app-item-icon [icon]="req.icon" [itemId]="req.id" [width]="32"></app-item-icon>
