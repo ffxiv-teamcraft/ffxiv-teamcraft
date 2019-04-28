@@ -1064,13 +1064,13 @@
     "Communication_title": "Hablar sobre el proyecto",
     "Communication_description": "Deje que la gente conozca la herramienta, comparta rotaciones, listas. Cree videos, entradas de blog, tweets, todo lo que permita a más gente saber sobre Teamcraft realmente ayuda al proyecto más de lo que cree.\n\n¡Incluso preparamos una macro para usted para que pueda gritar su amor en todas partes!\n",
     "Contribute_title": "Contribuir al proyecto",
-    "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
-    "Patreon_title": "Support us on patreon",
-    "Patreon_description": "Patreon is a platform where you can give a money to support a project every month. This money is used to pay for servers, certificates, giveaways and to free more and more time for the developer to work on the project.\n\nDepending on the amount you pledge, you can get some nice benefits in order to thank your contribution:",
+    "Contribute_description": "Puede encontrarnos en github para contribuir al proyecto, incluso si es principiante, ¡todo el mundo es bienvenido!\n\nPero contribuir no es sólo acerca del código, las peticiones de características y los informes de fallos ayudan mucho a la herramienta proporcionando la mejor calidad de contenido posible para todos, gracias a las personas que se toman un tiempo para hacer pruebas de estrés y encontrar errores.",
+    "Patreon_title": "Apóyenos en patreon",
+    "Patreon_description": "Patreon es una plataforma donde puede dar dinero para apoyar un proyecto cada mes. Este dinero se utiliza para pagar por servidores, certificados, regalos y para liberar más y más tiempo para que el desarrollador trabaje en el proyecto.\n\nDependiendo de la cantidad que prometa, puede obtener algunos beneficios para agradecer su contribución:",
     "PATREON_BENEFITS": {
-      "Discord_rank": "Special rank on the discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
-      "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
-      "Custom_theme": "Better theme customization, with custom color input (${{price}})",
+      "Discord_rank": "Rango especial en el servidor discord, dándole acceso al canal de patrocinadores para ver en qué estamos trabajando (${{price}})",
+      "Profile_badge": "Insignia especial en su perfil de Teamcraft (${{price}})",
+      "Custom_theme": "Mejor personalización del tema, con entrada de color personalizada (${{price}})",
       "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
       "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
     }
