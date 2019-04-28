@@ -455,6 +455,7 @@
       "Buttons": "Buttons",
       "Menu": "Menu",
       "Edit_row_buttons_display": "Edit row buttons display",
+      "Reorder_panels": "Reorder panels",
       "ITEMS": {
         "COMMENTS": "Comments",
         "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",

@@ -455,6 +455,7 @@
       "Buttons": "按钮",
       "Menu": "菜单",
       "Edit_row_buttons_display": "修改物品次级菜单",
+      "Reorder_panels": "Reorder panels",
       "ITEMS": {
         "COMMENTS": "注释",
         "COPY_NAME_NOT_FAVORITE": "非默认的复制模式",
