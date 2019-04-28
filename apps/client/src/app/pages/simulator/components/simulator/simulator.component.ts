@@ -289,7 +289,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.crafterStats$ = combineLatest(merge(statsFromRecipe$, this.customStats$), statsFromRotation$, this.route.queryParamMap, this.authFacade.userId$, this.rotation$).pipe(
       debounceTime(1000),
       map(([generated, fromRotation, query, userId, rotation]) => {
-        if (!this.statsFromRotationApplied && (query.has('includeStats') && (rotation.authorId === userId && rotation.custom))) {
+        if (!this.statsFromRotationApplied && this.custom && (query.has('includeStats') || (rotation.authorId === userId && rotation.custom))) {
           this.statsFromRotationApplied = true;
           return fromRotation || generated;
         }
