@@ -796,7 +796,8 @@
       "Use_durability_restoration_later": "在第 {{index}} 使用的耐久回复技能应该向后移动，避免浪费耐久回复。",
       "Use_patient_touch_faster": "应在增加内静层数前使用专心加工，避免失败时浪费内静层数。",
       "Use_advanced_touch_instead": "在第 {{index}} 步的加工和上级加工应该被替换为两个中级加工，可以少消耗 2 点 CP 获得同样的效果。",
-      "Do_not_overlap_buffs": "在第 {{overlappedIndex}} 步的 buff 和第 {{overlappingIndex}} 步已有的 buff 重叠了。第二个 buff 应当推迟以获得最佳效果。"
+      "Do_not_overlap_buffs": "在第 {{overlappedIndex}} 步的 buff 和第 {{overlappingIndex}} 步已有的 buff 重叠了。第二个 buff 应当推迟以获得最佳效果。",
+      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used."
     }
   },
   "PRICING": {
