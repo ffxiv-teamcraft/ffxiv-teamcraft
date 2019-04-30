@@ -17,6 +17,7 @@ import { UseDurabilityRestorationLater } from './tips/use-durability-restoration
 import { UsePatientTouchFaster } from './tips/use-patient-touch-faster';
 import { UseAdvancedTouchInstead } from './tips/use-advanced-touch-instead';
 import { DoNotOverlapBuffs } from './tips/do-not-overlap-buffs';
+import { UseByregotBrow5Stacks } from './tips/use-byregot-brow-5-stacks';
 
 export const ROTATION_TIPS = new InjectionToken('ROTATION_TIPS');
 
@@ -36,7 +37,8 @@ const tips: Class<RotationTip>[] = [
   UseDurabilityRestorationLater,
   UsePatientTouchFaster,
   UseAdvancedTouchInstead,
-  DoNotOverlapBuffs
+  DoNotOverlapBuffs,
+  UseByregotBrow5Stacks
 ];
 
 @NgModule({
