@@ -796,7 +796,8 @@
       "Use_durability_restoration_later": "耐久度の回復スキルを無駄遣いにしないためには、{{index}} 回目の工程で耐久度の回復スキルを使用して下さい。",
       "Use_patient_touch_faster": "'専心加工' は '精神集中' のスタックが積もる前に使用して下さい。もしスキルが失敗したら、スタックが無駄遣いになる恐れがあります。",
       "Use_advanced_touch_instead": "{{index}} 回目の工程で '加工' と '上級加工' を使用しました。 '中級加工' を2回使用する場合、 CP 2を節約しつつ同じような効果が得られます。",
-      "Do_not_overlap_buffs": "{{overlappedIndex}} 回目の工程で使用したバフが {{overlappingIndex}} 回目の工程で使用したバフと重複されます。バフの効果が最大限貰えるように、少し遅れて使う必要があります。"
+      "Do_not_overlap_buffs": "{{overlappedIndex}} 回目の工程で使用したバフが {{overlappingIndex}} 回目の工程で使用したバフと重複されます。バフの効果が最大限貰えるように、少し遅れて使う必要があります。",
+      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used."
     }
   },
   "PRICING": {

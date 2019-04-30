@@ -796,7 +796,8 @@
       "Use_durability_restoration_later": "Debería usar la acción de restauración de durabilidad en el paso {{index}} más tarde para evitar desperdiciar la restauración de durabilidad.",
       "Use_patient_touch_faster": "Debería usar \"Patient Touch\" antes de añadir puntos de \"Inner Quiet\", para minimizar los puntos desperdiciados si la acción falla.",
       "Use_advanced_touch_instead": "Usó \"Basic Touch\" seguido de \"Advanced Touch\" en el paso {{index}}, debería usar dos \"Standard Touch\" en su lugar para obtener la misma potencia por 2 CP menos.",
-      "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos."
+      "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos.",
+      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used."
     }
   },
   "PRICING": {

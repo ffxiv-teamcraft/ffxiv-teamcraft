@@ -100,6 +100,9 @@ function createWindow() {
   // Event when the window is closed.
   win.on('closed', function() {
     win = null;
+    Object.keys(openedOverlays).forEach(key => {
+      openedOverlays[key].close();
+    });
   });
 
   win.once('ready-to-show', () => {
