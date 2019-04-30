@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.5"></a>
+## [5.3.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.4...v5.3.5) (2019-04-30)
+
+
+### Features
+
+* support for Korean 4.45 update ([6159a7d](https://github.com/Supamiu/ffxiv-teamcraft/commit/6159a7d))
+* **desktop:** closing the app now properly closes all the opened overlays ([9050f69](https://github.com/Supamiu/ffxiv-teamcraft/commit/9050f69))
+* **simulator:** new rotation tip: byregot's brow instead of blessing when at 5 IQ stacks ([896715c](https://github.com/Supamiu/ffxiv-teamcraft/commit/896715c))
+
+
+
 <a name="5.3.4"></a>
 ## [5.3.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.3...v5.3.4) (2019-04-28)
 
