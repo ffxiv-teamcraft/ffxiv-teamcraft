@@ -36,7 +36,7 @@ function getCompact(list) {
 }
 
 // Firestore counts
-exports.firestoreCountlistsCreate = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
+exports.firestoreCountlistsCreate = functions.firestore.document('/lists/{uid}').onCreate(() => {
   const ref = admin.database().ref('/list_count');
   const creationsRef = admin.database().ref('/lists_created');
   // Increment the number of lists created using the tool.
@@ -57,7 +57,6 @@ exports.firestoreCountlistsDelete = functions.firestore.document('/lists/{uid}')
 
 exports.createListCompacts = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
   const compact = getCompact(snap.data.data());
-  // registerItemsCreation(snap.data.data().finalItems);
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
 });
 

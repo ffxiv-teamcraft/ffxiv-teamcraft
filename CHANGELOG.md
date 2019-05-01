@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.6"></a>
+## [5.3.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.5...v5.3.6) (2019-05-01)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with some custom alarms not working properly ([1108f31](https://github.com/Supamiu/ffxiv-teamcraft/commit/1108f31))
+* **fishng-log-tracker:** fixed an issue with transitions not being shown properly ([4b77277](https://github.com/Supamiu/ffxiv-teamcraft/commit/4b77277))
+
+
+
 <a name="5.3.5"></a>
 ## [5.3.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.4...v5.3.5) (2019-04-30)
 

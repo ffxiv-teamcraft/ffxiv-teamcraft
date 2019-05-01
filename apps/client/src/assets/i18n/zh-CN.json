@@ -455,7 +455,7 @@
       "Buttons": "按钮",
       "Menu": "菜单",
       "Edit_row_buttons_display": "修改物品次级菜单",
-      "Reorder_panels": "Reorder panels",
+      "Reorder_panels": "重排面板",
       "ITEMS": {
         "COMMENTS": "注释",
         "COPY_NAME_NOT_FAVORITE": "非默认的复制模式",
@@ -797,7 +797,7 @@
       "Use_patient_touch_faster": "应在增加内静层数前使用专心加工，避免失败时浪费内静层数。",
       "Use_advanced_touch_instead": "在第 {{index}} 步的加工和上级加工应该被替换为两个中级加工，可以少消耗 2 点 CP 获得同样的效果。",
       "Do_not_overlap_buffs": "在第 {{overlappedIndex}} 步的 buff 和第 {{overlappingIndex}} 步已有的 buff 重叠了。第二个 buff 应当推迟以获得最佳效果。",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used."
+      "Use_byregot_brow_5_stacks": "应使用比尔格的技巧替换比尔格的祝福，可获得同样质量并节约 6 点 CP。"
     }
   },
   "PRICING": {
