@@ -171,6 +171,9 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
               if (spot.weather) {
                 result.weathers = spot.weather.map(w => this.l12n.getWeatherId(w));
               }
+              if (spot.transition) {
+                result.weathersFrom = spot.transition.map(w => this.l12n.getWeatherId(w));
+              }
               return result;
             }
             return undefined;
