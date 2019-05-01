@@ -31,7 +31,7 @@ export class WeatherService {
 
   public getWeather(mapId: number, timestamp: number, weatherRate: any): number {
     const weatherRateValue = this.getWeatherRateValue(timestamp);
-    const match = weatherRate.find(rate => weatherRateValue < rate.rate);
+    const match = (weatherRate || []).find(rate => weatherRateValue < rate.rate);
     if (match !== undefined) {
       return match.weatherId;
     }
