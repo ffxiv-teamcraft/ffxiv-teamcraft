@@ -41,10 +41,11 @@
     }
   },
   "scripts": {
+    "ng-high-memory": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng",
     "ng": "ng",
     "start": "node ./tools/build/prebuild.js && ng serve --project=client",
-    "build:watch": "node ./tools/build/prebuild.js && ng build --project=client --watch --configuration=electron-dev",
-    "build:prod": "node ./tools/build/prebuild.js && ng build --project=client --prod",
+    "build:watch": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --watch --configuration=electron-dev",
+    "build:prod": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --prod",
     "build:electron-prod": "node ./tools/build/prebuild.js && ng build --project=client --configuration=electron",
     "build:electron-dev": "node ./tools/build/prebuild.js && ng build --project=client --configuration=electron-dev",
     "build:beta": "node ./tools/build/prebuild.js && ng build --project=client --configuration=beta",
