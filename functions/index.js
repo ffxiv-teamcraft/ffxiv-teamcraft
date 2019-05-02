@@ -76,7 +76,7 @@ exports.updateUserListCount = functions.firestore.document('/lists/{uid}').onCre
       user.stats = user.stats || {};
       user.stats.listsCreated = user.stats.listsCreated || 0;
       user.stats.listsCreated += 1;
-      return transaction.update(userRef, {stats: user.stats})
+      return transaction.update(userRef, { stats: user.stats });
     });
   });
 });
@@ -99,7 +99,7 @@ function generateUrl(request) {
   });
 }
 
-function dectectBot(userAgent) {
+function dectectIndexBot(userAgent) {
   const bots = [
     'bingbot',
     'yandexbot',
@@ -116,8 +116,7 @@ function dectectBot(userAgent) {
     'vkShare',
     'facebot',
     'outbrain',
-    'W3C_Validator',
-    'Discordbot'
+    'W3C_Validator'
   ];
 
   const agent = userAgent.toLowerCase();
@@ -134,10 +133,34 @@ function dectectBot(userAgent) {
 
 }
 
-app.get('*', (req, res) => {
-  const isBot = dectectBot(req.headers['user-agent']);
+function dectectDeepLinkBot(userAgent) {
+  const deepLinkBots = [
+    'twitterbot',
+    'slackbot',
+    'Discordbot'
+  ];
 
-  if (isBot) {
+  const agent = userAgent.toLowerCase();
+
+  for (const bot of deepLinkBots) {
+    if (agent.indexOf(bot.toLowerCase()) > -1) {
+      console.log('bot detected', bot, agent);
+      return true;
+    }
+  }
+
+  console.log('no bots found', agent);
+  return false;
+
+}
+
+const indexAllowedPages = ['/search', '/community-rotations', '/levequests', '/about', '/support-us', '/desynth-guide', '/gc-supply', '/macro-translator'];
+
+app.get('*', (req, res) => {
+  const isIndexBot = dectectIndexBot(req.headers['user-agent']);
+  const isDeepLinkBot = dectectDeepLinkBot(req.headers['user-agent']);
+
+  if (isDeepLinkBot || (isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
     const botUrl = generateUrl(req);
 
     fetch(`${renderUrl}/${botUrl}`)
