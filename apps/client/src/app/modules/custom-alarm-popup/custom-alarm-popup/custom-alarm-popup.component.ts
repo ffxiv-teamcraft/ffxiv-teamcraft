@@ -118,9 +118,9 @@ export class CustomAlarmPopupComponent implements OnInit {
       map(([form, maps]) => {
         return maps.find(m => m.ID === form.mapId);
       }),
-      filter(m => !!m),
-      map(m => {
-        return _.uniq(weatherIndex[m.TerritoryType.WeatherRate].map(row => row.weatherId));
+      filter(m => m !== undefined),
+      map((m: {TerritoryType: {WeatherRate: number}}) => {
+        return _.uniq(weatherIndex[m.TerritoryType.WeatherRate].map(row => +row.weatherId)) as number[];
       }),
       shareReplay(1)
     );
