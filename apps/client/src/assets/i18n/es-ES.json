@@ -310,6 +310,7 @@
     "Starting_place_explain": "Utilizado para las características de optimización de ruta",
     "Free_aetheryte": "Aetheryte gratuito",
     "Favorite_aetherytes": "Aetherytes favoritos",
+    "Disable_cross_world_prices": "Only use own world for marketboard prices",
     "COLORS": {
       "Primary": "Color primario",
       "Highlight": "Color de resaltado",

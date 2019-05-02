@@ -310,6 +310,7 @@
     "Starting_place_explain": "추천 경로 기능에 사용",
     "Free_aetheryte": "무료 에테라이트",
     "Favorite_aetherytes": "에테라이트 즐겨찾기",
+    "Disable_cross_world_prices": "Only use own world for marketboard prices",
     "COLORS": {
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
