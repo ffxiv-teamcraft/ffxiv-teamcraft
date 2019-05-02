@@ -180,6 +180,14 @@ export class SettingsService {
     this.setSetting('displayRemaining', displayRemaining.toString());
   }
 
+  public get disableCrossWorld(): boolean {
+    return this.getSetting('disableCrossWorld', 'false') === 'true';
+  }
+
+  public set disableCrossWorld(disableCrossWorld: boolean) {
+    this.setSetting('disableCrossWorld', disableCrossWorld.toString());
+  }
+
   public get showCopyOnOwnList(): boolean {
     return this.getSetting('showCopyOnOwnList', 'false') === 'true';
   }

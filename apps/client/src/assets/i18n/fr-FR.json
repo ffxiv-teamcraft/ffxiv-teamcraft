@@ -310,6 +310,7 @@
     "Starting_place_explain": "Utilisée pour les fonctionnalités d’optimisation de trajectoire",
     "Free_aetheryte": "Éthérite gratuite",
     "Favorite_aetherytes": "Éthérites favorites",
+    "Disable_cross_world_prices": "Utiliser uniquement le serveur d'origine pour les prix à l'hôtel des ventes",
     "COLORS": {
       "Primary": "Couleur principale",
       "Highlight": "Couleur de surbrillance",
@@ -425,7 +426,7 @@
     "Missing_tags_before_button": "Cette liste est affichée en tant que liste communautaire sans tags, merci d'y ajouter des tags via le bouton ",
     "Missing_tags_after_button": " bouton",
     "Add_remove_amount": "Ajouter/enlever un montant donné",
-    "Add_from_external": "Ajouter comme externes (vous n’utilisez pas de matériaux)",
+    "Add_from_external": "Ajouter comme externe (vous n’utilisez pas de matériaux)",
     "Missing_masterbook": "Vous n'avez pas ce livre de recettes dans votre profil, cliquez pour l'ajouter.",
     "No_note": "Aucune note",
     "Edit_note": "Aucune note",

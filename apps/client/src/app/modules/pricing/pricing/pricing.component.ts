@@ -100,7 +100,7 @@ export class PricingComponent implements AfterViewInit {
                     return price;
                   });
                 }));
-                if (finalItems) {
+                if (finalItems || this.settings.disableCrossWorld) {
                   prices = prices.filter(price => price.Server === server);
                 }
                 const cheapestHq = prices.filter(p => p.IsHQ)
@@ -253,12 +253,13 @@ export class PricingComponent implements AfterViewInit {
         return total + (this.getCraftCost(requirementRow) / (row.amount / row.amount_needed)) * requirement.amount;
       }
     }, 0);
+
     // If that's a final item or the price is custom, no recursion.
     if (this.pricingService.isCustomPrice(row) || price === 0 || this.pricingService.getPrice(row).fromVendor) {
       const prices = this.pricingService.getPrice(row);
       const amounts = this.pricingService.getAmount(list.$key, row);
       if (prices.hq > 0 && prices.hq < prices.nq) {
-        return prices.hq * (amounts.nq || 1) * (amounts.hq || 1);
+        return prices.hq * (amounts.nq || 1) * (amounts.hq || 1) / (amounts.hq + amounts.nq);
       }
       return ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);
     }

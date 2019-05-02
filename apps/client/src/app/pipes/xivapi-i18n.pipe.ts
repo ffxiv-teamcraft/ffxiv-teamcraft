@@ -12,7 +12,7 @@ export class XivapiI18nPipe implements PipeTransform {
   }
 
   transform(value: any, fieldName = 'Name', sanitized = false): SafeHtml {
-    const name = value[`${fieldName}_${this.translate.currentLang}`] || value[fieldName];
+    const name = value[`${fieldName}_${this.translate.currentLang}`] || value[`${fieldName}_en`];
     if (sanitized) {
       return this.sanitizer.bypassSecurityTrustHtml(name);
     }

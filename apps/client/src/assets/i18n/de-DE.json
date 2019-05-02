@@ -310,6 +310,7 @@
     "Starting_place_explain": "Genutzt für Pfadoptimierungsfunktionen",
     "Free_aetheryte": "Free Aetheryte",
     "Favorite_aetherytes": "Favorite Aetherytes",
+    "Disable_cross_world_prices": "Only use own world for marketboard prices",
     "COLORS": {
       "Primary": "Hauptfarbe",
       "Highlight": "Hervorhebungsfarbe",

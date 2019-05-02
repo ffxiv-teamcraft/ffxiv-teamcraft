@@ -5,6 +5,7 @@ import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MarketboardItem } from '@xivapi/angular-client/src/model/schema/market/marketboard-item';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-marketboard-popup',
@@ -36,7 +37,8 @@ export class MarketboardPopupComponent implements OnInit {
     value: 'ascend'
   });
 
-  constructor(private authFacade: AuthFacade, private xivapi: XivapiService, private lazyData: LazyDataService) {
+  constructor(private authFacade: AuthFacade, private xivapi: XivapiService, private lazyData: LazyDataService,
+              private settings: SettingsService) {
   }
 
   ngOnInit() {
@@ -49,28 +51,40 @@ export class MarketboardPopupComponent implements OnInit {
       switchMap(server => {
         return this.xivapi.getMarketBoardItemCrossServer(Object.keys(this.lazyData.datacenters).find(dc => {
           return this.lazyData.datacenters[dc].indexOf(server) > -1;
-        }), this.itemId);
-      }),
-      map(res => {
-        const item: Partial<MarketboardItem> = {
-          ID: res[Object.keys(res)[0]].ID,
-          ItemId: res[Object.keys(res)[0]].ItemId,
-          History: [],
-          Prices: []
-        };
-        item.Prices = [].concat.apply([], Object.keys(res).map(serverName => {
-          return res[serverName].Prices.map(price => {
-            (<any>price).Server = serverName;
-            return price;
-          });
-        }));
-        item.History = [].concat.apply([], Object.keys(res).map(serverName => {
-          return res[serverName].History.map(historyRow => {
-            (<any>historyRow).Server = serverName;
-            return historyRow;
-          });
-        }));
-        return item as MarketboardItem;
+        }), this.itemId)
+          .pipe(
+            map(res => {
+              const item: Partial<MarketboardItem> = {
+                ID: res[Object.keys(res)[0]].ID,
+                ItemId: res[Object.keys(res)[0]].ItemId,
+                History: [],
+                Prices: []
+              };
+              item.Prices = [].concat.apply([], Object.keys(res).map(serverName => {
+                return res[serverName].Prices.map(price => {
+                  (<any>price).Server = serverName;
+                  return price;
+                });
+              })).filter(price => {
+                if (this.settings.disableCrossWorld) {
+                  return price.Server === server;
+                }
+                return true;
+              });
+              item.History = [].concat.apply([], Object.keys(res).map(serverName => {
+                return res[serverName].History.map(historyRow => {
+                  (<any>historyRow).Server = serverName;
+                  return historyRow;
+                });
+              })).filter(price => {
+                if (this.settings.disableCrossWorld) {
+                  return price.Server === server;
+                }
+                return true;
+              });
+              return item as MarketboardItem;
+            })
+          );
       })
     );
 
