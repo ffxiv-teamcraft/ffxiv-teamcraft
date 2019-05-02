@@ -54,7 +54,7 @@
     <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="mapId" *ngIf="maps$ | async as maps; else loading" nzAllowClear nzShowSearch>
-        <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n" [nzValue]="map.ID"></nz-option>
+        <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName.ID | placeName | i18n" [nzValue]="map.ID"></nz-option>
       </nz-select>
       <ng-template #loading>
         <nz-spin></nz-spin>
