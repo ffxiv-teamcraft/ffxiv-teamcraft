@@ -310,6 +310,7 @@
     "Starting_place_explain": "Utilisée pour les fonctionnalités d’optimisation de trajectoire",
     "Free_aetheryte": "Éthérite gratuite",
     "Favorite_aetherytes": "Éthérites favorites",
+    "Disable_cross_world_prices": "Only use own world for marketboard prices",
     "COLORS": {
       "Primary": "Couleur principale",
       "Highlight": "Couleur de surbrillance",
