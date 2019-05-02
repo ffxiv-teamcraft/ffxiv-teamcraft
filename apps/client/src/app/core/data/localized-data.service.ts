@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
-import * as places from './sources/places.json';
-import * as mobs from './sources/mobs.json';
 import * as weathers from './sources/weathers.json';
 import * as ventures from './sources/ventures.json';
 import * as freeCompanyActions from './sources/free-company-actions.json';
@@ -51,7 +49,7 @@ export class LocalizedDataService {
   }
 
   public getPlace(id: number): I18nName {
-    const row = this.getRow(places, id);
+    const row = this.getRow(this.lazyData.places, id);
     const koRow = this.getRow(this.lazyData.koPlaces, id);
 
     if (row !== undefined) {
@@ -91,7 +89,7 @@ export class LocalizedDataService {
   }
 
   public getMob(id: number): I18nName {
-    const row = this.getRow(mobs, id);
+    const row = this.getRow(this.lazyData.mobs, id);
     const koRow = this.getRow(this.lazyData.koMobs, Math.floor(id % 1000000));
 
     if (row !== undefined) {
@@ -119,7 +117,7 @@ export class LocalizedDataService {
   }
 
   public getAreaIdByENName(name: string): number {
-    return this.getIndexByName(places, name, 'en');
+    return this.getIndexByName(this.lazyData.places, name, 'en');
   }
 
   public getFreeCompanyAction(id: number): I18nName {
