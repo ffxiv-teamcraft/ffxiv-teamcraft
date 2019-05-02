@@ -310,6 +310,7 @@
     "Starting_place_explain": "用于路径优化功能",
     "Free_aetheryte": "免费传送点",
     "Favorite_aetherytes": "收藏传送点",
+    "Disable_cross_world_prices": "Only use own world for marketboard prices",
     "COLORS": {
       "Primary": "主体色",
       "Highlight": "高亮色",
