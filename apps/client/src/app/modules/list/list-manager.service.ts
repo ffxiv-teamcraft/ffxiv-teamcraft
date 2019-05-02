@@ -138,14 +138,15 @@ export class ListManagerService {
         delete i.part;
         delete i.phase;
       });
-      craft.ingredients.forEach(req => {
-        const requirementsRow = ingredients.find(row => row.id === req.id);
-        if (requirementsRow === undefined) {
-          ingredients.push(req);
-        } else {
-          requirementsRow.amount += req.amount;
+      craft.ingredients = craft.ingredients.reduce((uniq: Ingredient[], ing) => {
+        const row = uniq.find(r => r.id === ing.id);
+        if (row === undefined) {
+          uniq.push(ing);
+          return uniq;
         }
-      });
+        row.amount += ing.amount;
+        return uniq;
+      }, []);
       const yields = collectible ? 1 : (craft.yield || 1);
       // Then we prepare the list row to add.
       Object.assign(toAdd, {
