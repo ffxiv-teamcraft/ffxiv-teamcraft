@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { map, shareReplay } from 'rxjs/operators';
+import { filter, map, shareReplay } from 'rxjs/operators';
 import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { NzModalRef } from 'ng-zorro-antd';
 import * as weathers from '../../../core/data/sources/weathers.json';
+import { weatherIndex } from '../../../core/data/sources/weather-index';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-custom-alarm-popup',
@@ -48,8 +50,15 @@ export class CustomAlarmPopupComponent implements OnInit {
 
   public weathersFrom: number[] = [];
 
+  public selectedMap: any;
+
+  public mapWeathers$: Observable<number[]>;
+
   constructor(private fb: FormBuilder, private xivapi: XivapiService, private alarmsFacade: AlarmsFacade, private modalRef: NzModalRef) {
-    this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, { columns: ['ID', 'PlaceName.Name_*'], max_items: 1000 }).pipe(
+    this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, {
+      columns: ['ID', 'PlaceName.Name_*', 'TerritoryType.WeatherRate'],
+      max_items: 1000
+    }).pipe(
       map(list => list.Results),
       shareReplay(1)
     );
@@ -104,6 +113,17 @@ export class CustomAlarmPopupComponent implements OnInit {
       weathers: [this.weathers],
       weathersFrom: [this.weathersFrom]
     });
+
+    this.mapWeathers$ = combineLatest(this.form.valueChanges, this.maps$).pipe(
+      map(([form, maps]) => {
+        return maps.find(m => m.ID === form.mapId);
+      }),
+      filter(m => !!m),
+      map(m => {
+        return _.uniq(weatherIndex[m.TerritoryType.WeatherRate].map(row => row.weatherId));
+      }),
+      shareReplay(1)
+    );
   }
 
 }

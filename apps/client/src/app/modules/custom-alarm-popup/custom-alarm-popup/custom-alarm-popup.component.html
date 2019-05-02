@@ -65,7 +65,7 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Weather' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="weathers" nzAllowClear nzMode="multiple">
-        <nz-option *ngFor="let weather of weatherIds" [nzLabel]="weather | weatherName | i18n" [nzValue]="weather"></nz-option>
+        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | weatherName | i18n" [nzValue]="weather"></nz-option>
       </nz-select>
     </nz-form-control>
   </nz-form-item>
@@ -73,7 +73,7 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Weather_from' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="weathersFrom" nzAllowClear nzMode="multiple">
-        <nz-option *ngFor="let weather of weatherIds" [nzLabel]="weather | weatherName | i18n" [nzValue]="weather"></nz-option>
+        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | weatherName | i18n" [nzValue]="weather"></nz-option>
       </nz-select>
     </nz-form-control>
   </nz-form-item>
