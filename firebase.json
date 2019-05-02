@@ -15,7 +15,7 @@
     "redirects": [
       {
         "source": "/desktop",
-        "destination": "https://github.com/Supamiu/ffxiv-teamcraft/releases/latest",
+        "destination": "https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest",
         "type": 301
       }
     ],

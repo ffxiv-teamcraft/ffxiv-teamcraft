@@ -1,9 +1,9 @@
 # FFXIV Teamcraft
 
-[![GitHub Release Date](https://img.shields.io/github/release-date/Supamiu/ffxiv-teamcraft.svg)](https://github.com/Supamiu/ffxiv-teamcraft/releases)
+[![GitHub Release Date](https://img.shields.io/github/release-date/ffxiv-teamcraft/ffxiv-teamcraft.svg)](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases)
 ![GitHub Downloads](https://img.shields.io/github/downloads/supamiu/ffxiv-teamcraft/latest/total.svg)
-[![GitHub issues](https://img.shields.io/github/issues/Supamiu/ffxiv-teamcraft.svg)](https://github.com/Supamiu/ffxiv-teamcraft/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/Supamiu/ffxiv-teamcraft.svg)](https://github.com/Supamiu/ffxiv-teamcraft/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/ffxiv-teamcraft/ffxiv-teamcraft.svg)](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/ffxiv-teamcraft/ffxiv-teamcraft.svg)](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/pulls)
 [![Discord](https://img.shields.io/discord/355013337748209665.svg)](https://discord.gg/r6qxt6P)
 
 Collaborative crafting tool for Final Fantasy XIV
@@ -14,9 +14,9 @@ Discord for support, bugs discussion and contributors: https://discord.gg/r6qxt6
 
 ## Development
 
-[![Codecov](https://img.shields.io/codecov/c/github/Supamiu/ffxiv-teamcraft.svg?branch=staging)](https://codecov.io/github/Supamiu/ffxiv-teamcraft?branch=staging)
+[![Codecov](https://img.shields.io/codecov/c/github/ffxiv-teamcraft/ffxiv-teamcraft.svg?branch=staging)](https://codecov.io/github/ffxiv-teamcraft/ffxiv-teamcraft?branch=staging)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-[![GitHub license](https://img.shields.io/github/license/Supamiu/ffxiv-teamcraft.svg)](https://github.com/Supamiu/ffxiv-teamcraft/blob/staging/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/ffxiv-teamcraft/ffxiv-teamcraft.svg)](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/blob/staging/LICENSE)
 
 ## License
 
@@ -30,4 +30,4 @@ https://github.com/angular/flex-layout/wiki/Responsive-API
 
 ## Contribute
 
-Contributions guidelines can be found inside [CONTRIBUTING.md](https://github.com/Supamiu/ffxiv-teamcraft/blob/staging/CONTRIBUTING.md) file.
+Contributions guidelines can be found inside [CONTRIBUTING.md](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/blob/staging/CONTRIBUTING.md) file.
