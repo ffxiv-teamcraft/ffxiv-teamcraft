@@ -100,7 +100,7 @@ export class PricingComponent implements AfterViewInit {
                     return price;
                   });
                 }));
-                if (finalItems) {
+                if (finalItems || this.settings.disableCrossWorld) {
                   prices = prices.filter(price => price.Server === server);
                 }
                 const cheapestHq = prices.filter(p => p.IsHQ)
