@@ -81,8 +81,6 @@ jobs:
             command: |
                 if [ "${CIRCLE_BRANCH}" == "master" ]; then
                     npm run build:prod
-                elif [ "${CIRCLE_BRANCH}" == "5.0.0"]; then
-                    npm run build:preview
                 else
                     npm run build:beta
                 fi
