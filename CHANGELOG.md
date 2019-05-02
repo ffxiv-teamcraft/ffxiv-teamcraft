@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.7"></a>
+## [5.3.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.6...v5.3.7) (2019-05-02)
+
+
+### Bug Fixes
+
+* **custom-alarms:** fixed an issue with map names not displayed with some languages ([c945eb6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c945eb6))
+* **custom-alarms:** you can no longer create alarms for impossible weathers ([2a15a33](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2a15a33))
+* **list:** fixed an issue with some FC workshop crafts not having accurate ingredients count ([1e86164](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e86164))
+* **pricing:** fixed an issue with some crafts not showing proper price in rare cases ([4deef7a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4deef7a))
+
+
+### Features
+
+* **custom-alarms:** added support for korean map names ([4be5500](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4be5500))
+* **marketboard:** added an option to disable cross world prices in marketboard api ([4bb843a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4bb843a))
+
+
+
 <a name="5.3.6"></a>
 ## [5.3.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.3.5...v5.3.6) (2019-05-01)
 
