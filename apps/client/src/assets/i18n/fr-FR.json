@@ -310,7 +310,7 @@
     "Starting_place_explain": "Utilisée pour les fonctionnalités d’optimisation de trajectoire",
     "Free_aetheryte": "Éthérite gratuite",
     "Favorite_aetherytes": "Éthérites favorites",
-    "Disable_cross_world_prices": "Only use own world for marketboard prices",
+    "Disable_cross_world_prices": "Utiliser uniquement le serveur d'origine pour les prix à l'hôtel des ventes",
     "COLORS": {
       "Primary": "Couleur principale",
       "Highlight": "Couleur de surbrillance",
