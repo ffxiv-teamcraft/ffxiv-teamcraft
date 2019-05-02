@@ -130,7 +130,6 @@ export class ListManagerService {
         }
       }
       const craft = data.getCraft(recipeId.toString());
-      const ingredients: Ingredient[] = [];
       // We have to remove unused ingredient properties.
       craft.ingredients.forEach(i => {
         delete i.quality;
@@ -157,7 +156,7 @@ export class ListManagerService {
         used: 0,
         yield: yields,
         recipeId: recipeId.toString(),
-        requires: ingredients,
+        requires: craft.ingredients,
         craftedBy: crafted,
         usePrice: true
       });
