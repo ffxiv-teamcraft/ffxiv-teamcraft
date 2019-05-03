@@ -101,7 +101,9 @@ function createWindow() {
   win.on('closed', function() {
     win = null;
     Object.keys(openedOverlays).forEach(key => {
-      openedOverlays[key].close();
+      if (openedOverlays[key]) {
+        openedOverlays[key].close();
+      }
     });
   });
 
