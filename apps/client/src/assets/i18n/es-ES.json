@@ -94,6 +94,9 @@
   "Public_list": "Lista Comunitaria",
   "Profile": "Perfil",
   "X_for_total": "{{amount}} para el total",
+  "Discounts": "Discount",
+  "Flat_discount": "Flat",
+  "Percent_discount": "Percent",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrar usando etiquetas",
     "Tags_filter_reset": "Quitar filtro de etiquetas",
@@ -240,6 +243,7 @@
   "List_not_found": "Lista no encontrada o no tiene acceso a ella",
   "Requirements_for_craft": "Ver requerimientos",
   "Zone_breakdown": "Desglose por área",
+  "Reverse_tiers": "Display reversed tiers",
   "Timer_options": "Opciones de Temporizador",
   "Early_by": "Avisar n horas eorzeanas antes",
   "Sound": "Sonido",
