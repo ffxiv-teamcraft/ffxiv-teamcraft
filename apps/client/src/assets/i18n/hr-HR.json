@@ -94,6 +94,9 @@
   "Public_list": "Popis zajednica",
   "Profile": "Profil",
   "X_for_total": "{{amount}} ukupno",
+  "Discounts": "Discount",
+  "Flat_discount": "Flat",
+  "Percent_discount": "Percent",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtriranje pomoću oznaka",
     "Tags_filter_reset": "Resetiranje filtera oznaka",
