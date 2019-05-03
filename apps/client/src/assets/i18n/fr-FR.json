@@ -94,9 +94,9 @@
   "Public_list": "Liste communautaire",
   "Profile": "Profil",
   "X_for_total": "{{amount}} pour le tout",
-  "Discounts": "Discount",
-  "Flat_discount": "Flat",
-  "Percent_discount": "Percent",
+  "Discounts": "Remises",
+  "Flat_discount": "Remise en gils",
+  "Percent_discount": "Pourcentage",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrer par tags",
     "Tags_filter_reset": "Réinitialiser le filtre par tags",
