@@ -22,6 +22,10 @@ const routes: Routes = [
     path: ':itemId',
     component: ItemComponent,
     canActivate: [MaintenanceGuard]
+  },{
+    path: ':itemId/:slug',
+    component: ItemComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

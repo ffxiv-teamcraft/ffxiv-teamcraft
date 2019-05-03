@@ -1,11 +1,14 @@
 <ng-container *ngIf="garlandToolsItem$ | async as gtItem">
-  <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start flex-start"
-       *ngIf="xivapiItem$ | async as xivapiItem">
-    <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
-      <img [src]="xivapiItem.Icon | xivapiIcon" alt="{{xivapiItem.ID | itemName | i18n}}" class="item-icon">
-      <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-        <h2 class="item-name">{{xivapiItem.ID | itemName | i18n}}</h2>
-        <div class="item-kind">{{xivapiItem.ItemKind | xivapiI18n}} > {{xivapiItem.ItemSearchCategory | xivapiI18n}}</div>
+  <div fxLayout="column" fxLayoutGap="10px"
+       *ngIf="xivapiItem$ | async as xivapiItem" [style.padding]="'0 50px' | ifMobile: '0'">
+    <div fxLayout="row" fxLayoutAlign="space-between flex-start" fxFlex="1 1 auto" fxLayoutGap="5px">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <img [src]="xivapiItem.Icon | xivapiIcon" alt="{{xivapiItem.ID | itemName | i18n}}" class="item-icon">
+        <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+          <h2 class="item-name">{{xivapiItem.ID | itemName | i18n}}</h2>
+          <div class="item-kind">{{xivapiItem.ItemKind | xivapiI18n}}
+            > {{xivapiItem.ItemSearchCategory | xivapiI18n}}</div>
+        </div>
       </div>
       <div fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">

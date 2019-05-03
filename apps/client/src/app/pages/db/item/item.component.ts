@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ItemData } from '../../../model/garland-tools/item-data';
-import { map, switchMap } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -26,9 +26,30 @@ export class ItemComponent extends TeamcraftPageComponent {
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
-              seo: SeoService) {
+              private router: Router, seo: SeoService) {
     super(seo);
+
+    this.route.paramMap.subscribe(params => {
+      const slug = params.get('slug');
+      if (slug === null) {
+        this.router.navigate(
+          [this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('+')],
+          {
+            relativeTo: this.route
+          }
+        );
+      } else if (slug !== this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('+')) {
+        this.router.navigate(
+          ['../', this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('+')],
+          {
+            relativeTo: this.route
+          }
+        );
+      }
+    });
+
     const itemId$ = this.route.paramMap.pipe(
+      filter(params => params.get('slug') !== null),
       map(params => params.get('itemId'))
     );
 
@@ -51,7 +72,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         return {
           title: this.i18n.getName(this.l12n.getItem(item.ID)),
           description: item[`Description_${this.translate.currentLang}`] || item.Description_en,
-          url: `https://ffxivteamcraft.com/db/item/${item.ID}`
+          url: `https://ffxivteamcraft.com/db/item/${item.ID}/${this.i18n.getName(this.l12n.getItem(item.ID)).split(' ').join('+')}`
         };
       })
     );
