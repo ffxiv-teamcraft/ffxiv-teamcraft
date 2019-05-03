@@ -83,8 +83,8 @@ export class ListDetailsPanelComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.displayRow && this.displayRow.tiers) {
-      this.generateTiers();
+    if (this.displayRow && (this.displayRow.tiers || this.displayRow.reverseTiers)) {
+      this.generateTiers(this.displayRow.reverseTiers);
     }
     if (this.displayRow && this.displayRow.zoneBreakdown) {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.getHideZoneDuplicates());
@@ -164,7 +164,7 @@ export class ListDetailsPanelComponent implements OnChanges {
                   }
                   return undefined;
                 })
-                .filter(row => row !== undefined)
+                .filter(row => row !== undefined);
             })
           )
       },
@@ -216,7 +216,7 @@ export class ListDetailsPanelComponent implements OnChanges {
     }
   }
 
-  public generateTiers(): void {
+  public generateTiers(reverse = false): void {
     if (this.displayRow.rows !== null) {
       this.tiers = [[]];
       this.topologicalSort(this.displayRow.rows).forEach(row => {
@@ -226,6 +226,9 @@ export class ListDetailsPanelComponent implements OnChanges {
     this.tiers = this.tiers.map(tier => {
       return this.layoutOrderService.order(tier, this.displayRow.layoutRow.orderBy, this.displayRow.layoutRow.order);
     });
+    if (reverse) {
+      this.tiers = this.tiers.reverse();
+    }
   }
 
   private topologicalSort(data: ListRow[]): ListRow[] {

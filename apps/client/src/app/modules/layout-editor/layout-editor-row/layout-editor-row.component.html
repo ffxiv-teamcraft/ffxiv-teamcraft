@@ -32,6 +32,7 @@
       <nz-radio-group [ngModel]="getLayoutType()" (ngModelChange)="setLayoutType($event)" [nzDisabled]="readonly">
         <label nz-radio-button [nzValue]="'default'">{{"Default" | translate}}</label>
         <label nz-radio-button [nzValue]="'tiers'">{{"Tier_display_toggle" | translate}}</label>
+        <label nz-radio-button [nzValue]="'reverseTiers'">{{"Reverse_tiers" | translate}}</label>
         <label nz-radio-button [nzValue]="'zoneBreakdown'">{{"Zone_breakdown" | translate}}</label>
       </nz-radio-group>
       <div fxLayout="column" fxLayoutGap="5px">

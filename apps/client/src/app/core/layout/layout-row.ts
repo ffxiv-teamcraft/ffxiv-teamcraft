@@ -12,6 +12,7 @@ export class LayoutRow {
               public index?: number,
               public zoneBreakdown = false,
               public tiers = false,
+              public reverseTiers = false,
               public hideIfEmpty = true,
               public hideCompletedRows = false,
               public hideUsedRows = false,

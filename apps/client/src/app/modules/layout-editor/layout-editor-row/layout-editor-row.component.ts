@@ -80,12 +80,16 @@ export class LayoutEditorRowComponent implements OnInit {
     if (this.row.zoneBreakdown) {
       return 'zoneBreakdown';
     }
+    if (this.row.reverseTiers) {
+      return 'reverseTiers';
+    }
     return 'default';
   }
 
-  setLayoutType(type: 'tiers' | 'zoneBreakdown'): void {
+  setLayoutType(type: 'tiers' | 'zoneBreakdown' | 'reverseTiers'): void {
     this.row.tiers = type === 'tiers';
     this.row.zoneBreakdown = type === 'zoneBreakdown';
+    this.row.reverseTiers = type === 'reverseTiers';
     this.rowChange.emit(this.row);
   }
 
