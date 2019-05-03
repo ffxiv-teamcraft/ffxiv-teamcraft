@@ -94,6 +94,9 @@
   "Public_list": "목록 공개",
   "Profile": "프로필",
   "X_for_total": "총 {{amount}}개",
+  "Discounts": "Discount",
+  "Flat_discount": "Flat",
+  "Percent_discount": "Percent",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "태그를 사용하여 필터링",
     "Tags_filter_reset": "필터 초기화",
