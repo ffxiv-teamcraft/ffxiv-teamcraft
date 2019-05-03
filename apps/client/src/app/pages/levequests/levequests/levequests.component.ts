@@ -2,8 +2,8 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { NzNotificationService } from 'ng-zorro-antd';
-import { BehaviorSubject, concat, Observable } from 'rxjs';
-import { debounceTime, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
+import { debounceTime, filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -15,13 +15,15 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { Levequest } from '../../../model/search/levequest';
 import { DataService } from '../../../core/api/data.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
   selector: 'app-levequests',
   templateUrl: './levequests.component.html',
   styleUrls: ['./levequests.component.less']
 })
-export class LevequestsComponent implements OnInit {
+export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   jobList: any[] = [];
 
@@ -60,7 +62,9 @@ export class LevequestsComponent implements OnInit {
               private notificationService: NzNotificationService, private gt: GarlandToolsService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
-              private dataService: DataService, private lazyData: LazyDataService) {
+              private dataService: DataService, private lazyData: LazyDataService,
+              private auth: AuthFacade) {
+    super();
     this.jobList = this.gt.getJobs().slice(8, 16).concat([this.gt.getJob(18)]);
   }
 
@@ -142,6 +146,17 @@ export class LevequestsComponent implements OnInit {
       }),
       tap(() => this.loading = false)
     );
+
+    combineLatest([this.auth.gearSets$, this.job$]).pipe(
+      map(([sets, job]) => {
+        return sets.find(set => set.jobId === job);
+      }),
+      filter(set => set !== undefined),
+      map(set => set.level),
+      takeUntil(this.onDestroy$)
+    ).subscribe(level => {
+      this.startingLevel = level;
+    });
 
     this.route.queryParams
       .subscribe(params => {
