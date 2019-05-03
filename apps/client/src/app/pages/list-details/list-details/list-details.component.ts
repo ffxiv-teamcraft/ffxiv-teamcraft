@@ -32,6 +32,7 @@ import { SeoService } from '../../../core/seo/seo.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { ListLayout } from '../../../core/layout/list-layout';
+import { ObservableMedia } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-list-details',
@@ -87,7 +88,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
-              private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService) {
+              private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
+              private media: ObservableMedia) {
     super(seoService);
     this.list$ = combineLatest(this.listsFacade.selectedList$, this.permissionLevel$).pipe(
       filter(([list]) => list !== undefined),
@@ -307,7 +309,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   openLayoutOptions(): void {
     this.dialog.create({
       nzFooter: null,
-      nzContent: LayoutEditorComponent
+      nzContent: LayoutEditorComponent,
+      nzWidth: (this.media.isActive('xs') || this.media.isActive('sm')) ? '90vw' : '60vw'
     });
   }
 

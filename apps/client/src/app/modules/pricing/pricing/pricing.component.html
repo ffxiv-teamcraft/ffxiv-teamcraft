@@ -136,6 +136,17 @@
     </nz-collapse>
   </nz-card>
 
+  <nz-card [nzTitle]="'Discounts' | translate">
+    <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="10px">
+      <nz-input-group [nzAddOnBefore]="'Flat_discount' | translate" nzAddOnAfter="gil">
+        <input type="number" nz-input [(ngModel)]="flatDiscount" (ngModelChange)="saveDiscounts(list.$key)"/>
+      </nz-input-group>
+      <nz-input-group [nzAddOnBefore]="'Percent_discount' | translate" nzAddOnAfter="%">
+        <input type="number" nz-input [(ngModel)]="discount" (ngModelChange)="saveDiscounts(list.$key)"/>
+      </nz-input-group>
+    </div>
+  </nz-card>
+
   <nz-alert *ngIf="getBenefits(list) as benefits" [nzType]="benefits >= 0 ? 'success' : 'error'"
             nzMessage="{{'Benefits' | translate}}: {{ benefits | number:'1.0-0'}} gil">
   </nz-alert>

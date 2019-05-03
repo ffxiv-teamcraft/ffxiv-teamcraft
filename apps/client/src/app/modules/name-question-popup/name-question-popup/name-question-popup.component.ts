@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-name-question-popup',
@@ -12,17 +12,27 @@ export class NameQuestionPopupComponent implements OnInit {
   @Input()
   baseName = '';
 
-  public control: FormControl;
+  @Input()
+  showEphemeralCheckbox = false;
 
-  constructor(private modalRef: NzModalRef) {
+  public control: FormGroup;
+
+  constructor(private modalRef: NzModalRef, private fb: FormBuilder) {
   }
 
   public submit(): void {
-    this.modalRef.close(this.control.value);
+    if (this.showEphemeralCheckbox) {
+      this.modalRef.close(this.control.value);
+    } else {
+      this.modalRef.close(this.control.value.name);
+    }
   }
 
   ngOnInit(): void {
-    this.control = new FormControl(this.baseName, Validators.required);
+    this.control = this.fb.group({
+      name: [this.baseName, Validators.required],
+      ephemeral: [false]
+    });
   }
 
 }

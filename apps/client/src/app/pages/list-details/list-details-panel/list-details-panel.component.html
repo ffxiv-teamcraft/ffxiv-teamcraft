@@ -2,16 +2,20 @@
   <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="!(displayRow.collapsed || collapsed)"
                      (nzActiveChange)="collapsed = !$event">
     <div>
-      <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown">
+      <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown && !displayRow.reverseTiers">
         <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd"
                       [layout]="displayRow.layout"
                       [item]="item"
                       [finalItem]="finalItems" [odd]="odd"></app-item-row>
       </div>
-      <div *ngIf="displayRow.tiers">
+      <div *ngIf="displayRow.tiers || displayRow.reverseTiers">
         <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
-          <span class="tier-title">{{'Precraft_tier' | translate}} {{index + 1}}</span>
-          <nz-divider></nz-divider>
+          <ng-template #tierTitle>
+            {{'Precraft_tier' | translate}} <span
+            *ngIf="!displayRow.reverseTiers">{{index + 1}}</span> <span
+            *ngIf="displayRow.reverseTiers">{{tiers.length - index}}</span>
+          </ng-template>
+          <nz-divider [nzText]="tierTitle" nzOrientation="left"></nz-divider>
           <app-item-row *ngFor="let item of tier; trackBy: trackByItem; let odd = odd"
                         [layout]="displayRow.layout"
                         [item]="item"
@@ -21,15 +25,17 @@
       <div *ngIf="displayRow.zoneBreakdown">
         <div *ngFor="let row of zoneBreakdown?.rows; trackBy: trackByZone">
           <div *ngIf="row.items.length > 0">
-            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <span class="zone-title">{{getLocation(row.zoneId) | i18n}}</span>
-              <button nz-button *ngIf="hasNavigationMap" nzShape="circle" nzSize="small"
-                      (click)="openNavigationMap(row)"
-                      nz-tooltip [nzTitle]="'NAVIGATION.Title' | translate">
-                <i nz-icon type="gateway"></i>
-              </button>
-            </div>
-            <nz-divider></nz-divider>
+            <ng-template #zoneTitle>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <span class="zone-title">{{getLocation(row.zoneId) | i18n}}</span>
+                <button nz-button *ngIf="hasNavigationMap" nzShape="circle" nzSize="small"
+                        (click)="openNavigationMap(row)"
+                        nz-tooltip [nzTitle]="'NAVIGATION.Title' | translate">
+                  <i nz-icon type="gateway"></i>
+                </button>
+              </div>
+            </ng-template>
+            <nz-divider [nzText]="zoneTitle" nzOrientation="left"></nz-divider>
             <app-item-row *ngFor="let item of row.items; trackBy: trackByItem; let odd = odd"
                           [layout]="displayRow.layout"
                           [item]="item"

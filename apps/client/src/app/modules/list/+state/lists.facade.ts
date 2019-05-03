@@ -142,13 +142,17 @@ export class ListsFacade {
     return this.dialog.create({
       nzContent: NameQuestionPopupComponent,
       nzFooter: null,
-      nzTitle: this.translate.instant('New_List')
+      nzTitle: this.translate.instant('New_List'),
+      nzComponentParams: {
+        showEphemeralCheckbox: true
+      }
     }).afterClose.pipe(
-      filter(name => name !== undefined),
-      map(name => {
+      filter(res => res.name !== undefined),
+      map(res => {
         const list = new List();
         list.everyone = this.settings.defaultPermissionLevel;
-        list.name = name;
+        list.name = res.name;
+        list.ephemeral = res.ephemeral;
         return list;
       })
     );

@@ -94,6 +94,9 @@
   "Public_list": "公共リスト",
   "Profile": "プロフィール",
   "X_for_total": "合計 {{amount}} 個",
+  "Discounts": "Discount",
+  "Flat_discount": "Flat",
+  "Percent_discount": "Percent",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "タグを使用してフィルタリング",
     "Tags_filter_reset": "フィルター初期化",
@@ -240,6 +243,7 @@
   "List_not_found": "リストになかったり、接近する権限がありません",
   "Requirements_for_craft": "詳細情報",
   "Zone_breakdown": "エリアを纏めて表示する",
+  "Reverse_tiers": "Display reversed tiers",
   "Timer_options": "タイマー設定",
   "Early_by": "出現前に知らせ(ET標準)",
   "Sound": "音",

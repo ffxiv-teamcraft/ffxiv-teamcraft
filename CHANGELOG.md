@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.8"></a>
+## [5.3.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.7...v5.3.8) (2019-05-03)
+
+
+### Bug Fixes
+
+* **alarms-overlay:** fixed an issue with bottom scroll not properly aligned ([2136edb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2136edb))
+* **ci:** fixed an issue with build in CI env ([bf90e1e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf90e1e))
+* **desktop:** fixed an error message sometimes showing when closing desktop app ([c5d15d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5d15d0))
+
+
+### Features
+
+* **desktop:** mouse back/forward buttons are now properly bound to the app ([c1ef788](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1ef788))
+* **layout:** added support for reversed tiers display ([1955fde](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1955fde))
+* **levequests:** starting level now defaults to current level on profile ([3a8a08b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3a8a08b))
+* **list:** you can now create ephemeral lists with name input ([d521ef7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d521ef7))
+* **pricing:** you can now setup discounts on pricing mode, saved inside localstorage ([a390d39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a390d39))
+
+
+
 <a name="5.3.7"></a>
 ## [5.3.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.6...v5.3.7) (2019-05-02)
 

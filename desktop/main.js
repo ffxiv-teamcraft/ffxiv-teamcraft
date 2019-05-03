@@ -101,8 +101,19 @@ function createWindow() {
   win.on('closed', function() {
     win = null;
     Object.keys(openedOverlays).forEach(key => {
-      openedOverlays[key].close();
+      if (openedOverlays[key]) {
+        openedOverlays[key].close();
+      }
     });
+  });
+
+  win.on('app-command', (e, cmd) => {
+    if (cmd === 'browser-backward' && win.webContents.canGoBack()) {
+      win.webContents.goBack();
+    }
+    if (cmd === 'browser-forward' && win.webContents.canGoForward()) {
+      win.webContents.goForward();
+    }
   });
 
   win.once('ready-to-show', () => {

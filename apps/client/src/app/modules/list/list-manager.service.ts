@@ -53,15 +53,15 @@ export class ListManagerService {
           if (team && team.webhook !== undefined && amount !== 0) {
             if (+itemId === itemId) {
               if (amount > 0) {
-                this.discordWebhookService.notifyItemAddition(itemId, itemData.item.icon, amount, list, team);
+                this.discordWebhookService.notifyItemAddition(itemId, (<ItemData>itemData).item.icon, amount, list, team);
               } else {
-                this.discordWebhookService.notifyItemDeletion(itemId, itemData.item.icon, Math.abs(amount), list, team);
+                this.discordWebhookService.notifyItemDeletion(itemId, (<ItemData>itemData).item.icon, Math.abs(amount), list, team);
               }
             } else {
               if (amount > 0) {
-                this.discordWebhookService.notifyCustomItemAddition(itemData.name, itemData.item.icon, amount, list, team);
+                this.discordWebhookService.notifyCustomItemAddition((<CustomItem>itemData).name, (<ItemData>itemData).item.icon, amount, list, team);
               } else {
-                this.discordWebhookService.notifyCustomItemDeletion(itemData.name, itemData.item.icon, Math.abs(amount), list, team);
+                this.discordWebhookService.notifyCustomItemDeletion((<CustomItem>itemData).name, (<ItemData>itemData).item.icon, Math.abs(amount), list, team);
               }
             }
           }
