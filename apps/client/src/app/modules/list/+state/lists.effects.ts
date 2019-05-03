@@ -70,8 +70,7 @@ export class ListsEffects {
   @Effect()
   loadTeamLists$ = this.actions$.pipe(
     ofType<LoadTeamLists>(ListsActionTypes.LoadTeamLists),
-    distinctUntilChanged(),
-    switchMap((action) => {
+    mergeMap((action) => {
       return this.listCompactsService.getByForeignKey(Team, action.teamId)
         .pipe(
           map(lists => new TeamListsLoaded(lists, action.teamId))
