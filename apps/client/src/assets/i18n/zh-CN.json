@@ -94,6 +94,9 @@
   "Public_list": "社区清单",
   "Profile": "个人资料",
   "X_for_total": "一共 {{amount}} 个",
+  "Discounts": "Discount",
+  "Flat_discount": "Flat",
+  "Percent_discount": "Percent",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "标签筛选",
     "Tags_filter_reset": "重置标签筛选",
