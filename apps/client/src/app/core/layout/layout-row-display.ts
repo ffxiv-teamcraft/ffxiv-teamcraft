@@ -8,6 +8,7 @@ export interface LayoutRowDisplay {
   index: number;
   zoneBreakdown: boolean;
   tiers: boolean;
+  reverseTiers: boolean;
   filterChain: string;
   hideIfEmpty: boolean;
   collapsed: boolean;
