@@ -94,6 +94,9 @@
   "Public_list": "Список сообщества",
   "Profile": "Профиль",
   "X_for_total": "{{amount}} всего",
+  "Discounts": "Discount",
+  "Flat_discount": "Flat",
+  "Percent_discount": "Percent",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Фильтр по тегам",
     "Tags_filter_reset": "Сбросить фильтр",
