@@ -33,14 +33,14 @@ export class ItemComponent extends TeamcraftPageComponent {
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('+')],
+          [this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('-')],
           {
             relativeTo: this.route
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('+')) {
+      } else if (slug !== this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('-')) {
         this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('+')],
+          ['../', this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('-')],
           {
             relativeTo: this.route
           }
