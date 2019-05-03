@@ -18,8 +18,12 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "./extra-webpack.config.js",
+              "mergeStrategies": { "externals": "replace" }
+            },
             "outputPath": "dist/apps/client",
             "index": "apps/client/src/index.html",
             "main": "apps/client/src/main.ts",
