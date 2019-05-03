@@ -107,6 +107,15 @@ function createWindow() {
     });
   });
 
+  win.on('app-command', (e, cmd) => {
+    if (cmd === 'browser-backward' && win.webContents.canGoBack()) {
+      win.webContents.goBack();
+    }
+    if (cmd === 'browser-forward' && win.webContents.canGoForward()) {
+      win.webContents.goForward();
+    }
+  });
+
   win.once('ready-to-show', () => {
     if (api === undefined) {
       // Start the api server for app detection
