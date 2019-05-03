@@ -94,6 +94,9 @@
   "Public_list": "Lista de comunidade",
   "Profile": "Perfil",
   "X_for_total": "{{amount}} para o total",
+  "Discounts": "Discount",
+  "Flat_discount": "Flat",
+  "Percent_discount": "Percent",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrar usando tags",
     "Tags_filter_reset": "Redefinir filtros",
