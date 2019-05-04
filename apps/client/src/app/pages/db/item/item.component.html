@@ -1,7 +1,7 @@
 <ng-container *ngIf="garlandToolsItem$ | async as gtData">
   <div fxLayout="column" fxLayoutGap="10px"
        *ngIf="xivapiItem$ | async as xivapiItem" [style.padding]="'0 50px' | ifMobile: '0'">
-    <div fxLayout="row" fxLayoutAlign="space-between flex-start" fxFlex="1 1 auto" fxLayoutGap="5px" class="top-bar">
+    <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxFlex="1 1 auto" fxLayoutGap="5px" class="top-bar">
       <div fxLayout="column" fxLayoutAlign="space-between" fxFlex="0 0 300px" class="top-left-block">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="icon-block">
           <img [src]="xivapiItem.Icon | xivapiIcon" alt="{{xivapiItem.ID | itemName | i18n}}" class="item-icon">
@@ -17,10 +17,10 @@
           </a>
         </div>
       </div>
-      <div *ngIf="xivapiItem.Description">
-        <p [innerHTML]="xivapiItem | xivapiI18n: 'Description' | xivUIText"></p>
+      <div fxFlex="1 1 auto">
+        <p *ngIf="xivapiItem.Description" [innerHTML]="xivapiItem | xivapiI18n: 'Description' | xivUIText"></p>
       </div>
-      <div fxLayout="column" fxLayoutGap="5px" fxFlex="0 0 200px">
+      <div fxLayout="column" fxLayoutGap="5px" fxFlex="0 0 300px">
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
           <img src="/assets/icons/english.png" class="language-flag" alt="EN">
           <div>{{xivapiItem.Name_en}}</div>
@@ -36,6 +36,51 @@
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
           <img src="/assets/icons/japanese.png" class="language-flag" alt="JA">
           <div>{{xivapiItem.Name_ja}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="details-container">
+      <div class="main-attributes details">
+        <div nz-row nzGutter="10" *ngFor="let row of mainAttributes$ | async">
+          <div nz-col nzXs="12" nzMd="6">
+            <p class="detail-name" *ngIf="!row.requiresPipe">
+              {{row.name | translate}}
+            </p>
+            <p class="detail-name" *ngIf="row.requiresPipe">
+              {{row.name | xivapiI18n}}
+            </p>
+          </div>
+          <div nz-col nzXs="12" nzMd="6">
+            <p class="detail-value">
+              {{row.value}}
+              <span class="hq-value" *ngIf="xivapiItem.CanBeHq === 1 && row.valueHq && row.valueHq !== row.value">
+            ({{row.valueHq}})
+          </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="details">
+        <div nz-row nzGutter="10" *ngFor="let row of stats$ | async">
+          <div nz-col nzXs="12" nzMd="6">
+            <p class="detail-name" *ngIf="!row.requiresPipe">
+              {{row.name | translate}}
+            </p>
+            <p class="detail-name" *ngIf="row.requiresPipe">
+              {{row.name | xivapiI18n}}
+            </p>
+          </div>
+          <div nz-col nzXs="12" nzMd="6">
+            <p class="detail-value">
+              {{row.value}}
+              <span class="hq-value" *ngIf="xivapiItem.CanBeHq">
+            <span *ngIf="xivapiItem.ItemFood === undefined; else itemFoodHQ">({{row.valueHq}})</span>
+            <ng-template #itemFoodHQ>
+              {{row.valueHq}}
+            </ng-template>
+          </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

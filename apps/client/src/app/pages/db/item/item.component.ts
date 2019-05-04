@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ItemData } from '../../../model/garland-tools/item-data';
-import { filter, map, switchMap } from 'rxjs/operators';
+import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -34,6 +34,10 @@ export class ItemComponent extends TeamcraftPageComponent {
   public noData = false;
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
+
+  public mainAttributes$: Observable<any[]>;
+
+  public stats$: Observable<any[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -71,6 +75,111 @@ export class ItemComponent extends TeamcraftPageComponent {
     this.xivapiItem$ = itemId$.pipe(
       switchMap(itemId => {
         return this.xivapi.get(XivapiEndpoint.Item, +itemId);
+      }),
+      switchMap((item) => {
+        console.log(item.ItemAction);
+        // If it's a  consumable, get item action details and put it inside item action itself.
+        if (item.ItemAction && [844, 845, 846].indexOf(item.ItemAction.Type) > -1) {
+          return this.xivapi.get(XivapiEndpoint.ItemFood, item.ItemAction.Data1).pipe(
+            map(itemFood => {
+              item.ItemFood = itemFood;
+              return item;
+            })
+          );
+        }
+        return of(item);
+      }),
+      shareReplay(1)
+    );
+
+    this.mainAttributes$ = this.xivapiItem$.pipe(
+      map(item => {
+        const mainAttributes = [];
+        mainAttributes.push({
+          name: 'TOOLTIP.Level',
+          value: item.LevelEquip
+        });
+        mainAttributes.push({
+          name: 'TOOLTIP.Ilvl',
+          value: item.LevelItem
+        });
+        // If the item has some damage, handle it.
+        if (item.DamagePhys || item.DamageMag) {
+          if (item.DamagePhys > item.DamageMag) {
+            mainAttributes.push({
+              name: 'TOOLTIP.Damage_phys',
+              value: item.DamagePhys,
+              valueHq: item.DamagePhys + item.BaseParamValueSpecial0
+            });
+          } else {
+            mainAttributes.push({
+              name: 'TOOLTIP.Damage_mag',
+              value: item.DamageMag,
+              valueHq: item.DamageMag + item.BaseParamValueSpecial1
+            });
+          }
+        }
+        // If the item has some defense, handle it.
+        if (item.DefensePhys || item.DefenseMag) {
+          mainAttributes.push({
+            name: 'TOOLTIP.Defense_phys',
+            value: item.DefensePhys,
+            valueHq: item.DefensePhys + item.BaseParamValueSpecial0
+          });
+          mainAttributes.push({
+            name: 'TOOLTIP.Defense_mag',
+            value: item.DefenseMag,
+            valueHq: item.DefenseMag + item.BaseParamValueSpecial1
+          });
+        }
+        return mainAttributes;
+      })
+    );
+
+    this.stats$ = this.xivapiItem$.pipe(
+      map(item => {
+        const stats = Object.keys(item)
+          .filter(key => /^BaseParam\d+$/.test(key) && item[key] && key !== undefined)
+          .map(key => {
+            const statIndex = key.match(/(\d+)/)[0];
+            const res: any = {
+              name: item[key],
+              value: item[`BaseParamValue${statIndex}`],
+              requiresPipe: true
+            };
+            if (item.CanBeHq === 1) {
+              const statId = item[`BaseParam${statIndex}TargetID`];
+              const specialParamKey = Object.keys(item)
+                .filter(k => /^BaseParamSpecial\d+TargetID$/.test(k) && item[k])
+                .find(k => item[k] === statId);
+              const specialParamIndex = specialParamKey.match(/(\d+)/)[0];
+              res.valueHq = res.value + item[`BaseParamValueSpecial${specialParamIndex}`];
+            }
+            return res;
+          });
+        if (item.ItemFood !== undefined) {
+          const food = item.ItemFood;
+          for (let i = 0; i < 2; i++) {
+            const statsEntry: any = {};
+            const value = food[`Value${i}`];
+            const valueHq = food[`ValueHQ${i}`];
+            const isRelative = food[`IsRelative${i}`] === 1;
+            const max = food[`Max${i}`];
+            const maxHq = food[`MaxHQ${i}`];
+            if (value > 0) {
+              statsEntry.name = food[`BaseParam${i}`];
+              statsEntry.requiresPipe = true;
+              if (isRelative) {
+                statsEntry.value = `${value}% (${max})`;
+                statsEntry.valueHq = `${valueHq}% (${maxHq})`;
+              } else {
+                statsEntry.value = value.toString();
+              }
+              stats.push(statsEntry);
+            }
+          }
+        }
+        return stats;
       })
     );
 
@@ -164,10 +273,10 @@ export class ItemComponent extends TeamcraftPageComponent {
             links: Object.keys(data.item.ingredient_of)
               .map(itemId => {
                 return {
-                  itemId: +itemId,
+                  itemId: +itemId
                 };
               })
-          })
+          });
         }
         return usedFor;
       })
