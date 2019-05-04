@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.9"></a>
+## [5.3.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.8...v5.3.9) (2019-05-04)
+
+
+### Bug Fixes
+
+* **teams:** fixed an issue with lists loading when you have multiple teams ([b3e1fdf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b3e1fdf))
+
+
+### Features
+
+* **alarms:** you can now enable/disable alarms individually ([a465acc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a465acc))
+* **gathering-location:** a message is now shown if an item already has an alarm ([1811953](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1811953))
+
+
+
 <a name="5.3.8"></a>
 ## [5.3.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.7...v5.3.8) (2019-05-03)
 
