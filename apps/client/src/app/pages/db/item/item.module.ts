@@ -18,6 +18,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { MaintenanceGuard } from '../../maintenance/maintenance.guard';
 import { ListModule } from '../../../modules/list/list.module';
 import { ItemDetailsPopupsModule } from '../../list-details/item-details/item-details-popups.module';
+import { RotationsModule } from '../../../modules/rotations/rotations.module';
 
 const routes: Routes = [
   {
@@ -52,6 +53,7 @@ const routes: Routes = [
     FishingBaitModule,
     TooltipModule,
     ListModule,
+    RotationsModule,
     ItemDetailsPopupsModule,
 
     NgZorroAntdModule

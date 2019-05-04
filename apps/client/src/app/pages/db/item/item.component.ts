@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { concat, Observable, of } from 'rxjs';
 import { ItemData } from '../../../model/garland-tools/item-data';
-import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, shareReplay, switchMap } from 'rxjs/operators';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -15,6 +15,14 @@ import { DataExtractorService } from '../../../modules/list/data/data-extractor.
 import { ListRow } from '../../../modules/list/model/list-row';
 import { combineLatest } from 'rxjs/internal/observable/combineLatest';
 import { tap } from 'rxjs/internal/operators/tap';
+import { SearchResult } from '../../../model/search/search-result';
+import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
+import { ListsFacade } from '../../../modules/list/+state/lists.facade';
+import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { ListManagerService } from '../../../modules/list/list-manager.service';
+import { NzNotificationService } from 'ng-zorro-antd';
+import { List } from '../../../modules/list/model/list';
+import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 
 @Component({
   selector: 'app-item',
@@ -39,10 +47,21 @@ export class ItemComponent extends TeamcraftPageComponent {
 
   public stats$: Observable<any[]>;
 
+  @ViewChild('notificationRef')
+  notification: TemplateRef<any>;
+
+  // Notification data
+  itemsAdded = 0;
+
+  modifiedList: List;
+
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private extractor: DataExtractorService,
+              private listPicker: ListPickerService, private listsFacade: ListsFacade,
+              private progressService: ProgressPopupService, private listManager: ListManagerService,
+              private notificationService: NzNotificationService, private rotationPicker: RotationPickerService,
               seo: SeoService) {
     super(seo);
 
@@ -297,8 +316,19 @@ export class ItemComponent extends TeamcraftPageComponent {
         return usedFor;
       })
     );
+  }
 
+  public openInSimulator(itemId: number, recipeId: string): void {
+    this.rotationPicker.openInSimulator(itemId, recipeId);
+  }
 
+  public toSearchResult(item: ListRow): SearchResult {
+    return {
+      itemId: item.id,
+      icon: item.icon.toString(),
+      addCrafts: false,
+      amount: 1
+    };
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
@@ -313,4 +343,42 @@ export class ItemComponent extends TeamcraftPageComponent {
     );
   }
 
+  public addItemsToList(items: SearchResult[]): void {
+    this.listPicker.pickList().pipe(
+      mergeMap(list => {
+        const operations = items.map(item => {
+          return this.listManager.addToList(+item.itemId, list,
+            item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
+        });
+        let operation$: Observable<any>;
+        if (operations.length > 0) {
+          operation$ = concat(
+            ...operations
+          );
+        } else {
+          operation$ = of(list);
+        }
+        return this.progressService.showProgress(operation$,
+          items.length,
+          'Adding_recipes',
+          { amount: items.length, listname: list.name });
+      }),
+      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
+      mergeMap(list => {
+        // We want to get the list created before calling it a success, let's be pessimistic !
+        return this.progressService.showProgress(
+          combineLatest(this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$).pipe(
+            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
+            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          ), 1, 'Saving_in_database');
+      })
+    ).subscribe((list) => {
+      this.itemsAdded = items.length;
+      this.modifiedList = list;
+      this.notificationService.template(this.notification);
+    });
+
+  }
 }
