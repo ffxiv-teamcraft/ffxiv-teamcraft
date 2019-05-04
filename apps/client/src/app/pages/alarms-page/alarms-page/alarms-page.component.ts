@@ -36,7 +36,7 @@ export class AlarmsPageComponent implements OnInit {
 
   public expanded = true;
 
-  constructor(private alarmBell: AlarmBellService, private alarmsFacade: AlarmsFacade,
+  constructor(private alarmBell: AlarmBellService, public alarmsFacade: AlarmsFacade,
               private _settings: SettingsService, private dialog: NzModalService,
               private translate: TranslateService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private etime: EorzeanTimeService,
