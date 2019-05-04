@@ -59,7 +59,7 @@ export class AlarmsFacade {
   alarmsSidebarDisplay$ = this.alarmsPageDisplay$.pipe(
     map(alarmsPageDisplay => {
       return this.sortAlarmDisplays([
-        ...alarmsPageDisplay.noGroup,
+        ...alarmsPageDisplay.noGroup.filter(display => display.alarm.enabled),
         ...[].concat.apply([], alarmsPageDisplay.groupedAlarms
           .filter(groupedAlarms => groupedAlarms.group.enabled)
           .map(grouped => {
@@ -68,6 +68,7 @@ export class AlarmsFacade {
               return alarm;
             });
           }))
+          .filter(display => display.alarm.enabled)
       ]);
     })
   );
