@@ -113,6 +113,11 @@ export class ItemComponent extends TeamcraftPageComponent {
             name: 'DB.Delay',
             value: item.DelayMs / 1000
           });
+          mainAttributes.push({
+            name: 'DB.Auto',
+            value: Math.floor((item.DamagePhys * item.DelayMs) / 30) / 100,
+            valueHq: Math.floor(((item.DamagePhys + item.BaseParamValueSpecial0) * item.DelayMs) / 30) / 100
+          });
         }
         // If the item has some damage, handle it.
         if (item.DamagePhys || item.DamageMag) {
