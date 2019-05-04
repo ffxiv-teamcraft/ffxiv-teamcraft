@@ -33,7 +33,7 @@
 }
 
 .details-container {
-  padding: 10px;
+  padding: 10px 10px 5px;
   background-color: rgba(0, 0, 0, .25);
 }
 
@@ -53,4 +53,25 @@
 .img-icon {
   width: 32px;
   height: 32px;
+}
+
+.details-block {
+  min-width: 200px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, .25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+
+  .detail-name {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+  }
+
+  .detail-value{
+    .hq-value {
+       font-weight: bold;
+    }
+  }
 }

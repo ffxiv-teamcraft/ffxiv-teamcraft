@@ -1086,6 +1086,16 @@
     "Crafts": "Crafts",
     "Recipes": "Recipes",
     "No_known_way_to_obtain": "Couldn't find any ways to obtain this item",
-    "Gathering": "Gathering"
+    "Gathering": "Gathering",
+    "Tradeable": "Tradeable",
+    "Unique": "Unique",
+    "Dyeable": "Dyeable",
+    "Materia_sockets": "Materia slots",
+    "Advanced_melding": "Advanced melding",
+    "Repair_job": "Repair job",
+    "Class_job": "Class/Job",
+    "Delay": "Delay",
+    "Salvage_level": "Optimal Salvage lvl",
+    "Sells_for": "Sell price"
   }
 }

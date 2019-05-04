@@ -77,7 +77,6 @@ export class ItemComponent extends TeamcraftPageComponent {
         return this.xivapi.get(XivapiEndpoint.Item, +itemId);
       }),
       switchMap((item) => {
-        console.log(item.ItemAction);
         // If it's a  consumable, get item action details and put it inside item action itself.
         if (item.ItemAction && [844, 845, 846].indexOf(item.ItemAction.Type) > -1) {
           return this.xivapi.get(XivapiEndpoint.ItemFood, item.ItemAction.Data1).pipe(
@@ -95,6 +94,12 @@ export class ItemComponent extends TeamcraftPageComponent {
     this.mainAttributes$ = this.xivapiItem$.pipe(
       map(item => {
         const mainAttributes = [];
+        if (item.ClassJobUseTargetID) {
+          mainAttributes.push({
+            name: 'DB.Class_job',
+            value: item.ClassJobCategory[`Name_${this.translate.currentLang}`] || item.ClassJobCategory.Name_en
+          });
+        }
         mainAttributes.push({
           name: 'TOOLTIP.Level',
           value: item.LevelEquip
@@ -103,6 +108,12 @@ export class ItemComponent extends TeamcraftPageComponent {
           name: 'TOOLTIP.Ilvl',
           value: item.LevelItem
         });
+        if (item.ClassJobUseTargetID) {
+          mainAttributes.push({
+            name: 'DB.Delay',
+            value: item.DelayMs / 1000
+          });
+        }
         // If the item has some damage, handle it.
         if (item.DamagePhys || item.DamageMag) {
           if (item.DamagePhys > item.DamageMag) {

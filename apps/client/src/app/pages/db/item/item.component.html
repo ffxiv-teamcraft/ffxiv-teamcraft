@@ -7,8 +7,8 @@
           <img [src]="xivapiItem.Icon | xivapiIcon" alt="{{xivapiItem.ID | itemName | i18n}}" class="item-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{xivapiItem.ID | itemName | i18n}}</h2>
-            <div class="item-kind">{{xivapiItem.ItemKind | xivapiI18n}}
-              > {{xivapiItem.ItemSearchCategory | xivapiI18n}}</div>
+            <div class="item-kind" *ngIf="xivapiItem.ItemKind">{{xivapiItem.ItemKind | xivapiI18n}}
+              <span *ngIf="xivapiItem.ItemSearchCategory"> > {{xivapiItem.ItemSearchCategory | xivapiI18n}}</span></div>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
@@ -39,49 +39,75 @@
         </div>
       </div>
     </div>
-    <div class="details-container">
-      <div class="main-attributes details">
-        <div nz-row nzGutter="10" *ngFor="let row of mainAttributes$ | async">
-          <div nz-col nzXs="12" nzMd="6">
-            <p class="detail-name" *ngIf="!row.requiresPipe">
-              {{row.name | translate}}
-            </p>
-            <p class="detail-name" *ngIf="row.requiresPipe">
-              {{row.name | xivapiI18n}}
-            </p>
+    <div class="details-container" fxLayout="column">
+      <div class="main-attributes details" fxLayout="row" fxLayoutGap="5px">
+        <div *ngFor="let row of mainAttributes$ | async" class="details-block">
+          <div class="detail-name" *ngIf="!row.requiresPipe">
+            {{row.name | translate}}
           </div>
-          <div nz-col nzXs="12" nzMd="6">
-            <p class="detail-value">
-              {{row.value}}
-              <span class="hq-value" *ngIf="xivapiItem.CanBeHq === 1 && row.valueHq && row.valueHq !== row.value">
-            ({{row.valueHq}})
-          </span>
-            </p>
+          <div class="detail-name" *ngIf="row.requiresPipe">
+            {{row.name | xivapiI18n}}
+          </div>
+          <div class="detail-value">
+            {{row.value}}
+            <span class="hq-value" *ngIf="xivapiItem.CanBeHq === 1 && row.valueHq && row.valueHq !== row.value">
+              ({{row.valueHq}})
+            </span>
           </div>
         </div>
       </div>
-      <div class="details">
-        <div nz-row nzGutter="10" *ngFor="let row of stats$ | async">
-          <div nz-col nzXs="12" nzMd="6">
-            <p class="detail-name" *ngIf="!row.requiresPipe">
-              {{row.name | translate}}
-            </p>
-            <p class="detail-name" *ngIf="row.requiresPipe">
-              {{row.name | xivapiI18n}}
-            </p>
+      <div class="details" fxLayout="row" fxLayoutGap="5px">
+        <div *ngFor="let row of stats$ | async" class="details-block">
+          <div class="detail-name" *ngIf="!row.requiresPipe">
+            {{row.name | translate}}
           </div>
-          <div nz-col nzXs="12" nzMd="6">
-            <p class="detail-value">
-              {{row.value}}
-              <span class="hq-value" *ngIf="xivapiItem.CanBeHq">
+          <div class="detail-name" *ngIf="row.requiresPipe">
+            {{row.name | xivapiI18n}}
+          </div>
+          <div class="detail-value">
+            {{row.value}}
+            <span class="hq-value" *ngIf="xivapiItem.CanBeHq">
             <span *ngIf="xivapiItem.ItemFood === undefined; else itemFoodHQ">({{row.valueHq}})</span>
-            <ng-template #itemFoodHQ>
-              {{row.valueHq}}
-            </ng-template>
-          </span>
-            </p>
+              <ng-template #itemFoodHQ>
+                {{row.valueHq}}
+              </ng-template>
+            </span>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
+      <div class="details-block">
+        <div class="detail-name">{{'DB.Tradeable' | translate}}</div>
+        <div class="detail-value">{{(xivapiItem.IsUntradable === 1 ? 'Yes' : 'No') | translate}}</div>
+      </div>
+      <div class="details-block">
+        <div class="detail-name">{{'DB.Unique' | translate}}</div>
+        <div class="detail-value">{{(xivapiItem.IsUnique === 1 ? 'Yes' : 'No') | translate}}</div>
+      </div>
+      <div class="details-block" *ngIf="gtData.item.equip">
+        <div class="detail-name">{{'DB.Dyeable' | translate}}</div>
+        <div class="detail-value">{{(xivapiItem.IsDyeable === 1 ? 'Yes' : 'No') | translate}}</div>
+      </div>
+      <div *ngIf="gtData.item.sockets" class="details-block">
+        <div class="detail-name">{{'DB.Materia_sockets' | translate}}</div>
+        <div class="detail-value">{{gtData.item.sockets}}</div>
+      </div>
+      <div class="details-block" *ngIf="gtData.item.equip">
+        <div class="detail-name">{{'DB.Advanced_melding' | translate}}</div>
+        <div class="detail-value">{{(xivapiItem.IsAdvancedMeldingPermitted === 1 ? 'Yes' : 'No') | translate}}</div>
+      </div>
+      <div class="details-block" *ngIf="gtData.item.equip">
+        <div class="detail-name">{{'DB.Repair_job' | translate}}</div>
+        <div class="detail-value">{{gtData.item.repair | jobAbbr | i18n}}</div>
+      </div>
+      <div class="details-block" *ngIf="xivapiItem.Salvage">
+        <div class="detail-name">{{'DB.Salvage_level' | translate}}</div>
+        <div class="detail-value">{{xivapiItem.Salvage.OptimalSkill}}</div>
+      </div>
+      <div class="details-block" *ngIf="gtData.item.sell_price">
+        <div class="detail-name">{{'DB.Sells_for' | translate}}</div>
+        <div class="detail-value">{{gtData.item.sell_price}}</div>
       </div>
     </div>
     <div *ngIf="data$ | async as data">
