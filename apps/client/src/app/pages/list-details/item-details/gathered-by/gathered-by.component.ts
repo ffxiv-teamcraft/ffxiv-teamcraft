@@ -90,9 +90,10 @@ export class GatheredByComponent extends ItemDetailsPopup {
         y: node.coords[1]
       },
       icon: this.item.icon,
+      itemId: this.item.id,
       type: this.item.gatheredBy.type,
       reduction: false,
-      ephemeral: node.limitType.en === 'Ephemeral'
+      ephemeral: node.limitType && node.limitType.en === 'Ephemeral'
     };
     const bellNode = bellNodes.find(n => n.zoneid === alarm.zoneId);
     if (bellNode) {
