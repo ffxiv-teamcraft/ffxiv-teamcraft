@@ -69,7 +69,7 @@
     "Not_found": "没有找到工坊或者你没有权限访问该工坊",
     "Shared_workshops": "有写入权限的工坊",
     "Rename": "重命名工坊",
-    "Add_lists": "新建清单"
+    "Add_lists": "添加清单"
   },
   "ABOUT": {
     "title": "关于",
@@ -94,9 +94,9 @@
   "Public_list": "社区清单",
   "Profile": "个人资料",
   "X_for_total": "一共 {{amount}} 个",
-  "Discounts": "Discount",
+  "Discounts": "折扣",
   "Flat_discount": "Flat",
-  "Percent_discount": "Percent",
+  "Percent_discount": "百分比",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "标签筛选",
     "Tags_filter_reset": "重置标签筛选",
