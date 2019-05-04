@@ -22,16 +22,8 @@ import { TradeIconPipe } from './trade-icon.pipe';
 import { ListHistoryPopupComponent } from './list-history-popup/list-history-popup.component';
 import { LayoutEditorModule } from '../../modules/layout-editor/layout-editor.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
-import { GatheredByComponent } from './item-details/gathered-by/gathered-by.component';
 import { MapModule } from '../../modules/map/map.module';
 import { InventoryViewComponent } from './inventory-view/inventory-view.component';
-import { HuntingComponent } from './item-details/hunting/hunting.component';
-import { InstancesComponent } from './item-details/instances/instances.component';
-import { ReducedFromComponent } from './item-details/reduced-from/reduced-from.component';
-import { VendorsComponent } from './item-details/vendors/vendors.component';
-import { VoyagesComponent } from './item-details/voyages/voyages.component';
-import { VenturesComponent } from './item-details/ventures/ventures.component';
-import { TradesComponent } from './item-details/trades/trades.component';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { PermissionsModule } from '../../modules/permissions/permissions.module';
 import { TotalPanelPricePopupComponent } from './total-panel-price-popup/total-panel-price-popup.component';
@@ -47,6 +39,7 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { ItemPickerModule } from '../../modules/item-picker/item-picker.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
+import { ItemDetailsPopupsModule } from './item-details/item-details-popups.module';
 
 const routes: Routes = [
   {
@@ -92,7 +85,8 @@ const routes: Routes = [
     FlexLayoutModule,
 
     TranslateModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    ItemDetailsPopupsModule
   ],
   declarations: [
     ListDetailsComponent,
@@ -101,29 +95,13 @@ const routes: Routes = [
     ListCrystalsPanelComponent,
     TradeIconPipe,
     ListHistoryPopupComponent,
-    GatheredByComponent,
     InventoryViewComponent,
-    HuntingComponent,
-    InstancesComponent,
-    ReducedFromComponent,
-    VendorsComponent,
-    VoyagesComponent,
-    VenturesComponent,
-    TradesComponent,
     TotalPanelPricePopupComponent,
     RelationshipsComponent
   ],
   entryComponents: [
     ListHistoryPopupComponent,
-    GatheredByComponent,
     InventoryViewComponent,
-    HuntingComponent,
-    InstancesComponent,
-    ReducedFromComponent,
-    VendorsComponent,
-    VoyagesComponent,
-    VenturesComponent,
-    TradesComponent,
     TotalPanelPricePopupComponent,
     RelationshipsComponent
   ]

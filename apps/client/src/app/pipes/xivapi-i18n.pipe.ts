@@ -4,7 +4,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Pipe({
   name: 'xivapiI18n',
-  pure: true
+  pure: false
 })
 export class XivapiI18nPipe implements PipeTransform {
 

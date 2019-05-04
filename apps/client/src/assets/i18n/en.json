@@ -1078,5 +1078,14 @@
       "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
       "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
     }
+  },
+  "DB": {
+    "How_to_obtain": "How to obtain",
+    "Used_for": "Used for",
+    "Used_for_nothing": "Used for nothing",
+    "Crafts": "Crafts",
+    "Recipes": "Recipes",
+    "No_known_way_to_obtain": "Couldn't find any ways to obtain this item",
+    "Gathering": "Gathering"
   }
 }

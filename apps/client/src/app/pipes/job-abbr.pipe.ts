@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as jobAbbrs from '../core/data/sources/job-abbr.json';
 import { LocalizedDataService } from '../core/data/localized-data.service';
 import { I18nName } from '../model/common/i18n-name';
 

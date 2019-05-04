@@ -32,7 +32,7 @@ export class SearchComponent implements OnInit {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  onlyRecipes$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('search:not-only-recipes') !== 'true');
+  onlyRecipes$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('search:only-recipes') === 'true');
 
   results$: Observable<SearchResult[]>;
 
@@ -97,7 +97,7 @@ export class SearchComponent implements OnInit {
       })
     );
     this.onlyRecipes$.subscribe(value => {
-      localStorage.setItem('search:not-only-recipes', (!value).toString());
+      localStorage.setItem('search:only-recipes', (!value).toString());
     });
   }
 

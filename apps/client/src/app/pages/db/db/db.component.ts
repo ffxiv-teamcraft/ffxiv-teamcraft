@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { map, takeUntil } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -12,8 +12,10 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class DbComponent extends TeamcraftComponent {
 
+  private lang: string;
+
   constructor(private route: ActivatedRoute, private settings: SettingsService,
-              private translate: TranslateService) {
+              private translate: TranslateService, private router: Router) {
     super();
     this.route.paramMap.pipe(
       map(params => params.get('language')),
@@ -23,6 +25,13 @@ export class DbComponent extends TeamcraftComponent {
         lang = 'en';
       }
       this.translate.use(lang);
+    });
+
+    this.translate.onLangChange.pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(change => {
+      this.router.navigateByUrl(this.router.url.replace(`/${this.lang}/`, `/${change.lang}/`));
+      this.lang = change.lang;
     });
   }
 

@@ -16,13 +16,15 @@ import { FishingBaitModule } from '../../../modules/fishing-bait/fishing-bait.mo
 import { TooltipModule } from '../../../modules/tooltip/tooltip.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { MaintenanceGuard } from '../../maintenance/maintenance.guard';
+import { ListModule } from '../../../modules/list/list.module';
+import { ItemDetailsPopupsModule } from '../../list-details/item-details/item-details-popups.module';
 
 const routes: Routes = [
   {
     path: ':itemId',
     component: ItemComponent,
     canActivate: [MaintenanceGuard]
-  },{
+  }, {
     path: ':itemId/:slug',
     component: ItemComponent,
     canActivate: [MaintenanceGuard]
@@ -49,6 +51,8 @@ const routes: Routes = [
     FullpageMessageModule,
     FishingBaitModule,
     TooltipModule,
+    ListModule,
+    ItemDetailsPopupsModule,
 
     NgZorroAntdModule
   ]
