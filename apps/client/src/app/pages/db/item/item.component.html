@@ -1,4 +1,4 @@
-<ng-container *ngIf="garlandToolsItem$ | async as gtData">
+<ng-container *ngIf="garlandToolsItem$ | async as gtData; else loader">
   <div fxLayout="column" fxLayoutGap="10px"
        *ngIf="xivapiItem$ | async as xivapiItem" [style.padding]="'0 50px' | ifMobile: '0'">
     <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px" fxLayoutAlign="flex-start flex-start"
@@ -118,7 +118,7 @@
       <app-fullpage-message height="300px" *ngIf="noData">
         {{'DB.No_known_way_to_obtain' | translate}}
       </app-fullpage-message>
-      <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column">
+      <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
         <nz-card fxFlex="1 1 33%" class="details-card" [nzTitle]="title" nzBordered="false"
                  *ngIf="data.drops !== undefined && data.drops.length > 0">
           <ng-template #title>
@@ -282,6 +282,83 @@
           </ng-template>
           <app-ventures [item]="data"></app-ventures>
         </nz-card>
+
+        <nz-card fxFlex="1 1 33%" class="details-card"
+                 *ngIf="data.tripleTriadDuels !== undefined && data.tripleTriadDuels.length > 0"
+                 nzBordered="false"
+                 [nzTitle]="title">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+              <img class="img-icon round-icon" src="https://triad.raelys.com/images/logo.png" alt="TT">
+              <div>
+                {{'DB.Triple_triad_duels' | translate}}
+              </div>
+            </div>
+          </ng-template>
+          <nz-list [nzDataSource]="data.tripleTriadDuels" [nzRenderItem]="duelTemplate" [nzItemLayout]="'horizontal'">
+            <ng-template #duelTemplate let-duel>
+              <nz-list-item [nzContent]="duelContent">
+                <nz-list-item-meta
+                  [nzTitle]="duelTitle"
+                  [nzDescription]="duelDescription">
+                  <ng-template #duelTitle>
+                    <a href="https://triad.raelys.com/npcs/{{duel.atttNpcId}}" nz-tooltip
+                       [nzTitle]="'DB.More_on_attt_npc' | translate">{{ duel.npcId | npcName | i18n }}</a>
+                  </ng-template>
+                  <ng-template #duelDescription>
+                    <div fxLayout="column">
+                      <div>
+                        {{'DB.TT_Rules' | translate}}: <span *ngFor="let rule of duel.rules; let last = last"
+                                                             class="tt-rule">{{rule | ttRuleName | i18n}} <span
+                        *ngIf="!last">,</span></span>
+                      </div>
+                      <div *ngIf="duel.unlockingQuestId">{{'DB.Unlocked_by_quest' | translate}}:
+                        <b>{{duel.unlockingQuestId | questName | i18n}}</b></div>
+                    </div>
+                  </ng-template>
+                  <ng-template #duelContent>
+                    <app-map-position [mapId]="duel.mapId" [zoneId]="duel.zoneId"
+                                      [marker]="duel.coords" showZoneName="true"></app-map-position>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </nz-card>
+        <nz-card fxFlex="1 1 33%" class="details-card"
+                 *ngIf="data.tripleTriadPack !== undefined"
+                 nzBordered="false"
+                 [nzTitle]="title">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+              <img class="img-icon round-icon" src="https://triad.raelys.com/images/logo.png" alt="TT">
+              <div>
+                {{'DB.Triple_triad_pack' | translate}}
+              </div>
+            </div>
+          </ng-template>
+          <nz-list [nzDataSource]="[data.tripleTriadPack]" [nzRenderItem]="packTemplate" [nzItemLayout]="'horizontal'">
+            <ng-template #packTemplate let-pack>
+              <nz-list-item>
+                <nz-list-item-meta
+                  [nzAvatar]="packAvatar"
+                  [nzTitle]="data.tripleTriadPack.id | itemName | i18n"
+                  [nzDescription]="packDescription">
+                  <ng-template #packAvatar>
+                    <app-item-icon [itemId]="data.tripleTriadPack.id"
+                                   [icon]="data.tripleTriadPack.id | lazyIcon"></app-item-icon>
+                  </ng-template>
+                  <ng-template #packDescription>
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-item-icon [width]="32" [itemId]="29" [icon]="29 | lazyIcon"></app-item-icon>
+                      <div>{{data.tripleTriadPack.price}}</div>
+                    </div>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </nz-card>
       </div>
     </div>
     <div *ngIf="usedFor$ | async as usedFor">
@@ -290,7 +367,7 @@
         {{'DB.Used_for_nothing' | translate}}
       </app-fullpage-message>
       <div fxLayout="row" fxLayoutGap="10px">
-        <nz-card fxFlex="1 1 33%" class="details-card" [nzTitle]="title" nzBordered="false"
+        <nz-card [fxFlex]="row.flex" class="details-card" [nzTitle]="title" nzBordered="false"
                  *ngFor="let row of usedFor">
           <ng-template #title>
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
@@ -300,7 +377,12 @@
               </div>
             </div>
           </ng-template>
-          <div fxLayout="column" fxLayoutGap="5px">
+          <div *ngIf="row.type === 1" fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <img src="https://triad.raelys.com/images/cards/large/{{row.cardId}}.png" alt="">
+            <a href="https://triad.raelys.com/cards/{{row.cardId}}"
+               target="_blank">{{'DB.Track_on_attt' | translate}}</a>
+          </div>
+          <div fxLayout="column" fxLayoutGap="5px" *ngIf="row.links">
             <div *ngFor="let link of row.links">
               <div *ngIf="link.itemId" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                 <app-item-icon width="32" [itemId]="link.itemId" [icon]="link.itemId | lazyIcon"></app-item-icon>
@@ -315,3 +397,6 @@
     </div>
   </div>
 </ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

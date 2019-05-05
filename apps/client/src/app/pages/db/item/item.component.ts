@@ -23,6 +23,10 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { List } from '../../../modules/list/model/list';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
+import { ATTTService } from '../service/attt.service';
+import { TripleTriadDuel } from '../model/attt/triple-triad-duel';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { UsedForType } from '../model/used-for-type';
 
 @Component({
   selector: 'app-item',
@@ -62,7 +66,7 @@ export class ItemComponent extends TeamcraftPageComponent {
               private listPicker: ListPickerService, private listsFacade: ListsFacade,
               private progressService: ProgressPopupService, private listManager: ListManagerService,
               private notificationService: NzNotificationService, private rotationPicker: RotationPickerService,
-              seo: SeoService) {
+              private attt: ATTTService, private lazyData: LazyDataService, seo: SeoService) {
     super(seo);
 
     this.route.paramMap.subscribe(params => {
@@ -221,12 +225,13 @@ export class ItemComponent extends TeamcraftPageComponent {
     this.garlandToolsItem$ = itemId$.pipe(
       switchMap(itemId => {
         return this.gt.getItem(+itemId);
-      })
+      }),
+      shareReplay(1)
     );
 
-    this.data$ = this.garlandToolsItem$.pipe(
-      map(data => {
-        const item: ListRow = {
+    this.data$ = combineLatest([this.garlandToolsItem$, this.xivapiItem$]).pipe(
+      switchMap(([data, xivapiItem]) => {
+        let item: ListRow = {
           id: data.item.id,
           icon: data.item.icon,
           amount: 1,
@@ -234,22 +239,8 @@ export class ItemComponent extends TeamcraftPageComponent {
           used: 0,
           yield: 1
         };
-        if (data.isCraft()) {
-          item.craftedBy = this.extractor.extractCraftedBy(item.id, data);
-        }
-        item.vendors = this.extractor.extractVendors(item.id, data);
-        item.tradeSources = this.extractor.extractTradeSources(item.id, data);
-        item.reducedFrom = this.extractor.extractReducedFrom(item.id, data);
-        item.desynths = this.extractor.extractDesynths(item.id, data);
-        item.instances = this.extractor.extractInstances(item.id, data);
-        item.gardening = this.extractor.extractGardening(item.id, data);
-        item.voyages = this.extractor.extractVoyages(item.id, data);
-        item.drops = this.extractor.extractDrops(item.id, data);
-        item.ventures = this.extractor.extractVentures(item.id, data);
-        item.gatheredBy = this.extractor.extractGatheredBy(item.id, data);
-        item.alarms = this.extractor.extractAlarms(item.id, data, item);
-        item.masterbooks = this.extractor.extractMasterBooks(item.id, data, item);
-        return item;
+        item = this.extractor.addDataToItem(item, data);
+        return this.handleAdditionalData(item, data, xivapiItem);
       }),
       tap(item => {
         this.noData = (item.craftedBy === undefined || item.craftedBy.length === 0)
@@ -262,7 +253,8 @@ export class ItemComponent extends TeamcraftPageComponent {
           && (item.drops === undefined || item.drops.length === 0)
           && (item.ventures === undefined || item.ventures.length === 0)
           && (!item.gatheredBy)
-          && (item.alarms === undefined || item.alarms.length === 0);
+          && (item.alarms === undefined || item.alarms.length === 0)
+          && (item.tripleTriadDuels === undefined || item.tripleTriadDuels.length === 0);
       })
     );
 
@@ -294,15 +286,24 @@ export class ItemComponent extends TeamcraftPageComponent {
             url: `http://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${listRow.gardening}`
           });
         }
+        if (xivapiItem.AdditionalData) {
+          links.push({
+            title: 'Another Triple Triad Tracker',
+            icon: 'https://triad.raelys.com/images/logo.png',
+            url: `https://triad.raelys.com/cards/${xivapiItem.AdditionalData}`
+          });
+        }
         return links;
       })
     );
 
-    this.usedFor$ = this.garlandToolsItem$.pipe(
-      map(data => {
+    this.usedFor$ = combineLatest([this.garlandToolsItem$, this.xivapiItem$]).pipe(
+      map(([data, xivapiItem]) => {
         const usedFor = [];
         if (data.item.ingredient_of !== undefined) {
           usedFor.push({
+            type: UsedForType.CRAFT,
+            flex: '1 1 33%',
             title: 'DB.Crafts',
             icon: './assets/icons/classjob/blacksmith.png',
             links: Object.keys(data.item.ingredient_of)
@@ -311,6 +312,15 @@ export class ItemComponent extends TeamcraftPageComponent {
                   itemId: +itemId
                 };
               })
+          });
+        }
+        if (xivapiItem.AdditionalData) {
+          usedFor.push({
+            flex: '0 0 auto',
+            type: UsedForType.TT_CARD_UNLOCK,
+            title: 'DB.TT_card_unlock',
+            icon: 'https://triad.raelys.com/images/logo.png',
+            cardId: xivapiItem.AdditionalData
           });
         }
         return usedFor;
@@ -367,7 +377,7 @@ export class ItemComponent extends TeamcraftPageComponent {
       mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
-          combineLatest(this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$).pipe(
+          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
             map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
             map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
             filter(l => l !== undefined),
@@ -380,5 +390,48 @@ export class ItemComponent extends TeamcraftPageComponent {
       this.notificationService.template(this.notification);
     });
 
+  }
+
+  private handleAdditionalData(_item: ListRow, gtData: ItemData, xivapiItem: any): Observable<ListRow> {
+    let res$: Observable<ListRow> = of(_item);
+    if (xivapiItem.AdditionalData) {
+      res$ = res$.pipe(
+        switchMap(item => {
+          return this.attt.getCard(xivapiItem.AdditionalData)
+            .pipe(
+              map(card => {
+                if (card.sources.npcs.length > 0) {
+                  item.tripleTriadDuels = card.sources.npcs.map(npc => {
+                    const npcPosition = this.lazyData.npcs[npc.resident_id].position;
+                    const duel: TripleTriadDuel = {
+                      atttNpcId: npc.id,
+                      npcId: npc.resident_id,
+                      mapId: npcPosition ? npcPosition.map : 0,
+                      zoneId: npcPosition ? npcPosition.zoneid : 0,
+                      coords: {
+                        x: npc.location.x,
+                        y: npc.location.y
+                      },
+                      rules: npc.rule_ids
+                    };
+                    if (npc.quest !== undefined) {
+                      duel.unlockingQuestId = npc.quest.id;
+                    }
+                    return duel;
+                  });
+                }
+                if (card.sources.pack !== null) {
+                  item.tripleTriadPack = {
+                    id: [10128, 10129, 10130, 13380, 10077][card.sources.pack.id - 1],
+                    price: card.sources.pack.cost
+                  }
+                }
+                return item;
+              })
+            );
+        })
+      );
+    }
+    return res$;
   }
 }

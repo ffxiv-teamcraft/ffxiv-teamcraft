@@ -31,6 +31,8 @@ import { PermissionLevelPipe } from './permission-level.pipe';
 import { ElementIconPipe } from './element-icon.pipe';
 import { FishEyesDurationPipe } from './fish-eyes-duration.pipe';
 import { KeysPipe } from './keys.pipe';
+import { TripleTriadRuleNamePipe } from './triple-triad-rule-name.pipe';
+import { QuestNamePipe } from './quest-name.pipe';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,9 @@ import { KeysPipe } from './keys.pipe';
     PermissionLevelPipe,
     ElementIconPipe,
     FishEyesDurationPipe,
-    KeysPipe
+    KeysPipe,
+    TripleTriadRuleNamePipe,
+    QuestNamePipe
   ],
   exports: [
     ItemNamePipe,
@@ -101,7 +105,9 @@ import { KeysPipe } from './keys.pipe';
     PermissionLevelPipe,
     ElementIconPipe,
     FishEyesDurationPipe,
-    KeysPipe
+    KeysPipe,
+    TripleTriadRuleNamePipe,
+    QuestNamePipe
   ]
 })
 export class PipesModule {

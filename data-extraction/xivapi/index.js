@@ -21,7 +21,9 @@ let todo = [
   'itemIcons',
   'spearFishingLog',
   'aetherstream',
-  'maps'
+  'maps',
+  'tripleTriadRules',
+  'quests'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -537,5 +539,41 @@ if (hasTodo('maps')) {
     });
   }, null, () => {
     persistToJsonAsset('maps', maps);
+  });
+}
+
+if (hasTodo('tripleTriadRules')) {
+  const rules = {};
+  getAllPages('https://xivapi.com/TripleTriadRule?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(rule => {
+      rules[rule.ID] = {
+        name: {
+          en: rule.Name_en,
+          ja: rule.Name_ja,
+          de: rule.Name_de,
+          fr: rule.Name_fr
+        }
+      };
+    });
+  }, null, () => {
+    persistToTypescript('triple-triad-rules', 'tripleTriadRules', rules);
+  });
+}
+
+if (hasTodo('quests')) {
+  const quests = {};
+  getAllPages('https://xivapi.com/Quest?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(quest => {
+      quests[quest.ID] = {
+        name: {
+          en: quest.Name_en,
+          ja: quest.Name_ja,
+          de: quest.Name_de,
+          fr: quest.Name_fr
+        }
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('quests', quests);
   });
 }

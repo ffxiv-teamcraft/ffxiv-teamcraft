@@ -1098,6 +1098,14 @@
     "Auto": "Auto",
     "Salvage_level": "Optimal Salvage lvl",
     "Sells_for": "Sell price",
-    "Click_to_navigate": "Click on the icon to open full item details"
+    "Click_to_navigate": "Click on the icon to open full item details",
+    "Triple_triad_duels": "Triple triad duels",
+    "TT_Rules": "Rules",
+    "TT_card_unlock": "Unlocks card in collection",
+    "Track_on_attt": "Track on Another Triple Triad Tracker",
+    "Unlocked_by_quest": "Unlocked by quest",
+    "More_on_attt_npc": "See more details about this npc on Another Triple Triad tracker",
+    "Triple_triad_pack": "Triple triad card pack",
+    "Dungeons": "Dungeons/Trials"
   }
 }
