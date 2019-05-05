@@ -735,8 +735,10 @@
         "Created_by": "제작자: {{name}}",
         "Copy_folder": "이 폴더와 내용을 내 계정으로 복사",
         "Folder_copied": "폴더가 내 계정에 복사되었습니다",
+        "Your_folders": "Your folders",
         "Favorite_folders": "즐겨찾기 폴더",
-        "Add_rotations": "로테이션 추가"
+        "Add_rotations": "로테이션 추가",
+        "Open": "Open folder"
       }
     },
     "CATEGORY": {
