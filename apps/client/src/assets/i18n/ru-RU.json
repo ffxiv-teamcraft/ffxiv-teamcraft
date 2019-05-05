@@ -735,8 +735,10 @@
         "Created_by": "Создано {{name}}",
         "Copy_folder": "Копировать эту папку её содержимое на ваш аккаунт",
         "Folder_copied": "Папка скопирована на ваш аккаунт",
+        "Your_folders": "Your folders",
         "Favorite_folders": "Избранные папки",
-        "Add_rotations": "Добавить ротацию"
+        "Add_rotations": "Добавить ротацию",
+        "Open": "Open folder"
       }
     },
     "CATEGORY": {
