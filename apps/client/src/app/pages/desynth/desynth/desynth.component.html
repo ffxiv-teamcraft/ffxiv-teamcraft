@@ -88,6 +88,10 @@
     </div>
   </div>
 </div>
+<nz-pagination [nzPageIndex]="page$ | async" (nzPageIndexChange)="page$.next($event)" [nzTotal]="totalLength"
+               *ngIf="totalLength > 0"
+               [nzPageSize]="pageSize" fxLayout="row"
+               fxLayoutAlign="center center"></nz-pagination>
 
 <app-fullpage-message *ngIf="pristine" height="300px">
   {{'DESYNTH.Intro' | translate}}

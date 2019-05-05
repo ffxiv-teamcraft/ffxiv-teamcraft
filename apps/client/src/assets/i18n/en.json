@@ -735,8 +735,10 @@
         "Created_by": "Created by {{name}}",
         "Copy_folder": "Copy this folder and its content to your account",
         "Folder_copied": "Folder copied to your account",
+        "Your_folders": "Your folders",
         "Favorite_folders": "Favorite folders",
-        "Add_rotations": "Add rotations"
+        "Add_rotations": "Add rotations",
+        "Open": "Open folder"
       }
     },
     "CATEGORY": {

@@ -735,8 +735,10 @@
         "Created_by": "Criado por {{name}}",
         "Copy_folder": "Copiar esta pasta e seu conteúdo para sua conta",
         "Folder_copied": "Pasta copiada para sua conta",
+        "Your_folders": "Your folders",
         "Favorite_folders": "Pastas favoritas",
-        "Add_rotations": "Add rotations"
+        "Add_rotations": "Add rotations",
+        "Open": "Open folder"
       }
     },
     "CATEGORY": {
