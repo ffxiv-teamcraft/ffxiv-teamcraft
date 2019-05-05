@@ -30,14 +30,42 @@ export class RotationPickerDrawerComponent {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  rotations$ = combineLatest(this.rotationsFacade.myRotations$, this.query$).pipe(
-    map(([rotations, query]) => {
-      return rotations.filter(rotation => rotation.getName().toLowerCase().indexOf((query || '').toLowerCase()) > -1);
-    })
-  );
+  rotations$: Observable<CraftingRotation[]>;
+
+  rotationFoldersDisplay$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
 
   constructor(private rotationsFacade: RotationsFacade, private authFacade: AuthFacade,
               private rotationFoldersFacade: RotationFoldersFacade, public ref: NzDrawerRef<CraftingRotation>) {
+
+    this.rotationFoldersDisplay$ = combineLatest([this.rotationFoldersFacade.myRotationFolders$, this.rotationsFacade.myRotations$, this.query$]).pipe(
+      map(([folders, rotations, query]) => {
+        return folders
+          .filter(folder => folder.$key !== undefined)
+          .map(folder => {
+            return {
+              folder: folder,
+              rotations: folder.rotationIds.map(id => rotations.find(r => r.$key === id))
+                .filter(r => r.getName().indexOf(query) > -1 &&  r !== undefined)
+                .map(rotation => {
+                  rotation.folderId = folder.$key;
+                  return rotation;
+                })
+            };
+          });
+      }),
+      map(displays => displays.sort((a, b) => a.folder.index - b.folder.index))
+    );
+
+    this.rotations$ = combineLatest([this.rotationsFacade.myRotations$, this.rotationFoldersFacade.myRotationFolders$, this.query$]).pipe(
+      map(([rotations, folders, query]) => {
+        return rotations.filter(rotation => {
+          return rotation.getName().indexOf(query) > -1 && folders.find(folder => {
+            return folder.rotationIds.find(id => id === rotation.$key) !== undefined;
+          }) === undefined;
+        }).sort((a, b) => a.index - b.index);
+      })
+    );
+
     this.favoriteRotations$ = this.authFacade.favorites$.pipe(
       map(favorites => (favorites.rotations || [])),
       tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
@@ -49,7 +77,7 @@ export class RotationPickerDrawerComponent {
       })
     );
 
-    this.favoriteFolders$ = combineLatest(this.rotationFoldersFacade.favoriteRotationFolders$, this.query$).pipe(
+    this.favoriteFolders$ = combineLatest([this.rotationFoldersFacade.favoriteRotationFolders$, this.query$]).pipe(
       map(([folders, query]) => {
         return folders
           .filter(folder => {
