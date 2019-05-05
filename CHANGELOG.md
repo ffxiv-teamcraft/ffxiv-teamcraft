@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.10"></a>
+## [5.3.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.9...v5.3.10) (2019-05-05)
+
+
+### Bug Fixes
+
+* **display:** fixed layout issues in simulator on tablet ([c55b521](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c55b521))
+* fixed an issue with some panels not opening properly on safari ([780260f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/780260f))
+
+
+### Features
+
+* **desynth-guide:** added pagination to results to display all of them ([3b183b8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b183b8))
+* **rotations:** rotation picker now respects order and folders ([7918bdc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7918bdc))
+
+
+
 <a name="5.3.9"></a>
 ## [5.3.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.8...v5.3.9) (2019-05-04)
 
