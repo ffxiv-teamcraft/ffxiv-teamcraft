@@ -36,7 +36,7 @@ export class RotationsPageComponent {
                 .map(rotation => {
                   rotation.folderId = folder.$key;
                   return rotation;
-                })
+                }).sort((a, b) => a.index - b.index)
             };
           });
       }),
@@ -49,7 +49,7 @@ export class RotationsPageComponent {
           return folders.find(folder => {
             return folder.rotationIds.find(id => id === rotation.$key) !== undefined;
           }) === undefined;
-        });
+        }).sort((a, b) => a.index - b.index);
       })
     );
 

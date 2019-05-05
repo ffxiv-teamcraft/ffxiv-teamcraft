@@ -14,8 +14,8 @@
 <div class="results" *ngIf="results$ | async as results; else noResults">
   <div *ngFor="let node of results" [class.compact-node]="compactDisplay">
     <nz-card [nzCover]="compactDisplay?null:map"
-             [nzActions]="(canCreateAlarm(alarms$ | async, node) && (node.timed || node.weathers?.length > 0))?
-             (alarmGroups$ | async)?.length > 0?[actionAlarm, actionAlarmToGroup]:[actionAlarm]
+             [nzActions]="(node.timed || node.weathers?.length > 0)?
+             (alarmGroups$ | async)?.length > 0 && canCreateAlarm(alarms$ | async, node)?[actionAlarm, actionAlarmToGroup]:[actionAlarm]
              :[]">
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title" [nzDescription]="description">
       </nz-card-meta>
@@ -106,9 +106,14 @@
       </div>
     </ng-template>
     <ng-template #actionAlarm>
-      <i class="material-icons create-alarm" *ngIf="alarmsLoaded$ | async" (click)="addAlarm(node)">
-        alarm_add
-      </i>
+      <div *ngIf="canCreateAlarm(alarms$ | async, node); else alarmCreated">
+        <i class="material-icons create-alarm" *ngIf="alarmsLoaded$ | async" (click)="addAlarm(node)">
+          alarm_add
+        </i>
+      </div>
+      <ng-template #alarmCreated>
+        {{'ALARMS.Alarm_already_created' | translate}}
+      </ng-template>
     </ng-template>
     <ng-template #actionAlarmToGroup>
       <ng-container *ngIf="alarmGroups$ | async as groups">

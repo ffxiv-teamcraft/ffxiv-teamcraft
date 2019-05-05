@@ -94,6 +94,9 @@
   "Public_list": "Community list",
   "Profile": "Profile",
   "X_for_total": "{{amount}} for total",
+  "Discounts": "Discount",
+  "Flat_discount": "Flat",
+  "Percent_discount": "Percent",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filter using tags",
     "Tags_filter_reset": "Reset tags filter",
@@ -732,8 +735,10 @@
         "Created_by": "Created by {{name}}",
         "Copy_folder": "Copy this folder and its content to your account",
         "Folder_copied": "Folder copied to your account",
+        "Your_folders": "Your folders",
         "Favorite_folders": "Favorite folders",
-        "Add_rotations": "Add rotations"
+        "Add_rotations": "Add rotations",
+        "Open": "Open folder"
       }
     },
     "CATEGORY": {

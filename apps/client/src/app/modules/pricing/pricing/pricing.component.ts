@@ -38,6 +38,10 @@ export class PricingComponent implements AfterViewInit {
 
   public spendingTotal = 0;
 
+  public discount = 0;
+
+  public flatDiscount = 0;
+
   private server$: Observable<string> = this.authFacade.mainCharacter$.pipe(
     map(char => char.Server)
   );
@@ -53,6 +57,9 @@ export class PricingComponent implements AfterViewInit {
       tap(list => {
         this.updateCosts(list);
         this.updateCosts(list);
+        const discounts = (localStorage.getItem(`discounts:${list.$key}`) || '0,0').split(',');
+        this.flatDiscount = +discounts[0];
+        this.discount = +discounts[1];
       }),
       shareReplay(1)
     );
@@ -71,6 +78,10 @@ export class PricingComponent implements AfterViewInit {
       map(list => list.items.filter(i => i.craftedBy && i.craftedBy.length > 0)),
       shareReplay(1)
     );
+  }
+
+  public saveDiscounts(listKey: string): void {
+    localStorage.setItem(`discounts:${listKey}`, `${this.flatDiscount},${this.discount}`);
   }
 
   public fillMbCosts(rows: ListRow[], finalItems = false): void {
@@ -223,11 +234,12 @@ export class PricingComponent implements AfterViewInit {
   }
 
   getTotalEarnings(rows: ListRow[], list: List): number {
-    return rows.filter(row => row.usePrice).reduce((total, row) => {
+    const totalPrice = rows.filter(row => row.usePrice).reduce((total, row) => {
       const price = this.pricingService.getEarnings(row);
       const amount = this.pricingService.getAmount(list.$key, row, true);
       return total + amount.nq * price.nq + amount.hq * price.hq;
     }, 0);
+    return (totalPrice - this.flatDiscount) * (1 - (this.discount / 100));
   }
 
   /**

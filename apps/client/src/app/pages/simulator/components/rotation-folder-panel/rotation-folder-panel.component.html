@@ -19,6 +19,13 @@
         {{_folder.name}}
       </div>
       <div nz-col nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
+        <a (click)="$event.stopPropagation()" nz-tooltip
+           [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Open' | translate" nz-button
+           [nzShape]="'circle'"
+           [nzType]="'primary'"
+           routerLink="/rotation-folder/{{_folder.$key}}">
+          <i nz-icon type="folder-open"></i>
+        </a>
         <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                 ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">

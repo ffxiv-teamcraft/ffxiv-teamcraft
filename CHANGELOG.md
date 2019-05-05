@@ -2,6 +2,60 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.10"></a>
+## [5.3.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.9...v5.3.10) (2019-05-05)
+
+
+### Bug Fixes
+
+* **display:** fixed layout issues in simulator on tablet ([c55b521](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c55b521))
+* fixed an issue with some panels not opening properly on safari ([780260f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/780260f))
+
+
+### Features
+
+* **desynth-guide:** added pagination to results to display all of them ([3b183b8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b183b8))
+* **rotations:** rotation picker now respects order and folders ([7918bdc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7918bdc))
+
+
+
+<a name="5.3.9"></a>
+## [5.3.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.8...v5.3.9) (2019-05-04)
+
+
+### Bug Fixes
+
+* **teams:** fixed an issue with lists loading when you have multiple teams ([b3e1fdf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b3e1fdf))
+
+
+### Features
+
+* **alarms:** you can now enable/disable alarms individually ([a465acc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a465acc))
+* **gathering-location:** a message is now shown if an item already has an alarm ([1811953](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1811953))
+
+
+
+<a name="5.3.8"></a>
+## [5.3.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.7...v5.3.8) (2019-05-03)
+
+
+### Bug Fixes
+
+* **alarms-overlay:** fixed an issue with bottom scroll not properly aligned ([2136edb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2136edb))
+* **ci:** fixed an issue with build in CI env ([bf90e1e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf90e1e))
+* **desktop:** fixed an error message sometimes showing when closing desktop app ([c5d15d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5d15d0))
+
+
+### Features
+
+* **desktop:** mouse back/forward buttons are now properly bound to the app ([c1ef788](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1ef788))
+* **layout:** added support for reversed tiers display ([1955fde](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1955fde))
+* **levequests:** starting level now defaults to current level on profile ([3a8a08b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3a8a08b))
+* **list:** you can now create ephemeral lists with name input ([d521ef7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d521ef7))
+* **pricing:** you can now setup discounts on pricing mode, saved inside localstorage ([a390d39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a390d39))
+
+
+
 <a name="5.3.7"></a>
 ## [5.3.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.6...v5.3.7) (2019-05-02)
 

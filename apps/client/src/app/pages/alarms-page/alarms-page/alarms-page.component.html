@@ -123,15 +123,22 @@
              class="alarm-card"
              fxLayout="column"
              [class.spawned]="row.spawned"
-             [class.played]="row.played  && !row.spawned">
+             [class.played]="row.played  && !row.spawned"
+             [class.disabled]="!row.alarm.enabled">
       <nz-card-meta [nzAvatar]="itemIcon | ifMobile: null" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
       </nz-card-meta>
       <ng-template #itemIcon>
-        <app-item-icon *ngIf="row.alarm.icon; else customAlarmIcon" [icon]="row.alarm.icon"
-                       [itemId]="row.alarm.itemId"></app-item-icon>
-        <ng-template #customAlarmIcon>
-          <nz-avatar [nzText]="row.alarm.name[0]"></nz-avatar>
-        </ng-template>
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <app-item-icon *ngIf="row.alarm.icon; else customAlarmIcon" [icon]="row.alarm.icon"
+                         [itemId]="row.alarm.itemId"></app-item-icon>
+          <ng-template #customAlarmIcon>
+            <nz-avatar [nzText]="row.alarm.name[0]"></nz-avatar>
+          </ng-template>
+          <nz-switch [(ngModel)]="row.alarm.enabled"
+                     nzSize="small"
+                     (click)="$event.stopPropagation();"
+                     (ngModelChange)="alarmsFacade.updateAlarm(row.alarm)"></nz-switch>
+        </div>
       </ng-template>
     </nz-card>
     <ng-template #cardTitle>

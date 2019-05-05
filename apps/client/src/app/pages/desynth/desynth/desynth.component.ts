@@ -36,6 +36,13 @@ export class DesynthComponent {
 
   results$: Observable<DesynthSearchResult[]>;
 
+  public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+
+  public pageSize = 50;
+
+  public totalLength = 0;
+
+
   @ViewChild('notificationRef')
   notification: TemplateRef<any>;
 
@@ -50,7 +57,7 @@ export class DesynthComponent {
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
               private listsFacade: ListsFacade, private progressService: ProgressPopupService) {
     this.jobList = this.gt.getJobs().slice(8, 16);
-    this.results$ = combineLatest(this.job$, this.level$).pipe(
+    const searchResults$ = combineLatest([this.job$, this.level$]).pipe(
       debounce(() => this.search$),
       filter(([job, level]) => job !== null && level !== null),
       tap(([job, level]) => {
@@ -122,12 +129,22 @@ export class DesynthComponent {
             };
           }).sort((a, b) => {
             return a.score === b.score ? a.itemId - b.itemId : b.score - a.score;
-          }).slice(0, 50);
+          });
       }),
-      tap(() => {
+      tap((res) => {
+        this.totalLength = res.length;
         this.loading = false;
       })
     );
+
+    this.results$ = combineLatest([searchResults$, this.page$])
+      .pipe(
+        map(([results, page]) => {
+          const pageStart = Math.max(0, (page - 1) * this.pageSize);
+          return results.slice(pageStart, pageStart + this.pageSize);
+        })
+      );
+
     route.queryParamMap
       .pipe(first())
       .subscribe((query) => {

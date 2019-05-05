@@ -54,6 +54,34 @@
     </ng-template>
   </nz-list>
 
+  <ng-container *ngIf="rotationFoldersDisplay$ | async as ownFolders">
+    <div *ngIf="ownFolders.length > 0">
+      <h3>{{'SIMULATOR.ROTATIONS.FOLDERS.Your_folders' | translate}}</h3>
+      <nz-list *ngFor="let folder of ownFolders" [nzDataSource]="folder.rotations"
+               [nzRenderItem]="rotation"
+               [nzHeader]="header">
+        <ng-template #rotation let-rotation>
+          <nz-list-item [nzActions]="[pickRotation]">
+            <nz-list-item-meta [nzTitle]="rotation.getName()">
+            </nz-list-item-meta>
+          </nz-list-item>
+          <ng-template #pickRotation>
+            <a nz-button *ngIf="!custom" [nzType]="'primary'" [nzShape]="'circle'" (click)="ref.close(rotation)"
+               routerLink="/simulator/{{itemId}}/{{recipeId}}/{{rotation.$key}}">
+              <i nz-icon type="check"></i>
+            </a>
+            <a nz-button *ngIf="custom" [nzType]="'primary'" [nzShape]="'circle'" (click)="ref.close(rotation)"
+               routerLink="/simulator/custom/{{rotation.$key}}">
+              <i nz-icon type="check"></i>
+            </a>
+          </ng-template>
+        </ng-template>
+        <ng-template #header><i nz-icon type="folder"></i>&nbsp;{{folder.folder.name}}
+        </ng-template>
+      </nz-list>
+    </div>
+  </ng-container>
+
   <ng-container *ngIf="favoriteFolders$ | async as favoriteFolders">
     <div *ngIf="favoriteFolders.length > 0">
       <h3>{{'SIMULATOR.ROTATIONS.FOLDERS.Favorite_folders' | translate}}</h3>

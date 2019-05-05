@@ -38,7 +38,7 @@ export class AlarmBellService {
               return alarm.groupId === group.$key;
             });
             // If this alarm has a group and it's muted, don't even go further
-            if (alarmGroup && !alarmGroup.enabled) {
+            if ((alarmGroup && !alarmGroup.enabled) || !alarm.enabled) {
               return false;
             }
             const lastPlayed = this.getLastPlayed(alarm);
