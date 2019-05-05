@@ -1,6 +1,6 @@
 <ng-container *ngIf="rotation$ | async as rotation">
   <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column" *ngIf="!rotation.notFound; else notFound">
-    <div class="buttons" fxLayout.lt-md="row wrap" fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="10px">
+    <div class="buttons" fxLayout.lt-lg="row wrap" fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="10px">
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
               *ngIf="rotation.$key !== undefined"
               [nzTitle]="'SIMULATOR.Save_as_new' | translate" (click)="saveRotationAsNew(rotation)">
