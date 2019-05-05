@@ -735,8 +735,10 @@
         "Created_by": "{{name}} で作成された",
         "Copy_folder": "このフォルダーと内容を自分のアカウントにコピーする",
         "Folder_copied": "フォルダーがマイアカウントにコピーされました",
+        "Your_folders": "Your folders",
         "Favorite_folders": "お気に入りのフォルダー",
-        "Add_rotations": "スキル回し追加"
+        "Add_rotations": "スキル回し追加",
+        "Open": "Open folder"
       }
     },
     "CATEGORY": {
