@@ -735,8 +735,10 @@
         "Created_by": "由 {{name}} 创建",
         "Copy_folder": "复制此文件夹及其内容到你的账号",
         "Folder_copied": "文件夹已复制到你的账号",
+        "Your_folders": "Your folders",
         "Favorite_folders": "收藏文件夹",
-        "Add_rotations": "新建工序"
+        "Add_rotations": "新建工序",
+        "Open": "Open folder"
       }
     },
     "CATEGORY": {

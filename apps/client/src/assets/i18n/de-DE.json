@@ -735,8 +735,10 @@
         "Created_by": "Erstellt von {{name}}",
         "Copy_folder": "Kopiere diesen Ordner und seinen Inhalt in dein Konto",
         "Folder_copied": "Ordner in dein Konto kopiert",
+        "Your_folders": "Your folders",
         "Favorite_folders": "Favorisierte Ordner",
-        "Add_rotations": "Add rotations"
+        "Add_rotations": "Add rotations",
+        "Open": "Open folder"
       }
     },
     "CATEGORY": {
