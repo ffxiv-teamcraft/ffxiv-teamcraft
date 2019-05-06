@@ -1,8 +1,8 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { concat, Observable, of } from 'rxjs';
+import { combineLatest, concat, Observable, of } from 'rxjs';
 import { ItemData } from '../../../model/garland-tools/item-data';
-import { filter, first, map, mergeMap, shareReplay, switchMap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -13,8 +13,6 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DataExtractorService } from '../../../modules/list/data/data-extractor.service';
 import { ListRow } from '../../../modules/list/model/list-row';
-import { combineLatest } from 'rxjs/internal/observable/combineLatest';
-import { tap } from 'rxjs/internal/operators/tap';
 import { SearchResult } from '../../../model/search/search-result';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -264,7 +262,7 @@ export class ItemComponent extends TeamcraftPageComponent {
           {
             title: 'GarlandTools',
             url: `http://www.garlandtools.org/db/#item/${xivapiItem.ID}`,
-            icon: 'http://garlandtools.org/favicon.png'
+            icon: 'https://garlandtools.org/favicon.png'
           },
           {
             title: 'Gamer Escape',
@@ -283,7 +281,7 @@ export class ItemComponent extends TeamcraftPageComponent {
           links.push({
             title: 'FFXIV Gardening',
             icon: './assets/icons/Gardening.png',
-            url: `http://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${listRow.gardening}`
+            url: `https://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${listRow.gardening}`
           });
         }
         if (xivapiItem.AdditionalData) {

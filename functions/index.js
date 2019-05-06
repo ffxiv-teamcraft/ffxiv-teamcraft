@@ -105,15 +105,14 @@ function dectectIndexBot(userAgent) {
     'bingbot',
     'yandexbot',
     'duckduckbot',
+    'googlebot',
     'slurp',
 
-    'twitterbot',
     'facebookexternalhit',
     'linkedinbot',
     'embedly',
     'baiduspider',
     'pinterest',
-    'slackbot',
     'vkShare',
     'facebot',
     'outbrain',
@@ -124,7 +123,7 @@ function dectectIndexBot(userAgent) {
 
   for (const bot of bots) {
     if (agent.indexOf(bot.toLowerCase()) > -1) {
-      console.log('bot detected', bot, agent);
+      console.log('index bot detected', bot, agent);
       return true;
     }
   }
@@ -145,7 +144,7 @@ function dectectDeepLinkBot(userAgent) {
 
   for (const bot of deepLinkBots) {
     if (agent.indexOf(bot.toLowerCase()) > -1) {
-      console.log('bot detected', bot, agent);
+      console.log('deep link bot detected', bot, agent);
       return true;
     }
   }
@@ -155,7 +154,7 @@ function dectectDeepLinkBot(userAgent) {
 
 }
 
-const indexAllowedPages = ['/search', '/community-rotations', '/levequests', '/about', '/support-us', '/desynth-guide', '/gc-supply', '/macro-translator'];
+const indexAllowedPages = ['/search', '/community-rotations', '/levequests', '/about', '/support-us', '/desynth-guide', '/gc-supply', '/macro-translator', '/db/'];
 
 app.get('*', (req, res) => {
   const isIndexBot = dectectIndexBot(req.headers['user-agent']);
