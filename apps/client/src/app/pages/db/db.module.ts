@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: 'item',
-        loadChildren: () => ItemModule
+        loadChildren: './item/item.module#ItemModule'
       }
     ]
   }
