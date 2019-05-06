@@ -88,13 +88,12 @@ const fetch = require('node-fetch');
 const url = require('url');
 const app = express();
 
-// TODO WE REALLY DON'T WANT THIS IN PROD ENV, DO NOT FORGET !!!
-const appUrl = 'beta.ffxivteamcraft.com';
-const renderUrl = 'https://render-tron.appspot.com/render';
+const appUrl = 'ffxivteamcraft.com';
+const renderUrl = 'https://ffxivteamcraft.appspot.com/render';
 
 function generateUrl(request) {
   return url.format({
-    protocol: request.protocol,
+    protocol: 'https',
     host: appUrl,
     pathname: request.originalUrl
   });

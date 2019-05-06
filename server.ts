@@ -13,6 +13,10 @@ import { readFileSync } from 'fs';
 // Polyfills required for Firebase
 (global as any).WebSocket = require('ws');
 (global as any).XMLHttpRequest = require('xhr2');
+(global as any).navigator = null;
+(global as any).Event = null;
+(global as any).document = null;
+
 
 // Faster renders in prod mode
 enableProdMode();

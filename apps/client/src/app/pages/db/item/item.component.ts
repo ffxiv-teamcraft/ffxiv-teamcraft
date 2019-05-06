@@ -345,7 +345,8 @@ export class ItemComponent extends TeamcraftPageComponent {
         return {
           title: this.i18n.getName(this.l12n.getItem(item.ID)),
           description: item[`Description_${this.translate.currentLang}`] || item.Description_en,
-          url: `https://ffxivteamcraft.com/db/item/${item.ID}/${this.i18n.getName(this.l12n.getItem(item.ID)).split(' ').join('+')}`
+          url: `https://ffxivteamcraft.com/db/item/${item.ID}/${this.i18n.getName(this.l12n.getItem(item.ID)).split(' ').join('+')}`,
+          image: `https://xivapi.com${item.Icon}`
         };
       })
     );
