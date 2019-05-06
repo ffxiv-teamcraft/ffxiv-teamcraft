@@ -252,7 +252,8 @@ export class ItemComponent extends TeamcraftPageComponent {
           && (item.ventures === undefined || item.ventures.length === 0)
           && (!item.gatheredBy)
           && (item.alarms === undefined || item.alarms.length === 0)
-          && (item.tripleTriadDuels === undefined || item.tripleTriadDuels.length === 0);
+          && (item.tripleTriadDuels === undefined || item.tripleTriadDuels.length === 0)
+          && !item.tripleTriadPack;
       })
     );
 
