@@ -50,7 +50,7 @@ export class EorzeanTimeService {
 
   private tick(): void {
     // How to mock time:
-    // const mockDate = new Date('25 April 2019 15:30 UTC+2');
+    // const mockDate = new Date('Sun, May 5, 2019 17:37:49 UTC');
     // mockDate.setUTCHours(0);
     // mockDate.setUTCMinutes(0);
     // this._timerObservable.next(this.toEorzeanDate(mockDate));

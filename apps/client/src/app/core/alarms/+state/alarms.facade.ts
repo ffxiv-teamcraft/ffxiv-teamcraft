@@ -190,7 +190,7 @@ export class AlarmsFacade {
    */
   private isSpawned(alarm: Alarm, time: Date): boolean {
     const nextSpawn = this.getNextSpawn(alarm, time);
-    if (nextSpawn.days > 0) {
+    if (nextSpawn.days > 0 || (nextSpawn.date && (Math.floor(time.getTime() / 86400000) !== Math.floor(nextSpawn.date.getTime() / 86400000)))) {
       // Nothing spawns for more than a day.
       return false;
     }
@@ -277,7 +277,7 @@ export class AlarmsFacade {
           if (weatherStart < despawn && weatherStart >= spawn) {
             // If it spawns during the alarm spawn, return weather spawn time.
             const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
-            return { hours: weatherStart, days: days, despawn: despawn, weather: weatherSpawn.weather };
+            return { hours: weatherStart, days: days, despawn: despawn, weather: weatherSpawn.weather, date: weatherSpawn.spawn };
           } else if (weatherStart < spawn && weatherStop > spawn) {
             // If it spawns before the alarm and despawns during the alarm or after,
             // set spawn day hour to spawn hour for days math.
@@ -287,6 +287,7 @@ export class AlarmsFacade {
             return {
               hours: spawn,
               days: days,
+              date: weatherSpawn.spawn,
               despawn: Math.min(weatherStop, despawn || 24),
               weather: weatherSpawn.weather
             };
@@ -299,7 +300,7 @@ export class AlarmsFacade {
           if (base48WeatherStart < base48Despawn && base48WeatherStart >= base48Spawn) {
             // If it spawns during the alarm spawn, return weather spawn time.
             const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
-            return { hours: weatherStart, days: days, despawn: despawn, weather: weatherSpawn.weather };
+            return { hours: weatherStart, days: days, despawn: despawn, weather: weatherSpawn.weather, date: weatherSpawn.spawn };
           } else if (base48WeatherStart < base48Spawn && base48WeatherStop > base48Spawn) {
             // If it spawns before the alarm and despawns during the alarm or after,
             // set spawn day hour to spawn hour for days math.
@@ -309,6 +310,7 @@ export class AlarmsFacade {
             return {
               hours: spawn,
               days: days,
+              date: realSpawn,
               despawn: Math.min(weatherStop, despawn || 24),
               weather: weatherSpawn.weather
             };
@@ -322,6 +324,7 @@ export class AlarmsFacade {
       return {
         hours: weatherSpawn.spawn.getUTCHours(),
         days: days,
+        date: weatherSpawn.spawn,
         despawn: new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24,
         weather: weatherSpawn.weather
       };

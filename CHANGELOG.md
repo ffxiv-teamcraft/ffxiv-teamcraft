@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.11"></a>
+## [5.3.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.10...v5.3.11) (2019-05-06)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with some specific fishes having wrong timers ([950abcb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/950abcb))
+* **rotation-picker:** fixed an issue with rotation picker sometimes freezing ([c238db8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c238db8))
+* **simulator:** fixed a display issue with lg resolution ([813a20f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/813a20f))
+
+
+
 <a name="5.3.10"></a>
 ## [5.3.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.9...v5.3.10) (2019-05-05)
 

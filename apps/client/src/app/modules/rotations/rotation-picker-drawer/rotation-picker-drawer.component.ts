@@ -45,7 +45,7 @@ export class RotationPickerDrawerComponent {
             return {
               folder: folder,
               rotations: folder.rotationIds.map(id => rotations.find(r => r.$key === id))
-                .filter(r => r.getName().indexOf(query) > -1 &&  r !== undefined)
+                .filter(r => r !== undefined && r.getName().indexOf(query) > -1)
                 .map(rotation => {
                   rotation.folderId = folder.$key;
                   return rotation;
@@ -62,7 +62,9 @@ export class RotationPickerDrawerComponent {
           return rotation.getName().indexOf(query) > -1 && folders.find(folder => {
             return folder.rotationIds.find(id => id === rotation.$key) !== undefined;
           }) === undefined;
-        }).sort((a, b) => a.index - b.index);
+        })
+          .filter(r => r.getName !== undefined)
+          .sort((a, b) => a.index - b.index);
       })
     );
 
@@ -71,7 +73,7 @@ export class RotationPickerDrawerComponent {
       tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
       switchMap(rotations => {
         return this.rotationsFacade.allRotations$.pipe(
-          map(loadedRotations => loadedRotations.filter(r => rotations.indexOf(r.$key) > -1)),
+          map(loadedRotations => loadedRotations.filter(r => r.getName !== undefined && rotations.indexOf(r.$key) > -1)),
           filter(loadedRotations => loadedRotations.length === rotations.length)
         );
       })
@@ -89,5 +91,7 @@ export class RotationPickerDrawerComponent {
           });
       })
     );
+
+    this.rotationFoldersFacade.loadMyRotationFolders();
   }
 }
