@@ -2,20 +2,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { debounceTime, filter, map, mergeMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
-import * as nodePositions from '../../../core/data/sources/node-positions.json';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
 import { MapService } from '../../../modules/map/map.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { folklores } from '../../../core/data/sources/folklores';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { reductions } from '../../../core/data/sources/reductions';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { fishEyes } from '../../../core/data/sources/fish-eyes';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 
 @Component({
