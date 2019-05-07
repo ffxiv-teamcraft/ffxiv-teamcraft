@@ -317,13 +317,13 @@ export class ItemComponent extends TeamcraftPageComponent {
               })
           });
         }
-        if (xivapiItem.AdditionalData) {
+        if (xivapiItem.ItemActionTargetID === 1389) {
           usedFor.push({
             flex: '0 0 auto',
             type: UsedForType.TT_CARD_UNLOCK,
             title: 'DB.TT_card_unlock',
             icon: 'https://triad.raelys.com/images/logo.png',
-            cardId: xivapiItem.AdditionalData
+            cardId: xivapiItem.ItemAction.Data0
           });
         }
         if (data.item.tradeCurrency) {
@@ -470,10 +470,11 @@ export class ItemComponent extends TeamcraftPageComponent {
 
   private handleAdditionalData(_item: ListRow, gtData: ItemData, xivapiItem: any): Observable<ListRow> {
     let res$: Observable<ListRow> = of(_item);
-    if (xivapiItem.AdditionalData) {
+    // TT card
+    if (xivapiItem.ItemActionTargetID === 1389) {
       res$ = res$.pipe(
         switchMap(item => {
-          return this.attt.getCard(xivapiItem.AdditionalData)
+          return this.attt.getCard(xivapiItem.ItemAction.Data0)
             .pipe(
               map(card => {
                 if (card.sources.npcs.length > 0) {
