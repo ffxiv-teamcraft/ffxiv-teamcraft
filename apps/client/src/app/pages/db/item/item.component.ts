@@ -25,6 +25,9 @@ import { ATTTService } from '../service/attt.service';
 import { TripleTriadDuel } from '../model/attt/triple-triad-duel';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { UsedForType } from '../model/used-for-type';
+import { TradeNpc } from '../../../modules/list/model/trade-npc';
+import { Trade } from '../../../modules/list/model/trade';
+import { TradeEntry } from '../../../modules/list/model/trade-entry';
 
 @Component({
   selector: 'app-item',
@@ -302,7 +305,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         if (data.item.ingredient_of !== undefined) {
           usedFor.push({
             type: UsedForType.CRAFT,
-            flex: '1 1 33%',
+            flex: '1 1 30%',
             title: 'DB.Crafts',
             icon: './assets/icons/classjob/blacksmith.png',
             links: Object.keys(data.item.ingredient_of)
@@ -320,6 +323,73 @@ export class ItemComponent extends TeamcraftPageComponent {
             title: 'DB.TT_card_unlock',
             icon: 'https://triad.raelys.com/images/logo.png',
             cardId: xivapiItem.AdditionalData
+          });
+        }
+        if (data.item.tradeCurrency) {
+          usedFor.push({
+            flex: '1 1 30%',
+            type: UsedForType.TRADES,
+            title: 'DB.Used_for_trades',
+            icon: 'https://www.garlandtools.org/db/images/Shop.png',
+            trades: data.item.tradeCurrency.map(ts => {
+              return {
+                npcs: ts.npcs.map(npcId => {
+                  const npc: TradeNpc = { id: npcId };
+                  const npcEntry = this.lazyData.npcs[npcId];
+                  if (npcEntry.position !== null) {
+                    npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
+                    npc.zoneId = npcEntry.position.zoneid;
+                    npc.mapId = npcEntry.position.map;
+                  }
+                  return npc;
+                }),
+                trades: ts.listings.map(row => {
+                  return <Trade>{
+                    currencies: row.currency.map(currency => {
+                      const partial = data.getPartial(currency.id, 'item');
+                      const currencyPartial = partial && partial.obj;
+                      if (currencyPartial) {
+                        return <TradeEntry>{
+                          id: currencyPartial.i,
+                          icon: currencyPartial.c,
+                          amount: currency.amount,
+                          hq: currency.hq === 1
+                        };
+                      } else if (+currency.id === data.item.id) {
+                        return <TradeEntry>{
+                          id: data.item.id,
+                          icon: data.item.icon,
+                          amount: currency.amount,
+                          hq: currency.hq === 1
+                        };
+                      }
+                      return undefined;
+                    }).filter(res => res !== undefined),
+                    items: row.item.map(tradeItem => {
+                      const itemPartialFetch = data.getPartial(tradeItem.id, 'item');
+                      if (itemPartialFetch !== undefined) {
+                        const itemPartial = itemPartialFetch.obj;
+                        return <TradeEntry>{
+                          id: itemPartial.i,
+                          icon: itemPartial.c,
+                          amount: tradeItem.amount,
+                          hq: tradeItem.hq === 1
+                        };
+                      } else if (+tradeItem.id === data.item.id) {
+                        return <TradeEntry>{
+                          id: data.item.id,
+                          icon: data.item.icon,
+                          amount: tradeItem.amount,
+                          hq: tradeItem.hq === 1
+                        };
+                      }
+                      return undefined;
+                    }).filter(res => res !== undefined)
+                  };
+                }),
+                shopName: ts.shop
+              };
+            })
           });
         }
         return usedFor;

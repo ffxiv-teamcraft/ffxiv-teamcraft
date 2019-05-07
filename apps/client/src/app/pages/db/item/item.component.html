@@ -392,6 +392,9 @@
               </div>
             </div>
           </div>
+          <div fxLayout="column" fxLayoutGap="5px" *ngIf="row.trades">
+            <app-trades [item]="data" [externalTradeSources]="row.trades"></app-trades>
+          </div>
         </nz-card>
       </div>
     </div>

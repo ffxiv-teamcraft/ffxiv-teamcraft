@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayoutGap="10px">
-  <nz-card *ngFor="let tradeSource of item.tradeSources" fxFlex="1 1 auto" fxLayoutGap="5px">
+  <nz-card *ngFor="let tradeSource of tradeSources" fxFlex="1 1 auto" fxLayoutGap="5px">
     <nz-card-meta [nzTitle]="tradeSource.shopName">
     </nz-card-meta>
     <div *ngFor="let trade of tradeSource.trades" class="trades" fxLayout="column" fxLayoutGap="5px">
@@ -16,17 +16,19 @@
           <span>x{{tradeItem.amount}}</span>
         </div>
       </div>
-      <div class="total-price" *ngIf="totalPrice(trade) as totalTradePrice" fxLayout="row" fxLayoutAlign="center center"
-           fxLayoutGap="5px">
-        <div>
-          {{'LIST.Total_trade_price' | translate}}
+      <ng-container *ngIf="!fromExternalTrades">
+        <div class="total-price" *ngIf="totalPrice(trade) as totalTradePrice" fxLayout="row" fxLayoutAlign="center center"
+             fxLayoutGap="5px">
+          <div>
+            {{'LIST.Total_trade_price' | translate}}
+          </div>
+          <div class="item-container" *ngFor="let currency of totalTradePrice">
+            <app-item-icon [width]="32" [icon]="currency.icon" [itemName]="currency.id | itemName | i18n"
+                           [itemId]="currency.id" [hq]="currency.hq"></app-item-icon>
+            <span>x{{currency.amount}}</span>
+          </div>
         </div>
-        <div class="item-container" *ngFor="let currency of totalTradePrice">
-          <app-item-icon [width]="32" [icon]="currency.icon" [itemName]="currency.id | itemName | i18n"
-                         [itemId]="currency.id" [hq]="currency.hq"></app-item-icon>
-          <span>x{{currency.amount}}</span>
-        </div>
-      </div>
+      </ng-container>
     </div>
     <nz-list [nzRenderItem]="npcTemplate" [nzDataSource]="tradeSource.npcs">
       <ng-template #npcTemplate let-npc>
