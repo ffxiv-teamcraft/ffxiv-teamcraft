@@ -243,6 +243,7 @@ export class ItemComponent extends TeamcraftPageComponent {
       tap(item => {
         this.noData = (item.craftedBy === undefined || item.craftedBy.length === 0)
           && (item.tradeSources === undefined || item.tradeSources.length === 0)
+          && (item.vendors === undefined || item.vendors.length === 0)
           && (item.reducedFrom === undefined || item.reducedFrom.length === 0)
           && (item.desynths === undefined || item.desynths.length === 0)
           && (item.instances === undefined || item.instances.length === 0)
