@@ -141,6 +141,12 @@
           <div fxLayout="column">
             <div class="item-name">{{item.itemId | itemName | i18n}}
               <app-marketboard-icon [itemId]="item.itemId" [showHistory]="true"></app-marketboard-icon>
+              <a nz-button nz-tooltip [nzTitle]="'DB.Open_item_in_db' | translate"
+                 nzSize="small"
+                 nzShape="circle"
+                 routerLink="/db/{{translate.currentLang}}/item/{{item.itemId}}">
+                <i nz-icon type="info"></i>
+              </a>
             </div>
             <div class="description" *ngIf="item.recipe !== undefined && item.recipe.job > 0">
               <img src="https://garlandtools.org/db/images/{{(item.recipe.job | jobAbbr)?.en}}.png"
