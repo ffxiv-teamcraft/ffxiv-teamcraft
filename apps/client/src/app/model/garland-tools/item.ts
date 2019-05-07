@@ -41,6 +41,7 @@ export class Item implements I18nData {
   masterpiece: Masterpiece;
 
   ingredient_of?: { [index: string]: number };
+  tradeCurrency?: any[];
 
   @DeserializeFieldName('icon')
   _icon: number;

@@ -7,6 +7,7 @@ import {
   debounceTime,
   distinctUntilChanged,
   filter,
+  first,
   map,
   mergeMap,
   switchMap,
@@ -40,6 +41,7 @@ import { User } from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthFacade } from './auth.facade';
 import { PatreonService } from '../core/patreon/patreon.service';
+import { IS_PRERENDER } from '../core/tools/platform.service';
 import UserCredential = firebase.auth.UserCredential;
 
 @Injectable({
@@ -63,7 +65,8 @@ export class AuthEffects {
         }
         return new Authenticated(payload, payload.uid, new Date(authState.metadata.creationTime));
       }
-    })
+    }),
+    IS_PRERENDER ? first() : tap()
   );
 
   @Effect()

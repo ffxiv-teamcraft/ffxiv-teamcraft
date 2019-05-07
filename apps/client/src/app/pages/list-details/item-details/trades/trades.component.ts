@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { TradeEntry } from '../../../../modules/list/model/trade-entry';
 import { Trade } from '../../../../modules/list/model/trade';
+import { TradeSource } from '../../../../modules/list/model/trade-source';
 
 @Component({
   selector: 'app-trades',
@@ -10,6 +11,20 @@ import { Trade } from '../../../../modules/list/model/trade';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TradesComponent extends ItemDetailsPopup {
+
+  @Input()
+  public externalTradeSources: TradeSource[] = [];
+
+  public get tradeSources(): TradeSource[] {
+    if (this.externalTradeSources.length === 0) {
+      return this.item.tradeSources;
+    }
+    return this.externalTradeSources;
+  }
+
+  public get fromExternalTrades(): boolean {
+    return this.externalTradeSources.length > 0;
+  }
 
   constructor() {
     super();

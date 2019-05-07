@@ -1,4 +1,5 @@
 export enum UsedForType {
   CRAFT,
-  TT_CARD_UNLOCK
+  TT_CARD_UNLOCK,
+  TRADES
 }

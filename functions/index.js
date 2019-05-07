@@ -87,19 +87,27 @@ const express = require('express');
 const fetch = require('node-fetch');
 const url = require('url');
 const app = express();
+const appUrlConfig = functions.config().appurl;
 
-const appUrl = 'ffxivteamcraft.com';
+const appUrl = `${appUrlConfig ? appUrlConfig.prefix : ''}ffxivteamcraft.com`;
 const renderUrl = 'https://ffxivteamcraft.appspot.com/render';
 
 function generateUrl(request) {
   return url.format({
     protocol: 'https',
     host: appUrl,
-    pathname: request.originalUrl
+    pathname: request.originalUrl,
+    query: { prerender: '1' }
   });
 }
 
-function dectectIndexBot(userAgent) {
+function detectIndexBot(userAgent) {
+
+  if (appUrlConfig && appUrlConfig.prefix) {
+    console.log('beta link, shouldn\'t be indexed');
+    return false;
+  }
+
   const bots = [
     'bingbot',
     'yandexbot',
@@ -132,7 +140,7 @@ function dectectIndexBot(userAgent) {
 
 }
 
-function dectectDeepLinkBot(userAgent) {
+function detectDeepLinkBot(userAgent) {
   const deepLinkBots = [
     'twitterbot',
     'slackbot',
@@ -156,8 +164,8 @@ function dectectDeepLinkBot(userAgent) {
 const indexAllowedPages = ['/search', '/community-rotations', '/levequests', '/about', '/support-us', '/desynth-guide', '/gc-supply', '/macro-translator', '/db/'];
 
 app.get('*', (req, res) => {
-  const isIndexBot = dectectIndexBot(req.headers['user-agent']);
-  const isDeepLinkBot = dectectDeepLinkBot(req.headers['user-agent']);
+  const isIndexBot = detectIndexBot(req.headers['user-agent']);
+  const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
 
   if (isDeepLinkBot || (isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
     const botUrl = generateUrl(req);
