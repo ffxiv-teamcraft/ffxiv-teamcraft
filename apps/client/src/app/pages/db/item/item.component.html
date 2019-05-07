@@ -115,7 +115,7 @@
     </div>
     <div *ngIf="data$ | async as data">
       <nz-divider [nzText]="'DB.How_to_obtain' | translate" nzOrientation="left"></nz-divider>
-      <app-fullpage-message height="300px" *ngIf="noData">
+      <app-fullpage-message height="150px" *ngIf="noData">
         {{'DB.No_known_way_to_obtain' | translate}}
       </app-fullpage-message>
       <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">

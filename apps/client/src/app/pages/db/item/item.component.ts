@@ -393,6 +393,20 @@ export class ItemComponent extends TeamcraftPageComponent {
             })
           });
         }
+        if (data.item.loot) {
+          usedFor.push({
+            type: UsedForType.CAN_CONTAIN_ITEMS,
+            flex: '1 1 30%',
+            title: 'DB.Can_contain_items',
+            icon: './assets/icons/chest_open.png',
+            links: data.item.loot
+              .map(itemId => {
+                return {
+                  itemId: +itemId
+                };
+              })
+          })
+        }
         return usedFor;
       })
     );

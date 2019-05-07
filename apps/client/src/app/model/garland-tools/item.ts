@@ -42,6 +42,7 @@ export class Item implements I18nData {
 
   ingredient_of?: { [index: string]: number };
   tradeCurrency?: any[];
+  loot?: number[];
 
   @DeserializeFieldName('icon')
   _icon: number;
