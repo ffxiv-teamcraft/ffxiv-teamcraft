@@ -339,14 +339,19 @@ export class ItemComponent extends TeamcraftPageComponent {
     };
   }
 
+  private getDescription(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return item[`Description_${this.translate.currentLang}`] || item.Description_en;
+  }
+
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiItem$.pipe(
       map(item => {
         return {
           title: this.i18n.getName(this.l12n.getItem(item.ID)),
-          description: item[`Description_${this.translate.currentLang}`] || item.Description_en,
+          description: this.getDescription(item),
           url: `https://ffxivteamcraft.com/db/item/${item.ID}/${this.i18n.getName(this.l12n.getItem(item.ID)).split(' ').join('+')}`,
-          image: `https://xivapi.com${item.Icon}`
+          image: `https://xivapi.com/i2/ls/${item.ID}.png`
         };
       })
     );
@@ -423,7 +428,7 @@ export class ItemComponent extends TeamcraftPageComponent {
                   item.tripleTriadPack = {
                     id: [10128, 10129, 10130, 13380, 10077][card.sources.pack.id - 1],
                     price: card.sources.pack.cost
-                  }
+                  };
                 }
                 return item;
               })
