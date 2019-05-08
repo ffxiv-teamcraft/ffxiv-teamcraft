@@ -1116,6 +1116,6 @@
     "Dungeons": "Dungeons/Trials",
     "Used_for_trades": "Trades",
     "Can_contain_items": "Can contain items",
-    "Open_in_db": "View details inside the database"
+    "Open_item_in_db": "View item details inside the database"
   }
 }
