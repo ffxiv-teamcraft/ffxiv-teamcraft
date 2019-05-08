@@ -1116,6 +1116,26 @@
     "Dungeons": "Dungeons/Trials",
     "Used_for_trades": "Trades",
     "Can_contain_items": "Can contain items",
-    "Open_item_in_db": "View item details inside the database"
+    "Open_item_in_db": "View item details inside the database",
+    "Team_size": "Team size",
+    "Time": "Duration",
+    "Min_level": "Level min.",
+    "Min_ilevel": "ilvl min.",
+    "Sync_to": "Level max.",
+    "Exp": "Exp",
+    "Week_restriction": "Week restriction",
+    "Fights": "Fights",
+    "Instance_details": "Instance details",
+    "Instance_rewards": "Rewards",
+    "Unlocked_by": "Unlocked by",
+    "Chest_content": "Chest content",
+    "Currencies_reward": "Currencies reward",
+    "Instance_chests": "Chests",
+    "Position": "Position",
+    "Content": "Content",
+    "FIGHT_TYPE": {
+      "Boss": "Boss",
+      "MidBoss": "Boss"
+    }
   }
 }
