@@ -24,7 +24,8 @@ let todo = [
   'maps',
   'tripleTriadRules',
   'quests',
-  'fates'
+  'fates',
+  'instances'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -601,5 +602,21 @@ if (hasTodo('fates')) {
     });
   }, null, () => {
     persistToJsonAsset('fates', fates);
+  });
+}
+
+if (hasTodo('instances')) {
+  const instances = {};
+  getAllPages('https://xivapi.com/InstanceContent?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(instance => {
+      instances[instance.ID] = {
+        en: instance.Name_en,
+        ja: instance.Name_ja,
+        de: instance.Name_de,
+        fr: instance.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('instances', instances);
   });
 }
