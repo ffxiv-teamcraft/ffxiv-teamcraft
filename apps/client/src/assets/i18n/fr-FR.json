@@ -1111,11 +1111,11 @@
     "TT_card_unlock": "Débloque la carte dans la collection",
     "Track_on_attt": "Suivre sur \"Another Triple Triad Tracker\"",
     "Unlocked_by_quest": "Déverrouillé par quête",
-    "More_on_attt_npc": "See more details about this npc on Another Triple Triad tracker",
-    "Triple_triad_pack": "Triple triad card pack",
-    "Dungeons": "Dungeons/Trials",
-    "Used_for_trades": "Trades",
-    "Can_contain_items": "Can contain items",
-    "Open_item_in_db": "View item details inside the database"
+    "More_on_attt_npc": "Plus de détails sur ce PNJ sur Another Triple Triad Tracker",
+    "Triple_triad_pack": "Paquet de cartes",
+    "Dungeons": "Instances",
+    "Used_for_trades": "Échanges",
+    "Can_contain_items": "Peut contenir ces objets",
+    "Open_item_in_db": "Voir les détails de l'élément dans la base de données"
   }
 }
