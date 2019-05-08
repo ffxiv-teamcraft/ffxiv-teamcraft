@@ -8,7 +8,7 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { Observable, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { filter, map, shareReplay } from 'rxjs/operators';
 import { switchMap } from 'rxjs/internal/operators/switchMap';
@@ -74,11 +74,39 @@ export class InstanceComponent extends TeamcraftPageComponent {
       shareReplay(1)
     );
 
-    this.links$ = of([]);
+    this.links$ = combineLatest([this.xivapiInstance$, this.gtData$]).pipe(
+      map(([xivapiInstance, gtData]) => {
+        return [
+          {
+            title: 'GarlandTools',
+            url: `http://www.garlandtools.org/db/#instance/${xivapiInstance.ID}`,
+            icon: 'https://garlandtools.org/favicon.png'
+          },
+          {
+            title: 'Gamer Escape',
+            url: `https://ffxiv.gamerescape.com/wiki/${xivapiInstance.Name_en.toString().split(' ').join('_')}`,
+            icon: './assets/icons/ge.png'
+          }
+        ];
+      })
+    );
+  }
+
+  private getDescription(instance: any): string {
+    return instance[`Description_${this.translate.currentLang}`] || instance.Description_en;
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return of({});
+    return this.xivapiInstance$.pipe(
+      map(instance => {
+        return {
+          title: this.i18n.getName(this.l12n.getItem(instance.ID)),
+          description: this.getDescription(instance),
+          url: `https://ffxivteamcraft.com/db/item/${instance.ID}/${this.i18n.getName(this.l12n.getInstanceName(instance.ID)).split(' ').join('-')}`,
+          image: `https://xivapi.com/${instance.Icon}`
+        };
+      })
+    );
   }
 
 }
