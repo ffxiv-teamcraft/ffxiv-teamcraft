@@ -10,6 +10,8 @@ import { koActions } from './sources/ko-actions';
 import { mapIds } from './sources/map-ids';
 import { LazyDataService } from './lazy-data.service';
 import { Fate } from '../../pages/db/model/fate/fate';
+import { Quest } from '../../pages/db/model/quest/quest';
+import { tripleTriadRules } from './sources/triple-triad-rules';
 
 @Injectable()
 export class LocalizedDataService {
@@ -112,6 +114,24 @@ export class LocalizedDataService {
 
   public getVenture(id: number): I18nName {
     return this.getRow(ventures, id);
+  }
+
+  public getQuest(id: number): Quest {
+    const row = this.getRow<Quest>(this.lazyData.quests, id);
+    const koRow = this.getRow(this.lazyData.koQuests, id);
+    if (row !== undefined) {
+      row.name.ko = koRow !== undefined ? koRow.ko : row.name.en;
+    }
+    return row;
+  }
+
+  public getTTRule(id: number): I18nName {
+    const row = this.getRow<{ name: I18nName }>(tripleTriadRules, id);
+    const koRow = this.getRow(this.lazyData.koTripleTriadRules, id);
+    if (row !== undefined) {
+      row.name.ko = koRow !== undefined ? koRow.ko : row.name.en;
+    }
+    return row.name;
   }
 
   public getWeather(id: number): I18nName {

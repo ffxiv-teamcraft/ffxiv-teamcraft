@@ -35,6 +35,10 @@ export class LazyDataService {
   public koJobNames: any = {};
   public koJobAbbrs: any = {};
   public koJobCategories: any = {};
+  public koQuests: any = {};
+  public koFates: any = {};
+  public koFateDescriptions: any = {};
+  public koTripleTriadRules: any = {};
 
   public craftActions: any = {};
 
@@ -99,6 +103,10 @@ export class LazyDataService {
         this.http.get('./assets/data/places.json'),
         this.http.get('./assets/data/quests.json'),
         this.http.get('./assets/data/fates.json'),
+        this.http.get('./assets/data/ko/ko-fate-descriptions.json'),
+        this.http.get('./assets/data/ko/ko-fates.json'),
+        this.http.get('./assets/data/ko/ko-quests.json'),
+        this.http.get('./assets/data/ko/ko-triple-triad-rules.json')
       ]
     ).subscribe(([
                    items,
@@ -127,7 +135,11 @@ export class LazyDataService {
                    mobs,
                    places,
                    quests,
-      fates
+                   fates,
+                   koFateDescriptions,
+                   koFates,
+                   koQuests,
+                   koTripleTriadRules
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -156,6 +168,10 @@ export class LazyDataService {
       this.places = places as { [index: string]: I18nName };
       this.quests = quests as { [index: string]: Quest };
       this.fates = fates as { [index: string]: Fate };
+      this.koFateDescriptions = koFateDescriptions;
+      this.koFates = koFates;
+      this.koQuests = koQuests;
+      this.koTripleTriadRules = koTripleTriadRules;
       this.loaded$.next(true);
     });
   }

@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
-import { LazyDataService } from '../../core/data/lazy-data.service';
+import { LocalizedDataService } from '../../core/data/localized-data.service';
 
 @Pipe({
   name: 'questName',
@@ -8,11 +8,11 @@ import { LazyDataService } from '../../core/data/lazy-data.service';
 })
 export class QuestNamePipe implements PipeTransform {
 
-  constructor(private lazyData: LazyDataService) {
+  constructor(private l12n: LocalizedDataService) {
   }
 
   transform(id: number): I18nName {
-    return this.lazyData.quests[id].name;
+    return this.l12n.getQuest(id).name;
   }
 
 }
