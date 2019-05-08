@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CustomItemsFacade } from '../modules/custom-items/+state/custom-items.facade';
+import { CustomItemsFacade } from '../../modules/custom-items/+state/custom-items.facade';
 import { map } from 'rxjs/operators';
 
 @Pipe({

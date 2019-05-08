@@ -119,7 +119,7 @@
         {{'DB.No_known_way_to_obtain' | translate}}
       </app-fullpage-message>
       <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
-        <nz-card fxFlex="1 1 33%" class="details-card" [nzTitle]="title" nzBordered="false"
+        <nz-card fxFlex="1 1 30%" class="details-card" [nzTitle]="title" nzBordered="false"
                  *ngIf="data.drops !== undefined && data.drops.length > 0">
           <ng-template #title>
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
@@ -131,7 +131,7 @@
           </ng-template>
           <app-hunting [item]="data"></app-hunting>
         </nz-card>
-        <nz-card fxFlex="1 1 33%" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.tradeSources !== undefined && data.tradeSources.length > 0" nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -145,7 +145,35 @@
           </ng-template>
           <app-trades [item]="data"></app-trades>
         </nz-card>
-        <nz-card fxFlex="1 1 33%" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
+                 *ngIf="data.treasures !== undefined && data.treasures.length > 0" nzBordered="false"
+                 [nzTitle]="title">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+              <img class="img-icon round-icon"
+                   src="./assets/icons/chest_open.png">
+              <div>
+                {{'Treasures' | translate}}
+              </div>
+            </div>
+          </ng-template>
+          <app-treasures [item]="data"></app-treasures>
+        </nz-card>
+        <nz-card fxFlex="1 1 60%" class="details-card"
+                 *ngIf="data.fates !== undefined && data.fates.length > 0" nzBordered="false"
+                 [nzTitle]="title">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+              <img class="img-icon round-icon"
+                   [src]="(data.fates[0].id | fate).icon | xivapiIcon">
+              <div>
+                {{'Fates' | translate}}
+              </div>
+            </div>
+          </ng-template>
+          <app-fates [item]="data"></app-fates>
+        </nz-card>
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.craftedBy !== undefined && data.craftedBy.length > 0" nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>

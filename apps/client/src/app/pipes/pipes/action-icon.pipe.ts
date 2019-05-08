@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as actionIcons from '../core/data/sources/action-icons.json';
+import * as actionIcons from '../../core/data/sources/action-icons.json';
 
 @Pipe({
   name: 'actionIcon'

@@ -1,38 +1,39 @@
 import { NgModule } from '@angular/core';
-import { NpcNamePipe } from './npc-name.pipe';
-import { PlaceNamePipe } from './place-name.pipe';
-import { ItemNamePipe } from './item-name.pipe';
-import { CeilPipe } from './ceil.pipe';
-import { IconPipe } from './icon.pipe';
-import { MobNamePipe } from './mob-name.pipe';
-import { VentureNamePipe } from './venture-name.pipe';
-import { ActionIconPipe } from './action-icon.pipe';
-import { JobAbbrIconPipe } from './job-abbr.pipe';
-import { JobNameIconPipe } from './job-name.pipe';
-import { AbsolutePipe } from './absolute.pipe';
-import { InstanceIconPipe } from './instance-icon.pipe';
-import { FreeCompanyActionNamePipe } from './free-company-action-name.pipe';
-import { IfMobilePipe } from './if-mobile.pipe';
-import { NodeTypeIconPipe } from './node-type-icon.pipe';
-import { ClosestAetherytePipe } from './closest-aetheryte.pipe';
-import { XivapiIconPipe } from './xivapi-icon.pipe';
-import { CharacterNamePipe } from './character-name.pipe';
-import { TeamcraftLinkPipe } from './teamcraft-link.pipe';
-import { FfxivgardeningPipe } from './ffxivgardening.pipe';
-import { NodeTypeNamePipe } from './node-type-name';
-import { XivapiI18nPipe } from './xivapi-i18n.pipe';
-import { WeatherNamePipe } from './weather-name.pipe';
-import { WeatherIconPipe } from './weather-icon.pipe';
-import { ActionNamePipe } from './action-name.pipe';
-import { CustomItemNamePipe } from './custom-item-name.pipe';
-import { IngameStarsPipe } from './ingame-stars.pipe';
-import { LazyIconPipe } from './lazy-icon.pipe';
-import { PermissionLevelPipe } from './permission-level.pipe';
-import { ElementIconPipe } from './element-icon.pipe';
-import { FishEyesDurationPipe } from './fish-eyes-duration.pipe';
-import { KeysPipe } from './keys.pipe';
-import { TripleTriadRuleNamePipe } from './triple-triad-rule-name.pipe';
-import { QuestNamePipe } from './quest-name.pipe';
+import { NpcNamePipe } from './pipes/npc-name.pipe';
+import { PlaceNamePipe } from './pipes/place-name.pipe';
+import { ItemNamePipe } from './pipes/item-name.pipe';
+import { CeilPipe } from './pipes/ceil.pipe';
+import { IconPipe } from './pipes/icon.pipe';
+import { MobNamePipe } from './pipes/mob-name.pipe';
+import { VentureNamePipe } from './pipes/venture-name.pipe';
+import { ActionIconPipe } from './pipes/action-icon.pipe';
+import { JobAbbrIconPipe } from './pipes/job-abbr.pipe';
+import { JobNameIconPipe } from './pipes/job-name.pipe';
+import { AbsolutePipe } from './pipes/absolute.pipe';
+import { InstanceIconPipe } from './pipes/instance-icon.pipe';
+import { FreeCompanyActionNamePipe } from './pipes/free-company-action-name.pipe';
+import { IfMobilePipe } from './pipes/if-mobile.pipe';
+import { NodeTypeIconPipe } from './pipes/node-type-icon.pipe';
+import { ClosestAetherytePipe } from './pipes/closest-aetheryte.pipe';
+import { XivapiIconPipe } from './pipes/xivapi-icon.pipe';
+import { CharacterNamePipe } from './pipes/character-name.pipe';
+import { TeamcraftLinkPipe } from './pipes/teamcraft-link.pipe';
+import { FfxivgardeningPipe } from './pipes/ffxivgardening.pipe';
+import { NodeTypeNamePipe } from './pipes/node-type-name';
+import { XivapiI18nPipe } from './pipes/xivapi-i18n.pipe';
+import { WeatherNamePipe } from './pipes/weather-name.pipe';
+import { WeatherIconPipe } from './pipes/weather-icon.pipe';
+import { ActionNamePipe } from './pipes/action-name.pipe';
+import { CustomItemNamePipe } from './pipes/custom-item-name.pipe';
+import { IngameStarsPipe } from './pipes/ingame-stars.pipe';
+import { LazyIconPipe } from './pipes/lazy-icon.pipe';
+import { PermissionLevelPipe } from './pipes/permission-level.pipe';
+import { ElementIconPipe } from './pipes/element-icon.pipe';
+import { FishEyesDurationPipe } from './pipes/fish-eyes-duration.pipe';
+import { KeysPipe } from './pipes/keys.pipe';
+import { TripleTriadRuleNamePipe } from './pipes/triple-triad-rule-name.pipe';
+import { QuestNamePipe } from './pipes/quest-name.pipe';
+import { FatePipe } from './pipes/fate.pipe';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { QuestNamePipe } from './quest-name.pipe';
     FishEyesDurationPipe,
     KeysPipe,
     TripleTriadRuleNamePipe,
-    QuestNamePipe
+    QuestNamePipe,
+    FatePipe
   ],
   exports: [
     ItemNamePipe,
@@ -107,7 +109,8 @@ import { QuestNamePipe } from './quest-name.pipe';
     FishEyesDurationPipe,
     KeysPipe,
     TripleTriadRuleNamePipe,
-    QuestNamePipe
+    QuestNamePipe,
+    FatePipe
   ]
 })
 export class PipesModule {

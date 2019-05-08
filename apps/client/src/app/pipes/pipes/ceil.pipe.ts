@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { MathTools } from '../tools/math-tools';
+import { MathTools } from '../../tools/math-tools';
 
 @Pipe({
   name: 'ceil'

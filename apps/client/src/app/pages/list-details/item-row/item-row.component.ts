@@ -65,6 +65,8 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { ItemRowMenuElement } from '../../../model/display/item-row-menu-element';
 import * as _ from 'lodash';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { TreasuresComponent } from '../item-details/treasures/treasures.component';
+import { FatesComponent } from '../item-details/fates/fates.component';
 
 @Component({
   selector: 'app-item-row',
@@ -526,6 +528,14 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   public openVenturesPopup(): void {
     this.openDetailsPopup(VenturesComponent);
+  }
+
+  public openTreasuresPopup(): void {
+    this.openDetailsPopup(TreasuresComponent);
+  }
+
+  public openFatesPopup(): void {
+    this.openDetailsPopup(FatesComponent);
   }
 
   public openVoyagesPopup(): void {

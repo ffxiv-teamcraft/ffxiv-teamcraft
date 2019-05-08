@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { RecipeElement } from '../model/garland-tools/recipe-element';
+import { RecipeElement } from '../../model/garland-tools/recipe-element';
 
 @Pipe({
   name: 'elementIcon'

@@ -190,6 +190,8 @@
   "Vendors": "Vendors",
   "Open": "Open",
   "Trade": "Trade",
+  "Treasures": "Treasures",
+  "Fates": "Fates",
   "Filters": "Filters",
   "Check_all": "Check all",
   "Uncheck_all": "Uncheck all",
@@ -1113,6 +1115,7 @@
     "Triple_triad_pack": "Triple triad card pack",
     "Dungeons": "Dungeons/Trials",
     "Used_for_trades": "Trades",
-    "Can_contain_items": "Can contain items"
+    "Can_contain_items": "Can contain items",
+    "Open_in_db": "View details inside the database"
   }
 }

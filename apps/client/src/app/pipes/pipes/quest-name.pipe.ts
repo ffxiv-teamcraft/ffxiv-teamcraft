@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { I18nName } from '../model/common/i18n-name';
-import { LazyDataService } from '../core/data/lazy-data.service';
+import { I18nName } from '../../model/common/i18n-name';
+import { LazyDataService } from '../../core/data/lazy-data.service';
 
 @Pipe({
   name: 'questName',

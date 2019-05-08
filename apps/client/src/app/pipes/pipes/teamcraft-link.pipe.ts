@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { LinkToolsService } from '../core/tools/link-tools.service';
+import { LinkToolsService } from '../../core/tools/link-tools.service';
 
 @Pipe({
   name: 'tcLink'

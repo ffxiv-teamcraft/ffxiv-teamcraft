@@ -1,7 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { LocalizedDataService } from '../core/data/localized-data.service';
-import { I18nName } from '../model/common/i18n-name';
-import { PermissionLevel } from '../core/database/permissions/permission-level.enum';
+import { PermissionLevel } from '../../core/database/permissions/permission-level.enum';
 
 @Pipe({
   name: 'permissionLevel'

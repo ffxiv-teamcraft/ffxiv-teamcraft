@@ -22,6 +22,8 @@ import { ReducedFromComponent } from './reduced-from/reduced-from.component';
 import { VenturesComponent } from './ventures/ventures.component';
 import { TradesComponent } from './trades/trades.component';
 import { CoreModule } from '../../../core/core.module';
+import { TreasuresComponent } from './treasures/treasures.component';
+import { FatesComponent } from './fates/fates.component';
 
 @NgModule({
   imports: [
@@ -52,7 +54,9 @@ import { CoreModule } from '../../../core/core.module';
     VendorsComponent,
     VoyagesComponent,
     VenturesComponent,
-    TradesComponent
+    TradesComponent,
+    TreasuresComponent,
+    FatesComponent
   ],
   exports: [
     GatheredByComponent,
@@ -62,7 +66,9 @@ import { CoreModule } from '../../../core/core.module';
     VendorsComponent,
     VoyagesComponent,
     VenturesComponent,
-    TradesComponent
+    TradesComponent,
+    TreasuresComponent,
+    FatesComponent
   ],
   entryComponents: [
     GatheredByComponent,
@@ -72,7 +78,9 @@ import { CoreModule } from '../../../core/core.module';
     VendorsComponent,
     VoyagesComponent,
     VenturesComponent,
-    TradesComponent
+    TradesComponent,
+    TreasuresComponent,
+    FatesComponent
   ]
 })
 export class ItemDetailsPopupsModule {

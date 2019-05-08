@@ -23,7 +23,8 @@ let todo = [
   'aetherstream',
   'maps',
   'tripleTriadRules',
-  'quests'
+  'quests',
+  'fates'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -38,65 +39,65 @@ function hasTodo(operation) {
 fs.existsSync('output') || fs.mkdirSync('output');
 
 
-// MapData extraction
+if (hasTodo('mappy')) {
+  // MapData extraction
+  const memoryData$ = new Rx.Subject();
+  const mapData$ = new Rx.Subject();
+  http.get('https://xivapi.com/download?data=map_data', (res) => mapData$.next(res));
 
-// commented for now as we're waiting for the memory and map data endpoints to return non-empty csv files.
-// const memoryData$ = new Rx.Subject();
-//
-// const mapData$ = new Rx.Subject();
-// http.get('https://xivapi.com/downloads/xivapi-map-data', (res) => mapData$.next(res));
-//
-// http.get('https://xivapi.com/downloads/xivapi-memory-data', (memoryResponse) => {
-//   const memoryData = [];
-//   console.log(memoryResponse);
-//   memoryResponse.setEncoding('utf8');
-//   memoryResponse.pipe(csv())
-//     .on('data', function(memoryRow) {
-//       console.log(memoryRow);
-//       memoryData.push(memoryRow);
-//     })
-//     .on('end', () => {
-//       console.log('Extracted memory data, size: ', memoryData.length);
-//       memoryData$.next(memoryData);
-//     });
-// });
-//
-// Rx.combineLatest(memoryData$, mapData$)
-//   .subscribe(([memoryData, res]) => {
-//     res.setEncoding('utf8');
-//     res.pipe(csv())
-//       .on('data', function(row) {
-//         if (row.ContentIndex === 'BNPC') {
-//           handleMonster(row, memoryData);
-//         } else {
-//           switch (row.Type) {
-//             case 'NPC':
-//               handleNpc(row);
-//               break;
-//             case 'Gathering':
-//               handleNode(row);
-//               break;
-//             case 'Aetheryte':
-//               handleAetheryte(row);
-//               break;
-//             default:
-//               break;
-//           }
-//         }
-//
-//       })
-//       .on('end', function() {
-//         // Write data that needs to be joined with game data first
-//         persistToJson('node-positions', nodes);
-//         console.log('nodes written');
-//         persistToTypescript('aetherytes', 'aetherytes', aetherytes);
-//         console.log('aetherytes written');
-//         persistToJsonAsset('npcs', npcs);
-//         console.log('npcs written');
-//         persistToJson('monsters', monsters);
-//         console.log('monsters written');
-//       });
-//   });
+  http.get('https://xivapi.com/download?data=memory_data', (memoryResponse) => {
+    const memoryData = [];
+    console.log(memoryResponse);
+    memoryResponse.setEncoding('utf8');
+    memoryResponse.pipe(csv())
+      .on('data', function(memoryRow) {
+        console.log(memoryRow);
+        memoryData.push(memoryRow);
+      })
+      .on('end', () => {
+        console.log('Extracted memory data, size: ', memoryData.length);
+        memoryData$.next(memoryData);
+      });
+  });
+
+  Rx.combineLatest(memoryData$, mapData$)
+    .subscribe(([memoryData, res]) => {
+      res.setEncoding('utf8');
+      res.pipe(csv())
+        .on('data', function(row) {
+          if (row.ContentIndex === 'BNPC') {
+            handleMonster(row, memoryData);
+          } else {
+            switch (row.Type) {
+              case 'NPC':
+                handleNpc(row);
+                break;
+              case 'Gathering':
+                handleNode(row);
+                break;
+              case 'Aetheryte':
+                handleAetheryte(row);
+                break;
+              default:
+                break;
+            }
+          }
+
+        })
+        .on('end', function() {
+          // Write data that needs to be joined with game data first
+          persistToJson('node-positions', nodes);
+          console.log('nodes written');
+          persistToTypescript('aetherytes', 'aetherytes', aetherytes);
+          console.log('aetherytes written');
+          persistToJsonAsset('npcs', npcs);
+          console.log('npcs written');
+          persistToJson('monsters', monsters);
+          console.log('monsters written');
+        });
+    });
+}
+
 
 handleNode = (row) => {
   nodes[+row.ENpcResidentID] = {
@@ -575,5 +576,30 @@ if (hasTodo('quests')) {
     });
   }, null, () => {
     persistToJsonAsset('quests', quests);
+  });
+}
+
+if (hasTodo('fates')) {
+  const fates = {};
+  getAllPages('https://xivapi.com/Fate?columns=ID,Name_*,Description_*,IconMap,ClassJobLevel').subscribe(page => {
+    page.Results.forEach(fate => {
+      fates[fate.ID] = {
+        name: {
+          en: fate.Name_en,
+          ja: fate.Name_ja,
+          de: fate.Name_de,
+          fr: fate.Name_fr
+        },
+        description: {
+          en: fate.Description_en,
+          ja: fate.Description_ja,
+          de: fate.Description_de,
+          fr: fate.Description_fr
+        },
+        icon: fate.IconMap
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('fates', fates);
   });
 }

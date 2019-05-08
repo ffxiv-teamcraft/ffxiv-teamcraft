@@ -5,6 +5,7 @@ import { MapData } from '../../modules/map/map-data';
 import { XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../model/common/i18n-name';
 import { Quest } from '../../pages/db/model/quest/quest';
+import { Fate } from '../../pages/db/model/fate/fate';
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +49,7 @@ export class LazyDataService {
   public mobs: { [index: string]: I18nName } = {};
   public places: { [index: string]: I18nName } = {};
   public quests: { [index: string]: Quest } = {};
+  public fates: { [index: string]: Fate } = {};
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -95,7 +97,8 @@ export class LazyDataService {
         this.xivapi.getDCList(),
         this.http.get('./assets/data/mobs.json'),
         this.http.get('./assets/data/places.json'),
-        this.http.get('./assets/data/quests.json')
+        this.http.get('./assets/data/quests.json'),
+        this.http.get('./assets/data/fates.json'),
       ]
     ).subscribe(([
                    items,
@@ -123,7 +126,8 @@ export class LazyDataService {
                    dcList,
                    mobs,
                    places,
-                   quests
+                   quests,
+      fates
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -151,6 +155,7 @@ export class LazyDataService {
       this.mobs = mobs as { [index: string]: I18nName };
       this.places = places as { [index: string]: I18nName };
       this.quests = quests as { [index: string]: Quest };
+      this.fates = fates as { [index: string]: Fate };
       this.loaded$.next(true);
     });
   }

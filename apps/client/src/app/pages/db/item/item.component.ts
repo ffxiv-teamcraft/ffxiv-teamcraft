@@ -257,6 +257,8 @@ export class ItemComponent extends TeamcraftPageComponent {
           && (!item.gatheredBy)
           && (item.alarms === undefined || item.alarms.length === 0)
           && (item.tripleTriadDuels === undefined || item.tripleTriadDuels.length === 0)
+          && (item.treasures === undefined || item.treasures.length === 0)
+          && (item.fates === undefined || item.fates.length === 0)
           && !item.tripleTriadPack;
       })
     );
@@ -405,7 +407,7 @@ export class ItemComponent extends TeamcraftPageComponent {
                   itemId: +itemId
                 };
               })
-          })
+          });
         }
         return usedFor;
       })

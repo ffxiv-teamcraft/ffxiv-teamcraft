@@ -10,6 +10,9 @@ import { Drop } from './drop';
 import { Alarm } from '../../../core/alarms/alarm';
 import { CompactMasterbook } from '../../../model/common/compact-masterbook';
 import { TripleTriadDuel } from '../../../pages/db/model/attt/triple-triad-duel';
+import { Treasure } from './treasure';
+import { Fate } from '../../../pages/db/model/fate/fate';
+import { FateData } from './fate-data';
 
 export class ListRow extends DataModel {
   icon?: number;
@@ -39,6 +42,8 @@ export class ListRow extends DataModel {
   masterbooks?: CompactMasterbook[] = [];
   tripleTriadDuels?: TripleTriadDuel[] = [];
   tripleTriadPack?: {id: number, price: number};
+  treasures?: Treasure[] = [];
+  fates?: FateData[] = [];
 
   /**
    * Is someone working on it?

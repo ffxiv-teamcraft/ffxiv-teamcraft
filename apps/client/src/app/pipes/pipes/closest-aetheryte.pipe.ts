@@ -1,8 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { MapService } from '../modules/map/map.service';
-import { Aetheryte } from '../core/data/aetheryte';
+import { MapService } from '../../modules/map/map.service';
+import { Aetheryte } from '../../core/data/aetheryte';
 import { Observable } from 'rxjs';
-import { Vector2 } from '../core/tools/vector2';
+import { Vector2 } from '../../core/tools/vector2';
 import { filter, map } from 'rxjs/operators';
 
 @Pipe({

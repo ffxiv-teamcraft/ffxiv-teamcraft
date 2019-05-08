@@ -1,0 +1,11 @@
+<nz-list [nzRenderItem]="treasureTemplate" [nzDataSource]="item.treasures">
+  <ng-template #treasureTemplate let-treasure>
+    <nz-list-item>
+      <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="treasure.itemId | itemName | i18n">
+      </nz-list-item-meta>
+      <ng-template #avatar>
+        <app-item-icon [width]="32" [icon]="treasure.icon" [itemId]="treasure.itemId"></app-item-icon>
+      </ng-template>
+    </nz-list-item>
+  </ng-template>
+</nz-list>

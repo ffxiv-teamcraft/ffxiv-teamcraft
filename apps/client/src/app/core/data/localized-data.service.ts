@@ -9,6 +9,7 @@ import { Language } from './language';
 import { koActions } from './sources/ko-actions';
 import { mapIds } from './sources/map-ids';
 import { LazyDataService } from './lazy-data.service';
+import { Fate } from '../../pages/db/model/fate/fate';
 
 @Injectable()
 export class LocalizedDataService {
@@ -54,6 +55,17 @@ export class LocalizedDataService {
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
+  public getFate(id: number): Fate {
+    const row = this.getRow<Fate>(this.lazyData.fates, id);
+    const koRow = this.getRow<Fate>(this.lazyData.fates, id);
+
+    if (row !== undefined) {
+      row.name.ko = koRow !== undefined ? koRow.name.ko : row.name.en;
+      row.description.ko = koRow !== undefined ? koRow.description.ko : row.description.en;
     }
     return row;
   }
@@ -187,7 +199,7 @@ export class LocalizedDataService {
     return result;
   }
 
-  private getRow(array: any, id: number | string): I18nName {
+  private getRow<T = I18nName>(array: any, id: number | string): T {
     if (array === undefined) {
       return undefined;
     }
