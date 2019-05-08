@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
 import { CustomItemsDisplay } from '../../../modules/custom-items/+state/custom-items-display';
 import { DataModel } from '../../../core/database/storage/data-model';
-import { NodeTypeIconPipe } from '../../../pipes/node-type-icon.pipe';
+import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
 import { Alarm } from '../../../core/alarms/alarm';

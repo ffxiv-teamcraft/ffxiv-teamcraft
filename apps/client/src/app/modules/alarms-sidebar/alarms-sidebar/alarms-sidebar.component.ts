@@ -9,6 +9,7 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { Alarm } from '../../../core/alarms/alarm';
 import { MapComponent } from '../../map/map/map.component';
 import { SettingsService } from '../../settings/settings.service';
+import { IS_PRERENDER } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-alarms-sidebar',
@@ -51,7 +52,9 @@ export class AlarmsSidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.alarms$ = this.alarmsFacade.alarmsSidebarDisplay$;
-    this.alarmsFacade.loadAlarms();
+    if (!IS_PRERENDER) {
+      this.alarmsFacade.loadAlarms();
+    }
   }
 
 }

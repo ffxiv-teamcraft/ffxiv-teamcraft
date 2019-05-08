@@ -18,11 +18,12 @@ export class UiTextPipe implements PipeTransform, OnDestroy {
     this.subscription = this.uiColorsService.getColors().subscribe(colors => this.colors = colors);
   }
 
-  transform(value = ''): SafeHtml {
-    value = value.replace(/<73>(.*?)<\/73>/gi, '');
-    value = value.replace(/<72>01<\/72>/gi, '</span>');
-    value = value.replace(/<UI\w+>01<\/UI\w+>/gi, '</span>');
-    value = value.replace(/\n/g, '<br>');
+  transform(value: any = ''): SafeHtml {
+    value = value.replace(/<73>(.*?)<\/73>/gi, '')
+      .replace(/<72>01<\/72>/gi, '</span>')
+      .replace(/<UI\w+>01<\/UI\w+>/gi, '</span>')
+      .replace(/\n\n/g, '\n')
+      .replace(/\n/g, '<br>');
     let match;
     while (match = /<UI\w+>(.*?)<\/UI\w+>/gi.exec(value)) {
       const colorID = parseInt(match[1].substr(-4), 16);

@@ -1,7 +1,13 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { Alarm } from '../../../../core/alarms/alarm';
 import { StoredNode } from '../../../../modules/list/model/stored-node';
+import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
+import { map } from 'rxjs/operators';
+import { MapService } from '../../../../modules/map/map.service';
+import { AlarmGroup } from '../../../../core/alarms/alarm-group';
+import { Observable } from 'rxjs';
+import { BellNodesService } from '../../../../core/data/bell-nodes.service';
 
 @Component({
   selector: 'app-gathered-by',
@@ -11,7 +17,17 @@ import { StoredNode } from '../../../../modules/list/model/stored-node';
 })
 export class GatheredByComponent extends ItemDetailsPopup {
 
-  constructor() {
+  @Input()
+  showAlarmsIntegration = false;
+
+  alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
+
+  alarms$: Observable<Alarm[]> = this.alarmsFacade.allAlarms$;
+
+  alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
+
+  constructor(private alarmsFacade: AlarmsFacade, private mapService: MapService,
+              private bell: BellNodesService) {
     super();
   }
 
@@ -20,8 +36,44 @@ export class GatheredByComponent extends ItemDetailsPopup {
     return res.toString();
   }
 
+  public addAlarm(alarm: Partial<Alarm>, group?: AlarmGroup): void {
+    this.mapService.getMapById(alarm.mapId)
+      .pipe(
+        map((mapData) => {
+          if (mapData !== undefined) {
+            return this.mapService.getNearestAetheryte(mapData, alarm.coords);
+          } else {
+            return undefined;
+          }
+        }),
+        map(aetheryte => {
+          if (aetheryte !== undefined) {
+            alarm.aetheryte = aetheryte;
+          }
+          return alarm;
+        })
+      ).subscribe((result: Alarm) => {
+      if (group) {
+        alarm.groupId = group.$key;
+      }
+      this.alarmsFacade.addAlarms(result);
+    });
+  }
+
+  public canCreateAlarm(generatedAlarm: Partial<Alarm>): Observable<boolean> {
+    return this.alarms$.pipe(
+      map(alarms => {
+        return !alarms.some(alarm => {
+          return alarm.itemId === generatedAlarm.itemId
+          && alarm.zoneId === generatedAlarm.zoneId
+          && alarm.areaId === generatedAlarm.areaId;
+        })
+      })
+    )
+  }
 
   public generateAlarm(node: StoredNode): Partial<Alarm> {
+    const bellNodes = this.bell.getAllNodes({ obj: { i: this.item.id, c: this.item.icon } });
     const alarm: Partial<Alarm> = {
       duration: node.uptime / 60,
       zoneId: node.zoneid,
@@ -32,8 +84,24 @@ export class GatheredByComponent extends ItemDetailsPopup {
       weathersFrom: node.weathersFrom,
       snagging: node.snagging,
       fishEyes: node.fishEyes,
-      predators: node.predators || []
+      predators: node.predators || [],
+      coords: {
+        x: node.coords[0],
+        y: node.coords[1]
+      },
+      icon: this.item.icon,
+      itemId: this.item.id,
+      type: this.item.gatheredBy.type,
+      reduction: false,
+      ephemeral: node.limitType && node.limitType.en === 'Ephemeral'
     };
+    const bellNode = bellNodes.find(n => n.zoneid === alarm.zoneId);
+    if (bellNode) {
+      alarm.nodeContent = bellNode.items;
+    }
+    if (bellNode.folklore) {
+      alarm.folklore = bellNode.folklore;
+    }
     if (node.slot) {
       alarm.slot = +node.slot;
     }

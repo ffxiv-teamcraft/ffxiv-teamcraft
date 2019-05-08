@@ -12,6 +12,8 @@ import { Drop } from '../model/drop';
 import { Alarm } from '../../../core/alarms/alarm';
 import { ListRow } from '../model/list-row';
 import { CompactMasterbook } from '../../../model/common/compact-masterbook';
+import { Treasure } from '../model/treasure';
+import { FateData } from '../model/fate-data';
 
 export const EXTRACTORS = new InjectionToken('EXTRACTORS');
 
@@ -21,6 +23,26 @@ export class DataExtractorService {
   constructor(@Inject(EXTRACTORS) private extractors: AbstractExtractor<any>[]) {
   }
 
+  addDataToItem(item: ListRow, data: ItemData, skipCraft = false): ListRow {
+    if (data.isCraft() && !skipCraft) {
+      item.craftedBy = this.extractCraftedBy(item.id, data);
+    }
+    item.vendors = this.extractVendors(item.id, data);
+    item.tradeSources = this.extractTradeSources(item.id, data);
+    item.reducedFrom = this.extractReducedFrom(item.id, data);
+    item.desynths = this.extractDesynths(item.id, data);
+    item.instances = this.extractInstances(item.id, data);
+    item.gardening = this.extractGardening(item.id, data);
+    item.voyages = this.extractVoyages(item.id, data);
+    item.drops = this.extractDrops(item.id, data);
+    item.ventures = this.extractVentures(item.id, data);
+    item.gatheredBy = this.extractGatheredBy(item.id, data);
+    item.alarms = this.extractAlarms(item.id, data, item);
+    item.masterbooks = this.extractMasterBooks(item.id, data, item);
+    item.treasures = this.extractTreasures(item.id, data, item);
+    item.fates = this.extractFates(item.id, data, item);
+    return item;
+  }
 
   /**
    * Extracts informations about where to drop a given item.
@@ -149,6 +171,26 @@ export class DataExtractorService {
    */
   extractMasterBooks(id: number, data: ItemData, row: ListRow): CompactMasterbook[] {
     return this.extract<CompactMasterbook[]>(DataType.MASTERBOOKS, id, data, row);
+  }
+
+  /**
+   * Extracts treasures entries for item.
+   * @param id
+   * @param data
+   * @param row
+   */
+  extractTreasures(id: number, data: ItemData, row: ListRow): Treasure[] {
+    return this.extract<Treasure[]>(DataType.TREASURES, id, data, row);
+  }
+
+  /**
+   * Extracts fates entries for item.
+   * @param id
+   * @param data
+   * @param row
+   */
+  extractFates(id: number, data: ItemData, row: ListRow): FateData[] {
+    return this.extract<FateData[]>(DataType.FATES, id, data, row);
   }
 
   /**

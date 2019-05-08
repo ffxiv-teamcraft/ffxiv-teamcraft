@@ -28,6 +28,15 @@
             "value": "no-cache, must-revalidate"
           }
         ]
+      },
+      {
+        "source": "**/*.@(json|svg)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=7200"
+          }
+        ]
       }
     ]
   }

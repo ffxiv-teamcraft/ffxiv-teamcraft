@@ -24,18 +24,22 @@ export class SeoService {
     this.config = {
       title: 'FFXIV Teamcraft',
       description: 'Create crafting lists and collaborate with others, set gathering alarms, simulate crafting rotations, and more...',
-      url: 'https://ffxivteamcraft.com/'
+      url: 'https://ffxivteamcraft.com/',
+      image: 'https://ffxivteamcraft.com/assets/logo.png'
     };
     this.applyConfig();
   }
 
   private applyConfig(): void {
     this.title.setTitle(this.config.title);
+    this.meta.updateTag({ name: 'twitter:image', content: this.config.image });
     this.meta.updateTag({ name: 'description', content: this.config.description });
     this.meta.updateTag({ name: 'twitter:title', content: this.config.title });
     this.meta.updateTag({ name: 'twitter:description', content: this.config.description });
+    this.meta.updateTag({ property: 'og:image', content: this.config.image });
     this.meta.updateTag({ property: 'og:title', content: this.config.title });
     this.meta.updateTag({ property: 'og:description', content: this.config.description });
     this.meta.updateTag({ property: 'og:url', content: this.config.url });
+    (<any>window).renderComplete = true;
   }
 }

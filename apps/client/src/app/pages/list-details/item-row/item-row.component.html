@@ -461,6 +461,14 @@
               nz-tooltip [nzTitle]="'Retainer_ventures' | translate" (click)="openVenturesPopup()">
         <img class="img-icon round-icon" src="https://garlandtools.org/files/icons/item/3503.png" alt="Ventures">
       </button>
+      <button nz-button nzShape="circle" *ngIf="item.treasures !== undefined && item.treasures.length > 0"
+              nz-tooltip [nzTitle]="'Treasures' | translate" (click)="openTreasuresPopup()">
+        <img class="img-icon round-icon" src="./assets/icons/chest_open.png" alt="Treasures">
+      </button>
+      <button nz-button nzShape="circle" *ngIf="item.fates !== undefined && item.fates.length > 0"
+              nz-tooltip [nzTitle]="'Fates' | translate" (click)="openFatesPopup()">
+        <img class="img-icon round-icon" [src]="(item.fates[0].id | fate).icon | xivapiIcon" alt="Fates">
+      </button>
       <div *ngFor="let craft of item.craftedBy; trackBy: trackByCraft"
            [fxLayout]="item.craftedBy.length > 1?'column':'row'"
            [fxLayoutGap]="item.craftedBy.length > 1?'0px':'5px'"

@@ -32,7 +32,7 @@ export class SearchComponent implements OnInit {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  onlyRecipes$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('search:not-only-recipes') !== 'true');
+  onlyRecipes$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('search:only-recipes') === 'true');
 
   results$: Observable<SearchResult[]>;
 
@@ -76,7 +76,7 @@ export class SearchComponent implements OnInit {
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
-              private message: NzMessageService, private translate: TranslateService, private lazyData: LazyDataService) {
+              private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService) {
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
@@ -97,7 +97,7 @@ export class SearchComponent implements OnInit {
       })
     );
     this.onlyRecipes$.subscribe(value => {
-      localStorage.setItem('search:not-only-recipes', (!value).toString());
+      localStorage.setItem('search:only-recipes', value.toString());
     });
   }
 
@@ -106,7 +106,7 @@ export class SearchComponent implements OnInit {
       this.availableJobCategories = this.gt.getJobs().filter(job => job.isJob !== undefined || job.category === 'Disciple of the Land');
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
     });
-    this.results$ = combineLatest(this.query$, this.onlyRecipes$, this.filters$).pipe(
+    this.results$ = combineLatest([this.query$, this.onlyRecipes$, this.filters$]).pipe(
       filter(([query, , filters]) => {
         if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
           // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.

@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { MapData } from '../../modules/map/map-data';
 import { XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../model/common/i18n-name';
+import { Quest } from '../../pages/db/model/quest/quest';
+import { Fate } from '../../pages/db/model/fate/fate';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +35,10 @@ export class LazyDataService {
   public koJobNames: any = {};
   public koJobAbbrs: any = {};
   public koJobCategories: any = {};
+  public koQuests: any = {};
+  public koFates: any = {};
+  public koFateDescriptions: any = {};
+  public koTripleTriadRules: any = {};
 
   public craftActions: any = {};
 
@@ -46,6 +52,8 @@ export class LazyDataService {
 
   public mobs: { [index: string]: I18nName } = {};
   public places: { [index: string]: I18nName } = {};
+  public quests: { [index: string]: Quest } = {};
+  public fates: { [index: string]: Fate } = {};
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -67,32 +75,39 @@ export class LazyDataService {
   }
 
   constructor(private http: HttpClient, private xivapi: XivapiService) {
-    combineLatest(
-      this.http.get('./assets/data/items.json'),
-      this.http.get('./assets/data/zh-items.json'),
-      this.http.get('./assets/data/ko/ko-items.json'),
-      this.http.get('./assets/data/ko/ko-item-ui-categories.json'),
-      this.http.get('./assets/data/ko/ko-actions.json'),
-      this.http.get('./assets/data/ko/ko-action-descriptions.json'),
-      this.http.get('./assets/data/ko/ko-craft-actions.json'),
-      this.http.get('./assets/data/ko/ko-craft-descriptions.json'),
-      this.http.get('./assets/data/ko/ko-free-company-actions.json'),
-      this.http.get('./assets/data/ko/ko-leves.json'),
-      this.http.get('./assets/data/ko/ko-weathers.json'),
-      this.http.get('./assets/data/ko/ko-places.json'),
-      this.http.get('./assets/data/ko/ko-npcs.json'),
-      this.http.get('./assets/data/ko/ko-mobs.json'),
-      this.http.get('./assets/data/ko/ko-job-name.json'),
-      this.http.get('./assets/data/ko/ko-job-abbr.json'),
-      this.http.get('./assets/data/ko/ko-job-categories.json'),
-      this.http.get('./assets/data/actions.json'),
-      this.http.get('./assets/data/craft-actions.json'),
-      this.http.get('./assets/data/npcs.json'),
-      this.http.get('./assets/data/item-icons.json'),
-      this.http.get('./assets/data/maps.json'),
-      this.xivapi.getDCList(),
-      this.http.get('./assets/data/mobs.json'),
-      this.http.get('./assets/data/places.json')
+    combineLatest([
+        this.http.get('./assets/data/items.json'),
+        this.http.get('./assets/data/zh-items.json'),
+        this.http.get('./assets/data/ko/ko-items.json'),
+        this.http.get('./assets/data/ko/ko-item-ui-categories.json'),
+        this.http.get('./assets/data/ko/ko-actions.json'),
+        this.http.get('./assets/data/ko/ko-action-descriptions.json'),
+        this.http.get('./assets/data/ko/ko-craft-actions.json'),
+        this.http.get('./assets/data/ko/ko-craft-descriptions.json'),
+        this.http.get('./assets/data/ko/ko-free-company-actions.json'),
+        this.http.get('./assets/data/ko/ko-leves.json'),
+        this.http.get('./assets/data/ko/ko-weathers.json'),
+        this.http.get('./assets/data/ko/ko-places.json'),
+        this.http.get('./assets/data/ko/ko-npcs.json'),
+        this.http.get('./assets/data/ko/ko-mobs.json'),
+        this.http.get('./assets/data/ko/ko-job-name.json'),
+        this.http.get('./assets/data/ko/ko-job-abbr.json'),
+        this.http.get('./assets/data/ko/ko-job-categories.json'),
+        this.http.get('./assets/data/actions.json'),
+        this.http.get('./assets/data/craft-actions.json'),
+        this.http.get('./assets/data/npcs.json'),
+        this.http.get('./assets/data/item-icons.json'),
+        this.http.get('./assets/data/maps.json'),
+        this.xivapi.getDCList(),
+        this.http.get('./assets/data/mobs.json'),
+        this.http.get('./assets/data/places.json'),
+        this.http.get('./assets/data/quests.json'),
+        this.http.get('./assets/data/fates.json'),
+        this.http.get('./assets/data/ko/ko-fate-descriptions.json'),
+        this.http.get('./assets/data/ko/ko-fates.json'),
+        this.http.get('./assets/data/ko/ko-quests.json'),
+        this.http.get('./assets/data/ko/ko-triple-triad-rules.json')
+      ]
     ).subscribe(([
                    items,
                    zhItems,
@@ -118,7 +133,13 @@ export class LazyDataService {
                    maps,
                    dcList,
                    mobs,
-                   places
+                   places,
+                   quests,
+                   fates,
+                   koFateDescriptions,
+                   koFates,
+                   koQuests,
+                   koTripleTriadRules
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -145,6 +166,12 @@ export class LazyDataService {
       this.datacenters = dcList as { [index: string]: string[] };
       this.mobs = mobs as { [index: string]: I18nName };
       this.places = places as { [index: string]: I18nName };
+      this.quests = quests as { [index: string]: Quest };
+      this.fates = fates as { [index: string]: Fate };
+      this.koFateDescriptions = koFateDescriptions;
+      this.koFates = koFates;
+      this.koQuests = koQuests;
+      this.koTripleTriadRules = koTripleTriadRules;
       this.loaded$.next(true);
     });
   }

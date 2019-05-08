@@ -40,6 +40,12 @@ export class Item implements I18nData {
   satisfaction: SatisfactionData[];
   masterpiece: Masterpiece;
 
+  ingredient_of?: { [index: string]: number };
+  tradeCurrency?: any[];
+  loot?: number[];
+  treasure?: number[];
+  fates?: number[];
+
   @DeserializeFieldName('icon')
   _icon: number;
 
