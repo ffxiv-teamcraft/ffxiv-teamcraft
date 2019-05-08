@@ -54,6 +54,7 @@ export class LazyDataService {
   public places: { [index: string]: I18nName } = {};
   public quests: { [index: string]: Quest } = {};
   public fates: { [index: string]: Fate } = {};
+  public instances: any = {};
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -106,7 +107,8 @@ export class LazyDataService {
         this.http.get('./assets/data/ko/ko-fate-descriptions.json'),
         this.http.get('./assets/data/ko/ko-fates.json'),
         this.http.get('./assets/data/ko/ko-quests.json'),
-        this.http.get('./assets/data/ko/ko-triple-triad-rules.json')
+        this.http.get('./assets/data/ko/ko-triple-triad-rules.json'),
+        this.http.get('./assets/data/instances.json')
       ]
     ).subscribe(([
                    items,
@@ -139,7 +141,8 @@ export class LazyDataService {
                    koFateDescriptions,
                    koFates,
                    koQuests,
-                   koTripleTriadRules
+                   koTripleTriadRules,
+                   instances
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -172,6 +175,7 @@ export class LazyDataService {
       this.koFates = koFates;
       this.koQuests = koQuests;
       this.koTripleTriadRules = koTripleTriadRules;
+      this.instances = instances;
       this.loaded$.next(true);
     });
   }

@@ -10,12 +10,16 @@ import { SearchFilter } from '../../model/search/search-filter.interface';
 import { map, switchMap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 import { LazyDataService } from '../data/lazy-data.service';
+import { InstanceData } from '../../model/garland-tools/instance-data';
 
 @Injectable()
 export class DataService {
 
   private garlandUrl = 'https://www.garlandtools.org/db/doc';
-  private garlandtoolsVersion = 3;
+  private garlandtoolsVersions = {
+    item: 3,
+    instance: 2
+  };
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 
   constructor(private http: HttpClient,
@@ -31,8 +35,18 @@ export class DataService {
    * @returns {Observable<ItemData>}
    */
   public getItem(id: number): Observable<ItemData> {
-    return this.getGarlandData(`/item/en/${this.garlandtoolsVersion}/${id}`)
+    return this.getGarlandData(`/item/en/${this.garlandtoolsVersions.item}/${id}`)
       .pipe(map(item => this.serializer.deserialize<ItemData>(item, ItemData)));
+  }
+
+  /**
+   * Gets an item based on its id.
+   * @param {number} id
+   * @returns {Observable<ItemData>}
+   */
+  public getInstance(id: number): Observable<InstanceData> {
+    return this.getGarlandData(`/instance/en/${this.garlandtoolsVersions.instance}/${id}`)
+      .pipe(map(item => this.serializer.deserialize<InstanceData>(item, InstanceData)));
   }
 
   /**
@@ -162,7 +176,7 @@ export class DataService {
         if (itemIds.length === 0) {
           return of([]);
         }
-        return this.getGarlandData(`/item/en/${this.garlandtoolsVersion}/${itemIds.join(',')}`)
+        return this.getGarlandData(`/item/en/${this.garlandtoolsVersions.item}/${itemIds.join(',')}`)
           .pipe(
             map(items => {
               if (!(items instanceof Array)) {

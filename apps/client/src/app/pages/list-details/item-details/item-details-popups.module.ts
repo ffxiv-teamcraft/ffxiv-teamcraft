@@ -24,6 +24,7 @@ import { TradesComponent } from './trades/trades.component';
 import { CoreModule } from '../../../core/core.module';
 import { TreasuresComponent } from './treasures/treasures.component';
 import { FatesComponent } from './fates/fates.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { FatesComponent } from './fates/fates.component';
     FishingBaitModule,
     LayoutModule,
     TooltipModule,
+    RouterModule,
 
     FlexLayoutModule,
 

@@ -34,6 +34,7 @@ import { KeysPipe } from './pipes/keys.pipe';
 import { TripleTriadRuleNamePipe } from './pipes/triple-triad-rule-name.pipe';
 import { QuestNamePipe } from './pipes/quest-name.pipe';
 import { FatePipe } from './pipes/fate.pipe';
+import { InstanceNamePipe } from './pipes/instance-name.pipe';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { FatePipe } from './pipes/fate.pipe';
     KeysPipe,
     TripleTriadRuleNamePipe,
     QuestNamePipe,
-    FatePipe
+    FatePipe,
+    InstanceNamePipe
   ],
   exports: [
     ItemNamePipe,
@@ -110,7 +112,8 @@ import { FatePipe } from './pipes/fate.pipe';
     KeysPipe,
     TripleTriadRuleNamePipe,
     QuestNamePipe,
-    FatePipe
+    FatePipe,
+    InstanceNamePipe
   ]
 })
 export class PipesModule {

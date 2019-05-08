@@ -35,6 +35,16 @@ export class LocalizedDataService {
     return row;
   }
 
+  public getInstanceName(id: number): I18nName {
+    //const koRow = this.getRow(this.lazyData.koItems, id);
+    const row = this.getRow(this.lazyData.instances, id);
+
+    if (row !== undefined) {
+      //row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
   public getItemIdsByName(name: string, language: Language): number[] {
     if (['en', 'fr', 'de', 'ja', 'zh', 'ko'].indexOf(language) === -1) {
       language = 'en';
@@ -165,7 +175,7 @@ export class LocalizedDataService {
   public getMapId(name: string): number {
     const result = mapIds.find(map => map.name === name);
     if (result === undefined) {
-      if(name === 'Gridania'){
+      if (name === 'Gridania') {
         return 3;
       }
       return -1;
