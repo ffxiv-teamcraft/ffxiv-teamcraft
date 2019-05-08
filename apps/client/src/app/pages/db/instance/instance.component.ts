@@ -100,7 +100,7 @@ export class InstanceComponent extends TeamcraftPageComponent {
     return this.xivapiInstance$.pipe(
       map(instance => {
         return {
-          title: this.i18n.getName(this.l12n.getItem(instance.ID)),
+          title: this.i18n.getName(this.l12n.getInstanceName(instance.ID)),
           description: this.getDescription(instance),
           url: `https://ffxivteamcraft.com/db/item/${instance.ID}/${this.i18n.getName(this.l12n.getInstanceName(instance.ID)).split(' ').join('-')}`,
           image: `https://xivapi.com/${instance.Icon}`
