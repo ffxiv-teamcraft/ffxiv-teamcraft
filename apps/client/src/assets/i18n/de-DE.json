@@ -1,4 +1,5 @@
 {
+  "Search_placeholder": "{{type}} name",
   "Pick_a_list": "Wähle eine Liste",
   "Pick_a_user": "Wähle einen Benutzer",
   "Pick_a_fc": "Wähle eine freie Gesellschaft",
@@ -22,7 +23,6 @@
     "Title": "Gegenstände",
     "No_match": "Keine passenden Gegenstände",
     "Item_name": "Name des Gegenstands",
-    "Only_recipes": "Nur Rezepte",
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
     "Reset_filters": "Filter zurücksetzen",
@@ -165,6 +165,9 @@
   },
   "Item_name": "Gegenstandsname",
   "No_items_found": "Keinen Gegenstand gefunden",
+  "No_instances_found": "No instances found",
+  "No_quests_found": "No quests found",
+  "No_npcs_found": "No npcs found",
   "Select_all": "Alle auswählen",
   "Do you really want to reset the list?": "Möchtest du die Liste wirklich zurücksetzen?",
   "Yes": "Ja",
@@ -1137,5 +1140,13 @@
       "Boss": "Boss",
       "MidBoss": "Boss"
     }
+  },
+  "SEARCH_TYPES": {
+    "Item": "Item",
+    "Recipe": "Recipe",
+    "Instance": "Instance"
+  },
+  "SEARCH_FILTERS": {
+    "Instance_level": "Level"
   }
 }
