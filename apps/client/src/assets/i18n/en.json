@@ -1,4 +1,5 @@
 {
+  "Search_placeholder": "{{type}} name",
   "Pick_a_list": "Pick a list",
   "Pick_a_user": "Pick a user",
   "Pick_a_fc": "Pick a free company",
@@ -22,7 +23,6 @@
     "Title": "Search",
     "No_match": "No matching items",
     "Item_name": "Item name",
-    "Only_recipes": "Only recipes",
     "Add_to_list": "Add this item to a list",
     "Apply_filters": "Apply filters",
     "Reset_filters": "Reset filters",
@@ -165,6 +165,9 @@
   },
   "Item_name": "Item name",
   "No_items_found": "No items found",
+  "No_instances_found": "No instances found",
+  "No_quests_found": "No quests found",
+  "No_npcs_found": "No npcs found",
   "Select_all": "Select all",
   "Do you really want to reset the list?": "Do you really want to reset the list?",
   "Yes": "Yes",
@@ -1137,5 +1140,13 @@
       "Boss": "Boss",
       "MidBoss": "Boss"
     }
+  },
+  "SEARCH_TYPES": {
+    "Item": "Item",
+    "Recipe": "Recipe",
+    "Instance": "Instance"
+  },
+  "SEARCH_FILTERS": {
+    "Instance_level": "Level"
   }
 }
