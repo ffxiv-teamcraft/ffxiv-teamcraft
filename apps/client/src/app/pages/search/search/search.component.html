@@ -69,7 +69,7 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/worn_by' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="jobCategories" nzMode="multiple" nzAllowClear>
+                <nz-select formControlName="jobCategories" nzMode="multiple" nzAllowClear class="filter-select">
                   <nz-option *ngFor="let category of availableJobCategories" [nzValue]="category.id"
                              [nzLabel]="category.id | jobAbbr | i18n" nzCustomContent>
                     <img src="https://garlandtools.org/db/images/{{category.abbreviation}}.png" alt="" class="job-icon">
@@ -81,7 +81,7 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/crafted_by' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="craftJob" nzAllowClear>
+                <nz-select formControlName="craftJob" nzAllowClear class="filter-select">
                   <nz-option *ngFor="let job of availableCraftJobs" [nzValue]="job.id"
                              [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
                     <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
@@ -93,7 +93,7 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/item_category' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="itemCategories" nzShowSearch nzAllowClear nzMode="multiple">
+                <nz-select formControlName="itemCategories" nzShowSearch nzAllowClear nzMode="multiple" class="filter-select">
                   <nz-option *ngFor="let uiCategory of uiCategories$ | async" [nzValue]="uiCategory.id"
                              [nzLabel]="uiCategory.name | i18n">
                   </nz-option>
