@@ -79,7 +79,7 @@
     </div>
     <nz-divider [nzText]="'DB.Fights' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
-      <nz-card fxFlex="1 1 30%" class="details-card" [nzTitle]="title" nzBordered="false"
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
                *ngFor="let fight of gtData.instance.fights">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
@@ -122,7 +122,7 @@
     </div>
     <nz-divider [nzText]="'DB.Instance_details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
-      <nz-card fxFlex="1 1 30%" class="details-card" [nzTitle]="title" nzBordered="false">
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
             <div>
@@ -132,7 +132,7 @@
         </ng-template>
         <app-map [mapId]="xivapiInstance.ContentFinderCondition.TerritoryType.Map.ID"></app-map>
       </nz-card>
-      <nz-card fxFlex="1 1 30%" class="details-card" [nzTitle]="title" nzBordered="false"
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
                *ngIf="gtData.instance.rewards?.length > 0">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
@@ -149,7 +149,7 @@
           </div>
         </div>
       </nz-card>
-      <nz-card fxFlex="1 1 30%" class="details-card" [nzTitle]="title" nzBordered="false"
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
                *ngIf="gtData.instance.unlockedByQuest">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
@@ -173,7 +173,7 @@
             </div>
           </div>
       </nz-card>
-      <nz-card fxFlex="1 1 30%" class="details-card" [nzTitle]="title" nzBordered="false"
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
                *ngIf="gtData.instance.coffers">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
