@@ -1,5 +1,5 @@
 <div class="top-part">
-  <div class="search-box" fxLayout="row">
+  <div class="search-box" fxLayout="row" fxLayoutGap="5px">
     <nz-input-group [nzAddOnAfter]="addOnAfterTemplate">
       <input class="search-input" type="text" placeholder="{{'Search_placeholder' | translate:{type: searchType$ | async} }}" #searchInput nz-input
              [ngModel]="query$.value"
