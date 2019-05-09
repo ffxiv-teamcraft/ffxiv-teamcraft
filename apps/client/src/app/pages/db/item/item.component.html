@@ -189,10 +189,26 @@
               <nz-card-meta [nzTitle]="recipeTitle">
                 <ng-template #recipeTitle>
                   <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                    <img class="recipe-job-icon" [src]="recipe.icon" alt="">
                     <ng-container *ngIf="recipe.jobId !== 0">
-                      <div>{{recipe.jobId | jobAbbr | i18n}}</div>
-                      <div>{{recipe.level}}{{recipe.stars_tooltip}}</div>
+                      <div fxLayout="column" class="recipe-title">
+                        <div fxLayout="row">
+                          <img class="recipe-job-icon" [src]="recipe.icon" alt="">
+                          <div>{{recipe.jobId | jobAbbr | i18n}}</div>
+                          <div>{{recipe.level}}{{recipe.stars_tooltip}}</div>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="5px">
+                          <b>{{'SIMULATOR.Durability' | translate}}</b>:
+                          <div>{{gtData.getCraft(recipe.recipeId).durability}}</div>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="5px">
+                          <b>{{'SIMULATOR.Progress' | translate}}</b>:
+                          <div>{{gtData.getCraft(recipe.recipeId).progress}}</div>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="5px">
+                          <b>{{'SIMULATOR.Quality' | translate}}</b>:
+                          <div>{{gtData.getCraft(recipe.recipeId).quality}}</div>
+                        </div>
+                      </div>
                     </ng-container>
                   </div>
                 </ng-template>
