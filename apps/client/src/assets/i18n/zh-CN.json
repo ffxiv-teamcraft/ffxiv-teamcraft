@@ -1,4 +1,5 @@
 {
+  "Search_placeholder": "{{type}} name",
   "Pick_a_list": "选择清单",
   "Pick_a_user": "选择用户",
   "Pick_a_fc": "选择部队",
@@ -22,7 +23,6 @@
     "Title": "搜索",
     "No_match": "没有找到物品",
     "Item_name": "物品名称",
-    "Only_recipes": "仅显示有配方的物品",
     "Add_to_list": "将此物品加入到清单",
     "Apply_filters": "应用筛选",
     "Reset_filters": "重置筛选",
@@ -165,6 +165,9 @@
   },
   "Item_name": "物品名称",
   "No_items_found": "未找到物品",
+  "No_instances_found": "No instances found",
+  "No_quests_found": "No quests found",
+  "No_npcs_found": "No npcs found",
   "Select_all": "全选",
   "Do you really want to reset the list?": "您确定要重置清单吗？",
   "Yes": "是",
@@ -1137,5 +1140,13 @@
       "Boss": "Boss",
       "MidBoss": "Boss"
     }
+  },
+  "SEARCH_TYPES": {
+    "Item": "Item",
+    "Recipe": "Recipe",
+    "Instance": "Instance"
+  },
+  "SEARCH_FILTERS": {
+    "Instance_level": "Level"
   }
 }
