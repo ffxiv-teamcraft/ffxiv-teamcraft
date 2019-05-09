@@ -194,7 +194,7 @@ export class QuestComponent extends TeamcraftPageComponent {
           title: this.i18n.getName(this.l12n.getQuest(quest.ID).name),
           description: textData.Journal[0].Text,
           url: `https://ffxivteamcraft.com/db/quest/${quest.ID}/${this.i18n.getName(this.l12n.getQuest(quest.ID).name).split(' ').join('-')}`,
-          image: `https://xivapi.com/${quest.Icon}`
+          image: quest.Banner ? `https://xivapi.com/${quest.Banner}` : `https://xivapi.com/${quest.Icon}`
         };
       })
     );

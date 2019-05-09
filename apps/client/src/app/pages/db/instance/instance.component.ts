@@ -8,7 +8,7 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { combineLatest, Observable, of } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { filter, map, shareReplay } from 'rxjs/operators';
 import { switchMap } from 'rxjs/internal/operators/switchMap';
@@ -103,7 +103,7 @@ export class InstanceComponent extends TeamcraftPageComponent {
           title: this.i18n.getName(this.l12n.getInstanceName(instance.ID)),
           description: this.getDescription(instance),
           url: `https://ffxivteamcraft.com/db/instance/${instance.ID}/${this.i18n.getName(this.l12n.getInstanceName(instance.ID)).split(' ').join('-')}`,
-          image: `https://xivapi.com/${instance.Icon}`
+          image: `https://xivapi.com/${instance.Banner}`
         };
       })
     );
