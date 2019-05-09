@@ -45,7 +45,8 @@ export class SearchComponent implements OnInit {
 
   loading = false;
 
-  public searchType$: BehaviorSubject<SearchType> = new BehaviorSubject<SearchType>(SearchType.ITEM);
+  public searchType$: BehaviorSubject<SearchType> =
+    new BehaviorSubject<SearchType>(<SearchType>localStorage.getItem('search:type') || SearchType.ITEM);
 
   @ViewChild('notificationRef')
   notification: TemplateRef<any>;

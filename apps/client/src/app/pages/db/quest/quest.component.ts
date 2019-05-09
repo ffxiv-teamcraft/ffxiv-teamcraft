@@ -31,6 +31,8 @@ export class QuestComponent extends TeamcraftPageComponent {
 
   public involvedNpcs$: Observable<number[]>;
 
+  public rewards$: Observable<{ type: string, id: number, amount: number }[]>;
+
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
@@ -85,15 +87,75 @@ export class QuestComponent extends TeamcraftPageComponent {
 
     const actorIds$ = this.xivapiQuest$.pipe(
       map(quest => {
-        return _.uniq(Object.keys(quest)
-          .filter(key => /^ActorSpawn(\d+)$/.test(key))
-          .map(key => quest[key])
-          .filter(id => id !== 0));
+        return _.uniq([
+          ...Object.keys(quest)
+            .filter(key => /^ActorSpawn(\d+)$/.test(key))
+            .map(key => quest[key])
+            .filter(id => id !== 0),
+          quest.IssuerStart
+        ]);
+      })
+    );
+
+    this.rewards$ = combineLatest([this.xivapiQuest$, this.gtData$]).pipe(
+      map(([quest, gtData]) => {
+        const rewards = [];
+        if (quest.InstanceContentUnlockTargetID) {
+          rewards.push({
+            id: quest.InstanceContentUnlockTargetID,
+            type: 'instance'
+          });
+        }
+        if (quest.GilReward) {
+          rewards.push({
+            id: 1,
+            amount: quest.GilReward,
+            type: 'item'
+          });
+        }
+        if (quest.ExperiencePoints) {
+          rewards.push({
+            amount: quest.ExperiencePoints,
+            type: 'exp'
+          });
+        }
+        if (quest.ActionRewardTargetID) {
+          rewards.push({
+            id: quest.ActionRewardTargetID,
+            type: 'action'
+          });
+        }
+        if (quest.GCSeals) {
+          rewards.push({
+            id: [20, 21, 22][quest.GrandCompanyTargetID - 1],
+            amount: quest.GCSeals,
+            type: 'item'
+          });
+        }
+        if (gtData.quest.reward && gtData.quest.reward.reputation) {
+          rewards.push({
+            amount: gtData.quest.reward.reputation,
+            type: 'rep'
+          });
+        }
+        for (let i = 0; i <= 14; i++) {
+          const index = i < 10 ? `0${i}` : i;
+          if (quest[`ItemReward${index}`]) {
+            rewards.push({
+              id: quest[`ItemReward${index}`],
+              amount: 1,
+              type: 'item'
+            });
+          }
+        }
+        return rewards;
       })
     );
 
     this.involvedNpcs$ = actorIds$.pipe(
-      map(ids => ids.filter(id => id < 5000000))
+      map(ids => ids
+        .filter(id => id < 5000000)
+        .filter(id => this.l12n.getNpc(id) !== undefined))
     );
 
     this.textData$ = combineLatest([this.xivapiQuest$, lang$]).pipe(

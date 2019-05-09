@@ -152,9 +152,16 @@
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
             <img class="img-icon round-icon"
                  src="./assets/icons/quest.png">
-            <a routerLink="/db/{{translate.currentLang}}/quest/{{gtData.instance.unlockedByQuest}}">{{gtData.instance.unlockedByQuest | questName | i18n}}</a>
+            <div>{{gtData.instance.unlockedByQuest | questName | i18n}}</div>
+              <a nz-button nz-tooltip
+                 [nzTitle]="'DB.Open_in_db' | translate"
+                 nzSize="small"
+                 nzShape="circle"
+                 routerLink="/db/{{translate.currentLang}}/quest/{{gtData.instance.unlockedByQuest}}">
+                <i nz-icon type="info"></i>
+              </a>
+            </div>
           </div>
-        </div>
       </nz-card>
       <nz-card fxFlex="1 1 30%" class="details-card" [nzTitle]="title" nzBordered="false"
                *ngIf="gtData.instance.coffers">

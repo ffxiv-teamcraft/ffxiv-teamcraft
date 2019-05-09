@@ -172,7 +172,7 @@
             <div fxLayout="column">
               <div class="item-name">{{+row.itemId | itemName | i18n}}
                 <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true"></app-marketboard-icon>
-                <a nz-button nz-tooltip [nzTitle]="'DB.Open_item_in_db' | translate"
+                <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
                    nzSize="small"
                    nzShape="circle"
                    routerLink="/db/{{translate.currentLang}}/item/{{row.itemId}}">
@@ -232,7 +232,7 @@
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
               <img [src]="row.icon | xivapiIcon" alt="">
               <div>{{row.id | instanceName | i18n}}</div>
-              <a nz-button nz-tooltip [nzTitle]="'DB.Open_item_in_db' | translate"
+              <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
                  nzSize="small"
                  nzShape="circle"
                  routerLink="/db/{{translate.currentLang}}/instance/{{row.id}}">
@@ -256,7 +256,7 @@
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
               <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
               <div>{{row.id | questName | i18n}}</div>
-              <a nz-button nz-tooltip [nzTitle]="'DB.Open_item_in_db' | translate"
+              <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
                  nzSize="small"
                  nzShape="circle"
                  routerLink="/db/{{translate.currentLang}}/quest/{{row.id}}">
@@ -272,6 +272,8 @@
                             *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">{{'No_items_found' | translate}}</app-fullpage-message>
       <app-fullpage-message height="300px"
                             *ngIf="searchType === searchTypes.INSTANCE">{{'No_instances_found' | translate}}</app-fullpage-message>
+      <app-fullpage-message height="300px"
+                            *ngIf="searchType === searchTypes.QUEST">{{'No_quests_found' | translate}}</app-fullpage-message>
     </div>
   </div>
 </div>

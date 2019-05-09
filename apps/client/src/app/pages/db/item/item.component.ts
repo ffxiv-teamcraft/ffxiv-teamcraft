@@ -259,6 +259,7 @@ export class ItemComponent extends TeamcraftPageComponent {
           && (item.tripleTriadDuels === undefined || item.tripleTriadDuels.length === 0)
           && (item.treasures === undefined || item.treasures.length === 0)
           && (item.fates === undefined || item.fates.length === 0)
+          && (item.quests === undefined || item.quests.length === 0)
           && !item.tripleTriadPack;
       })
     );
@@ -522,6 +523,14 @@ export class ItemComponent extends TeamcraftPageComponent {
                 return item;
               })
             );
+        })
+      );
+    }
+    if (gtData.item.quests) {
+      res$ = res$.pipe(
+        map(res => {
+          res.quests = gtData.item.quests;
+          return res;
         })
       );
     }

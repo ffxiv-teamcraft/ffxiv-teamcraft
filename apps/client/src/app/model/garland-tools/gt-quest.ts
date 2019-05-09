@@ -17,6 +17,7 @@ export class GtQuest {
     xp: number;
     gil: number;
     instance: number;
+    reputation?: number;
   };
   reqs: any;
   next: number[];
