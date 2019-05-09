@@ -24,6 +24,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SearchType } from '../search-type';
 import { InstanceSearchResult } from '../../../model/search/instance-search-result';
+import { QuestSearchResult } from '../../../model/search/quest-search-result';
 
 @Component({
   selector: 'app-search',
@@ -44,7 +45,8 @@ export class SearchComponent implements OnInit {
 
   loading = false;
 
-  public searchType$: BehaviorSubject<SearchType> = new BehaviorSubject<SearchType>(SearchType.ITEM);
+  public searchType$: BehaviorSubject<SearchType> =
+    new BehaviorSubject<SearchType>(<SearchType>localStorage.getItem('search:type') || SearchType.ITEM);
 
   @ViewChild('notificationRef')
   notification: TemplateRef<any>;
@@ -151,6 +153,8 @@ export class SearchComponent implements OnInit {
             return this.data.searchItem(query, filters, true);
           case SearchType.INSTANCE:
             return this.searchInstance(query, filters);
+          case SearchType.QUEST:
+            return this.searchQuest(query, filters);
           default:
             return this.data.searchItem(query, filters, false);
         }
@@ -200,7 +204,7 @@ export class SearchComponent implements OnInit {
             column: f.name,
             operator: '=',
             value: f.value
-          }]
+          }];
         }
       }))
     }).pipe(
@@ -211,6 +215,26 @@ export class SearchComponent implements OnInit {
             icon: instance.Icon,
             banner: instance.Banner,
             level: instance.ContentFinderCondition.ClassJobLevelRequired
+          };
+        });
+      })
+    );
+  }
+
+  searchQuest(query: string, filters: SearchFilter[]): Observable<QuestSearchResult[]> {
+    return this.xivapi.search({
+      indexes: [SearchIndex.QUEST],
+      columns: ['ID', 'Banner', 'Icon'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(quest => {
+          return {
+            id: quest.ID,
+            icon: quest.Icon,
+            banner: quest.Banner
           };
         });
       })

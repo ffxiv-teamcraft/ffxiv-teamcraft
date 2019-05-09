@@ -403,6 +403,43 @@
             </ng-template>
           </nz-list>
         </nz-card>
+        <nz-card fxFlex="1 1 30%" class="details-card"
+                 *ngIf="data.quests !== undefined && data.quests.length > 0" nzBordered="false"
+                 [nzTitle]="title">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+              <img class="img-icon round-icon" src="./assets/icons/quest.png">
+              <div>
+                {{'Quests' | translate}}
+              </div>
+            </div>
+          </ng-template>
+          <nz-list [nzDataSource]="data.quests" [nzRenderItem]="questTemplate"
+                   [nzItemLayout]="'horizontal'">
+            <ng-template #questTemplate let-quest>
+              <nz-list-item [nzContent]="more">
+                <nz-list-item-meta
+                  [nzAvatar]="questAvatar"
+                  [nzTitle]="quest | questName | i18n">
+                  <ng-template #questAvatar>
+                    <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
+                      <img class="img-icon round-icon" src="./assets/icons/quest.png">
+                    </a>
+                    <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
+                  </ng-template>
+                  <ng-template #more>
+                    <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
+                       nzSize="small"
+                       nzShape="circle"
+                       routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
+                      <i nz-icon type="info"></i>
+                    </a>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </nz-card>
       </div>
     </div>
     <div *ngIf="usedFor$ | async as usedFor">

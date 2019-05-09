@@ -20,10 +20,18 @@ export class UiTextPipe implements PipeTransform, OnDestroy {
 
   transform(value: any = ''): SafeHtml {
     value = value.replace(/<73>(.*?)<\/73>/gi, '')
+      .replace(/\n\n/g, '\n')
+      .replace('<SoftHyphen/>', "\u00AD")
+      .replace(/<Clickable\((.*?)\)\/>/, '$1')
+      .replace(/<Highlight>.*?<\/Highlight>/, '')
+      .replace(/<Switch.*?><Case\(1\)>(.*?)<\/Case>.*?<\/Switch>/, '$1')
+      .replace(/<If.*?>(.*?)<Else\/>.*?<\/If>(?!<\/If|<Else)/, '$1')
+      .replace(/<\/?Emphasis>/, '*')
+      .replace('<Indent/>', ' ')
       .replace(/<72>01<\/72>/gi, '</span>')
       .replace(/<UI\w+>01<\/UI\w+>/gi, '</span>')
-      .replace(/\n\n/g, '\n')
-      .replace(/\n/g, '<br>');
+      .replace(/\n/g, '<br>')
+      .replace(/\s{2,}/, ' ');
     let match;
     while (match = /<UI\w+>(.*?)<\/UI\w+>/gi.exec(value)) {
       const colorID = parseInt(match[1].substr(-4), 16);

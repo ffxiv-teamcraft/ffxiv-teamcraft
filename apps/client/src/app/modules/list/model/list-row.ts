@@ -42,6 +42,7 @@ export class ListRow extends DataModel {
   masterbooks?: CompactMasterbook[] = [];
   tripleTriadDuels?: TripleTriadDuel[] = [];
   tripleTriadPack?: {id: number, price: number};
+  quests?: number[] = [];
   treasures?: Treasure[] = [];
   fates?: FateData[] = [];
 

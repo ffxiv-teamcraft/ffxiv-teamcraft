@@ -11,6 +11,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 import { LazyDataService } from '../data/lazy-data.service';
 import { InstanceData } from '../../model/garland-tools/instance-data';
+import { QuestData } from '../../model/garland-tools/quest-data';
 
 @Injectable()
 export class DataService {
@@ -18,7 +19,8 @@ export class DataService {
   private garlandUrl = 'https://www.garlandtools.org/db/doc';
   private garlandtoolsVersions = {
     item: 3,
-    instance: 2
+    instance: 2,
+    quest: 2,
   };
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 
@@ -40,13 +42,23 @@ export class DataService {
   }
 
   /**
-   * Gets an item based on its id.
+   * Gets an instance based on its id.
    * @param {number} id
    * @returns {Observable<ItemData>}
    */
   public getInstance(id: number): Observable<InstanceData> {
     return this.getGarlandData(`/instance/en/${this.garlandtoolsVersions.instance}/${id}`)
       .pipe(map(item => this.serializer.deserialize<InstanceData>(item, InstanceData)));
+  }
+
+  /**
+   * Gets a quest based on its id.
+   * @param {number} id
+   * @returns {Observable<ItemData>}
+   */
+  public getQuest(id: number): Observable<QuestData> {
+    return this.getGarlandData(`/quest/en/${this.garlandtoolsVersions.instance}/${id}`)
+      .pipe(map(item => this.serializer.deserialize<QuestData>(item, QuestData)));
   }
 
   /**

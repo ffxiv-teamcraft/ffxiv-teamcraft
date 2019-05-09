@@ -45,6 +45,7 @@ export class Item implements I18nData {
   loot?: number[];
   treasure?: number[];
   fates?: number[];
+  quests?: number[];
 
   @DeserializeFieldName('icon')
   _icon: number;

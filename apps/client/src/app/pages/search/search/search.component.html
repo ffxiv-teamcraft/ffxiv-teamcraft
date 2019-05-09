@@ -15,6 +15,7 @@
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate" [nzValue]="searchTypes.ITEM"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.RECIPE) | translate" [nzValue]="searchTypes.RECIPE"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.INSTANCE) | translate" [nzValue]="searchTypes.INSTANCE"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.QUEST) | translate" [nzValue]="searchTypes.QUEST"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -171,7 +172,7 @@
             <div fxLayout="column">
               <div class="item-name">{{+row.itemId | itemName | i18n}}
                 <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true"></app-marketboard-icon>
-                <a nz-button nz-tooltip [nzTitle]="'DB.Open_item_in_db' | translate"
+                <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
                    nzSize="small"
                    nzShape="circle"
                    routerLink="/db/{{translate.currentLang}}/item/{{row.itemId}}">
@@ -231,7 +232,7 @@
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
               <img [src]="row.icon | xivapiIcon" alt="">
               <div>{{row.id | instanceName | i18n}}</div>
-              <a nz-button nz-tooltip [nzTitle]="'DB.Open_item_in_db' | translate"
+              <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
                  nzSize="small"
                  nzShape="circle"
                  routerLink="/db/{{translate.currentLang}}/instance/{{row.id}}">
@@ -241,6 +242,29 @@
             <div class="instance-level">lvl {{row.level}}</div>
           </div>
         </div>
+        <div fxLayout="row" fxLayout.lt-md="column"
+             *ngIf="searchType === searchTypes.QUEST"
+             fxLayoutGap="5px"
+             fxLayoutAlign="flex-start flex-start"
+             fxLayoutAlign.lt-md="center center"
+             class="result-row"
+             [class.odd]="odd">
+          <a routerLink="/db/{{translate.currentLang}}/quest/{{row.id}}">
+            <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+          </a>
+          <div fxLayout="column" fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+              <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
+              <div>{{row.id | questName | i18n}}</div>
+              <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
+                 nzSize="small"
+                 nzShape="circle"
+                 routerLink="/db/{{translate.currentLang}}/quest/{{row.id}}">
+                <i nz-icon type="info"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </ng-container>
     </app-page-loader>
     <div *ngIf="results.length === 0">
@@ -248,6 +272,8 @@
                             *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">{{'No_items_found' | translate}}</app-fullpage-message>
       <app-fullpage-message height="300px"
                             *ngIf="searchType === searchTypes.INSTANCE">{{'No_instances_found' | translate}}</app-fullpage-message>
+      <app-fullpage-message height="300px"
+                            *ngIf="searchType === searchTypes.QUEST">{{'No_quests_found' | translate}}</app-fullpage-message>
     </div>
   </div>
 </div>
