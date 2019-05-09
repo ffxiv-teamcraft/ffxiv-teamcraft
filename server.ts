@@ -13,10 +13,44 @@ import { readFileSync } from 'fs';
 // Polyfills required for Firebase
 (global as any).WebSocket = require('ws');
 (global as any).XMLHttpRequest = require('xhr2');
-(global as any).navigator = null;
 (global as any).Event = null;
-(global as any).document = null;
 
+const domino = require('domino');
+
+const window = domino.createWindow('<h1>Hello world</h1>', 'http://example.com');
+const document = window.document;
+(global as any).window = window;
+(global as any).document = document;
+(global as any).DOMTokenList = window.DOMTokenList;
+(global as any).Node = window.Node;
+(global as any).Text = window.Text;
+(global as any).HTMLElement = window.HTMLElement;
+(global as any).HTMLAnchorElement = window.HTMLAnchorElement;
+(global as any).navigator = window.navigator;
+
+Object.defineProperty(window.document.body.style, 'transform', {
+  value: () => {
+    return {
+      enumerable: true,
+      configurable: true,
+    };
+  },
+});
+
+//Mock localStorage
+const fakeStorage: Storage = {
+  length: 0,
+  clear: () => {
+  },
+  getItem: (_key: string) => null,
+  key: (_index: number) => null,
+  removeItem: (_key: string) => {
+  },
+  setItem: (_key: string, _data: string) => {
+  }
+};
+
+(global as any)['localStorage'] = fakeStorage;
 
 // Faster renders in prod mode
 enableProdMode();
