@@ -1,5 +1,6 @@
 export enum SearchType {
   ITEM = 'Item',
   RECIPE = 'Recipe',
-  INSTANCE = 'Instance'
+  INSTANCE = 'Instance',
+  QUEST = 'Quest'
 }

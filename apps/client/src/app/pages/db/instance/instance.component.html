@@ -152,7 +152,7 @@
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
             <img class="img-icon round-icon"
                  src="./assets/icons/quest.png">
-            <div>{{gtData.instance.unlockedByQuest | questName | i18n}}</div>
+            <a routerLink="/db/{{translate.currentLang}}/quest/{{gtData.instance.unlockedByQuest}}">{{gtData.instance.unlockedByQuest | questName | i18n}}</a>
           </div>
         </div>
       </nz-card>

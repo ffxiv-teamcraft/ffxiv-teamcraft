@@ -15,6 +15,7 @@
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate" [nzValue]="searchTypes.ITEM"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.RECIPE) | translate" [nzValue]="searchTypes.RECIPE"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.INSTANCE) | translate" [nzValue]="searchTypes.INSTANCE"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.QUEST) | translate" [nzValue]="searchTypes.QUEST"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -239,6 +240,29 @@
               </a>
             </div>
             <div class="instance-level">lvl {{row.level}}</div>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayout.lt-md="column"
+             *ngIf="searchType === searchTypes.QUEST"
+             fxLayoutGap="5px"
+             fxLayoutAlign="flex-start flex-start"
+             fxLayoutAlign.lt-md="center center"
+             class="result-row"
+             [class.odd]="odd">
+          <a routerLink="/db/{{translate.currentLang}}/quest/{{row.id}}">
+            <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+          </a>
+          <div fxLayout="column" fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+              <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
+              <div>{{row.id | questName | i18n}}</div>
+              <a nz-button nz-tooltip [nzTitle]="'DB.Open_item_in_db' | translate"
+                 nzSize="small"
+                 nzShape="circle"
+                 routerLink="/db/{{translate.currentLang}}/quest/{{row.id}}">
+                <i nz-icon type="info"></i>
+              </a>
+            </div>
           </div>
         </div>
       </ng-container>

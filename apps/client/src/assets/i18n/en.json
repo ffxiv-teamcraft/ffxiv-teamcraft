@@ -1136,6 +1136,18 @@
     "Instance_chests": "Chests",
     "Position": "Position",
     "Content": "Content",
+    "Gil": "Gil",
+    "Level": "Level",
+    "Details": "Details",
+    "RP_Details": "RP Details",
+    "QUEST": {
+      "Steps": "Steps",
+      "Unlocked_by": "Unlocked by",
+      "Unlocks": "Unlocks",
+      "Involved_npcs": "Involved npcs",
+      "Journal_entries": "Journal entries",
+      "Dialogues": "Dialogues"
+    },
     "FIGHT_TYPE": {
       "Boss": "Boss",
       "MidBoss": "Boss"

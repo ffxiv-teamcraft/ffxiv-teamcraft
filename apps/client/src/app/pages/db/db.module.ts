@@ -21,6 +21,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { ItemComponent } from './item/item.component';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { InstanceComponent } from './instance/instance.component';
+import { QuestComponent } from './quest/quest.component';
 
 const routes: Routes = [
 
@@ -48,13 +49,24 @@ const routes: Routes = [
         path: 'instance/:instanceId/:slug',
         component: InstanceComponent,
         canActivate: [MaintenanceGuard]
+      },
+
+      {
+        path: 'quest/:questId',
+        component: QuestComponent,
+        canActivate: [MaintenanceGuard]
+      },
+      {
+        path: 'quest/:questId/:slug',
+        component: QuestComponent,
+        canActivate: [MaintenanceGuard]
       }
     ]
   }
 ];
 
 @NgModule({
-  declarations: [DbComponent, InstanceComponent, ItemComponent],
+  declarations: [DbComponent, InstanceComponent, ItemComponent, QuestComponent],
   imports: [
     CommonModule,
 
