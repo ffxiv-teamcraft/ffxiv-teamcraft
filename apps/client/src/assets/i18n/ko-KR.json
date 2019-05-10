@@ -806,7 +806,7 @@
       "Use_pbp_first": "'꾸준한 진척'을 다른 작업공정을 진행하기 전에 사용하세요. 이 스킬은 남은 작업량에 따라 효과가 다르기 때문입니다.",
       "Use_mume_if_pbp": "첫 공정에서는 '확신' 을 사용해야 합니다. 이 스킬은 '꾸준한 진척'을 대신하면서도 CP 9를 확보할 수 있습니다.",
       "Use_observe_before_focused": "주시작업/가공을 100% 성공을 하기 위해서는 {{index}} 번째 공정에서 '경과 관찰' 을 사용해야 합니다.",
-      "Use_durability_restoration_later": "내구도 회복스킬을 낭비하지 않기 위해서는 {{index}} 번째 공정에서 내구도 회복스킬을 사용하세요.",
+      "Use_durability_restoration_later": "내구도 회복스킬을 낭비하지 않기 위해서는 {{index}} 번째 공정이후 내구도 회복스킬을 사용하세요.",
       "Use_patient_touch_faster": "'전념 가공'은 '정신집중'의 스택이 쌓이기 전에 사용하세요. 만약 스킬이 실패한다면 스택이 낭비될 수도 있습니다.",
       "Use_advanced_touch_instead": "{{index}} 번째 공정에서 '가공' 과 '고급 가공' 을 사용했습니다. '중급 가공' 을 두번 사용할 경우 CP 2를 절약하면서도 같은 효과를 발휘할 수 있습니다.",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 번째 공정에서 사용한 버프가 {{overlappingIndex}} 번째 공정에서 사용한 버프와 중복됩니다. 버프의 효과를 최대한 받을 수 있도록 조금 늦게 사용해야 합니다.",
