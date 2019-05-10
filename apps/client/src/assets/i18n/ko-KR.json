@@ -1158,8 +1158,8 @@
       "Beast_tribe_rank": "야만족 우호도"
     },
     "FIGHT_TYPE": {
-      "Boss": "Boss",
-      "MidBoss": "Boss"
+      "Boss": "최종 보스",
+      "MidBoss": "중간 보스"
     }
   },
   "SEARCH_TYPES": {
