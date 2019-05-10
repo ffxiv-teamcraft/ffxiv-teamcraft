@@ -187,13 +187,18 @@ export class QuestComponent extends TeamcraftPageComponent {
     );
   }
 
+  private getName(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
+  }
+
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return combineLatest([this.xivapiQuest$, this.textData$]).pipe(
       map(([quest, textData]) => {
         return {
-          title: this.i18n.getName(this.l12n.getQuest(quest.ID).name),
+          title: this.getName(quest),
           description: textData.Journal[0].Text,
-          url: `https://ffxivteamcraft.com/db/quest/${quest.ID}/${this.i18n.getName(this.l12n.getQuest(quest.ID).name).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/quest/${quest.ID}/${this.getName(quest).split(' ').join('-')}`,
           image: quest.Banner ? `https://xivapi.com/${quest.Banner}` : `https://xivapi.com/${quest.Icon}`
         };
       })

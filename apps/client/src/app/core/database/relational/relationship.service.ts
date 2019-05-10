@@ -1,6 +1,6 @@
 import { FirestoreStorage } from '../storage/firestore/firestore-storage';
 import { Relationship } from './relationship';
-import { Observable } from 'rxjs/index';
+import { Observable } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../pending-changes/pending-changes.service';

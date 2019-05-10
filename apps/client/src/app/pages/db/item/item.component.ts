@@ -28,6 +28,7 @@ import { UsedForType } from '../model/used-for-type';
 import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
+import { IS_PRERENDER } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-item',
@@ -71,6 +72,9 @@ export class ItemComponent extends TeamcraftPageComponent {
     super(seo);
 
     this.route.paramMap.subscribe(params => {
+      if (IS_PRERENDER) {
+        return;
+      }
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
@@ -433,13 +437,18 @@ export class ItemComponent extends TeamcraftPageComponent {
     return item[`Description_${this.translate.currentLang}`] || item.Description_en;
   }
 
+  private getName(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
+  }
+
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiItem$.pipe(
       map(item => {
         return {
-          title: this.i18n.getName(this.l12n.getItem(item.ID)),
+          title: this.getName(item),
           description: this.getDescription(item),
-          url: `https://ffxivteamcraft.com/db/item/${item.ID}/${this.i18n.getName(this.l12n.getItem(item.ID)).split(' ').join('+')}`,
+          url: `https://ffxivteamcraft.com/db/item/${item.ID}/${this.getName(item).split(' ').join('+')}`,
           image: `https://xivapi.com/i2/ls/${item.ID}.png`
         };
       })
