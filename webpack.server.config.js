@@ -29,7 +29,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.ts$/, exclude: /.*\/client-e2e\/.*/, loader: 'ts-loader' }
+      { test: /\.ts$/, loader: 'ts-loader' }
     ]
   },
   plugins: [

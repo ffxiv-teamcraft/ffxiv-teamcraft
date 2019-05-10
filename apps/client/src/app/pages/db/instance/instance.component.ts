@@ -10,8 +10,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { combineLatest, Observable } from 'rxjs';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { filter, map, shareReplay } from 'rxjs/operators';
-import { switchMap } from 'rxjs/internal/operators/switchMap';
+import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { InstanceData } from '../../../model/garland-tools/instance-data';
 
 @Component({

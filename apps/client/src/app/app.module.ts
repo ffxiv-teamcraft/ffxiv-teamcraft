@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, PLATFORM_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -49,6 +49,8 @@ import { LayoutModule } from './core/layout/layout.module';
 import { LoadingScreenModule } from './pages/loading-screen/loading-screen.module';
 import { CustomItemsModule } from './modules/custom-items/custom-items.module';
 import { DirtyModule } from './core/dirty/dirty.module';
+import { TransferHttpCacheModule } from '@nguniversal/common';
+import { NgtUniversalModule } from '@ng-toolkit/universal';
 
 registerLocaleData(en);
 
@@ -74,6 +76,7 @@ registerLocaleData(en);
     { provide: FirestoreSettingsToken, useValue: {} }
   ],
   imports: [
+    NgtUniversalModule,
     FlexLayoutModule,
 
     MarkdownModule.forRoot(),
@@ -84,7 +87,7 @@ registerLocaleData(en);
       loader: {
         provide: TranslateLoader,
         useFactory: TranslationsLoaderFactory,
-        deps: [HttpClient, PlatformService]
+        deps: [HttpClient, PLATFORM_ID, PlatformService]
       }
     }),
 
@@ -121,6 +124,7 @@ registerLocaleData(en);
     BrowserAnimationsModule,
 
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    TransferHttpCacheModule,
     FormsModule,
     ReactiveFormsModule,
 

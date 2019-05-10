@@ -1,41 +1,80 @@
 // These are important and needed before anything else
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
-
-import { enableProdMode } from '@angular/core';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 
 import * as express from 'express';
+import * as path from 'path';
 import { join } from 'path';
 import { readFileSync } from 'fs';
+
+const DIST_FOLDER = path.join(process.cwd(), 'dist/apps');
+const APP_NAME = 'client';
+
+
+//Garland tools data skeleton
+(global as any).gt = {
+  patch: {},
+  xp: [],
+  jobs: [],
+  node: {},
+  fishing: {},
+  mob: {},
+  location: {},
+  skywatcher: {},
+  quest: {},
+  venture: {},
+  npc: {},
+  action: {},
+  leve: {},
+  achievement: {},
+  instance: {},
+  fate: {},
+  item: {
+    index: []
+  },
+  bell: {
+    nodes: [],
+    fish: []
+  }
+};
+
+require('./ssr/output/gt-fish');
+require('./ssr/output/gt-nodes');
 
 // Polyfills required for Firebase
 (global as any).WebSocket = require('ws');
 (global as any).XMLHttpRequest = require('xhr2');
 (global as any).Event = null;
 
-const domino = require('domino');
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
 
-const window = domino.createWindow('<h1>Hello world</h1>', 'http://example.com');
-const document = window.document;
-(global as any).window = window;
-(global as any).document = document;
-(global as any).DOMTokenList = window.DOMTokenList;
-(global as any).Node = window.Node;
-(global as any).Text = window.Text;
-(global as any).HTMLElement = window.HTMLElement;
-(global as any).HTMLAnchorElement = window.HTMLAnchorElement;
-(global as any).navigator = window.navigator;
+// index.html template
+const template = readFileSync(path.join(DIST_FOLDER, APP_NAME, 'index.html')).toString();
 
-Object.defineProperty(window.document.body.style, 'transform', {
+const win = new JSDOM(template).window;
+
+(global as any).window = win;
+(global as any).DOMTokenList = win.DOMTokenList;
+(global as any).Node = win.Node;
+(global as any).Text = win.Text;
+(global as any).HTMLElement = win.HTMLElement;
+(global as any).HTMLAnchorElement = win.HTMLAnchorElement;
+(global as any).URLSearchParams = win.URLSearchParams;
+(global as any).navigator = win.navigator;
+(global as any).Event = win.Event;
+(global as any).gtag = () => null;
+Object.defineProperty(win.document.body.style, 'transform', {
   value: () => {
     return {
       enumerable: true,
-      configurable: true,
+      configurable: true
     };
-  },
+  }
 });
+(global as any).document = win.document;
 
 //Mock localStorage
 const fakeStorage: Storage = {
@@ -53,18 +92,16 @@ const fakeStorage: Storage = {
 (global as any)['localStorage'] = fakeStorage;
 
 // Faster renders in prod mode
-enableProdMode();
+//enableProdMode();
+
+if (global.v8debug) {
+  global.v8debug.Debug.setBreakOnException(); // speaks for itself
+}
 
 // Export our express server
 export const app = express();
 
-const DIST_FOLDER = join(process.cwd(), 'dist/apps');
-const APP_NAME = 'client';
-
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist/${APP_NAME}-server/main`);
-
-// index.html template
-const template = readFileSync(join(DIST_FOLDER, APP_NAME, 'index.html')).toString();
 
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
@@ -79,8 +116,15 @@ app.set('views', join(DIST_FOLDER, APP_NAME));
 // Serve static files
 app.get('*.*', express.static(join(DIST_FOLDER, APP_NAME)));
 
+const beforeRender = (req, res, next) => {
+  //Get the client lang from the request
+  req.lang = req.headers['accept-language'] || 'en';
+  next();
+};
+
+
 // All regular routes use the Universal engine
-app.get('*', (req, res) => {
+app.get('*', beforeRender, (req, res) => {
   res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), { req });
 });
 

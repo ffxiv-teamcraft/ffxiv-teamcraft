@@ -15,8 +15,8 @@ import { Observable } from 'rxjs/Observable';
 })
 export class GarlandToolsService {
 
-  private gt: GarlandToolsData = (<any>window).gt;
-  private gItemIndex: any[] = (<any>window).gItemIndex;
+  private gt: GarlandToolsData = (<any>window).gt || {};
+  private gItemIndex: any[] = (<any>window).gItemIndex || [];
 
   private commonItemsToLoad = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
   private commonItemsCache: { id: string, obj: ItemData }[] = [];

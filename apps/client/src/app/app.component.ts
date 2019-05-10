@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -44,6 +44,8 @@ import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.fa
 import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
 import { Theme } from './modules/settings/theme';
+import { isPlatformBrowser } from '@angular/common';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
 
 declare const gtag: Function;
 
@@ -115,7 +117,8 @@ export class AppComponent implements OnInit {
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
-              private dirtyFacade: DirtyFacade, private seoService: SeoService) {
+              private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
+              @Inject(PLATFORM_ID) private platform: Object) {
 
     this.dirtyFacade.hasEntries$.subscribe(dirty => this.dirty = dirty);
 
@@ -230,16 +233,9 @@ export class AppComponent implements OnInit {
 
     // Translation
     this.translate.setDefaultLang('en');
-    const lang = localStorage.getItem('locale');
+    this.use(this.getLang());
     this.translate.onLangChange.subscribe(l => this.locale = l);
-    if (lang !== null) {
-      this.use(lang);
-    } else if (this.translate.getBrowserCultureLang() === 'pt-BR') {
-      // Specific implementation for BR.
-      this.use('br');
-    } else {
-      this.use(this.translate.getBrowserLang());
-    }
+
     this.translate.onLangChange.subscribe(change => {
       this.locale = change.lang;
     });
@@ -255,6 +251,23 @@ export class AppComponent implements OnInit {
         this.router.navigate(['maintenance']);
       }
     });
+  }
+
+  getLang(): string {
+    if (isPlatformBrowser(this.platform)) {
+      const lang = localStorage.getItem('locale');
+      if (lang !== null) {
+        return lang;
+      } else if (this.translate.getBrowserCultureLang() === 'pt-BR') {
+        // Specific implementation for BR.
+        return 'br';
+      } else {
+        return this.translate.getBrowserLang();
+      }
+    } else {
+      const request = this.injector.get(REQUEST) || {};
+      return request.lang || 'en';
+    }
   }
 
   ngOnInit(): void {
