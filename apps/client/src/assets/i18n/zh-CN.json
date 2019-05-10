@@ -1157,6 +1157,12 @@
       "Repeatable": "重复",
       "Beast_tribe_rank": "Beast tribe rank"
     },
+    "NPC": {
+      "Other_entries": "Other appearances",
+      "Default_talk": "Base dialogues",
+      "Quests": "Quests",
+      "Shops": "Shops"
+    },
     "FIGHT_TYPE": {
       "Boss": "首领",
       "MidBoss": "首领"
@@ -1166,7 +1172,8 @@
     "Item": "物品",
     "Recipe": "配方",
     "Instance": "副本",
-    "Quest": "任务"
+    "Quest": "任务",
+    "NPC": "NPC"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "等级"
