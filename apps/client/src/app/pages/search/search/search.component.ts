@@ -25,6 +25,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SearchType } from '../search-type';
 import { InstanceSearchResult } from '../../../model/search/instance-search-result';
 import { QuestSearchResult } from '../../../model/search/quest-search-result';
+import { NpcSearchResult } from '../../../model/search/npc-search-result';
 
 @Component({
   selector: 'app-search',
@@ -155,6 +156,8 @@ export class SearchComponent implements OnInit {
             return this.searchInstance(query, filters);
           case SearchType.QUEST:
             return this.searchQuest(query, filters);
+          case SearchType.NPC:
+            return this.searchNpc(query, filters);
           default:
             return this.data.searchItem(query, filters, false);
         }
@@ -235,6 +238,31 @@ export class SearchComponent implements OnInit {
             id: quest.ID,
             icon: quest.Icon,
             banner: quest.Banner
+          };
+        });
+      })
+    );
+  }
+
+  searchNpc(query: string, filters: SearchFilter[]): Observable<NpcSearchResult[]> {
+    return this.xivapi.search({
+      indexes: [SearchIndex.ENPCRESIDENT],
+      columns: ['ID', 'Title_*', 'Icon'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(npc => {
+          return {
+            id: npc.ID,
+            icon: npc.Icon,
+            title: {
+              en: npc.Title_en,
+              de: npc.Title_de,
+              ja: npc.Title_ja,
+              fr: npc.Title_fr
+            }
           };
         });
       })

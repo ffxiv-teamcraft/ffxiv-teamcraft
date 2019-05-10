@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayoutGap="10px">
   <nz-card *ngFor="let tradeSource of tradeSources" fxFlex="1 1 auto" fxLayoutGap="5px">
-    <nz-card-meta [nzTitle]="tradeSource.shopName">
+    <nz-card-meta [nzTitle]="tradeSource.shopName | shopName | i18n">
     </nz-card-meta>
     <div *ngFor="let trade of tradeSource.trades" class="trades" fxLayout="column" fxLayoutGap="5px">
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
@@ -33,8 +33,12 @@
     <nz-list [nzRenderItem]="npcTemplate" [nzDataSource]="tradeSource.npcs">
       <ng-template #npcTemplate let-npc>
         <nz-list-item [nzContent]="npc.zoneId !== undefined?position:null">
-          <nz-list-item-meta [nzTitle]="npc.id | npcName | i18n">
+          <nz-list-item-meta [nzTitle]="title">
           </nz-list-item-meta>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <div>{{npc.id | npcName | i18n}}</div>
+            <app-db-button type="npc" [id]="npc.id"></app-db-button>
+          </div>
           <ng-template #position>
             <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
               <app-map-position [zoneId]="npc.zoneId" [marker]="npc.coords" [mapId]="npc.mapId"></app-map-position>

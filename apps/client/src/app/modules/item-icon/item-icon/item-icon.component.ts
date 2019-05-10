@@ -46,7 +46,7 @@ export class ItemIconComponent {
   }
 
   getIcon(): string {
-    if (this.icon && this.icon.toString() === this.icon && this.icon.indexOf('custom/') === -1) {
+    if (this.icon && this.icon.toString() === this.icon && this.icon.indexOf('custom/') === -1 && !this.icon.startsWith('t/')) {
       return this.icon;
     }
     return `https://www.garlandtools.org/files/icons/item/${this.icon}.png`;

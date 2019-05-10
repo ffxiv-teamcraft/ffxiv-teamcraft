@@ -1,7 +1,8 @@
 <div class="top-part">
   <div class="search-box" fxLayout="row" fxLayoutGap="5px">
     <nz-input-group [nzAddOnAfter]="addOnAfterTemplate">
-      <input class="search-input" type="text" placeholder="{{'Search_placeholder' | translate:{type: searchType$ | async} }}" #searchInput nz-input
+      <input class="search-input" type="text"
+             placeholder="{{'Search_placeholder' | translate:{type: searchType$ | async} }}" #searchInput nz-input
              [ngModel]="query$.value"
              autofocus
              (keyup)="query$.next(searchInput.value)">
@@ -13,16 +14,22 @@
     <ng-template #addOnAfterTemplate>
       <nz-select [ngModel]="searchType$ | async" (ngModelChange)="searchType$.next($event)">
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate" [nzValue]="searchTypes.ITEM"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.RECIPE) | translate" [nzValue]="searchTypes.RECIPE"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.INSTANCE) | translate" [nzValue]="searchTypes.INSTANCE"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.QUEST) | translate" [nzValue]="searchTypes.QUEST"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.RECIPE) | translate"
+                   [nzValue]="searchTypes.RECIPE"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.INSTANCE) | translate"
+                   [nzValue]="searchTypes.INSTANCE"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.QUEST) | translate"
+                   [nzValue]="searchTypes.QUEST"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.NPC) | translate" [nzValue]="searchTypes.NPC"></nz-option>
       </nz-select>
     </ng-template>
   </div>
-  <div class="filters">
-    <nz-collapse>
-      <nz-collapse-panel [nzHeader]="'Filters' | translate" *ngIf="searchType$ | async as searchType">
-        <form nz-form [formGroup]="itemFiltersform" (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">
+  <div class="filters" *ngIf="searchType$ | async as searchType">
+    <nz-collapse
+      *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE || searchType === searchTypes.INSTANCE">
+      <nz-collapse-panel [nzHeader]="'Filters' | translate">
+        <form nz-form [formGroup]="itemFiltersform" (ngSubmit)="submitFilters()"
+              *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
             <!--Ilvl filter-->
@@ -94,7 +101,8 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/item_category' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="itemCategories" nzShowSearch nzAllowClear nzMode="multiple" class="filter-select">
+                <nz-select formControlName="itemCategories" nzShowSearch nzAllowClear nzMode="multiple"
+                           class="filter-select">
                   <nz-option *ngFor="let uiCategory of uiCategories$ | async" [nzValue]="uiCategory.id"
                              [nzLabel]="uiCategory.name | i18n">
                   </nz-option>
@@ -111,7 +119,8 @@
             </button>
           </div>
         </form>
-        <form nz-form [formGroup]="instanceFiltersForm" (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.INSTANCE">
+        <form nz-form [formGroup]="instanceFiltersForm" (ngSubmit)="submitFilters()"
+              *ngIf="searchType === searchTypes.INSTANCE">
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
@@ -143,140 +152,153 @@
 <div *ngIf="showIntro">
   <app-search-intro></app-search-intro>
 </div>
-<div *ngIf="results$ | async as results">
-  <div class="addition-buttons">
-    <label nz-checkbox [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)">{{'Select_all' |
-      translate}}</label>
-    <button nz-button (click)="addSelectedItemsToList(results)">{{'LISTS.Add_selection' | translate}}</button>
-  </div>
-  <nz-alert nzType="warning" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" nzShowIcon
-            *ngIf="results.length >= 100"></nz-alert>
-  <div class="results" *ngIf="searchType$ | async as searchType">
-    <app-page-loader [loading]="loading">
-      <ng-container *ngFor="let row of results; trackBy: trackByItem; let odd = odd">
-        <div fxLayout="row" fxLayout.lt-md="column"
-             *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE"
-             fxLayoutGap="5px"
-             fxLayoutAlign="space-between center"
-             fxLayoutAlign.lt-md="center center"
-             class="result-row"
-             [class.odd]="odd">
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div class="checkbox">
-              <label nz-checkbox [(ngModel)]="row.selected"
-                     (ngModelChange)="updateAllSelected(results)"></label>
-            </div>
-            <div class="avatar">
-              <app-item-icon [icon]="row.icon" [itemId]="row.itemId" [width]="32"></app-item-icon>
-            </div>
-            <div fxLayout="column">
-              <div class="item-name">{{+row.itemId | itemName | i18n}}
-                <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true"></app-marketboard-icon>
-                <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
-                   nzSize="small"
-                   nzShape="circle"
-                   routerLink="/db/{{translate.currentLang}}/item/{{row.itemId}}">
-                  <i nz-icon type="info"></i>
-                </a>
+<ng-container *ngIf="searchType$ | async as searchType">
+  <div *ngIf="results$ | async as results">
+    <div class="addition-buttons" *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">
+      <label nz-checkbox [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)">{{'Select_all' |
+        translate}}</label>
+      <button nz-button (click)="addSelectedItemsToList(results)">{{'LISTS.Add_selection' | translate}}</button>
+    </div>
+    <nz-alert nzType="warning" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" nzShowIcon
+              *ngIf="results.length >= 100"></nz-alert>
+    <div class="results">
+      <app-page-loader [loading]="loading">
+        <ng-container *ngFor="let row of results; trackBy: trackByItem; let odd = odd">
+          <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE"
+               fxLayoutGap="5px"
+               fxLayoutAlign="space-between center"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div class="checkbox">
+                <label nz-checkbox [(ngModel)]="row.selected"
+                       (ngModelChange)="updateAllSelected(results)"></label>
               </div>
-              <div class="description" *ngIf="row.recipe !== undefined && row.recipe.job > 0">
-                <img src="https://garlandtools.org/db/images/{{(row.recipe.job | jobAbbr)?.en}}.png"
-                     class="job-icon small"
-                     alt="{{row.recipe.job | jobAbbr | i18n}}">
-                lvl{{row.recipe.lvl}} <span
-                *ngIf="row.recipe.stars !== undefined">{{getStars(row.recipe.stars)}}</span></div>
+              <div class="avatar">
+                <app-item-icon [icon]="row.icon" [itemId]="row.itemId" [width]="32"></app-item-icon>
+              </div>
+              <div fxLayout="column">
+                <div class="item-name">{{+row.itemId | itemName | i18n}}
+                  <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true"></app-marketboard-icon>
+                  <app-db-button type="item" [id]="row.itemId"></app-db-button>
+                </div>
+                <div class="description" *ngIf="row.recipe !== undefined && row.recipe.job > 0">
+                  <img src="https://garlandtools.org/db/images/{{(row.recipe.job | jobAbbr)?.en}}.png"
+                       class="job-icon small"
+                       alt="{{row.recipe.job | jobAbbr | i18n}}">
+                  lvl{{row.recipe.lvl}} <span
+                  *ngIf="row.recipe.stars !== undefined">{{getStars(row.recipe.stars)}}</span></div>
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px"
+                 fxLayoutAlign.lt-md="center center" nz-row class="inputs-container">
+              <div nz-col [nzXs]="24" [nzMd]="15" class="input-box" fxLayout="row" fxLayoutAlign="center center">
+                <nz-input-group [nzAddOnBefore]="row.recipe !== undefined?addCrafts:null" [nzCompact]="true"
+                                class="amount-input">
+                  <input type="number" [(ngModel)]="row.amount" nz-input>
+                  <ng-template #addCrafts>
+                    <label nz-checkbox [(ngModel)]="row.addCrafts">
+                      {{'Collectable_flag' | translate}}
+                    </label>
+                  </ng-template>
+                </nz-input-group>
+              </div>
+              <div nz-col [nzXs]="24" [nzMd]="9" class="actions" fxLayout="row" fxLayoutGap="5px"
+                   fxLayoutAlign="center center">
+                <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
+                        [nzTitle]="'ITEMS.Add_to_list' | translate" (click)="addItemsToList([row])">
+                  <i nz-icon type="plus"></i>
+                </button>
+                <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
+                        [nzTitle]="'Quick_list_create' | translate" (click)="createQuickList(row)">
+                  <i nz-icon type="clock-circle-o"></i>
+                </button>
+                <button nz-button *ngIf="row.recipe !== undefined" [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
+                        [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate"
+                        (click)="openInSimulator(row.itemId, row.recipe.recipeId)">
+                  <i class="material-icons">gavel</i>
+                </button>
+              </div>
             </div>
           </div>
-          <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px"
-               fxLayoutAlign.lt-md="center center" nz-row class="inputs-container">
-            <div nz-col [nzXs]="24" [nzMd]="15" class="input-box" fxLayout="row" fxLayoutAlign="center center">
-              <nz-input-group [nzAddOnBefore]="row.recipe !== undefined?addCrafts:null" [nzCompact]="true"
-                              class="amount-input">
-                <input type="number" [(ngModel)]="row.amount" nz-input>
-                <ng-template #addCrafts>
-                  <label nz-checkbox [(ngModel)]="row.addCrafts">
-                    {{'Collectable_flag' | translate}}
-                  </label>
-                </ng-template>
-              </nz-input-group>
-            </div>
-            <div nz-col [nzXs]="24" [nzMd]="9" class="actions" fxLayout="row" fxLayoutGap="5px"
-                 fxLayoutAlign="center center">
-              <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
-                      [nzTitle]="'ITEMS.Add_to_list' | translate" (click)="addItemsToList([row])">
-                <i nz-icon type="plus"></i>
-              </button>
-              <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
-                      [nzTitle]="'Quick_list_create' | translate" (click)="createQuickList(row)">
-                <i nz-icon type="clock-circle-o"></i>
-              </button>
-              <button nz-button *ngIf="row.recipe !== undefined" [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
-                      [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate"
-                      (click)="openInSimulator(row.itemId, row.recipe.recipeId)">
-                <i class="material-icons">gavel</i>
-              </button>
+          <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="searchType === searchTypes.INSTANCE"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <a routerLink="/db/{{translate.currentLang}}/instance/{{row.id}}">
+              <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+            </a>
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <img [src]="row.icon | xivapiIcon" alt="">
+                <div>{{row.id | instanceName | i18n}}</div>
+                <app-db-button type="instance" [id]="row.id"></app-db-button>
+              </div>
+              <div class="instance-level">lvl {{row.level}}</div>
             </div>
           </div>
-        </div>
-        <div fxLayout="row" fxLayout.lt-md="column"
-             *ngIf="searchType === searchTypes.INSTANCE"
-             fxLayoutGap="5px"
-             fxLayoutAlign="flex-start flex-start"
-             fxLayoutAlign.lt-md="center center"
-             class="result-row"
-             [class.odd]="odd">
-          <a routerLink="/db/{{translate.currentLang}}/instance/{{row.id}}">
-            <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
-          </a>
-          <div fxLayout="column" fxLayoutGap="5px">
-            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-              <img [src]="row.icon | xivapiIcon" alt="">
-              <div>{{row.id | instanceName | i18n}}</div>
-              <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
-                 nzSize="small"
-                 nzShape="circle"
-                 routerLink="/db/{{translate.currentLang}}/instance/{{row.id}}">
-                <i nz-icon type="info"></i>
-              </a>
+          <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="searchType === searchTypes.QUEST"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <a routerLink="/db/{{translate.currentLang}}/quest/{{row.id}}">
+              <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+            </a>
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
+                <div>{{row.id | questName | i18n}}</div>
+                <app-db-button type="quest" [id]="row.id"></app-db-button>
+              </div>
             </div>
-            <div class="instance-level">lvl {{row.level}}</div>
           </div>
-        </div>
-        <div fxLayout="row" fxLayout.lt-md="column"
-             *ngIf="searchType === searchTypes.QUEST"
-             fxLayoutGap="5px"
-             fxLayoutAlign="flex-start flex-start"
-             fxLayoutAlign.lt-md="center center"
-             class="result-row"
-             [class.odd]="odd">
-          <a routerLink="/db/{{translate.currentLang}}/quest/{{row.id}}">
-            <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
-          </a>
-          <div fxLayout="column" fxLayoutGap="5px">
-            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="searchType === searchTypes.NPC"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <a routerLink="/db/{{translate.currentLang}}/npc/{{row.id}}">
               <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
-              <div>{{row.id | questName | i18n}}</div>
-              <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
-                 nzSize="small"
-                 nzShape="circle"
-                 routerLink="/db/{{translate.currentLang}}/quest/{{row.id}}">
-                <i nz-icon type="info"></i>
-              </a>
+            </a>
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start">
+                  <div fxLayout="column">
+                    <div>{{row.id | npcName | i18n}}</div>
+                    <span *ngIf="(row.id | npcName)?.position as npcPosition">{{npcPosition.zoneid | placeName | i18n}}
+                      - X: {{npcPosition.x}} Y: {{npcPosition.y}} </span>
+                    <i *ngIf="(row.title | i18n) !== 'missing name'">{{row.title | i18n}}</i>
+                  </div>
+                  <app-db-button type="npc" [id]="row.id"></app-db-button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </ng-container>
-    </app-page-loader>
-    <div *ngIf="results.length === 0">
-      <app-fullpage-message height="300px"
-                            *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">{{'No_items_found' | translate}}</app-fullpage-message>
-      <app-fullpage-message height="300px"
-                            *ngIf="searchType === searchTypes.INSTANCE">{{'No_instances_found' | translate}}</app-fullpage-message>
-      <app-fullpage-message height="300px"
-                            *ngIf="searchType === searchTypes.QUEST">{{'No_quests_found' | translate}}</app-fullpage-message>
+        </ng-container>
+      </app-page-loader>
+      <div *ngIf="results.length === 0">
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">{{'No_items_found' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.INSTANCE">{{'No_instances_found' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.QUEST">{{'No_quests_found' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.NPC">{{'No_npcs_found' | translate}}</app-fullpage-message>
+      </div>
     </div>
   </div>
-</div>
+</ng-container>
 
 <ng-template #notificationRef let-notification>
   <div class="ant-notification-notice-content ant-notification-notice-with-icon">

@@ -116,12 +116,7 @@
                     <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
                   </ng-template>
                   <ng-template #more>
-                    <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
-                       nzSize="small"
-                       nzShape="circle"
-                       routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                      <i nz-icon type="info"></i>
-                    </a>
+                    <app-db-button type="quest" [id]="quest"></app-db-button>
                   </ng-template>
                 </nz-list-item-meta>
               </nz-list-item>
@@ -150,20 +145,15 @@
                     <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
                   </ng-template>
                   <ng-template #more>
-                    <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
-                       nzSize="small"
-                       nzShape="circle"
-                       routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                      <i nz-icon type="info"></i>
-                    </a>
+                    <app-db-button type="quest" [id]="quest"></app-db-button>
                   </ng-template>
                 </nz-list-item-meta>
               </nz-list-item>
             </ng-template>
           </nz-list>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false">
-          <ng-template #title>
+        <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="npcsTitle" nzBordered="false">
+          <ng-template #npcsTitle>
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
               <div>
                 {{'DB.QUEST.Involved_npcs' | translate}}
@@ -185,20 +175,15 @@
                   <ng-template #more>
                     <nz-tag *ngIf="npc === xivapiQuest.IssuerStart">{{'DB.QUEST.Start' | translate}}</nz-tag>
                     <nz-tag *ngIf="npc === xivapiQuest.TargetEnd">{{'DB.QUEST.End' | translate}}</nz-tag>
-                    <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
-                       nzSize="small"
-                       nzShape="circle"
-                       routerLink="/db/{{translate.currentLang}}/npc/{{npc}}">
-                      <i nz-icon type="info"></i>
-                    </a>
+                    <app-db-button type="npc" [id]="npc"></app-db-button>
                   </ng-template>
                 </nz-list-item-meta>
               </nz-list-item>
             </ng-template>
           </nz-list>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false">
-          <ng-template #title>
+        <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="rewardsTitle" nzBordered="false">
+          <ng-template #rewardsTitle>
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
               <div>
                 {{'DB.QUEST.Rewards' | translate}}
@@ -239,22 +224,9 @@
                     </div>
                   </ng-template>
                   <ng-template #more>
-                    <a nz-button nz-tooltip
-                       *ngIf="reward.type === 'item' && reward.id > 1"
-                       [nzTitle]="'DB.Open_in_db' | translate"
-                       nzSize="small"
-                       nzShape="circle"
-                       routerLink="/db/{{translate.currentLang}}/item/{{reward.id}}">
-                      <i nz-icon type="info"></i>
-                    </a>
-                    <a nz-button nz-tooltip
-                       *ngIf="reward.type === 'instance'"
-                       [nzTitle]="'DB.Open_in_db' | translate"
-                       nzSize="small"
-                       nzShape="circle"
-                       routerLink="/db/{{translate.currentLang}}/instance/{{reward.id}}">
-                      <i nz-icon type="info"></i>
-                    </a>
+                    <app-db-button *ngIf="reward.id > 1 && (reward.type === 'instance' || reward.type === 'item')"
+                                   [type]="reward.type"
+                                   [id]="reward.id"></app-db-button>
                   </ng-template>
                 </nz-list-item-meta>
               </nz-list-item>

@@ -428,12 +428,7 @@
                     <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
                   </ng-template>
                   <ng-template #more>
-                    <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
-                       nzSize="small"
-                       nzShape="circle"
-                       routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                      <i nz-icon type="info"></i>
-                    </a>
+                    <app-db-button type="quest" [id]="quest"></app-db-button>
                   </ng-template>
                 </nz-list-item-meta>
               </nz-list-item>

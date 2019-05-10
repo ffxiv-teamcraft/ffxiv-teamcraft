@@ -296,7 +296,7 @@ export class ItemComponent extends TeamcraftPageComponent {
             url: `https://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${listRow.gardening}`
           });
         }
-        if (xivapiItem.AdditionalData) {
+        if (xivapiItem.ItemActionTargetID === 1389) {
           links.push({
             title: 'Another Triple Triad Tracker',
             icon: 'https://triad.raelys.com/images/logo.png',

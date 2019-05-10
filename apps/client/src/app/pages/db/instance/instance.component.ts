@@ -10,8 +10,10 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { combineLatest, Observable } from 'rxjs';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { catchError, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { InstanceData } from '../../../model/garland-tools/instance-data';
+import { of } from 'rxjs/internal/observable/of';
+import { GtInstance } from '../../../model/garland-tools/gt-instance';
 
 @Component({
   selector: 'app-instance',
@@ -62,6 +64,11 @@ export class InstanceComponent extends TeamcraftPageComponent {
     this.gtData$ = instanceId$.pipe(
       switchMap(id => {
         return this.gt.getInstance(+id);
+      }),
+      catchError(() => {
+        const emptyResponse = new InstanceData();
+        emptyResponse.instance = new GtInstance();
+        return of(emptyResponse);
       }),
       shareReplay(1)
     );

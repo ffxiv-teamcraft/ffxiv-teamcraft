@@ -25,7 +25,8 @@ let todo = [
   'tripleTriadRules',
   'quests',
   'fates',
-  'instances'
+  'instances',
+  'shops'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -618,5 +619,21 @@ if (hasTodo('instances')) {
     });
   }, null, () => {
     persistToJsonAsset('instances', instances);
+  });
+}
+
+if (hasTodo('shops')) {
+  const shops = {};
+  getAllPages('https://xivapi.com/SpecialShop?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(shop => {
+      shops[shop.ID] = {
+        en: shop.Name_en,
+        ja: shop.Name_ja,
+        de: shop.Name_de,
+        fr: shop.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('shops', shops);
   });
 }
