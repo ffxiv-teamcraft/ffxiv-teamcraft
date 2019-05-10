@@ -1165,7 +1165,7 @@
   "SEARCH_TYPES": {
     "Item": "物品",
     "Recipe": "配方",
-    "Instance": "Instance",
+    "Instance": "副本",
     "Quest": "任务"
   },
   "SEARCH_FILTERS": {
