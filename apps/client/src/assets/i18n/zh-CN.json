@@ -912,7 +912,7 @@
   },
   "TOOLTIP": {
     "Level": "等级",
-    "Ilvl": "装等",
+    "Ilvl": "品级",
     "Cost": "消耗",
     "Class_job": "职业/特职",
     "Damage_phys": "物理伤害",
@@ -1106,32 +1106,32 @@
     "Repair_job": "修理职业",
     "Class_job": "职业/特职",
     "Delay": "攻击间隔",
-    "Auto": "Auto",
-    "Salvage_level": "Optimal Salvage lvl",
+    "Auto": "自动攻击",
+    "Salvage_level": "分解等级",
     "Sells_for": "商店售价",
-    "Click_to_navigate": "Click on the icon to open full item details",
-    "Triple_triad_duels": "Triple triad duels",
-    "TT_Rules": "Rules",
-    "TT_card_unlock": "Unlocks card in collection",
-    "Track_on_attt": "Track on Another Triple Triad Tracker",
-    "Unlocked_by_quest": "Unlocked by quest",
-    "More_on_attt_npc": "See more details about this npc on Another Triple Triad tracker",
-    "Triple_triad_pack": "Triple triad card pack",
-    "Dungeons": "Dungeons/Trials",
-    "Used_for_trades": "Trades",
-    "Can_contain_items": "Can contain items",
-    "Open_in_db": "View details inside the database",
+    "Click_to_navigate": "点击图标打开物品详情",
+    "Triple_triad_duels": "幻卡对战",
+    "TT_Rules": "规则",
+    "TT_card_unlock": "从卡包中获取",
+    "Track_on_attt": "在 Another Triple Triad Tracker 上追踪",
+    "Unlocked_by_quest": "任务解锁",
+    "More_on_attt_npc": "在 Another Triple Triad Tracker 上查看关于该 NPC 的更多信息",
+    "Triple_triad_pack": "九宫幻卡卡包",
+    "Dungeons": "副本",
+    "Used_for_trades": "交换",
+    "Can_contain_items": "可能包含物品",
+    "Open_in_db": "在数据库中查看详情",
     "Team_size": "Team size",
     "Time": "Duration",
-    "Min_level": "Level min.",
-    "Min_ilevel": "ilvl min.",
-    "Sync_to": "Level max.",
-    "Exp": "Exp",
-    "Week_restriction": "Week restriction",
+    "Min_level": "最低等级",
+    "Min_ilevel": "最低品级",
+    "Sync_to": "同步等级",
+    "Exp": "经验",
+    "Week_restriction": "周限制",
     "Fights": "Fights",
-    "Instance_details": "Instance details",
-    "Instance_rewards": "Rewards",
-    "Unlocked_by": "Unlocked by",
+    "Instance_details": "副本详情",
+    "Instance_rewards": "奖励",
+    "Unlocked_by": "解锁",
     "Chest_content": "Chest content",
     "Currencies_reward": "Currencies reward",
     "Instance_chests": "Chests",
@@ -1158,17 +1158,17 @@
       "Beast_tribe_rank": "Beast tribe rank"
     },
     "FIGHT_TYPE": {
-      "Boss": "Boss",
-      "MidBoss": "Boss"
+      "Boss": "首领",
+      "MidBoss": "首领"
     }
   },
   "SEARCH_TYPES": {
-    "Item": "Item",
-    "Recipe": "Recipe",
+    "Item": "物品",
+    "Recipe": "配方",
     "Instance": "Instance",
-    "Quest": "Quest"
+    "Quest": "任务"
   },
   "SEARCH_FILTERS": {
-    "Instance_level": "Level"
+    "Instance_level": "等级"
   }
 }
