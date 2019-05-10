@@ -81,6 +81,7 @@
     "build:ssr": "npm run ng-high-memory run client:server && npm run webpack:ssr",
     "webpack:ssr": "webpack --config webpack.server.config.js",
     "serve:ssr": "node dist/client-webpack/server.js",
+    "meta:generate": "node data-extraction/xivapi/seo/generate-meta-data.js",
     "*********** STATS STUFF **************": "",
     "build:stats": "node ./tools/build/prebuild.js && ng build --project=client --prod --stats-json",
     "bundle-analyzer": "webpack-bundle-analyzer dist/apps/client/stats.json"
