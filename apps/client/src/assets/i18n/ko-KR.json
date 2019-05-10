@@ -1122,7 +1122,7 @@
     "Can_contain_items": "Can contain items",
     "Open_in_db": "데이터베이스 내에서 자세히 보기",
     "Team_size": "Team size",
-    "Time": "Duration",
+    "Time": "지속시간",
     "Min_level": "최소 레벨",
     "Min_ilevel": "최소 아이템레벨",
     "Sync_to": "최대 레벨",
@@ -1132,11 +1132,11 @@
     "Instance_details": "던전 세부 정보",
     "Instance_rewards": "보상",
     "Unlocked_by": "선행 조건",
-    "Chest_content": "보물상자",
+    "Chest_content": "드랍 아이템",
     "Currencies_reward": "석판 보상",
     "Instance_chests": "보물상자",
     "Position": "위치",
-    "Content": "내용물",
+    "Content": "드랍 아이템",
     "Gil": "길",
     "Level": "레벨",
     "Details": "세부 정보",
@@ -1159,7 +1159,7 @@
     },
     "FIGHT_TYPE": {
       "Boss": "최종 보스",
-      "MidBoss": "중간 보스"
+      "MidBoss": "보스"
     }
   },
   "SEARCH_TYPES": {
