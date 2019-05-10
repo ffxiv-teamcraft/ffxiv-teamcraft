@@ -1,5 +1,5 @@
 {
-  "Quests": "Quests",
+  "Quests": "퀘스트",
   "Search_placeholder": "{{type}} name",
   "Pick_a_list": "목록 선택",
   "Pick_a_user": "유저 선택",
@@ -1114,10 +1114,10 @@
     "TT_Rules": "Rules",
     "TT_card_unlock": "Unlocks card in collection",
     "Track_on_attt": "Track on Another Triple Triad Tracker",
-    "Unlocked_by_quest": "Unlocked by quest",
+    "Unlocked_by_quest": "선행 퀘스트",
     "More_on_attt_npc": "See more details about this npc on Another Triple Triad tracker",
-    "Triple_triad_pack": "Triple triad card pack",
-    "Dungeons": "Dungeons/Trials",
+    "Triple_triad_pack": "트리플 트라이어드 카드팩",
+    "Dungeons": "던전/토벌전",
     "Used_for_trades": "Trades",
     "Can_contain_items": "Can contain items",
     "Open_in_db": "View details inside the database",
@@ -1145,7 +1145,7 @@
     "Reputation_points": "Beast tribe reputation",
     "Map": "Map",
     "QUEST": {
-      "Steps": "Steps",
+      "Steps": "퀘스트 정보",
       "Unlocked_by": "Unlocked by",
       "Next_quests": "Next quests",
       "Involved_npcs": "Involved npcs",
@@ -1165,10 +1165,10 @@
   "SEARCH_TYPES": {
     "Item": "Item",
     "Recipe": "Recipe",
-    "Instance": "Instance",
-    "Quest": "Quest"
+    "Instance": "던전",
+    "Quest": "퀘스트"
   },
   "SEARCH_FILTERS": {
-    "Instance_level": "Level"
+    "Instance_level": "레벨"
   }
 }
