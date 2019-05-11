@@ -323,7 +323,7 @@
     "Disable_cross_world_prices": "キャラクターのサーバーマケットボード値段のみ使用",
     "COLORS": {
       "Primary": "デフォルトカラー",
-      "Highlight": "Highlight color",
+      "Highlight": "ハイライトカラー",
       "Text": "Buttons content color"
     },
     "COPY_TYPE": {
@@ -346,7 +346,7 @@
     "Save_for_all": "全て保存する",
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "More_than_100_lists_created": "More than 100 lists created",
-    "Veteran": "Veteran",
+    "Veteran": "ベテラン",
     "VERIFICATION": {
       "Title": "キャラクター認証",
       "Guide": "アカウントの認証のために Lodestone Profile Biographyに次のコードを貼り付けて下さい。 \"{{userId}}\" そして、下のボタンを押して下さい。",
@@ -372,8 +372,8 @@
     "Please_pick_recipe": "このアイテムに対する、制作レシピを選択して下さい。",
     "Import_description": "制作しようとする、アイテムに対する制作レシピを選び、リストを選択して下さい。そうすれば、アイテムがリストに追加され、自動にリストに移動されます。",
     "Delete_after_merge": "併合後に既存のリストを削除する",
-    "Favorite_lists": "Favorite lists",
-    "No_favorite_lists": "You have no favorite lists",
+    "Favorite_lists": "お気に入りのリスト",
+    "No_favorite_lists": "お気に入りのリストがありません",
     "IMPORT": {
       "Title": "外部サイトからリストを取り込む",
       "Paste_link_step_title": "外部サイトのリンクをペーストする",
@@ -405,7 +405,7 @@
     "Items_count": "{{amount}} アイテム",
     "Show_craftable_amount": "制作可能な数量を表示する",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
-    "Quick_layout_swap": "Quick layout swap",
+    "Quick_layout_swap": "クイックレイアウトの切り替え",
     "INVENTORY": {
       "Show_final_items": "Show final items",
       "Hide_final_items": "Hide final items"
