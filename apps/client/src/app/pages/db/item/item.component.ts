@@ -313,7 +313,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         if (data.item.ingredient_of !== undefined) {
           usedFor.push({
             type: UsedForType.CRAFT,
-            flex: '1 1 30%',
+            flex: '1 1 auto',
             title: 'DB.Crafts',
             icon: './assets/icons/classjob/blacksmith.png',
             links: Object.keys(data.item.ingredient_of)
@@ -335,7 +335,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         }
         if (data.item.tradeCurrency) {
           usedFor.push({
-            flex: '1 1 30%',
+            flex: '1 1 auto',
             type: UsedForType.TRADES,
             title: 'DB.Used_for_trades',
             icon: 'https://www.garlandtools.org/db/images/Shop.png',
@@ -403,7 +403,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         if (data.item.loot) {
           usedFor.push({
             type: UsedForType.CAN_CONTAIN_ITEMS,
-            flex: '1 1 30%',
+            flex: '1 1 auto',
             title: 'DB.Can_contain_items',
             icon: './assets/icons/chest_open.png',
             links: data.item.loot
@@ -412,6 +412,36 @@ export class ItemComponent extends TeamcraftPageComponent {
                   itemId: +itemId
                 };
               })
+          });
+        }
+        if (data.item.leves) {
+          usedFor.push({
+            type: UsedForType.LEVES,
+            flex: '1 1 auto',
+            title: 'DB.Leves',
+            icon: './assets/icons/leve.png',
+            leves: data.item.leves
+              .map(leve => {
+                const partial = data.getPartial(leve.toString(), 'leve');
+                return {
+                  leveId: leve,
+                  level: partial.obj.l,
+                  job: partial.obj.j
+                };
+              })
+          });
+        }
+        if (data.item.supply) {
+          usedFor.push({
+            type: UsedForType.LEVES,
+            flex: '1 1 auto',
+            title: 'DB.GC_Delivery',
+            icon: './assets/icons/supply.png',
+            supply: {
+              amount: data.item.supply.count,
+              xp: data.item.supply.xp,
+              seals: data.item.supply.seals
+            }
           });
         }
         return usedFor;

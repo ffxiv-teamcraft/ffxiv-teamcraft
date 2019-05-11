@@ -26,7 +26,8 @@ let todo = [
   'quests',
   'fates',
   'instances',
-  'shops'
+  'shops',
+  'leves'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -635,5 +636,21 @@ if (hasTodo('shops')) {
     });
   }, null, () => {
     persistToJsonAsset('shops', shops);
+  });
+}
+
+if (hasTodo('leves')) {
+  const leves = {};
+  getAllPages('https://xivapi.com/Leve?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(leve => {
+      leves[leve.ID] = {
+        en: leve.Name_en,
+        ja: leve.Name_ja,
+        de: leve.Name_de,
+        fr: leve.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('leves', leves);
   });
 }

@@ -92,6 +92,16 @@ export class LocalizedDataService {
     return row;
   }
 
+  public getLeve(id: number): I18nName {
+    const row = this.getRow(this.lazyData.leves, id);
+    // const koRow = this.getRow(this.lazyData.koNpcs, id);
+
+    if (row !== undefined) {
+      // row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
   public getShopName(englishName: string): I18nName {
     const id = +Object.keys(this.lazyData.shops).find(k => this.lazyData.shops[k].en === englishName);
     console.log(id);

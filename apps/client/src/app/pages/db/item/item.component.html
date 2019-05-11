@@ -261,7 +261,8 @@
           </ng-template>
           <app-gathered-by [item]="data" [showAlarmsIntegration]="true"></app-gathered-by>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card" *ngIf="data.instances !== undefined && data.instances.length > 0"
+        <nz-card fxFlex="1 1 auto" class="details-card"
+                 *ngIf="data.instances !== undefined && data.instances.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -447,7 +448,7 @@
                  *ngFor="let row of usedFor">
           <ng-template #title>
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
-              <img class="img-icon" [src]="row.icon" [alt]="row.title | translate">
+              <img class="larger-img-icon" [src]="row.icon" [alt]="row.title | translate">
               <div>
                 {{row.title | translate}}
               </div>
@@ -470,6 +471,47 @@
           </div>
           <div fxLayout="column" fxLayoutGap="5px" *ngIf="row.trades">
             <app-trades [item]="data" [externalTradeSources]="row.trades"></app-trades>
+          </div>
+          <div *ngIf="row.leves">
+            <nz-list [nzDataSource]="row.leves" [nzRenderItem]="leveTemplate"
+                     [nzItemLayout]="'horizontal'">
+              <ng-template #leveTemplate let-leve>
+                <nz-list-item [nzContent]="more">
+                  <nz-list-item-meta
+                    [nzAvatar]="leveAvatar"
+                    [nzTitle]="leve.leveId | leveName | i18n"
+                    nzDescription="lvl {{leve.level}}">
+                    <ng-template #leveAvatar>
+                      <a routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">
+                        <img class="img-icon round-icon"
+                             src="https://garlandtools.org/db/images/{{(leve.job | jobAbbr)?.en}}.png">
+                      </a>
+                      <a
+                        routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">{{leve.leveId | leveName | i18n}}</a>
+                    </ng-template>
+                    <ng-template #more>
+                      <app-db-button type="leve" [id]="leve.leveId"></app-db-button>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
+              </ng-template>
+            </nz-list>
+          </div>
+          <div *ngIf="row.supply">
+            <div fxLayout="column">
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <b>{{xivapiItem.ID | itemName | i18n}}</b>
+                <div>x{{row.supply.amount}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img src="./assets/icons/exp.png" alt="exp" class="img-icon">
+                <div>x{{row.supply.xp}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img [src]="20 | lazyIcon" alt="GC Seals" class="img-icon">
+                <div>x{{row.supply.seals}}</div>
+              </div>
+            </div>
           </div>
         </nz-card>
       </div>

@@ -8,7 +8,14 @@
     min-width: 30%;
   }
 
-  ::ng-deep .ant-card-head {
+  .details-card {
+    .ant-card-body {
+      max-height: 500px;
+      overflow-y: auto;
+    }
+  }
+
+  .ant-card-head {
     background-color: rgba(0, 0, 0, .10) !important;
     border-bottom-color: rgba(255, 255, 255, .4);
   }
