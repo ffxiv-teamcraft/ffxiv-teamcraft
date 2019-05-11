@@ -407,14 +407,14 @@
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "Quick_layout_swap": "クイックレイアウトの切り替え",
     "INVENTORY": {
-      "Show_final_items": "Show final items",
-      "Hide_final_items": "Hide final items"
+      "Show_final_items": "最終アイテムの表示",
+      "Hide_final_items": "最終アイテムを隠す"
     },
     "COMPLETION_POPUP": {
       "Title": "リスト完成しました",
       "Content": "このリストは完了されました。何をしますか?",
       "Delete": "このリストを削除する",
-      "Clear": "Empty the list",
+      "Clear": "リストを空にする",
       "Reset": "このリストをリセットする",
       "Nothing": "ここには何もない"
     },
@@ -466,7 +466,7 @@
       "Buttons": "ボタン",
       "Menu": "メニュー",
       "Edit_row_buttons_display": "行ボタンの編集画面",
-      "Reorder_panels": "Reorder panels",
+      "Reorder_panels": "パネルの並べ替え",
       "ITEMS": {
         "COMMENTS": "コメント",
         "COPY_NAME_NOT_FAVORITE": "お気に入りでないコピーモード",
@@ -478,8 +478,8 @@
         "ADD_TO_ANOTHER_LIST": "他のリストに追加する",
         "REQUIREMENTS": "素材",
         "REMOVE_ITEM": "リストからこのアイテムを削除",
-        "ADD_TAG": "Add tag to item",
-        "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
+        "ADD_TAG": "アイテムにタグを追加する",
+        "MARK_AS_DONE_IN_LOG": "手帳に完了と表示する"
       }
     },
     "LAYOUT": {
@@ -559,7 +559,7 @@
   "NAVIGATION": {
     "Title": "最適化されたルート",
     "Steps": "段階",
-    "Loading_path": "Loading optimized path (can take several seconds)",
+    "Loading_path": "推薦経路を読み込み中(数秒くらい所要)",
     "STEP": {
       "Gathering": "{{amount}} 個採集",
       "Hunting": "戦闘で {{amount}} 個 獲得した",
@@ -578,8 +578,8 @@
     "Snagging": "引掛釣りが必要",
     "Predators": "前にこの魚を釣る",
     "Fish_eyes_duration": "この魚を釣るためには、持続時間ほどのフィッシュアイが必要とします。形式を変更するにはクリックして下さい。",
-    "Spawned_for": "Will despawn in {{timer}}",
-    "Will_spawn_in": "Will spawn in {{timer}}",
+    "Spawned_for": "{{timer}} 以降消える",
+    "Will_spawn_in": "{{timer}} 以降現れる",
     "GIG_HEAD": {
       "Small": "スモールギグヘッド",
       "Normal": "ミドルギグヘッド",
@@ -741,10 +741,10 @@
         "Created_by": "{{name}} で作成された",
         "Copy_folder": "このフォルダーと内容を自分のアカウントにコピーする",
         "Folder_copied": "フォルダーがマイアカウントにコピーされました",
-        "Your_folders": "Your folders",
+        "Your_folders": "マイフォルダ",
         "Favorite_folders": "お気に入りのフォルダー",
         "Add_rotations": "スキル回し追加",
-        "Open": "Open folder"
+        "Open": "フォルダーを開く"
       }
     },
     "CATEGORY": {
@@ -905,7 +905,7 @@
     "History": "取引履歴",
     "Purchase_date": "日付",
     "More_on_mogboard": "Mogboardで詳しく情報を見る",
-    "Server": "Server"
+    "Server": "サーバー"
   },
   "COMMENTS": {
     "Title": "コメント"
