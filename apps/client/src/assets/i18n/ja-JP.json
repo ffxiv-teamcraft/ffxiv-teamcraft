@@ -1134,48 +1134,48 @@
     "Unlocked_by": "Unlocked by",
     "Chest_content": "Chest content",
     "Currencies_reward": "Currencies reward",
-    "Instance_chests": "Chests",
-    "Position": "Position",
+    "Instance_chests": "宝箱",
+    "Position": "位置",
     "Content": "Content",
-    "Gil": "Gil",
-    "Level": "Level",
-    "Details": "Details",
-    "RP_Details": "RP Details",
-    "Experience_points": "Experience points",
+    "Gil": "ギル",
+    "Level": "レベル",
+    "Details": "詳細",
+    "RP_Details": "RP 詳細",
+    "Experience_points": "経験値",
     "Reputation_points": "Beast tribe reputation",
-    "Map": "Map",
+    "Map": "地図",
     "QUEST": {
-      "Steps": "Steps",
+      "Steps": "クエスト情報",
       "Unlocked_by": "Unlocked by",
       "Next_quests": "Next quests",
-      "Involved_npcs": "Involved npcs",
+      "Involved_npcs": "関連 NPC",
       "Journal_entries": "Journal entries",
-      "Dialogues": "Dialogues",
-      "Start": "Start",
-      "End": "End",
-      "Rewards": "Rewards",
+      "Dialogues": "セリフ",
+      "Start": "開始",
+      "End": "終了",
+      "Rewards": "報酬",
       "Repeatable": "Repeatable",
       "Beast_tribe_rank": "Beast tribe rank"
     },
     "NPC": {
       "Other_entries": "Other appearances",
       "Default_talk": "Base dialogues",
-      "Quests": "Quests",
-      "Shops": "Shops"
+      "Quests": "クエスト",
+      "Shops": "ショップ"
     },
     "FIGHT_TYPE": {
-      "Boss": "Boss",
-      "MidBoss": "Boss"
+      "Boss": "ラスボス",
+      "MidBoss": "ボス"
     }
   },
   "SEARCH_TYPES": {
-    "Item": "Item",
-    "Recipe": "Recipe",
-    "Instance": "Instance",
-    "Quest": "Quest",
+    "Item": "アイテム",
+    "Recipe": "レシピ",
+    "Instance": "ダンジョン",
+    "Quest": "クエスト",
     "NPC": "NPC"
   },
   "SEARCH_FILTERS": {
-    "Instance_level": "Level"
+    "Instance_level": "レベル"
   }
 }
