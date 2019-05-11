@@ -810,7 +810,7 @@
       "Use_patient_touch_faster": "'専心加工' は '精神集中' のスタックが積もる前に使用して下さい。もしスキルが失敗したら、スタックが無駄遣いになる恐れがあります。",
       "Use_advanced_touch_instead": "{{index}} 回目の工程で '加工' と '上級加工' を使用しました。 '中級加工' を2回使用する場合、 CP 2を節約しつつ同じような効果が得られます。",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 回目の工程で使用したバフが {{overlappingIndex}} 回目の工程で使用したバフと重複されます。バフの効果が最大限貰えるように、少し遅れて使う必要があります。",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used."
+      "Use_byregot_brow_5_stacks": "'ビエルゴの祝福' の代わりに 'ビエルゴの技巧' を使用すると同じ品質量が上昇しながら CP 6が節約できます。"
     }
   },
   "PRICING": {
@@ -946,19 +946,19 @@
     "Title": "制作/採集手帳トラッカー",
     "Mark_page_as_done": "このページを完了として表示する",
     "Mark_as_done": "このアイテムに完了として表示する",
-    "Mark_as_done_external": "Mark this item as done inside the log",
+    "Mark_as_done_external": "このアイテムが手帳に完了と表示される",
     "Mark_as_not_done": "このアイテムを未完了として表示する",
     "Create_list": "このページを完成させるためのリストを作成する",
-    "Create_list_limited": "Create a list to complete this page (50 items max)",
+    "Create_list_limited": "このページを完了するためなリスト作成する(最大50個のアイテム)",
     "Folklore": "伝承録",
     "Timed": "タイムリミットあり",
     "Weather_dependant": "特殊天候のみ可能",
     "View_on_ff14angler": "FF14anglerの詳細",
     "Required_for_achievement": "アチーブメントに適用された",
     "Select_spot": "詳細を表示するところを選択します。",
-    "Hide_completed": "Hide completed recipes",
-    "MIN_optimized_path": "Optimized path for all MIN nodes",
-    "BTN_optimized_path": "Optimized path for all BTN nodes",
+    "Hide_completed": "完了したレシピを隠す",
+    "MIN_optimized_path": "全ての採掘師の採集物のおすすめ経路",
+    "BTN_optimized_path": "全ての園芸師の採集物のおすすめ経路",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
       "Housing_items": "ハウジング ({{number}})",
@@ -966,7 +966,7 @@
       "Dyes": "染料",
       "Other_master_recipes": "秘伝書: その他",
       "Deliveries": "Deliveries",
-      "Quests": "Quests"
+      "Quests": "ジョブクエスト"
     }
   },
   "LOADING_SCREEN": {
@@ -1054,7 +1054,7 @@
     "Search": "検索",
     "Generate_list": "Create a quick list",
     "Intro": "レベルを入力し、検索をクリックして開始します。",
-    "Loading_message": "Loading possible deliveries, this can take up to a minute"
+    "Loading_message": "可能な調達品を読み込み中... 時間が所要されます"
   },
   "DESYNTH": {
     "Title": "Desynth guide",
