@@ -194,7 +194,7 @@
   "Vendors": "NPC",
   "Open": "開",
   "Trade": "取引",
-  "Treasures": "財宝",
+  "Treasures": "Can be obtained in",
   "Fates": "F.A.T.E",
   "Filters": "フィルター",
   "Check_all": "全てをチェック",
@@ -1108,7 +1108,7 @@
     "Class_job": "クラス/ジョブ",
     "Delay": "遅延",
     "Auto": "Auto",
-    "Salvage_level": "Optimal Salvage lvl",
+    "Salvage_level": "Optimal Desynth lvl",
     "Sells_for": "Sell price",
     "Click_to_navigate": "Click on the icon to open full item details",
     "Triple_triad_duels": "トリプルトライアド対戦",
@@ -1148,6 +1148,8 @@
     "Leves": "Leves",
     "GC_Delivery": "GC Delivery",
     "Probability": "Probability",
+    "Drop_rate": "Drop Rate",
+    "Involved_monsters": "Involved monsters",
     "QUEST": {
       "Steps": "クエスト情報",
       "Unlocked_by": "Unlocked by",
@@ -1176,7 +1178,8 @@
       "Required_items": "Required items",
       "Allowance_cost": "Allowance cost",
       "Rewards": "獲得可能な報酬",
-      "Client": "クライアント"
+      "Client": "クライアント",
+      "Issuer": "Issuer"
     }
   },
   "SEARCH_TYPES": {
@@ -1184,9 +1187,13 @@
     "Recipe": "レシピ",
     "Instance": "ダンジョン",
     "Quest": "クエスト",
-    "NPC": "NPC"
+    "NPC": "NPC",
+    "Leve": "Levequest",
+    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves"
   },
   "SEARCH_FILTERS": {
-    "Instance_level": "レベル"
+    "Instance_level": "レベル",
+    "Leve_job": "Leve job",
+    "Leve_level": "Required level"
   }
 }
