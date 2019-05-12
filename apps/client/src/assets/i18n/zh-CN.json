@@ -832,6 +832,7 @@
     "Quantity": "数量",
     "All_deliveries": "共可交付 {{value}} 次",
     "Compute_exp": "显示经验值变化",
+    "Global_exp": "Use global exp",
     "More_on_gamerescape": "Gamer Escape 上的详细信息",
     "Deliver_to": "交付到 {{placename}}",
     "INTRO": {
@@ -1144,6 +1145,9 @@
     "Experience_points": "经验",
     "Reputation_points": "Beast tribe reputation",
     "Map": "地图",
+    "Leves": "Leves",
+    "GC_Delivery": "GC Delivery",
+    "Probability": "Probability",
     "QUEST": {
       "Steps": "步骤",
       "Unlocked_by": "前置",
@@ -1166,6 +1170,12 @@
     "FIGHT_TYPE": {
       "Boss": "首领",
       "MidBoss": "首领"
+    },
+    "LEVE": {
+      "Required_items": "Required items",
+      "Allowance_cost": "Allowance cost",
+      "Rewards": "Possible rewards",
+      "Client": "Client"
     }
   },
   "SEARCH_TYPES": {
