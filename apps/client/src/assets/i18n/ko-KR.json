@@ -1181,6 +1181,9 @@
       "Rewards": "획득 가능한 보상",
       "Client": "의뢰인",
       "Issuer": "Issuer"
+    },
+    "MOB": {
+      "Known_spawns": "Known spawns"
     }
   },
   "SEARCH_TYPES": {
