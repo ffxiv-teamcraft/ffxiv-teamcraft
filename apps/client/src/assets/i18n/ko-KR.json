@@ -194,7 +194,7 @@
   "Vendors": "상인",
   "Open": "열기",
   "Trade": "교환",
-  "Treasures": "Can be obtained in",
+  "Treasures": "획득 방법",
   "Fates": "돌발 임무",
   "Filters": "필터",
   "Check_all": "모두 선택",
@@ -1194,7 +1194,7 @@
   },
   "SEARCH_FILTERS": {
     "Instance_level": "레벨",
-    "Leve_job": "Leve job",
-    "Leve_level": "Required level"
+    "Leve_job": "직업",
+    "Leve_level": "요구 레벨"
   }
 }
