@@ -14,6 +14,7 @@ import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { LeveData } from '../../../model/garland-tools/leve-data';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
+import { levemetes } from '../../../core/data/sources/levemetes';
 
 @Component({
   selector: 'app-leve',
@@ -124,11 +125,20 @@ export class LeveComponent extends TeamcraftPageComponent {
 
     this.npcs$ = combineLatest([this.xivapiLeve$, this.gtData$]).pipe(
       map(([leve, data]) => {
-        const npcs = [{
-          id: leve.LevelLevemete.Object,
-          client: true
-        }];
-        return npcs;
+        const npcs: any[] = [
+          {
+            id: leve.LevelLevemete.Object,
+            client: true
+          }
+        ];
+        const levemete = Object.keys(levemetes).find(key => levemetes[key].indexOf(leve.ID) > -1);
+        if (levemete !== undefined) {
+          npcs.push({
+            id: +levemete,
+            issuer: true
+          });
+        }
+        return npcs.reverse();
       })
     );
 

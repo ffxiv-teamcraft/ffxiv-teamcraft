@@ -87,6 +87,37 @@
         </nz-list>
       </nz-card>
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
+               *ngIf="xivapiNpc.Quests && xivapiNpc.Quests.length > 0">
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+            <div>
+              {{'DB.NPC.Leves' | translate}}
+            </div>
+          </div>
+        </ng-template>
+        <nz-list [nzDataSource]="leves$ | async" [nzRenderItem]="leveTemplate"
+                 [nzItemLayout]="'horizontal'">
+          <ng-template #leveTemplate let-leve>
+            <nz-list-item [nzContent]="more">
+              <nz-list-item-meta
+                [nzAvatar]="leveAvatar"
+                [nzTitle]="leve | leveName | i18n"
+                nzDescription="{{(leve | leveName).job | i18n}} {{(leve | leveName).lvl}}">
+                <ng-template #leveAvatar>
+                  <a routerLink="/db/{{translate.currentLang}}/leve/{{leve}}">
+                    <img class="img-icon round-icon" src="./assets/icons/leve.png">
+                  </a>
+                  <a routerLink="/db/{{translate.currentLang}}/leve/{{leve}}">{{leve | leveName | i18n}}</a>
+                </ng-template>
+                <ng-template #more>
+                  <app-db-button type="leve" [id]="leve"></app-db-button>
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
                *ngIf="gtData.npc.alts && gtData.npc.alts.length > 0">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">

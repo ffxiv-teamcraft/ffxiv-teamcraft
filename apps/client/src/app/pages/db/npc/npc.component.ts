@@ -16,6 +16,7 @@ import { TradeSource } from '../../../modules/list/model/trade-source';
 import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
+import { levemetes } from '../../../core/data/sources/levemetes';
 
 @Component({
   selector: 'app-npc',
@@ -31,6 +32,8 @@ export class NpcComponent extends TeamcraftPageComponent {
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
   public trades$: Observable<TradeSource[]>;
+
+  public leves$: Observable<number[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -146,6 +149,12 @@ export class NpcComponent extends TeamcraftPageComponent {
             icon: './assets/icons/ge.png'
           }
         ];
+      })
+    );
+
+    this.leves$ = npcId$.pipe(
+      map(npcId => {
+        return levemetes[npcId];
       })
     );
   }

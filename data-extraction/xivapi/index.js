@@ -641,13 +641,20 @@ if (hasTodo('shops')) {
 
 if (hasTodo('leves')) {
   const leves = {};
-  getAllPages('https://xivapi.com/Leve?columns=ID,Name_*').subscribe(page => {
+  getAllPages('https://xivapi.com/Leve?columns=ID,Name_*,ClassJobCategory.Name_*,ClassJobLevel').subscribe(page => {
     page.Results.forEach(leve => {
       leves[leve.ID] = {
         en: leve.Name_en,
         ja: leve.Name_ja,
         de: leve.Name_de,
-        fr: leve.Name_fr
+        fr: leve.Name_fr,
+        job: {
+          en: leve.ClassJobCategory.Name_en,
+          ja: leve.ClassJobCategory.Name_ja,
+          de: leve.ClassJobCategory.Name_de,
+          fr: leve.ClassJobCategory.Name_fr,
+        },
+        lvl: leve.ClassJobLevel
       };
     });
   }, null, () => {
