@@ -832,6 +832,7 @@
     "Quantity": "Количество",
     "All_deliveries": "Все {{value}} доставлено",
     "Compute_exp": "Показать влияние на xp",
+    "Global_exp": "Use global exp",
     "More_on_gamerescape": "Подробнее на gamerescape",
     "Deliver_to": "Доставить в {{placename}}",
     "INTRO": {
@@ -1144,6 +1145,9 @@
     "Experience_points": "Experience points",
     "Reputation_points": "Beast tribe reputation",
     "Map": "Map",
+    "Leves": "Leves",
+    "GC_Delivery": "GC Delivery",
+    "Probability": "Probability",
     "QUEST": {
       "Steps": "Steps",
       "Unlocked_by": "Unlocked by",
@@ -1166,6 +1170,12 @@
     "FIGHT_TYPE": {
       "Boss": "Boss",
       "MidBoss": "Boss"
+    },
+    "LEVE": {
+      "Required_items": "Required items",
+      "Allowance_cost": "Allowance cost",
+      "Rewards": "Possible rewards",
+      "Client": "Client"
     }
   },
   "SEARCH_TYPES": {
