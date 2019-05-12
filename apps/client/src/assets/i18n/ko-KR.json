@@ -1147,7 +1147,7 @@
     "Map": "지도",
     "Leves": "의뢰",
     "GC_Delivery": "총사령부 조달 임무",
-    "Probability": "Probability",
+    "Probability": "확률",
     "QUEST": {
       "Steps": "퀘스트 정보",
       "Unlocked_by": "선행 퀘스트",
@@ -1165,16 +1165,17 @@
       "Other_entries": "다른 출현위치",
       "Default_talk": "기본 대사",
       "Quests": "퀘스트",
-      "Shops": "상점"
+      "Shops": "상점",
+      "Leves": "Leves"
     },
     "FIGHT_TYPE": {
       "Boss": "최종 보스",
       "MidBoss": "보스"
     },
     "LEVE": {
-      "Required_items": "Required items",
-      "Allowance_cost": "Allowance cost",
-      "Rewards": "Possible rewards",
+      "Required_items": "요구 아이템",
+      "Allowance_cost": "의뢰 수주권 소모량",
+      "Rewards": "획득 가능한 보상",
       "Client": "Client"
     }
   },
