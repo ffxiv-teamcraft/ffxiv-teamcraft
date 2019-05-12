@@ -8,11 +8,10 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { catchError, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { InstanceData } from '../../../model/garland-tools/instance-data';
-import { of } from 'rxjs/internal/observable/of';
 import { GtInstance } from '../../../model/garland-tools/gt-instance';
 
 @Component({

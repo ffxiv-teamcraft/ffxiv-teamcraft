@@ -2,8 +2,14 @@
   <ng-template #huntTemplate let-drop>
     <nz-list-item [nzContent]="drop.position !== undefined?position:null">
       <nz-list-item-meta nzDescription="lvl{{drop.lvl}} - {{drop.zoneid | placeName | i18n}}"
-                         [nzTitle]="drop.id | mobName | i18n">
+                         [nzTitle]="dropTitle">
       </nz-list-item-meta>
+      <ng-template #dropTitle>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>{{drop.id | mobName | i18n}}</div>
+          <app-db-button type="mob" [id]="drop.id % 100000"></app-db-button>
+        </div>
+      </ng-template>
       <ng-template #position>
         <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
           <div>{{drop.zoneid | placeName | i18n}}</div>

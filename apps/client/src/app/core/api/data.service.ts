@@ -14,6 +14,7 @@ import { InstanceData } from '../../model/garland-tools/instance-data';
 import { QuestData } from '../../model/garland-tools/quest-data';
 import { NpcData } from '../../model/garland-tools/npc-data';
 import { LeveData } from '../../model/garland-tools/leve-data';
+import { MobData } from '../../model/garland-tools/mob-data';
 
 @Injectable()
 export class DataService {
@@ -25,6 +26,7 @@ export class DataService {
     quest: 2,
     npc: 2,
     leve: 3,
+    mob: 2,
   };
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 
@@ -48,7 +50,7 @@ export class DataService {
   /**
    * Gets an instance based on its id.
    * @param {number} id
-   * @returns {Observable<ItemData>}
+   * @returns {Observable<InstanceData>}
    */
   public getInstance(id: number): Observable<InstanceData> {
     return this.getGarlandData(`/instance/en/${this.garlandtoolsVersions.instance}/${id}`)
@@ -58,7 +60,7 @@ export class DataService {
   /**
    * Gets an instance based on its id.
    * @param {number} id
-   * @returns {Observable<ItemData>}
+   * @returns {Observable<NpcData>}
    */
   public getNpc(id: number): Observable<NpcData> {
     return this.getGarlandData(`/npc/en/${this.garlandtoolsVersions.npc}/${id}`)
@@ -68,7 +70,7 @@ export class DataService {
   /**
    * Gets a quest based on its id.
    * @param {number} id
-   * @returns {Observable<ItemData>}
+   * @returns {Observable<QuestData>}
    */
   public getQuest(id: number): Observable<QuestData> {
     return this.getGarlandData(`/quest/en/${this.garlandtoolsVersions.quest}/${id}`)
@@ -78,11 +80,21 @@ export class DataService {
   /**
    * Gets a quest based on its id.
    * @param {number} id
-   * @returns {Observable<ItemData>}
+   * @returns {Observable<LeveData>}
    */
   public getLeve(id: number): Observable<LeveData> {
     return this.getGarlandData(`/leve/en/${this.garlandtoolsVersions.leve}/${id}`)
       .pipe(map(item => this.serializer.deserialize<LeveData>(item, LeveData)));
+  }
+
+  /**
+   * Gets a mob based on its id.
+   * @param {number} id
+   * @returns {Observable<MobData>}
+   */
+  public getMob(id: string): Observable<MobData> {
+    return this.getGarlandData(`/mob/en/${this.garlandtoolsVersions.leve}/${id}`)
+      .pipe(map(item => this.serializer.deserialize<MobData>(item, MobData)));
   }
 
   /**

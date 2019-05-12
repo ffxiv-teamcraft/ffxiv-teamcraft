@@ -11,8 +11,8 @@ export class MobNamePipe implements PipeTransform {
   }
 
   transform(id: number): I18nName {
-    if (id > 10000) {
-      id = id % 10000;
+    if (id > 1000000) {
+      id = id % 1000000;
     }
     return this.data.getMob(id);
   }

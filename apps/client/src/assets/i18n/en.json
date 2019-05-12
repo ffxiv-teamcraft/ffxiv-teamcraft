@@ -1169,7 +1169,7 @@
       "Quests": "Quests",
       "Shops": "Shops",
       "Leves": "Leves",
-      "Trades":  "Trades"
+      "Trades": "Trades"
     },
     "FIGHT_TYPE": {
       "Boss": "Boss",
@@ -1181,6 +1181,9 @@
       "Rewards": "Possible rewards",
       "Client": "Client",
       "Issuer": "Issuer"
+    },
+    "MOB": {
+      "Known_spawns": "Known spawns"
     }
   },
   "SEARCH_TYPES": {

@@ -1,11 +1,10 @@
 const csv = require('csv-parser');
 const path = require('path');
-const request = require('request');
 const fs = require('fs');
 const http = require('https');
 const Rx = require('rxjs');
-const { switchMap, map } = require('rxjs/operators');
-const { getAllPages, getOnePage, persistToJsonAsset, persistToTypescript, get, getAllEntries, addQueryParam } = require('./tools.js');
+const { map } = require('rxjs/operators');
+const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries } = require('./tools.js');
 
 const nodes = {};
 const aetherytes = [];
@@ -52,11 +51,9 @@ if (hasTodo('mappy')) {
 
   http.get('https://xivapi.com/download?data=memory_data', (memoryResponse) => {
     const memoryData = [];
-    console.log(memoryResponse);
     memoryResponse.setEncoding('utf8');
     memoryResponse.pipe(csv())
       .on('data', function(memoryRow) {
-        console.log(memoryRow);
         memoryData.push(memoryRow);
       })
       .on('end', () => {
@@ -128,15 +125,20 @@ handleAetheryte = (row) => {
 
 handleMonster = (row, memoryData) => {
   const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
-  monsters[row.BNpcNameID] = {
+  monsters[row.BNpcNameID] = monsters[row.BNpcNameID] || {
+    baseid: +row.BNpcBaseID,
+    positions: []
+  };
+  const newEntry = {
     map: +row.MapID,
     zoneid: +row.PlaceNameID,
     x: Math.round(+row.PosX),
     y: Math.round(+row.PosY)
   };
   if (monsterMemoryRow !== undefined) {
-    monsters[row.BNpcNameID].level = +monsterMemoryRow.Level;
+    newEntry.level = +monsterMemoryRow.Level;
   }
+  monsters[row.BNpcNameID].positions.push(newEntry);
 };
 
 handleNpc = (row) => {
