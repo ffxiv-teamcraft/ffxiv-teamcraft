@@ -1168,7 +1168,8 @@
       "Default_talk": "Base dialogues",
       "Quests": "クエスト",
       "Shops": "ショップ",
-      "Leves": "Leves"
+      "Leves": "Leves",
+      "Trades": "Trades"
     },
     "FIGHT_TYPE": {
       "Boss": "ラスボス",
