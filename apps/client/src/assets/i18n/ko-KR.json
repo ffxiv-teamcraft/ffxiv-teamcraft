@@ -1176,7 +1176,7 @@
       "Required_items": "요구 아이템",
       "Allowance_cost": "의뢰 수주권 소모량",
       "Rewards": "획득 가능한 보상",
-      "Client": "Client"
+      "Client": "의뢰인"
     }
   },
   "SEARCH_TYPES": {
