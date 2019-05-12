@@ -194,7 +194,7 @@
   "Vendors": "Prodavači",
   "Open": "Otvorite",
   "Trade": "Razmjena",
-  "Treasures": "Treasures",
+  "Treasures": "Can be obtained in",
   "Fates": "Fates",
   "Filters": "Filteri",
   "Check_all": "Označite sve",
@@ -1108,7 +1108,7 @@
     "Class_job": "Class/Job",
     "Delay": "Delay",
     "Auto": "Auto",
-    "Salvage_level": "Optimal Salvage lvl",
+    "Salvage_level": "Optimal Desynth lvl",
     "Sells_for": "Sell price",
     "Click_to_navigate": "Click on the icon to open full item details",
     "Triple_triad_duels": "Triple triad duels",
@@ -1148,6 +1148,8 @@
     "Leves": "Leves",
     "GC_Delivery": "GC Delivery",
     "Probability": "Probability",
+    "Drop_rate": "Drop Rate",
+    "Involved_monsters": "Involved monsters",
     "QUEST": {
       "Steps": "Steps",
       "Unlocked_by": "Unlocked by",
@@ -1176,7 +1178,8 @@
       "Required_items": "Required items",
       "Allowance_cost": "Allowance cost",
       "Rewards": "Possible rewards",
-      "Client": "Client"
+      "Client": "Client",
+      "Issuer": "Issuer"
     }
   },
   "SEARCH_TYPES": {
@@ -1184,9 +1187,13 @@
     "Recipe": "Recipe",
     "Instance": "Instance",
     "Quest": "Quest",
-    "NPC": "NPC"
+    "NPC": "NPC",
+    "Leve": "Levequest",
+    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves"
   },
   "SEARCH_FILTERS": {
-    "Instance_level": "Level"
+    "Instance_level": "Level",
+    "Leve_job": "Leve job",
+    "Leve_level": "Required level"
   }
 }
