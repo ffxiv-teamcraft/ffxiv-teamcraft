@@ -1181,6 +1181,9 @@
       "Rewards": "獲得可能な報酬",
       "Client": "クライアント",
       "Issuer": "Issuer"
+    },
+    "MOB": {
+      "Known_spawns": "Known spawns"
     }
   },
   "SEARCH_TYPES": {
