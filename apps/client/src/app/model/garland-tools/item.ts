@@ -47,6 +47,8 @@ export class Item implements I18nData {
   fates?: number[];
   quests?: number[];
   leves?: number[];
+  requiredByLeves?: number[];
+  usedInQuest?: number[];
   supply?: {
     count: number;
     xp: number;

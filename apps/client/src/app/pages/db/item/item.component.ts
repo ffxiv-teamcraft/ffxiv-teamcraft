@@ -414,13 +414,13 @@ export class ItemComponent extends TeamcraftPageComponent {
               })
           });
         }
-        if (data.item.leves) {
+        if (data.item.requiredByLeves) {
           usedFor.push({
             type: UsedForType.LEVES,
             flex: '1 1 auto',
             title: 'DB.Leves',
             icon: './assets/icons/leve.png',
-            leves: data.item.leves
+            leves: data.item.requiredByLeves
               .map(leve => {
                 const partial = data.getPartial(leve.toString(), 'leve');
                 return {
@@ -431,9 +431,18 @@ export class ItemComponent extends TeamcraftPageComponent {
               })
           });
         }
+        if (data.item.usedInQuest) {
+          usedFor.push({
+            type: UsedForType.QUEST,
+            flex: '1 1 auto',
+            title: 'Quests',
+            icon: './assets/icons/leve.png',
+            quests: data.item.usedInQuest
+          });
+        }
         if (data.item.supply) {
           usedFor.push({
-            type: UsedForType.LEVES,
+            type: UsedForType.SUPPLY,
             flex: '1 1 auto',
             title: 'DB.GC_Delivery',
             icon: './assets/icons/supply.png',

@@ -466,6 +466,7 @@
                 <div>
                   {{link.itemId | itemName | i18n}}
                 </div>
+                <app-db-button type="item" [id]="link.itemId"></app-db-button>
               </div>
             </div>
           </div>
@@ -491,6 +492,28 @@
                     </ng-template>
                     <ng-template #more>
                       <app-db-button type="leve" [id]="leve.leveId"></app-db-button>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
+              </ng-template>
+            </nz-list>
+          </div>
+          <div *ngIf="row.quests">
+            <nz-list [nzDataSource]="row.quests" [nzRenderItem]="questTemplate"
+                     [nzItemLayout]="'horizontal'">
+              <ng-template #questTemplate let-quest>
+                <nz-list-item [nzContent]="more">
+                  <nz-list-item-meta
+                    [nzAvatar]="questAvatar"
+                    [nzTitle]="quest | questName | i18n">
+                    <ng-template #questAvatar>
+                      <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
+                        <img class="img-icon round-icon" src="./assets/icons/quest.png">
+                      </a>
+                      <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
+                    </ng-template>
+                    <ng-template #more>
+                      <app-db-button type="quest" [id]="quest"></app-db-button>
                     </ng-template>
                   </nz-list-item-meta>
                 </nz-list-item>

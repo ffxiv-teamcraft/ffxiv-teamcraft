@@ -4,5 +4,6 @@ export enum UsedForType {
   TRADES,
   CAN_CONTAIN_ITEMS,
   LEVES,
+  QUEST,
   SUPPLY
 }
