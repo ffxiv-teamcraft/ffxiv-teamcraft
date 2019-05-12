@@ -194,7 +194,7 @@
   "Vendors": "商人",
   "Open": "打开",
   "Trade": "兑换",
-  "Treasures": "Treasures",
+  "Treasures": "Can be obtained in",
   "Fates": "临危受命",
   "Filters": "筛选",
   "Check_all": "全选",
@@ -1108,7 +1108,7 @@
     "Class_job": "职业/特职",
     "Delay": "攻击间隔",
     "Auto": "自动攻击",
-    "Salvage_level": "分解等级",
+    "Salvage_level": "Optimal Desynth lvl",
     "Sells_for": "商店售价",
     "Click_to_navigate": "点击图标打开物品详情",
     "Triple_triad_duels": "幻卡对战",
@@ -1148,6 +1148,8 @@
     "Leves": "Leves",
     "GC_Delivery": "GC Delivery",
     "Probability": "Probability",
+    "Drop_rate": "Drop Rate",
+    "Involved_monsters": "Involved monsters",
     "QUEST": {
       "Steps": "步骤",
       "Unlocked_by": "前置",
@@ -1176,7 +1178,8 @@
       "Required_items": "Required items",
       "Allowance_cost": "Allowance cost",
       "Rewards": "Possible rewards",
-      "Client": "Client"
+      "Client": "Client",
+      "Issuer": "Issuer"
     }
   },
   "SEARCH_TYPES": {
@@ -1184,9 +1187,13 @@
     "Recipe": "配方",
     "Instance": "副本",
     "Quest": "任务",
-    "NPC": "NPC"
+    "NPC": "NPC",
+    "Leve": "Levequest",
+    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves"
   },
   "SEARCH_FILTERS": {
-    "Instance_level": "等级"
+    "Instance_level": "等级",
+    "Leve_job": "Leve job",
+    "Leve_level": "Required level"
   }
 }
