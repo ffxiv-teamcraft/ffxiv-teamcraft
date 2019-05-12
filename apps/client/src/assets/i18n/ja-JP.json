@@ -1175,8 +1175,8 @@
     "LEVE": {
       "Required_items": "Required items",
       "Allowance_cost": "Allowance cost",
-      "Rewards": "Possible rewards",
-      "Client": "Client"
+      "Rewards": "獲得可能な報酬",
+      "Client": "クライアント"
     }
   },
   "SEARCH_TYPES": {
