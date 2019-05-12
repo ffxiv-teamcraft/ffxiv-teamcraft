@@ -16,7 +16,7 @@
           <span>x{{tradeItem.amount}}</span>
         </div>
       </div>
-      <ng-container *ngIf="!fromExternalTrades">
+      <ng-container *ngIf="!fromExternalTrades && !dbDisplay">
         <div class="total-price" *ngIf="totalPrice(trade) as totalTradePrice" fxLayout="row" fxLayoutAlign="center center"
              fxLayoutGap="5px">
           <div>

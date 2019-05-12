@@ -11,12 +11,17 @@ import { Alarm } from '../../../../core/alarms/alarm';
 })
 export class ReducedFromComponent extends ItemDetailsPopup {
 
+  nodes: any = {};
+
   constructor(private bell: BellNodesService) {
     super();
   }
 
   getNodes(reduction: any): any[] {
-    return this.bell.getAllNodes(reduction);
+    if (this.nodes[reduction.obj.i] === undefined) {
+      this.nodes[reduction.obj.i] = this.bell.getAllNodes(reduction);
+    }
+    return this.nodes[reduction.obj.i] || [];
   }
 
   public generateAlarm(node: any): Partial<Alarm> {

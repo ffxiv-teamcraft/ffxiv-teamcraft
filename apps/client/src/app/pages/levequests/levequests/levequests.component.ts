@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
-import { debounceTime, filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -50,6 +50,10 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   computeExp = false;
 
+  globalExp = false;
+
+  globalExpChange$ = new BehaviorSubject<boolean>(false);
+
   startingExp = 0;
 
   startingLevel = 1;
@@ -69,7 +73,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.results$ = this.query$.pipe(
+    const res$ = this.query$.pipe(
       tap(query => {
         this.router.navigate([], {
           queryParamsHandling: 'merge',
@@ -107,10 +111,15 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
           limit: 105
         });
       }),
-      map(list => {
+      shareReplay(1)
+    );
+
+    this.results$ = combineLatest([this.globalExpChange$, res$]).pipe(
+      map(([globalExp, list]) => {
         const results: Levequest[] = [];
         (<any>list).Results.forEach(leve => {
           results.push({
+            id: leve.ID,
             level: leve.ClassJobLevel,
             jobId: leve.ClassJobCategoryTargetID - 1,
             itemId: leve.CraftLeve.Item0TargetID,
@@ -118,7 +127,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
             exp: leve.ExpReward,
             gil: leve.GilReward,
             hq: false,
-            amount: 1,
+            amount: globalExp ? 0 : 1,
             itemQuantity: leve.CraftLeve.ItemCount0
               + leve.CraftLeve.ItemCount1
               + leve.CraftLeve.ItemCount2
@@ -171,8 +180,13 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
     return this.gt.getMaxXp(level);
   }
 
-  public getExp(leveExp: number): { level: number, exp: number, expPercent: number } {
-    let exp = this.startingExp + leveExp;
+  public getExp(leveExp: number, leves: Levequest[]): { level: number, exp: number, expPercent: number } {
+    let exp: number;
+    if (this.globalExp) {
+      exp = this.startingExp + leves.reduce((total, leve) => this.getLeveExp(leve) + total, 0);
+    } else {
+      exp = this.startingExp + leveExp;
+    }
     let level = this.startingLevel;
     while (exp - this.getMaxExp(level) >= 0 && level < 69) {
       exp -= this.getMaxExp(level);
@@ -217,11 +231,11 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
           ...leves.map(leve => {
             return this.dataService.getItem(leve.itemId).pipe(
               switchMap(itemData => {
-                if(itemData.isCraft()){
+                if (itemData.isCraft()) {
                   const craft = itemData.item.craft.find(c => c.job === leve.jobId);
                   return this.listManager.addToList(leve.itemId, list, craft.id,
                     leve.itemQuantity * this.craftAmount(leve));
-                }else {
+                } else {
                   return this.listManager.addToList(leve.itemId, list, null,
                     leve.itemQuantity * this.craftAmount(leve));
                 }

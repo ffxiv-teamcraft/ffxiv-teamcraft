@@ -13,6 +13,7 @@ import { LazyDataService } from '../data/lazy-data.service';
 import { InstanceData } from '../../model/garland-tools/instance-data';
 import { QuestData } from '../../model/garland-tools/quest-data';
 import { NpcData } from '../../model/garland-tools/npc-data';
+import { LeveData } from '../../model/garland-tools/leve-data';
 
 @Injectable()
 export class DataService {
@@ -23,6 +24,7 @@ export class DataService {
     instance: 2,
     quest: 2,
     npc: 2,
+    leve: 3,
   };
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 
@@ -71,6 +73,16 @@ export class DataService {
   public getQuest(id: number): Observable<QuestData> {
     return this.getGarlandData(`/quest/en/${this.garlandtoolsVersions.quest}/${id}`)
       .pipe(map(item => this.serializer.deserialize<QuestData>(item, QuestData)));
+  }
+
+  /**
+   * Gets a quest based on its id.
+   * @param {number} id
+   * @returns {Observable<ItemData>}
+   */
+  public getLeve(id: number): Observable<LeveData> {
+    return this.getGarlandData(`/leve/en/${this.garlandtoolsVersions.leve}/${id}`)
+      .pipe(map(item => this.serializer.deserialize<LeveData>(item, LeveData)));
   }
 
   /**

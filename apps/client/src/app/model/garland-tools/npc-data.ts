@@ -1,14 +1,9 @@
 import { DeserializeAs } from '@kaiu/serializer';
 import { GtNpc } from './gt-npc';
+import { GtData } from './gt-data';
 
-export class NpcData {
+export class NpcData extends GtData {
 
   @DeserializeAs(GtNpc)
   npc: GtNpc;
-
-  partials: any[];
-
-  public getPartial(id: string, type?: string): any | undefined {
-    return this.partials.filter(p => type !== undefined ? p.type === type : true).find(p => p.id === id);
-  }
 }

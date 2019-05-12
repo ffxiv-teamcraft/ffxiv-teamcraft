@@ -140,11 +140,12 @@ export class QuestComponent extends TeamcraftPageComponent {
         }
         for (let i = 0; i <= 14; i++) {
           const index = i < 10 ? `0${i}` : i;
-          if (quest[`ItemReward${index}`]) {
+          if (quest[`ItemReward${index}TargetID`] > 0) {
             rewards.push({
-              id: quest[`ItemReward${index}`],
-              amount: 1,
-              type: 'item'
+              id: quest[`ItemReward${index}TargetID`],
+              amount: quest[`ItemCountReward${index}`],
+              type: 'item',
+              hq: quest[`IsHQReward${index}`] === 1
             });
           }
         }

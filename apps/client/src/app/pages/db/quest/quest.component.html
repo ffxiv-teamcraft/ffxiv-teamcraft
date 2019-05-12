@@ -199,6 +199,7 @@
                   [nzTitle]="rewardTitle">
                   <ng-template #rewardAvatar>
                     <app-item-icon *ngIf="reward.type === 'item'" [itemId]="reward.id"
+                                   [hq]="reward.hq"
                                    [icon]="reward.id | lazyIcon" [width]="32"></app-item-icon>
                     <img src="./assets/icons/exp.png" alt="exp" class="img-icon" *ngIf="reward.type === 'exp'">
                     <img src="./assets/icons/instance.png" alt="exp" class="img-icon" *ngIf="reward.type === 'instance'"

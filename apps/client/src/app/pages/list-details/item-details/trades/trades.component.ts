@@ -15,6 +15,9 @@ export class TradesComponent extends ItemDetailsPopup {
   @Input()
   public externalTradeSources: TradeSource[] = [];
 
+  @Input()
+  public dbDisplay = false;
+
   public get tradeSources(): TradeSource[] {
     if (this.externalTradeSources.length === 0) {
       return this.item.tradeSources;

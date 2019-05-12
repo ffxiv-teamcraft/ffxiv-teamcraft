@@ -143,7 +143,7 @@
               </div>
             </div>
           </ng-template>
-          <app-trades [item]="data"></app-trades>
+          <app-trades [item]="data" [dbDisplay]="true"></app-trades>
         </nz-card>
         <nz-card fxFlex="1 1 auto" class="details-card"
                  *ngIf="data.treasures !== undefined && data.treasures.length > 0" nzBordered="false"

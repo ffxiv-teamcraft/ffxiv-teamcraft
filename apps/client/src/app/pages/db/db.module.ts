@@ -23,6 +23,7 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { InstanceComponent } from './instance/instance.component';
 import { QuestComponent } from './quest/quest.component';
 import { NpcComponent } from './npc/npc.component';
+import { LeveComponent } from './leve/leve.component';
 
 const routes: Routes = [
 
@@ -72,13 +73,24 @@ const routes: Routes = [
         path: 'npc/:npcId/:slug',
         component: NpcComponent,
         canActivate: [MaintenanceGuard]
+      },
+
+      {
+        path: 'leve/:leveId',
+        component: LeveComponent,
+        canActivate: [MaintenanceGuard]
+      },
+      {
+        path: 'leve/:leveId/:slug',
+        component: LeveComponent,
+        canActivate: [MaintenanceGuard]
       }
     ]
   }
 ];
 
 @NgModule({
-  declarations: [DbComponent, InstanceComponent, ItemComponent, QuestComponent, NpcComponent],
+  declarations: [DbComponent, InstanceComponent, ItemComponent, QuestComponent, NpcComponent, LeveComponent],
   imports: [
     CommonModule,
 
