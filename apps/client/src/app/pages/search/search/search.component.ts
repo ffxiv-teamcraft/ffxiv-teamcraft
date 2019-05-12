@@ -26,6 +26,7 @@ import { SearchType } from '../search-type';
 import { InstanceSearchResult } from '../../../model/search/instance-search-result';
 import { QuestSearchResult } from '../../../model/search/quest-search-result';
 import { NpcSearchResult } from '../../../model/search/npc-search-result';
+import { LeveSearchResult } from '../../../model/search/leve-search-result';
 
 @Component({
   selector: 'app-search',
@@ -77,7 +78,15 @@ export class SearchComponent implements OnInit {
     maxPlayers: [24]
   });
 
+  leveFiltersForm: FormGroup = this.fb.group({
+    lvlMin: [0],
+    lvlMax: [80],
+    jobCategory: [1]
+  });
+
   availableJobCategories = [];
+
+  availableLeveJobCategories = [9, 10, 11, 12, 13, 14, 15, 16, 1718, 19, 34];
 
   availableCraftJobs = [];
 
@@ -158,6 +167,8 @@ export class SearchComponent implements OnInit {
             return this.searchQuest(query, filters);
           case SearchType.NPC:
             return this.searchNpc(query, filters);
+          case SearchType.LEVE:
+            return this.searchLeve(query, filters);
           default:
             return this.data.searchItem(query, filters, false);
         }
@@ -244,6 +255,54 @@ export class SearchComponent implements OnInit {
     );
   }
 
+  searchLeve(query: string, filters: SearchFilter[]): Observable<LeveSearchResult[]> {
+    return this.xivapi.search({
+      indexes: [SearchIndex.LEVE],
+      columns: ['ID', 'Banner', 'Icon', 'ClassJobCategory', 'IconIssuer', 'ClassJobLevel'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters.map(f => {
+        if (f.minMax) {
+          return [
+            {
+              column: f.name,
+              operator: '>=',
+              value: f.value.min
+            },
+            {
+              column: f.name,
+              operator: '<=',
+              value: f.value.max
+            }
+          ];
+        } else {
+          return [{
+            column: f.name,
+            operator: '=',
+            value: f.value
+          }];
+        }
+      }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(leve => {
+          return {
+            id: leve.ID,
+            icon: leve.Icon,
+            level: leve.ClassJobLevel,
+            banner: leve.IconIssuer,
+            job: {
+              en: leve.ClassJobCategory.Name_en,
+              de: leve.ClassJobCategory.Name_de,
+              ja: leve.ClassJobCategory.Name_ja,
+              fr: leve.ClassJobCategory.Name_fr
+            }
+          };
+        });
+      })
+    );
+  }
+
   searchNpc(query: string, filters: SearchFilter[]): Observable<NpcSearchResult[]> {
     return this.xivapi.search({
       indexes: [SearchIndex.ENPCRESIDENT],
@@ -286,6 +345,12 @@ export class SearchComponent implements OnInit {
       lvlMin: 0,
       lvlMax: 80
     });
+
+    this.leveFiltersForm.reset({
+      lvlMin: 0,
+      lvlMax: 80,
+      jobCategory: 1
+    });
     this.submitFilters();
   }
 
@@ -297,6 +362,10 @@ export class SearchComponent implements OnInit {
         break;
       case SearchType.INSTANCE:
         this.filters$.next(this.getInstanceFilters(this.instanceFiltersForm.controls));
+        break;
+      case SearchType.LEVE:
+        this.filters$.next(this.getLeveFilters(this.leveFiltersForm.controls));
+        break;
     }
   }
 
@@ -377,8 +446,29 @@ export class SearchComponent implements OnInit {
         name: 'ContentFinderCondition.ClassJobLevelRequired',
         value: {
           min: controls.lvlMin.value,
-          max: controls.lvlMin.value
+          max: controls.lvlMax.value
         }
+      });
+    }
+    return filters;
+  }
+
+  private getLeveFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
+    const filters = [];
+    if (controls.lvlMin.value > 0 || controls.lvlMax.value < 80) {
+      filters.push({
+        minMax: true,
+        name: 'ClassJobLevel',
+        value: {
+          min: controls.lvlMin.value,
+          max: controls.lvlMax.value
+        }
+      });
+    }
+    if (controls.jobCategory.value !== 1) {
+      filters.push({
+        name: 'ClassJobCategoryTargetID',
+        value: controls.jobCategory.value
       });
     }
     return filters;

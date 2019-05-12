@@ -37,6 +37,7 @@ import { FatePipe } from './pipes/fate.pipe';
 import { InstanceNamePipe } from './pipes/instance-name.pipe';
 import { ShopNamePipe } from './pipes/shop-name.pipe';
 import { LeveNamePipe } from './pipes/leve-name.pipe';
+import { JobCategoryNamePipe } from './pipes/job-category-name.pipe';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { LeveNamePipe } from './pipes/leve-name.pipe';
     FatePipe,
     InstanceNamePipe,
     ShopNamePipe,
-    LeveNamePipe
+    LeveNamePipe,
+    JobCategoryNamePipe
   ],
   exports: [
     ItemNamePipe,
@@ -119,7 +121,8 @@ import { LeveNamePipe } from './pipes/leve-name.pipe';
     FatePipe,
     InstanceNamePipe,
     ShopNamePipe,
-    LeveNamePipe
+    LeveNamePipe,
+    JobCategoryNamePipe
   ]
 })
 export class PipesModule {

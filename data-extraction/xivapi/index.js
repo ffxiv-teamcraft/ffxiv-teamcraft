@@ -27,7 +27,9 @@ let todo = [
   'fates',
   'instances',
   'shops',
-  'leves'
+  'leves',
+  'jobCategories',
+  'mobs'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -652,12 +654,44 @@ if (hasTodo('leves')) {
           en: leve.ClassJobCategory.Name_en,
           ja: leve.ClassJobCategory.Name_ja,
           de: leve.ClassJobCategory.Name_de,
-          fr: leve.ClassJobCategory.Name_fr,
+          fr: leve.ClassJobCategory.Name_fr
         },
         lvl: leve.ClassJobLevel
       };
     });
   }, null, () => {
     persistToJsonAsset('leves', leves);
+  });
+}
+
+if (hasTodo('jobCategories')) {
+  const jobCategories = {};
+  getAllPages('https://xivapi.com/ClassJobCategory?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(category => {
+      jobCategories[category.ID] = {
+        en: category.Name_en,
+        ja: category.Name_ja,
+        de: category.Name_de,
+        fr: category.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToTypescript('job-categories', 'jobCategories', jobCategories);
+  });
+}
+
+if (hasTodo('mobs')) {
+  const mobs = {};
+  getAllPages('https://xivapi.com/BNpcName?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(mob => {
+      mobs[mob.ID] = {
+        en: mob.Name_en,
+        ja: mob.Name_ja,
+        de: mob.Name_de,
+        fr: mob.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('mobs', mobs);
   });
 }

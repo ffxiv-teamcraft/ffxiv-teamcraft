@@ -15,6 +15,7 @@ import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-c
 import { LeveData } from '../../../model/garland-tools/leve-data';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { levemetes } from '../../../core/data/sources/levemetes';
+import { I18nName } from '../../../model/common/i18n-name';
 
 @Component({
   selector: 'app-leve',
@@ -32,6 +33,10 @@ export class LeveComponent extends TeamcraftPageComponent {
   public rewards$: Observable<{ type: string, id: number, amount: number }[]>;
 
   public items$: Observable<{ id: number, amount: number }[]>;
+
+  public battleItems$: Observable<{ name: I18nName, amount: number, dropRate?: number }[]>;
+
+  public enemies$: Observable<{ id: number, level: number }[]>;
 
   public npcs$: Observable<{ id: number, issuer?: boolean, client?: boolean }[]>;
 
@@ -94,6 +99,45 @@ export class LeveComponent extends TeamcraftPageComponent {
               amount: leve.CraftLeve[`ItemCount${index}`]
             };
           });
+      })
+    );
+
+    this.battleItems$ = this.xivapiLeve$.pipe(
+      filter(leve => leve.BattleLeve),
+      map(leve => {
+        return [0, 1, 2, 3]
+          .filter(index => leve.BattleLeve[`ItemsInvolved${index}TargetID`] > 0)
+          .map(index => {
+            const item = leve.BattleLeve[`ItemsInvolved${index}`];
+            return {
+              name: {
+                en: item.Name_en,
+                de: item.Name_de,
+                ja: item.Name_ja,
+                fr: item.Name_fr,
+              },
+              icon: item.Icon,
+              amount: leve.BattleLeve[`ItemsInvolvedQty${index}`],
+              dropRate: leve.BattleLeve[`ItemDropRate${index}`]
+            };
+          });
+      })
+    );
+
+    this.enemies$ = this.xivapiLeve$.pipe(
+      map(leve => {
+        return [0, 1, 2, 3, 4, 5, 6, 7]
+          .filter(index => {
+            return leve.BattleLeve[`BNpcName${index}TargetID`] > 0;
+          })
+          .reduce((enemies, index) => {
+            const enemy = leve.BattleLeve[`BNpcName${index}`];
+            enemies.push({
+              id: enemy.ID,
+              level: leve.BattleLeve[`EnemyLevel${index}`],
+            });
+            return enemies;
+          }, []);
       })
     );
 

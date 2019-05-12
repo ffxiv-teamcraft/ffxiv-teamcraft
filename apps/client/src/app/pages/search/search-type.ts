@@ -3,5 +3,6 @@ export enum SearchType {
   RECIPE = 'Recipe',
   INSTANCE = 'Instance',
   QUEST = 'Quest',
-  NPC = 'NPC'
+  NPC = 'NPC',
+  LEVE = 'Leve'
 }

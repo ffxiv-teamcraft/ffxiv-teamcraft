@@ -91,7 +91,63 @@
           </ng-template>
         </nz-list>
       </nz-card>
-      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false" *ngIf="xivapiLeve.CraftLeve">
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
+               *ngIf="xivapiLeve.BattleLeve">
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+            <div>
+              {{'DB.LEVE.Required_items' | translate}}
+            </div>
+          </div>
+        </ng-template>
+        <nz-list [nzDataSource]="battleItems$ | async" [nzRenderItem]="itemTemplate"
+                 [nzItemLayout]="'horizontal'">
+          <ng-template #itemTemplate let-item>
+            <nz-list-item [nzContent]="more">
+              <nz-list-item-meta
+                [nzAvatar]="itemAvatar"
+                [nzTitle]="item.name | i18n"
+                nzDescription="x{{item.amount}}">
+                <ng-template #itemAvatar>
+                  <img [src]="item.icon | xivapiIcon" alt="" class="larger-img-icon round-icon">
+                </ng-template>
+                <ng-template #more>
+                  {{'DB.Drop_rate' | translate}}: {{item.dropRate}}%
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
+               *ngIf="xivapiLeve.BattleLeve">
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+            <div>
+              {{'DB.Involved_monsters' | translate}}
+            </div>
+          </div>
+        </ng-template>
+        <nz-list [nzDataSource]="enemies$ | async" [nzRenderItem]="enemyTemplate"
+                 [nzItemLayout]="'horizontal'">
+          <ng-template #enemyTemplate let-enemy>
+            <nz-list-item [nzContent]="more">
+              <nz-list-item-meta
+                [nzAvatar]="enemyAvatar"
+                [nzTitle]="enemy.id | mobName | i18n"
+                nzDescription="lvl {{enemy.level}}">
+                <ng-template #enemyAvatar>
+                  <img src="./assets/icons/mob.png" alt="" class="larger-img-icon">
+                </ng-template>
+                <ng-template #more>
+                  <app-db-button type="mob" [id]="enemy.id"></app-db-button>
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
             <div>

@@ -87,7 +87,7 @@
         </nz-list>
       </nz-card>
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
-               *ngIf="xivapiNpc.Quests && xivapiNpc.Quests.length > 0">
+               *ngIf="leves$ | async as leves">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
             <div>
@@ -95,7 +95,7 @@
             </div>
           </div>
         </ng-template>
-        <nz-list [nzDataSource]="leves$ | async" [nzRenderItem]="leveTemplate"
+        <nz-list [nzDataSource]="leves" [nzRenderItem]="leveTemplate"
                  [nzItemLayout]="'horizontal'">
           <ng-template #leveTemplate let-leve>
             <nz-list-item [nzContent]="more">
