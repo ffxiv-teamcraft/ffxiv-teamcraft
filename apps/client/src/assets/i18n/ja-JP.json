@@ -1165,7 +1165,8 @@
       "Other_entries": "Other appearances",
       "Default_talk": "Base dialogues",
       "Quests": "クエスト",
-      "Shops": "ショップ"
+      "Shops": "ショップ",
+      "Leves": "Leves"
     },
     "FIGHT_TYPE": {
       "Boss": "ラスボス",
