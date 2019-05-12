@@ -1181,6 +1181,9 @@
       "Rewards": "Possible rewards",
       "Client": "Client",
       "Issuer": "Issuer"
+    },
+    "MOB": {
+      "Known_spawns": "Known spawns"
     }
   },
   "SEARCH_TYPES": {
