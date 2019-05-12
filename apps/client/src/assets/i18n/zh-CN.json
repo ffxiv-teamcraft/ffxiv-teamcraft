@@ -1168,7 +1168,8 @@
       "Default_talk": "Base dialogues",
       "Quests": "Quests",
       "Shops": "Shops",
-      "Leves": "Leves"
+      "Leves": "Leves",
+      "Trades": "Trades"
     },
     "FIGHT_TYPE": {
       "Boss": "首领",
