@@ -194,7 +194,7 @@
   "Vendors": "상인",
   "Open": "열기",
   "Trade": "교환",
-  "Treasures": "Treasures",
+  "Treasures": "Can be obtained in",
   "Fates": "돌발 임무",
   "Filters": "필터",
   "Check_all": "모두 선택",
@@ -1108,7 +1108,7 @@
     "Class_job": "클래스/잡",
     "Delay": "공격 주기",
     "Auto": "물리 자동 공격",
-    "Salvage_level": "적정 분해 숙련도",
+    "Salvage_level": "Optimal Desynth lvl",
     "Sells_for": "매입가",
     "Click_to_navigate": "아이콘을 클릭하고 모든 아이템의 세부 내용을 확인하세요",
     "Triple_triad_duels": "트리플 트라이어드 대결",
@@ -1148,6 +1148,8 @@
     "Leves": "의뢰",
     "GC_Delivery": "총사령부 조달 임무",
     "Probability": "확률",
+    "Drop_rate": "Drop Rate",
+    "Involved_monsters": "Involved monsters",
     "QUEST": {
       "Steps": "퀘스트 정보",
       "Unlocked_by": "선행 퀘스트",
@@ -1176,7 +1178,8 @@
       "Required_items": "요구 아이템",
       "Allowance_cost": "의뢰 수주권 소모량",
       "Rewards": "획득 가능한 보상",
-      "Client": "의뢰인"
+      "Client": "의뢰인",
+      "Issuer": "Issuer"
     }
   },
   "SEARCH_TYPES": {
@@ -1184,9 +1187,13 @@
     "Recipe": "제작법",
     "Instance": "던전",
     "Quest": "퀘스트",
-    "NPC": "NPC"
+    "NPC": "NPC",
+    "Leve": "Levequest",
+    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves"
   },
   "SEARCH_FILTERS": {
-    "Instance_level": "레벨"
+    "Instance_level": "레벨",
+    "Leve_job": "Leve job",
+    "Leve_level": "Required level"
   }
 }
