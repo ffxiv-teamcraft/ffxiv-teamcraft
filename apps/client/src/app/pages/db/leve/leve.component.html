@@ -155,23 +155,19 @@
             </div>
           </div>
         </ng-template>
-        <nz-list [nzDataSource]="rewardGroup.items" [nzRenderItem]="rewardTemplate"
-                 [nzItemLayout]="'horizontal'" [nzHeader]="rewardGroupHeader"
-                 *ngFor="let rewardGroup of rewards$ | async">
-          <ng-template #rewardGroupHeader>
-            <b>{{'DB.Probability' | translate}}: {{rewardGroup.chances}}%</b>
-          </ng-template>
+        <nz-list [nzDataSource]="rewards$ | async" [nzRenderItem]="rewardTemplate"
+                 [nzItemLayout]="'horizontal'">
           <ng-template #rewardTemplate let-item>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="itemAvatar"
-                [nzTitle]="item.id | itemName | i18n"
+                nzTitle="{{item.id | itemName | i18n}} ({{item.chances}}%)"
                 nzDescription="x{{item.amount}}">
                 <ng-template #itemAvatar>
                   <app-item-icon [hq]="item.hq" [width]="48" [itemId]="item.id"
                                  [icon]="item.id | lazyIcon"></app-item-icon>
                 </ng-template>
-                <div>{{item.id | itemName | i18n}}</div>
+                <div>{{item.id | itemName | i18n}} </div>
                 <ng-template #more>
                   <app-db-button type="item" [id]="item.id"></app-db-button>
                 </ng-template>

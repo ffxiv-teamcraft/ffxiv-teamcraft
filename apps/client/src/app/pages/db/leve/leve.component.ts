@@ -30,7 +30,7 @@ export class LeveComponent extends TeamcraftPageComponent {
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
-  public rewards$: Observable<{ type: string, id: number, amount: number }[]>;
+  public rewards$: Observable<{ type: string, id: number, amount: number, chances: number }[]>;
 
   public items$: Observable<{ id: number, amount: number }[]>;
 
@@ -149,19 +149,18 @@ export class LeveComponent extends TeamcraftPageComponent {
           })
           .reduce((rewards, index) => {
             const group = leve.LeveRewardItem[`LeveRewardItemGroup${index}`];
-            rewards.push({
-              items: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+            rewards.push(...[0, 1, 2, 3, 4, 5, 6, 7, 8]
                 .filter(itemIndex => group[`Item${itemIndex}TargetID`] > 0)
-                .reduce((items, itemIndex) => {
+                .reduce((items, itemIndex, i, array) => {
                   items.push({
                     id: group[`Item${itemIndex}TargetID`],
                     amount: group[`Count${itemIndex}`],
-                    hq: group[`HQ${itemIndex}`] === 1
+                    hq: group[`HQ${itemIndex}`] === 1,
+                    chances: Math.floor(leve.LeveRewardItem[`Probability%${index}`] / array.length)
                   });
                   return items;
-                }, []),
-              chances: leve.LeveRewardItem[`Probability%${index}`]
-            });
+                }, [])
+            );
             return rewards;
           }, []);
       })
