@@ -1148,7 +1148,6 @@
     "Map": "地图",
     "Leves": "Leves",
     "GC_Delivery": "GC Delivery",
-    "Probability": "Probability",
     "Drop_rate": "Drop Rate",
     "Involved_monsters": "Involved monsters",
     "QUEST": {
@@ -1196,7 +1195,8 @@
     "Quest": "任务",
     "NPC": "NPC",
     "Leve": "Levequest",
-    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves"
+    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
+    "Monster": "Monster"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "等级",
