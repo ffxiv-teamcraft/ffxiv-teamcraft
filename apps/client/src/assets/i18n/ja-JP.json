@@ -169,6 +169,7 @@
   "No_instances_found": "ダンジョンが見つかりません。",
   "No_quests_found": "クエストが見つかりません",
   "No_npcs_found": "NPCが見つかりません",
+  "No_mobs_found": "No monsters found",
   "Select_all": "全て選択",
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
@@ -1183,7 +1184,9 @@
       "Issuer": "Issuer"
     },
     "MOB": {
-      "Known_spawns": "Known spawns"
+      "Known_spawns": "Known spawns",
+      "Known_drops": "Known drops",
+      "Hunt_target": "Possible hunt target"
     }
   },
   "SEARCH_TYPES": {
