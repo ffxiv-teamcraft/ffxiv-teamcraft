@@ -169,6 +169,7 @@
   "No_instances_found": "던전을 찾을 수 없습니다",
   "No_quests_found": "퀘스트를 찾을 수 없습니다",
   "No_npcs_found": "NPC를 찾을 수 없습니다",
+  "No_mobs_found": "No monsters found",
   "Select_all": "모두 선택",
   "Do you really want to reset the list?": "정말로 이 목록을 초기화하시겠습니까?",
   "Yes": "O",
@@ -1183,7 +1184,9 @@
       "Issuer": "Issuer"
     },
     "MOB": {
-      "Known_spawns": "Known spawns"
+      "Known_spawns": "Known spawns",
+      "Known_drops": "Known drops",
+      "Hunt_target": "Possible hunt target"
     }
   },
   "SEARCH_TYPES": {
