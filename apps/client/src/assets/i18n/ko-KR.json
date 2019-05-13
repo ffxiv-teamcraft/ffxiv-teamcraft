@@ -1148,7 +1148,6 @@
     "Map": "지도",
     "Leves": "의뢰",
     "GC_Delivery": "총사령부 조달 임무",
-    "Probability": "확률",
     "Drop_rate": "Drop Rate",
     "Involved_monsters": "Involved monsters",
     "QUEST": {
@@ -1196,7 +1195,8 @@
     "Quest": "퀘스트",
     "NPC": "NPC",
     "Leve": "Levequest",
-    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves"
+    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
+    "Monster": "Monster"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "레벨",
