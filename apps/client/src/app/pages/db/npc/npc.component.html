@@ -148,7 +148,7 @@
         </nz-list>
       </nz-card>
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
-               *ngIf="gtData.npc.trade">
+               *ngIf="trades$ | async as trades">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
             <div>
@@ -156,7 +156,7 @@
             </div>
           </div>
         </ng-template>
-        <app-trades [externalTradeSources]="trades$ | async"></app-trades>
+        <app-trades [externalTradeSources]="trades"></app-trades>
       </nz-card>
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
                *ngIf="xivapiNpc.GilShop && xivapiNpc.GilShop.length > 0">

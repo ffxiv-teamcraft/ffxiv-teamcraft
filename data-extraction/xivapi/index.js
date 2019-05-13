@@ -43,8 +43,6 @@ function hasTodo(operation) {
 
 fs.existsSync('output') || fs.mkdirSync('output');
 
-const mappyDone$ = new Subject();
-
 if (hasTodo('mappy')) {
   // MapData extraction
   const memoryData$ = new Rx.Subject();
@@ -63,14 +61,16 @@ if (hasTodo('mappy')) {
       memoryData$.next(parsedMemoryData);
     });
 
-  getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*').subscribe(page => {
+  getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*,DefaultTalk').subscribe(page => {
     page.Results.forEach(npc => {
       npcs[npc.ID] = {
         ...npcs[npc.ID],
         en: npc.Name_en,
         ja: npc.Name_ja,
         de: npc.Name_de,
-        fr: npc.Name_fr
+        fr: npc.Name_fr,
+        defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID),
+        customTalks: (npc.CustomTalk || []).map(talk => talk.ID),
       };
     });
   }, null, () => {

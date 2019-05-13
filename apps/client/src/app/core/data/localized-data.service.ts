@@ -104,7 +104,6 @@ export class LocalizedDataService {
 
   public getShopName(englishName: string): I18nName {
     const id = +Object.keys(this.lazyData.shops).find(k => this.lazyData.shops[k].en === englishName);
-    console.log(id);
     const row = this.getRow(this.lazyData.shops, id);
     // const koRow = this.getRow(this.lazyData.koNpcs, id);
 

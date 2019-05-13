@@ -87,7 +87,9 @@ export class NpcComponent extends TeamcraftPageComponent {
         if (gtData.npc.shops === undefined) {
           return [];
         }
-        return gtData.npc.shops.map(shop => {
+        return gtData.npc.shops
+          .filter(shop => +shop.entries[0] !== shop.entries[0])
+          .map(shop => {
           const npcEntry = this.lazyData.npcs[gtData.npc.id];
           const npc: TradeNpc = { id: gtData.npc.id };
           if (npcEntry.position !== null) {
@@ -102,7 +104,7 @@ export class NpcComponent extends TeamcraftPageComponent {
             ],
             trades: shop.entries.map(row => {
               return <Trade>{
-                currencies: row.currency.map(currency => {
+                currencies: (row.currency || []).map(currency => {
                   const partial = gtData.getPartial(currency.id, 'item');
                   const currencyPartial = partial && partial.obj;
                   if (currencyPartial) {
@@ -115,7 +117,7 @@ export class NpcComponent extends TeamcraftPageComponent {
                   }
                   return undefined;
                 }).filter(res => res !== undefined),
-                items: row.item.map(tradeItem => {
+                items: (row.item || []).map(tradeItem => {
                   const itemPartialFetch = gtData.getPartial(tradeItem.id, 'item');
                   if (itemPartialFetch !== undefined) {
                     const itemPartial = itemPartialFetch.obj;

@@ -22,7 +22,9 @@
                    [nzValue]="searchTypes.QUEST"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.NPC) | translate" [nzValue]="searchTypes.NPC"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.LEVE) | translate" [nzValue]="searchTypes.LEVE"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.MONSTER) | translate" [nzValue]="searchTypes.MONSTER"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.MONSTER) | translate"
+                   [nzValue]="searchTypes.MONSTER"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.LORE) | translate" [nzValue]="searchTypes.LORE"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -188,11 +190,11 @@
     </nz-collapse>
   </div>
 </div>
-<div *ngIf="showIntro">
-  <app-search-intro></app-search-intro>
-</div>
 <div fxLayout="row" fxLayoutAlign="center center" *ngIf="(searchType$ | async) === searchTypes.LEVE">
   <i>{{'SEARCH_TYPES.Leve_info_message' | translate}}</i>
+</div>
+<div *ngIf="showIntro">
+  <app-search-intro></app-search-intro>
 </div>
 <ng-container *ngIf="searchType$ | async as searchType">
   <div *ngIf="results$ | async as results">
@@ -367,6 +369,28 @@
               <div>{{row.job | i18n}} {{row.level}}</div>
             </div>
           </div>
+          <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="searchType === searchTypes.LORE"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <img [src]="row.Data.Icon | xivapiIcon" alt="" class="job-icon">
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start">
+                  <div fxLayout="column">
+                    <div [innerHTML]="(row.Data | xivapiI18n) || row.Source"></div>
+                    <span [innerHTML]="row | xivapiI18n: 'Text'"></span>
+                  </div>
+                  <app-db-button [type]="row.Source"
+                                 *ngIf="row.Data.showButton"
+                                 [id]="row.SourceID"></app-db-button>
+                </div>
+              </div>
+            </div>
+          </div>
         </ng-container>
       </app-page-loader>
       <div *ngIf="results.length === 0">
@@ -382,6 +406,8 @@
                               *ngIf="searchType === searchTypes.LEVE">{{'LEVEQUESTS.No_results' | translate}}</app-fullpage-message>
         <app-fullpage-message height="300px"
                               *ngIf="searchType === searchTypes.MONSTER">{{'No_mobs_found' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.LORE">{{'No_lore_entries' | translate}}</app-fullpage-message>
       </div>
     </div>
   </div>

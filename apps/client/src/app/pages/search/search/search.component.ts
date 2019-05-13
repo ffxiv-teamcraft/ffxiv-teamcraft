@@ -28,7 +28,7 @@ import { QuestSearchResult } from '../../../model/search/quest-search-result';
 import { NpcSearchResult } from '../../../model/search/npc-search-result';
 import { LeveSearchResult } from '../../../model/search/leve-search-result';
 import { MobSearchResult } from '../../../model/search/mob-search-result';
-import * as monsters from '../../../core/data/sources/monsters.json'
+import * as monsters from '../../../core/data/sources/monsters.json';
 
 @Component({
   selector: 'app-search',
@@ -173,6 +173,8 @@ export class SearchComponent implements OnInit {
             return this.searchLeve(query, filters);
           case SearchType.MONSTER:
             return this.searchMob(query, filters);
+          case SearchType.LORE:
+            return this.searchLore(query, filters);
           default:
             return this.data.searchItem(query, filters, false);
         }
@@ -347,6 +349,40 @@ export class SearchComponent implements OnInit {
             icon: mob.Icon,
             zoneid: monsters[mob.ID] && monsters[mob.ID].positions[0] ? monsters[mob.ID].positions[0].zoneid : null
           };
+        });
+      })
+    );
+  }
+
+  searchLore(query: string, filters: SearchFilter[]): Observable<any[]> {
+    return this.xivapi.searchLore(query, true, ['Icon', 'Name_*', 'GameContentLinks']).pipe(
+      map(searchResult => {
+        return searchResult.Results.map(row => {
+          switch (row.Source.toLowerCase()) {
+            case 'item':
+            case 'leve':
+              row.Data.showButton = true;
+              break;
+            case 'defaulttalk': {
+              const npcId = Object.keys(this.lazyData.npcs)
+                .find(key => this.lazyData.npcs[key].defaultTalks.indexOf(row.SourceID) > -1);
+              if (npcId === undefined) {
+                break;
+              }
+              row.Source = 'npc';
+              row.SourceID = +npcId;
+              row.Data.Icon = "/c/ENpcResident.png";
+              const npcEntry = this.l12n.getNpc(+npcId);
+              row.Data.Name_en = npcEntry.en;
+              row.Data.Name_ja = npcEntry.ja;
+              row.Data.Name_de = npcEntry.de;
+              row.Data.Name_fr = npcEntry.fr;
+              row.Data.Name_ko = npcEntry.ko || npcEntry.en;
+              row.Data.showButton = true;
+              break;
+            }
+          }
+          return row;
         });
       })
     );
