@@ -170,6 +170,7 @@
   "No_quests_found": "No quests found",
   "No_npcs_found": "No npcs found",
   "No_mobs_found": "No monsters found",
+  "No_lore_entries": "No lore entries found",
   "Select_all": "Selecionar tudo",
   "Do you really want to reset the list?": "Você realmente quer resetar a lista?",
   "Yes": "Sim",
@@ -1196,7 +1197,8 @@
     "NPC": "NPC",
     "Leve": "Levequest",
     "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
-    "Monster": "Monster"
+    "Monster": "Monster",
+    "Lore": "Lore"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "Level",
