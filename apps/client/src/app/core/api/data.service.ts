@@ -93,7 +93,7 @@ export class DataService {
    * @returns {Observable<MobData>}
    */
   public getMob(id: string): Observable<MobData> {
-    return this.getGarlandData(`/mob/en/${this.garlandtoolsVersions.leve}/${id}`)
+    return this.getGarlandData(`/mob/en/${this.garlandtoolsVersions.mob}/${id}`)
       .pipe(map(item => this.serializer.deserialize<MobData>(item, MobData)));
   }
 

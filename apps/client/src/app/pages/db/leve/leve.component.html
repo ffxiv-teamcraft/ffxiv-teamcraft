@@ -170,8 +170,8 @@
                 <ng-template #itemAvatar>
                   <app-item-icon [hq]="item.hq" [width]="48" [itemId]="item.id"
                                  [icon]="item.id | lazyIcon"></app-item-icon>
-                  <div>{{item.id | itemName | i18n}}</div>
                 </ng-template>
+                <div>{{item.id | itemName | i18n}}</div>
                 <ng-template #more>
                   <app-db-button type="item" [id]="item.id"></app-db-button>
                 </ng-template>

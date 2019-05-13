@@ -22,6 +22,7 @@
                    [nzValue]="searchTypes.QUEST"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.NPC) | translate" [nzValue]="searchTypes.NPC"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.LEVE) | translate" [nzValue]="searchTypes.LEVE"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.MONSTER) | translate" [nzValue]="searchTypes.MONSTER"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -326,6 +327,28 @@
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="searchType === searchTypes.MONSTER"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <a routerLink="/db/{{translate.currentLang}}/mob/{{row.id}}">
+              <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
+            </a>
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start">
+                  <div fxLayout="column">
+                    <div>{{row.id | mobName | i18n}}</div>
+                    <span *ngIf="row.zoneid">{{row.zoneid | placeName | i18n}}</span>
+                  </div>
+                  <app-db-button type="mob" [id]="row.id"></app-db-button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayout.lt-md="column"
                *ngIf="searchType === searchTypes.LEVE"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
@@ -357,6 +380,8 @@
                               *ngIf="searchType === searchTypes.NPC">{{'No_npcs_found' | translate}}</app-fullpage-message>
         <app-fullpage-message height="300px"
                               *ngIf="searchType === searchTypes.LEVE">{{'LEVEQUESTS.No_results' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.MONSTER">{{'No_mobs_found' | translate}}</app-fullpage-message>
       </div>
     </div>
   </div>

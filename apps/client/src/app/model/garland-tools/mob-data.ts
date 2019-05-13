@@ -6,5 +6,5 @@ import { GtMob } from './gt-mob';
 export class MobData extends GtData {
 
   @DeserializeAs(GtMob)
-  quest: GtMob;
+  mob: GtMob;
 }

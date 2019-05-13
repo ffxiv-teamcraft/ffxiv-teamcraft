@@ -14,6 +14,7 @@ import * as _ from 'lodash';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import * as monsters from '../../../core/data/sources/monsters.json';
 import { MobData } from '../../../model/garland-tools/mob-data';
+import { Vector2 } from '../../../core/tools/vector2';
 
 @Component({
   selector: 'app-mob',
@@ -27,6 +28,10 @@ export class MobComponent extends TeamcraftPageComponent {
   public xivapiMob$: Observable<any>;
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
+
+  public drops$: Observable<number[]>;
+
+  public spawns$: Observable<{ map: number, zoneid: number, level:number, positions: Vector2[] }[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -69,6 +74,15 @@ export class MobComponent extends TeamcraftPageComponent {
       shareReplay(1)
     );
 
+    this.drops$ = this.gtData$.pipe(
+      map((data: MobData) => {
+        if (data.mob) {
+          return data.mob.drops || [];
+        }
+        return [];
+      })
+    );
+
     this.xivapiMob$ = mobId$.pipe(
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.BNpcName, +id);
@@ -78,6 +92,29 @@ export class MobComponent extends TeamcraftPageComponent {
         return mob;
       }),
       shareReplay(1)
+    );
+
+    this.spawns$ = this.xivapiMob$.pipe(
+      map(mob => {
+        if (mob.mappyData === undefined) {
+          return [];
+        }
+        const spawns = [];
+        for (const position of mob.mappyData.positions) {
+          let mapRow = spawns.find(entry => entry.map === position.map);
+          if (mapRow === undefined) {
+            spawns.push({
+              map: position.map,
+              level: position.level,
+              zoneid: position.zoneid,
+              positions: []
+            });
+            mapRow = spawns[spawns.length - 1];
+          }
+          mapRow.positions.push({ x: position.x, y: position.y });
+        }
+        return spawns;
+      })
     );
 
     this.links$ = combineLatest([this.xivapiMob$, this.gtData$]).pipe(

@@ -3,7 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const http = require('https');
 const Rx = require('rxjs');
-const { map } = require('rxjs/operators');
+const { map, mergeMap, catchError } = require('rxjs/operators');
+const { Subject, EMPTY } = require('rxjs');
 const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries } = require('./tools.js');
 
 const nodes = {};
@@ -42,27 +43,41 @@ function hasTodo(operation) {
 
 fs.existsSync('output') || fs.mkdirSync('output');
 
+const mappyDone$ = new Subject();
 
 if (hasTodo('mappy')) {
   // MapData extraction
   const memoryData$ = new Rx.Subject();
   const mapData$ = new Rx.Subject();
+  const npcs$ = new Rx.Subject();
   http.get('https://xivapi.com/download?data=map_data', (res) => mapData$.next(res));
 
-  http.get('https://xivapi.com/download?data=memory_data', (memoryResponse) => {
-    const memoryData = [];
-    memoryResponse.setEncoding('utf8');
-    memoryResponse.pipe(csv())
-      .on('data', function(memoryRow) {
-        memoryData.push(memoryRow);
-      })
-      .on('end', () => {
-        console.log('Extracted memory data, size: ', memoryData.length);
-        memoryData$.next(memoryData);
-      });
+  const parsedMemoryData = [];
+
+  fs.createReadStream(path.join(__dirname, 'input/memory_data.csv'), 'utf-8').pipe(csv())
+    .on('data', function(memoryRow) {
+      parsedMemoryData.push(memoryRow);
+    })
+    .on('end', () => {
+      console.log('Extracted memory data, size: ', parsedMemoryData.length);
+      memoryData$.next(parsedMemoryData);
+    });
+
+  getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(npc => {
+      npcs[npc.ID] = {
+        ...npcs[npc.ID],
+        en: npc.Name_en,
+        ja: npc.Name_ja,
+        de: npc.Name_de,
+        fr: npc.Name_fr
+      };
+    });
+  }, null, () => {
+    npcs$.next(npcs);
   });
 
-  Rx.combineLatest(memoryData$, mapData$)
+  Rx.combineLatest([memoryData$, mapData$, npcs$])
     .subscribe(([memoryData, res]) => {
       res.setEncoding('utf8');
       res.pipe(csv())
@@ -88,14 +103,14 @@ if (hasTodo('mappy')) {
         })
         .on('end', function() {
           // Write data that needs to be joined with game data first
-          persistToJson('node-positions', nodes);
-          console.log('nodes written');
-          persistToTypescript('aetherytes', 'aetherytes', aetherytes);
-          console.log('aetherytes written');
-          persistToJsonAsset('npcs', npcs);
-          console.log('npcs written');
+          // persistToJson('node-positions', nodes);
+          // console.log('nodes written');
+          // persistToTypescript('aetherytes', 'aetherytes', aetherytes);
+          // console.log('aetherytes written');
           persistToJson('monsters', monsters);
           console.log('monsters written');
+          persistToJsonAsset('npcs', npcs);
+          console.log('npcs written');
         });
     });
 }
@@ -143,10 +158,14 @@ handleMonster = (row, memoryData) => {
 
 handleNpc = (row) => {
   npcs[+row.ENpcResidentID] = {
-    map: +row.MapID,
-    zoneid: +row.PlaceNameID,
-    x: Math.round(+row.PosX),
-    y: Math.round(+row.PosY)
+    ...npcs[+row.ENpcResidentID],
+    position:
+      {
+        map: +row.MapID,
+        zoneid: +row.PlaceNameID,
+        x: Math.round(+row.PosX),
+        y: Math.round(+row.PosY)
+      }
   };
 };
 

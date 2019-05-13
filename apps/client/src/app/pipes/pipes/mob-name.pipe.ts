@@ -10,7 +10,7 @@ export class MobNamePipe implements PipeTransform {
   constructor(private data: LocalizedDataService) {
   }
 
-  transform(id: number): I18nName {
+  transform(id: number): any {
     if (id > 1000000) {
       id = id % 1000000;
     }

@@ -8,7 +8,7 @@
           <img [src]="xivapiMob.Icon | xivapiIcon" alt="{{xivapiMob.ID | mobName | i18n}}"
                class="larger-img-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{xivapiMob.ID | mobName | i18n}} (WIP)</h2>
+            <h2 class="item-name">{{xivapiMob.ID | mobName | i18n}}</h2>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
@@ -39,31 +39,58 @@
       </div>
     </div>
 
+    <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
+      <div class="details-block">
+        <div class="detail-name">{{'DB.MOB.Hunt_target' | translate}}</div>
+        <div
+          class="detail-value">{{(xivapiMob.GameContentLinks.MobHuntTarget !== undefined ? 'Yes' : 'No') | translate}}</div>
+      </div>
+    </div>
+
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
       <nz-card fxFlex="1 1 30%" class="details-card"
                [nzTitle]="title"
                nzBordered="false"
-               *ngIf="xivapiMob.mappyData">
+               *ngFor="let spawn of spawns$ | async">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
-            {{'DB.MOB.Known_spawns' | translate}}
+            {{spawn.zoneid | placeName | i18n}} - {{'DB.Level' | translate}} {{spawn.level}}
           </div>
         </ng-template>
-        <nz-list [nzDataSource]="xivapiMob.mappyData.positions" [nzRenderItem]="spawnTemplate"
-                 [nzItemLayout]="'horizontal'">
-          <ng-template #spawnTemplate let-spawn>
-            <nz-list-item [nzContent]="more">
-              <nz-list-item-meta [nzTitle]="spawn.zoneid | placeName | i18n"
-                                 nzDescription="lvl {{spawn.level}}"></nz-list-item-meta>
-              <ng-template #more>
-                <app-map-position [mapId]="spawn.map" [zoneId]="spawn.zoneid"
-                                  [marker]="{x: spawn.x, y: spawn.y}"></app-map-position>
-              </ng-template>
-            </nz-list-item>
-          </ng-template>
-        </nz-list>
+        <app-map [mapId]="spawn.map" [markers]="spawn.positions"></app-map>
       </nz-card>
+      <ng-container *ngIf="drops$ | async as drops">
+        <nz-card fxFlex="1 1 auto" class="details-card"
+                 [nzTitle]="title"
+                 nzBordered="false"
+                 *ngIf="drops.length > 0">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+              {{'DB.MOB.Known_drops' | translate}}
+            </div>
+          </ng-template>
+          <nz-list [nzDataSource]="drops" [nzRenderItem]="dropTemplate"
+                   [nzItemLayout]="'horizontal'">
+            <ng-template #dropTemplate let-item>
+              <nz-list-item [nzContent]="more">
+                <nz-list-item-meta
+                  [nzAvatar]="itemAvatar"
+                  [nzTitle]="item | itemName | i18n">
+                  <ng-template #itemAvatar>
+                    <app-item-icon [width]="32" [itemId]="item"
+                                   [icon]="item | lazyIcon"></app-item-icon>
+                  </ng-template>
+                  <div>{{item | itemName | i18n}}</div>
+                  <ng-template #more>
+                    <app-db-button type="item" [id]="item"></app-db-button>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </nz-card>
+      </ng-container>
     </div>
   </div>
 </ng-container>

@@ -27,6 +27,8 @@ import { InstanceSearchResult } from '../../../model/search/instance-search-resu
 import { QuestSearchResult } from '../../../model/search/quest-search-result';
 import { NpcSearchResult } from '../../../model/search/npc-search-result';
 import { LeveSearchResult } from '../../../model/search/leve-search-result';
+import { MobSearchResult } from '../../../model/search/mob-search-result';
+import * as monsters from '../../../core/data/sources/monsters.json'
 
 @Component({
   selector: 'app-search',
@@ -169,6 +171,8 @@ export class SearchComponent implements OnInit {
             return this.searchNpc(query, filters);
           case SearchType.LEVE:
             return this.searchLeve(query, filters);
+          case SearchType.MONSTER:
+            return this.searchMob(query, filters);
           default:
             return this.data.searchItem(query, filters, false);
         }
@@ -322,6 +326,26 @@ export class SearchComponent implements OnInit {
               ja: npc.Title_ja,
               fr: npc.Title_fr
             }
+          };
+        });
+      })
+    );
+  }
+
+  searchMob(query: string, filters: SearchFilter[]): Observable<MobSearchResult[]> {
+    return this.xivapi.search({
+      indexes: [SearchIndex.BNPCNAME],
+      columns: ['ID', 'Icon'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(mob => {
+          return {
+            id: mob.ID,
+            icon: mob.Icon,
+            zoneid: monsters[mob.ID] && monsters[mob.ID].positions[0] ? monsters[mob.ID].positions[0].zoneid : null
           };
         });
       })

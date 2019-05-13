@@ -169,6 +169,7 @@
   "No_instances_found": "No instances found",
   "No_quests_found": "No quests found",
   "No_npcs_found": "No npcs found",
+  "No_mobs_found": "No monsters found",
   "Select_all": "Select all",
   "Do you really want to reset the list?": "Do you really want to reset the list?",
   "Yes": "Yes",
@@ -1183,7 +1184,9 @@
       "Issuer": "Issuer"
     },
     "MOB": {
-      "Known_spawns": "Known spawns"
+      "Known_spawns": "Known spawns",
+      "Known_drops":  "Known drops",
+      "Hunt_target": "Possible hunt target"
     }
   },
   "SEARCH_TYPES": {
