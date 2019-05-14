@@ -1181,7 +1181,7 @@
       "Allowance_cost": "의뢰 수주권 소모량",
       "Rewards": "획득 가능한 보상",
       "Client": "의뢰인",
-      "Issuer": "Issuer"
+      "Issuer": "발행인"
     },
     "MOB": {
       "Known_spawns": "Known spawns",
