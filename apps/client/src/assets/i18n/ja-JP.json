@@ -309,7 +309,7 @@
     "Connected_with_patreon": "アカウントはPatreonにつながれた",
     "Nickname": "Patreonの通称名",
     "Nickname_used": "通称名は既に使用されてる",
-    "No_nickname_warning": "後援者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
+    "No_nickname_warning": "寄付者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
     "Show_devtools": "Devツールを表示",
     "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
     "Enable_item_tags": "アイテムダグを使用",
@@ -928,7 +928,7 @@
     "Slogan": "制作、シェア、貢献",
     "Lists_created_counter": "{{amount}} 個のリストが、FFXIV Teamcraftを使用して作成されました",
     "Support_patreon": "Patreonでサポートする",
-    "Donation_button": "後援する（1回）",
+    "Donation_button": "寄付する（1回）",
     "Buy_a_tshirt": "Teamcraft Tシャツを買う",
     "Features_header": "始める！",
     "DESCRIPTION": {
@@ -1067,12 +1067,12 @@
     "Intro": "ジョブを選択し、分解レベルを入力して分解レベリングに最適化されたアイテムを探して下さい",
     "Loading_message": "読み込み中です...",
     "TAGS": {
-      "Higher_chances": "高分解確率",
-      "Lower_exp": "低分解精度",
+      "Higher_chances": "高い分解確率",
+      "Lower_exp": "低い分解精度",
       "Good_chances": "適切な分解確率",
       "Good_exp": "適切な分解熟練精度",
-      "Lower_chances": "低分解確率",
-      "Higher_exp": "高分解熟練精度",
+      "Lower_chances": "低い分解確率",
+      "Higher_exp": "高い分解熟練精度",
       "Very_common": "一般",
       "Common": "高級",
       "Rare": "レア"
@@ -1085,13 +1085,13 @@
     "Contribute_title": "プロジェクトに貢献する",
     "Contribute_description": "Githubでこのプロジェクトに貢献することができます。初心者もいつでも歓迎です!\n\nコードの貢献のみならず、機能要請とバグ報告は皆に最上の機能を提供するのに、役に立ちます。時間をかけてテストし、バグを探してくださる皆さんに感謝しております。",
     "Patreon_title": "Patreonにサポートする",
-    "Patreon_description": "Patreon is a platform where you can give a money to support a project every month. This money is used to pay for servers, certificates, giveaways and to free more and more time for the developer to work on the project.\n\nDepending on the amount you pledge, you can get some nice benefits in order to thank your contribution:",
+    "Patreon_description": "Patreonは毎月プロジェクトを寄付できるプラットフォームです。この寄付金はサーバー、認証書、分かち合いに使用され、プロジェクトを作業する開発者たちがもっと多くの時間を割くところに使われます。\n\n寄付金に応じて、寄付金に対する謝礼として、いくつかの素晴らしい特典が得られます。",
     "PATREON_BENEFITS": {
       "Discord_rank": "現在、進行中のジョブが見れるサポーターチャンネルにアクセス可能な Discordサーバー特別等級 (${{price}})",
       "Profile_badge": "Teamcraft プロフィールに特別なバッジを付与 (${{price}})",
       "Custom_theme": "カスタマーカラーが含んで改善されたテーマカスタマイズ (${{price}})",
       "Pins_badge": "限定版 Teamcraft バッジ配送 (${{price}}) (Patreonに配送情報の入力必須)",
-      "Loading_screen_message": "\"Brought to you by ...\" ローディングメッセージに追加したい名前、フリカンパニー名、リンクシェル名など新しい項目追加 (${{price}})"
+      "Loading_screen_message": "\"Brought to you by ...\" ローディングメッセージに追加したい名前、フリカンパニー名、リンクシェル名など新しい項目追加! (${{price}})"
     }
   },
   "DB": {
