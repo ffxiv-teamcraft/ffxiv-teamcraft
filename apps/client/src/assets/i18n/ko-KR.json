@@ -835,7 +835,7 @@
     "Quantity": "수량",
     "All_deliveries": "총 {{value}}회 납품",
     "Compute_exp": "경험치 변화 보기",
-    "Global_exp": "Use global exp",
+    "Global_exp": "현재 경험치만 표시",
     "More_on_gamerescape": "'Gamer Escape'에서 자세한 정보 보기",
     "Deliver_to": "{{placename}}에 납품",
     "INTRO": {
