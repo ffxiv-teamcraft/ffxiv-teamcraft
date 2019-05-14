@@ -1117,9 +1117,9 @@
     "Triple_triad_duels": "트리플 트라이어드 대결",
     "TT_Rules": "규칙",
     "TT_card_unlock": "Unlocks card in collection",
-    "Track_on_attt": "다른 카드사이트에서 정보 확인",
+    "Track_on_attt": "다른 트리플 트라이어드 사이트에서 확인",
     "Unlocked_by_quest": "선행 퀘스트",
-    "More_on_attt_npc": "See more details about this npc on Another Triple Triad tracker",
+    "More_on_attt_npc": "다른 트리플 트라이어드 사이트에서 해당 NPC에 대해 자세히 보기",
     "Triple_triad_pack": "트리플 트라이어드 팩",
     "Dungeons": "던전/토벌전",
     "Used_for_trades": "교환",
@@ -1185,7 +1185,7 @@
       "Issuer": "발행인"
     },
     "MOB": {
-      "Known_spawns": "Known spawns",
+      "Known_spawns": "몬스터 출현 장소",
       "Known_drops": "드랍 아이템",
       "Hunt_target": "사냥 가능 여부"
     }
