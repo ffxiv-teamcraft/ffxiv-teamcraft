@@ -29,6 +29,7 @@ import { NpcSearchResult } from '../../../model/search/npc-search-result';
 import { LeveSearchResult } from '../../../model/search/leve-search-result';
 import { MobSearchResult } from '../../../model/search/mob-search-result';
 import * as monsters from '../../../core/data/sources/monsters.json';
+import { FateSearchResult } from '../../../model/search/fate-search-result';
 
 @Component({
   selector: 'app-search',
@@ -175,6 +176,8 @@ export class SearchComponent implements OnInit {
             return this.searchMob(query, filters);
           case SearchType.LORE:
             return this.searchLore(query, filters);
+          case SearchType.FATE:
+            return this.searchFate(query, filters);
           default:
             return this.data.searchItem(query, filters, false);
         }
@@ -201,6 +204,7 @@ export class SearchComponent implements OnInit {
 
   searchInstance(query: string, filters: SearchFilter[]): Observable<InstanceSearchResult[]> {
     return this.xivapi.search({
+      language: this.getSearchLang(),
       indexes: [SearchIndex.INSTANCECONTENT],
       columns: ['ID', 'Banner', 'Icon', 'ContentFinderCondition.ClassJobLevelRequired'],
       // I know, it looks like it's the same, but it isn't
@@ -243,6 +247,7 @@ export class SearchComponent implements OnInit {
 
   searchQuest(query: string, filters: SearchFilter[]): Observable<QuestSearchResult[]> {
     return this.xivapi.search({
+      language: this.getSearchLang(),
       indexes: [SearchIndex.QUEST],
       columns: ['ID', 'Banner', 'Icon'],
       // I know, it looks like it's the same, but it isn't
@@ -263,6 +268,7 @@ export class SearchComponent implements OnInit {
 
   searchLeve(query: string, filters: SearchFilter[]): Observable<LeveSearchResult[]> {
     return this.xivapi.search({
+      language: this.getSearchLang(),
       indexes: [SearchIndex.LEVE],
       columns: ['ID', 'Banner', 'Icon', 'ClassJobCategory', 'IconIssuer', 'ClassJobLevel'],
       // I know, it looks like it's the same, but it isn't
@@ -311,6 +317,7 @@ export class SearchComponent implements OnInit {
 
   searchNpc(query: string, filters: SearchFilter[]): Observable<NpcSearchResult[]> {
     return this.xivapi.search({
+      language: this.getSearchLang(),
       indexes: [SearchIndex.ENPCRESIDENT],
       columns: ['ID', 'Title_*', 'Icon'],
       // I know, it looks like it's the same, but it isn't
@@ -336,6 +343,7 @@ export class SearchComponent implements OnInit {
 
   searchMob(query: string, filters: SearchFilter[]): Observable<MobSearchResult[]> {
     return this.xivapi.search({
+      language: this.getSearchLang(),
       indexes: [SearchIndex.BNPCNAME],
       columns: ['ID', 'Icon'],
       // I know, it looks like it's the same, but it isn't
@@ -354,12 +362,29 @@ export class SearchComponent implements OnInit {
     );
   }
 
+  searchFate(query: string, filters: SearchFilter[]): Observable<FateSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.FATE],
+      columns: ['ID', 'IconMap', 'ClassJobLevel'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(fate => {
+          return {
+            id: fate.ID,
+            icon: fate.IconMap,
+            level: fate.ClassJobLevel
+          };
+        });
+      })
+    );
+  }
+
   searchLore(query: string, filters: SearchFilter[]): Observable<any[]> {
-    let lang = this.translate.currentLang;
-    if (['fr', 'en', 'ja', 'de'].indexOf(lang) === -1) {
-      lang = 'en';
-    }
-    return this.xivapi.searchLore(query, lang, true, ['Icon', 'Name_*', 'Banner']).pipe(
+    return this.xivapi.searchLore(query, this.getSearchLang(), true, ['Icon', 'Name_*', 'Banner']).pipe(
       map(searchResult => {
         return searchResult.Results.map(row => {
           switch (row.Source.toLowerCase()) {
@@ -437,6 +462,14 @@ export class SearchComponent implements OnInit {
         });
       })
     );
+  }
+
+  getSearchLang():string{
+    let lang = this.translate.currentLang;
+    if (['fr', 'en', 'ja', 'de'].indexOf(lang) === -1) {
+      lang = 'en';
+    }
+    return lang;
   }
 
   resetFilters(): void {

@@ -15,6 +15,7 @@ import { QuestData } from '../../model/garland-tools/quest-data';
 import { NpcData } from '../../model/garland-tools/npc-data';
 import { LeveData } from '../../model/garland-tools/leve-data';
 import { MobData } from '../../model/garland-tools/mob-data';
+import { FateData } from '../../model/garland-tools/fate-data';
 
 @Injectable()
 export class DataService {
@@ -27,6 +28,7 @@ export class DataService {
     npc: 2,
     leve: 3,
     mob: 2,
+    fate: 2,
   };
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 
@@ -95,6 +97,16 @@ export class DataService {
   public getMob(id: string): Observable<MobData> {
     return this.getGarlandData(`/mob/en/${this.garlandtoolsVersions.mob}/${id}`)
       .pipe(map(item => this.serializer.deserialize<MobData>(item, MobData)));
+  }
+
+  /**
+   * Gets a mob based on its id.
+   * @param {number} id
+   * @returns {Observable<MobData>}
+   */
+  public getFate(id: number): Observable<FateData> {
+    return this.getGarlandData(`/fate/en/${this.garlandtoolsVersions.mob}/${id}`)
+      .pipe(map(item => this.serializer.deserialize<FateData>(item, FateData)));
   }
 
   /**

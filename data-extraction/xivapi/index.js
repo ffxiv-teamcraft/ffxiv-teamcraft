@@ -176,9 +176,14 @@ handleNpc = (row) => {
 if (hasTodo('map')) {
   const mapIds = [];
 
-  getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en,TerritoryType.WeatherRate&key=63cc0045d7e847149c3f').subscribe(res => {
+  getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en,PlaceName.ID,TerritoryType.WeatherRate&key=63cc0045d7e847149c3f').subscribe(res => {
     res.Results.forEach(map => {
-      mapIds.push({ id: +map.ID, name: map.PlaceName.Name_en, weatherRate: map.TerritoryType.WeatherRate });
+      mapIds.push({
+        id: +map.ID,
+        zone: +map.PlaceName.ID,
+        name: map.PlaceName.Name_en,
+        weatherRate: map.TerritoryType.WeatherRate
+      });
     });
   }, null, () => {
     persistToTypescript('map-ids', 'mapIds', mapIds);

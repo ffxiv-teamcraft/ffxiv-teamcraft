@@ -25,6 +25,7 @@
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.MONSTER) | translate"
                    [nzValue]="searchTypes.MONSTER"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.LORE) | translate" [nzValue]="searchTypes.LORE"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.FATE) | translate" [nzValue]="searchTypes.FATE"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -391,6 +392,22 @@
               </div>
             </div>
           </div>
+          <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="searchType === searchTypes.FATE"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <img [src]="row.icon | xivapiIcon" alt="" fxFlex="0 0 auto" class="quest-icon">
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div><b>{{(row.id | fate).name | i18n}}</b> - lvl{{row.level}}</div>
+                <app-db-button type="fate" [id]="row.id"></app-db-button>
+              </div>
+              <span>{{(row.id | fate).description | i18n}}</span>
+            </div>
+          </div>
         </ng-container>
       </app-page-loader>
       <div *ngIf="results.length === 0">
@@ -408,6 +425,8 @@
                               *ngIf="searchType === searchTypes.MONSTER">{{'No_mobs_found' | translate}}</app-fullpage-message>
         <app-fullpage-message height="300px"
                               *ngIf="searchType === searchTypes.LORE">{{'No_lore_entries' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.FATE">{{'No_fates_found' | translate}}</app-fullpage-message>
       </div>
     </div>
   </div>
