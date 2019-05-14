@@ -14,15 +14,15 @@
             </nz-tag>
             <nz-tag
               *ngFor="let tag of rotation.tags">{{('SIMULATOR.COMMUNITY_ROTATIONS.TAGS.' + tag) | translate}}</nz-tag>
-            <nz-tag nzColor="#bd0ef2">{{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}
+            <nz-tag [style.border-color]="'#bd0ef2'">{{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}
               : {{rotation.community.minCraftsmanship}}</nz-tag>
-            <nz-tag nzColor="#bd0ef2">{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}
+            <nz-tag [style.border-color]="'#bd0ef2'">{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}
               : {{rotation.community.minControl}}</nz-tag>
-            <nz-tag nzColor="#bd0ef2">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}
+            <nz-tag [style.border-color]="'#bd0ef2'">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}
               : {{rotation.community.minCp}}</nz-tag>
             <nz-tag
-              nzColor="#108ee9">{{'SIMULATOR.COMMUNITY_ROTATIONS.Steps_count' | translate: { count: rotation.rotation.length } }}</nz-tag>
-            <nz-tag nzColor="#f2b10e">{{'SIMULATOR.Durability' | translate}}
+              [style.border-color]="'#108ee9'">{{'SIMULATOR.COMMUNITY_ROTATIONS.Steps_count' | translate: { count: rotation.rotation.length } }}</nz-tag>
+            <nz-tag [style.border-color]="'#f2b10e'">{{'SIMULATOR.Durability' | translate}}
               : {{rotation.community.durability}}</nz-tag>
           </ng-container>
         </div>
