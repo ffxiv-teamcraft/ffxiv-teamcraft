@@ -30,7 +30,7 @@
         ]
       },
       {
-        "source": "**/*.@(json|svg)",
+        "source": "**/*.@(svg)",
         "headers": [
           {
             "key": "Cache-Control",

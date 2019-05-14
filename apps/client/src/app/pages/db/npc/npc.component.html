@@ -147,17 +147,19 @@
           </ng-template>
         </nz-list>
       </nz-card>
-      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
-               *ngIf="trades$ | async as trades">
-        <ng-template #title>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
-            <div>
-              {{'DB.NPC.Trades' | translate}}
+      <ng-container *ngIf="trades$ | async as trades">
+        <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false" *ngIf="trades?.length > 0">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+              <div>
+                {{'DB.NPC.Trades' | translate}}
+              </div>
             </div>
-          </div>
-        </ng-template>
-        <app-trades [externalTradeSources]="trades"></app-trades>
-      </nz-card>
+          </ng-template>
+          <app-trades [externalTradeSources]="trades"></app-trades>
+        </nz-card>
+      </ng-container>
+
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
                *ngIf="xivapiNpc.GilShop && xivapiNpc.GilShop.length > 0">
         <ng-template #title>
