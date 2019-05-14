@@ -35,7 +35,7 @@ export class LocalizedDataService {
     return row;
   }
 
-  public getInstanceName(id: number): I18nName {
+  public getInstanceName(id: number): any {
     //const koRow = this.getRow(this.lazyData.koItems, id);
     const row = this.getRow(this.lazyData.instances, id);
 

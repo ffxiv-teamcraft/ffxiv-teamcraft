@@ -69,9 +69,11 @@ if (hasTodo('mappy')) {
         ja: npc.Name_ja,
         de: npc.Name_de,
         fr: npc.Name_fr,
-        defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID),
-        customTalks: (npc.CustomTalk || []).map(talk => talk.ID),
+        defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID)
       };
+      if (npc.BalloonTargetID > 0) {
+        npcs[npc.ID].balloon = npc.BalloonTargetID;
+      }
     });
   }, null, () => {
     npcs$.next(npcs);
@@ -589,7 +591,7 @@ if (hasTodo('tripleTriadRules')) {
 
 if (hasTodo('quests')) {
   const quests = {};
-  getAllPages('https://xivapi.com/Quest?columns=ID,Name_*').subscribe(page => {
+  getAllPages('https://xivapi.com/Quest?columns=ID,Name_*,Icon').subscribe(page => {
     page.Results.forEach(quest => {
       quests[quest.ID] = {
         name: {
@@ -597,7 +599,8 @@ if (hasTodo('quests')) {
           ja: quest.Name_ja,
           de: quest.Name_de,
           fr: quest.Name_fr
-        }
+        },
+        icon: quest.Icon
       };
     });
   }, null, () => {
@@ -632,14 +635,24 @@ if (hasTodo('fates')) {
 
 if (hasTodo('instances')) {
   const instances = {};
-  getAllPages('https://xivapi.com/InstanceContent?columns=ID,Name_*').subscribe(page => {
+  getAllPages('https://xivapi.com/InstanceContent?columns=ID,Name_*,Icon,InstanceContentTextDataBossEndTargetID,InstanceContentTextDataBossStartTargetID,InstanceContentTextDataObjectiveEndTargetID,InstanceContentTextDataObjectiveStartTargetID').subscribe(page => {
     page.Results.forEach(instance => {
       instances[instance.ID] = {
         en: instance.Name_en,
         ja: instance.Name_ja,
         de: instance.Name_de,
-        fr: instance.Name_fr
+        fr: instance.Name_fr,
+        icon: instance.Icon
       };
+      const contentText = [
+        instance.InstanceContentTextDataBossEndTargetID,
+        instance.InstanceContentTextDataBossStartTargetID,
+        instance.InstanceContentTextDataObjectiveEndTargetID,
+        instance.InstanceContentTextDataObjectiveStartTargetID
+      ].filter(id => id > 0);
+      if (contentText.length > 0) {
+        instances[instance.ID].contentText = contentText;
+      }
     });
   }, null, () => {
     persistToJsonAsset('instances', instances);

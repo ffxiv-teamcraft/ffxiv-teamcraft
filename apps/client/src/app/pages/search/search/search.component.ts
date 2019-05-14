@@ -355,7 +355,11 @@ export class SearchComponent implements OnInit {
   }
 
   searchLore(query: string, filters: SearchFilter[]): Observable<any[]> {
-    return this.xivapi.searchLore(query, true, ['Icon', 'Name_*', 'GameContentLinks']).pipe(
+    let lang = this.translate.currentLang;
+    if (['fr', 'en', 'ja', 'de'].indexOf(lang) === -1) {
+      lang = 'en';
+    }
+    return this.xivapi.searchLore(query, lang, true, ['Icon', 'Name_*', 'Banner']).pipe(
       map(searchResult => {
         return searchResult.Results.map(row => {
           switch (row.Source.toLowerCase()) {
@@ -363,6 +367,17 @@ export class SearchComponent implements OnInit {
             case 'leve':
               row.Data.showButton = true;
               break;
+            case 'quest': {
+              const quest = this.l12n.getQuest(row.SourceID);
+              row.Data.Icon = quest.icon;
+              row.Data.Name_en = quest.name.en;
+              row.Data.Name_ja = quest.name.ja;
+              row.Data.Name_de = quest.name.de;
+              row.Data.Name_fr = quest.name.fr;
+              row.Data.Name_ko = quest.name.ko || quest.name.en;
+              row.Data.showButton = true;
+              break;
+            }
             case 'defaulttalk': {
               const npcId = Object.keys(this.lazyData.npcs)
                 .find(key => this.lazyData.npcs[key].defaultTalks.indexOf(row.SourceID) > -1);
@@ -371,13 +386,49 @@ export class SearchComponent implements OnInit {
               }
               row.Source = 'npc';
               row.SourceID = +npcId;
-              row.Data.Icon = "/c/ENpcResident.png";
+              row.Data.Icon = '/c/ENpcResident.png';
               const npcEntry = this.l12n.getNpc(+npcId);
               row.Data.Name_en = npcEntry.en;
               row.Data.Name_ja = npcEntry.ja;
               row.Data.Name_de = npcEntry.de;
               row.Data.Name_fr = npcEntry.fr;
               row.Data.Name_ko = npcEntry.ko || npcEntry.en;
+              row.Data.showButton = true;
+              break;
+            }
+            case 'balloon': {
+              const npcId = Object.keys(this.lazyData.npcs)
+                .find(key => this.lazyData.npcs[key].balloon === row.SourceID);
+              if (npcId === undefined) {
+                break;
+              }
+              row.Source = 'npc';
+              row.SourceID = +npcId;
+              row.Data.Icon = '/c/ENpcResident.png';
+              const npcEntry = this.l12n.getNpc(+npcId);
+              row.Data.Name_en = npcEntry.en;
+              row.Data.Name_ja = npcEntry.ja;
+              row.Data.Name_de = npcEntry.de;
+              row.Data.Name_fr = npcEntry.fr;
+              row.Data.Name_ko = npcEntry.ko || npcEntry.en;
+              row.Data.showButton = true;
+              break;
+            }
+            case 'instancecontenttextdata': {
+              const instanceId = Object.keys(this.lazyData.instances)
+                .find(key => (this.lazyData.instances[key].contentText || []).indexOf(row.SourceID) > -1);
+              if (instanceId === undefined) {
+                break;
+              }
+              const instanceEntry = this.l12n.getInstanceName(+instanceId);
+              row.Source = 'instance';
+              row.SourceID = +instanceId;
+              row.Data.Icon = instanceEntry.icon;
+              row.Data.Name_en = instanceEntry.en;
+              row.Data.Name_ja = instanceEntry.ja;
+              row.Data.Name_de = instanceEntry.de;
+              row.Data.Name_fr = instanceEntry.fr;
+              row.Data.Name_ko = instanceEntry.ko || instanceEntry.en;
               row.Data.showButton = true;
               break;
             }
