@@ -1196,7 +1196,7 @@
     "Quest": "퀘스트",
     "NPC": "NPC",
     "Leve": "길드 의뢰",
-    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
+    "Leve_info_message": "길드의뢰 페이지를 이용하여 의뢰 물품들을 제작하고 의뢰당 경험치를 미리 계산할 수 있습니다.",
     "Monster": "몬스터",
     "Lore": "Lore"
   },
