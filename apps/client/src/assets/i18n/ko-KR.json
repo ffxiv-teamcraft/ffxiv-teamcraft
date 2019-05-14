@@ -1186,7 +1186,7 @@
     "MOB": {
       "Known_spawns": "Known spawns",
       "Known_drops": "드랍 아이템",
-      "Hunt_target": "Possible hunt target"
+      "Hunt_target": "사냥 가능 여부"
     }
   },
   "SEARCH_TYPES": {
@@ -1197,7 +1197,7 @@
     "NPC": "NPC",
     "Leve": "길드 의뢰",
     "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
-    "Monster": "Monster",
+    "Monster": "몬스터",
     "Lore": "Lore"
   },
   "SEARCH_FILTERS": {
