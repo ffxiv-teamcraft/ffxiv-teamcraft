@@ -38,15 +38,15 @@ export class FateComponent extends TeamcraftPageComponent {
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(this.l12n.getNpc(+params.get('fateId'))).split(' ').join('-')],
+          [this.i18n.getName(this.l12n.getFate(+params.get('fateId')).name).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getNpc(+params.get('fateId'))).split(' ').join('-')) {
+      } else if (slug !== this.i18n.getName(this.l12n.getFate(+params.get('fateId')).name).split(' ').join('-')) {
         this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getNpc(+params.get('fateId'))).split(' ').join('-')],
+          ['../', this.i18n.getName(this.l12n.getFate(+params.get('fateId')).name).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true
