@@ -1185,7 +1185,7 @@
       "Issuer": "発行者"
     },
     "MOB": {
-      "Known_spawns": "Known spawns",
+      "Known_spawns": "モンスター出現場所",
       "Known_drops": "ドロップアイテム",
       "Hunt_target": "Possible hunt target"
     }
