@@ -171,6 +171,7 @@
   "No_npcs_found": "没有找到相关 NPC",
   "No_mobs_found": "No monsters found",
   "No_lore_entries": "No lore entries found",
+  "No_fates_found": "No fates found",
   "Select_all": "全选",
   "Do you really want to reset the list?": "您确定要重置清单吗？",
   "Yes": "是",
@@ -1198,7 +1199,8 @@
     "Leve": "Levequest",
     "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
     "Monster": "Monster",
-    "Lore": "Lore"
+    "Lore": "Lore",
+    "Fate": "Fate"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "等级",
