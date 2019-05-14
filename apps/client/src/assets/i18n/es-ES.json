@@ -170,8 +170,8 @@
   "No_quests_found": "No se encontraron misiones",
   "No_npcs_found": "Npc no encontrado",
   "No_mobs_found": "Monstruo no encontrado",
-  "No_lore_entries": "No lore entries found",
-  "No_fates_found": "No fates found",
+  "No_lore_entries": "Entrada de historia no encontrada",
+  "No_fates_found": "Fate no encontrada",
   "Select_all": "Seleccionar todo",
   "Do you really want to reset the list?": "¿Realmente desea reiniciar la lista?",
   "Yes": "Sí",
@@ -197,7 +197,7 @@
   "Vendors": "Vendedores",
   "Open": "Abrir",
   "Trade": "Intercambio",
-  "Treasures": "Can be obtained in",
+  "Treasures": "Se puede obtener en",
   "Fates": "Fates",
   "Filters": "Filtros",
   "Check_all": "Seleccionar todos",
@@ -252,7 +252,7 @@
   "List_not_found": "Lista no encontrada o no tiene acceso a ella",
   "Requirements_for_craft": "Ver requerimientos",
   "Zone_breakdown": "Desglose por área",
-  "Reverse_tiers": "Display reversed tiers",
+  "Reverse_tiers": "Mostrar niveles invertidos",
   "Timer_options": "Opciones de Temporizador",
   "Early_by": "Avisar n horas eorzeanas antes",
   "Sound": "Sonido",
@@ -323,7 +323,7 @@
     "Starting_place_explain": "Utilizado para las características de optimización de ruta",
     "Free_aetheryte": "Aetheryte gratuito",
     "Favorite_aetherytes": "Aetherytes favoritos",
-    "Disable_cross_world_prices": "Only use own world for marketboard prices",
+    "Disable_cross_world_prices": "Sólo usar mi propio mundo para los precios del mercado",
     "COLORS": {
       "Primary": "Color primario",
       "Highlight": "Color de resaltado",
@@ -469,7 +469,7 @@
       "Buttons": "Botones",
       "Menu": "Menú",
       "Edit_row_buttons_display": "Editar botones a mostrar",
-      "Reorder_panels": "Reorder panels",
+      "Reorder_panels": "Reordenar paneles",
       "ITEMS": {
         "COMMENTS": "Comentarios",
         "COPY_NAME_NOT_FAVORITE": "Modo de copia no favorito",
@@ -744,10 +744,10 @@
         "Created_by": "Creado por {{name}}",
         "Copy_folder": "Copiar esta carpeta y su contenido a su cuenta",
         "Folder_copied": "Carpeta copiada a su cuenta",
-        "Your_folders": "Your folders",
+        "Your_folders": "Sus carpetas",
         "Favorite_folders": "Carpeta de favoritos",
         "Add_rotations": "Agregar rotaciones",
-        "Open": "Open folder"
+        "Open": "Abrir carpeta"
       }
     },
     "CATEGORY": {
