@@ -169,7 +169,7 @@
   "No_instances_found": "ダンジョンが見つかりません。",
   "No_quests_found": "クエストが見つかりません",
   "No_npcs_found": "NPCが見つかりません",
-  "No_mobs_found": "No monsters found",
+  "No_mobs_found": "検索結果なし",
   "No_lore_entries": "No lore entries found",
   "No_fates_found": "No fates found",
   "Select_all": "全て選択",
@@ -320,7 +320,7 @@
     "Amount_display_mode_remaining": "残量",
     "Amount_display_mode_total": "総計",
     "Starting_place": "スタート地点",
-    "Starting_place_explain": "推薦経路機能に使用",
+    "Starting_place_explain": "推奨経路機能に使用",
     "Free_aetheryte": "無料エーテライト",
     "Favorite_aetherytes": "お気に入りのエーテライト",
     "Disable_cross_world_prices": "キャラクターのサーバーマケットボード値段のみ使用",
@@ -562,7 +562,7 @@
   "NAVIGATION": {
     "Title": "最適化されたルート",
     "Steps": "段階",
-    "Loading_path": "推薦経路を読み込み中(数秒くらい所要)",
+    "Loading_path": "推奨経路を読み込み中(数秒くらい所要)",
     "STEP": {
       "Gathering": "{{amount}} 個採集",
       "Hunting": "戦闘で {{amount}} 個 獲得した",
