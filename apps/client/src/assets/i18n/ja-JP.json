@@ -171,7 +171,7 @@
   "No_npcs_found": "NPCが見つかりません",
   "No_mobs_found": "検索結果なし",
   "No_lore_entries": "No lore entries found",
-  "No_fates_found": "No fates found",
+  "No_fates_found": "F.A.T.Eが見つかりません",
   "Select_all": "全て選択",
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
@@ -197,7 +197,7 @@
   "Vendors": "NPC",
   "Open": "開",
   "Trade": "取引",
-  "Treasures": "Can be obtained in",
+  "Treasures": "獲得方法",
   "Fates": "F.A.T.E",
   "Filters": "フィルター",
   "Check_all": "全てをチェック",
@@ -327,7 +327,7 @@
     "COLORS": {
       "Primary": "デフォルトカラー",
       "Highlight": "ハイライトカラー",
-      "Text": "Buttons content color"
+      "Text": "ボタンの色"
     },
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
@@ -407,7 +407,7 @@
     "History": "履歴",
     "Items_count": "{{amount}} アイテム",
     "Show_craftable_amount": "制作可能な数量を表示する",
-    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
+    "Optimized_full_path": "全ての推奨経路を表示(最安値)",
     "Quick_layout_swap": "クイックレイアウトの切り替え",
     "INVENTORY": {
       "Show_final_items": "最終アイテムの表示",
@@ -439,7 +439,7 @@
     "Missing_tags_before_button": "コミュニティリストに登録されたリストにタグがありません。タグを付けて下さい ",
     "Missing_tags_after_button": " ボタン",
     "Add_remove_amount": "現在数量から追加/削除する",
-    "Add_from_external": "Add as external (you didn't use materials for it)",
+    "Add_from_external": "外付けで追加(素材は使っていません)",
     "Missing_masterbook": "この秘伝書を保有してません。プロフィールに追加するには、クリックして下さい。",
     "No_note": "メモなし",
     "Edit_note": "メモを修正する",
@@ -969,7 +969,7 @@
       "Others": "その他",
       "Dyes": "染料",
       "Other_master_recipes": "秘伝書: その他",
-      "Deliveries": "Deliveries",
+      "Deliveries": "蛮族/常連の取り引き",
       "Quests": "ジョブクエスト"
     }
   },
@@ -1056,7 +1056,7 @@
   "GC_SUPPLY": {
     "Title": "調達任務",
     "Search": "検索",
-    "Generate_list": "Create a quick list",
+    "Generate_list": "クイックリストを作成",
     "Intro": "レベルを入力し、検索をクリックして開始します。",
     "Loading_message": "可能な調達品を読み込み中... 時間が所要されます"
   },
@@ -1081,7 +1081,7 @@
   "SUPPORT_US": {
     "Title": "我々が成長するように助けてください",
     "Communication_title": "プロジェクトに関する話",
-    "Communication_description": "Let people know about the tool, share rotations, lists. Create videos, blog posts, tweets, everything that lets more people know about Teamcraft really helps the project more than you would think.\n\nWe even prepared a macro for you so you can shout your love everywhere !\n",
+    "Communication_description": "このツールを知らせ、スキル回しやリストをシェアしてください。大勢の人々にTeamcraftについて大勢の人々に知らせるようにビデオ、ブログ投稿、ツイートをする、全ては皆さんが考えてるより、プロジェクトに役に立ちます。\n\n皆さんのためにマクロを用意しています。皆さんの愛を何処に居ても叫べます!",
     "Contribute_title": "プロジェクトに貢献する",
     "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
     "Patreon_title": "Patreonにサポートする",
