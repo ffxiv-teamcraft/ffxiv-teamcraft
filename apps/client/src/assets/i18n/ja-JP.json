@@ -581,7 +581,7 @@
     "Snagging": "引掛釣りが必要",
     "Predators": "前にこの魚を釣る",
     "Fish_eyes_duration": "この魚を釣るためには、持続時間ほどのフィッシュアイが必要とします。形式を変更するにはクリックして下さい。",
-    "Spawned_for": "{{timer}} 以降消える",
+    "Spawned_for": "{{timer}} 以降消滅",
     "Will_spawn_in": "{{timer}} 以降現れる",
     "GIG_HEAD": {
       "Small": "スモールギグヘッド",
@@ -950,7 +950,7 @@
     "Title": "制作/採集手帳トラッカー",
     "Mark_page_as_done": "このページを完了として表示する",
     "Mark_as_done": "このアイテムに完了として表示する",
-    "Mark_as_done_external": "このアイテムが手帳に完了と表示される",
+    "Mark_as_done_external": "このアイテムが手帳に完了と表示する",
     "Mark_as_not_done": "このアイテムを未完了として表示する",
     "Create_list": "このページを完成させるためのリストを作成する",
     "Create_list_limited": "このページを完了するためなリスト作成する(最大50個のアイテム)",
