@@ -478,7 +478,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   private handleAlarms(item: ListRow): void {
     // We don't want to display more than 6 alarms, else it becomes a large shitfest
     if (!item.alarms || item.alarms.length < 8 || this.settings.showAllAlarms) {
-      this.alarms = item.alarms.sort((a, b) => {
+      this.alarms = (item.alarms || []).sort((a, b) => {
         if (a.spawns === undefined || b.spawns === undefined) {
           return a.zoneId - b.zoneId;
         }
