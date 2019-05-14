@@ -171,6 +171,7 @@
   "No_npcs_found": "NPC를 찾을 수 없습니다",
   "No_mobs_found": "검색 결과 없음",
   "No_lore_entries": "No lore entries found",
+  "No_fates_found": "No fates found",
   "Select_all": "모두 선택",
   "Do you really want to reset the list?": "정말로 이 목록을 초기화하시겠습니까?",
   "Yes": "O",
@@ -1198,7 +1199,8 @@
     "Leve": "길드 의뢰",
     "Leve_info_message": "길드의뢰 페이지를 이용하여 의뢰 물품들을 제작하고 의뢰당 경험치를 미리 계산할 수 있습니다.",
     "Monster": "몬스터",
-    "Lore": "Lore"
+    "Lore": "Lore",
+    "Fate": "Fate"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "레벨",
