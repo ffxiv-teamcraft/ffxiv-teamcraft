@@ -171,6 +171,7 @@
   "No_npcs_found": "NPCが見つかりません",
   "No_mobs_found": "No monsters found",
   "No_lore_entries": "No lore entries found",
+  "No_fates_found": "No fates found",
   "Select_all": "全て選択",
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
@@ -1198,7 +1199,8 @@
     "Leve": "Levequest",
     "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
     "Monster": "Monster",
-    "Lore": "Lore"
+    "Lore": "Lore",
+    "Fate": "Fate"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "レベル",
