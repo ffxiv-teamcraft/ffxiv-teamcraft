@@ -1070,9 +1070,9 @@
       "Higher_chances": "高い分解確率",
       "Lower_exp": "低い分解精度",
       "Good_chances": "適切な分解確率",
-      "Good_exp": "適切な分解熟練精度",
+      "Good_exp": "適切な分解精度",
       "Lower_chances": "低い分解確率",
-      "Higher_exp": "高い分解熟練精度",
+      "Higher_exp": "高い分解精度",
       "Very_common": "一般",
       "Common": "高級",
       "Rare": "レア"
@@ -1111,7 +1111,7 @@
     "Class_job": "クラス/ジョブ",
     "Delay": "遅延",
     "Auto": "物理オート アタック",
-    "Salvage_level": "Optimal Desynth lvl",
+    "Salvage_level": "最適分解精度",
     "Sells_for": "販売価格",
     "Click_to_navigate": "アイコンをクリックし、全てのアイテムの詳細をご確認ください",
     "Triple_triad_duels": "トリプルトライアド対戦",
@@ -1155,7 +1155,7 @@
     "QUEST": {
       "Steps": "クエスト情報",
       "Unlocked_by": "Unlocked by",
-      "Next_quests": "Next quests",
+      "Next_quests": "次のクエスト",
       "Involved_npcs": "関連 NPC",
       "Journal_entries": "概要",
       "Dialogues": "台詞",
@@ -1187,7 +1187,7 @@
     "MOB": {
       "Known_spawns": "モンスター出現場所",
       "Known_drops": "ドロップアイテム",
-      "Hunt_target": "Possible hunt target"
+      "Hunt_target": "狩りの可能可否"
     }
   },
   "SEARCH_TYPES": {
