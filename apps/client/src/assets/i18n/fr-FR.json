@@ -171,6 +171,7 @@
   "No_npcs_found": "No npcs found",
   "No_mobs_found": "No monsters found",
   "No_lore_entries": "No lore entries found",
+  "No_fates_found": "No fates found",
   "Select_all": "Tout cocher",
   "Do you really want to reset the list?": "Voulez-vous vraiment réinitialiser la liste ?",
   "Yes": "Oui",
@@ -1198,7 +1199,8 @@
     "Leve": "Levequest",
     "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
     "Monster": "Monster",
-    "Lore": "Lore"
+    "Lore": "Lore",
+    "Fate": "Fate"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "Level",
