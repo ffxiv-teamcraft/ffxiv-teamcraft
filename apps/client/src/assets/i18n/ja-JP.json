@@ -1166,27 +1166,27 @@
       "Beast_tribe_rank": "Beast tribe rank"
     },
     "NPC": {
-      "Other_entries": "Other appearances",
-      "Default_talk": "Base dialogues",
+      "Other_entries": "他の出現位置",
+      "Default_talk": "基本台詞",
       "Quests": "クエスト",
       "Shops": "ショップ",
-      "Leves": "Leves",
-      "Trades": "Trades"
+      "Leves": "リーヴ",
+      "Trades": "トレード"
     },
     "FIGHT_TYPE": {
       "Boss": "ラスボス",
       "MidBoss": "ボス"
     },
     "LEVE": {
-      "Required_items": "Required items",
-      "Allowance_cost": "Allowance cost",
+      "Required_items": "要求アイテム",
+      "Allowance_cost": "リーヴ受注券の消耗量",
       "Rewards": "獲得可能な報酬",
       "Client": "クライアント",
-      "Issuer": "Issuer"
+      "Issuer": "発行者"
     },
     "MOB": {
       "Known_spawns": "Known spawns",
-      "Known_drops": "Known drops",
+      "Known_drops": "ドロップアイテム",
       "Hunt_target": "Possible hunt target"
     }
   },
@@ -1196,15 +1196,15 @@
     "Instance": "ダンジョン",
     "Quest": "クエスト",
     "NPC": "NPC",
-    "Leve": "Levequest",
-    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
-    "Monster": "Monster",
+    "Leve": "ギルドリーヴ",
+    "Leve_info_message": "ギルドリーヴのページを利用して依頼物品を制作し、依頼当たり経験値を予め計算することができます。",
+    "Monster": "モンスター",
     "Lore": "Lore",
-    "Fate": "Fate"
+    "Fate": "F.A.T.E"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "レベル",
-    "Leve_job": "Leve job",
-    "Leve_level": "要求レベル"
+    "Leve_job": "ジョブ",
+    "Leve_level": "必要レベル"
   }
 }
