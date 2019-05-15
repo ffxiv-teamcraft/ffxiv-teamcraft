@@ -220,7 +220,7 @@
   "Game_Term/DoL": "ギャザラー",
   "MIN/BTN": "採掘師 / 園芸師",
   "Game_Term/FSH": "漁師",
-  "Reduction": "精錬",
+  "Reduction": "精選",
   "Upgrade_list": "最新アプリのバージョンにリストを再生成する",
   "List_recreated": "リストが改築されました",
   "List_popup_title": "リストを改築中、少々お待ちください",
@@ -1116,7 +1116,7 @@
     "Click_to_navigate": "アイコンをクリックし、全てのアイテムの詳細をご確認ください",
     "Triple_triad_duels": "トリプルトライアド対戦",
     "TT_Rules": "ルール",
-    "TT_card_unlock": "Unlocks card in collection",
+    "TT_card_unlock": "カードリストに追加",
     "Track_on_attt": "他のトリプルトライアドのサイトで情報を確認",
     "Unlocked_by_quest": "開放クエスト",
     "More_on_attt_npc": "他のトリプルトライアドのサイトで該当 NPCについて詳細を見る",
@@ -1152,7 +1152,7 @@
     "GC_Delivery": "グランドカンパニー調達任務",
     "Drop_rate": "ドロップ率",
     "Involved_monsters": "関連モンスター",
-    "Reduces_to": "Reduces to",
+    "Reduces_to": "精選で得るアイテム",
     "QUEST": {
       "Steps": "クエスト情報",
       "Unlocked_by": "開放クエスト",
@@ -1200,7 +1200,7 @@
     "Leve": "ギルドリーヴ",
     "Leve_info_message": "ギルドリーヴのページを利用して依頼物品を制作し、依頼当たり経験値を予め計算することができます。",
     "Monster": "モンスター",
-    "Lore": "Lore",
+    "Lore": "台詞及び設定",
     "Fate": "F.A.T.E"
   },
   "SEARCH_FILTERS": {
