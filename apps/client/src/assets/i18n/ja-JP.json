@@ -172,6 +172,7 @@
   "No_mobs_found": "検索結果なし",
   "No_lore_entries": "検索結果なし",
   "No_fates_found": "検索結果なし",
+  "No_maps_found": "No maps found",
   "Select_all": "全て選択",
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
@@ -1153,6 +1154,8 @@
     "Drop_rate": "ドロップ率",
     "Involved_monsters": "関連モンスター",
     "Reduces_to": "精選で得るアイテム",
+    "Icons_shown": "Data to show",
+    "Select_data_type": "Select data types to show to see the details here",
     "QUEST": {
       "Steps": "クエスト情報",
       "Unlocked_by": "開放クエスト",
@@ -1187,8 +1190,14 @@
     },
     "MOB": {
       "Known_spawns": "モンスター出現場所",
-      "Known_drops": "ドロップアイテム",
-      "Hunt_target": "狩りの可能可否"
+      "Known_drops": "ドロップアイテム"
+    },
+    "DATA_TYPE": {
+      "fate": "Fates",
+      "mob": "Monsters",
+      "npc": "NPCs",
+      "node": "Nodes",
+      "hunt": "Hunts"
     }
   },
   "SEARCH_TYPES": {
@@ -1201,7 +1210,8 @@
     "Leve_info_message": "ギルドリーヴのページを利用して依頼物品を制作し、依頼当たり経験値を予め計算することができます。",
     "Monster": "モンスター",
     "Lore": "台詞及び設定",
-    "Fate": "F.A.T.E"
+    "Fate": "F.A.T.E",
+    "Map": "Map"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "レベル",
