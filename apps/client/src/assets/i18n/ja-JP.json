@@ -1152,6 +1152,7 @@
     "GC_Delivery": "グランドカンパニー調達任務",
     "Drop_rate": "ドロップ率",
     "Involved_monsters": "関連モンスター",
+    "Reduces_to": "Reduces to",
     "QUEST": {
       "Steps": "クエスト情報",
       "Unlocked_by": "開放クエスト",
