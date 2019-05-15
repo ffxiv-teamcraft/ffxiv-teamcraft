@@ -29,7 +29,8 @@ let todo = [
   'shops',
   'leves',
   'jobCategories',
-  'mobs'
+  'mobs',
+  'hunts'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -176,12 +177,14 @@ handleNpc = (row) => {
 if (hasTodo('map')) {
   const mapIds = [];
 
-  getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en,PlaceName.ID,TerritoryType.WeatherRate&key=63cc0045d7e847149c3f').subscribe(res => {
+  getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en,PlaceName.ID,TerritoryType.WeatherRate,TerritoryTypeTargetID,SizeFactor').subscribe(res => {
     res.Results.forEach(map => {
       mapIds.push({
         id: +map.ID,
         zone: +map.PlaceName.ID,
         name: map.PlaceName.Name_en,
+        territory: +map.TerritoryTypeTargetID,
+        scale: +map.SizeFactor,
         weatherRate: map.TerritoryType.WeatherRate
       });
     });
@@ -754,4 +757,56 @@ if (hasTodo('mobs')) {
   }, null, () => {
     persistToJsonAsset('mobs', mobs);
   });
+}
+
+if (hasTodo('hunts')) {
+  const huntZones = [
+    134,
+    135,
+    137,
+    138,
+    139,
+    140,
+    141,
+    145,
+    146,
+    147,
+    148,
+    152,
+    153,
+    154,
+    155,
+    156,
+    180,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    612,
+    620,
+    621,
+    613,
+    614,
+    622
+  ];
+  combineLatest(
+    huntZones.map(zone => {
+      return get(`https://xivhunt.net/api/worlds/SpawnPoints/${zone}`)
+        .pipe(
+          map(hunt => {
+            return {
+              zoneid: zone,
+              hunts: hunt
+            };
+          })
+        );
+    }))
+    .pipe(
+      first()
+    )
+    .subscribe(hunts => {
+      persistToTypescript('hunts', 'hunts', hunts);
+    });
 }

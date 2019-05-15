@@ -42,7 +42,7 @@
     </div>
 
     <nz-divider [nzText]="'DB.Content' | translate" nzOrientation="left"></nz-divider>
-    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
+    <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column">
       <nz-card fxFlex="0 0 auto" class="details-card"
                [nzTitle]="'DB.Map' | translate"
                nzBordered="false">
@@ -62,6 +62,42 @@
           </nz-select>
           <app-map [mapId]="mapData.ID" [markers]="markers$ | async" [hideDbButton]="true"></app-map>
         </div>
+      </nz-card>
+      <nz-card fxFlex="1 1 auto" class="details-card"
+               [nzTitle]="'DB.Details' | translate"
+               nzBordered="false" *ngIf="relatedDisplay$ | async as relatedElements">
+        <app-fullpage-message height="300px" fontSize="2rem"
+                              *ngIf="relatedElements.length === 0">{{'DB.Select_data_type' | translate}}</app-fullpage-message>
+        <nz-list
+          [nzDataSource]="row.elements"
+          [nzRenderItem]="elementTemplate"
+          [nzHeader]="('DB.DATA_TYPE.' + row.type) | translate"
+          *ngFor="let row of relatedElements">
+          <ng-template #elementTemplate let-element let-index="index">
+            <nz-list-item (mouseenter)="highlight(element, true)" (mouseleave)="highlight(element, false)"
+                          [nzContent]="element.type !== 'node' ? more : null">
+              <nz-list-item-meta [nzTitle]="title"
+                                 [nzDescription]="description">
+                <ng-template #title>
+                  <div *ngIf="element.type === 'node'; else baseTitle" fxLayout="row" fxLayoutGap="5px">
+                    <div *ngFor="let item of element.additionalData; let last = last" fxLayout="row" fxLayoutGap="5px">
+                      <div>{{item.id | itemName | i18n}} <span *ngIf="item.slot">({{item.slot}})</span></div>
+                      <app-db-button type="item" [id]="item.id"></app-db-button>
+                    </div>
+                  </div>
+                  <ng-template #baseTitle>{{element.name | i18n}}</ng-template>
+                </ng-template>
+                <ng-template #description>
+                  X: {{element.coords.x | number}} - Y: {{element.coords.y | number}} <span
+                  *ngIf="element.type === 'node'">{{element.name | i18n}}</span>
+                </ng-template>
+              </nz-list-item-meta>
+              <ng-template #more>
+                <app-db-button [type]="element.type === 'hunt' ? 'mob':element.type" [id]="element.id"></app-db-button>
+              </ng-template>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
       </nz-card>
     </div>
   </div>

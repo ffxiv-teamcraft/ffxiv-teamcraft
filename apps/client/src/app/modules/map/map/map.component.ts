@@ -4,6 +4,7 @@ import { Observable, ReplaySubject } from 'rxjs';
 import { MapService } from '../map.service';
 import { switchMap } from 'rxjs/operators';
 import { MapMarker } from '../map-marker';
+import { Vector2 } from '../../../core/tools/vector2';
 
 @Component({
   selector: 'app-map',
@@ -33,6 +34,8 @@ export class MapComponent implements OnInit {
   hideDbButton = false;
 
   mapData: Observable<MapData>;
+
+  position: Vector2 = { x: 0, y: 0 };
 
   @Output()
   loaded: EventEmitter<void> = new EventEmitter<void>();

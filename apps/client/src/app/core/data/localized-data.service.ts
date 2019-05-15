@@ -149,7 +149,7 @@ export class LocalizedDataService {
   }
 
   public getMobId(name: string): number {
-    return +Object.keys(this.lazyData.mobs).find(k => this.lazyData.mobs[k].en === name);
+    return +Object.keys(this.lazyData.mobs).find(k => this.lazyData.mobs[k].en.toLowerCase() === name.toLowerCase());
   }
 
   public getVenture(id: number): I18nName {

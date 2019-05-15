@@ -30,6 +30,8 @@ import { LeveSearchResult } from '../../../model/search/leve-search-result';
 import { MobSearchResult } from '../../../model/search/mob-search-result';
 import * as monsters from '../../../core/data/sources/monsters.json';
 import { FateSearchResult } from '../../../model/search/fate-search-result';
+import { mapIds } from '../../../core/data/sources/map-ids';
+import { MapSearchResult } from '../../../model/search/map-search-result';
 
 @Component({
   selector: 'app-search',
@@ -178,6 +180,8 @@ export class SearchComponent implements OnInit {
             return this.searchLore(query, filters);
           case SearchType.FATE:
             return this.searchFate(query, filters);
+          case SearchType.MAP:
+            return this.searchMap(query, filters);
           default:
             return this.data.searchItem(query, filters, false);
         }
@@ -383,6 +387,30 @@ export class SearchComponent implements OnInit {
     );
   }
 
+  searchMap(query: string, filters: SearchFilter[]): Observable<MapSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.PLACENAME],
+      columns: ['ID', 'Name_*'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(place => {
+          const entry = mapIds.find(m => m.zone === place.ID);
+          if (entry === undefined) {
+            return null;
+          }
+          return {
+            id: entry.id,
+            zoneid: place.ID
+          };
+        }).filter(r => r !== null);
+      })
+    );
+  }
+
   searchLore(query: string, filters: SearchFilter[]): Observable<any[]> {
     return this.xivapi.searchLore(query, this.getSearchLang(), true, ['Icon', 'Name_*', 'Banner']).pipe(
       map(searchResult => {
@@ -464,7 +492,7 @@ export class SearchComponent implements OnInit {
     );
   }
 
-  getSearchLang():string{
+  getSearchLang(): string {
     let lang = this.translate.currentLang;
     if (['fr', 'en', 'ja', 'de'].indexOf(lang) === -1) {
       lang = 'en';

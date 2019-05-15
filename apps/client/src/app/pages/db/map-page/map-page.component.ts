@@ -18,6 +18,7 @@ import * as monsters from '../../../core/data/sources/monsters.json';
 import * as nodePositions from '../../../core/data/sources/node-positions.json';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { HttpClient } from '@angular/common/http';
+import { hunts } from '../../../core/data/sources/hunts';
 
 @Component({
   selector: 'app-map-page',
@@ -31,6 +32,10 @@ export class MapPageComponent extends TeamcraftPageComponent {
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
   public related$: Observable<MapRelatedElement[]>;
+
+  public relatedDisplay$: Observable<MapRelatedElement[]>;
+
+  private highlight$ = new BehaviorSubject<MapRelatedElement>(null);
 
   public markers$: Observable<MapMarker[]>;
 
@@ -94,20 +99,70 @@ export class MapPageComponent extends TeamcraftPageComponent {
           ...this.getFates(mapData.PlaceNameTargetID),
           ...this.getMobs(mapData.PlaceNameTargetID),
           ...this.getNpcs(mapData.PlaceNameTargetID),
-          ...this.getNodes(mapData.PlaceNameTargetID)
-          // Disabled for now because of CORS
-          //...this.getHunts(hunts, mapData.SizeFactor)
+          ...this.getNodes(mapData.PlaceNameTargetID),
+          ...this.getHunts(mapData.TerritoryTypeTargetID, mapData.SizeFactor)
         ];
       }),
       shareReplay(1)
     );
 
-    this.markers$ = combineLatest([this.related$, this.enabledTypes$]).pipe(
+    const filteredTypes$ = combineLatest([this.related$, this.enabledTypes$]).pipe(
       map(([related, enabledTypes]) => {
         return related.filter(row => enabledTypes.indexOf(row.type) > -1);
-      }),
-      map(related => {
-        return related.map(element => element.marker);
+      })
+    );
+
+    this.markers$ = combineLatest([filteredTypes$, this.highlight$]).pipe(
+      map(([related, highlight]) => {
+        if (highlight === null) {
+          return related.map(element => element.marker);
+        }
+        return related.map(element => {
+          const marker = element.marker;
+          if (element.id === highlight.id && element.type === highlight.type) {
+            return {
+              ...marker,
+              additionalStyle: {
+                ...marker.additionalStyle,
+                width: '48px',
+                height: '48px',
+                'max-width': '48px',
+                'max-height': '48px',
+                'z-index': 500
+              }
+            };
+          } else {
+            return {
+              ...marker,
+              additionalStyle: {
+                ...marker.additionalStyle,
+                opacity: 0.3
+              }
+            };
+          }
+        });
+      })
+    );
+
+    this.relatedDisplay$ = combineLatest([this.related$, this.enabledTypes$]).pipe(
+      map(([related, enabledTypes]) => {
+        return related
+          .filter(row => enabledTypes.indexOf(row.type) > -1)
+          .reduce((display, row) => {
+            let displayRow = display.find(d => d.type === row.type);
+            if (displayRow === undefined) {
+              display.push({
+                type: row.type,
+                elements: []
+              });
+              displayRow = display[display.length - 1];
+            }
+            if ((row.type === 'mob' || row.type === 'hunt') && displayRow.elements.find(el => el.id === row.id) !== undefined) {
+              return display;
+            }
+            displayRow.elements.push(row);
+            return display;
+          }, []);
       })
     );
 
@@ -124,25 +179,36 @@ export class MapPageComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getHunts(hunts: any[], sizeFactor: number): MapRelatedElement[] {
+  public highlight(row: MapRelatedElement, highlight: boolean): void {
+    if (highlight) {
+      this.highlight$.next(row);
+    } else {
+      this.highlight$.next(null);
+    }
+  }
+
+  private getHunts(territoryId: number, sizeFactor: number): MapRelatedElement[] {
+    const zoneHunts = hunts.find(h => h.zoneid === territoryId);
+    if (zoneHunts === undefined) {
+      return [];
+    }
     const c = sizeFactor / 100;
-    //(41.0 / c) * ((spot.X) / 2048.0) + 1
-    return [].concat.apply([], hunts.map(hunt => {
+    return [].concat.apply([], zoneHunts.hunts.map((hunt, index) => {
         const huntName = this.l12n.getMob(this.l12n.getMobId(hunt.name));
-        return hunt.spawns.map(spawn => {
+        return hunt.spawns.map((spawn) => {
           return <MapRelatedElement>{
             type: 'hunt',
             id: this.l12n.getMobId(hunt.name),
             name: huntName,
             coords: {
-              x: (41.0 / c) * ((spawn.x) / 2048.0) + 1,
-              y: (41.0 / c) * ((spawn.y) / 2048.0) + 1
+              x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
+              y: (41.0 / c) * ((spawn.y + 1024) / 2048.0)
             },
             marker: {
               iconType: 'img',
-              iconImg: `./assets/icons/quest.png`,
-              x: (41.0 / c) * ((spawn.x) / 2048.0) + 1,
-              y: (41.0 / c) * ((spawn.y) / 2048.0) + 1,
+              iconImg: `./assets/icons/hunt${['b', 'a', 's'][index]}.png`,
+              x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
+              y: (41.0 / c) * ((spawn.y + 1024) / 2048.0),
               tooltip: this.i18n.getName(huntName)
             }
           };
@@ -217,7 +283,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
           type: 'node',
           id: node.id,
           name: this.i18n.createFakeI18n(`lvl ${node.level}`),
-          additionalData: [node.items],
+          additionalData: node.items.map(i => ({id:i})),
           coords: {
             x: node.x,
             y: node.y
@@ -233,11 +299,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
             ][node.type],
             x: node.x,
             y: node.y,
-            tooltip: `lvl ${node.level}`,
-            additionalStyle: {
-              width: '24px',
-              height: '24px'
-            }
+            tooltip: `lvl ${node.level}`
           }
         };
       });
@@ -251,7 +313,12 @@ export class MapPageComponent extends TeamcraftPageComponent {
           type: 'node',
           id: node.id,
           name: this.i18n.createFakeI18n(`lvl ${node.lvl}`),
-          additionalData: [node.items.map(i => i.id)],
+          additionalData: node.items.map(i => {
+            return {
+              id: i.id,
+              slot: i.slot
+            }
+          }),
           coords: {
             x: node.coords[0],
             y: node.coords[1]
@@ -267,11 +334,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
             ][node.type],
             x: node.coords[0],
             y: node.coords[1],
-            tooltip: `lvl ${node.lvl} ${this.htmlTools.generateStars(node.stars)}`,
-            additionalStyle: {
-              width: '24px',
-              height: '24px'
-            }
+            tooltip: `lvl ${node.lvl} ${this.htmlTools.generateStars(node.stars)}`
           }
         };
       });
