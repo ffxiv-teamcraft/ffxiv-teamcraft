@@ -1193,9 +1193,9 @@
       "Known_drops": "ドロップアイテム"
     },
     "DATA_TYPE": {
-      "fate": "Fates",
-      "mob": "Monsters",
-      "npc": "NPCs",
+      "fate": "F.A.T.E",
+      "mob": "モンスター",
+      "npc": "NPC",
       "node": "Nodes",
       "hunt": "Hunts"
     }
@@ -1211,7 +1211,7 @@
     "Monster": "モンスター",
     "Lore": "台詞及び設定",
     "Fate": "F.A.T.E",
-    "Map": "Map"
+    "Map": "地図"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "レベル",
