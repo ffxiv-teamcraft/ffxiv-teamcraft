@@ -172,6 +172,7 @@
   "No_mobs_found": "검색 결과 없음",
   "No_lore_entries": "검색 결과 없음",
   "No_fates_found": "검색 결과 없음",
+  "No_maps_found": "No maps found",
   "Select_all": "모두 선택",
   "Do you really want to reset the list?": "정말로 이 목록을 초기화하시겠습니까?",
   "Yes": "O",
@@ -1153,6 +1154,8 @@
     "Drop_rate": "드랍율",
     "Involved_monsters": "관련 몬스터",
     "Reduces_to": "정제로 얻는 아이템",
+    "Icons_shown": "Data to show",
+    "Select_data_type": "Select data types to show to see the details here",
     "QUEST": {
       "Steps": "퀘스트 정보",
       "Unlocked_by": "선행 퀘스트",
@@ -1187,8 +1190,14 @@
     },
     "MOB": {
       "Known_spawns": "몬스터 출현 장소",
-      "Known_drops": "드랍 아이템",
-      "Hunt_target": "사냥 가능 여부"
+      "Known_drops": "드랍 아이템"
+    },
+    "DATA_TYPE": {
+      "fate": "Fates",
+      "mob": "Monsters",
+      "npc": "NPCs",
+      "node": "Nodes",
+      "hunt": "Hunts"
     }
   },
   "SEARCH_TYPES": {
@@ -1201,7 +1210,8 @@
     "Leve_info_message": "길드의뢰 페이지를 이용하여 의뢰 물품들을 제작하고 의뢰당 경험치를 미리 계산할 수 있습니다.",
     "Monster": "몬스터",
     "Lore": "대사 및 설정",
-    "Fate": "돌발 임무"
+    "Fate": "돌발 임무",
+    "Map": "Map"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "레벨",
