@@ -172,6 +172,7 @@
   "No_mobs_found": "No monsters found",
   "No_lore_entries": "No lore entries found",
   "No_fates_found": "No fates found",
+  "No_maps_found": "No maps found",
   "Select_all": "全选",
   "Do you really want to reset the list?": "您确定要重置清单吗？",
   "Yes": "是",
@@ -1153,6 +1154,8 @@
     "Drop_rate": "Drop Rate",
     "Involved_monsters": "Involved monsters",
     "Reduces_to": "Reduces to",
+    "Icons_shown": "Data to show",
+    "Select_data_type": "Select data types to show to see the details here",
     "QUEST": {
       "Steps": "步骤",
       "Unlocked_by": "前置",
@@ -1187,8 +1190,14 @@
     },
     "MOB": {
       "Known_spawns": "Known spawns",
-      "Known_drops": "Known drops",
-      "Hunt_target": "Possible hunt target"
+      "Known_drops": "Known drops"
+    },
+    "DATA_TYPE": {
+      "fate": "Fates",
+      "mob": "Monsters",
+      "npc": "NPCs",
+      "node": "Nodes",
+      "hunt": "Hunts"
     }
   },
   "SEARCH_TYPES": {
@@ -1201,7 +1210,8 @@
     "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
     "Monster": "Monster",
     "Lore": "Lore",
-    "Fate": "Fate"
+    "Fate": "Fate",
+    "Map": "Map"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "等级",
