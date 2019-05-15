@@ -15,6 +15,8 @@ import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import * as monsters from '../../../core/data/sources/monsters.json';
 import { MobData } from '../../../model/garland-tools/mob-data';
 import { Vector2 } from '../../../core/tools/vector2';
+import { hunts } from '../../../core/data/sources/hunts';
+import { mapIds } from '../../../core/data/sources/map-ids';
 
 @Component({
   selector: 'app-mob',
@@ -31,7 +33,7 @@ export class MobComponent extends TeamcraftPageComponent {
 
   public drops$: Observable<number[]>;
 
-  public spawns$: Observable<{ map: number, zoneid: number, level:number, positions: Vector2[] }[]>;
+  public spawns$: Observable<{ map: number, zoneid: number, level: number, positions: Vector2[] }[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -96,22 +98,40 @@ export class MobComponent extends TeamcraftPageComponent {
 
     this.spawns$ = this.xivapiMob$.pipe(
       map(mob => {
-        if (mob.mappyData === undefined) {
-          return [];
-        }
         const spawns = [];
-        for (const position of mob.mappyData.positions) {
-          let mapRow = spawns.find(entry => entry.map === position.map);
-          if (mapRow === undefined) {
-            spawns.push({
-              map: position.map,
-              level: position.level,
-              zoneid: position.zoneid,
-              positions: []
-            });
-            mapRow = spawns[spawns.length - 1];
+        if (mob.mappyData !== undefined) {
+          for (const position of mob.mappyData.positions) {
+            let mapRow = spawns.find(entry => entry.map === position.map);
+            if (mapRow === undefined) {
+              spawns.push({
+                map: position.map,
+                level: position.level,
+                zoneid: position.zoneid,
+                positions: []
+              });
+              mapRow = spawns[spawns.length - 1];
+            }
+            mapRow.positions.push({ x: position.x, y: position.y });
           }
-          mapRow.positions.push({ x: position.x, y: position.y });
+        }
+        const mobHuntSpawns = hunts.find(h => h.hunts.some(hh => hh.name.toLowerCase() === mob.Name_en.toLowerCase()));
+        if (mobHuntSpawns !== undefined) {
+          const mapIdEntry = mapIds.find(entry => entry.territory === mobHuntSpawns.zoneid);
+          const c = mapIdEntry.scale / 100;
+          spawns.push({
+              map: mapIdEntry.id,
+              level: '??',
+              zoneid: mapIdEntry.zone,
+              positions: mobHuntSpawns.hunts.find(hh => hh.name.toLowerCase() === mob.Name_en.toLowerCase())
+                .spawns
+                .map(hSpawn => {
+                  return {
+                    x: (41.0 / c) * ((hSpawn.x + 1024) / 2048.0),
+                    y: (41.0 / c) * ((hSpawn.y + 1024) / 2048.0)
+                  };
+                })
+            }
+          );
         }
         return spawns;
       })

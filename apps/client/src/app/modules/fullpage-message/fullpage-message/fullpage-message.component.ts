@@ -8,4 +8,7 @@ import { Component, Input } from '@angular/core';
 export class FullpageMessageComponent {
   @Input()
   height = 'calc(100vh - 64px)';
+
+  @Input()
+  fontSize = '4rem';
 }

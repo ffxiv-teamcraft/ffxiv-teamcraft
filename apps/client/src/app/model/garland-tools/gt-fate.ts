@@ -9,4 +9,5 @@ export class GtFate {
   zoneid?: number;
   mapid?: number;
   coords?: number[];
+  items?: number[];
 }

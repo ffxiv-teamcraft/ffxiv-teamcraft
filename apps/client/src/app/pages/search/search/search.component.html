@@ -12,7 +12,7 @@
       <i nz-icon type="share-alt"></i>
     </button>
     <ng-template #addOnAfterTemplate>
-      <nz-select [ngModel]="searchType$ | async" (ngModelChange)="searchType$.next($event)">
+      <nz-select [ngModel]="searchType$ | async" (ngModelChange)="searchType$.next($event)" class="search-type">
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate" [nzValue]="searchTypes.ITEM"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.RECIPE) | translate"
                    [nzValue]="searchTypes.RECIPE"></nz-option>
@@ -26,6 +26,7 @@
                    [nzValue]="searchTypes.MONSTER"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.LORE) | translate" [nzValue]="searchTypes.LORE"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.FATE) | translate" [nzValue]="searchTypes.FATE"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.MAP) | translate" [nzValue]="searchTypes.MAP"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -371,6 +372,21 @@
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="searchType === searchTypes.MAP"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <img [src]="'/c/PlaceName.png' | xivapiIcon" alt="" class="quest-icon">
+                <div>{{row.zoneid | placeName | i18n}}</div>
+                <app-db-button type="map" [id]="row.id"></app-db-button>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayout.lt-md="column"
                *ngIf="searchType === searchTypes.LORE"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
@@ -427,6 +443,8 @@
                               *ngIf="searchType === searchTypes.LORE">{{'No_lore_entries' | translate}}</app-fullpage-message>
         <app-fullpage-message height="300px"
                               *ngIf="searchType === searchTypes.FATE">{{'No_fates_found' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.MAP">{{'No_maps_found' | translate}}</app-fullpage-message>
       </div>
     </div>
   </div>

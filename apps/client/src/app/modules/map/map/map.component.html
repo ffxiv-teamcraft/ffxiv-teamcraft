@@ -1,12 +1,31 @@
 <div class="map-container" *ngIf="mapData | async as map">
+  <app-db-button type="map" [id]="mapId" class="db-button" *ngIf="!hideDbButton"></app-db-button>
   <img src="{{map.image}}" alt="" class="map-image" (load)="loaded.emit()">
-  <i
-    *ngFor="let marker of markers"
-    class="marker material-icons"
-    [ngStyle]="getMarkerPosition(map, marker)">
-    location_on
-  </i>
+  <ng-container *ngFor="let marker of markers">
+    <i class="marker material-icons default-marker"
+       *ngIf="!marker.iconType"
+       [ngStyle]="getMarkerStyle(map, marker)"
+       nz-tooltip [nzTitle]="marker.tooltip">
+      location_on
+    </i>
+    <img [src]="marker.iconImg" alt=""
+         *ngIf="marker.iconType === 'img'"
+         class="marker"
+         [ngStyle]="getMarkerStyle(map, marker)"
+         nz-tooltip [nzTitle]="marker.tooltip">
+    <i nz-icon [type]="marker.nzIcon"
+       *ngIf="marker.iconType === 'ant'"
+       class="marker"
+       [ngStyle]="getMarkerStyle(map, marker)"
+       nz-tooltip [nzTitle]="marker.tooltip"></i>
+    <i *ngIf="marker.iconType === 'material'"
+       class="marker material-icons"
+       [ngStyle]="getMarkerStyle(map, marker)"
+       nz-tooltip [nzTitle]="marker.tooltip">
+      {{marker.materialIcon}}
+    </i>
+  </ng-container>
   <img *ngFor="let aetheryte of map.aetherytes" [src]="getIcon(aetheryte.type)"
-       alt="" class="aetheryte" [ngStyle]="getMarkerPosition(map, aetheryte, {x:-2,y:-2})"
+       alt="" class="aetheryte" [ngStyle]="getMarkerStyle(map, aetheryte, {x:-2,y:-2})"
        nz-tooltip nzTitle="{{aetheryte.nameid | placeName | i18n}}">
 </div>

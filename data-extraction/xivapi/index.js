@@ -3,9 +3,9 @@ const path = require('path');
 const fs = require('fs');
 const http = require('https');
 const Rx = require('rxjs');
-const { map, mergeMap, catchError } = require('rxjs/operators');
-const { Subject, EMPTY } = require('rxjs');
-const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries } = require('./tools.js');
+const { map, switchMap, catchError, first } = require('rxjs/operators');
+const { Subject, combineLatest } = require('rxjs');
+const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 
 const nodes = {};
 const aetherytes = [];
@@ -29,7 +29,8 @@ let todo = [
   'shops',
   'leves',
   'jobCategories',
-  'mobs'
+  'mobs',
+  'hunts'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -122,8 +123,8 @@ handleNode = (row) => {
   nodes[+row.ENpcResidentID] = {
     map: +row.MapID,
     zoneid: +row.PlaceNameID,
-    x: Math.round(+row.PosX),
-    y: Math.round(+row.PosY)
+    x: +row.PosX,
+    y: +row.PosY
   };
 };
 
@@ -134,8 +135,8 @@ handleAetheryte = (row) => {
     zoneid: +row.PlaceNameID,
     map: +row.MapID,
     placenameid: +row.PlaceNameID,
-    x: Math.round(+row.PosX),
-    y: Math.round(+row.PosY),
+    x: +row.PosX,
+    y: +row.PosY,
     type: isShard ? 1 : 0
   });
 };
@@ -149,8 +150,8 @@ handleMonster = (row, memoryData) => {
   const newEntry = {
     map: +row.MapID,
     zoneid: +row.PlaceNameID,
-    x: Math.round(+row.PosX),
-    y: Math.round(+row.PosY)
+    x: +row.PosX,
+    y: +row.PosY
   };
   if (monsterMemoryRow !== undefined) {
     newEntry.level = +monsterMemoryRow.Level;
@@ -165,8 +166,8 @@ handleNpc = (row) => {
       {
         map: +row.MapID,
         zoneid: +row.PlaceNameID,
-        x: Math.round(+row.PosX),
-        y: Math.round(+row.PosY)
+        x: +row.PosX,
+        y: +row.PosY
       }
   };
 };
@@ -176,12 +177,14 @@ handleNpc = (row) => {
 if (hasTodo('map')) {
   const mapIds = [];
 
-  getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en,PlaceName.ID,TerritoryType.WeatherRate&key=63cc0045d7e847149c3f').subscribe(res => {
+  getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en,PlaceName.ID,TerritoryType.WeatherRate,TerritoryTypeTargetID,SizeFactor').subscribe(res => {
     res.Results.forEach(map => {
       mapIds.push({
         id: +map.ID,
         zone: +map.PlaceName.ID,
         name: map.PlaceName.Name_en,
+        territory: +map.TerritoryTypeTargetID,
+        scale: +map.SizeFactor,
         weatherRate: map.TerritoryType.WeatherRate
       });
     });
@@ -615,6 +618,7 @@ if (hasTodo('quests')) {
 
 if (hasTodo('fates')) {
   const fates = {};
+  const fatesDone$ = new Subject();
   getAllPages('https://xivapi.com/Fate?columns=ID,Name_*,Description_*,IconMap,ClassJobLevel').subscribe(page => {
     page.Results.forEach(fate => {
       fates[fate.ID] = {
@@ -634,6 +638,26 @@ if (hasTodo('fates')) {
       };
     });
   }, null, () => {
+    fatesDone$.next();
+  });
+
+  fatesDone$.pipe(
+    first(),
+    switchMap(() => {
+      return combineLatest(Object.keys(fates).map(fateId => {
+        return get(`https://www.garlandtools.org/db/doc/fate/en/2/${fateId}.json`);
+      }));
+    })
+  ).subscribe((gtFates) => {
+    gtFates.forEach(gtFate => {
+      if (gtFate.fate && gtFate.fate.zoneid && gtFate.fate.coords) {
+        fates[gtFate.fate.id].position = {
+          zoneid: gtFate.fate.zoneid,
+          x: gtFate.fate.coords[0],
+          y: gtFate.fate.coords[1]
+        };
+      }
+    });
     persistToJsonAsset('fates', fates);
   });
 }
@@ -733,4 +757,56 @@ if (hasTodo('mobs')) {
   }, null, () => {
     persistToJsonAsset('mobs', mobs);
   });
+}
+
+if (hasTodo('hunts')) {
+  const huntZones = [
+    134,
+    135,
+    137,
+    138,
+    139,
+    140,
+    141,
+    145,
+    146,
+    147,
+    148,
+    152,
+    153,
+    154,
+    155,
+    156,
+    180,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    612,
+    620,
+    621,
+    613,
+    614,
+    622
+  ];
+  combineLatest(
+    huntZones.map(zone => {
+      return get(`https://xivhunt.net/api/worlds/SpawnPoints/${zone}`)
+        .pipe(
+          map(hunt => {
+            return {
+              zoneid: zone,
+              hunts: hunt
+            };
+          })
+        );
+    }))
+    .pipe(
+      first()
+    )
+    .subscribe(hunts => {
+      persistToTypescript('hunts', 'hunts', hunts);
+    });
 }

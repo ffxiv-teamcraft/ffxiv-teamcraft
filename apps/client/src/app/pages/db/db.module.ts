@@ -26,6 +26,7 @@ import { NpcComponent } from './npc/npc.component';
 import { LeveComponent } from './leve/leve.component';
 import { MobComponent } from './mob/mob.component';
 import { FateComponent } from './fate/fate.component';
+import { MapPageComponent } from './map-page/map-page.component';
 
 const routes: Routes = [
 
@@ -108,13 +109,24 @@ const routes: Routes = [
         path: 'fate/:fateId/:slug',
         component: FateComponent,
         canActivate: [MaintenanceGuard]
+      },
+
+      {
+        path: 'map/:mapId',
+        component: MapPageComponent,
+        canActivate: [MaintenanceGuard]
+      },
+      {
+        path: 'map/:mapId/:slug',
+        component: MapPageComponent,
+        canActivate: [MaintenanceGuard]
       }
     ]
   }
 ];
 
 @NgModule({
-  declarations: [DbComponent, InstanceComponent, ItemComponent, QuestComponent, NpcComponent, LeveComponent, MobComponent, FateComponent],
+  declarations: [DbComponent, InstanceComponent, ItemComponent, QuestComponent, NpcComponent, LeveComponent, MobComponent, FateComponent, MapPageComponent],
   imports: [
     CommonModule,
 
