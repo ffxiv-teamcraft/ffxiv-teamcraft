@@ -172,6 +172,7 @@
   "No_mobs_found": "Monstruo no encontrado",
   "No_lore_entries": "Entrada de historia no encontrada",
   "No_fates_found": "Fate no encontrada",
+  "No_maps_found": "No maps found",
   "Select_all": "Seleccionar todo",
   "Do you really want to reset the list?": "¿Realmente desea reiniciar la lista?",
   "Yes": "Sí",
@@ -1153,6 +1154,8 @@
     "Drop_rate": "Taza de botín",
     "Involved_monsters": "Monstruos involucrados",
     "Reduces_to": "Reduces to",
+    "Icons_shown": "Data to show",
+    "Select_data_type": "Select data types to show to see the details here",
     "QUEST": {
       "Steps": "Pasos",
       "Unlocked_by": "Desbloqueado por",
@@ -1187,8 +1190,14 @@
     },
     "MOB": {
       "Known_spawns": "Lugares de aparición conocidos",
-      "Known_drops": "Botín conocido",
-      "Hunt_target": "Posible objetivo de caza"
+      "Known_drops": "Botín conocido"
+    },
+    "DATA_TYPE": {
+      "fate": "Fates",
+      "mob": "Monsters",
+      "npc": "NPCs",
+      "node": "Nodes",
+      "hunt": "Hunts"
     }
   },
   "SEARCH_TYPES": {
@@ -1201,7 +1210,8 @@
     "Leve_info_message": "Puede usar la página de misiones leve para preparar conjuntos leve y calcular la recompensa de exp por sus leves",
     "Monster": "Monstruo",
     "Lore": "Historia",
-    "Fate": "Fate"
+    "Fate": "Fate",
+    "Map": "Map"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "Nivel",
