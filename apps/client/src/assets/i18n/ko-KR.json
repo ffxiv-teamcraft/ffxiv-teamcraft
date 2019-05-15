@@ -1152,7 +1152,7 @@
     "GC_Delivery": "총사령부 조달 임무",
     "Drop_rate": "드랍율",
     "Involved_monsters": "관련 몬스터",
-    "Reduces_to": "Reduces to",
+    "Reduces_to": "정제로 얻는 아이템",
     "QUEST": {
       "Steps": "퀘스트 정보",
       "Unlocked_by": "선행 퀘스트",
@@ -1200,7 +1200,7 @@
     "Leve": "길드 의뢰",
     "Leve_info_message": "길드의뢰 페이지를 이용하여 의뢰 물품들을 제작하고 의뢰당 경험치를 미리 계산할 수 있습니다.",
     "Monster": "몬스터",
-    "Lore": "Lore",
+    "Lore": "대사 및 설정",
     "Fate": "돌발 임무"
   },
   "SEARCH_FILTERS": {
