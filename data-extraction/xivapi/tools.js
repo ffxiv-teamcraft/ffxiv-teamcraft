@@ -17,7 +17,12 @@ const get = (url, body) => {
       json: true
     }, (err, _, res) => res$.next(res));
   } else {
-    request(url, { json: true }, (err, _, res) => res$.next(res));
+    request(url, { json: true }, (err, _, res) => {
+      if (err) {
+        console.error(err);
+      }
+      res$.next(res);
+    });
   }
   return res$;
 };
@@ -45,6 +50,9 @@ const getAllPages = (endpoint, body) => {
       }
       return get(url, body).pipe(
         tap(result => {
+          if (result === undefined) {
+            console.log('undefined result', url);
+          }
           console.log(`${url} : ${result.Pagination.Page}/${result.Pagination.PageTotal}`);
           if (result.Pagination.PageNext > page) {
             page$.next(result.Pagination.PageNext);
