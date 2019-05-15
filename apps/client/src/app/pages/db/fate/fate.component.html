@@ -65,9 +65,41 @@
             {{gtData.fate.zoneid | placeName |i18n}} - X:{{gtData.fate.coords[0]}} Y:{{gtData.fate.coords[1]}}
           </div>
         </ng-template>
-        <app-map [mapId]="gtData.fate.mapid" [markers]="[{x: gtData.fate.coords[0], y: gtData.fate.coords[1]}]"></app-map>
+        <app-map [mapId]="gtData.fate.mapid"
+                 [markers]="[{x: gtData.fate.coords[0], y: gtData.fate.coords[1]}]"></app-map>
       </nz-card>
     </div>
+    <ng-container *ngIf="gtData.fate.items">
+      <nz-card fxFlex="1 1 auto" class="details-card"
+               [nzTitle]="title"
+               nzBordered="false"
+               *ngIf="gtData.fate.items.length > 0">
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+            {{'DB.MOB.Known_drops' | translate}}
+          </div>
+        </ng-template>
+        <nz-list [nzDataSource]="gtData.fate.items" [nzRenderItem]="dropTemplate"
+                 [nzItemLayout]="'horizontal'">
+          <ng-template #dropTemplate let-item>
+            <nz-list-item [nzContent]="more">
+              <nz-list-item-meta
+                [nzAvatar]="itemAvatar"
+                [nzTitle]="item | itemName | i18n">
+                <ng-template #itemAvatar>
+                  <app-item-icon [width]="32" [itemId]="item"
+                                 [icon]="item | lazyIcon"></app-item-icon>
+                </ng-template>
+                <div>{{item | itemName | i18n}}</div>
+                <ng-template #more>
+                  <app-db-button type="item" [id]="item"></app-db-button>
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+    </ng-container>
   </div>
 </ng-container>
 <ng-template #loader>

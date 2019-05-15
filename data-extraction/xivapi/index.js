@@ -3,9 +3,9 @@ const path = require('path');
 const fs = require('fs');
 const http = require('https');
 const Rx = require('rxjs');
-const { map, mergeMap, catchError } = require('rxjs/operators');
-const { Subject, EMPTY } = require('rxjs');
-const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries } = require('./tools.js');
+const { map, switchMap, catchError, first } = require('rxjs/operators');
+const { Subject, combineLatest } = require('rxjs');
+const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 
 const nodes = {};
 const aetherytes = [];
@@ -122,8 +122,8 @@ handleNode = (row) => {
   nodes[+row.ENpcResidentID] = {
     map: +row.MapID,
     zoneid: +row.PlaceNameID,
-    x: Math.round(+row.PosX),
-    y: Math.round(+row.PosY)
+    x: +row.PosX,
+    y: +row.PosY
   };
 };
 
@@ -134,8 +134,8 @@ handleAetheryte = (row) => {
     zoneid: +row.PlaceNameID,
     map: +row.MapID,
     placenameid: +row.PlaceNameID,
-    x: Math.round(+row.PosX),
-    y: Math.round(+row.PosY),
+    x: +row.PosX,
+    y: +row.PosY,
     type: isShard ? 1 : 0
   });
 };
@@ -149,8 +149,8 @@ handleMonster = (row, memoryData) => {
   const newEntry = {
     map: +row.MapID,
     zoneid: +row.PlaceNameID,
-    x: Math.round(+row.PosX),
-    y: Math.round(+row.PosY)
+    x: +row.PosX,
+    y: +row.PosY
   };
   if (monsterMemoryRow !== undefined) {
     newEntry.level = +monsterMemoryRow.Level;
@@ -165,8 +165,8 @@ handleNpc = (row) => {
       {
         map: +row.MapID,
         zoneid: +row.PlaceNameID,
-        x: Math.round(+row.PosX),
-        y: Math.round(+row.PosY)
+        x: +row.PosX,
+        y: +row.PosY
       }
   };
 };
@@ -615,6 +615,7 @@ if (hasTodo('quests')) {
 
 if (hasTodo('fates')) {
   const fates = {};
+  const fatesDone$ = new Subject();
   getAllPages('https://xivapi.com/Fate?columns=ID,Name_*,Description_*,IconMap,ClassJobLevel').subscribe(page => {
     page.Results.forEach(fate => {
       fates[fate.ID] = {
@@ -634,6 +635,26 @@ if (hasTodo('fates')) {
       };
     });
   }, null, () => {
+    fatesDone$.next();
+  });
+
+  fatesDone$.pipe(
+    first(),
+    switchMap(() => {
+      return combineLatest(Object.keys(fates).map(fateId => {
+        return get(`https://www.garlandtools.org/db/doc/fate/en/2/${fateId}.json`);
+      }));
+    })
+  ).subscribe((gtFates) => {
+    gtFates.forEach(gtFate => {
+      if (gtFate.fate && gtFate.fate.zoneid && gtFate.fate.coords) {
+        fates[gtFate.fate.id].position = {
+          zoneid: gtFate.fate.zoneid,
+          x: gtFate.fate.coords[0],
+          y: gtFate.fate.coords[1]
+        };
+      }
+    });
     persistToJsonAsset('fates', fates);
   });
 }
