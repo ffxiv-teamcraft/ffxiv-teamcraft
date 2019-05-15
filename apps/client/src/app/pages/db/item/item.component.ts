@@ -324,6 +324,20 @@ export class ItemComponent extends TeamcraftPageComponent {
               })
           });
         }
+        if (data.item.reducesTo !== undefined) {
+          usedFor.push({
+            type: UsedForType.REDUCTION,
+            flex: '1 1 auto',
+            title: 'DB.Reduces_to',
+            icon: 'https://www.garlandtools.org/db/images/Reduce.png',
+            links: data.item.reducesTo
+              .map(itemId => {
+                return {
+                  itemId: +itemId
+                };
+              })
+          });
+        }
         if (xivapiItem.ItemActionTargetID === 1389) {
           usedFor.push({
             flex: '0 0 auto',

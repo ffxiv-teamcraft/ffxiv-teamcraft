@@ -5,5 +5,6 @@ export enum UsedForType {
   CAN_CONTAIN_ITEMS,
   LEVES,
   QUEST,
-  SUPPLY
+  SUPPLY,
+  REDUCTION
 }
