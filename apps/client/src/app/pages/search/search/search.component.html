@@ -401,7 +401,7 @@
                     <div [innerHTML]="(row.Data | xivapiI18n) || row.Source"></div>
                     <span [innerHTML]="row | xivapiI18n: 'Text'"></span>
                   </div>
-                  <app-db-button [type]="row.Source"
+                  <app-db-button [type]="row.Source.toLowerCase()"
                                  *ngIf="row.Data.showButton"
                                  [id]="row.SourceID"></app-db-button>
                 </div>
