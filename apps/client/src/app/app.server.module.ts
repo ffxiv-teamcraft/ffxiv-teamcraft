@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import { FlexLayoutServerModule } from '@angular/flex-layout/server';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateServerLoader } from './translate-server-loader';
+import { TranslateInterceptor } from './translate-interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { en_US, NZ_I18N, NzI18nModule } from 'ng-zorro-antd/i18n';
 
 @NgModule({
   imports: [
@@ -16,15 +17,13 @@ import { TranslateServerLoader } from './translate-server-loader';
     NoopAnimationsModule,
     ModuleMapLoaderModule,
     ServerTransferStateModule,
-
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useClass: TranslateServerLoader
-      }
-    })
+    NzI18nModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TranslateInterceptor, multi: true },
+    { provide: NZ_I18N, useValue: en_US }
+  ]
 })
 export class AppServerModule {
 }

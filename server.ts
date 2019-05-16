@@ -8,6 +8,7 @@ import * as express from 'express';
 import * as path from 'path';
 import { join } from 'path';
 import { readFileSync } from 'fs';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
 
 const DIST_FOLDER = path.join(process.cwd(), 'dist/apps');
 const APP_NAME = 'client';
@@ -45,7 +46,6 @@ require('./ssr/output/gt-nodes');
 
 // Polyfills required for Firebase
 (global as any).WebSocket = require('ws');
-(global as any).XMLHttpRequest = require('xhr2');
 (global as any).Event = null;
 
 const jsdom = require('jsdom');
@@ -56,6 +56,7 @@ const template = readFileSync(path.join(DIST_FOLDER, APP_NAME, 'index.html')).to
 
 const win = new JSDOM(template).window;
 
+(global as any).XMLHttpRequest = win.XMLHttpRequest;
 (global as any).window = win;
 (global as any).DOMTokenList = win.DOMTokenList;
 (global as any).Node = win.Node;
@@ -119,13 +120,19 @@ app.get('*.*', express.static(join(DIST_FOLDER, APP_NAME)));
 const beforeRender = (req, res, next) => {
   //Get the client lang from the request
   req.lang = req.headers['accept-language'] || 'en';
+
   next();
 };
 
 
 // All regular routes use the Universal engine
 app.get('*', beforeRender, (req, res) => {
-  res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), { req });
+  res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
+    req,
+    providers: [
+      { provide: REQUEST, useValue: req }
+    ]
+  });
 });
 
 // If we're not in the Cloud Functions environment, spin up a Node server
