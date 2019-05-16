@@ -16,7 +16,7 @@ function prepareCache(sheet, pageName) {
               .filter(i => i.Name_en !== '')
               .map(item => {
               return langs.map(lang => {
-                return `https://beta.ffxivteamcraft.com/db/${lang}/${pageName}/${item.ID}/${item[`Name_${lang}`].split(' ').join('-')}`;
+                return `https://beta.ffxivteamcraft.com/db/${lang}/${pageName}/${item.ID}/${encodeURI(item[`Name_${lang}`].split(' ').join('-'))}`;
               });
             })
           );
