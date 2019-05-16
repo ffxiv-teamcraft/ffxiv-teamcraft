@@ -449,6 +449,10 @@
               nzTitle="{{'Reduction' | translate}}" nz-tooltip (click)="openReducedFromPopup()">
         <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
       </button>
+      <button nz-button nzShape="circle" *ngIf="item.desynths !== undefined && item.desynths.length > 0"
+              nzTitle="{{'Desynth' | translate}}" nz-tooltip (click)="openDesynthsPopup()">
+        <i nz-icon iconfont="icon-vectorcombine"></i>
+      </button>
       <button nz-button nzShape="circle" *ngIf="item.vendors !== undefined && item.vendors.length > 0"
               nz-tooltip [nzTitle]="'Vendors' | translate" (click)="openVendorsPopup()">
         <img class="img-icon" src="https://xivapi.com/i/065000/065002.png" alt="Gil">

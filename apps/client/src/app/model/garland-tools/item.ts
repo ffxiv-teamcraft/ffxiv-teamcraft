@@ -42,6 +42,7 @@ export class Item implements I18nData {
 
   ingredient_of?: { [index: string]: number };
   reducesTo?: number[];
+  desynthedTo?: number[];
   tradeCurrency?: any[];
   loot?: number[];
   treasure?: number[];

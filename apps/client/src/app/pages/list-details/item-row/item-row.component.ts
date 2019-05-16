@@ -67,6 +67,7 @@ import * as _ from 'lodash';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { TreasuresComponent } from '../item-details/treasures/treasures.component';
 import { FatesComponent } from '../item-details/fates/fates.component';
+import { DesynthsComponent } from '../item-details/desynth/desynths.component';
 
 @Component({
   selector: 'app-item-row',
@@ -520,6 +521,10 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   public openReducedFromPopup(): void {
     this.openDetailsPopup(ReducedFromComponent);
+  }
+
+  public openDesynthsPopup(): void {
+    this.openDetailsPopup(DesynthsComponent);
   }
 
   public openVendorsPopup(): void {

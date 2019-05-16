@@ -6,5 +6,6 @@ export enum UsedForType {
   LEVES,
   QUEST,
   SUPPLY,
-  REDUCTION
+  REDUCTION,
+  DESYNTH,
 }

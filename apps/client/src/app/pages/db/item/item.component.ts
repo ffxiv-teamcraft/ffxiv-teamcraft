@@ -338,6 +338,20 @@ export class ItemComponent extends TeamcraftPageComponent {
               })
           });
         }
+        if (data.item.desynthedTo !== undefined) {
+          usedFor.push({
+            type: UsedForType.REDUCTION,
+            flex: '1 1 auto',
+            title: 'DB.Desynths_to',
+            icon: './assets/icons/desynth.png',
+            links: data.item.desynthedTo
+              .map(itemId => {
+                return {
+                  itemId: +itemId
+                };
+              })
+          });
+        }
         if (xivapiItem.ItemActionTargetID === 1389) {
           usedFor.push({
             flex: '0 0 auto',

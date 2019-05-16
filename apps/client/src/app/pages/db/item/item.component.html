@@ -288,6 +288,19 @@
           </ng-template>
           <app-reduced-from [item]="data"></app-reduced-from>
         </nz-card>
+        <nz-card fxFlex="1 1 auto" class="details-card"
+                 *ngIf="data.desynths !== undefined && data.desynths.length > 0" nzBordered="false"
+                 [nzTitle]="title">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+              <i nz-icon iconfont="icon-vectorcombine"></i>
+              <div>
+                {{'Desynth' | translate}}
+              </div>
+            </div>
+          </ng-template>
+          <app-desynths [item]="data"></app-desynths>
+        </nz-card>
         <nz-card fxFlex="1 1 auto" class="details-card" *ngIf="data.vendors !== undefined && data.vendors.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
@@ -448,7 +461,7 @@
                  *ngFor="let row of usedFor">
           <ng-template #title>
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
-              <img class="larger-img-icon" [src]="row.icon" [alt]="row.title | translate">
+              <img class="img-icon" [src]="row.icon" [alt]="row.title | translate">
               <div>
                 {{row.title | translate}}
               </div>
