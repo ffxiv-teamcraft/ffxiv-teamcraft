@@ -23,7 +23,6 @@ function prepareCache(sheet, pageName) {
         first(),
         map(buffered => [].concat.apply([], buffered)),
         switchMap(urls => {
-          console.log(urls.length);
           // create a new progress bar instance and use shades_classic theme
           const progress = new _cliProgress.Bar({}, _cliProgress.Presets.shades_classic);
           progress.start(urls.length, 0);
