@@ -1211,7 +1211,7 @@
     "Monster": "몬스터",
     "Lore": "대사 및 설정",
     "Fate": "돌발 임무",
-    "Map": "Map"
+    "Map": "지도"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "레벨",
