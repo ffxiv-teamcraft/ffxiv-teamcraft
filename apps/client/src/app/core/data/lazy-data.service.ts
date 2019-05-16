@@ -6,6 +6,7 @@ import { XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../model/common/i18n-name';
 import { Quest } from '../../pages/db/model/quest/quest';
 import { Fate } from '../../pages/db/model/fate/fate';
+import { IS_PRERENDER } from '../tools/platform.service';
 
 @Injectable({
   providedIn: 'root'

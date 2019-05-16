@@ -26,7 +26,7 @@ export class DbComponent extends TeamcraftComponent {
         lang = 'en';
       }
       const savedLang = localStorage.getItem('locale');
-      if (!savedLang && !IS_PRERENDER) {
+      if (!savedLang || IS_PRERENDER) {
         this.translate.use(lang);
       }
     });

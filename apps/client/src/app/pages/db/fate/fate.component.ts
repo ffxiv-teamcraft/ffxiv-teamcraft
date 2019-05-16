@@ -117,7 +117,7 @@ export class FateComponent extends TeamcraftPageComponent {
           title: this.getName(fate),
           description: this.getDescription(fate),
           url: `https://ffxivteamcraft.com/db/fate/${fate.ID}/${this.getName(fate).split(' ').join('-')}`,
-          image: `https://xivapi.com/${fate.Icon}`
+          image: `https://xivapi.com${fate.IconMap}`
         };
       })
     );

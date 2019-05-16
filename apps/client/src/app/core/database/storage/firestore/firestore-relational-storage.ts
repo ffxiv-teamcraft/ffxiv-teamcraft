@@ -8,6 +8,8 @@ import { Class } from '@kaiu/serializer';
 import { map } from 'rxjs/operators';
 import { DataModel } from '../data-model';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
+import { Observable, of } from 'rxjs';
+import { IS_PRERENDER } from '../../../tools/platform.service';
 
 @Injectable()
 export abstract class FirestoreRelationalStorage<T extends DataModel> extends FirestoreStorage<T> {
@@ -21,13 +23,16 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
     this.modelInstance = new modelClass();
   }
 
-  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, uriParams?: any) {
+  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, uriParams?: any): Observable<T[]> {
     const classMetadataRegistry = Reflect.getMetadata(METADATA_FOREIGN_KEY_REGISTRY, this.modelInstance);
     const foreignPropertyEntry = classMetadataRegistry.find((entry) => entry.clazz === foreignEntityClass);
     if (foreignPropertyEntry === undefined) {
       throw new Error(`No foreign key in class ${this.getClass().name} for entity ${foreignEntityClass.name}`);
     }
     const foreignPropertyKey = foreignPropertyEntry.property;
+    if (IS_PRERENDER) {
+      return of([]);
+    }
     return this.firestore.collection(this.getBaseUri(uriParams), ref => ref.where(foreignPropertyKey, '==', foreignKeyValue))
       .snapshotChanges()
       .pipe(
