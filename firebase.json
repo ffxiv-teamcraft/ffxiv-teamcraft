@@ -24,17 +24,8 @@
         "source": "**",
         "headers": [
           {
-            "key": "Cache-control",
-            "value": "no-cache, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "**/*.@(svg)",
-        "headers": [
-          {
             "key": "Cache-Control",
-            "value": "max-age=7200"
+            "value": "public, max-age=7200"
           }
         ]
       }

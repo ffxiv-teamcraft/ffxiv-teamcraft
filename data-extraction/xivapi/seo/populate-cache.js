@@ -12,7 +12,9 @@ function prepareCache(sheet, pageName) {
       return getAllPages(`https://xivapi.com/${sheet}?columns=ID,Name_*`).pipe(
         map(page => {
           return [].concat.apply([],
-            page.Results.map(item => {
+            page.Results
+              .filter(i => i.Name_en !== '')
+              .map(item => {
               return langs.map(lang => {
                 return `https://beta.ffxivteamcraft.com/db/${lang}/${pageName}/${item.ID}/${item[`Name_${lang}`].split(' ').join('-')}`;
               });
