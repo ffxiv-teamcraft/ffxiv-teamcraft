@@ -43,11 +43,6 @@ const APP_NAME = 'client';
 
 require('./ssr/output/gt-fish');
 require('./ssr/output/gt-nodes');
-
-// Polyfills required for Firebase
-(global as any).WebSocket = require('ws');
-(global as any).Event = null;
-
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
@@ -57,6 +52,7 @@ const template = readFileSync(path.join(DIST_FOLDER, APP_NAME, 'index.html')).to
 const win = new JSDOM(template).window;
 
 (global as any).XMLHttpRequest = win.XMLHttpRequest;
+(global as any).WebSocket = win.WebSocket;
 (global as any).window = win;
 (global as any).DOMTokenList = win.DOMTokenList;
 (global as any).Node = win.Node;

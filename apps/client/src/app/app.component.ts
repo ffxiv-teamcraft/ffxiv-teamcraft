@@ -44,7 +44,7 @@ import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.fa
 import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
 import { Theme } from './modules/settings/theme';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 
 declare const gtag: Function;
@@ -211,7 +211,7 @@ export class AppComponent implements OnInit {
       filter(current => current instanceof NavigationEnd),
       switchMap((current: NavigationEnd) => {
         let url = current.url;
-        if (this.platformService.isDesktop()) {
+        if (this.platformService.isDesktop() || isPlatformServer(this.platform)) {
           return of(false);
         }
         if (url.endsWith('/')) {

@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader } from '@ngx-translate/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { shareReplay } from 'rxjs/operators';
 import { PlatformService } from './core/tools/platform.service';
+import { isPlatformServer } from '@angular/common';
 
 export function getFilename(lang: string): string {
   switch (lang) {
@@ -32,15 +33,18 @@ export function getFilename(lang: string): string {
 export class TranslationsLoader implements TranslateLoader {
 
   constructor(private http: HttpClient,
-              private platformService: PlatformService) {
+              private platformService: PlatformService,
+              private platform: any) {
   }
 
   public getTranslation(lang: string): Observable<any> {
-    console.log('LOADER, LOADING', lang);
+    if (isPlatformServer(this.platform)) {
+      return of({});
+    }
     return this.http.get(`${this.platformService.isDesktop() ? '.' : ''}/assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
   }
 }
 
 export function TranslationsLoaderFactory(http: HttpClient, platform: any, platformService: PlatformService): TranslateLoader {
-  return new TranslationsLoader(http, platformService);
+  return new TranslationsLoader(http, platformService, platform);
 }
