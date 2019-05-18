@@ -1,6 +1,6 @@
 <div class="top-part">
   <div class="search-box" fxLayout="row" fxLayoutGap="5px">
-    <nz-input-group [nzAddOnAfter]="addOnAfterTemplate">
+    <nz-input-group [nzAddOnBefore]="searchType">
       <input class="search-input" type="text"
              placeholder="{{'Search_placeholder' | translate:{type: searchType$ | async} }}" #searchInput nz-input
              [ngModel]="query$.value"
@@ -11,7 +11,7 @@
             [nzTitle]="'ITEMS.Share_url' | translate">
       <i nz-icon type="share-alt"></i>
     </button>
-    <ng-template #addOnAfterTemplate>
+    <ng-template #searchType>
       <nz-select [ngModel]="searchType$ | async" (ngModelChange)="searchType$.next($event)" class="search-type">
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate" [nzValue]="searchTypes.ITEM"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.RECIPE) | translate"

@@ -173,7 +173,7 @@
           </ng-template>
           <app-fates [item]="data"></app-fates>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.craftedBy !== undefined && data.craftedBy.length > 0" nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -191,10 +191,13 @@
                   <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                     <ng-container *ngIf="recipe.jobId !== 0">
                       <div fxLayout="column" class="recipe-title">
-                        <div fxLayout="row">
-                          <img class="recipe-job-icon" [src]="recipe.icon" alt="">
+                        <div fxLayout="row" fxLayoutGap="5px">
                           <div>{{recipe.jobId | jobAbbr | i18n}}</div>
                           <div>{{recipe.level}}{{recipe.stars_tooltip}}</div>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="5px">
+                          <b>rlvl</b>:
+                          <div>{{gtData.getCraft(recipe.recipeId).rlvl}}</div>
                         </div>
                         <div fxLayout="row" fxLayoutGap="5px">
                           <b>{{'SIMULATOR.Durability' | translate}}</b>:
@@ -248,7 +251,7 @@
             </nz-card>
           </div>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.gatheredBy !== undefined" nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -261,7 +264,7 @@
           </ng-template>
           <app-gathered-by [item]="data" [showAlarmsIntegration]="true"></app-gathered-by>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.instances !== undefined && data.instances.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
@@ -275,7 +278,7 @@
           </ng-template>
           <app-instances [item]="data"></app-instances>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.reducedFrom !== undefined && data.reducedFrom.length > 0" nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -288,7 +291,7 @@
           </ng-template>
           <app-reduced-from [item]="data"></app-reduced-from>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.desynths !== undefined && data.desynths.length > 0" nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -301,7 +304,7 @@
           </ng-template>
           <app-desynths [item]="data"></app-desynths>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card" *ngIf="data.vendors !== undefined && data.vendors.length > 0"
+        <nz-card fxFlex="1 1 30%" class="details-card" *ngIf="data.vendors !== undefined && data.vendors.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -314,7 +317,7 @@
           </ng-template>
           <app-vendors [item]="data"></app-vendors>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card" *ngIf="data.voyages !== undefined && data.voyages.length > 0"
+        <nz-card fxFlex="1 1 30%" class="details-card" *ngIf="data.voyages !== undefined && data.voyages.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -327,7 +330,7 @@
           </ng-template>
           <app-voyages [item]="data"></app-voyages>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card" *ngIf="data.ventures !== undefined && data.ventures.length > 0"
+        <nz-card fxFlex="1 1 30%" class="details-card" *ngIf="data.ventures !== undefined && data.ventures.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -341,7 +344,7 @@
           <app-ventures [item]="data"></app-ventures>
         </nz-card>
 
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.tripleTriadDuels !== undefined && data.tripleTriadDuels.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
@@ -383,7 +386,7 @@
             </ng-template>
           </nz-list>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.tripleTriadPack !== undefined"
                  nzBordered="false"
                  [nzTitle]="title">
@@ -417,7 +420,7 @@
             </ng-template>
           </nz-list>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.quests !== undefined && data.quests.length > 0" nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
