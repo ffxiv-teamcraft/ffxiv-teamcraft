@@ -896,7 +896,8 @@
       "ITEM_REMOVED": "物品删除",
       "LIST_ADDED": "列表添加",
       "LIST_REMOVED": "列表删除",
-      "LIST_PROGRESSION": "列表进度",
+      "LIST_PROGRESSION": "List materials progression",
+      "FINAL_LIST_PROGRESSION": "List final items progression",
       "USER_ASSIGNMENT": "用户分配"
     }
   },
