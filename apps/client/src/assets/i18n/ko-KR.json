@@ -896,7 +896,8 @@
       "ITEM_REMOVED": "아이템 제거",
       "LIST_ADDED": "목록 추가",
       "LIST_REMOVED": "목록 제거",
-      "LIST_PROGRESSION": "목록 진척도 변경",
+      "LIST_PROGRESSION": "List materials progression",
+      "FINAL_LIST_PROGRESSION": "List final items progression",
       "USER_ASSIGNMENT": "팀원 할당"
     }
   },
