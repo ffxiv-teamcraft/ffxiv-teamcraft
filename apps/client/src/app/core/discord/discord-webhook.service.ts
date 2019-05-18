@@ -99,8 +99,11 @@ export class DiscordWebhookService {
     }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`);
   }
 
-  notifyItemChecked(team: Team, itemIcon: number, list: List, memberId: string, amount: number, itemId: number, totalNeeded: number): void {
-    if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION)) {
+  notifyItemChecked(team: Team, itemIcon: number, list: List, memberId: string, amount: number, itemId: number, totalNeeded: number, finalItem: boolean): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION) && !finalItem) {
+      return;
+    }
+    if (!team.hasSettingEnabled(WebhookSettingType.FINAL_LIST_PROGRESSION) && finalItem) {
       return;
     }
     const itemName = this.l12n.getItem(itemId);
