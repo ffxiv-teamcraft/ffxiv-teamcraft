@@ -172,7 +172,7 @@
   "No_mobs_found": "검색 결과 없음",
   "No_lore_entries": "검색 결과 없음",
   "No_fates_found": "검색 결과 없음",
-  "No_maps_found": "No maps found",
+  "No_maps_found": "검색 결과 없음",
   "Select_all": "모두 선택",
   "Do you really want to reset the list?": "정말로 이 목록을 초기화하시겠습니까?",
   "Yes": "O",
@@ -1194,9 +1194,9 @@
       "Known_drops": "드랍 아이템"
     },
     "DATA_TYPE": {
-      "fate": "Fates",
-      "mob": "Monsters",
-      "npc": "NPCs",
+      "fate": "돌발 임무",
+      "mob": "몬스터",
+      "npc": "NPC",
       "node": "Nodes",
       "hunt": "Hunts"
     }
