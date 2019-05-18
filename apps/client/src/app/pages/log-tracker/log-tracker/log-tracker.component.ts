@@ -376,7 +376,10 @@ export class LogTrackerComponent extends TrackerComponent {
       .map(page => {
         return page.items
           .filter(item => {
-            return !this.userGatheringCompletion[item.itemId] && this.getNodeData(item.itemId, page.id).length > 0;
+            const nodes = this.getNodeData(item.itemId, page.id);
+            return !this.userGatheringCompletion[item.itemId]
+              && nodes.length > 0
+              && nodes.some(n => !n.timed);
           })
           .map(item => {
             const node = this.getNodeData(item.itemId, page.id)[0];
