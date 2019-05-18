@@ -896,7 +896,8 @@
       "ITEM_REMOVED": "アイテムが削除されました",
       "LIST_ADDED": "リストが追加されました",
       "LIST_REMOVED": "リストが削除されました",
-      "LIST_PROGRESSION": "リストの進行度を変更する",
+      "LIST_PROGRESSION": "List materials progression",
+      "FINAL_LIST_PROGRESSION": "List final items progression",
       "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる"
     }
   },
