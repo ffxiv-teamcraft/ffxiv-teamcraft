@@ -896,7 +896,8 @@
       "ITEM_REMOVED": "Предмет удален",
       "LIST_ADDED": "Список добавлен",
       "LIST_REMOVED": "Список удален",
-      "LIST_PROGRESSION": "Прогресс списка",
+      "LIST_PROGRESSION": "List materials progression",
+      "FINAL_LIST_PROGRESSION": "List final items progression",
       "USER_ASSIGNMENT": "Назначение пользователей"
     }
   },
