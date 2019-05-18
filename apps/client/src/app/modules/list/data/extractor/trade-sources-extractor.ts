@@ -33,7 +33,7 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
         npcs: ts.npcs.map(npcId => {
           const npc: TradeNpc = { id: npcId };
           const npcEntry = this.lazyData.npcs[npcId];
-          if (npcEntry) {
+          if (npcEntry && npcEntry.position) {
             npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
             npc.zoneId = npcEntry.position.zoneid;
             npc.mapId = npcEntry.position.map;

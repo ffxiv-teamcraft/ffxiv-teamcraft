@@ -11,6 +11,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { RotationPickerDrawerComponent } from './rotation-picker-drawer/rotation-picker-drawer.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     TranslateModule,
     NgZorroAntdModule,
     RouterModule,
+    FlexLayoutModule,
 
     StoreModule.forFeature('rotations', rotationsReducer, {
       initialState: rotationsInitialState

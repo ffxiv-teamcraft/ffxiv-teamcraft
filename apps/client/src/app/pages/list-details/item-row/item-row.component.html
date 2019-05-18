@@ -389,18 +389,21 @@
           </ng-template>
         </button>
       </span>
-      <button nz-button nzSize="small" nz-popover [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate"
-              [disabled]="(permissionLevel$ | async) < 20"
-              [nzContent]="calculator" nzTrigger="click">
-        <i nz-icon type="calculator"></i>
-        <ng-template #calculator>
-          <nz-input-number [nzMin]="0" [nzStep]="1"
-                           [ngModel]="0" #numberInput
-                           nzAutoFocus></nz-input-number>
-          <button nz-button (click)="add(numberInput.value)" nzType="primary">+</button>
-          <button nz-button (click)="remove(numberInput.value)" nzType="warn">-</button>
-        </ng-template>
-      </button>
+      <span nz-tooltip [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate">
+        <button nz-button nzSize="small" nz-popover [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate"
+                [disabled]="(permissionLevel$ | async) < 20"
+                [nzContent]="calculator" nzTrigger="click">
+          <i nz-icon type="calculator"></i>
+          <ng-template #calculator>
+            <nz-input-number [nzMin]="0" [nzStep]="1"
+                             [ngModel]="0" #numberInput
+                             (keypress.enter)="add(numberInput.value)"
+                             nzAutoFocus></nz-input-number>
+            <button nz-button (click)="add(numberInput.value)" nzType="primary">+</button>
+            <button nz-button (click)="remove(numberInput.value)" nzType="warn">-</button>
+          </ng-template>
+        </button>
+      </span>
       <nz-input-number [nzMin]="0" [nzMax]="item.amount" [nzSize]="'small'" [nzStep]="1"
                        [disabled]="(permissionLevel$ | async) < 20"
                        (keypress.enter)="itemDoneChanged(input.ngModel)"

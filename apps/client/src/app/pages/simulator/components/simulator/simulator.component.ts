@@ -357,7 +357,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   changeRotation(): void {
-    this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, true, this.custom);
+    this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, null, true, this.custom);
   }
 
   getCraftOptExportString(): string {

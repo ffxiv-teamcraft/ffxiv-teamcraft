@@ -36,7 +36,7 @@
           <app-favorite-button type="lists" [key]="list.$key"></app-favorite-button>
           <div *ngIf="teams$ | async as teams">
             <nz-dropdown [nzTrigger]="'click'" *ngIf="(permissionLevel$ | async) >= 20 && list.teamId === undefined">
-              <button nz-dropdown nz-button nzType="primary" nzShape="circle" [disabled]="teams.length === 0"
+              <button nz-dropdown nz-button nzShape="circle" [disabled]="teams.length === 0"
                       nz-tooltip [nzTitle]="'TEAMS.Assign_list' | translate">
                 <i class="material-icons">people_outline</i>
               </button>
@@ -62,11 +62,11 @@
             {{'Public_list' | translate}}
           </label>
           <div fxLayout="row" fxLayoutGap="5px">
-            <button nz-button nzType="primary" nzShape="circle" (click)="openTagsPopup(list)" nz-tooltip
+            <button nz-button [nzType]="list.public?'primary':'default'" nzShape="circle" (click)="openTagsPopup(list)" nz-tooltip
                     [nzTitle]="'LIST_DETAILS.Tags_popup' | translate" [disabled]="(permissionLevel$ | async) < 40">
               <i nz-icon type="tags-o"></i>
             </button>
-            <button nz-button nzType="primary" nzShape="circle" (click)="pricingMode = true" nz-tooltip
+            <button nz-button  nzShape="circle" (click)="pricingMode = true" nz-tooltip
                     [nzTitle]="'Pricing_mode' | translate" [disabled]="(permissionLevel$ | async) < 40">
               <i nz-icon iconfont="icon-dollar"></i>
             </button>
@@ -74,7 +74,7 @@
                     [nzTitle]="'LIST_DETAILS.Inventory_breakdown' | translate">
               <i class="material-icons">apps</i>
             </button>
-            <button nz-button nzType="primary" nzShape="circle"
+            <button nz-button nzShape="circle"
                     (click)="openHistoryPopup(list)" nz-tooltip
                     [nzTitle]="'LIST.History' | translate"
                     [disabled]="list.modificationsHistory.length === 0 || (permissionLevel$ | async) < 20">
@@ -102,11 +102,11 @@
                     (click)="renameList(list)" [disabled]="(permissionLevel$ | async) < 40">
               <i nz-icon type="edit"></i>
             </button>
-            <button nz-button nzShape="circle" nzType="primary" nzSize="small" nz-tooltip
+            <button nz-button nzShape="circle" nzSize="small" nz-tooltip
                     [nzTitle]="'LIST.Add_all_alarms' | translate" (click)="createAlarms(list)">
               <i nz-icon type="clock-circle-o"></i>
             </button>
-            <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+            <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
                     [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                     *ngIf="(permissionLevel$ | async) > 10"
                     ngxClipboard [cbContent]="getLink(list)"
@@ -125,7 +125,7 @@
                     [disabled]="(permissionLevel$ | async) < 30">
               <i class="material-icons">update</i>
             </button>
-            <button nz-button nzType="primary" nzSize="small" nzShape="circle" nz-tooltip
+            <button nz-button nzSize="small" nzShape="circle" nz-tooltip
                     nz-popconfirm [nzTitle]="'Reset_progression' | translate" (nzOnConfirm)="resetList(list)"
                     [disabled]="(permissionLevel$ | async) < 20">
               <i nz-icon type="reload"></i>

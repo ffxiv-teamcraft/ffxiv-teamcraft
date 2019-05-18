@@ -33,7 +33,11 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
         jobId: craft.job,
         level: craft.lvl,
         stars_tooltip: this.htmlTools.generateStars(craft.stars),
-        recipeId: craft.id
+        recipeId: craft.id,
+        rlvl: craft.rlvl,
+        durability: craft.durability,
+        progression: craft.progress,
+        quality: craft.quality
       };
       if (craft.job === 0) {
         craftedBy.icon = '';

@@ -29,6 +29,7 @@ import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { IS_PRERENDER } from '../../../core/tools/platform.service';
+import { Craft } from '../../../model/garland-tools/craft';
 
 @Component({
   selector: 'app-item',
@@ -486,8 +487,19 @@ export class ItemComponent extends TeamcraftPageComponent {
     );
   }
 
-  public openInSimulator(itemId: number, recipeId: string): void {
-    this.rotationPicker.openInSimulator(itemId, recipeId);
+  public openInSimulator(item: ListRow, itemId: number, recipeId: string): void {
+    const entry = item.craftedBy.find(c => c.recipeId === recipeId);
+    const craft: Partial<Craft> = {
+      id: recipeId,
+      job: entry.jobId,
+      lvl: entry.level,
+      stars: entry.stars_tooltip.length,
+      rlvl: entry.rlvl,
+      durability: entry.durability,
+      progress: entry.progression,
+      quality: entry.quality
+    };
+    this.rotationPicker.openInSimulator(itemId, recipeId, craft);
   }
 
   public toSearchResult(item: ListRow): SearchResult {
