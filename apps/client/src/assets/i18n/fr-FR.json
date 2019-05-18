@@ -896,8 +896,8 @@
       "ITEM_REMOVED": "Objet retiré d'une liste",
       "LIST_ADDED": "Liste ajoutée",
       "LIST_REMOVED": "Liste supprimée",
-      "LIST_PROGRESSION": "List materials progression",
-      "FINAL_LIST_PROGRESSION": "List final items progression",
+      "LIST_PROGRESSION": "Avancement des matériaux",
+      "FINAL_LIST_PROGRESSION": "Avancement des objets finaux",
       "USER_ASSIGNMENT": "Affectation d'un utilisateur"
     }
   },
