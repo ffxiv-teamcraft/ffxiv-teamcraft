@@ -51,7 +51,7 @@
                *ngIf="(xivapiNpc.ID | npcName)?.position as npcPosition">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
-            {{npcPosition.zoneid | placeName |i18n}} - X:{{npcPosition.x}} Y:{{npcPosition.y}}
+            {{npcPosition.zoneid | placeName |i18n}} - X:{{npcPosition.x | number}} Y:{{npcPosition.y | number}}
           </div>
         </ng-template>
         <app-map [mapId]="npcPosition.map" [markers]="[{x: npcPosition.x, y: npcPosition.y}]"></app-map>
