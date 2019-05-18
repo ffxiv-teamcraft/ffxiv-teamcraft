@@ -9,20 +9,22 @@
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" fxFlex="1 1 auto">
           <ng-container *ngIf="rotation.public">
-            <nz-tag *ngIf="rotation.public && !publicDisplay" [nzColor]="'#108ee9'">
+            <nz-tag *ngIf="rotation.public && !publicDisplay" class="tag" [style.border-color]="'#108ee9'">
               {{'SIMULATOR.COMMUNITY_ROTATIONS.Community_rotation' | translate}}
             </nz-tag>
             <nz-tag
-              *ngFor="let tag of rotation.tags">{{('SIMULATOR.COMMUNITY_ROTATIONS.TAGS.' + tag) | translate}}</nz-tag>
-            <nz-tag nzColor="#bd0ef2">{{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}
+              *ngFor="let tag of rotation.tags" class="tag">{{('SIMULATOR.COMMUNITY_ROTATIONS.TAGS.' + tag) | translate}}</nz-tag>
+            <nz-tag class="tag"
+                    [style.border-color]="'#bd0ef2'">{{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}
               : {{rotation.community.minCraftsmanship}}</nz-tag>
-            <nz-tag nzColor="#bd0ef2">{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}
+            <nz-tag class="tag" [style.border-color]="'#bd0ef2'">{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}
               : {{rotation.community.minControl}}</nz-tag>
-            <nz-tag nzColor="#bd0ef2">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}
+            <nz-tag class="tag" [style.border-color]="'#bd0ef2'">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}
               : {{rotation.community.minCp}}</nz-tag>
             <nz-tag
-              nzColor="#108ee9">{{'SIMULATOR.COMMUNITY_ROTATIONS.Steps_count' | translate: { count: rotation.rotation.length } }}</nz-tag>
-            <nz-tag nzColor="#f2b10e">{{'SIMULATOR.Durability' | translate}}
+              class="tag"
+              [style.border-color]="'#108ee9'">{{'SIMULATOR.COMMUNITY_ROTATIONS.Steps_count' | translate: { count: rotation.rotation.length } }}</nz-tag>
+            <nz-tag class="tag" [style.border-color]="'#f2b10e'">{{'SIMULATOR.Durability' | translate}}
               : {{rotation.community.durability}}</nz-tag>
           </ng-container>
         </div>
@@ -36,9 +38,11 @@
               </div>
               <div nz-tooltip [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Result_tooltip' | translate">
                 <nz-tag *ngIf="result.success"
-                        nzColor="darkgreen">{{'SIMULATOR.COMMUNITY_ROTATIONS.Success' | translate: { HQ: result.hqPercent } }}</nz-tag>
+                        class="tag"
+                        [style.border-color]="'darkgreen'">{{'SIMULATOR.COMMUNITY_ROTATIONS.Success' | translate: { HQ: result.hqPercent } }}</nz-tag>
                 <nz-tag *ngIf="!result.success"
-                        nzColor="#f50">{{'SIMULATOR.COMMUNITY_ROTATIONS.Fail' | translate}}</nz-tag>
+                        class="tag"
+                        [style.border-color]="'#f50'">{{'SIMULATOR.COMMUNITY_ROTATIONS.Fail' | translate}}</nz-tag>
               </div>
               <button nz-button nzType="primary" nzShape="circle" nz-tooltip
                       (click)="openMacroPopup(result.simulation)"

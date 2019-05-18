@@ -65,6 +65,9 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { ItemRowMenuElement } from '../../../model/display/item-row-menu-element';
 import * as _ from 'lodash';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { TreasuresComponent } from '../item-details/treasures/treasures.component';
+import { FatesComponent } from '../item-details/fates/fates.component';
+import { DesynthsComponent } from '../item-details/desynth/desynths.component';
 
 @Component({
   selector: 'app-item-row',
@@ -476,7 +479,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   private handleAlarms(item: ListRow): void {
     // We don't want to display more than 6 alarms, else it becomes a large shitfest
     if (!item.alarms || item.alarms.length < 8 || this.settings.showAllAlarms) {
-      this.alarms = item.alarms.sort((a, b) => {
+      this.alarms = (item.alarms || []).sort((a, b) => {
         if (a.spawns === undefined || b.spawns === undefined) {
           return a.zoneId - b.zoneId;
         }
@@ -498,7 +501,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
         const alarmsToAdd = this.item.alarms.filter(a => {
           return allAlarms.some(alarm => {
             return alarm.itemId === a.itemId && alarm.spawns === a.spawns && alarm.zoneId === a.zoneId;
-          })
+          });
         });
         this.alarmsFacade.addAlarmsAndGroup(alarmsToAdd, this.i18n.getName(this.l12n.getItem(this.item.id)));
       });
@@ -520,12 +523,24 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.openDetailsPopup(ReducedFromComponent);
   }
 
+  public openDesynthsPopup(): void {
+    this.openDetailsPopup(DesynthsComponent);
+  }
+
   public openVendorsPopup(): void {
     this.openDetailsPopup(VendorsComponent);
   }
 
   public openVenturesPopup(): void {
     this.openDetailsPopup(VenturesComponent);
+  }
+
+  public openTreasuresPopup(): void {
+    this.openDetailsPopup(TreasuresComponent);
+  }
+
+  public openFatesPopup(): void {
+    this.openDetailsPopup(FatesComponent);
   }
 
   public openVoyagesPopup(): void {
@@ -541,7 +556,18 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   public openSimulator(recipeId: string): void {
-    this.rotationPicker.openInSimulator(this.item.id, recipeId);
+    const entry = this.item.craftedBy.find(c => c.recipeId === recipeId);
+    const craft: Partial<Craft> = {
+      id: recipeId,
+      job: entry.jobId,
+      lvl: entry.level,
+      stars: entry.stars_tooltip.length,
+      rlvl: entry.rlvl,
+      durability: entry.durability,
+      progress: entry.progression,
+      quality: entry.quality
+    };
+    this.rotationPicker.openInSimulator(this.item.id, recipeId, craft);
   }
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>): void {

@@ -1,19 +1,23 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const APP_NAME = 'client'; // TODO: replace me!
+const APP_NAME = 'client';
+
+const regex = /firebase\/(app|firestore)/;
 
 module.exports = {
-  entry: {  server: './server.ts' },
+  entry: { server: './server.ts' },
   resolve: { extensions: ['.js', '.ts'] },
   mode: 'development',
   target: 'node',
-  externals: [
-    /* Firebase has some troubles being webpacked when in
-       in the Node environment, let's skip it.
-       Note: you may need to exclude other dependencies depending
-       on your project. */
-    /^firebase/
+  externals: [/node_modules/, function(context, request, callback) {
+
+    // exclude firebase products from being bundled, so they will be loaded using require() at runtime.
+    if (regex.test(request)) {
+      return callback(null, 'commonjs ' + request);
+    }
+    callback();
+  }
   ],
   output: {
     // Export a UMD of the webpacked server.ts & deps, for
@@ -25,7 +29,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.ts$/, loader: 'ts-loader' }
+      { test: /\.ts$/, exclude: /.*\/client-e2e\/.*/, loader: 'ts-loader' }
     ]
   },
   plugins: [
@@ -40,4 +44,4 @@ module.exports = {
       {}
     )
   ]
-}
+};

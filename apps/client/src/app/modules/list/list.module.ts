@@ -19,12 +19,10 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { initialState as listsInitialState, listsReducer } from './+state/lists.reducer';
 import { ListsEffects } from './+state/lists.effects';
-import { ListsFacade } from './+state/lists.facade';
 import { DatabaseModule } from '../../core/database/database.module';
 import { ListPanelComponent } from './list-panel/list-panel.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CommonModule } from '@angular/common';
-import { ListManagerService } from './list-manager.service';
 import { PipesModule } from '../../pipes/pipes.module';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 import { RouterModule } from '@angular/router';
@@ -48,11 +46,18 @@ import { ItemIconModule } from '../item-icon/item-icon.module';
 import { LayoutModule } from '../../core/layout/layout.module';
 import { ProgressPopupModule } from '../progress-popup/progress-popup.module';
 import { LazyDataService } from '../../core/data/lazy-data.service';
+import { TreasuresExtractor } from './data/extractor/treasures-extractor';
+import { FatesExtractor } from './data/extractor/fates-extractor';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, HtmlToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: GatheredByExtractor, deps: [GarlandToolsService, HtmlToolsService, LocalizedDataService, LazyDataService], multi: true },
+  {
+    provide: EXTRACTORS,
+    useClass: GatheredByExtractor,
+    deps: [GarlandToolsService, HtmlToolsService, LocalizedDataService, LazyDataService],
+    multi: true
+  },
   { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: ReducedFromExtractor, deps: [GarlandToolsService], multi: true },
@@ -63,7 +68,9 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: DropsExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GarlandToolsService, BellNodesService], multi: true },
-  { provide: EXTRACTORS, useClass: MasterbooksExtractor, deps: [GarlandToolsService], multi: true }
+  { provide: EXTRACTORS, useClass: MasterbooksExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: FatesExtractor, deps: [GarlandToolsService], multi: true }
 ];
 
 @NgModule({

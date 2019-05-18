@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-item-icon',
@@ -37,12 +38,15 @@ export class ItemIconComponent {
   @Input()
   disableClick = false;
 
+  constructor(private translate: TranslateService) {
+  }
+
   getLink(): string {
-    return `https://garlandtools.org/db/#item/${this.itemId}`;
+    return `/db/${this.translate.currentLang}/item/${this.itemId}`;
   }
 
   getIcon(): string {
-    if (this.icon && this.icon.toString() === this.icon && this.icon.indexOf('custom/') === -1) {
+    if (this.icon && this.icon.toString() === this.icon && this.icon.indexOf('custom/') === -1 && !this.icon.startsWith('t/')) {
       return this.icon;
     }
     return `https://www.garlandtools.org/files/icons/item/${this.icon}.png`;

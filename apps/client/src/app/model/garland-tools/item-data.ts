@@ -2,16 +2,15 @@ import { Item } from './item';
 import { DeserializeAs } from '@kaiu/serializer';
 import { Craft } from './craft';
 import { Instance } from '../../modules/list/model/instance';
+import { GtData } from './gt-data';
 
-export class ItemData {
+export class ItemData extends GtData {
 
   @DeserializeAs(Item)
   item: Item;
 
   @DeserializeAs([Item])
   ingredients: Item[] = [];
-
-  partials: any[];
 
   public isCraft(): boolean {
     return this.item.craft !== undefined;
@@ -25,10 +24,6 @@ export class ItemData {
   public getCraft(recipeId: string): Craft {
     return this.item.craft
       .find(craft => recipeId.toString() === craft.id.toString());
-  }
-
-  public getPartial(id: string, type?: string): any | undefined {
-    return this.partials.filter(p => type !== undefined ? p.type === type : true).find(p => p.id === id);
   }
 
   public getInstance(id: any): Instance {

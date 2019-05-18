@@ -205,7 +205,7 @@ export class List extends DataWithPermissions {
    */
   public setDone(itemId: number | string, amount: number, excludeFinalItems = false, setUsed = false, recipeId?: string, external = false, initialAddition = amount): void {
     const item = this.getItemById(itemId, excludeFinalItems, recipeId);
-    const previousDone = MathTools.absoluteCeil(item.done / item.yield);
+    const previousDone = MathTools.absoluteFloor(item.done / item.yield);
     if (setUsed) {
       // Save previous used amount
       const previousUsed = item.used;
@@ -231,8 +231,8 @@ export class List extends DataWithPermissions {
     if (item.done < 0) {
       item.done = 0;
     }
-    amount = MathTools.absoluteCeil(amount / item.yield);
-    const newDone = MathTools.absoluteCeil(item.done / item.yield);
+    amount = MathTools.absoluteFloor(amount / item.yield);
+    const newDone = MathTools.absoluteFloor(item.done / item.yield);
     if (item.requires !== undefined && newDone !== previousDone) {
       for (const requirement of item.requires) {
         const requirementItem = this.getItemById(requirement.id, excludeFinalItems);
@@ -240,7 +240,7 @@ export class List extends DataWithPermissions {
           let nextAmount = requirement.amount * amount;
           // If this is not a precraft, we have to take yields in consideration.
           if (requirementItem.requires === undefined) {
-            nextAmount = MathTools.absoluteCeil(nextAmount / requirementItem.yield);
+            nextAmount = MathTools.absoluteFloor(nextAmount / requirementItem.yield);
           }
           // If both nextAmount and the addition to used are same sign, we can propagate changes, else we don't want to go further
           // because it's probably because we added items but the requirements is not only for this item,

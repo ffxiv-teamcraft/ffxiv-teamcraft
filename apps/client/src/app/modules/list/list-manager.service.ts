@@ -15,6 +15,7 @@ import { Team } from '../../model/team/team';
 import { environment } from '../../../environments/environment';
 import { CustomItemsFacade } from '../custom-items/+state/custom-items.facade';
 import { CustomItem } from '../custom-items/model/custom-item';
+import { IS_PRERENDER } from '../../core/tools/platform.service';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +32,10 @@ export class ListManagerService {
               private discordWebhookService: DiscordWebhookService,
               private teamsFacade: TeamsFacade,
               private customItemsFacade: CustomItemsFacade) {
-    this.customItemsFacade.loadAll();
-    this.customItemsFacade.allCustomItems$.subscribe(items => this.customItemsSync = items);
+    if (!IS_PRERENDER) {
+      this.customItemsFacade.loadAll();
+      this.customItemsFacade.allCustomItems$.subscribe(items => this.customItemsSync = items);
+    }
   }
 
   public addToList(itemId: number | string, list: List, recipeId: string | number, amount = 1, collectible = false, ignoreHooks = false, upgradeCustom = false): Observable<List> {
@@ -207,18 +210,7 @@ export class ListManagerService {
           item.craftedBy = this.extractor.extractCraftedBy(item.id, data);
         }
       }
-      item.vendors = this.extractor.extractVendors(item.id, data);
-      item.tradeSources = this.extractor.extractTradeSources(item.id, data);
-      item.reducedFrom = this.extractor.extractReducedFrom(item.id, data);
-      item.desynths = this.extractor.extractDesynths(item.id, data);
-      item.instances = this.extractor.extractInstances(item.id, data);
-      item.gardening = this.extractor.extractGardening(item.id, data);
-      item.voyages = this.extractor.extractVoyages(item.id, data);
-      item.drops = this.extractor.extractDrops(item.id, data);
-      item.ventures = this.extractor.extractVentures(item.id, data);
-      item.gatheredBy = this.extractor.extractGatheredBy(item.id, data);
-      item.alarms = this.extractor.extractAlarms(item.id, data, item);
-      item.masterbooks = this.extractor.extractMasterBooks(item.id, data, item);
+      item = this.extractor.addDataToItem(item, data, true);
     });
     return list;
   }

@@ -9,6 +9,9 @@ import { Language } from './language';
 import { koActions } from './sources/ko-actions';
 import { mapIds } from './sources/map-ids';
 import { LazyDataService } from './lazy-data.service';
+import { Fate } from '../../pages/db/model/fate/fate';
+import { Quest } from '../../pages/db/model/quest/quest';
+import { tripleTriadRules } from './sources/triple-triad-rules';
 
 @Injectable()
 export class LocalizedDataService {
@@ -30,6 +33,21 @@ export class LocalizedDataService {
       row.fr = row.fr.replace(this.indentRegexp, '');
     }
     return row;
+  }
+
+  public getInstanceName(id: number): any {
+    //const koRow = this.getRow(this.lazyData.koItems, id);
+    const row = this.getRow(this.lazyData.instances, id);
+
+    if (row !== undefined) {
+      //row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
+  public getMapName(id: number): any {
+    const entry = mapIds.find(m => m.id === id);
+    return this.getPlace(entry ? entry.zone : 1);
   }
 
   public getItemIdsByName(name: string, language: Language): number[] {
@@ -58,12 +76,44 @@ export class LocalizedDataService {
     return row;
   }
 
+  public getFate(id: number): Fate {
+    const row = this.getRow<Fate>(this.lazyData.fates, id);
+    const koRow = this.getRow<Fate>(this.lazyData.fates, id);
+
+    if (row !== undefined) {
+      row.name.ko = koRow !== undefined ? koRow.name.ko : row.name.en;
+      row.description.ko = koRow !== undefined ? koRow.description.ko : row.description.en;
+    }
+    return row;
+  }
+
   public getNpc(id: number): I18nName {
     const row = this.getRow(this.lazyData.npcs, id);
     const koRow = this.getRow(this.lazyData.koNpcs, id);
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
+  public getLeve(id: number): I18nName {
+    const row = this.getRow(this.lazyData.leves, id);
+    // const koRow = this.getRow(this.lazyData.koNpcs, id);
+
+    if (row !== undefined) {
+      // row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
+  public getShopName(englishName: string): I18nName {
+    const id = +Object.keys(this.lazyData.shops).find(k => this.lazyData.shops[k].en === englishName);
+    const row = this.getRow(this.lazyData.shops, id);
+    // const koRow = this.getRow(this.lazyData.koNpcs, id);
+
+    if (row !== undefined) {
+      // row.ko = koRow !== undefined ? koRow.ko : row.en;
     }
     return row;
   }
@@ -98,8 +148,30 @@ export class LocalizedDataService {
     return row;
   }
 
+  public getMobId(name: string): number {
+    return +Object.keys(this.lazyData.mobs).find(k => this.lazyData.mobs[k].en.toLowerCase() === name.toLowerCase());
+  }
+
   public getVenture(id: number): I18nName {
     return this.getRow(ventures, id);
+  }
+
+  public getQuest(id: number): Quest {
+    const row = this.getRow<Quest>(this.lazyData.quests, id);
+    const koRow = this.getRow(this.lazyData.koQuests, id);
+    if (row !== undefined) {
+      row.name.ko = koRow !== undefined ? koRow.ko : row.name.en;
+    }
+    return row;
+  }
+
+  public getTTRule(id: number): I18nName {
+    const row = this.getRow<{ name: I18nName }>(tripleTriadRules, id);
+    const koRow = this.getRow(this.lazyData.koTripleTriadRules, id);
+    if (row !== undefined) {
+      row.name.ko = koRow !== undefined ? koRow.ko : row.name.en;
+    }
+    return row.name;
   }
 
   public getWeather(id: number): I18nName {
@@ -133,7 +205,7 @@ export class LocalizedDataService {
   public getMapId(name: string): number {
     const result = mapIds.find(map => map.name === name);
     if (result === undefined) {
-      if(name === 'Gridania'){
+      if (name === 'Gridania') {
         return 3;
       }
       return -1;
@@ -190,7 +262,7 @@ export class LocalizedDataService {
     return result;
   }
 
-  private getRow(array: any, id: number | string): I18nName {
+  private getRow<T = I18nName>(array: any, id: number | string): T {
     if (array === undefined) {
       return undefined;
     }

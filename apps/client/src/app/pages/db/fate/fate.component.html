@@ -1,0 +1,107 @@
+<ng-container *ngIf="gtData$ | async as gtData; else loader">
+  <div fxLayout="column" fxLayoutGap="10px"
+       *ngIf="xivapiFate$ | async as xivapiFate" [style.padding]="'0 50px' | ifMobile: '0'">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px" fxLayoutAlign="flex-start flex-start"
+         fxFlex="1 1 auto" fxLayoutGap="5px" class="top-bar">
+      <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="10px" fxFlex="0 0 300px"
+           fxFlex.lt-md="1 1 auto" class="top-left-block">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="icon-block">
+          <img [src]="xivapiFate.IconMap | xivapiIcon" alt="{{xivapiFate | xivapiI18n}}"
+               class="img-icon" fxFlex="0 0 auto">
+          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+            <h2 class="item-name">{{xivapiFate | xivapiI18n}}</h2>
+            <div class="item-kind">
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+          <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
+            <img [src]="link.icon" [alt]="link.title" class="link-icon">
+          </a>
+        </div>
+      </div>
+      <div fxFlex="1 1 auto">
+        <span *ngIf="xivapiFate.Description" [innerHTML]="xivapiFate | xivapiI18n: 'Description' | xivUIText"></span>
+      </div>
+      <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="/assets/icons/english.png" class="language-flag" alt="EN">
+          <div>{{xivapiFate.Name_en}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="/assets/icons/german.png" class="language-flag" alt="DE">
+          <div>{{xivapiFate.Name_de}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="/assets/icons/french.png" class="language-flag" alt="FR">
+          <div>{{xivapiFate.Name_fr}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="/assets/icons/japanese.png" class="language-flag" alt="JA">
+          <div>{{xivapiFate.Name_ja}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
+      <div class="details-block">
+        <div class="detail-name">{{'DB.Level' | translate}}</div>
+        <div class="detail-value">{{xivapiFate.ClassJobLevel}}</div>
+      </div>
+      <div class="details-block">
+        <div class="detail-name">{{'DB.Sync_to' | translate}}</div>
+        <div class="detail-value">{{xivapiFate.ClassJobLevelMax}}</div>
+      </div>
+    </div>
+
+    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
+      <nz-card fxFlex="1 1 30%" class="details-card"
+               [nzTitle]="title"
+               nzBordered="false"
+               *ngIf="gtData.fate.mapid">
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+            {{gtData.fate.zoneid | placeName |i18n}} - X:{{gtData.fate.coords[0]}} Y:{{gtData.fate.coords[1]}}
+          </div>
+        </ng-template>
+        <app-map [mapId]="gtData.fate.mapid"
+                 [markers]="[{x: gtData.fate.coords[0], y: gtData.fate.coords[1]}]"></app-map>
+      </nz-card>
+    </div>
+    <ng-container *ngIf="gtData.fate.items">
+      <nz-card fxFlex="1 1 auto" class="details-card"
+               [nzTitle]="title"
+               nzBordered="false"
+               *ngIf="gtData.fate.items.length > 0">
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+            {{'DB.MOB.Known_drops' | translate}}
+          </div>
+        </ng-template>
+        <nz-list [nzDataSource]="gtData.fate.items" [nzRenderItem]="dropTemplate"
+                 [nzItemLayout]="'horizontal'">
+          <ng-template #dropTemplate let-item>
+            <nz-list-item [nzContent]="more">
+              <nz-list-item-meta
+                [nzAvatar]="itemAvatar"
+                [nzTitle]="item | itemName | i18n">
+                <ng-template #itemAvatar>
+                  <app-item-icon [width]="32" [itemId]="item"
+                                 [icon]="item | lazyIcon"></app-item-icon>
+                </ng-template>
+                <div>{{item | itemName | i18n}}</div>
+                <ng-template #more>
+                  <app-db-button type="item" [id]="item"></app-db-button>
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+    </ng-container>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

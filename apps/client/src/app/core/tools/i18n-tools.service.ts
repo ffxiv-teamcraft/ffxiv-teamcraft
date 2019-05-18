@@ -22,6 +22,17 @@ export class I18nToolsService {
     return i18nName[this.translator.currentLang] || i18nName.en || 'missing name';
   }
 
+  public createFakeI18n(str: string): I18nName {
+    return {
+      fr: str,
+      en: str,
+      de: str,
+      ja: str,
+      zh: str,
+      ko: str
+    };
+  }
+
   public createI18nName(item: I18nData): I18nName {
     return {
       fr: item.fr.name,

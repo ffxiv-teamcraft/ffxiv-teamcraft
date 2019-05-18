@@ -35,9 +35,16 @@
 <div *ngIf="results$ | async as results">
   <div class="level-compute-params" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center"
        fxLayoutGap="10px">
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-      <nz-switch nzSize="small" [(ngModel)]="computeExp"></nz-switch>
-      <div>{{'LEVEQUESTS.Compute_exp' | translate}}</div>
+    <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <nz-switch nzSize="small" [(ngModel)]="computeExp"></nz-switch>
+        <div>{{'LEVEQUESTS.Compute_exp' | translate}}</div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <nz-switch nzSize="small" [(ngModel)]="globalExp" (ngModelChange)="globalExpChange$.next($event)"
+                   [nzDisabled]="!computeExp"></nz-switch>
+        <div>{{'LEVEQUESTS.Global_exp' | translate}}</div>
+      </div>
     </div>
     <div>Lvl</div>
     <nz-input-number [(ngModel)]="startingLevel" [nzMin]="1" [nzMax]="69"
@@ -60,9 +67,18 @@
             <label nz-checkbox class="select-box" [(ngModel)]="leve.selected"
                    (ngModelChange)="updateAllSelected(results)"></label>
             <nz-list-item-meta nz-col nzSpan="18"
-                               [nzTitle]="leve.name | i18n"
-                               [nzAvatar]="leve.itemIcon | xivapiIcon"
+                               [nzTitle]="title"
+                               [nzAvatar]="avatar"
                                [nzDescription]="description">
+              <ng-template #title>
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                  <div>{{leve.name | i18n}}</div>
+                  <app-db-button type="leve" [id]="leve.id"></app-db-button>
+                </div>
+              </ng-template>
+              <ng-template #avatar>
+                <app-item-icon [icon]="leve.itemIcon | xivapiIcon" [itemId]="leve.itemId" [width]="32"></app-item-icon>
+              </ng-template>
               <ng-template #description>
                 {{leve.itemId | itemName | i18n}}
                 <span *ngIf="leve.itemQuantity > 1">
@@ -93,7 +109,7 @@
                     <label nz-checkbox class="hq-checkbox" [(ngModel)]="leve.hq">
                       {{'Hq' | translate}}
                     </label>
-                    <nz-input-number class="amount" [nzMin]="1" [nzMax]="999" [nzPrecision]="0"
+                    <nz-input-number class="amount" [nzMin]="0" [nzMax]="999" [nzPrecision]="0"
                                      [(ngModel)]="leve.amount"></nz-input-number>
                     <label nz-checkbox class="all-deliveries" [(ngModel)]="leve.allDeliveries"
                            *ngIf="leve.repeats > 0">
@@ -112,7 +128,7 @@
                   </div>
                 </div>
                 <ng-container *ngIf="computeExp">
-                  <div *ngIf="getExp(getLeveExp(leve)) as resultExp" fxLayout="row" fxLayoutGap="5px"
+                  <div *ngIf="getExp(getLeveExp(leve), results) as resultExp" fxLayout="row" fxLayoutGap="5px"
                        fxLayoutAlign="center center">
                     <div>Lvl.{{resultExp.level}}</div>
                     <nz-progress nz-tooltip

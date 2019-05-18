@@ -29,7 +29,7 @@ import { FishTooltipDirective } from './fish-tooltip/fish-tooltip.directive';
     CoreModule
   ],
   declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, FishTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, FishTooltipDirective, UiTextPipe],
-  exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, FishTooltipDirective],
+  exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, FishTooltipDirective, UiTextPipe],
   entryComponents: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, FishTooltipComponent],
   providers: [TooltipDataService, UiColorsService]
 })

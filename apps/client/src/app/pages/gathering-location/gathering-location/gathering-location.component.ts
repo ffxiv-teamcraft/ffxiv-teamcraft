@@ -25,9 +25,9 @@ export class GatheringLocationComponent {
 
   results$: Observable<any[]>;
 
-  alarmsLoaded$: Observable<boolean>;
+  alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
 
-  alarms$: Observable<Alarm[]>;
+  alarms$: Observable<Alarm[]> = this.alarmsFacade.allAlarms$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
@@ -39,11 +39,7 @@ export class GatheringLocationComponent {
 
   constructor(private dataService: DataService, private bell: BellNodesService, private alarmsFacade: AlarmsFacade,
               private mapService: MapService, private l12n: LocalizedDataService, private gt: GarlandToolsService,
-              private router: Router, private route: ActivatedRoute, private lazyData: LazyDataService) {
-
-    this.alarmsLoaded$ = this.alarmsFacade.loaded$;
-
-    this.alarms$ = this.alarmsFacade.allAlarms$;
+              private router: Router, private route: ActivatedRoute) {
 
     this.compactDisplay = localStorage.getItem('gathering-location:compact') === 'true';
 

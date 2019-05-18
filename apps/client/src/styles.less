@@ -1,4 +1,4 @@
-@import "default-theme";
+@import "common";
 
 h1, h2, h3, h4, h5 {
   margin: 0;
@@ -19,6 +19,10 @@ h1, h2, h3, h4, h5 {
   }
 
   margin-top: 25px;
+}
+
+.ant-input, .ant-select, .ant-collapse, .ant-input-group-addon, .ant-btn, .ant-collapse-content, .ant-select-selection, .ant-input-number, .ant-collapse-item, .ant-list-item {
+  border-color: #444 !important;
 }
 
 .fake-form-label {
@@ -147,7 +151,6 @@ h1, h2, h3, h4, h5 {
 .ant-btn {
   &-background-ghost:not(.ant-btn-primary) {
     color: @text-color !important;
-    border-color: @text-color !important;
   }
 
   &-circle {

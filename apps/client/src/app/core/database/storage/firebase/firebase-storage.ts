@@ -5,8 +5,9 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 
 
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { debounceTime, map, shareReplay, tap } from 'rxjs/operators';
+import { debounceTime, map, shareReplay, tap, first } from 'rxjs/operators';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { IS_PRERENDER } from '../../../tools/platform.service';
 
 export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> {
 
@@ -36,7 +37,8 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
           return this.serializer.deserialize<T>(valueWithKey, this.getClass());
         }),
         debounceTime(50),
-        shareReplay()
+        shareReplay(),
+        IS_PRERENDER ? first() : tap()
       );
   }
 

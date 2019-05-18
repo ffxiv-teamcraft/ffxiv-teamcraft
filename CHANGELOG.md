@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.0"></a>
+# [5.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.11...v5.4.0) (2019-05-18)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with groups randomly reordering themselves on time tick ([8f02591](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f02591))
+* fixed mogboard link to make it work with new version ([c1953a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1953a2))
+* **log-tracker:** removed timed nodes from optimized path ([3234932](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3234932))
+* **ux:** multiple changes to the UI design ([cd24189](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd24189))
+
+
+### Features
+
+* Teamcraft now includes a FATE database ([d516e15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d516e15))
+* Teamcraft now includes a levequests database ([e6296f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e6296f7))
+* Teamcraft now includes a lore finder ([e14e6c8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e14e6c8))
+* Teamcraft now includes a map database ([e0a73b0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e0a73b0))
+* Teamcraft now includes a monster database ([93cfa92](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/93cfa92))
+* Teamcraft now includes a npc database ([2c3d9c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2c3d9c0))
+* Teamcraft now includes a quest database ([e2e39b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2e39b2))
+* Teamcraft now includes an instance database ([276fbb8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/276fbb8))
+* Teamcraft now includes an item database ([0469df5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0469df5))
+* **teams:** added new webhook setting for final items progress notification ([1113411](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1113411))
+
+
+
 <a name="5.3.11"></a>
 ## [5.3.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.10...v5.3.11) (2019-05-06)
 

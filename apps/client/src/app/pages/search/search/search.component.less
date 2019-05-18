@@ -1,11 +1,20 @@
-@import '../../../../default-theme';
+@import '../../../../common';
 
 .search-box {
-  width: 50%;
+  width: 80%;
   margin: auto;
   @media @mobile {
     width: 90%;
   }
+}
+
+.search-type {
+  min-width: 100px;
+}
+
+.quest-icon {
+  width: 48px;
+  height: 48px;
 }
 
 nz-form-item {
@@ -13,7 +22,7 @@ nz-form-item {
   align-items: center;
 }
 
-nz-select {
+.filter-select {
   width: 200px !important;
 }
 
@@ -93,13 +102,17 @@ nz-select {
   }
 
   .result-row {
-    border-bottom: 1px solid @text-color;
+    border-bottom: 1px solid #444;
     padding: 5px;
 
     &.odd {
       background-color: rgba(77, 77, 77, .5);
     }
   }
+}
+
+.instance-banner {
+  width: 220px;
 }
 
 ::ng-deep {

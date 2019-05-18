@@ -8,4 +8,8 @@ export interface CraftedBy {
   recipeId: string;
   jobId: number;
   masterbook?: CompactMasterbook;
+  rlvl?: number;
+  durability?: number;
+  progression?: number;
+  quality?: number;
 }

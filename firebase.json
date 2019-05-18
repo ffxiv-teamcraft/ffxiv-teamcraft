@@ -6,12 +6,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "app"
-      }
-    ],
     "redirects": [
       {
         "source": "/desktop",
@@ -24,8 +18,8 @@
         "source": "**",
         "headers": [
           {
-            "key": "Cache-control",
-            "value": "no-cache, must-revalidate"
+            "key": "Cache-Control",
+            "value": "public, max-age=7200"
           }
         ]
       }

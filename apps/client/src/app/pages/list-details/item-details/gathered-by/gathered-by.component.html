@@ -4,13 +4,13 @@
   </div>
   <nz-list [nzDataSource]="item.gatheredBy.nodes" [nzRenderItem]="nodeTemplate">
     <ng-template #nodeTemplate let-node>
-      <nz-list-item [nzActions]="[openMap]">
+      <nz-list-item [nzActions]="[openMap]" [nzExtra]="extra">
         <nz-list-item-meta [nzTitle]="node.zoneid | placeName | i18n" [nzDescription]="description">
           <ng-template #description>
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                 <span>{{node.areaid | placeName | i18n}} - lvl {{node.level}}</span>
-                <nz-tag *ngIf="node.limitType !== undefined" nzColor="orange">
+                <nz-tag *ngIf="node.limitType !== undefined" nzColor="#108ee9">
                   {{node.limitType | i18n}}
                 </nz-tag>
                 <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -34,8 +34,35 @@
               <ng-container *ngIf="(generateAlarm(node) | alarmDisplay | async) as alarm">
                 <div [class.spawned-timer]="alarm.spawned"
                      [class.played-timer]="alarm.played"
-                     *ngIf="alarm.remainingTime">
-                  {{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}
+                     *ngIf="alarm.remainingTime"
+                     fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                  <div>{{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}</div>
+                  <ng-container *ngIf="showAlarmsIntegration">
+                    <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
+                         fxLayoutGap="5px">
+                      <button nz-button nzShape="circle" nzSize="small" (click)="addAlarm(alarm.alarm)" nz-tooltip
+                              [nzTitle]="'ALARMS.Add_alarm' | translate">
+                        <i nz-icon type="clock-circle"> </i>
+                      </button>
+                      <ng-container *ngIf="alarmGroups$ | async as groups">
+                        <ng-container *ngIf="groups.length > 0">
+                          <nz-dropdown *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'">
+                            <button nz-button nzShape="circle" nzSize="small" nz-dropdown>
+                              <i nz-icon type="folder-open"></i>
+                            </button>
+                            <ul nz-menu>
+                              <li nz-menu-item *ngFor="let group of groups" (click)="addAlarm(alarm.alarm, group)">
+                                {{group.name}}
+                              </li>
+                            </ul>
+                          </nz-dropdown>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                    <ng-template #alarmCreated>
+                      {{'ALARMS.Alarm_already_created' | translate}}
+                    </ng-template>
+                  </ng-container>
                 </div>
               </ng-container>
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
@@ -57,17 +84,13 @@
               </div>
             </div>
           </ng-template>
-          <ng-template #openMap>
-            <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
-              <app-map-position [marker]="{x:node.coords[0], y: node.coords[1]}"
-                                [zoneId]="node.zoneid" [mapId]="node.mapid"></app-map-position>
-              <div
-                *ngIf="node.mapid | closestAetheryte: { x: node.coords[0], y: node.coords[1] } | async as aetheryte"
-                class="closest-tp">
-                <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName |
-                i18n}}
-              </div>
+          <ng-template #extra>
+            <div class="node-map">
+              <app-map [mapId]="node.mapid"
+                       [markers]="[{x:node.coords[0], y: node.coords[1]}]"></app-map>
             </div>
+          </ng-template>
+          <ng-template #openMap>
             <ng-container *ngIf="node.baits !== undefined">
               <app-fishing-bait [baits]="node.baits"></app-fishing-bait>
             </ng-container>

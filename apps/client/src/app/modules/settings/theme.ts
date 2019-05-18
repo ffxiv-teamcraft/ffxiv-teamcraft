@@ -1,6 +1,6 @@
 export class Theme {
 
-  public static readonly DEFAULT = new Theme('DEFAULT', '#F57C00', '#009688', 'white');
+  public static readonly DEFAULT = new Theme('DEFAULT', '#006d46', '#009688', 'white');
 
   public static readonly GREEN = new Theme('GREEN', '#009a4d', '#b77cb3', 'white');
 

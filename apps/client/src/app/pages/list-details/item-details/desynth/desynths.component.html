@@ -1,0 +1,18 @@
+<nz-list [nzRenderItem]="desynthTemplate" [nzDataSource]="item.desynths">
+  <ng-template #desynthTemplate let-desynth>
+    <nz-list-item>
+      <nz-list-item-meta [nzTitle]="title"
+                         [nzAvatar]="avatar">
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <div>{{desynth | itemName | i18n}}</div>
+            <app-db-button type="item" [id]="desynth"></app-db-button>
+          </div>
+        </ng-template>
+        <ng-template #avatar>
+          <app-item-icon [itemId]="desynth" [icon]="desynth | lazyIcon"></app-item-icon>
+        </ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+  </ng-template>
+</nz-list>

@@ -389,18 +389,21 @@
           </ng-template>
         </button>
       </span>
-      <button nz-button nzSize="small" nz-popover [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate"
-              [disabled]="(permissionLevel$ | async) < 20"
-              [nzContent]="calculator" nzTrigger="click">
-        <i nz-icon type="calculator"></i>
-        <ng-template #calculator>
-          <nz-input-number [nzMin]="0" [nzStep]="1"
-                           [ngModel]="0" #numberInput
-                           nzAutoFocus></nz-input-number>
-          <button nz-button (click)="add(numberInput.value)" nzType="primary">+</button>
-          <button nz-button (click)="remove(numberInput.value)" nzType="warn">-</button>
-        </ng-template>
-      </button>
+      <span nz-tooltip [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate">
+        <button nz-button nzSize="small" nz-popover [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate"
+                [disabled]="(permissionLevel$ | async) < 20"
+                [nzContent]="calculator" nzTrigger="click">
+          <i nz-icon type="calculator"></i>
+          <ng-template #calculator>
+            <nz-input-number [nzMin]="0" [nzStep]="1"
+                             [ngModel]="0" #numberInput
+                             (keypress.enter)="add(numberInput.value)"
+                             nzAutoFocus></nz-input-number>
+            <button nz-button (click)="add(numberInput.value)" nzType="primary">+</button>
+            <button nz-button (click)="remove(numberInput.value)" nzType="warn">-</button>
+          </ng-template>
+        </button>
+      </span>
       <nz-input-number [nzMin]="0" [nzMax]="item.amount" [nzSize]="'small'" [nzStep]="1"
                        [disabled]="(permissionLevel$ | async) < 20"
                        (keypress.enter)="itemDoneChanged(input.ngModel)"
@@ -449,6 +452,10 @@
               nzTitle="{{'Reduction' | translate}}" nz-tooltip (click)="openReducedFromPopup()">
         <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
       </button>
+      <button nz-button nzShape="circle" *ngIf="item.desynths !== undefined && item.desynths.length > 0"
+              nzTitle="{{'Desynth' | translate}}" nz-tooltip (click)="openDesynthsPopup()">
+        <i nz-icon iconfont="icon-vectorcombine"></i>
+      </button>
       <button nz-button nzShape="circle" *ngIf="item.vendors !== undefined && item.vendors.length > 0"
               nz-tooltip [nzTitle]="'Vendors' | translate" (click)="openVendorsPopup()">
         <img class="img-icon" src="https://xivapi.com/i/065000/065002.png" alt="Gil">
@@ -460,6 +467,14 @@
       <button nz-button nzShape="circle" *ngIf="item.ventures !== undefined && item.ventures.length > 0"
               nz-tooltip [nzTitle]="'Retainer_ventures' | translate" (click)="openVenturesPopup()">
         <img class="img-icon round-icon" src="https://garlandtools.org/files/icons/item/3503.png" alt="Ventures">
+      </button>
+      <button nz-button nzShape="circle" *ngIf="item.treasures !== undefined && item.treasures.length > 0"
+              nz-tooltip [nzTitle]="'Treasures' | translate" (click)="openTreasuresPopup()">
+        <img class="img-icon round-icon" src="./assets/icons/chest_open.png" alt="Treasures">
+      </button>
+      <button nz-button nzShape="circle" *ngIf="item.fates !== undefined && item.fates.length > 0"
+              nz-tooltip [nzTitle]="'Fates' | translate" (click)="openFatesPopup()">
+        <img class="img-icon round-icon" [src]="(item.fates[0].id | fate).icon | xivapiIcon" alt="Fates">
       </button>
       <div *ngFor="let craft of item.craftedBy; trackBy: trackByCraft"
            [fxLayout]="item.craftedBy.length > 1?'column':'row'"

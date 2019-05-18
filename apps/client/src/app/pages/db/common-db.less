@@ -1,0 +1,118 @@
+@mobile: ~"screen and (max-width: 575px)";
+
+:host ::ng-deep {
+
+  .details-card {
+    background-color: rgba(0, 0, 0, .4);
+    margin-bottom: 10px;
+    min-width: 30%;
+  }
+
+  .details-card {
+    min-width: 250px;
+    >.ant-card-body {
+      max-height: 800px;
+      overflow-y: auto;
+    }
+  }
+
+  .ant-card-head {
+    background-color: rgba(0, 0, 0, .10) !important;
+    border-bottom-color: rgba(255, 255, 255, .4);
+  }
+}
+
+.instance-banner {
+  width: 200px;
+  height: auto;
+}
+
+.recipe-title {
+  margin-bottom: 10px;
+}
+
+.item-name {
+  margin-bottom: 0;
+}
+
+.item-kind {
+  opacity: .8;
+}
+
+.language-flag {
+  height: 24px;
+  width: 24px;
+}
+
+.card-header {
+  height: 30px;
+}
+
+.top-bar {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, .25);
+}
+
+.details-container {
+  padding: 10px 10px 5px;
+  background-color: rgba(0, 0, 0, .25);
+}
+
+.link-icon {
+  height: 24px;
+  width: auto;
+}
+
+.top-left-block {
+  height: 111px;
+  @media @mobile {
+    height: auto;
+  }
+
+  .icon-block {
+    line-height: 20px;
+  }
+}
+
+.img-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.larger-img-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.round-icon {
+  border-radius: 50%;
+}
+
+.recipe-job-icon {
+  height: 48px;
+  width: 48px;
+}
+
+.details-block {
+  min-width: 200px;
+  @media @mobile {
+    min-width: 100%;
+  }
+  padding: 10px;
+  background-color: rgba(0, 0, 0, .25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+
+  .detail-name {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+  }
+
+  .detail-value {
+    .hq-value {
+      font-weight: bold;
+    }
+  }
+}

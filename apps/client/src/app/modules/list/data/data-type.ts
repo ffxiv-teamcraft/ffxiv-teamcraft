@@ -12,4 +12,6 @@ export enum DataType {
   VENTURE,
   ALARMS,
   MASTERBOOKS,
+  TREASURES,
+  FATES
 }

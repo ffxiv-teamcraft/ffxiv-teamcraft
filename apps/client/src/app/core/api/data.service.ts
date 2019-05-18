@@ -10,12 +10,26 @@ import { SearchFilter } from '../../model/search/search-filter.interface';
 import { map, switchMap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 import { LazyDataService } from '../data/lazy-data.service';
+import { InstanceData } from '../../model/garland-tools/instance-data';
+import { QuestData } from '../../model/garland-tools/quest-data';
+import { NpcData } from '../../model/garland-tools/npc-data';
+import { LeveData } from '../../model/garland-tools/leve-data';
+import { MobData } from '../../model/garland-tools/mob-data';
+import { FateData } from '../../model/garland-tools/fate-data';
 
 @Injectable()
 export class DataService {
 
   private garlandUrl = 'https://www.garlandtools.org/db/doc';
-  private garlandtoolsVersion = 3;
+  private garlandtoolsVersions = {
+    item: 3,
+    instance: 2,
+    quest: 2,
+    npc: 2,
+    leve: 3,
+    mob: 2,
+    fate: 2,
+  };
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 
   constructor(private http: HttpClient,
@@ -31,8 +45,68 @@ export class DataService {
    * @returns {Observable<ItemData>}
    */
   public getItem(id: number): Observable<ItemData> {
-    return this.getGarlandData(`/item/en/${this.garlandtoolsVersion}/${id}`)
+    return this.getGarlandData(`/item/en/${this.garlandtoolsVersions.item}/${id}`)
       .pipe(map(item => this.serializer.deserialize<ItemData>(item, ItemData)));
+  }
+
+  /**
+   * Gets an instance based on its id.
+   * @param {number} id
+   * @returns {Observable<InstanceData>}
+   */
+  public getInstance(id: number): Observable<InstanceData> {
+    return this.getGarlandData(`/instance/en/${this.garlandtoolsVersions.instance}/${id}`)
+      .pipe(map(item => this.serializer.deserialize<InstanceData>(item, InstanceData)));
+  }
+
+  /**
+   * Gets an instance based on its id.
+   * @param {number} id
+   * @returns {Observable<NpcData>}
+   */
+  public getNpc(id: number): Observable<NpcData> {
+    return this.getGarlandData(`/npc/en/${this.garlandtoolsVersions.npc}/${id}`)
+      .pipe(map(item => this.serializer.deserialize<NpcData>(item, NpcData)));
+  }
+
+  /**
+   * Gets a quest based on its id.
+   * @param {number} id
+   * @returns {Observable<QuestData>}
+   */
+  public getQuest(id: number): Observable<QuestData> {
+    return this.getGarlandData(`/quest/en/${this.garlandtoolsVersions.quest}/${id}`)
+      .pipe(map(item => this.serializer.deserialize<QuestData>(item, QuestData)));
+  }
+
+  /**
+   * Gets a quest based on its id.
+   * @param {number} id
+   * @returns {Observable<LeveData>}
+   */
+  public getLeve(id: number): Observable<LeveData> {
+    return this.getGarlandData(`/leve/en/${this.garlandtoolsVersions.leve}/${id}`)
+      .pipe(map(item => this.serializer.deserialize<LeveData>(item, LeveData)));
+  }
+
+  /**
+   * Gets a mob based on its id.
+   * @param {number} id
+   * @returns {Observable<MobData>}
+   */
+  public getMob(id: string): Observable<MobData> {
+    return this.getGarlandData(`/mob/en/${this.garlandtoolsVersions.mob}/${id}`)
+      .pipe(map(item => this.serializer.deserialize<MobData>(item, MobData)));
+  }
+
+  /**
+   * Gets a mob based on its id.
+   * @param {number} id
+   * @returns {Observable<MobData>}
+   */
+  public getFate(id: number): Observable<FateData> {
+    return this.getGarlandData(`/fate/en/${this.garlandtoolsVersions.mob}/${id}`)
+      .pipe(map(item => this.serializer.deserialize<FateData>(item, FateData)));
   }
 
   /**
@@ -162,7 +236,7 @@ export class DataService {
         if (itemIds.length === 0) {
           return of([]);
         }
-        return this.getGarlandData(`/item/en/${this.garlandtoolsVersion}/${itemIds.join(',')}`)
+        return this.getGarlandData(`/item/en/${this.garlandtoolsVersions.item}/${itemIds.join(',')}`)
           .pipe(
             map(items => {
               if (!(items instanceof Array)) {

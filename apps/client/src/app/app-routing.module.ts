@@ -112,6 +112,10 @@ const routes: Routes = [
     path: 'support-us',
     loadChildren: './pages/support-us/support-us.module#SupportUsModule'
   },
+  {
+    path: 'db',
+    loadChildren: './pages/db/db.module#DbModule'
+  },
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-instances',
@@ -8,7 +9,7 @@ import { ItemDetailsPopup } from '../item-details-popup';
 })
 export class InstancesComponent extends ItemDetailsPopup {
 
-  constructor() {
+  constructor(public translate: TranslateService) {
     super();
   }
 

@@ -6,7 +6,7 @@
        [style.width.px]="width">
 </span>
 <ng-template #anchor>
-  <a class="icon-container" [href]="disableClick?null:getLink()" target="_blank"
+  <a class="icon-container" [routerLink]="disableClick?null:getLink()"
      [appXivApiTooltip]="itemId" [appXivApiTooltipDisabled]="tooltipDisabled">
     <img [src]="getIcon()" alt="{{itemName}}" class="item-icon"
          [style.width.px]="width">

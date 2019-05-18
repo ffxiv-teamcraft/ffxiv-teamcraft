@@ -18,7 +18,7 @@ export class TooltipDataService {
     return this.xivapi.get(XivapiEndpoint.Item, id).pipe(
       mergeMap((item) => {
         // If it's a  consumable, get item action details and put it inside item action itself.
-        if (item.ItemAction && item.ItemAction.Type === 844) {
+        if (item.ItemAction && [844, 845, 846].indexOf(item.ItemAction.Type) > -1) {
           return this.xivapi.get(XivapiEndpoint.ItemFood, item.ItemAction.Data1).pipe(
             map(itemFood => {
               item.ItemFood = itemFood;

@@ -14,6 +14,10 @@ export class MathTools {
     return n >= 0 ? Math.ceil(n) : Math.floor(n);
   }
 
+  public static absoluteFloor(n: number): number {
+    return n >= 0 ? Math.floor(n) : Math.ceil(n);
+  }
+
   public static round(n: number): number {
     const rounded = Math.round(n * MathTools.PRECISION) / MathTools.PRECISION;
     // We have to handle /3 fraction by ourselves, this check is here for that
