@@ -1198,8 +1198,8 @@
       "fate": "돌발 임무",
       "mob": "몬스터",
       "npc": "NPC",
-      "node": "Nodes",
-      "hunt": "Hunts"
+      "node": "채집 장소",
+      "hunt": "마물"
     }
   },
   "SEARCH_TYPES": {
