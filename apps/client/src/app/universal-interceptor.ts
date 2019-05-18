@@ -1,0 +1,29 @@
+import { Inject, Injectable, Optional } from '@angular/core';
+import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { Request } from 'express';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
+
+@Injectable()
+export class UniversalInterceptor implements HttpInterceptor {
+
+  constructor(@Optional() @Inject(REQUEST) protected request: Request) {
+  }
+
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
+    let serverReq: HttpRequest<any> = req;
+    if (this.request && !req.url.startsWith('http')) {
+      let newUrl = `${this.request.protocol}://${this.request.get('host')}`;
+      if (!req.url.startsWith('/')) {
+        newUrl += '/';
+      }
+      if (req.url.startsWith('./')) {
+        newUrl += req.url.slice(1);
+      } else {
+        newUrl += req.url;
+      }
+      serverReq = req.clone({ url: newUrl });
+    }
+    return next.handle(serverReq);
+  }
+}
+

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { GarlandToolsData } from '../../model/common/garland-tools-data';
 import { Item } from '../../model/garland-tools/item';
 import { JobCategory } from '../../model/garland-tools/job-category';
@@ -25,7 +25,7 @@ export class GarlandToolsService {
 
   public onceLoaded$: Observable<boolean> = this.loaded$.pipe(filter(loaded => loaded));
 
-  constructor(private serializer: NgSerializerService, private http: HttpClient) {
+  constructor(private serializer: NgSerializerService, private http: HttpClient, @Inject(PLATFORM_ID)platform: Object) {
     this.preload();
   }
 

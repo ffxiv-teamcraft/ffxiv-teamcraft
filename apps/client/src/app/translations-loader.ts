@@ -38,10 +38,7 @@ export class TranslationsLoader implements TranslateLoader {
   }
 
   public getTranslation(lang: string): Observable<any> {
-    if (isPlatformServer(this.platform)) {
-      return of({});
-    }
-    return this.http.get(`${this.platformService.isDesktop() ? '.' : ''}/assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
+    return this.http.get(`./assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
   }
 }
 

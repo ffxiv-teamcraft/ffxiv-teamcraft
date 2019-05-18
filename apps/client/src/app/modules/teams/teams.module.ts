@@ -10,6 +10,7 @@ import { TeamsEffects } from './+state/teams.effects';
 import { TeamsFacade } from './+state/teams.facade';
 import { CoreModule } from '../../core/core.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { DatabaseModule } from '../../core/database/database.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
     CoreModule,
     TranslateModule,
+    DatabaseModule,
 
     StoreModule.forFeature('teams', teamsReducer, {
       initialState: teamsInitialState

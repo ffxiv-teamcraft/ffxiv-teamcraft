@@ -8,7 +8,9 @@ import { spearFishingNodes } from './sources/spear-fishing-nodes';
 import { GarlandToolsService } from '../api/garland-tools.service';
 import { LazyDataService } from './lazy-data.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class BellNodesService {
 
   /**

@@ -77,12 +77,7 @@ export class LazyDataService {
   }
 
   constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) platform: Object) {
-    if (isPlatformServer(platform)) {
-      console.log('SERVER, DO NOT LOAD !!!');
-      this.loaded$.next(true);
-    } else {
-      this.load();
-    }
+    this.load();
   }
 
   private load(): void {

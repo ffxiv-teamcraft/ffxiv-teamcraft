@@ -11,7 +11,6 @@ function isConstructor(f: any) {
 }
 
 export const IS_ELECTRON = navigator && navigator.userAgent.toLowerCase().indexOf('electron/') > -1;
-export const IS_PRERENDER = !isConstructor(URLSearchParams) || new URLSearchParams(window.location.search).has('prerender');
 
 @Injectable()
 export class PlatformService {

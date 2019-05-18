@@ -54,6 +54,7 @@ const win = new JSDOM(template).window;
 (global as any).XMLHttpRequest = win.XMLHttpRequest;
 (global as any).WebSocket = win.WebSocket;
 (global as any).window = win;
+(global as any).window.gt = (global as any).gt;
 (global as any).DOMTokenList = win.DOMTokenList;
 (global as any).Node = win.Node;
 (global as any).Text = win.Text;

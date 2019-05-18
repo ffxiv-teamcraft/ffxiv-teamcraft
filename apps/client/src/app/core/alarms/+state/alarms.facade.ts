@@ -37,7 +37,7 @@ export class AlarmsFacade {
   allAlarms$ = this.store.select(alarmsQuery.getAllAlarms);
   allGroups$ = this.store.select(alarmsQuery.getAllGroups);
 
-  alarmsPageDisplay$ = combineLatest(this.etime.getEorzeanTime(), this.allAlarms$, this.allGroups$).pipe(
+  alarmsPageDisplay$ = combineLatest([this.etime.getEorzeanTime(), this.allAlarms$, this.allGroups$]).pipe(
     map(([date, alarms, groups]) => {
       const display = new AlarmsPageDisplay();
       // First of all, populate grouped alarms.
