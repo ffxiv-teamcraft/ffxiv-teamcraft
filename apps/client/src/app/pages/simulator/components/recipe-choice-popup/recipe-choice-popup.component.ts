@@ -31,7 +31,6 @@ export class RecipeChoicePopupComponent {
               private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
               private translate: TranslateService) {
     this.results$ = this.query$.pipe(
-      debounceTime(500),
       filter(query => {
         if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
           // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
@@ -40,6 +39,7 @@ export class RecipeChoicePopupComponent {
         return query.length > 3;
       }),
       tap(() => this.loading = true),
+      debounceTime(500),
       switchMap(query => {
         return this.dataService.searchItem(query, [], true);
       }),
