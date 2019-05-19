@@ -231,7 +231,7 @@ export class List extends DataWithPermissions {
     if (item.done < 0) {
       item.done = 0;
     }
-    amount = MathTools.absoluteFloor(amount / item.yield);
+    amount = MathTools.absoluteCeil(amount / item.yield);
     const newDone = MathTools.absoluteFloor(item.done / item.yield);
     if (item.requires !== undefined && newDone !== previousDone) {
       for (const requirement of item.requires) {
@@ -240,7 +240,7 @@ export class List extends DataWithPermissions {
           let nextAmount = requirement.amount * amount;
           // If this is not a precraft, we have to take yields in consideration.
           if (requirementItem.requires === undefined) {
-            nextAmount = MathTools.absoluteFloor(nextAmount / requirementItem.yield);
+            nextAmount = MathTools.absoluteCeil(nextAmount / requirementItem.yield);
           }
           // If both nextAmount and the addition to used are same sign, we can propagate changes, else we don't want to go further
           // because it's probably because we added items but the requirements is not only for this item,

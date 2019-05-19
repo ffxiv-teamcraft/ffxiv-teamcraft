@@ -12,6 +12,7 @@ import { FishingBait } from '../../model/fishing-bait';
 import { spearFishingNodes } from '../../../../core/data/sources/spear-fishing-nodes';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { fishEyes } from '../../../../core/data/sources/fish-eyes';
+import { gatheringItems } from '../../../../core/data/sources/gathering-items';
 
 export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
 
@@ -33,10 +34,11 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
   }
 
   protected doExtract(item: Item, itemData: ItemData): GatheredBy {
+    const gatheringItem = Object.keys(gatheringItems).map(key => gatheringItems[key]).find(g => g.itemId === item.id);
     const gatheredBy: GatheredBy = {
       icon: '',
-      stars_tooltip: '',
-      level: 999,
+      stars_tooltip: gatheringItem ? this.htmlTools.generateStars(gatheringItem.stars) : '',
+      level: gatheringItem ? gatheringItem.level : 999,
       nodes: [],
       type: -1
     };
@@ -60,10 +62,13 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
           './assets/icons/BTN.png',
           'https://garlandtools.org/db/images/FSH.png'
         ][partial.t];
-        gatheredBy.stars_tooltip = this.htmlTools.generateStars(partial.s);
-        gatheredBy.level = gatheredBy.level > +partial.l ? +partial.l : gatheredBy.level;
+        if (gatheringItem === undefined) {
+          gatheredBy.stars_tooltip = this.htmlTools.generateStars(partial.s);
+          gatheredBy.level = gatheredBy.level > +partial.l ? +partial.l : gatheredBy.level;
+        }
         if (partial.n !== undefined) {
           const storedNode: Partial<StoredNode> = {
+            id: +partial.i,
             zoneid: partial.z,
             level: +partial.l,
             areaid: this.localized.getAreaIdByENName(partial.n)
@@ -127,6 +132,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
         const zoneId = this.localized.getAreaIdByENName(spot.title);
         if (mapId !== undefined) {
           const node: StoredNode = {
+            id: 0,
             mapid: mapId,
             areaid: mapId,
             zoneid: zoneId,
@@ -173,6 +179,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
           const mapId = this.localized.getMapId(this.localized.getPlace(partial.obj.z).en);
           if (partial !== undefined) {
             const node: StoredNode = {
+              id: 0,
               zoneid: partial.obj.z,
               areaid: partial.obj.z,
               mapid: mapId,

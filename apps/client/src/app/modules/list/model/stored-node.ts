@@ -2,6 +2,7 @@ import { I18nName } from '../../../model/common/i18n-name';
 import { FishingBait } from './fishing-bait';
 
 export interface StoredNode {
+  id?: number;
   zoneid: number;
   areaid: number;
   mapid: number;

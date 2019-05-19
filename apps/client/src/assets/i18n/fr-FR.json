@@ -1158,6 +1158,14 @@
     "Icons_shown": "Données à afficher",
     "Select_data_type": "Sélectionnez les types de données à afficher pour voir les détails ici",
     "Desynths_to": "Se recycle en",
+    "Limited": "Apparition limitée",
+    "NODE": {
+      "Items": "Objets",
+      "Possible_bonuses": "Bonus possibles",
+      "Bonus_condition": "Condition",
+      "Spawn_duration": "Durée de l'apparition",
+      "Spawns": "Apparitions"
+    },
     "QUEST": {
       "Steps": "Étapes",
       "Unlocked_by": "Déverrouillé par",

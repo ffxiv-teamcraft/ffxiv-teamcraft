@@ -5,23 +5,23 @@
     <i class="marker material-icons default-marker"
        *ngIf="!marker.iconType"
        [ngStyle]="getMarkerStyle(map, marker)"
-       nz-tooltip [nzTitle]="marker.tooltip">
+       nz-tooltip [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)">
       location_on
     </i>
     <img [src]="marker.iconImg" alt=""
          *ngIf="marker.iconType === 'img'"
          class="marker"
          [ngStyle]="getMarkerStyle(map, marker)"
-         nz-tooltip [nzTitle]="marker.tooltip">
+         nz-tooltip [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)">
     <i nz-icon [type]="marker.nzIcon"
        *ngIf="marker.iconType === 'ant'"
        class="marker"
        [ngStyle]="getMarkerStyle(map, marker)"
-       nz-tooltip [nzTitle]="marker.tooltip"></i>
+       nz-tooltip [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)"></i>
     <i *ngIf="marker.iconType === 'material'"
        class="marker material-icons"
        [ngStyle]="getMarkerStyle(map, marker)"
-       nz-tooltip [nzTitle]="marker.tooltip">
+       nz-tooltip [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)">
       {{marker.materialIcon}}
     </i>
   </ng-container>
