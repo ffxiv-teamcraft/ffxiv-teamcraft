@@ -1,0 +1,179 @@
+<ng-container *ngIf="xivapiNode$ | async as xivapiNode; else loader">
+  <div fxLayout="column" fxLayoutGap="10px" [style.padding]="'0 50px' | ifMobile: '0'">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px" fxLayoutAlign="flex-start flex-start"
+         fxFlex="1 1 auto" fxLayoutGap="5px" class="top-bar">
+      <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="10px" fxFlex="0 0 300px"
+           fxFlex.lt-md="1 1 auto" class="top-left-block">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="icon-block">
+          <img
+            [src]="(xivapiNode.IsLimited?xivapiNode.GatheringType.IconOff : xivapiNode.GatheringType.IconMain) | xivapiIcon"
+            class="img-icon" fxFlex="0 0 auto">
+          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+            <h2 class="item-name"
+                *ngIf="xivapiNode.GatheringPoints[0]?.PlaceName; else otherName">{{xivapiNode.GatheringPoints[0]?.PlaceName | xivapiI18n}}</h2>
+            <ng-template #otherName>
+              <h2 class="item-name" *ngIf="xivapiNode.mappyData">{{xivapiNode.mappyData.zoneid | placeName | i18n}}</h2>
+            </ng-template>
+            <div class="item-kind">
+              Lvl {{xivapiNode.GatheringLevel}} <span
+              [innerHTML]="xivapiNode.GatheringType | xivapiI18n"></span>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+          <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
+            <img [src]="link.icon" [alt]="link.title" class="link-icon">
+          </a>
+        </div>
+      </div>
+      <div fxFlex="1 1 auto">
+      </div>
+    </div>
+    <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
+      <div class="details-block">
+        <div class="detail-name">{{'DB.Limited' | translate}}</div>
+        <div class="detail-value">{{(xivapiNode.IsLimited === 0 ? 'No' : 'Yes') | translate}}</div>
+      </div>
+      <div class="details-block" *ngIf="xivapiNode.IsLimited && xivapiNode.gtNode">
+        <div class="detail-name">{{'DB.NODE.Spawn_duration' | translate}}</div>
+        <div class="detail-value">{{xivapiNode.gtNode.uptime / 60}}h</div>
+      </div>
+      <div class="details-block" *ngIf="xivapiNode.IsLimited && xivapiNode.gtNode">
+        <div class="detail-name">{{'DB.NODE.Spawns' | translate}}</div>
+        <div class="detail-value"><span *ngFor="let hour of xivapiNode.gtNode.time; let last = last">{{hour}}:00<span
+          *ngIf="!last">, </span></span></div>
+      </div>
+      <div class="details-block" *ngIf="xivapiNode.IsLimited && xivapiNode.gtNode">
+        <div class="detail-value">
+          <ng-container>
+            <div *ngIf="(generateAlarm(xivapiNode) | alarmDisplay | async) as alarm"
+                 [class.spawned-timer]="alarm.spawned"
+                 [class.played-timer]="alarm.played">
+              {{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column" *ngIf="xivapiNode.mappyData as data">
+      <nz-card fxFlex="1 1 30%" class="details-card"
+               [nzTitle]="title"
+               nzBordered="false"
+               *ngIf="data.zoneid">
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+            {{data.zoneid | placeName | i18n}} - X:{{data.x | number}} Y:{{data.y | number}}
+          </div>
+        </ng-template>
+        <app-map [mapId]="data.map"
+                 [markers]="[{x: data.x, y: data.y}]"></app-map>
+      </nz-card>
+      <nz-card fxFlex="1 1 auto" class="details-card"
+               [nzTitle]="title"
+               nzBordered="false"
+               *ngIf="data.items.length > 0">
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+            {{'DB.NODE.Items' | translate}}
+          </div>
+        </ng-template>
+        <nz-list [nzDataSource]="data.items" [nzRenderItem]="itemTemplate"
+                 [nzItemLayout]="'horizontal'">
+          <ng-template #itemTemplate let-item>
+            <nz-list-item [nzContent]="more">
+              <nz-list-item-meta
+                [nzAvatar]="itemAvatar"
+                [nzTitle]="title"
+                [nzDescription]="description">
+                <ng-template #description>
+                  <div *ngIf="getGatheringItem(item) as gatheringItem">
+                    Lvl {{gatheringItem.level}} <span
+                    *ngIf="gatheringItem.stars">{{gatheringItem.stars | ingameStars}}</span>
+                    <span *ngIf="getSlot(item, xivapiNode) as slot"> ({{'ALARMS.CUSTOM.Slot' | translate}} {{slot}}
+                      )</span>
+                  </div>
+                </ng-template>
+                <ng-template #itemAvatar>
+                  <app-item-icon [width]="32" [itemId]="item"
+                                 [icon]="item | lazyIcon"></app-item-icon>
+                </ng-template>
+                <ng-template #title>
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                    <div>{{item | itemName | i18n}}</div>
+                    <nz-tag
+                      *ngIf="getGatheringItem(item)?.hidden">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</nz-tag>
+                  </div>
+                </ng-template>
+                <ng-template #more>
+                  <div fxLayout="row" fxLayoutAlign="flex-start center">
+                    <div *ngIf="xivapiNode.IsLimited && xivapiNode.gtNode">
+                      <ng-container *ngIf="(generateAlarm(xivapiNode, item) | alarmDisplay | async) as alarm">
+                        <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
+                             fxLayoutGap="5px">
+                          <button nz-button nzShape="circle" nzSize="small" (click)="addAlarm(alarm.alarm)" nz-tooltip
+                                  [nzTitle]="'ALARMS.Add_alarm' | translate">
+                            <i nz-icon type="clock-circle"> </i>
+                          </button>
+                          <ng-container *ngIf="alarmGroups$ | async as groups">
+                            <ng-container *ngIf="groups.length > 0">
+                              <nz-dropdown *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'">
+                                <button nz-button nzShape="circle" nzSize="small" nz-dropdown>
+                                  <i nz-icon type="folder-open"></i>
+                                </button>
+                                <ul nz-menu>
+                                  <li nz-menu-item *ngFor="let group of groups" (click)="addAlarm(alarm.alarm, group)">
+                                    {{group.name}}
+                                  </li>
+                                </ul>
+                              </nz-dropdown>
+                            </ng-container>
+                          </ng-container>
+                        </div>
+                        <ng-template #alarmCreated>
+                          {{'ALARMS.Alarm_already_created' | translate}}
+                        </ng-template>
+                      </ng-container>
+                    </div>
+                    <nz-divider nzType="vertical"></nz-divider>
+                    <app-db-button type="item" [id]="item"></app-db-button>
+                  </div>
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+      <ng-container *ngIf="bonuses$ | async as bonuses">
+        <nz-card fxFlex="1 1 auto" class="details-card"
+                 [nzTitle]="title"
+                 nzBordered="false"
+                 *ngIf="bonuses.length > 0">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+              {{'DB.NODE.Possible_bonuses' | translate}}
+            </div>
+          </ng-template>
+          <nz-list [nzDataSource]="bonuses" [nzRenderItem]="bonusTemplate"
+                   [nzItemLayout]="'horizontal'">
+            <ng-template #bonusTemplate let-bonus>
+              <nz-list-item>
+                <nz-list-item-meta
+                  [nzTitle]="bonus.bonus | i18n"
+                  [nzDescription]="description">
+                  <ng-template #description>
+                    {{'DB.NODE.Bonus_condition' | translate}}: {{bonus.condition | i18n}}
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </nz-card>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

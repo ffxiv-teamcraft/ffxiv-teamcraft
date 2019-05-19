@@ -3,11 +3,12 @@ const path = require('path');
 const fs = require('fs');
 const http = require('https');
 const Rx = require('rxjs');
-const { map, switchMap, catchError, first } = require('rxjs/operators');
+const { map, switchMap, mergeMap, first } = require('rxjs/operators');
 const { Subject, combineLatest } = require('rxjs');
 const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 
 const nodes = {};
+const gatheringPointToBaseId = {};
 const aetherytes = [];
 const monsters = {};
 const npcs = {};
@@ -30,7 +31,8 @@ let todo = [
   'leves',
   'jobCategories',
   'mobs',
-  'hunts'
+  'hunts',
+  'gatheringBonuses'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -49,6 +51,7 @@ if (hasTodo('mappy')) {
   const memoryData$ = new Rx.Subject();
   const mapData$ = new Rx.Subject();
   const npcs$ = new Rx.Subject();
+  const nodes$ = new Rx.Subject();
   http.get('https://xivapi.com/download?data=map_data', (res) => mapData$.next(res));
 
   const parsedMemoryData = [];
@@ -62,25 +65,83 @@ if (hasTodo('mappy')) {
       memoryData$.next(parsedMemoryData);
     });
 
-  getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*,DefaultTalk').subscribe(page => {
-    page.Results.forEach(npc => {
-      npcs[npc.ID] = {
-        ...npcs[npc.ID],
-        en: npc.Name_en,
-        ja: npc.Name_ja,
-        de: npc.Name_de,
-        fr: npc.Name_fr,
-        defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID)
-      };
-      if (npc.BalloonTargetID > 0) {
-        npcs[npc.ID].balloon = npc.BalloonTargetID;
-      }
-    });
+  // getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*,DefaultTalk').subscribe(page => {
+  //   page.Results.forEach(npc => {
+  //     npcs[npc.ID] = {
+  //       ...npcs[npc.ID],
+  //       en: npc.Name_en,
+  //       ja: npc.Name_ja,
+  //       de: npc.Name_de,
+  //       fr: npc.Name_fr,
+  //       defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID)
+  //     };
+  //     if (npc.BalloonTargetID > 0) {
+  //       npcs[npc.ID].balloon = npc.BalloonTargetID;
+  //     }
+  //   });
+  // }, null, () => {
+  //   npcs$.next(npcs);
+  // });
+
+  const gatheringItems$ = new Rx.Subject();
+  const gatheringItems = {};
+
+  getAllPages('https://xivapi.com/GatheringItem?columns=ID,GatheringItemLevel,IsHidden,Item').subscribe(page => {
+    page.Results
+      .filter(item => item.GatheringItemLevel)
+      .forEach(item => {
+        gatheringItems[item.ID] = {
+          level: item.GatheringItemLevel.GatheringItemLevel,
+          stars: item.GatheringItemLevel.Stars,
+          itemId: item.Item,
+          hidden: item.IsHidden
+        };
+      });
   }, null, () => {
-    npcs$.next(npcs);
+    persistToTypescript('gathering-items', 'gatheringItems', gatheringItems);
+    gatheringItems$.next(gatheringItems);
   });
 
-  Rx.combineLatest([memoryData$, mapData$, npcs$])
+  gatheringItems$.pipe(
+    mergeMap(gatheringItems => {
+      return getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0,Item1,Item2,Item3,Item4,Item5,Item6,Item7,IsLimited,GameContentLinks,GatheringLevel')
+        .pipe(
+          map((page) => [page, gatheringItems])
+        );
+    })
+  ).subscribe(([page, items]) => {
+    page.Results.forEach(node => {
+      let linkedPoints = [];
+      if (node.GameContentLinks.GatheringPoint) {
+        linkedPoints = node.GameContentLinks.GatheringPoint.GatheringPointBase;
+      }
+      nodes[node.ID] = {
+        ...nodes[node.ID],
+        items: [0, 1, 2, 3, 4, 5, 6, 7]
+          .filter(i => node[`Item${i}`] > 0)
+          .map(i => node[`Item${i}`])
+          .filter(gatheringItemId => {
+            return items[gatheringItemId];
+          })
+          .map(gatheringItemId => {
+            return items[gatheringItemId].itemId;
+          }),
+        limited: node.IsLimited,
+        level: node.GatheringLevel,
+        type: node.GatheringTypeTargetID
+      };
+      if (linkedPoints.length > 0) {
+        linkedPoints.forEach(point => {
+          gatheringPointToBaseId[point] = node.ID;
+        });
+      }
+    });
+    if (page.Pagination.Page === page.Pagination.PageTotal) {
+      nodes$.next(nodes);
+    }
+  });
+
+  Rx.combineLatest([memoryData$, mapData$, nodes$])
     .subscribe(([memoryData, res]) => {
       res.setEncoding('utf8');
       res.pipe(csv())
@@ -102,30 +163,34 @@ if (hasTodo('mappy')) {
                 break;
             }
           }
-
         })
         .on('end', function() {
           // Write data that needs to be joined with game data first
-          // persistToJson('node-positions', nodes);
-          // console.log('nodes written');
+          persistToJson('node-positions', nodes);
+          console.log('nodes written');
           // persistToTypescript('aetherytes', 'aetherytes', aetherytes);
           // console.log('aetherytes written');
-          persistToJson('monsters', monsters);
-          console.log('monsters written');
-          persistToJsonAsset('npcs', npcs);
-          console.log('npcs written');
+          // persistToJson('monsters', monsters);
+          // console.log('monsters written');
+          // persistToJsonAsset('npcs', npcs);
+          // console.log('npcs written');
+          // mappyDone$.next();
         });
     });
 }
 
 
 handleNode = (row) => {
-  nodes[+row.ENpcResidentID] = {
-    map: +row.MapID,
-    zoneid: +row.PlaceNameID,
-    x: +row.PosX,
-    y: +row.PosY
-  };
+  const baseId = gatheringPointToBaseId[+row.ENpcResidentID];
+  if (baseId) {
+    nodes[baseId] = {
+      ...nodes[baseId],
+      map: +row.MapID,
+      zoneid: +row.PlaceNameID,
+      x: +row.PosX,
+      y: +row.PosY
+    };
+  }
 };
 
 handleAetheryte = (row) => {
@@ -192,8 +257,8 @@ if (hasTodo('map')) {
     persistToTypescript('map-ids', 'mapIds', mapIds);
   });
 }
-// Crafting log extraction
 
+// Crafting log extraction
 const craftingLog = [
   [],
   [],
@@ -809,4 +874,34 @@ if (hasTodo('hunts')) {
     .subscribe(hunts => {
       persistToTypescript('hunts', 'hunts', hunts);
     });
+}
+
+if (hasTodo('gatheringBonuses')) {
+  const bonuses = {};
+  getAllPages('https://xivapi.com/GatheringPointBonus?columns=ID,BonusType,Condition,BonusValue,ConditionValue').subscribe(page => {
+    page.Results.forEach(bonus => {
+      bonuses[bonus.ID] = {
+        value: bonus.BonusValue,
+        conditionValue: bonus.ConditionValue
+      };
+      if (bonus.BonusType) {
+        bonuses[bonus.ID].bonus = {
+          en: bonus.BonusType.Text_en,
+          de: bonus.BonusType.Text_de,
+          ja: bonus.BonusType.Text_ja,
+          fr: bonus.BonusType.Text_fr
+        };
+      }
+      if (bonus.Condition) {
+        bonuses[bonus.ID].condition = {
+          en: bonus.Condition.Text_en,
+          de: bonus.Condition.Text_de,
+          ja: bonus.Condition.Text_ja,
+          fr: bonus.Condition.Text_fr
+        };
+      }
+    });
+  }, null, () => {
+    persistToJsonAsset('gathering-bonuses', bonuses);
+  });
 }

@@ -9,7 +9,8 @@
           <ng-template #description>
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                <span>{{node.areaid | placeName | i18n}} - lvl {{node.level}}</span>
+                <span>{{node.areaid | placeName | i18n}} - lvl {{node.level}}
+                  <app-db-button type="node" [id]="node.id" *ngIf="node.id"></app-db-button></span>
                 <nz-tag *ngIf="node.limitType !== undefined" nzColor="#108ee9">
                   {{node.limitType | i18n}}
                 </nz-tag>
