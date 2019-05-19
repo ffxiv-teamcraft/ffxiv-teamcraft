@@ -19,6 +19,7 @@ import * as nodePositions from '../../../core/data/sources/node-positions.json';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { HttpClient } from '@angular/common/http';
 import { hunts } from '../../../core/data/sources/hunts';
+import { tap } from 'rxjs/internal/operators/tap';
 
 @Component({
   selector: 'app-map-page',
@@ -39,7 +40,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
 
   public markers$: Observable<MapMarker[]>;
 
-  public enabledTypes$ = new BehaviorSubject<string[]>([]);
+  public enabledTypes$ = new BehaviorSubject<string[]>(JSON.parse(localStorage.getItem('map-page:selected-types') || '[]'));
 
   public availableTypes = ['fate', 'mob', 'npc', 'node', 'hunt'];
 
@@ -107,6 +108,9 @@ export class MapPageComponent extends TeamcraftPageComponent {
     );
 
     const filteredTypes$ = combineLatest([this.related$, this.enabledTypes$]).pipe(
+      tap(([, enabledTypes]) => {
+        localStorage.setItem('map-page:selected-types', JSON.stringify(enabledTypes));
+      }),
       map(([related, enabledTypes]) => {
         return related.filter(row => enabledTypes.indexOf(row.type) > -1);
       })
@@ -210,7 +214,8 @@ export class MapPageComponent extends TeamcraftPageComponent {
               x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
               y: (41.0 / c) * ((spawn.y + 1024) / 2048.0),
               tooltip: this.i18n.getName(huntName)
-            }
+            },
+            link: `/db/${this.translate.currentLang}/mob/${this.l12n.getMobId(hunt.name)}`
           };
         });
       })
@@ -240,7 +245,8 @@ export class MapPageComponent extends TeamcraftPageComponent {
             x: fate.position.x,
             y: fate.position.y,
             tooltip: this.i18n.getName(fate.name)
-          }
+          },
+          link: `/db/${this.translate.currentLang}/fate/${fate.id}`
         };
       });
   }
@@ -266,7 +272,8 @@ export class MapPageComponent extends TeamcraftPageComponent {
             iconImg: `https://xivapi.com/c/ENpcResident.png`,
             x: npc.position.x,
             y: npc.position.y,
-            tooltip: this.i18n.getName(npc)
+            tooltip: this.i18n.getName(npc),
+            link: `/db/${this.translate.currentLang}/npc/${npc.id}`
           }
         };
       });
@@ -283,7 +290,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
           type: 'node',
           id: node.id,
           name: this.i18n.createFakeI18n(`lvl ${node.level}`),
-          additionalData: node.items.map(i => ({id:i})),
+          additionalData: node.items.map(i => ({ id: i })),
           coords: {
             x: node.x,
             y: node.y
@@ -299,7 +306,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
             ][node.type],
             x: node.x,
             y: node.y,
-            tooltip: `lvl ${node.level}`
+            link: `/db/${this.translate.currentLang}/node/${node.id}`
           }
         };
       });
@@ -317,7 +324,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
             return {
               id: i.id,
               slot: i.slot
-            }
+            };
           }),
           coords: {
             x: node.coords[0],
@@ -334,7 +341,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
             ][node.type],
             x: node.coords[0],
             y: node.coords[1],
-            tooltip: `lvl ${node.lvl} ${this.htmlTools.generateStars(node.stars)}`
+            link: `/db/${this.translate.currentLang}/node/${node.id}`
           }
         };
       });
@@ -370,7 +377,8 @@ export class MapPageComponent extends TeamcraftPageComponent {
               y: position.y,
               zIndex: 4,
               tooltip: this.i18n.getName(this.l12n.getMob(mob.id))
-            }
+            },
+            link: `/db/${this.translate.currentLang}/mob/${mob.id}`
           };
         });
       })

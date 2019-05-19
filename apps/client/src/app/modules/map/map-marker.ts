@@ -8,4 +8,5 @@ export interface MapMarker extends Vector2 {
   materialIcon?: string;
   tooltip?: string;
   zIndex?: number;
+  link?: string;
 }
