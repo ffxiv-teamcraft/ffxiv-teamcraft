@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.2"></a>
+## [5.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.1...v5.4.2) (2019-05-19)
+
+
+### Bug Fixes
+
+* **list:** fixed an issue with amount input on crafts not applying properly to mats ([42f5faf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/42f5faf))
+* **map-page:** removed nodes with inexistant items (event items) ([bf3712c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf3712c))
+* **simulator:** fixed an issue with recipe changes resetting stats in custom mode ([956bcd2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/956bcd2))
+
+
+### Features
+
+* **db:** added individual pages for gathering nodes ([9a8b4ad](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a8b4ad))
+* **desynth:** added database link to desynth item results ([7332dcd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7332dcd))
+* **map:** added position on map markers hover ([768da97](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/768da97))
+
+
+
 <a name="5.4.1"></a>
 ## [5.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.11...v5.4.1) (2019-05-18)
 
