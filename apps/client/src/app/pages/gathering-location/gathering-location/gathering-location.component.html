@@ -38,7 +38,7 @@
     <ng-template #description>
       <div fxLayout="row" fxLayoutAlign="space-between flex-start">
         <div fxLayout="column">
-          <div>{{node.zoneid | placeName | i18n}}</div>
+          <div>{{node.zoneid | placeName | i18n}} <app-db-button type="node" [id]="node.nodeId"></app-db-button></div>
           <div>X: {{node.x}}, Y: {{node.y}}</div>
           <div>
             {{getNodeSpawns(node)}} <i nz-icon type="clock-circle" *ngIf="node.ephemeral" nz-tooltip

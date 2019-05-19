@@ -75,7 +75,7 @@
           *ngFor="let row of relatedElements">
           <ng-template #elementTemplate let-element let-index="index">
             <nz-list-item (mouseenter)="highlight(element, true)" (mouseleave)="highlight(element, false)"
-                          [nzContent]="element.type !== 'node' ? more : null">
+                          [nzContent]="more">
               <nz-list-item-meta [nzTitle]="title"
                                  [nzDescription]="description">
                 <ng-template #title>
