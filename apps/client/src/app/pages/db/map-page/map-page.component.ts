@@ -277,7 +277,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
       .map(key => {
         return { ...nodePositions[key], id: +key };
       })
-      .filter(node => node !== null && node.zoneid === placeNameId)
+      .filter(node => node !== null && node.zoneid === placeNameId && !node.items.some(i => i > 2000000))
       .map(node => {
         return <MapRelatedElement>{
           type: 'node',
