@@ -1158,6 +1158,14 @@
     "Icons_shown": "Data to show",
     "Select_data_type": "Select data types to show to see the details here",
     "Desynths_to": "Desynths to",
+    "Limited": "Limited spawn",
+    "NODE": {
+      "Items": "Items",
+      "Possible_bonuses": "Possible bonuses",
+      "Bonus_condition": "Condition",
+      "Spawn_duration": "Spawn duration",
+      "Spawns": "Spawn times"
+    },
     "QUEST": {
       "Steps": "Pasos",
       "Unlocked_by": "Desbloqueado por",
