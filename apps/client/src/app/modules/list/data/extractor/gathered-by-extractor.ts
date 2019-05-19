@@ -34,7 +34,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
   }
 
   protected doExtract(item: Item, itemData: ItemData): GatheredBy {
-    const gatheringItem = Object.keys(gatheringItems).map(key => gatheringItems[key]).find(g => g.itemId);
+    const gatheringItem = Object.keys(gatheringItems).map(key => gatheringItems[key]).find(g => g.itemId === item.id);
     const gatheredBy: GatheredBy = {
       icon: '',
       stars_tooltip: gatheringItem ? this.htmlTools.generateStars(gatheringItem.stars) : '',
