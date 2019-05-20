@@ -38,6 +38,7 @@ import { InstanceNamePipe } from './pipes/instance-name.pipe';
 import { ShopNamePipe } from './pipes/shop-name.pipe';
 import { LeveNamePipe } from './pipes/leve-name.pipe';
 import { JobCategoryNamePipe } from './pipes/job-category-name.pipe';
+import { QuestIconPipe } from './pipes/quest-icon.pipe';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { JobCategoryNamePipe } from './pipes/job-category-name.pipe';
     InstanceNamePipe,
     ShopNamePipe,
     LeveNamePipe,
-    JobCategoryNamePipe
+    JobCategoryNamePipe,
+    QuestIconPipe
   ],
   exports: [
     ItemNamePipe,
@@ -122,7 +124,8 @@ import { JobCategoryNamePipe } from './pipes/job-category-name.pipe';
     InstanceNamePipe,
     ShopNamePipe,
     LeveNamePipe,
-    JobCategoryNamePipe
+    JobCategoryNamePipe,
+    QuestIconPipe
   ]
 })
 export class PipesModule {

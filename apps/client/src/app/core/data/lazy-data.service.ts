@@ -6,7 +6,6 @@ import { XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../model/common/i18n-name';
 import { Quest } from '../../pages/db/model/quest/quest';
 import { Fate } from '../../pages/db/model/fate/fate';
-import { IS_PRERENDER } from '../tools/platform.service';
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +57,7 @@ export class LazyDataService {
   public instances: any = {};
   public shops: any = {};
   public leves: any = {};
+  public statuses: any = {};
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -113,7 +113,8 @@ export class LazyDataService {
         this.http.get('./assets/data/ko/ko-triple-triad-rules.json'),
         this.http.get('./assets/data/instances.json'),
         this.http.get('./assets/data/shops.json'),
-        this.http.get('./assets/data/leves.json')
+        this.http.get('./assets/data/leves.json'),
+        this.http.get('./assets/data/statuses.json')
       ]
     ).subscribe(([
                    items,
@@ -149,7 +150,8 @@ export class LazyDataService {
                    koTripleTriadRules,
                    instances,
                    shops,
-                   leves
+                   leves,
+                   statuses
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -185,6 +187,7 @@ export class LazyDataService {
       this.instances = instances;
       this.shops = shops;
       this.leves = leves;
+      this.statuses = statuses;
       this.loaded$.next(true);
     });
   }

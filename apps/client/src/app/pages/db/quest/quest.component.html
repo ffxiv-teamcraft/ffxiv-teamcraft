@@ -25,19 +25,19 @@
       </div>
       <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/english.png" class="language-flag" alt="EN">
+          <img src="./assets/icons/english.png" class="language-flag" alt="EN">
           <div>{{xivapiQuest.Name_en}}</div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/german.png" class="language-flag" alt="DE">
+          <img src="./assets/icons/german.png" class="language-flag" alt="DE">
           <div>{{xivapiQuest.Name_de}}</div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/french.png" class="language-flag" alt="FR">
+          <img src="./assets/icons/french.png" class="language-flag" alt="FR">
           <div>{{xivapiQuest.Name_fr}}</div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/japanese.png" class="language-flag" alt="JA">
+          <img src="./assets/icons/japanese.png" class="language-flag" alt="JA">
           <div>{{xivapiQuest.Name_ja}}</div>
         </div>
       </div>
@@ -111,7 +111,7 @@
                   [nzTitle]="quest | questName | i18n">
                   <ng-template #questAvatar>
                     <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                      <img class="img-icon round-icon" src="./assets/icons/quest.png">
+                      <img class="img-icon round-icon" [src]="quest | questIcon | xivapiIcon">
                     </a>
                   </ng-template>
                   <ng-template #more>
@@ -139,7 +139,7 @@
                   [nzTitle]="quest | questName | i18n">
                   <ng-template #questAvatar>
                     <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                      <img class="img-icon round-icon" src="./assets/icons/quest.png">
+                      <img class="img-icon round-icon" [src]="quest | questIcon | xivapiIcon">
                     </a>
                   </ng-template>
                   <ng-template #more>
@@ -191,7 +191,7 @@
           <nz-list [nzDataSource]="rewards$ | async" [nzRenderItem]="rewardTemplate"
                    [nzItemLayout]="'horizontal'">
             <ng-template #rewardTemplate let-reward>
-              <nz-list-item [nzContent]="(reward.type==='item' || reward.type == 'instance')?more:null">
+              <nz-list-item [nzContent]="(reward.type==='item' || reward.type == 'instance' || reward.type === 'action')?more:null">
                 <nz-list-item-meta
                   [nzAvatar]="rewardAvatar"
                   [nzTitle]="rewardTitle">
@@ -223,7 +223,7 @@
                     </div>
                   </ng-template>
                   <ng-template #more>
-                    <app-db-button *ngIf="reward.id > 1 && (reward.type === 'instance' || reward.type === 'item')"
+                    <app-db-button *ngIf="reward.id > 1"
                                    [type]="reward.type"
                                    [id]="reward.id"></app-db-button>
                   </ng-template>

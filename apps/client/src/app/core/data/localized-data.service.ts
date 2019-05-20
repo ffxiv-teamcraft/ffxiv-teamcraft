@@ -250,7 +250,7 @@ export class LocalizedDataService {
     return result;
   }
 
-  public getCraftingAction(id: number): I18nName {
+  public getAction(id: number): I18nName {
     const result = this.getRow(this.lazyData.craftActions, id) || this.getRow(this.lazyData.actions, id);
     if (result === undefined) {
       throw new Error('Data row not found.');
@@ -259,6 +259,15 @@ export class LocalizedDataService {
     if (koRow !== undefined) {
       result.ko = koRow.ko;
     }
+    return result;
+  }
+
+  public getStatus(id: number): I18nName {
+    const result = this.getRow(this.lazyData.statuses, id);
+    // const koRow = this.getRow(this.lazyData.koStatuses, id);
+    // if (koRow !== undefined) {
+    //   result.ko = koRow.ko;
+    // }
     return result;
   }
 

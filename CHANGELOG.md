@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.3"></a>
+## [5.4.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.2...v5.4.3) (2019-05-20)
+
+
+### Bug Fixes
+
+* **desktop:** fixed broken language icons on db pages ([8921774](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8921774))
+* **list:** fixed an issue with progression not applied properly in some cases ([11e4c27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/11e4c27)), closes [#920](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/920)
+
+
+### Features
+
+* **db:** Teamcraft now includes all Actions status Statuses inside the database ([b523403](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b523403))
+* **db:** UX improvements on map page ([4ce18f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ce18f0))
+
+
+
 <a name="5.4.2"></a>
 ## [5.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.1...v5.4.2) (2019-05-19)
 

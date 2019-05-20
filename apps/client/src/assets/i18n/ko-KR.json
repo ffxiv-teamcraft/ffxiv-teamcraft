@@ -122,7 +122,8 @@
     "Open_in_desktop": "데스크톱 앱에서 열기",
     "Admin": "관리자",
     "Minutes_duration": "{{amount}}분",
-    "Seconds_duration": "{{amount}} 초"
+    "Seconds_duration": "{{amount}} 초",
+    "None": "None"
   },
   "ALARMS": {
     "Title": "알람",
@@ -173,6 +174,8 @@
   "No_lore_entries": "검색 결과 없음",
   "No_fates_found": "검색 결과 없음",
   "No_maps_found": "검색 결과 없음",
+  "No_actions_found": "No actions found",
+  "No_statuses_found": "No statuses found",
   "Select_all": "모두 선택",
   "Do you really want to reset the list?": "정말로 이 목록을 초기화하시겠습니까?",
   "Yes": "O",
@@ -1100,6 +1103,7 @@
     "How_to_obtain": "획득 방법",
     "Used_for": "사용처",
     "Used_for_nothing": "사용처가 없습니다",
+    "Crystal_used_for_everything": "Too many recipes (~ 1/6th of the ingame recipes)",
     "Crafts": "제작",
     "Recipes": "제작법",
     "No_known_way_to_obtain": "이 아이템의 획득 방법을 찾을 수 없습니다",
@@ -1155,16 +1159,16 @@
     "Drop_rate": "드랍율",
     "Involved_monsters": "관련 몬스터",
     "Reduces_to": "정제로 얻는 아이템",
-    "Icons_shown": "Data to show",
-    "Select_data_type": "Select data types to show to see the details here",
-    "Desynths_to": "Desynths to",
-    "Limited": "Limited spawn",
+    "Icons_shown": "데이터 유형 선택",
+    "Select_data_type": "세부 정보를 표시하기 위해 데이터를 선택하세요",
+    "Desynths_to": "분해로 얻는 아이템",
+    "Limited": "한정 채집",
     "NODE": {
-      "Items": "Items",
-      "Possible_bonuses": "Possible bonuses",
-      "Bonus_condition": "Condition",
-      "Spawn_duration": "Spawn duration",
-      "Spawns": "Spawn times"
+      "Items": "아이템",
+      "Possible_bonuses": "장소 특성",
+      "Bonus_condition": "조건",
+      "Spawn_duration": "지속시간",
+      "Spawns": "출현 시간"
     },
     "QUEST": {
       "Steps": "퀘스트 정보",
@@ -1208,6 +1212,52 @@
       "npc": "NPC",
       "node": "채집 장소",
       "hunt": "마물"
+    },
+    "ACTION": {
+      "Cast": "Cast",
+      "Instant": "Instant",
+      "Range": "Range",
+      "Melee": "Melee",
+      "Radius": "Radius",
+      "Cooldown": "Cooldown",
+      "Pvp_action": "PvP action",
+      "Breaks_unrelated_combo": "Breaks unrelated combos",
+      "Movement_action": "Movement action",
+      "Possible_targets": "Possible targets",
+      "Unlocked_by_quest": "Unlocked by quest",
+      "Shares_cd_with": "Shares cooldown with",
+      "Combos": "Combos",
+      "Combo_next": "Next actions",
+      "Combo_previous": "Previous action",
+      "Affected_by_status": "Affected by status",
+      "Cost": "Cost",
+      "TARGET": {
+        "Party": "Party",
+        "Dead": "Dead",
+        "Hostile": "Hostile",
+        "Self": "Self"
+      },
+      "COST_TYPE": {
+        "HP": "HP",
+        "MP": "MP",
+        "TP": "TP",
+        "GP": "GP",
+        "CP": "CP",
+        "Beast_gauge": "Beast gauge",
+        "Blood_gauge": "Blood gauge",
+        "Ninki": "Ninki",
+        "Chakra": "Chakra",
+        "Greasing_lightning": "Greasing Lightning",
+        "Aetherflow": "Aetherflow",
+        "Oath_gauge": "Oath gauge",
+        "Kenki": "Kenki"
+      }
+    },
+    "STATUS": {
+      "Max_stacks": "Max stacks",
+      "Locks_actions": "Locks actions",
+      "Locks_control": "Locks control",
+      "Locks_movement": "Locks movement"
     }
   },
   "SEARCH_TYPES": {
@@ -1221,7 +1271,9 @@
     "Monster": "몬스터",
     "Lore": "대사 및 설정",
     "Fate": "돌발 임무",
-    "Map": "지도"
+    "Map": "지도",
+    "Action": "Action",
+    "Status": "Status"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "레벨",

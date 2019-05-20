@@ -32,7 +32,10 @@ let todo = [
   'jobCategories',
   'mobs',
   'hunts',
-  'gatheringBonuses'
+  'gatheringBonuses',
+  'cdGroups',
+  'combos',
+  'statuses'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -65,23 +68,23 @@ if (hasTodo('mappy')) {
       memoryData$.next(parsedMemoryData);
     });
 
-  // getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*,DefaultTalk').subscribe(page => {
-  //   page.Results.forEach(npc => {
-  //     npcs[npc.ID] = {
-  //       ...npcs[npc.ID],
-  //       en: npc.Name_en,
-  //       ja: npc.Name_ja,
-  //       de: npc.Name_de,
-  //       fr: npc.Name_fr,
-  //       defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID)
-  //     };
-  //     if (npc.BalloonTargetID > 0) {
-  //       npcs[npc.ID].balloon = npc.BalloonTargetID;
-  //     }
-  //   });
-  // }, null, () => {
-  //   npcs$.next(npcs);
-  // });
+  getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*,DefaultTalk').subscribe(page => {
+    page.Results.forEach(npc => {
+      npcs[npc.ID] = {
+        ...npcs[npc.ID],
+        en: npc.Name_en,
+        ja: npc.Name_ja,
+        de: npc.Name_de,
+        fr: npc.Name_fr,
+        defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID)
+      };
+      if (npc.BalloonTargetID > 0) {
+        npcs[npc.ID].balloon = npc.BalloonTargetID;
+      }
+    });
+  }, null, () => {
+    npcs$.next(npcs);
+  });
 
   const gatheringItems$ = new Rx.Subject();
   const gatheringItems = {};
@@ -170,10 +173,10 @@ if (hasTodo('mappy')) {
           console.log('nodes written');
           // persistToTypescript('aetherytes', 'aetherytes', aetherytes);
           // console.log('aetherytes written');
-          // persistToJson('monsters', monsters);
-          // console.log('monsters written');
-          // persistToJsonAsset('npcs', npcs);
-          // console.log('npcs written');
+          persistToJson('monsters', monsters);
+          console.log('monsters written');
+          persistToJsonAsset('npcs', npcs);
+          console.log('npcs written');
           // mappyDone$.next();
         });
     });
@@ -903,5 +906,48 @@ if (hasTodo('gatheringBonuses')) {
     });
   }, null, () => {
     persistToJsonAsset('gathering-bonuses', bonuses);
+  });
+}
+
+if (hasTodo('cdGroups')) {
+  const groups = {};
+  getAllPages('https://xivapi.com/Action?columns=ID,CooldownGroup').subscribe(page => {
+    page.Results.forEach(action => {
+      groups[action.CooldownGroup] = [
+        ...(groups[action.CooldownGroup] || []),
+        action.ID
+      ];
+    });
+  }, null, () => {
+    persistToTypescript('action-cd-groups', 'actionCdGroups', groups);
+  });
+}
+
+if (hasTodo('combos')) {
+  const combos = {};
+  getAllPages('https://xivapi.com/Action?columns=ID,ActionComboTargetID').subscribe(page => {
+    page.Results.forEach(action => {
+      if (action.ActionComboTargetID > 0) {
+        combos[action.ID] = action.ActionComboTargetID;
+      }
+    });
+  }, null, () => {
+    persistToTypescript('action-combos', 'actionCombos', combos);
+  });
+}
+
+if (hasTodo('statuses')) {
+  const statuses = {};
+  getAllPages('https://xivapi.com/Status?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(status => {
+      statuses[status.ID] = {
+        en: status.Name_en,
+        de: status.Name_de,
+        ja: status.Name_ja,
+        fr: status.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('statuses', statuses);
   });
 }

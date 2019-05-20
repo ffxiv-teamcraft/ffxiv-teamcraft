@@ -232,7 +232,10 @@ export class List extends DataWithPermissions {
       item.done = 0;
     }
     amount = MathTools.absoluteCeil(amount / item.yield);
-    const newDone = MathTools.absoluteFloor(item.done / item.yield);
+    let newDone = MathTools.absoluteFloor(item.done / item.yield);
+    if (item.done === item.amount) {
+      newDone = MathTools.absoluteCeil(item.done / item.yield);
+    }
     if (item.requires !== undefined && newDone !== previousDone) {
       for (const requirement of item.requires) {
         const requirementItem = this.getItemById(requirement.id, excludeFinalItems);

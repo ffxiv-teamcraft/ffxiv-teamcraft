@@ -12,7 +12,8 @@
       <i nz-icon type="share-alt"></i>
     </button>
     <ng-template #searchType>
-      <nz-select [ngModel]="searchType$ | async" (ngModelChange)="searchType$.next($event)" class="search-type">
+      <nz-select [ngModel]="searchType$ | async" (ngModelChange)="searchType$.next($event)" class="search-type"
+                 nzShowSearch>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate" [nzValue]="searchTypes.ITEM"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.RECIPE) | translate"
                    [nzValue]="searchTypes.RECIPE"></nz-option>
@@ -27,6 +28,10 @@
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.LORE) | translate" [nzValue]="searchTypes.LORE"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.FATE) | translate" [nzValue]="searchTypes.FATE"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.MAP) | translate" [nzValue]="searchTypes.MAP"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ACTION) | translate"
+                   [nzValue]="searchTypes.ACTION"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.STATUS) | translate"
+                   [nzValue]="searchTypes.STATUS"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -424,6 +429,42 @@
               <span>{{(row.id | fate).description | i18n}}</span>
             </div>
           </div>
+          <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="searchType === searchTypes.ACTION"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <img [src]="row.icon | xivapiIcon" alt="" fxFlex="0 0 auto" class="quest-icon">
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div fxLayout="column">
+                  <div>{{row.id | actionName | i18n}}</div>
+                  <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiI18n}}</i>
+                </div>
+                <app-db-button type="action" [id]="row.id"></app-db-button>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="searchType === searchTypes.STATUS"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <img [src]="row.icon | xivapiIcon" alt="" fxFlex="0 0 auto">
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div fxLayout="column">
+                  <div>{{row.data | xivapiI18n}}</div>
+                  <i>{{row.data | xivapiI18n: 'Description'}}</i>
+                </div>
+                <app-db-button type="status" [id]="row.id"></app-db-button>
+              </div>
+            </div>
+          </div>
         </ng-container>
       </app-page-loader>
       <div *ngIf="results.length === 0">
@@ -445,6 +486,10 @@
                               *ngIf="searchType === searchTypes.FATE">{{'No_fates_found' | translate}}</app-fullpage-message>
         <app-fullpage-message height="300px"
                               *ngIf="searchType === searchTypes.MAP">{{'No_maps_found' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.ACTION">{{'No_actions_found' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.STATUS">{{'No_statuses_found' | translate}}</app-fullpage-message>
       </div>
     </div>
   </div>
