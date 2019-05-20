@@ -8,5 +8,7 @@ export enum SearchType {
   MONSTER = 'Monster',
   LORE = 'Lore',
   FATE = 'Fate',
-  MAP = 'Map'
+  MAP = 'Map',
+  ACTION = 'Action',
+  STATUS = 'Status'
 }
