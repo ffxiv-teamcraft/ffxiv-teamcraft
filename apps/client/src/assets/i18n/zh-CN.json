@@ -654,7 +654,7 @@
     "Durability": "耐久",
     "Hq": "高品质",
     "Cp_amount": "制作力",
-    "Simulate_tooltip": "用模拟器生产",
+    "Simulate_tooltip": "生产模拟",
     "Change_recipe": "更换配方",
     "Changing_recipe_save_warning": "如果不保存修改，在选择配方后你的更改将会丢失",
     "Too_many_aactions": "你在这个宏里使用了超过 10 个共通技能",
@@ -1158,13 +1158,13 @@
     "Icons_shown": "选择数据类型",
     "Select_data_type": "选择要显示的数据类型后此处会显示详细信息",
     "Desynths_to": "分解",
-    "Limited": "Limited spawn",
+    "Limited": "限时采集",
     "NODE": {
       "Items": "物品",
-      "Possible_bonuses": "奖励选项",
+      "Possible_bonuses": "随机加成",
       "Bonus_condition": "条件",
-      "Spawn_duration": "Spawn duration",
-      "Spawns": "Spawn times"
+      "Spawn_duration": "出现时长",
+      "Spawns": "出现时间"
     },
     "QUEST": {
       "Steps": "步骤",
@@ -1173,41 +1173,41 @@
       "Involved_npcs": "相关 NPC",
       "Journal_entries": "任务日志",
       "Dialogues": "对话",
-      "Start": "开始",
-      "End": "结束",
+      "Start": "领取",
+      "End": "提交",
       "Rewards": "奖励",
       "Repeatable": "重复",
-      "Beast_tribe_rank": "Beast tribe rank"
+      "Beast_tribe_rank": "蛮族关系"
     },
     "NPC": {
-      "Other_entries": "Other appearances",
-      "Default_talk": "Base dialogues",
-      "Quests": "Quests",
-      "Shops": "Shops",
-      "Leves": "Leves",
-      "Trades": "Trades"
+      "Other_entries": "其它出现位置",
+      "Default_talk": "默认台词",
+      "Quests": "任务",
+      "Shops": "出售",
+      "Leves": "理符",
+      "Trades": "兑换"
     },
     "FIGHT_TYPE": {
       "Boss": "首领",
       "MidBoss": "首领"
     },
     "LEVE": {
-      "Required_items": "Required items",
-      "Allowance_cost": "Allowance cost",
-      "Rewards": "Possible rewards",
-      "Client": "Client",
-      "Issuer": "Issuer"
+      "Required_items": "需要物品",
+      "Allowance_cost": "消耗受理限额",
+      "Rewards": "奖励选项",
+      "Client": "委托人",
+      "Issuer": "发行人"
     },
     "MOB": {
-      "Known_spawns": "Known spawns",
-      "Known_drops": "Known drops"
+      "Known_spawns": "已知出现地点",
+      "Known_drops": "已知掉落"
     },
     "DATA_TYPE": {
-      "fate": "Fates",
-      "mob": "Monsters",
-      "npc": "NPCs",
-      "node": "Nodes",
-      "hunt": "Hunts"
+      "fate": "危命任务",
+      "mob": "怪物",
+      "npc": "NPC",
+      "node": "采集点",
+      "hunt": "狩猎"
     }
   },
   "SEARCH_TYPES": {
@@ -1216,16 +1216,16 @@
     "Instance": "副本",
     "Quest": "任务",
     "NPC": "NPC",
-    "Leve": "Levequest",
-    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
-    "Monster": "Monster",
-    "Lore": "Lore",
-    "Fate": "Fate",
-    "Map": "Map"
+    "Leve": "理符",
+    "Leve_info_message": "左侧的理符任务功能可以帮你准备材料并计算经验奖励",
+    "Monster": "怪物",
+    "Lore": "台词&设定",
+    "Fate": "危命任务",
+    "Map": "地图"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "等级",
-    "Leve_job": "Leve job",
-    "Leve_level": "Required level"
+    "Leve_job": "理符职业",
+    "Leve_level": "等级"
   }
 }
