@@ -1160,9 +1160,9 @@
     "Desynths_to": "Desynths to",
     "Limited": "Limited spawn",
     "NODE": {
-      "Items": "Items",
-      "Possible_bonuses": "Possible bonuses",
-      "Bonus_condition": "Condition",
+      "Items": "아이템",
+      "Possible_bonuses": "장소 특성",
+      "Bonus_condition": "조건",
       "Spawn_duration": "Spawn duration",
       "Spawns": "Spawn times"
     },
