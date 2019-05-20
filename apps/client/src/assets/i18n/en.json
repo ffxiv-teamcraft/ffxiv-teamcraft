@@ -175,6 +175,7 @@
   "No_fates_found": "No fates found",
   "No_maps_found": "No maps found",
   "No_actions_found": "No actions found",
+  "No_statuses_found": "No statuses found",
   "Select_all": "Select all",
   "Do you really want to reset the list?": "Do you really want to reset the list?",
   "Yes": "Yes",
@@ -1270,7 +1271,8 @@
     "Lore": "Lore",
     "Fate": "Fate",
     "Map": "Map",
-    "Action": "Action"
+    "Action": "Action",
+    "Status": "Status"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "Level",
