@@ -456,8 +456,11 @@
     </div>
     <div *ngIf="usedFor$ | async as usedFor">
       <nz-divider [nzText]="'DB.Used_for' | translate" nzOrientation="left"></nz-divider>
-      <app-fullpage-message height="300px" *ngIf="usedFor.length === 0">
+      <app-fullpage-message height="300px" *ngIf="usedFor.length === 0 && (xivapiItem.ID > 19 || xivapiItem.ID === 1)">
         {{'DB.Used_for_nothing' | translate}}
+      </app-fullpage-message>
+      <app-fullpage-message height="300px" *ngIf="usedFor.length === 0 && xivapiItem.ID < 19 && xivapiItem.ID > 1">
+        {{'DB.Crystal_used_for_everything' | translate}}
       </app-fullpage-message>
       <div fxLayout="row" fxLayoutGap="10px">
         <nz-card [fxFlex]="row.flex" class="details-card" [nzTitle]="title" nzBordered="false"
