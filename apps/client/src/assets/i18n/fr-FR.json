@@ -123,7 +123,7 @@
     "Admin": "Administrateur",
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} secondes",
-    "None": "None"
+    "None": "Aucun"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -174,8 +174,8 @@
   "No_lore_entries": "Aucune entrée d'histoire trouvée",
   "No_fates_found": "Aucun Aléa trouvé",
   "No_maps_found": "Aucune carte trouvée",
-  "No_actions_found": "No actions found",
-  "No_statuses_found": "No statuses found",
+  "No_actions_found": "Aucune action trouvée",
+  "No_statuses_found": "Aucun état trouvé",
   "Select_all": "Tout cocher",
   "Do you really want to reset the list?": "Voulez-vous vraiment réinitialiser la liste ?",
   "Yes": "Oui",
@@ -1214,49 +1214,49 @@
     },
     "ACTION": {
       "Cast": "Cast",
-      "Instant": "Instant",
-      "Range": "Range",
-      "Melee": "Melee",
-      "Radius": "Radius",
+      "Instant": "Instantané",
+      "Range": "Portée",
+      "Melee": "Mêlée",
+      "Radius": "Rayon",
       "Cooldown": "Cooldown",
-      "Pvp_action": "PvP action",
-      "Breaks_unrelated_combo": "Breaks unrelated combos",
-      "Movement_action": "Movement action",
-      "Possible_targets": "Possible targets",
-      "Unlocked_by_quest": "Unlocked by quest",
-      "Shares_cd_with": "Shares cooldown with",
+      "Pvp_action": "Action PvP",
+      "Breaks_unrelated_combo": "Interrompt les combos",
+      "Movement_action": "Action de mouvement",
+      "Possible_targets": "Cibles possibles",
+      "Unlocked_by_quest": "Déverrouillé par la quête",
+      "Shares_cd_with": "Partage le cooldown avec",
       "Combos": "Combos",
-      "Combo_next": "Next actions",
-      "Combo_previous": "Previous action",
-      "Affected_by_status": "Affected by status",
-      "Cost": "Cost",
+      "Combo_next": "Actions suivantes",
+      "Combo_previous": "Action précédente",
+      "Affected_by_status": "Affecté par l'état",
+      "Cost": "Coût",
       "TARGET": {
-        "Party": "Party",
-        "Dead": "Dead",
-        "Hostile": "Hostile",
-        "Self": "Self"
+        "Party": "Groupe",
+        "Dead": "Morts",
+        "Hostile": "Ennemis",
+        "Self": "Soi-même"
       },
       "COST_TYPE": {
-        "HP": "HP",
-        "MP": "MP",
-        "TP": "TP",
-        "GP": "GP",
-        "CP": "CP",
-        "Beast_gauge": "Beast gauge",
-        "Blood_gauge": "Blood gauge",
+        "HP": "PV",
+        "MP": "PM",
+        "TP": "PT",
+        "GP": "PR",
+        "CP": "PS",
+        "Beast_gauge": "Jauge de la bête",
+        "Blood_gauge": "Jauge de sang",
         "Ninki": "Ninki",
         "Chakra": "Chakra",
-        "Greasing_lightning": "Greasing Lightning",
-        "Aetherflow": "Aetherflow",
-        "Oath_gauge": "Oath gauge",
+        "Greasing_lightning": "Vitesse éclair",
+        "Aetherflow": "Flux d'éther",
+        "Oath_gauge": "Jauge du serment",
         "Kenki": "Kenki"
       }
     },
     "STATUS": {
-      "Max_stacks": "Max stacks",
-      "Locks_actions": "Locks actions",
-      "Locks_control": "Locks control",
-      "Locks_movement": "Locks movement"
+      "Max_stacks": "Cumuls max",
+      "Locks_actions": "Actions verrouillées",
+      "Locks_control": "Contrôles verrouillés",
+      "Locks_movement": "Mouvements verrouillés"
     }
   },
   "SEARCH_TYPES": {
@@ -1272,7 +1272,7 @@
     "Fate": "Aléa",
     "Map": "Carte",
     "Action": "Action",
-    "Status": "Status"
+    "Status": "État "
   },
   "SEARCH_FILTERS": {
     "Instance_level": "Niveau",
