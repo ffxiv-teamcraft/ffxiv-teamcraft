@@ -1155,16 +1155,16 @@
     "Drop_rate": "드랍율",
     "Involved_monsters": "관련 몬스터",
     "Reduces_to": "정제로 얻는 아이템",
-    "Icons_shown": "Data to show",
-    "Select_data_type": "Select data types to show to see the details here",
+    "Icons_shown": "데이터 유형 선택",
+    "Select_data_type": "세부 정보를 표시하기 위해 데이터를 선택하세요",
     "Desynths_to": "Desynths to",
-    "Limited": "Limited spawn",
+    "Limited": "한정 채집",
     "NODE": {
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
       "Bonus_condition": "조건",
-      "Spawn_duration": "Spawn duration",
-      "Spawns": "Spawn times"
+      "Spawn_duration": "지속시간",
+      "Spawns": "출현 시간"
     },
     "QUEST": {
       "Steps": "퀘스트 정보",
