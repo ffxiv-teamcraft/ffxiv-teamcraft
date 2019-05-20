@@ -32,6 +32,8 @@ import * as monsters from '../../../core/data/sources/monsters.json';
 import { FateSearchResult } from '../../../model/search/fate-search-result';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { MapSearchResult } from '../../../model/search/map-search-result';
+import { ActionSearchResult } from '../../../model/search/action-search-result';
+import { StatusSearchResult } from '../../../model/search/status-search-result';
 
 @Component({
   selector: 'app-search',
@@ -182,6 +184,10 @@ export class SearchComponent implements OnInit {
             return this.searchFate(query, filters);
           case SearchType.MAP:
             return this.searchMap(query, filters);
+          case SearchType.ACTION:
+            return this.searchAction(query, filters);
+          case SearchType.STATUS:
+            return this.searchStatus(query, filters);
           default:
             return this.data.searchItem(query, filters, false);
         }
@@ -264,6 +270,49 @@ export class SearchComponent implements OnInit {
             id: quest.ID,
             icon: quest.Icon,
             banner: quest.Banner
+          };
+        });
+      })
+    );
+  }
+
+  searchAction(query: string, filters: SearchFilter[]): Observable<ActionSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.ACTION, <SearchIndex>'craftaction'],
+      columns: ['ID', 'Icon', 'ClassJobLevel', 'ClassJob', 'ClassJobCategory'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(action => {
+          return {
+            id: action.ID,
+            icon: action.Icon,
+            job: action.ClassJob || action.ClassJobCategory,
+            level: action.ClassJobLevel
+          };
+        });
+      })
+    );
+  }
+
+  searchStatus(query: string, filters: SearchFilter[]): Observable<StatusSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.STATUS],
+      columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(status => {
+          return {
+            id: status.ID,
+            icon: status.Icon,
+            data: status
           };
         });
       })
