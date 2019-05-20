@@ -122,7 +122,8 @@
     "Open_in_desktop": "PCアプリで開く",
     "Admin": "管理者",
     "Minutes_duration": "{{amount}} 分",
-    "Seconds_duration": "{{amount}} 秒"
+    "Seconds_duration": "{{amount}} 秒",
+    "None": "None"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -173,6 +174,8 @@
   "No_lore_entries": "検索結果なし",
   "No_fates_found": "検索結果なし",
   "No_maps_found": "No maps found",
+  "No_actions_found": "No actions found",
+  "No_statuses_found": "No statuses found",
   "Select_all": "全て選択",
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
@@ -1100,6 +1103,7 @@
     "How_to_obtain": "獲得方法",
     "Used_for": "使用先",
     "Used_for_nothing": "使用先がありません",
+    "Crystal_used_for_everything": "Too many recipes (~ 1/6th of the ingame recipes)",
     "Crafts": "制作",
     "Recipes": "レシピ",
     "No_known_way_to_obtain": "このアイテムの獲得方法が見つかりません",
@@ -1208,6 +1212,52 @@
       "npc": "NPC",
       "node": "Nodes",
       "hunt": "Hunts"
+    },
+    "ACTION": {
+      "Cast": "Cast",
+      "Instant": "Instant",
+      "Range": "Range",
+      "Melee": "Melee",
+      "Radius": "Radius",
+      "Cooldown": "Cooldown",
+      "Pvp_action": "PvP action",
+      "Breaks_unrelated_combo": "Breaks unrelated combos",
+      "Movement_action": "Movement action",
+      "Possible_targets": "Possible targets",
+      "Unlocked_by_quest": "Unlocked by quest",
+      "Shares_cd_with": "Shares cooldown with",
+      "Combos": "Combos",
+      "Combo_next": "Next actions",
+      "Combo_previous": "Previous action",
+      "Affected_by_status": "Affected by status",
+      "Cost": "Cost",
+      "TARGET": {
+        "Party": "Party",
+        "Dead": "Dead",
+        "Hostile": "Hostile",
+        "Self": "Self"
+      },
+      "COST_TYPE": {
+        "HP": "HP",
+        "MP": "MP",
+        "TP": "TP",
+        "GP": "GP",
+        "CP": "CP",
+        "Beast_gauge": "Beast gauge",
+        "Blood_gauge": "Blood gauge",
+        "Ninki": "Ninki",
+        "Chakra": "Chakra",
+        "Greasing_lightning": "Greasing Lightning",
+        "Aetherflow": "Aetherflow",
+        "Oath_gauge": "Oath gauge",
+        "Kenki": "Kenki"
+      }
+    },
+    "STATUS": {
+      "Max_stacks": "Max stacks",
+      "Locks_actions": "Locks actions",
+      "Locks_control": "Locks control",
+      "Locks_movement": "Locks movement"
     }
   },
   "SEARCH_TYPES": {
@@ -1221,7 +1271,9 @@
     "Monster": "モンスター",
     "Lore": "台詞及び設定",
     "Fate": "F.A.T.E",
-    "Map": "地図"
+    "Map": "地図",
+    "Action": "Action",
+    "Status": "Status"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "レベル",
