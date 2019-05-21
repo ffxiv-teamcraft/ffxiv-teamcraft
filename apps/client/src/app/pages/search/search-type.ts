@@ -10,5 +10,6 @@ export enum SearchType {
   FATE = 'Fate',
   MAP = 'Map',
   ACTION = 'Action',
-  STATUS = 'Status'
+  STATUS = 'Status',
+  TRAIT = 'Trait'
 }

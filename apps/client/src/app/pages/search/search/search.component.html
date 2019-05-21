@@ -32,13 +32,16 @@
                    [nzValue]="searchTypes.ACTION"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.STATUS) | translate"
                    [nzValue]="searchTypes.STATUS"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.TRAIT) | translate"
+                   [nzValue]="searchTypes.TRAIT"></nz-option>
       </nz-select>
     </ng-template>
   </div>
   <div class="filters" *ngIf="searchType$ | async as searchType">
     <nz-collapse
       *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE
-      || searchType === searchTypes.INSTANCE || searchType === searchTypes.LEVE">
+      || searchType === searchTypes.INSTANCE || searchType === searchTypes.LEVE
+      || searchType === searchTypes.ACTION || searchType === searchTypes.TRAIT">
       <nz-collapse-panel [nzHeader]="'Filters' | translate">
         <form nz-form [formGroup]="itemFiltersform" (ngSubmit)="submitFilters()"
               *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">
@@ -136,7 +139,7 @@
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
-              <nz-form-label nzFor="reqlvl">{{'SEARCH_FILTERS.Instance_level' | translate}}</nz-form-label>
+              <nz-form-label nzFor="reqlvl">{{'SEARCH_FILTERS.Level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group nzCompact class="level-range">
                   <nz-input-number [nzMin]="0" [nzMax]="80" [nzPrecision]="0" id="reqlvl"
@@ -162,10 +165,10 @@
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
-              <nz-form-label nzFor="levelvl">{{'SEARCH_FILTERS.Leve_level' | translate}}</nz-form-label>
+              <nz-form-label>{{'SEARCH_FILTERS.Leve_level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group nzCompact class="level-range">
-                  <nz-input-number [nzMin]="0" [nzMax]="80" [nzPrecision]="0" id="levelvl"
+                  <nz-input-number [nzMin]="0" [nzMax]="80" [nzPrecision]="0"
                                    formControlName="lvlMin"></nz-input-number>
                   <input type="text" disabled nz-input placeholder="-">
                   <nz-input-number [nzMin]="1" [nzMax]="80" [nzPrecision]="0"
@@ -176,9 +179,81 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'SEARCH_FILTERS.Leve_job' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="jobCategory" nzAllowClear class="filter-select">
+                <nz-select formControlName="jobCategory" nzAllowClear class="filter-select" nzShowSearch>
                   <nz-option *ngFor="let category of availableLeveJobCategories" [nzValue]="category"
                              [nzLabel]="category | jobCategoryName | i18n">
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div fxLayout="column" fxLayoutGap="5px">
+            <button nz-button nzType="dashed" nzBlock type="button" (click)="resetFilters()">
+              <i nz-icon type="reload"></i> {{'ITEMS.Reset_filters' | translate}}
+            </button>
+            <button nz-button nzType="primary" nzBlock type="submit">
+              <i nz-icon type="filter"></i> {{'ITEMS.Apply_filters' | translate}}
+            </button>
+          </div>
+        </form>
+        <form nz-form [formGroup]="actionFilterForm" (ngSubmit)="submitFilters()"
+              *ngIf="searchType === searchTypes.ACTION">
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+               fxLayoutAlign.lt-md="center center">
+            <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+              <nz-form-label>{{'SEARCH_FILTERS.Level' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-input-group nzCompact class="level-range">
+                  <nz-input-number [nzMin]="0" [nzMax]="80" [nzPrecision]="0"
+                                   formControlName="lvlMin"></nz-input-number>
+                  <input type="text" disabled nz-input placeholder="-">
+                  <nz-input-number [nzMin]="1" [nzMax]="80" [nzPrecision]="0"
+                                   formControlName="lvlMax"></nz-input-number>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+              <nz-form-label>{{'SEARCH_FILTERS.Job' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-select formControlName="jobCategory" nzAllowClear class="filter-select" nzShowSearch>
+                  <nz-option *ngFor="let category of availableJobs" [nzValue]="category"
+                             [nzLabel]="category | jobAbbr | i18n">
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div fxLayout="column" fxLayoutGap="5px">
+            <button nz-button nzType="dashed" nzBlock type="button" (click)="resetFilters()">
+              <i nz-icon type="reload"></i> {{'ITEMS.Reset_filters' | translate}}
+            </button>
+            <button nz-button nzType="primary" nzBlock type="submit">
+              <i nz-icon type="filter"></i> {{'ITEMS.Apply_filters' | translate}}
+            </button>
+          </div>
+        </form>
+        <form nz-form [formGroup]="traitFilterForm" (ngSubmit)="submitFilters()"
+              *ngIf="searchType === searchTypes.TRAIT">
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+               fxLayoutAlign.lt-md="center center">
+            <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+              <nz-form-label>{{'SEARCH_FILTERS.Level' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-input-group nzCompact class="level-range">
+                  <nz-input-number [nzMin]="0" [nzMax]="80" [nzPrecision]="0"
+                                   formControlName="lvlMin"></nz-input-number>
+                  <input type="text" disabled nz-input placeholder="-">
+                  <nz-input-number [nzMin]="1" [nzMax]="80" [nzPrecision]="0"
+                                   formControlName="lvlMax"></nz-input-number>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+              <nz-form-label>{{'SEARCH_FILTERS.Job' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-select formControlName="jobCategory" nzAllowClear class="filter-select" nzShowSearch>
+                  <nz-option *ngFor="let category of availableJobs" [nzValue]="category"
+                             [nzLabel]="category | jobAbbr | i18n">
                   </nz-option>
                 </nz-select>
               </nz-form-control>
@@ -465,6 +540,24 @@
               </div>
             </div>
           </div>
+          <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="searchType === searchTypes.TRAIT"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <img [src]="row.icon | xivapiIcon" alt="" fxFlex="0 0 auto" class="quest-icon">
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div fxLayout="column">
+                  <div>{{row.id | traitName | i18n}}</div>
+                  <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiI18n}}</i>
+                </div>
+                <app-db-button type="trait" [id]="row.id"></app-db-button>
+              </div>
+            </div>
+          </div>
         </ng-container>
       </app-page-loader>
       <div *ngIf="results.length === 0">
@@ -490,6 +583,8 @@
                               *ngIf="searchType === searchTypes.ACTION">{{'No_actions_found' | translate}}</app-fullpage-message>
         <app-fullpage-message height="300px"
                               *ngIf="searchType === searchTypes.STATUS">{{'No_statuses_found' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.TRAIT">{{'No_traits_found' | translate}}</app-fullpage-message>
       </div>
     </div>
   </div>

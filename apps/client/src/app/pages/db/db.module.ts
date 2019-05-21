@@ -30,6 +30,7 @@ import { MapPageComponent } from './map-page/map-page.component';
 import { NodeComponent } from './node/node.component';
 import { ActionComponent } from './action/action.component';
 import { StatusComponent } from './status/status.component';
+import { TraitComponent } from './trait/trait.component';
 
 const routes: Routes = [
 
@@ -152,12 +153,23 @@ const routes: Routes = [
         component: StatusComponent,
         canActivate: [MaintenanceGuard]
       },
+
+      {
+        path: 'trait/:traitId',
+        component: TraitComponent,
+        canActivate: [MaintenanceGuard]
+      },
+      {
+        path: 'trait/:traitId/:slug',
+        component: TraitComponent,
+        canActivate: [MaintenanceGuard]
+      },
     ]
   }
 ];
 
 @NgModule({
-  declarations: [DbComponent, InstanceComponent, ItemComponent, QuestComponent, NpcComponent, LeveComponent, MobComponent, FateComponent, MapPageComponent, NodeComponent, ActionComponent, StatusComponent],
+  declarations: [DbComponent, InstanceComponent, ItemComponent, QuestComponent, NpcComponent, LeveComponent, MobComponent, FateComponent, MapPageComponent, NodeComponent, ActionComponent, StatusComponent, TraitComponent],
   imports: [
     CommonModule,
 

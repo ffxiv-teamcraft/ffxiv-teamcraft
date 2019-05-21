@@ -58,6 +58,7 @@ export class LazyDataService {
   public shops: any = {};
   public leves: any = {};
   public statuses: any = {};
+  public traits: any = {};
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -114,7 +115,8 @@ export class LazyDataService {
         this.http.get('./assets/data/instances.json'),
         this.http.get('./assets/data/shops.json'),
         this.http.get('./assets/data/leves.json'),
-        this.http.get('./assets/data/statuses.json')
+        this.http.get('./assets/data/statuses.json'),
+        this.http.get('./assets/data/traits.json')
       ]
     ).subscribe(([
                    items,
@@ -151,7 +153,8 @@ export class LazyDataService {
                    instances,
                    shops,
                    leves,
-                   statuses
+                   statuses,
+                   traits
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -188,6 +191,7 @@ export class LazyDataService {
       this.shops = shops;
       this.leves = leves;
       this.statuses = statuses;
+      this.traits = traits;
       this.loaded$.next(true);
     });
   }

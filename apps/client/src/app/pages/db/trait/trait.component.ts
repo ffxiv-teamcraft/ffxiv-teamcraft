@@ -11,38 +11,20 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { actionCdGroups } from '../../../core/data/sources/action-cd-groups';
-import { actionCombos } from '../../../core/data/sources/action-combos';
 import * as actionIcons from '../../../core/data/sources/action-icons.json';
 
 @Component({
-  selector: 'app-action',
-  templateUrl: './action.component.html',
-  styleUrls: ['./action.component.less']
+  selector: 'app-trait',
+  templateUrl: './trait.component.html',
+  styleUrls: ['./trait.component.less']
 })
-export class ActionComponent extends TeamcraftPageComponent {
+export class TraitComponent extends TeamcraftPageComponent {
 
-  public xviapiAction$: Observable<any>;
+  public xivapiTrait$: Observable<any>;
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
-  public costType = {
-    1: 'HP',
-    3: 'MP',
-    5: 'TP',
-    7: 'GP',
-    8: 'CP',
-    22: 'Beast_gauge',
-    25: 'Blood_gauge',
-    27: 'Ninki',
-    28: 'Chakra',
-    29: 'Greasing_lightning',
-    30: 'Aetherflow',
-    41: 'Oath_gauge',
-    45: 'Kenki'
-  };
-
-  public relatedTraits$: Observable<number[]>;
+  public relatedActions$: Observable<number[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -55,15 +37,15 @@ export class ActionComponent extends TeamcraftPageComponent {
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(this.l12n.getAction(+params.get('actionId'))).split(' ').join('-')],
+          [this.i18n.getName(this.l12n.getTrait(+params.get('traitId'))).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getAction(+params.get('actionId'))).split(' ').join('-')) {
+      } else if (slug !== this.i18n.getName(this.l12n.getTrait(+params.get('traitId'))).split(' ').join('-')) {
         this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getAction(+params.get('actionId'))).split(' ').join('-')],
+          ['../', this.i18n.getName(this.l12n.getTrait(+params.get('traitId'))).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true
@@ -72,52 +54,33 @@ export class ActionComponent extends TeamcraftPageComponent {
       }
     });
 
-    const actionId$ = this.route.paramMap.pipe(
+    const traitId$ = this.route.paramMap.pipe(
       filter(params => params.get('slug') !== null),
-      map(params => params.get('actionId'))
+      map(params => params.get('traitId'))
     );
 
 
-    this.xviapiAction$ = actionId$.pipe(
+    this.xivapiTrait$ = traitId$.pipe(
       switchMap(id => {
-        if (+id > 100000) {
-          return this.xivapi.get(XivapiEndpoint.CraftAction, +id);
-        } else {
-          return this.xivapi.get(XivapiEndpoint.Action, +id).pipe(
-            map(action => {
-              if (action.CooldownGroup > 0 && action.Recast100ms !== 25) {
-                action.SharesCooldownWith = actionCdGroups[action.CooldownGroup]
-                  .filter(i => i !== action.ID);
-              }
-              action.Combos = Object.keys(actionCombos)
-                .filter(key => actionCombos[key] === action.ID)
-                .map(key => +key);
-              return action;
-            })
-          );
-        }
+        return this.xivapi.get(XivapiEndpoint.Trait, +id);
       }),
       shareReplay(1)
     );
 
-    this.relatedTraits$ = this.xviapiAction$.pipe(
-      map(action => {
-        return Object.keys(this.lazyData.traits)
+    this.relatedActions$ = this.xivapiTrait$.pipe(
+      map(trait => {
+        const description = trait.Description_en;
+        return Object.keys({ ...this.lazyData.actions, ...this.lazyData.craftActions })
           .filter(key => {
-            return this.lazyData.traits[key].description.en.indexOf(`>${action.Name_en}<`) > -1;
+            return description.indexOf(`>${this.l12n.getAction(+key).en}<`) > -1 && actionIcons[+key] !== undefined;
           })
           .map(key => +key);
       })
     );
 
-    this.links$ = this.xviapiAction$.pipe(
+    this.links$ = this.xivapiTrait$.pipe(
       map((xivapiAction) => {
         return [
-          {
-            title: 'GarlandTools',
-            url: `http://www.garlandtools.org/db/#action/${xivapiAction.ID}`,
-            icon: 'https://garlandtools.org/favicon.png'
-          },
           {
             title: 'Gamer Escape',
             url: `https://ffxiv.gamerescape.com/wiki/${xivapiAction.Name_en.toString().split(' ').join('_')}`,
@@ -138,13 +101,13 @@ export class ActionComponent extends TeamcraftPageComponent {
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.xviapiAction$.pipe(
-      map(action => {
+    return this.xivapiTrait$.pipe(
+      map(trait => {
         return {
-          title: this.getName(action),
-          description: this.getDescription(action),
-          url: `https://ffxivteamcraft.com/db/action/${action.ID}/${this.getName(action).split(' ').join('-')}`,
-          image: `https://xivapi.com${action.Icon}`
+          title: this.getName(trait),
+          description: this.getDescription(trait),
+          url: `https://ffxivteamcraft.com/db/trait/${trait.ID}/${this.getName(trait).split(' ').join('-')}`,
+          image: `https://xivapi.com${trait.Icon}`
         };
       })
     );

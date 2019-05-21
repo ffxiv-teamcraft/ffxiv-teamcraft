@@ -165,6 +165,15 @@ export class LocalizedDataService {
     return row;
   }
 
+  public getTrait(id: number): any {
+    const row = this.getRow(this.lazyData.traits, id);
+    // const koRow = this.getRow(this.lazyData.koQuests, id);
+    if (row !== undefined) {
+      // row.name.ko = koRow !== undefined ? koRow.ko : row.name.en;
+    }
+    return row;
+  }
+
   public getTTRule(id: number): I18nName {
     const row = this.getRow<{ name: I18nName }>(tripleTriadRules, id);
     const koRow = this.getRow(this.lazyData.koTripleTriadRules, id);
