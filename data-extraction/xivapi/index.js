@@ -144,7 +144,7 @@ if (hasTodo('mappy')) {
     }
   });
 
-  Rx.combineLatest([memoryData$, mapData$, nodes$])
+  Rx.combineLatest([memoryData$, mapData$, nodes$, npcs$])
     .subscribe(([memoryData, res]) => {
       res.setEncoding('utf8');
       res.pipe(csv())
@@ -185,9 +185,6 @@ if (hasTodo('mappy')) {
 
 handleNode = (row) => {
   const baseId = gatheringPointToBaseId[+row.ENpcResidentID];
-  if (+row.MapID === 0) {
-    console.log('node with mapID 0: ', row.Hash);
-  }
   if (baseId && +row.MapID) {
     nodes[baseId] = {
       ...nodes[baseId],
