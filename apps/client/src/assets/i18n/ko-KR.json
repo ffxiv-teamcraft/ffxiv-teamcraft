@@ -123,7 +123,7 @@
     "Admin": "관리자",
     "Minutes_duration": "{{amount}}분",
     "Seconds_duration": "{{amount}} 초",
-    "None": "None"
+    "None": "없음"
   },
   "ALARMS": {
     "Title": "알람",
@@ -174,8 +174,8 @@
   "No_lore_entries": "검색 결과 없음",
   "No_fates_found": "검색 결과 없음",
   "No_maps_found": "검색 결과 없음",
-  "No_actions_found": "기술 찾을 수 없음",
-  "No_statuses_found": "No statuses found",
+  "No_actions_found": "검색 결과 없음",
+  "No_statuses_found": "검색 결과 없음",
   "Select_all": "모두 선택",
   "Do you really want to reset the list?": "정말로 이 목록을 초기화하시겠습니까?",
   "Yes": "O",
@@ -1254,10 +1254,10 @@
       }
     },
     "STATUS": {
-      "Max_stacks": "Max stacks",
-      "Locks_actions": "Locks actions",
+      "Max_stacks": "최대 중첩",
+      "Locks_actions": "기술 사용 불가",
       "Locks_control": "Locks control",
-      "Locks_movement": "Locks movement"
+      "Locks_movement": "이동 불가"
     }
   },
   "SEARCH_TYPES": {
@@ -1273,7 +1273,7 @@
     "Fate": "돌발 임무",
     "Map": "지도",
     "Action": "기술",
-    "Status": "Status"
+    "Status": "상태"
   },
   "SEARCH_FILTERS": {
     "Instance_level": "레벨",
