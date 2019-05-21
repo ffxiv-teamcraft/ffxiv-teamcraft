@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.4"></a>
+## [5.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.2...v5.4.4) (2019-05-21)
+
+
+### Bug Fixes
+
+* **auth:** added a security to avoid user data loss on network error ([d68cb35](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d68cb35))
+* **db:** coords are now rounded to first decimal ([90171d3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90171d3))
+* **db:** fixed an issue with some nodes having map id set to 0 ([6e26bb7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6e26bb7))
+* **desktop:** fixed broken language icons on db pages ([8921774](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8921774))
+* **list:** fixed an issue with progression not applied properly in some cases ([11e4c27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/11e4c27)), closes [#920](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/920)
+
+
+### Features
+
+* **db:** added trait support with links to actions ([8be25b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8be25b4))
+* **db:** Teamcraft now includes all Actions status Statuses inside the database ([b523403](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b523403))
+* **db:** UX improvements on map page ([4ce18f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ce18f0))
+* **layout:** default layout now uses reversed tiers for vendors panel ([ebad648](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ebad648))
+
+
+
 <a name="5.4.3"></a>
 ## [5.4.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.2...v5.4.3) (2019-05-20)
 
