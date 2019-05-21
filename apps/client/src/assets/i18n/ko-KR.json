@@ -1243,13 +1243,13 @@
         "TP": "TP",
         "GP": "GP",
         "CP": "CP",
-        "Beast_gauge": "Beast gauge",
-        "Blood_gauge": "Blood gauge",
-        "Ninki": "Ninki",
+        "Beast_gauge": "원초",
+        "Blood_gauge": "흑혈",
+        "Ninki": "인법",
         "Chakra": "Chakra",
         "Greasing_lightning": "Greasing Lightning",
-        "Aetherflow": "Aetherflow",
-        "Oath_gauge": "Oath gauge",
+        "Aetherflow": "에테르 순환",
+        "Oath_gauge": "충의",
         "Kenki": "검기"
       }
     },
