@@ -206,7 +206,7 @@ export class AuthEffects {
       if (missingCharacters.length === 0) {
         return of(new CharactersLoaded([]));
       }
-      return combineLatest(...getMissingCharacters$)
+      return combineLatest(getMissingCharacters$)
         .pipe(
           map(characters => new CharactersLoaded(<CharacterResponse[]>characters))
         );
