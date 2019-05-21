@@ -341,7 +341,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         }
         if (data.item.desynthedTo !== undefined) {
           usedFor.push({
-            type: UsedForType.REDUCTION,
+            type: UsedForType.DESYNTH,
             flex: '1 1 auto',
             title: 'DB.Desynths_to',
             icon: './assets/icons/desynth.png',
@@ -465,7 +465,7 @@ export class ItemComponent extends TeamcraftPageComponent {
             type: UsedForType.QUEST,
             flex: '1 1 auto',
             title: 'Quests',
-            icon: './assets/icons/leve.png',
+            icon: './assets/icons/quest.png',
             quests: data.item.usedInQuest
           });
         }

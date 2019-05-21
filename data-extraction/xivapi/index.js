@@ -185,13 +185,16 @@ if (hasTodo('mappy')) {
 
 handleNode = (row) => {
   const baseId = gatheringPointToBaseId[+row.ENpcResidentID];
-  if (baseId) {
+  if (+row.MapID === 0) {
+    console.log('node with mapID 0: ', row.Hash);
+  }
+  if (baseId && +row.MapID) {
     nodes[baseId] = {
       ...nodes[baseId],
       map: +row.MapID,
       zoneid: +row.PlaceNameID,
-      x: +row.PosX,
-      y: +row.PosY
+      x: Math.round(+row.PosX * 10) / 10,
+      y: Math.round(+row.PosY * 10) / 10
     };
   }
 };
@@ -203,8 +206,8 @@ handleAetheryte = (row) => {
     zoneid: +row.PlaceNameID,
     map: +row.MapID,
     placenameid: +row.PlaceNameID,
-    x: +row.PosX,
-    y: +row.PosY,
+    x: Math.round(+row.PosX * 10) / 10,
+    y: Math.round(+row.PosY * 10) / 10,
     type: isShard ? 1 : 0
   });
 };
@@ -218,8 +221,8 @@ handleMonster = (row, memoryData) => {
   const newEntry = {
     map: +row.MapID,
     zoneid: +row.PlaceNameID,
-    x: +row.PosX,
-    y: +row.PosY
+    x: Math.round(+row.PosX * 10) / 10,
+    y: Math.round(+row.PosY * 10) / 10
   };
   if (monsterMemoryRow !== undefined) {
     newEntry.level = +monsterMemoryRow.Level;
@@ -234,8 +237,8 @@ handleNpc = (row) => {
       {
         map: +row.MapID,
         zoneid: +row.PlaceNameID,
-        x: +row.PosX,
-        y: +row.PosY
+        x: Math.round(+row.PosX * 10) / 10,
+        y: Math.round(+row.PosY * 10) / 10
       }
   };
 };
