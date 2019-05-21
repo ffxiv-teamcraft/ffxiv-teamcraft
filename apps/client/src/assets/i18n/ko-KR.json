@@ -176,6 +176,7 @@
   "No_maps_found": "검색 결과 없음",
   "No_actions_found": "검색 결과 없음",
   "No_statuses_found": "검색 결과 없음",
+  "No_traits_found": "No traits found",
   "Select_all": "모두 선택",
   "Do you really want to reset the list?": "정말로 이 목록을 초기화하시겠습니까?",
   "Yes": "O",
@@ -1231,6 +1232,7 @@
       "Combo_previous": "이전 콤보",
       "Affected_by_status": "Affected by status",
       "Cost": "소비 자원",
+      "Related_traits": "Related traits",
       "TARGET": {
         "Party": "파티원",
         "Dead": "Dead",
@@ -1253,6 +1255,9 @@
         "Kenki": "검기"
       }
     },
+    "TRAIT": {
+      "Related_actions": "Related actions"
+    },
     "STATUS": {
       "Max_stacks": "최대 중첩",
       "Locks_actions": "기술 사용 불가",
@@ -1273,11 +1278,13 @@
     "Fate": "돌발 임무",
     "Map": "지도",
     "Action": "기술",
-    "Status": "상태"
+    "Status": "상태",
+    "Trait": "Trait"
   },
   "SEARCH_FILTERS": {
-    "Instance_level": "레벨",
+    "Level": "Level",
     "Leve_job": "직업",
+    "Job": "Job",
     "Leve_level": "요구 레벨"
   }
 }
