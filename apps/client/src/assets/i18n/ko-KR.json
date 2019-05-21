@@ -176,7 +176,7 @@
   "No_maps_found": "검색 결과 없음",
   "No_actions_found": "검색 결과 없음",
   "No_statuses_found": "검색 결과 없음",
-  "No_traits_found": "No traits found",
+  "No_traits_found": "검색 결과 없음",
   "Select_all": "모두 선택",
   "Do you really want to reset the list?": "정말로 이 목록을 초기화하시겠습니까?",
   "Yes": "O",
@@ -1232,7 +1232,7 @@
       "Combo_previous": "이전 콤보",
       "Affected_by_status": "Affected by status",
       "Cost": "소비 자원",
-      "Related_traits": "Related traits",
+      "Related_traits": "관련 특성",
       "TARGET": {
         "Party": "파티원",
         "Dead": "Dead",
@@ -1256,7 +1256,7 @@
       }
     },
     "TRAIT": {
-      "Related_actions": "Related actions"
+      "Related_actions": "관련 기술"
     },
     "STATUS": {
       "Max_stacks": "최대 중첩",
@@ -1279,12 +1279,12 @@
     "Map": "지도",
     "Action": "기술",
     "Status": "상태",
-    "Trait": "Trait"
+    "Trait": "특성"
   },
   "SEARCH_FILTERS": {
-    "Level": "Level",
+    "Level": "레벨",
     "Leve_job": "직업",
-    "Job": "Job",
+    "Job": "직업",
     "Leve_level": "요구 레벨"
   }
 }
