@@ -91,11 +91,25 @@ export class SearchComponent implements OnInit {
     jobCategory: [1]
   });
 
+  actionFilterForm: FormGroup = this.fb.group({
+    lvlMin: [0],
+    lvlMax: [80],
+    jobCategory: [1]
+  });
+
+  traitFilterForm: FormGroup = this.fb.group({
+    lvlMin: [0],
+    lvlMax: [80],
+    jobCategory: [1]
+  });
+
   availableJobCategories = [];
 
   availableLeveJobCategories = [9, 10, 11, 12, 13, 14, 15, 16, 1718, 19, 34];
 
   availableCraftJobs = [];
+
+  availableJobs = [];
 
   uiCategories$: Observable<{ id: number, name: I18nName }[]>;
 
@@ -134,6 +148,7 @@ export class SearchComponent implements OnInit {
     this.gt.onceLoaded$.pipe(first()).subscribe(() => {
       this.availableJobCategories = this.gt.getJobs().filter(job => job.isJob !== undefined || job.category === 'Disciple of the Land');
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
+      this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
     this.results$ = combineLatest([this.query$, this.searchType$, this.filters$]).pipe(
       filter(([query, , filters]) => {
@@ -188,6 +203,8 @@ export class SearchComponent implements OnInit {
             return this.searchAction(query, filters);
           case SearchType.STATUS:
             return this.searchStatus(query, filters);
+          case SearchType.TRAIT:
+            return this.searchTrait(query, filters);
           default:
             return this.data.searchItem(query, filters, false);
         }
@@ -208,6 +225,10 @@ export class SearchComponent implements OnInit {
         const filters = JSON.parse(atob(params.filters));
         this.filters$.next(filters);
         this.itemFiltersform.patchValue(this.filtersToForm(filters));
+        this.leveFiltersForm.patchValue(this.filtersToForm(filters));
+        this.actionFilterForm.patchValue(this.filtersToForm(filters));
+        this.instanceFiltersForm.patchValue(this.filtersToForm(filters));
+        this.traitFilterForm.patchValue(this.filtersToForm(filters));
       }
     });
   }
@@ -283,7 +304,28 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'Icon', 'ClassJobLevel', 'ClassJob', 'ClassJobCategory'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: []
+      filters: [].concat.apply([], filters.map(f => {
+        if (f.minMax) {
+          return [
+            {
+              column: f.name,
+              operator: '>=',
+              value: f.value.min
+            },
+            {
+              column: f.name,
+              operator: '<=',
+              value: f.value.max
+            }
+          ];
+        } else {
+          return [{
+            column: f.name,
+            operator: '=',
+            value: f.value
+          }];
+        }
+      }))
     }).pipe(
       map(res => {
         return res.Results.map(action => {
@@ -292,6 +334,49 @@ export class SearchComponent implements OnInit {
             icon: action.Icon,
             job: action.ClassJob || action.ClassJobCategory,
             level: action.ClassJobLevel
+          };
+        });
+      })
+    );
+  }
+
+  searchTrait(query: string, filters: SearchFilter[]): Observable<ActionSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [<SearchIndex>'trait'],
+      columns: ['ID', 'Icon', 'Level', 'ClassJob', 'ClassJobCategory'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters.map(f => {
+        if (f.minMax) {
+          return [
+            {
+              column: f.name,
+              operator: '>=',
+              value: f.value.min
+            },
+            {
+              column: f.name,
+              operator: '<=',
+              value: f.value.max
+            }
+          ];
+        } else {
+          return [{
+            column: f.name,
+            operator: '=',
+            value: f.value
+          }];
+        }
+      }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(action => {
+          return {
+            id: action.ID,
+            icon: action.Icon,
+            job: action.ClassJob || action.ClassJobCategory,
+            level: action.Level
           };
         });
       })
@@ -572,6 +657,19 @@ export class SearchComponent implements OnInit {
       lvlMax: 80,
       jobCategory: 1
     });
+
+    this.actionFilterForm.reset({
+      lvlMin: 0,
+      lvlMax: 80,
+      jobCategory: 0
+    });
+
+    this.traitFilterForm.reset({
+      lvlMin: 0,
+      lvlMax: 80,
+      jobCategory: 0
+    });
+
     this.submitFilters();
   }
 
@@ -586,6 +684,12 @@ export class SearchComponent implements OnInit {
         break;
       case SearchType.LEVE:
         this.filters$.next(this.getLeveFilters(this.leveFiltersForm.controls));
+        break;
+      case SearchType.ACTION:
+        this.filters$.next(this.getActionFilters(this.actionFilterForm.controls));
+        break;
+      case SearchType.TRAIT:
+        this.filters$.next(this.getTraitFilters(this.traitFilterForm.controls));
         break;
     }
   }
@@ -689,6 +793,48 @@ export class SearchComponent implements OnInit {
     if (controls.jobCategory.value !== 1) {
       filters.push({
         name: 'ClassJobCategoryTargetID',
+        value: controls.jobCategory.value
+      });
+    }
+    return filters;
+  }
+
+  private getActionFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
+    const filters = [];
+    if (controls.lvlMin.value > 0 || controls.lvlMax.value < 80) {
+      filters.push({
+        minMax: true,
+        name: 'ClassJobLevel',
+        value: {
+          min: controls.lvlMin.value,
+          max: controls.lvlMax.value
+        }
+      });
+    }
+    if (controls.jobCategory.value !== 0) {
+      filters.push({
+        name: 'ClassJobTargetID',
+        value: controls.jobCategory.value
+      });
+    }
+    return filters;
+  }
+
+  private getTraitFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
+    const filters = [];
+    if (controls.lvlMin.value > 0 || controls.lvlMax.value < 80) {
+      filters.push({
+        minMax: true,
+        name: 'Level',
+        value: {
+          min: controls.lvlMin.value,
+          max: controls.lvlMax.value
+        }
+      });
+    }
+    if (controls.jobCategory.value !== 0) {
+      filters.push({
+        name: 'ClassJobTargetID',
         value: controls.jobCategory.value
       });
     }

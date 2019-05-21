@@ -65,7 +65,7 @@
 
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
-      <nz-card fxFlex="1 1 30%" class="details-card"
+      <nz-card fxFlex="1 1 auto" class="details-card"
                [nzTitle]="title"
                nzBordered="false"
                *ngIf="action.GameContentLinks.Quest">
@@ -78,7 +78,7 @@
           <app-db-button type="quest" [id]="action.GameContentLinks.Quest.ActionReward[0]"></app-db-button>
         </div>
       </nz-card>
-      <nz-card fxFlex="1 1 30%" class="details-card"
+      <nz-card fxFlex="1 1 auto" class="details-card"
                [nzTitle]="title"
                nzBordered="false" *ngIf="action.ID < 100000">
         <ng-template #title>
@@ -91,7 +91,7 @@
           <div *ngIf="action.CanTargetSelf">{{'DB.ACTION.TARGET.Self' | translate}}</div>
         </div>
       </nz-card>
-      <nz-card fxFlex="1 1 30%" class="details-card"
+      <nz-card fxFlex="1 1 auto" class="details-card"
                [nzTitle]="title"
                nzBordered="false"
                *ngIf="action.SharesCooldownWith?.length > 0">
@@ -122,7 +122,7 @@
           </ng-template>
         </nz-list>
       </nz-card>
-      <nz-card fxFlex="1 1 30%" class="details-card"
+      <nz-card fxFlex="1 1 auto" class="details-card"
                [nzTitle]="title"
                nzBordered="false"
                *ngIf="action.Combos?.length > 0 || action.ActionComboTargetID">
@@ -180,7 +180,44 @@
           </ng-template>
         </nz-list>
       </nz-card>
-      <nz-card fxFlex="1 1 30%" class="details-card"
+      <ng-container *ngIf="relatedTraits$ | async as relatedTraits">
+        <nz-card fxFlex="1 1 auto" class="details-card"
+                 [nzTitle]="title"
+                 nzBordered="false"
+                 *ngIf="relatedTraits.length > 0">
+          <ng-template #title>
+            {{'DB.ACTION.Related_traits' | translate}}
+          </ng-template>
+          <nz-list [nzDataSource]="relatedTraits" [nzRenderItem]="traitTemplate"
+                   [nzItemLayout]="'horizontal'">
+            <ng-template #traitTemplate let-traitId>
+              <nz-list-item
+                [nzContent]="more">
+                <nz-list-item-meta
+                  [nzAvatar]="traitAvatar"
+                  [nzDescription]="traitDescription"
+                  [nzTitle]="traitTitle">
+                  <ng-template #traitAvatar>
+                    <img [src]="traitId | traitIcon | xivapiIcon" alt="" [appXivdbActionTooltip]="traitId">
+                  </ng-template>
+                  <ng-template #traitDescription>
+                    <span [innerHTML]="(traitId | traitName)?.description | i18n | xivUIText"></span>
+                  </ng-template>
+                  <ng-template #traitTitle>
+                    <div>
+                      {{traitId | traitName | i18n}}
+                    </div>
+                  </ng-template>
+                  <ng-template #more>
+                    <app-db-button type="trait" [id]="traitId"></app-db-button>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </nz-card>
+      </ng-container>
+      <nz-card fxFlex="1 1 auto" class="details-card"
                [nzTitle]="title"
                nzBordered="false"
                *ngIf="action.ActionProcStatus">

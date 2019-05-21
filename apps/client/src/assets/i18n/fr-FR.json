@@ -176,6 +176,7 @@
   "No_maps_found": "Aucune carte trouvée",
   "No_actions_found": "Aucune action trouvée",
   "No_statuses_found": "Aucun état trouvé",
+  "No_traits_found": "Aucun trait trouvé",
   "Select_all": "Tout cocher",
   "Do you really want to reset the list?": "Voulez-vous vraiment réinitialiser la liste ?",
   "Yes": "Oui",
@@ -1231,6 +1232,7 @@
       "Combo_previous": "Action précédente",
       "Affected_by_status": "Affecté par l'état",
       "Cost": "Coût",
+      "Related_traits": "Traits liés",
       "TARGET": {
         "Party": "Groupe",
         "Dead": "Morts",
@@ -1253,6 +1255,9 @@
         "Kenki": "Kenki"
       }
     },
+    "TRAIT": {
+      "Related_actions": "Actions liées"
+    },
     "STATUS": {
       "Max_stacks": "Cumuls max",
       "Locks_actions": "Actions verrouillées",
@@ -1273,11 +1278,13 @@
     "Fate": "Aléa",
     "Map": "Carte",
     "Action": "Action",
-    "Status": "État "
+    "Status": "État ",
+    "Trait": "Trait"
   },
   "SEARCH_FILTERS": {
-    "Instance_level": "Niveau",
+    "Level": "Niveau",
     "Leve_job": "Job",
+    "Job": "Job",
     "Leve_level": "Niveau requis"
   }
 }

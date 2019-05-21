@@ -46,14 +46,14 @@ export class CharacterLinkPopupComponent {
       })
     );
 
-    this.autoCompleteRows$ = combineLatest(this.servers$, this.selectedServer.valueChanges)
+    this.autoCompleteRows$ = combineLatest([this.servers$, this.selectedServer.valueChanges])
       .pipe(
         map(([servers, inputValue]) => {
           return servers.filter(server => server.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
         })
       );
 
-    this.result$ = combineLatest(this.selectedServer.valueChanges, this.characterName.valueChanges)
+    this.result$ = combineLatest([this.selectedServer.valueChanges, this.characterName.valueChanges])
       .pipe(
         tap(() => this.loadingResults = true),
         debounceTime(500),

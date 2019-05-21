@@ -35,7 +35,8 @@ let todo = [
   'gatheringBonuses',
   'cdGroups',
   'combos',
-  'statuses'
+  'statuses',
+  'traits'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -144,7 +145,7 @@ if (hasTodo('mappy')) {
     }
   });
 
-  Rx.combineLatest([memoryData$, mapData$, nodes$])
+  Rx.combineLatest([memoryData$, mapData$, nodes$, npcs$])
     .subscribe(([memoryData, res]) => {
       res.setEncoding('utf8');
       res.pipe(csv())
@@ -185,13 +186,13 @@ if (hasTodo('mappy')) {
 
 handleNode = (row) => {
   const baseId = gatheringPointToBaseId[+row.ENpcResidentID];
-  if (baseId) {
+  if (baseId && +row.MapID) {
     nodes[baseId] = {
       ...nodes[baseId],
       map: +row.MapID,
       zoneid: +row.PlaceNameID,
-      x: +row.PosX,
-      y: +row.PosY
+      x: Math.round(+row.PosX * 10) / 10,
+      y: Math.round(+row.PosY * 10) / 10
     };
   }
 };
@@ -203,8 +204,8 @@ handleAetheryte = (row) => {
     zoneid: +row.PlaceNameID,
     map: +row.MapID,
     placenameid: +row.PlaceNameID,
-    x: +row.PosX,
-    y: +row.PosY,
+    x: Math.round(+row.PosX * 10) / 10,
+    y: Math.round(+row.PosY * 10) / 10,
     type: isShard ? 1 : 0
   });
 };
@@ -218,8 +219,8 @@ handleMonster = (row, memoryData) => {
   const newEntry = {
     map: +row.MapID,
     zoneid: +row.PlaceNameID,
-    x: +row.PosX,
-    y: +row.PosY
+    x: Math.round(+row.PosX * 10) / 10,
+    y: Math.round(+row.PosY * 10) / 10
   };
   if (monsterMemoryRow !== undefined) {
     newEntry.level = +monsterMemoryRow.Level;
@@ -234,8 +235,8 @@ handleNpc = (row) => {
       {
         map: +row.MapID,
         zoneid: +row.PlaceNameID,
-        x: +row.PosX,
-        y: +row.PosY
+        x: Math.round(+row.PosX * 10) / 10,
+        y: Math.round(+row.PosY * 10) / 10
       }
   };
 };
@@ -949,5 +950,28 @@ if (hasTodo('statuses')) {
     });
   }, null, () => {
     persistToJsonAsset('statuses', statuses);
+  });
+}
+
+if (hasTodo('traits')) {
+  const traits = {};
+  getAllPages('https://xivapi.com/Trait?columns=ID,Name_*,Description_*,Icon').subscribe(page => {
+    page.Results.forEach(trait => {
+      traits[trait.ID] = {
+        en: trait.Name_en,
+        de: trait.Name_de,
+        ja: trait.Name_ja,
+        fr: trait.Name_fr,
+        icon: trait.Icon,
+        description: {
+          en: trait.Description_en,
+          de: trait.Description_de,
+          ja: trait.Description_ja,
+          fr: trait.Description_fr,
+        }
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('traits', traits);
   });
 }

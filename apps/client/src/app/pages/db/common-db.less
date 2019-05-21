@@ -5,12 +5,14 @@
   .details-card {
     background-color: rgba(0, 0, 0, .4);
     margin-bottom: 10px;
-    min-width: 30%;
   }
 
   .details-card {
-    min-width: 250px;
-    >.ant-card-body {
+    min-width: 400px;
+    @media @mobile {
+      min-width: 100%;
+    }
+    > .ant-card-body {
       max-height: 800px;
       overflow-y: auto;
     }
