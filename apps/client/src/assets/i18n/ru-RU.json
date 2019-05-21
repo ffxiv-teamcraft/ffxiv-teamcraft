@@ -176,6 +176,7 @@
   "No_maps_found": "No maps found",
   "No_actions_found": "No actions found",
   "No_statuses_found": "No statuses found",
+  "No_traits_found": "No traits found",
   "Select_all": "Выбрать все",
   "Do you really want to reset the list?": "Вы действительно хотите сбросить список?",
   "Yes": "Да",
@@ -1231,6 +1232,7 @@
       "Combo_previous": "Previous action",
       "Affected_by_status": "Affected by status",
       "Cost": "Cost",
+      "Related_traits": "Related traits",
       "TARGET": {
         "Party": "Party",
         "Dead": "Dead",
@@ -1253,6 +1255,9 @@
         "Kenki": "Kenki"
       }
     },
+    "TRAIT": {
+      "Related_actions": "Related actions"
+    },
     "STATUS": {
       "Max_stacks": "Max stacks",
       "Locks_actions": "Locks actions",
@@ -1273,11 +1278,13 @@
     "Fate": "Fate",
     "Map": "Map",
     "Action": "Action",
-    "Status": "Status"
+    "Status": "Status",
+    "Trait": "Trait"
   },
   "SEARCH_FILTERS": {
-    "Instance_level": "Level",
+    "Level": "Level",
     "Leve_job": "Leve job",
+    "Job": "Job",
     "Leve_level": "Required level"
   }
 }
