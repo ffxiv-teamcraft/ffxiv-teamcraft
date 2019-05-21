@@ -1214,12 +1214,12 @@
       "hunt": "마물"
     },
     "ACTION": {
-      "Cast": "Cast",
-      "Instant": "Instant",
-      "Range": "Range",
+      "Cast": "시전 시간",
+      "Instant": "즉시 발동",
+      "Range": "거리",
       "Melee": "Melee",
-      "Radius": "Radius",
-      "Cooldown": "Cooldown",
+      "Radius": "범위",
+      "Cooldown": "재사용",
       "Pvp_action": "PvP action",
       "Breaks_unrelated_combo": "Breaks unrelated combos",
       "Movement_action": "Movement action",
