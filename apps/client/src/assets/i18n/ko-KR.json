@@ -123,7 +123,7 @@
     "Admin": "관리자",
     "Minutes_duration": "{{amount}}분",
     "Seconds_duration": "{{amount}} 초",
-    "None": "None"
+    "None": "없음"
   },
   "ALARMS": {
     "Title": "알람",
@@ -174,8 +174,9 @@
   "No_lore_entries": "검색 결과 없음",
   "No_fates_found": "검색 결과 없음",
   "No_maps_found": "검색 결과 없음",
-  "No_actions_found": "No actions found",
-  "No_statuses_found": "No statuses found",
+  "No_actions_found": "검색 결과 없음",
+  "No_statuses_found": "검색 결과 없음",
+  "No_traits_found": "No traits found",
   "Select_all": "모두 선택",
   "Do you really want to reset the list?": "정말로 이 목록을 초기화하시겠습니까?",
   "Yes": "O",
@@ -1214,28 +1215,29 @@
       "hunt": "마물"
     },
     "ACTION": {
-      "Cast": "Cast",
-      "Instant": "Instant",
-      "Range": "Range",
-      "Melee": "Melee",
-      "Radius": "Radius",
-      "Cooldown": "Cooldown",
-      "Pvp_action": "PvP action",
+      "Cast": "시전 시간",
+      "Instant": "즉시 발동",
+      "Range": "거리",
+      "Melee": "근접 대상",
+      "Radius": "범위",
+      "Cooldown": "재사용",
+      "Pvp_action": "PvP 기술",
       "Breaks_unrelated_combo": "Breaks unrelated combos",
-      "Movement_action": "Movement action",
-      "Possible_targets": "Possible targets",
-      "Unlocked_by_quest": "Unlocked by quest",
-      "Shares_cd_with": "Shares cooldown with",
-      "Combos": "Combos",
-      "Combo_next": "Next actions",
-      "Combo_previous": "Previous action",
+      "Movement_action": "이동 스킬",
+      "Possible_targets": "사용 가능한 대상",
+      "Unlocked_by_quest": "선행 퀘스트",
+      "Shares_cd_with": "재사용 대기시간 공유",
+      "Combos": "콤보",
+      "Combo_next": "다음 콤보",
+      "Combo_previous": "이전 콤보",
       "Affected_by_status": "Affected by status",
-      "Cost": "Cost",
+      "Cost": "소비 자원",
+      "Related_traits": "Related traits",
       "TARGET": {
-        "Party": "Party",
+        "Party": "파티원",
         "Dead": "Dead",
-        "Hostile": "Hostile",
-        "Self": "Self"
+        "Hostile": "적",
+        "Self": "자신"
       },
       "COST_TYPE": {
         "HP": "HP",
@@ -1243,21 +1245,24 @@
         "TP": "TP",
         "GP": "GP",
         "CP": "CP",
-        "Beast_gauge": "Beast gauge",
-        "Blood_gauge": "Blood gauge",
-        "Ninki": "Ninki",
-        "Chakra": "Chakra",
-        "Greasing_lightning": "Greasing Lightning",
-        "Aetherflow": "Aetherflow",
-        "Oath_gauge": "Oath gauge",
-        "Kenki": "Kenki"
+        "Beast_gauge": "원초",
+        "Blood_gauge": "흑혈",
+        "Ninki": "인법",
+        "Chakra": "투기",
+        "Greasing_lightning": "질풍번개",
+        "Aetherflow": "에테르 순환",
+        "Oath_gauge": "충의",
+        "Kenki": "검기"
       }
     },
+    "TRAIT": {
+      "Related_actions": "Related actions"
+    },
     "STATUS": {
-      "Max_stacks": "Max stacks",
-      "Locks_actions": "Locks actions",
+      "Max_stacks": "최대 중첩",
+      "Locks_actions": "기술 사용 불가",
       "Locks_control": "Locks control",
-      "Locks_movement": "Locks movement"
+      "Locks_movement": "이동 불가"
     }
   },
   "SEARCH_TYPES": {
@@ -1272,12 +1277,14 @@
     "Lore": "대사 및 설정",
     "Fate": "돌발 임무",
     "Map": "지도",
-    "Action": "Action",
-    "Status": "Status"
+    "Action": "기술",
+    "Status": "상태",
+    "Trait": "Trait"
   },
   "SEARCH_FILTERS": {
-    "Instance_level": "레벨",
+    "Level": "Level",
     "Leve_job": "직업",
+    "Job": "Job",
     "Leve_level": "요구 레벨"
   }
 }
