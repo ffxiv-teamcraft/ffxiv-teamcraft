@@ -24,19 +24,19 @@
       </div>
       <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/english.png" class="language-flag" alt="EN">
+          <img src="./assets/icons/english.png" class="language-flag" alt="EN">
           <div>{{xivapiItem.Name_en}}</div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/german.png" class="language-flag" alt="DE">
+          <img src="./assets/icons/german.png" class="language-flag" alt="DE">
           <div>{{xivapiItem.Name_de}}</div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/french.png" class="language-flag" alt="FR">
+          <img src="./assets/icons/french.png" class="language-flag" alt="FR">
           <div>{{xivapiItem.Name_fr}}</div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/japanese.png" class="language-flag" alt="JA">
+          <img src="./assets/icons/japanese.png" class="language-flag" alt="JA">
           <div>{{xivapiItem.Name_ja}}</div>
         </div>
       </div>
@@ -143,7 +143,7 @@
               </div>
             </div>
           </ng-template>
-          <app-trades [item]="data"></app-trades>
+          <app-trades [item]="data" [dbDisplay]="true"></app-trades>
         </nz-card>
         <nz-card fxFlex="1 1 auto" class="details-card"
                  *ngIf="data.treasures !== undefined && data.treasures.length > 0" nzBordered="false"
@@ -173,7 +173,7 @@
           </ng-template>
           <app-fates [item]="data"></app-fates>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.craftedBy !== undefined && data.craftedBy.length > 0" nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -191,10 +191,13 @@
                   <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                     <ng-container *ngIf="recipe.jobId !== 0">
                       <div fxLayout="column" class="recipe-title">
-                        <div fxLayout="row">
-                          <img class="recipe-job-icon" [src]="recipe.icon" alt="">
+                        <div fxLayout="row" fxLayoutGap="5px">
                           <div>{{recipe.jobId | jobAbbr | i18n}}</div>
                           <div>{{recipe.level}}{{recipe.stars_tooltip}}</div>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="5px">
+                          <b>rlvl</b>:
+                          <div>{{gtData.getCraft(recipe.recipeId).rlvl}}</div>
                         </div>
                         <div fxLayout="row" fxLayoutGap="5px">
                           <b>{{'SIMULATOR.Durability' | translate}}</b>:
@@ -241,14 +244,14 @@
                 </ng-container>
               </ng-template>
               <ng-template #openSimulator>
-                <button nz-button (click)="openInSimulator(xivapiItem.ID, recipe.recipeId)">
+                <button nz-button (click)="openInSimulator(data, xivapiItem.ID, recipe.recipeId)">
                   {{'SIMULATOR.Simulate_tooltip' | translate}}
                 </button>
               </ng-template>
             </nz-card>
           </div>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.gatheredBy !== undefined" nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -261,7 +264,8 @@
           </ng-template>
           <app-gathered-by [item]="data" [showAlarmsIntegration]="true"></app-gathered-by>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card" *ngIf="data.instances !== undefined && data.instances.length > 0"
+        <nz-card fxFlex="1 1 30%" class="details-card"
+                 *ngIf="data.instances !== undefined && data.instances.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -274,7 +278,7 @@
           </ng-template>
           <app-instances [item]="data"></app-instances>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.reducedFrom !== undefined && data.reducedFrom.length > 0" nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -287,7 +291,20 @@
           </ng-template>
           <app-reduced-from [item]="data"></app-reduced-from>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card" *ngIf="data.vendors !== undefined && data.vendors.length > 0"
+        <nz-card fxFlex="1 1 30%" class="details-card"
+                 *ngIf="data.desynths !== undefined && data.desynths.length > 0" nzBordered="false"
+                 [nzTitle]="title">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+              <i nz-icon iconfont="icon-vectorcombine"></i>
+              <div>
+                {{'Desynth' | translate}}
+              </div>
+            </div>
+          </ng-template>
+          <app-desynths [item]="data"></app-desynths>
+        </nz-card>
+        <nz-card fxFlex="1 1 30%" class="details-card" *ngIf="data.vendors !== undefined && data.vendors.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -300,7 +317,7 @@
           </ng-template>
           <app-vendors [item]="data"></app-vendors>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card" *ngIf="data.voyages !== undefined && data.voyages.length > 0"
+        <nz-card fxFlex="1 1 30%" class="details-card" *ngIf="data.voyages !== undefined && data.voyages.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -313,7 +330,7 @@
           </ng-template>
           <app-voyages [item]="data"></app-voyages>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card" *ngIf="data.ventures !== undefined && data.ventures.length > 0"
+        <nz-card fxFlex="1 1 30%" class="details-card" *ngIf="data.ventures !== undefined && data.ventures.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -327,7 +344,7 @@
           <app-ventures [item]="data"></app-ventures>
         </nz-card>
 
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.tripleTriadDuels !== undefined && data.tripleTriadDuels.length > 0"
                  nzBordered="false"
                  [nzTitle]="title">
@@ -369,7 +386,7 @@
             </ng-template>
           </nz-list>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.tripleTriadPack !== undefined"
                  nzBordered="false"
                  [nzTitle]="title">
@@ -403,7 +420,7 @@
             </ng-template>
           </nz-list>
         </nz-card>
-        <nz-card fxFlex="1 1 auto" class="details-card"
+        <nz-card fxFlex="1 1 30%" class="details-card"
                  *ngIf="data.quests !== undefined && data.quests.length > 0" nzBordered="false"
                  [nzTitle]="title">
           <ng-template #title>
@@ -428,12 +445,7 @@
                     <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
                   </ng-template>
                   <ng-template #more>
-                    <a nz-button nz-tooltip [nzTitle]="'DB.Open_in_db' | translate"
-                       nzSize="small"
-                       nzShape="circle"
-                       routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                      <i nz-icon type="info"></i>
-                    </a>
+                    <app-db-button type="quest" [id]="quest"></app-db-button>
                   </ng-template>
                 </nz-list-item-meta>
               </nz-list-item>
@@ -444,8 +456,11 @@
     </div>
     <div *ngIf="usedFor$ | async as usedFor">
       <nz-divider [nzText]="'DB.Used_for' | translate" nzOrientation="left"></nz-divider>
-      <app-fullpage-message height="300px" *ngIf="usedFor.length === 0">
+      <app-fullpage-message height="300px" *ngIf="usedFor.length === 0 && (xivapiItem.ID > 19 || xivapiItem.ID === 1)">
         {{'DB.Used_for_nothing' | translate}}
+      </app-fullpage-message>
+      <app-fullpage-message height="300px" *ngIf="usedFor.length === 0 && xivapiItem.ID < 19 && xivapiItem.ID > 1">
+        {{'DB.Crystal_used_for_everything' | translate}}
       </app-fullpage-message>
       <div fxLayout="row" fxLayoutGap="10px">
         <nz-card [fxFlex]="row.flex" class="details-card" [nzTitle]="title" nzBordered="false"
@@ -470,11 +485,75 @@
                 <div>
                   {{link.itemId | itemName | i18n}}
                 </div>
+                <app-db-button type="item" [id]="link.itemId"></app-db-button>
               </div>
             </div>
           </div>
           <div fxLayout="column" fxLayoutGap="5px" *ngIf="row.trades">
             <app-trades [item]="data" [externalTradeSources]="row.trades"></app-trades>
+          </div>
+          <div *ngIf="row.leves">
+            <nz-list [nzDataSource]="row.leves" [nzRenderItem]="leveTemplate"
+                     [nzItemLayout]="'horizontal'">
+              <ng-template #leveTemplate let-leve>
+                <nz-list-item [nzContent]="more">
+                  <nz-list-item-meta
+                    [nzAvatar]="leveAvatar"
+                    [nzTitle]="leve.leveId | leveName | i18n"
+                    nzDescription="lvl {{leve.level}}">
+                    <ng-template #leveAvatar>
+                      <a routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">
+                        <img class="img-icon round-icon"
+                             src="./assets/icons/leve.png">
+                      </a>
+                      <a
+                        routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">{{leve.leveId | leveName | i18n}}</a>
+                    </ng-template>
+                    <ng-template #more>
+                      <app-db-button type="leve" [id]="leve.leveId"></app-db-button>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
+              </ng-template>
+            </nz-list>
+          </div>
+          <div *ngIf="row.quests">
+            <nz-list [nzDataSource]="row.quests" [nzRenderItem]="questTemplate"
+                     [nzItemLayout]="'horizontal'">
+              <ng-template #questTemplate let-quest>
+                <nz-list-item [nzContent]="more">
+                  <nz-list-item-meta
+                    [nzAvatar]="questAvatar"
+                    [nzTitle]="quest | questName | i18n">
+                    <ng-template #questAvatar>
+                      <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
+                        <img class="img-icon round-icon" src="./assets/icons/quest.png">
+                      </a>
+                      <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
+                    </ng-template>
+                    <ng-template #more>
+                      <app-db-button type="quest" [id]="quest"></app-db-button>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
+              </ng-template>
+            </nz-list>
+          </div>
+          <div *ngIf="row.supply">
+            <div fxLayout="column">
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <b>{{xivapiItem.ID | itemName | i18n}}</b>
+                <div>x{{row.supply.amount}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img src="./assets/icons/exp.png" alt="exp" class="img-icon">
+                <div>x{{row.supply.xp}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img [src]="20 | lazyIcon" alt="GC Seals" class="img-icon">
+                <div>x{{row.supply.seals}}</div>
+              </div>
+            </div>
           </div>
         </nz-card>
       </div>
@@ -483,4 +562,26 @@
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>
+</ng-template>
+
+<ng-template #notificationRef let-notification>
+  <div class="ant-notification-notice-content ant-notification-notice-with-icon">
+    <span class="ant-notification-notice-icon"><i nz-icon type="check-circle"
+                                                  class="ant-notification-notice-icon-success"></i></span>
+    <div>
+      <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
+      <div class="ant-notification-notice-description">
+        <span *ngIf="itemsAdded === 1">{{'Recipe_Added' | translate: { listname: modifiedList.name } }}</span>
+        <span *ngIf="itemsAdded !== 1">{{'Recipes_Added' | translate: {
+          itemcount: itemsAdded,
+          listname: modifiedList.name
+        } }}</span>
+      </div>
+      <span class="ant-notification-notice-btn">
+            <a nz-button nzType="primary" (click)="notification.close();" routerLink="/list/{{modifiedList.$key}}">
+              <span>{{'Open' | translate}}</span>
+            </a>
+          </span>
+    </div>
+  </div>
 </ng-template>

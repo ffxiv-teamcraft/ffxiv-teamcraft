@@ -4,4 +4,9 @@ export interface Fate {
   name: I18nName;
   description: I18nName;
   icon: string;
+  position?: {
+    zoneid: number;
+    x: number;
+    y: number;
+  }
 }

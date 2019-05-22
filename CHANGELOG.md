@@ -2,6 +2,121 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.4"></a>
+## [5.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.2...v5.4.4) (2019-05-21)
+
+
+### Bug Fixes
+
+* **auth:** added a security to avoid user data loss on network error ([d68cb35](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d68cb35))
+* **db:** coords are now rounded to first decimal ([90171d3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90171d3))
+* **db:** fixed an issue with some nodes having map id set to 0 ([6e26bb7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6e26bb7))
+* **desktop:** fixed broken language icons on db pages ([8921774](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8921774))
+* **list:** fixed an issue with progression not applied properly in some cases ([11e4c27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/11e4c27)), closes [#920](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/920)
+
+
+### Features
+
+* **db:** added trait support with links to actions ([8be25b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8be25b4))
+* **db:** Teamcraft now includes all Actions status Statuses inside the database ([b523403](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b523403))
+* **db:** UX improvements on map page ([4ce18f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ce18f0))
+* **layout:** default layout now uses reversed tiers for vendors panel ([ebad648](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ebad648))
+
+
+
+<a name="5.4.3"></a>
+## [5.4.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.2...v5.4.3) (2019-05-20)
+
+
+### Bug Fixes
+
+* **desktop:** fixed broken language icons on db pages ([8921774](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8921774))
+* **list:** fixed an issue with progression not applied properly in some cases ([11e4c27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/11e4c27)), closes [#920](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/920)
+
+
+### Features
+
+* **db:** Teamcraft now includes all Actions status Statuses inside the database ([b523403](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b523403))
+* **db:** UX improvements on map page ([4ce18f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ce18f0))
+
+
+
+<a name="5.4.2"></a>
+## [5.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.1...v5.4.2) (2019-05-19)
+
+
+### Bug Fixes
+
+* **list:** fixed an issue with amount input on crafts not applying properly to mats ([42f5faf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/42f5faf))
+* **map-page:** removed nodes with inexistant items (event items) ([bf3712c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf3712c))
+* **simulator:** fixed an issue with recipe changes resetting stats in custom mode ([956bcd2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/956bcd2))
+
+
+### Features
+
+* **db:** added individual pages for gathering nodes ([9a8b4ad](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a8b4ad))
+* **desynth:** added database link to desynth item results ([7332dcd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7332dcd))
+* **map:** added position on map markers hover ([768da97](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/768da97))
+
+
+
+<a name="5.4.1"></a>
+## [5.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.11...v5.4.1) (2019-05-18)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with groups randomly reordering themselves on time tick ([8f02591](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f02591))
+* fixed mogboard link to make it work with new version ([c1953a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1953a2))
+* **db:** better number format for npc positions ([8bc4646](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8bc4646))
+* **db:** fixed empty notification when adding an item to a list ([6c0753b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c0753b))
+* **log-tracker:** removed timed nodes from optimized path ([3234932](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3234932))
+* **teams:** fixed an issue preventing team members to input progression on lists ([8985c4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8985c4f))
+* **ux:** multiple changes to the UI design ([cd24189](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd24189))
+
+
+### Features
+
+* Teamcraft now includes a FATE database ([d516e15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d516e15))
+* Teamcraft now includes a levequests database ([e6296f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e6296f7))
+* Teamcraft now includes a lore finder ([e14e6c8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e14e6c8))
+* Teamcraft now includes a map database ([e0a73b0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e0a73b0))
+* Teamcraft now includes a monster database ([93cfa92](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/93cfa92))
+* Teamcraft now includes a npc database ([2c3d9c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2c3d9c0))
+* Teamcraft now includes a quest database ([e2e39b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2e39b2))
+* Teamcraft now includes an instance database ([276fbb8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/276fbb8))
+* Teamcraft now includes an item database ([0469df5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0469df5))
+* **teams:** added new webhook setting for final items progress notification ([1113411](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1113411))
+
+
+
+<a name="5.4.0"></a>
+# [5.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.11...v5.4.0) (2019-05-18)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with groups randomly reordering themselves on time tick ([8f02591](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f02591))
+* fixed mogboard link to make it work with new version ([c1953a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1953a2))
+* **log-tracker:** removed timed nodes from optimized path ([3234932](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3234932))
+* **ux:** multiple changes to the UI design ([cd24189](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd24189))
+
+
+### Features
+
+* Teamcraft now includes a FATE database ([d516e15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d516e15))
+* Teamcraft now includes a levequests database ([e6296f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e6296f7))
+* Teamcraft now includes a lore finder ([e14e6c8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e14e6c8))
+* Teamcraft now includes a map database ([e0a73b0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e0a73b0))
+* Teamcraft now includes a monster database ([93cfa92](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/93cfa92))
+* Teamcraft now includes a npc database ([2c3d9c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2c3d9c0))
+* Teamcraft now includes a quest database ([e2e39b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2e39b2))
+* Teamcraft now includes an instance database ([276fbb8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/276fbb8))
+* Teamcraft now includes an item database ([0469df5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0469df5))
+* **teams:** added new webhook setting for final items progress notification ([1113411](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1113411))
+
+
+
 <a name="5.3.11"></a>
 ## [5.3.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.3.10...v5.3.11) (2019-05-06)
 

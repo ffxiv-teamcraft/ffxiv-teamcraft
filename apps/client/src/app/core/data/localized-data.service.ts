@@ -35,7 +35,7 @@ export class LocalizedDataService {
     return row;
   }
 
-  public getInstanceName(id: number): I18nName {
+  public getInstanceName(id: number): any {
     //const koRow = this.getRow(this.lazyData.koItems, id);
     const row = this.getRow(this.lazyData.instances, id);
 
@@ -43,6 +43,11 @@ export class LocalizedDataService {
       //row.ko = koRow !== undefined ? koRow.ko : row.en;
     }
     return row;
+  }
+
+  public getMapName(id: number): any {
+    const entry = mapIds.find(m => m.id === id);
+    return this.getPlace(entry ? entry.zone : 1);
   }
 
   public getItemIdsByName(name: string, language: Language): number[] {
@@ -92,6 +97,27 @@ export class LocalizedDataService {
     return row;
   }
 
+  public getLeve(id: number): I18nName {
+    const row = this.getRow(this.lazyData.leves, id);
+    // const koRow = this.getRow(this.lazyData.koNpcs, id);
+
+    if (row !== undefined) {
+      // row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
+  public getShopName(englishName: string): I18nName {
+    const id = +Object.keys(this.lazyData.shops).find(k => this.lazyData.shops[k].en === englishName);
+    const row = this.getRow(this.lazyData.shops, id);
+    // const koRow = this.getRow(this.lazyData.koNpcs, id);
+
+    if (row !== undefined) {
+      // row.ko = koRow !== undefined ? koRow.ko : row.en;
+    }
+    return row;
+  }
+
   public getJobName(id: number): I18nName {
     const row = this.getRow(jobNames, id);
     const koRow = this.getRow(this.lazyData.koJobNames, id);
@@ -122,6 +148,10 @@ export class LocalizedDataService {
     return row;
   }
 
+  public getMobId(name: string): number {
+    return +Object.keys(this.lazyData.mobs).find(k => this.lazyData.mobs[k].en.toLowerCase() === name.toLowerCase());
+  }
+
   public getVenture(id: number): I18nName {
     return this.getRow(ventures, id);
   }
@@ -131,6 +161,15 @@ export class LocalizedDataService {
     const koRow = this.getRow(this.lazyData.koQuests, id);
     if (row !== undefined) {
       row.name.ko = koRow !== undefined ? koRow.ko : row.name.en;
+    }
+    return row;
+  }
+
+  public getTrait(id: number): any {
+    const row = this.getRow(this.lazyData.traits, id);
+    // const koRow = this.getRow(this.lazyData.koQuests, id);
+    if (row !== undefined) {
+      // row.name.ko = koRow !== undefined ? koRow.ko : row.name.en;
     }
     return row;
   }
@@ -220,7 +259,7 @@ export class LocalizedDataService {
     return result;
   }
 
-  public getCraftingAction(id: number): I18nName {
+  public getAction(id: number): I18nName {
     const result = this.getRow(this.lazyData.craftActions, id) || this.getRow(this.lazyData.actions, id);
     if (result === undefined) {
       throw new Error('Data row not found.');
@@ -229,6 +268,15 @@ export class LocalizedDataService {
     if (koRow !== undefined) {
       result.ko = koRow.ko;
     }
+    return result;
+  }
+
+  public getStatus(id: number): I18nName {
+    const result = this.getRow(this.lazyData.statuses, id);
+    // const koRow = this.getRow(this.lazyData.koStatuses, id);
+    // if (koRow !== undefined) {
+    //   result.ko = koRow.ko;
+    // }
     return result;
   }
 

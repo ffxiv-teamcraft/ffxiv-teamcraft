@@ -12,6 +12,7 @@ import { XivapiClientModule } from '@xivapi/angular-client';
 import { NavigationMapComponent } from './navigation-map/navigation-map.component';
 import { WorldNavigationMapComponent } from './world-navigation-map/world-navigation-map.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     FlexLayoutModule,
     XivapiClientModule,
     FormsModule,
+    RouterModule,
 
     NgZorroAntdModule,
 

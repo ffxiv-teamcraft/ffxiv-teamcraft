@@ -25,6 +25,7 @@ import { CoreModule } from '../../../core/core.module';
 import { TreasuresComponent } from './treasures/treasures.component';
 import { FatesComponent } from './fates/fates.component';
 import { RouterModule } from '@angular/router';
+import { DesynthsComponent } from './desynth/desynths.component';
 
 @NgModule({
   imports: [
@@ -58,7 +59,8 @@ import { RouterModule } from '@angular/router';
     VenturesComponent,
     TradesComponent,
     TreasuresComponent,
-    FatesComponent
+    FatesComponent,
+    DesynthsComponent
   ],
   exports: [
     GatheredByComponent,
@@ -70,7 +72,8 @@ import { RouterModule } from '@angular/router';
     VenturesComponent,
     TradesComponent,
     TreasuresComponent,
-    FatesComponent
+    FatesComponent,
+    DesynthsComponent
   ],
   entryComponents: [
     GatheredByComponent,
@@ -82,7 +85,8 @@ import { RouterModule } from '@angular/router';
     VenturesComponent,
     TradesComponent,
     TreasuresComponent,
-    FatesComponent
+    FatesComponent,
+    DesynthsComponent
   ]
 })
 export class ItemDetailsPopupsModule {

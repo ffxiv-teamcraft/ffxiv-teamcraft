@@ -176,6 +176,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   public startingQuality$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
+  private job$: Observable<any>;
+
   // Regex stuff for macro import
   private findActionsRegex: RegExp =
     new RegExp(/\/(ac|action)[\s]+(([\w]+)|"([^"]+)")?.*/, 'i');
@@ -185,7 +187,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private statsFromRotationApplied = false;
 
-  public permissionLevel$ = combineLatest(this.rotation$, this.authFacade.userId$).pipe(
+  public permissionLevel$ = combineLatest([this.rotation$, this.authFacade.userId$]).pipe(
     map(([rotation, userId]) => {
       return rotation.authorId === undefined ? 40 : rotation.getPermissionLevel(userId);
     })
@@ -247,109 +249,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       .sort(this.consumablesSortFn);
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions)
       .sort(this.freeCompanyActionsSortFn);
-
-    const job$ = merge(this.recipe$.pipe(map(r => r.job || 8)), this.customJob$).pipe(tap(job => this.job = job));
-
-    const statsFromRecipe$: Observable<CrafterStats> = combineLatest(this.recipe$, job$, this.authFacade.gearSets$).pipe(
-      map(([, job, sets]) => {
-        const set = sets.find(s => s.jobId === job);
-        return new CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.level, <CrafterLevels>sets.map(s => s.level));
-      }),
-      distinctUntilChanged((before, after) => {
-        return JSON.stringify(before) === JSON.stringify(after);
-      })
-    );
-
-    const statsFromRotation$ = this.rotation$.pipe(
-      map(rotation => {
-        const stats = rotation.stats;
-        if (rotation.stats) {
-          return new CrafterStats(
-            stats.jobId,
-            stats.craftsmanship,
-            stats.control,
-            stats.cp,
-            stats.specialist,
-            stats.level,
-            [70, 70, 70, 70, 70, 70, 70, 70]
-          );
-        }
-        return undefined;
-      })
-    );
-
-    this.hqIngredientsData$ = this.recipe$.pipe(
-      map(recipe => {
-        return (recipe.ingredients || [])
-          .filter(i => i.id > 20 && i.quality !== undefined && !fakeHQItems.some(id => i.id === id))
-          .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
-      })
-    );
-
-    this.crafterStats$ = combineLatest(merge(statsFromRecipe$, this.customStats$), statsFromRotation$, this.route.queryParamMap, this.authFacade.userId$, this.rotation$).pipe(
-      debounceTime(1000),
-      map(([generated, fromRotation, query, userId, rotation]) => {
-        if (!this.statsFromRotationApplied && this.custom && (query.has('includeStats') || (rotation.authorId === userId && rotation.custom))) {
-          this.statsFromRotationApplied = true;
-          return fromRotation || generated;
-        }
-        return generated;
-      }),
-      shareReplay(1),
-      tap(stats => {
-        this.availableLevels = stats.levels;
-        this.statsForm.reset({
-          job: stats.jobId,
-          craftsmanship: stats.craftsmanship,
-          control: stats._control,
-          cp: stats.cp,
-          level: stats.level,
-          specialist: stats.specialist
-        }, { emitEvent: false });
-      })
-    );
-
-    this.stats$ = combineLatest(this.crafterStats$, this.bonuses$, this.loggedIn$, job$).pipe(
-      map(([stats, bonuses, loggedIn, job]) => {
-        return new CrafterStats(
-          job || stats.jobId,
-          stats.craftsmanship + bonuses.craftsmanship,
-          stats._control + bonuses.control,
-          stats.cp + bonuses.cp,
-          stats.specialist,
-          stats.level,
-          loggedIn ? stats.levels : [70, 70, 70, 70, 70, 70, 70, 70]);
-      })
-    );
-    this.simulation$ = combineLatest(this.recipe$, this.actions$, this.stats$, this.hqIngredients$).pipe(
-      map(([recipe, actions, stats, hqIngredients]) => {
-        return new Simulation(recipe, actions, stats, hqIngredients);
-      }),
-      shareReplay(1)
-    );
-
-    combineLatest(this.rotation$, this.crafterStats$).pipe(
-      startWith([]),
-      pairwise(),
-      map(([before, after]) => {
-        return [...after, before[0] ? before[0].$key !== after[0].$key : true];
-      }),
-      takeUntil(this.onDestroy$)
-    ).subscribe(([rotation, stats, rotationChanged]: [CraftingRotation, CrafterStats, boolean]) => {
-      if (this.actions$.value.length === 0 || rotationChanged) {
-        this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
-      }
-      if (rotation.food && this.selectedFood === undefined) {
-        this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);
-      }
-      if (rotation.medicine && this.selectedMedicine === undefined) {
-        this.selectedMedicine = this.medicines.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq);
-      }
-      if (rotation.freeCompanyActions && this.selectedFreeCompanyActions.length === 0) {
-        this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1);
-      }
-      this.applyConsumables(stats);
-    });
   }
 
   disableEvent(event: any): void {
@@ -357,7 +256,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   changeRotation(): void {
-    this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, true, this.custom);
+    this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, null, true, this.custom);
   }
 
   getCraftOptExportString(): string {
@@ -517,7 +416,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   saveRotation(rotation: CraftingRotation): void {
-    combineLatest(this.stats$, this.actions$, this.recipe$).pipe(
+    combineLatest([this.stats$, this.actions$, this.recipe$]).pipe(
       first()
     ).subscribe(([stats, actions, recipe]) => {
       if (this.custom) {
@@ -794,7 +693,121 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.result$ = combineLatest(this.snapshotStep$, this.simulation$, this.safeMode$).pipe(
+    this.job$ = merge(
+      this.recipe$.pipe(
+        map(r => r.job || 8),
+        this.custom ? first() : tap()
+      ),
+      this.customJob$
+    ).pipe(tap(job => this.job = job));
+
+    const statsFromRecipe$: Observable<CrafterStats> = combineLatest([this.recipe$, this.job$, this.authFacade.gearSets$]).pipe(
+      map(([, job, sets]) => {
+        const set = sets.find(s => s.jobId === job);
+        return new CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.level, <CrafterLevels>sets.map(s => s.level));
+      }),
+      distinctUntilChanged((before, after) => {
+        return JSON.stringify(before) === JSON.stringify(after);
+      })
+    );
+
+    const statsFromRotation$ = this.rotation$.pipe(
+      map(rotation => {
+        const stats = rotation.stats;
+        if (rotation.stats) {
+          return new CrafterStats(
+            stats.jobId,
+            stats.craftsmanship,
+            stats.control,
+            stats.cp,
+            stats.specialist,
+            stats.level,
+            [70, 70, 70, 70, 70, 70, 70, 70]
+          );
+        }
+        return undefined;
+      })
+    );
+
+    this.hqIngredientsData$ = this.recipe$.pipe(
+      map(recipe => {
+        return (recipe.ingredients || [])
+          .filter(i => i.id > 20 && i.quality !== undefined && !fakeHQItems.some(id => i.id === id))
+          .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
+      })
+    );
+
+    this.crafterStats$ = combineLatest([merge(statsFromRecipe$, this.customStats$), statsFromRotation$, this.route.queryParamMap, this.authFacade.userId$, this.rotation$]).pipe(
+      debounceTime(1000),
+      map(([generated, fromRotation, query, userId, rotation]) => {
+        if (!this.statsFromRotationApplied && this.custom && (query.has('includeStats') || (rotation.authorId === userId && rotation.custom))) {
+          this.statsFromRotationApplied = true;
+          return fromRotation || generated;
+        }
+        return generated;
+      }),
+      shareReplay(1),
+      tap(stats => {
+        this.availableLevels = stats.levels;
+        this.statsForm.reset({
+          job: stats.jobId,
+          craftsmanship: stats.craftsmanship,
+          control: stats._control,
+          cp: stats.cp,
+          level: stats.level,
+          specialist: stats.specialist
+        }, { emitEvent: false });
+      })
+    );
+
+    this.stats$ = combineLatest([
+      this.crafterStats$,
+      this.bonuses$,
+      this.loggedIn$,
+      this.job$
+    ]).pipe(
+      map(([stats, bonuses, loggedIn, job]) => {
+        return new CrafterStats(
+          job || stats.jobId,
+          stats.craftsmanship + bonuses.craftsmanship,
+          stats._control + bonuses.control,
+          stats.cp + bonuses.cp,
+          stats.specialist,
+          stats.level,
+          loggedIn ? stats.levels : [70, 70, 70, 70, 70, 70, 70, 70]);
+      })
+    );
+    this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$]).pipe(
+      map(([recipe, actions, stats, hqIngredients]) => {
+        return new Simulation(recipe, actions, stats, hqIngredients);
+      }),
+      shareReplay(1)
+    );
+
+    combineLatest([this.rotation$, this.crafterStats$]).pipe(
+      startWith([]),
+      pairwise(),
+      map(([before, after]) => {
+        return [...after, before[0] ? before[0].$key !== after[0].$key : true];
+      }),
+      takeUntil(this.onDestroy$)
+    ).subscribe(([rotation, stats, rotationChanged]: [CraftingRotation, CrafterStats, boolean]) => {
+      if (this.actions$.value.length === 0 || rotationChanged) {
+        this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
+      }
+      if (rotation.food && this.selectedFood === undefined) {
+        this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);
+      }
+      if (rotation.medicine && this.selectedMedicine === undefined) {
+        this.selectedMedicine = this.medicines.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq);
+      }
+      if (rotation.freeCompanyActions && this.selectedFreeCompanyActions.length === 0) {
+        this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1);
+      }
+      this.applyConsumables(stats);
+    });
+
+    this.result$ = combineLatest([this.snapshotStep$, this.simulation$, this.safeMode$]).pipe(
       map(([snapshotStep, sim, safeMode]) => {
         sim.reset();
         if (this.snapshotMode) {
@@ -807,7 +820,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       shareReplay(1)
     );
 
-    this.report$ = combineLatest(this.simulation$, this.result$).pipe(
+    this.report$ = combineLatest([this.simulation$, this.result$]).pipe(
       map(([simulation, result]) => {
         if (!result.success) {
           return {

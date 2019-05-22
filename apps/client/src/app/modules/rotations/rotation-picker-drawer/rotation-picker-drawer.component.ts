@@ -8,6 +8,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { RotationFoldersFacade } from '../../rotation-folders/+state/rotation-folders.facade';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
+import { Craft } from '../../../model/garland-tools/craft';
 
 @Component({
   selector: 'app-rotation-picker-drawer',
@@ -19,6 +20,8 @@ export class RotationPickerDrawerComponent {
   public itemId: number;
 
   public recipeId: string;
+
+  public recipe: Partial<Craft>;
 
   public disableNew = false;
 

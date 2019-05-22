@@ -46,6 +46,7 @@
           <div fxLayout="row" fxLayoutGap="5px">
             <div>{{+row.itemId | itemName | i18n}}</div>
             <app-marketboard-icon [itemId]="+row.itemId" [showHistory]="true"></app-marketboard-icon>
+            <app-db-button type="item" [id]="+row.itemId"></app-db-button>
           </div>
           <div>
             <nz-tag *ngIf="userDesynthLevel > row.dlvl"

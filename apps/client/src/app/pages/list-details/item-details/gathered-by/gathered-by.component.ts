@@ -65,14 +65,17 @@ export class GatheredByComponent extends ItemDetailsPopup {
       map(alarms => {
         return !alarms.some(alarm => {
           return alarm.itemId === generatedAlarm.itemId
-          && alarm.zoneId === generatedAlarm.zoneId
-          && alarm.areaId === generatedAlarm.areaId;
-        })
+            && alarm.zoneId === generatedAlarm.zoneId
+            && alarm.areaId === generatedAlarm.areaId;
+        });
       })
-    )
+    );
   }
 
   public generateAlarm(node: StoredNode): Partial<Alarm> {
+    if (!node.uptime && !node.weathers) {
+      return null;
+    }
     const bellNodes = this.bell.getAllNodes({ obj: { i: this.item.id, c: this.item.icon } });
     const alarm: Partial<Alarm> = {
       duration: node.uptime / 60,

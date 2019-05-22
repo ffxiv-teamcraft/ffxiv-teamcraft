@@ -11,7 +11,7 @@ export class ActionNamePipe implements PipeTransform {
   }
 
   transform(id: number, fallback?: string): I18nName {
-    return this.l12n.getCraftingAction(id);
+    return this.l12n.getAction(id);
   }
 
 }

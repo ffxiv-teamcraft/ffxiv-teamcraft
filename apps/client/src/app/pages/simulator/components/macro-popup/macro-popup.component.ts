@@ -62,7 +62,7 @@ export class MacroPopupComponent implements OnInit {
         this.macro.push([]);
         macroFragment = this.macro[this.macro.length - 1];
       }
-      let actionName = this.i18n.getName(this.l12n.getCraftingAction(action.getIds()[0]));
+      let actionName = this.i18n.getName(this.l12n.getAction(action.getIds()[0]));
       if (actionName.indexOf(' ') > -1 || this.translator.currentLang === 'ko') {
         actionName = `"${actionName}"`;
       }
@@ -104,7 +104,7 @@ export class MacroPopupComponent implements OnInit {
     }
     // 11 not 10 because /aactions clear takes the first line :)
     if (this.aactionsMacro.length < 11) {
-      this.aactionsMacro.push(`/aaction ${this.i18n.getName(this.l12n.getCraftingAction(new Reclaim().getIds()[0]))}`);
+      this.aactionsMacro.push(`/aaction ${this.i18n.getName(this.l12n.getAction(new Reclaim().getIds()[0]))}`);
     }
     if (this.aactionsMacro.length > 11) {
       this.tooManyAactions = true;

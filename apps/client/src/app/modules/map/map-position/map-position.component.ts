@@ -32,6 +32,12 @@ export class MapPositionComponent {
   }
 
   getMarker(): Vector2 {
+    if (!this.marker) {
+      return {
+        x: 0,
+        y: 0
+      };
+    }
     return {
       x: Math.round(this.marker.x),
       y: Math.round(this.marker.y)

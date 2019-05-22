@@ -1,0 +1,45 @@
+<ng-container *ngIf="xivapiStatus$ | async as status; else loader">
+  <div fxLayout="column" fxLayoutGap="10px" [style.padding]="'0 50px' | ifMobile: '0'">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px" fxLayoutAlign="flex-start flex-start"
+         fxFlex="1 1 auto" fxLayoutGap="5px" class="top-bar">
+      <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="10px" fxFlex="0 0 300px"
+           fxFlex.lt-md="1 1 auto" class="top-left-block">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="icon-block">
+          <img [src]="status.Icon | xivapiIcon" fxFlex="0 0 auto">
+          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+            <h2 class="item-name">{{status | xivapiI18n}}</h2>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+          <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
+            <img [src]="link.icon" [alt]="link.title" class="link-icon">
+          </a>
+        </div>
+      </div>
+      <div fxFlex="1 1 auto">
+        <p *ngIf="status.Description" [innerHTML]="status | xivapiI18n: 'Description' | xivUIText"></p>
+      </div>
+    </div>
+    <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
+      <div class="details-block">
+        <div class="detail-name">{{'DB.STATUS.Max_stacks' | translate}}</div>
+        <div class="detail-value">{{status.MaxStacks ? status.MaxStacks : ('COMMON.None' | translate)}}</div>
+      </div>
+      <div class="details-block">
+        <div class="detail-name">{{'DB.STATUS.Locks_actions' | translate}}</div>
+        <div class="detail-value">{{(status.LockActions === 1 ? 'Yes' : 'No') | translate}}</div>
+      </div>
+      <div class="details-block">
+        <div class="detail-name">{{'DB.STATUS.Locks_control' | translate}}</div>
+        <div class="detail-value">{{(status.LockControl === 1 ? 'Yes' : 'No') | translate}}</div>
+      </div>
+      <div class="details-block">
+        <div class="detail-name">{{'DB.STATUS.Locks_movement' | translate}}</div>
+        <div class="detail-value">{{(status.LockMovement === 1 ? 'Yes' : 'No') | translate}}</div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

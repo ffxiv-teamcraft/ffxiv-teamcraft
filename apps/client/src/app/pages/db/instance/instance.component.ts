@@ -8,10 +8,11 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { catchError, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { InstanceData } from '../../../model/garland-tools/instance-data';
+import { GtInstance } from '../../../model/garland-tools/gt-instance';
 
 @Component({
   selector: 'app-instance',
@@ -63,6 +64,11 @@ export class InstanceComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.gt.getInstance(+id);
       }),
+      catchError(() => {
+        const emptyResponse = new InstanceData();
+        emptyResponse.instance = new GtInstance();
+        return of(emptyResponse);
+      }),
       shareReplay(1)
     );
 
@@ -95,13 +101,18 @@ export class InstanceComponent extends TeamcraftPageComponent {
     return instance[`Description_${this.translate.currentLang}`] || instance.Description_en;
   }
 
+  private getName(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
+  }
+
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiInstance$.pipe(
       map(instance => {
         return {
-          title: this.i18n.getName(this.l12n.getInstanceName(instance.ID)),
+          title: this.getName(instance),
           description: this.getDescription(instance),
-          url: `https://ffxivteamcraft.com/db/instance/${instance.ID}/${this.i18n.getName(this.l12n.getInstanceName(instance.ID)).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/instance/${instance.ID}/${this.getName(instance).split(' ').join('-')}`,
           image: `https://xivapi.com/${instance.Banner}`
         };
       })

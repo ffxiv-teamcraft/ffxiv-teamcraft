@@ -1,0 +1,241 @@
+<ng-container *ngIf="xviapiAction$ | async as action; else loader">
+  <div fxLayout="column" fxLayoutGap="10px" [style.padding]="'0 50px' | ifMobile: '0'">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px" fxLayoutAlign="flex-start flex-start"
+         fxFlex="1 1 auto" fxLayoutGap="5px" class="top-bar">
+      <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="10px" fxFlex="0 0 300px"
+           fxFlex.lt-md="1 1 auto" class="top-left-block">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="icon-block">
+          <img [src]="action.Icon | xivapiIcon" class="img-icon" fxFlex="0 0 auto">
+          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+            <h2 class="item-name">{{action | xivapiI18n}}</h2>
+            <div class="item-kind" fxLayout="row" fxLayoutGap="5px" *ngIf="action.IsPlayerAction">
+              <div>Lvl {{action.ClassJobLevel}}</div>
+              <div [innerHTML]="action.ClassJob | xivapiI18n: 'Abbreviation'"></div>
+              <div [innerHTML]="action.ActionCategory | xivapiI18n"></div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+          <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
+            <img [src]="link.icon" [alt]="link.title" class="link-icon">
+          </a>
+        </div>
+      </div>
+      <div fxFlex="1 1 auto">
+        <p *ngIf="action.Description" [innerHTML]="action | xivapiI18n: 'Description' | xivUIText"></p>
+      </div>
+    </div>
+    <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
+      <div class="details-block">
+        <div class="detail-name">{{'DB.ACTION.Cast' | translate}}</div>
+        <div
+          class="detail-value">{{action.Cast100ms / 10 > 0 ? (action.Cast100ms / 10) + 's' : ('DB.ACTION.Instant' | translate)}}</div>
+      </div>
+      <div class="details-block">
+        <div class="detail-name">{{'DB.ACTION.Range' | translate}}</div>
+        <div class="detail-value" *ngIf="action.Range !== '-1'">{{action.Range}}y</div>
+        <div class="detail-value" *ngIf="action.Range === '-1'">{{'DB.ACTION.Melee' | translate}}</div>
+      </div>
+      <div class="details-block">
+        <div class="detail-name">{{'DB.ACTION.Radius' | translate}}</div>
+        <div class="detail-value">{{action.EffectRange}}y</div>
+      </div>
+      <div class="details-block">
+        <div class="detail-name">{{'DB.ACTION.Cooldown' | translate}}</div>
+        <div class="detail-value">{{action.Recast100ms / 10}}s</div>
+      </div>
+      <div class="details-block" *ngIf="costType[action.CostType]">
+        <div class="detail-name">{{'DB.ACTION.Cost' | translate}}</div>
+        <div
+          class="detail-value">{{action.Cost}} {{('DB.ACTION.COST_TYPE.' + costType[action.CostType]) | translate}}</div>
+      </div>
+      <div class="details-block">
+        <div class="detail-name">{{'DB.ACTION.Pvp_action' | translate}}</div>
+        <div class="detail-value">{{(action.IsPvP === 1 ? 'Yes' : 'No') | translate}}</div>
+      </div>
+      <div class="details-block">
+        <div class="detail-name">{{'DB.ACTION.Breaks_unrelated_combo' | translate}}</div>
+        <div class="detail-value">{{(action.PreservesCombo === 0 ? 'Yes' : 'No') | translate}}</div>
+      </div>
+      <div class="details-block">
+        <div class="detail-name">{{'DB.ACTION.Movement_action' | translate}}</div>
+        <div class="detail-value">{{(action.AffectsPosition === 1 ? 'Yes' : 'No') | translate}}</div>
+      </div>
+    </div>
+
+    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
+      <nz-card fxFlex="1 1 auto" class="details-card"
+               [nzTitle]="title"
+               nzBordered="false"
+               *ngIf="action.GameContentLinks.Quest">
+        <ng-template #title>
+          {{'DB.ACTION.Unlocked_by_quest' | translate}}
+        </ng-template>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+          <img [src]="action.GameContentLinks.Quest.ActionReward[0] | questIcon | xivapiIcon" alt="">
+          <div>{{action.GameContentLinks.Quest.ActionReward[0] | questName | i18n}}</div>
+          <app-db-button type="quest" [id]="action.GameContentLinks.Quest.ActionReward[0]"></app-db-button>
+        </div>
+      </nz-card>
+      <nz-card fxFlex="1 1 auto" class="details-card"
+               [nzTitle]="title"
+               nzBordered="false" *ngIf="action.ID < 100000">
+        <ng-template #title>
+          {{'DB.ACTION.Possible_targets' | translate}}
+        </ng-template>
+        <div fxLayout="column" fxLayoutGap="5px">
+          <div *ngIf="action.CanTargetParty">{{'DB.ACTION.TARGET.Party' | translate}}</div>
+          <div *ngIf="action.CanTargetDead">{{'DB.ACTION.TARGET.Dead' | translate}}</div>
+          <div *ngIf="action.CanTargetHostile">{{'DB.ACTION.TARGET.Hostile' | translate}}</div>
+          <div *ngIf="action.CanTargetSelf">{{'DB.ACTION.TARGET.Self' | translate}}</div>
+        </div>
+      </nz-card>
+      <nz-card fxFlex="1 1 auto" class="details-card"
+               [nzTitle]="title"
+               nzBordered="false"
+               *ngIf="action.SharesCooldownWith?.length > 0">
+        <ng-template #title>
+          {{'DB.ACTION.Shares_cd_with' | translate}}
+        </ng-template>
+        <nz-list [nzDataSource]="action.SharesCooldownWith" [nzRenderItem]="actionTemplate"
+                 [nzItemLayout]="'horizontal'">
+          <ng-template #actionTemplate let-sharedAction>
+            <nz-list-item
+              [nzContent]="more">
+              <nz-list-item-meta
+                [nzAvatar]="actionAvatar"
+                [nzTitle]="actionTitle">
+                <ng-template #actionAvatar>
+                  <img [src]="sharedAction | actionIcon" alt="" [appXivdbActionTooltip]="sharedAction">
+                </ng-template>
+                <ng-template #actionTitle>
+                  <div>
+                    {{sharedAction | actionName | i18n}}
+                  </div>
+                </ng-template>
+                <ng-template #more>
+                  <app-db-button type="action" [id]="sharedAction"></app-db-button>
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+      <nz-card fxFlex="1 1 auto" class="details-card"
+               [nzTitle]="title"
+               nzBordered="false"
+               *ngIf="action.Combos?.length > 0 || action.ActionComboTargetID">
+        <ng-template #title>
+          {{'DB.ACTION.Combos' | translate}}
+        </ng-template>
+        <nz-list *ngIf="action.Combos?.length > 0"
+                 [nzDataSource]="action.Combos" [nzRenderItem]="actionTemplate"
+                 [nzHeader]="'DB.ACTION.Combo_next' | translate"
+                 [nzItemLayout]="'horizontal'">
+          <ng-template #actionTemplate let-sharedAction>
+            <nz-list-item
+              [nzContent]="more">
+              <nz-list-item-meta
+                [nzAvatar]="actionAvatar"
+                [nzTitle]="actionTitle">
+                <ng-template #actionAvatar>
+                  <img [src]="sharedAction | actionIcon" alt="" [appXivdbActionTooltip]="sharedAction">
+                </ng-template>
+                <ng-template #actionTitle>
+                  <div>
+                    {{sharedAction | actionName | i18n}}
+                  </div>
+                </ng-template>
+                <ng-template #more>
+                  <app-db-button type="action" [id]="sharedAction"></app-db-button>
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+        <nz-list *ngIf="action.ActionComboTargetID"
+                 [nzDataSource]="[action.ActionComboTargetID]" [nzRenderItem]="actionTemplate"
+                 [nzHeader]="'DB.ACTION.Combo_previous' | translate"
+                 [nzItemLayout]="'horizontal'">
+          <ng-template #actionTemplate let-sharedAction>
+            <nz-list-item
+              [nzContent]="more">
+              <nz-list-item-meta
+                [nzAvatar]="actionAvatar"
+                [nzTitle]="actionTitle">
+                <ng-template #actionAvatar>
+                  <img [src]="sharedAction | actionIcon" alt="" [appXivdbActionTooltip]="sharedAction">
+                </ng-template>
+                <ng-template #actionTitle>
+                  <div>
+                    {{sharedAction | actionName | i18n}}
+                  </div>
+                </ng-template>
+                <ng-template #more>
+                  <app-db-button type="action" [id]="sharedAction"></app-db-button>
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+      <ng-container *ngIf="relatedTraits$ | async as relatedTraits">
+        <nz-card fxFlex="1 1 auto" class="details-card"
+                 [nzTitle]="title"
+                 nzBordered="false"
+                 *ngIf="relatedTraits.length > 0">
+          <ng-template #title>
+            {{'DB.ACTION.Related_traits' | translate}}
+          </ng-template>
+          <nz-list [nzDataSource]="relatedTraits" [nzRenderItem]="traitTemplate"
+                   [nzItemLayout]="'horizontal'">
+            <ng-template #traitTemplate let-traitId>
+              <nz-list-item
+                [nzContent]="more">
+                <nz-list-item-meta
+                  [nzAvatar]="traitAvatar"
+                  [nzDescription]="traitDescription"
+                  [nzTitle]="traitTitle">
+                  <ng-template #traitAvatar>
+                    <img [src]="traitId | traitIcon | xivapiIcon" alt="" [appXivdbActionTooltip]="traitId">
+                  </ng-template>
+                  <ng-template #traitDescription>
+                    <span [innerHTML]="(traitId | traitName)?.description | i18n | xivUIText"></span>
+                  </ng-template>
+                  <ng-template #traitTitle>
+                    <div>
+                      {{traitId | traitName | i18n}}
+                    </div>
+                  </ng-template>
+                  <ng-template #more>
+                    <app-db-button type="trait" [id]="traitId"></app-db-button>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </nz-card>
+      </ng-container>
+      <nz-card fxFlex="1 1 auto" class="details-card"
+               [nzTitle]="title"
+               nzBordered="false"
+               *ngIf="action.ActionProcStatus">
+        <ng-template #title>
+          {{'DB.ACTION.Affected_by_status' | translate}}
+        </ng-template>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+          <img [src]="action.ActionProcStatus.Status.Icon | xivapiIcon" alt="">
+          <div fxLayout="column">
+            <div>{{action.ActionProcStatus.Status | xivapiI18n}}</div>
+            <i [innerHTML]="action.ActionProcStatus.Status | xivapiI18n: 'Description' | xivUIText"></i>
+          </div>
+          <app-db-button type="status" [id]="action.ActionProcStatus.Status.ID"></app-db-button>
+        </div>
+      </nz-card>
+    </div>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

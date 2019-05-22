@@ -2,6 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { BellNodesService } from '../../../../core/data/bell-nodes.service';
 import { Alarm } from '../../../../core/alarms/alarm';
+import { AlarmGroup } from '../../../../core/alarms/alarm-group';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
+import { MapService } from '../../../../modules/map/map.service';
 
 @Component({
   selector: 'app-reduced-from',
@@ -11,12 +16,59 @@ import { Alarm } from '../../../../core/alarms/alarm';
 })
 export class ReducedFromComponent extends ItemDetailsPopup {
 
-  constructor(private bell: BellNodesService) {
+  nodes: any = {};
+
+  alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
+
+  alarms$: Observable<Alarm[]> = this.alarmsFacade.allAlarms$;
+
+  alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
+
+  constructor(private bell: BellNodesService, private alarmsFacade: AlarmsFacade, private mapService: MapService) {
     super();
   }
 
   getNodes(reduction: any): any[] {
-    return this.bell.getAllNodes(reduction);
+    if (this.nodes[reduction.obj.i] === undefined) {
+      this.nodes[reduction.obj.i] = this.bell.getAllNodes(reduction);
+    }
+    return this.nodes[reduction.obj.i] || [];
+  }
+
+  public addAlarm(alarm: Partial<Alarm>, group?: AlarmGroup): void {
+    this.mapService.getMapById(alarm.mapId)
+      .pipe(
+        map((mapData) => {
+          if (mapData !== undefined) {
+            return this.mapService.getNearestAetheryte(mapData, alarm.coords);
+          } else {
+            return undefined;
+          }
+        }),
+        map(aetheryte => {
+          if (aetheryte !== undefined) {
+            alarm.aetheryte = aetheryte;
+          }
+          return alarm;
+        })
+      ).subscribe((result: Alarm) => {
+      if (group) {
+        alarm.groupId = group.$key;
+      }
+      this.alarmsFacade.addAlarms(result);
+    });
+  }
+
+  public canCreateAlarm(generatedAlarm: Partial<Alarm>): Observable<boolean> {
+    return this.alarms$.pipe(
+      map(alarms => {
+        return !alarms.some(alarm => {
+          return alarm.itemId === generatedAlarm.itemId
+            && alarm.zoneId === generatedAlarm.zoneId
+            && alarm.areaId === generatedAlarm.areaId;
+        });
+      })
+    );
   }
 
   public generateAlarm(node: any): Partial<Alarm> {
@@ -29,10 +81,10 @@ export class ReducedFromComponent extends ItemDetailsPopup {
       areaId: node.areaid,
       type: node.type,
       coords: {
-        x: node.coords[0],
-        y: node.coords[1]
+        x: node.x,
+        y: node.y
       },
-      spawns: node.time,
+      spawns: node.spawnTimes,
       folklore: node.folklore,
       reduction: node.reduction,
       ephemeral: node.ephemeral,

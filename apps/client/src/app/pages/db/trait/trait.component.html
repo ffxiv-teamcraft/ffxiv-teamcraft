@@ -1,0 +1,81 @@
+<ng-container *ngIf="xivapiTrait$ | async as trait; else loader">
+  <div fxLayout="column" fxLayoutGap="10px" [style.padding]="'0 50px' | ifMobile: '0'">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px" fxLayoutAlign="flex-start flex-start"
+         fxFlex="1 1 auto" fxLayoutGap="5px" class="top-bar">
+      <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="10px" fxFlex="0 0 300px"
+           fxFlex.lt-md="1 1 auto" class="top-left-block">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="icon-block">
+          <img [src]="trait.Icon | xivapiIcon" class="img-icon" fxFlex="0 0 auto">
+          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+            <h2 class="item-name">{{trait | xivapiI18n}}</h2>
+            <div class="item-kind" fxLayout="row" fxLayoutGap="5px">
+              <div>Lvl {{trait.Level}}</div>
+              <div [innerHTML]="trait.ClassJob | xivapiI18n: 'Abbreviation'"></div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+          <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
+            <img [src]="link.icon" [alt]="link.title" class="link-icon">
+          </a>
+        </div>
+      </div>
+      <div fxFlex="1 1 auto">
+        <p *ngIf="trait.Description" [innerHTML]="trait | xivapiI18n: 'Description' | xivUIText"></p>
+      </div>
+    </div>
+
+    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
+      <nz-card fxFlex="1 1 30%" class="details-card"
+               [nzTitle]="title"
+               nzBordered="false"
+               *ngIf="trait.QuestTargetID">
+        <ng-template #title>
+          {{'DB.ACTION.Unlocked_by_quest' | translate}}
+        </ng-template>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+          <img [src]="trait.Quest.JournalGenre.Icon | xivapiIcon" alt="">
+          <div>{{trait.QuestTargetID | questName | i18n}}</div>
+          <app-db-button type="quest" [id]="trait.QuestTargetID"></app-db-button>
+        </div>
+      </nz-card>
+      <ng-container *ngIf="relatedActions$ | async as relatedActions">
+        <nz-card fxFlex="1 1 30%" class="details-card"
+                 [nzTitle]="title"
+                 nzBordered="false"
+                 *ngIf="relatedActions.length > 0">
+          <ng-template #title>
+            {{'DB.TRAIT.Related_actions' | translate}}
+          </ng-template>
+          <nz-list [nzDataSource]="relatedActions" [nzRenderItem]="actionTemplate"
+                   [nzItemLayout]="'horizontal'">
+            <ng-template #actionTemplate let-sharedAction>
+              <nz-list-item
+                [nzContent]="more">
+                <nz-list-item-meta
+                  [nzAvatar]="actionAvatar"
+                  [nzTitle]="actionTitle">
+                  <ng-template #actionAvatar>
+                    <img [src]="sharedAction | actionIcon" alt="" [appXivdbActionTooltip]="sharedAction">
+                  </ng-template>
+                  <ng-template #actionTitle>
+                    <div>
+                      {{sharedAction | actionName | i18n}}
+                    </div>
+                  </ng-template>
+                  <ng-template #more>
+                    <app-db-button type="action" [id]="sharedAction"></app-db-button>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </nz-card>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

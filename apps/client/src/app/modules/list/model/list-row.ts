@@ -11,7 +11,6 @@ import { Alarm } from '../../../core/alarms/alarm';
 import { CompactMasterbook } from '../../../model/common/compact-masterbook';
 import { TripleTriadDuel } from '../../../pages/db/model/attt/triple-triad-duel';
 import { Treasure } from './treasure';
-import { Fate } from '../../../pages/db/model/fate/fate';
 import { FateData } from './fate-data';
 
 export class ListRow extends DataModel {

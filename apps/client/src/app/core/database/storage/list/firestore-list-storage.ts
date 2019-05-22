@@ -5,8 +5,9 @@ import { combineLatest, Observable } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { FirestoreStorage } from '../firestore/firestore-storage';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { first, map, switchMap } from 'rxjs/operators';
+import { first, map, switchMap, tap } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { IS_PRERENDER } from '../../../tools/platform.service';
 
 @Injectable()
 export class FirestoreListStorage extends FirestoreStorage<List> implements ListStore {
@@ -70,7 +71,8 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
           delete data.$key;
           return (<List>{ $key: snap.payload.doc.id, ...data });
         })),
-        map((lists: List[]) => this.serializer.deserialize<List>(lists, [List]))
+        map((lists: List[]) => this.serializer.deserialize<List>(lists, [List])),
+        IS_PRERENDER ? first() : tap()
       );
   }
 }

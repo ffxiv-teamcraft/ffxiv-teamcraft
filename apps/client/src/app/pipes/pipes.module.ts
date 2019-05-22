@@ -35,6 +35,12 @@ import { TripleTriadRuleNamePipe } from './pipes/triple-triad-rule-name.pipe';
 import { QuestNamePipe } from './pipes/quest-name.pipe';
 import { FatePipe } from './pipes/fate.pipe';
 import { InstanceNamePipe } from './pipes/instance-name.pipe';
+import { ShopNamePipe } from './pipes/shop-name.pipe';
+import { LeveNamePipe } from './pipes/leve-name.pipe';
+import { JobCategoryNamePipe } from './pipes/job-category-name.pipe';
+import { QuestIconPipe } from './pipes/quest-icon.pipe';
+import { TraitNamePipe } from './pipes/trait-name.pipe';
+import { TraitIconPipe } from './pipes/trait-icon.pipe';
 
 @NgModule({
   declarations: [
@@ -74,7 +80,13 @@ import { InstanceNamePipe } from './pipes/instance-name.pipe';
     TripleTriadRuleNamePipe,
     QuestNamePipe,
     FatePipe,
-    InstanceNamePipe
+    InstanceNamePipe,
+    ShopNamePipe,
+    LeveNamePipe,
+    JobCategoryNamePipe,
+    QuestIconPipe,
+    TraitNamePipe,
+    TraitIconPipe
   ],
   exports: [
     ItemNamePipe,
@@ -113,7 +125,13 @@ import { InstanceNamePipe } from './pipes/instance-name.pipe';
     TripleTriadRuleNamePipe,
     QuestNamePipe,
     FatePipe,
-    InstanceNamePipe
+    InstanceNamePipe,
+    ShopNamePipe,
+    LeveNamePipe,
+    JobCategoryNamePipe,
+    QuestIconPipe,
+    TraitNamePipe,
+    TraitIconPipe
   ]
 })
 export class PipesModule {

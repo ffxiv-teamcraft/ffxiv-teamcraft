@@ -11,6 +11,24 @@
 <ng-template #suffixIconSearch>
   <i nz-icon type="search"></i>
 </ng-template>
+<div *ngIf="recipe && recipe.rlvl" fxLayout="column" fxLayoutGap="5px">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div>rlvl</div>
+    <div>{{recipe.rlvl}}</div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div>{{'SIMULATOR.Durability' | translate}}</div>
+    <div>{{recipe.durability}}</div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div>{{'SIMULATOR.Progress' | translate}}</div>
+    <div>{{recipe.progress | number}}</div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div>{{'SIMULATOR.Quality' | translate}}</div>
+    <div>{{recipe.quality | number}}</div>
+  </div>
+</div>
 <div *ngIf="rotations$ | async as rotations">
   <nz-list [nzDataSource]="rotations" [nzRenderItem]="rotation" [nzHeader]="header">
     <ng-template #rotation let-rotation>

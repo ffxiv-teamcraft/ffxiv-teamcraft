@@ -28,6 +28,8 @@ import { UsedForType } from '../model/used-for-type';
 import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
+import { IS_PRERENDER } from '../../../core/tools/platform.service';
+import { Craft } from '../../../model/garland-tools/craft';
 
 @Component({
   selector: 'app-item',
@@ -71,6 +73,9 @@ export class ItemComponent extends TeamcraftPageComponent {
     super(seo);
 
     this.route.paramMap.subscribe(params => {
+      if (IS_PRERENDER) {
+        return;
+      }
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
@@ -292,7 +297,7 @@ export class ItemComponent extends TeamcraftPageComponent {
             url: `https://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${listRow.gardening}`
           });
         }
-        if (xivapiItem.AdditionalData) {
+        if (xivapiItem.ItemActionTargetID === 1389) {
           links.push({
             title: 'Another Triple Triad Tracker',
             icon: 'https://triad.raelys.com/images/logo.png',
@@ -309,10 +314,38 @@ export class ItemComponent extends TeamcraftPageComponent {
         if (data.item.ingredient_of !== undefined) {
           usedFor.push({
             type: UsedForType.CRAFT,
-            flex: '1 1 30%',
+            flex: '1 1 auto',
             title: 'DB.Crafts',
             icon: './assets/icons/classjob/blacksmith.png',
             links: Object.keys(data.item.ingredient_of)
+              .map(itemId => {
+                return {
+                  itemId: +itemId
+                };
+              })
+          });
+        }
+        if (data.item.reducesTo !== undefined) {
+          usedFor.push({
+            type: UsedForType.REDUCTION,
+            flex: '1 1 auto',
+            title: 'DB.Reduces_to',
+            icon: 'https://www.garlandtools.org/db/images/Reduce.png',
+            links: data.item.reducesTo
+              .map(itemId => {
+                return {
+                  itemId: +itemId
+                };
+              })
+          });
+        }
+        if (data.item.desynthedTo !== undefined) {
+          usedFor.push({
+            type: UsedForType.DESYNTH,
+            flex: '1 1 auto',
+            title: 'DB.Desynths_to',
+            icon: './assets/icons/desynth.png',
+            links: data.item.desynthedTo
               .map(itemId => {
                 return {
                   itemId: +itemId
@@ -331,7 +364,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         }
         if (data.item.tradeCurrency) {
           usedFor.push({
-            flex: '1 1 30%',
+            flex: '1 1 auto',
             type: UsedForType.TRADES,
             title: 'DB.Used_for_trades',
             icon: 'https://www.garlandtools.org/db/images/Shop.png',
@@ -399,7 +432,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         if (data.item.loot) {
           usedFor.push({
             type: UsedForType.CAN_CONTAIN_ITEMS,
-            flex: '1 1 30%',
+            flex: '1 1 auto',
             title: 'DB.Can_contain_items',
             icon: './assets/icons/chest_open.png',
             links: data.item.loot
@@ -410,13 +443,63 @@ export class ItemComponent extends TeamcraftPageComponent {
               })
           });
         }
+        if (data.item.requiredByLeves) {
+          usedFor.push({
+            type: UsedForType.LEVES,
+            flex: '1 1 auto',
+            title: 'DB.Leves',
+            icon: './assets/icons/leve.png',
+            leves: data.item.requiredByLeves
+              .map(leve => {
+                const partial = data.getPartial(leve.toString(), 'leve');
+                return {
+                  leveId: leve,
+                  level: partial.obj.l,
+                  job: partial.obj.j
+                };
+              })
+          });
+        }
+        if (data.item.usedInQuest) {
+          usedFor.push({
+            type: UsedForType.QUEST,
+            flex: '1 1 auto',
+            title: 'Quests',
+            icon: './assets/icons/quest.png',
+            quests: data.item.usedInQuest
+          });
+        }
+        if (data.item.supply) {
+          usedFor.push({
+            type: UsedForType.SUPPLY,
+            flex: '1 1 auto',
+            title: 'DB.GC_Delivery',
+            icon: './assets/icons/supply.png',
+            supply: {
+              amount: data.item.supply.count,
+              xp: data.item.supply.xp,
+              seals: data.item.supply.seals
+            }
+          });
+        }
         return usedFor;
       })
     );
   }
 
-  public openInSimulator(itemId: number, recipeId: string): void {
-    this.rotationPicker.openInSimulator(itemId, recipeId);
+  public openInSimulator(item: ListRow, itemId: number, recipeId: string): void {
+    const entry = item.craftedBy.find(c => c.recipeId === recipeId);
+    const craft: Partial<Craft> = {
+      id: recipeId,
+      job: entry.jobId,
+      lvl: entry.level,
+      stars: entry.stars_tooltip.length,
+      rlvl: entry.rlvl,
+      durability: entry.durability,
+      progress: entry.progression,
+      quality: entry.quality
+    };
+    this.rotationPicker.openInSimulator(itemId, recipeId, craft);
   }
 
   public toSearchResult(item: ListRow): SearchResult {
@@ -433,13 +516,18 @@ export class ItemComponent extends TeamcraftPageComponent {
     return item[`Description_${this.translate.currentLang}`] || item.Description_en;
   }
 
+  private getName(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
+  }
+
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiItem$.pipe(
       map(item => {
         return {
-          title: this.i18n.getName(this.l12n.getItem(item.ID)),
+          title: this.getName(item),
           description: this.getDescription(item),
-          url: `https://ffxivteamcraft.com/db/item/${item.ID}/${this.i18n.getName(this.l12n.getItem(item.ID)).split(' ').join('+')}`,
+          url: `https://ffxivteamcraft.com/db/item/${item.ID}/${this.getName(item).split(' ').join('+')}`,
           image: `https://xivapi.com/i2/ls/${item.ID}.png`
         };
       })

@@ -42,7 +42,12 @@ export class AlarmsFacade {
       const display = new AlarmsPageDisplay();
       // First of all, populate grouped alarms.
       display.groupedAlarms = groups
-        .sort((a, b) => a.index < b.index ? -1 : 1)
+        .sort((a, b) => {
+          if (a.index === b.index) {
+            return a.name < b.name ? -1 : 1;
+          }
+          return a.index < b.index ? -1 : 1;
+        })
         .map(group => {
           const groupAlarms = alarms
             .filter(alarm => alarm.groupId !== undefined && alarm.groupId === group.$key);
@@ -277,7 +282,13 @@ export class AlarmsFacade {
           if (weatherStart < despawn && weatherStart >= spawn) {
             // If it spawns during the alarm spawn, return weather spawn time.
             const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
-            return { hours: weatherStart, days: days, despawn: despawn, weather: weatherSpawn.weather, date: weatherSpawn.spawn };
+            return {
+              hours: weatherStart,
+              days: days,
+              despawn: despawn,
+              weather: weatherSpawn.weather,
+              date: weatherSpawn.spawn
+            };
           } else if (weatherStart < spawn && weatherStop > spawn) {
             // If it spawns before the alarm and despawns during the alarm or after,
             // set spawn day hour to spawn hour for days math.
@@ -300,7 +311,13 @@ export class AlarmsFacade {
           if (base48WeatherStart < base48Despawn && base48WeatherStart >= base48Spawn) {
             // If it spawns during the alarm spawn, return weather spawn time.
             const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
-            return { hours: weatherStart, days: days, despawn: despawn, weather: weatherSpawn.weather, date: weatherSpawn.spawn };
+            return {
+              hours: weatherStart,
+              days: days,
+              despawn: despawn,
+              weather: weatherSpawn.weather,
+              date: weatherSpawn.spawn
+            };
           } else if (base48WeatherStart < base48Spawn && base48WeatherStop > base48Spawn) {
             // If it spawns before the alarm and despawns during the alarm or after,
             // set spawn day hour to spawn hour for days math.

@@ -3,9 +3,15 @@
     <ng-container *ngIf="fate.id | fate as fateData">
       <nz-list-item [nzContent]="fate.zoneId && fate.coords?position:null">
         <nz-list-item-meta [nzAvatar]="fateData.icon | xivapiIcon"
-                           nzTitle="{{fateData.name | i18n}} - lvl {{fate.level}}"
+                           [nzTitle]="title"
                            [nzDescription]="fateData.description | i18n">
         </nz-list-item-meta>
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <div>{{fateData.name | i18n}} - lvl {{fate.level}}</div>
+            <app-db-button type="fate" [id]="fate.id"></app-db-button>
+          </div>
+        </ng-template>
         <ng-template #position>
           <div>
            {{fate.zoneId | placeName | i18n}} X: {{fate.coords.x}} - Y: {{fate.coords.y}}

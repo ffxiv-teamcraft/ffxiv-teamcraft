@@ -30,14 +30,20 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
       const partial = itemData.getPartial(d.toString(), 'mob');
       if (partial !== undefined) {
         const monsterId: string = Math.floor(d % 1000000).toString();
-        const zoneid = monsters[monsterId] !== undefined ? monsters[monsterId].zoneid : partial.obj.z;
-        const mapid = monsters[monsterId] !== undefined ? monsters[monsterId].map : partial.obj.z;
+        const zoneid = monsters[monsterId] !== undefined && monsters[monsterId].positions[0] ? monsters[monsterId].positions[0].zoneid : partial.obj.z;
+        const mapid = monsters[monsterId] !== undefined && monsters[monsterId].positions[0] ? monsters[monsterId].positions[0].map : partial.obj.z;
+        const position = monsters[monsterId] !== undefined && monsters[monsterId].positions[0] ? {
+            zoneid: zoneid,
+            x: +monsters[monsterId].positions[0].x,
+            y: +monsters[monsterId].positions[0].y
+          } :
+          null;
         const drop: Drop = {
           id: d,
           mapid: mapid,
           zoneid: zoneid,
           lvl: partial.obj.l,
-          position: monsters[monsterId]
+          position: position
         };
         drops.push(drop);
       }

@@ -6,12 +6,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "app"
-      }
-    ],
     "redirects": [
       {
         "source": "/desktop",
@@ -19,22 +13,19 @@
         "type": 301
       }
     ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
     "headers": [
       {
         "source": "**",
         "headers": [
           {
-            "key": "Cache-control",
-            "value": "no-cache, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "**/*.@(json|svg)",
-        "headers": [
-          {
             "key": "Cache-Control",
-            "value": "max-age=7200"
+            "value": "public, max-age=86400"
           }
         ]
       }

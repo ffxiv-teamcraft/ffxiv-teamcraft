@@ -1,4 +1,6 @@
 {
+  "Quests": "Misiones",
+  "Search_placeholder": "Nombre de {{type}}",
   "Pick_a_list": "Escoja una lista",
   "Pick_a_user": "Escoja un usuario",
   "Pick_a_fc": "Escoja un Gremio Independiente (FC)",
@@ -22,7 +24,6 @@
     "Title": "Busqueda",
     "No_match": "No se encontró el artículo",
     "Item_name": "Nombre del artículo",
-    "Only_recipes": "Solo recetas",
     "Add_to_list": "Agregar este elemento a una lista",
     "Apply_filters": "Aplicar filtros",
     "Reset_filters": "Resetear filtros",
@@ -94,9 +95,9 @@
   "Public_list": "Lista Comunitaria",
   "Profile": "Perfil",
   "X_for_total": "{{amount}} para el total",
-  "Discounts": "Discount",
-  "Flat_discount": "Flat",
-  "Percent_discount": "Percent",
+  "Discounts": "Descuento",
+  "Flat_discount": "Absoluto",
+  "Percent_discount": "Porcentual",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrar usando etiquetas",
     "Tags_filter_reset": "Quitar filtro de etiquetas",
@@ -121,7 +122,8 @@
     "Open_in_desktop": "Abrir en la aplicación de escritorio",
     "Admin": "Administrador",
     "Minutes_duration": "{{amount}} minutos",
-    "Seconds_duration": "{{amount}} segundos"
+    "Seconds_duration": "{{amount}} segundos",
+    "None": "None"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -165,6 +167,16 @@
   },
   "Item_name": "Nombre del artículo",
   "No_items_found": "Artículo no encontrado",
+  "No_instances_found": "No se encontraron instancias",
+  "No_quests_found": "No se encontraron misiones",
+  "No_npcs_found": "Npc no encontrado",
+  "No_mobs_found": "Monstruo no encontrado",
+  "No_lore_entries": "Entrada de historia no encontrada",
+  "No_fates_found": "Fate no encontrada",
+  "No_maps_found": "No se encontraron mapas",
+  "No_actions_found": "No actions found",
+  "No_statuses_found": "No statuses found",
+  "No_traits_found": "No traits found",
   "Select_all": "Seleccionar todo",
   "Do you really want to reset the list?": "¿Realmente desea reiniciar la lista?",
   "Yes": "Sí",
@@ -190,6 +202,8 @@
   "Vendors": "Vendedores",
   "Open": "Abrir",
   "Trade": "Intercambio",
+  "Treasures": "Se puede obtener en",
+  "Fates": "Fates",
   "Filters": "Filtros",
   "Check_all": "Seleccionar todos",
   "Uncheck_all": "Deseleccionar todos",
@@ -243,7 +257,7 @@
   "List_not_found": "Lista no encontrada o no tiene acceso a ella",
   "Requirements_for_craft": "Ver requerimientos",
   "Zone_breakdown": "Desglose por área",
-  "Reverse_tiers": "Display reversed tiers",
+  "Reverse_tiers": "Mostrar niveles invertidos",
   "Timer_options": "Opciones de Temporizador",
   "Early_by": "Avisar n horas eorzeanas antes",
   "Sound": "Sonido",
@@ -314,7 +328,7 @@
     "Starting_place_explain": "Utilizado para las características de optimización de ruta",
     "Free_aetheryte": "Aetheryte gratuito",
     "Favorite_aetherytes": "Aetherytes favoritos",
-    "Disable_cross_world_prices": "Only use own world for marketboard prices",
+    "Disable_cross_world_prices": "Sólo usar mi propio mundo para los precios del mercado",
     "COLORS": {
       "Primary": "Color primario",
       "Highlight": "Color de resaltado",
@@ -460,7 +474,7 @@
       "Buttons": "Botones",
       "Menu": "Menú",
       "Edit_row_buttons_display": "Editar botones a mostrar",
-      "Reorder_panels": "Reorder panels",
+      "Reorder_panels": "Reordenar paneles",
       "ITEMS": {
         "COMMENTS": "Comentarios",
         "COPY_NAME_NOT_FAVORITE": "Modo de copia no favorito",
@@ -735,10 +749,10 @@
         "Created_by": "Creado por {{name}}",
         "Copy_folder": "Copiar esta carpeta y su contenido a su cuenta",
         "Folder_copied": "Carpeta copiada a su cuenta",
-        "Your_folders": "Your folders",
+        "Your_folders": "Sus carpetas",
         "Favorite_folders": "Carpeta de favoritos",
         "Add_rotations": "Agregar rotaciones",
-        "Open": "Open folder"
+        "Open": "Abrir carpeta"
       }
     },
     "CATEGORY": {
@@ -804,7 +818,7 @@
       "Use_patient_touch_faster": "Debería usar \"Patient Touch\" antes de añadir puntos de \"Inner Quiet\", para minimizar los puntos desperdiciados si la acción falla.",
       "Use_advanced_touch_instead": "Usó \"Basic Touch\" seguido de \"Advanced Touch\" en el paso {{index}}, debería usar dos \"Standard Touch\" en su lugar para obtener la misma potencia por 2 CP menos.",
       "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos.",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used."
+      "Use_byregot_brow_5_stacks": "Debería usar \"Byregot's Brow\" en vez de \"Byregot's Blessing\" para obtener la misma calidad por 6 CP menos."
     }
   },
   "PRICING": {
@@ -826,6 +840,7 @@
     "Quantity": "Cantidad",
     "All_deliveries": "Todas las {{value}} entregas",
     "Compute_exp": "Mostrar impacto en exp",
+    "Global_exp": "Usar experiencia global",
     "More_on_gamerescape": "Más detalles en gamerescape",
     "Deliver_to": "Entregar a {{placename}}",
     "INTRO": {
@@ -885,7 +900,8 @@
       "ITEM_REMOVED": "Artículo removido",
       "LIST_ADDED": "Lista agregada",
       "LIST_REMOVED": "Lista removida",
-      "LIST_PROGRESSION": "Progresión de la lista",
+      "LIST_PROGRESSION": "Progresar materiales de la lista",
+      "FINAL_LIST_PROGRESSION": "Progresar artículos finales de la lista",
       "USER_ASSIGNMENT": "Asignación de usuario"
     }
   },
@@ -1083,5 +1099,192 @@
       "Pins_badge": "Botón de pin de Teamcraft exclusivo enviado a usted (${{price}}) (require que rellene los detalles del envío en Patreon)",
       "Loading_screen_message": "Añade una nueva entrada al mensaje de carga de \"Traído a usted por ...\", con su nombre, el nombre de su FC, nombre de LS, ¡lo que quiera añadir! (${{price}})"
     }
+  },
+  "DB": {
+    "How_to_obtain": "Como obtener",
+    "Used_for": "Usado para",
+    "Used_for_nothing": "Usado para nada",
+    "Crystal_used_for_everything": "Too many recipes (~ 1/6th of the ingame recipes)",
+    "Crafts": "Artesanías",
+    "Recipes": "Recetas",
+    "No_known_way_to_obtain": "No se pudo encontrar ninguna manera de obtener este artículo",
+    "Gathering": "Recolección",
+    "Tradeable": "Intercambiable",
+    "Unique": "Único",
+    "Dyeable": "Teñible",
+    "Materia_sockets": "Ranuras de Materia",
+    "Advanced_melding": "Fusión avanzada",
+    "Repair_job": "Profesión para reparar",
+    "Class_job": "Clase/Profesión",
+    "Delay": "Retraso",
+    "Auto": "Auto",
+    "Salvage_level": "Nivel de desíntesis óptimo",
+    "Sells_for": "Precio de venta",
+    "Click_to_navigate": "Haga clic en el icono para abrir los detalles completos del artículo",
+    "Triple_triad_duels": "Duelos de triada triple",
+    "TT_Rules": "Reglas",
+    "TT_card_unlock": "Desbloquea la tarjeta en la colección",
+    "Track_on_attt": "Rastrear en otro Rastreador de Triple Triada",
+    "Unlocked_by_quest": "Desbloqueado por misión",
+    "More_on_attt_npc": "Ver más detalles sobre este npc en otro Rastreador de Triple Triada",
+    "Triple_triad_pack": "Paquete de tarjetas triple triada",
+    "Dungeons": "Mazmorras/Pruebas",
+    "Used_for_trades": "Intercambios",
+    "Can_contain_items": "Puede contener artículos",
+    "Open_in_db": "Ver detalles dentro de la base de datos",
+    "Team_size": "Tamaño del equipo",
+    "Time": "Duración",
+    "Min_level": "Nivel min.",
+    "Min_ilevel": "ilvl min.",
+    "Sync_to": "Nivel máx.",
+    "Exp": "Exp",
+    "Week_restriction": "Restricción semanal",
+    "Fights": "Peleas",
+    "Instance_details": "Detalles de la instancia",
+    "Instance_rewards": "Recompensas",
+    "Unlocked_by": "Desbloqueado por",
+    "Chest_content": "Contenido del cofre",
+    "Currencies_reward": "Recompensa de monedas",
+    "Instance_chests": "Cofres",
+    "Position": "Posición",
+    "Content": "Contenido",
+    "Gil": "Gil",
+    "Level": "Nivel",
+    "Details": "Detalles",
+    "RP_Details": "Detalles de juego de rol",
+    "Experience_points": "Puntos de experiencia",
+    "Reputation_points": "Reputación de tribu de bestia",
+    "Map": "Mapa",
+    "Leves": "Leves",
+    "GC_Delivery": "Entrega de la GC",
+    "Drop_rate": "Taza de botín",
+    "Involved_monsters": "Monstruos involucrados",
+    "Reduces_to": "Se reduce a",
+    "Icons_shown": "Datos a mostrar",
+    "Select_data_type": "Seleccione los tipos de datos a mostrar para ver los detalles aquí",
+    "Desynths_to": "Se desintetiza en",
+    "Limited": "Aparición limitada",
+    "NODE": {
+      "Items": "Artículos",
+      "Possible_bonuses": "Bonos posibles",
+      "Bonus_condition": "Condición",
+      "Spawn_duration": "Duración de la aparición",
+      "Spawns": "Tiempos de aparición"
+    },
+    "QUEST": {
+      "Steps": "Pasos",
+      "Unlocked_by": "Desbloqueado por",
+      "Next_quests": "Siguientes misiones",
+      "Involved_npcs": "Npcs involucrados",
+      "Journal_entries": "Entradas de diario",
+      "Dialogues": "Diálogos",
+      "Start": "Inicio",
+      "End": "Fin",
+      "Rewards": "Recompensas",
+      "Repeatable": "Repetible",
+      "Beast_tribe_rank": "Rango de tribu de bestia"
+    },
+    "NPC": {
+      "Other_entries": "Otras apariciones",
+      "Default_talk": "Diálogos base",
+      "Quests": "Misiones",
+      "Shops": "Tiendas",
+      "Leves": "Leves",
+      "Trades": "Intercambios"
+    },
+    "FIGHT_TYPE": {
+      "Boss": "Jefe",
+      "MidBoss": "Jefe"
+    },
+    "LEVE": {
+      "Required_items": "Objetos requeridos",
+      "Allowance_cost": "Coste de autorizaciones",
+      "Rewards": "Recompensas posibles",
+      "Client": "Cliente",
+      "Issuer": "Emisor"
+    },
+    "MOB": {
+      "Known_spawns": "Lugares de aparición conocidos",
+      "Known_drops": "Botín conocido"
+    },
+    "DATA_TYPE": {
+      "fate": "Fates",
+      "mob": "Monstruos",
+      "npc": "NPCs",
+      "node": "Nodos",
+      "hunt": "Cacerías"
+    },
+    "ACTION": {
+      "Cast": "Cast",
+      "Instant": "Instant",
+      "Range": "Range",
+      "Melee": "Melee",
+      "Radius": "Radius",
+      "Cooldown": "Cooldown",
+      "Pvp_action": "PvP action",
+      "Breaks_unrelated_combo": "Breaks unrelated combos",
+      "Movement_action": "Movement action",
+      "Possible_targets": "Possible targets",
+      "Unlocked_by_quest": "Unlocked by quest",
+      "Shares_cd_with": "Shares cooldown with",
+      "Combos": "Combos",
+      "Combo_next": "Next actions",
+      "Combo_previous": "Previous action",
+      "Affected_by_status": "Affected by status",
+      "Cost": "Cost",
+      "Related_traits": "Related traits",
+      "TARGET": {
+        "Party": "Party",
+        "Dead": "Dead",
+        "Hostile": "Hostile",
+        "Self": "Self"
+      },
+      "COST_TYPE": {
+        "HP": "HP",
+        "MP": "MP",
+        "TP": "TP",
+        "GP": "GP",
+        "CP": "CP",
+        "Beast_gauge": "Beast gauge",
+        "Blood_gauge": "Blood gauge",
+        "Ninki": "Ninki",
+        "Chakra": "Chakra",
+        "Greasing_lightning": "Greasing Lightning",
+        "Aetherflow": "Aetherflow",
+        "Oath_gauge": "Oath gauge",
+        "Kenki": "Kenki"
+      }
+    },
+    "TRAIT": {
+      "Related_actions": "Related actions"
+    },
+    "STATUS": {
+      "Max_stacks": "Max stacks",
+      "Locks_actions": "Locks actions",
+      "Locks_control": "Locks control",
+      "Locks_movement": "Locks movement"
+    }
+  },
+  "SEARCH_TYPES": {
+    "Item": "Artículo",
+    "Recipe": "Receta",
+    "Instance": "Instancia",
+    "Quest": "Misión",
+    "NPC": "NPC",
+    "Leve": "Misión Leve",
+    "Leve_info_message": "Puede usar la página de misiones leve para preparar conjuntos leve y calcular la recompensa de exp por sus leves",
+    "Monster": "Monstruo",
+    "Lore": "Historia",
+    "Fate": "Fate",
+    "Map": "Mapa",
+    "Action": "Action",
+    "Status": "Status",
+    "Trait": "Trait"
+  },
+  "SEARCH_FILTERS": {
+    "Level": "Level",
+    "Leve_job": "Profesión Leve",
+    "Job": "Job",
+    "Leve_level": "Nivel requerido"
   }
 }

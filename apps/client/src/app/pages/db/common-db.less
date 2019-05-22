@@ -5,10 +5,20 @@
   .details-card {
     background-color: rgba(0, 0, 0, .4);
     margin-bottom: 10px;
-    min-width: 30%;
   }
 
-  ::ng-deep .ant-card-head {
+  .details-card {
+    min-width: 400px;
+    @media @mobile {
+      min-width: 100%;
+    }
+    > .ant-card-body {
+      max-height: 800px;
+      overflow-y: auto;
+    }
+  }
+
+  .ant-card-head {
     background-color: rgba(0, 0, 0, .10) !important;
     border-bottom-color: rgba(255, 255, 255, .4);
   }
@@ -69,6 +79,15 @@
 .img-icon {
   width: 32px;
   height: 32px;
+}
+
+.larger-img-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.round-icon {
+  border-radius: 50%;
 }
 
 .recipe-job-icon {

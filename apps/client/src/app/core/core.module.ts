@@ -31,6 +31,9 @@ import { PatreonService } from './patreon/patreon.service';
 import { CustomLink } from './database/custom-links/custom-link';
 import { ListTemplate } from './database/custom-links/list-template';
 import { WeatherService } from './eorzea/weather.service';
+import { DbButtonComponent } from './db-button/db-button.component';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -56,7 +59,9 @@ import { WeatherService } from './eorzea/weather.service';
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     PushNotificationsModule,
-    MaintenanceModule
+    MaintenanceModule,
+    NgZorroAntdModule,
+    RouterModule
   ],
   providers: [
     UserService,
@@ -73,7 +78,8 @@ import { WeatherService } from './eorzea/weather.service';
   ],
   declarations: [
     I18nPipe,
-    TimerPipe
+    TimerPipe,
+    DbButtonComponent
   ],
   exports: [
     I18nPipe,
@@ -83,7 +89,8 @@ import { WeatherService } from './eorzea/weather.service';
     AngularFireAuthModule,
     PushNotificationsModule,
     MaintenanceModule,
-    TimerPipe
+    TimerPipe,
+    DbButtonComponent
   ]
 })
 export class CoreModule {

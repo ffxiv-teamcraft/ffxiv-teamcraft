@@ -27,19 +27,19 @@
       </div>
       <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/english.png" class="language-flag" alt="EN">
+          <img src="./assets/icons/english.png" class="language-flag" alt="EN">
           <div>{{xivapiInstance.Name_en}}</div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/german.png" class="language-flag" alt="DE">
+          <img src="./assets/icons/german.png" class="language-flag" alt="DE">
           <div>{{xivapiInstance.Name_de}}</div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/french.png" class="language-flag" alt="FR">
+          <img src="./assets/icons/french.png" class="language-flag" alt="FR">
           <div>{{xivapiInstance.Name_fr}}</div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="/assets/icons/japanese.png" class="language-flag" alt="JA">
+          <img src="./assets/icons/japanese.png" class="language-flag" alt="JA">
           <div>{{xivapiInstance.Name_ja}}</div>
         </div>
       </div>
@@ -47,22 +47,22 @@
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
         <div class="detail-name">{{'DB.Team_size' | translate}}</div>
-        <div class="detail-value">{{xivapiInstance.ContentMemberType.HealersPerParty
+        <div class="detail-value">{{(xivapiInstance.ContentMemberType.HealersPerParty
         + xivapiInstance.ContentMemberType.MeleesPerParty
         + xivapiInstance.ContentMemberType.RangedPerParty
-        + xivapiInstance.ContentMemberType.TanksPerParty}}</div>
+        + xivapiInstance.ContentMemberType.TanksPerParty) || 1}}</div>
       </div>
       <div class="details-block">
         <div class="detail-name">{{'DB.Time' | translate}}</div>
-        <div class="detail-value">{{gtData.instance.time}}</div>
+        <div class="detail-value">{{xivapiInstance.TimeLimitMin}}</div>
       </div>
       <div class="details-block">
         <div class="detail-name">{{'DB.Min_level' | translate}}</div>
-        <div class="detail-value">{{gtData.instance.min_lvl}}</div>
+        <div class="detail-value">{{xivapiInstance.ContentFinderCondition.ClassJobLevelRequired}}</div>
       </div>
       <div class="details-block">
         <div class="detail-name">{{'DB.Sync_to' | translate}}</div>
-        <div class="detail-value">{{gtData.instance.max_lvl}}</div>
+        <div class="detail-value">{{xivapiInstance.ContentFinderCondition.ClassJobLevelSync}}</div>
       </div>
       <div class="details-block" *ngIf="gtData.instance.min_ilvl">
         <div class="detail-name">{{'DB.Min_ilevel' | translate}}</div>
@@ -122,8 +122,8 @@
     </div>
     <nz-divider [nzText]="'DB.Instance_details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
-      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false">
-        <ng-template #title>
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="mapTitle" nzBordered="false">
+        <ng-template #mapTitle>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
             <div>
               {{'DB.Map' | translate}}
@@ -132,9 +132,9 @@
         </ng-template>
         <app-map [mapId]="xivapiInstance.ContentFinderCondition.TerritoryType.Map.ID"></app-map>
       </nz-card>
-      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="rewardsTitle" nzBordered="false"
                *ngIf="gtData.instance.rewards?.length > 0">
-        <ng-template #title>
+        <ng-template #rewardsTitle>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
             <div>
               {{'DB.Instance_rewards' | translate}}
@@ -149,9 +149,9 @@
           </div>
         </div>
       </nz-card>
-      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="questTitle" nzBordered="false"
                *ngIf="gtData.instance.unlockedByQuest">
-        <ng-template #title>
+        <ng-template #questTitle>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
             <div>
               {{'DB.Unlocked_by' | translate}}
@@ -163,19 +163,13 @@
             <img class="img-icon round-icon"
                  src="./assets/icons/quest.png">
             <div>{{gtData.instance.unlockedByQuest | questName | i18n}}</div>
-              <a nz-button nz-tooltip
-                 [nzTitle]="'DB.Open_in_db' | translate"
-                 nzSize="small"
-                 nzShape="circle"
-                 routerLink="/db/{{translate.currentLang}}/quest/{{gtData.instance.unlockedByQuest}}">
-                <i nz-icon type="info"></i>
-              </a>
+            <app-db-button type="quest" [id]="gtData.instance.unlockedByQuest"></app-db-button>
             </div>
           </div>
       </nz-card>
-      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
+      <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="chestsTitle" nzBordered="false"
                *ngIf="gtData.instance.coffers">
-        <ng-template #title>
+        <ng-template #chestsTitle>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
             <div>
               {{'DB.Instance_chests' | translate}}

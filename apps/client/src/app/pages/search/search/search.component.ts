@@ -25,6 +25,15 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SearchType } from '../search-type';
 import { InstanceSearchResult } from '../../../model/search/instance-search-result';
 import { QuestSearchResult } from '../../../model/search/quest-search-result';
+import { NpcSearchResult } from '../../../model/search/npc-search-result';
+import { LeveSearchResult } from '../../../model/search/leve-search-result';
+import { MobSearchResult } from '../../../model/search/mob-search-result';
+import * as monsters from '../../../core/data/sources/monsters.json';
+import { FateSearchResult } from '../../../model/search/fate-search-result';
+import { mapIds } from '../../../core/data/sources/map-ids';
+import { MapSearchResult } from '../../../model/search/map-search-result';
+import { ActionSearchResult } from '../../../model/search/action-search-result';
+import { StatusSearchResult } from '../../../model/search/status-search-result';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
@@ -77,9 +86,31 @@ export class SearchComponent implements OnInit {
     maxPlayers: [24]
   });
 
+  leveFiltersForm: FormGroup = this.fb.group({
+    lvlMin: [0],
+    lvlMax: [80],
+    jobCategory: [1]
+  });
+
+  actionFilterForm: FormGroup = this.fb.group({
+    lvlMin: [0],
+    lvlMax: [80],
+    jobCategory: [1]
+  });
+
+  traitFilterForm: FormGroup = this.fb.group({
+    lvlMin: [0],
+    lvlMax: [80],
+    jobCategory: [1]
+  });
+
   availableJobCategories = [];
 
+  availableLeveJobCategories = [9, 10, 11, 12, 13, 14, 15, 16, 1718, 19, 34];
+
   availableCraftJobs = [];
+
+  availableJobs = [];
 
   uiCategories$: Observable<{ id: number, name: I18nName }[]>;
 
@@ -121,6 +152,7 @@ export class SearchComponent implements OnInit {
     this.gt.onceLoaded$.pipe(first()).subscribe(() => {
       this.availableJobCategories = this.gt.getJobs().filter(job => job.isJob !== undefined || job.category === 'Disciple of the Land');
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
+      this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
     this.results$ = combineLatest([this.query$, this.searchType$, this.filters$]).pipe(
       filter(([query, , filters]) => {
@@ -159,6 +191,24 @@ export class SearchComponent implements OnInit {
             return this.searchInstance(query, filters);
           case SearchType.QUEST:
             return this.searchQuest(query, filters);
+          case SearchType.NPC:
+            return this.searchNpc(query, filters);
+          case SearchType.LEVE:
+            return this.searchLeve(query, filters);
+          case SearchType.MONSTER:
+            return this.searchMob(query, filters);
+          case SearchType.LORE:
+            return this.searchLore(query, filters);
+          case SearchType.FATE:
+            return this.searchFate(query, filters);
+          case SearchType.MAP:
+            return this.searchMap(query, filters);
+          case SearchType.ACTION:
+            return this.searchAction(query, filters);
+          case SearchType.STATUS:
+            return this.searchStatus(query, filters);
+          case SearchType.TRAIT:
+            return this.searchTrait(query, filters);
           default:
             return this.data.searchItem(query, filters, false);
         }
@@ -179,12 +229,17 @@ export class SearchComponent implements OnInit {
         const filters = JSON.parse(atob(params.filters));
         this.filters$.next(filters);
         this.itemFiltersform.patchValue(this.filtersToForm(filters));
+        this.leveFiltersForm.patchValue(this.filtersToForm(filters));
+        this.actionFilterForm.patchValue(this.filtersToForm(filters));
+        this.instanceFiltersForm.patchValue(this.filtersToForm(filters));
+        this.traitFilterForm.patchValue(this.filtersToForm(filters));
       }
     });
   }
 
   searchInstance(query: string, filters: SearchFilter[]): Observable<InstanceSearchResult[]> {
     return this.xivapi.search({
+      language: this.getSearchLang(),
       indexes: [SearchIndex.INSTANCECONTENT],
       columns: ['ID', 'Banner', 'Icon', 'ContentFinderCondition.ClassJobLevelRequired'],
       // I know, it looks like it's the same, but it isn't
@@ -227,6 +282,7 @@ export class SearchComponent implements OnInit {
 
   searchQuest(query: string, filters: SearchFilter[]): Observable<QuestSearchResult[]> {
     return this.xivapi.search({
+      language: this.getSearchLang(),
       indexes: [SearchIndex.QUEST],
       columns: ['ID', 'Banner', 'Icon'],
       // I know, it looks like it's the same, but it isn't
@@ -243,6 +299,343 @@ export class SearchComponent implements OnInit {
         });
       })
     );
+  }
+
+  searchAction(query: string, filters: SearchFilter[]): Observable<ActionSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.ACTION, <SearchIndex>'craftaction'],
+      columns: ['ID', 'Icon', 'ClassJobLevel', 'ClassJob', 'ClassJobCategory'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters.map(f => {
+        if (f.minMax) {
+          return [
+            {
+              column: f.name,
+              operator: '>=',
+              value: f.value.min
+            },
+            {
+              column: f.name,
+              operator: '<=',
+              value: f.value.max
+            }
+          ];
+        } else {
+          return [{
+            column: f.name,
+            operator: '=',
+            value: f.value
+          }];
+        }
+      }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(action => {
+          return {
+            id: action.ID,
+            icon: action.Icon,
+            job: action.ClassJob || action.ClassJobCategory,
+            level: action.ClassJobLevel
+          };
+        });
+      })
+    );
+  }
+
+  searchTrait(query: string, filters: SearchFilter[]): Observable<ActionSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [<SearchIndex>'trait'],
+      columns: ['ID', 'Icon', 'Level', 'ClassJob', 'ClassJobCategory'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters.map(f => {
+        if (f.minMax) {
+          return [
+            {
+              column: f.name,
+              operator: '>=',
+              value: f.value.min
+            },
+            {
+              column: f.name,
+              operator: '<=',
+              value: f.value.max
+            }
+          ];
+        } else {
+          return [{
+            column: f.name,
+            operator: '=',
+            value: f.value
+          }];
+        }
+      }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(action => {
+          return {
+            id: action.ID,
+            icon: action.Icon,
+            job: action.ClassJob || action.ClassJobCategory,
+            level: action.Level
+          };
+        });
+      })
+    );
+  }
+
+  searchStatus(query: string, filters: SearchFilter[]): Observable<StatusSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.STATUS],
+      columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(status => {
+          return {
+            id: status.ID,
+            icon: status.Icon,
+            data: status
+          };
+        });
+      })
+    );
+  }
+
+  searchLeve(query: string, filters: SearchFilter[]): Observable<LeveSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.LEVE],
+      columns: ['ID', 'Banner', 'Icon', 'ClassJobCategory', 'IconIssuer', 'ClassJobLevel'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters.map(f => {
+        if (f.minMax) {
+          return [
+            {
+              column: f.name,
+              operator: '>=',
+              value: f.value.min
+            },
+            {
+              column: f.name,
+              operator: '<=',
+              value: f.value.max
+            }
+          ];
+        } else {
+          return [{
+            column: f.name,
+            operator: '=',
+            value: f.value
+          }];
+        }
+      }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(leve => {
+          return {
+            id: leve.ID,
+            icon: leve.Icon,
+            level: leve.ClassJobLevel,
+            banner: leve.IconIssuer,
+            job: {
+              en: leve.ClassJobCategory.Name_en,
+              de: leve.ClassJobCategory.Name_de,
+              ja: leve.ClassJobCategory.Name_ja,
+              fr: leve.ClassJobCategory.Name_fr
+            }
+          };
+        });
+      })
+    );
+  }
+
+  searchNpc(query: string, filters: SearchFilter[]): Observable<NpcSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.ENPCRESIDENT],
+      columns: ['ID', 'Title_*', 'Icon'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(npc => {
+          return {
+            id: npc.ID,
+            icon: npc.Icon,
+            title: {
+              en: npc.Title_en,
+              de: npc.Title_de,
+              ja: npc.Title_ja,
+              fr: npc.Title_fr
+            }
+          };
+        });
+      })
+    );
+  }
+
+  searchMob(query: string, filters: SearchFilter[]): Observable<MobSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.BNPCNAME],
+      columns: ['ID', 'Icon'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(mob => {
+          return {
+            id: mob.ID,
+            icon: mob.Icon,
+            zoneid: monsters[mob.ID] && monsters[mob.ID].positions[0] ? monsters[mob.ID].positions[0].zoneid : null
+          };
+        });
+      })
+    );
+  }
+
+  searchFate(query: string, filters: SearchFilter[]): Observable<FateSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.FATE],
+      columns: ['ID', 'IconMap', 'ClassJobLevel'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(fate => {
+          return {
+            id: fate.ID,
+            icon: fate.IconMap,
+            level: fate.ClassJobLevel
+          };
+        });
+      })
+    );
+  }
+
+  searchMap(query: string, filters: SearchFilter[]): Observable<MapSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.PLACENAME],
+      columns: ['ID', 'Name_*'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(place => {
+          const entry = mapIds.find(m => m.zone === place.ID);
+          if (entry === undefined) {
+            return null;
+          }
+          return {
+            id: entry.id,
+            zoneid: place.ID
+          };
+        }).filter(r => r !== null);
+      })
+    );
+  }
+
+  searchLore(query: string, filters: SearchFilter[]): Observable<any[]> {
+    return this.xivapi.searchLore(query, this.getSearchLang(), true, ['Icon', 'Name_*', 'Banner']).pipe(
+      map(searchResult => {
+        return searchResult.Results.map(row => {
+          switch (row.Source.toLowerCase()) {
+            case 'item':
+            case 'leve':
+              row.Data.showButton = true;
+              break;
+            case 'quest': {
+              const quest = this.l12n.getQuest(row.SourceID);
+              row.Data.Icon = quest.icon;
+              row.Data.Name_en = quest.name.en;
+              row.Data.Name_ja = quest.name.ja;
+              row.Data.Name_de = quest.name.de;
+              row.Data.Name_fr = quest.name.fr;
+              row.Data.Name_ko = quest.name.ko || quest.name.en;
+              row.Data.showButton = true;
+              break;
+            }
+            case 'defaulttalk': {
+              const npcId = Object.keys(this.lazyData.npcs)
+                .find(key => this.lazyData.npcs[key].defaultTalks.indexOf(row.SourceID) > -1);
+              if (npcId === undefined) {
+                break;
+              }
+              row.Source = 'npc';
+              row.SourceID = +npcId;
+              row.Data.Icon = '/c/ENpcResident.png';
+              const npcEntry = this.l12n.getNpc(+npcId);
+              row.Data.Name_en = npcEntry.en;
+              row.Data.Name_ja = npcEntry.ja;
+              row.Data.Name_de = npcEntry.de;
+              row.Data.Name_fr = npcEntry.fr;
+              row.Data.Name_ko = npcEntry.ko || npcEntry.en;
+              row.Data.showButton = true;
+              break;
+            }
+            case 'balloon': {
+              const npcId = Object.keys(this.lazyData.npcs)
+                .find(key => this.lazyData.npcs[key].balloon === row.SourceID);
+              if (npcId === undefined) {
+                break;
+              }
+              row.Source = 'npc';
+              row.SourceID = +npcId;
+              row.Data.Icon = '/c/ENpcResident.png';
+              const npcEntry = this.l12n.getNpc(+npcId);
+              row.Data.Name_en = npcEntry.en;
+              row.Data.Name_ja = npcEntry.ja;
+              row.Data.Name_de = npcEntry.de;
+              row.Data.Name_fr = npcEntry.fr;
+              row.Data.Name_ko = npcEntry.ko || npcEntry.en;
+              row.Data.showButton = true;
+              break;
+            }
+            case 'instancecontenttextdata': {
+              const instanceId = Object.keys(this.lazyData.instances)
+                .find(key => (this.lazyData.instances[key].contentText || []).indexOf(row.SourceID) > -1);
+              if (instanceId === undefined) {
+                break;
+              }
+              const instanceEntry = this.l12n.getInstanceName(+instanceId);
+              row.Source = 'instance';
+              row.SourceID = +instanceId;
+              row.Data.Icon = instanceEntry.icon;
+              row.Data.Name_en = instanceEntry.en;
+              row.Data.Name_ja = instanceEntry.ja;
+              row.Data.Name_de = instanceEntry.de;
+              row.Data.Name_fr = instanceEntry.fr;
+              row.Data.Name_ko = instanceEntry.ko || instanceEntry.en;
+              row.Data.showButton = true;
+              break;
+            }
+          }
+          return row;
+        });
+      })
+    );
+  }
+
+  getSearchLang(): string {
+    let lang = this.translate.currentLang;
+    if (['fr', 'en', 'ja', 'de'].indexOf(lang) === -1) {
+      lang = 'en';
+    }
+    return lang;
   }
 
   resetFilters(): void {
@@ -262,6 +655,25 @@ export class SearchComponent implements OnInit {
       lvlMin: 0,
       lvlMax: 80
     });
+
+    this.leveFiltersForm.reset({
+      lvlMin: 0,
+      lvlMax: 80,
+      jobCategory: 1
+    });
+
+    this.actionFilterForm.reset({
+      lvlMin: 0,
+      lvlMax: 80,
+      jobCategory: 0
+    });
+
+    this.traitFilterForm.reset({
+      lvlMin: 0,
+      lvlMax: 80,
+      jobCategory: 0
+    });
+
     this.submitFilters();
   }
 
@@ -273,6 +685,16 @@ export class SearchComponent implements OnInit {
         break;
       case SearchType.INSTANCE:
         this.filters$.next(this.getInstanceFilters(this.instanceFiltersForm.controls));
+        break;
+      case SearchType.LEVE:
+        this.filters$.next(this.getLeveFilters(this.leveFiltersForm.controls));
+        break;
+      case SearchType.ACTION:
+        this.filters$.next(this.getActionFilters(this.actionFilterForm.controls));
+        break;
+      case SearchType.TRAIT:
+        this.filters$.next(this.getTraitFilters(this.traitFilterForm.controls));
+        break;
     }
   }
 
@@ -353,8 +775,71 @@ export class SearchComponent implements OnInit {
         name: 'ContentFinderCondition.ClassJobLevelRequired',
         value: {
           min: controls.lvlMin.value,
-          max: controls.lvlMin.value
+          max: controls.lvlMax.value
         }
+      });
+    }
+    return filters;
+  }
+
+  private getLeveFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
+    const filters = [];
+    if (controls.lvlMin.value > 0 || controls.lvlMax.value < 80) {
+      filters.push({
+        minMax: true,
+        name: 'ClassJobLevel',
+        value: {
+          min: controls.lvlMin.value,
+          max: controls.lvlMax.value
+        }
+      });
+    }
+    if (controls.jobCategory.value !== 1) {
+      filters.push({
+        name: 'ClassJobCategoryTargetID',
+        value: controls.jobCategory.value
+      });
+    }
+    return filters;
+  }
+
+  private getActionFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
+    const filters = [];
+    if (controls.lvlMin.value > 0 || controls.lvlMax.value < 80) {
+      filters.push({
+        minMax: true,
+        name: 'ClassJobLevel',
+        value: {
+          min: controls.lvlMin.value,
+          max: controls.lvlMax.value
+        }
+      });
+    }
+    if (controls.jobCategory.value !== 0) {
+      filters.push({
+        name: 'ClassJobTargetID',
+        value: controls.jobCategory.value
+      });
+    }
+    return filters;
+  }
+
+  private getTraitFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
+    const filters = [];
+    if (controls.lvlMin.value > 0 || controls.lvlMax.value < 80) {
+      filters.push({
+        minMax: true,
+        name: 'Level',
+        value: {
+          min: controls.lvlMin.value,
+          max: controls.lvlMax.value
+        }
+      });
+    }
+    if (controls.jobCategory.value !== 0) {
+      filters.push({
+        name: 'ClassJobTargetID',
+        value: controls.jobCategory.value
       });
     }
     return filters;

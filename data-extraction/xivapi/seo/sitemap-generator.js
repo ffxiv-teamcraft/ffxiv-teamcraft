@@ -1,4 +1,4 @@
-const { getAllPages } = require('./tools.js');
+const { getAllPages } = require('../tools.js');
 const fs = require('fs');
 const path = require('path');
 

@@ -21,11 +21,25 @@ export class Team extends DataModel {
     return { name: <WebhookSettingType>type, value: true };
   });
 
+  constructor() {
+    super();
+    if (!this.webhookSettings.some(setting => setting.name === WebhookSettingType.FINAL_LIST_PROGRESSION)) {
+      this.webhookSettings = [
+        ...this.webhookSettings,
+        {
+          name: WebhookSettingType.FINAL_LIST_PROGRESSION,
+          value: true
+        }
+      ]
+    }
+  }
+
   isOfficer(member: string): boolean {
     return this.members.indexOf(member) > -1 && this.officers.indexOf(member) > -1;
   }
 
   hasSettingEnabled(setting: WebhookSettingType): boolean {
-    return this.webhookSettings.find(s => s.name === WebhookSettingType[setting]).value;
+    const entry = this.webhookSettings.find(s => s.name === WebhookSettingType[setting]);
+    return entry ? entry.value : true;
   }
 }

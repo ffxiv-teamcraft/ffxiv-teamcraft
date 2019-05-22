@@ -205,7 +205,7 @@ export class List extends DataWithPermissions {
    */
   public setDone(itemId: number | string, amount: number, excludeFinalItems = false, setUsed = false, recipeId?: string, external = false, initialAddition = amount): void {
     const item = this.getItemById(itemId, excludeFinalItems, recipeId);
-    const previousDone = MathTools.absoluteCeil(item.done / item.yield);
+    const previousDone = MathTools.absoluteFloor(item.done / item.yield);
     if (setUsed) {
       // Save previous used amount
       const previousUsed = item.used;
@@ -232,7 +232,10 @@ export class List extends DataWithPermissions {
       item.done = 0;
     }
     amount = MathTools.absoluteCeil(amount / item.yield);
-    const newDone = MathTools.absoluteCeil(item.done / item.yield);
+    let newDone = MathTools.absoluteFloor(item.done / item.yield);
+    if (item.done === item.amount) {
+      newDone = MathTools.absoluteCeil(item.done / item.yield);
+    }
     if (item.requires !== undefined && newDone !== previousDone) {
       for (const requirement of item.requires) {
         const requirementItem = this.getItemById(requirement.id, excludeFinalItems);

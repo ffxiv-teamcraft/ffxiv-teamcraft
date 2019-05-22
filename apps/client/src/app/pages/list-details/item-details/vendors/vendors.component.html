@@ -2,8 +2,14 @@
   <ng-template #vendorTemplate let-vendor>
     <nz-list-item [nzContent]="vendor.zoneId !== undefined?position:null">
       <nz-list-item-meta [nzDescription]="price"
-                         [nzTitle]="vendor.npcId | npcName | i18n">
+                         [nzTitle]="title">
       </nz-list-item-meta>
+      <ng-template #title>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <div>{{vendor.npcId | npcName | i18n}}</div>
+          <app-db-button type="npc" [id]="vendor.npcId"></app-db-button>
+        </div>
+      </ng-template>
       <ng-template #price>
         <img src="https://xivapi.com/i/065000/065002.png" alt="Gil">{{vendor.price}}
       </ng-template>
