@@ -1261,7 +1261,7 @@
     "STATUS": {
       "Max_stacks": "최대 중첩",
       "Locks_actions": "기술 사용 불가",
-      "Locks_control": "Locks control",
+      "Locks_control": "대상 선택 불가",
       "Locks_movement": "이동 불가"
     }
   },
