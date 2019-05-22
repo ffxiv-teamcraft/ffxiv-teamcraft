@@ -79,7 +79,7 @@
                 <nz-list-item-meta [nzTitle]="stepTitle"
                                    [nzDescription]="description">
                   <ng-template #stepTitle>
-                    <p [innerHTML]="todo.Text | xivUIText"></p>
+                    <span [innerHTML]="todo.Text | xivUIText"></span>
                   </ng-template>
                   <ng-template #description>
                     <div *ngIf="xivapiQuest['ToDoMainLocation'+index]">
@@ -254,7 +254,7 @@
           <ng-template #journalTemplate let-entry>
             <nz-list-item [nzContent]="content">
               <ng-template #content>
-                <p [innerHtml]="entry.Text | xivUIText"></p>
+                <span [innerHtml]="entry.Text | xivUIText"></span>
               </ng-template>
             </nz-list-item>
           </ng-template>
@@ -283,7 +283,7 @@
                     routerLink="/db/{{translate.currentLang}}/npc/{{dialogue.Npc[0]}}">{{dialogue.Npc[0] | npcName | i18n}}</a>
                 </ng-template>
                 <ng-template #description>
-                  <p [innerHtml]="dialogue.Text | xivUIText"></p>
+                  <span [innerHtml]="dialogue.Text | xivUIText"></span>
                 </ng-template>
               </nz-list-item-meta>
             </nz-list-item>
