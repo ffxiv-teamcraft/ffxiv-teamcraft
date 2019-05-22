@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { SeoMetaConfig } from './seo-meta-config';
-import { IS_PRERENDER } from '../tools/platform.service';
 
 @Injectable({
   providedIn: 'root'
@@ -43,9 +42,6 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:url', content: this.config.url });
     if (!isReset) {
       (<any>window).renderComplete = true;
-    }
-    if (IS_PRERENDER) {
-      console.log('Rendertron: Rendering complete');
     }
   }
 }

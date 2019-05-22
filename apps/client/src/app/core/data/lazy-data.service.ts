@@ -81,7 +81,11 @@ export class LazyDataService {
   }
 
   constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) platform: Object) {
-    this.load();
+    if (isPlatformServer(platform)) {
+      this.loaded$.next(true);
+    } else {
+      this.load();
+    }
   }
 
   private load(): void {
