@@ -285,7 +285,7 @@
         translate}}</label>
       <button nz-button (click)="addSelectedItemsToList(results)">{{'LISTS.Add_selection' | translate}}</button>
     </div>
-    <nz-alert nzType="warning" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" nzShowIcon
+    <nz-alert nzType="warning" class="dark" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" nzShowIcon
               *ngIf="results.length >= 100"></nz-alert>
     <div class="results">
       <app-page-loader [loading]="loading">

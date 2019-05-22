@@ -117,19 +117,37 @@ h1, h2, h3, h4, h5 {
   color: inherit;
 }
 
-.ant-alert {
-  &-error {
-    color: #ffa39e;
-    background-color: #352525;
-  }
-
-  &-info, &-warning, &-error {
-    .ant-alert-message {
-      color: black !important;
+nz-alert:not(.dark) {
+  .ant-alert {
+    &-error {
+      color: #ffa39e;
+      background-color: #352525;
     }
 
-    .ant-alert-description {
-      color: black;
+    &-info, &-warning, &-error {
+      .ant-alert-message {
+        color: black !important;
+      }
+
+      .ant-alert-description {
+        color: black;
+      }
+    }
+  }
+}
+
+nz-alert.dark {
+  .ant-alert {
+    background-color: #333333;
+
+    &-info, &-warning, &-error {
+      .ant-alert-message {
+        color: white !important;
+      }
+
+      .ant-alert-description {
+        color: white;
+      }
     }
   }
 }
