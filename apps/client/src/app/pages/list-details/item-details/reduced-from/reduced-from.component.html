@@ -30,17 +30,44 @@
 
                 <div fxLayout="row wrap" fxLayoutGap="5px">
                   <span *ngIf="node.slot !== undefined">Slot {{node.slot}}</span>
-                  <span *ngIf="node.time !== undefined">
+                  <span *ngIf="node.timed !== undefined">
                     <i *ngFor="let time of node.time">
                       {{time}}:00 - {{getDespawnTime(time, node.uptime)}}:00
                     </i>
                   </span>
                 </div>
-                <ng-container *ngIf="node.time !== undefined || node.weathers !== undefined">
-                  <div *ngIf="(generateAlarm(node) | alarmDisplay | async) as alarm"
-                       [class.spawned-timer]="alarm.spawned"
-                       [class.played-timer]="alarm.played">
-                    {{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}
+                <ng-container *ngIf="(generateAlarm(node) | alarmDisplay | async) as alarm">
+                  <div [class.spawned-timer]="alarm.spawned"
+                       [class.played-timer]="alarm.played"
+                       *ngIf="alarm.remainingTime"
+                       fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <div>{{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}</div>
+                    <ng-container>
+                      <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
+                           fxLayoutGap="5px">
+                        <button nz-button nzShape="circle" nzSize="small" (click)="addAlarm(alarm.alarm)" nz-tooltip
+                                [nzTitle]="'ALARMS.Add_alarm' | translate">
+                          <i nz-icon type="clock-circle"> </i>
+                        </button>
+                        <ng-container *ngIf="alarmGroups$ | async as groups">
+                          <ng-container *ngIf="groups.length > 0">
+                            <nz-dropdown *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'">
+                              <button nz-button nzShape="circle" nzSize="small" nz-dropdown>
+                                <i nz-icon type="folder-open"></i>
+                              </button>
+                              <ul nz-menu>
+                                <li nz-menu-item *ngFor="let group of groups" (click)="addAlarm(alarm.alarm, group)">
+                                  {{group.name}}
+                                </li>
+                              </ul>
+                            </nz-dropdown>
+                          </ng-container>
+                        </ng-container>
+                      </div>
+                      <ng-template #alarmCreated>
+                        {{'ALARMS.Alarm_already_created' | translate}}
+                      </ng-template>
+                    </ng-container>
                   </div>
                 </ng-container>
                 <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
