@@ -1224,7 +1224,7 @@
       "Pvp_action": "PvP 기술",
       "Breaks_unrelated_combo": "콤보가 끊길 수 있는 기술",
       "Movement_action": "이동 스킬",
-      "Possible_targets": "타게팅 가능한 대상",
+      "Possible_targets": "사용 가능한 대상",
       "Unlocked_by_quest": "선행 퀘스트",
       "Shares_cd_with": "재사용 대기시간 공유",
       "Combos": "콤보",
