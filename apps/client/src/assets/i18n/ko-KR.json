@@ -1168,7 +1168,7 @@
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
       "Bonus_condition": "조건",
-      "Spawn_duration": "지속시간",
+      "Spawn_duration": "채집 가능 시간",
       "Spawns": "출현 시간"
     },
     "QUEST": {
