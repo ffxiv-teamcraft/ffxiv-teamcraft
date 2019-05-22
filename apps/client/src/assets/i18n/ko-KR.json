@@ -1235,7 +1235,7 @@
       "Related_traits": "관련 특성",
       "TARGET": {
         "Party": "파티원",
-        "Dead": "Dead",
+        "Dead": "사망한 플레이어",
         "Hostile": "적",
         "Self": "자신"
       },
