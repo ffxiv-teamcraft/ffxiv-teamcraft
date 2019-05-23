@@ -309,7 +309,7 @@
                 <app-item-icon [icon]="row.icon" [itemId]="row.itemId" [width]="32"></app-item-icon>
               </div>
               <div fxLayout="column">
-                <div class="item-name">{{+row.itemId | itemName | i18n}}
+                <div class="item-name" [appItemRarity]="+row.itemId">{{+row.itemId | itemName | i18n}}
                   <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true"></app-marketboard-icon>
                   <app-db-button type="item" [id]="row.itemId"></app-db-button>
                 </div>

@@ -81,7 +81,7 @@
                 nzDescription="x{{item.amount}}">
                 <ng-template #itemAvatar>
                   <app-item-icon [width]="48" [itemId]="item.id" [icon]="item.id | lazyIcon"></app-item-icon>
-                  <div>{{item.id | itemName | i18n}}</div>
+                  <div [appItemRarity]="item.id">{{item.id | itemName | i18n}}</div>
                 </ng-template>
                 <ng-template #more>
                   <app-db-button type="item" [id]="item.id"></app-db-button>
@@ -106,8 +106,11 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="itemAvatar"
-                [nzTitle]="item.name | i18n"
+                [nzTitle]="title"
                 nzDescription="x{{item.amount}}">
+                <ng-template #title>
+                  <span [appItemRarity]="item.id">{{item.name | i18n}}</span>
+                </ng-template>
                 <ng-template #itemAvatar>
                   <img [src]="item.icon | xivapiIcon" alt="" class="larger-img-icon round-icon">
                 </ng-template>
@@ -161,13 +164,15 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="itemAvatar"
-                nzTitle="{{item.id | itemName | i18n}} ({{item.chances}}%)"
+                [nzTitle]="title"
                 nzDescription="x{{item.amount}}">
+                <ng-template #title>
+                  <span [appItemRarity]="item.id">{{item.id | itemName | i18n}} ({{item.chances}}%)</span>
+                </ng-template>
                 <ng-template #itemAvatar>
                   <app-item-icon [hq]="item.hq" [width]="48" [itemId]="item.id"
                                  [icon]="item.id | lazyIcon"></app-item-icon>
                 </ng-template>
-                <div>{{item.id | itemName | i18n}} </div>
                 <ng-template #more>
                   <app-db-button type="item" [id]="item.id"></app-db-button>
                 </ng-template>

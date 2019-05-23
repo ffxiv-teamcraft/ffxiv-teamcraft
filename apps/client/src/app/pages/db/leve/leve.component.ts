@@ -34,7 +34,7 @@ export class LeveComponent extends TeamcraftPageComponent {
 
   public items$: Observable<{ id: number, amount: number }[]>;
 
-  public battleItems$: Observable<{ name: I18nName, amount: number, dropRate?: number }[]>;
+  public battleItems$: Observable<{ id: number, name: I18nName, amount: number, dropRate?: number }[]>;
 
   public enemies$: Observable<{ id: number, level: number }[]>;
 
@@ -110,6 +110,7 @@ export class LeveComponent extends TeamcraftPageComponent {
           .map(index => {
             const item = leve.BattleLeve[`ItemsInvolved${index}`];
             return {
+              id: item.ID,
               name: {
                 en: item.Name_en,
                 de: item.Name_de,

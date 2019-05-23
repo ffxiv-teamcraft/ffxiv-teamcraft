@@ -206,7 +206,7 @@
                          [appXivdbActionTooltip]="reward.id">
                   </ng-template>
                   <ng-template #rewardTitle>
-                    <div *ngIf="reward.type === 'item'">
+                    <div *ngIf="reward.type === 'item'" [appItemRarity]="reward.id">
                       {{reward.id | itemName | i18n}} x{{reward.amount}}
                     </div>
                     <div *ngIf="reward.type === 'exp'">

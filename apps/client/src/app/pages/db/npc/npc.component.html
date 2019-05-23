@@ -181,7 +181,7 @@
                 <ng-template #avatar>
                   <app-item-icon [itemId]="item.ID" [icon]="item.Icon | xivapiIcon" [width]="32"></app-item-icon>
                 </ng-template>
-                <ng-template #name><b [innerHTML]="item | xivapiI18n"></b></ng-template>
+                <ng-template #name><b [appItemRarity]="item.ID" [innerHTML]="item | xivapiI18n"></b></ng-template>
                 <ng-template #price>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                     <img src="https://xivapi.com/i/065000/065002.png" alt="Gil" class="img-icon">
