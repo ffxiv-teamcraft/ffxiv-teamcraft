@@ -91,7 +91,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
               private media: ObservableMedia) {
     super(seoService);
-    this.list$ = combineLatest(this.listsFacade.selectedList$, this.permissionLevel$).pipe(
+    this.list$ = combineLatest([this.listsFacade.selectedList$, this.permissionLevel$]).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {
         if (!list.notFound && list.isOutDated() && permissionLevel >= PermissionLevel.WRITE) {

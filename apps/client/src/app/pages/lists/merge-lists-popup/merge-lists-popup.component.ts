@@ -115,7 +115,7 @@ export class MergeListsPopupComponent implements OnInit {
         tap(() => {
           if (this.deleteAfter) {
             this.selectedLists.forEach(list => {
-              this.listsFacade.deleteList(list.$key);
+              this.listsFacade.deleteList(list.$key, list.offline);
             });
           }
         })

@@ -26,6 +26,7 @@
             <i-layout></i-layout>
           </button>
           <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'PERMISSIONS.Title' | translate"
+                  *ngIf="!list.offline"
                   (click)="openPermissionsPopup(list)" [disabled]="(permissionLevel$ | async) < 40">
             <i-shield></i-shield>
           </button>
@@ -33,7 +34,7 @@
                   [nzTitle]="'List_fork' | translate">
             <i nz-icon type="copy" theme="outline"></i>
           </button>
-          <app-favorite-button type="lists" [key]="list.$key"></app-favorite-button>
+          <app-favorite-button type="lists" [key]="list.$key" *ngIf="!list.offline"></app-favorite-button>
           <div *ngIf="teams$ | async as teams">
             <nz-dropdown [nzTrigger]="'click'" *ngIf="(permissionLevel$ | async) >= 20 && list.teamId === undefined">
               <button nz-dropdown nz-button nzShape="circle" [disabled]="teams.length === 0"
@@ -57,6 +58,7 @@
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
           <label nz-checkbox [(ngModel)]="list.public"
                  [nzDisabled]="(permissionLevel$ | async) < 40 || list.ephemeral"
+                 *ngIf="!list.offline"
                  (ngModelChange)="list.index = -1;listsFacade.updateList(list)" nz-tooltip
                  [nzTitle]="'LIST_DETAILS.Public_list_description' | translate">
             {{'Public_list' | translate}}
@@ -88,7 +90,7 @@
            fxLayoutAlign="flex-start center">
         <h2>{{list.name}}</h2>
         <div class="permission-icon" nz-tooltip
-             *ngIf="(permissionLevel$ | async) === 40"
+             *ngIf="(permissionLevel$ | async) === 40 && !list.offline"
              [nzTitle]="'PERMISSIONS.List_tooltip' | translate: { level: list.everyone | permissionLevel }">
           <div [ngSwitch]="list.everyone">
             <i nz-icon type="eye-invisible" theme="outline" *ngSwitchCase="1"></i>
@@ -108,7 +110,7 @@
             </button>
             <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
                     [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
-                    *ngIf="(permissionLevel$ | async) > 10"
+                    *ngIf="(permissionLevel$ | async) > 10 && !list.offline"
                     ngxClipboard [cbContent]="getLink(list)"
                     nzSize="small" (cbOnSuccess)="afterLinkCopy()">
               <i nz-icon type="share-alt"></i>
@@ -166,7 +168,7 @@
           </ng-template>
         </nz-alert>
       </div>
-      <div class="alert" *ngIf="list.isTooLarge()">
+      <div class="alert" *ngIf="!list.offline && list.isTooLarge()">
         <nz-alert nzType="warning" nzShowIcon [nzMessage]="'LIST_DETAILS.List_too_large' | translate"
                   [nzDescription]="'LIST_DETAILS.List_too_large_description' | translate">
         </nz-alert>

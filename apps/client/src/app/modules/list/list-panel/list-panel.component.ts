@@ -130,7 +130,7 @@ export class ListPanelComponent {
   }
 
   deleteList(list: List): void {
-    this.listsFacade.deleteList(list.$key);
+    this.listsFacade.deleteList(list.$key, list.offline);
   }
 
   getLink(): string {
