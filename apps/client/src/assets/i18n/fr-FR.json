@@ -1164,6 +1164,8 @@
     "Select_data_type": "Sélectionnez les types de données à afficher pour voir les détails ici",
     "Desynths_to": "Se recycle en",
     "Limited": "Apparition limitée",
+    "3d_model_viewer": "Aperçu du modèle 3D",
+    "3d_model_help": "Aperçu du modèle 3D",
     "NODE": {
       "Items": "Objets",
       "Possible_bonuses": "Bonus possibles",
