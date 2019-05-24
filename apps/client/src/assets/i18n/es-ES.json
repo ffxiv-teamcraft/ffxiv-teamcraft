@@ -123,7 +123,7 @@
     "Admin": "Administrador",
     "Minutes_duration": "{{amount}} minutos",
     "Seconds_duration": "{{amount}} segundos",
-    "None": "None"
+    "None": "Ninguno"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -174,8 +174,8 @@
   "No_lore_entries": "Entrada de historia no encontrada",
   "No_fates_found": "Fate no encontrada",
   "No_maps_found": "No se encontraron mapas",
-  "No_actions_found": "No actions found",
-  "No_statuses_found": "No statuses found",
+  "No_actions_found": "No se encontraron acciones",
+  "No_statuses_found": "No se encontraron estados",
   "No_traits_found": "No traits found",
   "Select_all": "Seleccionar todo",
   "Do you really want to reset the list?": "¿Realmente desea reiniciar la lista?",
