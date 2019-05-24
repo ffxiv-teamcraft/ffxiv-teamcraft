@@ -1164,6 +1164,8 @@
     "Select_data_type": "Seleccione los tipos de datos a mostrar para ver los detalles aquí",
     "Desynths_to": "Se desintetiza en",
     "Limited": "Aparición limitada",
+    "3d_model_viewer": "3D model preview",
+    "3d_model_help": "Preview 3D model",
     "NODE": {
       "Items": "Artículos",
       "Possible_bonuses": "Bonos posibles",
