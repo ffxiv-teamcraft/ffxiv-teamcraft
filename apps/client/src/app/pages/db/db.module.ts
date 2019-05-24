@@ -31,6 +31,7 @@ import { NodeComponent } from './node/node.component';
 import { ActionComponent } from './action/action.component';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
+import { ModelViewerComponent } from './item/model-viewer/model-viewer.component';
 
 const routes: Routes = [
 
@@ -169,7 +170,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DbComponent, InstanceComponent, ItemComponent, QuestComponent, NpcComponent, LeveComponent, MobComponent, FateComponent, MapPageComponent, NodeComponent, ActionComponent, StatusComponent, TraitComponent],
+  declarations: [DbComponent, InstanceComponent, ItemComponent, QuestComponent, NpcComponent, LeveComponent, MobComponent, FateComponent, MapPageComponent, NodeComponent, ActionComponent, StatusComponent, TraitComponent, ModelViewerComponent],
+  entryComponents: [ModelViewerComponent],
   imports: [
     CommonModule,
 

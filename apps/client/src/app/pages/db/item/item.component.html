@@ -17,6 +17,12 @@
           <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
             <img [src]="link.icon" [alt]="link.title" class="link-icon">
           </a>
+          <button nz-button nzShape="circle"
+                  nz-tooltip [nzTitle]="'DB.3d_model_help' | translate"
+                  (click)="openModelViewer(xivapiItem.EquipSlotCategoryTargetID, gtData.item.models)"
+                  *ngIf="gtData.item.models?.length > 0">
+            <span>3D</span>
+          </button>
         </div>
       </div>
       <div fxFlex="1 1 auto">
