@@ -1164,6 +1164,8 @@
     "Select_data_type": "选择要显示的数据类型后此处会显示详细信息",
     "Desynths_to": "分解",
     "Limited": "限时采集",
+    "3d_model_viewer": "3D model preview",
+    "3d_model_help": "Preview 3D model",
     "NODE": {
       "Items": "物品",
       "Possible_bonuses": "随机加成",
