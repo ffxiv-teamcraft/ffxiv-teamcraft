@@ -4,7 +4,7 @@
       <img src="https://xivapi.com{{item.Icon}}" alt="{{item | xivapiI18n}}">
     </div>
     <div class="name" fxLayout="column">
-      <span>{{item | xivapiI18n}}</span>
+      <span [appItemRarity]="item.ID">{{item | xivapiI18n}}</span>
       <span class="item-kind" *ngIf="item.ItemKind">{{item.ItemKind | xivapiI18n}} <span
         *ngIf="item.ItemSearchCategory">> {{item.ItemSearchCategory | xivapiI18n}}</span></span>
       <i class="db-tip">{{'DB.Click_to_navigate' | translate}}</i>

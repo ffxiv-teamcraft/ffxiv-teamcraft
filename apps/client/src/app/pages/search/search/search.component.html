@@ -1,6 +1,9 @@
 <div class="top-part">
-  <div class="search-box" fxLayout="row" fxLayoutGap="5px">
-    <nz-input-group [nzAddOnBefore]="searchType">
+  <div class="search-box" fxLayout="row" fxLayoutGap="5px" fxLayout.lt-md="column">
+    <ng-container *ngIf="false | ifMobile: true">
+      <ng-container *ngTemplateOutlet="searchType"></ng-container>
+    </ng-container>
+    <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null">
       <input class="search-input" type="text"
              placeholder="{{'Search_placeholder' | translate:{type: searchType$ | async} }}" #searchInput nz-input
              [ngModel]="query$.value"
@@ -285,7 +288,7 @@
         translate}}</label>
       <button nz-button (click)="addSelectedItemsToList(results)">{{'LISTS.Add_selection' | translate}}</button>
     </div>
-    <nz-alert nzType="warning" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" nzShowIcon
+    <nz-alert nzType="warning" class="dark" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" nzShowIcon
               *ngIf="results.length >= 100"></nz-alert>
     <div class="results">
       <app-page-loader [loading]="loading">
@@ -306,7 +309,7 @@
                 <app-item-icon [icon]="row.icon" [itemId]="row.itemId" [width]="32"></app-item-icon>
               </div>
               <div fxLayout="column">
-                <div class="item-name">{{+row.itemId | itemName | i18n}}
+                <div class="item-name" [appItemRarity]="+row.itemId">{{+row.itemId | itemName | i18n}}
                   <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true"></app-marketboard-icon>
                   <app-db-button type="item" [id]="row.itemId"></app-db-button>
                 </div>

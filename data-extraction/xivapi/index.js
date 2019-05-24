@@ -36,7 +36,8 @@ let todo = [
   'cdGroups',
   'combos',
   'statuses',
-  'traits'
+  'traits',
+  'items'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -967,11 +968,30 @@ if (hasTodo('traits')) {
           en: trait.Description_en,
           de: trait.Description_de,
           ja: trait.Description_ja,
-          fr: trait.Description_fr,
+          fr: trait.Description_fr
         }
       };
     });
   }, null, () => {
     persistToJsonAsset('traits', traits);
+  });
+}
+
+if (hasTodo('items')) {
+  const names = {};
+  const rarities = {};
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity').subscribe(page => {
+    page.Results.forEach(item => {
+      names[item.ID] = {
+        en: item.Name_en,
+        de: item.Name_de,
+        ja: item.Name_ja,
+        fr: item.Name_fr
+      };
+      rarities[item.ID] = item.Rarity;
+    });
+  }, null, () => {
+    persistToJsonAsset('items', names);
+    persistToTypescript('rarities', 'rarities', rarities);
   });
 }

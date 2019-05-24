@@ -39,6 +39,7 @@ export class Item implements I18nData {
   collectable: 1 | 0;
   satisfaction: SatisfactionData[];
   masterpiece: Masterpiece;
+  models?: string[];
 
   ingredient_of?: { [index: string]: number };
   reducesTo?: number[];

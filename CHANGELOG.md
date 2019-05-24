@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.5"></a>
+## [5.4.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.4...v5.4.5) (2019-05-24)
+
+
+### Bug Fixes
+
+* **list:** fixed an issue with progression when an item is final and material ([c4bef2b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4bef2b))
+* **perf:** performance improvements for UI text pipe ([072488f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/072488f))
+
+
+### Features
+
+* **db:** added text color for items based on rarity ([0a1c1c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0a1c1c0))
+* **db:** item pages now include a model viewer from garlandtools ([1aa1701](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1aa1701))
+* **db:** items that are obtained from reduction now have alarm integration ([c088579](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c088579))
+
+
+
 <a name="5.4.4"></a>
 ## [5.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.2...v5.4.4) (2019-05-21)
 

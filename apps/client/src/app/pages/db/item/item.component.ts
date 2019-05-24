@@ -18,7 +18,7 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { NzNotificationService } from 'ng-zorro-antd';
+import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { List } from '../../../modules/list/model/list';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { ATTTService } from '../service/attt.service';
@@ -30,6 +30,8 @@ import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { IS_PRERENDER } from '../../../core/tools/platform.service';
 import { Craft } from '../../../model/garland-tools/craft';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 
 @Component({
   selector: 'app-item',
@@ -69,7 +71,8 @@ export class ItemComponent extends TeamcraftPageComponent {
               private listPicker: ListPickerService, private listsFacade: ListsFacade,
               private progressService: ProgressPopupService, private listManager: ListManagerService,
               private notificationService: NzNotificationService, private rotationPicker: RotationPickerService,
-              private attt: ATTTService, private lazyData: LazyDataService, seo: SeoService) {
+              private attt: ATTTService, private lazyData: LazyDataService, private sanitizer: DomSanitizer,
+              private dialog: NzModalService, seo: SeoService) {
     super(seo);
 
     this.route.paramMap.subscribe(params => {
@@ -509,6 +512,19 @@ export class ItemComponent extends TeamcraftPageComponent {
       addCrafts: false,
       amount: 1
     };
+  }
+
+  public openModelViewer(slot: number, models: string[]): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('DB.3d_model_viewer'),
+      nzContent: ModelViewerComponent,
+      nzComponentParams: {
+        slot: slot,
+        models: models
+      },
+      nzFooter: null,
+      nzClassName: 'model-viewer-modal'
+    });
   }
 
   private getDescription(item: any): string {

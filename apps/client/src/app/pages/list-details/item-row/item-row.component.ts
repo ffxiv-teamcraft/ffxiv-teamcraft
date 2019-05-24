@@ -422,6 +422,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   markAsDone(): void {
+    console.log(this.finalItem);
     this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, this.item.amount - this.item.done, this.item.recipeId, this.item.amount);
   }
 

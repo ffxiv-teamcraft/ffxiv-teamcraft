@@ -8,7 +8,7 @@
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="icon-block">
           <img [src]="xivapiItem.Icon | xivapiIcon" alt="{{xivapiItem.ID | itemName | i18n}}" class="item-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{xivapiItem.ID | itemName | i18n}}</h2>
+            <h2 class="item-name" [appItemRarity]="xivapiItem.ID">{{xivapiItem.ID | itemName | i18n}}</h2>
             <div class="item-kind" *ngIf="xivapiItem.ItemKind">{{xivapiItem.ItemKind | xivapiI18n}}
               <span *ngIf="xivapiItem.ItemSearchCategory"> > {{xivapiItem.ItemSearchCategory | xivapiI18n}}</span></div>
           </div>
@@ -17,6 +17,12 @@
           <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
             <img [src]="link.icon" [alt]="link.title" class="link-icon">
           </a>
+          <button nz-button nzShape="circle"
+                  nz-tooltip [nzTitle]="'DB.3d_model_help' | translate"
+                  (click)="openModelViewer(xivapiItem.EquipSlotCategoryTargetID, gtData.item.models)"
+                  *ngIf="gtData.item.models?.length > 0">
+            <span>3D</span>
+          </button>
         </div>
       </div>
       <div fxFlex="1 1 auto">
@@ -221,7 +227,7 @@
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                     <app-item-icon width="32" [itemId]="+item.id" [icon]="+item.id | lazyIcon"></app-item-icon>
                     <div fxLayout="column">
-                      <div>
+                      <div [appItemRarity]="+item.id">
                         {{+item.id | itemName | i18n}}
                       </div>
                       <div>
@@ -482,7 +488,7 @@
             <div *ngFor="let link of row.links">
               <div *ngIf="link.itemId" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                 <app-item-icon width="32" [itemId]="link.itemId" [icon]="link.itemId | lazyIcon"></app-item-icon>
-                <div>
+                <div [appItemRarity]="link.itemId">
                   {{link.itemId | itemName | i18n}}
                 </div>
                 <app-db-button type="item" [id]="link.itemId"></app-db-button>
