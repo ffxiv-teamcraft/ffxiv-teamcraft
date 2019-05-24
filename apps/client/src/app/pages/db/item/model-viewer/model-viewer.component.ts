@@ -19,7 +19,7 @@ export class ModelViewerComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer){}
 
   ngOnInit() {
-    this.url = this.sanitizer.bypassSecurityTrustResourceUrl(`http://garlandtools.org/db/3d/viewer.html?id=${this.slot}/${this.models[0]}`);
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl(`https://garlandtools.org/db/3d/viewer.html?id=${this.slot}/${this.models[0]}`);
   }
 
 }
