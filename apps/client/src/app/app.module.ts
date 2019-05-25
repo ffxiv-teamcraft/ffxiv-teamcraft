@@ -36,23 +36,25 @@ import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { TranslationsLoaderFactory } from './translations-loader';
 import { IconDefinition } from '@ant-design/icons-angular';
 import {
+  ArrowRightOutline,
   BellOutline,
   BookOutline,
   BuildOutline,
   DesktopOutline,
   EnvironmentOutline,
   FileDoneOutline,
+  FilterOutline,
   FormOutline,
+  InfoOutline,
   LoginOutline,
   MessageOutline,
   NotificationOutline,
   ProfileOutline,
-  SettingOutline,
-  SolutionOutline,
-  ShareAltOutline,
   ReloadOutline,
-  FilterOutline,
-  SelectOutline
+  SelectOutline,
+  SettingOutline,
+  ShareAltOutline,
+  SolutionOutline
 } from '@ant-design/icons-angular/icons';
 import { UniversalInterceptor } from './universal-interceptor';
 import { DirtyModule } from './core/dirty/dirty.module';
@@ -88,7 +90,9 @@ const icons: IconDefinition[] = [
   ShareAltOutline,
   ReloadOutline,
   FilterOutline,
-  SelectOutline
+  SelectOutline,
+  InfoOutline,
+  ArrowRightOutline
 ];
 
 registerLocaleData(en);

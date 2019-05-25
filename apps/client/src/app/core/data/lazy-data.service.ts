@@ -214,6 +214,7 @@ export class LazyDataService {
       this.statuses = statuses;
       this.traits = traits;
       this.loaded$.next(true);
+      this.loaded$.complete();
     });
   }
 }
