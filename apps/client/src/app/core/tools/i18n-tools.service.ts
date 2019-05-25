@@ -19,7 +19,7 @@ export class I18nToolsService {
       }
       return 'missing name';
     }
-    return i18nName[this.translator.currentLang] || i18nName.en || 'missing name';
+    return i18nName[this.translator.currentLang] || i18nName.en || 'no name';
   }
 
   public createFakeI18n(str: string): I18nName {

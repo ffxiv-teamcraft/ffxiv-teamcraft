@@ -36,7 +36,9 @@ let todo = [
   'cdGroups',
   'combos',
   'statuses',
-  'traits'
+  'traits',
+  'items',
+  'aetherytes'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -967,11 +969,49 @@ if (hasTodo('traits')) {
           en: trait.Description_en,
           de: trait.Description_de,
           ja: trait.Description_ja,
-          fr: trait.Description_fr,
+          fr: trait.Description_fr
         }
       };
     });
   }, null, () => {
     persistToJsonAsset('traits', traits);
+  });
+}
+
+if (hasTodo('items')) {
+  const names = {};
+  const rarities = {};
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity').subscribe(page => {
+    page.Results.forEach(item => {
+      names[item.ID] = {
+        en: item.Name_en,
+        de: item.Name_de,
+        ja: item.Name_ja,
+        fr: item.Name_fr
+      };
+      rarities[item.ID] = item.Rarity;
+    });
+  }, null, () => {
+    persistToJsonAsset('items', names);
+    persistToTypescript('rarities', 'rarities', rarities);
+  });
+}
+
+if (hasTodo('aetherytes')) {
+  const names = {};
+  getAllPages('https://xivapi.com/Aetheryte?columns=ID,AethernetName.Name_*').subscribe(page => {
+    page.Results.forEach(aetheryte => {
+      if (aetheryte.AethernetName.Name_en === null) {
+        return;
+      }
+      names[aetheryte.ID] = {
+        en: aetheryte.AethernetName.Name_en,
+        de: aetheryte.AethernetName.Name_de,
+        ja: aetheryte.AethernetName.Name_ja,
+        fr: aetheryte.AethernetName.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToTypescript('aetheryte-names', 'aetheryteNames', names);
   });
 }

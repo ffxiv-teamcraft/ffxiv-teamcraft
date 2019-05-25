@@ -32,7 +32,8 @@ import { AbstractNotification } from './core/notification/abstract-notification'
 import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
-import { BehaviorSubject, of } from 'rxjs';
+import { BehaviorSubject, interval, of } from 'rxjs';
+import { startWith } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
@@ -54,7 +55,252 @@ declare const gtag: Function;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  public availableLanguages = this.settings.availableLocales;
+
+  locale: string;
+
+  version = environment.version;
+
+  public overlay = false;
+
+  public windowDecorator = false;
+
+  public overlayOpacity = 1;
+
+  collapsedSidebar = this.media.isActive('lt-md') ? true : this.settings.compactSidebar;
+
+  collapsedAlarmsBar = true;
+
+  public notifications$ = this.notificationsFacade.notificationsDisplay$;
+
+  public loggedIn$: Observable<boolean>;
+
+  public character$: Observable<Character>;
+
+  public userId$ = this.authFacade.userId$;
+
+  public user$ = this.authFacade.user$;
+
+  public loading$: Observable<boolean>;
+
+  public time$: Observable<string>;
+
+  private reloadTime$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+
+  public desktop = false;
+
+  public hasDesktop$: Observable<boolean>;
+
+  private hasDesktopReloader$ = new BehaviorSubject<void>(null);
+
+  public navigating = true;
+
+  public newVersionAvailable$: Observable<boolean>;
+
+  public dataLoaded = false;
+
+  public showGiveaway = false;
+
+  private dirty = false;
+
+  public randomTip$: Observable<string> = interval(600000).pipe(
+    startWith(-1),
+    map(() => {
+      const tips = [
+        'Community_rotations',
+        'GC_Deliveries',
+        'Desynth',
+        'DB',
+        '3D_model',
+        'Levequests',
+        'Log_tracker',
+        'Desktop_app_overlay'
+      ];
+      return tips[Math.floor(Math.random() * tips.length)];
+    })
+  );
+
+  get desktopUrl(): SafeUrl {
+    return this.sanitizer.bypassSecurityTrustUrl(`teamcraft://${window.location.pathname}`);
+  }
+
+  constructor(private gt: GarlandToolsService, public translate: TranslateService,
+              private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
+              private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
+              private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
+              public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
+              private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
+              private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
+              private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
+              private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
+              private dirtyFacade: DirtyFacade, private seoService: SeoService) {
+
+    this.dirtyFacade.hasEntries$.subscribe(dirty => this.dirty = dirty);
+
+    this.showGiveaway = +localStorage.getItem('giveaway:1kdiscord') < 5
+      && Date.now() < new Date(2019, 3, 31, 23, 59, 59).getTime();
+
+    localStorage.setItem('giveaway:1kdiscord', (+localStorage.getItem('giveaway:1kdiscord') + 1).toString());
+
+    this.lazyData.loaded$.subscribe(loaded => this.dataLoaded = loaded);
+
+    this.applyTheme(this.settings.theme);
+
+    this.desktop = this.platformService.isDesktop();
+
+    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_8rqcxqh08v6.js' });
+
+    this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(
+      map((value: string) => {
+        return semver.ltr(environment.version, value);
+      })
+    );
+
+    this.time$ = this.reloadTime$.pipe(
+      switchMap(() => {
+        return this.eorzeanTime.getEorzeanTime().pipe(
+          map(date => {
+            const minutes = date.getUTCMinutes();
+            const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+            if (this.settings.timeFormat === '24H') {
+              return `${date.getUTCHours()}:${minutesStr}`;
+            }
+            const rawHours = date.getUTCHours();
+            const suffix = rawHours >= 12 ? 'PM' : 'AM';
+            return `${rawHours % 12}:${minutesStr} ${suffix}`;
+          })
+        );
+      })
+    );
+
+    // Navigation handle for a proper loader display
+    router.events.subscribe((event: RouterEvent) => {
+      if (event instanceof NavigationStart) {
+        this.navigating = true;
+      }
+      if (event instanceof NavigationEnd) {
+        this.navigating = false;
+      }
+      if (event instanceof NavigationCancel) {
+        this.navigating = false;
+      }
+      if (event instanceof NavigationError) {
+        this.navigating = false;
+      }
+    });
+
+    // Google Analytics
+    router.events
+      .pipe(
+        distinctUntilChanged((previous: any, current: any) => {
+          if (current instanceof NavigationEnd) {
+            return previous.url === current.url;
+          }
+          return true;
+        })
+      ).subscribe((event: any) => {
+      this.seoService.resetConfig();
+      this.overlay = event.url.indexOf('?overlay') > -1;
+      this.ipc.send('navigated', event.url);
+      this.ipc.on('window-decorator', (e, value) => {
+        this.windowDecorator = value;
+      });
+      if (this.overlay) {
+        this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (value) => {
+          this.overlayOpacity = value;
+        });
+        this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
+      }
+      const languageIndex = event.url.indexOf('?lang=');
+      if (languageIndex > -1) {
+        this.use(event.url.substr(languageIndex + 6, 2), false, true);
+      }
+      gtag('set', 'page', event.url);
+      gtag('send', 'pageview');
+    });
+
+    // Custom protocol detection
+    this.hasDesktop$ = this.hasDesktopReloader$.pipe(
+      switchMap(() => router.events),
+      first(),
+      filter(current => current instanceof NavigationEnd),
+      switchMap((current: NavigationEnd) => {
+        let url = current.url;
+        if (this.platformService.isDesktop()) {
+          return of(false);
+        }
+        if (url.endsWith('/')) {
+          url = url.substring(0, url.length - 1);
+        }
+        return this.http.get('http://localhost:7331/', { responseType: 'text' }).pipe(
+          map(() => true),
+          tap(hasDesktop => {
+            if (hasDesktop && this.settings.autoOpenInDesktop) {
+              window.location.assign(`teamcraft://${url}`);
+            }
+          }),
+          catchError(() => {
+            return of(false);
+          })
+        );
+      })
+    );
+
+    // Translation
+    this.translate.setDefaultLang('en');
+    const lang = localStorage.getItem('locale');
+    this.translate.onLangChange.subscribe(l => this.locale = l);
+    if (lang !== null) {
+      this.use(lang);
+    } else if (this.translate.getBrowserCultureLang() === 'pt-BR') {
+      // Specific implementation for BR.
+      this.use('br');
+    } else {
+      this.use(this.translate.getBrowserLang());
+    }
+    this.translate.onLangChange.subscribe(change => {
+      this.locale = change.lang;
+    });
+
+    this.ipc.on('apply-language', (e, newLang) => {
+      this.use(newLang, true);
+    });
+
+    fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
+
+    this.firebase.object('maintenance').valueChanges().subscribe(maintenance => {
+      if (maintenance && environment.production) {
+        this.router.navigate(['maintenance']);
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    // Loading is !loaded
+    this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
+    this.loggedIn$ = this.authFacade.loggedIn$;
+    this.character$ = this.authFacade.mainCharacter$.pipe(shareReplay(1));
+
+    this.authFacade.loadUser();
+
+    if (!IS_PRERENDER) {
+      this.notificationsFacade.loadAll();
+      this.listsFacade.loadMyLists();
+      this.workshopsFacade.loadMyWorkshops();
+      this.listsFacade.loadListsWithWriteAccess();
+      this.workshopsFacade.loadWorkshopsWithWriteAccess();
+      this.teamsFacade.loadMyTeams();
+      this.rotationsFacade.loadMyRotations();
+      this.customLinksFacade.loadMyCustomLinks();
+      this.layoutsFacade.loadAll();
+      this.customItemsFacade.loadAll();
+    }
+
+    if (this.media.isActive('lt-md')) {
+      this.collapsedSidebar = true;
+    }
 
   // public availableLanguages = this.settings.availableLocales;
   //

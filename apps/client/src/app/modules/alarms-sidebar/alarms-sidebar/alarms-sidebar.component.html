@@ -19,7 +19,10 @@
         <div class="center-content">
           <span class="item-name" *ngIf="row.alarm.itemId; else customName">
             <i nz-icon type="folder-open" nz-tooltip [nzTitle]="row.groupName"
-               *ngIf="row.groupName" class="folder-icon"></i>{{row.alarm.itemId | itemName: row.alarm | i18n}}
+               *ngIf="row.groupName" class="folder-icon"></i>
+            {{row.alarm.itemId | itemName: row.alarm | i18n}}
+            <i nz-icon type="edit" nz-tooltip [nzTitle]="row.alarm.note"
+               *ngIf="row.alarm.note" class="note-icon"></i>
           </span>
           <ng-template #customName>
             <i nz-icon type="folder-open" nz-tooltip [nzTitle]="row.groupName"

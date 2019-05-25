@@ -38,8 +38,11 @@ export class LazyDataService {
   public koJobCategories: any = {};
   public koQuests: any = {};
   public koFates: any = {};
-  public koFateDescriptions: any = {};
   public koTripleTriadRules: any = {};
+  public koInstances: any = {};
+  public koShops: any = {};
+  public koTraits: any = {};
+  public koStatuses: any = {};
 
   public craftActions: any = {};
 
@@ -117,10 +120,13 @@ export class LazyDataService {
         this.http.get('./assets/data/places.json'),
         this.http.get('./assets/data/quests.json'),
         this.http.get('./assets/data/fates.json'),
-        this.http.get('./assets/data/ko/ko-fate-descriptions.json'),
         this.http.get('./assets/data/ko/ko-fates.json'),
         this.http.get('./assets/data/ko/ko-quests.json'),
         this.http.get('./assets/data/ko/ko-triple-triad-rules.json'),
+        this.http.get('./assets/data/ko/ko-instances.json'),
+        this.http.get('./assets/data/ko/ko-shops.json'),
+        this.http.get('./assets/data/ko/ko-traits.json'),
+        this.http.get('./assets/data/ko/ko-statuses.json'),
         this.http.get('./assets/data/instances.json'),
         this.http.get('./assets/data/shops.json'),
         this.http.get('./assets/data/leves.json'),
@@ -155,10 +161,13 @@ export class LazyDataService {
                    places,
                    quests,
                    fates,
-                   koFateDescriptions,
                    koFates,
                    koQuests,
                    koTripleTriadRules,
+                   koInstances,
+                   koShops,
+                   koTraits,
+                   koStatuses,
                    instances,
                    shops,
                    leves,
@@ -192,10 +201,13 @@ export class LazyDataService {
       this.places = places as { [index: string]: I18nName };
       this.quests = quests as { [index: string]: Quest };
       this.fates = fates as { [index: string]: Fate };
-      this.koFateDescriptions = koFateDescriptions;
-      this.koFates = koFates;
+      this.koFates = koFates as { [index: string]: Fate };
       this.koQuests = koQuests;
       this.koTripleTriadRules = koTripleTriadRules;
+      this.koInstances = koInstances;
+      this.koShops = koShops;
+      this.koTraits = koTraits;
+      this.koStatuses = koStatuses;
       this.instances = instances;
       this.shops = shops;
       this.leves = leves;

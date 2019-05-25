@@ -34,6 +34,7 @@ import { WeatherService } from './eorzea/weather.service';
 import { DbButtonComponent } from './db-button/db-button.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { RouterModule } from '@angular/router';
+import { ItemRarityDirective } from './item-rarity/item-rarity.directive';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     I18nPipe,
     TimerPipe,
-    DbButtonComponent
+    DbButtonComponent,
+    ItemRarityDirective
   ],
   exports: [
     I18nPipe,
@@ -90,7 +92,8 @@ import { RouterModule } from '@angular/router';
     PushNotificationsModule,
     MaintenanceModule,
     TimerPipe,
-    DbButtonComponent
+    DbButtonComponent,
+    ItemRarityDirective
   ]
 })
 export class CoreModule {

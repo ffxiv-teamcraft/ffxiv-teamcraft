@@ -114,7 +114,7 @@
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
                  *ngFor="let reward of fight.coffer.items">
               <app-item-icon [width]="32" [itemId]="reward" [icon]="reward | lazyIcon"></app-item-icon>
-              <div>{{reward | itemName | i18n}}</div>
+              <div [appItemRarity]="reward">{{reward | itemName | i18n}}</div>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
                *ngFor="let reward of gtData.instance.rewards">
             <app-item-icon [width]="32" [itemId]="reward" [icon]="reward | lazyIcon"></app-item-icon>
-            <div>{{reward | itemName | i18n}}</div>
+            <div [appItemRarity]="reward">{{reward | itemName | i18n}}</div>
           </div>
         </div>
       </nz-card>
@@ -186,7 +186,7 @@
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngFor="let item of chest.items">
                 <app-item-icon [width]="32" [itemId]="item" [icon]="item | lazyIcon"></app-item-icon>
-                <div>{{item | itemName | i18n}}</div>
+                <div [appItemRarity]="item">{{item | itemName | i18n}}</div>
               </div>
             </div>
             <nz-divider *ngIf="!last"></nz-divider>
