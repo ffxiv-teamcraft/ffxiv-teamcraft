@@ -38,7 +38,7 @@
                                    [icon]="item.icon | xivapiIcon"></app-item-icon>
                     <div fxLayout="column" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
                       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                        <div class="recipe-name">{{item.itemId | itemName | i18n}}</div>
+                        <div class="recipe-name" [appItemRarity]="item.itemId">{{item.itemId | itemName | i18n}}</div>
                         <i nz-icon type="clock-circle" theme="outline" *ngIf="item.timed"
                            nz-tooltip [nzTitle]="'LOG_TRACKER.Timed' | translate"></i>
                         <i nz-icon type="cloud" theme="outline" *ngIf="item.weathered"
