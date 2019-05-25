@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { UiColorsService } from './ui-colors.service';
 
 @Pipe({
   name: 'xivUIText',
@@ -8,7 +7,7 @@ import { UiColorsService } from './ui-colors.service';
 })
 export class UiTextPipe implements PipeTransform {
 
-  constructor(private uiColorsService: UiColorsService, private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer) {
   }
 
   transform(value: any = ''): SafeHtml {
@@ -20,11 +19,15 @@ export class UiTextPipe implements PipeTransform {
       .replace(/<Switch.*?><Case\(1\)>(.*?)<\/Case>.*?<\/Switch>/, '$1')
       .replace(/<If.*?>(.*?)<Else\/>.*?<\/If>(?!<\/If|<Else)/, '$1')
       .replace(/<\/?Emphasis>/, '*')
+      .replace(/<UIForeground>([^<\/]*)<\/UIForeground>/gi, '<span>')
+      .replace(/<UIGlow>([^<\/]*)<\/UIGlow>/gi, '<span>')
       .replace('<Indent/>', ' ')
       .replace(/<72>01<\/72>/gi, '</span>')
       .replace(/<UI\w+>01<\/UI\w+>/gi, '</span>')
       .replace(/\n/g, '<br>')
-      .replace(/\s{2,}/, ' ');
+      .replace(/\s{2,}/, ' ')
+      .replace(/<span style="color:#0001f4;">([^<\/]*)<\/span>/gmi, '<b>$1</b>')
+      .replace(/<span style="color:#0001f8;">([^<\/]*)<\/span>/gmi, '<b>$1</b>');
     return this.sanitizer.bypassSecurityTrustHtml(value);
   }
 

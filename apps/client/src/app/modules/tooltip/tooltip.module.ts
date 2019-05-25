@@ -11,7 +11,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { TranslateModule } from '@ngx-translate/core';
 import { PipesModule } from '../../pipes/pipes.module';
-import { UiColorsService } from './ui-colors.service';
 import { UiTextPipe } from './xiv-ui-text.pipe';
 import { CoreModule } from '../../core/core.module';
 import { FishTooltipComponent } from './fish-tooltip/fish-tooltip.component';
@@ -31,7 +30,7 @@ import { FishTooltipDirective } from './fish-tooltip/fish-tooltip.directive';
   declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, FishTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, FishTooltipDirective, UiTextPipe],
   exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, FishTooltipDirective, UiTextPipe],
   entryComponents: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, FishTooltipComponent],
-  providers: [TooltipDataService, UiColorsService]
+  providers: [TooltipDataService]
 })
 export class TooltipModule {
 }
