@@ -9,7 +9,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class ModelViewerComponent implements OnInit {
 
   @Input()
-  slot: number;
+  slot: number | string;
 
   @Input()
   models: string[];

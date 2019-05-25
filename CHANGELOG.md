@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.7"></a>
+## [5.4.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.5...v5.4.7) (2019-05-25)
+
+
+### Bug Fixes
+
+* **db:** fixed trait descriptions colors ([ca758a5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca758a5))
+* **desktop:** fixed a possible crash when applying settings ([0144f87](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0144f87))
+
+
+### Features
+
+* **alarms:** you can now see the note inside the alarms overlay ([4029497](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4029497))
+* Teamcraft now displays random tips inside the topbar ([2563962](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2563962))
+* **db:** added support for 3D model viewer on mounts and minions ([4de110e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4de110e))
+* **log-tracker:** added item name color based on rarity ([fe12751](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe12751))
+* **map:** added aetheryte shard names and more accurate aetheryte names overall ([a90549d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a90549d))
+
+
+
+<a name="5.4.6"></a>
+## [5.4.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.5...v5.4.6) (2019-05-25)
+
+
+### Bug Fixes
+
+* **db:** fixed trait descriptions colors ([ca758a5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca758a5))
+* **desktop:** fixed a possible crash when applying settings ([0144f87](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0144f87))
+
+
+### Features
+
+* **alarms:** you can now see the note inside the alarms overlay ([4029497](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4029497))
+* Teamcraft now displays random tips inside the topbar ([2563962](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2563962))
+* **log-tracker:** added item name color based on rarity ([fe12751](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe12751))
+* **map:** added aetheryte shard names and more accurate aetheryte names overall ([a90549d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a90549d))
+
+
+
 <a name="5.4.5"></a>
 ## [5.4.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.4...v5.4.5) (2019-05-24)
 

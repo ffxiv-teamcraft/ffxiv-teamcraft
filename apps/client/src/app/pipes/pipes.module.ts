@@ -41,6 +41,7 @@ import { JobCategoryNamePipe } from './pipes/job-category-name.pipe';
 import { QuestIconPipe } from './pipes/quest-icon.pipe';
 import { TraitNamePipe } from './pipes/trait-name.pipe';
 import { TraitIconPipe } from './pipes/trait-icon.pipe';
+import { AetheryteNamePipe } from './pipes/aetheryte-name.pipe';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { TraitIconPipe } from './pipes/trait-icon.pipe';
     JobCategoryNamePipe,
     QuestIconPipe,
     TraitNamePipe,
-    TraitIconPipe
+    TraitIconPipe,
+    AetheryteNamePipe
   ],
   exports: [
     ItemNamePipe,
@@ -131,7 +133,8 @@ import { TraitIconPipe } from './pipes/trait-icon.pipe';
     JobCategoryNamePipe,
     QuestIconPipe,
     TraitNamePipe,
-    TraitIconPipe
+    TraitIconPipe,
+    AetheryteNamePipe
   ]
 })
 export class PipesModule {
