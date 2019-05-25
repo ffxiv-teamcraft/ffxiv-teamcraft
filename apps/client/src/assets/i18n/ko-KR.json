@@ -900,7 +900,7 @@
       "ITEM_REMOVED": "아이템 제거",
       "LIST_ADDED": "목록 추가",
       "LIST_REMOVED": "목록 제거",
-      "LIST_PROGRESSION": "List materials progression",
+      "LIST_PROGRESSION": "재료 진행상황",
       "FINAL_LIST_PROGRESSION": "List final items progression",
       "USER_ASSIGNMENT": "팀원 할당"
     }
