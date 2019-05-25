@@ -901,7 +901,7 @@
       "LIST_ADDED": "목록 추가",
       "LIST_REMOVED": "목록 제거",
       "LIST_PROGRESSION": "재료 진행상황",
-      "FINAL_LIST_PROGRESSION": "List final items progression",
+      "FINAL_LIST_PROGRESSION": "최종 아이템 진행상황",
       "USER_ASSIGNMENT": "팀원 할당"
     }
   },
