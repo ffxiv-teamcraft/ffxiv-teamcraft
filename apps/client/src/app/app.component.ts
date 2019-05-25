@@ -32,7 +32,8 @@ import { AbstractNotification } from './core/notification/abstract-notification'
 import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { IS_PRERENDER, PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
-import { BehaviorSubject, of } from 'rxjs';
+import { BehaviorSubject, interval, of } from 'rxjs';
+import { startWith } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
@@ -101,6 +102,23 @@ export class AppComponent implements OnInit {
   public showGiveaway = false;
 
   private dirty = false;
+
+  public randomTip$: Observable<string> = interval(600000).pipe(
+    startWith(-1),
+    map(() => {
+      const tips = [
+        'Community_rotations',
+        'GC_Deliveries',
+        'Desynth',
+        'DB',
+        '3D_model',
+        'Levequests',
+        'Log_tracker',
+        'Desktop_app_overlay'
+      ];
+      return tips[Math.floor(Math.random() * tips.length)];
+    })
+  );
 
   get desktopUrl(): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(`teamcraft://${window.location.pathname}`);
