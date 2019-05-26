@@ -312,6 +312,7 @@ export class AppComponent implements OnInit {
   }
 
   private applyTheme(theme: Theme): void {
+    document.documentElement.style.setProperty('--background-color', theme.background);
     document.documentElement.style.setProperty('--primary-color', theme.primary);
     document.documentElement.style.setProperty('--highlight-color', theme.highlight);
     document.documentElement.style.setProperty('--text-color', theme.text);

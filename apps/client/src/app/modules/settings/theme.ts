@@ -7,7 +7,8 @@ export class Theme {
     'white',
     '#182D49',
     '#386B7F',
-    '#4298AC'
+    '#4298AC',
+    '#292929'
   );
 
   // public static readonly GREEN = new Theme('GREEN', '#009a4d', '#b77cb3', 'white');
@@ -29,7 +30,8 @@ export class Theme {
     public text: string,
     public topbar: string,
     public trigger: string,
-    public triggerHover:string
+    public triggerHover:string,
+    public background: string
   ) {
   }
 

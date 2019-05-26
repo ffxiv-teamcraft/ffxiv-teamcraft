@@ -1,6 +1,6 @@
 @import "./default-theme";
 
-
+@color0: #292929;
 @color1: #E5C339;
 @color2: #F0F9ED;
 @color3: #7CC6C9;
@@ -9,6 +9,7 @@
 @color6: #4298AC;
 
 :root {
+  --background-color: @color0;
   --primary-color: @color3;
   --highlight-color: @color1;
   --text-color: @text-color;
@@ -21,6 +22,13 @@
 // Themes connections
 ::selection {
   background: var(--primary-color) !important;
+}
+
+.ant-layout, body, .ant-input, .ant-btn:not(.ant-btn-primary), .ant-collapse-content,
+.ant-input-number, .ant-select-selection,
+.ant-select-selection__clear, .ant-select-dropdown,
+.ant-modal-header, .ant-modal-body, .ant-modal-content {
+  background: var(--background-color);
 }
 
 .ant-tabs-tab-active, .ant-tabs-tab:hover, .ant-tabs-tab:focus {
