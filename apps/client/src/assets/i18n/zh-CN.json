@@ -330,9 +330,13 @@
     "Favorite_aetherytes": "收藏传送点",
     "Disable_cross_world_prices": "仅使用当前服务器的市场价格",
     "COLORS": {
+      "Background": "Background color",
       "Primary": "主体色",
       "Highlight": "高亮色",
-      "Text": "按钮文本色"
+      "Text": "按钮文本色",
+      "Topbar": "Topbar and sidebar color",
+      "Sidebar_trigger": "Sidebar trigger color",
+      "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
       "Classic": "复制物品名称",

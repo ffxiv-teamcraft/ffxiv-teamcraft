@@ -330,9 +330,13 @@
     "Favorite_aetherytes": "에테라이트 즐겨찾기",
     "Disable_cross_world_prices": "캐릭터의 서버 장터 가격만 사용",
     "COLORS": {
+      "Background": "Background color",
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
-      "Text": "버튼 속 색상"
+      "Text": "버튼 속 색상",
+      "Topbar": "Topbar and sidebar color",
+      "Sidebar_trigger": "Sidebar trigger color",
+      "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",

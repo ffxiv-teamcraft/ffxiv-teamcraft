@@ -330,9 +330,13 @@
     "Favorite_aetherytes": "Aetherytes favoritos",
     "Disable_cross_world_prices": "Sólo usar mi propio mundo para los precios del mercado",
     "COLORS": {
+      "Background": "Background color",
       "Primary": "Color primario",
       "Highlight": "Color de resaltado",
-      "Text": "Color de contenido de botones"
+      "Text": "Color de contenido de botones",
+      "Topbar": "Topbar and sidebar color",
+      "Sidebar_trigger": "Sidebar trigger color",
+      "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
