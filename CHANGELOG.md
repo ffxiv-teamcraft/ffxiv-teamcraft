@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.8"></a>
+## [5.4.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.7...v5.4.8) (2019-05-26)
+
+
+### Bug Fixes
+
+* **db:** fixed broken 3D preview for minions ([e2a4cd8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2a4cd8))
+* **db:** fixed broken pages because of GameContentLinks not mandatory anymore ([0f6ff50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f6ff50))
+* **desktop:** disabled hardware acceleration for better rendering ([4ad1c53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ad1c53))
+* **tip:** better line break management ([0747773](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0747773))
+
+
+### Features
+
+* **style:** changed default theme and custom theme system ([#933](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/933)) ([4c3ab54](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c3ab54))
+
+
+
 <a name="5.4.7"></a>
 ## [5.4.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.5...v5.4.7) (2019-05-25)
 
