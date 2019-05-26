@@ -2,13 +2,13 @@ export class Theme {
 
   public static readonly DEFAULT = new Theme(
     'DEFAULT',
-    '#7CC6C9',
-    '#E5C339',
+    '#1e88e5',
+    '#26c6da',
     'white',
-    '#182D49',
-    '#386B7F',
-    '#4298AC',
-    '#292929'
+    '#272c33',
+    '#747d8a',
+    '#1e88e5',
+    '#525860'
   );
 
   public static readonly GREEN = new Theme('GREEN', '#009a4d', '#b77cb3', 'white');
@@ -31,7 +31,7 @@ export class Theme {
     public text: string,
     public topbar: string = '#001529',
     public trigger: string = '#002140',
-    public triggerHover:string = '#2A3948',
+    public triggerHover: string = '#2A3948',
     public background: string = '#292929'
   ) {
   }
