@@ -24,11 +24,15 @@
   background: var(--primary-color) !important;
 }
 
-.ant-layout, body, .ant-input, .ant-btn:not(.ant-btn-primary), .ant-collapse-content,
+.ant-layout, body, .ant-input, .ant-btn:not(.ant-btn-primary),
 .ant-input-number, .ant-select-selection,
 .ant-select-selection__clear, .ant-select-dropdown,
 .ant-modal-header, .ant-modal-body, .ant-modal-content {
   background: var(--background-color);
+}
+
+.ant-collapse-content {
+  background: var(--topbar-color);
 }
 
 .ant-tabs-tab-active, .ant-tabs-tab:hover, .ant-tabs-tab:focus {
@@ -61,6 +65,10 @@
 .ant-btn-primary:not([disabled]):not(.ant-btn-background-ghost) {
   background-color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
+  color: var(--text-color);
+}
+
+.ant-spin-text {
   color: var(--text-color);
 }
 
