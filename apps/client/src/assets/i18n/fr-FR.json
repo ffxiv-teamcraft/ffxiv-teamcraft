@@ -330,9 +330,13 @@
     "Favorite_aetherytes": "Éthérites favorites",
     "Disable_cross_world_prices": "Utiliser uniquement le serveur d'origine pour les prix à l'hôtel des ventes",
     "COLORS": {
+      "Background": "Background color",
       "Primary": "Couleur principale",
       "Highlight": "Couleur de surbrillance",
-      "Text": "Couleur des icônes des boutons"
+      "Text": "Couleur des icônes des boutons",
+      "Topbar": "Topbar and sidebar color",
+      "Sidebar_trigger": "Sidebar trigger color",
+      "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
