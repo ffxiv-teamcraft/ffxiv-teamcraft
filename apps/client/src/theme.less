@@ -1,9 +1,21 @@
 @import "./default-theme";
 
+
+@color1: #E5C339;
+@color2: #F0F9ED;
+@color3: #7CC6C9;
+@color4: #386B7F;
+@color5: #182D49;
+@color6: #4298AC;
+
 :root {
-  --primary-color: @primary-color;
-  --highlight-color: @highlight-color;
+  --primary-color: @color3;
+  --highlight-color: @color1;
   --text-color: @text-color;
+  --topbar-color: @color5;
+  --sider-trigger-color: @color4;
+  --sider-trigger-hover-color: @color6;
+  --zero-width-sider-trigger-color: @color4;
 }
 
 // Themes connections
@@ -70,4 +82,32 @@ a {
 
 .accent {
   background-color: var(--highlight-color);
+}
+
+.ant-layout-sider {
+  background: var(--topbar-color);
+}
+
+.ant-menu-dark, .ant-menu-dark .ant-menu-sub {
+  background: var(--topbar-color);
+}
+
+.ant-layout-sider-zero-width-trigger {
+  background: var(--topbar-color);
+}
+
+.ant-layout-header {
+  background: var(--topbar-color);
+}
+
+.ant-layout-sider-zero-width-trigger:hover {
+  background: var(--zero-width-sider-trigger-color);
+}
+
+.ant-layout-sider-trigger {
+  background: var(--sider-trigger-color);
+}
+
+.ant-layout-sider-trigger:hover {
+  background: var(--sider-trigger-hover-color);
 }

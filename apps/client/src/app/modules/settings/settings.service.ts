@@ -197,7 +197,7 @@ export class SettingsService {
   }
 
   public get customTheme(): Theme {
-    return JSON.parse(this.getSetting('customTheme', '{"name":"CUSTOM", "primary": "#F57C00", "highlight": "#009688", "text": "rgba(255, 255, 255, 0.85)"}'));
+    return JSON.parse(this.getSetting('customTheme', JSON.stringify({...Theme.DEFAULT, name: 'CUSTOM'})));
   }
 
   public set customTheme(theme: Theme) {

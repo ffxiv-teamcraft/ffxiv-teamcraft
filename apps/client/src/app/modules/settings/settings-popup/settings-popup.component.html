@@ -47,6 +47,27 @@
                        [style.background]="customTheme.text" class="color-picker"></div>
                 </div>
               </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                <div fxLayout="1 1 auto">{{'SETTINGS.COLORS.Topbar' | translate}}</div>
+                <div class="color-container color-picker">
+                  <div [(colorPicker)]="customTheme.topbar" (colorPickerChange)="saveCustomTheme()"
+                       [style.background]="customTheme.topbar" class="color-picker"></div>
+                </div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                <div fxLayout="1 1 auto">{{'SETTINGS.COLORS.Sidebar_trigger' | translate}}</div>
+                <div class="color-container color-picker">
+                  <div [(colorPicker)]="customTheme.trigger" (colorPickerChange)="saveCustomTheme()"
+                       [style.background]="customTheme.trigger" class="color-picker"></div>
+                </div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                <div fxLayout="1 1 auto">{{'SETTINGS.COLORS.Sidebar_trigger_hover' | translate}}</div>
+                <div class="color-container color-picker">
+                  <div [(colorPicker)]="customTheme.triggerHover" (colorPickerChange)="saveCustomTheme()"
+                       [style.background]="customTheme.triggerHover" class="color-picker"></div>
+                </div>
+              </div>
             </div>
           </nz-form-control>
         </nz-form-item>

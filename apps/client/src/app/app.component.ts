@@ -315,6 +315,10 @@ export class AppComponent implements OnInit {
     document.documentElement.style.setProperty('--primary-color', theme.primary);
     document.documentElement.style.setProperty('--highlight-color', theme.highlight);
     document.documentElement.style.setProperty('--text-color', theme.text);
+    document.documentElement.style.setProperty('--topbar-color', theme.topbar);
+    document.documentElement.style.setProperty('--sider-trigger-color', theme.trigger);
+    document.documentElement.style.setProperty('--sider-trigger-hover-color', theme.triggerHover);
+    document.documentElement.style.setProperty('--zero-width-sider-trigger-color', theme.trigger);
   }
 
   public toggleTimeFormat(): void {
