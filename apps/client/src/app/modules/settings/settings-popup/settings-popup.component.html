@@ -27,6 +27,13 @@
           <nz-form-control [nzSpan]="12">
             <div fxLayout="column" fxLayoutGap="5px" class="custom-theme-editor">
               <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                <div fxLayout="1 1 auto">{{'SETTINGS.COLORS.Background' | translate}}</div>
+                <div class="color-container color-picker">
+                  <div [(colorPicker)]="customTheme.background" (colorPickerChange)="saveCustomTheme()"
+                       [style.background]="customTheme.background" class="color-picker"></div>
+                </div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
                 <div fxLayout="1 1 auto">{{'SETTINGS.COLORS.Primary' | translate}}</div>
                 <div class="color-container color-picker">
                   <div [(colorPicker)]="customTheme.primary" (colorPickerChange)="saveCustomTheme()"
@@ -45,6 +52,27 @@
                 <div class="color-container color-picker">
                   <div [(colorPicker)]="customTheme.text" (colorPickerChange)="saveCustomTheme()"
                        [style.background]="customTheme.text" class="color-picker"></div>
+                </div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                <div fxLayout="1 1 auto">{{'SETTINGS.COLORS.Topbar' | translate}}</div>
+                <div class="color-container color-picker">
+                  <div [(colorPicker)]="customTheme.topbar" (colorPickerChange)="saveCustomTheme()"
+                       [style.background]="customTheme.topbar" class="color-picker"></div>
+                </div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                <div fxLayout="1 1 auto">{{'SETTINGS.COLORS.Sidebar_trigger' | translate}}</div>
+                <div class="color-container color-picker">
+                  <div [(colorPicker)]="customTheme.trigger" (colorPickerChange)="saveCustomTheme()"
+                       [style.background]="customTheme.trigger" class="color-picker"></div>
+                </div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                <div fxLayout="1 1 auto">{{'SETTINGS.COLORS.Sidebar_trigger_hover' | translate}}</div>
+                <div class="color-container color-picker">
+                  <div [(colorPicker)]="customTheme.triggerHover" (colorPickerChange)="saveCustomTheme()"
+                       [style.background]="customTheme.triggerHover" class="color-picker"></div>
                 </div>
               </div>
             </div>

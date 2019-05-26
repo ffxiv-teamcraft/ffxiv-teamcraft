@@ -1,14 +1,38 @@
 @import "./default-theme";
 
+@color0: #292929;
+@color1: #E5C339;
+@color2: #F0F9ED;
+@color3: #7CC6C9;
+@color4: #386B7F;
+@color5: #182D49;
+@color6: #4298AC;
+
 :root {
-  --primary-color: @primary-color;
-  --highlight-color: @highlight-color;
+  --background-color: @color0;
+  --primary-color: @color3;
+  --highlight-color: @color1;
   --text-color: @text-color;
+  --topbar-color: @color5;
+  --sider-trigger-color: @color4;
+  --sider-trigger-hover-color: @color6;
+  --zero-width-sider-trigger-color: @color4;
 }
 
 // Themes connections
 ::selection {
   background: var(--primary-color) !important;
+}
+
+.ant-layout, body, .ant-input, .ant-btn:not(.ant-btn-primary),
+.ant-input-number, .ant-select-selection,
+.ant-select-selection__clear, .ant-select-dropdown,
+.ant-modal-header, .ant-modal-body, .ant-modal-content {
+  background: var(--background-color);
+}
+
+.ant-collapse-content {
+  background: var(--topbar-color);
 }
 
 .ant-tabs-tab-active, .ant-tabs-tab:hover, .ant-tabs-tab:focus {
@@ -44,6 +68,10 @@
   color: var(--text-color);
 }
 
+.ant-spin-text {
+  color: var(--text-color);
+}
+
 .ant-input:hover, .ant-select-selection:hover, .ant-input-number:hover, .ant-select-open .ant-select-selection {
   border-color: var(--primary-color) !important;
 }
@@ -70,4 +98,32 @@ a {
 
 .accent {
   background-color: var(--highlight-color);
+}
+
+.ant-layout-sider {
+  background: var(--topbar-color);
+}
+
+.ant-menu-dark, .ant-menu-dark .ant-menu-sub {
+  background: var(--topbar-color);
+}
+
+.ant-layout-sider-zero-width-trigger {
+  background: var(--topbar-color);
+}
+
+.ant-layout-header {
+  background: var(--topbar-color);
+}
+
+.ant-layout-sider-zero-width-trigger:hover {
+  background: var(--zero-width-sider-trigger-color);
+}
+
+.ant-layout-sider-trigger {
+  background: var(--sider-trigger-color);
+}
+
+.ant-layout-sider-trigger:hover {
+  background: var(--sider-trigger-hover-color);
 }
