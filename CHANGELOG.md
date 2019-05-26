@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.9"></a>
+## [5.4.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.8...v5.4.9) (2019-05-26)
+
+
+### Bug Fixes
+
+* **theme:** fixed app crash when theme is not defined ([54fad3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/54fad3a))
+
+
+
 <a name="5.4.8"></a>
 ## [5.4.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.7...v5.4.8) (2019-05-26)
 
