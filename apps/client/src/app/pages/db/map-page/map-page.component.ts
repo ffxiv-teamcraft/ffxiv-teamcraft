@@ -386,7 +386,8 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   private mergeGameContentLinks(mapData: any, placeName: any): any {
-    Object.keys(placeName.GameContentLinks).forEach(key => {
+    mapData.GameContentLinks = mapData.GameContentLinks || {};
+    Object.keys(placeName.GameContentLinks || {}).forEach(key => {
       if (mapData.GameContentLinks[key] === undefined) {
         mapData.GameContentLinks[key] = placeName.GameContentLinks[key];
       } else {
@@ -404,6 +405,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
         });
       }
     });
+    return mapData.GameContentLinks;
   }
 
   private getDescription(npc: any): string {
