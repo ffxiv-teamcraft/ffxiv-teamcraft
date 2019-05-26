@@ -14,7 +14,17 @@ import {
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import {
+  catchError,
+  distinctUntilChanged,
+  filter,
+  first,
+  map,
+  shareReplay,
+  startWith,
+  switchMap,
+  tap
+} from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -33,7 +43,6 @@ import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { IS_PRERENDER, PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
 import { BehaviorSubject, interval, of } from 'rxjs';
-import { startWith } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
@@ -312,14 +321,16 @@ export class AppComponent implements OnInit {
   }
 
   private applyTheme(theme: Theme): void {
-    document.documentElement.style.setProperty('--background-color', theme.background);
-    document.documentElement.style.setProperty('--primary-color', theme.primary);
-    document.documentElement.style.setProperty('--highlight-color', theme.highlight);
-    document.documentElement.style.setProperty('--text-color', theme.text);
-    document.documentElement.style.setProperty('--topbar-color', theme.topbar);
-    document.documentElement.style.setProperty('--sider-trigger-color', theme.trigger);
-    document.documentElement.style.setProperty('--sider-trigger-hover-color', theme.triggerHover);
-    document.documentElement.style.setProperty('--zero-width-sider-trigger-color', theme.trigger);
+    if (theme !== undefined) {
+      document.documentElement.style.setProperty('--background-color', theme.background);
+      document.documentElement.style.setProperty('--primary-color', theme.primary);
+      document.documentElement.style.setProperty('--highlight-color', theme.highlight);
+      document.documentElement.style.setProperty('--text-color', theme.text);
+      document.documentElement.style.setProperty('--topbar-color', theme.topbar);
+      document.documentElement.style.setProperty('--sider-trigger-color', theme.trigger);
+      document.documentElement.style.setProperty('--sider-trigger-hover-color', theme.triggerHover);
+      document.documentElement.style.setProperty('--zero-width-sider-trigger-color', theme.trigger);
+    }
   }
 
   public toggleTimeFormat(): void {
