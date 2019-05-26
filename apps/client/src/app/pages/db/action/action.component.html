@@ -68,14 +68,14 @@
       <nz-card fxFlex="1 1 auto" class="details-card"
                [nzTitle]="title"
                nzBordered="false"
-               *ngIf="action.GameContentLinks.Quest">
+               *ngIf="action.GameContentLinks?.Quest">
         <ng-template #title>
           {{'DB.ACTION.Unlocked_by_quest' | translate}}
         </ng-template>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-          <img [src]="action.GameContentLinks.Quest.ActionReward[0] | questIcon | xivapiIcon" alt="">
-          <div>{{action.GameContentLinks.Quest.ActionReward[0] | questName | i18n}}</div>
-          <app-db-button type="quest" [id]="action.GameContentLinks.Quest.ActionReward[0]"></app-db-button>
+          <img [src]="action.GameContentLinks?.Quest.ActionReward[0] | questIcon | xivapiIcon" alt="">
+          <div>{{action.GameContentLinks?.Quest.ActionReward[0] | questName | i18n}}</div>
+          <app-db-button type="quest" [id]="action.GameContentLinks?.Quest.ActionReward[0]"></app-db-button>
         </div>
       </nz-card>
       <nz-card fxFlex="1 1 auto" class="details-card"

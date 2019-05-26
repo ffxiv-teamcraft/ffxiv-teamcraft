@@ -330,9 +330,13 @@
     "Favorite_aetherytes": "お気に入りのエーテライト",
     "Disable_cross_world_prices": "キャラクターのサーバーマケットボード値段のみ使用",
     "COLORS": {
+      "Background": "Background color",
       "Primary": "デフォルトカラー",
       "Highlight": "ハイライトカラー",
-      "Text": "ボタンの色"
+      "Text": "ボタンの色",
+      "Topbar": "Topbar and sidebar color",
+      "Sidebar_trigger": "Sidebar trigger color",
+      "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",

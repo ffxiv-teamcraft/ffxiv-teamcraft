@@ -28,7 +28,7 @@
               </button>
             </div>
           </ng-container>
-          <div [class.desktop-tips]="platformService.isDesktop()" *ngIf="true | ifMobile: false">
+          <div class="tips" *ngIf="true | ifMobile: false">
             <i>{{'TIPS.Title' | translate}}: {{('TIPS.' + (randomTip$ | async)) | translate}}</i>
           </div>
         </div>

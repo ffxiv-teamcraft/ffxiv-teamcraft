@@ -61,6 +61,7 @@ export class Item implements I18nData {
   minion?: any;
   furniture?: any;
   slot?: number;
+  minionrace?: string;
 
   @DeserializeFieldName('icon')
   _icon: number;

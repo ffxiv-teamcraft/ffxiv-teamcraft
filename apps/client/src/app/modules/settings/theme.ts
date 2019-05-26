@@ -1,6 +1,15 @@
 export class Theme {
 
-  public static readonly DEFAULT = new Theme('DEFAULT', '#006d46', '#009688', 'white');
+  public static readonly DEFAULT = new Theme(
+    'DEFAULT',
+    '#7CC6C9',
+    '#E5C339',
+    'white',
+    '#182D49',
+    '#386B7F',
+    '#4298AC',
+    '#292929'
+  );
 
   public static readonly GREEN = new Theme('GREEN', '#009a4d', '#b77cb3', 'white');
 
@@ -10,14 +19,24 @@ export class Theme {
 
   public static readonly PURPLE = new Theme('PURPLE', '#8e24aa', '#0edac7', 'white');
 
+  // This is just a placeholder
   public static readonly CUSTOM = new Theme('CUSTOM', '#8e24aa', '#0edac7', 'white');
 
   public static ALL_THEMES = [Theme.DEFAULT, Theme.GREEN, Theme.BLUE, Theme.RED, Theme.PURPLE];
 
-  constructor(public readonly name: string, public primary: string, public highlight: string, public text: string) {
+  constructor(
+    public readonly name: string,
+    public primary: string,
+    public highlight: string,
+    public text: string,
+    public topbar: string = '#001529',
+    public trigger: string = '#002140',
+    public triggerHover:string = '#2A3948',
+    public background: string = '#292929'
+  ) {
   }
 
   public static byName(name: string): Theme {
-    return Theme[name] || Theme.DEFAULT;
+    return Theme[name];
   }
 }

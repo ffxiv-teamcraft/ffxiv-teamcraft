@@ -518,7 +518,7 @@ export class ItemComponent extends TeamcraftPageComponent {
     let slot: number | string = 1;
     if (gtData.item.mount) {
       slot = 'mount';
-    } else if (gtData.item.minion) {
+    } else if (gtData.item.minionrace) {
       slot = 'minion';
     } else if (gtData.item.furniture) {
       slot = 'furniture';
