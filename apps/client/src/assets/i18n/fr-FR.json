@@ -1270,8 +1270,8 @@
       "Locks_control": "Contrôles verrouillés",
       "Locks_movement": "Mouvements verrouillés",
       "Type": "Type",
-      "Type_buff": "Buff",
-      "Type_debuff": "Debuff"
+      "Type_buff": "Bonus",
+      "Type_debuff": "Malus"
     }
   },
   "SEARCH_TYPES": {
