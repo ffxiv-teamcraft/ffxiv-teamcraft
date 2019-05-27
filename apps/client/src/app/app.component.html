@@ -28,7 +28,7 @@
               </button>
             </div>
           </ng-container>
-          <div class="tips" *ngIf="true | ifMobile: false">
+          <div class="tips" fxShow fxHide.lt-lg>
             <i>{{'TIPS.Title' | translate}}: {{('TIPS.' + (randomTip$ | async)) | translate}}</i>
           </div>
         </div>

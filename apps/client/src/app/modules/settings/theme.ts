@@ -2,13 +2,13 @@ export class Theme {
 
   public static readonly DEFAULT = new Theme(
     'DEFAULT',
-    '#1e88e5',
+    '#4880b1',
     '#26c6da',
     'white',
-    '#272c33',
-    '#747d8a',
+    '#191e25',
+    '#515a67',
     '#1e88e5',
-    '#525860'
+    '#2f3237'
   );
 
   public static readonly GREEN = new Theme('GREEN', '#009a4d', '#b77cb3', 'white');

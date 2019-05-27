@@ -171,7 +171,7 @@
                      nzAllowClear
                      nzShowSearch
                      style="width: 100%">
-            <nz-option [nzLabel]="aetheryte.id | aetheryteName | i18n" [nzValue]="aetheryte.nameid"
+            <nz-option [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte.nameid | placeName | i18n)" [nzValue]="aetheryte.nameid"
                        *ngFor="let aetheryte of allAetherytes"></nz-option>
           </nz-select>
           <nz-form-explain>{{'SETTINGS.Starting_place_explain' | translate}}</nz-form-explain>
@@ -187,7 +187,7 @@
             nzMode="multiple"
             [(ngModel)]="favoriteAetherytes"
             (ngModelChange)="settings.favoriteAetherytes = favoriteAetherytes">
-            <nz-option [nzLabel]="aetheryte.id | aetheryteName | i18n" [nzValue]="aetheryte.nameid"
+            <nz-option [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte.nameid | placeName | i18n)" [nzValue]="aetheryte.nameid"
                        *ngFor="let aetheryte of allAetherytes"></nz-option>
           </nz-select>
           <nz-form-explain>{{'SETTINGS.Starting_place_explain' | translate}}</nz-form-explain>
