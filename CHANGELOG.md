@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.10"></a>
+## [5.4.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.9...v5.4.10) (2019-05-27)
+
+
+### Bug Fixes
+
+* **layout:** fixed layout display for smaller resolutions ([54d0a81](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/54d0a81))
+* **theme:** default theme is now darker and fixed custom theme system ([ac1218d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ac1218d))
+* **theme:** fixed an issue with aetheryte names sometimes not showing up properly ([6f7c12d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f7c12d))
+
+
+
 <a name="5.4.9"></a>
 ## [5.4.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.8...v5.4.9) (2019-05-26)
 
