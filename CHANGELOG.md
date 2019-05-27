@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.11"></a>
+## [5.4.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.10...v5.4.11) (2019-05-27)
+
+
+### Bug Fixes
+
+* **settings:** fixed blank settings page ([3a6ef5a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3a6ef5a))
+* **style:** fixed color issues and alignment in various places ([94baf38](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/94baf38))
+
+
+### Features
+
+* **db:** added status type to db status page ([a349413](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a349413))
+
+
+
 <a name="5.4.10"></a>
 ## [5.4.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.9...v5.4.10) (2019-05-27)
 

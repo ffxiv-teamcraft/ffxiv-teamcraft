@@ -199,7 +199,7 @@ export class SettingsService {
   public get customTheme(): Theme {
     return {
       ...Theme.DEFAULT,
-      ...JSON.parse(this.getSetting('customTheme', '{name: "CUSTOM"}'))
+      ...JSON.parse(this.getSetting('customTheme', '{"name": "CUSTOM"}'))
     };
   }
 

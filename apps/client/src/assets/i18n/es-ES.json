@@ -1268,7 +1268,10 @@
       "Max_stacks": "Cargas máximas",
       "Locks_actions": "Bloquea acciones",
       "Locks_control": "Bloquea control",
-      "Locks_movement": "Bloquea movimiento"
+      "Locks_movement": "Bloquea movimiento",
+      "Type": "Type",
+      "Type_buff": "Buff",
+      "Type_debuff": "Debuff"
     }
   },
   "SEARCH_TYPES": {

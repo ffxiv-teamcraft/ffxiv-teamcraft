@@ -328,7 +328,7 @@
   </div>
   <div class="block center-block" nz-col nzXs="24" nzSm="12" nzMd="7"
        [class.empty]="!alarms || alarms.length < 0">
-    <div class="timers" fxLayout="row wrap" fxLayoutGap="5px">
+    <div class="timers" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <div *ngFor="let alarm of alarms; trackBy: trackByAlarm">
         <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
           <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"
