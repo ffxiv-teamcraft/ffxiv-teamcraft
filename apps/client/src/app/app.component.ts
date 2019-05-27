@@ -14,7 +14,17 @@ import {
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, distinctUntilChanged, filter, first, map, startWith, switchMap, tap } from 'rxjs/operators';
+import {
+  catchError,
+  distinctUntilChanged,
+  filter,
+  first,
+  map,
+  shareReplay,
+  startWith,
+  switchMap,
+  tap
+} from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -175,6 +185,16 @@ export class AppComponent implements OnInit {
     }
 
     if (isPlatformBrowser(this.platform)) {
+      this.firebase.object('maintenance')
+        .valueChanges()
+        .pipe(
+          isPlatformServer(this.platform) ? first() : tap()
+        )
+        .subscribe(maintenance => {
+          if (maintenance && environment.production) {
+            this.router.navigate(['maintenance']);
+          }
+        });
 
       this.lazyData.loaded$.subscribe(loaded => this.dataLoaded = loaded);
 
@@ -268,17 +288,6 @@ export class AppComponent implements OnInit {
       this.newVersionAvailable$ = of(false);
     }
 
-    this.firebase.object('maintenance')
-      .valueChanges()
-      .pipe(
-        isPlatformServer(this.platform) ? first() : tap()
-      )
-      .subscribe(maintenance => {
-        if (maintenance && environment.production) {
-          this.router.navigate(['maintenance']);
-        }
-      });
-
     // Translation
     this.translate.setDefaultLang('en');
     this.use(this.getLang());
@@ -310,13 +319,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authFacade.loadUser();
-    // Loading is !loaded
-    this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
-    this.loggedIn$ = this.authFacade.loggedIn$;
-    this.character$ = this.authFacade.mainCharacter$.pipe(shareReplay(1));
-
     if (isPlatformBrowser(this.platform)) {
+      this.authFacade.loadUser();
+      // Loading is !loaded
+      this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
+      this.loggedIn$ = this.authFacade.loggedIn$;
+      this.character$ = this.authFacade.mainCharacter$.pipe(shareReplay(1));
       this.notificationsFacade.loadAll();
       this.listsFacade.loadMyLists();
       this.workshopsFacade.loadMyWorkshops();
@@ -327,21 +335,24 @@ export class AppComponent implements OnInit {
       this.customLinksFacade.loadMyCustomLinks();
       this.layoutsFacade.loadAll();
       this.customItemsFacade.loadAll();
-    }
 
-    if (this.media.isActive('lt-md')) {
-      this.collapsedSidebar = true;
-    }
+      this.user$.subscribe(user => {
+        if (!user.patron && !user.admin && this.settings.theme.name === 'CUSTOM') {
+          this.settings.theme = Theme.DEFAULT;
+        }
+      });
 
-    this.settings.themeChange$.subscribe((change => {
-      this.applyTheme(change.next);
-    }));
-
-    this.user$.subscribe(user => {
-      if (!user.patron && !user.admin && this.settings.theme.name === 'CUSTOM') {
-        this.settings.theme = Theme.DEFAULT;
+      if (this.media.isActive('lt-md')) {
+        this.collapsedSidebar = true;
       }
-    });
+
+      this.settings.themeChange$.subscribe((change => {
+        this.applyTheme(change.next);
+      }));
+    } else {
+      this.loading$ = of(false);
+      this.loggedIn$ = of(false);
+    }
   }
 
   private applyTheme(theme: Theme): void {
