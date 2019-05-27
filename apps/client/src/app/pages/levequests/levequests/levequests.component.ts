@@ -3,7 +3,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
-import { debounceTime, filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  first,
+  map,
+  mergeMap,
+  shareReplay,
+  switchMap,
+  takeUntil,
+  tap
+} from 'rxjs/operators';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -157,6 +168,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
     );
 
     combineLatest([this.auth.gearSets$, this.job$]).pipe(
+      distinctUntilChanged(([, a],[, b]) => a === b),
       map(([sets, job]) => {
         return sets.find(set => set.jobId === job);
       }),
