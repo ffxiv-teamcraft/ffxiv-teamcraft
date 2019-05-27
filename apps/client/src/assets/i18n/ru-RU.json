@@ -1268,7 +1268,10 @@
       "Max_stacks": "Max stacks",
       "Locks_actions": "Locks actions",
       "Locks_control": "Locks control",
-      "Locks_movement": "Locks movement"
+      "Locks_movement": "Locks movement",
+      "Type": "Type",
+      "Type_buff": "Buff",
+      "Type_debuff": "Debuff"
     }
   },
   "SEARCH_TYPES": {

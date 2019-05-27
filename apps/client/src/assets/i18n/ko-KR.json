@@ -330,11 +330,11 @@
     "Favorite_aetherytes": "에테라이트 즐겨찾기",
     "Disable_cross_world_prices": "캐릭터의 서버 장터 가격만 사용",
     "COLORS": {
-      "Background": "Background color",
+      "Background": "배경 색상",
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
       "Text": "버튼 속 색상",
-      "Topbar": "Topbar and sidebar color",
+      "Topbar": "상단/사이드바 색상",
       "Sidebar_trigger": "Sidebar trigger color",
       "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
@@ -1268,7 +1268,10 @@
       "Max_stacks": "최대 중첩",
       "Locks_actions": "기술 사용 불가",
       "Locks_control": "대상 선택 불가",
-      "Locks_movement": "이동 불가"
+      "Locks_movement": "이동 불가",
+      "Type": "Type",
+      "Type_buff": "Buff",
+      "Type_debuff": "Debuff"
     }
   },
   "SEARCH_TYPES": {

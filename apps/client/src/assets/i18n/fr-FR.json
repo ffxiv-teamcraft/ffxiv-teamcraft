@@ -1268,7 +1268,10 @@
       "Max_stacks": "Cumuls max",
       "Locks_actions": "Actions verrouillées",
       "Locks_control": "Contrôles verrouillés",
-      "Locks_movement": "Mouvements verrouillés"
+      "Locks_movement": "Mouvements verrouillés",
+      "Type": "Type",
+      "Type_buff": "Bonus",
+      "Type_debuff": "Malus"
     }
   },
   "SEARCH_TYPES": {
