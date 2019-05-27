@@ -19,7 +19,6 @@ import {
   VerifyCharacter
 } from './auth.actions';
 import * as firebase from 'firebase/app';
-import 'firebase/auth';
 import { UserCredential } from '@firebase/auth-types';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';

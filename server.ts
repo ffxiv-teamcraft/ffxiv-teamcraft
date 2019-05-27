@@ -9,6 +9,7 @@ import * as path from 'path';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { enableProdMode } from '@angular/core';
 
 const DIST_FOLDER = path.join(process.cwd(), 'dist/apps');
 const APP_NAME = 'client';
@@ -90,7 +91,7 @@ const fakeStorage: Storage = {
 (global as any)['localStorage'] = fakeStorage;
 
 // Faster renders in prod mode
-//enableProdMode();
+enableProdMode();
 
 if (global.v8debug) {
   global.v8debug.Debug.setBreakOnException(); // speaks for itself
@@ -114,26 +115,25 @@ app.set('views', join(DIST_FOLDER, APP_NAME));
 // Serve static files
 app.get('*.*', express.static(join(DIST_FOLDER, APP_NAME)));
 
-const beforeRender = (req, res, next) => {
-  //Get the client lang from the request
-  req.lang = req.headers['accept-language'] || 'en';
-
-  next();
-};
-
-
-// All regular routes use the Universal engine
-app.get('*', beforeRender, (req, res) => {
-  res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
-    req,
-    providers: [
-      { provide: REQUEST, useValue: req }
-    ]
-  });
-});
-
 // If we're not in the Cloud Functions environment, spin up a Node server
 if (!process.env.FUNCTION_NAME) {
+  const beforeRender = (req, res, next) => {
+    //Get the client lang from the request
+    req.lang = req.headers['accept-language'] || 'en';
+
+    next();
+  };
+
+// All regular routes use the Universal engine
+  app.get('*', beforeRender, (req, res) => {
+    res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
+      req,
+      providers: [
+        { provide: REQUEST, useValue: req }
+      ]
+    });
+  });
+
   const PORT = process.env.PORT || 4000;
   app.listen(PORT, () => {
     console.log(`Node server listening on http://localhost:${PORT}`);

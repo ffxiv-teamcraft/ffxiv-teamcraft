@@ -6,11 +6,6 @@ import { environment } from './environments/environment';
 
 import 'hammerjs';
 import { enableDebugTools } from '@angular/platform-browser';
-import 'firebase/auth';
-import 'firebase/database';
-import 'firebase/firestore';
-import 'firebase/messaging';
-import 'firebase/functions';
 
 if (environment.production) {
   enableProdMode();

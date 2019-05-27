@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserService } from '../database/user.service';
 import { firebase } from '@firebase/app';
-import '@firebase/auth';
-import '@firebase/database';
-import '@firebase/firestore';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { AngularFireAuth } from '@angular/fire/auth';
