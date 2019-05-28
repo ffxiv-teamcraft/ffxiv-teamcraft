@@ -86,7 +86,7 @@ exports.updateUserListCount = functions.runWith(runtimeOpts).firestore.document(
   });
 });
 
-export const universal = functions.https.onRequest((request, response) => {
-  require(`${process.cwd()}/dist/YOUR_PROJECT_NAME-webpack/server`).app(request, response);
+exports.app = functions.https.onRequest((request, response) => {
+  require(`${process.cwd()}/dist/client-webpack/server`).app(request, response);
 });
 

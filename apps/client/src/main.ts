@@ -5,6 +5,11 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 import 'hammerjs';
+import 'firebase/auth';
+import 'firebase/database';
+import 'firebase/firestore';
+import 'firebase/messaging';
+import 'firebase/functions';
 import { enableDebugTools } from '@angular/platform-browser';
 
 if (environment.production) {

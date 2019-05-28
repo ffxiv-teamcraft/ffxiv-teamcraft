@@ -4,7 +4,8 @@ import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { first, map, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import 'firebase/firestore';
 import { Action, AngularFirestore } from '@angular/fire/firestore';
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {

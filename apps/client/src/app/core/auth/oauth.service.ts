@@ -29,15 +29,15 @@ export class OauthService {
         this.http.get(authorizationUrl)
           .pipe(
             switchMap((res: { access_token: string }) => {
-              return from(this.af.auth.signInAndRetrieveDataWithCredential(firebase.auth.GoogleAuthProvider.credential(null, res.access_token)));
+              return from(this.af.auth.signInWithCredential(<any>firebase.auth.GoogleAuthProvider.credential(null, res.access_token)));
             })
           )
-          .subscribe(res => (<Subject<UserCredential>>signIn$).next(res));
+          .subscribe((res) => (<Subject<UserCredential>>signIn$).next(<any>res));
 
       });
       this._ipc.send('oauth', provider.providerId);
     } else {
-      signIn$ = from(this.af.auth.signInWithPopup(provider));
+      signIn$ = from(this.af.auth.signInWithPopup(provider) as Promise<any>);
     }
     return signIn$;
   }

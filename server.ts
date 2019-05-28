@@ -3,6 +3,11 @@ import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
+import 'firebase/auth';
+import 'firebase/database';
+import 'firebase/firestore';
+import 'firebase/messaging';
+import 'firebase/functions';
 
 import * as express from 'express';
 import * as path from 'path';
@@ -10,14 +15,9 @@ import { join } from 'path';
 import { readFileSync } from 'fs';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import { enableProdMode } from '@angular/core';
-import functions from 'firebase-functions';
 
 export const DIST_FOLDER = path.join(process.cwd(), 'dist/apps');
 export const APP_NAME = 'client';
-
-const appUrlConfig = functions.config().appurl;
-
-const appUrl = `${appUrlConfig ? appUrlConfig.prefix : ''}ffxivteamcraft.com`;
 
 
 //Garland tools data skeleton
@@ -120,37 +120,7 @@ app.set('views', join(DIST_FOLDER, APP_NAME));
 // Serve static files
 app.get('*.*', express.static(join(DIST_FOLDER, APP_NAME)));
 
-// If we're not in the Cloud Functions environment, spin up a Node server
-if (!process.env.FUNCTION_NAME) {
-  const beforeRender = (req, res, next) => {
-    //Get the client lang from the request
-    req.lang = req.headers['accept-language'] || 'en';
-
-    next();
-  };
-
-// All regular routes use the Universal engine
-  app.get('*', beforeRender, (req, res) => {
-    res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
-      req,
-      providers: [
-        { provide: REQUEST, useValue: req }
-      ]
-    });
-  });
-
-  const PORT = process.env.PORT || 4000;
-  app.listen(PORT, () => {
-    console.log(`Node server listening on http://localhost:${PORT}`);
-  });
-}
-
 function detectIndexBot(userAgent) {
-
-  if (appUrlConfig && appUrlConfig.prefix) {
-    console.log('beta link, shouldn\'t be indexed');
-    return false;
-  }
 
   const bots = [
     'bingbot',
@@ -207,31 +177,36 @@ function detectDeepLinkBot(userAgent) {
 
 const indexAllowedPages = ['/search', '/community-rotations', '/levequests', '/about', '/support-us', '/desynth-guide', '/gc-supply', '/macro-translator', '/db/'];
 
-
-const beforeRender = (req, res, next) => {
-  //Get the client lang from the request
-  req.lang = req.headers['accept-language'] || 'en';
-
-  next();
-};
-
 // All regular routes use the Universal engine
-app.get('*', beforeRender, (req, res) => {
+app.get('*', (req, res) => {
   const isIndexBot = detectIndexBot(req.headers['user-agent']);
   const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
+  (req as any).lang = req.headers['accept-language'] || 'en';
 
-  console.log(req.header(['user-agent']), `indexer: ${isIndexBot}`, `deepLink: ${isDeepLinkBot}`, req.originalUrl);
+  console.log(req.header['user-agent'], `indexer: ${isIndexBot}`, `deepLink: ${isDeepLinkBot}`, req.originalUrl);
 
-  if (isDeepLinkBot || (isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
-    res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
-      req
-    });
-  } else {
-    fetch(`https://${appUrl}`)
-      .then(res => res.text())
-      .then(body => {
-        res.send(body.toString());
-      });
-  }
+  res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
+    req,
+    providers: [
+      { provide: REQUEST, useValue: req }
+    ]
+  });
+
+  // if (isDeepLinkBot || (isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
+  //
+  // } else {
+  //   fetch(`https://${appUrl}`)
+  //     .then(r => r.text())
+  //     .then(body => {
+  //       res.send(body.toString());
+  //     });
+  // }
 });
-exports.app = functions.runWith(runtimeOpts).https.onRequest(app);
+
+// If we're not in the Cloud Functions environment, spin up a Node server
+if (!process.env.FUNCTION_NAME) {
+  const PORT = process.env.PORT || 4000;
+  app.listen(PORT, () => {
+    console.log(`Node server listening on http://localhost:${PORT}`);
+  });
+}
