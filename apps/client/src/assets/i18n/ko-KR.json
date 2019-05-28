@@ -335,8 +335,8 @@
       "Highlight": "하이라이트 색상",
       "Text": "버튼 속 색상",
       "Topbar": "상단/사이드바 색상",
-      "Sidebar_trigger": "Sidebar trigger color",
-      "Sidebar_trigger_hover": "Sidebar trigger hover color"
+      "Sidebar_trigger": "사이드바 숨기기/펼치기 색상",
+      "Sidebar_trigger_hover": "사이드바 숨기기/펼치기 색상(마우스 커서를 올렸을때)"
     },
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
