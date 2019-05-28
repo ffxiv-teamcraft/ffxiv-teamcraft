@@ -1,14 +1,15 @@
-const { join } = require('path');
-const { REQUEST } = require('@nguniversal/express-engine/tokens');
-const { app } = require('./dist/client-webpack/server');
-
-require('firebase');
-require('firebase/firestore');
 const functions = require('firebase-functions');
+require('firebase/app');
+require('firebase/firestore');
 const admin = require('firebase-admin');
-admin.initializeApp(functions.config().firebase);
+admin.initializeApp();
 const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
+
+const runtimeOpts = {
+  timeoutSeconds: 300,
+  memory: '1GB'
+};
 
 function getCompact(list) {
   const compact = list;
@@ -40,7 +41,7 @@ function getCompact(list) {
 }
 
 // Firestore counts
-exports.firestoreCountlistsCreate = functions.firestore.document('/lists/{uid}').onCreate(() => {
+exports.firestoreCountlistsCreate = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate(() => {
   const ref = admin.database().ref('/list_count');
   const creationsRef = admin.database().ref('/lists_created');
   // Increment the number of lists created using the tool.
@@ -52,30 +53,30 @@ exports.firestoreCountlistsCreate = functions.firestore.document('/lists/{uid}')
   }).then(() => null);
 });
 
-exports.firestoreCountlistsDelete = functions.firestore.document('/lists/{uid}').onDelete(() => {
+exports.firestoreCountlistsDelete = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete(() => {
   const ref = admin.database().ref('/list_count');
   return ref.transaction(current => {
     return current - 1;
   }).then(() => null);
 });
 
-exports.createListCompacts = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
-  const compact = getCompact(snap.data.data());
+exports.createListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap) => {
+  const compact = getCompact(snap.val());
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
 });
 
-exports.updateListCompacts = functions.firestore.document('/lists/{uid}').onUpdate((snap) => {
-  const compact = getCompact(snap.data.data());
+exports.updateListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((snap) => {
+  const compact = getCompact(snap.val());
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
 });
 
-exports.deleteListCompacts = functions.firestore.document('/lists/{uid}').onDelete((snap) => {
+exports.deleteListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete((snap) => {
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).delete();
 });
 
-exports.updateUserListCount = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
+exports.updateUserListCount = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap) => {
   return firestore.runTransaction(transaction => {
-    const userRef = firestore.collection('users').doc(snap.data.data().authorId);
+    const userRef = firestore.collection('users').doc(snap.val().authorId);
     return transaction.get(userRef).then(user => {
       user.stats = user.stats || {};
       user.stats.listsCreated = user.stats.listsCreated || 0;
@@ -85,99 +86,7 @@ exports.updateUserListCount = functions.firestore.document('/lists/{uid}').onCre
   });
 });
 
-const appUrlConfig = functions.config().appurl;
-
-const appUrl = `${appUrlConfig ? appUrlConfig.prefix : ''}ffxivteamcraft.com`;
-
-function detectIndexBot(userAgent) {
-
-  if (appUrlConfig && appUrlConfig.prefix) {
-    console.log('beta link, shouldn\'t be indexed');
-    return false;
-  }
-
-  const bots = [
-    'bingbot',
-    'yandexbot',
-    'duckduckbot',
-    'googlebot',
-    'slurp',
-
-    'facebookexternalhit',
-    'linkedinbot',
-    'embedly',
-    'baiduspider',
-    'pinterest',
-    'vkShare',
-    'facebot',
-    'outbrain',
-    'W3C_Validator'
-  ];
-
-  const agent = userAgent.toLowerCase();
-
-  for (const bot of bots) {
-    if (agent.indexOf(bot.toLowerCase()) > -1) {
-      console.log('index bot detected', bot, agent);
-      return true;
-    }
-  }
-
-  console.log('no bots found', agent);
-  return false;
-
-}
-
-function detectDeepLinkBot(userAgent) {
-  const deepLinkBots = [
-    'twitterbot',
-    'slackbot',
-    'Discordbot'
-  ];
-
-  const agent = userAgent.toLowerCase();
-
-  for (const bot of deepLinkBots) {
-    if (agent.indexOf(bot.toLowerCase()) > -1) {
-      console.log('deep link bot detected', bot, agent);
-      return true;
-    }
-  }
-
-  console.log('no bots found', agent);
-  return false;
-
-}
-
-const indexAllowedPages = ['/search', '/community-rotations', '/levequests', '/about', '/support-us', '/desynth-guide', '/gc-supply', '/macro-translator', '/db/'];
-
-
-const beforeRender = (req, res, next) => {
-  //Get the client lang from the request
-  req.lang = req.headers['accept-language'] || 'en';
-
-  next();
-};
-
-// All regular routes use the Universal engine
-app.get('*', beforeRender, (req, res) => {
-  const isIndexBot = detectIndexBot(req.headers['user-agent']);
-  const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
-
-  if (isDeepLinkBot || (isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
-    res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
-      req,
-      providers: [
-        { provide: REQUEST, useValue: req }
-      ]
-    });
-  } else {
-    fetch(`https://${appUrl}`)
-      .then(res => res.text())
-      .then(body => {
-        res.send(body.toString());
-      });
-  }
+export const universal = functions.https.onRequest((request, response) => {
+  require(`${process.cwd()}/dist/YOUR_PROJECT_NAME-webpack/server`).app(request, response);
 });
 
-exports.app = functions.https.onRequest(app);

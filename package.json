@@ -134,7 +134,7 @@
     "electron-updater": "3.2.3",
     "express": "^4.16.4",
     "file-saver": "^2.0.1",
-    "firebase": "^5.9.1",
+    "firebase": "5.9.1",
     "hammerjs": "^2.0.8",
     "jsdom": "^15.0.0",
     "jwt-decode": "^2.2.0",
@@ -154,6 +154,7 @@
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
+    "firebase-functions": "2.0.3",
     "@angular-builders/custom-webpack": "^7.4.3",
     "@angular-devkit/build-angular": "~0.13.8",
     "@angular-devkit/schematics": "^0.8.8",
