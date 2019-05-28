@@ -1269,9 +1269,9 @@
       "Locks_actions": "기술 사용 불가",
       "Locks_control": "대상 선택 불가",
       "Locks_movement": "이동 불가",
-      "Type": "Type",
-      "Type_buff": "Buff",
-      "Type_debuff": "Debuff"
+      "Type": "유형",
+      "Type_buff": "버프",
+      "Type_debuff": "디버프"
     }
   },
   "SEARCH_TYPES": {
