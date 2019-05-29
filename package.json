@@ -134,7 +134,7 @@
     "electron-updater": "3.2.3",
     "express": "^4.16.4",
     "file-saver": "^2.0.1",
-    "firebase": "^6.0.4",
+    "firebase": "^6.1.0",
     "hammerjs": "^2.0.8",
     "jsdom": "^15.0.0",
     "jwt-decode": "^2.2.0",

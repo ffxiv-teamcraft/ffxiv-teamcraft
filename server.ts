@@ -3,11 +3,6 @@ import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
-import 'firebase/auth';
-import 'firebase/database';
-import 'firebase/firestore';
-import 'firebase/messaging';
-import 'firebase/functions';
 
 import * as express from 'express';
 import * as path from 'path';
