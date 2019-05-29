@@ -33,7 +33,6 @@ export class OauthService {
             })
           )
           .subscribe((res) => (<Subject<UserCredential>>signIn$).next(<any>res));
-
       });
       this._ipc.send('oauth', provider.providerId);
     } else {

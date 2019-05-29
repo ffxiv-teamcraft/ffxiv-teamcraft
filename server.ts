@@ -179,11 +179,11 @@ const indexAllowedPages = ['/search', '/community-rotations', '/levequests', '/a
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
-  const isIndexBot = detectIndexBot(req.headers['user-agent']);
-  const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
+  // const isIndexBot = detectIndexBot(req.headers['user-agent']);
+  // const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
   (req as any).lang = req.headers['accept-language'] || 'en';
 
-  console.log(req.header['user-agent'], `indexer: ${isIndexBot}`, `deepLink: ${isDeepLinkBot}`, req.originalUrl);
+  // console.log(req.header['user-agent'], `indexer: ${isIndexBot}`, `deepLink: ${isDeepLinkBot}`, req.originalUrl);
 
   res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
     req,
