@@ -6,7 +6,6 @@
     "node": "8"
   },
   "dependencies": {
-    "@angular/fire": "^5.1.0",
     "express": "^4.16.4",
     "firebase": "^6.1.0",
     "firebase-admin": "~6.0.0",

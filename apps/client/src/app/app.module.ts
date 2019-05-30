@@ -72,6 +72,7 @@ import { WorkshopModule } from './modules/workshop/workshop.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CustomItemsModule } from './modules/custom-items/custom-items.module';
 import { TransferHttpCacheModule } from '@nguniversal/common';
+import { AngularFirePerformanceModule } from '@angular/fire/performance';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -136,6 +137,7 @@ registerLocaleData(en);
 
     AngularFireModule.initializeApp(environment.firebase),
 
+    AngularFirePerformanceModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
