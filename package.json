@@ -83,7 +83,7 @@
     "serve:ssr": "node dist/client-webpack/server.js",
     "start:ssr": "npm run build:ssr & npm run serve:ssr",
     "gt:fetch": "node ssr/gt-data-fetcher.js",
-    "copy:ssr": "copyfiles dist/** functions",
+    "copy:ssr": "copyfiles ./dist/** ./functions",
     "*********** STATS STUFF **************": "",
     "build:stats": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --prod --stats-json",
     "bundle-analyzer": "webpack-bundle-analyzer dist/apps/client/stats.json"
