@@ -57,6 +57,7 @@
               "vendorChunk": false,
               "buildOptimizer": true,
               "baseHref": "/",
+              "deployUrl": "/",
               "fileReplacements": [
                 {
                   "replace": "apps/client/src/environments/environment.ts",
@@ -89,25 +90,6 @@
                 }
               ]
             },
-            "ssr": {
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "baseHref": "/",
-              "deployUrl": "/",
-              "fileReplacements": [
-                {
-                  "replace": "apps/client/src/environments/environment.ts",
-                  "with": "apps/client/src/environments/environment.beta.ts"
-                }
-              ]
-            },
             "beta": {
               "optimization": true,
               "outputHashing": "all",
@@ -119,6 +101,7 @@
               "vendorChunk": false,
               "buildOptimizer": true,
               "baseHref": "/",
+              "deployUrl": "/",
               "fileReplacements": [
                 {
                   "replace": "apps/client/src/environments/environment.ts",
