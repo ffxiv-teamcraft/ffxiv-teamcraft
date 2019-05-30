@@ -102,7 +102,7 @@ jobs:
             at: ~/
         - run:
             name: Deploying web
-            command: ./node_modules/.bin/firebase deploy -P default --token "$FIREBASE_TOKEN"
+            command: ./node_modules/.bin/firebase deploy -P default --only hosting --token "$FIREBASE_TOKEN"
 
     deploy-desktop:
         <<: *defaults
@@ -121,7 +121,7 @@ jobs:
             at: ~/
         - run:
             name: Deploying web
-            command: ./node_modules/.bin/firebase deploy -P beta --token "$FIREBASE_TOKEN"
+            command: ./node_modules/.bin/firebase deploy -P beta --only hosting --token "$FIREBASE_TOKEN"
 
     deploy-preview:
         <<: *defaults
@@ -130,7 +130,7 @@ jobs:
               at: ~/
         - run:
               name: Deploying web
-              command: ./node_modules/.bin/firebase deploy -P preview --token "$FIREBASE_TOKEN"
+              command: ./node_modules/.bin/firebase deploy -P preview --only hosting --token "$FIREBASE_TOKEN"
 
 
 workflows:
