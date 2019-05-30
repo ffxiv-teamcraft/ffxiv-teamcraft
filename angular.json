@@ -39,6 +39,7 @@
               }
             ],
             "styles": [
+              "apps/client/src/cdk.less",
               "apps/client/src/styles.less",
               "apps/client/src/theme.less"
             ],

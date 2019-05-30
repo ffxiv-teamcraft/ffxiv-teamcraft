@@ -3,6 +3,7 @@ import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
+import * as url from 'url';
 
 import * as express from 'express';
 import * as path from 'path';
@@ -174,28 +175,20 @@ const indexAllowedPages = ['/search', '/community-rotations', '/levequests', '/a
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
-  // const isIndexBot = detectIndexBot(req.headers['user-agent']);
-  // const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
+  const isIndexBot = detectIndexBot(req.headers['user-agent']);
+  const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
   (req as any).lang = req.headers['accept-language'] || 'en';
 
-  // console.log(req.header['user-agent'], `indexer: ${isIndexBot}`, `deepLink: ${isDeepLinkBot}`, req.originalUrl);
-
-  res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
-    req,
-    providers: [
-      { provide: REQUEST, useValue: req }
-    ]
-  });
-
-  // if (isDeepLinkBot || (isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
-  //
-  // } else {
-  //   fetch(`https://${appUrl}`)
-  //     .then(r => r.text())
-  //     .then(body => {
-  //       res.send(body.toString());
-  //     });
-  // }
+  if (isDeepLinkBot || (isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
+    res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
+      req,
+      providers: [
+        { provide: REQUEST, useValue: req }
+      ]
+    });
+  } else {
+    res.sendfile(join(DIST_FOLDER, APP_NAME, 'index.html'));
+  }
 });
 
 // If we're not in the Cloud Functions environment, spin up a Node server
