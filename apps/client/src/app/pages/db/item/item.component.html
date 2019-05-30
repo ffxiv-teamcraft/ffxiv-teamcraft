@@ -240,12 +240,13 @@
               <ng-template #addToList>
                 <ng-container *ngIf="toSearchResult(data) as searchResult">
                   <nz-input-group [nzCompact]="true" [nzAddOnAfter]="addButton" class="amount-input">
-                    <input type="number" [(ngModel)]="searchResult.amount"
-                           (keydown.enter)="addItemsToList([searchResult])" nz-input>
+                    <input type="number" #amountInput
+                           [ngModel]="1"
+                           (keydown.enter)="addItemsToList(searchResult, +amountInput.value)" nz-input>
                   </nz-input-group>
                   <ng-template #addButton>
                     <i nz-icon type="plus" nz-tooltip [nzTitle]="'ITEMS.Add_to_list' | translate"
-                       (click)="addItemsToList([searchResult])"></i>
+                       (click)="addItemsToList(searchResult, +amountInput.value)"></i>
                   </ng-template>
                 </ng-container>
               </ng-template>

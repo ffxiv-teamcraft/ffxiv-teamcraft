@@ -556,13 +556,12 @@ export class ItemComponent extends TeamcraftPageComponent {
     );
   }
 
-  public addItemsToList(items: SearchResult[]): void {
+  public addItemsToList(item: SearchResult, amount: number): void {
+    item.amount = amount;
     this.listPicker.pickList().pipe(
       mergeMap(list => {
-        const operations = items.map(item => {
-          return this.listManager.addToList(+item.itemId, list,
-            item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
-        });
+        const operations = [this.listManager.addToList(+item.itemId, list,
+          item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)];
         let operation$: Observable<any>;
         if (operations.length > 0) {
           operation$ = concat(
@@ -572,9 +571,9 @@ export class ItemComponent extends TeamcraftPageComponent {
           operation$ = of(list);
         }
         return this.progressService.showProgress(operation$,
-          items.length,
+          1,
           'Adding_recipes',
-          { amount: items.length, listname: list.name });
+          { amount: 1, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
       mergeMap(list => {
@@ -588,7 +587,7 @@ export class ItemComponent extends TeamcraftPageComponent {
           ), 1, 'Saving_in_database');
       })
     ).subscribe((list) => {
-      this.itemsAdded = items.length;
+      this.itemsAdded = 1;
       this.modifiedList = list;
       this.notificationService.template(this.notification);
     });
