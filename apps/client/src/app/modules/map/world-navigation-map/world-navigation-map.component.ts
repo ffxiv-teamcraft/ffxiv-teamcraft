@@ -23,7 +23,7 @@ export class WorldNavigationMapComponent implements OnInit {
 
   public containerRef: ElementRef;
 
-  @ViewChild('container')
+  @ViewChild('container', { static: false })
   public set _containerRef(ref: ElementRef) {
     setTimeout(() => {
       this.containerRef = ref;

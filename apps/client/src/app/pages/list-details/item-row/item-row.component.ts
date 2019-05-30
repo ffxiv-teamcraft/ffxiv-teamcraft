@@ -134,7 +134,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   newTag: string;
 
-  @ViewChild('inputElement') inputElement: ElementRef;
+  @ViewChild('inputElement', { static: false }) inputElement: ElementRef;
 
   itemTags$ = combineLatest(this.item$, this.authFacade.user$).pipe(
     map(([item, user]) => {

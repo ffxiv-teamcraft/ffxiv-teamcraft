@@ -55,7 +55,7 @@ export class ItemComponent extends TeamcraftPageComponent {
 
   public stats$: Observable<any[]>;
 
-  @ViewChild('notificationRef')
+  @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
 
   // Notification data
