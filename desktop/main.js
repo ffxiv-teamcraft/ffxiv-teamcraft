@@ -23,12 +23,16 @@ let updateInterval;
 let openedOverlays = {};
 
 const options = {
-  multi: false
+  multi: false,
+  noHA: false
 };
 
 for (let i = 0; i < argv.length; i++) {
   if (argv[i] === '--multi' || argv[i] === '-m') {
     options.multi = true;
+  }
+  if (argv[i] === '--noHardwareAcceleration' || argv[i] === '-noHA') {
+    options.noHA = true;
   }
 }
 
@@ -62,7 +66,9 @@ let deepLink = '';
 
 let api;
 
-app.disableHardwareAcceleration();
+if (options.noHA) {
+  app.disableHardwareAcceleration();
+}
 
 function createWindow() {
   app.setAsDefaultProtocolClient('teamcraft');
