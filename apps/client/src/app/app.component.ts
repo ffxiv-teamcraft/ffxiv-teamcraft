@@ -444,7 +444,7 @@ export class AppComponent implements OnInit {
     this.settingsPopupService.openSettings();
   }
 
-  public goToDiscord1kGiveaway(event: MouseEvent): void {
+  public goToDiscord1kGiveaway(event: any): void {
     if (event.srcElement.tagName === 'A') {
       return;
     }

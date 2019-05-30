@@ -126,7 +126,7 @@ export class MarketboardPopupComponent implements OnInit {
         return of([]);
       }),
       tap(() => this.loadingHistory = false),
-      map(history => {
+      map((history: any) => {
         return history.map(entry => {
           return {
             ...entry,
