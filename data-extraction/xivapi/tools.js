@@ -3,13 +3,14 @@ const Rx = require('rxjs');
 const { mergeMap, switchMap, delay, map, tap, takeUntil, skip } = require('rxjs/operators');
 const path = require('path');
 const fs = require('fs');
+const Multiprogress = require("multi-progress");
+const multi = new Multiprogress(process.stdout);
 
 const outputFolder = path.join(__dirname, '../../apps/client/src/app/core/data/sources/');
 const assetOutputFolder = path.join(__dirname, '../../apps/client/src/assets/data/');
 
 
 const get = (url, body) => {
-  console.log('GET', url);
   const res$ = new Rx.Subject();
   if (body !== undefined) {
     request(url, {
@@ -36,7 +37,7 @@ function addQueryParam(url, paramName, paramValue) {
 }
 
 const getAllPages = (endpoint, body) => {
-  console.log(`FETCHING ${endpoint}`);
+  let progress;
   const page$ = new Rx.BehaviorSubject(1);
   const complete$ = new Rx.Subject();
   return page$.pipe(
@@ -50,10 +51,19 @@ const getAllPages = (endpoint, body) => {
       }
       return get(url, body).pipe(
         tap(result => {
-          if (result === undefined) {
-            console.log('undefined result', url);
+          if (result === undefined || result.Pagination === undefined) {
+            console.error('Error', url);
+            console.error(result);
           }
-          console.log(`${url} : ${result.Pagination.Page}/${result.Pagination.PageTotal}`);
+          if (result.Pagination.Page === 1) {
+            progress = multi.newBar(`[:bar] :current/:total :etas - ${endpoint}`, {
+              complete: '=',
+              incomplete: ' ',
+              width: 50,
+              total: result.Pagination.PageTotal
+            });
+          }
+          progress.tick();
           if (result.Pagination.PageNext > page) {
             page$.next(result.Pagination.PageNext);
           } else {
