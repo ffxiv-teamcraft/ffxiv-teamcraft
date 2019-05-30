@@ -139,7 +139,7 @@ jobs:
           at: ~/
       - run:
           name: Deploying SSR fucntions
-          command: npm run build:ssr:ci && ls -lisah ./ && ./node_modules/.bin/firebase deploy -P beta --only functions --token "$FIREBASE_TOKEN"
+          command: npm run build:ssr:ci && ls -lisah ./functions && ./node_modules/.bin/firebase deploy -P beta --only functions --token "$FIREBASE_TOKEN"
 
 
 workflows:
