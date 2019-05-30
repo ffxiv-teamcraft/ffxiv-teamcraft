@@ -510,13 +510,23 @@ export class ItemComponent extends TeamcraftPageComponent {
     };
   }
 
-  public openModelViewer(slot: number, models: string[]): void {
+  public openModelViewer(xivapiItem: any, gtData: ItemData): void {
+    let slot: number | string = 1;
+    if (gtData.item.mount) {
+      slot = 'mount';
+    } else if (gtData.item.minionrace) {
+      slot = 'minion';
+    } else if (gtData.item.furniture) {
+      slot = 'furniture';
+    } else {
+      slot = gtData.item.slot;
+    }
     this.dialog.create({
       nzTitle: this.translate.instant('DB.3d_model_viewer'),
       nzContent: ModelViewerComponent,
       nzComponentParams: {
         slot: slot,
-        models: models
+        models: gtData.item.models
       },
       nzFooter: null,
       nzClassName: 'model-viewer-modal'

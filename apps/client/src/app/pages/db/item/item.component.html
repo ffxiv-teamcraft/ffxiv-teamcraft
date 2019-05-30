@@ -19,7 +19,7 @@
           </a>
           <button nz-button nzShape="circle"
                   nz-tooltip [nzTitle]="'DB.3d_model_help' | translate"
-                  (click)="openModelViewer(xivapiItem.EquipSlotCategoryTargetID, gtData.item.models)"
+                  (click)="openModelViewer(xivapiItem, gtData)"
                   *ngIf="gtData.item.models?.length > 0">
             <span>3D</span>
           </button>

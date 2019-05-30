@@ -330,9 +330,13 @@
     "Favorite_aetherytes": "에테라이트 즐겨찾기",
     "Disable_cross_world_prices": "캐릭터의 서버 장터 가격만 사용",
     "COLORS": {
+      "Background": "배경 색상",
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
-      "Text": "버튼 속 색상"
+      "Text": "버튼 속 색상",
+      "Topbar": "상단/사이드바 색상",
+      "Sidebar_trigger": "Sidebar trigger color",
+      "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
@@ -900,8 +904,8 @@
       "ITEM_REMOVED": "아이템 제거",
       "LIST_ADDED": "목록 추가",
       "LIST_REMOVED": "목록 제거",
-      "LIST_PROGRESSION": "List materials progression",
-      "FINAL_LIST_PROGRESSION": "List final items progression",
+      "LIST_PROGRESSION": "재료 진행상황",
+      "FINAL_LIST_PROGRESSION": "최종 아이템 진행상황",
       "USER_ASSIGNMENT": "팀원 할당"
     }
   },
@@ -1164,8 +1168,8 @@
     "Select_data_type": "세부 정보를 표시하기 위해 데이터를 선택하세요",
     "Desynths_to": "분해로 얻는 아이템",
     "Limited": "한정 채집",
-    "3d_model_viewer": "3D model preview",
-    "3d_model_help": "Preview 3D model",
+    "3d_model_viewer": "3D 모델링 미리보기",
+    "3d_model_help": "3D 모델링 미리보기",
     "NODE": {
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
@@ -1232,7 +1236,7 @@
       "Combos": "콤보",
       "Combo_next": "다음 콤보",
       "Combo_previous": "이전 콤보",
-      "Affected_by_status": "Affected by status",
+      "Affected_by_status": "해당 스킬과 관련된 프록",
       "Cost": "소비 자원",
       "Related_traits": "관련 특성",
       "TARGET": {
@@ -1264,7 +1268,10 @@
       "Max_stacks": "최대 중첩",
       "Locks_actions": "기술 사용 불가",
       "Locks_control": "대상 선택 불가",
-      "Locks_movement": "이동 불가"
+      "Locks_movement": "이동 불가",
+      "Type": "Type",
+      "Type_buff": "Buff",
+      "Type_debuff": "Debuff"
     }
   },
   "SEARCH_TYPES": {
@@ -1288,5 +1295,16 @@
     "Leve_job": "직업",
     "Job": "직업",
     "Leve_level": "요구 레벨"
+  },
+  "TIPS": {
+    "Title": "팁",
+    "Community_rotations": "커뮤니티 로테이션 페이지에서 원하는 레시피의 로테이션을 찾을 수 있습니다.",
+    "GC_Deliveries": "조달 임무 페이지에서 총사령부 조달 품목을 준비할 수 있습니다.",
+    "Desynth": "분해 가이드 페이지에서 자신의 분해레벨에 맞는 아이템을 찾을 수 있습니다.",
+    "DB": "팀크래프트는 데이터베이스를 포함하고 있으며, \"i\" 를 클릭하면 해당 품목, 결과에 대한 데이터베이스 페이지를 열 수 있습니다.",
+    "3D_model": "데이터베이스 내에서 아이템의 3D 모델링을 미리볼 수 있습니다.",
+    "Levequests": "길드 의뢰 페이지에서 의뢰들을 비교하고 획득 가능한 경험치를 미리볼 수 있습니다.",
+    "Log_tracker": "수첩 트래커 페이지에서 채집, 제작, 어부 수첩의 진행상황을 확인할 수 있습니다.",
+    "Desktop_app_overlay": "데스크톱 앱을 사용시 알람을 오버레이 창으로 띄울 수 있습니다(사이드바 아래에 다운로드 링크가 있음)."
   }
 }

@@ -68,7 +68,7 @@ export class NodeComponent extends TeamcraftPageComponent {
         return base;
       }),
       switchMap(base => {
-        if (!base.GameContentLinks.GatheringPoint) {
+        if (!(base.GameContentLinks && base.GameContentLinks.GatheringPoint)) {
           return of(base);
         }
         return combineLatest(base.GameContentLinks.GatheringPoint.GatheringPointBase.map(
@@ -88,7 +88,7 @@ export class NodeComponent extends TeamcraftPageComponent {
     this.bonuses$ = this.xivapiNode$.pipe(
       map(node => {
         const bonuses = [];
-        node.GatheringPoints.forEach(point => {
+        (node.GatheringPoints || []).forEach(point => {
           if (point.GatheringPointBonus0) {
             bonuses.push({
               bonus: this.bonusToText(point.GatheringPointBonus0.BonusType, point.GatheringPointBonus0.BonusValue),

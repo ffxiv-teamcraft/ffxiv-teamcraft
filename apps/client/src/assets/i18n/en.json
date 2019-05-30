@@ -330,9 +330,13 @@
     "Favorite_aetherytes": "Favorite Aetherytes",
     "Disable_cross_world_prices": "Only use own world for marketboard prices",
     "COLORS": {
+      "Background": "Background color",
       "Primary": "Primary color",
       "Highlight": "Highlight color",
-      "Text": "Buttons content color"
+      "Text": "Buttons content color",
+      "Topbar": "Topbar and sidebar color",
+      "Sidebar_trigger": "Sidebar trigger color",
+      "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
       "Classic": "Copy item name",
@@ -1264,7 +1268,10 @@
       "Max_stacks": "Max stacks",
       "Locks_actions": "Locks actions",
       "Locks_control": "Locks control",
-      "Locks_movement": "Locks movement"
+      "Locks_movement": "Locks movement",
+      "Type": "Type",
+      "Type_buff": "Buff",
+      "Type_debuff": "Debuff"
     }
   },
   "SEARCH_TYPES": {

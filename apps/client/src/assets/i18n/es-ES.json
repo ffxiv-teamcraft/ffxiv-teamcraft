@@ -330,9 +330,13 @@
     "Favorite_aetherytes": "Aetherytes favoritos",
     "Disable_cross_world_prices": "Sólo usar mi propio mundo para los precios del mercado",
     "COLORS": {
+      "Background": "Background color",
       "Primary": "Color primario",
       "Highlight": "Color de resaltado",
-      "Text": "Color de contenido de botones"
+      "Text": "Color de contenido de botones",
+      "Topbar": "Topbar and sidebar color",
+      "Sidebar_trigger": "Sidebar trigger color",
+      "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
@@ -1264,7 +1268,10 @@
       "Max_stacks": "Cargas máximas",
       "Locks_actions": "Bloquea acciones",
       "Locks_control": "Bloquea control",
-      "Locks_movement": "Bloquea movimiento"
+      "Locks_movement": "Bloquea movimiento",
+      "Type": "Type",
+      "Type_buff": "Buff",
+      "Type_debuff": "Debuff"
     }
   },
   "SEARCH_TYPES": {
@@ -1288,5 +1295,16 @@
     "Leve_job": "Profesión Leve",
     "Job": "Profesión",
     "Leve_level": "Nivel requerido"
+  },
+  "TIPS": {
+    "Title": "Tip",
+    "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
+    "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
+    "Desynth": "You can find ideal items to level up desynth in desynth page.",
+    "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
+    "3D_model": "You can preview 3D model of items inside the database.",
+    "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
+    "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
+    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
   }
 }

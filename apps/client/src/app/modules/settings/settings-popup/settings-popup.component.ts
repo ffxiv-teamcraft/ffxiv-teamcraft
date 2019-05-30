@@ -82,6 +82,8 @@ export class SettingsPopupComponent {
     });
 
     this.customTheme = this.settings.customTheme;
+
+    console.log(this.customTheme);
   }
 
   alwaysOnTopChange(value: boolean): void {

@@ -10,7 +10,7 @@
             class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name"
-                *ngIf="xivapiNode.GatheringPoints[0]?.PlaceName; else otherName">{{xivapiNode.GatheringPoints[0]?.PlaceName | xivapiI18n}}</h2>
+                *ngIf="xivapiNode.GatheringPoints && xivapiNode.GatheringPoints[0]?.PlaceName; else otherName">{{xivapiNode.GatheringPoints[0]?.PlaceName | xivapiI18n}}</h2>
             <ng-template #otherName>
               <h2 class="item-name" *ngIf="xivapiNode.mappyData">{{xivapiNode.mappyData.zoneid | placeName | i18n}}</h2>
             </ng-template>

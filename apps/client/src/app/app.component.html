@@ -28,7 +28,7 @@
               </button>
             </div>
           </ng-container>
-          <div [class.desktop-tips]="platformService.isDesktop()" *ngIf="true | ifMobile: false">
+          <div class="tips" fxShow fxHide.lt-lg>
             <i>{{'TIPS.Title' | translate}}: {{('TIPS.' + (randomTip$ | async)) | translate}}</i>
           </div>
         </div>
@@ -151,8 +151,7 @@
                 [nzCollapsedWidth]="80 | ifMobile: 0">
         <div fxLayout="column" class="flex-container" fxLayoutAlign="space-between">
           <div>
-            <ul nz-menu [class.dark]="settings.theme.isDark" [nzTheme]="'dark'"
-                [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
+            <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/search">
           <span nz-tooltip nzPlacement="right"

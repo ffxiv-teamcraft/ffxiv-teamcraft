@@ -330,9 +330,13 @@
     "Favorite_aetherytes": "Éthérites favorites",
     "Disable_cross_world_prices": "Utiliser uniquement le serveur d'origine pour les prix à l'hôtel des ventes",
     "COLORS": {
+      "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
       "Highlight": "Couleur de surbrillance",
-      "Text": "Couleur des icônes des boutons"
+      "Text": "Couleur des icônes des boutons",
+      "Topbar": "Barre latérale et supérieurs",
+      "Sidebar_trigger": "Bouton d'expansion de la barre latérale",
+      "Sidebar_trigger_hover": "Couleur du déclencheur de la barre latérale au survol"
     },
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
@@ -1264,7 +1268,10 @@
       "Max_stacks": "Cumuls max",
       "Locks_actions": "Actions verrouillées",
       "Locks_control": "Contrôles verrouillés",
-      "Locks_movement": "Mouvements verrouillés"
+      "Locks_movement": "Mouvements verrouillés",
+      "Type": "Type",
+      "Type_buff": "Bonus",
+      "Type_debuff": "Malus"
     }
   },
   "SEARCH_TYPES": {
@@ -1288,5 +1295,16 @@
     "Leve_job": "Job",
     "Job": "Job",
     "Leve_level": "Niveau requis"
+  },
+  "TIPS": {
+    "Title": "Astuce",
+    "Community_rotations": "Vous pouvez trouver des rotations pour une recette donnée dans la page rotations communautaires.",
+    "GC_Deliveries": "Vous pouvez préparer des listes pour les livraisons de grande compagnie dans la page du même nom.",
+    "Desynth": "Vous pouvez trouver des éléments idéaux pour améliorer le recyclage dans la page \"Guide de recyclage\".",
+    "DB": "Teamcraft inclut une base de données, vous pouvez cliquer sur l'icône \"i\" n'importe où pour ouvrir la page de base de données pour l'élément concerné par l'icône.",
+    "3D_model": "Vous pouvez visualiser le modèle 3D des éléments à l'intérieur de la base de données.",
+    "Levequests": "Vous pouvez préparer des listes de mandats et prévisualiser leur exp dans la page Mandats.",
+    "Log_tracker": "Vous pouvez suivre la progression de votre journal (collecte, fabrication, pêche) à l'intérieur de la page carnets.",
+    "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale."
   }
 }

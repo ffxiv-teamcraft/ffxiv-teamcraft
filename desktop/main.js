@@ -62,6 +62,8 @@ let deepLink = '';
 
 let api;
 
+app.disableHardwareAcceleration();
+
 function createWindow() {
   app.setAsDefaultProtocolClient('teamcraft');
   protocol.registerFileProtocol('teamcraft', function(request) {

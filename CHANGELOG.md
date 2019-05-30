@@ -2,6 +2,82 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.11"></a>
+## [5.4.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.10...v5.4.11) (2019-05-27)
+
+
+### Bug Fixes
+
+* **settings:** fixed blank settings page ([3a6ef5a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3a6ef5a))
+* **style:** fixed color issues and alignment in various places ([94baf38](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/94baf38))
+
+
+### Features
+
+* **db:** added status type to db status page ([a349413](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a349413))
+
+
+
+<a name="5.4.10"></a>
+## [5.4.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.9...v5.4.10) (2019-05-27)
+
+
+### Bug Fixes
+
+* **layout:** fixed layout display for smaller resolutions ([54d0a81](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/54d0a81))
+* **theme:** default theme is now darker and fixed custom theme system ([ac1218d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ac1218d))
+* **theme:** fixed an issue with aetheryte names sometimes not showing up properly ([6f7c12d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f7c12d))
+
+
+
+<a name="5.4.9"></a>
+## [5.4.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.8...v5.4.9) (2019-05-26)
+
+
+### Bug Fixes
+
+* **theme:** fixed app crash when theme is not defined ([54fad3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/54fad3a))
+
+
+
+<a name="5.4.8"></a>
+## [5.4.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.7...v5.4.8) (2019-05-26)
+
+
+### Bug Fixes
+
+* **db:** fixed broken 3D preview for minions ([e2a4cd8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2a4cd8))
+* **db:** fixed broken pages because of GameContentLinks not mandatory anymore ([0f6ff50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f6ff50))
+* **desktop:** disabled hardware acceleration for better rendering ([4ad1c53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ad1c53))
+* **tip:** better line break management ([0747773](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0747773))
+
+
+### Features
+
+* **style:** changed default theme and custom theme system ([#933](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/933)) ([4c3ab54](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c3ab54))
+
+
+
+<a name="5.4.7"></a>
+## [5.4.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.5...v5.4.7) (2019-05-25)
+
+
+### Bug Fixes
+
+* **db:** fixed trait descriptions colors ([ca758a5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca758a5))
+* **desktop:** fixed a possible crash when applying settings ([0144f87](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0144f87))
+
+
+### Features
+
+* **alarms:** you can now see the note inside the alarms overlay ([4029497](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4029497))
+* Teamcraft now displays random tips inside the topbar ([2563962](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2563962))
+* **db:** added support for 3D model viewer on mounts and minions ([4de110e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4de110e))
+* **log-tracker:** added item name color based on rarity ([fe12751](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe12751))
+* **map:** added aetheryte shard names and more accurate aetheryte names overall ([a90549d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a90549d))
+
+
+
 <a name="5.4.6"></a>
 ## [5.4.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.5...v5.4.6) (2019-05-25)
 
