@@ -82,7 +82,7 @@ jobs:
                 if [ "${CIRCLE_BRANCH}" == "master" ]; then
                     npm run build:prod && npm run build:ssr:ci
                 else
-                    npm run build:beta && npm run build:ssr:ci
+                    npm run build:beta && npm run build:ssr:ci && ls -lisah
                 fi
         - save_cache:
             key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
