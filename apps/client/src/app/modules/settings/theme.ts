@@ -13,7 +13,7 @@ export class Theme {
 
   public static readonly GREEN = new Theme('GREEN', '#009a4d', '#b77cb3', 'white');
 
-  public static readonly ORANGE = new Theme('GREEN', '#F57C00', '#009688', 'white');
+  public static readonly ORANGE = new Theme('ORANGE', '#F57C00', '#009688', 'white');
 
   public static readonly BLUE = new Theme('BLUE', '#15459a', '#dac900', 'white');
 
