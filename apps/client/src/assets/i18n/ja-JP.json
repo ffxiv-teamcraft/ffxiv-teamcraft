@@ -1236,14 +1236,14 @@
       "Combos": "コンボ",
       "Combo_next": "次のコンボ",
       "Combo_previous": "以前のコンボ",
-      "Affected_by_status": "Affected by status",
+      "Affected_by_status": "スキルと関連されたプロック",
       "Cost": "Cost",
-      "Related_traits": "Related traits",
+      "Related_traits": "関連特性",
       "TARGET": {
-        "Party": "Party",
-        "Dead": "Dead",
-        "Hostile": "Hostile",
-        "Self": "Self"
+        "Party": "パーティ",
+        "Dead": "死亡したプレイヤー",
+        "Hostile": "敵",
+        "Self": "自身"
       },
       "COST_TYPE": {
         "HP": "HP",
@@ -1253,22 +1253,22 @@
         "CP": "CP",
         "Beast_gauge": "Beast gauge",
         "Blood_gauge": "Blood gauge",
-        "Ninki": "Ninki",
-        "Chakra": "Chakra",
-        "Greasing_lightning": "Greasing Lightning",
-        "Aetherflow": "Aetherflow",
-        "Oath_gauge": "Oath gauge",
-        "Kenki": "Kenki"
+        "Ninki": "忍法",
+        "Chakra": "チャクラ",
+        "Greasing_lightning": "疾風迅雷",
+        "Aetherflow": "エーテリアルステップ",
+        "Oath_gauge": "忠義",
+        "Kenki": "剣気"
       }
     },
     "TRAIT": {
-      "Related_actions": "Related actions"
+      "Related_actions": "関連スキル"
     },
     "STATUS": {
       "Max_stacks": "Max stacks",
-      "Locks_actions": "Locks actions",
-      "Locks_control": "Locks control",
-      "Locks_movement": "Locks movement",
+      "Locks_actions": "スキル使用不可",
+      "Locks_control": "対象選択不可",
+      "Locks_movement": "移動不可",
       "Type": "Type",
       "Type_buff": "Buff",
       "Type_debuff": "Debuff"
