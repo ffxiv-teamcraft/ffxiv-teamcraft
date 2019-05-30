@@ -556,6 +556,26 @@ export class ItemComponent extends TeamcraftPageComponent {
     );
   }
 
+  public createQuickList(item: SearchResult): void {
+    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
+    const operation$ = this.listManager.addToList(+item.itemId, list, item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)
+      .pipe(
+        tap(resultList => this.listsFacade.addList(resultList)),
+        mergeMap(resultList => {
+          return this.listsFacade.myLists$.pipe(
+            map(lists => lists.find(l => l.createdAt === resultList.createdAt && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          );
+        })
+      );
+
+    this.progressService.showProgress(operation$, 1)
+      .subscribe((newList) => {
+        this.router.navigate(['list', newList.$key]);
+      });
+  }
+
   public addItemsToList(item: SearchResult, amount: number): void {
     item.amount = amount;
     this.listPicker.pickList().pipe(
