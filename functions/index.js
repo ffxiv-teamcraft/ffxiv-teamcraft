@@ -60,18 +60,18 @@ exports.firestoreCountlistsDelete = functions.runWith(runtimeOpts).firestore.doc
   }).then(() => null);
 });
 
-exports.createListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap) => {
+exports.createListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap, context) => {
   const compact = getCompact(snap.data());
-  return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
+  return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).set(compact);
 });
 
-exports.updateListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((snap) => {
+exports.updateListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((snap, context) => {
   const compact = getCompact(snap.after.data());
-  return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
+  return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).set(compact);
 });
 
-exports.deleteListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete((snap) => {
-  return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).delete();
+exports.deleteListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete((snap, context) => {
+  return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).delete();
 });
 
 exports.updateUserListCount = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap) => {
