@@ -172,9 +172,9 @@ workflows:
       - deploy-ssr-prod:
           requires:
             - build
-            filters:
-              branches:
-                only: master
+          filters:
+            branches:
+              only: master
       - deploy-staging:
           requires:
             - build
