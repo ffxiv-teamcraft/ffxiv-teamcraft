@@ -3,7 +3,7 @@
        *ngIf="xivapiItem$ | async as xivapiItem" [style.padding]="'0 50px' | ifMobile: '0'">
     <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px" fxLayoutAlign="flex-start flex-start"
          fxFlex="1 1 auto" fxLayoutGap="5px" class="top-bar">
-      <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap.lt-md="10px" fxFlex="0 0 300px"
+      <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap.lt-md="10px" fxFlex="1 0 300px"
            fxFlex.lt-md="1 1 auto" class="top-left-block">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="icon-block">
           <img [src]="xivapiItem.Icon | xivapiIcon" alt="{{xivapiItem.ID | itemName | i18n}}" class="item-icon">
