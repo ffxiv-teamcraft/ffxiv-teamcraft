@@ -123,7 +123,7 @@
     "Admin": "管理者",
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
-    "None": "None"
+    "None": "なし"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -173,10 +173,10 @@
   "No_mobs_found": "検索結果なし",
   "No_lore_entries": "検索結果なし",
   "No_fates_found": "検索結果なし",
-  "No_maps_found": "No maps found",
-  "No_actions_found": "No actions found",
-  "No_statuses_found": "No statuses found",
-  "No_traits_found": "No traits found",
+  "No_maps_found": "検索結果なし",
+  "No_actions_found": "検索結果なし",
+  "No_statuses_found": "検索結果なし",
+  "No_traits_found": "検索結果なし",
   "Select_all": "全て選択",
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
@@ -334,8 +334,8 @@
       "Primary": "デフォルトカラー",
       "Highlight": "ハイライトカラー",
       "Text": "ボタンの色",
-      "Topbar": "Topbar and sidebar color",
-      "Sidebar_trigger": "Sidebar trigger color",
+      "Topbar": "トップバー/サイドバーのカラー",
+      "Sidebar_trigger": "サイドバー トリガー カラー",
       "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
