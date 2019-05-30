@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { GarlandToolsData } from '../../model/common/garland-tools-data';
 import { Item } from '../../model/garland-tools/item';
 import { JobCategory } from '../../model/garland-tools/job-category';
@@ -15,8 +15,8 @@ import { Observable } from 'rxjs/Observable';
 })
 export class GarlandToolsService {
 
-  private gt: GarlandToolsData = (<any>window).gt;
-  private gItemIndex: any[] = (<any>window).gItemIndex;
+  private gt: GarlandToolsData = (<any>window).gt || {};
+  private gItemIndex: any[] = (<any>window).gItemIndex || [];
 
   private commonItemsToLoad = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
   private commonItemsCache: { id: string, obj: ItemData }[] = [];
@@ -25,7 +25,7 @@ export class GarlandToolsService {
 
   public onceLoaded$: Observable<boolean> = this.loaded$.pipe(filter(loaded => loaded));
 
-  constructor(private serializer: NgSerializerService, private http: HttpClient) {
+  constructor(private serializer: NgSerializerService, private http: HttpClient, @Inject(PLATFORM_ID)platform: Object) {
     this.preload();
   }
 

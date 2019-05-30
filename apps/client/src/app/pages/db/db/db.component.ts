@@ -4,7 +4,6 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { map, takeUntil } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { TranslateService } from '@ngx-translate/core';
-import { IS_PRERENDER } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-db',
@@ -26,7 +25,7 @@ export class DbComponent extends TeamcraftComponent {
         lang = 'en';
       }
       const savedLang = localStorage.getItem('locale');
-      if (!savedLang || IS_PRERENDER) {
+      if (!savedLang) {
         this.translate.use(lang);
       }
     });

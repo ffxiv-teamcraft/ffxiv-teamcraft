@@ -6,11 +6,6 @@ import { environment } from './environments/environment';
 
 import 'hammerjs';
 import { enableDebugTools } from '@angular/platform-browser';
-import 'firebase/auth';
-import 'firebase/database';
-import 'firebase/firestore';
-import 'firebase/messaging';
-import 'firebase/functions';
 
 if (environment.production) {
   enableProdMode();
@@ -18,8 +13,10 @@ if (environment.production) {
 
 document.addEventListener('DOMContentLoaded', () => {
   platformBrowserDynamic().bootstrapModule(AppModule).then((module) => {
-  const applicationRef = module.injector.get(ApplicationRef);
-  const appComponent = applicationRef.components[0];
-  enableDebugTools(appComponent);
-});
+    if (!environment.production) {
+      const applicationRef = module.injector.get(ApplicationRef);
+      const appComponent = applicationRef.components[0];
+      enableDebugTools(appComponent);
+    }
+  });
 });

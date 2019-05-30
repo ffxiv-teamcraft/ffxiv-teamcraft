@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MapData } from '../../modules/map/map-data';
@@ -6,6 +6,7 @@ import { XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../model/common/i18n-name';
 import { Quest } from '../../pages/db/model/quest/quest';
 import { Fate } from '../../pages/db/model/fate/fate';
+import { isPlatformServer } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -82,7 +83,15 @@ export class LazyDataService {
     return res;
   }
 
-  constructor(private http: HttpClient, private xivapi: XivapiService) {
+  constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) platform: Object) {
+    if (isPlatformServer(platform)) {
+      this.loaded$.next(true);
+    } else {
+      this.load();
+    }
+  }
+
+  private load(): void {
     combineLatest([
         this.http.get('./assets/data/items.json'),
         this.http.get('./assets/data/zh-items.json'),
@@ -205,6 +214,7 @@ export class LazyDataService {
       this.statuses = statuses;
       this.traits = traits;
       this.loaded$.next(true);
+      this.loaded$.complete();
     });
   }
 }

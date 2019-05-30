@@ -28,7 +28,6 @@ import { UsedForType } from '../model/used-for-type';
 import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
-import { IS_PRERENDER } from '../../../core/tools/platform.service';
 import { Craft } from '../../../model/garland-tools/craft';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
@@ -76,9 +75,6 @@ export class ItemComponent extends TeamcraftPageComponent {
     super(seo);
 
     this.route.paramMap.subscribe(params => {
-      if (IS_PRERENDER) {
-        return;
-      }
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
