@@ -125,21 +125,21 @@ jobs:
 
   deploy-ssr-prod:
     <<: *defaults
-      steps:
-        - attach_workspace:
-            at: ~/
-        - run:
-            name: Deploying SSR fucntions
-            command: npm run build:ssr:ci && ./node_modules/.bin/firebase deploy -P prod --only functions --token "$FIREBASE_TOKEN"
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Deploying SSR fucntions
+          command: npm run build:ssr:ci && ./node_modules/.bin/firebase deploy -P prod --only functions --token "$FIREBASE_TOKEN"
 
   deploy-ssr-beta:
     <<: *defaults
-      steps:
-        - attach_workspace:
-            at: ~/
-        - run:
-            name: Deploying SSR fucntions
-            command: npm run build:ssr:ci && ./node_modules/.bin/firebase deploy -P beta --only functions --token "$FIREBASE_TOKEN"
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Deploying SSR fucntions
+          command: npm run build:ssr:ci && ./node_modules/.bin/firebase deploy -P beta --only functions --token "$FIREBASE_TOKEN"
 
 
 workflows:
