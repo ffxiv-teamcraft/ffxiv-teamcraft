@@ -1252,7 +1252,7 @@
         "GP": "GP",
         "CP": "CP",
         "Beast_gauge": "Beast gauge",
-        "Blood_gauge": "Blood gauge",
+        "Blood_gauge": "ブラックブラッド",
         "Ninki": "忍法",
         "Chakra": "チャクラ",
         "Greasing_lightning": "疾風迅雷",
@@ -1265,13 +1265,13 @@
       "Related_actions": "関連スキル"
     },
     "STATUS": {
-      "Max_stacks": "Max stacks",
+      "Max_stacks": "最大重畳",
       "Locks_actions": "スキル使用不可",
       "Locks_control": "対象選択不可",
       "Locks_movement": "移動不可",
-      "Type": "Type",
-      "Type_buff": "Buff",
-      "Type_debuff": "Debuff"
+      "Type": "タイプ",
+      "Type_buff": "バフ",
+      "Type_debuff": "デバフ"
     }
   },
   "SEARCH_TYPES": {
@@ -1286,18 +1286,18 @@
     "Lore": "台詞及び設定",
     "Fate": "F.A.T.E",
     "Map": "地図",
-    "Action": "Action",
-    "Status": "Status",
-    "Trait": "Trait"
+    "Action": "アクション",
+    "Status": "ステータス",
+    "Trait": "特性"
   },
   "SEARCH_FILTERS": {
-    "Level": "Level",
+    "Level": "レベル",
     "Leve_job": "ジョブ",
-    "Job": "Job",
+    "Job": "ジョブ",
     "Leve_level": "必要レベル"
   },
   "TIPS": {
-    "Title": "Tip",
+    "Title": "ヒント",
     "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
     "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
     "Desynth": "You can find ideal items to level up desynth in desynth page.",
