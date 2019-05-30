@@ -61,12 +61,12 @@ exports.firestoreCountlistsDelete = functions.runWith(runtimeOpts).firestore.doc
 });
 
 exports.createListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap) => {
-  const compact = getCompact(snap.val());
+  const compact = getCompact(snap.data());
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
 });
 
 exports.updateListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((snap) => {
-  const compact = getCompact(snap.val());
+  const compact = getCompact(snap.after.data());
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
 });
 
@@ -76,7 +76,7 @@ exports.deleteListCompacts = functions.runWith(runtimeOpts).firestore.document('
 
 exports.updateUserListCount = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap) => {
   return firestore.runTransaction(transaction => {
-    const userRef = firestore.collection('users').doc(snap.val().authorId);
+    const userRef = firestore.collection('users').doc(snap.data().authorId);
     return transaction.get(userRef).then(user => {
       user.stats = user.stats || {};
       user.stats.listsCreated = user.stats.listsCreated || 0;
