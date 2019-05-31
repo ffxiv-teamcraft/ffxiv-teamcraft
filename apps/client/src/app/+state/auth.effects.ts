@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-
 import { AuthState } from './auth.reducer';
 import {
   catchError,
   debounceTime,
   distinctUntilChanged,
   filter,
-  first,
   map,
   mergeMap,
   switchMap,
@@ -37,11 +35,10 @@ import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { CharacterResponse, XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
-import { User } from 'firebase';
+import { User, UserCredential } from '@firebase/auth-types';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthFacade } from './auth.facade';
 import { PatreonService } from '../core/patreon/patreon.service';
-import UserCredential = firebase.auth.UserCredential;
 
 @Injectable({
   providedIn: 'root'
