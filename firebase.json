@@ -22,10 +22,6 @@
       {
         "source": "**",
         "function": "app"
-      },
-      {
-        "source": "!/sitemap",
-        "function": "app"
       }
     ],
     "headers": [
