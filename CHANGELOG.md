@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.12"></a>
+## [5.4.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.11...v5.4.12) (2019-05-31)
+
+
+### Bug Fixes
+
+* **db:** fixed an issue with amount not taken into account for list addition ([3c1b826](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3c1b826))
+* **desktop:** enabled hardware acceleration with a -noHA flag to disable it ([bc6236a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bc6236a))
+* **pricing:** benefits text is now white ([90663c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90663c7)), closes [#942](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/942)
+* **theme:** fixed wrong name for orange theme, making it unusable ([b73214b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b73214b))
+
+
+### Features
+
+* server side rendering for better SEO ([#943](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/943)) ([fd4f13c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd4f13c))
+* **db:** you can now add any item to a list from the item page ([3db5ed0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3db5ed0))
+* **reduction:** added gatherer icon for reduction details ([7b8d141](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7b8d141))
+* **simulator:** you can now add actions to a rotation even if craft is complete ([5e17ad9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e17ad9))
+
+
+
 <a name="5.4.11"></a>
 ## [5.4.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.10...v5.4.11) (2019-05-27)
 
