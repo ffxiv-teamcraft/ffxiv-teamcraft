@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID, TemplateRef, ViewChild } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
@@ -34,6 +34,7 @@ import { mapIds } from '../../../core/data/sources/map-ids';
 import { MapSearchResult } from '../../../model/search/map-search-result';
 import { ActionSearchResult } from '../../../model/search/action-search-result';
 import { StatusSearchResult } from '../../../model/search/status-search-result';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-search',
@@ -119,7 +120,8 @@ export class SearchComponent implements OnInit {
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
-              private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService) {
+              private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService,
+              @Inject(PLATFORM_ID) private platform: Object) {
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
@@ -139,9 +141,11 @@ export class SearchComponent implements OnInit {
         });
       })
     );
-    this.searchType$.subscribe(value => {
-      localStorage.setItem('search:type', value);
-    });
+    if (isPlatformBrowser(this.platform)) {
+      this.searchType$.subscribe(value => {
+        localStorage.setItem('search:type', value);
+      });
+    }
   }
 
   ngOnInit(): void {
@@ -904,6 +908,9 @@ export class SearchComponent implements OnInit {
   }
 
   public getShareUrl(): string {
+    if (isPlatformServer(this.platform)) {
+      return 'https://ffxivteamcraft.com/search';
+    }
     return `https://ffxivteamcraft.com/${(location.pathname + location.search).substr(1)}`;
   }
 

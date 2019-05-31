@@ -1,10 +1,15 @@
-require('firebase');
-require('firebase/firestore');
 const functions = require('firebase-functions');
+require('firebase/app');
+require('firebase/firestore');
 const admin = require('firebase-admin');
-admin.initializeApp(functions.config().firebase);
+admin.initializeApp();
 const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
+
+const runtimeOpts = {
+  timeoutSeconds: 300,
+  memory: '1GB'
+};
 
 function getCompact(list) {
   const compact = list;
@@ -36,7 +41,7 @@ function getCompact(list) {
 }
 
 // Firestore counts
-exports.firestoreCountlistsCreate = functions.firestore.document('/lists/{uid}').onCreate(() => {
+exports.firestoreCountlistsCreate = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate(() => {
   const ref = admin.database().ref('/list_count');
   const creationsRef = admin.database().ref('/lists_created');
   // Increment the number of lists created using the tool.
@@ -48,30 +53,30 @@ exports.firestoreCountlistsCreate = functions.firestore.document('/lists/{uid}')
   }).then(() => null);
 });
 
-exports.firestoreCountlistsDelete = functions.firestore.document('/lists/{uid}').onDelete(() => {
+exports.firestoreCountlistsDelete = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete(() => {
   const ref = admin.database().ref('/list_count');
   return ref.transaction(current => {
     return current - 1;
   }).then(() => null);
 });
 
-exports.createListCompacts = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
-  const compact = getCompact(snap.data.data());
-  return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
+exports.createListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap, context) => {
+  const compact = getCompact(snap.data());
+  return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).set(compact);
 });
 
-exports.updateListCompacts = functions.firestore.document('/lists/{uid}').onUpdate((snap) => {
-  const compact = getCompact(snap.data.data());
-  return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
+exports.updateListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((snap, context) => {
+  const compact = getCompact(snap.after.data());
+  return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).set(compact);
 });
 
-exports.deleteListCompacts = functions.firestore.document('/lists/{uid}').onDelete((snap) => {
-  return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).delete();
+exports.deleteListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete((snap, context) => {
+  return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).delete();
 });
 
-exports.updateUserListCount = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
+exports.updateUserListCount = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap) => {
   return firestore.runTransaction(transaction => {
-    const userRef = firestore.collection('users').doc(snap.data.data().authorId);
+    const userRef = firestore.collection('users').doc(snap.data().authorId);
     return transaction.get(userRef).then(user => {
       user.stats = user.stats || {};
       user.stats.listsCreated = user.stats.listsCreated || 0;
@@ -80,3 +85,8 @@ exports.updateUserListCount = functions.firestore.document('/lists/{uid}').onCre
     });
   });
 });
+
+exports.app = functions.https.onRequest((request, response) => {
+  require(`${process.cwd()}/dist/client-webpack/server`).app(request, response);
+});
+

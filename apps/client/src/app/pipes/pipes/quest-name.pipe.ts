@@ -12,6 +12,14 @@ export class QuestNamePipe implements PipeTransform {
   }
 
   transform(id: number): I18nName {
+    if (this.l12n.getQuest(id) === undefined) {
+      return {
+        en: '',
+        ja: '',
+        de: '',
+        fr: ''
+      };
+    }
     return this.l12n.getQuest(id).name;
   }
 

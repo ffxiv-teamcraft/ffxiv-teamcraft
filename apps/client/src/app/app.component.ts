@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -40,7 +40,7 @@ import { TeamsFacade } from './modules/teams/+state/teams.facade';
 import { NotificationsFacade } from './modules/notifications/+state/notifications.facade';
 import { AbstractNotification } from './core/notification/abstract-notification';
 import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
-import { IS_PRERENDER, PlatformService } from './core/tools/platform.service';
+import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
 import { BehaviorSubject, interval, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -48,12 +48,14 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
 import { ObservableMedia } from '@angular/flex-layout';
 import { LayoutsFacade } from './core/layout/+state/layouts.facade';
-import * as semver from 'semver';
 import { LazyDataService } from './core/data/lazy-data.service';
 import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
 import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
 import { Theme } from './modules/settings/theme';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
+import * as semver from 'semver';
 
 declare const gtag: Function;
 
@@ -80,15 +82,21 @@ export class AppComponent implements OnInit {
 
   collapsedAlarmsBar = true;
 
-  public notifications$ = this.notificationsFacade.notificationsDisplay$;
+  public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
+    isPlatformServer(this.platform) ? first() : tap()
+  );
 
   public loggedIn$: Observable<boolean>;
 
   public character$: Observable<Character>;
 
-  public userId$ = this.authFacade.userId$;
+  public userId$ = this.authFacade.userId$.pipe(
+    isPlatformServer(this.platform) ? first() : tap()
+  );
 
-  public user$ = this.authFacade.user$;
+  public user$ = this.authFacade.user$.pipe(
+    isPlatformServer(this.platform) ? first() : tap()
+  );
 
   public loading$: Observable<boolean>;
 
@@ -126,7 +134,8 @@ export class AppComponent implements OnInit {
         'Desktop_app_overlay'
       ];
       return tips[Math.floor(Math.random() * tips.length)];
-    })
+    }),
+    isPlatformServer(this.platform) ? first() : tap()
   );
 
   get desktopUrl(): SafeUrl {
@@ -142,28 +151,16 @@ export class AppComponent implements OnInit {
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
-              private dirtyFacade: DirtyFacade, private seoService: SeoService) {
+              private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
+              @Inject(PLATFORM_ID) private platform: Object) {
 
-    this.dirtyFacade.hasEntries$.subscribe(dirty => this.dirty = dirty);
-
-    this.showGiveaway = +localStorage.getItem('giveaway:1kdiscord') < 5
-      && Date.now() < new Date(2019, 3, 31, 23, 59, 59).getTime();
-
-    localStorage.setItem('giveaway:1kdiscord', (+localStorage.getItem('giveaway:1kdiscord') + 1).toString());
-
-    this.lazyData.loaded$.subscribe(loaded => this.dataLoaded = loaded);
+    this.showGiveaway = false;
 
     this.applyTheme(this.settings.theme);
 
     this.desktop = this.platformService.isDesktop();
 
     this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_8rqcxqh08v6.js' });
-
-    this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(
-      map((value: string) => {
-        return semver.ltr(environment.version, value);
-      })
-    );
 
     this.time$ = this.reloadTime$.pipe(
       switchMap(() => {
@@ -179,120 +176,155 @@ export class AppComponent implements OnInit {
             return `${rawHours % 12}:${minutesStr} ${suffix}`;
           })
         );
-      })
+      }),
+      isPlatformServer(this.platform) ? first() : tap()
     );
 
-    // Navigation handle for a proper loader display
-    router.events.subscribe((event: RouterEvent) => {
-      if (event instanceof NavigationStart) {
-        this.navigating = true;
-      }
-      if (event instanceof NavigationEnd) {
-        this.navigating = false;
-      }
-      if (event instanceof NavigationCancel) {
-        this.navigating = false;
-      }
-      if (event instanceof NavigationError) {
-        this.navigating = false;
-      }
-    });
+    if (isPlatformServer(this.platform)) {
+      this.dataLoaded = true;
+    }
 
-    // Google Analytics
-    router.events
-      .pipe(
-        distinctUntilChanged((previous: any, current: any) => {
-          if (current instanceof NavigationEnd) {
-            return previous.url === current.url;
+    if (isPlatformBrowser(this.platform)) {
+      this.firebase.object('maintenance')
+        .valueChanges()
+        .pipe(
+          isPlatformServer(this.platform) ? first() : tap()
+        )
+        .subscribe(maintenance => {
+          if (maintenance && environment.production) {
+            this.router.navigate(['maintenance']);
           }
-          return true;
-        })
-      ).subscribe((event: any) => {
-      this.seoService.resetConfig();
-      this.overlay = event.url.indexOf('?overlay') > -1;
-      this.ipc.send('navigated', event.url);
-      this.ipc.on('window-decorator', (e, value) => {
-        this.windowDecorator = value;
-      });
-      if (this.overlay) {
-        this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (value) => {
-          this.overlayOpacity = value;
         });
-        this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
-      }
-      const languageIndex = event.url.indexOf('?lang=');
-      if (languageIndex > -1) {
-        this.use(event.url.substr(languageIndex + 6, 2), false, true);
-      }
-      gtag('set', 'page', event.url);
-      gtag('send', 'pageview');
-    });
 
-    // Custom protocol detection
-    this.hasDesktop$ = this.hasDesktopReloader$.pipe(
-      switchMap(() => router.events),
-      first(),
-      filter(current => current instanceof NavigationEnd),
-      switchMap((current: NavigationEnd) => {
-        let url = current.url;
-        if (this.platformService.isDesktop()) {
-          return of(false);
+      this.lazyData.loaded$.subscribe(loaded => this.dataLoaded = loaded);
+
+      this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(
+        map((value: string) => {
+          return semver.ltr(environment.version, value);
+        })
+      );
+
+      this.dirtyFacade.hasEntries$.subscribe(dirty => this.dirty = dirty);
+
+      // Navigation handle for a proper loader display
+      router.events.subscribe((event: RouterEvent) => {
+        if (event instanceof NavigationStart) {
+          this.navigating = true;
         }
-        if (url.endsWith('/')) {
-          url = url.substring(0, url.length - 1);
+        if (event instanceof NavigationEnd) {
+          this.navigating = false;
         }
-        return this.http.get('http://localhost:7331/', { responseType: 'text' }).pipe(
-          map(() => true),
-          tap(hasDesktop => {
-            if (hasDesktop && this.settings.autoOpenInDesktop) {
-              window.location.assign(`teamcraft://${url}`);
+        if (event instanceof NavigationCancel) {
+          this.navigating = false;
+        }
+        if (event instanceof NavigationError) {
+          this.navigating = false;
+        }
+      });
+
+      // Google Analytics
+      router.events
+        .pipe(
+          distinctUntilChanged((previous: any, current: any) => {
+            if (current instanceof NavigationEnd) {
+              return previous.url === current.url;
             }
-          }),
-          catchError(() => {
-            return of(false);
+            return true;
           })
-        );
-      })
-    );
+        ).subscribe((event: any) => {
+        this.seoService.resetConfig();
+        this.overlay = event.url.indexOf('?overlay') > -1;
+        this.ipc.send('navigated', event.url);
+        this.ipc.on('window-decorator', (e, value) => {
+          this.windowDecorator = value;
+        });
+        if (this.overlay) {
+          this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (value) => {
+            this.overlayOpacity = value;
+          });
+          this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
+        }
+        const languageIndex = event.url.indexOf('?lang=');
+        if (languageIndex > -1) {
+          this.use(event.url.substr(languageIndex + 6, 2), false, true);
+        }
+        gtag('set', 'page', event.url);
+        gtag('send', 'pageview');
+      });
+
+      // Custom protocol detection
+      this.hasDesktop$ = this.hasDesktopReloader$.pipe(
+        switchMap(() => router.events),
+        first(),
+        filter(current => current instanceof NavigationEnd),
+        switchMap((current: NavigationEnd) => {
+          let url = current.url;
+          if (this.platformService.isDesktop() || isPlatformServer(this.platform)) {
+            return of(false);
+          }
+          if (url.endsWith('/')) {
+            url = url.substring(0, url.length - 1);
+          }
+          return this.http.get('http://localhost:7331/', { responseType: 'text' }).pipe(
+            map(() => true),
+            tap(hasDesktop => {
+              if (hasDesktop && this.settings.autoOpenInDesktop) {
+                window.location.assign(`teamcraft://${url}`);
+              }
+            }),
+            catchError(() => {
+              return of(false);
+            })
+          );
+        })
+      );
+      this.translate.onLangChange.subscribe(l => this.locale = l);
+
+      this.translate.onLangChange.subscribe(change => {
+        this.locale = change.lang;
+      });
+    } else {
+      this.hasDesktop$ = of(false);
+      this.newVersionAvailable$ = of(false);
+    }
 
     // Translation
     this.translate.setDefaultLang('en');
-    const lang = localStorage.getItem('locale');
-    this.translate.onLangChange.subscribe(l => this.locale = l);
-    if (lang !== null) {
-      this.use(lang);
-    } else if (this.translate.getBrowserCultureLang() === 'pt-BR') {
-      // Specific implementation for BR.
-      this.use('br');
-    } else {
-      this.use(this.translate.getBrowserLang());
-    }
-    this.translate.onLangChange.subscribe(change => {
-      this.locale = change.lang;
-    });
+    this.use(this.getLang());
 
-    this.ipc.on('apply-language', (e, newLang) => {
-      this.use(newLang, true);
-    });
+    if (this.platformService.isDesktop()) {
+      this.ipc.on('apply-language', (e, newLang) => {
+        this.use(newLang, true);
+      });
+    }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
+  }
 
-    this.firebase.object('maintenance').valueChanges().subscribe(maintenance => {
-      if (maintenance && environment.production) {
-        this.router.navigate(['maintenance']);
+  getLang(): string {
+    if (isPlatformBrowser(this.platform)) {
+      const lang = localStorage.getItem('locale');
+      if (lang !== null) {
+        return lang;
+      } else if (this.translate.getBrowserCultureLang() === 'pt-BR') {
+        // Specific implementation for BR.
+        return 'br';
+      } else {
+        return this.translate.getBrowserLang();
       }
-    });
+    } else {
+      const request: any = this.injector.get(REQUEST) || {};
+      return request.lang || 'en';
+    }
   }
 
   ngOnInit(): void {
-    // Loading is !loaded
-    this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
-    this.loggedIn$ = this.authFacade.loggedIn$;
-    this.character$ = this.authFacade.mainCharacter$.pipe(shareReplay(1));
-
-    this.authFacade.loadUser();
-
-    if (!IS_PRERENDER) {
+    if (isPlatformBrowser(this.platform)) {
+      this.authFacade.loadUser();
+      // Loading is !loaded
+      this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
+      this.loggedIn$ = this.authFacade.loggedIn$;
+      this.character$ = this.authFacade.mainCharacter$.pipe(shareReplay(1));
       this.notificationsFacade.loadAll();
       this.listsFacade.loadMyLists();
       this.workshopsFacade.loadMyWorkshops();
@@ -303,21 +335,24 @@ export class AppComponent implements OnInit {
       this.customLinksFacade.loadMyCustomLinks();
       this.layoutsFacade.loadAll();
       this.customItemsFacade.loadAll();
-    }
 
-    if (this.media.isActive('lt-md')) {
-      this.collapsedSidebar = true;
-    }
+      this.user$.subscribe(user => {
+        if (!user.patron && !user.admin && this.settings.theme.name === 'CUSTOM') {
+          this.settings.theme = Theme.DEFAULT;
+        }
+      });
 
-    this.settings.themeChange$.subscribe((change => {
-      this.applyTheme(change.next);
-    }));
-
-    this.user$.subscribe(user => {
-      if (!user.patron && !user.admin && this.settings.theme.name === 'CUSTOM') {
-        this.settings.theme = Theme.DEFAULT;
+      if (this.media.isActive('lt-md')) {
+        this.collapsedSidebar = true;
       }
-    });
+
+      this.settings.themeChange$.subscribe((change => {
+        this.applyTheme(change.next);
+      }));
+    } else {
+      this.loading$ = of(false);
+      this.loggedIn$ = of(false);
+    }
   }
 
   private applyTheme(theme: Theme): void {
@@ -376,9 +411,11 @@ export class AppComponent implements OnInit {
   }
 
   openedApp(): void {
-    setTimeout(() => {
-      this.hasDesktopReloader$.next(null);
-    }, 30000);
+    if (isPlatformBrowser(this.platform)) {
+      setTimeout(() => {
+        this.hasDesktopReloader$.next(null);
+      }, 30000);
+    }
   }
 
   use(lang: string, fromIpc = false, skipStorage = false): void {

@@ -18,8 +18,7 @@ import {
   UpdateUser,
   VerifyCharacter
 } from './auth.actions';
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
+import { auth } from 'firebase/app';
 import { UserCredential } from '@firebase/auth-types';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -183,9 +182,9 @@ export class AuthFacade {
       first(),
       switchMap((user) => {
         return from(this.af.auth.createUserWithEmailAndPassword(email, password)).pipe(
-          tap(auth => {
-            this.store.dispatch(new RegisterUser(auth.user.uid, user));
-            this.store.dispatch(new ConvertLists(auth.user.uid))
+          tap(a => {
+            this.store.dispatch(new RegisterUser(a.user.uid, user));
+            this.store.dispatch(new ConvertLists(a.user.uid))
           })
         );
       }),
@@ -193,11 +192,11 @@ export class AuthFacade {
   }
 
   public googleOauth(): Observable<UserCredential> {
-    return this.oauthPopup(new firebase.auth.GoogleAuthProvider());
+    return this.oauthPopup(new auth.GoogleAuthProvider());
   }
 
   public facebookOauth(): Observable<UserCredential> {
-    return this.oauthPopup(new firebase.auth.FacebookAuthProvider());
+    return this.oauthPopup(new auth.FacebookAuthProvider());
   }
 
   public logout(): void {

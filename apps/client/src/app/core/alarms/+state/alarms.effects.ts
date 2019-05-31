@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import {
   AddAlarms,
@@ -22,7 +22,7 @@ import {
   tap,
   withLatestFrom
 } from 'rxjs/operators';
-import { combineLatest, EMPTY } from 'rxjs';
+import { combineLatest } from 'rxjs';
 import { AlarmsFacade } from './alarms.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { Alarm } from '../alarm';
@@ -32,6 +32,7 @@ import { AlarmGroupService } from '../alarm-group.service';
 import { AlarmGroup } from '../alarm-group';
 import { NzMessageService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -45,10 +46,10 @@ export class AlarmsEffects {
     // We want to connect the observable only the first time, no need to reload as it's firestore.
     distinctUntilChanged(),
     switchMap((userId) => {
-      return combineLatest(
+      return combineLatest([
         this.alarmsService.getByForeignKey(TeamcraftUser, userId),
         this.alarmGroupsService.getByForeignKey(TeamcraftUser, userId)
-      );
+      ]);
     }),
     debounceTime(500),
     map(([alarms, groups]) => new AlarmsLoaded(alarms, groups))
@@ -75,31 +76,28 @@ export class AlarmsEffects {
     );
 
 
-  @Effect()
+  @Effect({ dispatch: false })
   updateAlarmInDatabase$ = this.actions$
     .pipe(
       ofType(AlarmsActionTypes.UpdateAlarm),
-      switchMap((action: UpdateAlarm) => this.alarmsService.update(action.alarm.$key, action.alarm)),
-      switchMap(() => EMPTY)
+      switchMap((action: UpdateAlarm) => this.alarmsService.update(action.alarm.$key, action.alarm))
     );
 
-  @Effect()
+  @Effect({ dispatch: false })
   removeAlarmFromDatabase$ = this.actions$
     .pipe(
       ofType(AlarmsActionTypes.RemoveAlarm),
-      switchMap((action: RemoveAlarm) => this.alarmsService.remove(action.id)),
-      switchMap(() => EMPTY)
+      switchMap((action: RemoveAlarm) => this.alarmsService.remove(action.id))
     );
 
-  @Effect()
+  @Effect({ dispatch: false })
   clearLocalstorageOnAlarmDelete$ = this.actions$
     .pipe(
       ofType(AlarmsActionTypes.RemoveAlarm),
-      map((action: RemoveAlarm) => localStorage.removeItem(`played:${action.id}`)),
-      switchMap(() => EMPTY)
+      map((action: RemoveAlarm) => localStorage.removeItem(`played:${action.id}`))
     );
 
-  @Effect()
+  @Effect({ dispatch: false })
   addGroupToDatabase$ = this.actions$.pipe(
     ofType(AlarmsActionTypes.CreateAlarmGroup),
     withLatestFrom(this.authFacade.userId$),
@@ -108,20 +106,18 @@ export class AlarmsEffects {
       const group = new AlarmGroup(action.name, action.index);
       group.userId = userId;
       return this.alarmGroupsService.add(group);
-    }),
-    switchMap(() => EMPTY)
+    })
   );
 
-  @Effect()
+  @Effect({ dispatch: false })
   deleteGroupFromDatabase = this.actions$.pipe(
     ofType(AlarmsActionTypes.DeleteAlarmGroup),
     switchMap((action: DeleteAlarmGroup) => {
       return this.alarmGroupsService.remove(action.id);
-    }),
-    switchMap(() => EMPTY)
+    })
   );
 
-  @Effect()
+  @Effect({ dispatch: false })
   updateGroupInsideDatabase$ = this.actions$.pipe(
     ofType(AlarmsActionTypes.UpdateAlarmGroup),
     withLatestFrom(this.alarmsFacade.allGroups$),
@@ -129,25 +125,23 @@ export class AlarmsEffects {
       const action = <UpdateAlarmGroup>_action;
       const editedGroup = groups.find(group => group.$key === action.group.$key);
       return this.alarmGroupsService.set(editedGroup.$key, editedGroup);
-    }),
-    switchMap(() => EMPTY)
+    })
   );
 
-  @Effect()
+  @Effect({ dispatch: false })
   saveAlarmGroupAssignment$ = this.actions$.pipe(
     ofType(AlarmsActionTypes.AssignGroupToAlarm),
     withLatestFrom(this.alarmsFacade.allAlarms$),
     switchMap(([action, alarms]) => {
       const alarm = alarms.find(a => a.$key === (<AssignGroupToAlarm>action).alarm.$key);
       return this.alarmsService.set(alarm.$key, alarm);
-    }),
-    switchMap(() => EMPTY)
+    })
   );
 
-  @Effect()
+  @Effect({ dispatch: false })
   showAlarmsCreatedNotification$ = this.actions$.pipe(
     ofType(AlarmsActionTypes.AlarmsCreated),
-    bufferTime(300),
+    isPlatformBrowser(this.platform) ? bufferTime(300) : map(() => []),
     filter(actions => actions.length > 0),
     tap((creations: AlarmsCreated[]) => {
       const amount = creations.reduce((count, c) => {
@@ -159,13 +153,13 @@ export class AlarmsEffects {
       this.message.success(label, {
         nzDuration: 2000
       });
-    }),
-    switchMap(() => EMPTY)
+    })
   );
 
   constructor(private actions$: Actions, private alarmsFacade: AlarmsFacade,
               private authFacade: AuthFacade, private alarmsService: AlarmsService,
               private alarmGroupsService: AlarmGroupService, private message: NzMessageService,
-              private translate: TranslateService) {
+              private translate: TranslateService, @Inject(PLATFORM_ID) private platform: Object) {
   }
+
 }

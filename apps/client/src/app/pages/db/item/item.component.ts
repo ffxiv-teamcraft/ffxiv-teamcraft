@@ -28,7 +28,6 @@ import { UsedForType } from '../model/used-for-type';
 import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
-import { IS_PRERENDER } from '../../../core/tools/platform.service';
 import { Craft } from '../../../model/garland-tools/craft';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
@@ -76,9 +75,6 @@ export class ItemComponent extends TeamcraftPageComponent {
     super(seo);
 
     this.route.paramMap.subscribe(params => {
-      if (IS_PRERENDER) {
-        return;
-      }
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
@@ -560,13 +556,32 @@ export class ItemComponent extends TeamcraftPageComponent {
     );
   }
 
-  public addItemsToList(items: SearchResult[]): void {
+  public createQuickList(item: SearchResult): void {
+    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
+    const operation$ = this.listManager.addToList(+item.itemId, list, item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)
+      .pipe(
+        tap(resultList => this.listsFacade.addList(resultList)),
+        mergeMap(resultList => {
+          return this.listsFacade.myLists$.pipe(
+            map(lists => lists.find(l => l.createdAt === resultList.createdAt && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          );
+        })
+      );
+
+    this.progressService.showProgress(operation$, 1)
+      .subscribe((newList) => {
+        this.router.navigate(['list', newList.$key]);
+      });
+  }
+
+  public addItemsToList(item: SearchResult, amount: number): void {
+    item.amount = amount;
     this.listPicker.pickList().pipe(
       mergeMap(list => {
-        const operations = items.map(item => {
-          return this.listManager.addToList(+item.itemId, list,
-            item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
-        });
+        const operations = [this.listManager.addToList(+item.itemId, list,
+          item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)];
         let operation$: Observable<any>;
         if (operations.length > 0) {
           operation$ = concat(
@@ -576,9 +591,9 @@ export class ItemComponent extends TeamcraftPageComponent {
           operation$ = of(list);
         }
         return this.progressService.showProgress(operation$,
-          items.length,
+          1,
           'Adding_recipes',
-          { amount: items.length, listname: list.name });
+          { amount: 1, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
       mergeMap(list => {
@@ -592,7 +607,7 @@ export class ItemComponent extends TeamcraftPageComponent {
           ), 1, 'Saving_in_database');
       })
     ).subscribe((list) => {
-      this.itemsAdded = items.length;
+      this.itemsAdded = 1;
       this.modifiedList = list;
       this.notificationService.template(this.notification);
     });

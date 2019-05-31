@@ -15,7 +15,6 @@ import { IpcService } from './electron/ipc.service';
 import { PlatformService } from './tools/platform.service';
 import { MathToolsService } from './tools/math-tools';
 import { I18nToolsService } from './tools/i18n-tools.service';
-import { BellNodesService } from './data/bell-nodes.service';
 import { EorzeanTimeService } from './eorzea/eorzean-time.service';
 import { TimerPipe } from './eorzea/timer.pipe';
 import { HtmlToolsService } from './tools/html-tools.service';
@@ -72,7 +71,6 @@ import { ItemRarityDirective } from './item-rarity/item-rarity.directive';
     DataService,
     MathToolsService,
     I18nToolsService,
-    BellNodesService,
     HtmlToolsService,
     LinkToolsService,
     DiscordWebhookService,

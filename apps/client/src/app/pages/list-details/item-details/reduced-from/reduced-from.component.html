@@ -16,7 +16,10 @@
             <ng-template #description>
               <div fxLayout="column" fxLayoutGap="5px">
                 <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                  <span>{{node.mapId | placeName | i18n}} - lvl {{node.level}}</span>
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <div>{{node.mapId | placeName | i18n}} - lvl {{node.level}}</div>
+                    <img [src]="node.type | nodeTypeIcon" alt="" class="node-type-icon">
+                  </div>
                   <nz-tag *ngIf="node.limitType !== undefined" nzColor="orange">
                     {{node.limitType | i18n}}
                   </nz-tag>

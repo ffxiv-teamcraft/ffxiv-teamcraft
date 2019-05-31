@@ -4,10 +4,6 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { alarmsReducer, initialState as alarmsInitialState } from './+state/alarms.reducer';
 import { AlarmsEffects } from './+state/alarms.effects';
-import { AlarmsFacade } from './+state/alarms.facade';
-import { AlarmsService } from './alarms.service';
-import { AlarmBellService } from './alarm-bell.service';
-import { AlarmGroupService } from './alarm-group.service';
 import { AlarmDisplayPipe } from './alarm-display.pipe';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { SettingsModule } from '../../modules/settings/settings.module';
@@ -22,13 +18,7 @@ import { SettingsModule } from '../../modules/settings/settings.module';
     EffectsModule.forFeature([AlarmsEffects])
   ],
   declarations: [AlarmDisplayPipe],
-  exports: [AlarmDisplayPipe],
-  providers: [
-    AlarmsFacade,
-    AlarmsService,
-    AlarmBellService,
-    AlarmGroupService
-  ]
+  exports: [AlarmDisplayPipe]
 })
 export class AlarmsModule {
 }
