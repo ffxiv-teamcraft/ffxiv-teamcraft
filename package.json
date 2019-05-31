@@ -45,7 +45,7 @@
     "ng": "ng",
     "start": "node ./tools/build/prebuild.js && ng serve --project=client",
     "build:watch": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --watch --configuration=electron-dev",
-    "build:prod": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --prod --no-progress && cp sitemap.xml dist/apps/client",
+    "build:prod": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --prod --no-progress",
     "build:electron-prod": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --configuration=electron",
     "build:electron-dev": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --configuration=electron-dev",
     "build:beta": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --configuration=beta --no-progress",

@@ -11,11 +11,20 @@
         "source": "/desktop",
         "destination": "https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest",
         "type": 301
+      },
+      {
+        "source" : "/sitemap",
+        "destination" : "https://firebasestorage.googleapis.com/v0/b/foo",
+        "type" : 301
       }
     ],
     "rewrites": [
       {
         "source": "**",
+        "function": "app"
+      },
+      {
+        "source": "!/sitemap",
         "function": "app"
       }
     ],
