@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { map, takeUntil } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { TranslateService } from '@ngx-translate/core';
+import { isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-db',
@@ -15,7 +16,8 @@ export class DbComponent extends TeamcraftComponent {
   private lang: string;
 
   constructor(private route: ActivatedRoute, private settings: SettingsService,
-              private translate: TranslateService, private router: Router) {
+              private translate: TranslateService, private router: Router,
+              @Inject(PLATFORM_ID) private platform: Object) {
     super();
     this.route.paramMap.pipe(
       map(params => params.get('language')),
@@ -25,7 +27,7 @@ export class DbComponent extends TeamcraftComponent {
         lang = 'en';
       }
       const savedLang = localStorage.getItem('locale');
-      if (!savedLang) {
+      if (!savedLang || isPlatformServer(this.platform)) {
         this.translate.use(lang);
       }
     });
