@@ -123,7 +123,7 @@
     "Admin": "管理者",
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
-    "None": "None"
+    "None": "なし"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -173,10 +173,10 @@
   "No_mobs_found": "検索結果なし",
   "No_lore_entries": "検索結果なし",
   "No_fates_found": "検索結果なし",
-  "No_maps_found": "No maps found",
-  "No_actions_found": "No actions found",
-  "No_statuses_found": "No statuses found",
-  "No_traits_found": "No traits found",
+  "No_maps_found": "検索結果なし",
+  "No_actions_found": "検索結果なし",
+  "No_statuses_found": "検索結果なし",
+  "No_traits_found": "検索結果なし",
   "Select_all": "全て選択",
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
@@ -330,13 +330,13 @@
     "Favorite_aetherytes": "お気に入りのエーテライト",
     "Disable_cross_world_prices": "キャラクターのサーバーマケットボード値段のみ使用",
     "COLORS": {
-      "Background": "Background color",
+      "Background": "背景色",
       "Primary": "デフォルトカラー",
       "Highlight": "ハイライトカラー",
       "Text": "ボタンの色",
-      "Topbar": "Topbar and sidebar color",
-      "Sidebar_trigger": "Sidebar trigger color",
-      "Sidebar_trigger_hover": "Sidebar trigger hover color"
+      "Topbar": "トップバー/サイドバーのカラー",
+      "Sidebar_trigger": "サイドバー トリガー カラー",
+      "Sidebar_trigger_hover": "サイドバー トリガー ホバー カラー"
     },
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
@@ -904,8 +904,8 @@
       "ITEM_REMOVED": "アイテムが削除されました",
       "LIST_ADDED": "リストが追加されました",
       "LIST_REMOVED": "リストが削除されました",
-      "LIST_PROGRESSION": "List materials progression",
-      "FINAL_LIST_PROGRESSION": "List final items progression",
+      "LIST_PROGRESSION": "素材の進捗状況の一覧",
+      "FINAL_LIST_PROGRESSION": "最終項目の進行状況をリストアップする",
       "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる"
     }
   },
@@ -1108,7 +1108,7 @@
     "How_to_obtain": "獲得方法",
     "Used_for": "使用先",
     "Used_for_nothing": "使用先がありません",
-    "Crystal_used_for_everything": "Too many recipes (~ 1/6th of the ingame recipes)",
+    "Crystal_used_for_everything": "レシピが多すぎる",
     "Crafts": "制作",
     "Recipes": "レシピ",
     "No_known_way_to_obtain": "このアイテムの獲得方法が見つかりません",
@@ -1164,18 +1164,18 @@
     "Drop_rate": "ドロップ率",
     "Involved_monsters": "関連モンスター",
     "Reduces_to": "精選で得るアイテム",
-    "Icons_shown": "Data to show",
-    "Select_data_type": "Select data types to show to see the details here",
-    "Desynths_to": "Desynths to",
-    "Limited": "Limited spawn",
-    "3d_model_viewer": "3D model preview",
-    "3d_model_help": "Preview 3D model",
+    "Icons_shown": "表示するデータ",
+    "Select_data_type": "詳細を表示するデータ タイプを選択します。",
+    "Desynths_to": "分解で得るアイテム",
+    "Limited": "限定採集",
+    "3d_model_viewer": "3Dモデルプレビュー",
+    "3d_model_help": "3Dモデルプレビュー",
     "NODE": {
-      "Items": "Items",
-      "Possible_bonuses": "Possible bonuses",
-      "Bonus_condition": "Condition",
-      "Spawn_duration": "Spawn duration",
-      "Spawns": "Spawn times"
+      "Items": "アイテム",
+      "Possible_bonuses": "ロケーション・エフェクト",
+      "Bonus_condition": "条件",
+      "Spawn_duration": "採集可能時間",
+      "Spawns": "出現時間"
     },
     "QUEST": {
       "Steps": "クエスト情報",
@@ -1217,33 +1217,33 @@
       "fate": "F.A.T.E",
       "mob": "モンスター",
       "npc": "NPC",
-      "node": "Nodes",
-      "hunt": "Hunts"
+      "node": "採集場所",
+      "hunt": "モブハント"
     },
     "ACTION": {
-      "Cast": "Cast",
-      "Instant": "Instant",
-      "Range": "Range",
-      "Melee": "Melee",
-      "Radius": "Radius",
-      "Cooldown": "Cooldown",
-      "Pvp_action": "PvP action",
-      "Breaks_unrelated_combo": "Breaks unrelated combos",
-      "Movement_action": "Movement action",
-      "Possible_targets": "Possible targets",
-      "Unlocked_by_quest": "Unlocked by quest",
-      "Shares_cd_with": "Shares cooldown with",
-      "Combos": "Combos",
-      "Combo_next": "Next actions",
-      "Combo_previous": "Previous action",
-      "Affected_by_status": "Affected by status",
+      "Cast": "キャスト",
+      "Instant": "即発動",
+      "Range": "距離",
+      "Melee": "近接対象",
+      "Radius": "半径",
+      "Cooldown": "クールダウン",
+      "Pvp_action": "PvP アクション",
+      "Breaks_unrelated_combo": "コンボの切れるスキル",
+      "Movement_action": "移動スキル",
+      "Possible_targets": "使用可能な対象",
+      "Unlocked_by_quest": "開放クエスト",
+      "Shares_cd_with": "クールダウンの待機時間をシェアする",
+      "Combos": "コンボ",
+      "Combo_next": "次のコンボ",
+      "Combo_previous": "以前のコンボ",
+      "Affected_by_status": "スキルと関連されたプロック",
       "Cost": "Cost",
-      "Related_traits": "Related traits",
+      "Related_traits": "関連特性",
       "TARGET": {
-        "Party": "Party",
-        "Dead": "Dead",
-        "Hostile": "Hostile",
-        "Self": "Self"
+        "Party": "パーティ",
+        "Dead": "死亡したプレイヤー",
+        "Hostile": "敵",
+        "Self": "自身"
       },
       "COST_TYPE": {
         "HP": "HP",
@@ -1251,27 +1251,27 @@
         "TP": "TP",
         "GP": "GP",
         "CP": "CP",
-        "Beast_gauge": "Beast gauge",
-        "Blood_gauge": "Blood gauge",
-        "Ninki": "Ninki",
-        "Chakra": "Chakra",
-        "Greasing_lightning": "Greasing Lightning",
-        "Aetherflow": "Aetherflow",
-        "Oath_gauge": "Oath gauge",
-        "Kenki": "Kenki"
+        "Beast_gauge": "原初",
+        "Blood_gauge": "ブラックブラッド",
+        "Ninki": "忍法",
+        "Chakra": "チャクラ",
+        "Greasing_lightning": "疾風迅雷",
+        "Aetherflow": "エーテリアルステップ",
+        "Oath_gauge": "忠義",
+        "Kenki": "剣気"
       }
     },
     "TRAIT": {
-      "Related_actions": "Related actions"
+      "Related_actions": "関連スキル"
     },
     "STATUS": {
-      "Max_stacks": "Max stacks",
-      "Locks_actions": "Locks actions",
-      "Locks_control": "Locks control",
-      "Locks_movement": "Locks movement",
-      "Type": "Type",
-      "Type_buff": "Buff",
-      "Type_debuff": "Debuff"
+      "Max_stacks": "最大重畳",
+      "Locks_actions": "スキル使用不可",
+      "Locks_control": "対象選択不可",
+      "Locks_movement": "移動不可",
+      "Type": "タイプ",
+      "Type_buff": "バフ",
+      "Type_debuff": "デバフ"
     }
   },
   "SEARCH_TYPES": {
@@ -1286,25 +1286,25 @@
     "Lore": "台詞及び設定",
     "Fate": "F.A.T.E",
     "Map": "地図",
-    "Action": "Action",
-    "Status": "Status",
-    "Trait": "Trait"
+    "Action": "アクション",
+    "Status": "ステータス",
+    "Trait": "特性"
   },
   "SEARCH_FILTERS": {
-    "Level": "Level",
+    "Level": "レベル",
     "Leve_job": "ジョブ",
-    "Job": "Job",
+    "Job": "ジョブ",
     "Leve_level": "必要レベル"
   },
   "TIPS": {
-    "Title": "Tip",
-    "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
-    "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
-    "Desynth": "You can find ideal items to level up desynth in desynth page.",
-    "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
-    "3D_model": "You can preview 3D model of items inside the database.",
-    "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
-    "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
-    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+    "Title": "ヒント",
+    "Community_rotations": "コミュニティースキル回しのページから特定レシピのスキル回しが見つかります。",
+    "GC_Deliveries": "調達任務ページからグランドカンパニーの調達品目が準備できます。",
+    "Desynth": "分解ガイドページから自分の分解レベルに合うアイテムが見つかります。",
+    "DB": "Teamcraftはデータベースが含まれており、”i”をクリックすれば該当品目に関する結果に対するデータベースが開けることができます",
+    "3D_model": "データベース内にアイテムの3Dモデルをプレビューすることができます。",
+    "Levequests": "ギルドリーヴページからリーヴを比べて獲得可能な経験値をプレビューすることができます。",
+    "Log_tracker": "手帳トラッカーページから採集、制作、漁師の手帳の進行状況が確認することができます。",
+    "Desktop_app_overlay": "デスクトップ アプリの使用時にアラームのオーバーレイを設定できます(サイドバー内のダウンロード リンク有り)。"
   }
 }

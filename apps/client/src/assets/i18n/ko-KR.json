@@ -335,8 +335,8 @@
       "Highlight": "하이라이트 색상",
       "Text": "버튼 속 색상",
       "Topbar": "상단/사이드바 색상",
-      "Sidebar_trigger": "Sidebar trigger color",
-      "Sidebar_trigger_hover": "Sidebar trigger hover color"
+      "Sidebar_trigger": "사이드바 숨기기/펼치기 색상",
+      "Sidebar_trigger_hover": "사이드바 숨기기/펼치기 색상(마우스 커서를 올렸을때)"
     },
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
@@ -1269,9 +1269,9 @@
       "Locks_actions": "기술 사용 불가",
       "Locks_control": "대상 선택 불가",
       "Locks_movement": "이동 불가",
-      "Type": "Type",
-      "Type_buff": "Buff",
-      "Type_debuff": "Debuff"
+      "Type": "유형",
+      "Type_buff": "버프",
+      "Type_debuff": "디버프"
     }
   },
   "SEARCH_TYPES": {
@@ -1298,7 +1298,7 @@
   },
   "TIPS": {
     "Title": "팁",
-    "Community_rotations": "커뮤니티 로테이션 페이지에서 원하는 레시피의 로테이션을 찾을 수 있습니다.",
+    "Community_rotations": "커뮤니티 로테이션 페이지에서 특정 제작법의 로테이션을 찾을 수 있습니다.",
     "GC_Deliveries": "조달 임무 페이지에서 총사령부 조달 품목을 준비할 수 있습니다.",
     "Desynth": "분해 가이드 페이지에서 자신의 분해레벨에 맞는 아이템을 찾을 수 있습니다.",
     "DB": "팀크래프트는 데이터베이스를 포함하고 있으며, \"i\" 를 클릭하면 해당 품목, 결과에 대한 데이터베이스 페이지를 열 수 있습니다.",
