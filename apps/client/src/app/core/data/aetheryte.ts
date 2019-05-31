@@ -1,6 +1,7 @@
 import { Vector2 } from '../tools/vector2';
 
 export interface Aetheryte {
+  id: number;
   zoneid: number;
   placenameid: number;
   map: number;
