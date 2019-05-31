@@ -130,7 +130,7 @@ jobs:
           at: ~/
       - run:
           name: Deploying SSR fucntions
-          command: npm run build:ssr:ci && ./node_modules/.bin/firebase deploy -P prod --only functions --token "$FIREBASE_TOKEN"
+          command: npm run build:ssr:ci && ./node_modules/.bin/firebase deploy -P default --only functions --token "$FIREBASE_TOKEN"
 
   deploy-ssr-beta:
     <<: *defaults
