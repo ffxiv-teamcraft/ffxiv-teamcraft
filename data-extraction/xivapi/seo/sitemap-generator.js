@@ -1,8 +1,7 @@
 const { getAllPages } = require('../tools.js');
 const fs = require('fs');
 const path = require('path');
-const {merge} = require('rxjs');
-const {map} = require('rxjs/operators');
+const { map } = require('rxjs/operators');
 
 function getFragment(path) {
   return `<url>
@@ -12,7 +11,8 @@ function getFragment(path) {
    </url>`;
 }
 
-function getMetaFragments(sheetName, routeName){
+function generateSitemap(sheetName, routeName) {
+  const fragments = [];
   return getAllPages(`https://xivapi.com/${sheetName}?columns=ID,Name_*`).pipe(
     map(page => {
       return [].concat.apply([], page.Results.map(item => {
@@ -21,29 +21,28 @@ function getMetaFragments(sheetName, routeName){
         });
       }));
     })
-  );
+  ).subscribe(links => {
+      fragments.push(...links);
+    },
+    null,
+    () => {
+      fs.writeFileSync(path.join(__dirname, `../../../sitemaps/sitemap-${routeName}.xml`), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   ${fragments.join('\n')}
+</urlset>`);
+    });
 }
 
-const sitemap = [];
 
-merge(
-  getMetaFragments('Item', 'item'),
-  getMetaFragments('Quest', 'quest'),
-  getMetaFragments('InstanceContent', 'instance'),
-  getMetaFragments('Status', 'status'),
-  getMetaFragments('CraftAction', 'action'),
-  getMetaFragments('Action', 'action'),
-  getMetaFragments('Fate', 'fate'),
-  getMetaFragments('ENpcResident', 'npc'),
-  getMetaFragments('Leve', 'leve'),
-  getMetaFragments('Trait', 'trait'),
-  getMetaFragments('BNpcName', 'mob'),
-).subscribe((fragments) => {
-  sitemap.push(...fragments);
-},null, () => {
-  console.log(`urls inside sitemap: ${sitemap.length}`);
-  fs.writeFileSync(path.join(__dirname, '../output/sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   ${sitemap.join('\n')}
-</urlset>`);
-});
+generateSitemap('Item', 'item');
+generateSitemap('Quest', 'quest');
+generateSitemap('InstanceContent', 'instance');
+generateSitemap('Status', 'status');
+generateSitemap('CraftAction', 'action');
+generateSitemap('Action', 'action');
+generateSitemap('Fate', 'fate');
+generateSitemap('ENpcResident', 'npc');
+generateSitemap('Leve', 'leve');
+generateSitemap('Trait', 'trait');
+generateSitemap('BNpcName', 'mob');
+
