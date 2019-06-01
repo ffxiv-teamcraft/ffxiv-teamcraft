@@ -76,7 +76,7 @@
     "title": "О проекте",
     "Created_by": "FFXIV Teamcraft создан Miu Asakura из Louisoix, Chaos.",
     "Copyright_notice_title": "Информация об авторских правах",
-    "Copyright_notice_content": "FINAL FANTASY является зарегистрированным товарным знаком Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. Все права защищены.<br>FFXIV Teamcraft не сотрудничает со Square Enix.",
+    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
     "Thanks_title": "Благодарности",
     "Data_sources": "Источники данных",
     "Patreon_supporters": "Patreon донатеры",
@@ -329,6 +329,7 @@
     "Free_aetheryte": "Free Aetheryte",
     "Favorite_aetherytes": "Favorite Aetherytes",
     "Disable_cross_world_prices": "Only use own world for marketboard prices",
+    "Clear_search_history": "Clear search history",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
