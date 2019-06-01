@@ -12,6 +12,7 @@ import { LazyDataService } from './lazy-data.service';
 import { Fate } from '../../pages/db/model/fate/fate';
 import { Quest } from '../../pages/db/model/quest/quest';
 import { tripleTriadRules } from './sources/triple-triad-rules';
+import { zhActions } from './sources/zh-actions';
 
 @Injectable()
 export class LocalizedDataService {
@@ -250,6 +251,13 @@ export class LocalizedDataService {
         language = 'en';
       }
     }
+    if (language === 'zh') {
+      const zhRow = zhActions.find(a => a.zh === name);
+      if (zhRow !== undefined) {
+        name = zhRow.en;
+        language = 'en';
+      }
+    }
     const result = this.getRowByName(this.lazyData.craftActions, name, language) || this.getRowByName(this.lazyData.actions, name, language);
     if (result === undefined) {
       throw new Error('Data row not found.');
@@ -257,6 +265,10 @@ export class LocalizedDataService {
     const koResultRow = koActions.find(a => a.en === result.en);
     if (koResultRow !== undefined) {
       result.ko = koResultRow.ko;
+    }
+    const zhResultRow = zhActions.find(a => a.en === result.en);
+    if (zhResultRow !== undefined) {
+      result.zh = zhResultRow.zh;
     }
     return result;
   }
