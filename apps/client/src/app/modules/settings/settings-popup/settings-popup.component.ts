@@ -82,8 +82,6 @@ export class SettingsPopupComponent {
     });
 
     this.customTheme = this.settings.customTheme;
-
-    console.log(this.customTheme);
   }
 
   alwaysOnTopChange(value: boolean): void {
@@ -104,6 +102,10 @@ export class SettingsPopupComponent {
 
   clearCache(): void {
     this.ipc.send('clear-cache');
+  }
+
+  clearSearchHistory(): void {
+    localStorage.removeItem('search:history');
   }
 
   patreonOauth(): void {

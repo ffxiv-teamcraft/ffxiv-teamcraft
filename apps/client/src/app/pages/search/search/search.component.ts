@@ -35,6 +35,7 @@ import { MapSearchResult } from '../../../model/search/map-search-result';
 import { ActionSearchResult } from '../../../model/search/action-search-result';
 import { StatusSearchResult } from '../../../model/search/status-search-result';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-search',
@@ -114,6 +115,13 @@ export class SearchComponent implements OnInit {
 
   uiCategories$: Observable<{ id: number, name: I18nName }[]>;
 
+  autocomplete$: Observable<string[]> = combineLatest([this.query$, this.searchType$]).pipe(
+    map(([query, type]) => {
+      return (JSON.parse(localStorage.getItem('search:history') || '{}')[type] || [])
+        .filter(entry => entry.toLowerCase().indexOf(query.toLowerCase()) > -1);
+    })
+  );
+
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
@@ -175,6 +183,9 @@ export class SearchComponent implements OnInit {
         if (filters.length > 0) {
           queryParams.filters = btoa(JSON.stringify(filters));
         }
+        const searchHistory = JSON.parse(localStorage.getItem('search:history') || '{}');
+        searchHistory[type] = _.uniq([...(searchHistory[type] || []), query]);
+        localStorage.setItem('search:history', JSON.stringify(searchHistory));
         this.router.navigate([], {
           queryParamsHandling: 'merge',
           queryParams: queryParams,
