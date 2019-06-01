@@ -17,7 +17,7 @@ function generateSitemap(sheetName, routeName) {
     map(page => {
       return [].concat.apply([], page.Results.map(item => {
         return ['en', 'ja', 'de', 'fr'].map(lang => {
-          return getFragment(`/${lang}/${routeName}/${item.ID}/${(item[`Name_${lang}`] || item.Name_en).split(' ').join('-')}`);
+          return getFragment(`/${lang}/${routeName}/${item.ID}/${encodeURIComponent((item[`Name_${lang}`] || item.Name_en).split(' ').join('-'))}`);
         });
       }));
     })
