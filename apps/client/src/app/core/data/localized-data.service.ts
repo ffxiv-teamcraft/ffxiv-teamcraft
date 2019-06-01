@@ -68,9 +68,11 @@ export class LocalizedDataService {
 
   public getPlace(id: number): I18nName {
     const row = this.getRow(this.lazyData.places, id);
+    const zhRow = this.getRow(this.lazyData.zhPlaces, id);
     const koRow = this.getRow(this.lazyData.koPlaces, id);
 
     if (row !== undefined) {
+      row.zh = zhRow !== undefined ? zhRow.zh : row.en;
       row.ko = koRow !== undefined ? koRow.ko : row.en;
     }
     return row;

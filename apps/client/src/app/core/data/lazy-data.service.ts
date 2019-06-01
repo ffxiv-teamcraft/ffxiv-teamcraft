@@ -20,6 +20,7 @@ export class LazyDataService {
   public npcs: any = {};
 
   public zhItems: any = {};
+  public zhPlaces: any = {};
 
   public koItems: any = {};
   public koItemUiCategories: any = {};
@@ -94,7 +95,8 @@ export class LazyDataService {
   private load(): void {
     combineLatest([
         this.http.get('./assets/data/items.json'),
-        this.http.get('./assets/data/zh-items.json'),
+        this.http.get('./assets/data/zh/zh-items.json'),
+        this.http.get('./assets/data/zh/zh-places.json'),
         this.http.get('./assets/data/ko/ko-items.json'),
         this.http.get('./assets/data/ko/ko-item-ui-categories.json'),
         this.http.get('./assets/data/ko/ko-actions.json'),
@@ -136,6 +138,7 @@ export class LazyDataService {
     ).subscribe(([
                    items,
                    zhItems,
+                   zhPlaces,
                    koItems,
                    koItemUiCategories,
                    koActions,
@@ -176,6 +179,7 @@ export class LazyDataService {
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
+      this.zhPlaces = zhPlaces;
       this.koItems = koItems;
       this.koItemUiCategories = koItemUiCategories;
       this.koActions = koActions;
