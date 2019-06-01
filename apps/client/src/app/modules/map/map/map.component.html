@@ -31,5 +31,5 @@
   </ng-container>
   <img *ngFor="let aetheryte of map.aetherytes" [src]="getIcon(aetheryte.type)"
        alt="" class="aetheryte" [ngStyle]="getMarkerStyle(map, aetheryte, {x:-2,y:-2})"
-       nz-tooltip nzTitle="{{aetheryte.id | aetheryteName | i18n}}">
+       nz-tooltip nzTitle="{{(aetheryte.id | aetheryteName | i18n) || (aetheryte.nameid | placeName | i18n)}}">
 </div>

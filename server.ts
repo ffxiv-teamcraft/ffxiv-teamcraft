@@ -3,7 +3,6 @@ import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
-import * as url from 'url';
 
 import * as express from 'express';
 import * as path from 'path';
@@ -188,7 +187,7 @@ app.get('*', (req, res) => {
       ]
     });
   } else {
-    res.sendfile(join(DIST_FOLDER, APP_NAME, 'index.html'));
+    res.sendFile(join(DIST_FOLDER, APP_NAME, 'index.html'));
   }
 });
 

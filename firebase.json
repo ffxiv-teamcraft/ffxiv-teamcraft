@@ -11,6 +11,56 @@
         "source": "/desktop",
         "destination": "https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest",
         "type": 301
+      },
+      {
+        "source" : "/sitemap/actions",
+        "destination" : "https://firebasestorage.googleapis.com/v0/b/ffxivteamcraft.appspot.com/o/sitemaps%2Fsitemap-action.xml?alt=media&token=4eb41a98-4869-46f3-b70b-46bbfade4ed2",
+        "type" : 301
+      },
+      {
+        "source" : "/sitemap/fates",
+        "destination" : "https://firebasestorage.googleapis.com/v0/b/ffxivteamcraft.appspot.com/o/sitemaps%2Fsitemap-fate.xml?alt=media&token=8cb8cfce-691c-4add-a126-255743936365",
+        "type" : 301
+      },
+      {
+        "source" : "/sitemap/instances",
+        "destination" : "https://firebasestorage.googleapis.com/v0/b/ffxivteamcraft.appspot.com/o/sitemaps%2Fsitemap-instance.xml?alt=media&token=5bb1c23e-366e-4a95-8a3d-d817143abcb6",
+        "type" : 301
+      },
+      {
+        "source" : "/sitemap/items",
+        "destination" : "https://firebasestorage.googleapis.com/v0/b/ffxivteamcraft.appspot.com/o/sitemaps%2Fsitemap-item.xml?alt=media&token=fff8d3e1-c3fe-4f95-a6e9-cea881f73296",
+        "type" : 301
+      },
+      {
+        "source" : "/sitemap/leves",
+        "destination" : "https://firebasestorage.googleapis.com/v0/b/ffxivteamcraft.appspot.com/o/sitemaps%2Fsitemap-leve.xml?alt=media&token=3759042e-293a-40f8-9d3d-85f11c47aebf",
+        "type" : 301
+      },
+      {
+        "source" : "/sitemap/mobs",
+        "destination" : "https://firebasestorage.googleapis.com/v0/b/ffxivteamcraft.appspot.com/o/sitemaps%2Fsitemap-mob.xml?alt=media&token=b4d07098-4a74-4380-ac3a-e6cfc4552050",
+        "type" : 301
+      },
+      {
+        "source" : "/sitemap/npcs",
+        "destination" : "https://firebasestorage.googleapis.com/v0/b/ffxivteamcraft.appspot.com/o/sitemaps%2Fsitemap-npc.xml?alt=media&token=99772909-0c25-4487-a6cd-07be550ebef0",
+        "type" : 301
+      },
+      {
+        "source" : "/sitemap/quests",
+        "destination" : "https://firebasestorage.googleapis.com/v0/b/ffxivteamcraft.appspot.com/o/sitemaps%2Fsitemap-quest.xml?alt=media&token=2f50abaf-64c7-4241-a7c1-6d17c9455de1",
+        "type" : 301
+      },
+      {
+        "source" : "/sitemap/statuses",
+        "destination" : "https://firebasestorage.googleapis.com/v0/b/ffxivteamcraft.appspot.com/o/sitemaps%2Fsitemap-status.xml?alt=media&token=3639be31-33c0-4423-b9fa-eeadba8724eb",
+        "type" : 301
+      },
+      {
+        "source" : "/sitemap/traits",
+        "destination" : "https://firebasestorage.googleapis.com/v0/b/ffxivteamcraft.appspot.com/o/sitemaps%2Fsitemap-trait.xml?alt=media&token=cabaef56-a1e7-4997-8f01-e7e3fb895c76",
+        "type" : 301
       }
     ],
     "rewrites": [

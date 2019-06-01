@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserService } from '../database/user.service';
-import { firebase } from '@firebase/app';
+import { auth } from 'firebase/app';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -29,7 +29,7 @@ export class OauthService {
         this.http.get(authorizationUrl)
           .pipe(
             switchMap((res: { access_token: string }) => {
-              return from(this.af.auth.signInWithCredential(<any>firebase.auth.GoogleAuthProvider.credential(null, res.access_token)));
+              return from(this.af.auth.signInWithCredential(<any>auth.GoogleAuthProvider.credential(null, res.access_token)));
             })
           )
           .subscribe((res) => (<Subject<UserCredential>>signIn$).next(<any>res));
