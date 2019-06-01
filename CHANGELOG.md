@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.13"></a>
+## [5.4.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.12...v5.4.13) (2019-06-01)
+
+
+### Bug Fixes
+
+* **list:** fixed a bug with behemoth wall trophy ([cadda5f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cadda5f))
+* **map:** fixed a bug with aetheryte name tooltip not showing ([2489bb8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2489bb8))
+
+
+
 <a name="5.4.12"></a>
 ## [5.4.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.11...v5.4.12) (2019-05-31)
 

@@ -187,7 +187,7 @@ app.get('*', (req, res) => {
       ]
     });
   } else {
-    res.sendfile(join(DIST_FOLDER, APP_NAME, 'index.html'));
+    res.sendFile(join(DIST_FOLDER, APP_NAME, 'index.html'));
   }
 });
 
