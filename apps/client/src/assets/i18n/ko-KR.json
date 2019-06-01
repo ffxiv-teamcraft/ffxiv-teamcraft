@@ -76,7 +76,7 @@
     "title": "TC에 대하여",
     "Created_by": "FFXIV Teamcraft created by Miu Asakura from Louisoix, Chaos.",
     "Copyright_notice_title": "저작권 안내",
-    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft는 Square Enix와 관련이 없습니다.",
+    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
     "Thanks_title": "도움 주신 분들",
     "Data_sources": "자료 출처",
     "Patreon_supporters": "Patreon 후원자",
@@ -329,6 +329,7 @@
     "Free_aetheryte": "무료 에테라이트",
     "Favorite_aetherytes": "에테라이트 즐겨찾기",
     "Disable_cross_world_prices": "캐릭터의 서버 장터 가격만 사용",
+    "Clear_search_history": "Clear search history",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
