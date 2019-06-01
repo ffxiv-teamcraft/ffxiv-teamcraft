@@ -94,7 +94,7 @@ export class LazyDataService {
   private load(): void {
     combineLatest([
         this.http.get('./assets/data/items.json'),
-        this.http.get('./assets/data/zh-items.json'),
+        this.http.get('./assets/data/zh/zh-items.json'),
         this.http.get('./assets/data/ko/ko-items.json'),
         this.http.get('./assets/data/ko/ko-item-ui-categories.json'),
         this.http.get('./assets/data/ko/ko-actions.json'),
