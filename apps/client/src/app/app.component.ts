@@ -426,7 +426,6 @@ export class AppComponent implements OnInit {
     if (!skipStorage) {
       localStorage.setItem('locale', lang);
     }
-    console.log('app', lang);
     this.translate.use(lang);
     if (!fromIpc) {
       this.ipc.send('language', lang);

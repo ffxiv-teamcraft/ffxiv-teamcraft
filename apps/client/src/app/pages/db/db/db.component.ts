@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { map, takeUntil } from 'rxjs/operators';
@@ -11,7 +11,7 @@ import { isPlatformServer } from '@angular/common';
   templateUrl: './db.component.html',
   styleUrls: ['./db.component.less']
 })
-export class DbComponent extends TeamcraftComponent implements OnInit {
+export class DbComponent extends TeamcraftComponent {
 
   private lang: string;
 
@@ -23,7 +23,6 @@ export class DbComponent extends TeamcraftComponent implements OnInit {
       map(params => params.get('language')),
       takeUntil(this.onDestroy$)
     ).subscribe(lang => {
-      console.log('db', lang);
       if (this.settings.availableLocales.indexOf(lang) === -1) {
         lang = 'en';
       }
@@ -39,10 +38,6 @@ export class DbComponent extends TeamcraftComponent implements OnInit {
       this.router.navigateByUrl(this.router.url.replace(`/${this.lang}/`, `/${change.lang}/`));
       this.lang = change.lang;
     });
-  }
-
-  ngOnInit(): void {
-    console.log('db init');
   }
 
 }
