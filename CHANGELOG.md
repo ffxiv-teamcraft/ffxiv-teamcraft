@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.14"></a>
+## [5.4.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.13...v5.4.14) (2019-06-02)
+
+
+### Bug Fixes
+
+* **db:** fixed db pages for PotD and HoH ([aefdc66](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aefdc66))
+* **db:** layout fix for trade details component ([8a066da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8a066da))
+* **log-tracker:** removed duplicate gig head for fishing log tracker ([6cecee2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6cecee2))
+* **reduced-by:** removed area name as it's almost always wrong and hard to maintain properly ([35ee428](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/35ee428))
+* **seo:** fixed item names and descriptions inside link previews ([50b1b24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50b1b24))
+* **seo:** fixed urls inside sitemap files ([d19deac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d19deac))
+
+
+### Features
+
+* **db:** add zh-places data ([3e6a0ae](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e6a0ae))
+* **db:** better details for crafting actions ([09611be](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/09611be))
+* **db:** update zh-data to 4.5 ([24a0fe6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/24a0fe6))
+* **i18n:** updated zh item and place names ([77b6aea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/77b6aea))
+* **macro-translator:** added ZH translation support ([7725cb7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7725cb7))
+* **search:** added search history system to the search page (can be cleared inside settings) ([2090026](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2090026))
+
+
+
 <a name="5.4.13"></a>
 ## [5.4.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.12...v5.4.13) (2019-06-01)
 

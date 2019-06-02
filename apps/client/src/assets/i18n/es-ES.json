@@ -76,7 +76,7 @@
     "title": "Acerca de",
     "Created_by": "FFXIV Teamcraft creado por Miu Asakura de Louisoix, Chaos.",
     "Copyright_notice_title": "Aviso de derechos de autor",
-    "Copyright_notice_content": "FINAL FANTASY es una marca registrada de Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. Todos los Derechos Reservados.<br>FFXIV Teamcraft no está afiliado con Square Enix.",
+    "Copyright_notice_content": "FINAL FANTASY es una marca registrada de Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. Todos los Derechos Reservados.<br>FFXIV Teamcraft no está afiliado con Square Enix.",
     "Thanks_title": "Gracias",
     "Data_sources": "Fuentes de información",
     "Patreon_supporters": "Seguidores de Patreon",
@@ -329,6 +329,7 @@
     "Free_aetheryte": "Aetheryte gratuito",
     "Favorite_aetherytes": "Aetherytes favoritos",
     "Disable_cross_world_prices": "Sólo usar mi propio mundo para los precios del mercado",
+    "Clear_search_history": "Clear search history",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Color primario",

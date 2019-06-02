@@ -8,12 +8,19 @@
              placeholder="{{'Search_placeholder' | translate:{type: searchType$ | async} }}" #searchInput nz-input
              [ngModel]="query$.value"
              autofocus
-             (keyup)="query$.next(searchInput.value)">
+             [nzAutocomplete]="auto"
+             (keyup)="query$.next(searchInput.value)"
+             (ngModelChange)="query$.next($event)">
     </nz-input-group>
     <button nz-button ngxClipboard [cbContent]="getShareUrl()" (cbOnSuccess)="afterShareLinkCopied()" nz-tooltip
             [nzTitle]="'ITEMS.Share_url' | translate">
       <i nz-icon type="share-alt"></i>
     </button>
+    <nz-autocomplete nzBackfill #auto>
+      <nz-auto-option *ngFor="let option of autocomplete$ | async" [nzValue]="option">
+        {{ option }}
+      </nz-auto-option>
+    </nz-autocomplete>
     <ng-template #searchType>
       <nz-select [ngModel]="searchType$ | async" (ngModelChange)="searchType$.next($event)" class="search-type"
                  nzShowSearch>

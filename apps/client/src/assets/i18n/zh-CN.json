@@ -76,7 +76,7 @@
     "title": "关于",
     "Created_by": "FFXIV Teamcraft 由 Louisoix, Chaos 服务器的 Miu Asakura 创作。",
     "Copyright_notice_title": "版权声明",
-    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
+    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
     "Thanks_title": "鸣谢",
     "Data_sources": "数据来源",
     "Patreon_supporters": "Patreon 支持者",
@@ -329,6 +329,7 @@
     "Free_aetheryte": "免费传送点",
     "Favorite_aetherytes": "收藏传送点",
     "Disable_cross_world_prices": "仅使用当前服务器的市场价格",
+    "Clear_search_history": "Clear search history",
     "COLORS": {
       "Background": "Background color",
       "Primary": "主体色",
