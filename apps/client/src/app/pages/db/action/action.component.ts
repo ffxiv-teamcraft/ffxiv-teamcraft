@@ -13,7 +13,6 @@ import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { actionCdGroups } from '../../../core/data/sources/action-cd-groups';
 import { actionCombos } from '../../../core/data/sources/action-combos';
-import * as actionIcons from '../../../core/data/sources/action-icons.json';
 
 @Component({
   selector: 'app-action',

@@ -121,7 +121,7 @@
       </nz-card>
     </div>
     <nz-divider [nzText]="'DB.Instance_details' | translate" nzOrientation="left"></nz-divider>
-    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column" *ngIf="xivapiInstance.ContentFinderCondition.TerritoryType.Map">
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="mapTitle" nzBordered="false">
         <ng-template #mapTitle>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">

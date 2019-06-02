@@ -705,7 +705,8 @@ if (hasTodo('fates')) {
           de: fate.Description_de,
           fr: fate.Description_fr
         },
-        icon: fate.IconMap
+        icon: fate.IconMap,
+        level: fate.ClassJobLevel
       };
     });
   }, null, () => {
@@ -716,12 +717,12 @@ if (hasTodo('fates')) {
     first(),
     switchMap(() => {
       return combineLatest(Object.keys(fates).map(fateId => {
-        return get(`https://www.garlandtools.org/db/doc/fate/en/2/${fateId}.json`);
+        return get(`http://www.garlandtools.org/db/doc/fate/en/2/${fateId}.json`);
       }));
     })
   ).subscribe((gtFates) => {
     gtFates.forEach(gtFate => {
-      if (gtFate.fate && gtFate.fate.zoneid && gtFate.fate.coords) {
+      if (gtFate && gtFate.fate && gtFate.fate.zoneid && gtFate.fate.coords) {
         fates[gtFate.fate.id].position = {
           zoneid: gtFate.fate.zoneid,
           x: gtFate.fate.coords[0],

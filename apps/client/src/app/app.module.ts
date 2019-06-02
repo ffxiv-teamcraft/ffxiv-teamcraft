@@ -54,7 +54,8 @@ import {
   SelectOutline,
   SettingOutline,
   ShareAltOutline,
-  SolutionOutline
+  SolutionOutline,
+  PlusOutline
 } from '@ant-design/icons-angular/icons';
 import { UniversalInterceptor } from './universal-interceptor';
 import { DirtyModule } from './core/dirty/dirty.module';
@@ -92,7 +93,8 @@ const icons: IconDefinition[] = [
   FilterOutline,
   SelectOutline,
   InfoOutline,
-  ArrowRightOutline
+  ArrowRightOutline,
+  PlusOutline
 ];
 
 registerLocaleData(en);
