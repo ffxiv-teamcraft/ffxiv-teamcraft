@@ -329,6 +329,7 @@
     "Free_aetheryte": "免费传送点",
     "Favorite_aetherytes": "收藏传送点",
     "Disable_cross_world_prices": "仅使用当前服务器的市场价格",
+    "Clear_search_history": "Clear search history",
     "COLORS": {
       "Background": "Background color",
       "Primary": "主体色",
