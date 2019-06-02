@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader } from '@ngx-translate/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { shareReplay } from 'rxjs/operators';
 import { PlatformService } from './core/tools/platform.service';
 import { isPlatformServer } from '@angular/common';
+import { environment } from '../environments/environment';
 
 export function getFilename(lang: string): string {
   switch (lang) {
@@ -38,7 +39,11 @@ export class TranslationsLoader implements TranslateLoader {
   }
 
   public getTranslation(lang: string): Observable<any> {
-    return this.http.get(`./assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
+    if (isPlatformServer(this.platform)) {
+      return this.http.get(`${environment.ssrHost}/assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
+    } else {
+      return this.http.get(`./assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
+    }
   }
 }
 
