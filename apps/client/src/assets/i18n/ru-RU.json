@@ -417,7 +417,7 @@
     "History": "История",
     "Items_count": "{{amount}} предметов",
     "Show_craftable_amount": "Показать количество, которое можно скрафтить",
-    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
+    "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
     "Quick_layout_swap": "Quick layout swap",
     "INVENTORY": {
       "Show_final_items": "Show final items",
@@ -427,7 +427,7 @@
       "Title": "Список завершен",
       "Content": "Этот лист завершен, что вы хотите с ним сделать?",
       "Delete": "Удалить список",
-      "Clear": "Empty the list",
+      "Clear": "Очистить списокписок",
       "Reset": "Обновить список",
       "Nothing": "Ничего"
     },
@@ -479,7 +479,7 @@
       "Buttons": "Кнопки",
       "Menu": "Меню",
       "Edit_row_buttons_display": "Редактировать отображение кнопок строки",
-      "Reorder_panels": "Reorder panels",
+      "Reorder_panels": "Изменить порядок панелей",
       "ITEMS": {
         "COMMENTS": "Комментарии",
         "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
@@ -491,7 +491,7 @@
         "ADD_TO_ANOTHER_LIST": "Добавить в другой список",
         "REQUIREMENTS": "Требования",
         "REMOVE_ITEM": "Удалить предмет из списка",
-        "ADD_TAG": "Add tag to item",
+        "ADD_TAG": "Добавить тег к предмету",
         "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
       }
     },
@@ -572,7 +572,7 @@
   "NAVIGATION": {
     "Title": "Оптимизировать навигационный маршрут",
     "Steps": "Шаги",
-    "Loading_path": "Loading optimized path (can take several seconds)",
+    "Loading_path": "Загрузка оптимизированного пути (может занять несколько секунд)",
     "STEP": {
       "Gathering": "Собрать {{amount}}",
       "Hunting": "Получить {{amount}} с монстров",
@@ -587,12 +587,12 @@
     "Ephemeral_node": "Эфемерная нода, можно респаунить",
     "Intro": "Место сбора позволяет легко найти собираемый предмет и увидеть подробности о нём, где его найти и создать уведомление для нужной ноды. Просто введите название в поле выше и оно найдёт то, что вы ищете!",
     "Hidden_item": "Скрытый",
-    "Fish_eyes": "Requires fish eyes",
-    "Snagging": "Requires snagging",
+    "Fish_eyes": "Требуется \"fish eyes\"",
+    "Snagging": "Требуется \"snagging\"",
     "Predators": "Fish these fish before",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
-    "Spawned_for": "Will despawn in {{timer}}",
-    "Will_spawn_in": "Will spawn in {{timer}}",
+    "Fish_eyes_duration": "Для того, чтобы поймать рыбу, на \"fish eyes\" должно оставаться столько секунд. Нажмите, чтобы изменить формат.",
+    "Spawned_for": "Деспавнится через {{timer}}",
+    "Will_spawn_in": "Заспавнится через {{timer}}",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
       "Normal": "Normal Gig Head",
@@ -729,7 +729,7 @@
       "TAGS": {
         "SPECIALIST": "Специалист",
         "NOT_SPECIALIST": "Не специалист",
-        "TEALESS": "Tealess",
+        "TEALESS": "Без чая",
         "FOODLESS": "Без еды",
         "MAKERS_MARK": "Maker's Mark",
         "MUSCLE_MEMORY": "Muscle Memory"
@@ -754,10 +754,10 @@
         "Created_by": "Создано {{name}}",
         "Copy_folder": "Копировать эту папку её содержимое на ваш аккаунт",
         "Folder_copied": "Папка скопирована на ваш аккаунт",
-        "Your_folders": "Your folders",
+        "Your_folders": "Ваши папки",
         "Favorite_folders": "Избранные папки",
         "Add_rotations": "Добавить ротацию",
-        "Open": "Open folder"
+        "Open": "Открыть папку"
       }
     },
     "CATEGORY": {
@@ -920,7 +920,7 @@
     "History": "История",
     "Purchase_date": "Дата",
     "More_on_mogboard": "Подробнее на mogboard'е",
-    "Server": "Server"
+    "Server": "Сервер"
   },
   "COMMENTS": {
     "Title": "Комментарии"
@@ -981,7 +981,7 @@
       "Dyes": "Краски",
       "Other_master_recipes": "Other Master Recipes",
       "Deliveries": "Deliveries",
-      "Quests": "Quests"
+      "Quests": "Квесты"
     }
   },
   "LOADING_SCREEN": {
@@ -1065,18 +1065,18 @@
     "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
   },
   "GC_SUPPLY": {
-    "Title": "Grand Company Supplies",
-    "Search": "Search",
-    "Generate_list": "Create a quick list",
+    "Title": "Поставки Grand Company",
+    "Search": "Поиск",
+    "Generate_list": "Создать быстрый список",
     "Intro": "Input your levels and click search to get started",
     "Loading_message": "Loading possible deliveries, this can take up to a minute"
   },
   "DESYNTH": {
     "Title": "Desynth guide",
-    "Job": "Job",
-    "Level": "Level",
+    "Job": "Профессия",
+    "Level": "Уровень",
     "Intro": "Select a job and input a level to find best items to level up your desynth",
-    "Loading_message": "Loading...",
+    "Loading_message": "Загрузка...",
     "TAGS": {
       "Higher_chances": "Higher chances",
       "Lower_exp": "Lower exp",
@@ -1086,7 +1086,7 @@
       "Higher_exp": "Higher exp",
       "Very_common": "Very common",
       "Common": "Common",
-      "Rare": "Rare"
+      "Rare": "Редкий"
     }
   },
   "SUPPORT_US": {
@@ -1106,22 +1106,22 @@
     }
   },
   "DB": {
-    "How_to_obtain": "How to obtain",
-    "Used_for": "Used for",
+    "How_to_obtain": "Как получить",
+    "Used_for": "Используется для",
     "Used_for_nothing": "Used for nothing",
-    "Crystal_used_for_everything": "Too many recipes (~ 1/6th of the ingame recipes)",
-    "Crafts": "Crafts",
-    "Recipes": "Recipes",
+    "Crystal_used_for_everything": "Слишком много рецептов (~ 1/6 от всех рецептов в игре)",
+    "Crafts": "Крафты",
+    "Recipes": "Рецепты",
     "No_known_way_to_obtain": "Couldn't find any ways to obtain this item",
-    "Gathering": "Gathering",
-    "Tradeable": "Tradeable",
+    "Gathering": "Собирательство",
+    "Tradeable": "Можно передавать",
     "Unique": "Unique",
     "Dyeable": "Dyeable",
     "Materia_sockets": "Materia slots",
     "Advanced_melding": "Advanced melding",
     "Repair_job": "Repair job",
     "Class_job": "Class/Job",
-    "Delay": "Delay",
+    "Delay": "Задержка",
     "Auto": "Auto",
     "Salvage_level": "Optimal Desynth lvl",
     "Sells_for": "Sell price",
@@ -1278,27 +1278,27 @@
   "SEARCH_TYPES": {
     "Item": "Item",
     "Recipe": "Recipe",
-    "Instance": "Instance",
-    "Quest": "Quest",
+    "Instance": "Инстанс",
+    "Quest": "Квест",
     "NPC": "NPC",
-    "Leve": "Levequest",
+    "Leve": "Ливквест",
     "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
-    "Monster": "Monster",
+    "Monster": "Монстр",
     "Lore": "Lore",
     "Fate": "Fate",
-    "Map": "Map",
-    "Action": "Action",
-    "Status": "Status",
+    "Map": "Карта",
+    "Action": "Действие",
+    "Status": "Статус",
     "Trait": "Trait"
   },
   "SEARCH_FILTERS": {
-    "Level": "Level",
+    "Level": "Уровень",
     "Leve_job": "Leve job",
-    "Job": "Job",
-    "Leve_level": "Required level"
+    "Job": "Профессия",
+    "Leve_level": "Требуемый уровень"
   },
   "TIPS": {
-    "Title": "Tip",
+    "Title": "Совет",
     "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
     "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
     "Desynth": "You can find ideal items to level up desynth in desynth page.",
