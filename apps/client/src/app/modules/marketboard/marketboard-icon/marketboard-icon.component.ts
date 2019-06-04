@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService, NzSizeLDSType } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { MarketboardPopupComponent } from '../marketboard-popup/marketboard-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -21,7 +21,10 @@ export class MarketboardIconComponent {
   @Input()
   showHistory = false;
 
-  disabled$ = combineLatest(this.authFacade.loggedIn$, this.authFacade.mainCharacter$).pipe(
+  @Input()
+  size: NzSizeLDSType = 'small';
+
+  disabled$ = combineLatest([this.authFacade.loggedIn$, this.authFacade.mainCharacter$]).pipe(
     map(([loggedIn, character]) => !loggedIn || character.ID < 0)
   );
 

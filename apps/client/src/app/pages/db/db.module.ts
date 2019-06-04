@@ -32,6 +32,7 @@ import { ActionComponent } from './action/action.component';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
 import { ModelViewerComponent } from './item/model-viewer/model-viewer.component';
+import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 
 const routes: Routes = [
 
@@ -194,6 +195,7 @@ const routes: Routes = [
     ListModule,
     RotationsModule,
     ItemDetailsPopupsModule,
+    MarketboardModule,
 
     NgZorroAntdModule
   ]
