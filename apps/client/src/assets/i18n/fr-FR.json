@@ -1289,7 +1289,8 @@
     "Map": "Carte",
     "Action": "Action",
     "Status": "État ",
-    "Trait": "Trait"
+    "Trait": "Trait",
+    "Any": "Any"
   },
   "SEARCH_FILTERS": {
     "Level": "Niveau",
