@@ -19,6 +19,8 @@ export class TeamcraftUser extends DataModel {
 
   admin = false;
 
+  moderator = false;
+
   patron = false;
 
   defaultConsumables: DefaultConsumables;

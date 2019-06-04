@@ -33,18 +33,18 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
       );
   }
 
-  public get(uid: string): Observable<TeamcraftUser> {
+  public get(uid: string, external = false): Observable<TeamcraftUser> {
     return super.get(uid).pipe(
       switchMap(user => {
         if (user === null) {
           return of(new TeamcraftUser());
         }
-        if (user.lodestoneIds.length === 0 && (
+        if (!external && (user.lodestoneIds.length === 0 && (
           user.gatheringLogProgression.length > 0
           || user.logProgression.length > 0
           || user.currentFcId
           || user.contacts.length > 0
-        )) {
+        ))) {
           throw new Error('Network error, logging the user out to avoid data loss');
         }
         user.createdAt = new Date(user.createdAt);
