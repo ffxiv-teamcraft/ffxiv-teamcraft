@@ -76,7 +76,7 @@
     "title": "O",
     "Created_by": "FFXIV Teamcraft stvoren je od strane Miu Asakure iz Louisoixa, Chaos.",
     "Copyright_notice_title": "Obavijest o autorskim pravima",
-    "Copyright_notice_content": "FINAL FANTASY je registrirani zaštitni znak tvrtke Square Enix Holdings Co., Ltd<br>konačni FANTASY XIV © 2010-2019 SQUARE ENIX CO., LTD. Sva prava pridržana.<br>FFXIV Teamcraft nisu povezane s Square Enixom.",
+    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
     "Thanks_title": "Hvala",
     "Data_sources": "Izvori podataka",
     "Patreon_supporters": "Patreon podržači",
@@ -1289,7 +1289,8 @@
     "Map": "Map",
     "Action": "Action",
     "Status": "Status",
-    "Trait": "Trait"
+    "Trait": "Trait",
+    "Any": "Any"
   },
   "SEARCH_FILTERS": {
     "Level": "Level",
