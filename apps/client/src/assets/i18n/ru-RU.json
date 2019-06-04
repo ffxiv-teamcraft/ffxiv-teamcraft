@@ -1289,7 +1289,8 @@
     "Map": "Карта",
     "Action": "Действие",
     "Status": "Статус",
-    "Trait": "Trait"
+    "Trait": "Trait",
+    "Any": "Any"
   },
   "SEARCH_FILTERS": {
     "Level": "Уровень",
