@@ -95,7 +95,7 @@ export class LayoutOrderService {
       return 0;
     }
     if (row.gatheredBy !== undefined) {
-      const jobName = LayoutOrderService.JOBS.find(job => row.gatheredBy.icon.indexOf(job) > -1);
+      const jobName = ['miner', 'miner', 'botanist', 'botanist', 'fisher'][row.gatheredBy.type];
       if (jobName !== undefined) {
         return LayoutOrderService.JOBS.indexOf(jobName);
       }
@@ -105,7 +105,7 @@ export class LayoutOrderService {
   }
 
   private getLevel(row: ListRow): number {
-    if (row.craftedBy !== undefined) {
+    if (row.craftedBy !== undefined && row.craftedBy.length > 0) {
       // Returns the lowest level available for the craft.
       return row.craftedBy.map(craft => craft.level).sort((a, b) => a - b)[0];
     }
