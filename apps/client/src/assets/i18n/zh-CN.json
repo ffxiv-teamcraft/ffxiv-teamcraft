@@ -1289,7 +1289,8 @@
     "Map": "地图",
     "Action": "Action",
     "Status": "Status",
-    "Trait": "Trait"
+    "Trait": "Trait",
+    "Any": "Any"
   },
   "SEARCH_FILTERS": {
     "Level": "Level",
