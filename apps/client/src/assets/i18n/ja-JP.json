@@ -1289,7 +1289,8 @@
     "Map": "地図",
     "Action": "アクション",
     "Status": "ステータス",
-    "Trait": "特性"
+    "Trait": "特性",
+    "Any": "Any"
   },
   "SEARCH_FILTERS": {
     "Level": "レベル",
