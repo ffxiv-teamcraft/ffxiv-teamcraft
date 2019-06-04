@@ -1289,7 +1289,8 @@
     "Map": "맵",
     "Action": "기술",
     "Status": "상태",
-    "Trait": "특성"
+    "Trait": "특성",
+    "Any": "Any"
   },
   "SEARCH_FILTERS": {
     "Level": "레벨",
