@@ -1305,8 +1305,8 @@
     "Desynth": "Puede encontrar elementos ideales para subir desíntesis de nivel en la página desíntesis.",
     "DB": "Teamcraft incluye una base de datos, puede hacer click en el ícono \"i\" en cualquier lugar de la página para abrir la página de base de datos para el elemento próximo.",
     "3D_model": "Puede previsualizar modelos 3D de objetos dentro de la base de datos.",
-    "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
-    "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
-    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+    "Levequests": "Puede preparar listas de leve y previsualizar la experiencia recibida dentro de la página de misiones leve.",
+    "Log_tracker": "Puede dar seguimiento a la progresión de su registro (recolección, fabricación, pesca) dentro de la página de seguimiento de registro.",
+    "Desktop_app_overlay": "Puede tener una superposición para alarmas si está utilizando la aplicación de escritorio (eenlace de descarga en la barra lateral)."
   }
 }
