@@ -1,63 +1,72 @@
-<ng-container *ngIf="comments$ | async as comments">
-  <app-fullpage-message *ngIf="comments.length === 0" height="auto" fontSize="1.5rem">
-    {{'DB.COMMENTS.No_comments' | translate}}
-  </app-fullpage-message>
-  <ng-template #commentTemplateRef let-comment="comment">
-    <nz-comment [nzAuthor]="comment.author | characterName | async" [nzDatetime]="comment.date | date">
-      <nz-avatar nz-comment-avatar [nzSrc]="comment.author | characterAvatar | async"></nz-avatar>
-      <nz-comment-content>
-        <p *ngIf="!comment.deleted; else deletedComment">{{ comment.message }}</p>
-        <ng-template #deletedComment>
-          <p><i>{{'DB.COMMENTS.Deleted_comment' | translate}}</i></p>
-        </ng-template>
-      </nz-comment-content>
-      <nz-comment-action>
-        <i
-          nz-tooltip
-          [nzTitle]="'DB.COMMENTS.Like' | translate"
-          nz-icon
-          type="like"
-          [nzTheme]="comment.likes.length > 0 ? 'twotone' : 'outline'"
-          (click)="like(comment)"
-        ></i>
-        <span class="count like">{{ comment.likes.length }}</span>
-      </nz-comment-action>
-      <nz-comment-action>
-        <i
-          nz-tooltip
-          [nzTitle]="'DB.COMMENTS.Dislike' | translate"
-          nz-icon
-          type="dislike"
-          [nzTheme]="comment.dislikes.length > 0 ? 'twotone' : 'outline'"
-          (click)="dislike(comment)"
-        ></i>
-        <span class="count dislike">{{ comment.dislikes.length }}</span>
-      </nz-comment-action>
-      <nz-comment-action>{{'DB.COMMENTS.Reply' | translate}}</nz-comment-action>
-      <ng-container *ngIf="comment.replies && comment.replies.length">
-        <ng-template ngFor let-reply [ngForOf]="comment.replies">
-          <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ comment: reply }">
+<ng-container *ngIf="userId$ | async as userId">
+  <ng-container *ngIf="comments$ | async as comments">
+    <app-fullpage-message *ngIf="comments.length === 0" height="auto" fontSize="1.5rem">
+      {{'DB.COMMENTS.No_comments' | translate}}
+    </app-fullpage-message>
+    <ng-template #commentTemplateRef let-comment="comment">
+      <nz-comment [nzAuthor]="comment.author | characterName | async" [nzDatetime]="comment.date | date">
+        <nz-avatar nz-comment-avatar [nzSrc]="comment.author | characterAvatar | async"></nz-avatar>
+        <nz-comment-content>
+          <p *ngIf="!comment.deleted; else deletedComment">{{ comment.message }}</p>
+          <ng-template #deletedComment>
+            <p><i>{{'DB.COMMENTS.Deleted_comment' | translate}}</i></p>
           </ng-template>
-        </ng-template>
-      </ng-container>
-    </nz-comment>
-  </ng-template>
-  <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ comment: comment }"
-               *ngFor="let comment of comments"></ng-template>
-  <ng-container *ngIf="userId$ | async as userId">
-    <nz-comment *ngIf="loggedIn$ | async">
-      <nz-avatar nz-comment-avatar [nzSrc]="userId | characterAvatar | async"></nz-avatar>
-      <nz-comment-content>
-        <nz-form-item>
-          <textarea [(ngModel)]="newCommentContent" nz-input rows="4"></textarea>
-        </nz-form-item>
-        <nz-form-item>
-          <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!newCommentContent"
-                  (click)="postComment(userId)">
-            {{'DB.COMMENTS.Post' | translate}}
-          </button>
-        </nz-form-item>
-      </nz-comment-content>
-    </nz-comment>
+        </nz-comment-content>
+        <nz-comment-action>
+          <i
+            nz-tooltip
+            [nzTitle]="'DB.COMMENTS.Like' | translate"
+            nz-icon
+            type="like"
+            [nzTheme]="comment.likes.length > 0 ? 'twotone' : 'outline'"
+            (click)="like(comment)"
+          ></i>
+          <span class="count like">{{ comment.likes.length }}</span>
+        </nz-comment-action>
+        <nz-comment-action>
+          <i
+            nz-tooltip
+            [nzTitle]="'DB.COMMENTS.Dislike' | translate"
+            nz-icon
+            type="dislike"
+            [nzTheme]="comment.dislikes.length > 0 ? 'twotone' : 'outline'"
+            (click)="dislike(comment)"
+          ></i>
+          <span class="count dislike">{{ comment.dislikes.length }}</span>
+        </nz-comment-action>
+        <nz-comment-action>{{'DB.COMMENTS.Reply' | translate}}</nz-comment-action>
+        <ng-container *ngIf="comment.replies && comment.replies.length">
+          <ng-template ngFor let-reply [ngForOf]="comment.replies">
+            <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ comment: reply }">
+            </ng-template>
+          </ng-template>
+        </ng-container>
+      </nz-comment>
+    </ng-template>
+    <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ comment: comment }"
+                 *ngFor="let comment of comments"></ng-template>
+    <ng-template #editor let-parentComment>
+      <nz-comment *ngIf="loggedIn$ | async">
+        <nz-avatar nz-comment-avatar [nzSrc]="userId | characterAvatar | async"></nz-avatar>
+        <nz-comment-content>
+          <nz-form-item>
+            <textarea [(ngModel)]="newCommentContent" nz-input rows="4"></textarea>
+          </nz-form-item>
+          <nz-form-item>
+            <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!newCommentContent"
+                    (click)="postComment(userId, parentComment)">
+              {{'DB.COMMENTS.Post' | translate}}
+            </button>
+          </nz-form-item>
+        </nz-comment-content>
+      </nz-comment>
+    </ng-template>
+    <button nz-button nzBlock (click)="addRootComment = true" *ngIf="!addRootComment">
+      <i nz-icon type="plus"></i>
+      {{'DB.COMMENTS.Add_comment' | translate}}
+    </button>
+    <ng-container *ngIf="addRootComment">
+      <ng-container *ngTemplateOutlet="editor"></ng-container>
+    </ng-container>
   </ng-container>
 </ng-container>

@@ -1,5 +1,39 @@
 :host {
   margin-bottom: 0 !important;
+
+  ::ng-deep {
+    .ant-comment-content {
+      position: relative;
+      padding: 10px;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, .4);
+    }
+
+    .ant-comment-content:after, .ant-comment-content:before {
+      right: 100%;
+      top: 9px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .ant-comment-content:after {
+      border-color: rgba(136, 183, 213, 0);
+      border-right-color: rgba(0, 0, 0, .4);
+      border-width: 1px;
+      margin-top: -10px;
+    }
+
+    .ant-comment-content:before {
+      border-color: rgba(194, 225, 245, 0);
+      border-right-color: rgba(0, 0, 0, .4);
+      border-width: 7px;
+      margin-top: -2px;
+    }
+  }
 }
 
 .count {

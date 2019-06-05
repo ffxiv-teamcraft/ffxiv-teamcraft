@@ -29,6 +29,8 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
 
   newCommentContent: string;
 
+  addRootComment = false;
+
   submitting = false;
 
   constructor(private commentsService: DbCommentsService, private authFacade: AuthFacade, private translate: TranslateService,
@@ -46,7 +48,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
       );
   }
 
-  postComment(userId: string): void {
+  postComment(userId: string, parentComment?: DbComment): void {
     this.submitting = true;
     const comment = new DbComment();
     comment.date = Date.now();
@@ -54,17 +56,21 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     comment.language = this.translate.currentLang;
     comment.message = this.newCommentContent;
     comment.resourceId = `${this.type}/${this.id}`;
+    if (parentComment) {
+      comment.parent = parentComment.$key;
+    }
     this.commentsService.add(comment).subscribe(() => {
       this.newCommentContent = '';
       this.submitting = false;
+      this.addRootComment = false;
     });
   }
 
-  like(comment: DbComment):void{
+  like(comment: DbComment): void {
     //TODO
   }
 
-  dislike(comment: DbComment):void{
+  dislike(comment: DbComment): void {
     //TODO
   }
 
