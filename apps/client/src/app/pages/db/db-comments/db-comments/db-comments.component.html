@@ -1,15 +1,16 @@
-<ng-container *ngIf="userId$ | async as userId">
+<ng-container *ngIf="user$ | async as user">
   <ng-container *ngIf="comments$ | async as comments">
     <app-fullpage-message *ngIf="comments.length === 0" height="auto" fontSize="1.5rem">
       {{'DB.COMMENTS.No_comments' | translate}}
     </app-fullpage-message>
     <ng-template #commentTemplateRef let-comment="comment">
-      <nz-comment [nzAuthor]="comment.author | characterName | async" [nzDatetime]="comment.date | date">
+      <nz-comment [nzAuthor]="comment.author | characterName | async" [nzDatetime]="comment.date | date"
+                  *ngIf="comment.$key !== editingComment?.$key; else commentEdition">
         <nz-avatar nz-comment-avatar [nzSrc]="comment.author | characterAvatar | async"></nz-avatar>
         <nz-comment-content>
           <p *ngIf="!comment.deleted; else deletedComment">{{ comment.message }}</p>
           <ng-template #deletedComment>
-            <p><i>{{'DB.COMMENTS.Deleted_comment' | translate}}</i></p>
+            <p><i class="deleted">{{'DB.COMMENTS.Deleted_comment' | translate}}</i></p>
           </ng-template>
         </nz-comment-content>
         <nz-comment-action>
@@ -19,7 +20,7 @@
             nz-icon
             type="like"
             [nzTheme]="comment.likes.length > 0 ? 'twotone' : 'outline'"
-            (click)="like(comment)"
+            (click)="like(comment, user.$key)"
           ></i>
           <span class="count like">{{ comment.likes.length }}</span>
         </nz-comment-action>
@@ -30,38 +31,82 @@
             nz-icon
             type="dislike"
             [nzTheme]="comment.dislikes.length > 0 ? 'twotone' : 'outline'"
-            (click)="dislike(comment)"
+            (click)="dislike(comment, user.$key)"
           ></i>
           <span class="count dislike">{{ comment.dislikes.length }}</span>
         </nz-comment-action>
-        <nz-comment-action>{{'DB.COMMENTS.Reply' | translate}}</nz-comment-action>
+
+        <nz-comment-action *ngIf="!comment.deleted">
+          <span (click)="replyTo(comment)">{{'DB.COMMENTS.Reply' | translate}}</span>
+        </nz-comment-action>
+
+        <nz-comment-action *ngIf="!comment.deleted && (comment.author === user.$key || user.admin || user.moderator)">
+          <span (click)="editComment(comment)">{{'Edit' | translate}}</span>
+        </nz-comment-action>
+
+        <nz-comment-action *ngIf="!comment.deleted && (comment.author === user.$key || user.admin || user.moderator)">
+          <span nz-popconfirm [nzTitle]="'Confirmation' | translate"
+                (nzOnConfirm)="deleteComment(comment)">{{'Delete' | translate}}</span>
+        </nz-comment-action>
+
+        <ng-container *ngIf="parentComment?.$key === comment?.$key">
+          <ng-container *ngTemplateOutlet="editor;context:{parentComment: comment}"></ng-container>
+        </ng-container>
+
         <ng-container *ngIf="comment.replies && comment.replies.length">
-          <ng-template ngFor let-reply [ngForOf]="comment.replies">
+          <ng-template ngFor let-reply [ngForOf]="comment.replies" [ngForTrackBy]="trackByComment">
             <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ comment: reply }">
             </ng-template>
           </ng-template>
         </ng-container>
       </nz-comment>
+
+      <ng-template #commentEdition>
+        <ng-container *ngTemplateOutlet="editor;context:{commentEdition: comment}"></ng-container>
+
+        <ng-container *ngIf="comment.replies && comment.replies.length">
+          <ng-template ngFor let-reply [ngForOf]="comment.replies" [ngForTrackBy]="trackByComment">
+            <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ comment: reply }">
+            </ng-template>
+          </ng-template>
+        </ng-container>
+      </ng-template>
     </ng-template>
     <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ comment: comment }"
                  *ngFor="let comment of comments"></ng-template>
-    <ng-template #editor let-parentComment>
+
+    <ng-template #editor let-parentComment="parentComment" let-edition="commentEdition">
       <nz-comment *ngIf="loggedIn$ | async">
-        <nz-avatar nz-comment-avatar [nzSrc]="userId | characterAvatar | async"></nz-avatar>
+        <nz-avatar nz-comment-avatar [nzSrc]="user.$key | characterAvatar | async"></nz-avatar>
         <nz-comment-content>
           <nz-form-item>
-            <textarea [(ngModel)]="newCommentContent" nz-input rows="4"></textarea>
+            <textarea *ngIf="!edition" [(ngModel)]="newCommentContent" nz-input rows="4"></textarea>
+            <textarea *ngIf="edition" [(ngModel)]="edition.message" nz-input rows="4"></textarea>
           </nz-form-item>
           <nz-form-item>
-            <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!newCommentContent"
-                    (click)="postComment(userId, parentComment)">
-              {{'DB.COMMENTS.Post' | translate}}
-            </button>
+            <div fxLayout="row" fxLayoutGap="5px" *ngIf="!edition">
+              <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!newCommentContent"
+                      (click)="postComment(user.$key, parentComment)">
+                {{'DB.COMMENTS.Post' | translate}}
+              </button>
+              <button nz-button (click)="resetEditor()">
+                {{'Cancel' | translate}}
+              </button>
+            </div>
+            <div fxLayout="row" fxLayoutGap="5px" *ngIf="edition">
+              <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!edition.message"
+                      (click)="saveCommentEdition()">
+                {{'COMMON.Save' | translate}}
+              </button>
+              <button nz-button (click)="resetEditor()">
+                {{'Cancel' | translate}}
+              </button>
+            </div>
           </nz-form-item>
         </nz-comment-content>
       </nz-comment>
     </ng-template>
-    <button nz-button nzBlock (click)="addRootComment = true" *ngIf="!addRootComment">
+    <button nz-button nzBlock (click)="addRootComment = true" *ngIf="!addRootComment && !hideRootCommentButton">
       <i nz-icon type="plus"></i>
       {{'DB.COMMENTS.Add_comment' | translate}}
     </button>

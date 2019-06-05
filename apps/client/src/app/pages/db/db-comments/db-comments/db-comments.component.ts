@@ -7,6 +7,7 @@ import { first, takeUntil, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformServer } from '@angular/common';
+import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 
 @Component({
   selector: 'app-db-comments',
@@ -23,7 +24,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
 
   comments$: Observable<DbComment[]>;
 
-  userId$: Observable<string>;
+  user$: Observable<TeamcraftUser>;
 
   loggedIn$: Observable<boolean>;
 
@@ -31,12 +32,18 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
 
   addRootComment = false;
 
+  hideRootCommentButton = false;
+
+  editingComment: DbComment;
+
+  parentComment: DbComment;
+
   submitting = false;
 
   constructor(private commentsService: DbCommentsService, private authFacade: AuthFacade, private translate: TranslateService,
               @Inject(PLATFORM_ID) private platform: Object) {
     super();
-    this.userId$ = this.authFacade.userId$;
+    this.user$ = this.authFacade.user$;
     this.loggedIn$ = this.authFacade.loggedIn$;
   }
 
@@ -60,18 +67,70 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
       comment.parent = parentComment.$key;
     }
     this.commentsService.add(comment).subscribe(() => {
-      this.newCommentContent = '';
-      this.submitting = false;
-      this.addRootComment = false;
+      this.resetEditor();
     });
   }
 
-  like(comment: DbComment): void {
-    //TODO
+  saveCommentEdition(): void {
+    this.submitting = true;
+    this.editingComment.replies = [];
+    this.saveComment(this.editingComment).subscribe(() => {
+      this.resetEditor();
+    });
   }
 
-  dislike(comment: DbComment): void {
-    //TODO
+  resetEditor(): void {
+    this.newCommentContent = '';
+    this.submitting = false;
+    this.addRootComment = false;
+    this.hideRootCommentButton = false;
+    delete this.editingComment;
+    delete this.parentComment;
+  }
+
+  editComment(comment: DbComment): void {
+    this.hideRootCommentButton = true;
+    this.editingComment = comment;
+  }
+
+  replyTo(comment: DbComment): void {
+    this.hideRootCommentButton = true;
+    this.parentComment = comment;
+  }
+
+  like(comment: DbComment, userId: string): void {
+    comment.dislikes = comment.dislikes.filter(id => id !== userId);
+    if (!comment.likes.some(id => id === userId)) {
+      comment.likes.push(userId);
+      this.saveComment(comment);
+    }
+  }
+
+  dislike(comment: DbComment, userId: string): void {
+    comment.likes = comment.likes.filter(id => id !== userId);
+    if (!comment.dislikes.some(id => id === userId)) {
+      comment.dislikes.push(userId);
+      this.saveComment(comment);
+    }
+  }
+
+  deleteComment(comment: DbComment): void {
+    if (comment.replies.length > 0) {
+      comment.deleted = true;
+      this.saveComment(comment).subscribe();
+    } else {
+      this.commentsService.remove(comment.$key).subscribe();
+    }
+  }
+
+  saveComment(comment: DbComment): Observable<void> {
+    const clone = { ...comment };
+    clone.replies = [];
+    return this.commentsService.update(clone.$key, clone);
+  }
+
+  trackByComment(index: number, comment: DbComment): string {
+    return comment.$key;
   }
 
 }

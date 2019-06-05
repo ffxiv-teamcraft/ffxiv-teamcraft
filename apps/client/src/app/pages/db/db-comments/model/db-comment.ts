@@ -9,6 +9,6 @@ export class DbComment extends DataModel {
   replies: DbComment[] = [];
   language?: string;
   deleted?: boolean;
-  likes: {user: string}[] = [];
-  dislikes: {user: string}[] = [];
+  likes: string[] = [];
+  dislikes: string[] = [];
 }

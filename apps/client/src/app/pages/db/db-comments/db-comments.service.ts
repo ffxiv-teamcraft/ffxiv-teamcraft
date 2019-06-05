@@ -5,8 +5,6 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../../core/database/pending-changes/pending-changes.service';
 import { DbComment } from './model/db-comment';
 import { Observable } from 'rxjs';
-import { Class } from '@kaiu/serializer';
-import { METADATA_FOREIGN_KEY_REGISTRY } from '../../../core/database/relational/foreign-key';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -31,8 +29,38 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
               return valueWithKey;
             });
           return this.serializer.deserialize<DbComment>(comments, [this.getClass()]);
+        }),
+        map(comments => {
+          // Map comments array to a tree with replies etc
+          return comments
+            .sort((a, b) => {
+              if (a.parent && a.parent === b.$key) {
+                return 1;
+              }
+              if (b.parent && b.parent === a.$key) {
+                return -1;
+              }
+              return a.date - b.date;
+            })
+            .reduce((tree, comment) => {
+              if (comment.parent === undefined) {
+                tree.push(comment);
+              } else {
+                this.getCommentById(tree, comment.parent).replies.push(comment);
+              }
+              return tree;
+            }, []);
         })
       );
+  }
+
+  private getCommentById(tree: DbComment[], key: string): DbComment {
+    const finding = tree.find(c => c.$key === key);
+    if (finding) {
+      return finding;
+    } else {
+      return this.getCommentById([].concat.apply([], tree.map(c => c.replies)), key);
+    }
   }
 
   protected getBaseUri(params?: any): string {
