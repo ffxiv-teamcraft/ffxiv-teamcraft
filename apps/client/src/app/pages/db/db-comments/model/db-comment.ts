@@ -11,4 +11,8 @@ export class DbComment extends DataModel {
   deleted?: boolean;
   likes: string[] = [];
   dislikes: string[] = [];
+
+  public get score(): number {
+    return this.likes.length - this.dislikes.length;
+  }
 }

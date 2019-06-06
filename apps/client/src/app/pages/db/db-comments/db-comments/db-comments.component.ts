@@ -2,8 +2,8 @@ import { Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
 import { DbCommentsService } from '../db-comments.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { DbComment } from '../model/db-comment';
-import { Observable } from 'rxjs';
-import { first, takeUntil, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
+import { first, map, takeUntil, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformServer } from '@angular/common';
@@ -51,11 +51,35 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.comments$ = this.commentsService.getComments(`${this.type}/${this.id}`)
+    const contentComments = this.commentsService.getComments(`${this.type}/${this.id}`)
       .pipe(
         takeUntil(this.onDestroy$),
         isPlatformServer(this.platform) ? first() : tap()
       );
+    const lang$ = new BehaviorSubject<string>(this.translate.currentLang);
+    this.comments$ = combineLatest([contentComments, lang$]).pipe(
+      map(([comments, lang]) => {
+        return comments.sort((a, b) => {
+          if (a.language === lang && b.language === lang) {
+            return this.compareComments(a, b);
+          }
+          if (a.language === lang) {
+            return -1;
+          }
+          if (b.language === lang) {
+            return 1;
+          }
+          return this.compareComments(a, b);
+        });
+      })
+    );
+  }
+
+  public compareComments(a: DbComment, b: DbComment): number {
+    if (a.score === b.score) {
+      return a.date - b.date;
+    }
+    return b.score - a.score;
   }
 
   getLocale(): string {
