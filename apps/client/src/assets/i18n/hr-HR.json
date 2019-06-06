@@ -56,6 +56,7 @@
   "Mute_alarms": "Isključite alarme",
   "Hide_used": "Sakrijte korištene redove",
   "Collapse_if_done": "Minimalizirajte nakon dovršetka",
+  "Collapse_by_default": "Collapse by default",
   "Retainer_ventures": "Retainerovi zadatci",
   "Requires_x_ventures": "Potrebno je {{amount}} zadataka za prikupljanje svih predmeta",
   "WORKSHOP": {
