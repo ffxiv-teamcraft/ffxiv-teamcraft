@@ -56,6 +56,7 @@
   "Mute_alarms": "アラームをミュートする",
   "Hide_used": "使用された項目を隠す",
   "Collapse_if_done": "完了しならパネルを隠す",
+  "Collapse_by_default": "Collapse by default",
   "Retainer_ventures": "リテイナーベンチャー",
   "Requires_x_ventures": "総 {{amount}} 回のリテイナーベンチャーが必要です。",
   "WORKSHOP": {
