@@ -337,7 +337,7 @@
       "Text": "Color de contenido de botones",
       "Topbar": "Color de la barra superior y lateral",
       "Sidebar_trigger": "Color de activador de barra lateral",
-      "Sidebar_trigger_hover": "Sidebar trigger hover color"
+      "Sidebar_trigger_hover": "Color de activador de barra lateral (cursor flotando encima)"
     },
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
