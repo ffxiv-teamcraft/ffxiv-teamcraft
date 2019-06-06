@@ -8,6 +8,7 @@ import { AuthFacade } from '../../../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformServer } from '@angular/common';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
+import { UserLevel } from '../../../../model/other/user-level';
 
 @Component({
   selector: 'app-db-comments',
@@ -21,6 +22,8 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
 
   @Input()
   id: number;
+
+  userLevels = UserLevel;
 
   comments$: Observable<DbComment[]>;
 
@@ -73,7 +76,6 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
 
   saveCommentEdition(): void {
     this.submitting = true;
-    this.editingComment.replies = [];
     this.saveComment(this.editingComment).subscribe(() => {
       this.resetEditor();
     });
@@ -124,9 +126,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   }
 
   saveComment(comment: DbComment): Observable<void> {
-    const clone = { ...comment };
-    clone.replies = [];
-    return this.commentsService.update(clone.$key, clone);
+    return this.commentsService.update(comment.$key, { ...comment, replies: [] });
   }
 
   trackByComment(index: number, comment: DbComment): string {

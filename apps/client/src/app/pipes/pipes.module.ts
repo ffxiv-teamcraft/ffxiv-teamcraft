@@ -44,6 +44,7 @@ import { TraitIconPipe } from './pipes/trait-icon.pipe';
 import { AetheryteNamePipe } from './pipes/aetheryte-name.pipe';
 import { CharacterAvatarPipe } from './pipes/character-avatar.pipe';
 import { DurationPipe } from './pipes/duration.pipe';
+import { UserLevelPipe } from './pipes/user-level.pipe';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { DurationPipe } from './pipes/duration.pipe';
     TraitIconPipe,
     AetheryteNamePipe,
     CharacterAvatarPipe,
-    DurationPipe
+    DurationPipe,
+    UserLevelPipe
   ],
   exports: [
     ItemNamePipe,
@@ -140,7 +142,8 @@ import { DurationPipe } from './pipes/duration.pipe';
     TraitIconPipe,
     AetheryteNamePipe,
     CharacterAvatarPipe,
-    DurationPipe
+    DurationPipe,
+    UserLevelPipe
   ]
 })
 export class PipesModule {

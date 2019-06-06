@@ -4,8 +4,17 @@
       {{'DB.COMMENTS.No_comments' | translate}}
     </app-fullpage-message>
     <ng-template #commentTemplateRef let-comment="comment">
-      <nz-comment [nzAuthor]="comment.author | characterName | async" [nzDatetime]="comment.date | date"
+      <nz-comment [nzAuthor]="authorRef" [nzDatetime]="comment.date | date"
                   *ngIf="comment.$key !== editingComment?.$key; else commentEdition">
+        <ng-template #authorRef>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <div>{{comment.author | characterName | async}}</div>
+            <div>
+              <nz-tag [nzColor]="'magenta'" *ngIf="(comment.author | userLevel | async) === userLevels.ADMIN">{{'COMMON.Admin' | translate}}</nz-tag>
+              <nz-tag [nzColor]="'volcano'" *ngIf="(comment.author | userLevel | async) === userLevels.MODERATOR">{{'COMMON.Moderator' | translate}}</nz-tag>
+            </div>
+          </div>
+        </ng-template>
         <nz-avatar nz-comment-avatar [nzSrc]="comment.author | characterAvatar | async"></nz-avatar>
         <nz-comment-content>
           <p *ngIf="!comment.deleted; else deletedComment">{{ comment.message }}</p>
