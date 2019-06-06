@@ -17,6 +17,7 @@ export class LayoutRow {
               public hideCompletedRows = false,
               public hideUsedRows = false,
               public collapseIfDone = false,
+              public collapsedByDefault = false,
               public hideZoneDuplicates = false,
               public hasTag = null,
               public tag?: string) {

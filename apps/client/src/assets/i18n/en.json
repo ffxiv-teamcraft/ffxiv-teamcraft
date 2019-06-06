@@ -56,6 +56,7 @@
   "Mute_alarms": "Mute alarms",
   "Hide_used": "Hide used rows",
   "Collapse_if_done": "Collapse if done",
+  "Collapse_by_default": "Collapse by default",
   "Retainer_ventures": "Retainer ventures",
   "Requires_x_ventures": "Requires {{amount}} ventures to get everything",
   "WORKSHOP": {
