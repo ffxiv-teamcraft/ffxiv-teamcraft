@@ -45,6 +45,8 @@ import { AetheryteNamePipe } from './pipes/aetheryte-name.pipe';
 import { CharacterAvatarPipe } from './pipes/character-avatar.pipe';
 import { DurationPipe } from './pipes/duration.pipe';
 import { UserLevelPipe } from './pipes/user-level.pipe';
+import { IsPatronPipe } from './pipes/is-patron.pipe';
+import { IsVerifiedPipe } from './pipes/is-verified.pipe';
 
 @NgModule({
   declarations: [
@@ -94,7 +96,9 @@ import { UserLevelPipe } from './pipes/user-level.pipe';
     AetheryteNamePipe,
     CharacterAvatarPipe,
     DurationPipe,
-    UserLevelPipe
+    UserLevelPipe,
+    IsPatronPipe,
+    IsVerifiedPipe
   ],
   exports: [
     ItemNamePipe,
@@ -143,7 +147,9 @@ import { UserLevelPipe } from './pipes/user-level.pipe';
     AetheryteNamePipe,
     CharacterAvatarPipe,
     DurationPipe,
-    UserLevelPipe
+    UserLevelPipe,
+    IsPatronPipe,
+    IsVerifiedPipe
   ]
 })
 export class PipesModule {

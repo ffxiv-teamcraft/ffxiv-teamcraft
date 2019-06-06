@@ -8,18 +8,24 @@
                   *ngIf="comment.$key !== editingComment?.$key; else commentEdition">
         <ng-template #authorRef>
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-            <div>{{comment.author | characterName | async}}</div>
+            <div [class.patron]="comment.author | isPatron | async" nz-tooltip
+                 [nzTitle]="(comment.author | isPatron | async)?('PROFILE.Patreon_supporter' | translate):null">
+              {{comment.author | characterName | async}}
+            </div>
             <div *ngIf="comment.author | userLevel | async as userLvl">
-              <nz-tag [nzColor]="'magenta'" *ngIf="userLvl === userLevels.ADMIN">
-                {{'COMMON.Admin' | translate}}
-              </nz-tag>
-              <nz-tag [nzColor]="'volcano'" *ngIf="userLvl === userLevels.MODERATOR">
-                {{'COMMON.Moderator' | translate}}
-              </nz-tag>
+              <i *ngIf="userLvl === userLevels.ADMIN" nz-icon type="crown" nz-tooltip
+                 [nzTitle]="'COMMON.Admin' | translate"></i>
+              <i *ngIf="userLvl === userLevels.MODERATOR" nz-icon type="crown" nz-tooltip
+                 [nzTitle]="'COMMON.Moderator' | translate"></i>
             </div>
           </div>
         </ng-template>
-        <nz-avatar nz-comment-avatar [nzSrc]="comment.author | characterAvatar | async"></nz-avatar>
+        <nz-avatar nz-comment-avatar
+                   nzText="xivdb"
+                   [nzSrc]="comment.author | characterAvatar | async"
+                   nz-tooltip
+                   [nzTitle]="(comment.author | isVerified | async)?null:''"
+                   [class.not-verified]="!(comment.author | isVerified | async)"></nz-avatar>
         <nz-comment-content>
           <p *ngIf="!comment.deleted; else deletedComment">{{ comment.message }}</p>
           <ng-template #deletedComment>
@@ -28,8 +34,6 @@
         </nz-comment-content>
         <nz-comment-action>
           <i
-            nz-tooltip
-            [nzTitle]="'DB.COMMENTS.Like' | translate"
             nz-icon
             type="like"
             [nzTheme]="comment.likes.length > 0 ? 'twotone' : 'outline'"
@@ -39,8 +43,6 @@
         </nz-comment-action>
         <nz-comment-action>
           <i
-            nz-tooltip
-            [nzTitle]="'DB.COMMENTS.Dislike' | translate"
             nz-icon
             type="dislike"
             [nzTheme]="comment.dislikes.length > 0 ? 'twotone' : 'outline'"
@@ -49,7 +51,7 @@
           <span class="count dislike">{{ comment.dislikes.length }}</span>
         </nz-comment-action>
 
-        <nz-comment-action *ngIf="!comment.deleted">
+        <nz-comment-action *ngIf="!comment.deleted && user.defaultLodestoneId">
           <span (click)="replyTo(comment)">{{'DB.COMMENTS.Reply' | translate}}</span>
         </nz-comment-action>
 
@@ -119,10 +121,22 @@
         </nz-comment-content>
       </nz-comment>
     </ng-template>
-    <button nz-button nzBlock (click)="addRootComment = true" *ngIf="!addRootComment && !hideRootCommentButton">
-      <i nz-icon type="plus"></i>
-      {{'DB.COMMENTS.Add_comment' | translate}}
-    </button>
+    <div fxLayout="column" fxLayoutGap="5px">
+      <ng-container *ngIf="hasMoreComments$ | async as moreComments">
+        <button nz-button nzBlock *ngIf="!(showMoreComments$ | async) && moreComments > 0"
+                (click)="showMoreComments$.next(true)">
+          {{'DB.COMMENTS.Show_more' | translate:{ amount: moreComments } }}
+        </button>
+        <button nz-button nzBlock *ngIf="showMoreComments$ | async" (click)="showMoreComments$.next(false)">
+          {{'DB.COMMENTS.Show_less' | translate }}
+        </button>
+      </ng-container>
+      <button nz-button nzBlock (click)="addRootComment = true"
+              *ngIf="!addRootComment && !hideRootCommentButton && user.defaultLodestoneId">
+        <i nz-icon type="plus"></i>
+        {{'DB.COMMENTS.Add_comment' | translate}}
+      </button>
+    </div>
     <ng-container *ngIf="addRootComment">
       <ng-container *ngTemplateOutlet="editor"></ng-container>
     </ng-container>

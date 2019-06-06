@@ -2,27 +2,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { UserService } from '../../core/database/user.service';
-import { UserLevel } from '../../model/other/user-level';
 
 @Pipe({
-  name: 'userLevel',
-  pure: true
+  name: 'isPatron'
 })
-export class UserLevelPipe implements PipeTransform {
+export class IsPatronPipe implements PipeTransform {
 
   constructor(private userService: UserService) {
   }
 
-  transform(userId: string): Observable<UserLevel> {
+  transform(userId: string): Observable<boolean> {
     return this.userService.get(userId).pipe(
       map(user => {
-        if (user.moderator) {
-          return UserLevel.MODERATOR;
-        }
-        if (user.admin) {
-          return UserLevel.ADMIN;
-        }
-        return UserLevel.USER;
+        return user.patron;
       }),
       shareReplay(1)
     );

@@ -2,8 +2,8 @@ import { Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
 import { DbCommentsService } from '../db-comments.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { DbComment } from '../model/db-comment';
-import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
-import { first, map, takeUntil, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformServer } from '@angular/common';
@@ -43,6 +43,10 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
 
   submitting = false;
 
+  showMoreComments$ = new BehaviorSubject<boolean>(false);
+
+  hasMoreComments$: Observable<number>;
+
   constructor(private commentsService: DbCommentsService, private authFacade: AuthFacade, public translate: TranslateService,
               @Inject(PLATFORM_ID) private platform: Object) {
     super();
@@ -56,8 +60,16 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
         takeUntil(this.onDestroy$),
         isPlatformServer(this.platform) ? first() : tap()
       );
+
     const lang$ = new BehaviorSubject<string>(this.translate.currentLang);
-    this.comments$ = combineLatest([contentComments, lang$]).pipe(
+
+    this.translate.onLangChange.pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe((change) => {
+      lang$.next(change.lang);
+    });
+
+    const comments$ = combineLatest([contentComments, lang$]).pipe(
       map(([comments, lang]) => {
         return comments.sort((a, b) => {
           if (a.language === lang && b.language === lang) {
@@ -71,11 +83,29 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
           }
           return this.compareComments(a, b);
         });
+      }),
+      shareReplay(1)
+    );
+
+    this.comments$ = combineLatest([comments$, this.showMoreComments$]).pipe(
+      map(([comments, showMore]) => {
+        if (showMore) {
+          return comments;
+        }
+        return comments.slice(0, 3);
       })
     );
+
+    this.hasMoreComments$ = comments$.pipe(map(comments => Math.max(0, comments.length - 3)));
   }
 
   public compareComments(a: DbComment, b: DbComment): number {
+    if (a.deleted) {
+      return 1;
+    }
+    if (b.deleted) {
+      return -1;
+    }
     if (a.score === b.score) {
       return a.date - b.date;
     }
