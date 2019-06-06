@@ -56,6 +56,7 @@
   "Mute_alarms": "Mutar alarmes",
   "Hide_used": "Esconder as linhas usadas",
   "Collapse_if_done": "Fechar quando acabar",
+  "Collapse_by_default": "Collapse by default",
   "Retainer_ventures": "Empreendimentos de empregado",
   "Requires_x_ventures": "Requer {{amount}} empreendimentos para adequirir tudo",
   "WORKSHOP": {
