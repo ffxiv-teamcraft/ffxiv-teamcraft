@@ -336,7 +336,7 @@
       "Highlight": "Color de resaltado",
       "Text": "Color de contenido de botones",
       "Topbar": "Color de la barra superior y lateral",
-      "Sidebar_trigger": "Sidebar trigger color",
+      "Sidebar_trigger": "Color de activador de barra lateral",
       "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
@@ -1307,6 +1307,6 @@
     "3D_model": "Puede previsualizar modelos 3D de artículos en de la base de datos.",
     "Levequests": "Puede preparar listas de leve y previsualizar la experiencia recibida dentro de la página de misiones leve.",
     "Log_tracker": "Puede dar seguimiento a la progresión de su registro (recolección, fabricación, pesca) dentro de la página de seguimiento de registro.",
-    "Desktop_app_overlay": "Puede tener una superposición para alarmas si está utilizando la aplicación de escritorio (eenlace de descarga en la barra lateral)."
+    "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral)."
   }
 }
