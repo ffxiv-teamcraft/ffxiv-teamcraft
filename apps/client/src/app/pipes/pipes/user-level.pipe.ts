@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { CharacterService } from '../../core/api/character.service';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { distinctUntilKeyChanged, map, shareReplay, tap } from 'rxjs/operators';
 import { UserService } from '../../core/database/user.service';
 import { UserLevel } from '../../model/other/user-level';
 
 @Pipe({
-  name: 'userLevel'
+  name: 'userLevel',
+  pure: true
 })
 export class UserLevelPipe implements PipeTransform {
 
@@ -23,7 +24,8 @@ export class UserLevelPipe implements PipeTransform {
           return UserLevel.ADMIN;
         }
         return UserLevel.USER;
-      })
+      }),
+      shareReplay(1)
     );
   }
 

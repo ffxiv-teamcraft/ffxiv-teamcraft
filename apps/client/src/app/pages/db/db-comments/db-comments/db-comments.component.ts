@@ -43,7 +43,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
 
   submitting = false;
 
-  constructor(private commentsService: DbCommentsService, private authFacade: AuthFacade, private translate: TranslateService,
+  constructor(private commentsService: DbCommentsService, private authFacade: AuthFacade, public translate: TranslateService,
               @Inject(PLATFORM_ID) private platform: Object) {
     super();
     this.user$ = this.authFacade.user$;
@@ -56,6 +56,10 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
         takeUntil(this.onDestroy$),
         isPlatformServer(this.platform) ? first() : tap()
       );
+  }
+
+  getLocale(): string {
+    return this.translate.currentLang;
   }
 
   postComment(userId: string, parentComment?: DbComment): void {

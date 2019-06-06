@@ -4,14 +4,18 @@
       {{'DB.COMMENTS.No_comments' | translate}}
     </app-fullpage-message>
     <ng-template #commentTemplateRef let-comment="comment">
-      <nz-comment [nzAuthor]="authorRef" [nzDatetime]="comment.date | date"
+      <nz-comment [nzAuthor]="authorRef" [nzDatetime]="comment.date | date:'short':undefined:getLocale()"
                   *ngIf="comment.$key !== editingComment?.$key; else commentEdition">
         <ng-template #authorRef>
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
             <div>{{comment.author | characterName | async}}</div>
-            <div>
-              <nz-tag [nzColor]="'magenta'" *ngIf="(comment.author | userLevel | async) === userLevels.ADMIN">{{'COMMON.Admin' | translate}}</nz-tag>
-              <nz-tag [nzColor]="'volcano'" *ngIf="(comment.author | userLevel | async) === userLevels.MODERATOR">{{'COMMON.Moderator' | translate}}</nz-tag>
+            <div *ngIf="comment.author | userLevel | async as userLvl">
+              <nz-tag [nzColor]="'magenta'" *ngIf="userLvl === userLevels.ADMIN">
+                {{'COMMON.Admin' | translate}}
+              </nz-tag>
+              <nz-tag [nzColor]="'volcano'" *ngIf="userLvl === userLevels.MODERATOR">
+                {{'COMMON.Moderator' | translate}}
+              </nz-tag>
             </div>
           </div>
         </ng-template>
@@ -82,7 +86,7 @@
       </ng-template>
     </ng-template>
     <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ comment: comment }"
-                 *ngFor="let comment of comments"></ng-template>
+                 *ngFor="let comment of comments; trackBy:trackByComment"></ng-template>
 
     <ng-template #editor let-parentComment="parentComment" let-edition="commentEdition">
       <nz-comment *ngIf="loggedIn$ | async">
