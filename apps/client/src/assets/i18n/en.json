@@ -1280,7 +1280,8 @@
       "Reply": "Reply",
       "Show_less": "Show less",
       "Add_comment": "Add a comment",
-      "Show_more": "Show {{amount}} more comments"
+      "Show_more": "Show {{amount}} more comments",
+      "No_comments": "No comments"
     }
   },
   "SEARCH_TYPES": {

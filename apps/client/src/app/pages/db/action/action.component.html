@@ -66,7 +66,7 @@
         <div class="detail-value">{{(action.AffectsPosition === 1 ? 'Yes' : 'No') | translate}}</div>
       </div>
     </div>
-
+    <app-db-comments type="action" [id]="action.ID"></app-db-comments>
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
       <nz-card fxFlex="1 1 auto" class="details-card"

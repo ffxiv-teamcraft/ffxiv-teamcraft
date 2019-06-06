@@ -1,3 +1,4 @@
+<nz-divider [nzText]="'DB.COMMENTS.Title' | translate" nzOrientation="left"></nz-divider>
 <ng-container *ngIf="user$ | async as user">
   <ng-container *ngIf="comments$ | async as comments">
     <app-fullpage-message *ngIf="comments.length === 0" height="auto" fontSize="1.5rem">
