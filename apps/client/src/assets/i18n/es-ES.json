@@ -56,6 +56,7 @@
   "Mute_alarms": "Silenciar alarmas",
   "Hide_used": "Esconder filas usadas",
   "Collapse_if_done": "Colapsar completados",
+  "Collapse_by_default": "Collapse by default",
   "Retainer_ventures": "Aventuras de sirviente",
   "Requires_x_ventures": "Requiere {{amount}} aventuras de sirviente para conseguirlo todo",
   "WORKSHOP": {
