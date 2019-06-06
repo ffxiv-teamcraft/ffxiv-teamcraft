@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-
+    <app-db-comments type="mob" [id]="xivapiMob.ID"></app-db-comments>
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column" *ngIf="xivapiNode.mappyData as data">
       <nz-card fxFlex="1 1 30%" class="details-card"
