@@ -56,6 +56,7 @@
   "Mute_alarms": "静音",
   "Hide_used": "隐藏已使用的行",
   "Collapse_if_done": "折叠已完成项",
+  "Collapse_by_default": "Collapse by default",
   "Retainer_ventures": "雇员委托",
   "Requires_x_ventures": "获得全部物品需要 {{amount}} 次委托",
   "WORKSHOP": {
