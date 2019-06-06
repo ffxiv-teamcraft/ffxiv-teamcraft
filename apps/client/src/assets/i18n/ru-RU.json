@@ -56,6 +56,7 @@
   "Mute_alarms": "Скрыть оповещения",
   "Hide_used": "Скрыть используемые строки",
   "Collapse_if_done": "Свернуть, если завершено",
+  "Collapse_by_default": "Collapse by default",
   "Retainer_ventures": "Авантюрист",
   "Requires_x_ventures": "Требуется {{amount}} предприятий чтобы получить все",
   "WORKSHOP": {
