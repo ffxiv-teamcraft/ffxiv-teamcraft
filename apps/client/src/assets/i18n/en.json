@@ -1281,7 +1281,8 @@
       "Show_less": "Show less",
       "Add_comment": "Add a comment",
       "Show_more": "Show {{amount}} more comments",
-      "No_comments": "No comments"
+      "No_comments": "No comments",
+      "Post": "Post"
     }
   },
   "SEARCH_TYPES": {

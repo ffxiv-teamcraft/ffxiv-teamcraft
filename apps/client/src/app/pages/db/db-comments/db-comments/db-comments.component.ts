@@ -2,13 +2,16 @@ import { Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
 import { DbCommentsService } from '../db-comments.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { DbComment } from '../model/db-comment';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformServer } from '@angular/common';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { UserLevel } from '../../../../model/other/user-level';
+import { Router } from '@angular/router';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { switchMap } from 'rxjs/internal/operators/switchMap';
 
 @Component({
   selector: 'app-db-comments',
@@ -18,10 +21,22 @@ import { UserLevel } from '../../../../model/other/user-level';
 export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
 
   @Input()
-  type: string;
+  public set type(t: string) {
+    this.type$.next(t);
+  }
+
+  private _type: string;
+
+  private type$ = new ReplaySubject<string>();
 
   @Input()
-  id: number;
+  public set id(i: number) {
+    this.id$.next(i);
+  }
+
+  private _id: number;
+
+  private id$ = new ReplaySubject<number>();
 
   userLevels = UserLevel;
 
@@ -48,18 +63,20 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   hasMoreComments$: Observable<number>;
 
   constructor(private commentsService: DbCommentsService, private authFacade: AuthFacade, public translate: TranslateService,
-              @Inject(PLATFORM_ID) private platform: Object) {
+              @Inject(PLATFORM_ID) private platform: Object, private router: Router, private lazyData: LazyDataService) {
     super();
     this.user$ = this.authFacade.user$;
     this.loggedIn$ = this.authFacade.loggedIn$;
   }
 
   ngOnInit() {
-    const contentComments = this.commentsService.getComments(`${this.type}/${this.id}`)
-      .pipe(
-        takeUntil(this.onDestroy$),
-        isPlatformServer(this.platform) ? first() : tap()
-      );
+    const contentComments = combineLatest([this.type$, this.id$]).pipe(
+      switchMap(([type, id]) => {
+        return this.commentsService.getComments(`${type}/${id}`);
+      }),
+      takeUntil(this.onDestroy$),
+      isPlatformServer(this.platform) ? first() : tap()
+    );
 
     const lang$ = new BehaviorSubject<string>(this.translate.currentLang);
 
@@ -99,6 +116,30 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     this.hasMoreComments$ = comments$.pipe(map(comments => Math.max(0, comments.length - 3)));
   }
 
+  getPatch(comment: DbComment): string {
+    let version = this.lazyData.patches[0];
+    for (const patch of this.lazyData.patches) {
+      if (patch.ReleaseDate <= comment.date / 1000) {
+        version = patch;
+      } else {
+        break;
+      }
+    }
+    return version;
+  }
+
+  handleClick(event: MouseEvent): void {
+    if (event.srcElement.tagName === 'A') {
+      if ((<any>event.srcElement).href.indexOf('ffxivteamcraft.com') > -1 ||
+        (<any>event.srcElement).href.indexOf('localhost') > -1) {
+        // If that's an anchor, intercept the click and handle it properly with router
+        this.router.navigateByUrl((<HTMLAnchorElement>event.srcElement).pathname);
+      } else {
+        window.open((<any>event.srcElement).href, '_blank');
+      }
+    }
+  }
+
   public compareComments(a: DbComment, b: DbComment): number {
     if (a.deleted) {
       return 1;
@@ -123,7 +164,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     comment.author = userId;
     comment.language = this.translate.currentLang;
     comment.message = this.newCommentContent;
-    comment.resourceId = `${this.type}/${this.id}`;
+    comment.resourceId = `${this._type}/${this._id}`;
     if (parentComment) {
       comment.parent = parentComment.$key;
     }

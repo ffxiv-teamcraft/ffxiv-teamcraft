@@ -5,14 +5,21 @@
       {{'DB.COMMENTS.No_comments' | translate}}
     </app-fullpage-message>
     <ng-template #commentTemplateRef let-comment="comment">
-      <nz-comment [nzAuthor]="authorRef" [nzDatetime]="comment.date | date:'short':undefined:getLocale()"
+      <nz-comment [nzAuthor]="authorRef" [nzDatetime]="dateRef"
                   *ngIf="comment.$key !== editingComment?.$key; else commentEdition">
+        <ng-template #dateRef>
+          {{comment.date | date:'short':undefined:getLocale()}} ({{getPatch(comment) | xivapiI18n}})
+        </ng-template>
         <ng-template #authorRef>
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
             <div [class.patron]="comment.author | isPatron | async" nz-tooltip
-                 [nzTitle]="(comment.author | isPatron | async)?('PROFILE.Patreon_supporter' | translate):null">
+                 [nzTitle]="(comment.author | isPatron | async)?('PROFILE.Patreon_supporter' | translate):null"
+                 *ngIf="comment.author; else xivdbName">
               {{comment.author | characterName | async}}
             </div>
+            <ng-template #xivdbName>
+              XIVDB
+            </ng-template>
             <div *ngIf="comment.author | userLevel | async as userLvl">
               <i *ngIf="userLvl === userLevels.ADMIN" nz-icon type="crown" nz-tooltip
                  [nzTitle]="'COMMON.Admin' | translate"></i>
@@ -22,13 +29,15 @@
           </div>
         </ng-template>
         <nz-avatar nz-comment-avatar
-                   nzText="xivdb"
-                   [nzSrc]="comment.author | characterAvatar | async"
+                   nzIcon="user"
+                   [nzSrc]="comment.author ? (comment.author | characterAvatar | async) : './assets/xivdb_avatar.png'"
                    nz-tooltip
                    [nzTitle]="(comment.author | isVerified | async)?null:''"
-                   [class.not-verified]="!(comment.author | isVerified | async)"></nz-avatar>
+                   [class.not-verified]="comment.author && !(comment.author | isVerified | async)"></nz-avatar>
         <nz-comment-content>
-          <p *ngIf="!comment.deleted; else deletedComment">{{ comment.message }}</p>
+          <p *ngIf="!comment.deleted; else deletedComment"
+             [innerHTML]="comment.message | commentLinks:translate.currentLang"
+             (click)="$event.preventDefault(); handleClick($event)"></p>
           <ng-template #deletedComment>
             <p><i class="deleted">{{'DB.COMMENTS.Deleted_comment' | translate}}</i></p>
           </ng-template>

@@ -40,10 +40,10 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
               if (b.parent && b.parent === a.$key) {
                 return -1;
               }
-              return a.date - b.date;
+              return b.date - a.date;
             })
             .reduce((tree, comment) => {
-              if (comment.parent === undefined || comment.parent === '') {
+              if (!comment.parent || comment.parent === '0') {
                 tree.push(comment);
               } else {
                 this.getCommentById(tree, comment.parent).replies.push(comment);

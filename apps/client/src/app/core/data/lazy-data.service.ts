@@ -64,6 +64,7 @@ export class LazyDataService {
   public leves: any = {};
   public statuses: any = {};
   public traits: any = {};
+  public patches: any = [];
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -133,7 +134,8 @@ export class LazyDataService {
         this.http.get('./assets/data/shops.json'),
         this.http.get('./assets/data/leves.json'),
         this.http.get('./assets/data/statuses.json'),
-        this.http.get('./assets/data/traits.json')
+        this.http.get('./assets/data/traits.json'),
+        this.http.get('https://xivapi.com/patchlist')
       ]
     ).subscribe(([
                    items,
@@ -175,7 +177,8 @@ export class LazyDataService {
                    shops,
                    leves,
                    statuses,
-                   traits
+                   traits,
+                   patches
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -217,6 +220,7 @@ export class LazyDataService {
       this.leves = leves;
       this.statuses = statuses;
       this.traits = traits;
+      this.patches = patches;
       this.loaded$.next(true);
       this.loaded$.complete();
     });
