@@ -142,6 +142,7 @@
           <div class="detail-value">{{gtData.item.sell_price}}</div>
         </div>
       </div>
+      <app-db-comments type="item" [id]="xivapiItem.ID"></app-db-comments>
       <div>
         <nz-divider [nzText]="'DB.How_to_obtain' | translate" nzOrientation="left"></nz-divider>
         <app-fullpage-message height="150px" *ngIf="noData">

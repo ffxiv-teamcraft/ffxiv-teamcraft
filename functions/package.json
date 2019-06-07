@@ -13,9 +13,11 @@
     "grpc": "1.19.0",
     "node-fetch": "^2.3.0",
     "protobufjs": "^6.8.4",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "@google-cloud/translate": "^4.0.1"
   },
   "devDependencies": {
-    "firebase-functions-test": "^0.1.6"
+    "firebase-functions-test": "^0.1.6",
+    "csv-parser": "^1.12.0"
   }
 }

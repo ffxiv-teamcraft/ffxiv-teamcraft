@@ -33,6 +33,9 @@ import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
 import { ModelViewerComponent } from './item/model-viewer/model-viewer.component';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
+import { DbCommentsComponent } from './db-comments/db-comments/db-comments.component';
+import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
+import { CommentLinksPipe } from './db-comments/comment-links.pipe';
 
 const routes: Routes = [
 
@@ -165,13 +168,30 @@ const routes: Routes = [
         path: 'trait/:traitId/:slug',
         component: TraitComponent,
         canActivate: [MaintenanceGuard]
-      },
+      }
     ]
   }
 ];
 
 @NgModule({
-  declarations: [DbComponent, InstanceComponent, ItemComponent, QuestComponent, NpcComponent, LeveComponent, MobComponent, FateComponent, MapPageComponent, NodeComponent, ActionComponent, StatusComponent, TraitComponent, ModelViewerComponent],
+  declarations: [
+    DbComponent,
+    InstanceComponent,
+    ItemComponent,
+    QuestComponent,
+    NpcComponent,
+    LeveComponent,
+    MobComponent,
+    FateComponent,
+    MapPageComponent,
+    NodeComponent,
+    ActionComponent,
+    StatusComponent,
+    TraitComponent,
+    ModelViewerComponent,
+    DbCommentsComponent,
+    CommentLinksPipe
+  ],
   entryComponents: [ModelViewerComponent],
   imports: [
     CommonModule,
@@ -197,7 +217,8 @@ const routes: Routes = [
     ItemDetailsPopupsModule,
     MarketboardModule,
 
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    UserAvatarModule
   ]
 })
 export class DbModule {
