@@ -1282,7 +1282,8 @@
       "Add_comment": "Add a comment",
       "Show_more": "Show {{amount}} more comments",
       "No_comments": "No comments",
-      "Post": "Post"
+      "Post": "Post",
+      "Editor_tip": "Database links will be processed and handled inside your message."
     }
   },
   "SEARCH_TYPES": {
