@@ -18,6 +18,11 @@ import { UsePatientTouchFaster } from './tips/use-patient-touch-faster';
 import { UseAdvancedTouchInstead } from './tips/use-advanced-touch-instead';
 import { DoNotOverlapBuffs } from './tips/do-not-overlap-buffs';
 import { UseByregotBrow5Stacks } from './tips/use-byregot-brow-5-stacks';
+import { UseIngenuityBeforeByregot } from './tips/use-ingenuity-before-byregot';
+import { UseRapidSynthesisEarlier } from './tips/use-rapid-synthesis-earlier';
+import { UseMoreQualityActions } from './tips/use-more-quality-actions';
+import { UsePrudentTouchManipulation } from './tips/use-prudent-touch-manipulation';
+import { UseReflectEarlier } from './tips/use-reflect-earlier';
 
 export const ROTATION_TIPS = new InjectionToken('ROTATION_TIPS');
 
@@ -38,7 +43,12 @@ const tips: Class<RotationTip>[] = [
   UsePatientTouchFaster,
   UseAdvancedTouchInstead,
   DoNotOverlapBuffs,
-  UseByregotBrow5Stacks
+  UseByregotBrow5Stacks,
+  UseIngenuityBeforeByregot,
+  UseRapidSynthesisEarlier,
+  UseMoreQualityActions,
+  UsePrudentTouchManipulation,
+  UseReflectEarlier
 ];
 
 @NgModule({
