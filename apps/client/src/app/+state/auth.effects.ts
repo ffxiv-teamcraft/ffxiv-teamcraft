@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-
 import { AuthState } from './auth.reducer';
 import {
   catchError,
   debounceTime,
   distinctUntilChanged,
   filter,
-  first,
   map,
   mergeMap,
   switchMap,
@@ -37,12 +35,10 @@ import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { CharacterResponse, XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
-import { User } from 'firebase';
+import { User, UserCredential } from '@firebase/auth-types';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthFacade } from './auth.facade';
 import { PatreonService } from '../core/patreon/patreon.service';
-import { IS_PRERENDER } from '../core/tools/platform.service';
-import UserCredential = firebase.auth.UserCredential;
 
 @Injectable({
   providedIn: 'root'
@@ -65,8 +61,7 @@ export class AuthEffects {
         }
         return new Authenticated(payload, payload.uid, new Date(authState.metadata.creationTime));
       }
-    }),
-    IS_PRERENDER ? first() : tap()
+    })
   );
 
   @Effect()
@@ -82,8 +77,11 @@ export class AuthEffects {
     switchMap((action: Authenticated) => {
       return this.userService.get(action.uid).pipe(
         catchError(() => {
-          this.userService.set(action.uid, new TeamcraftUser());
-          return of(new TeamcraftUser());
+          return this.userService.set(action.uid, new TeamcraftUser()).pipe(
+            switchMap(() => {
+              return this.userService.get(action.uid);
+            })
+          );
         })
       );
     }),
@@ -229,7 +227,7 @@ export class AuthEffects {
     debounceTime(100),
     withLatestFrom(this.store),
     switchMap(([, state]) => {
-      return this.userService.set(state.auth.uid, { ...state.auth.user }).pipe(
+      return this.userService.update(state.auth.uid, { ...state.auth.user }).pipe(
         catchError(() => of(null))
       );
     }),
@@ -240,7 +238,7 @@ export class AuthEffects {
   updateUser$ = this.actions$.pipe(
     ofType<UpdateUser>(AuthActionTypes.UpdateUser),
     switchMap((action) => {
-      return this.userService.set(action.user.$key, action.user);
+      return this.userService.update(action.user.$key, action.user);
     }),
     map(() => new UserPersisted())
   );
@@ -249,7 +247,7 @@ export class AuthEffects {
   registerUser$ = this.actions$.pipe(
     ofType<RegisterUser>(AuthActionTypes.RegisterUser),
     switchMap((action) => {
-      return this.userService.set(action.uid, action.user);
+      return this.userService.update(action.uid, action.user);
     }),
     map(() => new UserPersisted())
   );

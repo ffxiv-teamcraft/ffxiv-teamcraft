@@ -458,7 +458,7 @@
           </div>
         </nz-card>
 
-        <nz-card [class.failed]="actionFailed" class="actions-card">
+        <nz-card [class.failed]="actionFailed" [class.success]="resultData.simulation.success"  class="actions-card">
           <i nz-icon type="exclamation-circle" theme="twotone" [twoToneColor]="'#aa9400'" class="warning-icon"
              nz-tooltip [nzTitle]="'SIMULATOR.Unsaved_changes' | translate" *ngIf="dirty"></i>
           <div fxLayout="row wrap" ngxDroppable="action" class="actions-container ngx-dnd-container"
@@ -469,6 +469,7 @@
               <app-action [action]="step.action"
                           [simulation]="resultData.simulation"
                           (actionclick)="removeAction(i)"
+                          (contextmenu)="$event.preventDefault();toggleFailAction(i)"
                           [disabled]="!step.success || step.skipped"
                           [ignoreDisabled]="true"
                           [cpCost]="step.cpDifference"
@@ -488,8 +489,7 @@
                 <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
                             [model]="action"
                             class="ngx-dnd-item"
-                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
-                    || resultData.simulation.success !== undefined"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
@@ -505,8 +505,7 @@
                 <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
                             [model]="action"
                             class="ngx-dnd-item action-from-bar"
-                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
-                    || resultData.simulation.success !== undefined"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
@@ -524,8 +523,7 @@
                 <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
                             [model]="action"
                             class="ngx-dnd-item action-from-bar"
-                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
-                    || resultData.simulation.success !== undefined"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
@@ -541,8 +539,7 @@
                 <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
                             [model]="action"
                             class="ngx-dnd-item action-from-bar"
-                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
-                    || resultData.simulation.success !== undefined"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
@@ -560,8 +557,7 @@
                 <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
                             [model]="action"
                             class="ngx-dnd-item action-from-bar"
-                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
-                    || resultData.simulation.success !== undefined"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
@@ -577,8 +573,7 @@
                 <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
                             [model]="action"
                             class="ngx-dnd-item action-from-bar"
-                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
-                    || resultData.simulation.success !== undefined"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
@@ -594,8 +589,7 @@
                 <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
                             [model]="action"
                             class="ngx-dnd-item action-from-bar"
-                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
-                    || resultData.simulation.success !== undefined"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"

@@ -53,6 +53,7 @@
         <div class="detail-value">{{xivapiFate.ClassJobLevelMax}}</div>
       </div>
     </div>
+    <app-db-comments type="fate" [id]="xivapiFate.ID"></app-db-comments>
 
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
@@ -85,12 +86,14 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="itemAvatar"
-                [nzTitle]="item | itemName | i18n">
+                [nzTitle]="itemTitle">
+                <ng-template #itemTitle>
+                  <span [appItemRarity]="item">{{item | itemName | i18n}}</span>
+                </ng-template>
                 <ng-template #itemAvatar>
                   <app-item-icon [width]="32" [itemId]="item"
                                  [icon]="item | lazyIcon"></app-item-icon>
                 </ng-template>
-                <div>{{item | itemName | i18n}}</div>
                 <ng-template #more>
                   <app-db-button type="item" [id]="item"></app-db-button>
                 </ng-template>

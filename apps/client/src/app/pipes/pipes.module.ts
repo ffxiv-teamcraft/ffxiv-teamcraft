@@ -41,6 +41,12 @@ import { JobCategoryNamePipe } from './pipes/job-category-name.pipe';
 import { QuestIconPipe } from './pipes/quest-icon.pipe';
 import { TraitNamePipe } from './pipes/trait-name.pipe';
 import { TraitIconPipe } from './pipes/trait-icon.pipe';
+import { AetheryteNamePipe } from './pipes/aetheryte-name.pipe';
+import { CharacterAvatarPipe } from './pipes/character-avatar.pipe';
+import { DurationPipe } from './pipes/duration.pipe';
+import { UserLevelPipe } from './pipes/user-level.pipe';
+import { IsPatronPipe } from './pipes/is-patron.pipe';
+import { IsVerifiedPipe } from './pipes/is-verified.pipe';
 
 @NgModule({
   declarations: [
@@ -86,7 +92,13 @@ import { TraitIconPipe } from './pipes/trait-icon.pipe';
     JobCategoryNamePipe,
     QuestIconPipe,
     TraitNamePipe,
-    TraitIconPipe
+    TraitIconPipe,
+    AetheryteNamePipe,
+    CharacterAvatarPipe,
+    DurationPipe,
+    UserLevelPipe,
+    IsPatronPipe,
+    IsVerifiedPipe
   ],
   exports: [
     ItemNamePipe,
@@ -131,7 +143,13 @@ import { TraitIconPipe } from './pipes/trait-icon.pipe';
     JobCategoryNamePipe,
     QuestIconPipe,
     TraitNamePipe,
-    TraitIconPipe
+    TraitIconPipe,
+    AetheryteNamePipe,
+    CharacterAvatarPipe,
+    DurationPipe,
+    UserLevelPipe,
+    IsPatronPipe,
+    IsVerifiedPipe
   ]
 })
 export class PipesModule {

@@ -14,7 +14,8 @@ export class UseCzEarlier extends RotationTip {
   }
 
   matches(simulationResult: SimulationResult): boolean {
-    return simulationResult.steps.findIndex(step => step.action.is(ComfortZone)) > 3;
+    return simulationResult.steps.findIndex(step => step.action.is(ComfortZone)) > 3
+      || simulationResult.steps.slice(-8).some(step => step.action.is(ComfortZone));
   }
 
 }

@@ -48,9 +48,9 @@
       <div class="details-block">
         <div class="detail-name">{{'DB.Team_size' | translate}}</div>
         <div class="detail-value">{{(xivapiInstance.ContentMemberType.HealersPerParty
-        + xivapiInstance.ContentMemberType.MeleesPerParty
-        + xivapiInstance.ContentMemberType.RangedPerParty
-        + xivapiInstance.ContentMemberType.TanksPerParty) || 1}}</div>
+          + xivapiInstance.ContentMemberType.MeleesPerParty
+          + xivapiInstance.ContentMemberType.RangedPerParty
+          + xivapiInstance.ContentMemberType.TanksPerParty) || 1}}</div>
       </div>
       <div class="details-block">
         <div class="detail-name">{{'DB.Time' | translate}}</div>
@@ -77,6 +77,7 @@
         <div class="detail-value">{{(xivapiInstance.WeekRestriction === 1 ? 'Yes' : 'No') | translate}}</div>
       </div>
     </div>
+    <app-db-comments type="instance" [id]="xivapiInstance.ID"></app-db-comments>
     <nz-divider [nzText]="'DB.Fights' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
@@ -114,14 +115,15 @@
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
                  *ngFor="let reward of fight.coffer.items">
               <app-item-icon [width]="32" [itemId]="reward" [icon]="reward | lazyIcon"></app-item-icon>
-              <div>{{reward | itemName | i18n}}</div>
+              <div [appItemRarity]="reward">{{reward | itemName | i18n}}</div>
             </div>
           </div>
         </div>
       </nz-card>
     </div>
     <nz-divider [nzText]="'DB.Instance_details' | translate" nzOrientation="left"></nz-divider>
-    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column"
+         *ngIf="xivapiInstance.ContentFinderCondition.TerritoryType.Map">
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="mapTitle" nzBordered="false">
         <ng-template #mapTitle>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
@@ -145,7 +147,7 @@
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
                *ngFor="let reward of gtData.instance.rewards">
             <app-item-icon [width]="32" [itemId]="reward" [icon]="reward | lazyIcon"></app-item-icon>
-            <div>{{reward | itemName | i18n}}</div>
+            <div [appItemRarity]="reward">{{reward | itemName | i18n}}</div>
           </div>
         </div>
       </nz-card>
@@ -164,8 +166,8 @@
                  src="./assets/icons/quest.png">
             <div>{{gtData.instance.unlockedByQuest | questName | i18n}}</div>
             <app-db-button type="quest" [id]="gtData.instance.unlockedByQuest"></app-db-button>
-            </div>
           </div>
+        </div>
       </nz-card>
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="chestsTitle" nzBordered="false"
                *ngIf="gtData.instance.coffers">
@@ -186,7 +188,7 @@
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngFor="let item of chest.items">
                 <app-item-icon [width]="32" [itemId]="item" [icon]="item | lazyIcon"></app-item-icon>
-                <div>{{item | itemName | i18n}}</div>
+                <div [appItemRarity]="item">{{item | itemName | i18n}}</div>
               </div>
             </div>
             <nz-divider *ngIf="!last"></nz-divider>

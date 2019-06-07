@@ -15,7 +15,6 @@ import { IpcService } from './electron/ipc.service';
 import { PlatformService } from './tools/platform.service';
 import { MathToolsService } from './tools/math-tools';
 import { I18nToolsService } from './tools/i18n-tools.service';
-import { BellNodesService } from './data/bell-nodes.service';
 import { EorzeanTimeService } from './eorzea/eorzean-time.service';
 import { TimerPipe } from './eorzea/timer.pipe';
 import { HtmlToolsService } from './tools/html-tools.service';
@@ -35,6 +34,7 @@ import { WeatherService } from './eorzea/weather.service';
 import { DbButtonComponent } from './db-button/db-button.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { RouterModule } from '@angular/router';
+import { ItemRarityDirective } from './item-rarity/item-rarity.directive';
 
 
 @NgModule({
@@ -71,7 +71,6 @@ import { RouterModule } from '@angular/router';
     DataService,
     MathToolsService,
     I18nToolsService,
-    BellNodesService,
     HtmlToolsService,
     LinkToolsService,
     DiscordWebhookService,
@@ -81,7 +80,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     I18nPipe,
     TimerPipe,
-    DbButtonComponent
+    DbButtonComponent,
+    ItemRarityDirective
   ],
   exports: [
     I18nPipe,
@@ -92,7 +92,8 @@ import { RouterModule } from '@angular/router';
     PushNotificationsModule,
     MaintenanceModule,
     TimerPipe,
-    DbButtonComponent
+    DbButtonComponent,
+    ItemRarityDirective
   ]
 })
 export class CoreModule {

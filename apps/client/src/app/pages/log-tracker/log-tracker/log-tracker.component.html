@@ -46,7 +46,8 @@
                                    [icon]="recipe.icon | xivapiIcon"></app-item-icon>
                     <div fxLayout="column">
                       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                        <div class="recipe-name">{{recipe.itemId | itemName | i18n}}</div>
+                        <div class="recipe-name"
+                             [appItemRarity]="recipe.itemId">{{recipe.itemId | itemName | i18n}}</div>
                         <i nz-icon type="check" *ngIf="userCompletion[recipe.recipeId]"></i>
                       </div>
                       <div class="recipe-details">rlvl {{recipe.rlvl}}</div>
@@ -80,11 +81,13 @@
   <nz-tab [nzTitle]="'MIN/BTN' | translate">
     <ng-template #extraTemplate>
       <div fxLayout="row" fxLayoutGap="5px" class="dol-path-buttons">
-        <button nz-button (click)="showOptimizedMap(0)" nz-tooltip [nzTitle]="'LOG_TRACKER.MIN_optimized_path' | translate">
+        <button nz-button (click)="showOptimizedMap(0)" nz-tooltip
+                [nzTitle]="'LOG_TRACKER.MIN_optimized_path' | translate">
           <i nz-icon iconfont="icon-map"></i>
           <img src="./assets/icons/MIN.png" alt="MIN" class="job-icon">
         </button>
-        <button nz-button (click)="showOptimizedMap(2)" nz-tooltip [nzTitle]="'LOG_TRACKER.BTN_optimized_path' | translate">
+        <button nz-button (click)="showOptimizedMap(2)" nz-tooltip
+                [nzTitle]="'LOG_TRACKER.BTN_optimized_path' | translate">
           <i nz-icon iconfont="icon-map"></i>
           <img src="./assets/icons/BTN.png" alt="BTN" class="job-icon">
         </button>
@@ -124,7 +127,7 @@
                                        [icon]="item.itemId | lazyIcon"></app-item-icon>
                         <div fxLayout="column" fxLayoutAlign="center flex-start" fxLayoutGap="5px">
                           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                            <div class="recipe-name">{{item.itemId | itemName | i18n}}</div>
+                            <div class="recipe-name" [appItemRarity]="item.itemId">{{item.itemId | itemName | i18n}}</div>
                             <i nz-icon type="check" *ngIf="userCompletion[item.itemId]"></i>
                           </div>
                           <div class="recipe-details">ilvl {{item.ilvl}} {{item.stars | ingameStars}}</div>

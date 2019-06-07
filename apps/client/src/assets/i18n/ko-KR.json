@@ -76,7 +76,7 @@
     "title": "TC에 대하여",
     "Created_by": "FFXIV Teamcraft created by Miu Asakura from Louisoix, Chaos.",
     "Copyright_notice_title": "저작권 안내",
-    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft는 Square Enix와 관련이 없습니다.",
+    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft는 Square Enix와 관련이 없습니다.",
     "Thanks_title": "도움 주신 분들",
     "Data_sources": "자료 출처",
     "Patreon_supporters": "Patreon 후원자",
@@ -176,7 +176,7 @@
   "No_maps_found": "검색 결과 없음",
   "No_actions_found": "검색 결과 없음",
   "No_statuses_found": "검색 결과 없음",
-  "No_traits_found": "No traits found",
+  "No_traits_found": "검색 결과 없음",
   "Select_all": "모두 선택",
   "Do you really want to reset the list?": "정말로 이 목록을 초기화하시겠습니까?",
   "Yes": "O",
@@ -329,10 +329,15 @@
     "Free_aetheryte": "무료 에테라이트",
     "Favorite_aetherytes": "에테라이트 즐겨찾기",
     "Disable_cross_world_prices": "캐릭터의 서버 장터 가격만 사용",
+    "Clear_search_history": "검색 기록 삭제",
     "COLORS": {
+      "Background": "배경 색상",
       "Primary": "기본 색상",
       "Highlight": "하이라이트 색상",
-      "Text": "버튼 속 색상"
+      "Text": "버튼 속 색상",
+      "Topbar": "상단/사이드바 색상",
+      "Sidebar_trigger": "사이드바 숨기기/펼치기 색상",
+      "Sidebar_trigger_hover": "사이드바 숨기기/펼치기 색상(마우스 커서를 올렸을때)"
     },
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
@@ -900,8 +905,8 @@
       "ITEM_REMOVED": "아이템 제거",
       "LIST_ADDED": "목록 추가",
       "LIST_REMOVED": "목록 제거",
-      "LIST_PROGRESSION": "List materials progression",
-      "FINAL_LIST_PROGRESSION": "List final items progression",
+      "LIST_PROGRESSION": "재료 진행상황",
+      "FINAL_LIST_PROGRESSION": "최종 아이템 진행상황",
       "USER_ASSIGNMENT": "팀원 할당"
     }
   },
@@ -1104,7 +1109,7 @@
     "How_to_obtain": "획득 방법",
     "Used_for": "사용처",
     "Used_for_nothing": "사용처가 없습니다",
-    "Crystal_used_for_everything": "Too many recipes (~ 1/6th of the ingame recipes)",
+    "Crystal_used_for_everything": "너무 많은 레시피",
     "Crafts": "제작",
     "Recipes": "제작법",
     "No_known_way_to_obtain": "이 아이템의 획득 방법을 찾을 수 없습니다",
@@ -1164,11 +1169,13 @@
     "Select_data_type": "세부 정보를 표시하기 위해 데이터를 선택하세요",
     "Desynths_to": "분해로 얻는 아이템",
     "Limited": "한정 채집",
+    "3d_model_viewer": "3D 모델링 미리보기",
+    "3d_model_help": "3D 모델링 미리보기",
     "NODE": {
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
       "Bonus_condition": "조건",
-      "Spawn_duration": "지속시간",
+      "Spawn_duration": "채집 가능 시간",
       "Spawns": "출현 시간"
     },
     "QUEST": {
@@ -1222,7 +1229,7 @@
       "Radius": "범위",
       "Cooldown": "재사용",
       "Pvp_action": "PvP 기술",
-      "Breaks_unrelated_combo": "Breaks unrelated combos",
+      "Breaks_unrelated_combo": "콤보가 끊길 수 있는 기술",
       "Movement_action": "이동 스킬",
       "Possible_targets": "사용 가능한 대상",
       "Unlocked_by_quest": "선행 퀘스트",
@@ -1230,12 +1237,12 @@
       "Combos": "콤보",
       "Combo_next": "다음 콤보",
       "Combo_previous": "이전 콤보",
-      "Affected_by_status": "Affected by status",
+      "Affected_by_status": "해당 스킬과 관련된 프록",
       "Cost": "소비 자원",
-      "Related_traits": "Related traits",
+      "Related_traits": "관련 특성",
       "TARGET": {
         "Party": "파티원",
-        "Dead": "Dead",
+        "Dead": "사망한 플레이어",
         "Hostile": "적",
         "Self": "자신"
       },
@@ -1256,13 +1263,16 @@
       }
     },
     "TRAIT": {
-      "Related_actions": "Related actions"
+      "Related_actions": "관련 기술"
     },
     "STATUS": {
       "Max_stacks": "최대 중첩",
       "Locks_actions": "기술 사용 불가",
-      "Locks_control": "Locks control",
-      "Locks_movement": "이동 불가"
+      "Locks_control": "대상 선택 불가",
+      "Locks_movement": "이동 불가",
+      "Type": "유형",
+      "Type_buff": "버프",
+      "Type_debuff": "디버프"
     }
   },
   "SEARCH_TYPES": {
@@ -1276,15 +1286,26 @@
     "Monster": "몬스터",
     "Lore": "대사 및 설정",
     "Fate": "돌발 임무",
-    "Map": "지도",
+    "Map": "맵",
     "Action": "기술",
     "Status": "상태",
-    "Trait": "Trait"
+    "Trait": "특성"
   },
   "SEARCH_FILTERS": {
-    "Level": "Level",
+    "Level": "레벨",
     "Leve_job": "직업",
-    "Job": "Job",
+    "Job": "직업",
     "Leve_level": "요구 레벨"
+  },
+  "TIPS": {
+    "Title": "팁",
+    "Community_rotations": "커뮤니티 로테이션 페이지에서 특정 제작법의 로테이션을 찾을 수 있습니다.",
+    "GC_Deliveries": "조달 임무 페이지에서 총사령부 조달 품목을 준비할 수 있습니다.",
+    "Desynth": "분해 가이드 페이지에서 자신의 분해레벨에 맞는 아이템을 찾을 수 있습니다.",
+    "DB": "팀크래프트는 데이터베이스를 포함하고 있으며, \"i\" 를 클릭하면 해당 품목, 결과에 대한 데이터베이스 페이지를 열 수 있습니다.",
+    "3D_model": "데이터베이스 내에서 아이템의 3D 모델링을 미리볼 수 있습니다.",
+    "Levequests": "길드 의뢰 페이지에서 의뢰들을 비교하고 획득 가능한 경험치를 미리볼 수 있습니다.",
+    "Log_tracker": "수첩 트래커 페이지에서 채집, 제작, 어부 수첩의 진행상황을 확인할 수 있습니다.",
+    "Desktop_app_overlay": "데스크톱 앱을 사용시 알람을 오버레이 창으로 띄울 수 있습니다(사이드바 아래에 다운로드 링크가 있음)."
   }
 }

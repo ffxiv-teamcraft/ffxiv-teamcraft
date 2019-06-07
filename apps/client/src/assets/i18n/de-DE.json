@@ -76,7 +76,7 @@
     "title": "Über FFXIVTeamcraft",
     "Created_by": "FFXIV Teamcraft erstellt von Miu Asakura auf Louisoix, Chaos.",
     "Copyright_notice_title": "Urheberrechtsschutz",
-    "Copyright_notice_content": "FINAL FANTASY ist eine eingetragene Marke der Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010-2017 SQUARE ENIX CO., LTD. Alle Rechte vorbehalten.<br>FFXIV Teamcraft hat keine Verbindung zu Square Enix.",
+    "Copyright_notice_content": "FINAL FANTASY ist eine eingetragene Marke der Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010-2019 SQUARE ENIX CO., LTD. Alle Rechte vorbehalten.<br>FFXIV Teamcraft hat keine Verbindung zu Square Enix.",
     "Thanks_title": "Danke!",
     "Data_sources": "Datenquellen",
     "Patreon_supporters": "Patreon-Unterstützer",
@@ -329,10 +329,15 @@
     "Free_aetheryte": "Free Aetheryte",
     "Favorite_aetherytes": "Favorite Aetherytes",
     "Disable_cross_world_prices": "Only use own world for marketboard prices",
+    "Clear_search_history": "Clear search history",
     "COLORS": {
+      "Background": "Background color",
       "Primary": "Hauptfarbe",
       "Highlight": "Hervorhebungsfarbe",
-      "Text": "Schaltflächenfarbe"
+      "Text": "Schaltflächenfarbe",
+      "Topbar": "Topbar and sidebar color",
+      "Sidebar_trigger": "Sidebar trigger color",
+      "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
       "Classic": "Gegenstandsnamen kopieren",
@@ -1164,6 +1169,8 @@
     "Select_data_type": "Select data types to show to see the details here",
     "Desynths_to": "Desynths to",
     "Limited": "Limited spawn",
+    "3d_model_viewer": "3D model preview",
+    "3d_model_help": "Preview 3D model",
     "NODE": {
       "Items": "Items",
       "Possible_bonuses": "Possible bonuses",
@@ -1262,7 +1269,10 @@
       "Max_stacks": "Max stacks",
       "Locks_actions": "Locks actions",
       "Locks_control": "Locks control",
-      "Locks_movement": "Locks movement"
+      "Locks_movement": "Locks movement",
+      "Type": "Type",
+      "Type_buff": "Buff",
+      "Type_debuff": "Debuff"
     }
   },
   "SEARCH_TYPES": {
@@ -1286,5 +1296,16 @@
     "Leve_job": "Leve job",
     "Job": "Job",
     "Leve_level": "Required level"
+  },
+  "TIPS": {
+    "Title": "Tip",
+    "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
+    "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
+    "Desynth": "You can find ideal items to level up desynth in desynth page.",
+    "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
+    "3D_model": "You can preview 3D model of items inside the database.",
+    "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
+    "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
+    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
   }
 }

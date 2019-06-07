@@ -76,7 +76,7 @@
     "title": "Acerca de",
     "Created_by": "FFXIV Teamcraft creado por Miu Asakura de Louisoix, Chaos.",
     "Copyright_notice_title": "Aviso de derechos de autor",
-    "Copyright_notice_content": "FINAL FANTASY es una marca registrada de Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. Todos los Derechos Reservados.<br>FFXIV Teamcraft no está afiliado con Square Enix.",
+    "Copyright_notice_content": "FINAL FANTASY es una marca registrada de Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. Todos los Derechos Reservados.<br>FFXIV Teamcraft no está afiliado con Square Enix.",
     "Thanks_title": "Gracias",
     "Data_sources": "Fuentes de información",
     "Patreon_supporters": "Seguidores de Patreon",
@@ -123,7 +123,7 @@
     "Admin": "Administrador",
     "Minutes_duration": "{{amount}} minutos",
     "Seconds_duration": "{{amount}} segundos",
-    "None": "None"
+    "None": "Ninguno"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -174,9 +174,9 @@
   "No_lore_entries": "Entrada de historia no encontrada",
   "No_fates_found": "Fate no encontrada",
   "No_maps_found": "No se encontraron mapas",
-  "No_actions_found": "No actions found",
-  "No_statuses_found": "No statuses found",
-  "No_traits_found": "No traits found",
+  "No_actions_found": "No se encontraron acciones",
+  "No_statuses_found": "No se encontraron estados",
+  "No_traits_found": "No se encontraron rasgos",
   "Select_all": "Seleccionar todo",
   "Do you really want to reset the list?": "¿Realmente desea reiniciar la lista?",
   "Yes": "Sí",
@@ -329,10 +329,15 @@
     "Free_aetheryte": "Aetheryte gratuito",
     "Favorite_aetherytes": "Aetherytes favoritos",
     "Disable_cross_world_prices": "Sólo usar mi propio mundo para los precios del mercado",
+    "Clear_search_history": "Clear search history",
     "COLORS": {
+      "Background": "Background color",
       "Primary": "Color primario",
       "Highlight": "Color de resaltado",
-      "Text": "Color de contenido de botones"
+      "Text": "Color de contenido de botones",
+      "Topbar": "Topbar and sidebar color",
+      "Sidebar_trigger": "Sidebar trigger color",
+      "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
@@ -803,19 +808,19 @@
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Casi todas las rotaciones deberían incluir \"Inner Quiet\" si su objetivo es un objeto HQ. Proporciona un buen impulso de calidad y permite acciones como \"Byregot's Blessing\".",
-      "Use_inner_quiet_before_quality_increase": "Debería aplicar \"Inner Quiet\" antes de cualquier aumento de calidad, no hacerlo significa que está desperdiciando puntos de \"Inner Quiet\".",
+      "Use_inner_quiet_before_quality_increase": "Debería aplicar \"Inner Quiet\" antes de cualquier aumento de calidad, no hacerlo significa que está desperdiciando cargas de \"Inner Quiet\".",
       "Use_ingenuity_I_instead": "Debería usar Ingenuity I en lugar de II para reducir el costo en 8CP, ya que será suficiente para terminar la artesanía.",
       "Use_cz_earlier": "Debería usar \"Comfort Zone\" antes para obtener el efecto de restauración antes",
       "Use_reclaim": "Tiene suficiente CP restante para usar \"Reclaim\", debería añadirlo a la rotación para asegurarte de que reciba materiales de regreso si falla la artesanía",
-      "Use_byregot_brow_low_iq_stacks": "Utilizó \"Byregot Blessing\" con menos de 6 puntos. Usar \"Byregot Brow\" es mejor en este caso, ya que producirá más calidad.",
-      "Use_byregot_blessing_high_iq_stacks": "Utilizó \"Byregot Brow\" con más de 6 puntos. Usar \"Byregot Blessing\" es mejor en este caso, ya que producirá más calidad.",
+      "Use_byregot_brow_low_iq_stacks": "Utilizó \"Byregot Blessing\" con menos de 6 cargas. Usar \"Byregot Brow\" es mejor en este caso, ya que producirá más calidad.",
+      "Use_byregot_blessing_high_iq_stacks": "Utilizó \"Byregot Brow\" con más de 6 cargas. Usar \"Byregot Blessing\" es mejor en este caso, ya que producirá más calidad.",
       "Use_sh1_instead": "Utilizó \"Steady Hand II\" en el paso {{index}} mientras que utilizar \"Steady Hand I\" sería suficiente y costaría 3 CP menos.",
       "Use_sh2_instead": "Utilizó \"Steady Hand I\" en el paso {{index}} mientras que utilizar \"Steady Hand II\" le daría más confiabilidad por 3 CP.",
       "Use_pbp_first": "Debería usar \"Piece by Piece\" antes de cualquier otra acción de síntesis, ya que se escala con el progreso que falta por hacer",
       "Use_mume_if_pbp": "Debería usar \"Muscle Memory\" en el paso 1 para reemplazar un \"Piece by Piece\" y obtener 9 CP extra",
       "Use_observe_before_focused": "Debería usar \"Observe\" antes de la acción \"enfocada\" en el paso {{index}} para obtener una tasa de éxito del 100% gratis.",
       "Use_durability_restoration_later": "Debería usar la acción de restauración de durabilidad en el paso {{index}} más tarde para evitar desperdiciar la restauración de durabilidad.",
-      "Use_patient_touch_faster": "Debería usar \"Patient Touch\" antes de añadir puntos de \"Inner Quiet\", para minimizar los puntos desperdiciados si la acción falla.",
+      "Use_patient_touch_faster": "Debería usar \"Patient Touch\" antes de añadir cargas de \"Inner Quiet\", para minimizar las cargas desperdiciadas si la acción falla.",
       "Use_advanced_touch_instead": "Usó \"Basic Touch\" seguido de \"Advanced Touch\" en el paso {{index}}, debería usar dos \"Standard Touch\" en su lugar para obtener la misma potencia por 2 CP menos.",
       "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos.",
       "Use_byregot_brow_5_stacks": "Debería usar \"Byregot's Brow\" en vez de \"Byregot's Blessing\" para obtener la misma calidad por 6 CP menos."
@@ -1104,7 +1109,7 @@
     "How_to_obtain": "Como obtener",
     "Used_for": "Usado para",
     "Used_for_nothing": "Usado para nada",
-    "Crystal_used_for_everything": "Too many recipes (~ 1/6th of the ingame recipes)",
+    "Crystal_used_for_everything": "Demasiadas recetas (~ 1/6 de las recetas del juego)",
     "Crafts": "Artesanías",
     "Recipes": "Recetas",
     "No_known_way_to_obtain": "No se pudo encontrar ninguna manera de obtener este artículo",
@@ -1164,6 +1169,8 @@
     "Select_data_type": "Seleccione los tipos de datos a mostrar para ver los detalles aquí",
     "Desynths_to": "Se desintetiza en",
     "Limited": "Aparición limitada",
+    "3d_model_viewer": "3D model preview",
+    "3d_model_help": "Preview 3D model",
     "NODE": {
       "Items": "Artículos",
       "Possible_bonuses": "Bonos posibles",
@@ -1215,29 +1222,29 @@
       "hunt": "Cacerías"
     },
     "ACTION": {
-      "Cast": "Cast",
-      "Instant": "Instant",
-      "Range": "Range",
-      "Melee": "Melee",
-      "Radius": "Radius",
-      "Cooldown": "Cooldown",
-      "Pvp_action": "PvP action",
-      "Breaks_unrelated_combo": "Breaks unrelated combos",
-      "Movement_action": "Movement action",
-      "Possible_targets": "Possible targets",
-      "Unlocked_by_quest": "Unlocked by quest",
-      "Shares_cd_with": "Shares cooldown with",
+      "Cast": "Lanzar",
+      "Instant": "Instantáneo",
+      "Range": "Alcance",
+      "Melee": "Cuerpo a cuerpo",
+      "Radius": "Radio",
+      "Cooldown": "Tiempo de enfriamiento",
+      "Pvp_action": "Acción PvP",
+      "Breaks_unrelated_combo": "Rompe combos no relacionados",
+      "Movement_action": "Acción de movimiento",
+      "Possible_targets": "Posibles objetivos",
+      "Unlocked_by_quest": "Desbloqueado por misión",
+      "Shares_cd_with": "Comparte enfriamiento con",
       "Combos": "Combos",
-      "Combo_next": "Next actions",
-      "Combo_previous": "Previous action",
-      "Affected_by_status": "Affected by status",
-      "Cost": "Cost",
-      "Related_traits": "Related traits",
+      "Combo_next": "Acciones siguientes",
+      "Combo_previous": "Acción anterior",
+      "Affected_by_status": "Afectado por estado",
+      "Cost": "Costo",
+      "Related_traits": "Rasgos relacionados",
       "TARGET": {
-        "Party": "Party",
-        "Dead": "Dead",
-        "Hostile": "Hostile",
-        "Self": "Self"
+        "Party": "Escuadrón",
+        "Dead": "Muerto",
+        "Hostile": "Hostil",
+        "Self": "Uno mismo"
       },
       "COST_TYPE": {
         "HP": "HP",
@@ -1245,24 +1252,27 @@
         "TP": "TP",
         "GP": "GP",
         "CP": "CP",
-        "Beast_gauge": "Beast gauge",
-        "Blood_gauge": "Blood gauge",
+        "Beast_gauge": "Barra de bestia",
+        "Blood_gauge": "Barra de sangre",
         "Ninki": "Ninki",
         "Chakra": "Chakra",
-        "Greasing_lightning": "Greasing Lightning",
-        "Aetherflow": "Aetherflow",
-        "Oath_gauge": "Oath gauge",
+        "Greasing_lightning": "Relámpago engrasado",
+        "Aetherflow": "Flujo de ether",
+        "Oath_gauge": "Barra de juramento",
         "Kenki": "Kenki"
       }
     },
     "TRAIT": {
-      "Related_actions": "Related actions"
+      "Related_actions": "Acciones relacionadas"
     },
     "STATUS": {
-      "Max_stacks": "Max stacks",
-      "Locks_actions": "Locks actions",
-      "Locks_control": "Locks control",
-      "Locks_movement": "Locks movement"
+      "Max_stacks": "Cargas máximas",
+      "Locks_actions": "Bloquea acciones",
+      "Locks_control": "Bloquea control",
+      "Locks_movement": "Bloquea movimiento",
+      "Type": "Type",
+      "Type_buff": "Buff",
+      "Type_debuff": "Debuff"
     }
   },
   "SEARCH_TYPES": {
@@ -1277,14 +1287,25 @@
     "Lore": "Historia",
     "Fate": "Fate",
     "Map": "Mapa",
-    "Action": "Action",
-    "Status": "Status",
-    "Trait": "Trait"
+    "Action": "Acción",
+    "Status": "Estado",
+    "Trait": "Rasgo"
   },
   "SEARCH_FILTERS": {
-    "Level": "Level",
+    "Level": "Nivel",
     "Leve_job": "Profesión Leve",
-    "Job": "Job",
+    "Job": "Profesión",
     "Leve_level": "Nivel requerido"
+  },
+  "TIPS": {
+    "Title": "Tip",
+    "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
+    "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
+    "Desynth": "You can find ideal items to level up desynth in desynth page.",
+    "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
+    "3D_model": "You can preview 3D model of items inside the database.",
+    "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
+    "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
+    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
   }
 }

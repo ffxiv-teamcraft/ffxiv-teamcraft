@@ -13,9 +13,6 @@ import { TeamInvite } from '../../../model/team/team-invite';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
-import '@firebase/auth';
-import '@firebase/database';
-import '@firebase/firestore';
 import { WebhookSetting } from '../../../model/team/webhook-setting';
 
 @Component({

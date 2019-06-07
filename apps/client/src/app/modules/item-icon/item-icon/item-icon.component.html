@@ -1,16 +1,7 @@
-<span *ngIf="disableClick; else anchor" class="icon-container"
-      [appXivApiTooltip]="itemId" [appXivApiTooltipDisabled]="tooltipDisabled">
+<a class="icon-container" [routerLink]="disableClick?null:getLink()"
+   [appXivApiTooltip]="itemId" [appXivApiTooltipDisabled]="tooltipDisabled">
   <img [src]="getIcon()" alt="{{itemName}}" class="item-icon"
        [style.width.px]="width">
   <img *ngIf="hq" src="https://www.garlandtools.org/db/images/HQOverlay.png" class="hq-overlay"
        [style.width.px]="width">
-</span>
-<ng-template #anchor>
-  <a class="icon-container" [routerLink]="disableClick?null:getLink()"
-     [appXivApiTooltip]="itemId" [appXivApiTooltipDisabled]="tooltipDisabled">
-    <img [src]="getIcon()" alt="{{itemName}}" class="item-icon"
-         [style.width.px]="width">
-    <img *ngIf="hq" src="https://www.garlandtools.org/db/images/HQOverlay.png" class="hq-overlay"
-         [style.width.px]="width">
-  </a>
-</ng-template>
+</a>

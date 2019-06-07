@@ -5,7 +5,9 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../database/pending-changes/pending-changes.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AlarmGroupService extends FirestoreRelationalStorage<AlarmGroup> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService,

@@ -39,6 +39,7 @@ export class Item implements I18nData {
   collectable: 1 | 0;
   satisfaction: SatisfactionData[];
   masterpiece: Masterpiece;
+  models?: string[];
 
   ingredient_of?: { [index: string]: number };
   reducesTo?: number[];
@@ -56,6 +57,11 @@ export class Item implements I18nData {
     xp: number;
     seals: number;
   };
+  mount?: any;
+  minion?: any;
+  furniture?: any;
+  slot?: number;
+  minionrace?: string;
 
   @DeserializeFieldName('icon')
   _icon: number;

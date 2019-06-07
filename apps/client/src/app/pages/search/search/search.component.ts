@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID, TemplateRef, ViewChild } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
@@ -34,6 +34,8 @@ import { mapIds } from '../../../core/data/sources/map-ids';
 import { MapSearchResult } from '../../../model/search/map-search-result';
 import { ActionSearchResult } from '../../../model/search/action-search-result';
 import { StatusSearchResult } from '../../../model/search/status-search-result';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-search',
@@ -105,7 +107,7 @@ export class SearchComponent implements OnInit {
 
   availableJobCategories = [];
 
-  availableLeveJobCategories = [9, 10, 11, 12, 13, 14, 15, 16, 1718, 19, 34];
+  availableLeveJobCategories = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 34];
 
   availableCraftJobs = [];
 
@@ -113,13 +115,21 @@ export class SearchComponent implements OnInit {
 
   uiCategories$: Observable<{ id: number, name: I18nName }[]>;
 
+  autocomplete$: Observable<string[]> = combineLatest([this.query$, this.searchType$]).pipe(
+    map(([query, type]) => {
+      return (JSON.parse(localStorage.getItem('search:history') || '{}')[type] || [])
+        .filter(entry => entry.toLowerCase().indexOf(query.toLowerCase()) > -1 && entry.length > 0);
+    })
+  );
+
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
-              private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService) {
+              private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService,
+              @Inject(PLATFORM_ID) private platform: Object) {
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
@@ -139,9 +149,11 @@ export class SearchComponent implements OnInit {
         });
       })
     );
-    this.searchType$.subscribe(value => {
-      localStorage.setItem('search:type', value);
-    });
+    if (isPlatformBrowser(this.platform)) {
+      this.searchType$.subscribe(value => {
+        localStorage.setItem('search:type', value);
+      });
+    }
   }
 
   ngOnInit(): void {
@@ -171,6 +183,11 @@ export class SearchComponent implements OnInit {
         if (filters.length > 0) {
           queryParams.filters = btoa(JSON.stringify(filters));
         }
+        if (query.length > 0) {
+          const searchHistory = JSON.parse(localStorage.getItem('search:history') || '{}');
+          searchHistory[type] = _.uniq([...(searchHistory[type] || []), query]);
+          localStorage.setItem('search:history', JSON.stringify(searchHistory));
+        }
         this.router.navigate([], {
           queryParamsHandling: 'merge',
           queryParams: queryParams,
@@ -178,35 +195,65 @@ export class SearchComponent implements OnInit {
         });
       }),
       mergeMap(([query, type, filters]) => {
+        let searchRequest$: Observable<any[]>;
         switch (type) {
+          case SearchType.ANY:
+            searchRequest$ = this.searchAny(query, filters);
+            break;
           case SearchType.ITEM:
-            return this.data.searchItem(query, filters, false);
+            searchRequest$ = this.data.searchItem(query, filters, false);
+            break;
           case SearchType.RECIPE:
-            return this.data.searchItem(query, filters, true);
+            searchRequest$ = this.data.searchItem(query, filters, true);
+            break;
           case SearchType.INSTANCE:
-            return this.searchInstance(query, filters);
+            searchRequest$ = this.searchInstance(query, filters);
+            break;
           case SearchType.QUEST:
-            return this.searchQuest(query, filters);
+            searchRequest$ = this.searchQuest(query, filters);
+            break;
           case SearchType.NPC:
-            return this.searchNpc(query, filters);
+            searchRequest$ = this.searchNpc(query, filters);
+            break;
           case SearchType.LEVE:
-            return this.searchLeve(query, filters);
+            searchRequest$ = this.searchLeve(query, filters);
+            break;
           case SearchType.MONSTER:
-            return this.searchMob(query, filters);
+            searchRequest$ = this.searchMob(query, filters);
+            break;
           case SearchType.LORE:
-            return this.searchLore(query, filters);
+            searchRequest$ = this.searchLore(query, filters);
+            break;
           case SearchType.FATE:
-            return this.searchFate(query, filters);
+            searchRequest$ = this.searchFate(query, filters);
+            break;
           case SearchType.MAP:
-            return this.searchMap(query, filters);
+            searchRequest$ = this.searchMap(query, filters);
+            break;
           case SearchType.ACTION:
-            return this.searchAction(query, filters);
+            searchRequest$ = this.searchAction(query, filters);
+            break;
           case SearchType.STATUS:
-            return this.searchStatus(query, filters);
+            searchRequest$ = this.searchStatus(query, filters);
+            break;
           case SearchType.TRAIT:
-            return this.searchTrait(query, filters);
+            searchRequest$ = this.searchTrait(query, filters);
+            break;
           default:
-            return this.data.searchItem(query, filters, false);
+            searchRequest$ = this.data.searchItem(query, filters, false);
+            break;
+        }
+        if (type === SearchType.ANY) {
+          return searchRequest$;
+        } else {
+          return searchRequest$.pipe(
+            map(results => {
+              return results.map(row => {
+                row.type = type;
+                return row;
+              });
+            })
+          );
         }
       }),
       tap(() => {
@@ -231,6 +278,57 @@ export class SearchComponent implements OnInit {
         this.traitFilterForm.patchValue(this.filtersToForm(filters));
       }
     });
+  }
+
+  searchAny(query: string, filters: SearchFilter[]): Observable<any[]> {
+    return combineLatest([
+      this.data.searchItem(query, filters, false).pipe(map(res => res.map(row => {
+        row.type = SearchType.ITEM;
+        return row;
+      }))),
+      this.searchInstance(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.INSTANCE;
+        return row;
+      }))),
+      this.searchQuest(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.QUEST;
+        return row;
+      }))),
+      this.searchAction(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.ACTION;
+        return row;
+      }))),
+      this.searchTrait(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.TRAIT;
+        return row;
+      }))),
+      this.searchStatus(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.STATUS;
+        return row;
+      }))),
+      this.searchLeve(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.LEVE;
+        return row;
+      }))),
+      this.searchNpc(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.NPC;
+        return row;
+      }))),
+      this.searchMob(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.MONSTER;
+        return row;
+      }))),
+      this.searchFate(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.FATE;
+        return row;
+      }))),
+      this.searchMap(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.MAP;
+        return row;
+      })))
+    ]).pipe(
+      map(results => [].concat.apply([], results))
+    );
   }
 
   searchInstance(query: string, filters: SearchFilter[]): Observable<InstanceSearchResult[]> {
@@ -904,6 +1002,9 @@ export class SearchComponent implements OnInit {
   }
 
   public getShareUrl(): string {
+    if (isPlatformServer(this.platform)) {
+      return 'https://ffxivteamcraft.com/search';
+    }
     return `https://ffxivteamcraft.com/${(location.pathname + location.search).substr(1)}`;
   }
 

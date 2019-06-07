@@ -120,7 +120,7 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
           });
         }
         return result;
-      });
+      }).slice(0, 1);
     } else {
       if (spots.length > 0) {
         return spots

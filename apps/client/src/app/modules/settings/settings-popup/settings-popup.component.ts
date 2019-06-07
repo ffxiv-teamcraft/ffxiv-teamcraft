@@ -104,6 +104,10 @@ export class SettingsPopupComponent {
     this.ipc.send('clear-cache');
   }
 
+  clearSearchHistory(): void {
+    localStorage.removeItem('search:history');
+  }
+
   patreonOauth(): void {
     if (this.platform.isDesktop()) {
       this.ipc.on('oauth-reply', (event, code) => {

@@ -17,16 +17,21 @@
            nz-tooltip [nzTitle]="'WIKI.Title' | translate">
           <i nz-icon type="question-circle"></i>
         </a>
-        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="1 1 auto" fxLayoutGap="5px"
-             *ngIf="platformService.isDesktop()">
-          <button nz-button nzShape="circle" (click)="back()">
-            <i nz-icon type="arrow-left"></i>
-          </button>
-          <button nz-button nzShape="circle" (click)="forward()">
-            <i nz-icon type="arrow-right"></i>
-          </button>
+        <div fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto" class="tips-container">
+          <ng-container *ngIf="platformService.isDesktop()">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+              <button nz-button nzShape="circle" (click)="back()">
+                <i nz-icon type="arrow-left"></i>
+              </button>
+              <button nz-button nzShape="circle" (click)="forward()">
+                <i nz-icon type="arrow-right"></i>
+              </button>
+            </div>
+          </ng-container>
+          <div class="tips" fxShow fxHide.lt-lg>
+            <i>{{'TIPS.Title' | translate}}: {{('TIPS.' + (randomTip$ | async)) | translate}}</i>
+          </div>
         </div>
-        <div fxFlex="1 1 auto" *ngIf="!platformService.isDesktop()"></div>
         <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
           <li class="ant-menu-item" fxShow fxHide.lt-sm fxFlex fxLayout="column" routerLink="/support-us"
               routerLinkActive="ant-menu-item-selected">
@@ -146,8 +151,7 @@
                 [nzCollapsedWidth]="80 | ifMobile: 0">
         <div fxLayout="column" class="flex-container" fxLayoutAlign="space-between">
           <div>
-            <ul nz-menu [class.dark]="settings.theme.isDark" [nzTheme]="'dark'"
-                [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
+            <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/search">
           <span nz-tooltip nzPlacement="right"

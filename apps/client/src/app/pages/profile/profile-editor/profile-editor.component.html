@@ -46,6 +46,7 @@
     </div>
     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
       <nz-tag [nzColor]="'magenta'" *ngIf="user.admin">{{'COMMON.Admin' | translate}}</nz-tag>
+      <nz-tag [nzColor]="'volcano'" *ngIf="user.moderator">{{'COMMON.Moderator' | translate}}</nz-tag>
       <nz-tag [nzColor]="'purple'" *ngIf="user.patron">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
       <nz-tag [nzColor]="'orange'"
               *ngIf="user.stats?.listsCreated > 100">{{'PROFILE.More_than_100_lists_created' | translate}}</nz-tag>

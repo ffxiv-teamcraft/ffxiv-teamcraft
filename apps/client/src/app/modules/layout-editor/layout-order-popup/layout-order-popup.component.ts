@@ -14,6 +14,10 @@ export class LayoutOrderPopupComponent {
 
   drop(event: CdkDragDrop<LayoutRow[]>) {
     moveItemInArray(this.layout.rows, event.previousIndex, event.currentIndex);
+    this.layout.rows = this.layout.rows.map((row, index) => {
+      row.index = index;
+      return row;
+    });
   }
 
 }

@@ -63,11 +63,10 @@
     <app-page-loader [loading]="loading">
       <nz-list [nzDataSource]="results" [nzRenderItem]="leve" [nzItemLayout]="'horizontal'">
         <ng-template #leve let-leve>
-          <nz-list-item nz-row fxLayout="row wrap" [nzContent]="content">
+          <nz-list-item fxLayout="row wrap" fxFlex="1 1 auto" [nzContent]="content">
             <label nz-checkbox class="select-box" [(ngModel)]="leve.selected"
                    (ngModelChange)="updateAllSelected(results)"></label>
-            <nz-list-item-meta nz-col nzSpan="18"
-                               [nzTitle]="title"
+            <nz-list-item-meta                                [nzTitle]="title"
                                [nzAvatar]="avatar"
                                [nzDescription]="description">
               <ng-template #title>
@@ -88,11 +87,11 @@
             </nz-list-item-meta>
             <ng-template #content>
               <div fxLayout="column" fxFlex="1 1 auto">
-                <div nz-row fxLayout="row wrap">
-                  <div nz-col nzXs="6" nzXl="2" class="list-center">
+                <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+                  <div class="list-center">
                     <b>{{leve.level}} {{leve.jobId | jobAbbr | i18n}}</b>
                   </div>
-                  <div nz-col [nzXs]="{ span: 4, offset: 1 }" [nzXl]="{ span: 8, offset: 0 }" fxLayout="column">
+                  <div fxLayout="column">
                     <b>{{'LEVEQUESTS.Deliver_to' | translate: { placename: leve.deliveryPlaceId | placeName | i18n } }}</b>
                     <div>
                       <a href="https://ffxiv.gamerescape.com/wiki/{{leve.name.en.split(' ').join('_')}}"
@@ -101,11 +100,11 @@
                       </a>
                     </div>
                   </div>
-                  <div nz-col nzXs="7" nzXl="3">
+                  <div>
                     <b>EXP:</b> {{getLeveExp(leve) | number}}<br/>
                     <b>Gil:</b> {{getLeveGil(leve) | number}}
                   </div>
-                  <div nz-col nzXs="18" nzXl="3">
+                  <div>
                     <label nz-checkbox class="hq-checkbox" [(ngModel)]="leve.hq">
                       {{'Hq' | translate}}
                     </label>
@@ -116,7 +115,7 @@
                       {{'LEVEQUESTS.All_deliveries' | translate:({ value: leve.repeats + 1 })}}
                     </label>
                   </div>
-                  <div nz-col class="actions" nzXs="7" nzXl="4">
+                  <div class="actions">
                     <button nz-button nzType="primary" nzShape="circle" nz-tooltip
                             [nzTitle]="'LEVEQUESTS.Add_to_list' | translate" (click)="addLevesToList([leve])">
                       <i nz-icon type="plus"></i>

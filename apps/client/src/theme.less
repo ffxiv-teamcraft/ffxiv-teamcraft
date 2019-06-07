@@ -1,14 +1,30 @@
 @import "./default-theme";
 
 :root {
-  --primary-color: @primary-color;
-  --highlight-color: @highlight-color;
+  --primary-color: #4880b1;
+  --highlight-color: #26c6da;
+  --background-color: #2f3237;
   --text-color: @text-color;
+  --topbar-color: #191e25;
+  --sider-trigger-color: #747d8a;
+  --zero-width-sider-trigger-color: #747d8a;
+  --sider-trigger-hover-color: #1e88e5;
 }
 
 // Themes connections
 ::selection {
   background: var(--primary-color) !important;
+}
+
+.ant-layout, body, .ant-input, .ant-btn:not(.ant-btn-primary),
+.ant-input-number, .ant-select-selection,
+.ant-select-selection__clear, .ant-select-dropdown,
+.ant-modal-header, .ant-modal-body, .ant-modal-content {
+  background: var(--background-color);
+}
+
+.ant-collapse-content {
+  background: var(--topbar-color);
 }
 
 .ant-tabs-tab-active, .ant-tabs-tab:hover, .ant-tabs-tab:focus {
@@ -44,6 +60,10 @@
   color: var(--text-color);
 }
 
+.ant-spin-text {
+  color: var(--text-color);
+}
+
 .ant-input:hover, .ant-select-selection:hover, .ant-input-number:hover, .ant-select-open .ant-select-selection {
   border-color: var(--primary-color) !important;
 }
@@ -60,14 +80,65 @@
   }
 }
 
+.ant-btn-background-ghost.ant-btn-primary {
+  color: var(--primary-color) !important;
+}
+
 .ant-spin-dot i {
   background-color: var(--primary-color) !important;
 }
 
 a {
   color: var(--primary-color);
+
+  &:hover {
+    color: var(--primary-color);
+    opacity: .8;
+  }
+}
+
+.ant-radio-button-wrapper-checked {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+
+  &:hover {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+  }
+}
+
+.ant-radio-button-wrapper:hover {
+  color: var(--primary-color) !important;
 }
 
 .accent {
   background-color: var(--highlight-color);
+}
+
+.ant-layout-sider {
+  background: var(--topbar-color);
+}
+
+.ant-menu-dark, .ant-menu-dark .ant-menu-sub {
+  background: var(--topbar-color);
+}
+
+.ant-layout-sider-zero-width-trigger {
+  background: var(--topbar-color);
+}
+
+.ant-layout-header {
+  background: var(--topbar-color);
+}
+
+.ant-layout-sider-zero-width-trigger:hover {
+  background: var(--zero-width-sider-trigger-color);
+}
+
+.ant-layout-sider-trigger {
+  background: var(--sider-trigger-color);
+}
+
+.ant-layout-sider-trigger:hover {
+  background: var(--sider-trigger-hover-color);
 }

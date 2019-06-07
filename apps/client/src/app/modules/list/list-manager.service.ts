@@ -15,7 +15,6 @@ import { Team } from '../../model/team/team';
 import { environment } from '../../../environments/environment';
 import { CustomItemsFacade } from '../custom-items/+state/custom-items.facade';
 import { CustomItem } from '../custom-items/model/custom-item';
-import { IS_PRERENDER } from '../../core/tools/platform.service';
 
 @Injectable({
   providedIn: 'root'
@@ -32,10 +31,10 @@ export class ListManagerService {
               private discordWebhookService: DiscordWebhookService,
               private teamsFacade: TeamsFacade,
               private customItemsFacade: CustomItemsFacade) {
-    if (!IS_PRERENDER) {
+
       this.customItemsFacade.loadAll();
       this.customItemsFacade.allCustomItems$.subscribe(items => this.customItemsSync = items);
-    }
+
   }
 
   public addToList(itemId: number | string, list: List, recipeId: string | number, amount = 1, collectible = false, ignoreHooks = false, upgradeCustom = false): Observable<List> {

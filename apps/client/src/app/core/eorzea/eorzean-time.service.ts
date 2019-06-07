@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { shareReplay } from 'rxjs/operators';
+import { first, shareReplay, tap } from 'rxjs/operators';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,10 @@ export class EorzeanTimeService {
 
   private _timerObservable: BehaviorSubject<Date> = new BehaviorSubject<Date>(this.toEorzeanDate(new Date()));
 
-  constructor() {
-    setInterval(() => this.tick(), 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR);
+  constructor(@Inject(PLATFORM_ID) private platform: Object) {
+    if (isPlatformBrowser(this.platform)) {
+      setInterval(() => this.tick(), 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR);
+    }
   }
 
   /**
@@ -45,7 +48,10 @@ export class EorzeanTimeService {
   }
 
   public getEorzeanTime(): Observable<Date> {
-    return this._timerObservable.pipe(shareReplay(1));
+    return this._timerObservable.pipe(
+      shareReplay(1),
+      isPlatformServer(this.platform) ? first() : tap()
+    );
   }
 
   private tick(): void {

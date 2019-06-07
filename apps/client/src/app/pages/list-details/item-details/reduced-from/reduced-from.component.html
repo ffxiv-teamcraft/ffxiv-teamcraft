@@ -1,6 +1,9 @@
 <div fxLayout="column" fxLayoutGap="10px">
   <nz-card *ngFor="let reduction of item.reducedFrom" fxFlex="1 1 auto">
-    <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="reduction.obj.i | itemName | i18n">
+    <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title">
+      <ng-template #title>
+        <span [appItemRarity]="reduction.obj.i">{{reduction.obj.i | itemName | i18n}}</span>
+      </ng-template>
       <ng-template #itemIcon>
         <app-item-icon [icon]="reduction.obj.c" [itemName]="reduction.obj.i | itemName | i18n"
                        [width]="32" [itemId]="reduction.obj.i"></app-item-icon>
@@ -13,7 +16,10 @@
             <ng-template #description>
               <div fxLayout="column" fxLayoutGap="5px">
                 <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                  <span>{{node.mapId | placeName | i18n}} - lvl {{node.level}}</span>
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <div>lvl {{node.level}}</div>
+                    <img [src]="node.type | nodeTypeIcon" alt="" class="node-type-icon">
+                  </div>
                   <nz-tag *ngIf="node.limitType !== undefined" nzColor="orange">
                     {{node.limitType | i18n}}
                   </nz-tag>

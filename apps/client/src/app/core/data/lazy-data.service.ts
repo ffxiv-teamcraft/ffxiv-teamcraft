@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MapData } from '../../modules/map/map-data';
@@ -6,6 +6,7 @@ import { XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../model/common/i18n-name';
 import { Quest } from '../../pages/db/model/quest/quest';
 import { Fate } from '../../pages/db/model/fate/fate';
+import { isPlatformServer } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class LazyDataService {
   public npcs: any = {};
 
   public zhItems: any = {};
+  public zhPlaces: any = {};
 
   public koItems: any = {};
   public koItemUiCategories: any = {};
@@ -37,8 +39,11 @@ export class LazyDataService {
   public koJobCategories: any = {};
   public koQuests: any = {};
   public koFates: any = {};
-  public koFateDescriptions: any = {};
   public koTripleTriadRules: any = {};
+  public koInstances: any = {};
+  public koShops: any = {};
+  public koTraits: any = {};
+  public koStatuses: any = {};
 
   public craftActions: any = {};
 
@@ -59,6 +64,7 @@ export class LazyDataService {
   public leves: any = {};
   public statuses: any = {};
   public traits: any = {};
+  public patches: any = [];
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -79,10 +85,19 @@ export class LazyDataService {
     return res;
   }
 
-  constructor(private http: HttpClient, private xivapi: XivapiService) {
+  constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) platform: Object) {
+    if (isPlatformServer(platform)) {
+      this.loaded$.next(true);
+    } else {
+      this.load();
+    }
+  }
+
+  private load(): void {
     combineLatest([
         this.http.get('./assets/data/items.json'),
-        this.http.get('./assets/data/zh-items.json'),
+        this.http.get('./assets/data/zh/zh-items.json'),
+        this.http.get('./assets/data/zh/zh-places.json'),
         this.http.get('./assets/data/ko/ko-items.json'),
         this.http.get('./assets/data/ko/ko-item-ui-categories.json'),
         this.http.get('./assets/data/ko/ko-actions.json'),
@@ -108,19 +123,24 @@ export class LazyDataService {
         this.http.get('./assets/data/places.json'),
         this.http.get('./assets/data/quests.json'),
         this.http.get('./assets/data/fates.json'),
-        this.http.get('./assets/data/ko/ko-fate-descriptions.json'),
         this.http.get('./assets/data/ko/ko-fates.json'),
         this.http.get('./assets/data/ko/ko-quests.json'),
         this.http.get('./assets/data/ko/ko-triple-triad-rules.json'),
+        this.http.get('./assets/data/ko/ko-instances.json'),
+        this.http.get('./assets/data/ko/ko-shops.json'),
+        this.http.get('./assets/data/ko/ko-traits.json'),
+        this.http.get('./assets/data/ko/ko-statuses.json'),
         this.http.get('./assets/data/instances.json'),
         this.http.get('./assets/data/shops.json'),
         this.http.get('./assets/data/leves.json'),
         this.http.get('./assets/data/statuses.json'),
-        this.http.get('./assets/data/traits.json')
+        this.http.get('./assets/data/traits.json'),
+        this.http.get('https://xivapi.com/patchlist')
       ]
     ).subscribe(([
                    items,
                    zhItems,
+                   zhPlaces,
                    koItems,
                    koItemUiCategories,
                    koActions,
@@ -146,18 +166,23 @@ export class LazyDataService {
                    places,
                    quests,
                    fates,
-                   koFateDescriptions,
                    koFates,
                    koQuests,
                    koTripleTriadRules,
+                   koInstances,
+                   koShops,
+                   koTraits,
+                   koStatuses,
                    instances,
                    shops,
                    leves,
                    statuses,
-                   traits
+                   traits,
+                   patches
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
+      this.zhPlaces = zhPlaces;
       this.koItems = koItems;
       this.koItemUiCategories = koItemUiCategories;
       this.koActions = koActions;
@@ -183,16 +208,21 @@ export class LazyDataService {
       this.places = places as { [index: string]: I18nName };
       this.quests = quests as { [index: string]: Quest };
       this.fates = fates as { [index: string]: Fate };
-      this.koFateDescriptions = koFateDescriptions;
-      this.koFates = koFates;
+      this.koFates = koFates as { [index: string]: Fate };
       this.koQuests = koQuests;
       this.koTripleTriadRules = koTripleTriadRules;
+      this.koInstances = koInstances;
+      this.koShops = koShops;
+      this.koTraits = koTraits;
+      this.koStatuses = koStatuses;
       this.instances = instances;
       this.shops = shops;
       this.leves = leves;
       this.statuses = statuses;
       this.traits = traits;
+      this.patches = patches;
       this.loaded$.next(true);
+      this.loaded$.complete();
     });
   }
 }

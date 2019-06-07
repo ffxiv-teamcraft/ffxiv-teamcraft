@@ -102,7 +102,7 @@ export class DesynthComponent {
         return searchResult.Results
           .map(item => {
             let score = 0;
-            if (item.GameContentLinks !== null) {
+            if (item.GameContentLinks) {
               if (item.GameContentLinks.SpecialShop !== undefined
                 && Object.keys(item.GameContentLinks.SpecialShop).some(key => key.startsWith('ItemReceive'))) {
                 score += 10;

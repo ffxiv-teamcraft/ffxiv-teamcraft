@@ -4,7 +4,12 @@
     "outDir": "../../dist/out-tsc/apps/client-server",
     "baseUrl": "."
   },
+  "exclude": [
+    "**/*.spec.ts",
+    "**/client-e2e/*"
+  ],
   "angularCompilerOptions": {
-    "entryModule": "src/app/app.server.module#AppServerModule"
+    "entryModule": "src/app/app.server.module#AppServerModule",
+    "outputHashing": false
   }
 }

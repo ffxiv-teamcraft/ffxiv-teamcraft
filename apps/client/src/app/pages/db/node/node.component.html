@@ -10,7 +10,7 @@
             class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name"
-                *ngIf="xivapiNode.GatheringPoints[0]?.PlaceName; else otherName">{{xivapiNode.GatheringPoints[0]?.PlaceName | xivapiI18n}}</h2>
+                *ngIf="xivapiNode.GatheringPoints && xivapiNode.GatheringPoints[0]?.PlaceName; else otherName">{{xivapiNode.GatheringPoints[0]?.PlaceName | xivapiI18n}}</h2>
             <ng-template #otherName>
               <h2 class="item-name" *ngIf="xivapiNode.mappyData">{{xivapiNode.mappyData.zoneid | placeName | i18n}}</h2>
             </ng-template>
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-
+    <app-db-comments type="mob" [id]="xivapiMob.ID"></app-db-comments>
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column" *ngIf="xivapiNode.mappyData as data">
       <nz-card fxFlex="1 1 30%" class="details-card"
@@ -101,7 +101,7 @@
                 </ng-template>
                 <ng-template #title>
                   <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                    <div>{{item | itemName | i18n}}</div>
+                    <div [appItemRarity]="item">{{item | itemName | i18n}}</div>
                     <nz-tag
                       *ngIf="getGatheringItem(item)?.hidden">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</nz-tag>
                   </div>

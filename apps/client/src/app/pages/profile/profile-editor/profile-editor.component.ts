@@ -24,7 +24,7 @@ export class ProfileEditorComponent {
 
   mainCharacter$ = this.authFacade.mainCharacterEntry$;
 
-  characters$ = combineLatest(this.authFacade.characters$, this.authFacade.user$).pipe(
+  characters$ = combineLatest([this.authFacade.characters$, this.authFacade.user$]).pipe(
     map(([chars, user]) => {
       return chars
         .concat(<CharacterResponse[]>(user.customCharacters.map(c => ({ Character: c })) || []))

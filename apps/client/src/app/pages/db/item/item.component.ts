@@ -18,7 +18,7 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { NzNotificationService } from 'ng-zorro-antd';
+import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { List } from '../../../modules/list/model/list';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { ATTTService } from '../service/attt.service';
@@ -28,8 +28,9 @@ import { UsedForType } from '../model/used-for-type';
 import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
-import { IS_PRERENDER } from '../../../core/tools/platform.service';
 import { Craft } from '../../../model/garland-tools/craft';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 
 @Component({
   selector: 'app-item',
@@ -69,13 +70,11 @@ export class ItemComponent extends TeamcraftPageComponent {
               private listPicker: ListPickerService, private listsFacade: ListsFacade,
               private progressService: ProgressPopupService, private listManager: ListManagerService,
               private notificationService: NzNotificationService, private rotationPicker: RotationPickerService,
-              private attt: ATTTService, private lazyData: LazyDataService, seo: SeoService) {
+              private attt: ATTTService, private lazyData: LazyDataService, private sanitizer: DomSanitizer,
+              private dialog: NzModalService, seo: SeoService) {
     super(seo);
 
     this.route.paramMap.subscribe(params => {
-      if (IS_PRERENDER) {
-        return;
-      }
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
@@ -511,6 +510,29 @@ export class ItemComponent extends TeamcraftPageComponent {
     };
   }
 
+  public openModelViewer(xivapiItem: any, gtData: ItemData): void {
+    let slot: number | string = 1;
+    if (gtData.item.mount) {
+      slot = 'mount';
+    } else if (gtData.item.minionrace) {
+      slot = 'minion';
+    } else if (gtData.item.furniture) {
+      slot = 'furniture';
+    } else {
+      slot = gtData.item.slot;
+    }
+    this.dialog.create({
+      nzTitle: this.translate.instant('DB.3d_model_viewer'),
+      nzContent: ModelViewerComponent,
+      nzComponentParams: {
+        slot: slot,
+        models: gtData.item.models
+      },
+      nzFooter: null,
+      nzClassName: 'model-viewer-modal'
+    });
+  }
+
   private getDescription(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
     return item[`Description_${this.translate.currentLang}`] || item.Description_en;
@@ -534,13 +556,32 @@ export class ItemComponent extends TeamcraftPageComponent {
     );
   }
 
-  public addItemsToList(items: SearchResult[]): void {
+  public createQuickList(item: SearchResult): void {
+    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
+    const operation$ = this.listManager.addToList(+item.itemId, list, item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)
+      .pipe(
+        tap(resultList => this.listsFacade.addList(resultList)),
+        mergeMap(resultList => {
+          return this.listsFacade.myLists$.pipe(
+            map(lists => lists.find(l => l.createdAt === resultList.createdAt && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          );
+        })
+      );
+
+    this.progressService.showProgress(operation$, 1)
+      .subscribe((newList) => {
+        this.router.navigate(['list', newList.$key]);
+      });
+  }
+
+  public addItemsToList(item: SearchResult, amount: number): void {
+    item.amount = amount;
     this.listPicker.pickList().pipe(
       mergeMap(list => {
-        const operations = items.map(item => {
-          return this.listManager.addToList(+item.itemId, list,
-            item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
-        });
+        const operations = [this.listManager.addToList(+item.itemId, list,
+          item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)];
         let operation$: Observable<any>;
         if (operations.length > 0) {
           operation$ = concat(
@@ -550,9 +591,9 @@ export class ItemComponent extends TeamcraftPageComponent {
           operation$ = of(list);
         }
         return this.progressService.showProgress(operation$,
-          items.length,
+          1,
           'Adding_recipes',
-          { amount: items.length, listname: list.name });
+          { amount: 1, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
       mergeMap(list => {
@@ -566,7 +607,7 @@ export class ItemComponent extends TeamcraftPageComponent {
           ), 1, 'Saving_in_database');
       })
     ).subscribe((list) => {
-      this.itemsAdded = items.length;
+      this.itemsAdded = 1;
       this.modifiedList = list;
       this.notificationService.template(this.notification);
     });

@@ -5,7 +5,7 @@
                          [nzAvatar]="avatar">
         <ng-template #title>
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-            <div>{{desynth | itemName | i18n}}</div>
+            <div [appItemRarity]="desynth">{{desynth | itemName | i18n}}</div>
             <app-db-button type="item" [id]="desynth"></app-db-button>
           </div>
         </ng-template>

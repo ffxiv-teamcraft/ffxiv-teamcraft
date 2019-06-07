@@ -23,12 +23,16 @@ let updateInterval;
 let openedOverlays = {};
 
 const options = {
-  multi: false
+  multi: false,
+  noHA: false
 };
 
 for (let i = 0; i < argv.length; i++) {
   if (argv[i] === '--multi' || argv[i] === '-m') {
     options.multi = true;
+  }
+  if (argv[i] === '--noHardwareAcceleration' || argv[i] === '-noHA') {
+    options.noHA = true;
   }
 }
 
@@ -61,6 +65,10 @@ if (!options.multi) {
 let deepLink = '';
 
 let api;
+
+if (options.noHA) {
+  app.disableHardwareAcceleration();
+}
 
 function createWindow() {
   app.setAsDefaultProtocolClient('teamcraft');
@@ -100,11 +108,16 @@ function createWindow() {
   // Event when the window is closed.
   win.on('closed', function() {
     win = null;
-    Object.keys(openedOverlays).forEach(key => {
-      if (openedOverlays[key]) {
-        openedOverlays[key].close();
-      }
-    });
+    try {
+      Object.keys(openedOverlays).forEach(key => {
+        if (openedOverlays[key]) {
+          openedOverlays[key].close();
+        }
+      });
+    } catch (e) {
+      // Window already destroyed, so we don't care :)
+    }
+
   });
 
   win.on('app-command', (e, cmd) => {
@@ -289,15 +302,23 @@ autoUpdater.on('update-downloaded', () => {
 });
 
 ipcMain.on('apply-settings', (event, settings) => {
-  Object.keys(openedOverlays).forEach(key => {
-    openedOverlays[key].webContents.send('update-settings', settings);
-  });
+  try {
+    Object.keys(openedOverlays).forEach(key => {
+      openedOverlays[key].webContents.send('update-settings', settings);
+    });
+  } catch (e) {
+    // Window already destroyed, so we don't care :)
+  }
 });
 
 ipcMain.on('language', (event, lang) => {
-  Object.keys(openedOverlays).forEach(key => {
-    openedOverlays[key].webContents.send('apply-language', lang);
-  });
+  try {
+    Object.keys(openedOverlays).forEach(key => {
+      openedOverlays[key].webContents.send('apply-language', lang);
+    });
+  } catch (e) {
+    // Window already destroyed, so we don't care :)
+  }
 });
 
 ipcMain.on('show-devtools', () => {
