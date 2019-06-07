@@ -1289,7 +1289,7 @@
       "Show_more": "{{amount}} 개의 댓글 더 보기",
       "No_comments": "댓글 없음",
       "Post": "게시",
-      "Editor_tip": "Database links will be processed and handled inside your message."
+      "Editor_tip": "댓글 내 데이터베이스 링크는 자동으로 DB로 변환됩니다."
     }
   },
   "SEARCH_TYPES": {
