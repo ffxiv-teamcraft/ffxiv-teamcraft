@@ -1,10 +1,14 @@
 const admin = require('firebase-admin');
-const { Subject } = require('rxjs');
+const { combineLatest, from, Subject, BehaviorSubject } = require('rxjs');
+const { map, switchMap, tap, takeUntil } = require('rxjs/operators');
 const fs = require('fs');
 const path = require('path');
 const csv = require('csv-parser');
+const { Translate } = require('@google-cloud/translate');
 
-contentIds = {
+const translate = new Translate({ projectId: 'ffxivteamcraft' });
+
+const contentIds = {
   1: 'item',
   3: 'action',
   4: 'quest',
@@ -33,7 +37,22 @@ contentIds = {
   300: 'character'
 };
 
+function chunkArray(list, howMany) {
+  const result = [];
+  const input = list.slice(0);
+  while (input[0]) {
+    result.push(input.splice(0, howMany));
+  }
+  return result;
+}
+
 const comments = [];
+
+admin.initializeApp({
+  credential: admin.credential.cert('C:\\Users\\Flavien Normand\\Documents\\service-account-beta-db.json')
+});
+const firestore = admin.firestore();
+firestore.settings({ timestampsInSnapshots: true });
 
 fs.createReadStream(path.join(__dirname, 'input/content_comments.csv'), 'utf-8').pipe(csv())
   .on('data', function(row) {
@@ -45,5 +64,45 @@ fs.createReadStream(path.join(__dirname, 'input/content_comments.csv'), 'utf-8')
   });
 
 function importComments() {
-  //TODO
+  const index$ = new BehaviorSubject(0);
+  const done$ = new Subject();
+  const data = chunkArray(comments, 500);
+  index$.pipe(
+    map(index => {
+      return data[index];
+    }),
+    switchMap(rows => {
+      return combineLatest(rows.map(comment => {
+          const message = comment.text;
+          const timestamp = new Date(comment.time).getTime();
+          const deleted = comment.deleted === 1;
+          // Seems like sometimes the parser adds a space before the id key, idk why
+          const id = comment.id || comment['﻿id'];
+          const contentId = comment.uniq;
+          return from(translate.detect(message)).pipe(
+            switchMap(detections => {
+              const language = Array.isArray(detections) ? detections[0].language : detections.language;
+              const tcComment = {
+                resourceId: `${contentIds[comment.content]}/${contentId}`,
+                date: timestamp,
+                deleted: deleted,
+                language: language,
+                message: message,
+                parent: comment.reply_to
+              };
+              return firestore.collection('db-comments').doc(id.toString()).set(tcComment);
+            })
+          );
+        })
+      );
+    }),
+    tap(() => {
+      if (data[index$.value + 1]) {
+        index$.next(index$.value + 1);
+      } else {
+        done$.next();
+      }
+    }),
+    takeUntil(done$)
+  ).subscribe();
 }

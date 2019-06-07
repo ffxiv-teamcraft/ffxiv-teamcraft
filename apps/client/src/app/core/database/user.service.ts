@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { EMPTY, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
@@ -21,6 +21,9 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
 
   public get(uid: string, external = false): Observable<TeamcraftUser> {
     if (this.userCache[uid] === undefined) {
+      if (!uid) {
+        return EMPTY;
+      }
       this.userCache[uid] = super.get(uid).pipe(
         switchMap(user => {
           if (user === null) {
