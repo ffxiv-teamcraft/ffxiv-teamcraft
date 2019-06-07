@@ -1,6 +1,6 @@
 const admin = require('firebase-admin');
 const { combineLatest, from, Subject, BehaviorSubject } = require('rxjs');
-const { map, switchMap, tap, takeUntil } = require('rxjs/operators');
+const { map, switchMap, tap, takeUntil, delay } = require('rxjs/operators');
 const fs = require('fs');
 const path = require('path');
 const csv = require('csv-parser');
@@ -66,11 +66,12 @@ fs.createReadStream(path.join(__dirname, 'input/content_comments.csv'), 'utf-8')
 function importComments() {
   const index$ = new BehaviorSubject(0);
   const done$ = new Subject();
-  const data = chunkArray(comments, 500);
+  const data = chunkArray(comments, 10);
   index$.pipe(
     map(index => {
       return data[index];
     }),
+    delay(1000),
     switchMap(rows => {
       return combineLatest(rows.map(comment => {
           const message = comment.text;
@@ -98,6 +99,7 @@ function importComments() {
     }),
     tap(() => {
       if (data[index$.value + 1]) {
+        console.log(`${index$.value * 10}/${comments.length}`);
         index$.next(index$.value + 1);
       } else {
         done$.next();
