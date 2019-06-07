@@ -122,6 +122,7 @@
     "Opened_in_desktop": "此页面已在客户端中打开，你可以现在关闭本页了。",
     "Open_in_desktop": "在客户端中打开",
     "Admin": "管理员",
+    "Moderator": "Moderator",
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
     "None": "None"
@@ -1274,6 +1275,16 @@
       "Type": "Type",
       "Type_buff": "Buff",
       "Type_debuff": "Debuff"
+    },
+    "COMMENTS": {
+      "Title": "Comments",
+      "Reply": "Reply",
+      "Show_less": "Show less",
+      "Add_comment": "Add a comment",
+      "Show_more": "Show {{amount}} more comments",
+      "No_comments": "No comments",
+      "Post": "Post",
+      "Editor_tip": "Database links will be processed and handled inside your message."
     }
   },
   "SEARCH_TYPES": {
