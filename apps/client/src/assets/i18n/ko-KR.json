@@ -826,7 +826,7 @@
       "Use_advanced_touch_instead": "{{index}} 번째 공정에서 '가공' 과 '고급 가공' 을 사용했습니다. '중급 가공' 을 두번 사용할 경우 CP 2를 절약하면서도 같은 효과를 발휘할 수 있습니다.",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 번째 공정에서 사용한 버프가 {{overlappingIndex}} 번째 공정에서 사용한 버프와 중복됩니다. 버프의 효과를 최대한 받을 수 있도록 조금 늦게 사용해야 합니다.",
       "Use_byregot_brow_5_stacks": "'비레고의 축복' 대신 '비레고의 기교'를 사용하시면 같은 품질량이 상승하면서도 CP 6을 절약할 수 있습니다.",
-      "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
+      "Use_ingenuity_before_byregot": "더 높은 품질향상을 위해 '비레고' 스킬을 사용하기 전에 '독창적 발상'이 사용되어야 합니다",
       "Use_more_quality_actions": "You have remaining solidity at the end of the craft, you should probably use it to add more quality-related actions.",
       "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
       "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
@@ -1282,12 +1282,12 @@
       "Type_debuff": "디버프"
     },
     "COMMENTS": {
-      "Title": "Comments",
-      "Reply": "Reply",
+      "Title": "댓글",
+      "Reply": "답글 달기",
       "Show_less": "Show less",
-      "Add_comment": "Add a comment",
-      "Show_more": "Show {{amount}} more comments",
-      "No_comments": "No comments",
+      "Add_comment": "댓글 추가",
+      "Show_more": "{{amount}} 개의 댓글 더 보기",
+      "No_comments": "댓글 없음",
       "Post": "게시",
       "Editor_tip": "Database links will be processed and handled inside your message."
     }
@@ -1307,7 +1307,7 @@
     "Action": "기술",
     "Status": "상태",
     "Trait": "특성",
-    "Any": "Any"
+    "Any": "모두"
   },
   "SEARCH_FILTERS": {
     "Level": "레벨",
