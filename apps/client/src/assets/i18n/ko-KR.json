@@ -1284,7 +1284,7 @@
     "COMMENTS": {
       "Title": "댓글",
       "Reply": "답글 달기",
-      "Show_less": "Show less",
+      "Show_less": "댓글 접기",
       "Add_comment": "댓글 추가",
       "Show_more": "{{amount}} 개의 댓글 더 보기",
       "No_comments": "댓글 없음",
