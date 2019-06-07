@@ -56,7 +56,7 @@
   "Mute_alarms": "알람 음소거",
   "Hide_used": "사용된 행 숨기기",
   "Collapse_if_done": "완료시 삭제",
-  "Collapse_by_default": "Collapse by default",
+  "Collapse_by_default": "댓글 접기를 기본으로 설정",
   "Retainer_ventures": "집사 수행",
   "Requires_x_ventures": "총 {{amount}}회의 집사 수행이 필요합니다.",
   "WORKSHOP": {
