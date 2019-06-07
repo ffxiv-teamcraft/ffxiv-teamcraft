@@ -122,6 +122,7 @@
     "Opened_in_desktop": "Diese Seite wurde in der Desktop-App geöffnet und kann jetzt geschlossen werden.",
     "Open_in_desktop": "In der Desktop-App öffnen",
     "Admin": "Administrator",
+    "Moderator": "Moderator",
     "Minutes_duration": "{{amount}} Minuten",
     "Seconds_duration": "{{amount}} Sekunden",
     "None": "None"
@@ -1274,6 +1275,16 @@
       "Type": "Type",
       "Type_buff": "Buff",
       "Type_debuff": "Debuff"
+    },
+    "COMMENTS": {
+      "Title": "Comments",
+      "Reply": "Reply",
+      "Show_less": "Show less",
+      "Add_comment": "Add a comment",
+      "Show_more": "Show {{amount}} more comments",
+      "No_comments": "No comments",
+      "Post": "Post",
+      "Editor_tip": "Database links will be processed and handled inside your message."
     }
   },
   "SEARCH_TYPES": {
