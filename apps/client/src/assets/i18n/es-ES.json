@@ -122,6 +122,7 @@
     "Opened_in_desktop": "Esta página ha sido abierta en su aplicación de escritorio, ahora puede cerrarla.",
     "Open_in_desktop": "Abrir en la aplicación de escritorio",
     "Admin": "Administrador",
+    "Moderator": "Moderator",
     "Minutes_duration": "{{amount}} minutos",
     "Seconds_duration": "{{amount}} segundos",
     "None": "Ninguno"
@@ -1274,6 +1275,16 @@
       "Type": "Tipo",
       "Type_buff": "Mejora",
       "Type_debuff": "Debilitación"
+    },
+    "COMMENTS": {
+      "Title": "Comments",
+      "Reply": "Reply",
+      "Show_less": "Show less",
+      "Add_comment": "Add a comment",
+      "Show_more": "Show {{amount}} more comments",
+      "No_comments": "No comments",
+      "Post": "Post",
+      "Editor_tip": "Database links will be processed and handled inside your message."
     }
   },
   "SEARCH_TYPES": {
