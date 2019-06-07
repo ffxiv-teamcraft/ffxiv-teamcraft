@@ -825,7 +825,12 @@
       "Use_patient_touch_faster": "Vous devriez utiliser Ouvrage appliqué avant toute autre action de qualité afin de minimiser la perte de cumuls de Calme Intérieur en cas d'échec.",
       "Use_advanced_touch_instead": "Vous avez utilisé Ouvrage de base puis Ouvrage avancé au tour {{index}}, utiliser deux Ouvrages standards produit le même résultat pour 2 PS de moins.",
       "Do_not_overlap_buffs": "Vous avez écrasé le buff appliqué au tour {{overlappedIndex}} avec le buff appliqué au tour {{overlappingIndex}}, vous appliquer le second buff plus tard pour éviter de perdre des tours d'effet sur le premier.",
-      "Use_byregot_brow_5_stacks": "Vous avez utilisé Bénédiction de Byregot avec 5 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner autant de qualité en dépensant 6 PS de moins."
+      "Use_byregot_brow_5_stacks": "Vous avez utilisé Bénédiction de Byregot avec 5 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner autant de qualité en dépensant 6 PS de moins.",
+      "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
+      "Use_more_quality_actions": "You have remaining solidity at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
+      "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
     }
   },
   "PRICING": {
