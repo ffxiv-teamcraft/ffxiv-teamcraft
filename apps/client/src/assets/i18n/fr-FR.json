@@ -122,6 +122,7 @@
     "Opened_in_desktop": "Cette page a été ouverte dans votre application bureau, vous pouvez fermer cet onglet.",
     "Open_in_desktop": "Ouvrir dans l'application bureau",
     "Admin": "Administrateur",
+    "Moderator": "Moderator",
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} secondes",
     "None": "Aucun"
@@ -1274,6 +1275,16 @@
       "Type": "Type",
       "Type_buff": "Bonus",
       "Type_debuff": "Malus"
+    },
+    "COMMENTS": {
+      "Title": "Comments",
+      "Reply": "Reply",
+      "Show_less": "Show less",
+      "Add_comment": "Add a comment",
+      "Show_more": "Show {{amount}} more comments",
+      "No_comments": "No comments",
+      "Post": "Post",
+      "Editor_tip": "Database links will be processed and handled inside your message."
     }
   },
   "SEARCH_TYPES": {
