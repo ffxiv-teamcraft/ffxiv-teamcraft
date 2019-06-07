@@ -825,7 +825,12 @@
       "Use_patient_touch_faster": "'전념 가공'은 '정신집중'의 스택이 쌓이기 전에 사용하세요. 만약 스킬이 실패한다면 스택이 낭비될 수도 있습니다.",
       "Use_advanced_touch_instead": "{{index}} 번째 공정에서 '가공' 과 '고급 가공' 을 사용했습니다. '중급 가공' 을 두번 사용할 경우 CP 2를 절약하면서도 같은 효과를 발휘할 수 있습니다.",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 번째 공정에서 사용한 버프가 {{overlappingIndex}} 번째 공정에서 사용한 버프와 중복됩니다. 버프의 효과를 최대한 받을 수 있도록 조금 늦게 사용해야 합니다.",
-      "Use_byregot_brow_5_stacks": "'비레고의 축복' 대신 '비레고의 기교'를 사용하시면 같은 품질량이 상승하면서도 CP 6을 절약할 수 있습니다."
+      "Use_byregot_brow_5_stacks": "'비레고의 축복' 대신 '비레고의 기교'를 사용하시면 같은 품질량이 상승하면서도 CP 6을 절약할 수 있습니다.",
+      "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
+      "Use_more_quality_actions": "You have remaining solidity at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
+      "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
     }
   },
   "PRICING": {
