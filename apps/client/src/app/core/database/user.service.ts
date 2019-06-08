@@ -2,12 +2,13 @@ import { Injectable, NgZone } from '@angular/core';
 import { EMPTY, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
-import { map, shareReplay, switchMap } from 'rxjs/operators';
+import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { HttpClient } from '@angular/common/http';
+import { LogTrackingService } from './log-tracking.service';
 
 @Injectable()
 export class UserService extends FirestoreStorage<TeamcraftUser> {
@@ -15,7 +16,8 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
   userCache = {};
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private af: AngularFireAuth, private http: HttpClient) {
+              protected pendingChangesService: PendingChangesService, private af: AngularFireAuth, private http: HttpClient,
+              private logTrackingService: LogTrackingService) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
@@ -50,10 +52,46 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
             })
           );
         }),
+        switchMap(user => {
+          if (user.defaultLodestoneId) {
+            return this.logTrackingService.get(`${user.$key}:${user.defaultLodestoneId.toString()}`).pipe(
+              catchError(() => {
+                return of({
+                  crafting: [],
+                  gathering: []
+                });
+              }),
+              map(logTracking => {
+                if (logTracking.crafting.length > 0) {
+                  user.logProgression = logTracking.crafting;
+                }
+                if (logTracking.gathering.length > 0) {
+                  user.gatheringLogProgression = logTracking.gathering;
+                }
+                return user;
+              })
+            );
+          }
+          return of(user);
+        }),
         shareReplay(1)
       );
     }
     return this.userCache[uid];
+  }
+
+  public update(uid: string, user: Partial<TeamcraftUser>): Observable<void> {
+    if (user.defaultLodestoneId) {
+      return this.logTrackingService.set(`${user.$key}:${user.defaultLodestoneId.toString()}`, {
+        crafting: user.logProgression,
+        gathering: user.gatheringLogProgression
+      }).pipe(
+        switchMap(() => {
+          return super.update(uid, { ...user, gatheringLogProgression: [], logProgression: [] });
+        })
+      );
+    }
+    return super.update(uid, user);
   }
 
   /**

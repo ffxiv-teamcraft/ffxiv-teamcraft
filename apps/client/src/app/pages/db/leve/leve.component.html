@@ -205,7 +205,7 @@
                   </div>
                 </ng-template>
                 <ng-template #more>
-                  <app-map-position *ngIf="(npc.id | npcName).position as npcPosition"
+                  <app-map-position *ngIf="(npc.id | npcName)?.position as npcPosition"
                                     [mapId]="npcPosition.map" [zoneId]="npcPosition.zoneid"
                                     [marker]="{x: npcPosition.x, y: npcPosition.y}"
                                     [showZoneName]="true"></app-map-position>
