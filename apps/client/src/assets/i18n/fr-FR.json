@@ -56,7 +56,7 @@
   "Mute_alarms": "Mettre en sourdine",
   "Hide_used": "Masquer les éléments utilisés",
   "Collapse_if_done": "Réduire une fois complété",
-  "Collapse_by_default": "Collapse by default",
+  "Collapse_by_default": "Réduire par défaut",
   "Retainer_ventures": "Tâches de servant",
   "Requires_x_ventures": "Requiert {{amount}} tâches pour tout obtenir",
   "WORKSHOP": {
@@ -122,7 +122,7 @@
     "Opened_in_desktop": "Cette page a été ouverte dans votre application bureau, vous pouvez fermer cet onglet.",
     "Open_in_desktop": "Ouvrir dans l'application bureau",
     "Admin": "Administrateur",
-    "Moderator": "Moderator",
+    "Moderator": "Modérateur",
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} secondes",
     "None": "Aucun"
@@ -826,11 +826,11 @@
       "Use_advanced_touch_instead": "Vous avez utilisé Ouvrage de base puis Ouvrage avancé au tour {{index}}, utiliser deux Ouvrages standards produit le même résultat pour 2 PS de moins.",
       "Do_not_overlap_buffs": "Vous avez écrasé le buff appliqué au tour {{overlappedIndex}} avec le buff appliqué au tour {{overlappingIndex}}, vous appliquer le second buff plus tard pour éviter de perdre des tours d'effet sur le premier.",
       "Use_byregot_brow_5_stacks": "Vous avez utilisé Bénédiction de Byregot avec 5 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner autant de qualité en dépensant 6 PS de moins.",
-      "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
-      "Use_more_quality_actions": "You have remaining solidity at the end of the craft, you should probably use it to add more quality-related actions.",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
-      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
-      "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
+      "Use_ingenuity_before_byregot": "Vous devriez utiliser Ingeniosité avant l'action de Byregot afin d'obtenir un bonus sur le gain de qualité.",
+      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_prudent_touch_manipulation": "Comme vous êtes niveau 66+, vous devriez utiliser le combo Manipulation II + Ouvrage parcimonieux afin d'obtenir un avantage maximum de qualité et plus de fiabilité.",
+      "Use_rapid_synthesis_earlier": "Vous ne devriez pas utiliser la Synthèse Rapide comme une action finale, la mettre plus tôt pour pouvoir gérer l'échec de l'action est mieux pour la fiabilité de votre rotation.",
+      "Use_reflect_earlier": "Vous devriez utiliser l'action \"Atout : Sérénité\" plus tôt pour augmenter a puissance des actions de qualité suivantes."
     }
   },
   "PRICING": {
@@ -1282,14 +1282,14 @@
       "Type_debuff": "Malus"
     },
     "COMMENTS": {
-      "Title": "Comments",
-      "Reply": "Reply",
-      "Show_less": "Show less",
-      "Add_comment": "Add a comment",
-      "Show_more": "Show {{amount}} more comments",
-      "No_comments": "No comments",
-      "Post": "Post",
-      "Editor_tip": "Database links will be processed and handled inside your message."
+      "Title": "Commentaires",
+      "Reply": "Répondre",
+      "Show_less": "Afficher moins",
+      "Add_comment": "Ajouter un commentaire",
+      "Show_more": "Afficher {{amount}} commentaires supplémentaires",
+      "No_comments": "Aucun commentaire",
+      "Post": "Publier",
+      "Editor_tip": "Les liens de base de données seront traités et remplacés par des liens hypertexte dans votre message."
     }
   },
   "SEARCH_TYPES": {
@@ -1307,7 +1307,7 @@
     "Action": "Action",
     "Status": "État ",
     "Trait": "Trait",
-    "Any": "Any"
+    "Any": "Tout"
   },
   "SEARCH_FILTERS": {
     "Level": "Niveau",
