@@ -56,6 +56,7 @@
   "Mute_alarms": "Silenciar alarmas",
   "Hide_used": "Esconder filas usadas",
   "Collapse_if_done": "Colapsar completados",
+  "Collapse_by_default": "Collapse by default",
   "Retainer_ventures": "Aventuras de sirviente",
   "Requires_x_ventures": "Requiere {{amount}} aventuras de sirviente para conseguirlo todo",
   "WORKSHOP": {
@@ -76,7 +77,7 @@
     "title": "Acerca de",
     "Created_by": "FFXIV Teamcraft creado por Miu Asakura de Louisoix, Chaos.",
     "Copyright_notice_title": "Aviso de derechos de autor",
-    "Copyright_notice_content": "FINAL FANTASY es una marca registrada de Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. Todos los Derechos Reservados.<br>FFXIV Teamcraft no está afiliado con Square Enix.",
+    "Copyright_notice_content": "FINAL FANTASY es una marca registrada de Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. Todos los derechos reservados.<br> FFXIV Teamcraft no está afiliado a Square Enix.",
     "Thanks_title": "Gracias",
     "Data_sources": "Fuentes de información",
     "Patreon_supporters": "Seguidores de Patreon",
@@ -121,6 +122,7 @@
     "Opened_in_desktop": "Esta página ha sido abierta en su aplicación de escritorio, ahora puede cerrarla.",
     "Open_in_desktop": "Abrir en la aplicación de escritorio",
     "Admin": "Administrador",
+    "Moderator": "Moderator",
     "Minutes_duration": "{{amount}} minutos",
     "Seconds_duration": "{{amount}} segundos",
     "None": "Ninguno"
@@ -329,15 +331,15 @@
     "Free_aetheryte": "Aetheryte gratuito",
     "Favorite_aetherytes": "Aetherytes favoritos",
     "Disable_cross_world_prices": "Sólo usar mi propio mundo para los precios del mercado",
-    "Clear_search_history": "Clear search history",
+    "Clear_search_history": "Limpiar el historial de búsqueda",
     "COLORS": {
-      "Background": "Background color",
+      "Background": "Color de fondo",
       "Primary": "Color primario",
       "Highlight": "Color de resaltado",
       "Text": "Color de contenido de botones",
-      "Topbar": "Topbar and sidebar color",
-      "Sidebar_trigger": "Sidebar trigger color",
-      "Sidebar_trigger_hover": "Sidebar trigger hover color"
+      "Topbar": "Color de la barra superior y lateral",
+      "Sidebar_trigger": "Color de activador de barra lateral",
+      "Sidebar_trigger_hover": "Color de activador de barra lateral (cursor flotando encima)"
     },
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
@@ -823,7 +825,12 @@
       "Use_patient_touch_faster": "Debería usar \"Patient Touch\" antes de añadir cargas de \"Inner Quiet\", para minimizar las cargas desperdiciadas si la acción falla.",
       "Use_advanced_touch_instead": "Usó \"Basic Touch\" seguido de \"Advanced Touch\" en el paso {{index}}, debería usar dos \"Standard Touch\" en su lugar para obtener la misma potencia por 2 CP menos.",
       "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos.",
-      "Use_byregot_brow_5_stacks": "Debería usar \"Byregot's Brow\" en vez de \"Byregot's Blessing\" para obtener la misma calidad por 6 CP menos."
+      "Use_byregot_brow_5_stacks": "Debería usar \"Byregot's Brow\" en vez de \"Byregot's Blessing\" para obtener la misma calidad por 6 CP menos.",
+      "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
+      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
+      "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
     }
   },
   "PRICING": {
@@ -1169,8 +1176,8 @@
     "Select_data_type": "Seleccione los tipos de datos a mostrar para ver los detalles aquí",
     "Desynths_to": "Se desintetiza en",
     "Limited": "Aparición limitada",
-    "3d_model_viewer": "3D model preview",
-    "3d_model_help": "Preview 3D model",
+    "3d_model_viewer": "Vista previa del modelo 3D",
+    "3d_model_help": "Previsualizar modelo 3D",
     "NODE": {
       "Items": "Artículos",
       "Possible_bonuses": "Bonos posibles",
@@ -1270,9 +1277,19 @@
       "Locks_actions": "Bloquea acciones",
       "Locks_control": "Bloquea control",
       "Locks_movement": "Bloquea movimiento",
-      "Type": "Type",
-      "Type_buff": "Buff",
-      "Type_debuff": "Debuff"
+      "Type": "Tipo",
+      "Type_buff": "Mejora",
+      "Type_debuff": "Debilitación"
+    },
+    "COMMENTS": {
+      "Title": "Comments",
+      "Reply": "Reply",
+      "Show_less": "Show less",
+      "Add_comment": "Add a comment",
+      "Show_more": "Show {{amount}} more comments",
+      "No_comments": "No comments",
+      "Post": "Post",
+      "Editor_tip": "Database links will be processed and handled inside your message."
     }
   },
   "SEARCH_TYPES": {
@@ -1289,7 +1306,8 @@
     "Map": "Mapa",
     "Action": "Acción",
     "Status": "Estado",
-    "Trait": "Rasgo"
+    "Trait": "Rasgo",
+    "Any": "Cualquiera"
   },
   "SEARCH_FILTERS": {
     "Level": "Nivel",
@@ -1298,14 +1316,14 @@
     "Leve_level": "Nivel requerido"
   },
   "TIPS": {
-    "Title": "Tip",
-    "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
-    "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
-    "Desynth": "You can find ideal items to level up desynth in desynth page.",
-    "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
-    "3D_model": "You can preview 3D model of items inside the database.",
-    "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
-    "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
-    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+    "Title": "Consejo",
+    "Community_rotations": "Puede encontrar rotaciones para una receta determinada dentro de la página de rotaciones comunitarias.",
+    "GC_Deliveries": "Puede preparar listas para las entregas de GC dentro de la página entregas de GC.",
+    "Desynth": "Puede encontrar los artículos ideales para subir desíntesis de nivel en la página de desíntesis.",
+    "DB": "Teamcraft incluye una base de datos. Puede hacer clic en el ícono \"i\" junto a cualquier artículo en cualquier lugar de la página para abrir la página de base de datos del mismo.",
+    "3D_model": "Puede previsualizar modelos 3D de artículos en de la base de datos.",
+    "Levequests": "Puede preparar listas de leve y previsualizar la experiencia recibida dentro de la página de misiones leve.",
+    "Log_tracker": "Puede dar seguimiento a la progresión de su registro (recolección, fabricación, pesca) dentro de la página de seguimiento de registro.",
+    "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral)."
   }
 }

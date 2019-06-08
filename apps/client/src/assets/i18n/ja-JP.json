@@ -56,6 +56,7 @@
   "Mute_alarms": "アラームをミュートする",
   "Hide_used": "使用された項目を隠す",
   "Collapse_if_done": "完了しならパネルを隠す",
+  "Collapse_by_default": "Collapse by default",
   "Retainer_ventures": "リテイナーベンチャー",
   "Requires_x_ventures": "総 {{amount}} 回のリテイナーベンチャーが必要です。",
   "WORKSHOP": {
@@ -121,6 +122,7 @@
     "Opened_in_desktop": "このページはPCアプリ内に開きました。このページを閉じることが出来ます。",
     "Open_in_desktop": "PCアプリで開く",
     "Admin": "管理者",
+    "Moderator": "Moderator",
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
     "None": "なし"
@@ -823,7 +825,12 @@
       "Use_patient_touch_faster": "'専心加工' は '精神集中' のスタックが積もる前に使用して下さい。もしスキルが失敗したら、スタックが無駄遣いになる恐れがあります。",
       "Use_advanced_touch_instead": "{{index}} 回目の工程で '加工' と '上級加工' を使用しました。 '中級加工' を2回使用する場合、 CP 2を節約しつつ同じような効果が得られます。",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 回目の工程で使用したバフが {{overlappingIndex}} 回目の工程で使用したバフと重複されます。バフの効果が最大限貰えるように、少し遅れて使う必要があります。",
-      "Use_byregot_brow_5_stacks": "'ビエルゴの祝福' の代わりに 'ビエルゴの技巧' を使用すると同じ品質量が上昇しながら CP 6が節約できます。"
+      "Use_byregot_brow_5_stacks": "'ビエルゴの祝福' の代わりに 'ビエルゴの技巧' を使用すると同じ品質量が上昇しながら CP 6が節約できます。",
+      "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
+      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
+      "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
     }
   },
   "PRICING": {
@@ -1273,6 +1280,16 @@
       "Type": "タイプ",
       "Type_buff": "バフ",
       "Type_debuff": "デバフ"
+    },
+    "COMMENTS": {
+      "Title": "Comments",
+      "Reply": "Reply",
+      "Show_less": "Show less",
+      "Add_comment": "Add a comment",
+      "Show_more": "Show {{amount}} more comments",
+      "No_comments": "No comments",
+      "Post": "Post",
+      "Editor_tip": "Database links will be processed and handled inside your message."
     }
   },
   "SEARCH_TYPES": {
@@ -1289,7 +1306,8 @@
     "Map": "地図",
     "Action": "アクション",
     "Status": "ステータス",
-    "Trait": "特性"
+    "Trait": "特性",
+    "Any": "Any"
   },
   "SEARCH_FILTERS": {
     "Level": "レベル",

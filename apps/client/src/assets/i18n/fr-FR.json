@@ -56,6 +56,7 @@
   "Mute_alarms": "Mettre en sourdine",
   "Hide_used": "Masquer les éléments utilisés",
   "Collapse_if_done": "Réduire une fois complété",
+  "Collapse_by_default": "Réduire par défaut",
   "Retainer_ventures": "Tâches de servant",
   "Requires_x_ventures": "Requiert {{amount}} tâches pour tout obtenir",
   "WORKSHOP": {
@@ -76,7 +77,7 @@
     "title": "À propos",
     "Created_by": "FFXIV Teamcraft créé par Miu Asakura de Louisoix, Chaos.",
     "Copyright_notice_title": "Copyright",
-    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
+    "Copyright_notice_content": "FINAL FANTASY est une marque déposée de Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. Tous droits réservés.<br>FFXIV Teamcraft n'est pas affilié à Square Enix.",
     "Thanks_title": "Remerciements",
     "Data_sources": "Bases de données",
     "Patreon_supporters": "Supporters Patreon",
@@ -121,6 +122,7 @@
     "Opened_in_desktop": "Cette page a été ouverte dans votre application bureau, vous pouvez fermer cet onglet.",
     "Open_in_desktop": "Ouvrir dans l'application bureau",
     "Admin": "Administrateur",
+    "Moderator": "Modérateur",
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} secondes",
     "None": "Aucun"
@@ -287,7 +289,7 @@
   "Required_crafts_amount": "Nombre de crafts à faire",
   "Missing_crafts_amount": "{{amount}} pour atteindre le total",
   "Requires": "Nécessite",
-  "Copy_item_name_to_clipboard": "Copier le nom dans le press-papiers",
+  "Copy_item_name_to_clipboard": "Copier le nom dans le presse-papiers",
   "Item_name_copied": "{{itemname}} copié dans le presse-papiers",
   "Tier_display_toggle": "Voir les étapes de craft",
   "Precraft_tier": "Étape",
@@ -329,7 +331,7 @@
     "Free_aetheryte": "Éthérite gratuite",
     "Favorite_aetherytes": "Éthérites favorites",
     "Disable_cross_world_prices": "Utiliser uniquement le serveur d'origine pour les prix à l'hôtel des ventes",
-    "Clear_search_history": "Clear search history",
+    "Clear_search_history": "Effacer l'historique de recherche",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -823,7 +825,12 @@
       "Use_patient_touch_faster": "Vous devriez utiliser Ouvrage appliqué avant toute autre action de qualité afin de minimiser la perte de cumuls de Calme Intérieur en cas d'échec.",
       "Use_advanced_touch_instead": "Vous avez utilisé Ouvrage de base puis Ouvrage avancé au tour {{index}}, utiliser deux Ouvrages standards produit le même résultat pour 2 PS de moins.",
       "Do_not_overlap_buffs": "Vous avez écrasé le buff appliqué au tour {{overlappedIndex}} avec le buff appliqué au tour {{overlappingIndex}}, vous appliquer le second buff plus tard pour éviter de perdre des tours d'effet sur le premier.",
-      "Use_byregot_brow_5_stacks": "Vous avez utilisé Bénédiction de Byregot avec 5 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner autant de qualité en dépensant 6 PS de moins."
+      "Use_byregot_brow_5_stacks": "Vous avez utilisé Bénédiction de Byregot avec 5 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner autant de qualité en dépensant 6 PS de moins.",
+      "Use_ingenuity_before_byregot": "Vous devriez utiliser Ingeniosité avant l'action de Byregot afin d'obtenir un bonus sur le gain de qualité.",
+      "Use_more_quality_actions": "Vous avez encore de la solidité à la fin de l'artisanat, vous devriez probablement l'utiliser pour ajouter des actions de qualité.",
+      "Use_prudent_touch_manipulation": "Comme vous êtes niveau 66+, vous devriez utiliser le combo Manipulation II + Ouvrage parcimonieux afin d'obtenir un avantage maximum de qualité et plus de fiabilité.",
+      "Use_rapid_synthesis_earlier": "Vous ne devriez pas utiliser la Synthèse Rapide comme une action finale, la mettre plus tôt pour pouvoir gérer l'échec de l'action est mieux pour la fiabilité de votre rotation.",
+      "Use_reflect_earlier": "Vous devriez utiliser l'action \"Atout : Sérénité\" plus tôt pour augmenter a puissance des actions de qualité suivantes."
     }
   },
   "PRICING": {
@@ -1273,6 +1280,16 @@
       "Type": "Type",
       "Type_buff": "Bonus",
       "Type_debuff": "Malus"
+    },
+    "COMMENTS": {
+      "Title": "Commentaires",
+      "Reply": "Répondre",
+      "Show_less": "Afficher moins",
+      "Add_comment": "Ajouter un commentaire",
+      "Show_more": "Afficher {{amount}} commentaires supplémentaires",
+      "No_comments": "Aucun commentaire",
+      "Post": "Publier",
+      "Editor_tip": "Les liens de base de données seront traités et remplacés par des liens hypertexte dans votre message."
     }
   },
   "SEARCH_TYPES": {
@@ -1289,7 +1306,8 @@
     "Map": "Carte",
     "Action": "Action",
     "Status": "État ",
-    "Trait": "Trait"
+    "Trait": "Trait",
+    "Any": "Tout"
   },
   "SEARCH_FILTERS": {
     "Level": "Niveau",

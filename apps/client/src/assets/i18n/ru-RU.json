@@ -1,5 +1,5 @@
 {
-  "Quests": "Quests",
+  "Quests": "Квесты",
   "Search_placeholder": "{{type}} name",
   "Pick_a_list": "Выбрать список",
   "Pick_a_user": "Выбрать пользователя",
@@ -37,7 +37,7 @@
   "Join_discord_server": "Заходите на наш Discord сервер",
   "See_code_github": "Просмотреть код на github",
   "Support_on_patreon": "Поддержите проект в patreon",
-  "Access_patreon_page": "Go to our Patreon page",
+  "Access_patreon_page": "Перейти на нашу страницу Patreon",
   "Default": "По умолчанию",
   "Delete": "Удалить",
   "Copy_isearch": "Копирование isearch макроса",
@@ -56,6 +56,7 @@
   "Mute_alarms": "Скрыть оповещения",
   "Hide_used": "Скрыть используемые строки",
   "Collapse_if_done": "Свернуть, если завершено",
+  "Collapse_by_default": "Collapse by default",
   "Retainer_ventures": "Авантюрист",
   "Requires_x_ventures": "Требуется {{amount}} предприятий чтобы получить все",
   "WORKSHOP": {
@@ -95,9 +96,9 @@
   "Public_list": "Список сообщества",
   "Profile": "Профиль",
   "X_for_total": "{{amount}} всего",
-  "Discounts": "Discount",
+  "Discounts": "Скидка",
   "Flat_discount": "Flat",
-  "Percent_discount": "Percent",
+  "Percent_discount": "Процент",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Фильтр по тегам",
     "Tags_filter_reset": "Сбросить фильтр",
@@ -121,9 +122,10 @@
     "Opened_in_desktop": "Эта страница была открыта внутри десктопного приложения, теперь вы можете закрыть её.",
     "Open_in_desktop": "Открыть в десктопном приложении",
     "Admin": "Администратор",
+    "Moderator": "Moderator",
     "Minutes_duration": "{{amount}} минут",
-    "Seconds_duration": "{{amount}} seconds",
-    "None": "None"
+    "Seconds_duration": "{{amount}} секунд",
+    "None": "Нет"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -141,9 +143,9 @@
     "Macro_copied": "Макрос скопирован в буфер обмена",
     "Open_overlay": "Открыть оверлей",
     "More_available": "добавить ещё {{amount}}...",
-    "Node_content": "Node content",
+    "Node_content": "Содержимое ноды",
     "Toggle_collapse": "Toggle groups collapse",
-    "Add_alarms_to_group": "Add alarms to this group",
+    "Add_alarms_to_group": "Добавить оповещения к этой группе",
     "CUSTOM": {
       "Title": "Добавить настраиваемое оповещение",
       "Name": "Название",
@@ -154,8 +156,8 @@
       "Slot": "Слот",
       "Type": "Тип узла",
       "Map": "Карта",
-      "Weather": "Weather",
-      "Weather_from": "Transition from",
+      "Weather": "Погода",
+      "Weather_from": "Переход от",
       "TYPE": {
         "Mineral": "Рудник",
         "Rocky": "Скалистое выявление",
@@ -168,15 +170,15 @@
   "Item_name": "Название предмета",
   "No_items_found": "Предметы не найдены",
   "No_instances_found": "No instances found",
-  "No_quests_found": "No quests found",
-  "No_npcs_found": "No npcs found",
-  "No_mobs_found": "No monsters found",
+  "No_quests_found": "Квесты не найдены",
+  "No_npcs_found": "NPC не найдены",
+  "No_mobs_found": "Монстры не найдены",
   "No_lore_entries": "No lore entries found",
-  "No_fates_found": "No fates found",
-  "No_maps_found": "No maps found",
-  "No_actions_found": "No actions found",
-  "No_statuses_found": "No statuses found",
-  "No_traits_found": "No traits found",
+  "No_fates_found": "FATE'ы не найдены",
+  "No_maps_found": "Карты не найдены",
+  "No_actions_found": "Действия не найдены",
+  "No_statuses_found": "Статус не найден",
+  "No_traits_found": "Trait'ы не найдены",
   "Select_all": "Выбрать все",
   "Do you really want to reset the list?": "Вы действительно хотите сбросить список?",
   "Yes": "Да",
@@ -202,8 +204,8 @@
   "Vendors": "Продавцы",
   "Open": "Открыть",
   "Trade": "Обмен",
-  "Treasures": "Can be obtained in",
-  "Fates": "Fates",
+  "Treasures": "Можно получить в",
+  "Fates": "Fate'ы",
   "Filters": "Фильтры",
   "Check_all": "Выбрать все",
   "Uncheck_all": "Очистить",
@@ -214,7 +216,7 @@
   "Google_login": "Войти через Google",
   "Facebook_login": "Войти через Facebook",
   "Login": "Войти",
-  "Disconnect": "Отключиться",
+  "Disconnect": "Выйти",
   "Password": "Пароль",
   "Password_Confirmation": "Подтверждение",
   "Submit": "Отправить",
@@ -319,24 +321,24 @@
     "Clear_cache": "Очистить кэш (перезапустит приложение)",
     "Enable_item_tags": "Включить теги предметов",
     "Show_copy_list_own_list": "Show copy button on own list panels",
-    "Custom_theme": "Custom theme",
-    "Show_all_alarms": "Always show all alarms",
-    "Amount_display_mode": "List amounts display mode",
+    "Custom_theme": "Пользовательская тема",
+    "Show_all_alarms": "Всегда показывать все оповещения",
+    "Amount_display_mode": "Режим отображения списков",
     "Amount_display_mode_remaining": "Remaining",
     "Amount_display_mode_total": "Total",
-    "Starting_place": "Starting place",
-    "Starting_place_explain": "Used for path optimization features",
-    "Free_aetheryte": "Free Aetheryte",
-    "Favorite_aetherytes": "Favorite Aetherytes",
-    "Disable_cross_world_prices": "Only use own world for marketboard prices",
-    "Clear_search_history": "Clear search history",
+    "Starting_place": "Начальная локация",
+    "Starting_place_explain": "Используется для оптимизации пути",
+    "Free_aetheryte": "Бесплатный aetheryte",
+    "Favorite_aetherytes": "Избранные aetheryte'ы",
+    "Disable_cross_world_prices": "Принимать в расчет только цены marketboard'а своего сервера",
+    "Clear_search_history": "Очистить историю поиска",
     "COLORS": {
-      "Background": "Background color",
-      "Primary": "Primary color",
-      "Highlight": "Highlight color",
-      "Text": "Buttons content color",
-      "Topbar": "Topbar and sidebar color",
-      "Sidebar_trigger": "Sidebar trigger color",
+      "Background": "Цвет фона",
+      "Primary": "Основной цвет",
+      "Highlight": "Цвет выделения",
+      "Text": "Цвет содержимого кнопок",
+      "Topbar": "Цвет верхней и боковой панелей",
+      "Sidebar_trigger": "Цвет кропки вызова боковой панели",
       "Sidebar_trigger_hover": "Sidebar trigger hover color"
     },
     "COPY_TYPE": {
@@ -358,8 +360,8 @@
     "Add_new_contact": "Новый контакт",
     "Save_for_all": "Сохранить для всех",
     "User_not_verified": "Пользователь не подтвержден, нажмите, чтобы подтвердить",
-    "More_than_100_lists_created": "More than 100 lists created",
-    "Veteran": "Veteran",
+    "More_than_100_lists_created": "Создано более 100 списков",
+    "Veteran": "Ветеран",
     "VERIFICATION": {
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свой аккаунт, вставьте этот код: \"{{userId}}\" в биографии вашего профиля Lodestone и нажмите кнопку ниже.",
@@ -385,8 +387,8 @@
     "Please_pick_recipe": "Пожалуйста, выберите рецепт для этого предмета",
     "Import_description": "Выберите рецепт, который вы хотите использовать для предметов, которые можно создать и выберите список. Предметы будут добавлены в этот список и вы будете перенаправлены в него.",
     "Delete_after_merge": "Удалить исходные списки после объединения",
-    "Favorite_lists": "Favorite lists",
-    "No_favorite_lists": "You have no favorite lists",
+    "Favorite_lists": "Избранные списки",
+    "No_favorite_lists": "У вас нет избранных списков",
     "IMPORT": {
       "Title": "Импорт списка из внешнего веб-сайта",
       "Paste_link_step_title": "Вставьте вашу ссылку на внешний список",
@@ -417,7 +419,7 @@
     "History": "История",
     "Items_count": "{{amount}} предметов",
     "Show_craftable_amount": "Показать количество, которое можно скрафтить",
-    "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
+    "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
     "Quick_layout_swap": "Quick layout swap",
     "INVENTORY": {
       "Show_final_items": "Show final items",
@@ -427,7 +429,7 @@
       "Title": "Список завершен",
       "Content": "Этот лист завершен, что вы хотите с ним сделать?",
       "Delete": "Удалить список",
-      "Clear": "Empty the list",
+      "Clear": "Очистить списокписок",
       "Reset": "Обновить список",
       "Nothing": "Ничего"
     },
@@ -479,7 +481,7 @@
       "Buttons": "Кнопки",
       "Menu": "Меню",
       "Edit_row_buttons_display": "Редактировать отображение кнопок строки",
-      "Reorder_panels": "Reorder panels",
+      "Reorder_panels": "Изменить порядок панелей",
       "ITEMS": {
         "COMMENTS": "Комментарии",
         "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
@@ -491,7 +493,7 @@
         "ADD_TO_ANOTHER_LIST": "Добавить в другой список",
         "REQUIREMENTS": "Требования",
         "REMOVE_ITEM": "Удалить предмет из списка",
-        "ADD_TAG": "Add tag to item",
+        "ADD_TAG": "Добавить тег к предмету",
         "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
       }
     },
@@ -572,7 +574,7 @@
   "NAVIGATION": {
     "Title": "Оптимизировать навигационный маршрут",
     "Steps": "Шаги",
-    "Loading_path": "Loading optimized path (can take several seconds)",
+    "Loading_path": "Загрузка оптимизированного пути (может занять несколько секунд)",
     "STEP": {
       "Gathering": "Собрать {{amount}}",
       "Hunting": "Получить {{amount}} с монстров",
@@ -587,12 +589,12 @@
     "Ephemeral_node": "Эфемерная нода, можно респаунить",
     "Intro": "Место сбора позволяет легко найти собираемый предмет и увидеть подробности о нём, где его найти и создать уведомление для нужной ноды. Просто введите название в поле выше и оно найдёт то, что вы ищете!",
     "Hidden_item": "Скрытый",
-    "Fish_eyes": "Requires fish eyes",
-    "Snagging": "Requires snagging",
+    "Fish_eyes": "Требуется \"fish eyes\"",
+    "Snagging": "Требуется \"snagging\"",
     "Predators": "Fish these fish before",
-    "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
-    "Spawned_for": "Will despawn in {{timer}}",
-    "Will_spawn_in": "Will spawn in {{timer}}",
+    "Fish_eyes_duration": "Для того, чтобы поймать рыбу, на \"fish eyes\" должно оставаться столько секунд. Нажмите, чтобы изменить формат.",
+    "Spawned_for": "Деспавнится через {{timer}}",
+    "Will_spawn_in": "Заспавнится через {{timer}}",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
       "Normal": "Normal Gig Head",
@@ -729,7 +731,7 @@
       "TAGS": {
         "SPECIALIST": "Специалист",
         "NOT_SPECIALIST": "Не специалист",
-        "TEALESS": "Tealess",
+        "TEALESS": "Без чая",
         "FOODLESS": "Без еды",
         "MAKERS_MARK": "Maker's Mark",
         "MUSCLE_MEMORY": "Muscle Memory"
@@ -754,10 +756,10 @@
         "Created_by": "Создано {{name}}",
         "Copy_folder": "Копировать эту папку её содержимое на ваш аккаунт",
         "Folder_copied": "Папка скопирована на ваш аккаунт",
-        "Your_folders": "Your folders",
+        "Your_folders": "Ваши папки",
         "Favorite_folders": "Избранные папки",
         "Add_rotations": "Добавить ротацию",
-        "Open": "Open folder"
+        "Open": "Открыть папку"
       }
     },
     "CATEGORY": {
@@ -823,7 +825,12 @@
       "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
       "Use_advanced_touch_instead": "You used Basic Touch then Advanced Touch one after another at step {{index}}, you should use two Standard Touches instead to get same potency for 2 less CP.",
       "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs.",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used."
+      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used.",
+      "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
+      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
+      "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
     }
   },
   "PRICING": {
@@ -889,7 +896,7 @@
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** добавлен в **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** удален из **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** пометил {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** из {{totalNeeded}} как выполненный в **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "Группа **{{teamName}}** теперь будет отслеживаться в этом канале.",
       "List_added_notification": "Список **[{{listName}}]({{listUrl}})** добавлен в группу.",
       "List_removed_notification": "Список **[{{listName}}]({{listUrl}})** удален из группы.",
@@ -920,7 +927,7 @@
     "History": "История",
     "Purchase_date": "Дата",
     "More_on_mogboard": "Подробнее на mogboard'е",
-    "Server": "Server"
+    "Server": "Сервер"
   },
   "COMMENTS": {
     "Title": "Комментарии"
@@ -939,7 +946,7 @@
     "Slogan": "Создавай, делись, участвуй",
     "Lists_created_counter": "{{amount}} списков создано с помощью FFXIV Teamcraft",
     "Support_patreon": "Поддержать нас в patreon",
-    "Donation_button": "Сделать одноразовое пожертвование",
+    "Donation_button": "Внести пожертвование",
     "Buy_a_tshirt": "Купить футболку Teamcraft",
     "Features_header": "Вперёд!",
     "DESCRIPTION": {
@@ -981,7 +988,7 @@
       "Dyes": "Краски",
       "Other_master_recipes": "Other Master Recipes",
       "Deliveries": "Deliveries",
-      "Quests": "Quests"
+      "Quests": "Квесты"
     }
   },
   "LOADING_SCREEN": {
@@ -1065,18 +1072,18 @@
     "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
   },
   "GC_SUPPLY": {
-    "Title": "Grand Company Supplies",
-    "Search": "Search",
-    "Generate_list": "Create a quick list",
+    "Title": "Поставки Grand Company",
+    "Search": "Поиск",
+    "Generate_list": "Создать быстрый список",
     "Intro": "Input your levels and click search to get started",
     "Loading_message": "Loading possible deliveries, this can take up to a minute"
   },
   "DESYNTH": {
     "Title": "Desynth guide",
-    "Job": "Job",
-    "Level": "Level",
+    "Job": "Профессия",
+    "Level": "Уровень",
     "Intro": "Select a job and input a level to find best items to level up your desynth",
-    "Loading_message": "Loading...",
+    "Loading_message": "Загрузка...",
     "TAGS": {
       "Higher_chances": "Higher chances",
       "Lower_exp": "Lower exp",
@@ -1086,7 +1093,7 @@
       "Higher_exp": "Higher exp",
       "Very_common": "Very common",
       "Common": "Common",
-      "Rare": "Rare"
+      "Rare": "Редкий"
     }
   },
   "SUPPORT_US": {
@@ -1106,22 +1113,22 @@
     }
   },
   "DB": {
-    "How_to_obtain": "How to obtain",
-    "Used_for": "Used for",
+    "How_to_obtain": "Как получить",
+    "Used_for": "Используется для",
     "Used_for_nothing": "Used for nothing",
-    "Crystal_used_for_everything": "Too many recipes (~ 1/6th of the ingame recipes)",
-    "Crafts": "Crafts",
-    "Recipes": "Recipes",
+    "Crystal_used_for_everything": "Слишком много рецептов (~ 1/6 от всех рецептов в игре)",
+    "Crafts": "Крафты",
+    "Recipes": "Рецепты",
     "No_known_way_to_obtain": "Couldn't find any ways to obtain this item",
-    "Gathering": "Gathering",
-    "Tradeable": "Tradeable",
+    "Gathering": "Собирательство",
+    "Tradeable": "Можно передавать",
     "Unique": "Unique",
     "Dyeable": "Dyeable",
     "Materia_sockets": "Materia slots",
     "Advanced_melding": "Advanced melding",
     "Repair_job": "Repair job",
     "Class_job": "Class/Job",
-    "Delay": "Delay",
+    "Delay": "Задержка",
     "Auto": "Auto",
     "Salvage_level": "Optimal Desynth lvl",
     "Sells_for": "Sell price",
@@ -1273,32 +1280,43 @@
       "Type": "Type",
       "Type_buff": "Buff",
       "Type_debuff": "Debuff"
+    },
+    "COMMENTS": {
+      "Title": "Comments",
+      "Reply": "Reply",
+      "Show_less": "Show less",
+      "Add_comment": "Add a comment",
+      "Show_more": "Show {{amount}} more comments",
+      "No_comments": "No comments",
+      "Post": "Post",
+      "Editor_tip": "Database links will be processed and handled inside your message."
     }
   },
   "SEARCH_TYPES": {
     "Item": "Item",
     "Recipe": "Recipe",
-    "Instance": "Instance",
-    "Quest": "Quest",
+    "Instance": "Инстанс",
+    "Quest": "Квест",
     "NPC": "NPC",
-    "Leve": "Levequest",
+    "Leve": "Ливквест",
     "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
-    "Monster": "Monster",
+    "Monster": "Монстр",
     "Lore": "Lore",
     "Fate": "Fate",
-    "Map": "Map",
-    "Action": "Action",
-    "Status": "Status",
-    "Trait": "Trait"
+    "Map": "Карта",
+    "Action": "Действие",
+    "Status": "Статус",
+    "Trait": "Trait",
+    "Any": "Any"
   },
   "SEARCH_FILTERS": {
-    "Level": "Level",
+    "Level": "Уровень",
     "Leve_job": "Leve job",
-    "Job": "Job",
-    "Leve_level": "Required level"
+    "Job": "Профессия",
+    "Leve_level": "Требуемый уровень"
   },
   "TIPS": {
-    "Title": "Tip",
+    "Title": "Совет",
     "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
     "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
     "Desynth": "You can find ideal items to level up desynth in desynth page.",

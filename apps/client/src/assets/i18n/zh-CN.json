@@ -56,6 +56,7 @@
   "Mute_alarms": "静音",
   "Hide_used": "隐藏已使用的行",
   "Collapse_if_done": "折叠已完成项",
+  "Collapse_by_default": "Collapse by default",
   "Retainer_ventures": "雇员委托",
   "Requires_x_ventures": "获得全部物品需要 {{amount}} 次委托",
   "WORKSHOP": {
@@ -121,6 +122,7 @@
     "Opened_in_desktop": "此页面已在客户端中打开，你可以现在关闭本页了。",
     "Open_in_desktop": "在客户端中打开",
     "Admin": "管理员",
+    "Moderator": "Moderator",
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
     "None": "None"
@@ -823,7 +825,12 @@
       "Use_patient_touch_faster": "应在增加内静层数前使用专心加工，避免失败时浪费内静层数。",
       "Use_advanced_touch_instead": "在第 {{index}} 步的加工和上级加工应该被替换为两个中级加工，可以少消耗 2 点 CP 获得同样的效果。",
       "Do_not_overlap_buffs": "在第 {{overlappedIndex}} 步的 buff 和第 {{overlappingIndex}} 步已有的 buff 重叠了。第二个 buff 应当推迟以获得最佳效果。",
-      "Use_byregot_brow_5_stacks": "应使用比尔格的技巧替换比尔格的祝福，可获得同样质量并节约 6 点 CP。"
+      "Use_byregot_brow_5_stacks": "应使用比尔格的技巧替换比尔格的祝福，可获得同样质量并节约 6 点 CP。",
+      "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
+      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
+      "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
     }
   },
   "PRICING": {
@@ -1273,6 +1280,16 @@
       "Type": "Type",
       "Type_buff": "Buff",
       "Type_debuff": "Debuff"
+    },
+    "COMMENTS": {
+      "Title": "Comments",
+      "Reply": "Reply",
+      "Show_less": "Show less",
+      "Add_comment": "Add a comment",
+      "Show_more": "Show {{amount}} more comments",
+      "No_comments": "No comments",
+      "Post": "Post",
+      "Editor_tip": "Database links will be processed and handled inside your message."
     }
   },
   "SEARCH_TYPES": {
@@ -1289,7 +1306,8 @@
     "Map": "地图",
     "Action": "Action",
     "Status": "Status",
-    "Trait": "Trait"
+    "Trait": "Trait",
+    "Any": "Any"
   },
   "SEARCH_FILTERS": {
     "Level": "Level",
