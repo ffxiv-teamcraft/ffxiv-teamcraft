@@ -42,6 +42,7 @@
         <div class="detail-value">{{(status.LockMovement === 1 ? 'Yes' : 'No') | translate}}</div>
       </div>
     </div>
+    <app-db-comments type="status" [id]="status.ID"></app-db-comments>
   </div>
 </ng-container>
 <ng-template #loader>

@@ -178,6 +178,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private job$: Observable<any>;
 
+  private forceFailed$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+
   // Regex stuff for macro import
   private findActionsRegex: RegExp =
     new RegExp(/\/(ac|action)[\s]+(([\w]+)|"([^"]+)")?.*/, 'i');
@@ -502,6 +504,15 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
   }
 
+  toggleFailAction(index:number):void{
+    const forceFailed = this.forceFailed$.value;
+    if(forceFailed.some(i => i === index)){
+      this.forceFailed$.next(forceFailed.filter(i => i !== index))
+    }else {
+      this.forceFailed$.next([...forceFailed, index])
+    }
+  }
+
   applyStats(): void {
     const rawForm = this.statsForm.getRawValue();
     const stats = new CrafterStats(
@@ -777,9 +788,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           loggedIn ? stats.levels : [70, 70, 70, 70, 70, 70, 70, 70]);
       })
     );
-    this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$]).pipe(
-      map(([recipe, actions, stats, hqIngredients]) => {
-        return new Simulation(recipe, actions, stats, hqIngredients);
+    this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.forceFailed$]).pipe(
+      map(([recipe, actions, stats, hqIngredients, forceFailed]) => {
+        return new Simulation(recipe, actions, stats, hqIngredients, forceFailed);
       }),
       shareReplay(1)
     );

@@ -24,6 +24,24 @@
       <div fxFlex="1 1 auto">
         <p *ngIf="action.Description" [innerHTML]="action | xivapiI18n: 'Description' | xivUIText"></p>
       </div>
+      <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="./assets/icons/english.png" class="language-flag" alt="EN">
+          <div>{{action.Name_en}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="./assets/icons/german.png" class="language-flag" alt="DE">
+          <div>{{action.Name_de}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="./assets/icons/french.png" class="language-flag" alt="FR">
+          <div>{{action.Name_fr}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="./assets/icons/japanese.png" class="language-flag" alt="JA">
+          <div>{{action.Name_ja}}</div>
+        </div>
+      </div>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block" *ngIf="action.Cast100ms">
@@ -66,7 +84,7 @@
         <div class="detail-value">{{(action.AffectsPosition === 1 ? 'Yes' : 'No') | translate}}</div>
       </div>
     </div>
-
+    <app-db-comments type="action" [id]="action.ID"></app-db-comments>
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
       <nz-card fxFlex="1 1 auto" class="details-card"

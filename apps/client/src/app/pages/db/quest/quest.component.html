@@ -58,6 +58,7 @@
         <div class="detail-value">{{xivapiQuest.BeastReputationRank | xivapiI18n}}</div>
       </div>
     </div>
+    <app-db-comments type="quest" [id]="xivapiQuest.ID"></app-db-comments>
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="column" fxLayoutGap="10px">
       <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">

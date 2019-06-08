@@ -3,6 +3,8 @@ import { Character } from '@xivapi/angular-client';
 import { Observable, of } from 'rxjs';
 import { CharacterService } from '../../../core/api/character.service';
 import { catchError, filter, map, shareReplay, startWith, tap } from 'rxjs/operators';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { UserService } from '../../../core/database/user.service';
 
 @Component({
   selector: 'app-user-avatar',
@@ -30,10 +32,13 @@ export class UserAvatarComponent implements OnInit {
 
   status$: Observable<{ verified: boolean }>;
 
-  constructor(private characterService: CharacterService) {
+  user$: Observable<TeamcraftUser>;
+
+  constructor(private characterService: CharacterService, private userService: UserService) {
   }
 
   ngOnInit(): void {
+    this.user$ = this.userService.get(this.userId);
     const character$ = this.characterService.getCharacter(this.userId).pipe(
       catchError(() => {
         return of(null);

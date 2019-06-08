@@ -17,7 +17,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { en_US, NgZorroAntdModule, NZ_I18N, NZ_ICONS, NZ_MESSAGE_CONFIG } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PipesModule } from './pipes/pipes.module';
@@ -73,6 +72,16 @@ import { WorkshopModule } from './modules/workshop/workshop.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CustomItemsModule } from './modules/custom-items/custom-items.module';
 import { TransferHttpCacheModule } from '@nguniversal/common';
+import en from '@angular/common/locales/en';
+import fr from '@angular/common/locales/fr';
+import de from '@angular/common/locales/de';
+import ja from '@angular/common/locales/ja';
+import zh from '@angular/common/locales/zh';
+import ru from '@angular/common/locales/ru';
+import es from '@angular/common/locales/es';
+import pt from '@angular/common/locales/pt';
+import hr from '@angular/common/locales/hr';
+import ko from '@angular/common/locales/ko';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -98,6 +107,15 @@ const icons: IconDefinition[] = [
 ];
 
 registerLocaleData(en);
+registerLocaleData(fr);
+registerLocaleData(de);
+registerLocaleData(ja);
+registerLocaleData(zh);
+registerLocaleData(es);
+registerLocaleData(pt);
+registerLocaleData(hr);
+registerLocaleData(ru);
+registerLocaleData(ko);
 
 @NgModule({
   declarations: [

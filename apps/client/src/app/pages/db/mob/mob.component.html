@@ -38,6 +38,7 @@
         </div>
       </div>
     </div>
+    <app-db-comments type="mob" [id]="xivapiMob.ID"></app-db-comments>
 
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
@@ -50,7 +51,7 @@
             {{spawn.zoneid | placeName | i18n}} - {{'DB.Level' | translate}} {{spawn.level}}
           </div>
         </ng-template>
-        <app-map [mapId]="spawn.map" [markers]="spawn.positions"></app-map>
+        <app-map [mapId]="spawn.map" [markers]="spawn?.positions"></app-map>
       </nz-card>
       <ng-container *ngIf="drops$ | async as drops">
         <nz-card fxFlex="1 1 auto" class="details-card"

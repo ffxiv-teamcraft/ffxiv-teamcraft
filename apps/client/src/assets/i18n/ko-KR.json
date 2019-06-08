@@ -56,6 +56,7 @@
   "Mute_alarms": "알람 음소거",
   "Hide_used": "사용된 행 숨기기",
   "Collapse_if_done": "완료시 삭제",
+  "Collapse_by_default": "댓글 접기를 기본으로 설정",
   "Retainer_ventures": "집사 수행",
   "Requires_x_ventures": "총 {{amount}}회의 집사 수행이 필요합니다.",
   "WORKSHOP": {
@@ -121,6 +122,7 @@
     "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
     "Open_in_desktop": "데스크톱 앱에서 열기",
     "Admin": "관리자",
+    "Moderator": "관리자",
     "Minutes_duration": "{{amount}}분",
     "Seconds_duration": "{{amount}} 초",
     "None": "없음"
@@ -823,7 +825,12 @@
       "Use_patient_touch_faster": "'전념 가공'은 '정신집중'의 스택이 쌓이기 전에 사용하세요. 만약 스킬이 실패한다면 스택이 낭비될 수도 있습니다.",
       "Use_advanced_touch_instead": "{{index}} 번째 공정에서 '가공' 과 '고급 가공' 을 사용했습니다. '중급 가공' 을 두번 사용할 경우 CP 2를 절약하면서도 같은 효과를 발휘할 수 있습니다.",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 번째 공정에서 사용한 버프가 {{overlappingIndex}} 번째 공정에서 사용한 버프와 중복됩니다. 버프의 효과를 최대한 받을 수 있도록 조금 늦게 사용해야 합니다.",
-      "Use_byregot_brow_5_stacks": "'비레고의 축복' 대신 '비레고의 기교'를 사용하시면 같은 품질량이 상승하면서도 CP 6을 절약할 수 있습니다."
+      "Use_byregot_brow_5_stacks": "'비레고의 축복' 대신 '비레고의 기교'를 사용하시면 같은 품질량이 상승하면서도 CP 6을 절약할 수 있습니다.",
+      "Use_ingenuity_before_byregot": "더 높은 품질향상을 위해 '비레고' 스킬을 사용하기 전에 '독창적 발상' 을 사용해야 합니다",
+      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_prudent_touch_manipulation": "66레벨 이상일 경우 '교묘한 손놀림 2' 와 '절약 가공'을 사용하여 확실하게 더 높은 품질을 얻어야 합니다",
+      "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
+      "Use_reflect_earlier": "'전문장인의 특기: 진가' 를 가공스킬을 사용하기 전에 미리 사용해야 합니다"
     }
   },
   "PRICING": {
@@ -1273,6 +1280,16 @@
       "Type": "유형",
       "Type_buff": "버프",
       "Type_debuff": "디버프"
+    },
+    "COMMENTS": {
+      "Title": "댓글",
+      "Reply": "답글 달기",
+      "Show_less": "댓글 접기",
+      "Add_comment": "댓글 추가",
+      "Show_more": "{{amount}} 개의 댓글 더 보기",
+      "No_comments": "댓글 없음",
+      "Post": "게시",
+      "Editor_tip": "댓글 내 데이터베이스 링크는 자동으로 DB로 변환됩니다."
     }
   },
   "SEARCH_TYPES": {
@@ -1289,7 +1306,8 @@
     "Map": "맵",
     "Action": "기술",
     "Status": "상태",
-    "Trait": "특성"
+    "Trait": "특성",
+    "Any": "모두"
   },
   "SEARCH_FILTERS": {
     "Level": "레벨",

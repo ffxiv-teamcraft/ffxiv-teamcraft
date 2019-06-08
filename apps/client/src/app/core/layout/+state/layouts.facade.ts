@@ -49,7 +49,7 @@ export class LayoutsFacade {
   }
 
   public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false): Observable<ListDisplay> {
-    return combineLatest(this.selectedLayout$, this.authFacade.user$)
+    return combineLatest([this.selectedLayout$, this.authFacade.user$])
       .pipe(
         withLatestFrom(adaptativeFilter ? this.authFacade.mainCharacterEntry$ : of(null)),
         map(([[layout, user], characterEntry]) => {
@@ -111,7 +111,7 @@ export class LayoutsFacade {
                   reverseTiers: row.reverseTiers,
                   filterChain: row.filter.name,
                   hideIfEmpty: row.hideIfEmpty,
-                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false,
+                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : row.collapsedByDefault,
                   layoutRow: row,
                   layout: layout
                 };

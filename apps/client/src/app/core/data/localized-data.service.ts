@@ -218,7 +218,7 @@ export class LocalizedDataService {
     const result = mapIds.find(map => map.name === name);
     if (result === undefined) {
       if (name === 'Gridania') {
-        return 3;
+        return 2;
       }
       return -1;
     }

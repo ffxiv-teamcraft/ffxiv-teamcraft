@@ -35,7 +35,7 @@ export class Simulation {
   public safe = false;
 
   constructor(public readonly recipe: Craft, public actions: CraftingAction[], private _crafterStats: CrafterStats,
-              private hqIngredients: { id: number, amount: number }[] = []) {
+              private hqIngredients: { id: number, amount: number }[] = [], private forceFailed: number[] = []) {
     this.durability = recipe.durability;
     this.availableCP = this._crafterStats.cp;
     this.maxCP = this.availableCP;
@@ -157,7 +157,7 @@ export class Simulation {
       }
       // If we can use the action
       if (this.success === undefined && hasEnoughCP && this.steps.length < maxTurns && canUseAction) {
-        result = this.runAction(action, linear, safeMode);
+        result = this.runAction(action, linear, safeMode, index);
         if (reclaimAction.getBaseCPCost(this) <= this.availableCP && reclaimAction.canBeUsed(this, linear)) {
           this.lastPossibleReclaimStep = index;
         }
@@ -220,10 +220,15 @@ export class Simulation {
    * @param {CraftingAction} action
    * @param {boolean} linear
    * @param {boolean} safeMode
+   * @param index
    */
-  public runAction(action: CraftingAction, linear = false, safeMode = false): ActionResult {
+  public runAction(action: CraftingAction, linear = false, safeMode = false, index: number = -1): ActionResult {
     // The roll for the current action's success rate, 0 if ideal mode, as 0 will even match a 1% chances.
-    const probabilityRoll = linear ? 0 : Math.random() * 100;
+    let probabilityRoll = linear ? 0 : Math.random() * 100;
+    if (this.forceFailed.some(i => i === index)) {
+      // Impossible to succeed
+      probabilityRoll = 101;
+    }
     const qualityBefore = this.quality;
     const progressionBefore = this.progression;
     const durabilityBefore = this.durability;

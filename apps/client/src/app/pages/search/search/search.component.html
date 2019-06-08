@@ -24,6 +24,8 @@
     <ng-template #searchType>
       <nz-select [ngModel]="searchType$ | async" (ngModelChange)="searchType$.next($event)" class="search-type"
                  nzShowSearch>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ANY) | translate"
+                   [nzValue]="searchTypes.ANY"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate" [nzValue]="searchTypes.ITEM"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.RECIPE) | translate"
                    [nzValue]="searchTypes.RECIPE"></nz-option>
@@ -290,7 +292,8 @@
 </div>
 <ng-container *ngIf="searchType$ | async as searchType">
   <div *ngIf="results$ | async as results">
-    <div class="addition-buttons" *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">
+    <div class="addition-buttons"
+         *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE  || searchType === searchTypes.ANY">
       <label nz-checkbox [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)">{{'Select_all' |
         translate}}</label>
       <button nz-button (click)="addSelectedItemsToList(results)">{{'LISTS.Add_selection' | translate}}</button>
@@ -301,7 +304,7 @@
       <app-page-loader [loading]="loading">
         <ng-container *ngFor="let row of results; trackBy: trackByItem; let odd = odd">
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE"
+               *ngIf="row.type === searchTypes.ITEM || row.type === searchTypes.RECIPE"
                fxLayoutGap="5px"
                fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center"
@@ -325,7 +328,11 @@
                        class="job-icon small"
                        alt="{{row.recipe.job | jobAbbr | i18n}}">
                   lvl{{row.recipe.lvl}} <span
-                  *ngIf="row.recipe.stars !== undefined">{{getStars(row.recipe.stars)}}</span></div>
+                  *ngIf="row.recipe.stars !== undefined">{{getStars(row.recipe.stars)}}</span>
+                </div>
+                <div *ngIf="row.recipe === undefined || row.recipe.job <= 0" class="result-type">
+                  {{('SEARCH_TYPES.' + row.type) | translate}}
+                </div>
               </div>
             </div>
             <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px"
@@ -360,7 +367,7 @@
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.INSTANCE"
+               *ngIf="row.type === searchTypes.INSTANCE"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
@@ -375,11 +382,14 @@
                 <div>{{row.id | instanceName | i18n}}</div>
                 <app-db-button type="instance" [id]="row.id"></app-db-button>
               </div>
-              <div class="instance-level">lvl {{row.level}}</div>
+              <div fxLayout="row" fxLayoutGap="5px">
+                <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+                <div class="instance-level">lvl {{row.level}}</div>
+              </div>
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.QUEST"
+               *ngIf="row.type === searchTypes.QUEST"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
@@ -394,10 +404,11 @@
                 <div>{{row.id | questName | i18n}}</div>
                 <app-db-button type="quest" [id]="row.id"></app-db-button>
               </div>
+              <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.NPC"
+               *ngIf="row.type === searchTypes.NPC"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
@@ -411,9 +422,12 @@
                 <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start">
                   <div fxLayout="column">
                     <div>{{row.id | npcName | i18n}}</div>
-                    <span *ngIf="(row.id | npcName)?.position as npcPosition">{{npcPosition.zoneid | placeName | i18n}}
-                      - X: {{npcPosition.x}} Y: {{npcPosition.y}} </span>
-                    <i *ngIf="(row.title | i18n) !== 'missing name'">{{row.title | i18n}}</i>
+                    <div fxLayout="row" fxLayoutGap="5px">
+                      <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+                      <div><span *ngIf="(row.id | npcName)?.position as npcPosition">{{npcPosition.zoneid | placeName | i18n}}
+                        - X: {{npcPosition.x}} Y: {{npcPosition.y}} </span>
+                        <i *ngIf="(row.title | i18n) !== 'missing name'">{{row.title | i18n}}</i></div>
+                    </div>
                   </div>
                   <app-db-button type="npc" [id]="row.id"></app-db-button>
                 </div>
@@ -421,7 +435,7 @@
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.MONSTER"
+               *ngIf="row.type === searchTypes.MONSTER"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
@@ -435,7 +449,10 @@
                 <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start flex-start">
                   <div fxLayout="column">
                     <div>{{row.id | mobName | i18n}}</div>
-                    <span *ngIf="row.zoneid">{{row.zoneid | placeName | i18n}}</span>
+                    <div fxLayout="row" fxLayoutGap="5px">
+                      <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+                      <div *ngIf="row.zoneid">{{row.zoneid | placeName | i18n}}</div>
+                    </div>
                   </div>
                   <app-db-button type="mob" [id]="row.id"></app-db-button>
                 </div>
@@ -443,7 +460,7 @@
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.LEVE"
+               *ngIf="row.type === searchTypes.LEVE"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
@@ -458,11 +475,14 @@
                 <div>{{row.id | leveName | i18n}}</div>
                 <app-db-button type="leve" [id]="row.id"></app-db-button>
               </div>
-              <div>{{row.job | i18n}} {{row.level}}</div>
+              <div fxLayout="row" fxLayoutGap="5px">
+                <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+                <div>{{row.job | i18n}} {{row.level}}</div>
+              </div>
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.MAP"
+               *ngIf="row.type === searchTypes.MAP"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
@@ -474,10 +494,11 @@
                 <div>{{row.zoneid | placeName | i18n}}</div>
                 <app-db-button type="map" [id]="row.id"></app-db-button>
               </div>
+                <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.LORE"
+               *ngIf="row.type === searchTypes.LORE"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
@@ -499,7 +520,7 @@
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.FATE"
+               *ngIf="row.type === searchTypes.FATE"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
@@ -511,11 +532,14 @@
                 <div><b>{{(row.id | fate).name | i18n}}</b> - lvl{{row.level}}</div>
                 <app-db-button type="fate" [id]="row.id"></app-db-button>
               </div>
-              <span>{{(row.id | fate).description | i18n}}</span>
+              <div fxLayout="row" fxLayoutGap="5px">
+                <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+                <div>{{(row.id | fate).description | i18n}}</div>
+              </div>
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.ACTION"
+               *ngIf="row.type === searchTypes.ACTION"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
@@ -526,14 +550,19 @@
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                 <div fxLayout="column">
                   <div>{{row.id | actionName | i18n}}</div>
-                  <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiI18n}}</i>
+                  <div fxLayout="row" fxLayoutGap="5px">
+                    <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+                    <div>
+                      <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiI18n}}</i>
+                    </div>
+                  </div>
                 </div>
                 <app-db-button type="action" [id]="row.id"></app-db-button>
               </div>
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.STATUS"
+               *ngIf="row.type === searchTypes.STATUS"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
@@ -544,14 +573,19 @@
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                 <div fxLayout="column">
                   <div>{{row.data | xivapiI18n}}</div>
-                  <i>{{row.data | xivapiI18n: 'Description'}}</i>
+                  <div fxLayout="row" fxLayoutGap="5px">
+                    <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+                    <div>
+                      <i>{{row.data | xivapiI18n: 'Description'}}</i>
+                    </div>
+                  </div>
                 </div>
                 <app-db-button type="status" [id]="row.id"></app-db-button>
               </div>
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
-               *ngIf="searchType === searchTypes.TRAIT"
+               *ngIf="row.type === searchTypes.TRAIT"
                fxLayoutGap="5px"
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
@@ -562,7 +596,12 @@
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                 <div fxLayout="column">
                   <div>{{row.id | traitName | i18n}}</div>
-                  <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiI18n}}</i>
+                  <div fxLayout="row" fxLayoutGap="5px">
+                    <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+                    <div>
+                      <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiI18n}}</i>
+                    </div>
+                  </div>
                 </div>
                 <app-db-button type="trait" [id]="row.id"></app-db-button>
               </div>

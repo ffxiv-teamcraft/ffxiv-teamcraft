@@ -43,6 +43,9 @@
                     *ngIf="gtData.item.models?.length > 0">
               <span>3D</span>
             </button>
+            <app-marketboard-icon [itemId]="xivapiItem.ID" [showHistory]="true"
+                                  [size]="'default'"
+                                  *ngIf="!xivapiItem.IsUntradable"></app-marketboard-icon>
           </div>
         </div>
         <div fxFlex="1 1 auto">
@@ -139,6 +142,7 @@
           <div class="detail-value">{{gtData.item.sell_price}}</div>
         </div>
       </div>
+      <app-db-comments type="item" [id]="xivapiItem.ID"></app-db-comments>
       <div>
         <nz-divider [nzText]="'DB.How_to_obtain' | translate" nzOrientation="left"></nz-divider>
         <app-fullpage-message height="150px" *ngIf="noData">

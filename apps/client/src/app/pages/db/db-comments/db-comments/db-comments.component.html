@@ -1,0 +1,157 @@
+<nz-divider [nzText]="'DB.COMMENTS.Title' | translate" nzOrientation="left"></nz-divider>
+<ng-container *ngIf="user$ | async as user">
+  <ng-container *ngIf="comments$ | async as comments">
+    <app-fullpage-message *ngIf="comments.length === 0" height="auto" fontSize="1.5rem">
+      {{'DB.COMMENTS.No_comments' | translate}}
+    </app-fullpage-message>
+    <ng-template #commentTemplateRef let-comment="comment">
+      <nz-comment [nzAuthor]="authorRef" [nzDatetime]="dateRef"
+                  *ngIf="comment.$key !== editingComment?.$key; else commentEdition">
+        <ng-template #dateRef>
+          {{comment.date | date:'short':undefined:getLocale()}} ({{getPatch(comment) | xivapiI18n}})
+        </ng-template>
+        <ng-template #authorRef>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <div [class.patron]="comment.author | isPatron | async" nz-tooltip
+                 [nzTitle]="(comment.author | isPatron | async)?('PROFILE.Patreon_supporter' | translate):null"
+                 *ngIf="comment.author; else xivdbName">
+              {{comment.author | characterName | async}}
+            </div>
+            <ng-template #xivdbName>
+              XIVDB
+            </ng-template>
+            <div *ngIf="comment.author | userLevel | async as userLvl">
+              <i *ngIf="userLvl === userLevels.ADMIN" nz-icon type="crown" nz-tooltip
+                 [nzTitle]="'COMMON.Admin' | translate"></i>
+              <i *ngIf="userLvl === userLevels.MODERATOR" nz-icon type="crown" nz-tooltip
+                 [nzTitle]="'COMMON.Moderator' | translate"></i>
+            </div>
+          </div>
+        </ng-template>
+        <nz-avatar nz-comment-avatar
+                   nzIcon="user"
+                   [nzSrc]="comment.author ? (comment.author | characterAvatar | async) : './assets/xivdb_avatar.png'"
+                   nz-tooltip
+                   [nzTitle]="(comment.author | isVerified | async)?null:''"
+                   [class.not-verified]="comment.author && !(comment.author | isVerified | async)"></nz-avatar>
+        <nz-comment-content>
+          <p *ngIf="!comment.deleted; else deletedComment"
+             [innerHTML]="comment.message | commentLinks:translate.currentLang"
+             (click)="$event.preventDefault(); handleClick($event)"></p>
+          <ng-template #deletedComment>
+            <p><i class="deleted">{{'DB.COMMENTS.Deleted_comment' | translate}}</i></p>
+          </ng-template>
+        </nz-comment-content>
+        <nz-comment-action>
+          <i
+            nz-icon
+            type="like"
+            [nzTheme]="comment.likes.length > 0 ? 'twotone' : 'outline'"
+            (click)="like(comment, user.$key)"
+          ></i>
+          <span class="count like">{{ comment.likes.length }}</span>
+        </nz-comment-action>
+        <nz-comment-action>
+          <i
+            nz-icon
+            type="dislike"
+            [nzTheme]="comment.dislikes.length > 0 ? 'twotone' : 'outline'"
+            (click)="dislike(comment, user.$key)"
+          ></i>
+          <span class="count dislike">{{ comment.dislikes.length }}</span>
+        </nz-comment-action>
+
+        <nz-comment-action *ngIf="!comment.deleted && user.defaultLodestoneId">
+          <span (click)="replyTo(comment)">{{'DB.COMMENTS.Reply' | translate}}</span>
+        </nz-comment-action>
+
+        <nz-comment-action *ngIf="!comment.deleted && (comment.author === user.$key || user.admin || user.moderator)">
+          <span (click)="editComment(comment)">{{'Edit' | translate}}</span>
+        </nz-comment-action>
+
+        <nz-comment-action *ngIf="!comment.deleted && (comment.author === user.$key || user.admin || user.moderator)">
+          <span nz-popconfirm [nzTitle]="'Confirmation' | translate"
+                (nzOnConfirm)="deleteComment(comment)">{{'Delete' | translate}}</span>
+        </nz-comment-action>
+
+        <ng-container *ngIf="parentComment?.$key === comment?.$key">
+          <ng-container *ngTemplateOutlet="editor;context:{parentComment: comment}"></ng-container>
+        </ng-container>
+
+        <ng-container *ngIf="comment.replies && comment.replies.length">
+          <ng-template ngFor let-reply [ngForOf]="comment.replies" [ngForTrackBy]="trackByComment">
+            <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ comment: reply }">
+            </ng-template>
+          </ng-template>
+        </ng-container>
+      </nz-comment>
+
+      <ng-template #commentEdition>
+        <ng-container *ngTemplateOutlet="editor;context:{commentEdition: comment}"></ng-container>
+
+        <ng-container *ngIf="comment.replies && comment.replies.length">
+          <ng-template ngFor let-reply [ngForOf]="comment.replies" [ngForTrackBy]="trackByComment">
+            <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ comment: reply }">
+            </ng-template>
+          </ng-template>
+        </ng-container>
+      </ng-template>
+    </ng-template>
+    <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ comment: comment }"
+                 *ngFor="let comment of comments; trackBy:trackByComment"></ng-template>
+
+    <ng-template #editor let-parentComment="parentComment" let-edition="commentEdition">
+      <nz-comment *ngIf="loggedIn$ | async">
+        <nz-avatar nz-comment-avatar [nzSrc]="user.$key | characterAvatar | async"></nz-avatar>
+        <nz-comment-content>
+          <nz-form-item>
+            <nz-form-item>
+              <textarea *ngIf="!edition" [(ngModel)]="newCommentContent" nz-input rows="4"></textarea>
+              <textarea *ngIf="edition" [(ngModel)]="edition.message" nz-input rows="4"></textarea>
+              <nz-form-explain>{{'DB.COMMENTS.Editor_tip' | translate}}</nz-form-explain>
+            </nz-form-item>
+          </nz-form-item>
+          <nz-form-item>
+            <div fxLayout="row" fxLayoutGap="5px" *ngIf="!edition">
+              <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!newCommentContent"
+                      (click)="postComment(user.$key, parentComment)">
+                {{'DB.COMMENTS.Post' | translate}}
+              </button>
+              <button nz-button (click)="resetEditor()">
+                {{'Cancel' | translate}}
+              </button>
+            </div>
+            <div fxLayout="row" fxLayoutGap="5px" *ngIf="edition">
+              <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!edition.message"
+                      (click)="saveCommentEdition()">
+                {{'COMMON.Save' | translate}}
+              </button>
+              <button nz-button (click)="resetEditor()">
+                {{'Cancel' | translate}}
+              </button>
+            </div>
+          </nz-form-item>
+        </nz-comment-content>
+      </nz-comment>
+    </ng-template>
+    <div fxLayout="column" fxLayoutGap="5px">
+      <ng-container *ngIf="hasMoreComments$ | async as moreComments">
+        <button nz-button nzBlock *ngIf="!(showMoreComments$ | async) && moreComments > 0"
+                (click)="showMoreComments$.next(true)">
+          {{'DB.COMMENTS.Show_more' | translate:{ amount: moreComments } }}
+        </button>
+        <button nz-button nzBlock *ngIf="showMoreComments$ | async" (click)="showMoreComments$.next(false)">
+          {{'DB.COMMENTS.Show_less' | translate }}
+        </button>
+      </ng-container>
+      <button nz-button nzBlock (click)="addRootComment = true"
+              *ngIf="!addRootComment && !hideRootCommentButton && user.defaultLodestoneId">
+        <i nz-icon type="plus"></i>
+        {{'DB.COMMENTS.Add_comment' | translate}}
+      </button>
+    </div>
+    <ng-container *ngIf="addRootComment">
+      <ng-container *ngTemplateOutlet="editor"></ng-container>
+    </ng-container>
+  </ng-container>
+</ng-container>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserService } from '../database/user.service';
 import { Character, XivapiService } from '@xivapi/angular-client';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, EMPTY, Observable, of } from 'rxjs';
 import { filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
@@ -14,6 +14,9 @@ export class CharacterService {
 
   public getCharacter(userId: string): Observable<{ character: Character, verified: boolean }> {
     if (this.cache[userId] === undefined) {
+      if (!userId) {
+        return EMPTY;
+      }
       const reloader = new BehaviorSubject<void>(null);
       this.cache[userId] = reloader.pipe(
         switchMap(() => {

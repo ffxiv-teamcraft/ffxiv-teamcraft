@@ -1,6 +1,8 @@
 import { Recipe } from './recipe';
+import { SearchType } from '../../pages/search/search-type';
+import { BaseSearchResult } from './base-search-result';
 
-export interface SearchResult {
+export interface SearchResult extends BaseSearchResult {
   itemId: number | string;
   icon: string;
   recipe?: Recipe;
