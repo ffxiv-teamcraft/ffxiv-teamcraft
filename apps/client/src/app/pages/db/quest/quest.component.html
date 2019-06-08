@@ -13,7 +13,7 @@
             <div class="item-kind" *ngIf="xivapiQuest.JournalGenre">{{xivapiQuest.JournalGenre | xivapiI18n}}</div>
           </div>
         </div>
-        <img [src]="xivapiQuest.Banner | xivapiIcon" alt="" class="instance-banner">
+        <img *ngIf="xivapiQuest.Banner" [src]="xivapiQuest.Banner | xivapiIcon" alt="" class="instance-banner">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
           <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
             <img [src]="link.icon" [alt]="link.title" class="link-icon">

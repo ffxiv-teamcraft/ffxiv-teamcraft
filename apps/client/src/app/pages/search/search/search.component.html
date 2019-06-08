@@ -104,7 +104,8 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/worn_by' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="jobCategories" nzMode="multiple" nzAllowClear class="filter-select">
+                <nz-select formControlName="jobCategories" nzMode="multiple" nzShowSearch nzAllowClear
+                           class="filter-select">
                   <nz-option *ngFor="let category of availableJobCategories" [nzValue]="category.id"
                              [nzLabel]="category.id | jobAbbr | i18n" nzCustomContent>
                     <img src="https://garlandtools.org/db/images/{{category.abbreviation}}.png" alt="" class="job-icon">
@@ -116,7 +117,7 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/crafted_by' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="craftJob" nzAllowClear class="filter-select">
+                <nz-select formControlName="craftJob" nzShowSearch nzAllowClear class="filter-select">
                   <nz-option *ngFor="let job of availableCraftJobs" [nzValue]="job.id"
                              [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
                     <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
@@ -374,7 +375,7 @@
                class="result-row"
                [class.odd]="odd">
             <a routerLink="/db/{{translate.currentLang}}/instance/{{row.id}}">
-              <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+              <img *ngIf="row.banner" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
             </a>
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -396,7 +397,7 @@
                class="result-row"
                [class.odd]="odd">
             <a routerLink="/db/{{translate.currentLang}}/quest/{{row.id}}">
-              <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+              <img *ngIf="row.banner" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
             </a>
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -424,7 +425,8 @@
                     <div>{{row.id | npcName | i18n}}</div>
                     <div fxLayout="row" fxLayoutGap="5px">
                       <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-                      <div><span *ngIf="(row.id | npcName)?.position as npcPosition">{{npcPosition.zoneid | placeName | i18n}}
+                      <div><span
+                        *ngIf="(row.id | npcName)?.position as npcPosition">{{npcPosition.zoneid | placeName | i18n}}
                         - X: {{npcPosition.x}} Y: {{npcPosition.y}} </span>
                         <i *ngIf="(row.title | i18n) !== 'missing name'">{{row.title | i18n}}</i></div>
                     </div>
@@ -467,7 +469,7 @@
                class="result-row"
                [class.odd]="odd">
             <a routerLink="/db/{{translate.currentLang}}/leve/{{row.id}}">
-              <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+              <img *ngIf="row.banner" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
             </a>
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -494,7 +496,7 @@
                 <div>{{row.zoneid | placeName | i18n}}</div>
                 <app-db-button type="map" [id]="row.id"></app-db-button>
               </div>
-                <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+              <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
