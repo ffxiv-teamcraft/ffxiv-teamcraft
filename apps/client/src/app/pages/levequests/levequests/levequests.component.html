@@ -61,7 +61,7 @@
   </div>
   <div class="results">
     <app-page-loader [loading]="loading">
-      <nz-list [nzDataSource]="results" [nzRenderItem]="leve" [nzItemLayout]="'horizontal'">
+      <nz-list [nzDataSource]="results" [nzRenderItem]="leve">
         <ng-template #leve let-leve>
           <nz-list-item fxLayout="row wrap" fxFlex="1 1 auto" [nzContent]="content">
             <label nz-checkbox class="select-box" [(ngModel)]="leve.selected"

@@ -22,7 +22,8 @@ export class UseIngenuityBeforeByregot extends RotationTip {
   matches(simulationResult: SimulationResult): boolean {
     const simulation = simulationResult.simulation.clone();
     const byregotsIndex = simulation.actions.findIndex(a => a.is(ByregotsBrow) || a.is(ByregotsBlessing) || a.is(ByregotsMiracle));
-    return simulation.actions.slice(byregotsIndex).some(a => a.is(Ingenuity) || a.is(Ingenuity));
+    return simulation.actions.slice(byregotsIndex).some(a => a.is(Ingenuity) || a.is(Ingenuity))
+      && simulationResult.hqPercent < 100;
   }
 
 }

@@ -227,7 +227,7 @@ export class AuthEffects {
     debounceTime(100),
     withLatestFrom(this.store),
     switchMap(([, state]) => {
-      return this.userService.update(state.auth.uid, { ...state.auth.user }).pipe(
+      return this.userService.set(state.auth.uid, { ...state.auth.user }).pipe(
         catchError(() => of(null))
       );
     }),
@@ -238,7 +238,7 @@ export class AuthEffects {
   updateUser$ = this.actions$.pipe(
     ofType<UpdateUser>(AuthActionTypes.UpdateUser),
     switchMap((action) => {
-      return this.userService.update(action.user.$key, action.user);
+      return this.userService.set(action.user.$key, action.user);
     }),
     map(() => new UserPersisted())
   );
@@ -247,7 +247,7 @@ export class AuthEffects {
   registerUser$ = this.actions$.pipe(
     ofType<RegisterUser>(AuthActionTypes.RegisterUser),
     switchMap((action) => {
-      return this.userService.update(action.uid, action.user);
+      return this.userService.set(action.uid, action.user);
     }),
     map(() => new UserPersisted())
   );

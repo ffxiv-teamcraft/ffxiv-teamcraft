@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.16"></a>
+## [5.4.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.14...v5.4.16) (2019-06-08)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with newly created accounts and character linking ([d3fd8c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d3fd8c7))
+* **db:** brought back translation in action page ([ef7ed27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ef7ed27))
+* **db:** fixed location for gridania map on fishes ([0f2313d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f2313d))
+* **layout:** fixed panels reordering popup ([768ba26](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/768ba26))
+* **layout:** job order now works properly with gathering ([5ee6362](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5ee6362))
+* **levequests:** fixed a layout issue with levequests page ([c36e322](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c36e322))
+* **levequests:** fixed layout display for levequests search results ([edccd9e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/edccd9e))
+* **lists:** fixed an issue with lists ordering inside team panels ([47fb55d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/47fb55d))
+* **simulator:** couple of corrections with the new tips ([eb768a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb768a2))
+
+
+### Features
+
+* **db:** added full comments system with xivdb comments imported ([#956](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/956)) ([8026021](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8026021))
+* **db:** added marketboard button to item pages ([1ea8c42](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ea8c42))
+* **layout:** you can now collapse a layout panel by default ([4d72cb7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4d72cb7))
+* **log-tracker:** log tracking is now tied to your character ([420632d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/420632d)), closes [#911](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/911)
+* **search:** new search type: ANY, that just searches using all the types at once ([1ac91ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ac91ce))
+* **simulator:** added new tips from Kumaa and The Balance ([070b48b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/070b48b)), closes [#955](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/955)
+* **simulator:** you can now set an action to failed using right click ([870fb2d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/870fb2d)), closes [#844](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/844)
+
+
+
 <a name="5.4.15"></a>
 ## [5.4.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.14...v5.4.15) (2019-06-08)
 

@@ -80,18 +80,18 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
     return this.userCache[uid];
   }
 
-  public update(uid: string, user: Partial<TeamcraftUser>): Observable<void> {
+  public set(uid: string, user: TeamcraftUser): Observable<void> {
     if (user.defaultLodestoneId) {
       return this.logTrackingService.set(`${user.$key}:${user.defaultLodestoneId.toString()}`, {
         crafting: user.logProgression,
         gathering: user.gatheringLogProgression
       }).pipe(
         switchMap(() => {
-          return super.update(uid, { ...user, gatheringLogProgression: [], logProgression: [] });
+          return super.set(uid, { ...user, gatheringLogProgression: [], logProgression: [] });
         })
       );
     }
-    return super.update(uid, user);
+    return super.set(uid, user);
   }
 
   /**
