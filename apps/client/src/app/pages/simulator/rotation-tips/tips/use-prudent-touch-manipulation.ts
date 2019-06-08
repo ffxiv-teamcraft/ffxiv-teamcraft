@@ -3,6 +3,7 @@ import { RotationTipType } from '../rotation-tip-type';
 import { SimulationResult } from '../../simulation/simulation-result';
 import { PrudentTouch } from '../../model/actions/quality/prudent-touch';
 import { ManipulationII } from '../../model/actions/buff/manipulation-ii';
+import { HastyTouchII } from '../../model/actions/quality/hasty-touch-ii';
 
 export class UsePrudentTouchManipulation extends RotationTip {
 
@@ -17,7 +18,8 @@ export class UsePrudentTouchManipulation extends RotationTip {
   }
 
   matches(simulationResult: SimulationResult): boolean {
-    return simulationResult.success && simulationResult.hqPercent > 1;
+    return simulationResult.simulation.progression < simulationResult.simulation.recipe.progress
+      && simulationResult.hqPercent > 1 && this.simulationHasAction(simulationResult, HastyTouchII);
   }
 
 }
