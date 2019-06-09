@@ -179,6 +179,7 @@
   "No_actions_found": "Действия не найдены",
   "No_statuses_found": "Статус не найден",
   "No_traits_found": "Trait'ы не найдены",
+  "No_achievements_found": "No achievements found",
   "Select_all": "Выбрать все",
   "Do you really want to reset the list?": "Вы действительно хотите сбросить список?",
   "Yes": "Да",
@@ -1309,7 +1310,8 @@
     "Action": "Действие",
     "Status": "Статус",
     "Trait": "Trait",
-    "Any": "Any"
+    "Any": "Any",
+    "Achievement": "Achievement"
   },
   "SEARCH_FILTERS": {
     "Level": "Уровень",
