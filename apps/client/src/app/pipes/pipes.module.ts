@@ -47,6 +47,7 @@ import { DurationPipe } from './pipes/duration.pipe';
 import { UserLevelPipe } from './pipes/user-level.pipe';
 import { IsPatronPipe } from './pipes/is-patron.pipe';
 import { IsVerifiedPipe } from './pipes/is-verified.pipe';
+import { AchievementNamePipe } from './pipes/achievement-name.pipe';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { IsVerifiedPipe } from './pipes/is-verified.pipe';
     DurationPipe,
     UserLevelPipe,
     IsPatronPipe,
-    IsVerifiedPipe
+    IsVerifiedPipe,
+    AchievementNamePipe
   ],
   exports: [
     ItemNamePipe,
@@ -149,7 +151,8 @@ import { IsVerifiedPipe } from './pipes/is-verified.pipe';
     DurationPipe,
     UserLevelPipe,
     IsPatronPipe,
-    IsVerifiedPipe
+    IsVerifiedPipe,
+    AchievementNamePipe
   ]
 })
 export class PipesModule {

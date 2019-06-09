@@ -179,7 +179,7 @@ export class MobComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(mob),
           description: '',
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/mob/${mob.ID}/${this.getName(mob).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/${this.translate.currentLang}/mob/${mob.ID}/${this.getName(mob).split(' ').join('-')}`,
           image: `https://xivapi.com/${mob.Icon}`
         };
       })

@@ -549,7 +549,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(item),
           description: this.getDescription(item),
-          url: `https://ffxivteamcraft.com/db/item/${item.ID}/${this.getName(item).split(' ').join('+')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/item/${item.ID}/${this.getName(item).split(' ').join('+')}`,
           image: `https://xivapi.com/i2/ls/${item.ID}.png`
         };
       })

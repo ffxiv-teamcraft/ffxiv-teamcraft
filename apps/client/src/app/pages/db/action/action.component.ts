@@ -142,7 +142,7 @@ export class ActionComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(action),
           description: this.getDescription(action),
-          url: `https://ffxivteamcraft.com/db/action/${action.ID}/${this.getName(action).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/action/${action.ID}/${this.getName(action).split(' ').join('-')}`,
           image: `https://xivapi.com${action.Icon}`
         };
       })

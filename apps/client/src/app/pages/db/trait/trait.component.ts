@@ -106,7 +106,7 @@ export class TraitComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(trait),
           description: this.getDescription(trait),
-          url: `https://ffxivteamcraft.com/db/trait/${trait.ID}/${this.getName(trait).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/trait/${trait.ID}/${this.getName(trait).split(' ').join('-')}`,
           image: `https://xivapi.com${trait.Icon}`
         };
       })

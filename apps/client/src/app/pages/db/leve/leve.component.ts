@@ -220,7 +220,7 @@ export class LeveComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(leve),
           description: this.getDescription(leve),
-          url: `https://ffxivteamcraft.com/db/leve/${leve.ID}/${this.getName(leve).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/leve/${leve.ID}/${this.getName(leve).split(' ').join('-')}`,
           image: `https://xivapi.com/${leve.IconIssuer}`
         };
       })

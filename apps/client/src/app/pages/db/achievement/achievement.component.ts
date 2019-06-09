@@ -11,15 +11,16 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
+import { achievements } from '../../../core/data/sources/achievements';
 
 @Component({
-  selector: 'app-status',
-  templateUrl: './status.component.html',
-  styleUrls: ['./status.component.less']
+  selector: 'app-achievement',
+  templateUrl: './achievement.component.html',
+  styleUrls: ['./achievement.component.less']
 })
-export class StatusComponent extends TeamcraftPageComponent {
+export class AchievementComponent extends TeamcraftPageComponent {
 
-  public xivapiStatus$: Observable<any>;
+  public achievement$: Observable<any>;
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
@@ -34,15 +35,15 @@ export class StatusComponent extends TeamcraftPageComponent {
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(this.l12n.getStatus(+params.get('statusId'))).split(' ').join('-')],
+          [this.i18n.getName(achievements[+params.get('achievementId')]).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getStatus(+params.get('statusId'))).split(' ').join('-')) {
+      } else if (slug !== this.i18n.getName(achievements[+params.get('achievementId')]).split(' ').join('-')) {
         this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getStatus(+params.get('statusId'))).split(' ').join('-')],
+          ['../', this.i18n.getName(achievements[+params.get('achievementId')]).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true
@@ -51,20 +52,20 @@ export class StatusComponent extends TeamcraftPageComponent {
       }
     });
 
-    const statusId$ = this.route.paramMap.pipe(
+    const achievementId$ = this.route.paramMap.pipe(
       filter(params => params.get('slug') !== null),
-      map(params => params.get('statusId'))
+      map(params => params.get('achievementId'))
     );
 
 
-    this.xivapiStatus$ = statusId$.pipe(
+    this.achievement$ = achievementId$.pipe(
       switchMap(id => {
-        return this.xivapi.get(XivapiEndpoint.Status, +id);
+        return this.xivapi.get(XivapiEndpoint.Achievement, +id);
       }),
       shareReplay(1)
     );
 
-    this.links$ = this.xivapiStatus$.pipe(
+    this.links$ = this.achievement$.pipe(
       map(() => {
         return [];
       })
@@ -81,13 +82,13 @@ export class StatusComponent extends TeamcraftPageComponent {
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.xivapiStatus$.pipe(
-      map(status => {
+    return this.achievement$.pipe(
+      map(achievement => {
         return {
-          title: this.getName(status),
-          description: this.getDescription(status),
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/status/${status.ID}/${this.getName(status).split(' ').join('-')}`,
-          image: `https://xivapi.com${status.Icon}`
+          title: this.getName(achievement),
+          description: this.getDescription(achievement),
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/achievement/${achievement.ID}/${this.getName(achievement).split(' ').join('-')}`,
+          image: `https://xivapi.com${achievement.Icon}`
         };
       })
     );

@@ -423,7 +423,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(mapData),
           description: this.getDescription(mapData),
-          url: `https://ffxivteamcraft.com/db/map/${mapData.ID}/${this.getName(mapData).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/map/${mapData.ID}/${this.getName(mapData).split(' ').join('-')}`,
           image: `https://xivapi.com${mapData.MapFilename}`
         };
       })

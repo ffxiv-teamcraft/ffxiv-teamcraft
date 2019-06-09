@@ -239,6 +239,9 @@ export class SearchComponent implements OnInit {
           case SearchType.TRAIT:
             searchRequest$ = this.searchTrait(query, filters);
             break;
+          case SearchType.ACHIEVEMENT:
+            searchRequest$ = this.searchAchievement(query, filters);
+            break;
           default:
             searchRequest$ = this.data.searchItem(query, filters, false);
             break;
@@ -324,6 +327,10 @@ export class SearchComponent implements OnInit {
       }))),
       this.searchMap(query, filters).pipe(map(res => res.map(row => {
         row.type = SearchType.MAP;
+        return row;
+      }))),
+      this.searchAchievement(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.ACHIEVEMENT;
         return row;
       })))
     ]).pipe(
@@ -496,6 +503,27 @@ export class SearchComponent implements OnInit {
             id: status.ID,
             icon: status.Icon,
             data: status
+          };
+        });
+      })
+    );
+  }
+
+  searchAchievement(query: string, filters: SearchFilter[]): Observable<StatusSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.ACHIEVEMENT],
+      columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(achievement => {
+          return {
+            id: achievement.ID,
+            icon: achievement.Icon,
+            data: achievement
           };
         });
       })

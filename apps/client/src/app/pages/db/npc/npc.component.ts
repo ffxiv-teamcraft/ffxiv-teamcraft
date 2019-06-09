@@ -176,7 +176,7 @@ export class NpcComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(npc),
           description: this.getDescription(npc),
-          url: `https://ffxivteamcraft.com/db/npc/${npc.ID}/${this.getName(npc).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/npc/${npc.ID}/${this.getName(npc).split(' ').join('-')}`,
           image: `https://xivapi.com/${npc.Icon}`
         };
       })

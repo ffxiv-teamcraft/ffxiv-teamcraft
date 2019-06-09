@@ -38,7 +38,8 @@ let todo = [
   'statuses',
   'traits',
   'items',
-  'aetherytes'
+  'aetherytes',
+  'achievements'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -1027,5 +1028,21 @@ if (hasTodo('aetherytes')) {
     });
   }, null, () => {
     persistToTypescript('aetheryte-names', 'aetheryteNames', names);
+  });
+}
+
+if (hasTodo('achievements')) {
+  const achievements = {};
+  getAllPages('https://xivapi.com/Achievement?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(achievement => {
+      achievements[achievement.ID] = {
+        en: achievement.Name_en,
+        de: achievement.Name_de,
+        ja: achievement.Name_ja,
+        fr: achievement.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToTypescript('achievements', 'achievements', achievements);
   });
 }
