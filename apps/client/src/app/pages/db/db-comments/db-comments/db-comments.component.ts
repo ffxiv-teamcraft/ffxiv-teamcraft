@@ -2,7 +2,7 @@ import { Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
 import { DbCommentsService } from '../db-comments.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { DbComment } from '../model/db-comment';
-import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
 import { first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
@@ -12,6 +12,10 @@ import { UserLevel } from '../../../../model/other/user-level';
 import { Router } from '@angular/router';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { switchMap } from 'rxjs/internal/operators/switchMap';
+import { DbItemCommentNotification } from '../../../../model/notification/db-item-comment-notification';
+import { NotificationService } from '../../../../core/notification/notification.service';
+import { environment } from '../../../../../environments/environment';
+import { DbCommentReplyNotification } from '../../../../model/notification/db-comment-reply-notification';
 
 @Component({
   selector: 'app-db-comments',
@@ -65,7 +69,8 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   hasMoreComments$: Observable<number>;
 
   constructor(private commentsService: DbCommentsService, private authFacade: AuthFacade, public translate: TranslateService,
-              @Inject(PLATFORM_ID) private platform: Object, private router: Router, private lazyData: LazyDataService) {
+              @Inject(PLATFORM_ID) private platform: Object, private router: Router, private lazyData: LazyDataService,
+              private notificationService: NotificationService) {
     super();
     this.user$ = this.authFacade.user$;
     this.loggedIn$ = this.authFacade.loggedIn$;
@@ -170,9 +175,31 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     if (parentComment) {
       comment.parent = parentComment.$key;
     }
-    this.commentsService.add(comment).subscribe(() => {
-      this.resetEditor();
-    });
+    this.commentsService.add(comment)
+      .pipe(
+        switchMap(() => {
+          if (parentComment && parentComment.author && parentComment.author !== comment.author) {
+            // If comment has parent, send a notification to the author of the parent
+            const parentNotification = new DbCommentReplyNotification(
+              comment.message,
+              comment.resourceId,
+              parentComment.author);
+            return this.notificationService.add(parentNotification);
+          }
+          return of(null);
+        }),
+        switchMap(() => {
+          // Monitor all new comments for now.
+          const notification = new DbItemCommentNotification(
+            comment.message,
+            comment.resourceId,
+            environment.production ? 'N9iJj4tdcBOQpxH7qGdrRxJpxa32' : 'QxjvpGIgGUdWG6nLbOP6RgoswSC2');
+          return this.notificationService.add(notification);
+        })
+      )
+      .subscribe(() => {
+        this.resetEditor();
+      });
   }
 
   saveCommentEdition(): void {

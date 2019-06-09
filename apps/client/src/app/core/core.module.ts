@@ -35,6 +35,8 @@ import { DbButtonComponent } from './db-button/db-button.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { RouterModule } from '@angular/router';
 import { ItemRarityDirective } from './item-rarity/item-rarity.directive';
+import { DbItemCommentNotification } from '../model/notification/db-item-comment-notification';
+import { DbCommentReplyNotification } from '../model/notification/db-comment-reply-notification';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { ItemRarityDirective } from './item-rarity/item-rarity.directive';
         parent: AbstractNotification,
         children: {
           LIST_COMMENT: ListCommentNotification,
-          LIST_ITEM_COMMENT: ListItemCommentNotification
+          LIST_ITEM_COMMENT: ListItemCommentNotification,
+          DB_ITEM_COMMENT: DbItemCommentNotification,
+          DB_COMMENT_REPLY: DbCommentReplyNotification
         }
       },
       {

@@ -30,7 +30,6 @@ export class CommentLinksPipe implements PipeTransform {
     });
 
     value = value.replace(this.tcRegexp, (match, ...groups) => {
-      console.log(groups);
       const data = {
         id: +groups[2],
         type: groups[1],
