@@ -982,8 +982,20 @@ if (hasTodo('traits')) {
 if (hasTodo('items')) {
   const names = {};
   const rarities = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity').subscribe(page => {
+  const mostUsed = [];
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks').subscribe(page => {
     page.Results.forEach(item => {
+      if (item.GameContentLinks) {
+        if (item.GameContentLinks.Recipe && item.GameContentLinks.Recipe.ItemResult) {
+          const usedFor = [].concat.apply([], Object.keys(item.GameContentLinks.Recipe)
+            .filter(key => /ItemIngredient\d/.test(key))
+            .map(key => item.GameContentLinks.Recipe[key])).length;
+          mostUsed.push({
+            name: item.Name_en,
+            amount: usedFor
+          });
+        }
+      }
       names[item.ID] = {
         en: item.Name_en,
         de: item.Name_de,
@@ -993,6 +1005,7 @@ if (hasTodo('items')) {
       rarities[item.ID] = item.Rarity;
     });
   }, null, () => {
+    fs.writeFileSync(path.join(__dirname, `most-used.json`), JSON.stringify(mostUsed.sort((a, b) => b.amount - a.amount)));
     persistToJsonAsset('items', names);
     persistToTypescript('rarities', 'rarities', rarities);
   });
