@@ -866,8 +866,8 @@
     "Title": "알림",
     "List_comment_added": "{{listName}}에 댓글이 달렸습니다 : \"{{content}}\"",
     "List_item_comment_added": "{{listName}}의 {{itemName}}에 댓글이 달렸습니다 : \"{{content}}\"",
-    "Db_comment": "New comment in db: \"{{comment}}\"",
-    "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
+    "Db_comment": "새 댓글이 달렸습니다: \"{{comment}}\"",
+    "Db_comment_reply": "회원님의 댓글에 새 답글이 달렸습니다: \"{{comment}}\"",
     "Mark_all_as_read": "모두 읽음으로 표시",
     "No_notifications": "알림 없음"
   },
