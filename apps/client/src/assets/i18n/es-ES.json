@@ -179,6 +179,7 @@
   "No_actions_found": "No se encontraron acciones",
   "No_statuses_found": "No se encontraron estados",
   "No_traits_found": "No se encontraron rasgos",
+  "No_achievements_found": "No achievements found",
   "Select_all": "Seleccionar todo",
   "Do you really want to reset the list?": "¿Realmente desea reiniciar la lista?",
   "Yes": "Sí",
@@ -1309,7 +1310,8 @@
     "Action": "Acción",
     "Status": "Estado",
     "Trait": "Rasgo",
-    "Any": "Cualquiera"
+    "Any": "Cualquiera",
+    "Achievement": "Achievement"
   },
   "SEARCH_FILTERS": {
     "Level": "Nivel",
