@@ -866,6 +866,8 @@
     "Title": "Уведомления",
     "List_comment_added": "Комментарий опубликован в списке {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Комментарий опубликован в списке {{listName}}: \"{{content}}\"",
+    "Db_comment": "New comment in db: \"{{comment}}\"",
+    "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
     "Mark_all_as_read": "Отметить все как прочитанные",
     "No_notifications": "Уведомлений нет"
   },
