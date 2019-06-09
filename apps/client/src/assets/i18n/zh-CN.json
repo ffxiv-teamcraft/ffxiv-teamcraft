@@ -179,6 +179,7 @@
   "No_actions_found": "No actions found",
   "No_statuses_found": "No statuses found",
   "No_traits_found": "No traits found",
+  "No_achievements_found": "No achievements found",
   "Select_all": "全选",
   "Do you really want to reset the list?": "您确定要重置清单吗？",
   "Yes": "是",
@@ -1309,7 +1310,8 @@
     "Action": "Action",
     "Status": "Status",
     "Trait": "Trait",
-    "Any": "Any"
+    "Any": "Any",
+    "Achievement": "Achievement"
   },
   "SEARCH_FILTERS": {
     "Level": "Level",
