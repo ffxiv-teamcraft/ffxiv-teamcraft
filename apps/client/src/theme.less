@@ -27,6 +27,30 @@
   background: var(--topbar-color);
 }
 
+.ant-pagination-item-active {
+  border-color: var(--primary-color);
+
+  a {
+    color: var(--primary-color);
+  }
+}
+
+.ant-pagination-item:hover {
+  border-color: var(--primary-color);
+
+  a {
+    color: var(--primary-color);
+  }
+}
+
+.ant-pagination-prev:focus .ant-pagination-item-link, .ant-pagination-next:focus .ant-pagination-item-link, .ant-pagination-prev:hover .ant-pagination-item-link, .ant-pagination-next:hover .ant-pagination-item-link {
+  border-color: var(--primary-color);
+
+  a {
+    color: var(--primary-color);
+  }
+}
+
 .ant-tabs-tab-active, .ant-tabs-tab:hover, .ant-tabs-tab:focus {
   color: var(--primary-color) !important;
   text-decoration-color: var(--primary-color) !important;
@@ -141,4 +165,8 @@ a {
 
 .ant-layout-sider-trigger:hover {
   background: var(--sider-trigger-hover-color);
+}
+
+.ant-badge-count {
+  background: var(--primary-color);
 }

@@ -63,7 +63,7 @@ export abstract class CraftingAction {
         return SimulationFailCause.MISSING_LEVEL_REQUIREMENT;
       }
     }
-    if (simulationState.crafterStats.level >= levelRequirement.level) {
+    if (simulationState.crafterStats.level < levelRequirement.level) {
       return SimulationFailCause.MISSING_LEVEL_REQUIREMENT;
     }
   }

@@ -866,6 +866,8 @@
     "Title": "Notifications",
     "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
+    "Db_comment": "New comment in db: \"{{comment}}\"",
+    "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
     "Mark_all_as_read": "Mark all as read",
     "No_notifications": "No notifications"
   },

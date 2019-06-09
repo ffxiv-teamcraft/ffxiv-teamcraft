@@ -827,7 +827,7 @@
       "Do_not_overlap_buffs": "{{overlappedIndex}} 번째 공정에서 사용한 버프가 {{overlappingIndex}} 번째 공정에서 사용한 버프와 중복됩니다. 버프의 효과를 최대한 받을 수 있도록 조금 늦게 사용해야 합니다.",
       "Use_byregot_brow_5_stacks": "'비레고의 축복' 대신 '비레고의 기교'를 사용하시면 같은 품질량이 상승하면서도 CP 6을 절약할 수 있습니다.",
       "Use_ingenuity_before_byregot": "더 높은 품질향상을 위해 '비레고' 스킬을 사용하기 전에 '독창적 발상' 을 사용해야 합니다",
-      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_more_quality_actions": "내구도가 남은 상태로 제작을 끝마쳤습니다. 남은 내구도를 이용하여 더 많은 가공스킬에 사용할 수 있습니다.",
       "Use_prudent_touch_manipulation": "66레벨 이상일 경우 '교묘한 손놀림 2' 와 '절약 가공'을 사용하여 확실하게 더 높은 품질을 얻어야 합니다",
       "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
       "Use_reflect_earlier": "'전문장인의 특기: 진가' 를 가공스킬을 사용하기 전에 미리 사용해야 합니다"
@@ -866,6 +866,8 @@
     "Title": "알림",
     "List_comment_added": "{{listName}}에 댓글이 달렸습니다 : \"{{content}}\"",
     "List_item_comment_added": "{{listName}}의 {{itemName}}에 댓글이 달렸습니다 : \"{{content}}\"",
+    "Db_comment": "새 댓글이 달렸습니다: \"{{comment}}\"",
+    "Db_comment_reply": "회원님의 댓글에 새 답글이 달렸습니다: \"{{comment}}\"",
     "Mark_all_as_read": "모두 읽음으로 표시",
     "No_notifications": "알림 없음"
   },

@@ -866,6 +866,8 @@
     "Title": "Mitteilungen",
     "List_comment_added": "Ein Kommentar wurde der Liste {{listName}} hinzugefügt: \"{{content}}\"",
     "List_item_comment_added": "Ein Kommentar wurde dem Gegenstand {{itemName}} auf der Liste {{listName}} hinzugefügt: \"{{content}}\"",
+    "Db_comment": "New comment in db: \"{{comment}}\"",
+    "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
     "Mark_all_as_read": "Alle als gelesen markieren",
     "No_notifications": "Keine Benachrichtigungen"
   },

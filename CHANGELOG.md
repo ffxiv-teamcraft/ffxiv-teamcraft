@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.17"></a>
+## [5.4.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.16...v5.4.17) (2019-06-09)
+
+
+### Bug Fixes
+
+* **db:** fixed a bug with comment links and comments posting ([2041e63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2041e63))
+* **db:** show banner only if there is one to show ([335f818](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/335f818))
+
+
+### Features
+
+* **db:** you now get notifications for replies to your comments in database ([ebd36ea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ebd36ea))
+
+
+
 <a name="5.4.16"></a>
 ## [5.4.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.14...v5.4.16) (2019-06-08)
 
