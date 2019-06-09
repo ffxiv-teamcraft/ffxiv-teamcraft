@@ -11,9 +11,9 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 })
 export class CommentLinksPipe implements PipeTransform {
 
-  private xivdbRegexp = /https?:\/\/(en|fr|de|ja)?\.?xivdb\.com\/(\w+)\/(\d+)\/(\S+)/gmi;
-  private tcRegexp = /https:\/\/ffxivteamcraft\.com\/db\/(\w+)\/(\w+)\/(\d+)\/(\S+)/gmi;
-  private linkRegexp = /https?:\/\/[^ .]+(\.)\w+\S/gmi;
+  private xivdbRegexp = /(?:^|\s)https?:\/\/(en|fr|de|ja)?\.?xivdb\.com\/(\w+)\/(\d+)\/(\S+)/gmi;
+  private tcRegexp = /(?:^|\s)https:\/\/ffxivteamcraft\.com\/db\/(\w+)\/(\w+)\/(\d+)\/(\S+)/gmi;
+  private linkRegexp = /(?:^|\s)https?:\/\/\S+/gmi;
 
   constructor(private sanitizer: DomSanitizer, private linkTools: LinkToolsService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService) {

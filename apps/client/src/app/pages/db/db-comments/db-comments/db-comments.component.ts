@@ -23,6 +23,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   @Input()
   public set type(t: string) {
     this.type$.next(t);
+    this._type = t;
   }
 
   private _type: string;
@@ -32,6 +33,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   @Input()
   public set id(i: number) {
     this.id$.next(i);
+    this._id = i;
   }
 
   private _id: number;
