@@ -866,6 +866,8 @@
     "Title": "お知らせ",
     "List_comment_added": "{{listName}} にコメントが追加されました: \"{{content}}\"",
     "List_item_comment_added": "{{listName}} の {{itemName}} にコメントが追加されました: \"{{content}}\"",
+    "Db_comment": "New comment in db: \"{{comment}}\"",
+    "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
     "Mark_all_as_read": "全て既読にする",
     "No_notifications": "通知無し"
   },
