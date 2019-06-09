@@ -179,6 +179,7 @@
   "No_actions_found": "Nenhuma acção encontrada",
   "No_statuses_found": "Nenhum status encontrado",
   "No_traits_found": "Nenhuma trait encontrada",
+  "No_achievements_found": "No achievements found",
   "Select_all": "Selecionar tudo",
   "Do you really want to reset the list?": "Você realmente quer resetar a lista?",
   "Yes": "Sim",
@@ -1309,7 +1310,8 @@
     "Action": "Action",
     "Status": "Status",
     "Trait": "Trait",
-    "Any": "Any"
+    "Any": "Any",
+    "Achievement": "Achievement"
   },
   "SEARCH_FILTERS": {
     "Level": "Level",
