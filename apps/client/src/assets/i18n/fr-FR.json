@@ -866,8 +866,8 @@
     "Title": "Notifications",
     "List_comment_added": "Commentaire sur la liste {{listName}} : \"{{content}}\"",
     "List_item_comment_added": "Commentaire posté sur {{itemName}}, liste {{listName}} : \"{{content}} \"",
-    "Db_comment": "New comment in db: \"{{comment}}\"",
-    "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
+    "Db_comment": "Nouveau commentaire en bdd: \"{{comment}}\"",
+    "Db_comment_reply": "Nouvelle réponse à l'un de vos commentaires: \"{{comment}}\"",
     "Mark_all_as_read": "Tout marquer comme lu",
     "No_notifications": "Pas de notifications"
   },
