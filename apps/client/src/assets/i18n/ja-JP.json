@@ -179,6 +179,7 @@
   "No_actions_found": "検索結果なし",
   "No_statuses_found": "検索結果なし",
   "No_traits_found": "検索結果なし",
+  "No_achievements_found": "No achievements found",
   "Select_all": "全て選択",
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
@@ -1309,7 +1310,8 @@
     "Action": "アクション",
     "Status": "ステータス",
     "Trait": "特性",
-    "Any": "任意"
+    "Any": "任意",
+    "Achievement": "Achievement"
   },
   "SEARCH_FILTERS": {
     "Level": "レベル",
