@@ -1,0 +1,66 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <h2>{{'RECIPE_FINDER.Title' | translate}}</h2>
+  <div fxLayout="row" fxLayoutAlign="center center" class="inputs-container">
+    <input
+      fxFlex="1 1 200px"
+      class="name-input"
+      [placeholder]="'RECIPE_FINDER.Placeholder' | translate"
+      nz-input
+      #itemName
+      (input)="onInput($event.target?.value)"
+      [nzAutocomplete]="auto"
+    />
+    <nz-autocomplete nzBackfill #auto>
+      <nz-auto-option *ngFor="let option of completion$ | async" [nzValue]="option.name | i18n">
+        {{ option.name | i18n }}
+      </nz-auto-option>
+    </nz-autocomplete>
+    <nz-input-group [nzPrefix]="prefixTemplate" fxFlex="0 0 100px">
+      <input type="number" nz-input class="amount-input" [value]="0" #amount/>
+    </nz-input-group>
+    <ng-template #prefixTemplate>x</ng-template>
+    <button nz-button nzType="primary" class="add-to-pool"
+            [disabled]="isButtonDisabled(itemName.value, +amount.value)"
+            (click)="addToPool(itemName.value, +amount.value)">
+      <i nz-icon type="plus"></i>
+    </button>
+    <button nz-button nzType="primary" class="search-button" [disabled]="pool.length === 0"
+            (click)="search$.next()">
+      <i nz-icon type="search"></i>
+    </button>
+  </div>
+</div>
+<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px" class="inventory-container">
+  <div class="inventory-element" fxLayout="row" fxLayoutAlign="flex-start center"
+       fxLayoutGap="5px" *ngFor="let item of pool">
+    <app-item-icon [itemId]="item.id" [icon]="item.id | lazyIcon" [width]="32"></app-item-icon>
+    <div fxLayout="column">
+      <div>{{item.id | itemName | i18n}}</div>
+      <div>x{{item.amount}}</div>
+    </div>
+  </div>
+</div>
+<div *ngIf="results$ | async as results">
+  <nz-divider nzOrientation="left" [nzText]="'RECIPE_FINDER.Results' | translate"></nz-divider>
+  <nz-list [nzDataSource]="results" [nzRenderItem]="recipe">
+    <ng-template #recipe let-recipe>
+      <nz-list-item>
+        <nz-list-item-meta
+          [nzTitle]="nzTitle"
+          [nzAvatar]="avatar"
+          [nzDescription]="recipe | json"
+        >
+          <ng-template #nzTitle>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div>{{ recipe.result | itemName | i18n }}</div>
+              <app-db-button [id]="recipe.result" type="item"></app-db-button>
+            </div>
+          </ng-template>
+          <ng-template #avatar>
+            <app-item-icon [itemId]="recipe.result" [width]="32" [icon]="recipe.result | lazyIcon"></app-item-icon>
+          </ng-template>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+</div>

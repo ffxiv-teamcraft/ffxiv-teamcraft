@@ -1329,5 +1329,9 @@
     "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
     "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
     "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+  },
+  "RECIPE_FINDER": {
+    "Title": "Recipe finder",
+    "Placeholder": "Item name"
   }
 }
