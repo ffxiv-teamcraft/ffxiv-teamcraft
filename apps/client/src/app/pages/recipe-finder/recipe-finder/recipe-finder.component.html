@@ -40,46 +40,95 @@
     </div>
   </div>
 </div>
-<div *ngIf="results$ | async as results">
-  <nz-divider nzOrientation="left" [nzText]="'RECIPE_FINDER.Results' | translate"></nz-divider>
-  <nz-list [nzDataSource]="results" [nzRenderItem]="recipe">
-    <ng-template #recipe let-recipe let-index="index">
-      <nz-list-item (mouseenter)="highlight(recipe)" (mouseleave)="highlight(null)"
-                    [class.odd]="index % 2 === 1" class="recipe-result-row"
-                    [nzExtra]="recipe.missing.length > 0?extra:null">
-        <ng-template #extra>
+<div fxLayout="row" fxLayout.lt-md="column" class="results-container">
+  <div *ngIf="results$ | async as results" fxFlex="1 1 50%">
+    <nz-divider nzOrientation="left" [nzText]="'RECIPE_FINDER.Results' | translate"></nz-divider>
+    <nz-list [nzDataSource]="results" [nzRenderItem]="recipe">
+      <ng-template #recipe let-recipe let-index="index">
+        <nz-list-item (mouseenter)="highlight(recipe)" (mouseleave)="highlight(null)"
+                      [class.odd]="index % 2 === 1" class="recipe-result-row"
+                      [nzContent]="content"
+                      [nzExtra]="recipe.missing.length > 0?extra:null">
+          <ng-template #content>
+            <button nz-button (click)="addToBasket(recipe)">
+              <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+            </button>
+          </ng-template>
+          <ng-template #extra>
           <span class="missing-details">
           {{'RECIPE_FINDER.Missing' | translate}}
             <span *ngFor="let missing of recipe.missing;let last=last">{{missing.id | itemName | i18n}}
               x{{missing.amount * recipe.possibleAmount / recipe.yields}} <span *ngIf="!last">, </span></span>
           </span>
-        </ng-template>
-        <nz-list-item-meta
-          [nzTitle]="nzTitle"
-          [nzAvatar]="avatar"
-          nzDescription="x{{recipe.possibleAmount}}"
-        >
-          <ng-template #nzTitle>
-            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <div>{{ recipe.result | itemName | i18n }}</div>
-              <app-db-button [id]="recipe.result" type="item"></app-db-button>
-              <nz-tag class="custom-tag"
-                      *ngIf="recipe.missing.length === 0"
-                      [style.border-color]="'darkgreen'"
-              >{{'RECIPE_FINDER.No_missing_ingredients' | translate}}</nz-tag>
-              <nz-tag class="custom-tag"
-                      [style.border-color]="'#f2b10e'"
-                      *ngIf="recipe.missing.length === 1">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: recipe.missing.length } }}</nz-tag>
-              <nz-tag class="custom-tag"
-                      [style.border-color]="'#f50'"
-                      *ngIf="recipe.missing.length > 1">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: recipe.missing.length } }}</nz-tag>
-            </div>
           </ng-template>
-          <ng-template #avatar>
-            <app-item-icon [itemId]="recipe.result" [width]="32" [icon]="recipe.result | lazyIcon"></app-item-icon>
+          <nz-list-item-meta
+            [nzTitle]="nzTitle"
+            [nzAvatar]="avatar"
+            nzDescription="x{{recipe.possibleAmount}}"
+          >
+            <ng-template #nzTitle>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <div>{{ recipe.result | itemName | i18n }}</div>
+                <app-db-button [id]="recipe.result" type="item"></app-db-button>
+                <nz-tag class="custom-tag"
+                        *ngIf="recipe.missing.length === 0"
+                        [style.border-color]="'darkgreen'"
+                >{{'RECIPE_FINDER.No_missing_ingredients' | translate}}</nz-tag>
+                <nz-tag class="custom-tag"
+                        [style.border-color]="'#f2b10e'"
+                        *ngIf="recipe.missing.length === 1">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: recipe.missing.length } }}</nz-tag>
+                <nz-tag class="custom-tag"
+                        [style.border-color]="'#f50'"
+                        *ngIf="recipe.missing.length > 1">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: recipe.missing.length } }}</nz-tag>
+              </div>
+            </ng-template>
+            <ng-template #avatar>
+              <app-item-icon [itemId]="recipe.result" [width]="32" [icon]="recipe.result | lazyIcon"></app-item-icon>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </div>
+  <div *ngIf="results$ | async as results" fxFlex="1 1 50%">
+    <nz-divider nzOrientation="left" [nzText]="'RECIPE_FINDER.Basket' | translate"></nz-divider>
+    <nz-list [nzDataSource]="basket" [nzRenderItem]="basketRecipe">
+      <ng-template #basketRecipe let-row let-index="index">
+        <nz-list-item [class.odd]="index % 2 === 1"
+                      [nzContent]="content">
+          <ng-template #content>
+            <button nz-button (click)="removeFromBasket(row)">
+              <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+            </button>
           </ng-template>
-        </nz-list-item-meta>
-      </nz-list-item>
-    </ng-template>
-  </nz-list>
+          <nz-list-item-meta
+            [nzTitle]="nzTitle"
+            [nzAvatar]="avatar"
+            nzDescription="x{{row.amount}}"
+          >
+            <ng-template #nzTitle>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <div>{{ row.recipe.result | itemName | i18n }}</div>
+                <app-db-button [id]="row.recipe.result" type="item"></app-db-button>
+                <nz-tag class="custom-tag"
+                        *ngIf="row.recipe.missing.length === 0"
+                        [style.border-color]="'darkgreen'"
+                >{{'RECIPE_FINDER.No_missing_ingredients' | translate}}</nz-tag>
+                <nz-tag class="custom-tag"
+                        [style.border-color]="'#f2b10e'"
+                        *ngIf="row.recipe.missing.length === 1">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: row.recipe.missing.length } }}</nz-tag>
+                <nz-tag class="custom-tag"
+                        [style.border-color]="'#f50'"
+                        *ngIf="row.recipe.missing.length > 1">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: row.recipe.missing.length } }}</nz-tag>
+              </div>
+            </ng-template>
+            <ng-template #avatar>
+              <app-item-icon [itemId]="row.recipe.result" [width]="32"
+                             [icon]="row.recipe.result | lazyIcon"></app-item-icon>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </div>
 </div>

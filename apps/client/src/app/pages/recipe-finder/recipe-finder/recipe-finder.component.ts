@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
-import { debounceTime, map } from 'rxjs/operators';
+import { debounceTime, map, shareReplay } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import * as _ from 'lodash';
 import { LazyRecipe } from '../../../core/data/lazy-recipe';
@@ -40,6 +40,8 @@ export class RecipeFinderComponent implements OnDestroy {
   public results$: Observable<any[]>;
 
   public highlight$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+
+  public basket: { recipe: any, amount: number, ingredients: { id: number, amount: number }[] }[] = [];
 
   constructor(private lazyData: LazyDataService, private translate: TranslateService,
               private i18n: I18nToolsService, private dataService: DataService) {
@@ -79,7 +81,8 @@ export class RecipeFinderComponent implements OnDestroy {
         return finalRecipes.sort((a, b) => {
           return a.missing.length - b.missing.length;
         });
-      })
+      }),
+      shareReplay(1)
     );
   }
 
@@ -105,13 +108,76 @@ export class RecipeFinderComponent implements OnDestroy {
     this.input$.next(value);
   }
 
-  addToPool(name: string, amount: number): void {
+  addToPool(name: string, amount: number, fromBasket = false): void {
     const item = this.items.find(i => this.i18n.getName(i.name).toLowerCase() === name.toLowerCase());
-    if (!item || this.pool.some(i => i.id === item.id)) {
+    if (!item || (fromBasket && this.pool.some(i => i.id === item.id))) {
       return;
     }
-    this.pool.unshift({ id: item.id, amount: amount });
+    const poolEntry = this.pool.find(i => i.id === item.id);
+    if (poolEntry === undefined) {
+      this.pool = [
+        { id: item.id, amount: amount },
+        ...this.pool
+      ];
+    } else {
+      poolEntry.amount += amount;
+      this.pool = this.pool.map(i => {
+        if (i.id === item.id) {
+          return poolEntry;
+        }
+        return i;
+      });
+    }
     this.savePool();
+  }
+
+  removeFromPool(itemId: number, amount: number): void {
+    const poolEntry = this.pool.find(i => i.id === itemId);
+    if (!poolEntry) {
+      return;
+    }
+    if (poolEntry.amount <= amount) {
+      this.pool = this.pool.filter(i => i.id !== itemId);
+    } else {
+      poolEntry.amount -= amount;
+      this.pool = this.pool.map(i => {
+        if (i.id === itemId) {
+          return poolEntry;
+        }
+        return i;
+      });
+    }
+  }
+
+  addToBasket(recipe: any): void {
+    const newEntry = {
+      recipe: recipe,
+      amount: recipe.possibleAmount,
+      ingredients: recipe.ingredients
+        .map(ingredient => {
+          const poolItem = this.pool.find(item => item.id === ingredient.id);
+          if (poolItem === undefined) {
+            return undefined;
+          } else {
+            return {
+              id: poolItem.id,
+              amount: ingredient.amount * recipe.possibleAmount / recipe.yields
+            };
+          }
+        })
+        .filter(item => item !== undefined)
+    };
+    this.basket = [
+      ...this.basket,
+      newEntry
+    ];
+    newEntry.ingredients.forEach(ingredient => {
+      this.removeFromPool(ingredient.id, ingredient.amount);
+    });
+  }
+
+  removeFromBasket(entry: { id: number, amount: number }): void {
+    // TODO
   }
 
   public highlight(recipe: LazyRecipe): void {
