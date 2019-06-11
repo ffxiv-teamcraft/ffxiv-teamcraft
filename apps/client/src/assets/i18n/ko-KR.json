@@ -1331,18 +1331,18 @@
     "Desktop_app_overlay": "데스크톱 앱을 사용시 알람을 오버레이 창으로 띄울 수 있습니다(사이드바 아래에 다운로드 링크가 있음)."
   },
   "RECIPE_FINDER": {
-    "Title": "Recipe finder",
-    "Placeholder": "Item name",
-    "No_missing_ingredients": "No missing ingredients",
-    "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
+    "Title": "제작법 찾기",
+    "Placeholder": "아이템 이름",
+    "No_missing_ingredients": "모든 재료가 있음",
+    "Missing_X_ingredients": "{{amount}} 가지 재료가 부족",
     "Missing": "Missing",
-    "Results": "Possible crafts",
-    "Basket": "Basket",
-    "Add_to_basket": "Add to basket",
-    "Remove_from_basket": "Remove from basket",
-    "Search": "Find recipes",
-    "Generate_list": "Add to list",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
-    "Empty_basket": "Your basket is empty"
+    "Results": "제작 가능한 품목",
+    "Basket": "제작 목록",
+    "Add_to_basket": "제작 목록에 추가",
+    "Remove_from_basket": "제작 목록에서 제거",
+    "Search": "제작법 찾기",
+    "Generate_list": "목록에 추가",
+    "Description": "현재 가지고 있는 재료의 수량을 입력하고 \"제작법 찾기\" 를 클릭하면 현재 재료로 제작이 가능한 품목들을 확인할 수 있으며, 원하는 품목들을 목록으로 만들 수 있습니다.",
+    "Empty_basket": "제작 목록이 비어있습니다"
   }
 }
