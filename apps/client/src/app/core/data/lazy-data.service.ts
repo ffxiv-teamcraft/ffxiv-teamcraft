@@ -7,6 +7,7 @@ import { I18nName } from '../../model/common/i18n-name';
 import { Quest } from '../../pages/db/model/quest/quest';
 import { Fate } from '../../pages/db/model/fate/fate';
 import { isPlatformServer } from '@angular/common';
+import { LazyRecipe } from './lazy-recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -64,7 +65,8 @@ export class LazyDataService {
   public leves: any = {};
   public statuses: any = {};
   public traits: any = {};
-  public patches: any = [];
+  public patches: any[] = [];
+  public recipes: LazyRecipe[] = [];
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -135,7 +137,8 @@ export class LazyDataService {
         this.http.get('./assets/data/leves.json'),
         this.http.get('./assets/data/statuses.json'),
         this.http.get('./assets/data/traits.json'),
-        this.http.get('https://xivapi.com/patchlist')
+        this.http.get('https://xivapi.com/patchlist'),
+        this.http.get('./assets/data/recipes.json')
       ]
     ).subscribe(([
                    items,
@@ -178,7 +181,8 @@ export class LazyDataService {
                    leves,
                    statuses,
                    traits,
-                   patches
+                   patches,
+                   recipes
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -220,7 +224,8 @@ export class LazyDataService {
       this.leves = leves;
       this.statuses = statuses;
       this.traits = traits;
-      this.patches = patches;
+      this.patches = patches as any[];
+      this.recipes = recipes as LazyRecipe[];
       this.loaded$.next(true);
       this.loaded$.complete();
     });

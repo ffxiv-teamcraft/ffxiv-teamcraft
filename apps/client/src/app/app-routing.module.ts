@@ -116,6 +116,10 @@ const routes: Routes = [
     path: 'db',
     loadChildren: './pages/db/db.module#DbModule'
   },
+  {
+    path: 'recipe-finder',
+    loadChildren: './pages/recipe-finder/recipe-finder.module#RecipeFinderModule'
+  },
 ];
 
 @NgModule({
