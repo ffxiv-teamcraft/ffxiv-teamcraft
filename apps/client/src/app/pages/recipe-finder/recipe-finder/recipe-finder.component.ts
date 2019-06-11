@@ -1,12 +1,13 @@
 import { Component, OnDestroy } from '@angular/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
 import { debounceTime, map } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import * as _ from 'lodash';
+import { LazyRecipe } from '../../../core/data/lazy-recipe';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -38,6 +39,8 @@ export class RecipeFinderComponent implements OnDestroy {
 
   public results$: Observable<any[]>;
 
+  public highlight$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+
   constructor(private lazyData: LazyDataService, private translate: TranslateService,
               private i18n: I18nToolsService, private dataService: DataService) {
     const allItems = this.lazyData.allItems;
@@ -62,18 +65,36 @@ export class RecipeFinderComponent implements OnDestroy {
         }
         const uniquified = _.uniqBy(possibleRecipes, 'id');
         // Now that we have all possible recipes, let's filter and rate them
-        const ratedRecipes = uniquified.map(recipe => {
+        const finalRecipes = uniquified.map(recipe => {
           recipe.missing = recipe.ingredients.filter(i => {
             const poolItem = this.pool.find(item => item.id === i.id);
             return !poolItem || poolItem.amount < i.amount;
-          }).length;
+          });
+          recipe.possibleAmount = recipe.yields;
+          while (this.canCraft(recipe, recipe.possibleAmount)) {
+            recipe.possibleAmount += recipe.yields;
+          }
           return recipe;
         });
-        return ratedRecipes.sort((a, b) => {
-          return a.missing - b.missing;
+        return finalRecipes.sort((a, b) => {
+          return a.missing.length - b.missing.length;
         });
       })
     );
+  }
+
+  public canCraft(recipe: LazyRecipe, amount: number): boolean {
+    const allAvailableIngredients = recipe.ingredients.filter(i => this.pool.some(item => i.id === item.id));
+    const neededIngredients = allAvailableIngredients.map(i => {
+      return {
+        ...i,
+        amount: i.amount * amount / recipe.yields
+      };
+    });
+    return !neededIngredients.some(i => {
+      const poolItem = this.pool.find(item => item.id === i.id);
+      return poolItem.amount < i.amount;
+    });
   }
 
   public isButtonDisabled(name: string, amount: number): boolean {
@@ -91,6 +112,14 @@ export class RecipeFinderComponent implements OnDestroy {
     }
     this.pool.unshift({ id: item.id, amount: amount });
     this.savePool();
+  }
+
+  public highlight(recipe: LazyRecipe): void {
+    if (recipe) {
+      this.highlight$.next(recipe.ingredients.map(i => i.id));
+    } else {
+      this.highlight$.next([]);
+    }
   }
 
   private savePool(): void {

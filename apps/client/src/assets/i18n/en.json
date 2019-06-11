@@ -1332,6 +1332,9 @@
   },
   "RECIPE_FINDER": {
     "Title": "Recipe finder",
-    "Placeholder": "Item name"
+    "Placeholder": "Item name",
+    "No_missing_ingredients": "No missing ingredients",
+    "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
+    "Missing": "Missing"
   }
 }
