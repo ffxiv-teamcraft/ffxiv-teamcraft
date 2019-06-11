@@ -1335,6 +1335,14 @@
     "Placeholder": "Item name",
     "No_missing_ingredients": "No missing ingredients",
     "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
-    "Missing": "Missing"
+    "Missing": "Missing",
+    "Results": "Possible crafts",
+    "Basket": "Basket",
+    "Add_to_basket": "Add to basket",
+    "Remove_from_basket": "Remove from basket",
+    "Search": "Find recipes",
+    "Generate_list": "Add to list",
+    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
+    "Empty_basket": "Your basket is empty"
   }
 }

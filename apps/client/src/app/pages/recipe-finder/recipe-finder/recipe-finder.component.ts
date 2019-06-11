@@ -1,13 +1,20 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
-import { debounceTime, map, shareReplay } from 'rxjs/operators';
-import { DataService } from '../../../core/api/data.service';
+import { debounceTime, filter, first, map, mergeMap, shareReplay, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { LazyRecipe } from '../../../core/data/lazy-recipe';
+import { ListsFacade } from '../../../modules/list/+state/lists.facade';
+import { ListManagerService } from '../../../modules/list/list-manager.service';
+import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { Router } from '@angular/router';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
+import { List } from '../../../modules/list/model/list';
+import { NzNotificationService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -43,8 +50,21 @@ export class RecipeFinderComponent implements OnDestroy {
 
   public basket: { recipe: any, amount: number, ingredients: { id: number, amount: number }[] }[] = [];
 
+  public editingAmount: number;
+
+  @ViewChild('notificationRef')
+  notification: TemplateRef<any>;
+
+  // Notification data
+  itemsAdded = 0;
+
+  modifiedList: List;
+
   constructor(private lazyData: LazyDataService, private translate: TranslateService,
-              private i18n: I18nToolsService, private dataService: DataService) {
+              private i18n: I18nToolsService, private listsFacade: ListsFacade,
+              private listManager: ListManagerService, private progressService: ProgressPopupService,
+              private router: Router, private l12n: LocalizedDataService, private listPicker: ListPickerService,
+              private notificationService: NzNotificationService) {
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.items)
       .filter(key => +key > 19)
@@ -76,6 +96,8 @@ export class RecipeFinderComponent implements OnDestroy {
           while (this.canCraft(recipe, recipe.possibleAmount)) {
             recipe.possibleAmount += recipe.yields;
           }
+          // Remove the final iteration check
+          recipe.possibleAmount -= recipe.yields;
           return recipe;
         });
         return finalRecipes.sort((a, b) => {
@@ -108,9 +130,36 @@ export class RecipeFinderComponent implements OnDestroy {
     this.input$.next(value);
   }
 
-  addToPool(name: string, amount: number, fromBasket = false): void {
-    const item = this.items.find(i => this.i18n.getName(i.name).toLowerCase() === name.toLowerCase());
-    if (!item || (fromBasket && this.pool.some(i => i.id === item.id))) {
+  editAmount(id: number) {
+    this.editingAmount = id;
+  }
+
+  saveAmount(id: number, newAmount: number): void {
+    if (newAmount <= 0) {
+      this.removeFromPool(id, newAmount, true);
+      return;
+    }
+    delete this.editingAmount;
+    this.pool = this.pool.map(item => {
+      if (item.id === id) {
+        return {
+          ...item,
+          amount: newAmount
+        };
+      }
+      return item;
+    });
+    this.savePool();
+  }
+
+  addToPool(input: string | number, amount: number, fromBasket = false): void {
+    let item;
+    if (input.toString() === input) {
+      item = this.items.find(i => this.i18n.getName(i.name).toLowerCase() === input.toLowerCase());
+    } else {
+      item = this.items.find(i => i.id === input);
+    }
+    if (!item || (!fromBasket && this.pool.some(i => i.id === item.id))) {
       return;
     }
     const poolEntry = this.pool.find(i => i.id === item.id);
@@ -131,7 +180,7 @@ export class RecipeFinderComponent implements OnDestroy {
     this.savePool();
   }
 
-  removeFromPool(itemId: number, amount: number): void {
+  removeFromPool(itemId: number, amount: number, save = false): void {
     const poolEntry = this.pool.find(i => i.id === itemId);
     if (!poolEntry) {
       return;
@@ -147,6 +196,49 @@ export class RecipeFinderComponent implements OnDestroy {
         return i;
       });
     }
+    if (save) {
+      this.savePool();
+    }
+  }
+
+  generateList(): void {
+    this.listPicker.pickList().pipe(
+      mergeMap(list => {
+        const operations = this.basket.map(row => {
+          return this.listManager.addToList(+row.recipe.result, list,
+            row.recipe.id, row.amount, false);
+        });
+        let operation$: Observable<any>;
+        if (operations.length > 0) {
+          operation$ = concat(
+            ...operations
+          );
+        } else {
+          operation$ = of(list);
+        }
+        return this.progressService.showProgress(operation$,
+          this.basket.length,
+          'Adding_recipes',
+          { amount: this.basket.length, listname: list.name });
+      }),
+      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
+      mergeMap(list => {
+        // We want to get the list created before calling it a success, let's be pessimistic !
+        return this.progressService.showProgress(
+          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
+            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
+            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          ), 1, 'Saving_in_database');
+      })
+    ).subscribe((list) => {
+      this.itemsAdded = this.basket.length;
+      this.modifiedList = list;
+      this.notificationService.template(this.notification);
+      this.basket = [];
+      this.savePool();
+    });
   }
 
   addToBasket(recipe: any): void {
@@ -174,10 +266,17 @@ export class RecipeFinderComponent implements OnDestroy {
     newEntry.ingredients.forEach(ingredient => {
       this.removeFromPool(ingredient.id, ingredient.amount);
     });
+    this.search$.next();
   }
 
-  removeFromBasket(entry: { id: number, amount: number }): void {
-    // TODO
+  removeFromBasket(entry: { recipe: any, amount: number, ingredients: { id: number, amount: number }[] }): void {
+    this.basket = this.basket.filter(item => {
+      return item.recipe.id !== entry.recipe.id;
+    });
+    entry.ingredients.forEach(ingredient => {
+      this.addToPool(ingredient.id, ingredient.amount, true);
+    });
+    this.search$.next();
   }
 
   public highlight(recipe: LazyRecipe): void {

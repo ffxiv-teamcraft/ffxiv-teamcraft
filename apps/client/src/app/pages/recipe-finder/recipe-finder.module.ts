@@ -13,6 +13,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
+import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 
 const routes: Routes = [
   {
@@ -37,7 +38,8 @@ const routes: Routes = [
     FullpageMessageModule,
 
     RouterModule.forChild(routes),
-    ItemIconModule
+    ItemIconModule,
+    MarketboardModule
   ]
 })
 export class RecipeFinderModule {
