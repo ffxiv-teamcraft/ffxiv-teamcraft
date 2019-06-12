@@ -843,6 +843,7 @@
     "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Expect to sell everything",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
     "Copy_earnings_as_text": "Copy content as text",
     "Content_copied": "Content copied in your clipboard",
