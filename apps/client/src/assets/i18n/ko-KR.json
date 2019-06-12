@@ -1339,7 +1339,7 @@
     "Placeholder": "아이템 이름",
     "No_missing_ingredients": "모든 재료가 있음",
     "Missing_X_ingredients": "{{amount}} 가지 재료가 부족",
-    "Missing": "Missing",
+    "Missing": "부족한 재료 : ",
     "Results": "제작 가능한 품목",
     "Basket": "제작 목록",
     "Add_to_basket": "제작 목록에 추가",
