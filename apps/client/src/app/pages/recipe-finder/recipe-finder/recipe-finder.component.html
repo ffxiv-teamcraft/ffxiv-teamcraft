@@ -37,7 +37,7 @@
             [disabled]="isButtonDisabled(itemName.value, +amount.value)"
             (click)="addToPool(itemName.value, +amount.value)"
             nzBlock>
-      <i nz-icon type="plus"></i>
+      <i nz-icon type="plus"></i> {{'RECIPE_FINDER.Add_item' | translate}}
     </button>
     <button nz-button nzType="primary" class="search-button" [disabled]="pool.length === 0"
             (click)="search$.next()">
