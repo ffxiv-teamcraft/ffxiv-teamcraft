@@ -1344,6 +1344,7 @@
     "Search": "Find recipes",
     "Generate_list": "Add to list",
     "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
-    "Empty_basket": "Your basket is empty"
+    "Empty_basket": "Your basket is empty",
+    "Add_item": "Add item"
   }
 }
