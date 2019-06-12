@@ -67,7 +67,7 @@
             <button nz-button nzSize="small" nzShape="circle" (click)="addAllAlarms()"
                     *ngIf="item.alarms !== undefined && item.alarms.length > 0"
                     nz-tooltip [nzTitle]="'LIST_DETAILS.Add_all_item_alarms' | translate">
-              <i nz-icon [iconfont]="'icon-addalarm'"></i>
+              <i nz-icon type="bell"></i>
             </button>
           </ng-container>
 
@@ -335,7 +335,7 @@
                   nz-tooltip [nzTitle]="display.alarm.zoneId | placeName | i18n"
                   [nzGhost]="!display.registered"
                   (click)="toggleAlarm(display)">
-            <i nz-icon type="clock-circle-o" *ngIf="!display.registered"></i>
+            <i nz-icon type="bell" *ngIf="!display.registered"></i>
             <i nz-icon type="close-circle-o" *ngIf="display.registered"></i>
             {{display.remainingTime | timer}}
             <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
