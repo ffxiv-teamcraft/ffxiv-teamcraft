@@ -843,6 +843,7 @@
     "From_crafting": "制作費用",
     "Expect_to_sell_everything": "販売予定",
     "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。",
