@@ -125,7 +125,9 @@
     "Moderator": "Modérateur",
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} secondes",
-    "None": "Aucun"
+    "None": "Aucun",
+    "Top": "Top",
+    "Bottom": "Bottom"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -334,6 +336,7 @@
     "Disable_cross_world_prices": "Utiliser uniquement le serveur d'origine pour les prix à l'hôtel des ventes",
     "Clear_search_history": "Effacer l'historique de recherche",
     "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
+    "Db_comments_position": "Database comments position",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
