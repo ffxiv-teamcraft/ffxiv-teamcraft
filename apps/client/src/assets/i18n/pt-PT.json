@@ -333,6 +333,7 @@
     "Favorite_aetherytes": "Aetherytes favoritos",
     "Disable_cross_world_prices": "Usar apenas o mundo próprio para preços do mercado",
     "Clear_search_history": "Clear search history",
+    "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Cor principal",
