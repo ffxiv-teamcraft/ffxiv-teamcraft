@@ -56,7 +56,7 @@
   "Mute_alarms": "静音",
   "Hide_used": "隐藏已使用的行",
   "Collapse_if_done": "折叠已完成项",
-  "Collapse_by_default": "Collapse by default",
+  "Collapse_by_default": "默认折叠",
   "Retainer_ventures": "雇员委托",
   "Requires_x_ventures": "获得全部物品需要 {{amount}} 次委托",
   "WORKSHOP": {
@@ -122,10 +122,10 @@
     "Opened_in_desktop": "此页面已在客户端中打开，你可以现在关闭本页了。",
     "Open_in_desktop": "在客户端中打开",
     "Admin": "管理员",
-    "Moderator": "Moderator",
+    "Moderator": "管理员",
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
-    "None": "None"
+    "None": "无"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -176,10 +176,10 @@
   "No_lore_entries": "没有找到相关理符",
   "No_fates_found": "没有找到相关危命任务",
   "No_maps_found": "没有找到相关地图",
-  "No_actions_found": "No actions found",
-  "No_statuses_found": "No statuses found",
-  "No_traits_found": "No traits found",
-  "No_achievements_found": "No achievements found",
+  "No_actions_found": "没有找到相关技能",
+  "No_statuses_found": "没有找到相关状态",
+  "No_traits_found": "没有找到相关技能",
+  "No_achievements_found": "没有找到相关成就",
   "Select_all": "全选",
   "Do you really want to reset the list?": "您确定要重置清单吗？",
   "Yes": "是",
@@ -332,15 +332,15 @@
     "Free_aetheryte": "免费传送点",
     "Favorite_aetherytes": "收藏传送点",
     "Disable_cross_world_prices": "仅使用当前服务器的市场价格",
-    "Clear_search_history": "Clear search history",
+    "Clear_search_history": "清除搜索记录",
     "COLORS": {
-      "Background": "Background color",
+      "Background": "背景颜色",
       "Primary": "主体色",
       "Highlight": "高亮色",
       "Text": "按钮文本色",
-      "Topbar": "Topbar and sidebar color",
-      "Sidebar_trigger": "Sidebar trigger color",
-      "Sidebar_trigger_hover": "Sidebar trigger hover color"
+      "Topbar": "顶栏和侧边栏颜色",
+      "Sidebar_trigger": "侧边栏高亮颜色",
+      "Sidebar_trigger_hover": "侧边栏高亮悬浮颜色"
     },
     "COPY_TYPE": {
       "Classic": "复制物品名称",
@@ -827,8 +827,8 @@
       "Use_advanced_touch_instead": "在第 {{index}} 步的加工和上级加工应该被替换为两个中级加工，可以少消耗 2 点 CP 获得同样的效果。",
       "Do_not_overlap_buffs": "在第 {{overlappedIndex}} 步的 buff 和第 {{overlappingIndex}} 步已有的 buff 重叠了。第二个 buff 应当推迟以获得最佳效果。",
       "Use_byregot_brow_5_stacks": "应使用比尔格的技巧替换比尔格的祝福，可获得同样质量并节约 6 点 CP。",
-      "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
-      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_ingenuity_before_byregot": "应在使用比尔格技能前使用新颖以提升品质收益。",
+      "Use_more_quality_actions": "在结束制作前你还有剩余耐久，应使用更多加工系技能提升品质。",
       "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
       "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
       "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
