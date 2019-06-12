@@ -1311,7 +1311,7 @@
     "Status": "Estado",
     "Trait": "Rasgo",
     "Any": "Cualquiera",
-    "Achievement": "Achievement"
+    "Achievement": "Logro"
   },
   "SEARCH_FILTERS": {
     "Level": "Nivel",
@@ -1331,18 +1331,18 @@
     "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral)."
   },
   "RECIPE_FINDER": {
-    "Title": "Recipe finder",
-    "Placeholder": "Item name",
-    "No_missing_ingredients": "No missing ingredients",
-    "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
-    "Missing": "Missing",
-    "Results": "Possible crafts",
-    "Basket": "Basket",
-    "Add_to_basket": "Add to basket",
-    "Remove_from_basket": "Remove from basket",
-    "Search": "Find recipes",
-    "Generate_list": "Add to list",
+    "Title": "Buscador de recetas",
+    "Placeholder": "Nombre del artículo",
+    "No_missing_ingredients": "No faltan ingredientes",
+    "Missing_X_ingredients": "Falta(n) {{amount}} ingrediente(s)",
+    "Missing": "Faltante",
+    "Results": "Posibles artesanías",
+    "Basket": "Cesta",
+    "Add_to_basket": "Añadir a la cesta",
+    "Remove_from_basket": "Eliminar de la cesta",
+    "Search": "Buscar recetas",
+    "Generate_list": "Agregar a la lista",
     "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
-    "Empty_basket": "Your basket is empty"
+    "Empty_basket": "Su cesta está vacía"
   }
 }
