@@ -13,6 +13,7 @@ import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { QuestData } from '../../../model/garland-tools/quest-data';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import * as _ from 'lodash';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-quest',
@@ -36,7 +37,7 @@ export class QuestComponent extends TeamcraftPageComponent {
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService,
+              private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 

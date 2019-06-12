@@ -16,6 +16,7 @@ import { LeveData } from '../../../model/garland-tools/leve-data';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { levemetes } from '../../../core/data/sources/levemetes';
 import { I18nName } from '../../../model/common/i18n-name';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-leve',
@@ -44,7 +45,7 @@ export class LeveComponent extends TeamcraftPageComponent {
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataService,
-              private linkTools: LinkToolsService,
+              private linkTools: LinkToolsService, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 

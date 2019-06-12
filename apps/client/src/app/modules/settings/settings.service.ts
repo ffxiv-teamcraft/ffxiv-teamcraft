@@ -47,6 +47,14 @@ export class SettingsService {
     this.setSetting('copy-type', copyType);
   }
 
+  public get dbCommentsPosition(): string {
+    return this.getSetting('default-db-comments-position', 'TOP');
+  }
+
+  public set dbCommentsPosition(position: string) {
+    this.setSetting('default-db-comments-position', position);
+  }
+
   public get defaultPermissionLevel(): number {
     return +this.getSetting('default-permission-level', '20');
   }

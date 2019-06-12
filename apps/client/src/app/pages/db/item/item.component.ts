@@ -31,6 +31,7 @@ import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { Craft } from '../../../model/garland-tools/craft';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-item',
@@ -71,7 +72,7 @@ export class ItemComponent extends TeamcraftPageComponent {
               private progressService: ProgressPopupService, private listManager: ListManagerService,
               private notificationService: NzNotificationService, private rotationPicker: RotationPickerService,
               private attt: ATTTService, private lazyData: LazyDataService, private sanitizer: DomSanitizer,
-              private dialog: NzModalService, seo: SeoService) {
+              private dialog: NzModalService, public settings: SettingsService, seo: SeoService) {
     super(seo);
 
     this.route.paramMap.subscribe(params => {

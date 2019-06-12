@@ -139,6 +139,16 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Db_comments_position' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-select [(ngModel)]="settings.dbCommentsPosition">
+            <nz-option [nzLabel]="'COMMON.Top' | translate" [nzValue]="'TOP'"></nz-option>
+            <nz-option [nzLabel]="'COMMON.Bottom' | translate" [nzValue]="'BOTTOM'"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">

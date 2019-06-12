@@ -17,6 +17,7 @@ import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { levemetes } from '../../../core/data/sources/levemetes';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-npc',
@@ -38,7 +39,7 @@ export class NpcComponent extends TeamcraftPageComponent {
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService,
+              private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 

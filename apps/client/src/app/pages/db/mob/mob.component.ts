@@ -17,6 +17,7 @@ import { MobData } from '../../../model/garland-tools/mob-data';
 import { Vector2 } from '../../../core/tools/vector2';
 import { hunts } from '../../../core/data/sources/hunts';
 import { mapIds } from '../../../core/data/sources/map-ids';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-mob',
@@ -38,7 +39,7 @@ export class MobComponent extends TeamcraftPageComponent {
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService,
+              private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 

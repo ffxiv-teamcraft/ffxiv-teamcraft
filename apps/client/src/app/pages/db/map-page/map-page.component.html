@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <app-db-comments type="map" [id]="mapData.ID"></app-db-comments>
+    <app-db-comments type="map" [id]="mapData.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
 
     <nz-divider [nzText]="'DB.Content' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column">
@@ -102,6 +102,7 @@
       </nz-card>
     </div>
   </div>
+  <app-db-comments type="map" [id]="mapData.ID" *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

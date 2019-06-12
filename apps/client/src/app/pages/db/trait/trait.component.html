@@ -24,7 +24,7 @@
         <p *ngIf="trait.Description" [innerHTML]="trait | xivapiI18n: 'Description' | xivUIText"></p>
       </div>
     </div>
-    <app-db-comments type="trait" [id]="trait.ID"></app-db-comments>
+    <app-db-comments type="trait" [id]="trait.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
 
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
@@ -76,6 +76,7 @@
       </ng-container>
     </div>
   </div>
+  <app-db-comments type="trait" [id]="trait.ID" *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

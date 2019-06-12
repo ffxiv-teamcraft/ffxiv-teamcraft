@@ -13,6 +13,7 @@ import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { FateData } from '../../../model/garland-tools/fate-data';
 import { mapIds } from '../../../core/data/sources/map-ids';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-fate',
@@ -30,7 +31,7 @@ export class FateComponent extends TeamcraftPageComponent {
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService,
+              private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 

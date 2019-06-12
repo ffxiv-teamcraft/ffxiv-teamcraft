@@ -19,6 +19,7 @@ import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { MapService } from '../../../modules/map/map.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-node',
@@ -44,7 +45,7 @@ export class NodeComponent extends TeamcraftPageComponent {
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataService,
               private gtBell: BellNodesService, private alarmsFacade: AlarmsFacade,
-              private mapService: MapService, seo: SeoService) {
+              private mapService: MapService, public settings: SettingsService, seo: SeoService) {
     super(seo);
 
     const nodeId$ = this.route.paramMap.pipe(
