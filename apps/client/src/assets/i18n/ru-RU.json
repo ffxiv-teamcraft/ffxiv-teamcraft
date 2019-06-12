@@ -333,6 +333,7 @@
     "Favorite_aetherytes": "Избранные aetheryte'ы",
     "Disable_cross_world_prices": "Принимать в расчет только цены marketboard'а своего сервера",
     "Clear_search_history": "Очистить историю поиска",
+    "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
