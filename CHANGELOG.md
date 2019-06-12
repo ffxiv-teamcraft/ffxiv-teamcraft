@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.5.0"></a>
+# [5.5.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.17...v5.5.0) (2019-06-12)
+
+
+### Bug Fixes
+
+* **desktop:** fixed auto update check not checking properly on startup ([07dd123](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/07dd123))
+* **layout:** fixed an issue with NOT modifier on rows with one filter only ([59e3153](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/59e3153))
+* **levequests:** fixed a layout issue with levequests page ([d15dcaf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d15dcaf))
+* **trades:** fixed a wrong count in total currencies needed for trade ([799d645](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/799d645))
+* **ux:** changed alarm icon everywhere to always match the bell one for consistency ([937d9ef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/937d9ef))
+
+
+### Features
+
+* **db:** added a setting to put comments at top or bottom of content pages ([e260280](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e260280))
+* **db:** added recipe job and level for items used in crafts ([83a291b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/83a291b))
+* **db:** new db pages for achievements ([9a8d8cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a8d8cc))
+* **desktop:** updated electron to latest stable version (5.0.3) ([f26e579](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f26e579))
+* **layout:** added support for zone breakdown with vendors and trades ([b1d7383](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b1d7383))
+* **layout:** marketboard informations button can now be switched to menu instead of button ([ec54bf3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec54bf3))
+* **list-details:** added item count for details panels ([615c319](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/615c319))
+* **rotation-picker:** added tooltip for names that are too long to read ([fb224d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fb224d2))
+* **settings:** new setting to mark items as done in log as they are done in a list ([237a01b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/237a01b))
+
+
+
 <a name="5.4.17"></a>
 ## [5.4.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.4.16...v5.4.17) (2019-06-09)
 
