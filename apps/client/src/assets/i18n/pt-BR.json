@@ -843,6 +843,7 @@
     "From_crafting": "Preço da criação",
     "Expect_to_sell_everything": "Esperar vender tudo",
     "Autofill_panel_prices": "Preencher preços com base nos preços do mercado",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Autofill_panel_prices_warning": "Este é um processo lento e deve levar cerca de {{time}} segundos para concluir, tem certeza?",
     "Copy_earnings_as_text": "Copiar conteúdo como texto",
     "Content_copied": "Conteúdo copiado para a área de transferências",
