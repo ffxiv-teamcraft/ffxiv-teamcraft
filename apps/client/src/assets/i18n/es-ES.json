@@ -56,7 +56,7 @@
   "Mute_alarms": "Silenciar alarmas",
   "Hide_used": "Esconder filas usadas",
   "Collapse_if_done": "Colapsar completados",
-  "Collapse_by_default": "Collapse by default",
+  "Collapse_by_default": "Colapsar por defecto",
   "Retainer_ventures": "Aventuras de sirviente",
   "Requires_x_ventures": "Requiere {{amount}} aventuras de sirviente para conseguirlo todo",
   "WORKSHOP": {
@@ -122,7 +122,7 @@
     "Opened_in_desktop": "Esta página ha sido abierta en su aplicación de escritorio, ahora puede cerrarla.",
     "Open_in_desktop": "Abrir en la aplicación de escritorio",
     "Admin": "Administrador",
-    "Moderator": "Moderator",
+    "Moderator": "Moderador",
     "Minutes_duration": "{{amount}} minutos",
     "Seconds_duration": "{{amount}} segundos",
     "None": "Ninguno"
@@ -179,7 +179,7 @@
   "No_actions_found": "No se encontraron acciones",
   "No_statuses_found": "No se encontraron estados",
   "No_traits_found": "No se encontraron rasgos",
-  "No_achievements_found": "No achievements found",
+  "No_achievements_found": "No se encontraron logros",
   "Select_all": "Seleccionar todo",
   "Do you really want to reset the list?": "¿Realmente desea reiniciar la lista?",
   "Yes": "Sí",
@@ -867,8 +867,8 @@
     "Title": "Notificaciones",
     "List_comment_added": "Comentario publicado en la lista {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comentario publicado en {{itemName}}, lista {{listName}}: \"{{content}}\"",
-    "Db_comment": "New comment in db: \"{{comment}}\"",
-    "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
+    "Db_comment": "Nuevo comentario en base de datos: \"{{comment}}\"",
+    "Db_comment_reply": "Nueva respuesta a uno de sus comentarios: \"{{comment}}\"",
     "Mark_all_as_read": "Marcar todo como leído",
     "No_notifications": "No hay notificaciones"
   },
@@ -1285,13 +1285,13 @@
       "Type_debuff": "Debilitación"
     },
     "COMMENTS": {
-      "Title": "Comments",
-      "Reply": "Reply",
-      "Show_less": "Show less",
-      "Add_comment": "Add a comment",
-      "Show_more": "Show {{amount}} more comments",
-      "No_comments": "No comments",
-      "Post": "Post",
+      "Title": "Comentarios",
+      "Reply": "Responder",
+      "Show_less": "Mostrar menos",
+      "Add_comment": "Agregar un comentario",
+      "Show_more": "Mostrar {{amount}} comentarios más",
+      "No_comments": "Sin comentarios",
+      "Post": "Publicar",
       "Editor_tip": "Database links will be processed and handled inside your message."
     }
   },
