@@ -149,9 +149,9 @@ function createWindow() {
 
     win.focus();
     win.show();
-    autoUpdater.checkForUpdates();
+    autoUpdater.checkForUpdatesAndNotify();
     updateInterval = setInterval(() => {
-      autoUpdater.checkForUpdates();
+      autoUpdater.checkForUpdatesAndNotify();
     }, 300000);
   });
 
