@@ -53,6 +53,7 @@
     <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <div>{{displayRow.title | translate}}</div>
+        &nbsp;({{displayRow.rows.length}} {{'items' | translate}})
         <i nz-icon type="check"
            *ngIf="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)"></i>
       </div>
