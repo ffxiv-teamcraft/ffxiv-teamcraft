@@ -126,8 +126,8 @@
     "Minutes_duration": "{{amount}}분",
     "Seconds_duration": "{{amount}} 초",
     "None": "없음",
-    "Top": "Top",
-    "Bottom": "Bottom"
+    "Top": "맨 위로",
+    "Bottom": "맨 아래로"
   },
   "ALARMS": {
     "Title": "알람",
@@ -1348,6 +1348,6 @@
     "Generate_list": "목록에 추가",
     "Description": "현재 가지고 있는 재료의 수량을 입력하고 \"제작법 찾기\" 를 클릭하면 현재 재료로 제작이 가능한 품목들을 확인할 수 있으며, 원하는 품목들을 목록으로 만들 수 있습니다.",
     "Empty_basket": "제작 목록이 비어있습니다",
-    "Add_item": "Add item"
+    "Add_item": "아이템 추가"
   }
 }
