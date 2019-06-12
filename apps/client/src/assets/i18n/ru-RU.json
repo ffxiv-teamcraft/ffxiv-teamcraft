@@ -843,6 +843,7 @@
     "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Ожидайте, чтобы продать все",
     "Autofill_panel_prices": "Заполнить цены на основе цен MB",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Autofill_panel_prices_warning": "Это медленный процесс и должен занять около {{time}} секунд, вы уверены?",
     "Copy_earnings_as_text": "Копировать как текст",
     "Content_copied": "Скопировано в буфер обмена",
