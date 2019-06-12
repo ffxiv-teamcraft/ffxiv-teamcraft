@@ -126,8 +126,8 @@
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} secondes",
     "None": "Aucun",
-    "Top": "Top",
-    "Bottom": "Bottom"
+    "Top": "Début",
+    "Bottom": "Fin"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -181,7 +181,7 @@
   "No_actions_found": "Aucune action trouvée",
   "No_statuses_found": "Aucun état trouvé",
   "No_traits_found": "Aucun trait trouvé",
-  "No_achievements_found": "No achievements found",
+  "No_achievements_found": "Aucun haut-fait trouvé",
   "Select_all": "Tout cocher",
   "Do you really want to reset the list?": "Voulez-vous vraiment réinitialiser la liste ?",
   "Yes": "Oui",
@@ -335,8 +335,8 @@
     "Favorite_aetherytes": "Éthérites favorites",
     "Disable_cross_world_prices": "Utiliser uniquement le serveur d'origine pour les prix à l'hôtel des ventes",
     "Clear_search_history": "Effacer l'historique de recherche",
-    "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
-    "Db_comments_position": "Database comments position",
+    "Auto_mark_as_done_in_log": "Marquer les éléments comme faits dans le journal lorsqu'ils sont faits dans une liste",
+    "Db_comments_position": "Position des commentaires de la base de données",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -1315,7 +1315,7 @@
     "Status": "État ",
     "Trait": "Trait",
     "Any": "Tout",
-    "Achievement": "Achievement"
+    "Achievement": "Haut-fait"
   },
   "SEARCH_FILTERS": {
     "Level": "Niveau",
@@ -1335,19 +1335,19 @@
     "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale."
   },
   "RECIPE_FINDER": {
-    "Title": "Recipe finder",
-    "Placeholder": "Item name",
-    "No_missing_ingredients": "No missing ingredients",
-    "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
-    "Missing": "Missing",
-    "Results": "Possible crafts",
-    "Basket": "Basket",
-    "Add_to_basket": "Add to basket",
-    "Remove_from_basket": "Remove from basket",
-    "Search": "Find recipes",
-    "Generate_list": "Add to list",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
-    "Empty_basket": "Your basket is empty",
-    "Add_item": "Add item"
+    "Title": "Recherche de recette",
+    "Placeholder": "Nom de l'objet",
+    "No_missing_ingredients": "Aucun ingrédient manquant",
+    "Missing_X_ingredients": "Manque {{amount}} ingrédient(s)",
+    "Missing": "Manque",
+    "Results": "Recettes possibles",
+    "Basket": "Panier",
+    "Add_to_basket": "Ajouter au panier",
+    "Remove_from_basket": "Retirer du panier",
+    "Search": "Trouver des recettes",
+    "Generate_list": "Ajouter à une liste",
+    "Description": "Saisissez les objets que vous avez et cliquez sur « Trouver des recettes » pour obtenir une liste de recettes possibles pour fabriquer et générer une liste d'artisanat à partir des résultats.",
+    "Empty_basket": "Votre panier est vide",
+    "Add_item": "Ajouter un objet"
   }
 }
