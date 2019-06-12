@@ -333,6 +333,7 @@
     "Favorite_aetherytes": "에테라이트 즐겨찾기",
     "Disable_cross_world_prices": "캐릭터의 서버 장터 가격만 사용",
     "Clear_search_history": "검색 기록 삭제",
+    "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
