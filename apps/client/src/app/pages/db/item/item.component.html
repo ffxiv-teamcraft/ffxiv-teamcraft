@@ -514,12 +514,27 @@
             </div>
             <div fxLayout="column" fxLayoutGap="5px" *ngIf="row.links">
               <div *ngFor="let link of row.links">
-                <div *ngIf="link.itemId" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <app-item-icon width="32" [itemId]="link.itemId" [icon]="link.itemId | lazyIcon"></app-item-icon>
-                  <div [appItemRarity]="link.itemId">
-                    {{link.itemId | itemName | i18n}}
+                <div *ngIf="link.itemId" fxLayout="column">
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <app-item-icon width="32" [itemId]="link.itemId" [icon]="link.itemId | lazyIcon"></app-item-icon>
+                    <div fxLayout="column">
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <div [appItemRarity]="link.itemId">
+                          {{link.itemId | itemName | i18n}}
+                        </div>
+                        <app-db-button type="item" [id]="link.itemId"></app-db-button>
+                      </div>
+                      <div *ngIf="link.recipes" fxLayout="row" fxLayoutAlign="flex-start center">
+                        <div *ngFor="let recipe of link.recipes; let last=last" fxLayoutAlign="flex-start center"
+                             fxLayoutGap="5px">
+                          <img src="https://garlandtools.org/db/images/{{(recipe.job | jobAbbr)?.en}}.png" alt=""
+                               class="img-icon">
+                          <div>lvl {{recipe.level}} {{recipe.stars | ingameStars}}<span *ngIf="!last">,</span></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <app-db-button type="item" [id]="link.itemId"></app-db-button>
+
                 </div>
               </div>
             </div>

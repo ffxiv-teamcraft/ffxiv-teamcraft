@@ -319,7 +319,8 @@ export class ItemComponent extends TeamcraftPageComponent {
             links: Object.keys(data.item.ingredient_of)
               .map(itemId => {
                 return {
-                  itemId: +itemId
+                  itemId: +itemId,
+                  recipes: this.lazyData.recipes.filter(r => r.result === +itemId)
                 };
               })
           });
