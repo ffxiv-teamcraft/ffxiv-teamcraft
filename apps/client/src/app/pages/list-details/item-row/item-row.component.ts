@@ -68,6 +68,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { TreasuresComponent } from '../item-details/treasures/treasures.component';
 import { FatesComponent } from '../item-details/fates/fates.component';
 import { DesynthsComponent } from '../item-details/desynth/desynths.component';
+import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
 
 @Component({
   selector: 'app-item-row',
@@ -386,6 +387,19 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       }
     }).afterClose.subscribe(() => {
       this.commentBadgeReloader$.next(null);
+    });
+  }
+
+  openMarketboardDialog(): void {
+    this.modal.create({
+      nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${this.i18n.getName(this.l12n.getItem(this.item.id))}`,
+      nzContent: MarketboardPopupComponent,
+      nzComponentParams: {
+        itemId: this.item.id,
+        showHistory: true
+      },
+      nzFooter: null,
+      nzWidth: '80vw'
     });
   }
 

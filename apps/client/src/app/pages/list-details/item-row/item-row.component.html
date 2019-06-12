@@ -35,6 +35,8 @@
                          [userId]="item.workingOnIt" [width]="24"></app-user-avatar>
 
         <div fxLayout="row" class="menu-buttons" fxLayoutGap="5px">
+          <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="item.id"
+                                [showHistory]="finalItem"></app-marketboard-icon>
           <ng-container *ngIf="isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
             <button nz-button nzSize="small" nzShape="circle" ngxClipboard
                     cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
@@ -195,6 +197,12 @@
                 </li>
               </ng-container>
 
+              <ng-container *ngIf="!isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)">
+                <li nz-menu-item (click)="openMarketboardDialog()">
+                  {{'MARKETBOARD.Title' | translate}}
+                </li>
+              </ng-container>
+
               <ng-container *ngIf="!isButton(itemRowTypes.COMMENTS)">
                 <ng-container *ngIf="listsFacade.selectedList$ | async as list">
                   <li nz-menu-item *ngIf="userId$ | async as userId"
@@ -294,7 +302,6 @@
             </button>
           </ng-container>
         </div>
-        <app-marketboard-icon [itemId]="item.id" [showHistory]="finalItem"></app-marketboard-icon>
       </div>
 
       <div *ngIf="settings.itemTagsEnabled && (loggedIn$ | async)">
@@ -426,7 +433,8 @@
     </div>
   </div>
   <div class="item-obtention" nz-col nzXs="24" nzSm="6" nzMd="3">
-    <div fxLayout="row wrap" fxLayoutGap="2px" fxFlex="0 1 auto" fxLayoutAlign="flex-start flex-start" class="obtentions-container">
+    <div fxLayout="row wrap" fxLayoutGap="2px" fxFlex="0 1 auto" fxLayoutAlign="flex-start flex-start"
+         class="obtentions-container">
       <a href="{{item.gardening | ffxivgardening | i18n}}"
          target="_blank"
          nz-tooltip
