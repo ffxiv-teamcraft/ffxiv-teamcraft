@@ -55,7 +55,10 @@ import {
   ShareAltOutline,
   SolutionOutline,
   PlusOutline,
-  ExperimentOutline
+  ExperimentOutline,
+  LockOutline,
+  LayoutOutline,
+  UsergroupAddOutline
 } from '@ant-design/icons-angular/icons';
 import { UniversalInterceptor } from './universal-interceptor';
 import { DirtyModule } from './core/dirty/dirty.module';
@@ -105,7 +108,10 @@ const icons: IconDefinition[] = [
   InfoOutline,
   ArrowRightOutline,
   PlusOutline,
-  ExperimentOutline
+  ExperimentOutline,
+  LockOutline,
+  LayoutOutline,
+  UsergroupAddOutline
 ];
 
 registerLocaleData(en);

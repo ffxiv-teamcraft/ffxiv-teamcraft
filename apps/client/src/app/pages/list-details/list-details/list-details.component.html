@@ -23,11 +23,11 @@
           </ng-container>
           <button nz-button nzType="primary" nzShape="circle" (click)="openLayoutOptions()" nz-tooltip
                   [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Title' | translate">
-            <i-layout></i-layout>
+            <i nz-icon type="layout"></i>
           </button>
           <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'PERMISSIONS.Title' | translate"
                   (click)="openPermissionsPopup(list)" [disabled]="(permissionLevel$ | async) < 40">
-            <i-shield></i-shield>
+            <i nz-icon type="lock"></i>
           </button>
           <button nz-button nzType="primary" nzShape="circle" (click)="cloneList(list)" nz-tooltip
                   [nzTitle]="'List_fork' | translate">
@@ -38,7 +38,7 @@
             <nz-dropdown [nzTrigger]="'click'" *ngIf="(permissionLevel$ | async) >= 20 && list.teamId === undefined">
               <button nz-dropdown nz-button nzShape="circle" [disabled]="teams.length === 0"
                       nz-tooltip [nzTitle]="'TEAMS.Assign_list' | translate">
-                <i class="material-icons">people_outline</i>
+                <i nz-icon nzType="usergroup-add" nzTheme="outline"></i>
               </button>
               <ul nz-menu>
                 <li *ngFor="let team of teams" nz-menu-item (click)="assignTeam(list, team)">{{team.name}}</li>
@@ -62,11 +62,12 @@
             {{'Public_list' | translate}}
           </label>
           <div fxLayout="row" fxLayoutGap="5px">
-            <button nz-button [nzType]="list.public?'primary':'default'" nzShape="circle" (click)="openTagsPopup(list)" nz-tooltip
+            <button nz-button [nzType]="list.public?'primary':'default'" nzShape="circle" (click)="openTagsPopup(list)"
+                    nz-tooltip
                     [nzTitle]="'LIST_DETAILS.Tags_popup' | translate" [disabled]="(permissionLevel$ | async) < 40">
               <i nz-icon type="tags-o"></i>
             </button>
-            <button nz-button  nzShape="circle" (click)="pricingMode = true" nz-tooltip
+            <button nz-button nzShape="circle" (click)="pricingMode = true" nz-tooltip
                     [nzTitle]="'Pricing_mode' | translate" [disabled]="(permissionLevel$ | async) < 40">
               <i nz-icon iconfont="icon-dollar"></i>
             </button>
