@@ -139,6 +139,13 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label nz-checkbox
+                 [(ngModel)]="settings.autoMarkAsCompleted">{{'SETTINGS.Auto_mark_as_done_in_log' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item *ngIf="!platform.isDesktop()" class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">

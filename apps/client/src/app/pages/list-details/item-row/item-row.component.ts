@@ -288,9 +288,15 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       first()
     ).subscribe(user => {
       if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
-        user.logProgression.push(+(item.recipeId || item.craftedBy[0].recipeId));
+        user.logProgression = _.uniq([
+          ...user.logProgression,
+          +(item.recipeId || item.craftedBy[0].recipeId)
+        ]);
       } else if (item.gatheredBy !== undefined) {
-        user.gatheringLogProgression.push(+item.id);
+        user.gatheringLogProgression = _.uniq([
+          ...user.gatheringLogProgression,
+          +item.id
+        ]);
       }
       this.authFacade.updateUser(user);
     });
@@ -422,6 +428,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   markAsDone(): void {
+    if (this.settings.autoMarkAsCompleted) {
+      this.markAsDoneInLog(this.item);
+    }
     this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, this.item.amount - this.item.done, this.item.recipeId, this.item.amount);
   }
 

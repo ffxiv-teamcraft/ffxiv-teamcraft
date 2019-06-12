@@ -87,6 +87,14 @@ export class SettingsService {
     this.setSetting('compact-sidebar', compact.toString());
   }
 
+  public get autoMarkAsCompleted(): boolean {
+    return this.getSetting('auto-mark-as-completed', 'false') === 'true';
+  }
+
+  public set autoMarkAsCompleted(markAsCompleted: boolean) {
+    this.setSetting('auto-mark-as-completed', markAsCompleted.toString());
+  }
+
   public get compactAlarms(): boolean {
     return this.getSetting('compact-alarms', 'false') === 'true';
   }
