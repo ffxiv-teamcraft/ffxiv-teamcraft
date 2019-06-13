@@ -1,0 +1,195 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h2>{{'RECIPE_FINDER.Title' | translate}}</h2>
+    <i>{{'RECIPE_FINDER.Description' | translate}}</i>
+  </div>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px" fxLayoutAlign="center center"
+       class="inputs-container">
+    <input
+      fxFlex="1 1 200px"
+      fxFlex.lt-md="0 0 auto"
+      class="name-input"
+      [style.margin-bottom]="null | ifMobile:'0'"
+      [placeholder]="'RECIPE_FINDER.Placeholder' | translate"
+      nz-input
+      #itemName
+      (input)="onInput($event.target?.value)"
+      [nzAutocomplete]="auto"
+    />
+    <nz-autocomplete nzBackfill #auto>
+      <nz-auto-option *ngFor="let option of completion$ | async" [nzValue]="option.name | i18n">
+        {{ option.name | i18n }}
+      </nz-auto-option>
+    </nz-autocomplete>
+    <nz-input-group [nzPrefix]="prefixTemplate" fxFlex="0 0 100px"
+                    fxFlex.lt-md="0 0 auto">
+      <input type="number" nz-input class="amount-input" [value]="0" #amount/>
+    </nz-input-group>
+    <ng-template #prefixTemplate>x</ng-template>
+    <button nz-button nzType="primary" class="add-to-pool"
+            *ngIf="true | ifMobile:false"
+            [disabled]="isButtonDisabled(itemName.value, +amount.value)"
+            (click)="addToPool(itemName.value, +amount.value)">
+      <i nz-icon type="plus"></i>
+    </button>
+    <button nz-button nzType="primary"
+            *ngIf="false | ifMobile:true"
+            [disabled]="isButtonDisabled(itemName.value, +amount.value)"
+            (click)="addToPool(itemName.value, +amount.value)"
+            nzBlock>
+      <i nz-icon type="plus"></i> {{'RECIPE_FINDER.Add_item' | translate}}
+    </button>
+    <button nz-button nzType="primary" class="search-button" [disabled]="pool.length === 0"
+            (click)="search$.next()">
+      <i nz-icon type="search"></i> {{'RECIPE_FINDER.Search' | translate}}
+    </button>
+  </div>
+</div>
+<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px" class="inventory-container">
+  <div class="inventory-element" fxLayout="row" fxLayoutAlign="flex-start center"
+       fxLayoutGap="5px" [class.highlighted]="(highlight$ | async)?.indexOf(item.id) > -1" *ngFor="let item of pool">
+    <i nz-icon type="close" (click)="removeFromPool(item.id, item.amount, true)" class="delete-element"></i>
+    <app-item-icon [itemId]="item.id" [icon]="item.id | lazyIcon" [width]="32"></app-item-icon>
+    <div fxLayout="column">
+      <div>{{item.id | itemName | i18n}}</div>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div *ngIf="editingAmount !== item.id">x{{item.amount}}</div>
+        <div *ngIf="editingAmount === item.id">
+          <input type="number" nz-input nzSize="small" class="amount-editor" [(ngModel)]="item.amount">
+        </div>
+        <button *ngIf="editingAmount !== item.id" nz-button nzShape="circle" nzSize="small"
+                (click)="editAmount(item.id)">
+          <i nz-icon type="edit"></i>
+        </button>
+        <button *ngIf="editingAmount === item.id" nz-button nzShape="circle" nzSize="small" nzType="primary"
+                (click)="saveAmount(item.id, item.amount)">
+          <i nz-icon type="save"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div fxLayout="row" fxLayout.lt-md="column" class="results-container">
+  <div *ngIf="results$ | async as results" fxFlex="1 1 50%" class="results">
+    <nz-divider nzOrientation="left" [nzText]="'RECIPE_FINDER.Results' | translate"></nz-divider>
+    <nz-list [nzDataSource]="results" [nzRenderItem]="recipe">
+      <ng-template #recipe let-recipe let-index="index">
+        <nz-list-item (mouseenter)="highlight(recipe)" (mouseleave)="highlight(null)"
+                      [class.odd]="index % 2 === 1" class="recipe-result-row"
+                      [nzContent]="content">
+          <ng-template #content>
+            <button nz-button (click)="addToBasket(recipe)" nzShape="circle" nz-tooltip
+                    [nzTitle]="'RECIPE_FINDER.Add_to_basket' | translate">
+              <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+            </button>
+          </ng-template>
+          <nz-list-item-meta
+            [nzTitle]="nzTitle"
+            [nzAvatar]="avatar | ifMobile:null"
+            [nzDescription]="description">
+            <ng-template #description>
+              <span>{{recipe.job | jobAbbr | i18n}} lvl {{recipe.level}} {{recipe.stars | ingameStars}}</span>
+              <span *ngIf="recipe.missing.length > 0">
+              {{'RECIPE_FINDER.Missing' | translate}}
+                <span *ngFor="let missing of recipe.missing;let last=last">{{missing.id | itemName | i18n}}
+                  x{{missing.amount * recipe.possibleAmount / recipe.yields}} <span *ngIf="!last">, </span></span>
+              </span>
+            </ng-template>
+            <ng-template #nzTitle>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <div>{{ recipe.result | itemName | i18n }} x{{recipe.possibleAmount}}</div>
+                <app-db-button *ngIf="true | ifMobile:false" [id]="recipe.result" type="item"></app-db-button>
+                <app-marketboard-icon *ngIf="true | ifMobile:false" [itemId]="recipe.result"></app-marketboard-icon>
+                <nz-tag class="custom-tag"
+                        *ngIf="recipe.missing.length === 0"
+                        [style.border-color]="'darkgreen'"
+                >{{'RECIPE_FINDER.No_missing_ingredients' | translate}}</nz-tag>
+                <nz-tag class="custom-tag"
+                        [style.border-color]="'#f2b10e'"
+                        *ngIf="recipe.missing.length === 1">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: recipe.missing.length } }}</nz-tag>
+                <nz-tag class="custom-tag"
+                        [style.border-color]="'#f50'"
+                        *ngIf="recipe.missing.length > 1">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: recipe.missing.length } }}</nz-tag>
+              </div>
+            </ng-template>
+            <ng-template #avatar>
+              <app-item-icon [itemId]="recipe.result" [width]="32" [icon]="recipe.result | lazyIcon"></app-item-icon>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </div>
+  <div *ngIf="results$ | async as results" fxFlex="1 1 50%">
+    <nz-divider nzOrientation="left" [nzText]="'RECIPE_FINDER.Basket' | translate"></nz-divider>
+    <nz-list [nzDataSource]="basket" [nzRenderItem]="basketRecipe" [nzNoResult]="empty">
+      <ng-template #empty>
+        <nz-empty [nzNotFoundContent]="'RECIPE_FINDER.Empty_basket' | translate"></nz-empty>
+      </ng-template>
+      <ng-template #basketRecipe let-row let-index="index">
+        <nz-list-item [class.odd]="index % 2 === 1"
+                      [nzContent]="content">
+          <ng-template #content>
+            <button nz-button (click)="removeFromBasket(row)" nzShape="circle" nzType="danger" nz-tooltip
+                    [nzTitle]="'RECIPE_FINDER.Remove_from_basket' | translate">
+              <i nz-icon nzType="delete" nzTheme="outline"></i>
+            </button>
+          </ng-template>
+          <nz-list-item-meta
+            [nzTitle]="nzTitle"
+            [nzAvatar]="avatar | ifMobile:null"
+            [nzDescription]="description">
+            <ng-template #description>
+              {{row.recipe.job | jobAbbr | i18n}} lvl {{row.recipe.level}} {{row.recipe.stars | ingameStars}}
+            </ng-template>
+            <ng-template #nzTitle>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <div>{{ row.recipe.result | itemName | i18n }} x{{row.amount}}</div>
+                <app-db-button *ngIf="true | ifMobile:false" [id]="row.recipe.result" type="item"></app-db-button>
+                <app-marketboard-icon [itemId]="row.recipe.result" *ngIf="true | ifMobile:false"></app-marketboard-icon>
+                <nz-tag class="custom-tag"
+                        *ngIf="row.recipe.missing.length === 0"
+                        [style.border-color]="'darkgreen'"
+                >{{'RECIPE_FINDER.No_missing_ingredients' | translate}}</nz-tag>
+                <nz-tag class="custom-tag"
+                        [style.border-color]="'#f2b10e'"
+                        *ngIf="row.recipe.missing.length === 1">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: row.recipe.missing.length } }}</nz-tag>
+                <nz-tag class="custom-tag"
+                        [style.border-color]="'#f50'"
+                        *ngIf="row.recipe.missing.length > 1">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: row.recipe.missing.length } }}</nz-tag>
+              </div>
+            </ng-template>
+            <ng-template #avatar>
+              <app-item-icon [itemId]="row.recipe.result" [width]="32"
+                             [icon]="row.recipe.result | lazyIcon"></app-item-icon>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+    <button nz-button nzType="primary" nzBlock (click)="generateList()"
+            [disabled]="basket.length === 0">{{'RECIPE_FINDER.Generate_list' | translate}}</button>
+  </div>
+</div>
+
+<ng-template #notificationRef let-notification>
+  <div class="ant-notification-notice-content ant-notification-notice-with-icon">
+    <span class="ant-notification-notice-icon"><i nz-icon type="check-circle"
+                                                  class="ant-notification-notice-icon-success"></i></span>
+    <div>
+      <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
+      <div class="ant-notification-notice-description">
+        <span *ngIf="itemsAdded === 1">{{'Recipe_Added' | translate: { listname: modifiedList.name } }}</span>
+        <span *ngIf="itemsAdded !== 1">{{'Recipes_Added' | translate: {
+          itemcount: itemsAdded,
+          listname: modifiedList.name
+        } }}</span>
+      </div>
+      <span class="ant-notification-notice-btn">
+            <a nz-button nzType="primary" (click)="notification.close();" routerLink="/list/{{modifiedList.$key}}">
+              <span>{{'Open' | translate}}</span>
+            </a>
+          </span>
+    </div>
+  </div>
+</ng-template>

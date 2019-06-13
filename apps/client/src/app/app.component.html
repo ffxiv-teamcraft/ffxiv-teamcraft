@@ -243,6 +243,14 @@
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                 routerLink="/recipe-finder">
+          <span nz-tooltip nzPlacement="right"
+                [nzTitle]="collapsedSidebar ? ('RECIPE_FINDER.Title' | translate) : null">
+              <i nz-icon nzType="experiment" nzTheme="outline"></i>
+              <span class="nav-text">{{'RECIPE_FINDER.Title' | translate}}</span>
+          </span>
+              </a>
+              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/custom-items">
           <span nz-tooltip nzPlacement="right"
                 [nzTitle]="collapsedSidebar ? ('CUSTOM_ITEMS.Title' | translate) : null">

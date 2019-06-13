@@ -37,7 +37,8 @@ export class ListLayout extends DataModel {
     menu: ItemRowMenuElement[];
   } = {
     buttons: [
-      ItemRowMenuElement.ADD_TAG
+      ItemRowMenuElement.ADD_TAG,
+      ItemRowMenuElement.MARKET_BOARD_INFORMATIONS
     ],
     menu: [
       ItemRowMenuElement.COMMENTS,

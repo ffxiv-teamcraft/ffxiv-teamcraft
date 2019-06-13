@@ -13,6 +13,7 @@ import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { catchError, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { InstanceData } from '../../../model/garland-tools/instance-data';
 import { GtInstance } from '../../../model/garland-tools/gt-instance';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-instance',
@@ -30,7 +31,7 @@ export class InstanceComponent extends TeamcraftPageComponent {
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService,
+              private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 
@@ -112,7 +113,7 @@ export class InstanceComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(instance),
           description: this.getDescription(instance),
-          url: `https://ffxivteamcraft.com/db/instance/${instance.ID}/${this.getName(instance).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/instance/${instance.ID}/${this.getName(instance).split(' ').join('-')}`,
           image: `https://xivapi.com/${instance.Banner}`
         };
       })

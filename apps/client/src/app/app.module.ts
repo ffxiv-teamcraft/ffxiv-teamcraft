@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, PLATFORM_ID } from '@angular/core';
+import { ErrorHandler, Injectable, NgModule, PLATFORM_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
@@ -41,20 +41,24 @@ import {
   BuildOutline,
   DesktopOutline,
   EnvironmentOutline,
+  ExperimentOutline,
   FileDoneOutline,
   FilterOutline,
   FormOutline,
   InfoOutline,
+  LayoutOutline,
+  LockOutline,
   LoginOutline,
   MessageOutline,
   NotificationOutline,
+  PlusOutline,
   ProfileOutline,
   ReloadOutline,
   SelectOutline,
   SettingOutline,
   ShareAltOutline,
   SolutionOutline,
-  PlusOutline
+  UsergroupAddOutline
 } from '@ant-design/icons-angular/icons';
 import { UniversalInterceptor } from './universal-interceptor';
 import { DirtyModule } from './core/dirty/dirty.module';
@@ -83,6 +87,27 @@ import pt from '@angular/common/locales/pt';
 import hr from '@angular/common/locales/hr';
 import ko from '@angular/common/locales/ko';
 
+import * as Sentry from '@sentry/browser';
+
+Sentry.init({
+  dsn: 'https://6b3b5bdbd49a40e5a9fe198dff3918d2@sentry.io/1481706'
+});
+
+@Injectable()
+export class SentryErrorHandler implements ErrorHandler {
+  constructor() {
+  }
+
+  handleError(error) {
+    if (error.message && error.message.indexOf('Missing or insufficient permissions') > -1) {
+      // We won't report missing permissions errors, as they happen when you log out
+      // because of the very short moment when you're not logged in, not even as anonymous.
+    } else {
+      Sentry.captureException(error.originalError || error);
+    }
+  }
+}
+
 const icons: IconDefinition[] = [
   SettingOutline,
   NotificationOutline,
@@ -103,7 +128,11 @@ const icons: IconDefinition[] = [
   SelectOutline,
   InfoOutline,
   ArrowRightOutline,
-  PlusOutline
+  PlusOutline,
+  ExperimentOutline,
+  LockOutline,
+  LayoutOutline,
+  UsergroupAddOutline
 ];
 
 registerLocaleData(en);
@@ -135,6 +164,7 @@ registerLocaleData(ko);
         nzPlacement: 'topRight'
       }
     },
+    { provide: ErrorHandler, useClass: SentryErrorHandler },
     { provide: FirestoreSettingsToken, useValue: {} },
     { provide: NZ_ICONS, useValue: icons },
     { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true }

@@ -46,6 +46,8 @@
                    [nzValue]="searchTypes.STATUS"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.TRAIT) | translate"
                    [nzValue]="searchTypes.TRAIT"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ACHIEVEMENT) | translate"
+                   [nzValue]="searchTypes.ACHIEVEMENT"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -609,6 +611,26 @@
               </div>
             </div>
           </div>
+          <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="row.type === searchTypes.ACHIEVEMENT"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <img [src]="row.icon | xivapiIcon" alt="" fxFlex="0 0 auto" class="quest-icon">
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div fxLayout="column">
+                  <div>{{row.id | achievementName | i18n}}</div>
+                  <div fxLayout="row" fxLayoutGap="5px">
+                    <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+                  </div>
+                </div>
+                <app-db-button type="achievement" [id]="row.id"></app-db-button>
+              </div>
+            </div>
+          </div>
         </ng-container>
       </app-page-loader>
       <div *ngIf="results.length === 0">
@@ -636,6 +658,8 @@
                               *ngIf="searchType === searchTypes.STATUS">{{'No_statuses_found' | translate}}</app-fullpage-message>
         <app-fullpage-message height="300px"
                               *ngIf="searchType === searchTypes.TRAIT">{{'No_traits_found' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.ACHIEVEMENT">{{'No_achievements_found' | translate}}</app-fullpage-message>
       </div>
     </div>
   </div>

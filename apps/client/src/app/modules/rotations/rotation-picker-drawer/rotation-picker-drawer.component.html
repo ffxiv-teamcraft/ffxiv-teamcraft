@@ -33,7 +33,10 @@
   <nz-list [nzDataSource]="rotations" [nzRenderItem]="rotation" [nzHeader]="header">
     <ng-template #rotation let-rotation>
       <nz-list-item [nzActions]="[pickRotation]">
-        <nz-list-item-meta [nzTitle]="rotation.getName()">
+        <nz-list-item-meta [nzTitle]="title">
+          <ng-template #title>
+            <div nz-tooltip [nzTitle]="rotation.getName()">{{rotation.getName()}}</div>
+          </ng-template>
         </nz-list-item-meta>
       </nz-list-item>
       <ng-template #pickRotation>
@@ -54,7 +57,10 @@
            [nzHeader]="header">
     <ng-template #rotation let-rotation>
       <nz-list-item [nzActions]="[pickRotation]">
-        <nz-list-item-meta [nzTitle]="rotation.getName()">
+        <nz-list-item-meta [nzTitle]="title">
+          <ng-template #title>
+            <div nz-tooltip [nzTitle]="rotation.getName()">{{rotation.getName()}}</div>
+          </ng-template>
         </nz-list-item-meta>
       </nz-list-item>
       <ng-template #pickRotation>
@@ -80,7 +86,10 @@
                [nzHeader]="header">
         <ng-template #rotation let-rotation>
           <nz-list-item [nzActions]="[pickRotation]">
-            <nz-list-item-meta [nzTitle]="rotation.getName()">
+            <nz-list-item-meta [nzTitle]="title">
+              <ng-template #title>
+                <div nz-tooltip [nzTitle]="rotation.getName()">{{rotation.getName()}}</div>
+              </ng-template>
             </nz-list-item-meta>
           </nz-list-item>
           <ng-template #pickRotation>
@@ -108,7 +117,10 @@
                [nzHeader]="header">
         <ng-template #rotation let-rotation>
           <nz-list-item [nzActions]="[pickRotation]">
-            <nz-list-item-meta [nzTitle]="rotation.getName()">
+            <nz-list-item-meta [nzTitle]="title">
+              <ng-template #title>
+                <div nz-tooltip [nzTitle]="rotation.getName()">{{rotation.getName()}}</div>
+              </ng-template>
             </nz-list-item-meta>
           </nz-list-item>
           <ng-template #pickRotation>

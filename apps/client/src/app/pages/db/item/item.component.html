@@ -50,6 +50,9 @@
         </div>
         <div fxFlex="1 1 auto">
           <p *ngIf="xivapiItem.Description" [innerHTML]="xivapiItem | xivapiI18n: 'Description' | xivUIText"></p>
+          <audio controls controlslist="nodownload" *ngIf="xivapiItem.ItemAction.Type === 5845">
+            <source src="https://www.garlandtools.org/files/orchestrion/{{xivapiItem.ItemAction.Data0}}.ogg" type="audio/ogg">
+          </audio>
         </div>
         <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -142,7 +145,7 @@
           <div class="detail-value">{{gtData.item.sell_price}}</div>
         </div>
       </div>
-      <app-db-comments type="item" [id]="xivapiItem.ID"></app-db-comments>
+      <app-db-comments type="item" [id]="xivapiItem.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
       <div>
         <nz-divider [nzText]="'DB.How_to_obtain' | translate" nzOrientation="left"></nz-divider>
         <app-fullpage-message height="150px" *ngIf="noData">
@@ -514,12 +517,27 @@
             </div>
             <div fxLayout="column" fxLayoutGap="5px" *ngIf="row.links">
               <div *ngFor="let link of row.links">
-                <div *ngIf="link.itemId" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <app-item-icon width="32" [itemId]="link.itemId" [icon]="link.itemId | lazyIcon"></app-item-icon>
-                  <div [appItemRarity]="link.itemId">
-                    {{link.itemId | itemName | i18n}}
+                <div *ngIf="link.itemId" fxLayout="column">
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <app-item-icon width="32" [itemId]="link.itemId" [icon]="link.itemId | lazyIcon"></app-item-icon>
+                    <div fxLayout="column">
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <div [appItemRarity]="link.itemId">
+                          {{link.itemId | itemName | i18n}}
+                        </div>
+                        <app-db-button type="item" [id]="link.itemId"></app-db-button>
+                      </div>
+                      <div *ngIf="link.recipes" fxLayout="row" fxLayoutAlign="flex-start center">
+                        <div *ngFor="let recipe of link.recipes; let last=last" fxLayoutAlign="flex-start center"
+                             fxLayoutGap="5px">
+                          <img src="https://garlandtools.org/db/images/{{(recipe.job | jobAbbr)?.en}}.png" alt=""
+                               class="img-icon">
+                          <div>lvl {{recipe.level}} {{recipe.stars | ingameStars}}<span *ngIf="!last">,</span></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <app-db-button type="item" [id]="link.itemId"></app-db-button>
+
                 </div>
               </div>
             </div>
@@ -592,6 +610,7 @@
           </nz-card>
         </div>
       </div>
+      <app-db-comments type="item" [id]="xivapiItem.ID" *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
     </div>
   </ng-container>
 </ng-container>

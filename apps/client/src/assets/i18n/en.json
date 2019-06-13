@@ -125,7 +125,9 @@
     "Moderator": "Moderator",
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} seconds",
-    "None": "None"
+    "None": "None",
+    "Top": "Top",
+    "Bottom": "Bottom"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -179,6 +181,7 @@
   "No_actions_found": "No actions found",
   "No_statuses_found": "No statuses found",
   "No_traits_found": "No traits found",
+  "No_achievements_found": "No achievements found",
   "Select_all": "Select all",
   "Do you really want to reset the list?": "Do you really want to reset the list?",
   "Yes": "Yes",
@@ -332,6 +335,8 @@
     "Favorite_aetherytes": "Favorite Aetherytes",
     "Disable_cross_world_prices": "Only use own world for marketboard prices",
     "Clear_search_history": "Clear search history",
+    "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
+    "Db_comments_position": "Database comments position",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -838,11 +843,16 @@
     "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Expect to sell everything",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
     "Copy_earnings_as_text": "Copy content as text",
     "Content_copied": "Content copied in your clipboard",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)",
-    "Copy_panel_as_text": "Copy this panel as text"
+    "Copy_panel_as_text": "Copy this panel as text",
+    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -1309,7 +1319,8 @@
     "Action": "Action",
     "Status": "Status",
     "Trait": "Trait",
-    "Any": "Any"
+    "Any": "Any",
+    "Achievement": "Achievement"
   },
   "SEARCH_FILTERS": {
     "Level": "Level",
@@ -1327,5 +1338,21 @@
     "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
     "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
     "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+  },
+  "RECIPE_FINDER": {
+    "Title": "Recipe finder",
+    "Placeholder": "Item name",
+    "No_missing_ingredients": "No missing ingredients",
+    "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
+    "Missing": "Missing",
+    "Results": "Possible crafts",
+    "Basket": "Basket",
+    "Add_to_basket": "Add to basket",
+    "Remove_from_basket": "Remove from basket",
+    "Search": "Find recipes",
+    "Generate_list": "Add to list",
+    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
+    "Empty_basket": "Your basket is empty",
+    "Add_item": "Add item"
   }
 }

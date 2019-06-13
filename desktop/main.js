@@ -37,11 +37,13 @@ for (let i = 0; i < argv.length; i++) {
 }
 
 if (isDev) {
-  // autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
+  autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
 }
 
 if (!options.multi) {
-  const shouldQuit = app.makeSingleInstance(function(commandLine) {
+
+  app.requestSingleInstanceLock();
+  app.on('second-instance', (event, commandLine, cwd) => {
     // Someone tried to run a second instance, we should focus our window.
     if (win && !options.multi) {
       const cmdLine = commandLine[1];
@@ -55,11 +57,6 @@ if (!options.multi) {
       win.focus();
     }
   });
-
-  if (shouldQuit) {
-    app.quit();
-    return;
-  }
 }
 
 let deepLink = '';
@@ -90,7 +87,10 @@ function createWindow() {
     backgroundColor: '#000',
     frame: true,
     icon: `file://${BASE_APP_PATH}/assets/app-icon.png`,
-    title: 'FFXIV Teamcraft'
+    title: 'FFXIV Teamcraft',
+    webPreferences: {
+      nodeIntegration: true
+    }
   };
   Object.assign(opts, config.get('win:bounds'));
   if (config.get('win:alwaysOnTop')) {
@@ -149,9 +149,9 @@ function createWindow() {
 
     win.focus();
     win.show();
-    autoUpdater.checkForUpdates();
+    autoUpdater.checkForUpdatesAndNotify();
     updateInterval = setInterval(() => {
-      autoUpdater.checkForUpdates();
+      autoUpdater.checkForUpdatesAndNotify();
     }, 300000);
   });
 
@@ -190,7 +190,10 @@ function openOverlay(url) {
     resizable: true,
     frame: false,
     alwaysOnTop: true,
-    autoHideMenuBar: true
+    autoHideMenuBar: true,
+    webPreferences: {
+      nodeIntegration: true
+    }
   };
   Object.assign(opts, config.get(`overlay:${url}:bounds`));
   opts.opacity = config.get(`overlay:${url}:opacity`) || 1;
