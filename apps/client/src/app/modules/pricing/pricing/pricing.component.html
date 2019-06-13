@@ -20,7 +20,7 @@
         <ng-template #header>
           <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
             <div>{{'Crystals' | translate}}</div>
-            <div>
+            <div fxLayout="row" fxLayoutGap="10px">
               <button nz-button nz-popconfirm nzType="primary"
                       *ngIf="loggedIn$ | async"
                       class="fill-prices-button"
@@ -47,7 +47,7 @@
         <ng-template #header>
           <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
             <div>{{'Other' | translate}}</div>
-            <div>
+            <div fxLayout="row" fxLayoutGap="10px">
               <button nz-button nz-popconfirm nzType="primary"
                       *ngIf="loggedIn$ | async"
                       class="fill-prices-button"
@@ -74,7 +74,13 @@
         <ng-template #header>
           <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
             <div>{{'Pre_crafts' | translate}}</div>
-            <div>
+            <div fxLayout="row" fxLayoutGap="10px">
+              <button nz-button (click)="$event.stopPropagation();checkPrices(preCrafts)"
+                      nz-tooltip [nzTitle]="'PRICING.Check_precraft_prices' | translate"
+                      nzShape="circle"
+                      *ngIf="preCrafts.length > 0">
+                <i nz-icon iconfont="icon-dollar"></i>
+              </button>
               <button nz-button nz-popconfirm nzType="primary"
                       *ngIf="loggedIn$ | async"
                       class="fill-prices-button"
@@ -118,7 +124,7 @@
         <ng-template #header>
           <div fxLayout="row" fxLayoutAlign="space-between center">
             <div>{{'Items' | translate}}</div>
-            <div>
+            <div fxLayout="row" fxLayoutGap="10px">
               <button nz-button nz-popconfirm
                       *ngIf="loggedIn$ | async"
                       class="fill-prices-button"
