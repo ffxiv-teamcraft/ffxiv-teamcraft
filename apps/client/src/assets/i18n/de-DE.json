@@ -848,7 +848,11 @@
     "Copy_earnings_as_text": "Kopiere Inhalt als Text",
     "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)",
-    "Copy_panel_as_text": "Copy this panel as text"
+    "Copy_panel_as_text": "Copy this panel as text",
+    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price"
   },
   "LEVEQUESTS": {
     "Title": "Freibriefe",
