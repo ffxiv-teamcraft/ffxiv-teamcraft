@@ -848,7 +848,11 @@
     "Copy_earnings_as_text": "Copier le contenu au format texte",
     "Content_copied": "Contenu copié dans le presse-papiers",
     "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)",
-    "Copy_panel_as_text": "Copier ce panneau sous forme de texte"
+    "Copy_panel_as_text": "Copier ce panneau sous forme de texte",
+    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
