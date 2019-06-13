@@ -843,7 +843,7 @@
     "From_crafting": "Prix de l’artisanat",
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
+    "Autofill_panel_prices_your_server": "Remplir les prix en se basant sur l’hôtel des ventes (votre serveur uniquement)",
     "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?",
     "Copy_earnings_as_text": "Copier le contenu au format texte",
     "Content_copied": "Contenu copié dans le presse-papiers",
