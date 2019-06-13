@@ -930,7 +930,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "マーケットボード情報",
+    "Title": "Marketboard Information",
     "Error": "XIVAPI または Companion API が現在ダウンしています。再試行するまでしばらくお待ち下さい。",
     "Amount": "分量",
     "HQ": "HQ",
