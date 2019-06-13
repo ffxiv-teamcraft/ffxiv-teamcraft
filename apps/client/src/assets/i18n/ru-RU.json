@@ -848,7 +848,11 @@
     "Copy_earnings_as_text": "Копировать как текст",
     "Content_copied": "Скопировано в буфер обмена",
     "Cheaper_at_vendor": "Дешевле, если покупать у NPC ({{price}} gil)",
-    "Copy_panel_as_text": "Скопировать эту панель как текст"
+    "Copy_panel_as_text": "Скопировать эту панель как текст",
+    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price"
   },
   "LEVEQUESTS": {
     "Title": "Ливквесты",
