@@ -56,10 +56,10 @@ export class ListsFacade {
   listsWithWriteAccess$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
       if (!loggedIn) {
-        return combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.userId$).pipe(
+        return combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.userId$]).pipe(
           map(([compacts, userId]) => {
             return compacts.filter(c => {
-              return c.getPermissionLevel(userId) >= PermissionLevel.WRITE && c.authorId !== userId;
+              return !c.notFound && c.getPermissionLevel(userId) >= PermissionLevel.WRITE && c.authorId !== userId;
             });
           })
         );

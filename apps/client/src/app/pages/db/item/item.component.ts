@@ -197,8 +197,12 @@ export class ItemComponent extends TeamcraftPageComponent {
               const specialParamKey = Object.keys(item)
                 .filter(k => /^BaseParamSpecial\d+TargetID$/.test(k) && item[k])
                 .find(k => item[k] === statId);
-              const specialParamIndex = specialParamKey.match(/(\d+)/)[0];
-              res.valueHq = res.value + item[`BaseParamValueSpecial${specialParamIndex}`];
+              if (specialParamKey !== undefined) {
+                const specialParamIndex = specialParamKey.match(/(\d+)/)[0];
+                res.valueHq = res.value + item[`BaseParamValueSpecial${specialParamIndex}`];
+              } else {
+                res.valueHq = res.value;
+              }
             }
             return res;
           });

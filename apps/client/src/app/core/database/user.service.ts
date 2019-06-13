@@ -27,6 +27,9 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         return EMPTY;
       }
       this.userCache[uid] = super.get(uid).pipe(
+        catchError(() => {
+          return of(null);
+        }),
         switchMap(user => {
           if (user === null) {
             return of(new TeamcraftUser());
