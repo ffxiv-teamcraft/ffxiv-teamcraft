@@ -930,7 +930,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "장터게시판 정보",
+    "Title": "Marketboard Information",
     "Error": "현재 XIVAPI 또는 컴패니언 API에 문제가 있습니다. 잠시 후 다시 시도하시길 바랍니다.",
     "Amount": "수량",
     "HQ": "HQ",
