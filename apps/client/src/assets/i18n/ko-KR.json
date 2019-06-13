@@ -848,7 +848,11 @@
     "Copy_earnings_as_text": "내용을 텍스트로 복사하기",
     "Content_copied": "클립보드로 내용이 복사되었습니다.",
     "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)",
-    "Copy_panel_as_text": "이 패널을 텍스트로 복사"
+    "Copy_panel_as_text": "이 패널을 텍스트로 복사",
+    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
