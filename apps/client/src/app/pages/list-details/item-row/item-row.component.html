@@ -106,7 +106,7 @@
             <ng-container *ngIf="userId$ | async as userId">
               <ng-container *ngIf="team$ | async as team">
                 <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options"
-                             *ngIf="team.leader === userId || team.isOfficer(userId)">
+                             *ngIf="team.leader === userId || (!team.notFound && team.isOfficer(userId))">
                   <button nz-dropdown nzSize="small"
                           (click)="$event.stopPropagation()"
                           nz-tooltip [nzTitle]="'TEAMS.Assign_team_member' | translate"
@@ -237,7 +237,7 @@
               </ng-container>
               <ng-container *ngIf="!isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)">
                 <ng-container *ngIf="team$ | async as team">
-                  <li nz-submenu *ngIf="team.leader === userId || team.isOfficer(userId)">
+                  <li nz-submenu *ngIf="team.leader === userId || (!team.notFound && team.isOfficer(userId))">
                     <span title>{{'TEAMS.Assign_team_member' | translate}}</span>
                     <ul nz-menu class="team-members">
                       <ng-container *ngFor="let member of team.members">
