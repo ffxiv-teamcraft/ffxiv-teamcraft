@@ -308,6 +308,48 @@ export class ItemComponent extends TeamcraftPageComponent {
             url: `https://triad.raelys.com/cards/${xivapiItem.AdditionalData}`
           });
         }
+        if (xivapiItem.ItemAction.Type === 1322) {
+          links.push({
+            title: 'FFXIV Collect',
+            icon: 'https://collect.raelys.com/images/logo_small.png',
+            url: `https://collect.raelys.com/mounts/${xivapiItem.ItemAction.Data0}`
+          });
+        }
+        if (xivapiItem.ItemAction.Type === 853) {
+          links.push({
+            title: 'FFXIV Collect',
+            icon: 'https://collect.raelys.com/images/logo_small.png',
+            url: `https://collect.raelys.com/minions/${xivapiItem.ItemAction.Data0}`
+          });
+        }
+        if (xivapiItem.ItemAction.Type === 5845) {
+          links.push({
+            title: 'FFXIV Collect',
+            icon: 'https://collect.raelys.com/images/logo_small.png',
+            url: `https://collect.raelys.com/orchestrions/${xivapiItem.ItemAction.Data0}`
+          });
+        }
+        if (xivapiItem.ItemAction.Type === 2633 && xivapiItem.Name_en.indexOf('Ballroom Etiquette') > -1) {
+          links.push({
+            title: 'FFXIV Collect',
+            icon: 'https://collect.raelys.com/images/logo_small.png',
+            url: `https://collect.raelys.com/emotes/${xivapiItem.ItemAction.Data0}`
+          });
+        }
+        if (xivapiItem.ItemAction.Type === 2633 && xivapiItem.Name_en.indexOf('Modern Aesthetics') > -1) {
+          links.push({
+            title: 'FFXIV Collect',
+            icon: 'https://collect.raelys.com/images/logo_small.png',
+            url: `https://collect.raelys.com/hairstyles/${xivapiItem.ItemAction.Data0}`
+          });
+        }
+        if (xivapiItem.ItemAction.Type === 1013) {
+          links.push({
+            title: 'FFXIV Collect',
+            icon: 'https://collect.raelys.com/images/logo_small.png',
+            url: `https://collect.raelys.com/bardings/${xivapiItem.ItemAction.Data0}`
+          });
+        }
         return links;
       })
     );

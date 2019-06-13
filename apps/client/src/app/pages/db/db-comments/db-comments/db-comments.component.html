@@ -65,11 +65,11 @@
           <span (click)="replyTo(comment)">{{'DB.COMMENTS.Reply' | translate}}</span>
         </nz-comment-action>
 
-        <nz-comment-action *ngIf="!comment.deleted && (comment.author === user.$key || user.admin || user.moderator)">
+        <nz-comment-action *ngIf="!comment.deleted && user.$key && ((comment.author === user.$key) || user.admin || user.moderator)">
           <span (click)="editComment(comment)">{{'Edit' | translate}}</span>
         </nz-comment-action>
 
-        <nz-comment-action *ngIf="!comment.deleted && (comment.author === user.$key || user.admin || user.moderator)">
+        <nz-comment-action *ngIf="!comment.deleted && user.$key && ((comment.author === user.$key) || user.admin || user.moderator)">
           <span nz-popconfirm [nzTitle]="'Confirmation' | translate"
                 (nzOnConfirm)="deleteComment(comment)">{{'Delete' | translate}}</span>
         </nz-comment-action>
