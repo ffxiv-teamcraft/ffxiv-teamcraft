@@ -58,7 +58,8 @@ import {
   SettingOutline,
   ShareAltOutline,
   SolutionOutline,
-  UsergroupAddOutline
+  UsergroupAddOutline,
+  LineChartOutline
 } from '@ant-design/icons-angular/icons';
 import { UniversalInterceptor } from './universal-interceptor';
 import { DirtyModule } from './core/dirty/dirty.module';
@@ -87,27 +88,6 @@ import pt from '@angular/common/locales/pt';
 import hr from '@angular/common/locales/hr';
 import ko from '@angular/common/locales/ko';
 
-import * as Sentry from '@sentry/browser';
-
-Sentry.init({
-  dsn: 'https://6b3b5bdbd49a40e5a9fe198dff3918d2@sentry.io/1481706'
-});
-
-@Injectable()
-export class SentryErrorHandler implements ErrorHandler {
-  constructor() {
-  }
-
-  handleError(error) {
-    if (error.message && error.message.indexOf('Missing or insufficient permissions') > -1) {
-      // We won't report missing permissions errors, as they happen when you log out
-      // because of the very short moment when you're not logged in, not even as anonymous.
-    } else {
-      Sentry.captureException(error.originalError || error);
-    }
-  }
-}
-
 const icons: IconDefinition[] = [
   SettingOutline,
   NotificationOutline,
@@ -132,7 +112,8 @@ const icons: IconDefinition[] = [
   ExperimentOutline,
   LockOutline,
   LayoutOutline,
-  UsergroupAddOutline
+  UsergroupAddOutline,
+  LineChartOutline
 ];
 
 registerLocaleData(en);
@@ -164,7 +145,6 @@ registerLocaleData(ko);
         nzPlacement: 'topRight'
       }
     },
-    { provide: ErrorHandler, useClass: SentryErrorHandler },
     { provide: FirestoreSettingsToken, useValue: {} },
     { provide: NZ_ICONS, useValue: icons },
     { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true }
