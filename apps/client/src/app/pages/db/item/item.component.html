@@ -50,6 +50,9 @@
         </div>
         <div fxFlex="1 1 auto">
           <p *ngIf="xivapiItem.Description" [innerHTML]="xivapiItem | xivapiI18n: 'Description' | xivUIText"></p>
+          <audio controls controlslist="nodownload" *ngIf="xivapiItem.ItemAction.Type === 5845">
+            <source src="https://www.garlandtools.org/files/orchestrion/{{xivapiItem.ItemAction.Data0}}.ogg" type="audio/ogg">
+          </audio>
         </div>
         <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
