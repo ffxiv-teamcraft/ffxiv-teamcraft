@@ -848,7 +848,11 @@
     "Copy_earnings_as_text": "Copiar conteúdo como texto",
     "Content_copied": "Conteúdo copiado para a área de transferências",
     "Cheaper_at_vendor": "Mais barato se você comprar pelo NPC ({{price}} gil)",
-    "Copy_panel_as_text": "Copy this panel as text"
+    "Copy_panel_as_text": "Copy this panel as text",
+    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
