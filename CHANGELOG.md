@@ -20,6 +20,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 * added a recipe finder system ([e1bc1af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e1bc1af948aaed11d58a5e123576247e992f65e6))
 * **pricing:** added a new feature to check for cheaper precrafts inside marketboard ([ca919d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca919d8))
+* **db:** added links to FFXIV Collect on relevant item pages ([a64d7e8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a64d7e8))
+* **db:** added orchestrion sample preview ([a695cce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a695cce))
 * **db:** added a setting to put comments at top or bottom of content pages ([e260280](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e260280))
 * **db:** added recipe job and level for items used in crafts ([83a291b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/83a291b))
 * **db:** new db pages for achievements ([9a8d8cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a8d8cc))
