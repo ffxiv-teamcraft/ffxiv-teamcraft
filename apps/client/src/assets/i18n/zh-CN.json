@@ -848,7 +848,11 @@
     "Copy_earnings_as_text": "复制为文本",
     "Content_copied": "已复制",
     "Cheaper_at_vendor": "NPC 卖得更便宜 ({{price}} gil)",
-    "Copy_panel_as_text": "复制为文本"
+    "Copy_panel_as_text": "复制为文本",
+    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
