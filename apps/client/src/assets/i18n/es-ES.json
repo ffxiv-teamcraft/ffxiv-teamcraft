@@ -930,7 +930,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Información del mercado",
+    "Title": "Marketboard Information",
     "Error": "XIVAPI o Companion API está actualmente caído, por favor espere un momento antes de volver a intentarlo.",
     "Amount": "Cantidad",
     "HQ": "HQ",
