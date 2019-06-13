@@ -848,7 +848,11 @@
     "Copy_earnings_as_text": "Copiar contenido como texto",
     "Content_copied": "Contenido copiado a su portapapeles",
     "Cheaper_at_vendor": "Más barato si compra de NPC ({{price}} gil)",
-    "Copy_panel_as_text": "Copiar este panel como texto"
+    "Copy_panel_as_text": "Copiar este panel como texto",
+    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
