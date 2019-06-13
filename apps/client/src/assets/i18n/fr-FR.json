@@ -125,7 +125,9 @@
     "Moderator": "Modérateur",
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} secondes",
-    "None": "Aucun"
+    "None": "Aucun",
+    "Top": "Début",
+    "Bottom": "Fin"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -179,6 +181,7 @@
   "No_actions_found": "Aucune action trouvée",
   "No_statuses_found": "Aucun état trouvé",
   "No_traits_found": "Aucun trait trouvé",
+  "No_achievements_found": "Aucun haut-fait trouvé",
   "Select_all": "Tout cocher",
   "Do you really want to reset the list?": "Voulez-vous vraiment réinitialiser la liste ?",
   "Yes": "Oui",
@@ -332,6 +335,8 @@
     "Favorite_aetherytes": "Éthérites favorites",
     "Disable_cross_world_prices": "Utiliser uniquement le serveur d'origine pour les prix à l'hôtel des ventes",
     "Clear_search_history": "Effacer l'historique de recherche",
+    "Auto_mark_as_done_in_log": "Marquer les éléments comme faits dans le journal lorsqu'ils sont faits dans une liste",
+    "Db_comments_position": "Position des commentaires de la base de données",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -838,11 +843,16 @@
     "From_crafting": "Prix de l’artisanat",
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
+    "Autofill_panel_prices_your_server": "Remplir les prix en se basant sur l’hôtel des ventes (votre serveur uniquement)",
     "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?",
     "Copy_earnings_as_text": "Copier le contenu au format texte",
     "Content_copied": "Contenu copié dans le presse-papiers",
     "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)",
-    "Copy_panel_as_text": "Copier ce panneau sous forme de texte"
+    "Copy_panel_as_text": "Copier ce panneau sous forme de texte",
+    "Check_precraft_prices": "Vérifier les prix moins chers dans l’hôtel des ventes",
+    "Craft_price": "Prix de fabrication",
+    "Marketboard_price": "Prix NQ",
+    "Marketboard_price_hq": "Prix HQ"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -1309,7 +1319,8 @@
     "Action": "Action",
     "Status": "État ",
     "Trait": "Trait",
-    "Any": "Tout"
+    "Any": "Tout",
+    "Achievement": "Haut-fait"
   },
   "SEARCH_FILTERS": {
     "Level": "Niveau",
@@ -1327,5 +1338,21 @@
     "Levequests": "Vous pouvez préparer des listes de mandats et prévisualiser leur exp dans la page Mandats.",
     "Log_tracker": "Vous pouvez suivre la progression de votre journal (collecte, fabrication, pêche) à l'intérieur de la page carnets.",
     "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale."
+  },
+  "RECIPE_FINDER": {
+    "Title": "Recherche de recette",
+    "Placeholder": "Nom de l'objet",
+    "No_missing_ingredients": "Aucun ingrédient manquant",
+    "Missing_X_ingredients": "Manque {{amount}} ingrédient(s)",
+    "Missing": "Manque",
+    "Results": "Recettes possibles",
+    "Basket": "Panier",
+    "Add_to_basket": "Ajouter au panier",
+    "Remove_from_basket": "Retirer du panier",
+    "Search": "Trouver des recettes",
+    "Generate_list": "Ajouter à une liste",
+    "Description": "Saisissez les objets que vous avez et cliquez sur « Trouver des recettes » pour obtenir une liste de recettes possibles pour fabriquer et générer une liste d'artisanat à partir des résultats.",
+    "Empty_basket": "Votre panier est vide",
+    "Add_item": "Ajouter un objet"
   }
 }

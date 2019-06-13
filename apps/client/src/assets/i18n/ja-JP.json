@@ -125,7 +125,9 @@
     "Moderator": "管理者",
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
-    "None": "なし"
+    "None": "なし",
+    "Top": "Top",
+    "Bottom": "Bottom"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -179,6 +181,7 @@
   "No_actions_found": "検索結果なし",
   "No_statuses_found": "検索結果なし",
   "No_traits_found": "検索結果なし",
+  "No_achievements_found": "検索結果なし",
   "Select_all": "全て選択",
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
@@ -332,6 +335,8 @@
     "Favorite_aetherytes": "お気に入りのエーテライト",
     "Disable_cross_world_prices": "キャラクターのサーバーマケットボード値段のみ使用",
     "Clear_search_history": "検索履歴を削除",
+    "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
+    "Db_comments_position": "Database comments position",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -827,7 +832,7 @@
       "Do_not_overlap_buffs": "{{overlappedIndex}} 回目の工程で使用したバフが {{overlappingIndex}} 回目の工程で使用したバフと重複されます。バフの効果が最大限貰えるように、少し遅れて使う必要があります。",
       "Use_byregot_brow_5_stacks": "'ビエルゴの祝福' の代わりに 'ビエルゴの技巧' を使用すると同じ品質量が上昇しながら CP 6が節約できます。",
       "Use_ingenuity_before_byregot": "もっと高い品質の向上するために 'ビエルゴ' アクションを使用する前に '工面算段' を使用しなければなりません",
-      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_more_quality_actions": "耐久度が残ってる状態で制作が完了しました。残ってる耐久度を利用して、多い加工スキルに使用する事ができます。",
       "Use_prudent_touch_manipulation": "66レベル以上の場合 'マニピュレーションⅡ' と '倹約加工'を使用して、もっと高い品質を得なければなりません",
       "Use_rapid_synthesis_earlier": "'突貫作業'を工程の最後に入れないで下さい。失敗する恐れがありますので、早く使用するのが制作スキル回しの信頼性が向上します。",
       "Use_reflect_earlier": "'マイスターの切札: 真価' を加工アクションを使用する前に前もって使用しなければなりません"
@@ -838,11 +843,16 @@
     "From_crafting": "制作費用",
     "Expect_to_sell_everything": "販売予定",
     "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。",
     "Cheaper_at_vendor": "NPC から購入した方が安い ({{price}} ギル)",
-    "Copy_panel_as_text": "このパネルをテキストとしてコピーする"
+    "Copy_panel_as_text": "このパネルをテキストとしてコピーする",
+    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -866,8 +876,8 @@
     "Title": "お知らせ",
     "List_comment_added": "{{listName}} にコメントが追加されました: \"{{content}}\"",
     "List_item_comment_added": "{{listName}} の {{itemName}} にコメントが追加されました: \"{{content}}\"",
-    "Db_comment": "New comment in db: \"{{comment}}\"",
-    "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
+    "Db_comment": "新しいコメントが付けられました: \"{{comment}}\"",
+    "Db_comment_reply": "貴方のコメントに新しいコメントが付けられました: \"{{comment}}\"",
     "Mark_all_as_read": "全て既読にする",
     "No_notifications": "通知無し"
   },
@@ -1309,7 +1319,8 @@
     "Action": "アクション",
     "Status": "ステータス",
     "Trait": "特性",
-    "Any": "任意"
+    "Any": "任意",
+    "Achievement": "アチーブメント"
   },
   "SEARCH_FILTERS": {
     "Level": "レベル",
@@ -1327,5 +1338,21 @@
     "Levequests": "ギルドリーヴページからリーヴを比べて獲得可能な経験値をプレビューすることができます。",
     "Log_tracker": "手帳トラッカーページから採集、制作、漁師の手帳の進行状況が確認することができます。",
     "Desktop_app_overlay": "デスクトップ アプリの使用時にアラームのオーバーレイを設定できます(サイドバー内のダウンロード リンク有り)。"
+  },
+  "RECIPE_FINDER": {
+    "Title": "Recipe finder",
+    "Placeholder": "Item name",
+    "No_missing_ingredients": "No missing ingredients",
+    "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
+    "Missing": "Missing",
+    "Results": "Possible crafts",
+    "Basket": "Basket",
+    "Add_to_basket": "Add to basket",
+    "Remove_from_basket": "Remove from basket",
+    "Search": "Find recipes",
+    "Generate_list": "Add to list",
+    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
+    "Empty_basket": "Your basket is empty",
+    "Add_item": "Add item"
   }
 }
