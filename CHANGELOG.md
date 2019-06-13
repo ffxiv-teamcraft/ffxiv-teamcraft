@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
+* **item-tooltip:** fixed an issue with items without HQ stats bonuses ([133c4f9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/133c4f9))
 * **desktop:** fixed auto update check not checking properly on startup ([07dd123](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/07dd123))
 * **layout:** fixed an issue with NOT modifier on rows with one filter only ([59e3153](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/59e3153))
 * **levequests:** fixed a layout issue with levequests page ([d15dcaf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d15dcaf))
@@ -18,6 +19,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * added a recipe finder system ([e1bc1af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e1bc1af948aaed11d58a5e123576247e992f65e6))
+* **pricing:** added a new feature to check for cheaper precrafts inside marketboard ([ca919d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca919d8))
 * **db:** added a setting to put comments at top or bottom of content pages ([e260280](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e260280))
 * **db:** added recipe job and level for items used in crafts ([83a291b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/83a291b))
 * **db:** new db pages for achievements ([9a8d8cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a8d8cc))
