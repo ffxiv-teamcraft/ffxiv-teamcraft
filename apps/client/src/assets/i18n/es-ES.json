@@ -832,9 +832,9 @@
       "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos.",
       "Use_byregot_brow_5_stacks": "Debería usar \"Byregot's Brow\" en vez de \"Byregot's Blessing\" para obtener la misma calidad por 6 CP menos.",
       "Use_ingenuity_before_byregot": "Debería usar \"Ingenuity\" antes de la acción de \"Byregot\" para obtener un aumento en la ganancia de calidad.",
-      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
-      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
+      "Use_more_quality_actions": "Le sobra durabilidad al final del proceso, probablemente debería usarla para más acciones relacionadas con la calidad.",
+      "Use_prudent_touch_manipulation": "Como usted es nivel 66+, debería usar el combo \"Manipulation II\" + \"Prudent Touch\" para obtener calidad para la mejor ganancia de calidad y más confiabilidad.",
+      "Use_rapid_synthesis_earlier": "No debería usar \"Rapid Synthesis\" como una acción de término, usarla antes para poder manejar el fracaso de la acción es mejor para la confiabilidad de su rotación.",
       "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
     }
   },
