@@ -208,7 +208,7 @@ export class ItemComponent extends TeamcraftPageComponent {
           });
         if (item.ItemFood !== undefined) {
           const food = item.ItemFood;
-          for (let i = 0; i < 2; i++) {
+          for (let i = 0; i < 3; i++) {
             const statsEntry: any = {};
             const value = food[`Value${i}`];
             const valueHq = food[`ValueHQ${i}`];
