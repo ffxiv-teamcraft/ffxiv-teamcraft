@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.5.1",
+  "version": "5.5.2",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
