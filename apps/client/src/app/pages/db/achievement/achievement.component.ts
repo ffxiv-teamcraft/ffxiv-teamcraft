@@ -67,8 +67,14 @@ export class AchievementComponent extends TeamcraftPageComponent {
     );
 
     this.links$ = this.achievement$.pipe(
-      map(() => {
-        return [];
+      map((achievement) => {
+        return [
+          {
+            title: 'FFXIV Collect',
+            icon: 'https://collect.raelys.com/images/logo_small.png',
+            url: `https://collect.raelys.com/achievements/${achievement.ID}`
+          }
+        ];
       })
     );
   }
