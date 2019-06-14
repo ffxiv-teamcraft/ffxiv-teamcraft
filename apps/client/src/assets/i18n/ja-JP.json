@@ -930,7 +930,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Information",
+    "Title": "マーケットボード情報",
     "Error": "XIVAPI または Companion API が現在ダウンしています。再試行するまでしばらくお待ち下さい。",
     "Amount": "分量",
     "HQ": "HQ",
@@ -1343,16 +1343,16 @@
     "Title": "レシピ検索",
     "Placeholder": "アイテム名",
     "No_missing_ingredients": "全ての素材有り",
-    "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
-    "Missing": "Missing",
-    "Results": "Possible crafts",
-    "Basket": "Basket",
-    "Add_to_basket": "Add to basket",
-    "Remove_from_basket": "Remove from basket",
-    "Search": "Find recipes",
-    "Generate_list": "Add to list",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
-    "Empty_basket": "Your basket is empty",
-    "Add_item": "Add item"
+    "Missing_X_ingredients": "{{amount}} 個の素材不足",
+    "Missing": "不足な素材:",
+    "Results": "制作可能な品目",
+    "Basket": "制作リスト",
+    "Add_to_basket": "制作リストに追加",
+    "Remove_from_basket": "制作リストから削除",
+    "Search": "レシピ検索",
+    "Generate_list": "リストに追加",
+    "Description": "現在お持ちの素材の数量を入力し \"レシピ検索\" をクリックすると現在の素材で制作可能な品目がご確認することができ、望みな品目をリストに作成するのができます。",
+    "Empty_basket": "制作リストが空いています。",
+    "Add_item": "アイテム追加"
   }
 }
