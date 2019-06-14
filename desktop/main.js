@@ -100,6 +100,7 @@ function createWindow() {
   if (config.get('win:fullscreen')) {
     win.maximize();
   }
+  win.setMenuBarVisibility(false);
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
   //// uncomment below to open the DevTools.
