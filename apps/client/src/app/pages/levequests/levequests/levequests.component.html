@@ -11,8 +11,21 @@
   </div>
 
   <div nz-col [nzXs]="{ span: 24, order: 3 }" [nzMd]="{ span: 10, offset: 1, order: 2 }" [nzXXl]="{ span: 9 }">
-    <input type="text" class="search" placeholder="{{'LEVEQUESTS.Levequest_name' | translate}}" #searchInput
-           nz-input [ngModel]="query$.value" (keyup)="query$.next(searchInput.value)" autofocus>
+    <nz-input-group [nzSuffix]="suffixTemplate">
+      <input type="text" class="search" placeholder="{{'LEVEQUESTS.Levequest_name' | translate}}" #searchInput
+             nz-input [ngModel]="query$.value" (keyup)="query$.next(searchInput.value)" autofocus>
+      <ng-template #suffixTemplate>
+        <i
+          nz-icon
+          nz-tooltip
+          class="ant-input-clear-icon"
+          nzTheme="fill"
+          nzType="close-circle"
+          *ngIf="query$ | async"
+          (click)="query$.next('')"
+        ></i>
+      </ng-template>
+    </nz-input-group>
   </div>
 
   <div nz-col [nzXs]="{ span: 13, offset: 1, order: 2 }" [nzMd]="{ span: 5, offset: 1, order: 3 }"
