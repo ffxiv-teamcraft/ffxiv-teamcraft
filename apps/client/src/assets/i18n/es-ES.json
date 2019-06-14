@@ -835,7 +835,7 @@
       "Use_more_quality_actions": "Le sobra durabilidad al final del proceso, probablemente debería usarla para más acciones relacionadas con la calidad.",
       "Use_prudent_touch_manipulation": "Como usted es nivel 66+, debería usar el combo \"Manipulation II\" + \"Prudent Touch\" para obtener calidad para la mejor ganancia de calidad y más confiabilidad.",
       "Use_rapid_synthesis_earlier": "No debería usar \"Rapid Synthesis\" como una acción de término, usarla antes para poder manejar el fracaso de la acción es mejor para la confiabilidad de su rotación.",
-      "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
+      "Use_reflect_earlier": "Debería usar la acción de especialización \"Reflect\" antes para impulsar las acciones de calidad posteriores."
     }
   },
   "PRICING": {
@@ -843,16 +843,16 @@
     "From_crafting": "Precio de fabricación",
     "Expect_to_sell_everything": "Asumir que se vende todo",
     "Autofill_panel_prices": "Llenar precios basado en precios del mercado",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
+    "Autofill_panel_prices_your_server": "Rellene los precios basados en los precios del mercado (sólo su servidor)",
     "Autofill_panel_prices_warning": "Este es un proceso lento y debería tomar alrededor de {{time}} segundos para completarse. ¿Está seguro?",
     "Copy_earnings_as_text": "Copiar contenido como texto",
     "Content_copied": "Contenido copiado a su portapapeles",
     "Cheaper_at_vendor": "Más barato si compra de NPC ({{price}} gil)",
     "Copy_panel_as_text": "Copiar este panel como texto",
-    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
-    "Craft_price": "Crafting price",
-    "Marketboard_price": "NQ price",
-    "Marketboard_price_hq": "HQ price"
+    "Check_precraft_prices": "Busque precios más baratos dentro del mercado",
+    "Craft_price": "Precio de fabricación",
+    "Marketboard_price": "Precio NQ",
+    "Marketboard_price_hq": "Precio HQ"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -930,7 +930,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Information",
+    "Title": "Información del mercado",
     "Error": "XIVAPI o Companion API está actualmente caído, por favor espere un momento antes de volver a intentarlo.",
     "Amount": "Cantidad",
     "HQ": "HQ",
@@ -1301,7 +1301,7 @@
       "Show_more": "Mostrar {{amount}} comentarios más",
       "No_comments": "Sin comentarios",
       "Post": "Publicar",
-      "Editor_tip": "Database links will be processed and handled inside your message."
+      "Editor_tip": "Los enlaces de base de datos serán procesados y manejados dentro de su mensaje."
     }
   },
   "SEARCH_TYPES": {
@@ -1351,8 +1351,8 @@
     "Remove_from_basket": "Eliminar de la cesta",
     "Search": "Buscar recetas",
     "Generate_list": "Agregar a la lista",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
+    "Description": "Introduzca los artículos que tiene y haga clic en \"Buscar recetas\" para obtener una lista de posibles recetas para fabricar y generar fácilmente una lista de fabricación de los resultados.",
     "Empty_basket": "Su cesta está vacía",
-    "Add_item": "Add item"
+    "Add_item": "Agregar artículo"
   }
 }
