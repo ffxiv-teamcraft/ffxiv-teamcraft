@@ -3,7 +3,7 @@ import { Craft } from '../../../../model/garland-tools/craft';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from '../../../../model/garland-tools/item';
-import { map, shareReplay, switchMap } from 'rxjs/operators';
+import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { DataService } from '../../../../core/api/data.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { SeoPageComponent } from '../../../../core/seo/seo-page-component';
@@ -79,7 +79,8 @@ export class SimulatorPageComponent extends SeoPageComponent {
 
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return combineLatest(this.rotationsFacade.selectedRotation$, this.recipe$, this.item$).pipe(
+    return combineLatest([this.rotationsFacade.selectedRotation$, this.recipe$, this.item$]).pipe(
+      filter(([,recipe]) => recipe !== undefined),
       map(([rotation, recipe, item]) => {
         return {
           title: rotation.getName(),

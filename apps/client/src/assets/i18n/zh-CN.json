@@ -930,7 +930,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "市场信息",
+    "Title": "Marketboard Information",
     "Error": "XIVAPI 或者 Companion API 目前无法使用，请稍后再重试。",
     "Amount": "数量",
     "HQ": "HQ",

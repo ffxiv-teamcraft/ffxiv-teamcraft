@@ -715,7 +715,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     const statsFromRecipe$: Observable<CrafterStats> = combineLatest([this.recipe$, this.job$, this.authFacade.gearSets$]).pipe(
       map(([, job, sets]) => {
         const set = sets.find(s => s.jobId === job);
-        return new CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.level, <CrafterLevels>sets.map(s => s.level));
+        const levels = <CrafterLevels>sets.map(s => s.level);
+        levels[job - 8] = set.level;
+        return new CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.level, levels);
       }),
       distinctUntilChanged((before, after) => {
         return JSON.stringify(before) === JSON.stringify(after);
@@ -726,6 +728,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       map(rotation => {
         const stats = rotation.stats;
         if (rotation.stats) {
+          const levels = [70, 70, 70, 70, 70, 70, 70, 70];
+          levels[stats.jobId - 8] = stats.level;
           return new CrafterStats(
             stats.jobId,
             stats.craftsmanship,
@@ -733,7 +737,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             stats.cp,
             stats.specialist,
             stats.level,
-            [70, 70, 70, 70, 70, 70, 70, 70]
+            <CrafterLevels>levels
           );
         }
         return undefined;
@@ -759,7 +763,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       }),
       shareReplay(1),
       tap(stats => {
-        this.availableLevels = stats.levels;
+        const levels = stats.levels;
+        levels[stats.jobId - 8] = stats.level;
+        this.availableLevels = levels;
         this.statsForm.reset({
           job: stats.jobId,
           craftsmanship: stats.craftsmanship,
@@ -778,6 +784,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.job$
     ]).pipe(
       map(([stats, bonuses, loggedIn, job]) => {
+        const levels = loggedIn ? stats.levels : [70, 70, 70, 70, 70, 70, 70, 70];
+        levels[(job || stats.jobId) - 8] = stats.level;
         return new CrafterStats(
           job || stats.jobId,
           stats.craftsmanship + bonuses.craftsmanship,
@@ -785,7 +793,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           stats.cp + bonuses.cp,
           stats.specialist,
           stats.level,
-          loggedIn ? stats.levels : [70, 70, 70, 70, 70, 70, 70, 70]);
+          levels as CrafterLevels);
       })
     );
     this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.forceFailed$]).pipe(

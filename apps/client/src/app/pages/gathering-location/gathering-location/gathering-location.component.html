@@ -1,8 +1,19 @@
 <div class="search-box">
-  <nz-input-group>
+  <nz-input-group [nzSuffix]="suffixTemplate">
     <input type="text" placeholder="{{'GATHERING_LOCATIONS.Gathering_name' | translate}}" nz-input
            [ngModel]="query$.value"
            #searchInput (keyup)="query$.next(searchInput.value)" autofocus>
+    <ng-template #suffixTemplate>
+      <i
+        nz-icon
+        nz-tooltip
+        class="ant-input-clear-icon"
+        nzTheme="fill"
+        nzType="close-circle"
+        *ngIf="query$ | async"
+        (click)="query$.next('')"
+      ></i>
+    </ng-template>
   </nz-input-group>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">

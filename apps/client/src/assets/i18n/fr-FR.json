@@ -930,7 +930,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Hôtel des ventes",
+    "Title": "Marketboard Information",
     "Error": "XIVAPI ou l'API compagnon est actuellement inaccessible, veuillez patienter un instant avant de réessayer.",
     "Amount": "Quantité",
     "HQ": "HQ",

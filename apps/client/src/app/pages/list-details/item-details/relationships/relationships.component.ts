@@ -27,7 +27,7 @@ export class RelationshipsComponent implements OnInit {
   ngOnInit() {
     this.requires$ = this.list$.pipe(
       map(list => {
-        return this.item.requires
+        return (this.item.requires || [])
           .sort((a, b) => a.id < b.id ? -1 : 1)
           .map(req => {
             const item = list.getItemById(req.id, true);

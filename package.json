@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.5.1",
+  "version": "5.5.2",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -118,7 +118,6 @@
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "@nrwl/nx": "7.5.1",
-    "@sentry/browser": "^5.4.0",
     "@swimlane/dragula": "^3.7.3",
     "@swimlane/ngx-dnd": "^7.0.0",
     "@types/jwt-decode": "^2.2.1",

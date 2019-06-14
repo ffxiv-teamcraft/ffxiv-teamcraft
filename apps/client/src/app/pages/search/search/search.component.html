@@ -3,7 +3,7 @@
     <ng-container *ngIf="false | ifMobile: true">
       <ng-container *ngTemplateOutlet="searchType"></ng-container>
     </ng-container>
-    <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null">
+    <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null" [nzSuffix]="suffixTemplate">
       <input class="search-input" type="text"
              placeholder="{{'Search_placeholder' | translate:{type: searchType$ | async} }}" #searchInput nz-input
              [ngModel]="query$.value"
@@ -11,6 +11,17 @@
              [nzAutocomplete]="auto"
              (keyup)="query$.next(searchInput.value)"
              (ngModelChange)="query$.next($event)">
+      <ng-template #suffixTemplate>
+        <i
+          nz-icon
+          nz-tooltip
+          class="ant-input-clear-icon"
+          nzTheme="fill"
+          nzType="close-circle"
+          *ngIf="query$ | async"
+          (click)="query$.next('')"
+        ></i>
+      </ng-template>
     </nz-input-group>
     <button nz-button ngxClipboard [cbContent]="getShareUrl()" (cbOnSuccess)="afterShareLinkCopied()" nz-tooltip
             [nzTitle]="'ITEMS.Share_url' | translate">

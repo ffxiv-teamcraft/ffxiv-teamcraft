@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.5.2"></a>
+## [5.5.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.1...v5.5.2) (2019-06-14)
+
+
+### Bug Fixes
+
+* **db:** fixed an issue with foods showing only two bonuses ([fd72403](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd72403))
+* **desktop:** removed menu bar ([4846ae0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4846ae0))
+* **simulator:** fixed a bug with level not applied correctly ([857a216](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/857a216))
+* **simulator:** fixed a wrong tip about byregot's brow appearing while it shouldn't ([031ee74](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/031ee74))
+
+
+### Features
+
+* **db:** added FFXIV Collect links on achievement pages ([0367c40](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0367c40))
+* **search:** added a suffix on input fields for easy input clear ([1619814](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1619814))
+
+
+
 <a name="5.5.1"></a>
 ## [5.5.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.0...v5.5.1) (2019-06-13)
 

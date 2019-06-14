@@ -67,7 +67,7 @@ export class LayoutOrderService {
     if (ordering === undefined) {
       return data;
     }
-    const orderedASC = data.sort(ordering);
+    const orderedASC =(data || []).sort(ordering);
     return order === LayoutRowOrder.ASC ? orderedASC : orderedASC.reverse();
   }
 

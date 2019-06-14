@@ -930,7 +930,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marktbrett-Information",
+    "Title": "Marketboard Information",
     "Error": "XIVAPI oder Companion API nicht erreichbar, bitte warte einen Moment und versuche es erneut.",
     "Amount": "Menge",
     "HQ": "HQ",
