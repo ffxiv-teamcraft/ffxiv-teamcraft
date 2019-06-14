@@ -218,11 +218,11 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       shareReplay(1)
     );
 
-    this.hasAllBaseIngredients$ = combineLatest(this.canBeCrafted$, this.listsFacade.selectedList$
+    this.hasAllBaseIngredients$ = combineLatest([this.canBeCrafted$, this.listsFacade.selectedList$
       .pipe(
-        map(list => list.hasAllBaseIngredients(this.item))
+        map(list => !list.notFound && list.hasAllBaseIngredients(this.item))
       )
-    ).pipe(
+    ]).pipe(
       map(([craftable, allIngredients]) => !craftable && this.item.amount > this.item.done && allIngredients),
       shareReplay(1)
     );
