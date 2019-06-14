@@ -8,7 +8,7 @@ import { progressFormulas } from '../formulas/progress-formulas';
 import { qualityFormulas } from '../formulas/quality-formulas';
 import { ingenuityData } from '../formulas/ingenuity-data';
 import { SimulationFailCause } from '../simulation-fail-cause.enum';
-import { Class, Instantiable } from '@kaiu/serializer';
+import { Class } from '@kaiu/serializer';
 
 /**
  * This is the parent class of all actions in the simulator.
