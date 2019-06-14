@@ -930,7 +930,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Informações do Marketboard",
+    "Title": "Marketboard Information",
     "Error": "A API XIVAPI ou Companion está desligada, por favor aguarde um momento antes de tentar novamente.",
     "Amount": "Quantidade",
     "HQ": "HQ",

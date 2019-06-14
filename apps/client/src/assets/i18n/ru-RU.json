@@ -930,7 +930,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Информация о MB",
+    "Title": "Marketboard Information",
     "Error": "XIVAPI или Companion API в настоящее время не работают, пожалуйста, повторите запрос позже.",
     "Amount": "Количество",
     "HQ": "HQ",

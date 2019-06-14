@@ -126,8 +126,8 @@
     "Minutes_duration": "{{amount}} minutos",
     "Seconds_duration": "{{amount}} segundos",
     "None": "Ninguno",
-    "Top": "Top",
-    "Bottom": "Bottom"
+    "Top": "Arriba",
+    "Bottom": "Abajo"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -335,8 +335,8 @@
     "Favorite_aetherytes": "Aetherytes favoritos",
     "Disable_cross_world_prices": "Sólo usar mi propio mundo para los precios del mercado",
     "Clear_search_history": "Limpiar el historial de búsqueda",
-    "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
-    "Db_comments_position": "Database comments position",
+    "Auto_mark_as_done_in_log": "Marcar elementos como completados en el registro cuando se hacen en una lista",
+    "Db_comments_position": "Posición de comentarios de base de datos",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -831,11 +831,11 @@
       "Use_advanced_touch_instead": "Usó \"Basic Touch\" seguido de \"Advanced Touch\" en el paso {{index}}, debería usar dos \"Standard Touch\" en su lugar para obtener la misma potencia por 2 CP menos.",
       "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos.",
       "Use_byregot_brow_5_stacks": "Debería usar \"Byregot's Brow\" en vez de \"Byregot's Blessing\" para obtener la misma calidad por 6 CP menos.",
-      "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
-      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
-      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
-      "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
+      "Use_ingenuity_before_byregot": "Debería usar \"Ingenuity\" antes de la acción de \"Byregot\" para obtener un aumento en la ganancia de calidad.",
+      "Use_more_quality_actions": "Le sobra durabilidad al final del proceso, probablemente debería usarla para más acciones relacionadas con la calidad.",
+      "Use_prudent_touch_manipulation": "Como usted es nivel 66+, debería usar el combo \"Manipulation II\" + \"Prudent Touch\" para obtener calidad para la mejor ganancia de calidad y más confiabilidad.",
+      "Use_rapid_synthesis_earlier": "No debería usar \"Rapid Synthesis\" como una acción de término, usarla antes para poder manejar el fracaso de la acción es mejor para la confiabilidad de su rotación.",
+      "Use_reflect_earlier": "Debería usar la acción de especialización \"Reflect\" antes para impulsar las acciones de calidad posteriores."
     }
   },
   "PRICING": {
@@ -843,16 +843,16 @@
     "From_crafting": "Precio de fabricación",
     "Expect_to_sell_everything": "Asumir que se vende todo",
     "Autofill_panel_prices": "Llenar precios basado en precios del mercado",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
+    "Autofill_panel_prices_your_server": "Rellene los precios basados en los precios del mercado (sólo su servidor)",
     "Autofill_panel_prices_warning": "Este es un proceso lento y debería tomar alrededor de {{time}} segundos para completarse. ¿Está seguro?",
     "Copy_earnings_as_text": "Copiar contenido como texto",
     "Content_copied": "Contenido copiado a su portapapeles",
     "Cheaper_at_vendor": "Más barato si compra de NPC ({{price}} gil)",
     "Copy_panel_as_text": "Copiar este panel como texto",
-    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
-    "Craft_price": "Crafting price",
-    "Marketboard_price": "NQ price",
-    "Marketboard_price_hq": "HQ price"
+    "Check_precraft_prices": "Busque precios más baratos dentro del mercado",
+    "Craft_price": "Precio de fabricación",
+    "Marketboard_price": "Precio NQ",
+    "Marketboard_price_hq": "Precio HQ"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -1301,7 +1301,7 @@
       "Show_more": "Mostrar {{amount}} comentarios más",
       "No_comments": "Sin comentarios",
       "Post": "Publicar",
-      "Editor_tip": "Database links will be processed and handled inside your message."
+      "Editor_tip": "Los enlaces de base de datos serán procesados y manejados dentro de su mensaje."
     }
   },
   "SEARCH_TYPES": {
@@ -1351,8 +1351,8 @@
     "Remove_from_basket": "Eliminar de la cesta",
     "Search": "Buscar recetas",
     "Generate_list": "Agregar a la lista",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
+    "Description": "Introduzca los artículos que tiene y haga clic en \"Buscar recetas\" para obtener una lista de posibles recetas para fabricar y generar fácilmente una lista de fabricación de los resultados.",
     "Empty_basket": "Su cesta está vacía",
-    "Add_item": "Add item"
+    "Add_item": "Agregar artículo"
   }
 }
