@@ -335,8 +335,8 @@
     "Favorite_aetherytes": "お気に入りのエーテライト",
     "Disable_cross_world_prices": "キャラクターのサーバーマケットボード値段のみ使用",
     "Clear_search_history": "検索履歴を削除",
-    "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
-    "Db_comments_position": "Database comments position",
+    "Auto_mark_as_done_in_log": "リストから完了されたアイテムがあれば、手帳に該当アイテムを完了されたと表示する",
+    "Db_comments_position": "データベースのコメント位置",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -843,7 +843,7 @@
     "From_crafting": "制作費用",
     "Expect_to_sell_everything": "販売予定",
     "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
+    "Autofill_panel_prices_your_server": "マケットボード値段で自動入力(キャラクターのサーバー基準)",
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。",
@@ -1340,9 +1340,9 @@
     "Desktop_app_overlay": "デスクトップ アプリの使用時にアラームのオーバーレイを設定できます(サイドバー内のダウンロード リンク有り)。"
   },
   "RECIPE_FINDER": {
-    "Title": "Recipe finder",
-    "Placeholder": "Item name",
-    "No_missing_ingredients": "No missing ingredients",
+    "Title": "レシピ検索",
+    "Placeholder": "アイテム名",
+    "No_missing_ingredients": "全ての素材有り",
     "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
     "Missing": "Missing",
     "Results": "Possible crafts",
