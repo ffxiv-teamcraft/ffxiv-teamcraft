@@ -126,8 +126,8 @@
     "Minutes_duration": "{{amount}} minutos",
     "Seconds_duration": "{{amount}} segundos",
     "None": "Ninguno",
-    "Top": "Top",
-    "Bottom": "Bottom"
+    "Top": "Arriba",
+    "Bottom": "Abajo"
   },
   "ALARMS": {
     "Title": "Alarmas",
