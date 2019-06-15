@@ -32,8 +32,8 @@ export class ListManagerService {
               private teamsFacade: TeamsFacade,
               private customItemsFacade: CustomItemsFacade) {
 
-      this.customItemsFacade.loadAll();
-      this.customItemsFacade.allCustomItems$.subscribe(items => this.customItemsSync = items);
+    this.customItemsFacade.loadAll();
+    this.customItemsFacade.allCustomItems$.subscribe(items => this.customItemsSync = items);
 
   }
 

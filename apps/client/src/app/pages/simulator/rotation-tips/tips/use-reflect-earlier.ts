@@ -1,7 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { SpecialtyReflect } from '../../model/actions/other/specialty-reflect';
+import { SimulationResult, SpecialtyReflect } from '@ffxiv-teamcraft/simulator';
 
 export class UseReflectEarlier extends RotationTip {
 

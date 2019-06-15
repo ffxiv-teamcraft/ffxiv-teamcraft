@@ -9,4 +9,5 @@ import { FullpageMessageComponent } from './fullpage-message/fullpage-message.co
   declarations: [FullpageMessageComponent],
   exports: [FullpageMessageComponent]
 })
-export class FullpageMessageModule { }
+export class FullpageMessageModule {
+}

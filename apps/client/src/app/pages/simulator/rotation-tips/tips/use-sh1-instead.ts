@@ -1,8 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { SteadyHandII } from '../../model/actions/buff/steady-hand-ii';
-import { Buff } from '../../model/buff.enum';
+import { Buff, SimulationResult, SteadyHandII } from '@ffxiv-teamcraft/simulator';
 
 export class UseSh1Instead extends RotationTip {
 

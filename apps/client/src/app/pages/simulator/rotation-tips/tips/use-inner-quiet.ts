@@ -1,7 +1,6 @@
 import { RotationTip } from '../rotation-tip';
-import { InnerQuiet } from '../../model/actions/buff/inner-quiet';
+import { InnerQuiet, SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
 
 export class UseInnerQuiet extends RotationTip {
 

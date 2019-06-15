@@ -1,9 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { PrudentTouch } from '../../model/actions/quality/prudent-touch';
-import { ManipulationII } from '../../model/actions/buff/manipulation-ii';
-import { HastyTouchII } from '../../model/actions/quality/hasty-touch-ii';
+import { HastyTouchII, ManipulationII, PrudentTouch, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class UsePrudentTouchManipulation extends RotationTip {
 

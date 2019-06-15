@@ -19,7 +19,7 @@ import { OauthService } from './oauth.service';
 
     AngularFireAuthModule,
 
-    NgZorroAntdModule,
+    NgZorroAntdModule
   ],
   providers: [OauthService],
   declarations: [RegisterPopupComponent, LoginPopupComponent, CharacterLinkPopupComponent],

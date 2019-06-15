@@ -13,8 +13,8 @@ const getLoaded = createSelector(
 const getCharacters = createSelector(
   getAuthState,
   (state: AuthState) => {
-    if(state.characters.find(c => c.Character === null)){
-      console.error(`Ghost character detected: user ${state.uid}`)
+    if (state.characters.find(c => c.Character === null)) {
+      console.error(`Ghost character detected: user ${state.uid}`);
     }
     return state.characters.filter(c => c.Character !== null);
   }
@@ -30,7 +30,7 @@ const getMainCharacter = createSelector(
     // If we couldn't find it, it's maybe because it's a custom one (for KR servers)
     if (character === undefined && state.user !== null) {
       const custom = <Character>state.user.customCharacters.find(c => c.ID === state.user.defaultLodestoneId);
-      return custom? custom : null;
+      return custom ? custom : null;
     }
     return character ? character.Character : null;
   }

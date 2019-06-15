@@ -141,7 +141,7 @@ export class NodeComponent extends TeamcraftPageComponent {
     );
   }
 
-  public generateAlarm(xivapiNode: any, itemId?:number): Partial<Alarm> {
+  public generateAlarm(xivapiNode: any, itemId?: number): Partial<Alarm> {
     const nodes = this.gtBell.getAllNodes({ obj: { i: itemId || xivapiNode.gtNode.items[0].id } });
     const node = nodes.find(n => n.nodeId === xivapiNode.ID);
     const alarm: any = {

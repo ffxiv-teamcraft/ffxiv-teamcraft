@@ -1,8 +1,6 @@
-import { SimulationResult } from '../simulation/simulation-result';
+import { CraftingAction, CraftingJob, SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from './rotation-tip-type';
-import { CraftingAction } from '../model/actions/crafting-action';
 import { Class, Instantiable } from '@kaiu/serializer';
-import { CraftingJob } from '../model/crafting-job.enum';
 
 export abstract class RotationTip {
 

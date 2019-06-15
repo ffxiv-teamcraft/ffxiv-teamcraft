@@ -6,7 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ActionComponent } from './components/action/action.component';
-import { CraftingActionsRegistry } from './model/crafting-actions-registry';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { CustomSimulatorPageComponent } from './components/custom-simulator-page/custom-simulator-page.component';
@@ -156,7 +155,6 @@ const routes: Routes = [
     CommunityRotationPopupComponent
   ],
   providers: [
-    CraftingActionsRegistry,
     ConsumablesService,
     FreeCompanyActionsService
   ]

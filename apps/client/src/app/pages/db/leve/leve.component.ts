@@ -116,7 +116,7 @@ export class LeveComponent extends TeamcraftPageComponent {
                 en: item.Name_en,
                 de: item.Name_de,
                 ja: item.Name_ja,
-                fr: item.Name_fr,
+                fr: item.Name_fr
               },
               icon: item.Icon,
               amount: leve.BattleLeve[`ItemsInvolvedQty${index}`],
@@ -136,7 +136,7 @@ export class LeveComponent extends TeamcraftPageComponent {
             const enemy = leve.BattleLeve[`BNpcName${index}`];
             enemies.push({
               id: enemy.ID,
-              level: leve.BattleLeve[`EnemyLevel${index}`],
+              level: leve.BattleLeve[`EnemyLevel${index}`]
             });
             return enemies;
           }, []);
@@ -152,16 +152,16 @@ export class LeveComponent extends TeamcraftPageComponent {
           .reduce((rewards, index) => {
             const group = leve.LeveRewardItem[`LeveRewardItemGroup${index}`];
             rewards.push(...[0, 1, 2, 3, 4, 5, 6, 7, 8]
-                .filter(itemIndex => group[`Item${itemIndex}TargetID`] > 0)
-                .reduce((items, itemIndex, i, array) => {
-                  items.push({
-                    id: group[`Item${itemIndex}TargetID`],
-                    amount: group[`Count${itemIndex}`],
-                    hq: group[`HQ${itemIndex}`] === 1,
-                    chances: Math.floor(leve.LeveRewardItem[`Probability%${index}`] / array.length)
-                  });
-                  return items;
-                }, [])
+              .filter(itemIndex => group[`Item${itemIndex}TargetID`] > 0)
+              .reduce((items, itemIndex, i, array) => {
+                items.push({
+                  id: group[`Item${itemIndex}TargetID`],
+                  amount: group[`Count${itemIndex}`],
+                  hq: group[`HQ${itemIndex}`] === 1,
+                  chances: Math.floor(leve.LeveRewardItem[`Probability%${index}`] / array.length)
+                });
+                return items;
+              }, [])
             );
             return rewards;
           }, []);
