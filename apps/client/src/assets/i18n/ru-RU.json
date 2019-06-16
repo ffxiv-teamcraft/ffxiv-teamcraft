@@ -1306,7 +1306,7 @@
     }
   },
   "SEARCH_TYPES": {
-    "Item": "Item",
+    "Item": "Предмет",
     "Recipe": "Рецепт",
     "Instance": "Инстанс",
     "Quest": "Квест",
@@ -1335,7 +1335,7 @@
     "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
     "Desynth": "You can find ideal items to level up desynth in desynth page.",
     "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
-    "3D_model": "You can preview 3D model of items inside the database.",
+    "3D_model": "Вы можете просмотреть 3D модель предметов внутри базы данных.",
     "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
     "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
     "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
@@ -1346,14 +1346,14 @@
     "No_missing_ingredients": "Нет недостающих ингредиентов",
     "Missing_X_ingredients": "Отсутствует {{amount}} компонент(ов)",
     "Missing": "Отсутствует",
-    "Results": "Возможный крафт",
+    "Results": "Возможные рецепты для крафта",
     "Basket": "Корзина",
     "Add_to_basket": "Добавить в корзину",
     "Remove_from_basket": "Убрать из корзины",
-    "Search": "Find recipes",
-    "Generate_list": "Add to list",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
-    "Empty_basket": "Your basket is empty",
-    "Add_item": "Add item"
+    "Search": "Найти рецепты",
+    "Generate_list": "Добавить в список",
+    "Description": "Введите предметы, которые у вас есть, и нажмите \"Найти рецепты\", чтобы получить список возможных рецептов и создать список для крафта из результатов.",
+    "Empty_basket": "Ваша корзина пустая",
+    "Add_item": "Добавить предмет"
   }
 }
