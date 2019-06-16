@@ -1156,8 +1156,8 @@
     "Used_for_trades": "Trades",
     "Can_contain_items": "Can contain items",
     "Open_in_db": "View details inside the database",
-    "Team_size": "Team size",
-    "Time": "Duration",
+    "Team_size": "Размер группы",
+    "Time": "Длительность",
     "Min_level": "Уровень мин.",
     "Min_ilevel": "ilvl мин.",
     "Sync_to": "Уровень макс.",
@@ -1190,7 +1190,7 @@
     "Limited": "Limited spawn",
     "3d_model_viewer": "3D model preview",
     "3d_model_help": "Preview 3D model",
-    "Achievements": "Achievements",
+    "Achievements": "Достижения",
     "NODE": {
       "Items": "Предметы",
       "Possible_bonuses": "Возможные бонусы",
@@ -1200,7 +1200,7 @@
     },
     "QUEST": {
       "Steps": "Шаги",
-      "Unlocked_by": "Unlocked by",
+      "Unlocked_by": "Разблокировано",
       "Next_quests": "Следующие квесты",
       "Involved_npcs": "Involved npcs",
       "Journal_entries": "Journal entries",
@@ -1221,12 +1221,12 @@
     },
     "FIGHT_TYPE": {
       "Boss": "Босс",
-      "MidBoss": "Boss"
+      "MidBoss": "Босс"
     },
     "LEVE": {
-      "Required_items": "Required items",
+      "Required_items": "Необходимые предметы",
       "Allowance_cost": "Allowance cost",
-      "Rewards": "Possible rewards",
+      "Rewards": "Возможные награды",
       "Client": "Client",
       "Issuer": "Issuer"
     },
@@ -1320,7 +1320,7 @@
     "Action": "Действие",
     "Status": "Статус",
     "Trait": "Trait",
-    "Any": "Все",
+    "Any": "Любое",
     "Achievement": "Достижение"
   },
   "SEARCH_FILTERS": {
