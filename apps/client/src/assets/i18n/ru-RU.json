@@ -175,7 +175,7 @@
   "No_quests_found": "Квесты не найдены",
   "No_npcs_found": "NPC не найдены",
   "No_mobs_found": "Монстры не найдены",
-  "No_lore_entries": "No lore entries found",
+  "No_lore_entries": "Истории не найдены",
   "No_fates_found": "FATE'ы не найдены",
   "No_maps_found": "Карты не найдены",
   "No_actions_found": "Действия не найдены",
@@ -434,7 +434,7 @@
       "Title": "Список завершен",
       "Content": "Этот лист завершен, что вы хотите с ним сделать?",
       "Delete": "Удалить список",
-      "Clear": "Очистить списокписок",
+      "Clear": "Очистить список",
       "Reset": "Обновить список",
       "Nothing": "Ничего"
     },
