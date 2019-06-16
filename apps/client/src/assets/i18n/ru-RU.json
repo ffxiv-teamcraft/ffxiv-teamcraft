@@ -499,7 +499,8 @@
         "REQUIREMENTS": "Требования",
         "REMOVE_ITEM": "Удалить предмет из списка",
         "ADD_TAG": "Добавить тег к предмету",
-        "MARK_AS_DONE_IN_LOG": "Отметить как сделано внутри журнала"
+        "MARK_AS_DONE_IN_LOG": "Отметить как сделано внутри журнала",
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
       }
     },
     "LAYOUT": {
