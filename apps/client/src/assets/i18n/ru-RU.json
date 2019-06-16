@@ -1181,7 +1181,7 @@
     "Map": "Карта",
     "Leves": "Leves",
     "GC_Delivery": "GC Delivery",
-    "Drop_rate": "Drop Rate",
+    "Drop_rate": "Шанс дропа",
     "Involved_monsters": "Involved monsters",
     "Reduces_to": "Reduces to",
     "Icons_shown": "Data to show",
@@ -1192,35 +1192,35 @@
     "3d_model_help": "Preview 3D model",
     "Achievements": "Achievements",
     "NODE": {
-      "Items": "Items",
-      "Possible_bonuses": "Possible bonuses",
-      "Bonus_condition": "Condition",
+      "Items": "Предметы",
+      "Possible_bonuses": "Возможные бонусы",
+      "Bonus_condition": "Состояние",
       "Spawn_duration": "Spawn duration",
       "Spawns": "Spawn times"
     },
     "QUEST": {
-      "Steps": "Steps",
+      "Steps": "Шаги",
       "Unlocked_by": "Unlocked by",
-      "Next_quests": "Next quests",
+      "Next_quests": "Следующие квесты",
       "Involved_npcs": "Involved npcs",
       "Journal_entries": "Journal entries",
-      "Dialogues": "Dialogues",
-      "Start": "Start",
-      "End": "End",
-      "Rewards": "Rewards",
-      "Repeatable": "Repeatable",
+      "Dialogues": "Диалог",
+      "Start": "Начало",
+      "End": "Конец",
+      "Rewards": "Награда",
+      "Repeatable": "Повторяемый",
       "Beast_tribe_rank": "Beast tribe rank"
     },
     "NPC": {
       "Other_entries": "Other appearances",
       "Default_talk": "Base dialogues",
-      "Quests": "Quests",
-      "Shops": "Shops",
+      "Quests": "Квесты",
+      "Shops": "Магазины",
       "Leves": "Leves",
       "Trades": "Trades"
     },
     "FIGHT_TYPE": {
-      "Boss": "Boss",
+      "Boss": "Босс",
       "MidBoss": "Boss"
     },
     "LEVE": {
@@ -1246,9 +1246,9 @@
       "Instant": "Instant",
       "Range": "Range",
       "Melee": "Melee",
-      "Radius": "Radius",
-      "Cooldown": "Cooldown",
-      "Pvp_action": "PvP action",
+      "Radius": "Радиус",
+      "Cooldown": "Откат",
+      "Pvp_action": "PvP действие",
       "Breaks_unrelated_combo": "Breaks unrelated combos",
       "Movement_action": "Movement action",
       "Possible_targets": "Possible targets",
@@ -1261,10 +1261,10 @@
       "Cost": "Cost",
       "Related_traits": "Related traits",
       "TARGET": {
-        "Party": "Party",
+        "Party": "Группа",
         "Dead": "Dead",
         "Hostile": "Hostile",
-        "Self": "Self"
+        "Self": "Себя"
       },
       "COST_TYPE": {
         "HP": "HP",
@@ -1295,12 +1295,12 @@
       "Type_debuff": "Debuff"
     },
     "COMMENTS": {
-      "Title": "Comments",
-      "Reply": "Reply",
-      "Show_less": "Show less",
-      "Add_comment": "Add a comment",
-      "Show_more": "Show {{amount}} more comments",
-      "No_comments": "No comments",
+      "Title": "Комментарии",
+      "Reply": "Ответить",
+      "Show_less": "Показать меньше",
+      "Add_comment": "Добавить комментарий",
+      "Show_more": "Показать еще {{amount}} комментариев",
+      "No_comments": "Нет комментариев",
       "Post": "Post",
       "Editor_tip": "Database links will be processed and handled inside your message."
     }
