@@ -13,7 +13,7 @@ import { CoreModule } from '../../core/core.module';
     NgZorroAntdModule
   ],
   declarations: [FavoriteButtonComponent],
-  exports: [FavoriteButtonComponent],
+  exports: [FavoriteButtonComponent]
 })
 export class FavoritesModule {
 }

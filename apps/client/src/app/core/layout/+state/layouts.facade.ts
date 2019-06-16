@@ -111,7 +111,8 @@ export class LayoutsFacade {
                   reverseTiers: row.reverseTiers,
                   filterChain: row.filter.name,
                   hideIfEmpty: row.hideIfEmpty,
-                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : row.collapsedByDefault,
+                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false,
+                  collapsedByDefault: row.collapsedByDefault,
                   layoutRow: row,
                   layout: layout
                 };

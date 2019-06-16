@@ -34,7 +34,7 @@ export class CharacterService {
                     })
                   );
                 }
-                if(!user.defaultLodestoneId && !user.lodestoneIds[0]){
+                if (!user.defaultLodestoneId && !user.lodestoneIds[0]) {
                   return of(null);
                 }
                 return this.xivapi.getCharacter(user.defaultLodestoneId || user.lodestoneIds[0].id).pipe(

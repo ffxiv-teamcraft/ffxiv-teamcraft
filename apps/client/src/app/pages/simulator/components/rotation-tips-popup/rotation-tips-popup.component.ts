@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RotationTip } from '../../rotation-tips/rotation-tip';
-import { SimulationResult } from '../../simulation/simulation-result';
+import { SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-rotation-tips-popup',

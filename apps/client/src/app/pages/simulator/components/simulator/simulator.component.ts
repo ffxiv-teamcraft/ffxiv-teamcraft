@@ -1,13 +1,5 @@
 import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { CraftingAction } from '../../model/actions/crafting-action';
-import { ActionType } from '../../model/actions/action-type';
-import { CraftingActionsRegistry } from '../../model/crafting-actions-registry';
-import { Simulation } from '../../simulation/simulation';
 import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject, Subject } from 'rxjs';
-import { CrafterLevels, CrafterStats } from '../../model/crafter-stats';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { EffectiveBuff } from '../../model/effective-buff';
-import { Buff } from '../../model/buff.enum';
 import { Craft } from '../../../../model/garland-tools/craft';
 import {
   debounceTime,
@@ -22,11 +14,9 @@ import {
   tap
 } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
-import { SimulationReliabilityReport } from '../../simulation/simulation-reliability-report';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { Item } from '../../../../model/garland-tools/item';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { GearSet } from '../../model/gear-set';
 import { ConsumablesService } from '../../model/consumables.service';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
 import { Consumable } from '../../model/consumable';
@@ -48,7 +38,6 @@ import { Language } from '../../../../core/data/language';
 import { MacroPopupComponent } from '../macro-popup/macro-popup.component';
 import { SimulationMinStatsPopupComponent } from '../simulation-min-stats-popup/simulation-min-stats-popup.component';
 import { StepByStepReportComponent } from '../step-by-step-report/step-by-step-report.component';
-import { CraftingJob } from '../../model/crafting-job.enum';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
@@ -60,6 +49,20 @@ import { RotationTipsPopupComponent } from '../rotation-tips-popup/rotation-tips
 import { DirtyScope } from '../../../../core/dirty/dirty-scope';
 import { DirtyFacade } from '../../../../core/dirty/+state/dirty.facade';
 import { CommunityRotationPopupComponent } from '../community-rotation-popup/community-rotation-popup.component';
+import {
+  ActionType,
+  Buff,
+  CrafterLevels,
+  CrafterStats,
+  CraftingAction,
+  CraftingActionsRegistry,
+  CraftingJob,
+  EffectiveBuff,
+  GearSet,
+  Simulation,
+  SimulationReliabilityReport,
+  SimulationResult
+} from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-simulator',
@@ -216,7 +219,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
   };
 
-  constructor(public registry: CraftingActionsRegistry, private htmlTools: HtmlToolsService,
+  constructor(private htmlTools: HtmlToolsService,
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
@@ -262,7 +265,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   getCraftOptExportString(): string {
-    return this.registry.exportToCraftOpt(this.registry.serializeRotation(this.actions$.value));
+    return CraftingActionsRegistry.exportToCraftOpt(CraftingActionsRegistry.serializeRotation(this.actions$.value));
   }
 
   changeRecipe(rotation: CraftingRotation): void {
@@ -320,7 +323,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }).afterClose
       .pipe(
         filter(res => res !== undefined && res !== null && res.length > 0 && res.indexOf('[') > -1),
-        map(res => this.registry.importFromCraftOpt(JSON.parse(res))),
+        map(res => CraftingActionsRegistry.importFromCraftOpt(JSON.parse(res))),
         first()
       ).subscribe(actions => this.actions$.next(actions));
   }
@@ -412,7 +415,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           }
           return actionIds;
         }),
-        map(actionIds => this.registry.createFromIds(actionIds)),
+        map(actionIds => CraftingActionsRegistry.createFromIds(actionIds)),
         first()
       ).subscribe(actions => this.actions$.next(actions));
   }
@@ -436,7 +439,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         control: stats._control,
         level: stats.level
       };
-      rotation.rotation = this.registry.serializeRotation(actions);
+      rotation.rotation = CraftingActionsRegistry.serializeRotation(actions);
       rotation.custom = this.custom;
       if (this.selectedFood) {
         rotation.food = { id: this.selectedFood.itemId, hq: this.selectedFood.hq };
@@ -504,12 +507,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
   }
 
-  toggleFailAction(index:number):void{
+  toggleFailAction(index: number): void {
     const forceFailed = this.forceFailed$.value;
-    if(forceFailed.some(i => i === index)){
-      this.forceFailed$.next(forceFailed.filter(i => i !== index))
-    }else {
-      this.forceFailed$.next([...forceFailed, index])
+    if (forceFailed.some(i => i === index)) {
+      this.forceFailed$.next(forceFailed.filter(i => i !== index));
+    } else {
+      this.forceFailed$.next([...forceFailed, index]);
     }
   }
 
@@ -634,31 +637,31 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   getProgressActions(): CraftingAction[] {
-    return this.registry.getActionsByType(ActionType.PROGRESSION);
+    return CraftingActionsRegistry.getActionsByType(ActionType.PROGRESSION);
   }
 
   getQualityActions(): CraftingAction[] {
-    return this.registry.getActionsByType(ActionType.QUALITY);
+    return CraftingActionsRegistry.getActionsByType(ActionType.QUALITY);
   }
 
   getCpRecoveryActions(): CraftingAction[] {
-    return this.registry.getActionsByType(ActionType.CP_RECOVERY);
+    return CraftingActionsRegistry.getActionsByType(ActionType.CP_RECOVERY);
   }
 
   getBuffActions(): CraftingAction[] {
-    return this.registry.getActionsByType(ActionType.BUFF);
+    return CraftingActionsRegistry.getActionsByType(ActionType.BUFF);
   }
 
   getSpecialtyActions(): CraftingAction[] {
-    return this.registry.getActionsByType(ActionType.SPECIALTY);
+    return CraftingActionsRegistry.getActionsByType(ActionType.SPECIALTY);
   }
 
   getRepairActions(): CraftingAction[] {
-    return this.registry.getActionsByType(ActionType.REPAIR);
+    return CraftingActionsRegistry.getActionsByType(ActionType.REPAIR);
   }
 
   getOtherActions(): CraftingAction[] {
-    return this.registry.getActionsByType(ActionType.OTHER);
+    return CraftingActionsRegistry.getActionsByType(ActionType.OTHER);
   }
 
   saveSafeMode(value: boolean): void {
@@ -812,7 +815,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       takeUntil(this.onDestroy$)
     ).subscribe(([rotation, stats, rotationChanged]: [CraftingRotation, CrafterStats, boolean]) => {
       if (this.actions$.value.length === 0 || rotationChanged) {
-        this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
+        this.actions$.next(CraftingActionsRegistry.deserializeRotation(rotation.rotation));
       }
       if (rotation.food && this.selectedFood === undefined) {
         this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);

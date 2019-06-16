@@ -1,11 +1,13 @@
 import { RotationTip } from '../rotation-tip';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { IngenuityII } from '../../model/actions/buff/ingenuity-ii';
-import { Ingenuity } from '../../model/actions/buff/ingenuity';
+import {
+  ByregotsBlessing,
+  ByregotsBrow,
+  ByregotsMiracle,
+  Ingenuity,
+  IngenuityII,
+  SimulationResult
+} from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
-import { ByregotsBlessing } from '../../model/actions/quality/byregots-blessing';
-import { ByregotsBrow } from '../../model/actions/quality/byregots-brow';
-import { ByregotsMiracle } from '../../model/actions/quality/byregots-miracle';
 
 export class UseIngenuityBeforeByregot extends RotationTip {
   constructor() {

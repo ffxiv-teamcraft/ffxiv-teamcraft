@@ -3,7 +3,7 @@ import { CustomLink } from './custom-link';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { Observable } from 'rxjs';
 import { PendingChangesService } from '../pending-changes/pending-changes.service';
-import { first, map, tap } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { FirestoreRelationalStorage } from '../storage/firestore/firestore-relational-storage';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
 

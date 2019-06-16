@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, Injectable, NgModule, PLATFORM_ID } from '@angular/core';
+import { NgModule, PLATFORM_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
@@ -47,6 +47,7 @@ import {
   FormOutline,
   InfoOutline,
   LayoutOutline,
+  LineChartOutline,
   LockOutline,
   LoginOutline,
   MessageOutline,
@@ -58,8 +59,7 @@ import {
   SettingOutline,
   ShareAltOutline,
   SolutionOutline,
-  UsergroupAddOutline,
-  LineChartOutline
+  UsergroupAddOutline
 } from '@ant-design/icons-angular/icons';
 import { UniversalInterceptor } from './universal-interceptor';
 import { DirtyModule } from './core/dirty/dirty.module';

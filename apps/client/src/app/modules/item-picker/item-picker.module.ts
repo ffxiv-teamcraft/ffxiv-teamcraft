@@ -27,4 +27,5 @@ import { PipesModule } from '../../pipes/pipes.module';
     ItemPickerService
   ]
 })
-export class ItemPickerModule { }
+export class ItemPickerModule {
+}

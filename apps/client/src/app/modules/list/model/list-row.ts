@@ -44,6 +44,7 @@ export class ListRow extends DataModel {
   quests?: number[] = [];
   treasures?: Treasure[] = [];
   fates?: FateData[] = [];
+  achievements?: number[] = [];
 
   /**
    * Is someone working on it?

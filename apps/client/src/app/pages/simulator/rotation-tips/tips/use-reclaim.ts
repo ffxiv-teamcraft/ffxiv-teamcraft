@@ -1,7 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { Reclaim } from '../../model/actions/buff/reclaim';
+import { Reclaim, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class UseReclaim extends RotationTip {
 

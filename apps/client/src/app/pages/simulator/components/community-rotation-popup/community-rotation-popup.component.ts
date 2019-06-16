@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Simulation } from '../../simulation/simulation';
+import { MakersMark, MuscleMemory, Simulation } from '@ffxiv-teamcraft/simulator';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { RotationTag } from '../community-rotations-page/rotation-tag';
 import { CommunityRotationsPageComponent } from '../community-rotations-page/community-rotations-page.component';
-import { MuscleMemory } from '../../model/actions/progression/muscle-memory';
-import { MakersMark } from '../../model/actions/buff/makers-mark';
 
 @Component({
   selector: 'app-community-rotation-popup',

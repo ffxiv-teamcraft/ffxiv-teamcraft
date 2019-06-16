@@ -28,7 +28,7 @@ export class DataService {
     npc: 2,
     leve: 3,
     mob: 2,
-    fate: 2,
+    fate: 2
   };
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 

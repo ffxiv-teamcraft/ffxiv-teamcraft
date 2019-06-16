@@ -1,0 +1,22 @@
+export const fshSpearLogOrder = [
+  'The Lochs',
+  'Loch Seld Northwestern Lakebed',
+  'Loch Seld Central Lakebed',
+  'Loch Seld Southeastern Lakebed',
+  'The Ruby Sea',
+  'Ruby Price Depths',
+  'Tamamizu',
+  'Sui-no-Sato',
+  'The Adventure',
+  'Shisui of the Violet Tides',
+  'The Kobayashi Maru',
+  'Yanxia',
+  'The One River Southwestern Riverbeds',
+  'The One River Southern Riverbeds',
+  'Imperial Hypersonic Assault Craft L-XXIII',
+  'The Sunken Junk',
+  'The Dragon\'s Struggle',
+  'The Azim Steppe',
+  'Azim Khaat Western Lakebed',
+  'Azim Khaat Eastern Lakebed'
+];

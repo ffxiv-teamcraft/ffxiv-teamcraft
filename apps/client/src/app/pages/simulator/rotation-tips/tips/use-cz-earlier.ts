@@ -1,10 +1,12 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { ComfortZone } from '../../model/actions/buff/comfort-zone';
-import { MuscleMemory } from '../../model/actions/progression/muscle-memory';
-import { MakersMark } from '../../model/actions/buff/makers-mark';
-import { InitialPreparations } from '../../model/actions/buff/initial-preparations';
+import {
+  ComfortZone,
+  InitialPreparations,
+  MakersMark,
+  MuscleMemory,
+  SimulationResult
+} from '@ffxiv-teamcraft/simulator';
 
 export class UseCzEarlier extends RotationTip {
 

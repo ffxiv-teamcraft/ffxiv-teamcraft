@@ -91,50 +91,50 @@ export class NpcComponent extends TeamcraftPageComponent {
         return gtData.npc.shops
           .filter(shop => +shop.entries[0] !== shop.entries[0])
           .map(shop => {
-          const npcEntry = this.lazyData.npcs[gtData.npc.id];
-          const npc: TradeNpc = { id: gtData.npc.id };
-          if (npcEntry.position !== null) {
-            npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
-            npc.zoneId = npcEntry.position.zoneid;
-            npc.mapId = npcEntry.position.map;
-          }
-          return {
-            shopName: shop.name,
-            npcs: [
-              npc
-            ],
-            trades: shop.entries.map(row => {
-              return <Trade>{
-                currencies: (row.currency || []).map(currency => {
-                  const partial = gtData.getPartial(currency.id, 'item');
-                  const currencyPartial = partial && partial.obj;
-                  if (currencyPartial) {
-                    return <TradeEntry>{
-                      id: currencyPartial.i,
-                      icon: currencyPartial.c,
-                      amount: currency.amount,
-                      hq: currency.hq === 1
-                    };
-                  }
-                  return undefined;
-                }).filter(res => res !== undefined),
-                items: (row.item || []).map(tradeItem => {
-                  const itemPartialFetch = gtData.getPartial(tradeItem.id, 'item');
-                  if (itemPartialFetch !== undefined) {
-                    const itemPartial = itemPartialFetch.obj;
-                    return <TradeEntry>{
-                      id: itemPartial.i,
-                      icon: itemPartial.c,
-                      amount: tradeItem.amount,
-                      hq: tradeItem.hq === 1
-                    };
-                  }
-                  return undefined;
-                }).filter(res => res !== undefined)
-              };
-            })
-          };
-        });
+            const npcEntry = this.lazyData.npcs[gtData.npc.id];
+            const npc: TradeNpc = { id: gtData.npc.id };
+            if (npcEntry.position !== null) {
+              npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
+              npc.zoneId = npcEntry.position.zoneid;
+              npc.mapId = npcEntry.position.map;
+            }
+            return {
+              shopName: shop.name,
+              npcs: [
+                npc
+              ],
+              trades: shop.entries.map(row => {
+                return <Trade>{
+                  currencies: (row.currency || []).map(currency => {
+                    const partial = gtData.getPartial(currency.id, 'item');
+                    const currencyPartial = partial && partial.obj;
+                    if (currencyPartial) {
+                      return <TradeEntry>{
+                        id: currencyPartial.i,
+                        icon: currencyPartial.c,
+                        amount: currency.amount,
+                        hq: currency.hq === 1
+                      };
+                    }
+                    return undefined;
+                  }).filter(res => res !== undefined),
+                  items: (row.item || []).map(tradeItem => {
+                    const itemPartialFetch = gtData.getPartial(tradeItem.id, 'item');
+                    if (itemPartialFetch !== undefined) {
+                      const itemPartial = itemPartialFetch.obj;
+                      return <TradeEntry>{
+                        id: itemPartial.i,
+                        icon: itemPartial.c,
+                        amount: tradeItem.amount,
+                        hq: tradeItem.hq === 1
+                      };
+                    }
+                    return undefined;
+                  }).filter(res => res !== undefined)
+                };
+              })
+            };
+          });
       })
     );
 

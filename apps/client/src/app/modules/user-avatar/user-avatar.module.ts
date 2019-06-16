@@ -21,7 +21,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NgZorroAntdModule
   ],
   declarations: [UserAvatarComponent],
-  exports: [UserAvatarComponent],
+  exports: [UserAvatarComponent]
 })
 export class UserAvatarModule {
 }

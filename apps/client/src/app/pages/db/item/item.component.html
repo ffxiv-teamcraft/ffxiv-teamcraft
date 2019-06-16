@@ -422,6 +422,34 @@
             </nz-list>
           </nz-card>
           <nz-card fxFlex="1 1 30%" class="details-card"
+                   *ngIf="data.achievements !== undefined"
+                   nzBordered="false"
+                   [nzTitle]="title">
+            <ng-template #title>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
+                <img class="img-icon round-icon" src="https://xivapi.com/c/Title.png" alt="TT">
+                <div>
+                  {{'DB.Achievements' | translate}}
+                </div>
+              </div>
+            </ng-template>
+            <nz-list [nzDataSource]="data.achievements" [nzRenderItem]="achievementTemplate"
+                     [nzItemLayout]="'horizontal'">
+              <ng-template #achievementTemplate let-achievement>
+                <nz-list-item [nzContent]="content">
+                  <nz-list-item-meta
+                    [nzAvatar]="achievement | achievementIcon | xivapiIcon"
+                    [nzTitle]="achievement | achievementName | i18n"
+                    [nzDescription]="achievementDescription">
+                    <ng-template #content>
+                      <app-db-button type="achievement" [id]="achievement"></app-db-button>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
+              </ng-template>
+            </nz-list>
+          </nz-card>
+          <nz-card fxFlex="1 1 30%" class="details-card"
                    *ngIf="data.tripleTriadPack !== undefined"
                    nzBordered="false"
                    [nzTitle]="title">

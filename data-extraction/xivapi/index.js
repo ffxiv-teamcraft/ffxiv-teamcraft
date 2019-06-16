@@ -1034,7 +1034,8 @@ if (hasTodo('aetherytes')) {
 
 if (hasTodo('achievements')) {
   const achievements = {};
-  getAllPages('https://xivapi.com/Achievement?columns=ID,Name_*').subscribe(page => {
+  const icons = {};
+  getAllPages('https://xivapi.com/Achievement?columns=ID,Name_*,Icon').subscribe(page => {
     page.Results.forEach(achievement => {
       achievements[achievement.ID] = {
         en: achievement.Name_en,
@@ -1042,9 +1043,11 @@ if (hasTodo('achievements')) {
         ja: achievement.Name_ja,
         fr: achievement.Name_fr
       };
+      icons[achievement.ID] = achievement.Icon;
     });
   }, null, () => {
     persistToTypescript('achievements', 'achievements', achievements);
+    persistToTypescript('achievement-icons', 'achievementIcons', icons);
   });
 }
 

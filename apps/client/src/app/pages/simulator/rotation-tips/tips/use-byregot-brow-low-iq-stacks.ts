@@ -1,9 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { ByregotsBlessing } from '../../model/actions/quality/byregots-blessing';
-import { Buff } from '../../model/buff.enum';
-import { ByregotsBrow } from '../../model/actions/quality/byregots-brow';
+import { Buff, ByregotsBlessing, ByregotsBrow, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class UseByregotBrowLowIqStacks extends RotationTip {
 

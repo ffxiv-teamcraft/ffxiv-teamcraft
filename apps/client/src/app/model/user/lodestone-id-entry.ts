@@ -1,4 +1,4 @@
-import { GearSet } from '../../pages/simulator/model/gear-set';
+import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { Character } from '@xivapi/angular-client';
 
 export interface LodestoneIdEntry {

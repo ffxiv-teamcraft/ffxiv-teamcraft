@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.5.3"></a>
+## [5.5.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.2...v5.5.3) (2019-06-16)
+
+
+### Bug Fixes
+
+* **fishing-log:** log order should now be closer to ingame log order ([83e9e60](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/83e9e60))
+* **layout:** fixed a bug with collapsed by default not applying properly ([e7009dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e7009dd))
+
+
+### Features
+
+* **db:** added achievement as possible data source ([3fc7528](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3fc7528))
+
+
+
 <a name="5.5.2"></a>
 ## [5.5.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.1...v5.5.2) (2019-06-14)
 

@@ -1,7 +1,7 @@
 import { Craft } from '../garland-tools/craft';
 import { ConsumableRow } from '../user/consumable-row';
 import { DataWithPermissions } from '../../core/database/permissions/data-with-permissions';
-import { GearSet } from '../../pages/simulator/model/gear-set';
+import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { CommunityRotationData } from './community-rotation-data';
 
 export class CraftingRotation extends DataWithPermissions {

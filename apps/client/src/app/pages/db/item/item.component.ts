@@ -703,6 +703,16 @@ export class ItemComponent extends TeamcraftPageComponent {
         })
       );
     }
+    if (xivapiItem.GameContentLinks) {
+      if (xivapiItem.GameContentLinks.Achievement && xivapiItem.GameContentLinks.Achievement.Item) {
+        res$ = res$.pipe(
+          map(res => {
+            res.achievements = xivapiItem.GameContentLinks.Achievement.Item;
+            return res;
+          })
+        );
+      }
+    }
     if (gtData.item.quests) {
       res$ = res$.pipe(
         map(res => {

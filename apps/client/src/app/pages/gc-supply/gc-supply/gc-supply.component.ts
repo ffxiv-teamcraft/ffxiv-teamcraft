@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { combineLatest, concat, Observable, of, Subject } from 'rxjs';
-import { GearSet } from '../../simulator/model/gear-set';
+import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';

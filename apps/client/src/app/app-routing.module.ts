@@ -119,7 +119,7 @@ const routes: Routes = [
   {
     path: 'recipe-finder',
     loadChildren: './pages/recipe-finder/recipe-finder.module#RecipeFinderModule'
-  },
+  }
 ];
 
 @NgModule({

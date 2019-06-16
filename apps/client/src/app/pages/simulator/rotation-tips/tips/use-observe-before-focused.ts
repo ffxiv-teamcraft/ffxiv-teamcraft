@@ -1,9 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { FocusedSynthesis } from '../../model/actions/progression/focused-synthesis';
-import { FocusedTouch } from '../../model/actions/quality/focused-touch';
-import { Observe } from '../../model/actions/other/observe';
+import { FocusedSynthesis, FocusedTouch, Observe, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class UseObserveBeforeFocused extends RotationTip {
 
