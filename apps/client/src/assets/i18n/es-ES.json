@@ -499,7 +499,8 @@
         "REQUIREMENTS": "Requisitos",
         "REMOVE_ITEM": "Quitar elemento de la lista",
         "ADD_TAG": "Añadir etiqueta al artículo",
-        "MARK_AS_DONE_IN_LOG": "Marcar como hecho en el registro"
+        "MARK_AS_DONE_IN_LOG": "Marcar como hecho en el registro",
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
       }
     },
     "LAYOUT": {
