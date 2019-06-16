@@ -68,7 +68,7 @@
                     </nz-list-item-meta>
                   </nz-list-item>
                   <ng-template #actionClose>
-                    <i nz-icon type="close" (click)="deleteNotification(notification)"></i>
+                    <i nz-icon type="close" (click)="$event.stopPropagation();deleteNotification(notification)"></i>
                   </ng-template>
                   <ng-template #actionOpen>
                     <a [routerLink]="notification.route">
