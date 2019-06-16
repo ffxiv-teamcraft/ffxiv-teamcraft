@@ -499,7 +499,8 @@
         "REQUIREMENTS": "Requirements",
         "REMOVE_ITEM": "Remove item from the list",
         "ADD_TAG": "Add tag to item",
-        "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
+        "MARK_AS_DONE_IN_LOG": "Mark as done inside log",
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
       }
     },
     "LAYOUT": {
