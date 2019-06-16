@@ -499,7 +499,8 @@
         "REQUIREMENTS": "要求",
         "REMOVE_ITEM": "从清单中删除物品",
         "ADD_TAG": "添加标签到物品",
-        "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成"
+        "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成",
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
       }
     },
     "LAYOUT": {
