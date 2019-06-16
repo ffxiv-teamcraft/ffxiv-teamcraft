@@ -1,6 +1,6 @@
 {
   "Quests": "Квесты",
-  "Search_placeholder": "{{type}} name",
+  "Search_placeholder": "{{type}} название",
   "Pick_a_list": "Выбрать список",
   "Pick_a_user": "Выбрать пользователя",
   "Pick_a_fc": "Выбрать FC",
@@ -56,7 +56,7 @@
   "Mute_alarms": "Скрыть оповещения",
   "Hide_used": "Скрыть используемые строки",
   "Collapse_if_done": "Свернуть, если завершено",
-  "Collapse_by_default": "Collapse by default",
+  "Collapse_by_default": "Свернуть по умолчанию",
   "Retainer_ventures": "Авантюрист",
   "Requires_x_ventures": "Требуется {{amount}} предприятий чтобы получить все",
   "WORKSHOP": {
