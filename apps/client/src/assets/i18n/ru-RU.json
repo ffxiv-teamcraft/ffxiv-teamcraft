@@ -989,16 +989,16 @@
     "Weather_dependant": "Only with some weathers",
     "View_on_ff14angler": "Подробнее на ff14angler",
     "Required_for_achievement": "Требуется для получения achievement'a",
-    "Select_spot": "Select a spot to see its details",
+    "Select_spot": "Выберите точку, чтобы увидеть его детали",
     "Hide_completed": "Hide completed recipes",
     "MIN_optimized_path": "Optimized path for all MIN nodes",
     "BTN_optimized_path": "Optimized path for all BTN nodes",
     "PAGE": {
-      "Master_recipes": "Master recipes ({{number}})",
+      "Master_recipes": "Рецепты мастера ({{number}})",
       "Housing_items": "Housing({{number}})",
       "Others": "Прочее",
       "Dyes": "Краски",
-      "Other_master_recipes": "Other Master Recipes",
+      "Other_master_recipes": "Другие рецепты мастера",
       "Deliveries": "Доставки",
       "Quests": "Квесты"
     }
@@ -1026,7 +1026,7 @@
     "No_items": "You have no custom items",
     "DETAILS": {
       "Level": "Уровень",
-      "None": "none",
+      "None": "ничего",
       "Stars": "Звезды",
       "Requirements": "Требования",
       "Add_requirement": "Добавить требование",
@@ -1080,7 +1080,7 @@
     }
   },
   "DIRTY": {
-    "Dialog_title": "You have unsaved changes",
+    "Dialog_title": "Остались несохраненные изменения",
     "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
   },
   "GC_SUPPLY": {
