@@ -499,7 +499,7 @@
         "REQUIREMENTS": "Требования",
         "REMOVE_ITEM": "Удалить предмет из списка",
         "ADD_TAG": "Добавить тег к предмету",
-        "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
+        "MARK_AS_DONE_IN_LOG": "Отметить как сделано внутри журнала"
       }
     },
     "LAYOUT": {
@@ -728,11 +728,11 @@
       "Min_cp_filter_placeholder": "Мин. CP",
       "Intro": "Добавьте фильтры, чтобы начать",
       "Result_tooltip": "Result of a simulation run using this rotation and your stats",
-      "Fail": "Fail",
-      "Success": "Success: {{HQ}}% HQ",
-      "Set_to_simulate": "Stats",
+      "Fail": "Провал",
+      "Success": "Успешно: {{HQ}}% HQ",
+      "Set_to_simulate": "Характеристики",
       "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
-      "Steps_count": "{{count}} steps",
+      "Steps_count": "{{count}} шагов",
       "TAGS": {
         "SPECIALIST": "Специалист",
         "NOT_SPECIALIST": "Не специалист",
