@@ -229,7 +229,7 @@
   "Game_Term/DoH": "Крафтеры",
   "Game_Term/DoL": "Собиратели",
   "MIN/BTN": "Miner / Botanist",
-  "Game_Term/FSH": "Fisher",
+  "Game_Term/FSH": "Рыбак",
   "Reduction": "Снижение",
   "Upgrade_list": "Восстановить список с учётом последнего обновления",
   "List_recreated": "Восстановить список правильно",
@@ -328,7 +328,7 @@
     "Show_all_alarms": "Всегда показывать все оповещения",
     "Amount_display_mode": "Режим отображения списков",
     "Amount_display_mode_remaining": "Remaining",
-    "Amount_display_mode_total": "Total",
+    "Amount_display_mode_total": "Всего",
     "Starting_place": "Начальная локация",
     "Starting_place_explain": "Используется для оптимизации пути",
     "Free_aetheryte": "Бесплатный aetheryte",
@@ -851,8 +851,8 @@
     "Copy_panel_as_text": "Скопировать эту панель как текст",
     "Check_precraft_prices": "Check for cheaper prices inside marketboard",
     "Craft_price": "Crafting price",
-    "Marketboard_price": "NQ price",
-    "Marketboard_price_hq": "HQ price"
+    "Marketboard_price": "Цена NQ",
+    "Marketboard_price_hq": "Цена HQ"
   },
   "LEVEQUESTS": {
     "Title": "Ливквесты",
@@ -999,7 +999,7 @@
       "Others": "Прочее",
       "Dyes": "Краски",
       "Other_master_recipes": "Other Master Recipes",
-      "Deliveries": "Deliveries",
+      "Deliveries": "Доставки",
       "Quests": "Квесты"
     }
   },
@@ -1048,7 +1048,7 @@
         "Title": "Оповещения"
       },
       "VENDORS": {
-        "Title": "Vendors",
+        "Title": "Продавцы",
         "Npc_name": "Имя NPC",
         "Price": "Цена",
         "Delete_vendor": "Delete vendor"
