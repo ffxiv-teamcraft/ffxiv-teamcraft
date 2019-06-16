@@ -499,7 +499,8 @@
         "REQUIREMENTS": "Prérequis",
         "REMOVE_ITEM": "Supprimer l’élément de la liste",
         "ADD_TAG": "Ajouter un tag à l'élément",
-        "MARK_AS_DONE_IN_LOG": "Marquer comme fait dans le livre de recettes"
+        "MARK_AS_DONE_IN_LOG": "Marquer comme fait dans le livre de recettes",
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
       }
     },
     "LAYOUT": {
