@@ -849,10 +849,10 @@
     "Content_copied": "클립보드로 내용이 복사되었습니다.",
     "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)",
     "Copy_panel_as_text": "이 패널을 텍스트로 복사",
-    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
-    "Craft_price": "Crafting price",
-    "Marketboard_price": "NQ price",
-    "Marketboard_price_hq": "HQ price"
+    "Check_precraft_prices": "장터게시판에서 최저가를 확인하세요",
+    "Craft_price": "제작 단가",
+    "Marketboard_price": "NQ 가격",
+    "Marketboard_price_hq": "HQ 가격"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
@@ -930,7 +930,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Information",
+    "Title": "장터게시판 정보",
     "Error": "현재 XIVAPI 또는 컴패니언 API에 문제가 있습니다. 잠시 후 다시 시도하시길 바랍니다.",
     "Amount": "수량",
     "HQ": "HQ",
@@ -1190,6 +1190,7 @@
     "Limited": "한정 채집",
     "3d_model_viewer": "3D 모델링 미리보기",
     "3d_model_help": "3D 모델링 미리보기",
+    "Achievements": "업적",
     "NODE": {
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
