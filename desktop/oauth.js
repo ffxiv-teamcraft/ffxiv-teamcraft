@@ -29,7 +29,8 @@ module.exports = function(config) {
         alwaysOnTop: true,
         autoHideMenuBar: true,
         webPreferences: {
-          nodeIntegration: false
+          contextIsolation: false,
+          webviewTag: true
         }
       });
 

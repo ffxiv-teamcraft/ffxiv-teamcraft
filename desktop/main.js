@@ -85,6 +85,7 @@ function createWindow() {
   let opts = {
     show: false,
     backgroundColor: '#000',
+    autoHideMenuBar: true,
     frame: true,
     icon: `file://${BASE_APP_PATH}/assets/app-icon.png`,
     title: 'FFXIV Teamcraft',
@@ -100,7 +101,6 @@ function createWindow() {
   if (config.get('win:fullscreen')) {
     win.maximize();
   }
-  win.setMenuBarVisibility(false);
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
   //// uncomment below to open the DevTools.
