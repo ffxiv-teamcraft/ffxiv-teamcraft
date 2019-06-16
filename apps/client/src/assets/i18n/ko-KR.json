@@ -500,7 +500,7 @@
         "REMOVE_ITEM": "목록에서 이 아이템을 제거",
         "ADD_TAG": "아이템에 태그 추가",
         "MARK_AS_DONE_IN_LOG": "수첩에 완료됨으로 표시",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "장터게시판 정보"
       }
     },
     "LAYOUT": {
