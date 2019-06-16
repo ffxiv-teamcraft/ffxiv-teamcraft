@@ -1227,7 +1227,7 @@
       "Required_items": "Необходимые предметы",
       "Allowance_cost": "Allowance cost",
       "Rewards": "Возможные награды",
-      "Client": "Client",
+      "Client": "Клиент",
       "Issuer": "Issuer"
     },
     "MOB": {
@@ -1235,9 +1235,9 @@
       "Known_drops": "Known drops"
     },
     "DATA_TYPE": {
-      "fate": "Fates",
-      "mob": "Monsters",
-      "npc": "NPCs",
+      "fate": "Fate'ы",
+      "mob": "Монстры",
+      "npc": "NPC",
       "node": "Nodes",
       "hunt": "Hunts"
     },
@@ -1283,10 +1283,10 @@
       }
     },
     "TRAIT": {
-      "Related_actions": "Related actions"
+      "Related_actions": "Связанные действия"
     },
     "STATUS": {
-      "Max_stacks": "Max stacks",
+      "Max_stacks": "Макс. стаков",
       "Locks_actions": "Locks actions",
       "Locks_control": "Locks control",
       "Locks_movement": "Locks movement",
