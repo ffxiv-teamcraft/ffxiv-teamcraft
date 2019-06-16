@@ -427,8 +427,8 @@
     "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
     "Quick_layout_swap": "Quick layout swap",
     "INVENTORY": {
-      "Show_final_items": "Show final items",
-      "Hide_final_items": "Hide final items"
+      "Show_final_items": "Показать конечные предметы",
+      "Hide_final_items": "Скрыть конечные предметы"
     },
     "COMPLETION_POPUP": {
       "Title": "Список завершен",
@@ -456,7 +456,7 @@
     "Missing_tags_before_button": "Этот список отображается как список сообщества, но не содержит тегов, пожалуйста, добавьте несколько тегов с ",
     "Missing_tags_after_button": " кнопка",
     "Add_remove_amount": "Добавить/удалить данное количество",
-    "Add_from_external": "Add as external (you didn't use materials for it)",
+    "Add_from_external": "Добавить как внешний (вы не использовали материалы для этого)",
     "Missing_masterbook": "Этой книги нет в вашем профиле. Нажмите здесь, чтобы добавить её в профиль.",
     "No_note": "Нет заметок",
     "Edit_note": "Нет заметок",
@@ -491,7 +491,7 @@
         "COMMENTS": "Комментарии",
         "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
         "ADD_ALL_ALARMS": "Добавить все оповещения",
-        "WORK_ON_IT": "Work on it",
+        "WORK_ON_IT": "Работать над этим",
         "ASSIGN_TEAM_MEMBER": "Назначить членов группы",
         "EDIT_AMOUNT": "Изменить количество",
         "MARK_HQ": "Отметить как HQ",
@@ -596,7 +596,7 @@
     "Hidden_item": "Скрытый",
     "Fish_eyes": "Требуется \"fish eyes\"",
     "Snagging": "Требуется \"snagging\"",
-    "Predators": "Fish these fish before",
+    "Predators": "Ловите этих рыб до",
     "Fish_eyes_duration": "Для того, чтобы поймать рыбу, на \"fish eyes\" должно оставаться столько секунд. Нажмите, чтобы изменить формат.",
     "Spawned_for": "Деспавнится через {{timer}}",
     "Will_spawn_in": "Заспавнится через {{timer}}",
@@ -727,7 +727,7 @@
       "Min_control_filter_placeholder": "Мин. Контроль",
       "Min_cp_filter_placeholder": "Мин. CP",
       "Intro": "Добавьте фильтры, чтобы начать",
-      "Result_tooltip": "Result of a simulation run using this rotation and your stats",
+      "Result_tooltip": "Результат моделирования при помощи этой ротации и ваших характеристик",
       "Fail": "Провал",
       "Success": "Успешно: {{HQ}}% HQ",
       "Set_to_simulate": "Характеристики",
@@ -814,9 +814,9 @@
       "NO_INNER_QUIET": "Попытка использования действия, связанного с Inner Quiet без включённого Inner Quiet"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
-      "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
-      "Use_ingenuity_I_instead": "You should use Ingenuity I instead of II to lower cost by 8CP, as it will be enough to finish the craft.",
+      "Use_inner_quiet": "Почти все ротации должны включать Inner Quiet, если целью будет HQ предмет. Это обеспечивает действительно хороший рост качества и позволяет действия, такие как Byregot's Blessing.",
+      "Use_inner_quiet_before_quality_increase": "Вам следует применить Inner Quiet перед любым увеличением качества, иначе вы потратите впустую часть стаков Inner Quiet.",
+      "Use_ingenuity_I_instead": "Вам следует использовать Ingenuity I вместо II для снижения стоимости на 8CP, так как этого будет достаточно для завершения крафта.",
       "Use_cz_earlier": "You should use Comfort Zone earlier to get the restoration effect sooner",
       "Use_reclaim": "You have enough remaining CP to use Reclaim, you should add it to the rotation to make sure you get materials back if you fail the craft",
       "Use_byregot_brow_low_iq_stacks": "You used Byregot's Blessing with less than 6 stacks. Using Byregot's Brow is better in this case as it will produce more quality.",
