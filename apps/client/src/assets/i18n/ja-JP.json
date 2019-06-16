@@ -499,7 +499,8 @@
         "REQUIREMENTS": "素材",
         "REMOVE_ITEM": "リストからこのアイテムを削除",
         "ADD_TAG": "アイテムにタグを追加する",
-        "MARK_AS_DONE_IN_LOG": "手帳に完了と表示する"
+        "MARK_AS_DONE_IN_LOG": "手帳に完了と表示する",
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
       }
     },
     "LAYOUT": {
