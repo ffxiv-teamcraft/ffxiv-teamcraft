@@ -877,8 +877,8 @@
     "Title": "Уведомления",
     "List_comment_added": "Комментарий опубликован в списке {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Комментарий опубликован в списке {{listName}}: \"{{content}}\"",
-    "Db_comment": "New comment in db: \"{{comment}}\"",
-    "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
+    "Db_comment": "Новый комментарий в базе данных: \"{{comment}}\"",
+    "Db_comment_reply": "Новый ответ на один из ваших комментариев: \"{{comment}}\"",
     "Mark_all_as_read": "Отметить все как прочитанные",
     "No_notifications": "Уведомлений нет"
   },
@@ -991,12 +991,12 @@
     "View_on_ff14angler": "Подробнее на ff14angler",
     "Required_for_achievement": "Требуется для получения achievement'a",
     "Select_spot": "Выберите точку, чтобы увидеть его детали",
-    "Hide_completed": "Hide completed recipes",
+    "Hide_completed": "Скрыть завершенные рецепты",
     "MIN_optimized_path": "Optimized path for all MIN nodes",
     "BTN_optimized_path": "Optimized path for all BTN nodes",
     "PAGE": {
       "Master_recipes": "Рецепты мастера ({{number}})",
-      "Housing_items": "Housing({{number}})",
+      "Housing_items": "Мебель для дома ({{number}})",
       "Others": "Прочее",
       "Dyes": "Краски",
       "Other_master_recipes": "Другие рецепты мастера",
@@ -1088,7 +1088,7 @@
     "Title": "Поставки Grand Company",
     "Search": "Поиск",
     "Generate_list": "Создать быстрый список",
-    "Intro": "Input your levels and click search to get started",
+    "Intro": "Введите уровень и нажмите на поиск, чтобы начать",
     "Loading_message": "Loading possible deliveries, this can take up to a minute"
   },
   "DESYNTH": {
@@ -1356,9 +1356,10 @@
     "Description": "Введите предметы, которые у вас есть, и нажмите \"Найти рецепты\", чтобы получить список возможных рецептов и создать список для крафта из результатов.",
     "Empty_basket": "Ваша корзина пустая",
     "Add_item": "Добавить предмет",
-    "Clipboard_content_malformed": "Clipboard content malformed",
-    "Import_from_clipboard": "Import from clipboard",
-    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
-    "Extension_link": "Get the extension on chrome webstore"
+    "Clipboard_content_malformed": "Неправильный контент буфера обмена",
+    "Import_from_clipboard": "Импорт из ретейнера",
+    "Extension_tip": "Вы можете скопировать инвентарь вашего ретейнера в буфер обмена с помощью расширения: ",
+    "Extension_link": "Получить расширение в chrome",
+    "Clear": "Clear items list"
   }
 }
