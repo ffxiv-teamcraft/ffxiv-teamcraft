@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { List } from '../../../modules/list/model/list';
-import { NzNotificationService } from 'ng-zorro-antd';
+import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -22,6 +22,8 @@ import { NzNotificationService } from 'ng-zorro-antd';
   styleUrls: ['./recipe-finder.component.less']
 })
 export class RecipeFinderComponent implements OnDestroy {
+
+  private tipKey = 'recipe-finder:tip';
 
   public query: string;
 
@@ -52,6 +54,14 @@ export class RecipeFinderComponent implements OnDestroy {
 
   public editingAmount: number;
 
+  public showTip = localStorage.getItem(this.tipKey) === null;
+
+  public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+
+  private pageSize = 25;
+
+  public totalPages: number;
+
   @ViewChild('notificationRef')
   notification: TemplateRef<any>;
 
@@ -64,7 +74,7 @@ export class RecipeFinderComponent implements OnDestroy {
               private i18n: I18nToolsService, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private router: Router, private l12n: LocalizedDataService, private listPicker: ListPickerService,
-              private notificationService: NzNotificationService) {
+              private notificationService: NzNotificationService, private message: NzMessageService) {
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.items)
       .filter(key => +key > 19)
@@ -75,7 +85,7 @@ export class RecipeFinderComponent implements OnDestroy {
         };
       });
     this.pool = JSON.parse(localStorage.getItem('recipe-finder:pool') || '[]');
-    this.results$ = this.search$.pipe(
+    const results$ = this.search$.pipe(
       map(() => {
         const possibleRecipes = [];
         for (const item of this.pool) {
@@ -104,7 +114,15 @@ export class RecipeFinderComponent implements OnDestroy {
           return a.missing.length - b.missing.length;
         });
       }),
+      tap(results => {
+        this.totalPages = results.length / this.pageSize;
+      }),
       shareReplay(1)
+    );
+    this.results$ = combineLatest([results$, this.page$]).pipe(
+      map(([results, page]) => {
+        return _.chunk(results, this.pageSize)[page - 1];
+      })
     );
   }
 
@@ -124,6 +142,25 @@ export class RecipeFinderComponent implements OnDestroy {
 
   public isButtonDisabled(name: string, amount: number): boolean {
     return amount <= 0 || !this.items.some(i => this.i18n.getName(i.name).toLowerCase() === name.toLowerCase());
+  }
+
+  public importFromClipboard(): void {
+    (<any>navigator).clipboard.readText()
+      .then(text => {
+        const parsed = JSON.parse(text);
+        parsed.forEach(item => {
+          this.addToPool(item.id, item.amount, true);
+        });
+      })
+      .catch(() => {
+        this.message.error(this.translate.instant('RECIPE_FINDER.Clipboard_content_malformed'), {
+          nzDuration: 3000
+        });
+      });
+  }
+
+  closedTip(): void {
+    localStorage.setItem(this.tipKey, 'true');
   }
 
   onInput(value: string): void {
@@ -152,14 +189,14 @@ export class RecipeFinderComponent implements OnDestroy {
     this.savePool();
   }
 
-  addToPool(input: string | number, amount: number, fromBasket = false): void {
+  addToPool(input: string | number, amount: number, cumulative = false): void {
     let item;
     if (input.toString() === input) {
       item = this.items.find(i => this.i18n.getName(i.name).toLowerCase() === input.toLowerCase());
     } else {
       item = this.items.find(i => i.id === input);
     }
-    if (!item || (!fromBasket && this.pool.some(i => i.id === item.id))) {
+    if (!item || (!cumulative && this.pool.some(i => i.id === item.id))) {
       return;
     }
     const poolEntry = this.pool.find(i => i.id === item.id);
