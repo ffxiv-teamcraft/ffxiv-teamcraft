@@ -1355,6 +1355,10 @@
     "Generate_list": "リストに追加",
     "Description": "現在お持ちの素材の数量を入力し \"レシピ検索\" をクリックすると現在の素材で制作可能な品目がご確認することができ、望みな品目をリストに作成するのができます。",
     "Empty_basket": "制作リストが空いています。",
-    "Add_item": "アイテム追加"
+    "Add_item": "アイテム追加",
+    "Clipboard_content_malformed": "Clipboard content malformed",
+    "Import_from_clipboard": "Import from clipboard",
+    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
+    "Extension_link": "Get the extension on chrome webstore"
   }
 }
