@@ -1,5 +1,5 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="!(displayRow.collapsed || collapsed || displayRow.collapsedByDefault)"
+  <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="!(displayRow.collapsed || collapsed)"
                      (nzActiveChange)="collapsed = !$event"
                      [class.panel-done]="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)">
     <div>

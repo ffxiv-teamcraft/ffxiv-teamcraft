@@ -89,6 +89,9 @@ export class ListDetailsPanelComponent implements OnChanges {
     if (this.displayRow && this.displayRow.zoneBreakdown) {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.getHideZoneDuplicates());
     }
+    if (this.displayRow && this.displayRow.collapsedByDefault) {
+      this.collapsed = true;
+    }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (row.tradeSources && row.tradeSources.length > 0) || (row.vendors && row.vendors.length > 0) || hasTrades;
     }, false);
