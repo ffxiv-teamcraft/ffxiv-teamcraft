@@ -1355,6 +1355,10 @@
     "Generate_list": "Добавить в список",
     "Description": "Введите предметы, которые у вас есть, и нажмите \"Найти рецепты\", чтобы получить список возможных рецептов и создать список для крафта из результатов.",
     "Empty_basket": "Ваша корзина пустая",
-    "Add_item": "Добавить предмет"
+    "Add_item": "Добавить предмет",
+    "Clipboard_content_malformed": "Clipboard content malformed",
+    "Import_from_clipboard": "Import from clipboard",
+    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
+    "Extension_link": "Get the extension on chrome webstore"
   }
 }
