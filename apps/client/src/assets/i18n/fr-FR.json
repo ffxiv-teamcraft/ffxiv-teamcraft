@@ -1356,9 +1356,9 @@
     "Description": "Saisissez les objets que vous avez et cliquez sur « Trouver des recettes » pour obtenir une liste de recettes possibles pour fabriquer et générer une liste d'artisanat à partir des résultats.",
     "Empty_basket": "Votre panier est vide",
     "Add_item": "Ajouter un objet",
-    "Clipboard_content_malformed": "Clipboard content malformed",
-    "Import_from_clipboard": "Import from clipboard",
-    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
-    "Extension_link": "Get the extension on chrome webstore"
+    "Clipboard_content_malformed": "Contenu du presse-papiers mal formé",
+    "Import_from_clipboard": "Importer depuis le presse-papiers",
+    "Extension_tip": "Vous pouvez copier l'inventaire de vos servants dans votre presse-papiers en utilisant l'extension \"inventory grabber\" : ",
+    "Extension_link": "Obtenir l'extension sur le store chrome"
   }
 }
