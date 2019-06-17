@@ -499,7 +499,8 @@
         "REQUIREMENTS": "Prérequis",
         "REMOVE_ITEM": "Supprimer l’élément de la liste",
         "ADD_TAG": "Ajouter un tag à l'élément",
-        "MARK_AS_DONE_IN_LOG": "Marquer comme fait dans le livre de recettes"
+        "MARK_AS_DONE_IN_LOG": "Marquer comme fait dans le livre de recettes",
+        "MARKET_BOARD_INFORMATIONS": "Hôtel des ventes"
       }
     },
     "LAYOUT": {
@@ -930,7 +931,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Information",
+    "Title": "Hôtel des ventes",
     "Error": "XIVAPI ou l'API compagnon est actuellement inaccessible, veuillez patienter un instant avant de réessayer.",
     "Amount": "Quantité",
     "HQ": "HQ",
@@ -1190,7 +1191,7 @@
     "Limited": "Apparition limitée",
     "3d_model_viewer": "Aperçu du modèle 3D",
     "3d_model_help": "Aperçu du modèle 3D",
-    "Achievements": "Achievements",
+    "Achievements": "Haut-faits",
     "NODE": {
       "Items": "Objets",
       "Possible_bonuses": "Bonus possibles",
@@ -1354,6 +1355,10 @@
     "Generate_list": "Ajouter à une liste",
     "Description": "Saisissez les objets que vous avez et cliquez sur « Trouver des recettes » pour obtenir une liste de recettes possibles pour fabriquer et générer une liste d'artisanat à partir des résultats.",
     "Empty_basket": "Votre panier est vide",
-    "Add_item": "Ajouter un objet"
+    "Add_item": "Ajouter un objet",
+    "Clipboard_content_malformed": "Contenu du presse-papiers mal formé",
+    "Import_from_clipboard": "Importer depuis le presse-papiers",
+    "Extension_tip": "Vous pouvez copier l'inventaire de vos servants dans votre presse-papiers en utilisant l'extension \"inventory grabber\" : ",
+    "Extension_link": "Obtenir l'extension sur le store chrome"
   }
 }
