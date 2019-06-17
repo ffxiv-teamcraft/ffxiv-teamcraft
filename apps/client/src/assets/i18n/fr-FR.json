@@ -1359,6 +1359,7 @@
     "Clipboard_content_malformed": "Contenu du presse-papiers mal formé",
     "Import_from_clipboard": "Importer depuis le presse-papiers",
     "Extension_tip": "Vous pouvez copier l'inventaire de vos servants dans votre presse-papiers en utilisant l'extension \"inventory grabber\" : ",
-    "Extension_link": "Obtenir l'extension sur le store chrome"
+    "Extension_link": "Obtenir l'extension sur le store chrome",
+    "Clear": "Clear items list"
   }
 }
