@@ -500,7 +500,7 @@
         "REMOVE_ITEM": "Supprimer l’élément de la liste",
         "ADD_TAG": "Ajouter un tag à l'élément",
         "MARK_AS_DONE_IN_LOG": "Marquer comme fait dans le livre de recettes",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "Hôtel des ventes"
       }
     },
     "LAYOUT": {
@@ -931,7 +931,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Information",
+    "Title": "Hôtel des ventes",
     "Error": "XIVAPI ou l'API compagnon est actuellement inaccessible, veuillez patienter un instant avant de réessayer.",
     "Amount": "Quantité",
     "HQ": "HQ",
@@ -1191,7 +1191,7 @@
     "Limited": "Apparition limitée",
     "3d_model_viewer": "Aperçu du modèle 3D",
     "3d_model_help": "Aperçu du modèle 3D",
-    "Achievements": "Achievements",
+    "Achievements": "Haut-faits",
     "NODE": {
       "Items": "Objets",
       "Possible_bonuses": "Bonus possibles",
