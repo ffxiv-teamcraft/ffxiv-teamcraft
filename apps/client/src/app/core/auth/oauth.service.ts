@@ -25,7 +25,7 @@ export class OauthService {
       this._ipc.on('oauth-reply', (event, code) => {
         const authorizationUrl = provider.providerId === 'google.com' ?
           `https://us-central1-ffxivteamcraft.cloudfunctions.net/google-oauth${environment.production ? '' : '-beta'}?code=${code}&redirect_uri=http://localhost` :
-          `\`https://us-central1-ffxivteamcraft.cloudfunctions.net/facebook-oauth${environment.production ? '' : '-beta'}?code=${code}&redirect_uri=http://localhost\``;
+          `https://us-central1-ffxivteamcraft.cloudfunctions.net/facebook-oauth${environment.production ? '' : '-beta'}?code=${code}&redirect_uri=http://localhost`;
         this.http.get(authorizationUrl)
           .pipe(
             switchMap((res: { access_token: string }) => {
