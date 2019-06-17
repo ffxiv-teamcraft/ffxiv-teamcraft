@@ -1359,6 +1359,7 @@
     "Clipboard_content_malformed": "Clipboard content malformed",
     "Import_from_clipboard": "Import from clipboard",
     "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
-    "Extension_link": "Get the extension on chrome webstore"
+    "Extension_link": "Get the extension on chrome webstore",
+    "Clear": "Clear items list"
   }
 }
