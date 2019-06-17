@@ -1,6 +1,8 @@
 const querystring = require('querystring');
 const { BrowserWindow } = require('electron');
 const nodeUrl = require('url');
+const log = require('electron-log');
+const { session } = require('electron');
 
 module.exports = function(config) {
   function getCode(opts) {
@@ -31,12 +33,12 @@ module.exports = function(config) {
         webPreferences: {
           contextIsolation: false,
           webviewTag: true
-        }
+        },
+        useContentSize: true
       });
 
       authWindow.loadURL(url);
       authWindow.show();
-      authWindow.maximize();
 
       authWindow.on('closed', () => {
         reject(new Error('window was closed by user'));
@@ -77,8 +79,21 @@ module.exports = function(config) {
         onCallback(url);
       });
 
-      authWindow.webContents.on('did-get-redirect-request', (event, oldUrl, newUrl) => {
-        onCallback(newUrl);
+      // Prepare to filter only the callbacks for my redirectUri
+      const filter = {
+        urls: [config.redirect_uri + '*']
+      };
+
+      // intercept all the requests for that includes my redirect uri
+      session.defaultSession.webRequest.onBeforeRequest(filter, function (details, callback) {
+        const url = details.url;
+        // process the callback url and get any param you need
+        onCallback(url);
+
+        // don't forget to let the request proceed
+        callback({
+          cancel: false
+        });
       });
     });
   }
