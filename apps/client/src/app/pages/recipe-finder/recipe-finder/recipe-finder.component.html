@@ -46,6 +46,13 @@
             nzBlock>
       <i nz-icon type="plus"></i> {{'RECIPE_FINDER.Add_item' | translate}}
     </button>
+    <button nz-button nzType="danger"
+            class="search-button"
+            nz-popconfirm
+            [nzTitle]="'Confirmation' | translate"
+            (nzOnConfirm)="clearPool()">
+      <i nz-icon nzType="stop" nzTheme="outline"></i> {{'RECIPE_FINDER.Clear' | translate}}
+    </button>
     <button nz-button nzType="primary"
             class="search-button"
             *ngIf="true | ifMobile:false"

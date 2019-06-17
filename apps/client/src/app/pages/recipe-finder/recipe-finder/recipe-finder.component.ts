@@ -152,11 +152,17 @@ export class RecipeFinderComponent implements OnDestroy {
           this.addToPool(item.id, item.amount, true);
         });
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error(error);
         this.message.error(this.translate.instant('RECIPE_FINDER.Clipboard_content_malformed'), {
           nzDuration: 3000
         });
       });
+  }
+
+  public clearPool():void{
+    this.pool = [];
+    this.savePool();
   }
 
   closedTip(): void {
