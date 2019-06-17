@@ -499,7 +499,8 @@
         "REQUIREMENTS": "Voraussetzungen",
         "REMOVE_ITEM": "Remove item from the list",
         "ADD_TAG": "Add tag to item",
-        "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
+        "MARK_AS_DONE_IN_LOG": "Mark as done inside log",
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
       }
     },
     "LAYOUT": {
@@ -1354,6 +1355,10 @@
     "Generate_list": "Add to list",
     "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
     "Empty_basket": "Your basket is empty",
-    "Add_item": "Add item"
+    "Add_item": "Add item",
+    "Clipboard_content_malformed": "Clipboard content malformed",
+    "Import_from_clipboard": "Import from clipboard",
+    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
+    "Extension_link": "Get the extension on chrome webstore"
   }
 }

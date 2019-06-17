@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.5.4"></a>
+## [5.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.3...v5.5.4) (2019-06-17)
+
+
+### Bug Fixes
+
+* **db:** fixed an issue with external links not showing properly ([da2eb86](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da2eb86))
+* **desktop:** fixed oauth flow for google and facebook ([42c0e45](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/42c0e45))
+* **layout:** fixed an issue with collapsed by default and collapse when done ([b431bff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b431bff))
+* **layout:** fixed missing translation ([9d2dd05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9d2dd05))
+
+
+### Features
+
+* **recipe-finder:** added support for retainer inventory grabber extension ([23318a4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23318a4))
+* **support:** added a new supporter: Walnut Bread Trading Co ! ([f8c8688](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f8c8688))
+
+
+
 <a name="5.5.3"></a>
 ## [5.5.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.2...v5.5.3) (2019-06-16)
 

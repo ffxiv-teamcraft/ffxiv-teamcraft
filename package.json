@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.5.3",
+  "version": "5.5.4",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -131,7 +131,6 @@
     "electron-config": "^2.0.0",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^3.0.6",
-    "electron-oauth-helper": "^5.0.1",
     "electron-updater": "^4.0.6",
     "express": "^4.16.4",
     "file-saver": "^2.0.1",
