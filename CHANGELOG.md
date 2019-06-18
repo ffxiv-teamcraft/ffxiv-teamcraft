@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.5.5"></a>
+## [5.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.4...v5.5.5) (2019-06-18)
+
+
+### Features
+
+* support for Korean 4.50 update ([e6cc1b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e6cc1b4))
+* **gc-supply:** added a button to sort inventory by item name ([09d6409](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/09d6409))
+* **gc-supply:** added item count to possible deliveries ([7d40ebb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7d40ebb))
+* **recipe-finder:** added a clear button for the list of items ([a30606e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a30606e))
+* **recipe-finder:** added an intermediate popup for clipboard content analysis ([2309e85](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2309e85))
+* **recipe-finder:** inventory is now using a panel with a button to copy it to clipboard ([f4de922](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f4de922))
+* **recipe-finder:** paginator is now also on top of results list ([0953d9a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0953d9a))
+* **recipe-finder:** result recipes are now ordered properly (job and level) ([61214f1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/61214f1))
+* **recipe-finder:** you can now see the recipes that are not at your level ([b745e91](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b745e91))
+
+
+
 <a name="5.5.4"></a>
 ## [5.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.3...v5.5.4) (2019-06-17)
 
