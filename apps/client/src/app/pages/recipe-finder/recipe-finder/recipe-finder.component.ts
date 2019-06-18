@@ -1,10 +1,10 @@
 import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { BehaviorSubject, combineLatest, concat, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, from, Observable, of, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
-import { debounceTime, filter, first, map, mergeMap, shareReplay, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { LazyRecipe } from '../../../core/data/lazy-recipe';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -14,7 +14,10 @@ import { Router } from '@angular/router';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { List } from '../../../modules/list/model/list';
-import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
+import { ClipboardImportPopupComponent } from '../clipboard-import-popup/clipboard-import-popup.component';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { GearSet } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -74,7 +77,8 @@ export class RecipeFinderComponent implements OnDestroy {
               private i18n: I18nToolsService, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private router: Router, private l12n: LocalizedDataService, private listPicker: ListPickerService,
-              private notificationService: NzNotificationService, private message: NzMessageService) {
+              private notificationService: NzNotificationService, private message: NzMessageService,
+              private dialog: NzModalService, private authFacade: AuthFacade) {
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.items)
       .filter(key => +key > 19)
@@ -86,7 +90,10 @@ export class RecipeFinderComponent implements OnDestroy {
       });
     this.pool = JSON.parse(localStorage.getItem('recipe-finder:pool') || '[]');
     const results$ = this.search$.pipe(
-      map(() => {
+      switchMap(() => {
+        return this.authFacade.gearSets$.pipe(first());
+      }),
+      map((sets: GearSet[]) => {
         const possibleRecipes = [];
         for (const item of this.pool) {
           possibleRecipes.push(...this.lazyData.recipes.filter(r => {
@@ -98,6 +105,8 @@ export class RecipeFinderComponent implements OnDestroy {
         const uniquified = _.uniqBy(possibleRecipes, 'id');
         // Now that we have all possible recipes, let's filter and rate them
         const finalRecipes = uniquified.map(recipe => {
+          const jobSet = sets.find(set => recipe.job === set.jobId);
+          recipe.missingLevel = jobSet === undefined || jobSet.level < recipe.level;
           recipe.missing = recipe.ingredients.filter(i => {
             const poolItem = this.pool.find(item => item.id === i.id);
             return !poolItem || poolItem.amount < i.amount;
@@ -111,7 +120,21 @@ export class RecipeFinderComponent implements OnDestroy {
           return recipe;
         });
         return finalRecipes.sort((a, b) => {
-          return a.missing.length - b.missing.length;
+          const missingDiff = a.missing.length - b.missing.length;
+          if (missingDiff !== 0) {
+            return missingDiff;
+          }
+          if (a.missingLevel && !b.missingLevel) {
+            return 1;
+          }
+          if (b.missingLevel && !a.missingLevel) {
+            return -1;
+          }
+          const jobDiff = a.job - b.job;
+          if (jobDiff !== 0) {
+            return jobDiff;
+          }
+          return a.level - b.level;
         });
       }),
       tap(results => {
@@ -145,18 +168,54 @@ export class RecipeFinderComponent implements OnDestroy {
   }
 
   public importFromClipboard(): void {
-    (<any>navigator).clipboard.readText()
-      .then(text => {
-        const parsed = JSON.parse(text);
-        parsed.forEach(item => {
+    from((<any>navigator).clipboard.readText())
+      .pipe(
+        map((text: string) => JSON.parse(text)),
+        switchMap(items => {
+          return this.dialog.create({
+            nzTitle: this.translate.instant('RECIPE_FINDER.Import_from_clipboard'),
+            nzContent: ClipboardImportPopupComponent,
+            nzComponentParams: {
+              items: items
+            },
+            nzFooter: null
+          }).afterClose;
+        }),
+        filter(items => {
+          return items && items.length > 0;
+        })
+      )
+      .subscribe(items => {
+        items.forEach(item => {
           this.addToPool(item.id, item.amount, true);
         });
-      })
-      .catch(() => {
+      }, error => {
+        console.error(error);
         this.message.error(this.translate.instant('RECIPE_FINDER.Clipboard_content_malformed'), {
           nzDuration: 3000
         });
       });
+  }
+
+  public clearPool(): void {
+    this.pool = [];
+    this.savePool();
+  }
+
+  public getPoolJSON(): string {
+    return JSON.stringify(this.pool);
+  }
+
+  public sortPool(): void {
+    this.pool = this.pool.sort((a, b) => {
+      return this.i18n.getName(this.l12n.getItem(a.id)) > this.i18n.getName(this.l12n.getItem(b.id)) ? 1 : -1;
+    });
+  }
+
+  public afterJSONCopied(): void {
+    this.message.success(this.translate.instant('RECIPE_FINDER.Pool_copied'), {
+      nzDuration: 3000
+    });
   }
 
   closedTip(): void {

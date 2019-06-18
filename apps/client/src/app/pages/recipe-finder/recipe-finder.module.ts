@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
+import { ClipboardImportPopupComponent } from './clipboard-import-popup/clipboard-import-popup.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [RecipeFinderComponent],
+  declarations: [RecipeFinderComponent, ClipboardImportPopupComponent],
+  entryComponents: [ClipboardImportPopupComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -36,6 +38,7 @@ const routes: Routes = [
     ListModule,
     FlexLayoutModule,
     FullpageMessageModule,
+    ClipboardModule,
 
     RouterModule.forChild(routes),
     ItemIconModule,

@@ -58,33 +58,71 @@
     </button>
   </div>
 </div>
-<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px" class="inventory-container">
-  <div class="inventory-element" fxLayout="row" fxLayoutAlign="flex-start center"
-       fxLayoutGap="5px" [class.highlighted]="(highlight$ | async)?.indexOf(item.id) > -1" *ngFor="let item of pool">
-    <i nz-icon type="close" (click)="removeFromPool(item.id, item.amount, true)" class="delete-element"></i>
-    <app-item-icon [itemId]="item.id" [icon]="item.id | lazyIcon" [width]="32"></app-item-icon>
-    <div fxLayout="column">
-      <div>{{item.id | itemName | i18n}}</div>
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-        <div *ngIf="editingAmount !== item.id">x{{item.amount}}</div>
-        <div *ngIf="editingAmount === item.id">
-          <input type="number" nz-input nzSize="small" class="amount-editor" [(ngModel)]="item.amount">
+<nz-collapse class="inventory-panel">
+  <nz-collapse-panel
+    [nzHeader]="header"
+    [nzActive]="true"
+  >
+    <ng-template #header>
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
+        <div>{{'RECIPE_FINDER.Inventory' | translate}} ({{pool.length}} {{'items' | translate}})</div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <button nz-button
+                  nz-tooltip
+                  [nzTitle]="'RECIPE_FINDER.Sort_alphabetically' | translate"
+                  (click)="$event.stopPropagation();sortPool()">
+            <i nz-icon nzType="sort-ascending" nzTheme="outline"></i>
+          </button><button nz-button
+                  nz-tooltip
+                  [nzTitle]="'RECIPE_FINDER.Copy_to_clipboard' | translate"
+                  ngxClipboard
+                  (click)="$event.stopPropagation()"
+                  [cbContent]="getPoolJSON()"
+                  (cbOnSuccess)="afterJSONCopied()">
+            <i nz-icon nzType="copy" nzTheme="outline"></i>
+          </button>
+          <button nz-button nzType="danger"
+                  nz-popconfirm
+                  [nzTitle]="'Confirmation' | translate"
+                  (click)="$event.stopPropagation()"
+                  (nzOnConfirm)="clearPool()">
+            <i nz-icon nzType="stop" nzTheme="outline"></i> {{'RECIPE_FINDER.Clear' | translate}}
+          </button>
         </div>
-        <button *ngIf="editingAmount !== item.id" nz-button nzShape="circle" nzSize="small"
-                (click)="editAmount(item.id)">
-          <i nz-icon type="edit"></i>
-        </button>
-        <button *ngIf="editingAmount === item.id" nz-button nzShape="circle" nzSize="small" nzType="primary"
-                (click)="saveAmount(item.id, item.amount)">
-          <i nz-icon type="save"></i>
-        </button>
+      </div>
+    </ng-template>
+    <div fxLayout="row wrap" fxLayoutAlign="flex-start flex-start" fxLayoutGap="10px" class="inventory-container">
+      <div class="inventory-element" fxLayout="row" fxLayoutAlign="flex-start center"
+           fxLayoutGap="5px" [class.highlighted]="(highlight$ | async)?.indexOf(item.id) > -1" *ngFor="let item of pool">
+        <i nz-icon type="close" (click)="removeFromPool(item.id, item.amount, true)" class="delete-element"></i>
+        <app-item-icon [itemId]="item.id" [icon]="item.id | lazyIcon" [width]="32"></app-item-icon>
+        <div fxLayout="column">
+          <div>{{item.id | itemName | i18n}}</div>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <div *ngIf="editingAmount !== item.id">x{{item.amount}}</div>
+            <div *ngIf="editingAmount === item.id">
+              <input type="number" nz-input nzSize="small" class="amount-editor" [(ngModel)]="item.amount">
+            </div>
+            <button *ngIf="editingAmount !== item.id" nz-button nzShape="circle" nzSize="small"
+                    (click)="editAmount(item.id)">
+              <i nz-icon type="edit"></i>
+            </button>
+            <button *ngIf="editingAmount === item.id" nz-button nzShape="circle" nzSize="small" nzType="primary"
+                    (click)="saveAmount(item.id, item.amount)">
+              <i nz-icon type="save"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </nz-collapse-panel>
+</nz-collapse>
 <div fxLayout="row" fxLayout.lt-md="column" class="results-container">
   <div *ngIf="results$ | async as results" fxFlex="1 1 50%" class="results">
     <nz-divider nzOrientation="left" [nzText]="'RECIPE_FINDER.Results' | translate"></nz-divider>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <nz-pagination [nzTotal]="totalPages" [nzPageIndex]="page$ | async" (nzPageIndexChange)="page$.next($event)"></nz-pagination>
+    </div>
     <nz-list [nzDataSource]="results" [nzRenderItem]="recipe">
       <ng-template #recipe let-recipe let-index="index">
         <nz-list-item (mouseenter)="highlight(recipe)" (mouseleave)="highlight(null)"
@@ -114,6 +152,9 @@
                 <app-db-button *ngIf="true | ifMobile:false" [id]="recipe.result" type="item"></app-db-button>
                 <app-marketboard-icon *ngIf="true | ifMobile:false" [itemId]="recipe.result"></app-marketboard-icon>
                 <nz-tag class="custom-tag"
+                        [style.border-color]="'#f50'"
+                        *ngIf="recipe.missingLevel">{{'SIMULATOR.FAIL_CAUSE.MISSING_LEVEL_REQUIREMENT' | translate }}</nz-tag>
+                <nz-tag class="custom-tag"
                         *ngIf="recipe.missing.length === 0"
                         [style.border-color]="'darkgreen'"
                 >{{'RECIPE_FINDER.No_missing_ingredients' | translate}}</nz-tag>
@@ -133,7 +174,7 @@
       </ng-template>
     </nz-list>
     <div fxLayout="row" fxLayoutAlign="center center">
-      <nz-pagination [nzTotal]="totalPages" (nzPageIndexChange)="page$.next($event)"></nz-pagination>
+      <nz-pagination [nzTotal]="totalPages" [nzPageIndex]="page$ | async" (nzPageIndexChange)="page$.next($event)"></nz-pagination>
     </div>
   </div>
   <div *ngIf="results$ | async as results" fxFlex="1 1 50%">

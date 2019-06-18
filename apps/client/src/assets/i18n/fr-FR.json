@@ -1359,6 +1359,12 @@
     "Clipboard_content_malformed": "Contenu du presse-papiers mal formé",
     "Import_from_clipboard": "Importer depuis le presse-papiers",
     "Extension_tip": "Vous pouvez copier l'inventaire de vos servants dans votre presse-papiers en utilisant l'extension \"inventory grabber\" : ",
-    "Extension_link": "Obtenir l'extension sur le store chrome"
+    "Extension_link": "Obtenir l'extension sur le store chrome",
+    "Clear": "Effacer la liste des éléments",
+    "Clipboard_import_duplicates": "Les objets en double le sont parce que lodestone montre des piles, donc ils sont à l'intérieur de votre servant dans des piles séparées.",
+    "Inventory": "Inventaire",
+    "Copy_to_clipboard": "Copier l'inventaire dans le presse-papiers",
+    "Pool_copied": "Inventaire copié dans votre presse-papiers",
+    "Sort_alphabetically": "Trier par ordre alphabétique"
   }
 }
