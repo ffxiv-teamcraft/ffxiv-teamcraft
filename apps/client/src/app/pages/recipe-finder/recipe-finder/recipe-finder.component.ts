@@ -113,7 +113,15 @@ export class RecipeFinderComponent implements OnDestroy {
           return recipe;
         });
         return finalRecipes.sort((a, b) => {
-          return a.missing.length - b.missing.length;
+          const missingDiff = a.missing.length - b.missing.length;
+          if (missingDiff !== 0) {
+            return missingDiff;
+          }
+          const jobDiff = a.job - b.job;
+          if (jobDiff !== 0) {
+            return jobDiff;
+          }
+          return a.level - b.level;
         });
       }),
       tap(results => {
