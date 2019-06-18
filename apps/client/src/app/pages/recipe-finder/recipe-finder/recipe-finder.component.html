@@ -120,6 +120,9 @@
 <div fxLayout="row" fxLayout.lt-md="column" class="results-container">
   <div *ngIf="results$ | async as results" fxFlex="1 1 50%" class="results">
     <nz-divider nzOrientation="left" [nzText]="'RECIPE_FINDER.Results' | translate"></nz-divider>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <nz-pagination [nzTotal]="totalPages" (nzPageIndexChange)="page$.next($event)"></nz-pagination>
+    </div>
     <nz-list [nzDataSource]="results" [nzRenderItem]="recipe">
       <ng-template #recipe let-recipe let-index="index">
         <nz-list-item (mouseenter)="highlight(recipe)" (mouseleave)="highlight(null)"
