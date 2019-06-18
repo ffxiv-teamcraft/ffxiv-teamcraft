@@ -16,6 +16,8 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { List } from '../../../modules/list/model/list';
 import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { ClipboardImportPopupComponent } from '../clipboard-import-popup/clipboard-import-popup.component';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { GearSet } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -76,7 +78,7 @@ export class RecipeFinderComponent implements OnDestroy {
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private router: Router, private l12n: LocalizedDataService, private listPicker: ListPickerService,
               private notificationService: NzNotificationService, private message: NzMessageService,
-              private dialog: NzModalService) {
+              private dialog: NzModalService, private authFacade: AuthFacade) {
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.items)
       .filter(key => +key > 19)
@@ -88,7 +90,10 @@ export class RecipeFinderComponent implements OnDestroy {
       });
     this.pool = JSON.parse(localStorage.getItem('recipe-finder:pool') || '[]');
     const results$ = this.search$.pipe(
-      map(() => {
+      switchMap(() => {
+        return this.authFacade.gearSets$.pipe(first());
+      }),
+      map((sets: GearSet[]) => {
         const possibleRecipes = [];
         for (const item of this.pool) {
           possibleRecipes.push(...this.lazyData.recipes.filter(r => {
@@ -100,6 +105,8 @@ export class RecipeFinderComponent implements OnDestroy {
         const uniquified = _.uniqBy(possibleRecipes, 'id');
         // Now that we have all possible recipes, let's filter and rate them
         const finalRecipes = uniquified.map(recipe => {
+          const jobSet = sets.find(set => recipe.job === set.jobId);
+          recipe.missingLevel = jobSet === undefined || jobSet.level < recipe.level;
           recipe.missing = recipe.ingredients.filter(i => {
             const poolItem = this.pool.find(item => item.id === i.id);
             return !poolItem || poolItem.amount < i.amount;
@@ -116,6 +123,12 @@ export class RecipeFinderComponent implements OnDestroy {
           const missingDiff = a.missing.length - b.missing.length;
           if (missingDiff !== 0) {
             return missingDiff;
+          }
+          if (a.missingLevel && !b.missingLevel) {
+            return 1;
+          }
+          if (b.missingLevel && !a.missingLevel) {
+            return -1;
           }
           const jobDiff = a.job - b.job;
           if (jobDiff !== 0) {

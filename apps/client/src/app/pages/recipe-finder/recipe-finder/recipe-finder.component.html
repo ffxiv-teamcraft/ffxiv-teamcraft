@@ -152,6 +152,9 @@
                 <app-db-button *ngIf="true | ifMobile:false" [id]="recipe.result" type="item"></app-db-button>
                 <app-marketboard-icon *ngIf="true | ifMobile:false" [itemId]="recipe.result"></app-marketboard-icon>
                 <nz-tag class="custom-tag"
+                        [style.border-color]="'#f50'"
+                        *ngIf="recipe.missingLevel">{{'SIMULATOR.FAIL_CAUSE.MISSING_LEVEL_REQUIREMENT' | translate }}</nz-tag>
+                <nz-tag class="custom-tag"
                         *ngIf="recipe.missing.length === 0"
                         [style.border-color]="'darkgreen'"
                 >{{'RECIPE_FINDER.No_missing_ingredients' | translate}}</nz-tag>
