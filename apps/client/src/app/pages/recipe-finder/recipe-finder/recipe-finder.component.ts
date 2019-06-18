@@ -1,6 +1,6 @@
 import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { BehaviorSubject, combineLatest, concat, Observable, of, Subject, from } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, from, Observable, of, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
@@ -15,7 +15,6 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { List } from '../../../modules/list/model/list';
 import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
-import { ModelViewerComponent } from '../../db/item/model-viewer/model-viewer.component';
 import { ClipboardImportPopupComponent } from '../clipboard-import-popup/clipboard-import-popup.component';
 
 @Component({
@@ -150,7 +149,7 @@ export class RecipeFinderComponent implements OnDestroy {
   public importFromClipboard(): void {
     from((<any>navigator).clipboard.readText())
       .pipe(
-        map((text:string) => JSON.parse(text)),
+        map((text: string) => JSON.parse(text)),
         switchMap(items => {
           return this.dialog.create({
             nzTitle: this.translate.instant('RECIPE_FINDER.Import_from_clipboard'),
@@ -177,9 +176,19 @@ export class RecipeFinderComponent implements OnDestroy {
       });
   }
 
-  public clearPool():void{
+  public clearPool(): void {
     this.pool = [];
     this.savePool();
+  }
+
+  public getPoolJSON(): string {
+    return JSON.stringify(this.pool);
+  }
+
+  public afterJSONCopied(): void {
+    this.message.success(this.translate.instant('RECIPE_FINDER.Pool_copied'), {
+      nzDuration: 3000
+    });
   }
 
   closedTip(): void {

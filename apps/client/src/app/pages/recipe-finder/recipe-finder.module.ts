@@ -38,6 +38,7 @@ const routes: Routes = [
     ListModule,
     FlexLayoutModule,
     FullpageMessageModule,
+    ClipboardModule,
 
     RouterModule.forChild(routes),
     ItemIconModule,
