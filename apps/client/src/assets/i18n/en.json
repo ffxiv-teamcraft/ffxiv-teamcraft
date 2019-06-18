@@ -1360,6 +1360,7 @@
     "Import_from_clipboard": "Import from clipboard",
     "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
     "Extension_link": "Get the extension on chrome webstore",
-    "Clear": "Clear items list"
+    "Clear": "Clear items list",
+    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks."
   }
 }

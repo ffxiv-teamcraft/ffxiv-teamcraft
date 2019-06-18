@@ -1,10 +1,10 @@
 import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { BehaviorSubject, combineLatest, concat, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, Observable, of, Subject, from } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
-import { debounceTime, filter, first, map, mergeMap, shareReplay, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { LazyRecipe } from '../../../core/data/lazy-recipe';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -14,7 +14,9 @@ import { Router } from '@angular/router';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { List } from '../../../modules/list/model/list';
-import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
+import { ModelViewerComponent } from '../../db/item/model-viewer/model-viewer.component';
+import { ClipboardImportPopupComponent } from '../clipboard-import-popup/clipboard-import-popup.component';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -74,7 +76,8 @@ export class RecipeFinderComponent implements OnDestroy {
               private i18n: I18nToolsService, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private router: Router, private l12n: LocalizedDataService, private listPicker: ListPickerService,
-              private notificationService: NzNotificationService, private message: NzMessageService) {
+              private notificationService: NzNotificationService, private message: NzMessageService,
+              private dialog: NzModalService) {
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.items)
       .filter(key => +key > 19)
@@ -145,14 +148,28 @@ export class RecipeFinderComponent implements OnDestroy {
   }
 
   public importFromClipboard(): void {
-    (<any>navigator).clipboard.readText()
-      .then(text => {
-        const parsed = JSON.parse(text);
-        parsed.forEach(item => {
+    from((<any>navigator).clipboard.readText())
+      .pipe(
+        map((text:string) => JSON.parse(text)),
+        switchMap(items => {
+          return this.dialog.create({
+            nzTitle: this.translate.instant('RECIPE_FINDER.Import_from_clipboard'),
+            nzContent: ClipboardImportPopupComponent,
+            nzComponentParams: {
+              items: items
+            },
+            nzFooter: null
+          }).afterClose;
+        }),
+        filter(items => {
+          return items && items.length > 0;
+        })
+      )
+      .subscribe(items => {
+        items.forEach(item => {
           this.addToPool(item.id, item.amount, true);
         });
-      })
-      .catch((error) => {
+      }, error => {
         console.error(error);
         this.message.error(this.translate.instant('RECIPE_FINDER.Clipboard_content_malformed'), {
           nzDuration: 3000
