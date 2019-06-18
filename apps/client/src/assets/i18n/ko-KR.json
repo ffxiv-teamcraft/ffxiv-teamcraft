@@ -1360,6 +1360,10 @@
     "Import_from_clipboard": "클립보드 내용을 붙러오기",
     "Extension_tip": "크롬 확장 앱 [Lodestone inventory grabber] 을 이용하여 집사 인벤토리내 아이템들을 클립보드에 복사할 수 있습니다: ",
     "Extension_link": "크롬 웹 스토어에서 확장 앱 다운받기",
-    "Clear": "아이템 목록 초기화"
+    "Clear": "아이템 목록 초기화",
+    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Inventory": "Inventory",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Pool_copied": "Inventory copied to your clipboard"
   }
 }
