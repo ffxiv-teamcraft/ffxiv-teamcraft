@@ -185,6 +185,12 @@ export class RecipeFinderComponent implements OnDestroy {
     return JSON.stringify(this.pool);
   }
 
+  public sortPool(): void {
+    this.pool = this.pool.sort((a, b) => {
+      return this.i18n.getName(this.l12n.getItem(a.id)) > this.i18n.getName(this.l12n.getItem(b.id)) ? 1 : -1;
+    });
+  }
+
   public afterJSONCopied(): void {
     this.message.success(this.translate.instant('RECIPE_FINDER.Pool_copied'), {
       nzDuration: 3000

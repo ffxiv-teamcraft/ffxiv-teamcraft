@@ -1364,6 +1364,7 @@
     "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
     "Inventory": "Inventory",
     "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Pool_copied": "Inventory copied to your clipboard"
+    "Pool_copied": "Inventory copied to your clipboard",
+    "Sort_alphabetically": "Sort alphabetically"
   }
 }

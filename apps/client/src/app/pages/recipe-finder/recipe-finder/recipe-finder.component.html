@@ -69,6 +69,11 @@
         <div fxLayout="row" fxLayoutGap="10px">
           <button nz-button
                   nz-tooltip
+                  [nzTitle]="'RECIPE_FINDER.Sort_alphabetically' | translate"
+                  (click)="$event.stopPropagation();sortPool()">
+            <i nz-icon nzType="sort-ascending" nzTheme="outline"></i>
+          </button><button nz-button
+                  nz-tooltip
                   [nzTitle]="'RECIPE_FINDER.Copy_to_clipboard' | translate"
                   ngxClipboard
                   (click)="$event.stopPropagation()"
@@ -86,7 +91,7 @@
         </div>
       </div>
     </ng-template>
-    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px" class="inventory-container">
+    <div fxLayout="row wrap" fxLayoutAlign="flex-start flex-start" fxLayoutGap="10px" class="inventory-container">
       <div class="inventory-element" fxLayout="row" fxLayoutAlign="flex-start center"
            fxLayoutGap="5px" [class.highlighted]="(highlight$ | async)?.indexOf(item.id) > -1" *ngFor="let item of pool">
         <i nz-icon type="close" (click)="removeFromPool(item.id, item.amount, true)" class="delete-element"></i>
