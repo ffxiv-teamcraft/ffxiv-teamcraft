@@ -1360,6 +1360,10 @@
     "Import_from_clipboard": "Импорт из ретейнера",
     "Extension_tip": "Вы можете скопировать инвентарь вашего ретейнера в буфер обмена с помощью расширения: ",
     "Extension_link": "Получить расширение в chrome",
-    "Clear": "Clear items list"
+    "Clear": "Clear items list",
+    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Inventory": "Inventory",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Pool_copied": "Inventory copied to your clipboard"
   }
 }
