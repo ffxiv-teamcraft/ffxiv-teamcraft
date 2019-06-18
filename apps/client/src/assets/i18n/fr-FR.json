@@ -1360,6 +1360,10 @@
     "Import_from_clipboard": "Importer depuis le presse-papiers",
     "Extension_tip": "Vous pouvez copier l'inventaire de vos servants dans votre presse-papiers en utilisant l'extension \"inventory grabber\" : ",
     "Extension_link": "Obtenir l'extension sur le store chrome",
-    "Clear": "Clear items list"
+    "Clear": "Clear items list",
+    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Inventory": "Inventory",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Pool_copied": "Inventory copied to your clipboard"
   }
 }
