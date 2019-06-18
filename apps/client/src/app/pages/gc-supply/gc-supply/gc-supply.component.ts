@@ -60,21 +60,13 @@ export class GcSupplyComponent {
             { jobId: +key, level: Math.max(levels[key] - 1, 1) },
             { jobId: +key, level: Math.max(levels[key] - 2, 1) },
             { jobId: +key, level: Math.max(levels[key] - 3, 1) },
-            ...(+key > 15 ? [
-              {
-                jobId: +key,
-                level: Math.max(levels[key] - 4, 1)
-              },
-              {
-                jobId: +key,
-                level: Math.max(levels[key] - 5, 1)
-              }
-            ] : [])
+            { jobId: +key, level: Math.max(levels[key] - 4, 1) },
+            { jobId: +key, level: Math.max(levels[key] - 5, 1) }
           ];
         }));
         const uniqLevels = _.uniq(levelsArray.map(entry => entry.level));
         const requests = uniqLevels.map((level: number) => {
-          return combineLatest(this.xivapi.get(XivapiEndpoint.GCSupplyDuty, level), this.xivapi.get(XivapiEndpoint.GCSupplyDutyReward, level));
+          return combineLatest([this.xivapi.get(XivapiEndpoint.GCSupplyDuty, level), this.xivapi.get(XivapiEndpoint.GCSupplyDutyReward, level)]);
         });
         return requestsWithDelay(requests, 50).pipe(
           map((data: any[]) => {
