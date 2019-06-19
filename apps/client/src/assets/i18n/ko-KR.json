@@ -853,7 +853,8 @@
     "Check_precraft_prices": "장터게시판에서 최저가를 확인하세요",
     "Craft_price": "제작 단가",
     "Marketboard_price": "NQ 가격",
-    "Marketboard_price_hq": "HQ 가격"
+    "Marketboard_price_hq": "HQ 가격",
+    "Enter_total_earnings": "Enter total earnings"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
@@ -1357,14 +1358,15 @@
     "Empty_basket": "제작 목록이 비어있습니다",
     "Add_item": "아이템 추가",
     "Clipboard_content_malformed": "클립보드에 복사된 내용의 형식이 잘못되었습니다",
-    "Import_from_clipboard": "클립보드 내용을 붙러오기",
-    "Extension_tip": "크롬 확장 앱 [Lodestone inventory grabber] 을 이용하여 집사 인벤토리내 아이템들을 클립보드에 복사할 수 있습니다: ",
+    "Import_from_clipboard": "클립보드 내용을 불러오기",
+    "Extension_tip": "[글로벌 서버 전용] 크롬 확장 앱 [Lodestone inventory grabber] 을 이용하여 집사 인벤토리내 아이템들을 클립보드에 복사할 수 있습니다: ",
     "Extension_link": "크롬 웹 스토어에서 확장 앱 다운받기",
     "Clear": "아이템 목록 초기화",
-    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
-    "Inventory": "Inventory",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Pool_copied": "Inventory copied to your clipboard",
-    "Sort_alphabetically": "Sort alphabetically"
+    "Clipboard_import_duplicates": "목록에 중복되어 보이는 아이템이 있을 수 있습니다. 이 기능은 로드스톤과 연동된 집사 소지품 상태를 보여주기 때문에, 집사 내 소지품에서 해당 아이템이 소지품칸을 여러칸 차지하는 경우에 중복되어 보일 수 있습니다.",
+    "Inventory": "소지품",
+    "Copy_to_clipboard": "소지품 내역을 클립보드에 복사",
+    "Pool_copied": "소지품 내역이 클립보드에 복사되었습니다",
+    "Sort_alphabetically": "가나다순으로 정렬",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
   }
 }

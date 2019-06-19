@@ -853,7 +853,8 @@
     "Check_precraft_prices": "Vérifier les prix moins chers dans l’hôtel des ventes",
     "Craft_price": "Prix de fabrication",
     "Marketboard_price": "Prix NQ",
-    "Marketboard_price_hq": "Prix HQ"
+    "Marketboard_price_hq": "Prix HQ",
+    "Enter_total_earnings": "Entrez les gains totaux"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -1365,6 +1366,7 @@
     "Inventory": "Inventaire",
     "Copy_to_clipboard": "Copier l'inventaire dans le presse-papiers",
     "Pool_copied": "Inventaire copié dans votre presse-papiers",
-    "Sort_alphabetically": "Trier par ordre alphabétique"
+    "Sort_alphabetically": "Trier par ordre alphabétique",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} sur {{ total }} éléments"
   }
 }

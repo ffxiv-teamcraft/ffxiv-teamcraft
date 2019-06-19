@@ -853,7 +853,8 @@
     "Check_precraft_prices": "Check for cheaper prices inside marketboard",
     "Craft_price": "Crafting price",
     "Marketboard_price": "NQ price",
-    "Marketboard_price_hq": "HQ price"
+    "Marketboard_price_hq": "HQ price",
+    "Enter_total_earnings": "Enter total earnings"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
@@ -1365,6 +1366,7 @@
     "Inventory": "Inventory",
     "Copy_to_clipboard": "Copy inventory to clipboard",
     "Pool_copied": "Inventory copied to your clipboard",
-    "Sort_alphabetically": "Sort alphabetically"
+    "Sort_alphabetically": "Sort alphabetically",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
   }
 }

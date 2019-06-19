@@ -97,7 +97,7 @@
   "Profile": "Профиль",
   "X_for_total": "{{amount}} всего",
   "Discounts": "Скидка",
-  "Flat_discount": "Flat",
+  "Flat_discount": "Сумма",
   "Percent_discount": "Процент",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Фильтр по тегам",
@@ -122,7 +122,7 @@
     "Opened_in_desktop": "Эта страница была открыта внутри десктопного приложения, теперь вы можете закрыть её.",
     "Open_in_desktop": "Открыть в десктопном приложении",
     "Admin": "Администратор",
-    "Moderator": "Moderator",
+    "Moderator": "Модератор",
     "Minutes_duration": "{{amount}} минут",
     "Seconds_duration": "{{amount}} секунд",
     "None": "Нет",
@@ -146,7 +146,7 @@
     "Open_overlay": "Открыть оверлей",
     "More_available": "добавить ещё {{amount}}...",
     "Node_content": "Содержимое ноды",
-    "Toggle_collapse": "Toggle groups collapse",
+    "Toggle_collapse": "Свернуть группы оповещений",
     "Add_alarms_to_group": "Добавить оповещения к этой группе",
     "CUSTOM": {
       "Title": "Добавить настраиваемое оповещение",
@@ -228,7 +228,7 @@
   "Anonymous_Warning": "Вы должны создать аккаунт, чтобы избежать потери списков и иметь доступ к другим функциям, таким как адаптивные фильтры",
   "Game_Term/DoH": "Крафтеры",
   "Game_Term/DoL": "Собиратели",
-  "MIN/BTN": "Miner / Botanist",
+  "MIN/BTN": "Шахтер / Ботаник",
   "Game_Term/FSH": "Рыбак",
   "Reduction": "Снижение",
   "Upgrade_list": "Восстановить список с учётом последнего обновления",
@@ -500,7 +500,7 @@
         "REMOVE_ITEM": "Удалить предмет из списка",
         "ADD_TAG": "Добавить тег к предмету",
         "MARK_AS_DONE_IN_LOG": "Отметить как сделано внутри журнала",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "Информация с MB"
       }
     },
     "LAYOUT": {
@@ -844,16 +844,17 @@
     "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Ожидайте, чтобы продать все",
     "Autofill_panel_prices": "Заполнить цены на основе цен MB",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
+    "Autofill_panel_prices_your_server": "Заполнить цены на основе цен на MB (только ваш сервер)",
     "Autofill_panel_prices_warning": "Это медленный процесс и должен занять около {{time}} секунд, вы уверены?",
     "Copy_earnings_as_text": "Копировать как текст",
     "Content_copied": "Скопировано в буфер обмена",
     "Cheaper_at_vendor": "Дешевле, если покупать у NPC ({{price}} gil)",
     "Copy_panel_as_text": "Скопировать эту панель как текст",
-    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Check_precraft_prices": "Проверить более дешевые цены внутри MB",
     "Craft_price": "Crafting price",
     "Marketboard_price": "Цена NQ",
-    "Marketboard_price_hq": "Цена HQ"
+    "Marketboard_price_hq": "Цена HQ",
+    "Enter_total_earnings": "Enter total earnings"
   },
   "LEVEQUESTS": {
     "Title": "Ливквесты",
@@ -863,7 +864,7 @@
     "Quantity": "Количество",
     "All_deliveries": "Все {{value}} доставлено",
     "Compute_exp": "Показать влияние на xp",
-    "Global_exp": "Use global exp",
+    "Global_exp": "Суммировать опыт",
     "More_on_gamerescape": "Подробнее на gamerescape",
     "Deliver_to": "Доставить в {{placename}}",
     "INTRO": {
@@ -931,7 +932,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Information",
+    "Title": "Информация с MB",
     "Error": "XIVAPI или Companion API в настоящее время не работают, пожалуйста, повторите запрос позже.",
     "Amount": "Количество",
     "HQ": "HQ",
@@ -968,7 +969,7 @@
       "Alarms": "Настройте оповещения, чтобы не пропустить ни одного спауна ноды, сортируйте их по группам, импортируйте в игру, возможно всё.",
       "Gathering_location": "Здесь ты можешь найти информацию о том, как собрать любой предмет, настроить оповещение, сразу найти его координаты, ближайший телепорт, книгу, которая его открывает и другое!",
       "Rotations": "Создавай ротации для крафта предметов, тестируй их в симуляторе, или проверь свои теории о крафте в специальном симуляторе!",
-      "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
+      "Levequests": "Найдите несколько левеквестов для заданной профессии и/или диапазона уровней, смотрите мгновенные выгоды на них и создавайте списки для них.",
       "Macro_translation": "У вас есть макросы на иностранном языке? Перейдите на страницу макрос переводчика и переведите его на ваш язык, чтобы он работал в FFXIV!"
     }
   },
@@ -978,22 +979,22 @@
     "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию."
   },
   "LOG_TRACKER": {
-    "Title": "Log Tracker",
+    "Title": "Трекер журнала",
     "Mark_page_as_done": "Отметить эту страницу как выполненную",
     "Mark_as_done": "Отметить этот предмет как выполненный",
-    "Mark_as_done_external": "Mark this item as done inside the log",
+    "Mark_as_done_external": "Отметить этот предмет как выполненный внутри журнала",
     "Mark_as_not_done": "Отметить этот предмет как невыполненный",
     "Create_list": "Создать список для завершения этой страницы",
-    "Create_list_limited": "Create a list to complete this page (50 items max)",
+    "Create_list_limited": "Создать список для завершения этой страницы (50 предметов максимум)",
     "Folklore": "Regional Folklore",
     "Timed": "Timed",
-    "Weather_dependant": "Only with some weathers",
+    "Weather_dependant": "Только с определенной погодой",
     "View_on_ff14angler": "Подробнее на ff14angler",
     "Required_for_achievement": "Требуется для получения achievement'a",
     "Select_spot": "Выберите точку, чтобы увидеть его детали",
     "Hide_completed": "Скрыть завершенные рецепты",
-    "MIN_optimized_path": "Optimized path for all MIN nodes",
-    "BTN_optimized_path": "Optimized path for all BTN nodes",
+    "MIN_optimized_path": "Оптимизированный путь для всех точек MIN",
+    "BTN_optimized_path": "Оптимизированный путь для всех точек BTN",
     "PAGE": {
       "Master_recipes": "Рецепты мастера ({{number}})",
       "Housing_items": "Мебель для дома ({{number}})",
@@ -1010,7 +1011,7 @@
   "GIVEAWAY": {
     "Discord_1K": {
       "Title": "1000 Discord members giveaway !",
-      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+      "Description": "Нажмите на этот баннер, чтобы перейти на страницу регистрации для FINAL FANTASY XIV: Shadowbringers Collector's Edition, созданный для празднования 1000 пользователей, достигнутого на сервере discord."
     }
   },
   "CUSTOM_ITEMS": {
@@ -1360,11 +1361,12 @@
     "Import_from_clipboard": "Импорт из ретейнера",
     "Extension_tip": "Вы можете скопировать инвентарь вашего ретейнера в буфер обмена с помощью расширения: ",
     "Extension_link": "Получить расширение в chrome",
-    "Clear": "Clear items list",
-    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
-    "Inventory": "Inventory",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Pool_copied": "Inventory copied to your clipboard",
-    "Sort_alphabetically": "Sort alphabetically"
+    "Clear": "Очистить список",
+    "Clipboard_import_duplicates": "Некоторые товары здесь видно дважды, потому что lodestone показывает стаки, которые внутри вашего ретейнера лежат раздельно.",
+    "Inventory": "Инвентарь",
+    "Copy_to_clipboard": "Копировать инвентарь в буфер обмена",
+    "Pool_copied": "Инвентарь скопирован в буфер обмена",
+    "Sort_alphabetically": "Сортировать по алфавиту",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} из {{ total }} предметов"
   }
 }
