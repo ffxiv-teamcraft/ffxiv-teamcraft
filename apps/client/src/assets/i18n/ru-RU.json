@@ -97,7 +97,7 @@
   "Profile": "Профиль",
   "X_for_total": "{{amount}} всего",
   "Discounts": "Скидка",
-  "Flat_discount": "Flat",
+  "Flat_discount": "Сумма",
   "Percent_discount": "Процент",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Фильтр по тегам",
@@ -844,13 +844,13 @@
     "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Ожидайте, чтобы продать все",
     "Autofill_panel_prices": "Заполнить цены на основе цен MB",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
+    "Autofill_panel_prices_your_server": "Заполнить цены на основе цен на MB (только ваш сервер)",
     "Autofill_panel_prices_warning": "Это медленный процесс и должен занять около {{time}} секунд, вы уверены?",
     "Copy_earnings_as_text": "Копировать как текст",
     "Content_copied": "Скопировано в буфер обмена",
     "Cheaper_at_vendor": "Дешевле, если покупать у NPC ({{price}} gil)",
     "Copy_panel_as_text": "Скопировать эту панель как текст",
-    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Check_precraft_prices": "Проверить более дешевые цены внутри MB",
     "Craft_price": "Crafting price",
     "Marketboard_price": "Цена NQ",
     "Marketboard_price_hq": "Цена HQ",
@@ -969,7 +969,7 @@
       "Alarms": "Настройте оповещения, чтобы не пропустить ни одного спауна ноды, сортируйте их по группам, импортируйте в игру, возможно всё.",
       "Gathering_location": "Здесь ты можешь найти информацию о том, как собрать любой предмет, настроить оповещение, сразу найти его координаты, ближайший телепорт, книгу, которая его открывает и другое!",
       "Rotations": "Создавай ротации для крафта предметов, тестируй их в симуляторе, или проверь свои теории о крафте в специальном симуляторе!",
-      "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
+      "Levequests": "Найдите несколько левеквестов для заданной профессии и/или диапазона уровней, смотрите мгновенные выгоды на них и создавайте списки для них.",
       "Macro_translation": "У вас есть макросы на иностранном языке? Перейдите на страницу макрос переводчика и переведите его на ваш язык, чтобы он работал в FFXIV!"
     }
   },
@@ -979,10 +979,10 @@
     "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию."
   },
   "LOG_TRACKER": {
-    "Title": "Log Tracker",
+    "Title": "Трекер журнала",
     "Mark_page_as_done": "Отметить эту страницу как выполненную",
     "Mark_as_done": "Отметить этот предмет как выполненный",
-    "Mark_as_done_external": "Mark this item as done inside the log",
+    "Mark_as_done_external": "Отметить этот предмет как выполненный внутри журнала",
     "Mark_as_not_done": "Отметить этот предмет как невыполненный",
     "Create_list": "Создать список для завершения этой страницы",
     "Create_list_limited": "Create a list to complete this page (50 items max)",
