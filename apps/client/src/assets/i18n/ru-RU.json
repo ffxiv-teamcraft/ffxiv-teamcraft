@@ -864,7 +864,7 @@
     "Quantity": "Количество",
     "All_deliveries": "Все {{value}} доставлено",
     "Compute_exp": "Показать влияние на xp",
-    "Global_exp": "Use global exp",
+    "Global_exp": "Суммировать опыт",
     "More_on_gamerescape": "Подробнее на gamerescape",
     "Deliver_to": "Доставить в {{placename}}",
     "INTRO": {
@@ -932,7 +932,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Information",
+    "Title": "Информация с MB",
     "Error": "XIVAPI или Companion API в настоящее время не работают, пожалуйста, повторите запрос позже.",
     "Amount": "Количество",
     "HQ": "HQ",
@@ -985,16 +985,16 @@
     "Mark_as_done_external": "Отметить этот предмет как выполненный внутри журнала",
     "Mark_as_not_done": "Отметить этот предмет как невыполненный",
     "Create_list": "Создать список для завершения этой страницы",
-    "Create_list_limited": "Create a list to complete this page (50 items max)",
+    "Create_list_limited": "Создать список для завершения этой страницы (50 предметов максимум)",
     "Folklore": "Regional Folklore",
     "Timed": "Timed",
-    "Weather_dependant": "Only with some weathers",
+    "Weather_dependant": "Только с определенной погодой",
     "View_on_ff14angler": "Подробнее на ff14angler",
     "Required_for_achievement": "Требуется для получения achievement'a",
     "Select_spot": "Выберите точку, чтобы увидеть его детали",
     "Hide_completed": "Скрыть завершенные рецепты",
-    "MIN_optimized_path": "Optimized path for all MIN nodes",
-    "BTN_optimized_path": "Optimized path for all BTN nodes",
+    "MIN_optimized_path": "Оптимизированный путь для всех точек MIN",
+    "BTN_optimized_path": "Оптимизированный путь для всех точек BTN",
     "PAGE": {
       "Master_recipes": "Рецепты мастера ({{number}})",
       "Housing_items": "Мебель для дома ({{number}})",
@@ -1011,7 +1011,7 @@
   "GIVEAWAY": {
     "Discord_1K": {
       "Title": "1000 Discord members giveaway !",
-      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+      "Description": "Нажмите на этот баннер, чтобы перейти на страницу регистрации для FINAL FANTASY XIV: Shadowbringers Collector's Edition, созданный для празднования 1000 пользователей, достигнутого на сервере discord."
     }
   },
   "CUSTOM_ITEMS": {
@@ -1361,12 +1361,12 @@
     "Import_from_clipboard": "Импорт из ретейнера",
     "Extension_tip": "Вы можете скопировать инвентарь вашего ретейнера в буфер обмена с помощью расширения: ",
     "Extension_link": "Получить расширение в chrome",
-    "Clear": "Clear items list",
+    "Clear": "Очистить список",
     "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
-    "Inventory": "Inventory",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Pool_copied": "Inventory copied to your clipboard",
-    "Sort_alphabetically": "Sort alphabetically",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Inventory": "Инвентарь",
+    "Copy_to_clipboard": "Копировать инвентарь в буфер обмена",
+    "Pool_copied": "Инвентарь скопирован в буфер обмена",
+    "Sort_alphabetically": "Сортировать по алфавиту",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} из {{ total }} предметов"
   }
 }
