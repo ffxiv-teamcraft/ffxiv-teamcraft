@@ -1362,7 +1362,7 @@
     "Extension_tip": "Вы можете скопировать инвентарь вашего ретейнера в буфер обмена с помощью расширения: ",
     "Extension_link": "Получить расширение в chrome",
     "Clear": "Очистить список",
-    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Clipboard_import_duplicates": "Некоторые товары здесь видно дважды, потому что lodestone показывает стаки, которые внутри вашего ретейнера лежат раздельно.",
     "Inventory": "Инвентарь",
     "Copy_to_clipboard": "Копировать инвентарь в буфер обмена",
     "Pool_copied": "Инвентарь скопирован в буфер обмена",
