@@ -854,7 +854,7 @@
     "Craft_price": "Prix de fabrication",
     "Marketboard_price": "Prix NQ",
     "Marketboard_price_hq": "Prix HQ",
-    "Enter_total_earnings": "Enter total earnings"
+    "Enter_total_earnings": "Entrez les gains totaux"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -1367,6 +1367,6 @@
     "Copy_to_clipboard": "Copier l'inventaire dans le presse-papiers",
     "Pool_copied": "Inventaire copié dans votre presse-papiers",
     "Sort_alphabetically": "Trier par ordre alphabétique",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} sur {{ total }} éléments"
   }
 }
