@@ -61,9 +61,9 @@ export class RecipeFinderComponent implements OnDestroy {
 
   public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
 
-  private pageSize = 25;
+  public pageSize = 25;
 
-  public totalPages: number;
+  public totalItems: number;
 
   @ViewChild('notificationRef')
   notification: TemplateRef<any>;
@@ -138,7 +138,7 @@ export class RecipeFinderComponent implements OnDestroy {
         });
       }),
       tap(results => {
-        this.totalPages = results.length / this.pageSize;
+        this.totalItems = results.length;
       }),
       shareReplay(1)
     );

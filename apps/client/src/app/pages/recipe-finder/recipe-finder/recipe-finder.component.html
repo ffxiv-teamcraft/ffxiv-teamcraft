@@ -121,8 +121,12 @@
   <div *ngIf="results$ | async as results" fxFlex="1 1 50%" class="results">
     <nz-divider nzOrientation="left" [nzText]="'RECIPE_FINDER.Results' | translate"></nz-divider>
     <div fxLayout="row" fxLayoutAlign="center center">
-      <nz-pagination [nzTotal]="totalPages" [nzPageIndex]="page$ | async" (nzPageIndexChange)="page$.next($event)"></nz-pagination>
+      <nz-pagination [nzTotal]="totalItems" [nzShowTotal]="rangeTemplate" [nzPageSize]="pageSize" [nzShowQuickJumper]="true" [nzPageIndex]="page$ | async" (nzPageIndexChange)="page$.next($event)"></nz-pagination>
+      <ng-template #rangeTemplate let-range="range" let-total>
+        {{ range[0] }}-{{ range[1] }} of {{ total }} items
+      </ng-template>      
     </div>
+    <br />
     <nz-list [nzDataSource]="results" [nzRenderItem]="recipe">
       <ng-template #recipe let-recipe let-index="index">
         <nz-list-item (mouseenter)="highlight(recipe)" (mouseleave)="highlight(null)"
@@ -173,8 +177,9 @@
         </nz-list-item>
       </ng-template>
     </nz-list>
+    <br />
     <div fxLayout="row" fxLayoutAlign="center center">
-      <nz-pagination [nzTotal]="totalPages" [nzPageIndex]="page$ | async" (nzPageIndexChange)="page$.next($event)"></nz-pagination>
+      <nz-pagination [nzTotal]="totalItems" [nzShowTotal]="rangeTemplate" [nzPageSize]="pageSize" [nzShowQuickJumper]="true" [nzPageIndex]="page$ | async" (nzPageIndexChange)="page$.next($event)"></nz-pagination>
     </div>
   </div>
   <div *ngIf="results$ | async as results" fxFlex="1 1 50%">
