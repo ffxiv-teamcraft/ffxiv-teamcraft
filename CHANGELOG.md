@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.5.6"></a>
+## [5.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.5...v5.5.6) (2019-06-19)
+
+
+### Bug Fixes
+
+* **layout:** fixed an issue with collapse if done not working properly ([58ca722](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/58ca722))
+* **search:** fixed an issue with filters not resetting properly ([b99be7a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b99be7a)), closes [#976](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/976)
+* Recipe Finder Pagination ([2690c28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2690c28))
+
+
+### Features
+
+* **pricing:** you can now input desired earning amount to have it applied on final items ([06fa265](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/06fa265))
+
+
+
 <a name="5.5.5"></a>
 ## [5.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.4...v5.5.5) (2019-06-18)
 
