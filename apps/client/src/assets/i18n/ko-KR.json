@@ -854,7 +854,7 @@
     "Craft_price": "제작 단가",
     "Marketboard_price": "NQ 가격",
     "Marketboard_price_hq": "HQ 가격",
-    "Enter_total_earnings": "Enter total earnings"
+    "Enter_total_earnings": "총 수익"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
@@ -1367,6 +1367,6 @@
     "Copy_to_clipboard": "소지품 내역을 클립보드에 복사",
     "Pool_copied": "소지품 내역이 클립보드에 복사되었습니다",
     "Sort_alphabetically": "가나다순으로 정렬",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템"
   }
 }
