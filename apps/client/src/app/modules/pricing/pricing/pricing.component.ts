@@ -16,6 +16,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { PriceCheckResultComponent } from '../price-check-result/price-check-result.component';
+import { NumberQuestionPopupComponent } from '../../number-question-popup/number-question-popup/number-question-popup.component';
 
 @Component({
   selector: 'app-pricing',
@@ -83,6 +84,33 @@ export class PricingComponent implements AfterViewInit {
 
   public saveDiscounts(listKey: string): void {
     localStorage.setItem(`discounts:${listKey}`, `${this.flatDiscount},${this.discount}`);
+  }
+
+  public setBenefits(items: ListRow[], list: List): void {
+    this.dialog.create({
+      nzTitle: `${this.translate.instant('PRICING.Enter_total_earnings')}`,
+      nzContent: NumberQuestionPopupComponent,
+      nzComponentParams: {
+        value: this.getTotalEarnings(items, list)
+      },
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        filter(value => value || value === 0)
+      )
+      .subscribe(value => {
+        items.forEach(item => {
+          const totalPricePerItem = value / items.length;
+          const pricePerCraft = Math.round(totalPricePerItem / item.amount);
+          this.pricingService.savePrice(item, {
+            fromMB: false,
+            fromVendor: false,
+            hq: pricePerCraft,
+            nq: pricePerCraft
+          });
+        });
+        this.pricingService.priceChanged$.next(null);
+      });
   }
 
   public fillMbCosts(rows: ListRow[], finalItems = false): void {

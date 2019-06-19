@@ -108,7 +108,15 @@
 
   <nz-card>
     <nz-card-meta [nzTitle]="title"
-                  nzDescription="{{getTotalEarnings(list.finalItems, list) | number:'1.0-0'}} gil"></nz-card-meta>
+                  [nzDescription]="description"></nz-card-meta>
+    <ng-template #description>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div>{{getTotalEarnings(list.finalItems, list) | number:'1.0-0'}} gil</div>
+        <button nz-button nzShape="circle" nzSize="small" (click)="setBenefits(list.finalItems, list)">
+          <i nz-icon type="edit"></i>
+        </button>
+      </div>
+    </ng-template>
     <ng-template #title>
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>{{'Earning' | translate}}</div>
@@ -164,6 +172,11 @@
   </nz-card>
 
   <nz-alert *ngIf="getBenefits(list) as benefits" [nzType]="benefits >= 0 ? 'success' : 'error'"
-            nzMessage="{{'Benefits' | translate}}: {{ benefits | number:'1.0-0'}} gil" class="dark">
+            [nzMessage]="message" class="dark">
+    <ng-template #message>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div>{{'Benefits' | translate}}: {{ benefits | number:'1.0-0'}} gil</div>
+      </div>
+    </ng-template>
   </nz-alert>
 </div>
