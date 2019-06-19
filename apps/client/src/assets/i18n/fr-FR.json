@@ -853,7 +853,8 @@
     "Check_precraft_prices": "Vérifier les prix moins chers dans l’hôtel des ventes",
     "Craft_price": "Prix de fabrication",
     "Marketboard_price": "Prix NQ",
-    "Marketboard_price_hq": "Prix HQ"
+    "Marketboard_price_hq": "Prix HQ",
+    "Enter_total_earnings": "Enter total earnings"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
