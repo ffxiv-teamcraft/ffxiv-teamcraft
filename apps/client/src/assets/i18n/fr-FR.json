@@ -1366,6 +1366,7 @@
     "Inventory": "Inventaire",
     "Copy_to_clipboard": "Copier l'inventaire dans le presse-papiers",
     "Pool_copied": "Inventaire copié dans votre presse-papiers",
-    "Sort_alphabetically": "Trier par ordre alphabétique"
+    "Sort_alphabetically": "Trier par ordre alphabétique",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
   }
 }
