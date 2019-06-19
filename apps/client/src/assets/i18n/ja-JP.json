@@ -853,7 +853,8 @@
     "Check_precraft_prices": "Check for cheaper prices inside marketboard",
     "Craft_price": "Crafting price",
     "Marketboard_price": "NQ price",
-    "Marketboard_price_hq": "HQ price"
+    "Marketboard_price_hq": "HQ price",
+    "Enter_total_earnings": "Enter total earnings"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
