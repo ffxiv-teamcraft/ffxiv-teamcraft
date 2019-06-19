@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
@@ -26,7 +26,7 @@ import { WorldNavigationMapComponent } from '../../../modules/map/world-navigati
   templateUrl: './list-details-panel.component.html',
   styleUrls: ['./list-details-panel.component.less']
 })
-export class ListDetailsPanelComponent implements OnChanges {
+export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   @Input()
   displayRow: LayoutRowDisplay;
@@ -82,15 +82,23 @@ export class ListDetailsPanelComponent implements OnChanges {
     ).subscribe();
   }
 
+
+  public activeChange(event: boolean): void {
+    this.collapsed = !event;
+  }
+
+  ngOnInit(): void {
+    if (this.displayRow && this.displayRow.collapsedByDefault) {
+      this.collapsed = true;
+    }
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (this.displayRow && (this.displayRow.tiers || this.displayRow.reverseTiers)) {
       this.generateTiers(this.displayRow.reverseTiers);
     }
     if (this.displayRow && this.displayRow.zoneBreakdown) {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.getHideZoneDuplicates());
-    }
-    if (this.displayRow && this.displayRow.collapsedByDefault) {
-      this.collapsed = true;
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (row.tradeSources && row.tradeSources.length > 0) || (row.vendors && row.vendors.length > 0) || hasTrades;

@@ -77,7 +77,7 @@ export class SearchComponent implements OnInit {
     clvlMin: [0],
     clvlMax: [80],
     jobCategories: [[]],
-    craftJob: [0],
+    craftJob: [null],
     itemCategories: [[]]
   });
 
@@ -182,6 +182,8 @@ export class SearchComponent implements OnInit {
         };
         if (filters.length > 0) {
           queryParams.filters = btoa(JSON.stringify(filters));
+        } else {
+          queryParams.filters = null;
         }
         if (query.length > 0) {
           const searchHistory = JSON.parse(localStorage.getItem('search:history') || '{}');
@@ -765,11 +767,11 @@ export class SearchComponent implements OnInit {
       ilvlMin: 0,
       ilvlMax: 999,
       elvlMin: 0,
-      elvlMax: 70,
+      elvlMax: 80,
       clvlMin: 0,
-      clvlMax: 70,
+      clvlMax: 80,
       jobCategories: [],
-      craftJob: 0,
+      craftJob: null,
       itemCategories: []
     });
 
@@ -872,7 +874,7 @@ export class SearchComponent implements OnInit {
         value: controls.jobCategories.value
       });
     }
-    if (controls.craftJob.value !== 0) {
+    if (controls.craftJob.value) {
       filters.push({
         minMax: false,
         name: 'craftJob',
