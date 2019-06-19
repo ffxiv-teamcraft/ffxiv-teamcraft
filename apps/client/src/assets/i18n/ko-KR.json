@@ -853,7 +853,8 @@
     "Check_precraft_prices": "장터게시판에서 최저가를 확인하세요",
     "Craft_price": "제작 단가",
     "Marketboard_price": "NQ 가격",
-    "Marketboard_price_hq": "HQ 가격"
+    "Marketboard_price_hq": "HQ 가격",
+    "Enter_total_earnings": "Enter total earnings"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
