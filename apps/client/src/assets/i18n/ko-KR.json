@@ -1366,6 +1366,7 @@
     "Inventory": "소지품",
     "Copy_to_clipboard": "소지품 내역을 클립보드에 복사",
     "Pool_copied": "소지품 내역이 클립보드에 복사되었습니다",
-    "Sort_alphabetically": "가나다순으로 정렬"
+    "Sort_alphabetically": "가나다순으로 정렬",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
   }
 }
