@@ -144,7 +144,7 @@ export class RecipeFinderComponent implements OnDestroy {
     );
     this.results$ = combineLatest([results$, this.page$]).pipe(
       map(([results, page]) => {
-        return _.chunk(results, this.pageSize)[page - 1];
+        return _.chunk(results, this.pageSize)[page - 1] || [];
       })
     );
   }
