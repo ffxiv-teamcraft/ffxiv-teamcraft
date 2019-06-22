@@ -238,8 +238,8 @@ export class List extends DataWithPermissions {
     if (item.done < 0) {
       item.done = 0;
     }
-    amount = MathTools.absoluteCeil(amount / item.yield);
     const newDone = item.amount_needed - MathTools.absoluteCeil((item.amount - item.done) / item.yield);
+    amount = newDone - previousDone;
     if (item.requires !== undefined && newDone !== previousDone) {
       for (const requirement of item.requires) {
         const requirementItem = this.getItemById(requirement.id, excludeFinalItems);
@@ -257,7 +257,7 @@ export class List extends DataWithPermissions {
             && (newDone - previousDone <= 0) === (initialAddition <= 0)) {
             // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
             // as we didn't use more.
-            this.setDone(requirement.id, nextAmount, true, false, previousDone !== item.done, undefined, external, initialAddition);
+            this.setDone(requirement.id, nextAmount, true, false, true, undefined, external, initialAddition);
           }
         }
       }
