@@ -374,7 +374,7 @@
   </div>
   <div class="block books-and-input-block" nz-col nzXs="24" nzSm="12" nzMd="6">
     <div class="masterbooks">
-      <app-item-icon *ngFor="let masterbook of item.masterbooks" [icon]="masterbook.icon"
+      <app-item-icon *ngFor="let masterbook of item.masterbooks" [icon]="masterbook.id | lazyIcon"
                      [itemName]="masterbook.id | itemName| i18n" [itemId]="masterbook.id"
                      nz-tooltip [nzTitle]="masterbook.id | itemName | i18n"
                      [width]="24" [disableClick]="+item.masterbooks[0].id !== item.masterbooks[0].id"></app-item-icon>
@@ -473,7 +473,7 @@
       </button>
       <button nz-button nzShape="circle" *ngIf="item.ventures !== undefined && item.ventures.length > 0"
               nz-tooltip [nzTitle]="'Retainer_ventures' | translate" (click)="openVenturesPopup()">
-        <img class="img-icon round-icon" src="https://garlandtools.org/files/icons/item/3503.png" alt="Ventures">
+        <img class="img-icon round-icon" [src]="21072 | lazyIcon" alt="Ventures">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.treasures !== undefined && item.treasures.length > 0"
               nz-tooltip [nzTitle]="'Treasures' | translate" (click)="openTreasuresPopup()">
