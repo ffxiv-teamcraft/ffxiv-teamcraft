@@ -112,7 +112,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent {
                     return row[server];
                   })
                   .filter(mbRow => {
-                    return mbRow.History.length > 0 || mbRow.Prices.length > 0;
+                    return mbRow.History && mbRow.History.length > 0 || mbRow.Prices && mbRow.Prices.length > 0;
                   });
               }),
               map((res) => {
@@ -122,10 +122,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent {
                   })
                   .map(entry => {
                     const mbRow = res.find(r => r.ItemID === entry.item);
-                    let prices = mbRow.Prices
+                    let prices = (mbRow.Prices || [])
                       .filter(item => item.IsHQ === (entry.HQ || false));
                     if (prices.length === 0) {
-                      prices = mbRow.History
+                      prices = (mbRow.History || [])
                         .filter(item => item.IsHQ === (entry.HQ || false));
                     }
                     const price = prices
