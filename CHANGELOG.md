@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.5.8"></a>
+## [5.5.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.7...v5.5.8) (2019-06-23)
+
+
+### Bug Fixes
+
+* fixed an issue with list display being entirely broken ([425394f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/425394f))
+
+
+
 <a name="5.5.7"></a>
 ## [5.5.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.6...v5.5.7) (2019-06-23)
 
