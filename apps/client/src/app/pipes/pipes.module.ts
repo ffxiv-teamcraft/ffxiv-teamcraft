@@ -49,6 +49,7 @@ import { IsPatronPipe } from './pipes/is-patron.pipe';
 import { IsVerifiedPipe } from './pipes/is-verified.pipe';
 import { AchievementNamePipe } from './pipes/achievement-name.pipe';
 import { AchievementIconPipe } from './pipes/achievement-icon.pipe';
+import { FloorPipe } from './pipes/floor.pipe';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { AchievementIconPipe } from './pipes/achievement-icon.pipe';
     PlaceNamePipe,
     NpcNamePipe,
     CeilPipe,
+    FloorPipe,
     IconPipe,
     MobNamePipe,
     VentureNamePipe,
@@ -109,6 +111,7 @@ import { AchievementIconPipe } from './pipes/achievement-icon.pipe';
     PlaceNamePipe,
     NpcNamePipe,
     CeilPipe,
+    FloorPipe,
     IconPipe,
     MobNamePipe,
     VentureNamePipe,

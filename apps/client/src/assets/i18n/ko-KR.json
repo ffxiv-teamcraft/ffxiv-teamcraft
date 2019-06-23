@@ -127,7 +127,8 @@
     "Seconds_duration": "{{amount}} 초",
     "None": "없음",
     "Top": "맨 위로",
-    "Bottom": "맨 아래로"
+    "Bottom": "맨 아래로",
+    "Amount": "Amount"
   },
   "ALARMS": {
     "Title": "알람",
@@ -854,7 +855,7 @@
     "Craft_price": "제작 단가",
     "Marketboard_price": "NQ 가격",
     "Marketboard_price_hq": "HQ 가격",
-    "Enter_total_earnings": "Enter total earnings"
+    "Enter_total_earnings": "총 수익"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
@@ -1367,6 +1368,12 @@
     "Copy_to_clipboard": "소지품 내역을 클립보드에 복사",
     "Pool_copied": "소지품 내역이 클립보드에 복사되었습니다",
     "Sort_alphabetically": "가나다순으로 정렬",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템"
+  },
+  "CURRENCY_SPENDING": {
+    "Title": "Currency Spending guide",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Pick_currency": "Pick a currency",
+    "You_can_buy": "You can buy {{amount}}"
   }
 }

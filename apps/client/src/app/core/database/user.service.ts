@@ -34,14 +34,6 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
           if (user === null) {
             return of(new TeamcraftUser());
           }
-          if (!external && (user.lodestoneIds.length === 0 && (
-            user.gatheringLogProgression.length > 0
-            || user.logProgression.length > 0
-            || user.currentFcId
-            || user.contacts.length > 0
-          ))) {
-            throw new Error('Network error, logging the user out to avoid data loss');
-          }
           user.createdAt = new Date(user.createdAt);
           if (user.patreonToken === undefined) {
             user.patron = false;

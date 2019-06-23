@@ -119,6 +119,10 @@ const routes: Routes = [
   {
     path: 'recipe-finder',
     loadChildren: './pages/recipe-finder/recipe-finder.module#RecipeFinderModule'
+  },
+  {
+    path: 'currency-spending',
+    loadChildren: './pages/currency-spending/currency-spending.module#CurrencySpendingModule'
   }
 ];
 

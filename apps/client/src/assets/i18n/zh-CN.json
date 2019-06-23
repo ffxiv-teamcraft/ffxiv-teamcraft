@@ -126,8 +126,9 @@
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
     "None": "无",
-    "Top": "Top",
-    "Bottom": "Bottom"
+    "Top": "顶部",
+    "Bottom": "底部",
+    "Amount": "Amount"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -335,8 +336,8 @@
     "Favorite_aetherytes": "收藏传送点",
     "Disable_cross_world_prices": "仅使用当前服务器的市场价格",
     "Clear_search_history": "清除搜索记录",
-    "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
-    "Db_comments_position": "Database comments position",
+    "Auto_mark_as_done_in_log": "在列表项完成时标记为已完成",
+    "Db_comments_position": "数据库评论位置",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -500,7 +501,7 @@
         "REMOVE_ITEM": "从清单中删除物品",
         "ADD_TAG": "添加标签到物品",
         "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "时长信息"
       }
     },
     "LAYOUT": {
@@ -844,13 +845,13 @@
     "From_crafting": "制作价格",
     "Expect_to_sell_everything": "计划出售",
     "Autofill_panel_prices": "基于市场物价填充价格",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
+    "Autofill_panel_prices_your_server": "根据市场价格填充 (仅限此服务器)",
     "Autofill_panel_prices_warning": "本操作为耗时操作，大约需要 {{time}} 秒来完成，确定吗？",
     "Copy_earnings_as_text": "复制为文本",
     "Content_copied": "已复制",
     "Cheaper_at_vendor": "NPC 卖得更便宜 ({{price}} gil)",
     "Copy_panel_as_text": "复制为文本",
-    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Check_precraft_prices": "检查市场内的更低价格",
     "Craft_price": "Crafting price",
     "Marketboard_price": "NQ price",
     "Marketboard_price_hq": "HQ price",
@@ -1368,5 +1369,11 @@
     "Pool_copied": "Inventory copied to your clipboard",
     "Sort_alphabetically": "Sort alphabetically",
     "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+  },
+  "CURRENCY_SPENDING": {
+    "Title": "Currency Spending guide",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Pick_currency": "Pick a currency",
+    "You_can_buy": "You can buy {{amount}}"
   }
 }

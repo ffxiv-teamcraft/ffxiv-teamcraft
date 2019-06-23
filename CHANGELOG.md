@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.5.7"></a>
+## [5.5.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.6...v5.5.7) (2019-06-23)
+
+
+### Bug Fixes
+
+* fixed broken icon after GT's icons cleanup ([450c38b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/450c38b))
+* **auth:** fixed an issue with anonymous accounts converted to user ones being logged out ([72914e4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72914e4))
+* **db:** fixed an issue with dark matter cluster page crashing ([515edb9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/515edb9))
+* **list:** fixed wrong amount count with potions ([7928867](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7928867)), closes [#983](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/983)
+* **recipe-finder:** fixed an issue with cart not shown when no recipes are found ([f9951d7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f9951d7)), closes [#982](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/982)
+
+
+### Features
+
+* added currency spending guide to find best item to buy with currency for gil ([022176e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/022176e)), closes [#978](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/978)
+
+
+
 <a name="5.5.6"></a>
 ## [5.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.5...v5.5.6) (2019-06-19)
 
