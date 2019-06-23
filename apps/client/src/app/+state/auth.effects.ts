@@ -118,6 +118,7 @@ export class AuthEffects {
         return of(new TeamcraftUser());
       } else {
         this.authFacade.logout();
+        console.error(error);
         this.notificationService.error(this.translate.instant('COMMON.Error'), this.translate.instant('Network_error_logged_out'));
         return EMPTY;
       }
