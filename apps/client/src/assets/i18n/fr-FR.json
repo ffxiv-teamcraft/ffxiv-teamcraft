@@ -127,7 +127,8 @@
     "Seconds_duration": "{{amount}} secondes",
     "None": "Aucun",
     "Top": "Début",
-    "Bottom": "Fin"
+    "Bottom": "Fin",
+    "Amount": "Quantité"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -1368,5 +1369,11 @@
     "Pool_copied": "Inventaire copié dans votre presse-papiers",
     "Sort_alphabetically": "Trier par ordre alphabétique",
     "Pages_range_label": "{{ range0 }}-{{ range1 }} sur {{ total }} éléments"
+  },
+  "CURRENCY_SPENDING": {
+    "Title": "Dépense de devises",
+    "Description": "Vous avez trop de devises ? Sélectionnez votre devise, définissez un montant, un serveur et trouvez quel article est le meilleur à acheter pour revendre à l'hôtel des ventes et gagner des gils !",
+    "Pick_currency": "Choisir une devise",
+    "You_can_buy": "Vous pouvez en acheter {{amount}}"
   }
 }
