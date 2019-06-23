@@ -1,8 +1,7 @@
-import { Inject, Pipe, PipeTransform, PLATFORM_ID } from '@angular/core';
+import { Inject, Optional, Pipe, PipeTransform } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
-import { isPlatformServer } from '@angular/common';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
 
 @Pipe({
   name: 'xivapiI18n',
@@ -11,15 +10,11 @@ import { isPlatformServer } from '@angular/common';
 export class XivapiI18nPipe implements PipeTransform {
 
   constructor(private translate: TranslateService, private sanitizer: DomSanitizer,
-              private activatedRoute: ActivatedRoute, @Inject(PLATFORM_ID) private platform: Object) {
+              @Inject(REQUEST) @Optional() private request: any) {
   }
 
   transform(value: any, fieldName = 'Name', sanitized = false): SafeHtml {
-    let lang = this.translate.currentLang;
-    if (isPlatformServer(this.platform) && this.activatedRoute.snapshot.paramMap.get('language')) {
-      lang = this.activatedRoute.snapshot.paramMap.get('language');
-      console.log('LANG FROM URL', lang);
-    }
+    const lang = this.request.lang || this.translate.currentLang;
     const name = value[`${fieldName}_${lang}`] || value[`${fieldName}_en`];
     if (sanitized) {
       return this.sanitizer.bypassSecurityTrustHtml(name);
