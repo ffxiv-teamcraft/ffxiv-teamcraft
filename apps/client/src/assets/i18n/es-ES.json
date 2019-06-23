@@ -1361,14 +1361,14 @@
     "Clipboard_content_malformed": "Contenido del portapapeles incorrecto",
     "Import_from_clipboard": "Importar desde el portapapeles",
     "Extension_tip": "Puede copiar el inventario de su siervo a su portapapeles usando la extensión capturadora de inventario: ",
-    "Extension_link": "Get the extension on chrome webstore",
-    "Clear": "Clear items list",
-    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
-    "Inventory": "Inventory",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Pool_copied": "Inventory copied to your clipboard",
-    "Sort_alphabetically": "Sort alphabetically",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Extension_link": "Obtenga la extensión en la tienda web de chrome",
+    "Clear": "Borrar lista de artículos",
+    "Clipboard_import_duplicates": "Los artículos que se muestran doble es porque lodestone muestra pilas, así que están con su siervo como pilas separadas.",
+    "Inventory": "Inventario",
+    "Copy_to_clipboard": "Copiar inventario al portapapeles",
+    "Pool_copied": "Inventario copiado a su portapapeles",
+    "Sort_alphabetically": "Ordenar alfabéticamente",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} de {{ total }} artículos"
   },
   "CURRENCY_SPENDING": {
     "Title": "Currency Spending guide",
