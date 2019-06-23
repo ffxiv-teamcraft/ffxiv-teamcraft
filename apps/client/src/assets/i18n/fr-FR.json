@@ -128,7 +128,7 @@
     "None": "Aucun",
     "Top": "Début",
     "Bottom": "Fin",
-    "Amount": "Amount"
+    "Amount": "Quantité"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -1371,9 +1371,9 @@
     "Pages_range_label": "{{ range0 }}-{{ range1 }} sur {{ total }} éléments"
   },
   "CURRENCY_SPENDING": {
-    "Title": "Currency Spending guide",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
-    "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "Title": "Dépense de devises",
+    "Description": "Vous avez trop de devises ? Sélectionnez votre devise, définissez un montant, un serveur et trouvez quel article est le meilleur à acheter pour revendre à l'hôtel des ventes et gagner des gils !",
+    "Pick_currency": "Choisir une devise",
+    "You_can_buy": "Vous pouvez en acheter {{amount}}"
   }
 }
