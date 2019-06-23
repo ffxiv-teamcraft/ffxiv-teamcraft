@@ -22,7 +22,7 @@ export class I18nPipe implements PipeTransform {
     } else {
       res = value.name;
     }
-    return res.charAt(0).toUpperCase() + res.slice(1);
+    return res && (res.charAt(0).toUpperCase() + res.slice(1));
   }
 
   isI18nEntry(data: any): boolean {
