@@ -127,7 +127,8 @@
     "Seconds_duration": "{{amount}} секунд",
     "None": "Нет",
     "Top": "Вверху",
-    "Bottom": "Внизу"
+    "Bottom": "Внизу",
+    "Amount": "Amount"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -1368,5 +1369,11 @@
     "Pool_copied": "Инвентарь скопирован в буфер обмена",
     "Sort_alphabetically": "Сортировать по алфавиту",
     "Pages_range_label": "{{ range0 }}-{{ range1 }} из {{ total }} предметов"
+  },
+  "CURRENCY_SPENDING": {
+    "Title": "Currency Spending guide",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Pick_currency": "Pick a currency",
+    "You_can_buy": "You can buy {{amount}}"
   }
 }
