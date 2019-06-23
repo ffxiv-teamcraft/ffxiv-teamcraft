@@ -128,7 +128,7 @@
     "None": "Ninguno",
     "Top": "Arriba",
     "Bottom": "Abajo",
-    "Amount": "Amount"
+    "Amount": "Cantidad"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -501,7 +501,7 @@
         "REMOVE_ITEM": "Quitar elemento de la lista",
         "ADD_TAG": "Añadir etiqueta al artículo",
         "MARK_AS_DONE_IN_LOG": "Marcar como hecho en el registro",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "Información del mercado"
       }
     },
     "LAYOUT": {
@@ -855,7 +855,7 @@
     "Craft_price": "Precio de fabricación",
     "Marketboard_price": "Precio NQ",
     "Marketboard_price_hq": "Precio HQ",
-    "Enter_total_earnings": "Enter total earnings"
+    "Enter_total_earnings": "Ingrese ganancias totales"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -1193,7 +1193,7 @@
     "Limited": "Aparición limitada",
     "3d_model_viewer": "Vista previa del modelo 3D",
     "3d_model_help": "Previsualizar modelo 3D",
-    "Achievements": "Achievements",
+    "Achievements": "Logros",
     "NODE": {
       "Items": "Artículos",
       "Possible_bonuses": "Bonos posibles",
@@ -1358,9 +1358,9 @@
     "Description": "Introduzca los artículos que tiene y haga clic en \"Buscar recetas\" para obtener una lista de posibles recetas para fabricar y generar fácilmente una lista de fabricación de los resultados.",
     "Empty_basket": "Su cesta está vacía",
     "Add_item": "Agregar artículo",
-    "Clipboard_content_malformed": "Clipboard content malformed",
-    "Import_from_clipboard": "Import from clipboard",
-    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
+    "Clipboard_content_malformed": "Contenido del portapapeles incorrecto",
+    "Import_from_clipboard": "Importar desde el portapapeles",
+    "Extension_tip": "Puede copiar el inventario de su siervo a su portapapeles usando la extensión capturadora de inventario: ",
     "Extension_link": "Get the extension on chrome webstore",
     "Clear": "Clear items list",
     "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
