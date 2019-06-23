@@ -128,7 +128,7 @@
     "None": "없음",
     "Top": "맨 위로",
     "Bottom": "맨 아래로",
-    "Amount": "Amount"
+    "Amount": "수량"
   },
   "ALARMS": {
     "Title": "알람",
@@ -1371,7 +1371,7 @@
     "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템"
   },
   "CURRENCY_SPENDING": {
-    "Title": "Currency Spending guide",
+    "Title": "화폐 선택",
     "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
     "Pick_currency": "Pick a currency",
     "You_can_buy": "You can buy {{amount}}"
