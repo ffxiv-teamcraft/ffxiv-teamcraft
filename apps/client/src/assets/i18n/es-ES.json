@@ -1371,9 +1371,9 @@
     "Pages_range_label": "{{ range0 }}-{{ range1 }} de {{ total }} artículos"
   },
   "CURRENCY_SPENDING": {
-    "Title": "Currency Spending guide",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
-    "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "Title": "Guía de Gastos de Monedas",
+    "Description": "¿Tiene demasiado de una moneda? Seleccione su moneda, establezca una cantidad, un servidor y ¡encuentre qué artículo es el mejor para comprar para obtener gil de sus monedas!",
+    "Pick_currency": "Elija una moneda",
+    "You_can_buy": "Puede comprar {{amount}}"
   }
 }
