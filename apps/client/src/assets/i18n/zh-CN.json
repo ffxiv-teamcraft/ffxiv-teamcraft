@@ -127,7 +127,8 @@
     "Seconds_duration": "{{amount}} 秒",
     "None": "无",
     "Top": "顶部",
-    "Bottom": "底部"
+    "Bottom": "底部",
+    "Amount": "Amount"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -1368,5 +1369,11 @@
     "Pool_copied": "Inventory copied to your clipboard",
     "Sort_alphabetically": "Sort alphabetically",
     "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+  },
+  "CURRENCY_SPENDING": {
+    "Title": "Currency Spending guide",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Pick_currency": "Pick a currency",
+    "You_can_buy": "You can buy {{amount}}"
   }
 }
