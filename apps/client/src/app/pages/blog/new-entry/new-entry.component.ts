@@ -43,7 +43,7 @@ export class NewEntryComponent {
         post.author = userId;
         post.content = data.message;
         post.slug = data.slug;
-        post.description = data.desciption;
+        post.description = data.description;
         post.title = data.title;
         return post;
       }),

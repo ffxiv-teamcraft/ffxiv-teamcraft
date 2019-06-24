@@ -47,6 +47,7 @@ export class BlogComponent extends TeamcraftPageComponent {
           return {
             title: post.title,
             description: post.description,
+            image: 'https://ffxivteamcraft.com/assets/logo.png',
             url: this.linkTools.getLink(`/blog/${post.slug}`)
           };
         } else {
