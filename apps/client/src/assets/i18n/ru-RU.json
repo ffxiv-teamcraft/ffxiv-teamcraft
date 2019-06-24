@@ -1094,7 +1094,7 @@
     "Loading_message": "Loading possible deliveries, this can take up to a minute"
   },
   "DESYNTH": {
-    "Title": "Desynth guide",
+    "Title": "Гид по дезинтезу",
     "Job": "Профессия",
     "Level": "Уровень",
     "Intro": "Select a job and input a level to find best items to level up your desynth",
@@ -1371,7 +1371,7 @@
     "Pages_range_label": "{{ range0 }}-{{ range1 }} из {{ total }} предметов"
   },
   "CURRENCY_SPENDING": {
-    "Title": "Руководство по расходам валют",
+    "Title": "Гид по валютам",
     "Description": "У вас слишком много валюты? Выберите валюту, установите сумму, сервер и найдите, какой предмет лучше купить, чтобы получить gil из ваших валют!",
     "Pick_currency": "Выберите валюту",
     "You_can_buy": "Вы можете купить {{amount}}"
