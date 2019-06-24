@@ -1,7 +1,7 @@
 import { BehaviorSubject, Observable } from 'rxjs';
-import { bufferCount, delay, mergeMap, tap } from 'rxjs/operators';
+import { bufferCount, delay, mergeMap, tap, map } from 'rxjs/operators';
 
-export function requestsWithDelay<T>(requests: Observable<T>[], _delay: number): Observable<T[]> {
+export function requestsWithDelay<T>(requests: Observable<T>[], _delay: number, emit = false): Observable<T[]> {
   const index$ = new BehaviorSubject(0);
   return index$.pipe(
     delay(_delay),
@@ -14,6 +14,6 @@ export function requestsWithDelay<T>(requests: Observable<T>[], _delay: number):
         })
       );
     }),
-    bufferCount(requests.length)
+    emit ? map(a => [a]) : bufferCount(requests.length)
   );
 }

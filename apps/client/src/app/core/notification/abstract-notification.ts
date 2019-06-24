@@ -22,9 +22,12 @@ export abstract class AbstractNotification extends DataModel {
   @ForeignKey(TeamcraftUser)
   public targetId: string;
 
-  protected constructor(public readonly type: NotificationType, public readonly target: string) {
+  public readonly type: NotificationType;
+
+  protected constructor(_type: NotificationType, target: string) {
     super();
     this.targetId = target;
+    this.type = _type;
   }
 
   public abstract getContent(translate: TranslateService, l12n: LocalizedDataService, i18nTools: I18nToolsService): string;

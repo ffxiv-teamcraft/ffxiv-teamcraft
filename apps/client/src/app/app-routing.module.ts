@@ -123,6 +123,15 @@ const routes: Routes = [
   {
     path: 'currency-spending',
     loadChildren: './pages/currency-spending/currency-spending.module#CurrencySpendingModule'
+  },
+  {
+    path: 'blog',
+    loadChildren: './pages/blog/blog.module#BlogModule'
+  },
+  {
+    path: '**',
+    redirectTo: 'search',
+    pathMatch: 'full'
   }
 ];
 
