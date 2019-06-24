@@ -881,6 +881,7 @@
     "List_item_comment_added": "Ein Kommentar wurde dem Gegenstand {{itemName}} auf der Liste {{listName}} hinzugefügt: \"{{content}}\"",
     "Db_comment": "New comment in db: \"{{comment}}\"",
     "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
+    "Blog_post": "New blog post: {{title}}",
     "Mark_all_as_read": "Alle als gelesen markieren",
     "No_notifications": "Keine Benachrichtigungen"
   },
@@ -1375,5 +1376,8 @@
     "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
     "Pick_currency": "Pick a currency",
     "You_can_buy": "You can buy {{amount}}"
+  },
+  "BLOG": {
+    "Title": "Blog"
   }
 }
