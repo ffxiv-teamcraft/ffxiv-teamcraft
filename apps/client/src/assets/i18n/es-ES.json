@@ -881,6 +881,7 @@
     "List_item_comment_added": "Comentario publicado en {{itemName}}, lista {{listName}}: \"{{content}}\"",
     "Db_comment": "Nuevo comentario en base de datos: \"{{comment}}\"",
     "Db_comment_reply": "Nueva respuesta a uno de sus comentarios: \"{{comment}}\"",
+    "Blog_post": "New blog post: {{title}}",
     "Mark_all_as_read": "Marcar todo como leído",
     "No_notifications": "No hay notificaciones"
   },
@@ -1375,5 +1376,8 @@
     "Description": "¿Tiene demasiado de una moneda? Seleccione su moneda, establezca una cantidad, un servidor y ¡encuentre qué artículo es el mejor para comprar para obtener gil de sus monedas!",
     "Pick_currency": "Elija una moneda",
     "You_can_buy": "Puede comprar {{amount}}"
+  },
+  "BLOG": {
+    "Title": "Blog"
   }
 }
