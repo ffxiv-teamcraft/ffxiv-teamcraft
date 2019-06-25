@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.5.9"></a>
+## [5.5.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.8...v5.5.9) (2019-06-25)
+
+
+### Bug Fixes
+
+* **currency-spending:** fixed an issue with search loading infinitely ([7e9c1aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e9c1aa))
+* **db:** fixed quest page for quests with no journal entries ([c5f456c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5f456c))
+* **log-tracker:** fixed wrong label for a quarrying log page ([7e00cac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e00cac))
+* desktop download button is now hidden in collapsed sidebar mode ([ed63d03](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed63d03))
+* sidebar icons are now smaller to avoid scrolling bar to appear on 1080p ([a09067d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a09067d))
+* **search:** possible fix for japanese input systems ([41c7561](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/41c7561))
+* **simulator:** display Byregot warning for IG usage only when clvl < rlvl ([81182ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/81182ca))
+
+
+### Features
+
+* added a blog system for news and updates ([433d596](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/433d596))
+* **list:** you can now add items as collectable from the list ([ffedcad](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ffedcad))
+
+
+
 <a name="5.5.8"></a>
 ## [5.5.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.7...v5.5.8) (2019-06-23)
 
