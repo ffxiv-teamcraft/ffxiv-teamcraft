@@ -357,6 +357,9 @@ export class LogTrackerComponent extends TrackerComponent {
     if (page.id === 9999) {
       return this.translate.instant('LOG_TRACKER.Folklore');
     }
+    if(page.id === 47){
+      return `36-40`;
+    }
     return `${Math.floor(page.startLevel / 5) * 5 + 1} - ${Math.floor((page.startLevel + 4) / 5) * 5}`;
   }
 
