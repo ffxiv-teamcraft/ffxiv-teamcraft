@@ -73,8 +73,12 @@ export class XivapiItemTooltipComponent implements OnInit {
           const specialParamKey = Object.keys(this.item)
             .filter(k => /^BaseParamSpecial\d+TargetID$/.test(k) && this.item[k])
             .find(k => this.item[k] === statId);
-          const specialParamIndex = specialParamKey.match(/(\d+)/)[0];
-          res.valueHq = res.value + this.item[`BaseParamValueSpecial${specialParamIndex}`];
+          if (specialParamKey) {
+            const specialParamIndex = specialParamKey.match(/(\d+)/)[0];
+            res.valueHq = res.value + this.item[`BaseParamValueSpecial${specialParamIndex}`];
+          } else {
+            res.valueHq = res.value;
+          }
         }
         return res;
       })

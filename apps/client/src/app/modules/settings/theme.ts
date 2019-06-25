@@ -3,7 +3,7 @@ export class Theme {
   public static readonly DEFAULT = new Theme(
     'DEFAULT',
     '#4880b1',
-    '#26c6da',
+    '#68cfa8',
     'white',
     '#191e25',
     '#515a67',

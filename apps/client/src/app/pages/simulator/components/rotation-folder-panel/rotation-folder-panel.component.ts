@@ -159,7 +159,7 @@ export class RotationFolderPanelComponent {
   }
 
   trackByCraftingRotation(index: number, rotation: CraftingRotation): string {
-    return rotation.$key;
+    return rotation && rotation.$key;
   }
 
 }

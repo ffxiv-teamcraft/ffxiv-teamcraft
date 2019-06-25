@@ -469,6 +469,7 @@
               <app-action [action]="step.action"
                           [simulation]="resultData.simulation"
                           (actionclick)="removeAction(i)"
+                          (contextmenu)="$event.preventDefault();toggleFailAction(i)"
                           [disabled]="!step.success || step.skipped"
                           [ignoreDisabled]="true"
                           [cpCost]="step.cpDifference"

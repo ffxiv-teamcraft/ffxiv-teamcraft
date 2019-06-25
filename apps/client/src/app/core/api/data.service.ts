@@ -21,14 +21,14 @@ import { FateData } from '../../model/garland-tools/fate-data';
 export class DataService {
 
   private garlandUrl = 'https://www.garlandtools.org/db/doc';
-  private garlandtoolsVersions = {
+  public garlandtoolsVersions = {
     item: 3,
     instance: 2,
     quest: 2,
     npc: 2,
     leve: 3,
     mob: 2,
-    fate: 2,
+    fate: 2
   };
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 
@@ -260,7 +260,7 @@ export class DataService {
    * @param {string} uri
    * @returns {Observable<any>}
    */
-  private getGarlandData(uri: string): Observable<any> {
+  public getGarlandData(uri: string): Observable<any> {
     return this.http.get<any>(this.garlandUrl + uri + '.json');
   }
 

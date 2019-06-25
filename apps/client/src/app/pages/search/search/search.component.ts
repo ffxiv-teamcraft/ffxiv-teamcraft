@@ -35,6 +35,7 @@ import { MapSearchResult } from '../../../model/search/map-search-result';
 import { ActionSearchResult } from '../../../model/search/action-search-result';
 import { StatusSearchResult } from '../../../model/search/status-search-result';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-search',
@@ -76,7 +77,7 @@ export class SearchComponent implements OnInit {
     clvlMin: [0],
     clvlMax: [80],
     jobCategories: [[]],
-    craftJob: [0],
+    craftJob: [null],
     itemCategories: [[]]
   });
 
@@ -106,13 +107,20 @@ export class SearchComponent implements OnInit {
 
   availableJobCategories = [];
 
-  availableLeveJobCategories = [9, 10, 11, 12, 13, 14, 15, 16, 1718, 19, 34];
+  availableLeveJobCategories = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 34];
 
   availableCraftJobs = [];
 
   availableJobs = [];
 
   uiCategories$: Observable<{ id: number, name: I18nName }[]>;
+
+  autocomplete$: Observable<string[]> = combineLatest([this.query$, this.searchType$]).pipe(
+    map(([query, type]) => {
+      return (JSON.parse(localStorage.getItem('search:history') || '{}')[type] || [])
+        .filter(entry => entry.toLowerCase().indexOf(query.toLowerCase()) > -1 && entry.length > 0);
+    })
+  );
 
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
@@ -174,6 +182,13 @@ export class SearchComponent implements OnInit {
         };
         if (filters.length > 0) {
           queryParams.filters = btoa(JSON.stringify(filters));
+        } else {
+          queryParams.filters = null;
+        }
+        if (query.length > 0) {
+          const searchHistory = JSON.parse(localStorage.getItem('search:history') || '{}');
+          searchHistory[type] = _.uniq([...(searchHistory[type] || []), query]);
+          localStorage.setItem('search:history', JSON.stringify(searchHistory));
         }
         this.router.navigate([], {
           queryParamsHandling: 'merge',
@@ -182,35 +197,68 @@ export class SearchComponent implements OnInit {
         });
       }),
       mergeMap(([query, type, filters]) => {
+        let searchRequest$: Observable<any[]>;
         switch (type) {
+          case SearchType.ANY:
+            searchRequest$ = this.searchAny(query, filters);
+            break;
           case SearchType.ITEM:
-            return this.data.searchItem(query, filters, false);
+            searchRequest$ = this.data.searchItem(query, filters, false);
+            break;
           case SearchType.RECIPE:
-            return this.data.searchItem(query, filters, true);
+            searchRequest$ = this.data.searchItem(query, filters, true);
+            break;
           case SearchType.INSTANCE:
-            return this.searchInstance(query, filters);
+            searchRequest$ = this.searchInstance(query, filters);
+            break;
           case SearchType.QUEST:
-            return this.searchQuest(query, filters);
+            searchRequest$ = this.searchQuest(query, filters);
+            break;
           case SearchType.NPC:
-            return this.searchNpc(query, filters);
+            searchRequest$ = this.searchNpc(query, filters);
+            break;
           case SearchType.LEVE:
-            return this.searchLeve(query, filters);
+            searchRequest$ = this.searchLeve(query, filters);
+            break;
           case SearchType.MONSTER:
-            return this.searchMob(query, filters);
+            searchRequest$ = this.searchMob(query, filters);
+            break;
           case SearchType.LORE:
-            return this.searchLore(query, filters);
+            searchRequest$ = this.searchLore(query, filters);
+            break;
           case SearchType.FATE:
-            return this.searchFate(query, filters);
+            searchRequest$ = this.searchFate(query, filters);
+            break;
           case SearchType.MAP:
-            return this.searchMap(query, filters);
+            searchRequest$ = this.searchMap(query, filters);
+            break;
           case SearchType.ACTION:
-            return this.searchAction(query, filters);
+            searchRequest$ = this.searchAction(query, filters);
+            break;
           case SearchType.STATUS:
-            return this.searchStatus(query, filters);
+            searchRequest$ = this.searchStatus(query, filters);
+            break;
           case SearchType.TRAIT:
-            return this.searchTrait(query, filters);
+            searchRequest$ = this.searchTrait(query, filters);
+            break;
+          case SearchType.ACHIEVEMENT:
+            searchRequest$ = this.searchAchievement(query, filters);
+            break;
           default:
-            return this.data.searchItem(query, filters, false);
+            searchRequest$ = this.data.searchItem(query, filters, false);
+            break;
+        }
+        if (type === SearchType.ANY) {
+          return searchRequest$;
+        } else {
+          return searchRequest$.pipe(
+            map(results => {
+              return results.map(row => {
+                row.type = type;
+                return row;
+              });
+            })
+          );
         }
       }),
       tap(() => {
@@ -235,6 +283,61 @@ export class SearchComponent implements OnInit {
         this.traitFilterForm.patchValue(this.filtersToForm(filters));
       }
     });
+  }
+
+  searchAny(query: string, filters: SearchFilter[]): Observable<any[]> {
+    return combineLatest([
+      this.data.searchItem(query, filters, false).pipe(map(res => res.map(row => {
+        row.type = SearchType.ITEM;
+        return row;
+      }))),
+      this.searchInstance(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.INSTANCE;
+        return row;
+      }))),
+      this.searchQuest(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.QUEST;
+        return row;
+      }))),
+      this.searchAction(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.ACTION;
+        return row;
+      }))),
+      this.searchTrait(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.TRAIT;
+        return row;
+      }))),
+      this.searchStatus(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.STATUS;
+        return row;
+      }))),
+      this.searchLeve(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.LEVE;
+        return row;
+      }))),
+      this.searchNpc(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.NPC;
+        return row;
+      }))),
+      this.searchMob(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.MONSTER;
+        return row;
+      }))),
+      this.searchFate(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.FATE;
+        return row;
+      }))),
+      this.searchMap(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.MAP;
+        return row;
+      }))),
+      this.searchAchievement(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.ACHIEVEMENT;
+        return row;
+      })))
+    ]).pipe(
+      map(results => [].concat.apply([], results))
+    );
   }
 
   searchInstance(query: string, filters: SearchFilter[]): Observable<InstanceSearchResult[]> {
@@ -402,6 +505,27 @@ export class SearchComponent implements OnInit {
             id: status.ID,
             icon: status.Icon,
             data: status
+          };
+        });
+      })
+    );
+  }
+
+  searchAchievement(query: string, filters: SearchFilter[]): Observable<StatusSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      indexes: [SearchIndex.ACHIEVEMENT],
+      columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: []
+    }).pipe(
+      map(res => {
+        return res.Results.map(achievement => {
+          return {
+            id: achievement.ID,
+            icon: achievement.Icon,
+            data: achievement
           };
         });
       })
@@ -643,11 +767,11 @@ export class SearchComponent implements OnInit {
       ilvlMin: 0,
       ilvlMax: 999,
       elvlMin: 0,
-      elvlMax: 70,
+      elvlMax: 80,
       clvlMin: 0,
-      clvlMax: 70,
+      clvlMax: 80,
       jobCategories: [],
-      craftJob: 0,
+      craftJob: null,
       itemCategories: []
     });
 
@@ -750,7 +874,7 @@ export class SearchComponent implements OnInit {
         value: controls.jobCategories.value
       });
     }
-    if (controls.craftJob.value !== 0) {
+    if (controls.craftJob.value) {
       filters.push({
         minMax: false,
         name: 'craftJob',

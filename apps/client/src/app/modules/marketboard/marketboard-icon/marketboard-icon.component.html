@@ -1,4 +1,4 @@
-<button nz-button [nzTitle]="'MARKETBOARD.Title' | translate" nz-tooltip nzSize="small" nzShape="circle"
+<button nz-button [nzTitle]="'MARKETBOARD.Title' | translate" nz-tooltip [nzSize]="size" nzShape="circle"
         (click)="openDialog()" [disabled]="disabled$ | async">
   <i nz-icon type="line-chart"></i>
 </button>

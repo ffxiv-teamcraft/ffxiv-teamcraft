@@ -56,6 +56,7 @@
   "Mute_alarms": "アラームをミュートする",
   "Hide_used": "使用された項目を隠す",
   "Collapse_if_done": "完了しならパネルを隠す",
+  "Collapse_by_default": "コメント非表示をデフォルトに設定",
   "Retainer_ventures": "リテイナーベンチャー",
   "Requires_x_ventures": "総 {{amount}} 回のリテイナーベンチャーが必要です。",
   "WORKSHOP": {
@@ -121,9 +122,13 @@
     "Opened_in_desktop": "このページはPCアプリ内に開きました。このページを閉じることが出来ます。",
     "Open_in_desktop": "PCアプリで開く",
     "Admin": "管理者",
+    "Moderator": "管理者",
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
-    "None": "なし"
+    "None": "なし",
+    "Top": "Top",
+    "Bottom": "Bottom",
+    "Amount": "Amount"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -177,6 +182,7 @@
   "No_actions_found": "検索結果なし",
   "No_statuses_found": "検索結果なし",
   "No_traits_found": "検索結果なし",
+  "No_achievements_found": "検索結果なし",
   "Select_all": "全て選択",
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
@@ -329,6 +335,9 @@
     "Free_aetheryte": "無料エーテライト",
     "Favorite_aetherytes": "お気に入りのエーテライト",
     "Disable_cross_world_prices": "キャラクターのサーバーマケットボード値段のみ使用",
+    "Clear_search_history": "検索履歴を削除",
+    "Auto_mark_as_done_in_log": "リストから完了されたアイテムがあれば、手帳に該当アイテムを完了されたと表示する",
+    "Db_comments_position": "データベースのコメント位置",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -491,7 +500,8 @@
         "REQUIREMENTS": "素材",
         "REMOVE_ITEM": "リストからこのアイテムを削除",
         "ADD_TAG": "アイテムにタグを追加する",
-        "MARK_AS_DONE_IN_LOG": "手帳に完了と表示する"
+        "MARK_AS_DONE_IN_LOG": "手帳に完了と表示する",
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
       }
     },
     "LAYOUT": {
@@ -822,7 +832,12 @@
       "Use_patient_touch_faster": "'専心加工' は '精神集中' のスタックが積もる前に使用して下さい。もしスキルが失敗したら、スタックが無駄遣いになる恐れがあります。",
       "Use_advanced_touch_instead": "{{index}} 回目の工程で '加工' と '上級加工' を使用しました。 '中級加工' を2回使用する場合、 CP 2を節約しつつ同じような効果が得られます。",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 回目の工程で使用したバフが {{overlappingIndex}} 回目の工程で使用したバフと重複されます。バフの効果が最大限貰えるように、少し遅れて使う必要があります。",
-      "Use_byregot_brow_5_stacks": "'ビエルゴの祝福' の代わりに 'ビエルゴの技巧' を使用すると同じ品質量が上昇しながら CP 6が節約できます。"
+      "Use_byregot_brow_5_stacks": "'ビエルゴの祝福' の代わりに 'ビエルゴの技巧' を使用すると同じ品質量が上昇しながら CP 6が節約できます。",
+      "Use_ingenuity_before_byregot": "もっと高い品質の向上するために 'ビエルゴ' アクションを使用する前に '工面算段' を使用しなければなりません",
+      "Use_more_quality_actions": "耐久度が残ってる状態で制作が完了しました。残ってる耐久度を利用して、多い加工スキルに使用する事ができます。",
+      "Use_prudent_touch_manipulation": "66レベル以上の場合 'マニピュレーションⅡ' と '倹約加工'を使用して、もっと高い品質を得なければなりません",
+      "Use_rapid_synthesis_earlier": "'突貫作業'を工程の最後に入れないで下さい。失敗する恐れがありますので、早く使用するのが制作スキル回しの信頼性が向上します。",
+      "Use_reflect_earlier": "'マイスターの切札: 真価' を加工アクションを使用する前に前もって使用しなければなりません"
     }
   },
   "PRICING": {
@@ -830,11 +845,17 @@
     "From_crafting": "制作費用",
     "Expect_to_sell_everything": "販売予定",
     "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
+    "Autofill_panel_prices_your_server": "マケットボード値段で自動入力(キャラクターのサーバー基準)",
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。",
     "Cheaper_at_vendor": "NPC から購入した方が安い ({{price}} ギル)",
-    "Copy_panel_as_text": "このパネルをテキストとしてコピーする"
+    "Copy_panel_as_text": "このパネルをテキストとしてコピーする",
+    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price",
+    "Enter_total_earnings": "Enter total earnings"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -858,6 +879,8 @@
     "Title": "お知らせ",
     "List_comment_added": "{{listName}} にコメントが追加されました: \"{{content}}\"",
     "List_item_comment_added": "{{listName}} の {{itemName}} にコメントが追加されました: \"{{content}}\"",
+    "Db_comment": "新しいコメントが付けられました: \"{{comment}}\"",
+    "Db_comment_reply": "貴方のコメントに新しいコメントが付けられました: \"{{comment}}\"",
     "Mark_all_as_read": "全て既読にする",
     "No_notifications": "通知無し"
   },
@@ -1170,6 +1193,7 @@
     "Limited": "限定採集",
     "3d_model_viewer": "3Dモデルプレビュー",
     "3d_model_help": "3Dモデルプレビュー",
+    "Achievements": "Achievements",
     "NODE": {
       "Items": "アイテム",
       "Possible_bonuses": "ロケーション・エフェクト",
@@ -1237,7 +1261,7 @@
       "Combo_next": "次のコンボ",
       "Combo_previous": "以前のコンボ",
       "Affected_by_status": "スキルと関連されたプロック",
-      "Cost": "Cost",
+      "Cost": "費用",
       "Related_traits": "関連特性",
       "TARGET": {
         "Party": "パーティ",
@@ -1272,6 +1296,16 @@
       "Type": "タイプ",
       "Type_buff": "バフ",
       "Type_debuff": "デバフ"
+    },
+    "COMMENTS": {
+      "Title": "コメント",
+      "Reply": "返信",
+      "Show_less": "コメントを非表示",
+      "Add_comment": "コメントを追加",
+      "Show_more": "{{amount}} 件のコメントを見る",
+      "No_comments": "コメントなし",
+      "Post": "投稿",
+      "Editor_tip": "コメント内のデータベースリンクは自動にDBに変換されます。"
     }
   },
   "SEARCH_TYPES": {
@@ -1288,7 +1322,9 @@
     "Map": "地図",
     "Action": "アクション",
     "Status": "ステータス",
-    "Trait": "特性"
+    "Trait": "特性",
+    "Any": "任意",
+    "Achievement": "アチーブメント"
   },
   "SEARCH_FILTERS": {
     "Level": "レベル",
@@ -1306,5 +1342,38 @@
     "Levequests": "ギルドリーヴページからリーヴを比べて獲得可能な経験値をプレビューすることができます。",
     "Log_tracker": "手帳トラッカーページから採集、制作、漁師の手帳の進行状況が確認することができます。",
     "Desktop_app_overlay": "デスクトップ アプリの使用時にアラームのオーバーレイを設定できます(サイドバー内のダウンロード リンク有り)。"
+  },
+  "RECIPE_FINDER": {
+    "Title": "レシピ検索",
+    "Placeholder": "アイテム名",
+    "No_missing_ingredients": "全ての素材有り",
+    "Missing_X_ingredients": "{{amount}} 個の素材不足",
+    "Missing": "不足な素材:",
+    "Results": "制作可能な品目",
+    "Basket": "制作リスト",
+    "Add_to_basket": "制作リストに追加",
+    "Remove_from_basket": "制作リストから削除",
+    "Search": "レシピ検索",
+    "Generate_list": "リストに追加",
+    "Description": "現在お持ちの素材の数量を入力し \"レシピ検索\" をクリックすると現在の素材で制作可能な品目がご確認することができ、望みな品目をリストに作成するのができます。",
+    "Empty_basket": "制作リストが空いています。",
+    "Add_item": "アイテム追加",
+    "Clipboard_content_malformed": "Clipboard content malformed",
+    "Import_from_clipboard": "Import from clipboard",
+    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
+    "Extension_link": "Get the extension on chrome webstore",
+    "Clear": "Clear items list",
+    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Inventory": "Inventory",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Pool_copied": "Inventory copied to your clipboard",
+    "Sort_alphabetically": "Sort alphabetically",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+  },
+  "CURRENCY_SPENDING": {
+    "Title": "Currency Spending guide",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Pick_currency": "Pick a currency",
+    "You_can_buy": "You can buy {{amount}}"
   }
 }

@@ -40,13 +40,15 @@ export class AddAlarms implements Action {
 export class AlarmsCreated implements Action {
   readonly type = AlarmsActionTypes.AlarmsCreated;
 
-  constructor(public readonly amount: number){}
+  constructor(public readonly amount: number) {
+  }
 }
 
 export class UpdateAlarm implements Action {
   readonly type = AlarmsActionTypes.UpdateAlarm;
 
-  constructor(public readonly alarm: Alarm){}
+  constructor(public readonly alarm: Alarm) {
+  }
 }
 
 export class RemoveAlarm implements Action {

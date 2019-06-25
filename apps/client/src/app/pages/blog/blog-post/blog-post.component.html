@@ -1,0 +1,21 @@
+<div class="post">
+  <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="flex-start center" class="post-banner">
+    <app-user-avatar [userId]="post.author"></app-user-avatar>
+    <div fxLayout="column">
+      <h1 class="post-title">{{post.title}}</h1>
+      <i>{{post.author | characterName | async}}, {{post.date | date:'short':translate.currentLang}}</i>
+    </div>
+  </div>
+  <div class="post-content" (click)="handleClick($event)">
+    <markdown [data]="post.content"></markdown>
+  </div>
+  <div class="post-footer" fxLayout="row">
+    <a href="https://www.patreon.com/bePatron?u=702160" target="_blank" class="patreon button" fxFlex="1 1 auto">
+      <img src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png" alt="patreon logo"
+           class="patreon-logo">
+      <span class="patreon-button-text">
+      {{"SEARCH_INTRO.Support_patreon" | translate}}
+      </span>
+    </a>
+  </div>
+</div>

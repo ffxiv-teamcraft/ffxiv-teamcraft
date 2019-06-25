@@ -6,7 +6,6 @@ import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { RotationTag } from './rotation-tag';
 import { CraftingRotationService } from '../../../../core/database/crafting-rotation/crafting-rotation.service';
-import { Tables } from '../../model/tables';
 import { CommunityRotationFilters } from '../../../../core/database/crafting-rotation/community-rotation-filters';
 import { AuthFacade } from '../../../../+state/auth.facade';
 
@@ -103,7 +102,7 @@ export class CommunityRotationsPageComponent {
     {
       label: '71 - 80',
       value: 420
-    },
+    }
   ].sort((a, b) => a.value - b.value);
 
   public tags: any[];

@@ -56,6 +56,7 @@
   "Mute_alarms": "静音",
   "Hide_used": "隐藏已使用的行",
   "Collapse_if_done": "折叠已完成项",
+  "Collapse_by_default": "默认折叠",
   "Retainer_ventures": "雇员委托",
   "Requires_x_ventures": "获得全部物品需要 {{amount}} 次委托",
   "WORKSHOP": {
@@ -121,9 +122,13 @@
     "Opened_in_desktop": "此页面已在客户端中打开，你可以现在关闭本页了。",
     "Open_in_desktop": "在客户端中打开",
     "Admin": "管理员",
+    "Moderator": "管理员",
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
-    "None": "None"
+    "None": "无",
+    "Top": "顶部",
+    "Bottom": "底部",
+    "Amount": "Amount"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -174,9 +179,10 @@
   "No_lore_entries": "没有找到相关理符",
   "No_fates_found": "没有找到相关危命任务",
   "No_maps_found": "没有找到相关地图",
-  "No_actions_found": "No actions found",
-  "No_statuses_found": "No statuses found",
-  "No_traits_found": "No traits found",
+  "No_actions_found": "没有找到相关技能",
+  "No_statuses_found": "没有找到相关状态",
+  "No_traits_found": "没有找到相关技能",
+  "No_achievements_found": "没有找到相关成就",
   "Select_all": "全选",
   "Do you really want to reset the list?": "您确定要重置清单吗？",
   "Yes": "是",
@@ -329,14 +335,17 @@
     "Free_aetheryte": "免费传送点",
     "Favorite_aetherytes": "收藏传送点",
     "Disable_cross_world_prices": "仅使用当前服务器的市场价格",
+    "Clear_search_history": "清除搜索记录",
+    "Auto_mark_as_done_in_log": "在列表项完成时标记为已完成",
+    "Db_comments_position": "数据库评论位置",
     "COLORS": {
-      "Background": "Background color",
+      "Background": "背景颜色",
       "Primary": "主体色",
       "Highlight": "高亮色",
       "Text": "按钮文本色",
-      "Topbar": "Topbar and sidebar color",
-      "Sidebar_trigger": "Sidebar trigger color",
-      "Sidebar_trigger_hover": "Sidebar trigger hover color"
+      "Topbar": "顶栏和侧边栏颜色",
+      "Sidebar_trigger": "侧边栏高亮颜色",
+      "Sidebar_trigger_hover": "侧边栏高亮悬浮颜色"
     },
     "COPY_TYPE": {
       "Classic": "复制物品名称",
@@ -491,7 +500,8 @@
         "REQUIREMENTS": "要求",
         "REMOVE_ITEM": "从清单中删除物品",
         "ADD_TAG": "添加标签到物品",
-        "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成"
+        "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成",
+        "MARKET_BOARD_INFORMATIONS": "时长信息"
       }
     },
     "LAYOUT": {
@@ -822,7 +832,12 @@
       "Use_patient_touch_faster": "应在增加内静层数前使用专心加工，避免失败时浪费内静层数。",
       "Use_advanced_touch_instead": "在第 {{index}} 步的加工和上级加工应该被替换为两个中级加工，可以少消耗 2 点 CP 获得同样的效果。",
       "Do_not_overlap_buffs": "在第 {{overlappedIndex}} 步的 buff 和第 {{overlappingIndex}} 步已有的 buff 重叠了。第二个 buff 应当推迟以获得最佳效果。",
-      "Use_byregot_brow_5_stacks": "应使用比尔格的技巧替换比尔格的祝福，可获得同样质量并节约 6 点 CP。"
+      "Use_byregot_brow_5_stacks": "应使用比尔格的技巧替换比尔格的祝福，可获得同样质量并节约 6 点 CP。",
+      "Use_ingenuity_before_byregot": "应在使用比尔格技能前使用新颖以提升品质收益。",
+      "Use_more_quality_actions": "在结束制作前你还有剩余耐久，应使用更多加工系技能提升品质。",
+      "Use_prudent_touch_manipulation": "66+ 级应使用 掌握II + 俭约加工 来提升品质，以获得最高稳定性和收益",
+      "Use_rapid_synthesis_earlier": "不应使用高速制作结束制作，将其提前可处理失败情况以使你的工序更加稳定。",
+      "Use_reflect_earlier": "应更早使用专精绝技：闲静使其增益后续加工系技能。"
     }
   },
   "PRICING": {
@@ -830,11 +845,17 @@
     "From_crafting": "制作价格",
     "Expect_to_sell_everything": "计划出售",
     "Autofill_panel_prices": "基于市场物价填充价格",
+    "Autofill_panel_prices_your_server": "根据市场价格填充 (仅限此服务器)",
     "Autofill_panel_prices_warning": "本操作为耗时操作，大约需要 {{time}} 秒来完成，确定吗？",
     "Copy_earnings_as_text": "复制为文本",
     "Content_copied": "已复制",
     "Cheaper_at_vendor": "NPC 卖得更便宜 ({{price}} gil)",
-    "Copy_panel_as_text": "复制为文本"
+    "Copy_panel_as_text": "复制为文本",
+    "Check_precraft_prices": "检查市场内的更低价格",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price",
+    "Enter_total_earnings": "Enter total earnings"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
@@ -858,6 +879,8 @@
     "Title": "通知",
     "List_comment_added": "在列表 {{listName}} 上评论: \"{{content}}\"",
     "List_item_comment_added": "对列表 {{listName}} 中的物品 {{itemName}} 发布了评论：“{{content}}”",
+    "Db_comment": "在数据库中的新评论：{{comment}}",
+    "Db_comment_reply": "对你评论的新回复：{{comment}}",
     "Mark_all_as_read": "全部标记为已读",
     "No_notifications": "无通知"
   },
@@ -910,7 +933,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "市场信息",
+    "Title": "Marketboard Information",
     "Error": "XIVAPI 或者 Companion API 目前无法使用，请稍后再重试。",
     "Amount": "数量",
     "HQ": "HQ",
@@ -1108,7 +1131,7 @@
     "How_to_obtain": "获取方式",
     "Used_for": "用于",
     "Used_for_nothing": "没有用途",
-    "Crystal_used_for_everything": "Too many recipes (~ 1/6th of the ingame recipes)",
+    "Crystal_used_for_everything": "配方过多（约 1/6 的配方）",
     "Crafts": "制作",
     "Recipes": "配方",
     "No_known_way_to_obtain": "没有找到物品获取途径",
@@ -1168,8 +1191,9 @@
     "Select_data_type": "选择要显示的数据类型后此处会显示详细信息",
     "Desynths_to": "分解",
     "Limited": "限时采集",
-    "3d_model_viewer": "3D model preview",
-    "3d_model_help": "Preview 3D model",
+    "3d_model_viewer": "3D 模型预览",
+    "3d_model_help": "预览 3D 模型",
+    "Achievements": "Achievements",
     "NODE": {
       "Items": "物品",
       "Possible_bonuses": "随机加成",
@@ -1221,36 +1245,36 @@
       "hunt": "狩猎"
     },
     "ACTION": {
-      "Cast": "Cast",
-      "Instant": "Instant",
-      "Range": "Range",
-      "Melee": "Melee",
-      "Radius": "Radius",
-      "Cooldown": "Cooldown",
-      "Pvp_action": "PvP action",
-      "Breaks_unrelated_combo": "Breaks unrelated combos",
-      "Movement_action": "Movement action",
-      "Possible_targets": "Possible targets",
-      "Unlocked_by_quest": "Unlocked by quest",
-      "Shares_cd_with": "Shares cooldown with",
-      "Combos": "Combos",
-      "Combo_next": "Next actions",
-      "Combo_previous": "Previous action",
-      "Affected_by_status": "Affected by status",
-      "Cost": "Cost",
-      "Related_traits": "Related traits",
+      "Cast": "咏唱时间",
+      "Instant": "即时",
+      "Range": "距离",
+      "Melee": "近战",
+      "Radius": "范围",
+      "Cooldown": "复唱",
+      "Pvp_action": "对战技能",
+      "Breaks_unrelated_combo": "打断连击",
+      "Movement_action": "位移技能",
+      "Possible_targets": "可用目标",
+      "Unlocked_by_quest": "任务解锁",
+      "Shares_cd_with": "共享复唱时间",
+      "Combos": "连击",
+      "Combo_next": "后续技能",
+      "Combo_previous": "前置技能",
+      "Affected_by_status": "被状态影响",
+      "Cost": "费用",
+      "Related_traits": "相关特性",
       "TARGET": {
-        "Party": "Party",
-        "Dead": "Dead",
-        "Hostile": "Hostile",
-        "Self": "Self"
+        "Party": "小队",
+        "Dead": "无法战斗",
+        "Hostile": "敌对",
+        "Self": "自己"
       },
       "COST_TYPE": {
-        "HP": "HP",
-        "MP": "MP",
-        "TP": "TP",
-        "GP": "GP",
-        "CP": "CP",
+        "HP": "体力",
+        "MP": "魔力",
+        "TP": "技力",
+        "GP": "采集力",
+        "CP": "制作力",
         "Beast_gauge": "Beast gauge",
         "Blood_gauge": "Blood gauge",
         "Ninki": "Ninki",
@@ -1272,6 +1296,16 @@
       "Type": "Type",
       "Type_buff": "Buff",
       "Type_debuff": "Debuff"
+    },
+    "COMMENTS": {
+      "Title": "Comments",
+      "Reply": "Reply",
+      "Show_less": "Show less",
+      "Add_comment": "Add a comment",
+      "Show_more": "Show {{amount}} more comments",
+      "No_comments": "No comments",
+      "Post": "Post",
+      "Editor_tip": "Database links will be processed and handled inside your message."
     }
   },
   "SEARCH_TYPES": {
@@ -1288,7 +1322,9 @@
     "Map": "地图",
     "Action": "Action",
     "Status": "Status",
-    "Trait": "Trait"
+    "Trait": "Trait",
+    "Any": "Any",
+    "Achievement": "Achievement"
   },
   "SEARCH_FILTERS": {
     "Level": "Level",
@@ -1306,5 +1342,38 @@
     "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
     "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
     "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+  },
+  "RECIPE_FINDER": {
+    "Title": "Recipe finder",
+    "Placeholder": "Item name",
+    "No_missing_ingredients": "No missing ingredients",
+    "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
+    "Missing": "Missing",
+    "Results": "Possible crafts",
+    "Basket": "Basket",
+    "Add_to_basket": "Add to basket",
+    "Remove_from_basket": "Remove from basket",
+    "Search": "Find recipes",
+    "Generate_list": "添加到清单",
+    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
+    "Empty_basket": "Your basket is empty",
+    "Add_item": "Add item",
+    "Clipboard_content_malformed": "Clipboard content malformed",
+    "Import_from_clipboard": "Import from clipboard",
+    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
+    "Extension_link": "Get the extension on chrome webstore",
+    "Clear": "Clear items list",
+    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Inventory": "Inventory",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Pool_copied": "Inventory copied to your clipboard",
+    "Sort_alphabetically": "Sort alphabetically",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+  },
+  "CURRENCY_SPENDING": {
+    "Title": "Currency Spending guide",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Pick_currency": "Pick a currency",
+    "You_can_buy": "You can buy {{amount}}"
   }
 }

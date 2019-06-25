@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { GearSet } from '../../../simulator/model/gear-set';
+import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { NzModalRef } from 'ng-zorro-antd';
 

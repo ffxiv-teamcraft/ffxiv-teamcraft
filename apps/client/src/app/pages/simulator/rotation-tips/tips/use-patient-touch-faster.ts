@@ -1,8 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { PatientTouch } from '../../model/actions/quality/patient-touch';
-import { Buff } from '../../model/buff.enum';
+import { Buff, PatientTouch, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class UsePatientTouchFaster extends RotationTip {
 

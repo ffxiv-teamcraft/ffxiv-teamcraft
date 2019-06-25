@@ -12,6 +12,7 @@ export interface LayoutRowDisplay {
   filterChain: string;
   hideIfEmpty: boolean;
   collapsed: boolean;
+  collapsedByDefault?: boolean;
   layoutRow: LayoutRow;
   layout: ListLayout;
 }

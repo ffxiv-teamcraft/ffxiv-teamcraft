@@ -8,10 +8,10 @@
           <img [src]="action.Icon | xivapiIcon" class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{action | xivapiI18n}}</h2>
-            <div class="item-kind" fxLayout="row" fxLayoutGap="5px" *ngIf="action.IsPlayerAction">
+            <div class="item-kind" fxLayout="row" fxLayoutGap="5px" *ngIf="action.IsPlayerAction || action.ID > 99999">
               <div>Lvl {{action.ClassJobLevel}}</div>
               <div [innerHTML]="action.ClassJob | xivapiI18n: 'Abbreviation'"></div>
-              <div [innerHTML]="action.ActionCategory | xivapiI18n"></div>
+              <div *ngIf="action.IsPlayerAction" [innerHTML]="action.ActionCategory | xivapiI18n"></div>
             </div>
           </div>
         </div>
@@ -24,58 +24,85 @@
       <div fxFlex="1 1 auto">
         <p *ngIf="action.Description" [innerHTML]="action | xivapiI18n: 'Description' | xivUIText"></p>
       </div>
+      <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="./assets/icons/english.png" class="language-flag" alt="EN">
+          <div>{{action.Name_en}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="./assets/icons/german.png" class="language-flag" alt="DE">
+          <div>{{action.Name_de}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="./assets/icons/french.png" class="language-flag" alt="FR">
+          <div>{{action.Name_fr}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <img src="./assets/icons/japanese.png" class="language-flag" alt="JA">
+          <div>{{action.Name_ja}}</div>
+        </div>
+      </div>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
-      <div class="details-block">
+      <div class="details-block" *ngIf="action.Cast100ms">
         <div class="detail-name">{{'DB.ACTION.Cast' | translate}}</div>
         <div
           class="detail-value">{{action.Cast100ms / 10 > 0 ? (action.Cast100ms / 10) + 's' : ('DB.ACTION.Instant' | translate)}}</div>
       </div>
-      <div class="details-block">
+      <div class="details-block" *ngIf="action.Range">
         <div class="detail-name">{{'DB.ACTION.Range' | translate}}</div>
         <div class="detail-value" *ngIf="action.Range !== '-1'">{{action.Range}}y</div>
         <div class="detail-value" *ngIf="action.Range === '-1'">{{'DB.ACTION.Melee' | translate}}</div>
       </div>
-      <div class="details-block">
+      <div class="details-block" *ngIf="action.EffectRange">
         <div class="detail-name">{{'DB.ACTION.Radius' | translate}}</div>
         <div class="detail-value">{{action.EffectRange}}y</div>
       </div>
-      <div class="details-block">
+      <div class="details-block" *ngIf="action.Recast100ms">
         <div class="detail-name">{{'DB.ACTION.Cooldown' | translate}}</div>
         <div class="detail-value">{{action.Recast100ms / 10}}s</div>
       </div>
-      <div class="details-block" *ngIf="costType[action.CostType]">
+      <div class="details-block" *ngIf="costType[action.CostType] || action.ID > 99999">
         <div class="detail-name">{{'DB.ACTION.Cost' | translate}}</div>
         <div
-          class="detail-value">{{action.Cost}} {{('DB.ACTION.COST_TYPE.' + costType[action.CostType]) | translate}}</div>
+          class="detail-value">{{action.Cost}}
+          <span
+            *ngIf="costType[action.CostType]">{{('DB.ACTION.COST_TYPE.' + costType[action.CostType]) | translate}}</span>
+          <span *ngIf="action.ID > 99999">{{'DB.ACTION.COST_TYPE.CP' | translate}}</span>
+        </div>
       </div>
-      <div class="details-block">
+      <div class="details-block" *ngIf="action.IsPvP !== undefined">
         <div class="detail-name">{{'DB.ACTION.Pvp_action' | translate}}</div>
         <div class="detail-value">{{(action.IsPvP === 1 ? 'Yes' : 'No') | translate}}</div>
       </div>
-      <div class="details-block">
+      <div class="details-block" *ngIf="action.PreservesCombo !== undefined">
         <div class="detail-name">{{'DB.ACTION.Breaks_unrelated_combo' | translate}}</div>
         <div class="detail-value">{{(action.PreservesCombo === 0 ? 'Yes' : 'No') | translate}}</div>
       </div>
-      <div class="details-block">
+      <div class="details-block" *ngIf="action.AffectsPosition !== undefined">
         <div class="detail-name">{{'DB.ACTION.Movement_action' | translate}}</div>
         <div class="detail-value">{{(action.AffectsPosition === 1 ? 'Yes' : 'No') | translate}}</div>
       </div>
     </div>
-
+    <app-db-comments type="action" [id]="action.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
       <nz-card fxFlex="1 1 auto" class="details-card"
                [nzTitle]="title"
                nzBordered="false"
-               *ngIf="action.GameContentLinks?.Quest">
+               *ngIf="action.GameContentLinks?.Quest || action.QuestRequirementTargetID">
         <ng-template #title>
           {{'DB.ACTION.Unlocked_by_quest' | translate}}
         </ng-template>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-          <img [src]="action.GameContentLinks?.Quest.ActionReward[0] | questIcon | xivapiIcon" alt="">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" *ngIf="action.GameContentLinks?.Quest">
+          <img [src]="action.GameContentLinks?.Quest.ActionReward[0] | questIcon | xivapiIcon" alt="" class="larger-img-icon">
           <div>{{action.GameContentLinks?.Quest.ActionReward[0] | questName | i18n}}</div>
           <app-db-button type="quest" [id]="action.GameContentLinks?.Quest.ActionReward[0]"></app-db-button>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" *ngIf="action.QuestRequirementTargetID">
+          <img [src]="action.QuestRequirementTargetID | questIcon | xivapiIcon" alt="" class="larger-img-icon">
+          <div>{{action.QuestRequirementTargetID | questName | i18n}}</div>
+          <app-db-button type="quest" [id]="action.QuestRequirementTargetID"></app-db-button>
         </div>
       </nz-card>
       <nz-card fxFlex="1 1 auto" class="details-card"
@@ -235,6 +262,7 @@
       </nz-card>
     </div>
   </div>
+  <app-db-comments type="action" [id]="action.ID" *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

@@ -40,16 +40,12 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   update(uid: string, data: Partial<T>, uriParams?: any): Observable<void> {
-    this.pendingChangesService.addPendingChange(`update ${this.getBaseUri(uriParams)}/${uid}`);
     const toUpdate = JSON.parse(JSON.stringify(data));
     delete toUpdate.$key;
     if (uid === undefined || uid === null || uid === '') {
       throw new Error('Empty uid');
     }
-    return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).update(toUpdate)).pipe(
-      tap(() => {
-        this.pendingChangesService.removePendingChange(`update ${this.getBaseUri(uriParams)}/${uid}`);
-      }));
+    return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).update(toUpdate));
   }
 
   set(uid: string, data: T, uriParams?: any): Observable<void> {

@@ -261,10 +261,13 @@ export class LayoutRowFilter {
 
   static fromString(filterString: string): LayoutRowFilter {
     const parsed = filterString.split(':');
-    const baseFilterString: string = parsed.shift().replace('!', '');
-    const baseFilter: LayoutRowFilter = LayoutRowFilter[baseFilterString];
+    const baseFilterString: string = parsed.shift();
+    const baseFilter: LayoutRowFilter = LayoutRowFilter[baseFilterString.replace('!', '')];
     if (parsed.length > 1 && baseFilter !== undefined) {
       return LayoutRowFilter.processRows(parsed, baseFilter);
+    }
+    if (baseFilterString[0] === '!') {
+      return LayoutRowFilter.not(baseFilter);
     }
     return baseFilter;
   }
@@ -324,7 +327,6 @@ export class LayoutRowFilter {
   /**
    * Filters a list with the filter
    * @param rows
-   * @param args
    * @returns {accepted: ListRow[]; rejected: ListRow[]} A set of data with rejected and accepted rows.
    */
   filter(rows: ListRow[]): FilterResult {

@@ -15,7 +15,7 @@ export class UniversalInterceptor implements HttpInterceptor {
     let serverReq: HttpRequest<any> = req;
     if (this.request) {
       let newUrl = `${this.request.protocol}://${this.request.get('host')}`;
-      if (!req.url.startsWith('/')) {
+      if (!req.url.startsWith('/') && !req.url.startsWith('./')) {
         newUrl += '/';
       }
       if (req.url.startsWith('./')) {

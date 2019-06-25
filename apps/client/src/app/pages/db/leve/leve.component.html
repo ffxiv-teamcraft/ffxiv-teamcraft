@@ -61,6 +61,7 @@
         <div class="detail-value">{{xivapiLeve.GilReward | number}}</div>
       </div>
     </div>
+    <app-db-comments type="leve" [id]="xivapiLeve.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false" *ngIf="xivapiLeve.CraftLeve">
@@ -204,7 +205,7 @@
                   </div>
                 </ng-template>
                 <ng-template #more>
-                  <app-map-position *ngIf="(npc.id | npcName).position as npcPosition"
+                  <app-map-position *ngIf="(npc.id | npcName)?.position as npcPosition"
                                     [mapId]="npcPosition.map" [zoneId]="npcPosition.zoneid"
                                     [marker]="{x: npcPosition.x, y: npcPosition.y}"
                                     [showZoneName]="true"></app-map-position>
@@ -225,6 +226,7 @@
       </nz-card>
     </div>
   </div>
+  <app-db-comments type="leve" [id]="xivapiLeve.ID" *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

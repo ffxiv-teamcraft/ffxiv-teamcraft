@@ -12,7 +12,7 @@ export class TrackerComponent {
 
   public alarmsCache: any = {};
 
-  constructor(protected alarmsFacade: AlarmsFacade){
+  constructor(protected alarmsFacade: AlarmsFacade) {
     this.alarmsLoaded$ = this.alarmsFacade.loaded$;
     this.alarms$ = this.alarmsFacade.allAlarms$;
   }

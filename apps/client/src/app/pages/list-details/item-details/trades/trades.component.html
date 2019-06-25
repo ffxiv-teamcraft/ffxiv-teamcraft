@@ -17,7 +17,8 @@
         </div>
       </div>
       <ng-container *ngIf="!fromExternalTrades && !dbDisplay">
-        <div class="total-price" *ngIf="totalPrice(trade) as totalTradePrice" fxLayout="row" fxLayoutAlign="center center"
+        <div class="total-price" *ngIf="totalPrice(trade) as totalTradePrice" fxLayout="row"
+             fxLayoutAlign="center center"
              fxLayoutGap="5px">
           <div>
             {{'LIST.Total_trade_price' | translate}}
@@ -35,10 +36,12 @@
         <nz-list-item [nzContent]="npc.zoneId !== undefined?position:null">
           <nz-list-item-meta [nzTitle]="title">
           </nz-list-item-meta>
-          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-            <div>{{npc.id | npcName | i18n}}</div>
-            <app-db-button type="npc" [id]="npc.id"></app-db-button>
-          </div>
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+              <div>{{npc.id | npcName | i18n}}</div>
+              <app-db-button type="npc" [id]="npc.id"></app-db-button>
+            </div>
+          </ng-template>
           <ng-template #position>
             <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
               <app-map-position [zoneId]="npc.zoneId" [marker]="npc.coords" [mapId]="npc.mapId"></app-map-position>

@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CraftingAction } from '../../model/actions/crafting-action';
+import { CraftingAction, CraftingJob, Reclaim, Simulation } from '@ffxiv-teamcraft/simulator';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
-import { CraftingJob } from '../../model/crafting-job.enum';
 import { TranslateService } from '@ngx-translate/core';
-import { Reclaim } from '../../model/actions/buff/reclaim';
-import { Simulation } from '../../simulation/simulation';
 import { Consumable } from '../../model/consumable';
 import { FreeCompanyAction } from '../../model/free-company-action';
 

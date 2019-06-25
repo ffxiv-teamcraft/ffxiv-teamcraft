@@ -42,6 +42,14 @@ import { QuestIconPipe } from './pipes/quest-icon.pipe';
 import { TraitNamePipe } from './pipes/trait-name.pipe';
 import { TraitIconPipe } from './pipes/trait-icon.pipe';
 import { AetheryteNamePipe } from './pipes/aetheryte-name.pipe';
+import { CharacterAvatarPipe } from './pipes/character-avatar.pipe';
+import { DurationPipe } from './pipes/duration.pipe';
+import { UserLevelPipe } from './pipes/user-level.pipe';
+import { IsPatronPipe } from './pipes/is-patron.pipe';
+import { IsVerifiedPipe } from './pipes/is-verified.pipe';
+import { AchievementNamePipe } from './pipes/achievement-name.pipe';
+import { AchievementIconPipe } from './pipes/achievement-icon.pipe';
+import { FloorPipe } from './pipes/floor.pipe';
 
 @NgModule({
   declarations: [
@@ -49,6 +57,7 @@ import { AetheryteNamePipe } from './pipes/aetheryte-name.pipe';
     PlaceNamePipe,
     NpcNamePipe,
     CeilPipe,
+    FloorPipe,
     IconPipe,
     MobNamePipe,
     VentureNamePipe,
@@ -88,13 +97,21 @@ import { AetheryteNamePipe } from './pipes/aetheryte-name.pipe';
     QuestIconPipe,
     TraitNamePipe,
     TraitIconPipe,
-    AetheryteNamePipe
+    AetheryteNamePipe,
+    CharacterAvatarPipe,
+    DurationPipe,
+    UserLevelPipe,
+    IsPatronPipe,
+    IsVerifiedPipe,
+    AchievementNamePipe,
+    AchievementIconPipe
   ],
   exports: [
     ItemNamePipe,
     PlaceNamePipe,
     NpcNamePipe,
     CeilPipe,
+    FloorPipe,
     IconPipe,
     MobNamePipe,
     VentureNamePipe,
@@ -134,7 +151,14 @@ import { AetheryteNamePipe } from './pipes/aetheryte-name.pipe';
     QuestIconPipe,
     TraitNamePipe,
     TraitIconPipe,
-    AetheryteNamePipe
+    AetheryteNamePipe,
+    CharacterAvatarPipe,
+    DurationPipe,
+    UserLevelPipe,
+    IsPatronPipe,
+    IsVerifiedPipe,
+    AchievementNamePipe,
+    AchievementIconPipe
   ]
 })
 export class PipesModule {

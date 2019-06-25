@@ -7,11 +7,11 @@ import { rarities } from '../data/sources/rarities';
 export class ItemRarityDirective implements OnInit {
 
   colors = {
-    1:'#f3f3f3',
-    2:'#c0ffc0',
-    3:'#5990ff',
-    4:'#b38cff',
-    7:'#d789b6'
+    1: '#f3f3f3',
+    2: '#c0ffc0',
+    3: '#5990ff',
+    4: '#b38cff',
+    7: '#d789b6'
   };
 
   @HostBinding('style.color')

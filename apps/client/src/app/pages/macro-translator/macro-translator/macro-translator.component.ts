@@ -8,7 +8,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 })
 export class MacroTranslatorComponent {
   macroToTranslate: string;
-  macroLanguage: 'en' | 'fr' | 'de' | 'ja' | 'ko';
+  macroLanguage: 'en' | 'fr' | 'de' | 'ja' | 'ko' | 'zh';
   macroTranslatedTabs: { label: string, content: string[] }[];
 
   invalidInputs: boolean;
@@ -19,7 +19,8 @@ export class MacroTranslatorComponent {
     { id: 'en', name: 'EN' },
     { id: 'de', name: 'DE' },
     { id: 'ja', name: 'JA' },
-    { id: 'ko', name: 'KO' }
+    { id: 'ko', name: 'KO' },
+    { id: 'zh', name: 'ZH' }
   ];
 
   private findActionsRegex: RegExp =
@@ -37,7 +38,8 @@ export class MacroTranslatorComponent {
       en: [],
       de: [],
       ja: [],
-      ko: []
+      ko: [],
+      zh: []
     };
 
     this.translationDone = false;
@@ -52,7 +54,7 @@ export class MacroTranslatorComponent {
 
           // Push translated line to each language
           Object.keys(macroTranslated).forEach(key => {
-            if (key === 'ko' && line.indexOf('"') === -1) {
+            if ((key === 'ko' || key === 'zh') && line.indexOf('"') === -1) {
               macroTranslated[key].push(line.replace(skillName, `"${translatedSkill[key]}"`));
             } else {
               macroTranslated[key].push(line.replace(skillName, translatedSkill[key]));

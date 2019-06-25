@@ -1,6 +1,14 @@
 <nz-tabset nzTabPosition="left" [nzSelectedIndex]="selectedTab" class="tabset">
   <nz-tab [nzTitle]="'SETTINGS.General' | translate">
     <div fxLayout="column" fxLayoutGap="10px">
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <button nz-button (click)="clearSearchHistory()" class="clear-search" fxFlexAlign="center center">
+            {{'SETTINGS.Clear_search_history' | translate}}
+          </button>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'COMMON.Language' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
@@ -129,6 +137,23 @@
             <nz-option [nzLabel]="'READ' | translate" [nzValue]="10"></nz-option>
             <nz-option [nzLabel]="'PARTICIPATE' | translate" [nzValue]="20"></nz-option>
           </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Db_comments_position' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-select [(ngModel)]="settings.dbCommentsPosition">
+            <nz-option [nzLabel]="'COMMON.Top' | translate" [nzValue]="'TOP'"></nz-option>
+            <nz-option [nzLabel]="'COMMON.Bottom' | translate" [nzValue]="'BOTTOM'"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label nz-checkbox
+                 [(ngModel)]="settings.autoMarkAsCompleted">{{'SETTINGS.Auto_mark_as_done_in_log' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item *ngIf="!platform.isDesktop()" class="empty-label">

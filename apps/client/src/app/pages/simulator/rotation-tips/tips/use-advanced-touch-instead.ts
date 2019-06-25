@@ -1,8 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { BasicTouch } from '../../model/actions/quality/basic-touch';
-import { AdvancedTouch } from '../../model/actions/quality/advanced-touch';
+import { AdvancedTouch, BasicTouch, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class UseAdvancedTouchInstead extends RotationTip {
 

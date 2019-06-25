@@ -1,0 +1,41 @@
+<!--This page is not translated because blog posts are meant to be in english only, and this is an admin-only page.-->
+<nz-alert nzType="info" *ngIf="users$ | async as users" nzMessage="Ready to send to {{users.length}} users"></nz-alert>
+<form nz-form [formGroup]="form">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Title</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback>
+      <input nz-input formControlName="title"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>slug</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback>
+      <input nz-input formControlName="slug"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Description</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback>
+      <textarea formControlName="description" nz-input rows="2"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Message</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback>
+      <textarea formControlName="message" nz-input rows="20"></textarea>
+      <nz-form-explain><a href="https://jfcere.github.io/ngx-markdown/" target="_blank">Cheat sheet</a>
+      </nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzOffset]="7" [nzSpan]="12">
+      <button nz-button nzType="primary" [disabled]="!form.valid || !(users$ | async)"
+              nz-popconfirm [nzTitle]="'Confirmation' | translate"
+              (nzOnConfirm)="submit()">
+        Submit
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+<nz-divider nzOrientation="left" nzText="Preview"></nz-divider>
+<app-blog-post *ngIf="preview$ | async as preview" [post]="preview"></app-blog-post>

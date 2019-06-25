@@ -47,6 +47,14 @@ export class SettingsService {
     this.setSetting('copy-type', copyType);
   }
 
+  public get dbCommentsPosition(): string {
+    return this.getSetting('default-db-comments-position', 'TOP');
+  }
+
+  public set dbCommentsPosition(position: string) {
+    this.setSetting('default-db-comments-position', position);
+  }
+
   public get defaultPermissionLevel(): number {
     return +this.getSetting('default-permission-level', '20');
   }
@@ -85,6 +93,14 @@ export class SettingsService {
 
   public set compactSidebar(compact: boolean) {
     this.setSetting('compact-sidebar', compact.toString());
+  }
+
+  public get autoMarkAsCompleted(): boolean {
+    return this.getSetting('auto-mark-as-completed', 'false') === 'true';
+  }
+
+  public set autoMarkAsCompleted(markAsCompleted: boolean) {
+    this.setSetting('auto-mark-as-completed', markAsCompleted.toString());
   }
 
   public get compactAlarms(): boolean {

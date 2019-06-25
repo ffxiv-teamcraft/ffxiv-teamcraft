@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #4880b1;
-  --highlight-color: #26c6da;
+  --highlight-color: #68cfa8;
   --background-color: #2f3237;
   --text-color: @text-color;
   --topbar-color: #191e25;
@@ -25,6 +25,30 @@
 
 .ant-collapse-content {
   background: var(--topbar-color);
+}
+
+.ant-pagination-item-active {
+  border-color: var(--primary-color);
+
+  a {
+    color: var(--primary-color);
+  }
+}
+
+.ant-pagination-item:hover {
+  border-color: var(--primary-color);
+
+  a {
+    color: var(--primary-color);
+  }
+}
+
+.ant-pagination-prev:focus .ant-pagination-item-link, .ant-pagination-next:focus .ant-pagination-item-link, .ant-pagination-prev:hover .ant-pagination-item-link, .ant-pagination-next:hover .ant-pagination-item-link {
+  border-color: var(--primary-color);
+
+  a {
+    color: var(--primary-color);
+  }
 }
 
 .ant-tabs-tab-active, .ant-tabs-tab:hover, .ant-tabs-tab:focus {
@@ -90,6 +114,26 @@
 
 a {
   color: var(--primary-color);
+
+  &:hover {
+    color: var(--primary-color);
+    opacity: .8;
+  }
+}
+
+.ant-radio-button-wrapper-checked {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  box-shadow: -1px 0 0 0 var(--primary-color) !important;
+
+  &:hover {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+  }
+}
+
+.ant-radio-button-wrapper:hover {
+  color: var(--primary-color) !important;
 }
 
 .accent {
@@ -122,4 +166,8 @@ a {
 
 .ant-layout-sider-trigger:hover {
   background: var(--sider-trigger-hover-color);
+}
+
+.ant-badge-count {
+  background: var(--primary-color);
 }

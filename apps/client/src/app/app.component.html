@@ -68,10 +68,10 @@
                     </nz-list-item-meta>
                   </nz-list-item>
                   <ng-template #actionClose>
-                    <i nz-icon type="close" (click)="deleteNotification(notification)"></i>
+                    <i nz-icon type="close" (click)="$event.stopPropagation();deleteNotification(notification)"></i>
                   </ng-template>
                   <ng-template #actionOpen>
-                    <a [routerLink]="notification.route">
+                    <a [routerLink]="notification.route" (click)="deleteNotification(notification)">
                       <i nz-icon type="select"></i>
                     </a>
                   </ng-template>
@@ -243,6 +243,22 @@
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                 routerLink="/recipe-finder">
+          <span nz-tooltip nzPlacement="right"
+                [nzTitle]="collapsedSidebar ? ('RECIPE_FINDER.Title' | translate) : null">
+              <i nz-icon nzType="experiment" nzTheme="outline"></i>
+              <span class="nav-text">{{'RECIPE_FINDER.Title' | translate}}</span>
+          </span>
+              </a>
+              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                 routerLink="/currency-spending">
+          <span nz-tooltip nzPlacement="right"
+                [nzTitle]="collapsedSidebar ? ('CURRENCY_SPENDING.Title' | translate) : null">
+              <i nz-icon nzType="shopping" nzTheme="outline"></i>
+              <span class="nav-text">{{'CURRENCY_SPENDING.Title' | translate}}</span>
+          </span>
+              </a>
+              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/custom-items">
           <span nz-tooltip nzPlacement="right"
                 [nzTitle]="collapsedSidebar ? ('CUSTOM_ITEMS.Title' | translate) : null">
@@ -256,6 +272,14 @@
                 [nzTitle]="collapsedSidebar ? ('MACRO_TRANSLATION.Title' | translate) : null">
               <i nz-icon type="message"></i>
               <span class="nav-text">{{'MACRO_TRANSLATION.Title' | translate}}</span>
+          </span>
+              </a>
+              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                 routerLink="/blog">
+          <span nz-tooltip nzPlacement="right"
+                [nzTitle]="collapsedSidebar ? ('BLOG.Title' | translate) : null">
+              <i nz-icon type="file-text"></i>
+              <span class="nav-text">{{'BLOG.Title' | translate}}</span>
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"

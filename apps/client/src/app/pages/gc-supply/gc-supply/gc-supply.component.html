@@ -28,7 +28,7 @@
     <nz-select nz-col nzMd="6" nzSm="24" [ngModel]="null" (ngModelChange)="select(row.job, $event.itemId, $event.count)"
                nzAllowClear nzShowSearch #selectBox
                class="item-select">
-      <nz-option *ngFor="let item of row.items" [nzValue]="item" [nzLabel]="item.itemId | itemName | i18n"></nz-option>
+      <nz-option *ngFor="let item of row.items" [nzValue]="item" nzLabel="{{item.itemId | itemName | i18n}} x {{item.count}}"></nz-option>
     </nz-select>
     <div nz-col nzMd="6" nzSm="24" *ngIf="selectBox.value" fxLayout="row" fxLayoutGap="5px"
          fxLayoutAlign="flex-start center">

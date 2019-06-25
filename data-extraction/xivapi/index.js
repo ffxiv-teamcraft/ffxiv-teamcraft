@@ -38,7 +38,9 @@ let todo = [
   'statuses',
   'traits',
   'items',
-  'aetherytes'
+  'aetherytes',
+  'achievements',
+  'recipes'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -982,8 +984,20 @@ if (hasTodo('traits')) {
 if (hasTodo('items')) {
   const names = {};
   const rarities = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity').subscribe(page => {
+  const mostUsed = [];
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks').subscribe(page => {
     page.Results.forEach(item => {
+      if (item.GameContentLinks) {
+        if (item.GameContentLinks.Recipe && item.GameContentLinks.Recipe.ItemResult) {
+          const usedFor = [].concat.apply([], Object.keys(item.GameContentLinks.Recipe)
+            .filter(key => /ItemIngredient\d/.test(key))
+            .map(key => item.GameContentLinks.Recipe[key])).length;
+          mostUsed.push({
+            name: item.Name_en,
+            amount: usedFor
+          });
+        }
+      }
       names[item.ID] = {
         en: item.Name_en,
         de: item.Name_de,
@@ -993,6 +1007,7 @@ if (hasTodo('items')) {
       rarities[item.ID] = item.Rarity;
     });
   }, null, () => {
+    fs.writeFileSync(path.join(__dirname, `most-used.json`), JSON.stringify(mostUsed.sort((a, b) => b.amount - a.amount)));
     persistToJsonAsset('items', names);
     persistToTypescript('rarities', 'rarities', rarities);
   });
@@ -1014,5 +1029,51 @@ if (hasTodo('aetherytes')) {
     });
   }, null, () => {
     persistToTypescript('aetheryte-names', 'aetheryteNames', names);
+  });
+}
+
+if (hasTodo('achievements')) {
+  const achievements = {};
+  const icons = {};
+  getAllPages('https://xivapi.com/Achievement?columns=ID,Name_*,Icon').subscribe(page => {
+    page.Results.forEach(achievement => {
+      achievements[achievement.ID] = {
+        en: achievement.Name_en,
+        de: achievement.Name_de,
+        ja: achievement.Name_ja,
+        fr: achievement.Name_fr
+      };
+      icons[achievement.ID] = achievement.Icon;
+    });
+  }, null, () => {
+    persistToTypescript('achievements', 'achievements', achievements);
+    persistToTypescript('achievement-icons', 'achievementIcons', icons);
+  });
+}
+
+if (hasTodo('recipes')) {
+  const recipes = [];
+  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,AmountResult,RecipeLevelTable.ClassJobLevel,ItemResultTargetID,ItemIngredient0TargetID,ItemIngredient1TargetID,ItemIngredient2TargetID,ItemIngredient3TargetID,ItemIngredient4TargetID,ItemIngredient5TargetID,ItemIngredient6TargetID,ItemIngredient7TargetID,ItemIngredient8TargetID,ItemIngredient9TargetID,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
+    page.Results.forEach(recipe => {
+      recipes.push({
+        id: recipe.ID,
+        job: recipe.ClassJob.ID,
+        level: recipe.RecipeLevelTable.ClassJobLevel,
+        yields: recipe.AmountResult,
+        result: recipe.ItemResultTargetID,
+        ingredients: Object.keys(recipe)
+          .filter(k => /ItemIngredient\dTargetID/.test(k))
+          .sort((a, b) => a < b ? -1 : 1)
+          .filter(key => recipe[key] > 19)
+          .map((key, index) => {
+            return {
+              id: recipe[key],
+              amount: +recipe[`AmountIngredient${index}`]
+            };
+          })
+      });
+    });
+  }, null, () => {
+    persistToJsonAsset('recipes', recipes);
   });
 }

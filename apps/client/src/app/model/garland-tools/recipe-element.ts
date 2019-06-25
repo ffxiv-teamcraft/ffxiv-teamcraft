@@ -1,5 +1,5 @@
 export enum RecipeElement {
-  NONE =0,
+  NONE = 0,
   FIRE = 1,
   ICE = 2,
   WIND = 3,

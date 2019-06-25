@@ -1,7 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
-import { CraftingAction } from '../../model/actions/crafting-action';
-import { CraftingActionsRegistry } from '../../model/crafting-actions-registry';
+import {
+  CrafterStats,
+  CraftingAction,
+  CraftingActionsRegistry,
+  GearSet,
+  Simulation,
+  SimulationResult
+} from '@ffxiv-teamcraft/simulator';
 import { Observable } from 'rxjs/Observable';
 import { filter, map, shareReplay, tap } from 'rxjs/operators';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
@@ -16,7 +22,6 @@ import { CustomLink } from '../../../../core/database/custom-links/custom-link';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../../../modules/custom-links/+state/custom-links.facade';
 import { Router } from '@angular/router';
-import { Simulation } from '../../simulation/simulation';
 import { MacroPopupComponent } from '../macro-popup/macro-popup.component';
 import { foods } from '../../../../core/data/sources/foods';
 import { medicines } from '../../../../core/data/sources/medicines';
@@ -25,11 +30,8 @@ import { ConsumablesService } from '../../model/consumables.service';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
 import { Consumable } from '../../model/consumable';
 import { FreeCompanyAction } from '../../model/free-company-action';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { CrafterStats } from '../../model/crafter-stats';
 import { BonusType } from '../../model/consumable-bonus';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { GearSet } from '../../model/gear-set';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -77,7 +79,7 @@ export class RotationPanelComponent implements OnInit {
 
   public simulation$: Observable<SimulationResult>;
 
-  constructor(private registry: CraftingActionsRegistry, private linkTools: LinkToolsService,
+  constructor(private linkTools: LinkToolsService,
               private rotationsFacade: RotationsFacade, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
@@ -85,7 +87,7 @@ export class RotationPanelComponent implements OnInit {
               public freeCompanyActionsService: FreeCompanyActionsService) {
     this.actions$ = this.rotation$.pipe(
       filter(rotation => rotation !== null),
-      map(rotation => this.registry.deserializeRotation(rotation.rotation))
+      map(rotation => CraftingActionsRegistry.deserializeRotation(rotation.rotation))
     );
 
     this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.rotation$).pipe(
@@ -116,7 +118,7 @@ export class RotationPanelComponent implements OnInit {
           stats.specialist,
           stats.level,
           gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [70, 70, 70, 70, 70, 70, 70, 70]);
-        return new Simulation(rotation.recipe as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
+        return new Simulation(rotation.recipe as Craft, CraftingActionsRegistry.deserializeRotation(rotation.rotation), crafterStats).run(true);
       })
     );
   }
@@ -191,7 +193,7 @@ export class RotationPanelComponent implements OnInit {
     this.dialog.create({
       nzContent: MacroPopupComponent,
       nzComponentParams: {
-        rotation: this.registry.deserializeRotation(this.rotation.rotation),
+        rotation: CraftingActionsRegistry.deserializeRotation(this.rotation.rotation),
         job: this.rotation.recipe.job,
         simulation: simulation.clone(),
         food: this.foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq),

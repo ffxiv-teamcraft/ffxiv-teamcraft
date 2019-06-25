@@ -48,9 +48,9 @@
       <div class="details-block">
         <div class="detail-name">{{'DB.Team_size' | translate}}</div>
         <div class="detail-value">{{(xivapiInstance.ContentMemberType.HealersPerParty
-        + xivapiInstance.ContentMemberType.MeleesPerParty
-        + xivapiInstance.ContentMemberType.RangedPerParty
-        + xivapiInstance.ContentMemberType.TanksPerParty) || 1}}</div>
+          + xivapiInstance.ContentMemberType.MeleesPerParty
+          + xivapiInstance.ContentMemberType.RangedPerParty
+          + xivapiInstance.ContentMemberType.TanksPerParty) || 1}}</div>
       </div>
       <div class="details-block">
         <div class="detail-name">{{'DB.Time' | translate}}</div>
@@ -77,6 +77,7 @@
         <div class="detail-value">{{(xivapiInstance.WeekRestriction === 1 ? 'Yes' : 'No') | translate}}</div>
       </div>
     </div>
+    <app-db-comments type="instance" [id]="xivapiInstance.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
     <nz-divider [nzText]="'DB.Fights' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="title" nzBordered="false"
@@ -121,7 +122,8 @@
       </nz-card>
     </div>
     <nz-divider [nzText]="'DB.Instance_details' | translate" nzOrientation="left"></nz-divider>
-    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column" *ngIf="xivapiInstance.ContentFinderCondition.TerritoryType.Map">
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column"
+         *ngIf="xivapiInstance.ContentFinderCondition.TerritoryType.Map">
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="mapTitle" nzBordered="false">
         <ng-template #mapTitle>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
@@ -164,8 +166,8 @@
                  src="./assets/icons/quest.png">
             <div>{{gtData.instance.unlockedByQuest | questName | i18n}}</div>
             <app-db-button type="quest" [id]="gtData.instance.unlockedByQuest"></app-db-button>
-            </div>
           </div>
+        </div>
       </nz-card>
       <nz-card fxFlex="1 1 auto" class="details-card" [nzTitle]="chestsTitle" nzBordered="false"
                *ngIf="gtData.instance.coffers">
@@ -195,6 +197,7 @@
       </nz-card>
     </div>
   </div>
+  <app-db-comments type="instance" [id]="xivapiInstance.ID" *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

@@ -119,7 +119,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
     this.teams$ = this.teamsFacade.myTeams$;
     this.assignedTeam$ = this.teamsFacade.selectedTeam$;
-    this.outDated$ = this.list$.pipe(map(list => list.isOutDated()));
+    this.outDated$ = this.list$.pipe(map(list => !list.notFound && list.isOutDated()));
     this.canRemoveTag$ = combineLatest(this.assignedTeam$, this.authFacade.userId$, this.permissionLevel$)
       .pipe(
         map(([team, userId, permissionsLevel]) => team.leader === userId || permissionsLevel >= PermissionLevel.OWNER)

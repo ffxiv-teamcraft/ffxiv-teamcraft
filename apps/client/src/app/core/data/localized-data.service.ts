@@ -12,6 +12,7 @@ import { LazyDataService } from './lazy-data.service';
 import { Fate } from '../../pages/db/model/fate/fate';
 import { Quest } from '../../pages/db/model/quest/quest';
 import { tripleTriadRules } from './sources/triple-triad-rules';
+import { zhActions } from './sources/zh-actions';
 
 @Injectable()
 export class LocalizedDataService {
@@ -68,9 +69,11 @@ export class LocalizedDataService {
 
   public getPlace(id: number): I18nName {
     const row = this.getRow(this.lazyData.places, id);
+    const zhRow = this.getRow(this.lazyData.zhPlaces, id);
     const koRow = this.getRow(this.lazyData.koPlaces, id);
 
     if (row !== undefined) {
+      row.zh = zhRow !== undefined ? zhRow.zh : row.en;
       row.ko = koRow !== undefined ? koRow.ko : row.en;
     }
     return row;
@@ -215,7 +218,7 @@ export class LocalizedDataService {
     const result = mapIds.find(map => map.name === name);
     if (result === undefined) {
       if (name === 'Gridania') {
-        return 3;
+        return 2;
       }
       return -1;
     }
@@ -248,6 +251,13 @@ export class LocalizedDataService {
         language = 'en';
       }
     }
+    if (language === 'zh') {
+      const zhRow = zhActions.find(a => a.zh === name);
+      if (zhRow !== undefined) {
+        name = zhRow.en;
+        language = 'en';
+      }
+    }
     const result = this.getRowByName(this.lazyData.craftActions, name, language) || this.getRowByName(this.lazyData.actions, name, language);
     if (result === undefined) {
       throw new Error('Data row not found.');
@@ -255,6 +265,10 @@ export class LocalizedDataService {
     const koResultRow = koActions.find(a => a.en === result.en);
     if (koResultRow !== undefined) {
       result.ko = koResultRow.ko;
+    }
+    const zhResultRow = zhActions.find(a => a.en === result.en);
+    if (zhResultRow !== undefined) {
+      result.zh = zhResultRow.zh;
     }
     return result;
   }

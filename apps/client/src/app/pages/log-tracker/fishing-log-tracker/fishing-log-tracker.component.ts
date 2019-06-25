@@ -14,6 +14,8 @@ import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
 import { fishParameter } from '../../../core/data/sources/fish-parameter';
 import { TrackerComponent } from '../tracker-component';
 import { fishEyes } from '../../../core/data/sources/fish-eyes';
+import { fshLogOrder } from '../fsh-log-order';
+import { fshSpearLogOrder } from '../fsh-spear-log-order';
 
 @Component({
   selector: 'app-fishing-log-tracker',
@@ -83,44 +85,47 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
     if (fish.id >= 20000) {
       const logEntries = spearFishingLog.filter(entry => entry.itemId === fish.id);
       const spot = spearFishingNodes.find(node => node.itemId === fish.itemId);
-      return logEntries.map(entry => {
-        const result: any = {
-          zoneid: entry.zoneId,
-          mapId: entry.mapId,
-          x: entry.coords.x,
-          y: entry.coords.y,
-          level: entry.level,
-          type: 4,
-          itemId: fish.itemId,
-          icon: fish.icon,
-          timed: fish.spawn !== undefined
-        };
+      return logEntries
+        .map(entry => {
+          const result: any = {
+            id: fish.id,
+            zoneid: entry.zoneId,
+            mapId: entry.mapId,
+            x: entry.coords.x,
+            y: entry.coords.y,
+            level: entry.level,
+            type: 4,
+            itemId: fish.itemId,
+            icon: fish.icon,
+            timed: fish.spawn !== undefined
+          };
 
-        if (spot !== undefined) {
-          result.gig = spot.gig;
-        }
+          if (spot !== undefined) {
+            result.gig = spot.gig;
+          }
 
-        if (spot.spawn !== undefined) {
-          result.spawnTimes = [spot.spawn];
-          result.uptime = spot.duration;
-          // Just in case it despawns the day after.
-          result.uptime = result.uptime < 0 ? result.uptime + 24 : result.uptime;
-          // As uptimes are always in minutes, gotta convert to minutes here too.
-          result.uptime *= 60;
-        }
+          if (spot.spawn !== undefined) {
+            result.spawnTimes = [spot.spawn];
+            result.uptime = spot.duration;
+            // Just in case it despawns the day after.
+            result.uptime = result.uptime < 0 ? result.uptime + 24 : result.uptime;
+            // As uptimes are always in minutes, gotta convert to minutes here too.
+            result.uptime *= 60;
+          }
 
-        if (spot.predator) {
-          result.predators = spot.predator.map(predator => {
-            const itemId = +Object.keys(this.lazyData.items).find(key => this.lazyData.items[key].en === predator.name);
-            return {
-              id: itemId,
-              icon: this.lazyData.icons[itemId],
-              amount: predator.predatorAmount
-            };
-          });
-        }
-        return result;
-      });
+          if (spot.predator) {
+            result.predators = spot.predator.map(predator => {
+              const itemId = +Object.keys(this.lazyData.items).find(key => this.lazyData.items[key].en === predator.name);
+              return {
+                id: itemId,
+                icon: this.lazyData.icons[itemId],
+                amount: predator.predatorAmount
+              };
+            });
+          }
+          return result;
+        })
+        .slice(0, 1);
     } else {
       if (spots.length > 0) {
         return spots
@@ -129,6 +134,7 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
             const zoneId = this.l12n.getAreaIdByENName(spot.title);
             if (mapId !== undefined) {
               const result: any = {
+                id: fish.id,
                 zoneid: zoneId,
                 mapId: mapId,
                 x: spot.coords[0],
@@ -288,9 +294,23 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
               spot.total = uniqueSpotTotal.length;
               spot.done = uniqueSpotDone.length;
             });
+            area.spots = area.spots
+              .sort((a, b) => {
+                if (a.id > 20000) {
+                  return fshSpearLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshSpearLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+                }
+                return fshLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+              });
             area.total = uniqueMapTotal.length;
             area.done = uniqueMapDone.length;
           });
+          display.tabs = display.tabs
+            .sort((a, b) => {
+              if (a.id > 20000) {
+                return fshSpearLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshSpearLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+              }
+              return fshLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+            });
           display.total = uniqueDisplayTotal.length;
           display.done = uniqueDisplayDone.length;
           return display;

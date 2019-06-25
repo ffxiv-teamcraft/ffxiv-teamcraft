@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { CraftingAction } from '../../model/actions/crafting-action';
-import { Simulation } from '../../simulation/simulation';
+import { CraftingAction, Simulation } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-action',

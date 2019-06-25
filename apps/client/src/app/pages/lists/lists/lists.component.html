@@ -62,8 +62,8 @@
     <div fxLayout="column" fxLayoutGap="5px">
       <nz-collapse *ngFor="let teamDisplay of teamsDisplays$ | async;trackBy: trackByTeam">
         <nz-collapse-panel nzHeader="{{teamDisplay.team.name}} ({{teamDisplay.lists.length}})">
-          <div class="ngx-dnd-container" ngxDroppable="communityList"
-               (drop)="setListIndex($event.value, $event.dropIndex, lists.lists)">
+          <div class="ngx-dnd-container" ngxDroppable="team-{{teamDisplay.team.$key}}"
+               (drop)="setListIndex($event.value, $event.dropIndex, teamDisplay.lists)">
             <div class="ngx-dnd-item list-panel" *ngFor="let list of teamDisplay.lists; trackBy: trackByList"
                  ngxDraggable="team-{{teamDisplay.team.$key}}"
                  [model]="list">

@@ -32,6 +32,11 @@ import { ActionComponent } from './action/action.component';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
 import { ModelViewerComponent } from './item/model-viewer/model-viewer.component';
+import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
+import { DbCommentsComponent } from './db-comments/db-comments/db-comments.component';
+import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
+import { CommentLinksPipe } from './db-comments/comment-links.pipe';
+import { AchievementComponent } from './achievement/achievement.component';
 
 const routes: Routes = [
 
@@ -165,12 +170,41 @@ const routes: Routes = [
         component: TraitComponent,
         canActivate: [MaintenanceGuard]
       },
+
+      {
+        path: 'achievement/:achievementId',
+        component: AchievementComponent,
+        canActivate: [MaintenanceGuard]
+      },
+      {
+        path: 'achievement/:achievementId/:slug',
+        component: AchievementComponent,
+        canActivate: [MaintenanceGuard]
+      }
     ]
   }
 ];
 
 @NgModule({
-  declarations: [DbComponent, InstanceComponent, ItemComponent, QuestComponent, NpcComponent, LeveComponent, MobComponent, FateComponent, MapPageComponent, NodeComponent, ActionComponent, StatusComponent, TraitComponent, ModelViewerComponent],
+  declarations: [
+    DbComponent,
+    InstanceComponent,
+    ItemComponent,
+    QuestComponent,
+    NpcComponent,
+    LeveComponent,
+    MobComponent,
+    FateComponent,
+    MapPageComponent,
+    NodeComponent,
+    ActionComponent,
+    StatusComponent,
+    TraitComponent,
+    ModelViewerComponent,
+    DbCommentsComponent,
+    CommentLinksPipe,
+    AchievementComponent
+  ],
   entryComponents: [ModelViewerComponent],
   imports: [
     CommonModule,
@@ -194,8 +228,10 @@ const routes: Routes = [
     ListModule,
     RotationsModule,
     ItemDetailsPopupsModule,
+    MarketboardModule,
 
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    UserAvatarModule
   ]
 })
 export class DbModule {

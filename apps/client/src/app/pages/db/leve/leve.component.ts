@@ -16,6 +16,7 @@ import { LeveData } from '../../../model/garland-tools/leve-data';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { levemetes } from '../../../core/data/sources/levemetes';
 import { I18nName } from '../../../model/common/i18n-name';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-leve',
@@ -44,7 +45,7 @@ export class LeveComponent extends TeamcraftPageComponent {
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataService,
-              private linkTools: LinkToolsService,
+              private linkTools: LinkToolsService, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 
@@ -115,7 +116,7 @@ export class LeveComponent extends TeamcraftPageComponent {
                 en: item.Name_en,
                 de: item.Name_de,
                 ja: item.Name_ja,
-                fr: item.Name_fr,
+                fr: item.Name_fr
               },
               icon: item.Icon,
               amount: leve.BattleLeve[`ItemsInvolvedQty${index}`],
@@ -135,7 +136,7 @@ export class LeveComponent extends TeamcraftPageComponent {
             const enemy = leve.BattleLeve[`BNpcName${index}`];
             enemies.push({
               id: enemy.ID,
-              level: leve.BattleLeve[`EnemyLevel${index}`],
+              level: leve.BattleLeve[`EnemyLevel${index}`]
             });
             return enemies;
           }, []);
@@ -151,16 +152,16 @@ export class LeveComponent extends TeamcraftPageComponent {
           .reduce((rewards, index) => {
             const group = leve.LeveRewardItem[`LeveRewardItemGroup${index}`];
             rewards.push(...[0, 1, 2, 3, 4, 5, 6, 7, 8]
-                .filter(itemIndex => group[`Item${itemIndex}TargetID`] > 0)
-                .reduce((items, itemIndex, i, array) => {
-                  items.push({
-                    id: group[`Item${itemIndex}TargetID`],
-                    amount: group[`Count${itemIndex}`],
-                    hq: group[`HQ${itemIndex}`] === 1,
-                    chances: Math.floor(leve.LeveRewardItem[`Probability%${index}`] / array.length)
-                  });
-                  return items;
-                }, [])
+              .filter(itemIndex => group[`Item${itemIndex}TargetID`] > 0)
+              .reduce((items, itemIndex, i, array) => {
+                items.push({
+                  id: group[`Item${itemIndex}TargetID`],
+                  amount: group[`Count${itemIndex}`],
+                  hq: group[`HQ${itemIndex}`] === 1,
+                  chances: Math.floor(leve.LeveRewardItem[`Probability%${index}`] / array.length)
+                });
+                return items;
+              }, [])
             );
             return rewards;
           }, []);
@@ -220,7 +221,7 @@ export class LeveComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(leve),
           description: this.getDescription(leve),
-          url: `https://ffxivteamcraft.com/db/leve/${leve.ID}/${this.getName(leve).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/leve/${leve.ID}/${this.getName(leve).split(' ').join('-')}`,
           image: `https://xivapi.com/${leve.IconIssuer}`
         };
       })

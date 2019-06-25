@@ -13,8 +13,10 @@ import { ProgressPopupService } from '../../progress-popup/progress-popup.servic
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { PriceCheckResultComponent } from '../price-check-result/price-check-result.component';
+import { NumberQuestionPopupComponent } from '../../number-question-popup/number-question-popup/number-question-popup.component';
 
 @Component({
   selector: 'app-pricing',
@@ -52,7 +54,7 @@ export class PricingComponent implements AfterViewInit {
               private listsFacade: ListsFacade, private xivapi: XivapiService, private authFacade: AuthFacade,
               private progressService: ProgressPopupService, private l12n: LocalizedDataService, private i18n: I18nToolsService,
               private translate: TranslateService, private message: NzMessageService, private cd: ChangeDetectorRef,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService, private dialog: NzModalService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       tap(list => {
         this.updateCosts(list);
@@ -82,6 +84,33 @@ export class PricingComponent implements AfterViewInit {
 
   public saveDiscounts(listKey: string): void {
     localStorage.setItem(`discounts:${listKey}`, `${this.flatDiscount},${this.discount}`);
+  }
+
+  public setBenefits(items: ListRow[], list: List): void {
+    this.dialog.create({
+      nzTitle: `${this.translate.instant('PRICING.Enter_total_earnings')}`,
+      nzContent: NumberQuestionPopupComponent,
+      nzComponentParams: {
+        value: this.getTotalEarnings(items, list)
+      },
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        filter(value => value || value === 0)
+      )
+      .subscribe(value => {
+        items.forEach(item => {
+          const totalPricePerItem = value / items.length;
+          const pricePerCraft = Math.round(totalPricePerItem / item.amount);
+          this.pricingService.savePrice(item, {
+            fromMB: false,
+            fromVendor: false,
+            hq: pricePerCraft,
+            nq: pricePerCraft
+          });
+        });
+        this.pricingService.priceChanged$.next(null);
+      });
   }
 
   public fillMbCosts(rows: ListRow[], finalItems = false): void {
@@ -153,6 +182,87 @@ export class PricingComponent implements AfterViewInit {
           stopInterval$.next(null);
           this.pricingService.priceChanged$.next(null);
           this.updateCosts(res);
+        }
+      });
+  }
+
+  public checkPrices(rows: ListRow[]): void {
+    const stopInterval$ = new Subject<void>();
+    const allPrices = {};
+    const operations = interval(250).pipe(
+      takeUntil(stopInterval$),
+      filter(index => rows[index] !== undefined),
+      mergeMap(index => {
+        const row = rows[index];
+        return this.server$.pipe(
+          mergeMap(server => {
+            return this.xivapi.getMarketBoardItemCrossServer(Object.keys(this.lazyData.datacenters).find(dc => {
+              return this.lazyData.datacenters[dc].indexOf(server) > -1;
+            }), row.id).pipe(
+              map(res => {
+                let prices: any[] = [].concat.apply([], Object.keys(res).map(serverName => {
+                  return res[serverName].Prices.map(price => {
+                    (<any>price).Server = serverName;
+                    return price;
+                  });
+                }));
+                if (rows || this.settings.disableCrossWorld) {
+                  prices = prices.filter(price => price.Server === server);
+                }
+                const cheapestHq = prices.filter(p => p.IsHQ)
+                  .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
+                const cheapestNq = prices.filter(p => !p.IsHQ)
+                  .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
+                return {
+                  item: row,
+                  hq: cheapestHq ? cheapestHq.PricePerUnit : this.pricingService.getPrice(row).hq,
+                  hqServer: cheapestHq ? cheapestHq.Server : null,
+                  nq: cheapestNq ? cheapestNq.PricePerUnit : this.pricingService.getPrice(row).nq,
+                  nqServer: cheapestNq ? cheapestNq.Server : null
+                };
+              })
+            );
+          })
+        );
+      }),
+      tap((res) => {
+        allPrices[res.item.id] = {
+          nq: res.nq,
+          nqServer: res.nqServer,
+          hq: res.hq,
+          hqServer: res.hqServer
+        };
+      })
+    );
+    this.progressService.showProgress(operations, rows.length)
+      .pipe(
+        switchMap(() => this.list$),
+        first()
+      )
+      .subscribe((res) => {
+        if (res instanceof Error) {
+          this.message.error(this.translate.instant('MARKETBOARD.Error'));
+        } else {
+          stopInterval$.next(null);
+          this.dialog.create({
+            nzTitle: `${this.translate.instant('MARKETBOARD.Title')}`,
+            nzContent: PriceCheckResultComponent,
+            nzComponentParams: {
+              items: rows
+                .map(item => {
+                  return {
+                    ...item,
+                    cost: this.getCraftCost(item),
+                    mbPrice: allPrices[item.id]
+                  };
+                })
+                .filter(item => {
+                  return (item.mbPrice.hq > 0 && item.cost > item.mbPrice.hq) || (item.mbPrice.nq > 0 && item.cost > item.mbPrice.nq);
+                })
+            },
+            nzFooter: null,
+            nzWidth: '80vw'
+          });
         }
       });
   }
