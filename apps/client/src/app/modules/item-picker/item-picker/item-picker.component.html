@@ -18,7 +18,15 @@
       </nz-list-item-meta>
       <ng-template #content>
         <div fxLayout="row" fxLayoutGap="5px">
-          <nz-input-number [(ngModel)]="result.amount" [nzMin]="1" *ngIf="!hideAmount"></nz-input-number>
+          <nz-input-group *ngIf="!hideAmount" [nzAddOnBefore]="result.recipe !== undefined?addCrafts:null"
+                          [nzCompact]="true">
+            <input type="number" [(ngModel)]="result.amount" nz-input  class="amount-input">
+            <ng-template #addCrafts>
+              <label nz-checkbox [(ngModel)]="result.addCrafts">
+                {{'Collectable_flag' | translate}}
+              </label>
+            </ng-template>
+          </nz-input-group>
           <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="close(result)">
             <i nz-icon type="check"></i>
           </button>

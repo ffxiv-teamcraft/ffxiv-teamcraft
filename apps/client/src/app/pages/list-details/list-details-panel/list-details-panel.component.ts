@@ -63,7 +63,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
           filter(item => item !== undefined),
           switchMap((item) => {
             const operation = this.listManager.addToList(+item.itemId, list,
-              item.recipe ? item.recipe.recipeId : '', item.amount);
+              item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
             return this.progress.showProgress(operation, 1);
           })
         );
