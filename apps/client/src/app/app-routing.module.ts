@@ -127,11 +127,6 @@ const routes: Routes = [
   {
     path: 'blog',
     loadChildren: './pages/blog/blog.module#BlogModule'
-  },
-  {
-    path: '**',
-    redirectTo: 'search',
-    pathMatch: 'full'
   }
 ];
 
