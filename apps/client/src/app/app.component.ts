@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, Injector, OnInit, Optional, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -152,7 +152,7 @@ export class AppComponent implements OnInit {
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              @Inject(PLATFORM_ID) private platform: Object) {
+              @Inject(PLATFORM_ID) private platform: Object, @Inject(REQUEST) @Optional() private request: any) {
 
     this.showGiveaway = false;
 
@@ -313,7 +313,7 @@ export class AppComponent implements OnInit {
         return this.translate.getBrowserLang();
       }
     } else {
-      const request: any = this.injector.get(REQUEST) || {};
+      const request: any = this.request;
       return request.lang || 'en';
     }
   }
