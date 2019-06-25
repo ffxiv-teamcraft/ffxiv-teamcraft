@@ -5,7 +5,8 @@ import {
   ByregotsMiracle,
   Ingenuity,
   IngenuityII,
-  SimulationResult
+  SimulationResult,
+  Tables
 } from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
 
@@ -23,9 +24,11 @@ export class UseIngenuityBeforeByregot extends RotationTip {
 
   matches(simulationResult: SimulationResult): boolean {
     const simulation = simulationResult.simulation.clone();
+    const clvl = Tables.LEVEL_TABLE[simulation.crafterStats.level] || simulation.crafterStats.level;
     const byregotsIndex = simulation.actions.findIndex(a => a.is(ByregotsBrow) || a.is(ByregotsBlessing) || a.is(ByregotsMiracle));
     return simulation.actions.slice(byregotsIndex).some(a => a.is(Ingenuity) || a.is(Ingenuity))
-      && simulationResult.hqPercent < 100;
+      && simulationResult.hqPercent < 100
+      && clvl < simulation.recipe.rlvl;
   }
 
 }

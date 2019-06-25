@@ -9,7 +9,7 @@
              [ngModel]="query$.value"
              autofocus
              [nzAutocomplete]="auto"
-             (keyup)="query$.next(searchInput.value)"
+             (input)="query$.next(searchInput.value)"
              (ngModelChange)="query$.next($event)">
       <ng-template #suffixTemplate>
         <i

@@ -881,6 +881,7 @@
     "List_item_comment_added": "Commentaire posté sur {{itemName}}, liste {{listName}} : \"{{content}} \"",
     "Db_comment": "Nouveau commentaire en bdd: \"{{comment}}\"",
     "Db_comment_reply": "Nouvelle réponse à l'un de vos commentaires: \"{{comment}}\"",
+    "Blog_post": "Nouveau billet de blog : {{title}}",
     "Mark_all_as_read": "Tout marquer comme lu",
     "No_notifications": "Pas de notifications"
   },
@@ -1375,5 +1376,8 @@
     "Description": "Vous avez trop de devises ? Sélectionnez votre devise, définissez un montant, un serveur et trouvez quel article est le meilleur à acheter pour revendre à l'hôtel des ventes et gagner des gils !",
     "Pick_currency": "Choisir une devise",
     "You_can_buy": "Vous pouvez en acheter {{amount}}"
+  },
+  "BLOG": {
+    "Title": "Blog"
   }
 }

@@ -75,6 +75,12 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
     return this.userCache[uid];
   }
 
+  public getAllIds(): Observable<string[]> {
+    return this.firestore.collection(this.getBaseUri()).get().pipe(
+      map(snap => snap.docs.map(doc => doc.id))
+    );
+  }
+
   public set(uid: string, user: TeamcraftUser): Observable<void> {
     if (user.defaultLodestoneId) {
       return this.logTrackingService.set(`${user.$key}:${user.defaultLodestoneId.toString()}`, {

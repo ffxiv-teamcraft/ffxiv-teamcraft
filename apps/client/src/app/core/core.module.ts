@@ -37,6 +37,8 @@ import { RouterModule } from '@angular/router';
 import { ItemRarityDirective } from './item-rarity/item-rarity.directive';
 import { DbItemCommentNotification } from '../model/notification/db-item-comment-notification';
 import { DbCommentReplyNotification } from '../model/notification/db-comment-reply-notification';
+import { AdminGuard } from './guard/admin.guard';
+import { BlogPostNotification } from '../model/notification/blog-post-notification';
 
 
 @NgModule({
@@ -49,7 +51,8 @@ import { DbCommentReplyNotification } from '../model/notification/db-comment-rep
           LIST_COMMENT: ListCommentNotification,
           LIST_ITEM_COMMENT: ListItemCommentNotification,
           DB_ITEM_COMMENT: DbItemCommentNotification,
-          DB_COMMENT_REPLY: DbCommentReplyNotification
+          DB_COMMENT_REPLY: DbCommentReplyNotification,
+          BLOG_POST: BlogPostNotification
         }
       },
       {
@@ -79,7 +82,8 @@ import { DbCommentReplyNotification } from '../model/notification/db-comment-rep
     LinkToolsService,
     DiscordWebhookService,
     PatreonService,
-    WeatherService
+    WeatherService,
+    AdminGuard
   ],
   declarations: [
     I18nPipe,

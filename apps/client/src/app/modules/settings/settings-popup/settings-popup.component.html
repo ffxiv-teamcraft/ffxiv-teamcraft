@@ -22,15 +22,15 @@
         <nz-form-item>
           <nz-form-label [nzSpan]="5">{{'SETTINGS.Theme' | translate}}</nz-form-label>
           <nz-form-control [nzSpan]="12">
-            <nz-select [ngModel]="settings.theme.name" (ngModelChange)="setTheme($event)">
-              <nz-option *ngFor="let theme of availableThemes" [nzLabel]="theme.name"
-                         [nzValue]="theme.name"></nz-option>
+            <nz-select [ngModel]="settings.theme?.name" (ngModelChange)="setTheme($event)">
+              <nz-option *ngFor="let theme of availableThemes" [nzLabel]="theme?.name"
+                         [nzValue]="theme?.name"></nz-option>
               <nz-option *ngIf="user.patron || user.admin" [nzLabel]="'CUSTOM'"
                          [nzValue]="'CUSTOM'"></nz-option>
             </nz-select>
           </nz-form-control>
         </nz-form-item>
-        <nz-form-item class="empty-label" *ngIf="(user.patron || user.admin) && settings.theme.name === 'CUSTOM'">
+        <nz-form-item class="empty-label" *ngIf="(user.patron || user.admin) && settings.theme?.name === 'CUSTOM'">
           <nz-form-label [nzSpan]="5">{{'SETTINGS.Theme' | translate}}</nz-form-label>
           <nz-form-control [nzSpan]="12">
             <div fxLayout="column" fxLayoutGap="5px" class="custom-theme-editor">

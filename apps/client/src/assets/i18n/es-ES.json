@@ -128,7 +128,7 @@
     "None": "Ninguno",
     "Top": "Arriba",
     "Bottom": "Abajo",
-    "Amount": "Amount"
+    "Amount": "Cantidad"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -501,7 +501,7 @@
         "REMOVE_ITEM": "Quitar elemento de la lista",
         "ADD_TAG": "Añadir etiqueta al artículo",
         "MARK_AS_DONE_IN_LOG": "Marcar como hecho en el registro",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "Información del mercado"
       }
     },
     "LAYOUT": {
@@ -855,7 +855,7 @@
     "Craft_price": "Precio de fabricación",
     "Marketboard_price": "Precio NQ",
     "Marketboard_price_hq": "Precio HQ",
-    "Enter_total_earnings": "Enter total earnings"
+    "Enter_total_earnings": "Ingrese ganancias totales"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -881,6 +881,7 @@
     "List_item_comment_added": "Comentario publicado en {{itemName}}, lista {{listName}}: \"{{content}}\"",
     "Db_comment": "Nuevo comentario en base de datos: \"{{comment}}\"",
     "Db_comment_reply": "Nueva respuesta a uno de sus comentarios: \"{{comment}}\"",
+    "Blog_post": "New blog post: {{title}}",
     "Mark_all_as_read": "Marcar todo como leído",
     "No_notifications": "No hay notificaciones"
   },
@@ -1193,7 +1194,7 @@
     "Limited": "Aparición limitada",
     "3d_model_viewer": "Vista previa del modelo 3D",
     "3d_model_help": "Previsualizar modelo 3D",
-    "Achievements": "Achievements",
+    "Achievements": "Logros",
     "NODE": {
       "Items": "Artículos",
       "Possible_bonuses": "Bonos posibles",
@@ -1358,22 +1359,25 @@
     "Description": "Introduzca los artículos que tiene y haga clic en \"Buscar recetas\" para obtener una lista de posibles recetas para fabricar y generar fácilmente una lista de fabricación de los resultados.",
     "Empty_basket": "Su cesta está vacía",
     "Add_item": "Agregar artículo",
-    "Clipboard_content_malformed": "Clipboard content malformed",
-    "Import_from_clipboard": "Import from clipboard",
-    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
-    "Extension_link": "Get the extension on chrome webstore",
-    "Clear": "Clear items list",
-    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
-    "Inventory": "Inventory",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Pool_copied": "Inventory copied to your clipboard",
-    "Sort_alphabetically": "Sort alphabetically",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Clipboard_content_malformed": "Contenido del portapapeles incorrecto",
+    "Import_from_clipboard": "Importar desde el portapapeles",
+    "Extension_tip": "Puede copiar el inventario de su siervo a su portapapeles usando la extensión capturadora de inventario: ",
+    "Extension_link": "Obtenga la extensión en la tienda web de chrome",
+    "Clear": "Borrar lista de artículos",
+    "Clipboard_import_duplicates": "Los artículos que se muestran doble es porque lodestone muestra pilas, así que están con su siervo como pilas separadas.",
+    "Inventory": "Inventario",
+    "Copy_to_clipboard": "Copiar inventario al portapapeles",
+    "Pool_copied": "Inventario copiado a su portapapeles",
+    "Sort_alphabetically": "Ordenar alfabéticamente",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} de {{ total }} artículos"
   },
   "CURRENCY_SPENDING": {
-    "Title": "Currency Spending guide",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
-    "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "Title": "Guía de Gastos de Monedas",
+    "Description": "¿Tiene demasiado de una moneda? Seleccione su moneda, establezca una cantidad, un servidor y ¡encuentre qué artículo es el mejor para comprar para obtener gil de sus monedas!",
+    "Pick_currency": "Elija una moneda",
+    "You_can_buy": "Puede comprar {{amount}}"
+  },
+  "BLOG": {
+    "Title": "Blog"
   }
 }

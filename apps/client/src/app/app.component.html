@@ -71,7 +71,7 @@
                     <i nz-icon type="close" (click)="$event.stopPropagation();deleteNotification(notification)"></i>
                   </ng-template>
                   <ng-template #actionOpen>
-                    <a [routerLink]="notification.route">
+                    <a [routerLink]="notification.route" (click)="deleteNotification(notification)">
                       <i nz-icon type="select"></i>
                     </a>
                   </ng-template>
@@ -275,6 +275,14 @@
           </span>
               </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                 routerLink="/blog">
+          <span nz-tooltip nzPlacement="right"
+                [nzTitle]="collapsedSidebar ? ('BLOG.Title' | translate) : null">
+              <i nz-icon type="file-text"></i>
+              <span class="nav-text">{{'BLOG.Title' | translate}}</span>
+          </span>
+              </a>
+              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/about">
           <span nz-tooltip nzPlacement="right"
                 [nzTitle]="collapsedSidebar ? ('ABOUT.title' | translate) : null">
@@ -299,7 +307,7 @@
               <i class="fab fa-discord"></i>
             </a>
             <a nz-button nzShape="circle" href="https://ffxivteamcraft.com/desktop" nz-tooltip
-               *ngIf="!desktop"
+               *ngIf="!desktop && !collapsedSidebar"
                nzTitle="{{'Download_desktop_app' | translate}}"
                target="_blank">
               <i nz-icon type="desktop"></i>

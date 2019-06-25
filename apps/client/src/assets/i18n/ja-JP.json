@@ -881,6 +881,7 @@
     "List_item_comment_added": "{{listName}} の {{itemName}} にコメントが追加されました: \"{{content}}\"",
     "Db_comment": "新しいコメントが付けられました: \"{{comment}}\"",
     "Db_comment_reply": "貴方のコメントに新しいコメントが付けられました: \"{{comment}}\"",
+    "Blog_post": "New blog post: {{title}}",
     "Mark_all_as_read": "全て既読にする",
     "No_notifications": "通知無し"
   },
@@ -1375,5 +1376,8 @@
     "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
     "Pick_currency": "Pick a currency",
     "You_can_buy": "You can buy {{amount}}"
+  },
+  "BLOG": {
+    "Title": "Blog"
   }
 }
