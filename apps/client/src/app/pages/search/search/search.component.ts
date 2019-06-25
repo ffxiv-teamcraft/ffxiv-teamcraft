@@ -170,7 +170,7 @@ export class SearchComponent implements OnInit {
         }
         return query.length > 3 || filters.length > 0;
       }),
-      debounceTime(800),
+      debounceTime(1200),
       tap(([query, type, filters]) => {
         this.allSelected = false;
         this.showIntro = false;
