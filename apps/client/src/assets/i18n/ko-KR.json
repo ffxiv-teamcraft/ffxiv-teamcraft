@@ -128,7 +128,7 @@
     "None": "없음",
     "Top": "맨 위로",
     "Bottom": "맨 아래로",
-    "Amount": "Amount"
+    "Amount": "수량"
   },
   "ALARMS": {
     "Title": "알람",
@@ -881,6 +881,7 @@
     "List_item_comment_added": "{{listName}}의 {{itemName}}에 댓글이 달렸습니다 : \"{{content}}\"",
     "Db_comment": "새 댓글이 달렸습니다: \"{{comment}}\"",
     "Db_comment_reply": "회원님의 댓글에 새 답글이 달렸습니다: \"{{comment}}\"",
+    "Blog_post": "New blog post: {{title}}",
     "Mark_all_as_read": "모두 읽음으로 표시",
     "No_notifications": "알림 없음"
   },
@@ -1371,9 +1372,12 @@
     "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템"
   },
   "CURRENCY_SPENDING": {
-    "Title": "Currency Spending guide",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
-    "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "Title": "화폐 선택",
+    "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다 !",
+    "Pick_currency": "교환용 아이템 선택",
+    "You_can_buy": "{{amount}}개 구매 가능"
+  },
+  "BLOG": {
+    "Title": "Blog"
   }
 }
