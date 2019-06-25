@@ -1,7 +1,5 @@
 import { RotationTip } from '../rotation-tip';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { IngenuityII } from '../../model/actions/buff/ingenuity-ii';
-import { Ingenuity } from '../../model/actions/buff/ingenuity';
+import { Ingenuity, IngenuityII, SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
 
 export class UseIngenuityIInstead extends RotationTip {

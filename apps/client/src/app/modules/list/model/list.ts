@@ -215,7 +215,7 @@ export class List extends DataWithPermissions {
    */
   public setDone(itemId: number | string, amount: number, excludeFinalItems = false, onlyFinalItems = false, setUsed = false, recipeId?: string, external = false, initialAddition = amount): void {
     const item = this.getItemById(itemId, excludeFinalItems, onlyFinalItems, recipeId);
-    const previousDone = MathTools.absoluteFloor(item.done / item.yield);
+    const previousDone = item.amount_needed - MathTools.absoluteCeil((item.amount - item.done) / item.yield);
     if (setUsed) {
       // Save previous used amount
       const previousUsed = item.used;
@@ -241,11 +241,8 @@ export class List extends DataWithPermissions {
     if (item.done < 0) {
       item.done = 0;
     }
-    amount = MathTools.absoluteCeil(amount / item.yield);
-    let newDone = MathTools.absoluteFloor(item.done / item.yield);
-    if (item.done === item.amount) {
-      newDone = MathTools.absoluteCeil(item.done / item.yield);
-    }
+    const newDone = item.amount_needed - MathTools.absoluteCeil((item.amount - item.done) / item.yield);
+    amount = newDone - previousDone;
     if (item.requires !== undefined && newDone !== previousDone) {
       for (const requirement of item.requires) {
         const requirementItem = this.getItemById(requirement.id, excludeFinalItems);
@@ -263,7 +260,7 @@ export class List extends DataWithPermissions {
             && (newDone - previousDone <= 0) === (initialAddition <= 0)) {
             // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
             // as we didn't use more.
-            this.setDone(requirement.id, nextAmount, true, false, previousDone !== item.done, undefined, external, initialAddition);
+            this.setDone(requirement.id, nextAmount, true, false, true, undefined, external, initialAddition);
           }
         }
       }

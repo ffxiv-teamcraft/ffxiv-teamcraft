@@ -2,9 +2,9 @@ import { Action } from '@ngrx/store';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { AuthState } from './auth.reducer';
 import { Character, CharacterResponse } from '@xivapi/angular-client';
-import { GearSet } from '../pages/simulator/model/gear-set';
 import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
+import { GearSet } from '@ffxiv-teamcraft/simulator';
 
 export enum AuthActionTypes {
   GetUser = '[Auth] Get user',

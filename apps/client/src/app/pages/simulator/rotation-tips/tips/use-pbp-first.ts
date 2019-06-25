@@ -1,7 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { PieceByPiece } from '../../model/actions/progression/piece-by-piece';
+import { PieceByPiece, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class UsePbpFirst extends RotationTip {
 

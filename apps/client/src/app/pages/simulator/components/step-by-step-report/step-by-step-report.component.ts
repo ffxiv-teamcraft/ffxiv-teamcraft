@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActionResult } from '../../model/action-result';
+import { ActionResult } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-step-by-step-report',

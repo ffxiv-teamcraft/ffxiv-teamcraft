@@ -56,6 +56,7 @@
   "Mute_alarms": "알람 음소거",
   "Hide_used": "사용된 행 숨기기",
   "Collapse_if_done": "완료시 삭제",
+  "Collapse_by_default": "댓글 접기를 기본으로 설정",
   "Retainer_ventures": "집사 수행",
   "Requires_x_ventures": "총 {{amount}}회의 집사 수행이 필요합니다.",
   "WORKSHOP": {
@@ -121,9 +122,13 @@
     "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
     "Open_in_desktop": "데스크톱 앱에서 열기",
     "Admin": "관리자",
+    "Moderator": "관리자",
     "Minutes_duration": "{{amount}}분",
     "Seconds_duration": "{{amount}} 초",
-    "None": "없음"
+    "None": "없음",
+    "Top": "맨 위로",
+    "Bottom": "맨 아래로",
+    "Amount": "Amount"
   },
   "ALARMS": {
     "Title": "알람",
@@ -177,6 +182,7 @@
   "No_actions_found": "검색 결과 없음",
   "No_statuses_found": "검색 결과 없음",
   "No_traits_found": "검색 결과 없음",
+  "No_achievements_found": "검색 결과 없음",
   "Select_all": "모두 선택",
   "Do you really want to reset the list?": "정말로 이 목록을 초기화하시겠습니까?",
   "Yes": "O",
@@ -330,6 +336,8 @@
     "Favorite_aetherytes": "에테라이트 즐겨찾기",
     "Disable_cross_world_prices": "캐릭터의 서버 장터 가격만 사용",
     "Clear_search_history": "검색 기록 삭제",
+    "Auto_mark_as_done_in_log": "목록에서 완료된 아이템이 있으면 수첩에 해당 아이템을 완료됨이라고 표시",
+    "Db_comments_position": "DB댓글 위치",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -492,7 +500,8 @@
         "REQUIREMENTS": "재료",
         "REMOVE_ITEM": "목록에서 이 아이템을 제거",
         "ADD_TAG": "아이템에 태그 추가",
-        "MARK_AS_DONE_IN_LOG": "수첩에 완료됨으로 표시"
+        "MARK_AS_DONE_IN_LOG": "수첩에 완료됨으로 표시",
+        "MARKET_BOARD_INFORMATIONS": "장터게시판 정보"
       }
     },
     "LAYOUT": {
@@ -823,7 +832,12 @@
       "Use_patient_touch_faster": "'전념 가공'은 '정신집중'의 스택이 쌓이기 전에 사용하세요. 만약 스킬이 실패한다면 스택이 낭비될 수도 있습니다.",
       "Use_advanced_touch_instead": "{{index}} 번째 공정에서 '가공' 과 '고급 가공' 을 사용했습니다. '중급 가공' 을 두번 사용할 경우 CP 2를 절약하면서도 같은 효과를 발휘할 수 있습니다.",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 번째 공정에서 사용한 버프가 {{overlappingIndex}} 번째 공정에서 사용한 버프와 중복됩니다. 버프의 효과를 최대한 받을 수 있도록 조금 늦게 사용해야 합니다.",
-      "Use_byregot_brow_5_stacks": "'비레고의 축복' 대신 '비레고의 기교'를 사용하시면 같은 품질량이 상승하면서도 CP 6을 절약할 수 있습니다."
+      "Use_byregot_brow_5_stacks": "'비레고의 축복' 대신 '비레고의 기교'를 사용하시면 같은 품질량이 상승하면서도 CP 6을 절약할 수 있습니다.",
+      "Use_ingenuity_before_byregot": "더 높은 품질향상을 위해 '비레고' 스킬을 사용하기 전에 '독창적 발상' 을 사용해야 합니다",
+      "Use_more_quality_actions": "내구도가 남은 상태로 제작을 끝마쳤습니다. 남은 내구도를 이용하여 더 많은 가공스킬을 사용할 수 있습니다.",
+      "Use_prudent_touch_manipulation": "66레벨 이상일 경우 '교묘한 손놀림 2' 와 '절약 가공'을 사용하여 확실하게 더 높은 품질을 얻어야 합니다",
+      "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
+      "Use_reflect_earlier": "'전문장인의 특기: 진가' 를 가공스킬을 사용하기 전에 미리 사용해야 합니다"
     }
   },
   "PRICING": {
@@ -831,11 +845,17 @@
     "From_crafting": "제작 비용",
     "Expect_to_sell_everything": "전체 판매 가정",
     "Autofill_panel_prices": "장터게시판 가격으로 자동입력",
+    "Autofill_panel_prices_your_server": "장터게시판 가격으로 자동입력 (캐릭터의 서버기준)",
     "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}}초 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?",
     "Copy_earnings_as_text": "내용을 텍스트로 복사하기",
     "Content_copied": "클립보드로 내용이 복사되었습니다.",
     "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)",
-    "Copy_panel_as_text": "이 패널을 텍스트로 복사"
+    "Copy_panel_as_text": "이 패널을 텍스트로 복사",
+    "Check_precraft_prices": "장터게시판에서 최저가를 확인하세요",
+    "Craft_price": "제작 단가",
+    "Marketboard_price": "NQ 가격",
+    "Marketboard_price_hq": "HQ 가격",
+    "Enter_total_earnings": "총 수익"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
@@ -859,6 +879,8 @@
     "Title": "알림",
     "List_comment_added": "{{listName}}에 댓글이 달렸습니다 : \"{{content}}\"",
     "List_item_comment_added": "{{listName}}의 {{itemName}}에 댓글이 달렸습니다 : \"{{content}}\"",
+    "Db_comment": "새 댓글이 달렸습니다: \"{{comment}}\"",
+    "Db_comment_reply": "회원님의 댓글에 새 답글이 달렸습니다: \"{{comment}}\"",
     "Mark_all_as_read": "모두 읽음으로 표시",
     "No_notifications": "알림 없음"
   },
@@ -1171,6 +1193,7 @@
     "Limited": "한정 채집",
     "3d_model_viewer": "3D 모델링 미리보기",
     "3d_model_help": "3D 모델링 미리보기",
+    "Achievements": "업적",
     "NODE": {
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
@@ -1273,6 +1296,16 @@
       "Type": "유형",
       "Type_buff": "버프",
       "Type_debuff": "디버프"
+    },
+    "COMMENTS": {
+      "Title": "댓글",
+      "Reply": "답글 달기",
+      "Show_less": "댓글 접기",
+      "Add_comment": "댓글 추가",
+      "Show_more": "{{amount}} 개의 댓글 더 보기",
+      "No_comments": "댓글 없음",
+      "Post": "게시",
+      "Editor_tip": "댓글 내 데이터베이스 링크는 자동으로 DB로 변환됩니다."
     }
   },
   "SEARCH_TYPES": {
@@ -1289,7 +1322,9 @@
     "Map": "맵",
     "Action": "기술",
     "Status": "상태",
-    "Trait": "특성"
+    "Trait": "특성",
+    "Any": "모두",
+    "Achievement": "업적"
   },
   "SEARCH_FILTERS": {
     "Level": "레벨",
@@ -1307,5 +1342,38 @@
     "Levequests": "길드 의뢰 페이지에서 의뢰들을 비교하고 획득 가능한 경험치를 미리볼 수 있습니다.",
     "Log_tracker": "수첩 트래커 페이지에서 채집, 제작, 어부 수첩의 진행상황을 확인할 수 있습니다.",
     "Desktop_app_overlay": "데스크톱 앱을 사용시 알람을 오버레이 창으로 띄울 수 있습니다(사이드바 아래에 다운로드 링크가 있음)."
+  },
+  "RECIPE_FINDER": {
+    "Title": "제작법 찾기",
+    "Placeholder": "아이템 이름",
+    "No_missing_ingredients": "모든 재료가 있음",
+    "Missing_X_ingredients": "{{amount}} 가지 재료가 부족",
+    "Missing": "부족한 재료 : ",
+    "Results": "제작 가능한 품목",
+    "Basket": "제작 목록",
+    "Add_to_basket": "제작 목록에 추가",
+    "Remove_from_basket": "제작 목록에서 제거",
+    "Search": "제작법 찾기",
+    "Generate_list": "목록에 추가",
+    "Description": "현재 가지고 있는 재료의 수량을 입력하고 \"제작법 찾기\" 를 클릭하면 현재 재료로 제작이 가능한 품목들을 확인할 수 있으며, 원하는 품목들을 목록으로 만들 수 있습니다.",
+    "Empty_basket": "제작 목록이 비어있습니다",
+    "Add_item": "아이템 추가",
+    "Clipboard_content_malformed": "클립보드에 복사된 내용의 형식이 잘못되었습니다",
+    "Import_from_clipboard": "클립보드 내용을 불러오기",
+    "Extension_tip": "[글로벌 서버 전용] 크롬 확장 앱 [Lodestone inventory grabber] 을 이용하여 집사 인벤토리내 아이템들을 클립보드에 복사할 수 있습니다: ",
+    "Extension_link": "크롬 웹 스토어에서 확장 앱 다운받기",
+    "Clear": "아이템 목록 초기화",
+    "Clipboard_import_duplicates": "목록에 중복되어 보이는 아이템이 있을 수 있습니다. 이 기능은 로드스톤과 연동된 집사 소지품 상태를 보여주기 때문에, 집사 내 소지품에서 해당 아이템이 소지품칸을 여러칸 차지하는 경우에 중복되어 보일 수 있습니다.",
+    "Inventory": "소지품",
+    "Copy_to_clipboard": "소지품 내역을 클립보드에 복사",
+    "Pool_copied": "소지품 내역이 클립보드에 복사되었습니다",
+    "Sort_alphabetically": "가나다순으로 정렬",
+    "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템"
+  },
+  "CURRENCY_SPENDING": {
+    "Title": "Currency Spending guide",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Pick_currency": "Pick a currency",
+    "You_can_buy": "You can buy {{amount}}"
   }
 }

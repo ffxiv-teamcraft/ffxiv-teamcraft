@@ -20,6 +20,7 @@ import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { HttpClient } from '@angular/common/http';
 import { hunts } from '../../../core/data/sources/hunts';
 import { tap } from 'rxjs/internal/operators/tap';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-map-page',
@@ -48,7 +49,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataService,
-              private htmlTools: HtmlToolsService, private http: HttpClient,
+              private htmlTools: HtmlToolsService, private http: HttpClient, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 
@@ -423,7 +424,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(mapData),
           description: this.getDescription(mapData),
-          url: `https://ffxivteamcraft.com/db/map/${mapData.ID}/${this.getName(mapData).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/map/${mapData.ID}/${this.getName(mapData).split(' ').join('-')}`,
           image: `https://xivapi.com${mapData.MapFilename}`
         };
       })

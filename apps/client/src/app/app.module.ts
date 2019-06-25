@@ -41,20 +41,25 @@ import {
   BuildOutline,
   DesktopOutline,
   EnvironmentOutline,
+  ExperimentOutline,
   FileDoneOutline,
   FilterOutline,
   FormOutline,
   InfoOutline,
+  LayoutOutline,
+  LineChartOutline,
+  LockOutline,
   LoginOutline,
   MessageOutline,
   NotificationOutline,
+  PlusOutline,
   ProfileOutline,
   ReloadOutline,
   SelectOutline,
   SettingOutline,
   ShareAltOutline,
   SolutionOutline,
-  PlusOutline
+  UsergroupAddOutline
 } from '@ant-design/icons-angular/icons';
 import { UniversalInterceptor } from './universal-interceptor';
 import { DirtyModule } from './core/dirty/dirty.module';
@@ -103,7 +108,12 @@ const icons: IconDefinition[] = [
   SelectOutline,
   InfoOutline,
   ArrowRightOutline,
-  PlusOutline
+  PlusOutline,
+  ExperimentOutline,
+  LockOutline,
+  LayoutOutline,
+  UsergroupAddOutline,
+  LineChartOutline
 ];
 
 registerLocaleData(en);

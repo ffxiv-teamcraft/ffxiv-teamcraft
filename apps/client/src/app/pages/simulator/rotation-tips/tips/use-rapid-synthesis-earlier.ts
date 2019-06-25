@@ -1,8 +1,6 @@
 import { RotationTip } from '../rotation-tip';
-import { SimulationResult } from '../../simulation/simulation-result';
+import { RapidSynthesis, RapidSynthesisII, SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
-import { RapidSynthesis } from '../../model/actions/progression/rapid-synthesis';
-import { RapidSynthesisII } from '../../model/actions/progression/rapid-synthesis-ii';
 
 export class UseRapidSynthesisEarlier extends RotationTip {
   constructor() {

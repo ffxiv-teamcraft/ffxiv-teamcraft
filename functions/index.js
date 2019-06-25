@@ -87,6 +87,10 @@ exports.updateUserListCount = functions.runWith(runtimeOpts).firestore.document(
 });
 
 exports.app = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
-  require(`${process.cwd()}/dist/client-webpack/server`).app(request, response);
+  try {
+    require(`${process.cwd()}/dist/client-webpack/server`).app(request, response);
+  } catch (e) {
+    // Ignoring the errors, this is ssr so specific stuff is to be expected.
+  }
 });
 

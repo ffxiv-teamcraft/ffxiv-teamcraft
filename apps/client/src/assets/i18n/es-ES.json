@@ -56,6 +56,7 @@
   "Mute_alarms": "Silenciar alarmas",
   "Hide_used": "Esconder filas usadas",
   "Collapse_if_done": "Colapsar completados",
+  "Collapse_by_default": "Colapsar por defecto",
   "Retainer_ventures": "Aventuras de sirviente",
   "Requires_x_ventures": "Requiere {{amount}} aventuras de sirviente para conseguirlo todo",
   "WORKSHOP": {
@@ -76,7 +77,7 @@
     "title": "Acerca de",
     "Created_by": "FFXIV Teamcraft creado por Miu Asakura de Louisoix, Chaos.",
     "Copyright_notice_title": "Aviso de derechos de autor",
-    "Copyright_notice_content": "FINAL FANTASY es una marca registrada de Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. Todos los Derechos Reservados.<br>FFXIV Teamcraft no está afiliado con Square Enix.",
+    "Copyright_notice_content": "FINAL FANTASY es una marca registrada de Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. Todos los derechos reservados.<br> FFXIV Teamcraft no está afiliado a Square Enix.",
     "Thanks_title": "Gracias",
     "Data_sources": "Fuentes de información",
     "Patreon_supporters": "Seguidores de Patreon",
@@ -121,9 +122,13 @@
     "Opened_in_desktop": "Esta página ha sido abierta en su aplicación de escritorio, ahora puede cerrarla.",
     "Open_in_desktop": "Abrir en la aplicación de escritorio",
     "Admin": "Administrador",
+    "Moderator": "Moderador",
     "Minutes_duration": "{{amount}} minutos",
     "Seconds_duration": "{{amount}} segundos",
-    "None": "Ninguno"
+    "None": "Ninguno",
+    "Top": "Arriba",
+    "Bottom": "Abajo",
+    "Amount": "Amount"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -177,6 +182,7 @@
   "No_actions_found": "No se encontraron acciones",
   "No_statuses_found": "No se encontraron estados",
   "No_traits_found": "No se encontraron rasgos",
+  "No_achievements_found": "No se encontraron logros",
   "Select_all": "Seleccionar todo",
   "Do you really want to reset the list?": "¿Realmente desea reiniciar la lista?",
   "Yes": "Sí",
@@ -329,15 +335,17 @@
     "Free_aetheryte": "Aetheryte gratuito",
     "Favorite_aetherytes": "Aetherytes favoritos",
     "Disable_cross_world_prices": "Sólo usar mi propio mundo para los precios del mercado",
-    "Clear_search_history": "Clear search history",
+    "Clear_search_history": "Limpiar el historial de búsqueda",
+    "Auto_mark_as_done_in_log": "Marcar elementos como completados en el registro cuando se hacen en una lista",
+    "Db_comments_position": "Posición de comentarios de base de datos",
     "COLORS": {
-      "Background": "Background color",
+      "Background": "Color de fondo",
       "Primary": "Color primario",
       "Highlight": "Color de resaltado",
       "Text": "Color de contenido de botones",
-      "Topbar": "Topbar and sidebar color",
-      "Sidebar_trigger": "Sidebar trigger color",
-      "Sidebar_trigger_hover": "Sidebar trigger hover color"
+      "Topbar": "Color de la barra superior y lateral",
+      "Sidebar_trigger": "Color de activador de barra lateral",
+      "Sidebar_trigger_hover": "Color de activador de barra lateral (cursor flotando encima)"
     },
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
@@ -492,7 +500,8 @@
         "REQUIREMENTS": "Requisitos",
         "REMOVE_ITEM": "Quitar elemento de la lista",
         "ADD_TAG": "Añadir etiqueta al artículo",
-        "MARK_AS_DONE_IN_LOG": "Marcar como hecho en el registro"
+        "MARK_AS_DONE_IN_LOG": "Marcar como hecho en el registro",
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
       }
     },
     "LAYOUT": {
@@ -823,7 +832,12 @@
       "Use_patient_touch_faster": "Debería usar \"Patient Touch\" antes de añadir cargas de \"Inner Quiet\", para minimizar las cargas desperdiciadas si la acción falla.",
       "Use_advanced_touch_instead": "Usó \"Basic Touch\" seguido de \"Advanced Touch\" en el paso {{index}}, debería usar dos \"Standard Touch\" en su lugar para obtener la misma potencia por 2 CP menos.",
       "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos.",
-      "Use_byregot_brow_5_stacks": "Debería usar \"Byregot's Brow\" en vez de \"Byregot's Blessing\" para obtener la misma calidad por 6 CP menos."
+      "Use_byregot_brow_5_stacks": "Debería usar \"Byregot's Brow\" en vez de \"Byregot's Blessing\" para obtener la misma calidad por 6 CP menos.",
+      "Use_ingenuity_before_byregot": "Debería usar \"Ingenuity\" antes de la acción de \"Byregot\" para obtener un aumento en la ganancia de calidad.",
+      "Use_more_quality_actions": "Le sobra durabilidad al final del proceso, probablemente debería usarla para más acciones relacionadas con la calidad.",
+      "Use_prudent_touch_manipulation": "Como usted es nivel 66+, debería usar el combo \"Manipulation II\" + \"Prudent Touch\" para obtener calidad para la mejor ganancia de calidad y más confiabilidad.",
+      "Use_rapid_synthesis_earlier": "No debería usar \"Rapid Synthesis\" como una acción de término, usarla antes para poder manejar el fracaso de la acción es mejor para la confiabilidad de su rotación.",
+      "Use_reflect_earlier": "Debería usar la acción de especialización \"Reflect\" antes para impulsar las acciones de calidad posteriores."
     }
   },
   "PRICING": {
@@ -831,11 +845,17 @@
     "From_crafting": "Precio de fabricación",
     "Expect_to_sell_everything": "Asumir que se vende todo",
     "Autofill_panel_prices": "Llenar precios basado en precios del mercado",
+    "Autofill_panel_prices_your_server": "Rellene los precios basados en los precios del mercado (sólo su servidor)",
     "Autofill_panel_prices_warning": "Este es un proceso lento y debería tomar alrededor de {{time}} segundos para completarse. ¿Está seguro?",
     "Copy_earnings_as_text": "Copiar contenido como texto",
     "Content_copied": "Contenido copiado a su portapapeles",
     "Cheaper_at_vendor": "Más barato si compra de NPC ({{price}} gil)",
-    "Copy_panel_as_text": "Copiar este panel como texto"
+    "Copy_panel_as_text": "Copiar este panel como texto",
+    "Check_precraft_prices": "Busque precios más baratos dentro del mercado",
+    "Craft_price": "Precio de fabricación",
+    "Marketboard_price": "Precio NQ",
+    "Marketboard_price_hq": "Precio HQ",
+    "Enter_total_earnings": "Enter total earnings"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -859,6 +879,8 @@
     "Title": "Notificaciones",
     "List_comment_added": "Comentario publicado en la lista {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comentario publicado en {{itemName}}, lista {{listName}}: \"{{content}}\"",
+    "Db_comment": "Nuevo comentario en base de datos: \"{{comment}}\"",
+    "Db_comment_reply": "Nueva respuesta a uno de sus comentarios: \"{{comment}}\"",
     "Mark_all_as_read": "Marcar todo como leído",
     "No_notifications": "No hay notificaciones"
   },
@@ -1169,8 +1191,9 @@
     "Select_data_type": "Seleccione los tipos de datos a mostrar para ver los detalles aquí",
     "Desynths_to": "Se desintetiza en",
     "Limited": "Aparición limitada",
-    "3d_model_viewer": "3D model preview",
-    "3d_model_help": "Preview 3D model",
+    "3d_model_viewer": "Vista previa del modelo 3D",
+    "3d_model_help": "Previsualizar modelo 3D",
+    "Achievements": "Achievements",
     "NODE": {
       "Items": "Artículos",
       "Possible_bonuses": "Bonos posibles",
@@ -1270,9 +1293,19 @@
       "Locks_actions": "Bloquea acciones",
       "Locks_control": "Bloquea control",
       "Locks_movement": "Bloquea movimiento",
-      "Type": "Type",
-      "Type_buff": "Buff",
-      "Type_debuff": "Debuff"
+      "Type": "Tipo",
+      "Type_buff": "Mejora",
+      "Type_debuff": "Debilitación"
+    },
+    "COMMENTS": {
+      "Title": "Comentarios",
+      "Reply": "Responder",
+      "Show_less": "Mostrar menos",
+      "Add_comment": "Agregar un comentario",
+      "Show_more": "Mostrar {{amount}} comentarios más",
+      "No_comments": "Sin comentarios",
+      "Post": "Publicar",
+      "Editor_tip": "Los enlaces de base de datos serán procesados y manejados dentro de su mensaje."
     }
   },
   "SEARCH_TYPES": {
@@ -1289,7 +1322,9 @@
     "Map": "Mapa",
     "Action": "Acción",
     "Status": "Estado",
-    "Trait": "Rasgo"
+    "Trait": "Rasgo",
+    "Any": "Cualquiera",
+    "Achievement": "Logro"
   },
   "SEARCH_FILTERS": {
     "Level": "Nivel",
@@ -1298,14 +1333,47 @@
     "Leve_level": "Nivel requerido"
   },
   "TIPS": {
-    "Title": "Tip",
-    "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
-    "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
-    "Desynth": "You can find ideal items to level up desynth in desynth page.",
-    "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
-    "3D_model": "You can preview 3D model of items inside the database.",
-    "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
-    "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
-    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+    "Title": "Consejo",
+    "Community_rotations": "Puede encontrar rotaciones para una receta determinada dentro de la página de rotaciones comunitarias.",
+    "GC_Deliveries": "Puede preparar listas para las entregas de GC dentro de la página entregas de GC.",
+    "Desynth": "Puede encontrar los artículos ideales para subir desíntesis de nivel en la página de desíntesis.",
+    "DB": "Teamcraft incluye una base de datos. Puede hacer clic en el ícono \"i\" junto a cualquier artículo en cualquier lugar de la página para abrir la página de base de datos del mismo.",
+    "3D_model": "Puede previsualizar modelos 3D de artículos en de la base de datos.",
+    "Levequests": "Puede preparar listas de leve y previsualizar la experiencia recibida dentro de la página de misiones leve.",
+    "Log_tracker": "Puede dar seguimiento a la progresión de su registro (recolección, fabricación, pesca) dentro de la página de seguimiento de registro.",
+    "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral)."
+  },
+  "RECIPE_FINDER": {
+    "Title": "Buscador de recetas",
+    "Placeholder": "Nombre del artículo",
+    "No_missing_ingredients": "No faltan ingredientes",
+    "Missing_X_ingredients": "Falta(n) {{amount}} ingrediente(s)",
+    "Missing": "Faltante",
+    "Results": "Posibles artesanías",
+    "Basket": "Cesta",
+    "Add_to_basket": "Añadir a la cesta",
+    "Remove_from_basket": "Eliminar de la cesta",
+    "Search": "Buscar recetas",
+    "Generate_list": "Agregar a la lista",
+    "Description": "Introduzca los artículos que tiene y haga clic en \"Buscar recetas\" para obtener una lista de posibles recetas para fabricar y generar fácilmente una lista de fabricación de los resultados.",
+    "Empty_basket": "Su cesta está vacía",
+    "Add_item": "Agregar artículo",
+    "Clipboard_content_malformed": "Clipboard content malformed",
+    "Import_from_clipboard": "Import from clipboard",
+    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
+    "Extension_link": "Get the extension on chrome webstore",
+    "Clear": "Clear items list",
+    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Inventory": "Inventory",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Pool_copied": "Inventory copied to your clipboard",
+    "Sort_alphabetically": "Sort alphabetically",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+  },
+  "CURRENCY_SPENDING": {
+    "Title": "Currency Spending guide",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Pick_currency": "Pick a currency",
+    "You_can_buy": "You can buy {{amount}}"
   }
 }

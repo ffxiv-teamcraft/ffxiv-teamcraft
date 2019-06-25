@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { SimulationResult } from '../simulation/simulation-result';
+import { SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { RotationTip } from './rotation-tip';
 import { Class, Instantiable } from '@kaiu/serializer';
 import { ROTATION_TIPS } from './rotation-tips.module';

@@ -1,6 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
+import { SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class UseMoreQualityActions extends RotationTip {
 

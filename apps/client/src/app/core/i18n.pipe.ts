@@ -14,13 +14,15 @@ export class I18nPipe implements PipeTransform {
     if (value === undefined) {
       return undefined;
     }
+    let res: string;
     if (this.isI18nEntry(value.name)) {
-      return this.i18n.getName(value.name);
+      res = this.i18n.getName(value.name);
+    } else if (this.isI18nEntry(value)) {
+      res = this.i18n.getName(value);
+    } else {
+      res = value.name;
     }
-    if (this.isI18nEntry(value)) {
-      return this.i18n.getName(value);
-    }
-    return value.name;
+    return res && (res.charAt(0).toUpperCase() + res.slice(1));
   }
 
   isI18nEntry(data: any): boolean {

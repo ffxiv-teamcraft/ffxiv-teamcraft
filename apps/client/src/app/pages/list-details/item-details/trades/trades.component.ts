@@ -38,7 +38,7 @@ export class TradesComponent extends ItemDetailsPopup {
     return trade.currencies.map(currency => {
       return {
         ...currency,
-        amount: Math.ceil(currency.amount * this.item.amount / itemsPerTrade)
+        amount: Math.ceil(currency.amount * (this.item.amount - this.item.done) / itemsPerTrade)
       };
     });
   }

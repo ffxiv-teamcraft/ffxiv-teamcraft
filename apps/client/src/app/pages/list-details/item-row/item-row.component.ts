@@ -68,6 +68,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { TreasuresComponent } from '../item-details/treasures/treasures.component';
 import { FatesComponent } from '../item-details/fates/fates.component';
 import { DesynthsComponent } from '../item-details/desynth/desynths.component';
+import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
 
 @Component({
   selector: 'app-item-row',
@@ -217,11 +218,11 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       shareReplay(1)
     );
 
-    this.hasAllBaseIngredients$ = combineLatest(this.canBeCrafted$, this.listsFacade.selectedList$
+    this.hasAllBaseIngredients$ = combineLatest([this.canBeCrafted$, this.listsFacade.selectedList$
       .pipe(
-        map(list => list.hasAllBaseIngredients(this.item))
+        map(list => !list.notFound && list.hasAllBaseIngredients(this.item))
       )
-    ).pipe(
+    ]).pipe(
       map(([craftable, allIngredients]) => !craftable && this.item.amount > this.item.done && allIngredients),
       shareReplay(1)
     );
@@ -288,9 +289,15 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       first()
     ).subscribe(user => {
       if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
-        user.logProgression.push(+(item.recipeId || item.craftedBy[0].recipeId));
+        user.logProgression = _.uniq([
+          ...user.logProgression,
+          +(item.recipeId || item.craftedBy[0].recipeId)
+        ]);
       } else if (item.gatheredBy !== undefined) {
-        user.gatheringLogProgression.push(+item.id);
+        user.gatheringLogProgression = _.uniq([
+          ...user.gatheringLogProgression,
+          +item.id
+        ]);
       }
       this.authFacade.updateUser(user);
     });
@@ -383,6 +390,19 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
+  openMarketboardDialog(): void {
+    this.modal.create({
+      nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${this.i18n.getName(this.l12n.getItem(this.item.id))}`,
+      nzContent: MarketboardPopupComponent,
+      nzComponentParams: {
+        itemId: this.item.id,
+        showHistory: true
+      },
+      nzFooter: null,
+      nzWidth: '80vw'
+    });
+  }
+
   setWorkingOnIt(uid: string): void {
     this.item.workingOnIt = uid;
     this.saveItem();
@@ -422,6 +442,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   markAsDone(): void {
+    if (this.settings.autoMarkAsCompleted) {
+      this.markAsDoneInLog(this.item);
+    }
     this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, this.item.amount - this.item.done, this.item.recipeId, this.item.amount);
   }
 

@@ -19,7 +19,6 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { ClipboardModule } from 'ngx-clipboard';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { CustomAlarmPopupComponent } from '../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { CustomAlarmPopupModule } from '../../modules/custom-alarm-popup/custom-alarm-popup.module';

@@ -13,6 +13,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { MarketboardModule } from '../marketboard/marketboard.module';
 import { ClipboardModule } from 'ngx-clipboard';
+import { PriceCheckResultComponent } from './price-check-result/price-check-result.component';
 
 @NgModule({
   imports: [
@@ -31,13 +32,17 @@ import { ClipboardModule } from 'ngx-clipboard';
   ],
   declarations: [
     PricingComponent,
-    PricingRowComponent
+    PricingRowComponent,
+    PriceCheckResultComponent
   ],
   providers: [
     PricingService
   ],
   exports: [
     PricingComponent
+  ],
+  entryComponents: [
+    PriceCheckResultComponent
   ]
 })
 export class PricingModule {

@@ -31,6 +31,7 @@ import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { Craft } from '../../../model/garland-tools/craft';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-item',
@@ -71,7 +72,7 @@ export class ItemComponent extends TeamcraftPageComponent {
               private progressService: ProgressPopupService, private listManager: ListManagerService,
               private notificationService: NzNotificationService, private rotationPicker: RotationPickerService,
               private attt: ATTTService, private lazyData: LazyDataService, private sanitizer: DomSanitizer,
-              private dialog: NzModalService, seo: SeoService) {
+              private dialog: NzModalService, public settings: SettingsService, seo: SeoService) {
     super(seo);
 
     this.route.paramMap.subscribe(params => {
@@ -196,14 +197,18 @@ export class ItemComponent extends TeamcraftPageComponent {
               const specialParamKey = Object.keys(item)
                 .filter(k => /^BaseParamSpecial\d+TargetID$/.test(k) && item[k])
                 .find(k => item[k] === statId);
-              const specialParamIndex = specialParamKey.match(/(\d+)/)[0];
-              res.valueHq = res.value + item[`BaseParamValueSpecial${specialParamIndex}`];
+              if (specialParamKey !== undefined) {
+                const specialParamIndex = specialParamKey.match(/(\d+)/)[0];
+                res.valueHq = res.value + item[`BaseParamValueSpecial${specialParamIndex}`];
+              } else {
+                res.valueHq = res.value;
+              }
             }
             return res;
           });
         if (item.ItemFood !== undefined) {
           const food = item.ItemFood;
-          for (let i = 0; i < 2; i++) {
+          for (let i = 0; i < 3; i++) {
             const statsEntry: any = {};
             const value = food[`Value${i}`];
             const valueHq = food[`ValueHQ${i}`];
@@ -303,6 +308,50 @@ export class ItemComponent extends TeamcraftPageComponent {
             url: `https://triad.raelys.com/cards/${xivapiItem.AdditionalData}`
           });
         }
+        if (xivapiItem.ItemAction) {
+          if (xivapiItem.ItemAction.Type === 1322) {
+            links.push({
+              title: 'FFXIV Collect',
+              icon: 'https://collect.raelys.com/images/logo_small.png',
+              url: `https://collect.raelys.com/mounts/${xivapiItem.ItemAction.Data0}`
+            });
+          }
+          if (xivapiItem.ItemAction.Type === 853) {
+            links.push({
+              title: 'FFXIV Collect',
+              icon: 'https://collect.raelys.com/images/logo_small.png',
+              url: `https://collect.raelys.com/minions/${xivapiItem.ItemAction.Data0}`
+            });
+          }
+          if (xivapiItem.ItemAction.Type === 5845) {
+            links.push({
+              title: 'FFXIV Collect',
+              icon: 'https://collect.raelys.com/images/logo_small.png',
+              url: `https://collect.raelys.com/orchestrions/${xivapiItem.ItemAction.Data0}`
+            });
+          }
+          if (xivapiItem.ItemAction.Type === 2633 && xivapiItem.Name_en.indexOf('Ballroom Etiquette') > -1) {
+            links.push({
+              title: 'FFXIV Collect',
+              icon: 'https://collect.raelys.com/images/logo_small.png',
+              url: `https://collect.raelys.com/emotes/${xivapiItem.ItemAction.Data0}`
+            });
+          }
+          if (xivapiItem.ItemAction.Type === 2633 && xivapiItem.Name_en.indexOf('Modern Aesthetics') > -1) {
+            links.push({
+              title: 'FFXIV Collect',
+              icon: 'https://collect.raelys.com/images/logo_small.png',
+              url: `https://collect.raelys.com/hairstyles/${xivapiItem.ItemAction.Data0}`
+            });
+          }
+          if (xivapiItem.ItemAction.Type === 1013) {
+            links.push({
+              title: 'FFXIV Collect',
+              icon: 'https://collect.raelys.com/images/logo_small.png',
+              url: `https://collect.raelys.com/bardings/${xivapiItem.ItemAction.Data0}`
+            });
+          }
+        }
         return links;
       })
     );
@@ -319,7 +368,8 @@ export class ItemComponent extends TeamcraftPageComponent {
             links: Object.keys(data.item.ingredient_of)
               .map(itemId => {
                 return {
-                  itemId: +itemId
+                  itemId: +itemId,
+                  recipes: this.lazyData.recipes.filter(r => r.result === +itemId)
                 };
               })
           });
@@ -549,7 +599,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(item),
           description: this.getDescription(item),
-          url: `https://ffxivteamcraft.com/db/item/${item.ID}/${this.getName(item).split(' ').join('+')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/item/${item.ID}/${this.getName(item).split(' ').join('+')}`,
           image: `https://xivapi.com/i2/ls/${item.ID}.png`
         };
       })
@@ -654,6 +704,16 @@ export class ItemComponent extends TeamcraftPageComponent {
             );
         })
       );
+    }
+    if (xivapiItem.GameContentLinks) {
+      if (xivapiItem.GameContentLinks.Achievement && xivapiItem.GameContentLinks.Achievement.Item) {
+        res$ = res$.pipe(
+          map(res => {
+            res.achievements = xivapiItem.GameContentLinks.Achievement.Item;
+            return res;
+          })
+        );
+      }
     }
     if (gtData.item.quests) {
       res$ = res$.pipe(

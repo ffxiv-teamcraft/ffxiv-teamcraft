@@ -13,7 +13,7 @@
             <div class="item-kind" *ngIf="xivapiQuest.JournalGenre">{{xivapiQuest.JournalGenre | xivapiI18n}}</div>
           </div>
         </div>
-        <img [src]="xivapiQuest.Banner | xivapiIcon" alt="" class="instance-banner">
+        <img *ngIf="xivapiQuest.Banner" [src]="xivapiQuest.Banner | xivapiIcon" alt="" class="instance-banner">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
           <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
             <img [src]="link.icon" [alt]="link.title" class="link-icon">
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="textData$ | async as textData" [innerHTML]="textData.Journal[0].Text"></p>
+        <p *ngIf="textData$ | async as textData" [innerHTML]="textData.Journal && textData.Journal[0].Text"></p>
       </div>
       <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -58,7 +58,7 @@
         <div class="detail-value">{{xivapiQuest.BeastReputationRank | xivapiI18n}}</div>
       </div>
     </div>
-    <app-db-comments type="quest" [id]="xivapiQuest.ID"></app-db-comments>
+    <app-db-comments type="quest" [id]="xivapiQuest.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="column" fxLayoutGap="10px">
       <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column">
@@ -293,6 +293,7 @@
       </nz-card>
     </div>
   </div>
+  <app-db-comments type="quest" [id]="xivapiQuest.ID" *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

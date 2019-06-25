@@ -125,7 +125,10 @@
     "Moderator": "Moderator",
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} seconds",
-    "None": "None"
+    "None": "None",
+    "Top": "Top",
+    "Bottom": "Bottom",
+    "Amount": "Amount"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -179,6 +182,7 @@
   "No_actions_found": "No actions found",
   "No_statuses_found": "No statuses found",
   "No_traits_found": "No traits found",
+  "No_achievements_found": "No achievements found",
   "Select_all": "Select all",
   "Do you really want to reset the list?": "Do you really want to reset the list?",
   "Yes": "Yes",
@@ -332,6 +336,8 @@
     "Favorite_aetherytes": "Favorite Aetherytes",
     "Disable_cross_world_prices": "Only use own world for marketboard prices",
     "Clear_search_history": "Clear search history",
+    "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
+    "Db_comments_position": "Database comments position",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -496,7 +502,8 @@
         "REQUIREMENTS": "Requirements",
         "REMOVE_ITEM": "Remove item from the list",
         "ADD_TAG": "Add tag to item",
-        "MARK_AS_DONE_IN_LOG": "Mark as done inside log"
+        "MARK_AS_DONE_IN_LOG": "Mark as done inside log",
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
       }
     },
     "LAYOUT": {
@@ -829,7 +836,7 @@
       "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs.",
       "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used.",
       "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
-      "Use_more_quality_actions": "You have remaining solidity at the end of the craft, you should probably use it to add more quality-related actions.",
+      "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
       "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
       "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
       "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
@@ -840,11 +847,17 @@
     "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Expect to sell everything",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
     "Copy_earnings_as_text": "Copy content as text",
     "Content_copied": "Content copied in your clipboard",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)",
-    "Copy_panel_as_text": "Copy this panel as text"
+    "Copy_panel_as_text": "Copy this panel as text",
+    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
+    "Craft_price": "Crafting price",
+    "Marketboard_price": "NQ price",
+    "Marketboard_price_hq": "HQ price",
+    "Enter_total_earnings": "Enter total earnings"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -868,6 +881,9 @@
     "Title": "Notifications",
     "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
+    "Db_comment": "New comment in db: \"{{comment}}\"",
+    "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
+    "Blog_post": "New blog post: {{title}}",
     "Mark_all_as_read": "Mark all as read",
     "No_notifications": "No notifications"
   },
@@ -920,7 +936,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Informations",
+    "Title": "Marketboard Information",
     "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
     "Amount": "Quantity",
     "HQ": "HQ",
@@ -1180,6 +1196,7 @@
     "Limited": "Limited spawn",
     "3d_model_viewer": "3D model preview",
     "3d_model_help": "Preview 3D model",
+    "Achievements": "Achievements",
     "NODE": {
       "Items": "Items",
       "Possible_bonuses": "Possible bonuses",
@@ -1309,7 +1326,8 @@
     "Action": "Action",
     "Status": "Status",
     "Trait": "Trait",
-    "Any": "Any"
+    "Any": "Any",
+    "Achievement": "Achievement"
   },
   "SEARCH_FILTERS": {
     "Level": "Level",
@@ -1327,5 +1345,41 @@
     "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
     "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
     "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+  },
+  "RECIPE_FINDER": {
+    "Title": "Recipe finder",
+    "Placeholder": "Item name",
+    "No_missing_ingredients": "No missing ingredients",
+    "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
+    "Missing": "Missing",
+    "Results": "Possible crafts",
+    "Basket": "Basket",
+    "Add_to_basket": "Add to basket",
+    "Remove_from_basket": "Remove from basket",
+    "Search": "Find recipes",
+    "Generate_list": "Add to list",
+    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
+    "Empty_basket": "Your basket is empty",
+    "Add_item": "Add item",
+    "Clipboard_content_malformed": "Clipboard content malformed",
+    "Import_from_clipboard": "Import from clipboard",
+    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
+    "Extension_link": "Get the extension on chrome webstore",
+    "Clear": "Clear items list",
+    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Inventory": "Inventory",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Pool_copied": "Inventory copied to your clipboard",
+    "Sort_alphabetically": "Sort alphabetically",
+    "Pages_range_label":  "{{ range0 }}-{{ range1 }} of {{ total }} items"
+  },
+  "CURRENCY_SPENDING": {
+    "Title": "Currency Spending guide",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Pick_currency": "Pick a currency",
+    "You_can_buy": "You can buy {{amount}}"
+  },
+  "BLOG": {
+    "Title": "Blog"
   }
 }

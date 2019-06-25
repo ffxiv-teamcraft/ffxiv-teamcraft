@@ -9,7 +9,7 @@ import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { UserService } from '../../../core/database/user.service';
 import { ListCompactsService } from '../../../modules/list/list-compacts.service';
-import { GearSet } from '../../simulator/model/gear-set';
+import { GearSet } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-public-profile',

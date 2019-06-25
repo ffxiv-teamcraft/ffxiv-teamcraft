@@ -30,7 +30,7 @@ export class Team extends DataModel {
           name: WebhookSettingType.FINAL_LIST_PROGRESSION,
           value: true
         }
-      ]
+      ];
     }
   }
 

@@ -28,7 +28,7 @@ export class LayoutOrderService {
     'NAME': (a, b) => {
       let aName: string = this.i18n.getName(this.localizedData.getItem(a.id));
       let bName: string = this.i18n.getName(this.localizedData.getItem(b.id));
-      if(aName === bName){
+      if (aName === bName) {
         // If this happens, it means that they are the same item with different recipe,
         // let's just add recipe id to distinguish them.
         aName += a.recipeId;
@@ -55,7 +55,7 @@ export class LayoutOrderService {
       } else {
         return aJobId - bJobId;
       }
-    },
+    }
   };
 
   constructor(private translate: TranslateService, private localizedData: LocalizedDataService,
@@ -67,7 +67,7 @@ export class LayoutOrderService {
     if (ordering === undefined) {
       return data;
     }
-    const orderedASC = data.sort(ordering);
+    const orderedASC = (data || []).sort(ordering);
     return order === LayoutRowOrder.ASC ? orderedASC : orderedASC.reverse();
   }
 

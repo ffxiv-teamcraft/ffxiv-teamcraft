@@ -3,7 +3,7 @@
     <ng-container *ngIf="false | ifMobile: true">
       <ng-container *ngTemplateOutlet="searchType"></ng-container>
     </ng-container>
-    <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null">
+    <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null" [nzSuffix]="suffixTemplate">
       <input class="search-input" type="text"
              placeholder="{{'Search_placeholder' | translate:{type: searchType$ | async} }}" #searchInput nz-input
              [ngModel]="query$.value"
@@ -11,6 +11,17 @@
              [nzAutocomplete]="auto"
              (keyup)="query$.next(searchInput.value)"
              (ngModelChange)="query$.next($event)">
+      <ng-template #suffixTemplate>
+        <i
+          nz-icon
+          nz-tooltip
+          class="ant-input-clear-icon"
+          nzTheme="fill"
+          nzType="close-circle"
+          *ngIf="query$ | async"
+          (click)="query$.next('')"
+        ></i>
+      </ng-template>
     </nz-input-group>
     <button nz-button ngxClipboard [cbContent]="getShareUrl()" (cbOnSuccess)="afterShareLinkCopied()" nz-tooltip
             [nzTitle]="'ITEMS.Share_url' | translate">
@@ -46,6 +57,8 @@
                    [nzValue]="searchTypes.STATUS"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.TRAIT) | translate"
                    [nzValue]="searchTypes.TRAIT"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ACHIEVEMENT) | translate"
+                   [nzValue]="searchTypes.ACHIEVEMENT"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -104,7 +117,8 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/worn_by' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="jobCategories" nzMode="multiple" nzAllowClear class="filter-select">
+                <nz-select formControlName="jobCategories" nzMode="multiple" nzShowSearch nzAllowClear
+                           class="filter-select">
                   <nz-option *ngFor="let category of availableJobCategories" [nzValue]="category.id"
                              [nzLabel]="category.id | jobAbbr | i18n" nzCustomContent>
                     <img src="https://garlandtools.org/db/images/{{category.abbreviation}}.png" alt="" class="job-icon">
@@ -116,7 +130,7 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/crafted_by' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="craftJob" nzAllowClear class="filter-select">
+                <nz-select formControlName="craftJob" nzShowSearch nzAllowClear class="filter-select">
                   <nz-option *ngFor="let job of availableCraftJobs" [nzValue]="job.id"
                              [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
                     <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
@@ -374,7 +388,7 @@
                class="result-row"
                [class.odd]="odd">
             <a routerLink="/db/{{translate.currentLang}}/instance/{{row.id}}">
-              <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+              <img *ngIf="row.banner" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
             </a>
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -396,7 +410,7 @@
                class="result-row"
                [class.odd]="odd">
             <a routerLink="/db/{{translate.currentLang}}/quest/{{row.id}}">
-              <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+              <img *ngIf="row.banner" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
             </a>
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -424,7 +438,8 @@
                     <div>{{row.id | npcName | i18n}}</div>
                     <div fxLayout="row" fxLayoutGap="5px">
                       <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-                      <div><span *ngIf="(row.id | npcName)?.position as npcPosition">{{npcPosition.zoneid | placeName | i18n}}
+                      <div><span
+                        *ngIf="(row.id | npcName)?.position as npcPosition">{{npcPosition.zoneid | placeName | i18n}}
                         - X: {{npcPosition.x}} Y: {{npcPosition.y}} </span>
                         <i *ngIf="(row.title | i18n) !== 'missing name'">{{row.title | i18n}}</i></div>
                     </div>
@@ -467,7 +482,7 @@
                class="result-row"
                [class.odd]="odd">
             <a routerLink="/db/{{translate.currentLang}}/leve/{{row.id}}">
-              <img [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+              <img *ngIf="row.banner" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
             </a>
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -494,7 +509,7 @@
                 <div>{{row.zoneid | placeName | i18n}}</div>
                 <app-db-button type="map" [id]="row.id"></app-db-button>
               </div>
-                <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+              <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
             </div>
           </div>
           <div fxLayout="row" fxLayout.lt-md="column"
@@ -607,6 +622,26 @@
               </div>
             </div>
           </div>
+          <div fxLayout="row" fxLayout.lt-md="column"
+               *ngIf="row.type === searchTypes.ACHIEVEMENT"
+               fxLayoutGap="5px"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               class="result-row"
+               [class.odd]="odd">
+            <img [src]="row.icon | xivapiIcon" alt="" fxFlex="0 0 auto" class="quest-icon">
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div fxLayout="column">
+                  <div>{{row.id | achievementName | i18n}}</div>
+                  <div fxLayout="row" fxLayoutGap="5px">
+                    <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+                  </div>
+                </div>
+                <app-db-button type="achievement" [id]="row.id"></app-db-button>
+              </div>
+            </div>
+          </div>
         </ng-container>
       </app-page-loader>
       <div *ngIf="results.length === 0">
@@ -634,6 +669,8 @@
                               *ngIf="searchType === searchTypes.STATUS">{{'No_statuses_found' | translate}}</app-fullpage-message>
         <app-fullpage-message height="300px"
                               *ngIf="searchType === searchTypes.TRAIT">{{'No_traits_found' | translate}}</app-fullpage-message>
+        <app-fullpage-message height="300px"
+                              *ngIf="searchType === searchTypes.ACHIEVEMENT">{{'No_achievements_found' | translate}}</app-fullpage-message>
       </div>
     </div>
   </div>

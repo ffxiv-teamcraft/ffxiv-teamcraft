@@ -1,5 +1,4 @@
 import { Recipe } from './recipe';
-import { SearchType } from '../../pages/search/search-type';
 import { BaseSearchResult } from './base-search-result';
 
 export interface SearchResult extends BaseSearchResult {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Simulation } from '../../simulation/simulation';
+import { Simulation } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-simulation-min-stats-popup',

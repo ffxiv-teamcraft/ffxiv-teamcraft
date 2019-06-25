@@ -18,6 +18,18 @@ export class ZoneBreakdown {
         });
         return;
       }
+      if (row.vendors !== undefined && row.vendors.length > 0) {
+        row.vendors.forEach(vendor => {
+          this.addToBreakdown(vendor.zoneId, vendor.mapId, row, hideZoneDuplicates);
+        });
+      }
+      if (row.tradeSources !== undefined && row.tradeSources.length > 0) {
+        row.tradeSources.forEach(source => {
+          source.npcs.forEach(npc => {
+            this.addToBreakdown(npc.zoneId, npc.mapId, row, hideZoneDuplicates);
+          });
+        });
+      }
       this.addToBreakdown(-1, -1, row, hideZoneDuplicates);
     });
   }

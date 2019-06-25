@@ -61,7 +61,7 @@
                                           nz-tooltip
                                           [nzGhost]="!display.registered"
                                           (click)="toggleAlarm(display)">
-                                    <i nz-icon type="clock-circle-o" *ngIf="!display.registered"></i>
+                                    <i nz-icon type="bell" *ngIf="!display.registered"></i>
                                     <i nz-icon type="close-circle-o" *ngIf="display.registered"></i>
                                     {{display.remainingTime | timer}}
                                     <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>

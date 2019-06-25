@@ -7,7 +7,8 @@ import { authQuery } from './auth.selectors';
 import {
   GetUser,
   LinkingCharacter,
-  Logout, RegisterUser,
+  Logout,
+  RegisterUser,
   RemoveCharacter,
   SaveDefaultConsumables,
   SaveSet,
@@ -20,21 +21,20 @@ import {
 } from './auth.actions';
 import { auth } from 'firebase/app';
 import { UserCredential } from '@firebase/auth-types';
-import { filter, map, switchMap, tap } from 'rxjs/operators';
+import { filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, Observable, of, from } from 'rxjs';
-import { GearSet } from '../pages/simulator/model/gear-set';
+import { combineLatest, from, Observable, of } from 'rxjs';
+import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
 import { LodestoneIdEntry } from '../model/user/lodestone-id-entry';
 import { OauthService } from '../core/auth/oauth.service';
-import { first } from 'rxjs/operators';
 import { ConvertLists } from '../modules/list/+state/lists.actions';
 
 @Injectable({
@@ -184,10 +184,10 @@ export class AuthFacade {
         return from(this.af.auth.createUserWithEmailAndPassword(email, password)).pipe(
           tap(a => {
             this.store.dispatch(new RegisterUser(a.user.uid, user));
-            this.store.dispatch(new ConvertLists(a.user.uid))
+            this.store.dispatch(new ConvertLists(a.user.uid));
           })
         );
-      }),
+      })
     ).toPromise();
   }
 

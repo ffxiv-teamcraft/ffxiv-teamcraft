@@ -56,6 +56,7 @@
   "Mute_alarms": "Mettre en sourdine",
   "Hide_used": "Masquer les éléments utilisés",
   "Collapse_if_done": "Réduire une fois complété",
+  "Collapse_by_default": "Réduire par défaut",
   "Retainer_ventures": "Tâches de servant",
   "Requires_x_ventures": "Requiert {{amount}} tâches pour tout obtenir",
   "WORKSHOP": {
@@ -76,7 +77,7 @@
     "title": "À propos",
     "Created_by": "FFXIV Teamcraft créé par Miu Asakura de Louisoix, Chaos.",
     "Copyright_notice_title": "Copyright",
-    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
+    "Copyright_notice_content": "FINAL FANTASY est une marque déposée de Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. Tous droits réservés.<br>FFXIV Teamcraft n'est pas affilié à Square Enix.",
     "Thanks_title": "Remerciements",
     "Data_sources": "Bases de données",
     "Patreon_supporters": "Supporters Patreon",
@@ -121,9 +122,13 @@
     "Opened_in_desktop": "Cette page a été ouverte dans votre application bureau, vous pouvez fermer cet onglet.",
     "Open_in_desktop": "Ouvrir dans l'application bureau",
     "Admin": "Administrateur",
+    "Moderator": "Modérateur",
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} secondes",
-    "None": "Aucun"
+    "None": "Aucun",
+    "Top": "Début",
+    "Bottom": "Fin",
+    "Amount": "Quantité"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -177,6 +182,7 @@
   "No_actions_found": "Aucune action trouvée",
   "No_statuses_found": "Aucun état trouvé",
   "No_traits_found": "Aucun trait trouvé",
+  "No_achievements_found": "Aucun haut-fait trouvé",
   "Select_all": "Tout cocher",
   "Do you really want to reset the list?": "Voulez-vous vraiment réinitialiser la liste ?",
   "Yes": "Oui",
@@ -287,7 +293,7 @@
   "Required_crafts_amount": "Nombre de crafts à faire",
   "Missing_crafts_amount": "{{amount}} pour atteindre le total",
   "Requires": "Nécessite",
-  "Copy_item_name_to_clipboard": "Copier le nom dans le press-papiers",
+  "Copy_item_name_to_clipboard": "Copier le nom dans le presse-papiers",
   "Item_name_copied": "{{itemname}} copié dans le presse-papiers",
   "Tier_display_toggle": "Voir les étapes de craft",
   "Precraft_tier": "Étape",
@@ -329,7 +335,9 @@
     "Free_aetheryte": "Éthérite gratuite",
     "Favorite_aetherytes": "Éthérites favorites",
     "Disable_cross_world_prices": "Utiliser uniquement le serveur d'origine pour les prix à l'hôtel des ventes",
-    "Clear_search_history": "Clear search history",
+    "Clear_search_history": "Effacer l'historique de recherche",
+    "Auto_mark_as_done_in_log": "Marquer les éléments comme faits dans le journal lorsqu'ils sont faits dans une liste",
+    "Db_comments_position": "Position des commentaires de la base de données",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -492,7 +500,8 @@
         "REQUIREMENTS": "Prérequis",
         "REMOVE_ITEM": "Supprimer l’élément de la liste",
         "ADD_TAG": "Ajouter un tag à l'élément",
-        "MARK_AS_DONE_IN_LOG": "Marquer comme fait dans le livre de recettes"
+        "MARK_AS_DONE_IN_LOG": "Marquer comme fait dans le livre de recettes",
+        "MARKET_BOARD_INFORMATIONS": "Hôtel des ventes"
       }
     },
     "LAYOUT": {
@@ -823,7 +832,12 @@
       "Use_patient_touch_faster": "Vous devriez utiliser Ouvrage appliqué avant toute autre action de qualité afin de minimiser la perte de cumuls de Calme Intérieur en cas d'échec.",
       "Use_advanced_touch_instead": "Vous avez utilisé Ouvrage de base puis Ouvrage avancé au tour {{index}}, utiliser deux Ouvrages standards produit le même résultat pour 2 PS de moins.",
       "Do_not_overlap_buffs": "Vous avez écrasé le buff appliqué au tour {{overlappedIndex}} avec le buff appliqué au tour {{overlappingIndex}}, vous appliquer le second buff plus tard pour éviter de perdre des tours d'effet sur le premier.",
-      "Use_byregot_brow_5_stacks": "Vous avez utilisé Bénédiction de Byregot avec 5 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner autant de qualité en dépensant 6 PS de moins."
+      "Use_byregot_brow_5_stacks": "Vous avez utilisé Bénédiction de Byregot avec 5 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner autant de qualité en dépensant 6 PS de moins.",
+      "Use_ingenuity_before_byregot": "Vous devriez utiliser Ingeniosité avant l'action de Byregot afin d'obtenir un bonus sur le gain de qualité.",
+      "Use_more_quality_actions": "Vous avez encore de la solidité à la fin de l'artisanat, vous devriez probablement l'utiliser pour ajouter des actions de qualité.",
+      "Use_prudent_touch_manipulation": "Comme vous êtes niveau 66+, vous devriez utiliser le combo Manipulation II + Ouvrage parcimonieux afin d'obtenir un avantage maximum de qualité et plus de fiabilité.",
+      "Use_rapid_synthesis_earlier": "Vous ne devriez pas utiliser la Synthèse Rapide comme une action finale, la mettre plus tôt pour pouvoir gérer l'échec de l'action est mieux pour la fiabilité de votre rotation.",
+      "Use_reflect_earlier": "Vous devriez utiliser l'action \"Atout : Sérénité\" plus tôt pour augmenter a puissance des actions de qualité suivantes."
     }
   },
   "PRICING": {
@@ -831,11 +845,17 @@
     "From_crafting": "Prix de l’artisanat",
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
+    "Autofill_panel_prices_your_server": "Remplir les prix en se basant sur l’hôtel des ventes (votre serveur uniquement)",
     "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?",
     "Copy_earnings_as_text": "Copier le contenu au format texte",
     "Content_copied": "Contenu copié dans le presse-papiers",
     "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)",
-    "Copy_panel_as_text": "Copier ce panneau sous forme de texte"
+    "Copy_panel_as_text": "Copier ce panneau sous forme de texte",
+    "Check_precraft_prices": "Vérifier les prix moins chers dans l’hôtel des ventes",
+    "Craft_price": "Prix de fabrication",
+    "Marketboard_price": "Prix NQ",
+    "Marketboard_price_hq": "Prix HQ",
+    "Enter_total_earnings": "Entrez les gains totaux"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -859,6 +879,8 @@
     "Title": "Notifications",
     "List_comment_added": "Commentaire sur la liste {{listName}} : \"{{content}}\"",
     "List_item_comment_added": "Commentaire posté sur {{itemName}}, liste {{listName}} : \"{{content}} \"",
+    "Db_comment": "Nouveau commentaire en bdd: \"{{comment}}\"",
+    "Db_comment_reply": "Nouvelle réponse à l'un de vos commentaires: \"{{comment}}\"",
     "Mark_all_as_read": "Tout marquer comme lu",
     "No_notifications": "Pas de notifications"
   },
@@ -1171,6 +1193,7 @@
     "Limited": "Apparition limitée",
     "3d_model_viewer": "Aperçu du modèle 3D",
     "3d_model_help": "Aperçu du modèle 3D",
+    "Achievements": "Haut-faits",
     "NODE": {
       "Items": "Objets",
       "Possible_bonuses": "Bonus possibles",
@@ -1273,6 +1296,16 @@
       "Type": "Type",
       "Type_buff": "Bonus",
       "Type_debuff": "Malus"
+    },
+    "COMMENTS": {
+      "Title": "Commentaires",
+      "Reply": "Répondre",
+      "Show_less": "Afficher moins",
+      "Add_comment": "Ajouter un commentaire",
+      "Show_more": "Afficher {{amount}} commentaires supplémentaires",
+      "No_comments": "Aucun commentaire",
+      "Post": "Publier",
+      "Editor_tip": "Les liens de base de données seront traités et remplacés par des liens hypertexte dans votre message."
     }
   },
   "SEARCH_TYPES": {
@@ -1289,7 +1322,9 @@
     "Map": "Carte",
     "Action": "Action",
     "Status": "État ",
-    "Trait": "Trait"
+    "Trait": "Trait",
+    "Any": "Tout",
+    "Achievement": "Haut-fait"
   },
   "SEARCH_FILTERS": {
     "Level": "Niveau",
@@ -1307,5 +1342,38 @@
     "Levequests": "Vous pouvez préparer des listes de mandats et prévisualiser leur exp dans la page Mandats.",
     "Log_tracker": "Vous pouvez suivre la progression de votre journal (collecte, fabrication, pêche) à l'intérieur de la page carnets.",
     "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale."
+  },
+  "RECIPE_FINDER": {
+    "Title": "Recherche de recette",
+    "Placeholder": "Nom de l'objet",
+    "No_missing_ingredients": "Aucun ingrédient manquant",
+    "Missing_X_ingredients": "Manque {{amount}} ingrédient(s)",
+    "Missing": "Manque",
+    "Results": "Recettes possibles",
+    "Basket": "Panier",
+    "Add_to_basket": "Ajouter au panier",
+    "Remove_from_basket": "Retirer du panier",
+    "Search": "Trouver des recettes",
+    "Generate_list": "Ajouter à une liste",
+    "Description": "Saisissez les objets que vous avez et cliquez sur « Trouver des recettes » pour obtenir une liste de recettes possibles pour fabriquer et générer une liste d'artisanat à partir des résultats.",
+    "Empty_basket": "Votre panier est vide",
+    "Add_item": "Ajouter un objet",
+    "Clipboard_content_malformed": "Contenu du presse-papiers mal formé",
+    "Import_from_clipboard": "Importer depuis le presse-papiers",
+    "Extension_tip": "Vous pouvez copier l'inventaire de vos servants dans votre presse-papiers en utilisant l'extension \"inventory grabber\" : ",
+    "Extension_link": "Obtenir l'extension sur le store chrome",
+    "Clear": "Effacer la liste des éléments",
+    "Clipboard_import_duplicates": "Les objets en double le sont parce que lodestone montre des piles, donc ils sont à l'intérieur de votre servant dans des piles séparées.",
+    "Inventory": "Inventaire",
+    "Copy_to_clipboard": "Copier l'inventaire dans le presse-papiers",
+    "Pool_copied": "Inventaire copié dans votre presse-papiers",
+    "Sort_alphabetically": "Trier par ordre alphabétique",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} sur {{ total }} éléments"
+  },
+  "CURRENCY_SPENDING": {
+    "Title": "Dépense de devises",
+    "Description": "Vous avez trop de devises ? Sélectionnez votre devise, définissez un montant, un serveur et trouvez quel article est le meilleur à acheter pour revendre à l'hôtel des ventes et gagner des gils !",
+    "Pick_currency": "Choisir une devise",
+    "You_can_buy": "Vous pouvez en acheter {{amount}}"
   }
 }

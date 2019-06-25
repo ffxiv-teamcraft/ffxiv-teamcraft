@@ -1,10 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { MastersMend } from '../../model/actions/other/masters-mend';
-import { MastersMendII } from '../../model/actions/other/masters-mend-ii';
-import { Manipulation } from '../../model/actions/buff/manipulation';
-import { ManipulationII } from '../../model/actions/buff/manipulation-ii';
+import { Manipulation, ManipulationII, MastersMend, MastersMendII, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class UseDurabilityRestorationLater extends RotationTip {
 

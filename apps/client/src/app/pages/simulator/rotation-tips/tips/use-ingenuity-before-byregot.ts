@@ -1,11 +1,14 @@
 import { RotationTip } from '../rotation-tip';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { IngenuityII } from '../../model/actions/buff/ingenuity-ii';
-import { Ingenuity } from '../../model/actions/buff/ingenuity';
+import {
+  ByregotsBlessing,
+  ByregotsBrow,
+  ByregotsMiracle,
+  Ingenuity,
+  IngenuityII,
+  SimulationResult,
+  Tables
+} from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
-import { ByregotsBlessing } from '../../model/actions/quality/byregots-blessing';
-import { ByregotsBrow } from '../../model/actions/quality/byregots-brow';
-import { ByregotsMiracle } from '../../model/actions/quality/byregots-miracle';
 
 export class UseIngenuityBeforeByregot extends RotationTip {
   constructor() {
@@ -21,8 +24,11 @@ export class UseIngenuityBeforeByregot extends RotationTip {
 
   matches(simulationResult: SimulationResult): boolean {
     const simulation = simulationResult.simulation.clone();
+    const clvl = Tables.LEVEL_TABLE[simulation.crafterStats.level] || simulation.crafterStats.level;
     const byregotsIndex = simulation.actions.findIndex(a => a.is(ByregotsBrow) || a.is(ByregotsBlessing) || a.is(ByregotsMiracle));
-    return simulation.actions.slice(byregotsIndex).some(a => a.is(Ingenuity) || a.is(Ingenuity));
+    return simulation.actions.slice(byregotsIndex).some(a => a.is(Ingenuity) || a.is(Ingenuity))
+      && simulationResult.hqPercent < 100
+      && clvl < simulation.recipe.rlvl;
   }
 
 }

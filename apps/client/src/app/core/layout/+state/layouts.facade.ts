@@ -55,9 +55,9 @@ export class LayoutsFacade {
         map(([[layout, user], characterEntry]) => {
           let unfilteredRows: ListRow[];
           if (!layout.considerCrystalsAsItems) {
-            unfilteredRows = list.items.filter(row => row.hidden !== true && (row.id < 1 || row.id > 20) || row.id === row.$key);
+            unfilteredRows = (list.items || []).filter(row => row.hidden !== true && (row.id < 1 || row.id > 20) || row.id === row.$key);
           } else {
-            unfilteredRows = list.items.filter(row => row.hidden !== true);
+            unfilteredRows = (list.items || []).filter(row => row.hidden !== true);
           }
           return {
             crystalsPanel: !layout.considerCrystalsAsItems,
@@ -111,7 +111,8 @@ export class LayoutsFacade {
                   reverseTiers: row.reverseTiers,
                   filterChain: row.filter.name,
                   hideIfEmpty: row.hideIfEmpty,
-                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : row.collapsedByDefault,
+                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false,
+                  collapsedByDefault: row.collapsedByDefault,
                   layoutRow: row,
                   layout: layout
                 };

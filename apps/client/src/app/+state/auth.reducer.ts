@@ -87,7 +87,12 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
     }
 
     case AuthActionTypes.SaveSet: {
-      const lodestoneId = state.user.lodestoneIds.find(entry => entry.id === state.user.defaultLodestoneId) || state.user.lodestoneIds[0];
+      const lodestoneId = state.user.lodestoneIds
+        .filter(id => id !== undefined)
+        .find(entry => entry.id === state.user.defaultLodestoneId) || state.user.lodestoneIds[0];
+      if (lodestoneId === undefined) {
+        return;
+      }
       const oldSet = (lodestoneId.stats || []).find(set => set.jobId === action.set.jobId);
       if (oldSet !== undefined && action.ignoreSpecialist) {
         action.set.specialist = oldSet.specialist;

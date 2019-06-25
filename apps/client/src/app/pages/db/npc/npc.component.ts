@@ -17,6 +17,7 @@ import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { levemetes } from '../../../core/data/sources/levemetes';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-npc',
@@ -38,7 +39,7 @@ export class NpcComponent extends TeamcraftPageComponent {
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService,
+              private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 
@@ -90,50 +91,50 @@ export class NpcComponent extends TeamcraftPageComponent {
         return gtData.npc.shops
           .filter(shop => +shop.entries[0] !== shop.entries[0])
           .map(shop => {
-          const npcEntry = this.lazyData.npcs[gtData.npc.id];
-          const npc: TradeNpc = { id: gtData.npc.id };
-          if (npcEntry.position !== null) {
-            npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
-            npc.zoneId = npcEntry.position.zoneid;
-            npc.mapId = npcEntry.position.map;
-          }
-          return {
-            shopName: shop.name,
-            npcs: [
-              npc
-            ],
-            trades: shop.entries.map(row => {
-              return <Trade>{
-                currencies: (row.currency || []).map(currency => {
-                  const partial = gtData.getPartial(currency.id, 'item');
-                  const currencyPartial = partial && partial.obj;
-                  if (currencyPartial) {
-                    return <TradeEntry>{
-                      id: currencyPartial.i,
-                      icon: currencyPartial.c,
-                      amount: currency.amount,
-                      hq: currency.hq === 1
-                    };
-                  }
-                  return undefined;
-                }).filter(res => res !== undefined),
-                items: (row.item || []).map(tradeItem => {
-                  const itemPartialFetch = gtData.getPartial(tradeItem.id, 'item');
-                  if (itemPartialFetch !== undefined) {
-                    const itemPartial = itemPartialFetch.obj;
-                    return <TradeEntry>{
-                      id: itemPartial.i,
-                      icon: itemPartial.c,
-                      amount: tradeItem.amount,
-                      hq: tradeItem.hq === 1
-                    };
-                  }
-                  return undefined;
-                }).filter(res => res !== undefined)
-              };
-            })
-          };
-        });
+            const npcEntry = this.lazyData.npcs[gtData.npc.id];
+            const npc: TradeNpc = { id: gtData.npc.id };
+            if (npcEntry.position !== null) {
+              npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
+              npc.zoneId = npcEntry.position.zoneid;
+              npc.mapId = npcEntry.position.map;
+            }
+            return {
+              shopName: shop.name,
+              npcs: [
+                npc
+              ],
+              trades: shop.entries.map(row => {
+                return <Trade>{
+                  currencies: (row.currency || []).map(currency => {
+                    const partial = gtData.getPartial(currency.id, 'item');
+                    const currencyPartial = partial && partial.obj;
+                    if (currencyPartial) {
+                      return <TradeEntry>{
+                        id: currencyPartial.i,
+                        icon: currencyPartial.c,
+                        amount: currency.amount,
+                        hq: currency.hq === 1
+                      };
+                    }
+                    return undefined;
+                  }).filter(res => res !== undefined),
+                  items: (row.item || []).map(tradeItem => {
+                    const itemPartialFetch = gtData.getPartial(tradeItem.id, 'item');
+                    if (itemPartialFetch !== undefined) {
+                      const itemPartial = itemPartialFetch.obj;
+                      return <TradeEntry>{
+                        id: itemPartial.i,
+                        icon: itemPartial.c,
+                        amount: tradeItem.amount,
+                        hq: tradeItem.hq === 1
+                      };
+                    }
+                    return undefined;
+                  }).filter(res => res !== undefined)
+                };
+              })
+            };
+          });
       })
     );
 
@@ -176,7 +177,7 @@ export class NpcComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(npc),
           description: this.getDescription(npc),
-          url: `https://ffxivteamcraft.com/db/npc/${npc.ID}/${this.getName(npc).split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/npc/${npc.ID}/${this.getName(npc).split(' ').join('-')}`,
           image: `https://xivapi.com/${npc.Icon}`
         };
       })

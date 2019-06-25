@@ -1,6 +1,7 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Inject, Optional, Pipe, PipeTransform } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
 
 @Pipe({
   name: 'xivapiI18n',
@@ -8,11 +9,13 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class XivapiI18nPipe implements PipeTransform {
 
-  constructor(private translate: TranslateService, private sanitizer: DomSanitizer) {
+  constructor(private translate: TranslateService, private sanitizer: DomSanitizer,
+              @Inject(REQUEST) @Optional() private request: any) {
   }
 
   transform(value: any, fieldName = 'Name', sanitized = false): SafeHtml {
-    const name = value[`${fieldName}_${this.translate.currentLang}`] || value[`${fieldName}_en`];
+    const lang = (this.request && this.request.lang) || this.translate.currentLang;
+    const name = value[`${fieldName}_${lang}`] || value[`${fieldName}_en`];
     if (sanitized) {
       return this.sanitizer.bypassSecurityTrustHtml(name);
     }

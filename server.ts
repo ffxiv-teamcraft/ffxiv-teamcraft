@@ -177,7 +177,8 @@ app.get('*', (req, res) => {
   const noSEO = req.headers.host.indexOf('beta.') > -1 || req.headers.host.indexOf('preview.') > -1;
   const isIndexBot = detectIndexBot(req.headers['user-agent']);
   const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
-  (req as any).lang = req.headers['accept-language'] || 'en';
+  const langFromUrl = /\/db\/(\w{2})\//.exec(req.url);
+  (req as any).lang = (langFromUrl && langFromUrl[1]) || req.headers['accept-language'] || 'en';
 
   if (isDeepLinkBot || (!noSEO && isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
     res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {

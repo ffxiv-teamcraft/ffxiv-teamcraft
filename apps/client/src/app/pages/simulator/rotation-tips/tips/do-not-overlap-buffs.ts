@@ -1,8 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { SimulationResult } from '../../simulation/simulation-result';
-import { BuffAction } from '../../model/actions/buff-action';
-import { Buff } from '../../model/buff.enum';
+import { Buff, BuffAction, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class DoNotOverlapBuffs extends RotationTip {
   private overlappedIndex: number;

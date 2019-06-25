@@ -36,6 +36,7 @@ import { MarketboardModule } from '../../modules/marketboard/marketboard.module'
 import { DbCommentsComponent } from './db-comments/db-comments/db-comments.component';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { CommentLinksPipe } from './db-comments/comment-links.pipe';
+import { AchievementComponent } from './achievement/achievement.component';
 
 const routes: Routes = [
 
@@ -168,6 +169,17 @@ const routes: Routes = [
         path: 'trait/:traitId/:slug',
         component: TraitComponent,
         canActivate: [MaintenanceGuard]
+      },
+
+      {
+        path: 'achievement/:achievementId',
+        component: AchievementComponent,
+        canActivate: [MaintenanceGuard]
+      },
+      {
+        path: 'achievement/:achievementId/:slug',
+        component: AchievementComponent,
+        canActivate: [MaintenanceGuard]
       }
     ]
   }
@@ -190,7 +202,8 @@ const routes: Routes = [
     TraitComponent,
     ModelViewerComponent,
     DbCommentsComponent,
-    CommentLinksPipe
+    CommentLinksPipe,
+    AchievementComponent
   ],
   entryComponents: [ModelViewerComponent],
   imports: [

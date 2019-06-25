@@ -101,9 +101,9 @@ export class GatheredByComponent extends ItemDetailsPopup {
     const bellNode = bellNodes.find(n => n.zoneid === alarm.zoneId);
     if (bellNode) {
       alarm.nodeContent = bellNode.items;
-    }
-    if (bellNode.folklore) {
-      alarm.folklore = bellNode.folklore;
+      if (bellNode.folklore) {
+        alarm.folklore = bellNode.folklore;
+      }
     }
     if (node.slot) {
       alarm.slot = +node.slot;
