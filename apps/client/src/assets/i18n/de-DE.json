@@ -766,7 +766,7 @@
         "Your_folders": "Deine Ordner",
         "Favorite_folders": "Favorisierte Ordner",
         "Add_rotations": "Rotations hinzufügen",
-        "Open": "Open folder"
+        "Open": "Ordner öffnen"
       }
     },
     "CATEGORY": {
@@ -981,10 +981,10 @@
     "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden."
   },
   "LOG_TRACKER": {
-    "Title": "Log Tracker",
+    "Title": "Notizbuch-Tracker",
     "Mark_page_as_done": "Diese Seite als erledigt markieren",
     "Mark_as_done": "Als erledigt markieren",
-    "Mark_as_done_external": "Mark this item as done inside the log",
+    "Mark_as_done_external": "Gegenstand im Notizbuch als \"erledigt\" markieren",
     "Mark_as_not_done": "Als nicht erledigt markieren",
     "Create_list": "Erstelle eine List um diese Seite vervollständigen",
     "Create_list_limited": "Liste erstellen, um Seite zu vervollständigen (bis zu 50 Gegenstände)",
@@ -1340,20 +1340,20 @@
     "Desynth": "Auf der \"Desynthese\"-Seite findest du ideale Gegenstände zum Erhöhen deiner Desynthese-Stufen.",
     "DB": "Teamcraft beinhält eine Datenbank. Du kannst das \"i\"-Icon an verschiedenen Stellen verwenden, um für das jeweilige Element den Datenbank-Eintrag zu finden.",
     "3D_model": "Du kannst in der Datenbank die 3D-Modelle von Gegenständen betrachten.",
-    "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
-    "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
-    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+    "Levequests": "Auf der \"Freibriefe\"-Seite kannst du Listen für Freibriefe vorbereiten und sogar die Erfahrungspunkte dafür berechnen.",
+    "Log_tracker": "Auf der Seite \"Notizbuch-Tracker\" kannst du den Fortschritt deiner Notizbücher (Sammler, Handwerker, Fischer) verfolgen.",
+    "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Sidebar)."
   },
   "RECIPE_FINDER": {
-    "Title": "Recipe finder",
-    "Placeholder": "Item name",
-    "No_missing_ingredients": "No missing ingredients",
-    "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
-    "Missing": "Missing",
-    "Results": "Possible crafts",
-    "Basket": "Basket",
-    "Add_to_basket": "Add to basket",
-    "Remove_from_basket": "Remove from basket",
+    "Title": "Rezeptfinder",
+    "Placeholder": "Gegenstandsname",
+    "No_missing_ingredients": "Keine fehlenden Zutaten",
+    "Missing_X_ingredients": "Fehlende Zutaten: {{amount}}",
+    "Missing": "Fehlt",
+    "Results": "Mögliche Synthesen",
+    "Basket": "Korb",
+    "Add_to_basket": "Zum Korb hinzufügen",
+    "Remove_from_basket": "Aus Korb entfernen",
     "Search": "Find recipes",
     "Generate_list": "Add to list",
     "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
