@@ -734,7 +734,7 @@
       "Fail": "Провал",
       "Success": "Успешно: {{HQ}}% HQ",
       "Set_to_simulate": "Характеристики",
-      "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
+      "Specialist_rotation_warning": "Показанный результат использует характеристики не специалиста для ротации специалиста, поэтому результат HQ% может быть ниже, чем ожидается.",
       "Steps_count": "{{count}} шагов",
       "TAGS": {
         "SPECIALIST": "Специалист",
@@ -1222,7 +1222,7 @@
       "Quests": "Квесты",
       "Shops": "Магазины",
       "Leves": "Leves",
-      "Trades": "Trades"
+      "Trades": "Обмен"
     },
     "FIGHT_TYPE": {
       "Boss": "Босс",
@@ -1243,8 +1243,8 @@
       "fate": "Fate'ы",
       "mob": "Монстры",
       "npc": "NPC",
-      "node": "Nodes",
-      "hunt": "Hunts"
+      "node": "Ноды",
+      "hunt": "Охота"
     },
     "ACTION": {
       "Cast": "Каст",
@@ -1255,11 +1255,11 @@
       "Cooldown": "Откат",
       "Pvp_action": "PvP действие",
       "Breaks_unrelated_combo": "Прерывает несвязанные комбо",
-      "Movement_action": "Movement action",
-      "Possible_targets": "Possible targets",
+      "Movement_action": "Действие движения",
+      "Possible_targets": "Возможные цели",
       "Unlocked_by_quest": "Разблокируется квестом",
-      "Shares_cd_with": "Shares cooldown with",
-      "Combos": "Combos",
+      "Shares_cd_with": "Разделяет откат с",
+      "Combos": "Комбо",
       "Combo_next": "Следующее действие",
       "Combo_previous": "Предыдущее действие",
       "Affected_by_status": "Зависит от состояния",
@@ -1292,9 +1292,9 @@
     },
     "STATUS": {
       "Max_stacks": "Макс. стаков",
-      "Locks_actions": "Locks actions",
-      "Locks_control": "Locks control",
-      "Locks_movement": "Locks movement",
+      "Locks_actions": "Блокирует действия",
+      "Locks_control": "Блокирует контроль",
+      "Locks_movement": "Блокирует движение",
       "Type": "Тип",
       "Type_buff": "Бафф",
       "Type_debuff": "Дебафф"
@@ -1337,7 +1337,7 @@
   "TIPS": {
     "Title": "Совет",
     "Community_rotations": "Вы можете найти ротации для данного рецепта внутри страницы Ротации сообщества.",
-    "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
+    "GC_Deliveries": "Вы можете подготовить списки поставок GC на странице Поставки Grand Company.",
     "Desynth": "Вы можете найти идеальные предметы для повышения уровня десинтеза в разделе Гайд по десинтезу.",
     "DB": "Teamcraft включает в себя базу данных, вы можете нажать на значок \"i\" около любого предмета, чтобы открыть страницу с информацией.",
     "3D_model": "Вы можете просмотреть 3D модель предметов внутри базы данных.",
@@ -1379,6 +1379,6 @@
     "You_can_buy": "Вы можете купить {{amount}}"
   },
   "BLOG": {
-    "Title": "Blog"
+    "Title": "Блог"
   }
 }
