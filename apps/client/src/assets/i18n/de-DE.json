@@ -1,6 +1,6 @@
 {
-  "Quests": "Quests",
-  "Search_placeholder": "{{type}} name",
+  "Quests": "Aufträge",
+  "Search_placeholder": "Name von {{type}} eingeben",
   "Pick_a_list": "Wähle eine Liste",
   "Pick_a_user": "Wähle einen Benutzer",
   "Pick_a_fc": "Wähle eine freie Gesellschaft",
@@ -56,7 +56,7 @@
   "Mute_alarms": "Benachrichtigung stummschalten",
   "Hide_used": "Verwendete Reihen ausblenden",
   "Collapse_if_done": "Bei Fertigstellung zusammenklappen",
-  "Collapse_by_default": "Collapse by default",
+  "Collapse_by_default": "Standardmäßig zusammenklappen",
   "Retainer_ventures": "Gehilfen-Unternehmungen",
   "Requires_x_ventures": "Erfordert insgesamt {{amount}} Unternehmungen",
   "WORKSHOP": {
