@@ -346,7 +346,7 @@
       "Text": "Цвет содержимого кнопок",
       "Topbar": "Цвет верхней и боковой панелей",
       "Sidebar_trigger": "Цвет кропки вызова боковой панели",
-      "Sidebar_trigger_hover": "Sidebar trigger hover color"
+      "Sidebar_trigger_hover": "Цвет активатора боковой панели"
     },
     "COPY_TYPE": {
       "Classic": "Копировать имя предмета",
@@ -491,7 +491,7 @@
       "Reorder_panels": "Изменить порядок панелей",
       "ITEMS": {
         "COMMENTS": "Комментарии",
-        "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
+        "COPY_NAME_NOT_FAVORITE": "Не любимый режим копирования",
         "ADD_ALL_ALARMS": "Добавить все оповещения",
         "WORK_ON_IT": "Работать над этим",
         "ASSIGN_TEAM_MEMBER": "Назначить членов группы",
@@ -1067,7 +1067,7 @@
         "Add_currency": "Добавить валюту"
       },
       "REDUCTION": {
-        "Title": "Reduced from"
+        "Title": "Получается из"
       }
     },
     "NPC_PICKER": {
@@ -1142,23 +1142,23 @@
     "Unique": "Уникальный",
     "Dyeable": "Красится",
     "Materia_sockets": "Слоты для материи",
-    "Advanced_melding": "Advanced melding",
-    "Repair_job": "Repair job",
+    "Advanced_melding": "Расширенное плавление материи",
+    "Repair_job": "Профессия для ремонта",
     "Class_job": "Класс/Профессия",
     "Delay": "Задержка",
-    "Auto": "Auto",
-    "Salvage_level": "Optimal Desynth lvl",
+    "Auto": "Авто",
+    "Salvage_level": "Оптимальный уровень десинтеза",
     "Sells_for": "Цена продажи",
-    "Click_to_navigate": "Click on the icon to open full item details",
-    "Triple_triad_duels": "Triple triad duels",
+    "Click_to_navigate": "Нажмите на значок, чтобы открыть детали",
+    "Triple_triad_duels": "Triple triad дуэли",
     "TT_Rules": "Правила",
-    "TT_card_unlock": "Unlocks card in collection",
+    "TT_card_unlock": "Разблокирует карту в коллекции",
     "Track_on_attt": "Track on Another Triple Triad Tracker",
-    "Unlocked_by_quest": "Unlocked by quest",
+    "Unlocked_by_quest": "Разблокируется квестом",
     "More_on_attt_npc": "See more details about this npc on Another Triple Triad tracker",
     "Triple_triad_pack": "Triple triad card pack",
-    "Dungeons": "Dungeons/Trials",
-    "Used_for_trades": "Trades",
+    "Dungeons": "Подземелья/Триалы",
+    "Used_for_trades": "Обмен",
     "Can_contain_items": "Can contain items",
     "Open_in_db": "View details inside the database",
     "Team_size": "Размер группы",
