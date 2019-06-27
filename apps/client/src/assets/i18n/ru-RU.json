@@ -1207,7 +1207,7 @@
       "Steps": "Шаги",
       "Unlocked_by": "Разблокируется",
       "Next_quests": "Следующие квесты",
-      "Involved_npcs": "Involved npcs",
+      "Involved_npcs": "Участвующие нпс",
       "Journal_entries": "Journal entries",
       "Dialogues": "Диалог",
       "Start": "Начало",
@@ -1218,7 +1218,7 @@
     },
     "NPC": {
       "Other_entries": "Other appearances",
-      "Default_talk": "Base dialogues",
+      "Default_talk": "Базовые диалоги",
       "Quests": "Квесты",
       "Shops": "Магазины",
       "Leves": "Leves",
@@ -1230,14 +1230,14 @@
     },
     "LEVE": {
       "Required_items": "Необходимые предметы",
-      "Allowance_cost": "Стоимость",
+      "Allowance_cost": "Стоимость разрешений",
       "Rewards": "Возможные награды",
       "Client": "Клиент",
-      "Issuer": "Issuer"
+      "Issuer": "Инициатор"
     },
     "MOB": {
-      "Known_spawns": "Known spawns",
-      "Known_drops": "Known drops"
+      "Known_spawns": "Известные места",
+      "Known_drops": "Известный лут"
     },
     "DATA_TYPE": {
       "fate": "Fate'ы",
@@ -1307,7 +1307,7 @@
       "Show_more": "Показать еще {{amount}} комментариев",
       "No_comments": "Нет комментариев",
       "Post": "Разместить",
-      "Editor_tip": "Database links will be processed and handled inside your message."
+      "Editor_tip": "Ссылки на базу данных будут обработаны и заменены гиперссылками в вашем сообщении."
     }
   },
   "SEARCH_TYPES": {
@@ -1317,7 +1317,7 @@
     "Quest": "Квест",
     "NPC": "NPC",
     "Leve": "Ливквест",
-    "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
+    "Leve_info_message": "Вы можете использовать страницу с ливквестами для подготовки списков и расчета опыта за них",
     "Monster": "Монстр",
     "Lore": "История",
     "Fate": "Fate",
