@@ -1230,7 +1230,7 @@
     },
     "LEVE": {
       "Required_items": "Необходимые предметы",
-      "Allowance_cost": "Allowance cost",
+      "Allowance_cost": "Стоимость",
       "Rewards": "Возможные награды",
       "Client": "Клиент",
       "Issuer": "Issuer"
