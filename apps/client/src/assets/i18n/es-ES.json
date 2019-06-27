@@ -99,7 +99,7 @@
   "Discounts": "Descuento",
   "Flat_discount": "Absoluto",
   "Percent_discount": "Porcentual",
-  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
+  "Path_copied_to_clipboard": "URL a la página actual copiada al portapapeles",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrar usando etiquetas",
     "Tags_filter_reset": "Quitar filtro de etiquetas",
@@ -882,7 +882,7 @@
     "List_item_comment_added": "Comentario publicado en {{itemName}}, lista {{listName}}: \"{{content}}\"",
     "Db_comment": "Nuevo comentario en base de datos: \"{{comment}}\"",
     "Db_comment_reply": "Nueva respuesta a uno de sus comentarios: \"{{comment}}\"",
-    "Blog_post": "New blog post: {{title}}",
+    "Blog_post": "Nuevo post en el blog: {{title}}",
     "Mark_all_as_read": "Marcar todo como leído",
     "No_notifications": "No hay notificaciones"
   },
