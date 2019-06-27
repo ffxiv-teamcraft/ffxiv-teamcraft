@@ -264,7 +264,7 @@
   "List_not_found": "Список не найден или у вас нет к нему доступа",
   "Requirements_for_craft": "Посмотреть требования",
   "Zone_breakdown": "Площадь зоны",
-  "Reverse_tiers": "Display reversed tiers",
+  "Reverse_tiers": "Показать обратные тиры",
   "Timer_options": "Настройки таймера",
   "Early_by": "Рано (эорзейские часы)",
   "Sound": "Звук",
@@ -1035,13 +1035,13 @@
       "Stars": "Звезды",
       "Requirements": "Требования",
       "Add_requirement": "Добавить требование",
-      "Yields": "Yields",
+      "Yields": "Кол-во за крафт",
       "Name": "Название",
       "ID": "ID предмета",
       "CRAFT": {
         "Title": "Крафтится",
         "Job": "Профессия",
-        "No_requirement_warning": "You don't have any requirement setup for this item, it means that you are creating a craft with 0 ingredients."
+        "No_requirement_warning": "У вас нет никаких требований для этого предмета, это означает, что вы создаете ремесло с 0 ингредиентами."
       },
       "GATHERING": {
         "Title": "Собирается",
@@ -1056,14 +1056,14 @@
         "Title": "Продавцы",
         "Npc_name": "Имя NPC",
         "Price": "Цена",
-        "Delete_vendor": "Delete vendor"
+        "Delete_vendor": "Удалить продавца"
       },
       "TRADES": {
-        "Title": "Trade sources",
+        "Title": "Источник торговли",
         "Npc_name": "Имя NPC",
         "Shop_name": "Название магазина",
-        "Delete_trade": "Delete trade",
-        "Trade_details": "Trade details",
+        "Delete_trade": "Удалить источник",
+        "Trade_details": "Детали торговли",
         "Add_currency": "Добавить валюту"
       },
       "REDUCTION": {
