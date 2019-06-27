@@ -343,9 +343,9 @@
       "Primary": "Hauptfarbe",
       "Highlight": "Hervorhebungsfarbe",
       "Text": "Schaltflächenfarbe",
-      "Topbar": "Topbar and sidebar color",
-      "Sidebar_trigger": "Sidebar trigger color",
-      "Sidebar_trigger_hover": "Sidebar trigger hover color"
+      "Topbar": "Farbe von Topbar und Sidebar",
+      "Sidebar_trigger": "Sidebar-Knopffarbe",
+      "Sidebar_trigger_hover": "Sidebar-Knopffarbe (Hover)"
     },
     "COPY_TYPE": {
       "Classic": "Gegenstandsnamen kopieren",
@@ -393,8 +393,8 @@
     "Please_pick_recipe": "Bitte wähle ein Rezept für diesen Gegenstand",
     "Import_description": "Wähle das Rezept, das du für den herstellbaren Gegenstand nutzen möchtest und wähle eine Liste. Die Gegenstände werden der Liste hinzugefügt und du wirst weitergeleitet.",
     "Delete_after_merge": "Ursprüngliche Listen nach Zusammenfassung löschen",
-    "Favorite_lists": "Favorite lists",
-    "No_favorite_lists": "You have no favorite lists",
+    "Favorite_lists": "Favorisierte Listen",
+    "No_favorite_lists": "Du hast keine favorisierten Listen",
     "IMPORT": {
       "Title": "Liste von externer Website importieren",
       "Paste_link_step_title": "Füge deinen link der externen Liste ein",
@@ -426,10 +426,10 @@
     "Items_count": "{{amount}} Gegenstände",
     "Show_craftable_amount": "Zeige herstellbare Mengen",
     "Optimized_full_path": "Zeige den volloptimierten Pfad an (am günstigsten und schnellsten)",
-    "Quick_layout_swap": "Quick layout swap",
+    "Quick_layout_swap": "Layout-Schnellwechsel",
     "INVENTORY": {
-      "Show_final_items": "Show final items",
-      "Hide_final_items": "Hide final items"
+      "Show_final_items": "Resultate zeigen",
+      "Hide_final_items": "Resultate verstecken"
     },
     "COMPLETION_POPUP": {
       "Title": "Liste fertiggestellt",
@@ -487,7 +487,7 @@
       "Buttons": "Schaltflächen",
       "Menu": "Menü",
       "Edit_row_buttons_display": "Anzeige der Zeilenschaltflächen bearbeiten",
-      "Reorder_panels": "Reorder panels",
+      "Reorder_panels": "Panels neu anordnen",
       "ITEMS": {
         "COMMENTS": "Kommentare",
         "COPY_NAME_NOT_FAVORITE": "Nicht-bevorzugter Kopiermodus",
@@ -498,10 +498,10 @@
         "MARK_HQ": "Als HQ markieren",
         "ADD_TO_ANOTHER_LIST": "Zu einer anderen Liste hinzufügen",
         "REQUIREMENTS": "Voraussetzungen",
-        "REMOVE_ITEM": "Remove item from the list",
-        "ADD_TAG": "Add tag to item",
-        "MARK_AS_DONE_IN_LOG": "Mark as done inside log",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "REMOVE_ITEM": "Gegenstand aus Liste entfernen",
+        "ADD_TAG": "Tag zum Gegenstand hinzufügen",
+        "MARK_AS_DONE_IN_LOG": "Im Notizbuch als \"erledigt\" markieren",
+        "MARKET_BOARD_INFORMATIONS": "Marktinformationen"
       }
     },
     "LAYOUT": {
@@ -509,7 +509,7 @@
       "Panel_name": "Bereichsname",
       "Order_by": "Sortiere nach",
       "Order": "Sortierung",
-      "Tag_filter": "Tag filter"
+      "Tag_filter": "Tag-Filter"
     }
   },
   "LIST_TAGS": {
@@ -581,7 +581,7 @@
   "NAVIGATION": {
     "Title": "Optimierte Navigationsroute",
     "Steps": "Stationen",
-    "Loading_path": "Loading optimized path (can take several seconds)",
+    "Loading_path": "Optimierter Pfad wird geladen (kann mehrere Sekunden dauern)",
     "STEP": {
       "Gathering": "Sammel {{amount}}",
       "Hunting": "Sammle {{amount}} von Monstern",
