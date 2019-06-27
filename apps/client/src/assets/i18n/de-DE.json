@@ -99,6 +99,7 @@
   "Discounts": "Nachlass",
   "Flat_discount": "Flach",
   "Percent_discount": "Prozent",
+  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Nach Markierungen filtern",
     "Tags_filter_reset": "Markierungsfilter zurücksetzen",
