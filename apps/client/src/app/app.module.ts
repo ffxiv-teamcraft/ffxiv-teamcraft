@@ -87,6 +87,7 @@ import es from '@angular/common/locales/es';
 import pt from '@angular/common/locales/pt';
 import hr from '@angular/common/locales/hr';
 import ko from '@angular/common/locales/ko';
+import { ClipboardModule } from 'ngx-clipboard';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -220,7 +221,8 @@ registerLocaleData(ko);
     }) : [],
     EffectsModule.forRoot([]),
     StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
-    EffectsModule.forFeature([AuthEffects])
+    EffectsModule.forFeature([AuthEffects]),
+    ClipboardModule
   ],
   bootstrap: [AppComponent]
 })
