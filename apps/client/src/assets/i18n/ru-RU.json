@@ -427,7 +427,7 @@
     "Items_count": "{{amount}} предметов",
     "Show_craftable_amount": "Показать количество, которое можно скрафтить",
     "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
-    "Quick_layout_swap": "Quick layout swap",
+    "Quick_layout_swap": "Быстрое переключение раскладки",
     "INVENTORY": {
       "Show_final_items": "Показать конечные предметы",
       "Hide_final_items": "Скрыть конечные предметы"
@@ -604,9 +604,9 @@
     "Spawned_for": "Деспавнится через {{timer}}",
     "Will_spawn_in": "Заспавнится через {{timer}}",
     "GIG_HEAD": {
-      "Small": "Small Gig Head",
-      "Normal": "Normal Gig Head",
-      "Large": "Large Gig Head"
+      "Small": "Маленькая насадка",
+      "Normal": "Нормальная насадка",
+      "Large": "Большая насадка"
     }
   },
   "ANNOUNCEMENT": {
@@ -843,7 +843,7 @@
   },
   "PRICING": {
     "From_vendor": "Цена продавца",
-    "From_crafting": "Price from crafting",
+    "From_crafting": "Цена от крафта",
     "Expect_to_sell_everything": "Ожидайте, чтобы продать все",
     "Autofill_panel_prices": "Заполнить цены на основе цен MB",
     "Autofill_panel_prices_your_server": "Заполнить цены на основе цен на MB (только ваш сервер)",
@@ -853,10 +853,10 @@
     "Cheaper_at_vendor": "Дешевле, если покупать у NPC ({{price}} gil)",
     "Copy_panel_as_text": "Скопировать эту панель как текст",
     "Check_precraft_prices": "Проверить более дешевые цены внутри MB",
-    "Craft_price": "Crafting price",
+    "Craft_price": "Цена создания",
     "Marketboard_price": "Цена NQ",
     "Marketboard_price_hq": "Цена HQ",
-    "Enter_total_earnings": "Enter total earnings"
+    "Enter_total_earnings": "Введите общий доход"
   },
   "LEVEQUESTS": {
     "Title": "Ливквесты",
@@ -882,7 +882,7 @@
     "List_item_comment_added": "Комментарий опубликован в списке {{listName}}: \"{{content}}\"",
     "Db_comment": "Новый комментарий в базе данных: \"{{comment}}\"",
     "Db_comment_reply": "Новый ответ на один из ваших комментариев: \"{{comment}}\"",
-    "Blog_post": "New blog post: {{title}}",
+    "Blog_post": "Новый пост в блоге: {{title}}",
     "Mark_all_as_read": "Отметить все как прочитанные",
     "No_notifications": "Уведомлений нет"
   },
@@ -908,8 +908,8 @@
     "No_anonymous_join": "Вы должны создать аккаунт, чтобы иметь возможность присоединиться к группе",
     "Already_in_team": "Вы уже состоите в этой группе",
     "Webhook_configuration": "Настройки вебхуков",
-    "Officer": "Officer",
-    "Promote_officer": "Promote to officer",
+    "Officer": "Офицер",
+    "Promote_officer": "Повысить до офицера",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** добавлен в **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** удален из **[{{listName}}]({{listUrl}})**.",
@@ -929,8 +929,8 @@
       "ITEM_REMOVED": "Предмет удален",
       "LIST_ADDED": "Список добавлен",
       "LIST_REMOVED": "Список удален",
-      "LIST_PROGRESSION": "List materials progression",
-      "FINAL_LIST_PROGRESSION": "List final items progression",
+      "LIST_PROGRESSION": "Прогресс списка материалов",
+      "FINAL_LIST_PROGRESSION": "Прогресс списка итоговых предметов",
       "USER_ASSIGNMENT": "Назначение пользователей"
     }
   },
@@ -990,7 +990,7 @@
     "Create_list": "Создать список для завершения этой страницы",
     "Create_list_limited": "Создать список для завершения этой страницы (50 предметов максимум)",
     "Folklore": "Regional Folklore",
-    "Timed": "Timed",
+    "Timed": "Временный",
     "Weather_dependant": "Только с определенной погодой",
     "View_on_ff14angler": "Подробнее на ff14angler",
     "Required_for_achievement": "Требуется для получения achievement'a",
@@ -1013,22 +1013,22 @@
   },
   "GIVEAWAY": {
     "Discord_1K": {
-      "Title": "1000 Discord members giveaway !",
+      "Title": "Розыгрыш за 1000 членов Discord!",
       "Description": "Нажмите на этот баннер, чтобы перейти на страницу регистрации для FINAL FANTASY XIV: Shadowbringers Collector's Edition, созданный для празднования 1000 пользователей, достигнутого на сервере discord."
     }
   },
   "CUSTOM_ITEMS": {
-    "Title": "Custom items",
-    "New_item": "Create new custom item",
+    "Title": "Пользовательские предметы",
+    "New_item": "Создать новый предмет",
     "New_folder": "Создать новую папку",
     "Rename_folder": "Переименовать папку",
-    "Import_items": "Import custom items",
+    "Import_items": "Импорт пользовательских предметов",
     "Save": "Сохранить предмет",
     "Details": "Информация о предмете",
     "Export_item": "Экспортировать предмет",
     "Export_items": "Экспортировать несколько предметов",
     "Add_to_list": "Добавить в список",
-    "No_items": "You have no custom items",
+    "No_items": "У вас нет пользовательских предметов",
     "DETAILS": {
       "Level": "Уровень",
       "None": "ничего",
