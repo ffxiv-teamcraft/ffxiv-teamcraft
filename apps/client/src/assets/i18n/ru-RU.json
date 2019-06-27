@@ -99,6 +99,7 @@
   "Discounts": "Скидка",
   "Flat_discount": "Сумма",
   "Percent_discount": "Процент",
+  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Фильтр по тегам",
     "Tags_filter_reset": "Сбросить фильтр",
