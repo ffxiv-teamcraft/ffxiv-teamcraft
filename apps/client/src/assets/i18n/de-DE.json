@@ -992,40 +992,40 @@
     "Timed": "Zeitgebunden",
     "Weather_dependant": "Nur zu bestimmten Wetterverhältnissen",
     "View_on_ff14angler": "Mehr Details auf ff14angler",
-    "Required_for_achievement": "Required for the achievements",
-    "Select_spot": "Select a spot to see its details",
-    "Hide_completed": "Hide completed recipes",
-    "MIN_optimized_path": "Optimized path for all MIN nodes",
-    "BTN_optimized_path": "Optimized path for all BTN nodes",
+    "Required_for_achievement": "Für folgende Erfolge nötig",
+    "Select_spot": "Fischgrund auswählen, um Details zu sehen",
+    "Hide_completed": "Abgeschlossene Rezepte verstecken",
+    "MIN_optimized_path": "Optimierter Pfad für alle MIN-Sammelstellen",
+    "BTN_optimized_path": "Optimierter Pfad für alle GÄR-Sammelstellen",
     "PAGE": {
-      "Master_recipes": "Master recipes ({{number}})",
-      "Housing_items": "Housing({{number}})",
+      "Master_recipes": "Meisterrezepte ({{number}})",
+      "Housing_items": "Unterkunft ({{number}})",
       "Others": "Weitere",
       "Dyes": "Farben",
-      "Other_master_recipes": "Other Master Recipes",
-      "Deliveries": "Deliveries",
-      "Quests": "Quests"
+      "Other_master_recipes": "Andere Meisterrezepte",
+      "Deliveries": "Wunschlieferungen",
+      "Quests": "Aufträge"
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more !"
+    "Loading_data": "Lade Gegenstände, Kommandos und mehr!"
   },
   "GIVEAWAY": {
     "Discord_1K": {
-      "Title": "1000 Discord members giveaway !",
-      "Description": "Click on this banner to go to the registration page for the FINAL FANTASY XIV: Shadowbringers Collector's Edition giveaway created to celebrate the 1000 members cap reached on the discord server."
+      "Title": "1000 Discord-Mitglieder-Verlosung!",
+      "Description": "Klicke auf dieses Banner, um zur Verlosung für die FINAL FANTASY XIV: Shadowbringers-Collector's Edition zu gelangen, mit der wir die 1000 Mitglieder auf dem Discordserver feiern."
     }
   },
   "CUSTOM_ITEMS": {
-    "Title": "Custom items",
-    "New_item": "Create new custom item",
-    "New_folder": "Create new folder",
-    "Rename_folder": "Rename folder",
-    "Import_items": "Import custom items",
-    "Save": "Save item",
-    "Details": "Item details",
-    "Export_item": "Export item",
-    "Export_items": "Export multiple items",
+    "Title": "Benutzerdefinierte Gegenstände",
+    "New_item": "Benutzerdefinierten Gegenstand erstellen",
+    "New_folder": "Neuen Ordner erstellen",
+    "Rename_folder": "Ordner umbenennen",
+    "Import_items": "Benutzerdefinierte Gegenstände importieren",
+    "Save": "Gegenstand speichern",
+    "Details": "Gegenstands-Details",
+    "Export_item": "Gegenstand exportieren",
+    "Export_items": "Mehrere Gegenstände exportieren",
     "Add_to_list": "Zu Liste hinzufügen",
     "No_items": "Du hast keine benutzerdefinierten Gegenstände",
     "DETAILS": {
@@ -1085,37 +1085,37 @@
   },
   "DIRTY": {
     "Dialog_title": "Du hast ungespeicherte Änderungen",
-    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
+    "Dialog_description": "Alle Änderungen werden verworfen, wenn du diese Seite verlässt. Bist du sicher?"
   },
   "GC_SUPPLY": {
-    "Title": "Grand Company Supplies",
-    "Search": "Search",
-    "Generate_list": "Create a quick list",
-    "Intro": "Input your levels and click search to get started",
-    "Loading_message": "Loading possible deliveries, this can take up to a minute"
+    "Title": "Liefereinsätze (Staatliche Gesellschaft)",
+    "Search": "Suche",
+    "Generate_list": "Schnellliste anlegen",
+    "Intro": "Gebe deine Stufen ein und drücke \"Suche\", um zu beginnen",
+    "Loading_message": "Lädt mögliche Liefereinsätze, dies kann bis zu einer Minute dauern"
   },
   "DESYNTH": {
-    "Title": "Desynth guide",
+    "Title": "Desynthese-Anleitung",
     "Job": "Job",
-    "Level": "Level",
-    "Intro": "Select a job and input a level to find best items to level up your desynth",
-    "Loading_message": "Loading...",
+    "Level": "Stufe",
+    "Intro": "Wähle einen Job und eine Stufe, um die besten Gegenstände zum Erhöhen der Desynthese-Stufe zu finden",
+    "Loading_message": "Lade...",
     "TAGS": {
-      "Higher_chances": "Higher chances",
-      "Lower_exp": "Lower exp",
-      "Good_chances": "Good chances",
-      "Good_exp": "Good exp",
-      "Lower_chances": "Lower chances",
-      "Higher_exp": "Higher exp",
-      "Very_common": "Very common",
-      "Common": "Common",
-      "Rare": "Rare"
+      "Higher_chances": "Höhere Chancen",
+      "Lower_exp": "Niedrigere Erfahrung",
+      "Good_chances": "Gute Chancen",
+      "Good_exp": "Gute Erfahrung",
+      "Lower_chances": "Niedrigere Chancen",
+      "Higher_exp": "Höhere Erfahrung",
+      "Very_common": "Sehr häufig",
+      "Common": "Häufig",
+      "Rare": "Selten"
     }
   },
   "SUPPORT_US": {
-    "Title": "Help us grow !",
-    "Communication_title": "Talk about the project",
-    "Communication_description": "Let people know about the tool, share rotations, lists. Create videos, blog posts, tweets, everything that lets more people know about Teamcraft really helps the project more than you would think.\n\nWe even prepared a macro for you so you can shout your love everywhere !\n",
+    "Title": "Hilf uns, zu wachsen!",
+    "Communication_title": "Über das Projekt sprechen",
+    "Communication_description": "Lass Leute über das Werkzeug wissen, teile deine Rotations und Listen. Erstelle Videos, Blogposts, Tweets, alles was das Aufsehen der Leute erregt hilft dem Teamcraft-Projekt mehr, als du denkst.\n\nWir haben sogar ein Makro vorbereitet, damit du deine Liebe überall verbreiten kannst!\n",
     "Contribute_title": "Contribute to the project",
     "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
     "Patreon_title": "Support us on patreon",
@@ -1170,17 +1170,17 @@
     "Fights": "Fights",
     "Instance_details": "Instance details",
     "Instance_rewards": "Rewards",
-    "Unlocked_by": "Unlocked by",
-    "Chest_content": "Chest content",
-    "Currencies_reward": "Currencies reward",
-    "Instance_chests": "Chests",
+    "Unlocked_by": "Freigeschaltet durch",
+    "Chest_content": "Schatztruhen-Inhalt",
+    "Currencies_reward": "Währungsbelohnung",
+    "Instance_chests": "Schatztruhen",
     "Position": "Position",
-    "Content": "Content",
+    "Content": "Inhalt",
     "Gil": "Gil",
-    "Level": "Level",
+    "Level": "Stufe",
     "Details": "Details",
-    "RP_Details": "RP Details",
-    "Experience_points": "Experience points",
+    "RP_Details": "Handlungsdetails",
+    "Experience_points": "Erfahrungspunkte",
     "Reputation_points": "Beast tribe reputation",
     "Map": "Map",
     "Leves": "Leves",
