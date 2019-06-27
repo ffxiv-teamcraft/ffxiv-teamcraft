@@ -99,6 +99,7 @@
   "Discounts": "할인",
   "Flat_discount": "금액",
   "Percent_discount": "비율",
+  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "태그를 사용하여 필터링",
     "Tags_filter_reset": "필터 초기화",
