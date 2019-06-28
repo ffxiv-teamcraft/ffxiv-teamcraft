@@ -11,7 +11,7 @@ const assetOutputFolder = path.join(__dirname, '../../apps/client/src/assets/dat
 
 const queue = [];
 
-const queueEmpty$ = Rx.interval(1000).pipe(
+const queueEmpty$ = Rx.interval(10000).pipe(
   filter(() => {
     return queue.length === 0;
   })

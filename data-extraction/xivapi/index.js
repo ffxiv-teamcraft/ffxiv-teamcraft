@@ -4,7 +4,7 @@ const fs = require('fs');
 const http = require('https');
 const Rx = require('rxjs');
 const { map, switchMap, mergeMap, first } = require('rxjs/operators');
-const { Subject, combineLatest } = require('rxjs');
+const { Subject, combineLatest, merge } = require('rxjs');
 const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 
 const nodes = {};
@@ -40,7 +40,8 @@ let todo = [
   'items',
   'aetherytes',
   'achievements',
-  'recipes'
+  'recipes',
+  'actionIcons'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -1075,5 +1076,19 @@ if (hasTodo('recipes')) {
     });
   }, null, () => {
     persistToJsonAsset('recipes', recipes);
+  });
+}
+
+if (hasTodo('actionIcons')) {
+  const icons = {};
+  merge(
+    getAllPages('https://xivapi.com/Action?columns=ID,Icon'),
+    getAllPages('https://xivapi.com/CraftAction?columns=ID,Icon'),
+  ).subscribe(page => {
+    page.Results.forEach(action => {
+      icons[action.ID] = action.Icon;
+    });
+  }, null, () => {
+    persistToJson('action-icons', icons);
   });
 }
