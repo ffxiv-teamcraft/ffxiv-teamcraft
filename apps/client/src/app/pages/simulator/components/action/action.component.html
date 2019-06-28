@@ -3,7 +3,10 @@
        [appXivdbActionTooltip]="action.getId(getJobId())"
        [appXivdbActionTooltipDisabled]="tooltipDisabled"
        [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp || !safe, 'not-enough-cp': notEnoughCp}">
-    <img src="{{action.getId(getJobId()) | actionIcon}}" alt="">
+    <img src="{{action.getId(getJobId()) | actionIcon}}" alt="{{getAlt()}}">
+    <div class="placeholder" *ngIf="(action.getId(getJobId()) | actionIcon) === 'https://www.garlandtools.org/files/icons/action/undefined.png'">
+      {{getAlt()}}
+    </div>
     <div class="red-overlay" *ngIf="notEnoughCp || disabled"></div>
     <i class="material-icons failed" *ngIf="failed || !safe">close</i>
     <span class="cost"
