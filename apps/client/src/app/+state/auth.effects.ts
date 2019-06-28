@@ -107,7 +107,6 @@ export class AuthEffects {
   fetchUserOnAuthenticated$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated),
     switchMap((action: Authenticated) => this.userService.get(action.uid).pipe(
-      filter(user => user && user.$key !== undefined),
       map(user => {
         user.createdAt = action.createdAt;
         return user;
