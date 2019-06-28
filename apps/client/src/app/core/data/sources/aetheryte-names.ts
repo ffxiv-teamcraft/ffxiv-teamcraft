@@ -466,5 +466,95 @@ export const aetheryteNames = {
     'de': 'Goldbecken (Yanxia)',
     'ja': '無二江流域（ヤンサ方面）',
     'fr': 'Bassin rutilant (Yanxia)'
+  },
+  '133': {
+    'en': 'The Crystarium Aetheryte Plaza',
+    'de': 'Ätherytenplatz',
+    'ja': 'エーテライト・プラザ',
+    'fr': 'Place de l\'Éthérite'
+  },
+  '134': {
+    'en': 'Eulmore Aetheryte Plaza',
+    'de': 'Ätherytenplatz',
+    'ja': 'エーテライト・プラザ',
+    'fr': 'Place de l\'Éthérite'
+  },
+  '135': {
+    'en': 'Southeast Derelicts',
+    'de': 'Wrackstadt (Südosten)',
+    'ja': '廃船街南東',
+    'fr': 'Sud-est de La Fange'
+  },
+  '149': {
+    'en': 'Musica Universalis Markets',
+    'de': 'Musica Universalis',
+    'ja': 'マーケット（ムジカ・ユニバーサリス）',
+    'fr': 'Marché (Musica Universalis)'
+  },
+  '150': {
+    'en': 'Temenos Rookery',
+    'de': 'Tierhof Temenos',
+    'ja': 'テメノスルカリー牧場',
+    'fr': 'Couvée de Temenos'
+  },
+  '151': {
+    'en': 'The Dossal Gate',
+    'de': 'Propylaeum (Okular)',
+    'ja': 'ドッサル大門前（星見の間）',
+    'fr': 'La Courtine'
+  },
+  '152': {
+    'en': 'The Pendants',
+    'de': 'Isomorph-Quartiere',
+    'ja': 'ペンダント居住館前',
+    'fr': 'Les Pendants'
+  },
+  '153': {
+    'en': 'The Amaro Launch',
+    'de': 'Amaro-Flugsteig',
+    'ja': 'アマロ桟橋前',
+    'fr': 'Jetée des amaros'
+  },
+  '154': {
+    'en': 'The Crystalline Mean',
+    'de': 'Manufaktur der Gemeinschaft',
+    'ja': 'ミーン工芸館前',
+    'fr': 'Halle du Juste'
+  },
+  '155': {
+    'en': 'The Cabinet of Curiosity',
+    'de': 'Kabinett der Kuriositäten',
+    'ja': '博物陳列館前',
+    'fr': 'Cabinet de curiosités'
+  },
+  '156': {
+    'en': 'Tessellation (Lakeland)',
+    'de': 'Mosaikbrücke (ins Seenland)',
+    'ja': 'テセレーション鉄橋（レイクランド方面）',
+    'fr': 'Le Pavage'
+  },
+  '157': {
+    'en': 'The Mainstay',
+    'de': 'Grundpfeiler der Ordnung',
+    'ja': 'メインステイ',
+    'fr': 'Ballast principal'
+  },
+  '158': {
+    'en': 'Nightsoil Pots',
+    'de': 'Gärten der Gestrigen Genüsse',
+    'ja': '腐臭の花園',
+    'fr': 'Les Goguenots fleuris'
+  },
+  '159': {
+    'en': 'The Glory Gate',
+    'de': 'Tor der Herrlichkeit',
+    'ja': '栄光の門',
+    'fr': 'Porte de la gloire'
+  },
+  '160': {
+    'en': 'The Path to Glory (Kholusia)',
+    'de': 'Pfad zum Ruhm (Kholusia)',
+    'ja': '栄光の道（コルシア島方面）',
+    'fr': 'Marches de la Gloire (Kholusia)'
   }
 };

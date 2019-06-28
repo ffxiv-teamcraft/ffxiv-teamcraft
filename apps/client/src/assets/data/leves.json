@@ -18224,5 +18224,1279 @@
       "fr": "PÊC"
     },
     "lvl": 68
+  },
+  "1403": {
+    "en": "Built to Last",
+    "ja": "製作依頼：実用家具作りのための材木",
+    "de": "Möbelreihe „Robusta“",
+    "fr": "Fabrication: du chêne blanc utilitaire",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 70
+  },
+  "1404": {
+    "en": "Just Starting Out",
+    "ja": "製作依頼：若手漁師に贈る釣り竿",
+    "de": "Angeln mit Zukunft",
+    "fr": "Fabrication: une première canne à pêche",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 70
+  },
+  "1405": {
+    "en": "Playing the Market",
+    "ja": "大口依頼：交易のための木首飾り",
+    "de": "Eine Menge Holz",
+    "fr": "Grosse commande: des colliers en chêne blanc",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 70
+  },
+  "1406": {
+    "en": "A Stronger Offense",
+    "ja": "製作依頼：衛兵団の訓練槍",
+    "de": "Trainingsspeere",
+    "fr": "Fabrication: des hasts pour la bleusaille",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 72
+  },
+  "1407": {
+    "en": "Taking Aim",
+    "ja": "製作依頼：交易のための木弓",
+    "de": "Den Bogen raushaben",
+    "fr": "Fabrication: des arcs pour chasseurs",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 72
+  },
+  "1408": {
+    "en": "Understaffed",
+    "ja": "大口依頼：適性を見極める杖",
+    "de": "Auswahl der Heiler",
+    "fr": "Grosse commande: soigner à la canne",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 72
+  },
+  "1409": {
+    "en": "Patient Patients",
+    "ja": "製作依頼：診療台作りのための木材",
+    "de": "Beständige Behandlungsbetten",
+    "fr": "Fabrication: les patients touchent du bois",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 74
+  },
+  "1410": {
+    "en": "Ground to a Halt",
+    "ja": "製作依頼：守秘義務ありの依頼",
+    "de": "Streng geheimer Auftrag",
+    "fr": "Fabrication: je me suis cassé la meule",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 74
+  },
+  "1411": {
+    "en": "Horde of the Rings",
+    "ja": "大口依頼：交易のための木腕輪",
+    "de": "Mehr Holz - noch mehr Gil",
+    "fr": "Grosse commande: des bracelets en frêne blanc",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 74
+  },
+  "1412": {
+    "en": "The Right Tool for the Job",
+    "ja": "製作依頼：魔法兵用の杖",
+    "de": "Magische Kriegsführung",
+    "fr": "Fabrication: sceptres d'apprentis-sorciers",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 76
+  },
+  "1413": {
+    "en": "Sleep on It",
+    "ja": "製作依頼：実用的な紡ぎ車",
+    "de": "Allerhöchster Schlafkomfort",
+    "fr": "Fabrication: un parfait rouet pour un lit",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 76
+  },
+  "1414": {
+    "en": "A Miss and a Hit",
+    "ja": "大口依頼：交易のための高級木弓",
+    "de": "Umsatzsteigerung erwünscht",
+    "fr": "Grosse commande: des arcs pour experts",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 76
+  },
+  "1415": {
+    "en": "Off to a Good Staff",
+    "ja": "製作依頼：衛生兵用の杖",
+    "de": "Mit Geschenken an die Front",
+    "fr": "Fabrication: cannes pour soigneurs confirmés",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 78
+  },
+  "1416": {
+    "en": "Kindling the Flame",
+    "ja": "製作依頼：交易のための高級指輪",
+    "de": "Hölzerne Romantik",
+    "fr": "Fabrication: dites-le avec une bague en bois",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 78
+  },
+  "1417": {
+    "en": "Safety First",
+    "ja": "大口依頼：お守りがわりの耳飾り",
+    "de": "Schutz im Ohr",
+    "fr": "Grosse commande: boucles d'oreilles protectrices",
+    "job": {
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 78
+  },
+  "1418": {
+    "en": "Ware and Chair",
+    "ja": "製作依頼：実用家具作りのための皮革材",
+    "de": "Möbel für die Ewigkeit",
+    "fr": "Fabrication: du smilodon dans les meubles",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 70
+  },
+  "1419": {
+    "en": "Girding for Glory",
+    "ja": "製作依頼：定番のスミロドン革脚衣",
+    "de": "Draußen die Hosen an",
+    "fr": "Fabrication: avoir des jambes de smilodon",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 70
+  },
+  "1420": {
+    "en": "Band Substances",
+    "ja": "大口依頼：革腕輪の在庫補充",
+    "de": "Armbandmangel",
+    "fr": "Grosse commande: pénurie de bracelets",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 70
+  },
+  "1421": {
+    "en": "Breeches of Trust",
+    "ja": "製作依頼：衛兵団の訓練脚衣",
+    "de": "Hosen zum Strammziehen",
+    "fr": "Fabrication: des braies pour les recrues",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 72
+  },
+  "1422": {
+    "en": "Glove Me Tender",
+    "ja": "製作依頼：特注のグライダー革手袋",
+    "de": "Ein Hauch von Nichts",
+    "fr": "Fabrication: des gants pour un connaisseur",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 72
+  },
+  "1423": {
+    "en": "A Slippery Slope",
+    "ja": "大口依頼：司書のための長靴",
+    "de": "Arbeitsplatzsicherheit",
+    "fr": "Grosse commande: des bottes pour bibliothécaires",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 72
+  },
+  "1424": {
+    "en": "Peace in Rest",
+    "ja": "製作依頼：診療台作りのための皮革材",
+    "de": "Auf Raptoren gebettet",
+    "fr": "Fabrication: le confort du cuir d'atrociraptor",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 74
+  },
+  "1425": {
+    "en": "A Heady Endeavor",
+    "ja": "製作依頼：特注のアトロシラプトル革面具",
+    "de": "Gutes Leder ist Kopfsache",
+    "fr": "Fabrication: pas de saurien pour les vauriens",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 74
+  },
+  "1426": {
+    "en": "At Your Neck and Call",
+    "ja": "大口依頼：新弓兵部隊の首飾り",
+    "de": "Schmucke Schützen",
+    "fr": "Grosse commande: colliers pour archers unis",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 74
+  },
+  "1427": {
+    "en": "Protecting the Nuts",
+    "ja": "製作依頼：特注のゾヌール革コート",
+    "de": "Beim Mantel nur Zonure",
+    "fr": "Fabrication: un beau manteau de zonure",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 76
+  },
+  "1428": {
+    "en": "If I Could Walk a Thousand Malms",
+    "ja": "製作依頼：資源調査用の革靴",
+    "de": "3-Wetter-Schuhe",
+    "fr": "Fabrication: chaussures de marche pour naturalistes",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 76
+  },
+  "1429": {
+    "en": "Strike True",
+    "ja": "大口依頼：新弓兵部隊の革手袋",
+    "de": "Für die Besten das Beste",
+    "fr": "Grosse commande: gants pour archers braves",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 76
+  },
+  "1430": {
+    "en": "Fit for a Friend",
+    "ja": "製作依頼：負傷兵に贈る革手袋",
+    "de": "Verdiensthandschuhe",
+    "fr": "Fabrication: pour les mains d'une héroïne",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 78
+  },
+  "1431": {
+    "en": "Into the Storm",
+    "ja": "製作依頼：特注のシースワロー革上衣",
+    "de": "Leder aus dem Meer",
+    "fr": "Fabrication: une jaque pour un hurluberlu",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 78
+  },
+  "1432": {
+    "en": "A Shoe In",
+    "ja": "大口依頼：看護師用の靴",
+    "de": "Schuhe für die Schwestern",
+    "fr": "Grosse commande: chaussons nos infirmiers",
+    "job": {
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 78
+  },
+  "1433": {
+    "en": "The Gold Experience",
+    "ja": "製作依頼：備蓄用の硬強金小塊",
+    "de": "Immer was auf Lager",
+    "fr": "Fabrication: des réserves d'or incarnat",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 70
+  },
+  "1434": {
+    "en": "Fire Sale",
+    "ja": "製作依頼：試験販売用の銃剣",
+    "de": "Waffentestverkauf",
+    "fr": "Fabrication: nouvel article en vente",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 70
+  },
+  "1435": {
+    "en": "Here Comes the Hammer",
+    "ja": "大口依頼：交易のための槌",
+    "de": "Hammermäßige Umsätze erwartet",
+    "fr": "Grosse commande: des maillets en masse",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 70
+  },
+  "1436": {
+    "en": "Selective Logging",
+    "ja": "製作依頼：大樹を斬る大斧",
+    "de": "Wie die Axt in der Monsterhorde",
+    "fr": "Fabrication: une bonne grosse hache",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 72
+  },
+  "1437": {
+    "en": "Heavy Hitter",
+    "ja": "製作依頼：定番商品の格闘武器",
+    "de": "Immer feste drauf",
+    "fr": "Fabrication: des poings dans la face des brigands",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 72
+  },
+  "1438": {
+    "en": "Enlistment Highs",
+    "ja": "大口依頼：衛兵団の訓練剣",
+    "de": "Trainingsschwerter",
+    "fr": "Grosse commande: les épées des recrues",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 72
+  },
+  "1439": {
+    "en": "Instruments of Distraction",
+    "ja": "製作依頼：補修用の霊青材",
+    "de": "Beflissen zerschlissen",
+    "fr": "Fabrication: réparation à l'azuresprit",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 74
+  },
+  "1440": {
+    "en": "Halfhearted Effort",
+    "ja": "製作依頼：工兵隊用のノコ",
+    "de": "Sägen für die Pioniere",
+    "fr": "Fabrication: le génie de la scie ronde",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 74
+  },
+  "1441": {
+    "en": "Nip It in the Bud",
+    "ja": "大口依頼：果樹園拡張に伴う道具",
+    "de": "Mehr Hunger, mehr Obst, mehr Arbeit",
+    "fr": "Grosse commande: outils pour jardiniers",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 74
+  },
+  "1442": {
+    "en": "Dodge Once, Cut Twice",
+    "ja": "製作依頼：護身用の双剣",
+    "de": "Zwei schützen besser als eine",
+    "fr": "Fabrication: des dagues contre la mauvaise haleine",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 76
+  },
+  "1443": {
+    "en": "Idol Hands",
+    "ja": "製作依頼：団長に憧れる者たち",
+    "de": "Ein Chakram-schwingendes Vorbild",
+    "fr": "Fabrication: des chakrams pour les admirateurs",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 76
+  },
+  "1444": {
+    "en": "Cooking for the Future",
+    "ja": "大口依頼：キレキレのナイフ",
+    "de": "Messer für Kinderhände",
+    "fr": "Grosse commande: couteaux de cuisine pour enfants",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 76
+  },
+  "1445": {
+    "en": "Bae Blade",
+    "ja": "製作依頼：観賞用の打刀",
+    "de": "Scharfe Kunst",
+    "fr": "Fabrication: esthétisme et efficacité tranchants",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 78
+  },
+  "1446": {
+    "en": "Under the Fool Moon",
+    "ja": "製作依頼：導入検討用の銃器",
+    "de": "Feuerwaffen zu Testzwecken",
+    "fr": "Fabrication: des armes à feu expérimentales",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 78
+  },
+  "1447": {
+    "en": "Keeping Loyalty",
+    "ja": "大口依頼：従業員への報奨品",
+    "de": "Fleißige Mitarbeit wird belohnt",
+    "fr": "Grosse commande: cadeau pour nos artisans",
+    "job": {
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 78
+  },
+  "1448": {
+    "en": "Shielding the Realm",
+    "ja": "製作依頼：入団試験用の盾",
+    "de": "Schilde zum Draufhauen",
+    "fr": "Fabrication: des écus pour les recrues",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 70
+  },
+  "1449": {
+    "en": "Time to Fry",
+    "ja": "製作依頼：ピカピカのフライパン",
+    "de": "Eine Pfanne mit Panne",
+    "fr": "Fabrication: une poêle à frire toute neuve",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 70
+  },
+  "1450": {
+    "en": "A Head of Demand",
+    "ja": "大口依頼：売れ筋の硬強金兜",
+    "de": "Allzweckhelme",
+    "fr": "Grosse commande: des casques très utiles",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 70
+  },
+  "1451": {
+    "en": "Scheduled Maintenance",
+    "ja": "製作依頼：修理用の硬強金塊",
+    "de": "Barren für die Ballistik",
+    "fr": "Fabrication: des lingots pour l'entretien",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 72
+  },
+  "1452": {
+    "en": "Hedging Bets",
+    "ja": "製作依頼：特注の硬強金鎧",
+    "de": "Sicherheit geht vor",
+    "fr": "Fabrication: un surcot sur mesure",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 72
+  },
+  "1453": {
+    "en": "Wrapped Knuckles",
+    "ja": "大口依頼：衛兵団の訓練篭手",
+    "de": "Zum Schutz der Rekruten",
+    "fr": "Grosse commande: les mains des recrues",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 72
+  },
+  "1454": {
+    "en": "Catching an Earful",
+    "ja": "製作依頼：導入検討用のヘッドギア",
+    "de": "Viel um die Ohren",
+    "fr": "Fabrication: attention oreilles délicates",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 74
+  },
+  "1455": {
+    "en": "A New Regular",
+    "ja": "製作依頼：特注の霊青岩篭手",
+    "de": "Ein zufriedener Kunde",
+    "fr": "Fabrication: de l'azuresprit aux mains",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 74
+  },
+  "1456": {
+    "en": "The Proper Precautions",
+    "ja": "大口依頼：調薬用の蒸留道具",
+    "de": "Ohne Nebenwirkungen",
+    "fr": "Grosse commande: des remèdes alambiqués",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 74
+  },
+  "1457": {
+    "en": "No Scope",
+    "ja": "製作依頼：試作用のチタン銅塊",
+    "de": "Mehr Schüsse, mehr Treffer",
+    "fr": "Fabrication: tir multiple de bronze titané",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 76
+  },
+  "1458": {
+    "en": "Signed, Shield, Delivered",
+    "ja": "製作依頼：防御陣形用の大盾",
+    "de": "Ein Schild in der Brandung",
+    "fr": "Fabrication: pavoiser en formation serrée",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 76
+  },
+  "1459": {
+    "en": "A Budding Business",
+    "ja": "大口依頼：特注のチタン銅装甲",
+    "de": "Viele, viele Rüstungen",
+    "fr": "Grosse commande: des tassettes pour les camarades",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 76
+  },
+  "1460": {
+    "en": "Trial and Error",
+    "ja": "製作依頼：比較実験用の鎖帷子",
+    "de": "Materialvergleich",
+    "fr": "Fabrication: y a que le mithril noble qui m'aille",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 78
+  },
+  "1461": {
+    "en": "One Foot Forward",
+    "ja": "製作依頼：作業用の装甲靴",
+    "de": "Neue Sicherheitsstandards",
+    "fr": "Fabrication: protection renforcée pour les pieds",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 78
+  },
+  "1462": {
+    "en": "Joined at the Waist",
+    "ja": "大口依頼：特注の闇霊銀装甲帯",
+    "de": "Rüstungen machen Leute",
+    "fr": "Grosse commande: avoir les reins solides",
+    "job": {
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 78
+  },
+  "1463": {
+    "en": "Slippery Service",
+    "ja": "製作依頼：サラサラのオイル！",
+    "de": "Ohne Öl nix los",
+    "fr": "Fabrication: de l'huile pour que ça cuise",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 70
+  },
+  "1464": {
+    "en": "Meet for Meat",
+    "ja": "製作依頼：活力のレイルのグリル",
+    "de": "Gegrillte Rallen für knurrende Mägen",
+    "fr": "Fabrication: grillade de râle pour les braves",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 70
+  },
+  "1465": {
+    "en": "Cure for What Ails",
+    "ja": "大口依頼：朝食の一杯",
+    "de": "Ein Schluck am Morgen vertreibt die Sorgen",
+    "fr": "Grosse commande: jus de légume requinquant",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 70
+  },
+  "1466": {
+    "en": "His Dark Utensils",
+    "ja": "製作依頼：夜闇を思わせるパスタ",
+    "de": "Schwarz wie die Nacht",
+    "fr": "Fabrication: des pâtes noires comme la nuit",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 72
+  },
+  "1467": {
+    "en": "Soup for the Soldier",
+    "ja": "製作依頼：栄養たっぷりのスープ",
+    "de": "Ein nahrhaftes Süppchen",
+    "fr": "Fabrication: la soupe du vieux soldat",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 72
+  },
+  "1468": {
+    "en": "Sweet Tooth",
+    "ja": "大口依頼：アマアマのキャラメル！",
+    "de": "Zuckersüßes Karamell",
+    "fr": "Grosse commande: miam, du bon caramel!",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 72
+  },
+  "1469": {
+    "en": "Can't Eat Just One",
+    "ja": "製作依頼：ピリピリのビネガー！",
+    "de": "Mal Süßes, mal Saures",
+    "fr": "Fabrication: une pointe de vinaigre",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 74
+  },
+  "1470": {
+    "en": "One Last Meal",
+    "ja": "製作依頼：思い出のソテー",
+    "de": "Erinnerungen wachkochen",
+    "fr": "Fabrication: sauté aux champignons nostalgique",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 74
+  },
+  "1471": {
+    "en": "Mixology",
+    "ja": "大口依頼：カクテル用のトマトジュース",
+    "de": "Sternhagelvoll mit Tomatensaft",
+    "fr": "Grosse commande: du jus de tomate pour les cocktails",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 74
+  },
+  "1472": {
+    "en": "On a Full Stomach",
+    "ja": "製作依頼：ウマウマのソーセージ！",
+    "de": "Würstchen gegen das Defizit",
+    "fr": "Fabrication: des saucisses bien juteuses",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 76
+  },
+  "1473": {
+    "en": "A Good Omen",
+    "ja": "製作依頼：快気祈願の料理",
+    "de": "Pfeffer macht munter",
+    "fr": "Fabrication: un peu de piquant pour un vieil homme",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 76
+  },
+  "1474": {
+    "en": "Teetotally",
+    "ja": "大口依頼：安定のマサラチャイ",
+    "de": "Für die Teetrinker",
+    "fr": "Grosse commande: du thé masala en masse",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 76
+  },
+  "1475": {
+    "en": "Super Dark Times",
+    "ja": "製作依頼：夜闇を思わせるリゾット",
+    "de": "Dunkel, dunkler, Risotto",
+    "fr": "Fabrication: le riz vire aussi au noir",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 78
+  },
+  "1476": {
+    "en": "A Happy End",
+    "ja": "製作依頼：快気祝いのパエリア",
+    "de": "Glückwunsch-Paella",
+    "fr": "Fabrication: une paella festive",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 78
+  },
+  "1477": {
+    "en": "A Cookie for Your Troubles",
+    "ja": "大口依頼：サクサクのクッキー！",
+    "de": "Wirklich verfressen",
+    "fr": "Grosse commande: un rêve de biscuits au café",
+    "job": {
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 78
+  },
+  "1478": {
+    "en": "Another Man's Ink",
+    "ja": "製作依頼：書類用のインク",
+    "de": "Tinte für den Vorsteher",
+    "fr": "Fabrication: de l'encre pour le patron",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 70
+  },
+  "1479": {
+    "en": "Keeping Magic Alive",
+    "ja": "製作依頼：所蔵するための魔道書",
+    "de": "Abschreiben erbeten",
+    "fr": "Fabrication: copier les grimoires",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 70
+  },
+  "1480": {
+    "en": "A Time for Peace",
+    "ja": "大口依頼：戦術研究用の軍学書",
+    "de": "Strategen von morgen",
+    "fr": "Grosse commande: manuels de stratégie",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 70
+  },
+  "1481": {
+    "en": "Make It Bigger",
+    "ja": "製作依頼：魔装砲改良計画",
+    "de": "Dämonengeschütze 2.0",
+    "fr": "Fabrication: le pouvoir accélérateur des pentacles",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 72
+  },
+  "1482": {
+    "en": "An Eye for Healing",
+    "ja": "製作依頼：拡大鏡を磨く幻水",
+    "de": "Visionäre Lupenpolitur",
+    "fr": "Fabrication: une précision vitale",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 72
+  },
+  "1483": {
+    "en": "Making Ends Meet",
+    "ja": "大口依頼：生活費稼ぎの秘策",
+    "de": "Materia als Nebenverdienst",
+    "fr": "Grosse commande: de l'eau de symbiose salvatrice",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 72
+  },
+  "1484": {
+    "en": "Amaro Kart",
+    "ja": "製作依頼：荷車作りのための接着剤",
+    "de": "Ein Wagen für den Tierhof",
+    "fr": "Fabrication: de la glu végétale pour les bêtes",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 74
+  },
+  "1485": {
+    "en": "Conserving Combat",
+    "ja": "製作依頼：所蔵するための軍学書",
+    "de": "Kopien als Strategie",
+    "fr": "Fabrication: stratégie de réserves",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 74
+  },
+  "1486": {
+    "en": "5-bell Energy",
+    "ja": "大口依頼：緊急時用の水薬",
+    "de": "Doping für die Manufaktur",
+    "fr": "Grosse commande: les virtuoses de l'artisanat",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 74
+  },
+  "1487": {
+    "en": "Growing Up",
+    "ja": "製作依頼：食費節約の秘策",
+    "de": "Selbstversorger",
+    "fr": "Fabrication: formule d'autosuffisance",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 76
+  },
+  "1488": {
+    "en": "A Greater Grimoire",
+    "ja": "製作依頼：魔装砲再改良計画",
+    "de": "Dämonengeschütze 2.1",
+    "fr": "Fabrication: des pentagrammes toujours plus précis",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 76
+  },
+  "1489": {
+    "en": "Crafty Concoctions",
+    "ja": "大口依頼：精密仕上げ用の水薬",
+    "de": "Hilfsmittel für Handwerker",
+    "fr": "Grosse commande: la maîtrise de l'artisanat",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 76
+  },
+  "1490": {
+    "en": "A Labor of Love",
+    "ja": "製作依頼：労働続行の秘策",
+    "de": "Noch mehr Überstunden",
+    "fr": "Fabrication: travailleur infatigable",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 78
+  },
+  "1491": {
+    "en": "Supreme Official Strategy Guide",
+    "ja": "製作依頼：金属表紙の軍学書",
+    "de": "Buchbewahrung",
+    "fr": "Fabrication: la stratégie de la couverture blindée",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 78
+  },
+  "1492": {
+    "en": "Mindful Medicine",
+    "ja": "大口依頼：治療着を洗浄する幻水",
+    "de": "Die Lösung für Heilmagier",
+    "fr": "Grosse commande: l'eau de l'esprit médical",
+    "job": {
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 78
+  },
+  "1493": {
+    "en": "Flax Wax",
+    "ja": "製作依頼：実用家具作りのための糸",
+    "de": "Der weiße Faden",
+    "fr": "Fabrication: du lin blanc pour des meubles",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 70
+  },
+  "1494": {
+    "en": "Lovely Leggings",
+    "ja": "製作依頼：定番の白亜麻布脚衣",
+    "de": "Auf weiße Hose machen",
+    "fr": "Fabrication: des bas-de-corps robustes et peu coûteux",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 70
+  },
+  "1495": {
+    "en": "Turban in Training",
+    "ja": "大口依頼：新人研修用のターバン",
+    "de": "Initiationsturbane",
+    "fr": "Grosse commande: des turbans pour les aspirants artisans",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 70
+  },
+  "1496": {
+    "en": "Suits You",
+    "ja": "製作依頼：衛兵団の訓練胴着",
+    "de": "Die richtige Trainingskleidung",
+    "fr": "Fabrication: des doublets pour les archers",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 72
+  },
+  "1497": {
+    "en": "Legs for Days",
+    "ja": "製作依頼：ロンゾ向けの脚衣",
+    "de": "Pluderhosen? Nein, Hosen in Ronso-Größe!",
+    "fr": "Fabrication: un bas-de-corps taille Ronso",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 72
+  },
+  "1498": {
+    "en": "Hair Do No Harm",
+    "ja": "大口依頼：手術用の帽子",
+    "de": "Medizi-Kopfbedeckungen",
+    "fr": "Grosse commande: de quoi coiffer le personnel soignant",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 72
+  },
+  "1499": {
+    "en": "A Tender Table",
+    "ja": "製作依頼：診療台作りのための皮革材",
+    "de": "Feenhaft genähtes Bettzeug",
+    "fr": "Fabrication: du fil solide pour des tables d'examen",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 74
+  },
+  "1500": {
+    "en": "Hunting Season",
+    "ja": "製作依頼：斥候用の偽装帽子",
+    "de": "Tarnkappenspäher",
+    "fr": "Fabrication: protégeons la tête des éclaireurs",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 74
   }
 }

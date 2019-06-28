@@ -1,7 +1,7 @@
 {
   "65536": {
     "name": {
-      "en": "Testdfghjkl;",
+      "en": "",
       "ja": "",
       "de": "",
       "fr": ""
@@ -16851,7 +16851,7 @@
     "name": {
       "en": "Into the Mists",
       "ja": "調査隊、出発！",
-      "de": "Forschung im Drachen-Korridor",
+      "de": "Forschung im Drachenkorridor",
       "fr": "Départ pour Dravania"
     },
     "icon": "/i/071000/071221.png"
@@ -28891,408 +28891,408 @@
   },
   "68746": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Worth Fighting For",
+      "ja": "真に守りたいもの",
+      "de": "Wofür es sich zu kämpfen lohnt",
+      "fr": "Protection rapprochée"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062401.png"
   },
   "68747": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Monk's Legacy",
+      "ja": "ラールガー星導教を継ぐ者として",
+      "de": "Das Vermächtnis eines Mönchs",
+      "fr": "Le dernier disciple du Poing de Rhalgr"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062402.png"
   },
   "68748": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Once, Twice, Three Times a Warrior",
+      "ja": "戦士の帰還",
+      "de": "Verletzte Kriegerherzen",
+      "fr": "Le retour du guerrier"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062403.png"
   },
   "68749": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Gone but Not Forgiven",
+      "ja": "漆黒の竜に捧ぐ",
+      "de": "Elegie der schwarzen Schwingen",
+      "fr": "À la mémoire d'un vieil ennemi"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062404.png"
   },
   "68750": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Harmony from the Heavens",
+      "ja": "蒼天に響く三重奏",
+      "de": "Balladen, die das Leben schreibt",
+      "fr": "Trouver l'inspiration"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062405.png"
   },
   "68751": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Whence the Healing Springs",
+      "ja": "癒しの力の源",
+      "de": "Heilung kommt aus dem Herzen",
+      "fr": "Où l'élémentalisme puise sa source"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062406.png"
   },
   "68752": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Home for a Tome",
+      "ja": "ラライの一念、岩をも通せ",
+      "de": "Bewahrung des Wissens",
+      "fr": "Lalai, censurée!"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062407.png"
   },
   "68753": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "To Be Second Best",
+      "ja": "二番目の召喚士",
+      "de": "Bedenken eines Beschwörers",
+      "fr": "La dubitation d'un invocateur"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062408.png"
   },
   "68754": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "True Beauty",
+      "ja": "新次元の学者",
+      "de": "Ein gelehrter Versuch",
+      "fr": "Remède dimensionnel"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062409.png"
   },
   "68755": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Oboro's Big Idea",
+      "ja": "朧げな秘策",
+      "de": "Ein Bad mit der Krähe",
+      "fr": "Et pour quelques coupes de plus"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062410.png"
   },
   "68756": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Machinists for the Morrow",
+      "ja": "捕捉！機工士たちの明日",
+      "de": "Das Heulen der jungen Himmelhunde",
+      "fr": "Prendre la relève"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062411.png"
   },
   "68757": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Our Closure",
+      "ja": "歩み続ける孤高の騎士へ",
+      "de": "Der einsame Pfad des stolzen Dunkelritters",
+      "fr": "Lettre au chevalier jamais oublié"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062412.png"
   },
   "68758": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Love, Astrologically",
+      "ja": "恋するレヴェヴァ",
+      "de": "In Levevas Herz",
+      "fr": "Le cœur dans les étoiles"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062413.png"
   },
   "68759": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Legend of Musosai",
+      "ja": "世直しムソウサイ伝",
+      "de": "Das Vermächtnis eines Samurai",
+      "fr": "L'héritage de Musosai"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062414.png"
   },
   "68760": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Succession of Steel",
+      "ja": "その志、剣を通じて受け継がれん",
+      "de": "Rapier voran, der Zukunft entgegen",
+      "fr": "La relève de l'Ouragan pourpre"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062415.png"
   },
   "68761": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Gunblades of the Patriots",
+      "ja": "もうひとりのガンブレイカー",
+      "de": "Wo das Herz zuhause ist",
+      "fr": "À la poursuite d'un autre pistosabreur"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062417.png"
   },
   "68762": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Rising to the Occasion",
+      "ja": "新天地へと舞い挑め",
+      "de": "Tanz in die Zukunft",
+      "fr": "Le successeur de Nashmeira"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062418.png"
   },
   "68763": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Iola, Forgemaster",
+      "ja": "若き経営者、イオラ",
+      "de": "Ihres Glückes Schmied",
+      "fr": "La motivation d'une métallurgiste"
     },
     "icon": "/i/071000/071221.png"
   },
   "68764": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "To Struggle Nu Mou",
+      "ja": "新たな顧客はン・モゥ族",
+      "de": "Zukünftige Stammkunden",
+      "fr": "Voyage d'affaires chez les Nu Mou"
     },
     "icon": "/i/071000/071221.png"
   },
   "68765": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Iron Bellows",
+      "ja": "黒鉄工房",
+      "de": "Schmiede gut, alles gut",
+      "fr": "Pour la grande gloire de la soufflerie"
     },
     "icon": "/i/071000/071221.png"
   },
   "68766": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Cherished Memories",
+      "ja": "実録データ001「熟練の新入り職人」",
+      "de": "Die Erinnerungswerkstatt",
+      "fr": "Sauvegarde 001 [Du nouveau chez les façonniers]"
     },
     "icon": "/i/071000/071221.png"
   },
   "68767": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "For Sentimental Reasons",
+      "ja": "実録データ002「工房を彩りし職人」",
+      "de": "Erinnerung an Meister Harigg",
+      "fr": "Sauvegarde 002 [Des souvenirs si précieux]"
     },
     "icon": "/i/071000/071221.png"
   },
   "68768": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Notes of Bond Restoring",
+      "ja": "実録データ003「絆を修復せし職人」",
+      "de": "Restaurierung der Familienbande",
+      "fr": "Sauvegarde 003 [Les liens qui nous unissent]"
     },
     "icon": "/i/071000/071221.png"
   },
   "68769": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Friends of a Feather",
+      "ja": "獣医師ベスリク",
+      "de": "Bethric, Veterinär aus Leidenschaft",
+      "fr": "Cuisine de vétérinaire"
     },
     "icon": "/i/071000/071221.png"
   },
   "68770": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Where We Belong",
+      "ja": "生きるべき場所",
+      "de": "Heimat ist da, wo man sich Zuhause fühlt",
+      "fr": "Parmi les siens, c'est moins bien"
     },
     "icon": "/i/071000/071221.png"
   },
   "68771": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Healing Old Wounds",
+      "ja": "古傷を癒して",
+      "de": "Alte Wunden heilen",
+      "fr": "Un nouvel envol"
     },
     "icon": "/i/071000/071221.png"
   },
   "68772": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "On the Trail of a Myth",
+      "ja": "幻の巨大生物を追え！",
+      "de": "Es war einmal ein Pflanzenwesen",
+      "fr": "Une responsable irresponsable"
     },
     "icon": "/i/071000/071221.png"
   },
   "68773": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Shedding Light on the Myth",
+      "ja": "幻の生物シムーンは実在した！？",
+      "de": "Auf den Spuren der Samiel",
+      "fr": "Simoun fraude"
     },
     "icon": "/i/071000/071221.png"
   },
   "68774": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Myth Takes Form",
+      "ja": "幻の生物シムーンの真相に迫る！",
+      "de": "Die große, brüllende Wahrheit",
+      "fr": "Simoun m'était conté"
     },
     "icon": "/i/071000/071221.png"
   },
   "68775": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Well Eel Be Damned",
+      "ja": "孤独な漁師",
+      "de": "Die Leiden des jungen Fischers",
+      "fr": "Un pêcheur visionnaire"
     },
     "icon": "/i/071000/071221.png"
   },
   "68776": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fishing for Confidence",
+      "ja": "紙と魚と",
+      "de": "Frischer Fisch für Frithrik",
+      "fr": "Un pêcheur plutôt doué"
     },
     "icon": "/i/071000/071221.png"
   },
   "68777": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Morsel of the Deep",
+      "ja": "水晶患いの治療法",
+      "de": "Von Krabben, Kummer und Krankheit",
+      "fr": "Un pêcheur reconnu"
     },
     "icon": "/i/071000/071221.png"
   },
   "68778": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "For Every Child a Star",
+      "ja": "クリスタリウムを照らす光",
+      "de": "Ein Leuchten in den Augen",
+      "fr": "Peur du noir"
     },
     "icon": "/i/071000/071221.png"
   },
   "68779": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Man with Too Many Scars",
+      "ja": "顔に傷のある男",
+      "de": "Jagd auf eine Tugend",
+      "fr": "Le guerrier à la balafre"
     },
     "icon": "/i/071000/071221.png"
   },
   "68780": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Shaped by Tragedy",
+      "ja": "あの忘れえぬ日々",
+      "de": "Der Tag, an dem Milinda starb",
+      "fr": "Le jour où tout a basculé"
     },
     "icon": "/i/071000/071221.png"
   },
   "68781": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Defined by Loss",
+      "ja": "追憶せしは……",
+      "de": "Der Schmuck aus Voeburt",
+      "fr": "La piste du collier"
     },
     "icon": "/i/071000/071221.png"
   },
   "68782": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Princess and Her Knight",
+      "ja": "ブランデンとソールディア",
+      "de": "Branden und Prinzessin Sauldia",
+      "fr": "Le guerrier et la princesse"
     },
     "icon": "/i/071000/071221.png"
   },
   "68783": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Hardened Heart",
+      "ja": "揺れる天秤",
+      "de": "Ob Mitleid oder Hass",
+      "fr": "Naissance d'un bourreau"
     },
     "icon": "/i/071000/071221.png"
   },
   "68784": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "To Have Loved and Lost",
+      "ja": "いつか君が言った言葉",
+      "de": "Brandens Seele",
+      "fr": "Pardon et repentir"
     },
     "icon": "/i/071000/071221.png"
   },
   "68785": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Shall We Dance",
+      "ja": "踊り子の到来",
+      "de": "Einladung zum Tanz",
+      "fr": "Entrez dans la danse!"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062418.png"
   },
   "68786": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Gamboling for Gil",
+      "ja": "初舞台を舞い踊れ",
+      "de": "Mätzchen mit dem Mäzen",
+      "fr": "Quand la danse a le premier rôle"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062418.png"
   },
   "68787": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Soirée in the Sultanate",
+      "ja": "ザナラーンにて踊る者",
+      "de": "Slum-Samba",
+      "fr": "Soirée dansante au sultanat"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062418.png"
   },
   "68788": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Dances with Duskwights",
+      "ja": "黒衣森に広がる不安",
+      "de": "Der mit dem Dunkelalben tanzt",
+      "fr": "Une danse contre l'angoisse"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062418.png"
   },
   "68789": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "High-steppin' in the Holy See",
+      "ja": "託された舞踏の心",
+      "de": "Tanzfieber in frostigen Höhen",
+      "fr": "Une danse contre le froid"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062418.png"
   },
   "68790": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Save the Last Dance for Me",
+      "ja": "至上の舞を披露せよ",
+      "de": "Im Sturm der Begeisterung",
+      "fr": "Quand l'élève dépasse le maître"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062418.png"
   },
   "68791": {
     "name": {
@@ -29350,150 +29350,1599 @@
   },
   "68797": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Makings of a Gunbreaker",
+      "ja": "ガンブレイカーへの誘い",
+      "de": "Die verlorene Revolverklinge",
+      "fr": "Le dernier des pistosabreurs"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062417.png"
   },
   "68798": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hired Gunblades",
+      "ja": "殺害予告？ 人気演奏家を護れ！",
+      "de": "Bewaffnete Beschützer",
+      "fr": "Une claveciniste menacée"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062417.png"
   },
   "68799": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "For Better or Worse",
+      "ja": "痴話喧嘩？ 怯える母子を護れ！",
+      "de": "In guten wie in schlechten Zeiten",
+      "fr": "Une triste histoire de famille"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062417.png"
   },
   "68800": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Confessions of a Flaming Mongrel",
+      "ja": "悪因悪果？ 犯罪組織の首領を護れ！",
+      "de": "Ein Schaf unter Wölfen",
+      "fr": "L'escorte d'un pirate repenti"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062417.png"
   },
   "68801": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Of Defectors and Defenders",
+      "ja": "強敵襲来？ 亡命した魔導技師を護れ！",
+      "de": "Der Dienst des Deserteurs",
+      "fr": "Le transfert d'un transfuge"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062417.png"
   },
   "68802": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Steel against Steel",
+      "ja": "真のガンブレイカー",
+      "de": "Alte Wunden",
+      "fr": "L'esprit des vrais pistosabreurs"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062417.png"
   },
   "68803": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Traditions and Travails",
+      "ja": "戦士ジオットの相棒探し",
+      "de": "Heilender Helfer gesucht",
+      "fr": "Giott l'invincible"
     },
     "icon": "/i/071000/071221.png"
   },
   "68804": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Affronts and Allies",
+      "ja": "ソープロシュネーの光",
+      "de": "Sophrosyne auf der Spur",
+      "fr": "Le pouvoir de Sophrosyne"
     },
     "icon": "/i/071000/071221.png"
   },
   "68805": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Scientific Method",
+      "ja": "治癒魔法の原理",
+      "de": "Prinzipien der Heilung",
+      "fr": "Expérimentations thérapeutiques"
     },
     "icon": "/i/071000/071221.png"
   },
   "68806": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Lost and the Found",
+      "ja": "古の大再生魔法",
+      "de": "Alter Zauber",
+      "fr": "Magie ancestrale"
     },
     "icon": "/i/071000/071221.png"
   },
   "68807": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Never to Return",
+      "ja": "坑道の真実",
+      "de": "Ans Licht gebracht",
+      "fr": "Le secret des galeries naines"
     },
     "icon": "/i/071000/071221.png"
   },
   "68808": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Soul of Temperance",
+      "ja": "誇り高き追放者",
+      "de": "Stolze Ausgestoßene",
+      "fr": "Fière exilée"
     },
     "icon": "/i/071000/071221.png"
   },
   "68809": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "No Greater Sport",
+      "ja": "高慢と罪喰い",
+      "de": "Jägerprüfung",
+      "fr": "La flèche dorée"
     },
     "icon": "/i/071000/071221.png"
   },
   "68810": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Vengeance in Defeat",
+      "ja": "レンダ・レイの敗北",
+      "de": "Renda-Raes Niederlage",
+      "fr": "Le combat de Renda-Rae"
     },
     "icon": "/i/071000/071221.png"
   },
   "68811": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Freedom from Privilege",
+      "ja": "ルー・リークの出自",
+      "de": "Kopfgeldjäger aus Langeweile",
+      "fr": "D'où je viens"
     },
     "icon": "/i/071000/071221.png"
   },
   "68812": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Hunter's Legacy",
+      "ja": "勇気の狩人",
+      "de": "Der Legende auf der Spur",
+      "fr": "La chasseuse de légende"
     },
     "icon": "/i/071000/071221.png"
   },
   "68813": {
     "name": {
+      "en": "Fellowship Restored",
+      "ja": "彷徨うアンドレイア",
+      "de": "Jagd auf Andreia",
+      "fr": "La quête d'Andreia"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68814": {
+    "name": {
+      "en": "Courage Born of Fear",
+      "ja": "不滅なる名コンビ",
+      "de": "Die legendären Kopfgeldjäger",
+      "fr": "Le duo reformé"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68815": {
+    "name": {
+      "en": "The Syrcus Trench",
+      "ja": "予感",
+      "de": "Von Sendern und Sendungen",
+      "fr": "La traversée"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68816": {
+    "name": {
+      "en": "City of the First",
+      "ja": "第一世界の街",
+      "de": "Die immerhelle Welt",
+      "fr": "À la découverte de Cristarium"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68817": {
+    "name": {
+      "en": "Travelers of Norvrandt",
+      "ja": "ノルヴラントを渡る者たち",
+      "de": "Schlaflos in Crystarium",
+      "fr": "Les Héritiers du premier reflet"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68818": {
+    "name": {
+      "en": "In Search of Alphinaud",
+      "ja": "アルフィノを探して",
+      "de": "Auf aschenen Schwingen übers Meer",
+      "fr": "Sur les traces d'Alphinaud"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68819": {
+    "name": {
+      "en": "A Still Tide",
+      "ja": "動かない潮",
+      "de": "Diplomat, Exeget, lang vermisster Freund",
+      "fr": "Pour une poignée de brins de thym"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68820": {
+    "name": {
+      "en": "Open Arms, Closed Gate",
+      "ja": "歓迎の門",
+      "de": "Die Kinder der Lichtflut",
+      "fr": "Le Vestibule"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68821": {
+    "name": {
+      "en": "A Fickle Existence",
+      "ja": "たゆたう暮らし",
+      "de": "Angst verleiht Flügel",
+      "fr": "L'envers d'Eulmore"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68822": {
+    "name": {
+      "en": "City of Final Pleasures",
+      "ja": "最後の歓楽都市",
+      "de": "Das wunderschöne Eulmore",
+      "fr": "La ville des derniers plaisirs"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68823": {
+    "name": {
+      "en": "Free to Sightsee",
+      "ja": "ユールモア見学",
+      "de": "Kabale auf Kholusia",
+      "fr": "À la découverte d'Eulmore"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68824": {
+    "name": {
+      "en": "A Taste of Honey",
+      "ja": "迫り来る誘惑",
+      "de": "Mit Honig und Stachel",
+      "fr": "Plus de plaisir, moins de souci"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68825": {
+    "name": {
+      "en": "A Blessed Instrument",
+      "ja": "喜びに満ちた人々",
+      "de": "Begabung verpflichtet",
+      "fr": "Les bienheureux"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68826": {
+    "name": {
+      "en": "Emergent Splendor",
+      "ja": "樹葉に射す天光",
+      "de": "Die Gnade des Erlauchten Erlösers",
+      "fr": "La cime baignée de lumière"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68827": {
+    "name": {
+      "en": "In Search of Alisaie",
+      "ja": "アリゼーを探して",
+      "de": "Auf warmen Winden in die Wüste",
+      "fr": "Sur les traces d'Alisaie"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68828": {
+    "name": {
+      "en": "City of the Mord",
+      "ja": "モルドの市",
+      "de": "Fremde Länder, fremde Sitten",
+      "fr": "Le marché des Mords"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68829": {
+    "name": {
+      "en": "Working Off the Meal",
+      "ja": "多分それは腹ごなし",
+      "de": "Münzen machen Freunde",
+      "fr": "La tournée des étals"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68830": {
+    "name": {
+      "en": "A Desert Crossing",
+      "ja": "琥珀の砂漠を行く",
+      "de": "Hunde, die bellen ...",
+      "fr": "À travers les dunes d'ambre"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68831": {
+    "name": {
+      "en": "Following in Her Footprints",
+      "ja": "あの娘の足跡",
+      "de": "Mit eisernem Arm",
+      "fr": "Retrouvailles de haut vol"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68832": {
+    "name": {
+      "en": "Culling Their Ranks",
+      "ja": "罪喰い狩り",
+      "de": "Hungrige Häscher",
+      "fr": "Chasse aux purgateurs"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68833": {
+    "name": {
+      "en": "A Purchase of Fruit",
+      "ja": "宿を発つなら",
+      "de": "Süß ist die Lüge, bitter die Wahrheit",
+      "fr": "Le dernier fruit"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68834": {
+    "name": {
+      "en": "The Time Left to Us",
+      "ja": "いらないもの",
+      "de": "Die gute Seele der Ruhstatt",
+      "fr": "Le départ de trop"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68835": {
+    "name": {
+      "en": "Tears on the Sand",
+      "ja": "空知らぬ雨",
+      "de": "Kein Blick zurück",
+      "fr": "La mission d'Alisaie"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68836": {
+    "name": {
+      "en": "The Lightwardens",
+      "ja": "大罪喰い",
+      "de": "Grausam das Licht ...",
+      "fr": "Un grand purgateur à Grand-Lac"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68837": {
+    "name": {
+      "en": "Warrior of Darkness",
+      "ja": "闇の戦士",
+      "de": "... tröstend die Nacht",
+      "fr": "Le guerrier de la légende"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68838": {
+    "name": {
+      "en": "An Unwelcome Guest",
+      "ja": "招かれざる客",
+      "de": "Von Ränken und Orakeln",
+      "fr": "Visite impromptue"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68839": {
+    "name": {
+      "en": "The Crystarium's Resolve",
+      "ja": "クリスタリウムの意気",
+      "de": "Tunika und Tonikum",
+      "fr": "La résolution de Cristarium"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68840": {
+    "name": {
+      "en": "Logistics of War",
+      "ja": "帯の道を進め！",
+      "de": "Auf nach Ostalls Befehl",
+      "fr": "Logistique amaro"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68841": {
+    "name": {
+      "en": "The Oracle of Light",
+      "ja": "ミンフィリア救出作戦",
+      "de": "Operation Sandmann",
+      "fr": "À l'assaut du fort"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68842": {
+    "name": {
+      "en": "Il Mheg, the Faerie Kingdom",
+      "ja": "妖精郷イル・メグ",
+      "de": "Die Nebel von Feenland",
+      "fr": "Le royaume féérique"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68843": {
+    "name": {
+      "en": "Sul Uin's Request",
+      "ja": "スール＝ウィンのお願い",
+      "de": "Aussaat der Anerkennung",
+      "fr": "Lydha Lran, village fleuri"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68844": {
+    "name": {
+      "en": "Ys Iala’s Errand",
+      "ja": "イス＝ヤラの呻き",
+      "de": "Die Leichtigkeit des Seins",
+      "fr": "Un appétit pour la farce"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68845": {
+    "name": {
+      "en": "Oul Sigun’s Plea",
+      "ja": "オール＝シグンのお仕事",
+      "de": "Stumme Spielgefährten",
+      "fr": "Les enfeuillés"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68846": {
+    "name": {
+      "en": "Unto the Truth",
+      "ja": "真実を顕すは",
+      "de": "Ein alter Freund in neuem Gewand",
+      "fr": "Feo Ul à la rescousse"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68847": {
+    "name": {
+      "en": "Courting Cooperation",
+      "ja": "篤学者は問う",
+      "de": "Ein besonderes Geschenk",
+      "fr": "Les cours du lettré"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68848": {
+    "name": {
+      "en": "The Key to the Castle",
+      "ja": "封印の鍵",
+      "de": "Im Reich der Fuath",
+      "fr": "Ne pas toucher"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68849": {
+    "name": {
+      "en": "A Visit to the Nu Mou",
+      "ja": "3つ目の宝を求めて",
+      "de": "Im Namen des ehrbahren Handels",
+      "fr": "Visite chez les Nu Mou"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68850": {
+    "name": {
+      "en": "A Fitting Payment",
+      "ja": "仕事には対価を",
+      "de": "Moose, Pilze und Panzerplatten",
+      "fr": "Transaction équitable"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68851": {
+    "name": {
+      "en": "Spore Sweeper",
+      "ja": "だってここは茸窟",
+      "de": "Den Sporen auf der Spur",
+      "fr": "Coup de balai"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68852": {
+    "name": {
+      "en": "The Lawless Ones",
+      "ja": "アンチロウ",
+      "de": "Tauglose Taugenichtse",
+      "fr": "Ceux qui musardent"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68853": {
+    "name": {
+      "en": "The Elder's Answer",
+      "ja": "長老の言うことには",
+      "de": "Königliche Insignien",
+      "fr": "La puissance du Monarque"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68854": {
+    "name": {
+      "en": "A Resounding Roar",
+      "ja": "咆哮を響かせて",
+      "de": "Stärke zeigen",
+      "fr": "Combattre la gentillesse"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68855": {
+    "name": {
+      "en": "Memento of a Friend",
+      "ja": "セトのトモダチ",
+      "de": "Band der Freundschaft",
+      "fr": "Le souvenir d'un ami"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68856": {
+    "name": {
+      "en": "Acht-la Ormh Inn",
+      "ja": "アクトラ・オルワ・イン",
+      "de": "Lyhe-Ghiah",
+      "fr": "Passation de pouvoir"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68857": {
+    "name": {
+      "en": "The Wheel Turns",
+      "ja": "運命はまた廻る",
+      "de": "Zurück in Crystarium",
+      "fr": "Entre entente et méfiance"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68858": {
+    "name": {
+      "en": "A Party Soon Divided",
+      "ja": "それぞれの行く先",
+      "de": "Aufbruch in alle Richtungen",
+      "fr": "Une visite de courtoisie"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68859": {
+    "name": {
+      "en": "A Little Faith",
+      "ja": "光耀の陰り",
+      "de": "Das Geheimnis der Gebetshalle",
+      "fr": "L'église de l'Aurore"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68860": {
+    "name": {
+      "en": "Into the Dark",
+      "ja": "ラケティカ大森林",
+      "de": "Die Hexe des Großen Waldes",
+      "fr": "Le peuple de la Nuit"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68861": {
+    "name": {
+      "en": "A Day in the Neighborhood",
+      "ja": "スリザーバウの営み",
+      "de": "Erste Bekanntschaften",
+      "fr": "Us et coutumes"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68862": {
+    "name": {
+      "en": "A Helping Hand",
+      "ja": "生きる糧",
+      "de": "Lehrreiche Feldarbeit",
+      "fr": "Jardinage enténébré"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68863": {
+    "name": {
+      "en": "Lost but Not Forgotten",
+      "ja": "石は転がる",
+      "de": "Der Taufstein",
+      "fr": "La pierre baptismale"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68864": {
+    "name": {
+      "en": "Saying Goodbye",
+      "ja": "天の暗き海",
+      "de": "Toddias Rückkehr ins Himmelsmeer",
+      "fr": "Repos éternel dans le ciel étoilé"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68865": {
+    "name": {
+      "en": "Stirring up Trouble",
+      "ja": "常闇に潜みて",
+      "de": "Was brummt denn da?",
+      "fr": "La guerre des insectes"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68866": {
+    "name": {
+      "en": "A Beeautiful Plan",
+      "ja": "過日との対話",
+      "de": "In den Höhlen der Ewigen Dunkelheit",
+      "fr": "Légendes sur les murs"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68867": {
+    "name": {
+      "en": "An Unwanted Proposal",
+      "ja": "問いと答え",
+      "de": "Das Ultimatum",
+      "fr": "Alliances vénéneuses"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68868": {
+    "name": {
+      "en": "Put to the Proof",
+      "ja": "蛇の水場",
+      "de": "Auf dem Grund des Schlangensees",
+      "fr": "Le sceau de Ronka"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68869": {
+    "name": {
+      "en": "Into the Wood",
+      "ja": "イキス・マヤエの森",
+      "de": "Keinen Schritt weiter",
+      "fr": "Les gardiennes des vestiges"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68870": {
+    "name": {
+      "en": "Top of the Tree",
+      "ja": "護り手の里",
+      "de": "Offene Ohren in Fanow",
+      "fr": "Passage vers les chutes"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68871": {
+    "name": {
+      "en": "Look to the Stars",
+      "ja": "明星に導かれ",
+      "de": "Die Fesseln der Tiergötter",
+      "fr": "Statues et totems"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68872": {
+    "name": {
+      "en": "Mi Casa, Toupasa",
+      "ja": "よろずなる神の御殿",
+      "de": "Prüfungen der Pyramide",
+      "fr": "La grande pyramide d'Ux'ner"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68873": {
+    "name": {
+      "en": "Legend of the Not-so-hidden Temple",
+      "ja": "仕掛けと呪いと毒と",
+      "de": "Der Beichtstuhl von Toupasa dem Älteren",
+      "fr": "Le confessionnal de Toupasa l'ancien"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68874": {
+    "name": {
+      "en": "The Aftermath",
+      "ja": "魔女の護ったもの",
+      "de": "Der letzte Wunsch der Hexe",
+      "fr": "Antidotes pour tous"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68875": {
+    "name": {
+      "en": "In Good Faith",
+      "ja": "揺らめく灯火",
+      "de": "Dem Dämon sei Dank",
+      "fr": "Divin Ascien"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68876": {
+    "name": {
+      "en": "The Burden of Knowledge",
+      "ja": "キタンナ神影洞",
+      "de": "Quer durch die Irrungen der Qitari",
+      "fr": "L'Enchevêtrement des Qitari"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68877": {
+    "name": {
+      "en": "Bearing With It",
+      "ja": "穏やかな静けさ",
+      "de": "Nacht über Rak'tika",
+      "fr": "Au revoir, sombre forêt"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68878": {
+    "name": {
+      "en": "Out of the Wood",
+      "ja": "彼方へと祈って",
+      "de": "Eine dringend benötigte Ruhepause",
+      "fr": "Espoirs et inquiétudes"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "68879": {
+    "name": {
+      "en": "A Cry for Help",
+      "ja": " 医療館のお手伝いさん募集中！",
+      "de": " Hilfe für die Helfenden",
+      "fr": " On recrute à la clinique"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68880": {
+    "name": {
+      "en": "Rate and Review",
+      "ja": " クリスタリウムという街",
+      "de": " Eine Stadt namens Crystarium",
+      "fr": " Sondage sur Cristarium"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68881": {
+    "name": {
+      "en": "Pour One Out",
+      "ja": " 瓶1本の安穏",
+      "de": " Eine Flasche voll Mut",
+      "fr": " Quand l'alcool soulage"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68882": {
+    "name": {
+      "en": "A Dirty Trick",
+      "ja": " 牧場のお仕事体験",
+      "de": " Die Leiden des jungen Falknergesellen",
+      "fr": " Les joies du travail de ferme"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68883": {
+    "name": {
+      "en": "From a Distance",
+      "ja": " ノルヴラントの新たな旅人",
+      "de": " Die Wissbegier der Jugend",
+      "fr": " Découvrir le monde extérieur"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68884": {
+    "name": {
+      "en": "A Fitting Challenge",
+      "ja": " 防具のモデル、探してます",
+      "de": " Rüstungsmoden",
+      "fr": " Armurière cherche mannequin"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68885": {
+    "name": {
+      "en": " Before the Tide Comes",
+      "ja": " 浜辺に遺された品",
+      "de": " Habseligkeiten eines Schiffbrüchigen",
+      "fr": " Souvenirs échoués"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68886": {
+    "name": {
+      "en": " Retaking Territory",
+      "ja": " 生きるための縄張り",
+      "de": " Hungerleider",
+      "fr": " Luttes territoriales"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68887": {
+    "name": {
+      "en": " A Clam to Die For",
+      "ja": " 命懸けのご馳走",
+      "de": " Das muss Liebe sein",
+      "fr": " Pour l'amour des fruits de mer"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68888": {
+    "name": {
+      "en": " A Meating Long Overdue",
+      "ja": " 肉の味わいを希う",
+      "de": " Gier nach Fleisch",
+      "fr": " La viande, il n'y a que ça de vrai"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68889": {
+    "name": {
+      "en": " Redolent Refuse",
+      "ja": " ゴミ溜めに清香を",
+      "de": " Duft gegen Gestank",
+      "fr": " Un parfum qui change la vie"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68890": {
+    "name": {
+      "en": " A Feeling in the Belly",
+      "ja": " 手を差し伸べるべき場所",
+      "de": " Heilmittel gegen das Elend",
+      "fr": " Des soins pour tous"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68891": {
+    "name": {
+      "en": " Songstress of the Sea",
+      "ja": " 海の歌姫",
+      "de": " Ich will doch nur singen",
+      "fr": " La diva des mers"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68892": {
+    "name": {
+      "en": " Witch of the Sea",
+      "ja": " 海の魔女",
+      "de": " Der Ruf der Meerhexe",
+      "fr": " La sorcière des mers"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68893": {
+    "name": {
+      "en": " Following the Grain",
+      "ja": " 無法者への制裁",
+      "de": " Bestrafung der Verbannten",
+      "fr": " Mauvaise graine"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68894": {
+    "name": {
+      "en": " Bridge to the Other Side",
+      "ja": " 亡霊が棲まう橋",
+      "de": " Brückenspuk",
+      "fr": " Les amants du vieux pont"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68895": {
+    "name": {
+      "en": " A Drop of Sunshine",
+      "ja": " 黄金色のエール",
+      "de": " Werfting-Bräu",
+      "fr": " L'ale ou l'orge, il faut choisir"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68896": {
+    "name": {
+      "en": " A Plankless Task",
+      "ja": " 船を壊す船大工",
+      "de": " Der Schiffsbauer, der das Schiff zerlegt",
+      "fr": " Parfois construire, parfois détruire"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68897": {
+    "name": {
+      "en": " Worm Food",
+      "ja": " ノルマの代わりに",
+      "de": " Wurmfutter",
+      "fr": " Soudoiement aux vers blancs"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68898": {
+    "name": {
+      "en": " The Most Succulent of Succulents",
+      "ja": " 濃厚！ギガテンダー",
+      "de": " Der Saftigste von allen",
+      "fr": " Le Mord entrepreneur"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68899": {
+    "name": {
+      "en": " Mollycoddled Mord",
+      "ja": " 父は心配症",
+      "de": " Verhätschelter Mordh",
+      "fr": " Un papa inquiet"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68900": {
+    "name": {
+      "en": " I Felt Your Presents",
+      "ja": " 父の贈り物選び",
+      "de": " Glitzernde Geschenke",
+      "fr": " Le papa gâteau"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68901": {
+    "name": {
+      "en": " A Shiver Down the Spine",
+      "ja": " モルド族の肝試し",
+      "de": " Mutprobe der Mordh",
+      "fr": " L'épreuve de courage"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68902": {
+    "name": {
+      "en": " Pass the Parcel",
+      "ja": " 人材募集中！",
+      "de": " Aushilfe gesucht!",
+      "fr": " Une offre d'emploi trop belle pour être vraie"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68903": {
+    "name": {
+      "en": " Succulent Secretions",
+      "ja": " 荒野の甘露",
+      "de": " O'zapft is",
+      "fr": " Délicieux nectar"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68904": {
+    "name": {
+      "en": " From Darts till Dawn",
+      "ja": " 死霊と魔具",
+      "de": " Volles Rohr",
+      "fr": "Le souvenir perdu"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68905": {
+    "name": {
+      "en": " Absent without Leave",
+      "ja": " 番兵の決意",
+      "de": " Ruhstatt oder Reise",
+      "fr": " Partir ou rester?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68906": {
+    "name": {
+      "en": " Like a Tonze of Bricks",
+      "ja": " 資源調達、承ります？",
+      "de": " Schwer verspätet",
+      "fr": " Échanges commerciaux"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68907": {
+    "name": {
+      "en": " Village of Woe",
+      "ja": " 惨劇の村",
+      "de": " Ein Dorf in Not",
+      "fr": " Un village meurtri"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68908": {
+    "name": {
+      "en": " Talos, Interrupted",
+      "ja": " 戻らないタロース",
+      "de": " Vermisster Talos",
+      "fr": " Le talos égaré"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68909": {
+    "name": {
+      "en": " The Cape in Bloom",
+      "ja": " 手向けの花",
+      "de": " Das Kap der Blumen",
+      "fr": " Les fleurs du cap"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68910": {
+    "name": {
+      "en": " Wright for the Job",
+      "ja": " ライト村の村長",
+      "de": " Das Feld der Hoffnung",
+      "fr": " Les champs de l'espoir"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68911": {
+    "name": {
+      "en": " Work to Live or Live to Work",
+      "ja": " 働きすぎのモルド族",
+      "de": " Kleiner Mordh, großer Eifer",
+      "fr": " Le Mord qui travaillait trop"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68912": {
+    "name": {
+      "en": " Mord of the Ring",
+      "ja": " この指輪、おいくら？",
+      "de": " Sandige Schätze",
+      "fr": " Le prix du sceau"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68913": {
+    "name": {
+      "en": " Nabaath Breakdown",
+      "ja": " ナバスアレンの遺物",
+      "de": " Von Mordh und Münzen",
+      "fr": " Les reliques de Nabaath Areng"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68914": {
+    "name": {
+      "en": " Semi Auto-malik",
+      "ja": " 拾うもの、拾われるもの",
+      "de": " Bei allen guten Geistern",
+      "fr": " Le fantôme de Nabaath Areng"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68915": {
+    "name": {
+      "en": " Do You Believe in Magic",
+      "ja": " 父が遺した首飾り",
+      "de": " Das verlorene Andenken",
+      "fr": " En souvenir de mon père"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68916": {
+    "name": {
+      "en": " A Jobb Well Done",
+      "ja": " ジョッブ砦への労い",
+      "de": " Kleine Geste, große Freude",
+      "fr": " Tout travail mérite casse-croûte!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68917": {
+    "name": {
+      "en": " Stock and Barrel",
+      "ja": " ホルミンスターの明日",
+      "de": " Hoffnung für Holminster",
+      "fr": " Le jour d'après"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68918": {
+    "name": {
+      "en": " Classical Condition",
+      "ja": " 迷子のアマロ",
+      "de": " Amaro auf Abwegen",
+      "fr": " À la recherche de l'amaro perdu"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68919": {
+    "name": {
+      "en": " Desperate Measures",
+      "ja": " 新兵教育は英雄とともに",
+      "de": " Ein Treffen mit Triffiden",
+      "fr": " Montrer l'exemple"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68920": {
+    "name": {
+      "en": " Imperative Repairs",
+      "ja": " 厳命城のモルタル塗り",
+      "de": " Mit Mörtel verputzen auf Ostalls Befehl",
+      "fr": " Mettre la main au mortier"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68921": {
+    "name": {
+      "en": " The Astute Amaro",
+      "ja": " アマロと消えた衛兵",
+      "de": " Ein Amaro rettet den Tag",
+      "fr": " Celui qui murmurait à l'oreille des amaros"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68922": {
+    "name": {
+      "en": " An Unreasonable Request",
+      "ja": " 物見塔への伝令",
+      "de": " Wie bestellt",
+      "fr": " Une nouvelle recrue?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68923": {
+    "name": {
+      "en": " You've Got the Tatch",
+      "ja": " 厳命城への輸送",
+      "de": " So geliefert",
+      "fr": " Opération livraison"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68924": {
+    "name": {
+      "en": " All That Heavenly Glory",
+      "ja": " アネモネの種",
+      "de": " Samenhafte Anemonen",
+      "fr": " La tête dans les étoiles"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68925": {
+    "name": {
+      "en": " Beers for Fears",
+      "ja": " 夜闇の感想",
+      "de": " Nachtgedanken",
+      "fr": " Enquête nocturne"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68926": {
+    "name": {
+      "en": " Loot Justice Mode",
+      "ja": " 奪われた衛兵団の武器",
+      "de": " Schlage die Räuber mit den eigenen Waffen",
+      "fr": " L'affaire de l'épée volée"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68927": {
+    "name": {
+      "en": " Inglourious Bath Stewards",
+      "ja": " クリアメルトでごゆっくり？",
+      "de": " Baden gehen in Klarschmelze",
+      "fr": " Un repos bien mérité?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68928": {
+    "name": {
+      "en": " What's in a Name",
+      "ja": " 名前の意味",
+      "de": " Nomen est Omen",
+      "fr": " Que veut dire ton nom?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68929": {
+    "name": {
+      "en": " A Hairy Request",
+      "ja": " 恐ろしい依頼",
+      "de": " Wer ist hier der Leckerbissen?",
+      "fr": " Un dangereux goûter"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68930": {
+    "name": {
+      "en": " Flowers of Fury",
+      "ja": " 怒りのオシオキ",
+      "de": " Sag es durch die Blume",
+      "fr": " De très vilains humains"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68931": {
+    "name": {
+      "en": " The Forbidden Lran",
+      "ja": " スタンド・バイ・ユアセルフ",
+      "de": " Nagende Neugierde",
+      "fr": " Jeux interdits"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68932": {
+    "name": {
+      "en": " When Beavers Cry",
+      "ja": " ビーバーの呼び声",
+      "de": " Das Bibbern vor dem Biber",
+      "fr": " L'appel du castor"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68933": {
+    "name": {
+      "en": " And Then There Were None",
+      "ja": " そして誰もいなくなった",
+      "de": " Viva la Biber",
+      "fr": " Mais où sont les Pixies?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68934": {
+    "name": {
+      "en": " Delightful Decorations",
+      "ja": " 素敵な飾り付け",
+      "de": " Uriangers Haus soll schöner werden",
+      "fr": " Les as de la déco"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68935": {
+    "name": {
+      "en": " Bewitched Books",
+      "ja": " 本に魔法を",
+      "de": " Die wandelnden Bücher",
+      "fr": " Quand les livres auront des dents"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68936": {
+    "name": {
+      "en": " Revolting Refreshments ",
+      "ja": " 焼き菓子こわい",
+      "de": " Das geschmackvolle Geschenk",
+      "fr": " Un goûter immangeable"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68937": {
+    "name": {
+      "en": " An Artist's Tale",
+      "ja": " ある絵師の行方",
+      "de": " Ganz natürliche Bilder",
+      "fr": " Des enfeuillés plus vrais que nature"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68938": {
+    "name": {
+      "en": " Counting Pixies",
+      "ja": " ピクシー数当て",
+      "de": " Behalte den Durchblick",
+      "fr": " Compter les Pixies"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68939": {
+    "name": {
+      "en": " A Rosy Problem",
+      "ja": " 撃退、ローズベアー！",
+      "de": " Wenig rosige Aussichten",
+      "fr": " Sus aux ours!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68940": {
+    "name": {
+      "en": " The Path to Popularity",
+      "ja": " 人気者になりたいの！",
+      "de": " Die beliebteste Pixie von allen",
+      "fr": " La plus populaire des Pixies"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68941": {
+    "name": {
+      "en": " Painting for Praise",
+      "ja": " 素敵だねと言われたい！",
+      "de": " Beliebt zu werden, ist eine Kunst",
+      "fr": " Une peintre parmi les Pixies"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68942": {
+    "name": {
+      "en": " Gifts to Gladden",
+      "ja": " みんなを喜ばせましょう！",
+      "de": " Blühende Beliebtheit",
+      "fr": " Des fleurs pour faire plaisir"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68943": {
+    "name": {
+      "en": " The Dependable Darling",
+      "ja": " 頼れる人気者！",
+      "de": " Beliebte Helferin",
+      "fr": " Le poids de la popularité"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68944": {
+    "name": {
+      "en": " Scents of Security ",
+      "ja": " 芳醇な香りを振りまいて",
+      "de": " Gefangen vom Duft",
+      "fr": " Spécialité nu mou"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68945": {
+    "name": {
+      "en": " A Lawful Trade",
+      "ja": " ロウ！",
+      "de": " Lhoh",
+      "fr": " Petits sacripants de Pixies!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68946": {
+    "name": {
+      "en": " The Mushroom Menace",
+      "ja": " キノコを狙うアイツ",
+      "de": " Prügel für den Pilzeplünderer",
+      "fr": " Touche pas à mes champignons!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68947": {
+    "name": {
+      "en": " Growing Pla Enni",
+      "ja": " プラ・エンニの栽培",
+      "de": " Das Pilzhaus",
+      "fr": " Les maisons de Pla Enni"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68948": {
+    "name": {
+      "en": " Much Ado About Giving",
+      "ja": " ン・モゥの恋愛事情",
+      "de": " Liebesfragen",
+      "fr": " Un cadeau d'amour"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68949": {
+    "name": {
+      "en": " Help My Porxie",
+      "ja": " ポークシーを助けて！",
+      "de": " Blumen vor die Säue",
+      "fr": " Un porxie en manque d'épanouissement"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68950": {
+    "name": {
+      "en": " One Good Trick Deserves Another",
+      "ja": " イタズラの代償",
+      "de": " Wer legt hier wen rein?",
+      "fr": " Vengeance équitable"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68951": {
+    "name": {
+      "en": " A Leafman and a Hero",
+      "ja": " 草人となりし英雄",
+      "de": " Der gräserne Ritter und sein Schwert",
+      "fr": " Enfeuillé héroïque"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68952": {
+    "name": {
+      "en": " Magic Is Love, Magic Is Life",
+      "ja": " ン・モゥは教育熱心！",
+      "de": " Zaubern will gelernt sein",
+      "fr": " Petit Nu Mou deviendra grand"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68953": {
+    "name": {
+      "en": " Are You Being Served",
+      "ja": " 公正な取引？",
+      "de": " Supersaubere Geschäfte",
+      "fr": " Dépendance transactionnelle"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68954": {
+    "name": {
+      "en": " A Stranger Fuath",
+      "ja": " 奇怪なフーア族",
+      "de": " Genial verrückt",
+      "fr": " Le plus fou des Fuath?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68955": {
+    "name": {
+      "en": " Pushy for Patronage",
+      "ja": " 取引への飢え",
+      "de": " Sammeln für den guten Zweck",
+      "fr": " Équité sans retenue"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68956": {
+    "name": {
+      "en": " In His Mistress’s Memory",
+      "ja": " 主人を悼んで",
+      "de": " Eine Blume im Gedenken",
+      "fr": " Une fleur en souvenir"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68957": {
+    "name": {
+      "en": " Lurkers in the Lake",
+      "ja": " 姿見の湖の底から",
+      "de": " Eine Falle für die Fuath",
+      "fr": " Chipeurs d'œuf"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68958": {
+    "name": {
+      "en": " A Tale of a Tail",
+      "ja": " 尻尾にまつわる思い出",
+      "de": " Essen wie damals",
+      "fr": " Repas protéiné"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68959": {
+    "name": {
+      "en": " Not All Pixies",
+      "ja": " ピクシーもさまざま",
+      "de": " Allerlei Sorgen",
+      "fr": " Des Pixies pas comme les autres"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68960": {
+    "name": {
+      "en": " A Gift in Advance",
+      "ja": " 産まれてくる君に",
+      "de": " Ein Geschenk zur Geburt",
+      "fr": " Cadeau de naissance"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68961": {
+    "name": {
+      "en": " In His Mistress’s Name",
+      "ja": " 主人の贈るメダル",
+      "de": " Nimbus' Anhänger",
+      "fr": " La médaille de Nimbus"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68962": {
+    "name": {
+      "en": " Hide and Seek",
+      "ja": " 約束とかくれんぼ",
+      "de": " Versteckte Versprechen",
+      "fr": " Castor!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68963": {
+    "name": {
+      "en": " A New Amaro",
+      "ja": " 新たなアマロの来訪者",
+      "de": " Ein Neuankömmling",
+      "fr": " Un nouveau venu"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68964": {
+    "name": {
+      "en": " A Costly Meal",
+      "ja": " イル・メグで暮らす約束事",
+      "de": " Sauerei",
+      "fr": " Qui a mangé, a mangé, a mangé..."
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68965": {
+    "name": {
+      "en": " By Way of Reparation",
+      "ja": " 対価の重さをどう見積もるか",
+      "de": " In Ton aufgewogen",
+      "fr": " Peine capitale"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68966": {
+    "name": {
+      "en": " The Key Ingredient",
+      "ja": " 妖精のランプをもらおう",
+      "de": " Die Feenlaterne",
+      "fr": " La recette du Porxie"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68967": {
+    "name": {
+      "en": " A New Favorite",
+      "ja": " 新たな人気者？",
+      "de": " Amtseinführung auf Pixie-Art",
+      "fr": " Une nouvelle coqueluche?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68968": {
+    "name": {
+      "en": " Duplicity in the Depths",
+      "ja": " 姿見に眠る悪事",
+      "de": " Ins Wasser gefallen",
+      "fr": " Complot au fond de l'eau"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68969": {
+    "name": {
+      "en": " Marks of the Monarch",
+      "ja": " 妖精王の爪痕",
+      "de": " Wahrnehmungssache",
+      "fr": " Les griffures du Monarque"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68970": {
+    "name": {
+      "en": " An Eggshell a Day",
+      "ja": " 卵の集いし地",
+      "de": " Zweierlei Eier",
+      "fr": " Histoire d'œufs"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68971": {
+    "name": {
+      "en": " Lofty Goals",
+      "ja": " 歴史を語るいにしえの城",
+      "de": " Eine monumentale Burg",
+      "fr": " Des pierres témoins de l'Histoire"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68972": {
+    "name": {
+      "en": " You Had One Jobb",
+      "ja": " 落とし物は胃袋の中",
+      "de": " Nicht verdaut - nicht verloren",
+      "fr": " Pas digéré, pas perdu!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68973": {
+    "name": {
+      "en": " Of Graveyards and Gremlins",
+      "ja": " 墓に響く悪罵を止めろ",
+      "de": " Schandmäuler auf dem Friedhof",
+      "fr": " Les vilains saccageurs de tombes"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68974": {
+    "name": {
       "en": "",
       "ja": "",
       "de": "",
@@ -29501,12 +30950,2100 @@
     },
     "icon": "/i/071000/071221.png"
   },
-  "68814": {
+  "68975": {
     "name": {
       "en": "",
       "ja": "",
       "de": "",
       "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68976": {
+    "name": {
+      "en": " Barking Up the Right Tree",
+      "ja": " 森染めの加護",
+      "de": " Die schützende Farbe",
+      "fr": " Teinture tutélaire"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68977": {
+    "name": {
+      "en": " Plans Gone Awry",
+      "ja": " 衛士たる心得",
+      "de": " Wutprobe für die Wache ",
+      "fr": " Chacun sa vocation"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68978": {
+    "name": {
+      "en": " Like Pulling Teeth",
+      "ja": " 森からの借り物",
+      "de": " Nachhaltige Wildschweinjagd",
+      "fr": " Des défenses mais sans violence"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68979": {
+    "name": {
+      "en": " Tea Time",
+      "ja": " お茶会にはキノコをたっぷり",
+      "de": " Pilze im Tee",
+      "fr": " Après les spores, le réconfort"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68980": {
+    "name": {
+      "en": " What We Do for Family",
+      "ja": " 想い残りし砦",
+      "de": " Gefährliches Heimweh",
+      "fr": " Un peu de poison"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68981": {
+    "name": {
+      "en": " In His Memory",
+      "ja": " 剣守りし砦",
+      "de": " Festung der Nostalgie",
+      "fr": " Un peu de nostalgie"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68982": {
+    "name": {
+      "en": " Pick Their Poison",
+      "ja": " 希望眠りし砦",
+      "de": " Festung der Hoffnung",
+      "fr": " Un peu de rétorsion"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68983": {
+    "name": {
+      "en": " Worth a Candle",
+      "ja": " 祈りが灯すロウソク",
+      "de": " Sterne der Nacht",
+      "fr": " Autant d'étoiles dans la nuit"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68984": {
+    "name": {
+      "en": " Paved With Good Intentions",
+      "ja": " 若手の導師と荒れる男",
+      "de": " Giftige Geschäfte",
+      "fr": " Petit poison deviendra grand"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68985": {
+    "name": {
+      "en": " You're a Gem",
+      "ja": " 輝石と旅人",
+      "de": " Der Schatz im Schlangensee",
+      "fr": " Des gemmes pour toute une vie"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68986": {
+    "name": {
+      "en": " Oh, Snap",
+      "ja": " たっぷり包む葉",
+      "de": " Bin nicht satt, mag ein Blatt",
+      "fr": " Le fromage de Serpentige"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68987": {
+    "name": {
+      "en": " Distrubing the Peace",
+      "ja": " 遠くを聴く耳",
+      "de": " Das Rauschen im Walde",
+      "fr": " Un murmure lointain"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68988": {
+    "name": {
+      "en": " Out of Place",
+      "ja": " 若手の導師と毒持つアネモネ",
+      "de": " Giftige Gefahr",
+      "fr": " Noyer le poison"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68989": {
+    "name": {
+      "en": " From the Heart",
+      "ja": " 告白は集落の外で",
+      "de": " Das romantischste Fleckchen",
+      "fr": " Où dire les mots d'amour?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68990": {
+    "name": {
+      "en": " Special Delivery",
+      "ja": " 矢文が示す場所",
+      "de": " Das X markiert die Stelle",
+      "fr": " Un trésor d'honnêteté"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68991": {
+    "name": {
+      "en": " An Express Delivery",
+      "ja": " 忘れ物と故郷への想い",
+      "de": " Was Wichtiges vergessen",
+      "fr": " Heureux qui a fait un beau voyage"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68992": {
+    "name": {
+      "en": " On Her Own",
+      "ja": " 父亡き娘は砦にひとり",
+      "de": " Ein tragischer Verlust",
+      "fr": " Comment vivre sans son père"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68993": {
+    "name": {
+      "en": " Carrying On",
+      "ja": " 安息の街、クリスタリウムへ",
+      "de": " Das neue Heim der Entwurzelten",
+      "fr": " Prendre un nouveau départ à Cristarium?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68994": {
+    "name": {
+      "en": " In Father's Footsteps",
+      "ja": " 父が遺した調合法",
+      "de": " Das rettende Rezept",
+      "fr": " Les vieilles recettes du père"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68995": {
+    "name": {
+      "en": " Her True Calling",
+      "ja": " ジョッブ砦の新たな医師",
+      "de": " Vererbte Fürsorge",
+      "fr": " Tel père, telle fille"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68996": {
+    "name": {
+      "en": " Paying Respects",
+      "ja": " ミュリルにスミレを",
+      "de": " Vergiss mein nicht",
+      "fr": " Loin des yeux, près des fleurs"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68997": {
+    "name": {
+      "en": " A Recipe for Trouble",
+      "ja": " ファノヴの薬膳料理",
+      "de": " Ein besonderes Rezept",
+      "fr": " Tout pour un bon petit plat"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68998": {
+    "name": {
+      "en": " Blessings of the Wood",
+      "ja": " 女神授けし力",
+      "de": " Inspirierender Glaube",
+      "fr": " Les dons de la Déesse"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "68999": {
+    "name": {
+      "en": " Talk of the Town",
+      "ja": " 同盟者として",
+      "de": " Bürgernähe",
+      "fr": " À la rencontre des locales"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69000": {
+    "name": {
+      "en": " A Sight Unseen",
+      "ja": " 森を駆ける男",
+      "de": " Seltener Besuch",
+      "fr": " Une présence furtive"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69001": {
+    "name": {
+      "en": " Back Where it Belongs",
+      "ja": " 花を添えて",
+      "de": " Ehrliche Finderin",
+      "fr": " Rendez-le avec des fleurs"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69002": {
+    "name": {
+      "en": " Not Unfamiliar",
+      "ja": " 柔らかな過去の記憶",
+      "de": " In guter Erinnerung",
+      "fr": " Souvenirs doux-amers"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69003": {
+    "name": {
+      "en": " Suit Up",
+      "ja": " 露宿との交流",
+      "de": " Besuch in Bogenruh",
+      "fr": " Les nouveaux habits de la Halte"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69004": {
+    "name": {
+      "en": " Delivery Time",
+      "ja": " 新たな一員",
+      "de": " Eine neue Waldbewohnerin",
+      "fr": " Nouvelle tête"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69005": {
+    "name": {
+      "en": " Out on One's Own",
+      "ja": " 狩人を目指して",
+      "de": " Allein im Wald",
+      "fr": " La chasseuse en herbe"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69006": {
+    "name": {
+      "en": " One Last Bite",
+      "ja": " ひとときを惜しむ",
+      "de": " Mjrls Sehnsucht",
+      "fr": " Une voix qui s'éteint"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69007": {
+    "name": {
+      "en": " Proving Your Worth",
+      "ja": " 同盟者との狩り",
+      "de": " Gemeinsam auf Waldrallen-Jagd",
+      "fr": " Qui part à la chasse..."
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69008": {
+    "name": {
+      "en": " Reach for the Stars",
+      "ja": " 神殿に触れさせるな",
+      "de": " Spinnengift gegen Spinnen",
+      "fr": " Un temple, c'est sacré"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69009": {
+    "name": {
+      "en": " Down Feathers",
+      "ja": " 飛獣の悲鳴",
+      "de": " Schmerzensschrei aus dem Wald",
+      "fr": " Le cri du griffon"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69010": {
+    "name": {
+      "en": " Out on Patrol",
+      "ja": " フクロウを数えて",
+      "de": " Unterwassereulen",
+      "fr": " L'état des chouettes"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69011": {
+    "name": {
+      "en": " Thoughts and Prayers",
+      "ja": " 古よりの願掛け",
+      "de": " Gebet an die alten Götter",
+      "fr": " Un souhait vers le passé"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69012": {
+    "name": {
+      "en": " Rock Solid",
+      "ja": " 文明のほころび",
+      "de": " Zeichen des Zerfalls",
+      "fr": " Quand une civilisation décline"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69013": {
+    "name": {
+      "en": " Hand-me-downs",
+      "ja": " 守護像の延命措置",
+      "de": " Stein des Lebens",
+      "fr": " Quand les statues sauvent les statues"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69014": {
+    "name": {
+      "en": " Stand on Ceremony",
+      "ja": " 双子とふたつの精霊",
+      "de": " Alles doppelt",
+      "fr": " Esprits opposés"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69015": {
+    "name": {
+      "en": " Seeing Eye to Eye",
+      "ja": " 双なる想い",
+      "de": " Unterschiedliche Absichten",
+      "fr": " Papotages à Fanow"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69016": {
+    "name": {
+      "en": " Mending Fences",
+      "ja": " 双眸、見つめる先",
+      "de": " Der schwere Weg zur Harmonie",
+      "fr": " L'union des contraires"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69017": {
+    "name": {
+      "en": " Hearts as One",
+      "ja": " 一双の祈り",
+      "de": " Synchronbeten in Perfektion",
+      "fr": " Prières jumelles"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69018": {
+    "name": {
+      "en": " Protectors of the Wood",
+      "ja": " ロンカの守護者たち",
+      "de": " Unter dem Schutz zweier Sippen",
+      "fr": " Tous unis pour Ronka"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69019": {
+    "name": {
+      "en": " In Pursuit of Knowledge",
+      "ja": " 抗いがたい魅力",
+      "de": " Forschungsdrang",
+      "fr": " Irrésistible soif de connaissance"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69020": {
+    "name": {
+      "en": " A Test of Strength",
+      "ja": " 里の挑戦者たち",
+      "de": " Wettstreit unter Freunden",
+      "fr": " Le défi du hameau"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69021": {
+    "name": {
+      "en": " Just the Two of Us",
+      "ja": " 秘密の癒やし場",
+      "de": " Oase der Ruhe",
+      "fr": " Un havre de paix"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69022": {
+    "name": {
+      "en": " Where There's a Well, There's a Way",
+      "ja": " その井戸を使わせて",
+      "de": " Stinkepulver gegen unliebsame Besucher",
+      "fr": " Pas de sales bêtes au puits"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69023": {
+    "name": {
+      "en": " Assault on a Deadly Weapon",
+      "ja": " 伝統料理に香草を",
+      "de": " Gefährliche Krauternte",
+      "fr": " Une cueillette dangereuse"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69024": {
+    "name": {
+      "en": " Water Palaver",
+      "ja": " 救いの水を甥っ子に",
+      "de": " Durstiger Tollpatsch",
+      "fr": " Un Mord sans gourde est un Mord mort"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69025": {
+    "name": {
+      "en": " Shovel or Boogie",
+      "ja": " 空き家の地図",
+      "de": " Vergrabene Hinterlassenschaften",
+      "fr": " Les souvenirs des gens partis"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69026": {
+    "name": {
+      "en": " Shine On You Crazy Mordling",
+      "ja": " 空のキラキラ",
+      "de": " Sternenstein",
+      "fr": " Des étoiles sur le balcon"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69027": {
+    "name": {
+      "en": " And Justice Feral",
+      "ja": " 元家畜、現野獣",
+      "de": " Verwilderte Echse",
+      "fr": " Y a un lézard avec ce lézard"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69028": {
+    "name": {
+      "en": " A Relatively Miner Issue",
+      "ja": " 労働者たちを探して",
+      "de": " Zeit für Feierabend",
+      "fr": " Des travailleurs trop appliqués"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69029": {
+    "name": {
+      "en": " I Drink, Therefore I Am (in Trouble)",
+      "ja": " 嘘から出た真",
+      "de": " Eine Lüge wird wahr",
+      "fr": " Casse la figure à Guthlaugur"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69030": {
+    "name": {
+      "en": " To the Far Side",
+      "ja": " よくキクおクスリ",
+      "de": " Wirkungsvoller Kaktor",
+      "fr": " Remède pour vieux mineur"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69031": {
+    "name": {
+      "en": " Whistle While You Shirk",
+      "ja": " 旅人は新人労働者？",
+      "de": " Halb blind, aber nicht aussichtslos",
+      "fr": " Allez, au travail les jeunes!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69032": {
+    "name": {
+      "en": " Prankster's Paradise",
+      "ja": " 命をかけた注文？",
+      "de": " Lebenswichtige Bestellung",
+      "fr": " Une question presque de vie ou de mort"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69033": {
+    "name": {
+      "en": " A Tab in the Dark",
+      "ja": " ツケ代わりの鉱石",
+      "de": " Ein Stein für die Zeche",
+      "fr": " Une pierre pour une créance"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69034": {
+    "name": {
+      "en": " The Creaky Mill Gets the Grease",
+      "ja": " 風車とモール",
+      "de": " Mullfett für das Windrad",
+      "fr": " Ah, qu'il grince, mon moulin!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69035": {
+    "name": {
+      "en": " Big Sister Is Watching You",
+      "ja": " 大鉱山で人探し",
+      "de": " Die Brüder an der Biran-Mine",
+      "fr": " Perdus de vue dans les mines"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69036": {
+    "name": {
+      "en": " The Brother Lode",
+      "ja": " 大鉱山で資材探し",
+      "de": " Bauholz aus der Biran-Mine",
+      "fr": " Dans les mines, on touche du bois"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69037": {
+    "name": {
+      "en": " Flower for a Friend",
+      "ja": " 線路から花束を",
+      "de": " Totenandacht auf der Bahnbrücke",
+      "fr": " À la mémoire d'un ami disparu"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69038": {
+    "name": {
+      "en": " Church Warrant",
+      "ja": " 遺跡に光を求めて",
+      "de": " Ruinen des Lichts",
+      "fr": " La lumière dans les ruines"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69039": {
+    "name": {
+      "en": " Scavengers Assemble",
+      "ja": " 助けて！スカベンジャー",
+      "de": " Rettung der Schatzsucher",
+      "fr": " Chasseurs de trésors en détresse"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69040": {
+    "name": {
+      "en": " Town Haul",
+      "ja": " 探して！スカベンジャー",
+      "de": " Schätze der Schatzsucher",
+      "fr": " Chasseurs de trésors en besoin"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69041": {
+    "name": {
+      "en": " Worm in the Ointment",
+      "ja": " 癒して！スカベンジャー",
+      "de": " Heilung der Schatzsucher",
+      "fr": " Chasseurs de trésors en rétablissement"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69042": {
+    "name": {
+      "en": " The Yolk's on You",
+      "ja": " 卵、買い取ります",
+      "de": " Besorgst du mir ein Ei?",
+      "fr": " La chasse au gros œuf"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69043": {
+    "name": {
+      "en": " Taken Down a Peck or Two",
+      "ja": " 仇、討ち取ります",
+      "de": " Rächst du meinen Bruder?",
+      "fr": " Vengeance contre volatile violent"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69044": {
+    "name": {
+      "en": " Repair for the Worst",
+      "ja": " 修理、必要ですか？",
+      "de": " Nur die nötigsten Reparaturen",
+      "fr": " État des lieux délabrés"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69045": {
+    "name": {
+      "en": " Stripe for the Picking",
+      "ja": " 縞模様の石",
+      "de": " Der Stein fällt nicht weit vom Gnom",
+      "fr": " Des rayures comme signe d'amour"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69046": {
+    "name": {
+      "en": " Mystery Miners",
+      "ja": " 暗号の遺言",
+      "de": " Das rätselhafte Testament",
+      "fr": " La lettre cryptée d'un ami défunt"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69047": {
+    "name": {
+      "en": " Charmless Man",
+      "ja": " 労働者の大事なお守り",
+      "de": " Verlorenes Glück",
+      "fr": " Un précieux talisman"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69048": {
+    "name": {
+      "en": " Oil Be Back",
+      "ja": " 坑道の油差し",
+      "de": " Öl für die Lampen",
+      "fr": " Mettre de l'huile"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69049": {
+    "name": {
+      "en": " Gnome Ore Heroes",
+      "ja": " ノームを倒して！",
+      "de": " Ein Gnom kommt selten allein",
+      "fr": " À bas les gnomes!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69050": {
+    "name": {
+      "en": " The Piping of the Dead",
+      "ja": " パイプを届けて！",
+      "de": " Ein Horn mit Geschichte",
+      "fr": " Ceci n'est pas une simple pipe"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69051": {
+    "name": {
+      "en": " Flowering Friendships",
+      "ja": " 救世主が導く出会い",
+      "de": " Auf Patrouille",
+      "fr": " Tisser des liens"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69052": {
+    "name": {
+      "en": " My Heart Will (Not) Go On",
+      "ja": " 恋人は海の彼方",
+      "de": " Herzschmerz im Bienenstock",
+      "fr": " D'amour et d'eau de mer"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69053": {
+    "name": {
+      "en": " Near, Far, Wherever You Are",
+      "ja": " 愛の支配人",
+      "de": " Nicht ohne meine Biene",
+      "fr": " Un gérant au grand cœur"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69054": {
+    "name": {
+      "en": " The Invisible Hand",
+      "ja": " 廃船街の需要",
+      "de": " Der Bedarf von Wrackstadt",
+      "fr": " L'approvisionnement de La Fange"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69055": {
+    "name": {
+      "en": " Scattered to the Winds",
+      "ja": " 舞い落ちた想い",
+      "de": " Vom Winde verwehte Reue",
+      "fr": " Lettres éparpillées"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69056": {
+    "name": {
+      "en": " One Good Meal",
+      "ja": " メオルに代えて",
+      "de": " Was möchtet ihr gerne essen?",
+      "fr": " Qu'est-ce qu'on mange?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69057": {
+    "name": {
+      "en": " Little and Late",
+      "ja": " 主の想い、従の想い",
+      "de": " Undank ist der Treue Lohn",
+      "fr": " Qui aime bien châtie bien"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69058": {
+    "name": {
+      "en": " Children of the Derelicts",
+      "ja": " 廃船街の子どもたち",
+      "de": " Die Kinder von Wrackstadt",
+      "fr": " Les enfants de La Fange"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69059": {
+    "name": {
+      "en": " Rebuild, Reuse, Recycle",
+      "ja": " 廃船街の木材調達",
+      "de": " Überreste der Seefahrt",
+      "fr": " Un jour, je serai capitaine!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69060": {
+    "name": {
+      "en": " Of Legacies Lost and Reclaimed",
+      "ja": " 落し物は一族の誇り",
+      "de": " Gebet den Armen",
+      "fr": " Tendre la main aux moins fortunés"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69061": {
+    "name": {
+      "en": " A Vein Pursuit",
+      "ja": " ミステル族の鉱夫",
+      "de": " Ein Mystel-Bergarbeiter",
+      "fr": " Le rêve du mineur mystel"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69062": {
+    "name": {
+      "en": " Tunnel Vision",
+      "ja": " 求めるはルターブ鉱",
+      "de": " Die Suche nach dem Lutahvit",
+      "fr": " Seul contre tous"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69063": {
+    "name": {
+      "en": " Two Tails Are Better than One",
+      "ja": " ロンゾとミステル",
+      "de": " Ronso und Mystel",
+      "fr": " Le sens de Queues-liées"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69064": {
+    "name": {
+      "en": " The Rutabite at the End of the Tunnel",
+      "ja": " 絡まる尻尾",
+      "de": " Pfote in Pfote",
+      "fr": " L'union fait la force"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69065": {
+    "name": {
+      "en": " An Axle to Grind",
+      "ja": " 三本目の尻尾",
+      "de": " Mordh mit an Bord",
+      "fr": " La troisième queue"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69066": {
+    "name": {
+      "en": " No Disassemble",
+      "ja": " 再稼働を目指して",
+      "de": " Für die Wiederinbetriebnahme",
+      "fr": " Objectif réactivation"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69067": {
+    "name": {
+      "en": " Thy Well Be Done",
+      "ja": " 汲み上げ装置の点検",
+      "de": " Schwindelfreie Inspektion",
+      "fr": " Inspection de matériel"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69068": {
+    "name": {
+      "en": " The Crystal Knaves",
+      "ja": " 光り輝く結晶採り",
+      "de": " Funkelnde Profitgier",
+      "fr": " Tout ce qui brille n'est pas de diamant"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69069": {
+    "name": {
+      "en": " Scars of War",
+      "ja": " 戦の傷がもたらしたもの",
+      "de": " Narben des Krieges",
+      "fr": " Blessures de guerre"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69070": {
+    "name": {
+      "en": " His Secret Shame",
+      "ja": " 罪の重み、喰われた闘志",
+      "de": " Selbstvorwürfe lasten schwer",
+      "fr": " Une culpabilité paralysante"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69071": {
+    "name": {
+      "en": " A Much-needed Respite",
+      "ja": " 語らいはぬくもりの中で",
+      "de": " Wie weggewaschen",
+      "fr": " La chaleur de l'amitié"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69072": {
+    "name": {
+      "en": " Resolve Regained",
+      "ja": " 友を背に剣は震えず",
+      "de": " Freundschaft als Therapie",
+      "fr": " Combattre pour ses amis"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69073": {
+    "name": {
+      "en": " Fugitive of Fear",
+      "ja": " 悦楽都市からの追手",
+      "de": " Die Geflüchteten",
+      "fr": " Les évadées"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69074": {
+    "name": {
+      "en": " Hobgob Smacker",
+      "ja": " ホブゴブリンを駆逐せよ！",
+      "de": " Klein und frech",
+      "fr": " Sus aux hobgobelins"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69075": {
+    "name": {
+      "en": " Small Nuisances",
+      "ja": " 小さな厄介者",
+      "de": " Kühl, aber weg ",
+      "fr": " Gêné par les Gogg"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69076": {
+    "name": {
+      "en": " Timber for the Taking",
+      "ja": " 高地の木材事情",
+      "de": " Bauen im Hochland",
+      "fr": " Du bois pour Amistie"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69077": {
+    "name": {
+      "en": " Rising to Her Apology",
+      "ja": " 靄が覆っていた過ち",
+      "de": " Die Geläuterte",
+      "fr": " Quand le voile se lève"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69078": {
+    "name": {
+      "en": " Fresh Off the Wing",
+      "ja": " 獣を屠る槍",
+      "de": " Geflügelte Lanzen",
+      "fr": " Les ailes protectrices"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69079": {
+    "name": {
+      "en": " Supplying Estimates",
+      "ja": " 元首去りて",
+      "de": " Handel auf Vorrat",
+      "fr": " Veiller aux grains"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69080": {
+    "name": {
+      "en": " Good, Honest Dirt",
+      "ja": " 巨大農園は遠い夢",
+      "de": " Saat der Hoffnung auf kargem Boden",
+      "fr": " Planter pour rêver"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69081": {
+    "name": {
+      "en": " Sisterly Concern",
+      "ja": " 姉の懸念、友の憂慮",
+      "de": " Die vermisste Elfe",
+      "fr": " Le souci d'une amie, la peur d'une sœur"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69082": {
+    "name": {
+      "en": " A Rocky Relationship",
+      "ja": " ゴツゴツのトモダチ",
+      "de": " Rocky & Schlitzohr - Eine steinige Freundschaft",
+      "fr": " Une amitié dure comme pierre"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69083": {
+    "name": {
+      "en": " Too Sweet to Eat",
+      "ja": " 可愛すぎるご馳走",
+      "de": " Drollige Delikatessen",
+      "fr": " Un filet trop mignon"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69084": {
+    "name": {
+      "en": " Killer on the Loose",
+      "ja": " 失敗作のコア",
+      "de": " Ein Experiment mit Deppen",
+      "fr": " Le soulèvement de la machine"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69085": {
+    "name": {
+      "en": " All for the Boom",
+      "ja": " 爆破最高！",
+      "de": " Explosive Eskapaden",
+      "fr": " Les explosifs, ça pète!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69086": {
+    "name": {
+      "en": " Distract and Rescue",
+      "ja": " 奪還！愛しのオートマトン",
+      "de": " Marionettenliebe rostet nicht",
+      "fr": " Opération sauvetage d'automate"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69087": {
+    "name": {
+      "en": " Beneath the Beard",
+      "ja": " 大人なドワーフの子供な悩み",
+      "de": " Wenn es mal wieder juckt",
+      "fr": " Le baume de Bomott"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69088": {
+    "name": {
+      "en": " Short on Courage",
+      "ja": " 小心者の恋慕のゆくえ",
+      "de": " Ein kleines Herz und die große Liebe",
+      "fr": " Un nain qui a le béguin"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69089": {
+    "name": {
+      "en": " Knocking the Knockers",
+      "ja": " 鉱石泥棒を捕まえろ",
+      "de": " Plagegeister",
+      "fr": " Freiner les frappeurs faucheurs"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69090": {
+    "name": {
+      "en": " Goggeo and Tholliet",
+      "ja": " トルーとコグー",
+      "de": " Skandal im Zwergendorf",
+      "fr": " Goggméo et Tholliette"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69091": {
+    "name": {
+      "en": " With Ale Due Respect",
+      "ja": " ドワーフ式の表敬訪問",
+      "de": " Opfergabe nach Zwergenart",
+      "fr": " En l'honneur de Zigutt"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69092": {
+    "name": {
+      "en": " A Disagreeable Dwarf",
+      "ja": " ぶっこみのドワーフ",
+      "de": " Ein hammerharter Zwerg",
+      "fr": " Parle à mon Nain"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69093": {
+    "name": {
+      "en": " Almost a Friend",
+      "ja": " 舎弟の心得！",
+      "de": " Freundschaftsbande",
+      "fr": " Échec et automates"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69094": {
+    "name": {
+      "en": " A Practiced Greeting",
+      "ja": " 挨拶の猛特訓！",
+      "de": " Grüßen will gelernt sein",
+      "fr": " L'entraînement au lali-ho"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69095": {
+    "name": {
+      "en": " Learning to Lali-ho",
+      "ja": " ラリホー！！！！",
+      "de": " Holladrio!!!",
+      "fr": " Le nouveau Ronitt"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69096": {
+    "name": {
+      "en": " Ronitt to the Rescue",
+      "ja": " 漢ロニット、ライト村を救え！",
+      "de": " Ronitts Meisterleistung",
+      "fr": " Un Nain à Cherpant"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69097": {
+    "name": {
+      "en": " Brew as the Tholl Do",
+      "ja": " ドワーヴンエール酒造体験！",
+      "de": " Zwergenbräu I",
+      "fr": " La tradition du brassage"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69098": {
+    "name": {
+      "en": " Bringing the Nibbles",
+      "ja": " ドワーヴンエールのつまみ",
+      "de": " Zwergenbräu II",
+      "fr": " L'accompagnement idéal de l'ale"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69099": {
+    "name": {
+      "en": " You Know the Words",
+      "ja": " ドワーヴンエールの必需品",
+      "de": " Zwergenbräu III",
+      "fr": " Trinquer tous en cœur"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69100": {
+    "name": {
+      "en": " Simple Gifts",
+      "ja": " 万感の想いを込めて",
+      "de": " Geschenke, die von Herzen kommen",
+      "fr": " Tournée de remerciement"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69101": {
+    "name": {
+      "en": " His Own Medicine",
+      "ja": " 水晶公の御用達？",
+      "de": " Ein Tonikum zum Speien",
+      "fr": " Un sirop pour les écœurer tous"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69102": {
+    "name": {
+      "en": " Welcome to the Future",
+      "ja": " 新たな命に祝福を",
+      "de": " Der Segen für ein neues Leben",
+      "fr": " Accueillir une nouvelle vie"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69103": {
+    "name": {
+      "en": " Made, Not Born",
+      "ja": " 闇の戦士からの励まし",
+      "de": " Eine Scheibe Mut für den Rekrut",
+      "fr": " Encouragement des Ténèbres"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69104": {
+    "name": {
+      "en": " The Poet Doesn't Know It",
+      "ja": " 夜をもたらす詩",
+      "de": " Von der Schönheit der Nacht",
+      "fr": " Des vers pour les cieux"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69105": {
+    "name": {
+      "en": " The Sullen Man",
+      "ja": " サレンな男",
+      "de": " Auf gefährlicher Forschungsmission",
+      "fr": " Des pêcheurs maussades"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69106": {
+    "name": {
+      "en": " Rite of Passage",
+      "ja": " 監獄で度胸試しを",
+      "de": " Knastbruder",
+      "fr": " Rite de passage dans les ruines"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69107": {
+    "name": {
+      "en": " Bigger Fish to Dry",
+      "ja": " その感謝を干物に込めて",
+      "de": " Dörrfisch zum Dank",
+      "fr": " Et alors, il vient, mon poisson séché?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69108": {
+    "name": {
+      "en": " Treasure Hunting Tykes",
+      "ja": " 子どもたちの宝探し",
+      "de": " Jäger des vergessenen Schatzes",
+      "fr": " Chasseurs de trésors en herbe"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69109": {
+    "name": {
+      "en": " With Furious Anger",
+      "ja": " 英雄に憧れた少年は",
+      "de": " Ein aufgegebener Traum",
+      "fr": " Une colère qui motive"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69110": {
+    "name": {
+      "en": " Scrumptious Squirmers",
+      "ja": " ぷりぷりのアレ",
+      "de": " Glibberige Geschäfte",
+      "fr": " Pourvu que ça grouille"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69111": {
+    "name": {
+      "en": " Simple Treasures",
+      "ja": " あなたが落としたのは……",
+      "de": " Der kleine Mann und die Harpune",
+      "fr": " La pêche “au” harpon"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69112": {
+    "name": {
+      "en": " Ondo Dream of Oranges",
+      "ja": " オレンジ色の夢",
+      "de": " Ein Traum in Orange",
+      "fr": " Voir la vie en orange"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69113": {
+    "name": {
+      "en": " Pearls of the Deep",
+      "ja": " 魅惑の海の幸",
+      "de": " Die Zähne zeigen",
+      "fr": " Donne-moi tes dents!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69114": {
+    "name": {
+      "en": " Beware the Benthos",
+      "ja": " オンド族の確執",
+      "de": " Der vermisste Jäger",
+      "fr": " Des Ondos sans scrupules"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69115": {
+    "name": {
+      "en": " Beyond the Reach of Koal",
+      "ja": " 帰りたい、帰れない",
+      "de": " Ein Königreich für eine Leiter",
+      "fr": " Une trop haute couche"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69116": {
+    "name": {
+      "en": " Do the Chuckle",
+      "ja": " 陸者の意思疎通",
+      "de": " Reden ohne etwas zu sagen",
+      "fr": " Dites-le sans les mots"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69117": {
+    "name": {
+      "en": " Strange Stew",
+      "ja": " 加熱調理最前線",
+      "de": " Das Geheimnis des Feuers",
+      "fr": " Pattes de trilobite au menu"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69118": {
+    "name": {
+      "en": " Scales for the Scaled Ones",
+      "ja": " アースの知恵袋",
+      "de": " Jagdrituale",
+      "fr": " Dur, dur d'écailles"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69119": {
+    "name": {
+      "en": " Secrets and Spears",
+      "ja": " 不審なオンド",
+      "de": " Eindringling",
+      "fr": " Trouvez l'Ondo suspect!"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69120": {
+    "name": {
+      "en": " Scavenger Deep",
+      "ja": " ヒトとの邂逅",
+      "de": " Das Begehr der Flossenlosen",
+      "fr": " Ondo en quête de valeurs"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69121": {
+    "name": {
+      "en": " Mistake or Machination",
+      "ja": " オンドとヒトの食い違い",
+      "de": " Aller Handel ist schwer",
+      "fr": " C'est pas si gravier"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69122": {
+    "name": {
+      "en": " More than One Way to Skin a Stingray",
+      "ja": " 陸の狩人",
+      "de": " Jagd in den Tiefen",
+      "fr": " Dur, dur de peau"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69123": {
+    "name": {
+      "en": " Doggone Dagons",
+      "ja": " 増殖せし岩",
+      "de": " Populationskontrolle",
+      "fr": " Tout a bon dos pour un Ondo"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69124": {
+    "name": {
+      "en": " Koal of the Cups",
+      "ja": " 潮溜まりの変わり者",
+      "de": " Wie ein Fisch auf dem Trockenen",
+      "fr": " Un Ondo pas comme les autres"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69125": {
+    "name": {
+      "en": " Mother's Mnyiri",
+      "ja": " 潮溜まりの母のために",
+      "de": " Die Liebe eines Kindes",
+      "fr": " Maman a faim, maman a foie"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69126": {
+    "name": {
+      "en": " Create the Birthing Rope",
+      "ja": " 潮溜まりの危機",
+      "de": " Düsteres Meer, düstere Zukunft",
+      "fr": " Contractions, réaction"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69127": {
+    "name": {
+      "en": " Tomorrow Is in Your Fins",
+      "ja": " 潮溜まりの未来",
+      "de": " Das Glück der Kinder",
+      "fr": " Tellement frai"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69128": {
+    "name": {
+      "en": " Responsible Creation",
+      "ja": " 優等な市民の務め",
+      "de": " Idee und Umsetzung",
+      "fr": " Les créateurs amateurs"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69129": {
+    "name": {
+      "en": " Debate and Discourse",
+      "ja": " 言論の自由",
+      "de": " Charakterbildung",
+      "fr": " La rhétorique du peuple"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69130": {
+    "name": {
+      "en": " Community Cohesion",
+      "ja": " 優良な市民たらしめるもの",
+      "de": " Angemessenes Äußeres",
+      "fr": " La coule attitude"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69131": {
+    "name": {
+      "en": "By the Time You Hear This",
+      "ja": "異界遺構 シルクス・ツイニング",
+      "de": "Eine Nachricht aus der Vergangenheit",
+      "fr": "Une descente aux enfers"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69132": {
+    "name": {
+      "en": "Akadaemia Anyder",
+      "ja": "創造機関 アナイダアカデミア",
+      "de": "Akadaemia des Schreckens",
+      "fr": "L'académie des horreurs"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69133": {
+    "name": {
+      "en": "Nuts to You",
+      "ja": "ナッツクランのモブハント（初級）",
+      "de": "Clan Kupo bläst zur Jagd 1",
+      "fr": "Ouverture de la chasse chez les Kupo"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69134": {
+    "name": {
+      "en": "Two Nuts Too Nutty",
+      "ja": "ナッツクランのモブハント（中級）",
+      "de": "Clan Kupo bläst zur Jagd 2",
+      "fr": "Un joujou des Eulmoriens?"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69135": {
+    "name": {
+      "en": "How Do You Like Three Nuts",
+      "ja": "ナッツクランのモブハント（上級）",
+      "de": "Clan Kupo bläst zur Jagd 3",
+      "fr": "La tête sur les épaules"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69136": {
+    "name": {
+      "en": "Too Many Nutters",
+      "ja": "ナッツクランのモブハント（リスキー）",
+      "de": "Clan Kupo bläst zur Hochwildjagd",
+      "fr": "Meneur à la place du meneur"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69137": {
+    "name": {
+      "en": "Yet Another Striking Opportunity",
+      "ja": "力を試す訓練場",
+      "de": "Gut trainiert ist halb gewonnen",
+      "fr": "Un lieu pour jauger sa force"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69138": {
+    "name": {
+      "en": "Leves of the Crystarium",
+      "ja": "ギルドリーヴ開放「クリスタリウム」",
+      "de": "Freibriefe von Crystarium",
+      "fr": "Mandataire de Cristarium"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69139": {
+    "name": {
+      "en": "The Boutique Always Wins",
+      "ja": "誠実さを重んじる、モーエン商会",
+      "de": "Der Handwerker ist König",
+      "fr": "Retour aux affaires courantes"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69140": {
+    "name": {
+      "en": "Sights of the First",
+      "ja": "漆黒の探検手帳",
+      "de": "Unbekanntes Norvrandt",
+      "fr": "Les nerfs d'acier pour l'exploration"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69141": {
+    "name": {
+      "en": "The Aspiring Skywatcher",
+      "ja": "天気予報がしたい！",
+      "de": "Traumwetter",
+      "fr": "Des rêves météorologiques"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69142": {
+    "name": {
+      "en": "When It Rains",
+      "ja": "激動のレイクランド",
+      "de": "Sie kommen",
+      "fr": "La purgation de Grand-Lac"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69143": {
+    "name": {
+      "en": "Word from On High",
+      "ja": "地は冷たく、空は遠く",
+      "de": "Die Wunden des Krieges - Teil 1",
+      "fr": "Un lac de souffrances"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69144": {
+    "name": {
+      "en": "Small Favors",
+      "ja": "自分にできること",
+      "de": "Die Wunden des Krieges - Teil 2",
+      "fr": "Le doute de soi"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69145": {
+    "name": {
+      "en": "The Best Way Out",
+      "ja": "秘めた覚悟",
+      "de": "Minfilias Reise beginnt",
+      "fr": "La résolution d'une jeune fille"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69146": {
+    "name": {
+      "en": "Free Trade",
+      "ja": "賑わいの跡",
+      "de": "Garik",
+      "fr": "Des Mords sans le souq"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69147": {
+    "name": {
+      "en": "The Trolley Problem",
+      "ja": "トロッコ復古",
+      "de": "Gute Mine, böses Spiel",
+      "fr": "Les chariots de Biran"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69148": {
+    "name": {
+      "en": "Rust and Ruin",
+      "ja": "トゥワインへ",
+      "de": "Der Meister des Selbstmitleids",
+      "fr": "Un fâcheux chagrin "
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69149": {
+    "name": {
+      "en": "On Track",
+      "ja": "枕木の上にて弾む",
+      "de": "Ein tiefer Griff in die Werkzeugkiste",
+      "fr": "Réparateurs sur rails"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69150": {
+    "name": {
+      "en": "Down for Maintenance",
+      "ja": "タロースは今",
+      "de": "Studieren geht über reparieren",
+      "fr": "Le talos de la dernière chance"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69151": {
+    "name": {
+      "en": "The Truth Hurts",
+      "ja": "家族を負う背中",
+      "de": "Die Einsamkeit des Meisters",
+      "fr": "Noyaux dans les mines"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69152": {
+    "name": {
+      "en": "A Convenient Distraction",
+      "ja": "暗がりの運試し",
+      "de": "Bergmannsglück und Eulenblick",
+      "fr": "Une pièce qui vaut son pesant d'or"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69153": {
+    "name": {
+      "en": "A Dirty Job",
+      "ja": "どうか見つけて",
+      "de": "Funkeln aus der Tiefe",
+      "fr": "L'œil de lion"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69154": {
+    "name": {
+      "en": "Have a Heart",
+      "ja": "生きるに足る理由",
+      "de": "Agnas Geschenk",
+      "fr": "Un testament précieux"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69155": {
+    "name": {
+      "en": "Full Steam Ahead",
+      "ja": "廃都ナバスアレン",
+      "de": "Vater und Bruder",
+      "fr": "Sur les rails de Nabaath Areng"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69156": {
+    "name": {
+      "en": "Crossroads",
+      "ja": "光の巫女",
+      "de": "Die Entscheidung des Mädchens",
+      "fr": "La prêtresse de la Lumière"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69157": {
+    "name": {
+      "en": "A Fresh Start",
+      "ja": "私はここに眠る",
+      "de": "Hinab in den Brunnen",
+      "fr": "Le Puits de Malikah"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69158": {
+    "name": {
+      "en": "More than a Hunch",
+      "ja": "君を救う痛み",
+      "de": "Die Last des Lichts",
+      "fr": "Douleurs de Lumière"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69159": {
+    "name": {
+      "en": "Hollow Pursuits",
+      "ja": "すべてを呑み込む穴",
+      "de": "Die Sphären des Sündenvertilgers",
+      "fr": "Le trou noir du grand pécheur"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69160": {
+    "name": {
+      "en": "A Voice from the Void",
+      "ja": "「虚ろ」からの呼び声",
+      "de": "Eine Stimme aus dem Nichts",
+      "fr": "Une voix venue du vide"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69161": {
+    "name": {
+      "en": "Echoes of the Past",
+      "ja": "テイナーに秘められたもの",
+      "de": "Erwachende Erinnerungen",
+      "fr": "L'éclosion des souvenirs"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69162": {
+    "name": {
+      "en": "Nyelbert's Lament",
+      "ja": "ナイルベルトの後悔",
+      "de": "Ein großes Opfer",
+      "fr": "Une cupidité bien généreuse"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69163": {
+    "name": {
+      "en": "Taynor's Training Day",
+      "ja": "がんばれ、テイナー",
+      "de": "Magie-Lehrstunde",
+      "fr": "La valeur n'attend pas le nombre de monstres lapidés"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69164": {
+    "name": {
+      "en": "A Tearful Reunion",
+      "ja": "やっと、また会えたね",
+      "de": "Tränenreiche Vergangenheit",
+      "fr": "Un siècle de larmes"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69165": {
+    "name": {
+      "en": "Shadow Walk with Me",
+      "ja": "影の英雄譚",
+      "de": "Im Schatten wahrer Helden",
+      "fr": "L'héroïne de l'ombre"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69166": {
+    "name": {
+      "en": "Return to Eulmore",
+      "ja": "コルシア島の決戦",
+      "de": "Ein seltsames Verhalten",
+      "fr": "Retour à Kholusia"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69167": {
+    "name": {
+      "en": "A Feast of Lies",
+      "ja": "膨らんだ嘘",
+      "de": "Lange lebe Lord Vauthry",
+      "fr": "Une ignoble vérité"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69168": {
+    "name": {
+      "en": "Paradise Fallen",
+      "ja": "失われた楽園の夢",
+      "de": "Entzaubertes Eulmore",
+      "fr": "Dur réveil pour Eulmore"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69169": {
+    "name": {
+      "en": "The Ladder",
+      "ja": "ラダー大昇降機",
+      "de": "Die Leiter von Kholusia",
+      "fr": "Le compte est bon"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69170": {
+    "name": {
+      "en": "The View from Above",
+      "ja": "高き場所より見る景色",
+      "de": "Jemand zu Hause?",
+      "fr": "La grande ascension"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69171": {
+    "name": {
+      "en": "In Mt. Gulg's Shadow",
+      "ja": "クイックウェイを遡って",
+      "de": "Schotter, Kiesel und fliegender Marmor",
+      "fr": "Objectif Gulg"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69172": {
+    "name": {
+      "en": "A Gigantic Undertaking",
+      "ja": "難題を穿つ理想",
+      "de": "Überredungskünste",
+      "fr": "Une idée géante"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69173": {
+    "name": {
+      "en": "Meet the Tholls",
+      "ja": "トルだせ大作戦！",
+      "de": "Prüfung aus dem Stollen der Geschichte",
+      "fr": "Pan dans ta barbe!"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69174": {
+    "name": {
+      "en": "A-Digging We Will Go",
+      "ja": "採掘と破砕",
+      "de": "Ins Duergar-Gebirge",
+      "fr": "Un Nain sous bonne escorte"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69175": {
+    "name": {
+      "en": "The Duergar's Tewel",
+      "ja": "ドヴェルグの煙突",
+      "de": "Dann mal Gute Nacht!",
+      "fr": "La guerre des barbes"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69176": {
+    "name": {
+      "en": "Rich Veins of Hope",
+      "ja": "萌芽のとき",
+      "de": "Mit Gruß aus Tomra",
+      "fr": "Bonnes pioches"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69177": {
+    "name": {
+      "en": "That None Shall Ever Again",
+      "ja": "これが最後の",
+      "de": "Ein Geschenk aus Schlangenzweig",
+      "fr": "La contribution du peuple de la Nuit"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69178": {
+    "name": {
+      "en": "A Breath of Respite",
+      "ja": "目覚めたら",
+      "de": "Unter vier Augen",
+      "fr": "Un dernier instant de répit"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69179": {
+    "name": {
+      "en": "Extinguishing the Last Light",
+      "ja": "光をもたらす者",
+      "de": "Sturm auf den Gulg",
+      "fr": "Le dernier grand purgateur"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69180": {
+    "name": {
+      "en": "Reassuring the Masses",
+      "ja": "舞台上で最も哀れな役者",
+      "de": "Wieder auf den Beinen",
+      "fr": "Lendemain de défaite"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69181": {
+    "name": {
+      "en": "In His Garden",
+      "ja": "最果てに並ぶ",
+      "de": "Lobgesang auf den Exarchen",
+      "fr": "Sur les traces de l'exarque"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69182": {
+    "name": {
+      "en": "The Unbroken Thread",
+      "ja": "消えることなき希望の唄",
+      "de": "Der Komplize",
+      "fr": "Le messager de l'espoir"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69183": {
+    "name": {
+      "en": "To Storm-tossed Seas",
+      "ja": "嵐多き海へ",
+      "de": "Ins Meer der Schwarzen Winde",
+      "fr": "Le grand plongeon"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69184": {
+    "name": {
+      "en": "Waiting in the Depths",
+      "ja": "海底で待つは",
+      "de": "Trocken auf dem Meeresgrund",
+      "fr": "Randonnée sous-marine"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69185": {
+    "name": {
+      "en": "City of the Ancients",
+      "ja": "彼らの都",
+      "de": "Die Stadt der Alten",
+      "fr": "Les vestiges des anciens"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69186": {
+    "name": {
+      "en": "The Light of Inspiration",
+      "ja": "輝きは不滅なりて",
+      "de": "Schwindender Glanz",
+      "fr": "Un visage connu?"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69187": {
+    "name": {
+      "en": "The Illuminated Land",
+      "ja": "明かりの灯りし地",
+      "de": "Das Erleuchtete Land",
+      "fr": "L'étendue nitescente"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69188": {
+    "name": {
+      "en": "The End of a World",
+      "ja": "ある世界の終末",
+      "de": "Die Stadt am Ende der Welt",
+      "fr": "La cité des ombres"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69189": {
+    "name": {
+      "en": "A Greater Purpose",
+      "ja": "その者の結末",
+      "de": "Der Plan des Konvent",
+      "fr": "Le fardeau d'Emet-Selch"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69190": {
+    "name": {
+      "en": "Shadowbringers",
+      "ja": "漆黒のヴィランズ",
+      "de": "Schattenbringer",
+      "fr": "Porteurs d'ombre"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69191": {
+    "name": {
+      "en": "The Crystalline Mean",
+      "ja": "ミーン工芸館",
+      "de": "Die Manufaktur der Gemeinschaft",
+      "fr": "La halle du Juste"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69192": {
+    "name": {
+      "en": " The Great Deceiver",
+      "ja": " 昏き森の守護者",
+      "de": " Die Beschützerin des Waldes",
+      "fr": " Le Gardien de la forêt obscure"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69193": {
+    "name": {
+      "en": " Slither Along",
+      "ja": " 大蛇の小さな化身様",
+      "de": " Die Herabkunft der Schlange",
+      "fr": " Une incarnation charnelle en modèle réduit"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69194": {
+    "name": {
+      "en": " Snake the Lead",
+      "ja": " 化身様の啓示",
+      "de": " Streifen der Wahrheit",
+      "fr": " Révélations d'apocalypse"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69195": {
+    "name": {
+      "en": " Snakes in the Grass",
+      "ja": " 清き森を護るため",
+      "de": " Frevelhafte Pläne",
+      "fr": " Retour dans le sommeil éternel"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69196": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69197": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69198": {
+    "name": {
+      "en": "Minstrel from Another Mother",
+      "ja": "第一世界で詩を詠いし者",
+      "de": "Der Fahrende Säger des ersten Splitters",
+      "fr": "Un ménestrel du premier monde"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69199": {
+    "name": {
+      "en": "Feels Like Moonfire",
+      "ja": "新米冒険者と紅蓮祭",
+      "de": "Der Grünschnabel beim Reigen",
+      "fr": "Novice des Feux de la Mort"
+    },
+    "icon": "/i/080000/080101.png"
+  },
+  "69200": {
+    "name": {
+      "en": "Anything You Can Do",
+      "ja": "憧れの先輩と紅蓮祭",
+      "de": "Dem Grünschnabel auf die Sprünge helfen",
+      "fr": "Les Feux de l'admiration"
+    },
+    "icon": "/i/080000/080101.png"
+  },
+  "69201": {
+    "name": {
+      "en": "High-flying Hijinks",
+      "ja": "跳躍自慢と紅蓮祭",
+      "de": "Ein Fest für Springer",
+      "fr": "Des Feux bondissants"
+    },
+    "icon": "/i/080000/080101.png"
+  },
+  "69202": {
+    "name": {
+      "en": "Frying for Fame and Fortune",
+      "ja": "調理自慢と紅蓮祭",
+      "de": "Ein Fest für Gourmets",
+      "fr": "La cuisine de la Mort"
+    },
+    "icon": "/i/080000/080101.png"
+  },
+  "69203": {
+    "name": {
+      "en": "Hook, Line, and Sinker",
+      "ja": "釣り自慢と紅蓮祭",
+      "de": "Ein Fest für Angler",
+      "fr": "Les Feux de la pêche"
+    },
+    "icon": "/i/080000/080101.png"
+  },
+  "69204": {
+    "name": {
+      "en": "守護天節と恐怖の視線？",
+      "ja": "守護天節と恐怖の視線？",
+      "de": "Schau mir in das Auge, Kleine",
+      "fr": "Un regard moyennement effrayant"
+    },
+    "icon": "/i/080000/080103.png"
+  },
+  "69205": {
+    "name": {
+      "en": "守護天節の仮装パーティー",
+      "ja": "守護天節の仮装パーティー",
+      "de": "Auf verkleideter Mission",
+      "fr": "Un bal costumé cabalistique"
+    },
+    "icon": "/i/080000/080103.png"
+  },
+  "69206": {
+    "name": {
+      "en": "守護天節と妖しい館",
+      "ja": "守護天節と妖しい館",
+      "de": "Totentanz",
+      "fr": "L'étrange manoir abandonné"
+    },
+    "icon": "/i/080000/080103.png"
+  },
+  "69207": {
+    "name": {
+      "en": " Word about Komra",
+      "ja": "コメラの村の噂",
+      "de": " Zwergengeflüster",
+      "fr": " Rencontre en noir et blanc"
     },
     "icon": "/i/071000/071221.png"
   }

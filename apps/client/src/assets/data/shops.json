@@ -618,16 +618,16 @@
     "fr": "Manifestes gordiens (guerre 2)"
   },
   "1769607": {
-    "en": "Chocobo Feather Exchange I",
-    "ja": "特殊チョコボの羽根の取引（その1）",
-    "de": "Chocobo-Federn I",
-    "fr": "Plumes de chocobo (1)"
+    "en": "Gold Chocobo Feather Exchange",
+    "ja": "ゴールドチョコボの羽根の取引",
+    "de": "Goldene Chocobo-Federn",
+    "fr": "Pennes de chocobo doré"
   },
   "1769610": {
-    "en": "Chocobo Feather Exchange II",
-    "ja": "特殊チョコボの羽根の取引（その2）",
-    "de": "Chocobo-Federn II",
-    "fr": "Plumes de chocobo (2)"
+    "en": "Silver Chocobo Feather Exchange I",
+    "ja": "シルバーチョコボの羽根の取引（その1）",
+    "de": "Silberne Chocobo-Federn I",
+    "fr": "Pennes de chocobo argenté (1)"
   },
   "1769612": {
     "en": "Seasonal Event Prizes (♂)",
@@ -1314,88 +1314,88 @@
     "fr": "Objets de récolte"
   },
   "1769767": {
-    "en": "Red Crafters' Scrip Exchange (Lv. 50)",
-    "ja": "クラフタースクリップ:赤貨の取引（Lv50～向け）",
-    "de": "Rote Handwerkerscheine (ab St. 50)",
-    "fr": "Assignats rouges d'artisan (Nv ≧ 50)"
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 50)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 50)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 50)"
   },
   "1769768": {
-    "en": "Red Crafters' Scrip Exchange (Lv. 58)",
-    "ja": "クラフタースクリップ:赤貨の取引（Lv58～向け）",
-    "de": "Rote Handwerkerscheine (ab St. 58)",
-    "fr": "Assignats rouges d'artisan (Nv ≧ 58)"
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 58)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 58)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 58)"
   },
   "1769769": {
-    "en": "Red Crafters' Scrip Exchange (Lv. 61)",
-    "ja": "クラフタースクリップ:赤貨の取引（Lv61～向け）",
-    "de": "Rote Handwerkerscheine (ab St. 61)",
-    "fr": "Assignats rouges d'artisan (Nv ≧ 61)"
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 61)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv61～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 61)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 61)"
   },
   "1769770": {
-    "en": "Red Gatherers' Scrip Exchange (Lv. 50)",
-    "ja": "ギャザラースクリップ:赤貨の取引（Lv50～向け）",
-    "de": "Rote Sammlerscheine (ab St. 50)",
-    "fr": "Assignats rouges de récolteur (Nv ≧ 50)"
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 50)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 50)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 50)"
   },
   "1769771": {
-    "en": "Red Gatherers' Scrip Exchange (Lv. 58)",
-    "ja": "ギャザラースクリップ:赤貨の取引（Lv58～向け）",
-    "de": "Rote Sammlerscheine (ab St. 58)",
-    "fr": "Assignats rouges de récolteur (Nv ≧ 58)"
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 58)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 58)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 58)"
   },
   "1769772": {
-    "en": "Red Gatherers' Scrip Exchange (Lv. 61)",
-    "ja": "ギャザラースクリップ:赤貨の取引（Lv61～向け）",
-    "de": "Rote Sammlerscheine (ab St. 61)",
-    "fr": "Assignats rouges de récolteur (Nv ≧ 61)"
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 61)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv61～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 61)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 61)"
   },
   "1769773": {
-    "en": "Red Crafters' Scrip Exchange (Lv. 50)",
-    "ja": "クラフタースクリップ:赤貨の取引（Lv50～向け）",
-    "de": "Rote Handwerkerscheine (ab St. 50)",
-    "fr": "Assignats rouges d'artisan (Nv ≧ 50)"
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 50)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 50)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 50)"
   },
   "1769774": {
-    "en": "Red Crafters' Scrip Exchange (Lv. 58)",
-    "ja": "クラフタースクリップ:赤貨の取引（Lv58～向け）",
-    "de": "Rote Handwerkerscheine (ab St. 58)",
-    "fr": "Assignats rouges d'artisan (Nv ≧ 58)"
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 58)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 58)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 58)"
   },
   "1769775": {
-    "en": "Red Gatherers' Scrip Exchange (Lv. 50)",
-    "ja": "ギャザラースクリップ:赤貨の取引（Lv50～向け）",
-    "de": "Rote Sammlerscheine (ab St. 50)",
-    "fr": "Assignats rouges de récolteur (Nv ≧ 50)"
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 50)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 50)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 50)"
   },
   "1769776": {
-    "en": "Red Gatherers' Scrip Exchange (Lv. 58)",
-    "ja": "ギャザラースクリップ:赤貨の取引（Lv58～向け）",
-    "de": "Rote Sammlerscheine (ab St. 58)",
-    "fr": "Assignats rouges de récolteur (Nv ≧ 58)"
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 58)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 58)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 58)"
   },
   "1769777": {
-    "en": "Red Crafters' Scrip Exchange (Lv. 50)",
-    "ja": "クラフタースクリップ:赤貨の取引（Lv50～向け）",
-    "de": "Rote Handwerkerscheine (ab St. 50)",
-    "fr": "Assignats rouges d'artisan (Nv ≧ 50)"
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 50)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 50)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 50)"
   },
   "1769778": {
-    "en": "Red Gatherers' Scrip Exchange (Lv. 50)",
-    "ja": "ギャザラースクリップ:赤貨の取引（Lv50～向け）",
-    "de": "Rote Sammlerscheine (ab St. 50)",
-    "fr": "Assignats rouges de récolteur (Nv ≧ 50)"
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 50)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 50)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 50)"
   },
   "1769779": {
-    "en": "Yellow Crafters' Scrip Exchange (Lv. 70)",
-    "ja": "クラフタースクリップ:黄貨の取引（Lv70向け・装備）",
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Gear)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備）",
     "de": "Gelbe Handwerkerscheine (ab St. 70, Ausrüstung)",
-    "fr": "Assignats jaunes d'artisan (équipements/Nv 70)"
+    "fr": "Assignats jaunes d'artisan (équipements/Nv ≧ 70)"
   },
   "1769780": {
-    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70)",
-    "ja": "ギャザラースクリップ:黄貨の取引（Lv70向け・装備）",
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Gear)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備）",
     "de": "Gelbe Sammlerscheine (ab St. 70, Ausrüstung)",
-    "fr": "Assignats jaunes de récolteur (équipements/Nv 70)"
+    "fr": "Assignats jaunes de récolteur (équipements/Nv ≧ 70)"
   },
   "1769781": {
     "en": "Allagan Tomestones of Poetics (Special Arms)",
@@ -1561,15 +1561,15 @@
   },
   "1769809": {
     "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Items)",
-    "ja": "クラフタースクリップ:黄貨の取引（Lv70向け・その他）",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・その他）",
     "de": "Gelbe Handwerkerscheine (ab St. 70, Anderes)",
-    "fr": "Assignats jaunes d'artisan (divers/Nv 70)"
+    "fr": "Assignats jaunes d'artisan (divers/Nv ≧ 70)"
   },
   "1769810": {
     "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Items)",
-    "ja": "ギャザラースクリップ:黄貨の取引（Lv70向け・その他）",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・その他）",
     "de": "Gelbe Sammlerscheine (ab St. 70, Anderes)",
-    "fr": "Assignats jaunes de récolteur (divers/Nv 70)"
+    "fr": "Assignats jaunes de récolteur (divers/Nv ≧ 70)"
   },
   "1769811": {
     "en": "Allied Seals (Other)",
@@ -1716,40 +1716,40 @@
     "fr": ""
   },
   "1769835": {
-    "en": "Red Crafters' Scrip Exchange (Master Recipes)",
-    "ja": "クラフタースクリップ:赤貨の取引（秘伝書）",
-    "de": "Rote Handwerkerscheine (Meisterrezeptbücher)",
-    "fr": "Assignats rouges d'artisan (recettes expertes)"
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
   },
   "1769836": {
-    "en": "Red Crafters' Scrip Exchange (Master Recipes)",
-    "ja": "クラフタースクリップ:赤貨の取引（秘伝書）",
-    "de": "Rote Handwerkerscheine (Meisterrezeptbücher)",
-    "fr": "Assignats rouges d'artisan (recettes expertes)"
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
   },
   "1769837": {
-    "en": "Red Crafters' Scrip Exchange (Master Recipes)",
-    "ja": "クラフタースクリップ:赤貨の取引（秘伝書）",
-    "de": "Rote Handwerkerscheine (Meisterrezeptbücher)",
-    "fr": "Assignats rouges d'artisan (recettes expertes)"
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
   },
   "1769838": {
-    "en": "Red Crafters' Scrip Exchange (Master Recipes)",
-    "ja": "クラフタースクリップ:赤貨の取引（秘伝書）",
-    "de": "Rote Handwerkerscheine (Meisterrezeptbücher)",
-    "fr": "Assignats rouges d'artisan (recettes expertes)"
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
   },
   "1769839": {
-    "en": "Red Crafters' Scrip Exchange (Master Recipes)",
-    "ja": "クラフタースクリップ:赤貨の取引（秘伝書）",
-    "de": "Rote Handwerkerscheine (Meisterrezeptbücher)",
-    "fr": "Assignats rouges d'artisan (recettes expertes)"
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
   },
   "1769840": {
-    "en": "Red Crafters' Scrip Exchange (Master Recipes)",
-    "ja": "クラフタースクリップ:赤貨の取引（秘伝書）",
-    "de": "Rote Handwerkerscheine (Meisterrezeptbücher)",
-    "fr": "Assignats rouges d'artisan (recettes expertes)"
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
   },
   "1769841": {
     "en": "",
@@ -1806,16 +1806,16 @@
     "fr": "Armures (2)"
   },
   "1769850": {
-    "en": "Allagan Tomestones of Mendacity (DoW)",
-    "ja": "アラガントームストーン:虚構の取引（ファイター）",
-    "de": "Allagische Steine der Verlogenheit (Krieger)",
-    "fr": "Mémoquartz allagois mensongers (guerre)"
+    "en": "Allagan Tomestones of Poetics (DoW) I",
+    "ja": "アラガントームストーン:詩学の取引（ファイターその1）",
+    "de": "Allagische Steine der Poesie (Krieger I)",
+    "fr": "Mémoquartz allagois poétiques (guerre 1)"
   },
   "1769851": {
-    "en": "Allagan Tomestones of Mendacity (DoM)",
-    "ja": "アラガントームストーン:虚構の取引（ソーサラー）",
-    "de": "Allagische Steine der Verlogenheit (Magier)",
-    "fr": "Mémoquartz allagois mensongers (magie)"
+    "en": "Allagan Tomestones of Poetics (DoM) I",
+    "ja": "アラガントームストーン:詩学の取引（ソーサラーその1）",
+    "de": "Allagische Steine der Poesie (Magier I)",
+    "fr": "Mémoquartz allagois poétiques (magie 1)"
   },
   "1769852": {
     "en": "Ryumyaku Gear Exchange",
@@ -1824,10 +1824,10 @@
     "fr": "Échange d'équipements Ryûmyaku"
   },
   "1769853": {
-    "en": "Allagan Tomestones of Mendacity (Other)",
-    "ja": "アラガントームストーン:虚構の取引（その他）",
-    "de": "Allagische Steine der Verlogenheit (Anderes)",
-    "fr": "Mémoquartz allagois mensongers (divers)"
+    "en": "Allagan Tomestones of Poetics (Other)",
+    "ja": "アラガントームストーン:詩学の取引（その他）",
+    "de": "Allagische Steine der Poesie (Anderes)",
+    "fr": "Mémoquartz allagois poétiques (divers)"
   },
   "1769854": {
     "en": "Auspice Gear (Byakko)",
@@ -1903,15 +1903,15 @@
   },
   "1769866": {
     "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Augmentation)",
-    "ja": "クラフタースクリップ:黄貨の取引（Lv70向け・装備強化）",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備強化）",
     "de": "Gelbe Handwerkerscheine (ab St. 70, Verstärkung)",
-    "fr": "Assignats jaunes d'artisan (améliorations/Nv 70)"
+    "fr": "Assignats jaunes d'artisan (améliorations/Nv ≧ 70)"
   },
   "1769867": {
     "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Augmentation)",
-    "ja": "ギャザラースクリップ:黄貨の取引（Lv70向け・装備強化）",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備強化）",
     "de": "Gelbe Sammlerscheine (ab St. 70, Verstärkung)",
-    "fr": "Assignats jaunes de récolteurs (améliorations/Nv 70)"
+    "fr": "Assignats jaunes de récolteurs (améliorations/Nv ≧ 70)"
   },
   "1769868": {
     "en": "Namazu Koban Exchange",
@@ -1968,28 +1968,28 @@
     "fr": "Récompenses d'événements saisonniers"
   },
   "1769877": {
-    "en": "Red Crafters' Scrip Exchange (Lv. 58)",
-    "ja": "クラフタースクリップ:赤貨の取引（Lv58～向け）",
-    "de": "Rote Handwerkerscheine (ab St. 58)",
-    "fr": "Assignats rouges d'artisan (Nv ≧ 58)"
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 58)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 58)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 58)"
   },
   "1769878": {
-    "en": "Red Gatherers' Scrip Exchange (Lv. 58)",
-    "ja": "ギャザラースクリップ:赤貨の取引（Lv58～向け）",
-    "de": "Rote Sammlerscheine (ab St. 58)",
-    "fr": "Assignats rouges de récolteur (Nv ≧ 58)"
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 58)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 58)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 58)"
   },
   "1769879": {
-    "en": "Yellow Crafters' Scrip Exchange (Lv. 70) II",
-    "ja": "クラフタースクリップ:黄貨の取引（Lv70向け・装備その2）",
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Gear) II",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備その2）",
     "de": "Gelbe Handwerkerscheine (ab St. 70, Ausrüstung II)",
-    "fr": "Assignats jaunes d'artisan II (équipements/Nv 70)"
+    "fr": "Assignats jaunes d'artisan II (équipements/Nv ≧ 70)"
   },
   "1769880": {
-    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70) II",
-    "ja": "ギャザラースクリップ:黄貨の取引（Lv70向け・装備その2）",
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Gear) II",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備その2）",
     "de": "Gelbe Sammlerscheine (ab St. 70, Ausrüstung II)",
-    "fr": "Assignats jaunes de récolteur II (équipements/Nv 70)"
+    "fr": "Assignats jaunes de récolteur II (équipements/Nv ≧ 70)"
   },
   "1769881": {
     "en": "Seasonal Event Prizes II",
@@ -2010,10 +2010,10 @@
     "fr": "Équipements totémiques (Tsukuyomi)"
   },
   "1769884": {
-    "en": "Red Crafters' Scrip Exchange (Master Recipes)",
-    "ja": "クラフタースクリップ:赤貨の取引（秘伝書）",
-    "de": "Rote Handwerkerscheine (Meisterrezeptbücher)",
-    "fr": "Assignats rouges d'artisan (recettes expertes)"
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
   },
   "1769885": {
     "en": "Resistance Token Acquisition (Weapons)",
@@ -2148,16 +2148,16 @@
     "fr": ""
   },
   "1769907": {
-    "en": "Allagan Tomestones of Genesis (DoW)",
-    "ja": "アラガントームストーン:創世の取引（ファイター）",
-    "de": "Allagische Steine des Ursprungs (Krieger)",
-    "fr": "Mémoquartz allagois génésiaques (guerre)"
+    "en": "Allagan Tomestones of Poetics (DoW) II",
+    "ja": "アラガントームストーン:詩学の取引（ファイターその2）",
+    "de": "Allagische Steine der Poesie (Krieger II)",
+    "fr": "Mémoquartz allagois poétiques (guerre 2)"
   },
   "1769908": {
-    "en": "Allagan Tomestones of Genesis (DoM)",
-    "ja": "アラガントームストーン:創世の取引（ソーサラー）",
-    "de": "Allagische Steine des Ursprungs (Magier)",
-    "fr": "Mémoquartz allagois génésiaques (magie)"
+    "en": "Allagan Tomestones of Poetics (DoM) II",
+    "ja": "アラガントームストーン:詩学の取引（ソーサラーその2）",
+    "de": "Allagische Steine der Poesie (Magier II)",
+    "fr": "Mémoquartz allagois poétiques (magie 2)"
   },
   "1769909": {
     "en": "Allagan Tomestones of Genesis (Other)",
@@ -2280,16 +2280,16 @@
     "fr": ""
   },
   "1769929": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Newest Irregular Tomestone Exchange",
+    "ja": "最新の希少トームストーンの取引",
+    "de": "Ungewöhnliche Allagische Steine (neu)",
+    "fr": "Récents mémoquartz allagois inhabituels"
   },
   "1769930": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Previous Irregular Tomestone Exchange",
+    "ja": "前回の希少トームストーンの取引",
+    "de": "Ungewöhnliche Allagische Steine (vorherig)",
+    "fr": "Précédents mémoquartz allagois inhabituels"
   },
   "1769931": {
     "en": "",
@@ -2398,47 +2398,5 @@
     "ja": "羅刹の手形の取引（防具）",
     "de": "Rakshasa-Marken in Rüstung umtauschen",
     "fr": "Liste des armures"
-  },
-  "1769949": {
-    "en": "Rakshasa Token Exchange (Accessories)",
-    "ja": "羅刹の手形の取引（アクセサリー）",
-    "de": "Rakshasa-Marken in Accessoires umtauschen",
-    "fr": "Liste des accessoires"
-  },
-  "1769950": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
-  },
-  "1769951": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
-  },
-  "1769952": {
-    "en": "Seasonal Event Prizes I",
-    "ja": "シーズナルイベント報酬の交換（その1）",
-    "de": "Saisonale Gegenstände I",
-    "fr": "Récompenses d'événements saisonniers I"
-  },
-  "1769953": {
-    "en": "Seasonal Event Prizes II",
-    "ja": "シーズナルイベント報酬の交換（その2）",
-    "de": "Saisonale Gegenstände II",
-    "fr": "Récompenses d'événements saisonniers II"
-  },
-  "1769954": {
-    "en": "Seasonal Event Prizes III",
-    "ja": "シーズナルイベント報酬の交換（その3）",
-    "de": "Saisonale Gegenstände III",
-    "fr": "Récompenses d'événements saisonniers III"
-  },
-  "1769955": {
-    "en": "Seasonal Event Prizes IV",
-    "ja": "シーズナルイベント報酬の交換（その4）",
-    "de": "Saisonale Gegenstände IV",
-    "fr": "Récompenses d'événements saisonniers IV"
   }
 }

@@ -712,20 +712,94 @@
     ]
   },
   "65": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
+    "en": "Dohn Mheg",
+    "ja": "水妖幻園 ドォーヌ・メグ",
+    "de": "Dohn Mheg",
+    "fr": "Dohn Mheg",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      21323,
+      21300
+    ]
   },
   "66": {
+    "en": "the Qitana Ravel",
+    "ja": "古跡探索 キタンナ神影洞",
+    "de": "Irrungen der Qitari",
+    "fr": "L'Enchevêtrement des Qitari",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      21808,
+      21800
+    ]
+  },
+  "67": {
+    "en": "Amaurot",
+    "ja": "終末幻想 アーモロート",
+    "de": "Amaurot",
+    "fr": "Amaurote",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      21426,
+      21400
+    ]
+  },
+  "68": {
+    "en": "the Twinning",
+    "ja": "異界遺構 シルクス・ツイニング",
+    "de": "Der Kristallzwilling",
+    "fr": "la Macle de Syrcus",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      21609,
+      21600
+    ]
+  },
+  "69": {
+    "en": "Malikah's Well",
+    "ja": "爽涼離宮 マリカの大井戸",
+    "de": "Malikahs Brunnen",
+    "fr": "le Puits de Malikah",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      21505,
+      21500
+    ]
+  },
+  "70": {
+    "en": "Mt. Gulg",
+    "ja": "偽造天界 グルグ火山",
+    "de": "Der Gulg",
+    "fr": "le Mont Gulg",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      20414,
+      20400
+    ]
+  },
+  "71": {
+    "en": "Akadaemia Anyder",
+    "ja": "創造機関 アナイダアカデミア",
+    "de": "Akadaemia Anyder",
+    "fr": "Akadaemia Anydre",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      21707,
+      21700
+    ]
+  },
+  "72": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "icon": null
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      22107,
+      22100
+    ]
   },
-  "67": {
+  "73": {
     "en": "",
     "ja": "",
     "de": "",
@@ -960,7 +1034,7 @@
     ]
   },
   "5021": {
-    "en": "Blood Dragoon",
+    "en": "Dragon Sound",
     "ja": "紅の竜騎士",
     "de": "Der Rubin-Drachenreiter",
     "fr": "Le Dragon écarlate",
@@ -1048,6 +1122,72 @@
     ]
   },
   "5029": {
+    "en": "揺れる天秤",
+    "ja": "揺れる天秤",
+    "de": "揺れる天秤",
+    "fr": "揺れる天秤",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      21949,
+      21900
+    ]
+  },
+  "5030": {
+    "en": "古の大再生魔法",
+    "ja": "古の大再生魔法",
+    "de": "古の大再生魔法",
+    "fr": "古の大再生魔法",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      22340,
+      22300
+    ]
+  },
+  "5031": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      22763,
+      22700
+    ]
+  },
+  "5032": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      22679,
+      22600
+    ]
+  },
+  "5033": {
+    "en": "ナイルベルトの後悔",
+    "ja": "ナイルベルトの後悔",
+    "de": "ナイルベルトの後悔",
+    "fr": "ナイルベルトの後悔",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      22539,
+      22500
+    ]
+  },
+  "5034": {
+    "en": "勇気の狩人",
+    "ja": "勇気の狩人",
+    "de": "勇気の狩人",
+    "fr": "勇気の狩人",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      22944,
+      22900
+    ]
+  },
+  "5035": {
     "en": "",
     "ja": "",
     "de": "",
@@ -1247,7 +1387,7 @@
     "fr": "Générer de l'inimitié avec un combo",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      10718,
+      10721,
       10700
     ]
   },
@@ -1591,8 +1731,8 @@
     "fr": "Défi spécial II",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      9907,
-      9900
+      22017,
+      22000
     ]
   },
   "20017": {
@@ -2071,6 +2211,61 @@
     ]
   },
   "20062": {
+    "en": "the Dancing Plague",
+    "ja": "ティターニア討滅戦",
+    "de": "Offenbarung - Titania",
+    "fr": "la Valse du Monarque",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      22017,
+      22000
+    ]
+  },
+  "20063": {
+    "en": "the Dancing Plague (Extreme)",
+    "ja": "極ティターニア討滅戦",
+    "de": "Letzte Läuterung - Titania",
+    "fr": "la Valse du Monarque (extrême)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      22017,
+      22000
+    ]
+  },
+  "20064": {
+    "en": "the Crown of the Immaculate",
+    "ja": "イノセンス討滅戦",
+    "de": "Offenbarung - Innozenz",
+    "fr": "La Couronne de l'Immaculé",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      22414,
+      22400
+    ]
+  },
+  "20065": {
+    "en": "the Crown of the Immaculate (Extreme)",
+    "ja": "極イノセンス討滅戦",
+    "de": "Letzte Läuterung - Innozenz",
+    "fr": "La Couronne de l'Immaculé (extrême)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      22415,
+      22400
+    ]
+  },
+  "20066": {
+    "en": "the Dying Gasp",
+    "ja": "ハーデス討滅戦",
+    "de": "Offenbarung - Hades",
+    "fr": "Le Râle de l'Agonie",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      23033,
+      23000
+    ]
+  },
+  "20067": {
     "en": "",
     "ja": "",
     "de": "",
@@ -2942,6 +3137,62 @@
     "fr": "",
     "icon": null
   },
+  "30079": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "30080": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "30081": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "30082": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "30083": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "30084": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "30085": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "30086": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
   "35000": {
     "en": "",
     "ja": "",
@@ -3426,7 +3677,7 @@
     "fr": "l'Aquapole",
     "icon": "/i/061000/061808.png",
     "contentText": [
-      12809,
+      12810,
       12800
     ]
   },
@@ -3437,7 +3688,7 @@
     "fr": "les Canaux perdus d'Uznair",
     "icon": "/i/061000/061808.png",
     "contentText": [
-      12809,
+      12810,
       12800
     ]
   },
@@ -3448,7 +3699,7 @@
     "fr": "les Canaux cachés d'Uznair",
     "icon": "/i/061000/061808.png",
     "contentText": [
-      12809,
+      12810,
       12800
     ]
   },
@@ -3459,11 +3710,25 @@
     "fr": "le Temple sacré d'Uznair",
     "icon": "/i/061000/061808.png",
     "contentText": [
-      12809,
+      12810,
       12800
     ]
   },
   "55005": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "55006": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "55007": {
     "en": "",
     "ja": "",
     "de": "",
@@ -3641,138 +3906,5 @@
     "de": "Himmelssäule (Ebenen 21 - 30)",
     "fr": "le Pilier des Cieux (étages 21-30)",
     "icon": "/i/061000/061824.png"
-  },
-  "60024": {
-    "en": "Heaven-on-High (Floors 31-40)",
-    "ja": "アメノミハシラ 31～40層",
-    "de": "Himmelssäule (Ebenen 31 - 40)",
-    "fr": "le Pilier des Cieux (étages 31-40)",
-    "icon": "/i/061000/061824.png"
-  },
-  "60025": {
-    "en": "Heaven-on-High (Floors 41-50)",
-    "ja": "アメノミハシラ 41～50層",
-    "de": "Himmelssäule (Ebenen 41 - 50)",
-    "fr": "le Pilier des Cieux (étages 41-50)",
-    "icon": "/i/061000/061824.png"
-  },
-  "60026": {
-    "en": "Heaven-on-High (Floors 51-60)",
-    "ja": "アメノミハシラ 51～60層",
-    "de": "Himmelssäule (Ebenen 51 - 60)",
-    "fr": "le Pilier des Cieux (étages 51-60)",
-    "icon": "/i/061000/061824.png"
-  },
-  "60027": {
-    "en": "Heaven-on-High (Floors 61-70)",
-    "ja": "アメノミハシラ 61～70層",
-    "de": "Himmelssäule (Ebenen 61 - 70)",
-    "fr": "le Pilier des Cieux (étages 61-70)",
-    "icon": "/i/061000/061824.png"
-  },
-  "60028": {
-    "en": "Heaven-on-High (Floors 71-80)",
-    "ja": "アメノミハシラ 71～80層",
-    "de": "Himmelssäule (Ebenen 71 - 80)",
-    "fr": "le Pilier des Cieux (étages 71-80)",
-    "icon": "/i/061000/061824.png"
-  },
-  "60029": {
-    "en": "Heaven-on-High (Floors 81-90)",
-    "ja": "アメノミハシラ 81～90層",
-    "de": "Himmelssäule (Ebenen 81 - 90)",
-    "fr": "le Pilier des Cieux (étages 81-90)",
-    "icon": "/i/061000/061824.png"
-  },
-  "60030": {
-    "en": "Heaven-on-High (Floors 91-100)",
-    "ja": "アメノミハシラ 91～100層",
-    "de": "Himmelssäule (Ebenen 91 - 100)",
-    "fr": "le Pilier des Cieux (étages 91-100)",
-    "icon": "/i/061000/061824.png"
-  },
-  "60031": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
-  },
-  "61000": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
-  },
-  "61001": {
-    "en": "Novice Mahjong (Ranked)",
-    "ja": "ドマ式麻雀：一般卓 (段位変動有り)",
-    "de": "Domanisches Mahjong: Anfänger (gewertet)",
-    "fr": "Mahjong domien: tous rangs (classé)",
-    "icon": "/i/061000/061820.png"
-  },
-  "61002": {
-    "en": "Advanced Mahjong (Ranked)",
-    "ja": "ドマ式麻雀：有段卓 (段位変動有り)",
-    "de": "Domanisches Mahjong: Fortgeschrittene (gewertet)",
-    "fr": "Mahjong domien: dan seulement (classé)",
-    "icon": "/i/061000/061820.png"
-  },
-  "61003": {
-    "en": "Four-player Mahjong (Kuitan Enabled)",
-    "ja": "ドマ式麻雀：4人セット卓 (クイタン有り)",
-    "de": "Domanisches Mahjong:  4 Spieler (Kuitan aktiviert)",
-    "fr": "Mahjong domien: 4 joueurs (avec kuitan)",
-    "icon": "/i/061000/061820.png"
-  },
-  "61004": {
-    "en": "Four-player Mahjong (Kuitan Disabled)",
-    "ja": "ドマ式麻雀：4人セット卓 (クイタン無し)",
-    "de": "Domanisches Mahjong:  4 Spieler (Kuitan deaktiviert)",
-    "fr": "Mahjong domien: 4 joueurs (sans kuitan)",
-    "icon": "/i/061000/061820.png"
-  },
-  "61005": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
-  },
-  "62000": {
-    "en": "Air Force One",
-    "ja": "出撃！ エアフォースパイロット",
-    "de": "Luftwaffe, Feuer frei!",
-    "fr": "As de l'air",
-    "icon": "/i/061000/061820.png"
-  },
-  "62001": {
-    "en": "Air Force One",
-    "ja": "出撃！ エアフォースパイロット",
-    "de": "Luftwaffe, Feuer frei!",
-    "fr": "As de l'air",
-    "icon": "/i/061000/061820.png"
-  },
-  "62002": {
-    "en": "Air Force One",
-    "ja": "出撃！ エアフォースパイロット",
-    "de": "Luftwaffe, Feuer frei!",
-    "fr": "As de l'air",
-    "icon": "/i/061000/061820.png"
-  },
-  "65000": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
-  },
-  "65001": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
   }
 }

@@ -347,7 +347,9 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'Banner', 'Icon', 'ContentFinderCondition.ClassJobLevelRequired'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: [].concat.apply([], filters.map(f => {
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
         if (f.minMax) {
           return [
             {
@@ -411,7 +413,9 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'Icon', 'ClassJobLevel', 'ClassJob', 'ClassJobCategory'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: [].concat.apply([], filters.map(f => {
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
         if (f.minMax) {
           return [
             {
@@ -454,7 +458,9 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'Icon', 'Level', 'ClassJob', 'ClassJobCategory'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: [].concat.apply([], filters.map(f => {
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
         if (f.minMax) {
           return [
             {
@@ -539,7 +545,9 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'Banner', 'Icon', 'ClassJobCategory', 'IconIssuer', 'ClassJobLevel'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: [].concat.apply([], filters.map(f => {
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
         if (f.minMax) {
           return [
             {
