@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { CraftingAction, Simulation } from '@ffxiv-teamcraft/simulator';
+import { CraftingAction, CraftingActionsRegistry, Simulation } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-action',
@@ -47,6 +47,10 @@ export class ActionComponent {
 
   @Input()
   safe = true;
+
+  getAlt(): string {
+    return CraftingActionsRegistry.ALL_ACTIONS.find(a => a.action.getIds()[0] === this.action.getIds()[0]).name;
+  }
 
   getJobId(): number {
     return this.simulation !== undefined ? this.simulation.crafterStats.jobId : this.jobId;
