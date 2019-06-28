@@ -91,4 +91,16 @@ export const foods = [{
   'itemId': 23187,
   'CP': [{ 'amount': 0.12, 'max': 45 }, { 'amount': 0.15, 'max': 56 }],
   'Control': [{ 'amount': 0.04, 'max': 49 }, { 'amount': 0.05, 'max': 61 }]
+}, {
+  'itemId': 27864,
+  'Craftsmanship': [{ 'amount': 0.07, 'max': 122 }, { 'amount': 0.09, 'max': 153 }],
+  'CP': [{ 'amount': 0.08, 'max': 22 }, { 'amount': 0.1, 'max': 27 }]
+}, {
+  'itemId': 27871,
+  'Control': [{ 'amount': 0.07, 'max': 118 }, { 'amount': 0.09, 'max': 147 }],
+  'Craftsmanship': [{ 'amount': 0.04, 'max': 53 }, { 'amount': 0.05, 'max': 66 }]
+}, {
+  'itemId': 27876,
+  'CP': [{ 'amount': 0.21, 'max': 53 }, { 'amount': 0.26, 'max': 66 }],
+  'Control': [{ 'amount': 0.04, 'max': 51 }, { 'amount': 0.05, 'max': 64 }]
 }];
