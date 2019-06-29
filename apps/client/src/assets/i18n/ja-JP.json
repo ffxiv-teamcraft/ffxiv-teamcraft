@@ -716,6 +716,9 @@
     "Safe_mode_tooltip": "成功率100％ではないスキルは使用不可(バフを含む)",
     "Quality_needed": "HQ 100%に到達するためには {{amount}} 分の品質が必要",
     "Rotation_tips": "スキル回しのヒント",
+    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
+    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
+    "Current_control": "Current control: {{value}}",
     "COMMUNITY_ROTATIONS": {
       "Title": "コミュニティースキル回し",
       "Community_rotation": "コミュニティースキル回し",
