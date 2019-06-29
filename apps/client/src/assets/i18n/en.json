@@ -716,6 +716,9 @@
     "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "Quality_needed": "{{amount}} more quality to reach 100%",
     "Rotation_tips": "Rotation tips",
+    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
+    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
+    "Current_control": "Current control: {{value}}",
     "COMMUNITY_ROTATIONS": {
       "Title": "Community rotations",
       "Community_rotation": "Community rotation",
