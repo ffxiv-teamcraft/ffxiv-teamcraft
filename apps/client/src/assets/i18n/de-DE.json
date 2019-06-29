@@ -716,6 +716,10 @@
     "Safe_mode_tooltip": "Deaktiviert alle Fähigkeiten, die (inklusive Statuseffekten) keine 100% Erfolgschance haben",
     "Quality_needed": "{{amount}} mehr Qualität, um 100% zu erreichen",
     "Rotation_tips": "Rotation-Tipps",
+    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
+    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
+    "Current_control": "Current control: {{value}}",
+    "Current_control_bonus": "Current bonus (limited to 3000)",
     "COMMUNITY_ROTATIONS": {
       "Title": "Community-Rotations",
       "Community_rotation": "Community-Rotation",
