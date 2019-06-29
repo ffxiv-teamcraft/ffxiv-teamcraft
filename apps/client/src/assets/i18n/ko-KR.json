@@ -716,6 +716,9 @@
     "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
     "Quality_needed": "HQ 100%까지 품질 {{amount}} 남음",
     "Rotation_tips": "로테이션 팁",
+    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
+    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
+    "Current_control": "Current control: {{value}}",
     "COMMUNITY_ROTATIONS": {
       "Title": "커뮤니티 로테이션",
       "Community_rotation": "커뮤니티 로테이션",
