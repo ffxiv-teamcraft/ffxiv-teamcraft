@@ -99,7 +99,7 @@
   "Discounts": "Remises",
   "Flat_discount": "Remise en gils",
   "Percent_discount": "Pourcentage",
-  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
+  "Path_copied_to_clipboard": "URL de la page actuelle copiée dans le presse-papiers",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrer par tags",
     "Tags_filter_reset": "Réinitialiser le filtre par tags",
@@ -716,9 +716,10 @@
     "Safe_mode_tooltip": "Désactive toutes les actions qui n'ont pas 100% de chance de réussite (prend en compte les bonus)",
     "Quality_needed": "{{amount}} plus de qualité pour atteindre 100 %",
     "Rotation_tips": "Conseils de rotation",
-    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
-    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
-    "Current_control": "Current control: {{value}}",
+    "Progress_action_100_potency": "Progression par tranche de 100 efficacité : {{value}}",
+    "Quality_action_100_potency": "Qualité par tranche de 100 efficacité : {{value}}",
+    "Current_control": "Contrôle actuel : {{value}}",
+    "Current_control_bonus": "Current bonus (limited to 3000)",
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotations communautaires",
       "Community_rotation": "Rotation communautaire",
