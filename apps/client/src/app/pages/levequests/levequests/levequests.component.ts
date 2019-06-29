@@ -204,9 +204,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       exp -= this.getMaxExp(level);
       level++;
     }
-    // Handle special case for lvl 70
-    if (exp >= this.getMaxExp(level) && level >= 69) {
-      level = 70;
+    // Handle special case for lvl 80
+    if (exp >= this.getMaxExp(level) && level >= 79) {
+      level = 80;
       exp = 0;
     }
     return {
