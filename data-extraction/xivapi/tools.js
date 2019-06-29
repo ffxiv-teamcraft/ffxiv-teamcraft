@@ -15,7 +15,7 @@ const emptyQueue$ = new Subject();
 
 const stopInterval$ = emptyQueue$.pipe(
   distinctUntilChanged(),
-  debounceTime(3000),
+  debounceTime(10000),
   filter(empty => empty)
 );
 

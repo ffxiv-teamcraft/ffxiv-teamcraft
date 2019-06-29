@@ -531,6 +531,15 @@ export const aetherytes = [
     "type": 1
   },
   {
+    "id": 144,
+    "zoneid": 2956,
+    "map": 494,
+    "placenameid": 2956,
+    "x": 14.6,
+    "y": 31.8,
+    "type": 0
+  },
+  {
     "id": 7,
     "zoneid": 57,
     "map": 7,
