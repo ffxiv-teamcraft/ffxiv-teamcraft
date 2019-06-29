@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.1"></a>
+## [5.6.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.0...v5.6.1) (2019-06-29)
+
+
+### Bug Fixes
+
+* **db:** added missing fates data ([dd12b08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd12b08))
+* **db:** UI fixes for map and item pages ([e108a04](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e108a04))
+* **desktop:** fixed url share button ([4c5e3e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c5e3e9))
+
+
+### Features
+
+* **db:** added link between new levemete and its leves ([f09ef59](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f09ef59))
+* **db:** updated monsters, npcs, nodes and aetherytes ([50e4e60](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50e4e60))
+* **simulator:** added current control indicator and 100% efficiency actions result ([094a7cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/094a7cd))
+* **simulator:** now showing control bonus in simulator footer ([f729444](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f729444))
+
+
+
 <a name="5.6.0"></a>
 # [5.6.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.9...v5.6.0) (2019-06-29)
 
