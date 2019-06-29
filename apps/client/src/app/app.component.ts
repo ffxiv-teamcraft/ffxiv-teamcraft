@@ -302,7 +302,7 @@ export class AppComponent implements OnInit {
   }
 
   getPathname(): string {
-    return window && window.location && window.location.pathname;
+    return this.router.url;
   }
 
   afterPathNameCopy(): void {
