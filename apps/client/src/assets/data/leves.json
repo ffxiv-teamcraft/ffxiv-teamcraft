@@ -19498,5 +19498,876 @@
       "fr": "COU"
     },
     "lvl": 74
+  },
+  "1501": {
+    "en": "Gloves Come in Handy",
+    "ja": "大口依頼：予備の手袋（大量）",
+    "de": "Überdurchschnittlich",
+    "fr": "Grosse commande: des gants de rechange pour tête en l'air",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 74
+  },
+  "1502": {
+    "en": "All-purpose Overgarments",
+    "ja": "製作依頼：ヴィース向けの胴着",
+    "de": "Für eine geheime Kundin",
+    "fr": "Fabrication: une commande bien confidentielle",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 76
+  },
+  "1503": {
+    "en": "The Hunt Continues",
+    "ja": "製作依頼：捜査員用の偽装帽子",
+    "de": "Getarnt auf Schmugglerjagd",
+    "fr": "Fabrication: des bonnets pour éclaireurs",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 76
+  },
+  "1504": {
+    "en": "Something in My Eye",
+    "ja": "大口依頼：調達役のターバン",
+    "de": "Turbane für eine Feldstudie",
+    "fr": "Grosse commande: des turbans contre le sable",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 76
+  },
+  "1505": {
+    "en": "A Job Well Done",
+    "ja": "製作依頼：検挙成功の報奨品",
+    "de": "Hosen zum Dank",
+    "fr": "Fabrication: des grègues pour éclaireurs méritants",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 78
+  },
+  "1506": {
+    "en": "A Turban for the Ages",
+    "ja": "製作依頼：引退記念のターバン",
+    "de": "Ein Turban als Erinnerungsstück",
+    "fr": "Fabrication: un turban pour un départ en retraite",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 78
+  },
+  "1507": {
+    "en": "Healing Headwear",
+    "ja": "大口依頼：巡回治療師用の帽子",
+    "de": "Hüte für Wanderheiler",
+    "fr": "Grosse commande: couvrons la tête des soigneurs itinérants",
+    "job": {
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 78
+  },
+  "1508": {
+    "en": "Whetstones for the Workers",
+    "ja": "製作依頼：実用的な硬泥岩砥石",
+    "de": "Der letzte Schliff",
+    "fr": "Fabrication: l'amour de l'artisan pour ses outils",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 70
+  },
+  "1509": {
+    "en": "Satisfactory Sewing",
+    "ja": "製作依頼：修繕用の縫い針",
+    "de": "Eine harte Nadel",
+    "fr": "Fabrication: des aiguilles bien robustes",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 70
+  },
+  "1510": {
+    "en": "You're My Wonderhall",
+    "ja": "大口依頼：耳を飾る幻の星",
+    "de": "Sternenfunkeln an den Ohren",
+    "fr": "Grosse commande: des boucles d'oreilles étoilées",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 70
+  },
+  "1511": {
+    "en": "Slimming Down",
+    "ja": "製作依頼：憧れの細身の剣",
+    "de": "In ein Schwert verguckt",
+    "fr": "Fabrication: devenir une fine lame",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 72
+  },
+  "1512": {
+    "en": "Neck on the Line",
+    "ja": "製作依頼：衛兵団の訓練首輪",
+    "de": "Die Hälse der Rekruten",
+    "fr": "Fabrication: des protections pour les casse-cous",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 72
+  },
+  "1513": {
+    "en": "Gentleman Donor",
+    "ja": "大口依頼：腕を飾る凛々しき星",
+    "de": "Ein großzügiges Dankeschön",
+    "fr": "Grosse commande: les bracelets de la générosité",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 72
+  },
+  "1514": {
+    "en": "Copious Crystal Cannons",
+    "ja": "製作依頼：魔装砲増産計画",
+    "de": "Material für die Aufrüstung",
+    "fr": "Fabrication: un métal éthéroconducteur",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 74
+  },
+  "1515": {
+    "en": "Hot Rod",
+    "ja": "製作依頼：破壊魔法の杖",
+    "de": "Ein Stab für Zerstörer",
+    "fr": "Fabrication: mage par admiration",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 74
+  },
+  "1516": {
+    "en": "Unsung Generosity",
+    "ja": "大口依頼：首を飾る静かな星",
+    "de": "Für die unbesungenen Helden der Stadt",
+    "fr": "Grosse commande: les ras de cou de la générosité",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 74
+  },
+  "1517": {
+    "en": "Prophet of Profit",
+    "ja": "製作依頼：新時代の天球義",
+    "de": "Sternenglobus de luxe",
+    "fr": "Fabrication: des globes célestes à en perdre la boule",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 76
+  },
+  "1518": {
+    "en": "Birth Ring",
+    "ja": "製作依頼：トリプライトの指輪",
+    "de": "Triphylin für Babyfinger",
+    "fr": "Fabrication: une bague pour nouveau-né",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 76
+  },
+  "1519": {
+    "en": "A Magnanimous Refrain",
+    "ja": "大口依頼：耳を飾る美しき星",
+    "de": "Funkelnde Forscher",
+    "fr": "Grosse commande: les boucles d'oreilles de la générosité",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 76
+  },
+  "1520": {
+    "en": "Bulking Up",
+    "ja": "製作依頼：新しい細身の剣",
+    "de": "Ein neues Rapier",
+    "fr": "Fabrication: devenir une plus fine lame",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 78
+  },
+  "1521": {
+    "en": "A Beneficent Elegy",
+    "ja": "製作依頼：首を飾る眩い星",
+    "de": "Ein letztes Dankeschön",
+    "fr": "Fabrication: les ras de cou de l'ultime générosité",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 78
+  },
+  "1522": {
+    "en": "Wrap Those Wrists",
+    "ja": "大口依頼：厳命城部隊の新腕輪",
+    "de": "Armreife als Gefahrenzulage",
+    "fr": "Grosse commande: des bracelets en première ligne",
+    "job": {
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 78
+  },
+  "1523": {
+    "en": "Sought-after Spices",
+    "ja": "確認採集：マルドワイン用の香辛料",
+    "de": "Der glüht auf der Zunge",
+    "fr": "Échantillons: un peu de piment dans le vin",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 70
+  },
+  "1524": {
+    "en": "Medicinal Herbs",
+    "ja": "指定採集：備蓄用のコルシアセージ",
+    "de": "Ruhe im Topf",
+    "fr": "Collecte: pot-pourri de sauge séchée",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 70
+  },
+  "1525": {
+    "en": "Home Is Where the Heart Is",
+    "ja": "調査採集：バラック用の廃材",
+    "de": "Hütten als Dankeschön",
+    "fr": "Prélèvement: des cabanes en bois recyclé",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 70
+  },
+  "1526": {
+    "en": "Packs a Punch",
+    "ja": "確認採集：妖精酒用の樹液",
+    "de": "Freude bringende Feenschorle",
+    "fr": "Échantillons: de la gnôle de Pixies",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 72
+  },
+  "1527": {
+    "en": "Home Is Where the Heart Isn't",
+    "ja": "大量採集：イル・メグの水没木材",
+    "de": "Was lange treibt, schwimmt gut",
+    "fr": "Grosse récolte: embarcations en bois d'eau",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 72
+  },
+  "1528": {
+    "en": "Seeds for the Sick",
+    "ja": "指定採集：イル・メグの野草",
+    "de": "Heilende Feensamen",
+    "fr": "Collecte: la chasse aux graines féeriques",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 72
+  },
+  "1529": {
+    "en": "Pest Problems",
+    "ja": "確認採集：防虫用のロックワの涙",
+    "de": "Keine Insekten im Glas",
+    "fr": "Échantillons: les larmes d'une déesse",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 74
+  },
+  "1530": {
+    "en": "Fresh off the Boat",
+    "ja": "指定採集：新事業のロンカアロエ",
+    "de": "Gesalbte Integration",
+    "fr": "Collecte: l'aloe ronka des réfugiés",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 74
+  },
+  "1531": {
+    "en": "Dream a Little Dream",
+    "ja": "調査採集：ドリームパウダー用の藻",
+    "de": "Unterwasserträume",
+    "fr": "Prélèvement: du rêve sous l'écorce",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 74
+  },
+  "1532": {
+    "en": "Spiritual Ventures",
+    "ja": "大量採集：樽作りの枯木材",
+    "de": "Im Alter liegt die Würze",
+    "fr": "Grosse récolte: du vieux bois pour plus de goût",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 76
+  },
+  "1533": {
+    "en": "Culinary Concepts",
+    "ja": "指定採集：事業拡大のオイルシード",
+    "de": "Es läuft wie geölt",
+    "fr": "Collecte: de l'huile dans les graines",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 76
+  },
+  "1534": {
+    "en": "The Only Cure",
+    "ja": "調査採集：ロンゾ族の熱病対策",
+    "de": "Fiebersenkende Kräuter",
+    "fr": "Prélèvement: des tisanes pour les petits Ronsos",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 76
+  },
+  "1535": {
+    "en": "Good Business",
+    "ja": "確認採集：続樽作りのオーク材",
+    "de": "Fässer aus Seenland-Eichenholz",
+    "fr": "Échantillons: du chêne de Grand-Lac en fût",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 78
+  },
+  "1536": {
+    "en": "The Sweetest Syrup",
+    "ja": "大量採集：闇色のシロップの材料",
+    "de": "Muntermacher",
+    "fr": "Grosse récolte: le sirop préféré de l'exarque",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 78
+  },
+  "1537": {
+    "en": "Big Business",
+    "ja": "調査採集：洗髪剤用のレイクグラス",
+    "de": "Wassergras-Shampoo",
+    "fr": "Prélèvement: l'herbe du Lac dans les cheveux",
+    "job": {
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 78
+  },
+  "1538": {
+    "en": "Jewelry for All",
+    "ja": "確認採集：素朴なカッライス原石",
+    "de": "Erschwingliche Ringe",
+    "fr": "Échantillons: de la callaïs au doigt",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 70
+  },
+  "1539": {
+    "en": "The Search for Slag",
+    "ja": "指定採集：劇物研究の廃石",
+    "de": "Ein rätselhaftes Lösungsmittel",
+    "fr": "Collecte: dissoudre littéralement Eulmore?",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 70
+  },
+  "1540": {
+    "en": "Barmy for Ballistas",
+    "ja": "調査採集：対罪喰いバリスタ開発計画",
+    "de": "Ballisten gegen Sündenvertilger",
+    "fr": "Prélèvement: l'acier des grandes balistes",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 70
+  },
+  "1541": {
+    "en": "Secret Stones",
+    "ja": "確認採集：クリスタリウム防壁強化計画",
+    "de": "So uneinnehmbar wie früher",
+    "fr": "Échantillons: les pierres magiques du royaume",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 72
+  },
+  "1542": {
+    "en": "New Necklaces",
+    "ja": "大量採集：勝負のピンクサファイア",
+    "de": "Rosarote Verkaufsschlager",
+    "fr": "Grosse récolte: du saphir rose au cou",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 72
+  },
+  "1543": {
+    "en": "Crystalized Revenge",
+    "ja": "指定採集：イル・メグの結晶",
+    "de": "Mit Äther gegen Feenwesen",
+    "fr": "Collecte: des cristaux contre les mauvais tours",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 72
+  },
+  "1544": {
+    "en": "Rocks from Rak'tika",
+    "ja": "確認採集：汚染された有毒砂利",
+    "de": "Giftiger Sand",
+    "fr": "Échantillons: du gravier hautement toxique",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 74
+  },
+  "1545": {
+    "en": "Jewels for Jewelry",
+    "ja": "指定採集：新設工房の定番商品",
+    "de": "Eine neue Schmuckwerkstatt",
+    "fr": "Collecte: le jade de Rak'tika",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 74
+  },
+  "1546": {
+    "en": "Knowledge Is Power",
+    "ja": "調査採集：魔装砲強化計画",
+    "de": "Magie von gestern",
+    "fr": "Prélèvement: la serpentine des temps anciens",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 74
+  },
+  "1547": {
+    "en": "Road to Recovery",
+    "ja": "大量採集：有毒事故の後始末",
+    "de": "Giftunfall",
+    "fr": "Grosse récolte: les conséquences d'un accident",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 76
+  },
+  "1548": {
+    "en": "Jewelry Is Forever",
+    "ja": "指定採集：ナバスアレンの輝石",
+    "de": "Retro-Schmuck läuft super",
+    "fr": "Collecte: parez-vous de nabaathrite",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 76
+  },
+  "1549": {
+    "en": "The Magic of Mining",
+    "ja": "調査採集：タロース技術研究計画",
+    "de": "Wiedererweckung der Taloi",
+    "fr": "Prélèvement: rendre vie aux talos",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 76
+  },
+  "1550": {
+    "en": "Lakeland's Legacy",
+    "ja": "確認採集：レイクランド防衛網整備計画",
+    "de": "Die Mauer muss wieder her",
+    "fr": "Échantillons: les pierres de l'ancienne fédération",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 78
+  },
+  "1551": {
+    "en": "Back Stronger",
+    "ja": "大量採集：再出発のプラシオライト",
+    "de": "In die Selbstständigkeit getrieben",
+    "fr": "Grosse récolte: la prasiolite pour recommencer",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 78
+  },
+  "1552": {
+    "en": "Crystal Meds",
+    "ja": "調査採集：治療薬増産用のクリスタル",
+    "de": "Wiedergutmachung",
+    "fr": "Prélèvement: des cristaux médicinaux?",
+    "job": {
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 78
+  },
+  "1553": {
+    "en": "Eco-Warrior of Light",
+    "ja": "指定採集：無尽光下の体質変異について",
+    "de": "Barsche der Sonne",
+    "fr": "Collecte: mutation ou pas mutation?",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 70
+  },
+  "1554": {
+    "en": "Needs More Egg",
+    "ja": "指定採集：珍味のサンドエッグサンド",
+    "de": "Gegner des schlechten Geschmacks",
+    "fr": "Collecte: un délicieux sandwich-omelette",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 70
+  },
+  "1555": {
+    "en": "The Source of the Problem",
+    "ja": "大量採集：外来種駆除の雷気漁",
+    "de": "Elektrisches Angeln",
+    "fr": "Grosse récolte: électropêche de nuisibles",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 70
+  },
+  "1556": {
+    "en": "Jelly Salad",
+    "ja": "指定採集：滋味のクラゲサラダ",
+    "de": "Quallen in aller Munde",
+    "fr": "Collecte: succulente salade de méduse",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 72
+  },
+  "1557": {
+    "en": "Full of Fish",
+    "ja": "指定採集：始まりの湖の生態系保全",
+    "de": "Rettung des Ökosystems",
+    "fr": "Collecte: l'équilibre de L'Origine",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 72
+  },
+  "1558": {
+    "en": "Aetherquake",
+    "ja": "大量採集：レイクランド地震予知について",
+    "de": "Fischiges Äthergespür",
+    "fr": "Grosse récolte: plan séisme à Grand-Lac",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 72
+  },
+  "1559": {
+    "en": "Faerie Fish",
+    "ja": "指定採集：酸性毒素の無害分解について",
+    "de": "Magiestudium am Zander",
+    "fr": "Collecte: dissection douce",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 74
+  },
+  "1560": {
+    "en": "The Bride Aquatic",
+    "ja": "指定採集：漁村の花嫁探し事業",
+    "de": "Die Liebe angeln",
+    "fr": "Collecte: l'agence matrimoniale du village de pêcheurs",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 74
+  },
+  "1561": {
+    "en": "A Cherry-red Herring",
+    "ja": "大量採集：佳味のヘリングプレート",
+    "de": "Exotisches Heringsgericht",
+    "fr": "Grosse récolte: savoureux harengs",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 74
+  },
+  "1562": {
+    "en": "Crab Corps",
+    "ja": "指定採集：仙味のブルービスク",
+    "de": "Eine Delikatesse für die Wachen",
+    "fr": "Collecte: onctueuse bisque bleue",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 76
+  },
+  "1563": {
+    "en": "Magic Mushrooms",
+    "ja": "指定採集：幻覚性菌類の医療活用について",
+    "de": "Krabbenpilzbehandlung",
+    "fr": "Collecte: fungis guérisseurs",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 76
+  },
+  "1564": {
+    "en": "Fish for Days",
+    "ja": "大量採集：大型食用魚養殖事業",
+    "de": "Fischzucht in Grantel",
+    "fr": "Grosse récolte: grande entreprise de pisciculture",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 76
+  },
+  "1565": {
+    "en": "Short-term Gains",
+    "ja": "指定採集：養殖業安定の秘策",
+    "de": "Sternstunde der Fischzucht",
+    "fr": "Collecte: les secrets d'une aquaculture stable",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 78
+  },
+  "1566": {
+    "en": "Deep-sea Diving",
+    "ja": "指定採集：深海生物の特殊エーテル器官について",
+    "de": "Erforscher der Tiefsee",
+    "fr": "Collecte: l'étrange éther des créatures des profondeurs",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 78
+  },
+  "1567": {
+    "en": "A Feast for the Senses",
+    "ja": "大量採集：六味の七色ウツボたたき",
+    "de": "Aale aus dem Abgrund",
+    "fr": "Grosse récolte: délicieux émincé d'anguille des abysses",
+    "job": {
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 78
   }
 }

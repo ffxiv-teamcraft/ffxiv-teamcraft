@@ -221,7 +221,7 @@ export class CustomItemsImportPopupComponent {
         jobId: +this.craftTypes.indexOf(row[2]) + 8,
         icon: '',
         itemId: +row[45],
-        level: 70,
+        level: 80,
         stars_tooltip: ''
       }];
       item.craftedBy[0].icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === item.craftedBy[0].jobId).abbreviation}.png`;
