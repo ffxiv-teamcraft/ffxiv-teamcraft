@@ -716,6 +716,9 @@
     "Safe_mode_tooltip": "禁用所有被 buff 后仍低于 100% 成功率的技能",
     "Quality_needed": "需要 {{amount}} 品质以达成 100%",
     "Rotation_tips": "工序诊断",
+    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
+    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
+    "Current_control": "Current control: {{value}}",
     "COMMUNITY_ROTATIONS": {
       "Title": "社区共享工序",
       "Community_rotation": "社区共享工序",
