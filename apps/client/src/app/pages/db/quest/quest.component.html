@@ -21,7 +21,7 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="textData$ | async as textData" [innerHTML]="textData.Journal && textData.Journal[0].Text"></p>
+        <p *ngIf="textData$ | async as textData" [innerHTML]="textData.Journal && textData.Journal[0].Text | xivUIText"></p>
       </div>
       <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
