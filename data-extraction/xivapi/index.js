@@ -11,6 +11,7 @@ const gatheringPointToBaseId = {};
 const aetherytes = [];
 const monsters = {};
 const npcs = {};
+const aetheryteNameIds = {};
 
 let todo = [
   'gatheringLog',
@@ -59,6 +60,7 @@ if (hasTodo('mappy')) {
   const memoryData$ = new Subject();
   const mapData$ = new Subject();
   const npcs$ = new Subject();
+  const aetherytes$ = new Subject();
   const nodes$ = new Subject();
   http.get('https://xivapi.com/download?data=map_data', (res) => mapData$.next(res));
 
@@ -89,6 +91,14 @@ if (hasTodo('mappy')) {
     });
   }, null, () => {
     npcs$.next(npcs);
+  });
+
+  getAllPages('https://xivapi.com/Aetheryte?columns=ID,PlaceNameTargetID').subscribe(page => {
+    page.Results.forEach(aetheryte => {
+      aetheryteNameIds[aetheryte.ID] = aetheryte.PlaceNameTargetID;
+    });
+  }, null, () => {
+    aetherytes$.next(aetheryteNameIds);
   });
 
   const gatheringItems$ = new Subject();
@@ -148,7 +158,7 @@ if (hasTodo('mappy')) {
     }
   });
 
-  combineLatest([memoryData$, mapData$, nodes$, npcs$])
+  combineLatest([memoryData$, mapData$, nodes$, npcs$, aetherytes$])
     .subscribe(([memoryData, mapData]) => {
       mapData.setEncoding('utf8');
       mapData.pipe(csv())
@@ -206,6 +216,7 @@ handleAetheryte = (row) => {
     zoneid: +row.PlaceNameID,
     map: +row.MapID,
     placenameid: +row.PlaceNameID,
+    nameid: aetheryteNameIds[row.ENpcResidentID === '2147483647' ? 12 : +row.ENpcResidentID],
     x: Math.round(+row.PosX * 10) / 10,
     y: Math.round(+row.PosY * 10) / 10,
     type: isShard ? 1 : 0
