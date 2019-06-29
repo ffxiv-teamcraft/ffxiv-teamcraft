@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.0"></a>
+# [5.6.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.9...v5.6.0) (2019-06-29)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with newly created accounts not able to link character ([de0c34c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de0c34c))
+* **data-extraction:** added a queue system to avoid spamming xivapi too hard ([0abb193](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0abb193))
+* **rotation-picker:** fixed an issue with selection buttons not aligned properly ([0d7cb09](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d7cb09))
+* **simulator:** fixed an issue with brand of elements not being usable ([db3ecf5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db3ecf5))
+* **simulator:** fixed an issue with delicate synth not working properly ([7eef75c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7eef75c))
+* **ux:** changed the order of stats in edition popup to reflect the order in the profile ([687e7f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/687e7f0))
+
+
+### Features
+
+* **desktop:** added a button to copy current url to clipboard ([8934ace](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8934ace))
+* **rotation-tips:** removed all rotation tips using byregot's brow ([ec6b1e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec6b1e6))
+* **simulator:** added new shadowbringers actions ([854db61](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/854db61))
+* added everything from Shadowbringers expansion ([046b9d4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/046b9d4))
+* added some of the new data for shadowbringers ([a3c499a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a3c499a))
+* implemented new currencies inside incons ordering for trades ([8c65b4c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c65b4c))
+
+
+
 <a name="5.5.9"></a>
 ## [5.5.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.8...v5.5.9) (2019-06-25)
 
