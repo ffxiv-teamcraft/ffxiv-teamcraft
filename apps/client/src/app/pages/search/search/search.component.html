@@ -646,7 +646,7 @@
       </app-page-loader>
       <div *ngIf="results.length === 0">
         <app-fullpage-message height="300px"
-                              *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">{{'No_items_found' | translate}}</app-fullpage-message>
+                              *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE  || searchType === searchTypes.ANY">{{'No_items_found' | translate}}</app-fullpage-message>
         <app-fullpage-message height="300px"
                               *ngIf="searchType === searchTypes.INSTANCE">{{'No_instances_found' | translate}}</app-fullpage-message>
         <app-fullpage-message height="300px"

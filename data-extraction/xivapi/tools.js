@@ -1,30 +1,60 @@
 const request = require('request');
-const Rx = require('rxjs');
-const { mergeMap, switchMap, delay, map, tap, takeUntil, skip } = require('rxjs/operators');
+const { BehaviorSubject, Subject, interval } = require('rxjs');
+const { mergeMap, switchMap, map, tap, takeUntil, skip, filter, debounceTime, distinctUntilChanged } = require('rxjs/operators');
 const path = require('path');
 const fs = require('fs');
-const Multiprogress = require("multi-progress");
+const Multiprogress = require('multi-progress');
 const multi = new Multiprogress(process.stdout);
 
 const outputFolder = path.join(__dirname, '../../apps/client/src/app/core/data/sources/');
 const assetOutputFolder = path.join(__dirname, '../../apps/client/src/assets/data/');
 
+const queue = [];
 
-const get = (url, body) => {
-  const res$ = new Rx.Subject();
-  if (body !== undefined) {
-    request(url, {
-      body: body,
+const emptyQueue$ = new Subject();
+
+const stopInterval$ = emptyQueue$.pipe(
+  distinctUntilChanged(),
+  debounceTime(10000),
+  filter(empty => empty)
+);
+
+interval(250).pipe(
+  tap(() => {
+    emptyQueue$.next(queue.length === 0);
+  }),
+  filter(() => {
+    return queue.length > 0;
+  }),
+  takeUntil(stopInterval$)
+).subscribe(() => {
+  const operation = queue.pop();
+  if (operation.body !== undefined) {
+    request(operation.url, {
+      body: operation.body,
       json: true
-    }, (err, _, res) => res$.next(res));
+    }, (err, _, res) => {
+      operation.res$.next(res);
+      operation.res$.complete();
+    });
   } else {
-    request(url, { json: true }, (err, _, res) => {
+    request(operation.url, { json: true }, (err, _, res) => {
       if (err) {
         console.error(err);
       }
-      res$.next(res);
+      operation.res$.next(res);
+      operation.res$.complete();
     });
   }
+});
+
+const get = (url, body) => {
+  const res$ = new Subject();
+  queue.push({
+    url: url,
+    body: body,
+    res$: res$
+  });
   return res$;
 };
 
@@ -38,10 +68,9 @@ function addQueryParam(url, paramName, paramValue) {
 
 const getAllPages = (endpoint, body) => {
   let progress;
-  const page$ = new Rx.BehaviorSubject(1);
-  const complete$ = new Rx.Subject();
+  const page$ = new BehaviorSubject(1);
+  const complete$ = new Subject();
   return page$.pipe(
-    delay(100),
     mergeMap(page => {
       let url = endpoint;
       if (body !== undefined) {
@@ -56,7 +85,7 @@ const getAllPages = (endpoint, body) => {
             console.error(result);
           }
           if (result.Pagination.Page === 1) {
-            progress = multi.newBar(`[:bar] :current/:total :etas - ${endpoint}`, {
+            progress = multi.newBar(`[:bar] :current/:total :etas - ${endpoint.substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`, {
               complete: '=',
               incomplete: ' ',
               width: 50,
@@ -69,6 +98,7 @@ const getAllPages = (endpoint, body) => {
           } else {
             setTimeout(() => {
               complete$.next(null);
+              page$.complete();
             }, 250);
           }
         })
@@ -79,9 +109,9 @@ const getAllPages = (endpoint, body) => {
 };
 
 module.exports.getAllEntries = (endpoint, key, startsAt0) => {
-  console.log(`CRAWLING ${endpoint}`);
+  let progress;
   const allIds = startsAt0 ? ['0'] : [];
-  const index$ = new Rx.Subject();
+  const index$ = new Subject();
   getAllPages(addQueryParam(addQueryParam(endpoint, 'key', key), 'columns', 'ID')).subscribe(page => {
     allIds.push(...page.Results.map(res => res.ID));
   }, null, () => {
@@ -92,10 +122,18 @@ module.exports.getAllEntries = (endpoint, key, startsAt0) => {
     switchMap(index => {
       return get(addQueryParam(`${endpoint}/${allIds[index]}`, 'key', key)).pipe(
         tap(result => {
+          if (progress === undefined) {
+            progress = multi.newBar(`[:bar] :current/:total :etas - ${endpoint.substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`, {
+              complete: '=',
+              incomplete: ' ',
+              width: 50,
+              total: allIds.length
+            });
+          }
+          progress.tick();
           completeFetch.push(result);
           if (allIds[index + 1] !== undefined) {
             index$.next(index + 1);
-            console.log(`${endpoint} : ${index}/${allIds.length}`);
           }
         })
       );

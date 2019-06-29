@@ -3,7 +3,7 @@
        [appXivdbActionTooltip]="action.getId(getJobId())"
        [appXivdbActionTooltipDisabled]="tooltipDisabled"
        [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp || !safe, 'not-enough-cp': notEnoughCp}">
-    <img src="{{action.getId(getJobId()) | actionIcon}}" alt="">
+    <img src="{{action.getId(getJobId()) | actionIcon | xivapiIcon}}" alt="{{getAlt()}}">
     <div class="red-overlay" *ngIf="notEnoughCp || disabled"></div>
     <i class="material-icons failed" *ngIf="failed || !safe">close</i>
     <span class="cost"

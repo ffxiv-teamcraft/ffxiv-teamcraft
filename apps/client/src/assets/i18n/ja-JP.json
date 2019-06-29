@@ -99,6 +99,7 @@
   "Discounts": "割引",
   "Flat_discount": "金額",
   "Percent_discount": "比率",
+  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "タグを使用してフィルタリング",
     "Tags_filter_reset": "フィルター初期化",

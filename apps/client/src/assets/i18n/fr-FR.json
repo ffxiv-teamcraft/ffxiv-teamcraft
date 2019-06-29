@@ -99,6 +99,7 @@
   "Discounts": "Remises",
   "Flat_discount": "Remise en gils",
   "Percent_discount": "Pourcentage",
+  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrer par tags",
     "Tags_filter_reset": "Réinitialiser le filtre par tags",

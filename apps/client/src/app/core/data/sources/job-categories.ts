@@ -348,16 +348,16 @@ export const jobCategories = {
     'fr': 'GLA ÉLM PLD MBL'
   },
   '59': {
-    'en': 'GLA MRD PLD WAR DRK',
-    'ja': '剣術士 斧術士 ナイト 戦士 暗黒騎士',
-    'de': 'GLA MAR PLD KRG DKR',
-    'fr': 'GLA MRD PLD GUE CHN'
+    'en': 'GLA MRD PLD WAR DRK GNB',
+    'ja': '剣術士 斧術士 ナイト 戦士 暗黒騎士 ガンブレイカー',
+    'de': 'GLA MAR PLD KRG DKR REV',
+    'fr': 'GLA MRD PLD GUE CHN PSB'
   },
   '60': {
-    'en': 'GLA MRD LNC PLD WAR DRG DRK',
-    'ja': '剣術士 斧術士 槍術士 ナイト 戦士 竜騎士 暗黒騎士',
-    'de': 'GLA MAR PIK PLD KRG DRG DKR',
-    'fr': 'GLA MRD HAS PLD GUE DRG CHN'
+    'en': 'GLA MRD LNC PLD WAR DRG DRK GNB',
+    'ja': '剣術士 斧術士 槍術士 ナイト 戦士 竜騎士 暗黒騎士 ガンブレイカー',
+    'de': 'GLA MAR PIK PLD KRG DRG DKR REV',
+    'fr': 'GLA MRD HAS PLD GUE DRG CHN PSB'
   },
   '61': {
     'en': 'CNJ THM ACN WHM SCH AST',
@@ -390,10 +390,10 @@ export const jobCategories = {
     'fr': 'PGL MOI SAM'
   },
   '66': {
-    'en': 'ARC BRD MCH',
-    'ja': '弓術士 吟遊詩人 機工士',
-    'de': 'WDL BRD MCH',
-    'fr': 'ARC BRD MCH'
+    'en': 'ARC BRD MCH DNC',
+    'ja': '弓術士 吟遊詩人 機工士 踊り子',
+    'de': 'WDL BRD MCH TÄN',
+    'fr': 'ARC BRD MCH DNS'
   },
   '67': {
     'en': 'GLA PGL MRD LNC ROG MNK DRG NIN',
@@ -598,293 +598,5 @@ export const jobCategories = {
     'ja': '弓術士 双剣士 吟遊詩人 忍者 機工士',
     'de': 'WDL SCH BRD NIN MCH',
     'fr': 'ARC SUR BRD NIN MCH'
-  },
-  '101': {
-    'en': 'PGL LNC ROG MNK DRG NIN',
-    'ja': '格闘士 槍術士 双剣士 モンク 竜騎士 忍者',
-    'de': 'FST PIK SCH MÖN DRG NIN',
-    'fr': 'PGL HAS SUR MOI DRG NIN'
-  },
-  '102': {
-    'en': 'PGL ROG MNK NIN SAM',
-    'ja': '格闘士 双剣士 モンク 忍者 侍',
-    'de': 'FST SCH MÖN NIN SAM',
-    'fr': 'PGL SUR MOI NIN SAM'
-  },
-  '103': {
-    'en': 'ROG NIN',
-    'ja': '双剣士 忍者',
-    'de': 'SCH NIN',
-    'fr': 'SUR NIN'
-  },
-  '104': {
-    'en': '',
-    'ja': '',
-    'de': '',
-    'fr': ''
-  },
-  '105': {
-    'en': 'ARC ROG BRD NIN MCH',
-    'ja': '弓術士 双剣士 吟遊詩人 忍者 機工士',
-    'de': 'WDL SCH BRD NIN MCH',
-    'fr': 'ARC SUR BRD NIN MCH'
-  },
-  '106': {
-    'en': 'GLA MRD PGL LNC ARC ROG BRD',
-    'ja': '剣術士 格闘士 斧術士 槍術士 弓術士 双剣士 吟遊詩人',
-    'de': 'GLA MAR FST PIK WDL SCH BRD',
-    'fr': 'GLA PGL MRD HAS ARC SUR BRD'
-  },
-  '107': {
-    'en': 'PLD MNK WAR DRG BRD WHM BLM SMN SCH NIN MCH DRK AST',
-    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 忍者 機工士 暗黒騎士 占星術師',
-    'de': 'PLD MÖN KRG DRG BRD WMA SMA BES GLT NIN MCH DKR AST',
-    'fr': 'PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST'
-  },
-  '108': {
-    'en': 'Disciples of War or Magic',
-    'ja': 'ファイター ソーサラー',
-    'de': 'Krieger oder Magier',
-    'fr': 'combattant ou mage'
-  },
-  '109': {
-    'en': '',
-    'ja': '',
-    'de': '',
-    'fr': ''
-  },
-  '110': {
-    'en': 'Jobs of the Disciples of War or Magic',
-    'ja': 'ファイター ソーサラー ジョブ専用',
-    'de': 'Krieger- oder Magier-Job',
-    'fr': 'job de combattant ou mage'
-  },
-  '111': {
-    'en': 'SAM',
-    'ja': '侍',
-    'de': 'SAM',
-    'fr': 'SAM'
-  },
-  '112': {
-    'en': 'RDM',
-    'ja': '赤魔道士',
-    'de': 'RMA',
-    'fr': 'MRG'
-  },
-  '113': {
-    'en': 'GLA MRD PLD WAR DRK',
-    'ja': '剣術士 斧術士 ナイト 戦士 暗黒騎士',
-    'de': 'GLA MAR PLD KRG DKR',
-    'fr': 'GLA MRD PLD GUE CHN'
-  },
-  '114': {
-    'en': 'PGL LNC ROG MNK DRG NIN SAM',
-    'ja': '格闘士 槍術士 モンク 竜騎士 双剣士 忍者 侍',
-    'de': 'FST PIK MÖN DRG SCH NIN SAM',
-    'fr': 'PGL HAS MOI DRG SUR NIN SAM'
-  },
-  '115': {
-    'en': 'ARC BRD MCH',
-    'ja': '弓術士 吟遊詩人 機工士',
-    'de': 'WDL BRD MCH',
-    'fr': 'ARC BRD MCH'
-  },
-  '116': {
-    'en': 'THM ACN BLM SMN RDM BLU',
-    'ja': '呪術士 黒魔道士 巴術士 召喚士 赤魔道士 青魔道士',
-    'de': 'THM SMA HRT BSW RMA BMA',
-    'fr': 'OCC MNO ACN INV MRG MBU'
-  },
-  '117': {
-    'en': 'CNJ WHM SCH AST',
-    'ja': '幻術士 白魔道士 学者 占星術師',
-    'de': 'DRU WMA GLT AST',
-    'fr': 'ÉLM MBL ÉRU AST'
-  },
-  '118': {
-    'en': 'PGL LNC ARC ROG MNK DRG BRD NIN MCH SAM',
-    'ja': '格闘士 槍術士 弓術士 モンク 竜騎士 吟遊詩人 双剣士 忍者 機工士 侍',
-    'de': 'FST PIK WLD MÖN DRG BRD SCH NIN MCH SAM',
-    'fr': 'PGL HAS ARC MOI DRG BRD SUR NIN MCH SAM'
-  },
-  '119': {
-    'en': 'PGL LNC THM ACN ROG MNK DRG BLM SMN NIN SAM RDM BLU',
-    'ja': '格闘士 槍術士 呪術士 モンク 竜騎士 黒魔道士 巴術士 召喚士 双剣士 忍者 侍 赤魔道士 青魔道士',
-    'de': 'FST PIK THM MÖN DRG SMA HRT BSW SCH NIN SAM RMA BMA',
-    'fr': 'PGL HAS OCC MOI DRG MNO ACN INV SUR NIN SAM MRG MBU'
-  },
-  '120': {
-    'en': 'CNJ THM ACN WHM BLM SMN SCH AST RDM BLU',
-    'ja': '幻術士 呪術士 白魔道士 黒魔道士 巴術士 召喚士 学者 占星術師 赤魔道士 青魔道士',
-    'de': 'DRU THM WMA SMA HRT BSW SCH AST RMA BMA',
-    'fr': 'ÉLM OCC MBL MNO ACN INV ÉRU AST MRG MBU'
-  },
-  '121': {
-    'en': 'PLD WAR DRK',
-    'ja': 'ナイト 戦士 暗黒騎士',
-    'de': 'PLD KRG DKR',
-    'fr': 'PLD GUE CHN'
-  },
-  '122': {
-    'en': 'MNK DRG NIN SAM',
-    'ja': 'モンク 竜騎士 忍者 侍',
-    'de': 'MÖN DRG NIN SAM',
-    'fr': 'MOI DRG NIN SAM'
-  },
-  '123': {
-    'en': 'BRD MCH',
-    'ja': '吟遊詩人 機工士',
-    'de': 'BRD MCH',
-    'fr': 'BRD MCH'
-  },
-  '124': {
-    'en': 'BLM SMN RDM BLU',
-    'ja': '黒魔道士 召喚士 赤魔道士 青魔道士',
-    'de': 'SMA BSW RMA BMA',
-    'fr': 'MNO INV MRG MBU'
-  },
-  '125': {
-    'en': 'WHM SCH AST',
-    'ja': '白魔道士 学者 占星術師',
-    'de': 'WMA GLT AST',
-    'fr': 'MBL ÉRU AST'
-  },
-  '126': {
-    'en': 'MNK DRG BRD NIN MCH SAM',
-    'ja': 'モンク 竜騎士 吟遊詩人 忍者 機工士 侍',
-    'de': 'MÖN DRG BRD NIN MCH SAM',
-    'fr': 'MOI DRG BRD NIN MCH SAM'
-  },
-  '127': {
-    'en': 'MNK DRG BLM SMN NIN SAM RDM BLU',
-    'ja': 'モンク 竜騎士 黒魔道士 召喚士 忍者 侍 赤魔道士 青魔道士',
-    'de': 'MÖN DRG SMA BSW NIN SAM RMA BMA',
-    'fr': 'MOI DRG MNO INV NIN SAM MRG MBU'
-  },
-  '128': {
-    'en': 'WHM BLM SMN SCH AST RDM BLU',
-    'ja': '白魔道士 黒魔道士 召喚士 学者 占星術師 赤魔道士 青魔道士',
-    'de': 'WMA SMA BSW GLT AST RMA BMA',
-    'fr': 'MBL MNO INV ÉRU AST MRG MBU'
-  },
-  '129': {
-    'en': 'BLU',
-    'ja': '青魔道士',
-    'de': 'BMA',
-    'fr': 'MBU'
-  },
-  '130': {
-    'en': 'All classes and jobs (excluding limited jobs)',
-    'ja': 'すべて (リミテッドジョブを除く)',
-    'de': 'Alle Klassen und Jobs (außer beschränkte Jobs)',
-    'fr': 'Toutes classes et jobs (sauf jobs restreints)'
-  },
-  '131': {
-    'en': 'MNK DRG BRD BLM SMN NIN MCH SAM RDM',
-    'ja': 'モンク 竜騎士 吟遊詩人 黒魔道士 召喚士 忍者 機工士 侍 赤魔道士',
-    'de': 'MÖN DRG BRD SMA BSW NIN MCH SAM RMA',
-    'fr': 'MOI DRG BRD MNO INV NIN MCH SAM MRG'
-  },
-  '132': {
-    'en': 'MNK DRG BRD WHM BLM SMN SCH NIN MCH AST SAM RDM',
-    'ja': 'モンク 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 忍者 機工士 占星術師 侍 赤魔道士',
-    'de': 'MÖN DRG BRD WMA SMA BSW GLT NIN MCH AST SAM RMA',
-    'fr': 'MOI DRG BRD MBL MNO INV ÉRU NIN MCH AST SAM MRG'
-  },
-  '133': {
-    'en': 'WHM SCH AST',
-    'ja': '白魔道士 学者 占星術師',
-    'de': 'WMA GLT AST',
-    'fr': 'MBL ÉRU AST'
-  },
-  '134': {
-    'en': 'PLD WAR DRK',
-    'ja': 'ナイト 戦士 暗黒騎士',
-    'de': 'PLD KRG DKR',
-    'fr': 'PLD GUE CHN'
-  },
-  '135': {
-    'en': 'PLD MNK WAR DRG BRD BLM SMN NIN MCH DRK SAM RDM',
-    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 黒魔道士 召喚士 忍者 機工士 暗黒騎士 侍 赤魔道士',
-    'de': 'PLD MÖN KRG DRG BRD SMA BSW NIN MCH DKR SAM RMA',
-    'fr': 'PLD MOI GUE DRG BRD MNO INV NIN MCH CHN SAM MRG'
-  },
-  '136': {
-    'en': 'PLD WAR WHM SCH DRK AST',
-    'ja': 'ナイト 戦士 白魔道士 学者 暗黒騎士 占星術師',
-    'de': 'PLD KRG WMA GLT DKR AST',
-    'fr': 'PLD GUE MBL ÉRU CHN AST'
-  },
-  '137': {
-    'en': 'PLD MNK WAR DRG BRD WHM BLM SMN SCH NIN MCH DRK AST SAM RDM',
-    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 忍者 機工士 暗黒騎士 占星術師 侍 赤魔道士',
-    'de': 'PLD MÖN KRG DRG BRD WMA SMA BSW GLT NIN MCH DKR AST SAM RMA',
-    'fr': 'PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG'
-  },
-  '138': {
-    'en': 'PLD MNK WAR DRG NIN DRK SAM',
-    'ja': 'ナイト モンク 戦士 竜騎士 忍者 暗黒騎士 侍',
-    'de': 'PLD MÖN KRG DRG NIN DKR SAM',
-    'fr': 'PLD MOI GUE DRG NIN CHN SAM'
-  },
-  '139': {
-    'en': 'BRD MCH',
-    'ja': '吟遊詩人 機工士',
-    'de': 'BRD MCH',
-    'fr': 'BRD MCH'
-  },
-  '140': {
-    'en': 'WHM BLM SMN SCH AST RDM',
-    'ja': '白魔道士 黒魔道士 召喚士 学者 占星術師 赤魔道士',
-    'de': 'WMA SMA BSW GLT AST RMA',
-    'fr': 'MBL MNO INV ÉRU AST MRG'
-  },
-  '141': {
-    'en': 'PLD MNK WAR DRG BRD WHM BLM SMN SCH MCH DRK AST SAM RDM',
-    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 機工士 暗黒騎士 占星術師 侍 赤魔道士',
-    'de': 'PLD MÖN KRG DRG BRD WMA SMA BSW GLT MCH DKR AST SAM RMA',
-    'fr': 'PLD MOI GUE DRG BRD MBL MNO INV ÉRU MCH CHN AST SAM MRG'
-  },
-  '142': {
-    'en': 'Any Disciple of War or Magic (excluding limited jobs)',
-    'ja': 'ファイターとソーサラー (リミテッドジョブを除く)',
-    'de': 'Krieger oder Magier (außer beschränkte Jobs)',
-    'fr': 'Combattants et mages (sauf jobs restreints)'
-  },
-  '143': {
-    'en': 'Disciples of War (excluding limited jobs)',
-    'ja': 'ファイター (リミテッドジョブを除く)',
-    'de': 'Krieger (außer beschränkte Jobs)',
-    'fr': 'Combattants (sauf jobs restreints)'
-  },
-  '144': {
-    'en': 'Any Disciple of Magic (excluding limited jobs)',
-    'ja': 'ソーサラー (リミテッドジョブを除く)',
-    'de': 'Magier (außer beschränkte Jobs)',
-    'fr': 'Mages (sauf jobs restreints)'
-  },
-  '145': {
-    'en': 'PLD MNK WAR DRG BRD NIN MCH DRK SAM',
-    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 忍者 機工士 暗黒騎士 侍',
-    'de': 'PLD MÖN KRG DRG BRD NIN MCH DKR SAM',
-    'fr': 'PLD MOI GUE DRG BRD NIN MCH CHN SAM'
-  },
-  '146': {
-    'en': 'Any job of the Disciples of War or Magic (excluding limited jobs)',
-    'ja': 'ファイター ソーサラー ジョブ専用 (リミテッドジョブを除く)',
-    'de': 'Krieger- oder Magier-Job (außer beschränkte Jobs)',
-    'fr': 'Jobs de combattant ou mage (sauf jobs restreints)'
-  },
-  '147': {
-    'en': 'BLM SMN RDM',
-    'ja': '黒魔道士 召喚士 赤魔道士',
-    'de': 'SMA BSW RMA',
-    'fr': 'MNO INV MRG'
-  },
-  '148': {
-    'en': 'MNK DRG NIN SAM',
-    'ja': 'モンク 竜騎士 忍者 侍',
-    'de': 'MÖN DRG NIN SAM',
-    'fr': 'MOI DRG NIN SAM'
   }
 };

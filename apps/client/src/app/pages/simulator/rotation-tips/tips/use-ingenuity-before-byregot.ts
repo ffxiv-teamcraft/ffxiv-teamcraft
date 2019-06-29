@@ -1,7 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import {
   ByregotsBlessing,
-  ByregotsBrow,
   ByregotsMiracle,
   Ingenuity,
   IngenuityII,
@@ -17,7 +16,6 @@ export class UseIngenuityBeforeByregot extends RotationTip {
 
   canBeAppliedTo(simulationResult: SimulationResult): boolean {
     return (this.simulationHasAction(simulationResult, ByregotsBlessing)
-      || this.simulationHasAction(simulationResult, ByregotsBrow)
       || this.simulationHasAction(simulationResult, ByregotsMiracle))
       && (this.simulationHasAction(simulationResult, Ingenuity) || this.simulationHasAction(simulationResult, IngenuityII));
   }
@@ -25,7 +23,7 @@ export class UseIngenuityBeforeByregot extends RotationTip {
   matches(simulationResult: SimulationResult): boolean {
     const simulation = simulationResult.simulation.clone();
     const clvl = Tables.LEVEL_TABLE[simulation.crafterStats.level] || simulation.crafterStats.level;
-    const byregotsIndex = simulation.actions.findIndex(a => a.is(ByregotsBrow) || a.is(ByregotsBlessing) || a.is(ByregotsMiracle));
+    const byregotsIndex = simulation.actions.findIndex(a => a.is(ByregotsBlessing) || a.is(ByregotsMiracle));
     return simulation.actions.slice(byregotsIndex).some(a => a.is(Ingenuity) || a.is(Ingenuity))
       && simulationResult.hqPercent < 100
       && clvl < simulation.recipe.rlvl;

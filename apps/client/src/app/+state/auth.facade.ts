@@ -200,8 +200,10 @@ export class AuthFacade {
   }
 
   public logout(): void {
-    this.af.auth.signOut();
-    this.store.dispatch(new Logout());
+    this.af.auth.signOut().then(() => {
+      this.store.dispatch(new Logout());
+      window.location.reload();
+    });
   }
 
   public toggleFavorite(dataType: keyof Favorites, key: string): void {

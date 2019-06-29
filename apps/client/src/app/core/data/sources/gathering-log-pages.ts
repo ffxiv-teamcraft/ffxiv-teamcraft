@@ -444,28 +444,7 @@ export const gatheringLogPages = [
           'hidden': 0
         },
         {
-          'itemId': 14,
-          'ilvl': 50,
-          'lvl': 50,
-          'stars': 0,
-          'hidden': 0
-        },
-        {
-          'itemId': 15,
-          'ilvl': 50,
-          'lvl': 50,
-          'stars': 0,
-          'hidden': 0
-        },
-        {
-          'itemId': 16,
-          'ilvl': 50,
-          'lvl': 50,
-          'stars': 0,
-          'hidden': 0
-        },
-        {
-          'itemId': 17,
+          'itemId': 18,
           'ilvl': 50,
           'lvl': 50,
           'stars': 0,
@@ -917,14 +896,14 @@ export const gatheringLogPages = [
           'hidden': 0
         },
         {
-          'itemId': 24567,
+          'itemId': 19872,
           'ilvl': 220,
           'lvl': 64,
           'stars': 0,
           'hidden': 0
         },
         {
-          'itemId': 19872,
+          'itemId': 24567,
           'ilvl': 220,
           'lvl': 64,
           'stars': 0,
@@ -1014,10 +993,148 @@ export const gatheringLogPages = [
           'hidden': 0
         },
         {
+          'itemId': 27726,
+          'ilvl': 320,
+          'lvl': 70,
+          'stars': 2,
+          'hidden': 0
+        },
+        {
           'itemId': 23220,
           'ilvl': 320,
           'lvl': 70,
           'stars': 2,
+          'hidden': 0
+        }
+      ]
+    },
+    {
+      'id': 14,
+      'startLevel': 72,
+      'items': [
+        {
+          'itemId': 27697,
+          'ilvl': 350,
+          'lvl': 72,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27727,
+          'ilvl': 350,
+          'lvl': 72,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27968,
+          'ilvl': 355,
+          'lvl': 73,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 26753,
+          'ilvl': 355,
+          'lvl': 73,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27728,
+          'ilvl': 370,
+          'lvl': 74,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27698,
+          'ilvl': 370,
+          'lvl': 74,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 26754,
+          'ilvl': 380,
+          'lvl': 75,
+          'stars': 0,
+          'hidden': 0
+        }
+      ]
+    },
+    {
+      'id': 15,
+      'startLevel': 76,
+      'items': [
+        {
+          'itemId': 27729,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27805,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27806,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27776,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27701,
+          'ilvl': 400,
+          'lvl': 77,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27730,
+          'ilvl': 410,
+          'lvl': 78,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27782,
+          'ilvl': 410,
+          'lvl': 78,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 26755,
+          'ilvl': 410,
+          'lvl': 78,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27703,
+          'ilvl': 430,
+          'lvl': 80,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27731,
+          'ilvl': 430,
+          'lvl': 80,
+          'stars': 0,
           'hidden': 0
         }
       ]
@@ -1136,6 +1253,20 @@ export const gatheringLogPages = [
           'ilvl': 320,
           'lvl': 70,
           'stars': 2,
+          'hidden': 0
+        },
+        {
+          'itemId': 27704,
+          'ilvl': 440,
+          'lvl': 80,
+          'stars': 1,
+          'hidden': 0
+        },
+        {
+          'itemId': 27705,
+          'ilvl': 440,
+          'lvl': 80,
+          'stars': 1,
           'hidden': 0
         }
       ]
@@ -1863,13 +1994,6 @@ export const gatheringLogPages = [
       'startLevel': 66,
       'items': [
         {
-          'itemId': 24569,
-          'ilvl': 230,
-          'lvl': 66,
-          'stars': 0,
-          'hidden': 0
-        },
-        {
           'itemId': 20010,
           'ilvl': 230,
           'lvl': 66,
@@ -1878,6 +2002,13 @@ export const gatheringLogPages = [
         },
         {
           'itemId': 19952,
+          'ilvl': 230,
+          'lvl': 66,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 24569,
           'ilvl': 230,
           'lvl': 66,
           'stars': 0,
@@ -1905,10 +2036,92 @@ export const gatheringLogPages = [
           'hidden': 0
         },
         {
+          'itemId': 26752,
+          'ilvl': 290,
+          'lvl': 70,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
           'itemId': 23220,
           'ilvl': 320,
           'lvl': 70,
           'stars': 2,
+          'hidden': 0
+        },
+        {
+          'itemId': 27954,
+          'ilvl': 320,
+          'lvl': 70,
+          'stars': 2,
+          'hidden': 0
+        },
+        {
+          'itemId': 27817,
+          'ilvl': 320,
+          'lvl': 70,
+          'stars': 2,
+          'hidden': 0
+        }
+      ]
+    },
+    {
+      'id': 54,
+      'startLevel': 71,
+      'items': [
+        {
+          'itemId': 27801,
+          'ilvl': 345,
+          'lvl': 71,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27696,
+          'ilvl': 345,
+          'lvl': 71,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27699,
+          'ilvl': 380,
+          'lvl': 75,
+          'stars': 0,
+          'hidden': 0
+        }
+      ]
+    },
+    {
+      'id': 55,
+      'startLevel': 76,
+      'items': [
+        {
+          'itemId': 27803,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27700,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27702,
+          'ilvl': 420,
+          'lvl': 79,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27807,
+          'ilvl': 430,
+          'lvl': 80,
+          'stars': 0,
           'hidden': 0
         }
       ]
@@ -2782,14 +2995,14 @@ export const gatheringLogPages = [
           'hidden': 0
         },
         {
-          'itemId': 24567,
+          'itemId': 19908,
           'ilvl': 220,
           'lvl': 64,
           'stars': 0,
           'hidden': 0
         },
         {
-          'itemId': 19908,
+          'itemId': 24567,
           'ilvl': 220,
           'lvl': 64,
           'stars': 0,
@@ -2884,6 +3097,102 @@ export const gatheringLogPages = [
           'lvl': 70,
           'stars': 2,
           'hidden': 0
+        },
+        {
+          'itemId': 27816,
+          'ilvl': 320,
+          'lvl': 70,
+          'stars': 2,
+          'hidden': 0
+        }
+      ]
+    },
+    {
+      'id': 94,
+      'startLevel': 71,
+      'items': [
+        {
+          'itemId': 27831,
+          'ilvl': 345,
+          'lvl': 71,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27820,
+          'ilvl': 345,
+          'lvl': 71,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27683,
+          'ilvl': 345,
+          'lvl': 71,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27684,
+          'ilvl': 350,
+          'lvl': 72,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27685,
+          'ilvl': 370,
+          'lvl': 74,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27834,
+          'ilvl': 380,
+          'lvl': 75,
+          'stars': 0,
+          'hidden': 0
+        }
+      ]
+    },
+    {
+      'id': 95,
+      'startLevel': 76,
+      'items': [
+        {
+          'itemId': 27821,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27686,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27819,
+          'ilvl': 410,
+          'lvl': 78,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27835,
+          'ilvl': 430,
+          'lvl': 80,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27687,
+          'ilvl': 430,
+          'lvl': 80,
+          'stars': 0,
+          'hidden': 0
         }
       ]
     },
@@ -2959,6 +3268,13 @@ export const gatheringLogPages = [
           'ilvl': 340,
           'lvl': 70,
           'stars': 3,
+          'hidden': 0
+        },
+        {
+          'itemId': 27688,
+          'ilvl': 440,
+          'lvl': 80,
+          'stars': 1,
           'hidden': 0
         }
       ]
@@ -3802,13 +4118,6 @@ export const gatheringLogPages = [
           'hidden': 0
         },
         {
-          'itemId': 14,
-          'ilvl': 50,
-          'lvl': 50,
-          'stars': 0,
-          'hidden': 0
-        },
-        {
           'itemId': 15,
           'ilvl': 50,
           'lvl': 50,
@@ -4428,13 +4737,6 @@ export const gatheringLogPages = [
           'hidden': 0
         },
         {
-          'itemId': 24569,
-          'ilvl': 230,
-          'lvl': 66,
-          'stars': 0,
-          'hidden': 0
-        },
-        {
           'itemId': 20012,
           'ilvl': 230,
           'lvl': 66,
@@ -4443,6 +4745,13 @@ export const gatheringLogPages = [
         },
         {
           'itemId': 19916,
+          'ilvl': 230,
+          'lvl': 66,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 24569,
           'ilvl': 230,
           'lvl': 66,
           'stars': 0,
@@ -4512,6 +4821,13 @@ export const gatheringLogPages = [
           'hidden': 0
         },
         {
+          'itemId': 26752,
+          'ilvl': 290,
+          'lvl': 70,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
           'itemId': 19918,
           'ilvl': 300,
           'lvl': 70,
@@ -4523,6 +4839,221 @@ export const gatheringLogPages = [
           'ilvl': 320,
           'lvl': 70,
           'stars': 2,
+          'hidden': 0
+        },
+        {
+          'itemId': 27827,
+          'ilvl': 320,
+          'lvl': 70,
+          'stars': 2,
+          'hidden': 0
+        }
+      ]
+    },
+    {
+      'id': 134,
+      'startLevel': 71,
+      'items': [
+        {
+          'itemId': 27818,
+          'ilvl': 345,
+          'lvl': 71,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27823,
+          'ilvl': 345,
+          'lvl': 71,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27825,
+          'ilvl': 345,
+          'lvl': 71,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27747,
+          'ilvl': 345,
+          'lvl': 71,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27824,
+          'ilvl': 350,
+          'lvl': 72,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27833,
+          'ilvl': 350,
+          'lvl': 72,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27750,
+          'ilvl': 350,
+          'lvl': 72,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27832,
+          'ilvl': 355,
+          'lvl': 73,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 26753,
+          'ilvl': 355,
+          'lvl': 73,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27836,
+          'ilvl': 370,
+          'lvl': 74,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27753,
+          'ilvl': 370,
+          'lvl': 74,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27829,
+          'ilvl': 380,
+          'lvl': 75,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27826,
+          'ilvl': 380,
+          'lvl': 75,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 26754,
+          'ilvl': 380,
+          'lvl': 75,
+          'stars': 0,
+          'hidden': 0
+        }
+      ]
+    },
+    {
+      'id': 135,
+      'startLevel': 76,
+      'items': [
+        {
+          'itemId': 27822,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27808,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27779,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27809,
+          'ilvl': 390,
+          'lvl': 76,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27780,
+          'ilvl': 400,
+          'lvl': 77,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27828,
+          'ilvl': 410,
+          'lvl': 78,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27837,
+          'ilvl': 410,
+          'lvl': 78,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27830,
+          'ilvl': 410,
+          'lvl': 78,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27783,
+          'ilvl': 410,
+          'lvl': 78,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 26755,
+          'ilvl': 410,
+          'lvl': 78,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27759,
+          'ilvl': 420,
+          'lvl': 79,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27784,
+          'ilvl': 420,
+          'lvl': 79,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27785,
+          'ilvl': 420,
+          'lvl': 79,
+          'stars': 0,
+          'hidden': 0
+        },
+        {
+          'itemId': 27810,
+          'ilvl': 430,
+          'lvl': 80,
+          'stars': 0,
           'hidden': 0
         }
       ]
@@ -4606,6 +5137,13 @@ export const gatheringLogPages = [
           'ilvl': 340,
           'lvl': 70,
           'stars': 3,
+          'hidden': 0
+        },
+        {
+          'itemId': 27761,
+          'ilvl': 440,
+          'lvl': 80,
+          'stars': 1,
           'hidden': 0
         }
       ]

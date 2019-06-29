@@ -2,9 +2,8 @@ const csv = require('csv-parser');
 const path = require('path');
 const fs = require('fs');
 const http = require('https');
-const Rx = require('rxjs');
-const { map, switchMap, mergeMap, first } = require('rxjs/operators');
-const { Subject, combineLatest } = require('rxjs');
+const { map, tap, switchMap, mergeMap, first } = require('rxjs/operators');
+const { Subject, combineLatest, merge } = require('rxjs');
 const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 
 const nodes = {};
@@ -12,6 +11,7 @@ const gatheringPointToBaseId = {};
 const aetherytes = [];
 const monsters = {};
 const npcs = {};
+const aetheryteNameIds = {};
 
 let todo = [
   'gatheringLog',
@@ -40,7 +40,8 @@ let todo = [
   'items',
   'aetherytes',
   'achievements',
-  'recipes'
+  'recipes',
+  'actionIcons'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -56,10 +57,11 @@ fs.existsSync('output') || fs.mkdirSync('output');
 
 if (hasTodo('mappy')) {
   // MapData extraction
-  const memoryData$ = new Rx.Subject();
-  const mapData$ = new Rx.Subject();
-  const npcs$ = new Rx.Subject();
-  const nodes$ = new Rx.Subject();
+  const memoryData$ = new Subject();
+  const mapData$ = new Subject();
+  const npcs$ = new Subject();
+  const aetherytes$ = new Subject();
+  const nodes$ = new Subject();
   http.get('https://xivapi.com/download?data=map_data', (res) => mapData$.next(res));
 
   const parsedMemoryData = [];
@@ -91,7 +93,15 @@ if (hasTodo('mappy')) {
     npcs$.next(npcs);
   });
 
-  const gatheringItems$ = new Rx.Subject();
+  getAllPages('https://xivapi.com/Aetheryte?columns=ID,PlaceNameTargetID').subscribe(page => {
+    page.Results.forEach(aetheryte => {
+      aetheryteNameIds[aetheryte.ID] = aetheryte.PlaceNameTargetID;
+    });
+  }, null, () => {
+    aetherytes$.next(aetheryteNameIds);
+  });
+
+  const gatheringItems$ = new Subject();
   const gatheringItems = {};
 
   getAllPages('https://xivapi.com/GatheringItem?columns=ID,GatheringItemLevel,IsHidden,Item').subscribe(page => {
@@ -109,9 +119,8 @@ if (hasTodo('mappy')) {
     persistToTypescript('gathering-items', 'gatheringItems', gatheringItems);
     gatheringItems$.next(gatheringItems);
   });
-
   gatheringItems$.pipe(
-    mergeMap(gatheringItems => {
+    switchMap(gatheringItems => {
       return getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0,Item1,Item2,Item3,Item4,Item5,Item6,Item7,IsLimited,GameContentLinks,GatheringLevel')
         .pipe(
           map((page) => [page, gatheringItems])
@@ -149,10 +158,10 @@ if (hasTodo('mappy')) {
     }
   });
 
-  Rx.combineLatest([memoryData$, mapData$, nodes$, npcs$])
-    .subscribe(([memoryData, res]) => {
-      res.setEncoding('utf8');
-      res.pipe(csv())
+  combineLatest([memoryData$, mapData$, nodes$, npcs$, aetherytes$])
+    .subscribe(([memoryData, mapData]) => {
+      mapData.setEncoding('utf8');
+      mapData.pipe(csv())
         .on('data', function(row) {
           if (row.ContentIndex === 'BNPC') {
             handleMonster(row, memoryData);
@@ -176,13 +185,12 @@ if (hasTodo('mappy')) {
           // Write data that needs to be joined with game data first
           persistToJson('node-positions', nodes);
           console.log('nodes written');
-          // persistToTypescript('aetherytes', 'aetherytes', aetherytes);
-          // console.log('aetherytes written');
+          persistToTypescript('aetherytes', 'aetherytes', aetherytes);
+          console.log('aetherytes written');
           persistToJson('monsters', monsters);
           console.log('monsters written');
           persistToJsonAsset('npcs', npcs);
           console.log('npcs written');
-          // mappyDone$.next();
         });
     });
 }
@@ -208,6 +216,7 @@ handleAetheryte = (row) => {
     zoneid: +row.PlaceNameID,
     map: +row.MapID,
     placenameid: +row.PlaceNameID,
+    nameid: aetheryteNameIds[row.ENpcResidentID === '2147483647' ? 12 : +row.ENpcResidentID],
     x: Math.round(+row.PosX * 10) / 10,
     y: Math.round(+row.PosY * 10) / 10,
     type: isShard ? 1 : 0
@@ -491,6 +500,7 @@ if (hasTodo('spearFishingLog')) {
 
       getAllEntries('https://xivapi.com/SpearfishingNotebook', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
         completeFetch
+          .filter(entry => entry.GatheringPointBase)
           .forEach(entry => {
             const entries = Object.keys(entry.GatheringPointBase)
               .filter(key => /Item\d/.test(key))
@@ -604,17 +614,6 @@ if (hasTodo('weather')) {
       weatherIndexData[weatherIndex.ID] = entry;
     });
     persistToTypescript('weather-index', 'weatherIndex', weatherIndexData);
-  });
-}
-
-if (hasTodo('itemIcons')) {
-  const itemIcons = {};
-  getAllPages('https://xivapi.com/Item?key=63cc0045d7e847149c3f&columns=ID,Icon').subscribe(page => {
-    page.Results.forEach(row => {
-      itemIcons[row.ID] = row.Icon;
-    });
-  }, null, () => {
-    persistToJsonAsset('item-icons', itemIcons);
   });
 }
 
@@ -984,20 +983,10 @@ if (hasTodo('traits')) {
 if (hasTodo('items')) {
   const names = {};
   const rarities = {};
-  const mostUsed = [];
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks').subscribe(page => {
+  const itemIcons = {};
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon').subscribe(page => {
     page.Results.forEach(item => {
-      if (item.GameContentLinks) {
-        if (item.GameContentLinks.Recipe && item.GameContentLinks.Recipe.ItemResult) {
-          const usedFor = [].concat.apply([], Object.keys(item.GameContentLinks.Recipe)
-            .filter(key => /ItemIngredient\d/.test(key))
-            .map(key => item.GameContentLinks.Recipe[key])).length;
-          mostUsed.push({
-            name: item.Name_en,
-            amount: usedFor
-          });
-        }
-      }
+      itemIcons[item.ID] = item.Icon;
       names[item.ID] = {
         en: item.Name_en,
         de: item.Name_de,
@@ -1007,7 +996,7 @@ if (hasTodo('items')) {
       rarities[item.ID] = item.Rarity;
     });
   }, null, () => {
-    fs.writeFileSync(path.join(__dirname, `most-used.json`), JSON.stringify(mostUsed.sort((a, b) => b.amount - a.amount)));
+    persistToJsonAsset('item-icons', itemIcons);
     persistToJsonAsset('items', names);
     persistToTypescript('rarities', 'rarities', rarities);
   });
@@ -1075,5 +1064,19 @@ if (hasTodo('recipes')) {
     });
   }, null, () => {
     persistToJsonAsset('recipes', recipes);
+  });
+}
+
+if (hasTodo('actionIcons')) {
+  const icons = {};
+  merge(
+    getAllPages('https://xivapi.com/Action?columns=ID,Icon'),
+    getAllPages('https://xivapi.com/CraftAction?columns=ID,Icon')
+  ).subscribe(page => {
+    page.Results.forEach(action => {
+      icons[action.ID] = action.Icon;
+    });
+  }, null, () => {
+    persistToJson('action-icons', icons);
   });
 }
