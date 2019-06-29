@@ -369,7 +369,7 @@
                    [nzTitle]="title">
             <ng-template #title>
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
-                <img class="img-icon round-icon" src="https://garlandtools.org/files/icons/item/3503.png"
+                <img class="img-icon round-icon" [src]="21072 | lazyIcon"
                      alt="Ventures">
                 <div>
                   {{'Retainer_ventures' | translate}}
