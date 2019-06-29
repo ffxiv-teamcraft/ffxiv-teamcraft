@@ -99,6 +99,7 @@
   "Discounts": "Discount",
   "Flat_discount": "Flat",
   "Percent_discount": "Percent",
+  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrar usando tags",
     "Tags_filter_reset": "Redefinir filtros",
