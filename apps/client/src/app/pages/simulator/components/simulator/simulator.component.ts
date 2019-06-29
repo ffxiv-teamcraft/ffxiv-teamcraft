@@ -51,6 +51,8 @@ import { DirtyFacade } from '../../../../core/dirty/+state/dirty.facade';
 import { CommunityRotationPopupComponent } from '../community-rotation-popup/community-rotation-popup.component';
 import {
   ActionType,
+  BasicSynthesis,
+  BasicTouch,
   Buff,
   CrafterLevels,
   CrafterStats,
@@ -191,6 +193,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     new RegExp(/\/(ac|action)[\s]+([^<]+)?.*/, 'i');
 
   private statsFromRotationApplied = false;
+
+  public qualityPer100$: Observable<number>;
+
+  public progressPer100$: Observable<number>;
 
   public permissionLevel$ = combineLatest([this.rotation$, this.authFacade.userId$]).pipe(
     map(([rotation, userId]) => {
@@ -799,6 +805,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           levels as CrafterLevels);
       })
     );
+
     this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.forceFailed$]).pipe(
       map(([recipe, actions, stats, hqIngredients, forceFailed]) => {
         return new Simulation(recipe, actions, stats, hqIngredients, forceFailed);
@@ -840,6 +847,21 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       }),
       tap(result => this.actionFailed = result.steps.find(step => !step.success) !== undefined),
       shareReplay(1)
+    );
+
+    this.qualityPer100$ = this.result$.pipe(
+      map(result => {
+        const action = new BasicTouch();
+        const multiplier = result.simulation.hasBuff(Buff.GREAT_STRIDES) ? 2 : 0;
+        return Math.floor(action.getBaseQuality(result.simulation) * multiplier);
+      })
+    );
+
+    this.progressPer100$ = this.result$.pipe(
+      map(result => {
+        const action = new BasicSynthesis();
+        return Math.floor(action.getBaseProgression(result.simulation));
+      })
     );
 
     this.report$ = combineLatest([this.simulation$, this.result$]).pipe(

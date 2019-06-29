@@ -34,16 +34,29 @@ interval(250).pipe(
       body: operation.body,
       json: true
     }, (err, _, res) => {
-      operation.res$.next(res);
-      operation.res$.complete();
+      if (err || res === '404 not found.') {
+        if (err) {
+          console.error(err);
+        }
+        operation.res$.next(null);
+        operation.res$.complete();
+      } else {
+        operation.res$.next(res);
+        operation.res$.complete();
+      }
     });
   } else {
     request(operation.url, { json: true }, (err, _, res) => {
-      if (err) {
-        console.error(err);
+      if (err || res === '404 not found.') {
+        if (err) {
+          console.error(err);
+        }
+        operation.res$.next(null);
+        operation.res$.complete();
+      } else {
+        operation.res$.next(res);
+        operation.res$.complete();
       }
-      operation.res$.next(res);
-      operation.res$.complete();
     });
   }
 });

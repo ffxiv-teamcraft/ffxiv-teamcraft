@@ -2,7 +2,7 @@ const csv = require('csv-parser');
 const path = require('path');
 const fs = require('fs');
 const http = require('https');
-const { map, tap, switchMap, mergeMap, first } = require('rxjs/operators');
+const { map, tap, switchMap, catchError, first } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
 const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 
