@@ -447,12 +447,17 @@
               </div>
             </div>
           </div>
-          <div class="simulator-footer" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <div class="simulator-footer" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center"
+               fxLayoutGap="5px">
             <div>{{'SIMULATOR.Progress_action_100_potency' | translate: { value: (progressPer100$ | async) } }}</div>
             <div *ngIf="true | ifMobile: false">|</div>
             <div>{{'SIMULATOR.Quality_action_100_potency' | translate: { value: (qualityPer100$ | async) } }}</div>
             <div *ngIf="true | ifMobile: false">|</div>
-            <div>{{'SIMULATOR.Current_control' | translate: { value: resultData.simulation.crafterStats.getControl(resultData.simulation) } }}</div>
+            <div nz-tooltip [nzTitle]="'SIMULATOR.Current_control_bonus' | translate">
+              {{'SIMULATOR.Current_control' | translate: { value: (resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) } }}
+              ({{resultData.simulation.crafterStats._control}} + <span
+              [style.font-weight]="(resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) - resultData.simulation.crafterStats._control === 3000? 'bold': 'default'">{{(resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) - resultData.simulation.crafterStats._control}}</span>)
+            </div>
           </div>
         </nz-card>
 
