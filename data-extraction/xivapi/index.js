@@ -41,7 +41,7 @@ let todo = [
   'aetherytes',
   'achievements',
   'recipes',
-  'actionIcons'
+  'actions'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -1067,16 +1067,39 @@ if (hasTodo('recipes')) {
   });
 }
 
-if (hasTodo('actionIcons')) {
+if (hasTodo('actions')) {
   const icons = {};
+  const actions = {};
+  const craftActions = {};
   merge(
-    getAllPages('https://xivapi.com/Action?columns=ID,Icon'),
-    getAllPages('https://xivapi.com/CraftAction?columns=ID,Icon')
+    getAllPages('https://xivapi.com/Action?columns=ID,Icon,Name_*'),
+    getAllPages('https://xivapi.com/CraftAction?columns=ID,Icon,Name_*')
   ).subscribe(page => {
     page.Results.forEach(action => {
       icons[action.ID] = action.Icon;
+      // Removing migrated crafting actions
+      if ([100009, 281].indexOf(action.ID) === -1) {
+        if (action.ID > 100000) {
+          craftActions[action.ID] = {
+            en: action.Name_en,
+            de: action.Name_de,
+            ja: action.Name_ja,
+            fr: action.Name_fr
+          };
+        }
+        if (action.ID < 100000) {
+          actions[action.ID] = {
+            en: action.Name_en,
+            de: action.Name_de,
+            ja: action.Name_ja,
+            fr: action.Name_fr
+          };
+        }
+      }
     });
   }, null, () => {
     persistToJson('action-icons', icons);
+    persistToJsonAsset('actions', actions);
+    persistToJsonAsset('craft-actions', craftActions);
   });
 }
