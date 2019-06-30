@@ -205,7 +205,7 @@
                 <ng-template #hqIngredientTemplate let-ingredient>
                   <nz-list-item [nzContent]="content">
                     <nz-list-item-meta [nzTitle]="ingredient.id | itemName | i18n"
-                                       [nzDescription]="ingredient.quality"></nz-list-item-meta>
+                                       [nzDescription]="ingredient.quality | floor"></nz-list-item-meta>
                     <ng-template #content>
                       <nz-form-control>
                         <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
