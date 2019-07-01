@@ -1200,6 +1200,7 @@
     "3d_model_viewer": "Vista previa del modelo 3D",
     "3d_model_help": "Previsualizar modelo 3D",
     "Achievements": "Logros",
+    "Currencies": "Currencies",
     "NODE": {
       "Items": "Artículos",
       "Possible_bonuses": "Bonos posibles",
@@ -1218,7 +1219,8 @@
       "End": "Fin",
       "Rewards": "Recompensas",
       "Repeatable": "Repetible",
-      "Beast_tribe_rank": "Rango de tribu de bestia"
+      "Beast_tribe_rank": "Rango de tribu de bestia",
+      "Chain_length": "Following quests"
     },
     "NPC": {
       "Other_entries": "Otras apariciones",

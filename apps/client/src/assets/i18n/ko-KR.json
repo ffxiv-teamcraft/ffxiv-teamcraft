@@ -1200,6 +1200,7 @@
     "3d_model_viewer": "3D 모델링 미리보기",
     "3d_model_help": "3D 모델링 미리보기",
     "Achievements": "업적",
+    "Currencies": "Currencies",
     "NODE": {
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
@@ -1218,7 +1219,8 @@
       "End": "종료",
       "Rewards": "보상",
       "Repeatable": "반복가능",
-      "Beast_tribe_rank": "야만족 우호 단계"
+      "Beast_tribe_rank": "야만족 우호 단계",
+      "Chain_length": "Following quests"
     },
     "NPC": {
       "Other_entries": "다른 출현위치",

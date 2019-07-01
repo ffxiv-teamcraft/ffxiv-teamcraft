@@ -1200,6 +1200,7 @@
     "3d_model_viewer": "3D model preview",
     "3d_model_help": "Preview 3D model",
     "Achievements": "Достижения",
+    "Currencies": "Currencies",
     "NODE": {
       "Items": "Предметы",
       "Possible_bonuses": "Возможные бонусы",
@@ -1218,7 +1219,8 @@
       "End": "Конец",
       "Rewards": "Награда",
       "Repeatable": "Повторяемый",
-      "Beast_tribe_rank": "Beast tribe rank"
+      "Beast_tribe_rank": "Beast tribe rank",
+      "Chain_length": "Following quests"
     },
     "NPC": {
       "Other_entries": "Other appearances",
