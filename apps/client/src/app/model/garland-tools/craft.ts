@@ -1,8 +1,8 @@
 import { Complexity } from './complexity';
 import { Ingredient } from './ingredient';
-import { RecipeElement } from './recipe-element';
+import { Craft as SimCraft } from '@ffxiv-teamcraft/simulator';
 
-export interface Craft {
+export interface Craft extends SimCraft {
   id: string;
   job: number;
   rlvl: number;
@@ -20,5 +20,4 @@ export interface Craft {
   complexity: Complexity;
   fc?: number;
   yield?: number;
-  element?: RecipeElement;
 }
