@@ -32,6 +32,8 @@ export class QuestComponent extends TeamcraftPageComponent {
 
   public involvedNpcs$: Observable<number[]>;
 
+  public startingPoint$: Observable<any>;
+
   public rewards$: Observable<{ type: string, id: number, amount: number }[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
@@ -79,6 +81,14 @@ export class QuestComponent extends TeamcraftPageComponent {
         return this.xivapi.get(XivapiEndpoint.Quest, +id);
       }),
       shareReplay(1)
+    );
+
+    this.startingPoint$ = this.xivapiQuest$.pipe(
+      map(quest => {
+        return this.l12n.getNpc(quest.IssuerStart) as any;
+      }),
+      filter(npc => npc && npc.position),
+      map(npc => npc.position)
     );
 
     const lang$ = this.translate.onLangChange.pipe(
