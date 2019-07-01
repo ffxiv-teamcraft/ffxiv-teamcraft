@@ -1200,6 +1200,7 @@
     "3d_model_viewer": "3D model preview",
     "3d_model_help": "Preview 3D model",
     "Achievements": "Achievements",
+    "Currencies": "Currencies",
     "NODE": {
       "Items": "Items",
       "Possible_bonuses": "Possible bonuses",
@@ -1218,7 +1219,8 @@
       "End": "Fim",
       "Rewards": "Recompensas",
       "Repeatable": "Repetível",
-      "Beast_tribe_rank": "Rank da tribo"
+      "Beast_tribe_rank": "Rank da tribo",
+      "Chain_length": "Following quests"
     },
     "NPC": {
       "Other_entries": "Other appearances",
