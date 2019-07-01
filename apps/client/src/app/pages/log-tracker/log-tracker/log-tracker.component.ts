@@ -335,8 +335,11 @@ export class LogTrackerComponent extends TrackerComponent {
       const masterbookNumber = Math.floor((page.id - 1000) / 8) + 1;
       return `${this.translate.instant('LOG_TRACKER.PAGE.Master_recipes', { number: masterbookNumber })}`;
     }
-    if (page.id > 1055 && page.id < 1072) {
-      return `${this.translate.instant('LOG_TRACKER.PAGE.Housing_items', { number: page.id < 1064 ? 1 : 2 })}`;
+    if (page.id === 1079) {
+      return this.translate.instant('LOG_TRACKER.PAGE.Housing_items', { number: 1 });
+    }
+    if (page.id > 1063 && page.id < 1080) {
+      return `${this.translate.instant('LOG_TRACKER.PAGE.Housing_items', { number: page.id < 1072 ? 1 : 2 })}`;
     }
     if (page.id >= 1088 && page.id <= 1095) {
       return this.translate.instant('LOG_TRACKER.PAGE.Quests');
@@ -357,7 +360,7 @@ export class LogTrackerComponent extends TrackerComponent {
     if (page.id === 9999) {
       return this.translate.instant('LOG_TRACKER.Folklore');
     }
-    if(page.id === 47){
+    if (page.id === 47) {
       return `36-40`;
     }
     return `${Math.floor(page.startLevel / 5) * 5 + 1} - ${Math.floor((page.startLevel + 4) / 5) * 5}`;

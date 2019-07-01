@@ -41,12 +41,12 @@ export const aetherytes = [
   },
   {
     "id": 157,
-    "zoneid": 2953,
-    "map": 491,
-    "placenameid": 2953,
+    "zoneid": 2952,
+    "map": 498,
+    "placenameid": 2952,
     "nameid": 0,
-    "x": 21.7,
-    "y": 21.4,
+    "x": 11.5,
+    "y": 11.2,
     "type": 1
   },
   {
@@ -80,6 +80,16 @@ export const aetherytes = [
     "type": 1
   },
   {
+    "id": 141,
+    "zoneid": 2955,
+    "map": 493,
+    "placenameid": 2955,
+    "nameid": 3135,
+    "x": 11.3,
+    "y": 17.2,
+    "type": 0
+  },
+  {
     "id": 103,
     "zoneid": 2408,
     "map": 369,
@@ -111,12 +121,12 @@ export const aetherytes = [
   },
   {
     "id": 135,
-    "zoneid": 2953,
-    "map": 491,
-    "placenameid": 2953,
+    "zoneid": 2952,
+    "map": 498,
+    "placenameid": 2952,
     "nameid": 0,
-    "x": 22.9,
-    "y": 22.8,
+    "x": 12.7,
+    "y": 12.6,
     "type": 1
   },
   {
@@ -181,12 +191,22 @@ export const aetherytes = [
   },
   {
     "id": 134,
-    "zoneid": 2953,
-    "map": 491,
-    "placenameid": 2953,
+    "zoneid": 2952,
+    "map": 498,
+    "placenameid": 2952,
     "nameid": 2952,
-    "x": 21.5,
-    "y": 21.5,
+    "x": 11.3,
+    "y": 11.3,
+    "type": 0
+  },
+  {
+    "id": 139,
+    "zoneid": 2954,
+    "map": 492,
+    "placenameid": 2954,
+    "nameid": 3105,
+    "x": 13,
+    "y": 9,
     "type": 0
   },
   {
@@ -431,12 +451,12 @@ export const aetherytes = [
   },
   {
     "id": 158,
-    "zoneid": 2953,
-    "map": 491,
-    "placenameid": 2953,
+    "zoneid": 2952,
+    "map": 498,
+    "placenameid": 2952,
     "nameid": 0,
-    "x": 20.4,
-    "y": 22.5,
+    "x": 10.2,
+    "y": 12.3,
     "type": 1
   },
   {
@@ -1030,16 +1050,6 @@ export const aetherytes = [
     "type": 1
   },
   {
-    "id": 64,
-    "zoneid": 2411,
-    "map": 372,
-    "placenameid": 2411,
-    "nameid": 0,
-    "x": 22.7,
-    "y": 22.8,
-    "type": 1
-  },
-  {
     "id": 37,
     "zoneid": 41,
     "map": 73,
@@ -1047,16 +1057,6 @@ export const aetherytes = [
     "nameid": 0,
     "x": 9.3,
     "y": 13,
-    "type": 1
-  },
-  {
-    "id": 65,
-    "zoneid": 2411,
-    "map": 372,
-    "placenameid": 2411,
-    "nameid": 0,
-    "x": 21.5,
-    "y": 22.7,
     "type": 1
   },
   {

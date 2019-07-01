@@ -1200,6 +1200,7 @@
     "3d_model_viewer": "3D 模型预览",
     "3d_model_help": "预览 3D 模型",
     "Achievements": "Achievements",
+    "Currencies": "Currencies",
     "NODE": {
       "Items": "物品",
       "Possible_bonuses": "随机加成",
@@ -1218,7 +1219,8 @@
       "End": "提交",
       "Rewards": "奖励",
       "Repeatable": "重复",
-      "Beast_tribe_rank": "蛮族关系"
+      "Beast_tribe_rank": "蛮族关系",
+      "Chain_length": "Following quests"
     },
     "NPC": {
       "Other_entries": "其它出现位置",

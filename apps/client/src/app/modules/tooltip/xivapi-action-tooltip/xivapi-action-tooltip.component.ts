@@ -13,11 +13,18 @@ export class XivapiActionTooltipComponent implements OnInit {
   details: { name: string, value: any, requiresPipe: boolean }[];
 
   ngOnInit(): void {
-    this.details = [
-      { name: 'TOOLTIP.Level', value: this.action.ClassJobLevel.toString(), requiresPipe: false },
-      { name: 'TOOLTIP.Cost', value: this.action.Cost.toString(), requiresPipe: false },
-      { name: 'TOOLTIP.Class_job', value: this.action.ClassJobCategory, requiresPipe: true },
-    ];
+    if (this.action.PrimaryCostValue) {
+      this.details = [
+        { name: 'TOOLTIP.Level', value: this.action.ClassJobLevel.toString(), requiresPipe: false },
+        { name: 'TOOLTIP.Cost', value: this.action.PrimaryCostValue.toString(), requiresPipe: false },
+        { name: 'TOOLTIP.Class_job', value: this.action.ClassJobCategory, requiresPipe: true }
+      ];
+    } else {
+      this.details = [
+        { name: 'TOOLTIP.Level', value: this.action.ClassJobLevel.toString(), requiresPipe: false },
+        { name: 'TOOLTIP.Class_job', value: this.action.ClassJobCategory, requiresPipe: true }
+      ];
+    }
   }
 
 }

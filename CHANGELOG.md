@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.2"></a>
+## [5.6.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.1...v5.6.2) (2019-07-01)
+
+
+### Bug Fixes
+
+* **db:** better display for trading informations ([e7be2f6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e7be2f6))
+* **db:** fixed an issue preventing display of items as quest rewards ([3e05120](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e05120))
+* **db:** fixed broken unicode char in quest names ([00d0031](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00d0031))
+* **db:** updated data with aetherytes fixes ([632545b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/632545b))
+* **log-tracker:** fixed mislabelled housing pages ([c54cdf3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c54cdf3))
+* **simulator:** doesn't account for great strides on 100 efficiency quality preview anymore ([acbcf1c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/acbcf1c))
+* **simulator:** fixed an issue on macro import with some actions ([843f00e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/843f00e))
+* **simulator:** fixed missing buff icons ([59e5d3d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/59e5d3d))
+
+
+### Features
+
+* **db:** added quest chain lengths on quest pages ([5e21f8f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e21f8f))
+* **db:** added starting point on quests when it is known ([9a249c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a249c4))
+* **db:** updated data for aetherytes, npcs, monsters and nodes ([9c9356c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c9356c))
+* **simulator:** updated simulator with latest accurate formula ([11a5fff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/11a5fff))
+
+
+
 <a name="5.6.1"></a>
 ## [5.6.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.0...v5.6.1) (2019-06-29)
 

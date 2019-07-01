@@ -5,6 +5,8 @@ const http = require('https');
 const { map, tap, switchMap, catchError, first } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
 const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
+const Multiprogress = require('multi-progress');
+const multi = new Multiprogress(process.stdout);
 
 const nodes = {};
 const gatheringPointToBaseId = {};
@@ -41,7 +43,7 @@ let todo = [
   'aetherytes',
   'achievements',
   'recipes',
-  'actionIcons'
+  'actions'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -211,6 +213,15 @@ handleNode = (row) => {
 
 handleAetheryte = (row) => {
   const isShard = row.Name.indexOf('Shard') > -1 || row.Name.indexOf('Urbaine') > -1;
+  // Remove shards from maps where they don't belong.
+  if ((+row.PlaceNameID === 2411 || +row.PlaceNameID === 2953) && isShard) {
+    return;
+  }
+  // Eulmore plaza appears in lakeland, gotta remove that.
+  if (+row.PlaceNameID === 2953 && row.ENpcResidentID === 134) {
+    return;
+  }
+
   aetherytes.push({
     id: row.ENpcResidentID === '2147483647' ? 12 : +row.ENpcResidentID,
     zoneid: +row.PlaceNameID,
@@ -671,7 +682,9 @@ if (hasTodo('tripleTriadRules')) {
 
 if (hasTodo('quests')) {
   const quests = {};
-  getAllPages('https://xivapi.com/Quest?columns=ID,Name_*,Icon').subscribe(page => {
+  const nextQuest = {};
+  const questChainLengths = {};
+  getAllPages('https://xivapi.com/Quest?columns=ID,Name_*,Icon,PreviousQuest0TargetID,PreviousQuest1TargetID,PreviousQuest2TargetID,IconID').subscribe(page => {
     page.Results.forEach(quest => {
       quests[quest.ID] = {
         name: {
@@ -682,9 +695,26 @@ if (hasTodo('quests')) {
         },
         icon: quest.Icon
       };
+      for (let i = 0; i < 2; i++) {
+        if (quest[`PreviousQuest${i}TargetID`] && quest.IconID !== 71201) {
+          nextQuest[quest[`PreviousQuest${i}TargetID`]] = [...(nextQuest[quest[`PreviousQuest${i}TargetID`]] || []), quest.ID];
+        }
+      }
     });
   }, null, () => {
+    Object.keys(quests)
+      .map(key => +key)
+      .forEach(questId => {
+        let workingIds = [questId];
+        let depth = 0;
+        while ([].concat.apply([], workingIds.map(id => nextQuest[id] || [])).length > 0 && depth < 99) {
+          workingIds = [].concat.apply([], workingIds.map(id => nextQuest[id]));
+          depth++;
+        }
+        questChainLengths[questId] = depth;
+      });
     persistToJsonAsset('quests', quests);
+    persistToTypescript('quests-chain-lengths', 'questChainLengths', questChainLengths);
   });
 }
 
@@ -1067,16 +1097,39 @@ if (hasTodo('recipes')) {
   });
 }
 
-if (hasTodo('actionIcons')) {
+if (hasTodo('actions')) {
   const icons = {};
+  const actions = {};
+  const craftActions = {};
   merge(
-    getAllPages('https://xivapi.com/Action?columns=ID,Icon'),
-    getAllPages('https://xivapi.com/CraftAction?columns=ID,Icon')
+    getAllPages('https://xivapi.com/Action?columns=ID,Icon,Name_*'),
+    getAllPages('https://xivapi.com/CraftAction?columns=ID,Icon,Name_*')
   ).subscribe(page => {
     page.Results.forEach(action => {
       icons[action.ID] = action.Icon;
+      // Removing migrated crafting actions
+      if ([100009, 281].indexOf(action.ID) === -1) {
+        if (action.ID > 100000) {
+          craftActions[action.ID] = {
+            en: action.Name_en,
+            de: action.Name_de,
+            ja: action.Name_ja,
+            fr: action.Name_fr
+          };
+        }
+        if (action.ID < 100000) {
+          actions[action.ID] = {
+            en: action.Name_en,
+            de: action.Name_de,
+            ja: action.Name_ja,
+            fr: action.Name_fr
+          };
+        }
+      }
     });
   }, null, () => {
     persistToJson('action-icons', icons);
+    persistToJsonAsset('actions', actions);
+    persistToJsonAsset('craft-actions', craftActions);
   });
 }

@@ -852,8 +852,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.qualityPer100$ = this.result$.pipe(
       map(result => {
         const action = new BasicTouch();
-        const multiplier = result.simulation.hasBuff(Buff.GREAT_STRIDES) ? 2 : 0;
-        return Math.floor(action.getBaseQuality(result.simulation) * multiplier);
+        return Math.floor(action.getBaseQuality(result.simulation));
       })
     );
 
