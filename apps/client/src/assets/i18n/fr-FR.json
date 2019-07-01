@@ -1239,7 +1239,8 @@
       "Allowance_cost": "Autorisations",
       "Rewards": "Récompenses possibles",
       "Client": "Client",
-      "Issuer": "Mandataire"
+      "Issuer": "Mandataire",
+      "Turn_ins": "Turn-ins"
     },
     "MOB": {
       "Known_spawns": "Apparitions connues",
