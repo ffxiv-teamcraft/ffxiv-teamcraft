@@ -1200,6 +1200,7 @@
     "3d_model_viewer": "3Dモデルプレビュー",
     "3d_model_help": "3Dモデルプレビュー",
     "Achievements": "Achievements",
+    "Currencies": "Currencies",
     "NODE": {
       "Items": "アイテム",
       "Possible_bonuses": "ロケーション・エフェクト",
@@ -1218,7 +1219,8 @@
       "End": "終了",
       "Rewards": "報酬",
       "Repeatable": "繰り返し可能",
-      "Beast_tribe_rank": "蛮族友好段階"
+      "Beast_tribe_rank": "蛮族友好段階",
+      "Chain_length": "Following quests"
     },
     "NPC": {
       "Other_entries": "他の出現位置",
