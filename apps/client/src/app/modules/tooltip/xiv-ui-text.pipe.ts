@@ -27,7 +27,8 @@ export class UiTextPipe implements PipeTransform {
       .replace(/\n/g, '<br>')
       .replace(/\s{2,}/, ' ')
       .replace(/<span style="color:#0001f4;">([^<\/]*)<\/span>/gmi, '<b>$1</b>')
-      .replace(/<span style="color:#0001f8;">([^<\/]*)<\/span>/gmi, '<b>$1</b>');
+      .replace(/<span style="color:#0001f8;">([^<\/]*)<\/span>/gmi, '<b>$1</b>')
+      .replace('', '•');
     return this.sanitizer.bypassSecurityTrustHtml(value);
   }
 

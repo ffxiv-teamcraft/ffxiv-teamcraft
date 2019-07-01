@@ -189,9 +189,9 @@ export class QuestComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getName(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
+  private getName(quest: any): string {
+    // We might want to add more details for some specific quests, which is why this is a method.
+    return (quest[`Name_${this.translate.currentLang}`] || quest.Name_en).replace('', '•');
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
