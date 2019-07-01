@@ -1200,6 +1200,7 @@
     "3d_model_viewer": "3D-Modellvorschau",
     "3d_model_help": "3D-Modell vorschauen",
     "Achievements": "Erfolge",
+    "Currencies": "Currencies",
     "NODE": {
       "Items": "Gegenstände",
       "Possible_bonuses": "Mögliche Boni",
@@ -1218,7 +1219,8 @@
       "End": "Ende",
       "Rewards": "Belohnungen",
       "Repeatable": "Wiederholbar",
-      "Beast_tribe_rank": "Wilder Stamm-Rang"
+      "Beast_tribe_rank": "Wilder Stamm-Rang",
+      "Chain_length": "Following quests"
     },
     "NPC": {
       "Other_entries": "Andere Auftritte",
