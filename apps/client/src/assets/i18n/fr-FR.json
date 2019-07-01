@@ -1200,7 +1200,7 @@
     "3d_model_viewer": "Aperçu du modèle 3D",
     "3d_model_help": "Aperçu du modèle 3D",
     "Achievements": "Haut-faits",
-    "Currencies": "Currencies",
+    "Currencies": "Devises",
     "NODE": {
       "Items": "Objets",
       "Possible_bonuses": "Bonus possibles",
@@ -1220,7 +1220,7 @@
       "Rewards": "Récompenses",
       "Repeatable": "Répétable",
       "Beast_tribe_rank": "Rang de tribu",
-      "Chain_length": "Following quests"
+      "Chain_length": "Quêtes suivantes"
     },
     "NPC": {
       "Other_entries": "Autres apparitions",
