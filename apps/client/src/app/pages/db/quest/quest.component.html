@@ -67,6 +67,10 @@
                             [showZoneName]="true"></app-map-position>
         </div>
       </div>
+      <div class="details-block" *ngIf="xivapiQuest.chainLength !== undefined">
+        <div class="detail-name">{{'DB.QUEST.Chain_length' | translate}}</div>
+        <div class="detail-value">{{xivapiQuest.chainLength}}<span *ngIf="xivapiQuest.chainLength >= 99">+</span></div>
+      </div>
     </div>
     <app-db-comments type="quest" [id]="xivapiQuest.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>

@@ -5,6 +5,8 @@ const http = require('https');
 const { map, tap, switchMap, catchError, first } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
 const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
+const Multiprogress = require('multi-progress');
+const multi = new Multiprogress(process.stdout);
 
 const nodes = {};
 const gatheringPointToBaseId = {};
@@ -680,7 +682,9 @@ if (hasTodo('tripleTriadRules')) {
 
 if (hasTodo('quests')) {
   const quests = {};
-  getAllPages('https://xivapi.com/Quest?columns=ID,Name_*,Icon').subscribe(page => {
+  const nextQuest = {};
+  const questChainLengths = {};
+  getAllPages('https://xivapi.com/Quest?columns=ID,Name_*,Icon,PreviousQuest0TargetID,PreviousQuest1TargetID,PreviousQuest2TargetID,IconID').subscribe(page => {
     page.Results.forEach(quest => {
       quests[quest.ID] = {
         name: {
@@ -691,9 +695,26 @@ if (hasTodo('quests')) {
         },
         icon: quest.Icon
       };
+      for (let i = 0; i < 2; i++) {
+        if (quest[`PreviousQuest${i}TargetID`] && quest.IconID !== 71201) {
+          nextQuest[quest[`PreviousQuest${i}TargetID`]] = [...(nextQuest[quest[`PreviousQuest${i}TargetID`]] || []), quest.ID];
+        }
+      }
     });
   }, null, () => {
+    Object.keys(quests)
+      .map(key => +key)
+      .forEach(questId => {
+        let workingIds = [questId];
+        let depth = 0;
+        while ([].concat.apply([], workingIds.map(id => nextQuest[id] || [])).length > 0 && depth < 99) {
+          workingIds = [].concat.apply([], workingIds.map(id => nextQuest[id]));
+          depth++;
+        }
+        questChainLengths[questId] = depth;
+      });
     persistToJsonAsset('quests', quests);
+    persistToTypescript('quests-chain-lengths', 'questChainLengths', questChainLengths);
   });
 }
 

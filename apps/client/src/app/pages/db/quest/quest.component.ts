@@ -14,6 +14,7 @@ import { QuestData } from '../../../model/garland-tools/quest-data';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import * as _ from 'lodash';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { questChainLengths } from '../../../core/data/sources/quests-chain-lengths';
 
 @Component({
   selector: 'app-quest',
@@ -79,6 +80,10 @@ export class QuestComponent extends TeamcraftPageComponent {
     this.xivapiQuest$ = questId$.pipe(
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.Quest, +id);
+      }),
+      map(quest => {
+        quest.chainLength = questChainLengths[quest.ID];
+        return quest;
       }),
       shareReplay(1)
     );
