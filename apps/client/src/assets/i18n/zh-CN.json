@@ -1239,7 +1239,8 @@
       "Allowance_cost": "消耗受理限额",
       "Rewards": "奖励选项",
       "Client": "委托人",
-      "Issuer": "发行人"
+      "Issuer": "发行人",
+      "Turn_ins": "Turn-ins"
     },
     "MOB": {
       "Known_spawns": "已知出现地点",
