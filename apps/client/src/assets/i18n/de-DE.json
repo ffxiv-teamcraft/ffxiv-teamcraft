@@ -658,6 +658,7 @@
     "Not_found": "Seite nicht gefunden"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Teile Makros am letzten möglichen Schritt für Reklamation",
@@ -720,6 +721,7 @@
     "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
     "COMMUNITY_ROTATIONS": {
       "Title": "Community-Rotations",
       "Community_rotation": "Community-Rotation",
