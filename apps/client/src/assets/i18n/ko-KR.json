@@ -658,7 +658,7 @@
     "Not_found": "페이지를 찾을 수 없습니다."
   },
   "SIMULATOR": {
-    "Title": "Crafting simulator",
+    "Title": "제작 시뮬레이터",
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
