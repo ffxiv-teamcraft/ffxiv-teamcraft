@@ -99,7 +99,7 @@
     "@angular/flex-layout": "7.0.0-beta.19",
     "@angular/forms": "8.0.0",
     "@angular/http": "^7.2.15",
-    "@ffxiv-teamcraft/simulator": "1.0.5",
+    "@ffxiv-teamcraft/simulator": "1.2.1",
     "@angular/platform-browser": "8.0.0",
     "@angular/platform-browser-dynamic": "8.0.0",
     "@angular/platform-server": "8.0.0",
