@@ -142,7 +142,7 @@
     "lodash": "^4.17.10",
     "ng-drag-drop": "^5.0.0",
     "ng-push": "^0.2.1",
-    "ng-zorro-antd": "7.5.1",
+    "ng-zorro-antd": "8.0.1",
     "ngx-clipboard": "12.1.0",
     "ngx-color-picker": "^7.5.0",
     "ngx-markdown": "^1.6.0",
