@@ -658,6 +658,7 @@
     "Not_found": "Page not found"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "Fixed notification",
     "Starting_echo_number": "Notification #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
@@ -720,6 +721,7 @@
     "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
     "COMMUNITY_ROTATIONS": {
       "Title": "Community rotations",
       "Community_rotation": "Community rotation",
