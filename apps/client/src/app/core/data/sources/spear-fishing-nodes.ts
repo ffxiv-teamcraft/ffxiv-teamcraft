@@ -955,6 +955,534 @@ export const spearFishingNodes = [
     'duration': 10
   },
   {
+    'id': 20099,
+    'itemId': 27516,
+    'level': 345,
+    'icon': '/i/029000/029210.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20100,
+    'itemId': 27517,
+    'level': 345,
+    'icon': '/i/029000/029230.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20101,
+    'itemId': 27518,
+    'level': 345,
+    'icon': '/i/029000/029597.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20102,
+    'itemId': 27520,
+    'level': 345,
+    'icon': '/i/029000/029718.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20103,
+    'itemId': 27522,
+    'level': 345,
+    'icon': '/i/029000/029950.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20104,
+    'itemId': 27528,
+    'level': 345,
+    'icon': '/i/029000/029410.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20105,
+    'itemId': 27529,
+    'level': 345,
+    'icon': '/i/029000/029955.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20106,
+    'itemId': 27533,
+    'level': 345,
+    'icon': '/i/029000/029959.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20107,
+    'itemId': 27536,
+    'level': 390,
+    'icon': '/i/029000/029421.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20108,
+    'itemId': 27519,
+    'level': 345,
+    'icon': '/i/029000/029598.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20109,
+    'itemId': 27521,
+    'level': 350,
+    'icon': '/i/029000/029599.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20110,
+    'itemId': 27523,
+    'level': 350,
+    'icon': '/i/029000/029951.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20111,
+    'itemId': 27524,
+    'level': 350,
+    'icon': '/i/029000/029952.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20112,
+    'itemId': 27525,
+    'level': 350,
+    'icon': '/i/029000/029953.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20113,
+    'itemId': 27527,
+    'level': 350,
+    'icon': '/i/029000/029954.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20114,
+    'itemId': 27530,
+    'level': 350,
+    'icon': '/i/029000/029956.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20115,
+    'itemId': 27531,
+    'level': 350,
+    'icon': '/i/029000/029957.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20116,
+    'itemId': 27526,
+    'level': 355,
+    'icon': '/i/029000/029096.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20117,
+    'itemId': 27532,
+    'level': 355,
+    'icon': '/i/029000/029958.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20118,
+    'itemId': 27537,
+    'level': 355,
+    'icon': '/i/029000/029962.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20119,
+    'itemId': 27539,
+    'level': 355,
+    'icon': '/i/029000/029964.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20120,
+    'itemId': 27538,
+    'level': 370,
+    'icon': '/i/029000/029963.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20121,
+    'itemId': 27540,
+    'level': 370,
+    'icon': '/i/029000/029965.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20122,
+    'itemId': 27541,
+    'level': 370,
+    'icon': '/i/029000/029758.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20123,
+    'itemId': 27544,
+    'level': 370,
+    'icon': '/i/029000/029106.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20124,
+    'itemId': 27546,
+    'level': 370,
+    'icon': '/i/029000/029246.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20125,
+    'itemId': 27547,
+    'level': 345,
+    'icon': '/i/029000/029969.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20126,
+    'itemId': 27542,
+    'level': 380,
+    'icon': '/i/029000/029966.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20127,
+    'itemId': 27543,
+    'level': 380,
+    'icon': '/i/029000/029967.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20128,
+    'itemId': 27545,
+    'level': 380,
+    'icon': '/i/029000/029968.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20129,
+    'itemId': 27548,
+    'level': 380,
+    'icon': '/i/029000/029970.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20130,
+    'itemId': 27549,
+    'level': 390,
+    'icon': '/i/029000/029295.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20131,
+    'itemId': 27550,
+    'level': 390,
+    'icon': '/i/029000/029971.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20132,
+    'itemId': 27552,
+    'level': 390,
+    'icon': '/i/029000/029752.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20133,
+    'itemId': 27553,
+    'level': 390,
+    'icon': '/i/029000/029973.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20134,
+    'itemId': 27554,
+    'level': 390,
+    'icon': '/i/029000/029974.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20135,
+    'itemId': 27555,
+    'level': 390,
+    'icon': '/i/029000/029975.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20136,
+    'itemId': 27556,
+    'level': 390,
+    'icon': '/i/029000/029976.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20137,
+    'itemId': 27557,
+    'level': 390,
+    'icon': '/i/029000/029977.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20138,
+    'itemId': 27568,
+    'level': 390,
+    'icon': '/i/029000/029235.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20139,
+    'itemId': 27569,
+    'level': 390,
+    'icon': '/i/029000/029503.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20140,
+    'itemId': 27570,
+    'level': 390,
+    'icon': '/i/029000/029309.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20141,
+    'itemId': 27571,
+    'level': 390,
+    'icon': '/i/029000/029988.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20142,
+    'itemId': 27551,
+    'level': 400,
+    'icon': '/i/029000/029972.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20143,
+    'itemId': 27558,
+    'level': 400,
+    'icon': '/i/029000/029978.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20144,
+    'itemId': 27559,
+    'level': 400,
+    'icon': '/i/029000/029979.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20145,
+    'itemId': 27560,
+    'level': 400,
+    'icon': '/i/029000/029451.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20146,
+    'itemId': 27561,
+    'level': 390,
+    'icon': '/i/029000/029981.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20147,
+    'itemId': 27577,
+    'level': 400,
+    'icon': '/i/029000/029268.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20148,
+    'itemId': 27562,
+    'level': 410,
+    'icon': '/i/029000/029982.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20149,
+    'itemId': 27563,
+    'level': 410,
+    'icon': '/i/029000/029983.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20150,
+    'itemId': 27564,
+    'level': 410,
+    'icon': '/i/029000/029984.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20151,
+    'itemId': 27565,
+    'level': 410,
+    'icon': '/i/029000/029985.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20152,
+    'itemId': 27574,
+    'level': 410,
+    'icon': '/i/029000/029990.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20153,
+    'itemId': 27576,
+    'level': 410,
+    'icon': '/i/029000/029212.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20154,
+    'itemId': 27534,
+    'level': 370,
+    'icon': '/i/029000/029960.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20155,
+    'itemId': 27567,
+    'level': 420,
+    'icon': '/i/029000/029987.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20156,
+    'itemId': 27572,
+    'level': 420,
+    'icon': '/i/029000/029243.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20157,
+    'itemId': 27575,
+    'level': 420,
+    'icon': '/i/029000/029991.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20158,
+    'itemId': 27578,
+    'level': 420,
+    'icon': '/i/029000/029224.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20159,
+    'itemId': 27581,
+    'level': 420,
+    'icon': '/i/029000/029994.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20160,
+    'itemId': 27535,
+    'level': 380,
+    'icon': '/i/029000/029961.png',
+    'mapId': 491,
+    'zoneId': 2953
+  },
+  {
+    'id': 20161,
+    'itemId': 27566,
+    'level': 430,
+    'icon': '/i/029000/029986.png',
+    'mapId': 494,
+    'zoneId': 2956
+  },
+  {
+    'id': 20162,
+    'itemId': 27573,
+    'level': 430,
+    'icon': '/i/029000/029989.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20163,
+    'itemId': 27579,
+    'level': 430,
+    'icon': '/i/029000/029992.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
+    'id': 20164,
+    'itemId': 27580,
+    'level': 430,
+    'icon': '/i/029000/029993.png',
+    'mapId': 495,
+    'zoneId': 2957
+  },
+  {
     'id': 30000,
     'itemId': 17835,
     'level': 290,
@@ -984,5 +1512,21 @@ export const spearFishingNodes = [
         'predatorAmount': 10
       }
     ]
+  },
+  {
+    'id': 30003,
+    'itemId': 26744,
+    'level': 425,
+    'icon': '/i/025000/025930.png',
+    'mapId': 15,
+    'zoneId': 30
+  },
+  {
+    'id': 30004,
+    'itemId': 26745,
+    'level': 425,
+    'icon': '/i/025000/025930.png',
+    'mapId': 15,
+    'zoneId': 30
   }
 ];

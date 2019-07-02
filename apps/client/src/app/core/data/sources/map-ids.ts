@@ -3921,67 +3921,67 @@ export const mapIds = [
   },
   {
     'id': 491,
-    'zone': 0,
-    'name': null,
+    'zone': 2953,
+    'name': 'Lakeland',
     'territory': 813,
     'scale': 100,
-    'weatherRate': 0
+    'weatherRate': 106
   },
   {
     'id': 492,
-    'zone': 0,
-    'name': null,
+    'zone': 2954,
+    'name': 'Kholusia',
     'territory': 814,
     'scale': 100,
-    'weatherRate': 0
+    'weatherRate': 107
   },
   {
     'id': 493,
-    'zone': 0,
-    'name': null,
+    'zone': 2955,
+    'name': 'Amh Araeng',
     'territory': 815,
     'scale': 100,
-    'weatherRate': 0
+    'weatherRate': 108
   },
   {
     'id': 494,
-    'zone': 0,
-    'name': null,
+    'zone': 2956,
+    'name': 'Il Mheg',
     'territory': 816,
     'scale': 100,
-    'weatherRate': 0
+    'weatherRate': 109
   },
   {
     'id': 495,
-    'zone': 0,
-    'name': null,
+    'zone': 2957,
+    'name': 'The Rak\'tika Greatwood',
     'territory': 817,
     'scale': 100,
-    'weatherRate': 0
+    'weatherRate': 110
   },
   {
     'id': 496,
-    'zone': 0,
-    'name': null,
+    'zone': 2958,
+    'name': 'The Tempest',
     'territory': 818,
     'scale': 100,
-    'weatherRate': 0
+    'weatherRate': 111
   },
   {
     'id': 497,
-    'zone': 0,
-    'name': null,
+    'zone': 2951,
+    'name': 'The Crystarium',
     'territory': 819,
     'scale': 200,
-    'weatherRate': 0
+    'weatherRate': 112
   },
   {
     'id': 498,
-    'zone': 0,
-    'name': null,
+    'zone': 2952,
+    'name': 'Eulmore',
     'territory': 820,
     'scale': 200,
-    'weatherRate': 0
+    'weatherRate': 113
   },
   {
     'id': 499,
@@ -4073,19 +4073,19 @@ export const mapIds = [
   },
   {
     'id': 510,
-    'zone': 0,
-    'name': null,
+    'zone': 3018,
+    'name': 'The Qitana Ravel',
     'territory': 823,
     'scale': 200,
-    'weatherRate': 0
+    'weatherRate': 102
   },
   {
     'id': 511,
-    'zone': 0,
-    'name': null,
+    'zone': 3018,
+    'name': 'The Qitana Ravel',
     'territory': 823,
     'scale': 200,
-    'weatherRate': 0
+    'weatherRate': 102
   },
   {
     'id': 512,
@@ -4214,5 +4214,317 @@ export const mapIds = [
     'territory': 827,
     'scale': 200,
     'weatherRate': 100
+  },
+  {
+    'id': 528,
+    'zone': 2979,
+    'name': 'Dohn Mheg',
+    'territory': 821,
+    'scale': 200,
+    'weatherRate': 0
+  },
+  {
+    'id': 529,
+    'zone': 2979,
+    'name': 'Dohn Mheg',
+    'territory': 821,
+    'scale': 200,
+    'weatherRate': 0
+  },
+  {
+    'id': 530,
+    'zone': 2982,
+    'name': 'The Twinning',
+    'territory': 840,
+    'scale': 200,
+    'weatherRate': 0
+  },
+  {
+    'id': 531,
+    'zone': 2982,
+    'name': 'The Twinning',
+    'territory': 840,
+    'scale': 200,
+    'weatherRate': 0
+  },
+  {
+    'id': 532,
+    'zone': 2985,
+    'name': 'Amaurot',
+    'territory': 838,
+    'scale': 100,
+    'weatherRate': 105
+  },
+  {
+    'id': 533,
+    'zone': 2985,
+    'name': 'Amaurot',
+    'territory': 838,
+    'scale': 100,
+    'weatherRate': 105
+  },
+  {
+    'id': 534,
+    'zone': 2949,
+    'name': 'Norvrandt',
+    'territory': 0,
+    'scale': 100,
+    'weatherRate': null
+  },
+  {
+    'id': 535,
+    'zone': 2949,
+    'name': 'Norvrandt',
+    'territory': 0,
+    'scale': 100,
+    'weatherRate': null
+  },
+  {
+    'id': 536,
+    'zone': 2997,
+    'name': 'Mt. Gulg',
+    'territory': 822,
+    'scale': 200,
+    'weatherRate': 102
+  },
+  {
+    'id': 537,
+    'zone': 2997,
+    'name': 'Mt. Gulg',
+    'territory': 822,
+    'scale': 200,
+    'weatherRate': 102
+  },
+  {
+    'id': 538,
+    'zone': 3007,
+    'name': 'Akadaemia Anyder',
+    'territory': 841,
+    'scale': 200,
+    'weatherRate': 0
+  },
+  {
+    'id': 539,
+    'zone': 3007,
+    'name': 'Akadaemia Anyder',
+    'territory': 841,
+    'scale': 200,
+    'weatherRate': 0
+  },
+  {
+    'id': 540,
+    'zone': 3028,
+    'name': 'Malikah\'s Well',
+    'territory': 836,
+    'scale': 200,
+    'weatherRate': 102
+  },
+  {
+    'id': 541,
+    'zone': 3028,
+    'name': 'Malikah\'s Well',
+    'territory': 836,
+    'scale': 200,
+    'weatherRate': 102
+  },
+  {
+    'id': 542,
+    'zone': 3028,
+    'name': 'Malikah\'s Well',
+    'territory': 836,
+    'scale': 200,
+    'weatherRate': 102
+  },
+  {
+    'id': 543,
+    'zone': 2950,
+    'name': 'Norvrandt',
+    'territory': 0,
+    'scale': 100,
+    'weatherRate': null
+  },
+  {
+    'id': 544,
+    'zone': 3050,
+    'name': 'Holminster Switch',
+    'territory': 837,
+    'scale': 200,
+    'weatherRate': 102
+  },
+  {
+    'id': 545,
+    'zone': 3221,
+    'name': 'The Syrcus Trench',
+    'territory': 842,
+    'scale': 400,
+    'weatherRate': 0
+  },
+  {
+    'id': 546,
+    'zone': 3222,
+    'name': 'The Pendants Personal Suite',
+    'territory': 843,
+    'scale': 800,
+    'weatherRate': 112
+  },
+  {
+    'id': 547,
+    'zone': 3223,
+    'name': 'The Ocular',
+    'territory': 844,
+    'scale': 400,
+    'weatherRate': 0
+  },
+  {
+    'id': 548,
+    'zone': 1427,
+    'name': 'Dutiful Sisters of the Edelweiss',
+    'territory': 129,
+    'scale': 400,
+    'weatherRate': 15
+  },
+  {
+    'id': 549,
+    'zone': 1428,
+    'name': 'Dock Storehouse',
+    'territory': 137,
+    'scale': 400,
+    'weatherRate': 18
+  },
+  {
+    'id': 550,
+    'zone': 3226,
+    'name': 'The Nabaath Mines',
+    'territory': 815,
+    'scale': 100,
+    'weatherRate': 108
+  },
+  {
+    'id': 551,
+    'zone': 3227,
+    'name': 'Ronkan Reflections',
+    'territory': 817,
+    'scale': 100,
+    'weatherRate': 110
+  },
+  {
+    'id': 552,
+    'zone': 3219,
+    'name': 'The Crown of the Immaculate',
+    'territory': 880,
+    'scale': 100,
+    'weatherRate': 102
+  },
+  {
+    'id': 553,
+    'zone': 3228,
+    'name': 'The Confessional of Toupasa the Elder',
+    'territory': 859,
+    'scale': 100,
+    'weatherRate': 102
+  },
+  {
+    'id': 554,
+    'zone': 2952,
+    'name': 'Eulmore',
+    'territory': 820,
+    'scale': 200,
+    'weatherRate': 113
+  },
+  {
+    'id': 555,
+    'zone': 2952,
+    'name': 'Eulmore',
+    'territory': 820,
+    'scale': 200,
+    'weatherRate': 113
+  },
+  {
+    'id': 556,
+    'zone': 3218,
+    'name': 'The Dancing Plague',
+    'territory': 845,
+    'scale': 400,
+    'weatherRate': 103
+  },
+  {
+    'id': 557,
+    'zone': 3219,
+    'name': 'The Crown of the Immaculate',
+    'territory': 846,
+    'scale': 400,
+    'weatherRate': 104
+  },
+  {
+    'id': 558,
+    'zone': 3220,
+    'name': 'The Dying Gasp',
+    'territory': 847,
+    'scale': 400,
+    'weatherRate': 105
+  },
+  {
+    'id': 559,
+    'zone': 3214,
+    'name': '',
+    'territory': 849,
+    'scale': 400,
+    'weatherRate': 0
+  },
+  {
+    'id': 560,
+    'zone': 3215,
+    'name': '',
+    'territory': 850,
+    'scale': 400,
+    'weatherRate': 0
+  },
+  {
+    'id': 561,
+    'zone': 3216,
+    'name': '',
+    'territory': 851,
+    'scale': 400,
+    'weatherRate': 0
+  },
+  {
+    'id': 562,
+    'zone': 3217,
+    'name': '',
+    'territory': 852,
+    'scale': 400,
+    'weatherRate': 0
+  },
+  {
+    'id': 563,
+    'zone': 3229,
+    'name': '',
+    'territory': 879,
+    'scale': 100,
+    'weatherRate': 0
+  },
+  {
+    'id': 564,
+    'zone': 3214,
+    'name': '',
+    'territory': 857,
+    'scale': 100,
+    'weatherRate': 0
+  },
+  {
+    'id': 565,
+    'zone': 3225,
+    'name': 'The Empty',
+    'territory': 878,
+    'scale': 400,
+    'weatherRate': 0
+  },
+  {
+    'id': 566,
+    'zone': 0,
+    'name': null,
+    'territory': 0,
+    'scale': 100,
+    'weatherRate': null
   }
 ];

@@ -99,6 +99,7 @@
   "Discounts": "Remises",
   "Flat_discount": "Remise en gils",
   "Percent_discount": "Pourcentage",
+  "Path_copied_to_clipboard": "URL de la page actuelle copiée dans le presse-papiers",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrer par tags",
     "Tags_filter_reset": "Réinitialiser le filtre par tags",
@@ -715,6 +716,10 @@
     "Safe_mode_tooltip": "Désactive toutes les actions qui n'ont pas 100% de chance de réussite (prend en compte les bonus)",
     "Quality_needed": "{{amount}} plus de qualité pour atteindre 100 %",
     "Rotation_tips": "Conseils de rotation",
+    "Progress_action_100_potency": "Progression par tranche de 100 efficacité : {{value}}",
+    "Quality_action_100_potency": "Qualité par tranche de 100 efficacité : {{value}}",
+    "Current_control": "Contrôle actuel : {{value}}",
+    "Current_control_bonus": "Bonus actuel (limité à 3000)",
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotations communautaires",
       "Community_rotation": "Rotation communautaire",
@@ -881,6 +886,7 @@
     "List_item_comment_added": "Commentaire posté sur {{itemName}}, liste {{listName}} : \"{{content}} \"",
     "Db_comment": "Nouveau commentaire en bdd: \"{{comment}}\"",
     "Db_comment_reply": "Nouvelle réponse à l'un de vos commentaires: \"{{comment}}\"",
+    "Blog_post": "Nouveau billet de blog : {{title}}",
     "Mark_all_as_read": "Tout marquer comme lu",
     "No_notifications": "Pas de notifications"
   },
@@ -1194,6 +1200,7 @@
     "3d_model_viewer": "Aperçu du modèle 3D",
     "3d_model_help": "Aperçu du modèle 3D",
     "Achievements": "Haut-faits",
+    "Currencies": "Devises",
     "NODE": {
       "Items": "Objets",
       "Possible_bonuses": "Bonus possibles",
@@ -1212,7 +1219,8 @@
       "End": "Fin",
       "Rewards": "Récompenses",
       "Repeatable": "Répétable",
-      "Beast_tribe_rank": "Rang de tribu"
+      "Beast_tribe_rank": "Rang de tribu",
+      "Chain_length": "Quêtes suivantes"
     },
     "NPC": {
       "Other_entries": "Autres apparitions",
@@ -1375,5 +1383,8 @@
     "Description": "Vous avez trop de devises ? Sélectionnez votre devise, définissez un montant, un serveur et trouvez quel article est le meilleur à acheter pour revendre à l'hôtel des ventes et gagner des gils !",
     "Pick_currency": "Choisir une devise",
     "You_can_buy": "Vous pouvez en acheter {{amount}}"
+  },
+  "BLOG": {
+    "Title": "Blog"
   }
 }

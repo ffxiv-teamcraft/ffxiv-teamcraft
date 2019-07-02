@@ -3069,7 +3069,7 @@
     "en": "Silkworm Cocoon",
     "ja": "生マユ",
     "de": "Kokon",
-    "fr": "Cocon de vers à soie"
+    "fr": "Cocon de ver à soie"
   },
   "519": {
     "en": "Trillium",
@@ -4504,5 +4504,563 @@
     "ja": "老木樹液塊",
     "de": "Gehärteter alter Baumsaft",
     "fr": "Sève durcie de vieil arbre"
+  },
+  "758": {
+    "en": "Azim Spring Water",
+    "ja": "アジム湧水",
+    "de": "Azim-Quellwasser",
+    "fr": "Eau de source de la Steppe d'Azim"
+  },
+  "759": {
+    "en": "Gyr Abanian Ore",
+    "ja": "岩鉄",
+    "de": "Abanisches Erz",
+    "fr": "Minerai gyrabanien"
+  },
+  "760": {
+    "en": "Evergleam Ore",
+    "ja": "常輝鉱",
+    "de": "Immerschimmer-Erz",
+    "fr": "Minerai de pérennéclat"
+  },
+  "761": {
+    "en": "Urunday Log",
+    "ja": "ウルンダイ原木",
+    "de": "Urunday-Holzscheit",
+    "fr": "Rondin d'urunday"
+  },
+  "762": {
+    "en": "Yanxian Cotton Boll",
+    "ja": "延夏綿",
+    "de": "Yanxia-Baumwoll-Samenkapsel",
+    "fr": "Fleur de coton de Yanxia"
+  },
+  "763": {
+    "en": "Field Exploration XXIII",
+    "ja": "探索依頼：平地 G23",
+    "de": "Felderkundung XXIII",
+    "fr": "Exploration en plaine XXIII"
+  },
+  "764": {
+    "en": "Highland Exploration XXIII",
+    "ja": "探索依頼：山岳 G23",
+    "de": "Hochlanderkundung XXIII",
+    "fr": "Exploration en montagne XXIII"
+  },
+  "765": {
+    "en": "Woodland Exploration XXIII",
+    "ja": "探索依頼：森林 G23",
+    "de": "Forsterkundung XXIII",
+    "fr": "Exploration en forêt XXIII"
+  },
+  "766": {
+    "en": "Waterside Exploration XXIII",
+    "ja": "探索依頼：水辺 G23",
+    "de": "Gewässererkundung XXIII",
+    "fr": "Exploration en rivage XXIII"
+  },
+  "767": {
+    "en": "Field Exploration XXIV",
+    "ja": "探索依頼：平地 G24",
+    "de": "Felderkundung XXIV",
+    "fr": "Exploration en plaine XXIV"
+  },
+  "768": {
+    "en": "Highland Exploration XXIV",
+    "ja": "探索依頼：山岳 G24",
+    "de": "Hochlanderkundung XXIV",
+    "fr": "Exploration en montagne XXIV"
+  },
+  "769": {
+    "en": "Woodland Exploration XXIV",
+    "ja": "探索依頼：森林 G24",
+    "de": "Forsterkundung XXIV",
+    "fr": "Exploration en forêt XXIV"
+  },
+  "770": {
+    "en": "Waterside Exploration XXIV",
+    "ja": "探索依頼：水辺 G24",
+    "de": "Gewässererkundung XXIV",
+    "fr": "Exploration en rivage XXIV"
+  },
+  "771": {
+    "en": "Island Wolf Fang",
+    "ja": "アイランド・ウルフの牙",
+    "de": "Inselwolfsfangzahn",
+    "fr": "Croc de loup insulaire"
+  },
+  "772": {
+    "en": "Smilodon Skin",
+    "ja": "スミロドンの粗皮",
+    "de": "Smilodonhaut",
+    "fr": "Peau de smilodon"
+  },
+  "773": {
+    "en": "Hoptrap Leaf",
+    "ja": "ホップトラップの葉",
+    "de": "Sprungfallen-Blatt",
+    "fr": "Feuille de saute-piège"
+  },
+  "774": {
+    "en": "Silkmoth Scales",
+    "ja": "シルクモスの鱗粉",
+    "de": "Seidenmotten-Schuppen",
+    "fr": "Écailles alaires de bombyx"
+  },
+  "775": {
+    "en": "Rail Tenderloin",
+    "ja": "レイルの笹身",
+    "de": "Rallenbrust",
+    "fr": "Filet de râle"
+  },
+  "776": {
+    "en": "Green Glider Skin",
+    "ja": "グリーングライダーの粗皮",
+    "de": "Grüne Gleiterhaut",
+    "fr": "Peau de planeur vert"
+  },
+  "777": {
+    "en": "Lorikeet Down",
+    "ja": "ロリキートの羽毛",
+    "de": "Lorikeet-Feder",
+    "fr": "Duvet de loriquet"
+  },
+  "778": {
+    "en": "Lorikeet Egg",
+    "ja": "ロリキートの卵",
+    "de": "Lorikeet-Ei",
+    "fr": "Œuf de loriquet arc-en-ciel"
+  },
+  "779": {
+    "en": "Atrociraptor Skin",
+    "ja": "アトロシラプトルの粗皮",
+    "de": "Atrociraptorhaut",
+    "fr": "Peau d'atrociraptor"
+  },
+  "780": {
+    "en": "Vampire Cup Vine",
+    "ja": "ヴァンパイアカップのつる",
+    "de": "Vampirkelch-Ranke",
+    "fr": "Sarment de coupe du vampire"
+  },
+  "781": {
+    "en": "Vampire Vine Sap",
+    "ja": "ヴァンパイアヴァインの樹液",
+    "de": "Vampirrankensaft",
+    "fr": "Sève de vigne vampire"
+  },
+  "782": {
+    "en": "Ovim Meat",
+    "ja": "オヴィムの肉",
+    "de": "Ovimfleisch",
+    "fr": "Steak d'ovim"
+  },
+  "783": {
+    "en": "Zonure Skin",
+    "ja": "ゾヌールの粗皮",
+    "de": "Zonure-Haut",
+    "fr": "Peau de zonure"
+  },
+  "784": {
+    "en": "Ovim Fleece",
+    "ja": "オヴィムの獣毛",
+    "de": "Ovimwolle",
+    "fr": "Toison d'ovim"
+  },
+  "785": {
+    "en": "Sea Swallow Skin",
+    "ja": "シースワローの粗皮",
+    "de": "Glaucus-Haut",
+    "fr": "Peau de glaucus"
+  },
+  "786": {
+    "en": "Cubus Flesh",
+    "ja": "カブスの肉",
+    "de": "Kubusfleisch",
+    "fr": "Tranche de viande d'oléofuror"
+  },
+  "787": {
+    "en": "Hydrozoan Umbrella",
+    "ja": "ヒドロゾアの傘",
+    "de": "Hydrozoa-Gallerte",
+    "fr": "Ombrelle d'hydrozoaire"
+  },
+  "788": {
+    "en": "Raw Hematite",
+    "ja": "ヘマタイト原石",
+    "de": "Roh-Rauchquarz",
+    "fr": "Hématite brute"
+  },
+  "789": {
+    "en": "Raw Diaspore",
+    "ja": "ダイアスポア原石",
+    "de": "Roh-Diaspor",
+    "fr": "Diaspore brute"
+  },
+  "790": {
+    "en": "Truegold Ore",
+    "ja": "硬金鉱",
+    "de": "Steingold-Erzklumpen",
+    "fr": "Minerai d'or franc"
+  },
+  "791": {
+    "en": "Highland Spring Water",
+    "ja": "高地天然水",
+    "de": "Hochlandwasser",
+    "fr": "Eau de source des hauts plateaux"
+  },
+  "792": {
+    "en": "Raw Lazurite",
+    "ja": "ラズライト原石",
+    "de": "Roh-Lasurit",
+    "fr": "Lazurite brute"
+  },
+  "793": {
+    "en": "Bluespirit Ore",
+    "ja": "霊青岩",
+    "de": "Seelenazurit",
+    "fr": "Pierre d'azuresprit"
+  },
+  "794": {
+    "en": "Extra Effervescent Water",
+    "ja": "強ソーダ水",
+    "de": "Starksprudelwasser",
+    "fr": "Eau très effervescente"
+  },
+  "795": {
+    "en": "Raw Triplite",
+    "ja": "トリプライト原石",
+    "de": "Roh-Triphylin",
+    "fr": "Triphylite brute"
+  },
+  "796": {
+    "en": "Titancopper Ore",
+    "ja": "賢銅鉱",
+    "de": "Titanbronze-Erzklumpen",
+    "fr": "Minerai de bronze titané"
+  },
+  "797": {
+    "en": "Underground Spring Water",
+    "ja": "地下天然水",
+    "de": "Tiefenquellwasser",
+    "fr": "Eau souterraine"
+  },
+  "798": {
+    "en": "Raw Petalite",
+    "ja": "ペタライト原石",
+    "de": "Roh-Petalit",
+    "fr": "Pétalite brute"
+  },
+  "799": {
+    "en": "Dimythrite Ore",
+    "ja": "闇霊銀鉱",
+    "de": "Edelmithril-Erzklumpen",
+    "fr": "Minerai de mithril noble"
+  },
+  "800": {
+    "en": "Yellow Alumen",
+    "ja": "イエローアルメン",
+    "de": "Gelbalaune",
+    "fr": "Alun jaune"
+  },
+  "801": {
+    "en": "Coarse Saltpeter",
+    "ja": "粗硝石",
+    "de": "Rohsalpeter-Klumpen",
+    "fr": "Salpêtre grossier"
+  },
+  "802": {
+    "en": "Hard Mudstone",
+    "ja": "硬泥岩",
+    "de": "Mergelstein",
+    "fr": "Mudstone solide"
+  },
+  "803": {
+    "en": "Truegold Sand",
+    "ja": "硬金砂",
+    "de": "Steingold-Sandklumpen",
+    "fr": "Sable d'or franc"
+  },
+  "804": {
+    "en": "Manasilver Sand",
+    "ja": "魔銀砂",
+    "de": "Manasilber-Sandklumpen",
+    "fr": "Sable de mana-argent"
+  },
+  "805": {
+    "en": "Volcanic Tuff",
+    "ja": "凝灰岩",
+    "de": "Tuffstein",
+    "fr": "Tuf volcanique"
+  },
+  "806": {
+    "en": "Titancopper Sand",
+    "ja": "賢銅砂",
+    "de": "Titanbronze-Sandklumpen",
+    "fr": "Sable de bronze titané"
+  },
+  "807": {
+    "en": "Dimythrite Sand",
+    "ja": "闇霊銀砂",
+    "de": "Edelmithril-Sandklumpen",
+    "fr": "Sable de mithril noble"
+  },
+  "808": {
+    "en": "Frantoio",
+    "ja": "フラントーヨ",
+    "de": "Frantoio",
+    "fr": "Frantoio"
+  },
+  "809": {
+    "en": "Pixie Apple",
+    "ja": "ピクシーアップル",
+    "de": "Pixie-Apfel",
+    "fr": "Pomme pixie"
+  },
+  "810": {
+    "en": "White Oak Log",
+    "ja": "ホワイトオーク原木",
+    "de": "Weißeichenholzscheit",
+    "fr": "Rondin de chêne blanc"
+  },
+  "811": {
+    "en": "Miracle Apple Log",
+    "ja": "ミラクルアップル原木",
+    "de": "Wunderapfelholzscheit",
+    "fr": "Rondin de pommier miracle"
+  },
+  "812": {
+    "en": "White Ash Log",
+    "ja": "ホワイトアッシュ原木",
+    "de": "Weißeschenholzscheit",
+    "fr": "Rondin de frêne blanc"
+  },
+  "813": {
+    "en": "Gianthive Chip",
+    "ja": "オオミツバチの巣",
+    "de": "Riesenhonigbienennest",
+    "fr": "Nid d'abeilles géantes"
+  },
+  "814": {
+    "en": "Amber Cloves",
+    "ja": "アンバークローヴ",
+    "de": "Bernsteinnelke",
+    "fr": "Antofle ambré"
+  },
+  "815": {
+    "en": "Sandteak Log",
+    "ja": "サンドチーク原木",
+    "de": "Sandteakholzscheit",
+    "fr": "Rondin de teck des sables"
+  },
+  "816": {
+    "en": "Harcot",
+    "ja": "ハーコット",
+    "de": "Harcot-Aprikose",
+    "fr": "Rouge de Norvrandt"
+  },
+  "817": {
+    "en": "Lignum Vitae Log",
+    "ja": "リグナムバイタ原木",
+    "de": "Guajakholzscheit",
+    "fr": "Rondin de gaïac"
+  },
+  "818": {
+    "en": "Night Pepper",
+    "ja": "ダークペッパー",
+    "de": "Dunkelpfeffer",
+    "fr": "Poivre sombre"
+  },
+  "819": {
+    "en": "Blood Tomato",
+    "ja": "ブラッドトマト",
+    "de": "Bluttomate",
+    "fr": "Tomate sanguine"
+  },
+  "820": {
+    "en": "Bright Flax",
+    "ja": "白亜麻",
+    "de": "Kreideflachs",
+    "fr": "Fibres de lin blanc"
+  },
+  "821": {
+    "en": "Purple Carrot",
+    "ja": "パープルカロット",
+    "de": "Purpurmöhre",
+    "fr": "Carotte violette"
+  },
+  "822": {
+    "en": "Curly Parsley",
+    "ja": "カーリーパセリ",
+    "de": "Krauspetersilie",
+    "fr": "Persil frisé"
+  },
+  "823": {
+    "en": "Broad Beans",
+    "ja": "ブロードビーン",
+    "de": "Favabohne",
+    "fr": "Féverole"
+  },
+  "824": {
+    "en": "Garden Beet",
+    "ja": "ガーデンビート",
+    "de": "Gartenrübe",
+    "fr": "Betterave potagère"
+  },
+  "825": {
+    "en": "Iridescent Cocoon",
+    "ja": "虹マユ",
+    "de": "Spektralkokon",
+    "fr": "Cocon iridescent"
+  },
+  "826": {
+    "en": "Upland Wheat",
+    "ja": "アップランド小麦",
+    "de": "Hochplateau-Weizen",
+    "fr": "Blé des hauts plateaux"
+  },
+  "827": {
+    "en": "Peppermint",
+    "ja": "ペパーミント",
+    "de": "Pfefferminze",
+    "fr": "Menthe poivrée"
+  },
+  "828": {
+    "en": "Pixie Floss Boll",
+    "ja": "妖綿花",
+    "de": "Pixie-Baumwolle",
+    "fr": "Fleur de coton pixie"
+  },
+  "829": {
+    "en": "Creamtop Mushroom",
+    "ja": "クリームマッシュルーム",
+    "de": "Rahm-Champignon",
+    "fr": "Champignon laiteux"
+  },
+  "830": {
+    "en": "Royal Grapes",
+    "ja": "ロイヤルグレープ",
+    "de": "Königstraube",
+    "fr": "Raisin royal"
+  },
+  "831": {
+    "en": "Russet Popoto",
+    "ja": "ラセットポポト",
+    "de": "Ockertoffel",
+    "fr": "Popoto brune"
+  },
+  "832": {
+    "en": "Sweet Alyssum",
+    "ja": "スイートアリッサム",
+    "de": "Süßsteinkraut",
+    "fr": "Alysson doux"
+  },
+  "833": {
+    "en": "Fernleaf Lavender",
+    "ja": "ピナータラベンダー",
+    "de": "Flieder-Lavendel",
+    "fr": "Lavande pinnata"
+  },
+  "834": {
+    "en": "Coffee Beans",
+    "ja": "コーヒービーン",
+    "de": "Kaffeebohnen",
+    "fr": "Grains de café"
+  },
+  "835": {
+    "en": "Bomba Rice",
+    "ja": "ボンバライス",
+    "de": "Knallreis",
+    "fr": "Riz bomba"
+  },
+  "836": {
+    "en": "Lime Basil",
+    "ja": "ライムバジル",
+    "de": "Sauerbasilikum",
+    "fr": "Basilic citron"
+  },
+  "837": {
+    "en": "Tiger Lily",
+    "ja": "タイガーリリー",
+    "de": "Tigerlilie",
+    "fr": "Lys tigrés"
+  },
+  "838": {
+    "en": "Light Gerbera",
+    "ja": "ライトガーベラ",
+    "de": "Knochengerbera",
+    "fr": "Gerberas lumineuses"
+  },
+  "839": {
+    "en": "Mist Spinach",
+    "ja": "ミストスピナッチ",
+    "de": "Dunstspinat",
+    "fr": "Jeunes épinards brume"
+  },
+  "840": {
+    "en": "Dwarven Cotton Boll",
+    "ja": "ドワーフ綿花",
+    "de": "Zwergenwolle",
+    "fr": "Fleur de coton nain"
+  },
+  "841": {
+    "en": "Sand Egg",
+    "ja": "サンドエッグ",
+    "de": "Sandei",
+    "fr": "Œuf de sable"
+  },
+  "842": {
+    "en": "Spearhead Squid",
+    "ja": "スピアヘッド",
+    "de": "Speerspitze",
+    "fr": "Tête-d'hast"
+  },
+  "843": {
+    "en": "Cherry Herring",
+    "ja": "チェリーへリング",
+    "de": "Rotkirschhering",
+    "fr": "Hareng cerise"
+  },
+  "844": {
+    "en": "Lemonfish",
+    "ja": "レモンフィッシュ",
+    "de": "Zitronenzander",
+    "fr": "Poisson-citron"
+  },
+  "845": {
+    "en": "Black Tri-star",
+    "ja": "ブラックトライスター",
+    "de": "Schwarzstern",
+    "fr": "Étoile noire"
+  },
+  "846": {
+    "en": "Little Flirt",
+    "ja": "プチクピド",
+    "de": "Kleiner Putto",
+    "fr": "Petit-cupidon"
+  },
+  "847": {
+    "en": "Gourmand Crab",
+    "ja": "グルマンクラブ",
+    "de": "Feinschmeckerkrebs",
+    "fr": "Crabe-gourmand"
+  },
+  "848": {
+    "en": "Megapiranha",
+    "ja": "メガピラニア",
+    "de": "Megapiranha",
+    "fr": "Méga piranha"
+  },
+  "849": {
+    "en": "Rose Shrimp",
+    "ja": "ローズシュリンプ",
+    "de": "Rosengarnele",
+    "fr": "Crevette rose"
+  },
+  "850": {
+    "en": "Sweetflesh Oyster",
+    "ja": "エディブルオイスター",
+    "de": "Genussauster",
+    "fr": "Huître pulpeuse"
   }
 }

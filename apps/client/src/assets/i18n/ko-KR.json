@@ -99,6 +99,7 @@
   "Discounts": "할인",
   "Flat_discount": "금액",
   "Percent_discount": "비율",
+  "Path_copied_to_clipboard": "현재 페이지의 URL이 클립보드에 복사되었습니다",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "태그를 사용하여 필터링",
     "Tags_filter_reset": "필터 초기화",
@@ -128,7 +129,7 @@
     "None": "없음",
     "Top": "맨 위로",
     "Bottom": "맨 아래로",
-    "Amount": "Amount"
+    "Amount": "수량"
   },
   "ALARMS": {
     "Title": "알람",
@@ -715,6 +716,10 @@
     "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
     "Quality_needed": "HQ 100%까지 품질 {{amount}} 남음",
     "Rotation_tips": "로테이션 팁",
+    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
+    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
+    "Current_control": "Current control: {{value}}",
+    "Current_control_bonus": "Current bonus (limited to 3000)",
     "COMMUNITY_ROTATIONS": {
       "Title": "커뮤니티 로테이션",
       "Community_rotation": "커뮤니티 로테이션",
@@ -881,6 +886,7 @@
     "List_item_comment_added": "{{listName}}의 {{itemName}}에 댓글이 달렸습니다 : \"{{content}}\"",
     "Db_comment": "새 댓글이 달렸습니다: \"{{comment}}\"",
     "Db_comment_reply": "회원님의 댓글에 새 답글이 달렸습니다: \"{{comment}}\"",
+    "Blog_post": "새로운 블로그 포스트: {{title}}",
     "Mark_all_as_read": "모두 읽음으로 표시",
     "No_notifications": "알림 없음"
   },
@@ -1194,6 +1200,7 @@
     "3d_model_viewer": "3D 모델링 미리보기",
     "3d_model_help": "3D 모델링 미리보기",
     "Achievements": "업적",
+    "Currencies": "Currencies",
     "NODE": {
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
@@ -1212,7 +1219,8 @@
       "End": "종료",
       "Rewards": "보상",
       "Repeatable": "반복가능",
-      "Beast_tribe_rank": "야만족 우호 단계"
+      "Beast_tribe_rank": "야만족 우호 단계",
+      "Chain_length": "Following quests"
     },
     "NPC": {
       "Other_entries": "다른 출현위치",
@@ -1371,9 +1379,12 @@
     "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템"
   },
   "CURRENCY_SPENDING": {
-    "Title": "Currency Spending guide",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
-    "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "Title": "화폐 소비 가이드",
+    "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다 !",
+    "Pick_currency": "교환용 아이템 선택",
+    "You_can_buy": "{{amount}}개 구매 가능"
+  },
+  "BLOG": {
+    "Title": "블로그"
   }
 }

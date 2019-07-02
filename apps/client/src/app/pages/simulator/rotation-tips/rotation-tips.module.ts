@@ -6,8 +6,6 @@ import { UseInnerQuietBeforeQuality } from './tips/use-inner-quiet-before-qualit
 import { UseIngenuityIInstead } from './tips/use-ingenuity-I-instead';
 import { UseCzEarlier } from './tips/use-cz-earlier';
 import { UseReclaim } from './tips/use-reclaim';
-import { UseByregotBrowLowIqStacks } from './tips/use-byregot-brow-low-iq-stacks';
-import { UseByregotBlessingHighIqStacks } from './tips/use-byregot-blessing-high-iq-stacks';
 import { UseSh1Instead } from './tips/use-sh1-instead';
 import { UseSh2Instead } from './tips/use-sh2-instead';
 import { UsePbpFirst } from './tips/use-pbp-first';
@@ -17,7 +15,6 @@ import { UseDurabilityRestorationLater } from './tips/use-durability-restoration
 import { UsePatientTouchFaster } from './tips/use-patient-touch-faster';
 import { UseAdvancedTouchInstead } from './tips/use-advanced-touch-instead';
 import { DoNotOverlapBuffs } from './tips/do-not-overlap-buffs';
-import { UseByregotBrow5Stacks } from './tips/use-byregot-brow-5-stacks';
 import { UseIngenuityBeforeByregot } from './tips/use-ingenuity-before-byregot';
 import { UseRapidSynthesisEarlier } from './tips/use-rapid-synthesis-earlier';
 import { UseMoreQualityActions } from './tips/use-more-quality-actions';
@@ -32,8 +29,6 @@ const tips: Class<RotationTip>[] = [
   UseIngenuityIInstead,
   UseCzEarlier,
   UseReclaim,
-  UseByregotBrowLowIqStacks,
-  UseByregotBlessingHighIqStacks,
   UseSh1Instead,
   UseSh2Instead,
   UsePbpFirst,
@@ -43,7 +38,6 @@ const tips: Class<RotationTip>[] = [
   UsePatientTouchFaster,
   UseAdvancedTouchInstead,
   DoNotOverlapBuffs,
-  UseByregotBrow5Stacks,
   UseIngenuityBeforeByregot,
   UseRapidSynthesisEarlier,
   UseMoreQualityActions,

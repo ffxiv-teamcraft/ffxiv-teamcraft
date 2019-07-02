@@ -62,12 +62,12 @@
         <div class="detail-name">{{'DB.ACTION.Cooldown' | translate}}</div>
         <div class="detail-value">{{action.Recast100ms / 10}}s</div>
       </div>
-      <div class="details-block" *ngIf="costType[action.CostType] || action.ID > 99999">
+      <div class="details-block" *ngIf="costType[action.PrimaryCostType] || action.ID > 99999">
         <div class="detail-name">{{'DB.ACTION.Cost' | translate}}</div>
         <div
-          class="detail-value">{{action.Cost}}
+          class="detail-value">{{action.PrimaryCost}}
           <span
-            *ngIf="costType[action.CostType]">{{('DB.ACTION.COST_TYPE.' + costType[action.CostType]) | translate}}</span>
+            *ngIf="costType[action.PrimaryCostType]">{{('DB.ACTION.COST_TYPE.' + costType[action.PrimaryCostType]) | translate}}</span>
           <span *ngIf="action.ID > 99999">{{'DB.ACTION.COST_TYPE.CP' | translate}}</span>
         </div>
       </div>

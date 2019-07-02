@@ -220,5 +220,17 @@
     "ja": "青魔道士",
     "de": "Blaumagier",
     "fr": "Mage bleu"
+  },
+  "37": {
+    "en": "Gunbreaker",
+    "ja": "ガンブレイカー",
+    "de": "Revolverklinge",
+    "fr": "Pistosabreur"
+  },
+  "38": {
+    "en": "Dancer",
+    "ja": "踊り子",
+    "de": "Tänzer",
+    "fr": "Danseur"
   }
 }

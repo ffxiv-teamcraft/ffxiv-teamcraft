@@ -2,6 +2,98 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.2"></a>
+## [5.6.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.1...v5.6.2) (2019-07-01)
+
+
+### Bug Fixes
+
+* **db:** better display for trading informations ([e7be2f6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e7be2f6))
+* **db:** fixed an issue preventing display of items as quest rewards ([3e05120](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e05120))
+* **db:** fixed broken unicode char in quest names ([00d0031](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00d0031))
+* **db:** updated data with aetherytes fixes ([632545b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/632545b))
+* **log-tracker:** fixed mislabelled housing pages ([c54cdf3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c54cdf3))
+* **simulator:** doesn't account for great strides on 100 efficiency quality preview anymore ([acbcf1c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/acbcf1c))
+* **simulator:** fixed an issue on macro import with some actions ([843f00e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/843f00e))
+* **simulator:** fixed missing buff icons ([59e5d3d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/59e5d3d))
+
+
+### Features
+
+* **db:** added quest chain lengths on quest pages ([5e21f8f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e21f8f))
+* **db:** added starting point on quests when it is known ([9a249c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a249c4))
+* **db:** updated data for aetherytes, npcs, monsters and nodes ([9c9356c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c9356c))
+* **simulator:** updated simulator with latest accurate formula ([11a5fff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/11a5fff))
+
+
+
+<a name="5.6.1"></a>
+## [5.6.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.0...v5.6.1) (2019-06-29)
+
+
+### Bug Fixes
+
+* **db:** added missing fates data ([dd12b08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd12b08))
+* **db:** UI fixes for map and item pages ([e108a04](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e108a04))
+* **desktop:** fixed url share button ([4c5e3e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c5e3e9))
+
+
+### Features
+
+* **db:** added link between new levemete and its leves ([f09ef59](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f09ef59))
+* **db:** updated monsters, npcs, nodes and aetherytes ([50e4e60](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50e4e60))
+* **simulator:** added current control indicator and 100% efficiency actions result ([094a7cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/094a7cd))
+* **simulator:** now showing control bonus in simulator footer ([f729444](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f729444))
+
+
+
+<a name="5.6.0"></a>
+# [5.6.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.9...v5.6.0) (2019-06-29)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with newly created accounts not able to link character ([de0c34c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de0c34c))
+* **data-extraction:** added a queue system to avoid spamming xivapi too hard ([0abb193](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0abb193))
+* **rotation-picker:** fixed an issue with selection buttons not aligned properly ([0d7cb09](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d7cb09))
+* **simulator:** fixed an issue with brand of elements not being usable ([db3ecf5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db3ecf5))
+* **simulator:** fixed an issue with delicate synth not working properly ([7eef75c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7eef75c))
+* **ux:** changed the order of stats in edition popup to reflect the order in the profile ([687e7f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/687e7f0))
+
+
+### Features
+
+* **desktop:** added a button to copy current url to clipboard ([8934ace](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8934ace))
+* **rotation-tips:** removed all rotation tips using byregot's brow ([ec6b1e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec6b1e6))
+* **simulator:** added new shadowbringers actions ([854db61](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/854db61))
+* added everything from Shadowbringers expansion ([046b9d4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/046b9d4))
+* added some of the new data for shadowbringers ([a3c499a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a3c499a))
+* implemented new currencies inside incons ordering for trades ([8c65b4c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c65b4c))
+
+
+
+<a name="5.5.9"></a>
+## [5.5.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.8...v5.5.9) (2019-06-25)
+
+
+### Bug Fixes
+
+* **currency-spending:** fixed an issue with search loading infinitely ([7e9c1aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e9c1aa))
+* **db:** fixed quest page for quests with no journal entries ([c5f456c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5f456c))
+* **log-tracker:** fixed wrong label for a quarrying log page ([7e00cac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e00cac))
+* desktop download button is now hidden in collapsed sidebar mode ([ed63d03](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed63d03))
+* sidebar icons are now smaller to avoid scrolling bar to appear on 1080p ([a09067d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a09067d))
+* **search:** possible fix for japanese input systems ([41c7561](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/41c7561))
+* **simulator:** display Byregot warning for IG usage only when clvl < rlvl ([81182ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/81182ca))
+
+
+### Features
+
+* added a blog system for news and updates ([433d596](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/433d596))
+* **list:** you can now add items as collectable from the list ([ffedcad](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ffedcad))
+
+
+
 <a name="5.5.8"></a>
 ## [5.5.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.5.7...v5.5.8) (2019-06-23)
 

@@ -51,7 +51,8 @@
         <div fxFlex="1 1 auto">
           <p *ngIf="xivapiItem.Description" [innerHTML]="xivapiItem | xivapiI18n: 'Description' | xivUIText"></p>
           <audio controls controlslist="nodownload" *ngIf="xivapiItem.ItemAction?.Type === 5845">
-            <source src="https://www.garlandtools.org/files/orchestrion/{{xivapiItem.ItemAction.Data0}}.ogg" type="audio/ogg">
+            <source src="https://www.garlandtools.org/files/orchestrion/{{xivapiItem.ItemAction.Data0}}.ogg"
+                    type="audio/ogg">
           </audio>
         </div>
         <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
@@ -369,7 +370,7 @@
                    [nzTitle]="title">
             <ng-template #title>
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
-                <img class="img-icon round-icon" src="https://garlandtools.org/files/icons/item/3503.png"
+                <img class="img-icon round-icon" [src]="21072 | lazyIcon"
                      alt="Ventures">
                 <div>
                   {{'Retainer_ventures' | translate}}
@@ -570,7 +571,42 @@
               </div>
             </div>
             <div fxLayout="column" fxLayoutGap="5px" *ngIf="row.trades">
-              <app-trades [item]="data" [externalTradeSources]="row.trades"></app-trades>
+              <nz-card *ngFor="let source of row.trades" [nzTitle]="source.shopName | shopName | i18n">
+                <nz-table #basicTable [nzData]="source.trades">
+                  <thead>
+                  <tr>
+                    <th>{{'DB.Currencies' | translate}}</th>
+                    <th>{{'Items' | translate}}</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let trade of basicTable.data">
+                    <td>
+                      <div fxLayout="row wrap" fxLayoutGap="10px">
+                        <div class="item-container" *ngFor="let currency of trade.currencies" fxLayout="row"
+                             fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                          <app-item-icon [width]="32" [icon]="currency.icon" [itemName]="currency.id | itemName | i18n"
+                                         [itemId]="currency.id" [hq]="currency.hq"></app-item-icon>
+                          <div>{{currency.id | itemName | i18n}} <span>x{{currency.amount}}</span></div>
+                          <app-db-button type="item" [id]="currency.id"></app-db-button>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div fxLayout="row wrap" fxLayoutGap="10px">
+                        <div class="item-container" *ngFor="let item of trade.items" fxLayout="row"
+                             fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                          <app-item-icon [width]="32" [icon]="item.icon" [itemName]="item.id | itemName | i18n"
+                                         [itemId]="item.id" [hq]="item.hq"></app-item-icon>
+                          <div>{{item.id | itemName | i18n}} <span>x{{item.amount}}</span></div>
+                          <app-db-button type="item" [id]="item.id"></app-db-button>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </nz-table>
+              </nz-card>
             </div>
             <div *ngIf="row.leves">
               <nz-list [nzDataSource]="row.leves" [nzRenderItem]="leveTemplate"
@@ -638,7 +674,8 @@
           </nz-card>
         </div>
       </div>
-      <app-db-comments type="item" [id]="xivapiItem.ID" *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
+      <app-db-comments type="item" [id]="xivapiItem.ID"
+                       *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
     </div>
   </ng-container>
 </ng-container>

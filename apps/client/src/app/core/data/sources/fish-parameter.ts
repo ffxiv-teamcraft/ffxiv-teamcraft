@@ -10832,5 +10832,1687 @@ export const fishParameter = {
       'ja': '湖沼',
       'fr': 'Lacs et marais'
     }
+  },
+  '26746': {
+    'id': 698,
+    'itemId': 26746,
+    'level': 300,
+    'icon': '/i/029000/029298.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '26747': {
+    'id': 744,
+    'itemId': 26747,
+    'level': 355,
+    'icon': '/i/029000/029916.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '26748': {
+    'id': 764,
+    'itemId': 26748,
+    'level': 380,
+    'icon': '/i/029000/029510.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '26749': {
+    'id': 782,
+    'itemId': 26749,
+    'level': 410,
+    'icon': '/i/029000/029608.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '27410': {
+    'id': 720,
+    'itemId': 27410,
+    'level': 350,
+    'icon': '/i/029000/029552.png',
+    'mapId': 497,
+    'zoneId': 2951,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27411': {
+    'id': 700,
+    'itemId': 27411,
+    'level': 345,
+    'icon': '/i/029000/029980.png',
+    'mapId': 497,
+    'zoneId': 2951,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27412': {
+    'id': 701,
+    'itemId': 27412,
+    'level': 345,
+    'icon': '/i/029000/029553.png',
+    'mapId': 497,
+    'zoneId': 2951,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27413': {
+    'id': 722,
+    'itemId': 27413,
+    'level': 350,
+    'icon': '/i/029000/029554.png',
+    'mapId': 497,
+    'zoneId': 2951,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27414': {
+    'id': 719,
+    'itemId': 27414,
+    'level': 350,
+    'icon': '/i/029000/029555.png',
+    'mapId': 497,
+    'zoneId': 2951,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27415': {
+    'id': 721,
+    'itemId': 27415,
+    'level': 350,
+    'icon': '/i/029000/029556.png',
+    'mapId': 497,
+    'zoneId': 2951,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27416': {
+    'id': 740,
+    'itemId': 27416,
+    'level': 355,
+    'icon': '/i/029000/029557.png',
+    'mapId': 497,
+    'zoneId': 2951,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27417': {
+    'id': 699,
+    'itemId': 27417,
+    'level': 345,
+    'icon': '/i/029000/029278.png',
+    'mapId': 497,
+    'zoneId': 2951,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27418': {
+    'id': 741,
+    'itemId': 27418,
+    'level': 355,
+    'icon': '/i/029000/029558.png',
+    'mapId': 497,
+    'zoneId': 2951,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27419': {
+    'id': 723,
+    'itemId': 27419,
+    'level': 350,
+    'icon': '/i/029000/029062.png',
+    'mapId': 498,
+    'zoneId': 2952,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27420': {
+    'id': 724,
+    'itemId': 27420,
+    'level': 350,
+    'icon': '/i/029000/029413.png',
+    'mapId': 498,
+    'zoneId': 2952,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27421': {
+    'id': 742,
+    'itemId': 27421,
+    'level': 355,
+    'icon': '/i/029000/029165.png',
+    'mapId': 498,
+    'zoneId': 2952,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27422': {
+    'id': 725,
+    'itemId': 27422,
+    'level': 350,
+    'icon': '/i/029000/029166.png',
+    'mapId': 498,
+    'zoneId': 2952,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27423': {
+    'id': 753,
+    'itemId': 27423,
+    'level': 370,
+    'icon': '/i/029000/029167.png',
+    'mapId': 498,
+    'zoneId': 2952,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27424': {
+    'id': 754,
+    'itemId': 27424,
+    'level': 370,
+    'icon': '/i/029000/029168.png',
+    'mapId': 498,
+    'zoneId': 2952,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27425': {
+    'id': 702,
+    'itemId': 27425,
+    'level': 345,
+    'icon': '/i/029000/029316.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27426': {
+    'id': 706,
+    'itemId': 27426,
+    'level': 345,
+    'icon': '/i/029000/029559.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27427': {
+    'id': 703,
+    'itemId': 27427,
+    'level': 345,
+    'icon': '/i/029000/029560.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27428': {
+    'id': 704,
+    'itemId': 27428,
+    'level': 345,
+    'icon': '/i/029000/029702.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27429': {
+    'id': 705,
+    'itemId': 27429,
+    'level': 345,
+    'icon': '/i/029000/029561.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27430': {
+    'id': 707,
+    'itemId': 27430,
+    'level': 345,
+    'icon': '/i/029000/029562.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27431': {
+    'id': 709,
+    'itemId': 27431,
+    'level': 345,
+    'icon': '/i/029000/029563.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27432': {
+    'id': 792,
+    'itemId': 27432,
+    'level': 440,
+    'icon': '/i/029000/029564.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27433': {
+    'id': 726,
+    'itemId': 27433,
+    'level': 350,
+    'icon': '/i/029000/029565.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27434': {
+    'id': 728,
+    'itemId': 27434,
+    'level': 350,
+    'icon': '/i/029000/029566.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27435': {
+    'id': 727,
+    'itemId': 27435,
+    'level': 350,
+    'icon': '/i/029000/029567.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27436': {
+    'id': 708,
+    'itemId': 27436,
+    'level': 370,
+    'icon': '/i/029000/029568.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27437': {
+    'id': 743,
+    'itemId': 27437,
+    'level': 380,
+    'icon': '/i/029000/029569.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27438': {
+    'id': 710,
+    'itemId': 27438,
+    'level': 345,
+    'icon': '/i/029000/029209.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27439': {
+    'id': 711,
+    'itemId': 27439,
+    'level': 345,
+    'icon': '/i/029000/029244.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27440': {
+    'id': 712,
+    'itemId': 27440,
+    'level': 345,
+    'icon': '/i/029000/029245.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27441': {
+    'id': 775,
+    'itemId': 27441,
+    'level': 400,
+    'icon': '/i/029000/029570.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27442': {
+    'id': 781,
+    'itemId': 27442,
+    'level': 410,
+    'icon': '/i/029000/029571.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27443': {
+    'id': 729,
+    'itemId': 27443,
+    'level': 350,
+    'icon': '/i/029000/029572.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27444': {
+    'id': 730,
+    'itemId': 27444,
+    'level': 350,
+    'icon': '/i/029000/029573.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27445': {
+    'id': 731,
+    'itemId': 27445,
+    'level': 350,
+    'icon': '/i/029000/029574.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27446': {
+    'id': 715,
+    'itemId': 27446,
+    'level': 345,
+    'icon': '/i/029000/029169.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '27447': {
+    'id': 716,
+    'itemId': 27447,
+    'level': 345,
+    'icon': '/i/029000/029170.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '27448': {
+    'id': 714,
+    'itemId': 27448,
+    'level': 345,
+    'icon': '/i/029000/029052.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '27449': {
+    'id': 713,
+    'itemId': 27449,
+    'level': 345,
+    'icon': '/i/029000/029012.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '27450': {
+    'id': 735,
+    'itemId': 27450,
+    'level': 350,
+    'icon': '/i/029000/029171.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '27451': {
+    'id': 717,
+    'itemId': 27451,
+    'level': 410,
+    'icon': '/i/029000/029008.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '27452': {
+    'id': 733,
+    'itemId': 27452,
+    'level': 370,
+    'icon': '/i/029000/029172.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '27453': {
+    'id': 745,
+    'itemId': 27453,
+    'level': 380,
+    'icon': '/i/029000/029173.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '27454': {
+    'id': 734,
+    'itemId': 27454,
+    'level': 350,
+    'icon': '/i/029000/029174.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '27455': {
+    'id': 736,
+    'itemId': 27455,
+    'level': 350,
+    'icon': '/i/029000/029175.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '27456': {
+    'id': 793,
+    'itemId': 27456,
+    'level': 440,
+    'icon': '/i/029000/029176.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 1,
+    'weathered': 1
+  },
+  '27457': {
+    'id': 732,
+    'itemId': 27457,
+    'level': 350,
+    'icon': '/i/029000/029177.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '27458': {
+    'id': 737,
+    'itemId': 27458,
+    'level': 350,
+    'icon': '/i/029000/029294.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '27459': {
+    'id': 738,
+    'itemId': 27459,
+    'level': 350,
+    'icon': '/i/029000/029614.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '27460': {
+    'id': 746,
+    'itemId': 27460,
+    'level': 355,
+    'icon': '/i/029000/029615.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '27461': {
+    'id': 747,
+    'itemId': 27461,
+    'level': 355,
+    'icon': '/i/029000/029616.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '27462': {
+    'id': 718,
+    'itemId': 27462,
+    'level': 345,
+    'icon': '/i/029000/029617.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '27463': {
+    'id': 739,
+    'itemId': 27463,
+    'level': 350,
+    'icon': '/i/029000/029248.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '27464': {
+    'id': 783,
+    'itemId': 27464,
+    'level': 410,
+    'icon': '/i/029000/029618.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '27465': {
+    'id': 771,
+    'itemId': 27465,
+    'level': 390,
+    'icon': '/i/029000/029296.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '27466': {
+    'id': 776,
+    'itemId': 27466,
+    'level': 400,
+    'icon': '/i/029000/029607.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '27467': {
+    'id': 794,
+    'itemId': 27467,
+    'level': 440,
+    'icon': '/i/029000/029619.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 1,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '27468': {
+    'id': 756,
+    'itemId': 27468,
+    'level': 370,
+    'icon': '/i/029000/029575.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27469': {
+    'id': 751,
+    'itemId': 27469,
+    'level': 355,
+    'icon': '/i/029000/029576.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27470': {
+    'id': 748,
+    'itemId': 27470,
+    'level': 355,
+    'icon': '/i/029000/029577.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27471': {
+    'id': 750,
+    'itemId': 27471,
+    'level': 355,
+    'icon': '/i/029000/029578.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27472': {
+    'id': 755,
+    'itemId': 27472,
+    'level': 370,
+    'icon': '/i/029000/029579.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27473': {
+    'id': 752,
+    'itemId': 27473,
+    'level': 355,
+    'icon': '/i/029000/029580.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27474': {
+    'id': 765,
+    'itemId': 27474,
+    'level': 380,
+    'icon': '/i/029000/029581.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27475': {
+    'id': 757,
+    'itemId': 27475,
+    'level': 370,
+    'icon': '/i/029000/029582.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27476': {
+    'id': 758,
+    'itemId': 27476,
+    'level': 370,
+    'icon': '/i/029000/029583.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27477': {
+    'id': 759,
+    'itemId': 27477,
+    'level': 370,
+    'icon': '/i/029000/029584.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27478': {
+    'id': 766,
+    'itemId': 27478,
+    'level': 380,
+    'icon': '/i/029000/029585.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27479': {
+    'id': 749,
+    'itemId': 27479,
+    'level': 355,
+    'icon': '/i/029000/029501.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27480': {
+    'id': 760,
+    'itemId': 27480,
+    'level': 370,
+    'icon': '/i/029000/029586.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27481': {
+    'id': 795,
+    'itemId': 27481,
+    'level': 440,
+    'icon': '/i/029000/029587.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27482': {
+    'id': 761,
+    'itemId': 27482,
+    'level': 370,
+    'icon': '/i/029000/029588.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27483': {
+    'id': 778,
+    'itemId': 27483,
+    'level': 400,
+    'icon': '/i/029000/029589.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27484': {
+    'id': 770,
+    'itemId': 27484,
+    'level': 380,
+    'icon': '/i/029000/029590.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27485': {
+    'id': 768,
+    'itemId': 27485,
+    'level': 380,
+    'icon': '/i/029000/029263.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27486': {
+    'id': 762,
+    'itemId': 27486,
+    'level': 370,
+    'icon': '/i/029000/029591.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27487': {
+    'id': 763,
+    'itemId': 27487,
+    'level': 370,
+    'icon': '/i/029000/029211.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27488': {
+    'id': 769,
+    'itemId': 27488,
+    'level': 380,
+    'icon': '/i/029000/029206.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27489': {
+    'id': 767,
+    'itemId': 27489,
+    'level': 380,
+    'icon': '/i/029000/029204.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27490': {
+    'id': 772,
+    'itemId': 27490,
+    'level': 390,
+    'icon': '/i/029000/029592.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27491': {
+    'id': 773,
+    'itemId': 27491,
+    'level': 390,
+    'icon': '/i/029000/029593.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27492': {
+    'id': 774,
+    'itemId': 27492,
+    'level': 390,
+    'icon': '/i/029000/029594.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 1,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27493': {
+    'id': 777,
+    'itemId': 27493,
+    'level': 400,
+    'icon': '/i/029000/029595.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '27494': {
+    'id': 796,
+    'itemId': 27494,
+    'level': 440,
+    'icon': '/i/029000/029596.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 1,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '27495': {
+    'id': 787,
+    'itemId': 27495,
+    'level': 420,
+    'icon': '/i/029000/029178.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27496': {
+    'id': 780,
+    'itemId': 27496,
+    'level': 400,
+    'icon': '/i/029000/029059.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27497': {
+    'id': 779,
+    'itemId': 27497,
+    'level': 400,
+    'icon': '/i/029000/029025.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27498': {
+    'id': 786,
+    'itemId': 27498,
+    'level': 410,
+    'icon': '/i/029000/029179.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27499': {
+    'id': 788,
+    'itemId': 27499,
+    'level': 420,
+    'icon': '/i/029000/029041.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27500': {
+    'id': 797,
+    'itemId': 27500,
+    'level': 430,
+    'icon': '/i/029000/029180.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27501': {
+    'id': 798,
+    'itemId': 27501,
+    'level': 430,
+    'icon': '/i/029000/029181.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27502': {
+    'id': 806,
+    'itemId': 27502,
+    'level': 430,
+    'icon': '/i/029000/029182.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27503': {
+    'id': 801,
+    'itemId': 27503,
+    'level': 430,
+    'icon': '/i/029000/029183.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27504': {
+    'id': 791,
+    'itemId': 27504,
+    'level': 420,
+    'icon': '/i/029000/029184.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27505': {
+    'id': 802,
+    'itemId': 27505,
+    'level': 430,
+    'icon': '/i/029000/029185.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27506': {
+    'id': 789,
+    'itemId': 27506,
+    'level': 420,
+    'icon': '/i/029000/029186.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27507': {
+    'id': 799,
+    'itemId': 27507,
+    'level': 430,
+    'icon': '/i/029000/029187.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27508': {
+    'id': 807,
+    'itemId': 27508,
+    'level': 440,
+    'icon': '/i/029000/029188.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 1,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27509': {
+    'id': 790,
+    'itemId': 27509,
+    'level': 420,
+    'icon': '/i/029000/029189.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27510': {
+    'id': 804,
+    'itemId': 27510,
+    'level': 430,
+    'icon': '/i/029000/029190.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27511': {
+    'id': 784,
+    'itemId': 27511,
+    'level': 410,
+    'icon': '/i/029000/029806.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27512': {
+    'id': 803,
+    'itemId': 27512,
+    'level': 430,
+    'icon': '/i/029000/029191.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27513': {
+    'id': 785,
+    'itemId': 27513,
+    'level': 420,
+    'icon': '/i/029000/029097.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27514': {
+    'id': 800,
+    'itemId': 27514,
+    'level': 430,
+    'icon': '/i/029000/029192.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '27515': {
+    'id': 805,
+    'itemId': 27515,
+    'level': 430,
+    'icon': '/i/029000/029193.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
   }
 };

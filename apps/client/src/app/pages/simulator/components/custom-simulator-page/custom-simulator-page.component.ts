@@ -35,14 +35,16 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
       }
     });
     this.recipeForm = this.fb.group({
-      rlvl: [380, Validators.required],
+      rlvl: [430, Validators.required],
+      level: [80, Validators.required],
       progress: [3728, Validators.required],
       quality: [29591, Validators.required],
       durability: [70, Validators.required]
     });
     this.recipe$ = this.recipeForm.valueChanges.pipe(
       startWith({
-        rlvl: 380,
+        rlvl: 430,
+        level: 80,
         progress: 3728,
         quality: 29591,
         durability: 70
@@ -50,6 +52,7 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
       map(form => {
         return {
           rlvl: form.rlvl,
+          lvl: form.level,
           durability: form.durability,
           quality: form.quality,
           progress: form.progress
@@ -59,7 +62,7 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return combineLatest(this.rotationsFacade.selectedRotation$, this.recipe$).pipe(
+    return combineLatest([this.rotationsFacade.selectedRotation$, this.recipe$]).pipe(
       map(([rotation, recipe]) => {
         return {
           title: rotation.getName(),

@@ -31,10 +31,10 @@
   <div nz-col [nzXs]="{ span: 13, offset: 1, order: 2 }" [nzMd]="{ span: 5, offset: 1, order: 3 }"
        [nzXXl]="{ span: 3 }">
     <nz-input-group class="levels" nzCompact>
-      <nz-input-number [ngModel]="levelMin$.value" [nzMin]="1" [nzMax]="70" [nzPrecision]="0"
+      <nz-input-number [ngModel]="levelMin$.value" [nzMin]="1" [nzMax]="80" [nzPrecision]="0"
                        (ngModelChange)="setLevel(levelMin$, $event)"></nz-input-number>
       <input type="text" disabled nz-input placeholder="-">
-      <nz-input-number [ngModel]="levelMax$.value" [nzMin]="levelMin$.value" [nzMax]="70" [nzPrecision]="0"
+      <nz-input-number [ngModel]="levelMax$.value" [nzMin]="levelMin$.value" [nzMax]="80" [nzPrecision]="0"
                        (ngModelChange)="setLevel(levelMax$, $event)"></nz-input-number>
     </nz-input-group>
   </div>

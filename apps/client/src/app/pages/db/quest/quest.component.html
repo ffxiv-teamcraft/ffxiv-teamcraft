@@ -21,24 +21,25 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="textData$ | async as textData" [innerHTML]="textData.Journal && textData.Journal[0].Text"></p>
+        <p *ngIf="textData$ | async as textData"
+           [innerHTML]="textData.Journal && textData.Journal[0].Text | xivUIText"></p>
       </div>
       <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
           <img src="./assets/icons/english.png" class="language-flag" alt="EN">
-          <div>{{xivapiQuest.Name_en}}</div>
+          <div [innerHTML]="xivapiQuest.Name_en | xivUIText"></div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
           <img src="./assets/icons/german.png" class="language-flag" alt="DE">
-          <div>{{xivapiQuest.Name_de}}</div>
+          <div [innerHTML]="xivapiQuest.Name_de | xivUIText"></div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
           <img src="./assets/icons/french.png" class="language-flag" alt="FR">
-          <div>{{xivapiQuest.Name_fr}}</div>
+          <div [innerHTML]="xivapiQuest.Name_fr | xivUIText"></div>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
           <img src="./assets/icons/japanese.png" class="language-flag" alt="JA">
-          <div>{{xivapiQuest.Name_ja}}</div>
+          <div [innerHTML]="xivapiQuest.Name_ja | xivUIText"></div>
         </div>
       </div>
     </div>
@@ -56,6 +57,19 @@
       <div class="details-block" *ngIf="xivapiQuest.BeastReputationRank">
         <div class="detail-name">{{'DB.QUEST.Beast_tribe_rank' | translate}}</div>
         <div class="detail-value">{{xivapiQuest.BeastReputationRank | xivapiI18n}}</div>
+      </div>
+      <div class="details-block" *ngIf="startingPoint$ | async as startingPoint">
+        <div class="detail-value">
+          <app-map-position [mapId]="startingPoint.map"
+                            [zoneId]="startingPoint.zoneid"
+                            flex="row"
+                            [marker]="{x: startingPoint.x, y: startingPoint.y}"
+                            [showZoneName]="true"></app-map-position>
+        </div>
+      </div>
+      <div class="details-block" *ngIf="xivapiQuest.chainLength !== undefined">
+        <div class="detail-name">{{'DB.QUEST.Chain_length' | translate}}</div>
+        <div class="detail-value">{{xivapiQuest.chainLength}}<span *ngIf="xivapiQuest.chainLength >= 99">+</span></div>
       </div>
     </div>
     <app-db-comments type="quest" [id]="xivapiQuest.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
@@ -192,7 +206,8 @@
           <nz-list [nzDataSource]="rewards$ | async" [nzRenderItem]="rewardTemplate"
                    [nzItemLayout]="'horizontal'">
             <ng-template #rewardTemplate let-reward>
-              <nz-list-item [nzContent]="(reward.type==='item' || reward.type == 'instance' || reward.type === 'action')?more:null">
+              <nz-list-item
+                [nzContent]="(reward.type==='item' || reward.type == 'instance' || reward.type === 'action')?more:null">
                 <nz-list-item-meta
                   [nzAvatar]="rewardAvatar"
                   [nzTitle]="rewardTitle">
@@ -293,7 +308,8 @@
       </nz-card>
     </div>
   </div>
-  <app-db-comments type="quest" [id]="xivapiQuest.ID" *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
+  <app-db-comments type="quest" [id]="xivapiQuest.ID"
+                   *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

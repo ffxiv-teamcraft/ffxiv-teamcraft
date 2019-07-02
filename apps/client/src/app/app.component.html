@@ -23,6 +23,10 @@
               <button nz-button nzShape="circle" (click)="back()">
                 <i nz-icon type="arrow-left"></i>
               </button>
+              <button nz-button nzShape="circle" ngxClipboard cbContent="https://ffxivteamcraft.com{{getPathname()}}"
+                      (cbOnSuccess)="afterPathNameCopy()">
+                <i nz-icon nzType="share-alt" nzTheme="outline"></i>
+              </button>
               <button nz-button nzShape="circle" (click)="forward()">
                 <i nz-icon type="arrow-right"></i>
               </button>
@@ -307,7 +311,7 @@
               <i class="fab fa-discord"></i>
             </a>
             <a nz-button nzShape="circle" href="https://ffxivteamcraft.com/desktop" nz-tooltip
-               *ngIf="!desktop"
+               *ngIf="!desktop && !collapsedSidebar"
                nzTitle="{{'Download_desktop_app' | translate}}"
                target="_blank">
               <i nz-icon type="desktop"></i>

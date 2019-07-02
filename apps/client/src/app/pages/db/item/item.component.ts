@@ -422,7 +422,7 @@ export class ItemComponent extends TeamcraftPageComponent {
                 npcs: ts.npcs.map(npcId => {
                   const npc: TradeNpc = { id: npcId };
                   const npcEntry = this.lazyData.npcs[npcId];
-                  if (npcEntry.position !== null) {
+                  if (npcEntry.position) {
                     npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
                     npc.zoneId = npcEntry.position.zoneid;
                     npc.mapId = npcEntry.position.map;

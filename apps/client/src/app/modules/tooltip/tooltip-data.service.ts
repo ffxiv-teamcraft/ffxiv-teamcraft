@@ -36,8 +36,10 @@ export class TooltipDataService {
       if (id > 99999) {
         this.actions[id] = this.xivapi.get(XivapiEndpoint.CraftAction, id).pipe(
           map(action => {
-            action.ClassJobCategory.Name_ko = this.lazyData.koJobCategories[action.ClassJobCategory.ID].ko;
-            action.Description_ko = this.lazyData.koCraftDescriptions[id].ko;
+            if (this.lazyData.koJobCategories[action.ClassJobCategory.ID] && this.lazyData.koCraftDescriptions[id]) {
+              action.ClassJobCategory.Name_ko = this.lazyData.koJobCategories[action.ClassJobCategory.ID].ko;
+              action.Description_ko = this.lazyData.koCraftDescriptions[id].ko;
+            }
             return action;
           }),
           shareReplay(1)
@@ -45,8 +47,10 @@ export class TooltipDataService {
       } else {
         this.actions[id] = this.xivapi.get(XivapiEndpoint.Action, id).pipe(
           map(action => {
-            action.ClassJobCategory.Name_ko = this.lazyData.koJobCategories[action.ClassJobCategory.ID].ko;
-            action.Description_ko = this.lazyData.koActionDescriptions[id].ko;
+            if (this.lazyData.koJobCategories[action.ClassJobCategory.ID] && this.lazyData.koCraftDescriptions[id]) {
+              action.ClassJobCategory.Name_ko = this.lazyData.koJobCategories[action.ClassJobCategory.ID].ko;
+              action.Description_ko = this.lazyData.koActionDescriptions[id].ko;
+            }
             return action;
           }),
           shareReplay(1)

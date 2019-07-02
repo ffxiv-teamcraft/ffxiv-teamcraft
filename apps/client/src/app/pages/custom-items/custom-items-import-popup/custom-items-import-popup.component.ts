@@ -208,18 +208,20 @@ export class CustomItemsImportPopupComponent {
     const allItems = this.lazyData.allItems;
     const parsed = Papa.parse(content);
     // First of all, let's parse all rows and create items from them, as we know they'll need to be created.
-    const parsedToItems = parsed.data.map(row => {
+    const parsedToItems = parsed.data
+      .filter(row => row.length > 1)
+      .map(row => {
       const item = new CustomItem();
       item.$key = this.customItemsFacade.createId();
       item.name = row[4];
       item.yield = +row[5];
       item.realItemId = +row[45];
       item.craftedBy = [{
-        recipeId: row[2],
+        recipeId: row[1],
         jobId: +this.craftTypes.indexOf(row[2]) + 8,
         icon: '',
         itemId: +row[45],
-        level: 70,
+        level: 80,
         stars_tooltip: ''
       }];
       item.craftedBy[0].icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === item.craftedBy[0].jobId).abbreviation}.png`;

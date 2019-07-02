@@ -76,7 +76,8 @@
       <app-favorite-button *ngIf="rotation.$key" type="rotations" [key]="rotation.$key"></app-favorite-button>
       <ng-container *ngIf="simulation$ | async as simulation">
         <ng-container *ngIf="crafterStats$ | async as stats">
-          <button nz-button (click)="openCommunityRotationConfiguration(rotation, simulation, stats)" [nzShape]="'circle'"
+          <button nz-button (click)="openCommunityRotationConfiguration(rotation, simulation, stats)"
+                  [nzShape]="'circle'"
                   nzType="primary"
                   nz-tooltip
                   *ngIf="rotation.$key && ((permissionLevel$ | async) === 40)"
@@ -204,7 +205,7 @@
                 <ng-template #hqIngredientTemplate let-ingredient>
                   <nz-list-item [nzContent]="content">
                     <nz-list-item-meta [nzTitle]="ingredient.id | itemName | i18n"
-                                       [nzDescription]="ingredient.quality"></nz-list-item-meta>
+                                       [nzDescription]="ingredient.quality | floor"></nz-list-item-meta>
                     <ng-template #content>
                       <nz-form-control>
                         <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
@@ -446,6 +447,18 @@
               </div>
             </div>
           </div>
+          <div class="simulator-footer" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center"
+               fxLayoutGap="5px">
+            <div>{{'SIMULATOR.Progress_action_100_potency' | translate: { value: (progressPer100$ | async) } }}</div>
+            <div *ngIf="true | ifMobile: false">|</div>
+            <div>{{'SIMULATOR.Quality_action_100_potency' | translate: { value: (qualityPer100$ | async) } }}</div>
+            <div *ngIf="true | ifMobile: false">|</div>
+            <div nz-tooltip [nzTitle]="'SIMULATOR.Current_control_bonus' | translate">
+              {{'SIMULATOR.Current_control' | translate: { value: (resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) } }}
+              ({{resultData.simulation.crafterStats._control}} + <span
+              [style.font-weight]="(resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) - resultData.simulation.crafterStats._control === 3000? 'bold': 'default'">{{(resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) - resultData.simulation.crafterStats._control}}</span>)
+            </div>
+          </div>
         </nz-card>
 
         <nz-card [class.mobile-buffs]="false | ifMobile: true">
@@ -458,7 +471,7 @@
           </div>
         </nz-card>
 
-        <nz-card [class.failed]="actionFailed" [class.success]="resultData.simulation.success"  class="actions-card">
+        <nz-card [class.failed]="actionFailed" [class.success]="resultData.simulation.success" class="actions-card">
           <i nz-icon type="exclamation-circle" theme="twotone" [twoToneColor]="'#aa9400'" class="warning-icon"
              nz-tooltip [nzTitle]="'SIMULATOR.Unsaved_changes' | translate" *ngIf="dirty"></i>
           <div fxLayout="row wrap" ngxDroppable="action" class="actions-container ngx-dnd-container"

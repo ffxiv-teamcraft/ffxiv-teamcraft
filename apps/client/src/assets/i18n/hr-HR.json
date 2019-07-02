@@ -99,6 +99,7 @@
   "Discounts": "Discount",
   "Flat_discount": "Flat",
   "Percent_discount": "Percent",
+  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtriranje pomoću oznaka",
     "Tags_filter_reset": "Resetiranje filtera oznaka",
@@ -715,6 +716,10 @@
     "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "Quality_needed": "{{amount}} more quality to reach 100%",
     "Rotation_tips": "Rotation tips",
+    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
+    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
+    "Current_control": "Current control: {{value}}",
+    "Current_control_bonus": "Current bonus (limited to 3000)",
     "COMMUNITY_ROTATIONS": {
       "Title": "Community rotations",
       "Community_rotation": "Community rotation",
@@ -881,6 +886,7 @@
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
     "Db_comment": "New comment in db: \"{{comment}}\"",
     "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
+    "Blog_post": "New blog post: {{title}}",
     "Mark_all_as_read": "Mark all as read",
     "No_notifications": "No notifications"
   },
@@ -1194,6 +1200,7 @@
     "3d_model_viewer": "3D model preview",
     "3d_model_help": "Preview 3D model",
     "Achievements": "Achievements",
+    "Currencies": "Currencies",
     "NODE": {
       "Items": "Items",
       "Possible_bonuses": "Possible bonuses",
@@ -1212,7 +1219,8 @@
       "End": "End",
       "Rewards": "Rewards",
       "Repeatable": "Repeatable",
-      "Beast_tribe_rank": "Beast tribe rank"
+      "Beast_tribe_rank": "Beast tribe rank",
+      "Chain_length": "Following quests"
     },
     "NPC": {
       "Other_entries": "Other appearances",
@@ -1375,5 +1383,8 @@
     "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
     "Pick_currency": "Pick a currency",
     "You_can_buy": "You can buy {{amount}}"
+  },
+  "BLOG": {
+    "Title": "Blog"
   }
 }

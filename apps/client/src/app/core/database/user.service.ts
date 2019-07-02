@@ -2,7 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { EMPTY, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
-import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
+import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -32,7 +32,9 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         }),
         switchMap(user => {
           if (user === null) {
-            return of(new TeamcraftUser());
+            user = new TeamcraftUser();
+            user.$key = uid;
+            return of(user);
           }
           user.createdAt = new Date(user.createdAt);
           if (user.patreonToken === undefined) {

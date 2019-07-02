@@ -14,6 +14,7 @@ import { QuestData } from '../../../model/garland-tools/quest-data';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import * as _ from 'lodash';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { questChainLengths } from '../../../core/data/sources/quests-chain-lengths';
 
 @Component({
   selector: 'app-quest',
@@ -31,6 +32,8 @@ export class QuestComponent extends TeamcraftPageComponent {
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
   public involvedNpcs$: Observable<number[]>;
+
+  public startingPoint$: Observable<any>;
 
   public rewards$: Observable<{ type: string, id: number, amount: number }[]>;
 
@@ -78,7 +81,19 @@ export class QuestComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.Quest, +id);
       }),
+      map(quest => {
+        quest.chainLength = questChainLengths[quest.ID];
+        return quest;
+      }),
       shareReplay(1)
+    );
+
+    this.startingPoint$ = this.xivapiQuest$.pipe(
+      map(quest => {
+        return this.l12n.getNpc(quest.IssuerStart) as any;
+      }),
+      filter(npc => npc && npc.position),
+      map(npc => npc.position)
     );
 
     const lang$ = this.translate.onLangChange.pipe(
@@ -141,9 +156,9 @@ export class QuestComponent extends TeamcraftPageComponent {
         }
         for (let i = 0; i <= 14; i++) {
           const index = i < 10 ? `0${i}` : i;
-          if (quest[`ItemReward${index}TargetID`] > 0) {
+          if (quest[`ItemReward${index}`] > 0) {
             rewards.push({
-              id: quest[`ItemReward${index}TargetID`],
+              id: quest[`ItemReward${index}`],
               amount: quest[`ItemCountReward${index}`],
               type: 'item',
               hq: quest[`IsHQReward${index}`] === 1
@@ -189,9 +204,9 @@ export class QuestComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getName(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
+  private getName(quest: any): string {
+    // We might want to add more details for some specific quests, which is why this is a method.
+    return (quest[`Name_${this.translate.currentLang}`] || quest.Name_en).replace('', '•');
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
