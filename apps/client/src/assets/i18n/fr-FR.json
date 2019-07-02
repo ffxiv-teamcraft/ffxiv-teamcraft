@@ -658,6 +658,7 @@
     "Not_found": "Page introuvable"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
     "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
@@ -720,6 +721,7 @@
     "Quality_action_100_potency": "Qualité par tranche de 100 efficacité : {{value}}",
     "Current_control": "Contrôle actuel : {{value}}",
     "Current_control_bonus": "Bonus actuel (limité à 3000)",
+    "Macrolock": "Include macro lock",
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotations communautaires",
       "Community_rotation": "Rotation communautaire",
