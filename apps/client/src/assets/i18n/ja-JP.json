@@ -658,6 +658,7 @@
     "Not_found": "ページが見つかりません。"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
@@ -720,6 +721,7 @@
     "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
     "COMMUNITY_ROTATIONS": {
       "Title": "コミュニティースキル回し",
       "Community_rotation": "コミュニティースキル回し",
