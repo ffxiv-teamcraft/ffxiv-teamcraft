@@ -1,5 +1,5 @@
 ### Prepare your environment
-* Install [Node.js](http://nodejs.org/) (>= 8.9 and <10) and NPM (>=5.3)
+* Install [Node.js](http://nodejs.org/) (>10.9) and NPM (>=5.3)
 * Install local dev dependencies: `npm install` while current directory is this repo
 
 ### Live Development Server
