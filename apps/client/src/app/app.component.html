@@ -181,6 +181,14 @@
               <span class="nav-text">{{'Public_lists' | translate}}</span>
           </span>
               </a>
+              <a nz-menu-item class="menu-link" (click)="$event.preventDefault();openSimulator();onNavLinkClick()"
+                 routerLinkActive="ant-menu-item-selected" routerLink="/simulator">
+          <span nz-tooltip nzPlacement="right"
+                [nzTitle]="collapsedSidebar ? ('SIMULATOR.Title' | translate) : null">
+              <i nz-icon type="code"></i>
+              <span class="nav-text">{{'SIMULATOR.Title' | translate}}</span>
+          </span>
+              </a>
               <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                  routerLink="/rotations">
           <span nz-tooltip nzPlacement="right"
