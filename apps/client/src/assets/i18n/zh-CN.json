@@ -107,6 +107,7 @@
     "No_lists_matching": "没有符合的搜索结果"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "保存",
     "Reset": "重置",
     "Total": "合计",
@@ -722,6 +723,16 @@
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
     "Macrolock": "Include macro lock",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "SOLVER": {
+      "Population_size": "Population size",
+      "Iterations": "Iterations",
+      "AI_Configuration": "AI Configuration",
+      "AI_Configuration_explanation": "Configure parameters for the AI, higher values will make the solve slower, leave as default if you don't know what to do.",
+      "Weights": "Weights",
+      "Weights_explanation": "How each parameter affects the final score of the rotation, this gives weights to your criteria so you can have a rotation doing what you want."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "社区共享工序",
       "Community_rotation": "社区共享工序",
