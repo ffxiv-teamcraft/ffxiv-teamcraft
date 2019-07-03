@@ -86,8 +86,10 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             storedNode.coords = [nodePositions[node].x, nodePositions[node].y];
           }
           // Set proper map id based on informations we have
-          if (nodePositions[node] !== undefined) {
+          if (nodePositions[node] && nodePositions[node].map) {
             storedNode.mapid = nodePositions[node].map;
+          } else {
+            storedNode.mapid = this.localized.getMapId(this.localized.getPlace(partial.z).en);
           }
           // We need to cleanup the node object to avoid database issues with undefined value.
           Object.keys(storedNode).forEach(key => {
