@@ -200,7 +200,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       exp = this.startingExp + leveExp;
     }
     let level = this.startingLevel;
-    while (exp - this.getMaxExp(level) >= 0 && level < 69) {
+    while (exp - this.getMaxExp(level) >= 0 && level < 79) {
       exp -= this.getMaxExp(level);
       level++;
     }
