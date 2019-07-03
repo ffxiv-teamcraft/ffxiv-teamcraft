@@ -107,6 +107,7 @@
     "No_lists_matching": "필터와 일치하는 내용이 없습니다"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "저장",
     "Reset": "초기화",
     "Total": "총합",
@@ -722,6 +723,16 @@
     "Current_control": "현재 가공 숙련도: {{value}}",
     "Current_control_bonus": "현재 추가 스탯 (최대 3000)",
     "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "SOLVER": {
+      "Population_size": "Population size",
+      "Iterations": "Iterations",
+      "AI_Configuration": "AI Configuration",
+      "AI_Configuration_explanation": "Configure parameters for the AI, higher values will make the solve slower, leave as default if you don't know what to do.",
+      "Weights": "Weights",
+      "Weights_explanation": "How each parameter affects the final score of the rotation, this gives weights to your criteria so you can have a rotation doing what you want."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "커뮤니티 로테이션",
       "Community_rotation": "커뮤니티 로테이션",
