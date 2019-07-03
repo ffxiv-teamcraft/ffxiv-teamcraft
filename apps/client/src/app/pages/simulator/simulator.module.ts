@@ -43,6 +43,7 @@ import { DirtyModule } from '../../core/dirty/dirty.module';
 import { DirtyGuard } from '../../core/dirty/dirty-guard';
 import { CommunityRotationsPageComponent } from './components/community-rotations-page/community-rotations-page.component';
 import { CommunityRotationPopupComponent } from './components/community-rotation-popup/community-rotation-popup.component';
+import { SolverPopupComponent } from './components/solver-popup/solver-popup.component';
 
 const routes: Routes = [
   {
@@ -140,7 +141,8 @@ const routes: Routes = [
     RotationFolderPanelComponent,
     RotationTipsPopupComponent,
     CommunityRotationsPageComponent,
-    CommunityRotationPopupComponent
+    CommunityRotationPopupComponent,
+    SolverPopupComponent
   ],
   exports: [
     RotationPanelComponent,
@@ -152,7 +154,8 @@ const routes: Routes = [
     RecipeChoicePopupComponent,
     StepByStepReportComponent,
     RotationTipsPopupComponent,
-    CommunityRotationPopupComponent
+    CommunityRotationPopupComponent,
+    SolverPopupComponent
   ],
   providers: [
     ConsumablesService,

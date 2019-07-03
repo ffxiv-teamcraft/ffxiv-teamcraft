@@ -56,6 +56,7 @@ import { Theme } from './modules/settings/theme';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
+import { RecipeChoicePopupComponent } from './pages/simulator/components/recipe-choice-popup/recipe-choice-popup.component';
 
 declare const gtag: Function;
 
@@ -299,6 +300,17 @@ export class AppComponent implements OnInit {
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
+  }
+
+  openSimulator(): void {
+    this.dialog.create({
+      nzFooter: null,
+      nzContent: RecipeChoicePopupComponent,
+      nzComponentParams: {
+        showCustom: true
+      },
+      nzTitle: this.translate.instant('Pick_a_recipe')
+    });
   }
 
   getPathname(): string {

@@ -28,7 +28,9 @@ export class MacroPopupComponent implements OnInit {
   public extraWait = 0;
 
   public breakOnReclaim = false;
-  
+
+  public macroLock = localStorage.getItem('macros:macrolock') === 'true';
+
   public addConsumables = false;
 
   rotation: CraftingAction[];
@@ -47,7 +49,8 @@ export class MacroPopupComponent implements OnInit {
   }
 
   public generateMacros(): void {
-    this.macro = [[]];
+    localStorage.setItem('macros:macrolock', this.macroLock.toString());
+    this.macro = this.macroLock ? [['/mlock']] : [[]];
     this.aactionsMacro = ['/aaction clear'];
     let totalLength = 0;
     const reclaimBreakpoint = this.simulation.clone().run(true).simulation.lastPossibleReclaimStep;
@@ -73,9 +76,9 @@ export class MacroPopupComponent implements OnInit {
       totalLength++;
 
       let doneWithChunk: boolean;
-      if(this.breakOnReclaim && macroFragment.length === reclaimBreakpoint){
+      if (this.breakOnReclaim && macroFragment.length === reclaimBreakpoint) {
         doneWithChunk = true;
-      } else if(macroFragment.length === 14 && this.addEcho && this.rotation.length > totalLength + 1) {
+      } else if (macroFragment.length === 14 && this.addEcho && this.rotation.length > totalLength + 1) {
         doneWithChunk = true;
       }
 
@@ -112,7 +115,7 @@ export class MacroPopupComponent implements OnInit {
 
     const consumablesNotification = this.getConsumablesNotification();
     if (consumablesNotification !== undefined) {
-      this.aactionsMacro.push(consumablesNotification)
+      this.aactionsMacro.push(consumablesNotification);
     }
   }
 
@@ -127,23 +130,23 @@ export class MacroPopupComponent implements OnInit {
       return undefined;
     }
 
-    const hqTag = " " + this.translator.instant('SIMULATOR.Hq');
-    const necessaryBuffs = []
+    const hqTag = ' ' + this.translator.instant('SIMULATOR.Hq');
+    const necessaryBuffs = [];
 
     if (this.food) {
       let foodBuff = this.i18n.getName(this.l12n.getItem(this.food.itemId));
       if (this.food.hq) {
-        foodBuff += hqTag
+        foodBuff += hqTag;
       }
-      necessaryBuffs.push(foodBuff)
+      necessaryBuffs.push(foodBuff);
     }
 
     if (this.medicine) {
       let medicineBuff = this.i18n.getName(this.l12n.getItem(this.medicine.itemId));
       if (this.medicine.hq) {
-        medicineBuff += hqTag
+        medicineBuff += hqTag;
       }
-      necessaryBuffs.push(medicineBuff)
+      necessaryBuffs.push(medicineBuff);
     }
 
     if (this.freeCompanyActions && this.freeCompanyActions.length > 0) {
@@ -154,7 +157,7 @@ export class MacroPopupComponent implements OnInit {
 
     if (necessaryBuffs.length > 0) {
       const notification = this.translator.instant('SIMULATOR.Consumable_notification',
-                                                   {buffs: necessaryBuffs.join(", ")});
+        { buffs: necessaryBuffs.join(', ') });
       return `/echo ${notification} <se.5>`;
     }
     return undefined;

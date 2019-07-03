@@ -1,0 +1,59 @@
+<form nz-form [formGroup]="configForm" (ngSubmit)="submit()">
+  <div>
+    <nz-divider [nzText]="'SIMULATOR.SOLVER.AI_Configuration' | translate"></nz-divider>
+    <p class="form-explanation">{{'SIMULATOR.SOLVER.AI_Configuration_explanation' | translate}}</p>
+  </div>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="12" nzRequired
+                   nzFor="populationSize">{{'SIMULATOR.SOLVER.Population_size' | translate}}</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input type="number" nz-input formControlName="populationSize"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="12" nzRequired
+                   nzFor="iterations">{{'SIMULATOR.SOLVER.Iterations' | translate}}</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input type="number" nz-input formControlName="iterations"/>
+    </nz-form-control>
+  </nz-form-item>
+  <div>
+    <nz-divider [nzText]="'SIMULATOR.SOLVER.Weights' | translate"></nz-divider>
+    <p class="form-explanation">{{'SIMULATOR.SOLVER.Weights_explanation' | translate}}</p>
+  </div>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="12" nzRequired
+                   nzFor="progressWeight">{{'SIMULATOR.Progress' | translate}}</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input type="number" nz-input formControlName="progressWeight"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="12" nzRequired
+                   nzFor="hqWeight">{{'SIMULATOR.Quality' | translate}}</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input type="number" nz-input formControlName="hqWeight"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="12" nzRequired
+                   nzFor="lengthWeight">{{'COMMON.Length' | translate}}</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input type="number" nz-input formControlName="lengthWeight"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row>
+    <nz-form-control [nzSpan]="14" [nzOffset]="6">
+      <label nz-checkbox formControlName="safe">
+        <span>{{'SIMULATOR.Safe_mode' | translate}}</span>
+      </label>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row class="register-area">
+    <nz-form-control [nzSpan]="14" [nzOffset]="6">
+      <button nz-button nzType="primary" [nzLoading]="loading">
+        {{'SIMULATOR.Solve_rotation' | translate}}
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

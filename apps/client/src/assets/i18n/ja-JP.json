@@ -107,6 +107,7 @@
     "No_lists_matching": "フィルターに一致するリストがありません"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "保存",
     "Reset": "リセット",
     "Total": "合計",
@@ -658,6 +659,7 @@
     "Not_found": "ページが見つかりません。"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
@@ -720,6 +722,17 @@
     "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "SOLVER": {
+      "Population_size": "Population size",
+      "Iterations": "Iterations",
+      "AI_Configuration": "AI Configuration",
+      "AI_Configuration_explanation": "Configure parameters for the AI, higher values will make the solve slower, leave as default if you don't know what to do.",
+      "Weights": "Weights",
+      "Weights_explanation": "How each parameter affects the final score of the rotation, this gives weights to your criteria so you can have a rotation doing what you want."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "コミュニティースキル回し",
       "Community_rotation": "コミュニティースキル回し",
@@ -1239,7 +1252,8 @@
       "Allowance_cost": "リーヴ受注券の消耗量",
       "Rewards": "獲得可能な報酬",
       "Client": "依頼人",
-      "Issuer": "発行者"
+      "Issuer": "発行者",
+      "Turn_ins": "Turn-ins"
     },
     "MOB": {
       "Known_spawns": "モンスター出現場所",

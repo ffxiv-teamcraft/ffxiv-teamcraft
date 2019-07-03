@@ -9,7 +9,7 @@ import {
   map,
   pairwise,
   shareReplay,
-  startWith,
+  startWith, switchMap,
   takeUntil,
   tap
 } from 'rxjs/operators';
@@ -65,6 +65,7 @@ import {
   SimulationReliabilityReport,
   SimulationResult
 } from '@ffxiv-teamcraft/simulator';
+import { SolverPopupComponent } from '../solver-popup/solver-popup.component';
 
 @Component({
   selector: 'app-simulator',
@@ -260,6 +261,28 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       .sort(this.consumablesSortFn);
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions)
       .sort(this.freeCompanyActionsSortFn);
+  }
+
+  openRotationSolver(): void {
+    this.simulation$.pipe(
+      first(),
+      switchMap(simulation => {
+        return this.dialog.create({
+          nzFooter: null,
+          nzContent: SolverPopupComponent,
+          nzComponentParams: {
+            recipe: simulation.recipe,
+            stats: simulation.crafterStats
+          },
+          nzTitle: this.translate.instant('SIMULATOR.Rotation_solver')
+        }).afterClose;
+      }),
+      filter(res => res && res.length > 0)
+    ).subscribe(rotation => {
+      this.actions$.next([...rotation]);
+      this.dirty = true;
+      this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
+    });
   }
 
   disableEvent(event: any): void {

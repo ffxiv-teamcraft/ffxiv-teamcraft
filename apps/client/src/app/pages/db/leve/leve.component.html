@@ -60,6 +60,10 @@
         <div class="detail-name">{{'DB.Gil' | translate}}</div>
         <div class="detail-value">{{xivapiLeve.GilReward | number}}</div>
       </div>
+      <div class="details-block" *ngIf="xivapiLeve.CraftLeve">
+        <div class="detail-name">{{'DB.LEVE.Turn_ins' | translate}}</div>
+        <div class="detail-value">{{xivapiLeve.CraftLeve.Repeats}}</div>
+      </div>
     </div>
     <app-db-comments type="leve" [id]="xivapiLeve.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>

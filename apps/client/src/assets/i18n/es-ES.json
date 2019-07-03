@@ -107,6 +107,7 @@
     "No_lists_matching": "No hay listas que coincidan con sus filtros"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "Guardar",
     "Reset": "Reiniciar",
     "Total": "Total",
@@ -658,6 +659,7 @@
     "Not_found": "Pagina no encontrada"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
@@ -720,6 +722,17 @@
     "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "SOLVER": {
+      "Population_size": "Population size",
+      "Iterations": "Iterations",
+      "AI_Configuration": "AI Configuration",
+      "AI_Configuration_explanation": "Configure parameters for the AI, higher values will make the solve slower, leave as default if you don't know what to do.",
+      "Weights": "Weights",
+      "Weights_explanation": "How each parameter affects the final score of the rotation, this gives weights to your criteria so you can have a rotation doing what you want."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotaciones de la comunidad",
       "Community_rotation": "Rotación de la comunidad",
@@ -1239,7 +1252,8 @@
       "Allowance_cost": "Coste de autorizaciones",
       "Rewards": "Recompensas posibles",
       "Client": "Cliente",
-      "Issuer": "Emisor"
+      "Issuer": "Emisor",
+      "Turn_ins": "Turn-ins"
     },
     "MOB": {
       "Known_spawns": "Lugares de aparición conocidos",

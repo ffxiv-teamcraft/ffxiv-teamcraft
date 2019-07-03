@@ -107,6 +107,7 @@
     "No_lists_matching": "По данному фильтру ничего не найдено"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "Сохранить",
     "Reset": "Сбросить",
     "Total": "Всего",
@@ -658,6 +659,7 @@
     "Not_found": "Cтраница не найдена"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "Фиксированное уведомление",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Разделить макросы на этапе невозвратности Reclaim'а",
@@ -720,6 +722,17 @@
     "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "SOLVER": {
+      "Population_size": "Population size",
+      "Iterations": "Iterations",
+      "AI_Configuration": "AI Configuration",
+      "AI_Configuration_explanation": "Configure parameters for the AI, higher values will make the solve slower, leave as default if you don't know what to do.",
+      "Weights": "Weights",
+      "Weights_explanation": "How each parameter affects the final score of the rotation, this gives weights to your criteria so you can have a rotation doing what you want."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "Ротации сообщества",
       "Community_rotation": "Ротация сообщества",
@@ -1239,7 +1252,8 @@
       "Allowance_cost": "Стоимость разрешений",
       "Rewards": "Возможные награды",
       "Client": "Клиент",
-      "Issuer": "Инициатор"
+      "Issuer": "Инициатор",
+      "Turn_ins": "Turn-ins"
     },
     "MOB": {
       "Known_spawns": "Известные места",
