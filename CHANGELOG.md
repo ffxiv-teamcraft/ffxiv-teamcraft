@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.3"></a>
+## [5.6.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.2...v5.6.3) (2019-07-03)
+
+
+### Bug Fixes
+
+* **db:** fixed missing map on some item pages ([b6763d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b6763d5))
+* **db:** fixed wrong location for some gathering nodes ([126ae8a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/126ae8a))
+* **levequests:** fixed issue with levequests page with exp impact feature ([190a98a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/190a98a))
+* **log-tracker:** fixed an issue with CRP 1-5 page having duplicates ([23fed08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23fed08))
+* **simulator:** fixed an issue with piece by piece tip ([3368704](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3368704))
+
+
+### Features
+
+* **db:** added turn in amount in crafting leve pages ([db7137e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db7137e))
+* added support for new folklore books ([8fb9fec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8fb9fec))
+* **simulator:** added a rotation solver ([9c16b55](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c16b55))
+* **simulator:** added an option to have macrolock at the beginning of macros ([0427d41](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0427d41))
+* **simulator:** added simulator link to sidebar ([eae36f5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eae36f5))
+
+
+
 <a name="5.6.2"></a>
 ## [5.6.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.1...v5.6.2) (2019-07-01)
 
