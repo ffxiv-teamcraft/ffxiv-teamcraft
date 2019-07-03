@@ -107,7 +107,7 @@
     "No_lists_matching": "Aucune liste correspondant à vos filtres"
   },
   "COMMON": {
-    "Length": "Length",
+    "Length": "Longueur",
     "Save": "Sauvegarder",
     "Reset": "Remettre à 0",
     "Total": "Total",
@@ -723,15 +723,15 @@
     "Current_control": "Contrôle actuel : {{value}}",
     "Current_control_bonus": "Bonus actuel (limité à 3000)",
     "Macrolock": "Inclure macrolock",
-    "Solve_rotation": "Solve this rotation",
-    "Rotation_solver": "Rotation solver",
+    "Solve_rotation": "Résoudre cette rotation",
+    "Rotation_solver": "Résolveur de rotations",
     "SOLVER": {
-      "Population_size": "Population size",
-      "Iterations": "Iterations",
-      "AI_Configuration": "AI Configuration",
-      "AI_Configuration_explanation": "Configure parameters for the AI, higher values will make the solve slower, leave as default if you don't know what to do.",
-      "Weights": "Weights",
-      "Weights_explanation": "How each parameter affects the final score of the rotation, this gives weights to your criteria so you can have a rotation doing what you want."
+      "Population_size": "Taille de la population",
+      "Iterations": "Itérations",
+      "AI_Configuration": "Configuration IA",
+      "AI_Configuration_explanation": "Configurer les paramètres pour l'IA, les valeurs plus élevées rendront la résolution plus lente, laissez par défaut si vous ne savez pas quoi faire.",
+      "Weights": "Poids",
+      "Weights_explanation": "Comment chaque paramètre affecte le score final de la rotation, cela donne des poids à vos critères afin que vous puissiez avoir une rotation faisant ce que vous voulez."
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotations communautaires",
