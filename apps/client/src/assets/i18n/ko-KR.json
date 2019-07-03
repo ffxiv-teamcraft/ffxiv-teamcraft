@@ -727,7 +727,7 @@
     "Rotation_solver": "로테이션 생성기",
     "SOLVER": {
       "Population_size": "Population size",
-      "Iterations": "Iterations",
+      "Iterations": "반복 횟수",
       "AI_Configuration": "AI 설정",
       "AI_Configuration_explanation": "AI의 파라미터를 설정하세요. 높은 수치를 입력하면 처리속도가 느려지며, 만약 해당 수치에 대해 잘 모른다면 기본값으로 설정하세요.",
       "Weights": "중요도",
