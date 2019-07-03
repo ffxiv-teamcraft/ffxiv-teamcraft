@@ -107,6 +107,7 @@
     "No_lists_matching": "Nema odgovorajućih popisa vašim oznakama"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "Spremite",
     "Reset": "Resetiranje",
     "Total": "Ukupno",
@@ -658,6 +659,7 @@
     "Not_found": "Page not found"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "Fixed notification",
     "Starting_echo_number": "Notification #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
@@ -720,6 +722,17 @@
     "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "SOLVER": {
+      "Population_size": "Population size",
+      "Iterations": "Iterations",
+      "AI_Configuration": "AI Configuration",
+      "AI_Configuration_explanation": "Configure parameters for the AI, higher values will make the solve slower, leave as default if you don't know what to do.",
+      "Weights": "Weights",
+      "Weights_explanation": "How each parameter affects the final score of the rotation, this gives weights to your criteria so you can have a rotation doing what you want."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "Community rotations",
       "Community_rotation": "Community rotation",
@@ -1239,7 +1252,8 @@
       "Allowance_cost": "Allowance cost",
       "Rewards": "Possible rewards",
       "Client": "Client",
-      "Issuer": "Issuer"
+      "Issuer": "Issuer",
+      "Turn_ins": "Turn-ins"
     },
     "MOB": {
       "Known_spawns": "Known spawns",

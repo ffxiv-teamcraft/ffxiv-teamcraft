@@ -107,6 +107,7 @@
     "No_lists_matching": "필터와 일치하는 내용이 없습니다"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "저장",
     "Reset": "초기화",
     "Total": "총합",
@@ -658,6 +659,7 @@
     "Not_found": "페이지를 찾을 수 없습니다."
   },
   "SIMULATOR": {
+    "Title": "제작 시뮬레이터",
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
@@ -716,10 +718,21 @@
     "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
     "Quality_needed": "HQ 100%까지 품질 {{amount}} 남음",
     "Rotation_tips": "로테이션 팁",
-    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
-    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
-    "Current_control": "Current control: {{value}}",
-    "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Progress_action_100_potency": "작업 효율 100% 스킬 사용시 작업량: {{value}}",
+    "Quality_action_100_potency": "가공 효율 100% 스킬 사용시 품질량: {{value}}",
+    "Current_control": "현재 가공 숙련도: {{value}}",
+    "Current_control_bonus": "현재 추가 스탯 (최대 3000)",
+    "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "SOLVER": {
+      "Population_size": "Population size",
+      "Iterations": "Iterations",
+      "AI_Configuration": "AI Configuration",
+      "AI_Configuration_explanation": "Configure parameters for the AI, higher values will make the solve slower, leave as default if you don't know what to do.",
+      "Weights": "Weights",
+      "Weights_explanation": "How each parameter affects the final score of the rotation, this gives weights to your criteria so you can have a rotation doing what you want."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "커뮤니티 로테이션",
       "Community_rotation": "커뮤니티 로테이션",
@@ -1200,7 +1213,7 @@
     "3d_model_viewer": "3D 모델링 미리보기",
     "3d_model_help": "3D 모델링 미리보기",
     "Achievements": "업적",
-    "Currencies": "Currencies",
+    "Currencies": "화폐",
     "NODE": {
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
@@ -1220,7 +1233,7 @@
       "Rewards": "보상",
       "Repeatable": "반복가능",
       "Beast_tribe_rank": "야만족 우호 단계",
-      "Chain_length": "Following quests"
+      "Chain_length": "연계 퀘스트 수"
     },
     "NPC": {
       "Other_entries": "다른 출현위치",
@@ -1239,7 +1252,8 @@
       "Allowance_cost": "의뢰 수주권 소모량",
       "Rewards": "획득 가능한 보상",
       "Client": "의뢰인",
-      "Issuer": "발행인"
+      "Issuer": "발행인",
+      "Turn_ins": "Turn-ins"
     },
     "MOB": {
       "Known_spawns": "몬스터 출현 장소",

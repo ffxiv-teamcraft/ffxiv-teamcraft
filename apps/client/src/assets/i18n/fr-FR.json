@@ -107,6 +107,7 @@
     "No_lists_matching": "Aucune liste correspondant à vos filtres"
   },
   "COMMON": {
+    "Length": "Longueur",
     "Save": "Sauvegarder",
     "Reset": "Remettre à 0",
     "Total": "Total",
@@ -658,6 +659,7 @@
     "Not_found": "Page introuvable"
   },
   "SIMULATOR": {
+    "Title": "Simulateur de crafts",
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
     "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
@@ -720,6 +722,17 @@
     "Quality_action_100_potency": "Qualité par tranche de 100 efficacité : {{value}}",
     "Current_control": "Contrôle actuel : {{value}}",
     "Current_control_bonus": "Bonus actuel (limité à 3000)",
+    "Macrolock": "Inclure macrolock",
+    "Solve_rotation": "Résoudre cette rotation",
+    "Rotation_solver": "Résolveur de rotations",
+    "SOLVER": {
+      "Population_size": "Taille de la population",
+      "Iterations": "Itérations",
+      "AI_Configuration": "Configuration IA",
+      "AI_Configuration_explanation": "Configurer les paramètres pour l'IA, les valeurs plus élevées rendront la résolution plus lente, laissez par défaut si vous ne savez pas quoi faire.",
+      "Weights": "Poids",
+      "Weights_explanation": "Comment chaque paramètre affecte le score final de la rotation, cela donne des poids à vos critères afin que vous puissiez avoir une rotation faisant ce que vous voulez."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotations communautaires",
       "Community_rotation": "Rotation communautaire",
@@ -1239,7 +1252,8 @@
       "Allowance_cost": "Autorisations",
       "Rewards": "Récompenses possibles",
       "Client": "Client",
-      "Issuer": "Mandataire"
+      "Issuer": "Mandataire",
+      "Turn_ins": "Rendus possibles"
     },
     "MOB": {
       "Known_spawns": "Apparitions connues",
