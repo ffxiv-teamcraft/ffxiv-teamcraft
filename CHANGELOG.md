@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.5"></a>
+## [5.6.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.2...v5.6.5) (2019-07-04)
+
+
+### Bug Fixes
+
+* **db:** fixed missing map on some item pages ([b6763d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b6763d5))
+* **db:** fixed positions for some monsters and nodes ([7e7eb72](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e7eb72))
+* **db:** fixed wrong location for some gathering nodes ([126ae8a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/126ae8a))
+* **levequests:** fixed issue with levequests page with exp impact feature ([190a98a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/190a98a))
+* **log-tracker:** fixed an issue with CRP 1-5 page having duplicates ([23fed08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23fed08))
+* **search:** autocomplete is now showing terms in the correct order ([14b5e8a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/14b5e8a))
+* **simulator:** fixed an issue with piece by piece tip ([3368704](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3368704))
+* **simulator:** fixed missing parameters in recipe configuration ([d34e5e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d34e5e5))
+* **solver:** fixed screen freeze when solver is running ([8f401d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f401d5))
+
+
+### Features
+
+* **db:** added turn in amount in crafting leve pages ([db7137e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db7137e))
+* added support for new folklore books ([8fb9fec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8fb9fec))
+* **simulator:** added a rotation solver ([9c16b55](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c16b55))
+* **simulator:** added an option to have macrolock at the beginning of macros ([0427d41](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0427d41))
+* **simulator:** added simulator link to sidebar ([eae36f5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eae36f5))
+
+
+
 <a name="5.6.4"></a>
 ## [5.6.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.2...v5.6.4) (2019-07-04)
 
