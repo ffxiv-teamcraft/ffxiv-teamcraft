@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Craft, CrafterStats } from '@ffxiv-teamcraft/simulator';
+import { Craft, CrafterStats, CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
 import { NzModalRef } from 'ng-zorro-antd';
 import { defaultConfiguration, Solver, SolverConfiguration } from '@ffxiv-teamcraft/crafting-solver';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-solver-popup',
@@ -19,14 +20,14 @@ export class SolverPopupComponent {
 
   public loading = false;
 
-  constructor(private ref: NzModalRef, fb: FormBuilder) {
+  constructor(private ref: NzModalRef, private http: HttpClient, fb: FormBuilder) {
     this.configForm = fb.group({
       populationSize: [defaultConfiguration.populationSize, Validators.required],
       iterations: [defaultConfiguration.iterations, Validators.required],
       hqWeight: [defaultConfiguration.weights.hq, Validators.required],
       progressWeight: [defaultConfiguration.weights.progress, Validators.required],
       lengthWeight: [defaultConfiguration.weights.length, Validators.required],
-      safe: [defaultConfiguration.safe, Validators.required]
+      safe: [false, Validators.required]
     });
   }
 
@@ -45,7 +46,12 @@ export class SolverPopupComponent {
         finished: defaultConfiguration.weights.finished
       }
     };
-    const rotation = new Solver(this.recipe, this.stats, configuration).run();
-    this.ref.close(rotation);
+    this.http.post<string[]>(`https://us-central1-ffxivteamcraft.cloudfunctions.net/solver`, {
+      configuration: configuration,
+      recipe: this.recipe,
+      stats: { ...this.stats }
+    }).subscribe(res => {
+      this.ref.close(CraftingActionsRegistry.deserializeRotation(res));
+    });
   }
 }
