@@ -10,7 +10,6 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 
 @Component({
