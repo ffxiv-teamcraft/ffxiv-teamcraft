@@ -726,12 +726,7 @@
     "Solve_rotation": "로테이션 생성",
     "Rotation_solver": "로테이션 생성기",
     "SOLVER": {
-      "Population_size": "Population size",
-      "Iterations": "반복 횟수",
-      "AI_Configuration": "AI 설정",
-      "AI_Configuration_explanation": "AI의 파라미터를 설정하세요. 높은 수치를 입력하면 처리속도가 느려지며, 만약 해당 수치에 대해 잘 모른다면 기본값으로 설정하세요.",
-      "Weights": "중요도",
-      "Weights_explanation": "각 파라미터 수치에 우선순위를 정하고, 원하는 로테이션을 구성할 수 있도록 하여 로테이션의 최종 점수에 영향을 미칩니다."
+      "Hq_target": "Target HQ%"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "커뮤니티 로테이션",
