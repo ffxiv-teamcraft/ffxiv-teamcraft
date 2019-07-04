@@ -75,7 +75,7 @@
                     <i nz-icon type="close" (click)="$event.stopPropagation();deleteNotification(notification)"></i>
                   </ng-template>
                   <ng-template #actionOpen>
-                    <a [routerLink]="notification.route" (click)="deleteNotification(notification)">
+                    <a [routerLink]="notification.route" (click)="$event.stopPropagation();deleteNotification(notification)">
                       <i nz-icon type="select"></i>
                     </a>
                   </ng-template>

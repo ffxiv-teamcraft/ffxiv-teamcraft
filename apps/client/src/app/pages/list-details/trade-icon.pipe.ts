@@ -43,6 +43,8 @@ export class TradeIconPipe implements PipeTransform {
     17834: 25, // Yellow gatherer
     25199: 25, // White crafter
     25200: 25, // White gatherer
+    // Fates stones
+    26807: 23,
     // Hunt mark log
     7901: 22, // Blood-spattered Mark Log
     10127: 22, // Unstained Mark Log

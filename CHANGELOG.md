@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.6"></a>
+## [5.6.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.5...v5.6.6) (2019-07-04)
+
+
+### Bug Fixes
+
+* **gathering-location:** fixed duplicates issue with missing coords ([5280de1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5280de1))
+* **item:** fixed an issue with gathering node coords ([e8f1161](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8f1161))
+* **simulator:** fixed an issue with force failed action feature ([6ade21e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6ade21e))
+
+
+### Features
+
+* **list:** zone breakdown group feature now handles bicolor gems properly ([18b46a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/18b46a7))
+* **solver:** improved solver results overall ([de541e1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de541e1))
+
+
+
 <a name="5.6.5"></a>
 ## [5.6.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.2...v5.6.5) (2019-07-04)
 

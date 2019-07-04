@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Craft, CrafterStats, CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
 import { NzModalRef } from 'ng-zorro-antd';
-import { defaultConfiguration, Solver, SolverConfiguration } from '@ffxiv-teamcraft/crafting-solver';
+import { defaultConfiguration, SolverConfiguration } from '@ffxiv-teamcraft/crafting-solver';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -22,11 +22,7 @@ export class SolverPopupComponent {
 
   constructor(private ref: NzModalRef, private http: HttpClient, fb: FormBuilder) {
     this.configForm = fb.group({
-      populationSize: [defaultConfiguration.populationSize, Validators.required],
-      iterations: [defaultConfiguration.iterations, Validators.required],
-      hqWeight: [defaultConfiguration.weights.hq, Validators.required],
-      progressWeight: [defaultConfiguration.weights.progress, Validators.required],
-      lengthWeight: [defaultConfiguration.weights.length, Validators.required],
+      hqTarget: [defaultConfiguration.hqTarget, Validators.required],
       safe: [false, Validators.required]
     });
   }
@@ -36,15 +32,9 @@ export class SolverPopupComponent {
     const formRaw = this.configForm.getRawValue();
     const configuration: SolverConfiguration = {
       safe: formRaw.safe,
-      populationSize: formRaw.populationSize,
-      iterations: formRaw.iterations,
+      populationSize: defaultConfiguration.populationSize,
       progressAccuracy: defaultConfiguration.progressAccuracy,
-      weights: {
-        progress: formRaw.progressWeight,
-        hq: formRaw.hqWeight,
-        length: formRaw.lengthWeight,
-        finished: defaultConfiguration.weights.finished
-      }
+      hqTarget: formRaw.hqTarget
     };
     this.http.post<string[]>(`https://us-central1-ffxivteamcraft.cloudfunctions.net/solver`, {
       configuration: configuration,

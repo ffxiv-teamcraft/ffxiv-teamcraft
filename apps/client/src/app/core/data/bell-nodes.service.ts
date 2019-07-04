@@ -203,6 +203,8 @@ export class BellNodesService {
       return [];
     }).filter(res => res !== undefined));
 
+    console.log(nodesFromFishing, nodesFromGarlandBell, nodesFromPositions);
+
     const results = [...nodesFromGarlandBell,
       ...nodesFromPositions,
       ...nodesFromFishing];
@@ -244,7 +246,10 @@ export class BellNodesService {
             });
           }
         }
-        if (!finalNodes.some(node => node.itemId === row.itemId && node.zoneid === row.zoneid && node.type === row.type)) {
+        if (row.mapId === undefined && this.l12n.getPlace(row.zoneid)) {
+          row.mapId = this.l12n.getMapId(this.l12n.getPlace(row.zoneid).en);
+        }
+        if (!finalNodes.some(node => node.itemId === row.itemId && node.zoneid === row.zoneid && node.type === row.type) && row.mapId !== undefined) {
           finalNodes.push(row);
         }
       });

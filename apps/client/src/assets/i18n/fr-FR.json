@@ -726,12 +726,7 @@
     "Solve_rotation": "Résoudre cette rotation",
     "Rotation_solver": "Résolveur de rotations",
     "SOLVER": {
-      "Population_size": "Taille de la population",
-      "Iterations": "Itérations",
-      "AI_Configuration": "Configuration IA",
-      "AI_Configuration_explanation": "Configurer les paramètres pour l'IA, les valeurs plus élevées rendront la résolution plus lente, laissez par défaut si vous ne savez pas quoi faire.",
-      "Weights": "Poids",
-      "Weights_explanation": "Comment chaque paramètre affecte le score final de la rotation, cela donne des poids à vos critères afin que vous puissiez avoir une rotation faisant ce que vous voulez."
+      "Hq_target": "%HQ Ciblé"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotations communautaires",
