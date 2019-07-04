@@ -39,7 +39,9 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
       level: [80, Validators.required],
       progress: [3728, Validators.required],
       quality: [29591, Validators.required],
-      durability: [70, Validators.required]
+      durability: [70, Validators.required],
+      suggCraft: [1866, Validators.required],
+      suggCtrl: [1733, Validators.required],
     });
     this.recipe$ = this.recipeForm.valueChanges.pipe(
       startWith({
@@ -47,7 +49,9 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
         level: 80,
         progress: 3728,
         quality: 29591,
-        durability: 70
+        durability: 70,
+        suggCraft: 1866,
+        suggCtrl: 1733
       }),
       map(form => {
         return {
@@ -55,7 +59,9 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
           lvl: form.level,
           durability: form.durability,
           quality: form.quality,
-          progress: form.progress
+          progress: form.progress,
+          suggestedCraftsmanship: form.suggCraft,
+          suggestedControl: form.suggCtrl
         };
       })
     );
