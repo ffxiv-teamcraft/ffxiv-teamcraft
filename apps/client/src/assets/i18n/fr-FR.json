@@ -726,7 +726,7 @@
     "Solve_rotation": "Résoudre cette rotation",
     "Rotation_solver": "Résolveur de rotations",
     "SOLVER": {
-      "Hq_target": "Target HQ%"
+      "Hq_target": "%HQ Ciblé"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotations communautaires",
