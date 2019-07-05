@@ -726,7 +726,8 @@
     "Solve_rotation": "Résoudre cette rotation",
     "Rotation_solver": "Résolveur de rotations",
     "SOLVER": {
-      "Hq_target": "%HQ Ciblé"
+      "Hq_target": "%HQ Ciblé",
+      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotations communautaires",
