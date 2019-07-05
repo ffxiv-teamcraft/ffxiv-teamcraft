@@ -721,13 +721,13 @@
     "Progress_action_100_potency": "100%效率下的进展：{{value}}",
     "Quality_action_100_potency": "100%效率下的品质：{{value}}",
     "Current_control": "当前加工精度：{{value}}",
-    "Current_control_bonus": "Current bonus (limited to 3000)",
-    "Macrolock": "Include macro lock",
-    "Solve_rotation": "Solve this rotation",
-    "Rotation_solver": "Rotation solver",
+    "Current_control_bonus": "当前品质奖励（最高3000）",
+    "Macrolock": "包含“锁定宏指令（/macrolock）”",
+    "Solve_rotation": "求解其手法",
+    "Rotation_solver": "手法求解器",
     "SOLVER": {
-      "Hq_target": "Target HQ%",
-      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+      "Hq_target": "目标HQ率",
+      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的手法而生，作为一个AI在其逐渐成长的过程中，可能生成非常好的手法也可能生成非常不好的手法。请不要举报不理想的手法为bug."
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "社区共享工序",
@@ -866,10 +866,10 @@
     "Cheaper_at_vendor": "NPC 卖得更便宜 ({{price}} gil)",
     "Copy_panel_as_text": "复制为文本",
     "Check_precraft_prices": "检查市场内的更低价格",
-    "Craft_price": "Crafting price",
-    "Marketboard_price": "NQ price",
-    "Marketboard_price_hq": "HQ price",
-    "Enter_total_earnings": "Enter total earnings"
+    "Craft_price": "制作价格",
+    "Marketboard_price": "NQ价格",
+    "Marketboard_price_hq": "HQ价格",
+    "Enter_total_earnings": "输出总收入"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
@@ -895,7 +895,7 @@
     "List_item_comment_added": "对列表 {{listName}} 中的物品 {{itemName}} 发布了评论：“{{content}}”",
     "Db_comment": "在数据库中的新评论：{{comment}}",
     "Db_comment_reply": "对你评论的新回复：{{comment}}",
-    "Blog_post": "New blog post: {{title}}",
+    "Blog_post": "新博客文章: {{title}}",
     "Mark_all_as_read": "全部标记为已读",
     "No_notifications": "无通知"
   },
@@ -1293,7 +1293,7 @@
         "TP": "技力",
         "GP": "采集力",
         "CP": "制作力",
-        "Beast_gauge": "Beast gauge",
+        "Beast_gauge": "蛮族点数",
         "Blood_gauge": "Blood gauge",
         "Ninki": "Ninki",
         "Chakra": "Chakra",
@@ -1341,17 +1341,17 @@
     "Action": "技能",
     "Status": "属性",
     "Trait": "特性",
-    "Any": "Any",
-    "Achievement": "Achievement"
+    "Any": "任何",
+    "Achievement": "成就"
   },
   "SEARCH_FILTERS": {
-    "Level": "Level",
+    "Level": "等级",
     "Leve_job": "理符职业",
-    "Job": "Job",
+    "Job": "职业",
     "Leve_level": "等级"
   },
   "TIPS": {
-    "Title": "Tip",
+    "Title": "提示",
     "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
     "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
     "Desynth": "You can find ideal items to level up desynth in desynth page.",
@@ -1390,9 +1390,9 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
-    "Description": "货币太多了吗？选择您的货币，设置好数目、服务器，自动为您推荐最值钱的物品！",
-    "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "Description": "货币太多了吗？选择您的币种并设置好数目、服务器，自动为您推荐当前最卖的上价的物品！",
+    "Pick_currency": "选择一个币种",
+    "You_can_buy": "您可以购买 {{amount}}"
   },
   "BLOG": {
     "Title": "Blog"
