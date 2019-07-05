@@ -10,7 +10,18 @@ const multi = new Multiprogress(process.stdout);
 
 const nodes = {};
 const gatheringPointToBaseId = {};
-const aetherytes = [];
+const aetherytes = [
+  {
+    'id': 73,
+    'zoneid': 2100,
+    'map': 215,
+    'placenameid': 2100,
+    'x': 11,
+    'y': 14,
+    'type': 0,
+    'nameid': 2123
+  }
+];
 const monsters = {};
 const npcs = {};
 const aetheryteNameIds = {};
@@ -219,6 +230,11 @@ handleAetheryte = (row) => {
   }
   // Eulmore plaza appears in lakeland, gotta remove that.
   if (+row.PlaceNameID === 2953 && row.ENpcResidentID === 134) {
+    return;
+  }
+
+  // Ok'Zundu is handled by hand.
+  if (+row.ENpcResidentID === 73) {
     return;
   }
 

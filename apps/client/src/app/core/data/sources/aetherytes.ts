@@ -1,5 +1,15 @@
 export const aetherytes = [
   {
+    "id": 73,
+    "zoneid": 2100,
+    "map": 215,
+    "placenameid": 2100,
+    "x": 11,
+    "y": 14,
+    "type": 0,
+    "nameid": 2123
+  },
+  {
     "id": 6,
     "zoneid": 56,
     "map": 6,
@@ -987,6 +997,16 @@ export const aetherytes = [
     "nameid": 0,
     "x": 6.8,
     "y": 4.7,
+    "type": 1
+  },
+  {
+    "id": 150,
+    "zoneid": 2951,
+    "map": 497,
+    "placenameid": 2951,
+    "nameid": 0,
+    "x": 9.1,
+    "y": 10.1,
     "type": 1
   },
   {

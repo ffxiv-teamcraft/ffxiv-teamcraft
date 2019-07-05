@@ -69,16 +69,12 @@
         "function": "app"
       }
     ],
-    "headers": [
-      {
-        "source": "**",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=86400"
-          }
-        ]
-      }
-    ]
+    "headers": [{
+      "source": "**",
+      "headers": [{
+        "key": "Cache-control",
+        "value": "no-cache, must-revalidate"
+      }]
+    }]
   }
 }
