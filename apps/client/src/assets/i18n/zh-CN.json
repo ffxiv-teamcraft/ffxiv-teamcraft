@@ -332,7 +332,7 @@
     "Amount_display_mode": "列表数量显示模式",
     "Amount_display_mode_remaining": "剩余",
     "Amount_display_mode_total": "合计",
-    "Starting_place": "开始地图",
+    "Starting_place": "起始位置",
     "Starting_place_explain": "用于路径优化功能",
     "Free_aetheryte": "免费传送点",
     "Favorite_aetherytes": "收藏传送点",
@@ -1294,13 +1294,13 @@
         "GP": "采集力",
         "CP": "制作力",
         "Beast_gauge": "蛮族点数",
-        "Blood_gauge": "Blood gauge",
-        "Ninki": "Ninki",
-        "Chakra": "Chakra",
-        "Greasing_lightning": "Greasing Lightning",
+        "Blood_gauge": "血量量普",
+        "Ninki": "忍气",
+        "Chakra": "斗气",
+        "Greasing_lightning": "疾风迅雷",
         "Aetherflow": "以太超流",
-        "Oath_gauge": "Oath gauge",
-        "Kenki": "Kenki"
+        "Oath_gauge": "忠义量谱",
+        "Kenki": "剑气"
       }
     },
     "TRAIT": {
@@ -1355,7 +1355,7 @@
     "Community_rotations": "你可以在社区共享工序页面中找到特定配方的手法",
     "GC_Deliveries": "您可以在军队筹备页面中制作您的清单。",
     "Desynth": "您可以在分解查询页面中找到最适合您升级的物品。",
-    "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
+    "DB": "Teamcraft包含一个数据库，您可以点击任何地方的“i”图标在数据库页面中查看其详情。",
     "3D_model": "您可以在数据库中预览其3D外观。",
     "Levequests": "您可以在理符任务页面内制作理符清单和预览理符任务经验。",
     "Log_tracker": "您可以在笔记追踪页面中追踪您的采集、生产、捕鱼等笔记进度。",
@@ -1364,25 +1364,25 @@
   "RECIPE_FINDER": {
     "Title": "配方检索器",
     "Placeholder": "物品名称",
-    "No_missing_ingredients": "No missing ingredients",
-    "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
-    "Missing": "Missing",
-    "Results": "Possible crafts",
+    "No_missing_ingredients": "无缺失素材",
+    "Missing_X_ingredients": "缺少{{amount}} 个素材",
+    "Missing": "缺少",
+    "Results": "潜在配方",
     "Basket": "Basket",
     "Add_to_basket": "Add to basket",
     "Remove_from_basket": "Remove from basket",
-    "Search": "Find recipes",
+    "Search": "查找配方",
     "Generate_list": "添加到清单",
     "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
     "Empty_basket": "Your basket is empty",
-    "Add_item": "Add item",
-    "Clipboard_content_malformed": "Clipboard content malformed",
-    "Import_from_clipboard": "Import from clipboard",
-    "Extension_tip": "您可以使用背包抓取插件复制您的雇员的背包到剪贴板： ",
+    "Add_item": "添加物品",
+    "Clipboard_content_malformed": "剪贴板内容格式不正确",
+    "Import_from_clipboard": "从剪切板导入",
+    "Extension_tip": "您可以使用Lodestone inventory grabber插件复制您的雇员的背包到剪贴板： ",
     "Extension_link": "从Chrome商店获取该插件",
     "Clear": "清空物品列表",
     "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
-    "Inventory": "背包",
+    "Inventory": "目录",
     "Copy_to_clipboard": "复制背包到剪贴板",
     "Pool_copied": "背包已复制到您的剪贴板",
     "Sort_alphabetically": "按字母顺序整理",
@@ -1395,6 +1395,6 @@
     "You_can_buy": "您可以购买 {{amount}}"
   },
   "BLOG": {
-    "Title": "Blog"
+    "Title": "博客"
   }
 }
