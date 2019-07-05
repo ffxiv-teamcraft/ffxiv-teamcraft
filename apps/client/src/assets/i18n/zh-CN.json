@@ -1320,10 +1320,10 @@
       "Reply": "回复",
       "Show_less": "显示部分",
       "Add_comment": "添加评论",
-      "Show_more": "Show {{amount}} more comments",
-      "No_comments": "No comments",
-      "Post": "Post",
-      "Editor_tip": "Database links will be processed and handled inside your message."
+      "Show_more": "查看其他{{amount}} 个评论",
+      "No_comments": "暂无评论",
+      "Post": "发布",
+      "Editor_tip": "数据库链接将被生成在您的消息中。"
     }
   },
   "SEARCH_TYPES": {
@@ -1338,9 +1338,9 @@
     "Lore": "台词&设定",
     "Fate": "危命任务",
     "Map": "地图",
-    "Action": "Action",
-    "Status": "Status",
-    "Trait": "Trait",
+    "Action": "技能",
+    "Status": "属性",
+    "Trait": "特性",
     "Any": "Any",
     "Achievement": "Achievement"
   },
@@ -1378,19 +1378,19 @@
     "Add_item": "Add item",
     "Clipboard_content_malformed": "Clipboard content malformed",
     "Import_from_clipboard": "Import from clipboard",
-    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
-    "Extension_link": "Get the extension on chrome webstore",
-    "Clear": "Clear items list",
+    "Extension_tip": "您可以使用背包抓取插件复制您的雇员的背包到剪贴板： ",
+    "Extension_link": "从Chrome商店获取该插件",
+    "Clear": "清空物品列表",
     "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
-    "Inventory": "Inventory",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Pool_copied": "Inventory copied to your clipboard",
-    "Sort_alphabetically": "Sort alphabetically",
+    "Inventory": "背包",
+    "Copy_to_clipboard": "复制背包到剪贴板",
+    "Pool_copied": "背包已复制到您的剪贴板",
+    "Sort_alphabetically": "按字母顺序整理",
     "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
   },
   "CURRENCY_SPENDING": {
-    "Title": "Currency Spending guide",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Title": "货币消费指南",
+    "Description": "货币太多了吗？选择您的货币，设置好数目、服务器，自动为您推荐最值钱的物品！",
     "Pick_currency": "Pick a currency",
     "You_can_buy": "You can buy {{amount}}"
   },
