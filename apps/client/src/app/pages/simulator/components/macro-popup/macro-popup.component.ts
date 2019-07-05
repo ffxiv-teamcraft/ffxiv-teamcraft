@@ -31,7 +31,7 @@ export class MacroPopupComponent implements OnInit {
 
   public macroLock = localStorage.getItem('macros:macrolock') === 'true';
 
-  public addConsumables = false;
+  public addConsumables = localStorage.getItem('macros:consumables') === 'true';
 
   rotation: CraftingAction[];
 
@@ -50,6 +50,7 @@ export class MacroPopupComponent implements OnInit {
 
   public generateMacros(): void {
     localStorage.setItem('macros:macrolock', this.macroLock.toString());
+    localStorage.setItem('macros:consumables', this.addConsumables.toString());
     this.macro = this.macroLock ? [['/mlock']] : [[]];
     this.aactionsMacro = ['/aaction clear'];
     let totalLength = 0;
