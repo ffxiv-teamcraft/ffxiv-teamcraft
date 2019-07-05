@@ -59,7 +59,7 @@ export class MacroPopupComponent implements OnInit {
       // One macro is 15 lines, if this one is full, create another one.
       // Alternatively, if breaking on Reclaim is enabled, split there too.
       if ((this.breakOnReclaim && (macroFragment.length === reclaimBreakpoint + 1)) || macroFragment.length >= this.maxMacroLines) {
-        this.macro.push([]);
+        this.macro.push(this.macroLock ? ['/mlock'] : []);
         macroFragment = this.macro[this.macro.length - 1];
       }
       let actionName = this.i18n.getName(this.l12n.getAction(action.getIds()[0]));
