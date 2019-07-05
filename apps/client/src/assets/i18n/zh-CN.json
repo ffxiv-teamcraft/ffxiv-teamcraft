@@ -723,11 +723,11 @@
     "Current_control": "当前加工精度：{{value}}",
     "Current_control_bonus": "当前品质奖励（最高3000）",
     "Macrolock": "包含“锁定宏指令（/macrolock）”",
-    "Solve_rotation": "求解其手法",
-    "Rotation_solver": "手法求解器",
+    "Solve_rotation": "求解其工序",
+    "Rotation_solver": "工序求解器",
     "SOLVER": {
       "Hq_target": "目标HQ率",
-      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的手法而生，作为一个AI在其逐渐成长的过程中，可能生成非常好的手法也可能生成非常不好的手法。请不要举报不理想的手法为bug."
+      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的工序而生，作为一个AI在其逐渐成长的过程中，可能生成非常好的工序也可能生成非常不好的工序。请不要举报不理想的手法为bug."
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "社区共享工序",
@@ -1229,7 +1229,7 @@
       "Rewards": "奖励",
       "Repeatable": "重复",
       "Beast_tribe_rank": "蛮族关系",
-      "Chain_length": "Following quests"
+      "Chain_length": "后续任务"
     },
     "NPC": {
       "Other_entries": "其它出现位置",
@@ -1308,9 +1308,9 @@
     },
     "STATUS": {
       "Max_stacks": "最大堆叠",
-      "Locks_actions": "Locks actions",
-      "Locks_control": "Locks control",
-      "Locks_movement": "Locks movement",
+      "Locks_actions": "锁定技能",
+      "Locks_control": "锁定控制",
+      "Locks_movement": "锁定移动",
       "Type": "类型",
       "Type_buff": "Buff",
       "Type_debuff": "Debuff"
@@ -1352,18 +1352,18 @@
   },
   "TIPS": {
     "Title": "提示",
-    "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
-    "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
-    "Desynth": "You can find ideal items to level up desynth in desynth page.",
+    "Community_rotations": "你可以在社区共享工序页面中找到特定配方的手法",
+    "GC_Deliveries": "您可以在军队筹备页面中制作您的清单。",
+    "Desynth": "您可以在分解查询页面中找到最适合您升级的物品。",
     "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
-    "3D_model": "You can preview 3D model of items inside the database.",
-    "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
-    "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
-    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+    "3D_model": "您可以在数据库中预览其3D外观。",
+    "Levequests": "您可以在理符任务页面内制作理符清单和预览理符任务经验。",
+    "Log_tracker": "您可以在笔记追踪页面中追踪您的采集、生产、捕鱼等笔记进度。",
+    "Desktop_app_overlay": "使用桌面应用程序时，您可以开启闹钟悬浮窗(应用下载链接见侧边栏)。"
   },
   "RECIPE_FINDER": {
-    "Title": "Recipe finder",
-    "Placeholder": "Item name",
+    "Title": "配方检索器",
+    "Placeholder": "物品名称",
     "No_missing_ingredients": "No missing ingredients",
     "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
     "Missing": "Missing",
