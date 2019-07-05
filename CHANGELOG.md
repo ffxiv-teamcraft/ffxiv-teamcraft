@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.7"></a>
+## [5.6.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.6...v5.6.7) (2019-07-05)
+
+
+### Bug Fixes
+
+* disabled cache entirely to prevent issues with data ([ce6e1ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce6e1ce))
+* fixed a missing icon for SSR ([4c6b8af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c6b8af))
+
+
+### Features
+
+* **reduction:** added fish reduction data thanks to Hiems Whiterock and M'aila Batih ([40938a3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/40938a3))
+* **solver:** improved solver accuracy and removed safe mode from it ([8540da0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8540da0))
+
+
+
 <a name="5.6.6"></a>
 ## [5.6.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.5...v5.6.6) (2019-07-04)
 
