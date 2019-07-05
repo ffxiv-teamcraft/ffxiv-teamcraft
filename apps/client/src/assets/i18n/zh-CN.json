@@ -948,7 +948,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Information",
+    "Title": "交易板信息",
     "Error": "XIVAPI 或者 Companion API 目前无法使用，请稍后再重试。",
     "Amount": "数量",
     "HQ": "HQ",
@@ -1208,8 +1208,8 @@
     "Limited": "限时采集",
     "3d_model_viewer": "3D 模型预览",
     "3d_model_help": "预览 3D 模型",
-    "Achievements": "Achievements",
-    "Currencies": "Currencies",
+    "Achievements": "成就",
+    "Currencies": "货币",
     "NODE": {
       "Items": "物品",
       "Possible_bonuses": "随机加成",
@@ -1249,7 +1249,7 @@
       "Rewards": "奖励选项",
       "Client": "委托人",
       "Issuer": "发行人",
-      "Turn_ins": "Turn-ins"
+      "Turn_ins": "上缴"
     },
     "MOB": {
       "Known_spawns": "已知出现地点",
@@ -1298,28 +1298,28 @@
         "Ninki": "Ninki",
         "Chakra": "Chakra",
         "Greasing_lightning": "Greasing Lightning",
-        "Aetherflow": "Aetherflow",
+        "Aetherflow": "以太超流",
         "Oath_gauge": "Oath gauge",
         "Kenki": "Kenki"
       }
     },
     "TRAIT": {
-      "Related_actions": "Related actions"
+      "Related_actions": "相关技能"
     },
     "STATUS": {
-      "Max_stacks": "Max stacks",
+      "Max_stacks": "最大堆叠",
       "Locks_actions": "Locks actions",
       "Locks_control": "Locks control",
       "Locks_movement": "Locks movement",
-      "Type": "Type",
+      "Type": "类型",
       "Type_buff": "Buff",
       "Type_debuff": "Debuff"
     },
     "COMMENTS": {
-      "Title": "Comments",
-      "Reply": "Reply",
-      "Show_less": "Show less",
-      "Add_comment": "Add a comment",
+      "Title": "评论",
+      "Reply": "回复",
+      "Show_less": "显示部分",
+      "Add_comment": "添加评论",
       "Show_more": "Show {{amount}} more comments",
       "No_comments": "No comments",
       "Post": "Post",
