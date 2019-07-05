@@ -1373,7 +1373,7 @@
     "Remove_from_basket": "Remove from basket",
     "Search": "查找配方",
     "Generate_list": "添加到清单",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
+    "Description": "输入您拥有的物品并点击“查询配方”，可以得到一系列的潜在可制作配方，并能够从其结果中相应生成制作列表。",
     "Empty_basket": "Your basket is empty",
     "Add_item": "添加物品",
     "Clipboard_content_malformed": "剪贴板内容格式不正确",
@@ -1386,7 +1386,7 @@
     "Copy_to_clipboard": "复制背包到剪贴板",
     "Pool_copied": "背包已复制到您的剪贴板",
     "Sort_alphabetically": "按字母顺序整理",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Pages_range_label": "{{ total }} 物品中的{{ range0 }}-{{ range1 }}"
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
