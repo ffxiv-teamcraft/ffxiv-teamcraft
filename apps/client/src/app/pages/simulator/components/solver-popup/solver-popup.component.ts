@@ -31,11 +31,12 @@ export class SolverPopupComponent {
     this.loading = true;
     const formRaw = this.configForm.getRawValue();
     const configuration: SolverConfiguration = {
-      safe: formRaw.safe,
       populationSize: defaultConfiguration.populationSize,
       progressAccuracy: defaultConfiguration.progressAccuracy,
       hqTarget: formRaw.hqTarget
     };
+    // To debug using local function: http://localhost:5001/ffxivteamcraft/us-central1/solver
+    // Prod: https://us-central1-ffxivteamcraft.cloudfunctions.net/solver
     this.http.post<string[]>(`https://us-central1-ffxivteamcraft.cloudfunctions.net/solver`, {
       configuration: configuration,
       recipe: this.recipe,
