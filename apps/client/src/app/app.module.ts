@@ -58,6 +58,7 @@ import {
   SelectOutline,
   SettingOutline,
   ShareAltOutline,
+  ShoppingOutline,
   SolutionOutline,
   UsergroupAddOutline
 } from '@ant-design/icons-angular/icons';
@@ -114,7 +115,8 @@ const icons: IconDefinition[] = [
   LockOutline,
   LayoutOutline,
   UsergroupAddOutline,
-  LineChartOutline
+  LineChartOutline,
+  ShoppingOutline
 ];
 
 registerLocaleData(en);
