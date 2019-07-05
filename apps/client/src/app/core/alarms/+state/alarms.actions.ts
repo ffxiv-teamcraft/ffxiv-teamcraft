@@ -27,7 +27,6 @@ export class AlarmsLoaded implements Action {
   readonly type = AlarmsActionTypes.AlarmsLoaded;
 
   constructor(public readonly alarms: Alarm[], public readonly groups: AlarmGroup[]) {
-    console.log('ALARMS LOADED', alarms.map(alarm => alarm.$key));
   }
 }
 

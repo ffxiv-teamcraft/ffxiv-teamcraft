@@ -203,8 +203,6 @@ export class BellNodesService {
       return [];
     }).filter(res => res !== undefined));
 
-    console.log(nodesFromFishing, nodesFromGarlandBell, nodesFromPositions);
-
     const results = [...nodesFromGarlandBell,
       ...nodesFromPositions,
       ...nodesFromFishing];
