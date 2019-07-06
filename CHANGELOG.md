@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.8"></a>
+## [5.6.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.7...v5.6.8) (2019-07-06)
+
+
+### Bug Fixes
+
+* **db:** fixed wrong preview on some monsters ([c1a7901](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1a7901))
+* removed wrong monster positions in data ([8321941](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8321941))
+* **simulator:** fixed an issue with HQ ingredients not available when coming from a list ([978ef80](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/978ef80))
+* **simulator:** fixed an issue with macrolock not applied on each macro ([c596e74](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c596e74))
+
+
+### Features
+
+* **simulator:** consumables checkbox is now persisted in localstorage ([ff0a755](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff0a755))
+
+
+
 <a name="5.6.7"></a>
 ## [5.6.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.6...v5.6.7) (2019-07-05)
 
