@@ -5,6 +5,7 @@ import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
 import * as monsters from '../../../../core/data/sources/monsters.json';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
+import { monsterDrops } from '../../../../core/data/sources/monster-drops';
 
 export class DropsExtractor extends AbstractExtractor<Drop[]> {
 
@@ -48,6 +49,27 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
         drops.push(drop);
       }
     });
+    drops.push(...Object.keys(monsterDrops)
+      .filter(key => {
+        return monsterDrops[key].indexOf(item.id) > -1 && monsters[key] !== undefined;
+      })
+      .map(monsterId => {
+        const zoneid = monsters[monsterId].positions[0].zoneid;
+        const mapid = monsters[monsterId].positions[0].map;
+        const position = {
+          zoneid: zoneid,
+          x: +monsters[monsterId].positions[0].x,
+          y: +monsters[monsterId].positions[0].y
+        };
+        return {
+          id: +monsterId,
+          mapid: mapid,
+          zoneid: zoneid,
+          lvl: monsters[monsterId].level,
+          position: position
+        };
+      })
+    );
     return drops;
   }
 }
