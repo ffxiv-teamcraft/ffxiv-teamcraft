@@ -31,7 +31,7 @@ export class MacroPopupComponent implements OnInit {
 
   public macroLock = localStorage.getItem('macros:macrolock') === 'true';
 
-  public addConsumables = false;
+  public addConsumables = localStorage.getItem('macros:consumables') === 'true';
 
   rotation: CraftingAction[];
 
@@ -50,6 +50,7 @@ export class MacroPopupComponent implements OnInit {
 
   public generateMacros(): void {
     localStorage.setItem('macros:macrolock', this.macroLock.toString());
+    localStorage.setItem('macros:consumables', this.addConsumables.toString());
     this.macro = this.macroLock ? [['/mlock']] : [[]];
     this.aactionsMacro = ['/aaction clear'];
     let totalLength = 0;
@@ -59,7 +60,7 @@ export class MacroPopupComponent implements OnInit {
       // One macro is 15 lines, if this one is full, create another one.
       // Alternatively, if breaking on Reclaim is enabled, split there too.
       if ((this.breakOnReclaim && (macroFragment.length === reclaimBreakpoint + 1)) || macroFragment.length >= this.maxMacroLines) {
-        this.macro.push([]);
+        this.macro.push(this.macroLock ? ['/mlock'] : []);
         macroFragment = this.macro[this.macro.length - 1];
       }
       let actionName = this.i18n.getName(this.l12n.getAction(action.getIds()[0]));

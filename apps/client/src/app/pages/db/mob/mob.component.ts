@@ -138,8 +138,8 @@ export class MobComponent extends TeamcraftPageComponent {
       })
     );
 
-    this.links$ = combineLatest([this.xivapiMob$, this.gtData$]).pipe(
-      map(([xivapiMob, gtData]) => {
+    this.links$ = combineLatest([this.xivapiMob$]).pipe(
+      map(([xivapiMob]) => {
         const gtId = this.getGTMobId(xivapiMob.ID);
         const links = [];
         if (gtId.length > 0) {

@@ -760,7 +760,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       map(rotation => {
         const stats = rotation.stats;
         if (rotation.stats) {
-          const levels = [70, 70, 70, 70, 70, 70, 70, 70];
+          const levels = [80, 80, 80, 80, 80, 80, 80, 80];
           levels[stats.jobId - 8] = stats.level;
           return new CrafterStats(
             stats.jobId,
@@ -816,7 +816,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.job$
     ]).pipe(
       map(([stats, bonuses, loggedIn, job]) => {
-        const levels = loggedIn ? stats.levels : [70, 70, 70, 70, 70, 70, 70, 70];
+        const levels = loggedIn ? stats.levels : [80, 80, 80, 80, 80, 80, 80, 80];
         levels[(job || stats.jobId) - 8] = stats.level;
         return new CrafterStats(
           job || stats.jobId,
