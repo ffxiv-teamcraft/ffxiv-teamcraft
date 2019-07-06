@@ -251,6 +251,9 @@ handleAetheryte = (row) => {
 };
 
 handleMonster = (row, memoryData) => {
+  if (+row.BNpcNameID === 0) {
+    return;
+  }
   const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
   monsters[row.BNpcNameID] = monsters[row.BNpcNameID] || {
     baseid: +row.BNpcBaseID,
