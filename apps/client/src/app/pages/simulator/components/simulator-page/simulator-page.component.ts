@@ -69,6 +69,7 @@ export class SimulatorPageComponent extends SeoPageComponent {
           map(item => {
             if (params.get('recipeId') === null && item.craft.length > 0) {
               this.router.navigate([item.craft[0].id], { relativeTo: this.route });
+              return item.craft.find(c => c.id.toString() === params.get('recipeId'));
             }
             return item.craft.find(c => c.id.toString() === params.get('recipeId'));
           })
