@@ -58,7 +58,7 @@
                   [nzAvatar]="actionAvatar"
                   [nzTitle]="actionTitle">
                   <ng-template #actionAvatar>
-                    <img [src]="sharedAction | actionIcon" alt="" [appXivdbActionTooltip]="sharedAction">
+                    <img [src]="sharedAction | actionIcon | xivapiIcon" alt="" [appXivdbActionTooltip]="sharedAction">
                   </ng-template>
                   <ng-template #actionTitle>
                     <div>
