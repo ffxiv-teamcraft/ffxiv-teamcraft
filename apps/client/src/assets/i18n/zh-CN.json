@@ -40,7 +40,7 @@
   "Access_patreon_page": "打开我们的 Patreon 页",
   "Default": "默认",
   "Delete": "删除",
-  "Copy_isearch": "复制搜索宏",
+  "Copy_isearch": "复制物品检索宏",
   "Isearch_copied": "/isearch {{itemname}} 已经复制到剪贴板",
   "Required_for_final_craft": "最终成品需要 {{amount}} 个，可能需要 HQ",
   "Mark_HQ": "标记为需要 HQ",
@@ -1109,7 +1109,7 @@
     "Loading_message": "正在加载筹备列表，可能需要一分钟"
   },
   "DESYNTH": {
-    "Title": "分解查询",
+    "Title": "分解指南",
     "Job": "职业",
     "Level": "分解品级",
     "Intro": "选择职业并输入分解等级，即可找到最适合你的升级物品",
@@ -1348,11 +1348,11 @@
     "Level": "等级",
     "Leve_job": "理符职业",
     "Job": "职业",
-    "Leve_level": "等级"
+    "Leve_level": "等级要求"
   },
   "TIPS": {
     "Title": "小贴士",
-    "Community_rotations": "你可以在社区共享工序页面中找到特定配方的手法",
+    "Community_rotations": "你可以在社区共享工序页面中找到特定配方的工序",
     "GC_Deliveries": "您可以在军队筹备页面中制作您的清单。",
     "Desynth": "您可以在分解查询页面中找到最适合您升级的物品。",
     "DB": "Teamcraft包含一个数据库，您可以点击任何地方的“i”图标在数据库页面中查看其详情。",
@@ -1367,7 +1367,7 @@
     "No_missing_ingredients": "无缺失素材",
     "Missing_X_ingredients": "缺少{{amount}} 个素材",
     "Missing": "缺少",
-    "Results": "潜在配方",
+    "Results": "可能的配方",
     "Basket": "愿望篮",
     "Add_to_basket": "添加到愿望篮",
     "Remove_from_basket": "从愿望篮中删除",
