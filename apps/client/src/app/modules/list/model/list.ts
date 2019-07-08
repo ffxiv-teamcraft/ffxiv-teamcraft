@@ -343,7 +343,7 @@ export class List extends DataWithPermissions {
     }
     let res = false;
     res = res || (this.version === undefined);
-    res = res || semver.ltr(this.version, '5.0.0-beta.0');
+    res = res || semver.ltr(this.version, '5.0.0');
     return res;
   }
 
@@ -561,7 +561,7 @@ export class List extends DataWithPermissions {
   }
 
   public isLarge(): boolean {
-    return this.items && this.items.length >= 100 || this.finalItems && this.finalItems.length > 80;
+    return this.items && this.items.length >= 150 || this.finalItems && this.finalItems.length > 80;
   }
 
   /**
