@@ -142,6 +142,7 @@
     "Custom_sound": "알람소리 사용자 지정",
     "New_group": "새로운 알람 그룹",
     "Confirm_group_delete": "정말 이 그룹을 삭제하시겠습니까?",
+    "Delete_group_and_alarms": "Delete group with all alarms",
     "Confirm_group_delete_with_alarms": "정말로 이 그룹과 그 안에 있는 알람을 지우시겠습니까?",
     "Add_note": "메모 추가",
     "Volume": "볼륨",
