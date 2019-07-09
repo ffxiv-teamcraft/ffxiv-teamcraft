@@ -142,6 +142,7 @@
     "Custom_sound": "Som do alarme personalizado",
     "New_group": "Novo grupo de alarmes",
     "Confirm_group_delete": "Tem certeza que deseja eliminar este grupo?",
+    "Delete_group_and_alarms": "Delete group with all alarms",
     "Confirm_group_delete_with_alarms": "Tem a certeza que deseja eliminar este grupo e todos os seus alarmes?",
     "Add_note": "Adicionar uma nota",
     "Volume": "Volume de som",
