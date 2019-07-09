@@ -107,7 +107,7 @@
     "No_lists_matching": "No hay listas que coincidan con sus filtros"
   },
   "COMMON": {
-    "Length": "Length",
+    "Length": "Longitud",
     "Save": "Guardar",
     "Reset": "Reiniciar",
     "Total": "Total",
@@ -659,7 +659,7 @@
     "Not_found": "Pagina no encontrada"
   },
   "SIMULATOR": {
-    "Title": "Crafting simulator",
+    "Title": "Simulador de fabricación",
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
@@ -718,10 +718,10 @@
     "Safe_mode_tooltip": "Deshabilita todas las habilidades que no tienen 100% de probabilidad de tener éxito (toma mejoras/bonos en cuenta)",
     "Quality_needed": "{{amount}} más calidad para llegar a 100%",
     "Rotation_tips": "Consejos de rotación",
-    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
-    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
-    "Current_control": "Current control: {{value}}",
-    "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Progress_action_100_potency": "Progreso por 100% de eficiencia: {{value}}",
+    "Quality_action_100_potency": "Calidad por 100% de eficiencia: {{value}}",
+    "Current_control": "Control actual: {{value}}",
+    "Current_control_bonus": "Bono actual (limitado a 3000)",
     "Macrolock": "Include macro lock",
     "Solve_rotation": "Solve this rotation",
     "Rotation_solver": "Rotation solver",
