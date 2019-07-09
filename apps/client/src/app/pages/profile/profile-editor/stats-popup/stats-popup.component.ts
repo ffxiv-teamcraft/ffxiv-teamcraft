@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { AuthFacade } from '../../../../+state/auth.facade';
@@ -16,25 +16,34 @@ export class StatsPopupComponent implements OnInit {
 
   set$: Observable<GearSet>;
 
+  allSets$: Observable<GearSet[]>;
+
   constructor(private authFacade: AuthFacade, private modalRef: NzModalRef) {
   }
 
   ngOnInit(): void {
-    this.set$ = this.authFacade.mainCharacterEntry$.pipe(
+    this.allSets$ = this.authFacade.mainCharacterEntry$.pipe(
       map(entry => {
-        const set = (entry.stats || []).find(stat => stat.jobId === this.jobId);
-        const level = entry.character.ClassJobs ? entry.character.ClassJobs[`${this.jobId}_${this.jobId}`].Level : 0;
-        if (set === undefined) {
-          return {
-            jobId: this.jobId,
-            level: level,
-            cp: 0,
-            control: 0,
-            craftsmanship: 0,
-            specialist: false
-          };
-        }
-        return set;
+        return [8, 9, 10, 11, 12, 13, 14, 15].map(jobId => {
+          const set = (entry.stats || []).find(stat => stat.jobId === jobId);
+          const level = entry.character.ClassJobs ? entry.character.ClassJobs[`${this.jobId}_${this.jobId}`].Level : 0;
+          if (set === undefined) {
+            return {
+              jobId: this.jobId,
+              level: level,
+              cp: 0,
+              control: 0,
+              craftsmanship: 0,
+              specialist: false
+            };
+          }
+          return set;
+        });
+      })
+    );
+    this.set$ = this.allSets$.pipe(
+      map(allSets => {
+        return allSets.find(set => set.jobId === this.jobId);
       })
     );
   }
@@ -45,10 +54,23 @@ export class StatsPopupComponent implements OnInit {
   }
 
   saveForAll(set: GearSet): void {
-    [8, 9, 10, 11, 12, 13, 14, 15].forEach(jobId => {
-      this.authFacade.saveSet({ ...set, jobId: jobId }, true);
+    this.allSets$.pipe(
+      first()
+    ).subscribe((allSets: GearSet[]) => {
+      [8, 9, 10, 11, 12, 13, 14, 15].forEach(jobId => {
+        const newSet = { ...set, jobId: jobId };
+        const previousSet = allSets.find(s => s.jobId === jobId);
+        if (set.specialist && !previousSet.specialist) {
+          newSet.craftsmanship -= 20;
+          newSet.control -= 20;
+        } else if (!set.specialist && previousSet.specialist) {
+          newSet.craftsmanship += 20;
+          newSet.control += 20;
+        }
+        this.authFacade.saveSet(newSet, true);
+      });
+      this.modalRef.close();
     });
-    this.modalRef.close();
   }
 
   applySpecChange(set: GearSet, spec: boolean): void {
