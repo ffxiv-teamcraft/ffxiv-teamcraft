@@ -81,7 +81,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               private dataService: DataService, private lazyData: LazyDataService,
               private auth: AuthFacade, private settings: SettingsService) {
     super();
-    this.jobList = this.gt.getJobs().slice(8, 18);
+    this.jobList = this.gt.getJobs().slice(8, 16).concat([this.gt.getJob(18)]);
   }
 
   ngOnInit(): void {
