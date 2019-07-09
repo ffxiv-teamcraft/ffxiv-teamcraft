@@ -108,6 +108,13 @@
                  [(ngModel)]="settings.disableCrossWorld">{{'SETTINGS.Disable_cross_world_prices' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label nz-checkbox
+                 [(ngModel)]="settings.alwaysHQLeves">{{'SETTINGS.Always_HQ_leves' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Amount_display_mode' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">

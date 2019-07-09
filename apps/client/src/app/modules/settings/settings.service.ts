@@ -103,6 +103,14 @@ export class SettingsService {
     this.setSetting('auto-mark-as-completed', markAsCompleted.toString());
   }
 
+  public get alwaysHQLeves(): boolean {
+    return this.getSetting('always-hq-leves', 'false') === 'true';
+  }
+
+  public set alwaysHQLeves(alwaysHqLeves: boolean) {
+    this.setSetting('always-hq-leves', alwaysHqLeves.toString());
+  }
+
   public get compactAlarms(): boolean {
     return this.getSetting('compact-alarms', 'false') === 'true';
   }
