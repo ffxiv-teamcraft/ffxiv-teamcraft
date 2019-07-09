@@ -722,12 +722,12 @@
     "Quality_action_100_potency": "Calidad por 100% de eficiencia: {{value}}",
     "Current_control": "Control actual: {{value}}",
     "Current_control_bonus": "Bono actual (limitado a 3000)",
-    "Macrolock": "Include macro lock",
-    "Solve_rotation": "Solve this rotation",
-    "Rotation_solver": "Rotation solver",
+    "Macrolock": "Incluir bloqueo de macro",
+    "Solve_rotation": "Solucionar esta rotación",
+    "Rotation_solver": "Resolvedor de rotación",
     "SOLVER": {
-      "Hq_target": "Target HQ%",
-      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+      "Hq_target": "% de HQ objetivo",
+      "Disclaimer": "El resolvedor es un trabajo en progreso, por favor tenga en cuenta que no está hecho para crear rotaciones perfectas, es una IA tratando de mejorar con el tiempo que puede producir resultados muy malos así como muy buenos. Por favor, no informe de resultados malos como un error."
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotaciones de la comunidad",
@@ -1209,7 +1209,7 @@
     "3d_model_viewer": "Vista previa del modelo 3D",
     "3d_model_help": "Previsualizar modelo 3D",
     "Achievements": "Logros",
-    "Currencies": "Currencies",
+    "Currencies": "Divisas",
     "NODE": {
       "Items": "Artículos",
       "Possible_bonuses": "Bonos posibles",
@@ -1229,7 +1229,7 @@
       "Rewards": "Recompensas",
       "Repeatable": "Repetible",
       "Beast_tribe_rank": "Rango de tribu de bestia",
-      "Chain_length": "Following quests"
+      "Chain_length": "Misiones siguientes"
     },
     "NPC": {
       "Other_entries": "Otras apariciones",
@@ -1249,7 +1249,7 @@
       "Rewards": "Recompensas posibles",
       "Client": "Cliente",
       "Issuer": "Emisor",
-      "Turn_ins": "Turn-ins"
+      "Turn_ins": "Entregas"
     },
     "MOB": {
       "Known_spawns": "Lugares de aparición conocidos",
