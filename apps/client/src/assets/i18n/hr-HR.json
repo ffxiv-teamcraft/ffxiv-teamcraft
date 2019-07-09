@@ -142,6 +142,7 @@
     "Custom_sound": "Prilagođen zvuk alarma",
     "New_group": "Nova grupa alarma",
     "Confirm_group_delete": "Are you sure you want to delete this group?",
+    "Delete_group_and_alarms": "Delete group with all alarms",
     "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
     "Add_note": "Dodajte bilješku",
     "Volume": "Glasnoća",
