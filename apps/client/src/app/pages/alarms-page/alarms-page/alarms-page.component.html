@@ -83,19 +83,19 @@
                       [nzTitle]="'ALARMS.Confirm_group_delete' | translate" (nzOnConfirm)="deleteGroup(group.group)">
                 <i nz-icon type="delete"></i>
               </button>
-              <button nz-button nzSize="small" nzShape="circle" (click)="$event.stopPropagation();"
-                      nz-popconfirm
-                      nzType="danger"
-                      [nzTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
-                      (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)">
-                <i nz-icon iconfont="icon-delete_all"></i>
-              </button>
               <button nz-button (click)="$event.stopPropagation(); addAlarmsToGroup(group.group)" [nzShape]="'circle'"
                       [nzType]="'primary'" nzSize="small" nz-tooltip
                       [nzTitle]="'ALARMS.Add_alarms_to_group' | translate">
                 <i nz-icon type="plus"></i>
               </button>
               <div class="spacer"></div>
+              <button nz-button nzSize="small" (click)="$event.stopPropagation();"
+                      nz-popconfirm
+                      nzType="danger"
+                      [nzTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
+                      (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)">
+                {{'ALARMS.Delete_group_and_alarms' | translate}}
+              </button>
               <nz-switch [(ngModel)]="group.group.enabled"
                          (click)="$event.stopPropagation();"
                          (ngModelChange)="updateGroupMuteState(group.group)"></nz-switch>
