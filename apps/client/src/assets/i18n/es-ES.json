@@ -342,6 +342,7 @@
     "Clear_search_history": "Limpiar el historial de búsqueda",
     "Auto_mark_as_done_in_log": "Marcar elementos como completados en el registro cuando se hacen en una lista",
     "Db_comments_position": "Posición de comentarios de base de datos",
+    "Always_HQ_leves": "Always count leves exp with HQ items",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
