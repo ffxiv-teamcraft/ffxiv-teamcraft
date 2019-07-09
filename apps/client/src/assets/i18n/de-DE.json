@@ -342,6 +342,7 @@
     "Clear_search_history": "Suchverlauf löschen",
     "Auto_mark_as_done_in_log": "Im Notizbuch als erledigt markieren, wenn in der Liste erledigt",
     "Db_comments_position": "Position der Datenbank-Kommentare",
+    "Always_HQ_leves": "Always count leves exp with HQ items",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
