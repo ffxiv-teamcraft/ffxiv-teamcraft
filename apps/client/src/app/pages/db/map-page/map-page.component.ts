@@ -415,8 +415,8 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.map$.pipe(
-      map(mapData => {
+    return combineLatest([this.map$, this.lazyData.loaded$]).pipe(
+      map(([mapData]) => {
         return {
           title: this.getName(mapData),
           description: '',

@@ -107,7 +107,7 @@
     "No_lists_matching": "No hay listas que coincidan con sus filtros"
   },
   "COMMON": {
-    "Length": "Length",
+    "Length": "Longitud",
     "Save": "Guardar",
     "Reset": "Reiniciar",
     "Total": "Total",
@@ -142,6 +142,7 @@
     "Custom_sound": "Sonido de alarma personalizado",
     "New_group": "Nuevo grupo de alarmas",
     "Confirm_group_delete": "¿Está seguro de que quiere eliminar este grupo?",
+    "Delete_group_and_alarms": "Delete group with all alarms",
     "Confirm_group_delete_with_alarms": "¿Está seguro que desea eliminar este grupo y todas sus alarmas?",
     "Add_note": "Agregar una nota",
     "Volume": "Volumen",
@@ -191,6 +192,7 @@
   "No": "No",
   "Crystals": "Cristales",
   "Gathering": "Recolección",
+  "Drops_or_GC": "Dungeons/Drops or GC",
   "Other": "Otros",
   "Pre_crafts": "Precursores",
   "Items": "Artículos",
@@ -340,6 +342,8 @@
     "Clear_search_history": "Limpiar el historial de búsqueda",
     "Auto_mark_as_done_in_log": "Marcar elementos como completados en el registro cuando se hacen en una lista",
     "Db_comments_position": "Posición de comentarios de base de datos",
+    "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Clickthrough_overlay": "Make overlay clickthrough",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -659,7 +663,7 @@
     "Not_found": "Pagina no encontrada"
   },
   "SIMULATOR": {
-    "Title": "Crafting simulator",
+    "Title": "Simulador de fabricación",
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
@@ -718,16 +722,16 @@
     "Safe_mode_tooltip": "Deshabilita todas las habilidades que no tienen 100% de probabilidad de tener éxito (toma mejoras/bonos en cuenta)",
     "Quality_needed": "{{amount}} más calidad para llegar a 100%",
     "Rotation_tips": "Consejos de rotación",
-    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
-    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
-    "Current_control": "Current control: {{value}}",
-    "Current_control_bonus": "Current bonus (limited to 3000)",
-    "Macrolock": "Include macro lock",
-    "Solve_rotation": "Solve this rotation",
-    "Rotation_solver": "Rotation solver",
+    "Progress_action_100_potency": "Progreso por 100% de eficiencia: {{value}}",
+    "Quality_action_100_potency": "Calidad por 100% de eficiencia: {{value}}",
+    "Current_control": "Control actual: {{value}}",
+    "Current_control_bonus": "Bono actual (limitado a 3000)",
+    "Macrolock": "Incluir bloqueo de macro",
+    "Solve_rotation": "Solucionar esta rotación",
+    "Rotation_solver": "Resolvedor de rotación",
     "SOLVER": {
-      "Hq_target": "Target HQ%",
-      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+      "Hq_target": "% de HQ objetivo",
+      "Disclaimer": "El resolvedor es un trabajo en progreso, por favor tenga en cuenta que no está hecho para crear rotaciones perfectas, es una IA tratando de mejorar con el tiempo que puede producir resultados muy malos así como muy buenos. Por favor, no informe de resultados malos como un error."
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotaciones de la comunidad",
@@ -1209,7 +1213,7 @@
     "3d_model_viewer": "Vista previa del modelo 3D",
     "3d_model_help": "Previsualizar modelo 3D",
     "Achievements": "Logros",
-    "Currencies": "Currencies",
+    "Currencies": "Divisas",
     "NODE": {
       "Items": "Artículos",
       "Possible_bonuses": "Bonos posibles",
@@ -1229,7 +1233,7 @@
       "Rewards": "Recompensas",
       "Repeatable": "Repetible",
       "Beast_tribe_rank": "Rango de tribu de bestia",
-      "Chain_length": "Following quests"
+      "Chain_length": "Misiones siguientes"
     },
     "NPC": {
       "Other_entries": "Otras apariciones",
@@ -1249,7 +1253,7 @@
       "Rewards": "Recompensas posibles",
       "Client": "Cliente",
       "Issuer": "Emisor",
-      "Turn_ins": "Turn-ins"
+      "Turn_ins": "Entregas"
     },
     "MOB": {
       "Known_spawns": "Lugares de aparición conocidos",

@@ -70,7 +70,7 @@ export class CommunityListsComponent {
       tap(() => this.loading = true),
       debounceTime(250),
       switchMap((filters) => {
-        return this.listCompactsService.getCommunityLists(filters.tags.map(tag => ListTag[tag]), filters.name).pipe(
+        return this.listCompactsService.getCommunityLists(filters.tags, filters.name).pipe(
           tap(lists => {
             this.totalLength = lists.length;
           }),

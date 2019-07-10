@@ -308,6 +308,7 @@ autoUpdater.on('update-downloaded', () => {
 ipcMain.on('apply-settings', (event, settings) => {
   try {
     Object.keys(openedOverlays).forEach(key => {
+      openedOverlays[key].setIgnoreMouseEvents(settings.clickthrough === 'true');
       openedOverlays[key].webContents.send('update-settings', settings);
     });
   } catch (e) {
