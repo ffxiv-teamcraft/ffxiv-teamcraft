@@ -343,6 +343,7 @@
     "Auto_mark_as_done_in_log": "在列表项完成时标记为已完成",
     "Db_comments_position": "数据库评论位置",
     "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Clickthrough_overlay": "Make overlay clickthrough",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
