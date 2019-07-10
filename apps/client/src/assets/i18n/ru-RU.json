@@ -343,6 +343,7 @@
     "Auto_mark_as_done_in_log": "Пометить предметы как выполненные в журнале, когда они сделаны в списке",
     "Db_comments_position": "Положение комментариев в базе данных",
     "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Clickthrough_overlay": "Make overlay clickthrough",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
