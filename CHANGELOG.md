@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.9"></a>
+## [5.6.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.8...v5.6.9) (2019-07-10)
+
+
+### Bug Fixes
+
+* **community-lists:** fixed an issue with some tag filters not applying properly ([2eef252](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2eef252))
+* **db:** fixed broken action icons ([f7eb62f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f7eb62f))
+* **db:** possible fix for "missing name" map pages with deep link preview ([5976ce4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5976ce4))
+* **layout:** fixed wrong translation in default layout ([fc78909](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fc78909))
+* **pricing:** fixed an issue with end items that can be purchased having wrong price ([cd46024](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd46024))
+* **profile:** fixed an issue with stats propagation with save for all ([ed1c43b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed1c43b))
+* **rotation-tip:** fixed an issue with SH2 tip and observe combos ([519a924](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/519a924))
+* **simulator:** fixed an issue with Delicate Touch's level restriction ([45b89a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/45b89a7))
+* **simulator:** fixed an issue with double reclaim in aactions macro ([a2de2ea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a2de2ea))
+
+
+### Features
+
+* **db:** added more monster drop data thanks to Etherealrose ([ea21105](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea21105))
+* **desktop:** you can now make overlay clickthrough in settings ([494685d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/494685d))
+* **layout:** added new filter: IS_FATE_ITEM ([cc01329](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cc01329))
+* **patreon:** added 3 new patreon supporters ([3566c72](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3566c72))
+* **search:** changed default search type for "Any" ([1ad8ea4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ad8ea4))
+* **settings:** added a setting to always default leves exp as HQ delivery ([9bc1aa2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9bc1aa2))
+
+
+
 <a name="5.6.8"></a>
 ## [5.6.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.7...v5.6.8) (2019-07-06)
 
