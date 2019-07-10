@@ -142,6 +142,7 @@
     "Custom_sound": "Son d'alarme personnalisé",
     "New_group": "Nouveau groupe d’alarmes",
     "Confirm_group_delete": "Êtes-vous sûr de vouloir supprimer ce groupe ?",
+    "Delete_group_and_alarms": "Supprimer le groupe avec toutes les alarmes",
     "Confirm_group_delete_with_alarms": "Êtes-vous sûr de vouloir supprimer ce groupe et toutes les alarmes à l’intérieur ?",
     "Add_note": "Ajouter une note",
     "Volume": "Volume",
@@ -191,6 +192,7 @@
   "No": "Non",
   "Crystals": "Cristaux",
   "Gathering": "Récoltes",
+  "Drops_or_GC": "Donjons/Drops ou Grande Compagnie",
   "Other": "Autres",
   "Pre_crafts": "Crafts pré-requis",
   "Items": "Objets",
@@ -340,6 +342,8 @@
     "Clear_search_history": "Effacer l'historique de recherche",
     "Auto_mark_as_done_in_log": "Marquer les éléments comme faits dans le journal lorsqu'ils sont faits dans une liste",
     "Db_comments_position": "Position des commentaires de la base de données",
+    "Always_HQ_leves": "Utiliser des mandats HQ par défaut pour le calcul d'exp",
+    "Clickthrough_overlay": "Permettre de cliquer à travers l'overlay",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -727,7 +731,7 @@
     "Rotation_solver": "Résolveur de rotations",
     "SOLVER": {
       "Hq_target": "%HQ Ciblé",
-      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+      "Disclaimer": "Le solveur est un travail en cours, veuillez garder à l'esprit qu'il n'est pas fait pour créer des rotations parfaites, c'est une IA qui essaie de s'améliorer avec le temps qui peut produire des résultats très mauvais ainsi que de très bons résultats. Veuillez ne pas signaler de mauvais résultats comme bug."
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotations communautaires",
