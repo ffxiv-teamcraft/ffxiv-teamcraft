@@ -343,6 +343,7 @@
     "Auto_mark_as_done_in_log": "목록에서 완료된 아이템이 있으면 수첩에 해당 아이템을 완료됨이라고 표시",
     "Db_comments_position": "DB댓글 위치",
     "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Clickthrough_overlay": "Make overlay clickthrough",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
