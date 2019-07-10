@@ -104,7 +104,7 @@ export class MacroPopupComponent implements OnInit {
       this.macro[this.macro.length - 1].push(`/echo Craft finished <se.${seNumber}>`);
     }
     // 11 not 10 because /aactions clear takes the first line :)
-    if (this.aactionsMacro.length < 11) {
+    if (this.aactionsMacro.length < 11 && this.aactionsMacro.indexOf(`/aaction ${this.i18n.getName(this.l12n.getAction(new Reclaim().getIds()[0]))}`) === -1) {
       this.aactionsMacro.push(`/aaction ${this.i18n.getName(this.l12n.getAction(new Reclaim().getIds()[0]))}`);
     }
     if (this.aactionsMacro.length > 11) {
