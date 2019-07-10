@@ -103,6 +103,14 @@ export class SettingsService {
     this.setSetting('auto-mark-as-completed', markAsCompleted.toString());
   }
 
+  public get clickthroughOverlay(): boolean {
+    return this.getSetting('clickthrough', 'false') === 'true';
+  }
+
+  public set clickthroughOverlay(clickthrough: boolean) {
+    this.setSetting('clickthrough', clickthrough.toString());
+  }
+
   public get alwaysHQLeves(): boolean {
     return this.getSetting('always-hq-leves', 'false') === 'true';
   }
@@ -239,7 +247,7 @@ export class SettingsService {
   private setSetting(name: string, value: string): void {
     this.cache[name] = value;
     localStorage.setItem('settings', JSON.stringify(this.cache));
-    this.ipc.send('apply-settings', this.cache);
+    this.ipc.send('apply-settings', {...this.cache});
     this.settingsChange$.next();
   }
 

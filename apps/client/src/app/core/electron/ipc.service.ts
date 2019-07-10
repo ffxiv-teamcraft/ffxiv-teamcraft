@@ -41,9 +41,9 @@ export class IpcService {
     }
   }
 
-  public send(channel: string, ...args: any[]): void {
+  public send(channel: string, data?: any): void {
     if (this._ipc !== undefined) {
-      return this._ipc.send(channel, ...args);
+      return this._ipc.send(channel, data);
     }
   }
 
