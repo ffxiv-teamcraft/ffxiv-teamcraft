@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.10"></a>
+## [5.6.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.9...v5.6.10) (2019-07-11)
+
+
+### Bug Fixes
+
+* **alarms:** fixed wrong label for folder alarms addition box ([43dceab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43dceab))
+* **ariyala:** fixed ariyala import with new materias ([f5ebcf7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5ebcf7))
+* **macro-translator:** fixed an issue with japanese macros not detected properly ([7cd54c3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7cd54c3))
+* **profile:** fixed an issue with DoL stats not being editable ([c1bf2a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1bf2a9))
+* **profile:** fixed order for stats in profile and editor ([3fcd946](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3fcd946))
+* **simulator:** fixed an issue with IQ placement tip and new trained actions ([5cdbd1c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5cdbd1c))
+
+
+### Features
+
+* **solver:** added support for seeded solver runs ([d38aec0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d38aec0))
+* added nex patreon supporter: Forgiven Ignorance | Cerberus ([d8febd6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d8febd6))
+
+
+
 <a name="5.6.9"></a>
 ## [5.6.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.8...v5.6.9) (2019-07-10)
 
