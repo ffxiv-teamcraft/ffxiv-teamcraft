@@ -24,7 +24,7 @@ export class StatsPopupComponent implements OnInit {
   ngOnInit(): void {
     this.allSets$ = this.authFacade.mainCharacterEntry$.pipe(
       map(entry => {
-        return [8, 9, 10, 11, 12, 13, 14, 15].map(jobId => {
+        return [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map(jobId => {
           const set = (entry.stats || []).find(stat => stat.jobId === jobId);
           const level = entry.character.ClassJobs ? entry.character.ClassJobs[`${this.jobId}_${this.jobId}`].Level : 0;
           if (set === undefined) {

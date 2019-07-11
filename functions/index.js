@@ -115,7 +115,8 @@ exports.solver = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
       req.body.stats.levels
     );
     const solver = new Solver(req.body.recipe, stats, req.body.configuration);
-    return res.json(CraftingActionsRegistry.serializeRotation(solver.run()));
+    const seed = req.body.seed ? CraftingActionsRegistry.deserializeRotation(req.body.seed) : undefined;
+    return res.json(CraftingActionsRegistry.serializeRotation(solver.run(seed)));
   }
 });
 

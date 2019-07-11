@@ -731,6 +731,7 @@
     "Rotation_solver": "로테이션 생성기",
     "SOLVER": {
       "Hq_target": "HQ 목표치",
+      "Use_rotation_as_seed": "Use current rotation as starting point",
       "Disclaimer": "해당 기능은 현재 개발중입니다. 이 기능은 시간에 따라 발전하는 AI이며, 완벽한 로테이션을 구성하기 위해 만들어진 것이 아닙니다. 매우 나쁜 결과가 나올 수도 있지만 매우 좋은 결과 또한 나올 수 있습니다. 좋지 않은 결과가 나오더라도 해당 결과를 버그로 제출하지 마세요."
     },
     "COMMUNITY_ROTATIONS": {

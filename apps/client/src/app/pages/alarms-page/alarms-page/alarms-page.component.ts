@@ -176,7 +176,7 @@ export class AlarmsPageComponent implements OnInit {
       first(),
       switchMap((display: AlarmsPageDisplay) => {
         return this.dialog.create({
-          nzTitle: this.translate.instant('SIMULATOR.ROTATIONS.FOLDERS.Add_rotations'),
+          nzTitle: this.translate.instant('ALARMS.Add_alarms_to_group'),
           nzContent: FolderAdditionPickerComponent,
           nzComponentParams: {
             elements: display.noGroup.map(row => {

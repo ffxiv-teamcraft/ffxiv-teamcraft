@@ -272,7 +272,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           nzContent: SolverPopupComponent,
           nzComponentParams: {
             recipe: simulation.recipe,
-            stats: simulation.crafterStats
+            stats: simulation.crafterStats,
+            seed: simulation.actions || []
           },
           nzTitle: this.translate.instant('SIMULATOR.Rotation_solver')
         }).afterClose;
