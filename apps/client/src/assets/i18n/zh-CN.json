@@ -731,6 +731,7 @@
     "Rotation_solver": "工序求解器",
     "SOLVER": {
       "Hq_target": "目标HQ率",
+      "Use_rotation_as_seed": "Use current rotation as starting point",
       "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的工序而生，作为一个AI在其逐渐成长的过程中，可能生成非常好的工序也可能生成非常不好的工序。请不要举报不理想的手法为bug."
     },
     "COMMUNITY_ROTATIONS": {
