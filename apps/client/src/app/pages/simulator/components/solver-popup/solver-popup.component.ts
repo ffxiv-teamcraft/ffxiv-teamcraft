@@ -50,7 +50,7 @@ export class SolverPopupComponent implements OnInit {
     }
     // To debug using local function: http://localhost:5001/ffxivteamcraft/us-central1/solver
     // Prod: https://us-central1-ffxivteamcraft.cloudfunctions.net/solver
-    this.http.post<string[]>(`http://localhost:5001/ffxivteamcraft/us-central1/solver`, gcfParams).subscribe(res => {
+    this.http.post<string[]>(`https://us-central1-ffxivteamcraft.cloudfunctions.net/solver  `, gcfParams).subscribe(res => {
       this.ref.close(CraftingActionsRegistry.deserializeRotation(res));
     });
   }

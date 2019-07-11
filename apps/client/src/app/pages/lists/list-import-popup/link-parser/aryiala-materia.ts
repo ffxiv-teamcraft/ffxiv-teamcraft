@@ -40,6 +40,8 @@ export enum AriyalaMateria {
   'PIE:4' = 5632,
   'PIE:5' = 5633,
   'PIE:6' = 18011,
+  'PIE:7' = 25186,
+  'PIE:8' = 26727,
 
   'DHT:1' = 5664,
   'DHT:2' = 5665,
@@ -47,6 +49,8 @@ export enum AriyalaMateria {
   'DHT:4' = 5667,
   'DHT:5' = 5668,
   'DHT:6' = 18018,
+  'DHT:7' = 25187,
+  'DHT:8' = 26728,
 
   'CRT:1' = 5669,
   'CRT:2' = 5670,
@@ -54,6 +58,8 @@ export enum AriyalaMateria {
   'CRT:4' = 5672,
   'CRT:5' = 5673,
   'CRT:6' = 18019,
+  'CRT:7' = 25188,
+  'CRT:8' = 26729,
 
   'DET:1' = 5674,
   'DET:2' = 5675,
@@ -61,6 +67,8 @@ export enum AriyalaMateria {
   'DET:4' = 5677,
   'DET:5' = 5678,
   'DET:6' = 18020,
+  'DET:7' = 25189,
+  'DET:8' = 26730,
 
   'SKS:1' = 5714,
   'SKS:2' = 5715,
@@ -68,6 +76,8 @@ export enum AriyalaMateria {
   'SKS:4' = 5717,
   'SKS:5' = 5718,
   'SKS:6' = 18028,
+  'SKS:7' = 25197,
+  'SKS:8' = 26738,
 
   'SPS:1' = 5719,
   'SPS:2' = 5720,
@@ -75,6 +85,8 @@ export enum AriyalaMateria {
   'SPS:4' = 5722,
   'SPS:5' = 5723,
   'SPS:6' = 18029,
+  'SPS:7' = 25198,
+  'SPS:8' = 26739,
 
   'TEN:1' = 5679,
   'TEN:2' = 5680,
@@ -82,6 +94,8 @@ export enum AriyalaMateria {
   'TEN:4' = 5682,
   'TEN:5' = 5683,
   'TEN:6' = 18021,
+  'TEN:7' = 25190,
+  'TEN:8' = 26731,
 
   'CRL:0' = 5709,
   'CRL:1' = 5710,
@@ -89,6 +103,8 @@ export enum AriyalaMateria {
   'CRL:3' = 5712,
   'CRL:4' = 5713,
   'CRL:5' = 18027,
+  'CRL:6' = 25196,
+  'CRL:7' = 26737,
 
   'CMS:0' = 5699,
   'CMS:1' = 5700,
@@ -96,6 +112,8 @@ export enum AriyalaMateria {
   'CMS:3' = 5702,
   'CMS:4' = 5703,
   'CMS:5' = 18025,
+  'CMS:6' = 25194,
+  'CMS:7' = 26735,
 
   'CP:0' = 5704,
   'CP:1' = 5705,
@@ -103,6 +121,8 @@ export enum AriyalaMateria {
   'CP:3' = 5707,
   'CP:4' = 5708,
   'CP:5' = 18026,
+  'CP:6' = 25195,
+  'CP:7' = 26736,
 
   'PCP:0' = 5689,
   'PCP:1' = 5690,
@@ -110,6 +130,8 @@ export enum AriyalaMateria {
   'PCP:3' = 5692,
   'PCP:4' = 5693,
   'PCP:5' = 18023,
+  'PCP:6' = 25192,
+  'PCP:7' = 26733,
 
   'GTH:0' = 5684,
   'GTH:1' = 5685,
@@ -117,6 +139,8 @@ export enum AriyalaMateria {
   'GTH:3' = 5687,
   'GTH:4' = 5688,
   'GTH:5' = 18022,
+  'GTH:6' = 25191,
+  'GTH:7' = 26732,
 
   'GP:0' = 5694,
   'GP:1' = 5695,
@@ -124,4 +148,6 @@ export enum AriyalaMateria {
   'GP:3' = 5697,
   'GP:4' = 5698,
   'GP:5' = 18024,
+  'GP:6' = 25193,
+  'GP:7' = 26734,
 }
