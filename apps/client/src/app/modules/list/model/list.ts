@@ -81,8 +81,14 @@ export class List extends DataWithPermissions {
     clone.version = this.version || '1.0.0';
     clone.tags = this.tags;
     delete clone.$key;
-    gtag('event', 'List', 'creation');
-    gtag('event', 'List', 'clone');
+    gtag('event', 'List', {
+      'event_label': 'creation',
+      'non_interaction': true
+    });
+    gtag('event', 'List', {
+      'event_label': 'clone',
+      'non_interaction': true
+    });
     this.forks++;
     clone.reset();
     return clone;
