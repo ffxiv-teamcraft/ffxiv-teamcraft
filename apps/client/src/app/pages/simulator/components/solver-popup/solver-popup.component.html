@@ -7,6 +7,13 @@
       <input type="number" nz-input formControlName="hqTarget"/>
     </nz-form-control>
   </nz-form-item>
+  <nz-form-item nz-row>
+    <nz-form-control [nzSpan]="14" [nzOffset]="6" *ngIf="seed?.length > 0">
+      <label nz-checkbox formControlName="seeded">
+        <span>{{'SIMULATOR.SOLVER.Use_rotation_as_seed' | translate}}</span>
+      </label>
+    </nz-form-control>
+  </nz-form-item>
   <nz-form-item nz-row class="register-area">
     <nz-form-control [nzSpan]="14" [nzOffset]="6">
       <button nz-button nzType="primary" [nzLoading]="loading">
