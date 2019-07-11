@@ -731,7 +731,7 @@
     "Rotation_solver": "Résolveur de rotations",
     "SOLVER": {
       "Hq_target": "%HQ Ciblé",
-      "Use_rotation_as_seed": "Use current rotation as starting point",
+      "Use_rotation_as_seed": "Utiliser la rotation actuelle comme point de départ",
       "Disclaimer": "Le solveur est un travail en cours, veuillez garder à l'esprit qu'il n'est pas fait pour créer des rotations parfaites, c'est une IA qui essaie de s'améliorer avec le temps qui peut produire des résultats très mauvais ainsi que de très bons résultats. Veuillez ne pas signaler de mauvais résultats comme bug."
     },
     "COMMUNITY_ROTATIONS": {
