@@ -413,7 +413,10 @@
       "Give_list_name": "Give your new list a name",
       "Final_step": "Validation",
       "Creating_list": "Creating the list",
-      "Loading_items": "Loading items informations"
+      "Loading_items": "Loading items informations",
+      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Group_together": "Group materias together"
     }
   },
   "LIST": {

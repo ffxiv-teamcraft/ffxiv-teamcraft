@@ -1,35 +1,47 @@
 import { ExternalListLinkParser } from './external-list-link-parser';
-import { Observable } from 'rxjs/Observable';
+import { Observable, of, forkJoin } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, mergeMap, switchMap } from 'rxjs/operators';
 import { AriyalaMateria } from './aryiala-materia';
+import { AriyalaMateriaOptions } from './ariyala-materia-options';
+import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 
 export class AriyalaLinkParser implements ExternalListLinkParser {
   private static API_URL = 'https://us-central1-ffxivteamcraft.cloudfunctions.net/ariyala-api?identifier=';
 
-  private static REGEXP = /http:\/\/ffxiv\.ariyala\.com\/([A-Z0-9]+)/i;
+  private static REGEXP = /https?:\/\/ffxiv\.ariyala\.com\/([A-Z0-9]+)/i;
 
-  // Source: garlandtools, given by Clorifex.
+  // Source: ToolkitData.MateriaSuccessRates from ffxiv.ariyala.com
   private static MELDING_RATES = [
     // Sockets
-    //2, 3,  4,  5     // Tier
-    [45, 24, 14, 8],   // I
-    [41, 22, 13, 8],   // II
-    [35, 19, 11, 7],   // III
-    [29, 16, 10, 6],   // IV
+    //2, 3,  4,  5    // Tier
+    [90, 48, 28, 16], // I
+    [82, 44, 26, 16], // II
+    [70, 38, 22, 14], // III
+    [58, 32, 20, 12], // IV
     [17, 10, 7, 5],   // V
-    [17, 0, 0, 0]    // VI
+    [17, 0, 0, 0],    // VI
+    [17, 10, 7, 5],   // VII
+    [17, 0, 0, 0]     // VIII
   ];
 
-  constructor(private http: HttpClient) {
+  private materiaOptions: AriyalaMateriaOptions;
+
+  constructor(private http: HttpClient, private xivapi: XivapiService) {
   }
 
   canParse(url: string): boolean {
     return AriyalaLinkParser.REGEXP.test(url);
   }
 
+  setMateriaOptions(materiaOptions : AriyalaMateriaOptions): void {
+    this.materiaOptions = materiaOptions;
+  }
+
   parse(url: string): Observable<string> {
     const identifier: string = url.match(AriyalaLinkParser.REGEXP)[1];
+    const { estimateOvermeldMateria, groupTogether } = this.materiaOptions;
+
     return this.http.get<any>(`${AriyalaLinkParser.API_URL}${identifier}`).pipe(
       map(data => {
         let dataset = data.datasets[data.content];
@@ -37,11 +49,35 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
         if (dataset === undefined) {
           dataset = data.datasets[Object.keys(data.datasets)[0]];
         }
-        return dataset.normal;
+
+        const job = data.content;
+        const gear = dataset.normal;
+        gear.job = job;
+        return gear;
+      }),
+      switchMap(gear => {
+        // Retrieve number of overmeld slots from api, to properly calculate success rates
+        if (estimateOvermeldMateria) {
+          return forkJoin(Object.entries(gear.items).map(([k, itemId]) => {
+            return this.xivapi.get(XivapiEndpoint.Item, itemId as number);
+          })).pipe(
+            map(itemData => {
+              gear.itemMateriaSlots = itemData.map(id => id.MateriaSlotCount);
+              return gear;
+            })
+          );
+        } else {
+          return of(gear);
+        }
       }),
       map(gear => {
         const entries: string[] = [];
-        Object.keys(gear.items).forEach(slot => {
+        const materiaTotals: { [materiaId: number]: number } = {};
+
+        Object.keys(gear.items).forEach((slot, itemIndex) => {
+          const item = gear.items[slot];
+          const isTool = slot.indexOf('hand') > -1;
+
           let quantity = 1;
           if (slot.indexOf('ring') > -1) {
             quantity = 2;
@@ -49,14 +85,35 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
           if (slot === 'food') {
             quantity = 30;
           }
-          entries.push(`${gear.items[slot]},null,${quantity}`);
-          const materias: string[] = gear.materiaData[`${slot}-${gear.items[slot]}`];
+          entries.push(`${item},null,${quantity}`);
+
+          const materias: string[] = gear.materiaData[`${slot}-${item}`];
           if (materias !== undefined) {
-            entries.push(...materias.map(materia => {
-              return `${AriyalaMateria[materia]},null,${1}`;
-            }));
+            materias.forEach((materia, i) => {
+              const materiaQuantity = estimateOvermeldMateria
+                  ? this.calcMateriaQuantity(materia, i + 1, gear.itemMateriaSlots[itemIndex], gear.job, isTool)
+                  : 1;
+              if (groupTogether) {
+                if (materia in materiaTotals) {
+                  materiaTotals[materia] += materiaQuantity;
+                } else {
+                  materiaTotals[materia] = materiaQuantity;
+                }
+              } else {
+                entries.push(`${AriyalaMateria[materia]},null,${Math.ceil(materiaQuantity)}`);
+              }
+            });
           }
         });
+
+        if (groupTogether) {
+          Object.keys(materiaTotals).sort().forEach(materia => {
+            const materiaId = AriyalaMateria[materia];
+            const quantity = materiaTotals[materia];
+            entries.push(`${materiaId},null,${Math.ceil(quantity)}`);
+          });
+        }
+
         return btoa(entries.join(';'));
       })
     );
@@ -66,4 +123,20 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
     return 'Ariyala';
   }
 
+  private calcMateriaQuantity(materia: string, slot: number, materiaSlots: number, job: string, isTool: boolean): number {
+    const grade = parseInt(materia.split(':')[1], 10) + 1;
+    const overmeldSlot = slot - materiaSlots;
+    const chance = overmeldSlot <= 0 ? 100 : AriyalaLinkParser.MELDING_RATES[grade - 1][overmeldSlot - 1];
+    const isGatherer = [ 'MIN', 'BTN', 'FSH' ].indexOf(job) > -1;
+    const isCrafter = [ 'CRP', 'BSM', 'ARM', 'GSM', 'LTW', 'WVR', 'ALC', 'CUL' ].indexOf(job) > -1;
+    let mul = 1;
+    if (isTool && this.materiaOptions.multiplyToolMateria) {
+      if (isGatherer) mul = 2;
+      if (isCrafter) mul = 8;
+    }
+
+    const amount = (1 / (chance / 100)) * mul;
+    return amount;
+  }
 }
+
