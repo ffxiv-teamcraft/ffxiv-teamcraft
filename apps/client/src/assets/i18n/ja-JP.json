@@ -1331,7 +1331,7 @@
       "Show_more": "{{amount}} 件のコメントを見る",
       "No_comments": "コメントなし",
       "Post": "投稿",
-      "Editor_tip": "コメント内のデータベースリンクは自動にDBに変換されます。"
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     }
   },
   "SEARCH_TYPES": {
