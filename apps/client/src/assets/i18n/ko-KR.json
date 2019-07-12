@@ -413,7 +413,10 @@
       "Give_list_name": "새 목록 이름 설정",
       "Final_step": "확인",
       "Creating_list": "목록 생성",
-      "Loading_items": "아이템 정보 불러오는 중"
+      "Loading_items": "아이템 정보 불러오는 중",
+      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Group_together": "Group materias together"
     }
   },
   "LIST": {
