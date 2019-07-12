@@ -36,7 +36,7 @@
                    [class.not-verified]="comment.author && !(comment.author | isVerified | async)"></nz-avatar>
         <nz-comment-content>
           <p *ngIf="!comment.deleted; else deletedComment"
-             [innerHTML]="comment.message | commentLinks:translate.currentLang"
+             [innerHTML]="comment.message | commentLinks:translate.currentLang:comment"
              (click)="$event.preventDefault(); handleClick($event)"></p>
           <ng-template #deletedComment>
             <p><i class="deleted">{{'DB.COMMENTS.Deleted_comment' | translate}}</i></p>

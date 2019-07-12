@@ -323,7 +323,7 @@ export class LocalizedDataService {
    * @param language
    * @returns {number}
    */
-  private getIndexByName(array: any, name: string, language: string): number {
+  public getIndexByName(array: any, name: string, language: string): number {
     if (array === undefined) {
       return -1;
     }
@@ -333,7 +333,14 @@ export class LocalizedDataService {
     let res = -1;
     const keys = Object.keys(array);
     for (const key of keys) {
-      if (array[key][language].toLowerCase() === name.toLowerCase()) {
+      if (!array[key]) {
+        continue;
+      }
+      if (array[key].name && array[key].name[language].toLowerCase() === name.toLowerCase()) {
+        res = +key;
+        break;
+      }
+      if (array[key][language] && array[key][language].toLowerCase() === name.toLowerCase()) {
         res = +key;
         break;
       }
