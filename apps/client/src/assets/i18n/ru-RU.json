@@ -1331,7 +1331,7 @@
       "Show_more": "Показать еще {{amount}} комментариев",
       "No_comments": "Нет комментариев",
       "Post": "Разместить",
-      "Editor_tip": "Ссылки на базу данных будут обработаны и заменены гиперссылками в вашем сообщении."
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     }
   },
   "SEARCH_TYPES": {
