@@ -342,7 +342,7 @@
     "Clear_search_history": "검색 기록 삭제",
     "Auto_mark_as_done_in_log": "목록에서 완료된 아이템이 있으면 수첩에 해당 아이템을 완료됨이라고 표시",
     "Db_comments_position": "DB댓글 위치",
-    "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
     "Clickthrough_overlay": "Make overlay clickthrough",
     "COLORS": {
       "Background": "배경 색상",
@@ -413,7 +413,10 @@
       "Give_list_name": "새 목록 이름 설정",
       "Final_step": "확인",
       "Creating_list": "목록 생성",
-      "Loading_items": "아이템 정보 불러오는 중"
+      "Loading_items": "아이템 정보 불러오는 중",
+      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Group_together": "Group materias together"
     }
   },
   "LIST": {
@@ -1254,7 +1257,7 @@
       "Rewards": "획득 가능한 보상",
       "Client": "의뢰인",
       "Issuer": "발행인",
-      "Turn_ins": "Turn-ins"
+      "Turn_ins": "추가 요구 횟수"
     },
     "MOB": {
       "Known_spawns": "몬스터 출현 장소",
@@ -1328,7 +1331,7 @@
       "Show_more": "{{amount}} 개의 댓글 더 보기",
       "No_comments": "댓글 없음",
       "Post": "게시",
-      "Editor_tip": "댓글 내 데이터베이스 링크는 자동으로 DB로 변환됩니다."
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     }
   },
   "SEARCH_TYPES": {

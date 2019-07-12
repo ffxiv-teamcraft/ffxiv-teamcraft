@@ -413,7 +413,10 @@
       "Give_list_name": "新しいリストに名前を付ける",
       "Final_step": "検証",
       "Creating_list": "リストを作成する",
-      "Loading_items": "アイテム情報を読み込み中"
+      "Loading_items": "アイテム情報を読み込み中",
+      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Group_together": "Group materias together"
     }
   },
   "LIST": {
@@ -1328,7 +1331,7 @@
       "Show_more": "{{amount}} 件のコメントを見る",
       "No_comments": "コメントなし",
       "Post": "投稿",
-      "Editor_tip": "コメント内のデータベースリンクは自動にDBに変換されます。"
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     }
   },
   "SEARCH_TYPES": {

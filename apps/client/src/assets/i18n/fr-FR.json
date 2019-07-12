@@ -413,7 +413,10 @@
       "Give_list_name": "Donnez un nom à la liste",
       "Final_step": "Validation",
       "Creating_list": "Création de la liste en cours",
-      "Loading_items": "Chargement des informations sur les objets"
+      "Loading_items": "Chargement des informations sur les objets",
+      "Estimate_overmeld_materia": "Estimer le nombre de matérias requises",
+      "Multiply_tool_materia": "Compter les outils dans l'estimation de matérias",
+      "Group_together": "Grouper les matérias ensemble"
     }
   },
   "LIST": {
@@ -1328,7 +1331,7 @@
       "Show_more": "Afficher {{amount}} commentaires supplémentaires",
       "No_comments": "Aucun commentaire",
       "Post": "Publier",
-      "Editor_tip": "Les liens de base de données seront traités et remplacés par des liens hypertexte dans votre message."
+      "Editor_tip": "Tapez <page type>:\"<Content Name>\" pour créer un lien vers une autre page. Exemples : item:\"Curtana\", action:\"Travail de base\", map:\"Cristarium\". Types de pages supportés: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     }
   },
   "SEARCH_TYPES": {
