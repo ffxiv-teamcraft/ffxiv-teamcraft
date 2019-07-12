@@ -7,7 +7,7 @@ import { AriyalaMateria } from './aryiala-materia';
 export class AriyalaLinkParser implements ExternalListLinkParser {
   private static API_URL = 'https://us-central1-ffxivteamcraft.cloudfunctions.net/ariyala-api?identifier=';
 
-  private static REGEXP = /http:\/\/ffxiv\.ariyala\.com\/([A-Z0-9]+)/i;
+  private static REGEXP = /https?:\/\/ffxiv\.ariyala\.com\/([A-Z0-9]+)/i;
 
   // Source: garlandtools, given by Clorifex.
   private static MELDING_RATES = [
