@@ -1331,7 +1331,7 @@
       "Show_more": "Afficher {{amount}} commentaires supplémentaires",
       "No_comments": "Aucun commentaire",
       "Post": "Publier",
-      "Editor_tip": "Les liens de base de données seront traités et remplacés par des liens hypertexte dans votre message."
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     }
   },
   "SEARCH_TYPES": {
