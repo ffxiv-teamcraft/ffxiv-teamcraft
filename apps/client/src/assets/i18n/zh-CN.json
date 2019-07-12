@@ -413,7 +413,10 @@
       "Give_list_name": "新清单名",
       "Final_step": "验证",
       "Creating_list": "正在创建清单",
-      "Loading_items": "正在加载物品信息"
+      "Loading_items": "正在加载物品信息",
+      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Group_together": "Group materias together"
     }
   },
   "LIST": {
