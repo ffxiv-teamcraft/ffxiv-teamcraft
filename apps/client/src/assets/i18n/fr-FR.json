@@ -414,9 +414,9 @@
       "Final_step": "Validation",
       "Creating_list": "Création de la liste en cours",
       "Loading_items": "Chargement des informations sur les objets",
-      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
-      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
-      "Group_together": "Group materias together"
+      "Estimate_overmeld_materia": "Estimer le nombre de matérias requises",
+      "Multiply_tool_materia": "Compter les outils dans l'estimation de matérias",
+      "Group_together": "Grouper les matérias ensemble"
     }
   },
   "LIST": {
@@ -1331,7 +1331,7 @@
       "Show_more": "Afficher {{amount}} commentaires supplémentaires",
       "No_comments": "Aucun commentaire",
       "Post": "Publier",
-      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "Tapez <page type>:\"<Content Name>\" pour créer un lien vers une autre page. Exemples : item:\"Curtana\", action:\"Travail de base\", map:\"Cristarium\". Types de pages supportés: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     }
   },
   "SEARCH_TYPES": {
