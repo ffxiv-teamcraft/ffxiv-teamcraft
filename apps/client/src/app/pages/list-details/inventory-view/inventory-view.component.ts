@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { List } from '../../../modules/list/model/list';
 import { Inventory } from '../../../model/other/inventory';
-import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import { NzMessageService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-inventory-view',
@@ -23,8 +24,8 @@ export class InventoryViewComponent {
 
   public showFinalItems$ = new BehaviorSubject<boolean>(true);
 
-  public constructor() {
-    this.display$ = combineLatest(this.list$, this.showFinalItems$).pipe(
+  public constructor(private messageService: NzMessageService, private translate: TranslateService) {
+    this.display$ = combineLatest([this.list$, this.showFinalItems$]).pipe(
       map(([list, showFinalitems]) => {
         const inventory = new Inventory();
         list.items.forEach(item => {
@@ -38,6 +39,10 @@ export class InventoryViewComponent {
         return inventory.getDisplay();
       })
     );
+  }
+
+  copied(key: string, args?: any): void {
+    this.messageService.success(this.translate.instant(key, args));
   }
 
 }
