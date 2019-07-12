@@ -1254,7 +1254,7 @@
       "Rewards": "획득 가능한 보상",
       "Client": "의뢰인",
       "Issuer": "발행인",
-      "Turn_ins": "Turn-ins"
+      "Turn_ins": "추가 요구 횟수"
     },
     "MOB": {
       "Known_spawns": "몬스터 출현 장소",
