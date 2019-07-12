@@ -62,7 +62,7 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
             return this.xivapi.get(XivapiEndpoint.Item, itemId as number);
           })).pipe(
             map(itemData => {
-              gear.itemMateriaSlots = itemData.map(itemData => itemData.MateriaSlotCount);
+              gear.itemMateriaSlots = itemData.map(id => id.MateriaSlotCount);
               return gear;
             })
           );
@@ -124,7 +124,7 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
   }
 
   private calcMateriaQuantity(materia: string, slot: number, materiaSlots: number, job: string, isTool: boolean): number {
-    const grade = parseInt(materia.split(':')[1]) + 1;
+    const grade = parseInt(materia.split(':')[1], 10) + 1;
     const overmeldSlot = slot - materiaSlots;
     const chance = overmeldSlot <= 0 ? 100 : AriyalaLinkParser.MELDING_RATES[grade - 1][overmeldSlot - 1];
     const isGatherer = [ 'MIN', 'BTN', 'FSH' ].indexOf(job) > -1;

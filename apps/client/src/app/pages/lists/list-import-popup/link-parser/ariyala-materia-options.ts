@@ -3,5 +3,5 @@ export class AriyalaMateriaOptions {
   
     multiplyToolMateria: boolean;
 
-    groupTogether: boolean = true;
+    groupTogether = true;
 }
