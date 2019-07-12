@@ -302,17 +302,6 @@ export class AppComponent implements OnInit {
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
   }
 
-  openSimulator(): void {
-    this.dialog.create({
-      nzFooter: null,
-      nzContent: RecipeChoicePopupComponent,
-      nzComponentParams: {
-        showCustom: true
-      },
-      nzTitle: this.translate.instant('Pick_a_recipe')
-    });
-  }
-
   getPathname(): string {
     return this.router.url;
   }
