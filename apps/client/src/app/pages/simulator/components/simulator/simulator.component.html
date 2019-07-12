@@ -336,9 +336,20 @@
               </div>
               <div fxLayout="column">
                 <div fxLayout="row" fxLayoutGap="5px">
-                  <div>{{item.id | itemName | i18n}}</div>
-                  <div *ngIf="resultData.simulation.recipe.element">
-                    <img [src]="resultData.simulation.recipe.element | elementIcon" alt="" class="affinity-icon">
+                  <div>
+                    <span class="item-name" ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
+                             *ngIf="settings.preferredCopyType === 'classic'"
+                             [nzTitle]="'Copy_item_name_to_clipboard' | translate"
+                             (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})">
+                      {{item.id | itemName | i18n}}
+                    </span>
+                    <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
+                          nz-tooltip
+                          *ngIf="settings.preferredCopyType === 'isearch'"
+                          [nzTitle]="'Copy_isearch' | translate"
+                          (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})">
+                      {{item.id | itemName | i18n}}
+                    </span>
                   </div>
                   <button nz-button nzSize="small" nzShape="circle" (click)="changeRecipe(rotation)" nz-tooltip
                           [nzTitle]="'SIMULATOR.Change_recipe' | translate">

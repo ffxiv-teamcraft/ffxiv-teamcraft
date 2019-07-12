@@ -413,7 +413,10 @@
       "Give_list_name": "新清单名",
       "Final_step": "验证",
       "Creating_list": "正在创建清单",
-      "Loading_items": "正在加载物品信息"
+      "Loading_items": "正在加载物品信息",
+      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Group_together": "Group materias together"
     }
   },
   "LIST": {
@@ -1328,7 +1331,7 @@
       "Show_more": "查看其他{{amount}} 个评论",
       "No_comments": "暂无评论",
       "Post": "发布",
-      "Editor_tip": "数据库链接将被生成在您的消息中。"
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     }
   },
   "SEARCH_TYPES": {

@@ -66,6 +66,7 @@ import {
   SimulationResult
 } from '@ffxiv-teamcraft/simulator';
 import { SolverPopupComponent } from '../solver-popup/solver-popup.component';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-simulator',
@@ -226,7 +227,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
   };
 
-  constructor(private htmlTools: HtmlToolsService,
+  constructor(private htmlTools: HtmlToolsService, public settings: SettingsService,
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
@@ -284,6 +285,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.dirty = true;
       this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
     });
+  }
+
+  nameCopied(key: string, args?: any): void {
+    this.message.success(this.translate.instant(key, args));
   }
 
   disableEvent(event: any): void {

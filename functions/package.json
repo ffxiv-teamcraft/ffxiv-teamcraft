@@ -15,8 +15,8 @@
     "protobufjs": "^6.8.4",
     "url": "^0.11.0",
     "@google-cloud/translate": "^4.0.1",
-    "@ffxiv-teamcraft/crafting-solver": "^1.1.1",
-    "@ffxiv-teamcraft/simulator": "^1.2.5"
+    "@ffxiv-teamcraft/crafting-solver": "^1.2.0",
+    "@ffxiv-teamcraft/simulator": "^1.2.8"
   },
   "devDependencies": {
     "firebase-functions-test": "^0.1.6",

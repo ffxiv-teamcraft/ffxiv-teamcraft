@@ -230,4 +230,21 @@ export class LazyDataService {
       this.loaded$.complete();
     });
   }
+
+  public merge(...dataEntries: any[]): any {
+    return dataEntries.reduce((merged, entry) => {
+      Object.keys(entry)
+        .forEach(key => {
+          if (merged[key] !== undefined) {
+            Object.keys(entry[key])
+              .forEach(lang => {
+                merged[key][lang] = entry[key][lang];
+              });
+          } else {
+            merged[key] = merged[key] || entry[key];
+          }
+        });
+      return merged;
+    }, {});
+  }
 }

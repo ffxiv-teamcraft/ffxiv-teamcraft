@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.11"></a>
+## [5.6.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.10...v5.6.11) (2019-07-12)
+
+
+### Bug Fixes
+
+* **ariyala:** support ariyala HTTPS link import ([2f1e0b9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f1e0b9))
+* solve some linting issues ([bcdedfa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bcdedfa))
+* **simulator:** ingenuity fixes on lower levels and solver improvements ([02005b9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/02005b9))
+* **simulator:** simulator sidebar button now acts like a link ([14a8f4b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/14a8f4b))
+* **ui:** fixed alignment in levequests page ([927f55d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/927f55d))
+
+
+### Features
+
+* enhance ariyala link parser with materia estimator ([6b01711](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6b01711))
+* **db:** added links syntax support in comments ([8b75371](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8b75371))
+* **inventory:** added isearch copy on icon click ([05c7f36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/05c7f36))
+* **simulator:** added copy on click on recipe's name ([95bf4a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/95bf4a7))
+
+
+
 <a name="5.6.10"></a>
 ## [5.6.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.9...v5.6.10) (2019-07-11)
 
