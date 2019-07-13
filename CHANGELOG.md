@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.12"></a>
+## [5.6.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.11...v5.6.12) (2019-07-13)
+
+
+### Bug Fixes
+
+* **ariyala:** fixed issue with fighting materias not imported properly ([91d582a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/91d582a))
+* **desktop:** fixed clickthrough setting applying on restart ([e9c8d89](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e9c8d89))
+
+
+### Features
+
+* added proper error detection for http requests ([a20a48e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a20a48e))
+
+
+
 <a name="5.6.11"></a>
 ## [5.6.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.10...v5.6.11) (2019-07-12)
 
