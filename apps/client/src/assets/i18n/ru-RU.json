@@ -1404,5 +1404,8 @@
   },
   "BLOG": {
     "Title": "Блог"
+  },
+  "ERRORS": {
+    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel"
   }
 }
