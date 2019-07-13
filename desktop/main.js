@@ -199,6 +199,7 @@ function openOverlay(url) {
   Object.assign(opts, config.get(`overlay:${url}:bounds`));
   opts.opacity = config.get(`overlay:${url}:opacity`) || 1;
   const overlay = new BrowserWindow(opts);
+  overlay.setIgnoreMouseEvents(config.set('clickthrough'));
 
   overlay.once('ready-to-show', () => {
     overlay.show();
@@ -307,6 +308,7 @@ autoUpdater.on('update-downloaded', () => {
 
 ipcMain.on('apply-settings', (event, settings) => {
   try {
+    config.set('clickthrough', settings.clickthrough === 'true');
     Object.keys(openedOverlays).forEach(key => {
       openedOverlays[key].setIgnoreMouseEvents(settings.clickthrough === 'true');
       openedOverlays[key].webContents.send('update-settings', settings);

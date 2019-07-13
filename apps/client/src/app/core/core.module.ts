@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { GarlandToolsService } from './api/garland-tools.service';
 import { DataService } from './api/data.service';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
@@ -39,6 +39,7 @@ import { DbItemCommentNotification } from '../model/notification/db-item-comment
 import { DbCommentReplyNotification } from '../model/notification/db-comment-reply-notification';
 import { AdminGuard } from './guard/admin.guard';
 import { BlogPostNotification } from '../model/notification/blog-post-notification';
+import { ErrorInterceptor } from './interceptor/error-interceptor';
 
 
 @NgModule({
@@ -113,7 +114,7 @@ export class CoreModule {
         EorzeanTimeService,
         CharacterService,
         IpcService,
-        LocalizedDataService
+        LocalizedDataService, { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
       ]
     };
   }
