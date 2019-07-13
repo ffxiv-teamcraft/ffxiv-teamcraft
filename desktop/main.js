@@ -199,7 +199,7 @@ function openOverlay(url) {
   Object.assign(opts, config.get(`overlay:${url}:bounds`));
   opts.opacity = config.get(`overlay:${url}:opacity`) || 1;
   const overlay = new BrowserWindow(opts);
-  overlay.setIgnoreMouseEvents(config.set('clickthrough'));
+  overlay.setIgnoreMouseEvents(config.get('clickthrough') || false);
 
   overlay.once('ready-to-show', () => {
     overlay.show();
