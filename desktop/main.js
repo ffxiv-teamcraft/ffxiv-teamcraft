@@ -243,7 +243,7 @@ function createTray() {
       label: 'Alarm Overlay',
       type: 'normal',
       click: () => {
-        openOverlay('/alarms-overlay');
+        openOverlay({ url: '/alarms-overlay' });
       }
     }
   ]);
