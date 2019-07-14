@@ -1219,6 +1219,11 @@
     "3d_model_help": "Preview 3D model",
     "Achievements": "Achievements",
     "Currencies": "Currencies",
+    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "ITEM": {
+      "Masterpiece_base": "BASE",
+      "Masterpiece_bonus": "BONUS"
+    },
     "NODE": {
       "Items": "Items",
       "Possible_bonuses": "Possible bonuses",

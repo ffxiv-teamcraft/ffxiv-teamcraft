@@ -388,6 +388,15 @@ export class ItemComponent extends TeamcraftPageComponent {
               })
           });
         }
+        if (data.item.masterpiece !== undefined) {
+          usedFor.push({
+            type: UsedForType.ROWENA_SPLENDOR,
+            flex: '1 1 auto',
+            title: 'DB.Rowena_splendor',
+            icon: './assets/icons/status/collectors_glove.png',
+            masterpiece: data.item.masterpiece
+          });
+        }
         if (data.item.desynthedTo !== undefined) {
           usedFor.push({
             type: UsedForType.DESYNTH,
