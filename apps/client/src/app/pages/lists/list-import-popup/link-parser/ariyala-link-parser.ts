@@ -76,7 +76,7 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
 
         Object.keys(gear.items).forEach((slot, itemIndex) => {
           const item = gear.items[slot];
-          const isTool = slot.indexOf('hand') > -1;
+          const isTool = slot.startsWith('mainhand') || slot.startsWith('offhand');
 
           let quantity = 1;
           if (slot.indexOf('ring') > -1) {
