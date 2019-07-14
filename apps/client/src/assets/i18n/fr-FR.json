@@ -370,13 +370,13 @@
     "Patreon_features": "Fonctionnalités réservées aux supporters patreon",
     "Contacts": "Contacts",
     "Add_new_contact": "Nouveau contact",
-    "Save_for_all": "Sauvegarder pour tous",
+    "Save_for_all": "Save for all crafters",
     "User_not_verified": "Utilisateur non vérifié, cliquez pour vérifier",
     "More_than_100_lists_created": "Plus de 100 listes créées",
     "Veteran": "Vétéran",
     "VERIFICATION": {
       "Title": "Vérification de personnage",
-      "Guide": "Pour vérifier votre compte, collez ce code : \"{{userId}}\" dans votre biographie sur Lodestone et cliquez sur le bouton ci-dessous pour valider.",
+      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "Personnage vérifié ! Vous pouvez maintenant fermer cette fenêtre contextuelle. N’hésitez pas à supprimer le code de votre profil, il n’est plus nécessaire.",
       "Error": "Code introuvable dans votre description, merci de vous assurer que vous l'avez bien placé dans la description et sauvegardé les changements, puis attendez 30 s ~ et réessayez.",
       "Validate": "Valider"
@@ -732,6 +732,7 @@
     "Macrolock": "Inclure macrolock",
     "Solve_rotation": "Résoudre cette rotation",
     "Rotation_solver": "Résolveur de rotations",
+    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "SOLVER": {
       "Hq_target": "%HQ Ciblé",
       "Use_rotation_as_seed": "Utiliser la rotation actuelle comme point de départ",
@@ -1218,6 +1219,11 @@
     "3d_model_help": "Aperçu du modèle 3D",
     "Achievements": "Haut-faits",
     "Currencies": "Devises",
+    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "ITEM": {
+      "Masterpiece_base": "BASE",
+      "Masterpiece_bonus": "BONUS"
+    },
     "NODE": {
       "Items": "Objets",
       "Possible_bonuses": "Bonus possibles",
