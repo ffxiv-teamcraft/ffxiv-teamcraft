@@ -79,7 +79,7 @@
           <nz-list-item fxLayout="row wrap" fxFlex="1 1 auto" [nzContent]="content">
             <label nz-checkbox class="select-box" [(ngModel)]="leve.selected"
                    (ngModelChange)="updateAllSelected(results)"></label>
-            <nz-list-item-meta                                [nzTitle]="title"
+            <nz-list-item-meta [nzTitle]="title"
                                [nzAvatar]="avatar"
                                [nzDescription]="description">
               <ng-template #title>
@@ -155,6 +155,9 @@
           </nz-list-item>
         </ng-template>
       </nz-list>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <button nz-button (click)="addSelectedLevesToList(results)">{{'LISTS.Add_selection' | translate}}</button>
+      </div>
     </app-page-loader>
   </div>
   <div *ngIf="results.length === 0">
