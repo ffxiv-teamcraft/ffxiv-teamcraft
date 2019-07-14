@@ -49,7 +49,7 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   public openOverlay(): void {
-    this.ipc.send('overlay', '/alarms-overlay');
+    this.ipc.openOverlay('/alarms-overlay', '/alarms-overlay');
   }
 
   trackByAlarm(index: number, display: AlarmDisplay): string {

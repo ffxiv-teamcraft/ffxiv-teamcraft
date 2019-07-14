@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { PlatformService } from '../tools/platform.service';
 import { IpcRenderer } from 'electron';
 import { Router } from '@angular/router';
+import { Vector2 } from '../tools/vector2';
 
 @Injectable()
 export class IpcService {
 
+  public static readonly ROTATION_DEFAULT_DIMENSIONS = { x: 600, y: 200 };
 
   private readonly _ipc: IpcRenderer | undefined = undefined;
 
@@ -45,6 +47,14 @@ export class IpcService {
     if (this._ipc !== undefined) {
       return this._ipc.send(channel, data);
     }
+  }
+
+  public openOverlay(url: string, registrationUri: string, defaultDimensions?: Vector2): void {
+    this.send('overlay', {
+      url: url,
+      registrationUri: registrationUri,
+      defaultDimensions: defaultDimensions
+    });
   }
 
   private connectListeners(): void {

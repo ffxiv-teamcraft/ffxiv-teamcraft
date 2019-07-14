@@ -1,18 +1,3 @@
-<div class="overlay-topbar" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-between center">
-  <div fxLayoutGap="5px" fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-start center">
-    <div class="drag-handle">
-      <i nz-icon type="drag"></i>
-    </div>
-    <i nz-icon type="eye"></i>
-    <nz-slider fxFlex="1 1 auto" [nzMin]="20" [nzMax]="100" [ngModel]="overlayOpacity"
-               (ngModelChange)="setOverlayOpacity($event)"></nz-slider>
-    <i nz-icon type="sound" *ngIf="!settings.alarmsMuted" (click)="settings.alarmsMuted = true"></i>
-    <i nz-icon iconfont="icon-mute" *ngIf="settings.alarmsMuted" (click)="settings.alarmsMuted = false"></i>
-  </div>
-  <div class="close-button">
-    <i nz-icon type="close" (click)="close()"></i>
-  </div>
-</div>
-<div class="alarms-overlay-container">
+<app-overlay-container uri="/alarms-overlay">
   <app-alarms-sidebar [overlayMode]="true"></app-alarms-sidebar>
-</div>
+</app-overlay-container>
