@@ -93,6 +93,11 @@
           </button>
         </ng-container>
       </ng-container>
+      <button nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
+              [nzTitle]="'ALARMS.Open_overlay' | translate" (nzOnConfirm)="openOverlay(rotation)"
+              *ngIf="platformService.isDesktop()">
+        <i nz-icon type="desktop"></i>
+      </button>
     </div>
     <div fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 auto" class="simulator">
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">

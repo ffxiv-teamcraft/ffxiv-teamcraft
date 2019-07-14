@@ -153,7 +153,8 @@ const routes: Routes = [
   ],
   exports: [
     RotationPanelComponent,
-    RotationFolderPanelComponent
+    RotationFolderPanelComponent,
+    ActionComponent
   ],
   entryComponents: [
     MacroPopupComponent,

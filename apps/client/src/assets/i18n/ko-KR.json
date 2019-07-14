@@ -142,7 +142,7 @@
     "Custom_sound": "알람소리 사용자 지정",
     "New_group": "새로운 알람 그룹",
     "Confirm_group_delete": "정말 이 그룹을 삭제하시겠습니까?",
-    "Delete_group_and_alarms": "Delete group with all alarms",
+    "Delete_group_and_alarms": "그룹과 그룹 내 모든 알람 지우기",
     "Confirm_group_delete_with_alarms": "정말로 이 그룹과 그 안에 있는 알람을 지우시겠습니까?",
     "Add_note": "메모 추가",
     "Volume": "볼륨",
@@ -192,7 +192,7 @@
   "No": "X",
   "Crystals": "크리스탈",
   "Gathering": "획득력",
-  "Drops_or_GC": "Dungeons/Drops or GC",
+  "Drops_or_GC": "던전/전리품 또는 총사령부",
   "Other": "기타",
   "Pre_crafts": "밑재료",
   "Items": "아이템",
@@ -343,7 +343,7 @@
     "Auto_mark_as_done_in_log": "목록에서 완료된 아이템이 있으면 수첩에 해당 아이템을 완료됨이라고 표시",
     "Db_comments_position": "DB댓글 위치",
     "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
-    "Clickthrough_overlay": "Make overlay clickthrough",
+    "Clickthrough_overlay": "오버레이 클릭 무시",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -414,9 +414,9 @@
       "Final_step": "확인",
       "Creating_list": "목록 생성",
       "Loading_items": "아이템 정보 불러오는 중",
-      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
-      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
-      "Group_together": "Group materias together"
+      "Estimate_overmeld_materia": "금단에 필요한 마테리아 갯수 예측",
+      "Multiply_tool_materia": "채집가(x2)와 제작자(x8) 도구에 해당하는 마테리아 합산",
+      "Group_together": "마테리아도 함께 묶기"
     }
   },
   "LIST": {
@@ -734,7 +734,7 @@
     "Rotation_solver": "로테이션 생성기",
     "SOLVER": {
       "Hq_target": "HQ 목표치",
-      "Use_rotation_as_seed": "Use current rotation as starting point",
+      "Use_rotation_as_seed": "현재 로테이션을 시작점부터 사용",
       "Disclaimer": "해당 기능은 현재 개발중입니다. 이 기능은 시간에 따라 발전하는 AI이며, 완벽한 로테이션을 구성하기 위해 만들어진 것이 아닙니다. 매우 나쁜 결과가 나올 수도 있지만 매우 좋은 결과 또한 나올 수 있습니다. 좋지 않은 결과가 나오더라도 해당 결과를 버그로 제출하지 마세요."
     },
     "COMMUNITY_ROTATIONS": {
@@ -1163,7 +1163,7 @@
     "Unique": "고유 아이템",
     "Dyeable": "염색가능",
     "Materia_sockets": "마테리아 슬롯",
-    "Advanced_melding": "마테리아화",
+    "Advanced_melding": "금단 장착",
     "Repair_job": "수리 직업",
     "Class_job": "클래스/직업",
     "Delay": "공격 주기",
@@ -1331,7 +1331,7 @@
       "Show_more": "{{amount}} 개의 댓글 더 보기",
       "No_comments": "댓글 없음",
       "Post": "게시",
-      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "다른 페이지 링크를 생성하기 위해 <page type>:\"<Content Name>\"을 입력하세요. 예시: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". 지원하는 페이지 종류: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     }
   },
   "SEARCH_TYPES": {
@@ -1406,6 +1406,6 @@
     "Title": "블로그"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel"
+    "Http_request_error": "{{tool}}에 문제점이 존재합니다. #announcements 디스코드 채널을 확인하거나 #bugs 채널에 제보해주세요."
   }
 }

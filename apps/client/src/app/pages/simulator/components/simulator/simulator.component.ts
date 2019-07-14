@@ -67,6 +67,8 @@ import {
 } from '@ffxiv-teamcraft/simulator';
 import { SolverPopupComponent } from '../solver-popup/solver-popup.component';
 import { SettingsService } from '../../../../modules/settings/settings.service';
+import { IpcService } from '../../../../core/electron/ipc.service';
+import { PlatformService } from '../../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-simulator',
@@ -233,7 +235,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
-              private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef) {
+              private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
+              private ipc: IpcService, public platformService: PlatformService) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$),
       filter(key => key !== undefined)
@@ -285,6 +288,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.dirty = true;
       this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
     });
+  }
+
+  public openOverlay(rotation: CraftingRotation): void {
+    this.ipc.openOverlay(`/rotation-overlay/${rotation.$key}`, '/rotation-overlay', IpcService.ROTATION_DEFAULT_DIMENSIONS);
   }
 
   nameCopied(key: string, args?: any): void {

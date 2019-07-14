@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.13"></a>
+## [5.6.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.12...v5.6.13) (2019-07-14)
+
+
+### Bug Fixes
+
+* fixed opensearch protocol ([e5eef82](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e5eef82))
+* **ariyala:** fix 'hands' slot incorrectly regarded as tool ([72b6c3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72b6c3b))
+* **desktop:** fixed an issue with alarms overlay ([96ef909](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/96ef909))
+* **simulator:** fixed recipe informations display on rotation picker ([d106108](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d106108))
+
+
+### Features
+
+* **desktop:** added rotation overlay ([d8022d3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d8022d3))
+
+
+
 <a name="5.6.12"></a>
 ## [5.6.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.11...v5.6.12) (2019-07-13)
 
