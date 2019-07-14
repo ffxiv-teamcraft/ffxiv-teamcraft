@@ -351,27 +351,27 @@ export class SearchComponent implements OnInit {
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
-        if (f.minMax) {
-          return [
-            {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
               column: f.name,
-              operator: '>=',
-              value: f.value.min
-            },
-            {
-              column: f.name,
-              operator: '<=',
-              value: f.value.max
-            }
-          ];
-        } else {
-          return [{
-            column: f.name,
-            operator: '=',
-            value: f.value
-          }];
-        }
-      }))
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
     }).pipe(
       map(res => {
         return res.Results.map(instance => {
@@ -417,27 +417,27 @@ export class SearchComponent implements OnInit {
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
-        if (f.minMax) {
-          return [
-            {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
               column: f.name,
-              operator: '>=',
-              value: f.value.min
-            },
-            {
-              column: f.name,
-              operator: '<=',
-              value: f.value.max
-            }
-          ];
-        } else {
-          return [{
-            column: f.name,
-            operator: '=',
-            value: f.value
-          }];
-        }
-      }))
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
     }).pipe(
       map(res => {
         return res.Results.map(action => {
@@ -462,27 +462,27 @@ export class SearchComponent implements OnInit {
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
-        if (f.minMax) {
-          return [
-            {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
               column: f.name,
-              operator: '>=',
-              value: f.value.min
-            },
-            {
-              column: f.name,
-              operator: '<=',
-              value: f.value.max
-            }
-          ];
-        } else {
-          return [{
-            column: f.name,
-            operator: '=',
-            value: f.value
-          }];
-        }
-      }))
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
     }).pipe(
       map(res => {
         return res.Results.map(action => {
@@ -549,27 +549,27 @@ export class SearchComponent implements OnInit {
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
-        if (f.minMax) {
-          return [
-            {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
               column: f.name,
-              operator: '>=',
-              value: f.value.min
-            },
-            {
-              column: f.name,
-              operator: '<=',
-              value: f.value.max
-            }
-          ];
-        } else {
-          return [{
-            column: f.name,
-            operator: '=',
-            value: f.value
-          }];
-        }
-      }))
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
     }).pipe(
       map(res => {
         return res.Results.map(leve => {
@@ -1060,7 +1060,12 @@ export class SearchComponent implements OnInit {
   }
 
   public openInSimulator(itemId: number, recipeId: string): void {
-    this.rotationPicker.openInSimulator(itemId, recipeId);
+    this.data.getItem(itemId).pipe(
+      first(),
+      map(item => item.getCraft(recipeId))
+    ).subscribe((recipe) => {
+      this.rotationPicker.openInSimulator(itemId, recipeId, recipe);
+    });
   }
 
   public updateAllSelected(items: SearchResult[]): void {
