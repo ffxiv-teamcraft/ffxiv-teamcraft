@@ -370,13 +370,13 @@
     "Patreon_features": "Patreon supporter features",
     "Contacts": "Contacts",
     "Add_new_contact": "New contact",
-    "Save_for_all": "Save for all",
+    "Save_for_all": "Save for all crafters",
     "User_not_verified": "User not verified, click to verify user",
     "More_than_100_lists_created": "More than 100 lists created",
     "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "Character verification",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
+      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
       "Validate": "Validate"
@@ -732,6 +732,7 @@
     "Macrolock": "Include macro lock",
     "Solve_rotation": "Solve this rotation",
     "Rotation_solver": "Rotation solver",
+    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "SOLVER": {
       "Hq_target": "Target HQ%",
       "Use_rotation_as_seed": "Use current rotation as starting point",

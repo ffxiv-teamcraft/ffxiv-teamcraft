@@ -1,7 +1,12 @@
 <nz-alert *ngIf="warning" nzType="warning" [nzMessage]="warning | translate" nzShowIcon>
 </nz-alert>
-<input type="text" placeholder="{{'ITEMS.Item_name' | translate}}" #searchInput nz-input
-       (keyup)="query$.next(searchInput.value)" nzAutoFocus>
+<nz-input-group [nzSuffix]="suffixIconSearch">
+  <input type="text" placeholder="{{'SIMULATOR.Recipe_picker_placeholder' | translate}}" #searchInput nz-input
+         (keyup)="query$.next(searchInput.value)" nzAutoFocus>
+</nz-input-group>
+<ng-template #suffixIconSearch>
+  <i nz-icon nzType="search"></i>
+</ng-template>
 <nz-list [nzLoading]="loading" [nzRenderItem]="recipeTemplate" [nzDataSource]="results$ | async">
   <ng-template #recipeTemplate let-recipe>
     <nz-list-item [nzContent]="content">
