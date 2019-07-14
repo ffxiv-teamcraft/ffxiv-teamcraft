@@ -370,13 +370,13 @@
     "Patreon_features": "Patreon 支持者功能",
     "Contacts": "好友",
     "Add_new_contact": "添加好友",
-    "Save_for_all": "保存所有",
+    "Save_for_all": "Save for all crafters",
     "User_not_verified": "用户未验证，点击验证",
     "More_than_100_lists_created": "创建了 100+ 个清单",
     "Veteran": "老玩家",
     "VERIFICATION": {
       "Title": "角色验证",
-      "Guide": "若要验证您的账号，请将此代码 “{{userId}}” 粘贴到你的 Lodestone 个人资料中，然后点击下面的按钮。",
+      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "角色已验证！你现在可以关闭该窗口。现在你可以从你的 Lodestone 资料中移除验证代码了。",
       "Error": "无法在你的资料中找到代码。请确认你已经粘贴并保存，然后等待约 30 秒后重试。",
       "Validate": "验证"
@@ -732,6 +732,7 @@
     "Macrolock": "包含“锁定宏指令（/macrolock）”",
     "Solve_rotation": "求解其工序",
     "Rotation_solver": "工序求解器",
+    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "SOLVER": {
       "Hq_target": "目标HQ率",
       "Use_rotation_as_seed": "Use current rotation as starting point",
@@ -1218,6 +1219,11 @@
     "3d_model_help": "预览 3D 模型",
     "Achievements": "成就",
     "Currencies": "货币",
+    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "ITEM": {
+      "Masterpiece_base": "BASE",
+      "Masterpiece_bonus": "BONUS"
+    },
     "NODE": {
       "Items": "物品",
       "Possible_bonuses": "随机加成",
