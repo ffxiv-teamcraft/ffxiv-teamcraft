@@ -16,6 +16,7 @@ import { NpcData } from '../../model/garland-tools/npc-data';
 import { LeveData } from '../../model/garland-tools/leve-data';
 import { MobData } from '../../model/garland-tools/mob-data';
 import { FateData } from '../../model/garland-tools/fate-data';
+import { SearchIndex, XivapiEndpoint, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
 
 @Injectable()
 export class DataService {
@@ -35,6 +36,7 @@ export class DataService {
   constructor(private http: HttpClient,
               private i18n: TranslateService,
               private gt: GarlandToolsService,
+              private xivapi: XivapiService,
               private serializer: NgSerializerService,
               private lazyData: LazyDataService) {
   }
@@ -122,79 +124,134 @@ export class DataService {
     if (isKoOrZh) {
       lang = 'en';
     }
-    let params = new HttpParams()
-      .set('type', 'item')
-      .set('lang', lang);
 
-    if (onlyCraftable) {
-      params = params.set('craftable', '1');
-    }
+    const xivapiFilters: XivapiSearchFilter[] = [].concat.apply([], filters
+      .filter(f => {
+        return f.value !== null && ['craftJob', 'clvl'].indexOf(f.name) === -1;
+      })
+      .map(f => {
+        if (f.minMax) {
+          return [
+            {
+              column: f.name,
+              operator: '>=',
+              value: f.value.min
+            },
+            {
+              column: f.name,
+              operator: '<=',
+              value: f.value.max
+            }
+          ];
+        } else {
+          return [{
+            column: f.name,
+            operator: '=',
+            value: f.value
+          }];
+        }
+      }));
 
     let craftedByFilter: SearchFilter;
-
-    // If the lang is korean, handle it properly to map to item ids.
-    if (isKoOrZh) {
-      const ids = this.mapToItemIds(query, this.i18n.currentLang as 'ko' | 'zh');
-      params = params.set('ids', ids.join(','));
-    }
-
-    if (query !== undefined && !isKoOrZh) {
-      params = params.set('text', query);
-    }
+    let clvlFilter: SearchFilter;
 
     filters.forEach(filter => {
-      if (filter.minMax) {
-        params = params.set(`${filter.name}Min`, filter.value.min)
-          .set(`${filter.name}Max`, filter.value.max);
-      } else if (filter.name === 'jobCategories') {
-        params = params.set(filter.name, this.gt.getJobCategories(filter.value).join(','));
-      } else {
-        params = params.set(filter.name, filter.value);
-      }
       if (filter.name === 'craftJob') {
         craftedByFilter = filter;
       }
+      if (filter.name === 'clvl') {
+        clvlFilter = filter;
+      }
     });
 
-    return this.getGarlandSearch(params)
-      .pipe(
-        map(garlandResults => {
-          const results: SearchResult[] = [];
-          garlandResults.forEach(item => {
-            if (item.id.indexOf('draft') > -1) {
-              return;
-            }
-            if (item.obj.f !== undefined) {
-              item.obj.f.forEach(recipe => {
-                if (craftedByFilter !== undefined && craftedByFilter.value !== recipe.job) {
-                  return;
+    let results$ = this.xivapi.search({
+      indexes: [SearchIndex.ITEM],
+      string: query,
+      language: lang,
+      filters: xivapiFilters,
+      columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks']
+    }).pipe(
+      map(res => res.Results)
+    );
+
+    if (isKoOrZh) {
+      results$ = this.xivapi.getList(
+        XivapiEndpoint.Item,
+        {
+          ids: this.mapToItemIds(query, this.i18n.currentLang as 'ko' | 'zh')
+        }
+      ).pipe(
+        map(items => {
+          return items.Results.filter(item => {
+            return xivapiFilters.reduce((matches, filter) => {
+              switch (filter.operator) {
+                case '>=':
+                  return matches && item[filter.column] >= filter.value;
+                case '<=':
+                  return matches && item[filter.column] <= filter.value;
+                case '=':
+                  return matches && item[filter.column] === filter.value;
+                case '<':
+                  return matches && item[filter.column] < filter.value;
+                case '>':
+                  return matches && item[filter.column] > filter.value;
+              }
+            }, true);
+          });
+        })
+      );
+    }
+
+    return results$.pipe(
+      map(results => {
+        if (onlyCraftable) {
+          return results.filter(row => row.GameContentLinks && row.GameContentLinks.Recipe);
+        }
+        return results;
+      }),
+      map(xivapiSearchResults => {
+        const results: SearchResult[] = [];
+        xivapiSearchResults.forEach(item => {
+          const recipes = this.lazyData.recipes.filter(recipe => recipe.result === item.ID);
+          if (recipes.length > 0) {
+            recipes
+              .filter(recipe => {
+                let matches = true;
+                if (craftedByFilter) {
+                  matches = matches && craftedByFilter.value === recipe.job;
                 }
+                if (clvlFilter) {
+                  matches = matches && clvlFilter.value.min <= recipe.level && clvlFilter.value.max >= recipe.level;
+                }
+                return matches;
+              })
+              .forEach(recipe => {
                 results.push({
-                  itemId: item.id,
-                  icon: item.obj.c,
+                  itemId: item.ID,
+                  icon: `https://xivapi.com${item.Icon}`,
                   amount: 1,
                   recipe: {
-                    recipeId: recipe.id,
-                    itemId: item.id,
-                    collectible: item.obj.o === 1,
+                    recipeId: recipe.id.toString(),
+                    itemId: item.ID,
+                    collectible: item.GameContentLinks && item.GameContentLinks.MasterpieceSupplyDuty,
                     job: recipe.job,
                     stars: recipe.stars,
-                    lvl: recipe.lvl,
-                    icon: item.obj.c
+                    lvl: recipe.level,
+                    icon: `https://xivapi.com${item.Icon}`
                   }
                 });
               });
-            } else {
-              results.push({
-                itemId: item.id,
-                icon: item.obj.c,
-                amount: 1
-              });
-            }
-          });
-          return results;
-        })
-      );
+          } else {
+            results.push({
+              itemId: item.ID,
+              icon: `https://xivapi.com${item.Icon}`,
+              amount: 1
+            });
+          }
+        });
+        return results;
+      })
+    );
   }
 
   /**
