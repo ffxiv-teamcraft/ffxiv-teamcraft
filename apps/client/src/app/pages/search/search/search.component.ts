@@ -849,7 +849,7 @@ export class SearchComponent implements OnInit {
     if (controls.ilvlMax.value < 999 || controls.ilvlMin.value > 0) {
       filters.push({
         minMax: true,
-        name: 'ilvl',
+        name: 'LevelItem',
         value: {
           min: controls.ilvlMin.value,
           max: controls.ilvlMax.value
@@ -859,7 +859,7 @@ export class SearchComponent implements OnInit {
     if (controls.elvlMax.value < 80 || controls.elvlMin.value > 0) {
       filters.push({
         minMax: true,
-        name: 'elvl',
+        name: 'LevelEquip',
         value: {
           min: controls.elvlMin.value,
           max: controls.elvlMax.value
@@ -879,7 +879,7 @@ export class SearchComponent implements OnInit {
     if (controls.jobCategories.value.length > 0) {
       filters.push({
         minMax: false,
-        name: 'jobCategories',
+        name: 'ClassJobCategoryTargetID',
         value: controls.jobCategories.value
       });
     }
@@ -893,7 +893,7 @@ export class SearchComponent implements OnInit {
     if (controls.itemCategories.value.length > 0) {
       filters.push({
         minMax: false,
-        name: 'itemCategories',
+        name: 'ItemUICategoryTargetID',
         value: controls.itemCategories.value
       });
     }

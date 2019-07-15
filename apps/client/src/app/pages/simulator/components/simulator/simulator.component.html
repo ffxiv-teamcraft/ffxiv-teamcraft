@@ -95,7 +95,7 @@
       </ng-container>
       <button nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
               [nzTitle]="'ALARMS.Open_overlay' | translate" (nzOnConfirm)="openOverlay(rotation)"
-              *ngIf="platformService.isDesktop()">
+              *ngIf="platformService.isDesktop() && rotation.$key">
         <i nz-icon type="desktop"></i>
       </button>
     </div>
@@ -216,8 +216,12 @@
                        [nzRenderItem]="hqIngredientTemplate">
                 <ng-template #hqIngredientTemplate let-ingredient>
                   <nz-list-item [nzContent]="content">
-                    <nz-list-item-meta [nzTitle]="ingredient.id | itemName | i18n"
+                    <nz-list-item-meta [nzTitle]="title"
                                        [nzDescription]="ingredient.quality | floor"></nz-list-item-meta>
+                    <ng-template #title>
+                      <span ngxClipboard [cbContent]="ingredient.id | itemName | i18n"
+                            (cbOnSuccess)="nameCopied($event)">{{ingredient.id | itemName | i18n}}</span>
+                    </ng-template>
                     <ng-template #content>
                       <nz-form-control>
                         <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
@@ -343,9 +347,9 @@
                 <div fxLayout="row" fxLayoutGap="5px">
                   <div>
                     <span class="item-name" ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
-                             *ngIf="settings.preferredCopyType === 'classic'"
-                             [nzTitle]="'Copy_item_name_to_clipboard' | translate"
-                             (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})">
+                          *ngIf="settings.preferredCopyType === 'classic'"
+                          [nzTitle]="'Copy_item_name_to_clipboard' | translate"
+                          (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})">
                       {{item.id | itemName | i18n}}
                     </span>
                     <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"

@@ -1100,6 +1100,7 @@ if (hasTodo('recipes')) {
         level: recipe.RecipeLevelTable.ClassJobLevel,
         yields: recipe.AmountResult,
         result: recipe.ItemResultTargetID,
+        stars: recipe.RecipeLevelTable.Stars,
         ingredients: Object.keys(recipe)
           .filter(k => /ItemIngredient\dTargetID/.test(k))
           .sort((a, b) => a < b ? -1 : 1)
