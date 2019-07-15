@@ -216,8 +216,12 @@
                        [nzRenderItem]="hqIngredientTemplate">
                 <ng-template #hqIngredientTemplate let-ingredient>
                   <nz-list-item [nzContent]="content">
-                    <nz-list-item-meta [nzTitle]="ingredient.id | itemName | i18n"
+                    <nz-list-item-meta [nzTitle]="title"
                                        [nzDescription]="ingredient.quality | floor"></nz-list-item-meta>
+                    <ng-template #title>
+                      <span ngxClipboard [cbContent]="ingredient.id | itemName | i18n"
+                            (cbOnSuccess)="nameCopied($event)">{{ingredient.id | itemName | i18n}}</span>
+                    </ng-template>
                     <ng-template #content>
                       <nz-form-control>
                         <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
