@@ -51,7 +51,7 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
     });
     drops.push(...Object.keys(monsterDrops)
       .filter(key => {
-        return monsterDrops[key].indexOf(item.id) > -1 && monsters[key] !== undefined;
+        return monsterDrops[key].indexOf(item.id) > -1;
       })
       .map(monsterId => {
         const zoneid = monsters[monsterId].positions[0].zoneid;
