@@ -794,7 +794,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         return (recipe.ingredients || [])
           .filter(i => i.id > 20 && i.quality !== undefined && !fakeHQItems.some(id => i.id === id))
           .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
-      })
+      }),
+      shareReplay(1)
     );
 
     this.crafterStats$ = combineLatest([merge(statsFromRecipe$, this.customStats$), statsFromRotation$, this.route.queryParamMap, this.authFacade.userId$, this.rotation$]).pipe(
