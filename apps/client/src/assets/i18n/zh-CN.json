@@ -693,7 +693,7 @@
     "Average_hq": "平均 HQ",
     "Specialist": "专家",
     "New_rotation": "新工序",
-    "Rotations": "制作工序",
+    "Rotations": "生产工序",
     "Favorite_Rotations": "收藏工序",
     "No_rotations": "无工序",
     "Create_a_custom_rotation": "创建自定义工序",
@@ -1367,7 +1367,7 @@
   "TIPS": {
     "Title": "小贴士",
     "Community_rotations": "你可以在社区共享工序页面中找到特定配方的工序",
-    "GC_Deliveries": "您可以在军队筹备页面中制作您的清单。",
+    "GC_Deliveries": "您可以在军团筹备页面中制作您的清单。",
     "Desynth": "您可以在分解查询页面中找到最适合您升级的物品。",
     "DB": "Teamcraft包含一个数据库，您可以点击任何地方的“i”图标在数据库页面中查看其详情。",
     "3D_model": "您可以在数据库中预览其3D外观。",
