@@ -370,13 +370,13 @@
     "Patreon_features": "Функции донатеров Patreon",
     "Contacts": "Контакты",
     "Add_new_contact": "Новый контакт",
-    "Save_for_all": "Сохранить для всех",
+    "Save_for_all": "Save for all crafters",
     "User_not_verified": "Пользователь не подтвержден, нажмите, чтобы подтвердить",
     "More_than_100_lists_created": "Создано более 100 списков",
     "Veteran": "Ветеран",
     "VERIFICATION": {
       "Title": "Подтверждение персонажа",
-      "Guide": "Чтобы подтвердить свой аккаунт, вставьте этот код: \"{{userId}}\" в биографии вашего профиля Lodestone и нажмите кнопку ниже.",
+      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "Персонаж подтверждён! Теперь вы можете закрыть это окно. Не стесняйтесь удалить код из вашего профиля, он больше не нужен.",
       "Error": "Не удалось найти код в вашем профиле, пожалуйста, убедитесь, что вы вставили его и применили изменения, а затем подождите ~30 сек и повторите попытку.",
       "Validate": "Подтвердить"
@@ -732,6 +732,7 @@
     "Macrolock": "Include macro lock",
     "Solve_rotation": "Solve this rotation",
     "Rotation_solver": "Rotation solver",
+    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "SOLVER": {
       "Hq_target": "Target HQ%",
       "Use_rotation_as_seed": "Use current rotation as starting point",
@@ -1218,6 +1219,11 @@
     "3d_model_help": "Preview 3D model",
     "Achievements": "Достижения",
     "Currencies": "Currencies",
+    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "ITEM": {
+      "Masterpiece_base": "BASE",
+      "Masterpiece_bonus": "BONUS"
+    },
     "NODE": {
       "Items": "Предметы",
       "Possible_bonuses": "Возможные бонусы",
