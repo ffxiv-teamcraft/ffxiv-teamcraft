@@ -141,7 +141,7 @@ export class AuthEffects {
     debounceTime(2000),
     withLatestFrom(this.authFacade.loggedIn$),
     filter(([action, loggedIn]) => {
-      return loggedIn && action.user && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0;
+      return loggedIn && action.user && !action.user.notFound && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0;
     }),
     map(() => new NoLinkedCharacter())
   );
