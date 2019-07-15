@@ -79,9 +79,6 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
           const isTool = slot.startsWith('mainhand') || slot.startsWith('offhand');
 
           let quantity = 1;
-          if (slot.indexOf('ring') > -1) {
-            quantity = 2;
-          }
           if (slot === 'food') {
             quantity = 30;
           }
