@@ -48,7 +48,7 @@
                *ngFor="let spawn of spawns$ | async">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
-            {{spawn.zoneid | placeName | i18n}} - {{'DB.Level' | translate}} {{spawn.level}}
+            {{spawn.zoneid | placeName | i18n}}<span *ngIf="spawn.level"> - {{'DB.Level' | translate}} {{spawn.level}}</span>
           </div>
         </ng-template>
         <app-map [mapId]="spawn.map" [markers]="spawn?.positions"></app-map>
