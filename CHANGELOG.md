@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.14"></a>
+## [5.6.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.13...v5.6.14) (2019-07-15)
+
+
+### Bug Fixes
+
+* **ariyala:** fixed an issue with rings count being wrong ([e511155](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e511155))
+* **desktop:** fixed alarm overlay opening from tray ([797789a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/797789a))
+* **levequests:** fixed layout for smaller resolutions ([fa5c50e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fa5c50e))
+* **simulator:** fixed precision issue with Delicate Synthesis ([a7148a4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7148a4))
+* **simulator:** hide overlay button if rotation isn't saved ([026c5ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/026c5ce))
+* **ux:** various UX fixes for an easier first-time use ([8f07cc9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f07cc9))
+
+
+### Features
+
+* **db:** added collectability informations in item pages ([f799021](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f799021))
+* **levequests:** "add selection to list" button is now also at the bottom of the page ([8e66195](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8e66195))
+* **search:** revamped search to support partial name search ([79c2efb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/79c2efb))
+* **simulator:** clicking on hq ingredients name will now copy the item's name in clipboard ([cdaeab7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cdaeab7))
+
+
+
 <a name="5.6.13"></a>
 ## [5.6.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.12...v5.6.13) (2019-07-14)
 
