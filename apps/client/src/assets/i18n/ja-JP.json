@@ -370,13 +370,13 @@
     "Patreon_features": "Patreonサポーターの特典",
     "Contacts": "連絡先",
     "Add_new_contact": "新しい連絡先",
-    "Save_for_all": "全て保存する",
+    "Save_for_all": "Save for all crafters",
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "More_than_100_lists_created": "100個以上のリストを作成",
     "Veteran": "ベテラン",
     "VERIFICATION": {
       "Title": "キャラクター認証",
-      "Guide": "アカウントの認証のために Lodestone Profile Biographyに次のコードを貼り付けて下さい。 \"{{userId}}\" そして、下のボタンを押して下さい。",
+      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "キャラクターが認証されました！このポップアップを閉じてもよろしいです。プロフィールからコードを消してもよろしいです。",
       "Error": "Bioからコードを見つかりませんでした。コードを貼り付けてから、変更されたのか、ご確認下さい。そして約30秒後にやり直して下さい",
       "Validate": "認証"
@@ -732,6 +732,7 @@
     "Macrolock": "Include macro lock",
     "Solve_rotation": "Solve this rotation",
     "Rotation_solver": "Rotation solver",
+    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "SOLVER": {
       "Hq_target": "Target HQ%",
       "Use_rotation_as_seed": "Use current rotation as starting point",
@@ -1218,6 +1219,11 @@
     "3d_model_help": "3Dモデルプレビュー",
     "Achievements": "Achievements",
     "Currencies": "Currencies",
+    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "ITEM": {
+      "Masterpiece_base": "BASE",
+      "Masterpiece_bonus": "BONUS"
+    },
     "NODE": {
       "Items": "アイテム",
       "Possible_bonuses": "ロケーション・エフェクト",
