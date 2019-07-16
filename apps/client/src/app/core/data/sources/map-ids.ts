@@ -4466,7 +4466,7 @@ export const mapIds = [
   {
     'id': 559,
     'zone': 3214,
-    'name': '',
+    'name': 'The Core',
     'territory': 849,
     'scale': 400,
     'weatherRate': 0
@@ -4474,7 +4474,7 @@ export const mapIds = [
   {
     'id': 560,
     'zone': 3215,
-    'name': '',
+    'name': 'The Halo',
     'territory': 850,
     'scale': 400,
     'weatherRate': 0
@@ -4482,18 +4482,18 @@ export const mapIds = [
   {
     'id': 561,
     'zone': 3216,
-    'name': '',
+    'name': 'The Nereus Trench',
     'territory': 851,
     'scale': 400,
-    'weatherRate': 0
+    'weatherRate': 38
   },
   {
     'id': 562,
     'zone': 3217,
-    'name': '',
+    'name': 'Atlas Peak',
     'territory': 852,
     'scale': 400,
-    'weatherRate': 0
+    'weatherRate': 23
   },
   {
     'id': 563,
@@ -4506,7 +4506,7 @@ export const mapIds = [
   {
     'id': 564,
     'zone': 3214,
-    'name': '',
+    'name': 'The Core',
     'territory': 857,
     'scale': 100,
     'weatherRate': 0

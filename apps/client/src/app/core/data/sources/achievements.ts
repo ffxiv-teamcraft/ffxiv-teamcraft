@@ -14448,22 +14448,22 @@ export const achievements = {
     'fr': ''
   },
   '2409': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Paradise Found I',
+    'de': 'Gefundenes Paradies I',
+    'ja': '覚醒せしエデンを制覇せし者：ランク1',
+    'fr': 'Sonner le clairon I'
   },
   '2410': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Paradise Found II',
+    'de': 'Gefundenes Paradies II',
+    'ja': '覚醒せしエデンを制覇せし者：ランク2',
+    'fr': 'Sonner le clairon II'
   },
   '2411': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Paradise Found III',
+    'de': 'Gefundenes Paradies III',
+    'ja': '覚醒せしエデンを制覇せし者：ランク3',
+    'fr': 'Sonner le clairon III'
   },
   '2412': {
     'en': '',

@@ -220,7 +220,8 @@
                                        [nzDescription]="ingredient.quality | floor"></nz-list-item-meta>
                     <ng-template #title>
                       <span ngxClipboard [cbContent]="ingredient.id | itemName | i18n"
-                            (cbOnSuccess)="nameCopied($event)">{{ingredient.id | itemName | i18n}}</span>
+                            class="hq-ingredient-name"
+                            (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})">{{ingredient.id | itemName | i18n}}</span>
                     </ng-template>
                     <ng-template #content>
                       <nz-form-control>

@@ -1,7 +1,7 @@
 <div *ngIf="servers$ | async as availableServers; else loading">
   <nz-form-item>
     <nz-form-label nzRequired nzFor="serverName">{{'Server_name' | translate}}</nz-form-label>
-    <input type="text" id="serverName" nz-input [formControl]="selectedServer" [nzAutocomplete]="auto">
+    <input type="text" id="serverName" nz-input [formControl]="selectedServer" [nzAutocomplete]="auto" autofocus>
     <nz-autocomplete #auto>
       <nz-auto-option *ngFor="let server of autoCompleteRows$ | async" [nzValue]="server">
         {{server}}

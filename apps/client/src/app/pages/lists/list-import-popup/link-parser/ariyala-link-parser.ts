@@ -34,7 +34,7 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
     return AriyalaLinkParser.REGEXP.test(url);
   }
 
-  setMateriaOptions(materiaOptions : AriyalaMateriaOptions): void {
+  setMateriaOptions(materiaOptions: AriyalaMateriaOptions): void {
     this.materiaOptions = materiaOptions;
   }
 
@@ -88,8 +88,8 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
           if (materias !== undefined) {
             materias.forEach((materia, i) => {
               const materiaQuantity = estimateOvermeldMateria
-                  ? this.calcMateriaQuantity(materia, i + 1, gear.itemMateriaSlots[itemIndex], gear.job, isTool)
-                  : 1;
+                ? this.calcMateriaQuantity(materia, i + 1, gear.itemMateriaSlots[itemIndex], gear.job, isTool)
+                : 1;
               if (groupTogether) {
                 if (materia in materiaTotals) {
                   materiaTotals[materia] += materiaQuantity;
@@ -124,16 +124,19 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
     const grade = parseInt(materia.split(':')[1], 10) + 1;
     const overmeldSlot = slot - materiaSlots;
     const chance = overmeldSlot <= 0 ? 100 : AriyalaLinkParser.MELDING_RATES[grade - 1][overmeldSlot - 1];
-    const isGatherer = [ 'MIN', 'BTN', 'FSH' ].indexOf(job) > -1;
-    const isCrafter = [ 'CRP', 'BSM', 'ARM', 'GSM', 'LTW', 'WVR', 'ALC', 'CUL' ].indexOf(job) > -1;
+    const isGatherer = ['MIN', 'BTN', 'FSH'].indexOf(job) > -1;
+    const isCrafter = ['CRP', 'BSM', 'ARM', 'GSM', 'LTW', 'WVR', 'ALC', 'CUL'].indexOf(job) > -1;
     let mul = 1;
     if (isTool && this.materiaOptions.multiplyToolMateria) {
       if (isGatherer) mul = 2;
       if (isCrafter) mul = 8;
     }
 
-    const amount = (1 / (chance / 100)) * mul;
-    return amount;
+    // If there's no chance to meld, don't get any of this materia. To avoid Infinity
+    if (chance === 0) {
+      return 0;
+    }
+    return (1 / (chance / 100)) * mul;
   }
 }
 
