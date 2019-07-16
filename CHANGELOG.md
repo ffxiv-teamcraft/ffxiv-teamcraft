@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.16"></a>
+## [5.6.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.15...v5.6.16) (2019-07-16)
+
+
+### Bug Fixes
+
+* **search:** converted "worn by" filter to use job categories instead ([d1cf398](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d1cf398))
+* fixed an issue with some items not being added to lists properly ([5a22f21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5a22f21))
+
+
+
 <a name="5.6.15"></a>
 ## [5.6.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.14...v5.6.15) (2019-07-16)
 
