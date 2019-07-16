@@ -36,6 +36,8 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
             user.notFound = true;
             user.$key = uid;
             return of(user);
+          } else {
+            delete user.notFound;
           }
           user.createdAt = new Date(user.createdAt);
           if (user.patreonToken === undefined) {

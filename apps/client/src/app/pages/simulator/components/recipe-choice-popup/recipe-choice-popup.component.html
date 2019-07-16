@@ -2,7 +2,7 @@
 </nz-alert>
 <nz-input-group [nzSuffix]="suffixIconSearch">
   <input type="text" placeholder="{{'SIMULATOR.Recipe_picker_placeholder' | translate}}" #searchInput nz-input
-         (keyup)="query$.next(searchInput.value)" nzAutoFocus>
+         (keyup)="query$.next(searchInput.value)" autofocus>
 </nz-input-group>
 <ng-template #suffixIconSearch>
   <i nz-icon nzType="search"></i>

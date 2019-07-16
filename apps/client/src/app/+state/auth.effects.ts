@@ -76,7 +76,11 @@ export class AuthEffects {
     ofType(AuthActionTypes.LoggedInAsAnonymous),
     switchMap((action: Authenticated) => {
       return this.userService.get(action.uid).pipe(
-        catchError(() => {
+        map(user => {
+          user.notFound = false;
+          return user;
+        }),
+        catchError((err) => {
           return this.userService.set(action.uid, new TeamcraftUser()).pipe(
             switchMap(() => {
               return this.userService.get(action.uid);
@@ -138,7 +142,9 @@ export class AuthEffects {
   @Effect()
   watchNoLinkedCharacter$ = this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
-    debounceTime(2000),
+    distinctUntilChanged((a, b) => {
+      return JSON.stringify(a.user.lodestoneIds) === JSON.stringify(b.user.lodestoneIds);
+    }),
     withLatestFrom(this.authFacade.loggedIn$),
     filter(([action, loggedIn]) => {
       return loggedIn && action.user && !action.user.notFound && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0;
