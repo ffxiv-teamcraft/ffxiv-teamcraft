@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.15"></a>
+## [5.6.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.14...v5.6.15) (2019-07-16)
+
+
+### Bug Fixes
+
+* added error message for when firestore is unreachable ([8a0faa3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8a0faa3))
+* **ariyala:** fixed an issue with materia counts on materias with 0% chances to meld ([c88f6e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c88f6e6))
+* **auth:** fixed an issue with character not showing up in top-right corner ([a777672](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a777672))
+* **item:** fixed monster drops not always showing properly ([fa5cf3c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fa5cf3c))
+* **search:** fixed an issue with "Worn by" filter not being accurate ([1861b29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1861b29))
+* **simulator:** fixed an issue preventing confirmation message on ingredient name copy ([066eeab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/066eeab))
+
+
+### Features
+
+* **core:** 5.01 content update ([118e6c8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/118e6c8))
+
+
+
 <a name="5.6.14"></a>
 ## [5.6.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.13...v5.6.14) (2019-07-15)
 
