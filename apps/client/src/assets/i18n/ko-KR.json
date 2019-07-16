@@ -1412,6 +1412,7 @@
     "Title": "블로그"
   },
   "ERRORS": {
-    "Http_request_error": "{{tool}}에 문제점이 존재합니다. #announcements 디스코드 채널을 확인하거나 #bugs 채널에 제보해주세요."
+    "Http_request_error": "{{tool}}에 문제점이 존재합니다. #announcements 디스코드 채널을 확인하거나 #bugs 채널에 제보해주세요.",
+    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
   }
 }
