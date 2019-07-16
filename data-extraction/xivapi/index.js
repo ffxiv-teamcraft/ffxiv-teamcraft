@@ -60,7 +60,7 @@ let todo = [
 
 const onlyIndex = process.argv.indexOf('--only');
 if (onlyIndex > -1) {
-  todo = [process.argv[onlyIndex + 1]];
+  todo = [...process.argv.slice(onlyIndex + 1)];
 }
 
 function hasTodo(operation) {
