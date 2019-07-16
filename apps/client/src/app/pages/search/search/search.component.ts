@@ -159,7 +159,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.gt.onceLoaded$.pipe(first()).subscribe(() => {
-      this.availableJobCategories = this.gt.getJobs().filter(job => job.isJob !== undefined || job.category === 'Disciple of the Land');
+      this.availableJobCategories = this.gt.getAllJobCategories().filter(category => category.name.length > 0);
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
       this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });

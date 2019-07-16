@@ -132,6 +132,14 @@ export class GarlandToolsService {
   }
 
   /**
+   * Gets details for all job categories in garlandtools data.
+   * @returns {JobCategory[]}
+   */
+  getAllJobCategories(): JobCategory[] {
+    return Object.keys(this.gt.jobCategories).map(key => this.gt.jobCategories[key]);
+  }
+
+  /**
    * Gets a list of category ids for a given job, useful for search filters.
    * @param {number[]} jobs
    * @returns {number[]}

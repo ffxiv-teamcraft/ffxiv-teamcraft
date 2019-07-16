@@ -119,10 +119,8 @@
               <nz-form-control>
                 <nz-select formControlName="jobCategories" nzMode="multiple" nzShowSearch nzAllowClear
                            class="filter-select">
-                  <nz-option *ngFor="let category of availableJobCategories" [nzValue]="category.id + 1"
-                             [nzLabel]="category.id | jobAbbr | i18n" nzCustomContent>
-                    <img src="https://garlandtools.org/db/images/{{category.abbreviation}}.png" alt="" class="job-icon">
-                    {{category.id | jobAbbr | i18n}}
+                  <nz-option *ngFor="let category of availableJobCategories" [nzValue]="category.id"
+                             [nzLabel]="category.id | jobCategoryName | i18n">
                   </nz-option>
                 </nz-select>
               </nz-form-control>
