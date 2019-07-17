@@ -105,7 +105,7 @@ export class SearchComponent implements OnInit {
     jobCategory: [1]
   });
 
-  availableJobCategories = [];
+  availableJobCategories: number[] = [];
 
   availableLeveJobCategories = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 34];
 
@@ -159,7 +159,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.gt.onceLoaded$.pipe(first()).subscribe(() => {
-      this.availableJobCategories = this.gt.getAllJobCategories().filter(category => category.name.length > 0);
+      this.availableJobCategories = this.gt.getAllJobCategories();
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
       this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });

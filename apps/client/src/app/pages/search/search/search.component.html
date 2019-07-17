@@ -119,8 +119,8 @@
               <nz-form-control>
                 <nz-select formControlName="jobCategories" nzMode="multiple" nzShowSearch nzAllowClear
                            class="filter-select">
-                  <nz-option *ngFor="let category of availableJobCategories" [nzValue]="category.id"
-                             [nzLabel]="category.id | jobCategoryName | i18n">
+                  <nz-option *ngFor="let category of availableJobCategories" [nzValue]="category"
+                             [nzLabel]="category | jobCategoryName | i18n">
                   </nz-option>
                 </nz-select>
               </nz-form-control>
