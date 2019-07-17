@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { GarlandToolsService } from './garland-tools.service';
 import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
-import { map, switchMap } from 'rxjs/operators';
+import { buffer, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 import { LazyDataService } from '../data/lazy-data.service';
 import { InstanceData } from '../../model/garland-tools/instance-data';
@@ -120,6 +120,7 @@ export class DataService {
    */
   public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean): Observable<SearchResult[]> {
     let lang = this.i18n.currentLang;
+    onlyCraftable = onlyCraftable || filters.some(f => f.name === 'craftJob');
     const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1 && query.length > 0;
     if (isKoOrZh) {
       lang = 'en';
@@ -164,14 +165,34 @@ export class DataService {
       }
     });
 
-    let results$ = this.xivapi.search({
-      indexes: [SearchIndex.ITEM],
-      string: query,
-      language: lang,
-      filters: xivapiFilters,
-      columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks']
-    }).pipe(
-      map(res => res.Results)
+    const resultPage$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+    const allPagesDone$: Subject<void> = new Subject<void>();
+
+    let results$ = resultPage$.pipe(
+      mergeMap(page => {
+        return this.xivapi.search({
+          indexes: [SearchIndex.ITEM],
+          string: query,
+          language: lang,
+          filters: xivapiFilters,
+          columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks'],
+          limit: 250,
+          page: page
+        });
+      }),
+      tap(res => {
+        if (res.Pagination.PageNext && res.Pagination.PageNext < 10) {
+          resultPage$.next(res.Pagination.PageNext);
+        } else {
+          setTimeout(() => {
+            allPagesDone$.next();
+          }, 100);
+        }
+      }),
+      buffer(allPagesDone$),
+      map((pages) => {
+        return [].concat.apply([], pages.map(page => page.Results));
+      })
     );
 
     if (isKoOrZh) {
@@ -205,7 +226,9 @@ export class DataService {
     return results$.pipe(
       map(results => {
         if (onlyCraftable) {
-          return results.filter(row => row.GameContentLinks && row.GameContentLinks.Recipe);
+          return results.filter(row => {
+            return row.GameContentLinks && row.GameContentLinks.Recipe && row.GameContentLinks.Recipe.ItemResult;
+          });
         }
         return results;
       }),

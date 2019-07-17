@@ -1281,9 +1281,9 @@ export const aetherytes = [
   },
   {
     'id': 76,
-    'zoneid': 2002,
-    'map': 214,
-    'placenameid': 2002,
+    'zoneid': 2000,
+    'map': 212,
+    'placenameid': 2000,
     'nameid': 2018,
     'x': 33.2,
     'y': 23.2,

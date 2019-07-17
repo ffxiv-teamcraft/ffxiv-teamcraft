@@ -9,6 +9,7 @@
     <i nz-icon type="folder-add"></i>
   </button>
 </div>
+<ng-container></ng-container>
 <div *ngIf="rotations$ | async as rotations; else loader" class="rotations-container">
   <div *ngIf="rotations.length > 0; else noRotations" fxLayout="column" fxLayoutGap="5px"
        class="ngx-dnd-container" ngxDroppable="rotation"
@@ -32,12 +33,10 @@
       </div>
     </div>
   </ng-container>
-  <ng-template #noRotations>
-    <app-fullpage-message height="200px">
-      {{'SIMULATOR.No_rotations' | translate}}
-    </app-fullpage-message>
-  </ng-template>
 </div>
+<app-fullpage-message height="200px" *ngIf="(rotations$ | async)?.length === 0 && (rotationFoldersDisplay$ | async)?.length === 0">
+  {{'SIMULATOR.No_rotations' | translate}}
+</app-fullpage-message>
 <ng-template #loader>
   <app-page-loader></app-page-loader>
 </ng-template>
