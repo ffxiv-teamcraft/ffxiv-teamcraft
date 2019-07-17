@@ -64,11 +64,12 @@
       </div>
       <div class="details-block" *ngIf="costType[action.PrimaryCostType] || action.ID > 99999">
         <div class="detail-name">{{'DB.ACTION.Cost' | translate}}</div>
-        <div
-          class="detail-value">{{action.PrimaryCost}}
+        <div class="detail-value">
+          <span *ngIf="action.ID < 99999">{{action.PrimaryCostValue * 100}}</span>
+          <span *ngIf="action.ID > 99999">{{action.Cost}}</span>
           <span
-            *ngIf="costType[action.PrimaryCostType]">{{('DB.ACTION.COST_TYPE.' + costType[action.PrimaryCostType]) | translate}}</span>
-          <span *ngIf="action.ID > 99999">{{'DB.ACTION.COST_TYPE.CP' | translate}}</span>
+            *ngIf="costType[action.PrimaryCostType]">&nbsp;{{('DB.ACTION.COST_TYPE.' + costType[action.PrimaryCostType]) | translate}}</span>
+          <span *ngIf="action.ID > 99999">&nbsp;{{'DB.ACTION.COST_TYPE.CP' | translate}}</span>
         </div>
       </div>
       <div class="details-block" *ngIf="action.IsPvP !== undefined">
