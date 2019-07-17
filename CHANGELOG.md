@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.17"></a>
+## [5.6.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.15...v5.6.17) (2019-07-17)
+
+
+### Bug Fixes
+
+* fixed an issue with some items not being added to lists properly ([5a22f21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5a22f21))
+* **auth:** fixed an issue with account not being created properly ([8050761](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8050761))
+* **db:** fixed missplaced Tailfeather aetheryte ([338cb0a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/338cb0a))
+* **search:** converted "worn by" filter to use job categories instead ([d1cf398](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d1cf398))
+* **search:** fixed broken filters ([289e86b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/289e86b))
+* **search:** fixed missing jobs in worn_by filter ([ebad0a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ebad0a9))
+
+
+
 <a name="5.6.16"></a>
 ## [5.6.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.15...v5.6.16) (2019-07-16)
 
