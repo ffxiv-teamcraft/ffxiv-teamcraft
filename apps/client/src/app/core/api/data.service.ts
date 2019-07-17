@@ -7,7 +7,7 @@ import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
-import { buffer, map, switchMap, tap } from 'rxjs/operators';
+import { buffer, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 import { LazyDataService } from '../data/lazy-data.service';
 import { InstanceData } from '../../model/garland-tools/instance-data';
@@ -169,7 +169,7 @@ export class DataService {
     const allPagesDone$: Subject<void> = new Subject<void>();
 
     let results$ = resultPage$.pipe(
-      switchMap(page => {
+      mergeMap(page => {
         return this.xivapi.search({
           indexes: [SearchIndex.ITEM],
           string: query,
@@ -184,7 +184,9 @@ export class DataService {
         if (res.Pagination.PageNext && res.Pagination.PageNext < 10) {
           resultPage$.next(res.Pagination.PageNext);
         } else {
-          allPagesDone$.next();
+          setTimeout(() => {
+            allPagesDone$.next();
+          }, 100);
         }
       }),
       buffer(allPagesDone$),
@@ -224,7 +226,9 @@ export class DataService {
     return results$.pipe(
       map(results => {
         if (onlyCraftable) {
-          return results.filter(row => row.GameContentLinks && row.GameContentLinks.Recipe && row.GameContentLinks.Recipe.ItemResult);
+          return results.filter(row => {
+            return row.GameContentLinks && row.GameContentLinks.Recipe && row.GameContentLinks.Recipe.ItemResult;
+          });
         }
         return results;
       }),

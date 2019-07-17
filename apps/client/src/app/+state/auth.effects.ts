@@ -155,7 +155,6 @@ export class AuthEffects {
   watchNoLinkedCharacter$ = this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
     distinctUntilChanged((a, b) => {
-      console.log(a, b);
       return a.user.notFound !== b.user.notFound
         && JSON.stringify(a.user.lodestoneIds) === JSON.stringify(b.user.lodestoneIds);
     }),
