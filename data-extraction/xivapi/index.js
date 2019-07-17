@@ -239,6 +239,12 @@ handleAetheryte = (row) => {
     return;
   }
 
+  // Tailfeather needs a fix for its map id
+  if(+row.ENpcResidentID === 76){
+    row.PlaceNameID = 2000;
+    row.MapID = 212;
+  }
+
   aetherytes.push({
     id: row.ENpcResidentID === '2147483647' ? 12 : +row.ENpcResidentID,
     zoneid: +row.PlaceNameID,
