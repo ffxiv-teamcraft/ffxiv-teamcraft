@@ -3,7 +3,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
 import {
   catchError,
-  debounceTime,
+  debounceTime, delay,
   distinctUntilChanged,
   filter,
   map,
@@ -80,7 +80,7 @@ export class AuthEffects {
           user.notFound = false;
           return user;
         }),
-        catchError((err) => {
+        switchMap(() => {
           return this.userService.set(action.uid, new TeamcraftUser()).pipe(
             switchMap(() => {
               return this.userService.get(action.uid);
@@ -111,6 +111,18 @@ export class AuthEffects {
   fetchUserOnAuthenticated$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated),
     switchMap((action: Authenticated) => this.userService.get(action.uid).pipe(
+      switchMap(user => {
+        if (user.notFound) {
+          delete this.userService.userCache[action.uid];
+          return this.userService.set(action.uid, new TeamcraftUser()).pipe(
+            delay(100),
+            switchMap(() => {
+              return this.userService.get(action.uid);
+            })
+          );
+        }
+        return of(user);
+      }),
       map(user => {
         user.createdAt = action.createdAt;
         return user;
@@ -143,7 +155,9 @@ export class AuthEffects {
   watchNoLinkedCharacter$ = this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
     distinctUntilChanged((a, b) => {
-      return JSON.stringify(a.user.lodestoneIds) === JSON.stringify(b.user.lodestoneIds);
+      console.log(a, b);
+      return a.user.notFound !== b.user.notFound
+        && JSON.stringify(a.user.lodestoneIds) === JSON.stringify(b.user.lodestoneIds);
     }),
     withLatestFrom(this.authFacade.loggedIn$),
     filter(([action, loggedIn]) => {
