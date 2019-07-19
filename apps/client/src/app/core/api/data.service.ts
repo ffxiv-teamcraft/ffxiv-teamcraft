@@ -165,33 +165,15 @@ export class DataService {
       }
     });
 
-    const resultPage$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
-    const allPagesDone$: Subject<void> = new Subject<void>();
-
-    let results$ = resultPage$.pipe(
-      mergeMap(page => {
-        return this.xivapi.search({
-          indexes: [SearchIndex.ITEM],
-          string: query,
-          language: lang,
-          filters: xivapiFilters,
-          columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks'],
-          limit: 250,
-          page: page
-        });
-      }),
-      tap(res => {
-        if (res.Pagination.PageNext && res.Pagination.PageNext < 10) {
-          resultPage$.next(res.Pagination.PageNext);
-        } else {
-          setTimeout(() => {
-            allPagesDone$.next();
-          }, 100);
-        }
-      }),
-      buffer(allPagesDone$),
-      map((pages) => {
-        return [].concat.apply([], pages.map(page => page.Results));
+    let results$ =  this.xivapi.search({
+      indexes: [SearchIndex.ITEM],
+      string: query,
+      language: lang,
+      filters: xivapiFilters,
+      columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks']
+    }).pipe(
+      map((response) => {
+        return response.Results;
       })
     );
 

@@ -117,10 +117,10 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/worn_by' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="jobCategories" nzMode="multiple" nzShowSearch nzAllowClear
+                <nz-select formControlName="jobCategory" nzShowSearch nzAllowClear
                            class="filter-select">
-                  <nz-option *ngFor="let category of availableJobCategories" [nzValue]="category"
-                             [nzLabel]="category | jobCategoryName | i18n">
+                  <nz-option *ngFor="let jobId of availableJobs" [nzValue]="jobId"
+                             [nzLabel]="jobId | jobName | i18n">
                   </nz-option>
                 </nz-select>
               </nz-form-control>

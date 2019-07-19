@@ -76,7 +76,7 @@ export class SearchComponent implements OnInit {
     elvlMax: [80],
     clvlMin: [0],
     clvlMax: [80],
-    jobCategories: [[]],
+    jobCategory: [],
     craftJob: [null],
     itemCategories: [[]]
   });
@@ -159,7 +159,6 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.gt.onceLoaded$.pipe(first()).subscribe(() => {
-      this.availableJobCategories = this.gt.getAllJobCategories();
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
       this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
@@ -779,7 +778,7 @@ export class SearchComponent implements OnInit {
       elvlMax: 80,
       clvlMin: 0,
       clvlMax: 80,
-      jobCategories: [],
+      jobCategory: [],
       craftJob: null,
       itemCategories: []
     });
@@ -876,11 +875,12 @@ export class SearchComponent implements OnInit {
         }
       });
     }
-    if (controls.jobCategories.value.length > 0) {
+    if (controls.jobCategory.value > 0) {
+      console.log(controls.jobCategory.value);
       filters.push({
         minMax: false,
-        name: 'ClassJobCategoryTargetID',
-        value: controls.jobCategories.value
+        name: `ClassJobCategory.${this.gt.getJob(controls.jobCategory.value).abbreviation}`,
+        value: 1
       });
     }
     if (controls.craftJob.value) {
