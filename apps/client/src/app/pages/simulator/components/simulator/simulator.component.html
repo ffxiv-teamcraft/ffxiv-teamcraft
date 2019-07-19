@@ -259,7 +259,7 @@
                         <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="selectedFood.hq">
                       </div>
                       <div *ngFor="let bonus of selectedFood.bonuses">
-                        {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{bonus.value * 100}}%
+                        {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{(bonus.value * 100) | floor}}%
                         ({{bonus.max}})
                       </div>
                     </div>
