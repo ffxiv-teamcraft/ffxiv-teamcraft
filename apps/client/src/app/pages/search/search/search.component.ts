@@ -876,23 +876,20 @@ export class SearchComponent implements OnInit {
       });
     }
     if (controls.jobCategory.value > 0) {
-      console.log(controls.jobCategory.value);
       filters.push({
-        minMax: false,
         name: `ClassJobCategory.${this.gt.getJob(controls.jobCategory.value).abbreviation}`,
         value: 1
       });
     }
     if (controls.craftJob.value) {
       filters.push({
-        minMax: false,
         name: 'craftJob',
         value: controls.craftJob.value
       });
     }
     if (controls.itemCategories.value.length > 0) {
       filters.push({
-        minMax: false,
+        array: true,
         name: 'ItemUICategoryTargetID',
         value: controls.itemCategories.value
       });

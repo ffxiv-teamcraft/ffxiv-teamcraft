@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { GarlandToolsService } from './garland-tools.service';
 import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
-import { buffer, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 import { LazyDataService } from '../data/lazy-data.service';
 import { InstanceData } from '../../model/garland-tools/instance-data';
@@ -144,13 +144,20 @@ export class DataService {
               value: f.value.max
             }
           ];
-        } else {
-          return [{
-            column: f.name,
-            operator: '=',
-            value: f.value
-          }];
+        } else if (f.array) {
+          return [
+            {
+              column: f.name,
+              operator: '|=',
+              value: f.value
+            }
+          ];
         }
+        return [{
+          column: f.name,
+          operator: '=',
+          value: f.value
+        }];
       }));
 
     let craftedByFilter: SearchFilter;
@@ -165,7 +172,7 @@ export class DataService {
       }
     });
 
-    let results$ =  this.xivapi.search({
+    let results$ = this.xivapi.search({
       indexes: [SearchIndex.ITEM],
       string: query,
       language: lang,
