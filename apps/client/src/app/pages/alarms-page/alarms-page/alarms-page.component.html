@@ -89,16 +89,16 @@
                 <i nz-icon type="plus"></i>
               </button>
               <div class="spacer"></div>
-                <button nz-button nzSize="small" (click)="$event.stopPropagation();"
-                        nz-popconfirm
-                        nzType="danger"
-                        [nzTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
-                        (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)">
-                  {{'ALARMS.Delete_group_and_alarms' | translate}}
-                </button>
-                <nz-switch [(ngModel)]="group.group.enabled"
-                           (click)="$event.stopPropagation();"
-                           (ngModelChange)="updateGroupMuteState(group.group)"></nz-switch>
+              <button nz-button nzSize="small" (click)="$event.stopPropagation();"
+                      nz-popconfirm
+                      nzType="danger"
+                      [nzTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
+                      (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)">
+                {{'ALARMS.Delete_group_and_alarms' | translate}}
+              </button>
+              <nz-switch [(ngModel)]="group.group.enabled"
+                         (click)="$event.stopPropagation();"
+                         (ngModelChange)="updateGroupMuteState(group.group)"></nz-switch>
             </div>
           </ng-template>
         </nz-collapse>
@@ -129,7 +129,7 @@
       </nz-card-meta>
       <ng-template #itemIcon>
         <div fxLayout="column" fxLayoutAlign="center center">
-          <app-item-icon *ngIf="row.alarm.icon; else customAlarmIcon" [icon]="row.alarm.icon"
+          <app-item-icon *ngIf="row.alarm.icon; else customAlarmIcon" [icon]="row.alarm.itemId | lazyIcon"
                          [itemId]="row.alarm.itemId"></app-item-icon>
           <ng-template #customAlarmIcon>
             <nz-avatar [nzText]="row.alarm.name[0]"></nz-avatar>
@@ -224,7 +224,7 @@
         <div *ngFor="let predator of row.alarm.predators" fxLayout="row" fxLayoutGap="5px"
              fxLayoutAlign="flex-start center">
           <div>{{predator.amount}}x</div>
-          <app-item-icon [width]="32" [icon]="predator.icon" [itemId]="predator.id"></app-item-icon>
+          <app-item-icon [width]="32" [icon]="predator.id | lazyIcon" [itemId]="predator.id"></app-item-icon>
         </div>
       </div>
       <button *ngIf="row.alarm.note === undefined || row.alarm.note.length === 0; else note" nz-button nzGhost
