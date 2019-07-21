@@ -153,7 +153,7 @@
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE"
                fxLayoutAlign.lt-md="center center" fxLayoutGap="10px" style="margin-bottom:10px">
-            <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlex="1 1 auto"
+            <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlex="1 0 45%"
                  formArrayName="stats">
               <nz-form-label>{{'filters/stats' | translate}}</nz-form-label>
               <nz-form-item *ngFor="let item of itemFiltersform.get('stats').controls; let i = index;"
@@ -173,13 +173,15 @@
                     <nz-input-number [nzMin]="1" [nzPrecision]="0"
                                      formControlName="max"></nz-input-number>
                   </nz-input-group>
+                  <button nz-button [nzBlock]="false | ifMobile:true" nzType="danger"
+                          (click)="$event.preventDefault();removeFilter('stats', i)"><i nz-icon nzType="delete"></i>
+                  </button>
                 </nz-form-control>
-                <button nz-button nzType="danger" (click)="$event.preventDefault();removeFilter('stats', i)"><i nz-icon nzType="delete"></i></button>
               </nz-form-item>
               <button nz-button nzBlock
                       (click)="$event.preventDefault();addFilter('stats')">{{'SEARCH.Add_stat_filter' | translate}}</button>
             </div>
-            <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlex="1 1 auto"
+            <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlex="1 0 45%"
                  formArrayName="stats">
               <nz-form-label>{{'filters/bonuses' | translate}}</nz-form-label>
               <nz-form-item *ngFor="let item of itemFiltersform.get('bonuses').controls; let i = index;"
@@ -199,8 +201,10 @@
                     <nz-input-number [nzMin]="1" [nzPrecision]="0"
                                      formControlName="max"></nz-input-number>
                   </nz-input-group>
+                  <button nz-button [nzBlock]="false | ifMobile:true" nzType="danger"
+                          (click)="$event.preventDefault();removeFilter('bonuses', i)"><i nz-icon nzType="delete"></i>
+                  </button>
                 </nz-form-control>
-                <button nz-button nzType="danger" (click)="$event.preventDefault();removeFilter('bonuses', i)"><i nz-icon nzType="delete"></i></button>
               </nz-form-item>
               <button nz-button nzBlock
                       (click)="$event.preventDefault();addFilter('bonuses')">{{'SEARCH.Add_bonus_stat_filter' | translate}}</button>

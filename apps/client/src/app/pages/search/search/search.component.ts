@@ -917,13 +917,15 @@ export class SearchComponent implements OnInit {
           if (form.get(f.formArray) === null) {
             form.setControl(f.formArray, this.fb.array([]));
           }
-          (form.get(f.formArray) as FormArray).push(
-            this.fb.group({
-              name: f.entryName,
-              min: f.value.min,
-              max: f.value.max
-            })
-          );
+          if (!(form.get(f.formArray) as FormArray).controls.some(control => control.value.name === f.entryName)) {
+            (form.get(f.formArray) as FormArray).push(
+              this.fb.group({
+                name: f.entryName,
+                min: f.value.min,
+                max: f.value.max
+              })
+            );
+          }
           formRawValue[f.formArray] = [
             ...(formRawValue[f.formArray] || []),
             {
