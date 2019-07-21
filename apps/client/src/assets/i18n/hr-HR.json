@@ -250,6 +250,8 @@
   "filters/worn_by": "Nosili",
   "filters/crafted_by": "Stvorio",
   "filters/item_category": "Vrsta predmeta",
+  "filters/stats": "Stats filters",
+  "filters/bonuses": "Stat bonuses filters",
   "Adding_recipes": "Dodavanje {{amount}} recepata za popis {{listname}}",
   "Recipe_Added": "1 predmet dodan na popis {{listname}}",
   "Recipes_Added": "{{itemcount}} predmeta dodano na popis {{listname}}",
@@ -1414,5 +1416,16 @@
   "ERRORS": {
     "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
     "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+  },
+  "SEARCH": {
+    "Sort_by": "Sort by: ",
+    "Sort_asc": "Ascending",
+    "Sort_desc": "Descending",
+    "SORT_BY": {
+      "Relevance": "Relevance",
+      "ID": "ID",
+      "Level": "Level",
+      "Ilvl": "Item level"
+    }
   }
 }
