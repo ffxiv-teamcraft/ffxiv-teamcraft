@@ -93,7 +93,7 @@ export const stats = [
     'de': 'Phys. Basiswert',
     'ja': '物理基本性能',
     'fr': 'Dégâts physiques',
-    'filterName': 'Physical_Damage'
+    'filterName': 'PhysicalDamage'
   },
   {
     'id': 13,
@@ -101,7 +101,7 @@ export const stats = [
     'de': 'Mag. Basiswert',
     'ja': '魔法基本性能',
     'fr': 'Dégâts magiques',
-    'filterName': 'Magic_Damage'
+    'filterName': 'MagicDamage'
   },
   {
     'id': 14,
@@ -117,7 +117,7 @@ export const stats = [
     'de': 'Zusatzeffekt: ',
     'ja': '追加効果',
     'fr': 'Effet supplémentaire : ',
-    'filterName': 'Additional_Effect:_'
+    'filterName': 'AdditionalEffect:'
   },
   {
     'id': 16,
@@ -125,7 +125,7 @@ export const stats = [
     'de': 'Anzahl der Attacken: ',
     'ja': '攻撃回数',
     'fr': 'Nombre d\'attaques',
-    'filterName': 'Attack_Speed'
+    'filterName': 'AttackSpeed'
   },
   {
     'id': 17,
@@ -133,7 +133,7 @@ export const stats = [
     'de': 'Blockrate',
     'ja': 'ブロック発動力',
     'fr': 'Taux de blocage',
-    'filterName': 'Block_Rate'
+    'filterName': 'BlockRate'
   },
   {
     'id': 18,
@@ -141,7 +141,7 @@ export const stats = [
     'de': 'Blockeffekt',
     'ja': 'ブロック性能',
     'fr': 'Blocage',
-    'filterName': 'Block_Strength'
+    'filterName': 'BlockStrength'
   },
   {
     'id': 19,
@@ -157,7 +157,7 @@ export const stats = [
     'de': 'Attacke',
     'ja': '物理攻撃力',
     'fr': 'Attaque',
-    'filterName': 'Attack_Power'
+    'filterName': 'AttackPower'
   },
   {
     'id': 21,
@@ -173,7 +173,7 @@ export const stats = [
     'de': 'Direkter Treffer',
     'ja': 'ダイレクトヒット',
     'fr': 'Coups nets',
-    'filterName': 'Direct_Hit_Rate'
+    'filterName': 'DirectHitRate'
   },
   {
     'id': 23,
@@ -189,7 +189,7 @@ export const stats = [
     'de': 'Magieabwehr',
     'ja': '魔法防御力',
     'fr': 'Défense magique',
-    'filterName': 'Magic_Defense'
+    'filterName': 'MagicDefense'
   },
   {
     'id': 25,
@@ -197,7 +197,7 @@ export const stats = [
     'de': 'Kritischer Attackewert',
     'ja': 'クリティカル攻撃力',
     'fr': 'Attaque critique',
-    'filterName': 'Critical_Hit_Power'
+    'filterName': 'CriticalHitPower'
   },
   {
     'id': 26,
@@ -205,7 +205,7 @@ export const stats = [
     'de': 'Abwehr kritischer Treffer',
     'ja': 'クリティカル防御力',
     'fr': 'Résilience',
-    'filterName': 'Critical_Hit_Resilience'
+    'filterName': 'CriticalHitResilience'
   },
   {
     'id': 27,
@@ -213,7 +213,7 @@ export const stats = [
     'de': 'Kritischer Treffer',
     'ja': 'クリティカル',
     'fr': 'Critique',
-    'filterName': 'Critical_Hit'
+    'filterName': 'CriticalHit'
   },
   {
     'id': 28,
@@ -221,7 +221,7 @@ export const stats = [
     'de': 'Kritisches Ausweichen',
     'ja': 'クリティカル回避力',
     'fr': 'Esquive critique',
-    'filterName': 'Critical_Hit_Evasion'
+    'filterName': 'CriticalHitEvasion'
   },
   {
     'id': 29,
@@ -229,7 +229,7 @@ export const stats = [
     'de': 'Hiebresistenz',
     'ja': '斬耐性',
     'fr': 'Résistance au tranchant',
-    'filterName': 'Slashing_Resistance'
+    'filterName': 'SlashingResistance'
   },
   {
     'id': 30,
@@ -237,7 +237,7 @@ export const stats = [
     'de': 'Stichresistenz',
     'ja': '突耐性',
     'fr': 'Résistance au perforant',
-    'filterName': 'Piercing_Resistance'
+    'filterName': 'PiercingResistance'
   },
   {
     'id': 31,
@@ -245,7 +245,7 @@ export const stats = [
     'de': 'Schlagresistenz',
     'ja': '打耐性',
     'fr': 'Résistance au contondant',
-    'filterName': 'Blunt_Resistance'
+    'filterName': 'BluntResistance'
   },
   {
     'id': 32,
@@ -253,7 +253,7 @@ export const stats = [
     'de': 'Projektilresistenz',
     'ja': '射耐性',
     'fr': 'Résistance aux projectiles',
-    'filterName': 'Projectile_Resistance'
+    'filterName': 'ProjectileResistance'
   },
   {
     'id': 33,
@@ -261,7 +261,7 @@ export const stats = [
     'de': 'Offensivmagie',
     'ja': '攻撃魔法威力',
     'fr': 'Magie offensive',
-    'filterName': 'Attack_Magic_Potency'
+    'filterName': 'AttackMagicPotency'
   },
   {
     'id': 34,
@@ -269,7 +269,7 @@ export const stats = [
     'de': 'Heilmagie',
     'ja': '回復魔法威力',
     'fr': 'Magie curative',
-    'filterName': 'Healing_Magic_Potency'
+    'filterName': 'HealingMagicPotency'
   },
   {
     'id': 35,
@@ -277,7 +277,7 @@ export const stats = [
     'de': 'Stärkungsmagie',
     'ja': '強化魔法威力',
     'fr': 'Magie fortifiante',
-    'filterName': 'Enhancement_Magic_Potency'
+    'filterName': 'EnhancementMagicPotency'
   },
   {
     'id': 36,
@@ -285,7 +285,7 @@ export const stats = [
     'de': 'Elementarbonus',
     'ja': 'エレメンタル補正',
     'fr': 'Bonus élémentaire',
-    'filterName': 'Elemental_Bonus'
+    'filterName': 'ElementalBonus'
   },
   {
     'id': 37,
@@ -293,7 +293,7 @@ export const stats = [
     'de': 'Feuerresistenz',
     'ja': '火',
     'fr': 'Résistance au feu',
-    'filterName': 'Fire_Resistance'
+    'filterName': 'FireResistance'
   },
   {
     'id': 38,
@@ -301,7 +301,7 @@ export const stats = [
     'de': 'Eisresistenz',
     'ja': '氷',
     'fr': 'Résistance à la glace',
-    'filterName': 'Ice_Resistance'
+    'filterName': 'IceResistance'
   },
   {
     'id': 39,
@@ -309,7 +309,7 @@ export const stats = [
     'de': 'Windresistenz',
     'ja': '風',
     'fr': 'Résistance au vent',
-    'filterName': 'Wind_Resistance'
+    'filterName': 'WindResistance'
   },
   {
     'id': 40,
@@ -317,7 +317,7 @@ export const stats = [
     'de': 'Erdresistenz',
     'ja': '土',
     'fr': 'Résistance à la terre',
-    'filterName': 'Earth_Resistance'
+    'filterName': 'EarthResistance'
   },
   {
     'id': 41,
@@ -325,7 +325,7 @@ export const stats = [
     'de': 'Blitzresistenz',
     'ja': '雷',
     'fr': 'Résistance à la foudre',
-    'filterName': 'Lightning_Resistance'
+    'filterName': 'LightningResistance'
   },
   {
     'id': 42,
@@ -333,7 +333,7 @@ export const stats = [
     'de': 'Wasserresistenz',
     'ja': '水',
     'fr': 'Résistance à l\'eau',
-    'filterName': 'Water_Resistance'
+    'filterName': 'WaterResistance'
   },
   {
     'id': 43,
@@ -341,7 +341,7 @@ export const stats = [
     'de': 'Magieresistenz',
     'ja': '全魔法耐性',
     'fr': 'Résistance magique',
-    'filterName': 'Magic_Resistance'
+    'filterName': 'MagicResistance'
   },
   {
     'id': 44,
@@ -357,7 +357,7 @@ export const stats = [
     'de': 'Schnelligkeit',
     'ja': 'スキルスピード',
     'fr': 'Vivacité',
-    'filterName': 'Skill_Speed'
+    'filterName': 'SkillSpeed'
   },
   {
     'id': 46,
@@ -365,7 +365,7 @@ export const stats = [
     'de': 'Zaubertempo',
     'ja': 'スペルスピード',
     'fr': 'Célérité',
-    'filterName': 'Spell_Speed'
+    'filterName': 'SpellSpeed'
   },
   {
     'id': 47,
@@ -397,7 +397,7 @@ export const stats = [
     'de': 'Feindseligkeitsreduktion',
     'ja': '敵視-',
     'fr': 'Réduction d\'inimitié',
-    'filterName': 'Enmity_Reduction'
+    'filterName': 'EnmityReduction'
   },
   {
     'id': 51,
@@ -405,7 +405,7 @@ export const stats = [
     'de': 'Verwertungsgeschick',
     'ja': '分解精度',
     'fr': 'Recyclage soigné',
-    'filterName': 'Careful_Desynthesis'
+    'filterName': 'CarefulDesynthesis'
   },
   {
     'id': 52,
@@ -413,7 +413,7 @@ export const stats = [
     'de': 'Routinebonus',
     'ja': '経験値獲得量',
     'fr': 'Points d\'expérience gagnés',
-    'filterName': 'EXP_Bonus'
+    'filterName': 'EXPBonus'
   },
   {
     'id': 53,
@@ -437,7 +437,7 @@ export const stats = [
     'de': 'Hauptattribut',
     'ja': '主能力補正',
     'fr': 'Bonus de base',
-    'filterName': 'Main_Attribute'
+    'filterName': 'MainAttribute'
   },
   {
     'id': 56,
@@ -445,7 +445,7 @@ export const stats = [
     'de': 'Zweitattribut',
     'ja': '副能力補正',
     'fr': 'Bonus additionnels',
-    'filterName': 'Secondary_Attribute'
+    'filterName': 'SecondaryAttribute'
   },
   {
     'id': 57,
@@ -453,7 +453,7 @@ export const stats = [
     'de': 'Gemach-Resistenz',
     'ja': 'スロウ耐性',
     'fr': 'Résistance à Lenteur',
-    'filterName': 'Slow_Resistance'
+    'filterName': 'SlowResistance'
   },
   {
     'id': 58,
@@ -461,7 +461,7 @@ export const stats = [
     'de': 'Stein-Resistenz',
     'ja': '石化耐性',
     'fr': 'Résistance à Pétrification',
-    'filterName': 'Petrification_Resistance'
+    'filterName': 'PetrificationResistance'
   },
   {
     'id': 59,
@@ -469,7 +469,7 @@ export const stats = [
     'de': 'Paralyse-Resistenz',
     'ja': '麻痺耐性',
     'fr': 'Résistance à Paralysie',
-    'filterName': 'Paralysis_Resistance'
+    'filterName': 'ParalysisResistance'
   },
   {
     'id': 60,
@@ -477,7 +477,7 @@ export const stats = [
     'de': 'Schweigen-Resistenz',
     'ja': '沈黙耐性',
     'fr': 'Résistance à Silence',
-    'filterName': 'Silence_Resistance'
+    'filterName': 'SilenceResistance'
   },
   {
     'id': 61,
@@ -485,7 +485,7 @@ export const stats = [
     'de': 'Blind-Resistenz',
     'ja': '暗闇耐性',
     'fr': 'Résistance à Cécité',
-    'filterName': 'Blind_Resistance'
+    'filterName': 'BlindResistance'
   },
   {
     'id': 62,
@@ -493,7 +493,7 @@ export const stats = [
     'de': 'Gift-Resistenz',
     'ja': '毒耐性',
     'fr': 'Résistance à Poison',
-    'filterName': 'Poison_Resistance'
+    'filterName': 'PoisonResistance'
   },
   {
     'id': 63,
@@ -501,7 +501,7 @@ export const stats = [
     'de': 'Betäubungs-Resistenz',
     'ja': 'スタン耐性',
     'fr': 'Résistance à Étourdissement',
-    'filterName': 'Stun_Resistance'
+    'filterName': 'StunResistance'
   },
   {
     'id': 64,
@@ -509,7 +509,7 @@ export const stats = [
     'de': 'Schlaf-Resistenz',
     'ja': '睡眠耐性',
     'fr': 'Résistance à Sommeil',
-    'filterName': 'Sleep_Resistance'
+    'filterName': 'SleepResistance'
   },
   {
     'id': 65,
@@ -517,7 +517,7 @@ export const stats = [
     'de': 'Fessel-Resistenz',
     'ja': 'バインド耐性',
     'fr': 'Résistance à Entrave',
-    'filterName': 'Bind_Resistance'
+    'filterName': 'BindResistance'
   },
   {
     'id': 66,
@@ -525,7 +525,7 @@ export const stats = [
     'de': 'Gewicht-Resistenz',
     'ja': 'ヘヴィ耐性',
     'fr': 'Résistance à Pesanteur',
-    'filterName': 'Heavy_Resistance'
+    'filterName': 'HeavyResistance'
   },
   {
     'id': 67,
@@ -533,7 +533,7 @@ export const stats = [
     'de': 'Verhängnis-Resistenz',
     'ja': '死の宣告耐性',
     'fr': 'Résistance à Glas',
-    'filterName': 'Doom_Resistance'
+    'filterName': 'DoomResistance'
   },
   {
     'id': 68,
@@ -541,7 +541,7 @@ export const stats = [
     'de': 'Verschleißminderung',
     'ja': '装備消耗耐性',
     'fr': 'Résistance à l\'usure',
-    'filterName': 'Reduced_Durability_Loss'
+    'filterName': 'ReducedDurabilityLoss'
   },
   {
     'id': 69,
@@ -549,7 +549,7 @@ export const stats = [
     'de': 'Erhöhte Bindung',
     'ja': '錬精度上昇量',
     'fr': 'Gain accru de symbiose',
-    'filterName': 'Increased_Spiritbond_Gain'
+    'filterName': 'IncreasedSpiritbondGain'
   },
   {
     'id': 70,

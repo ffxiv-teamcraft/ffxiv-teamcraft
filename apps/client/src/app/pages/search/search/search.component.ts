@@ -962,16 +962,16 @@ export class SearchComponent implements OnInit {
         let fieldName: string;
         let valueMultiplier = 1;
         switch (entry.name) {
-          case 'Physical_Damage':
+          case 'PhysicalDamage':
             fieldName = 'DamagePhys';
             break;
-          case 'Magical_Damage':
+          case 'MagicalDamage':
             fieldName = 'DamageMag';
             break;
           case 'Defense':
             fieldName = 'DefensePhys';
             break;
-          case 'Magic_Defense':
+          case 'MagicDefense':
             fieldName = 'DefenseMag';
             break;
           case 'Delay':
@@ -979,7 +979,7 @@ export class SearchComponent implements OnInit {
             valueMultiplier = 1000;
             break;
           default:
-            fieldName = `Stats.${entry.name}.Value`;
+            fieldName = `Stats.${entry.name}.NQ`;
             break;
         }
         return {

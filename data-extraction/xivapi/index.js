@@ -1257,7 +1257,7 @@ if (hasTodo('stats')) {
         de: baseParam.Name_de,
         ja: baseParam.Name_ja,
         fr: baseParam.Name_fr,
-        filterName: baseParam.Name_en.split(' ').join('_')
+        filterName: baseParam.Name_en.split(' ').join('')
       });
     });
   }, null, () => {
