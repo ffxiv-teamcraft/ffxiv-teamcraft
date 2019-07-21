@@ -1421,6 +1421,8 @@
     "Sort_by": "Sort by: ",
     "Sort_asc": "Ascending",
     "Sort_desc": "Descending",
+    "Add_stat_filter": "Add stat filter",
+    "Add_bonus_stat_filter": "Add bonus stat filter",
     "SORT_BY": {
       "Relevance": "Relevance",
       "ID": "ID",
