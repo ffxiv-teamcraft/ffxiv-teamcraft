@@ -250,6 +250,8 @@
   "filters/worn_by": "Équipé par",
   "filters/crafted_by": "Fabriqué par",
   "filters/item_category": "Type d'objet",
+  "filters/stats": "Stats filters",
+  "filters/bonuses": "Stat bonuses filters",
   "Adding_recipes": "Ajout de {{amount}} recettes à la liste {{listname}}",
   "Recipe_Added": "1 objet ajouté à la liste {{listname}}",
   "Recipes_Added": "{{itemcount}} objets ajoutés à la liste {{listname}}",
@@ -1414,5 +1416,16 @@
   "ERRORS": {
     "Http_request_error": "Il y a un problème avec {{tool}}, veuillez vérifier le salon #announcements sur discord ou signaler le soucis dans le salon #bugs",
     "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+  },
+  "SEARCH": {
+    "Sort_by": "Sort by: ",
+    "Sort_asc": "Ascending",
+    "Sort_desc": "Descending",
+    "SORT_BY": {
+      "Relevance": "Relevance",
+      "ID": "ID",
+      "Level": "Level",
+      "Ilvl": "Item level"
+    }
   }
 }
