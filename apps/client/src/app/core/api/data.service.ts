@@ -16,7 +16,13 @@ import { NpcData } from '../../model/garland-tools/npc-data';
 import { LeveData } from '../../model/garland-tools/leve-data';
 import { MobData } from '../../model/garland-tools/mob-data';
 import { FateData } from '../../model/garland-tools/fate-data';
-import { SearchIndex, XivapiEndpoint, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
+import {
+  SearchIndex,
+  XivapiEndpoint,
+  XivapiSearchFilter,
+  XivapiSearchOptions,
+  XivapiService
+} from '@xivapi/angular-client';
 
 @Injectable()
 export class DataService {
@@ -116,9 +122,10 @@ export class DataService {
    * @param {string} query
    * @param {SearchFilter[]} filters
    * @param onlyCraftable
+   * @param sort
    * @returns {Observable<Recipe[]>}
    */
-  public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean): Observable<SearchResult[]> {
+  public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc']): Observable<SearchResult[]> {
     let lang = this.i18n.currentLang;
     onlyCraftable = onlyCraftable || filters.some(f => f.name === 'craftJob');
     const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1 && query.length > 0;
@@ -172,13 +179,20 @@ export class DataService {
       }
     });
 
-    let results$ = this.xivapi.search({
+    const searchOptions: XivapiSearchOptions = {
       indexes: [SearchIndex.ITEM],
       string: query,
       language: lang,
       filters: xivapiFilters,
       columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks']
-    }).pipe(
+    };
+
+    if (sort[0]) {
+      searchOptions.sort_field = sort[0];
+    }
+    searchOptions.sort_order = sort[1];
+
+    let results$ = this.xivapi.search(searchOptions).pipe(
       map((response) => {
         return response.Results;
       })

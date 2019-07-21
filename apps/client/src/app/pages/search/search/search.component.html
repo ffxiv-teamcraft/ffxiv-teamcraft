@@ -33,7 +33,8 @@
       </nz-auto-option>
     </nz-autocomplete>
     <ng-template #searchType>
-      <nz-select [ngModel]="searchType$ | async" (ngModelChange)="searchType$.next($event)" class="search-type"
+      <nz-select [ngModel]="searchType$ | async" (ngModelChange)="searchType$.next($event);resetFilters()"
+                 class="search-type"
                  nzShowSearch>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ANY) | translate"
                    [nzValue]="searchTypes.ANY"></nz-option>
@@ -148,6 +149,62 @@
                 </nz-select>
               </nz-form-control>
             </nz-form-item>
+          </div>
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+               *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE"
+               fxLayoutAlign.lt-md="center center" fxLayoutGap="10px" style="margin-bottom:10px">
+            <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlex="1 1 auto"
+                 formArrayName="stats">
+              <nz-form-label>{{'filters/stats' | translate}}</nz-form-label>
+              <nz-form-item *ngFor="let item of itemFiltersform.get('stats').controls; let i = index;"
+                            [nzFlex]="true" fxLayout="row" fxLayoutAlign="center center" fxFlex="1 1 auto"
+                            class="stat-filter-row" [formGroupName]="i">
+                <nz-form-control>
+                  <nz-select formControlName="name" nzShowSearch
+                             class="filter-select">
+                    <nz-option *ngFor="let stat of availableStats" [nzValue]="stat.filterName"
+                               [nzLabel]="stat | i18n">
+                    </nz-option>
+                  </nz-select>
+                  <nz-input-group nzCompact class="level-range">
+                    <nz-input-number [nzMin]="0" [nzPrecision]="0" class="min-input"
+                                     formControlName="min"></nz-input-number>
+                    <input type="text" disabled nz-input placeholder="-">
+                    <nz-input-number [nzMin]="1" [nzPrecision]="0"
+                                     formControlName="max"></nz-input-number>
+                  </nz-input-group>
+                </nz-form-control>
+                <button nz-button nzType="danger" (click)="$event.preventDefault();removeFilter('stats', i)"><i nz-icon nzType="delete"></i></button>
+              </nz-form-item>
+              <button nz-button nzBlock
+                      (click)="$event.preventDefault();addFilter('stats')">{{'SEARCH.Add_stat_filter' | translate}}</button>
+            </div>
+            <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlex="1 1 auto"
+                 formArrayName="stats">
+              <nz-form-label>{{'filters/bonuses' | translate}}</nz-form-label>
+              <nz-form-item *ngFor="let item of itemFiltersform.get('bonuses').controls; let i = index;"
+                            [nzFlex]="true" fxLayout="row" fxLayoutAlign="center center" fxFlex="1 1 auto"
+                            class="stat-filter-row" [formGroupName]="i">
+                <nz-form-control>
+                  <nz-select formControlName="name" nzShowSearch
+                             class="filter-select">
+                    <nz-option *ngFor="let stat of availableStats" [nzValue]="stat.filterName"
+                               [nzLabel]="stat | i18n">
+                    </nz-option>
+                  </nz-select>
+                  <nz-input-group nzCompact class="level-range">
+                    <nz-input-number [nzMin]="0" [nzPrecision]="0" class="min-input"
+                                     formControlName="min"></nz-input-number>
+                    <input type="text" disabled nz-input placeholder="-">
+                    <nz-input-number [nzMin]="1" [nzPrecision]="0"
+                                     formControlName="max"></nz-input-number>
+                  </nz-input-group>
+                </nz-form-control>
+                <button nz-button nzType="danger" (click)="$event.preventDefault();removeFilter('bonuses', i)"><i nz-icon nzType="delete"></i></button>
+              </nz-form-item>
+              <button nz-button nzBlock
+                      (click)="$event.preventDefault();addFilter('bonuses')">{{'SEARCH.Add_bonus_stat_filter' | translate}}</button>
+            </div>
           </div>
           <div fxLayout="column" fxLayoutGap="5px">
             <button nz-button nzType="dashed" nzBlock type="button" (click)="resetFilters()">
@@ -294,6 +351,17 @@
         </form>
       </nz-collapse-panel>
     </nz-collapse>
+  </div>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" class="order-boxes" fxLayoutGap="10px">
+    <div>{{'SEARCH.Sort_by' | translate}}</div>
+    <nz-select [ngModel]="sortBy$ | async" (ngModelChange)="sortBy$.next($event)" nzAllowClear>
+      <nz-option [nzValue]="entry.field" [nzLabel]="('SEARCH.SORT_BY.'+entry.label) | translate"
+                 *ngFor="let entry of possibleSortEntries$ | async"></nz-option>
+    </nz-select>
+    <nz-select [ngModel]="sortOrder$ | async" (ngModelChange)="sortOrder$.next($event)">
+      <nz-option nzValue="asc" [nzLabel]="'SEARCH.Sort_asc' | translate"></nz-option>
+      <nz-option nzValue="desc" [nzLabel]="'SEARCH.Sort_desc' | translate"></nz-option>
+    </nz-select>
   </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" *ngIf="(searchType$ | async) === searchTypes.LEVE">

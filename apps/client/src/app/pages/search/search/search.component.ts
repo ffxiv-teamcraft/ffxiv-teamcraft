@@ -14,7 +14,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { SearchFilter } from '../../../model/search/search-filter.interface';
 import { SearchIndex, XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../../model/common/i18n-name';
@@ -36,6 +36,7 @@ import { ActionSearchResult } from '../../../model/search/action-search-result';
 import { StatusSearchResult } from '../../../model/search/status-search-result';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
+import { stats } from '../../../core/data/sources/stats';
 
 @Component({
   selector: 'app-search',
@@ -78,7 +79,9 @@ export class SearchComponent implements OnInit {
     clvlMax: [80],
     jobCategory: [],
     craftJob: [null],
-    itemCategories: [[]]
+    itemCategories: [[]],
+    stats: this.fb.array([]),
+    bonuses: this.fb.array([])
   });
 
   instanceFiltersForm: FormGroup = this.fb.group({
@@ -105,7 +108,7 @@ export class SearchComponent implements OnInit {
     jobCategory: [1]
   });
 
-  availableJobCategories: number[] = [];
+  availableStats = stats;
 
   availableLeveJobCategories = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 34];
 
@@ -120,6 +123,65 @@ export class SearchComponent implements OnInit {
       return (JSON.parse(localStorage.getItem('search:history') || '{}')[type] || [])
         .filter(entry => entry.toLowerCase().indexOf(query.toLowerCase()) > -1 && entry.length > 0)
         .reverse();
+    })
+  );
+
+  sortBy$ = new BehaviorSubject<string>('');
+
+  sortOrder$ = new BehaviorSubject<'asc' | 'desc'>('desc');
+
+  sort$ = combineLatest([this.sortBy$, this.sortOrder$]);
+
+  possibleSortEntries$: Observable<{ label: string, field: string }[]> = this.searchType$.pipe(
+    map(type => {
+      const sortEntries = [
+        {
+          label: 'ID',
+          field: 'ID'
+        },
+        {
+          label: 'Relevance',
+          field: ''
+        }
+      ];
+      switch (type) {
+        case SearchType.ITEM:
+        case SearchType.RECIPE:
+          sortEntries.push(...[
+            {
+              label: 'Level',
+              field: 'LevelEquip'
+            },
+            {
+              label: 'Ilvl',
+              field: 'LevelItem'
+            }
+          ]);
+          break;
+        case SearchType.INSTANCE:
+          sortEntries.push({
+            label: 'Level',
+            field: 'ContentFinderCondition.ClassJobLevelRequired'
+          });
+          break;
+        case SearchType.QUEST:
+          sortEntries.push({
+            label: 'Level',
+            field: 'ClassJobLevel0'
+          });
+          break;
+        case SearchType.LEVE:
+        case SearchType.ACTION:
+        case SearchType.TRAIT:
+          sortEntries.push({
+            label: 'Level',
+            field: 'ClassJobLevel'
+          });
+          break;
+        default:
+          break;
+      }
+      return sortEntries;
     })
   );
 
@@ -162,7 +224,7 @@ export class SearchComponent implements OnInit {
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
       this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
-    this.results$ = combineLatest([this.query$, this.searchType$, this.filters$]).pipe(
+    this.results$ = combineLatest([this.query$, this.searchType$, this.filters$, this.sort$]).pipe(
       filter(([query, , filters]) => {
         if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
           // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
@@ -196,17 +258,17 @@ export class SearchComponent implements OnInit {
           relativeTo: this.route
         });
       }),
-      mergeMap(([query, type, filters]) => {
+      mergeMap(([query, type, filters, sort]) => {
         let searchRequest$: Observable<any[]>;
         switch (type) {
           case SearchType.ANY:
             searchRequest$ = this.searchAny(query, filters);
             break;
           case SearchType.ITEM:
-            searchRequest$ = this.data.searchItem(query, filters, false);
+            searchRequest$ = this.data.searchItem(query, filters, false, sort);
             break;
           case SearchType.RECIPE:
-            searchRequest$ = this.data.searchItem(query, filters, true);
+            searchRequest$ = this.data.searchItem(query, filters, true, sort);
             break;
           case SearchType.INSTANCE:
             searchRequest$ = this.searchInstance(query, filters);
@@ -245,7 +307,7 @@ export class SearchComponent implements OnInit {
             searchRequest$ = this.searchAchievement(query, filters);
             break;
           default:
-            searchRequest$ = this.data.searchItem(query, filters, false);
+            searchRequest$ = this.data.searchItem(query, filters, false, sort);
             break;
         }
         if (type === SearchType.ANY) {
@@ -276,13 +338,25 @@ export class SearchComponent implements OnInit {
       if (params.filters !== undefined) {
         const filters = JSON.parse(atob(params.filters));
         this.filters$.next(filters);
-        this.itemFiltersform.patchValue(this.filtersToForm(filters));
-        this.leveFiltersForm.patchValue(this.filtersToForm(filters));
-        this.actionFilterForm.patchValue(this.filtersToForm(filters));
-        this.instanceFiltersForm.patchValue(this.filtersToForm(filters));
-        this.traitFilterForm.patchValue(this.filtersToForm(filters));
+        this.itemFiltersform.patchValue(this.filtersToForm(filters, this.itemFiltersform));
+        this.leveFiltersForm.patchValue(this.filtersToForm(filters, this.leveFiltersForm));
+        this.actionFilterForm.patchValue(this.filtersToForm(filters, this.actionFilterForm));
+        this.instanceFiltersForm.patchValue(this.filtersToForm(filters, this.instanceFiltersForm));
+        this.traitFilterForm.patchValue(this.filtersToForm(filters, this.traitFilterForm));
       }
     });
+  }
+
+  addFilter(type: 'stats' | 'bonuses'): void {
+    (this.itemFiltersform.get(type) as FormArray).push(this.fb.group({
+      name: '',
+      min: 0,
+      max: 9999
+    }));
+  }
+
+  removeFilter(type: 'stats' | 'bonuses', i: number): void {
+    (this.itemFiltersform.get(type) as FormArray).removeAt(i);
   }
 
   searchAny(query: string, filters: SearchFilter[]): Observable<any[]> {
@@ -771,6 +845,9 @@ export class SearchComponent implements OnInit {
   }
 
   resetFilters(): void {
+    this.sortBy$.next('');
+    this.sortOrder$.next('desc');
+
     this.itemFiltersform.reset({
       ilvlMin: 0,
       ilvlMax: 999,
@@ -780,7 +857,9 @@ export class SearchComponent implements OnInit {
       clvlMax: 80,
       jobCategory: [],
       craftJob: null,
-      itemCategories: []
+      itemCategories: [],
+      stats: [],
+      bonuses: []
     });
 
     this.instanceFiltersForm.reset({
@@ -830,14 +909,35 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  private filtersToForm(filters: SearchFilter[]): { [key: string]: any } {
+  private filtersToForm(filters: SearchFilter[], form: FormGroup): { [key: string]: any } {
     const formRawValue = {};
     (filters || []).forEach(f => {
-      if (f.value !== null && f.value.min !== undefined) {
-        formRawValue[`${f.name}Min`] = f.value.min;
-        formRawValue[`${f.name}Max`] = f.value.max;
-      } else if (f.value !== null) {
-        formRawValue[f.name] = f.value;
+      if (f.value !== null) {
+        if (f.formArray) {
+          if (form.get(f.formArray) === null) {
+            form.setControl(f.formArray, this.fb.array([]));
+          }
+          (form.get(f.formArray) as FormArray).push(
+            this.fb.group({
+              name: f.entryName,
+              min: f.value.min,
+              max: f.value.max
+            })
+          );
+          formRawValue[f.formArray] = [
+            ...(formRawValue[f.formArray] || []),
+            {
+              name: f.entryName,
+              min: f.value.min,
+              max: f.value.max
+            }
+          ];
+        } else if (f.value.min !== undefined) {
+          formRawValue[`${f.name}Min`] = f.value.min;
+          formRawValue[`${f.name}Max`] = f.value.max;
+        } else {
+          formRawValue[f.name] = f.value;
+        }
       }
     });
     return formRawValue;
@@ -854,6 +954,57 @@ export class SearchComponent implements OnInit {
           max: controls.ilvlMax.value
         }
       });
+    }
+    if ((controls.stats as FormArray).controls.length > 0) {
+      filters.push(...controls.stats.value.map(entry => {
+        let fieldName: string;
+        let valueMultiplier = 1;
+        switch (entry.name) {
+          case 'Physical_Damage':
+            fieldName = 'DamagePhys';
+            break;
+          case 'Magical_Damage':
+            fieldName = 'DamageMag';
+            break;
+          case 'Defense':
+            fieldName = 'DefensePhys';
+            break;
+          case 'Magic_Defense':
+            fieldName = 'DefenseMag';
+            break;
+          case 'Delay':
+            fieldName = 'DelayMs';
+            valueMultiplier = 1000;
+            break;
+          default:
+            fieldName = `Stats.${entry.name}.Value`;
+            break;
+        }
+        return {
+          minMax: true,
+          formArray: 'stats',
+          name: fieldName,
+          entryName: entry.name,
+          value: {
+            min: (+entry.min * valueMultiplier),
+            max: (+entry.max * valueMultiplier)
+          }
+        };
+      }));
+    }
+    if (controls.bonuses) {
+      filters.push(...controls.bonuses.value.map(entry => {
+        return {
+          minMax: true,
+          formArray: 'bonuses',
+          name: `Bonuses.${entry.name}.Max`,
+          entryName: entry.name,
+          value: {
+            min: entry.min,
+            max: entry.max
+          }
+        };
+      }));
     }
     if (controls.elvlMax.value < 80 || controls.elvlMin.value > 0) {
       filters.push({
