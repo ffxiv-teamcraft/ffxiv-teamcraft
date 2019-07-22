@@ -248,7 +248,7 @@ export class SearchComponent implements OnInit {
         return query.length > 3 || filters.length > 0;
       }),
       debounceTime(1200),
-      tap(([query, type, filters]) => {
+      tap(([query, type, filters, [sortBy, sortOrder]]) => {
         this.allSelected = false;
         this.showIntro = false;
         this.loading = true;
@@ -257,6 +257,10 @@ export class SearchComponent implements OnInit {
           type: type,
           filters: null
         };
+        if (sortBy) {
+          queryParams.sort = sortBy;
+          queryParams.order = sortOrder;
+        }
         if (filters.length > 0) {
           queryParams.filters = btoa(JSON.stringify(filters));
         } else {
@@ -358,6 +362,10 @@ export class SearchComponent implements OnInit {
         this.actionFilterForm.patchValue(this.filtersToForm(filters, this.actionFilterForm));
         this.instanceFiltersForm.patchValue(this.filtersToForm(filters, this.instanceFiltersForm));
         this.traitFilterForm.patchValue(this.filtersToForm(filters, this.traitFilterForm));
+      }
+      if (params.sort !== undefined) {
+        this.sortBy$.next(params.sort);
+        this.sortOrder$.next(params.order);
       }
     });
   }

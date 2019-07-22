@@ -172,8 +172,7 @@ export class DataService {
       string: query,
       language: lang,
       filters: xivapiFilters,
-      columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks'],
-      staging: true
+      columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks']
     };
 
     if (sort[0]) {

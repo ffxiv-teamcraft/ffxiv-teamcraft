@@ -132,9 +132,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent {
                       .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
                     return <SpendingEntry>{
                       ...entry,
-                      price: price.PricePerUnit
+                      price: price && price.PricePerUnit
                     };
                   })
+                  .filter(entry => entry.price)
                   .sort((a, b) => {
                     const priceDiff = b.price - a.price;
                     if (priceDiff === 0) {
