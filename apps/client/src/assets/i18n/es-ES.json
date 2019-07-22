@@ -344,8 +344,8 @@
     "Clear_search_history": "Limpiar el historial de búsqueda",
     "Auto_mark_as_done_in_log": "Marcar elementos como completados en el registro cuando se hacen en una lista",
     "Db_comments_position": "Posición de comentarios de base de datos",
-    "Always_HQ_leves": "Always count leves exp with HQ items",
-    "Clickthrough_overlay": "Make overlay clickthrough",
+    "Always_HQ_leves": "Siempre contar la experiencia de leves con artículos HQ",
+    "Clickthrough_overlay": "Permitir hacer clic a través de la capa sobrepuesta",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -372,13 +372,13 @@
     "Patreon_features": "Características para seguidores de Patreon",
     "Contacts": "Contactos",
     "Add_new_contact": "Nuevo contacto",
-    "Save_for_all": "Save for all crafters",
+    "Save_for_all": "Guardar para todos los artesanos",
     "User_not_verified": "Usuario no verificado, haga clic para verificar",
     "More_than_100_lists_created": "Más de 100 listas creadas",
     "Veteran": "Veterano",
     "VERIFICATION": {
       "Title": "Verificación de personaje",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
+      "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" dentro de su biografía en su perfil de Lodestone y haga clic en el botón de abajo. Más información en el <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "¡Personaje verificado! Ahora puede cerrar esta ventana. No dude en eliminar el código de su perfil, no es necesario ya.",
       "Error": "No se pudo encontrar el código en su bio. Por favor asegúrese de haber pegado y aplicado los cambios. espere ~ 30s e inténtelo de nuevo.",
       "Validate": "Validar"
@@ -1339,7 +1339,7 @@
       "Show_more": "Mostrar {{amount}} comentarios más",
       "No_comments": "Sin comentarios",
       "Post": "Publicar",
-      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "Escriba <tipo de pagina>:\"<Nombre del Contenido>\" para crear un enlace a otra página. Ejemplos: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Tipos de páginas soportados: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     }
   },
   "SEARCH_TYPES": {
