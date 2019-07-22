@@ -372,7 +372,7 @@
     "Patreon_features": "Patreon 후원자 특전",
     "Contacts": "연락처",
     "Add_new_contact": "새 연락처",
-    "Save_for_all": "Save for all crafters",
+    "Save_for_all": "모든 직업에 적용",
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요",
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
@@ -1418,17 +1418,17 @@
     "Firebase_blocked": "데이터베이스에 접근할 수 없습니다. 무언가 문제가 있거나 인터넷이 끊겼을 수 있습니다."
   },
   "SEARCH": {
-    "Sort_by": "Sort by: ",
-    "Sort_asc": "Ascending",
-    "Sort_desc": "Descending",
-    "Add_stat_filter": "Add stat filter",
-    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Sort_by": "정렬 기준: ",
+    "Sort_asc": "오름차순",
+    "Sort_desc": "내림차순",
+    "Add_stat_filter": "스탯 필터 추가",
+    "Add_bonus_stat_filter": "추가 스탯을 주는 아이템 필터",
     "SORT_BY": {
-      "Relevance": "Relevance",
+      "Relevance": "관련성",
       "ID": "ID",
-      "Level": "Level",
-      "Ilvl": "Item level",
-      "Rlvl": "Recipe level"
+      "Level": "레벨",
+      "Ilvl": "아이템 레벨",
+      "Rlvl": "제작 레벨"
     }
   }
 }
