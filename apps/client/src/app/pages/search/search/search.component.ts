@@ -1043,7 +1043,7 @@ export class SearchComponent implements OnInit {
         }
       });
     }
-    if (controls.jobCategories.value.length > 0) {
+    if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
           return {
             name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
@@ -1058,7 +1058,7 @@ export class SearchComponent implements OnInit {
         value: controls.craftJob.value
       });
     }
-    if (controls.itemCategories.value.length > 0) {
+    if (controls.itemCategories.value && controls.itemCategories.value.length > 0) {
       filters.push({
         array: true,
         name: 'ItemUICategoryTargetID',
