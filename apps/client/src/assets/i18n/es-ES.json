@@ -1414,20 +1414,20 @@
     "Title": "Blog"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+    "Http_request_error": "Hay un problema con {{tool}}, por favor comprueba en el canal #announcements o repórtalo en el canal #bugs de discord",
+    "Firebase_blocked": "Teamcraft no pudo acceder a la base de datos, parece que algo lo está bloqueando o no tiene acceso a Internet."
   },
   "SEARCH": {
-    "Sort_by": "Sort by: ",
-    "Sort_asc": "Ascending",
-    "Sort_desc": "Descending",
+    "Sort_by": "Ordenar por: ",
+    "Sort_asc": "Ascendente",
+    "Sort_desc": "Descendente",
     "Add_stat_filter": "Añadir filtro de atributo",
     "Add_bonus_stat_filter": "Añadir filtro de atributo de bono",
     "SORT_BY": {
-      "Relevance": "Relevance",
+      "Relevance": "Relevancia",
       "ID": "ID",
-      "Level": "Level",
-      "Ilvl": "Item level",
+      "Level": "Nivel",
+      "Ilvl": "Nivel del artículo",
       "Rlvl": "Recipe level"
     }
   }
