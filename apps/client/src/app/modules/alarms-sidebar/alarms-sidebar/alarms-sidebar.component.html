@@ -12,7 +12,7 @@
              [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate"></i>
         </div>
         <div class="item-icon">
-          <app-item-icon [icon]="row.alarm.icon" [itemName]="row.alarm.itemId | itemName: row.alarm | i18n"
+          <app-item-icon [icon]="row.alarm.itemId | lazyIcon" [itemName]="row.alarm.itemId | itemName: row.alarm | i18n"
                          [itemId]="row.alarm.itemId" [width]="32" [disableClick]="overlayMode"></app-item-icon>
           <img src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type">
         </div>

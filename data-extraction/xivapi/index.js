@@ -240,7 +240,7 @@ handleAetheryte = (row) => {
   }
 
   // Tailfeather needs a fix for its map id
-  if(+row.ENpcResidentID === 76){
+  if (+row.ENpcResidentID === 76) {
     row.PlaceNameID = 2000;
     row.MapID = 212;
   }
@@ -1245,4 +1245,22 @@ if (hasTodo('monsterDrops')) {
       });
       persistToTypescript('monster-drops', 'monsterDrops', drops);
     });
+}
+
+if (hasTodo('stats')) {
+  const stats = [];
+  getAllPages('https://xivapi.com/BaseParam?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(baseParam => {
+      stats.push({
+        id: baseParam.ID,
+        en: baseParam.Name_en,
+        de: baseParam.Name_de,
+        ja: baseParam.Name_ja,
+        fr: baseParam.Name_fr,
+        filterName: baseParam.Name_en.split(' ').join('')
+      });
+    });
+  }, null, () => {
+    persistToTypescript('stats', 'stats', stats);
+  });
 }

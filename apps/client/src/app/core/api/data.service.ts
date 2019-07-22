@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { GarlandToolsService } from './garland-tools.service';
 import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
-import { buffer, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 import { LazyDataService } from '../data/lazy-data.service';
 import { InstanceData } from '../../model/garland-tools/instance-data';
@@ -16,7 +16,13 @@ import { NpcData } from '../../model/garland-tools/npc-data';
 import { LeveData } from '../../model/garland-tools/leve-data';
 import { MobData } from '../../model/garland-tools/mob-data';
 import { FateData } from '../../model/garland-tools/fate-data';
-import { SearchIndex, XivapiEndpoint, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
+import {
+  SearchIndex,
+  XivapiEndpoint,
+  XivapiSearchFilter,
+  XivapiSearchOptions,
+  XivapiService
+} from '@xivapi/angular-client';
 
 @Injectable()
 export class DataService {
@@ -116,9 +122,10 @@ export class DataService {
    * @param {string} query
    * @param {SearchFilter[]} filters
    * @param onlyCraftable
+   * @param sort
    * @returns {Observable<Recipe[]>}
    */
-  public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean): Observable<SearchResult[]> {
+  public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc']): Observable<SearchResult[]> {
     let lang = this.i18n.currentLang;
     onlyCraftable = onlyCraftable || filters.some(f => f.name === 'craftJob');
     const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1 && query.length > 0;
@@ -128,7 +135,7 @@ export class DataService {
 
     const xivapiFilters: XivapiSearchFilter[] = [].concat.apply([], filters
       .filter(f => {
-        return f.value !== null && ['craftJob', 'clvl'].indexOf(f.name) === -1;
+        return f.value !== null;
       })
       .map(f => {
         if (f.minMax) {
@@ -144,54 +151,38 @@ export class DataService {
               value: f.value.max
             }
           ];
-        } else {
-          return [{
-            column: f.name,
-            operator: '=',
-            value: f.value
-          }];
+        } else if (f.array) {
+          return [
+            {
+              column: f.name,
+              operator: '|=',
+              value: f.value
+            }
+          ];
         }
+        return [{
+          column: f.name,
+          operator: '=',
+          value: f.value
+        }];
       }));
 
-    let craftedByFilter: SearchFilter;
-    let clvlFilter: SearchFilter;
+    const searchOptions: XivapiSearchOptions = {
+      indexes: [SearchIndex.ITEM],
+      string: query,
+      language: lang,
+      filters: xivapiFilters,
+      columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks']
+    };
 
-    filters.forEach(filter => {
-      if (filter.name === 'craftJob') {
-        craftedByFilter = filter;
-      }
-      if (filter.name === 'clvl') {
-        clvlFilter = filter;
-      }
-    });
+    if (sort[0]) {
+      searchOptions.sort_field = sort[0];
+    }
+    searchOptions.sort_order = sort[1];
 
-    const resultPage$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
-    const allPagesDone$: Subject<void> = new Subject<void>();
-
-    let results$ = resultPage$.pipe(
-      mergeMap(page => {
-        return this.xivapi.search({
-          indexes: [SearchIndex.ITEM],
-          string: query,
-          language: lang,
-          filters: xivapiFilters,
-          columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks'],
-          limit: 250,
-          page: page
-        });
-      }),
-      tap(res => {
-        if (res.Pagination.PageNext && res.Pagination.PageNext < 10) {
-          resultPage$.next(res.Pagination.PageNext);
-        } else {
-          setTimeout(() => {
-            allPagesDone$.next();
-          }, 100);
-        }
-      }),
-      buffer(allPagesDone$),
-      map((pages) => {
-        return [].concat.apply([], pages.map(page => page.Results));
+    let results$ = this.xivapi.search(searchOptions).pipe(
+      map((response) => {
+        return response.Results;
       })
     );
 
@@ -238,16 +229,6 @@ export class DataService {
           const recipes = this.lazyData.recipes.filter(recipe => recipe.result === item.ID);
           if (recipes.length > 0) {
             recipes
-              .filter(recipe => {
-                let matches = true;
-                if (craftedByFilter) {
-                  matches = matches && craftedByFilter.value === recipe.job;
-                }
-                if (clvlFilter) {
-                  matches = matches && clvlFilter.value.min <= recipe.level && clvlFilter.value.max >= recipe.level;
-                }
-                return matches;
-              })
               .forEach(recipe => {
                 results.push({
                   itemId: item.ID,

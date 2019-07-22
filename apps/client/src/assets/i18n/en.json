@@ -250,6 +250,8 @@
   "filters/worn_by": "Worn by",
   "filters/crafted_by": "Crafted by",
   "filters/item_category": "Item type",
+  "filters/stats": "Stats filters",
+  "filters/bonuses": "Stat bonuses filters",
   "Adding_recipes": "Adding {{amount}} recipes to list {{listname}}",
   "Recipe_Added": "1 item added to list {{listname}}",
   "Recipes_Added": "{{itemcount}} items added to list {{listname}}",
@@ -1414,5 +1416,19 @@
   "ERRORS": {
     "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
     "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+  },
+  "SEARCH": {
+    "Sort_by": "Sort by: ",
+    "Sort_asc": "Ascending",
+    "Sort_desc": "Descending",
+    "Add_stat_filter": "Add stat filter",
+    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "SORT_BY": {
+      "Relevance": "Relevance",
+      "ID": "ID",
+      "Level": "Level",
+      "Ilvl": "Item level",
+      "Rlvl": "Recipe level"
+    }
   }
 }

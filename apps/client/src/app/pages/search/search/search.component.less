@@ -12,6 +12,14 @@
   opacity: .8;
 }
 
+.order-boxes {
+  padding: 10px;
+
+  > nz-select {
+    min-width: 200px;
+  }
+}
+
 .search-type {
   min-width: 100px;
 }
@@ -54,6 +62,24 @@ nz-form-item {
   &.small {
     width: 28px;
     height: 28px;
+  }
+}
+
+.stat-filter-row {
+
+  .level-range {
+    top:-2px;
+  }
+
+  ::ng-deep .ant-select-selection {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+
+  .min-input {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
   }
 }
 

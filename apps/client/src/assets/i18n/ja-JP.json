@@ -250,6 +250,8 @@
   "filters/worn_by": "装備できるジョブ",
   "filters/crafted_by": "クラフター",
   "filters/item_category": "アイテム種類",
+  "filters/stats": "Stats filters",
+  "filters/bonuses": "Stat bonuses filters",
   "Adding_recipes": "{{amount}} 個のレシピを {{listname}} リストに追加中",
   "Recipe_Added": "１個のアイテムが {{listname}} リストに追加されました",
   "Recipes_Added": "{{itemcount}} 個のアイテムが {{listname}} リストが追加されました",
@@ -1414,5 +1416,19 @@
   "ERRORS": {
     "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
     "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+  },
+  "SEARCH": {
+    "Sort_by": "Sort by: ",
+    "Sort_asc": "Ascending",
+    "Sort_desc": "Descending",
+    "Add_stat_filter": "Add stat filter",
+    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "SORT_BY": {
+      "Relevance": "Relevance",
+      "ID": "ID",
+      "Level": "Level",
+      "Ilvl": "Item level",
+      "Rlvl": "Recipe level"
+    }
   }
 }

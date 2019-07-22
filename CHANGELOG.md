@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.18"></a>
+## [5.6.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.17...v5.6.18) (2019-07-22)
+
+
+### Bug Fixes
+
+* **currency-spending:** fixed infinite loading issue with poetics on twintania ([1623159](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1623159))
+* **db:** fixed action cost display ([b24634c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b24634c))
+* **desktop:** fixed an issue with alarms not having proper icons ([d0ab90d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0ab90d))
+* **search:** fixed the way "worn_by" filter works to handle it better ([6a97139](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6a97139))
+* **simulator:** fixed a display bug with some consumables ([6a42105](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6a42105))
+
+
+### Features
+
+* **search:** added support for bonus and stats filters ([d6be91f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d6be91f))
+* **search:** support for new xivapi search filter method using arrays ([4b3be4d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4b3be4d))
+
+
+
 <a name="5.6.17"></a>
 ## [5.6.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.15...v5.6.17) (2019-07-17)
 
