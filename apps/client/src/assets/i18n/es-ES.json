@@ -416,9 +416,9 @@
       "Final_step": "Validación",
       "Creating_list": "Creando la lista",
       "Loading_items": "Cargando la información de los artículos",
-      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
-      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
-      "Group_together": "Group materias together"
+      "Estimate_overmeld_materia": "Estimar materias requeridas para el exceso de fusión",
+      "Multiply_tool_materia": "Multiplicar materia para las herramientas de DoL (×2) y DoH (×8)",
+      "Group_together": "Agrupar materias juntas"
     }
   },
   "LIST": {
@@ -734,10 +734,10 @@
     "Macrolock": "Incluir bloqueo de macro",
     "Solve_rotation": "Solucionar esta rotación",
     "Rotation_solver": "Resolvedor de rotación",
-    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Recipe_picker_placeholder": "Introduzca el nombre de la receta que desea crear",
     "SOLVER": {
       "Hq_target": "% de HQ objetivo",
-      "Use_rotation_as_seed": "Use current rotation as starting point",
+      "Use_rotation_as_seed": "Usar rotación actual como punto de partida",
       "Disclaimer": "El resolvedor es un trabajo en progreso, por favor tenga en cuenta que no está hecho para crear rotaciones perfectas, es una IA tratando de mejorar con el tiempo que puede producir resultados muy malos así como muy buenos. Por favor, no informe de resultados malos como un error."
     },
     "COMMUNITY_ROTATIONS": {
@@ -1221,7 +1221,7 @@
     "3d_model_help": "Previsualizar modelo 3D",
     "Achievements": "Logros",
     "Currencies": "Divisas",
-    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "Rowena_splendor": "Esplendores de Rowena (Estrella = +20% de bonus)",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
