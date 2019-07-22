@@ -127,7 +127,6 @@ export class DataService {
    */
   public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc']): Observable<SearchResult[]> {
     let lang = this.i18n.currentLang;
-    onlyCraftable = onlyCraftable || filters.some(f => f.name === 'craftJob');
     const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1 && query.length > 0;
     if (isKoOrZh) {
       lang = 'en';
@@ -218,7 +217,7 @@ export class DataService {
       map(results => {
         if (onlyCraftable) {
           return results.filter(row => {
-            return row.GameContentLinks && row.GameContentLinks.Recipe && row.GameContentLinks.Recipe.ItemResult;
+            return row.Recipes && row.Recipes.length > 0;
           });
         }
         return results;
