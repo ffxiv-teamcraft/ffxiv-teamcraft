@@ -1427,7 +1427,8 @@
       "Relevance": "Relevance",
       "ID": "ID",
       "Level": "Level",
-      "Ilvl": "Item level"
+      "Ilvl": "Item level",
+      "Rlvl": "Recipe level"
     }
   }
 }
