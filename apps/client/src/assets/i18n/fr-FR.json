@@ -250,6 +250,8 @@
   "filters/worn_by": "Équipé par",
   "filters/crafted_by": "Fabriqué par",
   "filters/item_category": "Type d'objet",
+  "filters/stats": "Filtres de statistiques",
+  "filters/bonuses": "Filtres bonus de statistiques",
   "Adding_recipes": "Ajout de {{amount}} recettes à la liste {{listname}}",
   "Recipe_Added": "1 objet ajouté à la liste {{listname}}",
   "Recipes_Added": "{{itemcount}} objets ajoutés à la liste {{listname}}",
@@ -370,13 +372,13 @@
     "Patreon_features": "Fonctionnalités réservées aux supporters patreon",
     "Contacts": "Contacts",
     "Add_new_contact": "Nouveau contact",
-    "Save_for_all": "Save for all crafters",
+    "Save_for_all": "Sauvegarder pour tous les artisans",
     "User_not_verified": "Utilisateur non vérifié, cliquez pour vérifier",
     "More_than_100_lists_created": "Plus de 100 listes créées",
     "Veteran": "Vétéran",
     "VERIFICATION": {
       "Title": "Vérification de personnage",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
+      "Guide": "Pour vérifier votre compte, collez ce code: \"{{userId}}\" dans votre biographie de profil Lodestone et cliquez sur le bouton ci-dessous. Plus d'informations sur <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">le wiki</a>",
       "Success": "Personnage vérifié ! Vous pouvez maintenant fermer cette fenêtre contextuelle. N’hésitez pas à supprimer le code de votre profil, il n’est plus nécessaire.",
       "Error": "Code introuvable dans votre description, merci de vous assurer que vous l'avez bien placé dans la description et sauvegardé les changements, puis attendez 30 s ~ et réessayez.",
       "Validate": "Valider"
@@ -732,7 +734,7 @@
     "Macrolock": "Inclure macrolock",
     "Solve_rotation": "Résoudre cette rotation",
     "Rotation_solver": "Résolveur de rotations",
-    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Recipe_picker_placeholder": "Entrez le nom de la recette que vous voulez simuler",
     "SOLVER": {
       "Hq_target": "%HQ Ciblé",
       "Use_rotation_as_seed": "Utiliser la rotation actuelle comme point de départ",
@@ -1219,7 +1221,7 @@
     "3d_model_help": "Aperçu du modèle 3D",
     "Achievements": "Haut-faits",
     "Currencies": "Devises",
-    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "Rowena_splendor": "Splendeurs de Rowena (étoile = +20% bonus)",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1413,6 +1415,20 @@
   },
   "ERRORS": {
     "Http_request_error": "Il y a un problème avec {{tool}}, veuillez vérifier le salon #announcements sur discord ou signaler le soucis dans le salon #bugs",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+    "Firebase_blocked": "Teamcraft n'a pas pu atteindre la base de données, il semble que quelque chose le bloque ou vous n'avez pas accès à Internet."
+  },
+  "SEARCH": {
+    "Sort_by": "Trier par: ",
+    "Sort_asc": "Croissant",
+    "Sort_desc": "Décroissant",
+    "Add_stat_filter": "Ajouter un filtre de stat",
+    "Add_bonus_stat_filter": "Ajouter un filtre de stat bonus",
+    "SORT_BY": {
+      "Relevance": "Pertinence",
+      "ID": "ID",
+      "Level": "Niveau",
+      "Ilvl": "Niveau d'objet",
+      "Rlvl": "Niveau de la recette"
+    }
   }
 }
