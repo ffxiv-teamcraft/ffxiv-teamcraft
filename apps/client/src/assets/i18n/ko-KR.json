@@ -250,8 +250,8 @@
   "filters/worn_by": "착용 직업",
   "filters/crafted_by": "제작 직업",
   "filters/item_category": "종류",
-  "filters/stats": "Stats filters",
-  "filters/bonuses": "Stat bonuses filters",
+  "filters/stats": "스탯 필터",
+  "filters/bonuses": "보너스 스탯 필터",
   "Adding_recipes": "{{amount}}개의 제작법을 {{listname}} 목록에 추가 중",
   "Recipe_Added": "1개의 아이템이 {{listname}} 목록에 추가되었습니다",
   "Recipes_Added": "{{itemcount}} 개의 아이템이 {{listname}}  목록에 추가되었습니다",
@@ -734,7 +734,7 @@
     "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
     "Solve_rotation": "로테이션 생성",
     "Rotation_solver": "로테이션 생성기",
-    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
     "SOLVER": {
       "Hq_target": "HQ 목표치",
       "Use_rotation_as_seed": "현재 로테이션을 시작점부터 사용",
@@ -1223,8 +1223,8 @@
     "Currencies": "화폐",
     "Rowena_splendor": "로웨나 상회 거래 (별 = 20% 추가 경험치)",
     "ITEM": {
-      "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "BONUS"
+      "Masterpiece_base": "기본",
+      "Masterpiece_bonus": "보너스"
     },
     "NODE": {
       "Items": "아이템",
@@ -1422,7 +1422,7 @@
     "Sort_asc": "오름차순",
     "Sort_desc": "내림차순",
     "Add_stat_filter": "스탯 필터 추가",
-    "Add_bonus_stat_filter": "추가 스탯을 주는 아이템 필터",
+    "Add_bonus_stat_filter": "보너스 스탯 필터 추가",
     "SORT_BY": {
       "Relevance": "관련성",
       "ID": "ID",
