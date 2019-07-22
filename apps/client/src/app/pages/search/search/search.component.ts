@@ -77,7 +77,7 @@ export class SearchComponent implements OnInit {
     elvlMax: [80],
     clvlMin: [0],
     clvlMax: [80],
-    jobCategory: [],
+    jobCategories: [[]],
     craftJob: [null],
     itemCategories: [[]],
     stats: this.fb.array([]),
@@ -146,6 +146,17 @@ export class SearchComponent implements OnInit {
       ];
       switch (type) {
         case SearchType.ITEM:
+          sortEntries.push(...[
+            {
+              label: 'Level',
+              field: 'LevelEquip'
+            },
+            {
+              label: 'Ilvl',
+              field: 'LevelItem'
+            }
+          ]);
+          break;
         case SearchType.RECIPE:
           sortEntries.push(...[
             {
@@ -155,6 +166,10 @@ export class SearchComponent implements OnInit {
             {
               label: 'Ilvl',
               field: 'LevelItem'
+            },
+            {
+              label: 'Rlvl',
+              field: 'Recipes.Level'
             }
           ]);
           break;
@@ -1021,22 +1036,25 @@ export class SearchComponent implements OnInit {
     if (controls.clvlMax.value < 80 || controls.clvlMin.value > 0) {
       filters.push({
         minMax: true,
-        name: 'clvl',
+        name: 'Recipes.Level',
         value: {
           min: controls.clvlMin.value,
           max: controls.clvlMax.value
         }
       });
     }
-    if (controls.jobCategory.value > 0) {
-      filters.push({
-        name: `ClassJobCategory.${this.gt.getJob(controls.jobCategory.value).abbreviation}`,
-        value: 1
-      });
+    if (controls.jobCategories.value.length > 0) {
+      filters.push(...controls.jobCategories.value.map(jobId => {
+          return {
+            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
+            value: 1
+          };
+        })
+      );
     }
     if (controls.craftJob.value) {
       filters.push({
-        name: 'craftJob',
+        name: 'Recipes.ClassJobID',
         value: controls.craftJob.value
       });
     }

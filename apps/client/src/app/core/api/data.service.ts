@@ -135,7 +135,7 @@ export class DataService {
 
     const xivapiFilters: XivapiSearchFilter[] = [].concat.apply([], filters
       .filter(f => {
-        return f.value !== null && ['craftJob', 'clvl'].indexOf(f.name) === -1;
+        return f.value !== null;
       })
       .map(f => {
         if (f.minMax) {
@@ -167,24 +167,13 @@ export class DataService {
         }];
       }));
 
-    let craftedByFilter: SearchFilter;
-    let clvlFilter: SearchFilter;
-
-    filters.forEach(filter => {
-      if (filter.name === 'craftJob') {
-        craftedByFilter = filter;
-      }
-      if (filter.name === 'clvl') {
-        clvlFilter = filter;
-      }
-    });
-
     const searchOptions: XivapiSearchOptions = {
       indexes: [SearchIndex.ITEM],
       string: query,
       language: lang,
       filters: xivapiFilters,
-      columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks']
+      columns: ['ID', 'Name_*', 'Icon', 'GameContentLinks'],
+      staging: true
     };
 
     if (sort[0]) {
@@ -241,16 +230,6 @@ export class DataService {
           const recipes = this.lazyData.recipes.filter(recipe => recipe.result === item.ID);
           if (recipes.length > 0) {
             recipes
-              .filter(recipe => {
-                let matches = true;
-                if (craftedByFilter) {
-                  matches = matches && craftedByFilter.value === recipe.job;
-                }
-                if (clvlFilter) {
-                  matches = matches && clvlFilter.value.min <= recipe.level && clvlFilter.value.max >= recipe.level;
-                }
-                return matches;
-              })
               .forEach(recipe => {
                 results.push({
                   itemId: item.ID,

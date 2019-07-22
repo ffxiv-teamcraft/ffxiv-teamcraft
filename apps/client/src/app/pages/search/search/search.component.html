@@ -300,7 +300,8 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'SEARCH_FILTERS.Job' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="jobCategory" nzAllowClear class="filter-select" nzShowSearch>
+                <nz-select formControlName="jobCategories" nzAllowClear nzMode="multiple" class="filter-select"
+                           nzShowSearch>
                   <nz-option *ngFor="let category of availableJobs" [nzValue]="category"
                              [nzLabel]="category | jobAbbr | i18n">
                   </nz-option>
