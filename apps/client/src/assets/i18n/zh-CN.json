@@ -512,7 +512,7 @@
         "REMOVE_ITEM": "从清单中删除物品",
         "ADD_TAG": "添加标签到物品",
         "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成",
-        "MARKET_BOARD_INFORMATIONS": "时长信息"
+        "MARKET_BOARD_INFORMATIONS": "市场信息"
       }
     },
     "LAYOUT": {
@@ -738,7 +738,7 @@
     "SOLVER": {
       "Hq_target": "目标HQ率",
       "Use_rotation_as_seed": "Use current rotation as starting point",
-      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的工序而生，作为一个AI在其逐渐成长的过程中，可能生成非常好的工序也可能生成非常不好的工序。请不要举报不理想的手法为bug."
+      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的工序而生，作为一个 AI，在其逐渐成长的过程中，可能生成非常好的工序也可能生成非常差的工序。如果生成结果不理想，请不要报告为 bug。"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "社区共享工序",
@@ -1339,7 +1339,7 @@
       "Show_more": "查看其他{{amount}} 个评论",
       "No_comments": "暂无评论",
       "Post": "发布",
-      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "输入 <页面类型>:\"<页面标题>\" 以链接到其它页面。例如， item:\"无锋剑柯塔纳\"、action:\"制作\"、map:\"魔晶堂\" 。支持的页面类型有：item(物品), map(地图), mob(怪物), achievement(成就), leve(理符), npc, instance(副本), quest(任务), trait(特性), action(技能), status(状态)"
     }
   },
   "SEARCH_TYPES": {
@@ -1414,21 +1414,21 @@
     "Title": "博客"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+    "Http_request_error": "{{tool}} 发生了错误。请到 Discord 的 #announcements 频道查看公告，或是到 #bugs 频道反馈。",
+    "Firebase_blocked": "Teamcraft 无法访问数据库。可能是访问请求被拦截，或者网络已断开。"
   },
   "SEARCH": {
-    "Sort_by": "Sort by: ",
-    "Sort_asc": "Ascending",
-    "Sort_desc": "Descending",
+    "Sort_by": "排序： ",
+    "Sort_asc": "升序",
+    "Sort_desc": "降序",
     "Add_stat_filter": "Add stat filter",
     "Add_bonus_stat_filter": "Add bonus stat filter",
     "SORT_BY": {
       "Relevance": "Relevance",
       "ID": "ID",
-      "Level": "Level",
-      "Ilvl": "Item level",
-      "Rlvl": "Recipe level"
+      "Level": "等级",
+      "Ilvl": "物品品级",
+      "Rlvl": "配方等级"
     }
   }
 }
