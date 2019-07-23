@@ -142,7 +142,7 @@
     "Custom_sound": "自定义闹钟声音",
     "New_group": "新建闹钟组",
     "Confirm_group_delete": "确定要删除这个分组吗？",
-    "Delete_group_and_alarms": "Delete group with all alarms",
+    "Delete_group_and_alarms": "删除该分组和分组下的所有闹钟",
     "Confirm_group_delete_with_alarms": "您确定要删除此组及其中的所有闹钟吗？",
     "Add_note": "添加备注",
     "Volume": "音量",
@@ -345,7 +345,7 @@
     "Auto_mark_as_done_in_log": "在列表项完成时标记为已完成",
     "Db_comments_position": "数据库评论位置",
     "Always_HQ_leves": "Always count leves exp with HQ items",
-    "Clickthrough_overlay": "Make overlay clickthrough",
+    "Clickthrough_overlay": "悬浮窗鼠标穿透",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
