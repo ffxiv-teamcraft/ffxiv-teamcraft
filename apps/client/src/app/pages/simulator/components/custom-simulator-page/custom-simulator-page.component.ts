@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { combineLatest, Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { combineLatest, merge, Observable } from 'rxjs';
+import { filter, map, startWith, tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { SeoPageComponent } from '../../../../core/seo/seo-page-component';
 import { SeoService } from '../../../../core/seo/seo.service';
 import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 
 @Component({
   selector: 'app-custom-simulator-page',
@@ -41,9 +42,18 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
       quality: [29591, Validators.required],
       durability: [70, Validators.required],
       suggCraft: [1866, Validators.required],
-      suggCtrl: [1733, Validators.required],
+      suggCtrl: [1733, Validators.required]
     });
-    this.recipe$ = this.recipeForm.valueChanges.pipe(
+    const recipeFromRotation$ = this.rotationsFacade.selectedRotation$.pipe(
+      filter(rotation => {
+        return rotation.recipe !== undefined;
+      }),
+      map((rotation: CraftingRotation) => {
+        return rotation.recipe;
+      })
+    );
+
+    const recipeFromForm$ = this.recipeForm.valueChanges.pipe(
       startWith({
         rlvl: 430,
         level: 80,
@@ -63,6 +73,20 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
           suggestedCraftsmanship: form.suggCraft,
           suggestedControl: form.suggCtrl
         };
+      })
+    );
+
+    this.recipe$ = merge(recipeFromForm$, recipeFromRotation$).pipe(
+      tap(recipe => {
+        this.recipeForm.patchValue({
+          rlvl: recipe.rlvl,
+          level: recipe.lvl,
+          progress: recipe.durability,
+          quality: recipe.quality,
+          durability: recipe.progress,
+          suggCraft: recipe.suggestedCraftsmanship,
+          suggCtrl: recipe.suggestedControl
+        }, { emitEvent: false });
       })
     );
   }
