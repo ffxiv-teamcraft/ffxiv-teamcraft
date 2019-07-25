@@ -1430,5 +1430,12 @@
       "Ilvl": "Item level",
       "Rlvl": "Recipe level"
     }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }
