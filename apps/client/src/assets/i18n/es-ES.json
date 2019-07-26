@@ -1423,6 +1423,7 @@
     "Sort_desc": "Descendente",
     "Add_stat_filter": "Añadir filtro de atributo",
     "Add_bonus_stat_filter": "Añadir filtro de atributo de bono",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
     "SORT_BY": {
       "Relevance": "Relevancia",
       "ID": "ID",
@@ -1430,5 +1431,12 @@
       "Ilvl": "Nivel del artículo",
       "Rlvl": "Nivel de la receta"
     }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }
