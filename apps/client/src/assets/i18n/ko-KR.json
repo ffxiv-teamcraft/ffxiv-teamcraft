@@ -1423,6 +1423,7 @@
     "Sort_desc": "내림차순",
     "Add_stat_filter": "스탯 필터 추가",
     "Add_bonus_stat_filter": "보너스 스탯 필터 추가",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
     "SORT_BY": {
       "Relevance": "관련성",
       "ID": "ID",
@@ -1430,5 +1431,12 @@
       "Ilvl": "아이템 레벨",
       "Rlvl": "제작 레벨"
     }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }
