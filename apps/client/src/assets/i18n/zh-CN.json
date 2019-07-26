@@ -1423,6 +1423,7 @@
     "Sort_desc": "降序",
     "Add_stat_filter": "Add stat filter",
     "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
     "SORT_BY": {
       "Relevance": "Relevance",
       "ID": "ID",
@@ -1430,5 +1431,12 @@
       "Ilvl": "物品品级",
       "Rlvl": "配方等级"
     }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }
