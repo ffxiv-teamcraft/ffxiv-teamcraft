@@ -1423,6 +1423,7 @@
     "Sort_desc": "Décroissant",
     "Add_stat_filter": "Ajouter un filtre de stat",
     "Add_bonus_stat_filter": "Ajouter un filtre de stat bonus",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
     "SORT_BY": {
       "Relevance": "Pertinence",
       "ID": "ID",
@@ -1430,5 +1431,12 @@
       "Ilvl": "Niveau d'objet",
       "Rlvl": "Niveau de la recette"
     }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }
