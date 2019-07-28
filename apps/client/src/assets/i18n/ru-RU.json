@@ -417,8 +417,8 @@
       "Creating_list": "Создание списка",
       "Loading_items": "Загрузка информации о предметах",
       "Estimate_overmeld_materia": "Оценить необходимые материалы для овермелда",
-      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
-      "Group_together": "Group materias together"
+      "Multiply_tool_materia": "Умножить материю для инструментов классов собирателей (x2) и крафтеров (x8)",
+      "Group_together": "Объединить материю"
     }
   },
   "LIST": {
@@ -668,7 +668,7 @@
     "Not_found": "Cтраница не найдена"
   },
   "SIMULATOR": {
-    "Title": "Crafting simulator",
+    "Title": "Симулятор крафта",
     "Fixed_notification_number": "Фиксированное уведомление",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Разделить макросы на этапе невозвратности Reclaim'а",
@@ -727,17 +727,17 @@
     "Safe_mode_tooltip": "Выключает все навыки, шанс успеха которых не 100% (учитывает баффы)",
     "Quality_needed": "{{amount}} больше качества до 100%",
     "Rotation_tips": "Подсказки о ротации",
-    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
-    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
-    "Current_control": "Current control: {{value}}",
-    "Current_control_bonus": "Current bonus (limited to 3000)",
-    "Macrolock": "Include macro lock",
-    "Solve_rotation": "Solve this rotation",
+    "Progress_action_100_potency": "Прогресс при 100% эффективности: {{value}}",
+    "Quality_action_100_potency": "Качество при 100% эффективности: {{value}}",
+    "Current_control": "Текущее значение контроля: {{value}}",
+    "Current_control_bonus": "Текущий бонус (лимит - 3000)",
+    "Macrolock": "Добавить блокировку макроса",
+    "Solve_rotation": "\"Решить\" ротацию",
     "Rotation_solver": "Rotation solver",
-    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Recipe_picker_placeholder": "Введите название рецепта, который вы хотите сделать",
     "SOLVER": {
-      "Hq_target": "Target HQ%",
-      "Use_rotation_as_seed": "Use current rotation as starting point",
+      "Hq_target": "Целевой шанс HQ",
+      "Use_rotation_as_seed": "Использовать текущую ротацию как начальную точку",
       "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
     },
     "COMMUNITY_ROTATIONS": {
