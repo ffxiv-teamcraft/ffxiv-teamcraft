@@ -107,7 +107,7 @@
     "No_lists_matching": "По данному фильтру ничего не найдено"
   },
   "COMMON": {
-    "Length": "Length",
+    "Length": "Длина",
     "Save": "Сохранить",
     "Reset": "Сбросить",
     "Total": "Всего",
@@ -142,7 +142,7 @@
     "Custom_sound": "Настраиваемый звук",
     "New_group": "Новая группа оповещений",
     "Confirm_group_delete": "Вы действительно хотите удалить эту группу?",
-    "Delete_group_and_alarms": "Delete group with all alarms",
+    "Delete_group_and_alarms": "Удалить группу со всеми оповещениями",
     "Confirm_group_delete_with_alarms": "Вы уверены, что хотите удалить эту группу и все её оповещения?",
     "Add_note": "Добавить заметку",
     "Volume": "Громкость",
@@ -192,7 +192,7 @@
   "No": "Нет",
   "Crystals": "Кристаллы",
   "Gathering": "Собирательство",
-  "Drops_or_GC": "Dungeons/Drops or GC",
+  "Drops_or_GC": "Подземелья/Монстры или GC",
   "Other": "Другое",
   "Pre_crafts": "Прекрафты",
   "Items": "Предметы",
@@ -250,8 +250,8 @@
   "filters/worn_by": "Носится",
   "filters/crafted_by": "Создан",
   "filters/item_category": "Тип предмета",
-  "filters/stats": "Stats filters",
-  "filters/bonuses": "Stat bonuses filters",
+  "filters/stats": "Фильтр характеристик",
+  "filters/bonuses": "Фильтры бонусов характеристик",
   "Adding_recipes": "Добавить {{amount}} рецептов в список {{listname}}",
   "Recipe_Added": "1 предмет добавлен в список {{listname}}",
   "Recipes_Added": "{{itemcount}} предметов добавлено в список {{listname}}",
@@ -344,8 +344,8 @@
     "Clear_search_history": "Очистить историю поиска",
     "Auto_mark_as_done_in_log": "Пометить предметы как выполненные в журнале, когда они сделаны в списке",
     "Db_comments_position": "Положение комментариев в базе данных",
-    "Always_HQ_leves": "Always count leves exp with HQ items",
-    "Clickthrough_overlay": "Make overlay clickthrough",
+    "Always_HQ_leves": "Всегда учитывать опыт ливквестов с предметами HQ",
+    "Clickthrough_overlay": "Сделать оверлей прозрачным для нажатий",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -372,13 +372,13 @@
     "Patreon_features": "Функции донатеров Patreon",
     "Contacts": "Контакты",
     "Add_new_contact": "Новый контакт",
-    "Save_for_all": "Save for all crafters",
+    "Save_for_all": "Сохранить для всех крафтеров",
     "User_not_verified": "Пользователь не подтвержден, нажмите, чтобы подтвердить",
     "More_than_100_lists_created": "Создано более 100 списков",
     "Veteran": "Ветеран",
     "VERIFICATION": {
       "Title": "Подтверждение персонажа",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
+      "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
       "Success": "Персонаж подтверждён! Теперь вы можете закрыть это окно. Не стесняйтесь удалить код из вашего профиля, он больше не нужен.",
       "Error": "Не удалось найти код в вашем профиле, пожалуйста, убедитесь, что вы вставили его и применили изменения, а затем подождите ~30 сек и повторите попытку.",
       "Validate": "Подтвердить"
@@ -416,7 +416,7 @@
       "Final_step": "Проверка",
       "Creating_list": "Создание списка",
       "Loading_items": "Загрузка информации о предметах",
-      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Estimate_overmeld_materia": "Оценить необходимые материалы для овермелда",
       "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
       "Group_together": "Group materias together"
     }
