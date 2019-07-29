@@ -160,7 +160,11 @@ export class AuthEffects {
     }),
     withLatestFrom(this.authFacade.loggedIn$),
     filter(([action, loggedIn]) => {
-      return loggedIn && action.user && !action.user.notFound && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0;
+      const cachedUser: TeamcraftUser = JSON.parse(localStorage.getItem('auth:user') || '{}');
+      return loggedIn
+        && action.user && !action.user.notFound
+        && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0
+        && [...(cachedUser.customCharacters || []), ...(cachedUser.lodestoneIds || [])].length === 0;
     }),
     map(() => new NoLinkedCharacter())
   );
@@ -246,6 +250,8 @@ export class AuthEffects {
     debounceTime(100),
     withLatestFrom(this.store),
     switchMap(([, state]) => {
+      // Save to localstorage to have a backup check to avoid data loss
+      localStorage.setItem('auth:user', JSON.stringify(state.auth.user));
       return this.userService.set(state.auth.uid, { ...state.auth.user }).pipe(
         catchError(() => of(null))
       );
