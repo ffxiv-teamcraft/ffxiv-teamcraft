@@ -1340,6 +1340,9 @@
       "No_comments": "暂无评论",
       "Post": "发布",
       "Editor_tip": "输入 <页面类型>:\"<页面标题>\" 以链接到其它页面。例如， item:\"无锋剑柯塔纳\"、action:\"制作\"、map:\"魔晶堂\" 。支持的页面类型有：item(物品), map(地图), mob(怪物), achievement(成就), leve(理符), npc, instance(副本), quest(任务), trait(特性), action(技能), status(状态)"
+    },
+    "PATCH": {
+      "Open_patch_page": "Click here to open full patch changes in database"
     }
   },
   "SEARCH_TYPES": {
