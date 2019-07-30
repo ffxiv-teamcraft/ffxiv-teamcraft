@@ -36,13 +36,13 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
       }
     });
     this.recipeForm = this.fb.group({
-      rlvl: [430, Validators.required],
+      rlvl: [450, Validators.required],
       level: [80, Validators.required],
-      progress: [3728, Validators.required],
-      quality: [29591, Validators.required],
+      progress: [5654, Validators.required],
+      quality: [37440, Validators.required],
       durability: [70, Validators.required],
-      suggCraft: [1866, Validators.required],
-      suggCtrl: [1733, Validators.required]
+      suggCraft: [2140, Validators.required],
+      suggCtrl: [1990, Validators.required]
     });
     const recipeFromRotation$ = this.rotationsFacade.selectedRotation$.pipe(
       filter(rotation => {
@@ -55,13 +55,13 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
 
     const recipeFromForm$ = this.recipeForm.valueChanges.pipe(
       startWith({
-        rlvl: 430,
+        rlvl: 450,
         level: 80,
-        progress: 3728,
-        quality: 29591,
+        progress: 5654,
+        quality: 37440,
         durability: 70,
-        suggCraft: 1866,
-        suggCtrl: 1733
+        suggCraft: 2140,
+        suggCtrl: 1990
       }),
       map(form => {
         return {

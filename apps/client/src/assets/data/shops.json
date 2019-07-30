@@ -1,1 +1,2810 @@
-{"1769472":{"en":"","ja":"","de":"","fr":""},"1769473":{"en":"Seasonal Event","ja":"シーズナルイベント素材の交換","de":"Saisonales Ereignis","fr":"Échange d'objets (Événements saisonniers)"},"1769474":{"en":"Currency Test","ja":"テスト用ショップ：通貨交換","de":"Währungstest","fr":"Test des devises"},"1769475":{"en":"Materia Test","ja":"テスト用ショップ：マテリア交換","de":"Materiatest","fr":"Test des matérias"},"1769482":{"en":"Lightning Returns","ja":"季節イベント：FF13コラボ","de":"Lightning Returns","fr":"Lightning Returns"},"1769483":{"en":"Moonfire Faire","ja":"季節イベント：2013紅蓮祭","de":"Feuermond-Reigen","fr":"Fête de l'été"},"1769484":{"en":"Relic Enhancement","ja":"古の武器の強化","de":"Reliktwaffen-Verstärkung","fr":"Amélioration des armes antiques"},"1769485":{"en":"","ja":"","de":"","fr":""},"1769486":{"en":"Bitter Heart Chocolate","ja":"ビターハートチョコの取引","de":"Bitterherz-Schokolade","fr":"Cœurs en chocolat amer"},"1769487":{"en":"Pure Heart Chocolate","ja":"ピュアハートチョコの取引","de":"Reinherz-Schokolade","fr":"Cœurs en chocolat pur"},"1769490":{"en":"Wolf Mark Gear (IL 70)","ja":"ILv70防具の交換","de":"Ausrüstung G.-St. 70","fr":"Armures (NvObj 70)"},"1769491":{"en":"Wolf Mark Gear (IL 70)","ja":"ILv70防具の交換","de":"Ausrüstung G.-St. 70","fr":"Armures (NvObj 70)"},"1769492":{"en":"Wolf Mark Gear (IL 90)","ja":"ILv90防具の交換","de":"Ausrüstung G.-St. 90","fr":"Armures (NvObj 90)"},"1769493":{"en":"Wolf Mark Gear (IL 90)","ja":"ILv90防具の交換","de":"Ausrüstung G.-St. 90","fr":"Armures (NvObj 90)"},"1769494":{"en":"Wolf Marks","ja":"対人戦績の取引","de":"Wolfsmarken","fr":"Marques de loup"},"1769496":{"en":"Wolf Mark Gear (IL 100)","ja":"ILv100防具の交換","de":"Ausrüstung G.-St. 100","fr":"Armures (NvObj 100)"},"1769497":{"en":"Wolf Mark Gear (IL 100)","ja":"ILv100防具の交換","de":"Ausrüstung G.-St. 100","fr":"Armures (NvObj 100)"},"1769500":{"en":"Gerolt's Masterworks Repair (DoW)","ja":"「ゲロルトの名品」の修繕（ファイター）","de":"Gerolts Meisterwerke (Krieger)","fr":"Chefs-d'œuvre de Gerolt (guerre)"},"1769501":{"en":"Gerolt's Masterworks Repair (DoM)","ja":"「ゲロルトの名品」の修繕（ソーサラー）","de":"Gerolts Meisterwerke (Magier)","fr":"Chefs-d'œuvre de Gerolt (magie)"},"1769502":{"en":"Gimme an Elixir","ja":"エリクサーちょうだい","de":"Gib mir ein Elixier!","fr":"Je veux un élixir !"},"1769503":{"en":"Master Crafting Tomes","ja":"クラフター向け「秘伝書」の交換","de":"Meisterrezeptbücher","fr":"Recettes expertes (artisans)"},"1769504":{"en":"Forager Gear","ja":"ギャザラー向け「フォリジャー装備」の交換","de":"Furier-Ausrüstung","fr":"Outils et équipement (récolte)"},"1769505":{"en":"Decorative Egg: Exchange Bronze for Silver","ja":"デコエッグ：ブロンズをデコエッグ：シルバーと交換","de":"Deko-Eier: Bronze zu Silber","fr":"Échange d'œufs décoratifs : bronze contre argent"},"1769506":{"en":"Decorative Egg: Exchange Silver for Gold","ja":"デコエッグ：シルバーをデコエッグ：ゴールドと交換","de":"Deko-Eier: Silber zu Gold","fr":"Échange d'œufs décoratifs : argent contre or"},"1769510":{"en":"Gerolt's Masterworks Repair (Weapons)","ja":"「ゲロルトの名品」の修繕（武器）","de":"Gerolts Meisterwerke (Waffen)","fr":"Chefs-d'œuvre de Gerolt (armes)"},"1769511":{"en":"Uncanny Knickknacks","ja":"アイテムの取引（その他）","de":"Gegenstände","fr":"Objets (divers)"},"1769512":{"en":"Gender-specific Gear Exchange (♀→♂) I","ja":"女性装備から男性装備へ交換（その1）","de":"Ausrüstung (Frau zu Mann I)","fr":"Équipement (femmes → hommes 1)"},"1769513":{"en":"Gender-specific Gear Exchange (♂→♀) I","ja":"男性装備から女性装備へ交換（その1）","de":"Ausrüstung (Mann zu Frau I)","fr":"Équipement (hommes → femmes 1)"},"1769514":{"en":"Allied Seals (Maelstrom)","ja":"同盟記章の取引（黒渦団）","de":"Jagdabzeichen (Mahlstrom)","fr":"Insignes alliés (Maelstrom)"},"1769515":{"en":"Allied Seals (Order of the Twin Adder)","ja":"同盟記章の取引（双蛇党）","de":"Jagdabzeichen (Bruderschaft)","fr":"Insignes alliés (Ordre)"},"1769516":{"en":"Allied Seals (Immortal Flames)","ja":"同盟記章の取引（不滅隊）","de":"Jagdabzeichen (Legion)","fr":"Insignes alliés (Immortels)"},"1769517":{"en":"Allied Seals (DoW)","ja":"同盟記章の取引（ファイター）","de":"Jagdabzeichen (Krieger)","fr":"Insignes alliés (guerre)"},"1769518":{"en":"Allied Seals (DoM)","ja":"同盟記章の取引（ソーサラー）","de":"Jagdabzeichen (Magier)","fr":"Insignes alliés (magie)"},"1769519":{"en":"Artifact Equipment (DoW)","ja":"アイテムの取引（ファイター）","de":"Gegenstände (Krieger)","fr":"Objets (guerre)"},"1769520":{"en":"Artifact Equipment (DoM)","ja":"アイテムの取引（ソーサラー）","de":"Gegenstände (Magier)","fr":"Objets (magie)"},"1769521":{"en":"Supra Tools (DoL)","ja":"ギャザラー向け「スプラ主道具」の交換","de":"Supra-Werkzeuge (Sammler)","fr":"Outils supra (récolte)"},"1769522":{"en":"Artisan Tools (DoH)","ja":"クラフター向け「アーティザン主道具」の交換","de":"Kunsthandwerker-Werkzeuge (Handwerker)","fr":"Outils de façonnier (artisanat)"},"1769523":{"en":"Far Eastern Baubles","ja":"東方の宝珠の取引","de":"Fernöstlische Kostbarkeiten","fr":"Babioles orientales"},"1769524":{"en":"Items in Development","ja":"テスト用ショップ","de":"Gegenstände in Arbeit","fr":"Objets en développement"},"1769525":{"en":"Ixali Oaknot Exchange","ja":"イクサル樫木貨の取引","de":"Ixal-Eichenmünzen","fr":"Pièces en chêne ixali"},"1769526":{"en":"Demonic Cookies","ja":"デモンクッキーの取引","de":"Dämonenkekse","fr":"Échange de biscuits du démon"},"1769528":{"en":"Wolf Mark Gear (IL 110)","ja":"ILv110防具の交換","de":"Ausrüstung G.-St. 110","fr":"Armures (NvObj 110)"},"1769529":{"en":"Wolf Mark Gear (IL 110)","ja":"ILv110防具の交換","de":"Ausrüstung G.-St. 110","fr":"Armures (NvObj 110)"},"1769530":{"en":"Vintage Equipment (DoW)","ja":"復古調装備の交換（ファイター）","de":"Antike Ausrüstung (Krieger)","fr":"Équipements antiques (guerre)"},"1769531":{"en":"Vintage Equipment (DoM)","ja":"復古調装備の交換（ソーサラー）","de":"Antike Ausrüstung (Magier)","fr":"Équipements antiques (magie)"},"1769533":{"en":"Allagan Tomestones of Poetics (DoW)","ja":"アラガントームストーン:詩学の取引（ファイター）","de":"Allagische Steine der Poesie (Krieger)","fr":"Mémoquartz allagois poétiques (guerre)"},"1769534":{"en":"Allagan Tomestones of Poetics (DoM)","ja":"アラガントームストーン:詩学の取引（ソーサラー）","de":"Allagische Steine der Poesie (Magier)","fr":"Mémoquartz allagois poétiques (magie)"},"1769535":{"en":"Ironworks Gear Augmentation (DoW)","ja":"「ガーロンド装備」の強化（ファイター）","de":"Garlond-Rüstungsverstärkung (Krieger)","fr":"Amélioration d'équipement des Forges (guerre)"},"1769536":{"en":"Ironworks Gear Augmentation (DoM)","ja":"「ガーロンド装備」の強化（ソーサラー）","de":"Garlond-Rüstungsverstärkung (Magier)","fr":"Amélioration d'équipement des Forges (magie)"},"1769537":{"en":"Ironworks Gear Augmentation (Weapons)","ja":"「ガーロンド装備」の強化（武器）","de":"Garlond-Waffenverstärkung","fr":"Amélioration d'équipement des Forges (armes)"},"1769539":{"en":"Ironworks Gear Augmentation (Accessories)","ja":"「ガーロンド装備」の強化（アクセサリ）","de":"Garlond-Accessoireverstärkung","fr":"Amélioration d'équipement des Forges (accessoires)"},"1769540":{"en":"Starlight Sentinels","ja":"スターライトツリーの引き換え","de":"Sternenlichtbäume","fr":"Arbres festifs"},"1769541":{"en":"Fallen Star Exchange","ja":"スターライトストーンの取引","de":"Sternschnuppen","fr":"Objets festifs"},"1769542":{"en":"Fallen Star Exchange","ja":"スターライトストーンの取引","de":"Sternschnuppen","fr":"Objets festifs"},"1769543":{"en":"","ja":"","de":"","fr":""},"1769544":{"en":"Prize Exchange I","ja":"景品の交換（その1）","de":"Gewinne I","fr":"Lots (1)"},"1769545":{"en":"Triple Triad Cards","ja":"カードの入手","de":"Karten erwerben","fr":"Obtenir des cartes"},"1769546":{"en":"Race Items","ja":"アイテムの交換","de":"Gegenstände","fr":"Objets"},"1769547":{"en":"Chocobo Training Manuals I","ja":"チョコボ教本の交換（その1）","de":"Dressurbücher I","fr":"Manuels de dressage (1)"},"1769548":{"en":"Chocobo Training Manuals II","ja":"チョコボ教本の交換（その2）","de":"Dressurbücher II","fr":"Manuels de dressage (2)"},"1769549":{"en":"Lucky Egg Exchange","ja":"フォーチュンエッグの取引","de":"Glückseier","fr":"Prœufs de la fortune"},"1769550":{"en":"Happy Smile Super Wish Bags","ja":"ナナパシの福袋の取引","de":"Nanapasis Wundervolle Wundertüte","fr":"Échange de pochettes-surprise"},"1769551":{"en":"Lucis Tools (DoL)","ja":"ギャザラー向け「ルキス主道具」の交換","de":"Lucis-Werkzeuge (Sammler)","fr":"Outils lucis (récolte)"},"1769552":{"en":"Artisan Gear (DoH)","ja":"クラフター向け「アーティザン防具」の交換","de":"Kunsthandwerker-Ausrüstung (Handwerker)","fr":"Équipement de façonnier (artisanat)"},"1769553":{"en":"Assorted Accoutrements","ja":"アイテムの交換（薬品・調理品）","de":"Gegenstände (Arznei/Gerichte)","fr":"Objets (consommables)"},"1769554":{"en":"Supra Tools (DoH)","ja":"クラフター向け「スプラ主道具」の交換","de":"Supra-Werkzeuge (Handwerker)","fr":"Outils supra (artisanat)"},"1769555":{"en":"Lucis Tools (DoH)","ja":"クラフター向け「ルキス主道具」の交換","de":"Lucis-Werkzeuge (Handwerker)","fr":"Outils lucis (artisanat)"},"1769556":{"en":"Miscellaneous Miscellany","ja":"アイテムの交換（その他）","de":"Gegenstände (Anderes)","fr":"Objets (autres)"},"1769563":{"en":"Fieldcraft Tools","ja":"ギャザラー向け道具の交換","de":"Sammler-Werkzeuge","fr":"Outils de récolte"},"1769564":{"en":"Fieldcraft Gear","ja":"ギャザラー向け防具の交換","de":"Sammler-Ausrüstung","fr":"Équipement de récolte"},"1769565":{"en":"Allagan Tomestones of Poetics (Other)","ja":"アラガントームストーン:詩学の取引（その他）","de":"Allagische Steine der Poesie (Anderes)","fr":"Mémoquartz allagois poétiques (divers)"},"1769572":{"en":"Doman Gear Reoutfitting (DoW) I","ja":"ドマ様式装備の改良(ファイターその1)","de":"Verbesserung von domanischer Ausrüstung (Krieger I)","fr":"Amélioration d'équipements domiens (guerre 1)"},"1769573":{"en":"Doman Gear Reoutfitting (DoM)","ja":"ドマ様式装備の改良(ソーサラー)","de":"Verbesserung von domanischer Ausrüstung (Magier)","fr":"Amélioration d'équipements domiens (magie)"},"1769574":{"en":"Artifact Gear Repair (PLD)","ja":"新生古典装備の修繕(ナイト)","de":"Artefakt-Reparatur (Paladin)","fr":"Réparation d'artefacts (PLD)"},"1769575":{"en":"Artifact Gear Repair (MNK)","ja":"新生古典装備の修繕(モンク)","de":"Artefakt-Reparatur (Mönch)","fr":"Réparation d'artefacts (MOI)"},"1769576":{"en":"Artifact Gear Repair (WAR)","ja":"新生古典装備の修繕(戦士)","de":"Artefakt-Reparatur (Krieger)","fr":"Réparation d'artefacts (GUE)"},"1769577":{"en":"","ja":"","de":"","fr":""},"1769578":{"en":"","ja":"","de":"","fr":""},"1769579":{"en":"Gordian Part Exchange (DoW) I","ja":"ゴルディオンパーツの取引(ファイターその1)","de":"Gordios-Materialien (Krieger I)","fr":"Éléments gordiens (guerre 1)"},"1769580":{"en":"Gordian Part Exchange (DoM)","ja":"ゴルディオンパーツの取引(ソーサラー)","de":"Gordios-Materialien (Magier)","fr":"Éléments gordiens (magie)"},"1769581":{"en":"Gordian Manifesto Exchange (DoW) I","ja":"ゴルディオン断章の取引(ファイターその1)","de":"Gordios-Kodexfragmente (Krieger I)","fr":"Manifestes gordiens (guerre 1)"},"1769582":{"en":"Gordian Manifesto Exchange (DoM)","ja":"ゴルディオン断章の取引(ソーサラー)","de":"Gordios-Kodexfragmente (Magier)","fr":"Manifestes gordiens (magie)"},"1769584":{"en":"Amber Exchange","ja":"虫入りアンバーの取引","de":"Bernstein","fr":"Ambre à insecte"},"1769585":{"en":"Wolf Mark Gear (IL 180)","ja":"ILv180防具の交換","de":"Ausrüstung G.-St. 180","fr":"Armures (NvObj 180)"},"1769586":{"en":"Wolf Mark Gear (IL 180)","ja":"ILv180防具の交換","de":"Ausrüstung G.-St. 180","fr":"Armures (NvObj 180)"},"1769587":{"en":"Tradecraft Tools","ja":"クラフター向け道具の交換","de":"Handwerker-Werkzeuge","fr":"Outils d'artisanat"},"1769588":{"en":"Tradecraft Gear I","ja":"クラフター向け防具の交換（その1）","de":"Handwerker-Ausrüstung I","fr":"Équipement d'artisanat 1"},"1769590":{"en":"Fieldcraft Items","ja":"ギャザラー向けアイテムの交換","de":"Sammler-Gegenstände","fr":"Objets de récolte"},"1769591":{"en":"Tradecraft Items","ja":"クラフター向けアイテムの交換","de":"Handwerker-Gegenstände","fr":"Objets d'artisanat"},"1769592":{"en":"Doman Gear Reoutfitting (DoW) II","ja":"ドマ様式装備の改良(ファイターその2)","de":"Verbesserung von domanischer Ausrüstung (Krieger II)","fr":"Amélioration d'équipements domiens (guerre 2)"},"1769593":{"en":"Artifact Gear Repair (DRG)","ja":"新生古典装備の修繕(竜騎士)","de":"Artefakt-Reparatur (Dragoon)","fr":"Réparation d'artefacts (DRG)"},"1769594":{"en":"Artifact Gear Repair (BRD)","ja":"新生古典装備の修繕(吟遊詩人)","de":"Artefakt-Reparatur (Barde)","fr":"Réparation d'artefacts (BRD)"},"1769595":{"en":"Artifact Gear Repair (NIN)","ja":"新生古典装備の修繕(忍者)","de":"Artefakt-Reparatur (Ninja)","fr":"Réparation d'artefacts (NIN)"},"1769596":{"en":"Artifact Gear Repair (WHM)","ja":"新生古典装備の修繕(白魔道士)","de":"Artefakt-Reparatur (Weißmagier)","fr":"Réparation d'artefacts (MBL)"},"1769597":{"en":"Artifact Gear Repair (BLM)","ja":"新生古典装備の修繕(黒魔道士)","de":"Artefakt-Reparatur (Schwarzmagier)","fr":"Réparation d'artefacts (MNO)"},"1769598":{"en":"Artifact Gear Repair (SMN)","ja":"新生古典装備の修繕(召喚士)","de":"Artefakt-Reparatur (Beschwörer)","fr":"Réparation d'artefacts (INV)"},"1769599":{"en":"Artifact Gear Repair (SCH)","ja":"新生古典装備の修繕(学者)","de":"Artefakt-Reparatur (Gelehrter)","fr":"Réparation d'artefacts (ÉRU)"},"1769600":{"en":"Artifact Gear Repair (DRK)","ja":"新生古典装備の修繕(暗黒騎士)","de":"Artefakt-Reparatur (Dunkelritter)","fr":"Réparation d'artefacts (CHN)"},"1769601":{"en":"Artifact Gear Repair (MCH)","ja":"新生古典装備の修繕(機工士)","de":"Artefakt-Reparatur (Maschinist)","fr":"Réparation d'artefacts (MCH)"},"1769602":{"en":"Artifact Gear Repair (AST)","ja":"新生古典装備の修繕(占星術師)","de":"Artefakt-Reparatur (Astrologe)","fr":"Réparation d'artefacts (AST)"},"1769604":{"en":"Seasonal Event Prizes","ja":"シーズナルイベント報酬の交換（その他）","de":"Saisonale Gegenstände","fr":"Récompenses d'événements saisonniers"},"1769605":{"en":"Gordian Part Exchange (DoW) II","ja":"ゴルディオンパーツの取引(ファイターその2)","de":"Gordios-Materialien (Krieger II)","fr":"Éléments gordiens (guerre 2)"},"1769606":{"en":"Gordian Manifesto Exchange (DoW) II","ja":"ゴルディオン断章の取引(ファイターその2)","de":"Gordios-Kodexfragmente (Krieger II)","fr":"Manifestes gordiens (guerre 2)"},"1769607":{"en":"Gold Chocobo Feather Exchange","ja":"ゴールドチョコボの羽根の取引","de":"Goldene Chocobo-Federn","fr":"Pennes de chocobo doré"},"1769610":{"en":"Silver Chocobo Feather Exchange I","ja":"シルバーチョコボの羽根の取引（その1）","de":"Silberne Chocobo-Federn I","fr":"Pennes de chocobo argenté (1)"},"1769612":{"en":"Seasonal Event Prizes (♂)","ja":"シーズナルイベント報酬の交換（男性）","de":"Saisonale Gegenstände (Mann)","fr":"Récompenses d'événements saisonniers (hommes)"},"1769613":{"en":"Seasonal Event Prizes (♀)","ja":"シーズナルイベント報酬の交換（女性）","de":"Saisonale Gegenstände (Frau)","fr":"Récompenses d'événements saisonniers (femmes)"},"1769614":{"en":"","ja":"","de":"","fr":""},"1769622":{"en":"Brass Spoils Exchange (DoW/M)","ja":"スポイル：真鍮の取引（マテリア：バトル）","de":"Messing-Piratenandenken (Materia: Krieger/Magier)","fr":"Espoilles en laiton (matérias pour combattants)"},"1769623":{"en":"Steel Spoils Exchange (DoL) I","ja":"スポイル：鋼鉄の取引（マテリア：クラフター・ギャザラー）","de":"Stahl-Piratenandenken (Materia: Handwerker/Sammler)","fr":"Espoilles en acier (matérias pour récolteurs)"},"1769624":{"en":"Steel Spoils Exchange (DoL) II","ja":"スポイル：鋼鉄の取引（素材）","de":"Stahl-Piratenandenken (Material)","fr":"Espoilles en acier (matériaux)"},"1769625":{"en":"Seasonal Event Prizes","ja":"シーズナルイベント報酬の交換","de":"Saisonale Gegenstände","fr":"Récompenses d'événements saisonniers"},"1769626":{"en":"Purchase Minions (MGP)","ja":"ミニオンの取引（MGP消費）","de":"Begleiter (MGP)","fr":"Mascottes (PGS)"},"1769627":{"en":"Steel Amalj'ok Exchange","ja":"アマルジャ鋼鉄刀貨の取引","de":"Stahl-Amalj'oks","fr":"Amalj'oks d'acier"},"1769628":{"en":"Sylphic Goldleaf Exchange","ja":"シルフ金葉貨の取引","de":"Sylphen-Goldblätter","fr":"Feuilles dorées de Sylphe"},"1769629":{"en":"Titan Cobaltpiece Exchange","ja":"コボルド鏡鉄錘貨の取引","de":"Titan-Koboldeisenstücke","fr":"Pièces de cobalt koboldes"},"1769630":{"en":"Rainbowtide Psashp Exchange","ja":"サハギン虹貝貨の取引","de":"Regenbogenwellen-Psashpen","fr":"Psashps irisécaille"},"1769631":{"en":"Vanu Whitebone Exchange","ja":"バヌバヌ白骨貨の取引","de":"Vanu-Weißknochen","fr":"Pièces d'os blanc vanu vanu"},"1769633":{"en":"Prize Exchange II","ja":"景品の交換（その2）","de":"Gewinne II","fr":"Lots (2)"},"1769635":{"en":"Luminous Crystal Exchange","ja":"発光性クリスタルの取引","de":"Strahlende Kristalle","fr":"Cristaux lumineux"},"1769636":{"en":"Anima Weapon Materials","ja":"アニマウェポン用素材の交換","de":"Materialien für Anima-Waffen","fr":"Matériaux pour armes anima"},"1769637":{"en":"Hair Catalogs","ja":"ヘアカタログの交換","de":"Haar-Magazine „Moderne Ästhetik“","fr":"Revues de coiffure"},"1769639":{"en":"Seasonal Event Prizes","ja":"シーズナルイベント報酬の交換","de":"Saisonale Gegenstände","fr":"Récompenses d'événements saisonniers"},"1769640":{"en":"Brass Spoils Exchange (Materials/Gear)","ja":"スポイル：真鍮の取引（素材・防具）","de":"Messing-Piratenandenken (Material/Ausrüstung)","fr":"Espoilles en laiton (matériaux/équipements)"},"1769641":{"en":"Spoils Exchange (Other)","ja":"スポイル：真鍮・鋼鉄の取引（その他）","de":"Messing-/Stahl-Piratenandenken (Anderes)","fr":"Espoilles en acier/laiton (autres)"},"1769642":{"en":"Precision Gordian Part Exchange","ja":"高精度ゴルディオンパーツの取引","de":"Gordios-Präzisionsmaterialien","fr":"Éléments gordiens de haute précision"},"1769643":{"en":"Midan Part Exchange (DoW) I","ja":"ミダースパーツの取引(ファイターその1)","de":"Midas-Materialien (Krieger I)","fr":"Éléments midins (guerre 1)"},"1769644":{"en":"Midan Part Exchange (DoW) II","ja":"ミダースパーツの取引(ファイターその2)","de":"Midas-Materialien (Krieger II)","fr":"Éléments midins (guerre 2)"},"1769645":{"en":"Midan Part Exchange (DoM)","ja":"ミダースパーツの取引(ソーサラー)","de":"Midas-Materialien (Magier)","fr":"Éléments midins (magie)"},"1769646":{"en":"Midan Manifesto Exchange (DoW) I","ja":"ミダース断章の取引(ファイターその1)","de":"Midas-Kodexfragmente (Krieger I)","fr":"Manifestes midins (guerre 1)"},"1769647":{"en":"Midan Manifesto Exchange (DoW) II","ja":"ミダース断章の取引(ファイターその2)","de":"Midas-Kodexfragmente (Krieger II)","fr":"Manifestes midins (guerre 2)"},"1769648":{"en":"Midan Manifesto Exchange (DoM)","ja":"ミダース断章の取引(ソーサラー)","de":"Midas-Kodexfragmente (Magier)","fr":"Manifestes midins (magie)"},"1769649":{"en":"Allagan Tomestones of Poetics (DoW) I","ja":"アラガントームストーン:詩学の取引（ファイターその1）","de":"Allagische Steine der Poesie (Krieger I)","fr":"Mémoquartz allagois poétiques (guerre 1)"},"1769651":{"en":"Allagan Tomestones of Poetics (DoM) I","ja":"アラガントームストーン:詩学の取引（ソーサラーその1）","de":"Allagische Steine der Poesie (Magier I)","fr":"Mémoquartz allagois poétiques (magie 1)"},"1769653":{"en":"Wolf Mark Gear (IL 205)","ja":"ILv205防具の交換","de":"Ausrüstung G.-St. 205","fr":"Armures (NvObj 205)"},"1769654":{"en":"Wolf Mark Gear (IL 205)","ja":"ILv205防具の交換","de":"Ausrüstung G.-St. 205","fr":"Armures (NvObj 205)"},"1769655":{"en":"Eikonic Gear Reoutfitting (DoW) I","ja":"蛮神風装備の改良（ファイターその１）","de":"Verbesserung von Ikonen-Ausrüstung (Krieger I)","fr":"Amélioration d'équipements primordiaux (guerre 1)"},"1769656":{"en":"Eikonic Gear Reoutfitting (DoW) II","ja":"蛮神風装備の改良（ファイターその２）","de":"Verbesserung von Ikonen-Ausrüstung (Krieger II)","fr":"Amélioration d'équipements primordiaux (guerre 2)"},"1769657":{"en":"Eikonic Gear Reoutfitting (DoM)","ja":"蛮神風装備の改良（ソーサラー）","de":"Verbesserung von Ikonen-Ausrüstung (Magier)","fr":"Amélioration d'équipements primordiaux (magie)"},"1769659":{"en":"Amber Exchange (Other)","ja":"虫入りアンバーの取引（その他）","de":"Bernstein (Anderes)","fr":"Ambre à insecte (divers)"},"1769660":{"en":"Centurio Seal Exchange (Doman Gear) I","ja":"セントリオ記章の取引（ドマ風装備その1）","de":"Centurio-Abzeichen (Domanische Ausrüstung) I","fr":"Insignes Centurio (équipements domiens 1)"},"1769661":{"en":"Centurio Seal Exchange (Doman Gear) II","ja":"セントリオ記章の取引（ドマ風装備その2）","de":"Centurio-Abzeichen (Domanische Ausrüstung) II","fr":"Insignes Centurio (équipements domiens 2)"},"1769663":{"en":"Seasonal Event Prizes","ja":"シーズナルイベント報酬の交換","de":"Saisonale Gegenstände","fr":"Récompenses d'événements saisonniers"},"1769664":{"en":"Seasonal Event Prizes","ja":"シーズナルイベント報酬の交換","de":"Saisonale Gegenstände","fr":"Récompenses d'événements saisonniers"},"1769665":{"en":"Black Copper Gil Exchange","ja":"グナース偽黒銅貨の取引","de":"Schwarzkupfer-Gil","fr":"Gils de cuivre noir"},"1769673":{"en":"Mhachi Matter Exchange","ja":"マハマターの交換","de":"Mhach-Materie","fr":"Matière mhachoise"},"1769674":{"en":"Tradecraft Gear II","ja":"クラフター向け防具の交換（その2）","de":"Handwerker-Ausrüstung II","fr":"Équipement d'artisanat 2"},"1769675":{"en":"Gelmorran Potsherd Exchange","ja":"ゲルモラ土器片の取引","de":"Gelmorra-Scherben","fr":"Tessons de poterie gelmorraine"},"1769676":{"en":"Tradecraft Keep Tool Augmentation","ja":"クラフター向け「キープ道具」の強化","de":"Werkzeugverstärkung (Handwerker)","fr":"Amélioration d'outils (artisanat)"},"1769677":{"en":"Tradecraft Keep Gear Augmentation","ja":"クラフター向け「キープ防具」の強化","de":"Ausrüstungsverstärkung (Handwerker)","fr":"Amélioration d'équipement (artisanat)"},"1769678":{"en":"Fieldcraft Keep Tool Augmentation","ja":"ギャザラー向け「キープ道具」の強化","de":"Werkzeugverstärkung (Sammler)","fr":"Amélioration d'outils (récolte)"},"1769679":{"en":"Fieldcraft Keep Gear Augmentation","ja":"ギャザラー向け「キープ防具」の強化","de":"Ausrüstungsverstärkung (Sammler)","fr":"Amélioration d'équipement (récolte)"},"1769680":{"en":"Materia Exchange","ja":"マテリアの交換","de":"Materia","fr":"Échange de matérias"},"1769681":{"en":"Curious Crop Exchange","ja":"特殊作物の取引","de":"Gartenbau-Erzeugnisse","fr":"Livraison de produits jardiniers"},"1769682":{"en":"Token Exchange","ja":"手形の交換","de":"Marken","fr":"Échange d'avoirs"},"1769684":{"en":"Seasonal Event Prizes","ja":"シーズナルイベント報酬の交換","de":"Saisonale Gegenstände","fr":"Récompenses d'événements saisonniers"},"1769685":{"en":"Carved Kupo Nut Exchange","ja":"飾りクポの実の取引","de":"Kupo-Schnitznüsse","fr":"Noix de kupo gravées"},"1769686":{"en":"","ja":"","de":"","fr":""},"1769687":{"en":"Gender-specific Gear Exchange (♀→♂) II","ja":"女性装備から男性装備へ交換（その2）","de":"Ausrüstung (Frau zu Mann II)","fr":"Équipement (femmes → hommes 2)"},"1769688":{"en":"Gender-specific Gear Exchange (♂→♀) II","ja":"男性装備から女性装備へ交換（その2）","de":"Ausrüstung (Mann zu Frau II)","fr":"Équipement (hommes → femmes 2)"},"1769689":{"en":"Alexandrian Part Exchange (DoW) I","ja":"アレキサンダーパーツの取引(ファイターその1)","de":"Alexander-Materialien (Krieger I)","fr":"Éléments alexandrins (guerre 1)"},"1769690":{"en":"Alexandrian Part Exchange (DoW) II","ja":"アレキサンダーパーツの取引(ファイターその2)","de":"Alexander-Materialien (Krieger II)","fr":"Éléments alexandrins (guerre 2)"},"1769691":{"en":"Alexandrian Part Exchange (DoM)","ja":"アレキサンダーパーツの取引(ソーサラー)","de":"Alexander-Materialien (Magier)","fr":"Éléments alexandrins (magie)"},"1769692":{"en":"Alexandrian Manifesto Exchange (DoW) I","ja":"アレキサンダー断章の取引(ファイターその1)","de":"Alexander-Kodexfragmente (Krieger I)","fr":"Manifestes alexandrins (guerre 1)"},"1769693":{"en":"Alexandrian Manifesto Exchange (DoW) II","ja":"アレキサンダー断章の取引(ファイターその2)","de":"Alexander-Kodexfragmente (Krieger II)","fr":"Manifestes alexandrins (guerre 2)"},"1769694":{"en":"Alexandrian Manifesto Exchange (DoM)","ja":"アレキサンダー断章の取引(ソーサラー)","de":"Alexander-Kodexfragmente (Magier)","fr":"Manifestes alexandrins (magie)"},"1769713":{"en":"Glamour Prism Collection","ja":"不要ミラージュプリズムの回収","de":"Projektionsprismen","fr":"Échange de prismes mirage"},"1769714":{"en":"Items of Interest","ja":"アイテムの取引","de":"Gegenstände","fr":"Objets"},"1769715":{"en":"Artifact Gear Exchange (DoW) I","ja":"新生古典装備の交換(ファイター1)","de":"Artefakt-Ausrüstung (Krieger I)","fr":"Artefacts (guerre 1)"},"1769716":{"en":"Artifact Gear Exchange (DoW) II","ja":"新生古典装備の交換(ファイター2)","de":"Artefakt-Ausrüstung (Krieger II)","fr":"Artefacts (guerre 2)"},"1769717":{"en":"Artifact Gear Exchange (DoM)","ja":"新生古典装備の交換(ソーサラー)","de":"Artefakt-Ausrüstung (Magier)","fr":"Artefacts (magie)"},"1769719":{"en":"Primal Gear","ja":"蛮神装備の取引","de":"Primae-Ausrüstung","fr":"Armes de Primordiaux"},"1769720":{"en":"Gerolt's Masterworks","ja":"ゲロルトの名品の取引","de":"Gerolts Meisterwerke","fr":"Chefs-d'œuvre de Gerolt"},"1769721":{"en":"Ironworks Gear","ja":"ガーロンド装備の取引","de":"Garlond-Ausrüstung","fr":"Équipement des Forges"},"1769722":{"en":"Single-handed Arm Exchange","ja":"片手武器を両手武器へ交換","de":"Ein- gegen zweihändige Waffe eintauschen","fr":"Échange d'arme à une main"},"1769723":{"en":"Two-handed Arm Exchange","ja":"両手武器を片手武器へ交換","de":"Zwei- gegen einhändige Waffe eintauschen","fr":"Échange d'arme à deux mains"},"1769724":{"en":"Rowena's Token Exchange","ja":"ロウェナの手形:祭器の取引","de":"Rowena-Marken","fr":"Avoirs de Rowena (totems)"},"1769725":{"en":"Primal Gear I","ja":"蛮神装備の取引（その1）","de":"Primae-Ausrüstung I","fr":"Armes de Primordiaux (1)"},"1769726":{"en":"Primal Gear II","ja":"蛮神装備の取引（その2）","de":"Primae-Ausrüstung II","fr":"Armes de Primordiaux (2)"},"1769727":{"en":"Primal Gear III","ja":"蛮神装備の取引（その3）","de":"Primae-Ausrüstung III","fr":"Armes de Primordiaux (3)"},"1769728":{"en":"Uncanny Knickknacks","ja":"アイテムの取引（その他）","de":"Gegenstände","fr":"Objets (divers)"},"1769729":{"en":"Eikonic Gear","ja":"蛮神風装備の取引","de":"Ikonen-Ausrüstung","fr":"Équipement primordial"},"1769730":{"en":"Allagan Tomestones of Poetics (Other)","ja":"アラガントームストーン:詩学の取引（その他）","de":"Allagische Steine der Poesie (Anderes)","fr":"Mémoquartz allagois poétiques (divers)"},"1769731":{"en":"Ixali Oaknot Exchange (Materia)","ja":"イクサル樫木貨の取引（マテリア）","de":"Ixal-Eichenmünzen (Materia)","fr":"Pièces en chêne ixali (matérias)"},"1769732":{"en":"Allagan Tomestones of Poetics (DoW) II","ja":"アラガントームストーン:詩学の取引（ファイターその2）","de":"Allagische Steine der Poesie (Krieger II)","fr":"Mémoquartz allagois poétiques (guerre 2)"},"1769733":{"en":"Allagan Tomestones of Poetics (DoM) II","ja":"アラガントームストーン:詩学の取引（ソーサラーその2）","de":"Allagische Steine der Poesie (Magier II)","fr":"Mémoquartz allagois poétiques (magie 2)"},"1769734":{"en":"Shire Gear Augmentation (DoW) I","ja":"イディルシャイア製装備の強化（ファイターその1）","de":"Verstärkung von hinterländischer Ausrüstung (Krieger I)","fr":"Amélioration d'équipements idylléens (guerre 1)"},"1769735":{"en":"Shire Gear Augmentation (DoW) II","ja":"イディルシャイア製装備の強化（ファイターその2）","de":"Verstärkung von hinterländischer Ausrüstung (Krieger II)","fr":"Amélioration d'équipements idylléens (guerre 2)"},"1769736":{"en":"Shire Gear Augmentation (DoM)","ja":"イディルシャイア製装備の強化（ソーサラー）","de":"Verstärkung von hinterländischer Ausrüstung (Magier)","fr":"Amélioration d'équipements idylléens (magie)"},"1769737":{"en":"Shire Gear Exchange","ja":"イディルシャイア製装備の交換","de":"Hinterländische Ausrüstung","fr":"Équipement idylléen"},"1769738":{"en":"Handmaster Accessory Augmentation","ja":"クラフター向け「マスターハンドアクセサリ」の強化","de":"Handwerkermeister-Accessoireverstärkung","fr":"Amélioration d'accessoire de maître artisan"},"1769739":{"en":"Landmaster Accessory Augmentation","ja":"ギャザラー向け「マスターランドアクセサリ」の強化","de":"Sammlermeister-Accessoireverstärkung","fr":"Amélioration d'accessoire de maître récolteur"},"1769740":{"en":"Seasonal Event Prizes","ja":"シーズナルイベント報酬の交換","de":"Saisonale Gegenstände","fr":"Récompenses d'événements saisonniers"},"1769741":{"en":"Collaboration Certificate Exchange","ja":"アイテムの取引（執事王の証書の交換）","de":"Helfer-Bescheinigungen","fr":"Objets (attestations du sénéchal royal)"},"1769742":{"en":"","ja":"","de":"","fr":""},"1769743":{"en":"","ja":"","de":"","fr":""},"1769744":{"en":"","ja":"","de":"","fr":""},"1769745":{"en":"Primal Gear IV","ja":"蛮神装備の取引（その4）","de":"Primae-Ausrüstung IV","fr":"Armes de Primordiaux (4)"},"1769746":{"en":"","ja":"","de":"","fr":""},"1769747":{"en":"","ja":"","de":"","fr":""},"1769748":{"en":"","ja":"","de":"","fr":""},"1769749":{"en":"DoH Materia Exchange","ja":"クラフター向けマテリアの交換","de":"Materia für Handwerker","fr":"Matérias pour artisan"},"1769750":{"en":"DoL Materia Exchange","ja":"ギャザラー向けマテリアの交換","de":"Materia für Sammler","fr":"Matérias pour récolteur"},"1769751":{"en":"Prize Exchange I","ja":"景品の交換（その1）","de":"Gewinne I","fr":"Lots (1)"},"1769752":{"en":"Prize Exchange II","ja":"景品の交換（その2）","de":"Gewinne II","fr":"Lots (2)"},"1769753":{"en":"Dream of the Fayth Exchange","ja":"異界の証書の取引","de":"Träume der Asthra","fr":"Rêves de Priant"},"1769754":{"en":"Wolf Mark Weapons (IL 70)","ja":"ILv70武器の交換","de":"Waffen G.-St. 70","fr":"Armes (NvObj 70)"},"1769755":{"en":"Wolf Mark Weapons (IL 70)","ja":"ILv70武器の交換","de":"Waffen G.-St. 70","fr":"Armes (NvObj 70)"},"1769756":{"en":"Wolf Mark Weapons (IL 90)","ja":"ILv90武器の交換","de":"Waffen G.-St. 90","fr":"Armes (NvObj 90)"},"1769757":{"en":"Wolf Mark Weapons (IL 90)","ja":"ILv90武器の交換","de":"Waffen G.-St. 90","fr":"Armes (NvObj 90)"},"1769758":{"en":"Wolf Mark Weapons (IL 100)","ja":"ILv100武器の交換","de":"Waffen G.-St. 100","fr":"Armes (NvObj 100)"},"1769759":{"en":"Wolf Mark Weapons (IL 100)","ja":"ILv100武器の交換","de":"Waffen G.-St. 100","fr":"Armes (NvObj 100)"},"1769760":{"en":"Wolf Mark Weapons (IL 110)","ja":"ILv110武器の交換","de":"Waffen G.-St. 110","fr":"Armes (NvObj 110)"},"1769761":{"en":"Wolf Mark Weapons (IL 110)","ja":"ILv110武器の交換","de":"Waffen G.-St. 110","fr":"Armes (NvObj 110)"},"1769762":{"en":"Wolf Mark Weapons (IL 180)","ja":"ILv180武器の交換","de":"Waffen G.-St. 180","fr":"Armes (NvObj 180)"},"1769763":{"en":"Wolf Mark Weapons (IL 180)","ja":"ILv180武器の交換","de":"Waffen G.-St. 180","fr":"Armes (NvObj 180)"},"1769764":{"en":"Wolf Mark Weapons (IL 205)","ja":"ILv205武器の交換","de":"Waffen G.-St. 205","fr":"Armes (NvObj 205)"},"1769765":{"en":"Wolf Mark Weapons (IL 205)","ja":"ILv205武器の交換","de":"Waffen G.-St. 205","fr":"Armes (NvObj 205)"},"1769766":{"en":"Fieldcraft Items","ja":"ギャザラー向けアイテムの交換","de":"Sammler-Gegenstände","fr":"Objets de récolte"},"1769767":{"en":"Yellow Crafters' Scrip Exchange (Lv. 50)","ja":"クラフタースクリップ:黄貨の取引（Lv50～向け）","de":"Gelbe Handwerkerscheine (ab St. 50)","fr":"Assignats jaunes d'artisan (Nv ≧ 50)"},"1769768":{"en":"Yellow Crafters' Scrip Exchange (Lv. 58)","ja":"クラフタースクリップ:黄貨の取引（Lv58～向け）","de":"Gelbe Handwerkerscheine (ab St. 58)","fr":"Assignats jaunes d'artisan (Nv ≧ 58)"},"1769769":{"en":"Yellow Crafters' Scrip Exchange (Lv. 61)","ja":"クラフタースクリップ:黄貨の取引（Lv61～向け）","de":"Gelbe Handwerkerscheine (ab St. 61)","fr":"Assignats jaunes d'artisan (Nv ≧ 61)"},"1769770":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 50)","ja":"ギャザラースクリップ:黄貨の取引（Lv50～向け）","de":"Gelbe Sammlerscheine (ab St. 50)","fr":"Assignats jaunes de récolteur (Nv ≧ 50)"},"1769771":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 58)","ja":"ギャザラースクリップ:黄貨の取引（Lv58～向け）","de":"Gelbe Sammlerscheine (ab St. 58)","fr":"Assignats jaunes de récolteur (Nv ≧ 58)"},"1769772":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 61)","ja":"ギャザラースクリップ:黄貨の取引（Lv61～向け）","de":"Gelbe Sammlerscheine (ab St. 61)","fr":"Assignats jaunes de récolteur (Nv ≧ 61)"},"1769773":{"en":"Yellow Crafters' Scrip Exchange (Lv. 50)","ja":"クラフタースクリップ:黄貨の取引（Lv50～向け）","de":"Gelbe Handwerkerscheine (ab St. 50)","fr":"Assignats jaunes d'artisan (Nv ≧ 50)"},"1769774":{"en":"Yellow Crafters' Scrip Exchange (Lv. 58)","ja":"クラフタースクリップ:黄貨の取引（Lv58～向け）","de":"Gelbe Handwerkerscheine (ab St. 58)","fr":"Assignats jaunes d'artisan (Nv ≧ 58)"},"1769775":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 50)","ja":"ギャザラースクリップ:黄貨の取引（Lv50～向け）","de":"Gelbe Sammlerscheine (ab St. 50)","fr":"Assignats jaunes de récolteur (Nv ≧ 50)"},"1769776":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 58)","ja":"ギャザラースクリップ:黄貨の取引（Lv58～向け）","de":"Gelbe Sammlerscheine (ab St. 58)","fr":"Assignats jaunes de récolteur (Nv ≧ 58)"},"1769777":{"en":"Yellow Crafters' Scrip Exchange (Lv. 50)","ja":"クラフタースクリップ:黄貨の取引（Lv50～向け）","de":"Gelbe Handwerkerscheine (ab St. 50)","fr":"Assignats jaunes d'artisan (Nv ≧ 50)"},"1769778":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 50)","ja":"ギャザラースクリップ:黄貨の取引（Lv50～向け）","de":"Gelbe Sammlerscheine (ab St. 50)","fr":"Assignats jaunes de récolteur (Nv ≧ 50)"},"1769779":{"en":"Yellow Crafters' Scrip Exchange (Lv. 70 Gear)","ja":"クラフタースクリップ:黄貨の取引（Lv70～向け・装備）","de":"Gelbe Handwerkerscheine (ab St. 70, Ausrüstung)","fr":"Assignats jaunes d'artisan (équipements/Nv ≧ 70)"},"1769780":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 70 Gear)","ja":"ギャザラースクリップ:黄貨の取引（Lv70～向け・装備）","de":"Gelbe Sammlerscheine (ab St. 70, Ausrüstung)","fr":"Assignats jaunes de récolteur (équipements/Nv ≧ 70)"},"1769781":{"en":"Allagan Tomestones of Poetics (Special Arms)","ja":"アラガントームストーン:詩学の取引（特殊武器関連）","de":"Allagische Steine der Poesie (Spezialwaffen)","fr":"Mémoquartz allagois poétiques (armes spéciales)"},"1769782":{"en":"Centurio Seal Exchange I","ja":"セントリオ記章の取引","de":"Centurio-Abzeichen I","fr":"Insignes Centurio"},"1769783":{"en":"Centurio Seal Exchange II","ja":"セントリオ記章の取引（上級）","de":"Centurio-Abzeichen II","fr":"Insignes Centurio 2"},"1769784":{"en":"Allagan Tomestones of Verity (DoW)","ja":"アラガントームストーン:真理の取引（ファイター）","de":"Allagische Steine der Wahrheit (Krieger)","fr":"Mémoquartz allagois véridiques (guerre)"},"1769785":{"en":"Allagan Tomestones of Verity (DoM)","ja":"アラガントームストーン:真理の取引（ソーサラー）","de":"Allagische Steine der Wahrheit (Magier)","fr":"Mémoquartz allagois véridiques (magie)"},"1769786":{"en":"Allagan Tomestones of Verity (Other)","ja":"アラガントームストーン:真理の取引（その他）","de":"Allagische Steine der Wahrheit (Anderes)","fr":"Mémoquartz allagois véridiques (divers)"},"1769787":{"en":"Allagan Tomestones of Creation (DoW)","ja":"アラガントームストーン:万物の取引（ファイター）","de":"Allagische Steine der Schöpfung (Krieger)","fr":"Mémoquartz allagois cosmogoniques (guerre)"},"1769788":{"en":"Allagan Tomestones of Creation (DoM)","ja":"アラガントームストーン:万物の取引（ソーサラー）","de":"Allagische Steine der Schöpfung (Magier)","fr":"Mémoquartz allagois cosmogoniques (magie)"},"1769789":{"en":"Allagan Tomestones of Creation (Other)","ja":"アラガントームストーン:万物の取引（その他）","de":"Allagische Steine der Schöpfung (Anderes)","fr":"Mémoquartz allagois cosmogoniques (divers)"},"1769790":{"en":"Totem Gear (Lakshmi)","ja":"蛮神装備の取引（ラクシュミ）","de":"Lakshmi-Ausrüstung","fr":"Équipements totémiques (Lakshmi)"},"1769791":{"en":"Totem Gear (Susano)","ja":"蛮神装備の取引（スサノオ）","de":"Susano-Ausrüstung","fr":"Équipements totémiques (Susano)"},"1769793":{"en":"Deltascape Part Exchange (DoW) I","ja":"デルタパーツの取引（ファイターその1）","de":"Deltametrie-Materialien (Krieger I)","fr":"Éléments deltastitiels (guerre 1)"},"1769794":{"en":"Deltascape Part Exchange (DoW) II","ja":"デルタパーツの取引（ファイターその2）","de":"Deltametrie-Materialien (Krieger II)","fr":"Éléments deltastitiels (guerre 2)"},"1769795":{"en":"Deltascape Part Exchange (DoM)","ja":"デルタパーツの取引（ソーサラー）","de":"Deltametrie-Materialien (Magier)","fr":"Éléments deltastitiels (magie)"},"1769796":{"en":"Deltascape Datalog Exchange (DoW) I","ja":"デルタデータログの取引（ファイターその1）","de":"Deltametrie-Chroniken (Krieger I)","fr":"Registres deltastitiels (guerre 1)"},"1769797":{"en":"Deltascape Datalog Exchange (DoW) II","ja":"デルタデータログの取引（ファイターその2）","de":"Deltametrie-Chroniken (Krieger II)","fr":"Registres deltastitiels (guerre 2)"},"1769798":{"en":"Deltascape Datalog Exchange (DoM)","ja":"デルタデータログの取引（ソーサラー）","de":"Deltametrie-Chroniken (Magier)","fr":"Registres deltastitiels (magie)"},"1769799":{"en":"Lost Allagan Gear Augmentation (DoW) I","ja":"「ロストアラガン装備」の強化（ファイターその1）","de":"Verstärkung von verschollener allagischer Ausrüstung (Krieger I)","fr":"Amélioration d'équipements allagois oubliés (guerre 1)"},"1769800":{"en":"Lost Allagan Gear Augmentation (DoW) II","ja":"「ロストアラガン装備」の強化（ファイターその2）","de":"Verstärkung von verschollener allagischer Ausrüstung (Krieger II)","fr":"Amélioration d'équipements allagois oubliés (guerre 2)"},"1769801":{"en":"Lost Allagan Gear Augmentation (DoM)","ja":"「ロストアラガン装備」の強化（ソーサラー）","de":"Verstärkung von verschollener allagischer Ausrüstung (Magier)","fr":"Amélioration d'équipements allagois oubliés (magie)"},"1769802":{"en":"Lost Allagan Gear Exchange","ja":"「ロストアラガン装備」の交換","de":"Verschollene allagische Ausrüstung","fr":"Échange d'équipements allagois oubliés"},"1769803":{"en":"Use Wolf Marks (Stormblood)","ja":"対人戦績の取引（紅蓮）","de":"Wolfsmarken (Stormblood)","fr":"Marques de loup (Stormblood)"},"1769804":{"en":"Use Wolf Marks (Stormblood)","ja":"対人戦績の取引（紅蓮）","de":"Wolfsmarken (Stormblood)","fr":"Marques de loup (Stormblood)"},"1769805":{"en":"Gear Exchange I","ja":"防具の交換（その1）","de":"Ausrüstung I","fr":"Armures (1)"},"1769806":{"en":"Gear Exchange I","ja":"防具の交換（その1）","de":"Ausrüstung I","fr":"Armures (1)"},"1769807":{"en":"Wondrous Sundries","ja":"アイテムの取引","de":"Gegenstände","fr":"Objets"},"1769808":{"en":"Seasonal Event Prizes","ja":"シーズナルイベント報酬の交換","de":"Saisonale Gegenstände","fr":"Récompenses d'événements saisonniers"},"1769809":{"en":"Yellow Crafters' Scrip Exchange (Lv. 70 Items)","ja":"クラフタースクリップ:黄貨の取引（Lv70～向け・その他）","de":"Gelbe Handwerkerscheine (ab St. 70, Anderes)","fr":"Assignats jaunes d'artisan (divers/Nv ≧ 70)"},"1769810":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 70 Items)","ja":"ギャザラースクリップ:黄貨の取引（Lv70～向け・その他）","de":"Gelbe Sammlerscheine (ab St. 70, Anderes)","fr":"Assignats jaunes de récolteur (divers/Nv ≧ 70)"},"1769811":{"en":"Allied Seals (Other)","ja":"同盟記章の取引（その他）","de":"Jagdabzeichen (Anderes)","fr":"Insignes alliés (divers)"},"1769812":{"en":"","ja":"","de":"","fr":""},"1769813":{"en":"","ja":"","de":"","fr":""},"1769814":{"en":"Totem Gear (Bahamut)","ja":"蛮神装備の取引（バハムート）","de":"Bahamut-Ausrüstung","fr":"Équipements totémiques (Bahamut)"},"1769815":{"en":"Glamour Prism Collection","ja":"不要ミラージュプリズムの回収","de":"Projektionsprismen","fr":"Échange de prismes mirage"},"1769816":{"en":"","ja":"","de":"","fr":""},"1769817":{"en":"","ja":"","de":"","fr":""},"1769818":{"en":"Kojin Sango Exchange","ja":"コウジン珊瑚貨の取引","de":"Kojin-Korallen","fr":"Échange de sango kojin"},"1769819":{"en":"Totem Gear (Shinryu)","ja":"蛮神装備の取引（神龍）","de":"Shinryu-Ausrüstung","fr":"Équipements totémiques (Shinryu)"},"1769820":{"en":"","ja":"","de":"","fr":""},"1769821":{"en":"","ja":"","de":"","fr":""},"1769822":{"en":"","ja":"","de":"","fr":""},"1769823":{"en":"","ja":"","de":"","fr":""},"1769824":{"en":"","ja":"","de":"","fr":""},"1769825":{"en":"","ja":"","de":"","fr":""},"1769826":{"en":"","ja":"","de":"","fr":""},"1769827":{"en":"","ja":"","de":"","fr":""},"1769828":{"en":"","ja":"","de":"","fr":""},"1769829":{"en":"","ja":"","de":"","fr":""},"1769830":{"en":"","ja":"","de":"","fr":""},"1769831":{"en":"","ja":"","de":"","fr":""},"1769832":{"en":"","ja":"","de":"","fr":""},"1769833":{"en":"","ja":"","de":"","fr":""},"1769834":{"en":"","ja":"","de":"","fr":""},"1769835":{"en":"Yellow Crafters' Scrip Exchange (Master Recipes)","ja":"クラフタースクリップ:黄貨の取引（秘伝書）","de":"Gelbe Handwerkerscheine (Meisterrezeptbücher)","fr":"Assignats jaunes d'artisan (recettes expertes)"},"1769836":{"en":"Yellow Crafters' Scrip Exchange (Master Recipes)","ja":"クラフタースクリップ:黄貨の取引（秘伝書）","de":"Gelbe Handwerkerscheine (Meisterrezeptbücher)","fr":"Assignats jaunes d'artisan (recettes expertes)"},"1769837":{"en":"Yellow Crafters' Scrip Exchange (Master Recipes)","ja":"クラフタースクリップ:黄貨の取引（秘伝書）","de":"Gelbe Handwerkerscheine (Meisterrezeptbücher)","fr":"Assignats jaunes d'artisan (recettes expertes)"},"1769838":{"en":"Yellow Crafters' Scrip Exchange (Master Recipes)","ja":"クラフタースクリップ:黄貨の取引（秘伝書）","de":"Gelbe Handwerkerscheine (Meisterrezeptbücher)","fr":"Assignats jaunes d'artisan (recettes expertes)"},"1769839":{"en":"Yellow Crafters' Scrip Exchange (Master Recipes)","ja":"クラフタースクリップ:黄貨の取引（秘伝書）","de":"Gelbe Handwerkerscheine (Meisterrezeptbücher)","fr":"Assignats jaunes d'artisan (recettes expertes)"},"1769840":{"en":"Yellow Crafters' Scrip Exchange (Master Recipes)","ja":"クラフタースクリップ:黄貨の取引（秘伝書）","de":"Gelbe Handwerkerscheine (Meisterrezeptbücher)","fr":"Assignats jaunes d'artisan (recettes expertes)"},"1769841":{"en":"","ja":"","de":"","fr":""},"1769842":{"en":"","ja":"","de":"","fr":""},"1769843":{"en":"","ja":"","de":"","fr":""},"1769844":{"en":"","ja":"","de":"","fr":""},"1769845":{"en":"","ja":"","de":"","fr":""},"1769846":{"en":"","ja":"","de":"","fr":""},"1769847":{"en":"Ananta Dreamstaff Exchange","ja":"アナンタ魔金錫貨の取引","de":"Ananta-Traumstäbe","fr":"Échange de barrettes béatifiques anantas"},"1769848":{"en":"Gear Exchange II","ja":"防具の交換（その2）","de":"Ausrüstung II","fr":"Armures (2)"},"1769849":{"en":"Gear Exchange II","ja":"防具の交換（その2）","de":"Ausrüstung II","fr":"Armures (2)"},"1769850":{"en":"Allagan Tomestones of Poetics (DoW) I","ja":"アラガントームストーン:詩学の取引（ファイターその1）","de":"Allagische Steine der Poesie (Krieger I)","fr":"Mémoquartz allagois poétiques (guerre 1)"},"1769851":{"en":"Allagan Tomestones of Poetics (DoM) I","ja":"アラガントームストーン:詩学の取引（ソーサラーその1）","de":"Allagische Steine der Poesie (Magier I)","fr":"Mémoquartz allagois poétiques (magie 1)"},"1769852":{"en":"Ryumyaku Gear Exchange","ja":"「龍脈装備」の交換","de":"Ryumyaku-Ausrüstung","fr":"Échange d'équipements Ryûmyaku"},"1769853":{"en":"Allagan Tomestones of Poetics (Other)","ja":"アラガントームストーン:詩学の取引（その他）","de":"Allagische Steine der Poesie (Anderes)","fr":"Mémoquartz allagois poétiques (divers)"},"1769854":{"en":"Auspice Gear (Byakko)","ja":"四聖獣装備の取引（白虎）","de":"Byakko-Ausrüstung","fr":"Équipements des quatre animaux sacrés (Byakko)"},"1769855":{"en":"Sigmascape Part Exchange (DoW) I","ja":"シグマパーツの取引（ファイターその1）","de":"Sigmametrie-Materialien (Krieger I)","fr":"Éléments sigmastitiels (guerre 1)"},"1769856":{"en":"Sigmascape Part Exchange (DoW) II","ja":"シグマパーツの取引（ファイターその2）","de":"Sigmametrie-Materialien (Krieger II)","fr":"Éléments sigmastitiels (guerre 2)"},"1769857":{"en":"Sigmascape Part Exchange (DoM)","ja":"シグマパーツの取引（ソーサラー）","de":"Sigmametrie-Materialien (Magier)","fr":"Éléments sigmastitiels (magie)"},"1769858":{"en":"Sigmascape Datalog Exchange (DoW) I","ja":"シグマデータログの取引（ファイターその1）","de":"Sigmametrie-Chroniken (Krieger I)","fr":"Registres sigmastitiels (guerre 1)"},"1769859":{"en":"Sigmascape Datalog Exchange (DoW) II","ja":"シグマデータログの取引（ファイターその2）","de":"Sigmametrie-Chroniken (Krieger II)","fr":"Registres sigmastitiels (guerre 2)"},"1769860":{"en":"Sigmascape Datalog Exchange (DoM)","ja":"シグマデータログの取引（ソーサラー）","de":"Sigmametrie-Chroniken (Magier)","fr":"Registres sigmastitiels (magie)"},"1769861":{"en":"Ryumyaku Gear Augmentation (DoW) I","ja":"「龍脈装備」の強化（ファイターその1）","de":"Verstärkung von Ryumyaku-Ausrüstung (Krieger I)","fr":"Amélioration d'équipements Ryûmyaku (guerre 1)"},"1769862":{"en":"Ryumyaku Gear Augmentation (DoW) II","ja":"「龍脈装備」の強化（ファイターその2）","de":"Verstärkung von Ryumyaku-Ausrüstung (Krieger II)","fr":"Amélioration d'équipements Ryûmyaku (guerre 2)"},"1769863":{"en":"Ryumyaku Gear Augmentation (DoM)","ja":"「龍脈装備」の強化（ソーサラー）","de":"Verstärkung von Ryumyaku-Ausrüstung (Magier)","fr":"Amélioration d'équipements Ryûmyaku (magie)"},"1769864":{"en":"Ala Mhigan Gear Exchange (DoW)","ja":"「アラミガン装備」の取引（ファイター）","de":"Mhigische Ausrüstung (Krieger)","fr":"Échange d'équipements mhigois (guerre)"},"1769865":{"en":"Ala Mhigan Gear Exchange (DoM)","ja":"「アラミガン装備」の取引（ソーサラー）","de":"Mhigische Ausrüstung (Magier)","fr":"Échange d'équipements mhigois (magie)"},"1769866":{"en":"Yellow Crafters' Scrip Exchange (Lv. 70 Augmentation)","ja":"クラフタースクリップ:黄貨の取引（Lv70～向け・装備強化）","de":"Gelbe Handwerkerscheine (ab St. 70, Verstärkung)","fr":"Assignats jaunes d'artisan (améliorations/Nv ≧ 70)"},"1769867":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 70 Augmentation)","ja":"ギャザラースクリップ:黄貨の取引（Lv70～向け・装備強化）","de":"Gelbe Sammlerscheine (ab St. 70, Verstärkung)","fr":"Assignats jaunes de récolteurs (améliorations/Nv ≧ 70)"},"1769868":{"en":"Namazu Koban Exchange","ja":"ナマズオ小判の取引","de":"Namazuo-Koban","fr":"Échange de koban namazu"},"1769869":{"en":"","ja":"","de":"","fr":""},"1769870":{"en":"","ja":"","de":"","fr":""},"1769871":{"en":"","ja":"","de":"","fr":""},"1769872":{"en":"","ja":"","de":"","fr":""},"1769873":{"en":"Totem Gear (Ultima Weapon)","ja":"報酬武器の取引（アルテマウェポン）","de":"Ultima-Ausrüstung","fr":"Équipements totémiques (Ultima Arma)"},"1769874":{"en":"","ja":"","de":"","fr":""},"1769875":{"en":"Seasonal Event Prizes I","ja":"シーズナルイベント報酬の交換（その1）","de":"Saisonale Gegenstände I","fr":"Récompenses d'événements saisonniers (1)"},"1769876":{"en":"Seasonal Event Prizes","ja":"シーズナルイベント報酬の交換","de":"Saisonale Gegenstände","fr":"Récompenses d'événements saisonniers"},"1769877":{"en":"Yellow Crafters' Scrip Exchange (Lv. 58)","ja":"クラフタースクリップ:黄貨の取引（Lv58～向け）","de":"Gelbe Handwerkerscheine (ab St. 58)","fr":"Assignats jaunes d'artisan (Nv ≧ 58)"},"1769878":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 58)","ja":"ギャザラースクリップ:黄貨の取引（Lv58～向け）","de":"Gelbe Sammlerscheine (ab St. 58)","fr":"Assignats jaunes de récolteur (Nv ≧ 58)"},"1769879":{"en":"Yellow Crafters' Scrip Exchange (Lv. 70 Gear) II","ja":"クラフタースクリップ:黄貨の取引（Lv70～向け・装備その2）","de":"Gelbe Handwerkerscheine (ab St. 70, Ausrüstung II)","fr":"Assignats jaunes d'artisan II (équipements/Nv ≧ 70)"},"1769880":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 70 Gear) II","ja":"ギャザラースクリップ:黄貨の取引（Lv70～向け・装備その2）","de":"Gelbe Sammlerscheine (ab St. 70, Ausrüstung II)","fr":"Assignats jaunes de récolteur II (équipements/Nv ≧ 70)"},"1769881":{"en":"Seasonal Event Prizes II","ja":"シーズナルイベント報酬の交換（その2）","de":"Saisonale Gegenstände II","fr":"Récompenses d'événements saisonniers (2)"},"1769882":{"en":"Seasonal Event Prizes III","ja":"シーズナルイベント報酬の交換（その3）","de":"Saisonale Gegenstände III","fr":"Récompenses d'événements saisonniers (3)"},"1769883":{"en":"Totem Gear (Tsukuyomi)","ja":"蛮神装備の取引（ツクヨミ）","de":"Tsukuyomi-Ausrüstung","fr":"Équipements totémiques (Tsukuyomi)"},"1769884":{"en":"Yellow Crafters' Scrip Exchange (Master Recipes)","ja":"クラフタースクリップ:黄貨の取引（秘伝書）","de":"Gelbe Handwerkerscheine (Meisterrezeptbücher)","fr":"Assignats jaunes d'artisan (recettes expertes)"},"1769885":{"en":"Resistance Token Acquisition (Weapons)","ja":"解放軍の手形との交換（武器）","de":"Waffen in Armeemarken umtauschen","fr":"Échanger des armes"},"1769886":{"en":"Resistance Token Acquisition (Gear)","ja":"解放軍の手形との交換（防具）","de":"Rüstungen in Armeemarken umtauschen","fr":"Échanger des armures"},"1769887":{"en":"Resistance Token Acquisition (Accessories)","ja":"解放軍の手形との交換（アクセサリー）","de":"Accessoires in Armeemarken umtauschen","fr":"Échanger des accessoires"},"1769888":{"en":"Resistance Token Acquisition (Weapons)","ja":"解放軍の手形との交換（武器）","de":"HQ-Waffen in Armeemarken umtauschen","fr":"Échanger des armes"},"1769889":{"en":"Resistance Token Acquisition (Gear)","ja":"解放軍の手形との交換（防具）","de":"HQ-Rüstungen in Armeemarken umtauschen","fr":"Échanger des armures"},"1769890":{"en":"Resistance Token Acquisition (Accessories)","ja":"解放軍の手形との交換（アクセサリー）","de":"HQ-Accessoires in Armeemarken umtauschen","fr":"Échanger des accessoires"},"1769891":{"en":"Resistance Token Exchange (Weapons)","ja":"解放軍の手形の取引（武器）","de":"Armeemarken in Waffen umtauschen","fr":"Liste des armes"},"1769892":{"en":"Resistance Token Exchange (Gear)","ja":"解放軍の手形の取引（防具）","de":"Armeemarken in Rüstung umtauschen","fr":"Liste des armures"},"1769893":{"en":"Resistance Token Exchange (Accessories)","ja":"解放軍の手形の取引（アクセサリー）","de":"Armeemarken in Accessoires umtauschen","fr":"Liste des accessoires"},"1769894":{"en":"Resistance Token Exchange (Weapons)","ja":"解放軍の手形の取引（武器）","de":"Armeemarken in HQ-Waffen umtauschen","fr":"Liste des armes"},"1769895":{"en":"Resistance Token Exchange (Gear)","ja":"解放軍の手形の取引（防具）","de":"Armeemarken in HQ-Rüstung umtauschen","fr":"Liste des armures"},"1769896":{"en":"Resistance Token Exchange (Accessories)","ja":"解放軍の手形の取引（アクセサリー）","de":"Armeemarken in HQ-Accessoires umtauschen","fr":"Liste des accessoires"},"1769897":{"en":"Feathers Aplenty","ja":"アイテムの取引","de":"Gegenstände","fr":"Objets"},"1769898":{"en":"","ja":"","de":"","fr":""},"1769899":{"en":"","ja":"","de":"","fr":""},"1769900":{"en":"","ja":"","de":"","fr":""},"1769901":{"en":"","ja":"","de":"","fr":""},"1769902":{"en":"","ja":"","de":"","fr":""},"1769903":{"en":"","ja":"","de":"","fr":""},"1769904":{"en":"","ja":"","de":"","fr":""},"1769905":{"en":"","ja":"","de":"","fr":""},"1769906":{"en":"","ja":"","de":"","fr":""},"1769907":{"en":"Allagan Tomestones of Poetics (DoW) II","ja":"アラガントームストーン:詩学の取引（ファイターその2）","de":"Allagische Steine der Poesie (Krieger II)","fr":"Mémoquartz allagois poétiques (guerre 2)"},"1769908":{"en":"Allagan Tomestones of Poetics (DoM) II","ja":"アラガントームストーン:詩学の取引（ソーサラーその2）","de":"Allagische Steine der Poesie (Magier II)","fr":"Mémoquartz allagois poétiques (magie 2)"},"1769909":{"en":"Allagan Tomestones of Genesis (Other)","ja":"アラガントームストーン:創世の取引（その他）","de":"Allagische Steine des Ursprungs (Anderes)","fr":"Mémoquartz allagois génésiaques (divers)"},"1769910":{"en":"Scaevan Gear Exchange","ja":"「スカエウァ装備」の交換","de":"Scaeva-Ausrüstung","fr":"Échange d'équipements Scaeva"},"1769911":{"en":"Scaevan Gear Augmentation (DoW) I","ja":"「スカエウァ装備」の強化（ファイターその1）","de":"Verstärkung von Scaeva-Ausrüstung (Krieger I)","fr":"Amélioration d'équipements Scaeva (guerre 1)"},"1769912":{"en":"Scaevan Gear Augmentation (DoW) II","ja":"「スカエウァ装備」の強化（ファイターその2）","de":"Verstärkung von Scaeva-Ausrüstung (Krieger II)","fr":"Amélioration d'équipements Scaeva (guerre 2)"},"1769913":{"en":"Scaevan Gear Augmentation (DoM)","ja":"「スカエウァ装備」の強化（ソーサラー）","de":"Verstärkung von Scaeva-Ausrüstung (Magier)","fr":"Amélioration d'équipements Scaeva (magie)"},"1769914":{"en":"Lost Allagan Gear (DoW)","ja":"「ロストアラガン装備」の取引（ファイター）","de":"Verschollene allagische Ausrüstung (Krieger)","fr":"Échange d'équipements allagois oubliés (guerre)"},"1769915":{"en":"Lost Allagan Gear (DoM)","ja":"「ロストアラガン装備」の取引（ソーサラー）","de":"Verschollene allagische Ausrüstung (Magier)","fr":"Échange d'équipements allagois oubliés (magie)"},"1769916":{"en":"Auspice Gear (Suzaku)","ja":"四聖獣装備の取引（朱雀）","de":"Suzaku-Ausrüstung","fr":"Équipements des quatre animaux sacrés (Suzaku)"},"1769917":{"en":"Alphascape Part Exchange (DoW) I","ja":"アルファパーツの取引（ファイターその1）","de":"Alphametrie-Materialien (Krieger I)","fr":"Éléments alphastitiels (guerre 1)"},"1769918":{"en":"Alphascape Part Exchange (DoW) II","ja":"アルファパーツの取引（ファイターその2）","de":"Alphametrie-Materialien (Krieger II)","fr":"Éléments alphastitiels (guerre 2)"},"1769919":{"en":"Alphascape Part Exchange (DoM)","ja":"アルファパーツの取引（ソーサラー）","de":"Alphametrie-Materialien (Magier)","fr":"Éléments alphastitiels (magie)"},"1769920":{"en":"Alphascape Datalog Exchange (DoW) I","ja":"アルファデータログの取引（ファイターその1）","de":"Alphametrie-Chroniken (Krieger I)","fr":"Registres alphastitiels (guerre 1)"},"1769921":{"en":"Alphascape Datalog Exchange (DoW) II","ja":"アルファデータログの取引（ファイターその2）","de":"Alphametrie-Chroniken (Krieger II)","fr":"Registres alphastitiels (guerre 2)"},"1769922":{"en":"Alphascape Datalog Exchange (DoM)","ja":"アルファデータログの取引（ソーサラー）","de":"Alphametrie-Chroniken (Magier)","fr":"Registres alphastitiels (magie)"},"1769923":{"en":"","ja":"","de":"","fr":""},"1769924":{"en":"","ja":"","de":"","fr":""},"1769925":{"en":"","ja":"","de":"","fr":""},"1769926":{"en":"","ja":"","de":"","fr":""},"1769927":{"en":"","ja":"","de":"","fr":""},"1769928":{"en":"","ja":"","de":"","fr":""},"1769929":{"en":"Newest Irregular Tomestone Exchange","ja":"最新の希少トームストーンの取引","de":"Ungewöhnliche Allagische Steine (neu)","fr":"Récents mémoquartz allagois inhabituels"},"1769930":{"en":"Previous Irregular Tomestone Exchange","ja":"前回の希少トームストーンの取引","de":"Ungewöhnliche Allagische Steine (vorherig)","fr":"Précédents mémoquartz allagois inhabituels"},"1769931":{"en":"","ja":"","de":"","fr":""},"1769932":{"en":"","ja":"","de":"","fr":""},"1769933":{"en":"","ja":"","de":"","fr":""},"1769934":{"en":"","ja":"","de":"","fr":""},"1769935":{"en":"","ja":"","de":"","fr":""},"1769936":{"en":"Gear Exchange","ja":"防具の交換","de":"Ausrüstung","fr":"Armures"},"1769937":{"en":"","ja":"","de":"","fr":""},"1769938":{"en":"","ja":"","de":"","fr":""},"1769939":{"en":"","ja":"","de":"","fr":""},"1769940":{"en":"Auspice Gear (Seiryu)","ja":"四聖獣装備の取引（青龍）","de":"Seiryu-Ausrüstung","fr":"Équipements des quatre animaux sacrés (Seiryû)"},"1769941":{"en":"Rakshasa Token Acquisition (Weapons)","ja":"羅刹の手形との交換（武器）","de":"Waffen in Rakshasa-Marken umtauschen","fr":"Échanger des armes"},"1769942":{"en":"Rakshasa Token Acquisition (Gear)","ja":"羅刹の手形との交換（防具）","de":"Rüstungen in Rakshasa-Marken umtauschen","fr":"Échanger des armures"},"1769943":{"en":"Rakshasa Token Acquisition (Accessories)","ja":"羅刹の手形との交換（アクセサリー）","de":"Accessoires in Rakshasa-Marken umtauschen","fr":"Échanger des accessoires"},"1769944":{"en":"Rakshasa Token Acquisition (Weapons)","ja":"羅刹の手形との交換（武器）","de":"HQ-Waffen in Rakshasa-Marken umtauschen","fr":"Échanger des armes"},"1769945":{"en":"Rakshasa Token Acquisition (Gear)","ja":"羅刹の手形との交換（防具）","de":"HQ-Rüstungen in Rakshasa-Marken umtauschen","fr":"Échanger des armures"},"1769946":{"en":"Rakshasa Token Acquisition (Accessories)","ja":"羅刹の手形との交換（アクセサリー）","de":"HQ-Accessoires in Rakshasa-Marken umtauschen","fr":"Échanger des accessoires"},"1769947":{"en":"Rakshasa Token Exchange (Weapons)","ja":"羅刹の手形の取引（武器）","de":"Rakshasa-Marken in Waffen umtauschen","fr":"Liste des armes"},"1769948":{"en":"Rakshasa Token Exchange (Gear)","ja":"羅刹の手形の取引（防具）","de":"Rakshasa-Marken in Rüstung umtauschen","fr":"Liste des armures"},"1769949":{"en":"Rakshasa Token Exchange (Accessories)","ja":"羅刹の手形の取引（アクセサリー）","de":"Rakshasa-Marken in Accessoires umtauschen","fr":"Liste des accessoires"},"1769950":{"en":"","ja":"","de":"","fr":""},"1769951":{"en":"","ja":"","de":"","fr":""},"1769952":{"en":"Seasonal Event Prizes I","ja":"シーズナルイベント報酬の交換（その1）","de":"Saisonale Gegenstände I","fr":"Récompenses d'événements saisonniers I"},"1769953":{"en":"Seasonal Event Prizes II","ja":"シーズナルイベント報酬の交換（その2）","de":"Saisonale Gegenstände II","fr":"Récompenses d'événements saisonniers II"},"1769954":{"en":"Seasonal Event Prizes III","ja":"シーズナルイベント報酬の交換（その3）","de":"Saisonale Gegenstände III","fr":"Récompenses d'événements saisonniers III"},"1769955":{"en":"Seasonal Event Prizes IV","ja":"シーズナルイベント報酬の交換（その4）","de":"Saisonale Gegenstände IV","fr":"Récompenses d'événements saisonniers IV"},"1769956":{"en":"","ja":"","de":"","fr":""},"1769957":{"en":"","ja":"","de":"","fr":""},"1769958":{"en":"","ja":"","de":"","fr":""},"1769959":{"en":"","ja":"","de":"","fr":""},"1769960":{"en":"","ja":"","de":"","fr":""},"1769961":{"en":"","ja":"","de":"","fr":""},"1769962":{"en":"","ja":"","de":"","fr":""},"1769963":{"en":"","ja":"","de":"","fr":""},"1769964":{"en":"","ja":"","de":"","fr":""},"1769965":{"en":"Journey's End Gear (Tank)","ja":"英魂装備の受取（タンク）","de":"Vermächtnis des Helden (Verteidiger)","fr":"Legs des Héros (tank)"},"1769966":{"en":"Journey's End Gear (Physical DPS)","ja":"英魂装備の受取（DPS：ファイター）","de":"Vermächtnis des Helden (physische Angreifer)","fr":"Legs des Héros (DPS physique)"},"1769967":{"en":"Journey's End Gear (Magic DPS)","ja":"英魂装備の受取（DPS：ソーサラー）","de":"Vermächtnis des Helden (magische Angreifer)","fr":"Legs des Héros (DPS magique)"},"1769968":{"en":"Journey's End Gear (Healer)","ja":"英魂装備の受取（ヒーラー）","de":"Vermächtnis des Helden (Heiler)","fr":"Legs des Héros (soigneur)"},"1769969":{"en":"Totem Gear (Innocence)","ja":"大罪喰い装備の取引（イノセンス）","de":"Lichtbringer-Ausrüstung (Innozenz)","fr":"Équipements totémiques (Innocence)"},"1769970":{"en":"Totem Gear (Titania)","ja":"大罪喰い装備の取引（ティターニア）","de":"Lichtbringer-Ausrüstung (Titania)","fr":"Équipements totémiques (Titania)"},"1769971":{"en":"Allagan Tomestones of Goetia (DoW)","ja":"アラガントームストーン:魔典の取引（ファイター）","de":"Allagische Steine der Goëtie (Krieger)","fr":"Mémoquartz allagois goétiques (guerre)"},"1769972":{"en":"Allagan Tomestones of Goetia (DoM)","ja":"アラガントームストーン:魔典の取引（ソーサラー）","de":"Allagische Steine der Goëtie (Magier)","fr":"Mémoquartz allagois goétiques (magie)"},"1769973":{"en":"","ja":"","de":"","fr":""},"1769974":{"en":"","ja":"","de":"","fr":""},"1769975":{"en":"","ja":"","de":"","fr":""},"1769976":{"en":"","ja":"","de":"","fr":""},"1769977":{"en":"Eden's Gate Antique Exchange (DoW) I","ja":"古びた装備【覚】の取引（ファイターその1）","de":"Edentor-Ausrüstung (Krieger I)","fr":"Équipements antiques de l'éveil (guerre 1)"},"1769978":{"en":"Eden's Gate Antique Exchange (DoW) II","ja":"古びた装備【覚】の取引（ファイターその2）","de":"Edentor-Ausrüstung (Krieger II)","fr":"Équipements antiques de l'éveil (guerre 2)"},"1769979":{"en":"Eden's Gate Antique Exchange (DoM)","ja":"古びた装備【覚】の取引（ソーサラー）","de":"Edentor-Ausrüstung (Magier)","fr":"Équipements antiques de l'éveil (magie)"},"1769980":{"en":"","ja":"","de":"","fr":""},"1769981":{"en":"","ja":"","de":"","fr":""},"1769982":{"en":"","ja":"","de":"","fr":""},"1769983":{"en":"","ja":"","de":"","fr":""},"1769984":{"en":"","ja":"","de":"","fr":""},"1769985":{"en":"","ja":"","de":"","fr":""},"1769986":{"en":"","ja":"","de":"","fr":""},"1769987":{"en":"Sacks of Nuts Exchange","ja":"モブハントの戦利品の取引","de":"Kupo-Trophäen","fr":"Insignes Kupo"},"1769988":{"en":"Silver Chocobo Feather Exchange II","ja":"シルバーチョコボの羽根の取引（その2）","de":"Silberne Chocobo-Federn II","fr":"Pennes de chocobo argenté (2)"},"1769989":{"en":"Silver Chocobo Feather Exchange III","ja":"シルバーチョコボの羽根の取引（その3）","de":"Silberne Chocobo-Federn III","fr":"Pennes de chocobo argenté (3)"},"1769990":{"en":"White Crafters' Scrip Exchange (Lv. 80 Gear)","ja":"クラフタースクリップ:白貨の取引（Lv80向け・装備）","de":"Weiße Handwerkerscheine (ab St. 80, Ausrüstung)","fr":"Assignats blancs d'artisan (équipements/Nv 80)"},"1769991":{"en":"White Gatherers' Scrip Exchange (Lv. 80 Gear)","ja":"ギャザラースクリップ:白貨の取引（Lv80向け・装備）","de":"Weiße Sammlerscheine (ab St. 80, Ausrüstung)","fr":"Assignats blancs de récolteur (équipements/Nv 80)"},"1769992":{"en":"White Crafters' Scrip Exchange (Lv. 80 Items)","ja":"クラフタースクリップ:白貨の取引（Lv80向け・その他）","de":"Weiße Handwerkerscheine (ab St. 80, Anderes)","fr":"Assignats blancs d'artisan (divers/Nv 80)"},"1769993":{"en":"White Gatherers' Scrip Exchange (Lv. 80 Items)","ja":"ギャザラースクリップ:白貨の取引（Lv80向け・その他）","de":"Weiße Sammlerscheine (ab St. 80, Anderes)","fr":"Assignats blancs de récolteur (divers/Nv 80)"},"1769994":{"en":"","ja":"","de":"","fr":""},"1769995":{"en":"Yellow Crafters' Scrip Exchange (Master Recipes)","ja":"クラフタースクリップ:黄貨の取引（秘伝書）","de":"Gelbe Handwerkerscheine (Meisterrezeptbücher)","fr":"Assignats jaunes d'artisan (recettes expertes)"},"1769996":{"en":"Yellow Crafters' Scrip Exchange (Lv. 50)","ja":"クラフタースクリップ:黄貨の取引（Lv50～向け）","de":"Gelbe Handwerkerscheine (ab St. 50)","fr":"Assignats jaunes d'artisan (Nv ≧ 50)"},"1769997":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 50)","ja":"ギャザラースクリップ:黄貨の取引（Lv50～向け）","de":"Gelbe Sammlerscheine (ab St. 50)","fr":"Assignats jaunes de récolteur (Nv ≧ 50)"},"1769998":{"en":"Yellow Crafters' Scrip Exchange (Lv. 58)","ja":"クラフタースクリップ:黄貨の取引（Lv58～向け）","de":"Gelbe Handwerkerscheine (ab St. 58)","fr":"Assignats jaunes d'artisan (Nv ≧ 58)"},"1769999":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 58)","ja":"ギャザラースクリップ:黄貨の取引（Lv58～向け）","de":"Gelbe Sammlerscheine (ab St. 58)","fr":"Assignats jaunes de récolteur (Nv ≧ 58)"},"1770000":{"en":"Yellow Crafters' Scrip Exchange (Lv. 61)","ja":"クラフタースクリップ:黄貨の取引（Lv61～向け）","de":"Gelbe Handwerkerscheine (ab St. 61)","fr":"Assignats jaunes d'artisan (Nv ≧ 61)"},"1770001":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 61)","ja":"ギャザラースクリップ:黄貨の取引（Lv61～向け）","de":"Gelbe Sammlerscheine (ab St. 61)","fr":"Assignats jaunes de récolteur (Nv ≧ 61)"},"1770002":{"en":"Yellow Crafters' Scrip Exchange (Lv. 70 Gear)","ja":"クラフタースクリップ:黄貨の取引（Lv70～向け・装備）","de":"Gelbe Handwerkerscheine (ab St. 70, Ausrüstung)","fr":"Assignats jaunes d'artisan (équipements/Nv ≧ 70)"},"1770003":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 70 Gear)","ja":"ギャザラースクリップ:黄貨の取引（Lv70～向け・装備）","de":"Gelbe Sammlerscheine (ab St. 70, Ausrüstung)","fr":"Assignats jaunes de récolteur (équipements/Nv ≧ 70)"},"1770004":{"en":"Yellow Crafters' Scrip Exchange (Lv. 70 Gear) II","ja":"クラフタースクリップ:黄貨の取引（Lv70～向け・装備その2）","de":"Gelbe Handwerkerscheine (ab St. 70, Ausrüstung II)","fr":"Assignats jaunes d'artisan II (équipements/Nv ≧ 70)"},"1770005":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 70 Gear) II","ja":"ギャザラースクリップ:黄貨の取引（Lv70～向け・装備その2）","de":"Gelbe Sammlerscheine (ab St. 70, Ausrüstung II)","fr":"Assignats jaunes de récolteur II (équipements/Nv ≧ 70)"},"1770006":{"en":"Yellow Crafters' Scrip Exchange (Lv. 70 Augmentation)","ja":"クラフタースクリップ:黄貨の取引（Lv70～向け・装備強化）","de":"Gelbe Handwerkerscheine (ab St. 70, Verstärkung)","fr":"Assignats jaunes d'artisan (améliorations/Nv ≧ 70)"},"1770007":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 70 Augmentation)","ja":"ギャザラースクリップ:黄貨の取引（Lv70～向け・装備強化）","de":"Gelbe Sammlerscheine (ab St. 70, Verstärkung)","fr":"Assignats jaunes de récolteur (améliorations/Nv ≧ 70)"},"1770008":{"en":"Yellow Crafters' Scrip Exchange (Lv. 70 Items)","ja":"クラフタースクリップ:黄貨の取引（Lv70～向け・その他）","de":"Gelbe Handwerkerscheine (ab St. 70, Anderes)","fr":"Assignats jaunes d'artisan (divers/Nv ≧ 70)"},"1770009":{"en":"Yellow Gatherers' Scrip Exchange (Lv. 70 Items)","ja":"ギャザラースクリップ:黄貨の取引（Lv70～向け・その他）","de":"Gelbe Sammlerscheine (ab St. 70, Anderes)","fr":"Assignats jaunes de récolteur (divers/Nv ≧ 70)"},"1770010":{"en":"","ja":"","de":"","fr":""},"1770011":{"en":"","ja":"","de":"","fr":""},"1770012":{"en":"","ja":"","de":"","fr":""},"1770013":{"en":"","ja":"","de":"","fr":""},"1770014":{"en":"Fieldcraft Items","ja":"ギャザラー向けアイテムの交換","de":"Sammler-Gegenstände","fr":"Objets de récolte"},"1770015":{"en":"Glorious Gewgaws","ja":"アイテムの取引","de":"Waren","fr":"Objets"},"1770016":{"en":"","ja":"","de":"","fr":""}}
+{
+  "1769472": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769473": {
+    "en": "Seasonal Event",
+    "ja": "シーズナルイベント素材の交換",
+    "de": "Saisonales Ereignis",
+    "fr": "Échange d'objets (Événements saisonniers)"
+  },
+  "1769474": {
+    "en": "Currency Test",
+    "ja": "テスト用ショップ：通貨交換",
+    "de": "Währungstest",
+    "fr": "Test des devises"
+  },
+  "1769475": {
+    "en": "Materia Test",
+    "ja": "テスト用ショップ：マテリア交換",
+    "de": "Materiatest",
+    "fr": "Test des matérias"
+  },
+  "1769482": {
+    "en": "Lightning Returns",
+    "ja": "季節イベント：FF13コラボ",
+    "de": "Lightning Returns",
+    "fr": "Lightning Returns"
+  },
+  "1769483": {
+    "en": "Moonfire Faire",
+    "ja": "季節イベント：2013紅蓮祭",
+    "de": "Feuermond-Reigen",
+    "fr": "Fête de l'été"
+  },
+  "1769484": {
+    "en": "Relic Enhancement",
+    "ja": "古の武器の強化",
+    "de": "Reliktwaffen-Verstärkung",
+    "fr": "Amélioration des armes antiques"
+  },
+  "1769485": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769486": {
+    "en": "Bitter Heart Chocolate",
+    "ja": "ビターハートチョコの取引",
+    "de": "Bitterherz-Schokolade",
+    "fr": "Cœurs en chocolat amer"
+  },
+  "1769487": {
+    "en": "Pure Heart Chocolate",
+    "ja": "ピュアハートチョコの取引",
+    "de": "Reinherz-Schokolade",
+    "fr": "Cœurs en chocolat pur"
+  },
+  "1769490": {
+    "en": "Wolf Mark Gear (IL 70)",
+    "ja": "ILv70防具の交換",
+    "de": "Ausrüstung G.-St. 70",
+    "fr": "Armures (NvObj 70)"
+  },
+  "1769491": {
+    "en": "Wolf Mark Gear (IL 70)",
+    "ja": "ILv70防具の交換",
+    "de": "Ausrüstung G.-St. 70",
+    "fr": "Armures (NvObj 70)"
+  },
+  "1769492": {
+    "en": "Wolf Mark Gear (IL 90)",
+    "ja": "ILv90防具の交換",
+    "de": "Ausrüstung G.-St. 90",
+    "fr": "Armures (NvObj 90)"
+  },
+  "1769493": {
+    "en": "Wolf Mark Gear (IL 90)",
+    "ja": "ILv90防具の交換",
+    "de": "Ausrüstung G.-St. 90",
+    "fr": "Armures (NvObj 90)"
+  },
+  "1769494": {
+    "en": "Wolf Marks",
+    "ja": "対人戦績の取引",
+    "de": "Wolfsmarken",
+    "fr": "Marques de loup"
+  },
+  "1769496": {
+    "en": "Wolf Mark Gear (IL 100)",
+    "ja": "ILv100防具の交換",
+    "de": "Ausrüstung G.-St. 100",
+    "fr": "Armures (NvObj 100)"
+  },
+  "1769497": {
+    "en": "Wolf Mark Gear (IL 100)",
+    "ja": "ILv100防具の交換",
+    "de": "Ausrüstung G.-St. 100",
+    "fr": "Armures (NvObj 100)"
+  },
+  "1769500": {
+    "en": "Gerolt's Masterworks Repair (DoW)",
+    "ja": "「ゲロルトの名品」の修繕（ファイター）",
+    "de": "Gerolts Meisterwerke (Krieger)",
+    "fr": "Chefs-d'œuvre de Gerolt (guerre)"
+  },
+  "1769501": {
+    "en": "Gerolt's Masterworks Repair (DoM)",
+    "ja": "「ゲロルトの名品」の修繕（ソーサラー）",
+    "de": "Gerolts Meisterwerke (Magier)",
+    "fr": "Chefs-d'œuvre de Gerolt (magie)"
+  },
+  "1769502": {
+    "en": "Gimme an Elixir",
+    "ja": "エリクサーちょうだい",
+    "de": "Gib mir ein Elixier!",
+    "fr": "Je veux un élixir !"
+  },
+  "1769503": {
+    "en": "Master Crafting Tomes",
+    "ja": "クラフター向け「秘伝書」の交換",
+    "de": "Meisterrezeptbücher",
+    "fr": "Recettes expertes (artisans)"
+  },
+  "1769504": {
+    "en": "Forager Gear",
+    "ja": "ギャザラー向け「フォリジャー装備」の交換",
+    "de": "Furier-Ausrüstung",
+    "fr": "Outils et équipement (récolte)"
+  },
+  "1769505": {
+    "en": "Decorative Egg: Exchange Bronze for Silver",
+    "ja": "デコエッグ：ブロンズをデコエッグ：シルバーと交換",
+    "de": "Deko-Eier: Bronze zu Silber",
+    "fr": "Échange d'œufs décoratifs : bronze contre argent"
+  },
+  "1769506": {
+    "en": "Decorative Egg: Exchange Silver for Gold",
+    "ja": "デコエッグ：シルバーをデコエッグ：ゴールドと交換",
+    "de": "Deko-Eier: Silber zu Gold",
+    "fr": "Échange d'œufs décoratifs : argent contre or"
+  },
+  "1769510": {
+    "en": "Gerolt's Masterworks Repair (Weapons)",
+    "ja": "「ゲロルトの名品」の修繕（武器）",
+    "de": "Gerolts Meisterwerke (Waffen)",
+    "fr": "Chefs-d'œuvre de Gerolt (armes)"
+  },
+  "1769511": {
+    "en": "Uncanny Knickknacks",
+    "ja": "アイテムの取引（その他）",
+    "de": "Gegenstände",
+    "fr": "Objets (divers)"
+  },
+  "1769512": {
+    "en": "Gender-specific Gear Exchange (♀→♂) I",
+    "ja": "女性装備から男性装備へ交換（その1）",
+    "de": "Ausrüstung (Frau zu Mann I)",
+    "fr": "Équipement (femmes → hommes 1)"
+  },
+  "1769513": {
+    "en": "Gender-specific Gear Exchange (♂→♀) I",
+    "ja": "男性装備から女性装備へ交換（その1）",
+    "de": "Ausrüstung (Mann zu Frau I)",
+    "fr": "Équipement (hommes → femmes 1)"
+  },
+  "1769514": {
+    "en": "Allied Seals (Maelstrom)",
+    "ja": "同盟記章の取引（黒渦団）",
+    "de": "Jagdabzeichen (Mahlstrom)",
+    "fr": "Insignes alliés (Maelstrom)"
+  },
+  "1769515": {
+    "en": "Allied Seals (Order of the Twin Adder)",
+    "ja": "同盟記章の取引（双蛇党）",
+    "de": "Jagdabzeichen (Bruderschaft)",
+    "fr": "Insignes alliés (Ordre)"
+  },
+  "1769516": {
+    "en": "Allied Seals (Immortal Flames)",
+    "ja": "同盟記章の取引（不滅隊）",
+    "de": "Jagdabzeichen (Legion)",
+    "fr": "Insignes alliés (Immortels)"
+  },
+  "1769517": {
+    "en": "Allied Seals (DoW)",
+    "ja": "同盟記章の取引（ファイター）",
+    "de": "Jagdabzeichen (Krieger)",
+    "fr": "Insignes alliés (guerre)"
+  },
+  "1769518": {
+    "en": "Allied Seals (DoM)",
+    "ja": "同盟記章の取引（ソーサラー）",
+    "de": "Jagdabzeichen (Magier)",
+    "fr": "Insignes alliés (magie)"
+  },
+  "1769519": {
+    "en": "Artifact Equipment (DoW)",
+    "ja": "アイテムの取引（ファイター）",
+    "de": "Gegenstände (Krieger)",
+    "fr": "Objets (guerre)"
+  },
+  "1769520": {
+    "en": "Artifact Equipment (DoM)",
+    "ja": "アイテムの取引（ソーサラー）",
+    "de": "Gegenstände (Magier)",
+    "fr": "Objets (magie)"
+  },
+  "1769521": {
+    "en": "Supra Tools (DoL)",
+    "ja": "ギャザラー向け「スプラ主道具」の交換",
+    "de": "Supra-Werkzeuge (Sammler)",
+    "fr": "Outils supra (récolte)"
+  },
+  "1769522": {
+    "en": "Artisan Tools (DoH)",
+    "ja": "クラフター向け「アーティザン主道具」の交換",
+    "de": "Kunsthandwerker-Werkzeuge (Handwerker)",
+    "fr": "Outils de façonnier (artisanat)"
+  },
+  "1769523": {
+    "en": "Far Eastern Baubles",
+    "ja": "東方の宝珠の取引",
+    "de": "Fernöstlische Kostbarkeiten",
+    "fr": "Babioles orientales"
+  },
+  "1769524": {
+    "en": "Items in Development",
+    "ja": "テスト用ショップ",
+    "de": "Gegenstände in Arbeit",
+    "fr": "Objets en développement"
+  },
+  "1769525": {
+    "en": "Ixali Oaknot Exchange",
+    "ja": "イクサル樫木貨の取引",
+    "de": "Ixal-Eichenmünzen",
+    "fr": "Pièces en chêne ixali"
+  },
+  "1769526": {
+    "en": "Demonic Cookies",
+    "ja": "デモンクッキーの取引",
+    "de": "Dämonenkekse",
+    "fr": "Échange de biscuits du démon"
+  },
+  "1769528": {
+    "en": "Wolf Mark Gear (IL 110)",
+    "ja": "ILv110防具の交換",
+    "de": "Ausrüstung G.-St. 110",
+    "fr": "Armures (NvObj 110)"
+  },
+  "1769529": {
+    "en": "Wolf Mark Gear (IL 110)",
+    "ja": "ILv110防具の交換",
+    "de": "Ausrüstung G.-St. 110",
+    "fr": "Armures (NvObj 110)"
+  },
+  "1769530": {
+    "en": "Vintage Equipment (DoW)",
+    "ja": "復古調装備の交換（ファイター）",
+    "de": "Antike Ausrüstung (Krieger)",
+    "fr": "Équipements antiques (guerre)"
+  },
+  "1769531": {
+    "en": "Vintage Equipment (DoM)",
+    "ja": "復古調装備の交換（ソーサラー）",
+    "de": "Antike Ausrüstung (Magier)",
+    "fr": "Équipements antiques (magie)"
+  },
+  "1769533": {
+    "en": "Allagan Tomestones of Poetics (DoW)",
+    "ja": "アラガントームストーン:詩学の取引（ファイター）",
+    "de": "Allagische Steine der Poesie (Krieger)",
+    "fr": "Mémoquartz allagois poétiques (guerre)"
+  },
+  "1769534": {
+    "en": "Allagan Tomestones of Poetics (DoM)",
+    "ja": "アラガントームストーン:詩学の取引（ソーサラー）",
+    "de": "Allagische Steine der Poesie (Magier)",
+    "fr": "Mémoquartz allagois poétiques (magie)"
+  },
+  "1769535": {
+    "en": "Ironworks Gear Augmentation (DoW)",
+    "ja": "「ガーロンド装備」の強化（ファイター）",
+    "de": "Garlond-Rüstungsverstärkung (Krieger)",
+    "fr": "Amélioration d'équipement des Forges (guerre)"
+  },
+  "1769536": {
+    "en": "Ironworks Gear Augmentation (DoM)",
+    "ja": "「ガーロンド装備」の強化（ソーサラー）",
+    "de": "Garlond-Rüstungsverstärkung (Magier)",
+    "fr": "Amélioration d'équipement des Forges (magie)"
+  },
+  "1769537": {
+    "en": "Ironworks Gear Augmentation (Weapons)",
+    "ja": "「ガーロンド装備」の強化（武器）",
+    "de": "Garlond-Waffenverstärkung",
+    "fr": "Amélioration d'équipement des Forges (armes)"
+  },
+  "1769539": {
+    "en": "Ironworks Gear Augmentation (Accessories)",
+    "ja": "「ガーロンド装備」の強化（アクセサリ）",
+    "de": "Garlond-Accessoireverstärkung",
+    "fr": "Amélioration d'équipement des Forges (accessoires)"
+  },
+  "1769540": {
+    "en": "Starlight Sentinels",
+    "ja": "スターライトツリーの引き換え",
+    "de": "Sternenlichtbäume",
+    "fr": "Arbres festifs"
+  },
+  "1769541": {
+    "en": "Fallen Star Exchange",
+    "ja": "スターライトストーンの取引",
+    "de": "Sternschnuppen",
+    "fr": "Objets festifs"
+  },
+  "1769542": {
+    "en": "Fallen Star Exchange",
+    "ja": "スターライトストーンの取引",
+    "de": "Sternschnuppen",
+    "fr": "Objets festifs"
+  },
+  "1769543": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769544": {
+    "en": "Prize Exchange I",
+    "ja": "景品の交換（その1）",
+    "de": "Gewinne I",
+    "fr": "Lots (1)"
+  },
+  "1769545": {
+    "en": "Triple Triad Cards",
+    "ja": "カードの入手",
+    "de": "Karten erwerben",
+    "fr": "Obtenir des cartes"
+  },
+  "1769546": {
+    "en": "Race Items",
+    "ja": "アイテムの交換",
+    "de": "Gegenstände",
+    "fr": "Objets"
+  },
+  "1769547": {
+    "en": "Chocobo Training Manuals I",
+    "ja": "チョコボ教本の交換（その1）",
+    "de": "Dressurbücher I",
+    "fr": "Manuels de dressage (1)"
+  },
+  "1769548": {
+    "en": "Chocobo Training Manuals II",
+    "ja": "チョコボ教本の交換（その2）",
+    "de": "Dressurbücher II",
+    "fr": "Manuels de dressage (2)"
+  },
+  "1769549": {
+    "en": "Lucky Egg Exchange",
+    "ja": "フォーチュンエッグの取引",
+    "de": "Glückseier",
+    "fr": "Prœufs de la fortune"
+  },
+  "1769550": {
+    "en": "Happy Smile Super Wish Bags",
+    "ja": "ナナパシの福袋の取引",
+    "de": "Nanapasis Wundervolle Wundertüte",
+    "fr": "Échange de pochettes-surprise"
+  },
+  "1769551": {
+    "en": "Lucis Tools (DoL)",
+    "ja": "ギャザラー向け「ルキス主道具」の交換",
+    "de": "Lucis-Werkzeuge (Sammler)",
+    "fr": "Outils lucis (récolte)"
+  },
+  "1769552": {
+    "en": "Artisan Gear (DoH)",
+    "ja": "クラフター向け「アーティザン防具」の交換",
+    "de": "Kunsthandwerker-Ausrüstung (Handwerker)",
+    "fr": "Équipement de façonnier (artisanat)"
+  },
+  "1769553": {
+    "en": "Assorted Accoutrements",
+    "ja": "アイテムの交換（薬品・調理品）",
+    "de": "Gegenstände (Arznei/Gerichte)",
+    "fr": "Objets (consommables)"
+  },
+  "1769554": {
+    "en": "Supra Tools (DoH)",
+    "ja": "クラフター向け「スプラ主道具」の交換",
+    "de": "Supra-Werkzeuge (Handwerker)",
+    "fr": "Outils supra (artisanat)"
+  },
+  "1769555": {
+    "en": "Lucis Tools (DoH)",
+    "ja": "クラフター向け「ルキス主道具」の交換",
+    "de": "Lucis-Werkzeuge (Handwerker)",
+    "fr": "Outils lucis (artisanat)"
+  },
+  "1769556": {
+    "en": "Miscellaneous Miscellany",
+    "ja": "アイテムの交換（その他）",
+    "de": "Gegenstände (Anderes)",
+    "fr": "Objets (autres)"
+  },
+  "1769563": {
+    "en": "Fieldcraft Tools",
+    "ja": "ギャザラー向け道具の交換",
+    "de": "Sammler-Werkzeuge",
+    "fr": "Outils de récolte"
+  },
+  "1769564": {
+    "en": "Fieldcraft Gear",
+    "ja": "ギャザラー向け防具の交換",
+    "de": "Sammler-Ausrüstung",
+    "fr": "Équipement de récolte"
+  },
+  "1769565": {
+    "en": "Allagan Tomestones of Poetics (Other)",
+    "ja": "アラガントームストーン:詩学の取引（その他）",
+    "de": "Allagische Steine der Poesie (Anderes)",
+    "fr": "Mémoquartz allagois poétiques (divers)"
+  },
+  "1769572": {
+    "en": "Doman Gear Reoutfitting (DoW) I",
+    "ja": "ドマ様式装備の改良(ファイターその1)",
+    "de": "Verbesserung von domanischer Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements domiens (guerre 1)"
+  },
+  "1769573": {
+    "en": "Doman Gear Reoutfitting (DoM)",
+    "ja": "ドマ様式装備の改良(ソーサラー)",
+    "de": "Verbesserung von domanischer Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements domiens (magie)"
+  },
+  "1769574": {
+    "en": "Artifact Gear Repair (PLD)",
+    "ja": "新生古典装備の修繕(ナイト)",
+    "de": "Artefakt-Reparatur (Paladin)",
+    "fr": "Réparation d'artefacts (PLD)"
+  },
+  "1769575": {
+    "en": "Artifact Gear Repair (MNK)",
+    "ja": "新生古典装備の修繕(モンク)",
+    "de": "Artefakt-Reparatur (Mönch)",
+    "fr": "Réparation d'artefacts (MOI)"
+  },
+  "1769576": {
+    "en": "Artifact Gear Repair (WAR)",
+    "ja": "新生古典装備の修繕(戦士)",
+    "de": "Artefakt-Reparatur (Krieger)",
+    "fr": "Réparation d'artefacts (GUE)"
+  },
+  "1769577": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769578": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769579": {
+    "en": "Gordian Part Exchange (DoW) I",
+    "ja": "ゴルディオンパーツの取引(ファイターその1)",
+    "de": "Gordios-Materialien (Krieger I)",
+    "fr": "Éléments gordiens (guerre 1)"
+  },
+  "1769580": {
+    "en": "Gordian Part Exchange (DoM)",
+    "ja": "ゴルディオンパーツの取引(ソーサラー)",
+    "de": "Gordios-Materialien (Magier)",
+    "fr": "Éléments gordiens (magie)"
+  },
+  "1769581": {
+    "en": "Gordian Manifesto Exchange (DoW) I",
+    "ja": "ゴルディオン断章の取引(ファイターその1)",
+    "de": "Gordios-Kodexfragmente (Krieger I)",
+    "fr": "Manifestes gordiens (guerre 1)"
+  },
+  "1769582": {
+    "en": "Gordian Manifesto Exchange (DoM)",
+    "ja": "ゴルディオン断章の取引(ソーサラー)",
+    "de": "Gordios-Kodexfragmente (Magier)",
+    "fr": "Manifestes gordiens (magie)"
+  },
+  "1769584": {
+    "en": "Amber Exchange",
+    "ja": "虫入りアンバーの取引",
+    "de": "Bernstein",
+    "fr": "Ambre à insecte"
+  },
+  "1769585": {
+    "en": "Wolf Mark Gear (IL 180)",
+    "ja": "ILv180防具の交換",
+    "de": "Ausrüstung G.-St. 180",
+    "fr": "Armures (NvObj 180)"
+  },
+  "1769586": {
+    "en": "Wolf Mark Gear (IL 180)",
+    "ja": "ILv180防具の交換",
+    "de": "Ausrüstung G.-St. 180",
+    "fr": "Armures (NvObj 180)"
+  },
+  "1769587": {
+    "en": "Tradecraft Tools",
+    "ja": "クラフター向け道具の交換",
+    "de": "Handwerker-Werkzeuge",
+    "fr": "Outils d'artisanat"
+  },
+  "1769588": {
+    "en": "Tradecraft Gear I",
+    "ja": "クラフター向け防具の交換（その1）",
+    "de": "Handwerker-Ausrüstung I",
+    "fr": "Équipement d'artisanat 1"
+  },
+  "1769590": {
+    "en": "Fieldcraft Items",
+    "ja": "ギャザラー向けアイテムの交換",
+    "de": "Sammler-Gegenstände",
+    "fr": "Objets de récolte"
+  },
+  "1769591": {
+    "en": "Tradecraft Items",
+    "ja": "クラフター向けアイテムの交換",
+    "de": "Handwerker-Gegenstände",
+    "fr": "Objets d'artisanat"
+  },
+  "1769592": {
+    "en": "Doman Gear Reoutfitting (DoW) II",
+    "ja": "ドマ様式装備の改良(ファイターその2)",
+    "de": "Verbesserung von domanischer Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements domiens (guerre 2)"
+  },
+  "1769593": {
+    "en": "Artifact Gear Repair (DRG)",
+    "ja": "新生古典装備の修繕(竜騎士)",
+    "de": "Artefakt-Reparatur (Dragoon)",
+    "fr": "Réparation d'artefacts (DRG)"
+  },
+  "1769594": {
+    "en": "Artifact Gear Repair (BRD)",
+    "ja": "新生古典装備の修繕(吟遊詩人)",
+    "de": "Artefakt-Reparatur (Barde)",
+    "fr": "Réparation d'artefacts (BRD)"
+  },
+  "1769595": {
+    "en": "Artifact Gear Repair (NIN)",
+    "ja": "新生古典装備の修繕(忍者)",
+    "de": "Artefakt-Reparatur (Ninja)",
+    "fr": "Réparation d'artefacts (NIN)"
+  },
+  "1769596": {
+    "en": "Artifact Gear Repair (WHM)",
+    "ja": "新生古典装備の修繕(白魔道士)",
+    "de": "Artefakt-Reparatur (Weißmagier)",
+    "fr": "Réparation d'artefacts (MBL)"
+  },
+  "1769597": {
+    "en": "Artifact Gear Repair (BLM)",
+    "ja": "新生古典装備の修繕(黒魔道士)",
+    "de": "Artefakt-Reparatur (Schwarzmagier)",
+    "fr": "Réparation d'artefacts (MNO)"
+  },
+  "1769598": {
+    "en": "Artifact Gear Repair (SMN)",
+    "ja": "新生古典装備の修繕(召喚士)",
+    "de": "Artefakt-Reparatur (Beschwörer)",
+    "fr": "Réparation d'artefacts (INV)"
+  },
+  "1769599": {
+    "en": "Artifact Gear Repair (SCH)",
+    "ja": "新生古典装備の修繕(学者)",
+    "de": "Artefakt-Reparatur (Gelehrter)",
+    "fr": "Réparation d'artefacts (ÉRU)"
+  },
+  "1769600": {
+    "en": "Artifact Gear Repair (DRK)",
+    "ja": "新生古典装備の修繕(暗黒騎士)",
+    "de": "Artefakt-Reparatur (Dunkelritter)",
+    "fr": "Réparation d'artefacts (CHN)"
+  },
+  "1769601": {
+    "en": "Artifact Gear Repair (MCH)",
+    "ja": "新生古典装備の修繕(機工士)",
+    "de": "Artefakt-Reparatur (Maschinist)",
+    "fr": "Réparation d'artefacts (MCH)"
+  },
+  "1769602": {
+    "en": "Artifact Gear Repair (AST)",
+    "ja": "新生古典装備の修繕(占星術師)",
+    "de": "Artefakt-Reparatur (Astrologe)",
+    "fr": "Réparation d'artefacts (AST)"
+  },
+  "1769604": {
+    "en": "Seasonal Event Prizes",
+    "ja": "シーズナルイベント報酬の交換（その他）",
+    "de": "Saisonale Gegenstände",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "1769605": {
+    "en": "Gordian Part Exchange (DoW) II",
+    "ja": "ゴルディオンパーツの取引(ファイターその2)",
+    "de": "Gordios-Materialien (Krieger II)",
+    "fr": "Éléments gordiens (guerre 2)"
+  },
+  "1769606": {
+    "en": "Gordian Manifesto Exchange (DoW) II",
+    "ja": "ゴルディオン断章の取引(ファイターその2)",
+    "de": "Gordios-Kodexfragmente (Krieger II)",
+    "fr": "Manifestes gordiens (guerre 2)"
+  },
+  "1769607": {
+    "en": "Gold Chocobo Feather Exchange",
+    "ja": "ゴールドチョコボの羽根の取引",
+    "de": "Goldene Chocobo-Federn",
+    "fr": "Pennes de chocobo doré"
+  },
+  "1769610": {
+    "en": "Silver Chocobo Feather Exchange I",
+    "ja": "シルバーチョコボの羽根の取引（その1）",
+    "de": "Silberne Chocobo-Federn I",
+    "fr": "Pennes de chocobo argenté (1)"
+  },
+  "1769612": {
+    "en": "Seasonal Event Prizes (♂)",
+    "ja": "シーズナルイベント報酬の交換（男性）",
+    "de": "Saisonale Gegenstände (Mann)",
+    "fr": "Récompenses d'événements saisonniers (hommes)"
+  },
+  "1769613": {
+    "en": "Seasonal Event Prizes (♀)",
+    "ja": "シーズナルイベント報酬の交換（女性）",
+    "de": "Saisonale Gegenstände (Frau)",
+    "fr": "Récompenses d'événements saisonniers (femmes)"
+  },
+  "1769614": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769622": {
+    "en": "Brass Spoils Exchange (DoW/M)",
+    "ja": "スポイル：真鍮の取引（マテリア：バトル）",
+    "de": "Messing-Piratenandenken (Materia: Krieger/Magier)",
+    "fr": "Espoilles en laiton (matérias pour combattants)"
+  },
+  "1769623": {
+    "en": "Steel Spoils Exchange (DoL) I",
+    "ja": "スポイル：鋼鉄の取引（マテリア：クラフター・ギャザラー）",
+    "de": "Stahl-Piratenandenken (Materia: Handwerker/Sammler)",
+    "fr": "Espoilles en acier (matérias pour récolteurs)"
+  },
+  "1769624": {
+    "en": "Steel Spoils Exchange (DoL) II",
+    "ja": "スポイル：鋼鉄の取引（素材）",
+    "de": "Stahl-Piratenandenken (Material)",
+    "fr": "Espoilles en acier (matériaux)"
+  },
+  "1769625": {
+    "en": "Seasonal Event Prizes",
+    "ja": "シーズナルイベント報酬の交換",
+    "de": "Saisonale Gegenstände",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "1769626": {
+    "en": "Purchase Minions (MGP)",
+    "ja": "ミニオンの取引（MGP消費）",
+    "de": "Begleiter (MGP)",
+    "fr": "Mascottes (PGS)"
+  },
+  "1769627": {
+    "en": "Steel Amalj'ok Exchange",
+    "ja": "アマルジャ鋼鉄刀貨の取引",
+    "de": "Stahl-Amalj'oks",
+    "fr": "Amalj'oks d'acier"
+  },
+  "1769628": {
+    "en": "Sylphic Goldleaf Exchange",
+    "ja": "シルフ金葉貨の取引",
+    "de": "Sylphen-Goldblätter",
+    "fr": "Feuilles dorées de Sylphe"
+  },
+  "1769629": {
+    "en": "Titan Cobaltpiece Exchange",
+    "ja": "コボルド鏡鉄錘貨の取引",
+    "de": "Titan-Koboldeisenstücke",
+    "fr": "Pièces de cobalt koboldes"
+  },
+  "1769630": {
+    "en": "Rainbowtide Psashp Exchange",
+    "ja": "サハギン虹貝貨の取引",
+    "de": "Regenbogenwellen-Psashpen",
+    "fr": "Psashps irisécaille"
+  },
+  "1769631": {
+    "en": "Vanu Whitebone Exchange",
+    "ja": "バヌバヌ白骨貨の取引",
+    "de": "Vanu-Weißknochen",
+    "fr": "Pièces d'os blanc vanu vanu"
+  },
+  "1769633": {
+    "en": "Prize Exchange II",
+    "ja": "景品の交換（その2）",
+    "de": "Gewinne II",
+    "fr": "Lots (2)"
+  },
+  "1769635": {
+    "en": "Luminous Crystal Exchange",
+    "ja": "発光性クリスタルの取引",
+    "de": "Strahlende Kristalle",
+    "fr": "Cristaux lumineux"
+  },
+  "1769636": {
+    "en": "Anima Weapon Materials",
+    "ja": "アニマウェポン用素材の交換",
+    "de": "Materialien für Anima-Waffen",
+    "fr": "Matériaux pour armes anima"
+  },
+  "1769637": {
+    "en": "Hair Catalogs",
+    "ja": "ヘアカタログの交換",
+    "de": "Haar-Magazine „Moderne Ästhetik“",
+    "fr": "Revues de coiffure"
+  },
+  "1769639": {
+    "en": "Seasonal Event Prizes",
+    "ja": "シーズナルイベント報酬の交換",
+    "de": "Saisonale Gegenstände",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "1769640": {
+    "en": "Brass Spoils Exchange (Materials/Gear)",
+    "ja": "スポイル：真鍮の取引（素材・防具）",
+    "de": "Messing-Piratenandenken (Material/Ausrüstung)",
+    "fr": "Espoilles en laiton (matériaux/équipements)"
+  },
+  "1769641": {
+    "en": "Spoils Exchange (Other)",
+    "ja": "スポイル：真鍮・鋼鉄の取引（その他）",
+    "de": "Messing-/Stahl-Piratenandenken (Anderes)",
+    "fr": "Espoilles en acier/laiton (autres)"
+  },
+  "1769642": {
+    "en": "Precision Gordian Part Exchange",
+    "ja": "高精度ゴルディオンパーツの取引",
+    "de": "Gordios-Präzisionsmaterialien",
+    "fr": "Éléments gordiens de haute précision"
+  },
+  "1769643": {
+    "en": "Midan Part Exchange (DoW) I",
+    "ja": "ミダースパーツの取引(ファイターその1)",
+    "de": "Midas-Materialien (Krieger I)",
+    "fr": "Éléments midins (guerre 1)"
+  },
+  "1769644": {
+    "en": "Midan Part Exchange (DoW) II",
+    "ja": "ミダースパーツの取引(ファイターその2)",
+    "de": "Midas-Materialien (Krieger II)",
+    "fr": "Éléments midins (guerre 2)"
+  },
+  "1769645": {
+    "en": "Midan Part Exchange (DoM)",
+    "ja": "ミダースパーツの取引(ソーサラー)",
+    "de": "Midas-Materialien (Magier)",
+    "fr": "Éléments midins (magie)"
+  },
+  "1769646": {
+    "en": "Midan Manifesto Exchange (DoW) I",
+    "ja": "ミダース断章の取引(ファイターその1)",
+    "de": "Midas-Kodexfragmente (Krieger I)",
+    "fr": "Manifestes midins (guerre 1)"
+  },
+  "1769647": {
+    "en": "Midan Manifesto Exchange (DoW) II",
+    "ja": "ミダース断章の取引(ファイターその2)",
+    "de": "Midas-Kodexfragmente (Krieger II)",
+    "fr": "Manifestes midins (guerre 2)"
+  },
+  "1769648": {
+    "en": "Midan Manifesto Exchange (DoM)",
+    "ja": "ミダース断章の取引(ソーサラー)",
+    "de": "Midas-Kodexfragmente (Magier)",
+    "fr": "Manifestes midins (magie)"
+  },
+  "1769649": {
+    "en": "Allagan Tomestones of Poetics (DoW) I",
+    "ja": "アラガントームストーン:詩学の取引（ファイターその1）",
+    "de": "Allagische Steine der Poesie (Krieger I)",
+    "fr": "Mémoquartz allagois poétiques (guerre 1)"
+  },
+  "1769651": {
+    "en": "Allagan Tomestones of Poetics (DoM) I",
+    "ja": "アラガントームストーン:詩学の取引（ソーサラーその1）",
+    "de": "Allagische Steine der Poesie (Magier I)",
+    "fr": "Mémoquartz allagois poétiques (magie 1)"
+  },
+  "1769653": {
+    "en": "Wolf Mark Gear (IL 205)",
+    "ja": "ILv205防具の交換",
+    "de": "Ausrüstung G.-St. 205",
+    "fr": "Armures (NvObj 205)"
+  },
+  "1769654": {
+    "en": "Wolf Mark Gear (IL 205)",
+    "ja": "ILv205防具の交換",
+    "de": "Ausrüstung G.-St. 205",
+    "fr": "Armures (NvObj 205)"
+  },
+  "1769655": {
+    "en": "Eikonic Gear Reoutfitting (DoW) I",
+    "ja": "蛮神風装備の改良（ファイターその１）",
+    "de": "Verbesserung von Ikonen-Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements primordiaux (guerre 1)"
+  },
+  "1769656": {
+    "en": "Eikonic Gear Reoutfitting (DoW) II",
+    "ja": "蛮神風装備の改良（ファイターその２）",
+    "de": "Verbesserung von Ikonen-Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements primordiaux (guerre 2)"
+  },
+  "1769657": {
+    "en": "Eikonic Gear Reoutfitting (DoM)",
+    "ja": "蛮神風装備の改良（ソーサラー）",
+    "de": "Verbesserung von Ikonen-Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements primordiaux (magie)"
+  },
+  "1769659": {
+    "en": "Amber Exchange (Other)",
+    "ja": "虫入りアンバーの取引（その他）",
+    "de": "Bernstein (Anderes)",
+    "fr": "Ambre à insecte (divers)"
+  },
+  "1769660": {
+    "en": "Centurio Seal Exchange (Doman Gear) I",
+    "ja": "セントリオ記章の取引（ドマ風装備その1）",
+    "de": "Centurio-Abzeichen (Domanische Ausrüstung) I",
+    "fr": "Insignes Centurio (équipements domiens 1)"
+  },
+  "1769661": {
+    "en": "Centurio Seal Exchange (Doman Gear) II",
+    "ja": "セントリオ記章の取引（ドマ風装備その2）",
+    "de": "Centurio-Abzeichen (Domanische Ausrüstung) II",
+    "fr": "Insignes Centurio (équipements domiens 2)"
+  },
+  "1769663": {
+    "en": "Seasonal Event Prizes",
+    "ja": "シーズナルイベント報酬の交換",
+    "de": "Saisonale Gegenstände",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "1769664": {
+    "en": "Seasonal Event Prizes",
+    "ja": "シーズナルイベント報酬の交換",
+    "de": "Saisonale Gegenstände",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "1769665": {
+    "en": "Black Copper Gil Exchange",
+    "ja": "グナース偽黒銅貨の取引",
+    "de": "Schwarzkupfer-Gil",
+    "fr": "Gils de cuivre noir"
+  },
+  "1769673": {
+    "en": "Mhachi Matter Exchange",
+    "ja": "マハマターの交換",
+    "de": "Mhach-Materie",
+    "fr": "Matière mhachoise"
+  },
+  "1769674": {
+    "en": "Tradecraft Gear II",
+    "ja": "クラフター向け防具の交換（その2）",
+    "de": "Handwerker-Ausrüstung II",
+    "fr": "Équipement d'artisanat 2"
+  },
+  "1769675": {
+    "en": "Gelmorran Potsherd Exchange",
+    "ja": "ゲルモラ土器片の取引",
+    "de": "Gelmorra-Scherben",
+    "fr": "Tessons de poterie gelmorraine"
+  },
+  "1769676": {
+    "en": "Tradecraft Keep Tool Augmentation",
+    "ja": "クラフター向け「キープ道具」の強化",
+    "de": "Werkzeugverstärkung (Handwerker)",
+    "fr": "Amélioration d'outils (artisanat)"
+  },
+  "1769677": {
+    "en": "Tradecraft Keep Gear Augmentation",
+    "ja": "クラフター向け「キープ防具」の強化",
+    "de": "Ausrüstungsverstärkung (Handwerker)",
+    "fr": "Amélioration d'équipement (artisanat)"
+  },
+  "1769678": {
+    "en": "Fieldcraft Keep Tool Augmentation",
+    "ja": "ギャザラー向け「キープ道具」の強化",
+    "de": "Werkzeugverstärkung (Sammler)",
+    "fr": "Amélioration d'outils (récolte)"
+  },
+  "1769679": {
+    "en": "Fieldcraft Keep Gear Augmentation",
+    "ja": "ギャザラー向け「キープ防具」の強化",
+    "de": "Ausrüstungsverstärkung (Sammler)",
+    "fr": "Amélioration d'équipement (récolte)"
+  },
+  "1769680": {
+    "en": "Materia Exchange",
+    "ja": "マテリアの交換",
+    "de": "Materia",
+    "fr": "Échange de matérias"
+  },
+  "1769681": {
+    "en": "Curious Crop Exchange",
+    "ja": "特殊作物の取引",
+    "de": "Gartenbau-Erzeugnisse",
+    "fr": "Livraison de produits jardiniers"
+  },
+  "1769682": {
+    "en": "Token Exchange",
+    "ja": "手形の交換",
+    "de": "Marken",
+    "fr": "Échange d'avoirs"
+  },
+  "1769684": {
+    "en": "Seasonal Event Prizes",
+    "ja": "シーズナルイベント報酬の交換",
+    "de": "Saisonale Gegenstände",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "1769685": {
+    "en": "Carved Kupo Nut Exchange",
+    "ja": "飾りクポの実の取引",
+    "de": "Kupo-Schnitznüsse",
+    "fr": "Noix de kupo gravées"
+  },
+  "1769686": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769687": {
+    "en": "Gender-specific Gear Exchange (♀→♂) II",
+    "ja": "女性装備から男性装備へ交換（その2）",
+    "de": "Ausrüstung (Frau zu Mann II)",
+    "fr": "Équipement (femmes → hommes 2)"
+  },
+  "1769688": {
+    "en": "Gender-specific Gear Exchange (♂→♀) II",
+    "ja": "男性装備から女性装備へ交換（その2）",
+    "de": "Ausrüstung (Mann zu Frau II)",
+    "fr": "Équipement (hommes → femmes 2)"
+  },
+  "1769689": {
+    "en": "Alexandrian Part Exchange (DoW) I",
+    "ja": "アレキサンダーパーツの取引(ファイターその1)",
+    "de": "Alexander-Materialien (Krieger I)",
+    "fr": "Éléments alexandrins (guerre 1)"
+  },
+  "1769690": {
+    "en": "Alexandrian Part Exchange (DoW) II",
+    "ja": "アレキサンダーパーツの取引(ファイターその2)",
+    "de": "Alexander-Materialien (Krieger II)",
+    "fr": "Éléments alexandrins (guerre 2)"
+  },
+  "1769691": {
+    "en": "Alexandrian Part Exchange (DoM)",
+    "ja": "アレキサンダーパーツの取引(ソーサラー)",
+    "de": "Alexander-Materialien (Magier)",
+    "fr": "Éléments alexandrins (magie)"
+  },
+  "1769692": {
+    "en": "Alexandrian Manifesto Exchange (DoW) I",
+    "ja": "アレキサンダー断章の取引(ファイターその1)",
+    "de": "Alexander-Kodexfragmente (Krieger I)",
+    "fr": "Manifestes alexandrins (guerre 1)"
+  },
+  "1769693": {
+    "en": "Alexandrian Manifesto Exchange (DoW) II",
+    "ja": "アレキサンダー断章の取引(ファイターその2)",
+    "de": "Alexander-Kodexfragmente (Krieger II)",
+    "fr": "Manifestes alexandrins (guerre 2)"
+  },
+  "1769694": {
+    "en": "Alexandrian Manifesto Exchange (DoM)",
+    "ja": "アレキサンダー断章の取引(ソーサラー)",
+    "de": "Alexander-Kodexfragmente (Magier)",
+    "fr": "Manifestes alexandrins (magie)"
+  },
+  "1769713": {
+    "en": "Glamour Prism Collection",
+    "ja": "不要ミラージュプリズムの回収",
+    "de": "Projektionsprismen",
+    "fr": "Échange de prismes mirage"
+  },
+  "1769714": {
+    "en": "Items of Interest",
+    "ja": "アイテムの取引",
+    "de": "Gegenstände",
+    "fr": "Objets"
+  },
+  "1769715": {
+    "en": "Artifact Gear Exchange (DoW) I",
+    "ja": "新生古典装備の交換(ファイター1)",
+    "de": "Artefakt-Ausrüstung (Krieger I)",
+    "fr": "Artefacts (guerre 1)"
+  },
+  "1769716": {
+    "en": "Artifact Gear Exchange (DoW) II",
+    "ja": "新生古典装備の交換(ファイター2)",
+    "de": "Artefakt-Ausrüstung (Krieger II)",
+    "fr": "Artefacts (guerre 2)"
+  },
+  "1769717": {
+    "en": "Artifact Gear Exchange (DoM)",
+    "ja": "新生古典装備の交換(ソーサラー)",
+    "de": "Artefakt-Ausrüstung (Magier)",
+    "fr": "Artefacts (magie)"
+  },
+  "1769719": {
+    "en": "Primal Gear",
+    "ja": "蛮神装備の取引",
+    "de": "Primae-Ausrüstung",
+    "fr": "Armes de Primordiaux"
+  },
+  "1769720": {
+    "en": "Gerolt's Masterworks",
+    "ja": "ゲロルトの名品の取引",
+    "de": "Gerolts Meisterwerke",
+    "fr": "Chefs-d'œuvre de Gerolt"
+  },
+  "1769721": {
+    "en": "Ironworks Gear",
+    "ja": "ガーロンド装備の取引",
+    "de": "Garlond-Ausrüstung",
+    "fr": "Équipement des Forges"
+  },
+  "1769722": {
+    "en": "Single-handed Arm Exchange",
+    "ja": "片手武器を両手武器へ交換",
+    "de": "Ein- gegen zweihändige Waffe eintauschen",
+    "fr": "Échange d'arme à une main"
+  },
+  "1769723": {
+    "en": "Two-handed Arm Exchange",
+    "ja": "両手武器を片手武器へ交換",
+    "de": "Zwei- gegen einhändige Waffe eintauschen",
+    "fr": "Échange d'arme à deux mains"
+  },
+  "1769724": {
+    "en": "Rowena's Token Exchange",
+    "ja": "ロウェナの手形:祭器の取引",
+    "de": "Rowena-Marken",
+    "fr": "Avoirs de Rowena (totems)"
+  },
+  "1769725": {
+    "en": "Primal Gear I",
+    "ja": "蛮神装備の取引（その1）",
+    "de": "Primae-Ausrüstung I",
+    "fr": "Armes de Primordiaux (1)"
+  },
+  "1769726": {
+    "en": "Primal Gear II",
+    "ja": "蛮神装備の取引（その2）",
+    "de": "Primae-Ausrüstung II",
+    "fr": "Armes de Primordiaux (2)"
+  },
+  "1769727": {
+    "en": "Primal Gear III",
+    "ja": "蛮神装備の取引（その3）",
+    "de": "Primae-Ausrüstung III",
+    "fr": "Armes de Primordiaux (3)"
+  },
+  "1769728": {
+    "en": "Uncanny Knickknacks",
+    "ja": "アイテムの取引（その他）",
+    "de": "Gegenstände",
+    "fr": "Objets (divers)"
+  },
+  "1769729": {
+    "en": "Eikonic Gear",
+    "ja": "蛮神風装備の取引",
+    "de": "Ikonen-Ausrüstung",
+    "fr": "Équipement primordial"
+  },
+  "1769730": {
+    "en": "Allagan Tomestones of Poetics (Other)",
+    "ja": "アラガントームストーン:詩学の取引（その他）",
+    "de": "Allagische Steine der Poesie (Anderes)",
+    "fr": "Mémoquartz allagois poétiques (divers)"
+  },
+  "1769731": {
+    "en": "Ixali Oaknot Exchange (Materia)",
+    "ja": "イクサル樫木貨の取引（マテリア）",
+    "de": "Ixal-Eichenmünzen (Materia)",
+    "fr": "Pièces en chêne ixali (matérias)"
+  },
+  "1769732": {
+    "en": "Allagan Tomestones of Poetics (DoW) II",
+    "ja": "アラガントームストーン:詩学の取引（ファイターその2）",
+    "de": "Allagische Steine der Poesie (Krieger II)",
+    "fr": "Mémoquartz allagois poétiques (guerre 2)"
+  },
+  "1769733": {
+    "en": "Allagan Tomestones of Poetics (DoM) II",
+    "ja": "アラガントームストーン:詩学の取引（ソーサラーその2）",
+    "de": "Allagische Steine der Poesie (Magier II)",
+    "fr": "Mémoquartz allagois poétiques (magie 2)"
+  },
+  "1769734": {
+    "en": "Shire Gear Augmentation (DoW) I",
+    "ja": "イディルシャイア製装備の強化（ファイターその1）",
+    "de": "Verstärkung von hinterländischer Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements idylléens (guerre 1)"
+  },
+  "1769735": {
+    "en": "Shire Gear Augmentation (DoW) II",
+    "ja": "イディルシャイア製装備の強化（ファイターその2）",
+    "de": "Verstärkung von hinterländischer Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements idylléens (guerre 2)"
+  },
+  "1769736": {
+    "en": "Shire Gear Augmentation (DoM)",
+    "ja": "イディルシャイア製装備の強化（ソーサラー）",
+    "de": "Verstärkung von hinterländischer Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements idylléens (magie)"
+  },
+  "1769737": {
+    "en": "Shire Gear Exchange",
+    "ja": "イディルシャイア製装備の交換",
+    "de": "Hinterländische Ausrüstung",
+    "fr": "Équipement idylléen"
+  },
+  "1769738": {
+    "en": "Handmaster Accessory Augmentation",
+    "ja": "クラフター向け「マスターハンドアクセサリ」の強化",
+    "de": "Handwerkermeister-Accessoireverstärkung",
+    "fr": "Amélioration d'accessoire de maître artisan"
+  },
+  "1769739": {
+    "en": "Landmaster Accessory Augmentation",
+    "ja": "ギャザラー向け「マスターランドアクセサリ」の強化",
+    "de": "Sammlermeister-Accessoireverstärkung",
+    "fr": "Amélioration d'accessoire de maître récolteur"
+  },
+  "1769740": {
+    "en": "Seasonal Event Prizes",
+    "ja": "シーズナルイベント報酬の交換",
+    "de": "Saisonale Gegenstände",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "1769741": {
+    "en": "Collaboration Certificate Exchange",
+    "ja": "アイテムの取引（執事王の証書の交換）",
+    "de": "Helfer-Bescheinigungen",
+    "fr": "Objets (attestations du sénéchal royal)"
+  },
+  "1769742": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769743": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769744": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769745": {
+    "en": "Primal Gear IV",
+    "ja": "蛮神装備の取引（その4）",
+    "de": "Primae-Ausrüstung IV",
+    "fr": "Armes de Primordiaux (4)"
+  },
+  "1769746": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769747": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769748": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769749": {
+    "en": "DoH Materia Exchange",
+    "ja": "クラフター向けマテリアの交換",
+    "de": "Materia für Handwerker",
+    "fr": "Matérias pour artisan"
+  },
+  "1769750": {
+    "en": "DoL Materia Exchange",
+    "ja": "ギャザラー向けマテリアの交換",
+    "de": "Materia für Sammler",
+    "fr": "Matérias pour récolteur"
+  },
+  "1769751": {
+    "en": "Prize Exchange I",
+    "ja": "景品の交換（その1）",
+    "de": "Gewinne I",
+    "fr": "Lots (1)"
+  },
+  "1769752": {
+    "en": "Prize Exchange II",
+    "ja": "景品の交換（その2）",
+    "de": "Gewinne II",
+    "fr": "Lots (2)"
+  },
+  "1769753": {
+    "en": "Dream of the Fayth Exchange",
+    "ja": "異界の証書の取引",
+    "de": "Träume der Asthra",
+    "fr": "Rêves de Priant"
+  },
+  "1769754": {
+    "en": "Wolf Mark Weapons (IL 70)",
+    "ja": "ILv70武器の交換",
+    "de": "Waffen G.-St. 70",
+    "fr": "Armes (NvObj 70)"
+  },
+  "1769755": {
+    "en": "Wolf Mark Weapons (IL 70)",
+    "ja": "ILv70武器の交換",
+    "de": "Waffen G.-St. 70",
+    "fr": "Armes (NvObj 70)"
+  },
+  "1769756": {
+    "en": "Wolf Mark Weapons (IL 90)",
+    "ja": "ILv90武器の交換",
+    "de": "Waffen G.-St. 90",
+    "fr": "Armes (NvObj 90)"
+  },
+  "1769757": {
+    "en": "Wolf Mark Weapons (IL 90)",
+    "ja": "ILv90武器の交換",
+    "de": "Waffen G.-St. 90",
+    "fr": "Armes (NvObj 90)"
+  },
+  "1769758": {
+    "en": "Wolf Mark Weapons (IL 100)",
+    "ja": "ILv100武器の交換",
+    "de": "Waffen G.-St. 100",
+    "fr": "Armes (NvObj 100)"
+  },
+  "1769759": {
+    "en": "Wolf Mark Weapons (IL 100)",
+    "ja": "ILv100武器の交換",
+    "de": "Waffen G.-St. 100",
+    "fr": "Armes (NvObj 100)"
+  },
+  "1769760": {
+    "en": "Wolf Mark Weapons (IL 110)",
+    "ja": "ILv110武器の交換",
+    "de": "Waffen G.-St. 110",
+    "fr": "Armes (NvObj 110)"
+  },
+  "1769761": {
+    "en": "Wolf Mark Weapons (IL 110)",
+    "ja": "ILv110武器の交換",
+    "de": "Waffen G.-St. 110",
+    "fr": "Armes (NvObj 110)"
+  },
+  "1769762": {
+    "en": "Wolf Mark Weapons (IL 180)",
+    "ja": "ILv180武器の交換",
+    "de": "Waffen G.-St. 180",
+    "fr": "Armes (NvObj 180)"
+  },
+  "1769763": {
+    "en": "Wolf Mark Weapons (IL 180)",
+    "ja": "ILv180武器の交換",
+    "de": "Waffen G.-St. 180",
+    "fr": "Armes (NvObj 180)"
+  },
+  "1769764": {
+    "en": "Wolf Mark Weapons (IL 205)",
+    "ja": "ILv205武器の交換",
+    "de": "Waffen G.-St. 205",
+    "fr": "Armes (NvObj 205)"
+  },
+  "1769765": {
+    "en": "Wolf Mark Weapons (IL 205)",
+    "ja": "ILv205武器の交換",
+    "de": "Waffen G.-St. 205",
+    "fr": "Armes (NvObj 205)"
+  },
+  "1769766": {
+    "en": "Fieldcraft Items",
+    "ja": "ギャザラー向けアイテムの交換",
+    "de": "Sammler-Gegenstände",
+    "fr": "Objets de récolte"
+  },
+  "1769767": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 50)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 50)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 50)"
+  },
+  "1769768": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 58)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 58)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 58)"
+  },
+  "1769769": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 61)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv61～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 61)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 61)"
+  },
+  "1769770": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 50)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 50)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 50)"
+  },
+  "1769771": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 58)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 58)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 58)"
+  },
+  "1769772": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 61)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv61～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 61)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 61)"
+  },
+  "1769773": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 50)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 50)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 50)"
+  },
+  "1769774": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 58)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 58)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 58)"
+  },
+  "1769775": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 50)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 50)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 50)"
+  },
+  "1769776": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 58)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 58)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 58)"
+  },
+  "1769777": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 50)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 50)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 50)"
+  },
+  "1769778": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 50)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 50)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 50)"
+  },
+  "1769779": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Gear)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Ausrüstung)",
+    "fr": "Assignats jaunes d'artisan (équipements/Nv ≧ 70)"
+  },
+  "1769780": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Gear)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Ausrüstung)",
+    "fr": "Assignats jaunes de récolteur (équipements/Nv ≧ 70)"
+  },
+  "1769781": {
+    "en": "Allagan Tomestones of Poetics (Special Arms)",
+    "ja": "アラガントームストーン:詩学の取引（特殊武器関連）",
+    "de": "Allagische Steine der Poesie (Spezialwaffen)",
+    "fr": "Mémoquartz allagois poétiques (armes spéciales)"
+  },
+  "1769782": {
+    "en": "Centurio Seal Exchange I",
+    "ja": "セントリオ記章の取引",
+    "de": "Centurio-Abzeichen I",
+    "fr": "Insignes Centurio"
+  },
+  "1769783": {
+    "en": "Centurio Seal Exchange II",
+    "ja": "セントリオ記章の取引（上級）",
+    "de": "Centurio-Abzeichen II",
+    "fr": "Insignes Centurio 2"
+  },
+  "1769784": {
+    "en": "Allagan Tomestones of Verity (DoW)",
+    "ja": "アラガントームストーン:真理の取引（ファイター）",
+    "de": "Allagische Steine der Wahrheit (Krieger)",
+    "fr": "Mémoquartz allagois véridiques (guerre)"
+  },
+  "1769785": {
+    "en": "Allagan Tomestones of Verity (DoM)",
+    "ja": "アラガントームストーン:真理の取引（ソーサラー）",
+    "de": "Allagische Steine der Wahrheit (Magier)",
+    "fr": "Mémoquartz allagois véridiques (magie)"
+  },
+  "1769786": {
+    "en": "Allagan Tomestones of Verity (Other)",
+    "ja": "アラガントームストーン:真理の取引（その他）",
+    "de": "Allagische Steine der Wahrheit (Anderes)",
+    "fr": "Mémoquartz allagois véridiques (divers)"
+  },
+  "1769787": {
+    "en": "Allagan Tomestones of Creation (DoW)",
+    "ja": "アラガントームストーン:万物の取引（ファイター）",
+    "de": "Allagische Steine der Schöpfung (Krieger)",
+    "fr": "Mémoquartz allagois cosmogoniques (guerre)"
+  },
+  "1769788": {
+    "en": "Allagan Tomestones of Creation (DoM)",
+    "ja": "アラガントームストーン:万物の取引（ソーサラー）",
+    "de": "Allagische Steine der Schöpfung (Magier)",
+    "fr": "Mémoquartz allagois cosmogoniques (magie)"
+  },
+  "1769789": {
+    "en": "Allagan Tomestones of Creation (Other)",
+    "ja": "アラガントームストーン:万物の取引（その他）",
+    "de": "Allagische Steine der Schöpfung (Anderes)",
+    "fr": "Mémoquartz allagois cosmogoniques (divers)"
+  },
+  "1769790": {
+    "en": "Totem Gear (Lakshmi)",
+    "ja": "蛮神装備の取引（ラクシュミ）",
+    "de": "Lakshmi-Ausrüstung",
+    "fr": "Équipements totémiques (Lakshmi)"
+  },
+  "1769791": {
+    "en": "Totem Gear (Susano)",
+    "ja": "蛮神装備の取引（スサノオ）",
+    "de": "Susano-Ausrüstung",
+    "fr": "Équipements totémiques (Susano)"
+  },
+  "1769793": {
+    "en": "Deltascape Part Exchange (DoW) I",
+    "ja": "デルタパーツの取引（ファイターその1）",
+    "de": "Deltametrie-Materialien (Krieger I)",
+    "fr": "Éléments deltastitiels (guerre 1)"
+  },
+  "1769794": {
+    "en": "Deltascape Part Exchange (DoW) II",
+    "ja": "デルタパーツの取引（ファイターその2）",
+    "de": "Deltametrie-Materialien (Krieger II)",
+    "fr": "Éléments deltastitiels (guerre 2)"
+  },
+  "1769795": {
+    "en": "Deltascape Part Exchange (DoM)",
+    "ja": "デルタパーツの取引（ソーサラー）",
+    "de": "Deltametrie-Materialien (Magier)",
+    "fr": "Éléments deltastitiels (magie)"
+  },
+  "1769796": {
+    "en": "Deltascape Datalog Exchange (DoW) I",
+    "ja": "デルタデータログの取引（ファイターその1）",
+    "de": "Deltametrie-Chroniken (Krieger I)",
+    "fr": "Registres deltastitiels (guerre 1)"
+  },
+  "1769797": {
+    "en": "Deltascape Datalog Exchange (DoW) II",
+    "ja": "デルタデータログの取引（ファイターその2）",
+    "de": "Deltametrie-Chroniken (Krieger II)",
+    "fr": "Registres deltastitiels (guerre 2)"
+  },
+  "1769798": {
+    "en": "Deltascape Datalog Exchange (DoM)",
+    "ja": "デルタデータログの取引（ソーサラー）",
+    "de": "Deltametrie-Chroniken (Magier)",
+    "fr": "Registres deltastitiels (magie)"
+  },
+  "1769799": {
+    "en": "Lost Allagan Gear Augmentation (DoW) I",
+    "ja": "「ロストアラガン装備」の強化（ファイターその1）",
+    "de": "Verstärkung von verschollener allagischer Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements allagois oubliés (guerre 1)"
+  },
+  "1769800": {
+    "en": "Lost Allagan Gear Augmentation (DoW) II",
+    "ja": "「ロストアラガン装備」の強化（ファイターその2）",
+    "de": "Verstärkung von verschollener allagischer Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements allagois oubliés (guerre 2)"
+  },
+  "1769801": {
+    "en": "Lost Allagan Gear Augmentation (DoM)",
+    "ja": "「ロストアラガン装備」の強化（ソーサラー）",
+    "de": "Verstärkung von verschollener allagischer Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements allagois oubliés (magie)"
+  },
+  "1769802": {
+    "en": "Lost Allagan Gear Exchange",
+    "ja": "「ロストアラガン装備」の交換",
+    "de": "Verschollene allagische Ausrüstung",
+    "fr": "Échange d'équipements allagois oubliés"
+  },
+  "1769803": {
+    "en": "Use Wolf Marks (Stormblood)",
+    "ja": "対人戦績の取引（紅蓮）",
+    "de": "Wolfsmarken (Stormblood)",
+    "fr": "Marques de loup (Stormblood)"
+  },
+  "1769804": {
+    "en": "Use Wolf Marks (Stormblood)",
+    "ja": "対人戦績の取引（紅蓮）",
+    "de": "Wolfsmarken (Stormblood)",
+    "fr": "Marques de loup (Stormblood)"
+  },
+  "1769805": {
+    "en": "Gear Exchange I",
+    "ja": "防具の交換（その1）",
+    "de": "Ausrüstung I",
+    "fr": "Armures (1)"
+  },
+  "1769806": {
+    "en": "Gear Exchange I",
+    "ja": "防具の交換（その1）",
+    "de": "Ausrüstung I",
+    "fr": "Armures (1)"
+  },
+  "1769807": {
+    "en": "Wondrous Sundries",
+    "ja": "アイテムの取引",
+    "de": "Gegenstände",
+    "fr": "Objets"
+  },
+  "1769808": {
+    "en": "Seasonal Event Prizes",
+    "ja": "シーズナルイベント報酬の交換",
+    "de": "Saisonale Gegenstände",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "1769809": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Items)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・その他）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Anderes)",
+    "fr": "Assignats jaunes d'artisan (divers/Nv ≧ 70)"
+  },
+  "1769810": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Items)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・その他）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Anderes)",
+    "fr": "Assignats jaunes de récolteur (divers/Nv ≧ 70)"
+  },
+  "1769811": {
+    "en": "Allied Seals (Other)",
+    "ja": "同盟記章の取引（その他）",
+    "de": "Jagdabzeichen (Anderes)",
+    "fr": "Insignes alliés (divers)"
+  },
+  "1769812": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769813": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769814": {
+    "en": "Totem Gear (Bahamut)",
+    "ja": "蛮神装備の取引（バハムート）",
+    "de": "Bahamut-Ausrüstung",
+    "fr": "Équipements totémiques (Bahamut)"
+  },
+  "1769815": {
+    "en": "Glamour Prism Collection",
+    "ja": "不要ミラージュプリズムの回収",
+    "de": "Projektionsprismen",
+    "fr": "Échange de prismes mirage"
+  },
+  "1769816": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769817": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769818": {
+    "en": "Kojin Sango Exchange",
+    "ja": "コウジン珊瑚貨の取引",
+    "de": "Kojin-Korallen",
+    "fr": "Échange de sango kojin"
+  },
+  "1769819": {
+    "en": "Totem Gear (Shinryu)",
+    "ja": "蛮神装備の取引（神龍）",
+    "de": "Shinryu-Ausrüstung",
+    "fr": "Équipements totémiques (Shinryu)"
+  },
+  "1769820": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769821": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769822": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769823": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769824": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769825": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769826": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769827": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769828": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769829": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769830": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769831": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769832": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769833": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769834": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769835": {
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
+  },
+  "1769836": {
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
+  },
+  "1769837": {
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
+  },
+  "1769838": {
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
+  },
+  "1769839": {
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
+  },
+  "1769840": {
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
+  },
+  "1769841": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769842": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769843": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769844": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769845": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769846": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769847": {
+    "en": "Ananta Dreamstaff Exchange",
+    "ja": "アナンタ魔金錫貨の取引",
+    "de": "Ananta-Traumstäbe",
+    "fr": "Échange de barrettes béatifiques anantas"
+  },
+  "1769848": {
+    "en": "Gear Exchange II",
+    "ja": "防具の交換（その2）",
+    "de": "Ausrüstung II",
+    "fr": "Armures (2)"
+  },
+  "1769849": {
+    "en": "Gear Exchange II",
+    "ja": "防具の交換（その2）",
+    "de": "Ausrüstung II",
+    "fr": "Armures (2)"
+  },
+  "1769850": {
+    "en": "Allagan Tomestones of Poetics (DoW) I",
+    "ja": "アラガントームストーン:詩学の取引（ファイターその1）",
+    "de": "Allagische Steine der Poesie (Krieger I)",
+    "fr": "Mémoquartz allagois poétiques (guerre 1)"
+  },
+  "1769851": {
+    "en": "Allagan Tomestones of Poetics (DoM) I",
+    "ja": "アラガントームストーン:詩学の取引（ソーサラーその1）",
+    "de": "Allagische Steine der Poesie (Magier I)",
+    "fr": "Mémoquartz allagois poétiques (magie 1)"
+  },
+  "1769852": {
+    "en": "Ryumyaku Gear Exchange",
+    "ja": "「龍脈装備」の交換",
+    "de": "Ryumyaku-Ausrüstung",
+    "fr": "Échange d'équipements Ryûmyaku"
+  },
+  "1769853": {
+    "en": "Allagan Tomestones of Poetics (Other)",
+    "ja": "アラガントームストーン:詩学の取引（その他）",
+    "de": "Allagische Steine der Poesie (Anderes)",
+    "fr": "Mémoquartz allagois poétiques (divers)"
+  },
+  "1769854": {
+    "en": "Auspice Gear (Byakko)",
+    "ja": "四聖獣装備の取引（白虎）",
+    "de": "Byakko-Ausrüstung",
+    "fr": "Équipements des quatre animaux sacrés (Byakko)"
+  },
+  "1769855": {
+    "en": "Sigmascape Part Exchange (DoW) I",
+    "ja": "シグマパーツの取引（ファイターその1）",
+    "de": "Sigmametrie-Materialien (Krieger I)",
+    "fr": "Éléments sigmastitiels (guerre 1)"
+  },
+  "1769856": {
+    "en": "Sigmascape Part Exchange (DoW) II",
+    "ja": "シグマパーツの取引（ファイターその2）",
+    "de": "Sigmametrie-Materialien (Krieger II)",
+    "fr": "Éléments sigmastitiels (guerre 2)"
+  },
+  "1769857": {
+    "en": "Sigmascape Part Exchange (DoM)",
+    "ja": "シグマパーツの取引（ソーサラー）",
+    "de": "Sigmametrie-Materialien (Magier)",
+    "fr": "Éléments sigmastitiels (magie)"
+  },
+  "1769858": {
+    "en": "Sigmascape Datalog Exchange (DoW) I",
+    "ja": "シグマデータログの取引（ファイターその1）",
+    "de": "Sigmametrie-Chroniken (Krieger I)",
+    "fr": "Registres sigmastitiels (guerre 1)"
+  },
+  "1769859": {
+    "en": "Sigmascape Datalog Exchange (DoW) II",
+    "ja": "シグマデータログの取引（ファイターその2）",
+    "de": "Sigmametrie-Chroniken (Krieger II)",
+    "fr": "Registres sigmastitiels (guerre 2)"
+  },
+  "1769860": {
+    "en": "Sigmascape Datalog Exchange (DoM)",
+    "ja": "シグマデータログの取引（ソーサラー）",
+    "de": "Sigmametrie-Chroniken (Magier)",
+    "fr": "Registres sigmastitiels (magie)"
+  },
+  "1769861": {
+    "en": "Ryumyaku Gear Augmentation (DoW) I",
+    "ja": "「龍脈装備」の強化（ファイターその1）",
+    "de": "Verstärkung von Ryumyaku-Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements Ryûmyaku (guerre 1)"
+  },
+  "1769862": {
+    "en": "Ryumyaku Gear Augmentation (DoW) II",
+    "ja": "「龍脈装備」の強化（ファイターその2）",
+    "de": "Verstärkung von Ryumyaku-Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements Ryûmyaku (guerre 2)"
+  },
+  "1769863": {
+    "en": "Ryumyaku Gear Augmentation (DoM)",
+    "ja": "「龍脈装備」の強化（ソーサラー）",
+    "de": "Verstärkung von Ryumyaku-Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements Ryûmyaku (magie)"
+  },
+  "1769864": {
+    "en": "Ala Mhigan Gear Exchange (DoW)",
+    "ja": "「アラミガン装備」の取引（ファイター）",
+    "de": "Mhigische Ausrüstung (Krieger)",
+    "fr": "Échange d'équipements mhigois (guerre)"
+  },
+  "1769865": {
+    "en": "Ala Mhigan Gear Exchange (DoM)",
+    "ja": "「アラミガン装備」の取引（ソーサラー）",
+    "de": "Mhigische Ausrüstung (Magier)",
+    "fr": "Échange d'équipements mhigois (magie)"
+  },
+  "1769866": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Augmentation)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備強化）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Verstärkung)",
+    "fr": "Assignats jaunes d'artisan (améliorations/Nv ≧ 70)"
+  },
+  "1769867": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Augmentation)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備強化）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Verstärkung)",
+    "fr": "Assignats jaunes de récolteurs (améliorations/Nv ≧ 70)"
+  },
+  "1769868": {
+    "en": "Namazu Koban Exchange",
+    "ja": "ナマズオ小判の取引",
+    "de": "Namazuo-Koban",
+    "fr": "Échange de koban namazu"
+  },
+  "1769869": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769870": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769871": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769872": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769873": {
+    "en": "Totem Gear (Ultima Weapon)",
+    "ja": "報酬武器の取引（アルテマウェポン）",
+    "de": "Ultima-Ausrüstung",
+    "fr": "Équipements totémiques (Ultima Arma)"
+  },
+  "1769874": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769875": {
+    "en": "Seasonal Event Prizes I",
+    "ja": "シーズナルイベント報酬の交換（その1）",
+    "de": "Saisonale Gegenstände I",
+    "fr": "Récompenses d'événements saisonniers (1)"
+  },
+  "1769876": {
+    "en": "Seasonal Event Prizes",
+    "ja": "シーズナルイベント報酬の交換",
+    "de": "Saisonale Gegenstände",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "1769877": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 58)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 58)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 58)"
+  },
+  "1769878": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 58)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 58)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 58)"
+  },
+  "1769879": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Gear) II",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備その2）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Ausrüstung II)",
+    "fr": "Assignats jaunes d'artisan II (équipements/Nv ≧ 70)"
+  },
+  "1769880": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Gear) II",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備その2）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Ausrüstung II)",
+    "fr": "Assignats jaunes de récolteur II (équipements/Nv ≧ 70)"
+  },
+  "1769881": {
+    "en": "Seasonal Event Prizes II",
+    "ja": "シーズナルイベント報酬の交換（その2）",
+    "de": "Saisonale Gegenstände II",
+    "fr": "Récompenses d'événements saisonniers (2)"
+  },
+  "1769882": {
+    "en": "Seasonal Event Prizes III",
+    "ja": "シーズナルイベント報酬の交換（その3）",
+    "de": "Saisonale Gegenstände III",
+    "fr": "Récompenses d'événements saisonniers (3)"
+  },
+  "1769883": {
+    "en": "Totem Gear (Tsukuyomi)",
+    "ja": "蛮神装備の取引（ツクヨミ）",
+    "de": "Tsukuyomi-Ausrüstung",
+    "fr": "Équipements totémiques (Tsukuyomi)"
+  },
+  "1769884": {
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
+  },
+  "1769885": {
+    "en": "Resistance Token Acquisition (Weapons)",
+    "ja": "解放軍の手形との交換（武器）",
+    "de": "Waffen in Armeemarken umtauschen",
+    "fr": "Échanger des armes"
+  },
+  "1769886": {
+    "en": "Resistance Token Acquisition (Gear)",
+    "ja": "解放軍の手形との交換（防具）",
+    "de": "Rüstungen in Armeemarken umtauschen",
+    "fr": "Échanger des armures"
+  },
+  "1769887": {
+    "en": "Resistance Token Acquisition (Accessories)",
+    "ja": "解放軍の手形との交換（アクセサリー）",
+    "de": "Accessoires in Armeemarken umtauschen",
+    "fr": "Échanger des accessoires"
+  },
+  "1769888": {
+    "en": "Resistance Token Acquisition (Weapons)",
+    "ja": "解放軍の手形との交換（武器）",
+    "de": "HQ-Waffen in Armeemarken umtauschen",
+    "fr": "Échanger des armes"
+  },
+  "1769889": {
+    "en": "Resistance Token Acquisition (Gear)",
+    "ja": "解放軍の手形との交換（防具）",
+    "de": "HQ-Rüstungen in Armeemarken umtauschen",
+    "fr": "Échanger des armures"
+  },
+  "1769890": {
+    "en": "Resistance Token Acquisition (Accessories)",
+    "ja": "解放軍の手形との交換（アクセサリー）",
+    "de": "HQ-Accessoires in Armeemarken umtauschen",
+    "fr": "Échanger des accessoires"
+  },
+  "1769891": {
+    "en": "Resistance Token Exchange (Weapons)",
+    "ja": "解放軍の手形の取引（武器）",
+    "de": "Armeemarken in Waffen umtauschen",
+    "fr": "Liste des armes"
+  },
+  "1769892": {
+    "en": "Resistance Token Exchange (Gear)",
+    "ja": "解放軍の手形の取引（防具）",
+    "de": "Armeemarken in Rüstung umtauschen",
+    "fr": "Liste des armures"
+  },
+  "1769893": {
+    "en": "Resistance Token Exchange (Accessories)",
+    "ja": "解放軍の手形の取引（アクセサリー）",
+    "de": "Armeemarken in Accessoires umtauschen",
+    "fr": "Liste des accessoires"
+  },
+  "1769894": {
+    "en": "Resistance Token Exchange (Weapons)",
+    "ja": "解放軍の手形の取引（武器）",
+    "de": "Armeemarken in HQ-Waffen umtauschen",
+    "fr": "Liste des armes"
+  },
+  "1769895": {
+    "en": "Resistance Token Exchange (Gear)",
+    "ja": "解放軍の手形の取引（防具）",
+    "de": "Armeemarken in HQ-Rüstung umtauschen",
+    "fr": "Liste des armures"
+  },
+  "1769896": {
+    "en": "Resistance Token Exchange (Accessories)",
+    "ja": "解放軍の手形の取引（アクセサリー）",
+    "de": "Armeemarken in HQ-Accessoires umtauschen",
+    "fr": "Liste des accessoires"
+  },
+  "1769897": {
+    "en": "Feathers Aplenty",
+    "ja": "アイテムの取引",
+    "de": "Gegenstände",
+    "fr": "Objets"
+  },
+  "1769898": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769899": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769900": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769901": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769902": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769903": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769904": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769905": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769906": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769907": {
+    "en": "Allagan Tomestones of Poetics (DoW) II",
+    "ja": "アラガントームストーン:詩学の取引（ファイターその2）",
+    "de": "Allagische Steine der Poesie (Krieger II)",
+    "fr": "Mémoquartz allagois poétiques (guerre 2)"
+  },
+  "1769908": {
+    "en": "Allagan Tomestones of Poetics (DoM) II",
+    "ja": "アラガントームストーン:詩学の取引（ソーサラーその2）",
+    "de": "Allagische Steine der Poesie (Magier II)",
+    "fr": "Mémoquartz allagois poétiques (magie 2)"
+  },
+  "1769909": {
+    "en": "Allagan Tomestones of Genesis (Other)",
+    "ja": "アラガントームストーン:創世の取引（その他）",
+    "de": "Allagische Steine des Ursprungs (Anderes)",
+    "fr": "Mémoquartz allagois génésiaques (divers)"
+  },
+  "1769910": {
+    "en": "Scaevan Gear Exchange",
+    "ja": "「スカエウァ装備」の交換",
+    "de": "Scaeva-Ausrüstung",
+    "fr": "Échange d'équipements Scaeva"
+  },
+  "1769911": {
+    "en": "Scaevan Gear Augmentation (DoW) I",
+    "ja": "「スカエウァ装備」の強化（ファイターその1）",
+    "de": "Verstärkung von Scaeva-Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements Scaeva (guerre 1)"
+  },
+  "1769912": {
+    "en": "Scaevan Gear Augmentation (DoW) II",
+    "ja": "「スカエウァ装備」の強化（ファイターその2）",
+    "de": "Verstärkung von Scaeva-Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements Scaeva (guerre 2)"
+  },
+  "1769913": {
+    "en": "Scaevan Gear Augmentation (DoM)",
+    "ja": "「スカエウァ装備」の強化（ソーサラー）",
+    "de": "Verstärkung von Scaeva-Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements Scaeva (magie)"
+  },
+  "1769914": {
+    "en": "Lost Allagan Gear (DoW)",
+    "ja": "「ロストアラガン装備」の取引（ファイター）",
+    "de": "Verschollene allagische Ausrüstung (Krieger)",
+    "fr": "Échange d'équipements allagois oubliés (guerre)"
+  },
+  "1769915": {
+    "en": "Lost Allagan Gear (DoM)",
+    "ja": "「ロストアラガン装備」の取引（ソーサラー）",
+    "de": "Verschollene allagische Ausrüstung (Magier)",
+    "fr": "Échange d'équipements allagois oubliés (magie)"
+  },
+  "1769916": {
+    "en": "Auspice Gear (Suzaku)",
+    "ja": "四聖獣装備の取引（朱雀）",
+    "de": "Suzaku-Ausrüstung",
+    "fr": "Équipements des quatre animaux sacrés (Suzaku)"
+  },
+  "1769917": {
+    "en": "Alphascape Part Exchange (DoW) I",
+    "ja": "アルファパーツの取引（ファイターその1）",
+    "de": "Alphametrie-Materialien (Krieger I)",
+    "fr": "Éléments alphastitiels (guerre 1)"
+  },
+  "1769918": {
+    "en": "Alphascape Part Exchange (DoW) II",
+    "ja": "アルファパーツの取引（ファイターその2）",
+    "de": "Alphametrie-Materialien (Krieger II)",
+    "fr": "Éléments alphastitiels (guerre 2)"
+  },
+  "1769919": {
+    "en": "Alphascape Part Exchange (DoM)",
+    "ja": "アルファパーツの取引（ソーサラー）",
+    "de": "Alphametrie-Materialien (Magier)",
+    "fr": "Éléments alphastitiels (magie)"
+  },
+  "1769920": {
+    "en": "Alphascape Datalog Exchange (DoW) I",
+    "ja": "アルファデータログの取引（ファイターその1）",
+    "de": "Alphametrie-Chroniken (Krieger I)",
+    "fr": "Registres alphastitiels (guerre 1)"
+  },
+  "1769921": {
+    "en": "Alphascape Datalog Exchange (DoW) II",
+    "ja": "アルファデータログの取引（ファイターその2）",
+    "de": "Alphametrie-Chroniken (Krieger II)",
+    "fr": "Registres alphastitiels (guerre 2)"
+  },
+  "1769922": {
+    "en": "Alphascape Datalog Exchange (DoM)",
+    "ja": "アルファデータログの取引（ソーサラー）",
+    "de": "Alphametrie-Chroniken (Magier)",
+    "fr": "Registres alphastitiels (magie)"
+  },
+  "1769923": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769924": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769925": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769926": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769927": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769928": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769929": {
+    "en": "Newest Irregular Tomestone Exchange",
+    "ja": "最新の希少トームストーンの取引",
+    "de": "Ungewöhnliche Allagische Steine (neu)",
+    "fr": "Récents mémoquartz allagois inhabituels"
+  },
+  "1769930": {
+    "en": "Previous Irregular Tomestone Exchange",
+    "ja": "前回の希少トームストーンの取引",
+    "de": "Ungewöhnliche Allagische Steine (vorherig)",
+    "fr": "Précédents mémoquartz allagois inhabituels"
+  },
+  "1769931": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769932": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769933": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769934": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769935": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769936": {
+    "en": "Gear Exchange",
+    "ja": "防具の交換",
+    "de": "Ausrüstung",
+    "fr": "Armures"
+  },
+  "1769937": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769938": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769939": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769940": {
+    "en": "Auspice Gear (Seiryu)",
+    "ja": "四聖獣装備の取引（青龍）",
+    "de": "Seiryu-Ausrüstung",
+    "fr": "Équipements des quatre animaux sacrés (Seiryû)"
+  },
+  "1769941": {
+    "en": "Rakshasa Token Acquisition (Weapons)",
+    "ja": "羅刹の手形との交換（武器）",
+    "de": "Waffen in Rakshasa-Marken umtauschen",
+    "fr": "Échanger des armes"
+  },
+  "1769942": {
+    "en": "Rakshasa Token Acquisition (Gear)",
+    "ja": "羅刹の手形との交換（防具）",
+    "de": "Rüstungen in Rakshasa-Marken umtauschen",
+    "fr": "Échanger des armures"
+  },
+  "1769943": {
+    "en": "Rakshasa Token Acquisition (Accessories)",
+    "ja": "羅刹の手形との交換（アクセサリー）",
+    "de": "Accessoires in Rakshasa-Marken umtauschen",
+    "fr": "Échanger des accessoires"
+  },
+  "1769944": {
+    "en": "Rakshasa Token Acquisition (Weapons)",
+    "ja": "羅刹の手形との交換（武器）",
+    "de": "HQ-Waffen in Rakshasa-Marken umtauschen",
+    "fr": "Échanger des armes"
+  },
+  "1769945": {
+    "en": "Rakshasa Token Acquisition (Gear)",
+    "ja": "羅刹の手形との交換（防具）",
+    "de": "HQ-Rüstungen in Rakshasa-Marken umtauschen",
+    "fr": "Échanger des armures"
+  },
+  "1769946": {
+    "en": "Rakshasa Token Acquisition (Accessories)",
+    "ja": "羅刹の手形との交換（アクセサリー）",
+    "de": "HQ-Accessoires in Rakshasa-Marken umtauschen",
+    "fr": "Échanger des accessoires"
+  },
+  "1769947": {
+    "en": "Rakshasa Token Exchange (Weapons)",
+    "ja": "羅刹の手形の取引（武器）",
+    "de": "Rakshasa-Marken in Waffen umtauschen",
+    "fr": "Liste des armes"
+  },
+  "1769948": {
+    "en": "Rakshasa Token Exchange (Gear)",
+    "ja": "羅刹の手形の取引（防具）",
+    "de": "Rakshasa-Marken in Rüstung umtauschen",
+    "fr": "Liste des armures"
+  },
+  "1769949": {
+    "en": "Rakshasa Token Exchange (Accessories)",
+    "ja": "羅刹の手形の取引（アクセサリー）",
+    "de": "Rakshasa-Marken in Accessoires umtauschen",
+    "fr": "Liste des accessoires"
+  },
+  "1769950": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769951": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769952": {
+    "en": "Seasonal Event Prizes I",
+    "ja": "シーズナルイベント報酬の交換（その1）",
+    "de": "Saisonale Gegenstände I",
+    "fr": "Récompenses d'événements saisonniers I"
+  },
+  "1769953": {
+    "en": "Seasonal Event Prizes II",
+    "ja": "シーズナルイベント報酬の交換（その2）",
+    "de": "Saisonale Gegenstände II",
+    "fr": "Récompenses d'événements saisonniers II"
+  },
+  "1769954": {
+    "en": "Seasonal Event Prizes III",
+    "ja": "シーズナルイベント報酬の交換（その3）",
+    "de": "Saisonale Gegenstände III",
+    "fr": "Récompenses d'événements saisonniers III"
+  },
+  "1769955": {
+    "en": "Seasonal Event Prizes IV",
+    "ja": "シーズナルイベント報酬の交換（その4）",
+    "de": "Saisonale Gegenstände IV",
+    "fr": "Récompenses d'événements saisonniers IV"
+  },
+  "1769956": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769957": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769958": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769959": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769960": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769961": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769962": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769963": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769964": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769965": {
+    "en": "Journey's End Gear (Tank)",
+    "ja": "英魂装備の受取（タンク）",
+    "de": "Vermächtnis des Helden (Verteidiger)",
+    "fr": "Legs des Héros (tank)"
+  },
+  "1769966": {
+    "en": "Journey's End Gear (Physical DPS)",
+    "ja": "英魂装備の受取（DPS：ファイター）",
+    "de": "Vermächtnis des Helden (physische Angreifer)",
+    "fr": "Legs des Héros (DPS physique)"
+  },
+  "1769967": {
+    "en": "Journey's End Gear (Magical DPS)",
+    "ja": "英魂装備の受取（DPS：ソーサラー）",
+    "de": "Vermächtnis des Helden (magische Angreifer)",
+    "fr": "Legs des Héros (DPS magique)"
+  },
+  "1769968": {
+    "en": "Journey's End Gear (Healer)",
+    "ja": "英魂装備の受取（ヒーラー）",
+    "de": "Vermächtnis des Helden (Heiler)",
+    "fr": "Legs des Héros (soigneur)"
+  },
+  "1769969": {
+    "en": "Totem Gear (Innocence)",
+    "ja": "大罪喰い装備の取引（イノセンス）",
+    "de": "Lichtbringer-Ausrüstung (Innozenz)",
+    "fr": "Équipements totémiques (Innocence)"
+  },
+  "1769970": {
+    "en": "Totem Gear (Titania)",
+    "ja": "大罪喰い装備の取引（ティターニア）",
+    "de": "Lichtbringer-Ausrüstung (Titania)",
+    "fr": "Équipements totémiques (Titania)"
+  },
+  "1769971": {
+    "en": "Allagan Tomestones of Goetia (DoW)",
+    "ja": "アラガントームストーン:魔典の取引（ファイター）",
+    "de": "Allagische Steine der Goëtie (Krieger)",
+    "fr": "Mémoquartz allagois goétiques (guerre)"
+  },
+  "1769972": {
+    "en": "Allagan Tomestones of Goetia (DoM)",
+    "ja": "アラガントームストーン:魔典の取引（ソーサラー）",
+    "de": "Allagische Steine der Goëtie (Magier)",
+    "fr": "Mémoquartz allagois goétiques (magie)"
+  },
+  "1769973": {
+    "en": "Allagan Tomestones of Goetia (Other)",
+    "ja": "アラガントームストーン:魔典の取引（その他）",
+    "de": "Allagische Steine der Goëtie (Anderes)",
+    "fr": "Mémoquartz allagois goétiques (divers)"
+  },
+  "1769974": {
+    "en": "Allagan Tomestones of Phantasmagoria (DoW)",
+    "ja": "アラガントームストーン:幻想の取引（ファイター）",
+    "de": "Allagische Steine der Phantasmagorie (Krieger)",
+    "fr": "Mémoquartz allagois fantasmagoriques (guerre)"
+  },
+  "1769975": {
+    "en": "Allagan Tomestones of Phantasmagoria (DoM)",
+    "ja": "アラガントームストーン:幻想の取引（ソーサラー）",
+    "de": "Allagische Steine der Phantasmagorie (Magier)",
+    "fr": "Mémoquartz allagois fantasmagoriques (magie)"
+  },
+  "1769976": {
+    "en": "Allagan Tomestones of Phantasmagoria (Other)",
+    "ja": "アラガントームストーン:幻想の取引（その他）",
+    "de": "Allagische Steine der Phantasmagorie (Anderes)",
+    "fr": "Mémoquartz allagois fantasmagoriques (divers)"
+  },
+  "1769977": {
+    "en": "Eden's Gate Antique Exchange (DoW) I",
+    "ja": "古びた装備【覚】の取引（ファイターその1）",
+    "de": "Edentor-Ausrüstung (Krieger I)",
+    "fr": "Équipements antiques de L'Éveil (guerre 1)"
+  },
+  "1769978": {
+    "en": "Eden's Gate Antique Exchange (DoW) II",
+    "ja": "古びた装備【覚】の取引（ファイターその2）",
+    "de": "Edentor-Ausrüstung (Krieger II)",
+    "fr": "Équipements antiques de L'Éveil (guerre 2)"
+  },
+  "1769979": {
+    "en": "Eden's Gate Antique Exchange (DoM)",
+    "ja": "古びた装備【覚】の取引（ソーサラー）",
+    "de": "Edentor-Ausrüstung (Magier)",
+    "fr": "Équipements antiques de L'Éveil (magie)"
+  },
+  "1769980": {
+    "en": "Eden's Gate Apocrypha Exchange (DoW) I",
+    "ja": "覚醒の断章の取引（ファイターその1）",
+    "de": "Edengunst-Ausrüstung (Krieger I)",
+    "fr": "Codex de L'Éveil (guerre 1)"
+  },
+  "1769981": {
+    "en": "Eden's Gate Apocrypha Exchange (DoW) II",
+    "ja": "覚醒の断章の取引（ファイターその2）",
+    "de": "Edengunst-Ausrüstung (Krieger II)",
+    "fr": "Codex de L'Éveil (guerre 2)"
+  },
+  "1769982": {
+    "en": "Eden's Gate Apocrypha Exchange (DoM)",
+    "ja": "覚醒の断章の取引（ソーサラー）",
+    "de": "Edengunst-Ausrüstung (Magier)",
+    "fr": "Codex de L'Éveil (magie)"
+  },
+  "1769983": {
+    "en": "Deepshadow Gear Exchange",
+    "ja": "「ディープシャドウ装備」の交換",
+    "de": "Dunkelschatten-Ausrüstung",
+    "fr": "Échange d'équipements de la Pleine-ombre"
+  },
+  "1769984": {
+    "en": "Deepshadow Gear Augmentation (DoW) I",
+    "ja": "「ディープシャドウ装備」の強化（ファイターその1）",
+    "de": "Verstärkung von Dunkelschatten-Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements de la Pleine-ombre (guerre 1)"
+  },
+  "1769985": {
+    "en": "Deepshadow Gear Augmentation (DoW) II",
+    "ja": "「ディープシャドウ装備」の強化（ファイターその2）",
+    "de": "Verstärkung von Dunkelschatten-Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements de la Pleine-ombre (guerre 2)"
+  },
+  "1769986": {
+    "en": "Deepshadow Gear Augmentation (DoM)",
+    "ja": "「ディープシャドウ装備」の強化（ソーサラー）",
+    "de": "Verstärkung von Dunkelschatten-Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements de la Pleine-ombre (magie)"
+  },
+  "1769987": {
+    "en": "Sacks of Nuts Exchange",
+    "ja": "モブハントの戦利品の取引",
+    "de": "Kupo-Trophäen",
+    "fr": "Insignes Kupo"
+  },
+  "1769988": {
+    "en": "Silver Chocobo Feather Exchange II",
+    "ja": "シルバーチョコボの羽根の取引（その2）",
+    "de": "Silberne Chocobo-Federn II",
+    "fr": "Pennes de chocobo argenté (2)"
+  },
+  "1769989": {
+    "en": "Silver Chocobo Feather Exchange III",
+    "ja": "シルバーチョコボの羽根の取引（その3）",
+    "de": "Silberne Chocobo-Federn III",
+    "fr": "Pennes de chocobo argenté (3)"
+  },
+  "1769990": {
+    "en": "White Crafters' Scrip Exchange (Lv. 80 Gear)",
+    "ja": "クラフタースクリップ:白貨の取引（Lv80向け・装備）",
+    "de": "Weiße Handwerkerscheine (ab St. 80, Ausrüstung)",
+    "fr": "Assignats blancs d'artisan (équipements/Nv 80)"
+  },
+  "1769991": {
+    "en": "White Gatherers' Scrip Exchange (Lv. 80 Gear)",
+    "ja": "ギャザラースクリップ:白貨の取引（Lv80向け・装備）",
+    "de": "Weiße Sammlerscheine (ab St. 80, Ausrüstung)",
+    "fr": "Assignats blancs de récolteur (équipements/Nv 80)"
+  },
+  "1769992": {
+    "en": "White Crafters' Scrip Exchange (Lv. 80 Items)",
+    "ja": "クラフタースクリップ:白貨の取引（Lv80向け・その他）",
+    "de": "Weiße Handwerkerscheine (ab St. 80, Anderes)",
+    "fr": "Assignats blancs d'artisan (divers/Nv 80)"
+  },
+  "1769993": {
+    "en": "White Gatherers' Scrip Exchange (Lv. 80 Items)",
+    "ja": "ギャザラースクリップ:白貨の取引（Lv80向け・その他）",
+    "de": "Weiße Sammlerscheine (ab St. 80, Anderes)",
+    "fr": "Assignats blancs de récolteur (divers/Nv 80)"
+  },
+  "1769994": {
+    "en": "Submersible Frames",
+    "ja": "潜水艦改フレームの加工依頼",
+    "de": "Verstärkungen von Tauchbooten",
+    "fr": "Châssis de sous-marin"
+  },
+  "1769995": {
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
+  },
+  "1769996": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 50)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 50)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 50)"
+  },
+  "1769997": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 50)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 50)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 50)"
+  },
+  "1769998": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 58)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 58)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 58)"
+  },
+  "1769999": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 58)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 58)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 58)"
+  },
+  "1770000": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 61)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv61～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 61)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 61)"
+  },
+  "1770001": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 61)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv61～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 61)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 61)"
+  },
+  "1770002": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Gear)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Ausrüstung)",
+    "fr": "Assignats jaunes d'artisan (équipements/Nv ≧ 70)"
+  },
+  "1770003": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Gear)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Ausrüstung)",
+    "fr": "Assignats jaunes de récolteur (équipements/Nv ≧ 70)"
+  },
+  "1770004": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Gear) II",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備その2）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Ausrüstung II)",
+    "fr": "Assignats jaunes d'artisan II (équipements/Nv ≧ 70)"
+  },
+  "1770005": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Gear) II",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備その2）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Ausrüstung II)",
+    "fr": "Assignats jaunes de récolteur II (équipements/Nv ≧ 70)"
+  },
+  "1770006": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Augmentation)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備強化）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Verstärkung)",
+    "fr": "Assignats jaunes d'artisan (améliorations/Nv ≧ 70)"
+  },
+  "1770007": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Augmentation)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備強化）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Verstärkung)",
+    "fr": "Assignats jaunes de récolteur (améliorations/Nv ≧ 70)"
+  },
+  "1770008": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Items)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・その他）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Anderes)",
+    "fr": "Assignats jaunes d'artisan (divers/Nv ≧ 70)"
+  },
+  "1770009": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Items)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・その他）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Anderes)",
+    "fr": "Assignats jaunes de récolteur (divers/Nv ≧ 70)"
+  },
+  "1770010": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770011": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770012": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770013": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770014": {
+    "en": "Fieldcraft Items",
+    "ja": "ギャザラー向けアイテムの交換",
+    "de": "Sammler-Gegenstände",
+    "fr": "Objets de récolte"
+  },
+  "1770015": {
+    "en": "Glorious Gewgaws",
+    "ja": "アイテムの取引",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "1770016": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  }
+}

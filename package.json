@@ -104,7 +104,7 @@
     "@angular/platform-server": "7.2.7",
     "@angular/router": "7.2.7",
     "@ffxiv-teamcraft/crafting-solver": "^1.2.0",
-    "@ffxiv-teamcraft/simulator": "^1.2.12",
+    "@ffxiv-teamcraft/simulator": "^1.2.13",
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
