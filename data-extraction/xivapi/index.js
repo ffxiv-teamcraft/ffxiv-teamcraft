@@ -1264,3 +1264,31 @@ if (hasTodo('stats')) {
     persistToTypescript('stats', 'stats', stats);
   });
 }
+
+if (hasTodo('patchContent')) {
+  const patchContent = {};
+  get('https://xivapi.com/patchlist').pipe(
+    switchMap(patchList => {
+      return combineLatest(patchList.map(patch => {
+        return getAllPages(`https://xivapi.com/search?indexes=achievement,action,craftaction,fate,instancecontent,item,leve,placename,bnpcname,enpcresident,quest,status,trait&filters=Patch=${patch.ID}`, undefined, `Patch ${patch.Version}`)
+          .pipe(
+            map(page => {
+              return {
+                patchId: patch.ID,
+                content: page.Results
+              };
+            })
+          );
+      }));
+    })
+  ).subscribe(pages => {
+    pages.forEach(page => {
+      (page.content || []).forEach(entry => {
+        patchContent[page.patchId] = patchContent[page.patchId] || {};
+        patchContent[page.patchId][entry._] = [...(patchContent[page.patchId][entry._] || []), entry.ID];
+      });
+    });
+  }, null, () => {
+    persistToJsonAsset('patch-content', patchContent);
+  });
+}

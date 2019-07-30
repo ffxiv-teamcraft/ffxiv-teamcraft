@@ -1,0 +1,43 @@
+<div fxLayout="column" fxLayoutGap="10px" *ngIf="patch$ | async as patch; else loader"
+     [style.padding]="'0 50px' | ifMobile: '0'">
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px" fxLayoutAlign="flex-start flex-start"
+       fxFlex="1 1 auto" fxLayoutGap="5px" class="top-bar">
+    <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="10px" fxFlex="0 0 auto"
+         fxFlex.lt-md="1 1 auto" class="top-left-block">
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start center" fxLayoutGap="5px"
+           class="icon-block">
+        <img [src]="patch.Banner || fallbackIcon" alt="{{patch | xivapiI18n}}"
+             class="patch-banner" fxFlex="0 0 auto">
+        <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+          <h2 class="item-name">{{patch | xivapiI18n}}</h2>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="1 1 auto">
+    </div>
+    <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+        <img src="./assets/icons/english.png" class="language-flag" alt="EN">
+        <div>{{patch.Name_en}}</div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+        <img src="./assets/icons/german.png" class="language-flag" alt="DE">
+        <div>{{patch.Name_de}}</div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+        <img src="./assets/icons/french.png" class="language-flag" alt="FR">
+        <div>{{patch.Name_fr}}</div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+        <img src="./assets/icons/japanese.png" class="language-flag" alt="JA">
+        <div>{{patch.Name_ja}}</div>
+      </div>
+    </div>
+  </div>
+
+  <app-db-comments type="patch" [id]="patch.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
+</div>
+<app-db-comments type="patch" [id]="patch.ID" *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

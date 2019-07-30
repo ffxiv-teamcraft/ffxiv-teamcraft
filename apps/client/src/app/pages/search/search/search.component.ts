@@ -200,6 +200,18 @@ export class SearchComponent implements OnInit {
     })
   );
 
+  patch$: Observable<number> = this.query$.pipe(
+    map(query => {
+      const matches = /patch:([\d.]+)/.exec(query);
+      if (matches && matches[1]) {
+        return this.lazyData.patches.find(p => {
+          return p.Version === matches[1];
+        });
+      }
+      return null;
+    })
+  );
+
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
@@ -287,6 +299,7 @@ export class SearchComponent implements OnInit {
             return p.Version === matches[1];
           });
           if (patch) {
+            filters = filters.filter(f => f.name !== 'Patch');
             filters.push({
               name: 'Patch',
               value: patch.ID

@@ -1,5 +1,12 @@
 @import '../../../../common';
 
+.patch-banner {
+  max-width: 600px;
+  @media @mobile {
+    max-width: 80vw;
+  }
+}
+
 .search-box {
   width: 80%;
   margin: auto;
@@ -73,7 +80,7 @@ nz-form-item {
 .stat-filter-row {
 
   .level-range {
-    top:-2px;
+    top: -2px;
   }
 
   ::ng-deep .ant-select-selection {

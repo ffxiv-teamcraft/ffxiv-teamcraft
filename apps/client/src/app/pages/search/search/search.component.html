@@ -386,6 +386,12 @@
     </div>
     <nz-alert nzType="warning" class="dark" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" nzShowIcon
               *ngIf="results.length >= 100"></nz-alert>
+    <div class="patch" *ngIf="patch$ | async as patch" fxLayout="column" fxLayoutAlign="center center">
+      <a routerLink="/db/{{translate.currentLang}}/patch/{{patch.ID}}" fxLayout="column" fxLayoutAlign="center center">
+        <img [src]="patch.Banner" [alt]="patch | xivapiI18n" *ngIf="patch.Banner" class="patch-banner">
+        <div>{{'DB.PATCH.Open_patch_page' | translate}}</div>
+      </a>
+    </div>
     <div class="results">
       <app-page-loader [loading]="loading">
         <ng-container *ngFor="let row of results; trackBy: trackByItem; let odd = odd">

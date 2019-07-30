@@ -79,7 +79,7 @@ function addQueryParam(url, paramName, paramValue) {
   }
 }
 
-const getAllPages = (endpoint, body) => {
+const getAllPages = (endpoint, body, label) => {
   let progress;
   const page$ = new BehaviorSubject(1);
   const complete$ = new Subject();
@@ -97,8 +97,11 @@ const getAllPages = (endpoint, body) => {
             console.error('Error', url);
             console.error(result);
           }
-          if (result.Pagination.Page === 1) {
-            progress = multi.newBar(`[:bar] :current/:total :etas - ${endpoint.substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`, {
+          if (progress === undefined) {
+            if (label === undefined) {
+              label = `${endpoint.substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`;
+            }
+            progress = multi.newBar(`[:bar] :current/:total :etas - ${label}`, {
               complete: '=',
               incomplete: ' ',
               width: 50,

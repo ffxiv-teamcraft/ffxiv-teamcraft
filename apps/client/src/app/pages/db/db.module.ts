@@ -37,9 +37,9 @@ import { DbCommentsComponent } from './db-comments/db-comments/db-comments.compo
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { CommentLinksPipe } from './db-comments/comment-links.pipe';
 import { AchievementComponent } from './achievement/achievement.component';
+import { PatchComponent } from './patch/patch.component';
 
 const routes: Routes = [
-
   {
     path: ':language',
     component: DbComponent,
@@ -180,6 +180,17 @@ const routes: Routes = [
         path: 'achievement/:achievementId/:slug',
         component: AchievementComponent,
         canActivate: [MaintenanceGuard]
+      },
+
+      {
+        path: 'patch/:patchId',
+        component: PatchComponent,
+        canActivate: [MaintenanceGuard]
+      },
+      {
+        path: 'patch/:patchId/:slug',
+        component: PatchComponent,
+        canActivate: [MaintenanceGuard]
       }
     ]
   }
@@ -203,7 +214,8 @@ const routes: Routes = [
     ModelViewerComponent,
     DbCommentsComponent,
     CommentLinksPipe,
-    AchievementComponent
+    AchievementComponent,
+    PatchComponent
   ],
   entryComponents: [ModelViewerComponent],
   imports: [
