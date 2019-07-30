@@ -256,6 +256,7 @@
   "Recipe_Added": "1 Gegenstand zu Liste {{listname}} hinzugefügt",
   "Recipes_Added": "{{itemcount}} Gegenstände zu Liste {{listname}} hinzugefügt",
   "Character_name": "Charaktername",
+  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "Abmelden und anonym weiternutzen",
   "Add_manual_character": "Charakter hinzufügen",
   "Character_informations": "Charakterinformationen",
