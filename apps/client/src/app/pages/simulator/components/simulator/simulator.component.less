@@ -1,16 +1,25 @@
-@mobile: ~"screen and (max-width: 575px)";
-@tablet: ~"screen and (min-width: 576px) and (max-width: 1025px)";
+@mobile: ~'screen and (max-width: 575px)';
+@tablet: ~'screen and (min-width: 576px) and (max-width: 1025px)';
 
 :host ::ng-deep {
   .progress-progressbar {
     .ant-progress-bg {
       background-color: green;
     }
+    .ant-progress-status-success .ant-progress-bg {
+      background-color: #52c41a;
+    }
+  }
+
+  .progress-progressbar-failed {
+    .ant-progress-bg {
+      background-color: rgba(255, 0, 0, 0.7);
+    }
   }
 
   .cp-amount {
     .ant-progress-bg {
-      background-color: #9254AD;
+      background-color: #9254ad;
     }
   }
 
@@ -59,7 +68,7 @@
     }
 
     .value {
-      font-size: .8em;
+      font-size: 0.8em;
       padding-left: 2px;
       margin-top: -7px;
       height: 10px;
@@ -74,11 +83,11 @@
 }
 
 .failed {
-  background-color: rgba(255, 0, 0, .3);
+  background-color: rgba(255, 0, 0, 0.3);
 }
 
 .success {
-  background-color: rgba(0, 255, 0, .3);
+  background-color: rgba(0, 255, 0, 0.3);
 }
 
 .text-icon {
@@ -92,7 +101,7 @@
   align-items: center;
   font-size: 1.2em;
   flex: 1 1 auto;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .consumable-col {
@@ -110,6 +119,9 @@
 .durability {
   .durability-value {
     font-size: 2rem;
+  }
+  .durability-value-failed {
+    color: rgba(255, 0, 0, 0.7);
   }
 }
 
@@ -139,8 +151,8 @@
   position: fixed;
   bottom: 11px;
   z-index: 1000;
-  width: ~"calc(100% - 60px)";
-  opacity: .8;
+  width: ~'calc(100% - 60px)';
+  opacity: 0.8;
 
   ::ng-deep .ant-card-body {
     padding: 3px !important;
@@ -242,7 +254,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     padding: 5px;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, 0.3);
     margin: 10px;
 
     .gu-transit {
