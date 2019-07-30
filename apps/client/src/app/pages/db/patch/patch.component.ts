@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { filter, map, shareReplay } from 'rxjs/operators';
+import { filter, map, shareReplay, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 
 @Component({
@@ -23,8 +23,6 @@ export class PatchComponent extends TeamcraftPageComponent {
   public patch$: Observable<any>;
 
   public fallbackIcon = 'https://img.finalfantasyxiv.com/lds/h/k/aL011xxU_6LyWUio1Gi2Fx7-qo.svg';
-
-  private contentQueue: Observable<any>[] = [];
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -62,6 +60,12 @@ export class PatchComponent extends TeamcraftPageComponent {
     this.patch$ = patchId$.pipe(
       map(id => {
         return this.lazyData.patches.find(p => p.ID === id);
+      }),
+      map(patch => {
+        return {
+          ...patch,
+          ...this.lazyData.patchContents[patch.ID]
+        };
       }),
       shareReplay(1)
     );

@@ -388,7 +388,8 @@
               *ngIf="results.length >= 100"></nz-alert>
     <div class="patch" *ngIf="patch$ | async as patch" fxLayout="column" fxLayoutAlign="center center">
       <a routerLink="/db/{{translate.currentLang}}/patch/{{patch.ID}}" fxLayout="column" fxLayoutAlign="center center">
-        <img [src]="patch.Banner" [alt]="patch | xivapiI18n" *ngIf="patch.Banner" class="patch-banner">
+        <img [src]="patch.Banner" [alt]="patch | xivapiI18n" *ngIf="patch.Banner; else patchName" class="patch-banner">
+        <ng-template #patchName><h3 [innerHTML]="patch | xivapiI18n"></h3></ng-template>
         <div>{{'DB.PATCH.Open_patch_page' | translate}}</div>
       </a>
     </div>
