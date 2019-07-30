@@ -63,7 +63,6 @@
       </nz-select>
     </ng-template>
   </div>
-  <div fxLayout="row" fxLayoutAlign="center center" class="search-tip">{{'SEARCH.Search_tip' | translate}}</div>
   <div class="filters" *ngIf="searchType$ | async as searchType">
     <nz-collapse
       *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE
