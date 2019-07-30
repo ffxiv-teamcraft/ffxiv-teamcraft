@@ -127,6 +127,14 @@ export class SettingsService {
     this.setSetting('compact-alarms', compact.toString());
   }
 
+  public get disableSearchHistory(): boolean {
+    return this.getSetting('disable-search-history', 'false') === 'true';
+  }
+
+  public set disableSearchHistory(disabled: boolean) {
+    this.setSetting('disable-search-history', disabled.toString());
+  }
+
   public get expectToSellEverything(): boolean {
     return this.getSetting('pricing:expect-sell-all', 'false') === 'true';
   }
@@ -247,7 +255,7 @@ export class SettingsService {
   private setSetting(name: string, value: string): void {
     this.cache[name] = value;
     localStorage.setItem('settings', JSON.stringify(this.cache));
-    this.ipc.send('apply-settings', {...this.cache});
+    this.ipc.send('apply-settings', { ...this.cache });
     this.settingsChange$.next();
   }
 
