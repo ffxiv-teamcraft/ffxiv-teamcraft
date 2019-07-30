@@ -256,6 +256,7 @@
   "Recipe_Added": "1개의 아이템이 {{listname}} 목록에 추가되었습니다",
   "Recipes_Added": "{{itemcount}} 개의 아이템이 {{listname}}  목록에 추가되었습니다",
   "Character_name": "캐릭터 이름",
+  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "로그아웃 후 익명으로 계속하기",
   "Add_manual_character": "캐릭터 수동추가",
   "Character_informations": "캐릭터 정보",
