@@ -85,6 +85,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   @Input()
   public set recipe(recipe: Craft) {
     this.recipe$.next(recipe);
+    this._recipe = recipe;
     if (recipe.id) {
       this._recipeId = recipe.id;
     }
@@ -99,6 +100,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public safeMode$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('simulator:safe-mode') === 'true');
 
   private _recipeId: string;
+  private _recipe: Craft;
 
   public snapshotMode = false;
 
@@ -472,7 +474,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         rotation.defaultItemId = this.item.id;
         rotation.defaultRecipeId = this._recipeId;
       }
-      rotation.recipe = recipe;
+      rotation.recipe = this._recipe;
       rotation.stats = {
         jobId: stats.jobId,
         specialist: stats.specialist,
