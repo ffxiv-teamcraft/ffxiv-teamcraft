@@ -81,9 +81,9 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
         this.recipeForm.patchValue({
           rlvl: recipe.rlvl,
           level: recipe.lvl,
-          progress: recipe.durability,
+          progress: recipe.progress,
           quality: recipe.quality,
-          durability: recipe.progress,
+          durability: recipe.durability,
           suggCraft: recipe.suggestedCraftsmanship,
           suggCtrl: recipe.suggestedControl
         }, { emitEvent: false });
