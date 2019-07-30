@@ -346,6 +346,7 @@
     "Db_comments_position": "Position des commentaires de la base de données",
     "Always_HQ_leves": "Utiliser des mandats HQ par défaut pour le calcul d'exp",
     "Clickthrough_overlay": "Permettre de cliquer à travers l'overlay",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -524,6 +525,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "Obsolète",
     "GEAR": "Équipement",
     "CONSUMABLE": "Consommable",
@@ -544,6 +549,7 @@
     "PLD": "PLD",
     "WAR": "GUE",
     "DRK": "CHN",
+    "GNB": "GNB",
     "WHM": "MBL",
     "SCH": "ÉRU",
     "AST": "AST",
@@ -553,6 +559,7 @@
     "SAM": "SAM",
     "BRD": "BRD",
     "MCH": "MCH",
+    "DNC": "DNC",
     "BLM": "MNO",
     "SMN": "INV",
     "RDM": "MRG",
