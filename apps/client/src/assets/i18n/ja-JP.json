@@ -773,7 +773,8 @@
         "TEALESS": "薬品非使用",
         "FOODLESS": "食事非使用",
         "MAKERS_MARK": "堅実の心得",
-        "MUSCLE_MEMORY": "確信"
+        "MUSCLE_MEMORY": "確信",
+        "REUSE": "Reuse"
       }
     },
     "CUSTOM": {
