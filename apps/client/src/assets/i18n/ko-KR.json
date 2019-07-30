@@ -346,6 +346,7 @@
     "Db_comments_position": "DB댓글 위치",
     "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
     "Clickthrough_overlay": "오버레이 클릭 무시",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -524,6 +525,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "만료",
     "GEAR": "장비",
     "CONSUMABLE": "소모품",
@@ -544,6 +549,7 @@
     "PLD": "나이트",
     "WAR": "전사",
     "DRK": "암기",
+    "GNB": "GNB",
     "WHM": "백마",
     "SCH": "학자",
     "AST": "점성",
@@ -553,6 +559,7 @@
     "SAM": "사무",
     "BRD": "음유",
     "MCH": "기공",
+    "DNC": "DNC",
     "BLM": "흑마",
     "SMN": "솬사",
     "RDM": "적마",
