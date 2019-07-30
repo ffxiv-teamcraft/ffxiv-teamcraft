@@ -3,7 +3,9 @@ export const hunts = [
     'zoneid': 134,
     'hunts': [
       {
+        'id': 2928,
         'name': 'Skogs Fru',
+        'rank': 0,
         'spawns': [
           {
             'x': -21.4004,
@@ -104,7 +106,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2945,
         'name': 'Vogaal Ja',
+        'rank': 1,
         'spawns': [
           {
             'x': -66.0258,
@@ -205,7 +209,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2962,
         'name': 'Croque-Mitaine',
+        'rank': 2,
         'spawns': [
           {
             'x': -217.487,
@@ -307,7 +313,9 @@ export const hunts = [
     'zoneid': 135,
     'hunts': [
       {
+        'id': 2929,
         'name': 'Barbastelle',
+        'rank': 0,
         'spawns': [
           {
             'x': -71.7938,
@@ -392,7 +400,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2946,
         'name': 'Unktehi',
+        'rank': 1,
         'spawns': [
           {
             'x': 498.436,
@@ -481,7 +491,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2963,
         'name': 'Croakadile',
+        'rank': 2,
         'spawns': [
           {
             'x': 146.288,
@@ -571,7 +583,9 @@ export const hunts = [
     'zoneid': 137,
     'hunts': [
       {
+        'id': 2930,
         'name': 'Bloody Mary',
+        'rank': 0,
         'spawns': [
           {
             'x': 308.247,
@@ -676,7 +690,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2947,
         'name': 'Hellsclaw',
+        'rank': 1,
         'spawns': [
           {
             'x': 197.65,
@@ -765,7 +781,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2964,
         'name': 'The Garlok',
+        'rank': 2,
         'spawns': [
           {
             'x': 275.776,
@@ -875,7 +893,9 @@ export const hunts = [
     'zoneid': 138,
     'hunts': [
       {
+        'id': 2931,
         'name': 'Dark Helmet',
+        'rank': 0,
         'spawns': [
           {
             'x': 310.17,
@@ -964,7 +984,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2948,
         'name': 'Nahn',
+        'rank': 1,
         'spawns': [
           {
             'x': 161.364,
@@ -1061,7 +1083,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2965,
         'name': 'Bonnacon',
+        'rank': 2,
         'spawns': [
           {
             'x': 237.079,
@@ -1131,7 +1155,9 @@ export const hunts = [
     'zoneid': 139,
     'hunts': [
       {
+        'id': 2932,
         'name': 'Myradrosh',
+        'rank': 0,
         'spawns': [
           {
             'x': 362.631,
@@ -1200,7 +1226,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2949,
         'name': 'Marberry',
+        'rank': 1,
         'spawns': [
           {
             'x': 400.656,
@@ -1273,7 +1301,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2966,
         'name': 'Nandi',
+        'rank': 2,
         'spawns': [
           {
             'x': 324.971,
@@ -1347,7 +1377,9 @@ export const hunts = [
     'zoneid': 140,
     'hunts': [
       {
+        'id': 2923,
         'name': 'Sewer Syrup',
+        'rank': 0,
         'spawns': [
           {
             'x': -64.4366,
@@ -1436,7 +1468,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2940,
         'name': 'Alectryon',
+        'rank': 1,
         'spawns': [
           {
             'x': -52.6162,
@@ -1529,7 +1563,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2957,
         'name': 'Zona Seeker',
+        'rank': 2,
         'spawns': [
           {
             'x': -45.121,
@@ -1599,7 +1635,9 @@ export const hunts = [
     'zoneid': 141,
     'hunts': [
       {
+        'id': 2924,
         'name': 'Ovjang',
+        'rank': 0,
         'spawns': [
           {
             'x': 95.0178,
@@ -1696,7 +1734,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2941,
         'name': 'Sabotender Bailarina',
+        'rank': 1,
         'spawns': [
           {
             'x': -186.694,
@@ -1793,7 +1833,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2958,
         'name': 'Brontes',
+        'rank': 2,
         'spawns': [
           {
             'x': 17.6547,
@@ -1895,7 +1937,9 @@ export const hunts = [
     'zoneid': 145,
     'hunts': [
       {
+        'id': 2925,
         'name': 'Gatling',
+        'rank': 0,
         'spawns': [
           {
             'x': -348.052,
@@ -2024,11 +2068,17 @@ export const hunts = [
           {
             'x': -290.12,
             'y': -68.3452
+          },
+          {
+            'x': 290.761,
+            'y': -185.443
           }
         ]
       },
       {
+        'id': 2942,
         'name': 'Maahes',
+        'rank': 1,
         'spawns': [
           {
             'x': 271.717,
@@ -2173,7 +2223,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2959,
         'name': 'Lampalagua',
+        'rank': 2,
         'spawns': [
           {
             'x': -440.177,
@@ -2315,7 +2367,9 @@ export const hunts = [
     'zoneid': 146,
     'hunts': [
       {
+        'id': 2926,
         'name': 'Albin The Ashen',
+        'rank': 0,
         'spawns': [
           {
             'x': 349.294,
@@ -2468,11 +2522,17 @@ export const hunts = [
           {
             'x': -3.15869,
             'y': -35.2942
+          },
+          {
+            'x': 0.472961,
+            'y': 420.188
           }
         ]
       },
       {
+        'id': 2943,
         'name': 'Zanig\'oh',
+        'rank': 1,
         'spawns': [
           {
             'x': 2.05988,
@@ -2645,7 +2705,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2960,
         'name': 'Nunyunuwi',
+        'rank': 2,
         'spawns': [
           {
             'x': -18.7839,
@@ -2779,7 +2841,9 @@ export const hunts = [
     'zoneid': 147,
     'hunts': [
       {
+        'id': 2927,
         'name': 'Flame Sergeant Dalvag',
+        'rank': 0,
         'spawns': [
           {
             'x': -116.96,
@@ -2848,7 +2912,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2944,
         'name': 'Dalvag\'s Final Flame',
+        'rank': 1,
         'spawns': [
           {
             'x': -125.383,
@@ -2913,7 +2979,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2961,
         'name': 'Minhocao',
+        'rank': 2,
         'spawns': [
           {
             'x': 112.108,
@@ -2983,7 +3051,9 @@ export const hunts = [
     'zoneid': 148,
     'hunts': [
       {
+        'id': 2919,
         'name': 'White Joker',
+        'rank': 0,
         'spawns': [
           {
             'x': -276.875,
@@ -3080,7 +3150,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2936,
         'name': 'Forneus',
+        'rank': 1,
         'spawns': [
           {
             'x': 99.504,
@@ -3177,7 +3249,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2953,
         'name': 'Laideronnette',
+        'rank': 2,
         'spawns': [
           {
             'x': -583.581,
@@ -3279,7 +3353,9 @@ export const hunts = [
     'zoneid': 152,
     'hunts': [
       {
+        'id': 2920,
         'name': 'Stinging Sophie',
+        'rank': 0,
         'spawns': [
           {
             'x': 517.967,
@@ -3404,11 +3480,17 @@ export const hunts = [
           {
             'x': 32.8656,
             'y': 405.342
+          },
+          {
+            'x': 326.802,
+            'y': -138.079
           }
         ]
       },
       {
+        'id': 2937,
         'name': 'Melt',
+        'rank': 1,
         'spawns': [
           {
             'x': 228.046,
@@ -3549,7 +3631,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2954,
         'name': 'Wulgaru',
+        'rank': 2,
         'spawns': [
           {
             'x': 124.987,
@@ -3699,7 +3783,9 @@ export const hunts = [
     'zoneid': 153,
     'hunts': [
       {
+        'id': 2921,
         'name': 'Monarch Ogrefly',
+        'rank': 0,
         'spawns': [
           {
             'x': -220.63,
@@ -3804,7 +3890,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2938,
         'name': 'Ghede Ti Malice',
+        'rank': 1,
         'spawns': [
           {
             'x': -110.46,
@@ -3921,7 +4009,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2955,
         'name': 'Mindflayer',
+        'rank': 2,
         'spawns': [
           {
             'x': -287.007,
@@ -4035,7 +4125,9 @@ export const hunts = [
     'zoneid': 154,
     'hunts': [
       {
+        'id': 2922,
         'name': 'Phecda',
+        'rank': 0,
         'spawns': [
           {
             'x': -107.439,
@@ -4116,7 +4208,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2939,
         'name': 'Girtab',
+        'rank': 1,
         'spawns': [
           {
             'x': 88.7921,
@@ -4201,7 +4295,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2956,
         'name': 'Thousand-Cast Theda',
+        'rank': 2,
         'spawns': [
           {
             'x': 55.7717,
@@ -4291,7 +4387,9 @@ export const hunts = [
     'zoneid': 155,
     'hunts': [
       {
+        'id': 2934,
         'name': 'Naul',
+        'rank': 0,
         'spawns': [
           {
             'x': 271.717,
@@ -4504,11 +4602,21 @@ export const hunts = [
           {
             'x': -362.387,
             'y': -84.886
+          },
+          {
+            'x': 274.769,
+            'y': -410.819
+          },
+          {
+            'x': 433.432,
+            'y': 417.96
           }
         ]
       },
       {
+        'id': 2951,
         'name': 'Marraco',
+        'rank': 1,
         'spawns': [
           {
             'x': -751.064,
@@ -4745,7 +4853,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2968,
         'name': 'Safat',
+        'rank': 2,
         'spawns': [
           {
             'x': -295.735,
@@ -4974,6 +5084,14 @@ export const hunts = [
           {
             'x': 170.886,
             'y': 104.387
+          },
+          {
+            'x': 150.712,
+            'y': -472.637
+          },
+          {
+            'x': -856.901,
+            'y': -234.028
           }
         ]
       }
@@ -4983,7 +5101,9 @@ export const hunts = [
     'zoneid': 156,
     'hunts': [
       {
+        'id': 2935,
         'name': 'Leech King',
+        'rank': 0,
         'spawns': [
           {
             'x': 532.067,
@@ -5096,11 +5216,17 @@ export const hunts = [
           {
             'x': 262.643,
             'y': -439.776
+          },
+          {
+            'x': 384.085,
+            'y': -695.125
           }
         ]
       },
       {
+        'id': 2952,
         'name': 'Kurrea',
+        'rank': 1,
         'spawns': [
           {
             'x': -219.745,
@@ -5221,7 +5347,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2969,
         'name': 'Agrippa The Mighty',
+        'rank': 2,
         'spawns': [
           {
             'x': -547.136,
@@ -5287,7 +5415,9 @@ export const hunts = [
     'zoneid': 180,
     'hunts': [
       {
+        'id': 2933,
         'name': 'Vuokho',
+        'rank': 0,
         'spawns': [
           {
             'x': 66.6056,
@@ -5372,7 +5502,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2950,
         'name': 'Cornu',
+        'rank': 1,
         'spawns': [
           {
             'x': -332.418,
@@ -5469,7 +5601,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 2967,
         'name': 'Chernobog',
+        'rank': 2,
         'spawns': [
           {
             'x': -300.893,
@@ -5554,6 +5688,10 @@ export const hunts = [
           {
             'x': 141.405,
             'y': -261.555
+          },
+          {
+            'x': 214.038,
+            'y': -263.111
           }
         ]
       }
@@ -5563,7 +5701,9 @@ export const hunts = [
     'zoneid': 397,
     'hunts': [
       {
+        'id': 4350,
         'name': 'Alteci',
+        'rank': 0,
         'spawns': [
           {
             'x': -24.7044,
@@ -5616,7 +5756,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4351,
         'name': 'Kreutzet',
+        'rank': 0,
         'spawns': [
           {
             'x': 692.134,
@@ -5677,7 +5819,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4362,
         'name': 'Mirka',
+        'rank': 1,
         'spawns': [
           {
             'x': 513.024,
@@ -5798,7 +5942,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4363,
         'name': 'Lyuba',
+        'rank': 1,
         'spawns': [
           {
             'x': -10.0557,
@@ -5927,7 +6073,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4374,
         'name': 'Kaiser Behemoth',
+        'rank': 2,
         'spawns': [
           {
             'x': -214.313,
@@ -6009,7 +6157,9 @@ export const hunts = [
     'zoneid': 398,
     'hunts': [
       {
+        'id': 4352,
         'name': 'Gnath Cometdrone',
+        'rank': 0,
         'spawns': [
           {
             'x': -297.536,
@@ -6054,7 +6204,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4353,
         'name': 'Thextera',
+        'rank': 0,
         'spawns': [
           {
             'x': 612.543,
@@ -6103,7 +6255,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4364,
         'name': 'Pylraster',
+        'rank': 1,
         'spawns': [
           {
             'x': -83.2686,
@@ -6188,7 +6342,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4365,
         'name': 'Lord Of The Wyverns',
+        'rank': 1,
         'spawns': [
           {
             'x': -437.4,
@@ -6265,7 +6421,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4375,
         'name': 'Senmurv',
+        'rank': 2,
         'spawns': [
           {
             'x': 104.753,
@@ -6355,7 +6513,9 @@ export const hunts = [
     'zoneid': 399,
     'hunts': [
       {
+        'id': 4354,
         'name': 'Pterygotus',
+        'rank': 0,
         'spawns': [
           {
             'x': -703.151,
@@ -6404,7 +6564,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4355,
         'name': 'False Gigantopithecus',
+        'rank': 0,
         'spawns': [
           {
             'x': 223.56,
@@ -6453,7 +6615,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4366,
         'name': 'Slipkinx Steeljoints',
+        'rank': 1,
         'spawns': [
           {
             'x': 594.11,
@@ -6530,7 +6694,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4367,
         'name': 'Stolas',
+        'rank': 1,
         'spawns': [
           {
             'x': 769.589,
@@ -6611,11 +6777,17 @@ export const hunts = [
           {
             'x': -659.907,
             'y': 566.308
+          },
+          {
+            'x': 129.625,
+            'y': 85.8319
           }
         ]
       },
       {
+        'id': 4376,
         'name': 'The Pale Rider',
+        'rank': 2,
         'spawns': [
           {
             'x': -687.282,
@@ -6717,7 +6889,9 @@ export const hunts = [
     'zoneid': 400,
     'hunts': [
       {
+        'id': 4356,
         'name': 'Scitalis',
+        'rank': 0,
         'spawns': [
           {
             'x': 559.594,
@@ -6766,7 +6940,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4357,
         'name': 'The Scarecrow',
+        'rank': 0,
         'spawns': [
           {
             'x': -807.523,
@@ -6819,7 +6995,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4368,
         'name': 'Bune',
+        'rank': 1,
         'spawns': [
           {
             'x': -282.155,
@@ -6884,7 +7062,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4369,
         'name': 'Agathos',
+        'rank': 1,
         'spawns': [
           {
             'x': -612.024,
@@ -6957,7 +7137,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4377,
         'name': 'Gandarewa',
+        'rank': 2,
         'spawns': [
           {
             'x': -294.698,
@@ -7054,6 +7236,10 @@ export const hunts = [
           {
             'x': -792.111,
             'y': -102.464
+          },
+          {
+            'x': 713.68,
+            'y': 183.856
           }
         ]
       }
@@ -7063,7 +7249,9 @@ export const hunts = [
     'zoneid': 401,
     'hunts': [
       {
+        'id': 4358,
         'name': 'Squonk',
+        'rank': 0,
         'spawns': [
           {
             'x': 679.042,
@@ -7132,7 +7320,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4359,
         'name': 'Sanu Vali Of Dancing Wings',
+        'rank': 0,
         'spawns': [
           {
             'x': -760.464,
@@ -7197,7 +7387,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4370,
         'name': 'Enkelados',
+        'rank': 1,
         'spawns': [
           {
             'x': 183.581,
@@ -7294,7 +7486,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4371,
         'name': 'Sisiutl',
+        'rank': 1,
         'spawns': [
           {
             'x': 702.602,
@@ -7391,7 +7585,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4378,
         'name': 'Bird Of Paradise',
+        'rank': 2,
         'spawns': [
           {
             'x': -33.1274,
@@ -7509,7 +7705,9 @@ export const hunts = [
     'zoneid': 402,
     'hunts': [
       {
+        'id': 4360,
         'name': 'Lycidas',
+        'rank': 0,
         'spawns': [
           {
             'x': 577.05,
@@ -7566,7 +7764,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4361,
         'name': 'Omni',
+        'rank': 0,
         'spawns': [
           {
             'x': -648.066,
@@ -7615,7 +7815,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4372,
         'name': 'Campacti',
+        'rank': 1,
         'spawns': [
           {
             'x': 758.724,
@@ -7704,7 +7906,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4373,
         'name': 'Stench Blossom',
+        'rank': 1,
         'spawns': [
           {
             'x': -424.491,
@@ -7801,7 +8005,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 4380,
         'name': 'Leucrotta',
+        'rank': 2,
         'spawns': [
           {
             'x': 670.008,
@@ -7891,7 +8097,9 @@ export const hunts = [
     'zoneid': 612,
     'hunts': [
       {
+        'id': 6008,
         'name': 'Shadow-Dweller Yamini',
+        'rank': 0,
         'spawns': [
           {
             'x': 185.656,
@@ -7920,11 +8128,17 @@ export const hunts = [
           {
             'x': 329.274,
             'y': 127.489
+          },
+          {
+            'x': 687.983,
+            'y': -184.802
           }
         ]
       },
       {
+        'id': 6009,
         'name': 'Ouzelum',
+        'rank': 0,
         'spawns': [
           {
             'x': 202.197,
@@ -7989,7 +8203,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5990,
         'name': 'Orcus',
+        'rank': 1,
         'spawns': [
           {
             'x': 658.137,
@@ -8046,7 +8262,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5991,
         'name': 'Erle',
+        'rank': 1,
         'spawns': [
           {
             'x': -563.165,
@@ -8091,7 +8309,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5987,
         'name': 'Udumbara',
+        'rank': 2,
         'spawns': [
           {
             'x': 345.083,
@@ -8141,7 +8361,9 @@ export const hunts = [
     'zoneid': 620,
     'hunts': [
       {
+        'id': 6010,
         'name': 'Gwas-Y-Neidr',
+        'rank': 0,
         'spawns': [
           {
             'x': 80.3387,
@@ -8198,7 +8420,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 6011,
         'name': 'Buccaboo',
+        'rank': 0,
         'spawns': [
           {
             'x': 274.098,
@@ -8247,7 +8471,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5992,
         'name': 'Vochstein',
+        'rank': 1,
         'spawns': [
           {
             'x': 115.892,
@@ -8352,7 +8578,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5993,
         'name': 'Aqrabuamelu',
+        'rank': 1,
         'spawns': [
           {
             'x': 65.3848,
@@ -8469,7 +8697,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5988,
         'name': 'Bone Crawler',
+        'rank': 2,
         'spawns': [
           {
             'x': -490.593,
@@ -8551,7 +8781,9 @@ export const hunts = [
     'zoneid': 621,
     'hunts': [
       {
+        'id': 6012,
         'name': 'Manes',
+        'rank': 0,
         'spawns': [
           {
             'x': -714.996,
@@ -8604,7 +8836,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 6013,
         'name': 'Kiwa',
+        'rank': 0,
         'spawns': [
           {
             'x': -365.682,
@@ -8637,7 +8871,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5994,
         'name': 'Mahisha',
+        'rank': 1,
         'spawns': [
           {
             'x': -125.963,
@@ -8714,7 +8950,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5995,
         'name': 'Luminare',
+        'rank': 1,
         'spawns': [
           {
             'x': 168.231,
@@ -8767,7 +9005,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5989,
         'name': 'Salt And Light',
+        'rank': 2,
         'spawns': [
           {
             'x': -131.518,
@@ -8816,6 +9056,10 @@ export const hunts = [
           {
             'x': 462.486,
             'y': 732.875
+          },
+          {
+            'x': 206.348,
+            'y': 616.022
           }
         ]
       }
@@ -8825,7 +9069,9 @@ export const hunts = [
     'zoneid': 613,
     'hunts': [
       {
+        'id': 6002,
         'name': 'Gauki Strongblade',
+        'rank': 0,
         'spawns': [
           {
             'x': -374.319,
@@ -8874,7 +9120,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 6003,
         'name': 'Guhuo Niao',
+        'rank': 0,
         'spawns': [
           {
             'x': 543.236,
@@ -8911,7 +9159,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5996,
         'name': 'Funa Yurei',
+        'rank': 1,
         'spawns': [
           {
             'x': 507.866,
@@ -8984,7 +9234,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5997,
         'name': 'Oni Yumemi',
+        'rank': 1,
         'spawns': [
           {
             'x': -752.987,
@@ -9053,7 +9305,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5984,
         'name': 'Okina',
+        'rank': 2,
         'spawns': [
           {
             'x': -720.516,
@@ -9111,7 +9365,9 @@ export const hunts = [
     'zoneid': 614,
     'hunts': [
       {
+        'id': 6004,
         'name': 'Deidar',
+        'rank': 0,
         'spawns': [
           {
             'x': 432.151,
@@ -9152,7 +9408,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 6005,
         'name': 'Gyorai Quickstrike',
+        'rank': 0,
         'spawns': [
           {
             'x': 30.0449,
@@ -9189,7 +9447,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5998,
         'name': 'Gajasura',
+        'rank': 1,
         'spawns': [
           {
             'x': -208.087,
@@ -9254,7 +9514,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5999,
         'name': 'Angada',
+        'rank': 1,
         'spawns': [
           {
             'x': -468.315,
@@ -9335,7 +9597,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5985,
         'name': 'Gamma',
+        'rank': 2,
         'spawns': [
           {
             'x': 115.648,
@@ -9377,7 +9641,9 @@ export const hunts = [
     'zoneid': 622,
     'hunts': [
       {
+        'id': 6006,
         'name': 'Kurma',
+        'rank': 0,
         'spawns': [
           {
             'x': -579.828,
@@ -9426,7 +9692,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 6007,
         'name': 'Aswang',
+        'rank': 0,
         'spawns': [
           {
             'x': 290.272,
@@ -9467,7 +9735,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 6000,
         'name': 'Girimekhala',
+        'rank': 1,
         'spawns': [
           {
             'x': -412.253,
@@ -9628,7 +9898,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 6001,
         'name': 'Sum',
+        'rank': 1,
         'spawns': [
           {
             'x': -333.547,
@@ -9725,7 +9997,9 @@ export const hunts = [
         ]
       },
       {
+        'id': 5986,
         'name': 'Orghana',
+        'rank': 2,
         'spawns': [
           {
             'x': -109.697,

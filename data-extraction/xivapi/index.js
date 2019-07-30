@@ -64,7 +64,11 @@ if (onlyIndex > -1) {
 }
 
 function hasTodo(operation) {
-  return todo.indexOf(operation) > -1;
+  const hasTodo = todo.indexOf(operation) > -1;
+  if (hasTodo) {
+    console.log(`========== ${operation} ========== `);
+  }
+  return hasTodo;
 }
 
 fs.existsSync('output') || fs.mkdirSync('output');

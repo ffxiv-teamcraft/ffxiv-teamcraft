@@ -215,7 +215,7 @@
     "icon": "/i/005000/005306.png",
     "description": {
       "en": "Adds to <span style=\"color:#ff7b1a;\">Heavy Shot</span> a 20% chance that you will become <span style=\"color:#ffff66;\">Straight Shot Ready</span>.\n\n<span style=\"color:#00cc22;\">Duration: </span>10s",
-      "de": "Fügt <span style=\"color:#40bfff;\">Gewaltiger Schuss</span> eine Wahrscheinlichkeit von 20% hinzu, dass du den Status <span style=\"color:#ffff66;\">Direkter Schuss +</span> erhältst.\n\nDauer: 10 Sekunden",
+      "de": "Fügt <span style=\"color:#40bfff;\">Gewaltiger Schuss</span> eine Wahrscheinlichkeit von 20% hinzu, dass du den Status <span style=\"color:#ffff66;\">Direktschussbereit</span> erhältst.\n\nDauer: 10 Sekunden",
       "ja": "自身に<span style=\"color:#ff7b1a;\">「ストレートショット実行可」</span>を付与する。\n\n<span style=\"color:#00cc22;\">効果時間：</span>10秒\n\n<span style=\"color:#00cc22;\">発動条件：</span>ヘヴィショット実行時（発動確率20％）",
       "fr": "Accorde 20% de chances que <span style=\"color:#ff7b1a;\">Tir droit préparé</span> vous soit octroyé lorsque vous utilisez <span style=\"color:#ff7b1a;\">Tir à l'arc puissant</span>.\n\n<span style=\"color:#ffff66;\">Durée:</span> 10s"
     }
@@ -2307,7 +2307,7 @@
     "fr": "Transe-Bahamut améliorée",
     "icon": "/i/005000/005380.png",
     "description": {
-      "en": "Grants <span style=\"color:#ffff66;\">Dreadwyrm Aether</span> upon the end of the <span style=\"color:#ffff66;\">Dreadwyrm Trance</span>.",
+      "en": "Grants <span style=\"color:#ffff66;\">Dreadwyrm Aether</span> upon the end of <span style=\"color:#ffff66;\">Dreadwyrm Trance</span>.",
       "de": "Füllt am Ende des Effekts von <span style=\"color:#ffff66;\">Bahamut-Äther</span> deinen Trancebalken.",
       "ja": "自身に<span style=\"color:#ff7b1a;\">「トランス深度」</span>を付与する。\n\n<span style=\"color:#00cc22;\">発動条件：</span>トランス・バハムートの効果終了時",
       "fr": "Permet à votre transe de s'approfondir d'un degré lorsque <span style=\"color:#ff7b1a;\">Transe-Bahamut</span> prend fin."
@@ -2450,10 +2450,10 @@
     "fr": "Vitesse de la lumière accélérée",
     "icon": "/i/006000/006101.png",
     "description": {
-      "en": "Reduces <span style=\"color:#ff7b1a;\">Lightspeed</span> recast time by 10 seconds upon executing <span style=\"color:#ff7b1a;\">Essential Dignity</span>.",
-      "de": "Verkürzt die Reaktivierungszeit von <span style=\"color:#40bfff;\">Lichtgeschwindigkeit</span> um 10 Sekunden, sobald <span style=\"color:#40bfff;\">Essenzielle Würde</span> ausgeführt wird.",
-      "ja": "ライトスピードのリキャストタイムを10秒短縮する。\n\n<span style=\"color:#00cc22;\">発動条件：</span>ディグニティ実行時",
-      "fr": "Réduit de 10s le temps de recharge de <span style=\"color:#ff7b1a;\">Vitesse de la lumière</span> lorsque vous utilisez <span style=\"color:#ff7b1a;\">Dignité essentielle</span>."
+      "en": "Reduces <span style=\"color:#ff7b1a;\">Lightspeed</span> recast time to 90 seconds.",
+      "de": "Verkürzt die Reaktivierungszeit von <span style=\"color:#40bfff;\">Lichtgeschwindigkeit</span> auf 90 Sekunden.",
+      "ja": "ライトスピードのリキャストタイムを90秒に短縮させる。",
+      "fr": "Réduit de 90s le temps de recharge de <span style=\"color:#ff7b1a;\">Vitesse de la lumière</span>."
     }
   },
   "190": {
@@ -2596,7 +2596,7 @@
       "en": "Increases base action damage and HP restoration by 10%.",
       "de": "Erhöht den Basiswert des Schadens und der Regenerationswirkung von Kommandos außer Auto-Attacke um 10 %.",
       "ja": "自身のオートアタックを除くアクションによる、ダメージと回復量をベース値の1.1倍にする。",
-      "fr": "Les dégâts de base des actions sont augmentés de 10%."
+      "fr": "Les soins et les dégâts de base des actions sont augmentés de 10%."
     }
   },
   "201": {
@@ -2775,10 +2775,10 @@
     "fr": "Maîtrise de l'ébullition",
     "icon": "/i/005000/005394.png",
     "description": {
-      "en": "Upgrades <span style=\"color:#ff7b1a;\">Ruin</span> to <span style=\"color:#ff7b1a;\">Broil</span> and increases the potency of <span style=\"color:#ff7b1a;\">Ruin II</span> to 160.",
-      "de": "Verbessert <span style=\"color:#40bfff;\">Ruin</span> zu <span style=\"color:#40bfff;\">Bravade</span> und erhöht den Attacke-Wert von <span style=\"color:#40bfff;\">Ruinra</span> auf 160.",
-      "ja": "ルインが気炎法に変化する。\n\nさらに、ルインラの威力を160に上昇させる。",
-      "fr": "Remplace <span style=\"color:#ff7b1a;\">Ruine</span> par <span style=\"color:#ff7b1a;\">Loi de l'ébullition</span>.\n\nAugmente la puissance d'<span style=\"color:#ff7b1a;\">Extra Ruine</span> à 160."
+      "en": "Upgrades <span style=\"color:#ff7b1a;\">Ruin</span> to <span style=\"color:#ff7b1a;\">Broil</span> and increases the potency of <span style=\"color:#ff7b1a;\">Ruin II</span> and <span style=\"color:#ff7b1a;\">Art of War</span> to 160.",
+      "de": "Verbessert <span style=\"color:#40bfff;\">Ruin</span> zu <span style=\"color:#40bfff;\">Bravade</span> und erhöht den Attacke-Wert von <span style=\"color:#40bfff;\">Ruinra</span> und <span style=\"color:#40bfff;\">Kunst des Krieges</span> auf 160.",
+      "ja": "ルインが気炎法に変化する。\n\nさらに、ルインラと破陣法の威力を160に上昇させる。",
+      "fr": "Remplace <span style=\"color:#ff7b1a;\">Ruine</span> par <span style=\"color:#ff7b1a;\">Loi de l'ébullition</span>.\n\nAugmente la puissance d'<span style=\"color:#ff7b1a;\">Extra Ruine</span> et de <span style=\"color:#ff7b1a;\">Loi de la guerre</span> à 160."
     }
   },
   "215": {
@@ -3636,7 +3636,7 @@
       "en": "Increases <span style=\"color:#ff7b1a;\">Ninki Gauge</span> by 8 upon landing weaponskills or successfully completing combos.",
       "de": "Treffer deiner Waffenfertigkeiten und erfolgreich ausgeführte Kombos füllen den Ninki-Balken jetzt um 8.",
       "ja": "<span style=\"color:#ff7b1a;\">「忍気」</span>の上昇量が8に増加する。\n\n<span style=\"color:#00cc22;\">発動条件：</span>ウェポンスキルの命中時またはコンボ成功時",
-      "fr": "Remplit la <span style=\"color:#40bfff;\">Jauge de Ninki</span> de 8 lorsque vous utilisez une technique d'arme ou un combo avec succès."
+      "fr": "Permet à votre <span style=\"color:#40bfff;\">Jauge de Ninki</span> de se remplir de 8 lorsque vous utilisez une technique d'arme ou un combo avec succès."
     }
   },
   "281": {

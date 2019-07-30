@@ -31,7 +31,7 @@ export class LocalizedDataService {
       // If an item doesn't exist yet inside zh and ko items, use english name instead.
       row.zh = zhRow !== undefined ? zhRow.zh : row.en;
       row.ko = koRow !== undefined ? koRow.ko : row.en;
-      row.fr = row.fr.replace(this.indentRegexp, '');
+      row.fr = row.fr && row.fr.replace(this.indentRegexp, '');
     }
     return row;
   }

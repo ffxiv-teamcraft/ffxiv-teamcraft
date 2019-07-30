@@ -7,9 +7,9 @@
                          [nzDescription]="description">
         <ng-template #description>
           <div *ngIf="npc?.position !== null" fxLayout="row">
-            <div>{{npc?.position.zoneid | placeName | i18n}}</div>
-            <app-map-position [zoneId]="npc?.position.zoneid" [marker]="npc?.position"
-                              [mapId]="npc?.position.map"></app-map-position>
+            <div>{{npc?.position?.zoneid | placeName | i18n}}</div>
+            <app-map-position [zoneId]="npc?.position?.zoneid" [marker]="npc?.position"
+                              [mapId]="npc?.position?.map"></app-map-position>
           </div>
         </ng-template>
       </nz-list-item-meta>

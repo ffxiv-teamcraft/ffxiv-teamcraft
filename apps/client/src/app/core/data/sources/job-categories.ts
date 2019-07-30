@@ -528,10 +528,10 @@ export const jobCategories = {
     'fr': 'GLA MRD PGL HAS ARC SUR PLD MOI GUE DRG BRD NIN CHN MCH'
   },
   '89': {
-    'en': 'CNJ THM ACN WHM BLM SMN SCH AST',
-    'ja': '幻術士 呪術士 巴術士 白魔道士 黒魔道士 召喚士 学者 占星術師',
-    'de': 'DRU THM HRT WMA SMA BSW GLT AST',
-    'fr': 'ÉLM OCC ACN MBL MNO INV ÉRU AST'
+    'en': 'BLM SMN RDM',
+    'ja': '黒魔道士 召喚士 赤魔道士',
+    'de': 'SMA BSW RMA',
+    'fr': 'MNO INV MRG'
   },
   '90': {
     'en': 'ARC CNJ THM ACN WHM BRD BLM SMN SCH MCH AST',
