@@ -525,6 +525,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN":  "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD":  "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "Outdated",
     "GEAR": "Gear",
     "CONSUMABLE": "Consumable",
@@ -545,6 +549,7 @@
     "PLD": "PLD",
     "WAR": "WAR",
     "DRK": "DRK",
+    "GNB": "GNB",
     "WHM": "WHM",
     "SCH": "SCH",
     "AST": "AST",
@@ -554,6 +559,7 @@
     "SAM": "SAM",
     "BRD": "BRD",
     "MCH": "MCH",
+    "DNC": "DNC",
     "BLM": "BLM",
     "SMN": "SMN",
     "RDM": "RDM",
