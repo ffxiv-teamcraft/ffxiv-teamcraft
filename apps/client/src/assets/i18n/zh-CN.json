@@ -346,6 +346,7 @@
     "Db_comments_position": "数据库评论位置",
     "Always_HQ_leves": "Always count leves exp with HQ items",
     "Clickthrough_overlay": "悬浮窗鼠标穿透",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -524,6 +525,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "已过期",
     "GEAR": "装备",
     "CONSUMABLE": "消耗品",
@@ -544,6 +549,7 @@
     "PLD": "骑士",
     "WAR": "战士",
     "DRK": "黑骑",
+    "GNB": "GNB",
     "WHM": "白魔",
     "SCH": "学者",
     "AST": "占星",
@@ -553,6 +559,7 @@
     "SAM": "武士",
     "BRD": "诗人",
     "MCH": "机工",
+    "DNC": "DNC",
     "BLM": "黑魔",
     "SMN": "召唤",
     "RDM": "赤魔",
