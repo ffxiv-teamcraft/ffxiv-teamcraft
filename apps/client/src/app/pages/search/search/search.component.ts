@@ -261,8 +261,8 @@ export class SearchComponent implements OnInit {
           queryParams.sort = sortBy;
           queryParams.order = sortOrder;
         }
-        if (filters.length > 0) {
-          queryParams.filters = btoa(JSON.stringify(filters));
+        if (filters.filter(f => f.name !== 'Patch').length > 0) {
+          queryParams.filters = btoa(JSON.stringify(filters.filter(f => f.name !== 'Patch')));
         } else {
           queryParams.filters = null;
         }
@@ -279,54 +279,68 @@ export class SearchComponent implements OnInit {
       }),
       mergeMap(([query, type, filters, sort]) => {
         let searchRequest$: Observable<any[]>;
+        let processedQuery = query;
+        const matches = /patch:([\d.]+)/.exec(query);
+        if (matches && matches[1]) {
+          processedQuery = query.replace(/patch:([\d.]+)/, '');
+          const patch = this.lazyData.patches.find(p => {
+            return p.Version === matches[1];
+          });
+          if (patch) {
+            filters.push({
+              name: 'Patch',
+              value: patch.ID
+            });
+          }
+        }
         switch (type) {
           case SearchType.ANY:
-            searchRequest$ = this.searchAny(query, filters);
+            searchRequest$ = this.searchAny(processedQuery, filters);
             break;
           case SearchType.ITEM:
-            searchRequest$ = this.data.searchItem(query, filters, false, sort);
+            searchRequest$ = this.data.searchItem(processedQuery, filters, false, sort);
             break;
           case SearchType.RECIPE:
-            searchRequest$ = this.data.searchItem(query, filters, true, sort);
+            searchRequest$ = this.data.searchItem(processedQuery, filters, true, sort);
             break;
           case SearchType.INSTANCE:
-            searchRequest$ = this.searchInstance(query, filters);
+            searchRequest$ = this.searchInstance(processedQuery, filters);
             break;
           case SearchType.QUEST:
-            searchRequest$ = this.searchQuest(query, filters);
+            searchRequest$ = this.searchQuest(processedQuery, filters);
             break;
           case SearchType.NPC:
-            searchRequest$ = this.searchNpc(query, filters);
+            searchRequest$ = this.searchNpc(processedQuery, filters);
             break;
           case SearchType.LEVE:
-            searchRequest$ = this.searchLeve(query, filters);
+            searchRequest$ = this.searchLeve(processedQuery, filters);
             break;
           case SearchType.MONSTER:
-            searchRequest$ = this.searchMob(query, filters);
+            searchRequest$ = this.searchMob(processedQuery, filters);
             break;
           case SearchType.LORE:
-            searchRequest$ = this.searchLore(query, filters);
+            searchRequest$ = this.searchLore(processedQuery, filters);
             break;
           case SearchType.FATE:
-            searchRequest$ = this.searchFate(query, filters);
+            searchRequest$ = this.searchFate(processedQuery, filters);
             break;
           case SearchType.MAP:
-            searchRequest$ = this.searchMap(query, filters);
+            searchRequest$ = this.searchMap(processedQuery, filters);
             break;
           case SearchType.ACTION:
-            searchRequest$ = this.searchAction(query, filters);
+            searchRequest$ = this.searchAction(processedQuery, filters);
             break;
           case SearchType.STATUS:
-            searchRequest$ = this.searchStatus(query, filters);
+            searchRequest$ = this.searchStatus(processedQuery, filters);
             break;
           case SearchType.TRAIT:
-            searchRequest$ = this.searchTrait(query, filters);
+            searchRequest$ = this.searchTrait(processedQuery, filters);
             break;
           case SearchType.ACHIEVEMENT:
-            searchRequest$ = this.searchAchievement(query, filters);
+            searchRequest$ = this.searchAchievement(processedQuery, filters);
             break;
           default:
-            searchRequest$ = this.data.searchItem(query, filters, false, sort);
+            searchRequest$ = this.data.searchItem(processedQuery, filters, false, sort);
             break;
         }
         if (type === SearchType.ANY) {
@@ -489,7 +503,30 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'Banner', 'Icon'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: []
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
     }).pipe(
       map(res => {
         return res.Results.map(quest => {
@@ -600,7 +637,30 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: []
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
     }).pipe(
       map(res => {
         return res.Results.map(status => {
@@ -621,7 +681,30 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: []
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
     }).pipe(
       map(res => {
         return res.Results.map(achievement => {
@@ -693,7 +776,30 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'Title_*', 'Icon'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: []
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
     }).pipe(
       map(res => {
         return res.Results.map(npc => {
@@ -719,7 +825,30 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'Icon'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: []
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
     }).pipe(
       map(res => {
         return res.Results.map(mob => {
@@ -740,7 +869,30 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'IconMap', 'ClassJobLevel'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: []
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
     }).pipe(
       map(res => {
         return res.Results.map(fate => {
@@ -761,7 +913,30 @@ export class SearchComponent implements OnInit {
       columns: ['ID', 'Name_*'],
       // I know, it looks like it's the same, but it isn't
       string: query.split('-').join('–'),
-      filters: []
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
     }).pipe(
       map(res => {
         return res.Results.map(place => {
