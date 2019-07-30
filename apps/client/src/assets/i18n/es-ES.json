@@ -346,6 +346,7 @@
     "Db_comments_position": "Posición de comentarios de base de datos",
     "Always_HQ_leves": "Siempre contar la experiencia de leves con artículos HQ",
     "Clickthrough_overlay": "Permitir hacer clic a través de la capa sobrepuesta",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -524,6 +525,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "Desactualizado",
     "GEAR": "Armadura",
     "CONSUMABLE": "Consumible",
@@ -544,6 +549,7 @@
     "PLD": "PLD",
     "WAR": "WAR",
     "DRK": "DRK",
+    "GNB": "GNB",
     "WHM": "WHM",
     "SCH": "SCH",
     "AST": "AST",
@@ -553,6 +559,7 @@
     "SAM": "SAM",
     "BRD": "BRD",
     "MCH": "MCH",
+    "DNC": "DNC",
     "BLM": "BLM",
     "SMN": "SMN",
     "RDM": "RDM",
