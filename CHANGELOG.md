@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.19"></a>
+## [5.6.19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.18...v5.6.19) (2019-07-30)
+
+
+### Bug Fixes
+
+* **simulator:** custom recipe configuration is now properly saved with the rotation ([b758f9b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b758f9b))
+* **simulator:** fixed an issue with min stats popup affecting simulation itself ([cbcd6ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cbcd6ff))
+* changed some icons inside sidebar ([8afed77](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8afed77))
+
+
+### Features
+
+* complete revamp of the sidebar menu ([6987611](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6987611))
+* **alarms:** changed compact mode for a super compact mode using lists ([893f7ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/893f7ab))
+* support for Korean v4.55 update ([5ec6ee5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5ec6ee5))
+* **data:** 5.05 patch content ([e7b6d71](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e7b6d71))
+* **search:** added support for patch search (input patch:<patch #> in search box) ([929ab3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/929ab3b))
+
+
+
 <a name="5.6.18"></a>
 ## [5.6.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.17...v5.6.18) (2019-07-22)
 
