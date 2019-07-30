@@ -346,6 +346,7 @@
     "Db_comments_position": "データベースのコメント位置",
     "Always_HQ_leves": "Always count leves exp with HQ items",
     "Clickthrough_overlay": "Make overlay clickthrough",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -524,6 +525,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "古い",
     "GEAR": "装備",
     "CONSUMABLE": "薬品・調理品",
@@ -544,6 +549,7 @@
     "PLD": "ナイト",
     "WAR": "戦士",
     "DRK": "暗黒戦士",
+    "GNB": "GNB",
     "WHM": "白魔道士",
     "SCH": "学者",
     "AST": "占星術師",
@@ -553,6 +559,7 @@
     "SAM": "侍",
     "BRD": "吟遊詩人",
     "MCH": "機工士",
+    "DNC": "DNC",
     "BLM": "黒魔道士",
     "SMN": "召喚士",
     "RDM": "赤魔道士",
