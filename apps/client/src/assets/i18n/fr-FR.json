@@ -1358,14 +1358,14 @@
         "Actions": "Actions ({{amount}})",
         "Crafting_actions": "Actions de fabrication ({{amount}})",
         "Fates": "Aléas ({{amount}})",
-        "Instances": "Instance content ({{amount}})",
-        "Items": "Items ({{amount}})",
-        "Leves": "Leves ({{amount}})",
-        "Maps": "Maps ({{amount}})",
-        "Monsters": "Monsters ({{amount}})",
-        "Npcs": "Npcs ({{amount}})",
-        "Quests": "Quests ({{amount}})",
-        "Statuses": "Statuses ({{amount}})",
+        "Instances": "Instances ({{amount}})",
+        "Items": "Objets ({{amount}})",
+        "Leves": "Mandats ({{amount}})",
+        "Maps": "Cartes ({{amount}})",
+        "Monsters": "Monstres ({{amount}})",
+        "Npcs": "PNJs ({{amount}})",
+        "Quests": "Quêtes ({{amount}})",
+        "Statuses": "Status ({{amount}})",
         "Traits": "Traits ({{amount}})"
       }
     }
@@ -1451,7 +1451,7 @@
     "Sort_desc": "Décroissant",
     "Add_stat_filter": "Ajouter un filtre de stat",
     "Add_bonus_stat_filter": "Ajouter un filtre de stat bonus",
-    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Search_tip": "Vous pouvez taper patch :<patch #> pour filtrer sur un patch donné, exemple : patch:5.01",
     "SORT_BY": {
       "Relevance": "Pertinence",
       "ID": "ID",
@@ -1461,10 +1461,10 @@
     }
   },
   "SIDEBAR": {
-    "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
-    "Other": "Other"
+    "General": "Général",
+    "Sharing": "Partage",
+    "Gathering": "Récolte",
+    "Helpers": "Assistants",
+    "Other": "Autre"
   }
 }
