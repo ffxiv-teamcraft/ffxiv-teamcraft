@@ -37,10 +37,7 @@ export class CharacterLinkPopupComponent {
 
   private koreanServers = ['초코보', '모그리', '카벙클', '톤베리'];
 
-  public user$: Observable<TeamcraftUser> = this.store.pipe(
-    select('auth'),
-    map(state => state.user)
-  );
+  public localstorageUser: TeamcraftUser = JSON.parse(localStorage.getItem('auth:user'));
 
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef) {
     this.servers$ = this.xivapi.getServerList().pipe(
