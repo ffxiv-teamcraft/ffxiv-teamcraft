@@ -62,6 +62,13 @@
               ngxClipboard [cbContent]="getLink(rotation)" (cbOnSuccess)="afterLinkCopy()">
         <i nz-icon type="share-alt"></i>
       </button>
+      <button nz-button (click)="openRotationSolver()"
+              [nzShape]="'circle'"
+              [nzType]="'primary'"
+              nz-tooltip
+              [nzTitle]="'SIMULATOR.Rotation_solver' | translate">
+        <i nz-icon nzType="reconciliation" nzTheme="outline"></i>
+      </button>
       <ng-container *ngIf="tips$ | async as tips">
         <nz-badge [nzCount]="tips.length">
           <button nz-button *ngIf="result$ | async as result" (click)="showRotationTips(tips, result)"
@@ -86,6 +93,11 @@
           </button>
         </ng-container>
       </ng-container>
+      <button nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
+              [nzTitle]="'ALARMS.Open_overlay' | translate" (nzOnConfirm)="openOverlay(rotation)"
+              *ngIf="platformService.isDesktop() && rotation.$key">
+        <i nz-icon type="desktop"></i>
+      </button>
     </div>
     <div fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 auto" class="simulator">
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -204,8 +216,13 @@
                        [nzRenderItem]="hqIngredientTemplate">
                 <ng-template #hqIngredientTemplate let-ingredient>
                   <nz-list-item [nzContent]="content">
-                    <nz-list-item-meta [nzTitle]="ingredient.id | itemName | i18n"
+                    <nz-list-item-meta [nzTitle]="title"
                                        [nzDescription]="ingredient.quality | floor"></nz-list-item-meta>
+                    <ng-template #title>
+                      <span ngxClipboard [cbContent]="ingredient.id | itemName | i18n"
+                            class="hq-ingredient-name"
+                            (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})">{{ingredient.id | itemName | i18n}}</span>
+                    </ng-template>
                     <ng-template #content>
                       <nz-form-control>
                         <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
@@ -242,7 +259,7 @@
                         <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="selectedFood.hq">
                       </div>
                       <div *ngFor="let bonus of selectedFood.bonuses">
-                        {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{bonus.value * 100}}%
+                        {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{(bonus.value * 100) | floor}}%
                         ({{bonus.max}})
                       </div>
                     </div>
@@ -329,9 +346,20 @@
               </div>
               <div fxLayout="column">
                 <div fxLayout="row" fxLayoutGap="5px">
-                  <div>{{item.id | itemName | i18n}}</div>
-                  <div *ngIf="resultData.simulation.recipe.element">
-                    <img [src]="resultData.simulation.recipe.element | elementIcon" alt="" class="affinity-icon">
+                  <div>
+                    <span class="item-name" ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
+                          *ngIf="settings.preferredCopyType === 'classic'"
+                          [nzTitle]="'Copy_item_name_to_clipboard' | translate"
+                          (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})">
+                      {{item.id | itemName | i18n}}
+                    </span>
+                    <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
+                          nz-tooltip
+                          *ngIf="settings.preferredCopyType === 'isearch'"
+                          [nzTitle]="'Copy_isearch' | translate"
+                          (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})">
+                      {{item.id | itemName | i18n}}
+                    </span>
                   </div>
                   <button nz-button nzSize="small" nzShape="circle" (click)="changeRecipe(rotation)" nz-tooltip
                           [nzTitle]="'SIMULATOR.Change_recipe' | translate">
@@ -372,8 +400,10 @@
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
             <div class="durability" fxLayout="column" fxLayoutAlign="center center">
               <h3>{{'SIMULATOR.Durability' | translate}}</h3>
-              <span class="durability-value">{{resultData.simulation.durability}}
-                / {{resultData.simulation.recipe.durability}}</span>
+              <span 
+              class="durability-value"
+              [class.durability-value-failed]="resultData.failCause === 'DURABILITY_REACHED_ZERO'">
+              {{resultData.simulation.durability}} / {{resultData.simulation.recipe.durability}}</span>
             </div>
             <div fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
               <div class="top-bars">
@@ -385,7 +415,8 @@
                       [nzShowInfo]="false"
                       [nzPercent]="barPercent(resultData.simulation.progression,resultData.simulation.recipe.progress)"
                       [nzFormat]="barFormat(resultData.simulation.progression, resultData.simulation.recipe.progress)"
-                      class="progress-progressbar">
+                      class="progress-progressbar"
+                      [class.progress-progressbar-failed]="resultData.failCause === 'DURABILITY_REACHED_ZERO'">
                     </nz-progress>
                     <div
                       class="progress-value">{{barFormat(resultData.simulation.progression,

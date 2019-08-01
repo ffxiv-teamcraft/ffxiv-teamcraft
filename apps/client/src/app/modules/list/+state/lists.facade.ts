@@ -176,12 +176,18 @@ export class ListsFacade {
 
   addList(list: List): void {
     this.store.dispatch(new CreateList(list));
-    gtag('send', 'event', 'List', 'creation');
+    gtag('event', 'List', {
+      'event_label': 'creation',
+      'non_interaction': true
+    });
   }
 
   deleteList(key: string): void {
     this.store.dispatch(new DeleteList(key));
-    gtag('send', 'event', 'List', 'deletion');
+    gtag('event', 'List', {
+      'event_label': 'deletion',
+      'non_interaction': true
+    });
   }
 
   updateList(list: List, updateCompact = false, force = false): void {

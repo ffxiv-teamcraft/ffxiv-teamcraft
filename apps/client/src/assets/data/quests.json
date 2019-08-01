@@ -28947,7 +28947,7 @@
     "name": {
       "en": "A Home for a Tome",
       "ja": "ラライの一念、岩をも通せ",
-      "de": "Bewahrung des Wissens",
+      "de": "Bewahrung eines Lebenswerkes",
       "fr": "Lalai, censurée!"
     },
     "icon": "/i/062000/062407.png"
@@ -29028,7 +29028,7 @@
     "name": {
       "en": "Gunblades of the Patriots",
       "ja": "もうひとりのガンブレイカー",
-      "de": "Wo das Herz zuhause ist",
+      "de": "Mit der Heimat im Herzen",
       "fr": "À la poursuite d'un autre pistosabreur"
     },
     "icon": "/i/062000/062417.png"
@@ -29296,55 +29296,55 @@
   },
   "68791": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "In the Middle of Nowhere",
+      "ja": "始まりの「楽園」",
+      "de": "Mitten im Nirgendwo",
+      "fr": "Le vrai visage du premier reflet"
     },
     "icon": "/i/071000/071221.png"
   },
   "68792": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Deploy the Core",
+      "ja": "エデンの支配者",
+      "de": "Reise in den Kern",
+      "fr": "Conquérir le Cœur"
     },
     "icon": "/i/071000/071221.png"
   },
   "68793": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "One Fell Swoop",
+      "ja": "飛来する闇",
+      "de": "Gefahr von oben",
+      "fr": "Descente du ciel"
     },
     "icon": "/i/071000/071221.png"
   },
   "68794": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Nor Any Drop to Drink",
+      "ja": "渦動、再戦",
+      "de": "Bewässerung der Wüste",
+      "fr": "Résurgence"
     },
     "icon": "/i/071000/071221.png"
   },
   "68795": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Super Seismic",
+      "ja": "憤怒、再来",
+      "de": "Seismische Aktivitäten",
+      "fr": "Ranimer le pouls"
     },
     "icon": "/i/071000/071221.png"
   },
   "68796": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Next Piece of the Puzzle",
+      "ja": "リーンの歩み",
+      "de": "Das Orakel der Dunkelheit",
+      "fr": "À la recherche de sa propre voie"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -29953,7 +29953,7 @@
   },
   "68864": {
     "name": {
-      "en": "Saying Goodbye",
+      "en": "Saying Good-bye",
       "ja": "天の暗き海",
       "de": "Toddias Rückkehr ins Himmelsmeer",
       "fr": "Repos éternel dans le ciel étoilé"
@@ -31060,7 +31060,7 @@
   },
   "68987": {
     "name": {
-      "en": " Distrubing the Peace",
+      "en": " Disturbing the Peace",
       "ja": " 遠くを聴く耳",
       "de": " Das Rauschen im Walde",
       "fr": " Un murmure lointain"
@@ -32941,21 +32941,21 @@
   },
   "69196": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Message in a Bottle",
+      "ja": "新生祭と謎めいた手紙",
+      "de": "Ein rätselhafter Brief zum Fest",
+      "fr": "Une étrange lettre en bouteille"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080113.png"
   },
   "69197": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Messages from Distant Shores",
+      "ja": "新生祭とボトルレター",
+      "de": "Eine Flaschenpost zum Fest",
+      "fr": "Les lettres en bouteille de la Commémoration"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080113.png"
   },
   "69198": {
     "name": {
@@ -33013,7 +33013,7 @@
   },
   "69204": {
     "name": {
-      "en": "守護天節と恐怖の視線？",
+      "en": "Fear and Delight",
       "ja": "守護天節と恐怖の視線？",
       "de": "Schau mir in das Auge, Kleine",
       "fr": "Un regard moyennement effrayant"
@@ -33022,7 +33022,7 @@
   },
   "69205": {
     "name": {
-      "en": "守護天節の仮装パーティー",
+      "en": "A Glamourous Guise",
       "ja": "守護天節の仮装パーティー",
       "de": "Auf verkleideter Mission",
       "fr": "Un bal costumé cabalistique"
@@ -33031,7 +33031,7 @@
   },
   "69206": {
     "name": {
-      "en": "守護天節と妖しい館",
+      "en": "Haunting Grounds",
       "ja": "守護天節と妖しい館",
       "de": "Totentanz",
       "fr": "L'étrange manoir abandonné"

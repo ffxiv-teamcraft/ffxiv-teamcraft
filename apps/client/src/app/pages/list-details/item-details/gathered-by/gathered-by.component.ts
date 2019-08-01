@@ -20,8 +20,6 @@ export class GatheredByComponent extends ItemDetailsPopup {
   @Input()
   showAlarmsIntegration = false;
 
-  alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
-
   alarms$: Observable<Alarm[]> = this.alarmsFacade.allAlarms$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;

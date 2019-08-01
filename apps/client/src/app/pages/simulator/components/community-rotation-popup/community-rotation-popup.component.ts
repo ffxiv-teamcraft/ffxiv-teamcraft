@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MakersMark, MuscleMemory, Simulation } from '@ffxiv-teamcraft/simulator';
+import { MakersMark, MuscleMemory, Simulation, Reuse } from '@ffxiv-teamcraft/simulator';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { RotationTag } from '../community-rotations-page/rotation-tag';
 import { CommunityRotationsPageComponent } from '../community-rotations-page/community-rotations-page.component';
@@ -59,6 +59,9 @@ export class CommunityRotationPopupComponent implements OnInit {
       }
       if (actions.some(action => action.is(MakersMark)) && this.rotation.tags.indexOf('MAKERS_MARK') === -1) {
         this.rotation.tags.push('MAKERS_MARK');
+      }
+      if (actions.some(action => action.is(Reuse)) && this.rotation.tags.indexOf('REUSE') === -1) {
+        this.rotation.tags.push('REUSE');
       }
     }
   }

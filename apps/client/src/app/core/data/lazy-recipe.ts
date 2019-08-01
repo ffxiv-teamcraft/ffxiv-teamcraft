@@ -4,5 +4,6 @@ export interface LazyRecipe {
   job: number;
   result: number;
   level: number;
+  stars: number;
   ingredients: { id: number; amount: number }[];
 }

@@ -107,6 +107,7 @@
     "No_lists_matching": "No lists matching your filters"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "Save",
     "Reset": "Reset",
     "Total": "Total",
@@ -141,6 +142,7 @@
     "Custom_sound": "Custom alarm sound",
     "New_group": "New alarm group",
     "Confirm_group_delete": "Are you sure you want to delete this group?",
+    "Delete_group_and_alarms": "Delete group with all alarms",
     "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
     "Add_note": "Add a note",
     "Volume": "Volume",
@@ -190,6 +192,7 @@
   "No": "No",
   "Crystals": "Crystals",
   "Gathering": "Gathering",
+  "Drops_or_GC": "Dungeons/Drops or GC",
   "Other": "Other",
   "Pre_crafts": "Pre crafts",
   "Items": "Items",
@@ -247,10 +250,13 @@
   "filters/worn_by": "Worn by",
   "filters/crafted_by": "Crafted by",
   "filters/item_category": "Item type",
+  "filters/stats": "Stats filters",
+  "filters/bonuses": "Stat bonuses filters",
   "Adding_recipes": "Adding {{amount}} recipes to list {{listname}}",
   "Recipe_Added": "1 item added to list {{listname}}",
   "Recipes_Added": "{{itemcount}} items added to list {{listname}}",
   "Character_name": "Character Name",
+  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "Disconnect and continue as anonymous",
   "Add_manual_character": "Add character",
   "Character_informations": "Character informations",
@@ -339,6 +345,9 @@
     "Clear_search_history": "Clear search history",
     "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
     "Db_comments_position": "Database comments position",
+    "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Clickthrough_overlay": "Make overlay clickthrough",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -365,13 +374,13 @@
     "Patreon_features": "Patreon supporter features",
     "Contacts": "Contacts",
     "Add_new_contact": "New contact",
-    "Save_for_all": "Save for all",
+    "Save_for_all": "Save for all crafters",
     "User_not_verified": "User not verified, click to verify user",
     "More_than_100_lists_created": "More than 100 lists created",
     "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "Character verification",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
+      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
       "Validate": "Validate"
@@ -408,7 +417,10 @@
       "Give_list_name": "Give your new list a name",
       "Final_step": "Validation",
       "Creating_list": "Creating the list",
-      "Loading_items": "Loading items informations"
+      "Loading_items": "Loading items informations",
+      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Group_together": "Group materias together"
     }
   },
   "LIST": {
@@ -514,6 +526,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN":  "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD":  "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "Outdated",
     "GEAR": "Gear",
     "CONSUMABLE": "Consumable",
@@ -534,6 +550,7 @@
     "PLD": "PLD",
     "WAR": "WAR",
     "DRK": "DRK",
+    "GNB": "GNB",
     "WHM": "WHM",
     "SCH": "SCH",
     "AST": "AST",
@@ -543,6 +560,7 @@
     "SAM": "SAM",
     "BRD": "BRD",
     "MCH": "MCH",
+    "DNC": "DNC",
     "BLM": "BLM",
     "SMN": "SMN",
     "RDM": "RDM",
@@ -658,6 +676,7 @@
     "Not_found": "Page not found"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "Fixed notification",
     "Starting_echo_number": "Notification #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
@@ -720,6 +739,15 @@
     "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "SOLVER": {
+      "Hq_target": "Target HQ%",
+      "Use_rotation_as_seed": "Use current rotation as starting point",
+      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "Community rotations",
       "Community_rotation": "Community rotation",
@@ -746,7 +774,8 @@
         "TEALESS": "Tealess",
         "FOODLESS": "Foodless",
         "MAKERS_MARK": "Maker's Mark",
-        "MUSCLE_MEMORY": "Muscle Memory"
+        "MUSCLE_MEMORY": "Muscle Memory",
+        "REUSE": "Reuse"
       }
     },
     "CUSTOM": {
@@ -1201,6 +1230,12 @@
     "3d_model_help": "Preview 3D model",
     "Achievements": "Achievements",
     "Currencies": "Currencies",
+    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "Unlocks": "Unlocks",
+    "ITEM": {
+      "Masterpiece_base": "BASE",
+      "Masterpiece_bonus": "BONUS"
+    },
     "NODE": {
       "Items": "Items",
       "Possible_bonuses": "Possible bonuses",
@@ -1314,7 +1349,26 @@
       "Show_more": "Show {{amount}} more comments",
       "No_comments": "No comments",
       "Post": "Post",
-      "Editor_tip": "Database links will be processed and handled inside your message."
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+    },
+    "PATCH": {
+      "Open_patch_page": "Click here to open full patch changes in database",
+      "CONTENT": {
+        "Title": "Patch content",
+        "Achievements": "Achievements ({{amount}})",
+        "Actions": "Actions ({{amount}})",
+        "Crafting_actions": "Crafting actions ({{amount}})",
+        "Fates": "Fates ({{amount}})",
+        "Instances": "Instance content ({{amount}})",
+        "Items": "Items ({{amount}})",
+        "Leves": "Leves ({{amount}})",
+        "Maps": "Maps ({{amount}})",
+        "Monsters": "Monsters ({{amount}})",
+        "Npcs": "Npcs ({{amount}})",
+        "Quests": "Quests ({{amount}})",
+        "Statuses": "Statuses ({{amount}})",
+        "Traits": "Traits ({{amount}})"
+      }
     }
   },
   "SEARCH_TYPES": {
@@ -1377,7 +1431,7 @@
     "Copy_to_clipboard": "Copy inventory to clipboard",
     "Pool_copied": "Inventory copied to your clipboard",
     "Sort_alphabetically": "Sort alphabetically",
-    "Pages_range_label":  "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
   },
   "CURRENCY_SPENDING": {
     "Title": "Currency Spending guide",
@@ -1387,5 +1441,31 @@
   },
   "BLOG": {
     "Title": "Blog"
+  },
+  "ERRORS": {
+    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
+    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+  },
+  "SEARCH": {
+    "Sort_by": "Sort by: ",
+    "Sort_asc": "Ascending",
+    "Sort_desc": "Descending",
+    "Add_stat_filter": "Add stat filter",
+    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "SORT_BY": {
+      "Relevance": "Relevance",
+      "ID": "ID",
+      "Level": "Level",
+      "Ilvl": "Item level",
+      "Rlvl": "Recipe level"
+    }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }

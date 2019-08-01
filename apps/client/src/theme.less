@@ -27,6 +27,20 @@
   background: var(--topbar-color);
 }
 
+.ant-slider, .ant-slider:hover {
+  .ant-slider-handle {
+    border: solid 2px var(--primary-color) !important;
+  }
+
+  .ant-slider-track {
+    background-color: var(--primary-color);
+  }
+}
+
+.ant-select-focused .ant-select-selection, .ant-select-selection:focus, .ant-select-selection:active {
+  border-color: var(--primary-color) !important;
+}
+
 .ant-pagination-item-active {
   border-color: var(--primary-color);
 
@@ -145,7 +159,7 @@ a {
 }
 
 .ant-menu-dark, .ant-menu-dark .ant-menu-sub {
-  background: var(--topbar-color);
+  background: var(--topbar-color) !important;
 }
 
 .ant-layout-sider-zero-width-trigger {

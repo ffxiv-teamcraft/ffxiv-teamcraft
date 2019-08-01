@@ -13,6 +13,9 @@
   <label nz-checkbox [(ngModel)]="breakOnReclaim" (ngModelChange)="generateMacros()">
     {{'SIMULATOR.Break_on_reclaim' | translate}}
   </label>
+  <label nz-checkbox [(ngModel)]="macroLock" (ngModelChange)="generateMacros()">
+    {{'SIMULATOR.Macrolock' | translate}}
+  </label>
   <div class="fields">
     <nz-form-item>
       <nz-form-label>{{'SIMULATOR.Starting_echo_number' | translate}}</nz-form-label>

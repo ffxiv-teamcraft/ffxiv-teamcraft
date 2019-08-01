@@ -5,6 +5,7 @@ import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
 import * as monsters from '../../../../core/data/sources/monsters.json';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
+import { monsterDrops } from '../../../../core/data/sources/monster-drops';
 
 export class DropsExtractor extends AbstractExtractor<Drop[]> {
 
@@ -21,33 +22,61 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item !== undefined && item.drops !== undefined;
+    return item !== undefined;
   }
 
   protected doExtract(item: Item, itemData: ItemData): Drop[] {
     const drops: Drop[] = [];
-    item.drops.forEach(d => {
-      const partial = itemData.getPartial(d.toString(), 'mob');
-      if (partial !== undefined) {
-        const monsterId: string = Math.floor(d % 1000000).toString();
-        const zoneid = monsters[monsterId] !== undefined && monsters[monsterId].positions[0] ? monsters[monsterId].positions[0].zoneid : partial.obj.z;
-        const mapid = monsters[monsterId] !== undefined && monsters[monsterId].positions[0] ? monsters[monsterId].positions[0].map : partial.obj.z;
-        const position = monsters[monsterId] !== undefined && monsters[monsterId].positions[0] ? {
+    if (item.drops) {
+      item.drops.forEach(d => {
+        const partial = itemData.getPartial(d.toString(), 'mob');
+        if (partial !== undefined) {
+          const monsterId: string = Math.floor(d % 1000000).toString();
+          const zoneid = monsters[monsterId] !== undefined && monsters[monsterId].positions[0] ? monsters[monsterId].positions[0].zoneid : partial.obj.z;
+          const mapid = monsters[monsterId] !== undefined && monsters[monsterId].positions[0] ? monsters[monsterId].positions[0].map : partial.obj.z;
+          const position = monsters[monsterId] !== undefined && monsters[monsterId].positions[0] ? {
+              zoneid: zoneid,
+              x: +monsters[monsterId].positions[0].x,
+              y: +monsters[monsterId].positions[0].y
+            } :
+            null;
+          const drop: Drop = {
+            id: d,
+            mapid: mapid,
             zoneid: zoneid,
-            x: +monsters[monsterId].positions[0].x,
-            y: +monsters[monsterId].positions[0].y
-          } :
-          null;
-        const drop: Drop = {
-          id: d,
+            lvl: partial.obj.l,
+            position: position
+          };
+          drops.push(drop);
+        }
+      });
+    }
+    drops.push(...Object.keys(monsterDrops)
+      .filter(key => {
+        return monsterDrops[key].indexOf(item.id) > -1;
+      })
+      .map(monsterId => {
+        if (monsters[monsterId] === undefined) {
+          return {
+            id: +monsterId
+          };
+        }
+        const zoneid = monsters[monsterId].positions[0].zoneid;
+        const mapid = monsters[monsterId].positions[0].map;
+        const position = {
+          zoneid: zoneid,
+          x: +monsters[monsterId].positions[0].x,
+          y: +monsters[monsterId].positions[0].y
+        };
+        return {
+          id: +monsterId,
           mapid: mapid,
           zoneid: zoneid,
-          lvl: partial.obj.l,
+          lvl: monsters[monsterId].level,
           position: position
         };
-        drops.push(drop);
-      }
-    });
+      })
+    );
     return drops;
   }
 }

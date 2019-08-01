@@ -32,6 +32,8 @@ import { Consumable } from '../../model/consumable';
 import { FreeCompanyAction } from '../../model/free-company-action';
 import { BonusType } from '../../model/consumable-bonus';
 import { Craft } from '../../../../model/garland-tools/craft';
+import { IpcService } from '../../../../core/electron/ipc.service';
+import { PlatformService } from '../../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -84,7 +86,8 @@ export class RotationPanelComponent implements OnInit {
               private translate: TranslateService, private dialog: NzModalService,
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
               private router: Router, public consumablesService: ConsumablesService,
-              public freeCompanyActionsService: FreeCompanyActionsService) {
+              public freeCompanyActionsService: FreeCompanyActionsService, private ipc: IpcService,
+              public platformService: PlatformService) {
     this.actions$ = this.rotation$.pipe(
       filter(rotation => rotation !== null),
       map(rotation => CraftingActionsRegistry.deserializeRotation(rotation.rotation))
@@ -121,6 +124,10 @@ export class RotationPanelComponent implements OnInit {
         return new Simulation(rotation.recipe as Craft, CraftingActionsRegistry.deserializeRotation(rotation.rotation), crafterStats).run(true);
       })
     );
+  }
+
+  public openOverlay(rotation: CraftingRotation): void {
+    this.ipc.openOverlay(`/rotation-overlay/${rotation.$key}`, '/rotation-overlay', IpcService.ROTATION_DEFAULT_DIMENSIONS);
   }
 
   getBonusValue(bonusType: BonusType, baseValue: number, food: Consumable, medicine: Consumable, fcActions: FreeCompanyAction[]): number {

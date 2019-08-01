@@ -560,13 +560,67 @@
                         <div *ngFor="let recipe of link.recipes; let last=last" fxLayoutAlign="flex-start center"
                              fxLayoutGap="5px">
                           <img src="https://garlandtools.org/db/images/{{(recipe.job | jobAbbr)?.en}}.png" alt=""
-                               class="img-icon">
+                               class="smaller-img-icon">
                           <div>lvl {{recipe.level}} {{recipe.stars | ingameStars}}<span *ngIf="!last">,</span></div>
                         </div>
                       </div>
                     </div>
                   </div>
-
+                </div>
+              </div>
+            </div>
+            <div *ngIf="row.masterpiece" fxLayout="row wrap" fxLayoutGap="10px">
+              <div class="masterpiece-entry">
+                <div class="masterpiece-entry-title">{{'DB.ITEM.Masterpiece_base' | translate}}</div>
+                <div fxLayout="column" fxLayoutAlign="center center">
+                  <div class="masterpiece-rating">{{row.masterpiece.rating[0]}}
+                    - {{row.masterpiece.rating[1] - 1}}</div>
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-item-icon [itemId]="row.masterpiece.reward"
+                                     [icon]="row.masterpiece.reward | lazyIcon"
+                                     width="32"></app-item-icon>
+                      <div>x{{row.masterpiece.rewardAmount[0] | number}}</div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <img src="./assets/icons/exp.png" alt="exp" class="img-icon">
+                      <div>x{{row.masterpiece.xp[0] | number}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="masterpiece-entry" fxLayout="row" fxLayoutGap="20px">
+                <div class="masterpiece-entry-title">{{'DB.ITEM.Masterpiece_bonus' | translate}}</div>
+                <div fxLayout="column" fxLayoutAlign="center center">
+                  <div class="masterpiece-rating">{{row.masterpiece.rating[1]}}
+                    - {{row.masterpiece.rating[2] - 1}}</div>
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-item-icon [itemId]="row.masterpiece.reward"
+                                     [icon]="row.masterpiece.reward | lazyIcon"
+                                     width="32"></app-item-icon>
+                      <div>x{{row.masterpiece.rewardAmount[1] | number}}</div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <img src="./assets/icons/exp.png" alt="exp" class="img-icon">
+                      <div>x{{row.masterpiece.xp[1] | number}}</div>
+                    </div>
+                  </div>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="center center">
+                  <div class="masterpiece-rating">{{row.masterpiece.rating[2]}}+</div>
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-item-icon [itemId]="row.masterpiece.reward"
+                                     [icon]="row.masterpiece.reward | lazyIcon"
+                                     width="32"></app-item-icon>
+                      <div>x{{row.masterpiece.rewardAmount[2] | number}}</div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <img src="./assets/icons/exp.png" alt="exp" class="img-icon">
+                      <div>x{{row.masterpiece.xp[2] | number}}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -585,7 +639,8 @@
                       <div fxLayout="row wrap" fxLayoutGap="10px">
                         <div class="item-container" *ngFor="let currency of trade.currencies" fxLayout="row"
                              fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                          <app-item-icon [width]="32" [icon]="currency.icon" [itemName]="currency.id | itemName | i18n"
+                          <app-item-icon [width]="32" [icon]="currency.icon"
+                                         [itemName]="currency.id | itemName | i18n"
                                          [itemId]="currency.id" [hq]="currency.hq"></app-item-icon>
                           <div>{{currency.id | itemName | i18n}} <span>x{{currency.amount}}</span></div>
                           <app-db-button type="item" [id]="currency.id"></app-db-button>
@@ -663,7 +718,7 @@
                 </div>
                 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                   <img src="./assets/icons/exp.png" alt="exp" class="img-icon">
-                  <div>x{{row.supply.xp}}</div>
+                  <div>x{{row.supply.xp | number}}</div>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                   <img [src]="20 | lazyIcon" alt="GC Seals" class="img-icon">

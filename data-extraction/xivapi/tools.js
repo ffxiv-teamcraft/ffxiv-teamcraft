@@ -1,6 +1,6 @@
 const request = require('request');
 const { BehaviorSubject, Subject, interval } = require('rxjs');
-const { mergeMap, switchMap, map, tap, takeUntil, skip, filter, debounceTime, distinctUntilChanged } = require('rxjs/operators');
+const { shareReplay, mergeMap, switchMap, map, tap, takeUntil, skip, filter, debounceTime, distinctUntilChanged } = require('rxjs/operators');
 const path = require('path');
 const fs = require('fs');
 const Multiprogress = require('multi-progress');
@@ -15,7 +15,7 @@ const emptyQueue$ = new Subject();
 
 const stopInterval$ = emptyQueue$.pipe(
   distinctUntilChanged(),
-  debounceTime(10000),
+  debounceTime(30000),
   filter(empty => empty)
 );
 
@@ -79,7 +79,7 @@ function addQueryParam(url, paramName, paramValue) {
   }
 }
 
-const getAllPages = (endpoint, body) => {
+const getAllPages = (endpoint, body, label) => {
   let progress;
   const page$ = new BehaviorSubject(1);
   const complete$ = new Subject();
@@ -97,8 +97,11 @@ const getAllPages = (endpoint, body) => {
             console.error('Error', url);
             console.error(result);
           }
-          if (result.Pagination.Page === 1) {
-            progress = multi.newBar(`[:bar] :current/:total :etas - ${endpoint.substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`, {
+          if (progress === undefined) {
+            if (label === undefined) {
+              label = `${endpoint.substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`;
+            }
+            progress = multi.newBar(`[:bar] :current/:total :etas - ${label}`, {
               complete: '=',
               incomplete: ' ',
               width: 50,
@@ -120,6 +123,19 @@ const getAllPages = (endpoint, body) => {
     takeUntil(complete$)
   );
 };
+
+const aggregateAllPages = (endpoint, body, label) => {
+  const data = [];
+  const res$ = new Subject();
+  getAllPages(endpoint, body, label).subscribe(page => {
+    data.push(...page.Results);
+  },() => {},() => {
+    res$.next(data);
+    res$.complete();
+  });
+  return res$;
+};
+
 
 module.exports.getAllEntries = (endpoint, key, startsAt0) => {
   let progress;
@@ -164,11 +180,12 @@ module.exports.addQueryParam = (url, paramName, paramValue) => addQueryParam(url
 module.exports.get = (endpoint) => get(endpoint);
 
 module.exports.persistToJson = (fileName, content) => fs.writeFileSync(path.join(outputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
-module.exports.persistToJsonAsset = (fileName, content) => fs.writeFileSync(path.join(assetOutputFolder, `${fileName}.json`), JSON.stringify(content));
+module.exports.persistToJsonAsset = (fileName, content) => fs.writeFileSync(path.join(assetOutputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
 module.exports.persistToTypescript = (fileName, variableName, content) => {
   const ts = `export const ${variableName} = ${JSON.stringify(content, null, 2)};`;
   fs.writeFileSync(path.join(outputFolder, `${fileName}.ts`), ts);
 };
 
 module.exports.getAllPages = getAllPages;
+module.exports.aggregateAllPages = aggregateAllPages;
 

@@ -107,6 +107,7 @@
     "No_lists_matching": "필터와 일치하는 내용이 없습니다"
   },
   "COMMON": {
+    "Length": "길이",
     "Save": "저장",
     "Reset": "초기화",
     "Total": "총합",
@@ -141,6 +142,7 @@
     "Custom_sound": "알람소리 사용자 지정",
     "New_group": "새로운 알람 그룹",
     "Confirm_group_delete": "정말 이 그룹을 삭제하시겠습니까?",
+    "Delete_group_and_alarms": "그룹과 그룹 내 모든 알람 지우기",
     "Confirm_group_delete_with_alarms": "정말로 이 그룹과 그 안에 있는 알람을 지우시겠습니까?",
     "Add_note": "메모 추가",
     "Volume": "볼륨",
@@ -189,7 +191,8 @@
   "Yes": "O",
   "No": "X",
   "Crystals": "크리스탈",
-  "Gathering": "획득력",
+  "Gathering": "채집",
+  "Drops_or_GC": "던전/전리품 또는 총사령부",
   "Other": "기타",
   "Pre_crafts": "밑재료",
   "Items": "아이템",
@@ -247,10 +250,13 @@
   "filters/worn_by": "착용 직업",
   "filters/crafted_by": "제작 직업",
   "filters/item_category": "종류",
+  "filters/stats": "스탯 필터",
+  "filters/bonuses": "보너스 스탯 필터",
   "Adding_recipes": "{{amount}}개의 제작법을 {{listname}} 목록에 추가 중",
   "Recipe_Added": "1개의 아이템이 {{listname}} 목록에 추가되었습니다",
   "Recipes_Added": "{{itemcount}} 개의 아이템이 {{listname}}  목록에 추가되었습니다",
   "Character_name": "캐릭터 이름",
+  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "로그아웃 후 익명으로 계속하기",
   "Add_manual_character": "캐릭터 수동추가",
   "Character_informations": "캐릭터 정보",
@@ -339,6 +345,9 @@
     "Clear_search_history": "검색 기록 삭제",
     "Auto_mark_as_done_in_log": "목록에서 완료된 아이템이 있으면 수첩에 해당 아이템을 완료됨이라고 표시",
     "Db_comments_position": "DB댓글 위치",
+    "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
+    "Clickthrough_overlay": "오버레이 클릭 무시",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -365,13 +374,13 @@
     "Patreon_features": "Patreon 후원자 특전",
     "Contacts": "연락처",
     "Add_new_contact": "새 연락처",
-    "Save_for_all": "모두 저장",
+    "Save_for_all": "모든 직업에 적용",
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요",
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
-      "Guide": "계정 인증을 위해 Lodestone Profile Biography에 다음의 코드를 붙여넣으세요. \"{{userId}}\" 그리고 아래의 버튼을 눌러주세요.",
+      "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
       "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 이제 프로필에서 코드를 제거하셔도 됩니다.",
       "Error": "Bio에서 코드를 찾을 수 없습니다. 코드를 붙여넣고 변경이 되었는지 확인해주세요. 그리고 약 30초 뒤에 재시도해주세요.",
       "Validate": "인증"
@@ -408,7 +417,10 @@
       "Give_list_name": "새 목록 이름 설정",
       "Final_step": "확인",
       "Creating_list": "목록 생성",
-      "Loading_items": "아이템 정보 불러오는 중"
+      "Loading_items": "아이템 정보 불러오는 중",
+      "Estimate_overmeld_materia": "금단에 필요한 마테리아 갯수 예측",
+      "Multiply_tool_materia": "채집가(x2)와 제작자(x8) 도구에 해당하는 마테리아 합산",
+      "Group_together": "마테리아도 함께 묶기"
     }
   },
   "LIST": {
@@ -514,6 +526,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "만료",
     "GEAR": "장비",
     "CONSUMABLE": "소모품",
@@ -534,6 +550,7 @@
     "PLD": "나이트",
     "WAR": "전사",
     "DRK": "암기",
+    "GNB": "GNB",
     "WHM": "백마",
     "SCH": "학자",
     "AST": "점성",
@@ -543,6 +560,7 @@
     "SAM": "사무",
     "BRD": "음유",
     "MCH": "기공",
+    "DNC": "DNC",
     "BLM": "흑마",
     "SMN": "솬사",
     "RDM": "적마",
@@ -658,6 +676,7 @@
     "Not_found": "페이지를 찾을 수 없습니다."
   },
   "SIMULATOR": {
+    "Title": "제작 시뮬레이터",
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
@@ -716,10 +735,19 @@
     "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
     "Quality_needed": "HQ 100%까지 품질 {{amount}} 남음",
     "Rotation_tips": "로테이션 팁",
-    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
-    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
-    "Current_control": "Current control: {{value}}",
-    "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Progress_action_100_potency": "작업 효율 100% 스킬 사용시 작업량: {{value}}",
+    "Quality_action_100_potency": "가공 효율 100% 스킬 사용시 품질량: {{value}}",
+    "Current_control": "현재 가공 숙련도: {{value}}",
+    "Current_control_bonus": "현재 추가 가공 숙련도 (최대 3000)",
+    "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
+    "Solve_rotation": "로테이션 생성",
+    "Rotation_solver": "로테이션 생성기",
+    "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
+    "SOLVER": {
+      "Hq_target": "HQ 목표치",
+      "Use_rotation_as_seed": "현재 로테이션을 시작점부터 사용",
+      "Disclaimer": "해당 기능은 현재 개발중입니다. 이 기능은 시간에 따라 발전하는 AI이며, 완벽한 로테이션을 구성하기 위해 만들어진 것이 아닙니다. 매우 나쁜 결과가 나올 수도 있지만 매우 좋은 결과 또한 나올 수 있습니다. 좋지 않은 결과가 나오더라도 해당 결과를 버그로 제출하지 마세요."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "커뮤니티 로테이션",
       "Community_rotation": "커뮤니티 로테이션",
@@ -746,7 +774,8 @@
         "TEALESS": "약차 미사용",
         "FOODLESS": "음식 미사용",
         "MAKERS_MARK": "견실한 마음가짐",
-        "MUSCLE_MEMORY": "확신"
+        "MUSCLE_MEMORY": "확신",
+        "REUSE": "Reuse"
       }
     },
     "CUSTOM": {
@@ -1146,7 +1175,7 @@
     "Unique": "고유 아이템",
     "Dyeable": "염색가능",
     "Materia_sockets": "마테리아 슬롯",
-    "Advanced_melding": "마테리아화",
+    "Advanced_melding": "금단 장착",
     "Repair_job": "수리 직업",
     "Class_job": "클래스/직업",
     "Delay": "공격 주기",
@@ -1200,7 +1229,13 @@
     "3d_model_viewer": "3D 모델링 미리보기",
     "3d_model_help": "3D 모델링 미리보기",
     "Achievements": "업적",
-    "Currencies": "Currencies",
+    "Currencies": "화폐",
+    "Rowena_splendor": "로웨나 상회 거래 (별 = 20% 추가 경험치)",
+    "Unlocks": "Unlocks",
+    "ITEM": {
+      "Masterpiece_base": "기본",
+      "Masterpiece_bonus": "보너스"
+    },
     "NODE": {
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
@@ -1220,7 +1255,7 @@
       "Rewards": "보상",
       "Repeatable": "반복가능",
       "Beast_tribe_rank": "야만족 우호 단계",
-      "Chain_length": "Following quests"
+      "Chain_length": "연계 퀘스트 수"
     },
     "NPC": {
       "Other_entries": "다른 출현위치",
@@ -1239,7 +1274,8 @@
       "Allowance_cost": "의뢰 수주권 소모량",
       "Rewards": "획득 가능한 보상",
       "Client": "의뢰인",
-      "Issuer": "발행인"
+      "Issuer": "발행인",
+      "Turn_ins": "추가 요구 횟수"
     },
     "MOB": {
       "Known_spawns": "몬스터 출현 장소",
@@ -1313,7 +1349,26 @@
       "Show_more": "{{amount}} 개의 댓글 더 보기",
       "No_comments": "댓글 없음",
       "Post": "게시",
-      "Editor_tip": "댓글 내 데이터베이스 링크는 자동으로 DB로 변환됩니다."
+      "Editor_tip": "다른 페이지 링크를 생성하기 위해 <page type>:\"<Content Name>\"을 입력하세요. 예시: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". 지원하는 페이지 종류: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+    },
+    "PATCH": {
+      "Open_patch_page": "Click here to open full patch changes in database",
+      "CONTENT": {
+        "Title": "Patch content",
+        "Achievements": "Achievements ({{amount}})",
+        "Actions": "Actions ({{amount}})",
+        "Crafting_actions": "Crafting actions ({{amount}})",
+        "Fates": "Fates ({{amount}})",
+        "Instances": "Instance content ({{amount}})",
+        "Items": "Items ({{amount}})",
+        "Leves": "Leves ({{amount}})",
+        "Maps": "Maps ({{amount}})",
+        "Monsters": "Monsters ({{amount}})",
+        "Npcs": "Npcs ({{amount}})",
+        "Quests": "Quests ({{amount}})",
+        "Statuses": "Statuses ({{amount}})",
+        "Traits": "Traits ({{amount}})"
+      }
     }
   },
   "SEARCH_TYPES": {
@@ -1386,5 +1441,31 @@
   },
   "BLOG": {
     "Title": "블로그"
+  },
+  "ERRORS": {
+    "Http_request_error": "{{tool}}에 문제점이 존재합니다. #announcements 디스코드 채널을 확인하거나 #bugs 채널에 제보해주세요.",
+    "Firebase_blocked": "데이터베이스에 접근할 수 없습니다. 무언가 문제가 있거나 인터넷이 끊겼을 수 있습니다."
+  },
+  "SEARCH": {
+    "Sort_by": "정렬 기준: ",
+    "Sort_asc": "오름차순",
+    "Sort_desc": "내림차순",
+    "Add_stat_filter": "스탯 필터 추가",
+    "Add_bonus_stat_filter": "보너스 스탯 필터 추가",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "SORT_BY": {
+      "Relevance": "관련성",
+      "ID": "ID",
+      "Level": "레벨",
+      "Ilvl": "아이템 레벨",
+      "Rlvl": "제작 레벨"
+    }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }

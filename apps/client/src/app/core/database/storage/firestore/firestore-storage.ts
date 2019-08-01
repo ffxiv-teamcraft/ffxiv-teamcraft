@@ -17,6 +17,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   add(data: T, uriParams?: any): Observable<string> {
     const toAdd = JSON.parse(JSON.stringify(data));
     delete toAdd.$key;
+    delete toAdd.notFound;
     return from(this.firestore.collection(this.getBaseUri(uriParams)).add(toAdd))
       .pipe(
         map((ref: any) => {
@@ -42,6 +43,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   update(uid: string, data: Partial<T>, uriParams?: any): Observable<void> {
     const toUpdate = JSON.parse(JSON.stringify(data));
     delete toUpdate.$key;
+    delete toUpdate.notFound;
     if (uid === undefined || uid === null || uid === '') {
       throw new Error('Empty uid');
     }
@@ -52,6 +54,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     this.pendingChangesService.addPendingChange(`set ${this.getBaseUri(uriParams)}/${uid}`);
     const toSet = JSON.parse(JSON.stringify(data));
     delete toSet.$key;
+    delete toSet.notFound;
     if (uid === undefined || uid === null || uid === '') {
       throw new Error('Empty uid');
     }

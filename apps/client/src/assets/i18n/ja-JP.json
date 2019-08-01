@@ -107,6 +107,7 @@
     "No_lists_matching": "フィルターに一致するリストがありません"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "保存",
     "Reset": "リセット",
     "Total": "合計",
@@ -141,6 +142,7 @@
     "Custom_sound": "カスタムアラート音",
     "New_group": "新しいアラームグループ",
     "Confirm_group_delete": "本当にこのグループを削除しますか？",
+    "Delete_group_and_alarms": "Delete group with all alarms",
     "Confirm_group_delete_with_alarms": "本当にこのグループや全てのアラームを削除しますか？",
     "Add_note": "メモを追加する",
     "Volume": "ボリューム",
@@ -190,6 +192,7 @@
   "No": "いいえ",
   "Crystals": "クリスタル",
   "Gathering": "採集",
+  "Drops_or_GC": "Dungeons/Drops or GC",
   "Other": "その他",
   "Pre_crafts": "下位素材",
   "Items": "アイテム",
@@ -247,10 +250,13 @@
   "filters/worn_by": "装備できるジョブ",
   "filters/crafted_by": "クラフター",
   "filters/item_category": "アイテム種類",
+  "filters/stats": "Stats filters",
+  "filters/bonuses": "Stat bonuses filters",
   "Adding_recipes": "{{amount}} 個のレシピを {{listname}} リストに追加中",
   "Recipe_Added": "１個のアイテムが {{listname}} リストに追加されました",
   "Recipes_Added": "{{itemcount}} 個のアイテムが {{listname}} リストが追加されました",
   "Character_name": "キャラクター名",
+  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "ログアウト後匿名で続ける",
   "Add_manual_character": "キャラクターを追加する",
   "Character_informations": "キャラクター情報",
@@ -339,6 +345,9 @@
     "Clear_search_history": "検索履歴を削除",
     "Auto_mark_as_done_in_log": "リストから完了されたアイテムがあれば、手帳に該当アイテムを完了されたと表示する",
     "Db_comments_position": "データベースのコメント位置",
+    "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Clickthrough_overlay": "Make overlay clickthrough",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -365,13 +374,13 @@
     "Patreon_features": "Patreonサポーターの特典",
     "Contacts": "連絡先",
     "Add_new_contact": "新しい連絡先",
-    "Save_for_all": "全て保存する",
+    "Save_for_all": "Save for all crafters",
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "More_than_100_lists_created": "100個以上のリストを作成",
     "Veteran": "ベテラン",
     "VERIFICATION": {
       "Title": "キャラクター認証",
-      "Guide": "アカウントの認証のために Lodestone Profile Biographyに次のコードを貼り付けて下さい。 \"{{userId}}\" そして、下のボタンを押して下さい。",
+      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "キャラクターが認証されました！このポップアップを閉じてもよろしいです。プロフィールからコードを消してもよろしいです。",
       "Error": "Bioからコードを見つかりませんでした。コードを貼り付けてから、変更されたのか、ご確認下さい。そして約30秒後にやり直して下さい",
       "Validate": "認証"
@@ -408,7 +417,10 @@
       "Give_list_name": "新しいリストに名前を付ける",
       "Final_step": "検証",
       "Creating_list": "リストを作成する",
-      "Loading_items": "アイテム情報を読み込み中"
+      "Loading_items": "アイテム情報を読み込み中",
+      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Group_together": "Group materias together"
     }
   },
   "LIST": {
@@ -514,6 +526,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "古い",
     "GEAR": "装備",
     "CONSUMABLE": "薬品・調理品",
@@ -534,6 +550,7 @@
     "PLD": "ナイト",
     "WAR": "戦士",
     "DRK": "暗黒戦士",
+    "GNB": "GNB",
     "WHM": "白魔道士",
     "SCH": "学者",
     "AST": "占星術師",
@@ -543,6 +560,7 @@
     "SAM": "侍",
     "BRD": "吟遊詩人",
     "MCH": "機工士",
+    "DNC": "DNC",
     "BLM": "黒魔道士",
     "SMN": "召喚士",
     "RDM": "赤魔道士",
@@ -658,6 +676,7 @@
     "Not_found": "ページが見つかりません。"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
@@ -720,6 +739,15 @@
     "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "SOLVER": {
+      "Hq_target": "Target HQ%",
+      "Use_rotation_as_seed": "Use current rotation as starting point",
+      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "コミュニティースキル回し",
       "Community_rotation": "コミュニティースキル回し",
@@ -746,7 +774,8 @@
         "TEALESS": "薬品非使用",
         "FOODLESS": "食事非使用",
         "MAKERS_MARK": "堅実の心得",
-        "MUSCLE_MEMORY": "確信"
+        "MUSCLE_MEMORY": "確信",
+        "REUSE": "Reuse"
       }
     },
     "CUSTOM": {
@@ -1201,6 +1230,12 @@
     "3d_model_help": "3Dモデルプレビュー",
     "Achievements": "Achievements",
     "Currencies": "Currencies",
+    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "Unlocks": "Unlocks",
+    "ITEM": {
+      "Masterpiece_base": "BASE",
+      "Masterpiece_bonus": "BONUS"
+    },
     "NODE": {
       "Items": "アイテム",
       "Possible_bonuses": "ロケーション・エフェクト",
@@ -1239,7 +1274,8 @@
       "Allowance_cost": "リーヴ受注券の消耗量",
       "Rewards": "獲得可能な報酬",
       "Client": "依頼人",
-      "Issuer": "発行者"
+      "Issuer": "発行者",
+      "Turn_ins": "Turn-ins"
     },
     "MOB": {
       "Known_spawns": "モンスター出現場所",
@@ -1313,7 +1349,26 @@
       "Show_more": "{{amount}} 件のコメントを見る",
       "No_comments": "コメントなし",
       "Post": "投稿",
-      "Editor_tip": "コメント内のデータベースリンクは自動にDBに変換されます。"
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+    },
+    "PATCH": {
+      "Open_patch_page": "Click here to open full patch changes in database",
+      "CONTENT": {
+        "Title": "Patch content",
+        "Achievements": "Achievements ({{amount}})",
+        "Actions": "Actions ({{amount}})",
+        "Crafting_actions": "Crafting actions ({{amount}})",
+        "Fates": "Fates ({{amount}})",
+        "Instances": "Instance content ({{amount}})",
+        "Items": "Items ({{amount}})",
+        "Leves": "Leves ({{amount}})",
+        "Maps": "Maps ({{amount}})",
+        "Monsters": "Monsters ({{amount}})",
+        "Npcs": "Npcs ({{amount}})",
+        "Quests": "Quests ({{amount}})",
+        "Statuses": "Statuses ({{amount}})",
+        "Traits": "Traits ({{amount}})"
+      }
     }
   },
   "SEARCH_TYPES": {
@@ -1386,5 +1441,31 @@
   },
   "BLOG": {
     "Title": "Blog"
+  },
+  "ERRORS": {
+    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
+    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+  },
+  "SEARCH": {
+    "Sort_by": "Sort by: ",
+    "Sort_asc": "Ascending",
+    "Sort_desc": "Descending",
+    "Add_stat_filter": "Add stat filter",
+    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "SORT_BY": {
+      "Relevance": "Relevance",
+      "ID": "ID",
+      "Level": "Level",
+      "Ilvl": "Item level",
+      "Rlvl": "Recipe level"
+    }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }

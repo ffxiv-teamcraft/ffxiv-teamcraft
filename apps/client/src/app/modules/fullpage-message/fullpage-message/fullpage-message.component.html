@@ -1,5 +1,5 @@
-<div class="container" [style.height]="height">
-  <h2 [style.fontSize]="fontSize">
+<div class="container" [style.height]="height | ifMobile: '200px'">
+  <h2 [style.fontSize]="fontSize | ifMobile: '1.2rem'">
     <ng-content></ng-content>
   </h2>
 </div>

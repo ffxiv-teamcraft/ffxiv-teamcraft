@@ -1,5 +1,12 @@
 @import '../../../../common';
 
+.patch-banner {
+  max-width: 600px;
+  @media @mobile {
+    max-width: 80vw;
+  }
+}
+
 .search-box {
   width: 80%;
   margin: auto;
@@ -8,8 +15,21 @@
   }
 }
 
+.search-tip {
+  font-style: italic;
+  font-size: 11px;
+}
+
 .result-type {
   opacity: .8;
+}
+
+.order-boxes {
+  padding: 10px;
+
+  > nz-select {
+    min-width: 200px;
+  }
 }
 
 .search-type {
@@ -57,6 +77,24 @@ nz-form-item {
   }
 }
 
+.stat-filter-row {
+
+  .level-range {
+    top: -2px;
+  }
+
+  ::ng-deep .ant-select-selection {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+
+  .min-input {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
 .level-range {
   width: 200px;
 
@@ -73,7 +111,6 @@ nz-form-item {
 
 .filters {
   width: 80%;
-  margin: 10px auto auto;
   @media @mobile {
     width: 90%;
   }

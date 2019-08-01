@@ -1,7 +1,10 @@
 <div *ngIf="servers$ | async as availableServers; else loading">
+  <nz-alert *ngIf="localstorageUser.stats !== {} && mandatory" nzType="warning" nzShowIcon
+            [nzMessage]="'COMMON.Warning' | translate" [nzDescription]="'Character_add_warning' | translate">
+  </nz-alert>
   <nz-form-item>
     <nz-form-label nzRequired nzFor="serverName">{{'Server_name' | translate}}</nz-form-label>
-    <input type="text" id="serverName" nz-input [formControl]="selectedServer" [nzAutocomplete]="auto">
+    <input type="text" id="serverName" nz-input [formControl]="selectedServer" [nzAutocomplete]="auto" autofocus>
     <nz-autocomplete #auto>
       <nz-auto-option *ngFor="let server of autoCompleteRows$ | async" [nzValue]="server">
         {{server}}
@@ -14,7 +17,8 @@
     </nz-form-label>
     <input type="text" id="characterName" nz-input [formControl]="characterName">
   </nz-form-item>
-  <button nz-button nzType="primary" (click)="setKoreanCharacter()" *ngIf="selectedServer.value && selectedServer.value.toString().toLowerCase().indexOf('korean server') !== -1">
+  <button nz-button nzType="primary" (click)="setKoreanCharacter()"
+          *ngIf="selectedServer.value && selectedServer.value.toString().toLowerCase().indexOf('korean server') !== -1">
     {{'Add_manual_character' | translate}}
   </button>
 </div>
@@ -52,7 +56,8 @@
   <div *ngIf="lodestoneIdCharacter$ | async as lodestoneIdCharacter">
     <nz-list-item [nzActions]="[selectAction]">
       <ng-template #selectAction>
-        <button nz-button nzType="primary" (click)="selectCharacter(lodestoneIdCharacter)">{{'COMMON.Select' | translate}}</button>
+        <button nz-button nzType="primary"
+                (click)="selectCharacter(lodestoneIdCharacter)">{{'COMMON.Select' | translate}}</button>
       </ng-template>
       <nz-list-item-meta
         [nzTitle]="nzTitle"

@@ -218,7 +218,7 @@
                     <img src="./assets/icons/exp.png" alt="exp" class="img-icon" *ngIf="reward.type === 'exp'">
                     <img src="./assets/icons/instance.png" alt="exp" class="img-icon" *ngIf="reward.type === 'instance'"
                          routerLink="/db/{{translate.currentLang}}/instance/{{reward.id}}">
-                    <img [src]="reward.id | actionIcon" alt="" *ngIf="reward.type === 'action'"
+                    <img [src]="reward.id | actionIcon | xivapiIcon" alt="" *ngIf="reward.type === 'action'"
                          [appXivdbActionTooltip]="reward.id">
                   </ng-template>
                   <ng-template #rewardTitle>

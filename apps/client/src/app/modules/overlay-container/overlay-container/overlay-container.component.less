@@ -1,0 +1,34 @@
+.alarms-overlay-container {
+  padding: 22px 0;
+  overflow: auto;
+}
+
+.overlay-topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-left: 10px;
+  background-color: rgba(0, 0, 0, .9);
+  z-index: 1000;
+
+  .close-button {
+    padding: 0 10px;
+    height: 21px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(255, 0, 0, .4);
+    }
+  }
+
+  .drag-handle {
+    -webkit-app-region: drag;
+    padding-right: 10px;
+    height: 21px;
+    cursor: move;
+  }
+
+  ::ng-deep .ant-slider {
+    margin: 5px;
+  }
+}

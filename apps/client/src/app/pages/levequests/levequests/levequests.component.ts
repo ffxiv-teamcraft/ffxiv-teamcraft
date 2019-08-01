@@ -28,6 +28,7 @@ import { DataService } from '../../../core/api/data.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-levequests',
@@ -78,7 +79,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               private l12n: LocalizedDataService, private i18n: I18nToolsService,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
               private dataService: DataService, private lazyData: LazyDataService,
-              private auth: AuthFacade) {
+              private auth: AuthFacade, private settings: SettingsService) {
     super();
     this.jobList = this.gt.getJobs().slice(8, 16).concat([this.gt.getJob(18)]);
   }
@@ -137,7 +138,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
             itemIcon: leve.CraftLeve.Item0.Icon,
             exp: leve.ExpReward,
             gil: leve.GilReward,
-            hq: false,
+            hq: this.settings.alwaysHQLeves,
             amount: globalExp ? 0 : 1,
             itemQuantity: leve.CraftLeve.ItemCount0
               + leve.CraftLeve.ItemCount1
@@ -200,7 +201,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       exp = this.startingExp + leveExp;
     }
     let level = this.startingLevel;
-    while (exp - this.getMaxExp(level) >= 0 && level < 69) {
+    while (exp - this.getMaxExp(level) >= 0 && level < 79) {
       exp -= this.getMaxExp(level);
       level++;
     }

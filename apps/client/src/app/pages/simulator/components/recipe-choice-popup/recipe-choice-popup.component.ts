@@ -70,6 +70,6 @@ export class RecipeChoicePopupComponent {
   }
 
   close(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 }

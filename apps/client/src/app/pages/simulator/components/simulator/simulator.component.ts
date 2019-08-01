@@ -9,7 +9,7 @@ import {
   map,
   pairwise,
   shareReplay,
-  startWith,
+  startWith, switchMap,
   takeUntil,
   tap
 } from 'rxjs/operators';
@@ -65,6 +65,10 @@ import {
   SimulationReliabilityReport,
   SimulationResult
 } from '@ffxiv-teamcraft/simulator';
+import { SolverPopupComponent } from '../solver-popup/solver-popup.component';
+import { SettingsService } from '../../../../modules/settings/settings.service';
+import { IpcService } from '../../../../core/electron/ipc.service';
+import { PlatformService } from '../../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-simulator',
@@ -81,6 +85,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   @Input()
   public set recipe(recipe: Craft) {
     this.recipe$.next(recipe);
+    this._recipe = recipe;
     if (recipe.id) {
       this._recipeId = recipe.id;
     }
@@ -95,6 +100,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public safeMode$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('simulator:safe-mode') === 'true');
 
   private _recipeId: string;
+  private _recipe: Craft;
 
   public snapshotMode = false;
 
@@ -225,13 +231,14 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
   };
 
-  constructor(private htmlTools: HtmlToolsService,
+  constructor(private htmlTools: HtmlToolsService, public settings: SettingsService,
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
-              private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef) {
+              private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
+              private ipc: IpcService, public platformService: PlatformService) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$),
       filter(key => key !== undefined)
@@ -260,6 +267,37 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       .sort(this.consumablesSortFn);
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions)
       .sort(this.freeCompanyActionsSortFn);
+  }
+
+  openRotationSolver(): void {
+    this.simulation$.pipe(
+      first(),
+      switchMap(simulation => {
+        return this.dialog.create({
+          nzFooter: null,
+          nzContent: SolverPopupComponent,
+          nzComponentParams: {
+            recipe: simulation.recipe,
+            stats: simulation.crafterStats,
+            seed: simulation.actions || []
+          },
+          nzTitle: this.translate.instant('SIMULATOR.Rotation_solver')
+        }).afterClose;
+      }),
+      filter(res => res && res.length > 0)
+    ).subscribe(rotation => {
+      this.actions$.next([...rotation]);
+      this.dirty = true;
+      this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
+    });
+  }
+
+  public openOverlay(rotation: CraftingRotation): void {
+    this.ipc.openOverlay(`/rotation-overlay/${rotation.$key}`, '/rotation-overlay', IpcService.ROTATION_DEFAULT_DIMENSIONS);
+  }
+
+  nameCopied(key: string, args?: any): void {
+    this.message.success(this.translate.instant(key, args));
   }
 
   disableEvent(event: any): void {
@@ -436,7 +474,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         rotation.defaultItemId = this.item.id;
         rotation.defaultRecipeId = this._recipeId;
       }
-      rotation.recipe = recipe;
+      rotation.recipe = this._recipe;
       rotation.stats = {
         jobId: stats.jobId,
         specialist: stats.specialist,
@@ -737,7 +775,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       map(rotation => {
         const stats = rotation.stats;
         if (rotation.stats) {
-          const levels = [70, 70, 70, 70, 70, 70, 70, 70];
+          const levels = [80, 80, 80, 80, 80, 80, 80, 80];
           levels[stats.jobId - 8] = stats.level;
           return new CrafterStats(
             stats.jobId,
@@ -758,7 +796,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         return (recipe.ingredients || [])
           .filter(i => i.id > 20 && i.quality !== undefined && !fakeHQItems.some(id => i.id === id))
           .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
-      })
+      }),
+      shareReplay(1)
     );
 
     this.crafterStats$ = combineLatest([merge(statsFromRecipe$, this.customStats$), statsFromRotation$, this.route.queryParamMap, this.authFacade.userId$, this.rotation$]).pipe(
@@ -793,7 +832,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.job$
     ]).pipe(
       map(([stats, bonuses, loggedIn, job]) => {
-        const levels = loggedIn ? stats.levels : [70, 70, 70, 70, 70, 70, 70, 70];
+        const levels = loggedIn ? stats.levels : [80, 80, 80, 80, 80, 80, 80, 80];
         levels[(job || stats.jobId) - 8] = stats.level;
         return new CrafterStats(
           job || stats.jobId,

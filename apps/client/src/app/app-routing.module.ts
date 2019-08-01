@@ -53,6 +53,10 @@ const routes: Routes = [
     loadChildren: './pages/alarms-overlay/alarms-overlay.module#AlarmsOverlayModule'
   },
   {
+    path: 'rotation-overlay',
+    loadChildren: './pages/rotation-overlay/rotation-overlay.module#RotationOverlayModule'
+  },
+  {
     path: 'community-lists',
     loadChildren: './pages/community-lists/community-lists.module#CommunityListsModule'
   },

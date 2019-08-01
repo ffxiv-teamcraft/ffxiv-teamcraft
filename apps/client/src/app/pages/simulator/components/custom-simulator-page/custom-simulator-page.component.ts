@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { combineLatest, Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { combineLatest, merge, Observable } from 'rxjs';
+import { filter, map, startWith, tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { SeoPageComponent } from '../../../../core/seo/seo-page-component';
 import { SeoService } from '../../../../core/seo/seo.service';
 import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 
 @Component({
   selector: 'app-custom-simulator-page',
@@ -35,19 +36,32 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
       }
     });
     this.recipeForm = this.fb.group({
-      rlvl: [430, Validators.required],
+      rlvl: [450, Validators.required],
       level: [80, Validators.required],
-      progress: [3728, Validators.required],
-      quality: [29591, Validators.required],
-      durability: [70, Validators.required]
+      progress: [5654, Validators.required],
+      quality: [37440, Validators.required],
+      durability: [70, Validators.required],
+      suggCraft: [2140, Validators.required],
+      suggCtrl: [1990, Validators.required]
     });
-    this.recipe$ = this.recipeForm.valueChanges.pipe(
+    const recipeFromRotation$ = this.rotationsFacade.selectedRotation$.pipe(
+      filter(rotation => {
+        return rotation.recipe !== undefined;
+      }),
+      map((rotation: CraftingRotation) => {
+        return rotation.recipe;
+      })
+    );
+
+    const recipeFromForm$ = this.recipeForm.valueChanges.pipe(
       startWith({
-        rlvl: 430,
+        rlvl: 450,
         level: 80,
-        progress: 3728,
-        quality: 29591,
-        durability: 70
+        progress: 5654,
+        quality: 37440,
+        durability: 70,
+        suggCraft: 2140,
+        suggCtrl: 1990
       }),
       map(form => {
         return {
@@ -55,8 +69,24 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
           lvl: form.level,
           durability: form.durability,
           quality: form.quality,
-          progress: form.progress
+          progress: form.progress,
+          suggestedCraftsmanship: form.suggCraft,
+          suggestedControl: form.suggCtrl
         };
+      })
+    );
+
+    this.recipe$ = merge(recipeFromForm$, recipeFromRotation$).pipe(
+      tap(recipe => {
+        this.recipeForm.patchValue({
+          rlvl: recipe.rlvl,
+          level: recipe.lvl,
+          progress: recipe.progress,
+          quality: recipe.quality,
+          durability: recipe.durability,
+          suggCraft: recipe.suggestedCraftsmanship,
+          suggCtrl: recipe.suggestedControl
+        }, { emitEvent: false });
       })
     );
   }

@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { ExternalListLinkParser } from './link-parser/external-list-link-parser';
 import { FfxivCraftingLinkParser } from './link-parser/ffxiv-crafting-link-parser';
 import { AriyalaLinkParser } from './link-parser/ariyala-link-parser';
+import { AriyalaMateriaOptions } from './link-parser/ariyala-materia-options';
 import { HttpClient } from '@angular/common/http';
+import { XivapiService } from '@xivapi/angular-client';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { NzModalRef } from 'ng-zorro-antd';
@@ -18,15 +20,17 @@ export class ListImportPopupComponent {
 
   importLinkSupported: boolean;
 
-  linkParsers: ExternalListLinkParser[] = [new FfxivCraftingLinkParser(), new AriyalaLinkParser(this.http)];
+  linkParsers: ExternalListLinkParser[] = [new FfxivCraftingLinkParser(), new AriyalaLinkParser(this.http, this.xivapi)];
 
   linkType: string;
 
   linkTypes: string;
 
+  materiaOptions: AriyalaMateriaOptions = new AriyalaMateriaOptions();
+
   inProgress = false;
 
-  constructor(private http: HttpClient, private router: Router, private ref: NzModalRef) {
+  constructor(private http: HttpClient, private xivapi: XivapiService, private router: Router, private ref: NzModalRef) {
     this.linkTypes = this.linkParsers.map(parser => parser.getName()).join(', ');
   }
 
@@ -43,6 +47,10 @@ export class ListImportPopupComponent {
     const parser = this.linkParsers.find(p => p.canParse(this.importLink));
     if (parser !== undefined) {
       this.inProgress = true;
+      if (parser instanceof AriyalaLinkParser) {
+        parser.setMateriaOptions(this.materiaOptions);
+      }
+
       parser.parse(this.importLink).pipe(first()).subscribe(code => {
         this.router.navigate(['/import', code]);
         this.ref.close();

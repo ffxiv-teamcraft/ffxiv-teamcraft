@@ -4,13 +4,24 @@ const fs = require('fs');
 const http = require('https');
 const { map, tap, switchMap, catchError, first } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
-const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
+const { aggregateAllPages, getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 const Multiprogress = require('multi-progress');
 const multi = new Multiprogress(process.stdout);
 
 const nodes = {};
 const gatheringPointToBaseId = {};
-const aetherytes = [];
+const aetherytes = [
+  {
+    'id': 73,
+    'zoneid': 2100,
+    'map': 215,
+    'placenameid': 2100,
+    'x': 11,
+    'y': 14,
+    'type': 0,
+    'nameid': 2123
+  }
+];
 const monsters = {};
 const npcs = {};
 const aetheryteNameIds = {};
@@ -43,16 +54,21 @@ let todo = [
   'aetherytes',
   'achievements',
   'recipes',
-  'actions'
+  'actions',
+  'monsterDrops'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
 if (onlyIndex > -1) {
-  todo = [process.argv[onlyIndex + 1]];
+  todo = [...process.argv.slice(onlyIndex + 1)];
 }
 
 function hasTodo(operation) {
-  return todo.indexOf(operation) > -1;
+  const hasTodo = todo.indexOf(operation) > -1;
+  if (hasTodo) {
+    console.log(`========== ${operation} ========== `);
+  }
+  return hasTodo;
 }
 
 fs.existsSync('output') || fs.mkdirSync('output');
@@ -222,6 +238,17 @@ handleAetheryte = (row) => {
     return;
   }
 
+  // Ok'Zundu is handled by hand.
+  if (+row.ENpcResidentID === 73) {
+    return;
+  }
+
+  // Tailfeather needs a fix for its map id
+  if (+row.ENpcResidentID === 76) {
+    row.PlaceNameID = 2000;
+    row.MapID = 212;
+  }
+
   aetherytes.push({
     id: row.ENpcResidentID === '2147483647' ? 12 : +row.ENpcResidentID,
     zoneid: +row.PlaceNameID,
@@ -235,6 +262,9 @@ handleAetheryte = (row) => {
 };
 
 handleMonster = (row, memoryData) => {
+  if (+row.BNpcNameID === 0) {
+    return;
+  }
   const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
   monsters[row.BNpcNameID] = monsters[row.BNpcNameID] || {
     baseid: +row.BNpcBaseID,
@@ -862,6 +892,22 @@ if (hasTodo('mobs')) {
   });
 }
 
+if (hasTodo('places')) {
+  const places = {};
+  getAllPages('https://xivapi.com/PlaceName?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(place => {
+      places[place.ID] = {
+        en: place.Name_en,
+        ja: place.Name_ja,
+        de: place.Name_de,
+        fr: place.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('places', places);
+  });
+}
+
 if (hasTodo('hunts')) {
   const huntZones = [
     134,
@@ -973,13 +1019,14 @@ if (hasTodo('combos')) {
 
 if (hasTodo('statuses')) {
   const statuses = {};
-  getAllPages('https://xivapi.com/Status?columns=ID,Name_*').subscribe(page => {
+  getAllPages('https://xivapi.com/Status?columns=ID,Name_*,Icon').subscribe(page => {
     page.Results.forEach(status => {
       statuses[status.ID] = {
         en: status.Name_en,
         de: status.Name_de,
         ja: status.Name_ja,
-        fr: status.Name_fr
+        fr: status.Name_fr,
+        icon: status.Icon
       };
     });
   }, null, () => {
@@ -1080,6 +1127,7 @@ if (hasTodo('recipes')) {
         level: recipe.RecipeLevelTable.ClassJobLevel,
         yields: recipe.AmountResult,
         result: recipe.ItemResultTargetID,
+        stars: recipe.RecipeLevelTable.Stars,
         ingredients: Object.keys(recipe)
           .filter(k => /ItemIngredient\dTargetID/.test(k))
           .sort((a, b) => a < b ? -1 : 1)
@@ -1131,5 +1179,139 @@ if (hasTodo('actions')) {
     persistToJson('action-icons', icons);
     persistToJsonAsset('actions', actions);
     persistToJsonAsset('craft-actions', craftActions);
+  });
+}
+
+if (hasTodo('reductions')) {
+  // Base handmade data
+  const reductions = {
+    12936: [5214, 5218, 12968, 12971],
+    12937: [12966, 12967, 12969, 12972],
+    12938: [5220, 5224],
+    12939: [12970, 12973],
+    12940: [12831, 12833],
+    15648: [15948, 15949],
+    20014: [20009, 19916, 20181],
+    20015: [20010],
+    20013: [20012, 20011, 20180],
+    20017: [20024],
+    20016: [19937],
+    23182: [23220, 23221]
+  };
+  const items = require('../../apps/client/src/assets/data/items.json');
+  const sheetRows = [];
+  // Credits to Hiems Whiterock / M'aila Batih for the data sheet
+  fs.createReadStream(path.join(__dirname, 'input/shb-fish-desynth.csv'), 'utf-8')
+    .pipe(csv())
+    .on('data', (row) => {
+      sheetRows.push(row);
+    })
+    .on('end', () => {
+      // Pop first item, as it's the credit row
+      sheetRows.pop();
+      sheetRows.forEach((row, index) => {
+        const itemReductions = [];
+        const itemId = +Object.keys(items).find(key => items[key].en.toLowerCase() === row.Item.toLowerCase());
+        if (isNaN(itemId)) {
+          console.log('Invalid row', index, row);
+        } else {
+          for (let i = 0; i < 5; i++) {
+            if (row[`r${i}`] && row[`r${i}`].length > 0) {
+              const reductionId = +Object.keys(items).find(key => items[key].en.toLowerCase() === row[`r${i}`].toLowerCase());
+              if (isNaN(reductionId)) {
+                console.log('Invalid row reduction', index, i, row);
+              } else {
+                itemReductions.push(reductionId);
+              }
+            }
+          }
+          reductions[itemId] = itemReductions;
+        }
+      });
+      persistToTypescript('reductions', 'reductions', reductions);
+    });
+}
+
+if (hasTodo('monsterDrops')) {
+  // Base handmade data
+  const drops = {};
+  const monsters = require('../../apps/client/src/assets/data/mobs.json');
+  const items = require('../../apps/client/src/assets/data/items.json');
+  const sheetRows = [];
+  // Credits to Hiems Whiterock / M'aila Batih for the data sheet
+  fs.createReadStream(path.join(__dirname, 'input/monster-drops.csv'), 'utf-8')
+    .pipe(csv())
+    .on('data', (row) => {
+      sheetRows.push(row);
+    })
+    .on('end', () => {
+      sheetRows.forEach((row, index) => {
+        const monsterId = +Object.keys(monsters).find(key => monsters[key].en.toLowerCase() === row.Monster.toLowerCase());
+        if (isNaN(monsterId)) {
+          console.log('Invalid row', index, row);
+        } else {
+          const dropNames = row.Drops.split(',');
+          const monsterDrops = [];
+          for (const dropName of dropNames) {
+            const name = dropName.trim();
+            const itemId = +Object.keys(items).find(key => items[key].en.toLowerCase() === name.toLowerCase());
+            if (isNaN(itemId)) {
+              console.log('Invalid row drop', index, row, name);
+            } else {
+              monsterDrops.push(itemId);
+            }
+          }
+          drops[monsterId] = monsterDrops;
+        }
+      });
+      persistToTypescript('monster-drops', 'monsterDrops', drops);
+    });
+}
+
+if (hasTodo('stats')) {
+  const stats = [];
+  getAllPages('https://xivapi.com/BaseParam?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(baseParam => {
+      stats.push({
+        id: baseParam.ID,
+        en: baseParam.Name_en,
+        de: baseParam.Name_de,
+        ja: baseParam.Name_ja,
+        fr: baseParam.Name_fr,
+        filterName: baseParam.Name_en.split(' ').join('')
+      });
+    });
+  }, null, () => {
+    persistToTypescript('stats', 'stats', stats);
+  });
+}
+
+if (hasTodo('patchContent')) {
+  const patchContent = {};
+  get('https://xivapi.com/patchlist').pipe(
+    switchMap(patchList => {
+      return combineLatest(patchList.map(patch => {
+        return aggregateAllPages(`https://xivapi.com/search?indexes=achievement,action,craftaction,fate,instancecontent,item,leve,placename,bnpcname,enpcresident,quest,status,trait&filters=Patch=${patch.ID}`, undefined, `Patch ${patch.Version}`)
+          .pipe(
+            map(pages => {
+              return {
+                patchId: patch.ID,
+                content: pages
+              };
+            })
+          );
+      }));
+    })
+  ).subscribe(pages => {
+    pages.forEach(page => {
+      (page.content || []).forEach(entry => {
+        patchContent[page.patchId] = patchContent[page.patchId] || {};
+        if ((patchContent[page.patchId][entry._] || []).indexOf(entry.ID) === -1) {
+          patchContent[page.patchId][entry._] = [...(patchContent[page.patchId][entry._] || []), entry.ID];
+        }
+      });
+    });
+  }, null, () => {
+    persistToJsonAsset('patch-content', patchContent);
   });
 }

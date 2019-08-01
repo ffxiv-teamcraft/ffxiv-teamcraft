@@ -56,6 +56,7 @@ import { Theme } from './modules/settings/theme';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
+import { RecipeChoicePopupComponent } from './pages/simulator/components/recipe-choice-popup/recipe-choice-popup.component';
 
 declare const gtag: Function;
 

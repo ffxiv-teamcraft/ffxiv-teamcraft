@@ -49,7 +49,7 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   public openOverlay(): void {
-    this.ipc.send('overlay', '/alarms-overlay');
+    this.ipc.openOverlay('/alarms-overlay', '/alarms-overlay');
   }
 
   trackByAlarm(index: number, display: AlarmDisplay): string {
@@ -176,7 +176,7 @@ export class AlarmsPageComponent implements OnInit {
       first(),
       switchMap((display: AlarmsPageDisplay) => {
         return this.dialog.create({
-          nzTitle: this.translate.instant('SIMULATOR.ROTATIONS.FOLDERS.Add_rotations'),
+          nzTitle: this.translate.instant('ALARMS.Add_alarms_to_group'),
           nzContent: FolderAdditionPickerComponent,
           nzComponentParams: {
             elements: display.noGroup.map(row => {

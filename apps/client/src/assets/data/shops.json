@@ -2398,5 +2398,413 @@
     "ja": "羅刹の手形の取引（防具）",
     "de": "Rakshasa-Marken in Rüstung umtauschen",
     "fr": "Liste des armures"
+  },
+  "1769949": {
+    "en": "Rakshasa Token Exchange (Accessories)",
+    "ja": "羅刹の手形の取引（アクセサリー）",
+    "de": "Rakshasa-Marken in Accessoires umtauschen",
+    "fr": "Liste des accessoires"
+  },
+  "1769950": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769951": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769952": {
+    "en": "Seasonal Event Prizes I",
+    "ja": "シーズナルイベント報酬の交換（その1）",
+    "de": "Saisonale Gegenstände I",
+    "fr": "Récompenses d'événements saisonniers I"
+  },
+  "1769953": {
+    "en": "Seasonal Event Prizes II",
+    "ja": "シーズナルイベント報酬の交換（その2）",
+    "de": "Saisonale Gegenstände II",
+    "fr": "Récompenses d'événements saisonniers II"
+  },
+  "1769954": {
+    "en": "Seasonal Event Prizes III",
+    "ja": "シーズナルイベント報酬の交換（その3）",
+    "de": "Saisonale Gegenstände III",
+    "fr": "Récompenses d'événements saisonniers III"
+  },
+  "1769955": {
+    "en": "Seasonal Event Prizes IV",
+    "ja": "シーズナルイベント報酬の交換（その4）",
+    "de": "Saisonale Gegenstände IV",
+    "fr": "Récompenses d'événements saisonniers IV"
+  },
+  "1769956": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769957": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769958": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769959": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769960": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769961": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769962": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769963": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769964": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1769965": {
+    "en": "Journey's End Gear (Tank)",
+    "ja": "英魂装備の受取（タンク）",
+    "de": "Vermächtnis des Helden (Verteidiger)",
+    "fr": "Legs des Héros (tank)"
+  },
+  "1769966": {
+    "en": "Journey's End Gear (Physical DPS)",
+    "ja": "英魂装備の受取（DPS：ファイター）",
+    "de": "Vermächtnis des Helden (physische Angreifer)",
+    "fr": "Legs des Héros (DPS physique)"
+  },
+  "1769967": {
+    "en": "Journey's End Gear (Magical DPS)",
+    "ja": "英魂装備の受取（DPS：ソーサラー）",
+    "de": "Vermächtnis des Helden (magische Angreifer)",
+    "fr": "Legs des Héros (DPS magique)"
+  },
+  "1769968": {
+    "en": "Journey's End Gear (Healer)",
+    "ja": "英魂装備の受取（ヒーラー）",
+    "de": "Vermächtnis des Helden (Heiler)",
+    "fr": "Legs des Héros (soigneur)"
+  },
+  "1769969": {
+    "en": "Totem Gear (Innocence)",
+    "ja": "大罪喰い装備の取引（イノセンス）",
+    "de": "Lichtbringer-Ausrüstung (Innozenz)",
+    "fr": "Équipements totémiques (Innocence)"
+  },
+  "1769970": {
+    "en": "Totem Gear (Titania)",
+    "ja": "大罪喰い装備の取引（ティターニア）",
+    "de": "Lichtbringer-Ausrüstung (Titania)",
+    "fr": "Équipements totémiques (Titania)"
+  },
+  "1769971": {
+    "en": "Allagan Tomestones of Goetia (DoW)",
+    "ja": "アラガントームストーン:魔典の取引（ファイター）",
+    "de": "Allagische Steine der Goëtie (Krieger)",
+    "fr": "Mémoquartz allagois goétiques (guerre)"
+  },
+  "1769972": {
+    "en": "Allagan Tomestones of Goetia (DoM)",
+    "ja": "アラガントームストーン:魔典の取引（ソーサラー）",
+    "de": "Allagische Steine der Goëtie (Magier)",
+    "fr": "Mémoquartz allagois goétiques (magie)"
+  },
+  "1769973": {
+    "en": "Allagan Tomestones of Goetia (Other)",
+    "ja": "アラガントームストーン:魔典の取引（その他）",
+    "de": "Allagische Steine der Goëtie (Anderes)",
+    "fr": "Mémoquartz allagois goétiques (divers)"
+  },
+  "1769974": {
+    "en": "Allagan Tomestones of Phantasmagoria (DoW)",
+    "ja": "アラガントームストーン:幻想の取引（ファイター）",
+    "de": "Allagische Steine der Phantasmagorie (Krieger)",
+    "fr": "Mémoquartz allagois fantasmagoriques (guerre)"
+  },
+  "1769975": {
+    "en": "Allagan Tomestones of Phantasmagoria (DoM)",
+    "ja": "アラガントームストーン:幻想の取引（ソーサラー）",
+    "de": "Allagische Steine der Phantasmagorie (Magier)",
+    "fr": "Mémoquartz allagois fantasmagoriques (magie)"
+  },
+  "1769976": {
+    "en": "Allagan Tomestones of Phantasmagoria (Other)",
+    "ja": "アラガントームストーン:幻想の取引（その他）",
+    "de": "Allagische Steine der Phantasmagorie (Anderes)",
+    "fr": "Mémoquartz allagois fantasmagoriques (divers)"
+  },
+  "1769977": {
+    "en": "Eden's Gate Antique Exchange (DoW) I",
+    "ja": "古びた装備【覚】の取引（ファイターその1）",
+    "de": "Edentor-Ausrüstung (Krieger I)",
+    "fr": "Équipements antiques de L'Éveil (guerre 1)"
+  },
+  "1769978": {
+    "en": "Eden's Gate Antique Exchange (DoW) II",
+    "ja": "古びた装備【覚】の取引（ファイターその2）",
+    "de": "Edentor-Ausrüstung (Krieger II)",
+    "fr": "Équipements antiques de L'Éveil (guerre 2)"
+  },
+  "1769979": {
+    "en": "Eden's Gate Antique Exchange (DoM)",
+    "ja": "古びた装備【覚】の取引（ソーサラー）",
+    "de": "Edentor-Ausrüstung (Magier)",
+    "fr": "Équipements antiques de L'Éveil (magie)"
+  },
+  "1769980": {
+    "en": "Eden's Gate Apocrypha Exchange (DoW) I",
+    "ja": "覚醒の断章の取引（ファイターその1）",
+    "de": "Edengunst-Ausrüstung (Krieger I)",
+    "fr": "Codex de L'Éveil (guerre 1)"
+  },
+  "1769981": {
+    "en": "Eden's Gate Apocrypha Exchange (DoW) II",
+    "ja": "覚醒の断章の取引（ファイターその2）",
+    "de": "Edengunst-Ausrüstung (Krieger II)",
+    "fr": "Codex de L'Éveil (guerre 2)"
+  },
+  "1769982": {
+    "en": "Eden's Gate Apocrypha Exchange (DoM)",
+    "ja": "覚醒の断章の取引（ソーサラー）",
+    "de": "Edengunst-Ausrüstung (Magier)",
+    "fr": "Codex de L'Éveil (magie)"
+  },
+  "1769983": {
+    "en": "Deepshadow Gear Exchange",
+    "ja": "「ディープシャドウ装備」の交換",
+    "de": "Dunkelschatten-Ausrüstung",
+    "fr": "Échange d'équipements de la Pleine-ombre"
+  },
+  "1769984": {
+    "en": "Deepshadow Gear Augmentation (DoW) I",
+    "ja": "「ディープシャドウ装備」の強化（ファイターその1）",
+    "de": "Verstärkung von Dunkelschatten-Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements de la Pleine-ombre (guerre 1)"
+  },
+  "1769985": {
+    "en": "Deepshadow Gear Augmentation (DoW) II",
+    "ja": "「ディープシャドウ装備」の強化（ファイターその2）",
+    "de": "Verstärkung von Dunkelschatten-Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements de la Pleine-ombre (guerre 2)"
+  },
+  "1769986": {
+    "en": "Deepshadow Gear Augmentation (DoM)",
+    "ja": "「ディープシャドウ装備」の強化（ソーサラー）",
+    "de": "Verstärkung von Dunkelschatten-Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements de la Pleine-ombre (magie)"
+  },
+  "1769987": {
+    "en": "Sacks of Nuts Exchange",
+    "ja": "モブハントの戦利品の取引",
+    "de": "Kupo-Trophäen",
+    "fr": "Insignes Kupo"
+  },
+  "1769988": {
+    "en": "Silver Chocobo Feather Exchange II",
+    "ja": "シルバーチョコボの羽根の取引（その2）",
+    "de": "Silberne Chocobo-Federn II",
+    "fr": "Pennes de chocobo argenté (2)"
+  },
+  "1769989": {
+    "en": "Silver Chocobo Feather Exchange III",
+    "ja": "シルバーチョコボの羽根の取引（その3）",
+    "de": "Silberne Chocobo-Federn III",
+    "fr": "Pennes de chocobo argenté (3)"
+  },
+  "1769990": {
+    "en": "White Crafters' Scrip Exchange (Lv. 80 Gear)",
+    "ja": "クラフタースクリップ:白貨の取引（Lv80向け・装備）",
+    "de": "Weiße Handwerkerscheine (ab St. 80, Ausrüstung)",
+    "fr": "Assignats blancs d'artisan (équipements/Nv 80)"
+  },
+  "1769991": {
+    "en": "White Gatherers' Scrip Exchange (Lv. 80 Gear)",
+    "ja": "ギャザラースクリップ:白貨の取引（Lv80向け・装備）",
+    "de": "Weiße Sammlerscheine (ab St. 80, Ausrüstung)",
+    "fr": "Assignats blancs de récolteur (équipements/Nv 80)"
+  },
+  "1769992": {
+    "en": "White Crafters' Scrip Exchange (Lv. 80 Items)",
+    "ja": "クラフタースクリップ:白貨の取引（Lv80向け・その他）",
+    "de": "Weiße Handwerkerscheine (ab St. 80, Anderes)",
+    "fr": "Assignats blancs d'artisan (divers/Nv 80)"
+  },
+  "1769993": {
+    "en": "White Gatherers' Scrip Exchange (Lv. 80 Items)",
+    "ja": "ギャザラースクリップ:白貨の取引（Lv80向け・その他）",
+    "de": "Weiße Sammlerscheine (ab St. 80, Anderes)",
+    "fr": "Assignats blancs de récolteur (divers/Nv 80)"
+  },
+  "1769994": {
+    "en": "Submersible Frames",
+    "ja": "潜水艦改フレームの加工依頼",
+    "de": "Verstärkungen von Tauchbooten",
+    "fr": "Châssis de sous-marin"
+  },
+  "1769995": {
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
+  },
+  "1769996": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 50)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 50)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 50)"
+  },
+  "1769997": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 50)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 50)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 50)"
+  },
+  "1769998": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 58)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 58)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 58)"
+  },
+  "1769999": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 58)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv58～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 58)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 58)"
+  },
+  "1770000": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 61)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv61～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 61)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 61)"
+  },
+  "1770001": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 61)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv61～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 61)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 61)"
+  },
+  "1770002": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Gear)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Ausrüstung)",
+    "fr": "Assignats jaunes d'artisan (équipements/Nv ≧ 70)"
+  },
+  "1770003": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Gear)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Ausrüstung)",
+    "fr": "Assignats jaunes de récolteur (équipements/Nv ≧ 70)"
+  },
+  "1770004": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Gear) II",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備その2）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Ausrüstung II)",
+    "fr": "Assignats jaunes d'artisan II (équipements/Nv ≧ 70)"
+  },
+  "1770005": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Gear) II",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備その2）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Ausrüstung II)",
+    "fr": "Assignats jaunes de récolteur II (équipements/Nv ≧ 70)"
+  },
+  "1770006": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Augmentation)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備強化）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Verstärkung)",
+    "fr": "Assignats jaunes d'artisan (améliorations/Nv ≧ 70)"
+  },
+  "1770007": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Augmentation)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備強化）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Verstärkung)",
+    "fr": "Assignats jaunes de récolteur (améliorations/Nv ≧ 70)"
+  },
+  "1770008": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Items)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・その他）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Anderes)",
+    "fr": "Assignats jaunes d'artisan (divers/Nv ≧ 70)"
+  },
+  "1770009": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Items)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・その他）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Anderes)",
+    "fr": "Assignats jaunes de récolteur (divers/Nv ≧ 70)"
+  },
+  "1770010": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770011": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770012": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770013": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770014": {
+    "en": "Fieldcraft Items",
+    "ja": "ギャザラー向けアイテムの交換",
+    "de": "Sammler-Gegenstände",
+    "fr": "Objets de récolte"
+  },
+  "1770015": {
+    "en": "Glorious Gewgaws",
+    "ja": "アイテムの取引",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "1770016": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

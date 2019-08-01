@@ -31,7 +31,7 @@ export class LocalizedDataService {
       // If an item doesn't exist yet inside zh and ko items, use english name instead.
       row.zh = zhRow !== undefined ? zhRow.zh : row.en;
       row.ko = koRow !== undefined ? koRow.ko : row.en;
-      row.fr = row.fr.replace(this.indentRegexp, '');
+      row.fr = row.fr && row.fr.replace(this.indentRegexp, '');
     }
     return row;
   }
@@ -323,7 +323,7 @@ export class LocalizedDataService {
    * @param language
    * @returns {number}
    */
-  private getIndexByName(array: any, name: string, language: string): number {
+  public getIndexByName(array: any, name: string, language: string): number {
     if (array === undefined) {
       return -1;
     }
@@ -333,7 +333,14 @@ export class LocalizedDataService {
     let res = -1;
     const keys = Object.keys(array);
     for (const key of keys) {
-      if (array[key][language].toLowerCase() === name.toLowerCase()) {
+      if (!array[key]) {
+        continue;
+      }
+      if (array[key].name && array[key].name[language].toLowerCase() === name.toLowerCase()) {
+        res = +key;
+        break;
+      }
+      if (array[key][language] && array[key][language].toString().toLowerCase() === name.toLowerCase()) {
         res = +key;
         break;
       }

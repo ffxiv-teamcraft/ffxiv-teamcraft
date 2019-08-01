@@ -1,6 +1,14 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { Buff, SimulationResult, SteadyHand, SteadyHandII } from '@ffxiv-teamcraft/simulator';
+import {
+  Buff,
+  FocusedSynthesis,
+  FocusedTouch, Observe,
+  SimulationResult,
+  SteadyHand,
+  SteadyHandII
+} from '@ffxiv-teamcraft/simulator';
+import actions from '@angular/fire/schematics/deploy/actions';
 
 export class UseSh2Instead extends RotationTip {
 
@@ -20,7 +28,14 @@ export class UseSh2Instead extends RotationTip {
       const actionsUsedWithSh1 = simulationResult.steps.slice(sh1Index, sh1Index + 5) || [];
       const clone = simulationResult.simulation.clone();
       clone.removeBuff(Buff.STEADY_HAND);
-      const result = actionsUsedWithSh1.some(step => step.action.getSuccessRate(clone) < 80);
+      const result = actionsUsedWithSh1.some((step, index) => {
+        if (index > 0 &&
+          (step.action.is(FocusedSynthesis) || step.action.is(FocusedTouch))
+          && actionsUsedWithSh1[index - 1].action.is(Observe)) {
+          return false;
+        }
+        return step.action.getSuccessRate(clone) < 80;
+      });
       if (result) {
         this.matchingIndex = sh1Index;
       }

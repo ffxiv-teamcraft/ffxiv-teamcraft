@@ -3131,60 +3131,92 @@
     ]
   },
   "30078": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
+    "en": "Eden's Gate: Resurrection",
+    "ja": "希望の園エデン：覚醒編1",
+    "de": "Edens Erwachen - Auferstehung",
+    "fr": "L'Éveil d'Éden - Résurrection",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      23200,
+      23200
+    ]
   },
   "30079": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
+    "en": "Eden's Gate: Resurrection (Savage)",
+    "ja": "希望の園エデン零式：覚醒編1",
+    "de": "Edens Erwachen - Auferstehung (episch)",
+    "fr": "L'Éveil d'Éden - Résurrection (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      23200,
+      23200
+    ]
   },
   "30080": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
+    "en": "Eden's Gate: Inundation",
+    "ja": "希望の園エデン：覚醒編3",
+    "de": "Edens Erwachen - Überflutung",
+    "fr": "L'Éveil d'Éden - Déluge",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      22814,
+      22800
+    ]
   },
   "30081": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
+    "en": "Eden's Gate: Inundation (Savage)",
+    "ja": "希望の園エデン零式：覚醒編3",
+    "de": "Edens Erwachen - Überflutung (episch)",
+    "fr": "L'Éveil d'Éden - Déluge (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      22814,
+      22800
+    ]
   },
   "30082": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
+    "en": "Eden's Gate: Descent",
+    "ja": "希望の園エデン：覚醒編2",
+    "de": "Edens Erwachen - Niederkunft",
+    "fr": "L'Éveil d'Éden - Descente",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      22211,
+      22200
+    ]
   },
   "30083": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
+    "en": "Eden's Gate: Descent (Savage)",
+    "ja": "希望の園エデン零式：覚醒編2",
+    "de": "Edens Erwachen - Niederkunft (episch)",
+    "fr": "L'Éveil d'Éden - Descente (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      22211,
+      22200
+    ]
   },
   "30084": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
+    "en": "Eden's Gate: Sepulture",
+    "ja": "希望の園エデン：覚醒編4",
+    "de": "Edens Erwachen - Beerdigung",
+    "fr": "L'Éveil d'Éden - Inhumation",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      23111,
+      23100
+    ]
   },
   "30085": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
+    "en": "Eden's Gate: Sepulture (Savage)",
+    "ja": "希望の園エデン零式：覚醒編4",
+    "de": "Edens Erwachen - Beerdigung (episch)",
+    "fr": "L'Éveil d'Éden - Inhumation (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      23114,
+      23100
+    ]
   },
   "30086": {
     "en": "",
@@ -3722,11 +3754,15 @@
     "icon": null
   },
   "55006": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": null
+    "en": "The Dungeons of Lyhe Ghiah",
+    "ja": "宝物庫 リェー・ギア・ダンジョン",
+    "de": "Verliese von Lyhe-Ghiah",
+    "fr": "le Donjon hypogéen du Lyhe-Ghiah",
+    "icon": "/i/061000/061808.png",
+    "contentText": [
+      12810,
+      12800
+    ]
   },
   "55007": {
     "en": "",
@@ -3906,5 +3942,138 @@
     "de": "Himmelssäule (Ebenen 21 - 30)",
     "fr": "le Pilier des Cieux (étages 21-30)",
     "icon": "/i/061000/061824.png"
+  },
+  "60024": {
+    "en": "Heaven-on-High (Floors 31-40)",
+    "ja": "アメノミハシラ 31～40層",
+    "de": "Himmelssäule (Ebenen 31 - 40)",
+    "fr": "le Pilier des Cieux (étages 31-40)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60025": {
+    "en": "Heaven-on-High (Floors 41-50)",
+    "ja": "アメノミハシラ 41～50層",
+    "de": "Himmelssäule (Ebenen 41 - 50)",
+    "fr": "le Pilier des Cieux (étages 41-50)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60026": {
+    "en": "Heaven-on-High (Floors 51-60)",
+    "ja": "アメノミハシラ 51～60層",
+    "de": "Himmelssäule (Ebenen 51 - 60)",
+    "fr": "le Pilier des Cieux (étages 51-60)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60027": {
+    "en": "Heaven-on-High (Floors 61-70)",
+    "ja": "アメノミハシラ 61～70層",
+    "de": "Himmelssäule (Ebenen 61 - 70)",
+    "fr": "le Pilier des Cieux (étages 61-70)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60028": {
+    "en": "Heaven-on-High (Floors 71-80)",
+    "ja": "アメノミハシラ 71～80層",
+    "de": "Himmelssäule (Ebenen 71 - 80)",
+    "fr": "le Pilier des Cieux (étages 71-80)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60029": {
+    "en": "Heaven-on-High (Floors 81-90)",
+    "ja": "アメノミハシラ 81～90層",
+    "de": "Himmelssäule (Ebenen 81 - 90)",
+    "fr": "le Pilier des Cieux (étages 81-90)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60030": {
+    "en": "Heaven-on-High (Floors 91-100)",
+    "ja": "アメノミハシラ 91～100層",
+    "de": "Himmelssäule (Ebenen 91 - 100)",
+    "fr": "le Pilier des Cieux (étages 91-100)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60031": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "61000": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "61001": {
+    "en": "Novice Mahjong (Ranked)",
+    "ja": "ドマ式麻雀：一般卓 (段位変動有り)",
+    "de": "Domanisches Mahjong: Anfänger (gewertet)",
+    "fr": "Mahjong domien: tous rangs (classé)",
+    "icon": "/i/061000/061820.png"
+  },
+  "61002": {
+    "en": "Advanced Mahjong (Ranked)",
+    "ja": "ドマ式麻雀：有段卓 (段位変動有り)",
+    "de": "Domanisches Mahjong: Fortgeschrittene (gewertet)",
+    "fr": "Mahjong domien: dan seulement (classé)",
+    "icon": "/i/061000/061820.png"
+  },
+  "61003": {
+    "en": "Four-player Mahjong (Kuitan Enabled)",
+    "ja": "ドマ式麻雀：4人セット卓 (クイタン有り)",
+    "de": "Domanisches Mahjong:  4 Spieler (Kuitan aktiviert)",
+    "fr": "Mahjong domien: 4 joueurs (avec kuitan)",
+    "icon": "/i/061000/061820.png"
+  },
+  "61004": {
+    "en": "Four-player Mahjong (Kuitan Disabled)",
+    "ja": "ドマ式麻雀：4人セット卓 (クイタン無し)",
+    "de": "Domanisches Mahjong:  4 Spieler (Kuitan deaktiviert)",
+    "fr": "Mahjong domien: 4 joueurs (sans kuitan)",
+    "icon": "/i/061000/061820.png"
+  },
+  "61005": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "62000": {
+    "en": "Air Force One",
+    "ja": "出撃！ エアフォースパイロット",
+    "de": "Luftwaffe, Feuer frei!",
+    "fr": "As de l'air",
+    "icon": "/i/061000/061820.png"
+  },
+  "62001": {
+    "en": "Air Force One",
+    "ja": "出撃！ エアフォースパイロット",
+    "de": "Luftwaffe, Feuer frei!",
+    "fr": "As de l'air",
+    "icon": "/i/061000/061820.png"
+  },
+  "62002": {
+    "en": "Air Force One",
+    "ja": "出撃！ エアフォースパイロット",
+    "de": "Luftwaffe, Feuer frei!",
+    "fr": "As de l'air",
+    "icon": "/i/061000/061820.png"
+  },
+  "65000": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
+  },
+  "65001": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": null
   }
 }

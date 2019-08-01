@@ -3,7 +3,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
 import {
   catchError,
-  debounceTime,
+  debounceTime, delay,
   distinctUntilChanged,
   filter,
   map,
@@ -76,7 +76,11 @@ export class AuthEffects {
     ofType(AuthActionTypes.LoggedInAsAnonymous),
     switchMap((action: Authenticated) => {
       return this.userService.get(action.uid).pipe(
-        catchError(() => {
+        map(user => {
+          user.notFound = false;
+          return user;
+        }),
+        switchMap(() => {
           return this.userService.set(action.uid, new TeamcraftUser()).pipe(
             switchMap(() => {
               return this.userService.get(action.uid);
@@ -107,6 +111,18 @@ export class AuthEffects {
   fetchUserOnAuthenticated$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated),
     switchMap((action: Authenticated) => this.userService.get(action.uid).pipe(
+      switchMap(user => {
+        if (user.notFound) {
+          delete this.userService.userCache[action.uid];
+          return this.userService.set(action.uid, new TeamcraftUser()).pipe(
+            delay(100),
+            switchMap(() => {
+              return this.userService.get(action.uid);
+            })
+          );
+        }
+        return of(user);
+      }),
       map(user => {
         user.createdAt = action.createdAt;
         return user;
@@ -138,10 +154,17 @@ export class AuthEffects {
   @Effect()
   watchNoLinkedCharacter$ = this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
-    debounceTime(2000),
+    distinctUntilChanged((a, b) => {
+      return a.user.notFound !== b.user.notFound
+        && JSON.stringify(a.user.lodestoneIds) === JSON.stringify(b.user.lodestoneIds);
+    }),
     withLatestFrom(this.authFacade.loggedIn$),
     filter(([action, loggedIn]) => {
-      return loggedIn && action.user && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0;
+      const cachedUser: TeamcraftUser = JSON.parse(localStorage.getItem('auth:user') || '{}');
+      return loggedIn
+        && action.user && !action.user.notFound
+        && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0
+        && [...(cachedUser.customCharacters || []), ...(cachedUser.lodestoneIds || [])].length === 0;
     }),
     map(() => new NoLinkedCharacter())
   );
@@ -227,6 +250,8 @@ export class AuthEffects {
     debounceTime(100),
     withLatestFrom(this.store),
     switchMap(([, state]) => {
+      // Save to localstorage to have a backup check to avoid data loss
+      localStorage.setItem('auth:user', JSON.stringify(state.auth.user));
       return this.userService.set(state.auth.uid, { ...state.auth.user }).pipe(
         catchError(() => of(null))
       );

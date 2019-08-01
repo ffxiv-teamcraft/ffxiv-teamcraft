@@ -107,6 +107,7 @@
     "No_lists_matching": "Keine Listen entsprechen deinen Filtern"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "Speichern",
     "Reset": "Neustart",
     "Total": "Gesamtsumme",
@@ -141,6 +142,7 @@
     "Custom_sound": "Benutzerdefinierter Benachrichtigungston",
     "New_group": "Neue Benachrichtigungsgruppe",
     "Confirm_group_delete": "Möchtest du diese Gruppe wirklich löschen?",
+    "Delete_group_and_alarms": "Delete group with all alarms",
     "Confirm_group_delete_with_alarms": "Möchtest du diese Gruppe und alle Alarme darin wirklich löschen?",
     "Add_note": "Notiz hinzufügen",
     "Volume": "Lautstärke",
@@ -190,6 +192,7 @@
   "No": "Nein",
   "Crystals": "Kristalle",
   "Gathering": "Sammeln",
+  "Drops_or_GC": "Dungeons/Drops or GC",
   "Other": "Anderes",
   "Pre_crafts": "Vorhergehende Handwerksschritte",
   "Items": "Gegenstände",
@@ -247,10 +250,13 @@
   "filters/worn_by": "Getragen von",
   "filters/crafted_by": "Hergestellt von ",
   "filters/item_category": "Item-Kategorie",
+  "filters/stats": "Stats filters",
+  "filters/bonuses": "Stat bonuses filters",
   "Adding_recipes": "Füge {{amount}} Rezepte zur Liste {{listname}} hinzu",
   "Recipe_Added": "1 Gegenstand zu Liste {{listname}} hinzugefügt",
   "Recipes_Added": "{{itemcount}} Gegenstände zu Liste {{listname}} hinzugefügt",
   "Character_name": "Charaktername",
+  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "Abmelden und anonym weiternutzen",
   "Add_manual_character": "Charakter hinzufügen",
   "Character_informations": "Charakterinformationen",
@@ -339,6 +345,9 @@
     "Clear_search_history": "Suchverlauf löschen",
     "Auto_mark_as_done_in_log": "Im Notizbuch als erledigt markieren, wenn in der Liste erledigt",
     "Db_comments_position": "Position der Datenbank-Kommentare",
+    "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Clickthrough_overlay": "Make overlay clickthrough",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -365,13 +374,13 @@
     "Patreon_features": "Patreon-Unterstützer Features",
     "Contacts": "Kontakte",
     "Add_new_contact": "Neuer Kontakt",
-    "Save_for_all": "Für alle speichern",
+    "Save_for_all": "Save for all crafters",
     "User_not_verified": "Benutzer nicht verifiziert, klicke zum Verifizieren.",
     "More_than_100_lists_created": "Mehr als 100 Listen erzeugt",
     "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
-      "Guide": "Um dein Konto zu verifizieren füge diesen Code in deine Lodestone Biografie ein: \"{{userId}}\". Klicke danach den Button unten.",
+      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "Charakter verifiziert! Du kannst dieses Popup jetzt schließen. Der Code kann jetzt aus der Biografie entfernt werden.",
       "Error": "Der Code konnte nicht in deiner Biografie gefunden werden. Stelle sicher dass er eingefügt und gespeichert wurde, und versuche es in ~30 Sekunden erneut.",
       "Validate": "Verifizieren"
@@ -408,7 +417,10 @@
       "Give_list_name": "Gib deiner neuen Liste einen Namen",
       "Final_step": "Validieren",
       "Creating_list": "Liste wird angelegt.",
-      "Loading_items": "Lade Gegenstandsinformationen"
+      "Loading_items": "Lade Gegenstandsinformationen",
+      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Group_together": "Group materias together"
     }
   },
   "LIST": {
@@ -514,6 +526,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "veraltet",
     "GEAR": "Ausrüstung",
     "CONSUMABLE": "Benutzbares",
@@ -534,6 +550,7 @@
     "PLD": "PLD",
     "WAR": "KRG",
     "DRK": "DKR",
+    "GNB": "GNB",
     "WHM": "WMA",
     "SCH": "GLT",
     "AST": "AST",
@@ -543,6 +560,7 @@
     "SAM": "SAM",
     "BRD": "BRD",
     "MCH": "MCH",
+    "DNC": "DNC",
     "BLM": "SMA",
     "SMN": "BSW",
     "RDM": "RMA",
@@ -658,6 +676,7 @@
     "Not_found": "Seite nicht gefunden"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Teile Makros am letzten möglichen Schritt für Reklamation",
@@ -720,6 +739,15 @@
     "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "SOLVER": {
+      "Hq_target": "Target HQ%",
+      "Use_rotation_as_seed": "Use current rotation as starting point",
+      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "Community-Rotations",
       "Community_rotation": "Community-Rotation",
@@ -746,7 +774,8 @@
         "TEALESS": "Ohne Tee",
         "FOODLESS": "Ohne Gericht",
         "MAKERS_MARK": "Kunst des Kundigen",
-        "MUSCLE_MEMORY": "Motorisches Gedächtnis"
+        "MUSCLE_MEMORY": "Motorisches Gedächtnis",
+        "REUSE": "Reuse"
       }
     },
     "CUSTOM": {
@@ -1201,6 +1230,12 @@
     "3d_model_help": "3D-Modell vorschauen",
     "Achievements": "Erfolge",
     "Currencies": "Currencies",
+    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "Unlocks": "Unlocks",
+    "ITEM": {
+      "Masterpiece_base": "BASE",
+      "Masterpiece_bonus": "BONUS"
+    },
     "NODE": {
       "Items": "Gegenstände",
       "Possible_bonuses": "Mögliche Boni",
@@ -1239,7 +1274,8 @@
       "Allowance_cost": "Allowance cost",
       "Rewards": "Possible rewards",
       "Client": "Client",
-      "Issuer": "Issuer"
+      "Issuer": "Issuer",
+      "Turn_ins": "Turn-ins"
     },
     "MOB": {
       "Known_spawns": "Known spawns",
@@ -1313,7 +1349,26 @@
       "Show_more": "{{amount}} weitere Kommentare anzeigen",
       "No_comments": "Keine Kommentare",
       "Post": "Post",
-      "Editor_tip": "Datenbank-Links werden in der Nachricht verarbeitet."
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+    },
+    "PATCH": {
+      "Open_patch_page": "Click here to open full patch changes in database",
+      "CONTENT": {
+        "Title": "Patch content",
+        "Achievements": "Achievements ({{amount}})",
+        "Actions": "Actions ({{amount}})",
+        "Crafting_actions": "Crafting actions ({{amount}})",
+        "Fates": "Fates ({{amount}})",
+        "Instances": "Instance content ({{amount}})",
+        "Items": "Items ({{amount}})",
+        "Leves": "Leves ({{amount}})",
+        "Maps": "Maps ({{amount}})",
+        "Monsters": "Monsters ({{amount}})",
+        "Npcs": "Npcs ({{amount}})",
+        "Quests": "Quests ({{amount}})",
+        "Statuses": "Statuses ({{amount}})",
+        "Traits": "Traits ({{amount}})"
+      }
     }
   },
   "SEARCH_TYPES": {
@@ -1386,5 +1441,31 @@
   },
   "BLOG": {
     "Title": "Blog"
+  },
+  "ERRORS": {
+    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
+    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+  },
+  "SEARCH": {
+    "Sort_by": "Sort by: ",
+    "Sort_asc": "Ascending",
+    "Sort_desc": "Descending",
+    "Add_stat_filter": "Add stat filter",
+    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "SORT_BY": {
+      "Relevance": "Relevance",
+      "ID": "ID",
+      "Level": "Level",
+      "Ilvl": "Item level",
+      "Rlvl": "Recipe level"
+    }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }

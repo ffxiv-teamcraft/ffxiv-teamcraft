@@ -27,14 +27,17 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         return EMPTY;
       }
       this.userCache[uid] = super.get(uid).pipe(
-        catchError(() => {
+        catchError((err) => {
           return of(null);
         }),
         switchMap(user => {
           if (user === null) {
             user = new TeamcraftUser();
+            user.notFound = true;
             user.$key = uid;
             return of(user);
+          } else {
+            delete user.notFound;
           }
           user.createdAt = new Date(user.createdAt);
           if (user.patreonToken === undefined) {

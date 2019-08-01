@@ -24,6 +24,7 @@ export class TradeIconPipe implements PipeTransform {
     36: 0, // Mendacity
     37: 0, // Genesis
     38: 28, // Goetia
+    39: 25, // Phantasmagoria
     7811: 28, // Rowena's Token (Soldiery)
     9383: 28, // Rowena's Token (Poetics)
     14298: 28, // Rowena's Token (Lore)
@@ -43,6 +44,8 @@ export class TradeIconPipe implements PipeTransform {
     17834: 25, // Yellow gatherer
     25199: 25, // White crafter
     25200: 25, // White gatherer
+    // Fates stones
+    26807: 23,
     // Hunt mark log
     7901: 22, // Blood-spattered Mark Log
     10127: 22, // Unstained Mark Log

@@ -312,43 +312,43 @@ export class ItemComponent extends TeamcraftPageComponent {
           if (xivapiItem.ItemAction.Type === 1322) {
             links.push({
               title: 'FFXIV Collect',
-              icon: 'https://collect.raelys.com/images/logo_small.png',
-              url: `https://collect.raelys.com/mounts/${xivapiItem.ItemAction.Data0}`
+              icon: 'https://ffxivcollect.com/images/logo_small.png',
+              url: `https://ffxivcollect.com/mounts/${xivapiItem.ItemAction.Data0}`
             });
           }
           if (xivapiItem.ItemAction.Type === 853) {
             links.push({
               title: 'FFXIV Collect',
-              icon: 'https://collect.raelys.com/images/logo_small.png',
-              url: `https://collect.raelys.com/minions/${xivapiItem.ItemAction.Data0}`
+              icon: 'https://ffxivcollect.com/images/logo_small.png',
+              url: `https://ffxivcollect.com/minions/${xivapiItem.ItemAction.Data0}`
             });
           }
           if (xivapiItem.ItemAction.Type === 5845) {
             links.push({
               title: 'FFXIV Collect',
-              icon: 'https://collect.raelys.com/images/logo_small.png',
-              url: `https://collect.raelys.com/orchestrions/${xivapiItem.ItemAction.Data0}`
+              icon: 'https://ffxivcollect.com/images/logo_small.png',
+              url: `https://ffxivcollect.com/orchestrions/${xivapiItem.ItemAction.Data0}`
             });
           }
           if (xivapiItem.ItemAction.Type === 2633 && xivapiItem.Name_en.indexOf('Ballroom Etiquette') > -1) {
             links.push({
               title: 'FFXIV Collect',
-              icon: 'https://collect.raelys.com/images/logo_small.png',
-              url: `https://collect.raelys.com/emotes/${xivapiItem.ItemAction.Data0}`
+              icon: 'https://ffxivcollect.com/images/logo_small.png',
+              url: `https://ffxivcollect.com/emotes/${xivapiItem.ItemAction.Data0}`
             });
           }
           if (xivapiItem.ItemAction.Type === 2633 && xivapiItem.Name_en.indexOf('Modern Aesthetics') > -1) {
             links.push({
               title: 'FFXIV Collect',
-              icon: 'https://collect.raelys.com/images/logo_small.png',
-              url: `https://collect.raelys.com/hairstyles/${xivapiItem.ItemAction.Data0}`
+              icon: 'https://ffxivcollect.com/images/logo_small.png',
+              url: `https://ffxivcollect.com/hairstyles/${xivapiItem.ItemAction.Data0}`
             });
           }
           if (xivapiItem.ItemAction.Type === 1013) {
             links.push({
               title: 'FFXIV Collect',
-              icon: 'https://collect.raelys.com/images/logo_small.png',
-              url: `https://collect.raelys.com/bardings/${xivapiItem.ItemAction.Data0}`
+              icon: 'https://ffxivcollect.com/images/logo_small.png',
+              url: `https://ffxivcollect.com/bardings/${xivapiItem.ItemAction.Data0}`
             });
           }
         }
@@ -386,6 +386,15 @@ export class ItemComponent extends TeamcraftPageComponent {
                   itemId: +itemId
                 };
               })
+          });
+        }
+        if (data.item.masterpiece !== undefined) {
+          usedFor.push({
+            type: UsedForType.ROWENA_SPLENDOR,
+            flex: '1 1 auto',
+            title: 'DB.Rowena_splendor',
+            icon: './assets/icons/status/collectors_glove.png',
+            masterpiece: data.item.masterpiece
           });
         }
         if (data.item.desynthedTo !== undefined) {
@@ -529,6 +538,21 @@ export class ItemComponent extends TeamcraftPageComponent {
               xp: data.item.supply.xp,
               seals: data.item.supply.seals
             }
+          });
+        }
+        if (data.item.unlocks) {
+          usedFor.push({
+            type: UsedForType.UNLOCKS,
+            flex: '1 1 auto',
+            title: 'DB.Unlocks',
+            icon: './assets/icons/unlocks.png',
+            links: data.item.unlocks
+              .map(itemId => {
+                return {
+                  itemId: +itemId,
+                  recipes: [this.lazyData.recipes.find(r => r.result === +itemId)]
+                };
+              })
           });
         }
         return usedFor;

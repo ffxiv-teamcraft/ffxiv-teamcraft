@@ -14388,10 +14388,10 @@ export const achievements = {
     'fr': 'Des Feux nouveaux de la Mort'
   },
   '2399': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'At Sixes and Sevens',
+    'de': 'Danke für sechs Jahre!',
+    'ja': 'ありがとう六周年！',
+    'fr': 'Six ans, ça en fait de la bouteille !'
   },
   '2400': {
     'en': 'I Have the Evil-ish Eye',
@@ -14400,88 +14400,88 @@ export const achievements = {
     'fr': 'Grâce à ce regard'
   },
   '2401': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Beauty and Its Beasts I',
+    'de': 'Im falschen Verlies der Fuath I',
+    'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク1',
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah I'
   },
   '2402': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Beauty and Its Beasts II',
+    'de': 'Im falschen Verlies der Fuath II',
+    'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク2',
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah II'
   },
   '2403': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Beauty and Its Beasts III',
+    'de': 'Im falschen Verlies der Fuath III',
+    'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク3',
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah III'
   },
   '2404': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Beauty and Its Beasts IV',
+    'de': 'Im falschen Verlies der Fuath IV',
+    'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク4',
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah IV'
   },
   '2405': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Happily Treasure After I',
+    'de': 'Entkommen aus dem falschen Verlies der Fuath I',
+    'ja': 'リェー・ギア・ダンジョンの覇者：ランク1',
+    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah I'
   },
   '2406': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Happily Treasure After II',
+    'de': 'Entkommen aus dem falschen Verlies der Fuath II',
+    'ja': 'リェー・ギア・ダンジョンの覇者：ランク2',
+    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah II'
   },
   '2407': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Happily Treasure After III',
+    'de': 'Entkommen aus dem falschen Verlies der Fuath III',
+    'ja': 'リェー・ギア・ダンジョンの覇者：ランク3',
+    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah III'
   },
   '2408': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Happily Treasure After IV',
+    'de': 'Entkommen aus dem falschen Verlies der Fuath IV',
+    'ja': 'リェー・ギア・ダンジョンの覇者：ランク4',
+    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah IV'
   },
   '2409': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Paradise Found I',
+    'de': 'Das gefundene Paradies I',
+    'ja': '覚醒せしエデンを制覇せし者：ランク1',
+    'fr': 'Sonner le clairon I'
   },
   '2410': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Paradise Found II',
+    'de': 'Das gefundene Paradies II',
+    'ja': '覚醒せしエデンを制覇せし者：ランク2',
+    'fr': 'Sonner le clairon II'
   },
   '2411': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Paradise Found III',
+    'de': 'Das gefundene Paradies III',
+    'ja': '覚醒せしエデンを制覇せし者：ランク3',
+    'fr': 'Sonner le clairon III'
   },
   '2412': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Savage Paradise Found I',
+    'de': 'Das gefundene Paradies der Epik I',
+    'ja': '覚醒せしエデンを完全制覇せし者：ランク1',
+    'fr': 'Lendemain difficile I'
   },
   '2413': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Savage Paradise Found II',
+    'de': 'Das gefundene Paradies der Epik II',
+    'ja': '覚醒せしエデンを完全制覇せし者：ランク2',
+    'fr': 'Lendemain difficile II'
   },
   '2414': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Savage Paradise Found III',
+    'de': 'Das gefundene Paradies der Epik III',
+    'ja': '覚醒せしエデンを完全制覇せし者：ランク3',
+    'fr': 'Lendemain difficile III'
   },
   '2415': {
     'en': '',
