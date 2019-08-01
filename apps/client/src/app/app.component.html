@@ -75,7 +75,8 @@
                     <i nz-icon type="close" (click)="$event.stopPropagation();deleteNotification(notification)"></i>
                   </ng-template>
                   <ng-template #actionOpen>
-                    <a [routerLink]="notification.route" (click)="$event.stopPropagation();deleteNotification(notification)">
+                    <a [routerLink]="notification.route"
+                       (click)="$event.stopPropagation();deleteNotification(notification)">
                       <i nz-icon type="select"></i>
                     </a>
                   </ng-template>
@@ -156,152 +157,190 @@
         <div fxLayout="column" class="flex-container" fxLayoutAlign="space-between">
           <div>
             <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/search">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('ITEMS.Title' | translate) : null">
-              <i nz-icon type="search"></i>
-              <span class="nav-text">{{'ITEMS.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/lists">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('Lists' | translate) : null">
-              <i nz-icon
-                 type="profile"></i>
-              <span class="nav-text">{{'Lists' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/community-lists">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('Public_lists' | translate) : null">
-              <i nz-icon type="solution"></i>
-              <span class="nav-text">{{'Public_lists' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="$event.preventDefault();onNavLinkClick()"
-                 routerLinkActive="ant-menu-item-selected" routerLink="/simulator">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('SIMULATOR.Title' | translate) : null">
-              <i nz-icon type="code"></i>
-              <span class="nav-text">{{'SIMULATOR.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/rotations">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('SIMULATOR.Rotations' | translate) : null">
-              <i nz-icon type="build"></i>
-              <span class="nav-text">{{'SIMULATOR.Rotations' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/community-rotations">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate) : null">
-            <img class="man-attacked-by-tetris-block anticon" src="./assets/icons/thing.svg"/>
-              <span class="nav-text">{{'SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/alarms">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('ALARMS.Title' | translate) : null">
-              <i nz-icon type="bell"></i>
-              <span class="nav-text">{{'ALARMS.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/gathering-location">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('GATHERING_LOCATIONS.Title' | translate) : null">
-              <i nz-icon
-                 type="environment-o"></i>
-              <span class="nav-text">{{'GATHERING_LOCATIONS.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/levequests">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('LEVEQUESTS.Title' | translate) : null">
-              <i nz-icon type="book"></i>
-              <span class="nav-text">{{'LEVEQUESTS.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/log-tracker">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('LOG_TRACKER.Title' | translate) : null">
-              <i nz-icon iconfont="icon-book"></i>
-              <span class="nav-text">{{'LOG_TRACKER.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/gc-supply">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('GC_SUPPLY.Title' | translate) : null">
-              <i nz-icon type="file-done"></i>
-              <span class="nav-text">{{'GC_SUPPLY.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/desynth">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('DESYNTH.Title' | translate) : null">
-              <i nz-icon iconfont="icon-vectorcombine"></i>
-              <span class="nav-text">{{'DESYNTH.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/recipe-finder">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('RECIPE_FINDER.Title' | translate) : null">
-              <i nz-icon nzType="experiment" nzTheme="outline"></i>
-              <span class="nav-text">{{'RECIPE_FINDER.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/currency-spending">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('CURRENCY_SPENDING.Title' | translate) : null">
-              <i nz-icon nzType="shopping" nzTheme="outline"></i>
-              <span class="nav-text">{{'CURRENCY_SPENDING.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/custom-items">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('CUSTOM_ITEMS.Title' | translate) : null">
-              <i nz-icon iconfont="icon-custom"></i>
-              <span class="nav-text">{{'CUSTOM_ITEMS.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/macro-translator">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('MACRO_TRANSLATION.Title' | translate) : null">
-              <i nz-icon type="message"></i>
-              <span class="nav-text">{{'MACRO_TRANSLATION.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/blog">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('BLOG.Title' | translate) : null">
-              <i nz-icon type="file-text"></i>
-              <span class="nav-text">{{'BLOG.Title' | translate}}</span>
-          </span>
-              </a>
-              <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
-                 routerLink="/about">
-          <span nz-tooltip nzPlacement="right"
-                [nzTitle]="collapsedSidebar ? ('ABOUT.title' | translate) : null">
-              <i nz-icon type="info-circle-o"></i>
-              <span class="nav-text">{{'ABOUT.title' | translate}}</span>
-          </span>
-              </a>
+              <li nz-submenu [nzOpen]="true">
+                <span title>
+                  <i nz-icon type="home"></i>
+                  <span>{{'SIDEBAR.General' | translate}}</span>
+                </span>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/search">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('ITEMS.Title' | translate) : null">
+                      <i nz-icon type="search"></i>
+                      <span class="nav-text">{{'ITEMS.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/lists">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('Lists' | translate) : null">
+                      <i nz-icon
+                         type="profile"></i>
+                      <span class="nav-text">{{'Lists' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="$event.preventDefault();onNavLinkClick()"
+                   routerLinkActive="ant-menu-item-selected" routerLink="/simulator">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('SIMULATOR.Title' | translate) : null">
+                      <i class="companion-svg anticon">
+                        &#xF239;
+                      </i>
+                      <span class="nav-text">{{'SIMULATOR.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/rotations">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('SIMULATOR.Rotations' | translate) : null">
+                      <i nz-icon type="build"></i>
+                      <span class="nav-text">{{'SIMULATOR.Rotations' | translate}}</span>
+                  </span>
+                </a>
+              </li>
+
+              <li nz-submenu [nzOpen]="true">
+                <span title>
+                  <i nz-icon type="share-alt"></i>
+                  <span>{{'SIDEBAR.Sharing' | translate}}</span>
+                </span>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/community-lists">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('Public_lists' | translate) : null">
+                      <i nz-icon type="solution"></i>
+                      <span class="nav-text">{{'Public_lists' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/community-rotations">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate) : null">
+                      <img class="man-attacked-by-tetris-block anticon" src="./assets/icons/svg/thing.svg"/>
+                      <span class="nav-text">{{'SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate}}</span>
+                  </span>
+                </a>
+              </li>
+
+              <li nz-submenu [nzOpen]="true">
+                <span title>
+                  <i class="companion-svg anticon">
+                    &#xF121;
+                  </i>
+                  <span>{{'SIDEBAR.Gathering' | translate}}</span>
+                </span>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/alarms">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('ALARMS.Title' | translate) : null">
+                      <i nz-icon type="bell"></i>
+                      <span class="nav-text">{{'ALARMS.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/gathering-location">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('GATHERING_LOCATIONS.Title' | translate) : null">
+                      <i nz-icon
+                         type="environment-o"></i>
+                      <span class="nav-text">{{'GATHERING_LOCATIONS.Title' | translate}}</span>
+                  </span>
+                </a>
+              </li>
+
+              <li nz-submenu>
+                <span title>
+                  <i nz-icon type="appstore"></i>
+                  <span>{{'SIDEBAR.Helpers' | translate}}</span>
+                </span>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/levequests">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('LEVEQUESTS.Title' | translate) : null">
+                      <i nz-icon type="book"></i>
+                      <span class="nav-text">{{'LEVEQUESTS.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/log-tracker">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('LOG_TRACKER.Title' | translate) : null">
+                      <i nz-icon iconfont="icon-book"></i>
+                      <span class="nav-text">{{'LOG_TRACKER.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/gc-supply">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('GC_SUPPLY.Title' | translate) : null">
+                      <i nz-icon type="file-done"></i>
+                      <span class="nav-text">{{'GC_SUPPLY.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/desynth">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('DESYNTH.Title' | translate) : null">
+                      <i nz-icon iconfont="icon-vectorcombine"></i>
+                      <span class="nav-text">{{'DESYNTH.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/recipe-finder">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('RECIPE_FINDER.Title' | translate) : null">
+                      <i nz-icon nzType="experiment" nzTheme="outline"></i>
+                      <span class="nav-text">{{'RECIPE_FINDER.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/currency-spending">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('CURRENCY_SPENDING.Title' | translate) : null">
+                      <i nz-icon nzType="shopping" nzTheme="outline"></i>
+                      <span class="nav-text">{{'CURRENCY_SPENDING.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/custom-items">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('CUSTOM_ITEMS.Title' | translate) : null">
+                      <i nz-icon iconfont="icon-custom"></i>
+                      <span class="nav-text">{{'CUSTOM_ITEMS.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/macro-translator">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('MACRO_TRANSLATION.Title' | translate) : null">
+                      <i nz-icon type="message"></i>
+                      <span class="nav-text">{{'MACRO_TRANSLATION.Title' | translate}}</span>
+                  </span>
+                </a>
+              </li>
+
+              <li nz-submenu>
+                <span title>
+                  <i nz-icon type="info-circle"></i>
+                  <span>{{'SIDEBAR.Other' | translate}}</span>
+                </span>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/blog">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('BLOG.Title' | translate) : null">
+                      <i nz-icon type="file-text"></i>
+                      <span class="nav-text">{{'BLOG.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+                   routerLink="/about">
+                  <span nz-tooltip nzPlacement="right"
+                        [nzTitle]="collapsedSidebar ? ('ABOUT.title' | translate) : null">
+                      <i nz-icon type="info-circle-o"></i>
+                      <span class="nav-text">{{'ABOUT.title' | translate}}</span>
+                  </span>
+                </a>
+              </li>
             </ul>
           </div>
           <div class="social-buttons" [fxLayout]="collapsedSidebar?'column':'row'" fxLayoutGap="5px"
