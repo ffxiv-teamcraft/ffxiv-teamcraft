@@ -160,7 +160,10 @@ export class AuthEffects {
     }),
     withLatestFrom(this.authFacade.loggedIn$),
     filter(([action, loggedIn]) => {
-      const cachedUser: TeamcraftUser = JSON.parse(localStorage.getItem('auth:user') || '{}');
+      let cachedUser: any = JSON.parse(localStorage.getItem('auth:user') || '{}');
+      if (!cachedUser.$key || cachedUser.$key === action.user.$key) {
+        cachedUser = {};
+      }
       return loggedIn
         && action.user && !action.user.notFound
         && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0

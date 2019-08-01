@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.1"></a>
+## [5.7.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.19...v5.7.1) (2019-08-01)
+
+
+### Bug Fixes
+
+* **alarms:** no longer forcing compact mode on mobile viewports ([35e2ec1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/35e2ec1))
+* **auth:** fixed an issue with blank character association popup ([f600f9a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f600f9a))
+* **custom-simulator:** fixed progress and durability being inverted ([1757ed2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1757ed2))
+* **db:** fixed an issue with map: comment links ([3e461c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e461c0))
+* **layout:** fixed an issue with new tomes not filtered properly ([1130816](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1130816))
+* **recipe-finder:** fixed empty results with recipe finder ([293958d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/293958d)), closes [#1061](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1061)
+* **simulator:** fixed an issue with minimum stats popup and quality ([b0b6ee0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b0b6ee0))
+* **trade:** added new tomestones ([00f62a6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00f62a6))
+
+
+### Features
+
+* **auth:** added disclaimer when linking a character with suspicious situation to avoid data loss ([eea41ba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eea41ba))
+* **community-lists:** added GNB, DNC and expansion tags ([a041cca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a041cca))
+* **community-rotations:** added Reuse tag ([b7d4964](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b7d4964))
+* **data:** added new masterbooks ([b6a8caa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b6a8caa))
+* **data:** added new rlvl entries for community rotations ([2d5f6ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d5f6ed))
+* **db:** added link from masterbooks to unlocked items ([a7412c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7412c2))
+* **db:** added patch db pages ([dcdca77](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dcdca77))
+* **search:** added an option to disable search history ([d0caabf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0caabf))
+* new patreon supporter: Scrapper Spart ([072c66b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/072c66b))
+* **simulator:** progress bar and durability now change color for better visual feedback. ([d13e580](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d13e580))
+* **teams:** added webhook option for item completion notification ([0edb09f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0edb09f))
+
+
+
 <a name="5.7.0"></a>
 # [5.7.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.19...v5.7.0) (2019-08-01)
 
