@@ -964,7 +964,8 @@
       "LIST_REMOVED": "Lista removida",
       "LIST_PROGRESSION": "Progresar materiales de la lista",
       "FINAL_LIST_PROGRESSION": "Progresar artículos finales de la lista",
-      "USER_ASSIGNMENT": "Asignación de usuario"
+      "USER_ASSIGNMENT": "Asignación de usuario",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {
