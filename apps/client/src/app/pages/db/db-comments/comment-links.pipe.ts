@@ -15,7 +15,7 @@ import { achievements } from '../../../core/data/sources/achievements';
 })
 export class CommentLinksPipe implements PipeTransform {
 
-  private xivdbRegexp = /(?:^|\s)https?:\/\/(en|fr|de|ja)?\.?xivdb\.com\/(\w+)\/(\d+)\/(\S+)/gmi;
+  private xivdbRegexp = /(?:^|\s)https?:\/\/(en|fr|de|ja|www)?\.?xivdb\.com\/(\w+)\/(\d+)\/(\S+)/gmi;
   private tcRegexp = /(?:^|\s)https:\/\/ffxivteamcraft\.com\/db\/(\w+)\/(\w+)\/(\d+)\/(\S+)/gmi;
   private linkRegexp = /(?:^|\s)https?:\/\/\S+/gmi;
 
@@ -155,8 +155,13 @@ export class CommentLinksPipe implements PipeTransform {
         return null;
     }
     const entries = this.lazyData.merge(...data);
-    return this.l12n.getIndexByName(entries, name.trim().replace(/-/, '–'), lang)
+    let result = this.l12n.getIndexByName(entries, name.trim().replace(/-/, '–'), lang)
       || this.l12n.getIndexByName(entries, name.trim().replace(/-/, '–'), 'en');
+
+    if (contentType === 'map') {
+      result = this.l12n.getMapId(this.l12n.getPlace(result).en);
+    }
+    return result;
   }
 
   private getI18nName(name: I18nName, locale: string, fallback: string): string {
