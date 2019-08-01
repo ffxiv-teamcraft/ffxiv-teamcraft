@@ -964,7 +964,8 @@
       "LIST_REMOVED": "List removed",
       "LIST_PROGRESSION": "List materials progression",
       "FINAL_LIST_PROGRESSION": "List final items progression",
-      "USER_ASSIGNMENT": "User assignment"
+      "USER_ASSIGNMENT": "User assignment",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {
