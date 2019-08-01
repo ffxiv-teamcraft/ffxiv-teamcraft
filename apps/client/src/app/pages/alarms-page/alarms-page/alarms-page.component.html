@@ -113,9 +113,10 @@
 </ng-template>
 
 <ng-template #alarmsDisplay let-alarms>
-  <ng-container *ngIf="!settings.compactAlarms && (true | ifMobile: false); else compactAlarms">
+  <ng-container *ngIf="!settings.compactAlarms; else compactAlarms">
     <ng-container *ngFor="let row of alarms; trackBy: trackByAlarm">
-      <div draggable [dragData]="row.alarm" dragScope="alarm" fxFlex="1 1 20%" class="alarm-card-container">
+      <div draggable [dragData]="row.alarm" dragScope="alarm" fxFlex="1 1 20%" fxFlex.lt-md="1 1 auto"
+           class="alarm-card-container">
         <nz-card [nzCover]="row.alarm.mapId === null?null:map"
                  [nzActions]="[delete, copyMacro]"
                  class="alarm-card"
