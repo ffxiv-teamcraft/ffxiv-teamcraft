@@ -336,7 +336,7 @@ export class LocalizedDataService {
       if (!array[key]) {
         continue;
       }
-      if (array[key].name && array[key].name[language].toLowerCase() === name.toLowerCase()) {
+      if (array[key].name && array[key].name[language].toString().toLowerCase() === name.toLowerCase()) {
         res = +key;
         break;
       }
