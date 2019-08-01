@@ -4,7 +4,7 @@ const fs = require('fs');
 const http = require('https');
 const { map, tap, switchMap, catchError, first } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
-const { getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
+const { aggregateAllPages, getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 const Multiprogress = require('multi-progress');
 const multi = new Multiprogress(process.stdout);
 
@@ -892,6 +892,22 @@ if (hasTodo('mobs')) {
   });
 }
 
+if (hasTodo('places')) {
+  const places = {};
+  getAllPages('https://xivapi.com/PlaceName?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(place => {
+      places[place.ID] = {
+        en: place.Name_en,
+        ja: place.Name_ja,
+        de: place.Name_de,
+        fr: place.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('places', places);
+  });
+}
+
 if (hasTodo('hunts')) {
   const huntZones = [
     134,
@@ -1003,13 +1019,14 @@ if (hasTodo('combos')) {
 
 if (hasTodo('statuses')) {
   const statuses = {};
-  getAllPages('https://xivapi.com/Status?columns=ID,Name_*').subscribe(page => {
+  getAllPages('https://xivapi.com/Status?columns=ID,Name_*,Icon').subscribe(page => {
     page.Results.forEach(status => {
       statuses[status.ID] = {
         en: status.Name_en,
         de: status.Name_de,
         ja: status.Name_ja,
-        fr: status.Name_fr
+        fr: status.Name_fr,
+        icon: status.Icon
       };
     });
   }, null, () => {
@@ -1266,5 +1283,35 @@ if (hasTodo('stats')) {
     });
   }, null, () => {
     persistToTypescript('stats', 'stats', stats);
+  });
+}
+
+if (hasTodo('patchContent')) {
+  const patchContent = {};
+  get('https://xivapi.com/patchlist').pipe(
+    switchMap(patchList => {
+      return combineLatest(patchList.map(patch => {
+        return aggregateAllPages(`https://xivapi.com/search?indexes=achievement,action,craftaction,fate,instancecontent,item,leve,placename,bnpcname,enpcresident,quest,status,trait&filters=Patch=${patch.ID}`, undefined, `Patch ${patch.Version}`)
+          .pipe(
+            map(pages => {
+              return {
+                patchId: patch.ID,
+                content: pages
+              };
+            })
+          );
+      }));
+    })
+  ).subscribe(pages => {
+    pages.forEach(page => {
+      (page.content || []).forEach(entry => {
+        patchContent[page.patchId] = patchContent[page.patchId] || {};
+        if ((patchContent[page.patchId][entry._] || []).indexOf(entry.ID) === -1) {
+          patchContent[page.patchId][entry._] = [...(patchContent[page.patchId][entry._] || []), entry.ID];
+        }
+      });
+    });
+  }, null, () => {
+    persistToJsonAsset('patch-content', patchContent);
   });
 }

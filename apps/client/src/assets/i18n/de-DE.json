@@ -256,6 +256,7 @@
   "Recipe_Added": "1 Gegenstand zu Liste {{listname}} hinzugefügt",
   "Recipes_Added": "{{itemcount}} Gegenstände zu Liste {{listname}} hinzugefügt",
   "Character_name": "Charaktername",
+  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "Abmelden und anonym weiternutzen",
   "Add_manual_character": "Charakter hinzufügen",
   "Character_informations": "Charakterinformationen",
@@ -346,6 +347,7 @@
     "Db_comments_position": "Position der Datenbank-Kommentare",
     "Always_HQ_leves": "Always count leves exp with HQ items",
     "Clickthrough_overlay": "Make overlay clickthrough",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -524,6 +526,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "veraltet",
     "GEAR": "Ausrüstung",
     "CONSUMABLE": "Benutzbares",
@@ -544,6 +550,7 @@
     "PLD": "PLD",
     "WAR": "KRG",
     "DRK": "DKR",
+    "GNB": "GNB",
     "WHM": "WMA",
     "SCH": "GLT",
     "AST": "AST",
@@ -553,6 +560,7 @@
     "SAM": "SAM",
     "BRD": "BRD",
     "MCH": "MCH",
+    "DNC": "DNC",
     "BLM": "SMA",
     "SMN": "BSW",
     "RDM": "RMA",
@@ -766,7 +774,8 @@
         "TEALESS": "Ohne Tee",
         "FOODLESS": "Ohne Gericht",
         "MAKERS_MARK": "Kunst des Kundigen",
-        "MUSCLE_MEMORY": "Motorisches Gedächtnis"
+        "MUSCLE_MEMORY": "Motorisches Gedächtnis",
+        "REUSE": "Reuse"
       }
     },
     "CUSTOM": {
@@ -1222,6 +1231,7 @@
     "Achievements": "Erfolge",
     "Currencies": "Currencies",
     "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "Unlocks": "Unlocks",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1340,6 +1350,25 @@
       "No_comments": "Keine Kommentare",
       "Post": "Post",
       "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+    },
+    "PATCH": {
+      "Open_patch_page": "Click here to open full patch changes in database",
+      "CONTENT": {
+        "Title": "Patch content",
+        "Achievements": "Achievements ({{amount}})",
+        "Actions": "Actions ({{amount}})",
+        "Crafting_actions": "Crafting actions ({{amount}})",
+        "Fates": "Fates ({{amount}})",
+        "Instances": "Instance content ({{amount}})",
+        "Items": "Items ({{amount}})",
+        "Leves": "Leves ({{amount}})",
+        "Maps": "Maps ({{amount}})",
+        "Monsters": "Monsters ({{amount}})",
+        "Npcs": "Npcs ({{amount}})",
+        "Quests": "Quests ({{amount}})",
+        "Statuses": "Statuses ({{amount}})",
+        "Traits": "Traits ({{amount}})"
+      }
     }
   },
   "SEARCH_TYPES": {
@@ -1423,6 +1452,7 @@
     "Sort_desc": "Descending",
     "Add_stat_filter": "Add stat filter",
     "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
     "SORT_BY": {
       "Relevance": "Relevance",
       "ID": "ID",
@@ -1430,5 +1460,12 @@
       "Ilvl": "Item level",
       "Rlvl": "Recipe level"
     }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }

@@ -66,6 +66,7 @@ export class LazyDataService {
   public statuses: any = {};
   public traits: any = {};
   public patches: any[] = [];
+  public patchContents: any = {};
   public recipes: LazyRecipe[] = [];
 
   public get allItems(): any {
@@ -138,7 +139,8 @@ export class LazyDataService {
         this.http.get('./assets/data/statuses.json'),
         this.http.get('./assets/data/traits.json'),
         this.http.get('https://xivapi.com/patchlist'),
-        this.http.get('./assets/data/recipes.json')
+        this.http.get('./assets/data/recipes.json'),
+        this.http.get('./assets/data/patch-content.json')
       ]
     ).subscribe(([
                    items,
@@ -182,7 +184,8 @@ export class LazyDataService {
                    statuses,
                    traits,
                    patches,
-                   recipes
+                   recipes,
+                   patchContents
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -226,6 +229,7 @@ export class LazyDataService {
       this.traits = traits;
       this.patches = patches as any[];
       this.recipes = recipes as LazyRecipe[];
+      this.patchContents = patchContents;
       this.loaded$.next(true);
       this.loaded$.complete();
     });

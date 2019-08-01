@@ -1,4 +1,4 @@
-<div class="top-part">
+<div class="top-part" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
   <div class="search-box" fxLayout="row" fxLayoutGap="5px" fxLayout.lt-md="column">
     <ng-container *ngIf="false | ifMobile: true">
       <ng-container *ngTemplateOutlet="searchType"></ng-container>
@@ -8,7 +8,7 @@
              placeholder="{{'Search_placeholder' | translate:{type: searchType$ | async} }}" #searchInput nz-input
              [ngModel]="query$.value"
              autofocus
-             [nzAutocomplete]="auto"
+             [nzAutocomplete]="settings.disableSearchHistory?null:auto"
              (input)="query$.next(searchInput.value)"
              (ngModelChange)="query$.next($event)">
       <ng-template #suffixTemplate>
@@ -385,6 +385,13 @@
     </div>
     <nz-alert nzType="warning" class="dark" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" nzShowIcon
               *ngIf="results.length >= 100"></nz-alert>
+    <div class="patch" *ngIf="patch$ | async as patch" fxLayout="column" fxLayoutAlign="center center">
+      <a routerLink="/db/{{translate.currentLang}}/patch/{{patch.ID}}" fxLayout="column" fxLayoutAlign="center center">
+        <img [src]="patch.Banner" [alt]="patch | xivapiI18n" *ngIf="patch.Banner; else patchName" class="patch-banner">
+        <ng-template #patchName><h3 [innerHTML]="patch | xivapiI18n"></h3></ng-template>
+        <div>{{'DB.PATCH.Open_patch_page' | translate}}</div>
+      </a>
+    </div>
     <div class="results">
       <app-page-loader [loading]="loading">
         <ng-container *ngFor="let row of results; trackBy: trackByItem; let odd = odd">

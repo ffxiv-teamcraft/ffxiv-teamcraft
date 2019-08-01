@@ -540,6 +540,21 @@ export class ItemComponent extends TeamcraftPageComponent {
             }
           });
         }
+        if (data.item.unlocks) {
+          usedFor.push({
+            type: UsedForType.UNLOCKS,
+            flex: '1 1 auto',
+            title: 'DB.Unlocks',
+            icon: './assets/icons/unlocks.png',
+            links: data.item.unlocks
+              .map(itemId => {
+                return {
+                  itemId: +itemId,
+                  recipes: [this.lazyData.recipes.find(r => r.result === +itemId)]
+                };
+              })
+          });
+        }
         return usedFor;
       })
     );

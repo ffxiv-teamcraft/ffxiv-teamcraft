@@ -560,7 +560,7 @@
                         <div *ngFor="let recipe of link.recipes; let last=last" fxLayoutAlign="flex-start center"
                              fxLayoutGap="5px">
                           <img src="https://garlandtools.org/db/images/{{(recipe.job | jobAbbr)?.en}}.png" alt=""
-                               class="img-icon">
+                               class="smaller-img-icon">
                           <div>lvl {{recipe.level}} {{recipe.stars | ingameStars}}<span *ngIf="!last">,</span></div>
                         </div>
                       </div>

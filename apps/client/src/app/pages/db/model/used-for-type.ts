@@ -8,5 +8,6 @@ export enum UsedForType {
   SUPPLY,
   REDUCTION,
   DESYNTH,
-  ROWENA_SPLENDOR
+  ROWENA_SPLENDOR,
+  UNLOCKS
 }
