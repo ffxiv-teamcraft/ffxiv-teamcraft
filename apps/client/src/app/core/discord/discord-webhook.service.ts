@@ -100,11 +100,16 @@ export class DiscordWebhookService {
   }
 
   notifyItemChecked(team: Team, itemIcon: number, list: List, memberId: string, amount: number, itemId: number, totalNeeded: number, finalItem: boolean): void {
-    if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION) && !finalItem) {
-      return;
-    }
-    if (!team.hasSettingEnabled(WebhookSettingType.FINAL_LIST_PROGRESSION) && finalItem) {
-      return;
+    const row = list.getItemById(itemId, !finalItem, finalItem);
+    if (row.done + amount < totalNeeded || !team.hasSettingEnabled(WebhookSettingType.ITEM_COMPLETION)) {
+      if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION) && !finalItem) {
+        return;
+      }
+      if (!team.hasSettingEnabled(WebhookSettingType.FINAL_LIST_PROGRESSION) && finalItem) {
+        return;
+      }
+    } else {
+      amount = row.done + amount;
     }
     const itemName = this.l12n.getItem(itemId);
     this.characterService.getCharacter(memberId).pipe(
