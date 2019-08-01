@@ -24,6 +24,7 @@ export class TradeIconPipe implements PipeTransform {
     36: 0, // Mendacity
     37: 0, // Genesis
     38: 28, // Goetia
+    39: 25, // Phantasmagoria
     7811: 28, // Rowena's Token (Soldiery)
     9383: 28, // Rowena's Token (Poetics)
     14298: 28, // Rowena's Token (Lore)
