@@ -964,7 +964,8 @@
       "LIST_REMOVED": "Список удален",
       "LIST_PROGRESSION": "Прогресс списка материалов",
       "FINAL_LIST_PROGRESSION": "Прогресс списка итоговых предметов",
-      "USER_ASSIGNMENT": "Назначение пользователей"
+      "USER_ASSIGNMENT": "Назначение пользователей",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {
