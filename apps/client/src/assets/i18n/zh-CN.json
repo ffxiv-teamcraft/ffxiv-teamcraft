@@ -964,7 +964,8 @@
       "LIST_REMOVED": "列表删除",
       "LIST_PROGRESSION": "查看材料进度",
       "FINAL_LIST_PROGRESSION": "查看产出进度",
-      "USER_ASSIGNMENT": "用户分配"
+      "USER_ASSIGNMENT": "用户分配",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {
