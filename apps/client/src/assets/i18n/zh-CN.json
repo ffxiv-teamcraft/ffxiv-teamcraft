@@ -142,7 +142,7 @@
     "Custom_sound": "自定义闹钟声音",
     "New_group": "新建闹钟组",
     "Confirm_group_delete": "确定要删除这个分组吗？",
-    "Delete_group_and_alarms": "Delete group with all alarms",
+    "Delete_group_and_alarms": "删除该分组和分组下的所有闹钟",
     "Confirm_group_delete_with_alarms": "您确定要删除此组及其中的所有闹钟吗？",
     "Add_note": "添加备注",
     "Volume": "音量",
@@ -256,6 +256,7 @@
   "Recipe_Added": "一个物品已经被添加到清单 {{listname}}",
   "Recipes_Added": "{{itemcount}} 个物品已加入清单 {{listname}}",
   "Character_name": "角色名",
+  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "注销并返回匿名身份",
   "Add_manual_character": "添加角色",
   "Character_informations": "角色信息",
@@ -345,7 +346,8 @@
     "Auto_mark_as_done_in_log": "在列表项完成时标记为已完成",
     "Db_comments_position": "数据库评论位置",
     "Always_HQ_leves": "Always count leves exp with HQ items",
-    "Clickthrough_overlay": "Make overlay clickthrough",
+    "Clickthrough_overlay": "悬浮窗鼠标穿透",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -512,7 +514,7 @@
         "REMOVE_ITEM": "从清单中删除物品",
         "ADD_TAG": "添加标签到物品",
         "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成",
-        "MARKET_BOARD_INFORMATIONS": "时长信息"
+        "MARKET_BOARD_INFORMATIONS": "市场信息"
       }
     },
     "LAYOUT": {
@@ -524,6 +526,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "已过期",
     "GEAR": "装备",
     "CONSUMABLE": "消耗品",
@@ -544,6 +550,7 @@
     "PLD": "骑士",
     "WAR": "战士",
     "DRK": "黑骑",
+    "GNB": "GNB",
     "WHM": "白魔",
     "SCH": "学者",
     "AST": "占星",
@@ -553,6 +560,7 @@
     "SAM": "武士",
     "BRD": "诗人",
     "MCH": "机工",
+    "DNC": "DNC",
     "BLM": "黑魔",
     "SMN": "召唤",
     "RDM": "赤魔",
@@ -738,7 +746,7 @@
     "SOLVER": {
       "Hq_target": "目标HQ率",
       "Use_rotation_as_seed": "Use current rotation as starting point",
-      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的工序而生，作为一个AI在其逐渐成长的过程中，可能生成非常好的工序也可能生成非常不好的工序。请不要举报不理想的手法为bug."
+      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的工序而生，作为一个 AI，在其逐渐成长的过程中，可能生成非常好的工序也可能生成非常差的工序。如果生成结果不理想，请不要报告为 bug。"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "社区共享工序",
@@ -766,7 +774,8 @@
         "TEALESS": "无药品",
         "FOODLESS": "无食品",
         "MAKERS_MARK": "坚实的心得",
-        "MUSCLE_MEMORY": "坚信"
+        "MUSCLE_MEMORY": "坚信",
+        "REUSE": "Reuse"
       }
     },
     "CUSTOM": {
@@ -1222,6 +1231,7 @@
     "Achievements": "成就",
     "Currencies": "货币",
     "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "Unlocks": "Unlocks",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1339,7 +1349,26 @@
       "Show_more": "查看其他{{amount}} 个评论",
       "No_comments": "暂无评论",
       "Post": "发布",
-      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "输入 <页面类型>:\"<页面标题>\" 以链接到其它页面。例如， item:\"无锋剑柯塔纳\"、action:\"制作\"、map:\"魔晶堂\" 。支持的页面类型有：item(物品), map(地图), mob(怪物), achievement(成就), leve(理符), npc, instance(副本), quest(任务), trait(特性), action(技能), status(状态)"
+    },
+    "PATCH": {
+      "Open_patch_page": "Click here to open full patch changes in database",
+      "CONTENT": {
+        "Title": "Patch content",
+        "Achievements": "Achievements ({{amount}})",
+        "Actions": "Actions ({{amount}})",
+        "Crafting_actions": "Crafting actions ({{amount}})",
+        "Fates": "Fates ({{amount}})",
+        "Instances": "Instance content ({{amount}})",
+        "Items": "Items ({{amount}})",
+        "Leves": "Leves ({{amount}})",
+        "Maps": "Maps ({{amount}})",
+        "Monsters": "Monsters ({{amount}})",
+        "Npcs": "Npcs ({{amount}})",
+        "Quests": "Quests ({{amount}})",
+        "Statuses": "Statuses ({{amount}})",
+        "Traits": "Traits ({{amount}})"
+      }
     }
   },
   "SEARCH_TYPES": {
@@ -1414,21 +1443,29 @@
     "Title": "博客"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+    "Http_request_error": "{{tool}} 发生了错误。请到 Discord 的 #announcements 频道查看公告，或是到 #bugs 频道反馈。",
+    "Firebase_blocked": "Teamcraft 无法访问数据库。可能是访问请求被拦截，或者网络已断开。"
   },
   "SEARCH": {
-    "Sort_by": "Sort by: ",
-    "Sort_asc": "Ascending",
-    "Sort_desc": "Descending",
+    "Sort_by": "排序： ",
+    "Sort_asc": "升序",
+    "Sort_desc": "降序",
     "Add_stat_filter": "Add stat filter",
     "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
     "SORT_BY": {
       "Relevance": "Relevance",
       "ID": "ID",
-      "Level": "Level",
-      "Ilvl": "Item level",
-      "Rlvl": "Recipe level"
+      "Level": "等级",
+      "Ilvl": "物品品级",
+      "Rlvl": "配方等级"
     }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }

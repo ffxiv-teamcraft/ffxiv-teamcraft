@@ -256,6 +256,7 @@
   "Recipe_Added": "1 objet ajouté à la liste {{listname}}",
   "Recipes_Added": "{{itemcount}} objets ajoutés à la liste {{listname}}",
   "Character_name": "Nom complet du personnage",
+  "Character_add_warning": "Si vous voyez ceci sans avoir supprimé votre personnage manuellement, ne faites rien et redémarrez l'application ou faites F5. Si ce problème persiste, veuillez le signaler sur le serveur discord.",
   "Disconnect_and_anonymous": "Se déconnecter et continuer en tant qu'anonyme",
   "Add_manual_character": "Ajouter un personnage",
   "Character_informations": "Informations du personnage",
@@ -346,6 +347,7 @@
     "Db_comments_position": "Position des commentaires de la base de données",
     "Always_HQ_leves": "Utiliser des mandats HQ par défaut pour le calcul d'exp",
     "Clickthrough_overlay": "Permettre de cliquer à travers l'overlay",
+    "Disable_search_history": "Supprimer l'historique de recherche",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -524,6 +526,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "Obsolète",
     "GEAR": "Équipement",
     "CONSUMABLE": "Consommable",
@@ -544,6 +550,7 @@
     "PLD": "PLD",
     "WAR": "GUE",
     "DRK": "CHN",
+    "GNB": "PSB",
     "WHM": "MBL",
     "SCH": "ÉRU",
     "AST": "AST",
@@ -553,6 +560,7 @@
     "SAM": "SAM",
     "BRD": "BRD",
     "MCH": "MCH",
+    "DNC": "DNS",
     "BLM": "MNO",
     "SMN": "INV",
     "RDM": "MRG",
@@ -766,7 +774,8 @@
         "TEALESS": "Sans médicament",
         "FOODLESS": "Sans nourriture",
         "MAKERS_MARK": "Marque du fabricant",
-        "MUSCLE_MEMORY": "Mémoire musculaire"
+        "MUSCLE_MEMORY": "Mémoire musculaire",
+        "REUSE": "Récupération de chutes"
       }
     },
     "CUSTOM": {
@@ -1222,6 +1231,7 @@
     "Achievements": "Haut-faits",
     "Currencies": "Devises",
     "Rowena_splendor": "Splendeurs de Rowena (étoile = +20% bonus)",
+    "Unlocks": "Déverrouille",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1340,6 +1350,25 @@
       "No_comments": "Aucun commentaire",
       "Post": "Publier",
       "Editor_tip": "Tapez <page type>:\"<Content Name>\" pour créer un lien vers une autre page. Exemples : item:\"Curtana\", action:\"Travail de base\", map:\"Cristarium\". Types de pages supportés: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+    },
+    "PATCH": {
+      "Open_patch_page": "Cliquez ici pour ouvrir les modifications de patch dans la base de données",
+      "CONTENT": {
+        "Title": "Contenu du patch",
+        "Achievements": "Hauts faits ({{amount}})",
+        "Actions": "Actions ({{amount}})",
+        "Crafting_actions": "Actions de fabrication ({{amount}})",
+        "Fates": "Aléas ({{amount}})",
+        "Instances": "Instances ({{amount}})",
+        "Items": "Objets ({{amount}})",
+        "Leves": "Mandats ({{amount}})",
+        "Maps": "Cartes ({{amount}})",
+        "Monsters": "Monstres ({{amount}})",
+        "Npcs": "PNJs ({{amount}})",
+        "Quests": "Quêtes ({{amount}})",
+        "Statuses": "Status ({{amount}})",
+        "Traits": "Traits ({{amount}})"
+      }
     }
   },
   "SEARCH_TYPES": {
@@ -1423,6 +1452,7 @@
     "Sort_desc": "Décroissant",
     "Add_stat_filter": "Ajouter un filtre de stat",
     "Add_bonus_stat_filter": "Ajouter un filtre de stat bonus",
+    "Search_tip": "Vous pouvez taper patch :<patch #> pour filtrer sur un patch donné, exemple : patch:5.01",
     "SORT_BY": {
       "Relevance": "Pertinence",
       "ID": "ID",
@@ -1430,5 +1460,12 @@
       "Ilvl": "Niveau d'objet",
       "Rlvl": "Niveau de la recette"
     }
+  },
+  "SIDEBAR": {
+    "General": "Général",
+    "Sharing": "Partage",
+    "Gathering": "Récolte",
+    "Helpers": "Assistants",
+    "Other": "Autre"
   }
 }
