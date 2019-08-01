@@ -120,7 +120,9 @@ export class LayoutRowFilter {
         10309,
         10311,
         17833,
-        17834
+        17834,
+        25199,
+        25200
       ];
 
       for (const tokenId of scriptIds) {
