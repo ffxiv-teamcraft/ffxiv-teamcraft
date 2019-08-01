@@ -400,8 +400,10 @@
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
             <div class="durability" fxLayout="column" fxLayoutAlign="center center">
               <h3>{{'SIMULATOR.Durability' | translate}}</h3>
-              <span class="durability-value">{{resultData.simulation.durability}}
-                / {{resultData.simulation.recipe.durability}}</span>
+              <span 
+              class="durability-value"
+              [class.durability-value-failed]="resultData.failCause === 'DURABILITY_REACHED_ZERO'">
+              {{resultData.simulation.durability}} / {{resultData.simulation.recipe.durability}}</span>
             </div>
             <div fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
               <div class="top-bars">
@@ -413,7 +415,8 @@
                       [nzShowInfo]="false"
                       [nzPercent]="barPercent(resultData.simulation.progression,resultData.simulation.recipe.progress)"
                       [nzFormat]="barFormat(resultData.simulation.progression, resultData.simulation.recipe.progress)"
-                      class="progress-progressbar">
+                      class="progress-progressbar"
+                      [class.progress-progressbar-failed]="resultData.failCause === 'DURABILITY_REACHED_ZERO'">
                     </nz-progress>
                     <div
                       class="progress-value">{{barFormat(resultData.simulation.progression,
