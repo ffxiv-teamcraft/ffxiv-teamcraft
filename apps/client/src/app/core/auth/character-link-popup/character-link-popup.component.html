@@ -1,5 +1,5 @@
 <div *ngIf="servers$ | async as availableServers; else loading">
-  <nz-alert *ngIf="localstorageUser.stats !== {} && mandatory" nzType="warning" nzShowIcon
+  <nz-alert *ngIf="localstorageUser?.stats && localstorageUser?.stats !== {} && mandatory" nzType="warning" nzShowIcon
             [nzMessage]="'COMMON.Warning' | translate" [nzDescription]="'Character_add_warning' | translate">
   </nz-alert>
   <nz-form-item>
