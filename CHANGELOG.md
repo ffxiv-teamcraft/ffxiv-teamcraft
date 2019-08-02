@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.2"></a>
+## [5.7.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.1...v5.7.2) (2019-08-02)
+
+
+### Bug Fixes
+
+* **db:** removed simulator button for airship parts ([62616a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62616a2))
+* **layout:** fixed white scrips not being filtered properly ([eb488a4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb488a4))
+* **list:** quick item addition popup now shows all items, not only recipes ([89bbee8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/89bbee8))
+* **macro-translator:** fixed an issue with some macros not being translated properly ([c002d04](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c002d04))
+* **profile:** fixed masterbook order for CUL ([e81a65c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e81a65c))
+* **search:** FC crafts now show under Recipes results ([193a272](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/193a272))
+* **simulator:** fixed a bug with min stats popup hanging browser forever ([23afdfc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23afdfc))
+* **tooltip:** fixed a bug with missing bonus on some foods ([85afcf7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/85afcf7))
+
+
+
 <a name="5.7.1"></a>
 ## [5.7.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.19...v5.7.1) (2019-08-01)
 
