@@ -171,7 +171,7 @@ export class DataService {
       string: query,
       language: lang,
       filters: xivapiFilters,
-      columns: ['ID', 'Name_*', 'Icon', 'Recipes']
+      columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks']
     };
 
     if (sort[0]) {
@@ -217,7 +217,7 @@ export class DataService {
       map(results => {
         if (onlyCraftable) {
           return results.filter(row => {
-            return row.Recipes && row.Recipes.length > 0;
+            return (row.Recipes && row.Recipes.length > 0) || (row.GameContentLinks && row.GameContentLinks.CompanyCraftSequence && row.GameContentLinks.CompanyCraftSequence.ResultItem);
           });
         }
         return results;

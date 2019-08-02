@@ -13,6 +13,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'recipes',
+    redirectTo: 'search',
+    pathMatch: 'full'
+  },
+  {
     path: 'lists',
     loadChildren: './pages/lists/lists-page.module#ListsPageModule'
   },

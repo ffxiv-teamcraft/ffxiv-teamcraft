@@ -3,7 +3,8 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
 import {
   catchError,
-  debounceTime, delay,
+  debounceTime,
+  delay,
   distinctUntilChanged,
   filter,
   map,
@@ -148,6 +149,14 @@ export class AuthEffects {
       }
     }),
     distinctUntilChanged((a, b) => JSON.stringify(a) === JSON.stringify(b)),
+    map(user => {
+      const cachedUser: any = JSON.parse(localStorage.getItem('auth:user') || '{}');
+      if (user.lodestoneIds.length === 0 && cachedUser.$key === user.$key) {
+        user.lodestoneIds = cachedUser.lodestoneIds;
+        user.defaultLodestoneId = cachedUser.defaultLodestoneId;
+      }
+      return user;
+    }),
     map(user => new UserFetched(user))
   );
 
@@ -253,6 +262,10 @@ export class AuthEffects {
     debounceTime(100),
     withLatestFrom(this.store),
     switchMap(([, state]) => {
+      // Don't save if there is no associated lodestone id on a logged in account.
+      if (state.auth.loggedIn && state.auth.user.lodestoneIds.length === 0) {
+        return of(null);
+      }
       // Save to localstorage to have a backup check to avoid data loss
       localStorage.setItem('auth:user', JSON.stringify(state.auth.user));
       return this.userService.set(state.auth.uid, { ...state.auth.user }).pipe(

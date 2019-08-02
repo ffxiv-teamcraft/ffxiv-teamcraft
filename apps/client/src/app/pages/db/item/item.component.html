@@ -219,7 +219,8 @@
               </div>
             </ng-template>
             <div class="recipes" fxLayout="column" fxLayoutGap="10px">
-              <nz-card *ngFor="let recipe of data.craftedBy" fxLayoutGap="5px" [nzActions]="[addToList, openSimulator]">
+              <nz-card *ngFor="let recipe of data.craftedBy" fxLayoutGap="5px"
+                       [nzActions]="recipe.jobId > 0 ?[addToList, openSimulator]: [addToList]">
                 <nz-card-meta [nzTitle]="recipeTitle">
                   <ng-template #recipeTitle>
                     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">

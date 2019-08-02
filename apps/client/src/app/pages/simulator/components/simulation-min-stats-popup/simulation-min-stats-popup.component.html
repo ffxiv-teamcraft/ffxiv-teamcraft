@@ -1,5 +1,10 @@
 <div *ngIf="stats">
-  <div>{{'SIMULATOR.CONFIGURATION.Craftsmanship' | translate}}: {{stats.craftsmanship}}</div>
-  <div>{{'SIMULATOR.CONFIGURATION.Control' | translate}}: {{stats.control}}</div>
-  <div>{{'SIMULATOR.Cp_amount' | translate}}: {{stats.cp}}</div>
+  <div *ngIf="stats.found; else notFound">
+    <div>{{'SIMULATOR.CONFIGURATION.Craftsmanship' | translate}}: {{stats.craftsmanship}}</div>
+    <div>{{'SIMULATOR.CONFIGURATION.Control' | translate}}: {{stats.control}}</div>
+    <div>{{'SIMULATOR.Cp_amount' | translate}}: {{stats.cp}}</div>
+  </div>
+  <ng-template #notFound>
+    <nz-alert nzType="error" nzShowIcon [nzMessage]="'SIMULATOR.Could_not_find_minstats' | translate"></nz-alert>
+  </ng-template>
 </div>

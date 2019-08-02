@@ -743,6 +743,7 @@
     "Solve_rotation": "Solve this rotation",
     "Rotation_solver": "Rotation solver",
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Could_not_find_minstats": "Could not find min stats for this rotation",
     "SOLVER": {
       "Hq_target": "Target HQ%",
       "Use_rotation_as_seed": "Use current rotation as starting point",
@@ -964,7 +965,8 @@
       "LIST_REMOVED": "リストが削除されました",
       "LIST_PROGRESSION": "素材の進捗状況の一覧",
       "FINAL_LIST_PROGRESSION": "最終項目の進行状況をリストアップする",
-      "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる"
+      "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {
