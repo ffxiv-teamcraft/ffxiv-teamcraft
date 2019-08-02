@@ -743,6 +743,7 @@
     "Solve_rotation": "\"Решить\" ротацию",
     "Rotation_solver": "Генератор ротаций",
     "Recipe_picker_placeholder": "Введите название рецепта, который вы хотите сделать",
+    "Could_not_find_minstats": "Could not find min stats for this rotation",
     "SOLVER": {
       "Hq_target": "Целевой шанс HQ",
       "Use_rotation_as_seed": "Использовать текущую ротацию как начальную точку",
@@ -964,7 +965,8 @@
       "LIST_REMOVED": "Список удален",
       "LIST_PROGRESSION": "Прогресс списка материалов",
       "FINAL_LIST_PROGRESSION": "Прогресс списка итоговых предметов",
-      "USER_ASSIGNMENT": "Назначение пользователей"
+      "USER_ASSIGNMENT": "Назначение пользователей",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {

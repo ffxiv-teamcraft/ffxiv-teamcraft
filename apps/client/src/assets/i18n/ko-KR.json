@@ -743,6 +743,7 @@
     "Solve_rotation": "로테이션 생성",
     "Rotation_solver": "로테이션 생성기",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
+    "Could_not_find_minstats": "Could not find min stats for this rotation",
     "SOLVER": {
       "Hq_target": "HQ 목표치",
       "Use_rotation_as_seed": "현재 로테이션을 시작점부터 사용",
@@ -964,7 +965,8 @@
       "LIST_REMOVED": "목록 제거",
       "LIST_PROGRESSION": "재료 진행상황",
       "FINAL_LIST_PROGRESSION": "최종 아이템 진행상황",
-      "USER_ASSIGNMENT": "팀원 할당"
+      "USER_ASSIGNMENT": "팀원 할당",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {
