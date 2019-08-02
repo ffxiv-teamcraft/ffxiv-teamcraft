@@ -1453,7 +1453,7 @@
     "Sort_asc": "Croissant",
     "Sort_desc": "Décroissant",
     "Add_stat_filter": "Ajouter un filtre de stat",
-    "Add_bonus_stat_filter": "Ajouter un filtre de stat bonus",
+    "Add_bonus_stat_filter": "Ajouter un filtre de caractéristique bonus",
     "Search_tip": "Vous pouvez taper patch :<patch #> pour filtrer sur un patch donné, exemple : patch:5.01",
     "SORT_BY": {
       "Relevance": "Pertinence",
