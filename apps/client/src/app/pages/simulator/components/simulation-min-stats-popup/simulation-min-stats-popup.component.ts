@@ -10,7 +10,7 @@ export class SimulationMinStatsPopupComponent implements OnInit {
 
   simulation: Simulation;
 
-  stats: { control: number, craftsmanship: number, cp: number };
+  stats: { control: number, craftsmanship: number, cp: number, found: boolean };
 
   ngOnInit(): void {
     setTimeout(() => {
