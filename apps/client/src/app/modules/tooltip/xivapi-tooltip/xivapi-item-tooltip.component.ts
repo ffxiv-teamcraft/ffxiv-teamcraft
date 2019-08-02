@@ -86,7 +86,7 @@ export class XivapiItemTooltipComponent implements OnInit {
 
     if (this.item.ItemFood !== undefined) {
       const food = this.item.ItemFood;
-      for (let i = 0; i < 2; i++) {
+      for (let i = 0; i <= 2; i++) {
         const statsEntry: any = {};
         const value = food[`Value${i}`];
         const valueHq = food[`ValueHQ${i}`];
