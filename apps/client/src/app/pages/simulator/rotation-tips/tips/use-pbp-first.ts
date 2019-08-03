@@ -15,7 +15,7 @@ export class UsePbpFirst extends RotationTip {
   matches(simulationResult: SimulationResult): boolean {
     const pbpIndex = simulationResult.steps.findIndex(step => step.action.is(PieceByPiece));
     const synthIndex = simulationResult.steps.findIndex(step => step.addedProgression > 0 && !step.action.is(MuscleMemory) && !step.action.is(PieceByPiece));
-    return pbpIndex > synthIndex;
+    return synthIndex > -1 && pbpIndex > synthIndex;
   }
 
 }
