@@ -15,7 +15,7 @@ export class UseReflectEarlier extends RotationTip {
   matches(simulationResult: SimulationResult): boolean {
     const reflectIndex = simulationResult.steps.findIndex(step => step.action.is(SpecialtyReflect));
     const qualityIndex = simulationResult.steps.findIndex(step => step.addedQuality > 0);
-    return reflectIndex > qualityIndex;
+    return qualityIndex > -1 && reflectIndex > qualityIndex;
   }
 
 }
