@@ -1,36 +1,39 @@
 import { ZoneBreakdownRow } from './zone-breakdown-row';
 import { ListRow } from '../../modules/list/model/list-row';
 import { tpWindowEntries } from '../../core/data/sources/tp-window-entries';
+import { LayoutRowFilter } from '../../core/layout/layout-row-filter';
 
 export class ZoneBreakdown {
 
-  constructor(rows: ListRow[], hideZoneDuplicates = false) {
+  constructor(rows: ListRow[], filterChain?: string, hideZoneDuplicates = false) {
     rows.forEach(row => {
-      if (row.gatheredBy !== undefined && row.gatheredBy.nodes !== undefined && row.gatheredBy.nodes.length !== 0) {
+      if (row.gatheredBy !== undefined && row.gatheredBy.nodes !== undefined && row.gatheredBy.nodes.length !== 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_GATHERING)) {
         row.gatheredBy.nodes.forEach(node => {
           this.addToBreakdown(node.zoneid, node.mapid, row, hideZoneDuplicates);
         });
-        return;
-      }
-      if (row.drops !== undefined && row.drops.length > 0) {
+      } else if (row.drops !== undefined && row.drops.length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_DUNGEON_DROP, LayoutRowFilter.IS_MONSTER_DROP)) {
         row.drops.forEach(drop => {
           this.addToBreakdown(drop.zoneid, drop.mapid, row, hideZoneDuplicates);
         });
-        return;
-      }
-      if (row.vendors !== undefined && row.vendors.length > 0) {
+      } else if (row.alarms !== undefined && row.alarms.length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TIMED, LayoutRowFilter.IS_REDUCTION)) {
+        row.alarms.forEach(alarm => {
+          this.addToBreakdown(alarm.zoneId, alarm.mapId, row, hideZoneDuplicates);
+        });
+      } else if (row.vendors !== undefined && row.vendors.length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.CAN_BE_BOUGHT)) {
         row.vendors.forEach(vendor => {
           this.addToBreakdown(vendor.zoneId, vendor.mapId, row, hideZoneDuplicates);
         });
-      }
-      if (row.tradeSources !== undefined && row.tradeSources.length > 0) {
+      } else if (row.tradeSources !== undefined && row.tradeSources.length > 0
+        && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TRADE, LayoutRowFilter.IS_TOKEN_TRADE, LayoutRowFilter.IS_TOME_TRADE, LayoutRowFilter.IS_GC_TRADE, LayoutRowFilter.IS_SCRIPT_TRADE)
+      ) {
         row.tradeSources.forEach(source => {
           source.npcs.forEach(npc => {
             this.addToBreakdown(npc.zoneId, npc.mapId, row, hideZoneDuplicates);
           });
         });
+      } else {
+        this.addToBreakdown(-1, -1, row, hideZoneDuplicates);
       }
-      this.addToBreakdown(-1, -1, row, hideZoneDuplicates);
     });
   }
 
@@ -42,6 +45,12 @@ export class ZoneBreakdown {
    */
   public get rows(): ZoneBreakdownRow[] {
     return this._rows;
+  }
+
+  private hasOneFilter(chain: string, ...filters: LayoutRowFilter[]): boolean {
+    return chain.indexOf('ANYTHING') > -1 || filters.reduce((match, f) => {
+      return match || chain.indexOf(f.name) > -1;
+    }, false);
   }
 
   /**

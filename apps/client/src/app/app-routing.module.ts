@@ -136,6 +136,10 @@ const routes: Routes = [
   {
     path: 'blog',
     loadChildren: './pages/blog/blog.module#BlogModule'
+  },
+  {
+    path: 'reset-timers',
+    loadChildren: './pages/reset-timers/reset-timers.module#ResetTimersModule'
   }
 ];
 
