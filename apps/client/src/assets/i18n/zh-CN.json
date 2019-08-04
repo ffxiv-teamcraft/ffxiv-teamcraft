@@ -192,7 +192,7 @@
   "No": "否",
   "Crystals": "水晶",
   "Gathering": "采集中",
-  "Drops_or_GC": "Dungeons/Drops or GC",
+  "Drops_or_GC": "副本/掉落或军团",
   "Other": "其他",
   "Pre_crafts": "半成品",
   "Items": "物品",
@@ -345,9 +345,9 @@
     "Clear_search_history": "清除搜索记录",
     "Auto_mark_as_done_in_log": "在列表项完成时标记为已完成",
     "Db_comments_position": "数据库评论位置",
-    "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Always_HQ_leves": "默认以提交HQ物品计算理符经验",
     "Clickthrough_overlay": "悬浮窗鼠标穿透",
-    "Disable_search_history": "Disable search history",
+    "Disable_search_history": "关闭搜索记录",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -374,13 +374,13 @@
     "Patreon_features": "Patreon 支持者功能",
     "Contacts": "好友",
     "Add_new_contact": "添加好友",
-    "Save_for_all": "Save for all crafters",
+    "Save_for_all": "一键保存所有工匠",
     "User_not_verified": "用户未验证，点击验证",
     "More_than_100_lists_created": "创建了 100+ 个清单",
     "Veteran": "老玩家",
     "VERIFICATION": {
       "Title": "角色验证",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
+      "Guide": "若要认证您的账户，复制这个代码{{userId}}到Lodestone个人资料中，并点击下方的按键。更多信息在<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>。",
       "Success": "角色已验证！你现在可以关闭该窗口。现在你可以从你的 Lodestone 资料中移除验证代码了。",
       "Error": "无法在你的资料中找到代码。请确认你已经粘贴并保存，然后等待约 30 秒后重试。",
       "Validate": "验证"
@@ -418,7 +418,7 @@
       "Final_step": "验证",
       "Creating_list": "正在创建清单",
       "Loading_items": "正在加载物品信息",
-      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Estimate_overmeld_materia": "估算禁断所需要的魔晶石",
       "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
       "Group_together": "Group materias together"
     }
