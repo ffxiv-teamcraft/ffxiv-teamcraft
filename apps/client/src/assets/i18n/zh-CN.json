@@ -743,6 +743,7 @@
     "Solve_rotation": "求解其工序",
     "Rotation_solver": "工序求解器",
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Could_not_find_minstats": "Could not find min stats for this rotation",
     "SOLVER": {
       "Hq_target": "目标HQ率",
       "Use_rotation_as_seed": "Use current rotation as starting point",
@@ -964,7 +965,8 @@
       "LIST_REMOVED": "列表删除",
       "LIST_PROGRESSION": "查看材料进度",
       "FINAL_LIST_PROGRESSION": "查看产出进度",
-      "USER_ASSIGNMENT": "用户分配"
+      "USER_ASSIGNMENT": "用户分配",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {
