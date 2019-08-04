@@ -24,7 +24,12 @@ export class UseIngenuityBeforeByregot extends RotationTip {
     const simulation = simulationResult.simulation.clone();
     const clvl = Tables.LEVEL_TABLE[simulation.crafterStats.level] || simulation.crafterStats.level;
     const byregotsIndex = simulation.actions.findIndex(a => a.is(ByregotsBlessing) || a.is(ByregotsMiracle));
-    return simulation.actions.slice(byregotsIndex).some(a => a.is(Ingenuity) || a.is(Ingenuity))
+    return !simulation.actions
+        .slice(byregotsIndex - 5, byregotsIndex)
+        .some(a => a.is(Ingenuity) || a.is(Ingenuity))
+      && simulation.actions
+        .slice(byregotsIndex)
+        .some(a => a.is(Ingenuity) || a.is(Ingenuity))
       && simulationResult.hqPercent < 100
       && clvl < simulation.recipe.rlvl;
   }
