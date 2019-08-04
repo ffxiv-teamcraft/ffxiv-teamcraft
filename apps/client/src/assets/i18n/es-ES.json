@@ -20,6 +20,13 @@
     "auth/user-not-found": "Correo electrónico o contraseña incorrectos",
     "auth/wrong-password": "Correo electrónico o contraseña incorrectos"
   },
+  "TIMERS": {
+    "Days": "days",
+    "Day": "day",
+    "Hours": "h",
+    "Minutes": "m",
+    "Seconds": "s"
+  },
   "ITEMS": {
     "Title": "Busqueda",
     "No_match": "No se encontró el artículo",
@@ -152,6 +159,17 @@
     "Node_content": "Contenido del nodo",
     "Toggle_collapse": "Colapsar/Expandir grupos",
     "Add_alarms_to_group": "Agregar alarmas a este grupo",
+    "REALTIME": {
+      "Reset_timers": "Reset timers",
+      "WEEKLY_RESETS": "Weeklies",
+      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
+      "ROULETTES_RESET": "Roulettes & Beast tribes",
+      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
+      "DELIVERIES_RESET": "Deliveries",
+      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
+      "LEVE_ALLOWANCES": "Leve allowances",
+      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+    },
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
