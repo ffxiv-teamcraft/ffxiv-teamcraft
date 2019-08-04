@@ -10,7 +10,7 @@ export class TimerPipe implements PipeTransform {
   constructor(private translate: TranslateService) {
   }
 
-  transform(duration: number): string {
+  transform(duration: number, verbose = false): string {
     // 259200 is 3 days, we'll display a specific timer for that because of weather transition accuracy issues
     // if (duration > 259200) {
     //   return this.translate.instant('ALARMS.More_than_three_days');
@@ -22,8 +22,12 @@ export class TimerPipe implements PipeTransform {
     const secondsString = `${seconds < 10 ? 0 : ''}${seconds}`;
     const minutesString = `${minutes < 10 ? 0 : ''}${minutes}`;
     const hoursString = `${hours < 10 ? 0 : ''}${hours}`;
-    const daysString = `${days < 10 ? 0 : ''}${days}`;
-    return `${days > 0 ? daysString + ':' : ''}${hours > 0 ? hoursString + ':' : ''}${minutesString}:${secondsString}`;
+    const daysString = `${days}`;
+    if (verbose) {
+      return `${days > 0 ? daysString + this.translate.instant(days > 1 ? 'TIMERS.Days' : 'TIMERS.Day') : ''} ${hoursString}${this.translate.instant('TIMERS.Hours')} ${minutesString}${this.translate.instant('TIMERS.Minutes')} ${secondsString}${this.translate.instant('TIMERS.Seconds')}`;
+    } else {
+      return `${days > 0 ? daysString + ':' : ''}${hours > 0 ? hoursString + ':' : ''}${minutesString}:${secondsString}`;
+    }
   }
 
 }
