@@ -21,8 +21,8 @@
     "auth/wrong-password": "Mauvais email ou mot de passe"
   },
   "TIMERS": {
-    "Days": "days",
-    "Day": "day",
+    "Days": "jours",
+    "Day": "jour",
     "Hours": "h",
     "Minutes": "m",
     "Seconds": "s"
@@ -160,15 +160,15 @@
     "Toggle_collapse": "Ouvrir/fermer tous les groupes",
     "Add_alarms_to_group": "Ajouter des alarmes à ce groupe",
     "REALTIME": {
-      "Reset_timers": "Reset timers",
-      "WEEKLY_RESETS": "Weeklies",
+      "Reset_timers": "Timers de reset",
+      "WEEKLY_RESETS": "Resets hebdos",
       "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
-      "ROULETTES_RESET": "Roulettes & Beast tribes",
-      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
-      "DELIVERIES_RESET": "Deliveries",
-      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
-      "LEVE_ALLOWANCES": "Leve allowances",
-      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+      "ROULETTES_RESET": "Roulettes & tribus tribales",
+      "ROULETTES_RESET_DESCRIPTION": "Réinitialisation de toutes les roulettes, les quêtes de tribus, les chasses quotidiennes et le mini cactpot.",
+      "DELIVERIES_RESET": "Livraisons",
+      "DELIVERIES_RESET_DESCRIPTION": "Réinitialisation des livraisons de grande compagnie",
+      "LEVE_ALLOWANCES": "Autorisations de mandats",
+      "LEVE_ALLOWANCES_DESCRIPTION": "Vous obtenez 3 nouvelles autorisations de mandats"
     },
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
