@@ -1364,12 +1364,12 @@
         "Instances": "副本内容（{{amount}}）",
         "Items": "物品（{{amount}}）",
         "Leves": "理符（{{amount}}）",
-        "Maps": "Maps ({{amount}})",
-        "Monsters": "Monsters ({{amount}})",
-        "Npcs": "Npcs ({{amount}})",
-        "Quests": "Quests ({{amount}})",
+        "Maps": "地图（{{amount}}）",
+        "Monsters": "怪物（{{amount}}）",
+        "Npcs": "Npc（{{amount}}）",
+        "Quests": "任务（{{amount}}）",
         "Statuses": "Statuses ({{amount}})",
-        "Traits": "Traits ({{amount}})"
+        "Traits": "特性（{{amount}}）"
       }
     }
   },
@@ -1454,9 +1454,9 @@
     "Sort_desc": "降序",
     "Add_stat_filter": "Add stat filter",
     "Add_bonus_stat_filter": "Add bonus stat filter",
-    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Search_tip": "您可以键入版本号：“patch #” 来查看特定版本的信息，如：patch 5.01",
     "SORT_BY": {
-      "Relevance": "Relevance",
+      "Relevance": "相关性",
       "ID": "ID",
       "Level": "等级",
       "Ilvl": "物品品级",
@@ -1464,10 +1464,10 @@
     }
   },
   "SIDEBAR": {
-    "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
-    "Other": "Other"
+    "General": "常规功能",
+    "Sharing": "共享社区",
+    "Gathering": "采集相关",
+    "Helpers": "小助手",
+    "Other": "其他"
   }
 }
