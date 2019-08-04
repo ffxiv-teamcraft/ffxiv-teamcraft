@@ -20,6 +20,13 @@
     "auth/user-not-found": "잘못된 이메일 또는 비밀번호",
     "auth/wrong-password": "잘못된 이메일 또는 비밀번호"
   },
+  "TIMERS": {
+    "Days": "days",
+    "Day": "day",
+    "Hours": "h",
+    "Minutes": "m",
+    "Seconds": "s"
+  },
   "ITEMS": {
     "Title": "검색",
     "No_match": "일치하는 아이템이 없습니다",
@@ -152,6 +159,17 @@
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
     "Add_alarms_to_group": "이 그룹에 알람 추가",
+    "REALTIME": {
+      "Reset_timers": "Reset timers",
+      "WEEKLY_RESETS": "Weeklies",
+      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
+      "ROULETTES_RESET": "Roulettes & Beast tribes",
+      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
+      "DELIVERIES_RESET": "Deliveries",
+      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
+      "LEVE_ALLOWANCES": "Leve allowances",
+      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+    },
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
