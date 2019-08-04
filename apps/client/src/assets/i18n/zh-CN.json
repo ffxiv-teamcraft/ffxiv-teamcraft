@@ -1368,7 +1368,7 @@
         "Monsters": "怪物（{{amount}}）",
         "Npcs": "Npc（{{amount}}）",
         "Quests": "任务（{{amount}}）",
-        "Statuses": "Statuses ({{amount}})",
+        "Statuses": "状态（{{amount}}）",
         "Traits": "特性（{{amount}}）"
       }
     }
@@ -1464,10 +1464,10 @@
     }
   },
   "SIDEBAR": {
-    "General": "常规功能",
+    "General": "基本功能",
     "Sharing": "共享社区",
     "Gathering": "采集相关",
-    "Helpers": "小助手",
+    "Helpers": "实用工具",
     "Other": "其他"
   }
 }
