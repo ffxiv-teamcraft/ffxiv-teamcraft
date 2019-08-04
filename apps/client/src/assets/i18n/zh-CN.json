@@ -256,7 +256,7 @@
   "Recipe_Added": "一个物品已经被添加到清单 {{listname}}",
   "Recipes_Added": "{{itemcount}} 个物品已加入清单 {{listname}}",
   "Character_name": "角色名",
-  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
+  "Character_add_warning": "如果您在没有手动删除角色的情况下看到此内容，请不要输入任何内容并刷新页面或重新启动应用程序。 如果此问题仍然存在，请反馈到discord服务器。",
   "Disconnect_and_anonymous": "注销并返回匿名身份",
   "Add_manual_character": "添加角色",
   "Character_informations": "角色信息",
@@ -966,7 +966,7 @@
       "LIST_PROGRESSION": "查看材料进度",
       "FINAL_LIST_PROGRESSION": "查看产出进度",
       "USER_ASSIGNMENT": "用户分配",
-      "ITEM_COMPLETION": "Item completion"
+      "ITEM_COMPLETION": "物品完成"
     }
   },
   "MARKETBOARD": {
@@ -1386,7 +1386,7 @@
     "Fate": "危命任务",
     "Map": "地图",
     "Action": "技能",
-    "Status": "属性",
+    "Status": "状态",
     "Trait": "特性",
     "Any": "任何",
     "Achievement": "成就"
