@@ -1365,11 +1365,11 @@
         "Items": "Items ({{amount}})",
         "Leves": "Leves ({{amount}})",
         "Maps": "Maps ({{amount}})",
-        "Monsters": "Monsters ({{amount}})",
-        "Npcs": "Npcs ({{amount}})",
-        "Quests": "Quests ({{amount}})",
-        "Statuses": "Statuses ({{amount}})",
-        "Traits": "Traits ({{amount}})"
+        "Monsters": "몬스터 ({{amount}})",
+        "Npcs": "NPC ({{amount}})",
+        "Quests": "퀘스트 ({{amount}})",
+        "Statuses": "상태 ({{amount}})",
+        "Traits": "특성 ({{amount}})"
       }
     }
   },
@@ -1454,7 +1454,7 @@
     "Sort_desc": "내림차순",
     "Add_stat_filter": "스탯 필터 추가",
     "Add_bonus_stat_filter": "보너스 스탯 필터 추가",
-    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Search_tip": "<patch #>를 입력하여 해당 버전으로 필터가 가능합니다. 예시: patch:5.01",
     "SORT_BY": {
       "Relevance": "관련성",
       "ID": "ID",
@@ -1464,10 +1464,10 @@
     }
   },
   "SIDEBAR": {
-    "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
-    "Other": "Other"
+    "General": "일반",
+    "Sharing": "공유",
+    "Gathering": "채집",
+    "Helpers": "도우미",
+    "Other": "기타"
   }
 }
