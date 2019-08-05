@@ -759,13 +759,13 @@
     "Current_control_bonus": "当前品质奖励（最高3000）",
     "Macrolock": "包含“锁定宏指令（/macrolock）”",
     "Solve_rotation": "求解其工序",
-    "Rotation_solver": "工序求解器",
+    "Rotation_solver": "手法求解器",
     "Recipe_picker_placeholder": "输入您想要制作的配方",
-    "Could_not_find_minstats": "找不到这个工序的最低属性要求",
+    "Could_not_find_minstats": "找不到这个手法的最低属性要求",
     "SOLVER": {
       "Hq_target": "目标HQ率",
       "Use_rotation_as_seed": "Use current rotation as starting point",
-      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的工序而生，作为一个 AI，在其逐渐成长的过程中，可能生成非常好的工序也可能生成非常差的工序。如果生成结果不理想，请不要报告为 bug。"
+      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的手法而生，作为一个 AI，在其逐渐成长的过程中，可能生成完美的手法也可能生成非常差的手法。如果生成结果不理想，请不要报告其为 bug。"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "社区共享工序",
@@ -889,7 +889,7 @@
       "Use_ingenuity_before_byregot": "应在使用比尔格技能前使用新颖以提升品质收益。",
       "Use_more_quality_actions": "在结束制作前你还有剩余耐久，应使用更多加工系技能提升品质。",
       "Use_prudent_touch_manipulation": "66+ 级应使用 掌握II + 俭约加工 来提升品质，以获得最高稳定性和收益",
-      "Use_rapid_synthesis_earlier": "不应使用高速制作结束制作，将其提前可处理失败情况以使你的工序更加稳定。",
+      "Use_rapid_synthesis_earlier": "不应使用高速制作结束制作，将其提前可处理失败情况以使你的手法更加稳定。",
       "Use_reflect_earlier": "应更早使用专精绝技：闲静使其增益后续加工系技能。"
     }
   },
@@ -1455,7 +1455,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
-    "Description": "货币太多了吗？选择币种并设置好数目、服务器，自动为您推荐当前最卖的上价的物品！",
+    "Description": "货币太多了吗？选择币种并填写数目、服务器，自动为您推荐当前最卖的上价的物品！",
     "Pick_currency": "选择一个币种",
     "You_can_buy": "您可以购买 {{amount}}"
   },
@@ -1472,7 +1472,7 @@
     "Sort_desc": "降序",
     "Add_stat_filter": "Add stat filter",
     "Add_bonus_stat_filter": "Add bonus stat filter",
-    "Search_tip": "您可以键入版本号：“patch #” 来查看特定版本的信息，如：patch 5.01",
+    "Search_tip": "您可以键入版本号：“patch #” 来查看特定版本的内容，如：patch 5.01",
     "SORT_BY": {
       "Relevance": "相关性",
       "ID": "ID",
