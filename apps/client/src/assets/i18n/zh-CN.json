@@ -723,8 +723,8 @@
     "New_rotation": "新工序",
     "Rotations": "生产工序",
     "Favorite_Rotations": "收藏工序",
-    "No_rotations": "无工序",
-    "Create_a_custom_rotation": "创建自定义工序",
+    "No_rotations": "无手法",
+    "Create_a_custom_rotation": "创建自定义手法",
     "Reset": "重置工序",
     "Import_from_crafting_optimizer": "从制作模拟器导入",
     "Export_crafting_optimizer": "使用制作优化器支持的格式导出",
@@ -889,7 +889,7 @@
       "Use_ingenuity_before_byregot": "应在使用比尔格技能前使用新颖以提升品质收益。",
       "Use_more_quality_actions": "在结束制作前你还有剩余耐久，应使用更多加工系技能提升品质。",
       "Use_prudent_touch_manipulation": "66+ 级应使用 掌握II + 俭约加工 来提升品质，以获得最高稳定性和收益",
-      "Use_rapid_synthesis_earlier": "不应使用高速制作结束制作，将其提前可处理失败情况以使你的手法更加稳定。",
+      "Use_rapid_synthesis_earlier": "高速制作不是100%成功，不应将其用作收尾技能。建议更早地使用高速制作以备万一，即使失败也能调整后续手法。",
       "Use_reflect_earlier": "应更早使用专精绝技：闲静使其增益后续加工系技能。"
     }
   },
