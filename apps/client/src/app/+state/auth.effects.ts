@@ -215,24 +215,6 @@ export class AuthEffects {
         return reloader.pipe(
           switchMap(() => {
             return this.xivapi.getCharacter(lodestoneId.id);
-          }),
-          tap(res => {
-            if (res.Info.Character.State === 1) {
-              setTimeout(() => {
-                reloader.next(null);
-              }, 120000);
-            }
-          }),
-          map(res => {
-            if (res.Info.Character.State === 1) {
-              return {
-                Character: {
-                  ID: lodestoneId.id,
-                  Name: 'Parsing character...'
-                }
-              };
-            }
-            return res;
           })
         );
       });
