@@ -26,7 +26,8 @@ export class StatsPopupComponent implements OnInit {
       map(entry => {
         return [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map(jobId => {
           const set = (entry.stats || []).find(stat => stat.jobId === jobId);
-          const level = entry.character.ClassJobs ? entry.character.ClassJobs[`${this.jobId}_${this.jobId}`].Level : 0;
+          const jobEntry = (entry.character.ClassJobs || [] as any).find(job => job.JobID === jobId);
+          const level = jobEntry ? jobEntry.Level : 0;
           if (set === undefined) {
             return {
               jobId: this.jobId,
@@ -60,10 +61,10 @@ export class StatsPopupComponent implements OnInit {
       [8, 9, 10, 11, 12, 13, 14, 15].forEach(jobId => {
         const newSet = { ...set, jobId: jobId };
         const previousSet = allSets.find(s => s.jobId === jobId);
-        if (set.specialist && !previousSet.specialist) {
+        if (set.specialist && previousSet && !previousSet.specialist) {
           newSet.craftsmanship -= 20;
           newSet.control -= 20;
-        } else if (!set.specialist && previousSet.specialist) {
+        } else if (!set.specialist && previousSet && previousSet.specialist) {
           newSet.craftsmanship += 20;
           newSet.control += 20;
         }
