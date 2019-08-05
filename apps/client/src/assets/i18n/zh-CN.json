@@ -268,7 +268,7 @@
   "filters/worn_by": "装备职业",
   "filters/crafted_by": "制作职业",
   "filters/item_category": "物品类型",
-  "filters/stats": "Stats filters",
+  "filters/stats": "属性过滤器",
   "filters/bonuses": "Stat bonuses filters",
   "Adding_recipes": "正在添加 {{amount}} 个配方到清单 {{listname}}",
   "Recipe_Added": "一个物品已经被添加到清单 {{listname}}",
@@ -1024,7 +1024,7 @@
       "Public_lists": "从社区共享复制列表可以帮你制造家具、理符物品、完成笔记、飞空艇、毕业套等各种你想要的东西。",
       "Alarms": "闹钟使你不会错过限时采集点，分文件夹组织闹钟，导入到游戏，一切皆有可能。",
       "Gathering_location": "寻找采集点信息，创建闹钟，获得即时位置、最近传送点、所需传承录，还有更多！",
-      "Rotations": "使用自定义模拟器创建制作工序，在模拟器中测试，或者验证工序理论！",
+      "Rotations": "使用生产模拟器创建生产手法并即时测试，您还可以使用生产模拟器来检验您的理论手法！",
       "Levequests": "找到特定职业的理符，查看报酬，并创建清单。",
       "Macro_translation": "拿到一个制作宏但不是中文的？使用宏转换器可以将其转换为中文！"
     }
@@ -1419,7 +1419,7 @@
     "Title": "小贴士",
     "Community_rotations": "你可以在社区共享手法页面中找到特定配方的手法",
     "GC_Deliveries": "您可以在军团筹备页面中制作您的清单。",
-    "Desynth": "您可以在分解查询页面中找到最适合您升级的物品。",
+    "Desynth": "您可以在分解查询页面中找到最适合当前分解等级的物品。",
     "DB": "Teamcraft包含一个数据库，您可以点击任何地方的“i”图标在数据库页面中查看其详情。",
     "3D_model": "您可以在数据库中预览物品的3D外观。",
     "Levequests": "您可以在理符任务页面内制作理符清单和预览理符任务经验。",
@@ -1470,7 +1470,7 @@
     "Sort_by": "排序： ",
     "Sort_asc": "升序",
     "Sort_desc": "降序",
-    "Add_stat_filter": "Add stat filter",
+    "Add_stat_filter": "添加属性过滤器",
     "Add_bonus_stat_filter": "Add bonus stat filter",
     "Search_tip": "您可以键入版本号：“patch #” 来查看特定版本的内容，如：patch 5.01",
     "SORT_BY": {
