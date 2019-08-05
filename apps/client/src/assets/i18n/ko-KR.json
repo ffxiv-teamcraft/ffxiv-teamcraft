@@ -165,10 +165,10 @@
       "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
       "ROULETTES_RESET": "Roulettes & Beast tribes",
       "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
-      "DELIVERIES_RESET": "Deliveries",
-      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
-      "LEVE_ALLOWANCES": "Leve allowances",
-      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+      "DELIVERIES_RESET": "조달 임무",
+      "DELIVERIES_RESET_DESCRIPTION": "총사령부 조달 품목 초기화",
+      "LEVE_ALLOWANCES": "의뢰 수주권",
+      "LEVE_ALLOWANCES_DESCRIPTION": "의뢰 수주권 3장 획득"
     },
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
@@ -568,7 +568,7 @@
     "PLD": "나이트",
     "WAR": "전사",
     "DRK": "암기",
-    "GNB": "건브레이커",
+    "GNB": "건브",
     "WHM": "백마",
     "SCH": "학자",
     "AST": "점성",
