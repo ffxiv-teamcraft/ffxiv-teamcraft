@@ -27,7 +27,7 @@ export class AlarmBellService {
   }
 
   private initBell(): void {
-    combineLatest(this.eorzeanTime.getEorzeanTime(), this.alarmsFacade.allAlarms$, this.alarmsFacade.allGroups$)
+    combineLatest([this.eorzeanTime.getEorzeanTime(), this.alarmsFacade.allAlarms$, this.alarmsFacade.allGroups$])
       .pipe(
         map(([date, alarms, groups]) => {
           return alarms.filter(alarm => {

@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.3"></a>
+## [5.7.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.2...v5.7.3) (2019-08-05)
+
+
+### Bug Fixes
+
+* **core:** fixed an issue with character fetching ([df16fdb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/df16fdb))
+* **db:** fixed fates being displayed in a panel labelled "Crafting actions" ([dc3824b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc3824b))
+* **layout:** fixed an issue with filter context not being used properly in zone breakdown ([b930d28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b930d28))
+* **simulator:** fixed an issue with tricks of the trade on safe mode ([e8e2f5e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8e2f5e))
+* **tips:** fixed a bug with ingenuity before byregot not being computed properly ([01cdd32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01cdd32))
+* **tips:** fixed a bug with piece by piece tip not showing properly ([446ff9d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/446ff9d))
+* **tips:** fixed a bug with reflect tip showing when it shouldn't ([0042614](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0042614))
+
+
+### Features
+
+* added reset timers page, to display ingame reset timers and setup alarms for them ([c0edfed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c0edfed))
+
+
+
 <a name="5.7.2"></a>
 ## [5.7.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.1...v5.7.2) (2019-08-02)
 
