@@ -21,11 +21,11 @@
     "auth/wrong-password": "邮箱或密码错误"
   },
   "TIMERS": {
-    "Days": "days",
-    "Day": "day",
-    "Hours": "h",
-    "Minutes": "m",
-    "Seconds": "s"
+    "Days": "天",
+    "Day": "天",
+    "Hours": "小时",
+    "Minutes": "分钟",
+    "Seconds": "秒"
   },
   "ITEMS": {
     "Title": "搜索",
@@ -161,9 +161,9 @@
     "Add_alarms_to_group": "增加闹钟到本组",
     "REALTIME": {
       "Reset_timers": "Reset timers",
-      "WEEKLY_RESETS": "Weeklies",
+      "WEEKLY_RESETS": "周常",
       "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
-      "ROULETTES_RESET": "Roulettes & Beast tribes",
+      "ROULETTES_RESET": "每日随机&蛮族日常",
       "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
       "DELIVERIES_RESET": "Deliveries",
       "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
@@ -1421,7 +1421,7 @@
     "GC_Deliveries": "您可以在军团筹备页面中制作您的清单。",
     "Desynth": "您可以在分解查询页面中找到最适合您升级的物品。",
     "DB": "Teamcraft包含一个数据库，您可以点击任何地方的“i”图标在数据库页面中查看其详情。",
-    "3D_model": "您可以在数据库中预览其3D外观。",
+    "3D_model": "您可以在数据库中预览物品的3D外观。",
     "Levequests": "您可以在理符任务页面内制作理符清单和预览理符任务经验。",
     "Log_tracker": "您可以在笔记追踪页面中追踪您的采集、生产、捕鱼等笔记进度。",
     "Desktop_app_overlay": "使用桌面应用程序时，您可以开启闹钟悬浮窗(应用下载链接见侧边栏)。"
