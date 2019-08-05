@@ -160,15 +160,15 @@
     "Toggle_collapse": "折叠/展开分组",
     "Add_alarms_to_group": "增加闹钟到本组",
     "REALTIME": {
-      "Reset_timers": "Reset timers",
+      "Reset_timers": "CD计时器",
       "WEEKLY_RESETS": "周常",
-      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
+      "WEEKLY_RESETS_DESCRIPTION": "老主顾、天书、周限掉落（24人本、零式、普通raid武器代币）、仙人仙彩、挑战笔记、金蝶暖暖、B级怪物狩猎的CD刷新倒计时。",
       "ROULETTES_RESET": "每日随机&蛮族日常",
       "ROULETTES_RESET_DESCRIPTION": "每日随机、蛮族日常、每日狩猎及仙人微彩的CD刷新倒计时。",
       "DELIVERIES_RESET": "军团筹备",
       "DELIVERIES_RESET_DESCRIPTION": "军团筹备CD刷新倒计时",
-      "LEVE_ALLOWANCES": "Leve allowances",
-      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+      "LEVE_ALLOWANCES": "理符受理限额",
+      "LEVE_ALLOWANCES_DESCRIPTION": "您将获得3个新的理符受理限额"
     },
     "CUSTOM": {
       "Title": "添加自定义闹钟",
@@ -1455,7 +1455,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
-    "Description": "货币太多了吗？选择您的币种并设置好数目、服务器，自动为您推荐当前最卖的上价的物品！",
+    "Description": "货币太多了吗？选择币种并设置好数目、服务器，自动为您推荐当前最卖的上价的物品！",
     "Pick_currency": "选择一个币种",
     "You_can_buy": "您可以购买 {{amount}}"
   },
