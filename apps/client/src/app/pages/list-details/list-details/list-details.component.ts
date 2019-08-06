@@ -277,13 +277,17 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     });
   }
 
+  appendExportStringWithRow(exportString: string, row: ListRow): string {
+    return (row.amount-row.done > 0) ? (exportString + `${row.amount-row.done}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`) : exportString
+  }
+
   public getListTextExport(display: ListDisplay, list: List): string {
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
-      return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
+      return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
     return display.rows.reduce((result, displayRow) => {
       return result + displayRow.rows.reduce((exportString, row) => {
-        return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
+        return this.appendExportStringWithRow(exportString, row);
       }, `${displayRow.title} :\n`) + '\n';
     }, seed);
 
