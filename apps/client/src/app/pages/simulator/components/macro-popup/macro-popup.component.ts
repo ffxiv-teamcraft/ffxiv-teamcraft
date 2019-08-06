@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CraftingAction, CraftingJob, Reclaim, Simulation } from '@ffxiv-teamcraft/simulator';
+import { CraftingAction, CraftingJob, HastyTouch, Reclaim, Simulation } from '@ffxiv-teamcraft/simulator';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -106,6 +106,9 @@ export class MacroPopupComponent implements OnInit {
     // 11 not 10 because /aactions clear takes the first line :)
     if (this.aactionsMacro.length < 11 && this.aactionsMacro.indexOf(`/aaction ${this.i18n.getName(this.l12n.getAction(new Reclaim().getIds()[0]))}`) === -1) {
       this.aactionsMacro.push(`/aaction ${this.i18n.getName(this.l12n.getAction(new Reclaim().getIds()[0]))}`);
+    }
+    if (this.aactionsMacro.length < 11 && this.aactionsMacro.indexOf(`/aaction ${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}`) === -1) {
+      this.aactionsMacro.push(`/aaction ${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}`);
     }
     if (this.aactionsMacro.length > 11) {
       this.tooManyAactions = true;
