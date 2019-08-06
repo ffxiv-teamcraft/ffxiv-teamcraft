@@ -95,7 +95,7 @@ jobs:
             - .cache/*
 
 
-  deploy-staging:
+  deploy-cdn:
     <<: *defaults
     steps:
       - add_ssh_keys:
@@ -117,14 +117,14 @@ jobs:
           command: npm run electron:setup:publish
 
 
-#  deploy-staging:
-#    <<: *defaults
-#    steps:
-#      - attach_workspace:
-#          at: ~/
-#      - run:
-#          name: Deploying web
-#          command: ./node_modules/.bin/firebase deploy -P beta --only hosting --token "$FIREBASE_TOKEN"
+  deploy-staging:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Deploying web
+          command: ./node_modules/.bin/firebase deploy -P beta --only hosting --token "$FIREBASE_TOKEN"
 
   deploy-ssr-prod:
     <<: *defaults
@@ -160,12 +160,12 @@ workflows:
           requires:
             - lint
             - test
-#      - deploy-cdn:
-#          requires:
-#            - build
-#          filters:
-#            branches:
-#              only: master
+      - deploy-cdn:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
       - deploy-desktop:
           requires:
             - build
@@ -183,11 +183,11 @@ workflows:
             - build
           filters:
             branches:
-              only: feat/cdn
+              only: staging
       - deploy-ssr-beta:
           requires:
             - build
           filters:
             branches:
-              only: feat/cdn
+              only: staging
 
