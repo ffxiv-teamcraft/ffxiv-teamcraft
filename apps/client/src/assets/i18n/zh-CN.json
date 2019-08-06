@@ -762,6 +762,13 @@
     "Rotation_solver": "手法求解器",
     "Recipe_picker_placeholder": "输入您想要制作的配方",
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
+    "STATE": {
+      "Excellent": "Excellent",
+      "Good": "Good",
+      "Poor": "Poor",
+      "Fail": "Fail",
+      "Normal": "Normal"
+    },
     "SOLVER": {
       "Hq_target": "目标HQ率",
       "Use_rotation_as_seed": "Use current rotation as starting point",
@@ -1457,7 +1464,9 @@
     "Title": "货币消费指南",
     "Description": "货币太多了吗？选择币种并填写数目、服务器，自动为您推荐当前最卖的上价的物品！",
     "Pick_currency": "选择一个币种",
-    "You_can_buy": "您可以购买 {{amount}}"
+    "You_can_buy": "您可以购买 {{amount}}",
+    "Disabled": "The currency spending guide isn't working anymore",
+    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
   },
   "BLOG": {
     "Title": "博客"

@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.5"></a>
+## [5.7.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.4...v5.7.5) (2019-08-06)
+
+
+### Bug Fixes
+
+* **desktop:** fixed broken icons on desktop app ([e2f5cef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2f5cef))
+* **marketboard:** disabled all marketboard features ([73a6ca4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73a6ca4))
+* **reset-timers:** fixed an issue with weekly timer not working properly right after its tick ([d691d4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d691d4f))
+* **simulator:** fixed an issue with IQ stacks not applied properly in safe mode ([7b0ff65](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7b0ff65))
+
+
+### Features
+
+* amount of list text export not consider the done amount ([4baabea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4baabea))
+* **core:** moved hosting to cdn in order to reduce costs an have better cache ([#1075](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1075)) ([8063b27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8063b27))
+* **simulator:** added context menu to set state on a given simulation step ([e36a6b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e36a6b4))
+* **simulator:** added hasty touch to aactions macro if there's enough place for it ([00034bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00034bd))
+
+
+
 <a name="5.7.4"></a>
 ## [5.7.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.2...v5.7.4) (2019-08-05)
 

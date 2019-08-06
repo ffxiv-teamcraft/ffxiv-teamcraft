@@ -762,6 +762,13 @@
     "Rotation_solver": "Rotation solver",
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "STATE": {
+      "Excellent": "Excellent",
+      "Good": "Good",
+      "Poor": "Poor",
+      "Fail": "Fail",
+      "Normal": "Normal"
+    },
     "SOLVER": {
       "Hq_target": "Target HQ%",
       "Use_rotation_as_seed": "Use current rotation as starting point",
@@ -1457,7 +1464,9 @@
     "Title": "Currency Spending guide",
     "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
     "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "You_can_buy": "You can buy {{amount}}",
+    "Disabled": "The currency spending guide isn't working anymore",
+    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
   },
   "BLOG": {
     "Title": "Blog"

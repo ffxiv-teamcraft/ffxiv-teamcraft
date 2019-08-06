@@ -63,7 +63,8 @@ import {
   GearSet,
   Simulation,
   SimulationReliabilityReport,
-  SimulationResult
+  SimulationResult,
+  StepState
 } from '@ffxiv-teamcraft/simulator';
 import { SolverPopupComponent } from '../solver-popup/solver-popup.component';
 import { SettingsService } from '../../../../modules/settings/settings.service';
@@ -189,7 +190,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private job$: Observable<any>;
 
-  private forceFailed$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+  private stepStates$: BehaviorSubject<{[index:number]: StepState}> = new BehaviorSubject<{[index:number]: StepState}>({});
 
   // Regex stuff for macro import
   private findActionsRegex: RegExp =
@@ -551,13 +552,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
   }
 
-  toggleFailAction(index: number): void {
-    const forceFailed = this.forceFailed$.value;
-    if (forceFailed.some(i => i === index)) {
-      this.forceFailed$.next(forceFailed.filter(i => i !== index));
-    } else {
-      this.forceFailed$.next([...forceFailed, index]);
-    }
+  setState(index: number, state: StepState): void {
+    this.stepStates$.next({...this.stepStates$.value, [index]: state});
   }
 
   applyStats(): void {
@@ -845,9 +841,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.forceFailed$]).pipe(
-      map(([recipe, actions, stats, hqIngredients, forceFailed]) => {
-        return new Simulation(recipe, actions, stats, hqIngredients, forceFailed);
+    this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.stepStates$]).pipe(
+      map(([recipe, actions, stats, hqIngredients, stepStates]) => {
+        return new Simulation(recipe, actions, stats, hqIngredients, stepStates);
       }),
       shareReplay(1)
     );

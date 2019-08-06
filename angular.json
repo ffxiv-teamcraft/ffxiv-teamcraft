@@ -59,7 +59,7 @@
               "vendorChunk": false,
               "buildOptimizer": true,
               "baseHref": "/",
-              "deployUrl": "/",
+              "deployUrl": "https://cdn.ffxivteamcraft.com/",
               "fileReplacements": [
                 {
                   "replace": "apps/client/src/environments/environment.ts",
