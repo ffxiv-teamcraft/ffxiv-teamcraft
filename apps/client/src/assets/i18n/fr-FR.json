@@ -764,9 +764,9 @@
     "Could_not_find_minstats": "Impossible de trouver les statistiques minimales pour cette rotation",
     "STATE": {
       "Excellent": "Excellent",
-      "Good": "Good",
-      "Poor": "Poor",
-      "Fail": "Fail",
+      "Good": "Bon",
+      "Poor": "Mauvais",
+      "Fail": "Echec",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -1465,8 +1465,8 @@
     "Description": "Vous avez trop de devises ? Sélectionnez votre devise, définissez un montant, un serveur et trouvez quel article est le meilleur à acheter pour revendre à l'hôtel des ventes et gagner des gils !",
     "Pick_currency": "Choisir une devise",
     "You_can_buy": "Vous pouvez en acheter {{amount}}",
-    "Disabled": "The currency spending guide isn't working anymore",
-    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
+    "Disabled": "Le guide de dépense de devises ne fonctionne plus",
+    "Disabled_description": "Ceci est dû au fait que Square Enix refuse de discuter afin de convenir d'un moyen de récupérer les données dont nous avons besoin sans être banni sans arrêt, nous ne pouvons malheureusement pas continuer sans cela. Si vous souhaitez vous plaindre, veuillez le faire auprès de Square Enix."
   },
   "BLOG": {
     "Title": "Blog"
