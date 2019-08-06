@@ -15,5 +15,6 @@ ssh-keyscan -H cdn.ffxivteamcraft.com >> ~/.ssh/known_hosts
 rsync -avz ./dist/apps/client/* dalamud@cdn.ffxivteamcraft.com:~/cdn.ffxivteamcraft.com/${PACKAGE_VERSION}
 
 ssh dalamud@cdn.ffxivteamcraft.com << EOF
+  rm ./cdn.ffxivteamcraft.com/latest
   ln -s ./${PACKAGE_VERSION} ./cdn.ffxivteamcraft.com/latest
 EOF
