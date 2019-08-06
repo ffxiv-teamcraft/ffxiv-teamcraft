@@ -55,6 +55,9 @@ export class ActionComponent {
   @Input()
   state: StepState;
 
+  @Input()
+  showStateMenu = false;
+
   public states = StepState;
 
   private dropdown: NzDropdownContextComponent;

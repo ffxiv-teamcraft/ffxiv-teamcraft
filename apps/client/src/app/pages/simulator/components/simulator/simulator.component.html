@@ -514,6 +514,7 @@
                           [simulation]="resultData.simulation"
                           (actionclick)="removeAction(i)"
                           (stepstate)="setState(i, $event)"
+                          [showStateMenu]="true"
                           [disabled]="!step.success || step.skipped"
                           [ignoreDisabled]="true"
                           [cpCost]="step.cpDifference"
