@@ -89,7 +89,7 @@
                   nz-tooltip
                   *ngIf="rotation.$key && ((permissionLevel$ | async) === 40)"
                   [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup' | translate">
-            <img class="man-attacked-by-tetris-block button-icon" src="./assets/icons/thing.svg"/>
+            <img class="man-attacked-by-tetris-block button-icon" src="./assets/icons/svg/thing.svg"/>
           </button>
         </ng-container>
       </ng-container>
@@ -513,10 +513,11 @@
               <app-action [action]="step.action"
                           [simulation]="resultData.simulation"
                           (actionclick)="removeAction(i)"
-                          (contextmenu)="$event.preventDefault();toggleFailAction(i)"
+                          (stepstate)="setState(i, $event)"
                           [disabled]="!step.success || step.skipped"
                           [ignoreDisabled]="true"
                           [cpCost]="step.cpDifference"
+                          [state]="stepStates$.value[i]"
                           [failed]="!step.success"></app-action>
             </div>
           </div>
