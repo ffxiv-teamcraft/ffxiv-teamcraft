@@ -126,6 +126,9 @@ export class RealtimeAlarmsService {
       const currentDay = nextIteration.getDay();
       const distance = day - currentDay;
       nextIteration.setDate(nextIteration.getDate() + distance);
+      if (nextIteration.getTime() < Date.now()) {
+        nextIteration.setTime(nextIteration.getTime() + 86400000 * 7);
+      }
     }
     return new Date(nextIteration.getTime() - Date.now());
   }
