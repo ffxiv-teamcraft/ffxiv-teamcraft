@@ -8,7 +8,9 @@ PACKAGE_VERSION=$(cat package.json \
 
 echo VERSION ${PACKAGE_VERSION}
 
-rsync -avz ./dist/apps/client/* dalamud@cdn.ffxivteamcraft.com:~/cdn.ffxivteamcraft.com/${PACKAGE_VERSION}
+ssh-keyscan -H cdn.ffxivteamcraft.com >> ~/.ssh/known_hosts
+
+scp -rp ./dist/apps/client/* dalamud@cdn.ffxivteamcraft.com:~/cdn.ffxivteamcraft.com/${PACKAGE_VERSION}
 
 ssh dalamud@cdn.ffxivteamcraft.com << EOF
   ln -s ./cdn.ffxivteamcraft.com/${PACKAGE_VERSION} ./cdn.ffxivteamcraft.com/latest
