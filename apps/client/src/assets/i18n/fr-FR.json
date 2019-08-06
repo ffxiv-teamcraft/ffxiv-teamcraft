@@ -984,7 +984,7 @@
       "LIST_PROGRESSION": "Avancement des matériaux",
       "FINAL_LIST_PROGRESSION": "Avancement des objets finaux",
       "USER_ASSIGNMENT": "Affectation d'un utilisateur",
-      "ITEM_COMPLETION": "Object terminé dans la liste"
+      "ITEM_COMPLETION": "Progression"
     }
   },
   "MARKETBOARD": {
@@ -1457,7 +1457,9 @@
     "Title": "Dépense de devises",
     "Description": "Vous avez trop de devises ? Sélectionnez votre devise, définissez un montant, un serveur et trouvez quel article est le meilleur à acheter pour revendre à l'hôtel des ventes et gagner des gils !",
     "Pick_currency": "Choisir une devise",
-    "You_can_buy": "Vous pouvez en acheter {{amount}}"
+    "You_can_buy": "Vous pouvez en acheter {{amount}}",
+    "Disabled": "The currency spending guide isn't working anymore",
+    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
   },
   "BLOG": {
     "Title": "Blog"
