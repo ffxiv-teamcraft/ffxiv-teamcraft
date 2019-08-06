@@ -82,7 +82,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 npm run build:prod
             else
-                npm run build:beta
+                npm run build:prod
             fi
       - save_cache:
           key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -95,14 +95,17 @@ jobs:
             - .cache/*
 
 
-  deploy-web:
+  deploy-staging:
     <<: *defaults
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
       - attach_workspace:
           at: ~/
       - run:
-          name: Deploying web
-          command: ./node_modules/.bin/firebase deploy -P default --only hosting --token "$FIREBASE_TOKEN"
+          name: Deploying cdn
+          command: bash tools/cdn/deploy.sh
 
   deploy-desktop:
     <<: *defaults
@@ -114,14 +117,14 @@ jobs:
           command: npm run electron:setup:publish
 
 
-  deploy-staging:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Deploying web
-          command: ./node_modules/.bin/firebase deploy -P beta --only hosting --token "$FIREBASE_TOKEN"
+#  deploy-staging:
+#    <<: *defaults
+#    steps:
+#      - attach_workspace:
+#          at: ~/
+#      - run:
+#          name: Deploying web
+#          command: ./node_modules/.bin/firebase deploy -P beta --only hosting --token "$FIREBASE_TOKEN"
 
   deploy-ssr-prod:
     <<: *defaults
@@ -157,12 +160,12 @@ workflows:
           requires:
             - lint
             - test
-      - deploy-web:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
+#      - deploy-cdn:
+#          requires:
+#            - build
+#          filters:
+#            branches:
+#              only: master
       - deploy-desktop:
           requires:
             - build
@@ -180,11 +183,11 @@ workflows:
             - build
           filters:
             branches:
-              only: staging
+              only: feat/cdn
       - deploy-ssr-beta:
           requires:
             - build
           filters:
             branches:
-              only: staging
+              only: feat/cdn
 
