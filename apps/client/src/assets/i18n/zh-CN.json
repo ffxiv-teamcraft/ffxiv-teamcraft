@@ -762,6 +762,13 @@
     "Rotation_solver": "手法求解器",
     "Recipe_picker_placeholder": "输入您想要制作的配方",
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
+    "STATE": {
+      "Excellent": "Excellent",
+      "Good": "Good",
+      "Poor": "Poor",
+      "Fail": "Fail",
+      "Normal": "Normal"
+    },
     "SOLVER": {
       "Hq_target": "目标HQ率",
       "Use_rotation_as_seed": "Use current rotation as starting point",
