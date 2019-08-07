@@ -1257,35 +1257,35 @@
     "3d_model_help": "Предпросмотр 3D модели",
     "Achievements": "Достижения",
     "Currencies": "Валюты",
-    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
-    "Unlocks": "Unlocks",
+    "Rowena_splendor": "Ровена (Звезда = бонус +20%)",
+    "Unlocks": "Разблокирует",
     "ITEM": {
-      "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "BONUS"
+      "Masterpiece_base": "БАЗА",
+      "Masterpiece_bonus": "БОНУС"
     },
     "NODE": {
       "Items": "Предметы",
       "Possible_bonuses": "Возможные бонусы",
       "Bonus_condition": "Состояние",
-      "Spawn_duration": "Spawn duration",
-      "Spawns": "Spawn times"
+      "Spawn_duration": "Длительность спауна",
+      "Spawns": "Время спауна"
     },
     "QUEST": {
       "Steps": "Шаги",
       "Unlocked_by": "Разблокируется",
       "Next_quests": "Следующие квесты",
       "Involved_npcs": "Участвующие нпс",
-      "Journal_entries": "Journal entries",
+      "Journal_entries": "Записи в журнале",
       "Dialogues": "Диалог",
       "Start": "Начало",
       "End": "Конец",
       "Rewards": "Награда",
       "Repeatable": "Повторяемый",
-      "Beast_tribe_rank": "Beast tribe rank",
-      "Chain_length": "Following quests"
+      "Beast_tribe_rank": "Ранг в племени зверолюдей",
+      "Chain_length": "Дальнейшие квесты"
     },
     "NPC": {
-      "Other_entries": "Other appearances",
+      "Other_entries": "Другие появления",
       "Default_talk": "Базовые диалоги",
       "Quests": "Квесты",
       "Shops": "Магазины",
