@@ -897,7 +897,7 @@
       "Use_more_quality_actions": "У вас осталась прочность в конце крафта. Возможно, лучше бы её использовать для нескольких действий, повышающих качество.",
       "Use_prudent_touch_manipulation": "Поскольку вы 66+ уровня, вам лучше использовать комбо из Manipulation II + Prudent Touch для набора качества. Это позволит получить максимальное качество с большей надёжностью.",
       "Use_rapid_synthesis_earlier": "Не нужно использовать Rapid Synthesis в качестве завершающего действия. Если переместить его ближе к началу ротации, будет проще обработать его провал и получить выше надёжность ротации.",
-      "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
+      "Use_reflect_earlier": "Лучше использовать действие специалиста Reflect чтоб усилить все последующие действия влияющие на качество."
     }
   },
   "PRICING": {
@@ -991,7 +991,7 @@
       "LIST_PROGRESSION": "Прогресс списка материалов",
       "FINAL_LIST_PROGRESSION": "Прогресс списка итоговых предметов",
       "USER_ASSIGNMENT": "Назначение пользователей",
-      "ITEM_COMPLETION": "Item completion"
+      "ITEM_COMPLETION": "Обозначение выполнения"
     }
   },
   "MARKETBOARD": {
@@ -1140,7 +1140,7 @@
       "Format": "Формат",
       "Folder": "Папка",
       "No_folder": "Без папки",
-      "Parsing_file": "Parsing file content...",
+      "Parsing_file": "Чтение содержимого файла...",
       "Saving_items": "Сохраняем предметы ({{done}}/{{todo}})"
     }
   },
