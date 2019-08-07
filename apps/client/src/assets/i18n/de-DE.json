@@ -1370,13 +1370,13 @@
     },
     "COMMENTS": {
       "Title": "Kommentare",
-      "Reply": "Antwort",
+      "Reply": "Antworten",
       "Show_less": "Weniger anzeigen",
       "Add_comment": "Kommentar hinzufügen",
       "Show_more": "{{amount}} weitere Kommentare anzeigen",
       "No_comments": "Keine Kommentare",
       "Post": "Post",
-      "Editor_tip": "Schreibe <Seitentyp>:\"<Name>\" um auf eine andere Seite zu verweisen. Beispiele: item:\"Curtana\", action:\"Bearbeiten\", map:\"Crystarium\". Unterstützte Seitentypen: item (Gegenstände), map (Karten), mob (Monster), achievement (Errungenschaften), leve (Freibriefe), npc, instance (Inhalte), quest (Aufgaben), trait (Eigenschaften), action (Kommandos), status (Statuseffekt)"
+      "Editor_tip": "Schreibe <Seitentyp>:\"<Name>\" um auf eine andere Seite zu verweisen. Beispiele: item:\"Curtana\", action:\"Bearbeiten\", map:\"Crystarium\". Unterstützte Seitentypen: item (Gegenstände), map (Karten), mob (Monster), achievement (Errungenschaften), leve (Freibriefe), npc, instance (Inhalte), quest (Aufgaben), trait (Eigenschaften), action (Kommandos), status (Statuseffekte)"
     },
     "PATCH": {
       "Open_patch_page": "Click here to open full patch changes in database",
@@ -1424,14 +1424,14 @@
   },
   "TIPS": {
     "Title": "Tipp",
-    "Community_rotations": "Bei \"Community-Rotations\" findest du Rotations zu beliebigen Rezepten.",
-    "GC_Deliveries": "Du kannst für Lieferaufträge deiner Staatsgesellschaft Listen vorbereiten.",
+    "Community_rotations": "Bei \"Community-Rotationen\" findest du Rotationen zu beliebigen Rezepten.",
+    "GC_Deliveries": "Du kannst für Lieferaufträge deiner Staatlichen Gesellschaft Listen vorbereiten.",
     "Desynth": "Auf der \"Desynthese\"-Seite findest du ideale Gegenstände zum Erhöhen deiner Desynthese-Stufen.",
-    "DB": "Teamcraft beinhält eine Datenbank. Du kannst das \"i\"-Icon an verschiedenen Stellen verwenden, um für das jeweilige Element den Datenbank-Eintrag zu finden.",
+    "DB": "Teamcraft beinhaltet eine Datenbank. Du kannst das \"i\"-Icon an verschiedenen Stellen verwenden, um für das jeweilige Element den Datenbank-Eintrag zu öffnen.",
     "3D_model": "Du kannst in der Datenbank die 3D-Modelle von Gegenständen betrachten.",
     "Levequests": "Auf der \"Freibriefe\"-Seite kannst du Listen für Freibriefe vorbereiten und sogar die Erfahrungspunkte dafür berechnen.",
     "Log_tracker": "Auf der Seite \"Notizbuch-Tracker\" kannst du den Fortschritt deiner Notizbücher (Sammler, Handwerker, Fischer) verfolgen.",
-    "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Sidebar)."
+    "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Seitenleiste)."
   },
   "RECIPE_FINDER": {
     "Title": "Rezeptfinder",
@@ -1439,7 +1439,7 @@
     "No_missing_ingredients": "Keine fehlenden Zutaten",
     "Missing_X_ingredients": "Fehlende Zutaten: {{amount}}",
     "Missing": "Fehlt",
-    "Results": "Mögliche Synthesen",
+    "Results": "Mögliche Rezepte",
     "Basket": "Korb",
     "Add_to_basket": "Zum Korb hinzufügen",
     "Remove_from_basket": "Aus Korb entfernen",
