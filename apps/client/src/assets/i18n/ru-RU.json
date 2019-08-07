@@ -1146,20 +1146,20 @@
   },
   "DIRTY": {
     "Dialog_title": "Остались несохраненные изменения",
-    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
+    "Dialog_description": "Выход с этой страницы удалит все несохранённые изменения, вы уверены?"
   },
   "GC_SUPPLY": {
     "Title": "Поставки Grand Company",
     "Search": "Поиск",
     "Generate_list": "Создать быстрый список",
     "Intro": "Введите уровень и нажмите на поиск, чтобы начать",
-    "Loading_message": "Loading possible deliveries, this can take up to a minute"
+    "Loading_message": "Загрузка возможных доставок, это может занять до минуты"
   },
   "DESYNTH": {
     "Title": "Гид по дезинтезу",
     "Job": "Профессия",
     "Level": "Уровень",
-    "Intro": "Select a job and input a level to find best items to level up your desynth",
+    "Intro": "Выберите профессию и введите уровень для поиска лучших вещей для повышения уровня десинтеза",
     "Loading_message": "Загрузка...",
     "TAGS": {
       "Higher_chances": "Высокий шанс",
