@@ -372,8 +372,8 @@
       "Highlight": "Hervorhebungsfarbe",
       "Text": "Schaltflächenfarbe",
       "Topbar": "Farbe der Kopf- und Seitenleiste",
-      "Sidebar_trigger": "Sidebar-Knopffarbe",
-      "Sidebar_trigger_hover": "Sidebar-Knopffarbe (Hover)"
+      "Sidebar_trigger": "Farbe des Seitenleisten-Buttons",
+      "Sidebar_trigger_hover": "Hover-Farbe des Seitenleisten-Buttons"
     },
     "COPY_TYPE": {
       "Classic": "Gegenstandsnamen kopieren",
@@ -398,7 +398,7 @@
     "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
-      "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>.",
+      "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
       "Success": "Charakter verifiziert! Du kannst dieses Popup jetzt schließen. Der Code kann jetzt aus der Biografie entfernt werden.",
       "Error": "Der Code konnte nicht in deiner Biografie gefunden werden. Stelle sicher dass er eingefügt und gespeichert wurde, und versuche es in ~30 Sekunden erneut.",
       "Validate": "Verifizieren"
@@ -504,7 +504,7 @@
     "List_too_large": "Liste zu lang",
     "List_too_large_description": "Diese Liste ist zu groß und stößt möglicherweise an die Datenbanklimitierungen aufgrund der vielen Informationen. Du darfst keine weiteren Gegenstände hinzufügen, um zu verhindern, dass du die Liste verlierst.",
     "Add_to_another_list": "Zu einer anderen Liste hinzufügen",
-    "New_tag": "Neues Tag",
+    "New_tag": "Neue Markierung",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -518,7 +518,7 @@
       "Buttons": "Schaltflächen",
       "Menu": "Menü",
       "Edit_row_buttons_display": "Anzeige der Zeilenschaltflächen bearbeiten",
-      "Reorder_panels": "Panels neu anordnen",
+      "Reorder_panels": "Bereiche neu anordnen",
       "ITEMS": {
         "COMMENTS": "Kommentare",
         "COPY_NAME_NOT_FAVORITE": "Nicht-bevorzugter Kopiermodus",
@@ -530,7 +530,7 @@
         "ADD_TO_ANOTHER_LIST": "Zu einer anderen Liste hinzufügen",
         "REQUIREMENTS": "Voraussetzungen",
         "REMOVE_ITEM": "Gegenstand aus Liste entfernen",
-        "ADD_TAG": "Tag zum Gegenstand hinzufügen",
+        "ADD_TAG": "Markierung zum Gegenstand hinzufügen",
         "MARK_AS_DONE_IN_LOG": "Im Notizbuch als \"erledigt\" markieren",
         "MARKET_BOARD_INFORMATIONS": "Marktinformationen"
       }
@@ -540,7 +540,7 @@
       "Panel_name": "Bereichsname",
       "Order_by": "Sortiere nach",
       "Order": "Sortierung",
-      "Tag_filter": "Tag-Filter"
+      "Tag_filter": "Markierungs-Filter"
     }
   },
   "LIST_TAGS": {
@@ -779,7 +779,7 @@
       "Community_rotation": "Community-Rotation",
       "No_rotations_matching": "Keine zutreffenden Rotations",
       "Name_filter_placeholder": "Name der Rotation",
-      "Tags_filter_placeholder": "Tags",
+      "Tags_filter_placeholder": "Markierungen",
       "Durability_filter_placeholder": "Belastbarkeit",
       "Rlvl_filter_placeholder": "Rezeptstufe",
       "Filters_reset": "Filter zurücksetzen",
