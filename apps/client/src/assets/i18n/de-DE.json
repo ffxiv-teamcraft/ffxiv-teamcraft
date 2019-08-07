@@ -165,10 +165,10 @@
       "WEEKLY_RESETS_DESCRIPTION": "Wunschlieferungen, Abenteueralbum, Wöchentliche Beute (Allianz-Raid, Epische Beute, Waffen-Gegenstand im Normal-Raid), Jumbo-Glückskaktor, Agenda, Kleiderkritik, Hohe Jagd B-Ränge.",
       "ROULETTES_RESET": "Zufallsinhalte und Wilde Stämme",
       "ROULETTES_RESET_DESCRIPTION": "Reset aller Zufallsinhalte, Aufgaben der Wilden Stämme, Tägliche Jagden, und Mini-Glückskaktor.",
-      "DELIVERIES_RESET": "Deliveries",
-      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
-      "LEVE_ALLOWANCES": "Leve allowances",
-      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+      "DELIVERIES_RESET": "Lieferungen",
+      "DELIVERIES_RESET_DESCRIPTION": "Reset der Lieferungen für die staatlichen Gesellschaften",
+      "LEVE_ALLOWANCES": "Verfügbare Freibriefe",
+      "LEVE_ALLOWANCES_DESCRIPTION": "Du erhälst 3 verfügbare Freibriefe"
     },
     "CUSTOM": {
       "Title": "Eigenen Alarm hinzufügen",
