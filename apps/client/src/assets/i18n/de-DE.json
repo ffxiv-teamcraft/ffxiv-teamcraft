@@ -21,10 +21,10 @@
     "auth/wrong-password": "Email/Passwort ist nicht korrekt"
   },
   "TIMERS": {
-    "Days": "days",
-    "Day": "day",
+    "Days": "Tage",
+    "Day": "Tag",
     "Hours": "h",
-    "Minutes": "m",
+    "Minutes": "min",
     "Seconds": "s"
   },
   "ITEMS": {
