@@ -1376,25 +1376,25 @@
       "Show_more": "Показать еще {{amount}} комментариев",
       "No_comments": "Нет комментариев",
       "Post": "Разместить",
-      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "Введите <тип страницы>:\"<Название Контента>\" чтоб создать ссылку на другую страницу. Например: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Поддерживаемые типы страниц: item (предмет), map (карта), mob (монстр), achievement (достижение), leve (ливквест), npc, instance (инстанс), quest (квест), trait (пассивный эффект), action (действие), status (эффект)"
     },
     "PATCH": {
-      "Open_patch_page": "Click here to open full patch changes in database",
+      "Open_patch_page": "Нажмите здесь чтобы открыть полный список изменений патча",
       "CONTENT": {
-        "Title": "Patch content",
-        "Achievements": "Achievements ({{amount}})",
-        "Actions": "Actions ({{amount}})",
-        "Crafting_actions": "Crafting actions ({{amount}})",
-        "Fates": "Fates ({{amount}})",
-        "Instances": "Instance content ({{amount}})",
-        "Items": "Items ({{amount}})",
-        "Leves": "Leves ({{amount}})",
-        "Maps": "Maps ({{amount}})",
-        "Monsters": "Monsters ({{amount}})",
-        "Npcs": "Npcs ({{amount}})",
-        "Quests": "Quests ({{amount}})",
-        "Statuses": "Statuses ({{amount}})",
-        "Traits": "Traits ({{amount}})"
+        "Title": "Содержимое патча",
+        "Achievements": "Достижения ({{amount}})",
+        "Actions": "Действия ({{amount}})",
+        "Crafting_actions": "Крафтовые действия ({{amount}})",
+        "Fates": "Фейты ({{amount}})",
+        "Instances": "Инстансы ({{amount}})",
+        "Items": "Предметы ({{amount}})",
+        "Leves": "Ливквесты ({{amount}})",
+        "Maps": "Карты ({{amount}})",
+        "Monsters": "Монстры ({{amount}})",
+        "Npcs": "NPC ({{amount}})",
+        "Quests": "Квесты ({{amount}})",
+        "Statuses": "Статусы ({{amount}})",
+        "Traits": "Пассивные эффекты ({{amount}})"
       }
     }
   },
@@ -1465,18 +1465,18 @@
     "Description": "У вас слишком много валюты? Выберите валюту, установите сумму, сервер и найдите, какой предмет лучше купить, чтобы получить gil из ваших валют!",
     "Pick_currency": "Выберите валюту",
     "You_can_buy": "Вы можете купить {{amount}}",
-    "Disabled": "The currency spending guide isn't working anymore",
-    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
+    "Disabled": "Гид по трате валют более не работает",
+    "Disabled_description": "Это произошло по причине того, что Square Enix не позволяют нам получать информацию с маркета. Если вы хотите пожаловаться на это, пожалуйста, жалуйтесь Square Enix, мы не сможем заставить это работать без их помощи."
   },
   "BLOG": {
     "Title": "Блог"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+    "Http_request_error": "Возникла проблема с {{tool}}, пожалуйста, посмотрите канал #announcements в дискорде, либо сообщите об этой проблеме на канал #bugs",
+    "Firebase_blocked": "Teamcraft не смог достучаться к базе данных. Похоже, что-то блокирует её, либо у вас нет доступа в интернет."
   },
   "SEARCH": {
-    "Sort_by": "Sort by: ",
+    "Sort_by": "Сортировка по: ",
     "Sort_asc": "Ascending",
     "Sort_desc": "Descending",
     "Add_stat_filter": "Add stat filter",
