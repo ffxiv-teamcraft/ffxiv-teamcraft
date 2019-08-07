@@ -41,7 +41,7 @@
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
   "Find_us_on_twitter": "Finde uns auf Twitter",
-  "Join_discord_server": "Trete unserem Discord Server bei",
+  "Join_discord_server": "Tritt unserem Discord Server bei",
   "See_code_github": "Quellcode auf Github ansehen",
   "Support_on_patreon": "Unterstütze das Projekt auf Patreon",
   "Access_patreon_page": "Gehe zu unserer Patreon-Seite",
@@ -49,7 +49,7 @@
   "Delete": "Löschen",
   "Copy_isearch": "isearch Makro kopieren",
   "Isearch_copied": "/isearch {{itemname}} in Zwischenablage kopiert",
-  "Required_for_final_craft": "{{amount}} werden für die finalen Gegenstände benötigt, du möchtest diese vielleicht in HQ haben",
+  "Required_for_final_craft": "{{amount}} werden für die Resultate benötigt, diese solltest du möglichst in HQ haben",
   "Mark_HQ": "Markieren als HQ erforderlich",
   "Unmark_HQ": "HQ-Erfordernis entfernen",
   "Compact_sidebar_toggle": "Kompakte Seitenleiste umschalten",
@@ -278,7 +278,7 @@
   "Disconnect_and_anonymous": "Abmelden und anonym weiternutzen",
   "Add_manual_character": "Charakter hinzufügen",
   "Character_informations": "Charakterinformationen",
-  "Server_name": "Servername",
+  "Server_name": "Heimatwelt",
   "Add_all_recipes": "Füge Ergebnisse einer Liste hinzu",
   "Character_not_found": "Charakter nicht gefunden",
   "Use_lodestoneId": "Verwende Lodestone ID",
@@ -359,7 +359,7 @@
     "Starting_place_explain": "Genutzt für Pfadoptimierungsfunktionen",
     "Free_aetheryte": "Kostenloser Ätheryt",
     "Favorite_aetherytes": "Favoriten-Ätheryten",
-    "Disable_cross_world_prices": "Nur eigenen Server für Marktbrett-Preise verwenden",
+    "Disable_cross_world_prices": "Nur Heimatwelt für Marktbrett-Preise verwenden",
     "Clear_search_history": "Suchverlauf löschen",
     "Auto_mark_as_done_in_log": "Im Notizbuch als erledigt markieren, sobald in der Liste erledigt",
     "Db_comments_position": "Position der Datenbank-Kommentare",
@@ -905,7 +905,7 @@
     "From_crafting": "Herstellungspreis",
     "Expect_to_sell_everything": "Gehe davon aus alles zu verkaufen",
     "Autofill_panel_prices": "Rufe die Preise aus dem Marktbrett ab",
-    "Autofill_panel_prices_your_server": "Preise auf Basis des Marktplatzes befüllen (nur von deinem Server)",
+    "Autofill_panel_prices_your_server": "Preise auf Basis des Marktplatzes befüllen (nur von Heimatwelt)",
     "Autofill_panel_prices_warning": "Dies ist ein langsamer Prozess und sollte ca. {{time}} Sekunden dauern, bist du sicher?",
     "Copy_earnings_as_text": "Kopiere Inhalt als Text",
     "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
@@ -972,7 +972,7 @@
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** wurde der Liste **[{{listName}}]({{listUrl}})** hinzugefügt.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** wurde von der Liste **[{{listName}}]({{listUrl}})** entfernt.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** hat {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** von {{totalNeeded}} als erledigt markiert **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "Das Team **{{teamName}}** wird jetzt in diesem Kanal verfolgt.",
       "List_added_notification": "Die Liste **[{{listName}}]({{listUrl}})** wurde dem Team hinzugefügt.",
       "List_removed_notification": "Die Liste **[{{listName}}]({{listUrl}})** wurde vom Team entfernt.",
@@ -988,10 +988,10 @@
       "ITEM_REMOVED": "Gegenstand entfernt",
       "LIST_ADDED": "Liste hinzugefügt",
       "LIST_REMOVED": "Liste entfernt",
-      "LIST_PROGRESSION": "List materials progression",
-      "FINAL_LIST_PROGRESSION": "List final items progression",
+      "LIST_PROGRESSION": "Fortschritt bei Materialien sehen",
+      "FINAL_LIST_PROGRESSION": "Fortschritt bei Resultaten sehen",
       "USER_ASSIGNMENT": "Benutzerzuweisung",
-      "ITEM_COMPLETION": "Item completion"
+      "ITEM_COMPLETION": "Gegenstand erledigen"
     }
   },
   "MARKETBOARD": {
@@ -1004,7 +1004,7 @@
     "History": "Historie",
     "Purchase_date": "Datum",
     "More_on_mogboard": "Mehr Details auf mogboard.com",
-    "Server": "Server"
+    "Server": "Welt"
   },
   "COMMENTS": {
     "Title": "Kommentare"
@@ -1177,7 +1177,7 @@
     "Title": "Hilf uns, zu wachsen!",
     "Communication_title": "Mach das Projekt bekannter",
     "Communication_description": "Lass Leute über das Werkzeug wissen, teile deine Rotationen und Listen. Erstelle Videos, Blogposts, Tweets, alles was das Aufsehen der Leute erregt hilft dem Teamcraft-Projekt mehr, als du denkst.\n\nWir haben sogar ein Makro vorbereitet, damit du deine Liebe überall verbreiten kannst!\n",
-    "Contribute_title": "Contribute to the project",
+    "Contribute_title": "Beteilige dich am Projekt",
     "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
     "Patreon_title": "Support us on patreon",
     "Patreon_description": "Patreon is a platform where you can give a money to support a project every month. This money is used to pay for servers, certificates, giveaways and to free more and more time for the developer to work on the project.\n\nDepending on the amount you pledge, you can get some nice benefits in order to thank your contribution:",
