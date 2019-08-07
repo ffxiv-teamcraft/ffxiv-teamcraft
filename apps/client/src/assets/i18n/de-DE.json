@@ -1246,16 +1246,16 @@
     "Map": "Karte",
     "Leves": "Freibriefe",
     "GC_Delivery": "SG-Lieferaufträge",
-    "Drop_rate": "Fundquote",
+    "Drop_rate": "Fundchance",
     "Involved_monsters": "Involvierte Monster",
-    "Reduces_to": "Reduktion auf",
+    "Reduces_to": "Reduktion zu",
     "Icons_shown": "Daten anzeigen",
     "Select_data_type": "Datentypen auswählen, um ihre Details hier zu sehen",
     "Desynths_to": "Desynthese zu",
     "Limited": "Begrenzter Spawn",
     "3d_model_viewer": "3D-Modellvorschau",
-    "3d_model_help": "3D-Modell vorschauen",
-    "Achievements": "Erfolge",
+    "3d_model_help": "3D-Modell anzeigen",
+    "Achievements": "Errungenschaften",
     "Currencies": "Currencies",
     "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
     "Unlocks": "Unlocks",
@@ -1281,7 +1281,7 @@
       "End": "Ende",
       "Rewards": "Belohnungen",
       "Repeatable": "Wiederholbar",
-      "Beast_tribe_rank": "Wilder Stamm-Rang",
+      "Beast_tribe_rank": "Rang bei Wilden Stämmen",
       "Chain_length": "Following quests"
     },
     "NPC": {
@@ -1293,8 +1293,8 @@
       "Trades": "Handel"
     },
     "FIGHT_TYPE": {
-      "Boss": "Boss",
-      "MidBoss": "Boss"
+      "Boss": "Endboss",
+      "MidBoss": "Zwischenboss"
     },
     "LEVE": {
       "Required_items": "Benötigte Gegenstände",
