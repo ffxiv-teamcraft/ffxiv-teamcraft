@@ -1376,7 +1376,7 @@
       "Show_more": "{{amount}} weitere Kommentare anzeigen",
       "No_comments": "Keine Kommentare",
       "Post": "Post",
-      "Editor_tip": "Schreibe <Seitentyp>:<Name> um auf eine andere Seite zu verweisen. Beispiele: item:\"Curtana\", action:\"Bearbeiten\", map:\"Crystarium\". Unterstützte Seitentypen: item (Gegenstände), map (Karten), mob (Monster), achievement (Errungenschaften), leve (Freibriefe), npc, instance (Inhalte), quest (Aufgaben), trait (Eigenschaften), action (Kommandos), status (Statuseffekt)"
+      "Editor_tip": "Schreibe <Seitentyp>:\"<Name>\" um auf eine andere Seite zu verweisen. Beispiele: item:\"Curtana\", action:\"Bearbeiten\", map:\"Crystarium\". Unterstützte Seitentypen: item (Gegenstände), map (Karten), mob (Monster), achievement (Errungenschaften), leve (Freibriefe), npc, instance (Inhalte), quest (Aufgaben), trait (Eigenschaften), action (Kommandos), status (Statuseffekt)"
     },
     "PATCH": {
       "Open_patch_page": "Click here to open full patch changes in database",
@@ -1401,7 +1401,7 @@
   "SEARCH_TYPES": {
     "Item": "Gegenstand",
     "Recipe": "Rezept",
-    "Instance": "Instanz",
+    "Instance": "Inhalt",
     "Quest": "Auftrag",
     "NPC": "NPC",
     "Leve": "Freibrief",
@@ -1411,14 +1411,14 @@
     "Fate": "FATE",
     "Map": "Karte",
     "Action": "Kommando",
-    "Status": "Status",
+    "Status": "Statuseffekt",
     "Trait": "Eigenschaft",
     "Any": "Alle",
-    "Achievement": "Erfolg"
+    "Achievement": "Errungenschaft"
   },
   "SEARCH_FILTERS": {
     "Level": "Stufe",
-    "Leve_job": "Job",
+    "Leve_job": "Freibrief-Job",
     "Job": "Job",
     "Leve_level": "Benötigte Stufe"
   },
