@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.6"></a>
+## [5.7.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.5...v5.7.6) (2019-08-07)
+
+
+### Bug Fixes
+
+* **auth:** fixed a bug preventing korean users from linking character ([220496a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/220496a))
+
+
+
 <a name="5.7.5"></a>
 ## [5.7.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.4...v5.7.5) (2019-08-06)
 
