@@ -245,7 +245,7 @@ export class AuthEffects {
     withLatestFrom(this.store),
     switchMap(([, state]) => {
       // Don't save if there is no associated lodestone id on a logged in account.
-      if (state.auth.loggedIn && state.auth.user.lodestoneIds.length === 0) {
+      if (state.auth.loggedIn && state.auth.user.lodestoneIds.length === 0 && state.auth.user.customCharacters.length === 0) {
         return of(null);
       }
       // Save to localstorage to have a backup check to avoid data loss
