@@ -877,10 +877,10 @@
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "So gut wie alle Rotationen sollten Innere Ruhe beinhalten, wenn das Ziel ist, den Gegenstand in HQ herzustellen. Es erhöht stark die Kontrolle und somit die Qualität, und erlaubt die Verwendung von Kommandos wie Byregots Benediktion.",
-      "Use_inner_quiet_before_quality_increase": "Du solltest Innere Ruhe vor allen Veredelungen ausführen, da diese ansonsten den Innere Ruhe-Status nicht erhöhen.",
+      "Use_inner_quiet_before_quality_increase": "Du solltest Innere Ruhe vor allen Veredelungen ausführen, da diese ansonsten den Innere Ruhe-Statuseffekt nicht erhöhen.",
       "Use_ingenuity_I_instead": "Du solltest Einfallsreichtum anstatt Einfallsreichtum II verwenden, um die Kosten um 8 HP zu verringern, da die Synthese auch damit erfolgreich sein wird.",
       "Use_cz_earlier": "Du solltest Komfortzone früher verwenden, um früher deine HP zu regenerieren.",
-      "Use_reclaim": "Du hast genug HP übrig um Reklamation zu verwenden. Du solltest dieses Kommando zur Rotation hinzufügen, um die Wahrscheinlichkeit zu erhöhen, bei Versagen deine Materialien zurück zu erhalten.",
+      "Use_reclaim": "Du hast genug HP übrig um Reklamation zu verwenden. Du solltest dieses Kommando zur Rotation hinzufügen, um beim Fehlschlag eine höhere Wahrscheinlichkeit zu haben deine Materialien zurückzuerhalten.",
       "Use_byregot_brow_low_iq_stacks": "Du hast Byregots Benediktion mit weniger als 6 Stacks von Innere Ruhe verwendet. Byregots Schwung erzielt an dieser Stelle einen höheren Gewinn an Qualität.",
       "Use_byregot_blessing_high_iq_stacks": "Du hast Byregots Schwung mit mehr als 6 Stacks von Innere Ruhe verwendet. Byregots Benediktion erzielt an dieser Stelle einen höheren Gewinn an Qualität.",
       "Use_sh1_instead": "Du hast Ruhige Hand II bei Schritt {{index}} verwendet, dabei erzielt Ruhige Hand I das selbe Resultat und kostet 3 HP weniger.",
