@@ -289,7 +289,7 @@
   "Requirements_for_craft": "Bedingungen ansehen",
   "Zone_breakdown": "Gebietsübersicht",
   "Reverse_tiers": "Zeige umgedrehte Meilensteine",
-  "Timer_options": "Zeitoptionen",
+  "Timer_options": "Alarm-Optionen",
   "Early_by": "Frühzeitig (in Eorzäischen Stunden)",
   "Sound": "Ton",
   "Share_link_copied": "Listenlink in die Zwischenablage hinzugefügt",
@@ -1376,7 +1376,7 @@
       "Show_more": "{{amount}} weitere Kommentare anzeigen",
       "No_comments": "Keine Kommentare",
       "Post": "Post",
-      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "Schreibe <Seitentyp>:<Name> um auf eine andere Seite zu verweisen. Beispiele: item:\"Curtana\", action:\"Bearbeiten\", map:\"Crystarium\". Unterstützte Seitentypen: item (Gegenstände), map (Karten), mob (Monster), achievement (Errungenschaften), leve (Freibriefe), npc, instance (Inhalte), quest (Aufgaben), trait (Eigenschaften), action (Kommandos), status (Statuseffekt)"
     },
     "PATCH": {
       "Open_patch_page": "Click here to open full patch changes in database",
