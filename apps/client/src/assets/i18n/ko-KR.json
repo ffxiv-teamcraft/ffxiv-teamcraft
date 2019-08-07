@@ -763,11 +763,11 @@
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
     "STATE": {
-      "Excellent": "Excellent",
-      "Good": "Good",
-      "Poor": "Poor",
-      "Fail": "Fail",
-      "Normal": "Normal"
+      "Excellent": "최고품질",
+      "Good": "고품질",
+      "Poor": "저품질",
+      "Fail": "실패",
+      "Normal": "보통"
     },
     "SOLVER": {
       "Hq_target": "HQ 목표치",
@@ -1465,7 +1465,7 @@
     "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다 !",
     "Pick_currency": "교환용 아이템 선택",
     "You_can_buy": "{{amount}}개 구매 가능",
-    "Disabled": "The currency spending guide isn't working anymore",
+    "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
   },
   "BLOG": {
