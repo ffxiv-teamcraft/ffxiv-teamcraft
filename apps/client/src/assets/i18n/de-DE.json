@@ -348,7 +348,7 @@
     "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Patreon-Funktionen vollständig nutzen zu können.",
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
     "Clear_cache": "Cache leeren (erfordert einen Neustart der App)",
-    "Enable_item_tags": "Gegenstand-Tags aktivieren",
+    "Enable_item_tags": "Gegenstand-Markierungen aktivieren",
     "Show_copy_list_own_list": "Kopieren-Schaltfläche auf eigenen Listenblöcken anzeigen",
     "Custom_theme": "Benutzerdefiniertes Theme",
     "Show_all_alarms": "Immer alle Alarme anzeigen",
@@ -485,7 +485,7 @@
   "LIST_DETAILS": {
     "List_finished": "Liste erfolgreich abgeschlossen",
     "Public_list_description": "Zeigt diese Liste im Bereich Communitylisten, damit andere sie kopieren können. DAS IST NICHT NOTWENDIG UM DIE LISTE ZU TEILEN!",
-    "Missing_tags_before_button": "Deine Communityliste scheint keine Tags zu haben, bitte füge einige Tags mit der Schaltfläche ",
+    "Missing_tags_before_button": "Deine Communityliste hat keine Markierungen. Bitte füge einige mit der Schaltfläche ",
     "Missing_tags_after_button": " hinzu.",
     "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
     "Add_from_external": "Als extern hinzufügen (du hast keine Materialien dafür verwendet)",
@@ -532,7 +532,7 @@
         "REMOVE_ITEM": "Gegenstand aus Liste entfernen",
         "ADD_TAG": "Markierung zum Gegenstand hinzufügen",
         "MARK_AS_DONE_IN_LOG": "Im Notizbuch als \"erledigt\" markieren",
-        "MARKET_BOARD_INFORMATIONS": "Marktinformationen"
+        "MARKET_BOARD_INFORMATIONS": "Marktbrett-Information"
       }
     },
     "LAYOUT": {
@@ -640,9 +640,9 @@
     "Spawned_for": "Verschwindet in {{timer}}",
     "Will_spawn_in": "Taucht in {{timer}} auf",
     "GIG_HEAD": {
-      "Small": "Kleine Spitze",
-      "Normal": "Normale Spitze",
-      "Large": "Große Spitze"
+      "Small": "Kleine Speerspitze",
+      "Normal": "Normale Speerspitze",
+      "Large": "Große Speerspitze"
     }
   },
   "ANNOUNCEMENT": {
@@ -698,7 +698,7 @@
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Teile Makros am letzten möglichen Schritt für Reklamation",
-    "Include_consumables_notification": "Benachrichtigung für Consumables einbeziehen",
+    "Include_consumables_notification": "Benachrichtigung für Verzehrbares hinzufügen",
     "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
     "Import_macro": "Von Spiel-Makro importieren",
@@ -752,12 +752,12 @@
     "Safe_mode": "Sicherer Modus",
     "Safe_mode_tooltip": "Deaktiviert alle Fähigkeiten, die (inklusive Statuseffekten) keine 100% Erfolgschance haben",
     "Quality_needed": "{{amount}} mehr Qualität, um 100% zu erreichen",
-    "Rotation_tips": "Rotation-Tipps",
+    "Rotation_tips": "Tipps für die Rotation",
     "Progress_action_100_potency": "Fortschritt bei 100% Effizienz: {{value}}",
     "Quality_action_100_potency": "Qualität bei 100% Effizienz: {{value}}",
     "Current_control": "Aktuelle Kontrolle: {{value}}",
     "Current_control_bonus": "Aktueller Bonus (auf 3000 begrenzt)",
-    "Macrolock": "Makro-Sperre (/mlock) einschließen",
+    "Macrolock": "Makro-Sperre (/mlock) hinzufügen",
     "Solve_rotation": "Rotation automatisch erstellen",
     "Rotation_solver": "Rotations-Löser",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
@@ -856,7 +856,7 @@
       "Action": "Wählen Sie freie Firmenaktionen",
       "Save_on_profile": "Im Profil speichern",
       "Reset_set": "Benutzerdefinierte Werte zurücksetzen",
-      "Save_consumables": "Speichern Sie diese Verbrauchsmaterialien als Standard",
+      "Save_consumables": "Das ausgewählte Verzehrbare als Standard speichern",
       "No_food": "Kein Gericht",
       "No_medicine": "Keine Arznei",
       "No_fc_buffs": "Keine FG Buffs",
