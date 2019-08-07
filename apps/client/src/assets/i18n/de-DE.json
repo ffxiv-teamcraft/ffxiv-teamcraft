@@ -438,7 +438,7 @@
       "Loading_items": "Lade Gegenstandsinformationen",
       "Estimate_overmeld_materia": "Schätze benötigte Materia für Riskante Techniken",
       "Multiply_tool_materia": "Multipliziere Materia für Werkzeuge der Sammler (x2) und Handwerker (x8)",
-      "Group_together": "Materia nach Typ gruppieren"
+      "Group_together": "Materia zusammenfassen"
     }
   },
   "LIST": {
@@ -756,9 +756,9 @@
     "Progress_action_100_potency": "Fortschritt bei 100% Effizienz: {{value}}",
     "Quality_action_100_potency": "Qualität bei 100% Effizienz: {{value}}",
     "Current_control": "Aktuelle Kontrolle: {{value}}",
-    "Current_control_bonus": "Current bonus (limited to 3000)",
-    "Macrolock": "Include macro lock",
-    "Solve_rotation": "Solve this rotation",
+    "Current_control_bonus": "Aktueller Bonus (auf 3000 begrenzt)",
+    "Macrolock": "Makro-Sperre (/mlock) einschließen",
+    "Solve_rotation": "Rotation automatisch erstellen",
     "Rotation_solver": "Rotation solver",
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "Could_not_find_minstats": "Could not find min stats for this rotation",
