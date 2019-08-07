@@ -392,7 +392,7 @@
     "Patreon_features": "Patreon 支持者功能",
     "Contacts": "好友",
     "Add_new_contact": "添加好友",
-    "Save_for_all": "一键保存所有工匠",
+    "Save_for_all": "一键保存为所有工匠属性",
     "User_not_verified": "用户未验证，点击验证",
     "More_than_100_lists_created": "创建了 100+ 个清单",
     "Veteran": "老玩家",
@@ -876,7 +876,7 @@
       "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并点亮“比尔格的祝福”等技能。",
+      "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
       "Use_inner_quiet_before_quality_increase": "应在提高制品品质前使用内静，否则就是在浪费内静层数。",
       "Use_ingenuity_I_instead": "应使用新颖替换新颖II，这已经足够完成制作并可以节约 8 点 CP。",
       "Use_cz_earlier": "应向前移动安逸，以更早获得回复效果。",
