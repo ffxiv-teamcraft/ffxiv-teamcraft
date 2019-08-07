@@ -98,9 +98,9 @@
   "Remove_ephemeral": "升级为永久清单",
   "Quick_list_create": "创建快速清单(完成后删除)",
   "Tag_filter": "标签",
-  "Public_lists": "社区清单",
-  "Your_public_lists": "你的社区清单",
-  "Public_list": "社区清单",
+  "Public_lists": "共享清单",
+  "Your_public_lists": "您的共享清单",
+  "Public_list": "共享清单",
   "Profile": "个人资料",
   "X_for_total": "一共 {{amount}} 个",
   "Discounts": "折扣",
@@ -485,7 +485,7 @@
   "LIST_DETAILS": {
     "List_finished": "清单已完成",
     "Public_list_description": "将该清单公开分享给所有人。注意：只是与其他人分享清单并不需要将其设为社区清单。",
-    "Missing_tags_before_button": "此清单已公开分享为社区清单，但它没有标签，请使用 ",
+    "Missing_tags_before_button": "此清单已公开分享为共享清单，但它没有标签，请使用 为它添加标签。",
     "Missing_tags_after_button": " 按钮添加标签。",
     "Add_remove_amount": "增加/减少",
     "Add_from_external": "增加外部来源数量 (并非使用自己的材料制作的)",
@@ -775,8 +775,8 @@
       "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的手法而生，作为一个 AI，在其逐渐成长的过程中，可能生成完美的手法也可能生成非常差的手法。如果生成结果不理想，请不要报告其为 bug。"
     },
     "COMMUNITY_ROTATIONS": {
-      "Title": "社区共享手法",
-      "Community_rotation": "社区共享手法",
+      "Title": "共享手法",
+      "Community_rotation": "共享手法",
       "No_rotations_matching": "未找到匹配的手法",
       "Name_filter_placeholder": "手法名",
       "Tags_filter_placeholder": "标签",
@@ -1424,7 +1424,7 @@
   },
   "TIPS": {
     "Title": "小贴士",
-    "Community_rotations": "你可以在社区共享手法页面中找到特定配方的手法",
+    "Community_rotations": "您可以在共享社区-共享手法页面中找到特定配方的手法",
     "GC_Deliveries": "您可以在军团筹备页面中制作您的清单。",
     "Desynth": "您可以在分解查询页面中找到最适合当前分解等级的物品。",
     "DB": "Teamcraft包含一个数据库，您可以点击任何地方的“i”图标在数据库页面中查看其详情。",
