@@ -1186,7 +1186,7 @@
       "Profile_badge": "Особая отметка в вашем профиле Teamcraft (${{price}})",
       "Custom_theme": "Улучшенная кастомизация тем, с возможностью выбора любого цвета (${{price}})",
       "Pins_badge": "Эксклюзивные значки Teamcraft, которые будут отправлены вам (${{price}}) (требует заполнения информации о доставке на Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
+      "Loading_screen_message": "Добавить новый текст в загрузочном сообщении \"Brought to you by ...\" с вашим именем, названием вашей FC, названием линкшелла или чего угодно другого! (${{price}})"
     }
   },
   "DB": {
@@ -1251,12 +1251,12 @@
     "Reduces_to": "Превращается в",
     "Icons_shown": "Данные для отображения",
     "Select_data_type": "Выберите тип данных для отображения деталей здесь",
-    "Desynths_to": "Desynths to",
-    "Limited": "Limited spawn",
-    "3d_model_viewer": "3D model preview",
-    "3d_model_help": "Preview 3D model",
+    "Desynths_to": "Десинтезируется в",
+    "Limited": "Ограниченное появление",
+    "3d_model_viewer": "Предпросмотр 3D модели",
+    "3d_model_help": "Предпросмотр 3D модели",
     "Achievements": "Достижения",
-    "Currencies": "Currencies",
+    "Currencies": "Валюты",
     "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
     "Unlocks": "Unlocks",
     "ITEM": {
@@ -1495,6 +1495,6 @@
     "Sharing": "Sharing",
     "Gathering": "Gathering",
     "Helpers": "Helpers",
-    "Other": "Other"
+    "Other": "Другое"
   }
 }
