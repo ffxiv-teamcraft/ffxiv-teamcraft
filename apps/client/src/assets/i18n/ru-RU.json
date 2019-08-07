@@ -21,11 +21,11 @@
     "auth/wrong-password": "Неверный адрес или пароль"
   },
   "TIMERS": {
-    "Days": "days",
-    "Day": "day",
-    "Hours": "h",
-    "Minutes": "m",
-    "Seconds": "s"
+    "Days": "дней",
+    "Day": "день",
+    "Hours": "ч",
+    "Minutes": "м",
+    "Seconds": "с"
   },
   "ITEMS": {
     "Title": "Поиск",
@@ -160,15 +160,15 @@
     "Toggle_collapse": "Свернуть группы оповещений",
     "Add_alarms_to_group": "Добавить оповещения к этой группе",
     "REALTIME": {
-      "Reset_timers": "Reset timers",
-      "WEEKLY_RESETS": "Weeklies",
-      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
-      "ROULETTES_RESET": "Roulettes & Beast tribes",
-      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
-      "DELIVERIES_RESET": "Deliveries",
-      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
-      "LEVE_ALLOWANCES": "Leve allowances",
-      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+      "Reset_timers": "Таймеры сброса",
+      "WEEKLY_RESETS": "Еженедельное",
+      "WEEKLY_RESETS_DESCRIPTION": "Специальные доставки, Wondrous Tails, еженедельные дропы (с различных рейдов), Jumbo cactpot, журнал вызовов, Fashion report, охота на B-ранги.",
+      "ROULETTES_RESET": "Рулетки и племена зверолюдей",
+      "ROULETTES_RESET_DESCRIPTION": "Сброс всех рулеток, ежедневных заданий зверолюдей, ежедневная охота и mini cactpot.",
+      "DELIVERIES_RESET": "Доставки",
+      "DELIVERIES_RESET_DESCRIPTION": "Сброс доставок для Grand Company",
+      "LEVE_ALLOWANCES": "Разрешения ливквестов",
+      "LEVE_ALLOWANCES_DESCRIPTION": "Вы получите 3 разрешения для ливквестов"
     },
     "CUSTOM": {
       "Title": "Добавить настраиваемое оповещение",
