@@ -1329,8 +1329,8 @@
       "Unlocked_by_quest": "Unlocked by quest",
       "Shares_cd_with": "Shares cooldown with",
       "Combos": "Combos",
-      "Combo_next": "Kombo-Kommandos",
-      "Combo_previous": "Previous action",
+      "Combo_next": "Folgende Kombo-Kommandos",
+      "Combo_previous": "Vorherige Kombo-Kommandos",
       "Affected_by_status": "Affected by status",
       "Cost": "Cost",
       "Related_traits": "Related traits",
@@ -1357,11 +1357,11 @@
       }
     },
     "TRAIT": {
-      "Related_actions": "Related actions"
+      "Related_actions": "Verwandte Kommandos"
     },
     "STATUS": {
       "Max_stacks": "Max stacks",
-      "Locks_actions": "Locks actions",
+      "Locks_actions": "Sperrt Kommandos",
       "Locks_control": "Locks control",
       "Locks_movement": "Verhindert Bewegung",
       "Type": "Typ",
