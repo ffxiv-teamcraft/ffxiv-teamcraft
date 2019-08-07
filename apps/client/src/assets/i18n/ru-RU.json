@@ -892,7 +892,7 @@
       "Use_patient_touch_faster": "Вам следует использовать Patient Touch перед добавлением Inner Quiet, чтобы минимизировать потерю стаков если действие провалится.",
       "Use_advanced_touch_instead": "Вы использовали Basic Touch непосредственно перед Advanced Touch на шаге {{index}}. Вместо этого лучше использовать два Standart Touch'а чтобы получить столько же потенции на 2 CP меньше.",
       "Do_not_overlap_buffs": "Ваш бафф с шага {{overlappedIndex}} пересекается с баффом на шаге {{overlappingIndex}}. Лучше отложить второй бафф чтобы максимизировать пользу от обоих.",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used.",
+      "Use_byregot_brow_5_stacks": "Лучше использовать Byregot's Brow вместо Byregot's Blessing чтобы получить столько же качества на 6 CP дешевле.",
       "Use_ingenuity_before_byregot": "Чтобы получить бонус качества, лучше использовать Ingenuity перед Byregot'ом.",
       "Use_more_quality_actions": "У вас осталась прочность в конце крафта. Возможно, лучше бы её использовать для нескольких действий, повышающих качество.",
       "Use_prudent_touch_manipulation": "Поскольку вы 66+ уровня, вам лучше использовать комбо из Manipulation II + Prudent Touch для набора качества. Это позволит получить максимальное качество с большей надёжностью.",
@@ -1302,7 +1302,7 @@
       "Rewards": "Возможные награды",
       "Client": "Клиент",
       "Issuer": "Инициатор",
-      "Turn_ins": "Turn-ins"
+      "Turn_ins": "Доставки"
     },
     "MOB": {
       "Known_spawns": "Известные места",
@@ -1477,24 +1477,24 @@
   },
   "SEARCH": {
     "Sort_by": "Сортировка по: ",
-    "Sort_asc": "Ascending",
-    "Sort_desc": "Descending",
-    "Add_stat_filter": "Add stat filter",
-    "Add_bonus_stat_filter": "Add bonus stat filter",
-    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Sort_asc": "По возрастанию",
+    "Sort_desc": "По убыванию",
+    "Add_stat_filter": "Добавить фильтр характеристики",
+    "Add_bonus_stat_filter": "Добавить фильтр бонусной характеристики",
+    "Search_tip": "Вы можете ввести patch:<номер патча> чтобы отфильтровать по конкретному патчу, например: patch:5.01",
     "SORT_BY": {
-      "Relevance": "Relevance",
+      "Relevance": "Релевантность",
       "ID": "ID",
-      "Level": "Level",
-      "Ilvl": "Item level",
-      "Rlvl": "Recipe level"
+      "Level": "Уровень",
+      "Ilvl": "Уровень предмета",
+      "Rlvl": "Уровень рецепта"
     }
   },
   "SIDEBAR": {
-    "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
+    "General": "Основное",
+    "Sharing": "Поделиться",
+    "Gathering": "Сбор",
+    "Helpers": "Помощники",
     "Other": "Другое"
   }
 }
