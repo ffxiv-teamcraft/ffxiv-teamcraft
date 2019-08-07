@@ -274,7 +274,7 @@
   "Recipe_Added": "1 предмет добавлен в список {{listname}}",
   "Recipes_Added": "{{itemcount}} предметов добавлено в список {{listname}}",
   "Character_name": "Имя персонажа",
-  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
+  "Character_add_warning": "Если вы это видите не удаляя персонажа вручную, ничего не вводите и обновите страницу, либо перезапустите приложение. Если проблема останется, пожалуйста, сообщите об этом на дискорд-сервере.",
   "Disconnect_and_anonymous": "Выйти и продолжить анонимно",
   "Add_manual_character": "Добавить персонажа",
   "Character_informations": "Информация о персонаже",
@@ -365,7 +365,7 @@
     "Db_comments_position": "Положение комментариев в базе данных",
     "Always_HQ_leves": "Всегда учитывать опыт ливквестов с предметами HQ",
     "Clickthrough_overlay": "Сделать оверлей прозрачным для нажатий",
-    "Disable_search_history": "Disable search history",
+    "Disable_search_history": "Отключить историю поиска",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -761,13 +761,13 @@
     "Solve_rotation": "\"Решить\" ротацию",
     "Rotation_solver": "Генератор ротаций",
     "Recipe_picker_placeholder": "Введите название рецепта, который вы хотите сделать",
-    "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "Could_not_find_minstats": "Не удалось определить минимальные характеристики для этой ротации",
     "STATE": {
-      "Excellent": "Excellent",
-      "Good": "Good",
-      "Poor": "Poor",
-      "Fail": "Fail",
-      "Normal": "Normal"
+      "Excellent": "Отличное",
+      "Good": "Хорошее",
+      "Poor": "Плохое",
+      "Fail": "Провал",
+      "Normal": "Обычное"
     },
     "SOLVER": {
       "Hq_target": "Целевой шанс HQ",
@@ -895,8 +895,8 @@
       "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used.",
       "Use_ingenuity_before_byregot": "Чтобы получить бонус качества, лучше использовать Ingenuity перед Byregot'ом.",
       "Use_more_quality_actions": "У вас осталась прочность в конце крафта. Возможно, лучше бы её использовать для нескольких действий, повышающих качество.",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
-      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
+      "Use_prudent_touch_manipulation": "Поскольку вы 66+ уровня, вам лучше использовать комбо из Manipulation II + Prudent Touch для набора качества. Это позволит получить максимальное качество с большей надёжностью.",
+      "Use_rapid_synthesis_earlier": "Не нужно использовать Rapid Synthesis в качестве завершающего действия. Если переместить его ближе к началу ротации, будет проще обработать его провал и получить выше надёжность ротации.",
       "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
     }
   },
