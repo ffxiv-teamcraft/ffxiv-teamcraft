@@ -210,7 +210,7 @@
   "No": "Nein",
   "Crystals": "Kristalle",
   "Gathering": "Sammeln",
-  "Drops_or_GC": "Dungeons/Drops or GC",
+  "Drops_or_GC": "Inhalte/Beute oder staatliche Gesellschaft",
   "Other": "Anderes",
   "Pre_crafts": "Vorhergehende Handwerksschritte",
   "Items": "Gegenstände",
@@ -363,9 +363,9 @@
     "Clear_search_history": "Suchverlauf löschen",
     "Auto_mark_as_done_in_log": "Im Notizbuch als erledigt markieren, wenn in der Liste erledigt",
     "Db_comments_position": "Position der Datenbank-Kommentare",
-    "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Always_HQ_leves": "Berechne Freibrief-Routine immer mit HQ-Items",
     "Clickthrough_overlay": "Make overlay clickthrough",
-    "Disable_search_history": "Disable search history",
+    "Disable_search_history": "Suchverlauf deaktivieren",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -392,13 +392,13 @@
     "Patreon_features": "Patreon-Unterstützer Features",
     "Contacts": "Kontakte",
     "Add_new_contact": "Neuer Kontakt",
-    "Save_for_all": "Save for all crafters",
+    "Save_for_all": "Für alle Handwerksklassen speichern",
     "User_not_verified": "Benutzer nicht verifiziert, klicke zum Verifizieren.",
     "More_than_100_lists_created": "Mehr als 100 Listen erzeugt",
     "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
+      "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>.",
       "Success": "Charakter verifiziert! Du kannst dieses Popup jetzt schließen. Der Code kann jetzt aus der Biografie entfernt werden.",
       "Error": "Der Code konnte nicht in deiner Biografie gefunden werden. Stelle sicher dass er eingefügt und gespeichert wurde, und versuche es in ~30 Sekunden erneut.",
       "Validate": "Verifizieren"
@@ -436,8 +436,8 @@
       "Final_step": "Validieren",
       "Creating_list": "Liste wird angelegt.",
       "Loading_items": "Lade Gegenstandsinformationen",
-      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
-      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Estimate_overmeld_materia": "Schätze benötigte Materia für Riskante Techniken",
+      "Multiply_tool_materia": "Multipliziere Materia für Werkzeuge der Sammler (x2) und Handwerker (x8)",
       "Group_together": "Group materias together"
     }
   },
