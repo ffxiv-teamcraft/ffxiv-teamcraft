@@ -759,20 +759,20 @@
     "Current_control_bonus": "Aktueller Bonus (auf 3000 begrenzt)",
     "Macrolock": "Makro-Sperre (/mlock) einschließen",
     "Solve_rotation": "Rotation automatisch erstellen",
-    "Rotation_solver": "Rotation solver",
-    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
-    "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "Rotation_solver": "Rotations-Löser",
+    "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
+    "Could_not_find_minstats": "Konnte keine Minimalwerte für diese Rotation finden",
     "STATE": {
-      "Excellent": "Excellent",
-      "Good": "Good",
+      "Excellent": "Exzellent",
+      "Good": "Gut",
       "Poor": "Poor",
-      "Fail": "Fail",
+      "Fail": "Fehlgeschlagen",
       "Normal": "Normal"
     },
     "SOLVER": {
-      "Hq_target": "Target HQ%",
-      "Use_rotation_as_seed": "Use current rotation as starting point",
-      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+      "Hq_target": "Zielwert für HQ%",
+      "Use_rotation_as_seed": "Aktuelle Rotation als Startpunkt verwenden",
+      "Disclaimer": "Der Löser ist noch in Arbeit. Denke bitte daran, dass er nicht entwickelt wurde um die perfekte Rotation zu erzeugen. Er ist eine KI, welche sich mit der Zeit verbessert und daher sehr schlechte oder sehr gute Resultate liefern kann. Bitte melde ein schlechtes Resultat nicht als Fehler."
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "Community-Rotations",
@@ -801,7 +801,7 @@
         "FOODLESS": "Ohne Gericht",
         "MAKERS_MARK": "Kunst des Kundigen",
         "MUSCLE_MEMORY": "Motorisches Gedächtnis",
-        "REUSE": "Reuse"
+        "REUSE": "Wiederverwertung"
       }
     },
     "CUSTOM": {
@@ -888,7 +888,7 @@
       "Use_pbp_first": "Du solltest Stück für Stück vor jedem anderen Synthese-Kommando verwenden, da es auf dem übrig gebliebenen Fortschritt basiert.",
       "Use_mume_if_pbp": "Du solltest Motorisches Gedächtnis auf Schritt 1 verwendet, um einen Schritt Stück für Stück zu ersetzen und dabei 9 HP zu sparen.",
       "Use_observe_before_focused": "Du solltest Beobachten vor dem \"Aufmerksamen\" Kommando auf Schritt {{index}} verwenden, um die Erfolgsrate auf 100% zu erhöhen.",
-      "Use_durability_restoration_later": "You should use the durability restoration action at step {{index}} later in order to avoid wasting durability restoration.",
+      "Use_durability_restoration_later": "Du solltest das Kommando zum Wiederherstellen der Belastbarkeit in Schritt {{index}} später nutzen, um keine Belastbarkeit zu verschwenden.",
       "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
       "Use_advanced_touch_instead": "You used Basic Touch then Advanced Touch one after another at step {{index}}, you should use two Standard Touches instead to get same potency for 2 less CP.",
       "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs.",
