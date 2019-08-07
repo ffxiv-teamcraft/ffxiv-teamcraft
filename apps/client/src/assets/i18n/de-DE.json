@@ -438,7 +438,7 @@
       "Loading_items": "Lade Gegenstandsinformationen",
       "Estimate_overmeld_materia": "Schätze benötigte Materia für Riskante Techniken",
       "Multiply_tool_materia": "Multipliziere Materia für Werkzeuge der Sammler (x2) und Handwerker (x8)",
-      "Group_together": "Group materias together"
+      "Group_together": "Materia nach Typ gruppieren"
     }
   },
   "LIST": {
@@ -568,7 +568,7 @@
     "PLD": "PLD",
     "WAR": "KRG",
     "DRK": "DKR",
-    "GNB": "GNB",
+    "GNB": "REV",
     "WHM": "WMA",
     "SCH": "GLT",
     "AST": "AST",
@@ -578,7 +578,7 @@
     "SAM": "SAM",
     "BRD": "BRD",
     "MCH": "MCH",
-    "DNC": "DNC",
+    "DNC": "TÄN",
     "BLM": "SMA",
     "SMN": "BSW",
     "RDM": "RMA",
@@ -694,7 +694,7 @@
     "Not_found": "Seite nicht gefunden"
   },
   "SIMULATOR": {
-    "Title": "Crafting simulator",
+    "Title": "Handwerkssimulator",
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Teile Makros am letzten möglichen Schritt für Reklamation",
@@ -753,9 +753,9 @@
     "Safe_mode_tooltip": "Deaktiviert alle Fähigkeiten, die (inklusive Statuseffekten) keine 100% Erfolgschance haben",
     "Quality_needed": "{{amount}} mehr Qualität, um 100% zu erreichen",
     "Rotation_tips": "Rotation-Tipps",
-    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
-    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
-    "Current_control": "Current control: {{value}}",
+    "Progress_action_100_potency": "Fortschritt bei 100% Effizienz: {{value}}",
+    "Quality_action_100_potency": "Qualität bei 100% Effizienz: {{value}}",
+    "Current_control": "Aktuelle Kontrolle: {{value}}",
     "Current_control_bonus": "Current bonus (limited to 3000)",
     "Macrolock": "Include macro lock",
     "Solve_rotation": "Solve this rotation",
