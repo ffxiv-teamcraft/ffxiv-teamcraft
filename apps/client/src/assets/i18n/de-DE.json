@@ -96,7 +96,7 @@
   "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
   "Ephemeral_tag": "vergänglich",
   "Remove_ephemeral": "Upgrade zu dauerhafter Liste",
-  "Quick_list_create": "Erstelle eine Kurzzeit-Liste (wird gelöscht wenn sie komplett ist)",
+  "Quick_list_create": "Vergängliche Liste erstellen (wird bei Fertigstellung gelöscht)",
   "Tag_filter": "Markierungen",
   "Public_lists": "Communitylisten",
   "Your_public_lists": "Deine Communitylisten",
@@ -165,8 +165,8 @@
       "WEEKLY_RESETS_DESCRIPTION": "Wunschlieferungen, Abenteueralbum, Wöchentliche Beute (Allianz-Raid, Epische Beute, Waffen-Gegenstand im Normal-Raid), Jumbo-Glückskaktor, Agenda, Kleiderkritik, Hohe Jagd B-Ränge.",
       "ROULETTES_RESET": "Zufallsinhalte & Wilde Stämme",
       "ROULETTES_RESET_DESCRIPTION": "Reset aller Zufallsinhalte, Aufgaben der Wilden Stämme, Tägliche Jagden, und Mini-Glückskaktor.",
-      "DELIVERIES_RESET": "Lieferungen",
-      "DELIVERIES_RESET_DESCRIPTION": "Reset der Lieferungen für die staatlichen Gesellschaften",
+      "DELIVERIES_RESET": "Liefereinsätze",
+      "DELIVERIES_RESET_DESCRIPTION": "Reset der Liefereinsätze der Staatlichen Gesellschaft",
       "LEVE_ALLOWANCES": "Verfügbare Freibriefe",
       "LEVE_ALLOWANCES_DESCRIPTION": "Du erhältst 3 verfügbare Freibriefe"
     },
@@ -886,7 +886,7 @@
       "Use_sh1_instead": "Du hast Ruhige Hand II bei Schritt {{index}} verwendet, dabei erzielt Ruhige Hand I das selbe Resultat und kostet 3 HP weniger.",
       "Use_sh2_instead": "Du hast Ruhige Hand I bei Schritt {{index}} verwendet, dabei ist Ruhige Hand II an dieser Stelle zuverlässiger und kostet nur 3 HP mehr.",
       "Use_pbp_first": "Du solltest Stück für Stück vor jedem anderen Synthese-Kommando verwenden, da es auf dem übrig gebliebenen Fortschritt basiert.",
-      "Use_mume_if_pbp": "Du solltest Motorisches Gedächtnis auf Schritt 1 verwendet, um einen Schritt Stück für Stück zu ersetzen und dabei 9 HP zu sparen.",
+      "Use_mume_if_pbp": "Du solltest Motorisches Gedächtnis auf Schritt 1 verwenden, um einen Schritt Stück für Stück zu ersetzen und dabei 9 HP zu sparen.",
       "Use_observe_before_focused": "Du solltest Beobachten vor dem \"Aufmerksamen\" Kommando auf Schritt {{index}} verwenden, um die Erfolgsrate auf 100% zu erhöhen.",
       "Use_durability_restoration_later": "Du solltest das Kommando zum Wiederherstellen der Belastbarkeit in Schritt {{index}} später nutzen, um keine Belastbarkeit zu verschwenden.",
       "Use_patient_touch_faster": "Du solltest Hingebungsvolle Veredelung nutzen bevor du Innere Ruhe aufbaust, um den Verlust beim Fehlschlagen zu minimieren.",
@@ -894,9 +894,9 @@
       "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs.",
       "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used.",
       "Use_ingenuity_before_byregot": "Du solltest Einfallsreichtum vor einem Byregots Kommando nutzen um mehr Qualität zu erhalten.",
-      "Use_more_quality_actions": "Du hast nach Fertigstellung noch Belastbarkeit übrig. Diese solltest du am besten für Qualität-gebende Kommandos nutzen.",
+      "Use_more_quality_actions": "Du hast nach Fertigstellung noch Belastbarkeit übrig. Diese solltest du am besten für Qualitäts-Kommandos nutzen.",
       "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
-      "Use_rapid_synthesis_earlier": "Du solltest Schnelle Bearbeitung nicht zur Fertigstellung nutzen. Nutze es eher um einen Fehlschlag besser ausgleichen zu können und die Zuverlässigkeit der Rotation zu verbessern.",
+      "Use_rapid_synthesis_earlier": "Du solltest Schnelle Bearbeitung nicht zur Fertigstellung nutzen. Nutze es früher um einen Fehlschlag besser ausgleichen zu können und die Zuverlässigkeit der Rotation zu verbessern.",
       "Use_reflect_earlier": "Du solltest Ass des Spezialisten: Einkehr früher nutzen um die nachfolgenden Qualitäts-Kommandos zu verstärken."
     }
   },
@@ -1053,7 +1053,7 @@
     "Timed": "Zeitgebunden",
     "Weather_dependant": "Nur zu bestimmten Wetterverhältnissen",
     "View_on_ff14angler": "Mehr Details auf ff14angler",
-    "Required_for_achievement": "Für folgende Erfolge nötig",
+    "Required_for_achievement": "Für folgende Errungenschaften nötig",
     "Select_spot": "Fischgrund auswählen, um Details zu sehen",
     "Hide_completed": "Abgeschlossene Rezepte verstecken",
     "MIN_optimized_path": "Optimierter Pfad für alle MIN-Sammelstellen",
@@ -1069,7 +1069,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Lade Gegenstände, Kommandos und mehr!"
+    "Loading_data": "Lade Gegenstände, Kommandos, und mehr!"
   },
   "GIVEAWAY": {
     "Discord_1K": {
@@ -1149,14 +1149,14 @@
     "Dialog_description": "Alle Änderungen werden verworfen, wenn du diese Seite verlässt. Bist du sicher?"
   },
   "GC_SUPPLY": {
-    "Title": "Liefereinsätze (Staatliche Gesellschaft)",
+    "Title": "Liefereinsätze der Staatlichen Gesellschaft",
     "Search": "Suche",
-    "Generate_list": "Schnellliste anlegen",
-    "Intro": "Gebe deine Stufen ein und drücke \"Suche\", um zu beginnen",
+    "Generate_list": "Vergängliche Liste anlegen",
+    "Intro": "Gib deine Stufen ein und drücke \"Suche\", um zu beginnen",
     "Loading_message": "Lädt mögliche Liefereinsätze, dies kann bis zu einer Minute dauern"
   },
   "DESYNTH": {
-    "Title": "Desynthese-Anleitung",
+    "Title": "Desynthese-Leitfaden",
     "Job": "Job",
     "Level": "Stufe",
     "Intro": "Wähle einen Job und eine Stufe, um die besten Gegenstände zum Erhöhen der Desynthese-Stufe zu finden",
@@ -1175,8 +1175,8 @@
   },
   "SUPPORT_US": {
     "Title": "Hilf uns, zu wachsen!",
-    "Communication_title": "Über das Projekt sprechen",
-    "Communication_description": "Lass Leute über das Werkzeug wissen, teile deine Rotations und Listen. Erstelle Videos, Blogposts, Tweets, alles was das Aufsehen der Leute erregt hilft dem Teamcraft-Projekt mehr, als du denkst.\n\nWir haben sogar ein Makro vorbereitet, damit du deine Liebe überall verbreiten kannst!\n",
+    "Communication_title": "Mach das Projekt bekannter",
+    "Communication_description": "Lass Leute über das Werkzeug wissen, teile deine Rotationen und Listen. Erstelle Videos, Blogposts, Tweets, alles was das Aufsehen der Leute erregt hilft dem Teamcraft-Projekt mehr, als du denkst.\n\nWir haben sogar ein Makro vorbereitet, damit du deine Liebe überall verbreiten kannst!\n",
     "Contribute_title": "Contribute to the project",
     "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
     "Patreon_title": "Support us on patreon",
