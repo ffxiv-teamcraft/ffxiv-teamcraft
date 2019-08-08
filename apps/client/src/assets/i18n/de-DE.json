@@ -168,7 +168,7 @@
       "DELIVERIES_RESET": "Liefereinsätze",
       "DELIVERIES_RESET_DESCRIPTION": "Reset der Liefereinsätze der Staatlichen Gesellschaft",
       "LEVE_ALLOWANCES": "Verfügbare Freibriefe",
-      "LEVE_ALLOWANCES_DESCRIPTION": "Du erhältst 3 verfügbare Freibriefe"
+      "LEVE_ALLOWANCES_DESCRIPTION": "Du erhältst 3 weitere Vollmachten"
     },
     "CUSTOM": {
       "Title": "Eigenen Alarm hinzufügen",
@@ -1194,7 +1194,7 @@
     "Used_for": "Verwendungszweck",
     "Used_for_nothing": "Keine Verwendung",
     "Crystal_used_for_everything": "Zu viele Rezepte (~ 1/6 der Rezepte im Spiel)",
-    "Crafts": "Herstellen",
+    "Crafts": "Crafts",
     "Recipes": "Rezepte",
     "No_known_way_to_obtain": "Es wurde keine Möglichkeit gefunden, um diesen Gegenstand zu erhalten",
     "Gathering": "Sammeln",
@@ -1212,7 +1212,7 @@
     "Click_to_navigate": "Für vollständige Gegenstandsinformation auf das Icon klicken",
     "Triple_triad_duels": "Kartenduelle",
     "TT_Rules": "Regeln",
-    "TT_card_unlock": "Schaltet Karte in der Sammlung frei",
+    "TT_card_unlock": "Schaltet die Karte in der Sammlung frei",
     "Track_on_attt": "Auf anderem Triple-Triad-Tracker verfolgen",
     "Unlocked_by_quest": "Wird durch Quest freigeschaltet",
     "More_on_attt_npc": "Weitere Details über diesen NPC auf anderem Triple-Triad-Tracker ansehen",
@@ -1226,7 +1226,7 @@
     "Min_level": "Min. Stufe",
     "Min_ilevel": "Min. Gegenstandsstufe",
     "Sync_to": "Max. Stufe",
-    "Exp": "EP",
+    "Exp": "Routine",
     "Week_restriction": "Wochenbeschränkung",
     "Fights": "Kämpfe",
     "Instance_details": "Instanzdetails",
