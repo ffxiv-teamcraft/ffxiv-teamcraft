@@ -1309,7 +1309,7 @@
       "Known_drops": "Bekannte Beute"
     },
     "DATA_TYPE": {
-      "fate": "Fates",
+      "fate": "FATEs",
       "mob": "Monster",
       "npc": "NPC",
       "node": "Sammelstellen",
@@ -1331,9 +1331,9 @@
       "Combos": "Kombos",
       "Combo_next": "Folgende Kombo-Kommandos",
       "Combo_previous": "Vorherige Kombo-Kommandos",
-      "Affected_by_status": "Von Status beeinflusst",
+      "Affected_by_status": "Von Statuseffekt beeinflusst",
       "Cost": "Kosten",
-      "Related_traits": "Zugehörige Attribute",
+      "Related_traits": "Zugehörige Eigenschaften",
       "TARGET": {
         "Party": "Gruppe",
         "Dead": "Tot",
@@ -1385,7 +1385,7 @@
         "Achievements": "Errungenschaften ({{amount}})",
         "Actions": "Kommandos ({{amount}})",
         "Crafting_actions": "Handwerkskommandos ({{amount}})",
-        "Fates": "Fates ({{amount}})",
+        "Fates": "FATEs ({{amount}})",
         "Instances": "Instanzierte Inhalte ({{amount}})",
         "Items": "Gegenstände ({{amount}})",
         "Leves": "Freibriefe ({{amount}})",
@@ -1393,8 +1393,8 @@
         "Monsters": "Monster ({{amount}})",
         "Npcs": "NPC ({{amount}})",
         "Quests": "Quest ({{amount}})",
-        "Statuses": "Status ({{amount}})",
-        "Traits": "Attribute ({{amount}})"
+        "Statuses": "Statuseffekte ({{amount}})",
+        "Traits": "Eigenschaften ({{amount}})"
       }
     }
   },
