@@ -1331,7 +1331,7 @@
       "Combos": "Kombos",
       "Combo_next": "Folgende Kombo-Kommandos",
       "Combo_previous": "Vorherige Kombo-Kommandos",
-      "Affected_by_status": "Affected by status",
+      "Affected_by_status": "Von Status beeinflusst",
       "Cost": "Kosten",
       "Related_traits": "Related traits",
       "TARGET": {
@@ -1360,7 +1360,7 @@
       "Related_actions": "Verwandte Kommandos"
     },
     "STATUS": {
-      "Max_stacks": "Max stacks",
+      "Max_stacks": "Max. Aufladungen",
       "Locks_actions": "Sperrt Kommandos",
       "Locks_control": "Sperrt Bewegung",
       "Locks_movement": "Verhindert Bewegung",
@@ -1472,29 +1472,29 @@
     "Title": "Blog"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+    "Http_request_error": "Mit der Option {{tool}} gibt es momentan ein Problem. Schaue für Informationen in den Discord-Kanal #announcements oder mache einen neuen Bug-Report im Kanal #bugs",
+    "Firebase_blocked": "Teamcraft konnte die Datenbank nicht erreichen. Scheinbar wird der Zugriff blockiert oder du hast keine Internetverbindung."
   },
   "SEARCH": {
-    "Sort_by": "Sort by: ",
-    "Sort_asc": "Ascending",
-    "Sort_desc": "Descending",
+    "Sort_by": "Sortieren nach:",
+    "Sort_asc": "Aufsteigend",
+    "Sort_desc": "Absteigend",
     "Add_stat_filter": "Add stat filter",
     "Add_bonus_stat_filter": "Add bonus stat filter",
-    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Search_tip": "Durch die Eingabe von <patch #> (z. B: patch:5.01)  kannst du die Ergebnisse nach einem bestimmten Patch sortieren. ",
     "SORT_BY": {
-      "Relevance": "Relevance",
+      "Relevance": "Relevanz",
       "ID": "ID",
-      "Level": "Level",
-      "Ilvl": "Item level",
-      "Rlvl": "Recipe level"
+      "Level": "Stufe",
+      "Ilvl": "Gegenstandsstufe",
+      "Rlvl": "Rezeptstufe"
     }
   },
   "SIDEBAR": {
-    "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
-    "Other": "Other"
+    "General": "Allgemein",
+    "Sharing": "Teilen",
+    "Gathering": "Sammler",
+    "Helpers": "Hilfen",
+    "Other": "Anderes"
   }
 }
