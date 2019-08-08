@@ -995,7 +995,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Information",
+    "Title": "Marktbrett-Information",
     "Error": "XIVAPI oder Companion API nicht erreichbar, bitte warte einen Moment und versuche es erneut.",
     "Amount": "Menge",
     "HQ": "HQ",
@@ -1186,7 +1186,7 @@
       "Profile_badge": "Spezielles Abzeichen auf deinem Teamcraft-Profil (${{price}})",
       "Custom_theme": "Benutzerdefinierte Farbeingabe für das Design der Website (${{price}})",
       "Pins_badge": "Exklusive Teamcraft-Anstecknadel, die dir zugeschickt wird (${{price}}) (Erfordert das Ausfüllen der Versanddetails auf Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
+      "Loading_screen_message": "Neuer Eintrag in der \"Brought to you by ...\"-Nachricht, die beim Starten von Teamcraft erscheint. Dieseenthält deinen Namen, den deiner FG, deiner LS und was auch immer du sonst noch sagen möchtest! (${{price}})"
     }
   },
   "DB": {
@@ -1202,17 +1202,17 @@
     "Unique": "Einzigartig",
     "Dyeable": "Färbbar",
     "Materia_sockets": "Materia-Slots",
-    "Advanced_melding": "Advanced melding",
+    "Advanced_melding": "Riskante Techniken",
     "Repair_job": "Reparateur",
     "Class_job": "Klasse/Job",
-    "Delay": "Delay",
-    "Auto": "Auto",
+    "Delay": "Verzögerung",
+    "Auto": "Autom.",
     "Salvage_level": "Optimale Materialverwertungsstufe",
     "Sells_for": "Verkaufspreis",
-    "Click_to_navigate": "Click on the icon to open full item details",
-    "Triple_triad_duels": "Triple triad duels",
+    "Click_to_navigate": "Für vollständige Gegenstandsinformation auf das Icon klicken",
+    "Triple_triad_duels": "Kartenduelle",
     "TT_Rules": "Regeln",
-    "TT_card_unlock": "Unlocks card in collection",
+    "TT_card_unlock": "Schaltet Karte in der Sammlung frei",
     "Track_on_attt": "Track on Another Triple Triad Tracker",
     "Unlocked_by_quest": "Wird durch Quest freigeschaltet",
     "More_on_attt_npc": "See more details about this npc on Another Triple Triad tracker",
