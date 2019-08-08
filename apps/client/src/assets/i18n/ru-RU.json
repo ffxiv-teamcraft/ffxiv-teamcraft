@@ -21,11 +21,11 @@
     "auth/wrong-password": "Неверный адрес или пароль"
   },
   "TIMERS": {
-    "Days": "days",
-    "Day": "day",
-    "Hours": "h",
-    "Minutes": "m",
-    "Seconds": "s"
+    "Days": "дней",
+    "Day": "день",
+    "Hours": "ч",
+    "Minutes": "м",
+    "Seconds": "с"
   },
   "ITEMS": {
     "Title": "Поиск",
@@ -47,7 +47,7 @@
   "Access_patreon_page": "Перейти на нашу страницу Patreon",
   "Default": "По умолчанию",
   "Delete": "Удалить",
-  "Copy_isearch": "Копирование isearch макроса",
+  "Copy_isearch": "Копирование макроса isearch",
   "Isearch_copied": "/Isearch {{itemname}} скопирован в буфер обмена",
   "Required_for_final_craft": "Для крафта нужно {{amount}}, возможно HQ",
   "Mark_HQ": "Пометить как нужен HQ",
@@ -61,7 +61,7 @@
   "Collectable_flag": "Collectable",
   "Compact_display": "Компактное отображение",
   "Mute_alarms": "Скрыть оповещения",
-  "Hide_used": "Скрыть используемые строки",
+  "Hide_used": "Скрыть использованные строки",
   "Collapse_if_done": "Свернуть, если завершено",
   "Collapse_by_default": "Свернуть по умолчанию",
   "Retainer_ventures": "Авантюрист",
@@ -106,7 +106,7 @@
   "Discounts": "Скидка",
   "Flat_discount": "Сумма",
   "Percent_discount": "Процент",
-  "Path_copied_to_clipboard": "URL на текущую страницу скопирован в буфер обмена",
+  "Path_copied_to_clipboard": "Ссылка на текущую страницу скопирована в буфер обмена",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Фильтр по тегам",
     "Tags_filter_reset": "Сбросить фильтр",
@@ -128,8 +128,8 @@
     "Success": "Успешно",
     "Copy_to_clipboard": "Копировать в буфер обмена",
     "Language": "Язык",
-    "Opened_in_desktop": "Эта страница была открыта внутри десктопного приложения, теперь вы можете закрыть её.",
-    "Open_in_desktop": "Открыть в десктопном приложении",
+    "Opened_in_desktop": "Эта страница была открыта в приложении, теперь вы можете её закрыть.",
+    "Open_in_desktop": "Открыть в приложении",
     "Admin": "Администратор",
     "Moderator": "Модератор",
     "Minutes_duration": "{{amount}} минут",
@@ -160,15 +160,15 @@
     "Toggle_collapse": "Свернуть группы оповещений",
     "Add_alarms_to_group": "Добавить оповещения к этой группе",
     "REALTIME": {
-      "Reset_timers": "Reset timers",
-      "WEEKLY_RESETS": "Weeklies",
-      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
-      "ROULETTES_RESET": "Roulettes & Beast tribes",
-      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
-      "DELIVERIES_RESET": "Deliveries",
-      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
-      "LEVE_ALLOWANCES": "Leve allowances",
-      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+      "Reset_timers": "Таймеры сброса",
+      "WEEKLY_RESETS": "Еженедельное",
+      "WEEKLY_RESETS_DESCRIPTION": "Специальные доставки, Wondrous Tails, еженедельные дропы (с различных рейдов), Jumbo cactpot, журнал вызовов, Fashion report, охота на B-ранги.",
+      "ROULETTES_RESET": "Рулетки и племена зверолюдей",
+      "ROULETTES_RESET_DESCRIPTION": "Сброс всех рулеток, ежедневных заданий зверолюдей, ежедневная охота и mini cactpot.",
+      "DELIVERIES_RESET": "Доставки",
+      "DELIVERIES_RESET_DESCRIPTION": "Сброс доставок для Grand Company",
+      "LEVE_ALLOWANCES": "Разрешения ливквестов",
+      "LEVE_ALLOWANCES_DESCRIPTION": "Вы получите 3 разрешения для ливквестов"
     },
     "CUSTOM": {
       "Title": "Добавить настраиваемое оповещение",
@@ -274,7 +274,7 @@
   "Recipe_Added": "1 предмет добавлен в список {{listname}}",
   "Recipes_Added": "{{itemcount}} предметов добавлено в список {{listname}}",
   "Character_name": "Имя персонажа",
-  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
+  "Character_add_warning": "Если вы это видите не удаляя персонажа вручную, ничего не вводите и обновите страницу, либо перезапустите приложение. Если проблема останется, пожалуйста, сообщите об этом на дискорд-сервере.",
   "Disconnect_and_anonymous": "Выйти и продолжить анонимно",
   "Add_manual_character": "Добавить персонажа",
   "Character_informations": "Информация о персонаже",
@@ -365,7 +365,7 @@
     "Db_comments_position": "Положение комментариев в базе данных",
     "Always_HQ_leves": "Всегда учитывать опыт ливквестов с предметами HQ",
     "Clickthrough_overlay": "Сделать оверлей прозрачным для нажатий",
-    "Disable_search_history": "Disable search history",
+    "Disable_search_history": "Отключить историю поиска",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -499,7 +499,7 @@
     "Add_all_item_alarms": "Добавить все оповещения для этого предмета",
     "Adaptative_filter": "Показать только то, что я могу сделать",
     "Disable_HQ_suggestions": "Отключить автоматические флаги HQ",
-    "Amount_craftable": "Вы сожете сделать {{amount}}",
+    "Amount_craftable": "Вы можете сделать {{amount}}",
     "Add_item": "Добавить предмет",
     "List_too_large": "Список слишком большой",
     "List_too_large_description": "Этот список слишком велик и может достичь ограничений размера базы данных из-за всей информации, которую он несет. Вы не можете добавить больше предметов, дабы избежать потери списка.",
@@ -761,13 +761,13 @@
     "Solve_rotation": "\"Решить\" ротацию",
     "Rotation_solver": "Генератор ротаций",
     "Recipe_picker_placeholder": "Введите название рецепта, который вы хотите сделать",
-    "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "Could_not_find_minstats": "Не удалось определить минимальные характеристики для этой ротации",
     "STATE": {
-      "Excellent": "Excellent",
-      "Good": "Good",
-      "Poor": "Poor",
-      "Fail": "Fail",
-      "Normal": "Normal"
+      "Excellent": "Отличное",
+      "Good": "Хорошее",
+      "Poor": "Плохое",
+      "Fail": "Провал",
+      "Normal": "Обычное"
     },
     "SOLVER": {
       "Hq_target": "Целевой шанс HQ",
@@ -892,12 +892,12 @@
       "Use_patient_touch_faster": "Вам следует использовать Patient Touch перед добавлением Inner Quiet, чтобы минимизировать потерю стаков если действие провалится.",
       "Use_advanced_touch_instead": "Вы использовали Basic Touch непосредственно перед Advanced Touch на шаге {{index}}. Вместо этого лучше использовать два Standart Touch'а чтобы получить столько же потенции на 2 CP меньше.",
       "Do_not_overlap_buffs": "Ваш бафф с шага {{overlappedIndex}} пересекается с баффом на шаге {{overlappingIndex}}. Лучше отложить второй бафф чтобы максимизировать пользу от обоих.",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's blessing for the same quality added but 6 less CP used.",
+      "Use_byregot_brow_5_stacks": "Лучше использовать Byregot's Brow вместо Byregot's Blessing чтобы получить столько же качества на 6 CP дешевле.",
       "Use_ingenuity_before_byregot": "Чтобы получить бонус качества, лучше использовать Ingenuity перед Byregot'ом.",
       "Use_more_quality_actions": "У вас осталась прочность в конце крафта. Возможно, лучше бы её использовать для нескольких действий, повышающих качество.",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation II + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
-      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
-      "Use_reflect_earlier": "You should use Reflect specialty action earlier in order to boost the following quality actions."
+      "Use_prudent_touch_manipulation": "Поскольку вы 66+ уровня, вам лучше использовать комбо из Manipulation II + Prudent Touch для набора качества. Это позволит получить максимальное качество с большей надёжностью.",
+      "Use_rapid_synthesis_earlier": "Не нужно использовать Rapid Synthesis в качестве завершающего действия. Если переместить его ближе к началу ротации, будет проще обработать его провал и получить выше надёжность ротации.",
+      "Use_reflect_earlier": "Лучше использовать действие специалиста Reflect чтоб усилить все последующие действия влияющие на качество."
     }
   },
   "PRICING": {
@@ -991,7 +991,7 @@
       "LIST_PROGRESSION": "Прогресс списка материалов",
       "FINAL_LIST_PROGRESSION": "Прогресс списка итоговых предметов",
       "USER_ASSIGNMENT": "Назначение пользователей",
-      "ITEM_COMPLETION": "Item completion"
+      "ITEM_COMPLETION": "Обозначение выполнения"
     }
   },
   "MARKETBOARD": {
@@ -1140,26 +1140,26 @@
       "Format": "Формат",
       "Folder": "Папка",
       "No_folder": "Без папки",
-      "Parsing_file": "Parsing file content...",
+      "Parsing_file": "Чтение содержимого файла...",
       "Saving_items": "Сохраняем предметы ({{done}}/{{todo}})"
     }
   },
   "DIRTY": {
     "Dialog_title": "Остались несохраненные изменения",
-    "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
+    "Dialog_description": "Выход с этой страницы удалит все несохранённые изменения, вы уверены?"
   },
   "GC_SUPPLY": {
     "Title": "Поставки Grand Company",
     "Search": "Поиск",
     "Generate_list": "Создать быстрый список",
     "Intro": "Введите уровень и нажмите на поиск, чтобы начать",
-    "Loading_message": "Loading possible deliveries, this can take up to a minute"
+    "Loading_message": "Загрузка возможных доставок, это может занять до минуты"
   },
   "DESYNTH": {
     "Title": "Гид по дезинтезу",
     "Job": "Профессия",
     "Level": "Уровень",
-    "Intro": "Select a job and input a level to find best items to level up your desynth",
+    "Intro": "Выберите профессию и введите уровень для поиска лучших вещей для повышения уровня десинтеза",
     "Loading_message": "Загрузка...",
     "TAGS": {
       "Higher_chances": "Высокий шанс",
@@ -1175,18 +1175,18 @@
   },
   "SUPPORT_US": {
     "Title": "Помогите нам расти!",
-    "Communication_title": "Talk about the project",
-    "Communication_description": "Let people know about the tool, share rotations, lists. Create videos, blog posts, tweets, everything that lets more people know about Teamcraft really helps the project more than you would think.\n\nWe even prepared a macro for you so you can shout your love everywhere !\n",
-    "Contribute_title": "Contribute to the project",
-    "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
+    "Communication_title": "Сообщите о проекте",
+    "Communication_description": "Дайте людям знать об этом инструменте, делитесь ротациями, списками. Создавайте видео, блог-посты, твиты, что угодно, что позволит людям узнать, что Teamcraft помогает больше чем вы думаете.\n\nМы даже подготовили для вас макрос, чтоб вы могли сообщать о своей любви повсюду!\n",
+    "Contribute_title": "Поучаствуйте в проекте",
+    "Contribute_description": "Вы можете найти нас на github чтоб поучаствовать в проекте. Даже если вы новичок, мы рады всем!\n\nУчастие может проявляться не только лишь в коде. Запросы фич и отчёты об ошибках так же очень помогают доставлять наилучшее качество для всех благодаря тем, кто проверяет и находит ошибки.",
     "Patreon_title": "Поддержать нас в Patreon",
-    "Patreon_description": "Patreon is a platform where you can give a money to support a project every month. This money is used to pay for servers, certificates, giveaways and to free more and more time for the developer to work on the project.\n\nDepending on the amount you pledge, you can get some nice benefits in order to thank your contribution:",
+    "Patreon_description": "Patreon - это платформа где вы можете внести деньги для поддержки проекта каждый месяц. Эти деньги используются на сервера, сертификаты, раздачи и для освобождения большего времени разработчику на работу над проектом.\n\nЗависимо от суммы, вы можете получить кое-какие приятные преимущества в качестве благодарности за вклад:",
     "PATREON_BENEFITS": {
-      "Discord_rank": "Special rank on the discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
-      "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
-      "Custom_theme": "Better theme customization, with custom color input (${{price}})",
-      "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
+      "Discord_rank": "Особые ранги на дискорд-сервере, дающие доступ на канал для поддержавших, где можно увидеть, над чем сейчас идёт работа (${{price}})",
+      "Profile_badge": "Особая отметка в вашем профиле Teamcraft (${{price}})",
+      "Custom_theme": "Улучшенная кастомизация тем, с возможностью выбора любого цвета (${{price}})",
+      "Pins_badge": "Эксклюзивные значки Teamcraft, которые будут отправлены вам (${{price}}) (требует заполнения информации о доставке на Patreon)",
+      "Loading_screen_message": "Добавить новый текст в загрузочном сообщении \"Brought to you by ...\" с вашим именем, названием вашей FC, названием линкшелла или чего угодно другого! (${{price}})"
     }
   },
   "DB": {
@@ -1251,41 +1251,41 @@
     "Reduces_to": "Превращается в",
     "Icons_shown": "Данные для отображения",
     "Select_data_type": "Выберите тип данных для отображения деталей здесь",
-    "Desynths_to": "Desynths to",
-    "Limited": "Limited spawn",
-    "3d_model_viewer": "3D model preview",
-    "3d_model_help": "Preview 3D model",
+    "Desynths_to": "Десинтезируется в",
+    "Limited": "Ограниченное появление",
+    "3d_model_viewer": "Предпросмотр 3D модели",
+    "3d_model_help": "Предпросмотр 3D модели",
     "Achievements": "Достижения",
-    "Currencies": "Currencies",
-    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
-    "Unlocks": "Unlocks",
+    "Currencies": "Валюты",
+    "Rowena_splendor": "Ровена (Звезда = бонус +20%)",
+    "Unlocks": "Разблокирует",
     "ITEM": {
-      "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "BONUS"
+      "Masterpiece_base": "БАЗА",
+      "Masterpiece_bonus": "БОНУС"
     },
     "NODE": {
       "Items": "Предметы",
       "Possible_bonuses": "Возможные бонусы",
       "Bonus_condition": "Состояние",
-      "Spawn_duration": "Spawn duration",
-      "Spawns": "Spawn times"
+      "Spawn_duration": "Длительность спауна",
+      "Spawns": "Время спауна"
     },
     "QUEST": {
       "Steps": "Шаги",
       "Unlocked_by": "Разблокируется",
       "Next_quests": "Следующие квесты",
       "Involved_npcs": "Участвующие нпс",
-      "Journal_entries": "Journal entries",
+      "Journal_entries": "Записи в журнале",
       "Dialogues": "Диалог",
       "Start": "Начало",
       "End": "Конец",
       "Rewards": "Награда",
       "Repeatable": "Повторяемый",
-      "Beast_tribe_rank": "Beast tribe rank",
-      "Chain_length": "Following quests"
+      "Beast_tribe_rank": "Ранг в племени зверолюдей",
+      "Chain_length": "Дальнейшие квесты"
     },
     "NPC": {
-      "Other_entries": "Other appearances",
+      "Other_entries": "Другие появления",
       "Default_talk": "Базовые диалоги",
       "Quests": "Квесты",
       "Shops": "Магазины",
@@ -1302,7 +1302,7 @@
       "Rewards": "Возможные награды",
       "Client": "Клиент",
       "Issuer": "Инициатор",
-      "Turn_ins": "Turn-ins"
+      "Turn_ins": "Доставки"
     },
     "MOB": {
       "Known_spawns": "Известные места",
@@ -1376,25 +1376,25 @@
       "Show_more": "Показать еще {{amount}} комментариев",
       "No_comments": "Нет комментариев",
       "Post": "Разместить",
-      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "Введите <тип страницы>:\"<Название Контента>\" чтоб создать ссылку на другую страницу. Например: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Поддерживаемые типы страниц: item (предмет), map (карта), mob (монстр), achievement (достижение), leve (ливквест), npc, instance (инстанс), quest (квест), trait (пассивный эффект), action (действие), status (эффект)"
     },
     "PATCH": {
-      "Open_patch_page": "Click here to open full patch changes in database",
+      "Open_patch_page": "Нажмите здесь чтобы открыть полный список изменений патча",
       "CONTENT": {
-        "Title": "Patch content",
-        "Achievements": "Achievements ({{amount}})",
-        "Actions": "Actions ({{amount}})",
-        "Crafting_actions": "Crafting actions ({{amount}})",
-        "Fates": "Fates ({{amount}})",
-        "Instances": "Instance content ({{amount}})",
-        "Items": "Items ({{amount}})",
-        "Leves": "Leves ({{amount}})",
-        "Maps": "Maps ({{amount}})",
-        "Monsters": "Monsters ({{amount}})",
-        "Npcs": "Npcs ({{amount}})",
-        "Quests": "Quests ({{amount}})",
-        "Statuses": "Statuses ({{amount}})",
-        "Traits": "Traits ({{amount}})"
+        "Title": "Содержимое патча",
+        "Achievements": "Достижения ({{amount}})",
+        "Actions": "Действия ({{amount}})",
+        "Crafting_actions": "Крафтовые действия ({{amount}})",
+        "Fates": "Фейты ({{amount}})",
+        "Instances": "Инстансы ({{amount}})",
+        "Items": "Предметы ({{amount}})",
+        "Leves": "Ливквесты ({{amount}})",
+        "Maps": "Карты ({{amount}})",
+        "Monsters": "Монстры ({{amount}})",
+        "Npcs": "NPC ({{amount}})",
+        "Quests": "Квесты ({{amount}})",
+        "Statuses": "Статусы ({{amount}})",
+        "Traits": "Пассивные эффекты ({{amount}})"
       }
     }
   },
@@ -1465,36 +1465,36 @@
     "Description": "У вас слишком много валюты? Выберите валюту, установите сумму, сервер и найдите, какой предмет лучше купить, чтобы получить gil из ваших валют!",
     "Pick_currency": "Выберите валюту",
     "You_can_buy": "Вы можете купить {{amount}}",
-    "Disabled": "The currency spending guide isn't working anymore",
-    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
+    "Disabled": "Гид по трате валют более не работает",
+    "Disabled_description": "Это произошло по причине того, что Square Enix не позволяют нам получать информацию с маркета. Если вы хотите пожаловаться на это, пожалуйста, жалуйтесь Square Enix, мы не сможем заставить это работать без их помощи."
   },
   "BLOG": {
     "Title": "Блог"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+    "Http_request_error": "Возникла проблема с {{tool}}, пожалуйста, посмотрите канал #announcements в дискорде, либо сообщите об этой проблеме на канал #bugs",
+    "Firebase_blocked": "Teamcraft не смог достучаться к базе данных. Похоже, что-то блокирует её, либо у вас нет доступа в интернет."
   },
   "SEARCH": {
-    "Sort_by": "Sort by: ",
-    "Sort_asc": "Ascending",
-    "Sort_desc": "Descending",
-    "Add_stat_filter": "Add stat filter",
-    "Add_bonus_stat_filter": "Add bonus stat filter",
-    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Sort_by": "Сортировка по: ",
+    "Sort_asc": "По возрастанию",
+    "Sort_desc": "По убыванию",
+    "Add_stat_filter": "Добавить фильтр характеристики",
+    "Add_bonus_stat_filter": "Добавить фильтр бонусной характеристики",
+    "Search_tip": "Вы можете ввести patch:<номер патча> чтобы отфильтровать по конкретному патчу, например: patch:5.01",
     "SORT_BY": {
-      "Relevance": "Relevance",
+      "Relevance": "Релевантность",
       "ID": "ID",
-      "Level": "Level",
-      "Ilvl": "Item level",
-      "Rlvl": "Recipe level"
+      "Level": "Уровень",
+      "Ilvl": "Уровень предмета",
+      "Rlvl": "Уровень рецепта"
     }
   },
   "SIDEBAR": {
-    "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
-    "Other": "Other"
+    "General": "Основное",
+    "Sharing": "Поделиться",
+    "Gathering": "Сбор",
+    "Helpers": "Помощники",
+    "Other": "Другое"
   }
 }
