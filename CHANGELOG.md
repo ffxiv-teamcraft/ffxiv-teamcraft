@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.7"></a>
+## [5.7.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.6...v5.7.7) (2019-08-08)
+
+
+### Bug Fixes
+
+* **core:** fixed cdn data loading ([a2bc425](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a2bc425))
+* **i18n:** fixed wrong translation files loading ([0cc98bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0cc98bd))
+* **simulator:** fixed a bug with Hasty Touch missing quotes in aactions macro ([e69f76c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e69f76c))
+
+
+
 <a name="5.7.6"></a>
 ## [5.7.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.5...v5.7.6) (2019-08-07)
 
