@@ -1375,7 +1375,7 @@
       "Add_comment": "Kommentar hinzufügen",
       "Show_more": "{{amount}} weitere Kommentare anzeigen",
       "No_comments": "Keine Kommentare",
-      "Post": "Post",
+      "Post": "Abschicken",
       "Editor_tip": "Schreibe <Seitentyp>:\"<Name>\" um auf eine andere Seite zu verweisen. Beispiele: item:\"Curtana\", action:\"Bearbeiten\", map:\"Crystarium\". Unterstützte Seitentypen: item (Gegenstände), map (Karten), mob (Monster), achievement (Errungenschaften), leve (Freibriefe), npc, instance (Inhalte), quest (Aufgaben), trait (Eigenschaften), action (Kommandos), status (Statuseffekte)"
     },
     "PATCH": {
