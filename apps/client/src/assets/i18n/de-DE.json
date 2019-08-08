@@ -765,7 +765,7 @@
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
-      "Poor": "Poor",
+      "Poor": "Minderwertig",
       "Fail": "Fehlgeschlagen",
       "Normal": "Normal"
     },
@@ -1190,7 +1190,7 @@
     }
   },
   "DB": {
-    "How_to_obtain": "How to obtain",
+    "How_to_obtain": "Fundort",
     "Used_for": "Used for",
     "Used_for_nothing": "Used for nothing",
     "Crystal_used_for_everything": "Too many recipes (~ 1/6th of the ingame recipes)",
