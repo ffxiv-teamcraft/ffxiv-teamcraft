@@ -107,8 +107,8 @@ export class MacroPopupComponent implements OnInit {
     if (this.aactionsMacro.length < 11 && this.aactionsMacro.indexOf(`/aaction ${this.i18n.getName(this.l12n.getAction(new Reclaim().getIds()[0]))}`) === -1) {
       this.aactionsMacro.push(`/aaction ${this.i18n.getName(this.l12n.getAction(new Reclaim().getIds()[0]))}`);
     }
-    if (this.aactionsMacro.length < 11 && this.aactionsMacro.indexOf(`/aaction ${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}`) === -1) {
-      this.aactionsMacro.push(`/aaction ${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}`);
+    if (this.aactionsMacro.length < 11 && this.aactionsMacro.indexOf(`/aaction "${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}"`) === -1) {
+      this.aactionsMacro.push(`/aaction "${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}"`);
     }
     if (this.aactionsMacro.length > 11) {
       this.tooManyAactions = true;
