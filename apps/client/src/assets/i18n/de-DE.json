@@ -1213,24 +1213,24 @@
     "Triple_triad_duels": "Kartenduelle",
     "TT_Rules": "Regeln",
     "TT_card_unlock": "Schaltet Karte in der Sammlung frei",
-    "Track_on_attt": "Track on Another Triple Triad Tracker",
+    "Track_on_attt": "Auf anderem Triple-Triad-Tracker verfolgen",
     "Unlocked_by_quest": "Wird durch Quest freigeschaltet",
-    "More_on_attt_npc": "See more details about this npc on Another Triple Triad tracker",
-    "Triple_triad_pack": "Triple triad card pack",
+    "More_on_attt_npc": "Weitere Details über diesen NPC auf anderem Triple-Triad-Tracker ansehen",
+    "Triple_triad_pack": "Triple-Triad-Boosterpaket",
     "Dungeons": "Dungeons/Prüfungen",
     "Used_for_trades": "Trades",
     "Can_contain_items": "Enthält Gegenstände",
-    "Open_in_db": "View details inside the database",
-    "Team_size": "Team size",
+    "Open_in_db": "Details in der Datenbank ansehen",
+    "Team_size": "Teamgröße",
     "Time": "Dauer",
     "Min_level": "Min. Stufe",
     "Min_ilevel": "Min. Gegenstandsstufe",
     "Sync_to": "Max. Stufe",
     "Exp": "EP",
-    "Week_restriction": "Week restriction",
-    "Fights": "Fights",
+    "Week_restriction": "Wochenbeschränkung",
+    "Fights": "Kämpfe",
     "Instance_details": "Instance details",
-    "Instance_rewards": "Rewards",
+    "Instance_rewards": "Belohnungen",
     "Unlocked_by": "Freigeschaltet durch",
     "Chest_content": "Schatztruhen-Inhalt",
     "Currencies_reward": "Währungsbelohnung",
@@ -1256,12 +1256,12 @@
     "3d_model_viewer": "3D-Modellvorschau",
     "3d_model_help": "3D-Modell anzeigen",
     "Achievements": "Errungenschaften",
-    "Currencies": "Currencies",
-    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
-    "Unlocks": "Unlocks",
+    "Currencies": "Währungen",
+    "Rowena_splendor": "Rowenas Haus der Wunder",
+    "Unlocks": "Freischaltung von",
     "ITEM": {
-      "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "BONUS"
+      "Masterpiece_base": "Basis",
+      "Masterpiece_bonus": "Bonus"
     },
     "NODE": {
       "Items": "Gegenstände",
@@ -1282,7 +1282,7 @@
       "Rewards": "Belohnungen",
       "Repeatable": "Wiederholbar",
       "Beast_tribe_rank": "Rang bei Wilden Stämmen",
-      "Chain_length": "Following quests"
+      "Chain_length": "Folgende Quests"
     },
     "NPC": {
       "Other_entries": "Andere Auftritte",
@@ -1298,11 +1298,11 @@
     },
     "LEVE": {
       "Required_items": "Benötigte Gegenstände",
-      "Allowance_cost": "Allowance cost",
-      "Rewards": "Possible rewards",
+      "Allowance_cost": "Vollmacht-Kosten",
+      "Rewards": "Mögliche Belohnungen",
       "Client": "Client",
       "Issuer": "Issuer",
-      "Turn_ins": "Turn-ins"
+      "Turn_ins": "Abgaben"
     },
     "MOB": {
       "Known_spawns": "Known spawns",
