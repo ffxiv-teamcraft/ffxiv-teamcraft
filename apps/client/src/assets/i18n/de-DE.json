@@ -1194,10 +1194,10 @@
     "Used_for": "Verwendungszweck",
     "Used_for_nothing": "Keine Verwendung",
     "Crystal_used_for_everything": "Zu viele Rezepte (~ 1/6 der Rezepte im Spiel)",
-    "Crafts": "Crafts",
+    "Crafts": "Herstellen",
     "Recipes": "Rezepte",
     "No_known_way_to_obtain": "Es wurde keine Möglichkeit gefunden, um diesen Gegenstand zu erhalten",
-    "Gathering": "Gathering",
+    "Gathering": "Sammeln",
     "Tradeable": "Handelbar",
     "Unique": "Einzigartig",
     "Dyeable": "Färbbar",
@@ -1218,7 +1218,7 @@
     "More_on_attt_npc": "Weitere Details über diesen NPC auf anderem Triple-Triad-Tracker ansehen",
     "Triple_triad_pack": "Triple-Triad-Boosterpaket",
     "Dungeons": "Dungeons/Prüfungen",
-    "Used_for_trades": "Trades",
+    "Used_for_trades": "Handel",
     "Can_contain_items": "Enthält Gegenstände",
     "Open_in_db": "Details in der Datenbank ansehen",
     "Team_size": "Teamgröße",
@@ -1229,7 +1229,7 @@
     "Exp": "EP",
     "Week_restriction": "Wochenbeschränkung",
     "Fights": "Kämpfe",
-    "Instance_details": "Instance details",
+    "Instance_details": "Instanzdetails",
     "Instance_rewards": "Belohnungen",
     "Unlocked_by": "Freigeschaltet durch",
     "Chest_content": "Schatztruhen-Inhalt",
@@ -1300,8 +1300,8 @@
       "Required_items": "Benötigte Gegenstände",
       "Allowance_cost": "Vollmacht-Kosten",
       "Rewards": "Mögliche Belohnungen",
-      "Client": "Client",
-      "Issuer": "Issuer",
+      "Client": "Auftraggeber",
+      "Issuer": "Aussteller",
       "Turn_ins": "Abgaben"
     },
     "MOB": {
@@ -1324,7 +1324,7 @@
       "Cooldown": "Reaktivieren",
       "Pvp_action": "PvP-Kommando",
       "Breaks_unrelated_combo": "Bricht Kombos ab",
-      "Movement_action": "Movement action",
+      "Movement_action": "Bewegungsaktion",
       "Possible_targets": "Mögliche Ziele",
       "Unlocked_by_quest": "Wird durch Quest freigeschaltet",
       "Shares_cd_with": "Teilt Abklingzeit mit",
@@ -1333,7 +1333,7 @@
       "Combo_previous": "Vorherige Kombo-Kommandos",
       "Affected_by_status": "Von Status beeinflusst",
       "Cost": "Kosten",
-      "Related_traits": "Related traits",
+      "Related_traits": "Zugehörige Attribute",
       "TARGET": {
         "Party": "Gruppe",
         "Dead": "Tot",
@@ -1393,8 +1393,8 @@
         "Monsters": "Monster ({{amount}})",
         "Npcs": "NPC ({{amount}})",
         "Quests": "Quest ({{amount}})",
-        "Statuses": "Statuses ({{amount}})",
-        "Traits": "Traits ({{amount}})"
+        "Statuses": "Status ({{amount}})",
+        "Traits": "Attribute ({{amount}})"
       }
     }
   },
@@ -1479,8 +1479,8 @@
     "Sort_by": "Sortieren nach:",
     "Sort_asc": "Aufsteigend",
     "Sort_desc": "Absteigend",
-    "Add_stat_filter": "Add stat filter",
-    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Add_stat_filter": "Filter hinzufügen",
+    "Add_bonus_stat_filter": "Zusätzlichen Filter hinzufügen",
     "Search_tip": "Durch die Eingabe von <patch #> (z. B: patch:5.01)  kannst du die Ergebnisse nach einem bestimmten Patch sortieren. ",
     "SORT_BY": {
       "Relevance": "Relevanz",
