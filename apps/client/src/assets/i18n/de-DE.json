@@ -350,7 +350,7 @@
     "Clear_cache": "Cache leeren (erfordert einen Neustart der App)",
     "Enable_item_tags": "Gegenstand-Markierungen aktivieren",
     "Show_copy_list_own_list": "Kopieren-Schaltfläche auf eigenen Listenblöcken anzeigen",
-    "Custom_theme": "Benutzerdefiniertes Theme",
+    "Custom_theme": "Benutzerdefiniertes Design",
     "Show_all_alarms": "Immer alle Alarme anzeigen",
     "Amount_display_mode": "Darstellungsmodus für Mengenangaben",
     "Amount_display_mode_remaining": "Verbleibend",
@@ -442,7 +442,7 @@
     }
   },
   "LIST": {
-    "Regenerate": "Regeneriere Liste für aktuellste Teamcraft Version",
+    "Regenerate": "Liste für aktuellste Teamcraft Version rekreieren",
     "Rename": "Liste umbenennen",
     "Copied_x_times": "{{count}} mal kopiert",
     "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren",
@@ -452,11 +452,11 @@
     "Copied_as_text": "Inhalt in die Zwischenablage kopiert",
     "Total_price": "Gesamtausgaben (Gil und andere Währungen)",
     "Total_trade_price": "Gesamt: ",
-    "Add_all_alarms": "Erstelle alle Alarme für diese Liste",
+    "Add_all_alarms": "Alle Alarme für diese Liste erstellen",
     "History": "Historie",
     "Items_count": "{{amount}} Gegenstände",
-    "Show_craftable_amount": "Zeige herstellbare Mengen",
-    "Optimized_full_path": "Zeige den volloptimierten Pfad an (am günstigsten und schnellsten)",
+    "Show_craftable_amount": "Herstellbare Mengen zeigen",
+    "Optimized_full_path": "Volloptimierten Pfad anzeigen (am günstigsten und schnellsten)",
     "Quick_layout_swap": "Layout-Schnellwechsel",
     "INVENTORY": {
       "Show_final_items": "Resultate zeigen",
@@ -496,11 +496,11 @@
     "Tags_popup": "Markierungen",
     "Inventory_breakdown": "Inventar",
     "Open_in_ffxivgardening": "Auf ffxivgardening.com öffnen",
-    "Add_all_item_alarms": "Erstelle alle Alarme für diesen Gegenstand",
+    "Add_all_item_alarms": "Alle Alarme für diesen Gegenstand erstellen",
     "Adaptative_filter": "Zeige nur, was ich tun kann",
     "Disable_HQ_suggestions": "Automatische HQ-Markierungen ausschalten",
     "Amount_craftable": "Du kannst {{amount}} herstellen",
-    "Add_item": "Füge ein Item hinzu",
+    "Add_item": "Gegenstand hinzufügen",
     "List_too_large": "Liste zu lang",
     "List_too_large_description": "Diese Liste ist zu groß und stößt möglicherweise an die Datenbanklimitierungen aufgrund der vielen Informationen. Du darfst keine weiteren Gegenstände hinzufügen, um zu verhindern, dass du die Liste verlierst.",
     "Add_to_another_list": "Zu einer anderen Liste hinzufügen",
@@ -612,7 +612,7 @@
     "Link_name": "Linkname",
     "target": "Linkziel",
     "Share_link_copied": "Benutzerdefinierbarer Link wurde in die Zwischenablage kopiert",
-    "Copy_custom_link": "Kopiere Eigenen Link",
+    "Copy_custom_link": "Eigenen Link kopieren",
     "No_links": "Keine benutzerdefinierten Links vorhanden"
   },
   "NAVIGATION": {
@@ -697,7 +697,7 @@
     "Title": "Handwerkssimulator",
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
-    "Break_on_reclaim": "Teile Makros am letzten möglichen Schritt für Reklamation",
+    "Break_on_reclaim": "Makros am letzten möglichen Schritt für Reklamation teilen",
     "Include_consumables_notification": "Benachrichtigung für Verzehrbares hinzufügen",
     "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
@@ -870,7 +870,7 @@
     "FAIL_CAUSE": {
       "UNSAFE_ACTION": "Unsicheres Kommando bei sicherem Modus",
       "DURABILITY_REACHED_ZERO": "Belastbarkeit hat 0 erreicht, bevor Synthese vollendet wurde",
-      "NOT_ENOUGH_CP": "Nicht genug CP",
+      "NOT_ENOUGH_CP": "Nicht genug HP",
       "MISSING_LEVEL_REQUIREMENT": "Du hast die erforderliche Stufe nicht erreicht",
       "NOT_SPECIALIST": "Spezialist-Rotation, aber du bist kein Spezialist",
       "NO_INNER_QUIET": "Innere Ruhe-Kommando verwendet, ohne Innere Ruhe-Statuseffekt zu haben"
@@ -1032,8 +1032,8 @@
       "Alarms": "Erstelle Alarme um kein Erscheinen eines Vorkommens zu verpassen, organisiere sie in Gruppen, importiere sie im Spiel, alles ist möglich.",
       "Gathering_location": "Finde Informationen über alle Sammlergegenstände, erstelle Alarme, erhalte sofort Koordinaten, den nächsten Ätheryten, erforderliche Bücher, und mehr!",
       "Rotations": "Erstelle Rotationen zum Herstellen, teste sie im Simulator, oder teste theoretische Rotationen mit dem benutzerdefinierten Simulator!",
-      "Levequests": "Fine Freibriefe für einen bestimmten Job und/oder Stufenbereich, schau dir den Fortschritt an und erstelle daraus Listen.",
-      "Macro_translation": "Du hast Macros, die nicht in deiner Sprache sind? Nutze die Makro-Übersetzung und übersetze es in deine Sprache damit es auch in deinem FFXIV funktioniert!"
+      "Levequests": "Finde Freibriefe für einen bestimmten Job und/oder Stufenbereich, schau dir den Fortschritt an und erstelle daraus Listen.",
+      "Macro_translation": "Du hast Makros, die nicht in deiner Sprache sind? Nutze die Makro-Übersetzung und übersetze es in deine Sprache damit es auch in deinem FFXIV funktioniert!"
     }
   },
   "UPDATE": {
