@@ -160,7 +160,7 @@
     "Toggle_collapse": "Gruppen zusammenfalten umschalten",
     "Add_alarms_to_group": "Alarme für diese Gruppe hinzufügen",
     "REALTIME": {
-      "Reset_timers": "Reset-Alarme",
+      "Reset_timers": "Timer-Zurücksetzung",
       "WEEKLY_RESETS": "Wöchentliche",
       "WEEKLY_RESETS_DESCRIPTION": "Wunschlieferungen, Abenteueralbum, Wöchentliche Beute (Allianz-Raid, Epische Beute, Waffen-Gegenstand im Normal-Raid), Jumbo-Glückskaktor, Agenda, Kleiderkritik, Hohe Jagd B-Ränge.",
       "ROULETTES_RESET": "Zufallsinhalte & Wilde Stämme",
@@ -328,7 +328,7 @@
     "General": "Allgemein",
     "Link_base": "Gegenstandslink-Quelle",
     "Theme": "Design",
-    "no_panel_borders": "Deaktiviere Ränder um diverse Elemente",
+    "no_panel_borders": "Ränder um diverse Elemente deaktivieren",
     "Desktop": "Desktop",
     "Always_on_top": "Immer im Vordergrund",
     "Check_for_update": "Neues Update verfügbar?",
@@ -363,7 +363,7 @@
     "Clear_search_history": "Suchverlauf löschen",
     "Auto_mark_as_done_in_log": "Im Notizbuch als erledigt markieren, sobald in der Liste erledigt",
     "Db_comments_position": "Position der Datenbank-Kommentare",
-    "Always_HQ_leves": "Berechne Freibrief-Routine immer mit HQ-Gegenständen",
+    "Always_HQ_leves": "Freibrief-Routine immer mit HQ-Gegenständen berechnen",
     "Clickthrough_overlay": "Durchklickbares Overlay",
     "Disable_search_history": "Suchverlauf deaktivieren",
     "COLORS": {
