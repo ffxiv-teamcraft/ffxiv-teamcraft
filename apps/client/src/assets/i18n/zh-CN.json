@@ -98,9 +98,9 @@
   "Remove_ephemeral": "升级为永久清单",
   "Quick_list_create": "创建快速清单(完成后删除)",
   "Tag_filter": "标签",
-  "Public_lists": "社区清单",
-  "Your_public_lists": "你的社区清单",
-  "Public_list": "社区清单",
+  "Public_lists": "共享清单",
+  "Your_public_lists": "您的共享清单",
+  "Public_list": "共享清单",
   "Profile": "个人资料",
   "X_for_total": "一共 {{amount}} 个",
   "Discounts": "折扣",
@@ -392,7 +392,7 @@
     "Patreon_features": "Patreon 支持者功能",
     "Contacts": "好友",
     "Add_new_contact": "添加好友",
-    "Save_for_all": "一键保存所有工匠",
+    "Save_for_all": "一键保存为所有工匠属性",
     "User_not_verified": "用户未验证，点击验证",
     "More_than_100_lists_created": "创建了 100+ 个清单",
     "Veteran": "老玩家",
@@ -485,7 +485,7 @@
   "LIST_DETAILS": {
     "List_finished": "清单已完成",
     "Public_list_description": "将该清单公开分享给所有人。注意：只是与其他人分享清单并不需要将其设为社区清单。",
-    "Missing_tags_before_button": "此清单已公开分享为社区清单，但它没有标签，请使用 ",
+    "Missing_tags_before_button": "此清单已公开分享为共享清单，但它没有标签，请使用 为它添加标签。",
     "Missing_tags_after_button": " 按钮添加标签。",
     "Add_remove_amount": "增加/减少",
     "Add_from_external": "增加外部来源数量 (并非使用自己的材料制作的)",
@@ -498,7 +498,7 @@
     "Open_in_ffxivgardening": "在 ffxivgrading.com 中打开",
     "Add_all_item_alarms": "为该物品添加所有闹钟",
     "Adaptative_filter": "仅显示我可以制作或采集的",
-    "Disable_HQ_suggestions": "禁用自动 HQ",
+    "Disable_HQ_suggestions": "禁用自动显示HQ图标",
     "Amount_craftable": "你可以制作 {{amount}} 个",
     "Add_item": "添加物品",
     "List_too_large": "清单过长",
@@ -583,8 +583,8 @@
     "SMN": "召唤",
     "RDM": "赤魔",
     "BLU": "青魔",
-    "CRP": "刻木",
-    "BSM": "锻铁",
+    "CRP": "刻木匠",
+    "BSM": "锻铁匠",
     "ARM": "铸甲",
     "GSM": "雕金",
     "LTW": "制革",
@@ -720,7 +720,7 @@
     "Reliability": "成功率",
     "Average_hq": "平均 HQ",
     "Specialist": "专家",
-    "New_rotation": "新手法",
+    "New_rotation": "新建手法",
     "Rotations": "生产手法",
     "Favorite_Rotations": "收藏手法",
     "No_rotations": "无手法",
@@ -746,8 +746,8 @@
     "Include_sound_end": "添加宏结束提示音",
     "Step_by_step_report": "逐步报告",
     "Save_as_new": "保存为新的 (跳转到新创建的手法)",
-    "Save_as_new_done": "已复制为你的手法",
-    "Change_rotation": "更改手法",
+    "Save_as_new_done": "已复制为您的手法",
+    "Change_rotation": "切换手法",
     "New_rotation_folder": "新建文件夹",
     "Safe_mode": "安全模式",
     "Safe_mode_tooltip": "禁用所有被 buff 后仍低于 100% 成功率的技能",
@@ -763,11 +763,11 @@
     "Recipe_picker_placeholder": "输入您想要制作的配方",
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
     "STATE": {
-      "Excellent": "Excellent",
-      "Good": "Good",
-      "Poor": "Poor",
-      "Fail": "Fail",
-      "Normal": "Normal"
+      "Excellent": "最高品质",
+      "Good": "高品质",
+      "Poor": "低品质",
+      "Fail": "制作失败",
+      "Normal": "通常"
     },
     "SOLVER": {
       "Hq_target": "目标HQ率",
@@ -775,8 +775,8 @@
       "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的手法而生，作为一个 AI，在其逐渐成长的过程中，可能生成完美的手法也可能生成非常差的手法。如果生成结果不理想，请不要报告其为 bug。"
     },
     "COMMUNITY_ROTATIONS": {
-      "Title": "社区共享手法",
-      "Community_rotation": "社区共享手法",
+      "Title": "共享手法",
+      "Community_rotation": "共享手法",
       "No_rotations_matching": "未找到匹配的手法",
       "Name_filter_placeholder": "手法名",
       "Tags_filter_placeholder": "标签",
@@ -876,7 +876,7 @@
       "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并点亮“比尔格的祝福”等技能。",
+      "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
       "Use_inner_quiet_before_quality_increase": "应在提高制品品质前使用内静，否则就是在浪费内静层数。",
       "Use_ingenuity_I_instead": "应使用新颖替换新颖II，这已经足够完成制作并可以节约 8 点 CP。",
       "Use_cz_earlier": "应向前移动安逸，以更早获得回复效果。",
@@ -1159,7 +1159,7 @@
     "Title": "分解指南",
     "Job": "职业",
     "Level": "分解品级",
-    "Intro": "选择职业并输入分解等级，即可找到最适合你的升级物品",
+    "Intro": "选择职业并输入分解品级，即可找到最适合您当前分解品级的物品",
     "Loading_message": "正在加载……",
     "TAGS": {
       "Higher_chances": "更高的成功率",
@@ -1424,7 +1424,7 @@
   },
   "TIPS": {
     "Title": "小贴士",
-    "Community_rotations": "你可以在社区共享手法页面中找到特定配方的手法",
+    "Community_rotations": "您可以在共享社区-共享手法页面中找到特定配方的手法",
     "GC_Deliveries": "您可以在军团筹备页面中制作您的清单。",
     "Desynth": "您可以在分解查询页面中找到最适合当前分解等级的物品。",
     "DB": "Teamcraft包含一个数据库，您可以点击任何地方的“i”图标在数据库页面中查看其详情。",
@@ -1445,7 +1445,7 @@
     "Remove_from_basket": "从愿望篮中删除",
     "Search": "查找配方",
     "Generate_list": "添加到清单",
-    "Description": "输入您拥有的物品并点击“查询配方”，可以得到一系列的潜在可制作配方，并能够从其结果中相应生成制作列表。",
+    "Description": "输入您拥有的物品并点击“查询配方”，可以得到一系列的潜在可制作配方，并能够从其结果中生成相应的清单。",
     "Empty_basket": "您的愿望篮为空",
     "Add_item": "添加物品",
     "Clipboard_content_malformed": "剪贴板内容格式不正确",
@@ -1465,8 +1465,8 @@
     "Description": "货币太多了吗？选择币种并填写数目、服务器，自动为您推荐当前最卖的上价的物品！",
     "Pick_currency": "选择一个币种",
     "You_can_buy": "您可以购买 {{amount}}",
-    "Disabled": "The currency spending guide isn't working anymore",
-    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
+    "Disabled": "货币消费指南已失效",
+    "Disabled_description": "SE一再禁止我们读取交易板信息导致此功能失效。对此造成的不便，Teamcraft深表遗憾。"
   },
   "BLOG": {
     "Title": "博客"
