@@ -763,8 +763,8 @@
     "Recipe_picker_placeholder": "Introduzca el nombre de la receta que desea crear",
     "Could_not_find_minstats": "No se pudieron encontrar atributos mínimos para esta rotación",
     "STATE": {
-      "Excellent": "Excellent",
-      "Good": "Good",
+      "Excellent": "Excelente",
+      "Good": "Bueno",
       "Poor": "Poor",
       "Fail": "Fail",
       "Normal": "Normal"
