@@ -1386,15 +1386,15 @@
         "Actions": "Acciones ({{amount}})",
         "Crafting_actions": "Acciones de fabricación ({{amount}})",
         "Fates": "Fates ({{amount}})",
-        "Instances": "Instance content ({{amount}})",
-        "Items": "Items ({{amount}})",
+        "Instances": "Contenido de la instancia ({{amount}})",
+        "Items": "Artículos ({{amount}})",
         "Leves": "Leves ({{amount}})",
-        "Maps": "Maps ({{amount}})",
-        "Monsters": "Monsters ({{amount}})",
+        "Maps": "Mapas ({{amount}})",
+        "Monsters": "Monstruos ({{amount}})",
         "Npcs": "Npcs ({{amount}})",
-        "Quests": "Quests ({{amount}})",
-        "Statuses": "Statuses ({{amount}})",
-        "Traits": "Traits ({{amount}})"
+        "Quests": "Misiones ({{amount}})",
+        "Statuses": "Estados ({{amount}})",
+        "Traits": "Rasgos ({{amount}})"
       }
     }
   },
@@ -1465,8 +1465,8 @@
     "Description": "¿Tiene demasiado de una moneda? Seleccione su moneda, establezca una cantidad, un servidor y ¡encuentre qué artículo es el mejor para comprar para obtener gil de sus monedas!",
     "Pick_currency": "Elija una moneda",
     "You_can_buy": "Puede comprar {{amount}}",
-    "Disabled": "The currency spending guide isn't working anymore",
-    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
+    "Disabled": "La guía de gasto de monedas no está funcionando más",
+    "Disabled_description": "Esto se debe a que Square Enix nos impide obtener información del mercado, si quiere quejarse de esto, por favor quéjese con Square Enix, no hay nada que podamos hacer para hacer esto funcionar sin ellos."
   },
   "BLOG": {
     "Title": "Blog"
@@ -1481,7 +1481,7 @@
     "Sort_desc": "Descendente",
     "Add_stat_filter": "Añadir filtro de atributo",
     "Add_bonus_stat_filter": "Añadir filtro de atributo de bono",
-    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Search_tip": "Puede escribir patch:<# de parche> para filtrar en un parche dado, por ejemplo: patch:5.01",
     "SORT_BY": {
       "Relevance": "Relevancia",
       "ID": "ID",
@@ -1492,9 +1492,9 @@
   },
   "SIDEBAR": {
     "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
-    "Other": "Other"
+    "Sharing": "Compartiendo",
+    "Gathering": "Recolección",
+    "Helpers": "Auxiliares",
+    "Other": "Otros"
   }
 }
