@@ -765,8 +765,8 @@
     "STATE": {
       "Excellent": "Excelente",
       "Good": "Bueno",
-      "Poor": "Poor",
-      "Fail": "Fail",
+      "Poor": "Pobre",
+      "Fail": "Fallo",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -801,7 +801,7 @@
         "FOODLESS": "Sin comida",
         "MAKERS_MARK": "Maker's Mark",
         "MUSCLE_MEMORY": "Muscle Memory",
-        "REUSE": "Reuse"
+        "REUSE": "Reutilizar"
       }
     },
     "CUSTOM": {
@@ -991,7 +991,7 @@
       "LIST_PROGRESSION": "Progresar materiales de la lista",
       "FINAL_LIST_PROGRESSION": "Progresar artículos finales de la lista",
       "USER_ASSIGNMENT": "Asignación de usuario",
-      "ITEM_COMPLETION": "Item completion"
+      "ITEM_COMPLETION": "Completar el artículo"
     }
   },
   "MARKETBOARD": {
@@ -1258,7 +1258,7 @@
     "Achievements": "Logros",
     "Currencies": "Divisas",
     "Rowena_splendor": "Esplendores de Rowena (Estrella = +20% de bonus)",
-    "Unlocks": "Unlocks",
+    "Unlocks": "Desbloqueos",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1379,12 +1379,12 @@
       "Editor_tip": "Escriba <tipo de pagina>:\"<Nombre del Contenido>\" para crear un enlace a otra página. Ejemplos: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Tipos de páginas soportados: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     },
     "PATCH": {
-      "Open_patch_page": "Click here to open full patch changes in database",
+      "Open_patch_page": "Haga clic aquí para abrir cambios de parche completos en la base de datos",
       "CONTENT": {
-        "Title": "Patch content",
-        "Achievements": "Achievements ({{amount}})",
-        "Actions": "Actions ({{amount}})",
-        "Crafting_actions": "Crafting actions ({{amount}})",
+        "Title": "Contenido del parche",
+        "Achievements": "Logros ({{amount}})",
+        "Actions": "Acciones ({{amount}})",
+        "Crafting_actions": "Acciones de fabricación ({{amount}})",
         "Fates": "Fates ({{amount}})",
         "Instances": "Instance content ({{amount}})",
         "Items": "Items ({{amount}})",
