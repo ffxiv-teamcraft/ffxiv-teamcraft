@@ -21,8 +21,8 @@
     "auth/wrong-password": "Correo electrónico o contraseña incorrectos"
   },
   "TIMERS": {
-    "Days": "days",
-    "Day": "day",
+    "Days": "días",
+    "Day": "día",
     "Hours": "h",
     "Minutes": "m",
     "Seconds": "s"
@@ -160,10 +160,10 @@
     "Toggle_collapse": "Colapsar/Expandir grupos",
     "Add_alarms_to_group": "Agregar alarmas a este grupo",
     "REALTIME": {
-      "Reset_timers": "Reset timers",
-      "WEEKLY_RESETS": "Weeklies",
-      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
-      "ROULETTES_RESET": "Roulettes & Beast tribes",
+      "Reset_timers": "Restablecer temporizadores",
+      "WEEKLY_RESETS": "Semanales",
+      "WEEKLY_RESETS_DESCRIPTION": "Entregas personalizadas, WT, botines semanales (asaltos de 24 personas, fichas de savage, fichas de armas de asaltos normales), Jumbo Cactpot, registro de desafíos, reporte de moda, marcas de caza de rango B.",
+      "ROULETTES_RESET": "Ruletas y Tribus de bestias",
       "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
       "DELIVERIES_RESET": "Deliveries",
       "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
