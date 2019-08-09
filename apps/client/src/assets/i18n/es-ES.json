@@ -274,7 +274,7 @@
   "Recipe_Added": "1 artículo agregado a la lista {{listname}}",
   "Recipes_Added": "{{itemcount}} artículos agregados a la lista {{listname}}",
   "Character_name": "Nombre del Personaje",
-  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
+  "Character_add_warning": "Si está viendo esto sin haber eliminado su personaje manualmente, no introduzca nada y actualize la página o reinicie la aplicación. Si el problema persiste, por favor, reporta en el servidor discord.",
   "Disconnect_and_anonymous": "Desconectar y continuar como anónimo",
   "Add_manual_character": "Agregar personaje",
   "Character_informations": "Información del personaje",
@@ -365,7 +365,7 @@
     "Db_comments_position": "Posición de comentarios de base de datos",
     "Always_HQ_leves": "Siempre contar la experiencia de leves con artículos HQ",
     "Clickthrough_overlay": "Permitir hacer clic a través de la capa sobrepuesta",
-    "Disable_search_history": "Disable search history",
+    "Disable_search_history": "Desactivar historial de búsqueda",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -761,7 +761,7 @@
     "Solve_rotation": "Solucionar esta rotación",
     "Rotation_solver": "Resolvedor de rotación",
     "Recipe_picker_placeholder": "Introduzca el nombre de la receta que desea crear",
-    "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "Could_not_find_minstats": "No se pudieron encontrar atributos mínimos para esta rotación",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Good",
