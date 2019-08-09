@@ -164,11 +164,11 @@
       "WEEKLY_RESETS": "Semanales",
       "WEEKLY_RESETS_DESCRIPTION": "Entregas personalizadas, WT, botines semanales (asaltos de 24 personas, fichas de savage, fichas de armas de asaltos normales), Jumbo Cactpot, registro de desafíos, reporte de moda, marcas de caza de rango B.",
       "ROULETTES_RESET": "Ruletas y Tribus de bestias",
-      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
-      "DELIVERIES_RESET": "Deliveries",
-      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
-      "LEVE_ALLOWANCES": "Leve allowances",
-      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+      "ROULETTES_RESET_DESCRIPTION": "Restablecimiento de todas las ruletas, misiones de tribus de bestias, caza diaria y mini cactpot.",
+      "DELIVERIES_RESET": "Entregas",
+      "DELIVERIES_RESET_DESCRIPTION": "Restablecimiento de entregas de la GC",
+      "LEVE_ALLOWANCES": "Permisos de leve",
+      "LEVE_ALLOWANCES_DESCRIPTION": "Obtiene 3 permisos de leve más"
     },
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
