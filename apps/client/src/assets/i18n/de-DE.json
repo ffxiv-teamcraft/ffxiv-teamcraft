@@ -59,7 +59,7 @@
   "Remove_work_on_it": "Nutzerzuordnung entfernen",
   "Add_as_collectible": "Als Sammlerstück hinzufügen",
   "Collectable_flag": "Sammlerstücke",
-  "Compact_display": "Komptaktansicht",
+  "Compact_display": "Kompaktansicht",
   "Mute_alarms": "Benachrichtigung stummschalten",
   "Hide_used": "Verwendete Reihen ausblenden",
   "Collapse_if_done": "Bei Fertigstellung zusammenklappen",
@@ -255,8 +255,8 @@
   "Game_Term/FSH": "Fischer",
   "Reduction": "Raffinieren",
   "Upgrade_list": "Liste mit aktuellem App-Update regenerieren",
-  "List_recreated": "Liste korrekt regeneriert",
-  "List_popup_title": "Regeneriere die Liste, bitte warten",
+  "List_recreated": "Liste korrekt aktualisiert",
+  "List_popup_title": "Aktualisiere die Liste, bitte warten",
   "Please_wait": "Das sollte schnell gehen, bitte warte kurz",
   "Not_own_list_outdated": "Diese Liste ist nicht mehr aktuell, bitte den Ersteller sie zu erneuern",
   "Import": "Importieren",
@@ -442,7 +442,7 @@
     }
   },
   "LIST": {
-    "Regenerate": "Liste für aktuellste Teamcraft Version rekreieren",
+    "Regenerate": "Liste auf aktuellste Teamcraft Version aktualisieren",
     "Rename": "Liste umbenennen",
     "Copied_x_times": "{{count}} mal kopiert",
     "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren",
