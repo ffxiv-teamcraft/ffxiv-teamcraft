@@ -444,7 +444,7 @@
   "LIST": {
     "Regenerate": "Liste auf aktuellste Teamcraft Version aktualisieren",
     "Rename": "Liste umbenennen",
-    "Copied_x_times": "{{count}} mal kopiert",
+    "Copied_x_times": "{{count}}-mal kopiert",
     "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren",
     "Always_show_inventory": "Inventar immer anzeigen (auf Geräten <600px Breite deaktiviert)",
     "Copy_as_text": "Als Text kopieren",
@@ -853,7 +853,7 @@
       "Apply_foods": "Verzehrbares übernehmen",
       "Food": "Wähle ein Gericht",
       "Medicine": "Wähle eine Arznei",
-      "Action": "Wählen Sie freie Firmenaktionen",
+      "Action": "Wähle ein Kommando der Freien Gesellschaft",
       "Save_on_profile": "Im Profil speichern",
       "Reset_set": "Benutzerdefinierte Attribute zurücksetzen",
       "Save_consumables": "Das ausgewählte Verzehrbare als Standard speichern",
@@ -1176,7 +1176,7 @@
   "SUPPORT_US": {
     "Title": "Hilf uns, zu wachsen!",
     "Communication_title": "Mach das Projekt bekannter",
-    "Communication_description": "Lass Leute über das Werkzeug wissen, teile deine Rotationen und Listen. Erstelle Videos, Blogposts, Tweets, alles was das Aufsehen der Leute erregt hilft dem Teamcraft-Projekt mehr, als du denkst.\n\nWir haben sogar ein Makro vorbereitet, damit du deine Liebe überall verbreiten kannst!\n",
+    "Communication_description": "Lass Leute über die Seite wissen, indem du deine Rotationen und Listen teilst. Auch Videos, Blogposts, Tweets und alles, was das Aufsehen der Leute erregt, hilft dem Teamcraft-Projekt mehr, als du denkst.\n\nWir haben sogar ein Makro vorbereitet, damit du deine Liebe überall verbreiten kannst!\n",
     "Contribute_title": "Beteilige dich am Projekt",
     "Contribute_description": "Du findest uns auf GitHub um dich am Projekt zu beteiligen. Auch Anfänger sind willkommen!\n\nIhr könnt aber nicht nur mit Code beitragen. Ideen für neue Features und Fehlermeldungen helfen ebenso um den bestmöglichen Inhalt für jeden zu liefern. Ein Danke an alle, welche sich Zeit zum testen und Fehler-finden nehmen.",
     "Patreon_title": "Unterstütze uns auf Patreon",
