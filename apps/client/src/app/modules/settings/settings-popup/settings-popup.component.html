@@ -284,25 +284,6 @@
           {{'SETTINGS.Clickthrough_overlay' | translate}}
         </label>
       </div>
-      <div class="updater">
-        <button nz-button nzType="primary" (click)="checkForUpdate()" *ngIf="!updateAvailable && !checkingForUpdate">
-          {{'SETTINGS.Check_for_update' | translate}}
-        </button>
-        <nz-spin *ngIf="checkingForUpdate && !updateAvailable"></nz-spin>
-        <div *ngIf="updateAvailable === true">
-          {{'SETTINGS.Downloading_update' | translate}}
-          <nz-progress [nzPercent]="downloadProgress.percent"></nz-progress>
-          <span>{{downloadProgress.transferred / 1000000 | number}}/{{downloadProgress.total / 1000000 | number}}MB
-            - {{downloadProgress.bytesPerSecond / 1000000 | number}}MBps</span>
-        </div>
-        <div *ngIf="updateAvailable === false && !checkingForUpdate">
-          {{'SETTINGS.No_update_available' | translate}}
-        </div>
-        <button nz-button nzType="primary" (click)="installUpdate()"
-                *ngIf="updateAvailable && !checkingForUpdate && downloadProgress.transferred / downloadProgress.total >= 1">
-          {{'SETTINGS.Install_update' | translate}}
-        </button>
-      </div>
       <button nz-button (click)="openDesktopConsole()">
         {{'SETTINGS.Show_devtools' | translate}}
       </button>

@@ -56,7 +56,6 @@ import { Theme } from './modules/settings/theme';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
-import { RecipeChoicePopupComponent } from './pages/simulator/components/recipe-choice-popup/recipe-choice-popup.component';
 
 declare const gtag: Function;
 
@@ -120,6 +119,8 @@ export class AppComponent implements OnInit {
   public showGiveaway = false;
 
   private dirty = false;
+
+  public downloading = false;
 
   public randomTip$: Observable<string> = interval(600000).pipe(
     startWith(-1),
@@ -297,6 +298,9 @@ export class AppComponent implements OnInit {
       this.ipc.on('apply-language', (e, newLang) => {
         this.use(newLang, true);
       });
+      this.ipc.on('download-progress', (event, progress: any) => {
+        this.downloading = true;
+      });
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
@@ -325,6 +329,10 @@ export class AppComponent implements OnInit {
       const request: any = this.injector.get(REQUEST) || {};
       return request.lang || 'en';
     }
+  }
+
+  updateDesktopApp(): void {
+    this.ipc.send('update:check');
   }
 
   ngOnInit(): void {
