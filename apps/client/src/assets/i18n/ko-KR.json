@@ -1038,7 +1038,7 @@
   },
   "UPDATE": {
     "New_update_available": "새 업데이트가 있습니다! ",
-    "Desktop_instructions": "최신 버전을 다운로드하려면 다음 링크를 클릭하세요: ",
+    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요."
   },
   "LOG_TRACKER": {
