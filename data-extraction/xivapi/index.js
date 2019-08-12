@@ -7,6 +7,7 @@ const { Subject, combineLatest, merge } = require('rxjs');
 const { aggregateAllPages, getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 const Multiprogress = require('multi-progress');
 const multi = new Multiprogress(process.stdout);
+const allMobs = require('../../apps/client/src/assets/data/mobs') || {};
 
 const nodes = {};
 const gatheringPointToBaseId = {};
@@ -72,6 +73,8 @@ function hasTodo(operation) {
 }
 
 fs.existsSync('output') || fs.mkdirSync('output');
+
+let emptyBnpcNames = 0;
 
 if (hasTodo('mappy')) {
   // MapData extraction
@@ -206,7 +209,7 @@ if (hasTodo('mappy')) {
           persistToTypescript('aetherytes', 'aetherytes', aetherytes);
           console.log('aetherytes written');
           persistToJson('monsters', monsters);
-          console.log('monsters written');
+          console.log('monsters written', emptyBnpcNames);
           persistToJsonAsset('npcs', npcs);
           console.log('npcs written');
         });
@@ -262,11 +265,24 @@ handleAetheryte = (row) => {
 };
 
 handleMonster = (row, memoryData) => {
-  if (+row.BNpcNameID === 0) {
-    return;
+  let bnpcNameID = +row.BNpcNameID;
+  if (bnpcNameID === 0) {
+    const nameFromData = Object.keys(allMobs)
+      .find(key => {
+        return allMobs[key].en.toLowerCase() === row.Name.toLowerCase()
+          || allMobs[key].ja.toLowerCase() === row.Name.toLowerCase()
+          || allMobs[key].de.toLowerCase() === row.Name.toLowerCase()
+          || allMobs[key].fr.toLowerCase() === row.Name.toLowerCase();
+      });
+    if (nameFromData !== undefined) {
+      bnpcNameID = +nameFromData;
+    } else {
+      emptyBnpcNames++;
+      return;
+    }
   }
   const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
-  monsters[row.BNpcNameID] = monsters[row.BNpcNameID] || {
+  monsters[bnpcNameID] = monsters[row.BNpcNameID] || {
     baseid: +row.BNpcBaseID,
     positions: []
   };
@@ -279,7 +295,7 @@ handleMonster = (row, memoryData) => {
   if (monsterMemoryRow !== undefined) {
     newEntry.level = +monsterMemoryRow.Level;
   }
-  monsters[row.BNpcNameID].positions.push(newEntry);
+  monsters[bnpcNameID].positions.push(newEntry);
 };
 
 handleNpc = (row) => {
