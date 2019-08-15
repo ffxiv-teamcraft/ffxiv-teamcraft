@@ -1038,7 +1038,7 @@
   },
   "UPDATE": {
     "New_update_available": "发现新版本！ ",
-    "Desktop_instructions": "请打开以下链接以下载最新版本： ",
+    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
     "Web_instructions": "请刷新页面以使用最新版本。"
   },
   "LOG_TRACKER": {

@@ -21,8 +21,8 @@
     "auth/wrong-password": "Correo electrónico o contraseña incorrectos"
   },
   "TIMERS": {
-    "Days": "days",
-    "Day": "day",
+    "Days": "días",
+    "Day": "día",
     "Hours": "h",
     "Minutes": "m",
     "Seconds": "s"
@@ -160,15 +160,15 @@
     "Toggle_collapse": "Colapsar/Expandir grupos",
     "Add_alarms_to_group": "Agregar alarmas a este grupo",
     "REALTIME": {
-      "Reset_timers": "Reset timers",
-      "WEEKLY_RESETS": "Weeklies",
-      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
-      "ROULETTES_RESET": "Roulettes & Beast tribes",
-      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
-      "DELIVERIES_RESET": "Deliveries",
-      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
-      "LEVE_ALLOWANCES": "Leve allowances",
-      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+      "Reset_timers": "Restablecer temporizadores",
+      "WEEKLY_RESETS": "Semanales",
+      "WEEKLY_RESETS_DESCRIPTION": "Entregas personalizadas, WT, botines semanales (asaltos de 24 personas, fichas de savage, fichas de armas de asaltos normales), Jumbo Cactpot, registro de desafíos, reporte de moda, marcas de caza de rango B.",
+      "ROULETTES_RESET": "Ruletas y Tribus de bestias",
+      "ROULETTES_RESET_DESCRIPTION": "Restablecimiento de todas las ruletas, misiones de tribus de bestias, caza diaria y mini cactpot.",
+      "DELIVERIES_RESET": "Entregas",
+      "DELIVERIES_RESET_DESCRIPTION": "Restablecimiento de entregas de la GC",
+      "LEVE_ALLOWANCES": "Permisos de leve",
+      "LEVE_ALLOWANCES_DESCRIPTION": "Obtiene 3 permisos de leve más"
     },
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
@@ -274,7 +274,7 @@
   "Recipe_Added": "1 artículo agregado a la lista {{listname}}",
   "Recipes_Added": "{{itemcount}} artículos agregados a la lista {{listname}}",
   "Character_name": "Nombre del Personaje",
-  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
+  "Character_add_warning": "Si está viendo esto sin haber eliminado su personaje manualmente, no introduzca nada y actualize la página o reinicie la aplicación. Si el problema persiste, por favor, reporta en el servidor discord.",
   "Disconnect_and_anonymous": "Desconectar y continuar como anónimo",
   "Add_manual_character": "Agregar personaje",
   "Character_informations": "Información del personaje",
@@ -365,7 +365,7 @@
     "Db_comments_position": "Posición de comentarios de base de datos",
     "Always_HQ_leves": "Siempre contar la experiencia de leves con artículos HQ",
     "Clickthrough_overlay": "Permitir hacer clic a través de la capa sobrepuesta",
-    "Disable_search_history": "Disable search history",
+    "Disable_search_history": "Desactivar historial de búsqueda",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -761,12 +761,12 @@
     "Solve_rotation": "Solucionar esta rotación",
     "Rotation_solver": "Resolvedor de rotación",
     "Recipe_picker_placeholder": "Introduzca el nombre de la receta que desea crear",
-    "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "Could_not_find_minstats": "No se pudieron encontrar atributos mínimos para esta rotación",
     "STATE": {
-      "Excellent": "Excellent",
-      "Good": "Good",
-      "Poor": "Poor",
-      "Fail": "Fail",
+      "Excellent": "Excelente",
+      "Good": "Bueno",
+      "Poor": "Pobre",
+      "Fail": "Fallo",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -801,7 +801,7 @@
         "FOODLESS": "Sin comida",
         "MAKERS_MARK": "Maker's Mark",
         "MUSCLE_MEMORY": "Muscle Memory",
-        "REUSE": "Reuse"
+        "REUSE": "Reutilizar"
       }
     },
     "CUSTOM": {
@@ -991,7 +991,7 @@
       "LIST_PROGRESSION": "Progresar materiales de la lista",
       "FINAL_LIST_PROGRESSION": "Progresar artículos finales de la lista",
       "USER_ASSIGNMENT": "Asignación de usuario",
-      "ITEM_COMPLETION": "Item completion"
+      "ITEM_COMPLETION": "Completar el artículo"
     }
   },
   "MARKETBOARD": {
@@ -1038,7 +1038,7 @@
   },
   "UPDATE": {
     "New_update_available": "¡Nueva actualización disponible! ",
-    "Desktop_instructions": "Por favor siga el siguiente enlace para descargar la última versión: ",
+    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
     "Web_instructions": "Por favor refresque la página para obtener la última versión."
   },
   "LOG_TRACKER": {
@@ -1258,7 +1258,7 @@
     "Achievements": "Logros",
     "Currencies": "Divisas",
     "Rowena_splendor": "Esplendores de Rowena (Estrella = +20% de bonus)",
-    "Unlocks": "Unlocks",
+    "Unlocks": "Desbloqueos",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1379,22 +1379,22 @@
       "Editor_tip": "Escriba <tipo de pagina>:\"<Nombre del Contenido>\" para crear un enlace a otra página. Ejemplos: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Tipos de páginas soportados: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     },
     "PATCH": {
-      "Open_patch_page": "Click here to open full patch changes in database",
+      "Open_patch_page": "Haga clic aquí para abrir cambios de parche completos en la base de datos",
       "CONTENT": {
-        "Title": "Patch content",
-        "Achievements": "Achievements ({{amount}})",
-        "Actions": "Actions ({{amount}})",
-        "Crafting_actions": "Crafting actions ({{amount}})",
+        "Title": "Contenido del parche",
+        "Achievements": "Logros ({{amount}})",
+        "Actions": "Acciones ({{amount}})",
+        "Crafting_actions": "Acciones de fabricación ({{amount}})",
         "Fates": "Fates ({{amount}})",
-        "Instances": "Instance content ({{amount}})",
-        "Items": "Items ({{amount}})",
+        "Instances": "Contenido de la instancia ({{amount}})",
+        "Items": "Artículos ({{amount}})",
         "Leves": "Leves ({{amount}})",
-        "Maps": "Maps ({{amount}})",
-        "Monsters": "Monsters ({{amount}})",
+        "Maps": "Mapas ({{amount}})",
+        "Monsters": "Monstruos ({{amount}})",
         "Npcs": "Npcs ({{amount}})",
-        "Quests": "Quests ({{amount}})",
-        "Statuses": "Statuses ({{amount}})",
-        "Traits": "Traits ({{amount}})"
+        "Quests": "Misiones ({{amount}})",
+        "Statuses": "Estados ({{amount}})",
+        "Traits": "Rasgos ({{amount}})"
       }
     }
   },
@@ -1465,8 +1465,8 @@
     "Description": "¿Tiene demasiado de una moneda? Seleccione su moneda, establezca una cantidad, un servidor y ¡encuentre qué artículo es el mejor para comprar para obtener gil de sus monedas!",
     "Pick_currency": "Elija una moneda",
     "You_can_buy": "Puede comprar {{amount}}",
-    "Disabled": "The currency spending guide isn't working anymore",
-    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
+    "Disabled": "La guía de gasto de monedas no está funcionando más",
+    "Disabled_description": "Esto se debe a que Square Enix nos impide obtener información del mercado, si quiere quejarse de esto, por favor quéjese con Square Enix, no hay nada que podamos hacer para hacer esto funcionar sin ellos."
   },
   "BLOG": {
     "Title": "Blog"
@@ -1481,7 +1481,7 @@
     "Sort_desc": "Descendente",
     "Add_stat_filter": "Añadir filtro de atributo",
     "Add_bonus_stat_filter": "Añadir filtro de atributo de bono",
-    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Search_tip": "Puede escribir patch:<# de parche> para filtrar en un parche dado, por ejemplo: patch:5.01",
     "SORT_BY": {
       "Relevance": "Relevancia",
       "ID": "ID",
@@ -1492,9 +1492,9 @@
   },
   "SIDEBAR": {
     "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
-    "Other": "Other"
+    "Sharing": "Compartiendo",
+    "Gathering": "Recolección",
+    "Helpers": "Auxiliares",
+    "Other": "Otros"
   }
 }
