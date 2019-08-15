@@ -8,9 +8,6 @@ import { TradeSource } from '../../modules/list/model/trade-source';
 export class TradeIconPipe implements PipeTransform {
 
   public static TRADE_SOURCES_PRIORITIES = {
-    // Just in case
-    25: 50, // Wolf Mark
-    29: 50, // MGP
     // Seals
     20: 30, // Storm
     21: 30, // Serpent
@@ -46,6 +43,9 @@ export class TradeIconPipe implements PipeTransform {
     25200: 25, // White gatherer
     // Fates stones
     26807: 23,
+    // Just in case
+    25: 22, // Wolf Mark
+    29: 22, // MGP
     // Hunt mark log
     7901: 22, // Blood-spattered Mark Log
     10127: 22, // Unstained Mark Log

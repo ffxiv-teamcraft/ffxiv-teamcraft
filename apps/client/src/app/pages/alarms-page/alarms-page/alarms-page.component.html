@@ -284,10 +284,10 @@
               <ng-template #customName>
                 <span>{{row.alarm.name}}</span>
               </ng-template>
-              <span *ngIf="row.alarm.slot">({{row.alarm.slot}})</span>
             </div>
           </div>
         </div>
+        <div nz-col nzMd="1"><span *ngIf="row.alarm.slot">({{row.alarm.slot}})</span></div>
         <div nz-col nzMd="1">
           <img *ngIf="row.alarm.type !== undefined" src="{{row.alarm.type | nodeTypeIcon}}" alt=""
                class="node-type-compact">
@@ -312,10 +312,10 @@
             </div>
           </div>
         </div>
-        <div nz-col nzMd="5"
+        <div nz-col nzMd="3"
              *ngIf="row.alarm.baits !== undefined || row.alarm.predators && row.alarm.predators.length > 0">
           <div *ngIf="row.alarm.baits !== undefined" class="baits">
-            <app-fishing-bait [baits]="row.alarm.baits" flex="row"></app-fishing-bait>
+            <app-fishing-bait [hideNames]="true" [baits]="row.alarm.baits" flex="row"></app-fishing-bait>
           </div>
           <div *ngIf="row.alarm.predators && row.alarm.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
                fxLayoutAlign="flex-start center">
@@ -328,7 +328,7 @@
             </div>
           </div>
         </div>
-        <div nz-col [nzMd]="row.alarm.baits || row.alarm.predators && row.alarm.predators.length > 0 ? 5 : 10"
+        <div nz-col [nzMd]="row.alarm.baits || row.alarm.predators && row.alarm.predators.length > 0 ? 5 : 8"
              class="text-col">
           <button *ngIf="row.alarm.note === undefined || row.alarm.note.length === 0; else note" nz-button nzGhost
                   nz-tooltip nzTitle="{{'ALARMS.Add_note' | translate}}"
@@ -345,15 +345,30 @@
               </button>
             </div>
           </ng-template>
+          <img *ngIf="row.alarm.folklore !== undefined" src="{{row.alarm.folklore.icon | icon}}" nz-tooltip
+               [nzTitle]="row.alarm.folklore.id | itemName | i18n" alt="" class="folklore">
+          <img *ngIf="row.alarm.fishEyes" src="./assets/icons/status/fish_eyes.png" alt="" nz-tooltip
+               [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+          <img *ngIf="row.alarm.snagging" src="./assets/icons/status/snagging.png" alt="" nz-tooltip
+               [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
         </div>
-        <div nz-col nzMd="5">
-          <app-map-position [mapId]="row.alarm.mapId"
-                            [zoneId]="row.alarm.zoneId"
-                            [showZoneName]="true"
-                            flex="row"
-                            [marker]="row.alarm.coords"></app-map-position>
+        <div nz-col nzMd="4">
+          <div fxLayout="column" fxLayoutAlign="center center">
+            <div>
+              {{(row.alarm.mapId | closestAetheryte: {
+              x: row.alarm.coords.x,
+              y: row.alarm.coords.y
+            } | async)?.nameid | placeName | i18n}}
+            </div>
+
+            <app-map-position [mapId]="row.alarm.mapId"
+                              [zoneId]="row.alarm.zoneId"
+                              [showZoneName]="true"
+                              flex="row"
+                              [marker]="row.alarm.coords"></app-map-position>
+          </div>
         </div>
-        <div nz-col nzMd="2" fxLayout="row" fxLayoutGap="5px">
+        <div nz-col nzMd="1" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
           <span nz-tooltip [nzTitle]="'Delete' | translate">
             <button nz-button nz-popconfirm [nzTitle]="'Confirmation' | translate"
                     nzType="danger" nzShape="circle"

@@ -17,6 +17,15 @@
            nz-tooltip [nzTitle]="'WIKI.Title' | translate">
           <i nz-icon type="question-circle"></i>
         </a>
+        <div *ngIf="(newVersionAvailable$ | async) && platformService.isDesktop() && !downloading">
+          <button nz-button nzShape="circle" nzType="primary" nz-tooltip
+                  (click)="updateDesktopApp()"
+                  [nzTitle]="'UPDATE.New_update_available_desktop' | translate"
+                  nzPlacement="bottom"><i nz-icon nzType="download"></i></button>
+        </div>
+        <div class="download-spinner" *ngIf="downloading">
+          <nz-spin [nzSimple]="true"></nz-spin>
+        </div>
         <div fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto" class="tips-container">
           <ng-container *ngIf="platformService.isDesktop()">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">

@@ -90,7 +90,7 @@ export class LazyDataService {
     return res;
   }
 
-  constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) platform: Object,
+  constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) private platform: Object,
               private platformService: PlatformService) {
     if (isPlatformServer(platform)) {
       this.loaded$.next(true);
@@ -260,7 +260,7 @@ export class LazyDataService {
     if (path.startsWith('http')) {
       url = path;
     } else {
-      if (this.platformService.isDesktop() || !environment.production) {
+      if (this.platformService.isDesktop() || !environment.production || isPlatformServer(this.platform)) {
         url = `.${path}`;
       } else {
         url = `https://cdn.ffxivteamcraft.com${path}`;

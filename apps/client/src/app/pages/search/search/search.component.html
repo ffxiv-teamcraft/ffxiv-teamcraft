@@ -5,7 +5,7 @@
     </ng-container>
     <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null" [nzSuffix]="suffixTemplate">
       <input class="search-input" type="text"
-             placeholder="{{'Search_placeholder' | translate:{type: searchType$ | async} }}" #searchInput nz-input
+             placeholder="{{'Search_placeholder' | translate:{type: ('SEARCH_TYPES.' + (searchType$ | async)) | translate} }}" #searchInput nz-input
              [ngModel]="query$.value"
              autofocus
              [nzAutocomplete]="settings.disableSearchHistory?null:auto"

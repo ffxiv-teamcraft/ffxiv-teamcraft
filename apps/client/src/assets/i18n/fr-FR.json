@@ -1038,7 +1038,7 @@
   },
   "UPDATE": {
     "New_update_available": "Une nouvelle mise à jour est disponible ! ",
-    "Desktop_instructions": "Veuillez cliquer sur ce lien pour télécharger la dernière version : ",
+    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente."
   },
   "LOG_TRACKER": {

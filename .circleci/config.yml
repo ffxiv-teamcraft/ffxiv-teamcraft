@@ -107,6 +107,16 @@ jobs:
           name: Deploying cdn
           command: bash tools/cdn/deploy.sh
 
+
+  deploy-firebase-hosting:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Deploying web
+          command: ./node_modules/.bin/firebase deploy -P default --only hosting --token "$FIREBASE_TOKEN"
+
   deploy-desktop:
     <<: *defaults
     steps:
@@ -161,6 +171,12 @@ workflows:
             - lint
             - test
       - deploy-cdn:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+      - deploy-firebase-hosting:
           requires:
             - build
           filters:
