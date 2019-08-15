@@ -1038,7 +1038,7 @@
   },
   "UPDATE": {
     "New_update_available": "新しいアップデートがあります! ",
-    "Desktop_instructions": "最新バージョンをダウンロードするには、次のリンクに接続してください： ",
+    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。"
   },
   "LOG_TRACKER": {
