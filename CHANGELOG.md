@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.8"></a>
+## [5.7.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.7...v5.7.8) (2019-08-15)
+
+
+### Bug Fixes
+
+* **i18n:** fixed missing translation in search placeholder ([71550f5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/71550f5))
+* **list:** fixed icon priority for wolf marks ([d915ce5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d915ce5))
+
+
+### Features
+
+* **alarms:** added closest aetheryte to the compact display and better layout for slot ([0596345](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0596345))
+* **db:** updated data with newest monsters positions ([887a9e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/887a9e5))
+* **desktop:** better updating system with button inside topbar ([958a02f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/958a02f))
+
+
+
 <a name="5.7.7"></a>
 ## [5.7.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.6...v5.7.7) (2019-08-08)
 
