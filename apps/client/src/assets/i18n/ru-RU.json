@@ -1038,7 +1038,7 @@
   },
   "UPDATE": {
     "New_update_available": "Доступно новое обновление!",
-    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
+    "New_update_available_desktop": "Доступно новое обновление !\nНажмите здесь, чтобы скачать и установить его.",
     "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию."
   },
   "LOG_TRACKER": {
