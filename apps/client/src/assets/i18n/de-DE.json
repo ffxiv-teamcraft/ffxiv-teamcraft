@@ -1481,7 +1481,7 @@
     "Sort_desc": "Absteigend",
     "Add_stat_filter": "Filter hinzufügen",
     "Add_bonus_stat_filter": "Zusätzlichen Filter hinzufügen",
-    "Search_tip": "Durch die Eingabe von <patch #> (z. B: patch:5.01)  kannst du die Ergebnisse nach einem bestimmten Patch sortieren. ",
+    "Search_tip": "Durch die Eingabe von patch:<patch #> (z. B: patch:5.01) kannst du die Ergebnisse nach einem bestimmten Patch filtern.",
     "SORT_BY": {
       "Relevance": "Relevanz",
       "ID": "ID",
