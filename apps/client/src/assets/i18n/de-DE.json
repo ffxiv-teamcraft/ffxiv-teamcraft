@@ -620,10 +620,10 @@
     "Steps": "Stationen",
     "Loading_path": "Optimierter Pfad wird geladen (kann mehrere Sekunden dauern)",
     "STEP": {
-      "Gathering": "Sammel {{amount}}",
-      "Hunting": "Sammle {{amount}} von Monstern",
-      "Vendor": "Kaufe {{amount}}",
-      "Trade": "Handel {{amount}}"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
