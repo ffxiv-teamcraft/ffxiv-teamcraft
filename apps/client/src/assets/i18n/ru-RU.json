@@ -620,10 +620,10 @@
     "Steps": "Шаги",
     "Loading_path": "Загрузка оптимизированного пути (может занять несколько секунд)",
     "STEP": {
-      "Gathering": "Собрать {{amount}}",
-      "Hunting": "Получить {{amount}} с монстров",
-      "Vendor": "Купить {{amount}}",
-      "Trade": "Торговать {{amount}}"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
