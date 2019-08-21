@@ -620,10 +620,10 @@
     "Steps": "步骤",
     "Loading_path": "正在加载最优路径 (可能需要几秒)",
     "STEP": {
-      "Gathering": "采集 {{amount}} 个",
-      "Hunting": "怪物掉落 {{amount}} 个",
-      "Vendor": "购买 {{amount}} 个",
-      "Trade": "交换 {{amount}} 个"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
