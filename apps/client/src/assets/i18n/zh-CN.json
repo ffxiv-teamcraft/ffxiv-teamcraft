@@ -620,10 +620,10 @@
     "Steps": "步骤",
     "Loading_path": "正在加载最优路径 (可能需要几秒)",
     "STEP": {
-      "Gathering": "采集 {{amount}} 个",
-      "Hunting": "怪物掉落 {{amount}} 个",
-      "Vendor": "购买 {{amount}} 个",
-      "Trade": "交换 {{amount}} 个"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -771,7 +771,7 @@
     },
     "SOLVER": {
       "Hq_target": "目标HQ率",
-      "Use_rotation_as_seed": "Use current rotation as starting point",
+      "Use_rotation_as_seed": "用现在的手法起手",
       "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的手法而生，作为一个 AI，在其逐渐成长的过程中，可能生成完美的手法也可能生成非常差的手法。如果生成结果不理想，请不要报告其为 bug。"
     },
     "COMMUNITY_ROTATIONS": {
@@ -1038,7 +1038,7 @@
   },
   "UPDATE": {
     "New_update_available": "发现新版本！ ",
-    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
+    "New_update_available_desktop": "有新的更新！点击此处下载并安装。",
     "Web_instructions": "请刷新页面以使用最新版本。"
   },
   "LOG_TRACKER": {

@@ -620,10 +620,10 @@
     "Steps": "단계",
     "Loading_path": "추천 경로 불러오는 중 (몇 초 정도 소요될 수 있습니다)",
     "STEP": {
-      "Gathering": "{{amount}}개 채집",
-      "Hunting": "전투로 {{amount}}개 획득",
-      "Vendor": "{{amount}}개 상점에서 구매",
-      "Trade": "{{amount}}개 교환"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
