@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.9"></a>
+## [5.7.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.8...v5.7.9) (2019-08-23)
+
+
+### Bug Fixes
+
+* **db:** fixed position for raw petalite ([b372443](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b372443))
+* **layout:** fixed an issue with some filters not using zone breakdown properly ([ce903e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce903e3))
+
+
+### Features
+
+* **navigation:** added total of items needed for a given navigation step ([2f78b46](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f78b46))
+* **search:** better fuzzy search (e.g: "facet fending" now returns proper results) ([c7565b8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c7565b8))
+
+
+
 <a name="5.7.8"></a>
 ## [5.7.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.7...v5.7.8) (2019-08-15)
 
