@@ -620,10 +620,10 @@
     "Steps": "Passos",
     "Loading_path": "Loading optimized path (can take several seconds)",
     "STEP": {
-      "Gathering": "Coletar {{amount}}",
-      "Hunting": "Obtenha {{amount}} nos monstros",
-      "Vendor": "Comprar {{amount}}",
-      "Trade": "Trocar {{amount}}"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {

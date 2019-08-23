@@ -17,6 +17,7 @@ import { LeveData } from '../../model/garland-tools/leve-data';
 import { MobData } from '../../model/garland-tools/mob-data';
 import { FateData } from '../../model/garland-tools/fate-data';
 import {
+  SearchAlgo,
   SearchIndex,
   XivapiEndpoint,
   XivapiSearchFilter,
@@ -171,7 +172,8 @@ export class DataService {
       string: query,
       language: lang,
       filters: xivapiFilters,
-      columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks']
+      columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks'],
+      string_algo: SearchAlgo.WILDCARD_PLUS
     };
 
     if (sort[0]) {

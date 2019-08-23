@@ -620,10 +620,10 @@
     "Steps": "Étapes",
     "Loading_path": "Chargement du chemin optimisé (peut prendre plusieurs secondes)",
     "STEP": {
-      "Gathering": "Récolter {{amount}}",
-      "Hunting": "Obtenez {{amount}} sur des monstres",
-      "Vendor": "Acheter {{amount}}",
-      "Trade": "Échanger {{amount}}"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {

@@ -620,10 +620,10 @@
     "Steps": "段階",
     "Loading_path": "推奨経路を読み込み中(数秒くらい所要)",
     "STEP": {
-      "Gathering": "{{amount}} 個採集",
-      "Hunting": "戦闘で {{amount}} 個 獲得した",
-      "Vendor": "{{amount}} 個 商店から購入した",
-      "Trade": "{{amount}} 個 交換した"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {

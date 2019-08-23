@@ -7,7 +7,8 @@ export class ZoneBreakdown {
 
   constructor(rows: ListRow[], filterChain?: string, hideZoneDuplicates = false) {
     rows.forEach(row => {
-      if (row.gatheredBy !== undefined && row.gatheredBy.nodes !== undefined && row.gatheredBy.nodes.length !== 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_GATHERING)) {
+      if (row.gatheredBy !== undefined && row.gatheredBy.nodes !== undefined && row.gatheredBy.nodes.length !== 0
+        && this.hasOneFilter(filterChain, LayoutRowFilter.IS_GATHERING, LayoutRowFilter.IS_GATHERED_BY_BTN, LayoutRowFilter.IS_GATHERED_BY_MIN, LayoutRowFilter.IS_GATHERED_BY_FSH)) {
         row.gatheredBy.nodes.forEach(node => {
           this.addToBreakdown(node.zoneid, node.mapid, row, hideZoneDuplicates);
         });
