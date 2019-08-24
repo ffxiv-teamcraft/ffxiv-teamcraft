@@ -411,7 +411,7 @@
     "Merge_lists": "リストを併合する",
     "Merge_lists_warning": "大規模のリストはデータベースの制限で、まとめることはできないため、表示できません。",
     "Lists_merged": "リスト併合が完了されました！",
-    "Shared_lists": "書く権限があるリスト",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "選択項目をリストに追加する",
     "Your_lists": "マイリスト",
     "Outdated_tag": "古い",
@@ -970,16 +970,16 @@
     "Officer": "オフィサー",
     "Promote_officer": "オフィサーに昇格",
     "NOTIFICATIONS": {
-      "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加されました。",
-      "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を削除されました。",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**が **[{{listName}}]({{listUrl}})**にある {{totalNeeded}}個中に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** を完了に表示する",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "**{{teamName}}** チームをこのチャンネルから追跡し始めました。",
       "List_added_notification": "リスト **[{{listName}}]({{listUrl}})**がチームに追加されました。",
       "List_removed_notification": "リスト **[{{listName}}]({{listUrl}})**がチームから外されました。",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** さんがチームに入りました!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** がチームから抜けました。",
       "Name_changed": "**{{oldName}}** から **{{newName}}** に名前が変更されました。",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**が [{{listName}}]({{listUrl}})**の **[{{memberName}}]({{memberProfileUrl}})**に割り当てられました"
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "メンバー入りました",
