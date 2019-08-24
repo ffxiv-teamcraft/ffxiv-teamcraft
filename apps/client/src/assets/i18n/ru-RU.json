@@ -411,7 +411,7 @@
     "Merge_lists": "Объединить списки",
     "Merge_lists_warning": "Большие списки здесь не указаны, поскольку вы не можете объединить слишком большие списки из-за ограничений базы данных.",
     "Lists_merged": "Списки успешно соединены!",
-    "Shared_lists": "Списки, которые вы можете редактировать",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "Добавить выбранное в список",
     "Your_lists": "Ваши списки",
     "Outdated_tag": "Устаревшие",
@@ -970,16 +970,16 @@
     "Officer": "Офицер",
     "Promote_officer": "Повысить до офицера",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** добавлен в **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** удален из **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** пометил {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** из {{totalNeeded}} как выполненный в **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "Группа **{{teamName}}** теперь будет отслеживаться в этом канале.",
       "List_added_notification": "Список **[{{listName}}]({{listUrl}})** добавлен в группу.",
       "List_removed_notification": "Список **[{{listName}}]({{listUrl}})** удален из группы.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** присоединился к группе!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** был удален из группы.",
       "Name_changed": "Группа **{{oldName}}** переименована в **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** был назначен **[{{memberName}}]({{memberProfileUrl}})** в **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Участник присоединился",
