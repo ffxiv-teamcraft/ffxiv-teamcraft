@@ -16,6 +16,10 @@ All notable changes to this project will be documented in this file. See [standa
 * **permissions:** you can now share a list with only participate permission ([c187d63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c187d63))
 * **simulator:** excellent and poor now also apply their counterparts properly ([4911059](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4911059))
 
+#### A note about the permission changes
+
+The new permissions system can share lists with an explicit `PARTICIPATE` permission, this means that if you set someone's permission level to `PARTICIPATE` on a list,
+it'll show inside of their lists page, same applies for workshops. This is meant to share lists easily without having to give a link and mark it as favorite.
 
 
 <a name="5.7.9"></a>
