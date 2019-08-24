@@ -411,7 +411,7 @@
     "Merge_lists": "合并清单",
     "Merge_lists_warning": "此处未列出过长的清单，因为由于数据库限制，无法合并太大的清单。",
     "Lists_merged": "清单合并成功！",
-    "Shared_lists": "有写入权限的清单",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "添加选中物品到清单",
     "Your_lists": "我的清单",
     "Outdated_tag": "已过期",
@@ -970,16 +970,16 @@
     "Officer": "指挥官",
     "Promote_officer": "提升为指挥官",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}个x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 已加入清单 **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}个x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 已从清单 **[{{listName}}]({{listUrl}})** 删除。",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** 标记清单 **[{{listName}}]({{listUrl}})** 的物品 {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** / {{totalNeeded}} 为完成。",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "团队 **{{teamName}}** 在此频道被追踪。",
       "List_added_notification": "清单 **[{{listName}}] ({{listUrl}}) ** 已添加到团队中。",
       "List_removed_notification": "清单 **[{{listName}}] ({{listUrl}}) ** 已从团队中删除。",
       "Member_joined": "**[{{memberName}}] ({{memberProfileUrl}}) ** 已加入团队 ！",
       "Member_removed": "**[{{memberName}}] ({{memberProfileUrl}}) ** 已从团队中删除。",
       "Name_changed": "**{{oldName}}** 团队已重命名为 **{{newName}}**",
-      "User_assigned": "清单 **[{{listName}}]({{listUrl}})** 的 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 被指派给 **[{{memberName}}]({{memberProfileUrl}})**。"
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "成员加入",
