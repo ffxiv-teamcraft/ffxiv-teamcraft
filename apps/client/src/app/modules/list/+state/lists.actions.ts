@@ -6,7 +6,7 @@ export enum ListsActionTypes {
   LoadMyLists = '[Lists] Load My Lists',
   LoadTeamLists = '[Lists] Load Team Lists',
 
-  LoadListsWithWriteAccess = '[Lists] Load Lists With Write Access',
+  LoadSharedLists = '[Lists] Load Shared Lists',
 
   ListsForTeamsLoaded = '[Lists] Lists For Team Loaded',
 
@@ -21,7 +21,7 @@ export enum ListsActionTypes {
   MyListsLoaded = '[Lists] My Lists Loaded',
   TeamListsLoaded = '[Lists] Team Lists Loaded',
   ListCompactLoaded = '[Lists] List Compact Loaded',
-  ListsWithWriteAccessLoaded = '[Lists] Lists With Write Access Loaded',
+  SharedListsLoaded = '[Lists] Shared Lists Loaded',
   ListDetailsLoaded = '[Lists] List Details Loaded',
 
 
@@ -60,8 +60,8 @@ export class NeedsVerification implements Action {
   }
 }
 
-export class LoadListsWithWriteAccess implements Action {
-  readonly type = ListsActionTypes.LoadListsWithWriteAccess;
+export class LoadSharedLists implements Action {
+  readonly type = ListsActionTypes.LoadSharedLists;
 }
 
 export class LoadListDetails implements Action {
@@ -116,8 +116,8 @@ export class MyListsLoaded implements Action {
   }
 }
 
-export class ListsWithWriteAccessLoaded implements Action {
-  readonly type = ListsActionTypes.ListsWithWriteAccessLoaded;
+export class SharedListsLoaded implements Action {
+  readonly type = ListsActionTypes.SharedListsLoaded;
 
   constructor(public payload: List[]) {
   }
@@ -200,8 +200,8 @@ export type ListsAction =
   | UpdateListIndex
   | LoadListCompact
   | ListCompactLoaded
-  | LoadListsWithWriteAccess
-  | ListsWithWriteAccessLoaded
+  | LoadSharedLists
+  | SharedListsLoaded
   | UpdateItem
   | ListsForTeamsLoaded
   | NeedsVerification

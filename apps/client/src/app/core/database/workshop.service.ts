@@ -15,8 +15,8 @@ export class WorkshopService extends FirestoreRelationalStorage<Workshop> {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
-  public getWithWriteAccess(userId: string): Observable<Workshop[]> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 30))
+  public getShared(userId: string): Observable<Workshop[]> {
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 20))
       .snapshotChanges()
       .pipe(
         map((snaps: DocumentChangeAction<Workshop>[]) => {

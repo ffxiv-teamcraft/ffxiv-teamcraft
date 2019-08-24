@@ -411,7 +411,7 @@
     "Merge_lists": "Merge lists",
     "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "Lists merged with success !",
-    "Shared_lists": "Lists you have write access to",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "Add selection to a list",
     "Your_lists": "Your lists",
     "Outdated_tag": "Outdated",

@@ -7,7 +7,7 @@ import {
   DeleteWorkshop,
   LoadMyWorkshops,
   LoadWorkshop,
-  LoadWorkshopsWithWriteAccess,
+  LoadSharedWorkshops,
   RemoveListFromWorkshop,
   SelectWorkshop,
   UpdateWorkshop, UpdateWorkshopIndex
@@ -24,16 +24,18 @@ export class WorkshopsFacade {
   allWorkshops$ = this.store.select(workshopsQuery.getAllWorkshops);
   selectedWorkshop$ = this.store.select(workshopsQuery.getSelectedWorkshop);
 
-  myWorkshops$ = combineLatest(this.store.select(workshopsQuery.getAllWorkshops), this.authFacade.userId$)
+  myWorkshops$ = combineLatest([this.store.select(workshopsQuery.getAllWorkshops), this.authFacade.userId$])
     .pipe(
       map(([workshops, userId]) => workshops.filter(w => w.authorId === userId)),
       shareReplay(1)
     );
 
-  workshopsWithWriteAccess$ = combineLatest(this.store.select(workshopsQuery.getAllWorkshops), this.authFacade.userId$, this.authFacade.fcId$).pipe(
+  sharedWorkshops$ = combineLatest([this.store.select(workshopsQuery.getAllWorkshops), this.authFacade.userId$, this.authFacade.fcId$]).pipe(
     map(([compacts, userId, fcId]) => {
       return compacts.filter(c => {
-        return Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId;
+        return Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.PARTICIPATE
+          && (c.hasExplicitPermissions(userId) || c.hasExplicitPermissions(fcId))
+          && c.authorId !== userId;
       });
     }),
     shareReplay(1)
@@ -75,6 +77,6 @@ export class WorkshopsFacade {
   }
 
   loadWorkshopsWithWriteAccess(): void {
-    this.store.dispatch(new LoadWorkshopsWithWriteAccess());
+    this.store.dispatch(new LoadSharedWorkshops());
   }
 }
