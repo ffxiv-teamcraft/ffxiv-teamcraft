@@ -76,7 +76,7 @@
     "Created_by": "Créé par {{name}}",
     "Share_link_copied": "Lien de partage de l'atelier copié",
     "Not_found": "Atelier introuvable ou vous n'avez pas les droits d'accès",
-    "Shared_workshops": "Ateliers sur lesquels vous avez le droit d'écriture",
+    "Shared_workshops": "Workshops shared with you",
     "Rename": "Renommer l'atelier",
     "Add_lists": "Ajouter des listes"
   },
@@ -411,7 +411,7 @@
     "Merge_lists": "Fusionner des listes",
     "Merge_lists_warning": "Les grandes listes ne sont pas listées ici car vous ne pouvez pas fusionner les listes qui sont trop grandes en raison des limitations de base de données.",
     "Lists_merged": "Listes fusionnées avec succès !",
-    "Shared_lists": "Lists shared with you",
+    "Shared_lists": "Listes partagées avec vous",
     "Add_selection": "Ajouter la sélection à une liste",
     "Your_lists": "Vos listes",
     "Outdated_tag": "Pas à jour",
@@ -970,16 +970,16 @@
     "Officer": "Officier",
     "Promote_officer": "Promouvoir officier",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x ** [{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}}) ** a été ajouté à ** [{{listName}}] ({{listUrl}}) **.",
+      "Item_removed": "{{amount}}x ** [{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}}) ** a été retiré de ** [{{listName}}] ({{listUrl}})**.",
+      "List_progress": "** [{{characterName}}] ({{memberProfileUrl}}) ** marqué {{amount}}x ** [{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}}) ** sur {{totalNeeded}} comme fait sur la liste * * [{{listName}}], ({{listUrl}}) **.",
       "Webhook_setup_complete": "Ce salon a été défini comme salon de suivi pour l'équipe **{{teamName}}**.",
       "List_added_notification": "La liste ** [{{listName}}] ({{listUrl}}) ** a été ajoutée à l’équipe.",
       "List_removed_notification": "La liste ** [{{listName}}] ({{listUrl}}) ** a été retirée de l’équipe.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** a rejoint l'équipe!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** a été retiré de l'équipe.",
       "Name_changed": "L'équipe **{{oldName}}** a été renommée en **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}})** a été assigné à **[{{memberName}}]({{memberProfileUrl}})** sur la liste **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Un membre a rejoint",
