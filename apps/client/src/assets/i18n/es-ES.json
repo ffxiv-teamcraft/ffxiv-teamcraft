@@ -76,7 +76,7 @@
     "Created_by": "Creado por {{name}}",
     "Share_link_copied": "Vínculo para compartir taller copiado",
     "Not_found": "Taller no encontrado o no tiene acceso a él",
-    "Shared_workshops": "Workshops shared with you",
+    "Shared_workshops": "Talleres compartidos con usted",
     "Rename": "Renombrar taller",
     "Add_lists": "Agregar listas"
   },
@@ -411,7 +411,7 @@
     "Merge_lists": "Mezclar listas",
     "Merge_lists_warning": "Las listas grandes no se muestran porque no se puede combinar listas que son demasiado grandes debido a limitaciones de la base de datos.",
     "Lists_merged": "¡Listas mezcladas con éxito!",
-    "Shared_lists": "Lists shared with you",
+    "Shared_lists": "Listas compartidas con usted",
     "Add_selection": "Agregar selección a la lista",
     "Your_lists": "Sus listas",
     "Outdated_tag": "Desactualizado",
@@ -620,8 +620,8 @@
     "Steps": "Pasos",
     "Loading_path": "Cargando ruta optimizada (puede tomar varios segundos)",
     "STEP": {
-      "Gathering": "Gather {{amount}} (total: {{total}})",
-      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Gathering": "Recolectar {{amount}} (total: {{total}})",
+      "Hunting": "Consiguir {{amount}} en monstruos (total: {{total}})",
       "Vendor": "Buy {{amount}} (total: {{total}})",
       "Trade": "Trade {{amount}} (total: {{total}})"
     }
