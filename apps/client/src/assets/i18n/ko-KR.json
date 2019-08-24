@@ -411,7 +411,7 @@
     "Merge_lists": "목록 병합",
     "Merge_lists_warning": "대규모 목록은 데이터베이스의 한계로 인해 병합이 불가능하기 때문에 여기에 표시되지 않습니다.",
     "Lists_merged": "목록 병합이 완료되었습니다!",
-    "Shared_lists": "쓰기 권한이 있는 목록",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "선택항목을 목록에 추가",
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
@@ -970,16 +970,16 @@
     "Officer": "관리자",
     "Promote_officer": "관리자로 승급",
     "NOTIFICATIONS": {
-      "Item_added": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 추가하였습니다.",
-      "Item_removed": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 삭제하였습니다.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**이/가 **[{{listName}}]({{listUrl}})**에 있는 {{totalNeeded}}개 중에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 을/를 완료로 표시함",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "**{{teamName}}** 팀을 이 채널에서 추적하기 시작합니다.",
       "List_added_notification": "목록 **[{{listName}}]({{listUrl}})**이/가 팀에 추가되었습니다.",
       "List_removed_notification": "목록 **[{{listName}}]({{listUrl}})**이/가 팀에서 제거되었습니다.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** 님이 팀에 합류했습니다!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** 님이 팀에서 제외되었습니다.",
       "Name_changed": "**{{oldName}}** 에서 **{{newName}}** 로 이름이 변경되었습니다.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**이/가 [{{listName}}]({{listUrl}})**의 **[{{memberName}}]({{memberProfileUrl}})**에게 할당되었습니다."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "팀 가입",
