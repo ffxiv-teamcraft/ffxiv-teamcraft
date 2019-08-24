@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.10"></a>
+## [5.7.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.9...v5.7.10) (2019-08-24)
+
+
+### Bug Fixes
+
+* **navigation-map:** fixed total not showing correctly in full navigation path ([ea3904f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea3904f))
+
+
+### Features
+
+* **permissions:** you can now share a list with only participate permission ([c187d63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c187d63))
+* **simulator:** excellent and poor now also apply their counterparts properly ([4911059](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4911059))
+
+
+
 <a name="5.7.9"></a>
 ## [5.7.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.8...v5.7.9) (2019-08-23)
 
