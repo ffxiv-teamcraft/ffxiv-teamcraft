@@ -76,7 +76,7 @@
     "Created_by": "Erstellt von {{name}}",
     "Share_link_copied": "Workshoplink wurde kopiert",
     "Not_found": "Workshop nicht gefunden oder du hast keinen Zugriff darauf",
-    "Shared_workshops": "Workshops shared with you",
+    "Shared_workshops": "Mit dir geteilte Werkstätten",
     "Rename": "Werkstatt umbenennen",
     "Add_lists": "Listen hinzufügen"
   },
@@ -411,7 +411,7 @@
     "Merge_lists": "Listen zusammenfassen",
     "Merge_lists_warning": "Große Listen werden nicht angezeigt, da diese aufgrund von Datenbanklimitierungen nicht zusammengefügt werden können.",
     "Lists_merged": "Listen erfolgreich zusammengefasst!",
-    "Shared_lists": "Lists shared with you",
+    "Shared_lists": "Mit dir geteilte Listen",
     "Add_selection": "Auswahl zu einer Liste hinzufügen",
     "Your_lists": "Deine Listen",
     "Outdated_tag": "veraltet",
@@ -620,10 +620,10 @@
     "Steps": "Stationen",
     "Loading_path": "Optimierter Pfad wird geladen (kann mehrere Sekunden dauern)",
     "STEP": {
-      "Gathering": "Gather {{amount}} (total: {{total}})",
-      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
-      "Vendor": "Buy {{amount}} (total: {{total}})",
-      "Trade": "Trade {{amount}} (total: {{total}})"
+      "Gathering": "Sammel {{amount}} (Gesamt: {{total}})",
+      "Hunting": "Erhalte {{amount}} von Monstern (Gesamt: {{total}})",
+      "Vendor": "Kaufe {{amount}} (Gesamt: {{total}})",
+      "Trade": "Erhandel {{amount}} (Gesamt: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -970,8 +970,8 @@
     "Officer": "Offizier",
     "Promote_officer": "Zum Offizier befördern",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** wurde der Liste **[{{listName}}]({{listUrl}})** hinzugefügt.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** wurde aus der Liste **[{{listName}}]({{listUrl}})** entfernt.",
       "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "Das Team **{{teamName}}** wird jetzt in diesem Kanal verfolgt.",
       "List_added_notification": "Die Liste **[{{listName}}]({{listUrl}})** wurde dem Team hinzugefügt.",
