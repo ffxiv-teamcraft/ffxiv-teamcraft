@@ -411,7 +411,7 @@
     "Merge_lists": "Listen zusammenfassen",
     "Merge_lists_warning": "Große Listen werden nicht angezeigt, da diese aufgrund von Datenbanklimitierungen nicht zusammengefügt werden können.",
     "Lists_merged": "Listen erfolgreich zusammengefasst!",
-    "Shared_lists": "Listen mit Schreibzugriff",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "Auswahl zu einer Liste hinzufügen",
     "Your_lists": "Deine Listen",
     "Outdated_tag": "veraltet",
@@ -970,16 +970,16 @@
     "Officer": "Offizier",
     "Promote_officer": "Zum Offizier befördern",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** wurde der Liste **[{{listName}}]({{listUrl}})** hinzugefügt.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** wurde von der Liste **[{{listName}}]({{listUrl}})** entfernt.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** hat {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** von {{totalNeeded}} als erledigt markiert **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "Das Team **{{teamName}}** wird jetzt in diesem Kanal verfolgt.",
       "List_added_notification": "Die Liste **[{{listName}}]({{listUrl}})** wurde dem Team hinzugefügt.",
       "List_removed_notification": "Die Liste **[{{listName}}]({{listUrl}})** wurde vom Team entfernt.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** ist dem Team beigetreten!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** wurde aus dem Team entfernt.",
       "Name_changed": "Das Team **{{oldName}}** wurde in **{{newName}}** umbenannt.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** auf **[{{listName}}]({{listUrl}})** wurde **[{{memberName}}]({{memberProfileUrl}})** zugewiesen."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Mitglied beigetreten",
