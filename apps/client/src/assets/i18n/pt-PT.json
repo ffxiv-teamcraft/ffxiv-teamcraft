@@ -21,8 +21,8 @@
     "auth/wrong-password": "O email ou a password está errada"
   },
   "TIMERS": {
-    "Days": "days",
-    "Day": "day",
+    "Days": "dias",
+    "Day": "dia",
     "Hours": "h",
     "Minutes": "m",
     "Seconds": "s"
@@ -114,7 +114,7 @@
     "No_lists_matching": "Não há listas que correspondem aos seus filtros"
   },
   "COMMON": {
-    "Length": "Length",
+    "Length": "Comprimento",
     "Save": "Salvar",
     "Reset": "Redefinir",
     "Total": "Total",
@@ -131,13 +131,13 @@
     "Opened_in_desktop": "Esta página foi aberta na app do desktop, pode agora fecha-la.",
     "Open_in_desktop": "Abrir na app do desktop",
     "Admin": "Administrador",
-    "Moderator": "Moderator",
+    "Moderator": "Moderador",
     "Minutes_duration": "{{amount}} minutos",
     "Seconds_duration": "{{amount}} segundos",
     "None": "Nenhum",
-    "Top": "Top",
-    "Bottom": "Bottom",
-    "Amount": "Amount"
+    "Top": "Topo",
+    "Bottom": "Inferior",
+    "Amount": "Quantidade"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -149,7 +149,7 @@
     "Custom_sound": "Som do alarme personalizado",
     "New_group": "Novo grupo de alarmes",
     "Confirm_group_delete": "Tem certeza que deseja eliminar este grupo?",
-    "Delete_group_and_alarms": "Delete group with all alarms",
+    "Delete_group_and_alarms": "Eliminar grupo com todos os alarmes",
     "Confirm_group_delete_with_alarms": "Tem a certeza que deseja eliminar este grupo e todos os seus alarmes?",
     "Add_note": "Adicionar uma nota",
     "Volume": "Volume de som",
