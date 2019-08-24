@@ -9,7 +9,8 @@ import {
   map,
   pairwise,
   shareReplay,
-  startWith, switchMap,
+  startWith,
+  switchMap,
   takeUntil,
   tap
 } from 'rxjs/operators';
@@ -190,7 +191,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private job$: Observable<any>;
 
-  private stepStates$: BehaviorSubject<{[index:number]: StepState}> = new BehaviorSubject<{[index:number]: StepState}>({});
+  private stepStates$: BehaviorSubject<{ [index: number]: StepState }> = new BehaviorSubject<{ [index: number]: StepState }>({});
 
   // Regex stuff for macro import
   private findActionsRegex: RegExp =
@@ -553,7 +554,14 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   setState(index: number, state: StepState): void {
-    this.stepStates$.next({...this.stepStates$.value, [index]: state});
+    const newStates = { ...this.stepStates$.value, [index]: state };
+    if (state === StepState.EXCELLENT) {
+      newStates[index + 1] = StepState.POOR;
+    }
+    if (state === StepState.POOR) {
+      newStates[index - 1] = StepState.EXCELLENT;
+    }
+    this.stepStates$.next(newStates);
   }
 
   applyStats(): void {
