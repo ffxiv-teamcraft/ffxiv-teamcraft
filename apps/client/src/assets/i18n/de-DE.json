@@ -972,14 +972,14 @@
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** wurde der Liste **[{{listName}}]({{listUrl}})** hinzugefügt.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** wurde aus der Liste **[{{listName}}]({{listUrl}})** entfernt.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** hat {{amount}} von {{totalNeeded}} **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** in der Liste **[{{listName}}]({{listUrl}})** als erledigt markiert.",
       "Webhook_setup_complete": "Das Team **{{teamName}}** wird jetzt in diesem Kanal verfolgt.",
       "List_added_notification": "Die Liste **[{{listName}}]({{listUrl}})** wurde dem Team hinzugefügt.",
       "List_removed_notification": "Die Liste **[{{listName}}]({{listUrl}})** wurde vom Team entfernt.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** ist dem Team beigetreten!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** wurde aus dem Team entfernt.",
       "Name_changed": "Das Team **{{oldName}}** wurde in **{{newName}}** umbenannt.",
-      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** wurde in der Liste **[{{listName}}]({{listUrl}})** **[{{memberName}}]({{memberProfileUrl}})** zugewiesen."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Mitglied beigetreten",
