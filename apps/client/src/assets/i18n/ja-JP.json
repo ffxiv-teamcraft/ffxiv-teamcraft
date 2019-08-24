@@ -76,7 +76,7 @@
     "Created_by": "{{name}} で作成されました",
     "Share_link_copied": "工房シェアリンクにコピーされました",
     "Not_found": "この工房に無いか、アクセスする権限がありません",
-    "Shared_workshops": "書く権限がある工房",
+    "Shared_workshops": "Workshops shared with you",
     "Rename": "工房名を変更する",
     "Add_lists": "リストを追加する"
   },
