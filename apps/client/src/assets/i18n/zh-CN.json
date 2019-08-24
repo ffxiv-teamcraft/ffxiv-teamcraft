@@ -76,7 +76,7 @@
     "Created_by": "由 {{name}} 创建",
     "Share_link_copied": "工坊分享链接已复制",
     "Not_found": "没有找到工坊或者你没有权限访问该工坊",
-    "Shared_workshops": "有写入权限的工坊",
+    "Shared_workshops": "Workshops shared with you",
     "Rename": "重命名工坊",
     "Add_lists": "添加清单"
   },
