@@ -71,7 +71,7 @@
     "Add_one_list": "Eine Liste hinzufügen",
     "Add_workshop": "Workshop hinzufügen",
     "Delete_message": "Das Löschen eines Workshops wird nicht die beinhalteten Listen löschen, stattdessen werden sie zu den Listen ohne Workshop hinzugefügt",
-    "List_selection_title": "Listen auswählen, um sie zu Workshop {{workshopName}} hinzuzufügen",
+    "List_selection_title": "Listen auswählen, die der Werkstatt {{workshopName}} hinzugefügt werden sollen",
     "Name_dialog": "Workshopname",
     "Created_by": "Erstellt von {{name}}",
     "Share_link_copied": "Workshoplink wurde kopiert",
@@ -623,7 +623,7 @@
       "Gathering": "Sammel {{amount}} (Gesamt: {{total}})",
       "Hunting": "Erhalte {{amount}} von Monstern (Gesamt: {{total}})",
       "Vendor": "Kaufe {{amount}} (Gesamt: {{total}})",
-      "Trade": "Erhandel {{amount}} (Gesamt: {{total}})"
+      "Trade": "Erhandle {{amount}} (Gesamt: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
