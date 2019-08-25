@@ -13,6 +13,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
+* **list:** you can now assign multiple users to an item ([bf47202](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf47202))
+* **list:** you can now mark an entire panel as done at once ([d986e2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d986e2c))
+* **list:** you can now undo actions from the history view inside the list ([a1bc9cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a1bc9cb))
 * **permissions:** you can now share a list with only participate permission ([c187d63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c187d63))
 * **simulator:** excellent and poor now also apply their counterparts properly ([4911059](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4911059))
 
