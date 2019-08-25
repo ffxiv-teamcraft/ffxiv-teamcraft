@@ -242,6 +242,12 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
   }
 
+  public markPanelAsDone(): void {
+    this.displayRow.rows.forEach(row => {
+      this.listsFacade.setItemDone(row.id, row.icon, this.finalItems, row.amount - row.done, row.recipeId, row.amount, false);
+    });
+  }
+
   private topologicalSort(data: ListRow[]): ListRow[] {
     const res: ListRow[] = [];
     const doneList: boolean[] = [];
