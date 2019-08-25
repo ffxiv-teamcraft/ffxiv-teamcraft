@@ -366,8 +366,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
-  removeWorkingOnIt(): void {
-    delete this.item.workingOnIt;
+  removeWorkingOnIt(userId: string): void {
+    this.item.workingOnIt = (this.item.workingOnIt || []).filter(u => u !== userId);
     this.saveItem();
   }
 
@@ -404,7 +404,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   setWorkingOnIt(uid: string): void {
-    this.item.workingOnIt = uid;
+    this.item.workingOnIt = this.item.workingOnIt || [];
+    this.item.workingOnIt.push(uid);
     this.saveItem();
     this.listsFacade.selectedList$.pipe(
       first(),
