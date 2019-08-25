@@ -979,7 +979,7 @@
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** ist dem Team beigetreten!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** wurde aus dem Team entfernt.",
       "Name_changed": "Das Team **{{oldName}}** wurde in **{{newName}}** umbenannt.",
-      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** wurde in der Liste **[{{listName}}]({{listUrl}})** **[{{memberName}}]({{memberProfileUrl}})** zugewiesen."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** in der Liste **[{{listName}}]({{listUrl}})** wurde **[{{memberName}}]({{memberProfileUrl}})** zugewiesen."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Mitglied beigetreten",
