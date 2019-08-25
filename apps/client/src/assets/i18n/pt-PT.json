@@ -137,7 +137,8 @@
     "None": "Nenhum",
     "Top": "Topo",
     "Bottom": "Inferior",
-    "Amount": "Quantidade"
+    "Amount": "Quantidade",
+    "Undo": "Undo"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -458,6 +459,7 @@
     "Show_craftable_amount": "Mostrar quantidade produzíveis",
     "Optimized_full_path": "Mostrar rota optimizado (mais barata e rápida)",
     "Quick_layout_swap": "Troca rápida de layout",
+    "Mark_whole_panel_done": "Mark panel content as done",
     "INVENTORY": {
       "Show_final_items": "Mostrar itens finais",
       "Hide_final_items": "Ocultar itens finais"
