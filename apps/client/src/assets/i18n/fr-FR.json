@@ -76,7 +76,7 @@
     "Created_by": "Créé par {{name}}",
     "Share_link_copied": "Lien de partage de l'atelier copié",
     "Not_found": "Atelier introuvable ou vous n'avez pas les droits d'accès",
-    "Shared_workshops": "Ateliers sur lesquels vous avez le droit d'écriture",
+    "Shared_workshops": "Ateliers partagés avec vous",
     "Rename": "Renommer l'atelier",
     "Add_lists": "Ajouter des listes"
   },
@@ -137,7 +137,8 @@
     "None": "Aucun",
     "Top": "Début",
     "Bottom": "Fin",
-    "Amount": "Quantité"
+    "Amount": "Quantité",
+    "Undo": "Annuler"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -411,7 +412,7 @@
     "Merge_lists": "Fusionner des listes",
     "Merge_lists_warning": "Les grandes listes ne sont pas listées ici car vous ne pouvez pas fusionner les listes qui sont trop grandes en raison des limitations de base de données.",
     "Lists_merged": "Listes fusionnées avec succès !",
-    "Shared_lists": "Listes sur lesquelles vous avez le droit d'écriture",
+    "Shared_lists": "Listes partagées avec vous",
     "Add_selection": "Ajouter la sélection à une liste",
     "Your_lists": "Vos listes",
     "Outdated_tag": "Pas à jour",
@@ -458,6 +459,7 @@
     "Show_craftable_amount": "Voir la quantité fabricable",
     "Optimized_full_path": "Afficher le chemin optimisé complet (le moins cher et le plus rapide)",
     "Quick_layout_swap": "Changement de layout rapide",
+    "Mark_whole_panel_done": "Marquer le contenu du panneau comme terminé",
     "INVENTORY": {
       "Show_final_items": "Afficher les éléments finaux",
       "Hide_final_items": "Masquer les éléments finaux"
@@ -620,10 +622,10 @@
     "Steps": "Étapes",
     "Loading_path": "Chargement du chemin optimisé (peut prendre plusieurs secondes)",
     "STEP": {
-      "Gathering": "Gather {{amount}} (total: {{total}})",
-      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
-      "Vendor": "Buy {{amount}} (total: {{total}})",
-      "Trade": "Trade {{amount}} (total: {{total}})"
+      "Gathering": "Récolter {{amount}} (total : {{total}})",
+      "Hunting": "Obtenir {{amount}} sur les monstres (total : {{total}})",
+      "Vendor": "Acheter {{amount}} (total : {{total}})",
+      "Trade": "Échanger {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -970,16 +972,16 @@
     "Officer": "Officier",
     "Promote_officer": "Promouvoir officier",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été ajouté à ** [{{listName}}] ({{listUrl}}) **.",
-      "Item_removed": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été retiré de ** [{{listName}}] ({{listUrl}})**.",
-      "List_progress": "** [{{characterName}}] ({{memberProfileUrl}}) ** marqué {{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** sur {{totalNeeded}} comme fait sur la liste * * [{{listName}}], ({{listUrl}}) **.",
+      "Item_added": "{{amount}}x ** [{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}}) ** a été ajouté à ** [{{listName}}] ({{listUrl}}) **.",
+      "Item_removed": "{{amount}}x ** [{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}}) ** a été retiré de ** [{{listName}}] ({{listUrl}})**.",
+      "List_progress": "** [{{characterName}}] ({{memberProfileUrl}}) ** marqué {{amount}}x ** [{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}}) ** sur {{totalNeeded}} comme fait sur la liste * * [{{listName}}], ({{listUrl}}) **.",
       "Webhook_setup_complete": "Ce salon a été défini comme salon de suivi pour l'équipe **{{teamName}}**.",
       "List_added_notification": "La liste ** [{{listName}}] ({{listUrl}}) ** a été ajoutée à l’équipe.",
       "List_removed_notification": "La liste ** [{{listName}}] ({{listUrl}}) ** a été retirée de l’équipe.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** a rejoint l'équipe!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** a été retiré de l'équipe.",
       "Name_changed": "L'équipe **{{oldName}}** a été renommée en **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** a été assigné à **[{{memberName}}]({{memberProfileUrl}})** sur la liste **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}})** a été assigné à **[{{memberName}}]({{memberProfileUrl}})** sur la liste **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Un membre a rejoint",
@@ -1038,7 +1040,7 @@
   },
   "UPDATE": {
     "New_update_available": "Une nouvelle mise à jour est disponible ! ",
-    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
+    "New_update_available_desktop": "Une nouvelle mise à jour est disponible !\nCliquez ici pour la télécharger et l'installer.",
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente."
   },
   "LOG_TRACKER": {
