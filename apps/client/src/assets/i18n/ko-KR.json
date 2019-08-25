@@ -137,7 +137,8 @@
     "None": "없음",
     "Top": "맨 위로",
     "Bottom": "맨 아래로",
-    "Amount": "수량"
+    "Amount": "수량",
+    "Undo": "Undo"
   },
   "ALARMS": {
     "Title": "알람",
@@ -458,6 +459,7 @@
     "Show_craftable_amount": "제작 가능한 수량 표시",
     "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
     "Quick_layout_swap": "빠른 레이아웃 전환",
+    "Mark_whole_panel_done": "Mark panel content as done",
     "INVENTORY": {
       "Show_final_items": "최종 아이템 표시",
       "Hide_final_items": "최종 아이템 숨기기"
