@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.10"></a>
+## [5.7.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.9...v5.7.10) (2019-08-24)
+
+
+### Bug Fixes
+
+* **navigation-map:** fixed total not showing correctly in full navigation path ([ea3904f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea3904f))
+
+
+### Features
+
+* **list:** you can now assign multiple users to an item ([bf47202](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf47202))
+* **list:** you can now mark an entire panel as done at once ([d986e2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d986e2c))
+* **list:** you can now undo actions from the history view inside the list ([a1bc9cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a1bc9cb))
+* **permissions:** you can now share a list with only participate permission ([c187d63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c187d63))
+* **simulator:** excellent and poor now also apply their counterparts properly ([4911059](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4911059))
+
+#### A note about the permission changes
+
+The new permissions system can share lists with an explicit `PARTICIPATE` permission, this means that if you set someone's permission level to `PARTICIPATE` on a list,
+it'll show inside of their lists page, same applies for workshops. This is meant to share lists easily without having to give a link and mark it as favorite.
+
+
 <a name="5.7.9"></a>
 ## [5.7.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.8...v5.7.9) (2019-08-23)
 

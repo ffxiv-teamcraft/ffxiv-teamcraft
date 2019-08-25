@@ -37,7 +37,7 @@ export function workshopsReducer(
       break;
     }
 
-    case WorkshopsActionTypes.WorkshopsWithWriteAccessLoaded: {
+    case WorkshopsActionTypes.SharedWorkshopsLoaded: {
       state = {
         ...state,
         workshops: [

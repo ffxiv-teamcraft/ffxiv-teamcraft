@@ -67,7 +67,7 @@ export function listsReducer(
       break;
     }
 
-    case ListsActionTypes.ListsWithWriteAccessLoaded: {
+    case ListsActionTypes.SharedListsLoaded: {
       state = {
         ...state,
         compacts: [

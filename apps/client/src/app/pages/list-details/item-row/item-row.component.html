@@ -31,8 +31,8 @@
       </span>
           </div>
         </div>
-        <app-user-avatar class="working-on-it" *ngIf="item.workingOnIt !== undefined" messageKey="Is_working_on_it"
-                         [userId]="item.workingOnIt" [width]="24"></app-user-avatar>
+        <app-user-avatar class="working-on-it" *ngFor="let user of item.workingOnIt" messageKey="Is_working_on_it"
+                         [userId]="user" [width]="24"></app-user-avatar>
 
         <div fxLayout="row" class="menu-buttons" fxLayoutGap="5px">
           <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="item.id"
@@ -73,18 +73,65 @@
             </button>
           </ng-container>
 
+          <ng-container *ngIf="!isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)">
+            <ng-container *ngIf="userId$ | async as userId">
+              <ng-container *ngIf="team$ | async as team">
+                <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options"
+                             *ngIf="team.leader === userId || (!team.notFound && team.isOfficer(userId))">
+                  <button nz-dropdown nzSize="small"
+                          (click)="$event.stopPropagation()"
+                          nz-tooltip [nzTitle]="'TEAMS.Assign_team_member' | translate"
+                          nz-button [nzShape]="'circle'">
+                    <i nz-icon type="team"></i>
+                  </button>
+                  <ul nz-menu class="team-members">
+                    <ng-container *ngFor="let member of team.members">
+                      <ng-container *ngIf="item.workingOnIt?.indexOf(member) === -1">
+                        <li nz-menu-item *ngIf="member | characterName | async as charName"
+                            (click)="assignTeamMember(team, member)">{{charName}}
+                        </li>
+                      </ng-container>
+                    </ng-container>
+                  </ul>
+                </nz-dropdown>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+
           <ng-container *ngIf="isButton(itemRowTypes.WORK_ON_IT)">
             <ng-container *ngIf="userId$ | async as userId">
               <button nz-button nzSize="small" nzShape="circle" (click)="setWorkingOnIt(userId)" nz-tooltip
                       [nzTitle]="'Work_on_it' | translate"
-                      *ngIf="item.workingOnIt === undefined && loggedIn$ | async">
+                      *ngIf="(item.workingOnIt === undefined || item.workingOnIt?.indexOf(userId) === -1) && loggedIn$ | async">
                 <i nz-icon type="user-add"></i>
               </button>
-              <button nz-button nzSize="small" nzShape="circle" nzType="danger" (click)="removeWorkingOnIt()" nz-tooltip
-                      [nzTitle]="'Remove_work_on_it' | translate"
-                      *ngIf="item.workingOnIt !== undefined && (userId === item.workingOnIt || (team$ | async)?.leader === userId)">
-                <i nz-icon type="user-delete"></i>
-              </button>
+              <ng-container *ngIf="team$ | async as team; else removeSingleAssignment">
+                <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
+                  <button nz-dropdown nzSize="small"
+                          (click)="$event.stopPropagation()"
+                          nz-tooltip [nzTitle]="'Remove_work_on_it' | translate"
+                          nz-button [nzShape]="'circle'">
+                    <i nz-icon type="user-delete"></i>
+                  </button>
+                  <ul nz-menu class="team-members">
+                    <ng-container *ngFor="let user of item.workingOnIt">
+                      <li nz-menu-item *ngIf="user | characterName | async as charName"
+                          [nzDisabled]="team.leader !== userId && (team.notFound || !team.isOfficer(userId)) && user !== userId"
+                          (click)="removeWorkingOnIt(user)">{{charName}}
+                      </li>
+                    </ng-container>
+                  </ul>
+                </nz-dropdown>
+              </ng-container>
+              <ng-template #removeSingleAssignment>
+                <button nz-dropdown nzSize="small"
+                        *ngIf="item.workingOnIt.indexOf(userId) > -1 && loggedIn$ | async"
+                        (click)="removeWorkingOnIt(userId)"
+                        nz-tooltip [nzTitle]="'Remove_work_on_it' | translate"
+                        nz-button [nzShape]="'circle'">
+                  <i nz-icon type="user-delete"></i>
+                </button>
+              </ng-template>
             </ng-container>
           </ng-container>
 
@@ -100,29 +147,6 @@
                     (click)="showTagInput()">
               <i nz-icon type="tag"></i>
             </button>
-          </ng-container>
-
-          <ng-container *ngIf="!isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)">
-            <ng-container *ngIf="userId$ | async as userId">
-              <ng-container *ngIf="team$ | async as team">
-                <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options"
-                             *ngIf="team.leader === userId || (!team.notFound && team.isOfficer(userId))">
-                  <button nz-dropdown nzSize="small"
-                          (click)="$event.stopPropagation()"
-                          nz-tooltip [nzTitle]="'TEAMS.Assign_team_member' | translate"
-                          nz-button [nzShape]="'circle'">
-                    <i nz-icon type="team"></i>
-                  </button>
-                  <ul nz-menu class="team-members">
-                    <ng-container *ngFor="let member of team.members">
-                      <li nz-menu-item *ngIf="member | characterName | async as charName"
-                          (click)="assignTeamMember(team, member)">{{charName}}
-                      </li>
-                    </ng-container>
-                  </ul>
-                </nz-dropdown>
-              </ng-container>
-            </ng-container>
           </ng-container>
 
           <ng-container *ngIf="isButton(itemRowTypes.EDIT_AMOUNT)">
@@ -221,34 +245,54 @@
                 </li>
               </ng-container>
 
-              <ng-container *ngIf="!isButton(itemRowTypes.WORK_ON_IT)">
-                <li nz-menu-item (click)="setWorkingOnIt(userId)"
-                    *ngIf="item.workingOnIt === undefined && loggedIn$ | async">
-                  {{'Work_on_it' | translate}}
-                </li>
-                <li nz-menu-item (click)="removeWorkingOnIt()"
-                    *ngIf="item.workingOnIt !== undefined && (userId === item.workingOnIt || (team$ | async)?.leader === userId)">
-                  {{'Remove_work_on_it' | translate}}
-                </li>
-              </ng-container>
-
               <ng-container *ngIf="!isButton(itemRowTypes.REQUIREMENTS)">
                 <li nz-menu-item (click)="openRequirementsPopup()">{{'Requirements_for_craft' | translate}}</li>
               </ng-container>
+
               <ng-container *ngIf="!isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)">
                 <ng-container *ngIf="team$ | async as team">
                   <li nz-submenu *ngIf="team.leader === userId || (!team.notFound && team.isOfficer(userId))">
                     <span title>{{'TEAMS.Assign_team_member' | translate}}</span>
                     <ul nz-menu class="team-members">
                       <ng-container *ngFor="let member of team.members">
-                        <li nz-menu-item *ngIf="member | characterName | async as charName"
-                            (click)="assignTeamMember(team, member)">{{charName}}
-                        </li>
+                        <ng-container *ngIf="item.workingOnIt?.indexOf(member) === -1">
+                          <li nz-menu-item *ngIf="member | characterName | async as charName"
+                              (click)="assignTeamMember(team, member)">{{charName}}
+                          </li>
+                        </ng-container>
                       </ng-container>
                     </ul>
                   </li>
                 </ng-container>
               </ng-container>
+
+              <ng-container *ngIf="!isButton(itemRowTypes.WORK_ON_IT)">
+                <li nz-menu-item (click)="setWorkingOnIt(userId)"
+                    *ngIf="(item.workingOnIt === undefined || item.workingOnIt?.indexOf(userId) === -1) && loggedIn$ | async">
+                  {{'Work_on_it' | translate}}
+                </li>
+                <ng-container *ngIf="team$ | async as team; else removeSingleAssignment">
+                  <li nz-submenu>
+                    <span title>{{'Remove_work_on_it' | translate}}</span>
+                    <ul nz-menu class="team-members">
+                      <ng-container *ngFor="let user of item.workingOnIt">
+                        <li nz-menu-item *ngIf="user | characterName | async as charName"
+                            [nzDisabled]="team.leader !== userId && (team.notFound || !team.isOfficer(userId)) && user !== userId"
+                            (click)="removeWorkingOnIt(user)">{{charName}}
+                        </li>
+                      </ng-container>
+                    </ul>
+                  </li>
+                </ng-container>
+                <ng-template #removeSingleAssignment>
+                  <li nz-menu-item (click)="removeWorkingOnIt(userId)"
+                      *ngIf="item.workingOnIt?.indexOf(userId) > -1 && loggedIn$ | async">
+                    {{'Remove_work_on_it' | translate}}
+                  </li>
+                </ng-template>
+
+              </ng-container>
+
               <ng-container *ngIf="!isButton(itemRowTypes.EDIT_AMOUNT)">
                 <li nz-menu-item *ngIf="finalItem && (permissionLevel$ | async) >= 30"
                     (click)="changeAmount()">

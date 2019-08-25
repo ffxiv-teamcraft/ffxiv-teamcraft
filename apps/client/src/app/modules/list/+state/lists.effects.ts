@@ -10,7 +10,7 @@ import {
   ListDetailsLoaded,
   ListsActionTypes,
   ListsForTeamsLoaded,
-  ListsWithWriteAccessLoaded,
+  SharedListsLoaded,
   LoadListCompact,
   LoadListDetails,
   LoadTeamLists,
@@ -80,20 +80,20 @@ export class ListsEffects {
 
   @Effect()
   loadListsWithWriteAccess$ = this.actions$.pipe(
-    ofType(ListsActionTypes.LoadListsWithWriteAccess),
+    ofType(ListsActionTypes.LoadSharedLists),
     first(),
-    switchMap(() => combineLatest(this.authFacade.user$, this.authFacade.fcId$)),
+    switchMap(() => combineLatest([this.authFacade.user$, this.authFacade.fcId$])),
     distinctUntilChanged(),
     switchMap(([user, fcId]) => {
       // First of all, load using user Id
-      return this.listCompactsService.getWithWriteAccess(user.$key).pipe(
+      return this.listCompactsService.getShared(user.$key).pipe(
         switchMap((lists) => {
           // If we don't have fc informations yet, return the lists directly.
           if (!fcId) {
             return of(lists);
           }
           // Else add fc lists
-          return this.listCompactsService.getWithWriteAccess(fcId).pipe(
+          return this.listCompactsService.getShared(fcId).pipe(
             map(fcLists => {
               const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
               const verified = idEntry && idEntry.verified;
@@ -108,7 +108,7 @@ export class ListsEffects {
         })
       );
     }),
-    map(lists => new ListsWithWriteAccessLoaded(lists))
+    map(lists => new SharedListsLoaded(lists))
   );
 
   @Effect()
@@ -280,7 +280,10 @@ export class ListsEffects {
         date: Date.now(),
         itemId: action.itemId,
         itemIcon: action.itemIcon,
-        userId: userId
+        userId: userId,
+        finalItem: action.finalItem,
+        total: action.totalNeeded,
+        recipeId: action.recipeId
       });
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
         this.discordWebhookService.notifyItemChecked(team, action.itemIcon, list, userId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
@@ -288,7 +291,7 @@ export class ListsEffects {
       return [action, list];
     }),
     map(([action, list]: [SetItemDone, List]) => {
-      list.setDone(action.itemId, action.doneDelta, !action.finalItem,action.finalItem, false , action.recipeId, action.external);
+      list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
       return list;
     }),
     map(list => new UpdateList(list))

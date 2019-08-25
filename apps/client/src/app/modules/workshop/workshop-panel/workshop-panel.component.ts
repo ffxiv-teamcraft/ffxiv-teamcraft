@@ -39,7 +39,7 @@ export class WorkshopPanelComponent implements OnChanges {
   @Input()
   lists: List[] = [];
 
-  permissionLevel$: Observable<PermissionLevel> = combineLatest(this.authFacade.userId$, this.workshop$).pipe(
+  permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.workshop$]).pipe(
     map(([userId, workshop]) => workshop.getPermissionLevel(userId)),
     distinctUntilChanged(),
     shareReplay(1)

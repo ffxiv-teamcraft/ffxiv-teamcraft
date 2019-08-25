@@ -40,7 +40,7 @@ export class ListRow extends DataModel {
   alarms?: Alarm[] = [];
   masterbooks?: CompactMasterbook[] = [];
   tripleTriadDuels?: TripleTriadDuel[] = [];
-  tripleTriadPack?: {id: number, price: number};
+  tripleTriadPack?: { id: number, price: number };
   quests?: number[] = [];
   treasures?: Treasure[] = [];
   fates?: FateData[] = [];
@@ -49,7 +49,7 @@ export class ListRow extends DataModel {
   /**
    * Is someone working on it?
    */
-  workingOnIt?: string;
+  workingOnIt?: string[] = [];
 
   /**
    * Manual flag for an item required as HQ

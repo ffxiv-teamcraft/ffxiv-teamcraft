@@ -28,13 +28,13 @@ export class ListsComponent {
 
   public teamsDisplays$: Observable<{ team: Team, lists: List[] }[]>;
 
-  public listsWithWriteAccess$: Observable<List[]>;
+  public sharedLists$: Observable<List[]>;
 
   public favoriteLists$: Observable<List[]>;
 
   public workshops$: Observable<WorkshopDisplay[]>;
 
-  public workshopsWithWriteAccess$: Observable<WorkshopDisplay[]>;
+  public sharedWorkshops$: Observable<WorkshopDisplay[]>;
 
   public query$ = new BehaviorSubject<string>('');
 
@@ -51,7 +51,7 @@ export class ListsComponent {
               private translate: TranslateService, private dialog: NzModalService,
               private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade,
               private authFacade: AuthFacade) {
-    this.workshops$ = combineLatest(this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$).pipe(
+    this.workshops$ = combineLatest([this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$]).pipe(
       debounceTime(100),
       map(([workshops, compacts]) => {
         return workshops
@@ -84,7 +84,7 @@ export class ListsComponent {
       })
     );
 
-    this.workshopsWithWriteAccess$ = combineLatest(this.workshopsFacade.workshopsWithWriteAccess$, this.listsFacade.compacts$).pipe(
+    this.sharedWorkshops$ = combineLatest([this.workshopsFacade.sharedWorkshops$, this.listsFacade.compacts$]).pipe(
       debounceTime(100),
       map(([workshops, compacts]) => {
         return workshops
@@ -123,7 +123,7 @@ export class ListsComponent {
       shareReplay(1)
     );
 
-    this.lists$ = combineLatest(this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.workshopsWithWriteAccess$, this.teamsDisplays$, this.query$).pipe(
+    this.lists$ = combineLatest([this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$, this.query$]).pipe(
       filter(([loading]) => !loading),
       debounceTime(100),
       map(([, lists, myWorkshops, workshopsWithWriteAccess, teamDisplays, query]: [boolean, List[], WorkshopDisplay[], WorkshopDisplay[], any[], string]) => {
@@ -149,11 +149,14 @@ export class ListsComponent {
       }),
       shareReplay(1)
     );
-    this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(
+    this.sharedLists$ = combineLatest([this.listsFacade.sharedLists$, this.workshopsFacade.sharedWorkshops$]).pipe(
       debounceTime(100),
+      map(([lists, workshops]) => {
+        return lists.filter(l => !workshops.some(w => w.listIds.some(id => id === l.$key)));
+      }),
       shareReplay(1)
     );
-    this.loading$ = combineLatest(this.lists$, this.workshops$, this.workshopsWithWriteAccess$, this.teamsDisplays$).pipe(
+    this.loading$ = combineLatest([this.lists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$]).pipe(
       map(() => false),
       startWith(true)
     );

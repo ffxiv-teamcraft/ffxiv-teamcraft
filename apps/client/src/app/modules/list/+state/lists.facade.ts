@@ -9,7 +9,7 @@ import {
   DeleteList,
   LoadListCompact,
   LoadListDetails,
-  LoadListsWithWriteAccess,
+  LoadSharedLists,
   LoadMyLists,
   LoadTeamLists,
   NeedsVerification,
@@ -53,18 +53,21 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  listsWithWriteAccess$ = this.authFacade.loggedIn$.pipe(
+  sharedLists$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
       if (!loggedIn) {
         return combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.userId$]).pipe(
           map(([compacts, userId]) => {
             return compacts.filter(c => {
-              return !c.notFound && c.getPermissionLevel(userId) >= PermissionLevel.WRITE && c.authorId !== userId;
+              return !c.notFound
+                && c.getPermissionLevel(userId) >= PermissionLevel.PARTICIPATE
+                && c.hasExplicitPermissions(userId)
+                && c.authorId !== userId;
             });
           })
         );
       }
-      return combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$).pipe(
+      return combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$]).pipe(
         map(([compacts, user, userId, fcId]) => {
           if (user !== null) {
             const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
@@ -75,13 +78,35 @@ export class ListsFacade {
           }
           return this.sortLists(
             compacts.filter(c => {
-              return !c.notFound && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId;
+              return !c.notFound
+                && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.PARTICIPATE
+                && (c.hasExplicitPermissions(userId) || c.hasExplicitPermissions(fcId))
+                && c.authorId !== userId;
             })
           );
         })
       );
     }),
     shareReplay(1)
+  );
+
+  public listsWithWriteAccess$ = combineLatest([this.sharedLists$, this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$]).pipe(
+    map(([compacts, user, userId, fcId]) => {
+      if (user !== null) {
+        const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
+        const verified = idEntry && idEntry.verified;
+        if (!verified) {
+          fcId = null;
+        }
+      }
+      return this.sortLists(
+        compacts.filter(c => {
+          return !c.notFound
+            && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE
+            && c.authorId !== userId;
+        })
+      );
+    })
   );
 
   selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(filter(list => list !== undefined));
@@ -207,7 +232,7 @@ export class ListsFacade {
   }
 
   loadListsWithWriteAccess(): void {
-    this.store.dispatch(new LoadListsWithWriteAccess());
+    this.store.dispatch(new LoadSharedLists());
   }
 
   loadCompact(key: string): void {

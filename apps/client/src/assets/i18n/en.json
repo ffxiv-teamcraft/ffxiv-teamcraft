@@ -76,7 +76,7 @@
     "Created_by": "Created by {{name}}",
     "Share_link_copied": "Workshop share link copied",
     "Not_found": "Workshop not found or you don't have access to it",
-    "Shared_workshops": "Workshops you have write access to",
+    "Shared_workshops": "Workshops shared with you",
     "Rename": "Rename workshop",
     "Add_lists": "Add lists"
   },
@@ -137,7 +137,8 @@
     "None": "None",
     "Top": "Top",
     "Bottom": "Bottom",
-    "Amount": "Amount"
+    "Amount": "Amount",
+    "Undo": "Undo"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -411,7 +412,7 @@
     "Merge_lists": "Merge lists",
     "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "Lists merged with success !",
-    "Shared_lists": "Lists you have write access to",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "Add selection to a list",
     "Your_lists": "Your lists",
     "Outdated_tag": "Outdated",
@@ -458,6 +459,7 @@
     "Show_craftable_amount": "Show craftable amount",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "Quick_layout_swap": "Quick layout swap",
+    "Mark_whole_panel_done": "Mark panel content as done",
     "INVENTORY": {
       "Show_final_items": "Show final items",
       "Hide_final_items": "Hide final items"
@@ -970,16 +972,16 @@
     "Officer": "Officer",
     "Promote_officer": "Promote to officer",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "The **{{teamName}}** team will now be tracked in this channel.",
       "List_added_notification": "The list **[{{listName}}]({{listUrl}})** has been added to the team.",
       "List_removed_notification": "The list **[{{listName}}]({{listUrl}})** has been removed from the team.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** has joined the team!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
       "Name_changed": "The **{{oldName}}** team has been renamed to **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Member joined",

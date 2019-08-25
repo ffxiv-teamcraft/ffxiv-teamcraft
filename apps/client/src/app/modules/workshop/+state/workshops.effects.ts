@@ -9,7 +9,7 @@ import {
   UpdateWorkshop,
   WorkshopLoaded,
   WorkshopsActionTypes,
-  WorkshopsWithWriteAccessLoaded
+  SharedWorkshopsLoaded
 } from './workshops.actions';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -34,26 +34,26 @@ export class WorkshopsEffects {
   );
 
   @Effect()
-  loadWorkshopsWithWriteAccess$ = this.actions$.pipe(
-    ofType(WorkshopsActionTypes.LoadWorkshopsWithWriteAccess),
-    switchMap(() => combineLatest(this.authFacade.userId$, this.authFacade.fcId$)),
+  loadSharedWorkshops$ = this.actions$.pipe(
+    ofType(WorkshopsActionTypes.LoadSharedWorkshops),
+    switchMap(() => combineLatest([this.authFacade.userId$, this.authFacade.fcId$])),
     distinctUntilChanged(),
     switchMap(([userId, fcId]) => {
       // First of all, load using user Id
-      return this.workshopService.getWithWriteAccess(userId).pipe(
+      return this.workshopService.getShared(userId).pipe(
         switchMap((workshops) => {
           // If we don't have fc informations yet, return the workshops directly.
           if (!fcId) {
             return of(workshops);
           }
           // Else add fc lists
-          return this.workshopService.getWithWriteAccess(fcId).pipe(
+          return this.workshopService.getShared(fcId).pipe(
             map(fcWorkshops => [...workshops, ...fcWorkshops])
           );
         })
       );
     }),
-    map(workshops => new WorkshopsWithWriteAccessLoaded(workshops))
+    map(workshops => new SharedWorkshopsLoaded(workshops))
   );
 
   @Effect()

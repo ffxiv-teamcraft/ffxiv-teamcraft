@@ -45,7 +45,7 @@
           <ng-template #rowContent>
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
               <div *ngIf="step.type !== undefined && markedAsDone.indexOf(step) === -1">
-                {{('NAVIGATION.STEP.' + step.type) | translate: { amount: step.item_amount } }}
+                {{('NAVIGATION.STEP.' + step.type) | translate: { amount: step.item_amount, total: step.total_item_amount } }}
               </div>
               <button nz-button nzShape="circle" nzType="primary" nzSize="small"
                       *ngIf="step.type !== undefined && markedAsDone.indexOf(step) === -1"

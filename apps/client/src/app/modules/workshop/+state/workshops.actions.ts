@@ -4,12 +4,12 @@ import { Workshop } from '../../../model/other/workshop';
 export enum WorkshopsActionTypes {
   LoadMyWorkshops = '[Workshops] Load My Workshops',
   LoadWorkshop = '[Workshops] Load Workshop',
-  LoadWorkshopsWithWriteAccess = '[Workshops] Load Workshops With Write Access',
+  LoadSharedWorkshops = '[Workshops] Load Shared Workshops',
   SelectWorkshop = '[Workshops] Select Workshop',
 
   MyWorkshopsLoaded = '[Workshops] My Workshops Loaded',
   WorkshopLoaded = '[Workshops] Workshop Loaded',
-  WorkshopsWithWriteAccessLoaded = '[Workshops] Workshops With Write Access Loaded',
+  SharedWorkshopsLoaded = '[Workshops] Shared Workshops Loaded',
 
   CreateWorkshop = '[Workshops] Create Workshop',
   UpdateWorkshopIndex = '[Workshops] Update Workshop Index',
@@ -36,8 +36,8 @@ export class WorkshopLoaded implements Action {
   }
 }
 
-export class LoadWorkshopsWithWriteAccess implements Action {
-  readonly type = WorkshopsActionTypes.LoadWorkshopsWithWriteAccess;
+export class LoadSharedWorkshops implements Action {
+  readonly type = WorkshopsActionTypes.LoadSharedWorkshops;
 }
 
 export class SelectWorkshop implements Action {
@@ -54,8 +54,8 @@ export class MyWorkshopsLoaded implements Action {
   }
 }
 
-export class WorkshopsWithWriteAccessLoaded implements Action {
-  readonly type = WorkshopsActionTypes.WorkshopsWithWriteAccessLoaded;
+export class SharedWorkshopsLoaded implements Action {
+  readonly type = WorkshopsActionTypes.SharedWorkshopsLoaded;
 
   constructor(public payload: Workshop[]) {
   }
@@ -102,8 +102,8 @@ export type WorkshopsAction =
   | CreateWorkshop
   | SelectWorkshop
   | UpdateWorkshopIndex
-  | LoadWorkshopsWithWriteAccess
-  | WorkshopsWithWriteAccessLoaded
+  | LoadSharedWorkshops
+  | SharedWorkshopsLoaded
   | UpdateWorkshop
   | LoadWorkshop
   | WorkshopLoaded

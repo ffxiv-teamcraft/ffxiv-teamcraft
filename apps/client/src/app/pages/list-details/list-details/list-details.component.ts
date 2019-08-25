@@ -360,8 +360,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.dialog.create({
       nzTitle: this.translate.instant('LIST.History'),
       nzFooter: null,
-      nzContent: ListHistoryPopupComponent,
-      nzComponentParams: { list: list }
+      nzContent: ListHistoryPopupComponent
     });
   }
 
