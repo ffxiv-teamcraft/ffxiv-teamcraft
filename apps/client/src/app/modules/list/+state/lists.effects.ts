@@ -280,7 +280,10 @@ export class ListsEffects {
         date: Date.now(),
         itemId: action.itemId,
         itemIcon: action.itemIcon,
-        userId: userId
+        userId: userId,
+        finalItem: action.finalItem,
+        total: action.totalNeeded,
+        recipeId: action.recipeId
       });
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
         this.discordWebhookService.notifyItemChecked(team, action.itemIcon, list, userId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
@@ -288,7 +291,7 @@ export class ListsEffects {
       return [action, list];
     }),
     map(([action, list]: [SetItemDone, List]) => {
-      list.setDone(action.itemId, action.doneDelta, !action.finalItem,action.finalItem, false , action.recipeId, action.external);
+      list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
       return list;
     }),
     map(list => new UpdateList(list))

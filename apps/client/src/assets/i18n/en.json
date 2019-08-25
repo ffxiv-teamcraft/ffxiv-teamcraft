@@ -137,7 +137,8 @@
     "None": "None",
     "Top": "Top",
     "Bottom": "Bottom",
-    "Amount": "Amount"
+    "Amount": "Amount",
+    "Undo": "Undo"
   },
   "ALARMS": {
     "Title": "Alarms",
