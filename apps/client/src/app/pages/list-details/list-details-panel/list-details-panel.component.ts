@@ -322,7 +322,15 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   public getTextExport(): string {
-    return this.displayRow.rows.reduce((exportString, row) => {
+    let rows: ListRow[];
+    if (this.tiers) {
+      rows = this.tiers.reduce((res, tier) => {
+        return [...res, ...tier];
+      }, []);
+    } else {
+      rows = this.displayRow.rows;
+    }
+    return rows.reduce((exportString, row) => {
       return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
     }, `${this.displayRow.title} :\n`);
   }
