@@ -76,7 +76,7 @@
     "Created_by": "Создано {{name}}",
     "Share_link_copied": "Ссылка на мастерскую скопирована",
     "Not_found": "Мастерская не найдена или у вас нет доступа к ней",
-    "Shared_workshops": "Мастерские, к которым у вас есть доступ",
+    "Shared_workshops": "Мастерские, которыми с вами поделились",
     "Rename": "Переименовать мастерскую",
     "Add_lists": "Добавить списки"
   },
@@ -137,7 +137,8 @@
     "None": "Нет",
     "Top": "Вверху",
     "Bottom": "Внизу",
-    "Amount": "Количество"
+    "Amount": "Количество",
+    "Undo": "Undo"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -411,7 +412,7 @@
     "Merge_lists": "Объединить списки",
     "Merge_lists_warning": "Большие списки здесь не указаны, поскольку вы не можете объединить слишком большие списки из-за ограничений базы данных.",
     "Lists_merged": "Списки успешно соединены!",
-    "Shared_lists": "Списки, которые вы можете редактировать",
+    "Shared_lists": "Списки, которыми с вами поделились",
     "Add_selection": "Добавить выбранное в список",
     "Your_lists": "Ваши списки",
     "Outdated_tag": "Устаревшие",
@@ -458,6 +459,7 @@
     "Show_craftable_amount": "Показать количество, которое можно скрафтить",
     "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
     "Quick_layout_swap": "Быстрое переключение раскладки",
+    "Mark_whole_panel_done": "Mark panel content as done",
     "INVENTORY": {
       "Show_final_items": "Показать конечные предметы",
       "Hide_final_items": "Скрыть конечные предметы"
@@ -620,10 +622,10 @@
     "Steps": "Шаги",
     "Loading_path": "Загрузка оптимизированного пути (может занять несколько секунд)",
     "STEP": {
-      "Gathering": "Gather {{amount}} (total: {{total}})",
-      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
-      "Vendor": "Buy {{amount}} (total: {{total}})",
-      "Trade": "Trade {{amount}} (total: {{total}})"
+      "Gathering": "Собрать{{amount}} (всего: {{total}})",
+      "Hunting": "Собрать {{amount}} с монстров (всегоо: {{total}})",
+      "Vendor": "Купить{{amount}} (всего: {{total}})",
+      "Trade": "Выменять {{amount}} (всегоо: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -970,16 +972,16 @@
     "Officer": "Офицер",
     "Promote_officer": "Повысить до офицера",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** добавлен в **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** удален из **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** пометил {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** из {{totalNeeded}} как выполненный в **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** было добавлено в **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** было удалено из **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** отметил(а) {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** из {{totalNeeded}} как выполнено в **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "Группа **{{teamName}}** теперь будет отслеживаться в этом канале.",
       "List_added_notification": "Список **[{{listName}}]({{listUrl}})** добавлен в группу.",
       "List_removed_notification": "Список **[{{listName}}]({{listUrl}})** удален из группы.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** присоединился к группе!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** был удален из группы.",
       "Name_changed": "Группа **{{oldName}}** переименована в **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** был назначен **[{{memberName}}]({{memberProfileUrl}})** в **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** было закреплено за **[{{memberName}}]({{memberProfileUrl}})** в **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Участник присоединился",

@@ -76,7 +76,7 @@
     "Created_by": "Creado por {{name}}",
     "Share_link_copied": "Vínculo para compartir taller copiado",
     "Not_found": "Taller no encontrado o no tiene acceso a él",
-    "Shared_workshops": "Talleres compartidos contigo",
+    "Shared_workshops": "Talleres compartidos con usted",
     "Rename": "Renombrar taller",
     "Add_lists": "Agregar listas"
   },
@@ -137,7 +137,8 @@
     "None": "Ninguno",
     "Top": "Arriba",
     "Bottom": "Abajo",
-    "Amount": "Cantidad"
+    "Amount": "Cantidad",
+    "Undo": "Undo"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -458,6 +459,7 @@
     "Show_craftable_amount": "Mostrar cantidad fabricable",
     "Optimized_full_path": "Mostrar ruta optimizada completa (más barata y más rápida)",
     "Quick_layout_swap": "Intercambio rápido de diseño",
+    "Mark_whole_panel_done": "Mark panel content as done",
     "INVENTORY": {
       "Show_final_items": "Mostrar artículos finales",
       "Hide_final_items": "Ocultar artículos finales"
@@ -620,10 +622,10 @@
     "Steps": "Pasos",
     "Loading_path": "Cargando ruta optimizada (puede tomar varios segundos)",
     "STEP": {
-      "Gathering": "Gather {{amount}} (total: {{total}})",
-      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
-      "Vendor": "Buy {{amount}} (total: {{total}})",
-      "Trade": "Trade {{amount}} (total: {{total}})"
+      "Gathering": "Recolectar {{amount}} (total: {{total}})",
+      "Hunting": "Conseguir {{amount}} en monstruos (total: {{total}})",
+      "Vendor": "Comprar {{amount}} (total: {{total}})",
+      "Trade": "Intercambiar {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -970,16 +972,16 @@
     "Officer": "Oficial",
     "Promote_officer": "Promover a oficial",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han añadido a **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han quitado de **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marcó {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** de {{totalNeeded}} como completados en **[[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/es/item/{{itemId}})** ha sido añadido a **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/es/item/{{itemId}})** ha sido eliminado de **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marcó {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/es/item/{{itemId}})** de {{totalNeeded}} como completados en **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "El equipo **{{teamName}}** será seguido ahora en este canal.",
       "List_added_notification": "La lista **[{{listName}}]({{listUrl}})** ha sido agregada al equipo.",
       "List_removed_notification": "La lista **[{{listName}}]({{listUrl}})** ha sido quitada del equipo.",
       "Member_joined": "¡**[{{memberName}}]({{memberProfileUrl}})** se ha unido al equipo!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** ha sido expulsado del equipo.",
       "Name_changed": "El equipo **{{oldName}}** ha sido renombrado **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** ha sido asignado a **[{{memberName}}]({{memberProfileUrl}})** en **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/es/item/{{itemId}})** ha sido asignado a **[{{memberName}}]({{memberProfileUrl}})** en **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Un miembro se ha unido",
@@ -1038,7 +1040,7 @@
   },
   "UPDATE": {
     "New_update_available": "¡Nueva actualización disponible! ",
-    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
+    "New_update_available_desktop": "¡Una nueva actualización está disponible!\nHaga clic aquí para descargarla e instalarla.",
     "Web_instructions": "Por favor refresque la página para obtener la última versión."
   },
   "LOG_TRACKER": {
