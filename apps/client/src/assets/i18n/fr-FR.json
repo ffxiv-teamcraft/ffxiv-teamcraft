@@ -816,6 +816,7 @@
     "ROTATIONS": {
       "Search_placeholder": "Rechercher une rotation",
       "FOLDERS": {
+        "Not_found": "Rotation folder not found",
         "Folders": "Dossiers de rotation",
         "Rename": "Renommer le dossier",
         "New_folder": "Nouveau dossier",
