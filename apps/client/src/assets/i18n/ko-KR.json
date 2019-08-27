@@ -816,6 +816,7 @@
     "ROTATIONS": {
       "Search_placeholder": "로테이션 검색",
       "FOLDERS": {
+        "Not_found": "Rotation folder not found",
         "Folders": "로테이션 폴더",
         "Rename": "폴더 이름 변경",
         "New_folder": "새 폴더",
