@@ -10,6 +10,8 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { UserService } from '../../../core/database/user.service';
 import { ListCompactsService } from '../../../modules/list/list-compacts.service';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
+import { CraftingRotation } from '../../../model/other/crafting-rotation';
+import { CraftingRotationService } from '../../../core/database/crafting-rotation/crafting-rotation.service';
 
 @Component({
   selector: 'app-public-profile',
@@ -26,12 +28,15 @@ export class PublicProfileComponent {
 
   public communityLists$: Observable<List[]>;
 
+  public communityRotations$: Observable<CraftingRotation[]>;
+
   notFound = false;
 
   now = Math.floor(Date.now() / 1000);
 
   constructor(private route: ActivatedRoute, private characterService: CharacterService,
-              private listCompactsService: ListCompactsService, private authFacade: AuthFacade, private userService: UserService) {
+              private listCompactsService: ListCompactsService, private authFacade: AuthFacade,
+              private userService: UserService, private craftingRotationsService: CraftingRotationService) {
     const userId$ = this.route.paramMap.pipe(
       map(params => params.get('userId')),
       shareReplay(1)
@@ -53,6 +58,12 @@ export class PublicProfileComponent {
     this.communityLists$ = userId$.pipe(
       switchMap(userId => {
         return this.listCompactsService.getUserCommunityLists(userId);
+      }),
+      shareReplay(1)
+    );
+    this.communityRotations$ = userId$.pipe(
+      switchMap(userId => {
+        return this.craftingRotationsService.getUserCommunityRotations(userId);
       }),
       shareReplay(1)
     );

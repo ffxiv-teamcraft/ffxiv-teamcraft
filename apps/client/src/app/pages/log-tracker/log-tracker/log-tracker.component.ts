@@ -144,6 +144,10 @@ export class LogTrackerComponent extends TrackerComponent {
     return `${page.items.filter(item => this.userGatheringCompletion[item.itemId]).length}/${page.items.length}`;
   }
 
+  public isPageDone(page: any): boolean {
+    return page.items.filter(item => this.userGatheringCompletion[item.itemId]).length >= page.items.length;
+  }
+
   public getDohIcon(index: number): string {
     return `./assets/icons/classjob/${this.gt.getJob(index + 8).name.toLowerCase()}.png`;
   }

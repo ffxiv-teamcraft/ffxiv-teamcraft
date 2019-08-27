@@ -30,6 +30,13 @@
           <app-list-panel [list]="list" [publicDisplay]="true" [hideAvatar]="true"></app-list-panel>
         </ng-template>
       </nz-list>
+      <nz-list [nzHeader]="'SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate"
+               [nzDataSource]="communityRotations$ | async"
+               [nzRenderItem]="rotation">
+        <ng-template #rotation let-rotation>
+          <app-rotation-panel [rotation]="rotation" [publicDisplay]="true"></app-rotation-panel>
+        </ng-template>
+      </nz-list>
     </div>
   </div>
 </div>
