@@ -77,6 +77,25 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
       );
   }
 
+  public getUserCommunityRotations(userId: string): Observable<CraftingRotation[]> {
+    const query: QueryFn = ref => {
+      return ref.where(`public`, '==', true).where('authorId', '==', userId);
+    };
+    return this.firestore.collection(this.getBaseUri(), query)
+      .snapshotChanges()
+      .pipe(
+        map((snaps: DocumentChangeAction<CraftingRotation>[]) => {
+          const rotations = snaps
+            .map((snap: DocumentChangeAction<any>) => {
+              const valueWithKey: CraftingRotation = <CraftingRotation>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              delete snap.payload;
+              return valueWithKey;
+            });
+          return this.serializer.deserialize<CraftingRotation>(rotations, [this.getClass()]);
+        })
+      );
+  }
+
   protected getBaseUri(): string {
     return '/rotations';
   }
