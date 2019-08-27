@@ -1058,6 +1058,7 @@
     "Required_for_achievement": "Требуется для получения achievement'a",
     "Select_spot": "Выберите точку, чтобы увидеть его детали",
     "Hide_completed": "Скрыть завершенные рецепты",
+    "Hide_completed_items": "Hide completed items",
     "MIN_optimized_path": "Оптимизированный путь для всех точек MIN",
     "BTN_optimized_path": "Оптимизированный путь для всех точек BTN",
     "PAGE": {
