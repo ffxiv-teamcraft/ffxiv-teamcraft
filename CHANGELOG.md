@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.11"></a>
+## [5.7.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.10...v5.7.11) (2019-08-27)
+
+
+### Bug Fixes
+
+* **list:** fixed an issue with lists sometimes crashing with 5.7.10 update ([8037851](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8037851))
+* **list:** fixed ordering in text export for tiers system ([1e26797](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e26797))
+
+
+### Features
+
+* **log-tracker:** added toggle to hide completes elements on gathering tracker ([69a6217](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/69a6217))
+* **profile:** added community rotations to public profile page ([0294f23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0294f23))
+
+
+
 <a name="5.7.10"></a>
 ## [5.7.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.9...v5.7.10) (2019-08-24)
 
