@@ -816,6 +816,7 @@
     "ROTATIONS": {
       "Search_placeholder": "制作スキル回しを検索",
       "FOLDERS": {
+        "Not_found": "Rotation folder not found",
         "Folders": "スキル回しフォルダー",
         "Rename": "フォルダー名を変更する",
         "New_folder": "新しいフォルダー",
