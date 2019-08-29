@@ -151,9 +151,6 @@ function createWindow() {
     win.focus();
     win.show();
     autoUpdater.checkForUpdates();
-    updateInterval = setInterval(() => {
-      autoUpdater.checkForUpdates();
-    }, 300000);
   });
 
   // save window size and position
