@@ -7,6 +7,7 @@ const isDev = require('electron-is-dev');
 const log = require('electron-log');
 log.transports.file.level = 'info';
 const express = require('express');
+const fs = require('fs');
 
 const oauth = require('./oauth.js');
 
@@ -68,6 +69,20 @@ if (options.noHA) {
 }
 
 function createWindow() {
+  // Remove update setup
+  const updaterFolder = path.join(process.env.APPDATA, '../Local/ffxiv-teamcraft-updater');
+  fs.readdir(updaterFolder, (err, files) => {
+    if (err) throw err;
+
+    for (const file of files) {
+      if (fs.lstatSync(path.join(updaterFolder, file)).isDirectory()) {
+        continue;
+      }
+      fs.unlink(path.join(updaterFolder, file), err => {
+        if (err) throw err;
+      });
+    }
+  });
   app.setAsDefaultProtocolClient('teamcraft');
   protocol.registerFileProtocol('teamcraft', function(request) {
     deepLink = request.url.substr(12);
