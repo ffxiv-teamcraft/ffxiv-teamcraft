@@ -86,7 +86,7 @@
                   </button>
                   <ul nz-menu class="team-members">
                     <ng-container *ngFor="let member of team.members">
-                      <ng-container *ngIf="item.workingOnIt?.indexOf(member) === -1">
+                      <ng-container *ngIf="(item.workingOnIt || [])?.indexOf(member) === -1">
                         <li nz-menu-item *ngIf="member | characterName | async as charName"
                             (click)="assignTeamMember(team, member)">{{charName}}
                         </li>
@@ -102,7 +102,7 @@
             <ng-container *ngIf="userId$ | async as userId">
               <button nz-button nzSize="small" nzShape="circle" (click)="setWorkingOnIt(userId)" nz-tooltip
                       [nzTitle]="'Work_on_it' | translate"
-                      *ngIf="(item.workingOnIt === undefined || item.workingOnIt?.indexOf(userId) === -1) && loggedIn$ | async">
+                      *ngIf="(item.workingOnIt === undefined || (item.workingOnIt || [])?.indexOf(userId) === -1) && loggedIn$ | async">
                 <i nz-icon type="user-add"></i>
               </button>
               <ng-container *ngIf="team$ | async as team; else removeSingleAssignment">
@@ -125,7 +125,7 @@
               </ng-container>
               <ng-template #removeSingleAssignment>
                 <button nz-dropdown nzSize="small"
-                        *ngIf="item.workingOnIt?.indexOf(userId) > -1 && loggedIn$ | async"
+                        *ngIf="(item.workingOnIt || [])?.indexOf(userId) > -1 && loggedIn$ | async"
                         (click)="removeWorkingOnIt(userId)"
                         nz-tooltip [nzTitle]="'Remove_work_on_it' | translate"
                         nz-button [nzShape]="'circle'">
@@ -255,7 +255,7 @@
                     <span title>{{'TEAMS.Assign_team_member' | translate}}</span>
                     <ul nz-menu class="team-members">
                       <ng-container *ngFor="let member of team.members">
-                        <ng-container *ngIf="item.workingOnIt?.indexOf(member) === -1">
+                        <ng-container *ngIf="(item.workingOnIt || [])?.indexOf(member) === -1">
                           <li nz-menu-item *ngIf="member | characterName | async as charName"
                               (click)="assignTeamMember(team, member)">{{charName}}
                           </li>
@@ -268,7 +268,7 @@
 
               <ng-container *ngIf="!isButton(itemRowTypes.WORK_ON_IT)">
                 <li nz-menu-item (click)="setWorkingOnIt(userId)"
-                    *ngIf="(item.workingOnIt === undefined || item.workingOnIt?.indexOf(userId) === -1) && loggedIn$ | async">
+                    *ngIf="(item.workingOnIt === undefined || (item.workingOnIt || [])?.indexOf(userId) === -1) && loggedIn$ | async">
                   {{'Work_on_it' | translate}}
                 </li>
                 <ng-container *ngIf="team$ | async as team; else removeSingleAssignment">
@@ -286,7 +286,7 @@
                 </ng-container>
                 <ng-template #removeSingleAssignment>
                   <li nz-menu-item (click)="removeWorkingOnIt(userId)"
-                      *ngIf="item.workingOnIt?.indexOf(userId) > -1 && loggedIn$ | async">
+                      *ngIf="(item.workingOnIt || [])?.indexOf(userId) > -1 && loggedIn$ | async">
                     {{'Remove_work_on_it' | translate}}
                   </li>
                 </ng-template>

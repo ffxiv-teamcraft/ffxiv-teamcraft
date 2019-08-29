@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.7.12"></a>
+## [5.7.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.11...v5.7.12) (2019-08-29)
+
+
+### Bug Fixes
+
+* **rotation-folder:** fixed an issue with rotations loading not working properly ([e964862](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e964862))
+* **teams:** fixed an issue with list row assignment not showing team members in some cases ([31c1726](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/31c1726))
+
+
+### Features
+
+* **patreon:** new supporter: Icknickl Lodien ([c270b3f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c270b3f))
+
+
+
 <a name="5.7.11"></a>
 ## [5.7.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.10...v5.7.11) (2019-08-27)
 

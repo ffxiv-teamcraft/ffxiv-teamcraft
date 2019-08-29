@@ -816,6 +816,7 @@
     "ROTATIONS": {
       "Search_placeholder": "搜索工序",
       "FOLDERS": {
+        "Not_found": "Rotation folder not found",
         "Folders": "手法文件夹",
         "Rename": "重命名文件夹",
         "New_folder": "新建文件夹",
