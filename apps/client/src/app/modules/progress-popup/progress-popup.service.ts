@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd';
 import { ProgressPopupComponent } from './progress-popup/progress-popup.component';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { shareReplay } from 'rxjs/operators';
 
@@ -12,6 +12,9 @@ export class ProgressPopupService {
   }
 
   public showProgress(operation$: Observable<any>, operationsCount: number, labelKey = 'Please_wait', labelParams = {}): Observable<any> {
+    if(operationsCount === 0){
+      return of(null);
+    }
     return this.dialog.create({
       nzTitle: this.translate.instant(labelKey, labelParams),
       nzFooter: null,

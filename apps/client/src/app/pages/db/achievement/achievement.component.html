@@ -8,9 +8,13 @@
           <img [src]="achievement.Icon | xivapiIcon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{achievement | xivapiI18n}}</h2>
+            <div class="patch" *ngIf="achievement.GamePatch">
+              {{achievement.GamePatch | xivapiI18n}}
+              <app-db-button type="patch" [id]="achievement.GamePatch.ID"></app-db-button>
+            </div>
           </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="links" *ngIf="links$ | async as links">
           <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
             <img [src]="link.icon" [alt]="link.title" class="link-icon">
           </a>
