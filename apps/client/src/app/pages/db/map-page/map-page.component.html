@@ -9,10 +9,6 @@
                class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{mapData.PlaceName.ID | placeName |i18n}}</h2>
-            <div class="patch" *ngIf="mapData.GamePatch">
-              {{mapData.GamePatch | xivapiI18n}}
-              <app-db-button type="patch" [id]="mapData.GamePatch.ID"></app-db-button>
-            </div>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="links" *ngIf="links$ | async as links">
