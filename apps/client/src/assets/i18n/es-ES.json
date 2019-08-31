@@ -816,7 +816,7 @@
     "ROTATIONS": {
       "Search_placeholder": "Buscar una rotación",
       "FOLDERS": {
-        "Not_found": "Rotation folder not found",
+        "Not_found": "Carpeta de rotaciones no encontrada",
         "Folders": "Carpetas de rotación",
         "Rename": "Renombrar carpeta",
         "New_folder": "Nueva carpeta",
@@ -1059,7 +1059,7 @@
     "Required_for_achievement": "Requerido para los logros",
     "Select_spot": "Seleccione un lugar para ver sus detalles",
     "Hide_completed": "Ocultar recetas completadas",
-    "Hide_completed_items": "Hide completed items",
+    "Hide_completed_items": "Ocultar artículos completados",
     "MIN_optimized_path": "Ruta optimizada para todos los nodos de minería",
     "BTN_optimized_path": "Ruta optimizada para todos los nodos de botanista",
     "PAGE": {
