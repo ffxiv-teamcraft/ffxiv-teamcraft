@@ -138,7 +138,10 @@
     "Top": "Top",
     "Bottom": "Bottom",
     "Amount": "Amount",
-    "Undo": "Undo"
+    "Undo": "Undo",
+    "User": "User",
+    "Tables": "Table",
+    "Pie_charts": "Pie charts"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -507,6 +510,8 @@
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "Add_to_another_list": "Add to another list",
     "New_tag": "New tag",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "Contributions stats",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",

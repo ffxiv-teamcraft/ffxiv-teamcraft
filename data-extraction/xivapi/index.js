@@ -1077,7 +1077,8 @@ if (hasTodo('items')) {
   const names = {};
   const rarities = {};
   const itemIcons = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon').subscribe(page => {
+  const ilvls = {};
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem').subscribe(page => {
     page.Results.forEach(item => {
       itemIcons[item.ID] = item.Icon;
       names[item.ID] = {
@@ -1087,11 +1088,13 @@ if (hasTodo('items')) {
         fr: item.Name_fr
       };
       rarities[item.ID] = item.Rarity;
+      ilvls[item.ID] = item.LevelItem;
     });
   }, null, () => {
     persistToJsonAsset('item-icons', itemIcons);
     persistToJsonAsset('items', names);
     persistToTypescript('rarities', 'rarities', rarities);
+    persistToTypescript('ilvls', 'ilvls', ilvls);
   });
 }
 

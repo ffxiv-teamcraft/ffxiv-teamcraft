@@ -1,0 +1,18 @@
+<ng-container *ngIf="contributions$ | async as contributions">
+  <nz-table #contributionsTable [nzData]="contributions.entries">
+    <thead (nzSortChange)="sort($event)" nzSingleSort>
+    <tr>
+      <th>{{'COMMON.User' | translate}}</th>
+      <th nzShowSort nzSortKey="amount">{{'COMMON.Amount' | translate}}</th>
+      <th nzShowSort nzSortKey="ilvlAmount">{{'LIST_DETAILS.Amount_ilvl' | translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of contributionsTable.data">
+      <td>{{row.userId | characterName | async}}</td>
+      <td>{{(row.amount * 100 / contributions.total) | number:'1.0-0'}}%</td>
+      <td>{{(row.ilvlAmount * 100 / contributions.ilvlTotal) | number:'1.0-0'}}%</td>
+    </tr>
+    </tbody>
+  </nz-table>
+</ng-container>
