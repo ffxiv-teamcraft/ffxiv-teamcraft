@@ -464,6 +464,11 @@
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "Quick_layout_swap": "Quick layout swap",
     "Mark_whole_panel_done": "Mark panel content as done",
+    "ROTATION": {
+      "Attach": "Attach rotation",
+      "Detach": "Detach rotation",
+      "Click_to_copy_macro": "Click to open macro copy popup"
+    },
     "INVENTORY": {
       "Show_final_items": "Show final items",
       "Hide_final_items": "Hide final items"
@@ -540,7 +545,8 @@
         "REMOVE_ITEM": "Remove item from the list",
         "ADD_TAG": "Add tag to item",
         "MARK_AS_DONE_IN_LOG": "Mark as done inside log",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information",
+        "ATTACH_ROTATION": "Attach rotation"
       }
     },
     "LAYOUT": {
