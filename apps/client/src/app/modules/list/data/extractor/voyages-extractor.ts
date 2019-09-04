@@ -20,7 +20,7 @@ export class VoyagesExtractor extends AbstractExtractor<I18nName[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item.voyages === undefined;
+    return item.voyages !== undefined;
   }
 
   protected doExtract(item: Item, itemData: ItemData): I18nName[] {
