@@ -135,6 +135,14 @@ export class SettingsService {
     this.setSetting('disable-search-history', disabled.toString());
   }
 
+  public get disableSearchDebounce(): boolean {
+    return this.getSetting('disable-search-debounce', 'false') === 'true';
+  }
+
+  public set disableSearchDebounce(disabled: boolean) {
+    this.setSetting('disable-search-debounce', disabled.toString());
+  }
+
   public get expectToSellEverything(): boolean {
     return this.getSetting('pricing:expect-sell-all', 'false') === 'true';
   }
