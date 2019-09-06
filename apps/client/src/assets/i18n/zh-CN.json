@@ -270,7 +270,7 @@
   "filters/crafted_by": "制作职业",
   "filters/item_category": "物品类型",
   "filters/stats": "属性过滤器",
-  "filters/bonuses": "Stat bonuses filters",
+  "filters/bonuses": "属性奖励过滤器",
   "Adding_recipes": "正在添加 {{amount}} 个配方到清单 {{listname}}",
   "Recipe_Added": "一个物品已经被添加到清单 {{listname}}",
   "Recipes_Added": "{{itemcount}} 个物品已加入清单 {{listname}}",
@@ -438,8 +438,8 @@
       "Creating_list": "正在创建清单",
       "Loading_items": "正在加载物品信息",
       "Estimate_overmeld_materia": "估算禁断所需要的魔晶石",
-      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
-      "Group_together": "Group materias together"
+      "Multiply_tool_materia": "计算全职业魔晶石镶嵌所需的魔晶石（2个采集及8个生产职业的主副手）",
+      "Group_together": "将魔晶石聚集在一起"
     }
   },
   "LIST": {
@@ -908,7 +908,7 @@
     "From_crafting": "制作价格",
     "Expect_to_sell_everything": "计划出售",
     "Autofill_panel_prices": "基于市场物价填充价格",
-    "Autofill_panel_prices_your_server": "根据市场价格填充 (仅限此服务器)",
+    "Autofill_panel_prices_your_server": "依据市场价填充材料价格 (仅限此服务器)",
     "Autofill_panel_prices_warning": "本操作为耗时操作，大约需要 {{time}} 秒来完成，确定吗？",
     "Copy_earnings_as_text": "复制为文本",
     "Content_copied": "已复制",
@@ -1484,7 +1484,7 @@
     "Sort_asc": "升序",
     "Sort_desc": "降序",
     "Add_stat_filter": "添加属性过滤器",
-    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Add_bonus_stat_filter": "添加奖励属性过滤器",
     "Search_tip": "您可以键入版本号：“patch #” 来查看特定版本的内容，如：patch 5.01",
     "SORT_BY": {
       "Relevance": "相关性",
