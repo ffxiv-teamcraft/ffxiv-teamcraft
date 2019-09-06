@@ -7,6 +7,7 @@ const isDev = require('electron-is-dev');
 const log = require('electron-log');
 log.transports.file.level = 'info';
 const express = require('express');
+const fs = require('fs');
 
 const oauth = require('./oauth.js');
 
@@ -68,6 +69,20 @@ if (options.noHA) {
 }
 
 function createWindow() {
+  // Remove update setup
+  const updaterFolder = path.join(process.env.APPDATA, '../Local/ffxiv-teamcraft-updater');
+  fs.readdir(updaterFolder, (err, files) => {
+    if (err) throw err;
+
+    for (const file of files) {
+      if (fs.lstatSync(path.join(updaterFolder, file)).isDirectory()) {
+        continue;
+      }
+      fs.unlink(path.join(updaterFolder, file), err => {
+        if (err) throw err;
+      });
+    }
+  });
   app.setAsDefaultProtocolClient('teamcraft');
   protocol.registerFileProtocol('teamcraft', function(request) {
     deepLink = request.url.substr(12);
@@ -110,9 +125,9 @@ function createWindow() {
   win.on('closed', function() {
     win = null;
     try {
-      Object.keys(openedOverlays).forEach(key => {
-        if (openedOverlays[key]) {
-          openedOverlays[key].close();
+      forEachOverlay(overlay => {
+        if (overlay) {
+          overlay.close();
         }
       });
     } catch (e) {
@@ -150,10 +165,7 @@ function createWindow() {
 
     win.focus();
     win.show();
-    autoUpdater.checkForUpdatesAndNotify();
-    updateInterval = setInterval(() => {
-      autoUpdater.checkForUpdatesAndNotify();
-    }, 300000);
+    autoUpdater.checkForUpdates();
   });
 
   // save window size and position
@@ -184,7 +196,9 @@ function createWindow() {
   });
 }
 
-function openOverlay(url) {
+function openOverlay(overlayConfig) {
+  const url = overlayConfig.url;
+  const dimensions = overlayConfig.defaultDimensions || { x: 800, y: 600 };
   let opts = {
     title: `FFXIV Teamcraft overlay - ${url}`,
     show: false,
@@ -192,13 +206,17 @@ function openOverlay(url) {
     frame: false,
     alwaysOnTop: true,
     autoHideMenuBar: true,
+    width: dimensions.x,
+    height: dimensions.y,
     webPreferences: {
       nodeIntegration: true
     }
   };
   Object.assign(opts, config.get(`overlay:${url}:bounds`));
   opts.opacity = config.get(`overlay:${url}:opacity`) || 1;
+  opts.alwaysOnTop = config.get(`overlay:${url}:on-top`) || true;
   const overlay = new BrowserWindow(opts);
+  overlay.setIgnoreMouseEvents(config.get('clickthrough') || false);
 
   overlay.once('ready-to-show', () => {
     overlay.show();
@@ -208,6 +226,7 @@ function openOverlay(url) {
   overlay.on('close', () => {
     config.set(`overlay:${url}:bounds`, overlay.getBounds());
     config.set(`overlay:${url}:opacity`, overlay.getOpacity());
+    config.set(`overlay:${url}:on-top`, overlay.isAlwaysOnTop());
   });
 
 
@@ -236,11 +255,18 @@ function createTray() {
       label: 'Alarm Overlay',
       type: 'normal',
       click: () => {
-        openOverlay('/alarms-overlay');
+        openOverlay({ url: '/alarms-overlay' });
       }
     }
   ]);
   tray.setContextMenu(contextMenu);
+}
+
+function forEachOverlay(cb) {
+  [].concat.apply([], Object.keys(openedOverlays).map(key => openedOverlays[key]))
+    .forEach(overlay => {
+      cb(overlay);
+    });
 }
 
 ipcMain.on('app-ready', (event) => {
@@ -307,8 +333,10 @@ autoUpdater.on('update-downloaded', () => {
 
 ipcMain.on('apply-settings', (event, settings) => {
   try {
-    Object.keys(openedOverlays).forEach(key => {
-      openedOverlays[key].webContents.send('update-settings', settings);
+    config.set('clickthrough', settings.clickthrough === 'true');
+    forEachOverlay(overlay => {
+      overlay.setIgnoreMouseEvents(settings.clickthrough === 'true');
+      overlay.webContents.send('update-settings', settings);
     });
   } catch (e) {
     // Window already destroyed, so we don't care :)
@@ -317,8 +345,8 @@ ipcMain.on('apply-settings', (event, settings) => {
 
 ipcMain.on('language', (event, lang) => {
   try {
-    Object.keys(openedOverlays).forEach(key => {
-      openedOverlays[key].webContents.send('apply-language', lang);
+    forEachOverlay(overlay => {
+      overlay.webContents.send('apply-language', lang);
     });
   } catch (e) {
     // Window already destroyed, so we don't care :)
@@ -363,8 +391,8 @@ ipcMain.on('always-on-top:get', (event) => {
   event.sender.send('always-on-top:value', win.alwaysOnTop);
 });
 
-ipcMain.on('overlay', (event, url) => {
-  openOverlay(url);
+ipcMain.on('overlay', (event, data) => {
+  openOverlay(data);
 });
 
 ipcMain.on('overlay:set-opacity', (event, data) => {
@@ -378,6 +406,20 @@ ipcMain.on('overlay:get-opacity', (event, data) => {
   const overlayWindow = openedOverlays[data.uri];
   if (overlayWindow !== undefined) {
     event.sender.send(`overlay:${data.uri}:opacity`, overlayWindow.getOpacity());
+  }
+});
+
+ipcMain.on('overlay:set-on-top', (event, data) => {
+  const overlayWindow = openedOverlays[data.uri];
+  if (overlayWindow !== undefined) {
+    overlayWindow.setAlwaysOnTop(data.onTop);
+  }
+});
+
+ipcMain.on('overlay:get-on-top', (event, data) => {
+  const overlayWindow = openedOverlays[data.uri];
+  if (overlayWindow !== undefined) {
+    event.sender.send(`overlay:${data.uri}:on-top`, overlayWindow.isAlwaysOnTop());
   }
 });
 

@@ -73,6 +73,14 @@
                 nzSize="small" nzShape="circle" nz-tooltip [nzTitle]="'LIST.Copy_as_text' | translate">
           <i nz-icon type="copy"></i>
         </button>
+        <span nz-tooltip [nzTitle]="'LIST.Mark_whole_panel_done' | translate">
+          <button nz-button nz-popconfirm [nzTitle]="'Confirmation' | translate"
+                  (click)="$event.stopPropagation()"
+                  (nzOnConfirm)="markPanelAsDone()"
+                  nzSize="small" nzShape="circle">
+            <i nz-icon type="check"></i>
+          </button>
+        </span>
       </div>
     </div>
   </ng-template>

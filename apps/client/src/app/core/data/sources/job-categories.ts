@@ -348,16 +348,16 @@ export const jobCategories = {
     'fr': 'GLA ÉLM PLD MBL'
   },
   '59': {
-    'en': 'GLA MRD PLD WAR DRK',
-    'ja': '剣術士 斧術士 ナイト 戦士 暗黒騎士',
-    'de': 'GLA MAR PLD KRG DKR',
-    'fr': 'GLA MRD PLD GUE CHN'
+    'en': 'GLA MRD PLD WAR DRK GNB',
+    'ja': '剣術士 斧術士 ナイト 戦士 暗黒騎士 ガンブレイカー',
+    'de': 'GLA MAR PLD KRG DKR REV',
+    'fr': 'GLA MRD PLD GUE CHN PSB'
   },
   '60': {
-    'en': 'GLA MRD LNC PLD WAR DRG DRK',
-    'ja': '剣術士 斧術士 槍術士 ナイト 戦士 竜騎士 暗黒騎士',
-    'de': 'GLA MAR PIK PLD KRG DRG DKR',
-    'fr': 'GLA MRD HAS PLD GUE DRG CHN'
+    'en': 'GLA MRD LNC PLD WAR DRG DRK GNB',
+    'ja': '剣術士 斧術士 槍術士 ナイト 戦士 竜騎士 暗黒騎士 ガンブレイカー',
+    'de': 'GLA MAR PIK PLD KRG DRG DKR REV',
+    'fr': 'GLA MRD HAS PLD GUE DRG CHN PSB'
   },
   '61': {
     'en': 'CNJ THM ACN WHM SCH AST',
@@ -390,10 +390,10 @@ export const jobCategories = {
     'fr': 'PGL MOI SAM'
   },
   '66': {
-    'en': 'ARC BRD MCH',
-    'ja': '弓術士 吟遊詩人 機工士',
-    'de': 'WDL BRD MCH',
-    'fr': 'ARC BRD MCH'
+    'en': 'ARC BRD MCH DNC',
+    'ja': '弓術士 吟遊詩人 機工士 踊り子',
+    'de': 'WDL BRD MCH TÄN',
+    'fr': 'ARC BRD MCH DNS'
   },
   '67': {
     'en': 'GLA PGL MRD LNC ROG MNK DRG NIN',
@@ -528,10 +528,10 @@ export const jobCategories = {
     'fr': 'GLA MRD PGL HAS ARC SUR PLD MOI GUE DRG BRD NIN CHN MCH'
   },
   '89': {
-    'en': 'CNJ THM ACN WHM BLM SMN SCH AST',
-    'ja': '幻術士 呪術士 巴術士 白魔道士 黒魔道士 召喚士 学者 占星術師',
-    'de': 'DRU THM HRT WMA SMA BSW GLT AST',
-    'fr': 'ÉLM OCC ACN MBL MNO INV ÉRU AST'
+    'en': 'BLM SMN RDM',
+    'ja': '黒魔道士 召喚士 赤魔道士',
+    'de': 'SMA BSW RMA',
+    'fr': 'MNO INV MRG'
   },
   '90': {
     'en': 'ARC CNJ THM ACN WHM BRD BLM SMN SCH MCH AST',
@@ -624,10 +624,10 @@ export const jobCategories = {
     'fr': ''
   },
   '105': {
-    'en': 'ARC ROG BRD NIN MCH',
-    'ja': '弓術士 双剣士 吟遊詩人 忍者 機工士',
-    'de': 'WDL SCH BRD NIN MCH',
-    'fr': 'ARC SUR BRD NIN MCH'
+    'en': 'ARC ROG BRD NIN MCH DNC',
+    'ja': '弓術士 双剣士 吟遊詩人 忍者 機工士 踊り子',
+    'de': 'WDL SCH BRD NIN MCH TÄN',
+    'fr': 'ARC SUR BRD NIN MCH DNS'
   },
   '106': {
     'en': 'GLA MRD PGL LNC ARC ROG BRD',
@@ -672,10 +672,10 @@ export const jobCategories = {
     'fr': 'MRG'
   },
   '113': {
-    'en': 'GLA MRD PLD WAR DRK',
-    'ja': '剣術士 斧術士 ナイト 戦士 暗黒騎士',
-    'de': 'GLA MAR PLD KRG DKR',
-    'fr': 'GLA MRD PLD GUE CHN'
+    'en': 'GLA MRD PLD WAR DRK GNB',
+    'ja': '剣術士 斧術士 ナイト 戦士 暗黒騎士 ガンブレイカー',
+    'de': 'GLA MAR PLD KRG DKR REV',
+    'fr': 'GLA MRD PLD GUE CHN PSB'
   },
   '114': {
     'en': 'PGL LNC ROG MNK DRG NIN SAM',
@@ -684,10 +684,10 @@ export const jobCategories = {
     'fr': 'PGL HAS MOI DRG SUR NIN SAM'
   },
   '115': {
-    'en': 'ARC BRD MCH',
-    'ja': '弓術士 吟遊詩人 機工士',
-    'de': 'WDL BRD MCH',
-    'fr': 'ARC BRD MCH'
+    'en': 'ARC BRD MCH DNC',
+    'ja': '弓術士 吟遊詩人 機工士 踊り子',
+    'de': 'WDL BRD MCH TÄN',
+    'fr': 'ARC BRD MCH DNS'
   },
   '116': {
     'en': 'THM ACN BLM SMN RDM BLU',
@@ -702,10 +702,10 @@ export const jobCategories = {
     'fr': 'ÉLM MBL ÉRU AST'
   },
   '118': {
-    'en': 'PGL LNC ARC ROG MNK DRG BRD NIN MCH SAM',
-    'ja': '格闘士 槍術士 弓術士 モンク 竜騎士 吟遊詩人 双剣士 忍者 機工士 侍',
-    'de': 'FST PIK WLD MÖN DRG BRD SCH NIN MCH SAM',
-    'fr': 'PGL HAS ARC MOI DRG BRD SUR NIN MCH SAM'
+    'en': 'PGL LNC ARC ROG MNK DRG BRD NIN MCH SAM DNC',
+    'ja': '格闘士 槍術士 弓術士 モンク 竜騎士 吟遊詩人 双剣士 忍者 機工士 侍 踊り子',
+    'de': 'FST PIK WLD MÖN DRG BRD SCH NIN MCH SAM TÄN',
+    'fr': 'PGL HAS ARC MOI DRG BRD SUR NIN MCH SAM DNS'
   },
   '119': {
     'en': 'PGL LNC THM ACN ROG MNK DRG BLM SMN NIN SAM RDM BLU',
@@ -720,10 +720,10 @@ export const jobCategories = {
     'fr': 'ÉLM OCC MBL MNO ACN INV ÉRU AST MRG MBU'
   },
   '121': {
-    'en': 'PLD WAR DRK',
-    'ja': 'ナイト 戦士 暗黒騎士',
-    'de': 'PLD KRG DKR',
-    'fr': 'PLD GUE CHN'
+    'en': 'PLD WAR DRK GNB',
+    'ja': 'ナイト 戦士 暗黒騎士 ガンブレイカー',
+    'de': 'PLD KRG DKR REV',
+    'fr': 'PLD GUE CHN PSB'
   },
   '122': {
     'en': 'MNK DRG NIN SAM',
@@ -732,10 +732,10 @@ export const jobCategories = {
     'fr': 'MOI DRG NIN SAM'
   },
   '123': {
-    'en': 'BRD MCH',
-    'ja': '吟遊詩人 機工士',
-    'de': 'BRD MCH',
-    'fr': 'BRD MCH'
+    'en': 'BRD MCH DNC',
+    'ja': '吟遊詩人 機工士 踊り子',
+    'de': 'BRD MCH TÄN',
+    'fr': 'BRD MCH DNS'
   },
   '124': {
     'en': 'BLM SMN RDM BLU',
@@ -750,10 +750,10 @@ export const jobCategories = {
     'fr': 'MBL ÉRU AST'
   },
   '126': {
-    'en': 'MNK DRG BRD NIN MCH SAM',
-    'ja': 'モンク 竜騎士 吟遊詩人 忍者 機工士 侍',
-    'de': 'MÖN DRG BRD NIN MCH SAM',
-    'fr': 'MOI DRG BRD NIN MCH SAM'
+    'en': 'MNK DRG BRD NIN MCH SAM DNC',
+    'ja': 'モンク 竜騎士 吟遊詩人 忍者 機工士 侍 踊り子',
+    'de': 'MÖN DRG BRD NIN MCH SAM TÄN',
+    'fr': 'MOI DRG BRD NIN MCH SAM DNS'
   },
   '127': {
     'en': 'MNK DRG BLM SMN NIN SAM RDM BLU',
@@ -780,16 +780,16 @@ export const jobCategories = {
     'fr': 'Toutes classes et jobs (sauf jobs restreints)'
   },
   '131': {
-    'en': 'MNK DRG BRD BLM SMN NIN MCH SAM RDM',
-    'ja': 'モンク 竜騎士 吟遊詩人 黒魔道士 召喚士 忍者 機工士 侍 赤魔道士',
-    'de': 'MÖN DRG BRD SMA BSW NIN MCH SAM RMA',
-    'fr': 'MOI DRG BRD MNO INV NIN MCH SAM MRG'
+    'en': 'MNK DRG BRD BLM SMN NIN MCH SAM RDM DNC',
+    'ja': 'モンク 竜騎士 吟遊詩人 黒魔道士 召喚士 忍者 機工士 侍 赤魔道士 踊り子',
+    'de': 'MÖN DRG BRD SMA BSW NIN MCH SAM RMA TÄN',
+    'fr': 'MOI DRG BRD MNO INV NIN MCH SAM MRG DNS'
   },
   '132': {
-    'en': 'MNK DRG BRD WHM BLM SMN SCH NIN MCH AST SAM RDM',
-    'ja': 'モンク 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 忍者 機工士 占星術師 侍 赤魔道士',
-    'de': 'MÖN DRG BRD WMA SMA BSW GLT NIN MCH AST SAM RMA',
-    'fr': 'MOI DRG BRD MBL MNO INV ÉRU NIN MCH AST SAM MRG'
+    'en': 'MNK DRG BRD WHM BLM SMN SCH NIN MCH AST SAM RDM DNC',
+    'ja': 'モンク 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 忍者 機工士 占星術師 侍 赤魔道士 踊り子',
+    'de': 'MÖN DRG BRD WMA SMA BSW GLT NIN MCH AST SAM RMA TÄN',
+    'fr': 'MOI DRG BRD MBL MNO INV ÉRU NIN MCH AST SAM MRG DNS'
   },
   '133': {
     'en': 'WHM SCH AST',
@@ -798,40 +798,40 @@ export const jobCategories = {
     'fr': 'MBL ÉRU AST'
   },
   '134': {
-    'en': 'PLD WAR DRK',
-    'ja': 'ナイト 戦士 暗黒騎士',
-    'de': 'PLD KRG DKR',
-    'fr': 'PLD GUE CHN'
+    'en': 'PLD WAR DRK GNB',
+    'ja': 'ナイト 戦士 暗黒騎士 ガンブレイカー',
+    'de': 'PLD KRG DKR REV',
+    'fr': 'PLD GUE CHN PSB'
   },
   '135': {
-    'en': 'PLD MNK WAR DRG BRD BLM SMN NIN MCH DRK SAM RDM',
-    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 黒魔道士 召喚士 忍者 機工士 暗黒騎士 侍 赤魔道士',
-    'de': 'PLD MÖN KRG DRG BRD SMA BSW NIN MCH DKR SAM RMA',
-    'fr': 'PLD MOI GUE DRG BRD MNO INV NIN MCH CHN SAM MRG'
+    'en': 'PLD MNK WAR DRG BRD BLM SMN NIN MCH DRK SAM RDM GNB DNC',
+    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 黒魔道士 召喚士 忍者 機工士 暗黒騎士 侍 赤魔道士 ガンブレイカー 踊り子',
+    'de': 'PLD MÖN KRG DRG BRD SMA BSW NIN MCH DKR SAM RMA TÄN',
+    'fr': 'PLD MOI GUE DRG BRD MNO INV NIN MCH CHN SAM MRG PSB DNS'
   },
   '136': {
-    'en': 'PLD WAR WHM SCH DRK AST',
-    'ja': 'ナイト 戦士 白魔道士 学者 暗黒騎士 占星術師',
-    'de': 'PLD KRG WMA GLT DKR AST',
-    'fr': 'PLD GUE MBL ÉRU CHN AST'
+    'en': 'PLD WAR WHM SCH DRK AST GNB',
+    'ja': 'ナイト 戦士 白魔道士 学者 暗黒騎士 占星術師 ガンブレイカー',
+    'de': 'PLD KRG WMA GLT DKR AST REV',
+    'fr': 'PLD GUE MBL ÉRU CHN AST PSB'
   },
   '137': {
-    'en': 'PLD MNK WAR DRG BRD WHM BLM SMN SCH NIN MCH DRK AST SAM RDM',
-    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 忍者 機工士 暗黒騎士 占星術師 侍 赤魔道士',
-    'de': 'PLD MÖN KRG DRG BRD WMA SMA BSW GLT NIN MCH DKR AST SAM RMA',
-    'fr': 'PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG'
+    'en': 'PLD MNK WAR DRG BRD WHM BLM SMN SCH NIN MCH DRK AST SAM RDM GNB DNC',
+    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 忍者 機工士 暗黒騎士 占星術師 侍 赤魔道士 ガンブレイカー 踊り子',
+    'de': 'PLD MÖN KRG DRG BRD WMA SMA BSW GLT NIN MCH DKR AST SAM RMA REV TÄN',
+    'fr': 'PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG PSB DNS'
   },
   '138': {
-    'en': 'PLD MNK WAR DRG NIN DRK SAM',
-    'ja': 'ナイト モンク 戦士 竜騎士 忍者 暗黒騎士 侍',
-    'de': 'PLD MÖN KRG DRG NIN DKR SAM',
-    'fr': 'PLD MOI GUE DRG NIN CHN SAM'
+    'en': 'PLD MNK WAR DRG NIN DRK SAM GNB',
+    'ja': 'ナイト モンク 戦士 竜騎士 忍者 暗黒騎士 侍 ガンブレイカー',
+    'de': 'PLD MÖN KRG DRG NIN DKR SAM REV',
+    'fr': 'PLD MOI GUE DRG NIN CHN SAM PSB'
   },
   '139': {
-    'en': 'BRD MCH',
-    'ja': '吟遊詩人 機工士',
-    'de': 'BRD MCH',
-    'fr': 'BRD MCH'
+    'en': 'BRD MCH DNC',
+    'ja': '吟遊詩人 機工士 踊り子',
+    'de': 'BRD MCH TÄN',
+    'fr': 'BRD MCH DNS'
   },
   '140': {
     'en': 'WHM BLM SMN SCH AST RDM',
@@ -840,10 +840,10 @@ export const jobCategories = {
     'fr': 'MBL MNO INV ÉRU AST MRG'
   },
   '141': {
-    'en': 'PLD MNK WAR DRG BRD WHM BLM SMN SCH MCH DRK AST SAM RDM',
-    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 機工士 暗黒騎士 占星術師 侍 赤魔道士',
-    'de': 'PLD MÖN KRG DRG BRD WMA SMA BSW GLT MCH DKR AST SAM RMA',
-    'fr': 'PLD MOI GUE DRG BRD MBL MNO INV ÉRU MCH CHN AST SAM MRG'
+    'en': 'PLD MNK WAR DRG BRD WHM BLM SMN SCH MCH DRK AST SAM RDM GNB DNC',
+    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 機工士 暗黒騎士 占星術師 侍 赤魔道士 ガンブレイカー 踊り子',
+    'de': 'PLD MÖN KRG DRG BRD WMA SMA BSW GLT MCH DKR AST SAM RMA REV TÄN',
+    'fr': 'PLD MOI GUE DRG BRD MBL MNO INV ÉRU MCH CHN AST SAM MRG PSB DNS'
   },
   '142': {
     'en': 'Any Disciple of War or Magic (excluding limited jobs)',
@@ -864,10 +864,10 @@ export const jobCategories = {
     'fr': 'Mages (sauf jobs restreints)'
   },
   '145': {
-    'en': 'PLD MNK WAR DRG BRD NIN MCH DRK SAM',
-    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 忍者 機工士 暗黒騎士 侍',
-    'de': 'PLD MÖN KRG DRG BRD NIN MCH DKR SAM',
-    'fr': 'PLD MOI GUE DRG BRD NIN MCH CHN SAM'
+    'en': 'PLD MNK WAR DRG BRD NIN MCH DRK SAM GNB DNC',
+    'ja': 'ナイト モンク 戦士 竜騎士 吟遊詩人 忍者 機工士 暗黒騎士 侍 ガンブレイカー 踊り子',
+    'de': 'PLD MÖN KRG DRG BRD NIN MCH DKR SAM REV TÄN',
+    'fr': 'PLD MOI GUE DRG BRD NIN MCH CHN SAM PSB DNS'
   },
   '146': {
     'en': 'Any job of the Disciples of War or Magic (excluding limited jobs)',
@@ -886,5 +886,83 @@ export const jobCategories = {
     'ja': 'モンク 竜騎士 忍者 侍',
     'de': 'MÖN DRG NIN SAM',
     'fr': 'MOI DRG NIN SAM'
+  },
+  '149': {
+    'en': 'GNB',
+    'ja': 'ガンブレイカー',
+    'de': 'REV',
+    'fr': 'PSB'
+  },
+  '150': {
+    'en': 'DNC',
+    'ja': '踊り子',
+    'de': 'TÄN',
+    'fr': 'DNS'
+  },
+  '151': {
+    'en': 'Facet of Forging (BSM, ARM, GSM)',
+    'ja': '錬鉄科 (鍛冶師、甲冑師、彫金師)',
+    'de': 'Schwarzeisen-Schmiede (GRS, PLA, GLD)',
+    'fr': 'Métallurgistes (FRG ARM ORF)'
+  },
+  '152': {
+    'en': 'Facet of Crafting (CRP, LTW, WVR)',
+    'ja': '手工科 (木工師、革細工師、裁縫師)',
+    'de': 'Erinnerungswerkstatt (ZMR, GER, WEB)',
+    'fr': 'Façonniers (MEN TAN COU)'
+  },
+  '153': {
+    'en': 'Facet of Nourishing (ALC, CUL)',
+    'ja': '食薬科 (錬金術師、調理師)',
+    'de': 'Kräuter, Düfte & Aromen (ALC, GRM)',
+    'fr': 'Préparateurs (ALC CUI)'
+  },
+  '154': {
+    'en': 'Facet of Gathering (MIN, BTN)',
+    'ja': '調達科 (採掘師、園芸師)',
+    'de': 'Materialbeschaffung (MIN, GÄR)',
+    'fr': 'Naturalistes (MIN BOT)'
+  },
+  '155': {
+    'en': 'Facet of Fishing (FSH)',
+    'ja': '漁業科 (漁師)',
+    'de': 'Fischerei (FIS)',
+    'fr': 'Pêcheurs (PÊC)'
+  },
+  '156': {
+    'en': 'Tank (excluding limited jobs)',
+    'ja': 'TANKジョブ(リミテッドジョブを除く)',
+    'de': 'Verteidiger (außer beschränkte Jobs)',
+    'fr': 'Tanks (sauf jobs restreints)'
+  },
+  '157': {
+    'en': 'Healer (excluding limited jobs)',
+    'ja': 'HEALERジョブ (リミテッドジョブを除く)',
+    'de': 'Heiler (außer beschränkte Jobs)',
+    'fr': 'Soigneurs (sauf jobs restreints)'
+  },
+  '158': {
+    'en': 'Physical DPS (excluding limited jobs)',
+    'ja': 'ファイター系DPSジョブ(リミテッドジョブを除く)',
+    'de': 'Physischer Angreifer (außer beschränkte Jobs)',
+    'fr': 'DPS physiques (sauf jobs restreints)'
+  },
+  '159': {
+    'en': 'Magical DPS (excluding limited jobs)',
+    'ja': 'ソーサラー系DPSジョブ (リミテッドジョブを除く)',
+    'de': 'Magischer Angreifer (außer beschränkte Jobs)',
+    'fr': 'DPS magiques (sauf jobs restreints)'
+  },
+  '160': {
+    'en': 'ACN SCH',
+    'ja': '巴術士 学者',
+    'de': 'HRT GLT',
+    'fr': 'ACN ÉRU'
+  },
+  '161': {
+    'en': 'GLA PGL MRD LNC ARC PLD MNK WAR DRG BRD ROG NIN MCH DRK SAM GNB DNC',
+    'ja': '剣術士 格闘士 斧術士 槍術士 弓術士 ナイト モンク 戦士 竜騎士 吟遊詩人 双剣士 忍者 機工士 暗黒騎士 侍 ガンブレイカー 踊り子',
+    'de': 'KRG GLA MAR PIK WLD PAL MÖN KRG DRG BRD SCH NIN MCH DKR SAM REV TÄN',
+    'fr': 'GLA PGL MRD HAS ARC PLD MOI GUE DRG BRD SUR NIN MCH CHN SAM PSB DNS'
   }
 };

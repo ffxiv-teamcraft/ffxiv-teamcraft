@@ -12,9 +12,13 @@
               <div>Lvl {{trait.Level}}</div>
               <div [innerHTML]="trait.ClassJob | xivapiI18n: 'Abbreviation'"></div>
             </div>
+            <div class="patch" *ngIf="trait.GamePatch">
+              {{trait.GamePatch | xivapiI18n}}
+              <app-db-button type="patch" [id]="trait.GamePatch.ID"></app-db-button>
+            </div>
           </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="links" *ngIf="links$ | async as links">
           <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
             <img [src]="link.icon" [alt]="link.title" class="link-icon">
           </a>
@@ -58,7 +62,7 @@
                   [nzAvatar]="actionAvatar"
                   [nzTitle]="actionTitle">
                   <ng-template #actionAvatar>
-                    <img [src]="sharedAction | actionIcon" alt="" [appXivdbActionTooltip]="sharedAction">
+                    <img [src]="sharedAction | actionIcon | xivapiIcon" alt="" [appXivdbActionTooltip]="sharedAction">
                   </ng-template>
                   <ng-template #actionTitle>
                     <div>

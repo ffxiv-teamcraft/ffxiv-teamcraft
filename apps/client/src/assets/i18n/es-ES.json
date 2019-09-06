@@ -20,6 +20,13 @@
     "auth/user-not-found": "Correo electrónico o contraseña incorrectos",
     "auth/wrong-password": "Correo electrónico o contraseña incorrectos"
   },
+  "TIMERS": {
+    "Days": "días",
+    "Day": "día",
+    "Hours": "h",
+    "Minutes": "m",
+    "Seconds": "s"
+  },
   "ITEMS": {
     "Title": "Busqueda",
     "No_match": "No se encontró el artículo",
@@ -69,7 +76,7 @@
     "Created_by": "Creado por {{name}}",
     "Share_link_copied": "Vínculo para compartir taller copiado",
     "Not_found": "Taller no encontrado o no tiene acceso a él",
-    "Shared_workshops": "Talleres compartidos contigo",
+    "Shared_workshops": "Talleres compartidos con usted",
     "Rename": "Renombrar taller",
     "Add_lists": "Agregar listas"
   },
@@ -99,6 +106,7 @@
   "Discounts": "Descuento",
   "Flat_discount": "Absoluto",
   "Percent_discount": "Porcentual",
+  "Path_copied_to_clipboard": "URL a la página actual copiada al portapapeles",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrar usando etiquetas",
     "Tags_filter_reset": "Quitar filtro de etiquetas",
@@ -106,6 +114,7 @@
     "No_lists_matching": "No hay listas que coincidan con sus filtros"
   },
   "COMMON": {
+    "Length": "Longitud",
     "Save": "Guardar",
     "Reset": "Reiniciar",
     "Total": "Total",
@@ -128,7 +137,8 @@
     "None": "Ninguno",
     "Top": "Arriba",
     "Bottom": "Abajo",
-    "Amount": "Amount"
+    "Amount": "Cantidad",
+    "Undo": "Deshacer"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -140,6 +150,7 @@
     "Custom_sound": "Sonido de alarma personalizado",
     "New_group": "Nuevo grupo de alarmas",
     "Confirm_group_delete": "¿Está seguro de que quiere eliminar este grupo?",
+    "Delete_group_and_alarms": "Eliminar grupo con todas las alarmas",
     "Confirm_group_delete_with_alarms": "¿Está seguro que desea eliminar este grupo y todas sus alarmas?",
     "Add_note": "Agregar una nota",
     "Volume": "Volumen",
@@ -149,6 +160,17 @@
     "Node_content": "Contenido del nodo",
     "Toggle_collapse": "Colapsar/Expandir grupos",
     "Add_alarms_to_group": "Agregar alarmas a este grupo",
+    "REALTIME": {
+      "Reset_timers": "Restablecer temporizadores",
+      "WEEKLY_RESETS": "Semanales",
+      "WEEKLY_RESETS_DESCRIPTION": "Entregas personalizadas, WT, botines semanales (asaltos de 24 personas, fichas de savage, fichas de armas de asaltos normales), Jumbo Cactpot, registro de desafíos, reporte de moda, marcas de caza de rango B.",
+      "ROULETTES_RESET": "Ruletas y Tribus de bestias",
+      "ROULETTES_RESET_DESCRIPTION": "Restablecimiento de todas las ruletas, misiones de tribus de bestias, caza diaria y mini cactpot.",
+      "DELIVERIES_RESET": "Entregas",
+      "DELIVERIES_RESET_DESCRIPTION": "Restablecimiento de entregas de la GC",
+      "LEVE_ALLOWANCES": "Permisos de leve",
+      "LEVE_ALLOWANCES_DESCRIPTION": "Obtiene 3 permisos de leve más"
+    },
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
@@ -189,6 +211,7 @@
   "No": "No",
   "Crystals": "Cristales",
   "Gathering": "Recolección",
+  "Drops_or_GC": "Mazmorras/Botín o GC",
   "Other": "Otros",
   "Pre_crafts": "Precursores",
   "Items": "Artículos",
@@ -246,10 +269,13 @@
   "filters/worn_by": "Usado por",
   "filters/crafted_by": "Creado por:",
   "filters/item_category": "Tipo de artículo",
+  "filters/stats": "Filtros de atributos",
+  "filters/bonuses": "Filtros de bonos de atributo",
   "Adding_recipes": "Agregando {{amount}} recetas a la lista {{listname}}",
   "Recipe_Added": "1 artículo agregado a la lista {{listname}}",
   "Recipes_Added": "{{itemcount}} artículos agregados a la lista {{listname}}",
   "Character_name": "Nombre del Personaje",
+  "Character_add_warning": "Si está viendo esto sin haber eliminado su personaje manualmente, no introduzca nada y actualize la página o reinicie la aplicación. Si el problema persiste, por favor, reporta en el servidor discord.",
   "Disconnect_and_anonymous": "Desconectar y continuar como anónimo",
   "Add_manual_character": "Agregar personaje",
   "Character_informations": "Información del personaje",
@@ -338,6 +364,9 @@
     "Clear_search_history": "Limpiar el historial de búsqueda",
     "Auto_mark_as_done_in_log": "Marcar elementos como completados en el registro cuando se hacen en una lista",
     "Db_comments_position": "Posición de comentarios de base de datos",
+    "Always_HQ_leves": "Siempre contar la experiencia de leves con artículos HQ",
+    "Clickthrough_overlay": "Permitir hacer clic a través de la capa sobrepuesta",
+    "Disable_search_history": "Desactivar historial de búsqueda",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -364,13 +393,13 @@
     "Patreon_features": "Características para seguidores de Patreon",
     "Contacts": "Contactos",
     "Add_new_contact": "Nuevo contacto",
-    "Save_for_all": "Guardar para todos",
+    "Save_for_all": "Guardar para todos los artesanos",
     "User_not_verified": "Usuario no verificado, haga clic para verificar",
     "More_than_100_lists_created": "Más de 100 listas creadas",
     "Veteran": "Veterano",
     "VERIFICATION": {
       "Title": "Verificación de personaje",
-      "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" en la biografia de su perfil de Lodestone y haga clic en el botón de abajo.",
+      "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" dentro de su biografía en su perfil de Lodestone y haga clic en el botón de abajo. Más información en el <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "¡Personaje verificado! Ahora puede cerrar esta ventana. No dude en eliminar el código de su perfil, no es necesario ya.",
       "Error": "No se pudo encontrar el código en su bio. Por favor asegúrese de haber pegado y aplicado los cambios. espere ~ 30s e inténtelo de nuevo.",
       "Validate": "Validar"
@@ -407,7 +436,10 @@
       "Give_list_name": "Dele a su nueva lista un nombre",
       "Final_step": "Validación",
       "Creating_list": "Creando la lista",
-      "Loading_items": "Cargando la información de los artículos"
+      "Loading_items": "Cargando la información de los artículos",
+      "Estimate_overmeld_materia": "Estimar materias requeridas para el exceso de fusión",
+      "Multiply_tool_materia": "Multiplicar materia para las herramientas de DoL (×2) y DoH (×8)",
+      "Group_together": "Agrupar materias juntas"
     }
   },
   "LIST": {
@@ -427,6 +459,7 @@
     "Show_craftable_amount": "Mostrar cantidad fabricable",
     "Optimized_full_path": "Mostrar ruta optimizada completa (más barata y más rápida)",
     "Quick_layout_swap": "Intercambio rápido de diseño",
+    "Mark_whole_panel_done": "Marcar contenido del panel como completado",
     "INVENTORY": {
       "Show_final_items": "Mostrar artículos finales",
       "Hide_final_items": "Ocultar artículos finales"
@@ -501,7 +534,7 @@
         "REMOVE_ITEM": "Quitar elemento de la lista",
         "ADD_TAG": "Añadir etiqueta al artículo",
         "MARK_AS_DONE_IN_LOG": "Marcar como hecho en el registro",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "Información del mercado"
       }
     },
     "LAYOUT": {
@@ -513,6 +546,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "Desactualizado",
     "GEAR": "Armadura",
     "CONSUMABLE": "Consumible",
@@ -533,6 +570,7 @@
     "PLD": "PLD",
     "WAR": "WAR",
     "DRK": "DRK",
+    "GNB": "GNB",
     "WHM": "WHM",
     "SCH": "SCH",
     "AST": "AST",
@@ -542,6 +580,7 @@
     "SAM": "SAM",
     "BRD": "BRD",
     "MCH": "MCH",
+    "DNC": "DNC",
     "BLM": "BLM",
     "SMN": "SMN",
     "RDM": "RDM",
@@ -583,10 +622,10 @@
     "Steps": "Pasos",
     "Loading_path": "Cargando ruta optimizada (puede tomar varios segundos)",
     "STEP": {
-      "Gathering": "Recolectar {{amount}}",
-      "Hunting": "Obtener {{amount}} de monstruos",
-      "Vendor": "Comprar {{amount}}",
-      "Trade": "Intercambiar {{amount}}"
+      "Gathering": "Recolectar {{amount}} (total: {{total}})",
+      "Hunting": "Conseguir {{amount}} en monstruos (total: {{total}})",
+      "Vendor": "Comprar {{amount}} (total: {{total}})",
+      "Trade": "Intercambiar {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -657,6 +696,7 @@
     "Not_found": "Pagina no encontrada"
   },
   "SIMULATOR": {
+    "Title": "Simulador de fabricación",
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
@@ -715,6 +755,27 @@
     "Safe_mode_tooltip": "Deshabilita todas las habilidades que no tienen 100% de probabilidad de tener éxito (toma mejoras/bonos en cuenta)",
     "Quality_needed": "{{amount}} más calidad para llegar a 100%",
     "Rotation_tips": "Consejos de rotación",
+    "Progress_action_100_potency": "Progreso por 100% de eficiencia: {{value}}",
+    "Quality_action_100_potency": "Calidad por 100% de eficiencia: {{value}}",
+    "Current_control": "Control actual: {{value}}",
+    "Current_control_bonus": "Bono actual (limitado a 3000)",
+    "Macrolock": "Incluir bloqueo de macro",
+    "Solve_rotation": "Solucionar esta rotación",
+    "Rotation_solver": "Resolvedor de rotación",
+    "Recipe_picker_placeholder": "Introduzca el nombre de la receta que desea crear",
+    "Could_not_find_minstats": "No se pudieron encontrar atributos mínimos para esta rotación",
+    "STATE": {
+      "Excellent": "Excelente",
+      "Good": "Bueno",
+      "Poor": "Pobre",
+      "Fail": "Fallo",
+      "Normal": "Normal"
+    },
+    "SOLVER": {
+      "Hq_target": "% de HQ objetivo",
+      "Use_rotation_as_seed": "Usar rotación actual como punto de partida",
+      "Disclaimer": "El resolvedor es un trabajo en progreso, por favor tenga en cuenta que no está hecho para crear rotaciones perfectas, es una IA tratando de mejorar con el tiempo que puede producir resultados muy malos así como muy buenos. Por favor, no informe de resultados malos como un error."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "Rotaciones de la comunidad",
       "Community_rotation": "Rotación de la comunidad",
@@ -741,7 +802,8 @@
         "TEALESS": "Sin té",
         "FOODLESS": "Sin comida",
         "MAKERS_MARK": "Maker's Mark",
-        "MUSCLE_MEMORY": "Muscle Memory"
+        "MUSCLE_MEMORY": "Muscle Memory",
+        "REUSE": "Reutilizar"
       }
     },
     "CUSTOM": {
@@ -754,6 +816,7 @@
     "ROTATIONS": {
       "Search_placeholder": "Buscar una rotación",
       "FOLDERS": {
+        "Not_found": "Rotation folder not found",
         "Folders": "Carpetas de rotación",
         "Rename": "Renombrar carpeta",
         "New_folder": "Nueva carpeta",
@@ -855,7 +918,7 @@
     "Craft_price": "Precio de fabricación",
     "Marketboard_price": "Precio NQ",
     "Marketboard_price_hq": "Precio HQ",
-    "Enter_total_earnings": "Enter total earnings"
+    "Enter_total_earnings": "Ingrese ganancias totales"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -881,6 +944,7 @@
     "List_item_comment_added": "Comentario publicado en {{itemName}}, lista {{listName}}: \"{{content}}\"",
     "Db_comment": "Nuevo comentario en base de datos: \"{{comment}}\"",
     "Db_comment_reply": "Nueva respuesta a uno de sus comentarios: \"{{comment}}\"",
+    "Blog_post": "Nuevo post en el blog: {{title}}",
     "Mark_all_as_read": "Marcar todo como leído",
     "No_notifications": "No hay notificaciones"
   },
@@ -909,16 +973,16 @@
     "Officer": "Oficial",
     "Promote_officer": "Promover a oficial",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han añadido a **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han quitado de **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marcó {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** de {{totalNeeded}} como completados en **[[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/es/item/{{itemId}})** ha sido añadido a **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/es/item/{{itemId}})** ha sido eliminado de **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marcó {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/es/item/{{itemId}})** de {{totalNeeded}} como completados en **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "El equipo **{{teamName}}** será seguido ahora en este canal.",
       "List_added_notification": "La lista **[{{listName}}]({{listUrl}})** ha sido agregada al equipo.",
       "List_removed_notification": "La lista **[{{listName}}]({{listUrl}})** ha sido quitada del equipo.",
       "Member_joined": "¡**[{{memberName}}]({{memberProfileUrl}})** se ha unido al equipo!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** ha sido expulsado del equipo.",
       "Name_changed": "El equipo **{{oldName}}** ha sido renombrado **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** ha sido asignado a **[{{memberName}}]({{memberProfileUrl}})** en **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/es/item/{{itemId}})** ha sido asignado a **[{{memberName}}]({{memberProfileUrl}})** en **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Un miembro se ha unido",
@@ -929,7 +993,8 @@
       "LIST_REMOVED": "Lista removida",
       "LIST_PROGRESSION": "Progresar materiales de la lista",
       "FINAL_LIST_PROGRESSION": "Progresar artículos finales de la lista",
-      "USER_ASSIGNMENT": "Asignación de usuario"
+      "USER_ASSIGNMENT": "Asignación de usuario",
+      "ITEM_COMPLETION": "Completar el artículo"
     }
   },
   "MARKETBOARD": {
@@ -976,7 +1041,7 @@
   },
   "UPDATE": {
     "New_update_available": "¡Nueva actualización disponible! ",
-    "Desktop_instructions": "Por favor siga el siguiente enlace para descargar la última versión: ",
+    "New_update_available_desktop": "¡Una nueva actualización está disponible!\nHaga clic aquí para descargarla e instalarla.",
     "Web_instructions": "Por favor refresque la página para obtener la última versión."
   },
   "LOG_TRACKER": {
@@ -994,6 +1059,7 @@
     "Required_for_achievement": "Requerido para los logros",
     "Select_spot": "Seleccione un lugar para ver sus detalles",
     "Hide_completed": "Ocultar recetas completadas",
+    "Hide_completed_items": "Hide completed items",
     "MIN_optimized_path": "Ruta optimizada para todos los nodos de minería",
     "BTN_optimized_path": "Ruta optimizada para todos los nodos de botanista",
     "PAGE": {
@@ -1193,7 +1259,14 @@
     "Limited": "Aparición limitada",
     "3d_model_viewer": "Vista previa del modelo 3D",
     "3d_model_help": "Previsualizar modelo 3D",
-    "Achievements": "Achievements",
+    "Achievements": "Logros",
+    "Currencies": "Divisas",
+    "Rowena_splendor": "Esplendores de Rowena (Estrella = +20% de bonus)",
+    "Unlocks": "Desbloqueos",
+    "ITEM": {
+      "Masterpiece_base": "BASE",
+      "Masterpiece_bonus": "BONUS"
+    },
     "NODE": {
       "Items": "Artículos",
       "Possible_bonuses": "Bonos posibles",
@@ -1212,7 +1285,8 @@
       "End": "Fin",
       "Rewards": "Recompensas",
       "Repeatable": "Repetible",
-      "Beast_tribe_rank": "Rango de tribu de bestia"
+      "Beast_tribe_rank": "Rango de tribu de bestia",
+      "Chain_length": "Misiones siguientes"
     },
     "NPC": {
       "Other_entries": "Otras apariciones",
@@ -1231,7 +1305,8 @@
       "Allowance_cost": "Coste de autorizaciones",
       "Rewards": "Recompensas posibles",
       "Client": "Cliente",
-      "Issuer": "Emisor"
+      "Issuer": "Emisor",
+      "Turn_ins": "Entregas"
     },
     "MOB": {
       "Known_spawns": "Lugares de aparición conocidos",
@@ -1305,7 +1380,26 @@
       "Show_more": "Mostrar {{amount}} comentarios más",
       "No_comments": "Sin comentarios",
       "Post": "Publicar",
-      "Editor_tip": "Los enlaces de base de datos serán procesados y manejados dentro de su mensaje."
+      "Editor_tip": "Escriba <tipo de pagina>:\"<Nombre del Contenido>\" para crear un enlace a otra página. Ejemplos: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Tipos de páginas soportados: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+    },
+    "PATCH": {
+      "Open_patch_page": "Haga clic aquí para abrir cambios de parche completos en la base de datos",
+      "CONTENT": {
+        "Title": "Contenido del parche",
+        "Achievements": "Logros ({{amount}})",
+        "Actions": "Acciones ({{amount}})",
+        "Crafting_actions": "Acciones de fabricación ({{amount}})",
+        "Fates": "Fates ({{amount}})",
+        "Instances": "Contenido de la instancia ({{amount}})",
+        "Items": "Artículos ({{amount}})",
+        "Leves": "Leves ({{amount}})",
+        "Maps": "Mapas ({{amount}})",
+        "Monsters": "Monstruos ({{amount}})",
+        "Npcs": "Npcs ({{amount}})",
+        "Quests": "Misiones ({{amount}})",
+        "Statuses": "Estados ({{amount}})",
+        "Traits": "Rasgos ({{amount}})"
+      }
     }
   },
   "SEARCH_TYPES": {
@@ -1358,22 +1452,53 @@
     "Description": "Introduzca los artículos que tiene y haga clic en \"Buscar recetas\" para obtener una lista de posibles recetas para fabricar y generar fácilmente una lista de fabricación de los resultados.",
     "Empty_basket": "Su cesta está vacía",
     "Add_item": "Agregar artículo",
-    "Clipboard_content_malformed": "Clipboard content malformed",
-    "Import_from_clipboard": "Import from clipboard",
-    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
-    "Extension_link": "Get the extension on chrome webstore",
-    "Clear": "Clear items list",
-    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
-    "Inventory": "Inventory",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Pool_copied": "Inventory copied to your clipboard",
-    "Sort_alphabetically": "Sort alphabetically",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Clipboard_content_malformed": "Contenido del portapapeles incorrecto",
+    "Import_from_clipboard": "Importar desde el portapapeles",
+    "Extension_tip": "Puede copiar el inventario de su siervo a su portapapeles usando la extensión capturadora de inventario: ",
+    "Extension_link": "Obtenga la extensión en la tienda web de chrome",
+    "Clear": "Borrar lista de artículos",
+    "Clipboard_import_duplicates": "Los artículos que se muestran doble es porque lodestone muestra pilas, así que están con su siervo como pilas separadas.",
+    "Inventory": "Inventario",
+    "Copy_to_clipboard": "Copiar inventario al portapapeles",
+    "Pool_copied": "Inventario copiado a su portapapeles",
+    "Sort_alphabetically": "Ordenar alfabéticamente",
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} de {{ total }} artículos"
   },
   "CURRENCY_SPENDING": {
-    "Title": "Currency Spending guide",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
-    "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "Title": "Guía de Gastos de Monedas",
+    "Description": "¿Tiene demasiado de una moneda? Seleccione su moneda, establezca una cantidad, un servidor y ¡encuentre qué artículo es el mejor para comprar para obtener gil de sus monedas!",
+    "Pick_currency": "Elija una moneda",
+    "You_can_buy": "Puede comprar {{amount}}",
+    "Disabled": "La guía de gasto de monedas no está funcionando más",
+    "Disabled_description": "Esto se debe a que Square Enix nos impide obtener información del mercado, si quiere quejarse de esto, por favor quéjese con Square Enix, no hay nada que podamos hacer para hacer esto funcionar sin ellos."
+  },
+  "BLOG": {
+    "Title": "Blog"
+  },
+  "ERRORS": {
+    "Http_request_error": "Hay un problema con {{tool}}, por favor comprueba en el canal #announcements o repórtalo en el canal #bugs de discord",
+    "Firebase_blocked": "Teamcraft no pudo acceder a la base de datos, parece que algo lo está bloqueando o no tiene acceso a Internet."
+  },
+  "SEARCH": {
+    "Sort_by": "Ordenar por: ",
+    "Sort_asc": "Ascendente",
+    "Sort_desc": "Descendente",
+    "Add_stat_filter": "Añadir filtro de atributo",
+    "Add_bonus_stat_filter": "Añadir filtro de atributo de bono",
+    "Search_tip": "Puede escribir patch:<# de parche> para filtrar en un parche dado, por ejemplo: patch:5.01",
+    "SORT_BY": {
+      "Relevance": "Relevancia",
+      "ID": "ID",
+      "Level": "Nivel",
+      "Ilvl": "Nivel del artículo",
+      "Rlvl": "Nivel de la receta"
+    }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Compartiendo",
+    "Gathering": "Recolección",
+    "Helpers": "Auxiliares",
+    "Other": "Otros"
   }
 }

@@ -3,9 +3,10 @@ import { Character, CharacterSearchResult, CharacterSearchResultRow, XivapiServi
 import { combineLatest, Observable } from 'rxjs';
 import { debounceTime, filter, map, mergeMap, startWith, tap } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { AddCharacter, AddCustomCharacter, Logout } from '../../../+state/auth.actions';
 import { NzModalRef } from 'ng-zorro-antd';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 @Component({
   selector: 'app-character-link-popup',
@@ -35,6 +36,8 @@ export class CharacterLinkPopupComponent {
   public mandatory = false;
 
   private koreanServers = ['초코보', '모그리', '카벙클', '톤베리'];
+
+  public localstorageUser: TeamcraftUser = JSON.parse(localStorage.getItem('auth:user') || '{}');
 
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef) {
     this.servers$ = this.xivapi.getServerList().pipe(

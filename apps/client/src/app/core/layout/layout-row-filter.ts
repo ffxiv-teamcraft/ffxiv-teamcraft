@@ -17,6 +17,12 @@ export class LayoutRowFilter {
     return row.vendors !== undefined && row.vendors.length > 0;
   }, 'CAN_BE_BOUGHT');
 
+
+  static IS_FATE_ITEM = new LayoutRowFilter(row => {
+    return row.tradeSources !== undefined
+      && row.tradeSources.some(ts => ts.trades.some(trade => trade.currencies.some(c => c.id === 26807)));
+  }, 'IS_FATE_ITEM');
+
   static FROM_BEAST_TRIBE = new LayoutRowFilter(row => {
     if (row.tradeSources === undefined || row.vendors === undefined) {
       return false;
@@ -85,6 +91,8 @@ export class LayoutRowFilter {
         35,
         36,
         37,
+        38,
+        39,
         7811,
         9383,
         14298,
@@ -112,7 +120,9 @@ export class LayoutRowFilter {
         10309,
         10311,
         17833,
-        17834
+        17834,
+        25199,
+        25200
       ];
 
       for (const tokenId of scriptIds) {

@@ -1,3 +1,20 @@
+::ng-deep {
+  .ant-dropdown {
+    top: 0 !important;
+  }
+
+  .ant-badge-status-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    box-shadow: 0 0 0 1px #292929;
+  }
+
+  .ant-badge-status-text {
+    display: none;
+  }
+}
+
 .action-container {
   user-select: none;
   position: relative;
@@ -44,6 +61,14 @@
       border-radius: 5px;
       background-color: rgb(255, 150, 150);
       opacity: .4;
+    }
+
+    .placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     .cost {

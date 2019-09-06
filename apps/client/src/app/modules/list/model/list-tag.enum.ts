@@ -1,4 +1,11 @@
 export enum ListTag {
+  // Expansion tags
+  A_REALM_REBORN = 'A_REALM_REBORN',
+  HEAVENSWARD = 'HEAVENSWARD',
+  STORMBLOOD = 'STORMBLOOD',
+  SHADOWBRINGERS = 'SHADOWBRINGERS',
+
+
   // Theme tags
   GEAR = 'Gear',
   CONSUMABLE = 'Consumable',
@@ -22,6 +29,7 @@ export enum ListTag {
   PLD = 'PLD',
   WAR = 'WAR',
   DRK = 'DRK',
+  GNB = 'GNB',
 
   WHM = 'WHM',
   SCH = 'SCH',
@@ -34,6 +42,7 @@ export enum ListTag {
 
   BRD = 'BRD',
   MCH = 'MCH',
+  DNC = 'DNC',
 
   BLM = 'BLM',
   SMN = 'SMN',

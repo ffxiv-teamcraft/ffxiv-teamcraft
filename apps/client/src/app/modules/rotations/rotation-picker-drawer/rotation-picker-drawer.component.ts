@@ -27,6 +27,8 @@ export class RotationPickerDrawerComponent {
 
   public custom = false;
 
+  public pickOnly = false;
+
   favoriteRotations$: Observable<CraftingRotation[]>;
 
   favoriteFolders$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;

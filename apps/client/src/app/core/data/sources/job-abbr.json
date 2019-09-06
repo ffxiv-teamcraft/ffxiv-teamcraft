@@ -220,5 +220,17 @@
     "ja": "BLU",
     "de": "BMA",
     "fr": "MBU"
+  },
+  "37": {
+    "en": "GNB",
+    "ja": "GNB",
+    "de": "REV",
+    "fr": "PSB"
+  },
+  "38": {
+    "en": "DNC",
+    "ja": "DNC",
+    "de": "TÄN",
+    "fr": "DNS"
   }
 }

@@ -4,7 +4,7 @@
       <div fxLayout="row" fxLayoutAlign="flex-start center" class="panel-header" fxLayoutGap="10px">
         <div (dblclick)="openRotation(rotation)" fxLayout="row" fxLayoutGap="10px"
              fxLayoutAlign="flex-start center">
-          <div>{{rotation.getName()}}</div>
+          <div>{{rotation.getName()}} {{rotation.$key}}</div>
           <app-user-avatar [userId]="rotation.authorId" [width]="24" *ngIf="publicDisplay"></app-user-avatar>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" fxFlex="1 1 auto">
@@ -13,13 +13,16 @@
               {{'SIMULATOR.COMMUNITY_ROTATIONS.Community_rotation' | translate}}
             </nz-tag>
             <nz-tag
-              *ngFor="let tag of rotation.tags" class="custom-tag">{{('SIMULATOR.COMMUNITY_ROTATIONS.TAGS.' + tag) | translate}}</nz-tag>
+              *ngFor="let tag of rotation.tags"
+              class="custom-tag">{{('SIMULATOR.COMMUNITY_ROTATIONS.TAGS.' + tag) | translate}}</nz-tag>
             <nz-tag class="custom-tag"
                     [style.border-color]="'#bd0ef2'">{{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}
               : {{rotation.community.minCraftsmanship}}</nz-tag>
-            <nz-tag class="custom-tag" [style.border-color]="'#bd0ef2'">{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}
+            <nz-tag class="custom-tag"
+                    [style.border-color]="'#bd0ef2'">{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}
               : {{rotation.community.minControl}}</nz-tag>
-            <nz-tag class="custom-tag" [style.border-color]="'#bd0ef2'">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}
+            <nz-tag class="custom-tag"
+                    [style.border-color]="'#bd0ef2'">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}
               : {{rotation.community.minCp}}</nz-tag>
             <nz-tag
               class="custom-tag"
@@ -68,6 +71,12 @@
              [routerLink]="getRouterLink(rotation)">
             <i nz-icon type="folder-open"></i>
           </a>
+          <button (click)="$event.stopPropagation();openOverlay(rotation)" nz-button [nzShape]="'circle'"
+                  [nzType]="'primary'" nz-tooltip
+                  [nzTitle]="'ALARMS.Open_overlay' | translate"
+                  *ngIf="platformService.isDesktop()">
+            <i nz-icon type="desktop"></i>
+          </button>
           <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
                   [nzTitle]="'SIMULATOR.Confirm_delete' | translate" (nzOnConfirm)="delete(rotation)"
                   *ngIf="(permissionLevel$ | async) >= 40">

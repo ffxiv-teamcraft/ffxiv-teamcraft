@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.compact-alarms {
+  width: 100%;
+}
+
 .baits {
   padding: 10px 0;
 }
@@ -27,10 +31,6 @@
 
 .panel-title {
   padding-right: 12px;
-
-  > button {
-    margin-left: 5px;
-  }
 }
 
 .group-name {
@@ -70,6 +70,10 @@
   width: calc(100% - 32px);
 }
 
+.node-type-compact {
+  width: 24px;
+}
+
 .card-title {
   display: flex;
   align-items: center;
@@ -100,6 +104,26 @@
 
 .note-button {
   float: right;
+}
+
+.compact-alarm-row {
+  padding: 5px;
+
+  &.spawned {
+    background-color: fade(@primary-color, 50%);
+  }
+
+  &.played {
+    background-color: fade(@highlight-color, 50%);
+  }
+
+  &.disabled {
+    opacity: .6;
+  }
+
+  &.with-border {
+    border-bottom: 1px solid #444444;
+  }
 }
 
 .alarms-container {

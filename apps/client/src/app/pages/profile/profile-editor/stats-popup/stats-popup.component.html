@@ -4,16 +4,16 @@
     <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.level"></nz-input-number>
   </div>
   <div nz-row class="form-row" *ngIf="jobId <= 15">
+    <div nz-col [nzXs]="8">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}</div>
+    <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.cp"></nz-input-number>
+  </div>
+  <div nz-row class="form-row" *ngIf="jobId <= 15">
     <div nz-col [nzXs]="8">{{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}</div>
     <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.craftsmanship"></nz-input-number>
   </div>
   <div nz-row class="form-row" *ngIf="jobId <= 15">
     <div nz-col [nzXs]="8">{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}</div>
     <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.control"></nz-input-number>
-  </div>
-  <div nz-row class="form-row" *ngIf="jobId <= 15">
-    <div nz-col [nzXs]="8">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}</div>
-    <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.cp"></nz-input-number>
   </div>
   <label nz-checkbox [(ngModel)]="set.specialist" (ngModelChange)="applySpecChange(set, $event)"
          class="spec-checkbox" *ngIf="jobId <= 15">{{'SIMULATOR.CONFIGURATION.Specialist' | translate}}</label>

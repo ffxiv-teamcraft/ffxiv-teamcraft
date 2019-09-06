@@ -13,6 +13,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'recipes',
+    redirectTo: 'search',
+    pathMatch: 'full'
+  },
+  {
     path: 'lists',
     loadChildren: './pages/lists/lists-page.module#ListsPageModule'
   },
@@ -51,6 +56,10 @@ const routes: Routes = [
   {
     path: 'alarms-overlay',
     loadChildren: './pages/alarms-overlay/alarms-overlay.module#AlarmsOverlayModule'
+  },
+  {
+    path: 'rotation-overlay',
+    loadChildren: './pages/rotation-overlay/rotation-overlay.module#RotationOverlayModule'
   },
   {
     path: 'community-lists',
@@ -127,6 +136,10 @@ const routes: Routes = [
   {
     path: 'blog',
     loadChildren: './pages/blog/blog.module#BlogModule'
+  },
+  {
+    path: 'reset-timers',
+    loadChildren: './pages/reset-timers/reset-timers.module#ResetTimersModule'
   }
 ];
 

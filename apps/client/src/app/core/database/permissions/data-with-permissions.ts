@@ -20,6 +20,10 @@ export class DataWithPermissions extends DataModel {
     return this.registry[identifier] || this.everyone;
   }
 
+  public hasExplicitPermissions(identifier: string): boolean {
+    return this.registry[identifier] !== undefined;
+  }
+
   public removePermissionRow(identifier: string): void {
     delete this.registry[identifier];
   }

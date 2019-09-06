@@ -9,9 +9,13 @@
                class="larger-img-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{xivapiMob.ID | mobName | i18n}}</h2>
+            <div class="patch" *ngIf="xivapiMob.GamePatch">
+              {{xivapiMob.GamePatch | xivapiI18n}}
+              <app-db-button type="patch" [id]="xivapiMob.GamePatch.ID"></app-db-button>
+            </div>
           </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="links" *ngIf="links$ | async as links">
           <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
             <img [src]="link.icon" [alt]="link.title" class="link-icon">
           </a>
@@ -48,7 +52,7 @@
                *ngFor="let spawn of spawns$ | async">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="card-header">
-            {{spawn.zoneid | placeName | i18n}} - {{'DB.Level' | translate}} {{spawn.level}}
+            {{spawn.zoneid | placeName | i18n}}<span *ngIf="spawn.level"> - {{'DB.Level' | translate}} {{spawn.level}}</span>
           </div>
         </ng-template>
         <app-map [mapId]="spawn.map" [markers]="spawn?.positions"></app-map>

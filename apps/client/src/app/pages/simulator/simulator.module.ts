@@ -43,6 +43,8 @@ import { DirtyModule } from '../../core/dirty/dirty.module';
 import { DirtyGuard } from '../../core/dirty/dirty-guard';
 import { CommunityRotationsPageComponent } from './components/community-rotations-page/community-rotations-page.component';
 import { CommunityRotationPopupComponent } from './components/community-rotation-popup/community-rotation-popup.component';
+import { SolverPopupComponent } from './components/solver-popup/solver-popup.component';
+import { SimulatorOpenerComponent } from './components/simulator-opener/simulator-opener.component';
 
 const routes: Routes = [
   {
@@ -50,6 +52,11 @@ const routes: Routes = [
     component: CustomSimulatorPageComponent,
     canActivate: [MaintenanceGuard],
     canDeactivate: [DirtyGuard]
+  },
+  {
+    path: 'simulator',
+    component: SimulatorOpenerComponent,
+    canActivate: [MaintenanceGuard]
   },
   {
     path: 'simulator/custom',
@@ -140,11 +147,14 @@ const routes: Routes = [
     RotationFolderPanelComponent,
     RotationTipsPopupComponent,
     CommunityRotationsPageComponent,
-    CommunityRotationPopupComponent
+    CommunityRotationPopupComponent,
+    SolverPopupComponent,
+    SimulatorOpenerComponent
   ],
   exports: [
     RotationPanelComponent,
-    RotationFolderPanelComponent
+    RotationFolderPanelComponent,
+    ActionComponent
   ],
   entryComponents: [
     MacroPopupComponent,
@@ -152,7 +162,8 @@ const routes: Routes = [
     RecipeChoicePopupComponent,
     StepByStepReportComponent,
     RotationTipsPopupComponent,
-    CommunityRotationPopupComponent
+    CommunityRotationPopupComponent,
+    SolverPopupComponent
   ],
   providers: [
     ConsumablesService,

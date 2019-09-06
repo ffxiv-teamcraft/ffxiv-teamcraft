@@ -16,6 +16,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AlarmsSidebarModule } from '../../modules/alarms-sidebar/alarms-sidebar.module';
 import { FormsModule } from '@angular/forms';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
 
 const routes: Routes = [
   {
@@ -45,9 +46,10 @@ const routes: Routes = [
     FullpageMessageModule,
     AlarmsSidebarModule,
 
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    OverlayContainerModule
   ],
-  declarations: [AlarmsOverlayComponent]
+  declarations: [AlarmsOverlayComponent],
 })
 export class AlarmsOverlayModule {
 }

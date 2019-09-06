@@ -20,6 +20,13 @@
     "auth/user-not-found": "Pogrešan email ili zaporka",
     "auth/wrong-password": "Pogrešan email ili zaporka"
   },
+  "TIMERS": {
+    "Days": "days",
+    "Day": "day",
+    "Hours": "h",
+    "Minutes": "m",
+    "Seconds": "s"
+  },
   "ITEMS": {
     "Title": "Pretraživanje",
     "No_match": "Nema podudarnih stavki",
@@ -69,7 +76,7 @@
     "Created_by": "Stvorio {{name}}",
     "Share_link_copied": "Share Link radionice kopiran",
     "Not_found": "Radionica nije pronađena ili nemate pristup",
-    "Shared_workshops": "Radionice koje možete obraditi",
+    "Shared_workshops": "Workshops shared with you",
     "Rename": "Preimenujte radionicu",
     "Add_lists": "Add lists"
   },
@@ -99,6 +106,7 @@
   "Discounts": "Discount",
   "Flat_discount": "Flat",
   "Percent_discount": "Percent",
+  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtriranje pomoću oznaka",
     "Tags_filter_reset": "Resetiranje filtera oznaka",
@@ -106,6 +114,7 @@
     "No_lists_matching": "Nema odgovorajućih popisa vašim oznakama"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "Spremite",
     "Reset": "Resetiranje",
     "Total": "Ukupno",
@@ -128,7 +137,8 @@
     "None": "None",
     "Top": "Top",
     "Bottom": "Bottom",
-    "Amount": "Amount"
+    "Amount": "Amount",
+    "Undo": "Undo"
   },
   "ALARMS": {
     "Title": "Alarmi",
@@ -140,6 +150,7 @@
     "Custom_sound": "Prilagođen zvuk alarma",
     "New_group": "Nova grupa alarma",
     "Confirm_group_delete": "Are you sure you want to delete this group?",
+    "Delete_group_and_alarms": "Delete group with all alarms",
     "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
     "Add_note": "Dodajte bilješku",
     "Volume": "Glasnoća",
@@ -149,6 +160,17 @@
     "Node_content": "Node content",
     "Toggle_collapse": "Toggle groups collapse",
     "Add_alarms_to_group": "Add alarms to this group",
+    "REALTIME": {
+      "Reset_timers": "Reset timers",
+      "WEEKLY_RESETS": "Weeklies",
+      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
+      "ROULETTES_RESET": "Roulettes & Beast tribes",
+      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
+      "DELIVERIES_RESET": "Deliveries",
+      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
+      "LEVE_ALLOWANCES": "Leve allowances",
+      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+    },
     "CUSTOM": {
       "Title": "Dodajte zadani alarm",
       "Name": "Naziv",
@@ -189,6 +211,7 @@
   "No": "Ne",
   "Crystals": "Kristali",
   "Gathering": "Prikupljanje",
+  "Drops_or_GC": "Dungeons/Drops or GC",
   "Other": "Ostalo",
   "Pre_crafts": "Pre crafts",
   "Items": "Predmeti",
@@ -246,10 +269,13 @@
   "filters/worn_by": "Nosili",
   "filters/crafted_by": "Stvorio",
   "filters/item_category": "Vrsta predmeta",
+  "filters/stats": "Stats filters",
+  "filters/bonuses": "Stat bonuses filters",
   "Adding_recipes": "Dodavanje {{amount}} recepata za popis {{listname}}",
   "Recipe_Added": "1 predmet dodan na popis {{listname}}",
   "Recipes_Added": "{{itemcount}} predmeta dodano na popis {{listname}}",
   "Character_name": "Naziv Lika",
+  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "Odjavite se i nastavite anonimno",
   "Add_manual_character": "Dodajte lika",
   "Character_informations": "Informacije o liku",
@@ -338,6 +364,9 @@
     "Clear_search_history": "Clear search history",
     "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
     "Db_comments_position": "Database comments position",
+    "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Clickthrough_overlay": "Make overlay clickthrough",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -364,13 +393,13 @@
     "Patreon_features": "Patreon supporter features",
     "Contacts": "Contacts",
     "Add_new_contact": "New contact",
-    "Save_for_all": "Save for all",
+    "Save_for_all": "Save for all crafters",
     "User_not_verified": "User not verified, click to verify user",
     "More_than_100_lists_created": "More than 100 lists created",
     "Veteran": "Veteran",
     "VERIFICATION": {
       "Title": "Character verification",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
+      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
       "Validate": "Validate"
@@ -383,7 +412,7 @@
     "Merge_lists": "Merge lists",
     "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "Lists merged with success !",
-    "Shared_lists": "Lists you have write access to",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "Add selection to a list",
     "Your_lists": "Your lists",
     "Outdated_tag": "Outdated",
@@ -407,7 +436,10 @@
       "Give_list_name": "Give your new list a name",
       "Final_step": "Validation",
       "Creating_list": "Creating the list",
-      "Loading_items": "Loading items informations"
+      "Loading_items": "Loading items informations",
+      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Group_together": "Group materias together"
     }
   },
   "LIST": {
@@ -427,6 +459,7 @@
     "Show_craftable_amount": "Show craftable amount",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "Quick_layout_swap": "Quick layout swap",
+    "Mark_whole_panel_done": "Mark panel content as done",
     "INVENTORY": {
       "Show_final_items": "Show final items",
       "Hide_final_items": "Hide final items"
@@ -513,6 +546,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "Outdated",
     "GEAR": "Gear",
     "CONSUMABLE": "Consumable",
@@ -533,6 +570,7 @@
     "PLD": "PLD",
     "WAR": "WAR",
     "DRK": "DRK",
+    "GNB": "GNB",
     "WHM": "WHM",
     "SCH": "SCH",
     "AST": "AST",
@@ -542,6 +580,7 @@
     "SAM": "SAM",
     "BRD": "BRD",
     "MCH": "MCH",
+    "DNC": "DNC",
     "BLM": "BLM",
     "SMN": "SMN",
     "RDM": "RDM",
@@ -583,10 +622,10 @@
     "Steps": "Steps",
     "Loading_path": "Loading optimized path (can take several seconds)",
     "STEP": {
-      "Gathering": "Gather {{amount}}",
-      "Hunting": "Get {{amount}} on monsters",
-      "Vendor": "Buy {{amount}}",
-      "Trade": "Trade {{amount}}"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -657,6 +696,7 @@
     "Not_found": "Page not found"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "Fixed notification",
     "Starting_echo_number": "Notification #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
@@ -715,6 +755,27 @@
     "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "Quality_needed": "{{amount}} more quality to reach 100%",
     "Rotation_tips": "Rotation tips",
+    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
+    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
+    "Current_control": "Current control: {{value}}",
+    "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "STATE": {
+      "Excellent": "Excellent",
+      "Good": "Good",
+      "Poor": "Poor",
+      "Fail": "Fail",
+      "Normal": "Normal"
+    },
+    "SOLVER": {
+      "Hq_target": "Target HQ%",
+      "Use_rotation_as_seed": "Use current rotation as starting point",
+      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "Community rotations",
       "Community_rotation": "Community rotation",
@@ -741,7 +802,8 @@
         "TEALESS": "Tealess",
         "FOODLESS": "Foodless",
         "MAKERS_MARK": "Maker's Mark",
-        "MUSCLE_MEMORY": "Muscle Memory"
+        "MUSCLE_MEMORY": "Muscle Memory",
+        "REUSE": "Reuse"
       }
     },
     "CUSTOM": {
@@ -754,6 +816,7 @@
     "ROTATIONS": {
       "Search_placeholder": "Search a rotation",
       "FOLDERS": {
+        "Not_found": "Rotation folder not found",
         "Folders": "Rotation folders",
         "Rename": "Rename folder",
         "New_folder": "New folder",
@@ -881,6 +944,7 @@
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
     "Db_comment": "New comment in db: \"{{comment}}\"",
     "Db_comment_reply": "New reply to one of your comments: \"{{comment}}\"",
+    "Blog_post": "New blog post: {{title}}",
     "Mark_all_as_read": "Mark all as read",
     "No_notifications": "No notifications"
   },
@@ -909,16 +973,16 @@
     "Officer": "Officer",
     "Promote_officer": "Promote to officer",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "The **{{teamName}}** team will now be tracked in this channel.",
       "List_added_notification": "The list **[{{listName}}]({{listUrl}})** has been added to the team.",
       "List_removed_notification": "The list **[{{listName}}]({{listUrl}})** has been removed from the team.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** has joined the team!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
       "Name_changed": "The **{{oldName}}** team has been renamed to **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Member joined",
@@ -929,7 +993,8 @@
       "LIST_REMOVED": "List removed",
       "LIST_PROGRESSION": "List materials progression",
       "FINAL_LIST_PROGRESSION": "List final items progression",
-      "USER_ASSIGNMENT": "User assignment"
+      "USER_ASSIGNMENT": "User assignment",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {
@@ -976,7 +1041,7 @@
   },
   "UPDATE": {
     "New_update_available": "A new update is available ! ",
-    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
+    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
     "Web_instructions": "Please reload the page to get the latest version."
   },
   "LOG_TRACKER": {
@@ -994,6 +1059,7 @@
     "Required_for_achievement": "Required for the achievements",
     "Select_spot": "Select a spot to see its details",
     "Hide_completed": "Hide completed recipes",
+    "Hide_completed_items": "Hide completed items",
     "MIN_optimized_path": "Optimized path for all MIN nodes",
     "BTN_optimized_path": "Optimized path for all BTN nodes",
     "PAGE": {
@@ -1194,6 +1260,13 @@
     "3d_model_viewer": "3D model preview",
     "3d_model_help": "Preview 3D model",
     "Achievements": "Achievements",
+    "Currencies": "Currencies",
+    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "Unlocks": "Unlocks",
+    "ITEM": {
+      "Masterpiece_base": "BASE",
+      "Masterpiece_bonus": "BONUS"
+    },
     "NODE": {
       "Items": "Items",
       "Possible_bonuses": "Possible bonuses",
@@ -1212,7 +1285,8 @@
       "End": "End",
       "Rewards": "Rewards",
       "Repeatable": "Repeatable",
-      "Beast_tribe_rank": "Beast tribe rank"
+      "Beast_tribe_rank": "Beast tribe rank",
+      "Chain_length": "Following quests"
     },
     "NPC": {
       "Other_entries": "Other appearances",
@@ -1231,7 +1305,8 @@
       "Allowance_cost": "Allowance cost",
       "Rewards": "Possible rewards",
       "Client": "Client",
-      "Issuer": "Issuer"
+      "Issuer": "Issuer",
+      "Turn_ins": "Turn-ins"
     },
     "MOB": {
       "Known_spawns": "Known spawns",
@@ -1305,7 +1380,26 @@
       "Show_more": "Show {{amount}} more comments",
       "No_comments": "No comments",
       "Post": "Post",
-      "Editor_tip": "Database links will be processed and handled inside your message."
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+    },
+    "PATCH": {
+      "Open_patch_page": "Click here to open full patch changes in database",
+      "CONTENT": {
+        "Title": "Patch content",
+        "Achievements": "Achievements ({{amount}})",
+        "Actions": "Actions ({{amount}})",
+        "Crafting_actions": "Crafting actions ({{amount}})",
+        "Fates": "Fates ({{amount}})",
+        "Instances": "Instance content ({{amount}})",
+        "Items": "Items ({{amount}})",
+        "Leves": "Leves ({{amount}})",
+        "Maps": "Maps ({{amount}})",
+        "Monsters": "Monsters ({{amount}})",
+        "Npcs": "Npcs ({{amount}})",
+        "Quests": "Quests ({{amount}})",
+        "Statuses": "Statuses ({{amount}})",
+        "Traits": "Traits ({{amount}})"
+      }
     }
   },
   "SEARCH_TYPES": {
@@ -1374,6 +1468,37 @@
     "Title": "Currency Spending guide",
     "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
     "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "You_can_buy": "You can buy {{amount}}",
+    "Disabled": "The currency spending guide isn't working anymore",
+    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
+  },
+  "BLOG": {
+    "Title": "Blog"
+  },
+  "ERRORS": {
+    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
+    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+  },
+  "SEARCH": {
+    "Sort_by": "Sort by: ",
+    "Sort_asc": "Ascending",
+    "Sort_desc": "Descending",
+    "Add_stat_filter": "Add stat filter",
+    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "SORT_BY": {
+      "Relevance": "Relevance",
+      "ID": "ID",
+      "Level": "Level",
+      "Ilvl": "Item level",
+      "Rlvl": "Recipe level"
+    }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }

@@ -83,8 +83,14 @@ export class List extends DataWithPermissions {
     clone.version = this.version || '1.0.0';
     clone.tags = this.tags;
     delete clone.$key;
-    gtag('send', 'event', 'List', 'creation');
-    gtag('send', 'event', 'List', 'clone');
+    gtag('event', 'List', {
+      'event_label': 'creation',
+      'non_interaction': true
+    });
+    gtag('event', 'List', {
+      'event_label': 'clone',
+      'non_interaction': true
+    });
     this.forks++;
     clone.reset();
     return clone;
@@ -346,7 +352,8 @@ export class List extends DataWithPermissions {
     }
     let res = false;
     res = res || (this.version === undefined);
-    res = res || semver.ltr(this.version, '5.0.0-beta.0');
+    res = res || semver.ltr(this.version, '5.0.0');
+    res = res || this.items.some(item => item.workingOnIt !== undefined && !(item.workingOnIt instanceof Array));
     return res;
   }
 
@@ -564,7 +571,7 @@ export class List extends DataWithPermissions {
   }
 
   public isLarge(): boolean {
-    return this.items && this.items.length >= 100 || this.finalItems && this.finalItems.length > 80;
+    return this.items && this.items.length >= 150 || this.finalItems && this.finalItems.length > 80;
   }
 
   /**

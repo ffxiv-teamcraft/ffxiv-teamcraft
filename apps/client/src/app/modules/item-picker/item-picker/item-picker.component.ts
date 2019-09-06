@@ -20,7 +20,7 @@ export class ItemPickerComponent implements OnInit {
 
   public results$: Observable<SearchResult[]>;
 
-  public onlyCraftable = true;
+  public onlyCraftable = false;
 
   public hideAmount = false;
 

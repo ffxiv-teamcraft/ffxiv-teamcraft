@@ -601,19 +601,19 @@
   },
   "102": {
     "en": "Scarlet",
-    "ja": "朱炎 ",
+    "ja": "朱炎",
     "de": "Rotlodernd",
     "fr": "Vermillon"
   },
   "103": {
     "en": "Scarlet",
-    "ja": "朱炎 ",
+    "ja": "朱炎",
     "de": "Rotlodernd",
     "fr": "Vermillon"
   },
   "104": {
     "en": "Scarlet",
-    "ja": "朱炎 ",
+    "ja": "朱炎",
     "de": "Rotlodernd",
     "fr": "Vermillon"
   },
@@ -661,7 +661,7 @@
   },
   "112": {
     "en": "Geostorms",
-    "ja": "地震 ",
+    "ja": "地震",
     "de": "Erdbeben",
     "fr": "Séisme"
   },
@@ -695,10 +695,82 @@
     "de": "Blauschimmernd",
     "fr": "Azur"
   },
+  "118": {
+    "en": "Everlasting Light",
+    "ja": "無尽光",
+    "de": "Ewiges Licht",
+    "fr": "Clarté éternelle"
+  },
   "119": {
     "en": "Gales",
     "ja": "暴風",
     "de": "Stürmisch",
     "fr": "Vents violents"
+  },
+  "120": {
+    "en": "Termination",
+    "ja": "終末",
+    "de": "Apokalyptisch",
+    "fr": "Apocalypse"
+  },
+  "121": {
+    "en": "Termination",
+    "ja": "終末",
+    "de": "Apokalyptisch",
+    "fr": "Apocalypse"
+  },
+  "122": {
+    "en": "Dreams",
+    "ja": "妖夢",
+    "de": "Feenträume",
+    "fr": "Rêverie"
+  },
+  "123": {
+    "en": "Dreams",
+    "ja": "妖夢",
+    "de": "Feenträume",
+    "fr": "Rêverie"
+  },
+  "124": {
+    "en": "Dreams",
+    "ja": "妖夢",
+    "de": "Feenträume",
+    "fr": "Rêverie"
+  },
+  "125": {
+    "en": "Brilliance",
+    "ja": "光天",
+    "de": "Strahlende Glanzhaftigkeit",
+    "fr": "Radiance divine"
+  },
+  "126": {
+    "en": "Brilliance",
+    "ja": "光天",
+    "de": "Strahlende Glanzhaftigkeit",
+    "fr": "Radiance divine"
+  },
+  "127": {
+    "en": "Termination",
+    "ja": "終末",
+    "de": "Apokalyptisch",
+    "fr": "Apocalypse"
+  },
+  "128": {
+    "en": "Termination",
+    "ja": "終末",
+    "de": "Apokalyptisch",
+    "fr": "Apocalypse"
+  },
+  "129": {
+    "en": "Everlasting Light",
+    "ja": "無尽光",
+    "de": "Ewiges Licht",
+    "fr": "Clarté éternelle"
+  },
+  "131": {
+    "en": "Termination",
+    "ja": "終末",
+    "de": "Apokalyptisch",
+    "fr": "Apocalypse"
   }
 }

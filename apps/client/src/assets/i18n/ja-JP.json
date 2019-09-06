@@ -20,6 +20,13 @@
     "auth/user-not-found": "メールアドレスまたはパスワードが間違っています",
     "auth/wrong-password": "メールアドレスまたはパスワードが間違っています"
   },
+  "TIMERS": {
+    "Days": "days",
+    "Day": "day",
+    "Hours": "h",
+    "Minutes": "m",
+    "Seconds": "s"
+  },
   "ITEMS": {
     "Title": "検索",
     "No_match": "一致するアイテムがありません",
@@ -69,7 +76,7 @@
     "Created_by": "{{name}} で作成されました",
     "Share_link_copied": "工房シェアリンクにコピーされました",
     "Not_found": "この工房に無いか、アクセスする権限がありません",
-    "Shared_workshops": "書く権限がある工房",
+    "Shared_workshops": "Workshops shared with you",
     "Rename": "工房名を変更する",
     "Add_lists": "リストを追加する"
   },
@@ -99,6 +106,7 @@
   "Discounts": "割引",
   "Flat_discount": "金額",
   "Percent_discount": "比率",
+  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "タグを使用してフィルタリング",
     "Tags_filter_reset": "フィルター初期化",
@@ -106,6 +114,7 @@
     "No_lists_matching": "フィルターに一致するリストがありません"
   },
   "COMMON": {
+    "Length": "Length",
     "Save": "保存",
     "Reset": "リセット",
     "Total": "合計",
@@ -128,7 +137,8 @@
     "None": "なし",
     "Top": "Top",
     "Bottom": "Bottom",
-    "Amount": "Amount"
+    "Amount": "Amount",
+    "Undo": "Undo"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -140,6 +150,7 @@
     "Custom_sound": "カスタムアラート音",
     "New_group": "新しいアラームグループ",
     "Confirm_group_delete": "本当にこのグループを削除しますか？",
+    "Delete_group_and_alarms": "Delete group with all alarms",
     "Confirm_group_delete_with_alarms": "本当にこのグループや全てのアラームを削除しますか？",
     "Add_note": "メモを追加する",
     "Volume": "ボリューム",
@@ -149,6 +160,17 @@
     "Node_content": "採集物情報",
     "Toggle_collapse": "グループ表示切り替わり",
     "Add_alarms_to_group": "グループにアラームを追加",
+    "REALTIME": {
+      "Reset_timers": "Reset timers",
+      "WEEKLY_RESETS": "Weeklies",
+      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
+      "ROULETTES_RESET": "Roulettes & Beast tribes",
+      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
+      "DELIVERIES_RESET": "Deliveries",
+      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
+      "LEVE_ALLOWANCES": "Leve allowances",
+      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+    },
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
       "Name": "名前",
@@ -189,6 +211,7 @@
   "No": "いいえ",
   "Crystals": "クリスタル",
   "Gathering": "採集",
+  "Drops_or_GC": "Dungeons/Drops or GC",
   "Other": "その他",
   "Pre_crafts": "下位素材",
   "Items": "アイテム",
@@ -246,10 +269,13 @@
   "filters/worn_by": "装備できるジョブ",
   "filters/crafted_by": "クラフター",
   "filters/item_category": "アイテム種類",
+  "filters/stats": "Stats filters",
+  "filters/bonuses": "Stat bonuses filters",
   "Adding_recipes": "{{amount}} 個のレシピを {{listname}} リストに追加中",
   "Recipe_Added": "１個のアイテムが {{listname}} リストに追加されました",
   "Recipes_Added": "{{itemcount}} 個のアイテムが {{listname}} リストが追加されました",
   "Character_name": "キャラクター名",
+  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "ログアウト後匿名で続ける",
   "Add_manual_character": "キャラクターを追加する",
   "Character_informations": "キャラクター情報",
@@ -338,6 +364,9 @@
     "Clear_search_history": "検索履歴を削除",
     "Auto_mark_as_done_in_log": "リストから完了されたアイテムがあれば、手帳に該当アイテムを完了されたと表示する",
     "Db_comments_position": "データベースのコメント位置",
+    "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Clickthrough_overlay": "Make overlay clickthrough",
+    "Disable_search_history": "Disable search history",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -364,13 +393,13 @@
     "Patreon_features": "Patreonサポーターの特典",
     "Contacts": "連絡先",
     "Add_new_contact": "新しい連絡先",
-    "Save_for_all": "全て保存する",
+    "Save_for_all": "Save for all crafters",
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "More_than_100_lists_created": "100個以上のリストを作成",
     "Veteran": "ベテラン",
     "VERIFICATION": {
       "Title": "キャラクター認証",
-      "Guide": "アカウントの認証のために Lodestone Profile Biographyに次のコードを貼り付けて下さい。 \"{{userId}}\" そして、下のボタンを押して下さい。",
+      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "キャラクターが認証されました！このポップアップを閉じてもよろしいです。プロフィールからコードを消してもよろしいです。",
       "Error": "Bioからコードを見つかりませんでした。コードを貼り付けてから、変更されたのか、ご確認下さい。そして約30秒後にやり直して下さい",
       "Validate": "認証"
@@ -383,7 +412,7 @@
     "Merge_lists": "リストを併合する",
     "Merge_lists_warning": "大規模のリストはデータベースの制限で、まとめることはできないため、表示できません。",
     "Lists_merged": "リスト併合が完了されました！",
-    "Shared_lists": "書く権限があるリスト",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "選択項目をリストに追加する",
     "Your_lists": "マイリスト",
     "Outdated_tag": "古い",
@@ -407,7 +436,10 @@
       "Give_list_name": "新しいリストに名前を付ける",
       "Final_step": "検証",
       "Creating_list": "リストを作成する",
-      "Loading_items": "アイテム情報を読み込み中"
+      "Loading_items": "アイテム情報を読み込み中",
+      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
+      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Group_together": "Group materias together"
     }
   },
   "LIST": {
@@ -427,6 +459,7 @@
     "Show_craftable_amount": "制作可能な数量を表示する",
     "Optimized_full_path": "全ての推奨経路を表示(最安値)",
     "Quick_layout_swap": "クイックレイアウトの切り替え",
+    "Mark_whole_panel_done": "Mark panel content as done",
     "INVENTORY": {
       "Show_final_items": "最終アイテムの表示",
       "Hide_final_items": "最終アイテムを隠す"
@@ -513,6 +546,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "A Realm Reborn",
+    "HEAVENSWARD": "Heavensward",
+    "STORMBLOOD": "Stormblood",
+    "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "古い",
     "GEAR": "装備",
     "CONSUMABLE": "薬品・調理品",
@@ -533,6 +570,7 @@
     "PLD": "ナイト",
     "WAR": "戦士",
     "DRK": "暗黒戦士",
+    "GNB": "GNB",
     "WHM": "白魔道士",
     "SCH": "学者",
     "AST": "占星術師",
@@ -542,6 +580,7 @@
     "SAM": "侍",
     "BRD": "吟遊詩人",
     "MCH": "機工士",
+    "DNC": "DNC",
     "BLM": "黒魔道士",
     "SMN": "召喚士",
     "RDM": "赤魔道士",
@@ -583,10 +622,10 @@
     "Steps": "段階",
     "Loading_path": "推奨経路を読み込み中(数秒くらい所要)",
     "STEP": {
-      "Gathering": "{{amount}} 個採集",
-      "Hunting": "戦闘で {{amount}} 個 獲得した",
-      "Vendor": "{{amount}} 個 商店から購入した",
-      "Trade": "{{amount}} 個 交換した"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -657,6 +696,7 @@
     "Not_found": "ページが見つかりません。"
   },
   "SIMULATOR": {
+    "Title": "Crafting simulator",
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
@@ -715,6 +755,27 @@
     "Safe_mode_tooltip": "成功率100％ではないスキルは使用不可(バフを含む)",
     "Quality_needed": "HQ 100%に到達するためには {{amount}} 分の品質が必要",
     "Rotation_tips": "スキル回しのヒント",
+    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
+    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
+    "Current_control": "Current control: {{value}}",
+    "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Macrolock": "Include macro lock",
+    "Solve_rotation": "Solve this rotation",
+    "Rotation_solver": "Rotation solver",
+    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "STATE": {
+      "Excellent": "Excellent",
+      "Good": "Good",
+      "Poor": "Poor",
+      "Fail": "Fail",
+      "Normal": "Normal"
+    },
+    "SOLVER": {
+      "Hq_target": "Target HQ%",
+      "Use_rotation_as_seed": "Use current rotation as starting point",
+      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "コミュニティースキル回し",
       "Community_rotation": "コミュニティースキル回し",
@@ -741,7 +802,8 @@
         "TEALESS": "薬品非使用",
         "FOODLESS": "食事非使用",
         "MAKERS_MARK": "堅実の心得",
-        "MUSCLE_MEMORY": "確信"
+        "MUSCLE_MEMORY": "確信",
+        "REUSE": "Reuse"
       }
     },
     "CUSTOM": {
@@ -754,6 +816,7 @@
     "ROTATIONS": {
       "Search_placeholder": "制作スキル回しを検索",
       "FOLDERS": {
+        "Not_found": "Rotation folder not found",
         "Folders": "スキル回しフォルダー",
         "Rename": "フォルダー名を変更する",
         "New_folder": "新しいフォルダー",
@@ -881,6 +944,7 @@
     "List_item_comment_added": "{{listName}} の {{itemName}} にコメントが追加されました: \"{{content}}\"",
     "Db_comment": "新しいコメントが付けられました: \"{{comment}}\"",
     "Db_comment_reply": "貴方のコメントに新しいコメントが付けられました: \"{{comment}}\"",
+    "Blog_post": "New blog post: {{title}}",
     "Mark_all_as_read": "全て既読にする",
     "No_notifications": "通知無し"
   },
@@ -909,16 +973,16 @@
     "Officer": "オフィサー",
     "Promote_officer": "オフィサーに昇格",
     "NOTIFICATIONS": {
-      "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加されました。",
-      "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を削除されました。",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**が **[{{listName}}]({{listUrl}})**にある {{totalNeeded}}個中に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** を完了に表示する",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "**{{teamName}}** チームをこのチャンネルから追跡し始めました。",
       "List_added_notification": "リスト **[{{listName}}]({{listUrl}})**がチームに追加されました。",
       "List_removed_notification": "リスト **[{{listName}}]({{listUrl}})**がチームから外されました。",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** さんがチームに入りました!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** がチームから抜けました。",
       "Name_changed": "**{{oldName}}** から **{{newName}}** に名前が変更されました。",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**が [{{listName}}]({{listUrl}})**の **[{{memberName}}]({{memberProfileUrl}})**に割り当てられました"
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "メンバー入りました",
@@ -929,7 +993,8 @@
       "LIST_REMOVED": "リストが削除されました",
       "LIST_PROGRESSION": "素材の進捗状況の一覧",
       "FINAL_LIST_PROGRESSION": "最終項目の進行状況をリストアップする",
-      "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる"
+      "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {
@@ -976,7 +1041,7 @@
   },
   "UPDATE": {
     "New_update_available": "新しいアップデートがあります! ",
-    "Desktop_instructions": "最新バージョンをダウンロードするには、次のリンクに接続してください： ",
+    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。"
   },
   "LOG_TRACKER": {
@@ -994,6 +1059,7 @@
     "Required_for_achievement": "アチーブメントに適用された",
     "Select_spot": "表示する場所を選択して下さい。",
     "Hide_completed": "完了したレシピを隠す",
+    "Hide_completed_items": "Hide completed items",
     "MIN_optimized_path": "全ての採掘師の採集物の推奨経路",
     "BTN_optimized_path": "全ての園芸師の採集物の推奨経路",
     "PAGE": {
@@ -1194,6 +1260,13 @@
     "3d_model_viewer": "3Dモデルプレビュー",
     "3d_model_help": "3Dモデルプレビュー",
     "Achievements": "Achievements",
+    "Currencies": "Currencies",
+    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "Unlocks": "Unlocks",
+    "ITEM": {
+      "Masterpiece_base": "BASE",
+      "Masterpiece_bonus": "BONUS"
+    },
     "NODE": {
       "Items": "アイテム",
       "Possible_bonuses": "ロケーション・エフェクト",
@@ -1212,7 +1285,8 @@
       "End": "終了",
       "Rewards": "報酬",
       "Repeatable": "繰り返し可能",
-      "Beast_tribe_rank": "蛮族友好段階"
+      "Beast_tribe_rank": "蛮族友好段階",
+      "Chain_length": "Following quests"
     },
     "NPC": {
       "Other_entries": "他の出現位置",
@@ -1231,7 +1305,8 @@
       "Allowance_cost": "リーヴ受注券の消耗量",
       "Rewards": "獲得可能な報酬",
       "Client": "依頼人",
-      "Issuer": "発行者"
+      "Issuer": "発行者",
+      "Turn_ins": "Turn-ins"
     },
     "MOB": {
       "Known_spawns": "モンスター出現場所",
@@ -1305,7 +1380,26 @@
       "Show_more": "{{amount}} 件のコメントを見る",
       "No_comments": "コメントなし",
       "Post": "投稿",
-      "Editor_tip": "コメント内のデータベースリンクは自動にDBに変換されます。"
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+    },
+    "PATCH": {
+      "Open_patch_page": "Click here to open full patch changes in database",
+      "CONTENT": {
+        "Title": "Patch content",
+        "Achievements": "Achievements ({{amount}})",
+        "Actions": "Actions ({{amount}})",
+        "Crafting_actions": "Crafting actions ({{amount}})",
+        "Fates": "Fates ({{amount}})",
+        "Instances": "Instance content ({{amount}})",
+        "Items": "Items ({{amount}})",
+        "Leves": "Leves ({{amount}})",
+        "Maps": "Maps ({{amount}})",
+        "Monsters": "Monsters ({{amount}})",
+        "Npcs": "Npcs ({{amount}})",
+        "Quests": "Quests ({{amount}})",
+        "Statuses": "Statuses ({{amount}})",
+        "Traits": "Traits ({{amount}})"
+      }
     }
   },
   "SEARCH_TYPES": {
@@ -1374,6 +1468,37 @@
     "Title": "Currency Spending guide",
     "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
     "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "You_can_buy": "You can buy {{amount}}",
+    "Disabled": "The currency spending guide isn't working anymore",
+    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
+  },
+  "BLOG": {
+    "Title": "Blog"
+  },
+  "ERRORS": {
+    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
+    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+  },
+  "SEARCH": {
+    "Sort_by": "Sort by: ",
+    "Sort_asc": "Ascending",
+    "Sort_desc": "Descending",
+    "Add_stat_filter": "Add stat filter",
+    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "SORT_BY": {
+      "Relevance": "Relevance",
+      "ID": "ID",
+      "Level": "Level",
+      "Ilvl": "Item level",
+      "Rlvl": "Recipe level"
+    }
+  },
+  "SIDEBAR": {
+    "General": "General",
+    "Sharing": "Sharing",
+    "Gathering": "Gathering",
+    "Helpers": "Helpers",
+    "Other": "Other"
   }
 }

@@ -58,8 +58,11 @@ import {
   SelectOutline,
   SettingOutline,
   ShareAltOutline,
+  ShoppingOutline,
   SolutionOutline,
-  UsergroupAddOutline
+  UsergroupAddOutline,
+  CodeOutline,
+  FileTextOutline
 } from '@ant-design/icons-angular/icons';
 import { UniversalInterceptor } from './universal-interceptor';
 import { DirtyModule } from './core/dirty/dirty.module';
@@ -87,6 +90,7 @@ import es from '@angular/common/locales/es';
 import pt from '@angular/common/locales/pt';
 import hr from '@angular/common/locales/hr';
 import ko from '@angular/common/locales/ko';
+import { ClipboardModule } from 'ngx-clipboard';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -113,7 +117,10 @@ const icons: IconDefinition[] = [
   LockOutline,
   LayoutOutline,
   UsergroupAddOutline,
-  LineChartOutline
+  LineChartOutline,
+  ShoppingOutline,
+  CodeOutline,
+  FileTextOutline
 ];
 
 registerLocaleData(en);
@@ -220,7 +227,8 @@ registerLocaleData(ko);
     }) : [],
     EffectsModule.forRoot([]),
     StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
-    EffectsModule.forFeature([AuthEffects])
+    EffectsModule.forFeature([AuthEffects]),
+    ClipboardModule
   ],
   bootstrap: [AppComponent]
 })

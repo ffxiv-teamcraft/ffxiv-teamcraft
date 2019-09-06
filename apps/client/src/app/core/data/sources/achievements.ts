@@ -13468,5 +13468,1073 @@ export const achievements = {
     'de': 'Kapitalbeschaffung XVI',
     'ja': '太公望への道：ランク16',
     'fr': 'Pêcheur de légendes XVI'
+  },
+  '2246': {
+    'en': 'Stick Them with the Pointy End VIII',
+    'de': 'Nur dem Schwert kannst du vertrauen VIII',
+    'ja': '剣術士：レベル80',
+    'fr': 'Gladiateur emblématique'
+  },
+  '2247': {
+    'en': 'The Sweet Science VIII',
+    'de': 'Zwei Fäuste für Eorzea VIII',
+    'ja': '格闘士：レベル80',
+    'fr': 'Pugiliste emblématique'
+  },
+  '2248': {
+    'en': 'An Axe to Grind VIII',
+    'de': 'Das Kriegsbeil ausgraben VIII',
+    'ja': '斧術士：レベル80',
+    'fr': 'Maraudeur emblématique'
+  },
+  '2249': {
+    'en': 'Strong Lance Arm VIII',
+    'de': 'Von der Pike auf VIII',
+    'ja': '槍術士：レベル80',
+    'fr': 'Maître d\'hast emblématique'
+  },
+  '2250': {
+    'en': 'Just Talkin\' \'bout Shafts VIII',
+    'de': 'Den Bogen raus VIII',
+    'ja': '弓術士：レベル80',
+    'fr': 'Archer emblématique'
+  },
+  '2251': {
+    'en': 'I Got the Magic Stick VIII',
+    'de': 'DAS ist mein Zauberstab VIII',
+    'ja': '幻術士：レベル80',
+    'fr': 'Élémentaliste emblématique'
+  },
+  '2252': {
+    'en': 'Bring Out Your Dead VIII',
+    'de': 'Bringt eure Toten raus VIII',
+    'ja': '呪術士：レベル80',
+    'fr': 'Occultiste emblématique'
+  },
+  '2253': {
+    'en': 'Through the Gate VIII',
+    'de': 'Durch die Tore VIII',
+    'ja': '巴術士：レベル80',
+    'fr': 'Arcaniste emblématique'
+  },
+  '2254': {
+    'en': 'Come on, Rogue VIII',
+    'de': 'Auf leisen Sohlen VIII',
+    'ja': '双剣士：レベル80',
+    'fr': 'Surineur emblématique'
+  },
+  '2255': {
+    'en': 'Are You Afraid of the Dark? VI',
+    'de': 'Im Dunkeln lässt sich gut munkeln VI',
+    'ja': '暗黒騎士：レベル80',
+    'fr': 'Chevalier noir emblématique'
+  },
+  '2256': {
+    'en': 'Mean Machine VI',
+    'de': 'Läuft wie geschmiert VI',
+    'ja': '機工士：レベル80',
+    'fr': 'Machiniste emblématique'
+  },
+  '2257': {
+    'en': 'Starstruck VI',
+    'de': 'Sieg der Sterne VI',
+    'ja': '占星術師：レベル80',
+    'fr': 'Astromancien emblématique'
+  },
+  '2258': {
+    'en': 'How Deep the Rabbit Hole Goes IV',
+    'de': 'Alarmstufe Rot IV',
+    'ja': '赤魔道士：レベル80',
+    'fr': 'Mage rouge emblématique'
+  },
+  '2259': {
+    'en': 'Bushido Blade IV',
+    'de': 'Bushido - Weg des Samurai IV',
+    'ja': '侍：レベル80',
+    'fr': 'Samouraï emblématique'
+  },
+  '2260': {
+    'en': 'More Complex than You Think I',
+    'de': 'Vielleicht bin ich ein Löwe I',
+    'ja': 'ガンブレイカー：レベル70',
+    'fr': 'Pistosabreur expert'
+  },
+  '2261': {
+    'en': 'More Complex than You Think II',
+    'de': 'Vielleicht bin ich ein Löwe II',
+    'ja': 'ガンブレイカー：レベル80',
+    'fr': 'Pistosabreur emblématique'
+  },
+  '2262': {
+    'en': 'We Got the Beat I',
+    'de': 'Tanz auf der Klinge I',
+    'ja': '踊り子：レベル70',
+    'fr': 'Danseur expert'
+  },
+  '2263': {
+    'en': 'We Got the Beat II',
+    'de': 'Tanz auf der Klinge II',
+    'ja': '踊り子：レベル80',
+    'fr': 'Danseur emblématique'
+  },
+  '2264': {
+    'en': 'Knock on Wood VIII',
+    'de': 'Aus anderem Holz VIII',
+    'ja': '木工師：レベル80',
+    'fr': 'Menuisier emblématique'
+  },
+  '2265': {
+    'en': 'Temper, Temper VIII',
+    'de': 'Seines Glückes Schmied VIII',
+    'ja': '鍛冶師：レベル80',
+    'fr': 'Forgeron emblématique'
+  },
+  '2266': {
+    'en': 'The Riddle of Steel VIII',
+    'de': 'Das Geheimnis des Stahls VIII',
+    'ja': '甲冑師：レベル80',
+    'fr': 'Armurier emblématique'
+  },
+  '2267': {
+    'en': 'Heart of Gold VIII',
+    'de': 'Herz aus Gold VIII',
+    'ja': '彫金師：レベル80',
+    'fr': 'Orfèvre emblématique'
+  },
+  '2268': {
+    'en': 'Tougher than Leather VIII',
+    'de': 'Ganz in Leder VIII',
+    'ja': '革細工師：レベル80',
+    'fr': 'Tanneur emblématique'
+  },
+  '2269': {
+    'en': 'Smiling, Styling, and Textiling VIII',
+    'de': 'Eorzeas neue Kleider VIII',
+    'ja': '裁縫師：レベル80',
+    'fr': 'Couturier emblématique'
+  },
+  '2270': {
+    'en': '\'Tis True without Lying VIII',
+    'de': 'Gut gemischt ist halb gewonnen VIII',
+    'ja': '錬金術師：レベル80',
+    'fr': 'Alchimiste emblématique'
+  },
+  '2271': {
+    'en': 'All in Good Taste VIII',
+    'de': 'Der richtige Pfiff VIII',
+    'ja': '調理師：レベル80',
+    'fr': 'Cuisinier emblématique'
+  },
+  '2272': {
+    'en': 'Fear the Reaper VIII',
+    'de': 'Man erntet, was man sät VIII',
+    'ja': '園芸師：レベル80',
+    'fr': 'Botaniste emblématique'
+  },
+  '2273': {
+    'en': 'Breaking Rocks in the Hot Sun VIII',
+    'de': 'Gute Miene zur Mine VIII',
+    'ja': '採掘師：レベル80',
+    'fr': 'Mineur emblématique'
+  },
+  '2274': {
+    'en': 'Gone Fishin\' VIII',
+    'de': 'Was für ein Kaventsmann VIII',
+    'ja': '漁師：レベル80',
+    'fr': 'Pêcheur emblématique'
+  },
+  '2275': {
+    'en': 'Mastering War IV',
+    'de': 'Meister des Krieges IV',
+    'ja': '武に愛されし者',
+    'fr': 'Icône de la guerre'
+  },
+  '2276': {
+    'en': 'Mastering Magic IV',
+    'de': 'Meister der Magie IV',
+    'ja': '魔に愛されし者',
+    'fr': 'Icône de la magie'
+  },
+  '2277': {
+    'en': 'A Life of Adventure IV',
+    'de': 'Tausendsassa IV',
+    'ja': '十六の道に愛されし者',
+    'fr': 'Icône du corps et de l\'esprit'
+  },
+  '2278': {
+    'en': 'Mastering the Hand IV',
+    'de': 'Meister des Handwerks IV',
+    'ja': '職人魂を究めし冒険者',
+    'fr': 'Icône de la main'
+  },
+  '2279': {
+    'en': 'Mastering the Land IV',
+    'de': 'Meister der Ressourcen IV',
+    'ja': '漆黒の恵みを我が身に',
+    'fr': 'Icône de la terre'
+  },
+  '2280': {
+    'en': 'Going with the Grain: Master',
+    'de': 'Immer mit der Faser: Mythos',
+    'ja': '木工職人：印可',
+    'fr': 'Toucher du bois : Génie'
+  },
+  '2281': {
+    'en': 'Working the Bellows: Master',
+    'de': 'Spiel mit dem Feuer: Mythos',
+    'ja': '鍛冶職人：印可',
+    'fr': 'En avant, forgez : Génie'
+  },
+  '2282': {
+    'en': 'Pounding Out the Dents: Master',
+    'de': 'Da bist du platt: Mythos',
+    'ja': '板金職人：印可',
+    'fr': 'Entre le marteau et l\'enclume : Génie'
+  },
+  '2283': {
+    'en': 'Cutting the Carats: Master',
+    'de': 'Hochkarätige Höchstleistung: Mythos',
+    'ja': '彫金職人：印可',
+    'fr': 'Tout ce qui brille : Génie'
+  },
+  '2284': {
+    'en': 'Hiding in Plain Sight: Master',
+    'de': 'Abziehen am hellichten Tage: Mythos',
+    'ja': '革細工職人：印可',
+    'fr': 'Tourner autour des peaux : Génie'
+  },
+  '2285': {
+    'en': 'Threading the Needle: Master',
+    'de': 'Weber wenn sie losgelassen: Mythos',
+    'ja': '裁縫職人：印可',
+    'fr': 'De fil en aiguille : Génie'
+  },
+  '2286': {
+    'en': 'Mixing It Up: Master',
+    'de': 'Opus Magnum: Mythos',
+    'ja': '錬成職人：印可',
+    'fr': 'Alchimiste d\'acier : Génie'
+  },
+  '2287': {
+    'en': 'Savoring the Realm: Master',
+    'de': 'Das große Fressen: Mythos',
+    'ja': '調理職人：印可',
+    'fr': 'Cordon-bleu : Génie'
+  },
+  '2288': {
+    'en': 'Reaping Shadowbringers',
+    'de': 'Die Sense in der Nacht',
+    'ja': '漆黒の伐採名人',
+    'fr': 'Deux bois, deux mesures : terres de Ténèbres'
+  },
+  '2289': {
+    'en': 'Mining Shadowbringers',
+    'de': 'Die Spitzhacke in der Nacht',
+    'ja': '漆黒の採掘名人',
+    'fr': 'Payer de mine : terres de Ténèbres'
+  },
+  '2290': {
+    'en': 'Baiting Shadowbringers',
+    'de': 'Die Angel in der Nacht',
+    'ja': '漆黒の釣り名人',
+    'fr': 'Surveiller sa ligne : terres de Ténèbres'
+  },
+  '2291': {
+    'en': 'I Made That (Worth Collecting) V',
+    'de': 'Ich hab\'s sammelbar gemacht V',
+    'ja': '蒐集品の製作者：ランク5',
+    'fr': 'Facteur de merveilles V'
+  },
+  '2292': {
+    'en': 'I Collected That V',
+    'de': 'Ich hab\'s gesammelt V',
+    'ja': '蒐集品の採集者：ランク5',
+    'fr': 'Chasseur de merveilles V'
+  },
+  '2293': {
+    'en': 'Between Two Worlds',
+    'de': 'Kopf voran ins Licht',
+    'ja': '闇の戦士',
+    'fr': 'Entre deux mondes'
+  },
+  '2294': {
+    'en': 'Realpolitik',
+    'de': 'Echte und falsche Freunde',
+    'ja': '運命はまた廻る',
+    'fr': 'Politique pragmatique'
+  },
+  '2295': {
+    'en': 'Journey to the Past',
+    'de': 'Die Jahrtausende überbrückt',
+    'ja': '彼方へと祈って',
+    'fr': 'Une forêt sous les étoiles'
+  },
+  '2296': {
+    'en': 'Shrouded in Darkness',
+    'de': 'Familienbande',
+    'ja': '君を救う痛み',
+    'fr': 'Désert de Ténèbres'
+  },
+  '2297': {
+    'en': 'Warden of Light',
+    'de': 'Das Licht in mir',
+    'ja': '光をもたらす者',
+    'fr': 'Gardien de la Lumière'
+  },
+  '2298': {
+    'en': 'Shadowbringers',
+    'de': 'Schattenbringer',
+    'ja': '漆黒のヴィランズ',
+    'fr': 'Porteur d\'ombre'
+  },
+  '2299': {
+    'en': 'Gunnhildr\'s Blade I',
+    'de': 'Mit wackerem Herzen I',
+    'ja': '鉄壁の守護者',
+    'fr': 'Protecteur au grand cœur'
+  },
+  '2300': {
+    'en': 'No Friends of Mine I',
+    'de': 'Meistertänzer',
+    'ja': '鎮撫の踊り子',
+    'fr': 'Danseur pacificateur'
+  },
+  '2301': {
+    'en': 'Speaker for the Righteous',
+    'de': 'Heldenhafter Verteidiger',
+    'ja': '正義の英雄',
+    'fr': 'Gardien héroïque'
+  },
+  '2302': {
+    'en': 'Speaker for the Honorable',
+    'de': 'Heldenhafter Heiler',
+    'ja': '節制の英雄',
+    'fr': 'Guérisseur héroïque'
+  },
+  '2303': {
+    'en': 'Speaker for the Brave',
+    'de': 'Heldenhafter Angreifer',
+    'ja': '勇気の英雄',
+    'fr': 'Tueur de purgateur héroïque'
+  },
+  '2304': {
+    'en': 'Speaker for the Wise',
+    'de': 'Heldenhafter Zauberer',
+    'ja': '知恵の英雄',
+    'fr': 'Bienfaiteur de la sagesse'
+  },
+  '2305': {
+    'en': 'Tales to Be Told',
+    'de': 'Gnädiger Zuhörer',
+    'ja': '英雄譚の語り部',
+    'fr': 'Héros réhabilités'
+  },
+  '2306': {
+    'en': 'Like a Knight in Shining Armor IV',
+    'de': 'Wie ein Held in strahlender Rüstung IV',
+    'ja': '守護の騎士',
+    'fr': 'Paladin protecteur'
+  },
+  '2307': {
+    'en': 'Bulletproof IV',
+    'de': 'Chakra! Du schaffst es! IV',
+    'ja': '星導の闘士',
+    'fr': 'Champion des chakras'
+  },
+  '2308': {
+    'en': 'I Am the Warrior IV',
+    'de': 'Wecke den Krieger in dir IV',
+    'ja': '砕岩の戦士',
+    'fr': 'Guerrier réveillé'
+  },
+  '2309': {
+    'en': 'Dragoon Age IV',
+    'de': 'Drachenreiter-Spitzenreiter IV',
+    'ja': '黒の竜騎士',
+    'fr': 'Chevalier dragon noir'
+  },
+  '2310': {
+    'en': 'A Bard\'s Tale IV',
+    'de': 'Das Goldkehlchen IV',
+    'ja': '連奏の詩人',
+    'fr': 'Duetto de bardes'
+  },
+  '2311': {
+    'en': 'Seeing White IV',
+    'de': 'Heile Welt IV',
+    'ja': '治癒の魔道士',
+    'fr': 'Mage blanc guérisseur'
+  },
+  '2312': {
+    'en': 'Back in Black IV',
+    'de': 'Ganz in schwarz IV',
+    'ja': '破壊の魔道士',
+    'fr': 'Mage noir destructeur'
+  },
+  '2313': {
+    'en': 'Soul Summoner IV',
+    'de': 'Seelenbeschwörer IV',
+    'ja': '先達の召喚士',
+    'fr': 'Maître invocateur'
+  },
+  '2314': {
+    'en': 'Flying Colors IV',
+    'de': 'Mit wehenden Fahnen IV',
+    'ja': '新次元の学者',
+    'fr': 'Érudition dimensionnelle'
+  },
+  '2315': {
+    'en': 'Against the Ninja IV',
+    'de': 'Meister des Ninjutsu IV',
+    'ja': '異界の忍び',
+    'fr': 'Frères d\'un jour, ennemis de toujours'
+  },
+  '2316': {
+    'en': 'A Dark Day\'s Knight IV',
+    'de': 'Ritter Mord IV',
+    'ja': '孤高の暗黒騎士',
+    'fr': 'Gloire silencieuse'
+  },
+  '2317': {
+    'en': 'I\'m a Machinist, Not a Man IV',
+    'de': 'Maschinenöl im Blut IV',
+    'ja': '未来の機工士',
+    'fr': 'Machiniste de l\'avenir'
+  },
+  '2318': {
+    'en': 'The Stars in Our Faults IV',
+    'de': 'Sternstunden IV',
+    'ja': '夜光の占星術師',
+    'fr': 'Astromancien lumineux'
+  },
+  '2319': {
+    'en': 'Red on Arrival III',
+    'de': 'Magier sehen rot, wenn der Untergang droht III',
+    'ja': '疾風の魔道士',
+    'fr': 'Mage héritier de l\'Ouragan pourpre'
+  },
+  '2320': {
+    'en': 'SAM I Am III',
+    'de': 'Samurai, statt nur dabei III',
+    'ja': '主役の侍',
+    'fr': 'Samouraï repenti'
+  },
+  '2321': {
+    'en': 'Gunnhildr\'s Blade II',
+    'de': 'Mit wackerem Herzen II',
+    'ja': '双璧の守護者',
+    'fr': 'Duo protecteur'
+  },
+  '2322': {
+    'en': 'No Friends of Mine II',
+    'de': 'Die Herzen befreit',
+    'ja': '彷徨の踊り子',
+    'fr': 'Une excellente meneuse'
+  },
+  '2323': {
+    'en': 'Precious Metals',
+    'de': 'Meister der Schwarzeisen-Schmiede',
+    'ja': '黒鉄工房の救世主',
+    'fr': 'Le métal jusqu\'à la mort'
+  },
+  '2324': {
+    'en': 'Thank You for the Music',
+    'de': 'Meister der Erinnerungswerkstatt',
+    'ja': '時の工房の恩師',
+    'fr': 'Précieux souvenirs, brillant avenir'
+  },
+  '2325': {
+    'en': 'Amaro Whisperer',
+    'de': 'Amaro-Flüsterer',
+    'ja': 'アマロの心を救う者',
+    'fr': 'Petits plats pour gros amaro'
+  },
+  '2326': {
+    'en': 'The Lost World',
+    'de': 'Samiel-Suchkommando, weggetreten!',
+    'ja': 'シムーン捜索隊の名誉隊長',
+    'fr': 'Simounologue à la retraite'
+  },
+  '2327': {
+    'en': 'Live Long and Prospero',
+    'de': 'Der Appetit kommt beim Essen',
+    'ja': '漁業科改善の立役者',
+    'fr': 'Camarade de pêche irremplaçable'
+  },
+  '2328': {
+    'en': 'The Golden Mean',
+    'de': 'Unterstützer der Manufaktur der Gemeinschaft ',
+    'ja': 'ミーン工芸館の協力者',
+    'fr': 'Aventurier de la halle du Juste'
+  },
+  '2329': {
+    'en': 'Freebird: Lakeland',
+    'de': 'Frei wie ein Vogel: Seenland',
+    'ja': 'レイクランドの風を知る者',
+    'fr': 'Aux quatre vents : Grand-Lac'
+  },
+  '2330': {
+    'en': 'Freebird: Kholusia',
+    'de': 'Frei wie ein Vogel: Kholusia',
+    'ja': 'コルシア島の風を知る者',
+    'fr': 'Aux quatre vents : Kholusia'
+  },
+  '2331': {
+    'en': 'Freebird: Amh Araeng',
+    'de': 'Frei wie ein Vogel: Amh Araeng',
+    'ja': 'アム・アレーンの風を知る者',
+    'fr': 'Aux quatre vents : Amh Araeng'
+  },
+  '2332': {
+    'en': 'Freebird: Il Mheg',
+    'de': 'Frei wie ein Vogel: Il Mheg',
+    'ja': 'イル・メグの風を知る者',
+    'fr': 'Aux quatre vents : Il Mheg'
+  },
+  '2333': {
+    'en': 'Freebird: The Rak\'tika Greatwood',
+    'de': 'Frei wie ein Vogel: Der Große Wald Rak\'tika',
+    'ja': 'ラケティカ大森林の風を知る者',
+    'fr': 'Aux quatre vents : Rak\'tika'
+  },
+  '2334': {
+    'en': 'Freebird: The Tempest',
+    'de': 'Frei wie ein Vogel: Tempest',
+    'ja': 'テンペストの風を知る者',
+    'fr': 'Aux quatre vents : La Tempête'
+  },
+  '2335': {
+    'en': 'Frequent Flyer III',
+    'de': 'Vielflieger III',
+    'ja': '漆黒の風を知る者',
+    'fr': 'Navigateur des cieux ténébreux'
+  },
+  '2336': {
+    'en': 'Bound by Faith',
+    'de': 'Gemeinsam durch dick und dünn',
+    'ja': '信頼の絆',
+    'fr': 'Des liens à toute épreuve'
+  },
+  '2337': {
+    'en': 'Not Today',
+    'de': 'Verbündeter der Wachmannschaft',
+    'ja': '衛兵団の頼れる同志',
+    'fr': 'L\'allié de la garde'
+  },
+  '2338': {
+    'en': 'Stay Thy Blade',
+    'de': 'Ödnis-Schatzsucher',
+    'ja': '荒野のスカベンジャー',
+    'fr': 'Chasseur de trésors dans le désert'
+  },
+  '2339': {
+    'en': 'Mischief Managed',
+    'de': 'Vertrauter der Feen',
+    'ja': '妖精郷の住人',
+    'fr': 'Confident des Pixies'
+  },
+  '2340': {
+    'en': 'Unbowed, Unbent, Unbroken',
+    'de': 'Verbündeter von Ronka',
+    'ja': 'ロンカの護人',
+    'fr': 'Les protectrices des ruines'
+  },
+  '2341': {
+    'en': 'Be Still My (Automatic) Heart',
+    'de': 'Eisenbeißer',
+    'ja': 'オートマトンクラッシャー',
+    'fr': 'Annihilateur d\'automates'
+  },
+  '2342': {
+    'en': 'Another World, Another Turn',
+    'de': 'Archaeotania',
+    'ja': '大口の巨大獣',
+    'fr': 'Les dents de La Tempête'
+  },
+  '2343': {
+    'en': 'Free Market Friend: Lakeland',
+    'de': 'FATE-Händler: Seenland',
+    'ja': '広域交易商の味方：レイクランド',
+    'fr': 'Héros de grand chemin : Grand-Lac'
+  },
+  '2344': {
+    'en': 'Free Market Friend: Kholusia',
+    'de': 'FATE-Händler: Kholusia',
+    'ja': '広域交易商の味方：コルシア島',
+    'fr': 'Héros de grand chemin : Kholusia'
+  },
+  '2345': {
+    'en': 'Free Market Friend: Amh Araeng',
+    'de': 'FATE-Händler: Amh Araeng',
+    'ja': '広域交易商の味方：アム・アレーン',
+    'fr': 'Héros de grand chemin : Amh Araeng'
+  },
+  '2346': {
+    'en': 'Free Market Friend: Il Mheg',
+    'de': 'FATE-Händler: Il Mheg',
+    'ja': '広域交易商の味方：イル・メグ',
+    'fr': 'Héros de grand chemin : Il Mheg'
+  },
+  '2347': {
+    'en': 'Free Market Friend: The Rak\'tika Greatwood',
+    'de': 'FATE-Händler: Rak\'tika',
+    'ja': '広域交易商の味方：ラケティカ大森林',
+    'fr': 'Héros de grand chemin : Rak\'tika'
+  },
+  '2348': {
+    'en': 'Free Market Friend: The Tempest',
+    'de': 'FATE-Händler: Tempest',
+    'ja': '広域交易商の味方：テンペスト',
+    'fr': 'Héros de grand chemin : La Tempête'
+  },
+  '2349': {
+    'en': 'Merchant\'s Best Friend',
+    'de': 'FATE-Händler: Norvrandt',
+    'ja': '広域交易商の味方：ノルヴラント',
+    'fr': 'Héros de grand chemin : Norvrandt'
+  },
+  '2350': {
+    'en': 'Shadowbring Your A Game I',
+    'de': 'Jag mir ein A in Norvrandt I',
+    'ja': '漆黒の難物殺し：ランク1',
+    'fr': 'Chasseur des ombres I'
+  },
+  '2351': {
+    'en': 'Shadowbring Your A Game II',
+    'de': 'Jag mir ein A in Norvrandt II',
+    'ja': '漆黒の難物殺し：ランク2',
+    'fr': 'Chasseur des ombres II'
+  },
+  '2352': {
+    'en': 'Shadowbring Your A Game III',
+    'de': 'Jag mir ein A in Norvrandt III',
+    'ja': '漆黒の難物殺し：ランク3',
+    'fr': 'Chasseur des ombres III'
+  },
+  '2353': {
+    'en': 'Shadowbring Your S Game I',
+    'de': 'Jag mir ein S in Norvrandt I',
+    'ja': '漆黒の超大物殺し：ランク1',
+    'fr': 'Chasseur des Ténèbres I'
+  },
+  '2354': {
+    'en': 'Shadowbring Your S Game II',
+    'de': 'Jag mir ein S in Norvrandt II',
+    'ja': '漆黒の超大物殺し：ランク2',
+    'fr': 'Chasseur des Ténèbres II'
+  },
+  '2355': {
+    'en': 'Shadowbring Your S Game III',
+    'de': 'Jag mir ein S in Norvrandt III',
+    'ja': '漆黒の超大物殺し：ランク3',
+    'fr': 'Chasseur des Ténèbres III'
+  },
+  '2356': {
+    'en': 'Nuts for Nutsy',
+    'de': 'Norvrandt-Meisterjäger',
+    'ja': 'ナッツモブハンター',
+    'fr': 'Chasseur complètement kupo'
+  },
+  '2357': {
+    'en': 'With Saw in Hand VI',
+    'de': 'Sägende Hand VI',
+    'ja': '製作稼業木工師：ランク6',
+    'fr': 'Féru de la scie VI'
+  },
+  '2358': {
+    'en': 'With Hammer in Hand VI',
+    'de': 'Hämmernde Hand VI',
+    'ja': '製作稼業鍛冶師：ランク6',
+    'fr': 'Féru de l\'enclume VI'
+  },
+  '2359': {
+    'en': 'With Steel in Hand VI',
+    'de': 'Stählerne Hand VI',
+    'ja': '製作稼業甲冑師：ランク6',
+    'fr': 'Féru du marteau VI'
+  },
+  '2360': {
+    'en': 'With Gem in Hand VI',
+    'de': 'Goldene Hand VI',
+    'ja': '製作稼業彫金師：ランク6',
+    'fr': 'Féru du joyau VI'
+  },
+  '2361': {
+    'en': 'With Skin in Hand VI',
+    'de': 'Gerbende Hand VI',
+    'ja': '製作稼業革細工師：ランク6',
+    'fr': 'Féru du couteau VI'
+  },
+  '2362': {
+    'en': 'With Needle in Hand VI',
+    'de': 'Webende Hand VI',
+    'ja': '製作稼業裁縫師：ランク6',
+    'fr': 'Féru de l\'aiguille VI'
+  },
+  '2363': {
+    'en': 'With Pestle in Hand VI',
+    'de': 'Brauende Hand VI',
+    'ja': '製作稼業錬金術師：ランク6',
+    'fr': 'Féru de l\'alambic VI'
+  },
+  '2364': {
+    'en': 'With Pan in Hand VI',
+    'de': 'Brutzelnde Hand VI',
+    'ja': '製作稼業調理師：ランク6',
+    'fr': 'Féru de la poêle VI'
+  },
+  '2365': {
+    'en': 'With Axe in Hand VI',
+    'de': 'Blühende Hand VI',
+    'ja': '採集稼業園芸師：ランク6',
+    'fr': 'Féru de la hache VI'
+  },
+  '2366': {
+    'en': 'With Pick in Hand VI',
+    'de': 'Hackende Hand VI',
+    'ja': '採集稼業採掘師：ランク6',
+    'fr': 'Féru de la pioche VI'
+  },
+  '2367': {
+    'en': 'With Bait in Hand VI',
+    'de': 'Angelnde Hand VI',
+    'ja': '採集稼業漁師：ランク6',
+    'fr': 'Féru de l\'hameçon VI'
+  },
+  '2368': {
+    'en': 'Triple-decker IX',
+    'de': 'Tripledecker IX',
+    'ja': 'カードコレクター：ランク9',
+    'fr': 'Porte-cartes IX'
+  },
+  '2369': {
+    'en': 'Triple Team VII',
+    'de': 'Tripleduellant VII',
+    'ja': '街角のデュエリスト：ランク7',
+    'fr': 'En cartes et en os VII'
+  },
+  '2370': {
+    'en': 'Darksighters I',
+    'de': 'Reisen durch die Schatten',
+    'ja': '漆黒の探検家',
+    'fr': 'Explorateur de l\'ombre'
+  },
+  '2371': {
+    'en': 'Mapping the Realm: Lakeland',
+    'de': 'Kartograph: Seenland',
+    'ja': 'レイクランドを踏破せし者',
+    'fr': 'Cartographe du continent : Grand-Lac'
+  },
+  '2372': {
+    'en': 'Mapping the Realm: Kholusia',
+    'de': 'Kartograph: Kholusia',
+    'ja': 'コルシア島を踏破せし者',
+    'fr': 'Cartographe du continent : Kholusia'
+  },
+  '2373': {
+    'en': 'Mapping the Realm: Amh Araeng',
+    'de': 'Kartograph: Amh Araeng',
+    'ja': 'アム・アレーンを踏破せし者',
+    'fr': 'Cartographe du continent : Amh Araeng'
+  },
+  '2374': {
+    'en': 'Mapping the Realm: Il Mheg',
+    'de': 'Kartograph: Il Mheg',
+    'ja': 'イル・メグを踏破せし者',
+    'fr': 'Cartographe du continent : Il Mheg'
+  },
+  '2375': {
+    'en': 'Mapping the Realm: The Rak\'tika Greatwood',
+    'de': 'Kartograph: Der Große Wald Rak\'tika',
+    'ja': 'ラケティカ大森林を踏破せし者',
+    'fr': 'Cartographe du continent : Rak\'tika'
+  },
+  '2376': {
+    'en': 'Mapping the Realm: The Tempest',
+    'de': 'Kartograph: Tempest',
+    'ja': 'テンペストを踏破せし者',
+    'fr': 'Cartographe du continent : La Tempête'
+  },
+  '2377': {
+    'en': 'Mapping the Realm: Holminster Switch',
+    'de': 'Kartograph: Holminster',
+    'ja': 'ホルミンスターを踏破せし者',
+    'fr': 'Cartographe du continent : Holminster'
+  },
+  '2378': {
+    'en': 'Mapping the Realm: Dohn Mheg',
+    'de': 'Kartograph: Dohn Mheg',
+    'ja': 'ドォーヌ・メグを踏破せし者',
+    'fr': 'Cartographe du continent : Dohn Mheg'
+  },
+  '2379': {
+    'en': 'Mapping the Realm: The Qitana Ravel',
+    'de': 'Kartograph: Die Irrungen der Qitari',
+    'ja': 'キタンナ神影洞を踏破せし者',
+    'fr': 'Cartographe du continent : Enchevêtrement des Qitari'
+  },
+  '2380': {
+    'en': 'Mapping the Realm: Malikah\'s Well',
+    'de': 'Kartograph: Malikahs Brunnen',
+    'ja': 'マリカの大井戸を踏破せし者',
+    'fr': 'Cartographe du continent : Puits de Malikah'
+  },
+  '2381': {
+    'en': 'Mapping the Realm: Mt. Gulg',
+    'de': 'Kartograph: Der Gulg',
+    'ja': 'グルグ火山を踏破せし者',
+    'fr': 'Cartographe du continent : Mont Gulg'
+  },
+  '2382': {
+    'en': 'Mapping the Realm: Amaurot',
+    'de': 'Kartograph: Amaurot',
+    'ja': 'アーモロートを踏破せし者',
+    'fr': 'Cartographe du continent : Amaurote'
+  },
+  '2383': {
+    'en': 'Mapping the Realm: The Twinning',
+    'de': 'Kartograph: Der Kristallzwilling',
+    'ja': 'シルクス・ツイニングを踏破せし者',
+    'fr': 'Cartographe du continent : Macle de Syrcus'
+  },
+  '2384': {
+    'en': 'Mapping the Realm: Akadaemia Anyder',
+    'de': 'Kartograph: Akadaemia Anyder',
+    'ja': 'アナイダアカデミアを踏破せし者',
+    'fr': 'Cartographe du continent : Akadaemia Anydre'
+  },
+  '2385': {
+    'en': 'Ill Met by Moonlight',
+    'de': 'Schluss mit den Spielchen',
+    'ja': '妖精王を狩りし者',
+    'fr': 'Renverser le Monarque féérique'
+  },
+  '2386': {
+    'en': 'Proven Guilty',
+    'de': 'Schuldig!',
+    'ja': '全能者を狩りし者',
+    'fr': 'Flétrir l\'innocence'
+  },
+  '2387': {
+    'en': 'Tank You, Paladin IV',
+    'de': 'Ein Paladin für alle Fälle IV',
+    'ja': 'みんなのナイト：ランク4',
+    'fr': 'Paladin philanthrope IV'
+  },
+  '2388': {
+    'en': 'Tank You, Warrior IV',
+    'de': 'Ein Krieger für alle Fälle IV',
+    'ja': 'みんなの戦士：ランク4',
+    'fr': 'Guerrier philanthrope IV'
+  },
+  '2389': {
+    'en': 'Tank You, Dark Knight IV',
+    'de': 'Ein Dunkelritter für alle Fälle IV',
+    'ja': 'みんなの暗黒騎士：ランク4',
+    'fr': 'Chevalier noir philanthrope IV'
+  },
+  '2390': {
+    'en': 'Tank You, Gunbreaker I',
+    'de': 'Eine Revolverklinge für alle Fälle I',
+    'ja': 'みんなのガンブレイカー：ランク1',
+    'fr': 'Pistosabreur philanthrope I'
+  },
+  '2391': {
+    'en': 'Tank You, Gunbreaker II',
+    'de': 'Eine Revolverklinge für alle Fälle II',
+    'ja': 'みんなのガンブレイカー：ランク2',
+    'fr': 'Pistosabreur philanthrope II'
+  },
+  '2392': {
+    'en': 'Tank You, Gunbreaker III',
+    'de': 'Eine Revolverklinge für alle Fälle III',
+    'ja': 'みんなのガンブレイカー：ランク3',
+    'fr': 'Pistosabreur philanthrope III'
+  },
+  '2393': {
+    'en': 'Tank You, Gunbreaker IV',
+    'de': 'Eine Revolverklinge für alle Fälle IV',
+    'ja': 'みんなのガンブレイカー：ランク4',
+    'fr': 'Pistosabreur philanthrope IV'
+  },
+  '2394': {
+    'en': 'Aetherpool Party: Gunblade',
+    'de': 'Waffen des Padjal: Revolverklinge',
+    'ja': '強化されし魔器：パジャルガンブレード',
+    'fr': 'Padjale, ton arme : pistolame'
+  },
+  '2395': {
+    'en': 'Aetherpool Party: War Quoits',
+    'de': 'Waffen des Padjal: Gleven',
+    'ja': '強化されし魔器：パジャルウォーコイト',
+    'fr': 'Padjale, ton arme : quoits de guerre'
+  },
+  '2396': {
+    'en': 'I Can Dig It X',
+    'de': 'Wer sucht, der findet X',
+    'ja': 'トレジャーハンター：ランク10',
+    'fr': 'Creuser son trou X'
+  },
+  '2397': {
+    'en': 'I Can Dig It XI',
+    'de': 'Wer sucht, der findet XI',
+    'ja': 'トレジャーハンター：ランク11',
+    'fr': 'Creuser son trou XI'
+  },
+  '2398': {
+    'en': 'Vouched Four',
+    'de': 'Eine neue Generation',
+    'ja': '新世代',
+    'fr': 'Des Feux nouveaux de la Mort'
+  },
+  '2399': {
+    'en': 'At Sixes and Sevens',
+    'de': 'Danke für sechs Jahre!',
+    'ja': 'ありがとう六周年！',
+    'fr': 'Six ans, ça en fait de la bouteille !'
+  },
+  '2400': {
+    'en': 'I Have the Evil-ish Eye',
+    'de': 'Auge auf und durch!',
+    'ja': 'その眼差しと共に',
+    'fr': 'Grâce à ce regard'
+  },
+  '2401': {
+    'en': 'Beauty and Its Beasts I',
+    'de': 'Im falschen Verlies der Fuath I',
+    'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク1',
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah I'
+  },
+  '2402': {
+    'en': 'Beauty and Its Beasts II',
+    'de': 'Im falschen Verlies der Fuath II',
+    'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク2',
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah II'
+  },
+  '2403': {
+    'en': 'Beauty and Its Beasts III',
+    'de': 'Im falschen Verlies der Fuath III',
+    'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク3',
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah III'
+  },
+  '2404': {
+    'en': 'Beauty and Its Beasts IV',
+    'de': 'Im falschen Verlies der Fuath IV',
+    'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク4',
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah IV'
+  },
+  '2405': {
+    'en': 'Happily Treasure After I',
+    'de': 'Entkommen aus dem falschen Verlies der Fuath I',
+    'ja': 'リェー・ギア・ダンジョンの覇者：ランク1',
+    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah I'
+  },
+  '2406': {
+    'en': 'Happily Treasure After II',
+    'de': 'Entkommen aus dem falschen Verlies der Fuath II',
+    'ja': 'リェー・ギア・ダンジョンの覇者：ランク2',
+    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah II'
+  },
+  '2407': {
+    'en': 'Happily Treasure After III',
+    'de': 'Entkommen aus dem falschen Verlies der Fuath III',
+    'ja': 'リェー・ギア・ダンジョンの覇者：ランク3',
+    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah III'
+  },
+  '2408': {
+    'en': 'Happily Treasure After IV',
+    'de': 'Entkommen aus dem falschen Verlies der Fuath IV',
+    'ja': 'リェー・ギア・ダンジョンの覇者：ランク4',
+    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah IV'
+  },
+  '2409': {
+    'en': 'Paradise Found I',
+    'de': 'Das gefundene Paradies I',
+    'ja': '覚醒せしエデンを制覇せし者：ランク1',
+    'fr': 'Sonner le clairon I'
+  },
+  '2410': {
+    'en': 'Paradise Found II',
+    'de': 'Das gefundene Paradies II',
+    'ja': '覚醒せしエデンを制覇せし者：ランク2',
+    'fr': 'Sonner le clairon II'
+  },
+  '2411': {
+    'en': 'Paradise Found III',
+    'de': 'Das gefundene Paradies III',
+    'ja': '覚醒せしエデンを制覇せし者：ランク3',
+    'fr': 'Sonner le clairon III'
+  },
+  '2412': {
+    'en': 'Savage Paradise Found I',
+    'de': 'Das gefundene Paradies der Epik I',
+    'ja': '覚醒せしエデンを完全制覇せし者：ランク1',
+    'fr': 'Lendemain difficile I'
+  },
+  '2413': {
+    'en': 'Savage Paradise Found II',
+    'de': 'Das gefundene Paradies der Epik II',
+    'ja': '覚醒せしエデンを完全制覇せし者：ランク2',
+    'fr': 'Lendemain difficile II'
+  },
+  '2414': {
+    'en': 'Savage Paradise Found III',
+    'de': 'Das gefundene Paradies der Epik III',
+    'ja': '覚醒せしエデンを完全制覇せし者：ランク3',
+    'fr': 'Lendemain difficile III'
+  },
+  '2415': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2416': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2417': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2418': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2419': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2420': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2421': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2422': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2423': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
   }
 };

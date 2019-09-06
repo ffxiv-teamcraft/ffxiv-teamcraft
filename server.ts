@@ -174,21 +174,25 @@ const indexAllowedPages = ['/search', '/community-rotations', '/levequests', '/a
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
-  const noSEO = req.headers.host.indexOf('beta.') > -1 || req.headers.host.indexOf('preview.') > -1;
-  const isIndexBot = detectIndexBot(req.headers['user-agent']);
-  const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
-  const langFromUrl = /\/db\/(\w{2})\//.exec(req.url);
-  (req as any).lang = (langFromUrl && langFromUrl[1]) || req.headers['accept-language'] || 'en';
+  try {
+    const noSEO = req.headers.host.indexOf('beta.') > -1 || req.headers.host.indexOf('preview.') > -1;
+    const isIndexBot = detectIndexBot(req.headers['user-agent']);
+    const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
+    const langFromUrl = /\/db\/(\w{2})\//.exec(req.url);
+    (req as any).lang = (langFromUrl && langFromUrl[1]) || req.headers['accept-language'] || 'en';
 
-  if (isDeepLinkBot || (!noSEO && isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
-    res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
-      req,
-      providers: [
-        { provide: REQUEST, useValue: req }
-      ]
-    });
-  } else {
-    res.sendFile(join(DIST_FOLDER, APP_NAME, 'index.html'));
+    if (isDeepLinkBot || (!noSEO && isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
+      res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), {
+        req,
+        providers: [
+          { provide: REQUEST, useValue: req }
+        ]
+      });
+    } else {
+      res.sendFile(join(DIST_FOLDER, APP_NAME, 'index.html'));
+    }
+  } catch (err) {
+    // Ignored, as it's inside SSR
   }
 });
 

@@ -9,6 +9,7 @@ import { ItemData } from '../../model/garland-tools/item-data';
 import { filter, map } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
+import { jobCategories } from '../data/sources/job-categories';
 
 @Injectable({
   providedIn: 'root'
@@ -129,6 +130,18 @@ export class GarlandToolsService {
    */
   getJobCategory(id: number): JobCategory {
     return this.gt.jobCategories[id];
+  }
+
+  /**
+   * Gets details for all job categories in garlandtools data.
+   * @returns {JobCategory[]}
+   */
+  getAllJobCategories(): number[] {
+    return Object.keys(jobCategories)
+      .filter(key => jobCategories[key].en !== '')
+      .map(key => {
+        return +key;
+      });
   }
 
   /**

@@ -409,21 +409,17 @@ export class MapPageComponent extends TeamcraftPageComponent {
     return mapData.GameContentLinks;
   }
 
-  private getDescription(npc: any): string {
-    return npc[`Description_${this.translate.currentLang}`] || npc.Description_en;
-  }
-
   private getName(mapData: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.getMapName(mapData.ID));
+    return this.i18n.getName(this.l12n.getPlace(mapData.PlaceNameTargetID));
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.map$.pipe(
-      map(mapData => {
+    return combineLatest([this.map$, this.lazyData.loaded$]).pipe(
+      map(([mapData]) => {
         return {
           title: this.getName(mapData),
-          description: this.getDescription(mapData),
+          description: '',
           url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/map/${mapData.ID}/${this.getName(mapData).split(' ').join('-')}`,
           image: `https://xivapi.com${mapData.MapFilename}`
         };

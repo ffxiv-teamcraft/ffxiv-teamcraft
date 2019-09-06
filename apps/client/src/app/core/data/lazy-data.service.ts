@@ -1,5 +1,5 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { BehaviorSubject, combineLatest } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MapData } from '../../modules/map/map-data';
 import { XivapiService } from '@xivapi/angular-client';
@@ -8,6 +8,8 @@ import { Quest } from '../../pages/db/model/quest/quest';
 import { Fate } from '../../pages/db/model/fate/fate';
 import { isPlatformServer } from '@angular/common';
 import { LazyRecipe } from './lazy-recipe';
+import { PlatformService } from '../tools/platform.service';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -66,6 +68,7 @@ export class LazyDataService {
   public statuses: any = {};
   public traits: any = {};
   public patches: any[] = [];
+  public patchContents: any = {};
   public recipes: LazyRecipe[] = [];
 
   public get allItems(): any {
@@ -87,7 +90,8 @@ export class LazyDataService {
     return res;
   }
 
-  constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) platform: Object) {
+  constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) private platform: Object,
+              private platformService: PlatformService) {
     if (isPlatformServer(platform)) {
       this.loaded$.next(true);
     } else {
@@ -97,48 +101,49 @@ export class LazyDataService {
 
   private load(): void {
     combineLatest([
-        this.http.get('./assets/data/items.json'),
-        this.http.get('./assets/data/zh/zh-items.json'),
-        this.http.get('./assets/data/zh/zh-places.json'),
-        this.http.get('./assets/data/ko/ko-items.json'),
-        this.http.get('./assets/data/ko/ko-item-ui-categories.json'),
-        this.http.get('./assets/data/ko/ko-actions.json'),
-        this.http.get('./assets/data/ko/ko-action-descriptions.json'),
-        this.http.get('./assets/data/ko/ko-craft-actions.json'),
-        this.http.get('./assets/data/ko/ko-craft-descriptions.json'),
-        this.http.get('./assets/data/ko/ko-free-company-actions.json'),
-        this.http.get('./assets/data/ko/ko-leves.json'),
-        this.http.get('./assets/data/ko/ko-weathers.json'),
-        this.http.get('./assets/data/ko/ko-places.json'),
-        this.http.get('./assets/data/ko/ko-npcs.json'),
-        this.http.get('./assets/data/ko/ko-mobs.json'),
-        this.http.get('./assets/data/ko/ko-job-name.json'),
-        this.http.get('./assets/data/ko/ko-job-abbr.json'),
-        this.http.get('./assets/data/ko/ko-job-categories.json'),
-        this.http.get('./assets/data/actions.json'),
-        this.http.get('./assets/data/craft-actions.json'),
-        this.http.get('./assets/data/npcs.json'),
-        this.http.get('./assets/data/item-icons.json'),
-        this.http.get('./assets/data/maps.json'),
+        this.getData('/assets/data/items.json'),
+        this.getData('/assets/data/zh/zh-items.json'),
+        this.getData('/assets/data/zh/zh-places.json'),
+        this.getData('/assets/data/ko/ko-items.json'),
+        this.getData('/assets/data/ko/ko-item-ui-categories.json'),
+        this.getData('/assets/data/ko/ko-actions.json'),
+        this.getData('/assets/data/ko/ko-action-descriptions.json'),
+        this.getData('/assets/data/ko/ko-craft-actions.json'),
+        this.getData('/assets/data/ko/ko-craft-descriptions.json'),
+        this.getData('/assets/data/ko/ko-free-company-actions.json'),
+        this.getData('/assets/data/ko/ko-leves.json'),
+        this.getData('/assets/data/ko/ko-weathers.json'),
+        this.getData('/assets/data/ko/ko-places.json'),
+        this.getData('/assets/data/ko/ko-npcs.json'),
+        this.getData('/assets/data/ko/ko-mobs.json'),
+        this.getData('/assets/data/ko/ko-job-name.json'),
+        this.getData('/assets/data/ko/ko-job-abbr.json'),
+        this.getData('/assets/data/ko/ko-job-categories.json'),
+        this.getData('/assets/data/actions.json'),
+        this.getData('/assets/data/craft-actions.json'),
+        this.getData('/assets/data/npcs.json'),
+        this.getData('/assets/data/item-icons.json'),
+        this.getData('/assets/data/maps.json'),
         this.xivapi.getDCList(),
-        this.http.get('./assets/data/mobs.json'),
-        this.http.get('./assets/data/places.json'),
-        this.http.get('./assets/data/quests.json'),
-        this.http.get('./assets/data/fates.json'),
-        this.http.get('./assets/data/ko/ko-fates.json'),
-        this.http.get('./assets/data/ko/ko-quests.json'),
-        this.http.get('./assets/data/ko/ko-triple-triad-rules.json'),
-        this.http.get('./assets/data/ko/ko-instances.json'),
-        this.http.get('./assets/data/ko/ko-shops.json'),
-        this.http.get('./assets/data/ko/ko-traits.json'),
-        this.http.get('./assets/data/ko/ko-statuses.json'),
-        this.http.get('./assets/data/instances.json'),
-        this.http.get('./assets/data/shops.json'),
-        this.http.get('./assets/data/leves.json'),
-        this.http.get('./assets/data/statuses.json'),
-        this.http.get('./assets/data/traits.json'),
-        this.http.get('https://xivapi.com/patchlist'),
-        this.http.get('./assets/data/recipes.json')
+        this.getData('/assets/data/mobs.json'),
+        this.getData('/assets/data/places.json'),
+        this.getData('/assets/data/quests.json'),
+        this.getData('/assets/data/fates.json'),
+        this.getData('/assets/data/ko/ko-fates.json'),
+        this.getData('/assets/data/ko/ko-quests.json'),
+        this.getData('/assets/data/ko/ko-triple-triad-rules.json'),
+        this.getData('/assets/data/ko/ko-instances.json'),
+        this.getData('/assets/data/ko/ko-shops.json'),
+        this.getData('/assets/data/ko/ko-traits.json'),
+        this.getData('/assets/data/ko/ko-statuses.json'),
+        this.getData('/assets/data/instances.json'),
+        this.getData('/assets/data/shops.json'),
+        this.getData('/assets/data/leves.json'),
+        this.getData('/assets/data/statuses.json'),
+        this.getData('/assets/data/traits.json'),
+        this.getData('https://xivapi.com/patchlist'),
+        this.getData('/assets/data/recipes.json'),
+        this.getData('/assets/data/patch-content.json')
       ]
     ).subscribe(([
                    items,
@@ -182,7 +187,8 @@ export class LazyDataService {
                    statuses,
                    traits,
                    patches,
-                   recipes
+                   recipes,
+                   patchContents
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -226,8 +232,40 @@ export class LazyDataService {
       this.traits = traits;
       this.patches = patches as any[];
       this.recipes = recipes as LazyRecipe[];
+      this.patchContents = patchContents;
       this.loaded$.next(true);
       this.loaded$.complete();
     });
+  }
+
+  public merge(...dataEntries: any[]): any {
+    return dataEntries.reduce((merged, entry) => {
+      Object.keys(entry)
+        .forEach(key => {
+          if (merged[key] !== undefined) {
+            Object.keys(entry[key])
+              .forEach(lang => {
+                merged[key][lang] = entry[key][lang];
+              });
+          } else {
+            merged[key] = merged[key] || entry[key];
+          }
+        });
+      return merged;
+    }, {});
+  }
+
+  private getData(path: string): Observable<any> {
+    let url: string;
+    if (path.startsWith('http')) {
+      url = path;
+    } else {
+      if (this.platformService.isDesktop() || !environment.production || isPlatformServer(this.platform)) {
+        url = `.${path}`;
+      } else {
+        url = `https://cdn.ffxivteamcraft.com${path}`;
+      }
+    }
+    return this.http.get(url);
   }
 }

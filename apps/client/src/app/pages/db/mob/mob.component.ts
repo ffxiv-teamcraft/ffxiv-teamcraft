@@ -18,6 +18,7 @@ import { Vector2 } from '../../../core/tools/vector2';
 import { hunts } from '../../../core/data/sources/hunts';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { monsterDrops } from '../../../core/data/sources/monster-drops';
 
 @Component({
   selector: 'app-mob',
@@ -71,18 +72,20 @@ export class MobComponent extends TeamcraftPageComponent {
 
     this.gtData$ = mobId$.pipe(
       switchMap(id => {
-        return this.gt.getMob(this.getGTMobId(+id));
+        return this.gt.getMob(this.getGTMobId(+id))
+          .pipe(
+            catchError(() => of({ mob: { id: +id } }))
+          );
       }),
-      catchError(() => of({})),
       shareReplay(1)
     );
 
     this.drops$ = this.gtData$.pipe(
       map((data: MobData) => {
-        if (data.mob) {
-          return data.mob.drops || [];
+        if (data.mob && data.mob.drops) {
+          return data.mob.drops;
         }
-        return [];
+        return monsterDrops[data.mob.id] || [];
       })
     );
 
@@ -138,8 +141,8 @@ export class MobComponent extends TeamcraftPageComponent {
       })
     );
 
-    this.links$ = combineLatest([this.xivapiMob$, this.gtData$]).pipe(
-      map(([xivapiMob, gtData]) => {
+    this.links$ = combineLatest([this.xivapiMob$]).pipe(
+      map(([xivapiMob]) => {
         const gtId = this.getGTMobId(xivapiMob.ID);
         const links = [];
         if (gtId.length > 0) {

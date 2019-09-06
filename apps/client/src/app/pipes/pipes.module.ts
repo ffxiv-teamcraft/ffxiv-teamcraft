@@ -50,6 +50,10 @@ import { IsVerifiedPipe } from './pipes/is-verified.pipe';
 import { AchievementNamePipe } from './pipes/achievement-name.pipe';
 import { AchievementIconPipe } from './pipes/achievement-icon.pipe';
 import { FloorPipe } from './pipes/floor.pipe';
+import { MapIdPipe } from './pipes/map-id.pipe';
+import { StatusIconPipe } from './pipes/status-icon.pipe';
+import { StatusNamePipe } from './pipes/status-name.pipe';
+import { RotationPipe } from './pipes/rotation.pipe';
 
 @NgModule({
   declarations: [
@@ -104,7 +108,11 @@ import { FloorPipe } from './pipes/floor.pipe';
     IsPatronPipe,
     IsVerifiedPipe,
     AchievementNamePipe,
-    AchievementIconPipe
+    AchievementIconPipe,
+    MapIdPipe,
+    StatusIconPipe,
+    StatusNamePipe,
+    RotationPipe
   ],
   exports: [
     ItemNamePipe,
@@ -158,7 +166,11 @@ import { FloorPipe } from './pipes/floor.pipe';
     IsPatronPipe,
     IsVerifiedPipe,
     AchievementNamePipe,
-    AchievementIconPipe
+    AchievementIconPipe,
+    MapIdPipe,
+    StatusIconPipe,
+    StatusNamePipe,
+    RotationPipe
   ]
 })
 export class PipesModule {

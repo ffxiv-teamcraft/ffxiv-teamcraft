@@ -98,7 +98,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       this.generateTiers(this.displayRow.reverseTiers);
     }
     if (this.displayRow && this.displayRow.zoneBreakdown) {
-      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.getHideZoneDuplicates());
+      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates());
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (row.tradeSources && row.tradeSources.length > 0) || (row.vendors && row.vendors.length > 0) || hasTrades;
@@ -242,6 +242,12 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
   }
 
+  public markPanelAsDone(): void {
+    this.displayRow.rows.forEach(row => {
+      this.listsFacade.setItemDone(row.id, row.icon, this.finalItems, row.amount - row.done, row.recipeId, row.amount, false);
+    });
+  }
+
   private topologicalSort(data: ListRow[]): ListRow[] {
     const res: ListRow[] = [];
     const doneList: boolean[] = [];
@@ -316,7 +322,15 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   public getTextExport(): string {
-    return this.displayRow.rows.reduce((exportString, row) => {
+    let rows: ListRow[];
+    if (this.tiers) {
+      rows = this.tiers.reduce((res, tier) => {
+        return [...res, ...tier];
+      }, []);
+    } else {
+      rows = this.displayRow.rows;
+    }
+    return rows.reduce((exportString, row) => {
       return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
     }, `${this.displayRow.title} :\n`);
   }

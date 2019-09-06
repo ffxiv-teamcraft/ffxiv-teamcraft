@@ -4,9 +4,6 @@ import { BlogEntry } from '../blog-entry';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
-import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { SeoService } from '../../../core/seo/seo.service';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 
@@ -15,44 +12,24 @@ import { AuthFacade } from '../../../+state/auth.facade';
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.less']
 })
-export class BlogComponent extends TeamcraftPageComponent {
+export class BlogComponent {
 
   posts$: Observable<BlogEntry[]>;
 
   admin$ = this.authFacade.user$.pipe(map(user => user.admin));
 
   constructor(private blogService: BlogService, private activeRoute: ActivatedRoute,
-              protected seoService: SeoService, private linkTools: LinkToolsService,
-              private authFacade: AuthFacade) {
-    super(seoService);
+              private linkTools: LinkToolsService, private authFacade: AuthFacade) {
     this.posts$ = this.activeRoute.paramMap.pipe(
       switchMap((params) => {
         const slug = params.get('slug');
         return this.blogService.getAll().pipe(
           map(posts => {
-            return slug ? posts.filter(post => post.slug === slug) : posts.sort((a,b) => {
+            return slug ? posts.filter(post => post.slug === slug) : posts.sort((a, b) => {
               return new Date(b.date).getTime() - new Date(a.date).getTime();
             });
           })
         );
-      })
-    );
-  }
-
-  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.posts$.pipe(
-      map(posts => {
-        if (posts.length === 1) {
-          const post = posts[0];
-          return {
-            title: post.title,
-            description: post.description,
-            image: 'https://ffxivteamcraft.com/assets/logo.png',
-            url: this.linkTools.getLink(`/blog/${post.slug}`)
-          };
-        } else {
-          return {};
-        }
       })
     );
   }

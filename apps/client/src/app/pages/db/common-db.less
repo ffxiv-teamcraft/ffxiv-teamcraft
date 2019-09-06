@@ -12,9 +12,14 @@
     @media @mobile {
       min-width: 100%;
     }
+
     > .ant-card-body {
       max-height: 800px;
       overflow-y: auto;
+    }
+
+    .ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+      padding: 5px;
     }
   }
 
@@ -22,6 +27,14 @@
     background-color: rgba(0, 0, 0, .10) !important;
     border-bottom-color: rgba(255, 255, 255, .4);
   }
+}
+
+.links {
+  margin: 5px 0;
+}
+
+.patch {
+  padding: 5px 0;
 }
 
 .instance-banner {
@@ -66,7 +79,7 @@
 }
 
 .top-left-block {
-  height: 111px;
+  height: 131px;
   @media @mobile {
     height: auto;
   }
@@ -77,13 +90,18 @@
 }
 
 .img-icon {
-  width: 32px;
+  max-width: 32px;
   height: 32px;
 }
 
 .larger-img-icon {
   width: 48px;
   height: 48px;
+}
+
+.smaller-img-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .round-icon {

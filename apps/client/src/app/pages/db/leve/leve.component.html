@@ -12,10 +12,14 @@
             <h2 class="item-name" [innerHTML]="xivapiLeve | xivapiI18n"></h2>
             <div class="item-kind" *ngIf="xivapiLeve.JournalGenre" [innerHTML]="xivapiLeve.JournalGenre | xivapiI18n">
             </div>
+            <div class="patch" *ngIf="xivapiLeve.GamePatch">
+              {{xivapiLeve.GamePatch | xivapiI18n}}
+              <app-db-button type="patch" [id]="xivapiLeve.GamePatch.ID"></app-db-button>
+            </div>
           </div>
         </div>
         <img [src]="xivapiLeve.IconIssuer | xivapiIcon" alt="" class="instance-banner">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="links" *ngIf="links$ | async as links">
           <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
             <img [src]="link.icon" [alt]="link.title" class="link-icon">
           </a>
@@ -59,6 +63,10 @@
       <div class="details-block">
         <div class="detail-name">{{'DB.Gil' | translate}}</div>
         <div class="detail-value">{{xivapiLeve.GilReward | number}}</div>
+      </div>
+      <div class="details-block" *ngIf="xivapiLeve.CraftLeve">
+        <div class="detail-name">{{'DB.LEVE.Turn_ins' | translate}}</div>
+        <div class="detail-value">{{xivapiLeve.CraftLeve.Repeats}}</div>
       </div>
     </div>
     <app-db-comments type="leve" [id]="xivapiLeve.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>

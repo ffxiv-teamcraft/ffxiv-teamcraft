@@ -8,20 +8,20 @@ import { TradeSource } from '../../modules/list/model/trade-source';
 export class TradeIconPipe implements PipeTransform {
 
   public static TRADE_SOURCES_PRIORITIES = {
-    // Just in case
-    25: 50, // Wolf Mark
-    29: 50, // MGP
     // Seals
     20: 30, // Storm
     21: 30, // Serpent
     22: 30, // Flame
     27: 30, // Allied
     10307: 30, // Centurio
+    26533: 30, // Sack of nuts (lol)
     // Tomestones
     28: 28, // Poetics
     35: 0, // Creation (can't obtain them anymore)
-    36: 28, // Mendacity
-    37: 28, // Genesis
+    36: 0, // Mendacity
+    37: 0, // Genesis
+    38: 28, // Goetia
+    39: 25, // Phantasmagoria
     7811: 28, // Rowena's Token (Soldiery)
     9383: 28, // Rowena's Token (Poetics)
     14298: 28, // Rowena's Token (Lore)
@@ -35,10 +35,17 @@ export class TradeIconPipe implements PipeTransform {
     24988: 27, // Rakshasa Token
     24989: 27, // Doman Reiyaku
     // Scripts
-    10309: 25, // Red crafter
-    10311: 25, // Red gatherer
+    10309: 0, // Red crafter
+    10311: 0, // Red gatherer
     17833: 25, // Yellow crafter
     17834: 25, // Yellow gatherer
+    25199: 25, // White crafter
+    25200: 25, // White gatherer
+    // Fates stones
+    26807: 23,
+    // Just in case
+    25: 22, // Wolf Mark
+    29: 22, // MGP
     // Hunt mark log
     7901: 22, // Blood-spattered Mark Log
     10127: 22, // Unstained Mark Log

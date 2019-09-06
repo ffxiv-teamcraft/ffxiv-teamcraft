@@ -2,6 +2,8 @@ const functions = require('firebase-functions');
 require('firebase/app');
 require('firebase/firestore');
 const admin = require('firebase-admin');
+const { Solver } = require('@ffxiv-teamcraft/crafting-solver');
+const { CraftingActionsRegistry, CrafterStats } = require('@ffxiv-teamcraft/simulator');
 admin.initializeApp();
 const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
@@ -91,6 +93,30 @@ exports.app = functions.runWith(runtimeOpts).https.onRequest((request, response)
     require(`${process.cwd()}/dist/client-webpack/server`).app(request, response);
   } catch (e) {
     // Ignoring the errors, this is ssr so specific stuff is to be expected.
+  }
+});
+
+exports.solver = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
+  res.set('Access-Control-Allow-Methods', 'POST');
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Headers', '*');
+  res.set('Access-Control-Max-Age', '3600');
+  if (req.method === 'OPTIONS') {
+    // Send response to OPTIONS requests
+    res.status(204).send('');
+  } else {
+    const stats = new CrafterStats(
+      req.body.stats.jobId,
+      req.body.stats.craftsmanship,
+      req.body.stats.control,
+      req.body.stats.cp,
+      req.body.stats.specialist,
+      req.body.stats.level,
+      req.body.stats.levels
+    );
+    const solver = new Solver(req.body.recipe, stats, req.body.configuration);
+    const seed = req.body.seed ? CraftingActionsRegistry.deserializeRotation(req.body.seed) : undefined;
+    return res.json(CraftingActionsRegistry.serializeRotation(solver.run(seed)));
   }
 });
 

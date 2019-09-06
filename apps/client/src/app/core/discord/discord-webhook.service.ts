@@ -23,6 +23,9 @@ export class DiscordWebhookService {
   }
 
   sendMessage(team: Team, contentKey: string, contentParams?: Object, iconUrl?: string, imageUrl?: string): void {
+    if (!team.webhook) {
+      return;
+    }
     this.i18n.getTranslation(contentKey, team.language, contentParams).pipe(
       first(),
       switchMap(description => {
@@ -100,18 +103,23 @@ export class DiscordWebhookService {
   }
 
   notifyItemChecked(team: Team, itemIcon: number, list: List, memberId: string, amount: number, itemId: number, totalNeeded: number, finalItem: boolean): void {
-    if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION) && !finalItem) {
-      return;
-    }
-    if (!team.hasSettingEnabled(WebhookSettingType.FINAL_LIST_PROGRESSION) && finalItem) {
-      return;
+    const row = list.getItemById(itemId, !finalItem, finalItem);
+    if (row.done + amount < totalNeeded || !team.hasSettingEnabled(WebhookSettingType.ITEM_COMPLETION)) {
+      if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION) && !finalItem) {
+        return;
+      }
+      if (!team.hasSettingEnabled(WebhookSettingType.FINAL_LIST_PROGRESSION) && finalItem) {
+        return;
+      }
+    } else {
+      amount = row.done + amount;
     }
     const itemName = this.l12n.getItem(itemId);
     this.characterService.getCharacter(memberId).pipe(
       first(),
       map(character => {
         this.sendMessage(team, 'TEAMS.NOTIFICATIONS.List_progress', {
-          characterName: character.character.Name,
+          characterName: character ? character.character.Name : this.translate.instant('COMMON.Anonymous'),
           memberProfileUrl: this.linkTools.getLink(`/profile/${memberId}`),
           amount: amount,
           totalNeeded: totalNeeded,
@@ -119,7 +127,7 @@ export class DiscordWebhookService {
           itemId: itemId,
           listName: list.name,
           listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-        }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`, character.character.Avatar);
+        }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`, character ? character.character.Avatar : '');
       })
     ).subscribe();
   }

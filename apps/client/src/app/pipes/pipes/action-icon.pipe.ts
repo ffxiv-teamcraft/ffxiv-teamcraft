@@ -7,7 +7,7 @@ import * as actionIcons from '../../core/data/sources/action-icons.json';
 export class ActionIconPipe implements PipeTransform {
 
   transform(id: number, fallback?: string): string {
-    return `https://www.garlandtools.org/files/icons/action/${actionIcons[id]}.png`;
+    return actionIcons[id];
   }
 
 }

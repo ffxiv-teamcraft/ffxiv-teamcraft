@@ -64,6 +64,16 @@
             {{'Public_list' | translate}}
           </label>
           <div fxLayout="row" fxLayoutGap="5px">
+            <button nz-button
+                    *ngIf="showContributionsButton$ | async"
+                    nzType="default"
+                    nzShape="circle"
+                    (click)="openContributionsPopup()"
+                    nz-tooltip
+                    [nzTitle]="'LIST_DETAILS.Contributions_popup' | translate"
+                    [disabled]="(permissionLevel$ | async) < 20">
+              <i nz-icon type="pie-chart"></i>
+            </button>
             <button nz-button [nzType]="list.public?'primary':'default'" nzShape="circle" (click)="openTagsPopup(list)"
                     nz-tooltip
                     [nzTitle]="'LIST_DETAILS.Tags_popup' | translate" [disabled]="(permissionLevel$ | async) < 40">

@@ -20,6 +20,13 @@
     "auth/user-not-found": "잘못된 이메일 또는 비밀번호",
     "auth/wrong-password": "잘못된 이메일 또는 비밀번호"
   },
+  "TIMERS": {
+    "Days": "일",
+    "Day": "일",
+    "Hours": "시간",
+    "Minutes": "분",
+    "Seconds": "초"
+  },
   "ITEMS": {
     "Title": "검색",
     "No_match": "일치하는 아이템이 없습니다",
@@ -69,7 +76,7 @@
     "Created_by": "제작자: {{name}}",
     "Share_link_copied": "공방 공유링크 복사됨",
     "Not_found": "해당 공방이 없거나 접근할 권한이 없습니다",
-    "Shared_workshops": "쓰기 권한이 있는 공방",
+    "Shared_workshops": "Workshops shared with you",
     "Rename": "공방 이름변경",
     "Add_lists": "목록 추가"
   },
@@ -99,6 +106,7 @@
   "Discounts": "할인",
   "Flat_discount": "금액",
   "Percent_discount": "비율",
+  "Path_copied_to_clipboard": "현재 페이지의 URL이 클립보드에 복사되었습니다",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "태그를 사용하여 필터링",
     "Tags_filter_reset": "필터 초기화",
@@ -106,6 +114,7 @@
     "No_lists_matching": "필터와 일치하는 내용이 없습니다"
   },
   "COMMON": {
+    "Length": "길이",
     "Save": "저장",
     "Reset": "초기화",
     "Total": "총합",
@@ -128,7 +137,8 @@
     "None": "없음",
     "Top": "맨 위로",
     "Bottom": "맨 아래로",
-    "Amount": "Amount"
+    "Amount": "수량",
+    "Undo": "Undo"
   },
   "ALARMS": {
     "Title": "알람",
@@ -140,6 +150,7 @@
     "Custom_sound": "알람소리 사용자 지정",
     "New_group": "새로운 알람 그룹",
     "Confirm_group_delete": "정말 이 그룹을 삭제하시겠습니까?",
+    "Delete_group_and_alarms": "그룹과 그룹 내 모든 알람 지우기",
     "Confirm_group_delete_with_alarms": "정말로 이 그룹과 그 안에 있는 알람을 지우시겠습니까?",
     "Add_note": "메모 추가",
     "Volume": "볼륨",
@@ -149,6 +160,17 @@
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
     "Add_alarms_to_group": "이 그룹에 알람 추가",
+    "REALTIME": {
+      "Reset_timers": "초기화 타이머",
+      "WEEKLY_RESETS": "주 제한",
+      "WEEKLY_RESETS_DESCRIPTION": "단골 거래, 쿠로의 공상수첩, 주 제한 획득 (24인 연합 레이드, 영웅 레이드 보상, 일반 레이드 무기 교환품), 주간 복권, 공략수첩, 패션 체크, B급 정예 마물 수배서",
+      "ROULETTES_RESET": "무작위 임무 & 야만족 일일 퀘스트",
+      "ROULETTES_RESET_DESCRIPTION": "무작위 임무, 야만족 일일 퀘스트 수주권, 일일 마물 수배서, 일일 복권 초기화",
+      "DELIVERIES_RESET": "조달 임무",
+      "DELIVERIES_RESET_DESCRIPTION": "총사령부 조달 품목 초기화",
+      "LEVE_ALLOWANCES": "의뢰 수주권",
+      "LEVE_ALLOWANCES_DESCRIPTION": "의뢰 수주권 3장 획득"
+    },
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
@@ -188,7 +210,8 @@
   "Yes": "O",
   "No": "X",
   "Crystals": "크리스탈",
-  "Gathering": "획득력",
+  "Gathering": "채집",
+  "Drops_or_GC": "던전/전리품 또는 총사령부",
   "Other": "기타",
   "Pre_crafts": "밑재료",
   "Items": "아이템",
@@ -246,10 +269,13 @@
   "filters/worn_by": "착용 직업",
   "filters/crafted_by": "제작 직업",
   "filters/item_category": "종류",
+  "filters/stats": "스탯 필터",
+  "filters/bonuses": "보너스 스탯 필터",
   "Adding_recipes": "{{amount}}개의 제작법을 {{listname}} 목록에 추가 중",
   "Recipe_Added": "1개의 아이템이 {{listname}} 목록에 추가되었습니다",
   "Recipes_Added": "{{itemcount}} 개의 아이템이 {{listname}}  목록에 추가되었습니다",
   "Character_name": "캐릭터 이름",
+  "Character_add_warning": "직접 캐릭터를 삭제하지 않았는데 이것이 보인다면, 아무것도 입력하지 말고 페이지를 새로고침 하거나 앱을 재시작하세요. 그래도 이 문제가 지속되면 디스코드 서버에 보고 해주세요.",
   "Disconnect_and_anonymous": "로그아웃 후 익명으로 계속하기",
   "Add_manual_character": "캐릭터 수동추가",
   "Character_informations": "캐릭터 정보",
@@ -338,6 +364,9 @@
     "Clear_search_history": "검색 기록 삭제",
     "Auto_mark_as_done_in_log": "목록에서 완료된 아이템이 있으면 수첩에 해당 아이템을 완료됨이라고 표시",
     "Db_comments_position": "DB댓글 위치",
+    "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
+    "Clickthrough_overlay": "오버레이 클릭 무시",
+    "Disable_search_history": "검색 기록 비활성화",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -364,13 +393,13 @@
     "Patreon_features": "Patreon 후원자 특전",
     "Contacts": "연락처",
     "Add_new_contact": "새 연락처",
-    "Save_for_all": "모두 저장",
+    "Save_for_all": "모든 직업에 적용",
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요",
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
-      "Guide": "계정 인증을 위해 Lodestone Profile Biography에 다음의 코드를 붙여넣으세요. \"{{userId}}\" 그리고 아래의 버튼을 눌러주세요.",
+      "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
       "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 이제 프로필에서 코드를 제거하셔도 됩니다.",
       "Error": "Bio에서 코드를 찾을 수 없습니다. 코드를 붙여넣고 변경이 되었는지 확인해주세요. 그리고 약 30초 뒤에 재시도해주세요.",
       "Validate": "인증"
@@ -383,7 +412,7 @@
     "Merge_lists": "목록 병합",
     "Merge_lists_warning": "대규모 목록은 데이터베이스의 한계로 인해 병합이 불가능하기 때문에 여기에 표시되지 않습니다.",
     "Lists_merged": "목록 병합이 완료되었습니다!",
-    "Shared_lists": "쓰기 권한이 있는 목록",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "선택항목을 목록에 추가",
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
@@ -407,7 +436,10 @@
       "Give_list_name": "새 목록 이름 설정",
       "Final_step": "확인",
       "Creating_list": "목록 생성",
-      "Loading_items": "아이템 정보 불러오는 중"
+      "Loading_items": "아이템 정보 불러오는 중",
+      "Estimate_overmeld_materia": "금단에 필요한 마테리아 갯수 예측",
+      "Multiply_tool_materia": "채집가(x2)와 제작자(x8) 도구에 해당하는 마테리아 합산",
+      "Group_together": "마테리아도 함께 묶기"
     }
   },
   "LIST": {
@@ -427,6 +459,7 @@
     "Show_craftable_amount": "제작 가능한 수량 표시",
     "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
     "Quick_layout_swap": "빠른 레이아웃 전환",
+    "Mark_whole_panel_done": "Mark panel content as done",
     "INVENTORY": {
       "Show_final_items": "최종 아이템 표시",
       "Hide_final_items": "최종 아이템 숨기기"
@@ -513,6 +546,10 @@
     }
   },
   "LIST_TAGS": {
+    "A_REALM_REBORN": "신생 에오르제아",
+    "HEAVENSWARD": "창천의 이슈가르드",
+    "STORMBLOOD": "홍련의 해방자",
+    "SHADOWBRINGERS": "칠흑의 반역자",
     "OUTDATED": "만료",
     "GEAR": "장비",
     "CONSUMABLE": "소모품",
@@ -533,6 +570,7 @@
     "PLD": "나이트",
     "WAR": "전사",
     "DRK": "암기",
+    "GNB": "건브",
     "WHM": "백마",
     "SCH": "학자",
     "AST": "점성",
@@ -542,6 +580,7 @@
     "SAM": "사무",
     "BRD": "음유",
     "MCH": "기공",
+    "DNC": "댄서",
     "BLM": "흑마",
     "SMN": "솬사",
     "RDM": "적마",
@@ -583,10 +622,10 @@
     "Steps": "단계",
     "Loading_path": "추천 경로 불러오는 중 (몇 초 정도 소요될 수 있습니다)",
     "STEP": {
-      "Gathering": "{{amount}}개 채집",
-      "Hunting": "전투로 {{amount}}개 획득",
-      "Vendor": "{{amount}}개 상점에서 구매",
-      "Trade": "{{amount}}개 교환"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -657,6 +696,7 @@
     "Not_found": "페이지를 찾을 수 없습니다."
   },
   "SIMULATOR": {
+    "Title": "제작 시뮬레이터",
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
@@ -715,6 +755,27 @@
     "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
     "Quality_needed": "HQ 100%까지 품질 {{amount}} 남음",
     "Rotation_tips": "로테이션 팁",
+    "Progress_action_100_potency": "작업 효율 100% 스킬 사용시 작업량: {{value}}",
+    "Quality_action_100_potency": "가공 효율 100% 스킬 사용시 품질량: {{value}}",
+    "Current_control": "현재 가공 숙련도: {{value}}",
+    "Current_control_bonus": "현재 추가 가공 숙련도 (최대 3000)",
+    "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
+    "Solve_rotation": "로테이션 생성",
+    "Rotation_solver": "로테이션 생성기",
+    "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
+    "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
+    "STATE": {
+      "Excellent": "최고품질",
+      "Good": "고품질",
+      "Poor": "저품질",
+      "Fail": "실패",
+      "Normal": "보통"
+    },
+    "SOLVER": {
+      "Hq_target": "HQ 목표치",
+      "Use_rotation_as_seed": "현재 로테이션을 시작점부터 사용",
+      "Disclaimer": "해당 기능은 현재 개발중입니다. 이 기능은 시간에 따라 발전하는 AI이며, 완벽한 로테이션을 구성하기 위해 만들어진 것이 아닙니다. 매우 나쁜 결과가 나올 수도 있지만 매우 좋은 결과 또한 나올 수 있습니다. 좋지 않은 결과가 나오더라도 해당 결과를 버그로 제출하지 마세요."
+    },
     "COMMUNITY_ROTATIONS": {
       "Title": "커뮤니티 로테이션",
       "Community_rotation": "커뮤니티 로테이션",
@@ -741,7 +802,8 @@
         "TEALESS": "약차 미사용",
         "FOODLESS": "음식 미사용",
         "MAKERS_MARK": "견실한 마음가짐",
-        "MUSCLE_MEMORY": "확신"
+        "MUSCLE_MEMORY": "확신",
+        "REUSE": "재사용"
       }
     },
     "CUSTOM": {
@@ -754,6 +816,7 @@
     "ROTATIONS": {
       "Search_placeholder": "로테이션 검색",
       "FOLDERS": {
+        "Not_found": "Rotation folder not found",
         "Folders": "로테이션 폴더",
         "Rename": "폴더 이름 변경",
         "New_folder": "새 폴더",
@@ -881,6 +944,7 @@
     "List_item_comment_added": "{{listName}}의 {{itemName}}에 댓글이 달렸습니다 : \"{{content}}\"",
     "Db_comment": "새 댓글이 달렸습니다: \"{{comment}}\"",
     "Db_comment_reply": "회원님의 댓글에 새 답글이 달렸습니다: \"{{comment}}\"",
+    "Blog_post": "새로운 블로그 포스트: {{title}}",
     "Mark_all_as_read": "모두 읽음으로 표시",
     "No_notifications": "알림 없음"
   },
@@ -909,16 +973,16 @@
     "Officer": "관리자",
     "Promote_officer": "관리자로 승급",
     "NOTIFICATIONS": {
-      "Item_added": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 추가하였습니다.",
-      "Item_removed": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 삭제하였습니다.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**이/가 **[{{listName}}]({{listUrl}})**에 있는 {{totalNeeded}}개 중에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 을/를 완료로 표시함",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "**{{teamName}}** 팀을 이 채널에서 추적하기 시작합니다.",
       "List_added_notification": "목록 **[{{listName}}]({{listUrl}})**이/가 팀에 추가되었습니다.",
       "List_removed_notification": "목록 **[{{listName}}]({{listUrl}})**이/가 팀에서 제거되었습니다.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** 님이 팀에 합류했습니다!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** 님이 팀에서 제외되었습니다.",
       "Name_changed": "**{{oldName}}** 에서 **{{newName}}** 로 이름이 변경되었습니다.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**이/가 [{{listName}}]({{listUrl}})**의 **[{{memberName}}]({{memberProfileUrl}})**에게 할당되었습니다."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "팀 가입",
@@ -929,7 +993,8 @@
       "LIST_REMOVED": "목록 제거",
       "LIST_PROGRESSION": "재료 진행상황",
       "FINAL_LIST_PROGRESSION": "최종 아이템 진행상황",
-      "USER_ASSIGNMENT": "팀원 할당"
+      "USER_ASSIGNMENT": "팀원 할당",
+      "ITEM_COMPLETION": "아이템 완료"
     }
   },
   "MARKETBOARD": {
@@ -976,7 +1041,7 @@
   },
   "UPDATE": {
     "New_update_available": "새 업데이트가 있습니다! ",
-    "Desktop_instructions": "최신 버전을 다운로드하려면 다음 링크를 클릭하세요: ",
+    "New_update_available_desktop": "새로운 업데이트가 추가되었습니다.\n여기를 눌러 다운로드 받으세요.",
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요."
   },
   "LOG_TRACKER": {
@@ -994,6 +1059,7 @@
     "Required_for_achievement": "업적에 적용됨",
     "Select_spot": "표시할 장소를 선택해주세요",
     "Hide_completed": "완료한 제작법 숨기기",
+    "Hide_completed_items": "Hide completed items",
     "MIN_optimized_path": "모든 광부 채집물의 추천 경로",
     "BTN_optimized_path": "모든 원예가 채집물의 추천 경로",
     "PAGE": {
@@ -1140,7 +1206,7 @@
     "Unique": "고유 아이템",
     "Dyeable": "염색가능",
     "Materia_sockets": "마테리아 슬롯",
-    "Advanced_melding": "마테리아화",
+    "Advanced_melding": "금단 장착",
     "Repair_job": "수리 직업",
     "Class_job": "클래스/직업",
     "Delay": "공격 주기",
@@ -1194,6 +1260,13 @@
     "3d_model_viewer": "3D 모델링 미리보기",
     "3d_model_help": "3D 모델링 미리보기",
     "Achievements": "업적",
+    "Currencies": "화폐",
+    "Rowena_splendor": "로웨나 상회 거래 (별 = 20% 추가 경험치)",
+    "Unlocks": "개방",
+    "ITEM": {
+      "Masterpiece_base": "기본",
+      "Masterpiece_bonus": "보너스"
+    },
     "NODE": {
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
@@ -1212,7 +1285,8 @@
       "End": "종료",
       "Rewards": "보상",
       "Repeatable": "반복가능",
-      "Beast_tribe_rank": "야만족 우호 단계"
+      "Beast_tribe_rank": "야만족 우호 단계",
+      "Chain_length": "연계 퀘스트 수"
     },
     "NPC": {
       "Other_entries": "다른 출현위치",
@@ -1231,7 +1305,8 @@
       "Allowance_cost": "의뢰 수주권 소모량",
       "Rewards": "획득 가능한 보상",
       "Client": "의뢰인",
-      "Issuer": "발행인"
+      "Issuer": "발행인",
+      "Turn_ins": "추가 요구 횟수"
     },
     "MOB": {
       "Known_spawns": "몬스터 출현 장소",
@@ -1305,7 +1380,26 @@
       "Show_more": "{{amount}} 개의 댓글 더 보기",
       "No_comments": "댓글 없음",
       "Post": "게시",
-      "Editor_tip": "댓글 내 데이터베이스 링크는 자동으로 DB로 변환됩니다."
+      "Editor_tip": "다른 페이지 링크를 생성하기 위해 <page type>:\"<Content Name>\"을 입력하세요. 예시: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". 지원하는 페이지 종류: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+    },
+    "PATCH": {
+      "Open_patch_page": "데이터베이스내 패치 변경점을 모두 보려면 이곳을 클릭하세요",
+      "CONTENT": {
+        "Title": "패치 내용",
+        "Achievements": "업적 ({{amount}})",
+        "Actions": "기술 ({{amount}})",
+        "Crafting_actions": "제작 기술 ({{amount}})",
+        "Fates": "돌발 ({{amount}})",
+        "Instances": "던전 ({{amount}})",
+        "Items": "아이템 ({{amount}})",
+        "Leves": "의뢰 ({{amount}})",
+        "Maps": "지도 ({{amount}})",
+        "Monsters": "몬스터 ({{amount}})",
+        "Npcs": "NPC ({{amount}})",
+        "Quests": "퀘스트 ({{amount}})",
+        "Statuses": "상태 ({{amount}})",
+        "Traits": "특성 ({{amount}})"
+      }
     }
   },
   "SEARCH_TYPES": {
@@ -1371,9 +1465,40 @@
     "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템"
   },
   "CURRENCY_SPENDING": {
-    "Title": "Currency Spending guide",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
-    "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "Title": "화폐 소비 가이드",
+    "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다 !",
+    "Pick_currency": "교환용 아이템 선택",
+    "You_can_buy": "{{amount}}개 구매 가능",
+    "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
+    "Disabled_description": "Square Enix에서 장터 정보를 가져오는 것을 막았기 때문에 이에 대한 불만은 Square Enix에 항의해 주세요. 우리는 Square Enix 없이 이 작업을 할 수 있는 게 없습니다."
+  },
+  "BLOG": {
+    "Title": "블로그"
+  },
+  "ERRORS": {
+    "Http_request_error": "{{tool}}에 문제점이 존재합니다. #announcements 디스코드 채널을 확인하거나 #bugs 채널에 제보해주세요.",
+    "Firebase_blocked": "데이터베이스에 접근할 수 없습니다. 무언가 문제가 있거나 인터넷이 끊겼을 수 있습니다."
+  },
+  "SEARCH": {
+    "Sort_by": "정렬 기준: ",
+    "Sort_asc": "오름차순",
+    "Sort_desc": "내림차순",
+    "Add_stat_filter": "스탯 필터 추가",
+    "Add_bonus_stat_filter": "보너스 스탯 필터 추가",
+    "Search_tip": "<patch #>를 입력하여 해당 버전으로 필터가 가능합니다. 예시: patch:5.01",
+    "SORT_BY": {
+      "Relevance": "관련성",
+      "ID": "ID",
+      "Level": "레벨",
+      "Ilvl": "아이템 레벨",
+      "Rlvl": "제작 레벨"
+    }
+  },
+  "SIDEBAR": {
+    "General": "일반",
+    "Sharing": "공유",
+    "Gathering": "채집",
+    "Helpers": "도우미",
+    "Other": "기타"
   }
 }

@@ -28,7 +28,7 @@ import {
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
-import { NzIconService, NzModalService } from 'ng-zorro-antd';
+import { NzIconService, NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/eorzea/eorzean-time.service';
@@ -120,6 +120,8 @@ export class AppComponent implements OnInit {
 
   private dirty = false;
 
+  public downloading = false;
+
   public randomTip$: Observable<string> = interval(600000).pipe(
     startWith(-1),
     map(() => {
@@ -152,7 +154,7 @@ export class AppComponent implements OnInit {
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              @Inject(PLATFORM_ID) private platform: Object) {
+              private message: NzMessageService, @Inject(PLATFORM_ID) private platform: Object) {
 
     this.showGiveaway = false;
 
@@ -296,9 +298,20 @@ export class AppComponent implements OnInit {
       this.ipc.on('apply-language', (e, newLang) => {
         this.use(newLang, true);
       });
+      this.ipc.on('download-progress', (event, progress: any) => {
+        this.downloading = true;
+      });
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
+  }
+
+  getPathname(): string {
+    return this.router.url;
+  }
+
+  afterPathNameCopy(): void {
+    this.message.success(this.translate.instant('Path_copied_to_clipboard'));
   }
 
   getLang(): string {
@@ -316,6 +329,10 @@ export class AppComponent implements OnInit {
       const request: any = this.injector.get(REQUEST) || {};
       return request.lang || 'en';
     }
+  }
+
+  updateDesktopApp(): void {
+    this.ipc.send('update:check');
   }
 
   ngOnInit(): void {

@@ -1,5 +1,4 @@
-<p>
-  {{'PROFILE.VERIFICATION.Guide' | translate: { userId: verificationCode } }}
+<p [innerHTML]="'PROFILE.VERIFICATION.Guide' | translate: { userId: verificationCode }">
 </p>
 <nz-alert *ngIf="verificationResult$ | async as result" [nzType]="result.verified?'success':'error'" nzShowIcon
           [nzMessage]="(result.verified?'PROFILE.VERIFICATION.Success':'PROFILE.VERIFICATION.Error') | translate">

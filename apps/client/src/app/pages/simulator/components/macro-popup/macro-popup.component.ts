@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CraftingAction, CraftingJob, Reclaim, Simulation } from '@ffxiv-teamcraft/simulator';
+import { CraftingAction, CraftingJob, HastyTouch, Reclaim, Simulation } from '@ffxiv-teamcraft/simulator';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -28,8 +28,10 @@ export class MacroPopupComponent implements OnInit {
   public extraWait = 0;
 
   public breakOnReclaim = false;
-  
-  public addConsumables = false;
+
+  public macroLock = localStorage.getItem('macros:macrolock') === 'true';
+
+  public addConsumables = localStorage.getItem('macros:consumables') === 'true';
 
   rotation: CraftingAction[];
 
@@ -47,16 +49,18 @@ export class MacroPopupComponent implements OnInit {
   }
 
   public generateMacros(): void {
-    this.macro = [[]];
+    localStorage.setItem('macros:macrolock', this.macroLock.toString());
+    localStorage.setItem('macros:consumables', this.addConsumables.toString());
+    this.macro = this.macroLock ? [['/mlock']] : [[]];
     this.aactionsMacro = ['/aaction clear'];
     let totalLength = 0;
-    const reclaimBreakpoint = this.simulation.clone().run(true).simulation.lastPossibleReclaimStep;
+    const reclaimBreakpoint = this.simulation ? this.simulation.clone().run(true).simulation.lastPossibleReclaimStep : -1;
     this.rotation.forEach((action) => {
       let macroFragment = this.macro[this.macro.length - 1];
       // One macro is 15 lines, if this one is full, create another one.
       // Alternatively, if breaking on Reclaim is enabled, split there too.
-      if ((this.breakOnReclaim && (macroFragment.length === reclaimBreakpoint + 1)) || macroFragment.length >= this.maxMacroLines) {
-        this.macro.push([]);
+      if ((this.simulation && this.breakOnReclaim && (macroFragment.length === reclaimBreakpoint + 1)) || macroFragment.length >= this.maxMacroLines) {
+        this.macro.push(this.macroLock ? ['/mlock'] : []);
         macroFragment = this.macro[this.macro.length - 1];
       }
       let actionName = this.i18n.getName(this.l12n.getAction(action.getIds()[0]));
@@ -73,9 +77,9 @@ export class MacroPopupComponent implements OnInit {
       totalLength++;
 
       let doneWithChunk: boolean;
-      if(this.breakOnReclaim && macroFragment.length === reclaimBreakpoint){
+      if (this.breakOnReclaim && macroFragment.length === reclaimBreakpoint) {
         doneWithChunk = true;
-      } else if(macroFragment.length === 14 && this.addEcho && this.rotation.length > totalLength + 1) {
+      } else if (macroFragment.length === 14 && this.addEcho && this.rotation.length > totalLength + 1) {
         doneWithChunk = true;
       }
 
@@ -100,8 +104,11 @@ export class MacroPopupComponent implements OnInit {
       this.macro[this.macro.length - 1].push(`/echo Craft finished <se.${seNumber}>`);
     }
     // 11 not 10 because /aactions clear takes the first line :)
-    if (this.aactionsMacro.length < 11) {
+    if (this.aactionsMacro.length < 11 && this.aactionsMacro.indexOf(`/aaction ${this.i18n.getName(this.l12n.getAction(new Reclaim().getIds()[0]))}`) === -1) {
       this.aactionsMacro.push(`/aaction ${this.i18n.getName(this.l12n.getAction(new Reclaim().getIds()[0]))}`);
+    }
+    if (this.aactionsMacro.length < 11 && this.aactionsMacro.indexOf(`/aaction "${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}"`) === -1) {
+      this.aactionsMacro.push(`/aaction "${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}"`);
     }
     if (this.aactionsMacro.length > 11) {
       this.tooManyAactions = true;
@@ -112,7 +119,7 @@ export class MacroPopupComponent implements OnInit {
 
     const consumablesNotification = this.getConsumablesNotification();
     if (consumablesNotification !== undefined) {
-      this.aactionsMacro.push(consumablesNotification)
+      this.aactionsMacro.push(consumablesNotification);
     }
   }
 
@@ -127,23 +134,23 @@ export class MacroPopupComponent implements OnInit {
       return undefined;
     }
 
-    const hqTag = " " + this.translator.instant('SIMULATOR.Hq');
-    const necessaryBuffs = []
+    const hqTag = ' ' + this.translator.instant('SIMULATOR.Hq');
+    const necessaryBuffs = [];
 
     if (this.food) {
       let foodBuff = this.i18n.getName(this.l12n.getItem(this.food.itemId));
       if (this.food.hq) {
-        foodBuff += hqTag
+        foodBuff += hqTag;
       }
-      necessaryBuffs.push(foodBuff)
+      necessaryBuffs.push(foodBuff);
     }
 
     if (this.medicine) {
       let medicineBuff = this.i18n.getName(this.l12n.getItem(this.medicine.itemId));
       if (this.medicine.hq) {
-        medicineBuff += hqTag
+        medicineBuff += hqTag;
       }
-      necessaryBuffs.push(medicineBuff)
+      necessaryBuffs.push(medicineBuff);
     }
 
     if (this.freeCompanyActions && this.freeCompanyActions.length > 0) {
@@ -154,7 +161,7 @@ export class MacroPopupComponent implements OnInit {
 
     if (necessaryBuffs.length > 0) {
       const notification = this.translator.instant('SIMULATOR.Consumable_notification',
-                                                   {buffs: necessaryBuffs.join(", ")});
+        { buffs: necessaryBuffs.join(', ') });
       return `/echo ${notification} <se.5>`;
     }
     return undefined;

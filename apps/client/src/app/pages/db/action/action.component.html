@@ -13,9 +13,13 @@
               <div [innerHTML]="action.ClassJob | xivapiI18n: 'Abbreviation'"></div>
               <div *ngIf="action.IsPlayerAction" [innerHTML]="action.ActionCategory | xivapiI18n"></div>
             </div>
+            <div class="patch" *ngIf="action.GamePatch">
+              {{action.GamePatch | xivapiI18n}}
+              <app-db-button type="patch" [id]="action.GamePatch.ID"></app-db-button>
+            </div>
           </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="links" *ngIf="links$ | async as links">
           <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
             <img [src]="link.icon" [alt]="link.title" class="link-icon">
           </a>
@@ -62,13 +66,14 @@
         <div class="detail-name">{{'DB.ACTION.Cooldown' | translate}}</div>
         <div class="detail-value">{{action.Recast100ms / 10}}s</div>
       </div>
-      <div class="details-block" *ngIf="costType[action.CostType] || action.ID > 99999">
+      <div class="details-block" *ngIf="costType[action.PrimaryCostType] || action.ID > 99999">
         <div class="detail-name">{{'DB.ACTION.Cost' | translate}}</div>
-        <div
-          class="detail-value">{{action.Cost}}
+        <div class="detail-value">
+          <span *ngIf="action.ID < 99999">{{action.PrimaryCostValue * 100}}</span>
+          <span *ngIf="action.ID > 99999">{{action.Cost}}</span>
           <span
-            *ngIf="costType[action.CostType]">{{('DB.ACTION.COST_TYPE.' + costType[action.CostType]) | translate}}</span>
-          <span *ngIf="action.ID > 99999">{{'DB.ACTION.COST_TYPE.CP' | translate}}</span>
+            *ngIf="costType[action.PrimaryCostType]">&nbsp;{{('DB.ACTION.COST_TYPE.' + costType[action.PrimaryCostType]) | translate}}</span>
+          <span *ngIf="action.ID > 99999">&nbsp;{{'DB.ACTION.COST_TYPE.CP' | translate}}</span>
         </div>
       </div>
       <div class="details-block" *ngIf="action.IsPvP !== undefined">
@@ -134,7 +139,7 @@
                 [nzAvatar]="actionAvatar"
                 [nzTitle]="actionTitle">
                 <ng-template #actionAvatar>
-                  <img [src]="sharedAction | actionIcon" alt="" [appXivdbActionTooltip]="sharedAction">
+                  <img [src]="sharedAction | actionIcon | xivapiIcon" alt="" [appXivdbActionTooltip]="sharedAction">
                 </ng-template>
                 <ng-template #actionTitle>
                   <div>
@@ -167,7 +172,7 @@
                 [nzAvatar]="actionAvatar"
                 [nzTitle]="actionTitle">
                 <ng-template #actionAvatar>
-                  <img [src]="sharedAction | actionIcon" alt="" [appXivdbActionTooltip]="sharedAction">
+                  <img [src]="sharedAction | actionIcon | xivapiIcon" alt="" [appXivdbActionTooltip]="sharedAction">
                 </ng-template>
                 <ng-template #actionTitle>
                   <div>
@@ -192,7 +197,7 @@
                 [nzAvatar]="actionAvatar"
                 [nzTitle]="actionTitle">
                 <ng-template #actionAvatar>
-                  <img [src]="sharedAction | actionIcon" alt="" [appXivdbActionTooltip]="sharedAction">
+                  <img [src]="sharedAction | actionIcon | xivapiIcon" alt="" [appXivdbActionTooltip]="sharedAction">
                 </ng-template>
                 <ng-template #actionTitle>
                   <div>

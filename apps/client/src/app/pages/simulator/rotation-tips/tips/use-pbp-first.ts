@@ -1,6 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { PieceByPiece, SimulationResult } from '@ffxiv-teamcraft/simulator';
+import { MuscleMemory, PieceByPiece, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class UsePbpFirst extends RotationTip {
 
@@ -14,8 +14,8 @@ export class UsePbpFirst extends RotationTip {
 
   matches(simulationResult: SimulationResult): boolean {
     const pbpIndex = simulationResult.steps.findIndex(step => step.action.is(PieceByPiece));
-    const synthIndex = simulationResult.steps.findIndex(step => step.addedProgression > 0);
-    return pbpIndex > synthIndex;
+    const synthIndex = simulationResult.steps.findIndex(step => step.addedProgression > 0 && !step.action.is(MuscleMemory) && !step.action.is(PieceByPiece));
+    return synthIndex > -1 && pbpIndex > synthIndex;
   }
 
 }

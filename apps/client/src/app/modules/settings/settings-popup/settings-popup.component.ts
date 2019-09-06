@@ -37,20 +37,34 @@ export class SettingsPopupComponent {
 
   alwaysOnTop = false;
 
-  checkingForUpdate = false;
-
-  updateAvailable: boolean;
-
-  downloadProgress: any = {
-    bytesPerSecond: 0,
-    percent: 0,
-    total: 0,
-    transferred: 0
-  };
-
   customTheme: Theme;
 
-  startingPlaces = [{ id: 12, placenameId: 500 }, { id: 13, placenameId: 504 }, { id: 2, placenameId: 506 }];
+  startingPlaces = [
+    {
+      id: 12,
+      placenameId: 500
+    },
+    {
+      id: 13,
+      placenameId: 504
+    },
+    {
+      id: 2,
+      placenameId: 506
+    },
+    {
+      id: 111,
+      placenameId: 513
+    },
+    {
+      id: 133,
+      placenameId: 516
+    },
+    {
+      id: 134,
+      placenameId: 517
+    }
+  ];
 
   public allAetherytes = aetherytes.filter(a => a.nameid !== 0);
 
@@ -66,34 +80,11 @@ export class SettingsPopupComponent {
       this.alwaysOnTop = value;
     });
     this.ipc.send('always-on-top:get');
-
-    this.ipc.on('checking-for-update', () => {
-      this.checkingForUpdate = true;
-    });
-
-    this.ipc.on('update-available', (event, available: boolean) => {
-      this.checkingForUpdate = false;
-      this.updateAvailable = available;
-    });
-
-    this.ipc.on('download-progress', (event, progress: any) => {
-      progress.percent = Math.round(progress.percent);
-      this.downloadProgress = progress;
-    });
-
     this.customTheme = this.settings.customTheme;
   }
 
   alwaysOnTopChange(value: boolean): void {
     this.ipc.send('always-on-top', value);
-  }
-
-  checkForUpdate(): void {
-    this.ipc.send('update:check');
-  }
-
-  installUpdate(): void {
-    this.ipc.send('run-update');
   }
 
   openDesktopConsole(): void {

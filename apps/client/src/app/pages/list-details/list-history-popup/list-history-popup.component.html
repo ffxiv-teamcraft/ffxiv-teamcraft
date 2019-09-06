@@ -1,6 +1,6 @@
-<nz-list [nzRenderItem]="historyRow" [nzDataSource]="history">
+<nz-list [nzRenderItem]="historyRow" [nzDataSource]="history$ | async">
   <ng-template #historyRow let-entry>
-    <nz-list-item>
+    <nz-list-item [nzActions]="entry.finalItem !== undefined ? [undoTemplate]:[]">
       <nz-list-item-meta [nzTitle]="title" [nzDescription]="description" [nzAvatar]="avatar">
         <ng-template #avatar>
           <app-user-avatar [userId]="entry.userId"></app-user-avatar>
@@ -16,6 +16,12 @@
           </ng-template>
         </ng-template>
       </nz-list-item-meta>
+      <ng-template #undoTemplate>
+        <button nz-button nzShape="circle" nzSize="small" (click)="undo(entry)" nz-tooltip
+                [nzTitle]="'COMMON.Undo' | translate">
+          <i nz-icon nzType="rollback"></i>
+        </button>
+      </ng-template>
     </nz-list-item>
   </ng-template>
 </nz-list>

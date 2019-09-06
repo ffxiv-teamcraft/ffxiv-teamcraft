@@ -1,0 +1,14 @@
+<div *ngIf="rotation$ | async as rotation; else loader">
+  <app-overlay-container uri="/rotation-overlay/{{rotation.$key}}" title="Rotation overlay">
+    <div class="container">
+      <h3>{{rotation.getName()}}</h3>
+      <div fxLayout="row wrap" fxLayoutGap="5px">
+        <app-action *ngFor="let action of rotation.actions" [action]="action" [tooltipDisabled]="true"
+                    class="action"></app-action>
+      </div>
+    </div>
+  </app-overlay-container>
+</div>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

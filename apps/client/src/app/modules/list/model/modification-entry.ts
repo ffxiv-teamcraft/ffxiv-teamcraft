@@ -4,4 +4,7 @@ export interface ModificationEntry {
   itemId: number;
   itemIcon: number;
   date: number;
+  finalItem: boolean;
+  total: number;
+  recipeId?: string;
 }
