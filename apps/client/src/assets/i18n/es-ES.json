@@ -94,7 +94,7 @@
   "Hide_if_empty": "Esconder si está vacío",
   "No_favorites": "No hay favoritos",
   "Ephemeral_list": "Será borrada al completarse",
-  "Ephemeral_tag": "efímero",
+  "Ephemeral_tag": "Ephemeral",
   "Remove_ephemeral": "Convertir a lista permanente",
   "Quick_list_create": "Crear lista rápida (borrada al completarse)",
   "Tag_filter": "Etiquetas",
@@ -138,7 +138,10 @@
     "Top": "Arriba",
     "Bottom": "Abajo",
     "Amount": "Cantidad",
-    "Undo": "Deshacer"
+    "Undo": "Deshacer",
+    "User": "User",
+    "Tables": "Table",
+    "Pie_charts": "Pie charts"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -367,6 +370,7 @@
     "Always_HQ_leves": "Siempre contar la experiencia de leves con artículos HQ",
     "Clickthrough_overlay": "Permitir hacer clic a través de la capa sobrepuesta",
     "Disable_search_history": "Desactivar historial de búsqueda",
+    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -459,7 +463,14 @@
     "Show_craftable_amount": "Mostrar cantidad fabricable",
     "Optimized_full_path": "Mostrar ruta optimizada completa (más barata y más rápida)",
     "Quick_layout_swap": "Intercambio rápido de diseño",
+    "Offline": "Offline",
+    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
     "Mark_whole_panel_done": "Marcar contenido del panel como completado",
+    "ROTATION": {
+      "Attach": "Attach rotation",
+      "Detach": "Detach rotation",
+      "Click_to_copy_macro": "Click to open macro copy popup"
+    },
     "INVENTORY": {
       "Show_final_items": "Mostrar artículos finales",
       "Hide_final_items": "Ocultar artículos finales"
@@ -507,6 +518,8 @@
     "List_too_large_description": "Esta lista es muy larga y puede llegar al limite de tamaño de la base de datos debido a toda la información que lleva. No le será permitido añadir más elementos para asegurar que no pierda la lista.",
     "Add_to_another_list": "Añadir a otra lista",
     "New_tag": "Nueva etiqueta",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "Contributions stats",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -534,7 +547,8 @@
         "REMOVE_ITEM": "Quitar elemento de la lista",
         "ADD_TAG": "Añadir etiqueta al artículo",
         "MARK_AS_DONE_IN_LOG": "Marcar como hecho en el registro",
-        "MARKET_BOARD_INFORMATIONS": "Información del mercado"
+        "MARKET_BOARD_INFORMATIONS": "Información del mercado",
+        "ATTACH_ROTATION": "Attach rotation"
       }
     },
     "LAYOUT": {
