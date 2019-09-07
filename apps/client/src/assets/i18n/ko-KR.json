@@ -94,7 +94,7 @@
   "Hide_if_empty": "비어있는 경우 숨기기",
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
-  "Ephemeral_tag": "간이 목록",
+  "Ephemeral_tag": "Ephemeral",
   "Remove_ephemeral": "간이 목록을 일반 목록으로 변경",
   "Quick_list_create": "간이 목록 생성 (완료시 삭제)",
   "Tag_filter": "태그",
@@ -138,7 +138,10 @@
     "Top": "맨 위로",
     "Bottom": "맨 아래로",
     "Amount": "수량",
-    "Undo": "Undo"
+    "Undo": "Undo",
+    "User": "User",
+    "Tables": "Table",
+    "Pie_charts": "Pie charts"
   },
   "ALARMS": {
     "Title": "알람",
@@ -367,6 +370,7 @@
     "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
     "Clickthrough_overlay": "오버레이 클릭 무시",
     "Disable_search_history": "검색 기록 비활성화",
+    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -459,7 +463,14 @@
     "Show_craftable_amount": "제작 가능한 수량 표시",
     "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
     "Quick_layout_swap": "빠른 레이아웃 전환",
+    "Offline": "Offline",
+    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
     "Mark_whole_panel_done": "Mark panel content as done",
+    "ROTATION": {
+      "Attach": "Attach rotation",
+      "Detach": "Detach rotation",
+      "Click_to_copy_macro": "Click to open macro copy popup"
+    },
     "INVENTORY": {
       "Show_final_items": "최종 아이템 표시",
       "Hide_final_items": "최종 아이템 숨기기"
@@ -507,6 +518,8 @@
     "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
     "Add_to_another_list": "다른 목록에 추가",
     "New_tag": "새 태그",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "Contributions stats",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -534,7 +547,8 @@
         "REMOVE_ITEM": "목록에서 이 아이템을 제거",
         "ADD_TAG": "아이템에 태그 추가",
         "MARK_AS_DONE_IN_LOG": "수첩에 완료됨으로 표시",
-        "MARKET_BOARD_INFORMATIONS": "장터게시판 정보"
+        "MARKET_BOARD_INFORMATIONS": "장터게시판 정보",
+        "ATTACH_ROTATION": "Attach rotation"
       }
     },
     "LAYOUT": {
