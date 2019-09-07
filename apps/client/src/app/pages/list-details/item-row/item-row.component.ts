@@ -69,6 +69,14 @@ import { TreasuresComponent } from '../item-details/treasures/treasures.componen
 import { FatesComponent } from '../item-details/fates/fates.component';
 import { DesynthsComponent } from '../item-details/desynth/desynths.component';
 import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
+import { CraftingRotation } from '../../../model/other/crafting-rotation';
+import { MacroPopupComponent } from '../../simulator/components/macro-popup/macro-popup.component';
+import { CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
+import { foods } from '../../../core/data/sources/foods';
+import { medicines } from '../../../core/data/sources/medicines';
+import { freeCompanyActions } from '../../../core/data/sources/free-company-actions';
+import { ConsumablesService } from '../../simulator/model/consumables.service';
+import { FreeCompanyActionsService } from '../../simulator/model/free-company-actions.service';
 
 @Component({
   selector: 'app-item-row',
@@ -182,7 +190,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               private commentsService: CommentsService,
               private listPicker: ListPickerService,
               private progressService: ProgressPopupService,
-              private notificationService: NzNotificationService) {
+              private notificationService: NzNotificationService,
+              public consumablesService: ConsumablesService,
+              public freeCompanyActionsService: FreeCompanyActionsService) {
     super();
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
@@ -275,6 +285,51 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       map(comments => comments.length > 0),
       startWith(false)
     );
+  }
+
+  attachRotation(): void {
+    const entry = this.item.craftedBy[0];
+    const craft: Partial<Craft> = {
+      id: entry.recipeId,
+      job: entry.jobId,
+      lvl: entry.level,
+      stars: entry.stars_tooltip.length,
+      rlvl: entry.rlvl,
+      durability: entry.durability,
+      progress: entry.progression,
+      quality: entry.quality
+    };
+    this.rotationPicker.pickRotation(this.item.id, craft.id, craft)
+      .pipe(
+        filter(rotation => rotation !== null)
+      )
+      .subscribe(rotation => {
+        this.item.attachedRotation = rotation.$key;
+        this.saveItem();
+      });
+  }
+
+  detachRotation(): void {
+    delete this.item.attachedRotation;
+    this.saveItem();
+  }
+
+  openRotationMacroPopup(rotation: CraftingRotation): void {
+    const foodsData = this.consumablesService.fromData(foods);
+    const medicinesData = this.consumablesService.fromData(medicines);
+    const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
+    this.modal.create({
+      nzContent: MacroPopupComponent,
+      nzComponentParams: {
+        rotation: CraftingActionsRegistry.deserializeRotation(rotation.rotation),
+        job: this.item.craftedBy[0].jobId,
+        food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
+        medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
+        freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
+      },
+      nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
+      nzFooter: null
+    });
   }
 
   showTagInput(): void {

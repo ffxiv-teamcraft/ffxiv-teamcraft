@@ -56,7 +56,8 @@ let todo = [
   'achievements',
   'recipes',
   'actions',
-  'monsterDrops'
+  'monsterDrops',
+  'voyages'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -1077,7 +1078,8 @@ if (hasTodo('items')) {
   const names = {};
   const rarities = {};
   const itemIcons = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon').subscribe(page => {
+  const ilvls = {};
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem').subscribe(page => {
     page.Results.forEach(item => {
       itemIcons[item.ID] = item.Icon;
       names[item.ID] = {
@@ -1087,11 +1089,13 @@ if (hasTodo('items')) {
         fr: item.Name_fr
       };
       rarities[item.ID] = item.Rarity;
+      ilvls[item.ID] = item.LevelItem;
     });
   }, null, () => {
     persistToJsonAsset('item-icons', itemIcons);
     persistToJsonAsset('items', names);
     persistToTypescript('rarities', 'rarities', rarities);
+    persistToTypescript('ilvls', 'ilvls', ilvls);
   });
 }
 
@@ -1329,5 +1333,37 @@ if (hasTodo('patchContent')) {
     });
   }, null, () => {
     persistToJsonAsset('patch-content', patchContent);
+  });
+}
+
+if (hasTodo('voyages')) {
+  const airshipVoyages = [];
+  const submarineVoyages = [];
+  getAllPages('https://xivapi.com/AirshipExplorationPoint?columns=ID,NameShort_*').subscribe(page => {
+    page.Results.forEach(voyage => {
+      airshipVoyages.push({
+        id: voyage.ID,
+        en: voyage.NameShort_en,
+        de: voyage.NameShort_de,
+        ja: voyage.NameShort_ja,
+        fr: voyage.NameShort_fr
+      });
+    });
+  }, null, () => {
+    persistToTypescript('airship-voyages', 'airshipVoyages', airshipVoyages);
+  });
+
+  getAllPages('https://xivapi.com/SubmarineExploration?columns=ID,Destination_*').subscribe(page => {
+    page.Results.forEach(voyage => {
+      submarineVoyages.push({
+        id: voyage.ID,
+        en: voyage.Destination_en,
+        de: voyage.Destination_de,
+        ja: voyage.Destination_ja,
+        fr: voyage.Destination_fr
+      });
+    });
+  }, null, () => {
+    persistToTypescript('submarine-voyages', 'submarineVoyages', submarineVoyages);
   });
 }

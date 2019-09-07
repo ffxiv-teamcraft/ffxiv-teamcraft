@@ -33,6 +33,8 @@ import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-c
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { ListLayout } from '../../../core/layout/list-layout';
 import { ObservableMedia } from '@angular/flex-layout';
+import { ListContributionsComponent } from '../list-contributions/list-contributions.component';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-list-details',
@@ -46,6 +48,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   public finalItemsRow$: Observable<LayoutRowDisplay>;
 
   public list$: Observable<List>;
+
+  public showContributionsButton$: Observable<boolean>;
 
   public crystals$: Observable<ListRow[]>;
 
@@ -91,7 +95,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
               private media: ObservableMedia) {
     super(seoService);
-    this.list$ = combineLatest(this.listsFacade.selectedList$, this.permissionLevel$).pipe(
+    this.list$ = combineLatest([this.listsFacade.selectedList$, this.permissionLevel$]).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {
         if (!list.notFound && list.isOutDated() && permissionLevel >= PermissionLevel.WRITE) {
@@ -103,6 +107,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       }),
       map(([list]) => list),
       shareReplay(1)
+    );
+
+    this.showContributionsButton$ = this.list$.pipe(
+      map(list => {
+        return _.uniqBy(list.modificationsHistory, 'userId').length > 1;
+      })
     );
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
@@ -279,7 +289,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   appendExportStringWithRow(exportString: string, row: ListRow): string {
     const remaining = row.amount - (row.done || 0);
-    return (remaining > 0) ? (exportString + `${remaining}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`) : exportString
+    return (remaining > 0) ? (exportString + `${remaining}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`) : exportString;
   }
 
   public getListTextExport(display: ListDisplay, list: List): string {
@@ -325,6 +335,17 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzFooter: null,
       nzContent: TagsPopupComponent,
       nzComponentParams: { list: list }
+    });
+  }
+
+  openContributionsPopup(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Contributions_popup'),
+      nzFooter: null,
+      nzContent: ListContributionsComponent,
+      nzBodyStyle: {
+        padding: '0'
+      }
     });
   }
 

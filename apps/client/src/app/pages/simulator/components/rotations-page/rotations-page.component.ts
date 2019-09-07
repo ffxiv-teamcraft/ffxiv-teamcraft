@@ -6,7 +6,7 @@ import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, tap } from 'rxjs/operators';
 import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
 import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
 import { combineLatest } from 'rxjs';
@@ -24,7 +24,23 @@ export class RotationsPageComponent {
 
   constructor(private rotationsFacade: RotationsFacade, private dialog: NzModalService, private translate: TranslateService,
               private foldersFacade: RotationFoldersFacade) {
-    this.rotationFoldersDisplay$ = combineLatest(this.foldersFacade.myRotationFolders$, this.rotationsFacade.myRotations$).pipe(
+    this.rotationFoldersDisplay$ = combineLatest([this.foldersFacade.myRotationFolders$, this.rotationsFacade.myRotations$]).pipe(
+      tap(([folders, rotations]) => {
+        const fixedFolders = folders
+          .filter(folder => folder.$key !== undefined)
+          .map(folder => {
+            return {
+              folder: folder,
+              rotations: folder.rotationIds
+                .filter(id => rotations.find(r => r.$key === id) !== undefined)
+            };
+          })
+          .filter(entry => entry.rotations.length < entry.folder.rotationIds.length);
+        fixedFolders.forEach(entry => {
+          entry.folder.rotationIds = entry.rotations;
+          this.foldersFacade.updateFolder(entry.folder);
+        });
+      }),
       map(([folders, rotations]) => {
         return folders
           .filter(folder => folder.$key !== undefined)
@@ -36,14 +52,15 @@ export class RotationsPageComponent {
                 .map(rotation => {
                   rotation.folderId = folder.$key;
                   return rotation;
-                }).sort((a, b) => a.index - b.index)
+                })
             };
           });
       }),
+      // Wrong order because of undefined rotations !!
       map(displays => displays.sort((a, b) => a.folder.index - b.folder.index))
     );
 
-    this.rotations$ = combineLatest(this.rotationsFacade.myRotations$, this.foldersFacade.myRotationFolders$).pipe(
+    this.rotations$ = combineLatest([this.rotationsFacade.myRotations$, this.foldersFacade.myRotationFolders$]).pipe(
       map(([rotations, folders]) => {
         return rotations.filter(rotation => {
           return folders.find(folder => {

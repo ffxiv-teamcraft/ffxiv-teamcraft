@@ -54,12 +54,12 @@ export class MacroPopupComponent implements OnInit {
     this.macro = this.macroLock ? [['/mlock']] : [[]];
     this.aactionsMacro = ['/aaction clear'];
     let totalLength = 0;
-    const reclaimBreakpoint = this.simulation.clone().run(true).simulation.lastPossibleReclaimStep;
+    const reclaimBreakpoint = this.simulation ? this.simulation.clone().run(true).simulation.lastPossibleReclaimStep : -1;
     this.rotation.forEach((action) => {
       let macroFragment = this.macro[this.macro.length - 1];
       // One macro is 15 lines, if this one is full, create another one.
       // Alternatively, if breaking on Reclaim is enabled, split there too.
-      if ((this.breakOnReclaim && (macroFragment.length === reclaimBreakpoint + 1)) || macroFragment.length >= this.maxMacroLines) {
+      if ((this.simulation && this.breakOnReclaim && (macroFragment.length === reclaimBreakpoint + 1)) || macroFragment.length >= this.maxMacroLines) {
         this.macro.push(this.macroLock ? ['/mlock'] : []);
         macroFragment = this.macro[this.macro.length - 1];
       }
