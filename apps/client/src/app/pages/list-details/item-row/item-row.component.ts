@@ -68,7 +68,6 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { TreasuresComponent } from '../item-details/treasures/treasures.component';
 import { FatesComponent } from '../item-details/fates/fates.component';
 import { DesynthsComponent } from '../item-details/desynth/desynths.component';
-import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { MacroPopupComponent } from '../../simulator/components/macro-popup/macro-popup.component';
 import { CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
@@ -87,6 +86,8 @@ import { FreeCompanyActionsService } from '../../simulator/model/free-company-ac
 export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   private _item: ListRow | CustomItem;
+
+  private buttonsCache = {};
 
   @Input()
   public set item(item: ListRow | CustomItem) {
@@ -109,7 +110,21 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   odd = false;
 
   @Input()
-  layout: ListLayout;
+  public set layout(l: ListLayout) {
+    if (l) {
+      Object.keys(ItemRowMenuElement)
+        .forEach(key => {
+          this.buttonsCache[ItemRowMenuElement[key]] = l.rowsDisplay.buttons.indexOf(ItemRowMenuElement[key]) > -1;
+        });
+    }
+    this._layout = l;
+  }
+
+  public get layout(): ListLayout {
+    return this._layout;
+  }
+
+  _layout: ListLayout;
 
   alarms: Alarm[] = [];
 
@@ -445,19 +460,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
-  openMarketboardDialog(): void {
-    this.modal.create({
-      nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${this.i18n.getName(this.l12n.getItem(this.item.id))}`,
-      nzContent: MarketboardPopupComponent,
-      nzComponentParams: {
-        itemId: this.item.id,
-        showHistory: true
-      },
-      nzFooter: null,
-      nzWidth: '80vw'
-    });
-  }
-
   setWorkingOnIt(uid: string): void {
     this.item.workingOnIt = this.item.workingOnIt || [];
     this.item.workingOnIt.push(uid);
@@ -659,7 +661,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   public isButton(element: ItemRowMenuElement): boolean {
-    return this.layout && this.layout.rowsDisplay.buttons.indexOf(element) > -1;
+    return this.buttonsCache[element];
   }
 
   public trackByCraft(index: number, craft: Craft): string {

@@ -21,7 +21,7 @@ export class ListCompletionPopupComponent {
   }
 
   deleteList(): void {
-    this.listsFacade.deleteList(this.list.$key);
+    this.listsFacade.deleteList(this.list.$key, this.list.offline);
     this.router.navigate(['/lists']);
     this.close();
   }
@@ -32,7 +32,7 @@ export class ListCompletionPopupComponent {
     this.close();
   }
 
-  clearList():void{
+  clearList(): void {
     this.list.finalItems = [];
     this.list.items = [];
     this.listsFacade.updateList(this.list, true, true);

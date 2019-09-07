@@ -46,6 +46,9 @@
           <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
             {{'Ephemeral_tag' | translate}}
           </nz-tag>
+          <nz-tag *ngIf="_list.offline" [style.border-color]="'#bd0ef2'" nz-tooltip [nzTitle]="'LIST.Offline_help' | translate">
+            {{'LIST.Offline' | translate}}
+          </nz-tag>
           <nz-tag *ngIf="_list.public && !publicDisplay" [nzColor]="'geekblue'" nz-tooltip
                   [nzTitle]="'LIST_DETAILS.Public_list_description' | translate">
             {{'Public_list' | translate}}

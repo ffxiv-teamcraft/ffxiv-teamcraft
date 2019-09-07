@@ -13,6 +13,7 @@ import {
   LoadMyLists,
   LoadTeamLists,
   NeedsVerification,
+  OfflineListsLoaded,
   SelectList,
   SetItemDone,
   UnloadListDetails,
@@ -43,7 +44,7 @@ export class ListsFacade {
   allListDetails$ = this.store.select(listsQuery.getAllListDetails);
   compacts$ = this.store.select(listsQuery.getCompacts);
 
-  myLists$ = combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.userId$).pipe(
+  myLists$ = combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.userId$]).pipe(
     map(([compacts, userId]) => {
       return compacts.filter(c => c.authorId === userId);
     }),
@@ -109,7 +110,10 @@ export class ListsFacade {
     })
   );
 
-  selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(filter(list => list !== undefined));
+  selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(
+    filter(list => list !== undefined),
+    shareReplay(1)
+  );
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
@@ -169,7 +173,8 @@ export class ListsFacade {
       nzFooter: null,
       nzTitle: this.translate.instant('New_List'),
       nzComponentParams: {
-        showEphemeralCheckbox: true
+        showEphemeralCheckbox: true,
+        showOfflineCheckbox: true
       }
     }).afterClose.pipe(
       filter(res => res.name !== undefined),
@@ -178,6 +183,7 @@ export class ListsFacade {
         list.everyone = this.settings.defaultPermissionLevel;
         list.name = res.name;
         list.ephemeral = res.ephemeral;
+        list.offline = res.offline;
         return list;
       })
     );
@@ -207,8 +213,8 @@ export class ListsFacade {
     });
   }
 
-  deleteList(key: string): void {
-    this.store.dispatch(new DeleteList(key));
+  deleteList(key: string, offline: boolean): void {
+    this.store.dispatch(new DeleteList(key, offline));
     gtag('event', 'List', {
       'event_label': 'deletion',
       'non_interaction': true
@@ -249,6 +255,10 @@ export class ListsFacade {
 
   setNeedsverification(needed: boolean): void {
     this.store.dispatch(new NeedsVerification(needed));
+  }
+
+  offlineListsLoaded(lists: List[]): void {
+    this.store.dispatch(new OfflineListsLoaded(lists));
   }
 
   loadAndWait(key: string): Observable<List> {
