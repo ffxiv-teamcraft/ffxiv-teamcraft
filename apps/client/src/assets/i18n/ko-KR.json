@@ -830,7 +830,7 @@
     "ROTATIONS": {
       "Search_placeholder": "로테이션 검색",
       "FOLDERS": {
-        "Not_found": "Rotation folder not found",
+        "Not_found": "로테이션 폴더를 찾을 수 없습니다",
         "Folders": "로테이션 폴더",
         "Rename": "폴더 이름 변경",
         "New_folder": "새 폴더",
@@ -1073,7 +1073,7 @@
     "Required_for_achievement": "업적에 적용됨",
     "Select_spot": "표시할 장소를 선택해주세요",
     "Hide_completed": "완료한 제작법 숨기기",
-    "Hide_completed_items": "Hide completed items",
+    "Hide_completed_items": "완료된 아이템 숨기기",
     "MIN_optimized_path": "모든 광부 채집물의 추천 경로",
     "BTN_optimized_path": "모든 원예가 채집물의 추천 경로",
     "PAGE": {
