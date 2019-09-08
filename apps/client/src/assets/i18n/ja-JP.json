@@ -94,7 +94,7 @@
   "Hide_if_empty": "空欄を隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
-  "Ephemeral_tag": "刻限",
+  "Ephemeral_tag": "Ephemeral",
   "Remove_ephemeral": "永続リストへのアップグレード",
   "Quick_list_create": "簡易リストを作成する　(完了した後、削除)",
   "Tag_filter": "タグ",
@@ -138,7 +138,10 @@
     "Top": "Top",
     "Bottom": "Bottom",
     "Amount": "Amount",
-    "Undo": "Undo"
+    "Undo": "Undo",
+    "User": "User",
+    "Tables": "Table",
+    "Pie_charts": "Pie charts"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -367,6 +370,7 @@
     "Always_HQ_leves": "Always count leves exp with HQ items",
     "Clickthrough_overlay": "Make overlay clickthrough",
     "Disable_search_history": "Disable search history",
+    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -459,7 +463,14 @@
     "Show_craftable_amount": "制作可能な数量を表示する",
     "Optimized_full_path": "全ての推奨経路を表示(最安値)",
     "Quick_layout_swap": "クイックレイアウトの切り替え",
+    "Offline": "Offline",
+    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
     "Mark_whole_panel_done": "Mark panel content as done",
+    "ROTATION": {
+      "Attach": "Attach rotation",
+      "Detach": "Detach rotation",
+      "Click_to_copy_macro": "Click to open macro copy popup"
+    },
     "INVENTORY": {
       "Show_final_items": "最終アイテムの表示",
       "Hide_final_items": "最終アイテムを隠す"
@@ -507,6 +518,8 @@
     "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
     "Add_to_another_list": "別のリストに追加",
     "New_tag": "新しいタグ",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "Contributions stats",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -534,7 +547,8 @@
         "REMOVE_ITEM": "リストからこのアイテムを削除",
         "ADD_TAG": "アイテムにタグを追加する",
         "MARK_AS_DONE_IN_LOG": "手帳に完了と表示する",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information",
+        "ATTACH_ROTATION": "Attach rotation"
       }
     },
     "LAYOUT": {

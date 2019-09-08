@@ -94,7 +94,7 @@
   "Hide_if_empty": "Verstecken, wenn leer",
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
-  "Ephemeral_tag": "vergänglich",
+  "Ephemeral_tag": "Ephemeral",
   "Remove_ephemeral": "Upgrade zu dauerhafter Liste",
   "Quick_list_create": "Vergängliche Liste erstellen (wird bei Fertigstellung gelöscht)",
   "Tag_filter": "Markierungen",
@@ -138,7 +138,10 @@
     "Top": "Oben",
     "Bottom": "Unten",
     "Amount": "Anzahl",
-    "Undo": "Undo"
+    "Undo": "Undo",
+    "User": "User",
+    "Tables": "Table",
+    "Pie_charts": "Pie charts"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -367,6 +370,7 @@
     "Always_HQ_leves": "Freibrief-Routine immer mit HQ-Gegenständen berechnen",
     "Clickthrough_overlay": "Durchklickbares Overlay",
     "Disable_search_history": "Suchverlauf deaktivieren",
+    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -459,7 +463,14 @@
     "Show_craftable_amount": "Herstellbare Mengen zeigen",
     "Optimized_full_path": "Volloptimierten Pfad anzeigen (am günstigsten und schnellsten)",
     "Quick_layout_swap": "Layout-Schnellwechsel",
+    "Offline": "Offline",
+    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
     "Mark_whole_panel_done": "Mark panel content as done",
+    "ROTATION": {
+      "Attach": "Attach rotation",
+      "Detach": "Detach rotation",
+      "Click_to_copy_macro": "Click to open macro copy popup"
+    },
     "INVENTORY": {
       "Show_final_items": "Resultate zeigen",
       "Hide_final_items": "Resultate verstecken"
@@ -507,6 +518,8 @@
     "List_too_large_description": "Diese Liste ist zu groß und stößt möglicherweise an die Datenbanklimitierungen aufgrund der vielen Informationen. Du darfst keine weiteren Gegenstände hinzufügen, um zu verhindern, dass du die Liste verlierst.",
     "Add_to_another_list": "Zu einer anderen Liste hinzufügen",
     "New_tag": "Neue Markierung",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "Contributions stats",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -534,7 +547,8 @@
         "REMOVE_ITEM": "Gegenstand aus Liste entfernen",
         "ADD_TAG": "Markierung zum Gegenstand hinzufügen",
         "MARK_AS_DONE_IN_LOG": "Im Notizbuch als \"erledigt\" markieren",
-        "MARKET_BOARD_INFORMATIONS": "Marktbrett-Information"
+        "MARKET_BOARD_INFORMATIONS": "Marktbrett-Information",
+        "ATTACH_ROTATION": "Attach rotation"
       }
     },
     "LAYOUT": {

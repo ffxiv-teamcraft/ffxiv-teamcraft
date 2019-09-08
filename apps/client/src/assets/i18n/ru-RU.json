@@ -94,7 +94,7 @@
   "Hide_if_empty": "Скрыть, если пусто",
   "No_favorites": "Нет избранного",
   "Ephemeral_list": "Будут удалены после завершения",
-  "Ephemeral_tag": "эфемерный",
+  "Ephemeral_tag": "Ephemeral",
   "Remove_ephemeral": "Преобразовать в постоянный список",
   "Quick_list_create": "Создать быстрый список (удаляется после завершения)",
   "Tag_filter": "Теги",
@@ -138,7 +138,10 @@
     "Top": "Вверху",
     "Bottom": "Внизу",
     "Amount": "Количество",
-    "Undo": "Undo"
+    "Undo": "Undo",
+    "User": "User",
+    "Tables": "Table",
+    "Pie_charts": "Pie charts"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -367,6 +370,7 @@
     "Always_HQ_leves": "Всегда учитывать опыт ливквестов с предметами HQ",
     "Clickthrough_overlay": "Сделать оверлей прозрачным для нажатий",
     "Disable_search_history": "Отключить историю поиска",
+    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -459,7 +463,14 @@
     "Show_craftable_amount": "Показать количество, которое можно скрафтить",
     "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
     "Quick_layout_swap": "Быстрое переключение раскладки",
+    "Offline": "Offline",
+    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
     "Mark_whole_panel_done": "Mark panel content as done",
+    "ROTATION": {
+      "Attach": "Attach rotation",
+      "Detach": "Detach rotation",
+      "Click_to_copy_macro": "Click to open macro copy popup"
+    },
     "INVENTORY": {
       "Show_final_items": "Показать конечные предметы",
       "Hide_final_items": "Скрыть конечные предметы"
@@ -507,6 +518,8 @@
     "List_too_large_description": "Этот список слишком велик и может достичь ограничений размера базы данных из-за всей информации, которую он несет. Вы не можете добавить больше предметов, дабы избежать потери списка.",
     "Add_to_another_list": "Добавить в другой список",
     "New_tag": "Новый тег",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "Contributions stats",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -534,7 +547,8 @@
         "REMOVE_ITEM": "Удалить предмет из списка",
         "ADD_TAG": "Добавить тег к предмету",
         "MARK_AS_DONE_IN_LOG": "Отметить как сделано внутри журнала",
-        "MARKET_BOARD_INFORMATIONS": "Информация с MB"
+        "MARKET_BOARD_INFORMATIONS": "Информация с MB",
+        "ATTACH_ROTATION": "Attach rotation"
       }
     },
     "LAYOUT": {
