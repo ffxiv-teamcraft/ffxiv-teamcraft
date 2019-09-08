@@ -234,7 +234,7 @@ handleNode = (row) => {
 handleAetheryte = (row) => {
   const isShard = row.Name.indexOf('Shard') > -1 || row.Name.indexOf('Urbaine') > -1;
   // Remove shards from maps where they don't belong.
-  if ((+row.PlaceNameID === 2411 || +row.PlaceNameID === 2953) && isShard) {
+  if ((+row.PlaceNameID === 2411 || +row.PlaceNameID === 2953 || +row.PlaceNameID === 2000) && isShard) {
     return;
   }
   // Eulmore plaza appears in lakeland, gotta remove that.
