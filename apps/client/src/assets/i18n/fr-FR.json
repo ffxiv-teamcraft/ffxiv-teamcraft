@@ -94,7 +94,7 @@
   "Hide_if_empty": "Masquer si vide",
   "No_favorites": "Aucun favori",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
-  "Ephemeral_tag": "Ephemeral",
+  "Ephemeral_tag": "Éphémère",
   "Remove_ephemeral": "Changer en liste permanente",
   "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
   "Tag_filter": "Tags",
@@ -139,9 +139,9 @@
     "Bottom": "Fin",
     "Amount": "Quantité",
     "Undo": "Annuler",
-    "User": "User",
-    "Tables": "Table",
-    "Pie_charts": "Pie charts"
+    "User": "Utilisateur",
+    "Tables": "Tableau",
+    "Pie_charts": "Graphiques circulaires"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -370,7 +370,7 @@
     "Always_HQ_leves": "Utiliser des mandats HQ par défaut pour le calcul d'exp",
     "Clickthrough_overlay": "Permettre de cliquer à travers l'overlay",
     "Disable_search_history": "Supprimer l'historique de recherche",
-    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
+    "Disable_search_debounce": "Désactiver la recherche auto (seul appuyer sur Entrée déclenchera la recherche)",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -463,13 +463,13 @@
     "Show_craftable_amount": "Voir la quantité fabricable",
     "Optimized_full_path": "Afficher le chemin optimisé complet (le moins cher et le plus rapide)",
     "Quick_layout_swap": "Changement de layout rapide",
-    "Offline": "Offline",
-    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
+    "Offline": "Hors ligne",
+    "Offline_help": "Les listes hors ligne sont stockées dans le navigateur ou l'application, elles sont uniquement disponibles dans cette instance et ne peuvent pas être partagées, mais elles sont plus rapides car elles ne nécessitent pas d'appels réseau.",
     "Mark_whole_panel_done": "Marquer le contenu du panneau comme terminé",
     "ROTATION": {
-      "Attach": "Attach rotation",
-      "Detach": "Detach rotation",
-      "Click_to_copy_macro": "Click to open macro copy popup"
+      "Attach": "Attacher une rotation",
+      "Detach": "Détacher la rotation",
+      "Click_to_copy_macro": "Cliquez pour ouvrir la fenêtre de copie de macro"
     },
     "INVENTORY": {
       "Show_final_items": "Afficher les éléments finaux",
@@ -518,8 +518,8 @@
     "List_too_large_description": "Cette liste est trop longue et pourrait être supprimée automatiquement par le système de base de données en raison de quotas imposés si vous y ajoutez plus d'objets.",
     "Add_to_another_list": "Ajouter à une autre liste",
     "New_tag": "Nouveau tag",
-    "Amount_ilvl": "Amount (ilvl)",
-    "Contributions_popup": "Contributions stats",
+    "Amount_ilvl": "Montant (ilvl)",
+    "Contributions_popup": "Statistiques des contributions",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -548,7 +548,7 @@
         "ADD_TAG": "Ajouter un tag à l'élément",
         "MARK_AS_DONE_IN_LOG": "Marquer comme fait dans le livre de recettes",
         "MARKET_BOARD_INFORMATIONS": "Hôtel des ventes",
-        "ATTACH_ROTATION": "Attach rotation"
+        "ATTACH_ROTATION": "Attacher une rotation"
       }
     },
     "LAYOUT": {
@@ -830,7 +830,7 @@
     "ROTATIONS": {
       "Search_placeholder": "Rechercher une rotation",
       "FOLDERS": {
-        "Not_found": "Rotation folder not found",
+        "Not_found": "Dossier de rotations introuvable",
         "Folders": "Dossiers de rotation",
         "Rename": "Renommer le dossier",
         "New_folder": "Nouveau dossier",
