@@ -37,10 +37,25 @@ export function listsReducer(
       state = {
         ...state,
         compacts: [
-          ...state.compacts.filter(compact => compact.authorId !== action.userId),
+          ...state.compacts.filter(compact => compact.authorId !== action.userId || compact.offline),
           ...action.payload
         ],
         compactsConnected: true
+      };
+      break;
+    }
+
+    case ListsActionTypes.OfflineListsLoaded: {
+      state = {
+        ...state,
+        listDetails: [
+          ...state.listDetails.filter(list => !list.offline),
+          ...action.payload
+        ],
+        compacts: [
+          ...state.compacts.filter(compact => !compact.offline),
+          ...action.payload.map(list => list.getCompact())
+        ],
       };
       break;
     }

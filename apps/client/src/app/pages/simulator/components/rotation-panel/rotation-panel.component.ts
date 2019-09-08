@@ -8,14 +8,13 @@ import {
   Simulation,
   SimulationResult
 } from '@ffxiv-teamcraft/simulator';
-import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { filter, map, shareReplay, tap } from 'rxjs/operators';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { CustomLink } from '../../../../core/database/custom-links/custom-link';

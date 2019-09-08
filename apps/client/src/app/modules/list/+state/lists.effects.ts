@@ -50,6 +50,7 @@ import { Router } from '@angular/router';
 import { NzModalService } from 'ng-zorro-antd';
 import { ListCompletionPopupComponent } from '../list-completion-popup/list-completion-popup.component';
 import { TranslateService } from '@ngx-translate/core';
+import { NgSerializerService } from '@kaiu/ng-serializer';
 
 @Injectable()
 export class ListsEffects {
@@ -60,6 +61,8 @@ export class ListsEffects {
     switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
     switchMap((userId) => {
+      this.localStore = this.serializer.deserialize<List>(JSON.parse(localStorage.getItem('offline-lists') || '[]'), [List]);
+      this.listsFacade.offlineListsLoaded(this.localStore);
       return this.listCompactsService.getByForeignKey(TeamcraftUser, userId)
         .pipe(
           map(lists => new MyListsLoaded(lists, userId))
@@ -128,6 +131,7 @@ export class ListsEffects {
   @Effect()
   loadListDetails$ = this.actions$.pipe(
     ofType<LoadListDetails>(ListsActionTypes.LoadListDetails),
+    filter(action => !/^offline\d+$/.test(action.key)),
     withLatestFrom(this.listsFacade.allListDetails$),
     filter(([action, allLists]) => allLists.find(list => list.$key === action.key) === undefined),
     map(([action]) => action),
@@ -190,10 +194,16 @@ export class ListsEffects {
   persistUpdateListIndex$ = this.actions$.pipe(
     ofType(ListsActionTypes.UpdateListIndex),
     map(action => action as UpdateListIndex),
-    mergeMap(action => combineLatest(
-      this.listCompactsService.update(action.payload.$key, { index: action.payload.index }),
-      this.listService.update(action.payload.$key, { index: action.payload.index })
-    )),
+    mergeMap(action => {
+      if (action.payload.offline) {
+        this.saveToLocalstorage(action.payload, true);
+        return EMPTY;
+      }
+      return combineLatest([
+        this.listCompactsService.update(action.payload.$key, { index: action.payload.index }),
+        this.listService.update(action.payload.$key, { index: action.payload.index })
+      ]);
+    }),
     switchMap(() => EMPTY)
   );
 
@@ -205,10 +215,17 @@ export class ListsEffects {
       (<CreateList>action).payload.authorId = userId;
       return (<CreateList>action).payload;
     }),
-    switchMap(list => this.listService.add(list)
-      .pipe(
-        map((key) => new CreateOptimisticListCompact(list, key))
-      )
+    switchMap(list => {
+        if (list.offline) {
+          list.$key = `offline${Math.floor(Math.random() * 1000000000)}`;
+          this.saveToLocalstorage(list, true);
+          return EMPTY;
+        }
+        return this.listService.add(list)
+          .pipe(
+            map((key) => new CreateOptimisticListCompact(list, key))
+          );
+      }
     )
   );
 
@@ -217,6 +234,10 @@ export class ListsEffects {
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     debounceTime(100),
     switchMap(action => {
+      if (action.payload.offline) {
+        this.saveToLocalstorage(action.payload, false);
+        return of(null);
+      }
       if (action.force) {
         return this.listService.set(action.payload.$key, action.payload);
       } else {
@@ -231,6 +252,9 @@ export class ListsEffects {
     filter(action => action.updateCompact),
     debounceTime(100),
     switchMap(action => {
+      if (action.payload.offline) {
+        return EMPTY;
+      }
       if (action.force) {
         return this.listCompactsService.set(action.payload.$key, action.payload.getCompact());
       } else {
@@ -257,12 +281,16 @@ export class ListsEffects {
   deleteListFromDatabase$ = this.actions$.pipe(
     ofType<DeleteList>(ListsActionTypes.DeleteList),
     mergeMap(action => {
-      return combineLatest(this.listService.remove(action.key), this.listCompactsService.remove(action.key))
+      if (action.offline) {
+        this.removeFromLocalStorage(action.key);
+        return EMPTY;
+      }
+      return combineLatest([this.listService.remove(action.key), this.listCompactsService.remove(action.key)])
         .pipe(
           catchError((error) => {
             if (error.message.indexOf('Permission') > -1) {
               // If it's a permission Error, let's try again just in case.
-              return combineLatest(this.listService.remove(action.key), this.listCompactsService.remove(action.key));
+              return combineLatest([this.listService.remove(action.key), this.listCompactsService.remove(action.key)]);
             }
             return EMPTY;
           })
@@ -301,7 +329,7 @@ export class ListsEffects {
   deleteEphemeralListsOnComplete$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     filter(action => action.payload.ephemeral && action.payload.isComplete()),
-    map(action => new DeleteList(action.payload.$key)),
+    map(action => new DeleteList(action.payload.$key, action.payload.offline)),
     delay(500),
     tap(() => this.router.navigate(['/lists']))
   );
@@ -354,6 +382,8 @@ export class ListsEffects {
     switchMap(() => EMPTY)
   );
 
+  private localStore: List[] = [];
+
   constructor(
     private actions$: Actions,
     private authFacade: AuthFacade,
@@ -364,7 +394,37 @@ export class ListsEffects {
     private router: Router,
     private dialog: NzModalService,
     private translate: TranslateService,
-    private discordWebhookService: DiscordWebhookService
+    private discordWebhookService: DiscordWebhookService,
+    private serializer: NgSerializerService
   ) {
+  }
+
+  private saveToLocalstorage(list: List, newList: boolean): void {
+    if (newList) {
+      this.localStore = [
+        ...this.localStore,
+        list
+      ];
+    } else {
+      this.localStore = [...this.localStore.map(l => {
+        if (l.$key === list.$key) {
+          return this.serializer.deserialize<List>({ ...list }, List);
+        }
+        return l;
+      })];
+    }
+    this.persistLocalStore();
+  }
+
+  private removeFromLocalStorage(key: string): void {
+    this.localStore = [...this.localStore.filter(l => {
+      return l.$key !== key;
+    })];
+    this.persistLocalStore();
+  }
+
+  private persistLocalStore(): void {
+    localStorage.setItem('offline-lists', this.serializer.serialize(this.localStore));
+    this.listsFacade.offlineListsLoaded(this.localStore);
   }
 }

@@ -31,6 +31,7 @@ export enum ListsActionTypes {
   UpdateListIndex = '[Lists] Update List Index',
   DeleteList = '[Lists] Delete List',
   ConvertLists = '[Lists] Convert Lists',
+  OfflineListsLoaded = '[Lists] Offline lists loaded',
 
   NeedsVerification = '[Lists] Needs character verification'
 }
@@ -116,6 +117,13 @@ export class MyListsLoaded implements Action {
   }
 }
 
+export class OfflineListsLoaded implements Action {
+  readonly type = ListsActionTypes.OfflineListsLoaded;
+
+  constructor(public payload: List[]) {
+  }
+}
+
 export class SharedListsLoaded implements Action {
   readonly type = ListsActionTypes.SharedListsLoaded;
 
@@ -175,7 +183,7 @@ export class UpdateListIndex implements Action {
 export class DeleteList implements Action {
   readonly type = ListsActionTypes.DeleteList;
 
-  constructor(public readonly key: string) {
+  constructor(public readonly key: string, public readonly offline: boolean) {
   }
 }
 
@@ -208,4 +216,5 @@ export type ListsAction =
   | LoadTeamLists
   | TeamListsLoaded
   | UnloadListDetails
-  | ConvertLists;
+  | ConvertLists
+  | OfflineListsLoaded;

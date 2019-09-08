@@ -23,15 +23,6 @@ export class Team extends DataModel {
 
   constructor() {
     super();
-    if (!this.webhookSettings.some(setting => setting.name === WebhookSettingType.FINAL_LIST_PROGRESSION)) {
-      this.webhookSettings = [
-        ...this.webhookSettings,
-        {
-          name: WebhookSettingType.FINAL_LIST_PROGRESSION,
-          value: true
-        }
-      ];
-    }
   }
 
   isOfficer(member: string): boolean {
@@ -41,5 +32,17 @@ export class Team extends DataModel {
   hasSettingEnabled(setting: WebhookSettingType): boolean {
     const entry = this.webhookSettings.find(s => s.name === WebhookSettingType[setting]);
     return entry ? entry.value : true;
+  }
+
+  afterDeserialized(): void {
+    if (!this.webhookSettings.some(setting => setting.name === WebhookSettingType.FINAL_LIST_PROGRESSION)) {
+      this.webhookSettings = [
+        ...this.webhookSettings,
+        {
+          name: WebhookSettingType.FINAL_LIST_PROGRESSION,
+          value: true
+        }
+      ];
+    }
   }
 }

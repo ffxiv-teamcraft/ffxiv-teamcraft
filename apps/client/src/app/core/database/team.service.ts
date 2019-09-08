@@ -28,6 +28,10 @@ export class TeamService extends FirestoreStorage<Team> {
           return (<Team>{ $key: snap.payload.doc.id, ...data });
         })),
         map(teams => this.serializer.deserialize<Team>(teams, [Team])),
+        map(teams => {
+          teams.forEach(team => team.afterDeserialized());
+          return teams;
+        }),
         shareReplay(1)
       );
   }

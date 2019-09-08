@@ -68,7 +68,14 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { TreasuresComponent } from '../item-details/treasures/treasures.component';
 import { FatesComponent } from '../item-details/fates/fates.component';
 import { DesynthsComponent } from '../item-details/desynth/desynths.component';
-import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
+import { CraftingRotation } from '../../../model/other/crafting-rotation';
+import { MacroPopupComponent } from '../../simulator/components/macro-popup/macro-popup.component';
+import { CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
+import { foods } from '../../../core/data/sources/foods';
+import { medicines } from '../../../core/data/sources/medicines';
+import { freeCompanyActions } from '../../../core/data/sources/free-company-actions';
+import { ConsumablesService } from '../../simulator/model/consumables.service';
+import { FreeCompanyActionsService } from '../../simulator/model/free-company-actions.service';
 
 @Component({
   selector: 'app-item-row',
@@ -79,6 +86,8 @@ import { MarketboardPopupComponent } from '../../../modules/marketboard/marketbo
 export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   private _item: ListRow | CustomItem;
+
+  private buttonsCache = {};
 
   @Input()
   public set item(item: ListRow | CustomItem) {
@@ -101,7 +110,21 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   odd = false;
 
   @Input()
-  layout: ListLayout;
+  public set layout(l: ListLayout) {
+    if (l) {
+      Object.keys(ItemRowMenuElement)
+        .forEach(key => {
+          this.buttonsCache[ItemRowMenuElement[key]] = l.rowsDisplay.buttons.indexOf(ItemRowMenuElement[key]) > -1;
+        });
+    }
+    this._layout = l;
+  }
+
+  public get layout(): ListLayout {
+    return this._layout;
+  }
+
+  _layout: ListLayout;
 
   alarms: Alarm[] = [];
 
@@ -182,7 +205,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               private commentsService: CommentsService,
               private listPicker: ListPickerService,
               private progressService: ProgressPopupService,
-              private notificationService: NzNotificationService) {
+              private notificationService: NzNotificationService,
+              public consumablesService: ConsumablesService,
+              public freeCompanyActionsService: FreeCompanyActionsService) {
     super();
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
@@ -275,6 +300,51 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       map(comments => comments.length > 0),
       startWith(false)
     );
+  }
+
+  attachRotation(): void {
+    const entry = this.item.craftedBy[0];
+    const craft: Partial<Craft> = {
+      id: entry.recipeId,
+      job: entry.jobId,
+      lvl: entry.level,
+      stars: entry.stars_tooltip.length,
+      rlvl: entry.rlvl,
+      durability: entry.durability,
+      progress: entry.progression,
+      quality: entry.quality
+    };
+    this.rotationPicker.pickRotation(this.item.id, craft.id, craft)
+      .pipe(
+        filter(rotation => rotation !== null)
+      )
+      .subscribe(rotation => {
+        this.item.attachedRotation = rotation.$key;
+        this.saveItem();
+      });
+  }
+
+  detachRotation(): void {
+    delete this.item.attachedRotation;
+    this.saveItem();
+  }
+
+  openRotationMacroPopup(rotation: CraftingRotation): void {
+    const foodsData = this.consumablesService.fromData(foods);
+    const medicinesData = this.consumablesService.fromData(medicines);
+    const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
+    this.modal.create({
+      nzContent: MacroPopupComponent,
+      nzComponentParams: {
+        rotation: CraftingActionsRegistry.deserializeRotation(rotation.rotation),
+        job: this.item.craftedBy[0].jobId,
+        food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
+        medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
+        freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
+      },
+      nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
+      nzFooter: null
+    });
   }
 
   showTagInput(): void {
@@ -387,19 +457,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       }
     }).afterClose.subscribe(() => {
       this.commentBadgeReloader$.next(null);
-    });
-  }
-
-  openMarketboardDialog(): void {
-    this.modal.create({
-      nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${this.i18n.getName(this.l12n.getItem(this.item.id))}`,
-      nzContent: MarketboardPopupComponent,
-      nzComponentParams: {
-        itemId: this.item.id,
-        showHistory: true
-      },
-      nzFooter: null,
-      nzWidth: '80vw'
     });
   }
 
@@ -604,7 +661,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   public isButton(element: ItemRowMenuElement): boolean {
-    return this.layout && this.layout.rowsDisplay.buttons.indexOf(element) > -1;
+    return this.buttonsCache[element];
   }
 
   public trackByCraft(index: number, craft: Craft): string {

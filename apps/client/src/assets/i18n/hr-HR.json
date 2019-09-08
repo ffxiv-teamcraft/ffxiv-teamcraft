@@ -138,7 +138,10 @@
     "Top": "Top",
     "Bottom": "Bottom",
     "Amount": "Amount",
-    "Undo": "Undo"
+    "Undo": "Undo",
+    "User": "User",
+    "Tables": "Table",
+    "Pie_charts": "Pie charts"
   },
   "ALARMS": {
     "Title": "Alarmi",
@@ -367,6 +370,7 @@
     "Always_HQ_leves": "Always count leves exp with HQ items",
     "Clickthrough_overlay": "Make overlay clickthrough",
     "Disable_search_history": "Disable search history",
+    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -459,7 +463,14 @@
     "Show_craftable_amount": "Show craftable amount",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "Quick_layout_swap": "Quick layout swap",
+    "Offline": "Offline",
+    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
     "Mark_whole_panel_done": "Mark panel content as done",
+    "ROTATION": {
+      "Attach": "Attach rotation",
+      "Detach": "Detach rotation",
+      "Click_to_copy_macro": "Click to open macro copy popup"
+    },
     "INVENTORY": {
       "Show_final_items": "Show final items",
       "Hide_final_items": "Hide final items"
@@ -507,6 +518,8 @@
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "Add_to_another_list": "Add to another list",
     "New_tag": "New tag",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "Contributions stats",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -534,7 +547,8 @@
         "REMOVE_ITEM": "Remove item from the list",
         "ADD_TAG": "Add tag to item",
         "MARK_AS_DONE_IN_LOG": "Mark as done inside log",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information",
+        "ATTACH_ROTATION": "Attach rotation"
       }
     },
     "LAYOUT": {

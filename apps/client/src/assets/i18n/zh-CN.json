@@ -76,7 +76,7 @@
     "Created_by": "由 {{name}} 创建",
     "Share_link_copied": "工坊分享链接已复制",
     "Not_found": "没有找到工坊或者你没有权限访问该工坊",
-    "Shared_workshops": "Workshops shared with you",
+    "Shared_workshops": "与您共享的工坊",
     "Rename": "重命名工坊",
     "Add_lists": "添加清单"
   },
@@ -94,7 +94,7 @@
   "Hide_if_empty": "隐藏空栏",
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
-  "Ephemeral_tag": "临时",
+  "Ephemeral_tag": "Ephemeral",
   "Remove_ephemeral": "升级为永久清单",
   "Quick_list_create": "创建快速清单(完成后删除)",
   "Tag_filter": "标签",
@@ -138,7 +138,10 @@
     "Top": "顶部",
     "Bottom": "底部",
     "Amount": "数目",
-    "Undo": "Undo"
+    "Undo": "撤销",
+    "User": "User",
+    "Tables": "Table",
+    "Pie_charts": "Pie charts"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -270,7 +273,7 @@
   "filters/crafted_by": "制作职业",
   "filters/item_category": "物品类型",
   "filters/stats": "属性过滤器",
-  "filters/bonuses": "Stat bonuses filters",
+  "filters/bonuses": "属性奖励过滤器",
   "Adding_recipes": "正在添加 {{amount}} 个配方到清单 {{listname}}",
   "Recipe_Added": "一个物品已经被添加到清单 {{listname}}",
   "Recipes_Added": "{{itemcount}} 个物品已加入清单 {{listname}}",
@@ -367,6 +370,7 @@
     "Always_HQ_leves": "默认以提交HQ物品计算理符经验",
     "Clickthrough_overlay": "悬浮窗鼠标穿透",
     "Disable_search_history": "关闭搜索记录",
+    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -412,7 +416,7 @@
     "Merge_lists": "合并清单",
     "Merge_lists_warning": "此处未列出过长的清单，因为由于数据库限制，无法合并太大的清单。",
     "Lists_merged": "清单合并成功！",
-    "Shared_lists": "Lists shared with you",
+    "Shared_lists": "与您共享的清单",
     "Add_selection": "添加选中物品到清单",
     "Your_lists": "我的清单",
     "Outdated_tag": "已过期",
@@ -438,8 +442,8 @@
       "Creating_list": "正在创建清单",
       "Loading_items": "正在加载物品信息",
       "Estimate_overmeld_materia": "估算禁断所需要的魔晶石",
-      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
-      "Group_together": "Group materias together"
+      "Multiply_tool_materia": "计算全职业魔晶石镶嵌所需的魔晶石（2个采集及8个生产职业的主副手）",
+      "Group_together": "将魔晶石聚集在一起"
     }
   },
   "LIST": {
@@ -459,7 +463,14 @@
     "Show_craftable_amount": "显示可制作的数量",
     "Optimized_full_path": "显示完整最优路径 (最便宜且最快)",
     "Quick_layout_swap": "快速布局切换",
-    "Mark_whole_panel_done": "Mark panel content as done",
+    "Offline": "Offline",
+    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
+    "Mark_whole_panel_done": "将这一大类标记为已完成",
+    "ROTATION": {
+      "Attach": "Attach rotation",
+      "Detach": "Detach rotation",
+      "Click_to_copy_macro": "Click to open macro copy popup"
+    },
     "INVENTORY": {
       "Show_final_items": "显示最终物品",
       "Hide_final_items": "隐藏最终物品"
@@ -507,6 +518,8 @@
     "List_too_large_description": "该清单过长，携带了太多信息，可能会受到数据库大小限制。为确保你不会丢失信息，该清单无法再添加物品了。",
     "Add_to_another_list": "添加到另一个清单",
     "New_tag": "新标签",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "Contributions stats",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -534,7 +547,8 @@
         "REMOVE_ITEM": "从清单中删除物品",
         "ADD_TAG": "添加标签到物品",
         "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成",
-        "MARKET_BOARD_INFORMATIONS": "市场信息"
+        "MARKET_BOARD_INFORMATIONS": "市场信息",
+        "ATTACH_ROTATION": "Attach rotation"
       }
     },
     "LAYOUT": {
@@ -622,10 +636,10 @@
     "Steps": "步骤",
     "Loading_path": "正在加载最优路径 (可能需要几秒)",
     "STEP": {
-      "Gathering": "Gather {{amount}} (total: {{total}})",
-      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
-      "Vendor": "Buy {{amount}} (total: {{total}})",
-      "Trade": "Trade {{amount}} (total: {{total}})"
+      "Gathering": "采集{{amount}}（总计：{{total}}）",
+      "Hunting": "打怪获得{{amount}}（总计：{{total}}）",
+      "Vendor": "购买{{amount}}（总计：{{total}}）",
+      "Trade": "兑换{{amount}}（总计：{{total}}）"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -816,7 +830,7 @@
     "ROTATIONS": {
       "Search_placeholder": "搜索工序",
       "FOLDERS": {
-        "Not_found": "Rotation folder not found",
+        "Not_found": "未找到手法文件夹",
         "Folders": "手法文件夹",
         "Rename": "重命名文件夹",
         "New_folder": "新建文件夹",
@@ -908,7 +922,7 @@
     "From_crafting": "制作价格",
     "Expect_to_sell_everything": "计划出售",
     "Autofill_panel_prices": "基于市场物价填充价格",
-    "Autofill_panel_prices_your_server": "根据市场价格填充 (仅限此服务器)",
+    "Autofill_panel_prices_your_server": "依据市场价填充材料价格 (仅限此服务器)",
     "Autofill_panel_prices_warning": "本操作为耗时操作，大约需要 {{time}} 秒来完成，确定吗？",
     "Copy_earnings_as_text": "复制为文本",
     "Content_copied": "已复制",
@@ -973,16 +987,16 @@
     "Officer": "指挥官",
     "Promote_officer": "提升为指挥官",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x **[{{itemName}}] (http://ffxivmarcaft.com/db/en/item/{{itemId}})** 已添加到 **[{{listName}}] ({{listUrl}})**。",
+      "Item_removed": "{{amount}}个x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** 已从清单 **[{{listName}}]({{listUrl}})** 删除。",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** 标记清单 **[{{listName}}]({{listUrl}})** 中的物品 {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** / {{totalNeeded}} 为完成。",
       "Webhook_setup_complete": "团队 **{{teamName}}** 在此频道被追踪。",
       "List_added_notification": "清单 **[{{listName}}] ({{listUrl}}) ** 已添加到团队中。",
       "List_removed_notification": "清单 **[{{listName}}] ({{listUrl}}) ** 已从团队中删除。",
       "Member_joined": "**[{{memberName}}] ({{memberProfileUrl}}) ** 已加入团队 ！",
       "Member_removed": "**[{{memberName}}] ({{memberProfileUrl}}) ** 已从团队中删除。",
       "Name_changed": "**{{oldName}}** 团队已重命名为 **{{newName}}**",
-      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "清单 **[{{listName}}]({{listUrl}})** 的 **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** 被分配给 **[{{memberName}}]({{memberProfileUrl}})**。"
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "成员加入",
@@ -1059,7 +1073,7 @@
     "Required_for_achievement": "成就所需",
     "Select_spot": "选择地点以查看其详情",
     "Hide_completed": "隐藏已完成的配方",
-    "Hide_completed_items": "Hide completed items",
+    "Hide_completed_items": "隐藏已完成的物品",
     "MIN_optimized_path": "为所有采矿工采集点优化的路径",
     "BTN_optimized_path": "为所有园艺工采集点优化的路径",
     "PAGE": {
@@ -1484,7 +1498,7 @@
     "Sort_asc": "升序",
     "Sort_desc": "降序",
     "Add_stat_filter": "添加属性过滤器",
-    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Add_bonus_stat_filter": "添加奖励属性过滤器",
     "Search_tip": "您可以键入版本号：“patch #” 来查看特定版本的内容，如：patch 5.01",
     "SORT_BY": {
       "Relevance": "相关性",

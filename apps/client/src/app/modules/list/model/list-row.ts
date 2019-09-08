@@ -66,4 +66,6 @@ export class ListRow extends DataModel {
   usePrice?: boolean;
 
   custom?: boolean;
+
+  attachedRotation?: string;
 }

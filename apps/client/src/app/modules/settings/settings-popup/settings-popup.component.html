@@ -122,6 +122,13 @@
                  [(ngModel)]="settings.disableSearchHistory">{{'SETTINGS.Disable_search_history' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label nz-checkbox
+                 [(ngModel)]="settings.disableSearchDebounce">{{'SETTINGS.Disable_search_debounce' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Amount_display_mode' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">

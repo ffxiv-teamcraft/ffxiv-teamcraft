@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.8.0"></a>
+# [5.8.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.12...v5.8.0) (2019-09-08)
+
+
+### Bug Fixes
+
+* **data:** fixed an issue preventing voyages from being extracted properly ([7be9698](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7be9698))
+* **db:** fixed fishermen's horizon aetheryte in dravanian forelands map ([bb6844b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bb6844b))
+* **progress:** don't show progress for empty operations array ([43100d7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43100d7))
+* **rotations:** fixed an issue with folders content reordering ([16bc62d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/16bc62d))
+* **teams:** fixed an issue with list completion not being saved with teams not having a webhook ([476fb6e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/476fb6e))
+* **teams:** fixed final items progression not showing inside teams webhook configuration ([b94a33f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b94a33f))
+* **xivapi:** better handling of 429 error in community pages ([44a80d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/44a80d0))
+
+
+### Features
+
+* **db:** added patch link on all database pages ([5e891dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e891dd))
+* **list:** added contribution % stats popup, to see how each person contributed to the list ([8067eb0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8067eb0))
+* **list:** you can now create offline lists, faster with slower network but cannot be shared ([953c121](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/953c121))
+* **list:** you can now link a rotation to an item ([2adeaa7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2adeaa7))
+* **patreon:** new supporter: Glanyx ! ([10469c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/10469c4))
+* **settings:** added an option to disable auto search as you type ([38ce10e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/38ce10e))
+* **voyages:** added i18n support for voyages ([1f4e356](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1f4e356))
+* support for korean v4.56 update ([cc36c24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cc36c24))
+* **log-tracker:** added hide completed items option to FSH tracker ([baa410e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/baa410e))
+* **settings:** added Kugane, Crystrium and Eulmore as starting point ([4cd48ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4cd48ed))
+
+
+
 <a name="5.7.12"></a>
 ## [5.7.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.11...v5.7.12) (2019-08-29)
 

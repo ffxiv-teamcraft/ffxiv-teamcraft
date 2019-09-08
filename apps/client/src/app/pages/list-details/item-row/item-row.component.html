@@ -35,8 +35,8 @@
                          [userId]="user" [width]="24"></app-user-avatar>
 
         <div fxLayout="row" class="menu-buttons" fxLayoutGap="5px">
-          <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="item.id"
-                                [showHistory]="finalItem"></app-marketboard-icon>
+<!--          <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="item.id"-->
+<!--                                [showHistory]="finalItem"></app-marketboard-icon>-->
           <ng-container *ngIf="isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
             <button nz-button nzSize="small" nzShape="circle" ngxClipboard
                     cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
@@ -51,6 +51,22 @@
                     (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
               <i nz-icon type="copy"></i>
             </button>
+          </ng-container>
+
+          <ng-container
+            *ngIf="isButton(itemRowTypes.ATTACH_ROTATION) && item.craftedBy && item.craftedBy.length > 0">
+            <button nz-button (click)="attachRotation()" nz-tooltip [nzTitle]="'LIST.ROTATION.Attach' | translate"
+                    nzShape="circle" nzSize="small"
+                    *ngIf="!item.attachedRotation; else detachRotationRef">
+              <i nz-icon type="link"></i>
+            </button>
+            <ng-template #detachRotationRef>
+              <button nz-button nzType="danger" nz-tooltip [nzTitle]="'LIST.ROTATION.Detach' | translate"
+                      nzShape="circle" nzSize="small"
+                      (click)="detachRotation()">
+                <i nz-icon type="disconnect"></i>
+              </button>
+            </ng-template>
           </ng-container>
 
           <ng-container *ngIf="isButton(itemRowTypes.COMMENTS)">
@@ -221,11 +237,24 @@
                 </li>
               </ng-container>
 
-              <ng-container *ngIf="!isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)">
-                <li nz-menu-item (click)="openMarketboardDialog()">
-                  {{'MARKETBOARD.Title' | translate}}
+              <!--              <ng-container *ngIf="!isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)">-->
+              <!--                <li nz-menu-item (click)="openMarketboardDialog()">-->
+              <!--                  {{'MARKETBOARD.Title' | translate}}-->
+              <!--                </li>-->
+              <!--              </ng-container>-->
+
+              <ng-container
+                *ngIf="!isButton(itemRowTypes.ATTACH_ROTATION) && item.craftedBy && item.craftedBy.length > 0">
+                <li nz-menu-item (click)="attachRotation()" *ngIf="!item.attachedRotation; else detachRotationRef">
+                  {{'LIST.ROTATION.Attach' | translate}}
                 </li>
+                <ng-template #detachRotationRef>
+                  <li nz-menu-item (click)="detachRotation()">
+                    {{'LIST.ROTATION.Detach' | translate}}
+                  </li>
+                </ng-template>
               </ng-container>
+
 
               <ng-container *ngIf="!isButton(itemRowTypes.COMMENTS)">
                 <ng-container *ngIf="listsFacade.selectedList$ | async as list">
@@ -344,6 +373,13 @@
                     (click)="checkMasterbooks(missingBooks)">
               <i nz-icon type="warning"></i>
             </button>
+          </ng-container>
+          <ng-container *ngIf="item.attachedRotation">
+            <nz-tag *ngIf="item.attachedRotation | rotation | async as rotation" nz-tooltip
+                    (click)="openRotationMacroPopup(rotation)"
+                    [nzTitle]="'LIST.ROTATION.Click_to_copy_macro' | translate">
+              {{rotation.getName()}}
+            </nz-tag>
           </ng-container>
         </div>
       </div>

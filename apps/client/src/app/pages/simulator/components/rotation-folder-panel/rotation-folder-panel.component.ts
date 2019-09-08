@@ -25,9 +25,10 @@ import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.
 export class RotationFolderPanelComponent {
 
   @Input()
-  public set folder(l: CraftingRotationsFolder) {
-    this._folder = l;
-    this.folder$.next(l);
+  public set folder(f: CraftingRotationsFolder) {
+    this._folder = new CraftingRotationsFolder();
+    Object.assign(this._folder, f);
+    this.folder$.next(this._folder);
   }
 
   public _folder: CraftingRotationsFolder;
@@ -37,7 +38,7 @@ export class RotationFolderPanelComponent {
   @Input()
   rotations: CraftingRotation[] = [];
 
-  permissionLevel$: Observable<PermissionLevel> = combineLatest(this.authFacade.userId$, this.folder$).pipe(
+  permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.folder$]).pipe(
     map(([userId, folder]) => folder.getPermissionLevel(userId)),
     distinctUntilChanged(),
     shareReplay(1)
@@ -53,7 +54,7 @@ export class RotationFolderPanelComponent {
               private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
               private customLinksFacade: CustomLinksFacade, private rotationsFacade: RotationsFacade) {
 
-    this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.folder$).pipe(
+    this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.folder$]).pipe(
       map(([links, folder]) => links.find(link => link.redirectTo === `rotation-folder/${folder.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
@@ -61,7 +62,7 @@ export class RotationFolderPanelComponent {
   }
 
   addRotations(): void {
-    combineLatest(this.rotationsFacade.myRotations$, this.foldersFacade.myRotationFolders$).pipe(
+    combineLatest([this.rotationsFacade.myRotations$, this.foldersFacade.myRotationFolders$]).pipe(
       first(),
       switchMap(([rotations, folders]) => {
         const elements = rotations
@@ -76,7 +77,7 @@ export class RotationFolderPanelComponent {
               return {
                 $key: rotation.$key,
                 name: rotation.getName()
-              }
+              };
             })
           },
           nzFooter: null
@@ -142,8 +143,6 @@ export class RotationFolderPanelComponent {
   onCraftingRotationDrop(event: any): void {
     const index = event.dropIndex;
     const rotation = event.value;
-    // Remove the node we just created, we don't need it.
-    event.el.parentNode.removeChild(event.el);
     this._folder.rotationIds = this._folder.rotationIds.filter(key => key !== rotation.$key);
     this._folder.rotationIds.splice(index, 0, rotation.$key);
     this.foldersFacade.updateFolder(this._folder);

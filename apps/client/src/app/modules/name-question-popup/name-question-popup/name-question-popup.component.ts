@@ -15,13 +15,16 @@ export class NameQuestionPopupComponent implements OnInit {
   @Input()
   showEphemeralCheckbox = false;
 
+  @Input()
+  showOfflineCheckbox = false;
+
   public control: FormGroup;
 
   constructor(private modalRef: NzModalRef, private fb: FormBuilder) {
   }
 
   public submit(): void {
-    if (this.showEphemeralCheckbox) {
+    if (this.showEphemeralCheckbox || this.showOfflineCheckbox) {
       this.modalRef.close(this.control.value);
     } else {
       this.modalRef.close(this.control.value.name);
@@ -31,7 +34,8 @@ export class NameQuestionPopupComponent implements OnInit {
   ngOnInit(): void {
     this.control = this.fb.group({
       name: [this.baseName, Validators.required],
-      ephemeral: [false]
+      ephemeral: [false],
+      offline: [false]
     });
   }
 

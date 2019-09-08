@@ -21,6 +21,8 @@ import { ListManagerService } from '../list-manager.service';
 declare const gtag: Function;
 
 export class List extends DataWithPermissions {
+  offline?: boolean;
+
   name: string;
 
   // For ordering purpose, lower index means higher priority on ordering.
@@ -105,6 +107,7 @@ export class List extends DataWithPermissions {
     compact.version = this.version || '1.0.0';
     compact.tags = this.tags;
     compact.everyone = this.everyone;
+    compact.offline = this.offline;
     compact.registry = this.registry;
     compact.authorId = this.authorId;
     compact.$key = this.$key;

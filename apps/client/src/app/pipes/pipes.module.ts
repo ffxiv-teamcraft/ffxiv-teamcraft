@@ -53,6 +53,7 @@ import { FloorPipe } from './pipes/floor.pipe';
 import { MapIdPipe } from './pipes/map-id.pipe';
 import { StatusIconPipe } from './pipes/status-icon.pipe';
 import { StatusNamePipe } from './pipes/status-name.pipe';
+import { RotationPipe } from './pipes/rotation.pipe';
 
 @NgModule({
   declarations: [
@@ -110,7 +111,8 @@ import { StatusNamePipe } from './pipes/status-name.pipe';
     AchievementIconPipe,
     MapIdPipe,
     StatusIconPipe,
-    StatusNamePipe
+    StatusNamePipe,
+    RotationPipe
   ],
   exports: [
     ItemNamePipe,
@@ -167,7 +169,8 @@ import { StatusNamePipe } from './pipes/status-name.pipe';
     AchievementIconPipe,
     MapIdPipe,
     StatusIconPipe,
-    StatusNamePipe
+    StatusNamePipe,
+    RotationPipe
   ]
 })
 export class PipesModule {
