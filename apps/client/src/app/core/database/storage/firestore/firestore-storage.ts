@@ -35,7 +35,11 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
             throw new Error(`${this.getBaseUri(uriParams)}/${uid} Not found`);
           }
           delete snap.payload;
-          return this.serializer.deserialize<T>(valueWithKey, this.getClass());
+          const res =  this.serializer.deserialize<T>(valueWithKey, this.getClass());
+          if((res as any).afterDeserialized){
+            (res as any).afterDeserialized();
+          }
+          return res;
         })
       );
   }
