@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.8.1"></a>
+## [5.8.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.0...v5.8.1) (2019-09-09)
+
+
+### Bug Fixes
+
+* **list:** fixed a bug when regenerating an empty list ([4641155](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4641155))
+* **list:** fixed a bug when upgrading an ephemeral list to permanent ([79c4f75](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/79c4f75))
+* **rotation:** removed rotation key from rotation panel ([68e7f1a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68e7f1a))
+
+
+
 <a name="5.8.0"></a>
 # [5.8.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.12...v5.8.0) (2019-09-08)
 
