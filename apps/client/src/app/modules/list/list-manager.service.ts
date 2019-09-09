@@ -217,6 +217,9 @@ export class ListManagerService {
   public upgradeList(list: List): Observable<List> {
     const permissions = list.registry;
     const backup = [];
+    if (list.items.length === 0) {
+      return of(list);
+    }
     list.items.forEach(item => {
       backup.push({ array: 'items', item: { ...item } });
     });
