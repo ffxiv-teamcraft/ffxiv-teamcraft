@@ -94,7 +94,7 @@
   "Hide_if_empty": "비어있는 경우 숨기기",
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
-  "Ephemeral_tag": "Ephemeral",
+  "Ephemeral_tag": "간이 목록",
   "Remove_ephemeral": "간이 목록을 일반 목록으로 변경",
   "Quick_list_create": "간이 목록 생성 (완료시 삭제)",
   "Tag_filter": "태그",
@@ -370,7 +370,7 @@
     "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
     "Clickthrough_overlay": "오버레이 클릭 무시",
     "Disable_search_history": "검색 기록 비활성화",
-    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
+    "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -463,13 +463,13 @@
     "Show_craftable_amount": "제작 가능한 수량 표시",
     "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
     "Quick_layout_swap": "빠른 레이아웃 전환",
-    "Offline": "Offline",
-    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
+    "Offline": "오프라인",
+    "Offline_help": "오프라인 목록은 브라우저 혹은 앱 내에 저장됩니다. 해당 목록은 공유를 할 수 없지만 네트워크를 사용하지 않으며 더 빠르게 로딩됩니다.",
     "Mark_whole_panel_done": "Mark panel content as done",
     "ROTATION": {
-      "Attach": "Attach rotation",
-      "Detach": "Detach rotation",
-      "Click_to_copy_macro": "Click to open macro copy popup"
+      "Attach": "제작 매크로 연동",
+      "Detach": "제작 매크로 연동해제",
+      "Click_to_copy_macro": "매크로 복사 팝업 페이지 열기"
     },
     "INVENTORY": {
       "Show_final_items": "최종 아이템 표시",
