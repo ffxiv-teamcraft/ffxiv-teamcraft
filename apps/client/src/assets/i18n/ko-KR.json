@@ -94,7 +94,7 @@
   "Hide_if_empty": "비어있는 경우 숨기기",
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
-  "Ephemeral_tag": "Ephemeral",
+  "Ephemeral_tag": "간이 목록",
   "Remove_ephemeral": "간이 목록을 일반 목록으로 변경",
   "Quick_list_create": "간이 목록 생성 (완료시 삭제)",
   "Tag_filter": "태그",
