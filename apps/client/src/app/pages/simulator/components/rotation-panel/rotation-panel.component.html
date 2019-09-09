@@ -4,7 +4,7 @@
       <div fxLayout="row" fxLayoutAlign="flex-start center" class="panel-header" fxLayoutGap="10px">
         <div (dblclick)="openRotation(rotation)" fxLayout="row" fxLayoutGap="10px"
              fxLayoutAlign="flex-start center">
-          <div>{{rotation.getName()}} {{rotation.$key}}</div>
+          <div>{{rotation.getName()}}</div>
           <app-user-avatar [userId]="rotation.authorId" [width]="24" *ngIf="publicDisplay"></app-user-avatar>
         </div>
         <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" fxFlex="1 1 auto">
