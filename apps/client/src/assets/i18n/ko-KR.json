@@ -469,7 +469,7 @@
     "ROTATION": {
       "Attach": "제작 매크로 연동",
       "Detach": "제작 매크로 연동해제",
-      "Click_to_copy_macro": "Click to open macro copy popup"
+      "Click_to_copy_macro": "매크로 복사 팝업 페이지 열기"
     },
     "INVENTORY": {
       "Show_final_items": "최종 아이템 표시",
