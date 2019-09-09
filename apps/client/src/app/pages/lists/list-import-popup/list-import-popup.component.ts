@@ -3,7 +3,7 @@ import { ExternalListLinkParser } from './link-parser/external-list-link-parser'
 import { FfxivCraftingLinkParser } from './link-parser/ffxiv-crafting-link-parser';
 import { AriyalaLinkParser } from './link-parser/ariyala-link-parser';
 import { AriyalaMateriaOptions } from './link-parser/ariyala-materia-options';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { XivapiService } from '@xivapi/angular-client';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -52,7 +52,7 @@ export class ListImportPopupComponent {
       }
 
       parser.parse(this.importLink).pipe(first()).subscribe(code => {
-        this.router.navigate(['/import', code]);
+        this.router.navigate(['/import', code], { queryParams: { url: this.importLink } });
         this.ref.close();
       });
     }
