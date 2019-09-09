@@ -76,7 +76,7 @@ export class ListPanelComponent {
         map(([userId, user, list]) => {
           if (user !== null) {
             const isTeamList = list.teamId && teams.some(team => list.teamId === team.$key);
-            const teamLeader = isTeamList && (teams.find(team => list.teamId === team.$key).leader === userId)
+            const teamLeader = isTeamList && (teams.find(team => list.teamId === team.$key).leader === userId);
             return Math.max(
               list.getPermissionLevel(userId),
               list.getPermissionLevel(user.currentFcId),
@@ -285,8 +285,18 @@ export class ListPanelComponent {
   }
 
   removeEphemeral(list: List): void {
-    list.ephemeral = false;
-    this.listsFacade.updateList(list);
+    this.listsFacade.load(list.$key);
+    this.listsFacade.allListDetails$.pipe(
+      map(details => details.find(l => l.$key === list.$key)),
+      filter(l => l !== undefined),
+      first(),
+      map(listDetails => {
+        listDetails.ephemeral = false;
+        return listDetails;
+      })
+    ).subscribe(listDetails => {
+      this.listsFacade.updateList(listDetails);
+    });
   }
 
   openCommentsPopup(list: List, isAuthor: boolean): void {
