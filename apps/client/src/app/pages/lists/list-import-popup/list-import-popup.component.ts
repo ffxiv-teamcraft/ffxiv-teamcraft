@@ -3,11 +3,12 @@ import { ExternalListLinkParser } from './link-parser/external-list-link-parser'
 import { FfxivCraftingLinkParser } from './link-parser/ffxiv-crafting-link-parser';
 import { AriyalaLinkParser } from './link-parser/ariyala-link-parser';
 import { AriyalaMateriaOptions } from './link-parser/ariyala-materia-options';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { XivapiService } from '@xivapi/angular-client';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { NzModalRef } from 'ng-zorro-antd';
+import { GarlandtoolsGroupLinkParser } from './link-parser/garlandtools-group-link-parser';
 
 @Component({
   selector: 'app-list-import-popup',
@@ -20,7 +21,7 @@ export class ListImportPopupComponent {
 
   importLinkSupported: boolean;
 
-  linkParsers: ExternalListLinkParser[] = [new FfxivCraftingLinkParser(), new AriyalaLinkParser(this.http, this.xivapi)];
+  linkParsers: ExternalListLinkParser[] = [new FfxivCraftingLinkParser(), new AriyalaLinkParser(this.http, this.xivapi), new GarlandtoolsGroupLinkParser()];
 
   linkType: string;
 
