@@ -3,8 +3,8 @@
   <div class="description">
     {{'LISTS.Import_description' | translate}}
   </div>
-  <div *ngIf="items$ | async as rows; else loading" fxLayout="column" class="items-container">
-    <div class="item-row" fxLayout="row" fxLayoutGap="5px" *ngFor="let row of rows; let odd = odd;"
+  <div *ngIf="items$ | async as data; else loading" fxLayout="column" class="items-container">
+    <div class="item-row" fxLayout="row" fxLayoutGap="5px" *ngFor="let row of data.items; let odd = odd;"
          fxLayoutAlign="flex-start center" [class.odd]="odd">
       <app-item-icon [width]="32" [itemId]="row.itemData.item.id" [icon]="row.itemData.item.icon"></app-item-icon>
       <div class="item-name">{{row.itemData.item.id | itemName | i18n}} x{{row.quantity}}</div>
@@ -18,7 +18,7 @@
         </label>
       </nz-radio-group>
     </div>
-    <button nz-button nzBlock nzType="primary" (click)="doImport(rows)" [disabled]="!canDoImport(rows)">
+    <button nz-button nzBlock nzType="primary" (click)="doImport(data)" [disabled]="!canDoImport(data)">
       {{'LISTS.Add_to_a_list' | translate}}
     </button>
   </div>

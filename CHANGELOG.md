@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.8.2"></a>
+## [5.8.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.1...v5.8.2) (2019-09-10)
+
+
+### Bug Fixes
+
+* **teams:** fixed an issue with webhook sending a message for events it should ignore ([c36c963](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c36c963))
+
+
+### Features
+
+* **list:** added original url as list description when importing a list from external tool ([3b980c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b980c0))
+* **list:** added support for import from garlandtools group ([efa0260](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/efa0260))
+
+
+
 <a name="5.8.1"></a>
 ## [5.8.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.0...v5.8.1) (2019-09-09)
 

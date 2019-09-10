@@ -8,6 +8,7 @@ import { XivapiService } from '@xivapi/angular-client';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { NzModalRef } from 'ng-zorro-antd';
+import { GarlandtoolsGroupLinkParser } from './link-parser/garlandtools-group-link-parser';
 
 @Component({
   selector: 'app-list-import-popup',
@@ -20,7 +21,7 @@ export class ListImportPopupComponent {
 
   importLinkSupported: boolean;
 
-  linkParsers: ExternalListLinkParser[] = [new FfxivCraftingLinkParser(), new AriyalaLinkParser(this.http, this.xivapi)];
+  linkParsers: ExternalListLinkParser[] = [new FfxivCraftingLinkParser(), new AriyalaLinkParser(this.http, this.xivapi), new GarlandtoolsGroupLinkParser()];
 
   linkType: string;
 
@@ -52,7 +53,7 @@ export class ListImportPopupComponent {
       }
 
       parser.parse(this.importLink).pipe(first()).subscribe(code => {
-        this.router.navigate(['/import', code]);
+        this.router.navigate(['/import', code], { queryParams: { url: this.importLink } });
         this.ref.close();
       });
     }
