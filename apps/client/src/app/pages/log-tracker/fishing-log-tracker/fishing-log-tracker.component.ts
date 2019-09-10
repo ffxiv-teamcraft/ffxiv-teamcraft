@@ -259,7 +259,7 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
       shareReplay(1)
     );
 
-    this.display$ = combineLatest(completeDisplay$, this.completion$).pipe(
+    this.display$ = combineLatest([completeDisplay$, this.completion$]).pipe(
       map(([completeDisplay, completion]: [any, number[]]) => {
         return completeDisplay.map(display => {
           const uniqueDisplayDone = [];

@@ -118,6 +118,7 @@ export class LogTrackerComponent extends TrackerComponent {
           'Adding_recipes',
           { amount: recipesToAdd.length, listname: list.name });
       }),
+      filter(list => list !== null),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
       mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
