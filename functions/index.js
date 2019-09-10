@@ -9,7 +9,7 @@ const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
 
 const runtimeOpts = {
-  timeoutSeconds: 300,
+  timeoutSeconds: 60,
   memory: '1GB'
 };
 
