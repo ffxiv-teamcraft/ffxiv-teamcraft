@@ -93,7 +93,7 @@
   "Patreon_login_success": "Anmeldung mit Patreon erfolgreich!",
   "Hide_if_empty": "Verstecken, wenn leer",
   "No_favorites": "Keine Favoriten",
-  "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
+  "Ephemeral_list": "Wird bei Fertigstellung gelöscht",
   "Ephemeral_tag": "Ephemeral",
   "Remove_ephemeral": "Upgrade zu dauerhafter Liste",
   "Quick_list_create": "Vergängliche Liste erstellen (wird bei Fertigstellung gelöscht)",
