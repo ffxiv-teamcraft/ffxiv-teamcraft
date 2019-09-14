@@ -35,8 +35,8 @@
                          [userId]="user" [width]="24"></app-user-avatar>
 
         <div fxLayout="row" class="menu-buttons" fxLayoutGap="5px">
-<!--          <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="item.id"-->
-<!--                                [showHistory]="finalItem"></app-marketboard-icon>-->
+          <!--          <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="item.id"-->
+          <!--                                [showHistory]="finalItem"></app-marketboard-icon>-->
           <ng-container *ngIf="isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
             <button nz-button nzSize="small" nzShape="circle" ngxClipboard
                     cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
@@ -419,7 +419,8 @@
       <div *ngFor="let alarm of alarms; trackBy: trackByAlarm">
         <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
           <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"
-                  nz-tooltip [nzTitle]="display.alarm.zoneId | placeName | i18n"
+                  nz-tooltip
+                  nzTitle="{{(display.alarm.mapId | closestAetheryte: display.alarm.coords  | async)?.nameid | placeName | i18n}} - {{display.alarm.zoneId | placeName | i18n}}"
                   [nzGhost]="!display.registered"
                   (click)="toggleAlarm(display)">
             <i nz-icon type="bell" *ngIf="!display.registered"></i>
