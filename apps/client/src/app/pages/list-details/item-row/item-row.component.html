@@ -35,8 +35,8 @@
                          [userId]="user" [width]="24"></app-user-avatar>
 
         <div fxLayout="row" class="menu-buttons" fxLayoutGap="5px">
-          <!--          <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="item.id"-->
-          <!--                                [showHistory]="finalItem"></app-marketboard-icon>-->
+                    <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="item.id"
+                                          [showHistory]="finalItem"></app-marketboard-icon>
           <ng-container *ngIf="isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
             <button nz-button nzSize="small" nzShape="circle" ngxClipboard
                     cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
@@ -237,11 +237,11 @@
                 </li>
               </ng-container>
 
-              <!--              <ng-container *ngIf="!isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)">-->
-              <!--                <li nz-menu-item (click)="openMarketboardDialog()">-->
-              <!--                  {{'MARKETBOARD.Title' | translate}}-->
-              <!--                </li>-->
-              <!--              </ng-container>-->
+                            <ng-container *ngIf="!isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)">
+                              <li nz-menu-item (click)="openMarketboardDialog()">
+                                {{'MARKETBOARD.Title' | translate}}
+                              </li>
+                            </ng-container>
 
               <ng-container
                 *ngIf="!isButton(itemRowTypes.ATTACH_ROTATION) && item.craftedBy && item.craftedBy.length > 0">
