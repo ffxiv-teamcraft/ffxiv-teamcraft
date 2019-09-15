@@ -141,7 +141,7 @@
     "Undo": "Undo",
     "User": "User",
     "Tables": "Table",
-    "Pie_charts": "Pie charts"
+    "Pie_charts": "파이 차트"
   },
   "ALARMS": {
     "Title": "알람",
@@ -416,7 +416,7 @@
     "Merge_lists": "목록 병합",
     "Merge_lists_warning": "대규모 목록은 데이터베이스의 한계로 인해 병합이 불가능하기 때문에 여기에 표시되지 않습니다.",
     "Lists_merged": "목록 병합이 완료되었습니다!",
-    "Shared_lists": "Lists shared with you",
+    "Shared_lists": "나와 공유된 목록",
     "Add_selection": "선택항목을 목록에 추가",
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
