@@ -87,4 +87,8 @@ export class UniversalisService {
         })
       );
   }
+
+  public pushPrices(worldID: number, itemID: number, uploaderID: string, listings: any[]): void {
+    // TODO
+  }
 }
