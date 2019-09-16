@@ -56,6 +56,7 @@ import { Theme } from './modules/settings/theme';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
+import { MachinaService } from './core/electron/machina.service';
 
 declare const gtag: Function;
 
@@ -154,7 +155,7 @@ export class AppComponent implements OnInit {
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private message: NzMessageService, @Inject(PLATFORM_ID) private platform: Object) {
+              private machina: MachinaService, private message: NzMessageService, @Inject(PLATFORM_ID) private platform: Object) {
 
     this.showGiveaway = false;
 
@@ -187,6 +188,10 @@ export class AppComponent implements OnInit {
     }
 
     if (isPlatformBrowser(this.platform)) {
+      if (this.platformService.isDesktop()) {
+        this.machina.init();
+      }
+
       this.firebase.object('maintenance')
         .valueChanges()
         .pipe(

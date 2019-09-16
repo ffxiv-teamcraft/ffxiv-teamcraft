@@ -8,6 +8,7 @@ const log = require('electron-log');
 log.transports.file.level = 'info';
 const express = require('express');
 const fs = require('fs');
+const Machina = require('./machina.js');
 
 const oauth = require('./oauth.js');
 
@@ -117,6 +118,10 @@ function createWindow() {
     win.maximize();
   }
 
+  if (config.get('machina') === true) {
+    Machina.start(win);
+  }
+
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
   //// uncomment below to open the DevTools.
   // win.webContents.openDevTools();
@@ -170,6 +175,10 @@ function createWindow() {
 
   // save window size and position
   win.on('close', () => {
+
+    if (config.get('machina') === true) {
+      Machina.stop();
+    }
     config.set('win:bounds', win.getBounds());
     config.set('win:fullscreen', win.isMaximized());
     config.set('win:alwaysOnTop', win.isAlwaysOnTop());
@@ -273,6 +282,19 @@ ipcMain.on('app-ready', (event) => {
   if (options.nativeDecorator) {
     event.sender.send('window-decorator', false);
   }
+});
+
+ipcMain.on('toggle-machina', (event, enabled) => {
+  config.set('machina', enabled);
+  if (enabled) {
+    Machina.start(win);
+  } else {
+    Machina.stop();
+  }
+});
+
+ipcMain.on('toggle-machina:get', (event) => {
+  event.sender.send('toggle-machina:value', config.get('machina'));
 });
 
 // Create window on electron intialization

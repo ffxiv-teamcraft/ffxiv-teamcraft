@@ -3,6 +3,7 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcRenderer } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable()
 export class IpcService {
@@ -10,6 +11,12 @@ export class IpcService {
   public static readonly ROTATION_DEFAULT_DIMENSIONS = { x: 600, y: 200 };
 
   private readonly _ipc: IpcRenderer | undefined = undefined;
+
+  private _itemInfoPackets$: Subject<any> = new Subject<any>();
+
+  public get itemInfoPackets$(): Observable<any> {
+    return this._itemInfoPackets$.asObservable();
+  }
 
   constructor(private platformService: PlatformService, private router: Router) {
     // Only load ipc if we're running inside electron
@@ -59,11 +66,25 @@ export class IpcService {
 
   private connectListeners(): void {
     this.send('app-ready', true);
+    this.on('packet', (event, packet: any) => {
+      console.log('packet', packet.type, packet);
+      this.handlePacket(packet);
+    });
     this.on('navigate', (event, url: string) => {
       if (url.endsWith('/')) {
         url = url.substr(0, url.length - 1);
       }
       this.router.navigate(url.split('/'));
     });
+  }
+
+  private handlePacket(packet: any): void {
+    switch (packet.type) {
+      case 'itemInfo':
+        this._itemInfoPackets$.next(packet);
+        break;
+      default:
+        break;
+    }
   }
 }

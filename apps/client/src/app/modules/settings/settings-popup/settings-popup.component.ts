@@ -37,6 +37,8 @@ export class SettingsPopupComponent {
 
   alwaysOnTop = false;
 
+  machinaToggle = false;
+
   customTheme: Theme;
 
   startingPlaces = [
@@ -79,12 +81,20 @@ export class SettingsPopupComponent {
     this.ipc.on('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
     });
+    this.ipc.on('toggle-machina:value', (event, value) => {
+      this.machinaToggle = value;
+    });
     this.ipc.send('always-on-top:get');
+    this.ipc.send('toggle-machina:get');
     this.customTheme = this.settings.customTheme;
   }
 
   alwaysOnTopChange(value: boolean): void {
     this.ipc.send('always-on-top', value);
+  }
+
+  machinaToggleChange(value: boolean): void {
+    this.ipc.send('toggle-machina', value);
   }
 
   openDesktopConsole(): void {

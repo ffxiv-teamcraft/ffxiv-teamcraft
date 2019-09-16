@@ -371,6 +371,8 @@
     "Clickthrough_overlay": "Make overlay clickthrough",
     "Disable_search_history": "Disable search history",
     "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
+    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
