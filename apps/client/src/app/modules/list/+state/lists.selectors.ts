@@ -20,6 +20,11 @@ const getNeedsVerification = createSelector(
   (state: ListsState) => state.needsVerification
 );
 
+const getAutocompleteEnabled = createSelector(
+  getListsState,
+  (state: ListsState) => state.autocompletionEnabled
+);
+
 const getAllListDetails = createSelector(
   getListsState,
   (state: ListsState) => {
@@ -45,5 +50,6 @@ export const listsQuery = {
   getAllListDetails,
   getSelectedList,
   getCompacts,
-  getNeedsVerification
+  getNeedsVerification,
+  getAutocompleteEnabled
 };

@@ -33,7 +33,8 @@ export enum ListsActionTypes {
   ConvertLists = '[Lists] Convert Lists',
   OfflineListsLoaded = '[Lists] Offline lists loaded',
 
-  NeedsVerification = '[Lists] Needs character verification'
+  NeedsVerification = '[Lists] Needs character verification',
+  ToggleAutocompletion = '[Lists] Toggle autocompletion',
 }
 
 export class LoadMyLists implements Action {
@@ -58,6 +59,13 @@ export class NeedsVerification implements Action {
   readonly type = ListsActionTypes.NeedsVerification;
 
   constructor(public readonly verificationNeeded: boolean) {
+  }
+}
+
+export class ToggleAutocompletion implements Action {
+  readonly type = ListsActionTypes.ToggleAutocompletion;
+
+  constructor(public readonly enabled: boolean) {
   }
 }
 
@@ -217,4 +225,5 @@ export type ListsAction =
   | TeamListsLoaded
   | UnloadListDetails
   | ConvertLists
-  | OfflineListsLoaded;
+  | OfflineListsLoaded
+  | ToggleAutocompletion;

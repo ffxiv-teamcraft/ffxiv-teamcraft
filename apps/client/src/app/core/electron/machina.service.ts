@@ -2,12 +2,22 @@ import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UserInventoryService } from '../database/user-inventory.service';
 import { UniversalisService } from '../api/universalis.service';
-import { bufferTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import {
+  bufferTime,
+  distinctUntilChanged,
+  filter,
+  first,
+  map,
+  shareReplay,
+  switchMap,
+  withLatestFrom
+} from 'rxjs/operators';
 import { UserInventory } from '../../model/user/user-inventory';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
 import * as _ from 'lodash';
 import { InventoryPatch } from '../../model/user/inventory-patch';
+import { ListsFacade } from '../../modules/list/+state/lists.facade';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +33,8 @@ export class MachinaService {
   }
 
   constructor(private ipc: IpcService, private userInventoryService: UserInventoryService,
-              private universalis: UniversalisService, private authFacade: AuthFacade) {
+              private universalis: UniversalisService, private authFacade: AuthFacade,
+              private listsFacade: ListsFacade) {
     this.inventory$ = combineLatest([this.userInventoryService.getUserInventory(), this.authFacade.user$]).pipe(
       map(([inventory, user]) => {
         if (!inventory) {
@@ -95,8 +106,14 @@ export class MachinaService {
       })
     ).subscribe();
 
-    this.inventoryPatches$.subscribe(patch => {
-      console.log(patch);
-    });
+    this.inventoryPatches$
+      .pipe(
+        withLatestFrom(this.listsFacade.autocompleteEnabled$, this.listsFacade.selectedList$),
+        filter(([, autocompleteEnabled]) => autocompleteEnabled)
+      )
+      .subscribe(([patch, , list]) => {
+        const itemsEntry = list.items.find(i => i.id === patch.itemId);
+        this.listsFacade.setItemDone();
+      });
   }
 }

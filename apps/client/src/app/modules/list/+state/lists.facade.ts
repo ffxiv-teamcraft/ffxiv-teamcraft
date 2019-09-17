@@ -145,6 +145,8 @@ export class ListsFacade {
 
   needsVerification$ = this.store.select(listsQuery.getNeedsVerification);
 
+  autocompleteEnabled$ = this.store.select(listsQuery.getAutocompleteEnabled);
+
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade, private settings: SettingsService) {
   }
