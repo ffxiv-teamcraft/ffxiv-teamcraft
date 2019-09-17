@@ -18,6 +18,12 @@ export class IpcService {
     return this._itemInfoPackets$.asObservable();
   }
 
+  private _updateInventorySlotPackets$: Subject<any> = new Subject<any>();
+
+  public get updateInventorySlotPackets$(): Observable<any> {
+    return this._updateInventorySlotPackets$.asObservable();
+  }
+
   constructor(private platformService: PlatformService, private router: Router) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
@@ -82,6 +88,9 @@ export class IpcService {
     switch (packet.type) {
       case 'itemInfo':
         this._itemInfoPackets$.next(packet);
+        break;
+      case 'updateInventorySlot':
+        this._updateInventorySlotPackets$.next(packet);
         break;
       default:
         break;
