@@ -25,7 +25,6 @@ export class GarlandtoolsGroupLinkParser implements ExternalListLinkParser {
               res += `;${materia},null,1`;
             });
         }
-        console.log(res);
         return res;
       }).join(';')));
   }
