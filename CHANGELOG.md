@@ -31,6 +31,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **list:** added original url as list description when importing a list from external tool ([3b980c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b980c0))
 * **list:** added support for import from garlandtools group ([efa0260](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/efa0260))
+* **market:** re-enabled marketboard-related features using universalis ([3fd808](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3fd808))
 
 
 
