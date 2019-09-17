@@ -39,7 +39,7 @@ for (let i = 0; i < argv.length; i++) {
 }
 
 if (isDev) {
-  autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
+  // autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
 }
 
 if (!options.multi) {

@@ -19,7 +19,7 @@ import {
   UnloadListDetails,
   UpdateItem,
   UpdateList,
-  UpdateListIndex
+  UpdateListIndex, ToggleAutocompletion
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
@@ -253,6 +253,10 @@ export class ListsFacade {
 
   unload(key: string): void {
     this.store.dispatch(new UnloadListDetails(key));
+  }
+
+  toggleAutocomplete(newValue: boolean):void{
+    this.store.dispatch(new ToggleAutocompletion(newValue));
   }
 
   setNeedsverification(needed: boolean): void {

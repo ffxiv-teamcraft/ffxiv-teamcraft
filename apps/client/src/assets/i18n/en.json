@@ -522,6 +522,9 @@
     "New_tag": "New tag",
     "Amount_ilvl": "Amount (ilvl)",
     "Contributions_popup": "Contributions stats",
+    "Autofill_details": "This means that you can enable the list autofilling feature, adding items to the list as done as you do them ingame, without needing any additional action from you.",
+    "Autofill": "Autofill",
+    "Packet_capture_on": "Packet capture is enabled",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",

@@ -73,7 +73,6 @@ export class IpcService {
   private connectListeners(): void {
     this.send('app-ready', true);
     this.on('packet', (event, packet: any) => {
-      console.log('packet', packet.type, packet);
       this.handlePacket(packet);
     });
     this.on('navigate', (event, url: string) => {

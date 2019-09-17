@@ -109,11 +109,16 @@ export class MachinaService {
     this.inventoryPatches$
       .pipe(
         withLatestFrom(this.listsFacade.autocompleteEnabled$, this.listsFacade.selectedList$),
-        filter(([, autocompleteEnabled]) => autocompleteEnabled)
+        filter(([patch, autocompleteEnabled]) => autocompleteEnabled && patch.quantity > 0)
       )
       .subscribe(([patch, , list]) => {
         const itemsEntry = list.items.find(i => i.id === patch.itemId);
-        this.listsFacade.setItemDone();
+        const finalItemsEntry = list.finalItems.find(i => i.id === patch.itemId);
+        if (itemsEntry && itemsEntry.done < itemsEntry.amount) {
+          this.listsFacade.setItemDone(patch.itemId, itemsEntry.icon, false, patch.quantity, itemsEntry.recipeId, itemsEntry.amount);
+        } else if (!itemsEntry && finalItemsEntry && finalItemsEntry.done < finalItemsEntry.amount) {
+          this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount);
+        }
       });
   }
 }
