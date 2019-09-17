@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.8.4"></a>
+## [5.8.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.3...v5.8.4) (2019-09-17)
+
+
+### Bug Fixes
+
+* **marketboard:** fixed an issue with marketboard popup's total price and history date ([efb4e99](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/efb4e99))
+
+
+
 <a name="5.8.3"></a>
 ## [5.8.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.2...v5.8.3) (2019-09-17)
 
