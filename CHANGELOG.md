@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.8.4"></a>
+## [5.8.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.3...v5.8.4) (2019-09-17)
+
+
+### Bug Fixes
+
+* **marketboard:** fixed an issue with marketboard popup's total price and history date ([efb4e99](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/efb4e99))
+
+
+
+<a name="5.8.3"></a>
+## [5.8.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.2...v5.8.3) (2019-09-17)
+
+
+### Bug Fixes
+
+* **importer:** fixed an issue with garlandtools importer ([d9d1ea4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d9d1ea4))
+* **list:** fixed an issue with lists not being regenerated properly in some cases ([4f63560](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4f63560))
+
+
+### Features
+
+* **list:** added closest aetheryte to alarm button's tooltip ([191812b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/191812b))
+
+
+
 <a name="5.8.2"></a>
 ## [5.8.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.1...v5.8.2) (2019-09-10)
 
@@ -15,6 +41,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **list:** added original url as list description when importing a list from external tool ([3b980c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b980c0))
 * **list:** added support for import from garlandtools group ([efa0260](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/efa0260))
+* **market:** re-enabled marketboard-related features using universalis ([3fd808](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3fd808))
 
 
 
