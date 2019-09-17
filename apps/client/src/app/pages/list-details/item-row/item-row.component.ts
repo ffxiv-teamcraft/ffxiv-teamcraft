@@ -76,6 +76,7 @@ import { medicines } from '../../../core/data/sources/medicines';
 import { freeCompanyActions } from '../../../core/data/sources/free-company-actions';
 import { ConsumablesService } from '../../simulator/model/consumables.service';
 import { FreeCompanyActionsService } from '../../simulator/model/free-company-actions.service';
+import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
 
 @Component({
   selector: 'app-item-row',
@@ -300,6 +301,19 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       map(comments => comments.length > 0),
       startWith(false)
     );
+  }
+
+  openMarketboardDialog(): void {
+    this.modal.create({
+      nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${this.i18n.getName(this.l12n.getItem(this.item.id))}`,
+      nzContent: MarketboardPopupComponent,
+      nzComponentParams: {
+        itemId: this.item.id,
+        showHistory: true
+      },
+      nzFooter: null,
+      nzWidth: '80vw'
+    });
   }
 
   attachRotation(): void {
