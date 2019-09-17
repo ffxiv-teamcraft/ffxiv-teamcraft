@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MarketboardItem } from '@xivapi/angular-client/src/model/schema/market/marketboard-item';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
 
 @Injectable({ providedIn: 'root' })
@@ -25,7 +25,7 @@ export class UniversalisService {
             return {
               Server: listing.worldName,
               PricePerUnit: listing.pricePerUnit,
-              ProceTotal: listing.total,
+              PriceTotal: listing.total,
               IsHQ: listing.hq,
               Quantity: listing.quantity
             };
@@ -34,13 +34,15 @@ export class UniversalisService {
             return {
               Server: listing.worldName,
               PricePerUnit: listing.pricePerUnit,
-              ProceTotal: listing.total,
+              PriceTotal: listing.total,
               IsHQ: listing.hq,
-              Quantity: listing.quantity
+              Quantity: listing.quantity,
+              PurchaseDate: listing.timestamp
             };
           });
           return item as MarketboardItem;
-        })
+        }),
+        shareReplay(1)
       );
   }
 
