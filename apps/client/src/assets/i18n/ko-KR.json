@@ -76,7 +76,7 @@
     "Created_by": "제작자: {{name}}",
     "Share_link_copied": "공방 공유링크 복사됨",
     "Not_found": "해당 공방이 없거나 접근할 권한이 없습니다",
-    "Shared_workshops": "Workshops shared with you",
+    "Shared_workshops": "나와 공유된 공방",
     "Rename": "공방 이름변경",
     "Add_lists": "목록 추가"
   },
@@ -141,7 +141,7 @@
     "Undo": "Undo",
     "User": "User",
     "Tables": "Table",
-    "Pie_charts": "Pie charts"
+    "Pie_charts": "파이 차트"
   },
   "ALARMS": {
     "Title": "알람",
@@ -416,7 +416,7 @@
     "Merge_lists": "목록 병합",
     "Merge_lists_warning": "대규모 목록은 데이터베이스의 한계로 인해 병합이 불가능하기 때문에 여기에 표시되지 않습니다.",
     "Lists_merged": "목록 병합이 완료되었습니다!",
-    "Shared_lists": "Lists shared with you",
+    "Shared_lists": "나와 공유된 목록",
     "Add_selection": "선택항목을 목록에 추가",
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
@@ -548,7 +548,7 @@
         "ADD_TAG": "아이템에 태그 추가",
         "MARK_AS_DONE_IN_LOG": "수첩에 완료됨으로 표시",
         "MARKET_BOARD_INFORMATIONS": "장터게시판 정보",
-        "ATTACH_ROTATION": "Attach rotation"
+        "ATTACH_ROTATION": "제작 매크로 연동"
       }
     },
     "LAYOUT": {
