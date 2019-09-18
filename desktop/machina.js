@@ -4,19 +4,26 @@ const path = require('path');
 const { app } = require('electron');
 const log = require('electron-log');
 const isElevated = require('is-elevated');
+const { exec } = require('child_process');
+
+const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
 
 const Machina = new MachinaFFXIV(isDev ? { monitorType: 'WinPCap', noData: true } : {
   monitorType: 'WinPCap',
   noData: true,
-  machinaExePath: path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe'),
+  machinaExePath: machinaExePath,
   remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
   definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
 });
 
-module.exports.start = function(win) {
+module.exports.start = function(win, config) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
+      if (!config.get('firewall')) {
+        exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
+        config.set('firewall', true);
+      }
       Machina.start(() => {
         log.info('Packet capture started');
       });
