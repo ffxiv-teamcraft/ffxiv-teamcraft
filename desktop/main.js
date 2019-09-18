@@ -119,7 +119,7 @@ function createWindow() {
   }
 
   if (config.get('machina') === true) {
-    Machina.start(win);
+    Machina.start(win, config);
   }
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
@@ -287,7 +287,7 @@ ipcMain.on('app-ready', (event) => {
 ipcMain.on('toggle-machina', (event, enabled) => {
   config.set('machina', enabled);
   if (enabled) {
-    Machina.start(win);
+    Machina.start(win, config);
   } else {
     Machina.stop();
   }
