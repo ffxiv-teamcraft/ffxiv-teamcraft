@@ -1,5 +1,5 @@
 {
-  "name": "ffxiv-teamcraft",
+  "name": "ffxiv-teamcraft-beta",
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
@@ -18,6 +18,15 @@
       "desktop/machina.js",
       "dist"
     ],
+    "extraResources": [
+      {
+        "from": "./node_modules/node-machina-ffxiv/MachinaWrapper",
+        "to": "MachinaWrapper",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
     "protocols": {
       "name": "ffxiv-teamcraft",
       "schemes": [
@@ -30,6 +39,7 @@
     "win": {
       "icon": "./tools/build/icon.ico",
       "publisherName": "FFXIV Teamcraft",
+      "requestedExecutionLevel": "highestAvailable",
       "publish": {
         "provider": "github",
         "releaseType": "release"

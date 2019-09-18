@@ -1,7 +1,17 @@
 const MachinaFFXIV = require('node-machina-ffxiv');
-const Machina = new MachinaFFXIV({ monitorType: 'WinPCap' });
+const isDev = require('electron-is-dev');
+const path = require('path');
+const { app } = require('electron');
 const log = require('electron-log');
 const isElevated = require('is-elevated');
+
+const Machina = new MachinaFFXIV(isDev ? { monitorType: 'WinPCap', noData: true } : {
+  monitorType: 'WinPCap',
+  noData: true,
+  machinaExePath: path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe'),
+  remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
+  definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
+});
 
 module.exports.start = function(win) {
   isElevated().then(elevated => {

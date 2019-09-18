@@ -190,7 +190,7 @@
               <h2>{{'LIST_DETAILS.Packet_capture_on' | translate}}</h2>
               <p>{{'LIST_DETAILS.Autofill_details' | translate}}</p>
               <div fxLayout="row" fxLayoutGap="5px">
-                <div>{{'LIST_DETAILS.Autofill'}}:</div>
+                <div>{{'LIST_DETAILS.Autofill' | translate}}:</div>
                 <div>
                   <nz-switch [ngModel]="listsFacade.autocompleteEnabled$ | async"
                              (ngModelChange)="listsFacade.toggleAutocomplete($event)"></nz-switch>
