@@ -1,5 +1,5 @@
 {
-  "name": "ffxiv-teamcraft-beta",
+  "name": "ffxiv-teamcraft",
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
@@ -24,6 +24,13 @@
         "to": "MachinaWrapper",
         "filter": [
           "**/*"
+        ]
+      },
+      {
+        "from": "./desktop",
+        "to": "MachinaWrapper",
+        "filter": [
+          "**/*.dll"
         ]
       }
     ],
