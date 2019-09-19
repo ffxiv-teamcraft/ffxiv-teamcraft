@@ -7,6 +7,7 @@ import { MarketboardItem } from '@xivapi/angular-client/src/model/schema/market/
 import { SettingsService } from '../../settings/settings.service';
 import { HttpClient } from '@angular/common/http';
 import { UniversalisService } from '../../../core/api/universalis.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-marketboard-popup',
@@ -39,7 +40,7 @@ export class MarketboardPopupComponent implements OnInit {
   });
 
   constructor(private authFacade: AuthFacade, private http: HttpClient, private lazyData: LazyDataService,
-              private settings: SettingsService, private universalis: UniversalisService) {
+              private settings: SettingsService, private universalis: UniversalisService, private translate: TranslateService) {
   }
 
   ngOnInit() {
@@ -110,7 +111,9 @@ export class MarketboardPopupComponent implements OnInit {
       }),
       tap(() => this.loadingHistory = false),
       map(history => {
-        return history.map(entry => {
+        return history
+          .sort((a,b) => b.PurchaseDate - a.PurchaseDate)
+          .map(entry => {
           return {
             ...entry,
             PurchaseDate: entry.PurchaseDate + '000'
@@ -123,6 +126,10 @@ export class MarketboardPopupComponent implements OnInit {
 
   sort(event: any): void {
     this.sort$.next({ key: event.key, value: event.value });
+  }
+
+  getLocale(): string {
+    return this.translate.currentLang;
   }
 
 }

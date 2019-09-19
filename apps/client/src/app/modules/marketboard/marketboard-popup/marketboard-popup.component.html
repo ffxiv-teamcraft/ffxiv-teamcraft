@@ -38,7 +38,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let row of historyTable.data">
-          <td>{{row.PurchaseDate | date:'short'}}</td>
+          <td>{{row.PurchaseDate | date:'short':undefined:getLocale()}}</td>
           <td>{{row.Quantity}}</td>
           <td>{{row.Server}}</td>
           <td><img src="./assets/icons/HQ.png" alt="HQ" *ngIf="row.IsHQ" class="hq-icon"></td>
