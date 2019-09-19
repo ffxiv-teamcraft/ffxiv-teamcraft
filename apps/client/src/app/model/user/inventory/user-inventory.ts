@@ -1,4 +1,4 @@
-import { DataWithPermissions } from '../../core/database/permissions/data-with-permissions';
+import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { InventoryItem } from './inventory-item';
 import { DeserializeAs } from '@kaiu/serializer';
 import { InventoryPatch } from './inventory-patch';

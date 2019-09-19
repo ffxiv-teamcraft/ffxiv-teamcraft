@@ -120,6 +120,10 @@
               <i nz-icon type="idcard"></i>
               {{'Profile' | translate}}
             </a>
+              <a nz-menu-item routerLink="/inventory">
+              <i nz-icon type="appstore"></i>
+              {{'INVENTORY.Title' | translate}}
+            </a>
             <a nz-menu-item *ngIf="loggedIn$ | async" routerLink="/teams">
               <i nz-icon type="team"></i>
               {{'TEAMS.Title' | translate}}

@@ -3,7 +3,7 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FirestoreRelationalStorage } from './storage/firestore/firestore-relational-storage';
-import { UserInventory } from '../../model/user/user-inventory';
+import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../+state/auth.facade';
 import { Observable } from 'rxjs';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';

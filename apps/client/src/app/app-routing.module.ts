@@ -140,6 +140,10 @@ const routes: Routes = [
   {
     path: 'reset-timers',
     loadChildren: './pages/reset-timers/reset-timers.module#ResetTimersModule'
+  },
+  {
+    path: 'inventory',
+    loadChildren: './pages/inventory/inventory.module#InventoryModule'
   }
 ];
 

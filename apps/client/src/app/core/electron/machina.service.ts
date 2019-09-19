@@ -12,11 +12,11 @@ import {
   switchMap,
   withLatestFrom
 } from 'rxjs/operators';
-import { UserInventory } from '../../model/user/user-inventory';
+import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
 import * as _ from 'lodash';
-import { InventoryPatch } from '../../model/user/inventory-patch';
+import { InventoryPatch } from '../../model/user/inventory/inventory-patch';
 import { ListsFacade } from '../../modules/list/+state/lists.facade';
 
 @Injectable({
@@ -57,11 +57,13 @@ export class MachinaService {
     this.ipc.itemInfoPackets$.pipe(
       filter(packet => {
         return packet.slot >= 0 && packet.slot < 32000
-          && (packet.hq === 0 || packet.hq === 1);
+          && packet.catalogId < 40000
+          && (packet.hqFlag === 0 || packet.hqFlag === 1);
       }),
       bufferTime(500),
       filter(packets => packets.length > 0),
       switchMap(itemInfos => {
+        console.log(itemInfos);
         return this.inventory$.pipe(
           first(),
           map((inventory) => {
@@ -74,7 +76,7 @@ export class MachinaService {
                   containerId: +itemInfo.containerId,
                   slot: +itemInfo.slot,
                   quantity: +itemInfo.quantity,
-                  hq: itemInfo.hq === 1
+                  hq: itemInfo.hqFlag === 1
                 };
               })];
             return inventory;
@@ -93,7 +95,7 @@ export class MachinaService {
     this.ipc.updateInventorySlotPackets$.pipe(
       filter(packet => {
         return packet.slot >= 0 && packet.slot < 32000
-          && packet.quantity > 0
+          && packet.quantity > 0;
       }),
       switchMap((packet) => {
         return this.inventory$.pipe(
