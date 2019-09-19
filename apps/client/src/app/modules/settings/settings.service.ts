@@ -244,6 +244,14 @@ export class SettingsService {
     this.setSetting('showCopyOnOwnList', tagsEnabled.toString());
   }
 
+  public get hideMachinaBanner(): boolean {
+    return this.getSetting('machina:hide-banner', 'false') === 'true';
+  }
+
+  public set hideMachinaBanner(hide: boolean) {
+    this.setSetting('machina:hide-banner', hide.toString());
+  }
+
   public get customTheme(): Theme {
     return {
       ...Theme.DEFAULT,

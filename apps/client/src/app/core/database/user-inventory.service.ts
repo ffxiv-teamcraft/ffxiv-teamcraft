@@ -28,6 +28,15 @@ export class UserInventoryService extends FirestoreRelationalStorage<UserInvento
               return inventories.find(inventory => inventory.characterId === user.defaultLodestoneId);
             }
             return inventories[0];
+          }),
+          map(inventory => {
+            if (inventory === undefined) {
+              const newInventory = new UserInventory();
+              newInventory.authorId = user.$key;
+              newInventory.characterId = user.defaultLodestoneId;
+              return newInventory;
+            }
+            return inventory;
           })
         );
       }));

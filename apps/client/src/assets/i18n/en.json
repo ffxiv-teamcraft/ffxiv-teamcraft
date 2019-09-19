@@ -141,7 +141,8 @@
     "Undo": "Undo",
     "User": "User",
     "Tables": "Table",
-    "Pie_charts": "Pie charts"
+    "Pie_charts": "Pie charts",
+    "Read_more_on_wiki": "Read more details on wiki"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -169,7 +170,7 @@
       "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
       "ROULETTES_RESET": "Roulettes & Beast tribes",
       "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
-      "DELIVERIES_RESET" : "Deliveries",
+      "DELIVERIES_RESET": "Deliveries",
       "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
       "LEVE_ALLOWANCES": "Leve allowances",
       "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
@@ -522,9 +523,8 @@
     "New_tag": "New tag",
     "Amount_ilvl": "Amount (ilvl)",
     "Contributions_popup": "Contributions stats",
-    "Autofill_details": "This means that you can enable the list autofilling feature, adding items to the list as done as you do them ingame, without needing any additional action from you.",
+    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
     "Autofill": "Autofill",
-    "Packet_capture_on": "Packet capture is enabled",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -1520,5 +1520,13 @@
     "Gathering": "Gathering",
     "Helpers": "Helpers",
     "Other": "Other"
+  },
+  "PACKET_CAPTURE": {
+    "Banner_title": "Packet capture is available",
+    "Button_label": "Enable packet capture",
+    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
+    "Empty_inventory": "Your inventory hasn't been loaded yet",
+    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly."
   }
 }
