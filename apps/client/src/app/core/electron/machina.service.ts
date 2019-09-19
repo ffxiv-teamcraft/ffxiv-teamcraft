@@ -55,6 +55,10 @@ export class MachinaService {
 
   public init(): void {
     this.ipc.itemInfoPackets$.pipe(
+      filter(packet => {
+        return packet.slot >= 0 && packet.slot < 32000
+          && (packet.hq === 0 || packet.hq === 1);
+      }),
       bufferTime(500),
       filter(packets => packets.length > 0),
       switchMap(itemInfos => {
@@ -87,6 +91,10 @@ export class MachinaService {
     ).subscribe();
 
     this.ipc.updateInventorySlotPackets$.pipe(
+      filter(packet => {
+        return packet.slot >= 0 && packet.slot < 32000
+          && packet.quantity > 0
+      }),
       switchMap((packet) => {
         return this.inventory$.pipe(
           first(),
