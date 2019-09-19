@@ -17,6 +17,7 @@ import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { PriceCheckResultComponent } from '../price-check-result/price-check-result.component';
 import { NumberQuestionPopupComponent } from '../../number-question-popup/number-question-popup/number-question-popup.component';
+import { UniversalisService } from '../../../core/api/universalis.service';
 
 @Component({
   selector: 'app-pricing',
@@ -54,7 +55,7 @@ export class PricingComponent implements AfterViewInit {
               private listsFacade: ListsFacade, private xivapi: XivapiService, private authFacade: AuthFacade,
               private progressService: ProgressPopupService, private l12n: LocalizedDataService, private i18n: I18nToolsService,
               private translate: TranslateService, private message: NzMessageService, private cd: ChangeDetectorRef,
-              private lazyData: LazyDataService, private dialog: NzModalService) {
+              private lazyData: LazyDataService, private dialog: NzModalService, private universalis: UniversalisService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       tap(list => {
         this.updateCosts(list);
@@ -130,18 +131,14 @@ export class PricingComponent implements AfterViewInit {
         const row = rowsToFill[index];
         return this.server$.pipe(
           mergeMap(server => {
-            return this.xivapi.getMarketBoardItemCrossServer(Object.keys(this.lazyData.datacenters).find(dc => {
-              return this.lazyData.datacenters[dc].indexOf(server) > -1;
-            }), row.id).pipe(
-              map(res => {
-                let prices: any[] = [].concat.apply([], Object.keys(res).map(serverName => {
-                  return res[serverName].Prices.map(price => {
-                    (<any>price).Server = serverName;
-                    return price;
-                  });
-                }));
+            const dc = Object.keys(this.lazyData.datacenters).find(key => {
+              return this.lazyData.datacenters[key].indexOf(server) > -1;
+            });
+            return this.universalis.getDCPrices(row.id, dc).pipe(
+              map(item => {
+                let prices = item.Prices;
                 if (finalItems || this.settings.disableCrossWorld) {
-                  prices = prices.filter(price => price.Server === server);
+                  prices = prices.filter(price => (<any>price).Server === server);
                 }
                 const cheapestHq = prices.filter(p => p.IsHQ)
                   .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
@@ -150,9 +147,9 @@ export class PricingComponent implements AfterViewInit {
                 return {
                   item: row,
                   hq: cheapestHq ? cheapestHq.PricePerUnit : this.pricingService.getPrice(row).hq,
-                  hqServer: cheapestHq ? cheapestHq.Server : null,
+                  hqServer: cheapestHq ? (<any>cheapestHq).Server : null,
                   nq: cheapestNq ? cheapestNq.PricePerUnit : this.pricingService.getPrice(row).nq,
-                  nqServer: cheapestNq ? cheapestNq.Server : null
+                  nqServer: cheapestNq ? (<any>cheapestNq).Server : null
                 };
               })
             );
