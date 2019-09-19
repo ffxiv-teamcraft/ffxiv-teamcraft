@@ -302,7 +302,7 @@ export class PricingComponent implements AfterViewInit {
     return rows.filter(row => row.usePrice)
       .reduce((total, row) => {
         const price = this.pricingService.getPrice(row);
-        const amount = this.pricingService.getAmount(list.$key, row, true);
+        const amount = this.pricingService.getAmount(list.$key, row, false);
         let priceString: string;
         if (price.hq > 0 && amount.hq > 0) {
           priceString = `${price.hq.toLocaleString()}gil x${amount.hq}(HQ)`;
