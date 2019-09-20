@@ -35,7 +35,6 @@ import { ListLayout } from '../../../core/layout/list-layout';
 import { ObservableMedia } from '@angular/flex-layout';
 import { ListContributionsComponent } from '../list-contributions/list-contributions.component';
 import * as _ from 'lodash';
-import { SettingsService } from '../../../modules/settings/settings.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 
 @Component({
@@ -401,6 +400,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.list$.pipe(first()).subscribe(list => {
       this.listsFacade.unload(list.$key);
     });
+    this.listsFacade.toggleAutocomplete(false);
     super.ngOnDestroy();
   }
 
