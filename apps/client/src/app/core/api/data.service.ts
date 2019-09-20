@@ -191,7 +191,8 @@ export class DataService {
       results$ = this.xivapi.getList(
         XivapiEndpoint.Item,
         {
-          ids: this.mapToItemIds(query, this.i18n.currentLang as 'ko' | 'zh')
+          ids: this.mapToItemIds(query, this.i18n.currentLang as 'ko' | 'zh'),
+          columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks'],
         }
       ).pipe(
         map(items => {
