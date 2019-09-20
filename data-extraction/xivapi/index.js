@@ -57,7 +57,8 @@ let todo = [
   'recipes',
   'actions',
   'monsterDrops',
-  'voyages'
+  'voyages',
+  'worlds'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -1365,5 +1366,16 @@ if (hasTodo('voyages')) {
     });
   }, null, () => {
     persistToTypescript('submarine-voyages', 'submarineVoyages', submarineVoyages);
+  });
+}
+
+if (hasTodo('worlds')) {
+  const worlds = {};
+  getAllPages('https://xivapi.com/World?columns=ID,Name').subscribe(page => {
+    page.Results.forEach(world => {
+      worlds[world.Name.toLowerCase()] = world.ID;
+    });
+  }, null, () => {
+    persistToTypescript('worlds', 'worlds', worlds);
   });
 }

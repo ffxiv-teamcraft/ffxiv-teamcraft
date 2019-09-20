@@ -24,6 +24,24 @@ export class IpcService {
     return this._updateInventorySlotPackets$.asObservable();
   }
 
+  private _cid$: Subject<any> = new Subject<any>();
+
+  public get cid$(): Observable<any> {
+    return this._cid$.asObservable();
+  }
+
+  private _worldId$: Subject<any> = new Subject<any>();
+
+  public get worldId$(): Observable<any> {
+    return this._worldId$.asObservable();
+  }
+
+  private _marketboardListing$: Subject<any> = new Subject<any>();
+
+  public get marketboardListing$(): Observable<any> {
+    return this._marketboardListing$.asObservable();
+  }
+
   constructor(private platformService: PlatformService, private router: Router) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
@@ -91,7 +109,17 @@ export class IpcService {
       case 'updateInventorySlot':
         this._updateInventorySlotPackets$.next(packet);
         break;
+      case 'marketBoardItemListing':
+        this._marketboardListing$.next(packet);
+        break;
+      case 'playerSetup':
+        this._cid$.next(packet.contentId);
+        break;
+      case 'playerSpawn':
+        this._worldId$.next(packet.currentWorldId);
+        break;
       default:
+        console.log(packet);
         break;
     }
   }

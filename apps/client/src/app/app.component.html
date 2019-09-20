@@ -122,7 +122,7 @@
             </a>
               <a nz-menu-item routerLink="/inventory">
               <i nz-icon type="appstore"></i>
-              {{'INVENTORY.Title' | translate}}
+                {{'INVENTORY.Title' | translate}}
             </a>
             <a nz-menu-item *ngIf="loggedIn$ | async" routerLink="/teams">
               <i nz-icon type="team"></i>
@@ -416,6 +416,12 @@
                     [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
                     [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate"
                     *ngIf="platformService.isDesktop() && machinaToggle && emptyInventory$ | async"
+                    nzShowIcon>
+          </nz-alert>
+          <nz-alert nzType="warning" class="new-version-alert" nzBanner
+                    [nzMessage]="'PACKET_CAPTURE.No_character_id' | translate"
+                    [nzDescription]="'PACKET_CAPTURE.Please_relog' | translate"
+                    *ngIf="platformService.isDesktop() && machinaToggle && ((user$ | async)?.cid === undefined)"
                     nzShowIcon>
           </nz-alert>
           <nz-spin [nzSize]="'large'" [nzSpinning]="navigating" class="app-container">

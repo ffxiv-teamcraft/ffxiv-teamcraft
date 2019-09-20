@@ -1,14 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MarketboardItem } from '@xivapi/angular-client/src/model/schema/market/marketboard-item';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
+import { AuthFacade } from '../../+state/auth.facade';
+import { IpcService } from '../electron/ipc.service';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
 
-  constructor(private http: HttpClient, private lazyData: LazyDataService) {
+  private cid$: Observable<string> = this.authFacade.user$.pipe(
+    map(user => user.cid),
+    filter(cid => cid !== undefined),
+    distinctUntilChanged(),
+    shareReplay(1)
+  );
+
+  private worldId$: Observable<number> = this.authFacade.user$.pipe(
+    map(user => user.world),
+    filter(world => world !== undefined),
+    distinctUntilChanged(),
+    shareReplay(1)
+  );
+
+  constructor(private http: HttpClient, private lazyData: LazyDataService, private authFacade: AuthFacade,
+              private ipc: IpcService) {
   }
 
   public getDCPrices(itemId: number, dc: string): Observable<MarketboardItem> {
@@ -90,7 +107,49 @@ export class UniversalisService {
       );
   }
 
-  public pushPrices(worldID: number, itemID: number, uploaderID: string, listings: any[]): void {
-    // TODO
+  public initCapture(): void {
+    this.ipc.marketboardListing$.subscribe(listing => {
+      this.handleMarketboardListingPacket(listing);
+    });
+  }
+
+  public handleMarketboardListingPacket(packet: any): void {
+    combineLatest([this.cid$, this.worldId$]).pipe(
+      first(),
+      switchMap(([cid, worldId]) => {
+        console.log(packet);
+        const data = {
+          worldID: worldId,
+          itemID: packet.itemID,
+          uploaderID: cid,
+          listings: packet.listings.map(item => {
+            return {
+              listingID: item.listingID,
+              hq: item.hq === 1,
+              materia: item.materia.map((materia, index) => {
+                return {
+                  materiaId: materia,
+                  slotId: index
+                };
+              }),
+              pricePerUnit: item.pricePerUnit,
+              quantity: item.quantity,
+              total: item.total,
+              retainerID: item.retainerID,
+              retainerName: item.retainerName,
+              retainerCity: item.city,
+              creatorName: item.playerName,
+              creatorID: item.artisanID,
+              sellerID: item.retainerOwnerID,
+              lastReviewTime: item.lastReviewTime,
+              stainID: item.dyeID
+            };
+          })
+        };
+        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+          headers: new HttpHeaders().append('Content-Type', 'application/json')
+        });
+      })
+    ).subscribe();
   }
 }

@@ -16,6 +16,10 @@ const Machina = new MachinaFFXIV(isDev ? { monitorType: 'WinPCap', noData: true 
   definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
 });
 
+function sendToRenderer(win, packet) {
+  win && win.webContents && win.webContents.send('packet', packet);
+}
+
 module.exports.start = function(win, config) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
@@ -32,21 +36,18 @@ module.exports.start = function(win, config) {
     }
   });
 
-  Machina.on('itemInfo', (packet) => {
-    /**
-     * catalogId => Item id
-     *
-     * If normal inventory, containerId => position
-     * If armory chest or saddlebag, containerId is % 1000 and slot is position.
-     */
-    win && win.webContents.send('packet', packet);
-  });
-
-  Machina.on('updateInventorySlot', (packet) => {
-    /**
-     *
-     */
-    win && win.webContents.send('packet', packet);
+  Machina.on('any', (packet) => {
+    const acceptedPackets = [
+      'itemInfo',
+      'updateInventorySlot',
+      'marketBoardItemListing',
+      'marketBoardItemListingHistory',
+      'playerSetup',
+      'playerSpawn'
+    ];
+    if (acceptedPackets.indexOf(packet.type) > -1) {
+      sendToRenderer(win, packet);
+    }
   });
 };
 

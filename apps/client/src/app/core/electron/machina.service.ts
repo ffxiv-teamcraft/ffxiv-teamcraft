@@ -63,7 +63,6 @@ export class MachinaService {
       bufferTime(500),
       filter(packets => packets.length > 0),
       switchMap(itemInfos => {
-        console.log(itemInfos);
         return this.inventory$.pipe(
           first(),
           map((inventory) => {

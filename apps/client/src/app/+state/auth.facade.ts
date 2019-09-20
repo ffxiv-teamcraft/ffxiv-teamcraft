@@ -12,8 +12,10 @@ import {
   RemoveCharacter,
   SaveDefaultConsumables,
   SaveSet,
+  SetCID,
   SetCurrentFcId,
   SetDefaultCharacter,
+  SetWorld,
   ToggleFavorite,
   ToggleMasterbooks,
   UpdateUser,
@@ -62,7 +64,7 @@ export class AuthFacade {
     })
   );
   characters$ = this.store.select(authQuery.getCharacters);
-  mainCharacterEntry$ = combineLatest(this.mainCharacter$, this.user$).pipe(
+  mainCharacterEntry$ = combineLatest([this.mainCharacter$, this.user$]).pipe(
     map(([char, user]) => {
       const lodestoneIdEntry = user.lodestoneIds.find(entry => entry.id === user.defaultLodestoneId);
       return {
@@ -120,6 +122,13 @@ export class AuthFacade {
               private platformService: PlatformService, private ipc: IpcService,
               private dialog: NzModalService, private translate: TranslateService,
               private oauthService: OauthService) {
+    this.ipc.cid$.subscribe(cid => {
+      this.setCID(cid);
+    });
+
+    this.ipc.worldId$.subscribe(worldId => {
+      this.setWorld(worldId);
+    });
   }
 
   resetPassword(email: string): void {
@@ -208,6 +217,14 @@ export class AuthFacade {
 
   public toggleFavorite(dataType: keyof Favorites, key: string): void {
     this.store.dispatch(new ToggleFavorite(dataType, key));
+  }
+
+  public setCID(cid: string): void {
+    this.store.dispatch(new SetCID(cid));
+  }
+
+  public setWorld(world: number): void {
+    this.store.dispatch(new SetWorld(world));
   }
 
   private oauthPopup(provider: any): Observable<UserCredential> {

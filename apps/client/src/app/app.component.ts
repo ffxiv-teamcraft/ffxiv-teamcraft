@@ -58,6 +58,7 @@ import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
 import { MachinaService } from './core/electron/machina.service';
 import { UserInventoryService } from './core/database/user-inventory.service';
+import { UniversalisService } from './core/api/universalis.service';
 
 declare const gtag: Function;
 
@@ -160,7 +161,7 @@ export class AppComponent implements OnInit {
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private machina: MachinaService, private message: NzMessageService,
+              private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: UserInventoryService, @Inject(PLATFORM_ID) private platform: Object) {
 
     this.showGiveaway = false;
@@ -206,6 +207,7 @@ export class AppComponent implements OnInit {
             return inventory.items.length === 0;
           })
         );
+        this.universalis.initCapture();
       }
 
       this.firebase.object('maintenance')
