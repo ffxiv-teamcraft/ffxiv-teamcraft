@@ -138,10 +138,10 @@
     "Top": "Topo",
     "Bottom": "Inferior",
     "Amount": "Quantidade",
-    "Undo": "Undo",
-    "User": "User",
-    "Tables": "Table",
-    "Pie_charts": "Pie charts"
+    "Undo": "Anular",
+    "User": "Utilizador",
+    "Tables": "Tabela",
+    "Pie_charts": "Gráfico circular"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -416,7 +416,7 @@
     "Merge_lists": "Juntar listas",
     "Merge_lists_warning": "Listas grandes não estão aqui listadas, porque não é possível juntar listas que são muito grandes devido às limitações da base de dados.",
     "Lists_merged": "Listas juntadas com sucesso!",
-    "Shared_lists": "Lists shared with you",
+    "Shared_lists": "Listas partilhadas consigo",
     "Add_selection": "Adicionar selecção a uma lista",
     "Your_lists": "As suas listas",
     "Outdated_tag": "Desactualizado",
@@ -546,7 +546,7 @@
         "REQUIREMENTS": "Requisitos",
         "REMOVE_ITEM": "Remover item da lista",
         "ADD_TAG": "Adicionar tag ao item",
-        "MARK_AS_DONE_IN_LOG": "Mark as done inside log",
+        "MARK_AS_DONE_IN_LOG": "Marcar como concluído no log",
         "MARKET_BOARD_INFORMATIONS": "Marketboard information",
         "ATTACH_ROTATION": "Attach rotation"
       }
@@ -649,7 +649,7 @@
     "Ephemeral_node": "Node temporária, pode reaparecer",
     "Intro": "A localização de colheita tanto-lhe permite facilmente encontrar um item colhível, como informações sobre o mesmo, e criar um alarme para um determinado node. Basta inserir um nome no campo acima e deixe-o encontrar o que está á procura!",
     "Hidden_item": "Escondido",
-    "Fish_eyes": "Requires fish eyes",
+    "Fish_eyes": "Requer Fish Eyes",
     "Snagging": "Requires snagging",
     "Predators": "Fish these fish before",
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
@@ -1021,6 +1021,7 @@
     "History": "Histórico",
     "Purchase_date": "Data",
     "More_on_mogboard": "Mais detalhes no mogboard",
+    "More_on_universalis": "More details on universalis",
     "Server": "Server"
   },
   "COMMENTS": {

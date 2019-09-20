@@ -10,12 +10,12 @@ import {
   ListDetailsLoaded,
   ListsActionTypes,
   ListsForTeamsLoaded,
-  SharedListsLoaded,
   LoadListCompact,
   LoadListDetails,
   LoadTeamLists,
   MyListsLoaded,
   SetItemDone,
+  SharedListsLoaded,
   TeamListsLoaded,
   UnloadListDetails,
   UpdateItem,
@@ -180,6 +180,19 @@ export class ListsEffects {
   );
 
   @Effect()
+  loadOfflineListDetails$ = this.actions$.pipe(
+    ofType<LoadListDetails>(ListsActionTypes.LoadListDetails),
+    filter(action => /^offline\d+$/.test(action.key)),
+    map((action) => {
+      const list = this.localStore.find(c => c.$key === action.key);
+      if (list === undefined) {
+        return new ListDetailsLoaded({ $key: action.key, notFound: true });
+      }
+      return new ListDetailsLoaded(list);
+    })
+  );
+
+  @Effect()
   createOptimisticListCompact$ = this.actions$.pipe(
     ofType<CreateOptimisticListCompact>(ListsActionTypes.CreateOptimisticListCompact),
     withLatestFrom(this.listsFacade.myLists$),
@@ -196,7 +209,7 @@ export class ListsEffects {
     map(action => action as UpdateListIndex),
     mergeMap(action => {
       if (action.payload.offline) {
-        this.saveToLocalstorage(action.payload, true);
+        this.saveToLocalstorage(action.payload, false);
         return EMPTY;
       }
       return combineLatest([

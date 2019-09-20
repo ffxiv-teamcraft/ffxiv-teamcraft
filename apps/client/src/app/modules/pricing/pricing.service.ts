@@ -125,7 +125,7 @@ export class PricingService {
    *
    * @param listUid
    * @param {ListRow} item
-   * @param hq so we wawnt default value in nq or hq?
+   * @param hq so we want default value in nq or hq?
    * @returns {ItemAmount}
    */
   getAmount(listUid: string, item: ListRow, hq = false): ItemAmount {
