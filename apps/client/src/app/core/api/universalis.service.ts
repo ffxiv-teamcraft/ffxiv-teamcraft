@@ -111,13 +111,18 @@ export class UniversalisService {
     this.ipc.marketboardListing$.subscribe(listing => {
       this.handleMarketboardListingPacket(listing);
     });
+    this.ipc.marketboardListingHistory$.subscribe(listing => {
+      this.handleMarketboardListingHistoryPacket(listing);
+    });
+    this.ipc.cid$.subscribe(packet => {
+      this.uploadCid(packet);
+    });
   }
 
   public handleMarketboardListingPacket(packet: any): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
       switchMap(([cid, worldId]) => {
-        console.log(packet);
         const data = {
           worldID: worldId,
           itemID: packet.itemID,
@@ -151,5 +156,43 @@ export class UniversalisService {
         });
       })
     ).subscribe();
+  }
+
+  public handleMarketboardListingHistoryPacket(packet: any): void {
+    combineLatest([this.cid$, this.worldId$]).pipe(
+      first(),
+      switchMap(([cid, worldId]) => {
+        const data = {
+          worldID: worldId,
+          itemID: packet.itemID,
+          uploaderID: cid,
+          entries: packet.listings
+            .map((item) => {
+              return {
+                hq: item.hs,
+                pricePerUnit: item.salePrice,
+                quantity: item.quantity,
+                total: item.salePrice * item.quantity,
+                buyerName: item.buyerName,
+                onMannequin: item.onMannequin,
+                timestamp: item.purchaseTime
+              };
+            })
+        };
+        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+          headers: new HttpHeaders().append('Content-Type', 'application/json')
+        });
+      })
+    ).subscribe();
+  }
+
+  public uploadCid(packet: any): void {
+    const data = {
+      contentID: packet.contentID,
+      characterName: packet.name
+    };
+    this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+      headers: new HttpHeaders().append('Content-Type', 'application/json')
+    }).subscribe();
   }
 }

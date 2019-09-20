@@ -122,8 +122,8 @@ export class AuthFacade {
               private platformService: PlatformService, private ipc: IpcService,
               private dialog: NzModalService, private translate: TranslateService,
               private oauthService: OauthService) {
-    this.ipc.cid$.subscribe(cid => {
-      this.setCID(cid);
+    this.ipc.cid$.subscribe(packet => {
+      this.setCID(packet.contentID);
     });
 
     this.ipc.worldId$.subscribe(worldId => {

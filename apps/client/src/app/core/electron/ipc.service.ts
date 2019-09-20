@@ -42,6 +42,12 @@ export class IpcService {
     return this._marketboardListing$.asObservable();
   }
 
+  private _marketboardListingHistory$: Subject<any> = new Subject<any>();
+
+  public get marketboardListingHistory$(): Observable<any> {
+    return this._marketboardListingHistory$.asObservable();
+  }
+
   constructor(private platformService: PlatformService, private router: Router) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
@@ -112,8 +118,11 @@ export class IpcService {
       case 'marketBoardItemListing':
         this._marketboardListing$.next(packet);
         break;
+      case 'marketBoardItemListingHistory':
+        this._marketboardListingHistory$.next(packet);
+        break;
       case 'playerSetup':
-        this._cid$.next(packet.contentId);
+        this._cid$.next(packet);
         break;
       case 'playerSpawn':
         this._worldId$.next(packet.currentWorldId);
