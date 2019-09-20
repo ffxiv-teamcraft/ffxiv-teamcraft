@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.8.5"></a>
+## [5.8.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.4...v5.8.5) (2019-09-20)
+
+
+### Bug Fixes
+
+* **log-tracker:** fixed an issue with offline lists on log tracker ([8bcffc2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8bcffc2))
+* **marketboard:** fixed ordering in history tab ([d7d7ef3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d7d7ef3))
+* **marketboard:** fixed pricing mode integration ([a0255b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a0255b2))
+* **offline-list:** fixed multiple issues with offline lists ([a9aa6ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a9aa6ab))
+* **pricing:** fixed an issue with copy to text outputing wrong values ([2ed20a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2ed20a9))
+* **search:** fixed an issue with chinese recipe search ([66ad4d9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66ad4d9))
+
+
+### Features
+
+* **layout:** new filter: IS_END_CRAFT_MATERIAL ([8f6a7b8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f6a7b8))
+
+
+
 <a name="5.8.4"></a>
 ## [5.8.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.3...v5.8.4) (2019-09-17)
 
