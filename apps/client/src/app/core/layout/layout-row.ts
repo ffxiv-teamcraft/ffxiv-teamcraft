@@ -2,6 +2,7 @@ import { LayoutRowOrder } from './layout-row-order.enum';
 import { LayoutRowFilter } from './layout-row-filter';
 import { FilterResult } from './filter-result';
 import { ListRow } from '../../modules/list/model/list-row';
+import { List } from '../../modules/list/model/list';
 
 export class LayoutRow {
 
@@ -63,8 +64,8 @@ export class LayoutRow {
     this._order = newOrder;
   }
 
-  public doFilter(rows: ListRow[], userTags: { id: number, tag: string }[]): FilterResult {
-    const filterResult = this.filter.filter(rows);
+  public doFilter(rows: ListRow[], userTags: { id: number, tag: string }[], list: List): FilterResult {
+    const filterResult = this.filter.filter(rows, list);
     if (this.hasTag !== null) {
       const rejected: ListRow[] = [];
       filterResult.accepted.forEach(row => {

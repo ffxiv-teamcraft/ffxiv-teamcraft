@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { combineLatest, concat, Observable, of } from 'rxjs';
+import { combineLatest, concat, interval, Observable, of } from 'rxjs';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -107,9 +107,16 @@ export class LogTrackerComponent extends TrackerComponent {
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {
-          operation$ = concat(
-            ...operations
-          );
+
+          operation$ = interval(250)
+            .pipe(
+              first(),
+              switchMap(() => {
+                return concat(
+                  ...operations
+                );
+              })
+            );
         } else {
           operation$ = of(list);
         }

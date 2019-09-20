@@ -116,10 +116,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     );
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
-    this.finalItemsRow$ = combineLatest(this.list$, this.adaptativeFilter$).pipe(
+    this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$]).pipe(
       mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter))
     );
-    this.display$ = combineLatest(this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$).pipe(
+    this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
       mergeMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted)),
       shareReplay(1)
     );
@@ -130,12 +130,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.teams$ = this.teamsFacade.myTeams$;
     this.assignedTeam$ = this.teamsFacade.selectedTeam$;
     this.outDated$ = this.list$.pipe(map(list => !list.notFound && list.isOutDated()));
-    this.canRemoveTag$ = combineLatest(this.assignedTeam$, this.authFacade.userId$, this.permissionLevel$)
+    this.canRemoveTag$ = combineLatest([this.assignedTeam$, this.authFacade.userId$, this.permissionLevel$])
       .pipe(
         map(([team, userId, permissionsLevel]) => team.leader === userId || permissionsLevel >= PermissionLevel.OWNER)
       );
 
-    combineLatest(this.list$, this.listsFacade.compacts$).pipe(
+    combineLatest([this.list$, this.listsFacade.compacts$]).pipe(
       filter(([list, compacts]) => list.notFound && compacts.some(l => l.$key === list.$key)),
       switchMap(([list, compacts]) => {
         const listCompact = compacts.find(l => l.$key === list.$key);
@@ -146,7 +146,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       this.listsFacade.updateList(regeneratedList);
     });
 
-    combineLatest(this.list$, this.teamsFacade.allTeams$, this.teamsFacade.selectedTeam$).pipe(
+    combineLatest([this.list$, this.teamsFacade.allTeams$, this.teamsFacade.selectedTeam$]).pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(([list, teams]) => {
       if (list.teamId !== undefined) {
