@@ -94,7 +94,7 @@
   "Hide_if_empty": "隐藏空栏",
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
-  "Ephemeral_tag": "Ephemeral",
+  "Ephemeral_tag": "限时",
   "Remove_ephemeral": "升级为永久清单",
   "Quick_list_create": "创建快速清单(完成后删除)",
   "Tag_filter": "标签",
@@ -139,9 +139,9 @@
     "Bottom": "底部",
     "Amount": "数目",
     "Undo": "撤销",
-    "User": "User",
-    "Tables": "Table",
-    "Pie_charts": "Pie charts"
+    "User": "用户",
+    "Tables": "表格",
+    "Pie_charts": "饼状图"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -370,7 +370,7 @@
     "Always_HQ_leves": "默认以提交HQ物品计算理符经验",
     "Clickthrough_overlay": "悬浮窗鼠标穿透",
     "Disable_search_history": "关闭搜索记录",
-    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
+    "Disable_search_debounce": "防止搜索误操作（仅在按下回车后搜索）",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -463,7 +463,7 @@
     "Show_craftable_amount": "显示可制作的数量",
     "Optimized_full_path": "显示完整最优路径 (最便宜且最快)",
     "Quick_layout_swap": "快速布局切换",
-    "Offline": "Offline",
+    "Offline": "离线",
     "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
     "Mark_whole_panel_done": "将这一大类标记为已完成",
     "ROTATION": {
