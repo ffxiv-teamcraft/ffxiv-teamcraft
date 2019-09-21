@@ -28,81 +28,87 @@ export class UniversalisService {
               private ipc: IpcService) {
   }
 
-  public getDCPrices(itemId: number, dc: string): Observable<MarketboardItem> {
-    return this.http.get<any>(`https://universalis.app/api/${dc}/${itemId}`)
+  public getDCPrices(dc: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
+    return this.http.get<any>(`https://universalis.app/api/${dc}/${itemIds.join(',')}`)
       .pipe(
-        map(res => {
-          const item: Partial<MarketboardItem> = {
-            ID: res[Object.keys(res)[0]].ID,
-            ItemId: res[Object.keys(res)[0]].ItemId,
-            History: [],
-            Prices: []
-          };
-          item.Prices = res.listings.map(listing => {
-            return {
-              Server: listing.worldName,
-              PricePerUnit: listing.pricePerUnit,
-              PriceTotal: listing.total,
-              IsHQ: listing.hq,
-              Quantity: listing.quantity
+        map(response => {
+          const data = response.items || [response];
+          return data.map(res => {
+            const item: Partial<MarketboardItem> = {
+              ID: res.worldID,
+              ItemId: res.itemID,
+              History: [],
+              Prices: []
             };
+            item.Prices = res.listings.map(listing => {
+              return {
+                Server: listing.worldName,
+                PricePerUnit: listing.pricePerUnit,
+                PriceTotal: listing.total,
+                IsHQ: listing.hq,
+                Quantity: listing.quantity
+              };
+            });
+            item.History = res.recentHistory.map(listing => {
+              return {
+                Server: listing.worldName,
+                PricePerUnit: listing.pricePerUnit,
+                PriceTotal: listing.total,
+                IsHQ: listing.hq,
+                Quantity: listing.quantity,
+                PurchaseDate: listing.timestamp
+              };
+            });
+            return item as MarketboardItem;
           });
-          item.History = res.recentHistory.map(listing => {
-            return {
-              Server: listing.worldName,
-              PricePerUnit: listing.pricePerUnit,
-              PriceTotal: listing.total,
-              IsHQ: listing.hq,
-              Quantity: listing.quantity,
-              PurchaseDate: listing.timestamp
-            };
-          });
-          return item as MarketboardItem;
         }),
         shareReplay(1)
       );
   }
 
-  public getServerPrices(itemId: number, server: string): Observable<MarketboardItem> {
+  public getServerPrices(server: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
     const dc = Object.keys(this.lazyData.datacenters).find(key => {
       return this.lazyData.datacenters[key].indexOf(server) > -1;
     });
-    return this.http.get<any>(`https://universalis.app/api/${dc}/${itemId}`)
+    return this.http.get<any>(`https://universalis.app/api/${dc}/${itemIds.join(',')}`)
       .pipe(
-        map(res => {
-          const item: Partial<MarketboardItem> = {
-            ID: res[Object.keys(res)[0]].ID,
-            ItemId: res[Object.keys(res)[0]].ItemId,
-            History: [],
-            Prices: []
-          };
-          item.Prices = (res.listings || [])
-            .filter(listing => {
-              return listing.worlName.toLowerCase() === server.toLowerCase();
-            })
-            .map(listing => {
-              return {
-                Server: listing.worldName,
-                PricePerUnit: listing.pricePerUnit,
-                ProceTotal: listing.total,
-                IsHQ: listing.hq,
-                Quantity: listing.quantity
-              };
-            });
-          item.History = (res.recentHistory || [])
-            .filter(listing => {
-              return listing.worlName.toLowerCase() === server.toLowerCase();
-            })
-            .map(listing => {
-              return {
-                Server: listing.worldName,
-                PricePerUnit: listing.pricePerUnit,
-                ProceTotal: listing.total,
-                IsHQ: listing.hq,
-                Quantity: listing.quantity
-              };
-            });
-          return item as MarketboardItem;
+        map(response => {
+          const data = response.items || [response];
+          return data.map(res => {
+            const item: Partial<MarketboardItem> = {
+              ID: res.worldID,
+              ItemId: res.itemID,
+              History: [],
+              Prices: []
+            };
+            item.Prices = (res.listings || [])
+              .filter(listing => {
+                return listing.worldName.toLowerCase() === server.toLowerCase();
+              })
+              .map(listing => {
+                return {
+                  Server: listing.worldName,
+                  PricePerUnit: listing.pricePerUnit,
+                  ProceTotal: listing.total,
+                  IsHQ: listing.hq,
+                  Quantity: listing.quantity
+                };
+              });
+            item.History = (res.recentHistory || [])
+              .filter(listing => {
+                return listing.worlName.toLowerCase() === server.toLowerCase();
+              })
+              .map(listing => {
+                return {
+                  Server: listing.worldName,
+                  PricePerUnit: listing.pricePerUnit,
+                  ProceTotal: listing.total,
+                  IsHQ: listing.hq,
+                  Quantity: listing.quantity
+                };
+              });
+            return item as MarketboardItem;
+          });
         })
       );
   }

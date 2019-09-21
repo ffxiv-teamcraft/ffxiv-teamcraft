@@ -100,13 +100,11 @@ export class CurrencySpendingComponent extends TeamcraftComponent {
           }),
           switchMap(entries => {
             const batches = _.chunk(entries, 100)
-              .map(chunk => {
-                return combineLatest(chunk.map((row: any) => {
-                  return this.universalis.getServerPrices(
-                    row.item,
-                    server
-                  );
-                }));
+              .map((chunk: any) => {
+                return this.universalis.getServerPrices(
+                  server,
+                  ...chunk.map(entry => entry.item)
+                );
               });
             return requestsWithDelay(batches, 250).pipe(
               map(res => {

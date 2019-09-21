@@ -56,8 +56,9 @@ export class MarketboardPopupComponent implements OnInit {
         }), server];
       }),
       switchMap(([dc, server]) => {
-        return this.universalis.getDCPrices(this.itemId, dc).pipe(
-          map(res => {
+        return this.universalis.getDCPrices(dc, this.itemId).pipe(
+          map(result => {
+            const res = result[0];
             if (this.settings.disableCrossWorld) {
               res.Prices = res.Prices.filter((price: any) => {
                 return price.Server === server;
@@ -112,13 +113,13 @@ export class MarketboardPopupComponent implements OnInit {
       tap(() => this.loadingHistory = false),
       map(history => {
         return history
-          .sort((a,b) => b.PurchaseDate - a.PurchaseDate)
+          .sort((a, b) => b.PurchaseDate - a.PurchaseDate)
           .map(entry => {
-          return {
-            ...entry,
-            PurchaseDate: entry.PurchaseDate + '000'
-          };
-        });
+            return {
+              ...entry,
+              PurchaseDate: entry.PurchaseDate + '000'
+            };
+          });
       }),
       shareReplay(1)
     );
