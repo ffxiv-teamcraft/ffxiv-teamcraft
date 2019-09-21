@@ -116,10 +116,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent {
               map((res) => {
                 return entries
                   .filter(entry => {
-                    return res.some(r => r.ItemID === entry.item);
+                    return res.some(r => r.ItemId === entry.item);
                   })
                   .map(entry => {
-                    const mbRow = res.find(r => r.ItemID === entry.item);
+                    const mbRow = res.find(r => r.ItemId === entry.item);
                     let prices = (mbRow.Prices || [])
                       .filter(item => item.IsHQ === (entry.HQ || false));
                     if (prices.length === 0) {

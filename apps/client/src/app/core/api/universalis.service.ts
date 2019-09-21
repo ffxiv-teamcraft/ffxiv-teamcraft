@@ -96,7 +96,7 @@ export class UniversalisService {
               });
             item.History = (res.recentHistory || [])
               .filter(listing => {
-                return listing.worlName.toLowerCase() === server.toLowerCase();
+                return listing.worldName.toLowerCase() === server.toLowerCase();
               })
               .map(listing => {
                 return {
