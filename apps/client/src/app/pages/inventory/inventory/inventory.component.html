@@ -17,7 +17,8 @@
           </ng-template>
           <ng-template #extraTemplate>
             <button nz-button nzSize="small" nzShape="circle" (click)="computePrices(inventory)"
-                    [disabled]="computingPrices[inventory.containerName]">
+                    [disabled]="computingPrices[inventory.containerName]" nz-tooltip
+                    [nzTitle]="'INVENTORY.Estimate_total_price' | translate">
               <i nz-icon iconfont="icon-dollar"></i>
             </button>
           </ng-template>

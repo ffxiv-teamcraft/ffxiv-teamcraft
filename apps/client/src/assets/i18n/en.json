@@ -1534,6 +1534,7 @@
   "INVENTORY": {
     "Title": "Inventory",
     "Empty": "Empty inventory",
+    "Estimate_total_price": "Estimate total inventory price",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
       "Bag": "Inventory",
