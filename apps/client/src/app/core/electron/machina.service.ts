@@ -63,6 +63,7 @@ export class MachinaService {
       bufferTime(500),
       filter(packets => packets.length > 0),
       switchMap(itemInfos => {
+        console.log('ITEM INFOS', itemInfos);
         return this.inventory$.pipe(
           first(),
           map((inventory) => {
@@ -93,14 +94,14 @@ export class MachinaService {
 
     this.ipc.updateInventorySlotPackets$.pipe(
       filter(packet => {
-        return packet.slot >= 0 && packet.slot < 32000
-          && packet.quantity > 0;
+        return packet.quantity > 0 && packet.catalogId < 40000;
       }),
       switchMap((packet) => {
         return this.inventory$.pipe(
           first(),
           map(inventory => {
             const patch = inventory.updateInventorySlot(packet);
+            console.log('INVENTORY PATCH', patch);
             this._inventoryPatches$.next(patch);
             return inventory;
           })
