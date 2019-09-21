@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { UserInventoryService } from '../../../core/database/user-inventory.service';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { InventoryDisplay } from '../inventory-display';
-import { map } from 'rxjs/operators';
+import { first, map, switchMap } from 'rxjs/operators';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
+import { UniversalisService } from '../../../core/api/universalis.service';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-inventory',
@@ -13,7 +15,11 @@ import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 })
 export class InventoryComponent {
 
-  public display$: Observable<InventoryDisplay[]> = this.inventoryService.getUserInventory().pipe(
+  private prices$: BehaviorSubject<{ itemId: number, price: number }[]> = new BehaviorSubject([]);
+
+  public computingPrices: {[index:string]:boolean} = {};
+
+  private inventory$: Observable<InventoryDisplay[]> = this.inventoryService.getUserInventory().pipe(
     map(inventory => {
       return inventory
         .items
@@ -81,7 +87,44 @@ export class InventoryComponent {
     })
   );
 
-  constructor(private inventoryService: UserInventoryService) {
+  public display$: Observable<InventoryDisplay[]> = combineLatest([this.inventory$, this.prices$]).pipe(
+    map(([inventories, prices]) => {
+      return inventories.map(inventory => {
+        inventory.items = inventory.items.map(item => {
+          const priceEntry = prices.find(p => p.itemId === item.itemId);
+          item.price = priceEntry ? priceEntry.price : 0;
+          return item;
+        });
+        inventory.totalPrice = inventory.items.reduce((total, item) => total + item.price, 0);
+        return inventory;
+      });
+    })
+  );
+
+  constructor(private inventoryService: UserInventoryService, private universalis: UniversalisService,
+              private authFacade: AuthFacade) {
+  }
+
+  public computePrices(inventory: InventoryDisplay): void {
+    this.computingPrices[inventory.containerName] = true;
+    this.authFacade.mainCharacter$.pipe(
+      switchMap(character => {
+        return this.universalis.getServerPrices(character.Server, ...inventory.items.map(i => i.itemId));
+      }),
+      first()
+    ).subscribe(prices => {
+      this.prices$.next([
+        ...this.prices$.value.filter(price => !prices.some(p => p.ItemId === price.itemId)),
+        ...prices.map(price => {
+          const cheapest = price.Prices.sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
+          return {
+            itemId: price.ItemId,
+            price: cheapest ? cheapest.PricePerUnit : 0
+          };
+        })
+      ]);
+      this.computingPrices[inventory.containerName] = false;
+    });
   }
 
 }

@@ -4,4 +4,5 @@ export class InventoryItem {
   quantity: number;
   slot: number;
   hq: boolean;
+  price?: number;
 }

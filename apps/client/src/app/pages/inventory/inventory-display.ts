@@ -6,4 +6,6 @@ export interface InventoryDisplay {
   containerName: string;
 
   items: InventoryItem[];
+
+  totalPrice?: number;
 }

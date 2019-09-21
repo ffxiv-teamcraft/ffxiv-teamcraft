@@ -1,29 +1,55 @@
 <ng-container *ngIf="display$ | async as display">
   <div nz-row>
     <div nz-col nzMd="12" nzSm="24" class="bag-container" *ngFor="let inventory of display">
-      <nz-card nzTitle="{{('INVENTORY.BAG.' + inventory.containerName) | translate}} ({{inventory.items.length}})">
-        <div class="bag">
-          <nz-list [nzDataSource]="inventory.items" [nzRenderItem]="itemTemplate"
-                   [nzItemLayout]="'horizontal'" nzSize="small">
-            <ng-template #itemTemplate let-item>
-              <nz-list-item [nzContent]="content">
-                <nz-list-item-meta
-                  [nzAvatar]="avatar"
-                  [nzTitle]="item.itemId | itemName | i18n"
-                  nzDescription="x{{item.quantity}}">
-                  <ng-template #avatar>
-                    <app-item-icon [itemId]="item.itemId" [hq]="item.hq"
-                                   [icon]="item.itemId | lazyIcon" width="32"></app-item-icon>
-                  </ng-template>
-                  <ng-template #content>
-                    <app-db-button type="item" [id]="item.itemId"></app-db-button>
-                  </ng-template>
-                </nz-list-item-meta>
-              </nz-list-item>
-            </ng-template>
-          </nz-list>
-        </div>
-      </nz-card>
+      <nz-spin [nzSpinning]="computingPrices[inventory.containerName]">
+        <nz-card [nzTitle]="title"
+                 [nzExtra]="extraTemplate">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div>
+                {{('INVENTORY.BAG.' + inventory.containerName) | translate}} ({{inventory.items.length}})
+              </div>
+              <div *ngIf="inventory.totalPrice" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <app-item-icon [itemId]="1" [icon]="1 | lazyIcon" [width]="32"></app-item-icon>
+                <div>{{inventory.totalPrice | number:'1.0-0'}}</div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template #extraTemplate>
+            <button nz-button nzSize="small" nzShape="circle" (click)="computePrices(inventory)"
+                    [disabled]="computingPrices[inventory.containerName]">
+              <i nz-icon iconfont="icon-dollar"></i>
+            </button>
+          </ng-template>
+          <div class="bag">
+            <nz-list [nzDataSource]="inventory.items" [nzRenderItem]="itemTemplate"
+                     [nzItemLayout]="'horizontal'" nzSize="small">
+              <ng-template #itemTemplate let-item>
+                <nz-list-item [nzContent]="content">
+                  <nz-list-item-meta
+                    [nzAvatar]="avatar"
+                    [nzTitle]="item.itemId | itemName | i18n"
+                    nzDescription="x{{item.quantity}}">
+                    <ng-template #avatar>
+                      <app-item-icon [itemId]="item.itemId" [hq]="item.hq"
+                                     [icon]="item.itemId | lazyIcon" width="32"></app-item-icon>
+                    </ng-template>
+                    <ng-template #content>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+                        <div *ngIf="item.price" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                          <app-item-icon [itemId]="1" [icon]="1 | lazyIcon" [width]="32"></app-item-icon>
+                          <div>{{item.price | number:'1.0-0'}}</div>
+                        </div>
+                        <app-db-button type="item" [id]="item.itemId"></app-db-button>
+                      </div>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
+              </ng-template>
+            </nz-list>
+          </div>
+        </nz-card>
+      </nz-spin>
     </div>
   </div>
   <app-fullpage-message *ngIf="display.length === 0">
