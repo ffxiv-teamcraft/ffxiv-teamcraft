@@ -92,6 +92,30 @@ export class MachinaService {
       })
     ).subscribe();
 
+    this.ipc.inventoryModifyHandlerPackets$.pipe(
+      filter(packet => packet.toContainer > 0 && packet.toSlot > 0 && packet.fromContainer > 0 && packet.fromSlot > 0),
+      switchMap(packet => {
+        return this.inventory$.pipe(
+          first(),
+          map(inventory => {
+            const patch = inventory.operateTransaction(packet);
+            console.log('INVENTORY TRANSACTION', patch);
+            if (patch) {
+              this._inventoryPatches$.next(patch);
+            }
+            return inventory;
+          })
+        );
+      }),
+      switchMap(inventory => {
+        if (inventory.$key) {
+          return this.userInventoryService.set(inventory.$key, inventory);
+        } else {
+          return this.userInventoryService.add(inventory);
+        }
+      })
+    ).subscribe();
+
     this.ipc.updateInventorySlotPackets$.pipe(
       filter(packet => {
         return packet.quantity > 0 && packet.catalogId < 40000;

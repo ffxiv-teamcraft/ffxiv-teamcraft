@@ -48,6 +48,12 @@ export class IpcService {
     return this._marketboardListingHistory$.asObservable();
   }
 
+  private _inventoryModifyHandlerPackets$: Subject<any> = new Subject<any>();
+
+  public get inventoryModifyHandlerPackets$(): Observable<any> {
+    return this._inventoryModifyHandlerPackets$.asObservable();
+  }
+
   constructor(private platformService: PlatformService, private router: Router) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
@@ -114,6 +120,9 @@ export class IpcService {
         break;
       case 'updateInventorySlot':
         this._updateInventorySlotPackets$.next(packet);
+        break;
+      case 'inventoryModifyHandler':
+        this._inventoryModifyHandlerPackets$.next(packet);
         break;
       case 'marketBoardItemListing':
         this._marketboardListing$.next(packet);

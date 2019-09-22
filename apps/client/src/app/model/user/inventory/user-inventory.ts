@@ -37,4 +37,58 @@ export class UserInventory extends DataWithPermissions {
       hq: packet.hqFlag === 1
     };
   }
+
+  operateTransaction(packet: any): InventoryPatch | null {
+    const fromItem = this.items.find(i => {
+      return i.slot === packet.fromSlot && i.containerId === packet.fromContainer;
+    });
+    const toItem = this.items.find(i => {
+      return i.slot === packet.fromSlot && i.containerId === packet.fromContainer;
+    });
+    if (fromItem === undefined || (toItem === undefined && packet.action === 'merge')) {
+      console.warn('Tried to move an item that isn\'t registered in inventory');
+      return null;
+    }
+    switch (packet.action) {
+      case 'move':
+        fromItem.containerId = packet.toContainer;
+        fromItem.slot = packet.toSlot;
+        return {
+          itemId: fromItem.itemId,
+          containerId: fromItem.containerId,
+          hq: fromItem.hq,
+          quantity: fromItem.quantity
+        };
+      case 'merge':
+        fromItem.quantity -= packet.splitCount;
+        toItem.quantity += packet.splitCount;
+        return {
+          itemId: toItem.itemId,
+          containerId: toItem.containerId,
+          hq: toItem.hq,
+          quantity: packet.splitCount
+        };
+      case 'split':
+        fromItem.quantity -= packet.splitCount;
+        this.items.push({
+          quantity: packet.splitCount,
+          containerId: packet.toContainer,
+          itemId: fromItem.itemId,
+          hq: fromItem.hq,
+          slot: packet.toSlot
+        });
+        return null;
+      case 'discard':
+        fromItem.quantity = 0;
+        this.items = this.items.filter(item => {
+          return item !== fromItem;
+        });
+        return {
+          itemId: fromItem.itemId,
+          containerId: fromItem.containerId,
+          hq: fromItem.hq,
+          quantity: -packet.splitCount
+        };
+    }
+  }
 }

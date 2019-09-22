@@ -43,7 +43,8 @@ module.exports.start = function(win, config) {
       'marketBoardItemListing',
       'marketBoardItemListingHistory',
       'playerSetup',
-      'playerSpawn'
+      'playerSpawn',
+      'inventoryModifyHandler'
     ];
     if (acceptedPackets.indexOf(packet.type) > -1) {
       sendToRenderer(win, packet);
