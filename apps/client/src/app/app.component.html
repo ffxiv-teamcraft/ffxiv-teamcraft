@@ -412,18 +412,22 @@
               </div>
             </ng-template>
           </nz-alert>
-          <nz-alert nzType="warning" class="new-version-alert" nzBanner
-                    [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
-                    [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate"
-                    *ngIf="platformService.isDesktop() && machinaToggle && emptyInventory$ | async"
-                    nzShowIcon>
-          </nz-alert>
-          <nz-alert nzType="warning" class="new-version-alert" nzBanner
-                    [nzMessage]="'PACKET_CAPTURE.No_character_id' | translate"
-                    [nzDescription]="'PACKET_CAPTURE.Please_relog' | translate"
-                    *ngIf="platformService.isDesktop() && machinaToggle && ((user$ | async)?.cid === undefined)"
-                    nzShowIcon>
-          </nz-alert>
+          <ng-container *ngIf="platformService.isDesktop() && machinaToggle">
+            <nz-alert nzType="warning" class="new-version-alert" nzBanner
+                      [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
+                      [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate"
+                      *ngIf="emptyInventory$ | async"
+                      nzShowIcon>
+            </nz-alert>
+            <ng-container *ngIf="user$ | async as user">
+              <nz-alert nzType="warning" class="new-version-alert" nzBanner
+                        [nzMessage]="'PACKET_CAPTURE.No_character_id' | translate"
+                        [nzDescription]="'PACKET_CAPTURE.Please_relog' | translate"
+                        *ngIf="user.cid === undefined"
+                        nzShowIcon>
+              </nz-alert>
+            </ng-container>
+          </ng-container>
           <nz-spin [nzSize]="'large'" [nzSpinning]="navigating" class="app-container">
             <router-outlet></router-outlet>
           </nz-spin>

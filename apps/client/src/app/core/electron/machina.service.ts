@@ -118,6 +118,7 @@ export class MachinaService {
 
     this.inventoryPatches$
       .pipe(
+        filter(patch => patch.containerId < 10),
         withLatestFrom(this.listsFacade.autocompleteEnabled$, this.listsFacade.selectedList$),
         filter(([patch, autocompleteEnabled]) => autocompleteEnabled && patch.quantity > 0)
       )

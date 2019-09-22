@@ -13,6 +13,7 @@ export class UserInventory extends DataWithPermissions {
   updateInventorySlot(packet: any): InventoryPatch {
     let item = this.items.find(i => {
       return i.itemId === packet.catalogId
+        && i.containerId === packet.containerId
         && i.slot === packet.slot
         && i.hq === (packet.hqFlag === 1);
     });
@@ -32,6 +33,7 @@ export class UserInventory extends DataWithPermissions {
     return {
       itemId: packet.catalogId,
       quantity: packet.quantity - previousQuantity,
+      containerId: packet.containerId,
       hq: packet.hqFlag === 1
     };
   }
