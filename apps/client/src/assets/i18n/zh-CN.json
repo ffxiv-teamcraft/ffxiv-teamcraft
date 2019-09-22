@@ -94,7 +94,7 @@
   "Hide_if_empty": "隐藏空栏",
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
-  "Ephemeral_tag": "限时",
+  "Ephemeral_tag": "临时",
   "Remove_ephemeral": "升级为永久清单",
   "Quick_list_create": "创建快速清单(完成后删除)",
   "Tag_filter": "标签",
@@ -464,12 +464,12 @@
     "Optimized_full_path": "显示完整最优路径 (最便宜且最快)",
     "Quick_layout_swap": "快速布局切换",
     "Offline": "离线",
-    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
+    "Offline_help": "离线清单储存在您的浏览器或桌面APP中，因此不能通过其他渠道查看及分享，但是他们不受龟速网络影响——比较快。",
     "Mark_whole_panel_done": "将这一大类标记为已完成",
     "ROTATION": {
-      "Attach": "Attach rotation",
-      "Detach": "Detach rotation",
-      "Click_to_copy_macro": "Click to open macro copy popup"
+      "Attach": "附加手法",
+      "Detach": "删去手法",
+      "Click_to_copy_macro": "点击打开“复制宏”弹出框"
     },
     "INVENTORY": {
       "Show_final_items": "显示最终物品",
@@ -548,7 +548,7 @@
         "ADD_TAG": "添加标签到物品",
         "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成",
         "MARKET_BOARD_INFORMATIONS": "市场信息",
-        "ATTACH_ROTATION": "Attach rotation"
+        "ATTACH_ROTATION": "附加手法"
       }
     },
     "LAYOUT": {
@@ -1021,7 +1021,7 @@
     "History": "历史记录",
     "Purchase_date": "日期",
     "More_on_mogboard": "在 MogBoard 上查看",
-    "More_on_universalis": "More details on universalis",
+    "More_on_universalis": "更多信息请见universalis",
     "Server": "服务器"
   },
   "COMMENTS": {
