@@ -423,7 +423,7 @@
               <nz-alert nzType="warning" class="new-version-alert" nzBanner
                         [nzMessage]="'PACKET_CAPTURE.No_character_id' | translate"
                         [nzDescription]="'PACKET_CAPTURE.Please_relog' | translate"
-                        *ngIf="user.cid === undefined"
+                        *ngIf="user.cid === undefined && (loggedIn$ | async)"
                         nzShowIcon>
               </nz-alert>
             </ng-container>
