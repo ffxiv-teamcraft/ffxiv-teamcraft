@@ -84,7 +84,7 @@
     "title": "关于",
     "Created_by": "FFXIV Teamcraft 由 Louisoix, Chaos 服务器的 Miu Asakura 创作。",
     "Copyright_notice_title": "版权声明",
-    "Copyright_notice_content": "最终幻想是Square Enix控股有限公司<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. 旗下注册商标。版权声明<br>。FFXIV Teamcraft并不附属于Square Enix.",
+    "Copyright_notice_content": "最终幻想是Square Enix控股有限公司<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. 旗下注册商标。版权声明<br>。FFXIV Teamcraft并不隶属于Square Enix.",
     "Thanks_title": "鸣谢",
     "Data_sources": "数据来源",
     "Patreon_supporters": "Patreon 支持者",
@@ -840,7 +840,7 @@
         "Created_by": "由 {{name}} 创建",
         "Copy_folder": "复制此文件夹及其内容到你的账号",
         "Folder_copied": "文件夹已复制到你的账号",
-        "Your_folders": "文件夹",
+        "Your_folders": "您的文件夹",
         "Favorite_folders": "收藏文件夹",
         "Add_rotations": "新建手法",
         "Open": "打开文件夹"
@@ -932,7 +932,7 @@
     "Craft_price": "制作价格",
     "Marketboard_price": "NQ价格",
     "Marketboard_price_hq": "HQ价格",
-    "Enter_total_earnings": "输出总收入"
+    "Enter_total_earnings": "输入总收入"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
@@ -956,8 +956,8 @@
     "Title": "通知",
     "List_comment_added": "在列表 {{listName}} 上评论: \"{{content}}\"",
     "List_item_comment_added": "对列表 {{listName}} 中的物品 {{itemName}} 发布了评论：“{{content}}”",
-    "Db_comment": "在数据库中的新评论：{{comment}}",
-    "Db_comment_reply": "对你评论的新回复：{{comment}}",
+    "Db_comment": "数据库中的新评论：{{comment}}",
+    "Db_comment_reply": "对您评论的新回复：{{comment}}",
     "Blog_post": "新博客文章: {{title}}",
     "Mark_all_as_read": "全部标记为已读",
     "No_notifications": "无通知"
@@ -1008,7 +1008,7 @@
       "LIST_PROGRESSION": "查看材料进度",
       "FINAL_LIST_PROGRESSION": "查看产出进度",
       "USER_ASSIGNMENT": "用户分配",
-      "ITEM_COMPLETION": "物品完成"
+      "ITEM_COMPLETION": "项目完成"
     }
   },
   "MARKETBOARD": {
@@ -1181,7 +1181,7 @@
     "Intro": "选择职业并输入分解品级，即可找到最适合您当前分解品级的物品",
     "Loading_message": "正在加载……",
     "TAGS": {
-      "Higher_chances": "更高的成功率",
+      "Higher_chances": "更高成功率",
       "Lower_exp": "经验少",
       "Good_chances": "成功率较高",
       "Good_exp": "经验较多",
