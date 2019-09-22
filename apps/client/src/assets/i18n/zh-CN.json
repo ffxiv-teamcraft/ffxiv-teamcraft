@@ -84,7 +84,7 @@
     "title": "关于",
     "Created_by": "FFXIV Teamcraft 由 Louisoix, Chaos 服务器的 Miu Asakura 创作。",
     "Copyright_notice_title": "版权声明",
-    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
+    "Copyright_notice_content": "最终幻想是Square Enix控股有限公司<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. 旗下注册商标。版权声明<br>。FFXIV Teamcraft并不附属于Square Enix.",
     "Thanks_title": "鸣谢",
     "Data_sources": "数据来源",
     "Patreon_supporters": "Patreon 支持者",
@@ -442,7 +442,7 @@
       "Creating_list": "正在创建清单",
       "Loading_items": "正在加载物品信息",
       "Estimate_overmeld_materia": "估算禁断所需要的魔晶石",
-      "Multiply_tool_materia": "计算全职业魔晶石镶嵌所需的魔晶石（2个采集及8个生产职业的主副手）",
+      "Multiply_tool_materia": "计算全职业镶嵌所需的魔晶石（2个采集及8个生产职业的主副手）",
       "Group_together": "将魔晶石聚集在一起"
     }
   },
@@ -519,7 +519,7 @@
     "Add_to_another_list": "添加到另一个清单",
     "New_tag": "新标签",
     "Amount_ilvl": "Amount (ilvl)",
-    "Contributions_popup": "Contributions stats",
+    "Contributions_popup": "贡献统计",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -584,7 +584,7 @@
     "PLD": "骑士",
     "WAR": "战士",
     "DRK": "黑骑",
-    "GNB": "枪刃师",
+    "GNB": "绝枪战士",
     "WHM": "白魔",
     "SCH": "学者",
     "AST": "占星",
@@ -637,7 +637,7 @@
     "Loading_path": "正在加载最优路径 (可能需要几秒)",
     "STEP": {
       "Gathering": "采集{{amount}}（总计：{{total}}）",
-      "Hunting": "打怪获得{{amount}}（总计：{{total}}）",
+      "Hunting": "打怪获取{{amount}}（总计：{{total}}）",
       "Vendor": "购买{{amount}}（总计：{{total}}）",
       "Trade": "兑换{{amount}}（总计：{{total}}）"
     }
