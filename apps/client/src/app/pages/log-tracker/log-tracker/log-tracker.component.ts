@@ -107,7 +107,6 @@ export class LogTrackerComponent extends TrackerComponent {
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {
-
           operation$ = interval(250)
             .pipe(
               first(),
@@ -228,10 +227,9 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public isRequiredForAchievement(page: any): boolean {
-    return (
-        (
-          !page.masterbook
-          && page.startLevel.ClassJobLevel !== 50
+    return !page.masterbook
+      && (
+        (page.startLevel.ClassJobLevel !== 50
           && page.startLevel.ClassJobLevel !== 30
         )
         || (page.id > 1055 && page.id < 1072)
