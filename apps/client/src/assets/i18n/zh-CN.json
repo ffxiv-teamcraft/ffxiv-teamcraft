@@ -1485,7 +1485,7 @@
     "Pick_currency": "选择一个币种",
     "You_can_buy": "您可以购买 {{amount}}",
     "Disabled": "货币消费指南已失效",
-    "Disabled_description": "SE一再禁止我们读取交易板信息导致此功能失效。对此造成的不便，Teamcraft深表遗憾。"
+    "Disabled_description": "SE一再禁止我们读取交易板信息致使此功能失效。对此造成的不便，Teamcraft深表遗憾。"
   },
   "BLOG": {
     "Title": "博客"
