@@ -7,6 +7,8 @@ import { ContainerType } from '../../../model/user/inventory/container-type';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { NzMessageService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-inventory',
@@ -17,7 +19,7 @@ export class InventoryComponent {
 
   private prices$: BehaviorSubject<{ itemId: number, price: number }[]> = new BehaviorSubject([]);
 
-  public computingPrices: {[index:string]:boolean} = {};
+  public computingPrices: { [index: string]: boolean } = {};
 
   private inventory$: Observable<InventoryDisplay[]> = this.inventoryService.getUserInventory().pipe(
     map(inventory => {
@@ -102,7 +104,7 @@ export class InventoryComponent {
   );
 
   constructor(private inventoryService: UserInventoryService, private universalis: UniversalisService,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private message: NzMessageService, private translate: TranslateService) {
   }
 
   public computePrices(inventory: InventoryDisplay): void {
@@ -125,6 +127,16 @@ export class InventoryComponent {
       ]);
       this.computingPrices[inventory.containerName] = false;
     });
+  }
+
+  public getClipboardContent(inventory: InventoryDisplay): string {
+    return JSON.stringify(inventory.items.reduce((content, item) => {
+      return [...content, { id: item.itemId, amount: item.quantity }];
+    }, []));
+  }
+
+  public inventoryCopied(): void {
+    this.message.success(this.translate.instant('INVENTORY.Copied_to_clipboard'));
   }
 
 }

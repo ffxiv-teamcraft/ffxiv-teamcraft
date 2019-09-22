@@ -11,6 +11,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { ClipboardModule } from 'ngx-clipboard';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
     ItemIconModule,
     PipesModule,
     HttpClientModule,
-    FullpageMessageModule
+    FullpageMessageModule,
+    ClipboardModule
   ]
 })
 export class InventoryModule {

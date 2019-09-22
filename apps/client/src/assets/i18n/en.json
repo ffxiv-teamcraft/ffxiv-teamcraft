@@ -1535,6 +1535,8 @@
     "Title": "Inventory",
     "Empty": "Empty inventory",
     "Estimate_total_price": "Estimate total inventory price",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Copied_to_clipboard": "Inventory copied to clipboard",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
       "Bag": "Inventory",

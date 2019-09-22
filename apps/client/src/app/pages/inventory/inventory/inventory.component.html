@@ -16,11 +16,19 @@
             </div>
           </ng-template>
           <ng-template #extraTemplate>
-            <button nz-button nzSize="small" nzShape="circle" (click)="computePrices(inventory)"
-                    [disabled]="computingPrices[inventory.containerName]" nz-tooltip
-                    [nzTitle]="'INVENTORY.Estimate_total_price' | translate">
-              <i nz-icon iconfont="icon-dollar"></i>
-            </button>
+            <div fxLayout="row" fxLayoutGap="5px">
+              <button nz-button nzSize="small" nzShape="circle"
+                      nz-tooltip ngxClipboard [cbContent]="getClipboardContent(inventory)"
+                      (cbOnSuccess)="inventoryCopied()"
+                      [nzTitle]="'INVENTORY.Copy_to_clipboard' | translate">
+                <i nz-icon nzType="copy"></i>
+              </button>
+              <button nz-button nzSize="small" nzShape="circle" (click)="computePrices(inventory)"
+                      [disabled]="computingPrices[inventory.containerName]" nz-tooltip
+                      [nzTitle]="'INVENTORY.Estimate_total_price' | translate">
+                <i nz-icon iconfont="icon-dollar"></i>
+              </button>
+            </div>
           </ng-template>
           <div class="bag">
             <nz-list [nzDataSource]="inventory.items" [nzRenderItem]="itemTemplate"
