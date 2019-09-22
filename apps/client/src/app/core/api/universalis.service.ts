@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MarketboardItem } from '@xivapi/angular-client/src/model/schema/market/marketboard-item';
 import { combineLatest, Observable } from 'rxjs';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
 import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
@@ -114,49 +114,64 @@ export class UniversalisService {
   }
 
   public initCapture(): void {
-    this.ipc.marketboardListing$.subscribe(listing => {
-      this.handleMarketboardListingPacket(listing);
-    });
-    this.ipc.marketboardListingHistory$.subscribe(listing => {
-      this.handleMarketboardListingHistoryPacket(listing);
-    });
+    this.ipc.marketboardListing$
+      .pipe(
+        debounceTime(2000),
+        filter(packets => packets.length > 0)
+      )
+      .subscribe(listings => {
+        this.handleMarketboardListingPackets(listings);
+      });
+    this.ipc.marketboardListingHistory$
+      .pipe(
+        debounceTime(2000),
+        filter(packets => packets.length > 0)
+      )
+      .subscribe(listings => {
+        this.handleMarketboardListingHistoryPackets(listings);
+      });
     this.ipc.cid$.subscribe(packet => {
       this.uploadCid(packet);
     });
   }
 
-  public handleMarketboardListingPacket(packet: any): void {
+  public handleMarketboardListingPackets(packets: any[]): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
       switchMap(([cid, worldId]) => {
         const data = {
           worldID: worldId,
-          itemID: packet.itemID,
+          itemID: packets[0].itemID,
           uploaderID: cid,
-          listings: packet.listings.map(item => {
-            return {
-              listingID: item.listingID,
-              hq: item.hq === 1,
-              materia: item.materia.map((materia, index) => {
+          listings: packets.reduce((listings, packet) => {
+            return [
+              ...listings,
+              ...packet.listings.map(item => {
                 return {
-                  materiaId: materia,
-                  slotId: index
+                  listingID: item.listingID,
+                  hq: item.hq === 1,
+                  materia: item.materia.map((materia, index) => {
+                    return {
+                      materiaId: materia,
+                      slotId: index
+                    };
+                  }),
+                  pricePerUnit: item.pricePerUnit,
+                  quantity: item.quantity,
+                  total: item.total,
+                  retainerID: item.retainerID,
+                  retainerName: item.retainerName,
+                  retainerCity: item.city,
+                  creatorName: item.playerName,
+                  creatorID: item.artisanID,
+                  sellerID: item.retainerOwnerID,
+                  lastReviewTime: item.lastReviewTime,
+                  stainID: item.dyeID
                 };
-              }),
-              pricePerUnit: item.pricePerUnit,
-              quantity: item.quantity,
-              total: item.total,
-              retainerID: item.retainerID,
-              retainerName: item.retainerName,
-              retainerCity: item.city,
-              creatorName: item.playerName,
-              creatorID: item.artisanID,
-              sellerID: item.retainerOwnerID,
-              lastReviewTime: item.lastReviewTime,
-              stainID: item.dyeID
-            };
-          })
+              })];
+          }, [])
         };
+        console.log('Sending Universalis data', data);
         return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
         });
@@ -164,27 +179,33 @@ export class UniversalisService {
     ).subscribe();
   }
 
-  public handleMarketboardListingHistoryPacket(packet: any): void {
+  public handleMarketboardListingHistoryPackets(packets: any[]): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
       switchMap(([cid, worldId]) => {
         const data = {
           worldID: worldId,
-          itemID: packet.itemID,
+          itemID: packets[0].itemID,
           uploaderID: cid,
-          entries: packet.listings
-            .map((item) => {
-              return {
-                hq: item.hs,
-                pricePerUnit: item.salePrice,
-                quantity: item.quantity,
-                total: item.salePrice * item.quantity,
-                buyerName: item.buyerName,
-                onMannequin: item.onMannequin,
-                timestamp: item.purchaseTime
-              };
-            })
+          entries: packets.reduce((listings, packet) => {
+            return [
+              ...listings,
+              ...packet.listings
+                .map((item) => {
+                  return {
+                    hq: item.hs,
+                    pricePerUnit: item.salePrice,
+                    quantity: item.quantity,
+                    total: item.salePrice * item.quantity,
+                    buyerName: item.buyerName,
+                    onMannequin: item.onMannequin,
+                    timestamp: item.purchaseTime
+                  };
+                })
+            ];
+          }, [])
         };
+        console.log('Sending Universalis history', data);
         return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
         });
