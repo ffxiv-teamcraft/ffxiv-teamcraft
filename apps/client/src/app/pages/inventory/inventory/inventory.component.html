@@ -1,13 +1,14 @@
 <ng-container *ngIf="display$ | async as display">
   <div nz-row>
-    <div nz-col nzMd="12" nzSm="24" class="bag-container" *ngFor="let inventory of display">
+    <div nz-col nzMd="12" nzSm="24" class="bag-container" *ngFor="let inventory of display; trackBy: trackByInventory">
       <nz-spin [nzSpinning]="computingPrices[inventory.containerName]">
         <nz-card [nzTitle]="title"
                  [nzExtra]="extraTemplate">
           <ng-template #title>
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div>
-                {{('INVENTORY.BAG.' + inventory.containerName) | translate}} ({{inventory.items.length}})
+                {{inventory.isRetainer ? inventory.containerName : (('INVENTORY.BAG.' + inventory.containerName) | translate) }}
+                ({{inventory.items.length}})
               </div>
               <div *ngIf="inventory.totalPrice" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                 <app-item-icon [itemId]="1" [icon]="1 | lazyIcon" [width]="32"></app-item-icon>

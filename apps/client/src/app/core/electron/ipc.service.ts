@@ -54,6 +54,18 @@ export class IpcService {
     return this._inventoryModifyHandlerPackets$.asObservable();
   }
 
+  private _npcSpawnPackets$: Subject<any> = new Subject<any>();
+
+  public get npcSpawnPackets$(): Observable<any> {
+    return this._npcSpawnPackets$.asObservable();
+  }
+
+  private _containerInfoPackets$: Subject<any> = new Subject<any>();
+
+  public get containerInfoPackets$(): Observable<any> {
+    return this._containerInfoPackets$.asObservable();
+  }
+
   constructor(private platformService: PlatformService, private router: Router) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
@@ -135,6 +147,12 @@ export class IpcService {
         break;
       case 'playerSpawn':
         this._worldId$.next(packet.currentWorldId);
+        break;
+      case 'npcSpawn':
+        this._npcSpawnPackets$.next(packet);
+        break;
+      case 'containerInfo':
+        this._containerInfoPackets$.next(packet);
         break;
       default:
         console.log(packet);

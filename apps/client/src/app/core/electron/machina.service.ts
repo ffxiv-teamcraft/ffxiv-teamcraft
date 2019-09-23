@@ -3,13 +3,14 @@ import { IpcService } from './ipc.service';
 import { UserInventoryService } from '../database/user-inventory.service';
 import { UniversalisService } from '../api/universalis.service';
 import {
-  bufferTime,
+  buffer,
+  debounceTime,
   distinctUntilChanged,
   filter,
   first,
   map,
   shareReplay,
-  switchMap,
+  switchMap, tap,
   withLatestFrom
 } from 'rxjs/operators';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
@@ -18,6 +19,7 @@ import { AuthFacade } from '../../+state/auth.facade';
 import * as _ from 'lodash';
 import { InventoryPatch } from '../../model/user/inventory/inventory-patch';
 import { ListsFacade } from '../../modules/list/+state/lists.facade';
+import { InventoryItem } from '../../model/user/inventory/inventory-item';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +33,11 @@ export class MachinaService {
   public get inventoryPatches$(): Observable<InventoryPatch> {
     return this._inventoryPatches$.asObservable();
   }
+
+  private retainerSpawns$: Observable<string> = this.ipc.npcSpawnPackets$.pipe(
+    filter(spawn => spawn.modelType === 0x0A),
+    map(spawn => spawn.name)
+  );
 
   constructor(private ipc: IpcService, private userInventoryService: UserInventoryService,
               private universalis: UniversalisService, private authFacade: AuthFacade,
@@ -60,25 +67,36 @@ export class MachinaService {
           && packet.catalogId < 40000
           && (packet.hqFlag === 0 || packet.hqFlag === 1);
       }),
-      bufferTime(500),
+      buffer(this.ipc.itemInfoPackets$.pipe(debounceTime(1000))),
       filter(packets => packets.length > 0),
-      switchMap(itemInfos => {
-        console.log('ITEM INFOS', itemInfos);
+      withLatestFrom(this.retainerSpawns$),
+      switchMap(([itemInfos, lastRetainerSpawned]) => {
         return this.inventory$.pipe(
           first(),
           map((inventory) => {
             const updatedContainerIds = _.uniqBy(itemInfos, 'containerId').map(packet => packet.containerId);
+            const isRetainer = updatedContainerIds.some(id => id > 9999 && id < 20000);
             inventory.items = [
-              ...inventory.items.filter(i => updatedContainerIds.indexOf(i.containerId) < 0),
-              ...itemInfos.map(itemInfo => {
-                return {
-                  itemId: +itemInfo.catalogId,
-                  containerId: +itemInfo.containerId,
-                  slot: +itemInfo.slot,
-                  quantity: +itemInfo.quantity,
-                  hq: itemInfo.hqFlag === 1
-                };
-              })];
+              ...inventory.items.filter(i => {
+                if (isRetainer) {
+                  return i.retainerName !== lastRetainerSpawned;
+                }
+                return updatedContainerIds.indexOf(i.containerId) === -1;
+              }),
+              ..._.uniqBy(itemInfos, (packet => `${packet.slot}${packet.containerId}`))
+                .map(itemInfo => {
+                  const item: InventoryItem = {
+                    itemId: +itemInfo.catalogId,
+                    containerId: +itemInfo.containerId,
+                    slot: +itemInfo.slot,
+                    quantity: +itemInfo.quantity,
+                    hq: itemInfo.hqFlag === 1
+                  };
+                  if (isRetainer) {
+                    item.retainerName = lastRetainerSpawned;
+                  }
+                  return item;
+                })];
             return inventory;
           })
         );
@@ -93,12 +111,12 @@ export class MachinaService {
     ).subscribe();
 
     this.ipc.inventoryModifyHandlerPackets$.pipe(
-      filter(packet => packet.toContainer > 0 && packet.toSlot > 0 && packet.fromContainer > 0 && packet.fromSlot > 0),
-      switchMap(packet => {
+      withLatestFrom(this.retainerSpawns$),
+      switchMap(([packet, lastSpawnedRetainer]) => {
         return this.inventory$.pipe(
           first(),
           map(inventory => {
-            const patch = inventory.operateTransaction(packet);
+            const patch = inventory.operateTransaction(packet, lastSpawnedRetainer);
             console.log('INVENTORY TRANSACTION', patch);
             if (patch) {
               this._inventoryPatches$.next(patch);

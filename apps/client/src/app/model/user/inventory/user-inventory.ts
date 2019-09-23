@@ -25,7 +25,7 @@ export class UserInventory extends DataWithPermissions {
         quantity: packet.quantity,
         hq: packet.hqFlag === 1,
         slot: packet.slot,
-        containerId: 3200
+        containerId: packet.containerId
       });
       item = this.items[this.items.length - 1];
     }
@@ -38,12 +38,20 @@ export class UserInventory extends DataWithPermissions {
     };
   }
 
-  operateTransaction(packet: any): InventoryPatch | null {
+  operateTransaction(packet: any, lastSpawnedRetainer: string): InventoryPatch | null {
+    const isFromRetainer = packet.fromContainer > 10000 && packet.fromContainer < 20000;
+    const isToRetainer = packet.toContainer > 10000 && packet.toContainer < 20000;
     const fromItem = this.items.find(i => {
+      if (isFromRetainer) {
+        return i.slot === packet.fromSlot && i.containerId === packet.fromContainer && i.retainerName === lastSpawnedRetainer;
+      }
       return i.slot === packet.fromSlot && i.containerId === packet.fromContainer;
     });
     const toItem = this.items.find(i => {
-      return i.slot === packet.fromSlot && i.containerId === packet.fromContainer;
+      if (isToRetainer) {
+        return i.slot === packet.toSlot && i.containerId === packet.toContainer && i.retainerName === lastSpawnedRetainer;
+      }
+      return i.slot === packet.toSlot && i.containerId === packet.toContainer;
     });
     if (fromItem === undefined || (toItem === undefined && packet.action === 'merge')) {
       console.warn('Tried to move an item that isn\'t registered in inventory');
@@ -53,12 +61,25 @@ export class UserInventory extends DataWithPermissions {
       case 'move':
         fromItem.containerId = packet.toContainer;
         fromItem.slot = packet.toSlot;
+        if (isFromRetainer && !isToRetainer) {
+          delete fromItem.retainerName;
+        } else if (!isFromRetainer && isToRetainer) {
+          fromItem.retainerName = lastSpawnedRetainer;
+        }
         return {
           itemId: fromItem.itemId,
           containerId: fromItem.containerId,
           hq: fromItem.hq,
           quantity: fromItem.quantity
         };
+      case 'swap':
+        const fromSlot = fromItem.slot;
+        const fromContainer = fromItem.containerId;
+        fromItem.containerId = toItem.containerId;
+        fromItem.slot = toItem.slot;
+        toItem.containerId = fromContainer;
+        toItem.slot = fromSlot;
+        return null;
       case 'merge':
         fromItem.quantity -= packet.splitCount;
         toItem.quantity += packet.splitCount;
@@ -79,7 +100,6 @@ export class UserInventory extends DataWithPermissions {
         });
         return null;
       case 'discard':
-        fromItem.quantity = 0;
         this.items = this.items.filter(item => {
           return item !== fromItem;
         });

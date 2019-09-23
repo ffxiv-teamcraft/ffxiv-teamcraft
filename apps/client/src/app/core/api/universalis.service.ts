@@ -171,7 +171,7 @@ export class UniversalisService {
               })];
           }, [])
         };
-        console.log('Sending Universalis data', data);
+        console.log('Sending Universalis data', data.listings);
         return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
         });
@@ -205,7 +205,7 @@ export class UniversalisService {
             ];
           }, [])
         };
-        console.log('Sending Universalis history', data);
+        console.log('Sending Universalis history', data.entries);
         return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
         });

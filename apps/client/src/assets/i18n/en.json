@@ -1540,7 +1540,7 @@
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
       "Bag": "Inventory",
-      "RetainerBag": "Retainers' inventories"
+      "Other": "Other inventory"
     }
   }
 }

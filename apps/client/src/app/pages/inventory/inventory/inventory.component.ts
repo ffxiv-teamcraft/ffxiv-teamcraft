@@ -42,31 +42,11 @@ export class InventoryComponent {
             ContainerType.SaddleBag1
           ].indexOf(item.containerId) > -1;
         }).reduce((bags: InventoryDisplay[], item: InventoryItem) => {
-          let containerName: string;
-          switch (item.containerId) {
-            case ContainerType.Bag0:
-            case ContainerType.Bag1:
-            case ContainerType.Bag2:
-            case ContainerType.Bag3:
-              containerName = 'Bag';
-              break;
-            case ContainerType.RetainerBag0:
-            case ContainerType.RetainerBag1:
-            case ContainerType.RetainerBag2:
-            case ContainerType.RetainerBag3:
-            case ContainerType.RetainerBag4:
-            case ContainerType.RetainerBag5:
-            case ContainerType.RetainerBag6:
-              containerName = 'RetainerBag';
-              break;
-            case ContainerType.SaddleBag0:
-            case ContainerType.SaddleBag1:
-              containerName = 'SaddleBag';
-              break;
-          }
+          const containerName = item.retainerName || this.inventoryService.getContainerName(item.containerId);
           let bag = bags.find(i => i.containerName === containerName);
           if (bag === undefined) {
             bags.push({
+              isRetainer: item.retainerName !== undefined,
               containerName: containerName,
               containerId: item.containerId,
               items: []
@@ -80,7 +60,10 @@ export class InventoryComponent {
     map(inventories => {
       return inventories
         .sort((a, b) => {
-          return a.containerId - b.containerId;
+          if (a.containerId !== b.containerId) {
+            return a.containerId - b.containerId;
+          }
+          return a.containerName > b.containerName ? -1 : 1;
         })
         .map(inventory => {
           inventory.items = inventory.items.sort((a, b) => a.slot - b.slot);
@@ -137,6 +120,10 @@ export class InventoryComponent {
 
   public inventoryCopied(): void {
     this.message.success(this.translate.instant('INVENTORY.Copied_to_clipboard'));
+  }
+
+  trackByInventory(index: number, inventory: InventoryDisplay): string {
+    return inventory.containerName;
   }
 
 }

@@ -8,7 +8,7 @@ const { exec } = require('child_process');
 
 const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
 
-const Machina = new MachinaFFXIV(isDev ? { monitorType: 'WinPCap', noData: true } : {
+const Machina = new MachinaFFXIV(isDev ? { monitorType: 'WinPCap' } : {
   monitorType: 'WinPCap',
   noData: true,
   machinaExePath: machinaExePath,
@@ -44,7 +44,9 @@ module.exports.start = function(win, config) {
       'marketBoardItemListingHistory',
       'playerSetup',
       'playerSpawn',
-      'inventoryModifyHandler'
+      'inventoryModifyHandler',
+      'containerInfo',
+      'npcSpawn'
     ];
     if (acceptedPackets.indexOf(packet.type) > -1) {
       sendToRenderer(win, packet);

@@ -8,6 +8,7 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { Observable } from 'rxjs';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { map, switchMap } from 'rxjs/operators';
+import { ContainerType } from '../../model/user/inventory/container-type';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,29 @@ export class UserInventoryService extends FirestoreRelationalStorage<UserInvento
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService, private authFacade: AuthFacade) {
     super(firestore, serializer, zone, pendingChangesService);
+  }
+
+  public getContainerName(containerId: number): string {
+    switch (containerId) {
+      case ContainerType.Bag0:
+      case ContainerType.Bag1:
+      case ContainerType.Bag2:
+      case ContainerType.Bag3:
+        return 'Bag';
+      case ContainerType.RetainerBag0:
+      case ContainerType.RetainerBag1:
+      case ContainerType.RetainerBag2:
+      case ContainerType.RetainerBag3:
+      case ContainerType.RetainerBag4:
+      case ContainerType.RetainerBag5:
+      case ContainerType.RetainerBag6:
+        return 'RetainerBag';
+      case ContainerType.SaddleBag0:
+      case ContainerType.SaddleBag1:
+        return 'SaddleBag';
+    }
+    console.warn('No name for container', containerId);
+    return 'Other';
   }
 
   public getUserInventory(): Observable<UserInventory> {
