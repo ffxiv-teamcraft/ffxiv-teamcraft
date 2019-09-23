@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MarketboardItem } from '@xivapi/angular-client/src/model/schema/market/marketboard-item';
 import { combineLatest, Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { buffer, debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
 import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
@@ -116,7 +116,7 @@ export class UniversalisService {
   public initCapture(): void {
     this.ipc.marketboardListing$
       .pipe(
-        debounceTime(2000),
+        buffer(this.ipc.marketboardListing$.pipe(debounceTime(2000))),
         filter(packets => packets.length > 0)
       )
       .subscribe(listings => {
@@ -124,7 +124,7 @@ export class UniversalisService {
       });
     this.ipc.marketboardListingHistory$
       .pipe(
-        debounceTime(2000),
+        buffer(this.ipc.marketboardListingHistory$.pipe(debounceTime(2000))),
         filter(packets => packets.length > 0)
       )
       .subscribe(listings => {
