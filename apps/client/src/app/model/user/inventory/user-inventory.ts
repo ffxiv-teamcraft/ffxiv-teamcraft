@@ -62,12 +62,12 @@ export class UserInventory extends DataWithPermissions {
       case 'merge':
         fromItem.quantity -= packet.splitCount;
         toItem.quantity += packet.splitCount;
-        return {
+        return fromItem.containerId !== toItem.containerId ? {
           itemId: toItem.itemId,
           containerId: toItem.containerId,
           hq: toItem.hq,
           quantity: packet.splitCount
-        };
+        } : null;
       case 'split':
         fromItem.quantity -= packet.splitCount;
         this.items.push({
