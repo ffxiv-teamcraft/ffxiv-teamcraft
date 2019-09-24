@@ -9,8 +9,8 @@ import {
   filter,
   first,
   map,
-  shareReplay,
-  switchMap, tap,
+  shareReplay, startWith,
+  switchMap,
   withLatestFrom
 } from 'rxjs/operators';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
@@ -36,7 +36,8 @@ export class MachinaService {
 
   private retainerSpawns$: Observable<string> = this.ipc.npcSpawnPackets$.pipe(
     filter(spawn => spawn.modelType === 0x0A),
-    map(spawn => spawn.name)
+    map(spawn => spawn.name),
+    startWith(null)
   );
 
   constructor(private ipc: IpcService, private userInventoryService: UserInventoryService,
@@ -63,7 +64,8 @@ export class MachinaService {
   public init(): void {
     this.ipc.itemInfoPackets$.pipe(
       filter(packet => {
-        return packet.slot >= 0 && packet.slot < 32000
+        return packet.slot >= 0
+          && packet.slot < 32000
           && packet.catalogId < 40000
           && (packet.hqFlag === 0 || packet.hqFlag === 1);
       }),
@@ -117,7 +119,6 @@ export class MachinaService {
           first(),
           map(inventory => {
             const patch = inventory.operateTransaction(packet, lastSpawnedRetainer);
-            console.log('INVENTORY TRANSACTION', patch);
             if (patch) {
               this._inventoryPatches$.next(patch);
             }
@@ -143,7 +144,6 @@ export class MachinaService {
           first(),
           map(inventory => {
             const patch = inventory.updateInventorySlot(packet);
-            console.log('INVENTORY PATCH', patch);
             this._inventoryPatches$.next(patch);
             return inventory;
           })
