@@ -4,6 +4,7 @@ import { IpcRenderer } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
 import { Observable, Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Injectable()
 export class IpcService {
@@ -66,6 +67,8 @@ export class IpcService {
     return this._containerInfoPackets$.asObservable();
   }
 
+  private ping$: Subject<void> = new Subject<void>();
+
   constructor(private platformService: PlatformService, private router: Router) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
@@ -123,6 +126,12 @@ export class IpcService {
       }
       this.router.navigate(url.split('/'));
     });
+    // If we don't get a ping for an entire minute, something is wrong.
+    this.ping$.pipe(
+      debounceTime(60000)
+    ).subscribe(() => {
+      console.warn('No ping received from server during last minute');
+    });
   }
 
   private handlePacket(packet: any): void {
@@ -153,6 +162,9 @@ export class IpcService {
         break;
       case 'containerInfo':
         this._containerInfoPackets$.next(packet);
+        break;
+      case 'ping':
+        this.ping$.next();
         break;
       default:
         console.log(packet);

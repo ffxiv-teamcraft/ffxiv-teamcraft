@@ -39,7 +39,6 @@ export class UserInventoryService extends FirestoreRelationalStorage<UserInvento
       case ContainerType.SaddleBag1:
         return 'SaddleBag';
     }
-    console.warn('No name for container', containerId);
     return 'Other';
   }
 
