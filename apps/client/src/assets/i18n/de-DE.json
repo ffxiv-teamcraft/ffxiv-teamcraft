@@ -1537,6 +1537,7 @@
     "Estimate_total_price": "Estimate total inventory price",
     "Copy_to_clipboard": "Copy inventory to clipboard",
     "Copied_to_clipboard": "Inventory copied to clipboard",
+    "Click_to_add_to_progression": "Click to add to item progression",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
       "Bag": "Inventory",
