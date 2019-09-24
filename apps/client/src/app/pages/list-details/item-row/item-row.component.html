@@ -384,7 +384,8 @@
         </div>
         <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
              fxLayoutGap="5px">
-          <nz-tag *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry">
+          <nz-tag *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry" (click)="add(entry.amount)"
+          nz-tooltip [nzTitle]="'INVENTORY.Click_to_add_to_progression' | translate">
             {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
             : {{entry.amount}}
             <img src="./assets/icons/HQ.png" alt="HQ" *ngIf="entry.hq" class="inventory-hq"/>
