@@ -35,6 +35,7 @@ import { ListLayout } from '../../../core/layout/list-layout';
 import { ObservableMedia } from '@angular/flex-layout';
 import { ListContributionsComponent } from '../list-contributions/list-contributions.component';
 import * as _ from 'lodash';
+import { IpcService } from '../../../core/electron/ipc.service';
 
 @Component({
   selector: 'app-list-details',
@@ -77,6 +78,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   public selectedLayout$: Observable<ListLayout>;
 
+  public machinaToggle = false;
+
   public get adaptativeFilter(): boolean {
     return this.adaptativeFilter$.value;
   }
@@ -93,8 +96,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
-              private media: ObservableMedia) {
+              private media: ObservableMedia, public ipc: IpcService) {
     super(seoService);
+    this.ipc.on('toggle-machina:value', (event, value) => {
+      this.machinaToggle = value;
+    });
+    this.ipc.send('toggle-machina:get');
     this.list$ = combineLatest([this.listsFacade.selectedList$, this.permissionLevel$]).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {
@@ -393,6 +400,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.list$.pipe(first()).subscribe(list => {
       this.listsFacade.unload(list.$key);
     });
+    this.listsFacade.toggleAutocomplete(false);
     super.ngOnDestroy();
   }
 

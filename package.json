@@ -1,5 +1,5 @@
 {
-  "name": "ffxiv-teamcraft",
+  "name": "ffxiv-teamcraft-beta",
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
@@ -15,7 +15,24 @@
     "files": [
       "desktop/main.js",
       "desktop/oauth.js",
+      "desktop/machina.js",
       "dist"
+    ],
+    "extraResources": [
+      {
+        "from": "./node_modules/node-machina-ffxiv/MachinaWrapper",
+        "to": "MachinaWrapper",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "./desktop",
+        "to": "MachinaWrapper",
+        "filter": [
+          "**/*.dll"
+        ]
+      }
     ],
     "protocols": {
       "name": "ffxiv-teamcraft",
@@ -29,6 +46,7 @@
     "win": {
       "icon": "./tools/build/icon.ico",
       "publisherName": "FFXIV Teamcraft",
+      "requestedExecutionLevel": "highestAvailable",
       "publish": {
         "provider": "github",
         "releaseType": "release"
@@ -139,6 +157,7 @@
     "file-saver": "^2.0.1",
     "firebase": "6.1.0",
     "hammerjs": "^2.0.8",
+    "is-elevated": "^3.0.0",
     "jsdom": "^15.0.0",
     "jwt-decode": "^2.2.0",
     "less": "^2.7.3",
@@ -149,6 +168,7 @@
     "ngx-clipboard": "11.0.0",
     "ngx-color-picker": "^7.5.0",
     "ngx-markdown": "^1.6.0",
+    "node-machina-ffxiv": "^2.7.2",
     "papaparse": "^4.6.3",
     "rxjs": "^6.5.1",
     "semver": "^5.4.1",

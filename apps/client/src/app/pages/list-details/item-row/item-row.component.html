@@ -35,8 +35,8 @@
                          [userId]="user" [width]="24"></app-user-avatar>
 
         <div fxLayout="row" class="menu-buttons" fxLayoutGap="5px">
-                    <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="item.id"
-                                          [showHistory]="finalItem"></app-marketboard-icon>
+          <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="item.id"
+                                [showHistory]="finalItem"></app-marketboard-icon>
           <ng-container *ngIf="isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
             <button nz-button nzSize="small" nzShape="circle" ngxClipboard
                     cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
@@ -237,11 +237,11 @@
                 </li>
               </ng-container>
 
-                            <ng-container *ngIf="!isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)">
-                              <li nz-menu-item (click)="openMarketboardDialog()">
-                                {{'MARKETBOARD.Title' | translate}}
-                              </li>
-                            </ng-container>
+              <ng-container *ngIf="!isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)">
+                <li nz-menu-item (click)="openMarketboardDialog()">
+                  {{'MARKETBOARD.Title' | translate}}
+                </li>
+              </ng-container>
 
               <ng-container
                 *ngIf="!isButton(itemRowTypes.ATTACH_ROTATION) && item.craftedBy && item.craftedBy.length > 0">
@@ -382,8 +382,15 @@
             </nz-tag>
           </ng-container>
         </div>
+        <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
+             fxLayoutGap="5px">
+          <nz-tag *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry">
+            {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
+            : {{entry.amount}}
+            <img src="./assets/icons/HQ.png" alt="HQ" *ngIf="entry.hq" class="inventory-hq"/>
+          </nz-tag>
+        </div>
       </div>
-
       <div *ngIf="settings.itemTagsEnabled && (loggedIn$ | async)">
         <nz-tag
           *ngFor="let tag of itemTags$ | async"
@@ -495,6 +502,7 @@
                        [disabled]="(permissionLevel$ | async) < 20"
                        (keypress.enter)="itemDoneChanged(input.ngModel)"
                        #input
+                       style="margin-top:1px"
                        [ngModel]="settings.displayRemaining? item.done - item.used : item.done"
                        (ngModelChange)="itemDoneChanged($event)"></nz-input-number>
       <span class="amount-max" *ngIf="!settings.displayRemaining">

@@ -1,7 +1,6 @@
 const querystring = require('querystring');
 const { BrowserWindow } = require('electron');
 const nodeUrl = require('url');
-const log = require('electron-log');
 const { session } = require('electron');
 
 module.exports = function(config) {

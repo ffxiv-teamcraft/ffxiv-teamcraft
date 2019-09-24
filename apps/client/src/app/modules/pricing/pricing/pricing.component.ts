@@ -134,8 +134,9 @@ export class PricingComponent implements AfterViewInit {
             const dc = Object.keys(this.lazyData.datacenters).find(key => {
               return this.lazyData.datacenters[key].indexOf(server) > -1;
             });
-            return this.universalis.getDCPrices(row.id, dc).pipe(
-              map(item => {
+            return this.universalis.getDCPrices(dc, row.id).pipe(
+              map(res => {
+                const item = res[0];
                 let prices = item.Prices;
                 if (finalItems || this.settings.disableCrossWorld) {
                   prices = prices.filter(price => (<any>price).Server === server);

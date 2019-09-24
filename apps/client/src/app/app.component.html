@@ -120,6 +120,10 @@
               <i nz-icon type="idcard"></i>
               {{'Profile' | translate}}
             </a>
+              <a nz-menu-item routerLink="/inventory">
+              <i nz-icon type="appstore"></i>
+                {{'INVENTORY.Title' | translate}}
+            </a>
             <a nz-menu-item *ngIf="loggedIn$ | async" routerLink="/teams">
               <i nz-icon type="team"></i>
               {{'TEAMS.Title' | translate}}
@@ -388,13 +392,42 @@
               {{'UPDATE.Web_instructions' | translate}}
             </ng-template>
           </nz-alert>
-          <nz-alert nzType="info" nzBanner [nzMessage]="'GIVEAWAY.Discord_1K.Title' | translate"
-                    [nzDescription]="'GIVEAWAY.Discord_1K.Description' | translate" *ngIf="false"
+          <nz-alert nzType="info" nzBanner [nzMessage]="'PACKET_CAPTURE.Banner_title' | translate"
+                    [nzDescription]="description"
+                    *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !machinaToggle"
                     class="new-version-alert"
                     [nzCloseText]="'Close' | translate"
-                    (nzOnClose)="closeDiscord1kGiveaway()"
-                    nzShowIcon (click)="goToDiscord1kGiveaway($event)">
+                    (nzOnClose)="settings.hideMachinaBanner = true"
+                    nzShowIcon>
+            <ng-template #description>
+              {{'PACKET_CAPTURE.Banner_description' | translate}}<br>
+              <i>{{'PACKET_CAPTURE.Banner_description_warning' | translate}}</i><br>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <button nz-button (click)="enablePacketCapture()">
+                  {{'PACKET_CAPTURE.Button_label' | translate}}
+                </button>
+                <div>{{'Or' | translate}}</div>
+                <a
+                  href="https://wiki.ffxivteamcraft.com/advanced-features/packet-capture">{{'COMMON.Read_more_on_wiki' | translate}}</a>
+              </div>
+            </ng-template>
           </nz-alert>
+          <ng-container *ngIf="platformService.isDesktop() && machinaToggle">
+            <nz-alert nzType="warning" class="new-version-alert" nzBanner
+                      [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
+                      [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate"
+                      *ngIf="emptyInventory$ | async"
+                      nzShowIcon>
+            </nz-alert>
+            <ng-container *ngIf="user$ | async as user">
+              <nz-alert nzType="warning" class="new-version-alert" nzBanner
+                        [nzMessage]="'PACKET_CAPTURE.No_character_id' | translate"
+                        [nzDescription]="'PACKET_CAPTURE.Please_relog' | translate"
+                        *ngIf="user.cid === undefined && (loggedIn$ | async)"
+                        nzShowIcon>
+              </nz-alert>
+            </ng-container>
+          </ng-container>
           <nz-spin [nzSize]="'large'" [nzSpinning]="navigating" class="app-container">
             <router-outlet></router-outlet>
           </nz-spin>

@@ -39,4 +39,7 @@ export class TeamcraftUser extends DataModel {
   itemTags: { id: number, tag: string }[] = [];
 
   stats: any = {};
+
+  cid?: string;
+  world?: number;
 }

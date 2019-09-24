@@ -56,6 +56,9 @@ import { Theme } from './modules/settings/theme';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
+import { MachinaService } from './core/electron/machina.service';
+import { UserInventoryService } from './core/database/user-inventory.service';
+import { UniversalisService } from './core/api/universalis.service';
 
 declare const gtag: Function;
 
@@ -122,6 +125,10 @@ export class AppComponent implements OnInit {
 
   public downloading = false;
 
+  public machinaToggle = false;
+
+  public emptyInventory$: Observable<boolean>;
+
   public randomTip$: Observable<string> = interval(600000).pipe(
     startWith(-1),
     map(() => {
@@ -154,7 +161,8 @@ export class AppComponent implements OnInit {
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private message: NzMessageService, @Inject(PLATFORM_ID) private platform: Object) {
+              private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
+              private inventoryService: UserInventoryService, @Inject(PLATFORM_ID) private platform: Object) {
 
     this.showGiveaway = false;
 
@@ -184,9 +192,24 @@ export class AppComponent implements OnInit {
 
     if (isPlatformServer(this.platform)) {
       this.dataLoaded = true;
+      this.emptyInventory$ = of(false);
     }
 
     if (isPlatformBrowser(this.platform)) {
+      if (this.platformService.isDesktop()) {
+        this.ipc.on('toggle-machina:value', (event, value) => {
+          this.machinaToggle = value;
+        });
+        this.ipc.send('toggle-machina:get');
+        this.machina.init();
+        this.emptyInventory$ = this.inventoryService.getUserInventory().pipe(
+          map(inventory => {
+            return inventory.items.length === 0;
+          })
+        );
+        this.universalis.initCapture();
+      }
+
       this.firebase.object('maintenance')
         .valueChanges()
         .pipe(
@@ -304,6 +327,11 @@ export class AppComponent implements OnInit {
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
+  }
+
+  enablePacketCapture(): void {
+    this.machinaToggle = true;
+    this.ipc.send('toggle-machina', true);
   }
 
   getPathname(): string {

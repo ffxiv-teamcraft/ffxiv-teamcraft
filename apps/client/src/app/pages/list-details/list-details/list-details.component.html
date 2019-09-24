@@ -183,6 +183,17 @@
           </ng-template>
         </nz-alert>
       </div>
+      <div *ngIf="machinaToggle" class="alert">
+        <div fxLayout="row" fxLayoutGap="5px">
+          <div nz-tooltip
+               [nzTitle]="'LIST_DETAILS.Autofill_details' | translate">{{'LIST_DETAILS.Autofill' | translate}}:
+          </div>
+          <div>
+            <nz-switch [ngModel]="listsFacade.autocompleteEnabled$ | async"
+                       (ngModelChange)="listsFacade.toggleAutocomplete($event)"></nz-switch>
+          </div>
+        </div>
+      </div>
       <div class="alert" *ngIf="!list.offline && list.isTooLarge()">
         <nz-alert nzType="warning" nzShowIcon [nzMessage]="'LIST_DETAILS.List_too_large' | translate"
                   [nzDescription]="'LIST_DETAILS.List_too_large_description' | translate">

@@ -10,6 +10,7 @@
 !macroend
 
 !macro customInit
+    ExecWait 'netsh advfirewall firewall add rule name=FFXIVTeamcraft dir=in action=allow program="$INSTDIR\resources\MachinaWrapper\MachinaWrapper.exe" enable=yes profile=public,private'
     ${if} $installMode == "all"
         ${IfNot} ${UAC_IsAdmin}
             ShowWindow $HWNDPARENT ${SW_HIDE}

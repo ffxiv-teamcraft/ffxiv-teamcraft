@@ -77,6 +77,7 @@ import { freeCompanyActions } from '../../../core/data/sources/free-company-acti
 import { ConsumablesService } from '../../simulator/model/consumables.service';
 import { FreeCompanyActionsService } from '../../simulator/model/free-company-actions.service';
 import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
+import { UserInventoryService } from '../../../core/database/user-inventory.service';
 
 @Component({
   selector: 'app-item-row',
@@ -159,9 +160,35 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   newTag: string;
 
+  amountInInventory$: Observable<{ containerName: string, amount: number, hq: boolean, isRetainer: boolean }[]> = this.item$.pipe(
+    switchMap(item => {
+      return this.inventoryService.getUserInventory().pipe(
+        map(inventory => {
+          const entries = inventory.items.filter(entry => entry.itemId === item.id);
+          return entries.map(entry => {
+            return {
+              isRetainer: entry.retainerName !== undefined,
+              containerName: entry.retainerName ? entry.retainerName : this.inventoryService.getContainerName(entry.containerId),
+              amount: entry.quantity,
+              hq: entry.hq
+            };
+          }).reduce((res, entry) => {
+            const resEntry = res.find(e => e.containerName === entry.containerName && e.hq === entry.hq);
+            if (resEntry !== undefined) {
+              resEntry.amount += entry.amount;
+            } else {
+              res.push(entry);
+            }
+            return res;
+          }, []);
+        })
+      );
+    })
+  );
+
   @ViewChild('inputElement') inputElement: ElementRef;
 
-  itemTags$ = combineLatest(this.item$, this.authFacade.user$).pipe(
+  itemTags$ = combineLatest([this.item$, this.authFacade.user$]).pipe(
     map(([item, user]) => {
       return (user.itemTags || [])
         .filter(entry => entry.id === item.id)
@@ -171,7 +198,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   tagInput$ = new BehaviorSubject<string>('');
 
-  availableTags$ = combineLatest(this.tagInput$, this.authFacade.user$).pipe(
+  availableTags$ = combineLatest([this.tagInput$, this.authFacade.user$]).pipe(
     map(([input, user]) => {
       return _.uniq(user.itemTags
         .filter(entry => entry.tag.toLowerCase().indexOf(input.toLowerCase()) > -1)
@@ -181,7 +208,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   itemRowTypes = ItemRowMenuElement;
 
-  showLogCompletionButton$ = combineLatest(this.authFacade.user$, this.item$).pipe(
+  showLogCompletionButton$ = combineLatest([this.authFacade.user$, this.item$]).pipe(
     map(([user, item]) => {
       if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
         return user.logProgression.indexOf(+item.recipeId || +item.craftedBy[0].recipeId) === -1;
@@ -208,7 +235,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               private progressService: ProgressPopupService,
               private notificationService: NzNotificationService,
               public consumablesService: ConsumablesService,
-              public freeCompanyActionsService: FreeCompanyActionsService) {
+              public freeCompanyActionsService: FreeCompanyActionsService,
+              private inventoryService: UserInventoryService) {
     super();
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
@@ -234,7 +262,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
     this.userId$ = this.authFacade.userId$;
     this.loggedIn$ = this.authFacade.loggedIn$;
-    this.team$ = combineLatest(this.listsFacade.selectedList$, this.teamsFacade.selectedTeam$).pipe(
+    this.team$ = combineLatest([this.listsFacade.selectedList$, this.teamsFacade.selectedTeam$]).pipe(
       map(([list, team]) => {
         if (list.teamId === undefined || (team && list.teamId !== team.$key)) {
           return null;
@@ -684,5 +712,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   public trackByAlarm(index: number, alarm: Alarm): string {
     return alarm.$key;
+  }
+
+  public trackByInventoryEntry(index: number, entry: { containerName: string, amount: number, hq: boolean }): string {
+    return `${entry.containerName}${entry.hq}`;
   }
 }

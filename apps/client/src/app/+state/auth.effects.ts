@@ -239,7 +239,9 @@ export class AuthEffects {
       AuthActionTypes.ToggleMasterbooks,
       AuthActionTypes.SaveSet,
       AuthActionTypes.VerifyCharacter,
-      AuthActionTypes.SaveDefaultConsumables
+      AuthActionTypes.SaveDefaultConsumables,
+      AuthActionTypes.SetCID,
+      AuthActionTypes.SetWorld
     ),
     debounceTime(100),
     withLatestFrom(this.store),
