@@ -404,6 +404,8 @@
     "User_not_verified": "Пользователь не подтвержден, нажмите, чтобы подтвердить",
     "More_than_100_lists_created": "Создано более 100 списков",
     "Veteran": "Ветеран",
+    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
     "VERIFICATION": {
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
