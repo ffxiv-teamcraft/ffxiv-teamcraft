@@ -38,7 +38,7 @@ export class MachinaService {
   private retainerSpawns$: Observable<string> = this.ipc.npcSpawnPackets$.pipe(
     filter(spawn => spawn.modelType === 0x0A),
     map(spawn => spawn.name),
-    startWith(null)
+    startWith('')
   );
 
   constructor(private ipc: IpcService, private userInventoryService: UserInventoryService,

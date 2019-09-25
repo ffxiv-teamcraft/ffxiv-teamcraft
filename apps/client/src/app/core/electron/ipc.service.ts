@@ -4,7 +4,8 @@ import { IpcRenderer } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
 import { Observable, Subject } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+import { debounceTime, map } from 'rxjs/operators';
+import { ofPacketType } from '../rxjs/of-packet-type';
 
 @Injectable()
 export class IpcService {
@@ -13,61 +14,49 @@ export class IpcService {
 
   private readonly _ipc: IpcRenderer | undefined = undefined;
 
-  private _itemInfoPackets$: Subject<any> = new Subject<any>();
-
   public get itemInfoPackets$(): Observable<any> {
-    return this._itemInfoPackets$.asObservable();
+    return this.packets$.pipe(ofPacketType('itemInfo'));
   }
-
-  private _updateInventorySlotPackets$: Subject<any> = new Subject<any>();
 
   public get updateInventorySlotPackets$(): Observable<any> {
-    return this._updateInventorySlotPackets$.asObservable();
+    return this.packets$.pipe(ofPacketType('updateInventorySlot'));
   }
-
-  private _cid$: Subject<any> = new Subject<any>();
 
   public get cid$(): Observable<any> {
-    return this._cid$.asObservable();
+    return this.packets$.pipe(ofPacketType('playerSetup'));
   }
-
-  private _worldId$: Subject<any> = new Subject<any>();
 
   public get worldId$(): Observable<any> {
-    return this._worldId$.asObservable();
+    return this.packets$.pipe(ofPacketType('playerSpawn'), map(packet => packet.currentWorldId));
   }
-
-  private _marketboardListing$: Subject<any> = new Subject<any>();
 
   public get marketboardListing$(): Observable<any> {
-    return this._marketboardListing$.asObservable();
+    return this.packets$.pipe(ofPacketType('marketBoardItemListing'));
   }
-
-  private _marketboardListingHistory$: Subject<any> = new Subject<any>();
 
   public get marketboardListingHistory$(): Observable<any> {
-    return this._marketboardListingHistory$.asObservable();
+    return this.packets$.pipe(ofPacketType('marketBoardItemListingHistory'));
   }
-
-  private _inventoryModifyHandlerPackets$: Subject<any> = new Subject<any>();
 
   public get inventoryModifyHandlerPackets$(): Observable<any> {
-    return this._inventoryModifyHandlerPackets$.asObservable();
+    return this.packets$.pipe(ofPacketType('inventoryModifyHandler'));
   }
-
-  private _npcSpawnPackets$: Subject<any> = new Subject<any>();
 
   public get npcSpawnPackets$(): Observable<any> {
-    return this._npcSpawnPackets$.asObservable();
+    return this.packets$.pipe(ofPacketType('npcSpawn'));
   }
 
-  private _containerInfoPackets$: Subject<any> = new Subject<any>();
-
-  public get containerInfoPackets$(): Observable<any> {
-    return this._containerInfoPackets$.asObservable();
+  public get playerStatsPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('playerStats'));
   }
 
-  private ping$: Subject<void> = new Subject<void>();
+  public get updateClassInfoPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('updateClassInfo'));
+  }
+
+  public packets$: Subject<any> = new Subject<any>();
+
+  public machinaToggle: boolean;
 
   constructor(private platformService: PlatformService, private router: Router) {
     // Only load ipc if we're running inside electron
@@ -117,6 +106,10 @@ export class IpcService {
 
   private connectListeners(): void {
     this.send('app-ready', true);
+    this.on('toggle-machina:value', (event, value) => {
+      this.machinaToggle = value;
+    });
+    this.send('toggle-machina:get');
     this.on('packet', (event, packet: any) => {
       this.handlePacket(packet);
     });
@@ -127,7 +120,8 @@ export class IpcService {
       this.router.navigate(url.split('/'));
     });
     // If we don't get a ping for an entire minute, something is wrong.
-    this.ping$.pipe(
+    this.packets$.pipe(
+      ofPacketType('ping'),
       debounceTime(60000)
     ).subscribe(() => {
       console.warn('No ping received from server during last minute');
@@ -135,40 +129,10 @@ export class IpcService {
   }
 
   private handlePacket(packet: any): void {
-    switch (packet.type) {
-      case 'itemInfo':
-        this._itemInfoPackets$.next(packet);
-        break;
-      case 'updateInventorySlot':
-        this._updateInventorySlotPackets$.next(packet);
-        break;
-      case 'inventoryModifyHandler':
-        this._inventoryModifyHandlerPackets$.next(packet);
-        break;
-      case 'marketBoardItemListing':
-        this._marketboardListing$.next(packet);
-        break;
-      case 'marketBoardItemListingHistory':
-        this._marketboardListingHistory$.next(packet);
-        break;
-      case 'playerSetup':
-        this._cid$.next(packet);
-        break;
-      case 'playerSpawn':
-        this._worldId$.next(packet.currentWorldId);
-        break;
-      case 'npcSpawn':
-        this._npcSpawnPackets$.next(packet);
-        break;
-      case 'containerInfo':
-        this._containerInfoPackets$.next(packet);
-        break;
-      case 'ping':
-        this.ping$.next();
-        break;
-      default:
-        console.log(packet);
-        break;
+    this.packets$.next(packet);
+    if ((<any>window).debugPackets) {
+      // tslint:disable-next-line:no-console
+      console.info(packet);
     }
   }
 }

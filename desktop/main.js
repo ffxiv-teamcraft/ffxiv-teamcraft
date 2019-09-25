@@ -286,6 +286,7 @@ ipcMain.on('app-ready', (event) => {
 
 ipcMain.on('toggle-machina', (event, enabled) => {
   config.set('machina', enabled);
+  event.sender.send('toggle-machina:value', enabled);
   if (enabled) {
     Machina.start(win, config);
   } else {

@@ -125,8 +125,6 @@ export class AppComponent implements OnInit {
 
   public downloading = false;
 
-  public machinaToggle = false;
-
   public emptyInventory$: Observable<boolean>;
 
   public randomTip$: Observable<string> = interval(600000).pipe(
@@ -197,10 +195,6 @@ export class AppComponent implements OnInit {
 
     if (isPlatformBrowser(this.platform)) {
       if (this.platformService.isDesktop()) {
-        this.ipc.on('toggle-machina:value', (event, value) => {
-          this.machinaToggle = value;
-        });
-        this.ipc.send('toggle-machina:get');
         this.machina.init();
         this.emptyInventory$ = this.inventoryService.getUserInventory().pipe(
           map(inventory => {
@@ -330,7 +324,7 @@ export class AppComponent implements OnInit {
   }
 
   enablePacketCapture(): void {
-    this.machinaToggle = true;
+    this.ipc.machinaToggle = true;
     this.ipc.send('toggle-machina', true);
   }
 

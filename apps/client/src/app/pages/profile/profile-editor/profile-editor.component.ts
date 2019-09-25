@@ -10,6 +10,8 @@ import { UserPickerService } from '../../../modules/user-picker/user-picker.serv
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { VerificationPopupComponent } from './verification-popup/verification-popup.component';
 import { CharacterResponse } from '@xivapi/angular-client';
+import { IpcService } from '../../../core/electron/ipc.service';
+import { AutofillStatsPopupComponent } from './autofill-stats-popup/autofill-stats-popup.component';
 
 @Component({
   selector: 'app-profile-editor',
@@ -44,7 +46,7 @@ export class ProfileEditorComponent {
   now = Math.floor(Date.now() / 1000);
 
   constructor(private authFacade: AuthFacade, private dialog: NzModalService, private translate: TranslateService,
-              private userPicker: UserPickerService) {
+              private userPicker: UserPickerService, public ipc: IpcService) {
   }
 
   addCharacter(): void {
@@ -74,6 +76,14 @@ export class ProfileEditorComponent {
       },
       nzFooter: null,
       nzTitle: this.translate.instant('PROFILE.Stats')
+    });
+  }
+
+  openAutoFillPopup(): void {
+    this.dialog.create({
+      nzContent: AutofillStatsPopupComponent,
+      nzFooter: null,
+      nzTitle: this.translate.instant('PROFILE.Autofill_from_packets')
     });
   }
 

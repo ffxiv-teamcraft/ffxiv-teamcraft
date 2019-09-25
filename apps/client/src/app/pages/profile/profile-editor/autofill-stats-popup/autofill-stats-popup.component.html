@@ -1,0 +1,23 @@
+<div fxLayout="column" fxLayoutGap="10px">
+  <nz-alert nzType="info" [nzMessage]="'PROFILE.Autofill_stats_explain' | translate"></nz-alert>
+  <nz-list
+    [nzDataSource]="display$ | async"
+    nzBordered
+    nzSize="small"
+    [nzRenderItem]="setTemplate"
+  >
+    <ng-template #setTemplate let-entry>
+      <nz-list-item [nzContent]="status" [class.job-done]="entry.done">
+        <ng-template #status>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <div>
+              <i nz-icon nzType="check" *ngIf="entry.done"></i>
+              <i nz-icon nzType="loading" *ngIf="!entry.done"></i>
+            </div>
+            <div>{{entry.job | jobName | i18n}}</div>
+          </div>
+        </ng-template>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+</div>

@@ -45,9 +45,10 @@ module.exports.start = function(win, config) {
       'playerSetup',
       'playerSpawn',
       'inventoryModifyHandler',
-      'containerInfo',
       'npcSpawn',
-      'ping'
+      'ping',
+      'playerStats',
+      'updateClassInfo'
     ];
     if (acceptedPackets.indexOf(packet.type) > -1) {
       sendToRenderer(win, packet);

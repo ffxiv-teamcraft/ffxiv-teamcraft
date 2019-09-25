@@ -394,7 +394,7 @@
           </nz-alert>
           <nz-alert nzType="info" nzBanner [nzMessage]="'PACKET_CAPTURE.Banner_title' | translate"
                     [nzDescription]="description"
-                    *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !machinaToggle"
+                    *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.machinaToggle"
                     class="new-version-alert"
                     [nzCloseText]="'Close' | translate"
                     (nzOnClose)="settings.hideMachinaBanner = true"
