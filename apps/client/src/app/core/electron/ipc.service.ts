@@ -122,9 +122,9 @@ export class IpcService {
     // If we don't get a ping for an entire minute, something is wrong.
     this.packets$.pipe(
       ofPacketType('ping'),
-      debounceTime(60000)
+      debounceTime(15000)
     ).subscribe(() => {
-      console.warn('No ping received from server during last minute');
+      window.alert('No ping received from server during 15 seconds (should be every 10 seconds)');
     });
   }
 

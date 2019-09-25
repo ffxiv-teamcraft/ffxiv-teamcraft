@@ -59,19 +59,20 @@ export class UserInventory extends DataWithPermissions {
     }
     switch (packet.action) {
       case 'move':
-        fromItem.containerId = packet.toContainer;
-        fromItem.slot = packet.toSlot;
-        if (isFromRetainer && !isToRetainer) {
-          delete fromItem.retainerName;
-        } else if (!isFromRetainer && isToRetainer) {
-          fromItem.retainerName = lastSpawnedRetainer;
-        }
-        return {
-          itemId: fromItem.itemId,
-          containerId: fromItem.containerId,
-          hq: fromItem.hq,
-          quantity: fromItem.quantity
+        const moved = {
+          ...fromItem,
+          containerId: packet.toContainer,
+          slot: packet.toSlot
         };
+        this.items = this.items.filter(item => {
+          return item !== fromItem;
+        });
+        if (isFromRetainer && !isToRetainer) {
+          delete moved.retainerName;
+        } else if (!isFromRetainer && isToRetainer) {
+          moved.retainerName = lastSpawnedRetainer;
+        }
+        return moved;
       case 'swap':
         const fromSlot = fromItem.slot;
         const fromContainer = fromItem.containerId;
