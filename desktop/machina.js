@@ -8,19 +8,13 @@ const { exec } = require('child_process');
 
 const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
 
-const Machina = new MachinaFFXIV(isDev ? { monitorType: 'WinPCap' } : {
-  monitorType: 'WinPCap',
-  noData: true,
-  machinaExePath: machinaExePath,
-  remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
-  definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
-});
+let Machina;
 
 function sendToRenderer(win, packet) {
   win && win.webContents && win.webContents.send('packet', packet);
 }
 
-module.exports.start = function(win, config) {
+module.exports.start = function(win, config, winpcap) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
@@ -28,32 +22,47 @@ module.exports.start = function(win, config) {
         exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
         config.set('firewall', true);
       }
+
+      const options = isDev ?
+        {} : {
+          noData: true,
+          machinaExePath: machinaExePath,
+          remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
+          definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
+        };
+
+      if (winpcap) {
+        options.monitorType = 'WinPCap';
+      }
+
+      Machina = new MachinaFFXIV(options);
       Machina.start(() => {
         log.info('Packet capture started');
+      });
+      Machina.on('any', (packet) => {
+        const acceptedPackets = [
+          'itemInfo',
+          'updateInventorySlot',
+          'marketBoardItemListing',
+          'marketBoardItemListingHistory',
+          'playerSetup',
+          'playerSpawn',
+          'inventoryModifyHandler',
+          'npcSpawn',
+          'ping',
+          'playerStats',
+          'updateClassInfo'
+        ];
+        if (acceptedPackets.indexOf(packet.type) > -1) {
+          sendToRenderer(win, packet);
+        }
       });
     } else {
       throw new Error('Not enough permissions to run packet capture');
     }
   });
 
-  Machina.on('any', (packet) => {
-    const acceptedPackets = [
-      'itemInfo',
-      'updateInventorySlot',
-      'marketBoardItemListing',
-      'marketBoardItemListingHistory',
-      'playerSetup',
-      'playerSpawn',
-      'inventoryModifyHandler',
-      'npcSpawn',
-      'ping',
-      'playerStats',
-      'updateClassInfo'
-    ];
-    if (acceptedPackets.indexOf(packet.type) > -1) {
-      sendToRenderer(win, packet);
-    }
-  });
+
 };
 
 module.exports.stop = function() {
