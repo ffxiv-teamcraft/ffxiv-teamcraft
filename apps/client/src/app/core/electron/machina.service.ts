@@ -9,7 +9,8 @@ import {
   filter,
   first,
   map,
-  shareReplay, startWith,
+  shareReplay,
+  startWith,
   switchMap,
   withLatestFrom
 } from 'rxjs/operators';

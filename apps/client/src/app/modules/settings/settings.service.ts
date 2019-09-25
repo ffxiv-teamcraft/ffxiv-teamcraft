@@ -252,6 +252,14 @@ export class SettingsService {
     this.setSetting('machina:hide-banner', hide.toString());
   }
 
+  public get enableUniversalisSourcing(): boolean {
+    return this.getSetting('universalis:enable-sourcing', 'false') === 'true';
+  }
+
+  public set enableUniversalisSourcing(enabled: boolean) {
+    this.setSetting('universalis:enable-sourcing', enabled.toString());
+  }
+
   public get customTheme(): Theme {
     return {
       ...Theme.DEFAULT,

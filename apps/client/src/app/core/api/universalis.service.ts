@@ -6,6 +6,7 @@ import { buffer, debounceTime, distinctUntilChanged, filter, first, map, shareRe
 import { LazyDataService } from '../data/lazy-data.service';
 import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
+import { SettingsService } from '../../modules/settings/settings.service';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
@@ -25,7 +26,7 @@ export class UniversalisService {
   );
 
   constructor(private http: HttpClient, private lazyData: LazyDataService, private authFacade: AuthFacade,
-              private ipc: IpcService) {
+              private ipc: IpcService, private settings: SettingsService) {
   }
 
   public getDCPrices(dc: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
@@ -120,7 +121,9 @@ export class UniversalisService {
         filter(packets => packets.length > 0)
       )
       .subscribe(listings => {
-        this.handleMarketboardListingPackets(listings);
+        if (this.settings.enableUniversalisSourcing) {
+          this.handleMarketboardListingPackets(listings);
+        }
       });
     this.ipc.marketboardListingHistory$
       .pipe(
@@ -128,10 +131,14 @@ export class UniversalisService {
         filter(packets => packets.length > 0)
       )
       .subscribe(listings => {
-        this.handleMarketboardListingHistoryPackets(listings);
+        if (this.settings.enableUniversalisSourcing) {
+          this.handleMarketboardListingHistoryPackets(listings);
+        }
       });
     this.ipc.cid$.subscribe(packet => {
-      this.uploadCid(packet);
+      if (this.settings.enableUniversalisSourcing) {
+        this.uploadCid(packet);
+      }
     });
   }
 

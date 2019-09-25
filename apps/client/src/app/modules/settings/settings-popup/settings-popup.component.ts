@@ -94,6 +94,9 @@ export class SettingsPopupComponent {
   }
 
   machinaToggleChange(value: boolean): void {
+    if (value) {
+      this.settings.enableUniversalisSourcing = true;
+    }
     this.ipc.send('toggle-machina', value);
   }
 

@@ -296,6 +296,9 @@
           <label nz-checkbox [(ngModel)]="machinaToggle" (ngModelChange)="machinaToggleChange($event)">
             {{'SETTINGS.Enable_packet_capture' | translate}}
           </label>
+          <label nz-checkbox [(ngModel)]="settings.enableUniversalisSourcing" [nzDisabled]="!machinaToggle">
+            {{'SETTINGS.Contribute_to_universalis' | translate}}
+          </label>
         </div>
         <div>
           <i>{{'SETTINGS.Packet_capture_info' | translate}}</i>
