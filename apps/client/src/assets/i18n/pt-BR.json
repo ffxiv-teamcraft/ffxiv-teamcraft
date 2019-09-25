@@ -404,6 +404,8 @@
     "User_not_verified": "Usuário não verificado, clique para verificar o usuário",
     "More_than_100_lists_created": "More than 100 lists created",
     "Veteran": "Veteran",
+    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
     "VERIFICATION": {
       "Title": "Verificação da personagem",
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
