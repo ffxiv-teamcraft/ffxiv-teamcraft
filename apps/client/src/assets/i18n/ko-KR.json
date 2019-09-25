@@ -404,6 +404,8 @@
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요",
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
+    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
