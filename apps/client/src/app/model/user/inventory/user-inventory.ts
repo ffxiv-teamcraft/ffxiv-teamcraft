@@ -39,8 +39,8 @@ export class UserInventory extends DataWithPermissions {
   }
 
   operateTransaction(packet: any, lastSpawnedRetainer: string): InventoryPatch | null {
-    const isFromRetainer = packet.fromContainer > 10000 && packet.fromContainer < 20000;
-    const isToRetainer = packet.toContainer > 10000 && packet.toContainer < 20000;
+    const isFromRetainer = packet.fromContainer >= 10000 && packet.fromContainer < 20000;
+    const isToRetainer = packet.toContainer >= 10000 && packet.toContainer < 20000;
     const fromItem = this.items.find(i => {
       if (isFromRetainer) {
         return i.slot === packet.fromSlot && i.containerId === packet.fromContainer && i.retainerName === lastSpawnedRetainer;
@@ -67,6 +67,7 @@ export class UserInventory extends DataWithPermissions {
         this.items = this.items.filter(item => {
           return item !== fromItem;
         });
+        this.items.push(moved);
         if (isFromRetainer && !isToRetainer) {
           delete moved.retainerName;
         } else if (!isFromRetainer && isToRetainer) {
@@ -82,13 +83,15 @@ export class UserInventory extends DataWithPermissions {
         toItem.slot = fromSlot;
         return null;
       case 'merge':
-        fromItem.quantity -= packet.splitCount;
-        toItem.quantity += packet.splitCount;
+        this.items = this.items.filter(item => {
+          return item !== fromItem;
+        });
+        toItem.quantity += fromItem.quantity;
         return fromItem.containerId !== toItem.containerId ? {
           itemId: toItem.itemId,
           containerId: toItem.containerId,
           hq: toItem.hq,
-          quantity: packet.splitCount
+          quantity: toItem.quantity - packet.splitCount
         } : null;
       case 'split':
         fromItem.quantity -= packet.splitCount;
