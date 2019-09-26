@@ -325,6 +325,7 @@ export class AppComponent implements OnInit {
 
   enablePacketCapture(): void {
     this.ipc.machinaToggle = true;
+    this.settings.enableUniversalisSourcing = true;
     this.ipc.send('toggle-machina', true);
   }
 
