@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { ClipboardModule } from 'ngx-clipboard';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 const routes: Routes = [
   {
@@ -34,7 +35,8 @@ const routes: Routes = [
     PipesModule,
     HttpClientModule,
     FullpageMessageModule,
-    ClipboardModule
+    ClipboardModule,
+    ScrollingModule
   ]
 })
 export class InventoryModule {
