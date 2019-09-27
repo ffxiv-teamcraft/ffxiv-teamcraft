@@ -107,7 +107,7 @@ export class SetItemDone implements Action {
   constructor(public readonly itemId: number, public readonly itemIcon: number,
               public readonly finalItem: boolean, public readonly doneDelta: number,
               public readonly recipeId: string, public readonly totalNeeded: number,
-              public readonly external = false) {
+              public readonly external = false, public readonly fromPacket = false) {
   }
 }
 
@@ -177,7 +177,7 @@ export class CreateOptimisticListCompact implements Action {
 export class UpdateList implements Action {
   readonly type = ListsActionTypes.UpdateList;
 
-  constructor(public readonly payload: List, public readonly updateCompact = false, public force = false) {
+  constructor(public readonly payload: List, public readonly updateCompact = false, public force = false, public fromPacket = false) {
   }
 }
 

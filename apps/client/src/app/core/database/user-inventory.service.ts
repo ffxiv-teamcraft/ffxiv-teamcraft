@@ -15,6 +15,27 @@ import { ContainerType } from '../../model/user/inventory/container-type';
 })
 export class UserInventoryService extends FirestoreRelationalStorage<UserInventory> {
 
+  private userInventory$ = this.authFacade.user$.pipe(
+    switchMap(user => {
+      return this.getByForeignKey(TeamcraftUser, user.$key).pipe(
+        map((inventories: UserInventory[]) => {
+          if (user.defaultLodestoneId) {
+            return inventories.find(inventory => inventory.characterId === user.defaultLodestoneId);
+          }
+          return inventories[0];
+        }),
+        map(inventory => {
+          if (inventory === undefined) {
+            const newInventory = new UserInventory();
+            newInventory.authorId = user.$key;
+            newInventory.characterId = user.defaultLodestoneId;
+            return newInventory;
+          }
+          return inventory;
+        })
+      );
+    }));
+
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService, private authFacade: AuthFacade) {
     super(firestore, serializer, zone, pendingChangesService);
@@ -43,26 +64,7 @@ export class UserInventoryService extends FirestoreRelationalStorage<UserInvento
   }
 
   public getUserInventory(): Observable<UserInventory> {
-    return this.authFacade.user$.pipe(
-      switchMap(user => {
-        return this.getByForeignKey(TeamcraftUser, user.$key).pipe(
-          map((inventories: UserInventory[]) => {
-            if (user.defaultLodestoneId) {
-              return inventories.find(inventory => inventory.characterId === user.defaultLodestoneId);
-            }
-            return inventories[0];
-          }),
-          map(inventory => {
-            if (inventory === undefined) {
-              const newInventory = new UserInventory();
-              newInventory.authorId = user.$key;
-              newInventory.characterId = user.defaultLodestoneId;
-              return newInventory;
-            }
-            return inventory;
-          })
-        );
-      }));
+    return this.userInventory$;
   }
 
   protected getBaseUri(): string {

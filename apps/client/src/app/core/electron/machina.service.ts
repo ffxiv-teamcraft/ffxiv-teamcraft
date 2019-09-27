@@ -78,7 +78,10 @@ export class MachinaService {
           first(),
           map((inventory) => {
             const updatedContainerIds = _.uniqBy(itemInfos, 'containerId').map(packet => packet.containerId);
-            const isRetainer = updatedContainerIds.some(id => id > 9999 && id < 20000);
+            const isRetainer = updatedContainerIds.some(id => id >= 10000 && id < 20000);
+            if (isRetainer && !lastRetainerSpawned) {
+              return null;
+            }
             inventory.items = [
               ...inventory.items.filter(i => {
                 if (isRetainer) {
@@ -103,6 +106,9 @@ export class MachinaService {
             return inventory;
           })
         );
+      }),
+      filter(inventory => {
+        return inventory !== null;
       }),
       switchMap(inventory => {
         if (inventory.$key) {
@@ -140,11 +146,12 @@ export class MachinaService {
       filter(packet => {
         return packet.quantity > 0 && packet.catalogId < 40000;
       }),
-      switchMap((packet) => {
+      withLatestFrom(this.retainerSpawns$),
+      switchMap(([packet, lastRetainerSpawned]) => {
         return this.inventory$.pipe(
           first(),
           map(inventory => {
-            const patch = inventory.updateInventorySlot(packet);
+            const patch = inventory.updateInventorySlot(packet, lastRetainerSpawned);
             this._inventoryPatches$.next(patch);
             return inventory;
           })
@@ -152,7 +159,7 @@ export class MachinaService {
       }),
       switchMap(inventory => {
         if (inventory.$key) {
-          return this.userInventoryService.set(inventory.$key, inventory);
+          return this.userInventoryService.update(inventory.$key, inventory);
         } else {
           return this.userInventoryService.add(inventory);
         }
@@ -169,9 +176,9 @@ export class MachinaService {
         const itemsEntry = list.items.find(i => i.id === patch.itemId);
         const finalItemsEntry = list.finalItems.find(i => i.id === patch.itemId);
         if (itemsEntry && itemsEntry.done < itemsEntry.amount) {
-          this.listsFacade.setItemDone(patch.itemId, itemsEntry.icon, false, patch.quantity, itemsEntry.recipeId, itemsEntry.amount);
+          this.listsFacade.setItemDone(patch.itemId, itemsEntry.icon, false, patch.quantity, itemsEntry.recipeId, itemsEntry.amount, false, true);
         } else if (!itemsEntry && finalItemsEntry && finalItemsEntry.done < finalItemsEntry.amount) {
-          this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount);
+          this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount, false, true);
         }
       });
   }

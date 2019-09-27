@@ -10,7 +10,8 @@ export class UserInventory extends DataWithPermissions {
 
   characterId: number;
 
-  updateInventorySlot(packet: any): InventoryPatch {
+  updateInventorySlot(packet: any, lastSpawnedRetainer: string): InventoryPatch {
+    const isRetainer = packet.containerId >= 10000 && packet.containerId < 20000;
     let item = this.items.find(i => {
       return i.itemId === packet.catalogId
         && i.containerId === packet.containerId
@@ -20,13 +21,17 @@ export class UserInventory extends DataWithPermissions {
     const previousQuantity = item ? item.quantity : 0;
     // This can happen if user modifies inventory before zoning.
     if (item === undefined) {
-      this.items.push({
+      const entry: InventoryItem = {
         itemId: packet.catalogId,
         quantity: packet.quantity,
         hq: packet.hqFlag === 1,
         slot: packet.slot,
         containerId: packet.containerId
-      });
+      };
+      if (isRetainer) {
+        entry.retainerName = lastSpawnedRetainer;
+      }
+      this.items.push(entry);
       item = this.items[this.items.length - 1];
     }
     item.quantity = packet.quantity;

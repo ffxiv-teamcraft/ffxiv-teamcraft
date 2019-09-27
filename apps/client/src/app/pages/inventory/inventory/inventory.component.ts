@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { UserInventoryService } from '../../../core/database/user-inventory.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { InventoryDisplay } from '../inventory-display';
-import { first, map, switchMap, tap } from 'rxjs/operators';
+import { first, map, switchMap } from 'rxjs/operators';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UniversalisService } from '../../../core/api/universalis.service';
@@ -22,9 +22,6 @@ export class InventoryComponent {
   public computingPrices: { [index: string]: boolean } = {};
 
   private inventory$: Observable<InventoryDisplay[]> = this.inventoryService.getUserInventory().pipe(
-    tap(() => {
-      console.log('INVENTORY !')
-    }),
     map(inventory => {
       return inventory
         .items

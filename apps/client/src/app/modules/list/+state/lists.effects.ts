@@ -316,26 +316,33 @@ export class ListsEffects {
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
     withLatestFrom(this.listsFacade.selectedList$, this.teamsFacade.selectedTeam$, this.authFacade.userId$),
     map(([action, list, team, userId]) => {
-      list.modificationsHistory.push({
-        amount: action.doneDelta,
-        date: Date.now(),
-        itemId: action.itemId,
-        itemIcon: action.itemIcon,
-        userId: userId,
-        finalItem: action.finalItem,
-        total: action.totalNeeded,
-        recipeId: action.recipeId
+      const historyEntry = list.modificationsHistory.find(entry => {
+        return entry.itemId === action.itemId && (Date.now() - entry.date < 60000);
       });
+      if (historyEntry !== undefined) {
+        historyEntry.amount += action.doneDelta;
+      } else {
+        list.modificationsHistory.push({
+          amount: action.doneDelta,
+          date: Date.now(),
+          itemId: action.itemId,
+          itemIcon: action.itemIcon,
+          userId: userId,
+          finalItem: action.finalItem,
+          total: action.totalNeeded,
+          recipeId: action.recipeId
+        });
+      }
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
         this.discordWebhookService.notifyItemChecked(team, action.itemIcon, list, userId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
       return [action, list];
     }),
     map(([action, list]: [SetItemDone, List]) => {
-      list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-      return list;
-    }),
-    map(list => new UpdateList(list))
+      const clone = list.clone(true);
+      clone.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+      return new UpdateList(clone, false, false, action.fromPacket);
+    })
   );
 
   @Effect()
