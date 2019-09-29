@@ -24,16 +24,15 @@ module.exports.start = function(win, config, winpcap) {
       }
 
       const options = isDev ?
-        {} : {
+        {
+          monitorType : 'WinPCap'
+        } : {
           noData: true,
+          monitorType : 'WinPCap',
           machinaExePath: machinaExePath,
           remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
           definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
         };
-
-      if (winpcap) {
-        options.monitorType = 'WinPCap';
-      }
 
       Machina = new MachinaFFXIV(options);
       Machina.start(() => {
