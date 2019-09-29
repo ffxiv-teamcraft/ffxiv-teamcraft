@@ -88,6 +88,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.adaptativeFilter$.next(value);
   }
 
+  private regeneratingList = false;
+
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
@@ -105,11 +107,14 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.list$ = combineLatest([this.listsFacade.selectedList$, this.permissionLevel$]).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {
-        if (!list.notFound && list.isOutDated() && permissionLevel >= PermissionLevel.WRITE) {
+        if (!list.notFound && list.isOutDated() && permissionLevel >= PermissionLevel.WRITE && !this.regeneratingList) {
           this.regenerateList(list);
         }
         if (!list.notFound) {
           this.listIsLarge = list.isLarge();
+          if (!list.isOutDated()) {
+            this.regeneratingList = false;
+          }
         }
       }),
       map(([list]) => list),
@@ -316,10 +321,11 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   }
 
   regenerateList(list: List): void {
+    this.regeneratingList = true;
     this.progressService.showProgress(this.listManager.upgradeList(list), 1, 'List_popup_title')
       .pipe(first())
       .subscribe((updatedList) => {
-        this.listsFacade.updateList(updatedList);
+        this.listsFacade.updateList(updatedList, false, true);
       });
   }
 

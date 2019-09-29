@@ -24,7 +24,6 @@ import {
 } from './lists.actions';
 import {
   catchError,
-  debounceTime,
   delay,
   distinctUntilChanged,
   filter,
@@ -138,14 +137,14 @@ export class ListsEffects {
     mergeMap((action: LoadListDetails) => {
       return this.authFacade.loggedIn$.pipe(
         switchMap(loggedIn => {
-          return combineLatest(
+          return combineLatest([
             of(action.key),
             loggedIn ? this.authFacade.user$ : of(null),
             this.authFacade.userId$,
             this.teamsFacade.selectedTeam$,
             loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
             this.listService.get(action.key).pipe(catchError(() => of(null)))
-          );
+          ]);
         }),
         takeUntil(this.unloadListDetails$.pipe(
           filter(key => key === action.key)
@@ -245,17 +244,12 @@ export class ListsEffects {
   @Effect({ dispatch: false })
   updateListInDatabase$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
-    debounceTime(100),
     switchMap(action => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
       }
-      if (action.force) {
-        return this.listService.set(action.payload.$key, action.payload);
-      } else {
-        return this.listService.update(action.payload.$key, action.payload);
-      }
+      return this.listService.set(action.payload.$key, action.payload);
     })
   );
 
@@ -263,7 +257,6 @@ export class ListsEffects {
   updateCompactInDatabase$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     filter(action => action.updateCompact),
-    debounceTime(100),
     switchMap(action => {
       if (action.payload.offline) {
         return EMPTY;
@@ -298,16 +291,7 @@ export class ListsEffects {
         this.removeFromLocalStorage(action.key);
         return EMPTY;
       }
-      return combineLatest([this.listService.remove(action.key), this.listCompactsService.remove(action.key)])
-        .pipe(
-          catchError((error) => {
-            if (error.message.indexOf('Permission') > -1) {
-              // If it's a permission Error, let's try again just in case.
-              return combineLatest([this.listService.remove(action.key), this.listCompactsService.remove(action.key)]);
-            }
-            return EMPTY;
-          })
-        );
+      return this.listService.remove(action.key);
     })
   );
 
@@ -339,9 +323,8 @@ export class ListsEffects {
       return [action, list];
     }),
     map(([action, list]: [SetItemDone, List]) => {
-      const clone = list.clone(true);
-      clone.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-      return new UpdateList(clone, false, false, action.fromPacket);
+      list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+      return new UpdateList(list, false, false, action.fromPacket);
     })
   );
 

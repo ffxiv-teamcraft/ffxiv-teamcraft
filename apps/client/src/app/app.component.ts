@@ -198,7 +198,7 @@ export class AppComponent implements OnInit {
         this.machina.init();
         this.emptyInventory$ = this.inventoryService.getUserInventory().pipe(
           map(inventory => {
-            return inventory.items.length === 0;
+            return Object.keys(inventory.items).length === 0;
           })
         );
         this.universalis.initCapture();

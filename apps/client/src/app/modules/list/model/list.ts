@@ -17,6 +17,7 @@ import { bufferCount, debounceTime, expand, map, skip, skipUntil, switchMap, tap
 import { DataService } from '../../../core/api/data.service';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { ListManagerService } from '../list-manager.service';
+import { Subcollection } from '../../../core/database/storage/firestore/subcollection';
 
 declare const gtag: Function;
 
@@ -28,8 +29,14 @@ export class List extends DataWithPermissions {
   // For ordering purpose, lower index means higher priority on ordering.
   index = -1;
 
+  @Subcollection(item => {
+    return item.id;
+  })
   finalItems: ListRow[] = [];
 
+  @Subcollection(item => {
+    return item.id;
+  })
   items: ListRow[] = [];
 
   note = '';
@@ -74,27 +81,19 @@ export class List extends DataWithPermissions {
 
   public clone(internal = false): List {
     const clone = new List();
-    for (const prop of Object.keys(this)) {
-      if (['finalItems', 'items', 'note'].indexOf(prop) > -1) {
-        clone[prop] = JSON.parse(JSON.stringify(this[prop]));
-      }
-    }
     clone.name = this.name;
     clone.version = this.version || '1.0.0';
     clone.tags = this.tags;
     if (internal) {
-      clone.$key = this.$key;
-      clone.createdAt = this.createdAt;
-      clone.everyone = this.everyone;
-      clone.offline = this.offline;
-      clone.registry = this.registry;
-      clone.authorId = this.authorId;
-      clone.ephemeral = this.ephemeral;
-      clone.index = this.index;
-      clone.teamId = this.teamId;
-      clone.createdAt = this.createdAt;
+      for (const prop of Object.keys(this)) {
+        clone[prop] = JSON.parse(JSON.stringify(this[prop]));
+      }
     } else {
-      delete clone.$key;
+      for (const prop of Object.keys(this)) {
+        if (['finalItems', 'items', 'note'].indexOf(prop) > -1) {
+          clone[prop] = JSON.parse(JSON.stringify(this[prop]));
+        }
+      }
       gtag('event', 'List', {
         'event_label': 'creation',
         'non_interaction': true

@@ -22,40 +22,45 @@ export class InventoryComponent {
   public computingPrices: { [index: string]: boolean } = {};
 
   private inventory$: Observable<InventoryDisplay[]> = this.inventoryService.getUserInventory().pipe(
+    map(inventory => inventory.clone()),
     map(inventory => {
-      return inventory
-        .items
-        .filter(item => {
-          return [
-            ContainerType.Bag0,
-            ContainerType.Bag1,
-            ContainerType.Bag2,
-            ContainerType.Bag3,
-            ContainerType.RetainerBag0,
-            ContainerType.RetainerBag1,
-            ContainerType.RetainerBag2,
-            ContainerType.RetainerBag3,
-            ContainerType.RetainerBag4,
-            ContainerType.RetainerBag5,
-            ContainerType.RetainerBag6,
-            ContainerType.SaddleBag0,
-            ContainerType.SaddleBag1
-          ].indexOf(item.containerId) > -1;
-        }).reduce((bags: InventoryDisplay[], item: InventoryItem) => {
-          const containerName = item.retainerName || this.inventoryService.getContainerName(item.containerId);
-          let bag = bags.find(i => i.containerName === containerName);
-          if (bag === undefined) {
-            bags.push({
-              isRetainer: item.retainerName !== undefined,
-              containerName: containerName,
-              containerId: item.containerId,
-              items: []
-            });
-            bag = bags[bags.length - 1];
-          }
-          bag.items.push(item);
-          return bags;
-        }, []);
+      return [].concat.apply([],
+        Object.keys(inventory.items)
+          .map(key => {
+            return Object.keys(inventory.items[key])
+              .map(slot => inventory.items[key][slot]);
+          })
+      ).filter(item => {
+        return [
+          ContainerType.Bag0,
+          ContainerType.Bag1,
+          ContainerType.Bag2,
+          ContainerType.Bag3,
+          ContainerType.RetainerBag0,
+          ContainerType.RetainerBag1,
+          ContainerType.RetainerBag2,
+          ContainerType.RetainerBag3,
+          ContainerType.RetainerBag4,
+          ContainerType.RetainerBag5,
+          ContainerType.RetainerBag6,
+          ContainerType.SaddleBag0,
+          ContainerType.SaddleBag1
+        ].indexOf(item.containerId) > -1;
+      }).reduce((bags: InventoryDisplay[], item: InventoryItem) => {
+        const containerName = item.retainerName || this.inventoryService.getContainerName(item.containerId);
+        let bag = bags.find(i => i.containerName === containerName);
+        if (bag === undefined) {
+          bags.push({
+            isRetainer: item.retainerName !== undefined,
+            containerName: containerName,
+            containerId: item.containerId,
+            items: []
+          });
+          bag = bags[bags.length - 1];
+        }
+        bag.items.push(item);
+        return bags;
+      }, []);
     }),
     map(inventories => {
       return inventories
@@ -66,7 +71,7 @@ export class InventoryComponent {
           return a.containerName > b.containerName ? -1 : 1;
         })
         .map(inventory => {
-          inventory.items = inventory.items.sort((a, b) => a.slot - b.slot);
+          inventory.items = inventory.items.sort((a, b) => a.itemId - b.itemId);
           return inventory;
         });
     })

@@ -54,6 +54,10 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('updateClassInfo'));
   }
 
+  public get currencyCrystalInfoPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('currencyCrystalInfo'));
+  }
+
   public packets$: Subject<any> = new Subject<any>();
 
   public machinaToggle: boolean;
