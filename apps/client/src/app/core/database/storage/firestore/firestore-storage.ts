@@ -32,6 +32,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     delete parent.notFound;
     const subcollectionsData = {};
     this.subcollections.forEach(subcollection => {
+      subcollectionsData[subcollection] = parent[subcollection];
       delete parent[subcollection];
     });
     return {
@@ -95,7 +96,11 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   private handleSubcollectionChanges(baseUri: string, documentId: string, subcollection: string, before: any[], after: any[], trackBy: (e: any) => string | number): Observable<any> {
-    const changes = uniqBy(this.diff(before, after, trackBy), '$key');
+    const diffData = this.diff(before, after, trackBy);
+    const changes = [
+      ...diffData.filter(change => change.$key === undefined),
+      ...uniqBy(diffData.filter(change => change.$key !== undefined), '$key')
+    ];
     const batches = [this.firestore.firestore.batch()];
     let operations = 0;
     if (baseUri.indexOf('lists/') > -1) {
@@ -270,7 +275,9 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
 
   set(uid: string, data: T, uriParams?: any): Observable<void> {
     this.pendingChangesService.addPendingChange(`set ${this.getBaseUri(uriParams)}/${uid}`);
+    console.log(data);
     const preparedData = this.prepareData(data);
+    console.log(preparedData);
     if (uid === undefined || uid === null || uid === '') {
       throw new Error('Empty uid');
     }
