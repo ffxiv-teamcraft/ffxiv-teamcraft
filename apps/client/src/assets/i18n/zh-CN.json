@@ -142,7 +142,7 @@
     "User": "用户",
     "Tables": "表格",
     "Pie_charts": "饼状图",
-    "Read_more_on_wiki": "Read more details on wiki"
+    "Read_more_on_wiki": "在wiki上阅读更多详细信息"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -527,7 +527,7 @@
     "Amount_ilvl": "Amount (ilvl)",
     "Contributions_popup": "贡献统计",
     "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
-    "Autofill": "Autofill",
+    "Autofill": "自动填写",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -1543,8 +1543,8 @@
     "Click_to_add_to_progression": "Click to add to item progression",
     "Contribute_to_universalis": "Contribute data to universalis",
     "BAG": {
-      "SaddleBag": "Chocobo Saddlebag",
-      "Bag": "Inventory",
+      "SaddleBag": "陆行鸟鞍囊",
+      "Bag": "物品栏",
       "Other": "Other inventory"
     }
   }
