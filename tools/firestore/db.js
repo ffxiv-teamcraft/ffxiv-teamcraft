@@ -16,7 +16,7 @@ firestoreService.initializeApp(serviceAccount, 'https://ffxiv-teamcraft-beta.fir
 const firestore = new Firestore();
 const backupFile = './lists.json';
 
-const allLists = Object.entries(JSON.parse(fs.readFileSync('./lists.json', 'utf8').trim() || '[]')).map(([k, v]) => {
+const allLists = Object.entries(JSON.parse(fs.readFileSync(backupFile, 'utf8').trim() || '[]')).map(([k, v]) => {
   return {
     ...v,
     $key: k
