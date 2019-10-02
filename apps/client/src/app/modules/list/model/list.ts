@@ -17,7 +17,6 @@ import { bufferCount, debounceTime, expand, map, skip, skipUntil, switchMap, tap
 import { DataService } from '../../../core/api/data.service';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { ListManagerService } from '../list-manager.service';
-import { Subcollection } from '../../../core/database/storage/firestore/subcollection';
 
 declare const gtag: Function;
 
@@ -29,14 +28,8 @@ export class List extends DataWithPermissions {
   // For ordering purpose, lower index means higher priority on ordering.
   index = -1;
 
-  @Subcollection(item => {
-    return item.id;
-  })
   finalItems: ListRow[] = [];
 
-  @Subcollection(item => {
-    return item.id;
-  })
   items: ListRow[] = [];
 
   note = '';
