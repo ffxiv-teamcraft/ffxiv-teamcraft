@@ -41,6 +41,127 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     };
   }
 
+  private diff(before: any[], after: any[], trackBy: (row: any) => string | number): DataDiff[] {
+    const additions = [];
+    const deletions = [];
+    const modifications = [];
+    before.forEach(bEntry => {
+      const entryComparator = trackBy(bEntry);
+      const aEntry = after.find(afterEntry => trackBy(afterEntry) === entryComparator);
+      if (!aEntry) {
+        deletions.push({ ...bEntry });
+      } else {
+        const aEntryCopy = { ...aEntry };
+        const bEntryCopy = { ...bEntry };
+        delete aEntryCopy.$key;
+        delete bEntryCopy.$key;
+        if (!isEqual(aEntryCopy, bEntryCopy)) {
+          modifications.push({
+            after: { ...aEntry },
+            before: { ...bEntry }
+          });
+        }
+      }
+    });
+    after.forEach(aEntry => {
+      if (!before.some(bEntry => trackBy(bEntry) === trackBy(aEntry))) {
+        additions.push({ ...aEntry });
+      }
+    });
+    return [
+      ...additions.map(addition => {
+        return {
+          $key: this.firestore.createId(),
+          type: DiffType.ADDITION,
+          data: addition
+        };
+      }),
+      ...deletions.map(deletion => {
+        return {
+          $key: deletion.$key,
+          type: DiffType.DELETION
+        };
+      }),
+      ...modifications.map(modification => {
+        const key = modification.after.$key || modification.before.$key || this.firestore.createId();
+        delete modification.after.$key;
+        delete modification.before.$key;
+        return {
+          $key: key,
+          type: DiffType.MODIFICATION,
+          data: modification.after
+        };
+      })
+    ];
+  }
+
+  private handleSubcollectionChanges(baseUri: string, documentId: string, subcollection: string, before: any[], after: any[], trackBy: (e: any) => string | number): Observable<any> {
+    const diffData = this.diff(before, after, trackBy);
+    const changes = [
+      ...diffData.filter(change => change.$key === undefined),
+      ...uniqBy(diffData.filter(change => change.$key !== undefined), '$key')
+    ];
+    const batches = [this.firestore.firestore.batch()];
+    let operations = 0;
+    if (baseUri.indexOf('lists/') > -1) {
+      const toMigrate = after.filter((element) => {
+        return element.$key === undefined && !changes.some(change => {
+          return trackBy(change.data) === trackBy(element);
+        });
+      });
+      toMigrate.forEach(migration => {
+        let batch = batches[operations % 500];
+        if (batch === undefined) {
+          batches[operations % 500] = this.firestore.firestore.batch();
+          batch = batches[operations % 500];
+        }
+        batch.set(this.firestore.collection(baseUri)
+          .doc(documentId)
+          .collection(subcollection)
+          .doc(this.firestore.createId())
+          .ref, migration);
+        operations++;
+      });
+    }
+    changes
+      .forEach(change => {
+        let batch = batches[operations % 500];
+        if (batch === undefined) {
+          batches[operations % 500] = this.firestore.firestore.batch();
+          batch = batches[operations % 500];
+        }
+        switch (change.type) {
+          case DiffType.ADDITION:
+            batch.set(this.firestore.collection(baseUri)
+              .doc(documentId)
+              .collection(subcollection)
+              .doc(change.$key)
+              .ref, change.data);
+            break;
+          case DiffType.DELETION:
+            batch.delete(this.firestore.collection(baseUri)
+              .doc(documentId)
+              .collection(subcollection)
+              .doc(change.$key)
+              .ref);
+            break;
+          case DiffType.MODIFICATION:
+            // TODO Maybe use update instead here, if only one number has been changed for instance
+            batch.set(this.firestore.collection(baseUri)
+              .doc(documentId)
+              .collection(subcollection)
+              .doc(change.$key)
+              .ref, change.data);
+            break;
+        }
+        operations++;
+      });
+    if (operations === 0) {
+      return of(null);
+    }
+    return combineLatest(batches.map(batch => from(batch.commit()))).pipe(debounceTime(500));
+  }
+
   add(data: T, uriParams?: any): Observable<string> {
     const preparedData = this.prepareData(data);
     const newId = this.firestore.createId();
