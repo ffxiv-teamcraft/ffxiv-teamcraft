@@ -5,22 +5,56 @@ import { combineLatest, Observable } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { FirestoreStorage } from '../firestore/firestore-storage';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { first, map, switchMap, tap } from 'rxjs/operators';
+import { first, map, switchMap } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { LazyDataService } from '../../../data/lazy-data.service';
+import { ListRow } from '../../../../modules/list/model/list-row';
+import { pick } from 'lodash';
 
 @Injectable()
 export class FirestoreListStorage extends FirestoreStorage<List> implements ListStore {
 
+  private static readonly PERSISTED_LIST_ROW_PROPERTIES = ['amount', 'done', 'amount_needed', 'used', 'id', 'icon', 'recipeId', 'yield', 'workingOnIt', 'requiredAsHQ', 'custom', 'attachedRotation'];
+
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService) {
+              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataService) {
     super(firestore, serializer, zone, pendingChangesService);
+  }
+
+  protected prepareData(list: Partial<List>): { parent: List; subcollections: { [p: string]: any[] } } {
+    const clone: List = JSON.parse(JSON.stringify(list));
+    clone.items = clone.items.map(item => {
+      return pick(item, FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES) as ListRow;
+    });
+    clone.finalItems = clone.finalItems.map(item => {
+      return pick(item, FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES) as ListRow;
+    });
+    return super.prepareData(clone);
+  }
+
+  private completeListData(list: List): List{
+    list.items = list.items.map(item => {
+      return Object.assign(item, this.lazyData.extracts.find(i => i.id === item.id));
+    });
+    list.finalItems = list.finalItems.map(item => {
+      return Object.assign(item, this.lazyData.extracts.find(i => i.id === item.id));
+    });
+    return list;
+  }
+
+  get(uid: string): Observable<List> {
+    return super.get(uid).pipe(
+      map(list => {
+        return this.completeListData(list);
+      })
+    );
   }
 
   getPublicLists(): Observable<List[]> {
     return this.firestore.collection(this.getBaseUri(), ref => ref.where('public', '==', true))
       .snapshotChanges()
       .pipe(
-        map((snaps: any[]) => snaps.map(snap => ({ $key: snap.payload.doc.id, ...snap.payload.doc.data() }))),
+        map((snaps: any[]) => snaps.map(snap => this.completeListData({ $key: snap.payload.doc.id, ...snap.payload.doc.data() }))),
         map((lists: any[]) => this.serializer.deserialize<List>(lists, [List])),
         map((lists: List[]) => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())),
         first()
@@ -68,7 +102,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
           // Resulting on an unreadable, undeletable list.
           const data = snap.payload.doc.data();
           delete data.$key;
-          return (<List>{ $key: snap.payload.doc.id, ...data });
+          return this.completeListData(<List>{ $key: snap.payload.doc.id, ...data });
         })),
         map((lists: List[]) => this.serializer.deserialize<List>(lists, [List]))
       );

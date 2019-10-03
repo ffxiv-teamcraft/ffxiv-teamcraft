@@ -26,8 +26,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     this.subcollections = Reflect.getMetadata(METADATA_SUBCOLLECTIONS_INDEX, new (<Instantiable>this.getClass())()) || [];
   }
 
-  private prepareData(data: Partial<T>): { parent: T, subcollections: { [index: string]: any[] } } {
-    const parent = JSON.parse(JSON.stringify(data));
+  protected prepareData(data: Partial<T>): { parent: T, subcollections: { [index: string]: any[] } } {
+    const parent = JSON.parse(this.serializer.serialize(data));
     delete parent.$key;
     delete parent.notFound;
     const subcollectionsData = {};

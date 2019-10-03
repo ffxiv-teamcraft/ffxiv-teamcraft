@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { ListService } from '../list.service';
 import {
   ConvertLists,
   CreateList,
@@ -50,6 +49,8 @@ import { NzModalService } from 'ng-zorro-antd';
 import { ListCompletionPopupComponent } from '../list-completion-popup/list-completion-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
+import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
+import { ListStore } from '../../../core/database/storage/list/list-store';
 
 @Injectable()
 export class ListsEffects {
@@ -390,7 +391,7 @@ export class ListsEffects {
   constructor(
     private actions$: Actions,
     private authFacade: AuthFacade,
-    private listService: ListService,
+    private listService: ListStore,
     private listCompactsService: ListCompactsService,
     private listsFacade: ListsFacade,
     private teamsFacade: TeamsFacade,

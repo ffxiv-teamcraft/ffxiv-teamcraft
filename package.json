@@ -129,7 +129,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@kaiu/ng-serializer": "1.1.1",
-    "@kaiu/serializer": "1.2.1",
+    "@kaiu/serializer": "1.4.0",
     "@ng-toolkit/universal": "^7.1.2",
     "@ngrx/effects": "7.4.0",
     "@ngrx/entity": "7.4.0",

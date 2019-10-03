@@ -10,6 +10,7 @@ import { isPlatformServer } from '@angular/common';
 import { LazyRecipe } from './lazy-recipe';
 import { PlatformService } from '../tools/platform.service';
 import { environment } from '../../../environments/environment';
+import { ListRow } from '../../modules/list/model/list-row';
 
 @Injectable({
   providedIn: 'root'
@@ -70,6 +71,7 @@ export class LazyDataService {
   public patches: any[] = [];
   public patchContents: any = {};
   public recipes: LazyRecipe[] = [];
+  public extracts: ListRow[] = [];
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -143,7 +145,8 @@ export class LazyDataService {
         this.getData('/assets/data/traits.json'),
         this.getData('https://xivapi.com/patchlist'),
         this.getData('/assets/data/recipes.json'),
-        this.getData('/assets/data/patch-content.json')
+        this.getData('/assets/data/patch-content.json'),
+        this.getData('/assets/data/extracts.json')
       ]
     ).subscribe(([
                    items,
@@ -188,7 +191,8 @@ export class LazyDataService {
                    traits,
                    patches,
                    recipes,
-                   patchContents
+                   patchContents,
+                   extracts
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -233,6 +237,7 @@ export class LazyDataService {
       this.patches = patches as any[];
       this.recipes = recipes as LazyRecipe[];
       this.patchContents = patchContents;
+      this.extracts = extracts;
       this.loaded$.next(true);
       this.loaded$.complete();
     });

@@ -9,13 +9,14 @@ const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
 
 const runtimeOpts = {
-  timeoutSeconds: 60,
+  timeoutSeconds: 300,
   memory: '1GB'
 };
 
 function getCompact(list) {
   const compact = list;
   delete compact.items;
+  delete compact.modificationsHistory;
   compact.finalItems = (compact.finalItems || []).map(item => {
     const entry = {
       amount: item.amount,
@@ -62,21 +63,13 @@ exports.firestoreCountlistsDelete = functions.runWith(runtimeOpts).firestore.doc
   }).then(() => null);
 });
 
-exports.createListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate(async (snap, context) => {
-  const list = snap.data();
-  const refs = await admin.firestore().collection(`/lists/${snap.id}/finalItems`).listDocuments();
-  const docs = await Promise.all(refs.map(async ref => await ref.get()));
-  list.finalItems = docs.map(doc => doc.data());
-  const compact = getCompact(list);
+exports.createListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap, context) => {
+  const compact = getCompact(snap.data());
   return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).set(compact);
 });
 
-exports.updateListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate(async (snap, context) => {
-  const list = snap.after.data();
-  const refs = await admin.firestore().collection(`/lists/${snap.after.id}/finalItems`).listDocuments();
-  const docs = await Promise.all(refs.map(async ref => await ref.get()));
-  list.finalItems = docs.map(doc => doc.data());
-  const compact = getCompact(list);
+exports.updateListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((snap, context) => {
+  const compact = getCompact(snap.after.data());
   return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).set(compact);
 });
 
