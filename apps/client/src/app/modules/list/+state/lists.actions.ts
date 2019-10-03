@@ -28,6 +28,7 @@ export enum ListsActionTypes {
   CreateList = '[Lists] Create List',
   CreateOptimisticListCompact = '[Lists] Create List Compact',
   UpdateList = '[Lists] Update List',
+  UpdateListAtomic = '[Lists] Update List Atomic',
   UpdateListIndex = '[Lists] Update List Index',
   DeleteList = '[Lists] Delete List',
   ConvertLists = '[Lists] Convert Lists',
@@ -181,6 +182,13 @@ export class UpdateList implements Action {
   }
 }
 
+export class UpdateListAtomic implements Action {
+  readonly type = ListsActionTypes.UpdateListAtomic;
+
+  constructor(public readonly payload: List) {
+  }
+}
+
 export class UpdateListIndex implements Action {
   readonly type = ListsActionTypes.UpdateListIndex;
 
@@ -226,4 +234,5 @@ export type ListsAction =
   | UnloadListDetails
   | ConvertLists
   | OfflineListsLoaded
-  | ToggleAutocompletion;
+  | ToggleAutocompletion
+  | UpdateListAtomic;

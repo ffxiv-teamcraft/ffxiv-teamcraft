@@ -1,7 +1,7 @@
 import { List } from '../../../../modules/list/model/list';
 import { Injectable, NgZone } from '@angular/core';
 import { ListStore } from './list-store';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, from, Observable } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { FirestoreStorage } from '../firestore/firestore-storage';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
@@ -10,6 +10,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { pick } from 'lodash';
+import { diff } from 'deep-diff';
 
 @Injectable()
 export class FirestoreListStorage extends FirestoreStorage<List> implements ListStore {
@@ -32,7 +33,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
     return super.prepareData(clone);
   }
 
-  private completeListData(list: List): List{
+  private completeListData(list: List): List {
     list.items = list.items.map(item => {
       return Object.assign(item, this.lazyData.extracts.find(i => i.id === item.id));
     });
@@ -48,6 +49,33 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
         return this.completeListData(list);
       })
     );
+  }
+
+  /**
+   * Performs atomic update on every list item, must be used only for progression input
+   * @param uid
+   * @param data
+   * @param uriParams
+   */
+  atomicUpdate(uid: string, data: Partial<List>, uriParams?: any): Observable<void> {
+    const previousValue = this.prepareData(this.syncCache[uid]).parent;
+    const preparedList = this.prepareData(data).parent;
+    const itemsDiff = diff(previousValue.items, preparedList.items);
+    const finalItemsDiff = diff(previousValue.finalItems, preparedList.finalItems);
+    const listRef = this.firestore.collection(this.getBaseUri()).doc(uid).ref;
+    return from(this.firestore.firestore.runTransaction(transaction => {
+      return transaction.get(listRef).then(listDoc => {
+        const list = listDoc.data();
+        list.modificationsHistory = preparedList.modificationsHistory;
+        (itemsDiff || []).forEach(itemDiff => {
+          list.items[itemDiff.path[0]][itemDiff.path[1]] += itemDiff.rhs - itemDiff.lhs;
+        });
+        (finalItemsDiff || []).forEach(itemDiff => {
+          list.finalItems[itemDiff.path[0]][itemDiff.path[1]] += itemDiff.rhs - itemDiff.lhs;
+        });
+        transaction.set(listRef, list);
+      });
+    }));
   }
 
   getPublicLists(): Observable<List[]> {

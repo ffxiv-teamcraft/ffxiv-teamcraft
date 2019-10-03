@@ -19,7 +19,8 @@ import {
   UnloadListDetails,
   UpdateItem,
   UpdateList,
-  UpdateListIndex
+  UpdateListIndex,
+  UpdateListAtomic
 } from './lists.actions';
 import {
   catchError,
@@ -255,6 +256,18 @@ export class ListsEffects {
   );
 
   @Effect({ dispatch: false })
+  atomicListUpdate = this.actions$.pipe(
+    ofType<UpdateList>(ListsActionTypes.UpdateListAtomic),
+    switchMap(action => {
+      if (action.payload.offline) {
+        this.saveToLocalstorage(action.payload, false);
+        return of(null);
+      }
+      return this.listService.atomicUpdate(action.payload.$key, action.payload);
+    })
+  );
+
+  @Effect({ dispatch: false })
   updateCompactInDatabase$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     filter(action => action.updateCompact),
@@ -325,7 +338,7 @@ export class ListsEffects {
     }),
     map(([action, list]: [SetItemDone, List]) => {
       list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-      return new UpdateList(list, false, false, action.fromPacket);
+      return new UpdateListAtomic(list);
     })
   );
 
