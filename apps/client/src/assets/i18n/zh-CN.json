@@ -253,7 +253,7 @@
   "Submit": "提交",
   "Invalid_credentials": "账号或密码错误",
   "Not_verified": "未验证",
-  "Anonymous_Warning": "注册以避免清单丢失，并开启自定义过滤器等更多功能",
+  "Anonymous_Warning": "建议您注册以避免清单丢失，并开启自定义过滤器等更多功能",
   "Game_Term/DoH": "能工巧匠",
   "Game_Term/DoL": "大地使者",
   "MIN/BTN": "采矿 / 园艺",
@@ -403,7 +403,7 @@
     "Add_new_contact": "添加好友",
     "Save_for_all": "一键保存为所有工匠属性",
     "User_not_verified": "用户未验证，点击验证",
-    "More_than_100_lists_created": "创建了 100+ 个清单",
+    "More_than_100_lists_created": "现有 100+ 个清单",
     "Veteran": "老玩家",
     "Autofill_from_packets": "Autofill stats using packet capture",
     "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
@@ -1054,11 +1054,11 @@
     "Features_header": "开始吧！",
     "DESCRIPTION": {
       "Lists": "查看所有配方、材料并与您的朋友分享，一切都从创建清单开始！只需要搜索并选中物品就可以开始搓搓搓了。",
-      "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
+      "Public_lists": "从共享社区复制现成的清单。共享社区里有玩家分享的各等级段理符、制作笔记、飞空艇、毕业套等所有你感兴趣的生产清单。",
       "Alarms": "闹钟使你不会错过限时采集点，分文件夹组织闹钟，导入到游戏，一切皆有可能。",
       "Gathering_location": "寻找采集点信息，创建闹钟，获得即时位置、最近传送点、所需传承录，还有更多！",
       "Rotations": "使用生产模拟器创建生产手法并即时测试，您还可以使用生产模拟器来检验您的理论手法！",
-      "Levequests": "找到特定职业的理符，查看报酬，并创建清单。",
+      "Levequests": "查找特定职业/等级的理符，查看报酬，并创建清单。",
       "Macro_translation": "拿到一个制作宏但不是中文的？使用宏转换器可以将其转换为中文！"
     }
   },
@@ -1203,7 +1203,7 @@
   "SUPPORT_US": {
     "Title": "帮助我们！",
     "Communication_title": "宣传本项目",
-    "Communication_description": "通过做视频、写帖子、发微博等等让大家都知道这个工具，并在这里分享循环、清单。这对本项目的帮助超出了你的想象。\n\n我们甚至为你准备了一个宏，所以你可以到处去喊你有多爱这个工具！\n",
+    "Communication_description": "通过做视频、论坛发帖、发微博等等让大家都知道这个工具并来这里分享手法、清单，能够极大地帮助Teamcraft发展。\n\n我们甚至为你准备了一个宏，所以您可以到处去喊你有多爱这个工具！\n",
     "Contribute_title": "为项目出一份力",
     "Contribute_description": "你可以在 Github 上找到本项目并进行贡献。即使你是初学者也没有关系，我们欢迎每一个人！\n\n贡献不仅仅是说写代码。请求添加功能或者是报告 Bug 也能帮助我们为每个人提供质量最好的工具。感谢每一个愿意花时间测试本工具并找到 Bug 的人。",
     "Patreon_title": "在 Patreon 上支持我们",
