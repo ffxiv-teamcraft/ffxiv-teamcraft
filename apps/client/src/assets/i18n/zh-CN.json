@@ -84,7 +84,7 @@
     "title": "关于",
     "Created_by": "FFXIV Teamcraft 由 Louisoix, Chaos 服务器的 Miu Asakura 创作。",
     "Copyright_notice_title": "版权声明",
-    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
+    "Copyright_notice_content": "最终幻想是Square Enix控股有限公司<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. 旗下注册商标。版权声明<br>。FFXIV Teamcraft并不隶属于Square Enix.",
     "Thanks_title": "鸣谢",
     "Data_sources": "数据来源",
     "Patreon_supporters": "Patreon 支持者",
@@ -94,7 +94,7 @@
   "Hide_if_empty": "隐藏空栏",
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
-  "Ephemeral_tag": "Ephemeral",
+  "Ephemeral_tag": "临时",
   "Remove_ephemeral": "升级为永久清单",
   "Quick_list_create": "创建快速清单(完成后删除)",
   "Tag_filter": "标签",
@@ -139,9 +139,10 @@
     "Bottom": "底部",
     "Amount": "数目",
     "Undo": "撤销",
-    "User": "User",
-    "Tables": "Table",
-    "Pie_charts": "Pie charts"
+    "User": "用户",
+    "Tables": "表格",
+    "Pie_charts": "饼状图",
+    "Read_more_on_wiki": "在wiki上阅读更多详细信息"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -252,7 +253,7 @@
   "Submit": "提交",
   "Invalid_credentials": "账号或密码错误",
   "Not_verified": "未验证",
-  "Anonymous_Warning": "注册以避免清单丢失，并开启自定义过滤器等更多功能",
+  "Anonymous_Warning": "建议您注册以避免清单丢失，并开启自定义过滤器等更多功能",
   "Game_Term/DoH": "能工巧匠",
   "Game_Term/DoL": "大地使者",
   "MIN/BTN": "采矿 / 园艺",
@@ -370,7 +371,10 @@
     "Always_HQ_leves": "默认以提交HQ物品计算理符经验",
     "Clickthrough_overlay": "悬浮窗鼠标穿透",
     "Disable_search_history": "关闭搜索记录",
-    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
+    "Disable_search_debounce": "防止搜索误操作（仅在按下回车后搜索）",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
+    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
+    "Contribute_to_universalis": "Contribute to Universalis",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -399,8 +403,10 @@
     "Add_new_contact": "添加好友",
     "Save_for_all": "一键保存为所有工匠属性",
     "User_not_verified": "用户未验证，点击验证",
-    "More_than_100_lists_created": "创建了 100+ 个清单",
+    "More_than_100_lists_created": "现有 100+ 个清单",
     "Veteran": "老玩家",
+    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
     "VERIFICATION": {
       "Title": "角色验证",
       "Guide": "若要认证您的账户，复制这个代码{{userId}}到Lodestone个人资料中，并点击下方的按键。更多信息在<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>。",
@@ -442,7 +448,7 @@
       "Creating_list": "正在创建清单",
       "Loading_items": "正在加载物品信息",
       "Estimate_overmeld_materia": "估算禁断所需要的魔晶石",
-      "Multiply_tool_materia": "计算全职业魔晶石镶嵌所需的魔晶石（2个采集及8个生产职业的主副手）",
+      "Multiply_tool_materia": "计算全职业镶嵌所需的魔晶石（2个采集及8个生产职业的主副手）",
       "Group_together": "将魔晶石聚集在一起"
     }
   },
@@ -463,13 +469,13 @@
     "Show_craftable_amount": "显示可制作的数量",
     "Optimized_full_path": "显示完整最优路径 (最便宜且最快)",
     "Quick_layout_swap": "快速布局切换",
-    "Offline": "Offline",
-    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
+    "Offline": "离线",
+    "Offline_help": "离线清单储存在您的浏览器或桌面APP中，因此不能通过其他渠道查看及分享，但是他们不受龟速网络影响——比较快。",
     "Mark_whole_panel_done": "将这一大类标记为已完成",
     "ROTATION": {
-      "Attach": "Attach rotation",
-      "Detach": "Detach rotation",
-      "Click_to_copy_macro": "Click to open macro copy popup"
+      "Attach": "附加手法",
+      "Detach": "删去手法",
+      "Click_to_copy_macro": "点击打开“复制宏”弹出框"
     },
     "INVENTORY": {
       "Show_final_items": "显示最终物品",
@@ -519,7 +525,9 @@
     "Add_to_another_list": "添加到另一个清单",
     "New_tag": "新标签",
     "Amount_ilvl": "Amount (ilvl)",
-    "Contributions_popup": "Contributions stats",
+    "Contributions_popup": "贡献统计",
+    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
+    "Autofill": "自动填写",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -548,7 +556,7 @@
         "ADD_TAG": "添加标签到物品",
         "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成",
         "MARKET_BOARD_INFORMATIONS": "市场信息",
-        "ATTACH_ROTATION": "Attach rotation"
+        "ATTACH_ROTATION": "附加手法"
       }
     },
     "LAYOUT": {
@@ -584,7 +592,7 @@
     "PLD": "骑士",
     "WAR": "战士",
     "DRK": "黑骑",
-    "GNB": "枪刃师",
+    "GNB": "绝枪战士",
     "WHM": "白魔",
     "SCH": "学者",
     "AST": "占星",
@@ -637,7 +645,7 @@
     "Loading_path": "正在加载最优路径 (可能需要几秒)",
     "STEP": {
       "Gathering": "采集{{amount}}（总计：{{total}}）",
-      "Hunting": "打怪获得{{amount}}（总计：{{total}}）",
+      "Hunting": "打怪获取{{amount}}（总计：{{total}}）",
       "Vendor": "购买{{amount}}（总计：{{total}}）",
       "Trade": "兑换{{amount}}（总计：{{total}}）"
     }
@@ -840,7 +848,7 @@
         "Created_by": "由 {{name}} 创建",
         "Copy_folder": "复制此文件夹及其内容到你的账号",
         "Folder_copied": "文件夹已复制到你的账号",
-        "Your_folders": "文件夹",
+        "Your_folders": "您的文件夹",
         "Favorite_folders": "收藏文件夹",
         "Add_rotations": "新建手法",
         "Open": "打开文件夹"
@@ -932,7 +940,7 @@
     "Craft_price": "制作价格",
     "Marketboard_price": "NQ价格",
     "Marketboard_price_hq": "HQ价格",
-    "Enter_total_earnings": "输出总收入"
+    "Enter_total_earnings": "输入总收入"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
@@ -948,16 +956,16 @@
     "INTRO": {
       "Title": "理符任务",
       "First_line": "在此页面您可以搜索一个或多个理符，并将结果添加至清单",
-      "Second_line": "选择职业，输入等级范围，此处会列出所有理符列表；你可以将其添加到你的清单中，而配方会自动加入到对应的清单里。",
-      "Third_line": "如果你知道任务名，也可以通过任务名来搜索。"
+      "Second_line": "选择职业，输入等级范围，此页面会呈现所有该等级段的理符。您可以选择理符任务物品添加到您指定的清单中，相应配方会自动生成。",
+      "Third_line": "如果您知道任务名，也可以通过任务名称来搜索。"
     }
   },
   "NOTIFICATIONS": {
     "Title": "通知",
     "List_comment_added": "在列表 {{listName}} 上评论: \"{{content}}\"",
     "List_item_comment_added": "对列表 {{listName}} 中的物品 {{itemName}} 发布了评论：“{{content}}”",
-    "Db_comment": "在数据库中的新评论：{{comment}}",
-    "Db_comment_reply": "对你评论的新回复：{{comment}}",
+    "Db_comment": "数据库中的新评论：{{comment}}",
+    "Db_comment_reply": "对您评论的新回复：{{comment}}",
     "Blog_post": "新博客文章: {{title}}",
     "Mark_all_as_read": "全部标记为已读",
     "No_notifications": "无通知"
@@ -1008,7 +1016,7 @@
       "LIST_PROGRESSION": "查看材料进度",
       "FINAL_LIST_PROGRESSION": "查看产出进度",
       "USER_ASSIGNMENT": "用户分配",
-      "ITEM_COMPLETION": "物品完成"
+      "ITEM_COMPLETION": "项目完成"
     }
   },
   "MARKETBOARD": {
@@ -1021,7 +1029,7 @@
     "History": "历史记录",
     "Purchase_date": "日期",
     "More_on_mogboard": "在 MogBoard 上查看",
-    "More_on_universalis": "More details on universalis",
+    "More_on_universalis": "更多信息请见universalis",
     "Server": "服务器"
   },
   "COMMENTS": {
@@ -1045,12 +1053,12 @@
     "Buy_a_tshirt": "购买 Teamcraft 的T恤",
     "Features_header": "开始吧！",
     "DESCRIPTION": {
-      "Lists": "创建列表，查看所有原料，与你的朋友分享，从这里开始！只需要搜索并筛选一个物品，然后开始制造。",
-      "Public_lists": "从社区共享复制列表可以帮你制造家具、理符物品、完成笔记、飞空艇、毕业套等各种你想要的东西。",
-      "Alarms": "闹钟使你不会错过限时采集点，分文件夹组织闹钟，导入到游戏，一切皆有可能。",
+      "Lists": "查看所有配方、材料并与您的朋友分享，一切都从创建清单开始！只需要搜索并选中物品就可以开始搓搓搓了。",
+      "Public_lists": "从共享社区复制现成的清单。共享社区里有玩家分享的各等级段理符、制作笔记、飞空艇、毕业套等所有你感兴趣的生产清单。",
+      "Alarms": "闹钟使你不会错过限时/未知/传承采集点。分文件夹管理闹钟、导入到游戏——一切皆有可能。",
       "Gathering_location": "寻找采集点信息，创建闹钟，获得即时位置、最近传送点、所需传承录，还有更多！",
       "Rotations": "使用生产模拟器创建生产手法并即时测试，您还可以使用生产模拟器来检验您的理论手法！",
-      "Levequests": "找到特定职业的理符，查看报酬，并创建清单。",
+      "Levequests": "查找特定职业/等级的理符，查看报酬，并创建清单。",
       "Macro_translation": "拿到一个制作宏但不是中文的？使用宏转换器可以将其转换为中文！"
     }
   },
@@ -1181,7 +1189,7 @@
     "Intro": "选择职业并输入分解品级，即可找到最适合您当前分解品级的物品",
     "Loading_message": "正在加载……",
     "TAGS": {
-      "Higher_chances": "更高的成功率",
+      "Higher_chances": "成功率高",
       "Lower_exp": "经验少",
       "Good_chances": "成功率较高",
       "Good_exp": "经验较多",
@@ -1195,7 +1203,7 @@
   "SUPPORT_US": {
     "Title": "帮助我们！",
     "Communication_title": "宣传本项目",
-    "Communication_description": "通过做视频、写帖子、发微博等等让大家都知道这个工具，并在这里分享循环、清单。这对本项目的帮助超出了你的想象。\n\n我们甚至为你准备了一个宏，所以你可以到处去喊你有多爱这个工具！\n",
+    "Communication_description": "通过做视频、论坛发帖、发微博等等让大家都知道这个工具并来这里分享手法、清单，能够极大地帮助Teamcraft发展。\n\n我们甚至为你准备了一个宏，所以您可以到处去喊你有多爱这个工具！\n",
     "Contribute_title": "为项目出一份力",
     "Contribute_description": "你可以在 Github 上找到本项目并进行贡献。即使你是初学者也没有关系，我们欢迎每一个人！\n\n贡献不仅仅是说写代码。请求添加功能或者是报告 Bug 也能帮助我们为每个人提供质量最好的工具。感谢每一个愿意花时间测试本工具并找到 Bug 的人。",
     "Patreon_title": "在 Patreon 上支持我们",
@@ -1485,7 +1493,7 @@
     "Pick_currency": "选择一个币种",
     "You_can_buy": "您可以购买 {{amount}}",
     "Disabled": "货币消费指南已失效",
-    "Disabled_description": "SE一再禁止我们读取交易板信息导致此功能失效。对此造成的不便，Teamcraft深表遗憾。"
+    "Disabled_description": "SE一再禁止我们读取交易板信息致使此功能失效。对此造成的不便，Teamcraft深表遗憾。"
   },
   "BLOG": {
     "Title": "博客"
@@ -1515,5 +1523,29 @@
     "Gathering": "采集相关",
     "Helpers": "实用工具",
     "Other": "其他"
+  },
+  "PACKET_CAPTURE": {
+    "Banner_title": "Packet capture is available",
+    "Button_label": "Enable packet capture",
+    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
+    "Empty_inventory": "Your inventory hasn't been loaded yet",
+    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
+    "No_character_id": "No ingame character id set",
+    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
+  },
+  "INVENTORY": {
+    "Title": "Inventory",
+    "Empty": "Empty inventory",
+    "Estimate_total_price": "Estimate total inventory price",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Copied_to_clipboard": "Inventory copied to clipboard",
+    "Click_to_add_to_progression": "Click to add to item progression",
+    "Contribute_to_universalis": "Contribute data to universalis",
+    "BAG": {
+      "SaddleBag": "陆行鸟鞍囊",
+      "Bag": "物品栏",
+      "Other": "Other inventory"
+    }
   }
 }
