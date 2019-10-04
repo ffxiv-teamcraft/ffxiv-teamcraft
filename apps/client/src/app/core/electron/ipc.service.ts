@@ -54,6 +54,10 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('updateClassInfo'));
   }
 
+  public get currencyCrystalInfoPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('currencyCrystalInfo'));
+  }
+
   public packets$: Subject<any> = new Subject<any>();
 
   public machinaToggle: boolean;
@@ -122,9 +126,13 @@ export class IpcService {
     // If we don't get a ping for an entire minute, something is wrong.
     this.packets$.pipe(
       ofPacketType('ping'),
-      debounceTime(15000)
+      debounceTime(60000)
     ).subscribe(() => {
-      window.alert('No ping received from server during 15 seconds (should be every 10 seconds)');
+      this.send('log', {
+        level: 'error',
+        data: 'No ping received from the server during 60 seconds'
+      });
+      window.alert('No ping received from server during 60 seconds (should be every 10 seconds)');
     });
   }
 

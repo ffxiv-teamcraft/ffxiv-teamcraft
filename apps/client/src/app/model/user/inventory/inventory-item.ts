@@ -1,4 +1,4 @@
-export class InventoryItem {
+export interface InventoryItem {
   itemId: number;
   containerId: number;
   retainerName?: string;

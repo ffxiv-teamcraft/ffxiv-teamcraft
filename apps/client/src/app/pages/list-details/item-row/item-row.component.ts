@@ -164,8 +164,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     switchMap(item => {
       return this.inventoryService.getUserInventory().pipe(
         map(inventory => {
-          const entries = inventory.items.filter(entry => entry.itemId === item.id);
-          return entries.map(entry => {
+          return inventory.getItem(item.id).map(entry => {
             return {
               isRetainer: entry.retainerName !== undefined,
               containerName: entry.retainerName ? entry.retainerName : this.inventoryService.getContainerName(entry.containerId),

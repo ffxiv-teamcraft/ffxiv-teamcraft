@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { ListService } from '../list.service';
 import {
   ConvertLists,
   CreateList,
@@ -20,11 +19,11 @@ import {
   UnloadListDetails,
   UpdateItem,
   UpdateList,
-  UpdateListIndex
+  UpdateListIndex,
+  UpdateListAtomic
 } from './lists.actions';
 import {
   catchError,
-  debounceTime,
   delay,
   distinctUntilChanged,
   filter,
@@ -51,6 +50,8 @@ import { NzModalService } from 'ng-zorro-antd';
 import { ListCompletionPopupComponent } from '../list-completion-popup/list-completion-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
+import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
+import { ListStore } from '../../../core/database/storage/list/list-store';
 
 @Injectable()
 export class ListsEffects {
@@ -138,14 +139,14 @@ export class ListsEffects {
     mergeMap((action: LoadListDetails) => {
       return this.authFacade.loggedIn$.pipe(
         switchMap(loggedIn => {
-          return combineLatest(
+          return combineLatest([
             of(action.key),
             loggedIn ? this.authFacade.user$ : of(null),
             this.authFacade.userId$,
             this.teamsFacade.selectedTeam$,
             loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
             this.listService.get(action.key).pipe(catchError(() => of(null)))
-          );
+          ]);
         }),
         takeUntil(this.unloadListDetails$.pipe(
           filter(key => key === action.key)
@@ -245,17 +246,24 @@ export class ListsEffects {
   @Effect({ dispatch: false })
   updateListInDatabase$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
-    debounceTime(100),
     switchMap(action => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
       }
-      if (action.force) {
-        return this.listService.set(action.payload.$key, action.payload);
-      } else {
-        return this.listService.update(action.payload.$key, action.payload);
+      return this.listService.set(action.payload.$key, action.payload);
+    })
+  );
+
+  @Effect({ dispatch: false })
+  atomicListUpdate = this.actions$.pipe(
+    ofType<UpdateList>(ListsActionTypes.UpdateListAtomic),
+    switchMap(action => {
+      if (action.payload.offline) {
+        this.saveToLocalstorage(action.payload, false);
+        return of(null);
       }
+      return this.listService.atomicUpdate(action.payload.$key, action.payload);
     })
   );
 
@@ -263,7 +271,6 @@ export class ListsEffects {
   updateCompactInDatabase$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     filter(action => action.updateCompact),
-    debounceTime(100),
     switchMap(action => {
       if (action.payload.offline) {
         return EMPTY;
@@ -298,16 +305,7 @@ export class ListsEffects {
         this.removeFromLocalStorage(action.key);
         return EMPTY;
       }
-      return combineLatest([this.listService.remove(action.key), this.listCompactsService.remove(action.key)])
-        .pipe(
-          catchError((error) => {
-            if (error.message.indexOf('Permission') > -1) {
-              // If it's a permission Error, let's try again just in case.
-              return combineLatest([this.listService.remove(action.key), this.listCompactsService.remove(action.key)]);
-            }
-            return EMPTY;
-          })
-        );
+      return this.listService.remove(action.key);
     })
   );
 
@@ -316,16 +314,23 @@ export class ListsEffects {
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
     withLatestFrom(this.listsFacade.selectedList$, this.teamsFacade.selectedTeam$, this.authFacade.userId$),
     map(([action, list, team, userId]) => {
-      list.modificationsHistory.push({
-        amount: action.doneDelta,
-        date: Date.now(),
-        itemId: action.itemId,
-        itemIcon: action.itemIcon,
-        userId: userId,
-        finalItem: action.finalItem,
-        total: action.totalNeeded,
-        recipeId: action.recipeId
+      const historyEntry = list.modificationsHistory.find(entry => {
+        return entry.itemId === action.itemId && (Date.now() - entry.date < 60000);
       });
+      if (historyEntry !== undefined) {
+        historyEntry.amount += action.doneDelta;
+      } else {
+        list.modificationsHistory.push({
+          amount: action.doneDelta,
+          date: Date.now(),
+          itemId: action.itemId,
+          itemIcon: action.itemIcon,
+          userId: userId,
+          finalItem: action.finalItem,
+          total: action.totalNeeded,
+          recipeId: action.recipeId
+        });
+      }
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
         this.discordWebhookService.notifyItemChecked(team, action.itemIcon, list, userId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
@@ -333,14 +338,13 @@ export class ListsEffects {
     }),
     map(([action, list]: [SetItemDone, List]) => {
       list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-      return list;
-    }),
-    map(list => new UpdateList(list))
+      return new UpdateListAtomic(list);
+    })
   );
 
   @Effect()
   deleteEphemeralListsOnComplete$ = this.actions$.pipe(
-    ofType<UpdateList>(ListsActionTypes.UpdateList),
+    ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.UpdateListAtomic),
     filter(action => action.payload.ephemeral && action.payload.isComplete()),
     map(action => new DeleteList(action.payload.$key, action.payload.offline)),
     delay(500),
@@ -400,7 +404,7 @@ export class ListsEffects {
   constructor(
     private actions$: Actions,
     private authFacade: AuthFacade,
-    private listService: ListService,
+    private listService: ListStore,
     private listCompactsService: ListCompactsService,
     private listsFacade: ListsFacade,
     private teamsFacade: TeamsFacade,

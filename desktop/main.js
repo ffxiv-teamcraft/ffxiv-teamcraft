@@ -383,6 +383,10 @@ ipcMain.on('show-devtools', () => {
   win.webContents.openDevTools();
 });
 
+ipcMain.on('log', (event, entry) => {
+  log[entry.level](entry.data);
+});
+
 ipcMain.on('notification', (event, config) => {
   // Override icon for now, as getting the icon from url doesn't seem to be working properly.
   config.icon = nativeIcon;

@@ -72,27 +72,32 @@ export class List extends DataWithPermissions {
     }).length === 0;
   }
 
-  public clone(): List {
+  public clone(internal = false): List {
     const clone = new List();
-    for (const prop of Object.keys(this)) {
-      if (['finalItems', 'items', 'note'].indexOf(prop) > -1) {
-        clone[prop] = JSON.parse(JSON.stringify(this[prop]));
-      }
-    }
     clone.name = this.name;
     clone.version = this.version || '1.0.0';
     clone.tags = this.tags;
-    delete clone.$key;
-    gtag('event', 'List', {
-      'event_label': 'creation',
-      'non_interaction': true
-    });
-    gtag('event', 'List', {
-      'event_label': 'clone',
-      'non_interaction': true
-    });
-    this.forks++;
-    clone.reset();
+    if (internal) {
+      for (const prop of Object.keys(this)) {
+        clone[prop] = JSON.parse(JSON.stringify(this[prop]));
+      }
+    } else {
+      for (const prop of Object.keys(this)) {
+        if (['finalItems', 'items', 'note'].indexOf(prop) > -1) {
+          clone[prop] = JSON.parse(JSON.stringify(this[prop]));
+        }
+      }
+      gtag('event', 'List', {
+        'event_label': 'creation',
+        'non_interaction': true
+      });
+      gtag('event', 'List', {
+        'event_label': 'clone',
+        'non_interaction': true
+      });
+      this.forks++;
+      clone.reset();
+    }
     return clone;
   }
 

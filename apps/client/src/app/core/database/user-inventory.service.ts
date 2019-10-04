@@ -7,13 +7,38 @@ import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../+state/auth.facade';
 import { Observable } from 'rxjs';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
-import { map, switchMap } from 'rxjs/operators';
+import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { ContainerType } from '../../model/user/inventory/container-type';
+import { diff } from 'deep-diff';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserInventoryService extends FirestoreRelationalStorage<UserInventory> {
+
+  private userInventory$ = this.authFacade.user$.pipe(
+    switchMap(user => {
+      return this.getByForeignKey(TeamcraftUser, user.$key).pipe(
+        map((inventories: UserInventory[]) => {
+          if (user.defaultLodestoneId) {
+            return inventories.find(inventory => inventory.characterId === user.defaultLodestoneId);
+          }
+          return inventories[0];
+        }),
+        map(inventory => {
+          if (inventory === undefined) {
+            const newInventory = new UserInventory();
+            newInventory.authorId = user.$key;
+            newInventory.characterId = user.defaultLodestoneId;
+            return newInventory;
+          }
+          return inventory;
+        })
+      );
+    }),
+    debounceTime(200),
+    shareReplay(1)
+  );
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService, private authFacade: AuthFacade) {
@@ -42,27 +67,20 @@ export class UserInventoryService extends FirestoreRelationalStorage<UserInvento
     return 'Other';
   }
 
+  update(uid: string, data: Partial<UserInventory>, uriParams?: any): Observable<void> {
+    const changes = diff(this.syncCache[uid], data);
+    if (changes.some(entry => entry.kind === 'D' || entry.kind === 'A')) {
+      return super.update(uid, data, uriParams);
+    }
+    const patch = changes.reduce((res, change) => {
+      res[change.path.join('.')] = change.rhs;
+      return res;
+    }, {});
+    return super.update(uid, patch, uriParams);
+  }
+
   public getUserInventory(): Observable<UserInventory> {
-    return this.authFacade.user$.pipe(
-      switchMap(user => {
-        return this.getByForeignKey(TeamcraftUser, user.$key).pipe(
-          map((inventories: UserInventory[]) => {
-            if (user.defaultLodestoneId) {
-              return inventories.find(inventory => inventory.characterId === user.defaultLodestoneId);
-            }
-            return inventories[0];
-          }),
-          map(inventory => {
-            if (inventory === undefined) {
-              const newInventory = new UserInventory();
-              newInventory.authorId = user.$key;
-              newInventory.characterId = user.defaultLodestoneId;
-              return newInventory;
-            }
-            return inventory;
-          })
-        );
-      }));
+    return this.userInventory$;
   }
 
   protected getBaseUri(): string {

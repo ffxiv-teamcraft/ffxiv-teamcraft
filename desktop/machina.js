@@ -24,16 +24,16 @@ module.exports.start = function(win, config, winpcap) {
       }
 
       const options = isDev ?
-        {} : {
+        {
+          monitorType: 'WinPCap'
+        } : {
           noData: true,
+          logger: log.info,
+          monitorType: 'WinPCap',
           machinaExePath: machinaExePath,
           remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
           definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
         };
-
-      if (winpcap) {
-        options.monitorType = 'WinPCap';
-      }
 
       Machina = new MachinaFFXIV(options);
       Machina.start(() => {
@@ -43,6 +43,7 @@ module.exports.start = function(win, config, winpcap) {
         const acceptedPackets = [
           'itemInfo',
           'updateInventorySlot',
+          'currencyCrystalInfo',
           'marketBoardItemListing',
           'marketBoardItemListingHistory',
           'playerSetup',
@@ -56,6 +57,9 @@ module.exports.start = function(win, config, winpcap) {
         if (acceptedPackets.indexOf(packet.type) > -1) {
           sendToRenderer(win, packet);
         }
+        if (packet.type === 'ping') {
+          log.info('Ping');
+        }
       });
     } else {
       throw new Error('Not enough permissions to run packet capture');
@@ -66,5 +70,7 @@ module.exports.start = function(win, config, winpcap) {
 };
 
 module.exports.stop = function() {
-  Machina.stop();
+  if (Machina) {
+    Machina.stop();
+  }
 };

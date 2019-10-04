@@ -110,10 +110,7 @@ export class ListsFacade {
     })
   );
 
-  selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(
-    filter(list => list !== undefined),
-    shareReplay(1)
-  );
+  selectedList$ = this.store.select(listsQuery.getSelectedList);
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
@@ -199,8 +196,8 @@ export class ListsFacade {
     return list;
   }
 
-  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false): void {
-    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external));
+  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false): void {
+    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external, fromPacket));
   }
 
   updateItem(item: ListRow, finalItem: boolean): void {
@@ -253,6 +250,7 @@ export class ListsFacade {
 
   unload(key: string): void {
     this.store.dispatch(new UnloadListDetails(key));
+    this.store.dispatch(new SelectList(undefined));
   }
 
   toggleAutocomplete(newValue: boolean):void{

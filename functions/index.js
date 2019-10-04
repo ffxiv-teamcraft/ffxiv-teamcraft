@@ -9,13 +9,14 @@ const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
 
 const runtimeOpts = {
-  timeoutSeconds: 60,
+  timeoutSeconds: 300,
   memory: '1GB'
 };
 
 function getCompact(list) {
   const compact = list;
   delete compact.items;
+  delete compact.modificationsHistory;
   compact.finalItems = (compact.finalItems || []).map(item => {
     const entry = {
       amount: item.amount,

@@ -1,33 +1,43 @@
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { InventoryItem } from './inventory-item';
-import { DeserializeAs } from '@kaiu/serializer';
 import { InventoryPatch } from './inventory-patch';
+import { InventoryContainer } from './inventory-container';
 
 export class UserInventory extends DataWithPermissions {
 
-  @DeserializeAs([InventoryItem])
-  items: InventoryItem[] = [];
+  items: { [index: string]: InventoryContainer } = {};
 
   characterId: number;
 
-  updateInventorySlot(packet: any): InventoryPatch {
-    let item = this.items.find(i => {
-      return i.itemId === packet.catalogId
-        && i.containerId === packet.containerId
-        && i.slot === packet.slot
-        && i.hq === (packet.hqFlag === 1);
-    });
+  getItem(itemId: number): InventoryItem[] {
+    return [].concat.apply([],
+      Object.keys(this.items)
+        .map(key => {
+          return Object.keys(this.items[key])
+            .map(slot => this.items[key][slot]);
+        })
+    ).filter(item => item.itemId === itemId);
+  }
+
+  updateInventorySlot(packet: any, lastSpawnedRetainer: string): InventoryPatch {
+    const isRetainer = packet.containerId >= 10000 && packet.containerId < 20000;
+    const containerKey = isRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
+    let item = this.items[containerKey][packet.slot];
     const previousQuantity = item ? item.quantity : 0;
     // This can happen if user modifies inventory before zoning.
     if (item === undefined) {
-      this.items.push({
+      const entry: InventoryItem = {
         itemId: packet.catalogId,
         quantity: packet.quantity,
         hq: packet.hqFlag === 1,
         slot: packet.slot,
         containerId: packet.containerId
-      });
-      item = this.items[this.items.length - 1];
+      };
+      if (isRetainer) {
+        entry.retainerName = lastSpawnedRetainer;
+      }
+      this.items[containerKey][packet.slot] = entry;
+      item = this.items[containerKey][packet.slot];
     }
     item.quantity = packet.quantity;
     return {
@@ -41,18 +51,18 @@ export class UserInventory extends DataWithPermissions {
   operateTransaction(packet: any, lastSpawnedRetainer: string): InventoryPatch | null {
     const isFromRetainer = packet.fromContainer >= 10000 && packet.fromContainer < 20000;
     const isToRetainer = packet.toContainer >= 10000 && packet.toContainer < 20000;
-    const fromItem = this.items.find(i => {
-      if (isFromRetainer) {
-        return i.slot === packet.fromSlot && i.containerId === packet.fromContainer && i.retainerName === lastSpawnedRetainer;
-      }
-      return i.slot === packet.fromSlot && i.containerId === packet.fromContainer;
-    });
-    const toItem = this.items.find(i => {
-      if (isToRetainer) {
-        return i.slot === packet.toSlot && i.containerId === packet.toContainer && i.retainerName === lastSpawnedRetainer;
-      }
-      return i.slot === packet.toSlot && i.containerId === packet.toContainer;
-    });
+    const fromContainerKey = isFromRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
+    const toContainerKey = isToRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
+
+    const fromContainer = this.items[fromContainerKey];
+    const toContainer = this.items[toContainerKey];
+    if (fromContainer === undefined || (toContainer === undefined && packet.action === 'merge')) {
+      console.warn('Tried to move an item to an inexisting container ', fromContainerKey, toContainerKey);
+      return null;
+    }
+
+    const fromItem = fromContainer[packet.fromSlot];
+    const toItem = toContainer[packet.toSlot];
     if (fromItem === undefined || (toItem === undefined && packet.action === 'merge')) {
       console.warn('Tried to move an item that isn\'t registered in inventory');
       return null;
@@ -64,10 +74,8 @@ export class UserInventory extends DataWithPermissions {
           containerId: packet.toContainer,
           slot: packet.toSlot
         };
-        this.items = this.items.filter(item => {
-          return item !== fromItem;
-        });
-        this.items.push(moved);
+        delete this.items[fromContainerKey][packet.fromSlot];
+        delete this.items[toContainerKey][packet.toSlot];
         if (isFromRetainer && !isToRetainer) {
           delete moved.retainerName;
         } else if (!isFromRetainer && isToRetainer) {
@@ -83,9 +91,7 @@ export class UserInventory extends DataWithPermissions {
         toItem.slot = fromSlot;
         return null;
       case 'merge':
-        this.items = this.items.filter(item => {
-          return item !== fromItem;
-        });
+        delete this.items[fromContainerKey][packet.fromSlot];
         toItem.quantity += fromItem.quantity;
         return fromItem.containerId !== toItem.containerId ? {
           itemId: toItem.itemId,
@@ -95,18 +101,16 @@ export class UserInventory extends DataWithPermissions {
         } : null;
       case 'split':
         fromItem.quantity -= packet.splitCount;
-        this.items.push({
+        this.items[toContainerKey][packet.toSlot] = {
           quantity: packet.splitCount,
           containerId: packet.toContainer,
           itemId: fromItem.itemId,
           hq: fromItem.hq,
           slot: packet.toSlot
-        });
+        };
         return null;
       case 'discard':
-        this.items = this.items.filter(item => {
-          return item !== fromItem;
-        });
+        delete this.items[fromContainerKey][packet.fromSlot];
         return {
           itemId: fromItem.itemId,
           containerId: fromItem.containerId,
@@ -114,5 +118,14 @@ export class UserInventory extends DataWithPermissions {
           quantity: -packet.splitCount
         };
     }
+  }
+
+  public clone(): UserInventory {
+    const clone = new UserInventory();
+    clone.$key = this.$key;
+    clone.authorId = this.authorId;
+    clone.items = JSON.parse(JSON.stringify(this.items));
+    clone.characterId = this.characterId;
+    return clone;
   }
 }
