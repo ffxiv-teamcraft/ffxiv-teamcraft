@@ -25,10 +25,10 @@ module.exports.start = function(win, config, winpcap) {
 
       const options = isDev ?
         {
-          monitorType : 'WinPCap'
+          monitorType: 'WinPCap'
         } : {
           noData: true,
-          monitorType : 'WinPCap',
+          monitorType: 'WinPCap',
           machinaExePath: machinaExePath,
           remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
           definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
@@ -66,5 +66,7 @@ module.exports.start = function(win, config, winpcap) {
 };
 
 module.exports.stop = function() {
-  Machina.stop();
+  if (Machina) {
+    Machina.stop();
+  }
 };

@@ -53,8 +53,16 @@ export class UserInventory extends DataWithPermissions {
     const isToRetainer = packet.toContainer >= 10000 && packet.toContainer < 20000;
     const fromContainerKey = isFromRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
     const toContainerKey = isToRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
-    const fromItem = this.items[fromContainerKey][packet.fromSlot];
-    const toItem = this.items[toContainerKey][packet.toSlot];
+
+    const fromContainer = this.items[fromContainerKey];
+    const toContainer = this.items[toContainerKey];
+    if (fromContainer === undefined || (toContainer === undefined && packet.action === 'merge')) {
+      console.warn('Tried to move an item to an inexisting container ', fromContainerKey, toContainerKey);
+      return null;
+    }
+
+    const fromItem = fromContainer[packet.fromSlot];
+    const toItem = toContainer[packet.toSlot];
     if (fromItem === undefined || (toItem === undefined && packet.action === 'merge')) {
       console.warn('Tried to move an item that isn\'t registered in inventory');
       return null;
