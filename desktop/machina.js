@@ -28,6 +28,7 @@ module.exports.start = function(win, config, winpcap) {
           monitorType: 'WinPCap'
         } : {
           noData: true,
+          logger: log.info,
           monitorType: 'WinPCap',
           machinaExePath: machinaExePath,
           remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
@@ -55,6 +56,9 @@ module.exports.start = function(win, config, winpcap) {
         ];
         if (acceptedPackets.indexOf(packet.type) > -1) {
           sendToRenderer(win, packet);
+        }
+        if (packet.type === 'ping') {
+          log.info('Ping');
         }
       });
     } else {

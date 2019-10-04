@@ -344,7 +344,7 @@ export class ListsEffects {
 
   @Effect()
   deleteEphemeralListsOnComplete$ = this.actions$.pipe(
-    ofType<UpdateList>(ListsActionTypes.UpdateList),
+    ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.UpdateListAtomic),
     filter(action => action.payload.ephemeral && action.payload.isComplete()),
     map(action => new DeleteList(action.payload.$key, action.payload.offline)),
     delay(500),
