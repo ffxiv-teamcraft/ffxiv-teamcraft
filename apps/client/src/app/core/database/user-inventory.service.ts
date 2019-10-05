@@ -68,7 +68,7 @@ export class UserInventoryService extends FirestoreRelationalStorage<UserInvento
   }
 
   update(uid: string, data: Partial<UserInventory>, uriParams?: any): Observable<void> {
-    const changes = diff(this.syncCache[uid], data);
+    const changes = (diff(this.syncCache[uid], data) || []);
     if (changes.some(entry => entry.kind === 'D' || entry.kind === 'A')) {
       return super.update(uid, data, uriParams);
     }
