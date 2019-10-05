@@ -15,7 +15,7 @@ import { diff } from 'deep-diff';
 @Injectable()
 export class FirestoreListStorage extends FirestoreStorage<List> implements ListStore {
 
-  private static readonly PERSISTED_LIST_ROW_PROPERTIES = ['amount', 'done', 'amount_needed', 'used', 'id', 'icon', 'recipeId', 'yield', 'workingOnIt', 'requiredAsHQ', 'custom', 'attachedRotation'];
+  private static readonly PERSISTED_LIST_ROW_PROPERTIES = ['amount', 'done', 'amount_needed', 'used', 'id', 'icon', 'recipeId', 'yield', 'workingOnIt', 'requiredAsHQ', 'custom', 'attachedRotation', 'requires'];
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService, private lazyData: LazyDataService) {
@@ -25,10 +25,16 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
   protected prepareData(list: Partial<List>): { parent: List; subcollections: { [p: string]: any[] } } {
     const clone: List = JSON.parse(JSON.stringify(list));
     clone.items = clone.items.map(item => {
-      return pick(item, FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES) as ListRow;
+      return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
+        cleanedItem[property] = item[property];
+        return cleanedItem;
+      }, {}) as ListRow;
     });
     clone.finalItems = clone.finalItems.map(item => {
-      return pick(item, FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES) as ListRow;
+      return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
+        cleanedItem[property] = item[property];
+        return cleanedItem;
+      }, {}) as ListRow;
     });
     return super.prepareData(clone);
   }
