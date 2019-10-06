@@ -474,7 +474,7 @@
     "Mark_whole_panel_done": "Marcar contenido del panel como completado",
     "ROTATION": {
       "Attach": "Adjuntar rotación",
-      "Detach": "Desasignar rotación",
+      "Detach": "Desligar rotación",
       "Click_to_copy_macro": "Haga clic para abrir la ventana de copia de macro"
     },
     "INVENTORY": {
@@ -556,7 +556,7 @@
         "ADD_TAG": "Añadir etiqueta al artículo",
         "MARK_AS_DONE_IN_LOG": "Marcar como hecho en el registro",
         "MARKET_BOARD_INFORMATIONS": "Información del mercado",
-        "ATTACH_ROTATION": "Adjuntar rotación"
+        "ATTACH_ROTATION": "Ligar rotación"
       }
     },
     "LAYOUT": {
@@ -1530,7 +1530,7 @@
     "Banner_description": "Puede habilitar la captura de paquetes para permitir que Teamcraft lea sus paquetes de FFXIV (una casilla de verificación también está dentro de los ajustes para habilitarlo/deshabilitarlo), esto permite autocompletar listas a medida que obtenga artículos, y contribuir datos a Universalis, el agregador del mercado.",
     "Banner_description_warning": "La captura de paquetes es contra los TdS, por lo que está deshabilitada por defecto, por favor asegúrese de evitar decirle a todos en el juego y estará bien.",
     "Empty_inventory": "Su inventario no ha sido cargado aún",
-    "Please_zone": "Por favor teletransportese a una ubicación aleatoria y abra su alforja de chocobo una vez que llegue para inicializar el sistema de inventario correctamente.",
+    "Please_zone": "Por favor teletranspórtese a una ubicación aleatoria y abra su alforja de chocobo una vez que llegue para inicializar el sistema de inventario correctamente.",
     "No_character_id": "No hay un id de personaje establecido",
     "Please_relog": "Para contribuir a Universalis, necesitamos que cierre y vuelva iniciar sesión (en el juego), esto sólo es necesario una vez."
   },
@@ -1540,12 +1540,12 @@
     "Estimate_total_price": "Estimar el precio total del inventario",
     "Copy_to_clipboard": "Copiar inventario al portapapeles",
     "Copied_to_clipboard": "Inventario copiado al portapapeles",
-    "Click_to_add_to_progression": "Click to add to item progression",
-    "Contribute_to_universalis": "Contribute data to universalis",
+    "Click_to_add_to_progression": "Haga clic para agregar a la progresión de artículos",
+    "Contribute_to_universalis": "Contribuir datos a Universalis",
     "BAG": {
-      "SaddleBag": "Chocobo Saddlebag",
-      "Bag": "Inventory",
-      "Other": "Other inventory"
+      "SaddleBag": "Alforja de Chocobo",
+      "Bag": "Inventario",
+      "Other": "Otro inventario"
     }
   }
 }
