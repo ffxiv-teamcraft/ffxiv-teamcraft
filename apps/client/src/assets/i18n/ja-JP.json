@@ -886,6 +886,7 @@
       "No_medicine": "薬なし",
       "No_fc_buffs": "フリーカンパニーのバフなし",
       "Quest_warning": "レベル70のジョブクエストから '魔匠の閃き' を獲得しましたか、必ずご確認下さい",
+      "Starting_quality": "Starting quality",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "作業精度",
