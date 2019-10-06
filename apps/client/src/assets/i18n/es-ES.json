@@ -253,7 +253,7 @@
   "Submit": "Enviar",
   "Invalid_credentials": "Credenciales Inválidas",
   "Not_verified": "No verificado",
-  "Anonymous_Warning": "Debería crear una cuenta para evitar perder sus listas y activar más características como filtro adaptable",
+  "Anonymous_Warning": "Debería crear una cuenta para evitar perder sus listas y habilitar más características como filtro adaptable",
   "Game_Term/DoH": "Discípulos de la Mano",
   "Game_Term/DoL": "Discípulos de la Tierra",
   "MIN/BTN": "Minero / Botánico",
@@ -333,7 +333,7 @@
     "General": "General",
     "Link_base": "Vínculos de artículos",
     "Theme": "Tema",
-    "no_panel_borders": "Desactivar bordes alrededor de varios paneles",
+    "no_panel_borders": "Deshabilitar bordes alrededor de varios paneles",
     "Desktop": "Escritorio",
     "Always_on_top": "Siempre arriba",
     "Check_for_update": "Buscar actualizaciones",
@@ -353,7 +353,7 @@
     "No_nickname_warning": "Por favor vaya a la página de configuración y configure un apodo para poder usar correctamente las características exclusivas de patron.",
     "Show_devtools": "Mostrar herramientas de desarrollador",
     "Clear_cache": "Borrar caché (reiniciará la aplicación)",
-    "Enable_item_tags": "Activar etiquetas de artículo",
+    "Enable_item_tags": "Habilitar etiquetas de artículo",
     "Show_copy_list_own_list": "Mostrar botón de copia en mis propias listas",
     "Custom_theme": "Tema personalizado",
     "Show_all_alarms": "Mostrar siempre todas las alarmas",
@@ -370,11 +370,11 @@
     "Db_comments_position": "Posición de comentarios de base de datos",
     "Always_HQ_leves": "Siempre contar la experiencia de leves con artículos HQ",
     "Clickthrough_overlay": "Permitir hacer clic a través de la capa sobrepuesta",
-    "Disable_search_history": "Desactivar historial de búsqueda",
-    "Disable_search_debounce": "Desactivar la búsqueda en tiempo real (sólo pulsar entrar activará la búsqueda)",
-    "Enable_packet_capture": "Activar captura de paquetes (añade características de inventario en tiempo real)",
-    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
-    "Contribute_to_universalis": "Contribute to Universalis",
+    "Disable_search_history": "Deshabilitar historial de búsqueda",
+    "Disable_search_debounce": "Deshabilitar la búsqueda en tiempo real (sólo pulsar entrar activará la búsqueda)",
+    "Enable_packet_capture": "Habilitar captura de paquetes (añade características de inventario en tiempo real)",
+    "Packet_capture_info": "Capturar paquetes es contra los TdS, la misma razón por la que usar ACT es contra los TdS. Pero Square Enix lo tolera a menos que lo presuma a todos en el juego. Simplemente no lo haga y no se arriesgará a nada.",
+    "Contribute_to_universalis": "Contribuir a Universalis",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -405,8 +405,8 @@
     "User_not_verified": "Usuario no verificado, haga clic para verificar",
     "More_than_100_lists_created": "Más de 100 listas creadas",
     "Veteran": "Veterano",
-    "Autofill_from_packets": "Autofill stats using packet capture",
-    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
+    "Autofill_from_packets": "Autocompletar estadísticas usando captura de paquetes",
+    "Autofill_stats_explain": "Cambie a la profesión deseada para actualizarla. Cierre esta ventana cuando haya terminado.",
     "VERIFICATION": {
       "Title": "Verificación de personaje",
       "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" dentro de su biografía en su perfil de Lodestone y haga clic en el botón de abajo. Más información en el <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
@@ -457,7 +457,7 @@
     "Rename": "Renombrar lista",
     "Copied_x_times": "Copiado {{count}} veces",
     "Enable_crystals_tracking": "Habilitar rastreo de cristales",
-    "Always_show_inventory": "Siempre mostrar inventario (desactivado en pantallas pequeñas, < 600px)",
+    "Always_show_inventory": "Siempre mostrar inventario (deshabilitado en pantallas pequeñas, < 600px)",
     "Copy_as_text": "Copiar como texto",
     "Copy_list_as_text": "Copiar toda la lista como texto",
     "Copied_as_text": "Contenido copiado en el portapapeles",
@@ -469,13 +469,13 @@
     "Show_craftable_amount": "Mostrar cantidad fabricable",
     "Optimized_full_path": "Mostrar ruta optimizada completa (más barata y más rápida)",
     "Quick_layout_swap": "Intercambio rápido de diseño",
-    "Offline": "Offline",
-    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
+    "Offline": "Sin conexión",
+    "Offline_help": "Las listas sin conexión se almacenan dentro del navegador o de la aplicación, sólo están disponibles dentro de esta instancia y no pueden ser compartidas, pero son más rápidas porque no requieren llamadas de red.",
     "Mark_whole_panel_done": "Marcar contenido del panel como completado",
     "ROTATION": {
-      "Attach": "Attach rotation",
-      "Detach": "Detach rotation",
-      "Click_to_copy_macro": "Click to open macro copy popup"
+      "Attach": "Adjuntar rotación",
+      "Detach": "Desasignar rotación",
+      "Click_to_copy_macro": "Haga clic para abrir la ventana de copia de macro"
     },
     "INVENTORY": {
       "Show_final_items": "Mostrar artículos finales",
@@ -517,17 +517,17 @@
     "Open_in_ffxivgardening": "Abrir en ffxivgardening.com",
     "Add_all_item_alarms": "Agregar todas las alarmas para este artículo",
     "Adaptative_filter": "Sólo mostrar lo que puedo hacer",
-    "Disable_HQ_suggestions": "Desactivar las banderas HQ automáticas",
+    "Disable_HQ_suggestions": "Deshabilitar las banderas HQ automáticas",
     "Amount_craftable": "Puede crear {{amount}}",
     "Add_item": "Agregar un artículo",
     "List_too_large": "Lista demasiado larga",
     "List_too_large_description": "Esta lista es muy larga y puede llegar al limite de tamaño de la base de datos debido a toda la información que lleva. No le será permitido añadir más elementos para asegurar que no pierda la lista.",
     "Add_to_another_list": "Añadir a otra lista",
     "New_tag": "Nueva etiqueta",
-    "Amount_ilvl": "Amount (ilvl)",
-    "Contributions_popup": "Contributions stats",
+    "Amount_ilvl": "Cantidad (ilvl)",
+    "Contributions_popup": "Estadísticas de contribuciones",
     "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
-    "Autofill": "Autofill",
+    "Autofill": "Autocompletar",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -556,7 +556,7 @@
         "ADD_TAG": "Añadir etiqueta al artículo",
         "MARK_AS_DONE_IN_LOG": "Marcar como hecho en el registro",
         "MARKET_BOARD_INFORMATIONS": "Información del mercado",
-        "ATTACH_ROTATION": "Attach rotation"
+        "ATTACH_ROTATION": "Adjuntar rotación"
       }
     },
     "LAYOUT": {
@@ -893,7 +893,7 @@
       }
     },
     "FAIL_CAUSE": {
-      "UNSAFE_ACTION": "Acción no segura con modo seguro activado",
+      "UNSAFE_ACTION": "Acción no segura con modo seguro habilitado",
       "DURABILITY_REACHED_ZERO": "La durabilidad alcanzó 0 antes de llegar a la progresión máxima",
       "NOT_ENOUGH_CP": "CP Insuficiente",
       "MISSING_LEVEL_REQUIREMENT": "No tiene el nivel requerido",
@@ -975,7 +975,7 @@
     "Leader": "Líder",
     "Member": "Miembro",
     "Enable_discord_updates": "Habilitar las actualizaciones de Discord",
-    "Disable_discord_updates": "Desactivar las actualizaciones de Discord",
+    "Disable_discord_updates": "Deshabilitar las actualizaciones de Discord",
     "Webhook_error": "Hubo un error al crear el webhook de Discord:",
     "Create_team": "Crear un equipo",
     "Create_invite_one_day": "Crear una nueva invitación (expira en 1 día)",
@@ -1029,7 +1029,7 @@
     "History": "Historial",
     "Purchase_date": "Fecha",
     "More_on_mogboard": "Más detalles en mogboard",
-    "More_on_universalis": "More details on universalis",
+    "More_on_universalis": "Más detalles en universalis",
     "Server": "Servidor"
   },
   "COMMENTS": {
@@ -1525,8 +1525,8 @@
     "Other": "Otros"
   },
   "PACKET_CAPTURE": {
-    "Banner_title": "Packet capture is available",
-    "Button_label": "Enable packet capture",
+    "Banner_title": "Captura de paquetes disponible",
+    "Button_label": "Habilitar captura de paquetes",
     "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
     "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
     "Empty_inventory": "Your inventory hasn't been loaded yet",
