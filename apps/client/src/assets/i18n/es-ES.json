@@ -94,7 +94,7 @@
   "Hide_if_empty": "Esconder si está vacío",
   "No_favorites": "No hay favoritos",
   "Ephemeral_list": "Será borrada al completarse",
-  "Ephemeral_tag": "Ephemeral",
+  "Ephemeral_tag": "Efímero",
   "Remove_ephemeral": "Convertir a lista permanente",
   "Quick_list_create": "Crear lista rápida (borrada al completarse)",
   "Tag_filter": "Etiquetas",
@@ -139,10 +139,10 @@
     "Bottom": "Abajo",
     "Amount": "Cantidad",
     "Undo": "Deshacer",
-    "User": "User",
-    "Tables": "Table",
-    "Pie_charts": "Pie charts",
-    "Read_more_on_wiki": "Read more details on wiki"
+    "User": "Usuario",
+    "Tables": "Tabla",
+    "Pie_charts": "Gráfico de pastel",
+    "Read_more_on_wiki": "Leer más detalles en el wiki"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -371,8 +371,8 @@
     "Always_HQ_leves": "Siempre contar la experiencia de leves con artículos HQ",
     "Clickthrough_overlay": "Permitir hacer clic a través de la capa sobrepuesta",
     "Disable_search_history": "Desactivar historial de búsqueda",
-    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
-    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
+    "Disable_search_debounce": "Desactivar la búsqueda en tiempo real (sólo pulsar entrar activará la búsqueda)",
+    "Enable_packet_capture": "Activar captura de paquetes (añade características de inventario en tiempo real)",
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "Contribute_to_universalis": "Contribute to Universalis",
     "COLORS": {
