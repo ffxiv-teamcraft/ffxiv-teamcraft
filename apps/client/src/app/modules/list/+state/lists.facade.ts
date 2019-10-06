@@ -9,17 +9,18 @@ import {
   DeleteList,
   LoadListCompact,
   LoadListDetails,
-  LoadSharedLists,
   LoadMyLists,
+  LoadSharedLists,
   LoadTeamLists,
   NeedsVerification,
   OfflineListsLoaded,
   SelectList,
   SetItemDone,
+  ToggleAutocompletion,
   UnloadListDetails,
   UpdateItem,
   UpdateList,
-  UpdateListIndex, ToggleAutocompletion
+  UpdateListIndex
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
@@ -110,7 +111,9 @@ export class ListsFacade {
     })
   );
 
-  selectedList$ = this.store.select(listsQuery.getSelectedList);
+  selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(
+    filter(list => list !== undefined)
+  );
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
@@ -253,7 +256,7 @@ export class ListsFacade {
     this.store.dispatch(new SelectList(undefined));
   }
 
-  toggleAutocomplete(newValue: boolean):void{
+  toggleAutocomplete(newValue: boolean): void {
     this.store.dispatch(new ToggleAutocompletion(newValue));
   }
 
