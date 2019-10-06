@@ -127,7 +127,7 @@
                            [nzActive]="custom || (loggedIn$ | async) === false">
           <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly" fxLayout.lt-md="column"
                fxLayoutGap.lt-md="16px" fxLayoutAlign.lt-md="center center">
-            <div [fxFlex]="custom?'1 1 48%':'1 0 30%'" fxLayout="column">
+            <div fxFlex="1 0 30%" fxLayout="column">
               <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
               <nz-select [nzDisabled]="!custom" [ngModel]="(stats$ | async)?.jobId"
                          (ngModelChange)="customJob$.next($event)" class="job-selector">
@@ -206,7 +206,7 @@
                 </button>
               </div>
             </div>
-            <div *ngIf="!custom && hqIngredientsData$ | async as hqIngredientsData" fxFlex="1 1 30%"
+            <div *ngIf="!custom && hqIngredientsData$ | async as hqIngredientsData; else hqInput" fxFlex="1 1 30%"
                  fxLayout="column" class="ingredients">
               <h3>
                 {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
@@ -241,7 +241,20 @@
                 </button>
               </div>
             </div>
-            <div [fxFlex]="custom?'1 1 48%':'1 0 30%'" *ngIf="crafterStats$ | async as crafterStats" fxLayout="column">
+            <ng-template #hqInput>
+              <div fxFlex="1 1 30%" *ngIf="simulation$ | async as simulation">
+                <h3>{{'SIMULATOR.CONFIGURATION.Starting_quality' | translate}}</h3>
+                <nz-form-control class="hq-input">
+                  <nz-input-group nzAddOnAfter="/ {{simulation.recipe.quality}}">
+                    <nz-input-number class="input-number-with-addon" [nzMin]="0"
+                                     [ngModel]="forcedStartingQuality$ | async"
+                                     (ngModelChange)="forcedStartingQuality$.next($event)"
+                                     [nzMax]="simulation.recipe.quality"></nz-input-number>
+                  </nz-input-group>
+                </nz-form-control>
+              </div>
+            </ng-template>
+            <div fxFlex="1 0 30%" *ngIf="crafterStats$ | async as crafterStats" fxLayout="column">
 
               <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
               <div>
