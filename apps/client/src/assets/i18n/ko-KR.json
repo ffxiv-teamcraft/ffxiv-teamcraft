@@ -140,7 +140,7 @@
     "Amount": "수량",
     "Undo": "되돌리기",
     "User": "사용자",
-    "Tables": "Table",
+    "Tables": "목록",
     "Pie_charts": "파이 차트",
     "Read_more_on_wiki": "위키에서 자세히 보기"
   },
@@ -371,10 +371,10 @@
     "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
     "Clickthrough_overlay": "오버레이 클릭 무시",
     "Disable_search_history": "검색 기록 비활성화",
-    "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
-    "Enable_packet_capture": "패킷 캡쳐를 사용 (실시간 인벤토리 기능을 추가)",
+    "Disable_search_debounce": "자동 검색 기능을 사용하지 않습니다. (엔터키를 입력할 때만 검색이 됩니다.)",
+    "Enable_packet_capture": "패킷 캡쳐를 사용합니다. (실시간 인벤토리 동기화 기능을 추가합니다.)",
     "Packet_capture_info": "ACT와 마찬가지로 ToS기술을 이용하는 패킷 캡쳐는 이용약관에 위배됩니다. 하지만 스퀘어에닉스에서는 다른 사람들에게 알리지 않는 이상 이러한 프로그램들의 사용을 용인하므로 선택적으로 사용하시면 됩니다. 위험을 감수하고 싶지 않으시다면 사용을 하지 않으시면 됩니다.",
-    "Contribute_to_universalis": "Contribute to Universalis",
+    "Contribute_to_universalis": "Universalis에 기여하기",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -405,7 +405,7 @@
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요",
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
-    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_from_packets": "패킷캡처를 이용하여 능력치를 자동으로 채우기",
     "Autofill_stats_explain": "업데이트하려면 원하는 잡으로 전환한 다음, 업데이트가 완료되면 이 팝업을 닫으세요.",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
@@ -527,7 +527,7 @@
     "Amount_ilvl": "개수 (ilvl)",
     "Contributions_popup": "기여 통계",
     "Autofill_details": "게임 상에서 아이템을 획득했을 때 데이터 입력이 진행되며, 원치 않는 데이터 입력을 방지하기 위해 목록 페이지를 떠날 시에는 이 기능이 종료됩니다.",
-    "Autofill": "자동 갱신",
+    "Autofill": "자동 채우기",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -886,7 +886,7 @@
       "No_medicine": "약차 없음",
       "No_fc_buffs": "부대버프 없음",
       "Quest_warning": "70레벨 직업 퀘스트로 '명인의 발상'을 획득했는지 꼭 확인하세요",
-      "Starting_quality": "초기 품질",
+      "Starting_quality": "시작 품질",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "작업 숙련도",
@@ -1532,8 +1532,8 @@
     "Banner_description_warning": "패킷 캡쳐는 이용약관(ToS) 에 위배되므로 기본값은 비활성화 상태입니다. 인게임 내에서 다른사람에게 이 기능을 사용한다는 것을 이야기하지 않는다면 이 기능을 사용하는 것은 문제없을겁니다.",
     "Empty_inventory": "소지품을 아직 불러오지 못했습니다",
     "Please_zone": "인벤토리 시스템을 초기화하려면 임의의 위치로 텔레포트 한 다음 초코보 가방을 열어주세요.",
-    "No_character_id": "No ingame character id set",
-    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
+    "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
+    "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다."
   },
   "INVENTORY": {
     "Title": "소지품",
@@ -1542,7 +1542,7 @@
     "Copy_to_clipboard": "소지품을 클립보드로 복사합니다.",
     "Copied_to_clipboard": "소지품이 클립보드에 복사되었습니다.",
     "Click_to_add_to_progression": "아이템 추가를 진행하려면 클릭하세요.",
-    "Contribute_to_universalis": "Contribute data to universalis",
+    "Contribute_to_universalis": "Universalis에 데이터를 기여하기",
     "BAG": {
       "SaddleBag": "초코보 가방",
       "Bag": "소지품",
