@@ -526,7 +526,7 @@
     "New_tag": "새 태그",
     "Amount_ilvl": "개수 (ilvl)",
     "Contributions_popup": "기여 통계",
-    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
+    "Autofill_details": "게임 상에서 아이템을 획득했을 때 데이터 입력이 진행되며, 원치 않는 데이터 입력을 방지하기 위해 목록 페이지를 떠날 시에는 이 기능이 종료됩니다.",
     "Autofill": "자동 갱신",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
@@ -647,7 +647,7 @@
       "Gathering": "모으다 {{amount}} (총계: {{total}})",
       "Hunting": "몬스터에게 {{amount}} 를 얻었습니다. (총합: {{total}})",
       "Vendor": "구매한다. {{amount}} (총계: {{total}})",
-      "Trade": "Trade {{amount}} (total: {{total}})"
+      "Trade": "교환하다. {{amount}} (총계: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -996,8 +996,8 @@
     "Officer": "관리자",
     "Promote_officer": "관리자로 승급",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "**[{{listName}}]({{listUrl}})**에서 {{amount}}개의 **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})**을/를 추가했습니다.",
+      "Item_removed": "**[{{listName}}]({{listUrl}})**에서 {{amount}}개의 **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})**을/를 삭제했습니다.",
       "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** 이/가 **[{{listName}}]({{listUrl}})**에 있는 **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})**을/를 {{totalNeeded}}개 중에 {{amount}}개를 완료로 표시함",
       "Webhook_setup_complete": "**{{teamName}}** 팀을 이 채널에서 추적하기 시작합니다.",
       "List_added_notification": "목록 **[{{listName}}]({{listUrl}})**이/가 팀에 추가되었습니다.",
