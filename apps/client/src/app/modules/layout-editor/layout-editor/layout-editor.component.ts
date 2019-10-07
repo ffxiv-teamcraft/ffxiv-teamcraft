@@ -140,7 +140,7 @@ export class LayoutEditorComponent {
   }
 
   trackByRow(index: number, row: LayoutRow): string {
-    return row.filter.name;
+    return row.filter ? row.filter.name : row.name;
   }
 
 }
