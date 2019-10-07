@@ -1529,23 +1529,23 @@
     "Banner_title": "Die Paketerfassung ist verfügbar",
     "Button_label": "Paketerfassung aktivieren",
     "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
-    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
-    "Empty_inventory": "Your inventory hasn't been loaded yet",
-    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
+    "Banner_description_warning": "Die Paketerfassung ist gegen die Nutzungsbedingungen von FFXIV, weshalb sie standardmäßig deaktiviert ist. Solange du niemandem davon im Spiel erzählst, ist es aber in Ordnung diese zu benutzen.",
+    "Empty_inventory": "Dein Inventar wurde noch nicht geladen",
+    "Please_zone": "Bitte teleportiere dich an einen zufälligen Ort und öffne die Satteltasche deines Chocobos, sobald du dort angekommen bist, um das Inventar-System zu initialisieren.",
     "No_character_id": "No ingame character id set",
     "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
   },
   "INVENTORY": {
-    "Title": "Inventory",
-    "Empty": "Empty inventory",
+    "Title": "Inventar",
+    "Empty": "Leeres Inventar",
     "Estimate_total_price": "Estimate total inventory price",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Copied_to_clipboard": "Inventory copied to clipboard",
+    "Copy_to_clipboard": "Inventar in Zwischenablage kopieren",
+    "Copied_to_clipboard": "Inventar wurde in die Zwischenablage kopiert",
     "Click_to_add_to_progression": "Click to add to item progression",
     "Contribute_to_universalis": "Contribute data to universalis",
     "BAG": {
-      "SaddleBag": "Chocobo Saddlebag",
-      "Bag": "Inventory",
+      "SaddleBag": "Chocobo-Satteltasche",
+      "Bag": "Inventar",
       "Other": "Other inventory"
     }
   }
