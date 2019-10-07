@@ -9,7 +9,6 @@ import { first, map, switchMap } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
-import { pick } from 'lodash';
 import { diff } from 'deep-diff';
 
 @Injectable()
@@ -24,13 +23,13 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
 
   protected prepareData(list: Partial<List>): { parent: List; subcollections: { [p: string]: any[] } } {
     const clone: List = JSON.parse(JSON.stringify(list));
-    clone.items = clone.items.map(item => {
+    clone.items = (clone.items || []).map(item => {
       return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
         cleanedItem[property] = item[property];
         return cleanedItem;
       }, {}) as ListRow;
     });
-    clone.finalItems = clone.finalItems.map(item => {
+    clone.finalItems = (clone.finalItems || []).map(item => {
       return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
         cleanedItem[property] = item[property];
         return cleanedItem;
