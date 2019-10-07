@@ -1533,12 +1533,12 @@
     "Empty_inventory": "Dein Inventar wurde noch nicht geladen",
     "Please_zone": "Bitte teleportiere dich an einen zufälligen Ort und öffne die Satteltasche deines Chocobos, sobald du dort angekommen bist, um das Inventar-System zu initialisieren.",
     "No_character_id": "Keine Charakter-ID gesetzt",
-    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
+    "Please_relog": "Um etwas zu Universalis beitragen zu können, musst du dich einmal im Spiel aus und wieder einloggen. Dies ist nur einmal erforderlich."
   },
   "INVENTORY": {
     "Title": "Inventar",
     "Empty": "Leeres Inventar",
-    "Estimate_total_price": "Estimate total inventory price",
+    "Estimate_total_price": "Gesamten Inventar-Preis schätzen",
     "Copy_to_clipboard": "Inventar in Zwischenablage kopieren",
     "Copied_to_clipboard": "Inventar wurde in die Zwischenablage kopiert",
     "Click_to_add_to_progression": "Click to add to item progression",
