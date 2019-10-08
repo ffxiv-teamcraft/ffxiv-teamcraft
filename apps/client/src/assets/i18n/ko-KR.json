@@ -371,8 +371,8 @@
     "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
     "Clickthrough_overlay": "오버레이 클릭 무시",
     "Disable_search_history": "검색 기록 비활성화",
-    "Disable_search_debounce": "자동 검색 기능을 사용하지 않습니다. (엔터키를 입력할 때만 검색이 됩니다.)",
-    "Enable_packet_capture": "패킷 캡쳐를 사용합니다. (실시간 인벤토리 동기화 기능을 추가합니다.)",
+    "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
+    "Enable_packet_capture": "패킷 캡쳐를 사용 (실시간 인벤토리 동기화 기능추가)",
     "Packet_capture_info": "ACT와 마찬가지로 ToS기술을 이용하는 패킷 캡쳐는 이용약관에 위배됩니다. 하지만 스퀘어에닉스에서는 다른 사람들에게 알리지 않는 이상 이러한 프로그램들의 사용을 용인하므로 선택적으로 사용하시면 됩니다. 위험을 감수하고 싶지 않으시다면 사용을 하지 않으시면 됩니다.",
     "Contribute_to_universalis": "Universalis에 기여하기",
     "COLORS": {
@@ -405,8 +405,8 @@
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요",
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
-    "Autofill_from_packets": "패킷캡처를 이용하여 능력치를 자동으로 채우기",
-    "Autofill_stats_explain": "업데이트하려면 원하는 잡으로 전환한 다음, 업데이트가 완료되면 이 팝업을 닫으세요.",
+    "Autofill_from_packets": "패킷 캡쳐를 이용하여 능력치를 자동으로 채우기",
+    "Autofill_stats_explain": "갱신을 하려면 원하는 잡으로 전환한 다음, 갱신이 완료되면 이 팝업을 닫으세요.",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
@@ -525,7 +525,7 @@
     "Add_to_another_list": "다른 목록에 추가",
     "New_tag": "새 태그",
     "Amount_ilvl": "개수 (ilvl)",
-    "Contributions_popup": "기여 통계",
+    "Contributions_popup": "해당 목록의 기여도 통계",
     "Autofill_details": "게임 상에서 아이템을 획득했을 때 데이터 입력이 진행되며, 원치 않는 데이터 입력을 방지하기 위해 목록 페이지를 떠날 시에는 이 기능이 종료됩니다.",
     "Autofill": "자동 채우기",
     "LAYOUT_DIALOG": {
@@ -644,7 +644,7 @@
     "Steps": "단계",
     "Loading_path": "추천 경로 불러오는 중 (몇 초 정도 소요될 수 있습니다)",
     "STEP": {
-      "Gathering": "모으다 {{amount}} (총계: {{total}})",
+      "Gathering": "채집 {{amount}} (총계: {{total}})",
       "Hunting": "몬스터에게 {{amount}} 를 얻었습니다. (총합: {{total}})",
       "Vendor": "구매한다. {{amount}} (총계: {{total}})",
       "Trade": "교환하다. {{amount}} (총계: {{total}})"
