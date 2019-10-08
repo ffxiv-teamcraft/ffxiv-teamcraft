@@ -2,6 +2,7 @@ import { DataWithPermissions } from '../../../core/database/permissions/data-wit
 import { InventoryItem } from './inventory-item';
 import { InventoryPatch } from './inventory-patch';
 import { InventoryContainer } from './inventory-container';
+import { container } from '@angular/core/src/render3';
 
 export class UserInventory extends DataWithPermissions {
 
@@ -24,6 +25,15 @@ export class UserInventory extends DataWithPermissions {
     const containerKey = isRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
     let item = this.items[containerKey][packet.slot];
     const previousQuantity = item ? item.quantity : 0;
+    if (packet.quantity === 0 && packet.catalogId === 0) {
+      delete this.items[containerKey][packet.slot];
+      return {
+        itemId: item.itemId,
+        quantity: -1 * item.quantity,
+        containerId: packet.containerId,
+        hq: item.hq
+      };
+    }
     // This can happen if user modifies inventory before zoning.
     if (item === undefined) {
       const entry: InventoryItem = {

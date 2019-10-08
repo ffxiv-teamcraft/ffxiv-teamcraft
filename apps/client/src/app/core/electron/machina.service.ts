@@ -140,7 +140,7 @@ export class MachinaService {
 
     this.ipc.updateInventorySlotPackets$.pipe(
       filter(packet => {
-        return packet.quantity > 0 && packet.catalogId < 40000;
+        return packet.catalogId < 40000;
       }),
       withLatestFrom(this.retainerSpawns$),
       switchMap(([packet, lastRetainerSpawned]) => {

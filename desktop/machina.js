@@ -57,9 +57,6 @@ module.exports.start = function(win, config, winpcap) {
         if (acceptedPackets.indexOf(packet.type) > -1) {
           sendToRenderer(win, packet);
         }
-        if (packet.type === 'ping') {
-          log.info('Ping');
-        }
       });
     } else {
       throw new Error('Not enough permissions to run packet capture');

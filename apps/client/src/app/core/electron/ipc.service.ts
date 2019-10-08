@@ -132,7 +132,6 @@ export class IpcService {
         level: 'error',
         data: 'No ping received from the server during 60 seconds'
       });
-      window.alert('No ping received from server during 60 seconds (should be every 10 seconds)');
     });
   }
 
