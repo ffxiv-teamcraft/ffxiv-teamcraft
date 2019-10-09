@@ -59,6 +59,7 @@ import * as semver from 'semver';
 import { MachinaService } from './core/electron/machina.service';
 import { UserInventoryService } from './core/database/user-inventory.service';
 import { UniversalisService } from './core/api/universalis.service';
+import { GubalService } from './core/api/gubal.service';
 
 declare const gtag: Function;
 
@@ -160,7 +161,7 @@ export class AppComponent implements OnInit {
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
-              private inventoryService: UserInventoryService, @Inject(PLATFORM_ID) private platform: Object) {
+              private inventoryService: UserInventoryService, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object) {
 
     this.showGiveaway = false;
 
@@ -196,6 +197,7 @@ export class AppComponent implements OnInit {
     if (isPlatformBrowser(this.platform)) {
       if (this.platformService.isDesktop()) {
         this.machina.init();
+        this.gubal.init();
         this.emptyInventory$ = this.inventoryService.getUserInventory().pipe(
           map(inventory => {
             return Object.keys(inventory.items).length === 0;

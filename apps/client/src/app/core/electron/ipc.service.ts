@@ -58,6 +58,10 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('currencyCrystalInfo'));
   }
 
+  public get actorControlPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('actorControl'))
+  }
+
   public packets$: Subject<any> = new Subject<any>();
 
   public machinaToggle: boolean;
@@ -139,7 +143,7 @@ export class IpcService {
     this.packets$.next(packet);
     if ((<any>window).debugPackets) {
       // tslint:disable-next-line:no-console
-      console.info(packet);
+      console.info(packet.type, packet);
     }
   }
 }

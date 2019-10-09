@@ -52,9 +52,10 @@ module.exports.start = function(win, config, winpcap) {
           'npcSpawn',
           'ping',
           'playerStats',
-          'updateClassInfo'
+          'updateClassInfo',
+          'actorControl'
         ];
-        if (acceptedPackets.indexOf(packet.type) > -1) {
+        if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {
           sendToRenderer(win, packet);
         }
       });
