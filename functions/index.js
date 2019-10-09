@@ -89,6 +89,13 @@ exports.updateUserListCount = functions.runWith(runtimeOpts).firestore.document(
   });
 });
 
+exports.userIdValidator = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
+  const userId = request.query.userId;
+  return firestore.collection('users').doc(userId).get().then(snap => {
+    response.status(200).set('Content-Type', 'application/json').send(`{"valid": ${snap.exists}}`);
+  });
+});
+
 exports.app = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
   try {
     require(`${process.cwd()}/dist/client-webpack/server`).app(request, response);
