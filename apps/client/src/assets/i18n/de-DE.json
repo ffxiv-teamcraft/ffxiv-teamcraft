@@ -371,10 +371,10 @@
     "Always_HQ_leves": "Freibrief-Routine immer mit HQ-Gegenständen berechnen",
     "Clickthrough_overlay": "Durchklickbares Overlay",
     "Disable_search_history": "Suchverlauf deaktivieren",
-    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
+    "Disable_search_debounce": "Deaktivieren Sie die Entprellung der Suche (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
     "Enable_packet_capture": "Paketerfassung aktivieren (für Echtzeit Inventar-Funktionen)",
     "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Sqaure Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
-    "Contribute_to_universalis": "Contribute to Universalis",
+    "Contribute_to_universalis": "Zu Universalis beitragen",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -471,7 +471,7 @@
     "Quick_layout_swap": "Layout-Schnellwechsel",
     "Offline": "Offline",
     "Offline_help": "Offline-Listen werden im Browser oder der App gespeichert. Sie sind nur dort verfügbar und können nicht geteilt werden. Sie sind schneller, da sie keine Netzwerk-Aufrufe benötigen.",
-    "Mark_whole_panel_done": "Mark panel content as done",
+    "Mark_whole_panel_done": "Panelinhalt als erledigt markieren",
     "ROTATION": {
       "Attach": "Rotation hinzufügen",
       "Detach": "Rotation entfernen",
