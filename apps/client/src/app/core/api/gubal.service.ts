@@ -2,14 +2,29 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IpcService } from '../electron/ipc.service';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
-import { buffer, debounceTime } from 'rxjs/operators';
+import { buffer, debounceTime, shareReplay, switchMap } from 'rxjs/operators';
+import { AuthFacade } from '../../+state/auth.facade';
+import { Observable, combineLatest, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GubalService {
 
-  constructor(private http: HttpClient, private ipc: IpcService) {
+  private userId$: Observable<string> = this.authFacade.userId$.pipe(shareReplay(1));
+
+  constructor(private http: HttpClient, private ipc: IpcService, private authFacade: AuthFacade) {
+  }
+
+  private submitData(dataType: string, data: any): Observable<void> {
+    return this.userId$.pipe(
+      switchMap(userId => {
+        return this.http.post<void>(`https://gubal.ffxivteamcraft.com/${dataType}`, {
+          userId: userId,
+          ...data
+        });
+      })
+    );
   }
 
   public init(): void {
@@ -18,9 +33,22 @@ export class GubalService {
     );
 
     desynthResult$.pipe(
-      buffer(desynthResult$.pipe(debounceTime(1000)))
-    ).subscribe(packets => {
-      console.log(packets);
-    });
+      buffer(desynthResult$.pipe(debounceTime(1000))),
+      switchMap(packets => {
+        const sourceItemPacket = packets.find(p => p.resultType === 4321);
+        if (sourceItemPacket === undefined) {
+          return of(null);
+        }
+        const resultItemIds = packets.filter(p => p.resultType === 4322).map(p => p.itemID);
+        return combineLatest(resultItemIds
+          .map(resultItemId => {
+            console.log('SUBMIT DATA');
+            return this.submitData('desynthresults', {
+              itemId: sourceItemPacket.itemID,
+              resultItemId: resultItemId
+            });
+          }));
+      })
+    ).subscribe();
   }
 }
