@@ -142,7 +142,7 @@
     "User": "Utilisateur",
     "Tables": "Tableau",
     "Pie_charts": "Graphiques circulaires",
-    "Read_more_on_wiki": "Read more details on wiki"
+    "Read_more_on_wiki": "Lire plus de détails sur le wiki"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -373,7 +373,7 @@
     "Disable_search_history": "Supprimer l'historique de recherche",
     "Disable_search_debounce": "Désactiver la recherche auto (seul appuyer sur Entrée déclenchera la recherche)",
     "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
-    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
+    "Packet_capture_info": "Capturer des paquets est contre ToS, la même raison pour laquelle ACT est contre ToS. Mais Square Enix le tolère à moins que vous ne vous en braguez à tout le monde en jeu. Ne faites rien et vous ne risquerez rien.",
     "Contribute_to_universalis": "Contribute to Universalis",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
@@ -406,7 +406,7 @@
     "More_than_100_lists_created": "Plus de 100 listes créées",
     "Veteran": "Vétéran",
     "Autofill_from_packets": "Autofill stats using packet capture",
-    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
+    "Autofill_stats_explain": "Passez à la tâche souhaitée pour la mettre à jour, fermez cette popup une fois que vous aurez terminé.",
     "VERIFICATION": {
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code: \"{{userId}}\" dans votre biographie de profil Lodestone et cliquez sur le bouton ci-dessous. Plus d'informations sur <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">le wiki</a>",
@@ -526,8 +526,8 @@
     "New_tag": "Nouveau tag",
     "Amount_ilvl": "Montant (ilvl)",
     "Contributions_popup": "Statistiques des contributions",
-    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
-    "Autofill": "Autofill",
+    "Autofill_details": "Saisissez la progression au fur et à mesure que vous obtenez des éléments ingame, en utilisant la capture de paquets. Ceci est désactivé si vous quittez la page de liste, pour éviter les entrées non désirées.",
+    "Autofill": "Saisie auto",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -886,7 +886,7 @@
       "No_medicine": "Aucune boisson",
       "No_fc_buffs": "Aucun bienfait",
       "Quest_warning": "Assurez-vous d'avoir fait la quête niveau 70 pour le buff Coup de génie",
-      "Starting_quality": "Starting quality",
+      "Starting_quality": "Qualité de départ",
       "STATS": {
         "CP": "PS",
         "Craftsmanship": "Habileté",
@@ -1030,7 +1030,7 @@
     "History": "Historique",
     "Purchase_date": "Date",
     "More_on_mogboard": "Plus de détails sur mogboard",
-    "More_on_universalis": "More details on universalis",
+    "More_on_universalis": "Plus de détails sur l'universalis",
     "Server": "Serveur"
   },
   "COMMENTS": {
@@ -1533,20 +1533,20 @@
     "Empty_inventory": "Your inventory hasn't been loaded yet",
     "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
     "No_character_id": "No ingame character id set",
-    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
+    "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et dans (ingame), cela n'est nécessaire qu'une fois."
   },
   "INVENTORY": {
-    "Title": "Inventory",
-    "Empty": "Empty inventory",
-    "Estimate_total_price": "Estimate total inventory price",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Copied_to_clipboard": "Inventory copied to clipboard",
+    "Title": "Inventaire",
+    "Empty": "Inventaire vide",
+    "Estimate_total_price": "Estimation du prix total de l'inventaire",
+    "Copy_to_clipboard": "Copier l'inventaire dans le presse-papiers",
+    "Copied_to_clipboard": "Inventaire copié dans le presse-papiers",
     "Click_to_add_to_progression": "Click to add to item progression",
     "Contribute_to_universalis": "Contribute data to universalis",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
-      "Bag": "Inventory",
-      "Other": "Other inventory"
+      "Bag": "Inventaire",
+      "Other": "Autre inventaire"
     }
   }
 }
