@@ -41,6 +41,7 @@ import { AdminGuard } from './guard/admin.guard';
 import { BlogPostNotification } from '../model/notification/blog-post-notification';
 import { ErrorInterceptor } from './interceptor/error-interceptor';
 import { TeamcraftErrorHandler } from './error-handler/teamcraft-error-handler';
+import { DATA_REPORTERS } from './data-reporting/data-reporters-index';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { TeamcraftErrorHandler } from './error-handler/teamcraft-error-handler';
     PatreonService,
     WeatherService,
     AdminGuard,
-    { provide: ErrorHandler, useClass: TeamcraftErrorHandler }
+    { provide: ErrorHandler, useClass: TeamcraftErrorHandler },
+    ...DATA_REPORTERS
   ],
   declarations: [
     I18nPipe,

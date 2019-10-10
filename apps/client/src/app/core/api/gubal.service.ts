@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IpcService } from '../electron/ipc.service';
-import { ofPacketSubType } from '../rxjs/of-packet-subtype';
-import { buffer, debounceTime, shareReplay, switchMap } from 'rxjs/operators';
+import { shareReplay, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../+state/auth.facade';
-import { Observable, combineLatest, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
+import { DataReporters } from '../data-reporting/data-reporters-index';
+import { DataReporter } from '../data-reporting/data-reporter';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class GubalService {
 
   private userId$: Observable<string> = this.authFacade.userId$.pipe(shareReplay(1));
 
-  constructor(private http: HttpClient, private ipc: IpcService, private authFacade: AuthFacade) {
+  constructor(private http: HttpClient, private ipc: IpcService, private authFacade: AuthFacade,
+              @Inject(DataReporters) private reporters: DataReporter[]) {
   }
 
   private submitData(dataType: string, data: any): Observable<void> {
@@ -28,27 +30,18 @@ export class GubalService {
   }
 
   public init(): void {
-    const desynthResult$ = this.ipc.actorControlPackets$.pipe(
-      ofPacketSubType('desynthResult')
-    );
-
-    desynthResult$.pipe(
-      buffer(desynthResult$.pipe(debounceTime(1000))),
-      switchMap(packets => {
-        const sourceItemPacket = packets.find(p => p.resultType === 4321);
-        if (sourceItemPacket === undefined) {
-          return of(null);
-        }
-        const resultItemIds = packets.filter(p => p.resultType === 4322).map(p => p.itemID);
-        return combineLatest(resultItemIds
-          .map(resultItemId => {
-            console.log('SUBMIT DATA');
-            return this.submitData('desynthresults', {
-              itemId: sourceItemPacket.itemID,
-              resultItemId: resultItemId
-            });
-          }));
-      })
-    ).subscribe();
+    combineLatest(this.reporters.map(reporter => {
+      return reporter.getDataReports(this.ipc.packets$)
+        .pipe(
+          switchMap(dataReports => {
+            if (dataReports.length === 0) {
+              return of(null);
+            }
+            return combineLatest(dataReports.map(data => {
+              return this.submitData(reporter.getDataType(), data);
+            }));
+          })
+        );
+    })).subscribe();
   }
 }
