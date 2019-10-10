@@ -2,7 +2,6 @@ import { DataWithPermissions } from '../../../core/database/permissions/data-wit
 import { InventoryItem } from './inventory-item';
 import { InventoryPatch } from './inventory-patch';
 import { InventoryContainer } from './inventory-container';
-import { container } from '@angular/core/src/render3';
 
 export class UserInventory extends DataWithPermissions {
 
@@ -20,9 +19,12 @@ export class UserInventory extends DataWithPermissions {
     ).filter(item => item.itemId === itemId);
   }
 
-  updateInventorySlot(packet: any, lastSpawnedRetainer: string): InventoryPatch {
+  updateInventorySlot(packet: any, lastSpawnedRetainer: string): InventoryPatch | null {
     const isRetainer = packet.containerId >= 10000 && packet.containerId < 20000;
     const containerKey = isRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
+    if (this.items[containerKey] === undefined || this.items[containerKey][packet.slot] === undefined) {
+      return null;
+    }
     let item = this.items[containerKey][packet.slot];
     const previousQuantity = item ? item.quantity : 0;
     if (packet.quantity === 0 && packet.catalogId === 0) {
@@ -94,10 +96,10 @@ export class UserInventory extends DataWithPermissions {
         return moved;
       case 'swap':
         const fromSlot = fromItem.slot;
-        const fromContainer = fromItem.containerId;
+        const fromContainerId = fromItem.containerId;
         fromItem.containerId = toItem.containerId;
         fromItem.slot = toItem.slot;
-        toItem.containerId = fromContainer;
+        toItem.containerId = fromContainerId;
         toItem.slot = fromSlot;
         return null;
       case 'merge':

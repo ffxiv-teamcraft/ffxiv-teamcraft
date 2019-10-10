@@ -25,10 +25,9 @@ module.exports.start = function(win, config, winpcap) {
 
       const options = isDev ?
         {
-          monitorType: 'WinPCap'
+          monitorType: 'WinPCap',
         } : {
           noData: true,
-          logger: log.info,
           monitorType: 'WinPCap',
           machinaExePath: machinaExePath,
           remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),

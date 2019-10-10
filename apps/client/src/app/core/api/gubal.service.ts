@@ -4,7 +4,8 @@ import { IpcService } from '../electron/ipc.service';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import { buffer, debounceTime, shareReplay, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../+state/auth.facade';
-import { Observable, combineLatest, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class GubalService {
   private submitData(dataType: string, data: any): Observable<void> {
     return this.userId$.pipe(
       switchMap(userId => {
+        userId = !environment.production ? 'beta' : userId;
         return this.http.post<void>(`https://gubal.ffxivteamcraft.com/${dataType}`, {
           userId: userId,
           ...data
@@ -42,10 +44,11 @@ export class GubalService {
         const resultItemIds = packets.filter(p => p.resultType === 4322).map(p => p.itemID);
         return combineLatest(resultItemIds
           .map(resultItemId => {
-            console.log('SUBMIT DATA');
             return this.submitData('desynthresults', {
               itemId: sourceItemPacket.itemID,
-              resultItemId: resultItemId
+              resultItemId: resultItemId,
+              itemHQ: sourceItemPacket.itemHQ,
+              resultItemHQ: sourceItemPacket.itemHQ
             });
           }));
       })

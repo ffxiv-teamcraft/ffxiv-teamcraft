@@ -148,7 +148,9 @@ export class MachinaService {
           first(),
           map(inventory => {
             const patch = inventory.updateInventorySlot(packet, lastRetainerSpawned);
-            this._inventoryPatches$.next(patch);
+            if (patch) {
+              this._inventoryPatches$.next(patch);
+            }
             return inventory;
           })
         );
