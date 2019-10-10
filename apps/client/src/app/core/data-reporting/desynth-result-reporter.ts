@@ -17,12 +17,14 @@ export class DesynthResultReporter implements DataReporter {
         if (sourceItemPacket === undefined) {
           return [];
         }
-        const resultItemIds = packets.filter(p => p.resultType === 4322).map(p => p.itemID);
-        return resultItemIds
-          .map(resultItemId => {
+        const resultItems = packets.filter(p => p.resultType === 4322);
+        return resultItems
+          .map(resultItemPacket => {
             return {
               itemId: sourceItemPacket.itemID,
-              resultItemId: resultItemId
+              resultItemId: resultItemPacket.itemID,
+              itemHQ: sourceItemPacket.itemHQ,
+              resultItemHQ: resultItemPacket.itemHQ
             };
           });
       })

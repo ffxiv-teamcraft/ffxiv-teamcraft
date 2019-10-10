@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IpcService } from '../electron/ipc.service';
 import { shareReplay, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../+state/auth.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { DataReporter } from '../data-reporting/data-reporter';
+import { DataReporters } from '../data-reporting/data-reporters-index';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,8 @@ export class GubalService {
 
   private userId$: Observable<string> = this.authFacade.userId$.pipe(shareReplay(1));
 
-  constructor(private http: HttpClient, private ipc: IpcService, private authFacade: AuthFacade) {
+  constructor(private http: HttpClient, private ipc: IpcService, private authFacade: AuthFacade,
+              @Inject(DataReporters) private reporters: DataReporter[]) {
   }
 
   private submitData(dataType: string, data: any): Observable<void> {

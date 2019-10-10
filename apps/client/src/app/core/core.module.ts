@@ -42,6 +42,7 @@ import { BlogPostNotification } from '../model/notification/blog-post-notificati
 import { ErrorInterceptor } from './interceptor/error-interceptor';
 import { TeamcraftErrorHandler } from './error-handler/teamcraft-error-handler';
 import { DevGuard } from './guard/dev.guard';
+import { DATA_REPORTERS } from './data-reporting/data-reporters-index';
 
 
 @NgModule({
@@ -88,6 +89,7 @@ import { DevGuard } from './guard/dev.guard';
     WeatherService,
     AdminGuard,
     DevGuard,
+    ...DATA_REPORTERS,
     { provide: ErrorHandler, useClass: TeamcraftErrorHandler }
   ],
   declarations: [
