@@ -24,12 +24,18 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
   protected prepareData(list: Partial<List>): { parent: List; subcollections: { [p: string]: any[] } } {
     const clone: List = JSON.parse(JSON.stringify(list));
     clone.items = (clone.items || []).map(item => {
+      if (item.custom) {
+        return item;
+      }
       return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
         cleanedItem[property] = item[property];
         return cleanedItem;
       }, {}) as ListRow;
     });
     clone.finalItems = (clone.finalItems || []).map(item => {
+      if (item.custom) {
+        return item;
+      }
       return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
         cleanedItem[property] = item[property];
         return cleanedItem;
