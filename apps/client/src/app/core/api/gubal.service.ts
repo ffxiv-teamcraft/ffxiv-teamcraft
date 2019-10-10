@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IpcService } from '../electron/ipc.service';
-import { ofPacketSubType } from '../rxjs/of-packet-subtype';
-import { buffer, debounceTime, shareReplay, switchMap } from 'rxjs/operators';
+import { shareReplay, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../+state/auth.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { environment } from '../../../environments/environment';
@@ -30,28 +29,18 @@ export class GubalService {
   }
 
   public init(): void {
-    const desynthResult$ = this.ipc.actorControlPackets$.pipe(
-      ofPacketSubType('desynthResult')
-    );
-
-    desynthResult$.pipe(
-      buffer(desynthResult$.pipe(debounceTime(1000))),
-      switchMap(packets => {
-        const sourceItemPacket = packets.find(p => p.resultType === 4321);
-        if (sourceItemPacket === undefined) {
-          return of(null);
-        }
-        const resultItemIds = packets.filter(p => p.resultType === 4322).map(p => p.itemID);
-        return combineLatest(resultItemIds
-          .map(resultItemId => {
-            return this.submitData('desynthresults', {
-              itemId: sourceItemPacket.itemID,
-              resultItemId: resultItemId,
-              itemHQ: sourceItemPacket.itemHQ,
-              resultItemHQ: sourceItemPacket.itemHQ
-            });
-          }));
-      })
-    ).subscribe();
+    combineLatest(this.reporters.map(reporter => {
+      return reporter.getDataReports(this.ipc.packets$)
+        .pipe(
+          switchMap(dataReports => {
+            if (dataReports.length === 0) {
+              return of(null);
+            }
+            return combineLatest(dataReports.map(data => {
+              return this.submitData(reporter.getDataType(), data);
+            }));
+          })
+        );
+    })).subscribe();
   }
 }
