@@ -33,7 +33,8 @@ export class UserInventory extends DataWithPermissions {
         itemId: item.itemId,
         quantity: -1 * item.quantity,
         containerId: packet.containerId,
-        hq: item.hq
+        hq: item.hq,
+        spiritBond: item.spiritBond
       };
     }
     // This can happen if user modifies inventory before zoning.
@@ -43,7 +44,8 @@ export class UserInventory extends DataWithPermissions {
         quantity: packet.quantity,
         hq: packet.hqFlag === 1,
         slot: packet.slot,
-        containerId: packet.containerId
+        containerId: packet.containerId,
+        spiritBond: +packet.spiritBond
       };
       if (isRetainer) {
         entry.retainerName = lastSpawnedRetainer;
@@ -118,7 +120,8 @@ export class UserInventory extends DataWithPermissions {
           containerId: packet.toContainer,
           itemId: fromItem.itemId,
           hq: fromItem.hq,
-          slot: packet.toSlot
+          slot: packet.toSlot,
+          spiritBond: fromItem.spiritBond
         };
         return null;
       case 'discard':

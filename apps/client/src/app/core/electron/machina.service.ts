@@ -91,7 +91,8 @@ export class MachinaService {
                   containerId: +packet.containerId,
                   slot: +packet.slot,
                   quantity: +packet.quantity,
-                  hq: packet.hqFlag === 1
+                  hq: packet.hqFlag === 1,
+                  spiritBond: +packet.spiritBond
                 };
                 if (isRetainer) {
                   item.retainerName = lastRetainerSpawned;

@@ -3,4 +3,5 @@ export interface InventoryPatch {
   quantity: number;
   hq: boolean;
   containerId: number;
+  spiritBond?: number;
 }

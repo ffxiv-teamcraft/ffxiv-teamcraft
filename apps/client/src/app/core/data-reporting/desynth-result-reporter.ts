@@ -1,13 +1,13 @@
 import { Observable } from 'rxjs';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
-import { buffer, debounceTime, map } from 'rxjs/operators';
+import { buffer, debounceTime, map, tap } from 'rxjs/operators';
 import { DataReporter } from './data-reporter';
 
 export class DesynthResultReporter implements DataReporter {
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
     const desynthResult$ = packets$.pipe(
-      ofPacketSubType('desynthResult')
+      ofPacketSubType('desynthOrReductionResult')
     );
 
     return desynthResult$.pipe(
