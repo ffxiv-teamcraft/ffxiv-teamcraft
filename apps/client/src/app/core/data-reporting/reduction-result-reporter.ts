@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import { DataReporter } from './data-reporter';
 import { MachinaService } from '../electron/machina.service';
-import { delay, filter, map, tap, withLatestFrom } from 'rxjs/operators';
+import { delay, filter, map, withLatestFrom } from 'rxjs/operators';
 
 export class ReductionResultReporter implements DataReporter {
 
@@ -29,7 +29,8 @@ export class ReductionResultReporter implements DataReporter {
             itemId: patch.itemId,
             collectability: patch.spiritBond,
             resultItemId: item.itemId,
-            resultItemQuantity: item.quantity
+            resultItemQuantity: item.quantity,
+            resultItemHQ: item.hq
           };
         });
       })
