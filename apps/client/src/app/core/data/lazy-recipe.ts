@@ -5,5 +5,7 @@ export interface LazyRecipe {
   result: number;
   level: number;
   stars: number;
+  qs: boolean;
+  rlvl: number;
   ingredients: { id: number; amount: number }[];
 }

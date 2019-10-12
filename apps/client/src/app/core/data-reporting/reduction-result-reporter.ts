@@ -10,19 +10,19 @@ export class ReductionResultReporter implements DataReporter {
   }
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
-    const reductionResults = packets$.pipe(
+    const reductionResults$ = packets$.pipe(
       ofPacketSubType('aetherReductionDlg')
     );
 
-    const inventoryPatches = this.machina.inventoryPatches$.pipe(
+    const inventoryPatches$ = this.machina.inventoryPatches$.pipe(
       filter(patch => {
-        return patch.spiritBond && patch.spiritBond > 0;
+        return patch.quantity < 0 && patch.spiritBond && patch.spiritBond > 0;
       })
     );
 
-    return reductionResults.pipe(
+    return reductionResults$.pipe(
       delay(500),
-      withLatestFrom(inventoryPatches),
+      withLatestFrom(inventoryPatches$),
       map(([packet, patch]) => {
         return packet.resultItems.map(item => {
           return {
