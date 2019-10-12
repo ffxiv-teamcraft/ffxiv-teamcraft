@@ -86,7 +86,7 @@ export class QuicksynthResultReporter implements DataReporter {
             success: true,
             HQ: data.packet.itemHQ,
             rlvl: data.recipe.rlvl,
-            crafterStats: crafterStats
+            ...crafterStats
           }
         ];
       })
@@ -108,9 +108,8 @@ export class QuicksynthResultReporter implements DataReporter {
         return [
           {
             success: false,
-            HQ: false,
             rlvl: recipe.rlvl,
-            crafterStats: crafterStats
+            ...crafterStats
           }
         ];
       })
