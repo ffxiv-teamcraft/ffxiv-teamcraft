@@ -8,6 +8,7 @@ import { version } from './version';
 export const environment = {
   production: false,
   version: version,
+  startTimestamp: Date.now(),
   firebase: {
     apiKey: 'AIzaSyAfpbw5Di3dJ3DHnkFpEh3Xea2JXfx5BTs',
     authDomain: 'ffxiv-teamcraft-canary.firebaseapp.com',

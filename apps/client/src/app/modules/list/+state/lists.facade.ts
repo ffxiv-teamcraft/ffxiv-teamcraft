@@ -24,7 +24,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -34,6 +34,8 @@ import { ListRow } from '../model/list-row';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
 import { SettingsService } from '../../settings/settings.service';
+import { UserInventoryService } from '../../../core/database/user-inventory.service';
+import { environment } from '../../../../environments/environment';
 
 declare const gtag: Function;
 
@@ -148,7 +150,7 @@ export class ListsFacade {
   autocompleteEnabled$ = this.store.select(listsQuery.getAutocompleteEnabled);
 
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade, private settings: SettingsService) {
+              private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: UserInventoryService) {
   }
 
   getTeamLists(team: Team): Observable<List[]> {
@@ -258,6 +260,30 @@ export class ListsFacade {
 
   toggleAutocomplete(newValue: boolean): void {
     this.store.dispatch(new ToggleAutocompletion(newValue));
+    this.userInventoryService.getUserInventory().pipe(
+      first(),
+      filter((inventory) => {
+        return (inventory.lastZone || 0) < environment.startTimestamp;
+      }),
+      map(() => {
+        return this.dialog.create({
+          nzTitle: this.translate.instant('PACKET_CAPTURE.Inventory_outdated'),
+          nzContent: this.translate.instant('PACKET_CAPTURE.Please_update_inventory_popup'),
+          nzClosable: true,
+          nzFooter: null,
+          nzMaskClosable: false
+        });
+      }),
+      switchMap((modal) => {
+        return this.userInventoryService.getUserInventory().pipe(
+          filter(inventory => (inventory.lastZone || 0) > environment.startTimestamp),
+          first(),
+          map(() => modal)
+        );
+      })
+    ).subscribe(modal => {
+      modal.close();
+    });
   }
 
   setNeedsverification(needed: boolean): void {

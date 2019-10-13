@@ -108,6 +108,7 @@ export class MachinaService {
         return inventory !== null;
       }),
       switchMap(inventory => {
+        inventory.lastZone = Date.now();
         if (inventory.$key) {
           return this.userInventoryService.set(inventory.$key, inventory);
         } else {

@@ -20,7 +20,8 @@ import {
   UpdateItem,
   UpdateList,
   UpdateListIndex,
-  UpdateListAtomic
+  UpdateListAtomic,
+  ToggleAutocompletion
 } from './lists.actions';
 import {
   catchError,
@@ -52,6 +53,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { ListStore } from '../../../core/database/storage/list/list-store';
+import { UserInventoryService } from '../../../core/database/user-inventory.service';
+import { environment } from '../../../../environments/environment';
 
 @Injectable()
 export class ListsEffects {
@@ -412,7 +415,8 @@ export class ListsEffects {
     private dialog: NzModalService,
     private translate: TranslateService,
     private discordWebhookService: DiscordWebhookService,
-    private serializer: NgSerializerService
+    private serializer: NgSerializerService,
+    private userInventoryService: UserInventoryService
   ) {
   }
 

@@ -9,6 +9,8 @@ export class UserInventory extends DataWithPermissions {
 
   characterId: number;
 
+  lastZone: number;
+
   getItem(itemId: number): InventoryItem[] {
     return [].concat.apply([],
       Object.keys(this.items)
@@ -141,6 +143,7 @@ export class UserInventory extends DataWithPermissions {
     clone.authorId = this.authorId;
     clone.items = JSON.parse(JSON.stringify(this.items));
     clone.characterId = this.characterId;
+    clone.lastZone = this.lastZone;
     return clone;
   }
 }
