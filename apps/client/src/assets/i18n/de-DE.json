@@ -1533,7 +1533,9 @@
     "Empty_inventory": "Dein Inventar wurde noch nicht geladen",
     "Please_zone": "Bitte teleportiere dich an einen zufälligen Ort und öffne die Satteltasche deines Chocobos, sobald du dort angekommen bist, um das Inventar-System zu initialisieren.",
     "No_character_id": "Keine Charakter-ID gesetzt",
-    "Please_relog": "Um etwas zu Universalis beitragen zu können, musst du dich einmal im Spiel aus und wieder einloggen. Dies ist nur einmal erforderlich."
+    "Please_relog": "Um etwas zu Universalis beitragen zu können, musst du dich einmal im Spiel aus und wieder einloggen. Dies ist nur einmal erforderlich.",
+    "Inventory_outdated": "Your inventory is outdated",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
   },
   "INVENTORY": {
     "Title": "Inventar",
