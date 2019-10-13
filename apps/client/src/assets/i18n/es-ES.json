@@ -1533,7 +1533,9 @@
     "Empty_inventory": "Su inventario no ha sido cargado aún",
     "Please_zone": "Por favor teletranspórtese a una ubicación aleatoria y abra su alforja de chocobo una vez que llegue para inicializar el sistema de inventario correctamente.",
     "No_character_id": "No hay un id de personaje establecido",
-    "Please_relog": "Para contribuir a Universalis, necesitamos que cierre y vuelva iniciar sesión (en el juego), esto sólo es necesario una vez."
+    "Please_relog": "Para contribuir a Universalis, necesitamos que cierre y vuelva iniciar sesión (en el juego), esto sólo es necesario una vez.",
+    "Inventory_outdated": "Your inventory is outdated",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
   },
   "INVENTORY": {
     "Title": "Inventario",
