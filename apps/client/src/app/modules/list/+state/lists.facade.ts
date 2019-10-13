@@ -24,7 +24,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -181,7 +181,7 @@ export class ListsFacade {
         showOfflineCheckbox: true
       }
     }).afterClose.pipe(
-      filter(res => res.name !== undefined),
+      filter(res => res && res.name !== undefined),
       map(res => {
         const list = new List();
         list.everyone = this.settings.defaultPermissionLevel;
@@ -260,30 +260,32 @@ export class ListsFacade {
 
   toggleAutocomplete(newValue: boolean): void {
     this.store.dispatch(new ToggleAutocompletion(newValue));
-    this.userInventoryService.getUserInventory().pipe(
-      first(),
-      filter((inventory) => {
-        return (inventory.lastZone || 0) < environment.startTimestamp;
-      }),
-      map(() => {
-        return this.dialog.create({
-          nzTitle: this.translate.instant('PACKET_CAPTURE.Inventory_outdated'),
-          nzContent: this.translate.instant('PACKET_CAPTURE.Please_update_inventory_popup'),
-          nzClosable: true,
-          nzFooter: null,
-          nzMaskClosable: false
-        });
-      }),
-      switchMap((modal) => {
-        return this.userInventoryService.getUserInventory().pipe(
-          filter(inventory => (inventory.lastZone || 0) > environment.startTimestamp),
-          first(),
-          map(() => modal)
-        );
-      })
-    ).subscribe(modal => {
-      modal.close();
-    });
+    if (newValue) {
+      this.userInventoryService.getUserInventory().pipe(
+        first(),
+        filter((inventory) => {
+          return (inventory.lastZone || 0) < environment.startTimestamp;
+        }),
+        map(() => {
+          return this.dialog.create({
+            nzTitle: this.translate.instant('PACKET_CAPTURE.Inventory_outdated'),
+            nzContent: this.translate.instant('PACKET_CAPTURE.Please_update_inventory_popup'),
+            nzClosable: true,
+            nzFooter: null,
+            nzMaskClosable: false
+          });
+        }),
+        switchMap((modal) => {
+          return this.userInventoryService.getUserInventory().pipe(
+            filter(inventory => (inventory.lastZone || 0) > environment.startTimestamp),
+            first(),
+            map(() => modal)
+          );
+        })
+      ).subscribe(modal => {
+        modal.close();
+      });
+    }
   }
 
   setNeedsverification(needed: boolean): void {
