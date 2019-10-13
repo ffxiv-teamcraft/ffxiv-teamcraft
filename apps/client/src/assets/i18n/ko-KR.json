@@ -1533,7 +1533,9 @@
     "Empty_inventory": "소지품을 아직 불러오지 못했습니다",
     "Please_zone": "소지품 시스템을 초기화하려면 임의의 위치로 텔레포트 한 다음 초코보 가방을 열어주세요.",
     "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
-    "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다."
+    "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다.",
+    "Inventory_outdated": "Your inventory is outdated",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
   },
   "INVENTORY": {
     "Title": "소지품",
