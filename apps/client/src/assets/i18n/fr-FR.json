@@ -1533,7 +1533,9 @@
     "Empty_inventory": "Votre inventaire n'a pas encore été chargé",
     "Please_zone": "Veuillez téléporter à un endroit aléatoire et ouvrir votre sac à dos chocobo une fois que vous êtes arrivé pour initialiser correctement le système d'inventaire.",
     "No_character_id": "Aucun jeu d'identifiant de caractère ingame",
-    "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et dans (ingame), cela n'est nécessaire qu'une fois."
+    "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et dans (ingame), cela n'est nécessaire qu'une fois.",
+    "Inventory_outdated": "Your inventory is outdated",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
   },
   "INVENTORY": {
     "Title": "Inventaire",
