@@ -48,7 +48,7 @@ export class ListManagerService {
           first()
         );
     }
-    const dataSource$ = +itemId === itemId ? this.db.getItem(itemId) : of(this.customItemsSync.find(i => i.$key === itemId));
+    const dataSource$ = +itemId === itemId ? this.db.getItem(itemId).pipe(catchError(() => of(undefined))) : of(this.customItemsSync.find(i => i.$key === itemId));
     return combineLatest([team$, dataSource$])
       .pipe(
         tap(([team, itemData]) => {
