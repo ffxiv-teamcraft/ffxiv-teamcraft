@@ -216,8 +216,8 @@ export class ListsEffects {
         return EMPTY;
       }
       return combineLatest([
-        this.listCompactsService.set(action.payload.$key, action.payload.getCompact()),
-        this.listService.set(action.payload.$key, action.payload)
+        this.listCompactsService.pureUpdate(action.payload.$key, { index: action.payload.index }),
+        this.listService.pureUpdate(action.payload.$key, { index: action.payload.index })
       ]);
     }),
     switchMap(() => EMPTY)

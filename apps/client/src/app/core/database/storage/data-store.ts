@@ -8,6 +8,8 @@ export abstract class DataStore<T> {
 
   public abstract update(uid: string, data: Partial<T>, uriParams?: any): Observable<void>;
 
+  public abstract pureUpdate(uid: string, data: Partial<T>, uriParams?: any): Observable<void>;
+
   public abstract set(uid: string, data: T, uriParams?: any): Observable<void>;
 
   public abstract remove(uid: string, uriParams?: any): Observable<void>;
