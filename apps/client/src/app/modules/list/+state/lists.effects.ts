@@ -209,16 +209,15 @@ export class ListsEffects {
 
   @Effect()
   persistUpdateListIndex$ = this.actions$.pipe(
-    ofType(ListsActionTypes.UpdateListIndex),
-    map(action => action as UpdateListIndex),
+    ofType<UpdateListIndex>(ListsActionTypes.UpdateListIndex),
     mergeMap(action => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
         return EMPTY;
       }
       return combineLatest([
-        this.listCompactsService.update(action.payload.$key, action.payload.getCompact()),
-        this.listService.update(action.payload.$key, action.payload)
+        this.listCompactsService.set(action.payload.$key, action.payload.getCompact()),
+        this.listService.set(action.payload.$key, action.payload)
       ]);
     }),
     switchMap(() => EMPTY)
@@ -415,8 +414,7 @@ export class ListsEffects {
     private dialog: NzModalService,
     private translate: TranslateService,
     private discordWebhookService: DiscordWebhookService,
-    private serializer: NgSerializerService,
-    private userInventoryService: UserInventoryService
+    private serializer: NgSerializerService
   ) {
   }
 
