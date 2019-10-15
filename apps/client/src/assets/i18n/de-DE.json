@@ -1535,7 +1535,7 @@
     "No_character_id": "Keine Charakter-ID gesetzt",
     "Please_relog": "Um etwas zu Universalis beitragen zu können, musst du dich einmal im Spiel aus und wieder einloggen. Dies ist nur einmal erforderlich.",
     "Inventory_outdated": "Dein Inventar ist veraltet",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
+    "Please_update_inventory_popup": "Bitte wechsle die Zone (z. B. durch Teleportation oder indem du ein Haus betrittst), um dein Inventar zu aktualisieren. Diese Einblendung wird automatisch geschlossen, sobald dies geschehen ist."
   },
   "INVENTORY": {
     "Title": "Inventar",
