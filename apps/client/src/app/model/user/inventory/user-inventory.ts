@@ -73,14 +73,14 @@ export class UserInventory extends DataWithPermissions {
     const fromContainer = this.items[fromContainerKey];
     const toContainer = this.items[toContainerKey];
     if (fromContainer === undefined || (toContainer === undefined && packet.action === 'merge')) {
-      console.warn('Tried to move an item to an inexisting container ', fromContainerKey, toContainerKey);
+      console.warn('Tried to move an item to an inexisting container', JSON.stringify(packet));
       return null;
     }
 
     const fromItem = fromContainer[packet.fromSlot];
     const toItem = toContainer[packet.toSlot];
     if (fromItem === undefined || (toItem === undefined && packet.action === 'merge')) {
-      console.warn('Tried to move an item that isn\'t registered in inventory');
+      console.warn('Tried to move an item that isn\'t registered in inventory', JSON.stringify(packet));
       return null;
     }
     switch (packet.action) {
