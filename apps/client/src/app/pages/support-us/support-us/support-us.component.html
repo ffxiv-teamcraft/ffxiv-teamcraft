@@ -4,7 +4,7 @@
     <nz-card [nzTitle]="comTitle" fxFlex="1 1 50%">
       <ng-template #comTitle>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-          <i nz-icon type="message"></i>
+          <i nz-icon nzType="message"></i>
           <div>{{'SUPPORT_US.Communication_title' | translate}}</div>
         </div>
       </ng-template>
@@ -14,7 +14,7 @@
       <div class="macro">
         <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard
                 [cbContent]="macro">
-          <i nz-icon type="copy"></i>
+          <i nz-icon nzType="copy"></i>
         </button>
         <div *ngFor="let line of macro.split('\n')" class="macro-line">
           {{line}}

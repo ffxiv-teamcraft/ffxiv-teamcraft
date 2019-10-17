@@ -4,38 +4,38 @@
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
               *ngIf="rotation.$key !== undefined"
               [nzTitle]="'SIMULATOR.Save_as_new' | translate" (click)="saveRotationAsNew(rotation)">
-        <i nz-icon type="copy"></i>
+        <i nz-icon nzType="copy"></i>
       </button>
       <button nz-button *ngIf="(permissionLevel$ | async) >= 30" nzType="primary" nzShape="circle" nz-tooltip
               [nzTitle]="'SIMULATOR.Persist' | translate" (click)="saveRotation(rotation)">
-        <i nz-icon type="save"></i>
+        <i nz-icon nzType="save"></i>
       </button>
       <button nz-button *ngIf="custom" nzType="primary" nzShape="circle" nz-tooltip
               (click)="changeRecipe(rotation)"
               [nzTitle]="'SIMULATOR.Convert_rotation' | translate">
-        <i nz-icon type="redo"></i>
+        <i nz-icon nzType="redo"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'SIMULATOR.Reset' | translate"
               nz-popconfirm
               (nzOnConfirm)="actions$.next([]);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);">
-        <i nz-icon type="reload"></i>
+        <i nz-icon nzType="reload"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
               [nzTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate"
               (click)="importFromCraftingOptimizer()">
-        <i nz-icon type="download"></i>
+        <i nz-icon nzType="download"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
               [disabled]="actions$.value.length === 0"
               ngxClipboard [cbContent]="getCraftOptExportString()"
               (cbOnSuccess)="success('SIMULATOR.Export_copied')"
               [nzTitle]="'SIMULATOR.Export_crafting_optimizer' | translate">
-        <i nz-icon type="upload"></i>
+        <i nz-icon nzType="upload"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
               (click)="importFromXIVMacro()"
               [nzTitle]="'SIMULATOR.Import_macro' | translate">
-        <i nz-icon type="select"></i>
+        <i nz-icon nzType="select"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
               [disabled]="actions$.value.length === 0"
@@ -48,19 +48,19 @@
               *ngIf="simulation$ | async as simulation"
               (click)="openMinStatsPopup(simulation)"
               [nzTitle]="'SIMULATOR.Min_stats' | translate">
-        <i nz-icon type="safety-certificate"></i>
+        <i nz-icon nzType="safety-certificate"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
               *ngIf="result$ | async as resultData"
               (click)="openStepByStepReportPopup(resultData)"
               [nzTitle]="'SIMULATOR.Step_by_step_report' | translate">
-        <i nz-icon type="ordered-list"></i>
+        <i nz-icon nzType="ordered-list"></i>
       </button>
       <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
               *ngIf="rotation.$key"
               [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
               ngxClipboard [cbContent]="getLink(rotation)" (cbOnSuccess)="afterLinkCopy()">
-        <i nz-icon type="share-alt"></i>
+        <i nz-icon nzType="share-alt"></i>
       </button>
       <button nz-button (click)="openRotationSolver()"
               [nzShape]="'circle'"
@@ -76,7 +76,7 @@
                   [nzType]="'primary'" nz-tooltip
                   [disabled]="tips?.length === 0"
                   [nzTitle]="'SIMULATOR.Rotation_tips' | translate">
-            <i nz-icon type="bulb"></i>
+            <i nz-icon nzType="bulb"></i>
           </button>
         </nz-badge>
       </ng-container>
@@ -96,7 +96,7 @@
       <button nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
               [nzTitle]="'ALARMS.Open_overlay' | translate" (nzOnConfirm)="openOverlay(rotation)"
               *ngIf="platformService.isDesktop() && rotation.$key">
-        <i nz-icon type="desktop"></i>
+        <i nz-icon nzType="desktop"></i>
       </button>
     </div>
     <div fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 auto" class="simulator">
@@ -107,7 +107,7 @@
         <div>{{rotation.getName()}}<span *ngIf="dirty">*</span></div>
         <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
                 (click)="renameRotation(rotation)" [disabled]="(permissionLevel$ | async) < 40">
-          <i nz-icon type="edit"></i>
+          <i nz-icon nzType="edit"></i>
         </button>
         <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'SIMULATOR.Change_rotation' | translate"
                 (click)="changeRotation()">
@@ -413,7 +413,7 @@
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
             <div class="durability" fxLayout="column" fxLayoutAlign="center center">
               <h3>{{'SIMULATOR.Durability' | translate}}</h3>
-              <span 
+              <span
               class="durability-value"
               [class.durability-value-failed]="resultData.failCause === 'DURABILITY_REACHED_ZERO'">
               {{resultData.simulation.durability}} / {{resultData.simulation.recipe.durability}}</span>
@@ -516,7 +516,7 @@
         </nz-card>
 
         <nz-card [class.failed]="actionFailed" [class.success]="resultData.simulation.success" class="actions-card">
-          <i nz-icon type="exclamation-circle" theme="twotone" [twoToneColor]="'#aa9400'" class="warning-icon"
+          <i nz-icon nzType="exclamation-circle" theme="twotone" [twoToneColor]="'#aa9400'" class="warning-icon"
              nz-tooltip [nzTitle]="'SIMULATOR.Unsaved_changes' | translate" *ngIf="dirty"></i>
           <div fxLayout="row wrap" ngxDroppable="action" class="actions-container ngx-dnd-container"
                (drop)="actionDrop($event)" (cancel)="dragCancel($event)">

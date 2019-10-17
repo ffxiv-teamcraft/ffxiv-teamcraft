@@ -17,20 +17,20 @@
         <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                 ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
-          <i nz-icon type="share-alt"></i>
+          <i nz-icon nzType="share-alt"></i>
         </button>
         <button nz-button (click)="$event.stopPropagation(); addLists()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
                 *ngIf="(permissionLevel$ | async) >= 30"
                 [nzTitle]="'WORKSHOP.Add_lists' | translate">
-          <i nz-icon type="plus"></i>
+          <i nz-icon nzType="plus"></i>
         </button>
         <button nz-button [nzType]="'danger'" [nzShape]="'circle'" [nzTitle]="'WORKSHOP.Delete_message' | translate"
                 [disabled]="(permissionLevel$ | async) < 30" nz-popconfirm (nzOnConfirm)="deleteWorkshop()">
-          <i nz-icon type="delete"></i>
+          <i nz-icon nzType="delete"></i>
         </button>
         <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
           <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
-            <i nz-icon type="ellipsis"></i></button>
+            <i nz-icon nzType="ellipsis"></i></button>
           <ul nz-menu>
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameWorkshop()">
               {{'WORKSHOP.Rename' | translate}}

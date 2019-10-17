@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Output } fro
 import { List } from '../../list/model/list';
 import { PricingService } from '../pricing.service';
 import { ListRow } from '../../list/model/list-row';
-import { ObservableMedia } from '@angular/flex-layout';
+import { MediaObserver } from '@angular/flex-layout';
 import { SettingsService } from '../../settings/settings.service';
 import { interval, Observable, Subject } from 'rxjs';
 import { ListsFacade } from '../../list/+state/lists.facade';
@@ -51,7 +51,7 @@ export class PricingComponent implements AfterViewInit {
 
   loggedIn$ = this.authFacade.loggedIn$;
 
-  constructor(private pricingService: PricingService, private media: ObservableMedia, public settings: SettingsService,
+  constructor(private pricingService: PricingService, private media: MediaObserver, public settings: SettingsService,
               private listsFacade: ListsFacade, private xivapi: XivapiService, private authFacade: AuthFacade,
               private progressService: ProgressPopupService, private l12n: LocalizedDataService, private i18n: I18nToolsService,
               private translate: TranslateService, private message: NzMessageService, private cd: ChangeDetectorRef,

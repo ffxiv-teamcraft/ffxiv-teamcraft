@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "sourceMap": false,
-    "outDir": "../../dist/out-tsc/apps/client-e2e/src",
+    "outDir": "../../dist/out-tsc",
     "lib": ["es2015", "dom"],
     "types": ["cypress", "node"]
   },

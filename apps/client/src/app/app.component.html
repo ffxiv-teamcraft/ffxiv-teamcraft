@@ -15,7 +15,7 @@
         </nz-select>
         <a href="https://wiki.ffxivteamcraft.com" target="_blank" class="wiki-link"
            nz-tooltip [nzTitle]="'WIKI.Title' | translate">
-          <i nz-icon type="question-circle"></i>
+          <i nz-icon nzType="question-circle"></i>
         </a>
         <div *ngIf="(newVersionAvailable$ | async) && platformService.isDesktop() && !downloading">
           <button nz-button nzShape="circle" nzType="primary" nz-tooltip
@@ -30,14 +30,14 @@
           <ng-container *ngIf="platformService.isDesktop()">
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
               <button nz-button nzShape="circle" (click)="back()">
-                <i nz-icon type="arrow-left"></i>
+                <i nz-icon nzType="arrow-left"></i>
               </button>
               <button nz-button nzShape="circle" ngxClipboard cbContent="https://ffxivteamcraft.com{{getPathname()}}"
                       (cbOnSuccess)="afterPathNameCopy()">
                 <i nz-icon nzType="share-alt" nzTheme="outline"></i>
               </button>
               <button nz-button nzShape="circle" (click)="forward()">
-                <i nz-icon type="arrow-right"></i>
+                <i nz-icon nzType="arrow-right"></i>
               </button>
             </div>
           </ng-container>
@@ -62,7 +62,7 @@
           <li class="ant-menu-item" nz-popover nzPlacement="bottomRight" [nzContent]="notificationsTemplate"
               *ngIf="notifications$ | async as notifications">
             <nz-badge [nzCount]="notifications.length" class="notifications-count">
-              <i nz-icon type="notification"></i>
+              <i nz-icon nzType="notification"></i>
             </nz-badge>
             <ng-template #notificationsTemplate>
               <nz-list [nzDataSource]="notifications" [nzRenderItem]="notificationTemplate"
@@ -76,17 +76,17 @@
                                        [nzDescription]="notification.route.join('/')"
                                        [nzAvatar]="icon">
                       <ng-template #icon>
-                        <i nz-icon type="{{notification.icon}}"></i>
+                        <i nz-icon nzType="{{notification.icon}}"></i>
                       </ng-template>
                     </nz-list-item-meta>
                   </nz-list-item>
                   <ng-template #actionClose>
-                    <i nz-icon type="close" (click)="$event.stopPropagation();deleteNotification(notification)"></i>
+                    <i nz-icon nzType="close" (click)="$event.stopPropagation();deleteNotification(notification)"></i>
                   </ng-template>
                   <ng-template #actionOpen>
                     <a [routerLink]="notification.route"
                        (click)="$event.stopPropagation();deleteNotification(notification)">
-                      <i nz-icon type="select"></i>
+                      <i nz-icon nzType="select"></i>
                     </a>
                   </ng-template>
                 </ng-template>
@@ -117,42 +117,42 @@
           </span>
             <span>
             <a nz-menu-item *ngIf="loggedIn$ | async" routerLink="/profile">
-              <i nz-icon type="idcard"></i>
+              <i nz-icon nzType="idcard"></i>
               {{'Profile' | translate}}
             </a>
               <a nz-menu-item routerLink="/inventory">
-              <i nz-icon type="appstore"></i>
+              <i nz-icon nzType="appstore"></i>
                 {{'INVENTORY.Title' | translate}}
             </a>
             <a nz-menu-item *ngIf="loggedIn$ | async" routerLink="/teams">
-              <i nz-icon type="team"></i>
+              <i nz-icon nzType="team"></i>
               {{'TEAMS.Title' | translate}}
             </a>
             <a nz-menu-item *ngIf="loggedIn$ | async" routerLink="/favorites">
-              <i nz-icon type="heart"></i>
+              <i nz-icon nzType="heart"></i>
               {{'Favorites' | translate}}
             </a>
             <ng-container *ngIf="user$ | async as user">
               <a nz-menu-item routerLink="/custom-links" *ngIf="user.patron || user.admin">
-                <i nz-icon type="link"></i>
+                <i nz-icon nzType="link"></i>
                 {{'CUSTOM_LINKS.Title' | translate}}
               </a>
             </ng-container>
             <a nz-menu-item (click)="openSettings()">
-              <i nz-icon type="setting"></i>
+              <i nz-icon nzType="setting"></i>
               {{'SETTINGS.Title' | translate}}
             </a>
             <span nz-menu-divider></span>
             <a nz-menu-item *ngIf="loggedIn$ | async" (click)="logOut()">
-              <i nz-icon type="logout"></i>
+              <i nz-icon nzType="logout"></i>
               {{'Disconnect' | translate}}
             </a>
             <a nz-menu-item *ngIf="!(loggedIn$ | async)" (click)="openRegisterPopup()">
-              <i nz-icon type="form"></i>
+              <i nz-icon nzType="form"></i>
               {{'Registration' | translate}}
             </a>
             <a nz-menu-item *ngIf="!(loggedIn$ | async)" (click)="openLoginPopup()">
-              <i nz-icon type="login"></i>
+              <i nz-icon nzType="login"></i>
               {{'Login' | translate}}
             </a>
           </span>
@@ -172,13 +172,13 @@
             <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
               <li nz-submenu [nzOpen]="true">
                 <span title>
-                  <i nz-icon type="home"></i>
+                  <i nz-icon nzType="home"></i>
                   <span>{{'SIDEBAR.General' | translate}}</span>
                 </span>
                 <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                    routerLink="/search">
                   <span>
-                      <i nz-icon type="search"></i>
+                      <i nz-icon nzType="search"></i>
                       <span class="nav-text">{{'ITEMS.Title' | translate}}</span>
                   </span>
                 </a>
@@ -186,7 +186,7 @@
                    routerLink="/lists">
                   <span>
                       <i nz-icon
-                         type="profile"></i>
+                         nzType="profile"></i>
                       <span class="nav-text">{{'Lists' | translate}}</span>
                   </span>
                 </a>
@@ -202,7 +202,7 @@
                 <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                    routerLink="/rotations">
                   <span>
-                      <i nz-icon type="build"></i>
+                      <i nz-icon nzType="build"></i>
                       <span class="nav-text">{{'SIMULATOR.Rotations' | translate}}</span>
                   </span>
                 </a>
@@ -210,13 +210,13 @@
 
               <li nz-submenu [nzOpen]="true">
                 <span title>
-                  <i nz-icon type="share-alt"></i>
+                  <i nz-icon nzType="share-alt"></i>
                   <span>{{'SIDEBAR.Sharing' | translate}}</span>
                 </span>
                 <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                    routerLink="/community-lists">
                   <span>
-                      <i nz-icon type="solution"></i>
+                      <i nz-icon nzType="solution"></i>
                       <span class="nav-text">{{'Public_lists' | translate}}</span>
                   </span>
                 </a>
@@ -239,7 +239,7 @@
                 <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                    routerLink="/alarms">
                   <span>
-                      <i nz-icon type="bell"></i>
+                      <i nz-icon nzType="bell"></i>
                       <span class="nav-text">{{'ALARMS.Title' | translate}}</span>
                   </span>
                 </a>
@@ -247,7 +247,7 @@
                    routerLink="/gathering-location">
                   <span>
                       <i nz-icon
-                         type="environment-o"></i>
+                         nzType="environment-o"></i>
                       <span class="nav-text">{{'GATHERING_LOCATIONS.Title' | translate}}</span>
                   </span>
                 </a>
@@ -255,13 +255,13 @@
 
               <li nz-submenu>
                 <span title>
-                  <i nz-icon type="appstore"></i>
+                  <i nz-icon nzType="appstore"></i>
                   <span>{{'SIDEBAR.Helpers' | translate}}</span>
                 </span>
                 <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                    routerLink="/levequests">
                   <span>
-                      <i nz-icon type="book"></i>
+                      <i nz-icon nzType="book"></i>
                       <span class="nav-text">{{'LEVEQUESTS.Title' | translate}}</span>
                   </span>
                 </a>
@@ -275,7 +275,7 @@
                 <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                    routerLink="/gc-supply">
                   <span>
-                      <i nz-icon type="file-done"></i>
+                      <i nz-icon nzType="file-done"></i>
                       <span class="nav-text">{{'GC_SUPPLY.Title' | translate}}</span>
                   </span>
                 </a>
@@ -310,14 +310,14 @@
                 <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                    routerLink="/macro-translator">
                   <span>
-                      <i nz-icon type="message"></i>
+                      <i nz-icon nzType="message"></i>
                       <span class="nav-text">{{'MACRO_TRANSLATION.Title' | translate}}</span>
                   </span>
                 </a>
                 <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                    routerLink="/reset-timers">
                   <span>
-                      <i nz-icon type="hourglass"></i>
+                      <i nz-icon nzType="hourglass"></i>
                       <span class="nav-text">{{'ALARMS.REALTIME.Reset_timers' | translate}}</span>
                   </span>
                 </a>
@@ -325,20 +325,20 @@
 
               <li nz-submenu>
                 <span title>
-                  <i nz-icon type="info-circle"></i>
+                  <i nz-icon nzType="info-circle"></i>
                   <span>{{'SIDEBAR.Other' | translate}}</span>
                 </span>
                 <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                    routerLink="/blog">
                   <span>
-                      <i nz-icon type="file-text"></i>
+                      <i nz-icon nzType="file-text"></i>
                       <span class="nav-text">{{'BLOG.Title' | translate}}</span>
                   </span>
                 </a>
                 <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                    routerLink="/about">
                   <span>
-                      <i nz-icon type="info-circle-o"></i>
+                      <i nz-icon nzType="info-circle-o"></i>
                       <span class="nav-text">{{'ABOUT.title' | translate}}</span>
                   </span>
                 </a>
@@ -363,7 +363,7 @@
                *ngIf="!desktop && !collapsedSidebar"
                nzTitle="{{'Download_desktop_app' | translate}}"
                target="_blank">
-              <i nz-icon type="desktop"></i>
+              <i nz-icon nzType="desktop"></i>
             </a>
             <a nz-button nzShape="circle" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft" nz-tooltip
                *ngIf="!collapsedSidebar"
@@ -441,7 +441,7 @@
                 [(nzCollapsed)]="collapsedAlarmsBar"
                 [nzCollapsedWidth]="0">
         <ng-template #alarmsTrigger>
-          <i nz-icon type="bell"></i>
+          <i nz-icon nzType="bell"></i>
         </ng-template>
         <app-alarms-sidebar *ngIf="!(loading$ | async)"></app-alarms-sidebar>
       </nz-sider>

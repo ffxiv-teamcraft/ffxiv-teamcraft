@@ -43,13 +43,13 @@
                     *ngIf="settings.preferredCopyType === 'classic'"
                     nz-tooltip [nzTitle]="'Copy_isearch' | translate"
                     (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
-              <i nz-icon type="copy"></i>
+              <i nz-icon nzType="copy"></i>
             </button>
             <button nz-button nzSize="small" nzShape="circle" ngxClipboard [cbContent]="item.id | itemName: item | i18n"
                     *ngIf="settings.preferredCopyType === 'isearch'"
                     nz-tooltip [nzTitle]="'Copy_item_name_to_clipboard' | translate"
                     (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
-              <i nz-icon type="copy"></i>
+              <i nz-icon nzType="copy"></i>
             </button>
           </ng-container>
 
@@ -58,13 +58,13 @@
             <button nz-button (click)="attachRotation()" nz-tooltip [nzTitle]="'LIST.ROTATION.Attach' | translate"
                     nzShape="circle" nzSize="small"
                     *ngIf="!item.attachedRotation; else detachRotationRef">
-              <i nz-icon type="link"></i>
+              <i nz-icon nzType="link"></i>
             </button>
             <ng-template #detachRotationRef>
               <button nz-button nzType="danger" nz-tooltip [nzTitle]="'LIST.ROTATION.Detach' | translate"
                       nzShape="circle" nzSize="small"
                       (click)="detachRotation()">
-                <i nz-icon type="disconnect"></i>
+                <i nz-icon nzType="disconnect"></i>
               </button>
             </ng-template>
           </ng-container>
@@ -75,7 +75,7 @@
                       *ngIf="userId$ | async as userId"
                       (click)="openCommentsPopup(list, list.authorId === userId)">
                 <nz-badge [nzDot]="commentBadge$ | async">
-                  <i nz-icon type="message"></i>
+                  <i nz-icon nzType="message"></i>
                 </nz-badge>
               </button>
             </ng-container>
@@ -85,7 +85,7 @@
             <button nz-button nzSize="small" nzShape="circle" (click)="addAllAlarms()"
                     *ngIf="item.alarms !== undefined && item.alarms.length > 0"
                     nz-tooltip [nzTitle]="'LIST_DETAILS.Add_all_item_alarms' | translate">
-              <i nz-icon type="bell"></i>
+              <i nz-icon nzType="bell"></i>
             </button>
           </ng-container>
 
@@ -98,7 +98,7 @@
                           (click)="$event.stopPropagation()"
                           nz-tooltip [nzTitle]="'TEAMS.Assign_team_member' | translate"
                           nz-button [nzShape]="'circle'">
-                    <i nz-icon type="team"></i>
+                    <i nz-icon nzType="team"></i>
                   </button>
                   <ul nz-menu class="team-members">
                     <ng-container *ngFor="let member of team.members">
@@ -119,7 +119,7 @@
               <button nz-button nzSize="small" nzShape="circle" (click)="setWorkingOnIt(userId)" nz-tooltip
                       [nzTitle]="'Work_on_it' | translate"
                       *ngIf="(item.workingOnIt === undefined || (item.workingOnIt || [])?.indexOf(userId) === -1) && loggedIn$ | async">
-                <i nz-icon type="user-add"></i>
+                <i nz-icon nzType="user-add"></i>
               </button>
               <ng-container *ngIf="team$ | async as team; else removeSingleAssignment">
                 <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
@@ -127,7 +127,7 @@
                           (click)="$event.stopPropagation()"
                           nz-tooltip [nzTitle]="'Remove_work_on_it' | translate"
                           nz-button [nzShape]="'circle'">
-                    <i nz-icon type="user-delete"></i>
+                    <i nz-icon nzType="user-delete"></i>
                   </button>
                   <ul nz-menu class="team-members">
                     <ng-container *ngFor="let user of item.workingOnIt">
@@ -145,7 +145,7 @@
                         (click)="removeWorkingOnIt(userId)"
                         nz-tooltip [nzTitle]="'Remove_work_on_it' | translate"
                         nz-button [nzShape]="'circle'">
-                  <i nz-icon type="user-delete"></i>
+                  <i nz-icon nzType="user-delete"></i>
                 </button>
               </ng-template>
             </ng-container>
@@ -154,21 +154,21 @@
           <ng-container *ngIf="isButton(itemRowTypes.REQUIREMENTS)">
             <button nz-button nzSize="small" nzShape="circle" (click)="openRequirementsPopup()" nz-tooltip
                     [nzTitle]="'Requirements_for_craft' | translate">
-              <i nz-icon type="bars"></i>
+              <i nz-icon nzType="bars"></i>
             </button>
           </ng-container>
 
           <ng-container *ngIf="isButton(itemRowTypes.ADD_TAG) && settings.itemTagsEnabled">
             <button nz-button nzSize="small" nzShape="circle" nz-tooltip [nzTitle]="'LIST_DETAILS.New_tag' | translate"
                     (click)="showTagInput()">
-              <i nz-icon type="tag"></i>
+              <i nz-icon nzType="tag"></i>
             </button>
           </ng-container>
 
           <ng-container *ngIf="isButton(itemRowTypes.EDIT_AMOUNT)">
             <button nz-button nzSize="small" nzShape="circle" *ngIf="finalItem && (permissionLevel$ | async) >= 30"
                     (click)="changeAmount()" nz-tooltip [nzTitle]="'Edit_amount' | translate">
-              <i nz-icon type="diff"></i>
+              <i nz-icon nzType="diff"></i>
             </button>
           </ng-container>
 
@@ -177,14 +177,14 @@
                     *ngIf=" (permissionLevel$ | async) >= 30 &&(requiredForFinalCraft$ | async) === 0 && !item.requiredAsHQ"
                     (click)="item.requiredAsHQ = true; saveItem()"
                     nz-tooltip [nzTitle]="'Mark_HQ' | translate">
-              <i nz-icon type="highlight"></i>
+              <i nz-icon nzType="highlight"></i>
             </button>
 
             <button nz-button nzSize="small" nzShape="circle" nzType="danger"
                     *ngIf="((requiredForFinalCraft$ | async) >= 0 || item.requiredAsHQ) && (permissionLevel$ | async) >= 30"
                     (click)="item.requiredAsHQ = false; saveItem()"
                     nz-tooltip [nzTitle]="'Unmark_HQ' | translate">
-              <i nz-icon type="highlight"></i>
+              <i nz-icon nzType="highlight"></i>
             </button>
           </ng-container>
 
@@ -192,7 +192,7 @@
             <button nz-button nzSize="small" nzShape="circle" nz-tooltip
                     [nzTitle]="'LIST_DETAILS.Add_to_another_list' | translate"
                     (click)="addToList(item)">
-              <i nz-icon type="plus"></i>
+              <i nz-icon nzType="plus"></i>
             </button>
           </ng-container>
 
@@ -202,7 +202,7 @@
                     [nzTitle]="'Confirmation' | translate"
                     nz-popconfirm
                     (nzOnConfirm)="removeItem()">
-              <i nz-icon type="delete"></i>
+              <i nz-icon nzType="delete"></i>
             </button>
           </ng-container>
           <ng-container *ngIf="showLogCompletionButton$ | async">
@@ -211,7 +211,7 @@
                     [nzTitle]="'LOG_TRACKER.Mark_as_done_external' | translate"
                     nz-tooltip
                     (click)="markAsDoneInLog(item)">
-              <i nz-icon type="file-done"></i>
+              <i nz-icon nzType="file-done"></i>
             </button>
           </ng-container>
 
@@ -220,7 +220,7 @@
                     (click)="$event.stopPropagation()"
                     nz-button [nzShape]="'circle'">
               <nz-badge [nzDot]="(commentBadge$ | async) && !isButton(itemRowTypes.COMMENTS)">
-                <i nz-icon type="ellipsis"></i>
+                <i nz-icon nzType="ellipsis"></i>
               </nz-badge>
             </button>
             <ul nz-menu *ngIf="userId$ | async as userId">
@@ -371,7 +371,7 @@
                     class="missing-masterbooks"
                     nz-tooltip [nzTitle]="'LIST_DETAILS.Missing_masterbook' | translate"
                     (click)="checkMasterbooks(missingBooks)">
-              <i nz-icon type="warning"></i>
+              <i nz-icon nzType="warning"></i>
             </button>
           </ng-container>
           <ng-container *ngIf="item.attachedRotation">
@@ -431,8 +431,8 @@
                   nzTitle="{{(display.alarm.mapId | closestAetheryte: display.alarm.coords  | async)?.nameid | placeName | i18n}} - {{display.alarm.zoneId | placeName | i18n}}"
                   [nzGhost]="!display.registered"
                   (click)="toggleAlarm(display)">
-            <i nz-icon type="bell" *ngIf="!display.registered"></i>
-            <i nz-icon type="close-circle-o" *ngIf="display.registered"></i>
+            <i nz-icon nzType="bell" *ngIf="!display.registered"></i>
+            <i nz-icon nzType="close-circle-o" *ngIf="display.registered"></i>
             {{display.remainingTime | timer}}
             <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
             <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
@@ -440,7 +440,7 @@
           <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
             <nz-dropdown *ngIf="!display.registered && alarmGroups.length > 0" [nzPlacement]="'bottomCenter'">
               <button nz-button [nzSize]="'small'" nz-dropdown>
-                <i nz-icon type="ellipsis"></i>
+                <i nz-icon nzType="ellipsis"></i>
               </button>
               <ul nz-menu>
                 <li nz-menu-item *ngFor="let group of alarmGroups" (click)="addAlarmWithGroup(alarm, group)">
@@ -474,7 +474,7 @@
         <button nz-button nzSize="small" nz-popover
                 [disabled]="(permissionLevel$ | async) < 20"
                 [nzContent]="externalCalc" nzTrigger="click">
-          <i nz-icon type="select"></i>
+          <i nz-icon nzType="select"></i>
           <ng-template #externalCalc>
             <nz-input-number [nzMin]="0" [nzStep]="1"
                              [ngModel]="0" #numberInput
@@ -488,7 +488,7 @@
         <button nz-button nzSize="small" nz-popover [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate"
                 [disabled]="(permissionLevel$ | async) < 20"
                 [nzContent]="calculator" nzTrigger="click">
-          <i nz-icon type="calculator"></i>
+          <i nz-icon nzType="calculator"></i>
           <ng-template #calculator>
             <nz-input-number [nzMin]="0" [nzStep]="1"
                              [ngModel]="0" #numberInput
@@ -515,10 +515,10 @@
       <button nz-button [disabled]="(permissionLevel$ | async) < 20" [nzSize]="'small'" [nzShape]="'circle'"
               [nzType]="'primary'" class="done-button"
               *ngIf="item.amount > item.done; else done" (click)="markAsDone()">
-        <i nz-icon type="check"></i>
+        <i nz-icon nzType="check"></i>
       </button>
       <ng-template #done>
-        <i nz-icon type="check" class="done-icon" (click)="resetDone()"></i>
+        <i nz-icon nzType="check" class="done-icon" (click)="resetDone()"></i>
       </ng-template>
     </div>
   </div>

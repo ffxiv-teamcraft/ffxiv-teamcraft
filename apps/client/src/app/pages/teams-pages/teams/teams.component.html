@@ -4,7 +4,7 @@
     <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
       <button nz-button nzShape="circle" nzType="primary" nz-tooltip [nzTitle]="'TEAMS.Create_team' | translate"
               (click)="createTeam()">
-        <i nz-icon type="usergroup-add"></i>
+        <i nz-icon nzType="usergroup-add"></i>
       </button>
     </div>
     <div class="teams" *ngIf="myTeams$ | async as teams" fxLayout="column" fxLayoutGap="10px">
@@ -15,14 +15,14 @@
               <div>{{team.name}}</div>
               <button nz-button nzShape="circle" nzSize="small" (click)="$event.stopPropagation();renameTeam(team)"
                       *ngIf="team.leader === (userId$ | async)">
-                <i nz-icon type="edit"></i>
+                <i nz-icon nzType="edit"></i>
               </button>
               <div class="spacer"></div>
               <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'"
                       nz-popconfirm
                       *ngIf="team.leader === (userId$ | async)"
                       [nzTitle]="'TEAMS.Delete_confirmation' | translate" (nzOnConfirm)="deleteTeam(team)">
-                <i nz-icon type="delete"></i>
+                <i nz-icon nzType="delete"></i>
               </button>
             </div>
           </ng-template>
@@ -73,7 +73,7 @@
                                 [cbContent]="('/teams/invite/'+invite.$key) | tcLink"
                                 (cbOnSuccess)="success('TEAMS.Invite_link_copied')"
                                 [nzTitle]="'COMMON.Copy_to_clipboard' | translate">
-                          <i nz-icon type="copy"></i>
+                          <i nz-icon nzType="copy"></i>
                         </button>
                         <div class="spacer"></div>
                         <div>{{'TEAMS.Invite_expires' | translate}}: {{invite.expires === undefined ? ('Never' |
@@ -82,7 +82,7 @@
                         <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'"
                                 nz-popconfirm nzSize="small"
                                 [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteInvite(invite)">
-                          <i nz-icon type="delete"></i>
+                          <i nz-icon nzType="delete"></i>
                         </button>
                       </div>
                     </ng-template>
@@ -92,11 +92,11 @@
             </div>
             <div fxLayout="row" fxLayoutGap="5px">
               <button nz-button nzType="primary" (click)="createInvite(team, false)">
-                <i nz-icon type="user-add"></i>
+                <i nz-icon nzType="user-add"></i>
                 {{'TEAMS.Create_invite_one_day' | translate}}
               </button>
               <button nz-button nzType="primary" (click)="createInvite(team, true)">
-                <i nz-icon type="user-add"></i>
+                <i nz-icon nzType="user-add"></i>
                 {{'TEAMS.Create_invite_infinite' | translate}}
               </button>
             </div>
@@ -129,7 +129,7 @@
                                 *ngIf="userId === team.leader && !team.notFound && !team.isOfficer(member) && member !== team.leader"
                                 [nzTitle]="'TEAMS.Promote_officer' | translate"
                                 (click)="addOfficer(team, member)">
-                          <i nz-icon type="star"></i>
+                          <i nz-icon nzType="star"></i>
                         </button>
                         <nz-divider nzType="vertical"
                                     *ngIf="userId === team.leader && !team.notFound && !team.isOfficer(member) && member !== team.leader"></nz-divider>
@@ -137,7 +137,7 @@
                                 nz-popconfirm nzSize="small" *ngIf="userId === team.leader || userId === member"
                                 [nzTitle]="'Confirmation' | translate"
                                 (nzOnConfirm)="removeMember(team, member)">
-                          <i nz-icon type="delete"></i>
+                          <i nz-icon nzType="delete"></i>
                         </button>
                       </div>
                     </ng-container>

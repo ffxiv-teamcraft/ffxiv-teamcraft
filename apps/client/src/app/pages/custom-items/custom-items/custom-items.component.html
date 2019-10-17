@@ -5,19 +5,19 @@
     <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
       <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createCustomItem()" nz-tooltip
               [nzTitle]="'CUSTOM_ITEMS.New_item' | translate">
-        <i nz-icon type="file-add"></i>
+        <i nz-icon nzType="file-add"></i>
       </button>
       <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createFolder()" nz-tooltip
               [nzTitle]="'CUSTOM_ITEMS.New_folder' | translate">
-        <i nz-icon type="folder-add"></i>
+        <i nz-icon nzType="folder-add"></i>
       </button>
       <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip (click)="importItems()"
               [nzTitle]="'CUSTOM_ITEMS.Import_items' | translate">
-        <i nz-icon type="download"></i>
+        <i nz-icon nzType="download"></i>
       </button>
       <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip (click)="exportMultipleItems(display)"
               [nzTitle]="'CUSTOM_ITEMS.Export_items' | translate">
-        <i nz-icon type="upload"></i>
+        <i nz-icon nzType="upload"></i>
       </button>
     </div>
     <div *ngIf="display.otherItems.length === 0 && display.folders.length === 0; else itemsDisplay">
@@ -46,14 +46,14 @@
                   <ng-template #folderHeader>
                     <div fxLayout="row" fxLayoutAlign="space-between center">
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                        <i nz-icon type="folder"></i>
+                        <i nz-icon nzType="folder"></i>
                         <div>{{folderDisplay.folder.name}}</div>
                         <button nz-button nzShape="circle"
                                 nzSize="small"
                                 nz-tooltip
                                 [nzTitle]="'CUSTOM_ITEMS.Rename_folder' | translate"
                                 (click)="$event.stopPropagation();renameFolder(folderDisplay.folder)">
-                          <i nz-icon type="edit"></i>
+                          <i nz-icon nzType="edit"></i>
                         </button>
                       </div>
                       <div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
@@ -62,7 +62,7 @@
                                 nzType="danger"
                                 (click)="$event.stopPropagation()"
                                 (nzOnConfirm)="deleteCustomItemFolder(folderDisplay.folder.$key)">
-                          <i nz-icon type="delete"></i>
+                          <i nz-icon nzType="delete"></i>
                         </button>
                       </div>
                     </div>
@@ -94,13 +94,13 @@
                 <button nz-button nz-tooltip [nzTitle]="'CUSTOM_ITEMS.Export_item' | translate"
                         nzShape="circle"
                         (click)="$event.stopPropagation();exportItems([item], display)">
-                  <i nz-icon type="export"></i>
+                  <i nz-icon nzType="export"></i>
                 </button>
                 <button nz-button nz-popover [nzTitle]="'CUSTOM_ITEMS.Add_to_list' | translate"
                         nzShape="circle" nzType="primary"
                         (click)="$event.stopPropagation()"
                         [nzContent]="calculator" nzTrigger="click">
-                  <i nz-icon type="plus"></i>
+                  <i nz-icon nzType="plus"></i>
                   <ng-template #calculator>
                     <div fxLayout="row" fxLayoutGap="5px">
                       <nz-input-number [nzMin]="1" [nzStep]="1"
@@ -108,7 +108,7 @@
                                        (keypress.enter)="addToList(item, numberInput.value);"
                                        nzAutoFocus></nz-input-number>
                       <button nz-button (click)="addToList(item, numberInput.value);" nzType="primary">
-                        <i nz-icon type="caret-right"></i>
+                        <i nz-icon nzType="caret-right"></i>
                       </button>
                     </div>
                   </ng-template>
@@ -118,7 +118,7 @@
                         nzType="danger"
                         (click)="$event.stopPropagation()"
                         (nzOnConfirm)="deleteCustomItem(item.$key)">
-                  <i nz-icon type="delete"></i>
+                  <i nz-icon nzType="delete"></i>
                 </button>
               </div>
             </div>
@@ -129,7 +129,7 @@
               <div>
                 <nz-dropdown [nzTrigger]="'click'" nz-tooltip [nzTitle]="'CUSTOM_ITEMS.Add_details' | translate">
                   <button nz-dropdown nz-button nzShape="circle" nzSize="small">
-                    <i nz-icon type="plus"></i>
+                    <i nz-icon nzType="plus"></i>
                   </button>
                   <ul nz-menu>
                     <li nz-menu-item
@@ -175,7 +175,7 @@
                     <div>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Title' | translate}}</div>
                     <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
                             nzSize="small" nzShape="circle"
-                            (nzOnConfirm)="deleteCraft(item)"><i nz-icon type="delete"></i></button>
+                            (nzOnConfirm)="deleteCraft(item)"><i nz-icon nzType="delete"></i></button>
                   </div>
                 </ng-template>
               </nz-divider>
@@ -255,11 +255,11 @@
                             nzSize="small"
                             [nzTitle]="'Confirm' | translate"
                             nz-popconfirm (nzOnConfirm)="deleteIngredient(ingredient, item)">
-                      <i nz-icon type="delete"></i>
+                      <i nz-icon nzType="delete"></i>
                     </button>
                   </div>
                   <button nz-button (click)="addIngredient(item)" nzType="dashed">
-                    <i nz-icon type="plus"></i>{{'CUSTOM_ITEMS.DETAILS.Add_requirement' | translate}}
+                    <i nz-icon nzType="plus"></i>{{'CUSTOM_ITEMS.DETAILS.Add_requirement' | translate}}
                   </button>
                 </div>
               </div>
@@ -271,7 +271,7 @@
                     <div>{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</div>
                     <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
                             nzSize="small" nzShape="circle"
-                            (nzOnConfirm)="deleteGathering(item)"><i nz-icon type="delete"></i></button>
+                            (nzOnConfirm)="deleteGathering(item)"><i nz-icon nzType="delete"></i></button>
                   </div>
                 </ng-template>
               </nz-divider>
@@ -380,14 +380,14 @@
                     <ng-template #editAlarmAction>
                       <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
                               (click)="editAlarm(item, alarm)">
-                        <i nz-icon type="edit"></i>
+                        <i nz-icon nzType="edit"></i>
                       </button>
                     </ng-template>
                     <ng-template #deleteAlarmAction>
                       <button nz-button nzShape="circle" nzSize="small" nzType="danger" nz-tooltip
                               [nzTitle]="'Confirm' | translate"
                               nz-popconfirm (nzOnConfirm)="deleteAlarm(item, alarm)">
-                        <i nz-icon type="delete"></i>
+                        <i nz-icon nzType="delete"></i>
                       </button>
                     </ng-template>
                     <nz-list-item-meta
@@ -408,7 +408,7 @@
                             </div>
                           </div>
                           <div *ngIf="alarm.weathersFrom !== undefined">
-                            <i nz-icon type="right" theme="outline"></i>
+                            <i nz-icon nzType="right" theme="outline"></i>
                           </div>
                           <div *ngIf="alarm.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                             <div *ngFor="let weather of alarm.weathers">
@@ -475,7 +475,7 @@
                         <button nz-button nzType="danger"
                                 [nzTitle]="'Confirm' | translate"
                                 nz-popconfirm (nzOnConfirm)="deleteVendor(item, vendor)">
-                          <i nz-icon type="delete"></i> {{'CUSTOM_ITEMS.DETAILS.VENDORS.Delete_vendor' | translate}}
+                          <i nz-icon nzType="delete"></i> {{'CUSTOM_ITEMS.DETAILS.VENDORS.Delete_vendor' | translate}}
                         </button>
                       </nz-form-control>
                     </nz-form-item>
@@ -535,7 +535,7 @@
                         <button nz-button nzType="danger"
                                 [nzTitle]="'Confirm' | translate"
                                 nz-popconfirm (nzOnConfirm)="deleteTrade(item, tradeSource)">
-                          <i nz-icon type="delete"></i> {{'CUSTOM_ITEMS.DETAILS.TRADES.Delete_trade' | translate}}
+                          <i nz-icon nzType="delete"></i> {{'CUSTOM_ITEMS.DETAILS.TRADES.Delete_trade' | translate}}
                         </button>
                       </nz-form-control>
                     </nz-form-item>
@@ -569,14 +569,14 @@
                                     nzSize="small"
                                     [nzTitle]="'Confirm' | translate"
                                     nz-popconfirm (nzOnConfirm)="deleteCurrency(item, trade, currency)">
-                              <i nz-icon type="delete"></i>
+                              <i nz-icon nzType="delete"></i>
                             </button>
                           </div>
                           <button nz-button (click)="addCurrency(item, trade)" nzType="dashed">
-                            <i nz-icon type="plus"></i>{{'CUSTOM_ITEMS.DETAILS.TRADES.Add_currency' | translate}}
+                            <i nz-icon nzType="plus"></i>{{'CUSTOM_ITEMS.DETAILS.TRADES.Add_currency' | translate}}
                           </button>
                         </div>
-                        <i nz-icon type="arrow-down"></i>
+                        <i nz-icon nzType="arrow-down"></i>
                         <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
                           <input type="number" nz-input [(ngModel)]="trade.items[0].amount"
                                  (ngModelChange)="item.dirty = true">
@@ -605,7 +605,7 @@
                       <button nz-button nzShape="circle" nzSize="small" nzType="danger" nz-tooltip
                               [nzTitle]="'Confirm' | translate"
                               nz-popconfirm (nzOnConfirm)="deleteReduction(item, reduction)">
-                        <i nz-icon type="delete"></i>
+                        <i nz-icon nzType="delete"></i>
                       </button>
                     </ng-template>
                     <nz-list-item-meta [nzAvatar]="reduction.obj.c | icon"
@@ -627,7 +627,7 @@
 
 <ng-template #notificationRef let-notification>
   <div class="ant-notification-notice-content ant-notification-notice-with-icon">
-    <span class="ant-notification-notice-icon"><i nz-icon type="check-circle"
+    <span class="ant-notification-notice-icon"><i nz-icon nzType="check-circle"
                                                   class="ant-notification-notice-icon-success"></i></span>
     <div>
       <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>

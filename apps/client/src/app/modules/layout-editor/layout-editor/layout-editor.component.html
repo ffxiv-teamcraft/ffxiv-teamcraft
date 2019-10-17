@@ -7,7 +7,7 @@
     </nz-select>
     <div class="buttons" fxLayout="row" fxLayoutGap="5px">
       <button nz-button nzType="primary" (click)="addLayout()">
-        <i nz-icon type="plus"></i>
+        <i nz-icon nzType="plus"></i>
       </button>
       <button nz-button nzType="primary" (click)="save(layout)"
               [disabled]="layout.$key === undefined || !dirty">
@@ -15,17 +15,17 @@
       </button>
       <button nz-button nzType="danger" [disabled]="layout.$key === undefined" nz-popconfirm
               [nzTitle]="'Confirm' | translate" (nzOnConfirm)="deleteLayout(layout.$key)">
-        <i nz-icon type="delete"></i>
+        <i nz-icon nzType="delete"></i>
       </button>
       <div class="spacer"></div>
       <button nz-button ngxClipboard [cbContent]="layout.base64" (cbOnSuccess)="layoutCopied()" nz-tooltip
               [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string' | translate">
-        <i nz-icon type="upload"></i>
+        <i nz-icon nzType="upload"></i>
       </button>
       <button nz-button nz-tooltip
               [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_layout' | translate"
               (click)="importLayout()">
-        <i nz-icon type="download"></i>
+        <i nz-icon nzType="download"></i>
       </button>
     </div>
   </div>
@@ -96,7 +96,7 @@
     <div ngxDroppable fxLayout="column" fxLayoutGap="10px" (drop)="moveRow($event.value, $event.dropIndex, layout)">
       <button nz-button nzType="primary" nzBlock (click)="addPanel(layout)"
               [disabled]="layout.name === 'Default Layout'">
-        <i nz-icon type="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
+        <i nz-icon nzType="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
       </button>
       <div *ngFor="let row of layout.rows; trackBy: trackByRow" ngxDraggable [model]="row">
         <app-layout-editor-row [row]="row" (rowChange)="updatePanel(layout, $event)"

@@ -1,5 +1,5 @@
 <button *ngIf="!workshopView" nz-button [nzType]="'primary'" class="new-list-button" (click)="pickNewList()" nzBlock>
-  <i nz-icon type="plus"></i>&nbsp;{{'New_List' | translate}}
+  <i nz-icon nzType="plus"></i>&nbsp;{{'New_List' | translate}}
 </button>
 <nz-divider *ngIf="!workshopView" [nzText]="'Or' | translate"></nz-divider>
 <nz-input-group [nzSuffix]="suffixIconSearch">
@@ -7,7 +7,7 @@
          [placeholder]="'LISTS.Lists_search_placeholder' | translate">
 </nz-input-group>
 <ng-template #suffixIconSearch>
-  <i nz-icon type="search"></i>
+  <i nz-icon nzType="search"></i>
 </ng-template>
 <div *ngIf="lists$ | async as lists">
   <nz-list [nzDataSource]="lists.otherLists" [nzRenderItem]="list" [nzHeader]="yourListsHeader">
@@ -18,10 +18,10 @@
       </nz-list-item>
       <ng-template #pickOwnList>
         <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
-          nz-icon type="check"></i></button>
+          nz-icon nzType="check"></i></button>
       </ng-template>
     </ng-template>
-    <ng-template #yourListsHeader><i nz-icon type="solution"></i>&nbsp;{{'LISTS.Your_lists' | translate}}</ng-template>
+    <ng-template #yourListsHeader><i nz-icon nzType="solution"></i>&nbsp;{{'LISTS.Your_lists' | translate}}</ng-template>
   </nz-list>
   <nz-list [nzDataSource]="lists.communityLists" [nzRenderItem]="list" [nzHeader]="communityListsHeader">
     <ng-template #list let-list>
@@ -31,10 +31,10 @@
       </nz-list-item>
       <ng-template #pickOwnList>
         <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
-          nz-icon type="check"></i></button>
+          nz-icon nzType="check"></i></button>
       </ng-template>
     </ng-template>
-    <ng-template #communityListsHeader><i nz-icon type="solution"></i>&nbsp;{{'Your_public_lists' | translate}}
+    <ng-template #communityListsHeader><i nz-icon nzType="solution"></i>&nbsp;{{'Your_public_lists' | translate}}
     </ng-template>
   </nz-list>
 </div>
@@ -48,10 +48,10 @@
       </nz-list-item>
       <ng-template #pickOwnList>
         <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
-          nz-icon type="check"></i></button>
+          nz-icon nzType="check"></i></button>
       </ng-template>
     </ng-template>
-    <ng-template #workshopHeader><i nz-icon type="folder-open"></i>&nbsp;{{workshopDisplay.workshop.name}}
+    <ng-template #workshopHeader><i nz-icon nzType="folder-open"></i>&nbsp;{{workshopDisplay.workshop.name}}
     </ng-template>
   </nz-list>
 </div>
@@ -64,9 +64,9 @@
     </nz-list-item>
     <ng-template #pickSharedList>
       <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
-        nz-icon type="check"></i></button>
+        nz-icon nzType="check"></i></button>
     </ng-template>
   </ng-template>
-  <ng-template #headerSharedLists><i nz-icon type="edit"></i>&nbsp;{{'LISTS.Shared_lists' | translate}}
+  <ng-template #headerSharedLists><i nz-icon nzType="edit"></i>&nbsp;{{'LISTS.Shared_lists' | translate}}
   </ng-template>
 </nz-list>

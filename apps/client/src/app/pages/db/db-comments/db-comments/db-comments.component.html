@@ -21,9 +21,9 @@
               XIVDB
             </ng-template>
             <div *ngIf="comment.author | userLevel | async as userLvl">
-              <i *ngIf="userLvl === userLevels.ADMIN" nz-icon type="crown" nz-tooltip
+              <i *ngIf="userLvl === userLevels.ADMIN" nz-icon nzType="crown" nz-tooltip
                  [nzTitle]="'COMMON.Admin' | translate"></i>
-              <i *ngIf="userLvl === userLevels.MODERATOR" nz-icon type="crown" nz-tooltip
+              <i *ngIf="userLvl === userLevels.MODERATOR" nz-icon nzType="crown" nz-tooltip
                  [nzTitle]="'COMMON.Moderator' | translate"></i>
             </div>
           </div>
@@ -146,7 +146,7 @@
       </ng-container>
       <button nz-button nzBlock (click)="addRootComment = true"
               *ngIf="!addRootComment && !hideRootCommentButton && user.defaultLodestoneId">
-        <i nz-icon type="plus"></i>
+        <i nz-icon nzType="plus"></i>
         {{'DB.COMMENTS.Add_comment' | translate}}
       </button>
     </div>

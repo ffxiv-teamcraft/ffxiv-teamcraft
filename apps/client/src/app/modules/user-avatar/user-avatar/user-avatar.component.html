@@ -19,7 +19,7 @@
       </ng-template>
     </ng-container>
     <ng-template #anonymous>
-      <i nz-icon type="user" nz-tooltip
+      <i nz-icon nzType="user" nz-tooltip
          [style.width.px]="width"
          [nzTitle]="messageKey ? (messageKey | translate:{name: 'Anonymous' | translate}) : 'Anonymous' | translate">
       </i>
@@ -28,10 +28,10 @@
 </nz-badge>
 <ng-template #iconTemplate>
   <ng-container *ngIf="user.admin">
-    <i nz-icon type="crown" class="ant-scroll-number-custom-component" nz-tooltip [nzTitle]="'COMMON.Admin' | translate"></i>
+    <i nz-icon nzType="crown" class="ant-scroll-number-custom-component" nz-tooltip [nzTitle]="'COMMON.Admin' | translate"></i>
   </ng-container>
   <ng-container *ngIf="user.moderator">
-    <i nz-icon type="safety" class="ant-scroll-number-custom-component" nz-tooltip [nzTitle]="'COMMON.Moderator' | translate"></i>
+    <i nz-icon nzType="safety" class="ant-scroll-number-custom-component" nz-tooltip [nzTitle]="'COMMON.Moderator' | translate"></i>
   </ng-container>
 </ng-template>
 </ng-container>

@@ -9,7 +9,7 @@
                          [itemId]="currency.id" [hq]="currency.hq"></app-item-icon>
           <span>x{{currency.amount}}</span>
         </div>
-        <i nz-icon type="arrow-right"></i>
+        <i nz-icon nzType="arrow-right"></i>
         <div class="item-container" *ngFor="let tradeItem of trade.items">
           <app-item-icon [width]="32" [icon]="tradeItem.icon" [itemName]="tradeItem.id | itemName | i18n"
                          [itemId]="tradeItem.id" [hq]="tradeItem.hq"></app-item-icon>

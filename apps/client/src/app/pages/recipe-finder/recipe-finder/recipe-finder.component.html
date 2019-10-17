@@ -37,14 +37,14 @@
             *ngIf="true | ifMobile:false"
             [disabled]="isButtonDisabled(itemName.value, +amount.value)"
             (click)="addToPool(itemName.value, +amount.value)">
-      <i nz-icon type="plus"></i> {{'RECIPE_FINDER.Add_item' | translate}}
+      <i nz-icon nzType="plus"></i> {{'RECIPE_FINDER.Add_item' | translate}}
     </button>
     <button nz-button nzType="primary"
             *ngIf="false | ifMobile:true"
             [disabled]="isButtonDisabled(itemName.value, +amount.value)"
             (click)="addToPool(itemName.value, +amount.value)"
             nzBlock>
-      <i nz-icon type="plus"></i> {{'RECIPE_FINDER.Add_item' | translate}}
+      <i nz-icon nzType="plus"></i> {{'RECIPE_FINDER.Add_item' | translate}}
     </button>
     <button nz-button nzType="primary"
             class="search-button"
@@ -54,7 +54,7 @@
     </button>
     <button nz-button nzType="primary" class="search-button" [disabled]="pool.length === 0"
             (click)="search$.next()">
-      <i nz-icon type="search"></i> {{'RECIPE_FINDER.Search' | translate}}
+      <i nz-icon nzType="search"></i> {{'RECIPE_FINDER.Search' | translate}}
     </button>
   </div>
 </div>
@@ -96,7 +96,7 @@
       <div class="inventory-element" fxLayout="row" fxLayoutAlign="flex-start center"
            fxLayoutGap="5px" [class.highlighted]="(highlight$ | async)?.indexOf(item.id) > -1"
            *ngFor="let item of pool">
-        <i nz-icon type="close" (click)="removeFromPool(item.id, item.amount, true)" class="delete-element"></i>
+        <i nz-icon nzType="close" (click)="removeFromPool(item.id, item.amount, true)" class="delete-element"></i>
         <app-item-icon [itemId]="item.id" [icon]="item.id | lazyIcon" [width]="32"></app-item-icon>
         <div fxLayout="column">
           <div>{{item.id | itemName | i18n}}</div>
@@ -107,11 +107,11 @@
             </div>
             <button *ngIf="editingAmount !== item.id" nz-button nzShape="circle" nzSize="small"
                     (click)="editAmount(item.id)">
-              <i nz-icon type="edit"></i>
+              <i nz-icon nzType="edit"></i>
             </button>
             <button *ngIf="editingAmount === item.id" nz-button nzShape="circle" nzSize="small" nzType="primary"
                     (click)="saveAmount(item.id, item.amount)">
-              <i nz-icon type="save"></i>
+              <i nz-icon nzType="save"></i>
             </button>
           </div>
         </div>
@@ -242,7 +242,7 @@
 
 <ng-template #notificationRef let-notification>
   <div class="ant-notification-notice-content ant-notification-notice-with-icon">
-    <span class="ant-notification-notice-icon"><i nz-icon type="check-circle"
+    <span class="ant-notification-notice-icon"><i nz-icon nzType="check-circle"
                                                   class="ant-notification-notice-icon-success"></i></span>
     <div>
       <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>

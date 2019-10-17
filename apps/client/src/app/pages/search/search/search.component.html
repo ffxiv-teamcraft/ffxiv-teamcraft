@@ -27,7 +27,7 @@
     </nz-input-group>
     <button nz-button ngxClipboard [cbContent]="getShareUrl()" (cbOnSuccess)="afterShareLinkCopied()" nz-tooltip
             [nzTitle]="'ITEMS.Share_url' | translate">
-      <i nz-icon type="share-alt"></i>
+      <i nz-icon nzType="share-alt"></i>
     </button>
     <nz-autocomplete #emptyFill></nz-autocomplete>
     <nz-autocomplete nzBackfill #auto>
@@ -216,10 +216,10 @@
           </div>
           <div fxLayout="column" fxLayoutGap="5px">
             <button nz-button nzType="dashed" nzBlock type="button" (click)="resetFilters()">
-              <i nz-icon type="reload"></i> {{'ITEMS.Reset_filters' | translate}}
+              <i nz-icon nzType="reload"></i> {{'ITEMS.Reset_filters' | translate}}
             </button>
             <button nz-button nzType="primary" nzBlock type="submit">
-              <i nz-icon type="filter"></i> {{'ITEMS.Apply_filters' | translate}}
+              <i nz-icon nzType="filter"></i> {{'ITEMS.Apply_filters' | translate}}
             </button>
           </div>
         </form>
@@ -242,10 +242,10 @@
           </div>
           <div fxLayout="column" fxLayoutGap="5px">
             <button nz-button nzType="dashed" nzBlock type="button" (click)="resetFilters()">
-              <i nz-icon type="reload"></i> {{'ITEMS.Reset_filters' | translate}}
+              <i nz-icon nzType="reload"></i> {{'ITEMS.Reset_filters' | translate}}
             </button>
             <button nz-button nzType="primary" nzBlock type="submit">
-              <i nz-icon type="filter"></i> {{'ITEMS.Apply_filters' | translate}}
+              <i nz-icon nzType="filter"></i> {{'ITEMS.Apply_filters' | translate}}
             </button>
           </div>
         </form>
@@ -278,10 +278,10 @@
           </div>
           <div fxLayout="column" fxLayoutGap="5px">
             <button nz-button nzType="dashed" nzBlock type="button" (click)="resetFilters()">
-              <i nz-icon type="reload"></i> {{'ITEMS.Reset_filters' | translate}}
+              <i nz-icon nzType="reload"></i> {{'ITEMS.Reset_filters' | translate}}
             </button>
             <button nz-button nzType="primary" nzBlock type="submit">
-              <i nz-icon type="filter"></i> {{'ITEMS.Apply_filters' | translate}}
+              <i nz-icon nzType="filter"></i> {{'ITEMS.Apply_filters' | translate}}
             </button>
           </div>
         </form>
@@ -315,10 +315,10 @@
           </div>
           <div fxLayout="column" fxLayoutGap="5px">
             <button nz-button nzType="dashed" nzBlock type="button" (click)="resetFilters()">
-              <i nz-icon type="reload"></i> {{'ITEMS.Reset_filters' | translate}}
+              <i nz-icon nzType="reload"></i> {{'ITEMS.Reset_filters' | translate}}
             </button>
             <button nz-button nzType="primary" nzBlock type="submit">
-              <i nz-icon type="filter"></i> {{'ITEMS.Apply_filters' | translate}}
+              <i nz-icon nzType="filter"></i> {{'ITEMS.Apply_filters' | translate}}
             </button>
           </div>
         </form>
@@ -351,10 +351,10 @@
           </div>
           <div fxLayout="column" fxLayoutGap="5px">
             <button nz-button nzType="dashed" nzBlock type="button" (click)="resetFilters()">
-              <i nz-icon type="reload"></i> {{'ITEMS.Reset_filters' | translate}}
+              <i nz-icon nzType="reload"></i> {{'ITEMS.Reset_filters' | translate}}
             </button>
             <button nz-button nzType="primary" nzBlock type="submit">
-              <i nz-icon type="filter"></i> {{'ITEMS.Apply_filters' | translate}}
+              <i nz-icon nzType="filter"></i> {{'ITEMS.Apply_filters' | translate}}
             </button>
           </div>
         </form>
@@ -448,11 +448,11 @@
                    fxLayoutAlign="center center">
                 <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
                         [nzTitle]="'ITEMS.Add_to_list' | translate" (click)="addItemsToList([row])">
-                  <i nz-icon type="plus"></i>
+                  <i nz-icon nzType="plus"></i>
                 </button>
                 <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
                         [nzTitle]="'Quick_list_create' | translate" (click)="createQuickList(row)">
-                  <i nz-icon type="clock-circle-o"></i>
+                  <i nz-icon nzType="clock-circle-o"></i>
                 </button>
                 <button nz-button *ngIf="row.recipe !== undefined" [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
                         [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate"
@@ -760,7 +760,7 @@
 
 <ng-template #notificationRef let-notification>
   <div class="ant-notification-notice-content ant-notification-notice-with-icon">
-    <span class="ant-notification-notice-icon"><i nz-icon type="check-circle"
+    <span class="ant-notification-notice-icon"><i nz-icon nzType="check-circle"
                                                   class="ant-notification-notice-icon-success"></i></span>
     <div>
       <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>

@@ -32,7 +32,7 @@
                 <button nz-button *ngIf="hasNavigationMap" nzShape="circle" nzSize="small"
                         (click)="openNavigationMap(row)"
                         nz-tooltip [nzTitle]="'NAVIGATION.Title' | translate">
-                  <i nz-icon type="gateway"></i>
+                  <i nz-icon nzType="gateway"></i>
                 </button>
               </div>
             </ng-template>
@@ -54,7 +54,7 @@
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <div>{{displayRow.title | translate}}</div>
         &nbsp;({{displayRow.rows.length}} {{'items' | translate}})
-        <i nz-icon type="check"
+        <i nz-icon nzType="check"
            *ngIf="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)"></i>
       </div>
       <div fxLayout="row" fxLayoutGap="10px">
@@ -71,14 +71,14 @@
         <button nz-button (click)="$event.stopPropagation()" ngxClipboard [cbContent]="getTextExport()"
                 (cbOnSuccess)="textCopied()"
                 nzSize="small" nzShape="circle" nz-tooltip [nzTitle]="'LIST.Copy_as_text' | translate">
-          <i nz-icon type="copy"></i>
+          <i nz-icon nzType="copy"></i>
         </button>
         <span nz-tooltip [nzTitle]="'LIST.Mark_whole_panel_done' | translate">
           <button nz-button nz-popconfirm [nzTitle]="'Confirmation' | translate"
                   (click)="$event.stopPropagation()"
                   (nzOnConfirm)="markPanelAsDone()"
                   nzSize="small" nzShape="circle">
-            <i nz-icon type="check"></i>
+            <i nz-icon nzType="check"></i>
           </button>
         </span>
       </div>

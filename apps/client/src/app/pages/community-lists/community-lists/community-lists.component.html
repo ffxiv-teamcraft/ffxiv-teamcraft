@@ -11,7 +11,7 @@
     </nz-select>
     <button nz-button (click)="tagsFilter$.next([])" nz-tooltip
             [nzTitle]="'COMMUNITY_LISTS.Tags_filter_reset' | translate">
-      <i nz-icon type="reload"></i>
+      <i nz-icon nzType="reload"></i>
     </button>
   </div>
   <app-page-loader [loading]="loading" class="lists-container">

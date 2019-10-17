@@ -5,11 +5,11 @@
     <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
       <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createList()" nz-tooltip
               [nzTitle]="'New_List' | translate">
-        <i nz-icon type="file-add"></i>
+        <i nz-icon nzType="file-add"></i>
       </button>
       <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createWorkshop()" nz-tooltip
               [nzTitle]="'WORKSHOP.Add_workshop' | translate">
-        <i nz-icon type="folder-add"></i>
+        <i nz-icon nzType="folder-add"></i>
       </button>
       <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip (click)="openMergeDialog()"
               [nzTitle]="'LISTS.Merge_lists' | translate">
@@ -17,14 +17,14 @@
       </button>
       <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip (click)="importList()"
               [nzTitle]="'LISTS.IMPORT.Title' | translate">
-        <i nz-icon type="download"></i>
+        <i nz-icon nzType="download"></i>
       </button>
       <div class="spacer">
       </div>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
               *ngIf="myLists$ | async as myLists"
               [nzTitle]="'LISTS.Regenerate_all' | translate" (click)="regenerateLists(myLists)">
-        <i nz-icon type="file-sync"></i>
+        <i nz-icon nzType="file-sync"></i>
       </button>
     </div>
     <nz-alert [nzMessage]="'LISTS.Needs_verification' | translate" nzType="warning"
@@ -35,7 +35,7 @@
              placeholder="{{'LISTS.Lists_search_placeholder' | translate}}">
     </nz-input-group>
     <ng-template #suffixIconSearch>
-      <i nz-icon type="search"></i>
+      <i nz-icon nzType="search"></i>
     </ng-template>
     <div class="ngx-dnd-container" ngxDroppable="list"
          (drop)="setListIndex($event.value, $event.dropIndex, lists.otherLists)">

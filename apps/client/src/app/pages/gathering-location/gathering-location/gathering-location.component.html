@@ -52,7 +52,7 @@
           <div>{{node.zoneid | placeName | i18n}} <app-db-button type="node" [id]="node.nodeId"></app-db-button></div>
           <div>X: {{node.x}}, Y: {{node.y}}</div>
           <div>
-            {{getNodeSpawns(node)}} <i nz-icon type="clock-circle" *ngIf="node.ephemeral" nz-tooltip
+            {{getNodeSpawns(node)}} <i nz-icon nzType="clock-circle" *ngIf="node.ephemeral" nz-tooltip
                                        [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate"></i>
           </div>
           <ng-container *ngIf="getNodeSpawns(node) !== ''">
@@ -69,7 +69,7 @@
               </div>
             </div>
             <div *ngIf="node.weathersFrom !== undefined">
-              <i nz-icon type="right" theme="outline"></i>
+              <i nz-icon nzType="right" theme="outline"></i>
             </div>
             <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
               <div *ngFor="let weather of node.weathers">
@@ -129,7 +129,7 @@
     <ng-template #actionAlarmToGroup>
       <ng-container *ngIf="alarmGroups$ | async as groups">
         <nz-dropdown *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'">
-          <i nz-icon type="folder-open" nz-dropdown class="add-to-group"></i>
+          <i nz-icon nzType="folder-open" nz-dropdown class="add-to-group"></i>
           <ul nz-menu>
             <li nz-menu-item *ngFor="let group of groups" (click)="addAlarm(node, group)">
               {{group.name}}

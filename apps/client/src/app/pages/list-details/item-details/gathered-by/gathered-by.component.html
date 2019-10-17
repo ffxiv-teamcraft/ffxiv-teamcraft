@@ -43,13 +43,13 @@
                          fxLayoutGap="5px">
                       <button nz-button nzShape="circle" nzSize="small" (click)="addAlarm(alarm.alarm)" nz-tooltip
                               [nzTitle]="'ALARMS.Add_alarm' | translate">
-                        <i nz-icon type="clock-circle"> </i>
+                        <i nz-icon nzType="clock-circle"> </i>
                       </button>
                       <ng-container *ngIf="alarmGroups$ | async as groups">
                         <ng-container *ngIf="groups.length > 0">
                           <nz-dropdown *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'">
                             <button nz-button nzShape="circle" nzSize="small" nz-dropdown>
-                              <i nz-icon type="folder-open"></i>
+                              <i nz-icon nzType="folder-open"></i>
                             </button>
                             <ul nz-menu>
                               <li nz-menu-item *ngFor="let group of groups" (click)="addAlarm(alarm.alarm, group)">
@@ -74,7 +74,7 @@
                   </div>
                 </div>
                 <div *ngIf="node.weathersFrom !== undefined">
-                  <i nz-icon type="right" theme="outline"></i>
+                  <i nz-icon nzType="right" theme="outline"></i>
                 </div>
                 <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                   <div *ngFor="let weather of node.weathers">

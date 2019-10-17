@@ -1,6 +1,6 @@
 <ng-container *ngIf="!disableNew">
   <a nz-button [nzType]="'primary'" nzBlock (click)="ref.close(null)" routerLink="/simulator/{{itemId}}/{{recipeId}}">
-    <i nz-icon type="plus"></i>&nbsp;{{'SIMULATOR.New_rotation' | translate}}
+    <i nz-icon nzType="plus"></i>&nbsp;{{'SIMULATOR.New_rotation' | translate}}
   </a>
   <nz-divider [nzText]="'Or' | translate"></nz-divider>
 </ng-container>
@@ -9,7 +9,7 @@
          [placeholder]="'SIMULATOR.ROTATIONS.Search_placeholder' | translate">
 </nz-input-group>
 <ng-template #suffixIconSearch>
-  <i nz-icon type="search"></i>
+  <i nz-icon nzType="search"></i>
 </ng-template>
 <div *ngIf="recipe && recipe.rlvl" fxLayout="column" fxLayoutGap="5px">
   <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -40,28 +40,28 @@
     </nz-list-item>
     <ng-template #pickRotation>
       <a nz-button *ngIf="pickOnly; else links" [nzType]="'primary'" [nzShape]="'circle'" (click)="ref.close(rotation)">
-        <i nz-icon type="check"></i>
+        <i nz-icon nzType="check"></i>
       </a>
       <ng-template #links>
         <a nz-button *ngIf="!custom" [nzType]="'primary'" [nzShape]="'circle'" (click)="ref.close(rotation)"
            routerLink="/simulator/{{itemId}}/{{recipeId}}/{{rotation.$key}}">
-          <i nz-icon type="check"></i>
+          <i nz-icon nzType="check"></i>
         </a>
         <a nz-button *ngIf="custom" [nzType]="'primary'" [nzShape]="'circle'" (click)="ref.close(rotation)"
            routerLink="/simulator/custom/{{rotation.$key}}">
-          <i nz-icon type="check"></i>
+          <i nz-icon nzType="check"></i>
         </a>
       </ng-template>
     </ng-template>
   </ng-template>
 
   <nz-list [nzDataSource]="rotations" [nzRenderItem]="rotation" [nzHeader]="header">
-    <ng-template #header><i nz-icon type="solution"></i>&nbsp;{{'SIMULATOR.Rotations' | translate}}</ng-template>
+    <ng-template #header><i nz-icon nzType="solution"></i>&nbsp;{{'SIMULATOR.Rotations' | translate}}</ng-template>
   </nz-list>
 
   <nz-list *ngIf="favoriteRotations$ | async as favRotations" [nzDataSource]="favRotations" [nzRenderItem]="rotation"
            [nzHeader]="header">
-    <ng-template #header><i nz-icon type="solution"></i>&nbsp;{{'SIMULATOR.Favorite_Rotations' | translate}}
+    <ng-template #header><i nz-icon nzType="solution"></i>&nbsp;{{'SIMULATOR.Favorite_Rotations' | translate}}
     </ng-template>
   </nz-list>
 
@@ -71,7 +71,7 @@
       <nz-list *ngFor="let folder of ownFolders" [nzDataSource]="folder.rotations"
                [nzRenderItem]="rotation"
                [nzHeader]="header">
-        <ng-template #header><i nz-icon type="folder"></i>&nbsp;{{folder.folder.name}}
+        <ng-template #header><i nz-icon nzType="folder"></i>&nbsp;{{folder.folder.name}}
         </ng-template>
       </nz-list>
     </div>
@@ -83,7 +83,7 @@
       <nz-list *ngFor="let folder of  favoriteFolders" [nzDataSource]="folder.rotations"
                [nzRenderItem]="rotation"
                [nzHeader]="header">
-        <ng-template #header><i nz-icon type="folder"></i>&nbsp;{{folder.folder.name}}
+        <ng-template #header><i nz-icon nzType="folder"></i>&nbsp;{{folder.folder.name}}
         </ng-template>
       </nz-list>
     </div>

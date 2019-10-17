@@ -3,7 +3,7 @@
 
   <div fxLayout="row" fxLayoutAlign="space-between">
     <button nz-button nzType="primary" (click)="close.emit()">
-      <i nz-icon type="arrow-left"></i>
+      <i nz-icon nzType="arrow-left"></i>
       {{'Back_to_list' | translate}}
     </button>
 
@@ -33,7 +33,7 @@
                       (click)="$event.stopPropagation()"
                       [nzTitle]="'PRICING.Copy_panel_as_text' | translate"
                       [cbContent]="getSpendingText(crystals, list)" (cbOnSuccess)="afterCopy()">
-                <i nz-icon type="copy"></i>
+                <i nz-icon nzType="copy"></i>
               </button>
             </div>
           </div>
@@ -60,7 +60,7 @@
                       (click)="$event.stopPropagation()"
                       [nzTitle]="'PRICING.Copy_panel_as_text' | translate"
                       [cbContent]="getSpendingText(items, list)" (cbOnSuccess)="afterCopy()">
-                <i nz-icon type="copy"></i>
+                <i nz-icon nzType="copy"></i>
               </button>
             </div>
           </div>
@@ -93,7 +93,7 @@
                       (click)="$event.stopPropagation()"
                       [nzTitle]="'PRICING.Copy_panel_as_text' | translate"
                       [cbContent]="getSpendingText(preCrafts, list)" (cbOnSuccess)="afterCopy()">
-                <i nz-icon type="copy"></i>
+                <i nz-icon nzType="copy"></i>
               </button>
             </div>
           </div>
@@ -113,7 +113,7 @@
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <div>{{getTotalEarnings(list.finalItems, list) | number:'1.0-0'}} gil</div>
         <button nz-button nzShape="circle" nzSize="small" (click)="setBenefits(list.finalItems, list)">
-          <i nz-icon type="edit"></i>
+          <i nz-icon nzType="edit"></i>
         </button>
       </div>
     </ng-template>
@@ -123,7 +123,7 @@
         <button nz-button ngxClipboard nz-tooltip nzShape="circle"
                 [nzTitle]="'PRICING.Copy_earnings_as_text' | translate"
                 [cbContent]="getEarningText(list.finalItems, list)" (cbOnSuccess)="afterCopy()">
-          <i nz-icon type="copy"></i>
+          <i nz-icon nzType="copy"></i>
         </button>
       </div>
     </ng-template>

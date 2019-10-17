@@ -32,7 +32,7 @@ import { SeoService } from '../../../core/seo/seo.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { ListLayout } from '../../../core/layout/list-layout';
-import { ObservableMedia } from '@angular/flex-layout';
+import { MediaObserver } from '@angular/flex-layout';
 import { ListContributionsComponent } from '../list-contributions/list-contributions.component';
 import * as _ from 'lodash';
 import { IpcService } from '../../../core/electron/ipc.service';
@@ -98,7 +98,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
-              private media: ObservableMedia, public ipc: IpcService) {
+              private media: MediaObserver, public ipc: IpcService) {
     super(seoService);
     this.ipc.on('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;

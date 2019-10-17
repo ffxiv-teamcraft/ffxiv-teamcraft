@@ -12,27 +12,27 @@
               <button nz-button nz-dropdown nz-tooltip
                       nzShape="circle"
                       [nzTitle]="'LIST.Quick_layout_swap' | translate">
-                <i nz-icon type="interation"></i>
+                <i nz-icon nzType="interation"></i>
               </button>
               <ul nz-menu *ngIf="selectedLayout$ | async as selectedLayout">
                 <li nz-menu-item *ngFor="let layout of layouts" (click)="selectLayout(layout)">
-                  {{layout.name}}<i *ngIf="layout.$key === selectedLayout.$key" nz-icon type="check"></i>
+                  {{layout.name}}<i *ngIf="layout.$key === selectedLayout.$key" nz-icon nzType="check"></i>
                 </li>
               </ul>
             </nz-dropdown>
           </ng-container>
           <button nz-button nzType="primary" nzShape="circle" (click)="openLayoutOptions()" nz-tooltip
                   [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Title' | translate">
-            <i nz-icon type="layout"></i>
+            <i nz-icon nzType="layout"></i>
           </button>
           <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'PERMISSIONS.Title' | translate"
                   *ngIf="!list.offline"
                   (click)="openPermissionsPopup(list)" [disabled]="(permissionLevel$ | async) < 40">
-            <i nz-icon type="lock"></i>
+            <i nz-icon nzType="lock"></i>
           </button>
           <button nz-button nzType="primary" nzShape="circle" (click)="cloneList(list)" nz-tooltip
                   [nzTitle]="'List_fork' | translate">
-            <i nz-icon type="copy" theme="outline"></i>
+            <i nz-icon nzType="copy" theme="outline"></i>
           </button>
           <app-favorite-button type="lists" [key]="list.$key" *ngIf="!list.offline"></app-favorite-button>
           <div *ngIf="teams$ | async as teams">
@@ -72,12 +72,12 @@
                     nz-tooltip
                     [nzTitle]="'LIST_DETAILS.Contributions_popup' | translate"
                     [disabled]="(permissionLevel$ | async) < 20">
-              <i nz-icon type="pie-chart"></i>
+              <i nz-icon nzType="pie-chart"></i>
             </button>
             <button nz-button [nzType]="list.public?'primary':'default'" nzShape="circle" (click)="openTagsPopup(list)"
                     nz-tooltip
                     [nzTitle]="'LIST_DETAILS.Tags_popup' | translate" [disabled]="(permissionLevel$ | async) < 40">
-              <i nz-icon type="tags-o"></i>
+              <i nz-icon nzType="tags-o"></i>
             </button>
             <button nz-button nzShape="circle" (click)="pricingMode = true" nz-tooltip
                     [nzTitle]="'Pricing_mode' | translate" [disabled]="(permissionLevel$ | async) < 40">
@@ -104,14 +104,14 @@
              *ngIf="(permissionLevel$ | async) === 40 && !list.offline"
              [nzTitle]="'PERMISSIONS.List_tooltip' | translate: { level: list.everyone | permissionLevel }">
           <div [ngSwitch]="list.everyone">
-            <i nz-icon type="eye-invisible" theme="outline" *ngSwitchCase="1"></i>
-            <i nz-icon type="eye" theme="outline" *ngSwitchCase="10"></i>
-            <i nz-icon type="file-done" theme="outline" *ngSwitchCase="20"></i>
+            <i nz-icon nzType="eye-invisible" theme="outline" *ngSwitchCase="1"></i>
+            <i nz-icon nzType="eye" theme="outline" *ngSwitchCase="10"></i>
+            <i nz-icon nzType="file-done" theme="outline" *ngSwitchCase="20"></i>
           </div>
         </div>
         <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
                 (click)="renameList(list)" [disabled]="(permissionLevel$ | async) < 40">
-          <i nz-icon type="edit"></i>
+          <i nz-icon nzType="edit"></i>
         </button>
       </div>
       <div class="list-title" fxLayout="row" fxLayoutGap="5px" fxLayout.lt-md="column"
@@ -121,21 +121,21 @@
           <div fxLayout="row" fxLayoutGap="5px">
             <button nz-button nzShape="circle" nzSize="small" nz-tooltip
                     [nzTitle]="'LIST.Add_all_alarms' | translate" (click)="createAlarms(list)">
-              <i nz-icon type="bell"></i>
+              <i nz-icon nzType="bell"></i>
             </button>
             <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
                     [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                     *ngIf="(permissionLevel$ | async) > 10 && !list.offline"
                     ngxClipboard [cbContent]="getLink(list)"
                     nzSize="small" (cbOnSuccess)="afterLinkCopy()">
-              <i nz-icon type="share-alt"></i>
+              <i nz-icon nzType="share-alt"></i>
             </button>
             <button nz-button nzShape="circle" nzSize="small" nz-tooltip
                     *ngIf="display$ | async as listDisplay"
                     [nzTitle]="'LIST.Copy_list_as_text' | translate" ngxClipboard
                     [cbContent]="getListTextExport(listDisplay, list)"
                     (cbOnSuccess)="afterListTextCopied()">
-              <i nz-icon type="copy"></i>
+              <i nz-icon nzType="copy"></i>
             </button>
             <button nz-button nzSize="small" nzShape="circle" nz-tooltip
                     [nzTitle]="'LIST.Regenerate' | translate" (click)="regenerateList(list)"
@@ -145,7 +145,7 @@
             <button nz-button nzSize="small" nzShape="circle" nz-tooltip
                     nz-popconfirm [nzTitle]="'Reset_progression' | translate" (nzOnConfirm)="resetList(list)"
                     [disabled]="(permissionLevel$ | async) < 20">
-              <i nz-icon type="reload"></i>
+              <i nz-icon nzType="reload"></i>
             </button>
           </div>
           <div>
@@ -172,13 +172,13 @@
         <button nz-button nzSize="small" nzShape="circle" nz-tooltip
                 [nzTitle]="'LIST_DETAILS.Edit_note' | translate" (click)="editNote(list)"
                 [disabled]="(permissionLevel$ | async) < 40">
-          <i nz-icon type="edit"></i>
+          <i nz-icon nzType="edit"></i>
         </button>
       </div>
       <div *ngIf="list.public && list.tags.length === 0" class="alert">
         <nz-alert nzType="warning" nzShowIcon [nzMessage]="message">
           <ng-template #message>
-            {{'LIST_DETAILS.Missing_tags_before_button' | translate}} <i nz-icon type="tags-o"></i>
+            {{'LIST_DETAILS.Missing_tags_before_button' | translate}} <i nz-icon nzType="tags-o"></i>
             {{'LIST_DETAILS.Missing_tags_after_button' | translate}}
           </ng-template>
         </nz-alert>

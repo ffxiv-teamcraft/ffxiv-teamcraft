@@ -2,7 +2,7 @@
   <div fxLayout="row" fxLayoutGap="10px">
     <button nz-button (click)="currentPath = paths[paths.indexOf(currentPath) - 1]"
             [disabled]="paths.indexOf(currentPath) <= 0">
-      <i nz-icon type="step-backward"></i>
+      <i nz-icon nzType="step-backward"></i>
     </button>
     <nz-select style="width: 120px;" [(ngModel)]="currentPath" fxFlex="1 1 auto">
       <nz-option *ngFor="let path of paths" [nzValue]="path"
@@ -10,7 +10,7 @@
     </nz-select>
     <button nz-button (click)="currentPath = paths[paths.indexOf(currentPath) + 1]"
             [disabled]="paths.indexOf(currentPath) >= paths.length - 1">
-      <i nz-icon type="step-forward"></i>
+      <i nz-icon nzType="step-forward"></i>
     </button>
   </div>
   <div class="navigation-container" #container>
@@ -50,7 +50,7 @@
               <button nz-button nzShape="circle" nzType="primary" nzSize="small"
                       *ngIf="step.type !== undefined && markedAsDone.indexOf(step) === -1"
                       (click)="markStepAsDone(step)">
-                <i nz-icon type="check"></i>
+                <i nz-icon nzType="check"></i>
               </button>
             </div>
           </ng-template>

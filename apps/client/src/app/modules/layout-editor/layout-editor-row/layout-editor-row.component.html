@@ -14,7 +14,7 @@
                   nzType="danger"
                   *ngIf="last && filter.length > 1"
                   (click)="removeFragment()">
-            <i nz-icon type="delete"></i>
+            <i nz-icon nzType="delete"></i>
           </button>
         </div>
         <nz-select *ngIf="fragment.isBooleanGate" [(ngModel)]="fragment.value"
@@ -25,7 +25,7 @@
         </nz-select>
       </div>
       <button nz-button nzBlock nzType="primary" (click)="addFragment()" [disabled]="readonly">
-        <i nz-icon type="plus"></i>
+        <i nz-icon nzType="plus"></i>
       </button>
     </div>
     <div class="layout-type" fxLayout="column" fxLayoutGap="5px">
@@ -98,13 +98,13 @@
   <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
     <nz-input-group [nzPrefix]="icon">
       <ng-template #icon>
-        <i nz-icon type="edit"></i>
+        <i nz-icon nzType="edit"></i>
       </ng-template>
       <input [disabled]="readonly  || isOtherRow" type="text" nz-input [(ngModel)]="row.name"
              (ngModelChange)="rowChange.emit(row)">
     </nz-input-group>
     <button nz-button nzType="danger" *ngIf="!readonly && !isOtherRow" (click)="delete.emit()">
-      <i nz-icon type="delete"></i>
+      <i nz-icon nzType="delete"></i>
     </button>
   </div>
 </ng-template>

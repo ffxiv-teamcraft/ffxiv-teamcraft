@@ -15,7 +15,7 @@
     <div *ngFor="let node of nodes; let last = last">
       {{node.zoneid | placeName | i18n}}<br>
       X: {{node.x}}, Y: {{node.y}}<br>
-      {{getNodeSpawns(node)}} <i nz-icon type="clock-circle" *ngIf="node.ephemeral" nz-tooltip
+      {{getNodeSpawns(node)}} <i nz-icon nzType="clock-circle" *ngIf="node.ephemeral" nz-tooltip
                                  [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate"></i>
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
         <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
@@ -25,7 +25,7 @@
           </div>
         </div>
         <div *ngIf="node.weathersFrom !== undefined">
-          <i nz-icon type="right" theme="outline"></i>
+          <i nz-icon nzType="right" theme="outline"></i>
         </div>
         <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
           <div *ngFor="let weather of node.weathers">
@@ -54,7 +54,7 @@
               </div>
               <div>{{bait.id | itemName | i18n}}</div>
             </div>
-            <i nz-icon type="caret-right" theme="outline" *ngIf="!last"></i>
+            <i nz-icon nzType="caret-right" theme="outline" *ngIf="!last"></i>
           </div>
         </div>
         <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"

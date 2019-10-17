@@ -10,7 +10,7 @@
           <div *ngFor="let threshold of venture.amountsDetails" fxLayout="row" fxLayoutGap="5px"
                fxLayoutAlign="flex-end center">
             <div>{{threshold.name | translate}} {{threshold.stat}}</div>
-            <i nz-icon type="right"></i>
+            <i nz-icon nzType="right"></i>
             <div>x{{threshold.quantity}}
               <span nz-tooltip
                     [nzTitle]="'Requires_x_ventures' | translate: {amount: (item.amount - item.done) / threshold.quantity | ceil}">

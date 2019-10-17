@@ -57,30 +57,30 @@
           <button nz-button nzShape="circle" nz-tooltip [nzTitle]="'SIMULATOR.Rename_rotation' | translate"
                   *ngIf="(permissionLevel$ | async) >= 40"
                   (click)="$event.stopPropagation();renameRotation(rotation)">
-            <i nz-icon type="edit"></i>
+            <i nz-icon nzType="edit"></i>
           </button>
           <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
                   [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
                   ngxClipboard [cbContent]="getLink(rotation)" (cbOnSuccess)="afterLinkCopy()">
-            <i nz-icon type="share-alt"></i>
+            <i nz-icon nzType="share-alt"></i>
           </button>
           <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate"
              nz-button
              [nzShape]="'circle'"
              [nzType]="'primary'"
              [routerLink]="getRouterLink(rotation)">
-            <i nz-icon type="folder-open"></i>
+            <i nz-icon nzType="folder-open"></i>
           </a>
           <button (click)="$event.stopPropagation();openOverlay(rotation)" nz-button [nzShape]="'circle'"
                   [nzType]="'primary'" nz-tooltip
                   [nzTitle]="'ALARMS.Open_overlay' | translate"
                   *ngIf="platformService.isDesktop()">
-            <i nz-icon type="desktop"></i>
+            <i nz-icon nzType="desktop"></i>
           </button>
           <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
                   [nzTitle]="'SIMULATOR.Confirm_delete' | translate" (nzOnConfirm)="delete(rotation)"
                   *ngIf="(permissionLevel$ | async) >= 40">
-            <i nz-icon type="delete"></i>
+            <i nz-icon nzType="delete"></i>
           </button>
           <ng-container *ngIf="(permissionLevel$ | async) >= 40">
             <ng-container *ngIf="user$ | async as user">
@@ -88,7 +88,7 @@
                 <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'"
                              *ngIf="(permissionLevel$ | async) >= 30">
                   <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
-                    <i nz-icon type="ellipsis"></i></button>
+                    <i nz-icon nzType="ellipsis"></i></button>
                   <ul nz-menu>
                     <li nz-menu-item [nzDisabled]="!user.nickname"
                         (click)="createCustomLink(rotation, user)"

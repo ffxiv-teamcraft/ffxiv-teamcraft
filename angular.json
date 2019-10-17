@@ -22,7 +22,9 @@
           "options": {
             "customWebpackConfig": {
               "path": "./extra-webpack.config.js",
-              "mergeStrategies": { "externals": "replace" }
+              "mergeStrategies": {
+                "externals": "replace"
+              }
             },
             "outputPath": "dist/apps/client",
             "index": "apps/client/src/index.html",
@@ -43,9 +45,7 @@
               "apps/client/src/styles.less",
               "apps/client/src/theme.less"
             ],
-            "scripts": [
-              "node_modules/marked/lib/marked.js"
-            ]
+            "scripts": ["node_modules/marked/lib/marked.js"]
           },
           "configurations": {
             "production": {
@@ -180,14 +180,9 @@
             "polyfills": "apps/client/src/polyfills.ts",
             "tsConfig": "apps/client/tsconfig.spec.json",
             "karmaConfig": "apps/client/karma.conf.js",
-            "styles": [
-              "apps/client/src/styles.less"
-            ],
+            "styles": ["apps/client/src/styles.less"],
             "scripts": [],
-            "assets": [
-              "apps/client/src/favicon.ico",
-              "apps/client/src/assets"
-            ]
+            "assets": ["apps/client/src/favicon.ico", "apps/client/src/assets"]
           }
         },
         "lint": {
@@ -197,9 +192,7 @@
               "apps/client/tsconfig.app.json",
               "apps/client/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "server": {
@@ -218,7 +211,7 @@
       "prefix": "",
       "architect": {
         "e2e": {
-          "builder": "@nrwl/builders:cypress",
+          "builder": "@nrwl/cypress:cypress",
           "options": {
             "cypressConfig": "apps/client-e2e/cypress.json",
             "tsConfig": "apps/client-e2e/tsconfig.e2e.json",
@@ -245,7 +238,20 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/schematics"
+    "defaultCollection": "@nrwl/angular"
   },
-  "defaultProject": "client"
+  "defaultProject": "client",
+  "schematics": {
+    "@nrwl/schematics:library": {
+      "unitTestRunner": "karma",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:application": {
+      "unitTestRunner": "karma",
+      "e2eTestRunner": "protractor"
+    },
+    "@nrwl/schematics:node-application": {
+      "framework": "express"
+    }
+  }
 }

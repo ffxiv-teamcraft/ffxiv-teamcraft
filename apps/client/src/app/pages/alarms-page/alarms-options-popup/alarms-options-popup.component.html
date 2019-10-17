@@ -10,7 +10,7 @@
 <div *ngIf="enableCustomSound; else soundSelect" class="custom-alarm">
   <div class="sound-preview">{{settings.alarmSound}}
     <button mat-icon-button (click)="previewSound()">
-      <i nz-icon type="play-o"></i>
+      <i nz-icon nzType="play-o"></i>
     </button>
   </div>
   <input type="file" (change)="setSound($event.target.files[0].path)" accept="audio/*">

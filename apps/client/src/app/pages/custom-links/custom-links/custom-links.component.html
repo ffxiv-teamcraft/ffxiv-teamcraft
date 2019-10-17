@@ -20,14 +20,14 @@
                   nz-tooltip
                   [nzTitle]="(linkDisplay.link.type === 'link'?'CUSTOM_LINKS.Copy_custom_link':'LIST_TEMPLATE.Copy_template_url') | translate"
                   ngxClipboard [cbContent]="linkDisplay.link.getUrl()" (cbOnSuccess)="afterLinkCopy()">
-            <i nz-icon type="share-alt"></i>
+            <i nz-icon nzType="share-alt"></i>
           </button>
         </ng-template>
         <ng-template #delete>
           <button nz-button nzType="danger" nzShape="circle"
                   nz-popconfirm
                   [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteLink(linkDisplay.link.$key)">
-            <i nz-icon type="delete"></i>
+            <i nz-icon nzType="delete"></i>
           </button>
         </ng-template>
       </ng-template>

@@ -10,7 +10,7 @@
           <ng-template #delete>
             <button nz-button nz-popconfirm [nzTitle]="'Confirmation' | translate"
                     (nzOnConfirm)="deleteComment(comment.$key)" nzShape="circle" nzType="danger">
-              <i nz-icon type="delete"></i>
+              <i nz-icon nzType="delete"></i>
             </button>
           </ng-template>
         </nz-list-item-meta>
@@ -22,7 +22,7 @@
            (keydown.enter)="postComment(newCommentContent, userId)">
     <ng-template #suffix>
       <button nz-button nzType="primary" nzSearch (click)="postComment(newCommentContent, userId)">
-        <i nz-icon type="message"></i>
+        <i nz-icon nzType="message"></i>
       </button>
     </ng-template>
   </nz-input-group>

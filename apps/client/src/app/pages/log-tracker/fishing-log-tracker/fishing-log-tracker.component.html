@@ -53,11 +53,11 @@
                       <div fxLayout="column" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
                         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                           <div class="recipe-name" [appItemRarity]="item.itemId">{{item.itemId | itemName | i18n}}</div>
-                          <i nz-icon type="clock-circle" theme="outline" *ngIf="item.timed"
+                          <i nz-icon nzType="clock-circle" theme="outline" *ngIf="item.timed"
                              nz-tooltip [nzTitle]="'LOG_TRACKER.Timed' | translate"></i>
-                          <i nz-icon type="cloud" theme="outline" *ngIf="item.weathered"
+                          <i nz-icon nzType="cloud" theme="outline" *ngIf="item.weathered"
                              nz-tooltip [nzTitle]="'LOG_TRACKER.Weather_dependant' | translate"></i>
-                          <i nz-icon type="check" *ngIf="item.done"></i>
+                          <i nz-icon nzType="check" *ngIf="item.done"></i>
                         </div>
                         <div class="recipe-details">lvl {{item.level}}</div>
                       </div>
@@ -75,8 +75,8 @@
                                             nz-tooltip
                                             [nzGhost]="!display.registered"
                                             (click)="toggleAlarm(display)">
-                                      <i nz-icon type="bell" *ngIf="!display.registered"></i>
-                                      <i nz-icon type="close-circle-o" *ngIf="display.registered"></i>
+                                      <i nz-icon nzType="bell" *ngIf="!display.registered"></i>
+                                      <i nz-icon nzType="close-circle-o" *ngIf="display.registered"></i>
                                       {{display.remainingTime | timer}}
                                       <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
                                       <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
@@ -85,7 +85,7 @@
                                       <nz-dropdown *ngIf="!display.registered && alarmGroups.length > 0"
                                                    [nzPlacement]="'bottomCenter'">
                                         <button nz-button [nzSize]="'small'" nz-dropdown>
-                                          <i nz-icon type="ellipsis"></i>
+                                          <i nz-icon nzType="ellipsis"></i>
                                         </button>
                                         <ul nz-menu>
                                           <li nz-menu-item *ngFor="let group of alarmGroups"
@@ -138,7 +138,7 @@
                                 </div>
                               </div>
                               <div *ngIf="node.weathersFrom !== undefined">
-                                <i nz-icon type="right" theme="outline"></i>
+                                <i nz-icon nzType="right" theme="outline"></i>
                               </div>
                               <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                                 <div *ngFor="let weather of node.weathers">
@@ -165,14 +165,14 @@
                               nzType="primary"
                               *ngIf="!item.done"
                               [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate">
-                        <i nz-icon type="check"></i>
+                        <i nz-icon nzType="check"></i>
                       </button>
                       <button nz-button (click)="markAsDone(item.itemId, false)" nz-tooltip
                               nzShape="circle"
                               nzType="danger"
                               *ngIf="item.done"
                               [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate">
-                        <i nz-icon type="close"></i>
+                        <i nz-icon nzType="close"></i>
                       </button>
                     </div>
                   </div>

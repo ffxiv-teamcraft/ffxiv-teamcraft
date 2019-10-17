@@ -33,7 +33,7 @@
   <pre *ngFor="let macroFragment of macro" class="macro-fragment">
     <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard
             [cbContent]="getText(macroFragment)">
-        <i nz-icon type="copy"></i>
+        <i nz-icon nzType="copy"></i>
     </button>
     <span class="macro-line" *ngFor="let line of macroFragment">{{line}}<br></span>
   </pre>
@@ -44,7 +44,7 @@
   <pre class="macro-fragment">
     <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard
             [cbContent]="getText(aactionsMacro)">
-        <i nz-icon type="copy"></i>
+        <i nz-icon nzType="copy"></i>
     </button>
     <span class="macro-line" *ngFor="let line of aactionsMacro">{{line}}<br></span>
   </pre>

@@ -8,7 +8,7 @@
       <div class="alarm-row" [class.spawned]="row.spawned" [class.played]="row.played && !row.spawned" fxLayout="row"
            fxLayoutGap="5px">
         <div class="ephemeral">
-          <i nz-icon type="clock-circle" *ngIf="row.alarm.ephemeral" nz-tooltip
+          <i nz-icon nzType="clock-circle" *ngIf="row.alarm.ephemeral" nz-tooltip
              [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate"></i>
         </div>
         <div class="item-icon">
@@ -18,14 +18,14 @@
         </div>
         <div class="center-content">
           <span class="item-name" *ngIf="row.alarm.itemId; else customName">
-            <i nz-icon type="folder-open" nz-tooltip [nzTitle]="row.groupName"
+            <i nz-icon nzType="folder-open" nz-tooltip [nzTitle]="row.groupName"
                *ngIf="row.groupName" class="folder-icon"></i>
             {{row.alarm.itemId | itemName: row.alarm | i18n}}
-            <i nz-icon type="edit" nz-tooltip [nzTitle]="row.alarm.note"
+            <i nz-icon nzType="edit" nz-tooltip [nzTitle]="row.alarm.note"
                *ngIf="row.alarm.note" class="note-icon"></i>
           </span>
           <ng-template #customName>
-            <i nz-icon type="folder-open" nz-tooltip [nzTitle]="row.groupName"
+            <i nz-icon nzType="folder-open" nz-tooltip [nzTitle]="row.groupName"
                *ngIf="row.groupName" class="folder-icon"></i>
             <span class="item-name">{{row.alarm.name}}</span>
           </ng-template>
@@ -39,12 +39,12 @@
         <div class="slot" *ngIf="row.alarm.slot">({{row.alarm.slot}})</div>
         <div class="map-button" *ngIf="!overlayMode">
           <button nz-button nzType="primary" nzShape="circle" nzSize="small" (click)="openMap(row.alarm)">
-            <i nz-icon type="environment-o"></i>
+            <i nz-icon nzType="environment-o"></i>
           </button>
         </div>
         <div class="delete-icon" nz-popconfirm [nzTitle]="'Confirmation' | translate"
              (nzOnConfirm)="deleteAlarm(row.alarm)">
-          <i nz-icon type="close"></i>
+          <i nz-icon nzType="close"></i>
         </div>
       </div>
       <nz-divider *ngIf="!last"></nz-divider>

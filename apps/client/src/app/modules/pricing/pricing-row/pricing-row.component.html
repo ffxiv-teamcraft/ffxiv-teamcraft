@@ -28,7 +28,7 @@
     <i class="material-icons" nz-tooltip
        *ngIf="priceFromCrafting"
        nzTitle="{{'PRICING.From_crafting' | translate}}">gavel</i>
-    <i *ngIf="vendorPrice?.nq > 0 && vendorPrice?.nq < price?.nq" nz-icon type="warning" theme="twotone" nz-tooltip
+    <i *ngIf="vendorPrice?.nq > 0 && vendorPrice?.nq < price?.nq" nz-icon nzType="warning" theme="twotone" nz-tooltip
        [twoToneColor]="'#eb4141'"
        nzTitle="{{'PRICING.Cheaper_at_vendor' | translate: {price: vendorPrice?.nq } }}">
     </i>

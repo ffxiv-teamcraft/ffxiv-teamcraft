@@ -16,7 +16,7 @@
         <ng-template #publicAmountDisplay>x{{item.amount}}</ng-template>
         <button nz-button [nzType]="'danger'" [nzShape]="'circle'" [disabled]="(permissionLevel$ | async) < 30"
                 *ngIf="(permissionLevel$ | async) > 10" (click)="updateAmount(item, 0)">
-          <i nz-icon type="delete"></i>
+          <i nz-icon nzType="delete"></i>
         </button>
       </div>
     </div>
@@ -32,9 +32,9 @@
              *ngIf="(permissionLevel$ | async) === 40"
              [nzTitle]="'PERMISSIONS.List_tooltip' | translate: { level: _list.everyone | permissionLevel }">
           <div [ngSwitch]="_list.everyone">
-            <i nz-icon type="eye-invisible" theme="outline" *ngSwitchCase="1"></i>
-            <i nz-icon type="eye" theme="outline" *ngSwitchCase="10"></i>
-            <i nz-icon type="file-done" theme="outline" *ngSwitchCase="20"></i>
+            <i nz-icon nzType="eye-invisible" theme="outline" *ngSwitchCase="1"></i>
+            <i nz-icon nzType="eye" theme="outline" *ngSwitchCase="10"></i>
+            <i nz-icon nzType="file-done" theme="outline" *ngSwitchCase="20"></i>
           </div>
         </div>
       </div>
@@ -65,21 +65,21 @@
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                 *ngIf="(permissionLevel$ | async) > 10"
                 ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
-          <i nz-icon type="share-alt"></i>
+          <i nz-icon nzType="share-alt"></i>
         </button>
         <nz-badge *ngIf="_list.public; else copyNoCount"
                   [nzCount]="_list.forks" [nzShowZero]="true"
                   [nzOverflowCount]="999" class="fork-count">
           <button nz-button [nzShape]="'circle'" nz-tooltip
                   [nzTitle]="'List_fork' | translate" (click)="$event.stopPropagation();cloneList(_list)">
-            <i nz-icon type="copy" theme="outline"></i>
+            <i nz-icon nzType="copy" theme="outline"></i>
           </button>
         </nz-badge>
         <ng-template #copyNoCount>
           <button nz-button [nzShape]="'circle'" nz-tooltip
                   *ngIf="settings.showCopyOnOwnList"
                   [nzTitle]="'List_fork' | translate" (click)="$event.stopPropagation();cloneList(_list)">
-            <i nz-icon type="copy" theme="outline"></i>
+            <i nz-icon nzType="copy" theme="outline"></i>
           </button>
         </ng-template>
         <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'LIST.BUTTONS.Open' | translate" nz-button
@@ -87,16 +87,16 @@
            [nzShape]="'circle'"
            [nzType]="'primary'"
            routerLink="/list/{{_list.$key}}">
-          <i nz-icon type="folder-open"></i>
+          <i nz-icon nzType="folder-open"></i>
         </a>
         <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
                 [disabled]="(permissionLevel$ | async) < 40"
                 *ngIf="(permissionLevel$ | async) > 10"
                 [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate" (nzOnConfirm)="deleteList(_list)">
-          <i nz-icon type="delete"></i></button>
+          <i nz-icon nzType="delete"></i></button>
         <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
           <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
-            <i nz-icon type="ellipsis"></i>
+            <i nz-icon nzType="ellipsis"></i>
           </button>
           <ul nz-menu>
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameList(_list)"
