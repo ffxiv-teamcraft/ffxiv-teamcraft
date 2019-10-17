@@ -351,7 +351,7 @@ export class AppComponent implements OnInit {
         return this.translate.getBrowserLang();
       }
     } else {
-      const request: any = this.request;
+      const request: any = this.injector.get(REQUEST) || {};
       return request.lang || 'en';
     }
   }
