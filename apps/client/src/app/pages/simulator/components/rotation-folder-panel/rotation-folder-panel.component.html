@@ -1,13 +1,13 @@
 <nz-collapse>
   <nz-collapse-panel [nzHeader]="panelHeader">
-    <div class="ngx-dnd-container rotations-container" ngxDroppable="rotation" [removeOnSpill]="true"
-         (remove)="removeCraftingRotation($event.value)"
-         (drop)="onCraftingRotationDrop($event)" fxLayout="column" fxLayoutGap="5px">
+    <div (drop)="onCraftingRotationDrop($event)" (remove)="removeCraftingRotation($event.value)" [removeOnSpill]="true"
+         class="ngx-dnd-container rotations-container"
+         fxLayout="column" fxLayoutGap="5px" ngxDroppable="rotation">
       <ng-container *ngFor="let rotation of rotations; trackBy: trackByCraftingRotation">
-        <div class="ngx-dnd-item"
-             *ngIf="rotation !== undefined"
-             ngxDraggable="rotation"
-             [model]="rotation">
+        <div *ngIf="rotation !== undefined"
+             [model]="rotation"
+             class="ngx-dnd-item"
+             ngxDraggable="rotation">
           <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
         </div>
       </ng-container>
@@ -18,52 +18,52 @@
       <div>
         {{_folder.name}}
       </div>
-      <div nz-col nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
-        <a (click)="$event.stopPropagation()" nz-tooltip
-           [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Open' | translate" nz-button
-           [nzShape]="'circle'"
-           [nzType]="'primary'"
+      <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="4">
+        <a (click)="$event.stopPropagation()" [nzShape]="'circle'"
+           [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Open' | translate" [nzType]="'primary'"
+           nz-button
+           nz-tooltip
            routerLink="/rotation-folder/{{_folder.$key}}">
           <i nz-icon nzType="folder-open"></i>
         </a>
-        <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
-                [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
-                ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
+        <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" [cbContent]="getLink()" [nzShape]="'circle'" [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
+                [nzType]="'primary'"
+                ngxClipboard nz-button nz-tooltip>
           <i nz-icon nzType="share-alt"></i>
         </button>
-        <button nz-button (click)="$event.stopPropagation(); addRotations()" [nzShape]="'circle'" [nzType]="'primary'"
-                nz-tooltip
-                *ngIf="(permissionLevel$ | async) >= 30"
-                [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Add_rotations' | translate">
+        <button (click)="$event.stopPropagation(); addRotations()" *ngIf="(permissionLevel$ | async) >= 30" [nzShape]="'circle'" [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Add_rotations' | translate"
+                [nzType]="'primary'"
+                nz-button
+                nz-tooltip>
           <i nz-icon nzType="plus"></i>
         </button>
-        <button nz-button [nzType]="'danger'" [nzShape]="'circle'"
-                [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Delete_message' | translate"
-                *ngIf="(permissionLevel$ | async) >= 40" nz-popconfirm (nzOnConfirm)="deleteFolder()"
-                (click)="$event.stopPropagation()">
+        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteFolder()" *ngIf="(permissionLevel$ | async) >= 40"
+                [nzShape]="'circle'"
+                [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Delete_message' | translate" [nzType]="'danger'" nz-button
+                nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>
-        <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'"
-                [nzTrigger]="'click'" [nzPlacement]="'bottomRight'" [nzDropdownMenu]="menu"
-                *ngIf="(permissionLevel$ | async) >= 30">
+        <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30" [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'"
+                [nzShape]="'circle'" [nzTrigger]="'click'" nz-button
+                nz-dropdown>
           <i nz-icon nzType="ellipsis"></i>
         </button>
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameFolder()">
+            <li (click)="renameFolder()" [nzDisabled]="(permissionLevel$ | async) < 40" nz-menu-item>
               {{'SIMULATOR.ROTATIONS.FOLDERS.Rename' | translate}}
             </li>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">
                 <ng-container *ngIf="user.patron || user.admin">
-                  <li nz-menu-item [nzDisabled]="!user.nickname"
-                      (click)="createCustomLink(_folder, user)"
-                      *ngIf="(customLink$ | async) === undefined; else copyLink">
+                  <li (click)="createCustomLink(_folder, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
+                      [nzDisabled]="!user.nickname"
+                      nz-menu-item>
                     {{'CUSTOM_LINKS.Add_link' | translate}}
                   </li>
                   <ng-template #copyLink>
-                    <li nz-menu-item *ngIf="customLink$ | async as link" ngxClipboard [cbContent]="link.getUrl()"
-                        (cbOnSuccess)="afterCustomLinkCopy()">
+                    <li (cbOnSuccess)="afterCustomLinkCopy()" *ngIf="customLink$ | async as link" [cbContent]="link.getUrl()" ngxClipboard
+                        nz-menu-item>
                       {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
                     </li>
                   </ng-template>

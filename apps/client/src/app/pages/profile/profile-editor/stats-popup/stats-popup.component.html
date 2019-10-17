@@ -1,26 +1,26 @@
 <div *ngIf="set$ | async as set" fxLayout="column">
-  <div nz-row class="form-row">
-    <div nz-col [nzXs]="8">{{'Level' | translate}}</div>
-    <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.level"></nz-input-number>
+  <div class="form-row" nz-row>
+    <div [nzXs]="8" nz-col>{{'Level' | translate}}</div>
+    <nz-input-number [(ngModel)]="set.level" [nzXs]="16" nz-col></nz-input-number>
   </div>
-  <div nz-row class="form-row" *ngIf="jobId <= 15">
-    <div nz-col [nzXs]="8">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}</div>
-    <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.cp"></nz-input-number>
+  <div *ngIf="jobId <= 15" class="form-row" nz-row>
+    <div [nzXs]="8" nz-col>{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}</div>
+    <nz-input-number [(ngModel)]="set.cp" [nzXs]="16" nz-col></nz-input-number>
   </div>
-  <div nz-row class="form-row" *ngIf="jobId <= 15">
-    <div nz-col [nzXs]="8">{{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}</div>
-    <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.craftsmanship"></nz-input-number>
+  <div *ngIf="jobId <= 15" class="form-row" nz-row>
+    <div [nzXs]="8" nz-col>{{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}</div>
+    <nz-input-number [(ngModel)]="set.craftsmanship" [nzXs]="16" nz-col></nz-input-number>
   </div>
-  <div nz-row class="form-row" *ngIf="jobId <= 15">
-    <div nz-col [nzXs]="8">{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}</div>
-    <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.control"></nz-input-number>
+  <div *ngIf="jobId <= 15" class="form-row" nz-row>
+    <div [nzXs]="8" nz-col>{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}</div>
+    <nz-input-number [(ngModel)]="set.control" [nzXs]="16" nz-col></nz-input-number>
   </div>
-  <label nz-checkbox [(ngModel)]="set.specialist" (ngModelChange)="applySpecChange(set, $event)"
-         class="spec-checkbox" *ngIf="jobId <= 15">{{'SIMULATOR.CONFIGURATION.Specialist' | translate}}</label>
+  <label (ngModelChange)="applySpecChange(set, $event)" *ngIf="jobId <= 15" [(ngModel)]="set.specialist"
+         class="spec-checkbox" nz-checkbox>{{'SIMULATOR.CONFIGURATION.Specialist' | translate}}</label>
   <div fxLayout="row" fxLayoutGap="5px">
-    <button nz-button (click)="save(set)" nzType="primary">{{'Save' | translate}}</button>
-    <button nz-button *ngIf="jobId <= 15" (click)="saveForAll(set)"
+    <button (click)="save(set)" nz-button nzType="primary">{{'Save' | translate}}</button>
+    <button (click)="saveForAll(set)" *ngIf="jobId <= 15" nz-button
             nzType="primary">{{'PROFILE.Save_for_all' | translate}}</button>
-    <button nz-button (click)="cancel()" nzType="danger">{{'Cancel' | translate}}</button>
+    <button (click)="cancel()" nz-button nzType="danger">{{'Cancel' | translate}}</button>
   </div>
 </div>

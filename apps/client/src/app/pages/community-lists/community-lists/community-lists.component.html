@@ -1,26 +1,26 @@
-<div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
   <h2>{{'Public_lists' | translate}}</h2>
-  <input nz-input type="text" class="filter-input" [placeholder]="'COMMUNITY_LISTS.Name_filter_placeholder' | translate"
-         [ngModel]="nameFilter$ | async" (ngModelChange)="nameFilter$.next($event)" autofocus>
-  <div fxLayout="row" class="filter-input" fxLayoutGap="5px">
-    <nz-select fxFlex="1 1 auto" nzMode="multiple"
+  <input (ngModelChange)="nameFilter$.next($event)" [ngModel]="nameFilter$ | async" [placeholder]="'COMMUNITY_LISTS.Name_filter_placeholder' | translate" autofocus
+         class="filter-input" nz-input type="text">
+  <div class="filter-input" fxLayout="row" fxLayoutGap="5px">
+    <nz-select (ngModelChange)="tagsFilter$.next($event)" [ngModel]="tagsFilter$ | async"
                [nzPlaceHolder]="'COMMUNITY_LISTS.Tags_filter_placeholder' | translate"
-               [ngModel]="tagsFilter$ | async"
-               (ngModelChange)="tagsFilter$.next($event)">
+               fxFlex="1 1 auto"
+               nzMode="multiple">
       <nz-option *ngFor="let tag of tags" [nzLabel]="tag.label | translate" [nzValue]="tag.value"></nz-option>
     </nz-select>
-    <button nz-button (click)="tagsFilter$.next([])" nz-tooltip
-            [nzTitle]="'COMMUNITY_LISTS.Tags_filter_reset' | translate">
+    <button (click)="tagsFilter$.next([])" [nzTitle]="'COMMUNITY_LISTS.Tags_filter_reset' | translate" nz-button
+            nz-tooltip>
       <i nz-icon nzType="reload"></i>
     </button>
   </div>
   <app-page-loader [loading]="loading" class="lists-container">
-    <div fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 auto" *ngIf="filteredLists$ | async as lists">
+    <div *ngIf="filteredLists$ | async as lists" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="5px">
       <app-list-panel *ngFor="let list of lists; trackBy: trackByList" [list]="list"
                       [publicDisplay]="true"></app-list-panel>
-      <nz-pagination [nzPageIndex]="page$ | async" (nzPageIndexChange)="page$.next($event)" [nzTotal]="totalLength"
-                     *ngIf="totalLength > 0"
-                     [nzPageSize]="pageSize" fxLayout="row"
+      <nz-pagination (nzPageIndexChange)="page$.next($event)" *ngIf="totalLength > 0" [nzPageIndex]="page$ | async"
+                     [nzPageSize]="pageSize"
+                     [nzTotal]="totalLength" fxLayout="row"
                      fxLayoutAlign="center center"></nz-pagination>
       <app-fullpage-message *ngIf="lists.length === 0">{{'COMMUNITY_LISTS.No_lists_matching' | translate}}
       </app-fullpage-message>

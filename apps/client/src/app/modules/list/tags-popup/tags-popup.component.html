@@ -1,12 +1,12 @@
-<div fxLayout="column" fxLayoutGap="10px" *ngIf="list$ | async as listDetails; else loading">
-  <nz-select nzMode="multiple" fxFlex="1 1 auto" [nzPlaceHolder]="'LIST_DETAILS.Tags_popup' | translate"
-             [(ngModel)]="listDetails.tags">
+<div *ngIf="list$ | async as listDetails; else loading" fxLayout="column" fxLayoutGap="10px">
+  <nz-select [(ngModel)]="listDetails.tags" [nzPlaceHolder]="'LIST_DETAILS.Tags_popup' | translate" fxFlex="1 1 auto"
+             nzMode="multiple">
     <nz-option *ngFor="let tag of tags" [nzLabel]="tag.label | translate" [nzValue]="tag.value">
     </nz-option>
   </nz-select>
   <div fxLayout="row" fxLayoutGap="5px">
-    <button nz-button nzType="primary" (click)="confirm(listDetails)">{{'Confirm' | translate}}</button>
-    <button nz-button (click)="cancel()">{{'Cancel' | translate}}</button>
+    <button (click)="confirm(listDetails)" nz-button nzType="primary">{{'Confirm' | translate}}</button>
+    <button (click)="cancel()" nz-button>{{'Cancel' | translate}}</button>
   </div>
 </div>
 <ng-template #loading>

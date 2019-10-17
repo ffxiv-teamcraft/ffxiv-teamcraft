@@ -1,11 +1,11 @@
 <div fxLayout="column" fxLayoutGap="5px">
   <i>{{'RECIPE_FINDER.Clipboard_import_duplicates' | translate}}</i>
-  <div fxLayout="row" fxLayoutGap="5px" *ngFor="let item of items">
-    <app-item-icon [itemId]="item.id" [icon]="item.id | lazyIcon" width="32"></app-item-icon>
+  <div *ngFor="let item of items" fxLayout="row" fxLayoutGap="5px">
+    <app-item-icon [icon]="item.id | lazyIcon" [itemId]="item.id" width="32"></app-item-icon>
     <div>{{item.id | itemName | i18n}} x{{item.amount}}</div>
   </div>
   <div class="footer" fxLayout="row" fxLayoutGap="5px">
-    <button nz-button nzType="primary" (click)="confirm()">{{'Import' | translate}}</button>
-    <button nz-button (click)="cancel()">{{'Cancel' | translate}}</button>
+    <button (click)="confirm()" nz-button nzType="primary">{{'Import' | translate}}</button>
+    <button (click)="cancel()" nz-button>{{'Cancel' | translate}}</button>
   </div>
 </div>

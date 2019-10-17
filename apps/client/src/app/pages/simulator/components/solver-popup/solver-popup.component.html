@@ -1,22 +1,22 @@
-<form nz-form [formGroup]="configForm" (ngSubmit)="submit()">
-  <nz-alert nzShowIcon nzType="info" [nzMessage]="'SIMULATOR.SOLVER.Disclaimer' | translate"></nz-alert>
+<form (ngSubmit)="submit()" [formGroup]="configForm" nz-form>
+  <nz-alert [nzMessage]="'SIMULATOR.SOLVER.Disclaimer' | translate" nzShowIcon nzType="info"></nz-alert>
   <nz-form-item>
-    <nz-form-label [nzSpan]="6" nzRequired
-                   nzFor="hqTarget">{{'SIMULATOR.SOLVER.Hq_target' | translate}}</nz-form-label>
+    <nz-form-label [nzSpan]="6" nzFor="hqTarget"
+                   nzRequired>{{'SIMULATOR.SOLVER.Hq_target' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="6">
-      <input type="number" nz-input formControlName="hqTarget"/>
+      <input formControlName="hqTarget" nz-input type="number"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item nz-row>
-    <nz-form-control [nzSpan]="14" [nzOffset]="6" *ngIf="seed?.length > 0">
-      <label nz-checkbox formControlName="seeded">
+    <nz-form-control *ngIf="seed?.length > 0" [nzOffset]="6" [nzSpan]="14">
+      <label formControlName="seeded" nz-checkbox>
         <span>{{'SIMULATOR.SOLVER.Use_rotation_as_seed' | translate}}</span>
       </label>
     </nz-form-control>
   </nz-form-item>
-  <nz-form-item nz-row class="register-area">
-    <nz-form-control [nzSpan]="14" [nzOffset]="6">
-      <button nz-button nzType="primary" [nzLoading]="loading">
+  <nz-form-item class="register-area" nz-row>
+    <nz-form-control [nzOffset]="6" [nzSpan]="14">
+      <button [nzLoading]="loading" nz-button nzType="primary">
         {{'SIMULATOR.Solve_rotation' | translate}}
       </button>
     </nz-form-control>

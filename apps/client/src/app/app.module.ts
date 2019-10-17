@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { en_US, NgZorroAntdModule, NZ_CONFIG, NZ_I18N, NZ_ICONS } from 'ng-zorro-antd';
+import { en_US, NgZorroAntdModule, NZ_CONFIG, NZ_I18N, NZ_ICONS, NzConfig } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -140,6 +140,16 @@ registerLocaleData(hr);
 registerLocaleData(ru);
 registerLocaleData(ko);
 
+const nzConfig: NzConfig = {
+  message: {
+    nzDuration: 10000,
+    nzMaxStack: 8,
+    nzPauseOnHover: true,
+    nzAnimate: true,
+    nzTop: '92px'
+  }
+};
+
 @NgModule({
   declarations: [
     AppComponent
@@ -148,17 +158,7 @@ registerLocaleData(ko);
     { provide: NZ_I18N, useValue: en_US },
     {
       provide: NZ_CONFIG,
-      useValue: {
-        message: {
-          nzDuration: 10000,
-          nzMaxStack: 8,
-          nzPauseOnHover: true,
-          nzAnimate: true,
-          nzTop: '92px',
-          nzBottom: '24px',
-          nzPlacement: 'topRight'
-        }
-      }
+      useValue: nzConfig
     },
     { provide: FirestoreSettingsToken, useValue: {} },
     { provide: NZ_ICONS, useValue: icons },

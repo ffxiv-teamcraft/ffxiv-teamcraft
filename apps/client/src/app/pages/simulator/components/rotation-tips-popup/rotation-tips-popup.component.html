@@ -3,9 +3,9 @@
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="24px">
       <div>
         <div [ngSwitch]="tip.type">
-          <i nz-icon *ngSwitchCase="0" nzType="exclamation-circle" nzTheme="twotone" [nzTwotoneColor]="'red'"></i>
-          <i nz-icon *ngSwitchCase="1" nzType="warning" nzTheme="twotone" [nzTwotoneColor]="'yellow'"></i>
-          <i nz-icon *ngSwitchCase="2" nzType="info-circle" nzTheme="twotone"></i>
+          <i *ngSwitchCase="0" [nzTwotoneColor]="'red'" nz-icon nzTheme="twotone" nzType="exclamation-circle"></i>
+          <i *ngSwitchCase="1" [nzTwotoneColor]="'yellow'" nz-icon nzTheme="twotone" nzType="warning"></i>
+          <i *ngSwitchCase="2" nz-icon nzTheme="twotone" nzType="info-circle"></i>
         </div>
       </div>
       <div>{{('SIMULATOR.ROTATION_TIPS.' + tip.message) | translate: tip.messageParams(result)}}</div>

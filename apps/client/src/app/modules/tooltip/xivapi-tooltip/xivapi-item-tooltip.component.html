@@ -1,44 +1,44 @@
 <div class="tooltip-container">
-  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
     <div class="icon">
-      <img src="https://xivapi.com{{item.Icon}}" alt="{{item | xivapiI18n}}">
+      <img alt="{{item | xivapiI18n}}" src="https://xivapi.com{{item.Icon}}">
     </div>
     <div class="name" fxLayout="column">
       <span [appItemRarity]="item.ID">{{item | xivapiI18n}}</span>
-      <span class="item-kind" *ngIf="item.ItemKind">{{item.ItemKind | xivapiI18n}} <span
+      <span *ngIf="item.ItemKind" class="item-kind">{{item.ItemKind | xivapiI18n}} <span
         *ngIf="item.ItemSearchCategory">> {{item.ItemSearchCategory | xivapiI18n}}</span></span>
       <i class="db-tip">{{'DB.Click_to_navigate' | translate}}</i>
     </div>
   </div>
-  <div class="description" *ngIf="item.Description !== undefined && item.Description.length > 0">
+  <div *ngIf="item.Description !== undefined && item.Description.length > 0" class="description">
     <span [innerHtml]="item | xivapiI18n: 'Description' | xivUIText"></span>
   </div>
-  <div nz-row class="class-jobs" *ngIf="item.ClassJobCategory !== null">
-    <div nz-col [nzXs]="12">
+  <div *ngIf="item.ClassJobCategory !== null" class="class-jobs" nz-row>
+    <div [nzXs]="12" nz-col>
       <p class="detail-name">
         {{'TOOLTIP.Class_job' | translate}}
       </p>
     </div>
-    <div nz-col [nzXs]="12">
+    <div [nzXs]="12" nz-col>
       <p class="detail-value">
         {{item.ClassJobCategory | xivapiI18n}}
       </p>
     </div>
   </div>
   <div class="main-attributes details">
-    <div nz-row nzGutter="10" *ngFor="let row of mainAttributes">
-      <div nz-col [nzXs]="12">
-        <p class="detail-name" *ngIf="!row.requiresPipe">
+    <div *ngFor="let row of mainAttributes" nz-row nzGutter="10">
+      <div [nzXs]="12" nz-col>
+        <p *ngIf="!row.requiresPipe" class="detail-name">
           {{row.name | translate}}
         </p>
-        <p class="detail-name" *ngIf="row.requiresPipe">
+        <p *ngIf="row.requiresPipe" class="detail-name">
           {{row.name | xivapiI18n}}
         </p>
       </div>
-      <div nz-col [nzXs]="12">
+      <div [nzXs]="12" nz-col>
         <p class="detail-value">
           {{row.value}}
-          <span class="hq-value" *ngIf="item.CanBeHq === 1 && row.valueHq && row.valueHq !== row.value">
+          <span *ngIf="item.CanBeHq === 1 && row.valueHq && row.valueHq !== row.value" class="hq-value">
             ({{row.valueHq}})
           </span>
         </p>
@@ -46,19 +46,19 @@
     </div>
   </div>
   <div class="details">
-    <div nz-row nzGutter="10" *ngFor="let row of stats">
-      <div nz-col [nzXs]="12">
-        <p class="detail-name" *ngIf="!row.requiresPipe">
+    <div *ngFor="let row of stats" nz-row nzGutter="10">
+      <div [nzXs]="12" nz-col>
+        <p *ngIf="!row.requiresPipe" class="detail-name">
           {{row.name | translate}}
         </p>
-        <p class="detail-name" *ngIf="row.requiresPipe">
+        <p *ngIf="row.requiresPipe" class="detail-name">
           {{row.name | xivapiI18n}}
         </p>
       </div>
-      <div nz-col [nzXs]="12">
+      <div [nzXs]="12" nz-col>
         <p class="detail-value">
           {{row.value}}
-          <span class="hq-value" *ngIf="item.CanBeHq">
+          <span *ngIf="item.CanBeHq" class="hq-value">
             <span *ngIf="item.ItemFood === undefined; else itemFoodHQ">({{row.valueHq}})</span>
             <ng-template #itemFoodHQ>
               {{row.valueHq}}

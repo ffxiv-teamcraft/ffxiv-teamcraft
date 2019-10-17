@@ -1,57 +1,57 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="panelHeader" #listContentPanel (nzActiveChange)="openStateChange()">
-    <div fxLayout="column" fxLayoutGap="10px" *ngIf="listContentPanel.nzActive">
-      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
-           [class.odd]="odd"
-           *ngFor="let item of listContent$ | async; trackBy: trackByItem; let odd = odd">
-        <app-item-icon [width]="32" [itemId]="item.id" [icon]="item.icon"></app-item-icon>
+  <nz-collapse-panel #listContentPanel (nzActiveChange)="openStateChange()" [nzHeader]="panelHeader">
+    <div *ngIf="listContentPanel.nzActive" fxLayout="column" fxLayoutGap="10px">
+      <div *ngFor="let item of listContent$ | async; trackBy: trackByItem; let odd = odd" [class.odd]="odd" fxLayout="row"
+           fxLayoutAlign="flex-start center"
+           fxLayoutGap="5px">
+        <app-item-icon [icon]="item.icon" [itemId]="item.id" [width]="32"></app-item-icon>
         <div>{{item.id | itemName:item | i18n}}</div>
         <div class="spacer"></div>
-        <nz-input-number [disabled]="(permissionLevel$ | async) < 30" class="amount-input" type="number"
+        <nz-input-number #amountModifierInput (keypress.enter)="updateAmount(item, amountModifierInput.displayValue); amountModifierInput.blur()" (ngModelChange)="updateAmount(item, $event)"
                          *ngIf="(permissionLevel$ | async) > 10; else publicAmountDisplay"
+                         [disabled]="(permissionLevel$ | async) < 30"
                          [ngModel]="item.amount"
-                         #amountModifierInput
-                         (keypress.enter)="updateAmount(item, amountModifierInput.displayValue); amountModifierInput.blur()"
-                         (ngModelChange)="updateAmount(item, $event)"></nz-input-number>
+                         class="amount-input"
+                         type="number"></nz-input-number>
         <ng-template #publicAmountDisplay>x{{item.amount}}</ng-template>
-        <button nz-button [nzType]="'danger'" [nzShape]="'circle'" [disabled]="(permissionLevel$ | async) < 30"
-                *ngIf="(permissionLevel$ | async) > 10" (click)="updateAmount(item, 0)">
+        <button (click)="updateAmount(item, 0)" *ngIf="(permissionLevel$ | async) > 10" [disabled]="(permissionLevel$ | async) < 30" [nzShape]="'circle'"
+                [nzType]="'danger'" nz-button>
           <i nz-icon nzType="delete"></i>
         </button>
       </div>
     </div>
   </nz-collapse-panel>
   <ng-template #panelHeader>
-    <div class="panel-header" nz-row fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px">
-      <div nz-col nzSm="20" nzMd="4" (dblclick)="openList()" fxLayout="row" fxLayoutAlign="flex-start center"
-           fxLayoutGap="5px">
+    <div class="panel-header" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px" nz-row>
+      <div (dblclick)="openList()" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="4"
+           nzSm="20">
         <div>
           {{_list.name}} - {{'LIST.Items_count' | translate:{ amount: _list.finalItems.length } }}
         </div>
-        <div class="permission-icon" nz-tooltip
-             *ngIf="(permissionLevel$ | async) === 40"
-             [nzTitle]="'PERMISSIONS.List_tooltip' | translate: { level: _list.everyone | permissionLevel }">
+        <div *ngIf="(permissionLevel$ | async) === 40" [nzTitle]="'PERMISSIONS.List_tooltip' | translate: { level: _list.everyone | permissionLevel }"
+             class="permission-icon"
+             nz-tooltip>
           <div [ngSwitch]="_list.everyone">
-            <i nz-icon nzType="eye-invisible" theme="outline" *ngSwitchCase="1"></i>
-            <i nz-icon nzType="eye" theme="outline" *ngSwitchCase="10"></i>
-            <i nz-icon nzType="file-done" theme="outline" *ngSwitchCase="20"></i>
+            <i *ngSwitchCase="1" nz-icon nzType="eye-invisible" theme="outline"></i>
+            <i *ngSwitchCase="10" nz-icon nzType="eye" theme="outline"></i>
+            <i *ngSwitchCase="20" nz-icon nzType="file-done" theme="outline"></i>
           </div>
         </div>
       </div>
-      <div class="author-avatar" *ngIf="!hideAvatar && _list.authorId !== undefined">
+      <div *ngIf="!hideAvatar && _list.authorId !== undefined" class="author-avatar">
         <app-user-avatar [userId]="_list.authorId" [width]="24"></app-user-avatar>
       </div>
-      <div nz-col nzSm="24" nzMd="15" class="panel-middle-content">
+      <div class="panel-middle-content" nz-col nzMd="15" nzSm="24">
         <div class="tags">
-          <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
+          <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" [nzTitle]="'Ephemeral_list' | translate" nz-tooltip>
             {{'Ephemeral_tag' | translate}}
           </nz-tag>
-          <nz-tag *ngIf="_list.offline" [style.border-color]="'#bd0ef2'" nz-tooltip
-                  [nzTitle]="'LIST.Offline_help' | translate">
+          <nz-tag *ngIf="_list.offline" [nzTitle]="'LIST.Offline_help' | translate" [style.border-color]="'#bd0ef2'"
+                  nz-tooltip>
             {{'LIST.Offline' | translate}}
           </nz-tag>
-          <nz-tag *ngIf="_list.public && !publicDisplay" [nzColor]="'geekblue'" nz-tooltip
-                  [nzTitle]="'LIST_DETAILS.Public_list_description' | translate">
+          <nz-tag *ngIf="_list.public && !publicDisplay" [nzColor]="'geekblue'" [nzTitle]="'LIST_DETAILS.Public_list_description' | translate"
+                  nz-tooltip>
             {{'Public_list' | translate}}
           </nz-tag>
           <nz-tag *ngIf="_list.isOutDated()" [nzColor]="'magenta'">{{'LIST_TAGS.OUTDATED' | translate}}</nz-tag>
@@ -61,76 +61,77 @@
           {{_list.note}}
         </div>
       </div>
-      <div nz-col nzSm="24" nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
-        <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
+      <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="4" nzSm="24">
+        <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) > 10" [cbContent]="getLink()"
+                [nzShape]="'circle'"
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
-                *ngIf="(permissionLevel$ | async) > 10"
-                ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
+                ngxClipboard nz-button nz-tooltip>
           <i nz-icon nzType="share-alt"></i>
         </button>
         <nz-badge *ngIf="_list.public; else copyNoCount"
-                  [nzCount]="_list.forks" [nzShowZero]="true"
-                  [nzOverflowCount]="999" class="fork-count">
-          <button nz-button [nzShape]="'circle'" nz-tooltip
-                  [nzTitle]="'List_fork' | translate" (click)="$event.stopPropagation();cloneList(_list)">
+                  [nzCount]="_list.forks" [nzOverflowCount]="999"
+                  [nzShowZero]="true" class="fork-count">
+          <button (click)="$event.stopPropagation();cloneList(_list)" [nzShape]="'circle'" [nzTitle]="'List_fork' | translate"
+                  nz-button nz-tooltip>
             <i nz-icon nzType="copy" theme="outline"></i>
           </button>
         </nz-badge>
         <ng-template #copyNoCount>
-          <button nz-button [nzShape]="'circle'" nz-tooltip
-                  *ngIf="settings.showCopyOnOwnList"
-                  [nzTitle]="'List_fork' | translate" (click)="$event.stopPropagation();cloneList(_list)">
+          <button (click)="$event.stopPropagation();cloneList(_list)" *ngIf="settings.showCopyOnOwnList" [nzShape]="'circle'"
+                  [nzTitle]="'List_fork' | translate"
+                  nz-button nz-tooltip>
             <i nz-icon nzType="copy" theme="outline"></i>
           </button>
         </ng-template>
-        <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'LIST.BUTTONS.Open' | translate" nz-button
-           *ngIf="(permissionLevel$ | async) > 10"
-           [nzShape]="'circle'"
+        <a (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) > 10" [nzShape]="'circle'" [nzTitle]="'LIST.BUTTONS.Open' | translate"
            [nzType]="'primary'"
+           nz-button
+           nz-tooltip
            routerLink="/list/{{_list.$key}}">
           <i nz-icon nzType="folder-open"></i>
         </a>
-        <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
-                [disabled]="(permissionLevel$ | async) < 40"
-                *ngIf="(permissionLevel$ | async) > 10"
-                [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate" (nzOnConfirm)="deleteList(_list)">
+        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteList(_list)" *ngIf="(permissionLevel$ | async) > 10" [disabled]="(permissionLevel$ | async) < 40" [nzShape]="'circle'"
+                [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate"
+                [nzType]="'danger'"
+                nz-button nz-popconfirm>
           <i nz-icon nzType="delete"></i></button>
-        <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzDropdownMenu]="menu"
-                [nzPlacement]="'bottomRight'" nzTrigger="click">
+        <button (click)="$event.stopPropagation()" [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"
+                nz-button
+                nz-dropdown nzTrigger="click">
           <i nz-icon nzType="ellipsis"></i>
         </button>
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameList(_list)"
-                *ngIf="!publicDisplay">
+            <li (click)="renameList(_list)" *ngIf="!publicDisplay" [nzDisabled]="(permissionLevel$ | async) < 40"
+                nz-menu-item>
               {{'LIST.Rename' | translate}}
             </li>
-            <li nz-menu-item *ngIf="authFacade.userId$ | async as userId"
-                (click)="openCommentsPopup(_list, userId === _list.authorId)">
+            <li (click)="openCommentsPopup(_list, userId === _list.authorId)" *ngIf="authFacade.userId$ | async as userId"
+                nz-menu-item>
               {{'COMMENTS.Title' | translate}}
             </li>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="openTagsPopup(_list)"
-                *ngIf="!publicDisplay">
+            <li (click)="openTagsPopup(_list)" *ngIf="!publicDisplay" [nzDisabled]="(permissionLevel$ | async) < 40"
+                nz-menu-item>
               {{'LIST_DETAILS.Tags_popup' | translate}}
             </li>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="openPermissionsPopup(_list)"
-                *ngIf="!publicDisplay">
+            <li (click)="openPermissionsPopup(_list)" *ngIf="!publicDisplay" [nzDisabled]="(permissionLevel$ | async) < 40"
+                nz-menu-item>
               {{'PERMISSIONS.Title' | translate}}
             </li>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="removeEphemeral(_list)"
-                *ngIf="!publicDisplay && _list.ephemeral">
+            <li (click)="removeEphemeral(_list)" *ngIf="!publicDisplay && _list.ephemeral" [nzDisabled]="(permissionLevel$ | async) < 40"
+                nz-menu-item>
               {{'Remove_ephemeral' | translate}}
             </li>
             <ng-container *ngIf="!publicDisplay">
               <ng-container *ngIf="teams$ | async as teams">
-                <li nz-submenu *ngIf="_list.teamId === undefined">
+                <li *ngIf="_list.teamId === undefined" nz-submenu>
                   <span title>{{'TEAMS.Assign_list' | translate}}</span>
                   <ul>
-                    <li *ngFor="let team of teams" nz-menu-item (click)="assignTeam(_list, team)">{{team.name}}</li>
+                    <li (click)="assignTeam(_list, team)" *ngFor="let team of teams" nz-menu-item>{{team.name}}</li>
                   </ul>
                 </li>
-                <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 30" (click)="removeTeam(_list, teams)"
-                    *ngIf="!publicDisplay && _list.teamId">
+                <li (click)="removeTeam(_list, teams)" *ngIf="!publicDisplay && _list.teamId" [nzDisabled]="(permissionLevel$ | async) < 30"
+                    nz-menu-item>
                   {{'TEAMS.Detach_team' | translate}}
                 </li>
               </ng-container>
@@ -138,25 +139,25 @@
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">
                 <ng-container *ngIf="!publicDisplay && (user.patron || user.admin)">
-                  <li nz-menu-item [nzDisabled]="!user.nickname"
-                      (click)="createTemplate(_list, user)"
-                      *ngIf="(listTemplate$ | async) === undefined; else copyTemplate">
+                  <li (click)="createTemplate(_list, user)" *ngIf="(listTemplate$ | async) === undefined; else copyTemplate"
+                      [nzDisabled]="!user.nickname"
+                      nz-menu-item>
                     {{'LIST_TEMPLATE.Create_template' | translate}}
                   </li>
                   <ng-template #copyTemplate>
-                    <li nz-menu-item *ngIf="listTemplate$ | async as link" ngxClipboard [cbContent]="link.getUrl()"
-                        (cbOnSuccess)="afterTemplateUrlCopy()">
+                    <li (cbOnSuccess)="afterTemplateUrlCopy()" *ngIf="listTemplate$ | async as link" [cbContent]="link.getUrl()" ngxClipboard
+                        nz-menu-item>
                       {{'LIST_TEMPLATE.Copy_template_url' | translate}}
                     </li>
                   </ng-template>
-                  <li nz-menu-item [nzDisabled]="!user.nickname"
-                      (click)="createCustomLink(_list, user)"
-                      *ngIf="(customLink$ | async) === undefined; else copyLink">
+                  <li (click)="createCustomLink(_list, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
+                      [nzDisabled]="!user.nickname"
+                      nz-menu-item>
                     {{'CUSTOM_LINKS.Add_link' | translate}}
                   </li>
                   <ng-template #copyLink>
-                    <li nz-menu-item *ngIf="customLink$ | async as link" ngxClipboard [cbContent]="link.getUrl()"
-                        (cbOnSuccess)="afterCustomLinkCopy()">
+                    <li (cbOnSuccess)="afterCustomLinkCopy()" *ngIf="customLink$ | async as link" [cbContent]="link.getUrl()" ngxClipboard
+                        nz-menu-item>
                       {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
                     </li>
                   </ng-template>

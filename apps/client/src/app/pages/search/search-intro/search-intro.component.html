@@ -1,24 +1,24 @@
 <div fxLayout="column" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-  <a href="https://www.patreon.com/bePatron?u=702160" target="_blank" class="patreon button"> <img
-    src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png" alt="patreon logo"
-    class="patreon-logo">{{"SEARCH_INTRO.Support_patreon" | translate}}</a>
-  <a href="https://donorbox.org/ffxiv-teamcraft-funding" class="button" target="_blank" nz-button nzType="primary">
+  <a class="patreon button" href="https://www.patreon.com/bePatron?u=702160" target="_blank"> <img
+    alt="patreon logo" class="patreon-logo"
+    src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png">{{"SEARCH_INTRO.Support_patreon" | translate}}</a>
+  <a class="button" href="https://donorbox.org/ffxiv-teamcraft-funding" nz-button nzType="primary" target="_blank">
     {{"SEARCH_INTRO.Donation_button" | translate}}
   </a>
-  <a href="https://teespring.com/ffxiv-teamcraft" class="button" target="_blank" nz-button>
+  <a class="button" href="https://teespring.com/ffxiv-teamcraft" nz-button target="_blank">
     {{"SEARCH_INTRO.Buy_a_tshirt" | translate}}
   </a>
   <h1>{{'SEARCH_INTRO.Slogan' | translate}}</h1>
   <h2
     *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: { amount: counter } }}</h2>
 </div>
-<div fxLayout="column" fxLayoutAlign="flex-start" class="list-container">
-  <nz-list [nzRenderItem]="featureRow" [nzDataSource]="features" nzSplit="false"
-           [nzHeader]="'SEARCH_INTRO.Features_header' | translate">
+<div class="list-container" fxLayout="column" fxLayoutAlign="flex-start">
+  <nz-list [nzDataSource]="features" [nzHeader]="'SEARCH_INTRO.Features_header' | translate" [nzRenderItem]="featureRow"
+           nzSplit="false">
     <ng-template #featureRow let-feature>
       <nz-list-item [nzActions]="[navigateTo]">
-        <nz-list-item-meta [nzTitle]="feature.title | translate"
-                           [nzDescription]="('SEARCH_INTRO.DESCRIPTION.'+feature.description) | translate">
+        <nz-list-item-meta [nzDescription]="('SEARCH_INTRO.DESCRIPTION.'+feature.description) | translate"
+                           [nzTitle]="feature.title | translate">
         </nz-list-item-meta>
         <ng-template #navigateTo>
           <a [routerLink]="feature.link" nz-button nzShape="circle">

@@ -1,5 +1,5 @@
 <div *ngIf="rotation$ | async as rotation; else loader">
-  <app-overlay-container uri="/rotation-overlay/{{rotation.$key}}" title="Rotation overlay">
+  <app-overlay-container title="Rotation overlay" uri="/rotation-overlay/{{rotation.$key}}">
     <div class="container">
       <h3>{{rotation.getName()}}</h3>
       <div fxLayout="row wrap" fxLayoutGap="5px">

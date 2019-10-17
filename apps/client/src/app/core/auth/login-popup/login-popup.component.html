@@ -1,35 +1,35 @@
-<form nz-form (ngSubmit)="login()" [formGroup]="form">
+<form (ngSubmit)="login()" [formGroup]="form" nz-form>
   <nz-form-item>
-    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">{{'Email_enter' | translate}}</nz-form-label>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email" nzRequired>{{'Email_enter' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="14" [nzXs]="24">
-      <input type="email" formControlName="email" id="email" nz-input>
+      <input formControlName="email" id="email" nz-input type="email">
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="password">{{'Password' | translate}}</nz-form-label>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>{{'Password' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="14" [nzXs]="24">
-      <input type="password" formControlName="password" id="password" nz-input>
+      <input formControlName="password" id="password" nz-input type="password">
     </nz-form-control>
   </nz-form-item>
   <nz-form-item nz-row>
-    <nz-form-control [nzSpan]="14" [nzOffset]="6">
-      <button nz-button nzType="primary" [disabled]="!form.valid" type="submit">{{'Submit' | translate}}</button>
+    <nz-form-control [nzOffset]="6" [nzSpan]="14">
+      <button [disabled]="!form.valid" nz-button nzType="primary" type="submit">{{'Submit' | translate}}</button>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item nz-row>
-    <nz-form-control [nzSpan]="14" [nzOffset]="6">
-      <button nz-button (click)="sendResetPassword()"
-              type="button"
-              [disabled]="form.pristine ||(form.errors && form.errors.email)">
+    <nz-form-control [nzOffset]="6" [nzSpan]="14">
+      <button (click)="sendResetPassword()" [disabled]="form.pristine ||(form.errors && form.errors.email)"
+              nz-button
+              type="button">
         {{'Forgot_password' | translate}}
       </button>
     </nz-form-control>
   </nz-form-item>
 </form>
-<nz-alert *ngIf="errorMessageCode !== undefined" nzType="error"
-          nzMessage="{{('AUTH_ERRORS.'+errorMessageCode) | translate}}"></nz-alert>
+<nz-alert *ngIf="errorMessageCode !== undefined" nzMessage="{{('AUTH_ERRORS.'+errorMessageCode) | translate}}"
+          nzType="error"></nz-alert>
 <nz-divider [nzText]="'Or' | translate"></nz-divider>
 <div class="oauth-buttons">
-  <button nz-button nzType="primary" (click)="googleOauth()">{{'Google_login' | translate}}</button>
-  <button nz-button nzType="primary" (click)="facebookOauth()">{{'Facebook_login' | translate}}</button>
+  <button (click)="googleOauth()" nz-button nzType="primary">{{'Google_login' | translate}}</button>
+  <button (click)="facebookOauth()" nz-button nzType="primary">{{'Facebook_login' | translate}}</button>
 </div>

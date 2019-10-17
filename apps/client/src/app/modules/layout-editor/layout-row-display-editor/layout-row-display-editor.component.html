@@ -1,12 +1,12 @@
 <div fxLayout="column" fxLayoutGap="10px">
-  <div *ngFor="let item of allTypes" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-between center">
+  <div *ngFor="let item of allTypes" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
     <div>{{('LIST_DETAILS.LAYOUT_DIALOG.ITEMS.' + types[item]) | translate}}</div>
-    <nz-select style="width: 100px;" [ngModel]="currentType(item)" (ngModelChange)="setType(item, $event)">
-      <nz-option nzValue="button" [nzLabel]="'LIST_DETAILS.LAYOUT_DIALOG.Buttons' | translate"></nz-option>
-      <nz-option nzValue="menu" [nzLabel]="'LIST_DETAILS.LAYOUT_DIALOG.Menu' | translate"></nz-option>
+    <nz-select (ngModelChange)="setType(item, $event)" [ngModel]="currentType(item)" style="width: 100px;">
+      <nz-option [nzLabel]="'LIST_DETAILS.LAYOUT_DIALOG.Buttons' | translate" nzValue="button"></nz-option>
+      <nz-option [nzLabel]="'LIST_DETAILS.LAYOUT_DIALOG.Menu' | translate" nzValue="menu"></nz-option>
     </nz-select>
   </div>
 </div>
-<button nz-button nzType="primary" (click)="close()">
+<button (click)="close()" nz-button nzType="primary">
   {{'Submit' | translate}}
 </button>

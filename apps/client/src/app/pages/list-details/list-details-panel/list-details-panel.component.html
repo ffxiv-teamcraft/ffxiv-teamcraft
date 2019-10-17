@@ -1,13 +1,13 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="!(displayRow.collapsed || collapsed)"
-                     (nzActiveChange)="activeChange($event)"
-                     [class.panel-done]="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)">
+  <nz-collapse-panel (nzActiveChange)="activeChange($event)" [class.panel-done]="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)"
+                     [nzActive]="!(displayRow.collapsed || collapsed)"
+                     [nzHeader]="panelHeader">
     <div>
       <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown && !displayRow.reverseTiers">
         <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd"
-                      [layout]="displayRow.layout"
+                      [finalItem]="finalItems"
                       [item]="item"
-                      [finalItem]="finalItems" [odd]="odd"></app-item-row>
+                      [layout]="displayRow.layout" [odd]="odd"></app-item-row>
       </div>
       <div *ngIf="displayRow.tiers || displayRow.reverseTiers">
         <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
@@ -18,9 +18,9 @@
           </ng-template>
           <nz-divider [nzText]="tierTitle" nzOrientation="left"></nz-divider>
           <app-item-row *ngFor="let item of tier; trackBy: trackByItem; let odd = odd"
-                        [layout]="displayRow.layout"
+                        [finalItem]="finalItems"
                         [item]="item"
-                        [finalItem]="finalItems" [odd]="odd"></app-item-row>
+                        [layout]="displayRow.layout" [odd]="odd"></app-item-row>
         </div>
       </div>
       <div *ngIf="displayRow.zoneBreakdown">
@@ -29,55 +29,55 @@
             <ng-template #zoneTitle>
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                 <span class="zone-title">{{getLocation(row.zoneId) | i18n}}</span>
-                <button nz-button *ngIf="hasNavigationMap" nzShape="circle" nzSize="small"
-                        (click)="openNavigationMap(row)"
-                        nz-tooltip [nzTitle]="'NAVIGATION.Title' | translate">
+                <button (click)="openNavigationMap(row)" *ngIf="hasNavigationMap" [nzTitle]="'NAVIGATION.Title' | translate" nz-button
+                        nz-tooltip
+                        nzShape="circle" nzSize="small">
                   <i nz-icon nzType="gateway"></i>
                 </button>
               </div>
             </ng-template>
             <nz-divider [nzText]="zoneTitle" nzOrientation="left"></nz-divider>
             <app-item-row *ngFor="let item of row.items; trackBy: trackByItem; let odd = odd"
-                          [layout]="displayRow.layout"
+                          [finalItem]="finalItems"
                           [item]="item"
-                          [finalItem]="finalItems" [odd]="odd"></app-item-row>
+                          [layout]="displayRow.layout" [odd]="odd"></app-item-row>
           </div>
         </div>
       </div>
     </div>
-    <button nz-button nzBlock *ngIf="finalItems && (permissionLevel$ | async) >= 30" (click)="addItem()">
+    <button (click)="addItem()" *ngIf="finalItems && (permissionLevel$ | async) >= 30" nz-button nzBlock>
       + {{'LIST_DETAILS.Add_item' | translate}}
     </button>
   </nz-collapse-panel>
   <ng-template #panelHeader>
-    <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
+    <div class="panel-header" fxLayout="row" fxLayoutAlign="space-between center">
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <div>{{displayRow.title | translate}}</div>
         &nbsp;({{displayRow.rows.length}} {{'items' | translate}})
-        <i nz-icon nzType="check"
-           *ngIf="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)"></i>
+        <i *ngIf="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)" nz-icon
+           nzType="check"></i>
       </div>
       <div fxLayout="row" fxLayoutGap="10px">
-        <button nz-button (click)="$event.stopPropagation()" *ngIf="displayRow.zoneBreakdown"
-                nzSize="small" nzShape="circle" nz-tooltip (click)="openFullPathPopup(zoneBreakdown)"
-                [nzTitle]="'LIST.Optimized_full_path' | translate">
-          <i nz-icon iconfont="icon-map"></i>
+        <button (click)="$event.stopPropagation()" (click)="openFullPathPopup(zoneBreakdown)" *ngIf="displayRow.zoneBreakdown"
+                [nzTitle]="'LIST.Optimized_full_path' | translate" nz-button nz-tooltip nzShape="circle"
+                nzSize="small">
+          <i iconfont="icon-map" nz-icon></i>
         </button>
-        <button nz-button (click)="$event.stopPropagation()" *ngIf="hasTrades"
-                nzSize="small" nzShape="circle" nz-tooltip (click)="openTotalPricePopup()"
-                [nzTitle]="'LIST.Total_price' | translate">
+        <button (click)="$event.stopPropagation()" (click)="openTotalPricePopup()" *ngIf="hasTrades"
+                [nzTitle]="'LIST.Total_price' | translate" nz-button nz-tooltip nzShape="circle"
+                nzSize="small">
           <i class="material-icons">local_atm</i>
         </button>
-        <button nz-button (click)="$event.stopPropagation()" ngxClipboard [cbContent]="getTextExport()"
-                (cbOnSuccess)="textCopied()"
-                nzSize="small" nzShape="circle" nz-tooltip [nzTitle]="'LIST.Copy_as_text' | translate">
+        <button (cbOnSuccess)="textCopied()" (click)="$event.stopPropagation()" [cbContent]="getTextExport()" [nzTitle]="'LIST.Copy_as_text' | translate"
+                ngxClipboard
+                nz-button nz-tooltip nzShape="circle" nzSize="small">
           <i nz-icon nzType="copy"></i>
         </button>
-        <span nz-tooltip [nzTitle]="'LIST.Mark_whole_panel_done' | translate">
-          <button nz-button nz-popconfirm [nzTitle]="'Confirmation' | translate"
-                  (click)="$event.stopPropagation()"
-                  (nzOnConfirm)="markPanelAsDone()"
-                  nzSize="small" nzShape="circle">
+        <span [nzTitle]="'LIST.Mark_whole_panel_done' | translate" nz-tooltip>
+          <button (click)="$event.stopPropagation()" (nzOnConfirm)="markPanelAsDone()" [nzTitle]="'Confirmation' | translate"
+                  nz-button
+                  nz-popconfirm
+                  nzShape="circle" nzSize="small">
             <i nz-icon nzType="check"></i>
           </button>
         </span>

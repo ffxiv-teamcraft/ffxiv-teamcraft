@@ -1,20 +1,20 @@
-<div class="overlay-topbar" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-between center">
-  <div fxLayoutGap="5px" fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-start center">
+<div class="overlay-topbar" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+  <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
     <div class="drag-handle">
       <i nz-icon nzType="drag"></i>
     </div>
     <i nz-icon nzType="eye"></i>
-    <nz-slider fxFlex="1 1 auto" [nzMin]="20" [nzMax]="100" [ngModel]="overlayOpacity"
-               (ngModelChange)="setOverlayOpacity($event)"></nz-slider>
-    <i nz-icon nzType="sound" *ngIf="!settings.alarmsMuted && uri === '/alarms-overlay'"
-       (click)="settings.alarmsMuted = true"></i>
-    <i nz-icon iconfont="icon-mute" *ngIf="settings.alarmsMuted && uri === '/alarms-overlay'"
-       (click)="settings.alarmsMuted = false"></i>
-    <i nz-icon nzType="pushpin" nzTheme="twotone" [nzTwotoneColor]="alwaysOnTop?settings.theme.primary:'white'"
-       (click)="alwaysOnTop = !alwaysOnTop;setAlwaysOnTop(alwaysOnTop)"></i>
+    <nz-slider (ngModelChange)="setOverlayOpacity($event)" [ngModel]="overlayOpacity" [nzMax]="100" [nzMin]="20"
+               fxFlex="1 1 auto"></nz-slider>
+    <i (click)="settings.alarmsMuted = true" *ngIf="!settings.alarmsMuted && uri === '/alarms-overlay'" nz-icon
+       nzType="sound"></i>
+    <i (click)="settings.alarmsMuted = false" *ngIf="settings.alarmsMuted && uri === '/alarms-overlay'" iconfont="icon-mute"
+       nz-icon></i>
+    <i (click)="alwaysOnTop = !alwaysOnTop;setAlwaysOnTop(alwaysOnTop)" [nzTwotoneColor]="alwaysOnTop?settings.theme.primary:'white'" nz-icon nzTheme="twotone"
+       nzType="pushpin"></i>
   </div>
   <div class="close-button">
-    <i nz-icon nzType="close" (click)="close()"></i>
+    <i (click)="close()" nz-icon nzType="close"></i>
   </div>
 </div>
 <div class="alarms-overlay-container">

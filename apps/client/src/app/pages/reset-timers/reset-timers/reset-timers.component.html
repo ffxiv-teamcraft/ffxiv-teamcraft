@@ -1,15 +1,15 @@
 <div class="container">
   <nz-list *ngIf="timers$ | async as timers" [nzDataSource]="timers" [nzRenderItem]="timerRef">
     <ng-template #timerRef let-timer>
-      <nz-list-item [nzContent]="timer.time | timer:true" [nzActions]="[toggle]">
+      <nz-list-item [nzActions]="[toggle]" [nzContent]="timer.time | timer:true">
         <nz-list-item-meta
-          [nzTitle]="('ALARMS.REALTIME.' + timer.label) | translate"
           [nzDescription]="('ALARMS.REALTIME.' + timer.label + '_DESCRIPTION') | translate"
+          [nzTitle]="('ALARMS.REALTIME.' + timer.label) | translate"
           nzAvatar="/assets/icons/notice.png">
         </nz-list-item-meta>
         <ng-template #toggle>
-          <nz-switch [(ngModel)]="timer.enabled"
-                     (ngModelChange)="setEnabled(timer.label, $event)"></nz-switch>
+          <nz-switch (ngModelChange)="setEnabled(timer.label, $event)"
+                     [(ngModel)]="timer.enabled"></nz-switch>
         </ng-template>
       </nz-list-item>
     </ng-template>

@@ -1,6 +1,6 @@
 <p>{{'ALARMS.Volume' | translate}}</p>
-<nz-slider [nzMin]="1" [nzMax]="100" [nzStep]="1" [ngModel]="settings.alarmVolume * 100"
-           (nzOnAfterChange)="setVolume($event/100)"></nz-slider>
+<nz-slider (nzOnAfterChange)="setVolume($event/100)" [ngModel]="settings.alarmVolume * 100" [nzMax]="100" [nzMin]="1"
+           [nzStep]="1"></nz-slider>
 
 <div *ngIf="platform.isDesktop()">
   <nz-switch [(ngModel)]="enableCustomSound"></nz-switch>
@@ -9,26 +9,26 @@
 
 <div *ngIf="enableCustomSound; else soundSelect" class="custom-alarm">
   <div class="sound-preview">{{settings.alarmSound}}
-    <button mat-icon-button (click)="previewSound()">
+    <button (click)="previewSound()" mat-icon-button>
       <i nz-icon nzType="play-o"></i>
     </button>
   </div>
-  <input type="file" (change)="setSound($event.target.files[0].path)" accept="audio/*">
+  <input (change)="setSound($event.target.files[0].path)" accept="audio/*" type="file">
 </div>
 
 <ng-template #soundSelect>
   <nz-form-label nzFor="sound">{{'Sound' | translate}}</nz-form-label>
-  <nz-select [ngModel]="settings.alarmSound" (ngModelChange)="setSound($event)" class="select-box" id="sound">
-    <nz-option *ngFor="let sound of sounds" [nzValue]="sound" [nzLabel]="sound">
+  <nz-select (ngModelChange)="setSound($event)" [ngModel]="settings.alarmSound" class="select-box" id="sound">
+    <nz-option *ngFor="let sound of sounds" [nzLabel]="sound" [nzValue]="sound">
     </nz-option>
   </nz-select>
 </ng-template>
 
 <div>
   <nz-form-label nzFor="early-alarm">{{'Early_by' | translate}}</nz-form-label>
-  <nz-select [ngModel]="settings.alarmHoursBefore" (ngModelChange)="setHoursBefore($event)" class="select-box"
+  <nz-select (ngModelChange)="setHoursBefore($event)" [ngModel]="settings.alarmHoursBefore" class="select-box"
              id="early-alarm">
-    <nz-option *ngFor="let value of [0,0.5,1,2,5]" [nzValue]="value" [nzLabel]="value">
+    <nz-option *ngFor="let value of [0,0.5,1,2,5]" [nzLabel]="value" [nzValue]="value">
     </nz-option>
   </nz-select>
 </div>

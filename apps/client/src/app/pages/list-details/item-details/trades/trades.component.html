@@ -3,52 +3,52 @@
     <nz-card-meta [nzTitle]="tradeSource.shopName | shopName | i18n">
     </nz-card-meta>
     <div *ngFor="let trade of tradeSource.trades" class="trades" fxLayout="column" fxLayoutGap="5px">
-      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
-        <div class="item-container" *ngFor="let currency of trade.currencies">
-          <app-item-icon [width]="32" [icon]="currency.icon" [itemName]="currency.id | itemName | i18n"
-                         [itemId]="currency.id" [hq]="currency.hq"></app-item-icon>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <div *ngFor="let currency of trade.currencies" class="item-container">
+          <app-item-icon [hq]="currency.hq" [icon]="currency.icon" [itemId]="currency.id"
+                         [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
           <span>x{{currency.amount}}</span>
         </div>
         <i nz-icon nzType="arrow-right"></i>
-        <div class="item-container" *ngFor="let tradeItem of trade.items">
-          <app-item-icon [width]="32" [icon]="tradeItem.icon" [itemName]="tradeItem.id | itemName | i18n"
-                         [itemId]="tradeItem.id" [hq]="tradeItem.hq"></app-item-icon>
+        <div *ngFor="let tradeItem of trade.items" class="item-container">
+          <app-item-icon [hq]="tradeItem.hq" [icon]="tradeItem.icon" [itemId]="tradeItem.id"
+                         [itemName]="tradeItem.id | itemName | i18n" [width]="32"></app-item-icon>
           <span>x{{tradeItem.amount}}</span>
         </div>
       </div>
       <ng-container *ngIf="!fromExternalTrades && !dbDisplay">
-        <div class="total-price" *ngIf="totalPrice(trade) as totalTradePrice" fxLayout="row"
+        <div *ngIf="totalPrice(trade) as totalTradePrice" class="total-price" fxLayout="row"
              fxLayoutAlign="center center"
              fxLayoutGap="5px">
           <div>
             {{'LIST.Total_trade_price' | translate}}
           </div>
-          <div class="item-container" *ngFor="let currency of totalTradePrice">
-            <app-item-icon [width]="32" [icon]="currency.icon" [itemName]="currency.id | itemName | i18n"
-                           [itemId]="currency.id" [hq]="currency.hq"></app-item-icon>
+          <div *ngFor="let currency of totalTradePrice" class="item-container">
+            <app-item-icon [hq]="currency.hq" [icon]="currency.icon" [itemId]="currency.id"
+                           [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
             <span>x{{currency.amount}}</span>
           </div>
         </div>
       </ng-container>
     </div>
-    <nz-list [nzRenderItem]="npcTemplate" [nzDataSource]="tradeSource.npcs">
+    <nz-list [nzDataSource]="tradeSource.npcs" [nzRenderItem]="npcTemplate">
       <ng-template #npcTemplate let-npc>
         <nz-list-item [nzContent]="npc.zoneId !== undefined?position:null">
           <nz-list-item-meta [nzTitle]="title">
           </nz-list-item-meta>
           <ng-template #title>
-            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div>{{npc.id | npcName | i18n}}</div>
-              <app-db-button type="npc" [id]="npc.id"></app-db-button>
+              <app-db-button [id]="npc.id" type="npc"></app-db-button>
             </div>
           </ng-template>
           <ng-template #position>
             <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
-              <app-map-position [zoneId]="npc.zoneId" [marker]="npc.coords" [mapId]="npc.mapId"></app-map-position>
+              <app-map-position [mapId]="npc.mapId" [marker]="npc.coords" [zoneId]="npc.zoneId"></app-map-position>
               <div
                 *ngIf="npc.mapId | closestAetheryte: npc.coords | async as aetheryte"
                 class="closest-tp">
-                <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon">
+                <img alt="" class="aetheryte-icon" src="./assets/icons/Aetheryte.png">
                 {{(aetheryte.nameid || aetheryte.placenameid) | placeName | i18n}}
               </div>
             </div>

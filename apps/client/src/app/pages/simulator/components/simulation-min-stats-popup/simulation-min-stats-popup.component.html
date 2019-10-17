@@ -5,6 +5,6 @@
     <div>{{'SIMULATOR.Cp_amount' | translate}}: {{stats.cp}}</div>
   </div>
   <ng-template #notFound>
-    <nz-alert nzType="error" nzShowIcon [nzMessage]="'SIMULATOR.Could_not_find_minstats' | translate"></nz-alert>
+    <nz-alert [nzMessage]="'SIMULATOR.Could_not_find_minstats' | translate" nzShowIcon nzType="error"></nz-alert>
   </ng-template>
 </div>

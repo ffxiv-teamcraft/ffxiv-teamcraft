@@ -3,46 +3,46 @@
 <ng-template #lists>
   <div *ngIf="lists$ | async as lists">
     <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
-      <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createList()" nz-tooltip
-              [nzTitle]="'New_List' | translate">
+      <button (click)="createList()" [nzShape]="'circle'" [nzTitle]="'New_List' | translate" [nzType]="'primary'" nz-button
+              nz-tooltip>
         <i nz-icon nzType="file-add"></i>
       </button>
-      <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createWorkshop()" nz-tooltip
-              [nzTitle]="'WORKSHOP.Add_workshop' | translate">
+      <button (click)="createWorkshop()" [nzShape]="'circle'" [nzTitle]="'WORKSHOP.Add_workshop' | translate" [nzType]="'primary'" nz-button
+              nz-tooltip>
         <i nz-icon nzType="folder-add"></i>
       </button>
-      <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip (click)="openMergeDialog()"
-              [nzTitle]="'LISTS.Merge_lists' | translate">
-        <i nz-icon iconfont="icon-merge"></i>
+      <button (click)="openMergeDialog()" [nzShape]="'circle'" [nzTitle]="'LISTS.Merge_lists' | translate" [nzType]="'primary'" nz-button
+              nz-tooltip>
+        <i iconfont="icon-merge" nz-icon></i>
       </button>
-      <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip (click)="importList()"
-              [nzTitle]="'LISTS.IMPORT.Title' | translate">
+      <button (click)="importList()" [nzShape]="'circle'" [nzTitle]="'LISTS.IMPORT.Title' | translate" [nzType]="'primary'" nz-button
+              nz-tooltip>
         <i nz-icon nzType="download"></i>
       </button>
       <div class="spacer">
       </div>
-      <button nz-button nzType="primary" nzShape="circle" nz-tooltip
-              *ngIf="myLists$ | async as myLists"
-              [nzTitle]="'LISTS.Regenerate_all' | translate" (click)="regenerateLists(myLists)">
+      <button (click)="regenerateLists(myLists)" *ngIf="myLists$ | async as myLists" [nzTitle]="'LISTS.Regenerate_all' | translate" nz-button
+              nz-tooltip
+              nzShape="circle" nzType="primary">
         <i nz-icon nzType="file-sync"></i>
       </button>
     </div>
-    <nz-alert [nzMessage]="'LISTS.Needs_verification' | translate" nzType="warning"
-              *ngIf="needsVerification$ | async" nzShowIcon class="fc-check-warning"></nz-alert>
+    <nz-alert *ngIf="needsVerification$ | async" [nzMessage]="'LISTS.Needs_verification' | translate"
+              class="fc-check-warning" nzShowIcon nzType="warning"></nz-alert>
     <h2>{{'LISTS.Your_lists' | translate}}</h2>
     <nz-input-group [nzSuffix]="suffixIconSearch">
-      <input type="text" [ngModel]="query$.value" (ngModelChange)="query$.next($event)" nz-input
-             placeholder="{{'LISTS.Lists_search_placeholder' | translate}}">
+      <input (ngModelChange)="query$.next($event)" [ngModel]="query$.value" nz-input placeholder="{{'LISTS.Lists_search_placeholder' | translate}}"
+             type="text">
     </nz-input-group>
     <ng-template #suffixIconSearch>
       <i nz-icon nzType="search"></i>
     </ng-template>
-    <div class="ngx-dnd-container" ngxDroppable="list"
-         (drop)="setListIndex($event.value, $event.dropIndex, lists.otherLists)">
-      <div class="ngx-dnd-item list-panel" *ngFor="let list of lists.otherLists; trackBy: trackByList"
-           ngxDraggable="list"
-           [model]="list">
-        <app-list-panel [list]="list" [hideAvatar]="true"></app-list-panel>
+    <div (drop)="setListIndex($event.value, $event.dropIndex, lists.otherLists)" class="ngx-dnd-container"
+         ngxDroppable="list">
+      <div *ngFor="let list of lists.otherLists; trackBy: trackByList" [model]="list"
+           class="ngx-dnd-item list-panel"
+           ngxDraggable="list">
+        <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
       </div>
     </div>
     <app-fullpage-message *ngIf="lists.otherLists.length === 0 && !(loading$ | async)" height="150px">
@@ -52,7 +52,7 @@
       <ng-container *ngIf="favoriteLists?.length > 0">
         <nz-divider [nzText]="'LISTS.Favorite_lists' | translate" nzOrientation="left"></nz-divider>
         <div *ngIf="favoriteLists.length > 0">
-          <div class="list-panel" *ngFor="let list of favoriteLists; trackBy: trackByList">
+          <div *ngFor="let list of favoriteLists; trackBy: trackByList" class="list-panel">
             <app-list-panel [list]="list"></app-list-panel>
           </div>
         </div>
@@ -61,7 +61,7 @@
     <div *ngIf="sharedLists$ | async as sharedLists">
       <div *ngIf="sharedLists.length > 0">
         <nz-divider [nzText]="'LISTS.Shared_lists' | translate" nzOrientation="left"></nz-divider>
-        <div class="list-panel" *ngFor="let list of sharedLists; trackBy: trackByList">
+        <div *ngFor="let list of sharedLists; trackBy: trackByList" class="list-panel">
           <app-list-panel [list]="list"></app-list-panel>
         </div>
       </div>
@@ -69,12 +69,12 @@
     <div *ngIf="workshops$ | async as workshops">
       <div *ngIf="workshops.length > 0">
         <nz-divider [nzText]="'WORKSHOP.Workshops' | translate" nzOrientation="left"></nz-divider>
-        <div class="ngx-dnd-container" (drop)="setWorkshopIndex($event.value, $event.dropIndex, workshops)"
+        <div (drop)="setWorkshopIndex($event.value, $event.dropIndex, workshops)" class="ngx-dnd-container"
              ngxDroppable="workshop">
-          <div class="ngx-dnd-item workshop-panel" *ngFor="let workshopDisplay of workshops; trackBy: trackByList"
-               ngxDraggable="workshop" [model]="workshopDisplay.workshop">
-            <app-workshop-panel [workshop]="workshopDisplay.workshop"
-                                [lists]="workshopDisplay.lists"></app-workshop-panel>
+          <div *ngFor="let workshopDisplay of workshops; trackBy: trackByList" [model]="workshopDisplay.workshop"
+               class="ngx-dnd-item workshop-panel" ngxDraggable="workshop">
+            <app-workshop-panel [lists]="workshopDisplay.lists"
+                                [workshop]="workshopDisplay.workshop"></app-workshop-panel>
           </div>
         </div>
       </div>
@@ -82,36 +82,39 @@
     <div *ngIf="sharedWorkshops$ | async as sharedWorkshops">
       <div *ngIf="sharedWorkshops.length > 0">
         <nz-divider [nzText]="'WORKSHOP.Shared_workshops' | translate" nzOrientation="left"></nz-divider>
-        <div class="workshop-panel" *ngFor="let workshopDisplay of sharedWorkshops; trackBy: trackByList">
-          <app-workshop-panel [workshop]="workshopDisplay.workshop" [lists]="workshopDisplay.lists"></app-workshop-panel>
+        <div *ngFor="let workshopDisplay of sharedWorkshops; trackBy: trackByList" class="workshop-panel">
+          <app-workshop-panel [lists]="workshopDisplay.lists"
+                              [workshop]="workshopDisplay.workshop"></app-workshop-panel>
         </div>
       </div>
     </div>
-    <nz-divider [nzText]="'TEAMS.Title' | translate" nzOrientation="left" *ngIf="(teamsDisplays$ | async)?.length > 0"></nz-divider>
+    <nz-divider *ngIf="(teamsDisplays$ | async)?.length > 0" [nzText]="'TEAMS.Title' | translate"
+                nzOrientation="left"></nz-divider>
     <div fxLayout="column" fxLayoutGap="5px">
       <nz-collapse *ngFor="let teamDisplay of teamsDisplays$ | async;trackBy: trackByTeam">
         <nz-collapse-panel nzHeader="{{teamDisplay.team.name}} ({{teamDisplay.lists.length}})">
-          <div class="ngx-dnd-container" ngxDroppable="team-{{teamDisplay.team.$key}}"
-               (drop)="setListIndex($event.value, $event.dropIndex, teamDisplay.lists)">
-            <div class="ngx-dnd-item list-panel" *ngFor="let list of teamDisplay.lists; trackBy: trackByList"
-                 ngxDraggable="team-{{teamDisplay.team.$key}}"
-                 [model]="list">
+          <div (drop)="setListIndex($event.value, $event.dropIndex, teamDisplay.lists)" class="ngx-dnd-container"
+               ngxDroppable="team-{{teamDisplay.team.$key}}">
+            <div *ngFor="let list of teamDisplay.lists; trackBy: trackByList" [model]="list"
+                 class="ngx-dnd-item list-panel"
+                 ngxDraggable="team-{{teamDisplay.team.$key}}">
               <app-list-panel [list]="list"></app-list-panel>
             </div>
           </div>
         </nz-collapse-panel>
       </nz-collapse>
     </div>
-    <nz-divider [nzText]="'Your_public_lists' | translate" nzOrientation="left" *ngIf="lists.communityLists.length > 0"></nz-divider>
+    <nz-divider *ngIf="lists.communityLists.length > 0" [nzText]="'Your_public_lists' | translate"
+                nzOrientation="left"></nz-divider>
     <nz-collapse *ngIf="lists.communityLists.length > 0">
-      <nz-collapse-panel nzHeader="{{'Your_public_lists' | translate}} ({{lists.communityLists.length}})"
-                         #communityListsPanel>
-        <div class="ngx-dnd-container" ngxDroppable="communityList"
-             (drop)="setListIndex($event.value, $event.dropIndex, lists.communityLists)"
-             *ngIf="communityListsPanel.nzActive">
-          <div class="ngx-dnd-item list-panel" *ngFor="let list of lists.communityLists; trackBy: trackByList"
-               ngxDraggable="communityList"
-               [model]="list">
+      <nz-collapse-panel #communityListsPanel
+                         nzHeader="{{'Your_public_lists' | translate}} ({{lists.communityLists.length}})">
+        <div (drop)="setListIndex($event.value, $event.dropIndex, lists.communityLists)" *ngIf="communityListsPanel.nzActive"
+             class="ngx-dnd-container"
+             ngxDroppable="communityList">
+          <div *ngFor="let list of lists.communityLists; trackBy: trackByList" [model]="list"
+               class="ngx-dnd-item list-panel"
+               ngxDraggable="communityList">
             <app-list-panel [list]="list"></app-list-panel>
           </div>
         </div>

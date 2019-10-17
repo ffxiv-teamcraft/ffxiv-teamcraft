@@ -2,8 +2,8 @@
   <div *ngIf="showZoneName">{{zoneId | placeName | i18n}}</div>
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
     <div>X: {{getMarker().x}} - Y: {{getMarker().y}}</div>
-    <button nz-button nzSize="small" nzShape="circle" (click)="openMap()" nz-tooltip
-            [nzTitle]="'See_on_map' | translate">
+    <button (click)="openMap()" [nzTitle]="'See_on_map' | translate" nz-button nz-tooltip nzShape="circle"
+            nzSize="small">
       <i nz-icon nzType="environment-o"></i>
     </button>
   </div>

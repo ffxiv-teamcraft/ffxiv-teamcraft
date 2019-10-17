@@ -1,35 +1,35 @@
-<div class="map-container" *ngIf="mapData | async as map">
-  <app-db-button type="map" [id]="mapId" class="db-button" *ngIf="!hideDbButton"></app-db-button>
-  <img src="{{map.image}}" alt="" class="map-image" (load)="loaded.emit()">
+<div *ngIf="mapData | async as map" class="map-container">
+  <app-db-button *ngIf="!hideDbButton" [id]="mapId" class="db-button" type="map"></app-db-button>
+  <img (load)="loaded.emit()" alt="" class="map-image" src="{{map.image}}">
   <ng-container *ngFor="let marker of markers">
-    <i class="marker material-icons default-marker"
-       *ngIf="!marker.iconType"
+    <i *ngIf="!marker.iconType"
        [ngStyle]="getMarkerStyle(map, marker)"
+       [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)"
        [routerLink]="marker.link"
-       nz-tooltip [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)">
+       class="marker material-icons default-marker" nz-tooltip>
       location_on
     </i>
-    <img [src]="marker.iconImg" alt=""
-         *ngIf="marker.iconType === 'img'"
-         class="marker"
-         [ngStyle]="getMarkerStyle(map, marker)"
+    <img *ngIf="marker.iconType === 'img'" [ngStyle]="getMarkerStyle(map, marker)"
+         [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)"
          [routerLink]="marker.link"
-         nz-tooltip [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)">
-    <i nz-icon [type]="marker.nzIcon"
-       *ngIf="marker.iconType === 'ant'"
+         [src]="marker.iconImg"
+         alt=""
+         class="marker" nz-tooltip>
+    <i *ngIf="marker.iconType === 'ant'" [ngStyle]="getMarkerStyle(map, marker)"
+       [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)"
+       [routerLink]="marker.link"
+       [type]="marker.nzIcon"
        class="marker"
-       [ngStyle]="getMarkerStyle(map, marker)"
-       [routerLink]="marker.link"
-       nz-tooltip [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)"></i>
+       nz-icon nz-tooltip></i>
     <i *ngIf="marker.iconType === 'material'"
-       class="marker material-icons"
        [ngStyle]="getMarkerStyle(map, marker)"
+       [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)"
        [routerLink]="marker.link"
-       nz-tooltip [nzTitle]="marker.tooltip || 'X: ' + (marker.x | number) + ' - Y: ' + (marker.y | number)">
+       class="marker material-icons" nz-tooltip>
       {{marker.materialIcon}}
     </i>
   </ng-container>
-  <img *ngFor="let aetheryte of map.aetherytes" [src]="getIcon(aetheryte.type)"
-       alt="" class="aetheryte" [ngStyle]="getMarkerStyle(map, aetheryte, {x:-2,y:-2})"
+  <img *ngFor="let aetheryte of map.aetherytes" [ngStyle]="getMarkerStyle(map, aetheryte, {x:-2,y:-2})"
+       [src]="getIcon(aetheryte.type)" alt="" class="aetheryte"
        nz-tooltip nzTitle="{{(aetheryte.id | aetheryteName | i18n) || (aetheryte.nameid | placeName | i18n)}}">
 </div>

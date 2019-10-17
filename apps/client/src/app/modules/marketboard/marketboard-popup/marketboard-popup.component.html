@@ -1,9 +1,9 @@
-<nz-alert *ngIf="error; else content" nzType="error" nzShowIcon
-          [nzMessage]="'MARKETBOARD.Error' | translate"></nz-alert>
+<nz-alert *ngIf="error; else content" [nzMessage]="'MARKETBOARD.Error' | translate" nzShowIcon
+          nzType="error"></nz-alert>
 <ng-template #content>
   <div fxLayout="column" fxLayoutGap="15px">
-    <nz-table #pricesTable nzSize="small" *ngIf="prices$ | async as prices" [nzData]="prices" [nzLoading]="loading">
-      <thead nzSingleSort (nzSortChange)="sort($event)">
+    <nz-table #pricesTable *ngIf="prices$ | async as prices" [nzData]="prices" [nzLoading]="loading" nzSize="small">
+      <thead (nzSortChange)="sort($event)" nzSingleSort>
       <tr>
         <th nzShowSort nzSortKey="Quantity">{{'MARKETBOARD.Amount' | translate}}</th>
         <th nzShowSort nzSortKey="Server">{{'MARKETBOARD.Server' | translate}}</th>
@@ -16,7 +16,7 @@
       <tr *ngFor="let row of pricesTable.data">
         <td>{{row.Quantity}}</td>
         <td>{{row.Server}}</td>
-        <td><img src="./assets/icons/HQ.png" alt="HQ" *ngIf="row.IsHQ" class="hq-icon"></td>
+        <td><img *ngIf="row.IsHQ" alt="HQ" class="hq-icon" src="./assets/icons/HQ.png"></td>
         <td>{{row.PriceTotal | number}}</td>
         <td>{{row.PricePerUnit | number}}</td>
       </tr>
@@ -24,8 +24,8 @@
     </nz-table>
     <div *ngIf="showHistory">
       <h3>{{'MARKETBOARD.History' | translate}}</h3>
-      <nz-table #historyTable nzSize="small" *ngIf="history$ | async as history" [nzData]="history"
-                [nzLoading]="loadingHistory">
+      <nz-table #historyTable *ngIf="history$ | async as history" [nzData]="history" [nzLoading]="loadingHistory"
+                nzSize="small">
         <thead>
         <tr>
           <th>{{'MARKETBOARD.Purchase_date' | translate}}</th>
@@ -41,7 +41,7 @@
           <td>{{row.PurchaseDate | date:'short':undefined:getLocale()}}</td>
           <td>{{row.Quantity}}</td>
           <td>{{row.Server}}</td>
-          <td><img src="./assets/icons/HQ.png" alt="HQ" *ngIf="row.IsHQ" class="hq-icon"></td>
+          <td><img *ngIf="row.IsHQ" alt="HQ" class="hq-icon" src="./assets/icons/HQ.png"></td>
           <td>{{row.PriceTotal | number}}</td>
           <td>{{row.PricePerUnit | number}}</td>
         </tr>

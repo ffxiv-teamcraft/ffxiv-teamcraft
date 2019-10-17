@@ -1,6 +1,6 @@
-<div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center center" class="container">
-  <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="flex-start" fxLayout.lt-md="column"
-       fxLayoutAlign.lt-md="center center">
+<div class="container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start" fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="20px">
     <nz-card [nzTitle]="comTitle" fxFlex="1 1 50%">
       <ng-template #comTitle>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
@@ -12,8 +12,8 @@
         {{'SUPPORT_US.Communication_description' | translate}}
       </div>
       <div class="macro">
-        <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard
-                [cbContent]="macro">
+        <button [cbContent]="macro" class="copy-macro" ngxClipboard nz-button nzShape="circle"
+                nzSize="small">
           <i nz-icon nzType="copy"></i>
         </button>
         <div *ngFor="let line of macro.split('\n')" class="macro-line">
@@ -22,7 +22,7 @@
       </div>
     </nz-card>
 
-    <nz-card [nzTitle]="contributeTitle" [nzActions]="[github, discord]" fxFlex="1 1 50%">
+    <nz-card [nzActions]="[github, discord]" [nzTitle]="contributeTitle" fxFlex="1 1 50%">
       <ng-template #contributeTitle>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
           <i class="fab fa-github"></i>
@@ -42,7 +42,7 @@
       </ng-template>
     </nz-card>
   </div>
-  <nz-card [nzTitle]="patreonTitle" [nzActions]="[patreon]" fxFlex="1 1 100%" style="width: 100%">
+  <nz-card [nzActions]="[patreon]" [nzTitle]="patreonTitle" fxFlex="1 1 100%" style="width: 100%">
     <ng-template #patreonTitle>
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
         <i class="fab fa-patreon"></i>

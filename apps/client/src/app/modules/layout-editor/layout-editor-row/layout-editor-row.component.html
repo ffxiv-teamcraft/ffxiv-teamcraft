@@ -1,91 +1,91 @@
 <nz-card [nzTitle]="title">
   <div fxLayout="column" fxLayoutGap="10px">
-    <div class="filter" fxLayout="column" fxLayoutGap="5px" *ngIf="!readonly && !isOtherRow">
+    <div *ngIf="!readonly && !isOtherRow" class="filter" fxLayout="column" fxLayoutGap="5px">
       <div *ngFor="let fragment of filter; let last = last" fxLayout="row">
-        <div *ngIf="!fragment.isBooleanGate" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="flex-start center"
-             fxFlex="1 1 auto" fxLayoutGap="5px">
-          <label nz-checkbox [nzDisabled]="readonly  || isOtherRow" [(ngModel)]="fragment.reversed"
-                 (ngModelChange)="filterChange()">NOT</label>
-          <nz-select [(ngModel)]="fragment.value" (ngModelChange)="filterChange()" fxFlex="1 1 auto" nzShowSearch
-                     [nzDisabled]="readonly  || isOtherRow">
-            <nz-option *ngFor="let filter of getAllFilters()" [nzValue]="filter" [nzLabel]="filter"></nz-option>
+        <div *ngIf="!fragment.isBooleanGate" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-sm="column"
+             fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <label (ngModelChange)="filterChange()" [(ngModel)]="fragment.reversed" [nzDisabled]="readonly  || isOtherRow"
+                 nz-checkbox>NOT</label>
+          <nz-select (ngModelChange)="filterChange()" [(ngModel)]="fragment.value" [nzDisabled]="readonly  || isOtherRow" fxFlex="1 1 auto"
+                     nzShowSearch>
+            <nz-option *ngFor="let filter of getAllFilters()" [nzLabel]="filter" [nzValue]="filter"></nz-option>
           </nz-select>
-          <button nz-button [disabled]="readonly || isOtherRow" [nzBlock]="false | ifMobile: true" nzGhost
-                  nzType="danger"
-                  *ngIf="last && filter.length > 1"
-                  (click)="removeFragment()">
+          <button (click)="removeFragment()" *ngIf="last && filter.length > 1" [disabled]="readonly || isOtherRow" [nzBlock]="false | ifMobile: true"
+                  nz-button
+                  nzGhost
+                  nzType="danger">
             <i nz-icon nzType="delete"></i>
           </button>
         </div>
         <nz-select *ngIf="fragment.isBooleanGate" [(ngModel)]="fragment.value"
                    [nzDisabled]="readonly"
                    fxFlex fxFlexAlign="center center">
-          <nz-option nzValue="or" nzLabel="OR"></nz-option>
-          <nz-option nzValue="and" nzLabel="AND"></nz-option>
+          <nz-option nzLabel="OR" nzValue="or"></nz-option>
+          <nz-option nzLabel="AND" nzValue="and"></nz-option>
         </nz-select>
       </div>
-      <button nz-button nzBlock nzType="primary" (click)="addFragment()" [disabled]="readonly">
+      <button (click)="addFragment()" [disabled]="readonly" nz-button nzBlock nzType="primary">
         <i nz-icon nzType="plus"></i>
       </button>
     </div>
     <div class="layout-type" fxLayout="column" fxLayoutGap="5px">
-      <nz-radio-group [ngModel]="getLayoutType()" (ngModelChange)="setLayoutType($event)" [nzDisabled]="readonly">
-        <label nz-radio-button [nzValue]="'default'">{{"Default" | translate}}</label>
-        <label nz-radio-button [nzValue]="'tiers'">{{"Tier_display_toggle" | translate}}</label>
-        <label nz-radio-button [nzValue]="'reverseTiers'">{{"Reverse_tiers" | translate}}</label>
-        <label nz-radio-button [nzValue]="'zoneBreakdown'">{{"Zone_breakdown" | translate}}</label>
+      <nz-radio-group (ngModelChange)="setLayoutType($event)" [ngModel]="getLayoutType()" [nzDisabled]="readonly">
+        <label [nzValue]="'default'" nz-radio-button>{{"Default" | translate}}</label>
+        <label [nzValue]="'tiers'" nz-radio-button>{{"Tier_display_toggle" | translate}}</label>
+        <label [nzValue]="'reverseTiers'" nz-radio-button>{{"Reverse_tiers" | translate}}</label>
+        <label [nzValue]="'zoneBreakdown'" nz-radio-button>{{"Zone_breakdown" | translate}}</label>
       </nz-radio-group>
       <div fxLayout="column" fxLayoutGap="5px">
-        <label nz-checkbox [nzDisabled]="readonly" [(ngModel)]="row.hideIfEmpty"
-               (ngModelChange)="rowChange.emit(row)">{{"Hide_if_empty" |
+        <label (ngModelChange)="rowChange.emit(row)" [(ngModel)]="row.hideIfEmpty" [nzDisabled]="readonly"
+               nz-checkbox>{{"Hide_if_empty" |
           translate}}</label>
-        <label nz-checkbox [nzDisabled]="readonly" [(ngModel)]="row.hideCompletedRows"
-               (ngModelChange)="rowChange.emit(row)">{{"Hide_completed"
+        <label (ngModelChange)="rowChange.emit(row)" [(ngModel)]="row.hideCompletedRows" [nzDisabled]="readonly"
+               nz-checkbox>{{"Hide_completed"
           | translate}}</label>
-        <label nz-checkbox [nzDisabled]="readonly" [(ngModel)]="row.hideUsedRows"
-               (ngModelChange)="rowChange.emit(row)">{{"Hide_used" |
+        <label (ngModelChange)="rowChange.emit(row)" [(ngModel)]="row.hideUsedRows" [nzDisabled]="readonly"
+               nz-checkbox>{{"Hide_used" |
           translate}}</label>
-        <label nz-checkbox [nzDisabled]="readonly" [(ngModel)]="row.collapseIfDone"
-               (ngModelChange)="rowChange.emit(row)">{{"Collapse_if_done" |
+        <label (ngModelChange)="rowChange.emit(row)" [(ngModel)]="row.collapseIfDone" [nzDisabled]="readonly"
+               nz-checkbox>{{"Collapse_if_done" |
           translate}}</label>
-        <label nz-checkbox [nzDisabled]="readonly" [(ngModel)]="row.collapsedByDefault"
-               (ngModelChange)="rowChange.emit(row)">{{"Collapse_by_default" |
+        <label (ngModelChange)="rowChange.emit(row)" [(ngModel)]="row.collapsedByDefault" [nzDisabled]="readonly"
+               nz-checkbox>{{"Collapse_by_default" |
           translate}}</label>
-        <label nz-checkbox *ngIf="row.zoneBreakdown" [(ngModel)]="row.hideZoneDuplicates"
-               (ngModelChange)="rowChange.emit(row)">{{"Hide_zone_duplicates" | translate}}</label>
+        <label (ngModelChange)="rowChange.emit(row)" *ngIf="row.zoneBreakdown" [(ngModel)]="row.hideZoneDuplicates"
+               nz-checkbox>{{"Hide_zone_duplicates" | translate}}</label>
       </div>
     </div>
     <div class="ordering">
       {{'LIST_DETAILS.LAYOUT.Order_by' | translate}}
-      <nz-select [(ngModel)]="row.orderBy" (ngModelChange)="rowChange.emit(row)" [nzDisabled]="readonly">
-        <nz-option nzValue="NAME" nzLabel="NAME"></nz-option>
-        <nz-option nzValue="LEVEL" nzLabel="LEVEL"></nz-option>
-        <nz-option nzValue="JOB" nzLabel="JOB"></nz-option>
-        <nz-option nzValue="INGAME_LOG" nzLabel="INGAME_LOG"></nz-option>
+      <nz-select (ngModelChange)="rowChange.emit(row)" [(ngModel)]="row.orderBy" [nzDisabled]="readonly">
+        <nz-option nzLabel="NAME" nzValue="NAME"></nz-option>
+        <nz-option nzLabel="LEVEL" nzValue="LEVEL"></nz-option>
+        <nz-option nzLabel="JOB" nzValue="JOB"></nz-option>
+        <nz-option nzLabel="INGAME_LOG" nzValue="INGAME_LOG"></nz-option>
       </nz-select>
-      <nz-select [(ngModel)]="row.order" (ngModelChange)="rowChange.emit(row)" [nzDisabled]="readonly">
+      <nz-select (ngModelChange)="rowChange.emit(row)" [(ngModel)]="row.order" [nzDisabled]="readonly">
         <nz-option [nzValue]="0" nzLabel="ASC"></nz-option>
         <nz-option [nzValue]="1" nzLabel="DESC"></nz-option>
       </nz-select>
     </div>
-    <div class="tags" *ngIf="settings.itemTagsEnabled && !isOtherRow">
+    <div *ngIf="settings.itemTagsEnabled && !isOtherRow" class="tags">
       {{'LIST_DETAILS.LAYOUT.Tag_filter' | translate}}
       <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
         <ng-template #addOnBeforeTemplate>
-          <nz-select [(ngModel)]="row.hasTag"
-                     (ngModelChange)="$event === null? row.tag = '':null; rowChange.emit(row)"
+          <nz-select (ngModelChange)="$event === null? row.tag = '':null; rowChange.emit(row)"
+                     [(ngModel)]="row.hasTag"
                      [nzDisabled]="readonly"
-          class="tag-filter-select">
+                     class="tag-filter-select">
             <nz-option [nzValue]="null" nzLabel="NONE"></nz-option>
             <nz-option [nzValue]="true" nzLabel="INCLUDES"></nz-option>
             <nz-option [nzValue]="false" nzLabel="DOESN'T INCLUDE"></nz-option>
           </nz-select>
         </ng-template>
-        <input [disabled]="readonly || row.hasTag === null" type="text" nz-input [(ngModel)]="row.tag"
-               (input)="tagInput$.next($event.target?.value)"
-               (ngModelChange)="rowChange.emit(row)" [nzAutocomplete]="tagsComplete"
+        <input (input)="tagInput$.next($event.target?.value)" (ngModelChange)="rowChange.emit(row)" [(ngModel)]="row.tag" [disabled]="readonly || row.hasTag === null"
+               [nzAutocomplete]="tagsComplete"
+               nz-input type="text"
         />
-        <nz-autocomplete nzBackfill #tagsComplete>
+        <nz-autocomplete #tagsComplete nzBackfill>
           <nz-auto-option *ngFor="let option of availableTags$ | async" [nzValue]="option">
             {{ option }}
           </nz-auto-option>
@@ -100,10 +100,10 @@
       <ng-template #icon>
         <i nz-icon nzType="edit"></i>
       </ng-template>
-      <input [disabled]="readonly  || isOtherRow" type="text" nz-input [(ngModel)]="row.name"
-             (ngModelChange)="rowChange.emit(row)">
+      <input (ngModelChange)="rowChange.emit(row)" [(ngModel)]="row.name" [disabled]="readonly  || isOtherRow" nz-input
+             type="text">
     </nz-input-group>
-    <button nz-button nzType="danger" *ngIf="!readonly && !isOtherRow" (click)="delete.emit()">
+    <button (click)="delete.emit()" *ngIf="!readonly && !isOtherRow" nz-button nzType="danger">
       <i nz-icon nzType="delete"></i>
     </button>
   </div>

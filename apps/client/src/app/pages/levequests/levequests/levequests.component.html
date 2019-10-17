@@ -1,45 +1,45 @@
-<div nz-row class="top-part" fxLayout="row wrap">
-  <div nz-col [nzXs]="{ span: 10, order: 1 }" [nzMd]="{ span: 4 }" [nzXXl]="{ span: 3 }">
-    <nz-select class="job" [ngModel]="job$.value" [nzAllowClear]="true"
-               nzShowSearch
-               [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate" (ngModelChange)="setJob($event)">
-      <nz-option *ngFor="let job of jobList" [nzValue]="job.id" [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
-        <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
+<div class="top-part" fxLayout="row wrap" nz-row>
+  <div [nzMd]="{ span: 4 }" [nzXXl]="{ span: 3 }" [nzXs]="{ span: 10, order: 1 }" nz-col>
+    <nz-select (ngModelChange)="setJob($event)" [ngModel]="job$.value" [nzAllowClear]="true"
+               [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
+               class="job" nzShowSearch>
+      <nz-option *ngFor="let job of jobList" [nzLabel]="job.id | jobAbbr | i18n" [nzValue]="job.id" nzCustomContent>
+        <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{job.abbreviation}}.png">
         {{job.id | jobAbbr | i18n}}
       </nz-option>
     </nz-select>
   </div>
 
-  <div nz-col [nzXs]="{ span: 24, order: 3 }" [nzMd]="{ span: 10, offset: 1, order: 2 }" [nzXXl]="{ span: 9 }">
+  <div [nzMd]="{ span: 10, offset: 1, order: 2 }" [nzXXl]="{ span: 9 }" [nzXs]="{ span: 24, order: 3 }" nz-col>
     <nz-input-group [nzSuffix]="suffixTemplate">
-      <input type="text" class="search" placeholder="{{'LEVEQUESTS.Levequest_name' | translate}}" #searchInput
-             nz-input [ngModel]="query$.value" (keyup)="query$.next(searchInput.value)" autofocus>
+      <input #searchInput (keyup)="query$.next(searchInput.value)" [ngModel]="query$.value" autofocus
+             class="search" nz-input placeholder="{{'LEVEQUESTS.Levequest_name' | translate}}" type="text">
       <ng-template #suffixTemplate>
         <i
+          (click)="query$.next('')"
+          *ngIf="query$ | async"
+          class="ant-input-clear-icon"
           nz-icon
           nz-tooltip
-          class="ant-input-clear-icon"
           nzTheme="fill"
           nzType="close-circle"
-          *ngIf="query$ | async"
-          (click)="query$.next('')"
         ></i>
       </ng-template>
     </nz-input-group>
   </div>
 
-  <div nz-col [nzXs]="{ span: 13, offset: 1, order: 2 }" [nzMd]="{ span: 5, offset: 1, order: 3 }"
-       [nzXXl]="{ span: 3 }">
+  <div [nzMd]="{ span: 5, offset: 1, order: 3 }" [nzXXl]="{ span: 3 }" [nzXs]="{ span: 13, offset: 1, order: 2 }"
+       nz-col>
     <nz-input-group class="levels" nzCompact>
-      <nz-input-number [ngModel]="levelMin$.value" [nzMin]="1" [nzMax]="80" [nzPrecision]="0"
-                       (ngModelChange)="setLevel(levelMin$, $event)"></nz-input-number>
-      <input type="text" disabled nz-input placeholder="-">
-      <nz-input-number [ngModel]="levelMax$.value" [nzMin]="levelMin$.value" [nzMax]="80" [nzPrecision]="0"
-                       (ngModelChange)="setLevel(levelMax$, $event)"></nz-input-number>
+      <nz-input-number (ngModelChange)="setLevel(levelMin$, $event)" [ngModel]="levelMin$.value" [nzMax]="80" [nzMin]="1"
+                       [nzPrecision]="0"></nz-input-number>
+      <input disabled nz-input placeholder="-" type="text">
+      <nz-input-number (ngModelChange)="setLevel(levelMax$, $event)" [ngModel]="levelMax$.value" [nzMax]="80" [nzMin]="levelMin$.value"
+                       [nzPrecision]="0"></nz-input-number>
     </nz-input-group>
   </div>
 </div>
-<div *ngIf="showIntro" fxLayout="column" fxLayoutAlign="center center" class="intro">
+<div *ngIf="showIntro" class="intro" fxLayout="column" fxLayoutAlign="center center">
   <h2>{{'LEVEQUESTS.INTRO.Title' | translate}}</h2>
   <p>{{'LEVEQUESTS.INTRO.First_line' | translate}}</p>
   <p>{{'LEVEQUESTS.INTRO.Second_line' | translate}}</p>
@@ -50,43 +50,43 @@
        fxLayoutGap="10px">
     <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-        <nz-switch nzSize="small" [(ngModel)]="computeExp"></nz-switch>
+        <nz-switch [(ngModel)]="computeExp" nzSize="small"></nz-switch>
         <div>{{'LEVEQUESTS.Compute_exp' | translate}}</div>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-        <nz-switch nzSize="small" [(ngModel)]="globalExp" (ngModelChange)="globalExpChange$.next($event)"
-                   [nzDisabled]="!computeExp"></nz-switch>
+        <nz-switch (ngModelChange)="globalExpChange$.next($event)" [(ngModel)]="globalExp" [nzDisabled]="!computeExp"
+                   nzSize="small"></nz-switch>
         <div>{{'LEVEQUESTS.Global_exp' | translate}}</div>
       </div>
     </div>
     <div>Lvl</div>
-    <nz-input-number [(ngModel)]="startingLevel" [nzMin]="1" [nzMax]="79"
+    <nz-input-number [(ngModel)]="startingLevel" [nzMax]="79" [nzMin]="1"
                      [nzPrecision]="0"></nz-input-number>
     <div>Exp</div>
-    <nz-input-number [(ngModel)]="startingExp" [nzMin]="0" [nzMax]="getMaxExp(startingLevel) - 1"
+    <nz-input-number [(ngModel)]="startingExp" [nzMax]="getMaxExp(startingLevel) - 1" [nzMin]="0"
                      [nzPrecision]="0"></nz-input-number>
   </div>
   <div class="additional-buttons">
-    <label nz-checkbox [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)">
+    <label (ngModelChange)="selectAll(results, $event)" [(ngModel)]="allSelected" nz-checkbox>
       {{'Select_all' | translate}}
     </label>
-    <button nz-button (click)="addSelectedLevesToList(results)">{{'LISTS.Add_selection' | translate}}</button>
+    <button (click)="addSelectedLevesToList(results)" nz-button>{{'LISTS.Add_selection' | translate}}</button>
   </div>
   <div class="results">
     <app-page-loader [loading]="loading">
       <div fxLayout="column" fxLayoutGap="5px">
-        <div *ngFor="let leve of results;let odd=odd" class="leve-row" [class.odd]="odd">
-          <div fxLayout="row wrap" fxFlex="1 1 auto" fxLayoutAlign="flex-start center" nz-row>
+        <div *ngFor="let leve of results;let odd=odd" [class.odd]="odd" class="leve-row">
+          <div fxFlex="1 1 auto" fxLayout="row wrap" fxLayoutAlign="flex-start center" nz-row>
             <div fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzSm="4">
-              <label nz-checkbox class="select-box" [(ngModel)]="leve.selected"
-                     (ngModelChange)="updateAllSelected(results)"></label>
+              <label (ngModelChange)="updateAllSelected(results)" [(ngModel)]="leve.selected" class="select-box"
+                     nz-checkbox></label>
               <div>
                 <app-item-icon [icon]="leve.itemIcon | xivapiIcon" [itemId]="leve.itemId" [width]="32"></app-item-icon>
               </div>
               <div fxLayout="column">
-                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                   <div>{{leve.name | i18n}}</div>
-                  <app-db-button type="leve" [id]="leve.id"></app-db-button>
+                  <app-db-button [id]="leve.id" type="leve"></app-db-button>
                 </div>
                 <div>
                   {{leve.itemId | itemName | i18n}}
@@ -96,7 +96,7 @@
                 </div>
               </div>
             </div>
-            <div fxLayout="column" fxFlex="1 1 auto">
+            <div fxFlex="1 1 auto" fxLayout="column">
               <div nz-row>
                 <div class="list-center" nz-col nzSm="2">
                   <b>{{leve.level}} {{leve.jobId | jobAbbr | i18n}}</b>
@@ -115,43 +115,43 @@
                   <b>Gil:</b> {{getLeveGil(leve) | number}}
                 </div>
                 <div nz-col nzSm="6">
-                  <label nz-checkbox class="hq-checkbox" [(ngModel)]="leve.hq">
+                  <label [(ngModel)]="leve.hq" class="hq-checkbox" nz-checkbox>
                     {{'Hq' | translate}}
                   </label>
-                  <nz-input-number class="amount" [nzMin]="0" [nzMax]="999" [nzPrecision]="0"
-                                   [(ngModel)]="leve.amount"></nz-input-number>
-                  <label nz-checkbox class="all-deliveries" [(ngModel)]="leve.allDeliveries"
-                         *ngIf="leve.repeats > 0">
+                  <nz-input-number [(ngModel)]="leve.amount" [nzMax]="999" [nzMin]="0" [nzPrecision]="0"
+                                   class="amount"></nz-input-number>
+                  <label *ngIf="leve.repeats > 0" [(ngModel)]="leve.allDeliveries" class="all-deliveries"
+                         nz-checkbox>
                     {{'LEVEQUESTS.All_deliveries' | translate:({ value: leve.repeats + 1 })}}
                   </label>
                 </div>
-                <div nz-col nzSm="4" class="actions">
-                  <button nz-button nzType="primary" nzShape="circle" nz-tooltip
-                          [nzTitle]="'LEVEQUESTS.Add_to_list' | translate" (click)="addLevesToList([leve])">
+                <div class="actions" nz-col nzSm="4">
+                  <button (click)="addLevesToList([leve])" [nzTitle]="'LEVEQUESTS.Add_to_list' | translate" nz-button nz-tooltip
+                          nzShape="circle" nzType="primary">
                     <i nz-icon nzType="plus"></i>
                   </button>
-                  <button nz-button nzType="primary" nzShape="circle" nz-tooltip
-                          [nzTitle]="'Quick_list_create' | translate" (click)="createQuickList(leve)">
+                  <button (click)="createQuickList(leve)" [nzTitle]="'Quick_list_create' | translate" nz-button nz-tooltip
+                          nzShape="circle" nzType="primary">
                     <i nz-icon nzType="clock-circle-o"></i>
                   </button>
                 </div>
               </div>
               <ng-container *ngIf="computeExp">
-                <div *ngIf="getExp(getLeveExp(leve), results) as resultExp" fxLayout="row" fxLayoutGap="5px"
-                     fxLayoutAlign="center center">
+                <div *ngIf="getExp(getLeveExp(leve), results) as resultExp" fxLayout="row" fxLayoutAlign="center center"
+                     fxLayoutGap="5px">
                   <div>Lvl.{{resultExp.level}}</div>
-                  <nz-progress nz-tooltip
-                               nzTitle="{{resultExp.exp | number}}/{{getMaxExp(resultExp.level) | number}}"
+                  <nz-progress [nzPercent]="resultExp.expPercent"
+                               [nzShowInfo]="false"
                                fxFlex="1 1 auto"
-                               [nzPercent]="resultExp.expPercent"
-                               [nzShowInfo]="false"></nz-progress>
+                               nz-tooltip
+                               nzTitle="{{resultExp.exp | number}}/{{getMaxExp(resultExp.level) | number}}"></nz-progress>
                 </div>
               </ng-container>
             </div>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center">
-          <button nz-button (click)="addSelectedLevesToList(results)">{{'LISTS.Add_selection' | translate}}</button>
+          <button (click)="addSelectedLevesToList(results)" nz-button>{{'LISTS.Add_selection' | translate}}</button>
         </div>
       </div>
     </app-page-loader>
@@ -163,8 +163,8 @@
 
 <ng-template #notificationRef let-notification>
   <div class="ant-notification-notice-content ant-notification-notice-with-icon">
-    <span class="ant-notification-notice-icon"><i nz-icon nzType="circle-o"
-                                                  class="ant-notification-notice-icon-success"></i></span>
+    <span class="ant-notification-notice-icon"><i class="ant-notification-notice-icon-success" nz-icon
+                                                  nzType="circle-o"></i></span>
     <div>
       <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
       <div class="ant-notification-notice-description">
@@ -175,7 +175,7 @@
         } }}</span>
       </div>
       <span class="ant-notification-notice-btn">
-            <a nz-button nzType="primary" (click)="notification.close();" routerLink="/list/{{modifiedList.$key}}">
+            <a (click)="notification.close();" nz-button nzType="primary" routerLink="/list/{{modifiedList.$key}}">
               <span>{{'Open' | translate}}</span>
             </a>
           </span>

@@ -1,10 +1,10 @@
 <div *ngIf="servers$ | async as availableServers; else loading">
-  <nz-alert *ngIf="localstorageUser?.stats && localstorageUser?.stats !== {} && mandatory" nzType="warning" nzShowIcon
-            [nzMessage]="'COMMON.Warning' | translate" [nzDescription]="'Character_add_warning' | translate">
+  <nz-alert *ngIf="localstorageUser?.stats && localstorageUser?.stats !== {} && mandatory" [nzDescription]="'Character_add_warning' | translate" [nzMessage]="'COMMON.Warning' | translate"
+            nzShowIcon nzType="warning">
   </nz-alert>
   <nz-form-item>
-    <nz-form-label nzRequired nzFor="serverName">{{'Server_name' | translate}}</nz-form-label>
-    <input type="text" id="serverName" nz-input [formControl]="selectedServer" [nzAutocomplete]="auto" autofocus>
+    <nz-form-label nzFor="serverName" nzRequired>{{'Server_name' | translate}}</nz-form-label>
+    <input [formControl]="selectedServer" [nzAutocomplete]="auto" autofocus id="serverName" nz-input type="text">
     <nz-autocomplete #auto>
       <nz-auto-option *ngFor="let server of autoCompleteRows$ | async" [nzValue]="server">
         {{server}}
@@ -13,12 +13,12 @@
   </nz-form-item>
 
   <nz-form-item>
-    <nz-form-label nzRequired nzFor="characterName">{{'Character_name' | translate}}
+    <nz-form-label nzFor="characterName" nzRequired>{{'Character_name' | translate}}
     </nz-form-label>
-    <input type="text" id="characterName" nz-input [formControl]="characterName">
+    <input [formControl]="characterName" id="characterName" nz-input type="text">
   </nz-form-item>
-  <button nz-button nzType="primary" (click)="setKoreanCharacter()"
-          *ngIf="selectedServer.value && selectedServer.value.toString().toLowerCase().indexOf('korean server') !== -1">
+  <button (click)="setKoreanCharacter()" *ngIf="selectedServer.value && selectedServer.value.toString().toLowerCase().indexOf('korean server') !== -1" nz-button
+          nzType="primary">
     {{'Add_manual_character' | translate}}
   </button>
 </div>
@@ -32,11 +32,11 @@
       <ng-template #characterTemplate let-item>
         <nz-list-item [nzActions]="[selectAction]">
           <ng-template #selectAction>
-            <button nz-button nzType="primary" (click)="selectCharacter(item)">{{'COMMON.Select' | translate}}</button>
+            <button (click)="selectCharacter(item)" nz-button nzType="primary">{{'COMMON.Select' | translate}}</button>
           </ng-template>
           <nz-list-item-meta
-            [nzTitle]="nzTitle"
-            [nzAvatar]="item.Avatar">
+            [nzAvatar]="item.Avatar"
+            [nzTitle]="nzTitle">
             <ng-template #nzTitle>
               <span>{{item.Name}}</span>
             </ng-template>
@@ -49,19 +49,19 @@
   <nz-divider [nzText]="'Or' | translate"></nz-divider>
 
   <nz-form-item>
-    <nz-form-label nzRequired nzFor="characterName">{{'LodestoneId' | translate}}
+    <nz-form-label nzFor="characterName" nzRequired>{{'LodestoneId' | translate}}
     </nz-form-label>
-    <input type="number" id="LodestoneId" nz-input [formControl]="lodestoneId">
+    <input [formControl]="lodestoneId" id="LodestoneId" nz-input type="number">
   </nz-form-item>
   <div *ngIf="lodestoneIdCharacter$ | async as lodestoneIdCharacter">
     <nz-list-item [nzActions]="[selectAction]">
       <ng-template #selectAction>
-        <button nz-button nzType="primary"
-                (click)="selectCharacter(lodestoneIdCharacter)">{{'COMMON.Select' | translate}}</button>
+        <button (click)="selectCharacter(lodestoneIdCharacter)" nz-button
+                nzType="primary">{{'COMMON.Select' | translate}}</button>
       </ng-template>
       <nz-list-item-meta
-        [nzTitle]="nzTitle"
-        [nzAvatar]="lodestoneIdCharacter.Avatar">
+        [nzAvatar]="lodestoneIdCharacter.Avatar"
+        [nzTitle]="nzTitle">
         <ng-template #nzTitle>
           <span>{{lodestoneIdCharacter.Name}}</span>
         </ng-template>
@@ -70,12 +70,12 @@
   </div>
 </div>
 
-<label nz-checkbox [(ngModel)]="useAsDefault">{{'Use_as_default_character' | translate}}</label>
+<label [(ngModel)]="useAsDefault" nz-checkbox>{{'Use_as_default_character' | translate}}</label>
 
 <div *ngIf="mandatory">
   <nz-divider [nzText]="'Or' | translate"></nz-divider>
 
-  <button nz-button nzBlock (click)="logOut()" nzType="danger">
+  <button (click)="logOut()" nz-button nzBlock nzType="danger">
     {{'Disconnect_and_anonymous' | translate}}
   </button>
 </div>

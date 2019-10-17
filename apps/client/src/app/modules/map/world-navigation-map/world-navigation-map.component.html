@@ -1,64 +1,67 @@
 <div *ngIf="optimizedPath$ | async as paths; else loading" fxLayout="column" fxLayoutGap="10px">
   <div fxLayout="row" fxLayoutGap="10px">
-    <button nz-button (click)="currentPath = paths[paths.indexOf(currentPath) - 1]"
-            [disabled]="paths.indexOf(currentPath) <= 0">
+    <button (click)="currentPath = paths[paths.indexOf(currentPath) - 1]" [disabled]="paths.indexOf(currentPath) <= 0"
+            nz-button>
       <i nz-icon nzType="step-backward"></i>
     </button>
-    <nz-select style="width: 120px;" [(ngModel)]="currentPath" fxFlex="1 1 auto">
-      <nz-option *ngFor="let path of paths" [nzValue]="path"
-                 [nzLabel]="path.map.placename_id | placeName | i18n"></nz-option>
+    <nz-select [(ngModel)]="currentPath" fxFlex="1 1 auto" style="width: 120px;">
+      <nz-option *ngFor="let path of paths" [nzLabel]="path.map.placename_id | placeName | i18n"
+                 [nzValue]="path"></nz-option>
     </nz-select>
-    <button nz-button (click)="currentPath = paths[paths.indexOf(currentPath) + 1]"
-            [disabled]="paths.indexOf(currentPath) >= paths.length - 1">
+    <button (click)="currentPath = paths[paths.indexOf(currentPath) + 1]" [disabled]="paths.indexOf(currentPath) >= paths.length - 1"
+            nz-button>
       <i nz-icon nzType="step-forward"></i>
     </button>
   </div>
-  <div class="navigation-container" #container>
+  <div #container class="navigation-container">
     <app-map [mapId]="currentPath.map.id"></app-map>
-    <svg style="width:100%;height:100%;" class="navigation-svg">
+    <svg class="navigation-svg" style="width:100%;height:100%;">
       <defs>
-        <marker id="walkarrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <marker id="walkarrow" markerHeight="6" markerWidth="6" orient="auto" refX="10" refY="5" viewBox="0 0 10 10">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="red"/>
         </marker>
-        <marker id="walkarrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <marker id="walkarrow" markerHeight="6" markerWidth="6" orient="auto" refX="10" refY="5" viewBox="0 0 10 10">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="blue"/>
         </marker>
       </defs>
       <g *ngFor="let step of currentPath.steps; let i = index">
         <line *ngIf="i > 0 && currentPath.map !== undefined && containerRef !== undefined"
-              [attr.x1]="getPositionPercent(currentPath.map, currentPath.steps[i-1]).x"
-              [attr.y1]="getPositionPercent(currentPath.map, currentPath.steps[i-1]).y"
-              [attr.x2]="getPositionPercent(currentPath.map, step).x"
-              [attr.y2]="getPositionPercent(currentPath.map, step).y"
-              stroke-width="2"
+              [attr.marker-end]="'url('+(step.isTeleport?'#tparrow':'#walkarrow')+')'"
               [attr.stroke]="step.isTeleport?'blue':'red'"
-              [attr.marker-end]="'url('+(step.isTeleport?'#tparrow':'#walkarrow')+')'">
+              [attr.x1]="getPositionPercent(currentPath.map, currentPath.steps[i-1]).x"
+              [attr.x2]="getPositionPercent(currentPath.map, step).x"
+              [attr.y1]="getPositionPercent(currentPath.map, currentPath.steps[i-1]).y"
+              [attr.y2]="getPositionPercent(currentPath.map, step).y"
+              stroke-width="2">
         </line>
       </g>
     </svg>
   </div>
-  <nz-list [nzHeader]="'NAVIGATION.Steps' | translate" [nzDataSource]="currentPath.steps" [nzRenderItem]="stepTemplate">
+  <nz-list [nzDataSource]="currentPath.steps" [nzHeader]="'NAVIGATION.Steps' | translate" [nzRenderItem]="stepTemplate">
     <ng-template #stepTemplate let-step>
       <nz-list-item [nzContent]="rowContent">
-        <nz-list-item-meta [nzAvatar]="avatar" nzDescription="X: {{step.x}} - Y: {{step.y}}"
-                           [nzTitle]="step.name | i18n">
+        <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="step.name | i18n"
+                           nzDescription="X: {{step.x}} - Y: {{step.y}}">
           <ng-template #rowContent>
-            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+            <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
               <div *ngIf="step.type !== undefined && markedAsDone.indexOf(step) === -1">
-                {{('NAVIGATION.STEP.' + step.type) | translate: { amount: step.item_amount, total: step.total_item_amount } }}
+                {{('NAVIGATION.STEP.' + step.type) | translate: {
+                amount: step.item_amount,
+                total: step.total_item_amount
+              } }}
               </div>
-              <button nz-button nzShape="circle" nzType="primary" nzSize="small"
-                      *ngIf="step.type !== undefined && markedAsDone.indexOf(step) === -1"
-                      (click)="markStepAsDone(step)">
+              <button (click)="markStepAsDone(step)" *ngIf="step.type !== undefined && markedAsDone.indexOf(step) === -1" nz-button nzShape="circle"
+                      nzSize="small"
+                      nzType="primary">
                 <i nz-icon nzType="check"></i>
               </button>
             </div>
           </ng-template>
           <ng-template #avatar>
-            <img src="./assets/icons/Aetheryte.png" alt="" *ngIf="step.isTeleport">
-            <img class="item-icon" src="{{step.itemId | lazyIcon}}" alt=""
-                 *ngIf="!step.isTeleport && step.itemId !== undefined">
-            <i class="material-icon" *ngIf="!step.isTeleport && step.iconid === undefined">location_on</i>
+            <img *ngIf="step.isTeleport" alt="" src="./assets/icons/Aetheryte.png">
+            <img *ngIf="!step.isTeleport && step.itemId !== undefined" alt="" class="item-icon"
+                 src="{{step.itemId | lazyIcon}}">
+            <i *ngIf="!step.isTeleport && step.iconid === undefined" class="material-icon">location_on</i>
           </ng-template>
         </nz-list-item-meta>
       </nz-list-item>

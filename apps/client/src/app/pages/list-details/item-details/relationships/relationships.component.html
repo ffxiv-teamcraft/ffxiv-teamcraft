@@ -1,10 +1,10 @@
 <div *ngIf="requires$ | async as requires">
-  <nz-list [nzDataSource]="requires"
-           *ngIf="requires.length > 0"
+  <nz-list *ngIf="requires.length > 0"
+           [nzDataSource]="requires"
            [nzHeader]="'Requires' | translate"
            [nzRenderItem]="requirement">
     <ng-template #requirement let-req>
-      <nz-list-item class="item-row" [class.done]="req.amount <= req.done" [class.craftable]="req.canBeCrafted">
+      <nz-list-item [class.craftable]="req.canBeCrafted" [class.done]="req.amount <= req.done" class="item-row">
         <nz-list-item-meta [nzAvatar]="itemIcon" [nzTitle]="req.id | itemName | i18n"
                            nzDescription="x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}} x {{((item.amount_needed - item.done / item.yield) | ceil)}})">
         </nz-list-item-meta>
@@ -16,12 +16,12 @@
   </nz-list>
 </div>
 <div *ngIf="requiredBy$ | async as requiredBy">
-  <nz-list [nzDataSource]="requiredBy"
-           *ngIf="requiredBy.length > 0"
+  <nz-list *ngIf="requiredBy.length > 0"
+           [nzDataSource]="requiredBy"
            [nzHeader]="'Used_for' | translate"
            [nzRenderItem]="requiredByRow">
     <ng-template #requiredByRow let-req>
-      <nz-list-item class="item-row" [class.done]="req.amount <= req.done" [class.craftable]="req.canBeCrafted">
+      <nz-list-item [class.craftable]="req.canBeCrafted" [class.done]="req.amount <= req.done" class="item-row">
         <nz-list-item-meta [nzAvatar]="itemIcon" [nzTitle]="req.id | itemName | i18n"></nz-list-item-meta>
         <ng-template #itemIcon>
           <app-item-icon [icon]="req.icon" [itemId]="req.id" [width]="32"></app-item-icon>

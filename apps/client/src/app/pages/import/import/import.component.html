@@ -3,22 +3,22 @@
   <div class="description">
     {{'LISTS.Import_description' | translate}}
   </div>
-  <div *ngIf="items$ | async as data; else loading" fxLayout="column" class="items-container">
-    <div class="item-row" fxLayout="row" fxLayoutGap="5px" *ngFor="let row of data.items; let odd = odd;"
-         fxLayoutAlign="flex-start center" [class.odd]="odd">
-      <app-item-icon [width]="32" [itemId]="row.itemData.item.id" [icon]="row.itemData.item.icon"></app-item-icon>
+  <div *ngIf="items$ | async as data; else loading" class="items-container" fxLayout="column">
+    <div *ngFor="let row of data.items; let odd = odd;" [class.odd]="odd" class="item-row" fxLayout="row"
+         fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <app-item-icon [icon]="row.itemData.item.icon" [itemId]="row.itemData.item.id" [width]="32"></app-item-icon>
       <div class="item-name">{{row.itemData.item.id | itemName | i18n}} x{{row.quantity}}</div>
       <div fxFlex="1 1 auto">
-        <nz-alert nzType="error" *ngIf="row.itemData.isCraft() && row.recipeId === null"
-                  [nzMessage]="'LISTS.Please_pick_recipe' | translate" nzShowIcon></nz-alert>
+        <nz-alert *ngIf="row.itemData.isCraft() && row.recipeId === null" [nzMessage]="'LISTS.Please_pick_recipe' | translate"
+                  nzShowIcon nzType="error"></nz-alert>
       </div>
-      <nz-radio-group [(ngModel)]="row.recipeId" *ngIf="row.itemData.isCraft()">
-        <label nz-radio-button [nzValue]="craft.id.toString()" *ngFor="let craft of row.itemData.item.craft">
+      <nz-radio-group *ngIf="row.itemData.isCraft()" [(ngModel)]="row.recipeId">
+        <label *ngFor="let craft of row.itemData.item.craft" [nzValue]="craft.id.toString()" nz-radio-button>
           {{craft.job | jobAbbr | i18n}} {{craft.lvl}}
         </label>
       </nz-radio-group>
     </div>
-    <button nz-button nzBlock nzType="primary" (click)="doImport(data)" [disabled]="!canDoImport(data)">
+    <button (click)="doImport(data)" [disabled]="!canDoImport(data)" nz-button nzBlock nzType="primary">
       {{'LISTS.Add_to_a_list' | translate}}
     </button>
   </div>

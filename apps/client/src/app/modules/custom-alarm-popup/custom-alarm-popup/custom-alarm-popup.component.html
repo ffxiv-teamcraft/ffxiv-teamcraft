@@ -1,51 +1,51 @@
-<form nz-form [formGroup]="form" (ngSubmit)="submit()">
+<form (ngSubmit)="submit()" [formGroup]="form" nz-form>
   <nz-form-item>
-    <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired nzFor="name">{{'ALARMS.CUSTOM.Name' | translate}}</nz-form-label>
+    <nz-form-label [nzSm]="8" [nzXs]="24" nzFor="name" nzRequired>{{'ALARMS.CUSTOM.Name' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <input nz-input required formControlName="name" id="name">
+      <input formControlName="name" id="name" nz-input required>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Spawn' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-input-group nzAddOnAfter=":00" class="spawn-input">
-        <nz-input-number class="input-number-with-addon" [nzMin]="0" [nzStep]="1" [nzMax]="23" id="spawn"
-                         formControlName="spawn"></nz-input-number>
+      <nz-input-group class="spawn-input" nzAddOnAfter=":00">
+        <nz-input-number [nzMax]="23" [nzMin]="0" [nzStep]="1" class="input-number-with-addon" formControlName="spawn"
+                         id="spawn"></nz-input-number>
       </nz-input-group>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Spawns_twice' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <label nz-checkbox formControlName="spawnsTwice" nz-tooltip
-             [nzTitle]="'ALARMS.CUSTOM.Spawns_twice_description' | translate"></label>
+      <label [nzTitle]="'ALARMS.CUSTOM.Spawns_twice_description' | translate" formControlName="spawnsTwice" nz-checkbox
+             nz-tooltip></label>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Duration' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-input-number formControlName="duration" [nzMin]="0" [nzStep]="1"></nz-input-number>
+      <nz-input-number [nzMin]="0" [nzStep]="1" formControlName="duration"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Slot' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-input-number formControlName="slot" [nzMin]="0" [nzMax]="8" [nzStep]="1"></nz-input-number>
+      <nz-input-number [nzMax]="8" [nzMin]="0" [nzStep]="1" formControlName="slot"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Type' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="type">
-        <nz-option [nzValue]="0" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(0 | nodeTypeName)) | translate">
+        <nz-option [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(0 | nodeTypeName)) | translate" [nzValue]="0">
         </nz-option>
-        <nz-option [nzValue]="1" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(1 | nodeTypeName)) | translate">
+        <nz-option [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(1 | nodeTypeName)) | translate" [nzValue]="1">
         </nz-option>
-        <nz-option [nzValue]="2" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(2 | nodeTypeName)) | translate">
+        <nz-option [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(2 | nodeTypeName)) | translate" [nzValue]="2">
         </nz-option>
-        <nz-option [nzValue]="3" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(3 | nodeTypeName)) | translate">
+        <nz-option [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(3 | nodeTypeName)) | translate" [nzValue]="3">
         </nz-option>
-        <nz-option [nzValue]="4" [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(4 | nodeTypeName)) | translate">
+        <nz-option [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(4 | nodeTypeName)) | translate" [nzValue]="4">
         </nz-option>
       </nz-select>
     </nz-form-control>
@@ -53,8 +53,9 @@
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-select formControlName="mapId" *ngIf="maps$ | async as maps; else loading" nzAllowClear nzShowSearch>
-        <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName.ID | placeName | i18n" [nzValue]="map.ID"></nz-option>
+      <nz-select *ngIf="maps$ | async as maps; else loading" formControlName="mapId" nzAllowClear nzShowSearch>
+        <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName.ID | placeName | i18n"
+                   [nzValue]="map.ID"></nz-option>
       </nz-select>
       <ng-template #loading>
         <nz-spin></nz-spin>
@@ -65,7 +66,8 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Weather' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="weathers" nzAllowClear nzMode="multiple">
-        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | weatherName | i18n" [nzValue]="weather"></nz-option>
+        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | weatherName | i18n"
+                   [nzValue]="weather"></nz-option>
       </nz-select>
     </nz-form-control>
   </nz-form-item>
@@ -73,23 +75,24 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Weather_from' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="weathersFrom" nzAllowClear nzMode="multiple">
-        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | weatherName | i18n" [nzValue]="weather"></nz-option>
+        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | weatherName | i18n"
+                   [nzValue]="weather"></nz-option>
       </nz-select>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">X</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-input-number formControlName="x" [nzMin]="0"></nz-input-number>
+      <nz-input-number [nzMin]="0" formControlName="x"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">Y</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-input-number formControlName="y" [nzMin]="0"></nz-input-number>
+      <nz-input-number [nzMin]="0" formControlName="y"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
-  <button nz-button nzType="primary" type="submit" [disabled]="!form.valid">
+  <button [disabled]="!form.valid" nz-button nzType="primary" type="submit">
     {{'Submit' | translate}}
   </button>
 </form>

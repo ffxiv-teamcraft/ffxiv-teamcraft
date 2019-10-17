@@ -1,20 +1,20 @@
-<input type="text" placeholder="{{'CUSTOM_ITEMS.NPC_PICKER.Npc_name' | translate}}" #searchInput nz-input
-       (keyup)="query$.next(searchInput.value)" nzAutoFocus>
-<nz-list [nzLoading]="loading" [nzRenderItem]="npcTemplate" [nzDataSource]="results$ | async">
+<input #searchInput (keyup)="query$.next(searchInput.value)" nz-input nzAutoFocus
+       placeholder="{{'CUSTOM_ITEMS.NPC_PICKER.Npc_name' | translate}}" type="text">
+<nz-list [nzDataSource]="results$ | async" [nzLoading]="loading" [nzRenderItem]="npcTemplate">
   <ng-template #npcTemplate let-npc>
     <nz-list-item [nzContent]="content">
-      <nz-list-item-meta [nzTitle]="npc.id | npcName | i18n"
-                         [nzDescription]="description">
+      <nz-list-item-meta [nzDescription]="description"
+                         [nzTitle]="npc.id | npcName | i18n">
         <ng-template #description>
           <div *ngIf="npc?.position !== null" fxLayout="row">
             <div>{{npc?.position?.zoneid | placeName | i18n}}</div>
-            <app-map-position [zoneId]="npc?.position?.zoneid" [marker]="npc?.position"
-                              [mapId]="npc?.position?.map"></app-map-position>
+            <app-map-position [mapId]="npc?.position?.map" [marker]="npc?.position"
+                              [zoneId]="npc?.position?.zoneid"></app-map-position>
           </div>
         </ng-template>
       </nz-list-item-meta>
       <ng-template #content>
-        <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pick(npc)">
+        <button (click)="pick(npc)" [nzShape]="'circle'" [nzType]="'primary'" nz-button>
           <i nz-icon nzType="check"></i>
         </button>
       </ng-template>
