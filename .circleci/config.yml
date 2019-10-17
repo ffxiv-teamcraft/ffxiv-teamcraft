@@ -2,6 +2,7 @@ defaults: &defaults
   working_directory: ~/ffxiv-teamcraft
   docker:
     - image: supamiu/circleci-node-wine
+  resource_class: medium+
 
 
 version: 2
