@@ -1534,8 +1534,8 @@
     "Please_zone": "Veuillez téléporter à un endroit aléatoire et ouvrir votre sac à dos chocobo une fois que vous êtes arrivé pour initialiser correctement le système d'inventaire.",
     "No_character_id": "Aucun jeu d'identifiant de caractère ingame",
     "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et dans (ingame), cela n'est nécessaire qu'une fois.",
-    "Inventory_outdated": "Your inventory is outdated",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
+    "Inventory_outdated": "Votre inventaire est obsolète",
+    "Please_update_inventory_popup": "Veuillez changer de zone (en vous téléportant ou en entrant dans une maison) afin de mettre à jour votre inventaire. Ce popup se fermera une fois que se sera effectué."
   },
   "INVENTORY": {
     "Title": "Inventaire",
