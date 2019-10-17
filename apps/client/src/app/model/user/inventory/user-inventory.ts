@@ -24,7 +24,7 @@ export class UserInventory extends DataWithPermissions {
   updateInventorySlot(packet: any, lastSpawnedRetainer: string): InventoryPatch | null {
     const isRetainer = packet.containerId >= 10000 && packet.containerId < 20000;
     const containerKey = isRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
-    if (this.items[containerKey] === undefined || this.items[containerKey][packet.slot] === undefined) {
+    if (this.items[containerKey] === undefined) {
       return null;
     }
     let item = this.items[containerKey][packet.slot];
@@ -39,7 +39,7 @@ export class UserInventory extends DataWithPermissions {
         spiritBond: item.spiritBond
       };
     }
-    // This can happen if user modifies inventory before zoning.
+    // Happens if you add an item that you never had in your inventory before (in an empty slot)
     if (item === undefined) {
       const entry: InventoryItem = {
         itemId: packet.catalogId,
