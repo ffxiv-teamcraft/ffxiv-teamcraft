@@ -35,7 +35,7 @@ export class LayoutsFacade {
       }),
       map(layout => {
         layout.rows = layout.rows.sort((a, b) => a.index - b.index);
-        if (!layout.rows.some(row => row.isOtherRow())) {
+        if (!layout.rows.some(row => row.isOtherRow && row.isOtherRow())) {
           layout.rows.push(new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name,
             7, true, false, true, false, false, true));
         }
@@ -75,7 +75,7 @@ export class LayoutsFacade {
                 return a.index - b.index;
               })
               .map((row: LayoutRow) => {
-                const result: FilterResult = row.doFilter(unfilteredRows, user.itemTags);
+                const result: FilterResult = row.doFilter(unfilteredRows, user.itemTags, list);
                 unfilteredRows = result.rejected;
                 // If it's using a tiers display, don't sort now, we'll sort later on, inside the display.
                 let orderedAccepted = row.tiers ? result.accepted : this.layoutOrder.order(result.accepted, row.orderBy, row.order);

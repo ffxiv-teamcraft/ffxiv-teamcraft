@@ -18,7 +18,7 @@ import { LinkToolsService } from '../../../core/tools/link-tools.service';
 })
 export class ImportComponent {
 
-  public items$: Observable<{ itemData: ItemData, quantity: number, recipeId?: string }[]>;
+  public items$: Observable<{ items: { itemData: ItemData, quantity: number, recipeId?: string }[], url: string }>;
 
   wrongFormat = false;
 
@@ -27,30 +27,33 @@ export class ImportComponent {
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private listsFacade: ListsFacade, private http: HttpClient, private linkTools: LinkToolsService) {
 
-    // To test: http://localhost:4200/import/MjA1NDUsbnVsbCwzOzE3OTYyLDMyMzA4LDE7MjAyNDcsbnVsbCwx
-    this.items$ = this.route.paramMap.pipe(
-      map(params => params.get('importString')),
-      map(importString => {
+    // To test: http://localhost:4200/import/MjA1NDUsbnVsbCwzOzE3OTYyLDMyMzA4LDE7MjAyNDcsbnVsbCwx&url=https://example.org
+    this.items$ = combineLatest([this.route.paramMap, this.route.queryParamMap]).pipe(
+      map(([params, query]) => [params.get('importString'), query.get('url')]),
+      map(([importString, url]) => {
         const parsed = atob(importString);
         if (parsed.indexOf(',') === -1) {
           this.wrongFormat = true;
-          return [];
+          return { items: [], url: url };
         }
         const exploded = parsed.split(';');
-        return exploded.map(row => {
-          const rowContent = row.split(',');
-          const itemId = +rowContent[0];
-          const recipeId = rowContent[1] === 'null' ? null : rowContent[1];
-          const quantity = +rowContent[2];
-          return {
-            itemId: itemId,
-            recipeId: recipeId,
-            quantity: quantity
-          };
-        });
+        return {
+          items: exploded.map(row => {
+            const rowContent = row.split(',');
+            const itemId = +rowContent[0];
+            const recipeId = rowContent[1] === 'null' ? null : rowContent[1];
+            const quantity = +rowContent[2];
+            return {
+              itemId: itemId,
+              recipeId: recipeId,
+              quantity: quantity
+            };
+          }),
+          url: url
+        };
       }),
-      switchMap(rows => {
-        return combineLatest(rows.map(row => {
+      switchMap(parsed => {
+        return combineLatest(parsed.items.map(row => {
           return this.dataService.getItem(row.itemId).pipe(
             map(itemData => {
               const res = {
@@ -65,35 +68,45 @@ export class ImportComponent {
               return res;
             })
           );
-        }));
+        })).pipe(
+          map(items => {
+            return {
+              items: items,
+              url: parsed.url
+            };
+          })
+        );
       })
     );
   }
 
-  canDoImport(data: { itemData: ItemData, quantity: number, recipeId?: string }[]): boolean {
-    return data.reduce((valid, row) => {
+  canDoImport(data: { items: { itemData: ItemData, quantity: number, recipeId?: string }[], url: string }): boolean {
+    return data.items.reduce((valid, row) => {
       return valid && (!row.itemData.isCraft() || row.recipeId !== null);
     }, true);
   }
 
-  doImport(data: { itemData: ItemData, quantity: number, recipeId?: string }[]): void {
+  doImport(data: { items: { itemData: ItemData, quantity: number, recipeId?: string }[], url: string }): void {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
+        if (data.url) {
+          list.note = data.url;
+        }
         const operation$ = concat(
-          ...data.map(row => {
+          ...data.items.map(row => {
             return this.listManager.addToList(row.itemData.item.id, list, +row.recipeId, row.quantity);
           })
         );
         return this.progressService.showProgress(operation$,
-          data.length,
+          data.items.length,
           'Adding_recipes',
-          { amount: data.length, listname: list.name });
+          { amount: data.items.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
       mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
-          combineLatest(this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$).pipe(
+          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
             map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
             map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
             filter(l => l !== undefined),

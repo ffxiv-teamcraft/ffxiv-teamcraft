@@ -5,12 +5,14 @@
     </ng-container>
     <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null" [nzSuffix]="suffixTemplate">
       <input class="search-input" type="text"
-             placeholder="{{'Search_placeholder' | translate:{type: searchType$ | async} }}" #searchInput nz-input
+             placeholder="{{'Search_placeholder' | translate:{type: ('SEARCH_TYPES.' + (searchType$ | async)) | translate} }}"
+             #searchInput nz-input
              [ngModel]="query$.value"
              autofocus
-             [nzAutocomplete]="settings.disableSearchHistory?null:auto"
-             (input)="query$.next(searchInput.value)"
-             (ngModelChange)="query$.next($event)">
+             [nzAutocomplete]="settings.disableSearchHistory?emptyFill:auto"
+             (input)="!settings.disableSearchDebounce?query$.next(searchInput.value):null"
+             (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null"
+             (keydown.enter)="query$.next(searchInput.value)">
       <ng-template #suffixTemplate>
         <i
           nz-icon
@@ -27,6 +29,7 @@
             [nzTitle]="'ITEMS.Share_url' | translate">
       <i nz-icon type="share-alt"></i>
     </button>
+    <nz-autocomplete #emptyFill></nz-autocomplete>
     <nz-autocomplete nzBackfill #auto>
       <nz-auto-option *ngFor="let option of autocomplete$ | async" [nzValue]="option">
         {{ option }}

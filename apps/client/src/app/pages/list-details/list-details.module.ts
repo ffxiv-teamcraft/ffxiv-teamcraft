@@ -40,6 +40,7 @@ import { ItemPickerModule } from '../../modules/item-picker/item-picker.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { ItemDetailsPopupsModule } from './item-details/item-details-popups.module';
+import { ListContributionsComponent } from './list-contributions/list-contributions.component';
 
 const routes: Routes = [
   {
@@ -97,13 +98,15 @@ const routes: Routes = [
     ListHistoryPopupComponent,
     InventoryViewComponent,
     TotalPanelPricePopupComponent,
-    RelationshipsComponent
+    RelationshipsComponent,
+    ListContributionsComponent
   ],
   entryComponents: [
     ListHistoryPopupComponent,
     InventoryViewComponent,
     TotalPanelPricePopupComponent,
-    RelationshipsComponent
+    RelationshipsComponent,
+    ListContributionsComponent
   ]
 })
 export class ListDetailsModule {

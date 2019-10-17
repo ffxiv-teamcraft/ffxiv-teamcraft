@@ -9,7 +9,8 @@ import {
   map,
   pairwise,
   shareReplay,
-  startWith, switchMap,
+  startWith,
+  switchMap,
   takeUntil,
   tap
 } from 'rxjs/operators';
@@ -63,7 +64,8 @@ import {
   GearSet,
   Simulation,
   SimulationReliabilityReport,
-  SimulationResult
+  SimulationResult,
+  StepState
 } from '@ffxiv-teamcraft/simulator';
 import { SolverPopupComponent } from '../solver-popup/solver-popup.component';
 import { SettingsService } from '../../../../modules/settings/settings.service';
@@ -175,6 +177,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   private hqIngredients$: BehaviorSubject<{ id: number, amount: number }[]> =
     new BehaviorSubject<{ id: number, amount: number }[]>([]);
 
+  private forcedStartingQuality$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
   @Input()
   public set hqIngredients(ingredients: { id: number, amount: number, quality: number }[]) {
     this.hqIngredients$.next(ingredients);
@@ -189,7 +193,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private job$: Observable<any>;
 
-  private forceFailed$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+  private stepStates$: BehaviorSubject<{ [index: number]: StepState }> = new BehaviorSubject<{ [index: number]: StepState }>({});
 
   // Regex stuff for macro import
   private findActionsRegex: RegExp =
@@ -551,13 +555,15 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
   }
 
-  toggleFailAction(index: number): void {
-    const forceFailed = this.forceFailed$.value;
-    if (forceFailed.some(i => i === index)) {
-      this.forceFailed$.next(forceFailed.filter(i => i !== index));
-    } else {
-      this.forceFailed$.next([...forceFailed, index]);
+  setState(index: number, state: StepState): void {
+    const newStates = { ...this.stepStates$.value, [index]: state };
+    if (state === StepState.EXCELLENT) {
+      newStates[index + 1] = StepState.POOR;
     }
+    if (state === StepState.POOR) {
+      newStates[index - 1] = StepState.EXCELLENT;
+    }
+    this.stepStates$.next(newStates);
   }
 
   applyStats(): void {
@@ -845,9 +851,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.forceFailed$]).pipe(
-      map(([recipe, actions, stats, hqIngredients, forceFailed]) => {
-        return new Simulation(recipe, actions, stats, hqIngredients, forceFailed);
+    this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.stepStates$, this.forcedStartingQuality$]).pipe(
+      map(([recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality]) => {
+        return new Simulation(recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality);
       }),
       shareReplay(1)
     );

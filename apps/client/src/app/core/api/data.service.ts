@@ -17,6 +17,7 @@ import { LeveData } from '../../model/garland-tools/leve-data';
 import { MobData } from '../../model/garland-tools/mob-data';
 import { FateData } from '../../model/garland-tools/fate-data';
 import {
+  SearchAlgo,
   SearchIndex,
   XivapiEndpoint,
   XivapiSearchFilter,
@@ -171,7 +172,8 @@ export class DataService {
       string: query,
       language: lang,
       filters: xivapiFilters,
-      columns: ['ID', 'Name_*', 'Icon', 'Recipes']
+      columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks'],
+      string_algo: SearchAlgo.WILDCARD_PLUS
     };
 
     if (sort[0]) {
@@ -189,7 +191,8 @@ export class DataService {
       results$ = this.xivapi.getList(
         XivapiEndpoint.Item,
         {
-          ids: this.mapToItemIds(query, this.i18n.currentLang as 'ko' | 'zh')
+          ids: this.mapToItemIds(query, this.i18n.currentLang as 'ko' | 'zh'),
+          columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks'],
         }
       ).pipe(
         map(items => {
@@ -217,7 +220,7 @@ export class DataService {
       map(results => {
         if (onlyCraftable) {
           return results.filter(row => {
-            return row.Recipes && row.Recipes.length > 0;
+            return (row.Recipes && row.Recipes.length > 0) || (row.GameContentLinks && row.GameContentLinks.CompanyCraftSequence && row.GameContentLinks.CompanyCraftSequence.ResultItem);
           });
         }
         return results;

@@ -56,7 +56,12 @@
     </div>
     <div nz-row [nzGutter]="10">
       <div nz-col [nzXs]="24" [nzMd]="12" class="profile-card">
-        <nz-card [nzTitle]="'PROFILE.Jobs' | translate">
+        <nz-card [nzTitle]="'PROFILE.Jobs' | translate" [nzExtra]="ipc.machinaToggle?autoFill:null">
+          <ng-template #autoFill>
+            <button nz-button nzShape="circle" nzType="primary" (click)="openAutoFillPopup()" nz-tooltip [nzTitle]="'PROFILE.Autofill_from_packets' | translate">
+              <i nz-icon nzType="api"></i>
+            </button>
+          </ng-template>
           <nz-list [nzRenderItem]="setTemplate" [nzDataSource]="gearSets$ | async" nzSize="small">
             <ng-template #setTemplate let-set>
               <nz-list-item [nzContent]="set.jobId <= 15 ? content : null | ifMobile: null"

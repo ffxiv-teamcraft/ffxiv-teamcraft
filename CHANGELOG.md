@@ -2,6 +2,337 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.8.5"></a>
+## [5.8.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.4...v5.8.5) (2019-09-20)
+
+
+### Bug Fixes
+
+* **log-tracker:** fixed an issue with offline lists on log tracker ([8bcffc2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8bcffc2))
+* **marketboard:** fixed ordering in history tab ([d7d7ef3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d7d7ef3))
+* **marketboard:** fixed pricing mode integration ([a0255b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a0255b2))
+* **offline-list:** fixed multiple issues with offline lists ([a9aa6ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a9aa6ab))
+* **pricing:** fixed an issue with copy to text outputing wrong values ([2ed20a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2ed20a9))
+* **search:** fixed an issue with chinese recipe search ([66ad4d9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66ad4d9))
+
+
+### Features
+
+* **layout:** new filter: IS_END_CRAFT_MATERIAL ([8f6a7b8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f6a7b8))
+
+
+
+<a name="5.8.4"></a>
+## [5.8.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.3...v5.8.4) (2019-09-17)
+
+
+### Bug Fixes
+
+* **marketboard:** fixed an issue with marketboard popup's total price and history date ([efb4e99](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/efb4e99))
+
+
+
+<a name="5.8.3"></a>
+## [5.8.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.2...v5.8.3) (2019-09-17)
+
+
+### Bug Fixes
+
+* **importer:** fixed an issue with garlandtools importer ([d9d1ea4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d9d1ea4))
+* **list:** fixed an issue with lists not being regenerated properly in some cases ([4f63560](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4f63560))
+
+
+### Features
+
+* **list:** added closest aetheryte to alarm button's tooltip ([191812b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/191812b))
+
+
+
+<a name="5.8.2"></a>
+## [5.8.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.1...v5.8.2) (2019-09-10)
+
+
+### Bug Fixes
+
+* **teams:** fixed an issue with webhook sending a message for events it should ignore ([c36c963](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c36c963))
+
+
+### Features
+
+* **list:** added original url as list description when importing a list from external tool ([3b980c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b980c0))
+* **list:** added support for import from garlandtools group ([efa0260](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/efa0260))
+* **market:** re-enabled marketboard-related features using universalis ([3fd808](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3fd808))
+
+
+
+<a name="5.8.1"></a>
+## [5.8.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.0...v5.8.1) (2019-09-09)
+
+
+### Bug Fixes
+
+* **list:** fixed a bug when regenerating an empty list ([4641155](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4641155))
+* **list:** fixed a bug when upgrading an ephemeral list to permanent ([79c4f75](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/79c4f75))
+* **rotation:** removed rotation key from rotation panel ([68e7f1a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68e7f1a))
+
+
+
+<a name="5.8.0"></a>
+# [5.8.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.12...v5.8.0) (2019-09-08)
+
+
+### Bug Fixes
+
+* **data:** fixed an issue preventing voyages from being extracted properly ([7be9698](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7be9698))
+* **db:** fixed fishermen's horizon aetheryte in dravanian forelands map ([bb6844b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bb6844b))
+* **progress:** don't show progress for empty operations array ([43100d7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43100d7))
+* **rotations:** fixed an issue with folders content reordering ([16bc62d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/16bc62d))
+* **teams:** fixed an issue with list completion not being saved with teams not having a webhook ([476fb6e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/476fb6e))
+* **teams:** fixed final items progression not showing inside teams webhook configuration ([b94a33f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b94a33f))
+* **xivapi:** better handling of 429 error in community pages ([44a80d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/44a80d0))
+
+
+### Features
+
+* **db:** added patch link on all database pages ([5e891dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e891dd))
+* **list:** added contribution % stats popup, to see how each person contributed to the list ([8067eb0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8067eb0))
+* **list:** you can now create offline lists, faster with slower network but cannot be shared ([953c121](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/953c121))
+* **list:** you can now link a rotation to an item ([2adeaa7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2adeaa7))
+* **patreon:** new supporter: Glanyx ! ([10469c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/10469c4))
+* **settings:** added an option to disable auto search as you type ([38ce10e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/38ce10e))
+* **voyages:** added i18n support for voyages ([1f4e356](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1f4e356))
+* support for korean v4.56 update ([cc36c24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cc36c24))
+* **log-tracker:** added hide completed items option to FSH tracker ([baa410e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/baa410e))
+* **settings:** added Kugane, Crystrium and Eulmore as starting point ([4cd48ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4cd48ed))
+
+
+
+<a name="5.7.12"></a>
+## [5.7.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.11...v5.7.12) (2019-08-29)
+
+
+### Bug Fixes
+
+* **rotation-folder:** fixed an issue with rotations loading not working properly ([e964862](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e964862))
+* **teams:** fixed an issue with list row assignment not showing team members in some cases ([31c1726](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/31c1726))
+
+
+### Features
+
+* **patreon:** new supporter: Icknickl Lodien ([c270b3f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c270b3f))
+
+
+
+<a name="5.7.11"></a>
+## [5.7.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.10...v5.7.11) (2019-08-27)
+
+
+### Bug Fixes
+
+* **list:** fixed an issue with lists sometimes crashing with 5.7.10 update ([8037851](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8037851))
+* **list:** fixed ordering in text export for tiers system ([1e26797](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e26797))
+
+
+### Features
+
+* **log-tracker:** added toggle to hide completes elements on gathering tracker ([69a6217](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/69a6217))
+* **profile:** added community rotations to public profile page ([0294f23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0294f23))
+
+
+
+<a name="5.7.10"></a>
+## [5.7.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.9...v5.7.10) (2019-08-24)
+
+
+### Bug Fixes
+
+* **navigation-map:** fixed total not showing correctly in full navigation path ([ea3904f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea3904f))
+
+
+### Features
+
+* **list:** you can now assign multiple users to an item ([bf47202](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf47202))
+* **list:** you can now mark an entire panel as done at once ([d986e2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d986e2c))
+* **list:** you can now undo actions from the history view inside the list ([a1bc9cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a1bc9cb))
+* **permissions:** you can now share a list with only participate permission ([c187d63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c187d63))
+* **simulator:** excellent and poor now also apply their counterparts properly ([4911059](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4911059))
+
+#### A note about the permission changes
+
+The new permissions system can share lists with an explicit `PARTICIPATE` permission, this means that if you set someone's permission level to `PARTICIPATE` on a list,
+it'll show inside of their lists page, same applies for workshops. This is meant to share lists easily without having to give a link and mark it as favorite.
+
+
+<a name="5.7.9"></a>
+## [5.7.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.8...v5.7.9) (2019-08-23)
+
+
+### Bug Fixes
+
+* **db:** fixed position for raw petalite ([b372443](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b372443))
+* **layout:** fixed an issue with some filters not using zone breakdown properly ([ce903e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce903e3))
+
+
+### Features
+
+* **navigation:** added total of items needed for a given navigation step ([2f78b46](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f78b46))
+* **search:** better fuzzy search (e.g: "facet fending" now returns proper results) ([c7565b8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c7565b8))
+
+
+
+<a name="5.7.8"></a>
+## [5.7.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.7...v5.7.8) (2019-08-15)
+
+
+### Bug Fixes
+
+* **i18n:** fixed missing translation in search placeholder ([71550f5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/71550f5))
+* **list:** fixed icon priority for wolf marks ([d915ce5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d915ce5))
+
+
+### Features
+
+* **alarms:** added closest aetheryte to the compact display and better layout for slot ([0596345](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0596345))
+* **db:** updated data with newest monsters positions ([887a9e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/887a9e5))
+* **desktop:** better updating system with button inside topbar ([958a02f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/958a02f))
+
+
+
+<a name="5.7.7"></a>
+## [5.7.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.6...v5.7.7) (2019-08-08)
+
+
+### Bug Fixes
+
+* **core:** fixed cdn data loading ([a2bc425](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a2bc425))
+* **i18n:** fixed wrong translation files loading ([0cc98bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0cc98bd))
+* **simulator:** fixed a bug with Hasty Touch missing quotes in aactions macro ([e69f76c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e69f76c))
+
+
+
+<a name="5.7.6"></a>
+## [5.7.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.5...v5.7.6) (2019-08-07)
+
+
+### Bug Fixes
+
+* **auth:** fixed a bug preventing korean users from linking character ([220496a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/220496a))
+
+
+
+<a name="5.7.5"></a>
+## [5.7.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.4...v5.7.5) (2019-08-06)
+
+
+### Bug Fixes
+
+* **desktop:** fixed broken icons on desktop app ([e2f5cef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2f5cef))
+* **marketboard:** disabled all marketboard features ([73a6ca4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73a6ca4))
+* **reset-timers:** fixed an issue with weekly timer not working properly right after its tick ([d691d4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d691d4f))
+* **simulator:** fixed an issue with IQ stacks not applied properly in safe mode ([7b0ff65](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7b0ff65))
+
+
+### Features
+
+* amount of list text export not consider the done amount ([4baabea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4baabea))
+* **core:** moved hosting to cdn in order to reduce costs an have better cache ([#1075](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1075)) ([8063b27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8063b27))
+* **simulator:** added context menu to set state on a given simulation step ([e36a6b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e36a6b4))
+* **simulator:** added hasty touch to aactions macro if there's enough place for it ([00034bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00034bd))
+
+
+
+<a name="5.7.4"></a>
+## [5.7.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.2...v5.7.4) (2019-08-05)
+
+
+### Bug Fixes
+
+* **core:** fixed an issue with character fetching ([df16fdb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/df16fdb))
+* **core:** fixed an issue with character stats fetching ([f28e081](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f28e081))
+* **db:** fixed fates being displayed in a panel labelled "Crafting actions" ([dc3824b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc3824b))
+* **layout:** fixed an issue with filter context not being used properly in zone breakdown ([b930d28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b930d28))
+* **simulator:** fixed an issue with tricks of the trade on safe mode ([e8e2f5e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8e2f5e))
+* **tips:** fixed a bug with ingenuity before byregot not being computed properly ([01cdd32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01cdd32))
+* **tips:** fixed a bug with piece by piece tip not showing properly ([446ff9d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/446ff9d))
+* **tips:** fixed a bug with reflect tip showing when it shouldn't ([0042614](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0042614))
+
+
+### Features
+
+* added reset timers page, to display ingame reset timers and setup alarms for them ([c0edfed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c0edfed))
+
+
+
+<a name="5.7.3"></a>
+## [5.7.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.2...v5.7.3) (2019-08-05)
+
+
+### Bug Fixes
+
+* **core:** fixed an issue with character fetching ([df16fdb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/df16fdb))
+* **db:** fixed fates being displayed in a panel labelled "Crafting actions" ([dc3824b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc3824b))
+* **layout:** fixed an issue with filter context not being used properly in zone breakdown ([b930d28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b930d28))
+* **simulator:** fixed an issue with tricks of the trade on safe mode ([e8e2f5e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8e2f5e))
+* **tips:** fixed a bug with ingenuity before byregot not being computed properly ([01cdd32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01cdd32))
+* **tips:** fixed a bug with piece by piece tip not showing properly ([446ff9d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/446ff9d))
+* **tips:** fixed a bug with reflect tip showing when it shouldn't ([0042614](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0042614))
+
+
+### Features
+
+* added reset timers page, to display ingame reset timers and setup alarms for them ([c0edfed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c0edfed))
+
+
+
+<a name="5.7.2"></a>
+## [5.7.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.7.1...v5.7.2) (2019-08-02)
+
+
+### Bug Fixes
+
+* **db:** removed simulator button for airship parts ([62616a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62616a2))
+* **layout:** fixed white scrips not being filtered properly ([eb488a4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb488a4))
+* **list:** quick item addition popup now shows all items, not only recipes ([89bbee8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/89bbee8))
+* **macro-translator:** fixed an issue with some macros not being translated properly ([c002d04](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c002d04))
+* **profile:** fixed masterbook order for CUL ([e81a65c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e81a65c))
+* **search:** FC crafts now show under Recipes results ([193a272](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/193a272))
+* **simulator:** fixed a bug with min stats popup hanging browser forever ([23afdfc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23afdfc))
+* **tooltip:** fixed a bug with missing bonus on some foods ([85afcf7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/85afcf7))
+
+
+
+<a name="5.7.1"></a>
+## [5.7.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.19...v5.7.1) (2019-08-01)
+
+
+### Bug Fixes
+
+* **alarms:** no longer forcing compact mode on mobile viewports ([35e2ec1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/35e2ec1))
+* **auth:** fixed an issue with blank character association popup ([f600f9a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f600f9a))
+* **custom-simulator:** fixed progress and durability being inverted ([1757ed2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1757ed2))
+* **db:** fixed an issue with map: comment links ([3e461c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e461c0))
+* **layout:** fixed an issue with new tomes not filtered properly ([1130816](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1130816))
+* **recipe-finder:** fixed empty results with recipe finder ([293958d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/293958d)), closes [#1061](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1061)
+* **simulator:** fixed an issue with minimum stats popup and quality ([b0b6ee0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b0b6ee0))
+* **trade:** added new tomestones ([00f62a6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00f62a6))
+
+
+### Features
+
+* **auth:** added disclaimer when linking a character with suspicious situation to avoid data loss ([eea41ba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eea41ba))
+* **community-lists:** added GNB, DNC and expansion tags ([a041cca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a041cca))
+* **community-rotations:** added Reuse tag ([b7d4964](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b7d4964))
+* **data:** added new masterbooks ([b6a8caa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b6a8caa))
+* **data:** added new rlvl entries for community rotations ([2d5f6ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d5f6ed))
+* **db:** added link from masterbooks to unlocked items ([a7412c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7412c2))
+* **db:** added patch db pages ([dcdca77](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dcdca77))
+* **search:** added an option to disable search history ([d0caabf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0caabf))
+* new patreon supporter: Scrapper Spart ([072c66b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/072c66b))
+* **simulator:** progress bar and durability now change color for better visual feedback. ([d13e580](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d13e580))
+* **teams:** added webhook option for item completion notification ([0edb09f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0edb09f))
+
+
+
 <a name="5.7.0"></a>
 # [5.7.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.6.19...v5.7.0) (2019-08-01)
 

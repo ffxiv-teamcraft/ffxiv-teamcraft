@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CraftingAction, CraftingJob, Reclaim, Simulation } from '@ffxiv-teamcraft/simulator';
+import { CraftingAction, CraftingJob, HastyTouch, Reclaim, Simulation } from '@ffxiv-teamcraft/simulator';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -54,12 +54,12 @@ export class MacroPopupComponent implements OnInit {
     this.macro = this.macroLock ? [['/mlock']] : [[]];
     this.aactionsMacro = ['/aaction clear'];
     let totalLength = 0;
-    const reclaimBreakpoint = this.simulation.clone().run(true).simulation.lastPossibleReclaimStep;
+    const reclaimBreakpoint = this.simulation ? this.simulation.clone().run(true).simulation.lastPossibleReclaimStep : -1;
     this.rotation.forEach((action) => {
       let macroFragment = this.macro[this.macro.length - 1];
       // One macro is 15 lines, if this one is full, create another one.
       // Alternatively, if breaking on Reclaim is enabled, split there too.
-      if ((this.breakOnReclaim && (macroFragment.length === reclaimBreakpoint + 1)) || macroFragment.length >= this.maxMacroLines) {
+      if ((this.simulation && this.breakOnReclaim && (macroFragment.length === reclaimBreakpoint + 1)) || macroFragment.length >= this.maxMacroLines) {
         this.macro.push(this.macroLock ? ['/mlock'] : []);
         macroFragment = this.macro[this.macro.length - 1];
       }
@@ -106,6 +106,9 @@ export class MacroPopupComponent implements OnInit {
     // 11 not 10 because /aactions clear takes the first line :)
     if (this.aactionsMacro.length < 11 && this.aactionsMacro.indexOf(`/aaction ${this.i18n.getName(this.l12n.getAction(new Reclaim().getIds()[0]))}`) === -1) {
       this.aactionsMacro.push(`/aaction ${this.i18n.getName(this.l12n.getAction(new Reclaim().getIds()[0]))}`);
+    }
+    if (this.aactionsMacro.length < 11 && this.aactionsMacro.indexOf(`/aaction "${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}"`) === -1) {
+      this.aactionsMacro.push(`/aaction "${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}"`);
     }
     if (this.aactionsMacro.length > 11) {
       this.tooManyAactions = true;

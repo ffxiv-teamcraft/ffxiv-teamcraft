@@ -3,7 +3,8 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
 import {
   catchError,
-  debounceTime, delay,
+  debounceTime,
+  delay,
   distinctUntilChanged,
   filter,
   map,
@@ -148,6 +149,14 @@ export class AuthEffects {
       }
     }),
     distinctUntilChanged((a, b) => JSON.stringify(a) === JSON.stringify(b)),
+    map(user => {
+      const cachedUser: any = JSON.parse(localStorage.getItem('auth:user') || '{}');
+      if (user.lodestoneIds.length === 0 && cachedUser.$key === user.$key) {
+        user.lodestoneIds = cachedUser.lodestoneIds;
+        user.defaultLodestoneId = cachedUser.defaultLodestoneId;
+      }
+      return user;
+    }),
     map(user => new UserFetched(user))
   );
 
@@ -160,7 +169,10 @@ export class AuthEffects {
     }),
     withLatestFrom(this.authFacade.loggedIn$),
     filter(([action, loggedIn]) => {
-      const cachedUser: TeamcraftUser = JSON.parse(localStorage.getItem('auth:user') || '{}');
+      let cachedUser: any = JSON.parse(localStorage.getItem('auth:user') || '{}');
+      if (!cachedUser.$key || cachedUser.$key === action.user.$key) {
+        cachedUser = {};
+      }
       return loggedIn
         && action.user && !action.user.notFound
         && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0
@@ -203,24 +215,6 @@ export class AuthEffects {
         return reloader.pipe(
           switchMap(() => {
             return this.xivapi.getCharacter(lodestoneId.id);
-          }),
-          tap(res => {
-            if (res.Info.Character.State === 1) {
-              setTimeout(() => {
-                reloader.next(null);
-              }, 120000);
-            }
-          }),
-          map(res => {
-            if (res.Info.Character.State === 1) {
-              return {
-                Character: {
-                  ID: lodestoneId.id,
-                  Name: 'Parsing character...'
-                }
-              };
-            }
-            return res;
           })
         );
       });
@@ -245,11 +239,17 @@ export class AuthEffects {
       AuthActionTypes.ToggleMasterbooks,
       AuthActionTypes.SaveSet,
       AuthActionTypes.VerifyCharacter,
-      AuthActionTypes.SaveDefaultConsumables
+      AuthActionTypes.SaveDefaultConsumables,
+      AuthActionTypes.SetCID,
+      AuthActionTypes.SetWorld
     ),
     debounceTime(100),
     withLatestFrom(this.store),
     switchMap(([, state]) => {
+      // Don't save if there is no associated lodestone id on a logged in account.
+      if (state.auth.loggedIn && state.auth.user.lodestoneIds.length === 0 && state.auth.user.customCharacters.length === 0) {
+        return of(null);
+      }
       // Save to localstorage to have a backup check to avoid data loss
       localStorage.setItem('auth:user', JSON.stringify(state.auth.user));
       return this.userService.set(state.auth.uid, { ...state.auth.user }).pipe(

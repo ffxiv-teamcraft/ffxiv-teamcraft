@@ -26,9 +26,9 @@ export class VerificationPopupComponent implements OnDestroy {
   constructor(private xivapi: XivapiService, private authFacade: AuthFacade) {
     this.verificationResult$ = this.startVerify$.pipe(
       switchMap(code => {
-        return this.xivapi.getCharacterVerification(this.lodestoneId).pipe(
-          map(verification => {
-            return { verified: verification.Bio.indexOf(code) > -1 };
+        return this.xivapi.getCharacter(this.lodestoneId, { columns: ['Character.Bio'] }).pipe(
+          map(res => {
+            return { verified: res.Character.Bio.indexOf(code) > -1 };
           })
         );
       })

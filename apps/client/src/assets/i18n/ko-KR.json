@@ -20,6 +20,13 @@
     "auth/user-not-found": "잘못된 이메일 또는 비밀번호",
     "auth/wrong-password": "잘못된 이메일 또는 비밀번호"
   },
+  "TIMERS": {
+    "Days": "일",
+    "Day": "일",
+    "Hours": "시간",
+    "Minutes": "분",
+    "Seconds": "초"
+  },
   "ITEMS": {
     "Title": "검색",
     "No_match": "일치하는 아이템이 없습니다",
@@ -69,7 +76,7 @@
     "Created_by": "제작자: {{name}}",
     "Share_link_copied": "공방 공유링크 복사됨",
     "Not_found": "해당 공방이 없거나 접근할 권한이 없습니다",
-    "Shared_workshops": "쓰기 권한이 있는 공방",
+    "Shared_workshops": "나와 공유된 공방",
     "Rename": "공방 이름변경",
     "Add_lists": "목록 추가"
   },
@@ -130,7 +137,12 @@
     "None": "없음",
     "Top": "맨 위로",
     "Bottom": "맨 아래로",
-    "Amount": "수량"
+    "Amount": "수량",
+    "Undo": "실행 취소",
+    "User": "유저",
+    "Tables": "Table",
+    "Pie_charts": "파이 차트",
+    "Read_more_on_wiki": "Read more details on wiki"
   },
   "ALARMS": {
     "Title": "알람",
@@ -152,6 +164,17 @@
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
     "Add_alarms_to_group": "이 그룹에 알람 추가",
+    "REALTIME": {
+      "Reset_timers": "초기화 타이머",
+      "WEEKLY_RESETS": "주 제한",
+      "WEEKLY_RESETS_DESCRIPTION": "단골 거래, 쿠로의 공상수첩, 주 제한 획득 (24인 연합 레이드, 영웅 레이드 보상, 일반 레이드 무기 교환품), 주간 복권, 공략수첩, 패션 체크, B급 정예 마물 수배서",
+      "ROULETTES_RESET": "무작위 임무 & 야만족 일일 퀘스트",
+      "ROULETTES_RESET_DESCRIPTION": "무작위 임무, 야만족 일일 퀘스트 수주권, 일일 마물 수배서, 일일 복권 초기화",
+      "DELIVERIES_RESET": "조달 임무",
+      "DELIVERIES_RESET_DESCRIPTION": "총사령부 조달 품목 초기화",
+      "LEVE_ALLOWANCES": "의뢰 수주권",
+      "LEVE_ALLOWANCES_DESCRIPTION": "의뢰 수주권 3장 획득"
+    },
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
@@ -256,7 +279,7 @@
   "Recipe_Added": "1개의 아이템이 {{listname}} 목록에 추가되었습니다",
   "Recipes_Added": "{{itemcount}} 개의 아이템이 {{listname}}  목록에 추가되었습니다",
   "Character_name": "캐릭터 이름",
-  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
+  "Character_add_warning": "직접 캐릭터를 삭제하지 않았는데 이것이 보인다면, 아무것도 입력하지 말고 페이지를 새로고침 하거나 앱을 재시작하세요. 그래도 이 문제가 지속되면 디스코드 서버에 보고 해주세요.",
   "Disconnect_and_anonymous": "로그아웃 후 익명으로 계속하기",
   "Add_manual_character": "캐릭터 수동추가",
   "Character_informations": "캐릭터 정보",
@@ -347,7 +370,11 @@
     "Db_comments_position": "DB댓글 위치",
     "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
     "Clickthrough_overlay": "오버레이 클릭 무시",
-    "Disable_search_history": "Disable search history",
+    "Disable_search_history": "검색 기록 비활성화",
+    "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
+    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
+    "Contribute_to_universalis": "Contribute to Universalis",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -378,6 +405,8 @@
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요",
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
+    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
@@ -393,7 +422,7 @@
     "Merge_lists": "목록 병합",
     "Merge_lists_warning": "대규모 목록은 데이터베이스의 한계로 인해 병합이 불가능하기 때문에 여기에 표시되지 않습니다.",
     "Lists_merged": "목록 병합이 완료되었습니다!",
-    "Shared_lists": "쓰기 권한이 있는 목록",
+    "Shared_lists": "나와 공유된 목록",
     "Add_selection": "선택항목을 목록에 추가",
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
@@ -440,6 +469,14 @@
     "Show_craftable_amount": "제작 가능한 수량 표시",
     "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
     "Quick_layout_swap": "빠른 레이아웃 전환",
+    "Offline": "오프라인",
+    "Offline_help": "오프라인 목록은 브라우저 혹은 앱 내에 저장됩니다. 해당 목록은 공유를 할 수 없지만 네트워크를 사용하지 않으며 더 빠르게 로딩됩니다.",
+    "Mark_whole_panel_done": "패널의 내용을 완료됨으로 표시",
+    "ROTATION": {
+      "Attach": "제작 매크로 연동",
+      "Detach": "제작 매크로 연동해제",
+      "Click_to_copy_macro": "매크로 복사 팝업 페이지 열기"
+    },
     "INVENTORY": {
       "Show_final_items": "최종 아이템 표시",
       "Hide_final_items": "최종 아이템 숨기기"
@@ -487,6 +524,10 @@
     "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
     "Add_to_another_list": "다른 목록에 추가",
     "New_tag": "새 태그",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "기여 통계",
+    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
+    "Autofill": "Autofill",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -514,7 +555,8 @@
         "REMOVE_ITEM": "목록에서 이 아이템을 제거",
         "ADD_TAG": "아이템에 태그 추가",
         "MARK_AS_DONE_IN_LOG": "수첩에 완료됨으로 표시",
-        "MARKET_BOARD_INFORMATIONS": "장터게시판 정보"
+        "MARKET_BOARD_INFORMATIONS": "장터게시판 정보",
+        "ATTACH_ROTATION": "제작 매크로 연동"
       }
     },
     "LAYOUT": {
@@ -526,10 +568,10 @@
     }
   },
   "LIST_TAGS": {
-    "A_REALM_REBORN": "A Realm Reborn",
-    "HEAVENSWARD": "Heavensward",
-    "STORMBLOOD": "Stormblood",
-    "SHADOWBRINGERS": "Shadowbringers",
+    "A_REALM_REBORN": "신생 에오르제아",
+    "HEAVENSWARD": "창천의 이슈가르드",
+    "STORMBLOOD": "홍련의 해방자",
+    "SHADOWBRINGERS": "칠흑의 반역자",
     "OUTDATED": "만료",
     "GEAR": "장비",
     "CONSUMABLE": "소모품",
@@ -550,7 +592,7 @@
     "PLD": "나이트",
     "WAR": "전사",
     "DRK": "암기",
-    "GNB": "GNB",
+    "GNB": "건브",
     "WHM": "백마",
     "SCH": "학자",
     "AST": "점성",
@@ -560,7 +602,7 @@
     "SAM": "사무",
     "BRD": "음유",
     "MCH": "기공",
-    "DNC": "DNC",
+    "DNC": "댄서",
     "BLM": "흑마",
     "SMN": "솬사",
     "RDM": "적마",
@@ -602,10 +644,10 @@
     "Steps": "단계",
     "Loading_path": "추천 경로 불러오는 중 (몇 초 정도 소요될 수 있습니다)",
     "STEP": {
-      "Gathering": "{{amount}}개 채집",
-      "Hunting": "전투로 {{amount}}개 획득",
-      "Vendor": "{{amount}}개 상점에서 구매",
-      "Trade": "{{amount}}개 교환"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -743,6 +785,14 @@
     "Solve_rotation": "로테이션 생성",
     "Rotation_solver": "로테이션 생성기",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
+    "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
+    "STATE": {
+      "Excellent": "최고품질",
+      "Good": "고품질",
+      "Poor": "저품질",
+      "Fail": "실패",
+      "Normal": "보통"
+    },
     "SOLVER": {
       "Hq_target": "HQ 목표치",
       "Use_rotation_as_seed": "현재 로테이션을 시작점부터 사용",
@@ -775,7 +825,7 @@
         "FOODLESS": "음식 미사용",
         "MAKERS_MARK": "견실한 마음가짐",
         "MUSCLE_MEMORY": "확신",
-        "REUSE": "Reuse"
+        "REUSE": "재사용"
       }
     },
     "CUSTOM": {
@@ -788,6 +838,7 @@
     "ROTATIONS": {
       "Search_placeholder": "로테이션 검색",
       "FOLDERS": {
+        "Not_found": "로테이션 폴더를 찾을 수 없습니다",
         "Folders": "로테이션 폴더",
         "Rename": "폴더 이름 변경",
         "New_folder": "새 폴더",
@@ -944,16 +995,16 @@
     "Officer": "관리자",
     "Promote_officer": "관리자로 승급",
     "NOTIFICATIONS": {
-      "Item_added": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 추가하였습니다.",
-      "Item_removed": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 삭제하였습니다.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**이/가 **[{{listName}}]({{listUrl}})**에 있는 {{totalNeeded}}개 중에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 을/를 완료로 표시함",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** 이/가 **[{{listName}}]({{listUrl}})**에 있는 **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})**을/를 {{totalNeeded}}개 중에 {{amount}}개를 완료로 표시함",
       "Webhook_setup_complete": "**{{teamName}}** 팀을 이 채널에서 추적하기 시작합니다.",
       "List_added_notification": "목록 **[{{listName}}]({{listUrl}})**이/가 팀에 추가되었습니다.",
       "List_removed_notification": "목록 **[{{listName}}]({{listUrl}})**이/가 팀에서 제거되었습니다.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** 님이 팀에 합류했습니다!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** 님이 팀에서 제외되었습니다.",
       "Name_changed": "**{{oldName}}** 에서 **{{newName}}** 로 이름이 변경되었습니다.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**이/가 [{{listName}}]({{listUrl}})**의 **[{{memberName}}]({{memberProfileUrl}})**에게 할당되었습니다."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})**이/가 **[{{listName}}]({{listUrl}})**의 **[{{memberName}}]({{memberProfileUrl}})**에게 할당되었습니다."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "팀 가입",
@@ -964,7 +1015,8 @@
       "LIST_REMOVED": "목록 제거",
       "LIST_PROGRESSION": "재료 진행상황",
       "FINAL_LIST_PROGRESSION": "최종 아이템 진행상황",
-      "USER_ASSIGNMENT": "팀원 할당"
+      "USER_ASSIGNMENT": "팀원 할당",
+      "ITEM_COMPLETION": "아이템 완료"
     }
   },
   "MARKETBOARD": {
@@ -977,6 +1029,7 @@
     "History": "최근 기록",
     "Purchase_date": "날짜",
     "More_on_mogboard": "Mogboard에서 자세한 정보 보기(한국서버 미지원)",
+    "More_on_universalis": "universalis에서 자세히 보기",
     "Server": "서버"
   },
   "COMMENTS": {
@@ -1011,7 +1064,7 @@
   },
   "UPDATE": {
     "New_update_available": "새 업데이트가 있습니다! ",
-    "Desktop_instructions": "최신 버전을 다운로드하려면 다음 링크를 클릭하세요: ",
+    "New_update_available_desktop": "새로운 업데이트가 추가되었습니다.\n여기를 눌러 다운로드 받으세요.",
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요."
   },
   "LOG_TRACKER": {
@@ -1029,6 +1082,7 @@
     "Required_for_achievement": "업적에 적용됨",
     "Select_spot": "표시할 장소를 선택해주세요",
     "Hide_completed": "완료한 제작법 숨기기",
+    "Hide_completed_items": "완료된 아이템 숨기기",
     "MIN_optimized_path": "모든 광부 채집물의 추천 경로",
     "BTN_optimized_path": "모든 원예가 채집물의 추천 경로",
     "PAGE": {
@@ -1231,7 +1285,7 @@
     "Achievements": "업적",
     "Currencies": "화폐",
     "Rowena_splendor": "로웨나 상회 거래 (별 = 20% 추가 경험치)",
-    "Unlocks": "Unlocks",
+    "Unlocks": "개방",
     "ITEM": {
       "Masterpiece_base": "기본",
       "Masterpiece_bonus": "보너스"
@@ -1352,22 +1406,22 @@
       "Editor_tip": "다른 페이지 링크를 생성하기 위해 <page type>:\"<Content Name>\"을 입력하세요. 예시: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". 지원하는 페이지 종류: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     },
     "PATCH": {
-      "Open_patch_page": "Click here to open full patch changes in database",
+      "Open_patch_page": "데이터베이스내 패치 변경점을 모두 보려면 이곳을 클릭하세요",
       "CONTENT": {
-        "Title": "Patch content",
-        "Achievements": "Achievements ({{amount}})",
-        "Actions": "Actions ({{amount}})",
-        "Crafting_actions": "Crafting actions ({{amount}})",
-        "Fates": "Fates ({{amount}})",
-        "Instances": "Instance content ({{amount}})",
-        "Items": "Items ({{amount}})",
-        "Leves": "Leves ({{amount}})",
-        "Maps": "Maps ({{amount}})",
-        "Monsters": "Monsters ({{amount}})",
-        "Npcs": "Npcs ({{amount}})",
-        "Quests": "Quests ({{amount}})",
-        "Statuses": "Statuses ({{amount}})",
-        "Traits": "Traits ({{amount}})"
+        "Title": "패치 내용",
+        "Achievements": "업적 ({{amount}})",
+        "Actions": "기술 ({{amount}})",
+        "Crafting_actions": "제작 기술 ({{amount}})",
+        "Fates": "돌발 ({{amount}})",
+        "Instances": "던전 ({{amount}})",
+        "Items": "아이템 ({{amount}})",
+        "Leves": "의뢰 ({{amount}})",
+        "Maps": "지도 ({{amount}})",
+        "Monsters": "몬스터 ({{amount}})",
+        "Npcs": "NPC ({{amount}})",
+        "Quests": "퀘스트 ({{amount}})",
+        "Statuses": "상태 ({{amount}})",
+        "Traits": "특성 ({{amount}})"
       }
     }
   },
@@ -1437,7 +1491,9 @@
     "Title": "화폐 소비 가이드",
     "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다 !",
     "Pick_currency": "교환용 아이템 선택",
-    "You_can_buy": "{{amount}}개 구매 가능"
+    "You_can_buy": "{{amount}}개 구매 가능",
+    "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
+    "Disabled_description": "Square Enix에서 장터 정보를 가져오는 것을 막았기 때문에 이에 대한 불만은 Square Enix에 항의해 주세요. 우리는 Square Enix 없이 이 작업을 할 수 있는 게 없습니다."
   },
   "BLOG": {
     "Title": "블로그"
@@ -1452,7 +1508,7 @@
     "Sort_desc": "내림차순",
     "Add_stat_filter": "스탯 필터 추가",
     "Add_bonus_stat_filter": "보너스 스탯 필터 추가",
-    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Search_tip": "<patch #>를 입력하여 해당 버전으로 필터가 가능합니다. 예시: patch:5.01",
     "SORT_BY": {
       "Relevance": "관련성",
       "ID": "ID",
@@ -1462,10 +1518,34 @@
     }
   },
   "SIDEBAR": {
-    "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
-    "Other": "Other"
+    "General": "일반",
+    "Sharing": "공유",
+    "Gathering": "채집",
+    "Helpers": "도우미",
+    "Other": "기타"
+  },
+  "PACKET_CAPTURE": {
+    "Banner_title": "Packet capture is available",
+    "Button_label": "Enable packet capture",
+    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
+    "Empty_inventory": "Your inventory hasn't been loaded yet",
+    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
+    "No_character_id": "No ingame character id set",
+    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
+  },
+  "INVENTORY": {
+    "Title": "Inventory",
+    "Empty": "Empty inventory",
+    "Estimate_total_price": "Estimate total inventory price",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Copied_to_clipboard": "Inventory copied to clipboard",
+    "Click_to_add_to_progression": "Click to add to item progression",
+    "Contribute_to_universalis": "Contribute data to universalis",
+    "BAG": {
+      "SaddleBag": "초코보 가방",
+      "Bag": "소지품",
+      "Other": "Other inventory"
+    }
   }
 }

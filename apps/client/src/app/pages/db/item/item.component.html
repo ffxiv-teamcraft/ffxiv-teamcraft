@@ -13,6 +13,10 @@
               <div class="item-kind" *ngIf="xivapiItem.ItemKind">{{xivapiItem.ItemKind | xivapiI18n}}
                 <span *ngIf="xivapiItem.ItemSearchCategory"> > {{xivapiItem.ItemSearchCategory | xivapiI18n}}</span>
               </div>
+              <div class="patch" *ngIf="xivapiItem.GamePatch">
+                {{xivapiItem.GamePatch | xivapiI18n}}
+                <app-db-button type="patch" [id]="xivapiItem.GamePatch.ID"></app-db-button>
+              </div>
             </div>
           </div>
           <div *ngIf="data.craftedBy === undefined || data.craftedBy.length === 0">
@@ -33,7 +37,7 @@
               </button>
             </div>
           </div>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="links" *ngIf="links$ | async as links">
             <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
               <img [src]="link.icon" [alt]="link.title" class="link-icon">
             </a>
@@ -44,7 +48,7 @@
               <span>3D</span>
             </button>
             <app-marketboard-icon [itemId]="xivapiItem.ID" [showHistory]="true"
-                                  [size]="'default'"
+                                  [size]="'small'"
                                   *ngIf="!xivapiItem.IsUntradable"></app-marketboard-icon>
           </div>
         </div>
@@ -219,7 +223,8 @@
               </div>
             </ng-template>
             <div class="recipes" fxLayout="column" fxLayoutGap="10px">
-              <nz-card *ngFor="let recipe of data.craftedBy" fxLayoutGap="5px" [nzActions]="[addToList, openSimulator]">
+              <nz-card *ngFor="let recipe of data.craftedBy" fxLayoutGap="5px"
+                       [nzActions]="recipe.jobId > 0 ?[addToList, openSimulator]: [addToList]">
                 <nz-card-meta [nzTitle]="recipeTitle">
                   <ng-template #recipeTitle>
                     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">

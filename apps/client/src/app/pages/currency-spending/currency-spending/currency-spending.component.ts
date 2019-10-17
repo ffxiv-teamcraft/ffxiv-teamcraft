@@ -9,6 +9,7 @@ import * as _ from 'lodash';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { UniversalisService } from '../../../core/api/universalis.service';
 
 @Component({
   selector: 'app-currency-spending',
@@ -32,7 +33,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent {
   public loading = false;
 
   constructor(private xivapi: XivapiService, private dataService: DataService,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private universalis: UniversalisService) {
     super();
     this.servers$ = this.xivapi.getServerList().pipe(
       map(servers => {
@@ -99,18 +100,15 @@ export class CurrencySpendingComponent extends TeamcraftComponent {
           }),
           switchMap(entries => {
             const batches = _.chunk(entries, 100)
-              .map(chunk => {
-                return this.xivapi.getMarketBoardItemsForServers(
-                  [server],
-                  chunk.map((row: any) => row.item)
+              .map((chunk: any) => {
+                return this.universalis.getServerPrices(
+                  server,
+                  ...chunk.map(entry => entry.item)
                 );
               });
             return requestsWithDelay(batches, 250).pipe(
               map(res => {
                 return [].concat.apply([], res)
-                  .map(row => {
-                    return row[server];
-                  })
                   .filter(mbRow => {
                     return mbRow.History && mbRow.History.length > 0 || mbRow.Prices && mbRow.Prices.length > 0;
                   });
@@ -118,10 +116,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent {
               map((res) => {
                 return entries
                   .filter(entry => {
-                    return res.some(r => r.ItemID === entry.item);
+                    return res.some(r => r.ItemId === entry.item);
                   })
                   .map(entry => {
-                    const mbRow = res.find(r => r.ItemID === entry.item);
+                    const mbRow = res.find(r => r.ItemId === entry.item);
                     let prices = (mbRow.Prices || [])
                       .filter(item => item.IsHQ === (entry.HQ || false));
                     if (prices.length === 0) {

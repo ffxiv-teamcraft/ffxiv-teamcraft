@@ -62,7 +62,10 @@ import {
   SolutionOutline,
   UsergroupAddOutline,
   CodeOutline,
-  FileTextOutline
+  FileTextOutline,
+  AppstoreOutline,
+  HourglassOutline,
+  HomeOutline
 } from '@ant-design/icons-angular/icons';
 import { UniversalInterceptor } from './universal-interceptor';
 import { DirtyModule } from './core/dirty/dirty.module';
@@ -120,7 +123,10 @@ const icons: IconDefinition[] = [
   LineChartOutline,
   ShoppingOutline,
   CodeOutline,
-  FileTextOutline
+  FileTextOutline,
+  AppstoreOutline,
+  HourglassOutline,
+  HomeOutline
 ];
 
 registerLocaleData(en);

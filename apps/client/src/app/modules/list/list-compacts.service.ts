@@ -1,4 +1,3 @@
-import { List } from './model/list';
 import { Injectable, NgZone } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { FirestoreRelationalStorage } from '../../core/database/storage/firestore/firestore-relational-storage';
@@ -7,33 +6,34 @@ import { Observable, of } from 'rxjs';
 import { AngularFirestore, DocumentChangeAction, QueryFn } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 import { ListTag } from './model/list-tag.enum';
+import { CompactList } from './model/compact-list';
 
 
 @Injectable()
-export class ListCompactsService extends FirestoreRelationalStorage<List> {
+export class ListCompactsService extends FirestoreRelationalStorage<CompactList> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService,
               protected zone: NgZone, protected pendingChangesService: PendingChangesService) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
-  public getWithWriteAccess(userId: string): Observable<List[]> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 30))
+  public getShared(userId: string): Observable<CompactList[]> {
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 20))
       .snapshotChanges()
       .pipe(
-        map((snaps: DocumentChangeAction<List>[]) => {
+        map((snaps: DocumentChangeAction<CompactList>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: CompactList = <CompactList>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
               delete snap.payload;
               return valueWithKey;
             });
-          return this.serializer.deserialize<List>(lists, [this.getClass()]);
+          return this.serializer.deserialize<CompactList>(lists, [this.getClass()]);
         })
       );
   }
 
-  public getCommunityLists(tags: string[], name: string): Observable<List[]> {
+  public getCommunityLists(tags: string[], name: string): Observable<CompactList[]> {
     if (tags.length === 0 && name.length < 3) {
       return of([]);
     }
@@ -47,10 +47,10 @@ export class ListCompactsService extends FirestoreRelationalStorage<List> {
     return this.firestore.collection(this.getBaseUri(), query)
       .snapshotChanges()
       .pipe(
-        map((snaps: DocumentChangeAction<List>[]) => {
+        map((snaps: DocumentChangeAction<CompactList>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: CompactList = <CompactList>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
               delete snap.payload;
               return valueWithKey;
             })
@@ -60,26 +60,26 @@ export class ListCompactsService extends FirestoreRelationalStorage<List> {
             .filter(list => {
               return list.name.toLowerCase().indexOf(name.toLowerCase()) > -1;
             });
-          return this.serializer.deserialize<List>(lists, [this.getClass()]);
+          return this.serializer.deserialize<CompactList>(lists, [this.getClass()]);
         })
       );
   }
 
-  public getUserCommunityLists(userId: string): Observable<List[]> {
+  public getUserCommunityLists(userId: string): Observable<CompactList[]> {
     const query: QueryFn = ref => {
       return ref.where('authorId', '==', userId).where(`public`, '==', true);
     };
     return this.firestore.collection(this.getBaseUri(), query)
       .snapshotChanges()
       .pipe(
-        map((snaps: DocumentChangeAction<List>[]) => {
+        map((snaps: DocumentChangeAction<CompactList>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: CompactList = <CompactList>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
               delete snap.payload;
               return valueWithKey;
             });
-          return this.serializer.deserialize<List>(lists, [this.getClass()]);
+          return this.serializer.deserialize<CompactList>(lists, [this.getClass()]);
         })
       );
   }
@@ -89,6 +89,6 @@ export class ListCompactsService extends FirestoreRelationalStorage<List> {
   }
 
   protected getClass(): any {
-    return List;
+    return CompactList;
   }
 }

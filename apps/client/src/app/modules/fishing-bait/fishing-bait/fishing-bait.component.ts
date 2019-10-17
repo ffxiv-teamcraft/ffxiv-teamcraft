@@ -13,4 +13,7 @@ export class FishingBaitComponent {
 
   @Input()
   flex = 'column';
+
+  @Input()
+  hideNames = false;
 }

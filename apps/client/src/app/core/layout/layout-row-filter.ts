@@ -2,6 +2,7 @@ import { ListRow } from '../../modules/list/model/list-row';
 import { FilterMethod } from './filter-method';
 import { FilterResult } from './filter-result';
 import { CraftedBy } from '../../modules/list/model/crafted-by';
+import { List } from '../../modules/list/model/list';
 
 export class LayoutRowFilter {
 
@@ -91,6 +92,8 @@ export class LayoutRowFilter {
         35,
         36,
         37,
+        38,
+        39,
         7811,
         9383,
         14298,
@@ -118,7 +121,9 @@ export class LayoutRowFilter {
         10309,
         10311,
         17833,
-        17834
+        17834,
+        25199,
+        25200
       ];
 
       for (const tokenId of scriptIds) {
@@ -161,6 +166,15 @@ export class LayoutRowFilter {
         }).length > 0;
     return isTimedGathering || isTimedReduction;
   }, 'IS_TIMED');
+
+  static IS_END_CRAFT_MATERIAL = new LayoutRowFilter((row, list) => {
+    for (const item of list.finalItems) {
+      if (item.requires.some(req => req.id === row.id)) {
+        return true;
+      }
+    }
+    return false;
+  }, 'IS_END_CRAFT_MATERIAL');
 
   static IS_REDUCTION = new LayoutRowFilter(row => row.reducedFrom !== undefined && row.reducedFrom.length > 0, 'IS_REDUCTION');
 
@@ -279,8 +293,8 @@ export class LayoutRowFilter {
   }
 
   public static not(baseFilter: LayoutRowFilter): LayoutRowFilter {
-    return new LayoutRowFilter((row: ListRow) => {
-      return !baseFilter._filter(row);
+    return new LayoutRowFilter((row: ListRow, list: List) => {
+      return !baseFilter._filter(row, list);
     }, `!${baseFilter.name}`);
   }
 
@@ -311,8 +325,8 @@ export class LayoutRowFilter {
    */
   public and(pipedFilter: LayoutRowFilter, buildNewName = true): LayoutRowFilter {
     const newName = buildNewName ? `${this.name}:and:${pipedFilter.name}` : pipedFilter.name;
-    return new LayoutRowFilter((row: ListRow) => {
-      return this._filter(row) && pipedFilter._filter(row);
+    return new LayoutRowFilter((row: ListRow, list: List) => {
+      return this._filter(row, list) && pipedFilter._filter(row, list);
     }, newName);
   }
 
@@ -324,8 +338,8 @@ export class LayoutRowFilter {
    */
   public or(pipedFilter: LayoutRowFilter, buildNewName = true): LayoutRowFilter {
     const newName = buildNewName ? `${this.name}:or:${pipedFilter.name}` : pipedFilter.name;
-    return new LayoutRowFilter((row: ListRow) => {
-      return this._filter(row) || pipedFilter._filter(row);
+    return new LayoutRowFilter((row: ListRow, list: List) => {
+      return this._filter(row, list) || pipedFilter._filter(row, list);
     }, newName);
   }
 
@@ -333,12 +347,13 @@ export class LayoutRowFilter {
   /**
    * Filters a list with the filter
    * @param rows
+   * @param list
    * @returns {accepted: ListRow[]; rejected: ListRow[]} A set of data with rejected and accepted rows.
    */
-  filter(rows: ListRow[]): FilterResult {
+  filter(rows: ListRow[], list: List): FilterResult {
     const result = { accepted: [], rejected: [] };
     for (const row of rows) {
-      if (this._filter(row)) {
+      if (this._filter(row, list)) {
         result.accepted.push(row);
       } else {
         result.rejected.push(row);

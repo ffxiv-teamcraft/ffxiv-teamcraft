@@ -20,6 +20,13 @@
     "auth/user-not-found": "Utilisateur introuvable",
     "auth/wrong-password": "Mauvais email ou mot de passe"
   },
+  "TIMERS": {
+    "Days": "jours",
+    "Day": "jour",
+    "Hours": "h",
+    "Minutes": "m",
+    "Seconds": "s"
+  },
   "ITEMS": {
     "Title": "Recherche",
     "No_match": "Aucun objet trouvé",
@@ -69,7 +76,7 @@
     "Created_by": "Créé par {{name}}",
     "Share_link_copied": "Lien de partage de l'atelier copié",
     "Not_found": "Atelier introuvable ou vous n'avez pas les droits d'accès",
-    "Shared_workshops": "Ateliers sur lesquels vous avez le droit d'écriture",
+    "Shared_workshops": "Ateliers partagés avec vous",
     "Rename": "Renommer l'atelier",
     "Add_lists": "Ajouter des listes"
   },
@@ -87,7 +94,7 @@
   "Hide_if_empty": "Masquer si vide",
   "No_favorites": "Aucun favori",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
-  "Ephemeral_tag": "éphémère",
+  "Ephemeral_tag": "Éphémère",
   "Remove_ephemeral": "Changer en liste permanente",
   "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
   "Tag_filter": "Tags",
@@ -130,7 +137,12 @@
     "None": "Aucun",
     "Top": "Début",
     "Bottom": "Fin",
-    "Amount": "Quantité"
+    "Amount": "Quantité",
+    "Undo": "Annuler",
+    "User": "Utilisateur",
+    "Tables": "Tableau",
+    "Pie_charts": "Graphiques circulaires",
+    "Read_more_on_wiki": "Read more details on wiki"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -152,6 +164,17 @@
     "Node_content": "Contenu du point de récolte",
     "Toggle_collapse": "Ouvrir/fermer tous les groupes",
     "Add_alarms_to_group": "Ajouter des alarmes à ce groupe",
+    "REALTIME": {
+      "Reset_timers": "Timers de reset",
+      "WEEKLY_RESETS": "Resets hebdos",
+      "WEEKLY_RESETS_DESCRIPTION": "Livraisons, carnet de khloé, tokens de raid, méga cactpot, revue de mode, chasse rang B.",
+      "ROULETTES_RESET": "Roulettes & tribus tribales",
+      "ROULETTES_RESET_DESCRIPTION": "Réinitialisation de toutes les roulettes, les quêtes de tribus, les chasses quotidiennes et le mini cactpot.",
+      "DELIVERIES_RESET": "Livraisons",
+      "DELIVERIES_RESET_DESCRIPTION": "Réinitialisation des livraisons de grande compagnie",
+      "LEVE_ALLOWANCES": "Autorisations de mandats",
+      "LEVE_ALLOWANCES_DESCRIPTION": "Vous obtenez 3 nouvelles autorisations de mandats"
+    },
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
@@ -348,6 +371,10 @@
     "Always_HQ_leves": "Utiliser des mandats HQ par défaut pour le calcul d'exp",
     "Clickthrough_overlay": "Permettre de cliquer à travers l'overlay",
     "Disable_search_history": "Supprimer l'historique de recherche",
+    "Disable_search_debounce": "Désactiver la recherche auto (seul appuyer sur Entrée déclenchera la recherche)",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
+    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
+    "Contribute_to_universalis": "Contribute to Universalis",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -378,6 +405,8 @@
     "User_not_verified": "Utilisateur non vérifié, cliquez pour vérifier",
     "More_than_100_lists_created": "Plus de 100 listes créées",
     "Veteran": "Vétéran",
+    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
     "VERIFICATION": {
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code: \"{{userId}}\" dans votre biographie de profil Lodestone et cliquez sur le bouton ci-dessous. Plus d'informations sur <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">le wiki</a>",
@@ -393,7 +422,7 @@
     "Merge_lists": "Fusionner des listes",
     "Merge_lists_warning": "Les grandes listes ne sont pas listées ici car vous ne pouvez pas fusionner les listes qui sont trop grandes en raison des limitations de base de données.",
     "Lists_merged": "Listes fusionnées avec succès !",
-    "Shared_lists": "Listes sur lesquelles vous avez le droit d'écriture",
+    "Shared_lists": "Listes partagées avec vous",
     "Add_selection": "Ajouter la sélection à une liste",
     "Your_lists": "Vos listes",
     "Outdated_tag": "Pas à jour",
@@ -440,6 +469,14 @@
     "Show_craftable_amount": "Voir la quantité fabricable",
     "Optimized_full_path": "Afficher le chemin optimisé complet (le moins cher et le plus rapide)",
     "Quick_layout_swap": "Changement de layout rapide",
+    "Offline": "Hors ligne",
+    "Offline_help": "Les listes hors ligne sont stockées dans le navigateur ou l'application, elles sont uniquement disponibles dans cette instance et ne peuvent pas être partagées, mais elles sont plus rapides car elles ne nécessitent pas d'appels réseau.",
+    "Mark_whole_panel_done": "Marquer le contenu du panneau comme terminé",
+    "ROTATION": {
+      "Attach": "Attacher une rotation",
+      "Detach": "Détacher la rotation",
+      "Click_to_copy_macro": "Cliquez pour ouvrir la fenêtre de copie de macro"
+    },
     "INVENTORY": {
       "Show_final_items": "Afficher les éléments finaux",
       "Hide_final_items": "Masquer les éléments finaux"
@@ -487,6 +524,10 @@
     "List_too_large_description": "Cette liste est trop longue et pourrait être supprimée automatiquement par le système de base de données en raison de quotas imposés si vous y ajoutez plus d'objets.",
     "Add_to_another_list": "Ajouter à une autre liste",
     "New_tag": "Nouveau tag",
+    "Amount_ilvl": "Montant (ilvl)",
+    "Contributions_popup": "Statistiques des contributions",
+    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
+    "Autofill": "Autofill",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -514,7 +555,8 @@
         "REMOVE_ITEM": "Supprimer l’élément de la liste",
         "ADD_TAG": "Ajouter un tag à l'élément",
         "MARK_AS_DONE_IN_LOG": "Marquer comme fait dans le livre de recettes",
-        "MARKET_BOARD_INFORMATIONS": "Hôtel des ventes"
+        "MARKET_BOARD_INFORMATIONS": "Hôtel des ventes",
+        "ATTACH_ROTATION": "Attacher une rotation"
       }
     },
     "LAYOUT": {
@@ -602,10 +644,10 @@
     "Steps": "Étapes",
     "Loading_path": "Chargement du chemin optimisé (peut prendre plusieurs secondes)",
     "STEP": {
-      "Gathering": "Récolter {{amount}}",
-      "Hunting": "Obtenez {{amount}} sur des monstres",
-      "Vendor": "Acheter {{amount}}",
-      "Trade": "Échanger {{amount}}"
+      "Gathering": "Récolter {{amount}} (total : {{total}})",
+      "Hunting": "Obtenir {{amount}} sur les monstres (total : {{total}})",
+      "Vendor": "Acheter {{amount}} (total : {{total}})",
+      "Trade": "Échanger {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -743,6 +785,14 @@
     "Solve_rotation": "Résoudre cette rotation",
     "Rotation_solver": "Résolveur de rotations",
     "Recipe_picker_placeholder": "Entrez le nom de la recette que vous voulez simuler",
+    "Could_not_find_minstats": "Impossible de trouver les statistiques minimales pour cette rotation",
+    "STATE": {
+      "Excellent": "Excellent",
+      "Good": "Bon",
+      "Poor": "Mauvais",
+      "Fail": "Echec",
+      "Normal": "Normal"
+    },
     "SOLVER": {
       "Hq_target": "%HQ Ciblé",
       "Use_rotation_as_seed": "Utiliser la rotation actuelle comme point de départ",
@@ -788,6 +838,7 @@
     "ROTATIONS": {
       "Search_placeholder": "Rechercher une rotation",
       "FOLDERS": {
+        "Not_found": "Dossier de rotations introuvable",
         "Folders": "Dossiers de rotation",
         "Rename": "Renommer le dossier",
         "New_folder": "Nouveau dossier",
@@ -944,16 +995,16 @@
     "Officer": "Officier",
     "Promote_officer": "Promouvoir officier",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été ajouté à ** [{{listName}}] ({{listUrl}}) **.",
-      "Item_removed": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été retiré de ** [{{listName}}] ({{listUrl}})**.",
-      "List_progress": "** [{{characterName}}] ({{memberProfileUrl}}) ** marqué {{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** sur {{totalNeeded}} comme fait sur la liste * * [{{listName}}], ({{listUrl}}) **.",
+      "Item_added": "{{amount}}x ** [{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}}) ** a été ajouté à ** [{{listName}}] ({{listUrl}}) **.",
+      "Item_removed": "{{amount}}x ** [{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}}) ** a été retiré de ** [{{listName}}] ({{listUrl}})**.",
+      "List_progress": "** [{{characterName}}] ({{memberProfileUrl}}) ** marqué {{amount}}x ** [{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}}) ** sur {{totalNeeded}} comme fait sur la liste * * [{{listName}}], ({{listUrl}}) **.",
       "Webhook_setup_complete": "Ce salon a été défini comme salon de suivi pour l'équipe **{{teamName}}**.",
       "List_added_notification": "La liste ** [{{listName}}] ({{listUrl}}) ** a été ajoutée à l’équipe.",
       "List_removed_notification": "La liste ** [{{listName}}] ({{listUrl}}) ** a été retirée de l’équipe.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** a rejoint l'équipe!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** a été retiré de l'équipe.",
       "Name_changed": "L'équipe **{{oldName}}** a été renommée en **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** a été assigné à **[{{memberName}}]({{memberProfileUrl}})** sur la liste **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/fr/item/{{itemId}})** a été assigné à **[{{memberName}}]({{memberProfileUrl}})** sur la liste **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Un membre a rejoint",
@@ -964,7 +1015,8 @@
       "LIST_REMOVED": "Liste supprimée",
       "LIST_PROGRESSION": "Avancement des matériaux",
       "FINAL_LIST_PROGRESSION": "Avancement des objets finaux",
-      "USER_ASSIGNMENT": "Affectation d'un utilisateur"
+      "USER_ASSIGNMENT": "Affectation d'un utilisateur",
+      "ITEM_COMPLETION": "Progression"
     }
   },
   "MARKETBOARD": {
@@ -977,6 +1029,7 @@
     "History": "Historique",
     "Purchase_date": "Date",
     "More_on_mogboard": "Plus de détails sur mogboard",
+    "More_on_universalis": "More details on universalis",
     "Server": "Serveur"
   },
   "COMMENTS": {
@@ -1011,7 +1064,7 @@
   },
   "UPDATE": {
     "New_update_available": "Une nouvelle mise à jour est disponible ! ",
-    "Desktop_instructions": "Veuillez cliquer sur ce lien pour télécharger la dernière version : ",
+    "New_update_available_desktop": "Une nouvelle mise à jour est disponible !\nCliquez ici pour la télécharger et l'installer.",
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente."
   },
   "LOG_TRACKER": {
@@ -1029,6 +1082,7 @@
     "Required_for_achievement": "Requis pour les haut faits",
     "Select_spot": "Sélectionnez un point de pêche pour en voir les détails",
     "Hide_completed": "Masquer les éléments complétés",
+    "Hide_completed_items": "Masquer les éléments complétés",
     "MIN_optimized_path": "Chemin optimisé pour tous les nœuds MIN",
     "BTN_optimized_path": "Chemin optimisé pour tous les nœuds BTN",
     "PAGE": {
@@ -1437,7 +1491,9 @@
     "Title": "Dépense de devises",
     "Description": "Vous avez trop de devises ? Sélectionnez votre devise, définissez un montant, un serveur et trouvez quel article est le meilleur à acheter pour revendre à l'hôtel des ventes et gagner des gils !",
     "Pick_currency": "Choisir une devise",
-    "You_can_buy": "Vous pouvez en acheter {{amount}}"
+    "You_can_buy": "Vous pouvez en acheter {{amount}}",
+    "Disabled": "Le guide de dépense de devises ne fonctionne plus",
+    "Disabled_description": "Ceci est dû au fait que Square Enix refuse de discuter afin de convenir d'un moyen de récupérer les données dont nous avons besoin sans être banni sans arrêt, nous ne pouvons malheureusement pas continuer sans cela. Si vous souhaitez vous plaindre, veuillez le faire auprès de Square Enix."
   },
   "BLOG": {
     "Title": "Blog"
@@ -1451,7 +1507,7 @@
     "Sort_asc": "Croissant",
     "Sort_desc": "Décroissant",
     "Add_stat_filter": "Ajouter un filtre de stat",
-    "Add_bonus_stat_filter": "Ajouter un filtre de stat bonus",
+    "Add_bonus_stat_filter": "Ajouter un filtre de caractéristique bonus",
     "Search_tip": "Vous pouvez taper patch :<patch #> pour filtrer sur un patch donné, exemple : patch:5.01",
     "SORT_BY": {
       "Relevance": "Pertinence",
@@ -1467,5 +1523,29 @@
     "Gathering": "Récolte",
     "Helpers": "Assistants",
     "Other": "Autre"
+  },
+  "PACKET_CAPTURE": {
+    "Banner_title": "Packet capture is available",
+    "Button_label": "Enable packet capture",
+    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
+    "Empty_inventory": "Your inventory hasn't been loaded yet",
+    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
+    "No_character_id": "No ingame character id set",
+    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
+  },
+  "INVENTORY": {
+    "Title": "Inventory",
+    "Empty": "Empty inventory",
+    "Estimate_total_price": "Estimate total inventory price",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Copied_to_clipboard": "Inventory copied to clipboard",
+    "Click_to_add_to_progression": "Click to add to item progression",
+    "Contribute_to_universalis": "Contribute data to universalis",
+    "BAG": {
+      "SaddleBag": "Chocobo Saddlebag",
+      "Bag": "Inventory",
+      "Other": "Other inventory"
+    }
   }
 }

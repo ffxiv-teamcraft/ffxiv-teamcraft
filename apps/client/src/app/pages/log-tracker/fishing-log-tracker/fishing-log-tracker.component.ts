@@ -45,6 +45,8 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
 
   public fishEyesFormat = 1;
 
+  public hideCompleted = false;
+
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private bell: BellNodesService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
               private lazyData: LazyDataService) {
@@ -257,7 +259,7 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
       shareReplay(1)
     );
 
-    this.display$ = combineLatest(completeDisplay$, this.completion$).pipe(
+    this.display$ = combineLatest([completeDisplay$, this.completion$]).pipe(
       map(([completeDisplay, completion]: [any, number[]]) => {
         return completeDisplay.map(display => {
           const uniqueDisplayDone = [];

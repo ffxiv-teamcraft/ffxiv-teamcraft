@@ -6,6 +6,7 @@ export interface ListsState {
   compacts: List[];
   listDetails: List[];
   selectedId?: string; // which Lists record has been selected
+  autocompletionEnabled?: boolean;
   compactsConnected: boolean;
   needsVerification: boolean;
   deleted: string[];
@@ -33,14 +34,37 @@ export function listsReducer(
       break;
     }
 
+    case ListsActionTypes.ToggleAutocompletion: {
+      state = {
+        ...state,
+        autocompletionEnabled: action.enabled
+      };
+      break;
+    }
+
     case ListsActionTypes.MyListsLoaded: {
       state = {
         ...state,
         compacts: [
-          ...state.compacts.filter(compact => compact.authorId !== action.userId),
+          ...state.compacts.filter(compact => compact.authorId !== action.userId || compact.offline),
           ...action.payload
         ],
         compactsConnected: true
+      };
+      break;
+    }
+
+    case ListsActionTypes.OfflineListsLoaded: {
+      state = {
+        ...state,
+        listDetails: [
+          ...state.listDetails.filter(list => !list.offline),
+          ...action.payload
+        ],
+        compacts: [
+          ...state.compacts.filter(compact => !compact.offline),
+          ...action.payload.map(list => list.getCompact())
+        ],
       };
       break;
     }
@@ -67,7 +91,7 @@ export function listsReducer(
       break;
     }
 
-    case ListsActionTypes.ListsWithWriteAccessLoaded: {
+    case ListsActionTypes.SharedListsLoaded: {
       state = {
         ...state,
         compacts: [

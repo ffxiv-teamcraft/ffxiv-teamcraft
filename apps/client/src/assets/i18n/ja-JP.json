@@ -20,6 +20,13 @@
     "auth/user-not-found": "メールアドレスまたはパスワードが間違っています",
     "auth/wrong-password": "メールアドレスまたはパスワードが間違っています"
   },
+  "TIMERS": {
+    "Days": "days",
+    "Day": "day",
+    "Hours": "h",
+    "Minutes": "m",
+    "Seconds": "s"
+  },
   "ITEMS": {
     "Title": "検索",
     "No_match": "一致するアイテムがありません",
@@ -69,7 +76,7 @@
     "Created_by": "{{name}} で作成されました",
     "Share_link_copied": "工房シェアリンクにコピーされました",
     "Not_found": "この工房に無いか、アクセスする権限がありません",
-    "Shared_workshops": "書く権限がある工房",
+    "Shared_workshops": "Workshops shared with you",
     "Rename": "工房名を変更する",
     "Add_lists": "リストを追加する"
   },
@@ -87,7 +94,7 @@
   "Hide_if_empty": "空欄を隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
-  "Ephemeral_tag": "刻限",
+  "Ephemeral_tag": "Ephemeral",
   "Remove_ephemeral": "永続リストへのアップグレード",
   "Quick_list_create": "簡易リストを作成する　(完了した後、削除)",
   "Tag_filter": "タグ",
@@ -130,7 +137,12 @@
     "None": "なし",
     "Top": "Top",
     "Bottom": "Bottom",
-    "Amount": "Amount"
+    "Amount": "Amount",
+    "Undo": "Undo",
+    "User": "User",
+    "Tables": "Table",
+    "Pie_charts": "Pie charts",
+    "Read_more_on_wiki": "Read more details on wiki"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -152,6 +164,17 @@
     "Node_content": "採集物情報",
     "Toggle_collapse": "グループ表示切り替わり",
     "Add_alarms_to_group": "グループにアラームを追加",
+    "REALTIME": {
+      "Reset_timers": "Reset timers",
+      "WEEKLY_RESETS": "Weeklies",
+      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
+      "ROULETTES_RESET": "Roulettes & Beast tribes",
+      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
+      "DELIVERIES_RESET": "Deliveries",
+      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
+      "LEVE_ALLOWANCES": "Leve allowances",
+      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+    },
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
       "Name": "名前",
@@ -348,6 +371,10 @@
     "Always_HQ_leves": "Always count leves exp with HQ items",
     "Clickthrough_overlay": "Make overlay clickthrough",
     "Disable_search_history": "Disable search history",
+    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
+    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
+    "Contribute_to_universalis": "Contribute to Universalis",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -378,6 +405,8 @@
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "More_than_100_lists_created": "100個以上のリストを作成",
     "Veteran": "ベテラン",
+    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
     "VERIFICATION": {
       "Title": "キャラクター認証",
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
@@ -393,7 +422,7 @@
     "Merge_lists": "リストを併合する",
     "Merge_lists_warning": "大規模のリストはデータベースの制限で、まとめることはできないため、表示できません。",
     "Lists_merged": "リスト併合が完了されました！",
-    "Shared_lists": "書く権限があるリスト",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "選択項目をリストに追加する",
     "Your_lists": "マイリスト",
     "Outdated_tag": "古い",
@@ -440,6 +469,14 @@
     "Show_craftable_amount": "制作可能な数量を表示する",
     "Optimized_full_path": "全ての推奨経路を表示(最安値)",
     "Quick_layout_swap": "クイックレイアウトの切り替え",
+    "Offline": "Offline",
+    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
+    "Mark_whole_panel_done": "Mark panel content as done",
+    "ROTATION": {
+      "Attach": "Attach rotation",
+      "Detach": "Detach rotation",
+      "Click_to_copy_macro": "Click to open macro copy popup"
+    },
     "INVENTORY": {
       "Show_final_items": "最終アイテムの表示",
       "Hide_final_items": "最終アイテムを隠す"
@@ -487,6 +524,10 @@
     "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
     "Add_to_another_list": "別のリストに追加",
     "New_tag": "新しいタグ",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "Contributions stats",
+    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
+    "Autofill": "Autofill",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -514,7 +555,8 @@
         "REMOVE_ITEM": "リストからこのアイテムを削除",
         "ADD_TAG": "アイテムにタグを追加する",
         "MARK_AS_DONE_IN_LOG": "手帳に完了と表示する",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information",
+        "ATTACH_ROTATION": "Attach rotation"
       }
     },
     "LAYOUT": {
@@ -602,10 +644,10 @@
     "Steps": "段階",
     "Loading_path": "推奨経路を読み込み中(数秒くらい所要)",
     "STEP": {
-      "Gathering": "{{amount}} 個採集",
-      "Hunting": "戦闘で {{amount}} 個 獲得した",
-      "Vendor": "{{amount}} 個 商店から購入した",
-      "Trade": "{{amount}} 個 交換した"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -743,6 +785,14 @@
     "Solve_rotation": "Solve this rotation",
     "Rotation_solver": "Rotation solver",
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "STATE": {
+      "Excellent": "Excellent",
+      "Good": "Good",
+      "Poor": "Poor",
+      "Fail": "Fail",
+      "Normal": "Normal"
+    },
     "SOLVER": {
       "Hq_target": "Target HQ%",
       "Use_rotation_as_seed": "Use current rotation as starting point",
@@ -788,6 +838,7 @@
     "ROTATIONS": {
       "Search_placeholder": "制作スキル回しを検索",
       "FOLDERS": {
+        "Not_found": "Rotation folder not found",
         "Folders": "スキル回しフォルダー",
         "Rename": "フォルダー名を変更する",
         "New_folder": "新しいフォルダー",
@@ -944,16 +995,16 @@
     "Officer": "オフィサー",
     "Promote_officer": "オフィサーに昇格",
     "NOTIFICATIONS": {
-      "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加されました。",
-      "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を削除されました。",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**が **[{{listName}}]({{listUrl}})**にある {{totalNeeded}}個中に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** を完了に表示する",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "**{{teamName}}** チームをこのチャンネルから追跡し始めました。",
       "List_added_notification": "リスト **[{{listName}}]({{listUrl}})**がチームに追加されました。",
       "List_removed_notification": "リスト **[{{listName}}]({{listUrl}})**がチームから外されました。",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** さんがチームに入りました!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** がチームから抜けました。",
       "Name_changed": "**{{oldName}}** から **{{newName}}** に名前が変更されました。",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**が [{{listName}}]({{listUrl}})**の **[{{memberName}}]({{memberProfileUrl}})**に割り当てられました"
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "メンバー入りました",
@@ -964,7 +1015,8 @@
       "LIST_REMOVED": "リストが削除されました",
       "LIST_PROGRESSION": "素材の進捗状況の一覧",
       "FINAL_LIST_PROGRESSION": "最終項目の進行状況をリストアップする",
-      "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる"
+      "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {
@@ -977,6 +1029,7 @@
     "History": "取引履歴",
     "Purchase_date": "日付",
     "More_on_mogboard": "Mogboardで詳しく情報を見る",
+    "More_on_universalis": "More details on universalis",
     "Server": "サーバー"
   },
   "COMMENTS": {
@@ -1011,7 +1064,7 @@
   },
   "UPDATE": {
     "New_update_available": "新しいアップデートがあります! ",
-    "Desktop_instructions": "最新バージョンをダウンロードするには、次のリンクに接続してください： ",
+    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。"
   },
   "LOG_TRACKER": {
@@ -1029,6 +1082,7 @@
     "Required_for_achievement": "アチーブメントに適用された",
     "Select_spot": "表示する場所を選択して下さい。",
     "Hide_completed": "完了したレシピを隠す",
+    "Hide_completed_items": "Hide completed items",
     "MIN_optimized_path": "全ての採掘師の採集物の推奨経路",
     "BTN_optimized_path": "全ての園芸師の採集物の推奨経路",
     "PAGE": {
@@ -1437,7 +1491,9 @@
     "Title": "Currency Spending guide",
     "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
     "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "You_can_buy": "You can buy {{amount}}",
+    "Disabled": "The currency spending guide isn't working anymore",
+    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
   },
   "BLOG": {
     "Title": "Blog"
@@ -1467,5 +1523,29 @@
     "Gathering": "Gathering",
     "Helpers": "Helpers",
     "Other": "Other"
+  },
+  "PACKET_CAPTURE": {
+    "Banner_title": "Packet capture is available",
+    "Button_label": "Enable packet capture",
+    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
+    "Empty_inventory": "Your inventory hasn't been loaded yet",
+    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
+    "No_character_id": "No ingame character id set",
+    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
+  },
+  "INVENTORY": {
+    "Title": "Inventory",
+    "Empty": "Empty inventory",
+    "Estimate_total_price": "Estimate total inventory price",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Copied_to_clipboard": "Inventory copied to clipboard",
+    "Click_to_add_to_progression": "Click to add to item progression",
+    "Contribute_to_universalis": "Contribute data to universalis",
+    "BAG": {
+      "SaddleBag": "Chocobo Saddlebag",
+      "Bag": "Inventory",
+      "Other": "Other inventory"
+    }
   }
 }

@@ -1,11 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { XivapiService } from '@xivapi/angular-client';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MarketboardItem } from '@xivapi/angular-client/src/model/schema/market/marketboard-item';
 import { SettingsService } from '../../settings/settings.service';
+import { HttpClient } from '@angular/common/http';
+import { UniversalisService } from '../../../core/api/universalis.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-marketboard-popup',
@@ -37,8 +39,8 @@ export class MarketboardPopupComponent implements OnInit {
     value: 'ascend'
   });
 
-  constructor(private authFacade: AuthFacade, private xivapi: XivapiService, private lazyData: LazyDataService,
-              private settings: SettingsService) {
+  constructor(private authFacade: AuthFacade, private http: HttpClient, private lazyData: LazyDataService,
+              private settings: SettingsService, private universalis: UniversalisService, private translate: TranslateService) {
   }
 
   ngOnInit() {
@@ -48,43 +50,26 @@ export class MarketboardPopupComponent implements OnInit {
     );
 
     const data$: Observable<MarketboardItem> = this.server$.pipe(
-      switchMap(server => {
-        return this.xivapi.getMarketBoardItemCrossServer(Object.keys(this.lazyData.datacenters).find(dc => {
+      map(server => {
+        return [Object.keys(this.lazyData.datacenters).find(dc => {
           return this.lazyData.datacenters[dc].indexOf(server) > -1;
-        }), this.itemId)
-          .pipe(
-            map(res => {
-              const item: Partial<MarketboardItem> = {
-                ID: res[Object.keys(res)[0]].ID,
-                ItemId: res[Object.keys(res)[0]].ItemId,
-                History: [],
-                Prices: []
-              };
-              item.Prices = [].concat.apply([], Object.keys(res).map(serverName => {
-                return res[serverName].Prices.map(price => {
-                  (<any>price).Server = serverName;
-                  return price;
-                });
-              })).filter(price => {
-                if (this.settings.disableCrossWorld) {
-                  return price.Server === server;
-                }
-                return true;
+        }), server];
+      }),
+      switchMap(([dc, server]) => {
+        return this.universalis.getDCPrices(dc, this.itemId).pipe(
+          map(result => {
+            const res = result[0];
+            if (this.settings.disableCrossWorld) {
+              res.Prices = res.Prices.filter((price: any) => {
+                return price.Server === server;
               });
-              item.History = [].concat.apply([], Object.keys(res).map(serverName => {
-                return res[serverName].History.map(historyRow => {
-                  (<any>historyRow).Server = serverName;
-                  return historyRow;
-                });
-              })).filter(price => {
-                if (this.settings.disableCrossWorld) {
-                  return price.Server === server;
-                }
-                return true;
+              res.History = res.History.filter((price: any) => {
+                return price.Server === server;
               });
-              return item as MarketboardItem;
-            })
-          );
+            }
+            return res;
+          })
+        );
       })
     );
 
@@ -126,13 +111,15 @@ export class MarketboardPopupComponent implements OnInit {
         return of([]);
       }),
       tap(() => this.loadingHistory = false),
-      map((history: any) => {
-        return history.map(entry => {
-          return {
-            ...entry,
-            PurchaseDate: entry.PurchaseDate + '000'
-          };
-        });
+      map(history => {
+        return history
+          .sort((a, b) => b.PurchaseDate - a.PurchaseDate)
+          .map(entry => {
+            return {
+              ...entry,
+              PurchaseDate: entry.PurchaseDate + '000'
+            };
+          });
       }),
       shareReplay(1)
     );
@@ -140,6 +127,10 @@ export class MarketboardPopupComponent implements OnInit {
 
   sort(event: any): void {
     this.sort$.next({ key: event.key, value: event.value });
+  }
+
+  getLocale(): string {
+    return this.translate.currentLang;
   }
 
 }

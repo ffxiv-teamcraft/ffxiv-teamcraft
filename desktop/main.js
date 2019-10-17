@@ -7,6 +7,8 @@ const isDev = require('electron-is-dev');
 const log = require('electron-log');
 log.transports.file.level = 'info';
 const express = require('express');
+const fs = require('fs');
+const Machina = require('./machina.js');
 
 const oauth = require('./oauth.js');
 
@@ -34,10 +36,13 @@ for (let i = 0; i < argv.length; i++) {
   if (argv[i] === '--noHardwareAcceleration' || argv[i] === '-noHA') {
     options.noHA = true;
   }
+  if (argv[i] === '--winpcap') {
+    options.winpcap = true;
+  }
 }
 
 if (isDev) {
-  autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
+  // autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
 }
 
 if (!options.multi) {
@@ -68,6 +73,20 @@ if (options.noHA) {
 }
 
 function createWindow() {
+  // Remove update setup
+  const updaterFolder = path.join(process.env.APPDATA, '../Local/ffxiv-teamcraft-updater');
+  fs.readdir(updaterFolder, (err, files) => {
+    if (err) throw err;
+
+    for (const file of files) {
+      if (fs.lstatSync(path.join(updaterFolder, file)).isDirectory()) {
+        continue;
+      }
+      fs.unlink(path.join(updaterFolder, file), err => {
+        if (err) throw err;
+      });
+    }
+  });
   app.setAsDefaultProtocolClient('teamcraft');
   protocol.registerFileProtocol('teamcraft', function(request) {
     deepLink = request.url.substr(12);
@@ -100,6 +119,10 @@ function createWindow() {
   win = new BrowserWindow(opts);
   if (config.get('win:fullscreen')) {
     win.maximize();
+  }
+
+  if (config.get('machina') === true) {
+    Machina.start(win, config, options.winpcap);
   }
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
@@ -150,14 +173,15 @@ function createWindow() {
 
     win.focus();
     win.show();
-    autoUpdater.checkForUpdatesAndNotify();
-    updateInterval = setInterval(() => {
-      autoUpdater.checkForUpdatesAndNotify();
-    }, 300000);
+    autoUpdater.checkForUpdates();
   });
 
   // save window size and position
   win.on('close', () => {
+
+    if (config.get('machina') === true) {
+      Machina.stop();
+    }
     config.set('win:bounds', win.getBounds());
     config.set('win:fullscreen', win.isMaximized());
     config.set('win:alwaysOnTop', win.isAlwaysOnTop());
@@ -263,6 +287,20 @@ ipcMain.on('app-ready', (event) => {
   }
 });
 
+ipcMain.on('toggle-machina', (event, enabled) => {
+  config.set('machina', enabled);
+  event.sender.send('toggle-machina:value', enabled);
+  if (enabled) {
+    Machina.start(win, config, options.winpcap);
+  } else {
+    Machina.stop();
+  }
+});
+
+ipcMain.on('toggle-machina:get', (event) => {
+  event.sender.send('toggle-machina:value', config.get('machina'));
+});
+
 // Create window on electron intialization
 app.on('ready', () => {
   createWindow();
@@ -343,6 +381,10 @@ ipcMain.on('language', (event, lang) => {
 
 ipcMain.on('show-devtools', () => {
   win.webContents.openDevTools();
+});
+
+ipcMain.on('log', (event, entry) => {
+  log[entry.level](entry.data);
 });
 
 ipcMain.on('notification', (event, config) => {

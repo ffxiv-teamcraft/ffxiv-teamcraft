@@ -18,6 +18,8 @@ import { UserPickerModule } from '../../modules/user-picker/user-picker.module';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { VerificationPopupComponent } from './profile-editor/verification-popup/verification-popup.component';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { SimulatorModule } from '../simulator/simulator.module';
+import { AutofillStatsPopupComponent } from './profile-editor/autofill-stats-popup/autofill-stats-popup.component';
 
 const routes: Routes = [
   {
@@ -47,10 +49,11 @@ const routes: Routes = [
     UserPickerModule,
     UserAvatarModule,
 
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SimulatorModule
   ],
-  declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent],
-  entryComponents: [MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent]
+  declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent, AutofillStatsPopupComponent],
+  entryComponents: [MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent, AutofillStatsPopupComponent]
 })
 export class ProfileModule {
 }

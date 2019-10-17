@@ -1,14 +1,31 @@
-<div class="action-container" (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null">
-  <div class="action"
-       [appXivdbActionTooltip]="action.getId(getJobId())"
-       [appXivdbActionTooltipDisabled]="tooltipDisabled"
-       [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp || !safe, 'not-enough-cp': notEnoughCp}">
-    <img src="{{action.getId(getJobId()) | actionIcon | xivapiIcon}}" alt="{{getAlt()}}">
-    <div class="red-overlay" *ngIf="notEnoughCp || disabled"></div>
-    <i class="material-icons failed" *ngIf="failed || !safe">close</i>
-    <span class="cost"
-          *ngIf="!hideCost && action.getBaseCPCost(simulation) > 0 && (cpCost === undefined || cpCost !== 0)">
+<nz-badge [nzColor]="getColor(state)">
+  <div class="action-container" (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null"
+       (contextmenu)="showStateMenu?contextMenu($event, template):null">
+    <div class="action"
+         [appXivdbActionTooltip]="action.getId(getJobId())"
+         [appXivdbActionTooltipDisabled]="tooltipDisabled"
+         [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp || !safe, 'not-enough-cp': notEnoughCp}">
+      <img src="{{action.getId(getJobId()) | actionIcon | xivapiIcon}}" alt="{{getAlt()}}">
+      <div class="red-overlay" *ngIf="notEnoughCp || disabled"></div>
+      <i class="material-icons failed" *ngIf="failed || !safe">close</i>
+      <span class="cost"
+            *ngIf="!hideCost && action.getBaseCPCost(simulation) > 0 && (cpCost === undefined || cpCost !== 0)">
             {{(cpCost === undefined ? action.getBaseCPCost(simulation) : cpCost) | absolute}}
         </span>
+    </div>
   </div>
-</div>
+</nz-badge>
+<ng-template #template>
+  <ul nz-menu nzInDropDown (nzClick)="close()">
+    <li nz-menu-item (click)="setState(states.NORMAL)"
+        [nzSelected]="!state || state === states.NORMAL">{{'SIMULATOR.STATE.Normal' | translate}}</li>
+    <li nz-menu-item (click)="setState(states.GOOD)"
+        [nzSelected]="state === states.GOOD">{{'SIMULATOR.STATE.Good' | translate}}</li>
+    <li nz-menu-item (click)="setState(states.EXCELLENT)"
+        [nzSelected]="state === states.EXCELLENT">{{'SIMULATOR.STATE.Excellent' | translate}}</li>
+    <li nz-menu-item (click)="setState(states.POOR)"
+        [nzSelected]="state === states.POOR">{{'SIMULATOR.STATE.Poor' | translate}}</li>
+    <li nz-menu-item (click)="setState(states.FAILED)"
+        [nzSelected]="state === states.FAILED">{{'SIMULATOR.STATE.Fail' | translate}}</li>
+  </ul>
+</ng-template>

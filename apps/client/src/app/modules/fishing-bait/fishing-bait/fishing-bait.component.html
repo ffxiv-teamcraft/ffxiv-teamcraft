@@ -4,7 +4,7 @@
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <app-item-icon [hq]="baits.length > 1 && index > 0" [itemId]="bait.id" [icon]="bait.icon"
                      [width]="32" [tooltipDisabled]="true" [appFishTooltip]="bait.id"></app-item-icon>
-      <div>{{bait.id | itemName | i18n}}</div>
+      <div *ngIf="!hideNames">{{bait.id | itemName | i18n}}</div>
     </div>
     <i nz-icon [type]="flex === 'column'?'caret-down':'caret-right'" theme="outline" *ngIf="!last"></i>
   </div>

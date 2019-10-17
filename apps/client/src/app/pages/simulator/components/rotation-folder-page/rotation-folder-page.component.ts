@@ -5,7 +5,7 @@ import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotati
 import { combineLatest, Observable } from 'rxjs';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { ActivatedRoute } from '@angular/router';
-import { map, shareReplay } from 'rxjs/operators';
+import { map, shareReplay, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
 
 @Component({
@@ -31,9 +31,11 @@ export class RotationFolderPageComponent {
     });
     this.userId$ = this.authFacade.userId$;
     this.folder$ = this.foldersFacade.selectedRotationFolder$;
-    this.rotations$ = combineLatest(this.folder$, this.rotationsFacade.allRotations$).pipe(
+    this.rotations$ = combineLatest([this.folder$, this.rotationsFacade.allRotations$]).pipe(
       map(([folder, rotations]) => {
-        return folder.rotationIds.map(id => rotations.find(r => r.$key === id));
+        return folder.rotationIds
+          .map(id => rotations.find(r => r.$key === id))
+          .filter(rotation => rotation && !rotation.notFound);
       }),
       shareReplay(1)
     );

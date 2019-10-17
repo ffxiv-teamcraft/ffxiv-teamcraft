@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { combineLatest, concat, Observable, of } from 'rxjs';
+import { combineLatest, concat, interval, Observable, of } from 'rxjs';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -107,9 +107,15 @@ export class LogTrackerComponent extends TrackerComponent {
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {
-          operation$ = concat(
-            ...operations
-          );
+          operation$ = interval(250)
+            .pipe(
+              first(),
+              switchMap(() => {
+                return concat(
+                  ...operations
+                );
+              })
+            );
         } else {
           operation$ = of(list);
         }
@@ -118,6 +124,7 @@ export class LogTrackerComponent extends TrackerComponent {
           'Adding_recipes',
           { amount: recipesToAdd.length, listname: list.name });
       }),
+      filter(list => list !== null),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
       mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
@@ -142,6 +149,10 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public getDolPageCompletion(page: any): string {
     return `${page.items.filter(item => this.userGatheringCompletion[item.itemId]).length}/${page.items.length}`;
+  }
+
+  public isPageDone(page: any): boolean {
+    return page.items.filter(item => this.userGatheringCompletion[item.itemId]).length >= page.items.length;
   }
 
   public getDohIcon(index: number): string {
@@ -216,10 +227,9 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public isRequiredForAchievement(page: any): boolean {
-    return (
-        (
-          !page.masterbook
-          && page.startLevel.ClassJobLevel !== 50
+    return !page.masterbook
+      && (
+        (page.startLevel.ClassJobLevel !== 50
           && page.startLevel.ClassJobLevel !== 30
         )
         || (page.id > 1055 && page.id < 1072)

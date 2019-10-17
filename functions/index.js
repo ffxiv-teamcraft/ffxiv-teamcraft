@@ -16,6 +16,7 @@ const runtimeOpts = {
 function getCompact(list) {
   const compact = list;
   delete compact.items;
+  delete compact.modificationsHistory;
   compact.finalItems = (compact.finalItems || []).map(item => {
     const entry = {
       amount: item.amount,
@@ -85,6 +86,13 @@ exports.updateUserListCount = functions.runWith(runtimeOpts).firestore.document(
       user.stats.listsCreated += 1;
       return transaction.update(userRef, { stats: user.stats });
     });
+  });
+});
+
+exports.userIdValidator = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
+  const userId = request.query.userId;
+  return firestore.collection('users').doc(userId).get().then(snap => {
+    response.status(200).set('Content-Type', 'application/json').send(`{"valid": ${snap.exists}}`);
   });
 });
 

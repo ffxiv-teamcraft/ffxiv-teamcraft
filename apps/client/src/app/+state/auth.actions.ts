@@ -36,6 +36,8 @@ export enum AuthActionTypes {
   SetCurrentFcId = '[Auth] Set Current fc id',
   CharactersLoaded = '[Auth] Characters loaded',
   UserPersisted = '[Auth] User persisted',
+  SetCID = '[Auth] Set CID',
+  SetWorld = '[Auth] Set World',
 
   ToggleMasterbooks = '[Auth] Toggle Masterbooks',
   SaveSet = '[Auth] Save set',
@@ -80,6 +82,20 @@ export class UpdateUser implements Action {
   readonly type = AuthActionTypes.UpdateUser;
 
   constructor(public user: TeamcraftUser) {
+  }
+}
+
+export class SetCID implements Action {
+  readonly type = AuthActionTypes.SetCID;
+
+  constructor(public cid: string) {
+  }
+}
+
+export class SetWorld implements Action {
+  readonly type = AuthActionTypes.SetWorld;
+
+  constructor(public worldId: number) {
   }
 }
 
@@ -261,4 +277,6 @@ export type AuthActions = GetUser
   | AddCustomCharacter
   | SaveDefaultConsumables
   | UpdateUser
-  | RegisterUser;
+  | RegisterUser
+  | SetCID
+  | SetWorld;

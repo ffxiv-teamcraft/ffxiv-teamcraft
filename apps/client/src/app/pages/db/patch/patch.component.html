@@ -113,7 +113,7 @@
     <nz-collapse *ngIf="patch.fate" nz-col nzMd="8" nzSm="24" nzLg="6">
       <nz-collapse-panel
         #fatePanel
-        [nzHeader]="'DB.PATCH.CONTENT.Crafting_actions' | translate:{amount: patch.fate.length}">
+        [nzHeader]="'DB.PATCH.CONTENT.Fates' | translate:{amount: patch.fate.length}">
         <nz-list [nzDataSource]="patch.fate" [nzRenderItem]="template" *ngIf="fatePanel.nzActive"
                  [nzItemLayout]="'horizontal'">
           <ng-template #template let-entry>

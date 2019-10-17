@@ -56,7 +56,10 @@ import { Theme } from './modules/settings/theme';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
-import { RecipeChoicePopupComponent } from './pages/simulator/components/recipe-choice-popup/recipe-choice-popup.component';
+import { MachinaService } from './core/electron/machina.service';
+import { UserInventoryService } from './core/database/user-inventory.service';
+import { UniversalisService } from './core/api/universalis.service';
+import { GubalService } from './core/api/gubal.service';
 
 declare const gtag: Function;
 
@@ -121,6 +124,10 @@ export class AppComponent implements OnInit {
 
   private dirty = false;
 
+  public downloading = false;
+
+  public emptyInventory$: Observable<boolean>;
+
   public randomTip$: Observable<string> = interval(600000).pipe(
     startWith(-1),
     map(() => {
@@ -153,7 +160,8 @@ export class AppComponent implements OnInit {
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private message: NzMessageService, @Inject(PLATFORM_ID) private platform: Object, @Inject(REQUEST) @Optional() private request: any) {
+              private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
+              private inventoryService: UserInventoryService, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object) {
 
     this.showGiveaway = false;
 
@@ -183,9 +191,21 @@ export class AppComponent implements OnInit {
 
     if (isPlatformServer(this.platform)) {
       this.dataLoaded = true;
+      this.emptyInventory$ = of(false);
     }
 
     if (isPlatformBrowser(this.platform)) {
+      if (this.platformService.isDesktop()) {
+        this.machina.init();
+        this.gubal.init();
+        this.emptyInventory$ = this.inventoryService.getUserInventory().pipe(
+          map(inventory => {
+            return Object.keys(inventory.items).length === 0;
+          })
+        );
+        this.universalis.initCapture();
+      }
+
       this.firebase.object('maintenance')
         .valueChanges()
         .pipe(
@@ -297,9 +317,18 @@ export class AppComponent implements OnInit {
       this.ipc.on('apply-language', (e, newLang) => {
         this.use(newLang, true);
       });
+      this.ipc.on('download-progress', (event, progress: any) => {
+        this.downloading = true;
+      });
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
+  }
+
+  enablePacketCapture(): void {
+    this.ipc.machinaToggle = true;
+    this.settings.enableUniversalisSourcing = true;
+    this.ipc.send('toggle-machina', true);
   }
 
   getPathname(): string {
@@ -325,6 +354,10 @@ export class AppComponent implements OnInit {
       const request: any = this.request;
       return request.lang || 'en';
     }
+  }
+
+  updateDesktopApp(): void {
+    this.ipc.send('update:check');
   }
 
   ngOnInit(): void {

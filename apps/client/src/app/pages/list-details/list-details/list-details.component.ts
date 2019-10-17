@@ -33,6 +33,9 @@ import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-c
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { ListLayout } from '../../../core/layout/list-layout';
 import { ObservableMedia } from '@angular/flex-layout';
+import { ListContributionsComponent } from '../list-contributions/list-contributions.component';
+import * as _ from 'lodash';
+import { IpcService } from '../../../core/electron/ipc.service';
 
 @Component({
   selector: 'app-list-details',
@@ -46,6 +49,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   public finalItemsRow$: Observable<LayoutRowDisplay>;
 
   public list$: Observable<List>;
+
+  public showContributionsButton$: Observable<boolean>;
 
   public crystals$: Observable<ListRow[]>;
 
@@ -73,6 +78,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   public selectedLayout$: Observable<ListLayout>;
 
+  public machinaToggle = false;
+
   public get adaptativeFilter(): boolean {
     return this.adaptativeFilter$.value;
   }
@@ -80,6 +87,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   public set adaptativeFilter(value: boolean) {
     this.adaptativeFilter$.next(value);
   }
+
+  private regeneratingList = false;
 
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
@@ -89,27 +98,40 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
-              private media: ObservableMedia) {
+              private media: ObservableMedia, public ipc: IpcService) {
     super(seoService);
-    this.list$ = combineLatest(this.listsFacade.selectedList$, this.permissionLevel$).pipe(
+    this.ipc.on('toggle-machina:value', (event, value) => {
+      this.machinaToggle = value;
+    });
+    this.ipc.send('toggle-machina:get');
+    this.list$ = combineLatest([this.listsFacade.selectedList$, this.permissionLevel$]).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {
-        if (!list.notFound && list.isOutDated() && permissionLevel >= PermissionLevel.WRITE) {
+        if (!list.notFound && list.isOutDated() && permissionLevel >= PermissionLevel.WRITE && !this.regeneratingList) {
           this.regenerateList(list);
         }
         if (!list.notFound) {
           this.listIsLarge = list.isLarge();
+          if (!list.isOutDated()) {
+            this.regeneratingList = false;
+          }
         }
       }),
       map(([list]) => list),
       shareReplay(1)
     );
+
+    this.showContributionsButton$ = this.list$.pipe(
+      map(list => {
+        return _.uniqBy(list.modificationsHistory, 'userId').length > 1;
+      })
+    );
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
-    this.finalItemsRow$ = combineLatest(this.list$, this.adaptativeFilter$).pipe(
+    this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$]).pipe(
       mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter))
     );
-    this.display$ = combineLatest(this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$).pipe(
+    this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
       mergeMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted)),
       shareReplay(1)
     );
@@ -120,12 +142,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.teams$ = this.teamsFacade.myTeams$;
     this.assignedTeam$ = this.teamsFacade.selectedTeam$;
     this.outDated$ = this.list$.pipe(map(list => !list.notFound && list.isOutDated()));
-    this.canRemoveTag$ = combineLatest(this.assignedTeam$, this.authFacade.userId$, this.permissionLevel$)
+    this.canRemoveTag$ = combineLatest([this.assignedTeam$, this.authFacade.userId$, this.permissionLevel$])
       .pipe(
         map(([team, userId, permissionsLevel]) => team.leader === userId || permissionsLevel >= PermissionLevel.OWNER)
       );
 
-    combineLatest(this.list$, this.listsFacade.compacts$).pipe(
+    combineLatest([this.list$, this.listsFacade.compacts$]).pipe(
       filter(([list, compacts]) => list.notFound && compacts.some(l => l.$key === list.$key)),
       switchMap(([list, compacts]) => {
         const listCompact = compacts.find(l => l.$key === list.$key);
@@ -136,7 +158,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       this.listsFacade.updateList(regeneratedList);
     });
 
-    combineLatest(this.list$, this.teamsFacade.allTeams$, this.teamsFacade.selectedTeam$).pipe(
+    combineLatest([this.list$, this.teamsFacade.allTeams$, this.teamsFacade.selectedTeam$]).pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(([list, teams]) => {
       if (list.teamId !== undefined) {
@@ -277,13 +299,18 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     });
   }
 
+  appendExportStringWithRow(exportString: string, row: ListRow): string {
+    const remaining = row.amount - (row.done || 0);
+    return (remaining > 0) ? (exportString + `${remaining}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`) : exportString;
+  }
+
   public getListTextExport(display: ListDisplay, list: List): string {
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
-      return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
+      return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
     return display.rows.reduce((result, displayRow) => {
       return result + displayRow.rows.reduce((exportString, row) => {
-        return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
+        return this.appendExportStringWithRow(exportString, row);
       }, `${displayRow.title} :\n`) + '\n';
     }, seed);
 
@@ -294,10 +321,11 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   }
 
   regenerateList(list: List): void {
+    this.regeneratingList = true;
     this.progressService.showProgress(this.listManager.upgradeList(list), 1, 'List_popup_title')
       .pipe(first())
       .subscribe((updatedList) => {
-        this.listsFacade.updateList(updatedList);
+        this.listsFacade.updateList(updatedList, false, true);
       });
   }
 
@@ -320,6 +348,17 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzFooter: null,
       nzContent: TagsPopupComponent,
       nzComponentParams: { list: list }
+    });
+  }
+
+  openContributionsPopup(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Contributions_popup'),
+      nzFooter: null,
+      nzContent: ListContributionsComponent,
+      nzBodyStyle: {
+        padding: '0'
+      }
     });
   }
 
@@ -355,8 +394,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.dialog.create({
       nzTitle: this.translate.instant('LIST.History'),
       nzFooter: null,
-      nzContent: ListHistoryPopupComponent,
-      nzComponentParams: { list: list }
+      nzContent: ListHistoryPopupComponent
     });
   }
 
@@ -368,6 +406,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.list$.pipe(first()).subscribe(list => {
       this.listsFacade.unload(list.$key);
     });
+    this.listsFacade.toggleAutocomplete(false);
     super.ngOnDestroy();
   }
 

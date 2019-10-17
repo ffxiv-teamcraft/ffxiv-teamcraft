@@ -13,9 +13,13 @@
               <div [innerHTML]="action.ClassJob | xivapiI18n: 'Abbreviation'"></div>
               <div *ngIf="action.IsPlayerAction" [innerHTML]="action.ActionCategory | xivapiI18n"></div>
             </div>
+            <div class="patch" *ngIf="action.GamePatch">
+              {{action.GamePatch | xivapiI18n}}
+              <app-db-button type="patch" [id]="action.GamePatch.ID"></app-db-button>
+            </div>
           </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="links$ | async as links">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="links" *ngIf="links$ | async as links">
           <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
             <img [src]="link.icon" [alt]="link.title" class="link-icon">
           </a>

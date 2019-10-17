@@ -9,12 +9,14 @@ import {
   DeleteList,
   LoadListCompact,
   LoadListDetails,
-  LoadListsWithWriteAccess,
   LoadMyLists,
+  LoadSharedLists,
   LoadTeamLists,
   NeedsVerification,
+  OfflineListsLoaded,
   SelectList,
   SetItemDone,
+  ToggleAutocompletion,
   UnloadListDetails,
   UpdateItem,
   UpdateList,
@@ -32,6 +34,8 @@ import { ListRow } from '../model/list-row';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
 import { SettingsService } from '../../settings/settings.service';
+import { UserInventoryService } from '../../../core/database/user-inventory.service';
+import { environment } from '../../../../environments/environment';
 
 declare const gtag: Function;
 
@@ -43,7 +47,7 @@ export class ListsFacade {
   allListDetails$ = this.store.select(listsQuery.getAllListDetails);
   compacts$ = this.store.select(listsQuery.getCompacts);
 
-  myLists$ = combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.userId$).pipe(
+  myLists$ = combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.userId$]).pipe(
     map(([compacts, userId]) => {
       return compacts.filter(c => c.authorId === userId);
     }),
@@ -53,18 +57,21 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  listsWithWriteAccess$ = this.authFacade.loggedIn$.pipe(
+  sharedLists$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
       if (!loggedIn) {
         return combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.userId$]).pipe(
           map(([compacts, userId]) => {
             return compacts.filter(c => {
-              return !c.notFound && c.getPermissionLevel(userId) >= PermissionLevel.WRITE && c.authorId !== userId;
+              return !c.notFound
+                && c.getPermissionLevel(userId) >= PermissionLevel.PARTICIPATE
+                && c.hasExplicitPermissions(userId)
+                && c.authorId !== userId;
             });
           })
         );
       }
-      return combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$).pipe(
+      return combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$]).pipe(
         map(([compacts, user, userId, fcId]) => {
           if (user !== null) {
             const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
@@ -75,7 +82,10 @@ export class ListsFacade {
           }
           return this.sortLists(
             compacts.filter(c => {
-              return !c.notFound && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId;
+              return !c.notFound
+                && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.PARTICIPATE
+                && (c.hasExplicitPermissions(userId) || c.hasExplicitPermissions(fcId))
+                && c.authorId !== userId;
             })
           );
         })
@@ -84,7 +94,28 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(filter(list => list !== undefined));
+  public listsWithWriteAccess$ = combineLatest([this.sharedLists$, this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$]).pipe(
+    map(([compacts, user, userId, fcId]) => {
+      if (user !== null) {
+        const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
+        const verified = idEntry && idEntry.verified;
+        if (!verified) {
+          fcId = null;
+        }
+      }
+      return this.sortLists(
+        compacts.filter(c => {
+          return !c.notFound
+            && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE
+            && c.authorId !== userId;
+        })
+      );
+    })
+  );
+
+  selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(
+    filter(list => list !== undefined)
+  );
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
@@ -116,8 +147,10 @@ export class ListsFacade {
 
   needsVerification$ = this.store.select(listsQuery.getNeedsVerification);
 
+  autocompleteEnabled$ = this.store.select(listsQuery.getAutocompleteEnabled);
+
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade, private settings: SettingsService) {
+              private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: UserInventoryService) {
   }
 
   getTeamLists(team: Team): Observable<List[]> {
@@ -144,15 +177,17 @@ export class ListsFacade {
       nzFooter: null,
       nzTitle: this.translate.instant('New_List'),
       nzComponentParams: {
-        showEphemeralCheckbox: true
+        showEphemeralCheckbox: true,
+        showOfflineCheckbox: true
       }
     }).afterClose.pipe(
-      filter(res => res.name !== undefined),
+      filter(res => res && res.name !== undefined),
       map(res => {
         const list = new List();
         list.everyone = this.settings.defaultPermissionLevel;
         list.name = res.name;
         list.ephemeral = res.ephemeral;
+        list.offline = res.offline;
         return list;
       })
     );
@@ -166,8 +201,8 @@ export class ListsFacade {
     return list;
   }
 
-  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false): void {
-    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external));
+  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false): void {
+    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external, fromPacket));
   }
 
   updateItem(item: ListRow, finalItem: boolean): void {
@@ -182,8 +217,8 @@ export class ListsFacade {
     });
   }
 
-  deleteList(key: string): void {
-    this.store.dispatch(new DeleteList(key));
+  deleteList(key: string, offline: boolean): void {
+    this.store.dispatch(new DeleteList(key, offline));
     gtag('event', 'List', {
       'event_label': 'deletion',
       'non_interaction': true
@@ -207,7 +242,7 @@ export class ListsFacade {
   }
 
   loadListsWithWriteAccess(): void {
-    this.store.dispatch(new LoadListsWithWriteAccess());
+    this.store.dispatch(new LoadSharedLists());
   }
 
   loadCompact(key: string): void {
@@ -220,10 +255,45 @@ export class ListsFacade {
 
   unload(key: string): void {
     this.store.dispatch(new UnloadListDetails(key));
+    this.store.dispatch(new SelectList(undefined));
+  }
+
+  toggleAutocomplete(newValue: boolean): void {
+    this.store.dispatch(new ToggleAutocompletion(newValue));
+    if (newValue) {
+      this.userInventoryService.getUserInventory().pipe(
+        first(),
+        filter((inventory) => {
+          return (inventory.lastZone || 0) < environment.startTimestamp;
+        }),
+        map(() => {
+          return this.dialog.create({
+            nzTitle: this.translate.instant('PACKET_CAPTURE.Inventory_outdated'),
+            nzContent: this.translate.instant('PACKET_CAPTURE.Please_update_inventory_popup'),
+            nzClosable: true,
+            nzFooter: null,
+            nzMaskClosable: false
+          });
+        }),
+        switchMap((modal) => {
+          return this.userInventoryService.getUserInventory().pipe(
+            filter(inventory => (inventory.lastZone || 0) > environment.startTimestamp),
+            first(),
+            map(() => modal)
+          );
+        })
+      ).subscribe(modal => {
+        modal.close();
+      });
+    }
   }
 
   setNeedsverification(needed: boolean): void {
     this.store.dispatch(new NeedsVerification(needed));
+  }
+
+  offlineListsLoaded(lists: List[]): void {
+    this.store.dispatch(new OfflineListsLoaded(lists));
   }
 
   loadAndWait(key: string): Observable<List> {

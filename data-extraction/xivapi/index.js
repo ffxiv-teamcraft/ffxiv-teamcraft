@@ -7,6 +7,7 @@ const { Subject, combineLatest, merge } = require('rxjs');
 const { aggregateAllPages, getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 const Multiprogress = require('multi-progress');
 const multi = new Multiprogress(process.stdout);
+const allMobs = require('../../apps/client/src/assets/data/mobs') || {};
 
 const nodes = {};
 const gatheringPointToBaseId = {};
@@ -55,7 +56,9 @@ let todo = [
   'achievements',
   'recipes',
   'actions',
-  'monsterDrops'
+  'monsterDrops',
+  'voyages',
+  'worlds'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -72,6 +75,8 @@ function hasTodo(operation) {
 }
 
 fs.existsSync('output') || fs.mkdirSync('output');
+
+let emptyBnpcNames = 0;
 
 if (hasTodo('mappy')) {
   // MapData extraction
@@ -206,7 +211,7 @@ if (hasTodo('mappy')) {
           persistToTypescript('aetherytes', 'aetherytes', aetherytes);
           console.log('aetherytes written');
           persistToJson('monsters', monsters);
-          console.log('monsters written');
+          console.log('monsters written', emptyBnpcNames);
           persistToJsonAsset('npcs', npcs);
           console.log('npcs written');
         });
@@ -230,7 +235,7 @@ handleNode = (row) => {
 handleAetheryte = (row) => {
   const isShard = row.Name.indexOf('Shard') > -1 || row.Name.indexOf('Urbaine') > -1;
   // Remove shards from maps where they don't belong.
-  if ((+row.PlaceNameID === 2411 || +row.PlaceNameID === 2953) && isShard) {
+  if ((+row.PlaceNameID === 2411 || +row.PlaceNameID === 2953 || +row.PlaceNameID === 2000) && isShard) {
     return;
   }
   // Eulmore plaza appears in lakeland, gotta remove that.
@@ -262,11 +267,24 @@ handleAetheryte = (row) => {
 };
 
 handleMonster = (row, memoryData) => {
-  if (+row.BNpcNameID === 0) {
-    return;
+  let bnpcNameID = +row.BNpcNameID;
+  if (bnpcNameID === 0) {
+    const nameFromData = Object.keys(allMobs)
+      .find(key => {
+        return allMobs[key].en.toLowerCase() === row.Name.toLowerCase()
+          || allMobs[key].ja.toLowerCase() === row.Name.toLowerCase()
+          || allMobs[key].de.toLowerCase() === row.Name.toLowerCase()
+          || allMobs[key].fr.toLowerCase() === row.Name.toLowerCase();
+      });
+    if (nameFromData !== undefined) {
+      bnpcNameID = +nameFromData;
+    } else {
+      emptyBnpcNames++;
+      return;
+    }
   }
   const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
-  monsters[row.BNpcNameID] = monsters[row.BNpcNameID] || {
+  monsters[bnpcNameID] = monsters[row.BNpcNameID] || {
     baseid: +row.BNpcBaseID,
     positions: []
   };
@@ -279,7 +297,7 @@ handleMonster = (row, memoryData) => {
   if (monsterMemoryRow !== undefined) {
     newEntry.level = +monsterMemoryRow.Level;
   }
-  monsters[row.BNpcNameID].positions.push(newEntry);
+  monsters[bnpcNameID].positions.push(newEntry);
 };
 
 handleNpc = (row) => {
@@ -1061,7 +1079,8 @@ if (hasTodo('items')) {
   const names = {};
   const rarities = {};
   const itemIcons = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon').subscribe(page => {
+  const ilvls = {};
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem').subscribe(page => {
     page.Results.forEach(item => {
       itemIcons[item.ID] = item.Icon;
       names[item.ID] = {
@@ -1071,11 +1090,13 @@ if (hasTodo('items')) {
         fr: item.Name_fr
       };
       rarities[item.ID] = item.Rarity;
+      ilvls[item.ID] = item.LevelItem;
     });
   }, null, () => {
     persistToJsonAsset('item-icons', itemIcons);
     persistToJsonAsset('items', names);
     persistToTypescript('rarities', 'rarities', rarities);
+    persistToTypescript('ilvls', 'ilvls', ilvls);
   });
 }
 
@@ -1119,7 +1140,7 @@ if (hasTodo('achievements')) {
 
 if (hasTodo('recipes')) {
   const recipes = [];
-  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,AmountResult,RecipeLevelTable.ClassJobLevel,ItemResultTargetID,ItemIngredient0TargetID,ItemIngredient1TargetID,ItemIngredient2TargetID,ItemIngredient3TargetID,ItemIngredient4TargetID,ItemIngredient5TargetID,ItemIngredient6TargetID,ItemIngredient7TargetID,ItemIngredient8TargetID,ItemIngredient9TargetID,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
+  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0TargetID,ItemIngredient1TargetID,ItemIngredient2TargetID,ItemIngredient3TargetID,ItemIngredient4TargetID,ItemIngredient5TargetID,ItemIngredient6TargetID,ItemIngredient7TargetID,ItemIngredient8TargetID,ItemIngredient9TargetID,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
     page.Results.forEach(recipe => {
       recipes.push({
         id: recipe.ID,
@@ -1128,6 +1149,8 @@ if (hasTodo('recipes')) {
         yields: recipe.AmountResult,
         result: recipe.ItemResultTargetID,
         stars: recipe.RecipeLevelTable.Stars,
+        qs: recipe.CanQuickSynth === 1,
+        rlvl: recipe.RecipeLevelTable.ID,
         ingredients: Object.keys(recipe)
           .filter(k => /ItemIngredient\dTargetID/.test(k))
           .sort((a, b) => a < b ? -1 : 1)
@@ -1313,5 +1336,48 @@ if (hasTodo('patchContent')) {
     });
   }, null, () => {
     persistToJsonAsset('patch-content', patchContent);
+  });
+}
+
+if (hasTodo('voyages')) {
+  const airshipVoyages = [];
+  const submarineVoyages = [];
+  getAllPages('https://xivapi.com/AirshipExplorationPoint?columns=ID,NameShort_*').subscribe(page => {
+    page.Results.forEach(voyage => {
+      airshipVoyages.push({
+        id: voyage.ID,
+        en: voyage.NameShort_en,
+        de: voyage.NameShort_de,
+        ja: voyage.NameShort_ja,
+        fr: voyage.NameShort_fr
+      });
+    });
+  }, null, () => {
+    persistToTypescript('airship-voyages', 'airshipVoyages', airshipVoyages);
+  });
+
+  getAllPages('https://xivapi.com/SubmarineExploration?columns=ID,Destination_*').subscribe(page => {
+    page.Results.forEach(voyage => {
+      submarineVoyages.push({
+        id: voyage.ID,
+        en: voyage.Destination_en,
+        de: voyage.Destination_de,
+        ja: voyage.Destination_ja,
+        fr: voyage.Destination_fr
+      });
+    });
+  }, null, () => {
+    persistToTypescript('submarine-voyages', 'submarineVoyages', submarineVoyages);
+  });
+}
+
+if (hasTodo('worlds')) {
+  const worlds = {};
+  getAllPages('https://xivapi.com/World?columns=ID,Name').subscribe(page => {
+    page.Results.forEach(world => {
+      worlds[world.Name.toLowerCase()] = world.ID;
+    });
+  }, null, () => {
+    persistToTypescript('worlds', 'worlds', worlds);
   });
 }

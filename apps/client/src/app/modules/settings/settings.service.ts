@@ -135,6 +135,14 @@ export class SettingsService {
     this.setSetting('disable-search-history', disabled.toString());
   }
 
+  public get disableSearchDebounce(): boolean {
+    return this.getSetting('disable-search-debounce', 'false') === 'true';
+  }
+
+  public set disableSearchDebounce(disabled: boolean) {
+    this.setSetting('disable-search-debounce', disabled.toString());
+  }
+
   public get expectToSellEverything(): boolean {
     return this.getSetting('pricing:expect-sell-all', 'false') === 'true';
   }
@@ -234,6 +242,22 @@ export class SettingsService {
 
   public set showCopyOnOwnList(tagsEnabled: boolean) {
     this.setSetting('showCopyOnOwnList', tagsEnabled.toString());
+  }
+
+  public get hideMachinaBanner(): boolean {
+    return this.getSetting('machina:hide-banner', 'false') === 'true';
+  }
+
+  public set hideMachinaBanner(hide: boolean) {
+    this.setSetting('machina:hide-banner', hide.toString());
+  }
+
+  public get enableUniversalisSourcing(): boolean {
+    return this.getSetting('universalis:enable-sourcing', 'false') === 'true';
+  }
+
+  public set enableUniversalisSourcing(enabled: boolean) {
+    this.setSetting('universalis:enable-sourcing', enabled.toString());
   }
 
   public get customTheme(): Theme {

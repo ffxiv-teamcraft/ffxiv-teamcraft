@@ -20,6 +20,13 @@
     "auth/user-not-found": "Wrong email or password",
     "auth/wrong-password": "Wrong email or password"
   },
+  "TIMERS": {
+    "Days": "days",
+    "Day": "day",
+    "Hours": "h",
+    "Minutes": "m",
+    "Seconds": "s"
+  },
   "ITEMS": {
     "Title": "Search",
     "No_match": "No matching items",
@@ -69,7 +76,7 @@
     "Created_by": "Created by {{name}}",
     "Share_link_copied": "Workshop share link copied",
     "Not_found": "Workshop not found or you don't have access to it",
-    "Shared_workshops": "Workshops you have write access to",
+    "Shared_workshops": "Workshops shared with you",
     "Rename": "Rename workshop",
     "Add_lists": "Add lists"
   },
@@ -87,7 +94,7 @@
   "Hide_if_empty": "Hide if empty",
   "No_favorites": "No Favorite",
   "Ephemeral_list": "Will be deleted once completed",
-  "Ephemeral_tag": "ephemeral",
+  "Ephemeral_tag": "Ephemeral",
   "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Create quick list (deleted once completed)",
   "Tag_filter": "Tags",
@@ -130,7 +137,12 @@
     "None": "None",
     "Top": "Top",
     "Bottom": "Bottom",
-    "Amount": "Amount"
+    "Amount": "Amount",
+    "Undo": "Undo",
+    "User": "User",
+    "Tables": "Table",
+    "Pie_charts": "Pie charts",
+    "Read_more_on_wiki": "Read more details on wiki"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -152,6 +164,17 @@
     "Node_content": "Node content",
     "Toggle_collapse": "Toggle groups collapse",
     "Add_alarms_to_group": "Add alarms to this group",
+    "REALTIME": {
+      "Reset_timers": "Reset timers",
+      "WEEKLY_RESETS": "Weeklies",
+      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
+      "ROULETTES_RESET": "Roulettes & Beast tribes",
+      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
+      "DELIVERIES_RESET": "Deliveries",
+      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
+      "LEVE_ALLOWANCES": "Leve allowances",
+      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+    },
     "CUSTOM": {
       "Title": "Add custom alarm",
       "Name": "Name",
@@ -348,6 +371,10 @@
     "Always_HQ_leves": "Always count leves exp with HQ items",
     "Clickthrough_overlay": "Make overlay clickthrough",
     "Disable_search_history": "Disable search history",
+    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
+    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
+    "Contribute_to_universalis": "Contribute to Universalis",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -378,6 +405,8 @@
     "User_not_verified": "User not verified, click to verify user",
     "More_than_100_lists_created": "More than 100 lists created",
     "Veteran": "Veteran",
+    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
     "VERIFICATION": {
       "Title": "Character verification",
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
@@ -393,7 +422,7 @@
     "Merge_lists": "Merge lists",
     "Merge_lists_warning": "Big lists are not listed here because you can't merge lists that are too big due to database limitations.",
     "Lists_merged": "Lists merged with success !",
-    "Shared_lists": "Lists you have write access to",
+    "Shared_lists": "Lists shared with you",
     "Add_selection": "Add selection to a list",
     "Your_lists": "Your lists",
     "Outdated_tag": "Outdated",
@@ -440,6 +469,14 @@
     "Show_craftable_amount": "Show craftable amount",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "Quick_layout_swap": "Quick layout swap",
+    "Offline": "Offline",
+    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
+    "Mark_whole_panel_done": "Mark panel content as done",
+    "ROTATION": {
+      "Attach": "Attach rotation",
+      "Detach": "Detach rotation",
+      "Click_to_copy_macro": "Click to open macro copy popup"
+    },
     "INVENTORY": {
       "Show_final_items": "Show final items",
       "Hide_final_items": "Hide final items"
@@ -487,6 +524,10 @@
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "Add_to_another_list": "Add to another list",
     "New_tag": "New tag",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "Contributions stats",
+    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
+    "Autofill": "Autofill",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -514,7 +555,8 @@
         "REMOVE_ITEM": "Remove item from the list",
         "ADD_TAG": "Add tag to item",
         "MARK_AS_DONE_IN_LOG": "Mark as done inside log",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information"
+        "MARKET_BOARD_INFORMATIONS": "Marketboard information",
+        "ATTACH_ROTATION": "Attach rotation"
       }
     },
     "LAYOUT": {
@@ -526,9 +568,9 @@
     }
   },
   "LIST_TAGS": {
-    "A_REALM_REBORN":  "A Realm Reborn",
+    "A_REALM_REBORN": "A Realm Reborn",
     "HEAVENSWARD": "Heavensward",
-    "STORMBLOOD":  "Stormblood",
+    "STORMBLOOD": "Stormblood",
     "SHADOWBRINGERS": "Shadowbringers",
     "OUTDATED": "Outdated",
     "GEAR": "Gear",
@@ -602,10 +644,10 @@
     "Steps": "Steps",
     "Loading_path": "Loading optimized path (can take several seconds)",
     "STEP": {
-      "Gathering": "Gather {{amount}}",
-      "Hunting": "Get {{amount}} on monsters",
-      "Vendor": "Buy {{amount}}",
-      "Trade": "Trade {{amount}}"
+      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
+      "Vendor": "Buy {{amount}} (total: {{total}})",
+      "Trade": "Trade {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -743,6 +785,14 @@
     "Solve_rotation": "Solve this rotation",
     "Rotation_solver": "Rotation solver",
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "STATE": {
+      "Excellent": "Excellent",
+      "Good": "Good",
+      "Poor": "Poor",
+      "Fail": "Fail",
+      "Normal": "Normal"
+    },
     "SOLVER": {
       "Hq_target": "Target HQ%",
       "Use_rotation_as_seed": "Use current rotation as starting point",
@@ -788,6 +838,7 @@
     "ROTATIONS": {
       "Search_placeholder": "Search a rotation",
       "FOLDERS": {
+        "Not_found": "Rotation folder not found",
         "Folders": "Rotation folders",
         "Rename": "Rename folder",
         "New_folder": "New folder",
@@ -835,6 +886,7 @@
       "No_medicine": "No medicine",
       "No_fc_buffs": "No FC buffs",
       "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
+      "Starting_quality": "Starting quality",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Craftsmanship",
@@ -944,16 +996,16 @@
     "Officer": "Officer",
     "Promote_officer": "Promote to officer",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "The **{{teamName}}** team will now be tracked in this channel.",
       "List_added_notification": "The list **[{{listName}}]({{listUrl}})** has been added to the team.",
       "List_removed_notification": "The list **[{{listName}}]({{listUrl}})** has been removed from the team.",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** has joined the team!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
       "Name_changed": "The **{{oldName}}** team has been renamed to **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "Member joined",
@@ -964,7 +1016,8 @@
       "LIST_REMOVED": "List removed",
       "LIST_PROGRESSION": "List materials progression",
       "FINAL_LIST_PROGRESSION": "List final items progression",
-      "USER_ASSIGNMENT": "User assignment"
+      "USER_ASSIGNMENT": "User assignment",
+      "ITEM_COMPLETION": "Item completion"
     }
   },
   "MARKETBOARD": {
@@ -977,6 +1030,7 @@
     "History": "History",
     "Purchase_date": "Date",
     "More_on_mogboard": "More details on mogboard",
+    "More_on_universalis": "More details on universalis",
     "Server": "Server"
   },
   "COMMENTS": {
@@ -1011,7 +1065,7 @@
   },
   "UPDATE": {
     "New_update_available": "A new update is available ! ",
-    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
+    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
     "Web_instructions": "Please reload the page to get the latest version."
   },
   "LOG_TRACKER": {
@@ -1029,6 +1083,7 @@
     "Required_for_achievement": "Required for the achievements",
     "Select_spot": "Select a spot to see its details",
     "Hide_completed": "Hide completed recipes",
+    "Hide_completed_items": "Hide completed items",
     "MIN_optimized_path": "Optimized path for all MIN nodes",
     "BTN_optimized_path": "Optimized path for all BTN nodes",
     "PAGE": {
@@ -1437,7 +1492,9 @@
     "Title": "Currency Spending guide",
     "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
     "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}"
+    "You_can_buy": "You can buy {{amount}}",
+    "Disabled": "The currency spending guide isn't working anymore",
+    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
   },
   "BLOG": {
     "Title": "Blog"
@@ -1467,5 +1524,31 @@
     "Gathering": "Gathering",
     "Helpers": "Helpers",
     "Other": "Other"
+  },
+  "PACKET_CAPTURE": {
+    "Banner_title": "Packet capture is available",
+    "Button_label": "Enable packet capture",
+    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
+    "Empty_inventory": "Your inventory hasn't been loaded yet",
+    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
+    "No_character_id": "No ingame character id set",
+    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once.",
+    "Inventory_outdated": "Your inventory is outdated",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
+  },
+  "INVENTORY": {
+    "Title": "Inventory",
+    "Empty": "Empty inventory",
+    "Estimate_total_price": "Estimate total inventory price",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Copied_to_clipboard": "Inventory copied to clipboard",
+    "Click_to_add_to_progression": "Click to add to item progression",
+    "Contribute_to_universalis": "Contribute data to universalis",
+    "BAG": {
+      "SaddleBag": "Chocobo Saddlebag",
+      "Bag": "Inventory",
+      "Other": "Other inventory"
+    }
   }
 }

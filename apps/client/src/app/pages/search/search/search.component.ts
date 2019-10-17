@@ -16,7 +16,7 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { AbstractControl, FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { SearchFilter } from '../../../model/search/search-filter.interface';
-import { SearchIndex, XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { SearchAlgo, SearchIndex, XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../../model/common/i18n-name';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
@@ -252,6 +252,7 @@ export class SearchComponent implements OnInit {
       this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
     this.results$ = combineLatest([this.query$, this.searchType$, this.filters$, this.sort$]).pipe(
+      debounceTime(1200),
       filter(([query, , filters]) => {
         if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
           // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
@@ -259,7 +260,6 @@ export class SearchComponent implements OnInit {
         }
         return query.length > 3 || filters.length > 0;
       }),
-      debounceTime(1200),
       tap(([query, type, filters, [sortBy, sortOrder]]) => {
         this.allSelected = false;
         this.showIntro = false;
@@ -467,6 +467,7 @@ export class SearchComponent implements OnInit {
   searchInstance(query: string, filters: SearchFilter[]): Observable<InstanceSearchResult[]> {
     return this.xivapi.search({
       language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
       indexes: [SearchIndex.INSTANCECONTENT],
       columns: ['ID', 'Banner', 'Icon', 'ContentFinderCondition.ClassJobLevelRequired'],
       // I know, it looks like it's the same, but it isn't
@@ -512,6 +513,7 @@ export class SearchComponent implements OnInit {
   searchQuest(query: string, filters: SearchFilter[]): Observable<QuestSearchResult[]> {
     return this.xivapi.search({
       language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
       indexes: [SearchIndex.QUEST],
       columns: ['ID', 'Banner', 'Icon'],
       // I know, it looks like it's the same, but it isn't
@@ -556,6 +558,7 @@ export class SearchComponent implements OnInit {
   searchAction(query: string, filters: SearchFilter[]): Observable<ActionSearchResult[]> {
     return this.xivapi.search({
       language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
       indexes: [SearchIndex.ACTION, <SearchIndex>'craftaction'],
       columns: ['ID', 'Icon', 'ClassJobLevel', 'ClassJob', 'ClassJobCategory'],
       // I know, it looks like it's the same, but it isn't
@@ -601,6 +604,7 @@ export class SearchComponent implements OnInit {
   searchTrait(query: string, filters: SearchFilter[]): Observable<ActionSearchResult[]> {
     return this.xivapi.search({
       language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
       indexes: [<SearchIndex>'trait'],
       columns: ['ID', 'Icon', 'Level', 'ClassJob', 'ClassJobCategory'],
       // I know, it looks like it's the same, but it isn't
@@ -646,6 +650,7 @@ export class SearchComponent implements OnInit {
   searchStatus(query: string, filters: SearchFilter[]): Observable<StatusSearchResult[]> {
     return this.xivapi.search({
       language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
       indexes: [SearchIndex.STATUS],
       columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
       // I know, it looks like it's the same, but it isn't
@@ -690,6 +695,7 @@ export class SearchComponent implements OnInit {
   searchAchievement(query: string, filters: SearchFilter[]): Observable<StatusSearchResult[]> {
     return this.xivapi.search({
       language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
       indexes: [SearchIndex.ACHIEVEMENT],
       columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
       // I know, it looks like it's the same, but it isn't
@@ -734,6 +740,7 @@ export class SearchComponent implements OnInit {
   searchLeve(query: string, filters: SearchFilter[]): Observable<LeveSearchResult[]> {
     return this.xivapi.search({
       language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
       indexes: [SearchIndex.LEVE],
       columns: ['ID', 'Banner', 'Icon', 'ClassJobCategory', 'IconIssuer', 'ClassJobLevel'],
       // I know, it looks like it's the same, but it isn't
@@ -785,6 +792,7 @@ export class SearchComponent implements OnInit {
   searchNpc(query: string, filters: SearchFilter[]): Observable<NpcSearchResult[]> {
     return this.xivapi.search({
       language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
       indexes: [SearchIndex.ENPCRESIDENT],
       columns: ['ID', 'Title_*', 'Icon'],
       // I know, it looks like it's the same, but it isn't
@@ -834,6 +842,7 @@ export class SearchComponent implements OnInit {
   searchMob(query: string, filters: SearchFilter[]): Observable<MobSearchResult[]> {
     return this.xivapi.search({
       language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
       indexes: [SearchIndex.BNPCNAME],
       columns: ['ID', 'Icon'],
       // I know, it looks like it's the same, but it isn't
@@ -878,6 +887,7 @@ export class SearchComponent implements OnInit {
   searchFate(query: string, filters: SearchFilter[]): Observable<FateSearchResult[]> {
     return this.xivapi.search({
       language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
       indexes: [SearchIndex.FATE],
       columns: ['ID', 'IconMap', 'ClassJobLevel'],
       // I know, it looks like it's the same, but it isn't
@@ -922,6 +932,7 @@ export class SearchComponent implements OnInit {
   searchMap(query: string, filters: SearchFilter[]): Observable<MapSearchResult[]> {
     return this.xivapi.search({
       language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
       indexes: [SearchIndex.PLACENAME],
       columns: ['ID', 'Name_*'],
       // I know, it looks like it's the same, but it isn't

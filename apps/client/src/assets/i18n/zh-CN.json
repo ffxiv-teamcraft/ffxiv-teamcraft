@@ -4,7 +4,7 @@
   "Pick_a_list": "选择清单",
   "Pick_a_user": "选择用户",
   "Pick_a_fc": "选择部队",
-  "Pick_a_rotation": "选择工序",
+  "Pick_a_rotation": "选择手法",
   "Pick_a_recipe": "选择配方",
   "Pick_an_item": "选择物品",
   "FC_name": "部队名称",
@@ -19,6 +19,13 @@
     "auth/email-already-in-use": "电子邮箱已被使用",
     "auth/user-not-found": "邮箱或密码错误",
     "auth/wrong-password": "邮箱或密码错误"
+  },
+  "TIMERS": {
+    "Days": "天",
+    "Day": "天",
+    "Hours": "小时",
+    "Minutes": "分钟",
+    "Seconds": "秒"
   },
   "ITEMS": {
     "Title": "搜索",
@@ -69,7 +76,7 @@
     "Created_by": "由 {{name}} 创建",
     "Share_link_copied": "工坊分享链接已复制",
     "Not_found": "没有找到工坊或者你没有权限访问该工坊",
-    "Shared_workshops": "有写入权限的工坊",
+    "Shared_workshops": "与您共享的工坊",
     "Rename": "重命名工坊",
     "Add_lists": "添加清单"
   },
@@ -77,7 +84,7 @@
     "title": "关于",
     "Created_by": "FFXIV Teamcraft 由 Louisoix, Chaos 服务器的 Miu Asakura 创作。",
     "Copyright_notice_title": "版权声明",
-    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
+    "Copyright_notice_content": "最终幻想是Square Enix控股有限公司<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. 旗下注册商标。版权声明<br>。FFXIV Teamcraft并不隶属于Square Enix.",
     "Thanks_title": "鸣谢",
     "Data_sources": "数据来源",
     "Patreon_supporters": "Patreon 支持者",
@@ -91,9 +98,9 @@
   "Remove_ephemeral": "升级为永久清单",
   "Quick_list_create": "创建快速清单(完成后删除)",
   "Tag_filter": "标签",
-  "Public_lists": "社区清单",
-  "Your_public_lists": "你的社区清单",
-  "Public_list": "社区清单",
+  "Public_lists": "共享清单",
+  "Your_public_lists": "您的共享清单",
+  "Public_list": "共享清单",
   "Profile": "个人资料",
   "X_for_total": "一共 {{amount}} 个",
   "Discounts": "折扣",
@@ -130,7 +137,12 @@
     "None": "无",
     "Top": "顶部",
     "Bottom": "底部",
-    "Amount": "数目"
+    "Amount": "数目",
+    "Undo": "撤销",
+    "User": "用户",
+    "Tables": "表格",
+    "Pie_charts": "饼状图",
+    "Read_more_on_wiki": "在wiki上阅读更多详细信息"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -152,6 +164,17 @@
     "Node_content": "采集点物品",
     "Toggle_collapse": "折叠/展开分组",
     "Add_alarms_to_group": "增加闹钟到本组",
+    "REALTIME": {
+      "Reset_timers": "CD计时器",
+      "WEEKLY_RESETS": "周常",
+      "WEEKLY_RESETS_DESCRIPTION": "老主顾、天书、周限掉落（24人本、零式、普通raid武器代币）、仙人仙彩、挑战笔记、金蝶暖暖、B级怪物狩猎的CD刷新倒计时。",
+      "ROULETTES_RESET": "每日随机&蛮族日常",
+      "ROULETTES_RESET_DESCRIPTION": "每日随机、蛮族日常、每日狩猎及仙人微彩的CD刷新倒计时。",
+      "DELIVERIES_RESET": "军团筹备",
+      "DELIVERIES_RESET_DESCRIPTION": "军团筹备CD刷新倒计时",
+      "LEVE_ALLOWANCES": "理符受理限额",
+      "LEVE_ALLOWANCES_DESCRIPTION": "您将获得3个新的理符受理限额"
+    },
     "CUSTOM": {
       "Title": "添加自定义闹钟",
       "Name": "名称",
@@ -192,7 +215,7 @@
   "No": "否",
   "Crystals": "水晶",
   "Gathering": "采集中",
-  "Drops_or_GC": "Dungeons/Drops or GC",
+  "Drops_or_GC": "秘境/掉落或军团",
   "Other": "其他",
   "Pre_crafts": "半成品",
   "Items": "物品",
@@ -230,7 +253,7 @@
   "Submit": "提交",
   "Invalid_credentials": "账号或密码错误",
   "Not_verified": "未验证",
-  "Anonymous_Warning": "注册以避免清单丢失，并开启自定义过滤器等更多功能",
+  "Anonymous_Warning": "建议您注册以避免清单丢失，并开启自定义过滤器等更多功能",
   "Game_Term/DoH": "能工巧匠",
   "Game_Term/DoL": "大地使者",
   "MIN/BTN": "采矿 / 园艺",
@@ -250,13 +273,13 @@
   "filters/worn_by": "装备职业",
   "filters/crafted_by": "制作职业",
   "filters/item_category": "物品类型",
-  "filters/stats": "Stats filters",
-  "filters/bonuses": "Stat bonuses filters",
+  "filters/stats": "属性过滤器",
+  "filters/bonuses": "属性奖励过滤器",
   "Adding_recipes": "正在添加 {{amount}} 个配方到清单 {{listname}}",
   "Recipe_Added": "一个物品已经被添加到清单 {{listname}}",
   "Recipes_Added": "{{itemcount}} 个物品已加入清单 {{listname}}",
   "Character_name": "角色名",
-  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
+  "Character_add_warning": "如果您在没有手动删除角色的情况下看到此内容，请不要输入任何内容并刷新页面或重新启动应用程序。 如果此问题仍然存在，请反馈到discord服务器。",
   "Disconnect_and_anonymous": "注销并返回匿名身份",
   "Add_manual_character": "添加角色",
   "Character_informations": "角色信息",
@@ -345,9 +368,13 @@
     "Clear_search_history": "清除搜索记录",
     "Auto_mark_as_done_in_log": "在列表项完成时标记为已完成",
     "Db_comments_position": "数据库评论位置",
-    "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Always_HQ_leves": "默认以提交HQ物品计算理符经验",
     "Clickthrough_overlay": "悬浮窗鼠标穿透",
-    "Disable_search_history": "Disable search history",
+    "Disable_search_history": "关闭搜索记录",
+    "Disable_search_debounce": "防止搜索误操作（仅在按下回车后搜索）",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
+    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
+    "Contribute_to_universalis": "Contribute to Universalis",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -374,13 +401,15 @@
     "Patreon_features": "Patreon 支持者功能",
     "Contacts": "好友",
     "Add_new_contact": "添加好友",
-    "Save_for_all": "Save for all crafters",
+    "Save_for_all": "一键保存为所有工匠属性",
     "User_not_verified": "用户未验证，点击验证",
-    "More_than_100_lists_created": "创建了 100+ 个清单",
+    "More_than_100_lists_created": "现有 100+ 个清单",
     "Veteran": "老玩家",
+    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
     "VERIFICATION": {
       "Title": "角色验证",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
+      "Guide": "若要认证您的账户，复制这个代码{{userId}}到Lodestone个人资料中，并点击下方的按键。更多信息在<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>。",
       "Success": "角色已验证！你现在可以关闭该窗口。现在你可以从你的 Lodestone 资料中移除验证代码了。",
       "Error": "无法在你的资料中找到代码。请确认你已经粘贴并保存，然后等待约 30 秒后重试。",
       "Validate": "验证"
@@ -393,7 +422,7 @@
     "Merge_lists": "合并清单",
     "Merge_lists_warning": "此处未列出过长的清单，因为由于数据库限制，无法合并太大的清单。",
     "Lists_merged": "清单合并成功！",
-    "Shared_lists": "有写入权限的清单",
+    "Shared_lists": "与您共享的清单",
     "Add_selection": "添加选中物品到清单",
     "Your_lists": "我的清单",
     "Outdated_tag": "已过期",
@@ -418,9 +447,9 @@
       "Final_step": "验证",
       "Creating_list": "正在创建清单",
       "Loading_items": "正在加载物品信息",
-      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
-      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
-      "Group_together": "Group materias together"
+      "Estimate_overmeld_materia": "估算禁断所需要的魔晶石",
+      "Multiply_tool_materia": "计算全职业镶嵌所需的魔晶石（2个采集及8个生产职业的主副手）",
+      "Group_together": "将魔晶石聚集在一起"
     }
   },
   "LIST": {
@@ -440,6 +469,14 @@
     "Show_craftable_amount": "显示可制作的数量",
     "Optimized_full_path": "显示完整最优路径 (最便宜且最快)",
     "Quick_layout_swap": "快速布局切换",
+    "Offline": "离线",
+    "Offline_help": "离线清单储存在您的浏览器或桌面APP中，因此不能通过其他渠道查看及分享，但是他们不受龟速网络影响——比较快。",
+    "Mark_whole_panel_done": "将这一大类标记为已完成",
+    "ROTATION": {
+      "Attach": "附加手法",
+      "Detach": "删去手法",
+      "Click_to_copy_macro": "点击打开“复制宏”弹出框"
+    },
     "INVENTORY": {
       "Show_final_items": "显示最终物品",
       "Hide_final_items": "隐藏最终物品"
@@ -467,7 +504,7 @@
   "LIST_DETAILS": {
     "List_finished": "清单已完成",
     "Public_list_description": "将该清单公开分享给所有人。注意：只是与其他人分享清单并不需要将其设为社区清单。",
-    "Missing_tags_before_button": "此清单已公开分享为社区清单，但它没有标签，请使用 ",
+    "Missing_tags_before_button": "此清单已公开分享为共享清单，但它没有标签，请使用 为它添加标签。",
     "Missing_tags_after_button": " 按钮添加标签。",
     "Add_remove_amount": "增加/减少",
     "Add_from_external": "增加外部来源数量 (并非使用自己的材料制作的)",
@@ -480,13 +517,17 @@
     "Open_in_ffxivgardening": "在 ffxivgrading.com 中打开",
     "Add_all_item_alarms": "为该物品添加所有闹钟",
     "Adaptative_filter": "仅显示我可以制作或采集的",
-    "Disable_HQ_suggestions": "禁用自动 HQ",
+    "Disable_HQ_suggestions": "禁用自动显示HQ图标",
     "Amount_craftable": "你可以制作 {{amount}} 个",
     "Add_item": "添加物品",
     "List_too_large": "清单过长",
     "List_too_large_description": "该清单过长，携带了太多信息，可能会受到数据库大小限制。为确保你不会丢失信息，该清单无法再添加物品了。",
     "Add_to_another_list": "添加到另一个清单",
     "New_tag": "新标签",
+    "Amount_ilvl": "Amount (ilvl)",
+    "Contributions_popup": "贡献统计",
+    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
+    "Autofill": "自动填写",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -514,7 +555,8 @@
         "REMOVE_ITEM": "从清单中删除物品",
         "ADD_TAG": "添加标签到物品",
         "MARK_AS_DONE_IN_LOG": "在笔记中标为已完成",
-        "MARKET_BOARD_INFORMATIONS": "市场信息"
+        "MARKET_BOARD_INFORMATIONS": "市场信息",
+        "ATTACH_ROTATION": "附加手法"
       }
     },
     "LAYOUT": {
@@ -526,10 +568,10 @@
     }
   },
   "LIST_TAGS": {
-    "A_REALM_REBORN": "A Realm Reborn",
-    "HEAVENSWARD": "Heavensward",
-    "STORMBLOOD": "Stormblood",
-    "SHADOWBRINGERS": "Shadowbringers",
+    "A_REALM_REBORN": "重生之境",
+    "HEAVENSWARD": "苍穹之禁城",
+    "STORMBLOOD": "红莲之狂潮",
+    "SHADOWBRINGERS": "暗影之逆焰",
     "OUTDATED": "已过期",
     "GEAR": "装备",
     "CONSUMABLE": "消耗品",
@@ -550,7 +592,7 @@
     "PLD": "骑士",
     "WAR": "战士",
     "DRK": "黑骑",
-    "GNB": "GNB",
+    "GNB": "绝枪战士",
     "WHM": "白魔",
     "SCH": "学者",
     "AST": "占星",
@@ -560,13 +602,13 @@
     "SAM": "武士",
     "BRD": "诗人",
     "MCH": "机工",
-    "DNC": "DNC",
+    "DNC": "舞者",
     "BLM": "黑魔",
     "SMN": "召唤",
     "RDM": "赤魔",
     "BLU": "青魔",
-    "CRP": "刻木",
-    "BSM": "锻铁",
+    "CRP": "刻木匠",
+    "BSM": "锻铁匠",
     "ARM": "铸甲",
     "GSM": "雕金",
     "LTW": "制革",
@@ -602,10 +644,10 @@
     "Steps": "步骤",
     "Loading_path": "正在加载最优路径 (可能需要几秒)",
     "STEP": {
-      "Gathering": "采集 {{amount}} 个",
-      "Hunting": "怪物掉落 {{amount}} 个",
-      "Vendor": "购买 {{amount}} 个",
-      "Trade": "交换 {{amount}} 个"
+      "Gathering": "采集{{amount}}（总计：{{total}}）",
+      "Hunting": "打怪获取{{amount}}（总计：{{total}}）",
+      "Vendor": "购买{{amount}}（总计：{{total}}）",
+      "Trade": "兑换{{amount}}（总计：{{total}}）"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -702,12 +744,12 @@
     "Reliability": "成功率",
     "Average_hq": "平均 HQ",
     "Specialist": "专家",
-    "New_rotation": "新工序",
-    "Rotations": "生产工序",
-    "Favorite_Rotations": "收藏工序",
-    "No_rotations": "无工序",
-    "Create_a_custom_rotation": "创建自定义工序",
-    "Reset": "重置工序",
+    "New_rotation": "新建手法",
+    "Rotations": "生产手法",
+    "Favorite_Rotations": "收藏手法",
+    "No_rotations": "无手法",
+    "Create_a_custom_rotation": "创建自定义手法",
+    "Reset": "重置手法",
     "Import_from_crafting_optimizer": "从制作模拟器导入",
     "Export_crafting_optimizer": "使用制作优化器支持的格式导出",
     "Export_copied": "代码已复制到剪贴板",
@@ -716,43 +758,51 @@
     "Generated_macro": "用户宏",
     "Generate_ingame_macro": "生成用户宏",
     "Share_button_tooltip": "复制分享链接",
-    "Share_link_copied": "工序共享链接已复制到剪贴板",
-    "Persist": "保存这个工序",
-    "Rotation_not_found": "未找到工序",
-    "Confirm_delete": "确定要删除这个工序吗？",
+    "Share_link_copied": "手法共享链接已复制到剪贴板",
+    "Persist": "保存这个手法",
+    "Rotation_not_found": "未找到手法",
+    "Confirm_delete": "确定要删除这个手法吗？",
     "Toggle_snapshot_mode": "快照模式",
     "Open_in_external": "在 {{name}} 的模拟器中打开",
     "Select_job_please": "请选择职业",
-    "Rename_rotation": "重命名工序",
+    "Rename_rotation": "重命名手法",
     "Cross_class_setup": "共通技能设置",
     "Include_sound_end": "添加宏结束提示音",
     "Step_by_step_report": "逐步报告",
-    "Save_as_new": "保存为新的 (跳转到新创建的工序)",
-    "Save_as_new_done": "已复制为你的工序",
-    "Change_rotation": "更改工序",
+    "Save_as_new": "保存为新的 (跳转到新创建的手法)",
+    "Save_as_new_done": "已复制为您的手法",
+    "Change_rotation": "切换手法",
     "New_rotation_folder": "新建文件夹",
     "Safe_mode": "安全模式",
     "Safe_mode_tooltip": "禁用所有被 buff 后仍低于 100% 成功率的技能",
     "Quality_needed": "需要 {{amount}} 品质以达成 100%",
-    "Rotation_tips": "工序诊断",
+    "Rotation_tips": "手法诊断",
     "Progress_action_100_potency": "100%效率下的进展：{{value}}",
     "Quality_action_100_potency": "100%效率下的品质：{{value}}",
     "Current_control": "当前加工精度：{{value}}",
     "Current_control_bonus": "当前品质奖励（最高3000）",
     "Macrolock": "包含“锁定宏指令（/macrolock）”",
-    "Solve_rotation": "求解其工序",
-    "Rotation_solver": "工序求解器",
-    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Solve_rotation": "求解其手法",
+    "Rotation_solver": "手法求解器",
+    "Recipe_picker_placeholder": "输入您想要制作的配方",
+    "Could_not_find_minstats": "找不到这个手法的最低属性要求",
+    "STATE": {
+      "Excellent": "最高品质",
+      "Good": "高品质",
+      "Poor": "低品质",
+      "Fail": "制作失败",
+      "Normal": "通常"
+    },
     "SOLVER": {
       "Hq_target": "目标HQ率",
-      "Use_rotation_as_seed": "Use current rotation as starting point",
-      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的工序而生，作为一个 AI，在其逐渐成长的过程中，可能生成非常好的工序也可能生成非常差的工序。如果生成结果不理想，请不要报告为 bug。"
+      "Use_rotation_as_seed": "用现在的手法起手",
+      "Disclaimer": "求解器正在进行求解。请注意求解器并不是为了生成完美的手法而生，作为一个 AI，在其逐渐成长的过程中，可能生成完美的手法也可能生成非常差的手法。如果生成结果不理想，请不要报告其为 bug。"
     },
     "COMMUNITY_ROTATIONS": {
-      "Title": "社区共享工序",
-      "Community_rotation": "社区共享工序",
-      "No_rotations_matching": "未找到工序",
-      "Name_filter_placeholder": "工序名",
+      "Title": "共享手法",
+      "Community_rotation": "共享手法",
+      "No_rotations_matching": "未找到匹配的手法",
+      "Name_filter_placeholder": "手法名",
       "Tags_filter_placeholder": "标签",
       "Durability_filter_placeholder": "耐久",
       "Rlvl_filter_placeholder": "配方等级",
@@ -762,11 +812,11 @@
       "Min_control_filter_placeholder": "最小加工精度",
       "Min_cp_filter_placeholder": "最小制作力",
       "Intro": "输入筛选条件",
-      "Result_tooltip": "使用模拟器运行本工序的结果和你的参数",
+      "Result_tooltip": "使用模拟器运行本手法的结果和你的属性",
       "Fail": "失败",
       "Success": "成功：{{HQ}}% HQ",
       "Set_to_simulate": "属性",
-      "Specialist_rotation_warning": "该结果使用非专家的数据模拟专家工序，所以结果的 HQ% 可能比预期要低。",
+      "Specialist_rotation_warning": "显示的结果为使用非专家的属性模拟专家手法，是以生成的HQ率可能远低于预期。",
       "Steps_count": "{{count}} 工次",
       "TAGS": {
         "SPECIALIST": "专家",
@@ -775,7 +825,7 @@
         "FOODLESS": "无食品",
         "MAKERS_MARK": "坚实的心得",
         "MUSCLE_MEMORY": "坚信",
-        "REUSE": "Reuse"
+        "REUSE": "重复利用"
       }
     },
     "CUSTOM": {
@@ -788,18 +838,19 @@
     "ROTATIONS": {
       "Search_placeholder": "搜索工序",
       "FOLDERS": {
-        "Folders": "工序文件夹",
+        "Not_found": "未找到手法文件夹",
+        "Folders": "手法文件夹",
         "Rename": "重命名文件夹",
         "New_folder": "新建文件夹",
-        "Delete_message": "删除文件夹不会删除其中的工序。",
-        "Share_link_copied": "工序文件夹共享链接已复制到剪贴板",
+        "Delete_message": "删除文件夹不会删除文件夹中的手法。",
+        "Share_link_copied": "手法文件夹共享链接已复制到剪贴板",
         "Shared_by": "由 {{name}} 分享",
         "Created_by": "由 {{name}} 创建",
         "Copy_folder": "复制此文件夹及其内容到你的账号",
         "Folder_copied": "文件夹已复制到你的账号",
-        "Your_folders": "文件夹",
+        "Your_folders": "您的文件夹",
         "Favorite_folders": "收藏文件夹",
-        "Add_rotations": "新建工序",
+        "Add_rotations": "新建手法",
         "Open": "打开文件夹"
       }
     },
@@ -846,11 +897,11 @@
       "DURABILITY_REACHED_ZERO": "耐久在进度满之前归零",
       "NOT_ENOUGH_CP": "制作力不足",
       "MISSING_LEVEL_REQUIREMENT": "等级不够",
-      "NOT_SPECIALIST": "使用了专家工序，但你不是专家",
+      "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
       "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "如果你的目标是 HQ，那么几乎所有工序都需要包括内静。内静提供了很大的品质增益，并提供了“比尔格的祝福”等技能。",
+      "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
       "Use_inner_quiet_before_quality_increase": "应在提高制品品质前使用内静，否则就是在浪费内静层数。",
       "Use_ingenuity_I_instead": "应使用新颖替换新颖II，这已经足够完成制作并可以节约 8 点 CP。",
       "Use_cz_earlier": "应向前移动安逸，以更早获得回复效果。",
@@ -870,7 +921,7 @@
       "Use_ingenuity_before_byregot": "应在使用比尔格技能前使用新颖以提升品质收益。",
       "Use_more_quality_actions": "在结束制作前你还有剩余耐久，应使用更多加工系技能提升品质。",
       "Use_prudent_touch_manipulation": "66+ 级应使用 掌握II + 俭约加工 来提升品质，以获得最高稳定性和收益",
-      "Use_rapid_synthesis_earlier": "不应使用高速制作结束制作，将其提前可处理失败情况以使你的工序更加稳定。",
+      "Use_rapid_synthesis_earlier": "高速制作不是100%成功，不应将其用作收尾技能。建议更早地使用高速制作以备万一，即使失败也能调整后续手法。",
       "Use_reflect_earlier": "应更早使用专精绝技：闲静使其增益后续加工系技能。"
     }
   },
@@ -879,7 +930,7 @@
     "From_crafting": "制作价格",
     "Expect_to_sell_everything": "计划出售",
     "Autofill_panel_prices": "基于市场物价填充价格",
-    "Autofill_panel_prices_your_server": "根据市场价格填充 (仅限此服务器)",
+    "Autofill_panel_prices_your_server": "依据市场价填充材料价格 (仅限此服务器)",
     "Autofill_panel_prices_warning": "本操作为耗时操作，大约需要 {{time}} 秒来完成，确定吗？",
     "Copy_earnings_as_text": "复制为文本",
     "Content_copied": "已复制",
@@ -889,7 +940,7 @@
     "Craft_price": "制作价格",
     "Marketboard_price": "NQ价格",
     "Marketboard_price_hq": "HQ价格",
-    "Enter_total_earnings": "输出总收入"
+    "Enter_total_earnings": "输入总收入"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
@@ -905,16 +956,16 @@
     "INTRO": {
       "Title": "理符任务",
       "First_line": "在此页面您可以搜索一个或多个理符，并将结果添加至清单",
-      "Second_line": "选择职业，输入等级范围，此处会列出所有理符列表；你可以将其添加到你的清单中，而配方会自动加入到对应的清单里。",
-      "Third_line": "如果你知道任务名，也可以通过任务名来搜索。"
+      "Second_line": "选择职业，输入等级范围，此页面会呈现所有该等级段的理符。您可以选择理符任务物品添加到您指定的清单中，相应配方会自动生成。",
+      "Third_line": "如果您知道任务名，也可以通过任务名称来搜索。"
     }
   },
   "NOTIFICATIONS": {
     "Title": "通知",
     "List_comment_added": "在列表 {{listName}} 上评论: \"{{content}}\"",
     "List_item_comment_added": "对列表 {{listName}} 中的物品 {{itemName}} 发布了评论：“{{content}}”",
-    "Db_comment": "在数据库中的新评论：{{comment}}",
-    "Db_comment_reply": "对你评论的新回复：{{comment}}",
+    "Db_comment": "数据库中的新评论：{{comment}}",
+    "Db_comment_reply": "对您评论的新回复：{{comment}}",
     "Blog_post": "新博客文章: {{title}}",
     "Mark_all_as_read": "全部标记为已读",
     "No_notifications": "无通知"
@@ -944,16 +995,16 @@
     "Officer": "指挥官",
     "Promote_officer": "提升为指挥官",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}个x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 已加入清单 **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}个x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 已从清单 **[{{listName}}]({{listUrl}})** 删除。",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** 标记清单 **[{{listName}}]({{listUrl}})** 的物品 {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** / {{totalNeeded}} 为完成。",
+      "Item_added": "{{amount}}x **[{{itemName}}] (http://ffxivmarcaft.com/db/en/item/{{itemId}})** 已添加到 **[{{listName}}] ({{listUrl}})**。",
+      "Item_removed": "{{amount}}个x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** 已从清单 **[{{listName}}]({{listUrl}})** 删除。",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** 标记清单 **[{{listName}}]({{listUrl}})** 中的物品 {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** / {{totalNeeded}} 为完成。",
       "Webhook_setup_complete": "团队 **{{teamName}}** 在此频道被追踪。",
       "List_added_notification": "清单 **[{{listName}}] ({{listUrl}}) ** 已添加到团队中。",
       "List_removed_notification": "清单 **[{{listName}}] ({{listUrl}}) ** 已从团队中删除。",
       "Member_joined": "**[{{memberName}}] ({{memberProfileUrl}}) ** 已加入团队 ！",
       "Member_removed": "**[{{memberName}}] ({{memberProfileUrl}}) ** 已从团队中删除。",
       "Name_changed": "**{{oldName}}** 团队已重命名为 **{{newName}}**",
-      "User_assigned": "清单 **[{{listName}}]({{listUrl}})** 的 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** 被指派给 **[{{memberName}}]({{memberProfileUrl}})**。"
+      "User_assigned": "清单 **[{{listName}}]({{listUrl}})** 的 **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** 被分配给 **[{{memberName}}]({{memberProfileUrl}})**。"
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "成员加入",
@@ -964,7 +1015,8 @@
       "LIST_REMOVED": "列表删除",
       "LIST_PROGRESSION": "查看材料进度",
       "FINAL_LIST_PROGRESSION": "查看产出进度",
-      "USER_ASSIGNMENT": "用户分配"
+      "USER_ASSIGNMENT": "用户分配",
+      "ITEM_COMPLETION": "项目完成"
     }
   },
   "MARKETBOARD": {
@@ -977,6 +1029,7 @@
     "History": "历史记录",
     "Purchase_date": "日期",
     "More_on_mogboard": "在 MogBoard 上查看",
+    "More_on_universalis": "更多信息请见universalis",
     "Server": "服务器"
   },
   "COMMENTS": {
@@ -1000,18 +1053,18 @@
     "Buy_a_tshirt": "购买 Teamcraft 的T恤",
     "Features_header": "开始吧！",
     "DESCRIPTION": {
-      "Lists": "创建列表，查看所有原料，与你的朋友分享，从这里开始！只需要搜索并筛选一个物品，然后开始制造。",
-      "Public_lists": "从社区共享复制列表可以帮你制造家具、理符物品、完成笔记、飞空艇、毕业套等各种你想要的东西。",
-      "Alarms": "闹钟使你不会错过限时采集点，分文件夹组织闹钟，导入到游戏，一切皆有可能。",
+      "Lists": "查看所有配方、材料并与您的朋友分享，一切都从创建清单开始！只需要搜索并选中物品就可以开始搓搓搓了。",
+      "Public_lists": "从共享社区复制现成的清单。共享社区里有玩家分享的各等级段理符、制作笔记、飞空艇、毕业套等所有你感兴趣的生产清单。",
+      "Alarms": "闹钟使你不会错过限时/未知/传承采集点。分文件夹管理闹钟、导入到游戏——一切皆有可能。",
       "Gathering_location": "寻找采集点信息，创建闹钟，获得即时位置、最近传送点、所需传承录，还有更多！",
-      "Rotations": "使用自定义模拟器创建制作工序，在模拟器中测试，或者验证工序理论！",
-      "Levequests": "找到特定职业的理符，查看报酬，并创建清单。",
+      "Rotations": "使用生产模拟器创建生产手法并即时测试，您还可以使用生产模拟器来检验您的理论手法！",
+      "Levequests": "查找特定职业/等级的理符，查看报酬，并创建清单。",
       "Macro_translation": "拿到一个制作宏但不是中文的？使用宏转换器可以将其转换为中文！"
     }
   },
   "UPDATE": {
     "New_update_available": "发现新版本！ ",
-    "Desktop_instructions": "请打开以下链接以下载最新版本： ",
+    "New_update_available_desktop": "有新的更新！点击此处下载并安装。",
     "Web_instructions": "请刷新页面以使用最新版本。"
   },
   "LOG_TRACKER": {
@@ -1029,6 +1082,7 @@
     "Required_for_achievement": "成就所需",
     "Select_spot": "选择地点以查看其详情",
     "Hide_completed": "隐藏已完成的配方",
+    "Hide_completed_items": "隐藏已完成的物品",
     "MIN_optimized_path": "为所有采矿工采集点优化的路径",
     "BTN_optimized_path": "为所有园艺工采集点优化的路径",
     "PAGE": {
@@ -1132,10 +1186,10 @@
     "Title": "分解指南",
     "Job": "职业",
     "Level": "分解品级",
-    "Intro": "选择职业并输入分解等级，即可找到最适合你的升级物品",
+    "Intro": "选择职业并输入分解品级，即可找到最适合您当前分解品级的物品",
     "Loading_message": "正在加载……",
     "TAGS": {
-      "Higher_chances": "更高的成功率",
+      "Higher_chances": "成功率高",
       "Lower_exp": "经验少",
       "Good_chances": "成功率较高",
       "Good_exp": "经验较多",
@@ -1149,7 +1203,7 @@
   "SUPPORT_US": {
     "Title": "帮助我们！",
     "Communication_title": "宣传本项目",
-    "Communication_description": "通过做视频、写帖子、发微博等等让大家都知道这个工具，并在这里分享循环、清单。这对本项目的帮助超出了你的想象。\n\n我们甚至为你准备了一个宏，所以你可以到处去喊你有多爱这个工具！\n",
+    "Communication_description": "通过做视频、论坛发帖、发微博等等让大家都知道这个工具并来这里分享手法、清单，能够极大地帮助Teamcraft发展。\n\n我们甚至为你准备了一个宏，所以您可以到处去喊你有多爱这个工具！\n",
     "Contribute_title": "为项目出一份力",
     "Contribute_description": "你可以在 Github 上找到本项目并进行贡献。即使你是初学者也没有关系，我们欢迎每一个人！\n\n贡献不仅仅是说写代码。请求添加功能或者是报告 Bug 也能帮助我们为每个人提供质量最好的工具。感谢每一个愿意花时间测试本工具并找到 Bug 的人。",
     "Patreon_title": "在 Patreon 上支持我们",
@@ -1230,11 +1284,11 @@
     "3d_model_help": "预览 3D 模型",
     "Achievements": "成就",
     "Currencies": "货币",
-    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
-    "Unlocks": "Unlocks",
+    "Rowena_splendor": "罗薇娜显赫商会（带星=奖励+20%）",
+    "Unlocks": "解锁",
     "ITEM": {
       "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "BONUS"
+      "Masterpiece_bonus": "奖励"
     },
     "NODE": {
       "Items": "物品",
@@ -1352,22 +1406,22 @@
       "Editor_tip": "输入 <页面类型>:\"<页面标题>\" 以链接到其它页面。例如， item:\"无锋剑柯塔纳\"、action:\"制作\"、map:\"魔晶堂\" 。支持的页面类型有：item(物品), map(地图), mob(怪物), achievement(成就), leve(理符), npc, instance(副本), quest(任务), trait(特性), action(技能), status(状态)"
     },
     "PATCH": {
-      "Open_patch_page": "Click here to open full patch changes in database",
+      "Open_patch_page": "点击此处在数据库中打开新版本的全部改动",
       "CONTENT": {
-        "Title": "Patch content",
-        "Achievements": "Achievements ({{amount}})",
-        "Actions": "Actions ({{amount}})",
-        "Crafting_actions": "Crafting actions ({{amount}})",
-        "Fates": "Fates ({{amount}})",
-        "Instances": "Instance content ({{amount}})",
-        "Items": "Items ({{amount}})",
-        "Leves": "Leves ({{amount}})",
-        "Maps": "Maps ({{amount}})",
-        "Monsters": "Monsters ({{amount}})",
-        "Npcs": "Npcs ({{amount}})",
-        "Quests": "Quests ({{amount}})",
-        "Statuses": "Statuses ({{amount}})",
-        "Traits": "Traits ({{amount}})"
+        "Title": "版本内容",
+        "Achievements": "成就 ({{amount}})",
+        "Actions": "技能 {{amount}}",
+        "Crafting_actions": "生产技能 （{{amount}}）",
+        "Fates": "危命任务 （{{amount}}）",
+        "Instances": "副本内容（{{amount}}）",
+        "Items": "物品（{{amount}}）",
+        "Leves": "理符（{{amount}}）",
+        "Maps": "地图（{{amount}}）",
+        "Monsters": "怪物（{{amount}}）",
+        "Npcs": "Npc（{{amount}}）",
+        "Quests": "任务（{{amount}}）",
+        "Statuses": "状态（{{amount}}）",
+        "Traits": "特性（{{amount}}）"
       }
     }
   },
@@ -1384,7 +1438,7 @@
     "Fate": "危命任务",
     "Map": "地图",
     "Action": "技能",
-    "Status": "属性",
+    "Status": "状态",
     "Trait": "特性",
     "Any": "任何",
     "Achievement": "成就"
@@ -1397,11 +1451,11 @@
   },
   "TIPS": {
     "Title": "小贴士",
-    "Community_rotations": "你可以在社区共享工序页面中找到特定配方的工序",
+    "Community_rotations": "您可以在共享社区-共享手法页面中找到特定配方的手法",
     "GC_Deliveries": "您可以在军团筹备页面中制作您的清单。",
-    "Desynth": "您可以在分解查询页面中找到最适合您升级的物品。",
+    "Desynth": "您可以在分解查询页面中找到最适合当前分解等级的物品。",
     "DB": "Teamcraft包含一个数据库，您可以点击任何地方的“i”图标在数据库页面中查看其详情。",
-    "3D_model": "您可以在数据库中预览其3D外观。",
+    "3D_model": "您可以在数据库中预览物品的3D外观。",
     "Levequests": "您可以在理符任务页面内制作理符清单和预览理符任务经验。",
     "Log_tracker": "您可以在笔记追踪页面中追踪您的采集、生产、捕鱼等笔记进度。",
     "Desktop_app_overlay": "使用桌面应用程序时，您可以开启闹钟悬浮窗(应用下载链接见侧边栏)。"
@@ -1418,7 +1472,7 @@
     "Remove_from_basket": "从愿望篮中删除",
     "Search": "查找配方",
     "Generate_list": "添加到清单",
-    "Description": "输入您拥有的物品并点击“查询配方”，可以得到一系列的潜在可制作配方，并能够从其结果中相应生成制作列表。",
+    "Description": "输入您拥有的物品并点击“查询配方”，可以得到一系列的潜在可制作配方，并能够从其结果中生成相应的清单。",
     "Empty_basket": "您的愿望篮为空",
     "Add_item": "添加物品",
     "Clipboard_content_malformed": "剪贴板内容格式不正确",
@@ -1435,9 +1489,11 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
-    "Description": "货币太多了吗？选择您的币种并设置好数目、服务器，自动为您推荐当前最卖的上价的物品！",
+    "Description": "货币太多了吗？选择币种并填写数目、服务器，自动为您推荐当前最卖的上价的物品！",
     "Pick_currency": "选择一个币种",
-    "You_can_buy": "您可以购买 {{amount}}"
+    "You_can_buy": "您可以购买 {{amount}}",
+    "Disabled": "货币消费指南已失效",
+    "Disabled_description": "SE一再禁止我们读取交易板信息致使此功能失效。对此造成的不便，Teamcraft深表遗憾。"
   },
   "BLOG": {
     "Title": "博客"
@@ -1450,11 +1506,11 @@
     "Sort_by": "排序： ",
     "Sort_asc": "升序",
     "Sort_desc": "降序",
-    "Add_stat_filter": "Add stat filter",
-    "Add_bonus_stat_filter": "Add bonus stat filter",
-    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Add_stat_filter": "添加属性过滤器",
+    "Add_bonus_stat_filter": "添加奖励属性过滤器",
+    "Search_tip": "您可以键入版本号：“patch #” 来查看特定版本的内容，如：patch 5.01",
     "SORT_BY": {
-      "Relevance": "Relevance",
+      "Relevance": "相关性",
       "ID": "ID",
       "Level": "等级",
       "Ilvl": "物品品级",
@@ -1462,10 +1518,34 @@
     }
   },
   "SIDEBAR": {
-    "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
-    "Other": "Other"
+    "General": "基本功能",
+    "Sharing": "共享社区",
+    "Gathering": "采集相关",
+    "Helpers": "实用工具",
+    "Other": "其他"
+  },
+  "PACKET_CAPTURE": {
+    "Banner_title": "Packet capture is available",
+    "Button_label": "Enable packet capture",
+    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
+    "Empty_inventory": "Your inventory hasn't been loaded yet",
+    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
+    "No_character_id": "No ingame character id set",
+    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
+  },
+  "INVENTORY": {
+    "Title": "Inventory",
+    "Empty": "Empty inventory",
+    "Estimate_total_price": "Estimate total inventory price",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Copied_to_clipboard": "Inventory copied to clipboard",
+    "Click_to_add_to_progression": "Click to add to item progression",
+    "Contribute_to_universalis": "Contribute data to universalis",
+    "BAG": {
+      "SaddleBag": "陆行鸟鞍囊",
+      "Bag": "物品栏",
+      "Other": "Other inventory"
+    }
   }
 }

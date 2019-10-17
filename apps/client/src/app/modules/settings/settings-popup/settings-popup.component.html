@@ -122,6 +122,13 @@
                  [(ngModel)]="settings.disableSearchHistory">{{'SETTINGS.Disable_search_history' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label nz-checkbox
+                 [(ngModel)]="settings.disableSearchDebounce">{{'SETTINGS.Disable_search_debounce' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Amount_display_mode' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
@@ -284,25 +291,23 @@
           {{'SETTINGS.Clickthrough_overlay' | translate}}
         </label>
       </div>
-      <div class="updater">
-        <button nz-button nzType="primary" (click)="checkForUpdate()" *ngIf="!updateAvailable && !checkingForUpdate">
-          {{'SETTINGS.Check_for_update' | translate}}
-        </button>
-        <nz-spin *ngIf="checkingForUpdate && !updateAvailable"></nz-spin>
-        <div *ngIf="updateAvailable === true">
-          {{'SETTINGS.Downloading_update' | translate}}
-          <nz-progress [nzPercent]="downloadProgress.percent"></nz-progress>
-          <span>{{downloadProgress.transferred / 1000000 | number}}/{{downloadProgress.total / 1000000 | number}}MB
-            - {{downloadProgress.bytesPerSecond / 1000000 | number}}MBps</span>
+      <nz-card>
+        <div fxLayout="column">
+          <div>
+            <label nz-checkbox [(ngModel)]="machinaToggle" (ngModelChange)="machinaToggleChange($event)">
+              {{'SETTINGS.Enable_packet_capture' | translate}}
+            </label>
+          </div>
+          <div>
+            <i>{{'SETTINGS.Packet_capture_info' | translate}}</i>
+          </div>
+          <div>
+            <label nz-checkbox [(ngModel)]="settings.enableUniversalisSourcing" [nzDisabled]="!machinaToggle">
+              {{'SETTINGS.Contribute_to_universalis' | translate}}
+            </label>
+          </div>
         </div>
-        <div *ngIf="updateAvailable === false && !checkingForUpdate">
-          {{'SETTINGS.No_update_available' | translate}}
-        </div>
-        <button nz-button nzType="primary" (click)="installUpdate()"
-                *ngIf="updateAvailable && !checkingForUpdate && downloadProgress.transferred / downloadProgress.total >= 1">
-          {{'SETTINGS.Install_update' | translate}}
-        </button>
-      </div>
+      </nz-card>
       <button nz-button (click)="openDesktopConsole()">
         {{'SETTINGS.Show_devtools' | translate}}
       </button>
