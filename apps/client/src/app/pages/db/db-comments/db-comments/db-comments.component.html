@@ -45,7 +45,7 @@
         <nz-comment-action>
           <i
             nz-icon
-            type="like"
+            nzType="like"
             [nzTheme]="comment.likes.length > 0 ? 'twotone' : 'outline'"
             (click)="like(comment, user.$key)"
           ></i>
@@ -54,7 +54,7 @@
         <nz-comment-action>
           <i
             nz-icon
-            type="dislike"
+            nzType="dislike"
             [nzTheme]="comment.dislikes.length > 0 ? 'twotone' : 'outline'"
             (click)="dislike(comment, user.$key)"
           ></i>

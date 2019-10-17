@@ -57,16 +57,18 @@
                         </button>
                         <ng-container *ngIf="alarmGroups$ | async as groups">
                           <ng-container *ngIf="groups.length > 0">
-                            <nz-dropdown *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'">
-                              <button nz-button nzShape="circle" nzSize="small" nz-dropdown>
-                                <i nz-icon nzType="folder-open"></i>
-                              </button>
+                            <button nz-button nzShape="circle" nzSize="small" nz-dropdown
+                                    [nzDropdownMenu]="menu"
+                                    *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'">
+                              <i nz-icon nzType="folder-open"></i>
+                            </button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
                               <ul nz-menu>
                                 <li nz-menu-item *ngFor="let group of groups" (click)="addAlarm(alarm.alarm, group)">
                                   {{group.name}}
                                 </li>
                               </ul>
-                            </nz-dropdown>
+                            </nz-dropdown-menu>
                           </ng-container>
                         </ng-container>
                       </div>

@@ -36,7 +36,7 @@
             <div *ngIf="simulation$ | async as result" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
               <div *ngIf="rotation.tags.indexOf('SPECIALIST') > -1 && !((simulationSet$ | async)?.specialist)">
                 <i nz-icon
-                   type="exclamation-circle" theme="twotone" [twoToneColor]="'#aa9400'"
+                   nzType="exclamation-circle" theme="twotone" [twoToneColor]="'#aa9400'"
                    nz-tooltip [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Specialist_rotation_warning' | translate"></i>
               </div>
               <div nz-tooltip [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Result_tooltip' | translate">
@@ -85,10 +85,13 @@
           <ng-container *ngIf="(permissionLevel$ | async) >= 40">
             <ng-container *ngIf="user$ | async as user">
               <ng-container *ngIf="user.patron || user.admin">
-                <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'"
-                             *ngIf="(permissionLevel$ | async) >= 30">
-                  <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
-                    <i nz-icon nzType="ellipsis"></i></button>
+                <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'"
+                        [nzTrigger]="'click'" [nzPlacement]="'bottomRight'"
+                        [nzDropdownMenu]="menu"
+                        *ngIf="(permissionLevel$ | async) >= 30">
+                  <i nz-icon nzType="ellipsis"></i>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
                   <ul nz-menu>
                     <li nz-menu-item [nzDisabled]="!user.nickname"
                         (click)="createCustomLink(rotation, user)"
@@ -102,7 +105,7 @@
                       </li>
                     </ng-template>
                   </ul>
-                </nz-dropdown>
+                </nz-dropdown-menu>
               </ng-container>
             </ng-container>
           </ng-container>

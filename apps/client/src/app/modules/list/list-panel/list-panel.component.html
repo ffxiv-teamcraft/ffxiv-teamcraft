@@ -46,7 +46,8 @@
           <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
             {{'Ephemeral_tag' | translate}}
           </nz-tag>
-          <nz-tag *ngIf="_list.offline" [style.border-color]="'#bd0ef2'" nz-tooltip [nzTitle]="'LIST.Offline_help' | translate">
+          <nz-tag *ngIf="_list.offline" [style.border-color]="'#bd0ef2'" nz-tooltip
+                  [nzTitle]="'LIST.Offline_help' | translate">
             {{'LIST.Offline' | translate}}
           </nz-tag>
           <nz-tag *ngIf="_list.public && !publicDisplay" [nzColor]="'geekblue'" nz-tooltip
@@ -94,10 +95,11 @@
                 *ngIf="(permissionLevel$ | async) > 10"
                 [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate" (nzOnConfirm)="deleteList(_list)">
           <i nz-icon nzType="delete"></i></button>
-        <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
-          <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
-            <i nz-icon nzType="ellipsis"></i>
-          </button>
+        <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzDropdownMenu]="menu"
+                [nzPlacement]="'bottomRight'" nzTrigger="click">
+          <i nz-icon nzType="ellipsis"></i>
+        </button>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameList(_list)"
                 *ngIf="!publicDisplay">
@@ -162,7 +164,7 @@
               </ng-container>
             </ng-container>
           </ul>
-        </nz-dropdown>
+        </nz-dropdown-menu>
       </div>
     </div>
   </ng-template>

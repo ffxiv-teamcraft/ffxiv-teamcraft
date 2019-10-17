@@ -31,7 +31,8 @@
                 ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
           <i nz-icon nzType="share-alt"></i>
         </button>
-        <button nz-button (click)="$event.stopPropagation(); addRotations()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+        <button nz-button (click)="$event.stopPropagation(); addRotations()" [nzShape]="'circle'" [nzType]="'primary'"
+                nz-tooltip
                 *ngIf="(permissionLevel$ | async) >= 30"
                 [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Add_rotations' | translate">
           <i nz-icon nzType="plus"></i>
@@ -42,9 +43,12 @@
                 (click)="$event.stopPropagation()">
           <i nz-icon nzType="delete"></i>
         </button>
-        <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'" *ngIf="(permissionLevel$ | async) >= 30">
-          <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
-            <i nz-icon nzType="ellipsis"></i></button>
+        <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'"
+                [nzTrigger]="'click'" [nzPlacement]="'bottomRight'" [nzDropdownMenu]="menu"
+                *ngIf="(permissionLevel$ | async) >= 30">
+          <i nz-icon nzType="ellipsis"></i>
+        </button>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameFolder()">
               {{'SIMULATOR.ROTATIONS.FOLDERS.Rename' | translate}}
@@ -67,7 +71,7 @@
               </ng-container>
             </ng-container>
           </ul>
-        </nz-dropdown>
+        </nz-dropdown-menu>
       </div>
     </div>
   </ng-template>

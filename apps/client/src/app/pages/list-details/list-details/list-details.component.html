@@ -8,18 +8,20 @@
            fxLayoutAlign.lt-md="center center" fxLayoutAlign="center center">
         <div fxLayout="row" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
           <ng-container *ngIf="layouts$ | async as layouts">
-            <nz-dropdown *ngIf="layouts.length > 1">
-              <button nz-button nz-dropdown nz-tooltip
-                      nzShape="circle"
-                      [nzTitle]="'LIST.Quick_layout_swap' | translate">
-                <i nz-icon nzType="interation"></i>
-              </button>
+            <button nz-button nz-dropdown nz-tooltip
+                    *ngIf="layouts.length > 1"
+                    [nzDropdownMenu]="menu"
+                    nzShape="circle"
+                    [nzTitle]="'LIST.Quick_layout_swap' | translate">
+              <i nz-icon nzType="interation"></i>
+            </button>
+            <nz-dropdown-menu #menu="nzDropdownMenu">
               <ul nz-menu *ngIf="selectedLayout$ | async as selectedLayout">
                 <li nz-menu-item *ngFor="let layout of layouts" (click)="selectLayout(layout)">
                   {{layout.name}}<i *ngIf="layout.$key === selectedLayout.$key" nz-icon nzType="check"></i>
                 </li>
               </ul>
-            </nz-dropdown>
+            </nz-dropdown-menu>
           </ng-container>
           <button nz-button nzType="primary" nzShape="circle" (click)="openLayoutOptions()" nz-tooltip
                   [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Title' | translate">
@@ -36,15 +38,17 @@
           </button>
           <app-favorite-button type="lists" [key]="list.$key" *ngIf="!list.offline"></app-favorite-button>
           <div *ngIf="teams$ | async as teams">
-            <nz-dropdown [nzTrigger]="'click'" *ngIf="(permissionLevel$ | async) >= 20 && list.teamId === undefined">
-              <button nz-dropdown nz-button nzShape="circle" [disabled]="teams.length === 0"
-                      nz-tooltip [nzTitle]="'TEAMS.Assign_list' | translate">
-                <i nz-icon nzType="usergroup-add" nzTheme="outline"></i>
-              </button>
+            <button nz-dropdown nz-button nzShape="circle" [disabled]="teams.length === 0"
+                    [nzTrigger]="'click'" *ngIf="(permissionLevel$ | async) >= 20 && list.teamId === undefined"
+                    [nzDropdownMenu]="menu"
+                    nz-tooltip [nzTitle]="'TEAMS.Assign_list' | translate">
+              <i nz-icon nzType="usergroup-add" nzTheme="outline"></i>
+            </button>
+            <nz-dropdown-menu #menu="nzDropdownMenu">
               <ul nz-menu>
                 <li *ngFor="let team of teams" nz-menu-item (click)="assignTeam(list, team)">{{team.name}}</li>
               </ul>
-            </nz-dropdown>
+            </nz-dropdown-menu>
           </div>
           <div *ngIf="assignedTeam$ | async as team">
             <nz-tag *ngIf="list.teamId !== undefined" nzColor="purple"

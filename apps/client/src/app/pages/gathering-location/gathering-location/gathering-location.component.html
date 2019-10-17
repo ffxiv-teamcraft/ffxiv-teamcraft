@@ -128,14 +128,17 @@
     </ng-template>
     <ng-template #actionAlarmToGroup>
       <ng-container *ngIf="alarmGroups$ | async as groups">
-        <nz-dropdown *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'">
-          <i nz-icon nzType="folder-open" nz-dropdown class="add-to-group"></i>
+        <i nz-icon nzType="folder-open" nz-dropdown class="add-to-group"
+           *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'"
+           [nzDropdownMenu]="menu"
+        ></i>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
             <li nz-menu-item *ngFor="let group of groups" (click)="addAlarm(node, group)">
               {{group.name}}
             </li>
           </ul>
-        </nz-dropdown>
+        </nz-dropdown-menu>
       </ng-container>
     </ng-template>
   </div>

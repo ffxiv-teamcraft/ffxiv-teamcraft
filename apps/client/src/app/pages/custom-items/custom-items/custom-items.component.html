@@ -127,10 +127,12 @@
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <h2>{{'CUSTOM_ITEMS.Details' | translate}}</h2>
               <div>
-                <nz-dropdown [nzTrigger]="'click'" nz-tooltip [nzTitle]="'CUSTOM_ITEMS.Add_details' | translate">
-                  <button nz-dropdown nz-button nzShape="circle" nzSize="small">
-                    <i nz-icon nzType="plus"></i>
-                  </button>
+                <button nz-dropdown nz-button nzShape="circle" nzSize="small"
+                        [nzTrigger]="'click'" nz-tooltip [nzTitle]="'CUSTOM_ITEMS.Add_details' | translate"
+                        [nzDropdownMenu]="menu">
+                  <i nz-icon nzType="plus"></i>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
                   <ul nz-menu>
                     <li nz-menu-item
                         (click)="addCraft(item)"
@@ -149,7 +151,7 @@
                     <li nz-menu-item
                         (click)="addIngredient(item)">{{'CUSTOM_ITEMS.DETAILS.Requirements' | translate}}</li>
                   </ul>
-                </nz-dropdown>
+                </nz-dropdown-menu>
               </div>
             </div>
             <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column">

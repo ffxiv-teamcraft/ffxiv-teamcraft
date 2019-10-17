@@ -92,14 +92,16 @@
           <ng-container *ngIf="!isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)">
             <ng-container *ngIf="userId$ | async as userId">
               <ng-container *ngIf="team$ | async as team">
-                <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options"
-                             *ngIf="team.leader === userId || (!team.notFound && team.isOfficer(userId))">
-                  <button nz-dropdown nzSize="small"
-                          (click)="$event.stopPropagation()"
-                          nz-tooltip [nzTitle]="'TEAMS.Assign_team_member' | translate"
-                          nz-button [nzShape]="'circle'">
-                    <i nz-icon nzType="team"></i>
-                  </button>
+                <button nz-dropdown nzSize="small"
+                        *ngIf="team.leader === userId || (!team.notFound && team.isOfficer(userId))"
+                        [nzDropdownMenu]="menu"
+                        [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'"
+                        (click)="$event.stopPropagation()"
+                        nz-tooltip [nzTitle]="'TEAMS.Assign_team_member' | translate"
+                        nz-button [nzShape]="'circle'">
+                  <i nz-icon nzType="team"></i>
+                </button>
+                <nz-dropdown-menu class="item-options" #menu="nzDropdownMenu">
                   <ul nz-menu class="team-members">
                     <ng-container *ngFor="let member of team.members">
                       <ng-container *ngIf="(item.workingOnIt || [])?.indexOf(member) === -1">
@@ -109,7 +111,7 @@
                       </ng-container>
                     </ng-container>
                   </ul>
-                </nz-dropdown>
+                </nz-dropdown-menu>
               </ng-container>
             </ng-container>
           </ng-container>
@@ -122,13 +124,15 @@
                 <i nz-icon nzType="user-add"></i>
               </button>
               <ng-container *ngIf="team$ | async as team; else removeSingleAssignment">
-                <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
-                  <button nz-dropdown nzSize="small"
-                          (click)="$event.stopPropagation()"
-                          nz-tooltip [nzTitle]="'Remove_work_on_it' | translate"
-                          nz-button [nzShape]="'circle'">
-                    <i nz-icon nzType="user-delete"></i>
-                  </button>
+                <button nz-dropdown nzSize="small"
+                        [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'"
+                        [nzDropdownMenu]="menu"
+                        (click)="$event.stopPropagation()"
+                        nz-tooltip [nzTitle]="'Remove_work_on_it' | translate"
+                        nz-button [nzShape]="'circle'">
+                  <i nz-icon nzType="user-delete"></i>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu" class="item-options">
                   <ul nz-menu class="team-members">
                     <ng-container *ngFor="let user of item.workingOnIt">
                       <li nz-menu-item *ngIf="user | characterName | async as charName"
@@ -137,7 +141,7 @@
                       </li>
                     </ng-container>
                   </ul>
-                </nz-dropdown>
+                </nz-dropdown-menu>
               </ng-container>
               <ng-template #removeSingleAssignment>
                 <button nz-dropdown nzSize="small"
@@ -215,14 +219,16 @@
             </button>
           </ng-container>
 
-          <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
-            <button nz-dropdown nzSize="small" [disabled]="(permissionLevel$ | async) < 20"
-                    (click)="$event.stopPropagation()"
-                    nz-button [nzShape]="'circle'">
-              <nz-badge [nzDot]="(commentBadge$ | async) && !isButton(itemRowTypes.COMMENTS)">
-                <i nz-icon nzType="ellipsis"></i>
-              </nz-badge>
-            </button>
+          <button nz-dropdown nzSize="small" [disabled]="(permissionLevel$ | async) < 20"
+                  [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'"
+                  [nzDropdownMenu]="menu"
+                  (click)="$event.stopPropagation()"
+                  nz-button [nzShape]="'circle'">
+            <nz-badge [nzDot]="(commentBadge$ | async) && !isButton(itemRowTypes.COMMENTS)">
+              <i nz-icon nzType="ellipsis"></i>
+            </nz-badge>
+          </button>
+          <nz-dropdown-menu class="item-options" #menu="nzDropdownMenu">
             <ul nz-menu *ngIf="userId$ | async as userId">
               <ng-container *ngIf="!isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
                 <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
@@ -364,7 +370,7 @@
                 </li>
               </ng-container>
             </ul>
-          </nz-dropdown>
+          </nz-dropdown-menu>
           <ng-container *ngIf="missingBooks$ | async as missingBooks">
             <button nz-button nzGhost nzSize="small" nzShape="circle" nzType="danger"
                     *ngIf="missingBooks?.length > 0 && missingBooks.length === item.masterbooks?.length"
@@ -385,7 +391,7 @@
         <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
              fxLayoutGap="5px">
           <nz-tag *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry" (click)="add(entry.amount)"
-          nz-tooltip [nzTitle]="'INVENTORY.Click_to_add_to_progression' | translate">
+                  nz-tooltip [nzTitle]="'INVENTORY.Click_to_add_to_progression' | translate">
             {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
             : {{entry.amount}}
             <img src="./assets/icons/HQ.png" alt="HQ" *ngIf="entry.hq" class="inventory-hq"/>
@@ -438,16 +444,18 @@
             <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
           </button>
           <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
-            <nz-dropdown *ngIf="!display.registered && alarmGroups.length > 0" [nzPlacement]="'bottomCenter'">
-              <button nz-button [nzSize]="'small'" nz-dropdown>
-                <i nz-icon nzType="ellipsis"></i>
-              </button>
+            <button nz-button [nzSize]="'small'" nz-dropdown
+                    *ngIf="!display.registered && alarmGroups.length > 0" [nzPlacement]="'bottomCenter'"
+                    [nzDropdownMenu]="menu">
+              <i nz-icon nzType="ellipsis"></i>
+            </button>
+            <nz-dropdown-menu #menu="nzDropdownMenu">
               <ul nz-menu>
                 <li nz-menu-item *ngFor="let group of alarmGroups" (click)="addAlarmWithGroup(alarm, group)">
                   {{group.name}}
                 </li>
               </ul>
-            </nz-dropdown>
+            </nz-dropdown-menu>
           </ng-container>
         </nz-button-group>
       </div>

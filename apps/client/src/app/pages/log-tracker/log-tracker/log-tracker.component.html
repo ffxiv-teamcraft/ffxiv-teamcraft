@@ -170,18 +170,19 @@
                                       <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
                                     </button>
                                     <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
-                                      <nz-dropdown *ngIf="!display.registered && alarmGroups.length > 0"
-                                                   [nzPlacement]="'bottomCenter'">
-                                        <button nz-button [nzSize]="'small'" nz-dropdown>
-                                          <i nz-icon nzType="ellipsis"></i>
-                                        </button>
+                                      <button nz-button [nzSize]="'small'" nz-dropdown
+                                              *ngIf="!display.registered && alarmGroups.length > 0"
+                                              [nzPlacement]="'bottomCenter'" [nzDropdownMenu]="menu">
+                                        <i nz-icon nzType="ellipsis"></i>
+                                      </button>
+                                      <nz-dropdown-menu #menu="nzDropdownMenu">
                                         <ul nz-menu>
                                           <li nz-menu-item *ngFor="let group of alarmGroups"
                                               (click)="addAlarmWithGroup(alarm, group)">
                                             {{group.name}}
                                           </li>
                                         </ul>
-                                      </nz-dropdown>
+                                      </nz-dropdown-menu>
                                     </ng-container>
                                   </nz-button-group>
                                 </ng-container>

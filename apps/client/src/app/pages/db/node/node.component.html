@@ -24,7 +24,8 @@
             </div>
           </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="links" *ngIf="links$ | async as links">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="links"
+             *ngIf="links$ | async as links">
           <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
             <img [src]="link.icon" [alt]="link.title" class="link-icon">
           </a>
@@ -118,20 +119,22 @@
                              fxLayoutGap="5px">
                           <button nz-button nzShape="circle" nzSize="small" (click)="addAlarm(alarm.alarm)" nz-tooltip
                                   [nzTitle]="'ALARMS.Add_alarm' | translate">
-                            <i nz-icon nzType="clock-circle"> </i>
+                            <i nz-icon nzType="clock-circle"></i>
                           </button>
                           <ng-container *ngIf="alarmGroups$ | async as groups">
                             <ng-container *ngIf="groups.length > 0">
-                              <nz-dropdown *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'">
-                                <button nz-button nzShape="circle" nzSize="small" nz-dropdown>
-                                  <i nz-icon nzType="folder-open"></i>
-                                </button>
+                              <button nz-button nzShape="circle" nzSize="small"
+                                      *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'"
+                                      nz-dropdown [nzDropdownMenu]="menu">
+                                <i nz-icon nzType="folder-open"></i>
+                              </button>
+                              <nz-dropdown-menu #menu="nzDropdownMenu">
                                 <ul nz-menu>
                                   <li nz-menu-item *ngFor="let group of groups" (click)="addAlarm(alarm.alarm, group)">
                                     {{group.name}}
                                   </li>
                                 </ul>
-                              </nz-dropdown>
+                              </nz-dropdown-menu>
                             </ng-container>
                           </ng-container>
                         </div>
