@@ -43,7 +43,7 @@ export class DesynthComponent {
   public totalLength = 0;
 
 
-  @ViewChild('notificationRef')
+  @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
 
   // Notification data

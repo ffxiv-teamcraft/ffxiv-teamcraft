@@ -160,6 +160,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   newTag: string;
 
+  @ViewChild('inputElement', { static: false }) inputElement: ElementRef;
+  
   amountInInventory$: Observable<{ containerName: string, amount: number, hq: boolean, isRetainer: boolean }[]> = this.item$.pipe(
     switchMap(item => {
       return this.inventoryService.getUserInventory().pipe(
@@ -184,8 +186,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       );
     })
   );
-
-  @ViewChild('inputElement') inputElement: ElementRef;
 
   itemTags$ = combineLatest([this.item$, this.authFacade.user$]).pipe(
     map(([item, user]) => {

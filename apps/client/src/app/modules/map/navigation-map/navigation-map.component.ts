@@ -25,7 +25,7 @@ export class NavigationMapComponent implements OnInit {
 
   map: MapData;
 
-  @ViewChild('container')
+  @ViewChild('container', { static: false })
   public containerRef: ElementRef;
 
   markedAsDone = [];

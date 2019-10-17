@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, Injector, OnInit, Optional, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -486,7 +486,7 @@ export class AppComponent implements OnInit {
     this.settingsPopupService.openSettings();
   }
 
-  public goToDiscord1kGiveaway(event: MouseEvent): void {
+  public goToDiscord1kGiveaway(event: any): void {
     if (event.srcElement.tagName === 'A') {
       return;
     }

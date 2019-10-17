@@ -53,7 +53,7 @@ export class LogTrackerComponent extends TrackerComponent {
   public hideCompleted = false;
 
 
-  @ViewChild('notificationRef')
+  @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
 
   // Notification data

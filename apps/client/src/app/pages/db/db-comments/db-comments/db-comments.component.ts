@@ -135,7 +135,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     return version;
   }
 
-  handleClick(event: MouseEvent): void {
+  handleClick(event: any): void {
     if (event.srcElement.tagName === 'A') {
       if ((<any>event.srcElement).href.indexOf('ffxivteamcraft.com') > -1 ||
         (<any>event.srcElement).href.indexOf('localhost') > -1) {
