@@ -25,6 +25,13 @@ export class LazyDataService {
 
   public zhItems: any = {};
   public zhPlaces: any = {};
+  public zhActions: any = {};
+  public zhFates: any = {};
+  public zhGatheringBonuses: any = {};
+  public zhInstances: any = {};
+  public zhLeves: any = {};
+  public zhMaps: any = {};
+  public zhStatuses: any = {};
 
   public koItems: any = {};
   public koItemUiCategories: any = {};
@@ -146,7 +153,14 @@ export class LazyDataService {
         this.getData('https://xivapi.com/patchlist'),
         this.getData('/assets/data/recipes.json'),
         this.getData('/assets/data/patch-content.json'),
-        this.getData('/assets/data/extracts.json')
+        this.getData('/assets/data/extracts.json'),
+        this.getData('/assets/data/zh/zh-actions.json'),
+        this.getData('/assets/data/zh/zh-fates.json'),
+        this.getData('/assets/data/zh/zh-gathering-bonuses.json'),
+        this.getData('/assets/data/zh/zh-instances.json'),
+        this.getData('/assets/data/zh/zh-leves.json'),
+        this.getData('/assets/data/zh/zh-maps.json'),
+        this.getData('/assets/data/zh/zh-statuses.json')
       ]
     ).subscribe(([
                    items,
@@ -192,7 +206,14 @@ export class LazyDataService {
                    patches,
                    recipes,
                    patchContents,
-                   extracts
+                   extracts,
+                   zhActions,
+                   zhFates,
+                   zhGatheringBonuses,
+                   zhInstances,
+                   zhLeves,
+                   zhMaps,
+                   zhStatuses
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -238,6 +259,13 @@ export class LazyDataService {
       this.recipes = recipes as LazyRecipe[];
       this.patchContents = patchContents;
       this.extracts = extracts;
+      this.zhActions = zhActions;
+      this.zhFates = zhFates;
+      this.zhGatheringBonuses = zhGatheringBonuses;
+      this.zhInstances = zhInstances;
+      this.zhLeves = zhLeves;
+      this.zhMaps = zhMaps;
+      this.zhStatuses = zhStatuses;
       this.loaded$.next(true);
       this.loaded$.complete();
     });
