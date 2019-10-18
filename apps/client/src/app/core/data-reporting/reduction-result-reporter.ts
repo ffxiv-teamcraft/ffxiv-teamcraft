@@ -27,7 +27,7 @@ export class ReductionResultReporter implements DataReporter {
         return packet.resultItems.map(item => {
           return {
             itemId: patch.itemId,
-            collectability: patch.spiritBond,
+            purity: this.getPurity(patch.spiritBond),
             resultItemId: item.itemId,
             resultItemQuantity: item.quantity,
             resultItemHQ: item.hq
@@ -35,6 +35,11 @@ export class ReductionResultReporter implements DataReporter {
         });
       })
     );
+  }
+
+  getPurity(collectability: number): number {
+    const purities = [300, 350, 400, 450, 500, 525, 550, 1000];
+    return purities.filter(purity => purity <= collectability).length + 1;
   }
 
   getDataType(): string {
