@@ -373,8 +373,8 @@
     "Disable_search_history": "Supprimer l'historique de recherche",
     "Disable_search_debounce": "Désactiver la recherche auto (seul appuyer sur Entrée déclenchera la recherche)",
     "Enable_packet_capture": "Capture de paquets activée (ajoute des fonctionnalités d'inventaire en temps réel)",
-    "Packet_capture_info": "Capturer des paquets est contre ToS, la même raison pour laquelle ACT est contre ToS. Mais Square Enix le tolère à moins que vous ne vous en braguez à tout le monde en jeu. Ne faites rien et vous ne risquerez rien.",
-    "Contribute_to_universalis": "Contribuer à l'Universalis",
+    "Packet_capture_info": "Capturer des paquets est contre le CLUF (Contrat de license de l'utilisateur final), la même raison pour laquelle ACT est contre le CLUF. Mais Square Enix le tolère à moins que vous ne vous soyez entrain de le répéter à tout le monde en jeu. Ne faites rien et vous ne risquerez rien.",
+    "Contribute_to_universalis": "Contribuer à Universalis",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -406,7 +406,7 @@
     "More_than_100_lists_created": "Plus de 100 listes créées",
     "Veteran": "Vétéran",
     "Autofill_from_packets": "Auto-remplir les statistiques en utilisant la capture de paquets",
-    "Autofill_stats_explain": "Passez à la tâche souhaitée pour la mettre à jour, fermez cette popup une fois que vous aurez terminé.",
+    "Autofill_stats_explain": "Passez sur le job souhaité pour le mettre à jour, fermez cette popup une fois que vous aurez terminé.",
     "VERIFICATION": {
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code: \"{{userId}}\" dans votre biographie de profil Lodestone et cliquez sur le bouton ci-dessous. Plus d'informations sur <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">le wiki</a>",
@@ -1030,7 +1030,7 @@
     "History": "Historique",
     "Purchase_date": "Date",
     "More_on_mogboard": "Plus de détails sur mogboard",
-    "More_on_universalis": "Plus de détails sur l'universalis",
+    "More_on_universalis": "Plus de détails sur Universalis",
     "Server": "Serveur"
   },
   "COMMENTS": {
@@ -1528,14 +1528,14 @@
   "PACKET_CAPTURE": {
     "Banner_title": "Capture de paquets disponible",
     "Button_label": "Activer la capture de paquets",
-    "Banner_description": "Vous pouvez activer la capture de paquets pour permettre à Teamcraft de lire vos paquets FFXIV (une case est également à l'intérieur des paramètres pour l'activer/désactiver), cela permet de remplir automatiquement les listes au fur et à mesure que vous obtenez des éléments, et de contribuer à l'Universalis, l'aggragateur de marqueur.",
-    "Banner_description_warning": "La capture de paquets est contre ToS, c'est pourquoi elle est désactivée par défaut, s'il vous plaît assurez-vous d'éviter de dire à tout le monde le jeu et vous serez bien.",
+    "Banner_description": "Vous pouvez activer la capture de paquets pour permettre à Teamcraft de lire vos paquets FFXIV (une case est également à l'intérieur des paramètres pour l'activer/désactiver), cela permet de remplir automatiquement les listes au fur et à mesure que vous obtenez des éléments, et de contribuer à Universalis, l’agrégateur de données d'HDV.",
+    "Banner_description_warning": "La capture de paquets est contre le Contrat de License d'Utilisateur Final, c'est pourquoi elle est désactivée par défaut, s'il vous plaît assurez-vous d'éviter de vous en venter en jeu afin de rester safe (le jeu ne peut pas détecter ce processus).",
     "Empty_inventory": "Votre inventaire n'a pas encore été chargé",
     "Please_zone": "Veuillez téléporter à un endroit aléatoire et ouvrir votre sac à dos chocobo une fois que vous êtes arrivé pour initialiser correctement le système d'inventaire.",
-    "No_character_id": "Aucun jeu d'identifiant de caractère ingame",
-    "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et dans (ingame), cela n'est nécessaire qu'une fois.",
+    "No_character_id": "Personnage actuel inconnu",
+    "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et de vous reconnecter (ingame), cela n'est nécessaire qu'une fois.",
     "Inventory_outdated": "Votre inventaire est obsolète",
-    "Please_update_inventory_popup": "Veuillez changer de zone (en vous téléportant ou en entrant dans une maison) afin de mettre à jour votre inventaire. Ce popup se fermera une fois que se sera effectué."
+    "Please_update_inventory_popup": "Veuillez changer de zone (en vous téléportant ou en entrant dans une maison) afin de mettre à jour votre inventaire. Cette popup se fermera une fois que ce sera effectué."
   },
   "INVENTORY": {
     "Title": "Inventaire",
