@@ -26,7 +26,9 @@ module.exports.start = function(win, config, winpcap) {
       const options = isDev ?
         {
           monitorType: 'WinPCap',
+          parseAlgorithm: 'CPUHeavy'
         } : {
+          parseAlgorithm: 'CPUHeavy',
           noData: true,
           monitorType: 'WinPCap',
           machinaExePath: machinaExePath,
