@@ -1547,6 +1547,7 @@
     "Contribute_to_universalis": "Contribute data to universalis",
     "BAG": {
       "SaddleBag": "陆行鸟鞍囊",
+      "FC_chest": "FC chest",
       "Bag": "物品栏",
       "Other": "Other inventory"
     }
