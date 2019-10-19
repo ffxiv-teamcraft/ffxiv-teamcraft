@@ -161,7 +161,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   newTag: string;
 
   @ViewChild('inputElement', { static: false }) inputElement: ElementRef;
-  
+
   amountInInventory$: Observable<{ containerName: string, amount: number, hq: boolean, isRetainer: boolean }[]> = this.item$.pipe(
     switchMap(item => {
       return this.inventoryService.getUserInventory().pipe(
@@ -284,7 +284,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       map(list => {
         const recipesNeedingItem = list.finalItems
           .filter(item => item.requires !== undefined)
-          .filter(item => item.requires.some(req => req.id === this.item.id));
+          .filter(item => {
+            return (item.requires || []).some(req => req.id === this.item.id);
+          });
         if (this.item.requiredAsHQ) {
           return this.item.amount;
         }

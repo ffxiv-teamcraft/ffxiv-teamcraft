@@ -5,6 +5,7 @@ import { UniversalisService } from '../api/universalis.service';
 import {
   buffer,
   debounceTime,
+  delayWhen,
   distinctUntilChanged,
   filter,
   first,
@@ -15,7 +16,7 @@ import {
   withLatestFrom
 } from 'rxjs/operators';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
-import { Observable, Subject, merge } from 'rxjs';
+import { interval, merge, Observable, of, Subject } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
 import * as _ from 'lodash';
 import { InventoryPatch } from '../../model/user/inventory/inventory-patch';
@@ -61,7 +62,7 @@ export class MachinaService {
           && packet.slot < 32000
           && packet.catalogId < 40000;
       }),
-      buffer(this.ipc.itemInfoPackets$.pipe(debounceTime(1000))),
+      buffer(this.ipc.itemInfoPackets$.pipe(debounceTime(50))),
       filter(packets => packets.length > 0),
       withLatestFrom(this.retainerSpawns$),
       switchMap(([itemInfos, lastRetainerSpawned]) => {
@@ -118,6 +119,18 @@ export class MachinaService {
     ).subscribe();
 
     this.ipc.inventoryModifyHandlerPackets$.pipe(
+      delayWhen(packet => {
+        const fromFCChest = [ContainerType.FreeCompanyBag0,
+          ContainerType.FreeCompanyBag1,
+          ContainerType.FreeCompanyBag2].indexOf(packet.fromContainer) > -1;
+        const toFCChest = [ContainerType.FreeCompanyBag0,
+          ContainerType.FreeCompanyBag1,
+          ContainerType.FreeCompanyBag2].indexOf(packet.toContainer) > -1;
+        if (fromFCChest || toFCChest) {
+          return interval(1000);
+        }
+        return of(null);
+      }),
       withLatestFrom(this.retainerSpawns$),
       switchMap(([packet, lastSpawnedRetainer]) => {
         return this.inventory$.pipe(

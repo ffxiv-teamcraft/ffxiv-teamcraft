@@ -47,6 +47,9 @@ export class InventoryComponent {
           ContainerType.SaddleBag1,
           ContainerType.PremiumSaddleBag0,
           ContainerType.PremiumSaddleBag1,
+          ContainerType.FreeCompanyBag0,
+          ContainerType.FreeCompanyBag1,
+          ContainerType.FreeCompanyBag2,
         ].indexOf(item.containerId) > -1;
       }).reduce((bags: InventoryDisplay[], item: InventoryItem) => {
         const containerName = item.retainerName || this.inventoryService.getContainerName(item.containerId);
