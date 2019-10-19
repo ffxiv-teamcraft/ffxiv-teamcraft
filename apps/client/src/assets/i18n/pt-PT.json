@@ -886,6 +886,7 @@
       "No_medicine": "No medicine",
       "No_fc_buffs": "No FC buffs",
       "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
+      "Starting_quality": "Starting quality",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Craftsmanship",
@@ -1532,7 +1533,9 @@
     "Empty_inventory": "Your inventory hasn't been loaded yet",
     "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
     "No_character_id": "No ingame character id set",
-    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
+    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once.",
+    "Inventory_outdated": "Your inventory is outdated",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
   },
   "INVENTORY": {
     "Title": "Inventory",

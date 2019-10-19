@@ -138,11 +138,11 @@
     "Top": "Oben",
     "Bottom": "Unten",
     "Amount": "Anzahl",
-    "Undo": "Undo",
-    "User": "User",
-    "Tables": "Table",
-    "Pie_charts": "Pie charts",
-    "Read_more_on_wiki": "Read more details on wiki"
+    "Undo": "Rückgängig",
+    "User": "Benutzer",
+    "Tables": "Tabelle",
+    "Pie_charts": "Kuchendiagramm",
+    "Read_more_on_wiki": "Details in der Wiki ansehen"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -371,10 +371,10 @@
     "Always_HQ_leves": "Freibrief-Routine immer mit HQ-Gegenständen berechnen",
     "Clickthrough_overlay": "Durchklickbares Overlay",
     "Disable_search_history": "Suchverlauf deaktivieren",
-    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
-    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
-    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
-    "Contribute_to_universalis": "Contribute to Universalis",
+    "Disable_search_debounce": "Deaktivieren Sie die Entprellung der Suche (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
+    "Enable_packet_capture": "Paketerfassung aktivieren (für Echtzeit Inventar-Funktionen)",
+    "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Sqaure Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
+    "Contribute_to_universalis": "Zu Universalis beitragen",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -405,8 +405,8 @@
     "User_not_verified": "Benutzer nicht verifiziert, klicke zum Verifizieren.",
     "More_than_100_lists_created": "Mehr als 100 Listen erzeugt",
     "Veteran": "Veteran",
-    "Autofill_from_packets": "Autofill stats using packet capture",
-    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
+    "Autofill_from_packets": "Attribute durch Paketerfassung automatisch ausfüllen",
+    "Autofill_stats_explain": "Wechsel zum gewünschten Beruf, um diesen zu aktualisieren. Schließe diese Einblendung, wenn du damit fertig bist.",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
@@ -470,12 +470,12 @@
     "Optimized_full_path": "Volloptimierten Pfad anzeigen (am günstigsten und schnellsten)",
     "Quick_layout_swap": "Layout-Schnellwechsel",
     "Offline": "Offline",
-    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
-    "Mark_whole_panel_done": "Mark panel content as done",
+    "Offline_help": "Offline-Listen werden im Browser oder der App gespeichert. Sie sind nur dort verfügbar und können nicht geteilt werden. Sie sind schneller, da sie keine Netzwerk-Aufrufe benötigen.",
+    "Mark_whole_panel_done": "Panelinhalt als erledigt markieren",
     "ROTATION": {
-      "Attach": "Attach rotation",
-      "Detach": "Detach rotation",
-      "Click_to_copy_macro": "Click to open macro copy popup"
+      "Attach": "Rotation hinzufügen",
+      "Detach": "Rotation entfernen",
+      "Click_to_copy_macro": "Klicken, um das Makro-Kopier-Popup zu öffnen"
     },
     "INVENTORY": {
       "Show_final_items": "Resultate zeigen",
@@ -524,10 +524,10 @@
     "List_too_large_description": "Diese Liste ist zu groß und stößt möglicherweise an die Datenbanklimitierungen aufgrund der vielen Informationen. Du darfst keine weiteren Gegenstände hinzufügen, um zu verhindern, dass du die Liste verlierst.",
     "Add_to_another_list": "Zu einer anderen Liste hinzufügen",
     "New_tag": "Neue Markierung",
-    "Amount_ilvl": "Amount (ilvl)",
-    "Contributions_popup": "Contributions stats",
-    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
-    "Autofill": "Autofill",
+    "Amount_ilvl": "Betrag (ilvl)",
+    "Contributions_popup": "Beitragsstatistiken",
+    "Autofill_details": "Input-Fortschritt, wenn Sie Einträge ingame erhalten, indem Sie Paketerfassung verwenden. Dies ist deaktiviert, wenn Sie die Liste verlassen, um unerwünschte Eingaben zu vermeiden.",
+    "Autofill": "Automatisch ausfüllen",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -556,7 +556,7 @@
         "ADD_TAG": "Markierung zum Gegenstand hinzufügen",
         "MARK_AS_DONE_IN_LOG": "Im Notizbuch als \"erledigt\" markieren",
         "MARKET_BOARD_INFORMATIONS": "Marktbrett-Information",
-        "ATTACH_ROTATION": "Attach rotation"
+        "ATTACH_ROTATION": "Rotation hinzufügen"
       }
     },
     "LAYOUT": {
@@ -838,7 +838,7 @@
     "ROTATIONS": {
       "Search_placeholder": "Suche eine Rotation",
       "FOLDERS": {
-        "Not_found": "Rotation folder not found",
+        "Not_found": "Rotationsordner konnte nicht gefunden werden",
         "Folders": "Rotations-Ordner",
         "Rename": "Ordner umbenennen",
         "New_folder": "Neuer Ordner",
@@ -886,6 +886,7 @@
       "No_medicine": "Keine Arznei",
       "No_fc_buffs": "Keine FG Buffs",
       "Quest_warning": "Stelle sicher, dass die Stufe 70-Quest für die Eigenschaft \"Genialer Funke\" erledigt wurde",
+      "Starting_quality": "Anfangsqualität",
       "STATS": {
         "CP": "HP",
         "Craftsmanship": "Kunstfertigkeit",
@@ -1029,7 +1030,7 @@
     "History": "Historie",
     "Purchase_date": "Datum",
     "More_on_mogboard": "Mehr Details auf mogboard.com",
-    "More_on_universalis": "More details on universalis",
+    "More_on_universalis": "Weitere Infos zu Universalis",
     "Server": "Welt"
   },
   "COMMENTS": {
@@ -1082,7 +1083,7 @@
     "Required_for_achievement": "Für folgende Errungenschaften nötig",
     "Select_spot": "Fischgrund auswählen, um Details zu sehen",
     "Hide_completed": "Abgeschlossene Rezepte verstecken",
-    "Hide_completed_items": "Hide completed items",
+    "Hide_completed_items": "Komponenten verbergen",
     "MIN_optimized_path": "Optimierter Pfad für alle MIN-Sammelstellen",
     "BTN_optimized_path": "Optimierter Pfad für alle GÄR-Sammelstellen",
     "PAGE": {
@@ -1525,27 +1526,29 @@
     "Other": "Anderes"
   },
   "PACKET_CAPTURE": {
-    "Banner_title": "Packet capture is available",
-    "Button_label": "Enable packet capture",
-    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
-    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
-    "Empty_inventory": "Your inventory hasn't been loaded yet",
-    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
-    "No_character_id": "No ingame character id set",
-    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
+    "Banner_title": "Die Paketerfassung ist verfügbar",
+    "Button_label": "Paketerfassung aktivieren",
+    "Banner_description": "Du kannst die Paketerfassung aktivieren, damit Teamcraft deine FFXIV-Pakete lesen kann (Kann auch in den Einstellungen aktiviert/deaktiviert werden). Hierdurch werden Listen automatisch ausgefüllt, wenn du einen Gegenstand erhältst. Die Daten helfen außerdem Universalis, dem Marktbrett-Aggregator.",
+    "Banner_description_warning": "Die Paketerfassung ist gegen die Nutzungsbedingungen von FFXIV, weshalb sie standardmäßig deaktiviert ist. Solange du niemandem davon im Spiel erzählst, ist es aber in Ordnung diese zu benutzen.",
+    "Empty_inventory": "Dein Inventar wurde noch nicht geladen",
+    "Please_zone": "Bitte teleportiere dich an einen zufälligen Ort und öffne die Satteltasche deines Chocobos, sobald du dort angekommen bist, um das Inventar-System zu initialisieren.",
+    "No_character_id": "Keine Charakter-ID gesetzt",
+    "Please_relog": "Um etwas zu Universalis beitragen zu können, musst du dich einmal im Spiel aus und wieder einloggen. Dies ist nur einmal erforderlich.",
+    "Inventory_outdated": "Dein Inventar ist veraltet",
+    "Please_update_inventory_popup": "Bitte wechsle die Zone (z. B. durch Teleportation oder indem du ein Haus betrittst), um dein Inventar zu aktualisieren. Diese Einblendung wird automatisch geschlossen, sobald dies geschehen ist."
   },
   "INVENTORY": {
-    "Title": "Inventory",
-    "Empty": "Empty inventory",
-    "Estimate_total_price": "Estimate total inventory price",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Copied_to_clipboard": "Inventory copied to clipboard",
-    "Click_to_add_to_progression": "Click to add to item progression",
-    "Contribute_to_universalis": "Contribute data to universalis",
+    "Title": "Inventar",
+    "Empty": "Leeres Inventar",
+    "Estimate_total_price": "Gesamten Inventar-Preis schätzen",
+    "Copy_to_clipboard": "Inventar in Zwischenablage kopieren",
+    "Copied_to_clipboard": "Inventar wurde in die Zwischenablage kopiert",
+    "Click_to_add_to_progression": "Klicken Sie hier, um zum Artikelverlauf hinzuzufügen",
+    "Contribute_to_universalis": "Daten für Universalis beitragen",
     "BAG": {
-      "SaddleBag": "Chocobo Saddlebag",
-      "Bag": "Inventory",
-      "Other": "Other inventory"
+      "SaddleBag": "Chocobo-Satteltasche",
+      "Bag": "Inventar",
+      "Other": "Sonstige Vorräte"
     }
   }
 }

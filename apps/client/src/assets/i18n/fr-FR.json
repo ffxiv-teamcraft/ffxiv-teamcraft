@@ -142,7 +142,7 @@
     "User": "Utilisateur",
     "Tables": "Tableau",
     "Pie_charts": "Graphiques circulaires",
-    "Read_more_on_wiki": "Read more details on wiki"
+    "Read_more_on_wiki": "Lire plus de détails sur le wiki"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -372,9 +372,9 @@
     "Clickthrough_overlay": "Permettre de cliquer à travers l'overlay",
     "Disable_search_history": "Supprimer l'historique de recherche",
     "Disable_search_debounce": "Désactiver la recherche auto (seul appuyer sur Entrée déclenchera la recherche)",
-    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
-    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
-    "Contribute_to_universalis": "Contribute to Universalis",
+    "Enable_packet_capture": "Capture de paquets activée (ajoute des fonctionnalités d'inventaire en temps réel)",
+    "Packet_capture_info": "Capturer des paquets est contre le CLUF (Contrat de license de l'utilisateur final), la même raison pour laquelle ACT est contre le CLUF. Mais Square Enix le tolère à moins que vous ne vous soyez entrain de le répéter à tout le monde en jeu. Ne faites rien et vous ne risquerez rien.",
+    "Contribute_to_universalis": "Contribuer à Universalis",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -405,8 +405,8 @@
     "User_not_verified": "Utilisateur non vérifié, cliquez pour vérifier",
     "More_than_100_lists_created": "Plus de 100 listes créées",
     "Veteran": "Vétéran",
-    "Autofill_from_packets": "Autofill stats using packet capture",
-    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
+    "Autofill_from_packets": "Auto-remplir les statistiques en utilisant la capture de paquets",
+    "Autofill_stats_explain": "Passez sur le job souhaité pour le mettre à jour, fermez cette popup une fois que vous aurez terminé.",
     "VERIFICATION": {
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code: \"{{userId}}\" dans votre biographie de profil Lodestone et cliquez sur le bouton ci-dessous. Plus d'informations sur <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">le wiki</a>",
@@ -526,8 +526,8 @@
     "New_tag": "Nouveau tag",
     "Amount_ilvl": "Montant (ilvl)",
     "Contributions_popup": "Statistiques des contributions",
-    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
-    "Autofill": "Autofill",
+    "Autofill_details": "Saisissez la progression au fur et à mesure que vous obtenez des éléments ingame, en utilisant la capture de paquets. Ceci est désactivé si vous quittez la page de liste, pour éviter les entrées non désirées.",
+    "Autofill": "Saisie auto",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -886,6 +886,7 @@
       "No_medicine": "Aucune boisson",
       "No_fc_buffs": "Aucun bienfait",
       "Quest_warning": "Assurez-vous d'avoir fait la quête niveau 70 pour le buff Coup de génie",
+      "Starting_quality": "Qualité de départ",
       "STATS": {
         "CP": "PS",
         "Craftsmanship": "Habileté",
@@ -1029,7 +1030,7 @@
     "History": "Historique",
     "Purchase_date": "Date",
     "More_on_mogboard": "Plus de détails sur mogboard",
-    "More_on_universalis": "More details on universalis",
+    "More_on_universalis": "Plus de détails sur Universalis",
     "Server": "Serveur"
   },
   "COMMENTS": {
@@ -1525,27 +1526,29 @@
     "Other": "Autre"
   },
   "PACKET_CAPTURE": {
-    "Banner_title": "Packet capture is available",
-    "Button_label": "Enable packet capture",
-    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
-    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
-    "Empty_inventory": "Your inventory hasn't been loaded yet",
-    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
-    "No_character_id": "No ingame character id set",
-    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once."
+    "Banner_title": "Capture de paquets disponible",
+    "Button_label": "Activer la capture de paquets",
+    "Banner_description": "Vous pouvez activer la capture de paquets pour permettre à Teamcraft de lire vos paquets FFXIV (une case est également à l'intérieur des paramètres pour l'activer/désactiver), cela permet de remplir automatiquement les listes au fur et à mesure que vous obtenez des éléments, et de contribuer à Universalis, l’agrégateur de données d'HDV.",
+    "Banner_description_warning": "La capture de paquets est contre le Contrat de License d'Utilisateur Final, c'est pourquoi elle est désactivée par défaut, s'il vous plaît assurez-vous d'éviter de vous en venter en jeu afin de rester safe (le jeu ne peut pas détecter ce processus).",
+    "Empty_inventory": "Votre inventaire n'a pas encore été chargé",
+    "Please_zone": "Veuillez téléporter à un endroit aléatoire et ouvrir votre sac à dos chocobo une fois que vous êtes arrivé pour initialiser correctement le système d'inventaire.",
+    "No_character_id": "Personnage actuel inconnu",
+    "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et de vous reconnecter (ingame), cela n'est nécessaire qu'une fois.",
+    "Inventory_outdated": "Votre inventaire est obsolète",
+    "Please_update_inventory_popup": "Veuillez changer de zone (en vous téléportant ou en entrant dans une maison) afin de mettre à jour votre inventaire. Cette popup se fermera une fois que ce sera effectué."
   },
   "INVENTORY": {
-    "Title": "Inventory",
-    "Empty": "Empty inventory",
-    "Estimate_total_price": "Estimate total inventory price",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Copied_to_clipboard": "Inventory copied to clipboard",
-    "Click_to_add_to_progression": "Click to add to item progression",
-    "Contribute_to_universalis": "Contribute data to universalis",
+    "Title": "Inventaire",
+    "Empty": "Inventaire vide",
+    "Estimate_total_price": "Estimation du prix total de l'inventaire",
+    "Copy_to_clipboard": "Copier l'inventaire dans le presse-papiers",
+    "Copied_to_clipboard": "Inventaire copié dans le presse-papiers",
+    "Click_to_add_to_progression": "Cliquez pour ajouter à la progression de l'élément",
+    "Contribute_to_universalis": "Contribution des données à l'universalis",
     "BAG": {
-      "SaddleBag": "Chocobo Saddlebag",
-      "Bag": "Inventory",
-      "Other": "Other inventory"
+      "SaddleBag": "Sacoche Chocobo",
+      "Bag": "Inventaire",
+      "Other": "Autre inventaire"
     }
   }
 }
