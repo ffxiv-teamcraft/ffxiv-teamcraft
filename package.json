@@ -168,7 +168,7 @@
     "ngx-clipboard": "12.1.0",
     "ngx-color-picker": "^7.5.0",
     "ngx-markdown": "^1.6.0",
-    "node-machina-ffxiv": "^2.17.1",
+    "node-machina-ffxiv": "^2.17.2",
     "papaparse": "^4.6.3",
     "rxjs": "^6.5.3",
     "semver": "^5.4.1",
