@@ -62,6 +62,8 @@ export class UserInventoryService extends FirestoreRelationalStorage<UserInvento
         return 'RetainerBag';
       case ContainerType.SaddleBag0:
       case ContainerType.SaddleBag1:
+      case ContainerType.PremiumSaddleBag0:
+      case ContainerType.PremiumSaddleBag1:
         return 'SaddleBag';
     }
     return 'Other';
