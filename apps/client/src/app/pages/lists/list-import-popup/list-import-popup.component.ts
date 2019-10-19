@@ -36,6 +36,9 @@ export class ListImportPopupComponent {
   }
 
   updateLinkSupport(): void {
+    if (this.importLink === undefined) {
+      return;
+    }
     this.importLinkSupported = this.linkParsers.reduce((supported, parser) => {
       if (parser.canParse(this.importLink)) {
         this.linkType = parser.getName();
