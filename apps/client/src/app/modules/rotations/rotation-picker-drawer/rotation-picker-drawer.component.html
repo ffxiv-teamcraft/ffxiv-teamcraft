@@ -30,33 +30,33 @@
   </div>
 </div>
 <div *ngIf="rotations$ | async as rotations">
-  <ng-template #rotation let-rotation>
-    <nz-list-item [nzActions]="[pickRotation]">
-      <nz-list-item-meta [nzTitle]="title">
-        <ng-template #title>
-          <div [nzTitle]="rotation.getName()" class="rotation-name" nz-tooltip>{{rotation.getName()}}</div>
-        </ng-template>
-      </nz-list-item-meta>
-    </nz-list-item>
-    <ng-template #pickRotation>
-      <a (click)="ref.close(rotation)" *ngIf="pickOnly; else links" [nzShape]="'circle'" [nzType]="'primary'" nz-button>
-        <i nz-icon nzType="check"></i>
-      </a>
-      <ng-template #links>
-        <a (click)="ref.close(rotation)" *ngIf="!custom" [nzShape]="'circle'" [nzType]="'primary'" nz-button
-           routerLink="/simulator/{{itemId}}/{{recipeId}}/{{rotation.$key}}">
-          <i nz-icon nzType="check"></i>
-        </a>
-        <a (click)="ref.close(rotation)" *ngIf="custom" [nzShape]="'circle'" [nzType]="'primary'" nz-button
-           routerLink="/simulator/custom/{{rotation.$key}}">
-          <i nz-icon nzType="check"></i>
-        </a>
-      </ng-template>
-    </ng-template>
-  </ng-template>
 
   <nz-list [nzDataSource]="rotations" [nzHeader]="header" [nzRenderItem]="rotation">
     <ng-template #header><i nz-icon nzType="solution"></i>&nbsp;{{'SIMULATOR.Rotations' | translate}}</ng-template>
+    <ng-template #rotation let-rotation>
+      <nz-list-item [nzActions]="[pickRotation]">
+        <nz-list-item-meta [nzTitle]="title">
+          <ng-template #title>
+            <div [nzTitle]="rotation.getName()" class="rotation-name" nz-tooltip>{{rotation.getName()}}</div>
+          </ng-template>
+        </nz-list-item-meta>
+      </nz-list-item>
+      <ng-template #pickRotation>
+        <a (click)="ref.close(rotation)" *ngIf="pickOnly; else links" [nzShape]="'circle'" [nzType]="'primary'" nz-button>
+          <i nz-icon nzType="check"></i>
+        </a>
+        <ng-template #links>
+          <a (click)="ref.close(rotation)" *ngIf="!custom" [nzShape]="'circle'" [nzType]="'primary'" nz-button
+             routerLink="/simulator/{{itemId}}/{{recipeId}}/{{rotation.$key}}">
+            <i nz-icon nzType="check"></i>
+          </a>
+          <a (click)="ref.close(rotation)" *ngIf="custom" [nzShape]="'circle'" [nzType]="'primary'" nz-button
+             routerLink="/simulator/custom/{{rotation.$key}}">
+            <i nz-icon nzType="check"></i>
+          </a>
+        </ng-template>
+      </ng-template>
+    </ng-template>
   </nz-list>
 
   <nz-list *ngIf="favoriteRotations$ | async as favRotations" [nzDataSource]="favRotations" [nzHeader]="header"
