@@ -28,6 +28,7 @@ export class ReductionResultReporter implements DataReporter {
           return {
             itemId: patch.itemId,
             purity: this.getPurity(patch.spiritBond),
+            collectability: patch.spiritBond,
             resultItemId: item.itemId,
             resultItemQuantity: item.quantity,
             resultItemHQ: item.hq
