@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { List } from '../../../../modules/list/model/list';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { ListsFacade } from '../../../../modules/list/+state/lists.facade';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { UserInventoryService } from '../../../../core/database/user-inventory.service';
 
 @Component({
   selector: 'app-relationships',
@@ -20,19 +21,44 @@ export class RelationshipsComponent implements OnInit {
 
   public requiredBy$: Observable<ListRow[]>;
 
-  constructor(private listsFacade: ListsFacade) {
+  constructor(private listsFacade: ListsFacade, private inventoryService: UserInventoryService) {
     this.list$ = this.listsFacade.selectedList$;
   }
 
   ngOnInit() {
     this.requires$ = this.list$.pipe(
-      map(list => {
-        return (this.item.requires || [])
+      switchMap(list => {
+        const items$ = (this.item.requires || [])
           .sort((a, b) => a.id < b.id ? -1 : 1)
           .map(req => {
-            const item = list.getItemById(req.id, true);
-            return { ...item, reqAmount: req.amount, canBeCrafted: list.canBeCrafted(item) };
+            let item: any = list.getItemById(req.id, true);
+            item = { ...item, reqAmount: req.amount, canBeCrafted: list.canBeCrafted(item) };
+            return this.inventoryService.getUserInventory().pipe(
+              map(inventory => {
+                return inventory.getItem(item.id).map(entry => {
+                  return {
+                    isRetainer: entry.retainerName !== undefined,
+                    containerName: entry.retainerName ? entry.retainerName : this.inventoryService.getContainerName(entry.containerId),
+                    amount: entry.quantity,
+                    hq: entry.hq
+                  };
+                }).reduce((res, entry) => {
+                  const resEntry = res.find(e => e.containerName === entry.containerName && e.hq === entry.hq);
+                  if (resEntry !== undefined) {
+                    resEntry.amount += entry.amount;
+                  } else {
+                    res.push(entry);
+                  }
+                  return res;
+                }, []);
+              }),
+              map(entries => {
+                item.inventoryEntries = entries;
+                return item;
+              })
+            );
           });
+        return combineLatest(items$);
       })
     );
 
@@ -51,6 +77,10 @@ export class RelationshipsComponent implements OnInit {
         return requiredBy;
       })
     );
+  }
+
+  public trackByInventoryEntry(index: number, entry: { containerName: string, amount: number, hq: boolean }): string {
+    return `${entry.containerName}${entry.hq}`;
   }
 
 }
