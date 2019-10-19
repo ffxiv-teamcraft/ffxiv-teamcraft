@@ -4,7 +4,7 @@
            [nzHeader]="'Requires' | translate"
            [nzRenderItem]="requirement">
     <ng-template #requirement let-req>
-      <nz-list-item [class.craftable]="req.canBeCrafted" [class.done]="req.amount <= req.done" class="item-row">
+      <nz-list-item [class.craftable]="req.canBeCrafted" [class.done]="req.amount <= req.done" class="item-row" [nzContent]="inventoryInformations">
         <nz-list-item-meta [nzAvatar]="itemIcon" [nzTitle]="req.id | itemName | i18n"
                            nzDescription="x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}} x {{((item.amount_needed - item.done / item.yield) | ceil)}})">
         </nz-list-item-meta>
@@ -12,6 +12,15 @@
           <app-item-icon [icon]="req.icon" [itemId]="req.id" [width]="32"></app-item-icon>
         </ng-template>
       </nz-list-item>
+      <ng-template #inventoryInformations>
+        <div class="amount-in-inventories" fxLayout="row wrap"     fxLayoutGap="5px">
+          <nz-tag *ngFor="let entry of req.inventoryEntries;trackBy: trackByInventoryEntry">
+            {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
+            : {{entry.amount}}
+            <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
+          </nz-tag>
+        </div>
+      </ng-template>
     </ng-template>
   </nz-list>
 </div>

@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.1"></a>
+## [6.0.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.0...v6.0.1) (2019-10-19)
+
+
+### Bug Fixes
+
+* **inventory:** fixed an issue with premium saddlebag not being tracked properly ([a10d0cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a10d0cf))
+* **lists:** fixed an issue with yield being forced to 1 ([7e77fda](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e77fda))
+* **permissions:** fixes permissions box crashing when opened ([1268840](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1268840))
+
+
+### Features
+
+* **lists:** added amount in inventory inside requirements popup ([a8ced2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a8ced2c))
+
+
+
 <a name="6.0.0"></a>
 # [6.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.5...v6.0.0) (2019-10-19)
 

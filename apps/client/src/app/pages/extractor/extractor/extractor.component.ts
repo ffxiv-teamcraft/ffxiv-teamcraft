@@ -43,7 +43,11 @@ export class ExtractorComponent implements OnInit {
             const item: any = {
               id: data.item.id
             };
-            return this.extractor.addDataToItem(item, data);
+            const extract = this.extractor.addDataToItem(item, data);
+            delete extract.yield;
+            delete extract.requires;
+            delete extract.workingOnIt;
+            return extract;
           });
         }),
         tap(() => {
@@ -52,7 +56,7 @@ export class ExtractorComponent implements OnInit {
       );
     }), 10).subscribe(items => {
       const blob = new Blob([JSON.stringify([].concat.apply([], items))], { type: 'text/plain;charset:utf-8' });
-      saveAs(blob, `items.json`);
+      saveAs(blob, `extracts.json`);
     });
   }
 

@@ -33,6 +33,8 @@ export enum ContainerType {
 
   SaddleBag0 = 4000,
   SaddleBag1 = 4001,
+  PremiumSaddleBag0 = 4100,
+  PremiumSaddleBag1 = 4101,
 
   RetainerBag0 = 10000,
   RetainerBag1 = 10001,
