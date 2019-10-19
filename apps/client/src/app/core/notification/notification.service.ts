@@ -10,6 +10,8 @@ import { FirestoreRelationalStorage } from '../database/storage/firestore/firest
 })
 export class NotificationService extends FirestoreRelationalStorage<AbstractNotification> {
 
+  protected skipClone = true;
+
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService) {
     super(firestore, serializer, zone, pendingChangesService);

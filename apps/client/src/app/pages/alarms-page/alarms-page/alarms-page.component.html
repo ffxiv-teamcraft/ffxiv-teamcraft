@@ -129,7 +129,7 @@
           <ng-template #itemIcon>
             <div fxLayout="column" fxLayoutAlign="center center">
               <app-item-icon *ngIf="row.alarm.icon; else customAlarmIcon" [icon]="row.alarm.itemId | lazyIcon"
-                             [itemId]="row.alarm.itemId"></app-item-icon>
+                             [itemId]="row.alarm.itemId" [width]="32"></app-item-icon>
               <ng-template #customAlarmIcon>
                 <nz-avatar [nzText]="row.alarm.name[0]"></nz-avatar>
               </ng-template>

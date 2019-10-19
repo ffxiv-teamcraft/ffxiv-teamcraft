@@ -67,8 +67,8 @@ export class UserInventory extends DataWithPermissions {
   operateTransaction(packet: any, lastSpawnedRetainer: string): InventoryPatch | null {
     const isFromRetainer = packet.fromContainer >= 10000 && packet.fromContainer < 20000;
     const isToRetainer = packet.toContainer >= 10000 && packet.toContainer < 20000;
-    const fromContainerKey = isFromRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
-    const toContainerKey = isToRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
+    const fromContainerKey = isFromRetainer ? `${lastSpawnedRetainer}:${packet.fromContainer}` : `${packet.fromContainer}`;
+    const toContainerKey = isToRetainer ? `${lastSpawnedRetainer}:${packet.toContainer}` : `${packet.toContainer}`;
 
     const fromContainer = this.items[fromContainerKey];
     const toContainer = this.items[toContainerKey];
@@ -91,12 +91,12 @@ export class UserInventory extends DataWithPermissions {
           slot: packet.toSlot
         };
         delete this.items[fromContainerKey][packet.fromSlot];
-        delete this.items[toContainerKey][packet.toSlot];
         if (isFromRetainer && !isToRetainer) {
           delete moved.retainerName;
         } else if (!isFromRetainer && isToRetainer) {
           moved.retainerName = lastSpawnedRetainer;
         }
+        this.items[toContainerKey][packet.toSlot] = moved;
         return moved;
       case 'swap':
         const fromSlot = fromItem.slot;

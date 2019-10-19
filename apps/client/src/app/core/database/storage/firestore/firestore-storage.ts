@@ -20,6 +20,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
 
   protected syncCache: { [index: string]: T } = {};
 
+  protected skipClone = false;
+
   protected constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
                         protected pendingChangesService: PendingChangesService) {
     super();
@@ -233,6 +235,9 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     }
     return this.cache[uid].pipe(
       map(data => {
+        if (this.skipClone) {
+          return data;
+        }
         if ((<any>data).clone && typeof (<any>data).clone === 'function') {
           return (<any>data).clone(true);
         } else {
