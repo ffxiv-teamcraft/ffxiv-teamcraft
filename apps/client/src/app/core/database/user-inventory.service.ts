@@ -7,7 +7,7 @@ import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../+state/auth.facade';
 import { Observable } from 'rxjs';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
-import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, map, shareReplay, switchMap } from 'rxjs/operators';
 import { ContainerType } from '../../model/user/inventory/container-type';
 import { diff } from 'deep-diff';
 
@@ -65,6 +65,10 @@ export class UserInventoryService extends FirestoreRelationalStorage<UserInvento
       case ContainerType.PremiumSaddleBag0:
       case ContainerType.PremiumSaddleBag1:
         return 'SaddleBag';
+      case ContainerType.FreeCompanyBag0:
+      case ContainerType.FreeCompanyBag1:
+      case ContainerType.FreeCompanyBag2:
+        return 'FC_chest';
     }
     return 'Other';
   }
