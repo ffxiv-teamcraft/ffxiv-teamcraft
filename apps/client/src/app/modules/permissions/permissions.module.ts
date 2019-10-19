@@ -4,7 +4,7 @@ import { PermissionsBoxComponent } from './permissions-box/permissions-box.compo
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { NgZorroAntdModule, NzListModule } from 'ng-zorro-antd';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { FormsModule } from '@angular/forms';
 import { PipesModule } from '../../pipes/pipes.module';
@@ -17,6 +17,7 @@ import { FreecompanyPickerModule } from '../freecompany-picker/freecompany-picke
     FlexLayoutModule,
     TranslateModule,
     NgZorroAntdModule,
+    NzListModule,
     FormsModule,
 
     PipesModule,

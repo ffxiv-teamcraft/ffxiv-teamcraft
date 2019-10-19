@@ -24,16 +24,19 @@
       </nz-list-item>
     </ng-template>
   </nz-list>
-  <nz-list-item [nzContent]="everyoneContent">
-    <nz-list-item-meta [nzTitle]="'PERMISSIONS.Everyone' | translate">
-    </nz-list-item-meta>
-    <ng-template #everyoneContent>
-      <nz-select (ngModelChange)="updateEveryonePermission($event)" [ngModel]="data.everyone" class="permission-select">
-        <nz-option *ngFor="let level of everyonePermissionLevels" [nzLabel]="level.label"
-                   [nzValue]="level.value"></nz-option>
-      </nz-select>
-    </ng-template>
-  </nz-list-item>
+  <nz-list>
+    <nz-list-item [nzContent]="everyoneContent">
+      <nz-list-item-meta [nzTitle]="'PERMISSIONS.Everyone' | translate">
+      </nz-list-item-meta>
+      <ng-template #everyoneContent>
+        <nz-select (ngModelChange)="updateEveryonePermission($event)" [ngModel]="data.everyone"
+                   class="permission-select">
+          <nz-option *ngFor="let level of everyonePermissionLevels" [nzLabel]="level.label"
+                     [nzValue]="level.value"></nz-option>
+        </nz-select>
+      </ng-template>
+    </nz-list-item>
+  </nz-list>
   <div fxLayout="column" fxLayoutGap="15px">
     <div fxLayout="column" fxLayoutGap="10px">
       <button (click)="addUser()" nz-button nzGhost nzType="primary">
