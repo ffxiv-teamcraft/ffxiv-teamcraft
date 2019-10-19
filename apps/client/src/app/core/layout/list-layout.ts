@@ -60,4 +60,13 @@ export class ListLayout extends DataModel {
     delete exportLayout.userId;
     return btoa(escape(JSON.stringify(exportLayout)));
   }
+
+  public clone():ListLayout {
+    const clone = new ListLayout();
+    Object.assign(clone, JSON.parse(JSON.stringify(this)));
+    clone.rows = this.rows.map(row => {
+      return row.clone();
+    });
+    return clone;
+  }
 }

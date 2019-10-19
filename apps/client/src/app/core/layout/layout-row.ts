@@ -89,4 +89,24 @@ export class LayoutRow {
   public isOtherRow(): boolean {
     return this.filter.name === 'ANYTHING' && this.name === 'Other';
   }
+
+  public clone(): LayoutRow {
+    return new LayoutRow(
+      this._name,
+      this._orderBy,
+      this._order,
+      this._filter,
+      this.index,
+      this.zoneBreakdown,
+      this.tiers,
+      this.reverseTiers,
+      this.hideIfEmpty,
+      this.hideCompletedRows,
+      this.hideUsedRows,
+      this.collapseIfDone,
+      this.collapsedByDefault,
+      this.hideZoneDuplicates,
+      this.hasTag,
+      this.tag);
+  }
 }
