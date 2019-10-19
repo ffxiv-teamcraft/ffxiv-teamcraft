@@ -46,9 +46,15 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
 
   private completeListData(list: List): List {
     list.items = list.items.map(item => {
+      if (!(item.requires instanceof Array)) {
+        item.requires = [];
+      }
       return Object.assign(item, this.lazyData.extracts.find(i => i.id === item.id));
     });
     list.finalItems = list.finalItems.map(item => {
+      if (!(item.requires instanceof Array)) {
+        item.requires = [];
+      }
       return Object.assign(item, this.lazyData.extracts.find(i => i.id === item.id));
     });
     return list;
