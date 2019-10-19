@@ -1,9 +1,10 @@
 <nz-collapse>
   <nz-collapse-panel [nzHeader]="panelHeader">
-    <div class="ngx-dnd-container lists-container" ngxDroppable="list" [removeOnSpill]="true" (remove)="removeList($event.value)"
-         (drop)="onListDrop($event.value, $event.dropIndex)" fxLayout="column" fxLayoutGap="5px">
-      <div class="ngx-dnd-item list-panel" *ngFor="let list of lists; trackBy: trackByList" ngxDraggable="list"
-           [model]="list">
+    <div (drop)="onListDrop($event.value, $event.dropIndex)" (remove)="removeList($event.value)" [removeOnSpill]="true"
+         class="ngx-dnd-container lists-container"
+         fxLayout="column" fxLayoutGap="5px" ngxDroppable="list">
+      <div *ngFor="let list of lists; trackBy: trackByList" [model]="list" class="ngx-dnd-item list-panel"
+           ngxDraggable="list">
         <app-list-panel [list]="list"></app-list-panel>
       </div>
     </div>
@@ -13,42 +14,46 @@
       <div>
         {{_workshop.name}} ({{lists.length}})
       </div>
-      <div nz-col nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
-        <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" nz-tooltip
+      <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="4">
+        <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" [cbContent]="getLink()" [nzShape]="'circle'"
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
-                ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
-          <i nz-icon type="share-alt"></i>
+                ngxClipboard nz-button nz-tooltip>
+          <i nz-icon nzType="share-alt"></i>
         </button>
-        <button nz-button (click)="$event.stopPropagation(); addLists()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
-                *ngIf="(permissionLevel$ | async) >= 30"
-                [nzTitle]="'WORKSHOP.Add_lists' | translate">
-          <i nz-icon type="plus"></i>
+        <button (click)="$event.stopPropagation(); addLists()" *ngIf="(permissionLevel$ | async) >= 30" [nzShape]="'circle'" [nzTitle]="'WORKSHOP.Add_lists' | translate"
+                [nzType]="'primary'"
+                nz-button
+                nz-tooltip>
+          <i nz-icon nzType="plus"></i>
         </button>
-        <button nz-button [nzType]="'danger'" [nzShape]="'circle'" [nzTitle]="'WORKSHOP.Delete_message' | translate"
-                [disabled]="(permissionLevel$ | async) < 30" nz-popconfirm (nzOnConfirm)="deleteWorkshop()">
-          <i nz-icon type="delete"></i>
+        <button (nzOnConfirm)="deleteWorkshop()" [disabled]="(permissionLevel$ | async) < 30" [nzShape]="'circle'" [nzTitle]="'WORKSHOP.Delete_message' | translate"
+                [nzType]="'danger'" nz-button nz-popconfirm>
+          <i nz-icon nzType="delete"></i>
         </button>
-        <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
-          <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
-            <i nz-icon type="ellipsis"></i></button>
+        <button (click)="$event.stopPropagation()" [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"
+                [nzTrigger]="'click'"
+                nz-button nz-dropdown>
+          <i nz-icon nzType="ellipsis"></i>
+        </button>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameWorkshop()">
+            <li (click)="renameWorkshop()" [nzDisabled]="(permissionLevel$ | async) < 40" nz-menu-item>
               {{'WORKSHOP.Rename' | translate}}
             </li>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="openPermissionsPopup()">
+            <li (click)="openPermissionsPopup()" [nzDisabled]="(permissionLevel$ | async) < 40" nz-menu-item>
               {{'PERMISSIONS.Title' | translate}}
             </li>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">
                 <ng-container *ngIf="user.patron || user.admin">
-                  <li nz-menu-item [nzDisabled]="!user.nickname"
-                      (click)="createCustomLink(_workshop, user)"
-                      *ngIf="(customLink$ | async) === undefined; else copyLink">
+                  <li (click)="createCustomLink(_workshop, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
+                      [nzDisabled]="!user.nickname"
+                      nz-menu-item>
                     {{'CUSTOM_LINKS.Add_link' | translate}}
                   </li>
                   <ng-template #copyLink>
-                    <li nz-menu-item *ngIf="customLink$ | async as link" ngxClipboard [cbContent]="link.getUrl()"
-                        (cbOnSuccess)="afterCustomLinkCopy()">
+                    <li (cbOnSuccess)="afterCustomLinkCopy()" *ngIf="customLink$ | async as link" [cbContent]="link.getUrl()" ngxClipboard
+                        nz-menu-item>
                       {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
                     </li>
                   </ng-template>
@@ -56,7 +61,7 @@
               </ng-container>
             </ng-container>
           </ul>
-        </nz-dropdown>
+        </nz-dropdown-menu>
       </div>
     </div>
   </ng-template>

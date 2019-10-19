@@ -1,32 +1,32 @@
 <ng-container *ngIf="loaded$ | async; else loading">
-  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px" *ngIf="!overlayMode">
+  <div *ngIf="!overlayMode" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
     <nz-switch [(ngModel)]="settings.alarmsMuted"></nz-switch>
     <div>{{'Mute_alarms' | translate}} </div>
   </div>
-  <div class="alarms-container" [class.sidebar]="!overlayMode" *ngIf="alarms$ | async as alarms">
+  <div *ngIf="alarms$ | async as alarms" [class.sidebar]="!overlayMode" class="alarms-container">
     <div *ngFor="let row of alarms; trackBy: trackByAlarm; let last = last">
-      <div class="alarm-row" [class.spawned]="row.spawned" [class.played]="row.played && !row.spawned" fxLayout="row"
+      <div [class.played]="row.played && !row.spawned" [class.spawned]="row.spawned" class="alarm-row" fxLayout="row"
            fxLayoutGap="5px">
         <div class="ephemeral">
-          <i nz-icon type="clock-circle" *ngIf="row.alarm.ephemeral" nz-tooltip
-             [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate"></i>
+          <i *ngIf="row.alarm.ephemeral" [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
+             nzType="clock-circle"></i>
         </div>
         <div class="item-icon">
-          <app-item-icon [icon]="row.alarm.itemId | lazyIcon" [itemName]="row.alarm.itemId | itemName: row.alarm | i18n"
-                         [itemId]="row.alarm.itemId" [width]="32" [disableClick]="overlayMode"></app-item-icon>
-          <img src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type">
+          <app-item-icon [disableClick]="overlayMode" [icon]="row.alarm.itemId | lazyIcon"
+                         [itemId]="row.alarm.itemId" [itemName]="row.alarm.itemId | itemName: row.alarm | i18n" [width]="32"></app-item-icon>
+          <img alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon}}">
         </div>
         <div class="center-content">
-          <span class="item-name" *ngIf="row.alarm.itemId; else customName">
-            <i nz-icon type="folder-open" nz-tooltip [nzTitle]="row.groupName"
-               *ngIf="row.groupName" class="folder-icon"></i>
+          <span *ngIf="row.alarm.itemId; else customName" class="item-name">
+            <i *ngIf="row.groupName" [nzTitle]="row.groupName" class="folder-icon" nz-icon
+               nz-tooltip nzType="folder-open"></i>
             {{row.alarm.itemId | itemName: row.alarm | i18n}}
-            <i nz-icon type="edit" nz-tooltip [nzTitle]="row.alarm.note"
-               *ngIf="row.alarm.note" class="note-icon"></i>
+            <i *ngIf="row.alarm.note" [nzTitle]="row.alarm.note" class="note-icon" nz-icon
+               nz-tooltip nzType="edit"></i>
           </span>
           <ng-template #customName>
-            <i nz-icon type="folder-open" nz-tooltip [nzTitle]="row.groupName"
-               *ngIf="row.groupName" class="folder-icon"></i>
+            <i *ngIf="row.groupName" [nzTitle]="row.groupName" class="folder-icon" nz-icon
+               nz-tooltip nzType="folder-open"></i>
             <span class="item-name">{{row.alarm.name}}</span>
           </ng-template>
           <div fxLayout="row wrap" fxLayoutGap="5px">
@@ -36,15 +36,15 @@
             <div class="coords">X:{{row.alarm.coords.x}} - Y: {{row.alarm.coords.y}}</div>
           </div>
         </div>
-        <div class="slot" *ngIf="row.alarm.slot">({{row.alarm.slot}})</div>
-        <div class="map-button" *ngIf="!overlayMode">
-          <button nz-button nzType="primary" nzShape="circle" nzSize="small" (click)="openMap(row.alarm)">
-            <i nz-icon type="environment-o"></i>
+        <div *ngIf="row.alarm.slot" class="slot">({{row.alarm.slot}})</div>
+        <div *ngIf="!overlayMode" class="map-button">
+          <button (click)="openMap(row.alarm)" nz-button nzShape="circle" nzSize="small" nzType="primary">
+            <i nz-icon nzType="environment-o"></i>
           </button>
         </div>
-        <div class="delete-icon" nz-popconfirm [nzTitle]="'Confirmation' | translate"
-             (nzOnConfirm)="deleteAlarm(row.alarm)">
-          <i nz-icon type="close"></i>
+        <div (nzOnConfirm)="deleteAlarm(row.alarm)" [nzTitle]="'Confirmation' | translate" class="delete-icon"
+             nz-popconfirm>
+          <i nz-icon nzType="close"></i>
         </div>
       </div>
       <nz-divider *ngIf="!last"></nz-divider>

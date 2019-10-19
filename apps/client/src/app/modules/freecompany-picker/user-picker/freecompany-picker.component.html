@@ -1,7 +1,7 @@
 <div *ngIf="servers$ | async as availableServers; else loading">
   <nz-form-item>
-    <nz-form-label nzRequired nzFor="serverName">{{'Server_name' | translate}}</nz-form-label>
-    <input type="text" id="serverName" nz-input [formControl]="selectedServer" [nzAutocomplete]="auto">
+    <nz-form-label nzFor="serverName" nzRequired>{{'Server_name' | translate}}</nz-form-label>
+    <input [formControl]="selectedServer" [nzAutocomplete]="auto" id="serverName" nz-input type="text">
     <nz-autocomplete #auto>
       <nz-auto-option *ngFor="let server of autoCompleteRows$ | async" [nzValue]="server">
         {{server}}
@@ -10,9 +10,9 @@
   </nz-form-item>
 
   <nz-form-item>
-    <nz-form-label nzRequired nzFor="fcName">{{'FC_name' | translate}}
+    <nz-form-label nzFor="fcName" nzRequired>{{'FC_name' | translate}}
     </nz-form-label>
-    <input type="text" id="fcName" nz-input [formControl]="fcName">
+    <input [formControl]="fcName" id="fcName" nz-input type="text">
   </nz-form-item>
 </div>
 
@@ -24,14 +24,14 @@
     <ng-template #fcTemplate let-fc>
       <nz-list-item [nzActions]="[selectAction]">
         <ng-template #selectAction>
-          <button nz-button nzType="primary" (click)="pickFc(fc)">{{'COMMON.Select' | translate}}</button>
+          <button (click)="pickFc(fc)" nz-button nzType="primary">{{'COMMON.Select' | translate}}</button>
         </ng-template>
         <nz-list-item-meta
-          [nzTitle]="fc.Name"
-          [nzAvatar]="crest">
+          [nzAvatar]="crest"
+          [nzTitle]="fc.Name">
           <ng-template #crest>
             <div class="crest-container">
-              <img src="{{layer}}" alt="" *ngFor="let layer of fc.Crest" class="crest-layer">
+              <img *ngFor="let layer of fc.Crest" alt="" class="crest-layer" src="{{layer}}">
             </div>
           </ng-template>
         </nz-list-item-meta>

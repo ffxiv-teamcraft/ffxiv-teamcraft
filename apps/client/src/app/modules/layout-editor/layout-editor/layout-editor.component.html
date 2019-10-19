@@ -1,63 +1,63 @@
 <div *ngIf="selectedLayout$ | async as layout">
-  <div class="topbar" *ngIf="allLayouts$ | async as allLayouts" fxLayout="row" fxLayout.lt-md="column"
+  <div *ngIf="allLayouts$ | async as allLayouts" class="topbar" fxLayout="row" fxLayout.lt-md="column"
        fxLayoutGap="5px">
-    <nz-select [ngModel]="layout" (ngModelChange)="select($event)" [compareWith]="layoutComparator" fxFlex="1 1 auto">
-      <nz-option *ngFor="let availableLayout of allLayouts" [nzValue]="availableLayout"
-                 [nzLabel]="availableLayout.name"></nz-option>
+    <nz-select (ngModelChange)="select($event)" [compareWith]="layoutComparator" [ngModel]="layout" fxFlex="1 1 auto">
+      <nz-option *ngFor="let availableLayout of allLayouts" [nzLabel]="availableLayout.name"
+                 [nzValue]="availableLayout"></nz-option>
     </nz-select>
     <div class="buttons" fxLayout="row" fxLayoutGap="5px">
-      <button nz-button nzType="primary" (click)="addLayout()">
-        <i nz-icon type="plus"></i>
+      <button (click)="addLayout()" nz-button nzType="primary">
+        <i nz-icon nzType="plus"></i>
       </button>
-      <button nz-button nzType="primary" (click)="save(layout)"
-              [disabled]="layout.$key === undefined || !dirty">
+      <button (click)="save(layout)" [disabled]="layout.$key === undefined || !dirty" nz-button
+              nzType="primary">
         <i class="material-icons">save</i>
       </button>
-      <button nz-button nzType="danger" [disabled]="layout.$key === undefined" nz-popconfirm
-              [nzTitle]="'Confirm' | translate" (nzOnConfirm)="deleteLayout(layout.$key)">
-        <i nz-icon type="delete"></i>
+      <button (nzOnConfirm)="deleteLayout(layout.$key)" [disabled]="layout.$key === undefined" [nzTitle]="'Confirm' | translate" nz-button
+              nz-popconfirm nzType="danger">
+        <i nz-icon nzType="delete"></i>
       </button>
       <div class="spacer"></div>
-      <button nz-button ngxClipboard [cbContent]="layout.base64" (cbOnSuccess)="layoutCopied()" nz-tooltip
-              [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string' | translate">
-        <i nz-icon type="upload"></i>
+      <button (cbOnSuccess)="layoutCopied()" [cbContent]="layout.base64" [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string' | translate" ngxClipboard nz-button
+              nz-tooltip>
+        <i nz-icon nzType="upload"></i>
       </button>
-      <button nz-button nz-tooltip
-              [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_layout' | translate"
-              (click)="importLayout()">
-        <i nz-icon type="download"></i>
+      <button (click)="importLayout()" [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_layout' | translate"
+              nz-button
+              nz-tooltip>
+        <i nz-icon nzType="download"></i>
       </button>
     </div>
   </div>
-  <nz-alert nzType="info" [nzMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Default_readonly_message' | translate"
-            *ngIf="layout.name === 'Default Layout'" nzShowIcon class="default-warning"></nz-alert>
+  <nz-alert *ngIf="layout.name === 'Default Layout'" [nzMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Default_readonly_message' | translate"
+            class="default-warning" nzShowIcon nzType="info"></nz-alert>
   <div fxLayout="column" fxLayoutGap="10px">
     <nz-input-group nzPrefixIcon="anticon anticon-edit">
-      <input type="text" nz-input [(ngModel)]="layout.name"
-             [disabled]="layout.name === 'Default Layout'" (ngModelChange)="dirty = true">
+      <input (ngModelChange)="dirty = true" [(ngModel)]="layout.name" [disabled]="layout.name === 'Default Layout'"
+             nz-input type="text">
     </nz-input-group>
-    <button nz-button nzBlock (click)="editRowButtons(layout)" [disabled]="layout.name === 'Default Layout'">
+    <button (click)="editRowButtons(layout)" [disabled]="layout.name === 'Default Layout'" nz-button nzBlock>
       {{'LIST_DETAILS.LAYOUT_DIALOG.Edit_row_buttons_display' | translate}}
     </button>
-    <button nz-button nzBlock (click)="openReorderPopup(layout)" [disabled]="layout.name === 'Default Layout'">
+    <button (click)="openReorderPopup(layout)" [disabled]="layout.name === 'Default Layout'" nz-button nzBlock>
       {{'LIST_DETAILS.LAYOUT_DIALOG.Reorder_panels' | translate}}
     </button>
     <nz-card [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Global_options' | translate">
       <div fxLayout="column" fxLayoutGap="10px">
-        <label nz-checkbox [nzDisabled]="layout.name === 'Default Layout'"
-               [(ngModel)]="layout.considerCrystalsAsItems" (ngModelChange)="dirty = true">
+        <label (ngModelChange)="dirty = true" [(ngModel)]="layout.considerCrystalsAsItems"
+               [nzDisabled]="layout.name === 'Default Layout'" nz-checkbox>
           {{"LIST.Enable_crystals_tracking" | translate}}
         </label>
       </div>
       <div fxLayout="column" fxLayoutGap="10px">
-        <label nz-checkbox [nzDisabled]="layout.name === 'Default Layout'"
-               [(ngModel)]="layout.showInventory" (ngModelChange)="dirty = true">
+        <label (ngModelChange)="dirty = true" [(ngModel)]="layout.showInventory"
+               [nzDisabled]="layout.name === 'Default Layout'" nz-checkbox>
           {{"LIST.Always_show_inventory" | translate}}
         </label>
       </div>
       <div fxLayout="column" fxLayoutGap="10px">
-        <label nz-checkbox [nzDisabled]="layout.name === 'Default Layout'"
-               [(ngModel)]="layout.showCraftableAmount" (ngModelChange)="dirty = true">
+        <label (ngModelChange)="dirty = true" [(ngModel)]="layout.showCraftableAmount"
+               [nzDisabled]="layout.name === 'Default Layout'" nz-checkbox>
           {{"LIST.Show_craftable_amount" | translate}}
         </label>
       </div>
@@ -66,42 +66,42 @@
       <div fxLayout="column" fxLayoutGap="10px">
         <div class="final-items-ordering">
           {{'LIST_DETAILS.LAYOUT.Order_by' | translate}}
-          <nz-select [(ngModel)]="layout.recipeOrderBy"
-                     [nzDisabled]="layout.name === 'Default Layout'"
-                     (ngModelChange)="dirty = true">
-            <nz-option nzValue="NAME" nzLabel="NAME"></nz-option>
-            <nz-option nzValue="NONE" nzLabel="NONE"></nz-option>
-            <nz-option nzValue="LEVEL" nzLabel="LEVEL"></nz-option>
-            <nz-option nzValue="JOB" nzLabel="JOB"></nz-option>
+          <nz-select (ngModelChange)="dirty = true"
+                     [(ngModel)]="layout.recipeOrderBy"
+                     [nzDisabled]="layout.name === 'Default Layout'">
+            <nz-option nzLabel="NAME" nzValue="NAME"></nz-option>
+            <nz-option nzLabel="NONE" nzValue="NONE"></nz-option>
+            <nz-option nzLabel="LEVEL" nzValue="LEVEL"></nz-option>
+            <nz-option nzLabel="JOB" nzValue="JOB"></nz-option>
           </nz-select>
-          <nz-select [(ngModel)]="layout.recipeOrder"
-                     [nzDisabled]="layout.name === 'Default Layout'"
-                     (ngModelChange)="dirty = true">
+          <nz-select (ngModelChange)="dirty = true"
+                     [(ngModel)]="layout.recipeOrder"
+                     [nzDisabled]="layout.name === 'Default Layout'">
             <nz-option [nzValue]="0" nzLabel="ASC"></nz-option>
             <nz-option [nzValue]="1" nzLabel="DESC"></nz-option>
           </nz-select>
         </div>
-        <nz-radio-group [ngModel]="getItemsLayoutType(layout)"
-                        [nzDisabled]="layout.name === 'Default Layout'"
-                        (ngModelChange)="setItemsLayoutType(layout, $event)">
-          <label nz-radio-button [nzValue]="'default'">{{"Default" | translate}}</label>
-          <label nz-radio-button [nzValue]="'zoneBreakdown'">{{"Zone_breakdown" | translate}}</label>
+        <nz-radio-group (ngModelChange)="setItemsLayoutType(layout, $event)"
+                        [ngModel]="getItemsLayoutType(layout)"
+                        [nzDisabled]="layout.name === 'Default Layout'">
+          <label [nzValue]="'default'" nz-radio-button>{{"Default" | translate}}</label>
+          <label [nzValue]="'zoneBreakdown'" nz-radio-button>{{"Zone_breakdown" | translate}}</label>
         </nz-radio-group>
-        <label nz-checkbox [(ngModel)]="layout.recipeHideCompleted" (ngModelChange)="dirty = true">{{"Hide_completed" |
+        <label (ngModelChange)="dirty = true" [(ngModel)]="layout.recipeHideCompleted" nz-checkbox>{{"Hide_completed" |
           translate}}</label>
-        <label nz-checkbox *ngIf="layout.recipeZoneBreakdown" [(ngModel)]="layout.recipeHideZoneDuplicates"
-               (ngModelChange)="dirty = true">{{"Hide_zone_duplicates" | translate}}</label>
+        <label (ngModelChange)="dirty = true" *ngIf="layout.recipeZoneBreakdown" [(ngModel)]="layout.recipeHideZoneDuplicates"
+               nz-checkbox>{{"Hide_zone_duplicates" | translate}}</label>
       </div>
     </nz-card>
-    <div ngxDroppable fxLayout="column" fxLayoutGap="10px" (drop)="moveRow($event.value, $event.dropIndex, layout)">
-      <button nz-button nzType="primary" nzBlock (click)="addPanel(layout)"
-              [disabled]="layout.name === 'Default Layout'">
-        <i nz-icon type="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
+    <div (drop)="moveRow($event.value, $event.dropIndex, layout)" fxLayout="column" fxLayoutGap="10px" ngxDroppable>
+      <button (click)="addPanel(layout)" [disabled]="layout.name === 'Default Layout'" nz-button nzBlock
+              nzType="primary">
+        <i nz-icon nzType="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
       </button>
-      <div *ngFor="let row of layout.rows; trackBy: trackByRow" ngxDraggable [model]="row">
-        <app-layout-editor-row [row]="row" (rowChange)="updatePanel(layout, $event)"
+      <div *ngFor="let row of layout.rows; trackBy: trackByRow" [model]="row" ngxDraggable>
+        <app-layout-editor-row (delete)="removePanel(layout, row)" (rowChange)="updatePanel(layout, $event)"
                                [readonly]="layout.name === 'Default Layout'"
-                               (delete)="removePanel(layout, row)"></app-layout-editor-row>
+                               [row]="row"></app-layout-editor-row>
       </div>
     </div>
   </div>

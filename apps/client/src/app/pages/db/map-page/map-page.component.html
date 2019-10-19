@@ -1,87 +1,88 @@
 <ng-container *ngIf="map$ | async as mapData; else loader">
-  <div fxLayout="column" fxLayoutGap="10px" [style.padding]="'0 50px' | ifMobile: '0'">
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px" fxLayoutAlign="flex-start flex-start"
-         fxFlex="1 1 auto" fxLayoutGap="5px" class="top-bar">
-      <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="10px" fxFlex="0 0 300px"
-           fxFlex.lt-md="1 1 auto" class="top-left-block">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="icon-block">
+  <div [style.padding]="'0 50px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
+    <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
+         fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
+      <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
+           fxLayoutAlign="space-between" fxLayoutGap="10px">
+        <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img [src]="'/c/PlaceName.png' | xivapiIcon" alt="{{mapData.PlaceName.ID | placeName |i18n}}"
                class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{mapData.PlaceName.ID | placeName |i18n}}</h2>
           </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="links" *ngIf="links$ | async as links">
-          <a [href]="link.url" target="_blank" *ngFor="let link of links" nz-tooltip [nzTitle]="link.title">
-            <img [src]="link.icon" [alt]="link.title" class="link-icon">
+        <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
+             fxLayoutGap="5px">
+          <a *ngFor="let link of links" [href]="link.url" [nzTitle]="link.title" nz-tooltip target="_blank">
+            <img [alt]="link.title" [src]="link.icon" class="link-icon">
           </a>
         </div>
       </div>
       <div fxFlex="1 1 auto">
       </div>
-      <div fxLayout="column" fxLayoutGap="5px" fxFlex.lt-md="1 1 auto" fxFlex="0 0 300px">
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="./assets/icons/english.png" class="language-flag" alt="EN">
+      <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="EN" class="language-flag" src="./assets/icons/english.png">
           <div>{{mapData.PlaceName.Name_en}}</div>
         </div>
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="./assets/icons/german.png" class="language-flag" alt="DE">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="DE" class="language-flag" src="./assets/icons/german.png">
           <div>{{mapData.PlaceName.Name_de}}</div>
         </div>
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="./assets/icons/french.png" class="language-flag" alt="FR">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="FR" class="language-flag" src="./assets/icons/french.png">
           <div>{{mapData.PlaceName.Name_fr}}</div>
         </div>
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img src="./assets/icons/japanese.png" class="language-flag" alt="JA">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
           <div>{{mapData.PlaceName.Name_ja}}</div>
         </div>
       </div>
     </div>
-    <app-db-comments type="map" [id]="mapData.ID" *ngIf="settings.dbCommentsPosition === 'TOP'"></app-db-comments>
+    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="mapData.ID" type="map"></app-db-comments>
 
     <nz-divider [nzText]="'DB.Content' | translate" nzOrientation="left"></nz-divider>
-    <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column">
-      <nz-card fxFlex="0 0 40%" class="details-card"
-               [nzTitle]="'DB.Map' | translate"
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
+      <nz-card [nzTitle]="'DB.Map' | translate" class="details-card"
+               fxFlex="0 0 40%"
                nzBordered="false">
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
           <nz-select
-            nzMode="multiple"
-            [ngModel]="enabledTypes$ | async"
             (ngModelChange)="enabledTypes$.next($event)"
+            [ngModel]="enabledTypes$ | async"
             [nzPlaceHolder]="'DB.Icons_shown' | translate"
-            nzAllowClear
-            nzShowSearch
             class="type-selector"
+            nzAllowClear
+            nzMode="multiple"
+            nzShowSearch
           >
             <ng-container *ngFor="let type of availableTypes">
-              <nz-option [nzValue]="type" [nzLabel]="('DB.DATA_TYPE.' + type) | translate"></nz-option>
+              <nz-option [nzLabel]="('DB.DATA_TYPE.' + type) | translate" [nzValue]="type"></nz-option>
             </ng-container>
           </nz-select>
-          <app-map [mapId]="mapData.ID" [markers]="markers$ | async" [hideDbButton]="true"></app-map>
+          <app-map [hideDbButton]="true" [mapId]="mapData.ID" [markers]="markers$ | async"></app-map>
         </div>
       </nz-card>
-      <nz-card fxFlex="1 1 auto" class="details-card"
-               [nzTitle]="'DB.Details' | translate"
-               nzBordered="false" *ngIf="relatedDisplay$ | async as relatedElements">
-        <app-fullpage-message height="300px" fontSize="2rem"
-                              *ngIf="relatedElements.length === 0">{{'DB.Select_data_type' | translate}}</app-fullpage-message>
+      <nz-card *ngIf="relatedDisplay$ | async as relatedElements" [nzTitle]="'DB.Details' | translate"
+               class="details-card"
+               fxFlex="1 1 auto" nzBordered="false">
+        <app-fullpage-message *ngIf="relatedElements.length === 0" fontSize="2rem"
+                              height="300px">{{'DB.Select_data_type' | translate}}</app-fullpage-message>
         <nz-list
+          *ngFor="let row of relatedElements"
           [nzDataSource]="row.elements"
-          [nzRenderItem]="elementTemplate"
           [nzHeader]="('DB.DATA_TYPE.' + row.type) | translate"
-          *ngFor="let row of relatedElements">
+          [nzRenderItem]="elementTemplate">
           <ng-template #elementTemplate let-element let-index="index">
             <nz-list-item (mouseenter)="highlight(element, true)" (mouseleave)="highlight(element, false)"
                           [nzContent]="more">
-              <nz-list-item-meta [nzTitle]="title"
-                                 [nzDescription]="description">
+              <nz-list-item-meta [nzDescription]="description"
+                                 [nzTitle]="title">
                 <ng-template #title>
                   <div *ngIf="element.type === 'node'; else baseTitle" fxLayout="row" fxLayoutGap="5px">
                     <div *ngFor="let item of element.additionalData; let last = last" fxLayout="row" fxLayoutGap="5px">
                       <div>{{item.id | itemName | i18n}} <span *ngIf="item.slot">({{item.slot}})</span></div>
-                      <app-db-button type="item" [id]="item.id"></app-db-button>
+                      <app-db-button [id]="item.id" type="item"></app-db-button>
                     </div>
                   </div>
                   <ng-template #baseTitle>{{element.name | i18n}}</ng-template>
@@ -92,7 +93,7 @@
                 </ng-template>
               </nz-list-item-meta>
               <ng-template #more>
-                <app-db-button [type]="element.type === 'hunt' ? 'mob':element.type" [id]="element.id"></app-db-button>
+                <app-db-button [id]="element.id" [type]="element.type === 'hunt' ? 'mob':element.type"></app-db-button>
               </ng-template>
             </nz-list-item>
           </ng-template>
@@ -100,7 +101,7 @@
       </nz-card>
     </div>
   </div>
-  <app-db-comments type="map" [id]="mapData.ID" *ngIf="settings.dbCommentsPosition === 'BOTTOM'"></app-db-comments>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="mapData.ID" type="map"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

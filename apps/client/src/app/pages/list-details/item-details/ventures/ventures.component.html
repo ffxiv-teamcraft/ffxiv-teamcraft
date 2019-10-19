@@ -1,4 +1,4 @@
-<nz-list [nzRenderItem]="ventureTemplate" [nzDataSource]="ventures">
+<nz-list [nzDataSource]="ventures" [nzRenderItem]="ventureTemplate">
   <ng-template #ventureTemplate let-venture>
     <nz-list-item [nzContent]="content">
       <nz-list-item-meta
@@ -7,13 +7,13 @@
       </nz-list-item-meta>
       <ng-template #content>
         <div fxLayout="column">
-          <div *ngFor="let threshold of venture.amountsDetails" fxLayout="row" fxLayoutGap="5px"
-               fxLayoutAlign="flex-end center">
+          <div *ngFor="let threshold of venture.amountsDetails" fxLayout="row" fxLayoutAlign="flex-end center"
+               fxLayoutGap="5px">
             <div>{{threshold.name | translate}} {{threshold.stat}}</div>
-            <i nz-icon type="right"></i>
+            <i nz-icon nzType="right"></i>
             <div>x{{threshold.quantity}}
-              <span nz-tooltip
-                    [nzTitle]="'Requires_x_ventures' | translate: {amount: (item.amount - item.done) / threshold.quantity | ceil}">
+              <span [nzTitle]="'Requires_x_ventures' | translate: {amount: (item.amount - item.done) / threshold.quantity | ceil}"
+                    nz-tooltip>
                 ({{((item.amount - item.done) / threshold.quantity) | ceil }})
               </span>
             </div>

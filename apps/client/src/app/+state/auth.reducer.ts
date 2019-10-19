@@ -124,6 +124,26 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       };
     }
 
+    case AuthActionTypes.SetCID: {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          cid: action.cid
+        }
+      };
+    }
+
+    case AuthActionTypes.SetWorld: {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          world: action.worldId
+        }
+      };
+    }
+
     case AuthActionTypes.SaveDefaultConsumables: {
       return {
         ...state,

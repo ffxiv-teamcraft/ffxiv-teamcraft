@@ -1,7 +1,7 @@
 <div *ngIf="folder$ | async as folder; else loading">
   <nz-card *ngIf="!folder.notFound; else notFound">
-    <nz-card-meta [nzAvatar]="avatarTemplate" [nzTitle]="folderName"
-                  [nzDescription]="description">
+    <nz-card-meta [nzAvatar]="avatarTemplate" [nzDescription]="description"
+                  [nzTitle]="folderName">
       <ng-template #description>
         {{'SIMULATOR.ROTATIONS.FOLDERS.Created_by' | translate: { name: folder.authorId | characterName | async } }}
       </ng-template>
@@ -12,7 +12,7 @@
     <ng-template #folderName>
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
         <div>{{folder.name}}</div>
-        <app-favorite-button type="rotationFolders" [key]="folder.$key"></app-favorite-button>
+        <app-favorite-button [key]="folder.$key" type="rotationFolders"></app-favorite-button>
       </div>
     </ng-template>
     <div *ngIf="rotations$ | async as rotations" class="rotations" fxLayout="column" fxLayoutGap="5px">

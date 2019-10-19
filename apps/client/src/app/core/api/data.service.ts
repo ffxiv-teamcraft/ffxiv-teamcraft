@@ -114,7 +114,7 @@ export class DataService {
    * @returns {Observable<MobData>}
    */
   public getFate(id: number): Observable<FateData> {
-    return this.getGarlandData(`/fate/en/${this.garlandtoolsVersions.mob}/${id}`)
+    return this.getGarlandData(`/fate/en/${this.garlandtoolsVersions.fate}/${id}`)
       .pipe(map(item => this.serializer.deserialize<FateData>(item, FateData)));
   }
 

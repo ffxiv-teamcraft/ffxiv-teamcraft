@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { en_US, NgZorroAntdModule, NZ_I18N, NZ_ICONS, NZ_MESSAGE_CONFIG } from 'ng-zorro-antd';
+import { en_US, NgZorroAntdModule, NZ_CONFIG, NZ_I18N, NZ_ICONS, NzConfig } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,16 +35,21 @@ import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { TranslationsLoaderFactory } from './translations-loader';
 import { IconDefinition } from '@ant-design/icons-angular';
 import {
+  AppstoreOutline,
   ArrowRightOutline,
   BellOutline,
   BookOutline,
   BuildOutline,
+  CodeOutline,
   DesktopOutline,
   EnvironmentOutline,
   ExperimentOutline,
   FileDoneOutline,
+  FileTextOutline,
   FilterOutline,
   FormOutline,
+  HomeOutline,
+  HourglassOutline,
   InfoOutline,
   LayoutOutline,
   LineChartOutline,
@@ -60,12 +65,7 @@ import {
   ShareAltOutline,
   ShoppingOutline,
   SolutionOutline,
-  UsergroupAddOutline,
-  CodeOutline,
-  FileTextOutline,
-  AppstoreOutline,
-  HourglassOutline,
-  HomeOutline
+  UsergroupAddOutline
 } from '@ant-design/icons-angular/icons';
 import { UniversalInterceptor } from './universal-interceptor';
 import { DirtyModule } from './core/dirty/dirty.module';
@@ -140,6 +140,16 @@ registerLocaleData(hr);
 registerLocaleData(ru);
 registerLocaleData(ko);
 
+const nzConfig: NzConfig = {
+  message: {
+    nzDuration: 10000,
+    nzMaxStack: 8,
+    nzPauseOnHover: true,
+    nzAnimate: true,
+    nzTop: '92px'
+  }
+};
+
 @NgModule({
   declarations: [
     AppComponent
@@ -147,16 +157,8 @@ registerLocaleData(ko);
   providers: [
     { provide: NZ_I18N, useValue: en_US },
     {
-      provide: NZ_MESSAGE_CONFIG,
-      useValue: {
-        nzDuration: 10000,
-        nzMaxStack: 8,
-        nzPauseOnHover: true,
-        nzAnimate: true,
-        nzTop: '92px',
-        nzBottom: '24px',
-        nzPlacement: 'topRight'
-      }
+      provide: NZ_CONFIG,
+      useValue: nzConfig
     },
     { provide: FirestoreSettingsToken, useValue: {} },
     { provide: NZ_ICONS, useValue: icons },

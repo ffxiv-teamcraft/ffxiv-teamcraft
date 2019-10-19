@@ -47,7 +47,6 @@ export class ListContributionsComponent {
   }
 
   public sort(event: { key: string, value: string }): void {
-    console.log(event);
     this.sort$.next(event);
   }
 

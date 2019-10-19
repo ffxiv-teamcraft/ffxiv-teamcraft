@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { ListService } from '../../modules/list/list.service';
 import { UserService } from './user.service';
 import { ListStore } from './storage/list/list-store';
 import { FirestoreListStorage } from './storage/list/firestore-list-storage';
@@ -17,7 +16,6 @@ import { CustomLinksService } from './custom-links/custom-links.service';
     AngularFirestoreModule
   ],
   providers: [
-    ListService,
     WorkshopService,
     UserService,
     TeamInviteService,

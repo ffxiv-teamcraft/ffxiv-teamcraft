@@ -1,68 +1,68 @@
 <div class="tooltip-container">
-  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
     <div class="icon">
-      <img src="https://xivapi.com{{fish.Icon}}" alt="{{fish | xivapiI18n}}">
+      <img alt="{{fish | xivapiI18n}}" src="https://xivapi.com{{fish.Icon}}">
     </div>
     <div class="name" fxLayout="column">
       <span>{{fish | xivapiI18n}}</span>
       <span class="item-kind">{{fish.ItemKind | xivapiI18n}}</span>
     </div>
   </div>
-  <div class="description" *ngIf="fish.Description !== undefined && fish.Description.length > 0">
+  <div *ngIf="fish.Description !== undefined && fish.Description.length > 0" class="description">
     <span [innerHtml]="fish | xivapiI18n: 'Description' | xivUIText"></span>
   </div>
   <div *ngIf="getFshData(fish) as nodes" class="details">
     <div *ngFor="let node of nodes; let last = last">
       {{node.zoneid | placeName | i18n}}<br>
       X: {{node.x}}, Y: {{node.y}}<br>
-      {{getNodeSpawns(node)}} <i nz-icon type="clock-circle" *ngIf="node.ephemeral" nz-tooltip
-                                 [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate"></i>
-      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+      {{getNodeSpawns(node)}} <i *ngIf="node.ephemeral" [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
+                                 nzType="clock-circle"></i>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
         <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
           <div *ngFor="let weather of node.weathersFrom">
-            <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
-                 [nzTitle]="weather | weatherName | i18n">
+            <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                 nz-tooltip>
           </div>
         </div>
         <div *ngIf="node.weathersFrom !== undefined">
-          <i nz-icon type="right" theme="outline"></i>
+          <i nz-icon nzType="right" theme="outline"></i>
         </div>
         <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
           <div *ngFor="let weather of node.weathers">
-            <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
-                 [nzTitle]="weather | weatherName | i18n">
+            <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                 nz-tooltip>
           </div>
         </div>
       </div>
       <div fxLayout="column" fxLayoutGap="5px">
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-          <img *ngIf="node.folklore !== undefined" src="{{node.folklore.icon | icon}}" nz-tooltip
-               [nzTitle]="node.folklore.id | itemName | i18n" alt="" class="folklore">
-          <img *ngIf="node.fishEyes" src="./assets/icons/status/fish_eyes.png" alt="" nz-tooltip
-               [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
-          <img *ngIf="node.snagging" src="./assets/icons/status/snagging.png" alt="" nz-tooltip
-               [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img *ngIf="node.folklore !== undefined" [nzTitle]="node.folklore.id | itemName | i18n" alt=""
+               class="folklore" nz-tooltip src="{{node.folklore.icon | icon}}">
+          <img *ngIf="node.fishEyes" [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
+               src="./assets/icons/status/fish_eyes.png">
+          <img *ngIf="node.snagging" [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+               src="./assets/icons/status/snagging.png">
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-start">
-          <div *ngFor="let bait of node.baits; let index = index; let last = last" fxLayout="row" fxLayoutGap="5px"
-               fxLayoutAlign="center center">
+          <div *ngFor="let bait of node.baits; let index = index; let last = last" fxLayout="row" fxLayoutAlign="center center"
+               fxLayoutGap="5px">
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div class="icon-container">
                 <img [src]="bait.icon | icon" class="item-icon small-icon">
-                <img *ngIf="index > 0" src="https://www.garlandtools.org/db/images/HQOverlay.png"
-                     class="hq-overlay small-icon">
+                <img *ngIf="index > 0" class="hq-overlay small-icon"
+                     src="https://www.garlandtools.org/db/images/HQOverlay.png">
               </div>
               <div>{{bait.id | itemName | i18n}}</div>
             </div>
-            <i nz-icon type="caret-right" theme="outline" *ngIf="!last"></i>
+            <i *ngIf="!last" nz-icon nzType="caret-right" theme="outline"></i>
           </div>
         </div>
-        <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
-             fxLayoutAlign="flex-start center">
-          <img src="./assets/icons/status/predators.png" alt="" nz-tooltip
-               [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate">
-          <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutGap="5px"
-               fxLayoutAlign="flex-start center">
+        <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
+             fxLayoutGap="10px">
+          <img [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+               src="./assets/icons/status/predators.png">
+          <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
+               fxLayoutGap="5px">
             <div>{{predator.amount}}x</div>
             <img class="small-icon" src="{{predator.icon | icon}}"/>
             <div>{{predator.id | itemName | i18n}}</div>

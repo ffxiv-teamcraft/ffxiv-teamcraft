@@ -1,24 +1,24 @@
-<nz-alert nzType="info" nzShowIcon [nzMessage]="'PERMISSIONS.Team_notice' | translate"
-          *ngIf="data['teamId'] !== undefined"></nz-alert>
+<nz-alert *ngIf="data['teamId'] !== undefined" [nzMessage]="'PERMISSIONS.Team_notice' | translate" nzShowIcon
+          nzType="info"></nz-alert>
 <div *ngIf="permissionRows$ | async as permissionRows; else loader">
-  <nz-list [nzRenderItem]="permissionRowTemplate" [nzDataSource]="permissionRows" nzSize="small">
+  <nz-list [nzDataSource]="permissionRows" [nzRenderItem]="permissionRowTemplate" nzSize="small">
     <ng-template #permissionRowTemplate let-row>
       <nz-list-item [nzContent]="content">
-        <nz-list-item-meta [nzTitle]="row.name" [nzAvatar]="avatar | ifMobile: null" [nzDescription]="row.id">
+        <nz-list-item-meta [nzAvatar]="avatar | ifMobile: null" [nzDescription]="row.id" [nzTitle]="row.name">
           <ng-template #avatar>
             <div class="avatar-container">
-              <img src="{{layer}}" alt="" *ngFor="let layer of row.avatar" class="avatar-layer">
+              <img *ngFor="let layer of row.avatar" alt="" class="avatar-layer" src="{{layer}}">
             </div>
           </ng-template>
         </nz-list-item-meta>
         <ng-template #content>
-          <nz-select [ngModel]="row.permission" (ngModelChange)="updatePermission(row.id, $event)"
+          <nz-select (ngModelChange)="updatePermission(row.id, $event)" [ngModel]="row.permission"
                      class="permission-select">
-            <nz-option *ngFor="let level of permissionLevels" [nzValue]="level.value"
-                       [nzLabel]="level.label"></nz-option>
+            <nz-option *ngFor="let level of permissionLevels" [nzLabel]="level.label"
+                       [nzValue]="level.value"></nz-option>
           </nz-select>
-          <button nz-button nzType="danger" (click)="data.removePermissionRow(row.id); changes$.next(data);">
-            <i nz-icon type="close"></i>
+          <button (click)="data.removePermissionRow(row.id); changes$.next(data);" nz-button nzType="danger">
+            <i nz-icon nzType="close"></i>
           </button>
         </ng-template>
       </nz-list-item>
@@ -28,21 +28,21 @@
     <nz-list-item-meta [nzTitle]="'PERMISSIONS.Everyone' | translate">
     </nz-list-item-meta>
     <ng-template #everyoneContent>
-      <nz-select [ngModel]="data.everyone" (ngModelChange)="updateEveryonePermission($event)" class="permission-select">
-        <nz-option *ngFor="let level of everyonePermissionLevels" [nzValue]="level.value"
-                   [nzLabel]="level.label"></nz-option>
+      <nz-select (ngModelChange)="updateEveryonePermission($event)" [ngModel]="data.everyone" class="permission-select">
+        <nz-option *ngFor="let level of everyonePermissionLevels" [nzLabel]="level.label"
+                   [nzValue]="level.value"></nz-option>
       </nz-select>
     </ng-template>
   </nz-list-item>
   <div fxLayout="column" fxLayoutGap="15px">
     <div fxLayout="column" fxLayoutGap="10px">
-      <button nz-button nzGhost nzType="primary" (click)="addUser()">
-        <i nz-icon type="plus"></i>{{'PERMISSIONS.Add_new' | translate}}
+      <button (click)="addUser()" nz-button nzGhost nzType="primary">
+        <i nz-icon nzType="plus"></i>{{'PERMISSIONS.Add_new' | translate}}
       </button>
-      <button nz-button nzGhost nzType="primary" (click)="addFc()" *ngIf="canAddFc$ | async">
-        <i nz-icon type="plus"></i>{{'PERMISSIONS.Add_new_fc' | translate}}
+      <button (click)="addFc()" *ngIf="canAddFc$ | async" nz-button nzGhost nzType="primary">
+        <i nz-icon nzType="plus"></i>{{'PERMISSIONS.Add_new_fc' | translate}}
       </button>
-      <button nz-button nzGhost (click)="propagateChanges$.next(data)" *ngIf="enablePropagation">
+      <button (click)="propagateChanges$.next(data)" *ngIf="enablePropagation" nz-button nzGhost>
         {{'PERMISSIONS.Propagate_changes' | translate}}
       </button>
     </div>

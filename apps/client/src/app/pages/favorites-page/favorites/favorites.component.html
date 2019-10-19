@@ -1,15 +1,15 @@
 <h2>{{'Favorites' | translate}}</h2>
-<nz-list [nzHeader]="'WORKSHOP.Workshops' | translate" [nzRenderItem]="workshopRow" [nzDataSource]="workshops"
-         *ngIf="workshops$ | async as workshops">
+<nz-list *ngIf="workshops$ | async as workshops" [nzDataSource]="workshops" [nzHeader]="'WORKSHOP.Workshops' | translate"
+         [nzRenderItem]="workshopRow">
   <ng-template #workshopRow let-workshopDisplay>
     <div class="favorite-row">
-      <app-workshop-panel [workshop]="workshopDisplay.workshop" [lists]="workshopDisplay.lists"></app-workshop-panel>
+      <app-workshop-panel [lists]="workshopDisplay.lists" [workshop]="workshopDisplay.workshop"></app-workshop-panel>
     </div>
   </ng-template>
 </nz-list>
 
-<nz-list [nzHeader]="'Lists' | translate" [nzRenderItem]="listRow" [nzDataSource]="lists"
-         *ngIf="lists$ | async as lists">
+<nz-list *ngIf="lists$ | async as lists" [nzDataSource]="lists" [nzHeader]="'Lists' | translate"
+         [nzRenderItem]="listRow">
   <ng-template #listRow let-list>
     <div class="favorite-row">
       <app-list-panel [list]="list"></app-list-panel>
@@ -17,8 +17,8 @@
   </ng-template>
 </nz-list>
 
-<nz-list [nzHeader]="'SIMULATOR.Rotations' | translate" [nzRenderItem]="rotationRow" [nzDataSource]="rotations"
-         *ngIf="rotations$ | async as rotations">
+<nz-list *ngIf="rotations$ | async as rotations" [nzDataSource]="rotations" [nzHeader]="'SIMULATOR.Rotations' | translate"
+         [nzRenderItem]="rotationRow">
   <ng-template #rotationRow let-rotation>
     <div class="favorite-row">
       <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
@@ -26,9 +26,9 @@
   </ng-template>
 </nz-list>
 
-<nz-list [nzHeader]="'SIMULATOR.ROTATIONS.FOLDERS.Folders' | translate" [nzRenderItem]="folderRow"
-         [nzDataSource]="rotationFolders"
-         *ngIf="rotationFolders$ | async as rotationFolders">
+<nz-list *ngIf="rotationFolders$ | async as rotationFolders" [nzDataSource]="rotationFolders"
+         [nzHeader]="'SIMULATOR.ROTATIONS.FOLDERS.Folders' | translate"
+         [nzRenderItem]="folderRow">
   <ng-template #folderRow let-folder>
     <div class="favorite-row">
       <app-rotation-folder-panel [folder]="folder.folder" [rotations]="folder.rotations"></app-rotation-folder-panel>

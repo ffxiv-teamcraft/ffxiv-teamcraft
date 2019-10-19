@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ObservableMedia } from '@angular/flex-layout';
+import { MediaObserver } from '@angular/flex-layout';
 
 @Pipe({
   name: 'ifMobile',
@@ -7,7 +7,7 @@ import { ObservableMedia } from '@angular/flex-layout';
 })
 export class IfMobilePipe implements PipeTransform {
 
-  constructor(private media: ObservableMedia) {
+  constructor(private media: MediaObserver) {
   }
 
   transform(nonMobileValue: any, mobileValue: any): any {

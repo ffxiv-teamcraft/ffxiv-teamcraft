@@ -1,72 +1,73 @@
-<button *ngIf="!workshopView" nz-button [nzType]="'primary'" class="new-list-button" (click)="pickNewList()" nzBlock>
-  <i nz-icon type="plus"></i>&nbsp;{{'New_List' | translate}}
+<button (click)="pickNewList()" *ngIf="!workshopView" [nzType]="'primary'" class="new-list-button" nz-button nzBlock>
+  <i nz-icon nzType="plus"></i>&nbsp;{{'New_List' | translate}}
 </button>
 <nz-divider *ngIf="!workshopView" [nzText]="'Or' | translate"></nz-divider>
 <nz-input-group [nzSuffix]="suffixIconSearch">
-  <input type="text" [ngModel]="query$ | async" (ngModelChange)="query$.next($event)" nz-input
-         [placeholder]="'LISTS.Lists_search_placeholder' | translate">
+  <input (ngModelChange)="query$.next($event)" [ngModel]="query$ | async" [placeholder]="'LISTS.Lists_search_placeholder' | translate" nz-input
+         type="text">
 </nz-input-group>
 <ng-template #suffixIconSearch>
-  <i nz-icon type="search"></i>
+  <i nz-icon nzType="search"></i>
 </ng-template>
 <div *ngIf="lists$ | async as lists">
-  <nz-list [nzDataSource]="lists.otherLists" [nzRenderItem]="list" [nzHeader]="yourListsHeader">
+  <nz-list [nzDataSource]="lists.otherLists" [nzHeader]="yourListsHeader" [nzRenderItem]="list">
     <ng-template #list let-list>
       <nz-list-item [nzActions]="[pickOwnList]">
         <nz-list-item-meta [nzTitle]="list.name">
         </nz-list-item-meta>
       </nz-list-item>
       <ng-template #pickOwnList>
-        <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
-          nz-icon type="check"></i></button>
+        <button (click)="pickList(list)" [nzShape]="'circle'" [nzType]="'primary'" nz-button><i
+          nz-icon nzType="check"></i></button>
       </ng-template>
     </ng-template>
-    <ng-template #yourListsHeader><i nz-icon type="solution"></i>&nbsp;{{'LISTS.Your_lists' | translate}}</ng-template>
+    <ng-template #yourListsHeader><i nz-icon nzType="solution"></i>&nbsp;{{'LISTS.Your_lists' | translate}}
+    </ng-template>
   </nz-list>
-  <nz-list [nzDataSource]="lists.communityLists" [nzRenderItem]="list" [nzHeader]="communityListsHeader">
+  <nz-list [nzDataSource]="lists.communityLists" [nzHeader]="communityListsHeader" [nzRenderItem]="list">
     <ng-template #list let-list>
       <nz-list-item [nzActions]="[pickOwnList]">
         <nz-list-item-meta [nzTitle]="list.name">
         </nz-list-item-meta>
       </nz-list-item>
       <ng-template #pickOwnList>
-        <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
-          nz-icon type="check"></i></button>
+        <button (click)="pickList(list)" [nzShape]="'circle'" [nzType]="'primary'" nz-button><i
+          nz-icon nzType="check"></i></button>
       </ng-template>
     </ng-template>
-    <ng-template #communityListsHeader><i nz-icon type="solution"></i>&nbsp;{{'Your_public_lists' | translate}}
+    <ng-template #communityListsHeader><i nz-icon nzType="solution"></i>&nbsp;{{'Your_public_lists' | translate}}
     </ng-template>
   </nz-list>
 </div>
 <div *ngIf="!workshopView">
   <nz-list *ngFor="let workshopDisplay of workshops$ | async; trackBy: trackByWorkshopDisplay"
-           [nzDataSource]="workshopDisplay.lists" [nzRenderItem]="workshopList" [nzHeader]="workshopHeader">
+           [nzDataSource]="workshopDisplay.lists" [nzHeader]="workshopHeader" [nzRenderItem]="workshopList">
     <ng-template #workshopList let-list>
       <nz-list-item [nzActions]="[pickOwnList]">
-        <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">
+        <nz-list-item-meta [nzDescription]="list.description" [nzTitle]="list.name">
         </nz-list-item-meta>
       </nz-list-item>
       <ng-template #pickOwnList>
-        <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
-          nz-icon type="check"></i></button>
+        <button (click)="pickList(list)" [nzShape]="'circle'" [nzType]="'primary'" nz-button><i
+          nz-icon nzType="check"></i></button>
       </ng-template>
     </ng-template>
-    <ng-template #workshopHeader><i nz-icon type="folder-open"></i>&nbsp;{{workshopDisplay.workshop.name}}
+    <ng-template #workshopHeader><i nz-icon nzType="folder-open"></i>&nbsp;{{workshopDisplay.workshop.name}}
     </ng-template>
   </nz-list>
 </div>
-<nz-list *ngIf="!workshopView" [nzDataSource]="listsWithWriteAccess$ | async" [nzRenderItem]="sharedList"
-         [nzHeader]="headerSharedLists">
+<nz-list *ngIf="!workshopView" [nzDataSource]="listsWithWriteAccess$ | async" [nzHeader]="headerSharedLists"
+         [nzRenderItem]="sharedList">
   <ng-template #sharedList let-list>
     <nz-list-item [nzActions]="[pickSharedList]">
-      <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">
+      <nz-list-item-meta [nzDescription]="list.description" [nzTitle]="list.name">
       </nz-list-item-meta>
     </nz-list-item>
     <ng-template #pickSharedList>
-      <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
-        nz-icon type="check"></i></button>
+      <button (click)="pickList(list)" [nzShape]="'circle'" [nzType]="'primary'" nz-button><i
+        nz-icon nzType="check"></i></button>
     </ng-template>
   </ng-template>
-  <ng-template #headerSharedLists><i nz-icon type="edit"></i>&nbsp;{{'LISTS.Shared_lists' | translate}}
+  <ng-template #headerSharedLists><i nz-icon nzType="edit"></i>&nbsp;{{'LISTS.Shared_lists' | translate}}
   </ng-template>
 </nz-list>

@@ -1,37 +1,39 @@
 <ng-container *ngIf="user$ | async as user">
-<nz-badge [nzCount]="(user.moderator || user.admin)?iconTemplate:null">
-  <a routerLink="/profile/{{userId}}" (click)="$event.stopPropagation()">
-    <ng-container *ngIf="character$ | async as character; else anonymous">
-      <img [src]="character.Avatar" alt="" nz-tooltip
-           *ngIf="character.ID > 0; else krAvatar"
-           [nzTitle]="tooltip"
-           [class.gray]="(status$ | async)?.verified === false && !ignoreVerification"
-           [style.width.px]="width" class="avatar">
-      <ng-template #krAvatar>
-        <nz-avatar [nzText]="character.Name[0]"
-                   nz-tooltip [nzTitle]="tooltip"
-                   [style.height.px]="width"
-                   [style.width.px]="width"></nz-avatar>
+  <nz-badge [nzCount]="(user.moderator || user.admin)?iconTemplate:null">
+    <a (click)="$event.stopPropagation()" routerLink="/profile/{{userId}}">
+      <ng-container *ngIf="character$ | async as character; else anonymous">
+        <img *ngIf="character.ID > 0; else krAvatar" [class.gray]="(status$ | async)?.verified === false && !ignoreVerification" [nzTitle]="tooltip"
+             [src]="character.Avatar"
+             [style.width.px]="width"
+             alt=""
+             class="avatar" nz-tooltip>
+        <ng-template #krAvatar>
+          <nz-avatar [nzText]="character.Name[0]"
+                     [nzTitle]="tooltip" [style.height.px]="width"
+                     [style.width.px]="width"
+                     nz-tooltip></nz-avatar>
+        </ng-template>
+        <ng-template #tooltip>
+          {{messageKey ? (messageKey | translate:{ name: character.Name }) : character.Name }}
+          <span *ngIf="(status$ | async)?.verified === false">({{'Not_verified' | translate}})</span>
+        </ng-template>
+      </ng-container>
+      <ng-template #anonymous>
+        <i [nzTitle]="messageKey ? (messageKey | translate:{name: 'Anonymous' | translate}) : 'Anonymous' | translate" [style.width.px]="width" nz-icon
+           nz-tooltip
+           nzType="user">
+        </i>
       </ng-template>
-      <ng-template #tooltip>
-        {{messageKey ? (messageKey | translate:{ name: character.Name }) : character.Name }}
-        <span *ngIf="(status$ | async)?.verified === false">({{'Not_verified' | translate}})</span>
-      </ng-template>
+    </a>
+  </nz-badge>
+  <ng-template #iconTemplate>
+    <ng-container *ngIf="user.admin">
+      <i [nzTitle]="'COMMON.Admin' | translate" class="ant-scroll-number-custom-component" nz-icon nz-tooltip
+         nzType="crown"></i>
     </ng-container>
-    <ng-template #anonymous>
-      <i nz-icon type="user" nz-tooltip
-         [style.width.px]="width"
-         [nzTitle]="messageKey ? (messageKey | translate:{name: 'Anonymous' | translate}) : 'Anonymous' | translate">
-      </i>
-    </ng-template>
-  </a>
-</nz-badge>
-<ng-template #iconTemplate>
-  <ng-container *ngIf="user.admin">
-    <i nz-icon type="crown" class="ant-scroll-number-custom-component" nz-tooltip [nzTitle]="'COMMON.Admin' | translate"></i>
-  </ng-container>
-  <ng-container *ngIf="user.moderator">
-    <i nz-icon type="safety" class="ant-scroll-number-custom-component" nz-tooltip [nzTitle]="'COMMON.Moderator' | translate"></i>
-  </ng-container>
-</ng-template>
+    <ng-container *ngIf="user.moderator">
+      <i [nzTitle]="'COMMON.Moderator' | translate" class="ant-scroll-number-custom-component" nz-icon nz-tooltip
+         nzType="safety"></i>
+    </ng-container>
+  </ng-template>
 </ng-container>

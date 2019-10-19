@@ -177,6 +177,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   private hqIngredients$: BehaviorSubject<{ id: number, amount: number }[]> =
     new BehaviorSubject<{ id: number, amount: number }[]>([]);
 
+  private forcedStartingQuality$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
   @Input()
   public set hqIngredients(ingredients: { id: number, amount: number, quality: number }[]) {
     this.hqIngredients$.next(ingredients);
@@ -849,9 +851,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.stepStates$]).pipe(
-      map(([recipe, actions, stats, hqIngredients, stepStates]) => {
-        return new Simulation(recipe, actions, stats, hqIngredients, stepStates);
+    this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.stepStates$, this.forcedStartingQuality$]).pipe(
+      map(([recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality]) => {
+        return new Simulation(recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality);
       }),
       shareReplay(1)
     );

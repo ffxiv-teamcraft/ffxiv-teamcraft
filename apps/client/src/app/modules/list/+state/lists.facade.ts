@@ -9,13 +9,14 @@ import {
   DeleteList,
   LoadListCompact,
   LoadListDetails,
-  LoadSharedLists,
   LoadMyLists,
+  LoadSharedLists,
   LoadTeamLists,
   NeedsVerification,
   OfflineListsLoaded,
   SelectList,
   SetItemDone,
+  ToggleAutocompletion,
   UnloadListDetails,
   UpdateItem,
   UpdateList,
@@ -33,6 +34,8 @@ import { ListRow } from '../model/list-row';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
 import { SettingsService } from '../../settings/settings.service';
+import { UserInventoryService } from '../../../core/database/user-inventory.service';
+import { environment } from '../../../../environments/environment';
 
 declare const gtag: Function;
 
@@ -111,8 +114,7 @@ export class ListsFacade {
   );
 
   selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(
-    filter(list => list !== undefined),
-    shareReplay(1)
+    filter(list => list !== undefined)
   );
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
@@ -145,8 +147,10 @@ export class ListsFacade {
 
   needsVerification$ = this.store.select(listsQuery.getNeedsVerification);
 
+  autocompleteEnabled$ = this.store.select(listsQuery.getAutocompleteEnabled);
+
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade, private settings: SettingsService) {
+              private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: UserInventoryService) {
   }
 
   getTeamLists(team: Team): Observable<List[]> {
@@ -177,7 +181,7 @@ export class ListsFacade {
         showOfflineCheckbox: true
       }
     }).afterClose.pipe(
-      filter(res => res.name !== undefined),
+      filter(res => res && res.name !== undefined),
       map(res => {
         const list = new List();
         list.everyone = this.settings.defaultPermissionLevel;
@@ -197,8 +201,8 @@ export class ListsFacade {
     return list;
   }
 
-  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false): void {
-    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external));
+  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false): void {
+    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external, fromPacket));
   }
 
   updateItem(item: ListRow, finalItem: boolean): void {
@@ -251,6 +255,37 @@ export class ListsFacade {
 
   unload(key: string): void {
     this.store.dispatch(new UnloadListDetails(key));
+    this.store.dispatch(new SelectList(undefined));
+  }
+
+  toggleAutocomplete(newValue: boolean): void {
+    this.store.dispatch(new ToggleAutocompletion(newValue));
+    if (newValue) {
+      this.userInventoryService.getUserInventory().pipe(
+        first(),
+        filter((inventory) => {
+          return (inventory.lastZone || 0) < environment.startTimestamp;
+        }),
+        map(() => {
+          return this.dialog.create({
+            nzTitle: this.translate.instant('PACKET_CAPTURE.Inventory_outdated'),
+            nzContent: this.translate.instant('PACKET_CAPTURE.Please_update_inventory_popup'),
+            nzClosable: true,
+            nzFooter: null,
+            nzMaskClosable: false
+          });
+        }),
+        switchMap((modal) => {
+          return this.userInventoryService.getUserInventory().pipe(
+            filter(inventory => (inventory.lastZone || 0) > environment.startTimestamp),
+            first(),
+            map(() => modal)
+          );
+        })
+      ).subscribe(modal => {
+        modal.close();
+      });
+    }
   }
 
   setNeedsverification(needed: boolean): void {

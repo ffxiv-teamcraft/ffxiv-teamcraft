@@ -1,13 +1,10 @@
 {
   "extends": "./tsconfig.app.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/apps/client-server",
+    "outDir": "../../dist/out-tsc",
     "baseUrl": "."
   },
-  "exclude": [
-    "**/*.spec.ts",
-    "**/client-e2e/*"
-  ],
+  "exclude": ["**/*.spec.ts", "**/client-e2e/*"],
   "angularCompilerOptions": {
     "entryModule": "src/app/app.server.module#AppServerModule",
     "outputHashing": false

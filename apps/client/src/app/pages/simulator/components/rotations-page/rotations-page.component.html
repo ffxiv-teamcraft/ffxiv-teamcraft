@@ -1,32 +1,32 @@
 <h2>{{'SIMULATOR.Rotations' | translate}}</h2>
 <div class="toolbar" fxLayout="row" fxLayoutGap="5px">
-  <button nz-button nzType="primary" nzShape="circle" class="new-rotation" nz-tooltip
-          [nzTitle]="'SIMULATOR.New_rotation' | translate" (click)="newRotation()">
-    <i nz-icon type="file-add"></i>
+  <button (click)="newRotation()" [nzTitle]="'SIMULATOR.New_rotation' | translate" class="new-rotation" nz-button nz-tooltip
+          nzShape="circle" nzType="primary">
+    <i nz-icon nzType="file-add"></i>
   </button>
-  <button nz-button nzType="primary" nzShape="circle" class="new-rotation" nz-tooltip
-          [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.New_folder' | translate" (click)="newFolder()">
-    <i nz-icon type="folder-add"></i>
+  <button (click)="newFolder()" [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.New_folder' | translate" class="new-rotation" nz-button nz-tooltip
+          nzShape="circle" nzType="primary">
+    <i nz-icon nzType="folder-add"></i>
   </button>
 </div>
 <ng-container></ng-container>
 <div *ngIf="rotations$ | async as rotations; else loader" class="rotations-container">
-  <div *ngIf="rotations.length > 0; else noRotations" fxLayout="column" fxLayoutGap="5px"
-       class="ngx-dnd-container" ngxDroppable="rotation"
-       (drop)="setRotationIndex($event.value, $event.dropIndex, rotations)">
-    <div *ngFor="let rotation of rotations; trackBy: trackByKey" ngxDraggable="rotation" [model]="rotation"
-         class="ngx-dnd-item">
+  <div (drop)="setRotationIndex($event.value, $event.dropIndex, rotations)" *ngIf="rotations.length > 0; else noRotations" class="ngx-dnd-container"
+       fxLayout="column" fxLayoutGap="5px"
+       ngxDroppable="rotation">
+    <div *ngFor="let rotation of rotations; trackBy: trackByKey" [model]="rotation" class="ngx-dnd-item"
+         ngxDraggable="rotation">
       <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
     </div>
   </div>
   <ng-container *ngIf="rotationFoldersDisplay$ | async as folders">
-    <div class="folders" fxLayout="column" fxLayoutGap="10px" *ngIf="folders.length > 0">
+    <div *ngIf="folders.length > 0" class="folders" fxLayout="column" fxLayoutGap="10px">
       <h2>{{'SIMULATOR.ROTATIONS.FOLDERS.Folders' | translate}}</h2>
-      <div fxLayout="column" fxLayoutGap="5px"
-           class="ngx-dnd-container" ngxDroppable="folder"
-           (drop)="setRotationFolderIndex($event.value, $event.dropIndex, folders)">
-        <div *ngFor="let folderDisplay of folders; trackBy: trackByKey" ngxDraggable="folder"
-             [model]="folderDisplay" class="ngx-dnd-item">
+      <div (drop)="setRotationFolderIndex($event.value, $event.dropIndex, folders)" class="ngx-dnd-container"
+           fxLayout="column" fxLayoutGap="5px"
+           ngxDroppable="folder">
+        <div *ngFor="let folderDisplay of folders; trackBy: trackByKey" [model]="folderDisplay"
+             class="ngx-dnd-item" ngxDraggable="folder">
           <app-rotation-folder-panel [folder]="folderDisplay.folder"
                                      [rotations]="folderDisplay.rotations"></app-rotation-folder-panel>
         </div>
@@ -34,7 +34,8 @@
     </div>
   </ng-container>
 </div>
-<app-fullpage-message height="200px" *ngIf="(rotations$ | async)?.length === 0 && (rotationFoldersDisplay$ | async)?.length === 0">
+<app-fullpage-message *ngIf="(rotations$ | async)?.length === 0 && (rotationFoldersDisplay$ | async)?.length === 0"
+                      height="200px">
   {{'SIMULATOR.No_rotations' | translate}}
 </app-fullpage-message>
 <ng-template #loader>

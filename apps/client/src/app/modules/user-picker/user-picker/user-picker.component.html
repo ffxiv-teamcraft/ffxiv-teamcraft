@@ -1,7 +1,7 @@
 <div *ngIf="servers$ | async as availableServers; else loading">
   <nz-form-item>
-    <nz-form-label nzRequired nzFor="serverName">{{'Server_name' | translate}}</nz-form-label>
-    <input type="text" id="serverName" nz-input [formControl]="selectedServer" [nzAutocomplete]="auto">
+    <nz-form-label nzFor="serverName" nzRequired>{{'Server_name' | translate}}</nz-form-label>
+    <input [formControl]="selectedServer" [nzAutocomplete]="auto" id="serverName" nz-input type="text">
     <nz-autocomplete #auto>
       <nz-auto-option *ngFor="let server of autoCompleteRows$ | async" [nzValue]="server">
         {{server}}
@@ -10,13 +10,13 @@
   </nz-form-item>
 
   <nz-form-item>
-    <nz-form-label nzRequired nzFor="characterName">{{'Character_name' | translate}}
+    <nz-form-label nzFor="characterName" nzRequired>{{'Character_name' | translate}}
     </nz-form-label>
-    <input type="text" id="characterName" nz-input [formControl]="characterName">
+    <input [formControl]="characterName" id="characterName" nz-input type="text">
   </nz-form-item>
 </div>
 
-<div class="results" *ngIf="result$ | async as results">
+<div *ngIf="result$ | async as results" class="results">
   <app-page-loader [loading]="loadingResults">
     <nz-list *ngIf="results.length > 0; else noResults"
              [nzDataSource]="results"
@@ -25,12 +25,12 @@
       <ng-template #characterTemplate let-user>
         <nz-list-item [nzActions]="[selectAction]">
           <ng-template #selectAction>
-            <button nz-button nzType="primary" (click)="pickUser(user)">{{'COMMON.Select' | translate}}</button>
+            <button (click)="pickUser(user)" nz-button nzType="primary">{{'COMMON.Select' | translate}}</button>
           </ng-template>
           <nz-list-item-meta
-            [nzTitle]="user.characterName"
+            [nzAvatar]="avatar"
             [nzDescription]="user.userId"
-            [nzAvatar]="avatar">
+            [nzTitle]="user.characterName">
             <ng-template #avatar>
               <app-user-avatar [userId]="user.userId"></app-user-avatar>
             </ng-template>
@@ -49,17 +49,17 @@
   <nz-divider></nz-divider>
 
   <div *ngIf="contacts$ | async as contacts">
-    <nz-list [nzDataSource]="contacts" [nzRenderItem]="contactTemplate" [nzHeader]="'PROFILE.Contacts' | translate">
+    <nz-list [nzDataSource]="contacts" [nzHeader]="'PROFILE.Contacts' | translate" [nzRenderItem]="contactTemplate">
       <ng-template #contactTemplate let-contact>
         <nz-list-item [nzActions]="[selectAction]">
           <ng-template #selectAction>
-            <button nz-button nzType="primary"
-                    (click)="pickUser({userId: contact})">{{'COMMON.Select' | translate}}</button>
+            <button (click)="pickUser({userId: contact})" nz-button
+                    nzType="primary">{{'COMMON.Select' | translate}}</button>
           </ng-template>
           <nz-list-item-meta
-            [nzTitle]="contact | characterName | async"
+            [nzAvatar]="avatar"
             [nzDescription]="contact"
-            [nzAvatar]="avatar">
+            [nzTitle]="contact | characterName | async">
             <ng-template #avatar>
               <app-user-avatar [userId]="contact"></app-user-avatar>
             </ng-template>

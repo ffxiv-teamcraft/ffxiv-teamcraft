@@ -60,7 +60,7 @@ export class SearchComponent implements OnInit {
   public searchType$: BehaviorSubject<SearchType> =
     new BehaviorSubject<SearchType>(<SearchType>localStorage.getItem('search:type') || SearchType.ANY);
 
-  @ViewChild('notificationRef')
+  @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
 
   // Notification data
@@ -252,6 +252,7 @@ export class SearchComponent implements OnInit {
       this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
     this.results$ = combineLatest([this.query$, this.searchType$, this.filters$, this.sort$]).pipe(
+      debounceTime(1200),
       filter(([query, , filters]) => {
         if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
           // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
@@ -259,7 +260,6 @@ export class SearchComponent implements OnInit {
         }
         return query.length > 3 || filters.length > 0;
       }),
-      debounceTime(1200),
       tap(([query, type, filters, [sortBy, sortOrder]]) => {
         this.allSelected = false;
         this.showIntro = false;

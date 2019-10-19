@@ -1,11 +1,11 @@
 <div *ngIf="display$ | async as display">
-  <nz-tabset nzSize="small" nzAnimated="false"
+  <nz-tabset (nzSelectedIndexChange)="type$.next($event)" [nzSelectedIndex]="type$ | async"
              [nzTabBarExtraContent]="extraTemplate"
-             [nzSelectedIndex]="type$ | async"
-             (nzSelectedIndexChange)="type$.next($event)">
+             nzAnimated="false"
+             nzSize="small">
     <ng-template #extraTemplate>
-      <div fxLayout="row" fxLayoutGap="10px" class="dol-path-buttons">
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+      <div class="dol-path-buttons" fxLayout="row" fxLayoutGap="10px">
+        <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
           <nz-switch [(ngModel)]="hideCompleted"></nz-switch>
           <div>{{'LOG_TRACKER.Hide_completed_items' | translate}}</div>
         </div>
@@ -13,21 +13,21 @@
     </ng-template>
     <nz-tab *ngFor="let tab of [0,1]" [nzTitle]="titleTemplate">
       <ng-template #titleTemplate>
-        <img [src]="getFshIcon(tab)" alt="" class="job-icon"
-             [class.small-icon]="false | ifMobile: true">
+        <img [class.small-icon]="false | ifMobile: true" [src]="getFshIcon(tab)" alt=""
+             class="job-icon">
         {{display[tab].done}}/{{display[tab].total}}
       </ng-template>
       <div fxLayout="row" fxLayoutGap="10px">
-        <ul nz-menu nzMode="inline" [nzTheme]="'light'" *ngIf="tabsDisplay$ | async as tabsDisplay"
-            class="log-container">
-          <ng-container  *ngFor="let area of tabsDisplay.tabs">
-            <li nz-submenu *ngIf="!hideCompleted || area.done < area.total">
+        <ul *ngIf="tabsDisplay$ | async as tabsDisplay" [nzTheme]="'light'" class="log-container" nz-menu
+            nzMode="inline">
+          <ng-container *ngFor="let area of tabsDisplay.tabs">
+            <li *ngIf="!hideCompleted || area.done < area.total" nz-submenu>
               <span title>{{area.placeId | placeName | i18n}} ({{area.done}}/{{area.total}})</span>
               <ul>
                 <ng-container *ngFor="let spot of area.spots">
-                  <li nz-menu-item *ngIf="!hideCompleted || spot.done < spot.total" (click)="spotId$.next(spot.id)"
-                      [class.ant-menu-item-selected]="(spotId$ | async) === spot.id"
-                      class="menu-link">{{spot.placeId | placeName | i18n}} ({{spot.done}}/{{spot.total}})
+                  <li (click)="spotId$.next(spot.id)" *ngIf="!hideCompleted || spot.done < spot.total" [class.ant-menu-item-selected]="(spotId$ | async) === spot.id"
+                      class="menu-link"
+                      nz-menu-item>{{spot.placeId | placeName | i18n}} ({{spot.done}}/{{spot.total}})
                   </li>
                 </ng-container>
               </ul>
@@ -41,28 +41,28 @@
             <div *ngIf="true | ifMobile: false" fxFlex="0 1 400px">
               <app-map [mapId]="spot.mapId" [markers]="[spot.coords]"></app-map>
             </div>
-            <div fxLayout="column" fxFlex="1 1 auto">
+            <div fxFlex="1 1 auto" fxLayout="column">
               <ng-container *ngFor="let item of spot.fishes; let last = last">
                 <div *ngIf="!item.done || !hideCompleted">
-                  <div nz-row fxLayoutAlign="flex-start center">
-                    <div nz-col [nzMd]="6" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                  <div fxLayoutAlign="flex-start center" nz-row>
+                    <div [nzMd]="6" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col>
                       <app-item-icon *ngIf="true | ifMobile: false"
-                                     [width]="32"
+                                     [icon]="item.icon | xivapiIcon"
                                      [itemId]="item.itemId"
-                                     [icon]="item.icon | xivapiIcon"></app-item-icon>
+                                     [width]="32"></app-item-icon>
                       <div fxLayout="column" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
                         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                          <div class="recipe-name" [appItemRarity]="item.itemId">{{item.itemId | itemName | i18n}}</div>
-                          <i nz-icon type="clock-circle" theme="outline" *ngIf="item.timed"
-                             nz-tooltip [nzTitle]="'LOG_TRACKER.Timed' | translate"></i>
-                          <i nz-icon type="cloud" theme="outline" *ngIf="item.weathered"
-                             nz-tooltip [nzTitle]="'LOG_TRACKER.Weather_dependant' | translate"></i>
-                          <i nz-icon type="check" *ngIf="item.done"></i>
+                          <div [appItemRarity]="item.itemId" class="recipe-name">{{item.itemId | itemName | i18n}}</div>
+                          <i *ngIf="item.timed" [nzTitle]="'LOG_TRACKER.Timed' | translate" nz-icon nz-tooltip
+                             nzType="clock-circle" theme="outline"></i>
+                          <i *ngIf="item.weathered" [nzTitle]="'LOG_TRACKER.Weather_dependant' | translate" nz-icon nz-tooltip
+                             nzType="cloud" theme="outline"></i>
+                          <i *ngIf="item.done" nz-icon nzType="check"></i>
                         </div>
                         <div class="recipe-details">lvl {{item.level}}</div>
                       </div>
                     </div>
-                    <div nz-col [nzMd]="12" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center">
+                    <div [nzMd]="12" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" nz-col>
                       <ng-container *ngIf="item.data as nodeData; else baseData">
                         <div *ngFor="let node of nodeData; let last = last" fxLayout="row"
                              fxLayoutAlign="flex-start center">
@@ -71,79 +71,80 @@
                               <div *ngIf="node.timed || node.weathers?.length > 0">
                                 <ng-container *ngIf="getAlarm(node) as alarm">
                                   <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
-                                    <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"
-                                            nz-tooltip
-                                            [nzGhost]="!display.registered"
-                                            (click)="toggleAlarm(display)">
-                                      <i nz-icon type="bell" *ngIf="!display.registered"></i>
-                                      <i nz-icon type="close-circle-o" *ngIf="display.registered"></i>
+                                    <button (click)="toggleAlarm(display)" [nzGhost]="!display.registered" [nzSize]="'small'"
+                                            [nzType]="display.spawned?'primary':'default'"
+                                            nz-button
+                                            nz-tooltip>
+                                      <i *ngIf="!display.registered" nz-icon nzType="bell"></i>
+                                      <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
                                       {{display.remainingTime | timer}}
                                       <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
                                       <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
                                     </button>
                                     <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
-                                      <nz-dropdown *ngIf="!display.registered && alarmGroups.length > 0"
-                                                   [nzPlacement]="'bottomCenter'">
-                                        <button nz-button [nzSize]="'small'" nz-dropdown>
-                                          <i nz-icon type="ellipsis"></i>
-                                        </button>
+                                      <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'"
+                                              [nzSize]="'small'"
+                                              nz-button nz-dropdown>
+                                        <i nz-icon nzType="ellipsis"></i>
+                                      </button>
+                                      <nz-dropdown-menu #menu="nzDropdownMenu">
                                         <ul nz-menu>
-                                          <li nz-menu-item *ngFor="let group of alarmGroups"
-                                              (click)="addAlarmWithGroup(alarm, group)">
+                                          <li (click)="addAlarmWithGroup(alarm, group)" *ngFor="let group of alarmGroups"
+                                              nz-menu-item>
                                             {{group.name}}
                                           </li>
                                         </ul>
-                                      </nz-dropdown>
+                                      </nz-dropdown-menu>
                                     </ng-container>
                                   </nz-button-group>
                                 </ng-container>
                               </div>
-                              <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutGap="5px"
-                                   fxLayoutAlign="flex-start center">
-                                <img src="./assets/icons/status/fish_eyes.png" alt="" nz-tooltip
-                                     [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+                              <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutAlign="flex-start center"
+                                   fxLayoutGap="5px">
+                                <img [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
+                                     src="./assets/icons/status/fish_eyes.png">
                                 <div
-                                  *ngIf="node.itemId | fishEyesDuration as duration" nz-tooltip
+                                  (click)="toggleFishEyesFormat()" *ngIf="node.itemId | fishEyesDuration as duration"
                                   [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate"
-                                  (click)="toggleFishEyesFormat()">
+                                  nz-tooltip>
                                   {{(fishEyesFormat === 1 ? 'COMMON.Minutes_duration' : 'COMMON.Seconds_duration') | translate: { amount: duration * fishEyesFormat } }}
                                 </div>
                               </div>
-                              <img *ngIf="node.snagging" src="./assets/icons/status/snagging.png" alt="" nz-tooltip
-                                   [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
+                              <img *ngIf="node.snagging" [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+                                   src="./assets/icons/status/snagging.png">
                             </div>
                             <app-fishing-bait *ngIf="node.baits !== undefined" [baits]="node.baits"
                                               flex="row"></app-fishing-bait>
-                            <img *ngIf="node.gig" src="./assets/icons/gig/{{node.gig}}.png" nz-tooltip
-                                 [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate" class="gig-icon">
-                            <img *ngIf="node.hookset" src="./assets/icons/hookset/{{node.hookset}}.png" nz-tooltip
-                                 class="gig-icon"
-                                 [nzTitle]="(node.hookset === 'precision'? 4179 : 4103) | actionName | i18n">
-                            <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
-                                 fxLayoutAlign="flex-start center">
-                              <img src="./assets/icons/status/predators.png" alt="" nz-tooltip
-                                   [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate">
-                              <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutGap="5px"
-                                   fxLayoutAlign="flex-start center">
+                            <img *ngIf="node.gig" [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate" class="gig-icon"
+                                 nz-tooltip src="./assets/icons/gig/{{node.gig}}.png">
+                            <img *ngIf="node.hookset" [nzTitle]="(node.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="gig-icon"
+                                 nz-tooltip
+                                 src="./assets/icons/hookset/{{node.hookset}}.png">
+                            <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
+                                 fxLayoutGap="10px">
+                              <img [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+                                   src="./assets/icons/status/predators.png">
+                              <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
+                                   fxLayoutGap="5px">
                                 <div>{{predator.amount}}x</div>
-                                <app-item-icon [width]="32" [icon]="predator.icon" [itemId]="predator.id"
-                                               [tooltipDisabled]="true" [appFishTooltip]="predator.id"></app-item-icon>
+                                <app-item-icon [appFishTooltip]="predator.id" [icon]="predator.icon" [itemId]="predator.id"
+                                               [tooltipDisabled]="true" [width]="32"></app-item-icon>
                               </div>
                             </div>
-                            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+                            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                               <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                                 <div *ngFor="let weather of node.weathersFrom">
-                                  <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
-                                       [nzTitle]="weather | weatherName | i18n">
+                                  <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                                       nz-tooltip>
                                 </div>
                               </div>
                               <div *ngIf="node.weathersFrom !== undefined">
-                                <i nz-icon type="right" theme="outline"></i>
+                                <i nz-icon nzType="right" theme="outline"></i>
                               </div>
                               <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                                 <div *ngFor="let weather of node.weathers">
-                                  <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
-                                       [nzTitle]="weather | weatherName | i18n">
+                                  <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                                       nz-tooltip>
                                 </div>
                               </div>
                             </div>
@@ -157,22 +158,22 @@
                         </div>
                       </ng-template>
                     </div>
-                    <div nz-col [nzMd]="4" fxLayout="column" fxLayoutGap="5px">
+                    <div [nzMd]="4" fxLayout="column" fxLayoutGap="5px" nz-col>
                     </div>
-                    <div nz-col [nzMd]="2">
-                      <button nz-button (click)="markAsDone(item.itemId, true)" nz-tooltip
+                    <div [nzMd]="2" nz-col>
+                      <button (click)="markAsDone(item.itemId, true)" *ngIf="!item.done" [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate"
+                              nz-button
+                              nz-tooltip
                               nzShape="circle"
-                              nzType="primary"
-                              *ngIf="!item.done"
-                              [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate">
-                        <i nz-icon type="check"></i>
+                              nzType="primary">
+                        <i nz-icon nzType="check"></i>
                       </button>
-                      <button nz-button (click)="markAsDone(item.itemId, false)" nz-tooltip
+                      <button (click)="markAsDone(item.itemId, false)" *ngIf="item.done" [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
+                              nz-button
+                              nz-tooltip
                               nzShape="circle"
-                              nzType="danger"
-                              *ngIf="item.done"
-                              [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate">
-                        <i nz-icon type="close"></i>
+                              nzType="danger">
+                        <i nz-icon nzType="close"></i>
                       </button>
                     </div>
                   </div>

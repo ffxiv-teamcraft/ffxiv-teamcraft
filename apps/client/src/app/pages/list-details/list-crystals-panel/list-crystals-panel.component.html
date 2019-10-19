@@ -1,12 +1,12 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="false">
+  <nz-collapse-panel [nzActive]="false" [nzHeader]="panelHeader">
     <div fxLayout="row wrap" fxLayoutGap="5px">
-      <div fxLayout="column" fxLayoutGap="2px" fxLayoutAlign="center center"
-           *ngFor="let crystal of crystals; trackBy: trackByItem">
+      <div *ngFor="let crystal of crystals; trackBy: trackByItem" fxLayout="column" fxLayoutAlign="center center"
+           fxLayoutGap="2px">
         <app-item-icon
           [icon]="crystal.icon"
-          [itemName]="crystal.id | itemName| i18n"
           [itemId]="crystal.id"
+          [itemName]="crystal.id | itemName| i18n"
           [width]="32"></app-item-icon>
         <span>x{{crystal.amount - crystal.done}}</span>
       </div>

@@ -65,7 +65,7 @@ export class RecipeFinderComponent implements OnDestroy {
 
   public totalItems: number;
 
-  @ViewChild('notificationRef')
+  @ViewChild('notificationRef', {static: true})
   notification: TemplateRef<any>;
 
   // Notification data

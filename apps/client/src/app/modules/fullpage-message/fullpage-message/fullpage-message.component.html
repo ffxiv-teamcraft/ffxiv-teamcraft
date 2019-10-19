@@ -1,4 +1,4 @@
-<div class="container" [style.height]="height | ifMobile: '200px'">
+<div [style.height]="height | ifMobile: '200px'" class="container">
   <h2 [style.fontSize]="fontSize | ifMobile: '1.2rem'">
     <ng-content></ng-content>
   </h2>

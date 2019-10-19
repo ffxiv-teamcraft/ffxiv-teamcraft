@@ -141,7 +141,8 @@
     "Undo": "Undo",
     "User": "User",
     "Tables": "Table",
-    "Pie_charts": "Pie charts"
+    "Pie_charts": "Pie charts",
+    "Read_more_on_wiki": "Read more details on wiki"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -371,6 +372,9 @@
     "Clickthrough_overlay": "Make overlay clickthrough",
     "Disable_search_history": "Disable search history",
     "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
+    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
+    "Contribute_to_universalis": "Contribute to Universalis",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -401,6 +405,8 @@
     "User_not_verified": "Usuário não verificado, clique para verificar o usuário",
     "More_than_100_lists_created": "More than 100 lists created",
     "Veteran": "Veteran",
+    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done.",
     "VERIFICATION": {
       "Title": "Verificação da personagem",
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
@@ -520,6 +526,8 @@
     "New_tag": "New tag",
     "Amount_ilvl": "Amount (ilvl)",
     "Contributions_popup": "Contributions stats",
+    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
+    "Autofill": "Autofill",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",
@@ -878,6 +886,7 @@
       "No_medicine": "Nenhum remédio",
       "No_fc_buffs": "Sem buffs FC",
       "Quest_warning": "Make sure you have done lvl 70 quest for Stroke of Genius",
+      "Starting_quality": "Starting quality",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Craftsmanship",
@@ -1515,5 +1524,31 @@
     "Gathering": "Gathering",
     "Helpers": "Helpers",
     "Other": "Other"
+  },
+  "PACKET_CAPTURE": {
+    "Banner_title": "Packet capture is available",
+    "Button_label": "Enable packet capture",
+    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
+    "Empty_inventory": "Your inventory hasn't been loaded yet",
+    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
+    "No_character_id": "No ingame character id set",
+    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once.",
+    "Inventory_outdated": "Your inventory is outdated",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
+  },
+  "INVENTORY": {
+    "Title": "Inventory",
+    "Empty": "Empty inventory",
+    "Estimate_total_price": "Estimate total inventory price",
+    "Copy_to_clipboard": "Copy inventory to clipboard",
+    "Copied_to_clipboard": "Inventory copied to clipboard",
+    "Click_to_add_to_progression": "Click to add to item progression",
+    "Contribute_to_universalis": "Contribute data to universalis",
+    "BAG": {
+      "SaddleBag": "Chocobo Saddlebag",
+      "Bag": "Inventory",
+      "Other": "Other inventory"
+    }
   }
 }

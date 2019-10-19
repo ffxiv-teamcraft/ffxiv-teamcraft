@@ -3,17 +3,17 @@
   <div fxLayout="column" fxLayoutGap="10px">
     <h3>{{'MACRO_TRANSLATION.Macro_language' | translate}}</h3>
     <nz-radio-group [(ngModel)]="macroLanguage">
-      <label nz-radio-button [nzValue]="language.id" *ngFor="let language of languages">{{language.name}}</label>
+      <label *ngFor="let language of languages" [nzValue]="language.id" nz-radio-button>{{language.name}}</label>
     </nz-radio-group>
   </div>
 
   <div fxLayout="column" fxLayoutGap="10px">
-  <textarea rows="4" nz-input *ngIf="macroLanguage" [nzAutosize]="{minRows: 5, maxRows: 15}"
+  <textarea *ngIf="macroLanguage" [(ngModel)]="macroToTranslate" [nzAutosize]="{minRows: 5, maxRows: 15}" nz-input
             placeholder="{{'MACRO_TRANSLATION.Macro_to_translate' | translate}}"
-            [(ngModel)]="macroToTranslate"></textarea>
+            rows="4"></textarea>
   </div>
 
-  <button *ngIf="macroToTranslate" nz-button nzType="primary" (click)="translateMacro()">
+  <button (click)="translateMacro()" *ngIf="macroToTranslate" nz-button nzType="primary">
     {{'MACRO_TRANSLATION.Do_translate' | translate}}
   </button>
 
@@ -23,7 +23,7 @@
     </nz-tab>
   </nz-tabset>
 
-  <nz-alert nzType="error" [nzMessage]="'MACRO_TRANSLATION.Invalid_macro_or_language' | translate"
-            *ngIf="invalidInputs">
+  <nz-alert *ngIf="invalidInputs" [nzMessage]="'MACRO_TRANSLATION.Invalid_macro_or_language' | translate"
+            nzType="error">
   </nz-alert>
 </div>

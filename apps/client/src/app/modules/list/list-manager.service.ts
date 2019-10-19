@@ -48,8 +48,8 @@ export class ListManagerService {
           first()
         );
     }
-    const dataSource$ = +itemId === itemId ? this.db.getItem(itemId) : of(this.customItemsSync.find(i => i.$key === itemId));
-    return combineLatest(team$, dataSource$)
+    const dataSource$ = +itemId === itemId ? this.db.getItem(itemId).pipe(catchError(() => of(undefined))) : of(this.customItemsSync.find(i => i.$key === itemId));
+    return combineLatest([team$, dataSource$])
       .pipe(
         tap(([team, itemData]) => {
           if (team && team.webhook !== undefined && amount !== 0) {
@@ -241,6 +241,7 @@ export class ListManagerService {
           backup.forEach(row => {
             const listRow = resultList[row.array].find(item => item.id === row.item.id || item.id === row.realItemId);
             if (listRow !== undefined) {
+              listRow.$key = row.item.$key;
               if (row.item.comments !== undefined) {
                 listRow.comments = row.item.comments;
               }

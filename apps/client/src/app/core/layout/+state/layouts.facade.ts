@@ -35,7 +35,7 @@ export class LayoutsFacade {
       }),
       map(layout => {
         layout.rows = layout.rows.sort((a, b) => a.index - b.index);
-        if (!layout.rows.some(row => row.isOtherRow())) {
+        if (!layout.rows.some(row => row.isOtherRow && row.isOtherRow())) {
           layout.rows.push(new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name,
             7, true, false, true, false, false, true));
         }

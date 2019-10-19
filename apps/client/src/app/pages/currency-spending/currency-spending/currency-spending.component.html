@@ -9,16 +9,16 @@
   </div>
   <div fxLayout="row" fxLayoutGap="5px">
     <nz-select
+      (ngModelChange)="currency$.next($event)"
+      [ngModel]="null"
+      [nzPlaceHolder]="'CURRENCY_SPENDING.Pick_currency' | translate"
       class="currency-picker"
       nzShowSearch
-      [nzPlaceHolder]="'CURRENCY_SPENDING.Pick_currency' | translate"
-      [ngModel]="null"
-      (ngModelChange)="currency$.next($event)"
     >
-      <nz-option [nzLabel]="currency.ID | itemName | i18n" [nzValue]="currency.ID"
-                 nzCustomContent
-                 *ngFor="let currency of currencies$ | async">
-        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" [title]="currency.ID | itemName | i18n">
+      <nz-option *ngFor="let currency of currencies$ | async" [nzLabel]="currency.ID | itemName | i18n"
+                 [nzValue]="currency.ID"
+                 nzCustomContent>
+        <div [title]="currency.ID | itemName | i18n" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img [src]="currency.Icon | xivapiIcon" alt="" class="currency-icon">
           <div>
             {{currency.ID | itemName | i18n}}
@@ -26,35 +26,35 @@
         </div>
       </nz-option>
     </nz-select>
-    <nz-input-number [ngModel]="amount$ | async" (ngModelChange)="amount$.next($event)" [nzStep]="1"
-                     [nzPlaceHolder]="'COMMON.Amount' | translate"></nz-input-number>
+    <nz-input-number (ngModelChange)="amount$.next($event)" [ngModel]="amount$ | async" [nzPlaceHolder]="'COMMON.Amount' | translate"
+                     [nzStep]="1"></nz-input-number>
     <nz-select
+      (ngModelChange)="server$.next($event)"
+      [ngModel]="server$ | async"
+      [nzPlaceHolder]="'Server_name' | translate"
       class="server-picker"
       nzShowSearch
-      [nzPlaceHolder]="'Server_name' | translate"
-      [ngModel]="server$ | async"
-      (ngModelChange)="server$.next($event)"
     >
-      <nz-option [nzLabel]="server" [nzValue]="server"
-                 *ngFor="let server of servers$ | async">
+      <nz-option *ngFor="let server of servers$ | async" [nzLabel]="server"
+                 [nzValue]="server">
       </nz-option>
     </nz-select>
   </div>
 </div>
 
-<nz-list [nzDataSource]="results$ | async" [nzRenderItem]="item" [nzLoading]="loading">
+<nz-list [nzDataSource]="results$ | async" [nzLoading]="loading" [nzRenderItem]="item">
   <ng-template #item let-item>
     <nz-list-item [nzContent]="content" class="result-item">
       <ng-template #content>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <div>{{item.npcs[0] | npcName | i18n}}</div>
-          <app-db-button type="npc" [id]="item.npcs[0]"></app-db-button>
+          <app-db-button [id]="item.npcs[0]" type="npc"></app-db-button>
         </div>
       </ng-template>
       <nz-list-item-meta
-        [nzTitle]="nzTitle"
         [nzAvatar]="avatar"
         [nzDescription]="description"
+        [nzTitle]="nzTitle"
       >
         <ng-template #description>
           <div fxLayout="row" fxLayoutAlign="flex-start center">
@@ -68,13 +68,13 @@
           </div>
         </ng-template>
         <ng-template #avatar>
-          <app-item-icon [width]="32" [itemId]="item.item" [icon]="item.item | lazyIcon"
-                         [hq]="item.HQ"></app-item-icon>
+          <app-item-icon [hq]="item.HQ" [icon]="item.item | lazyIcon" [itemId]="item.item"
+                         [width]="32"></app-item-icon>
         </ng-template>
         <ng-template #nzTitle>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div>{{item.item | itemName | i18n}}</div>
-            <app-db-button type="item" [id]="item.item"></app-db-button>
+            <app-db-button [id]="item.item" type="item"></app-db-button>
             <app-marketboard-icon [itemId]="item.item" [showHistory]="true"></app-marketboard-icon>
           </div>
         </ng-template>

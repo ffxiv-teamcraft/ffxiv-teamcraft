@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
-import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
@@ -16,6 +16,7 @@ import { Team } from '../../../model/team/team';
 import { MergeListsPopupComponent } from '../merge-lists-popup/merge-lists-popup.component';
 import { ListImportPopupComponent } from '../list-import-popup/list-import-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 
 @Component({
   selector: 'app-lists',
@@ -192,17 +193,19 @@ export class ListsComponent {
       this.listsFacade.load(compact.$key);
     });
 
-    const regenerations = compacts.map(compact => {
-      return this.listsFacade.allListDetails$.pipe(
-        map(details => details.find(l => l.$key === compact.$key)),
-        filter(list => list !== undefined),
-        first(),
-        switchMap(list => this.listManager.upgradeList(list)),
-        tap(l => this.listsFacade.updateList(l, true))
-      );
-    });
+    const regenerations = compacts
+      .filter(compact => compact.isOutDated())
+      .map(compact => {
+        return this.listsFacade.allListDetails$.pipe(
+          map(details => details.find(l => l.$key === compact.$key)),
+          filter(list => list !== undefined),
+          first(),
+          switchMap(list => this.listManager.upgradeList(list)),
+          tap(l => this.listsFacade.updateList(l, false, true))
+        );
+      });
 
-    this.progress.showProgress(concat(...regenerations), regenerations.length)
+    this.progress.showProgress(requestsWithDelay(regenerations, 250, true), regenerations.length)
       .pipe(
         first(),
         switchMap(() => {

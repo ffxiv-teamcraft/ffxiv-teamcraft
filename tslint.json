@@ -1,7 +1,7 @@
 {
   "rulesDirectory": [
     "node_modules/codelyzer",
-    "node_modules/@nrwl/schematics/src/tslint"
+    "node_modules/@nrwl/workspace/src/tslint"
   ],
   "rules": {
     "arrow-return-shorthand": true,
@@ -11,10 +11,7 @@
       "severity": "warn"
     },
     "forin": true,
-    "import-blacklist": [
-      true,
-      "rxjs/internal"
-    ],
+    "import-blacklist": [true, "rxjs/internal"],
     "interface-over-type-literal": true,
     "member-access": false,
     "member-ordering": [
@@ -30,24 +27,14 @@
     ],
     "no-arg": true,
     "no-bitwise": false,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
     "no-construct": true,
     "no-debugger": true,
     "no-duplicate-super": true,
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
+    "no-inferrable-types": [true, "ignore-params"],
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-shadowed-variable": true,
@@ -61,24 +48,11 @@
     "object-literal-sort-keys": false,
     "prefer-const": true,
     "radix": true,
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
+    "triple-equals": [true, "allow-null-check"],
     "unified-signatures": true,
     "variable-name": false,
-    "directive-selector": [
-      true,
-      "attribute",
-      "app",
-      "camelCase"
-    ],
-    "component-selector": [
-      true,
-      "element",
-      "app",
-      "kebab-case"
-    ],
+    "directive-selector": [true, "attribute", "app", "camelCase"],
+    "component-selector": [true, "element", "app", "kebab-case"],
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
@@ -89,13 +63,15 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-
     "nx-enforce-module-boundaries": [
       true,
       {
         "allow": [],
         "depConstraints": [
-          { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": ["*"]
+          }
         ]
       }
     ]

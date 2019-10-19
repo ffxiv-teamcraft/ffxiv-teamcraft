@@ -1,9 +1,9 @@
 <nz-list [nzDataSource]="elements" [nzRenderItem]="listTemplate">
   <ng-template #listTemplate let-element>
     <nz-list-item>
-      <nz-list-item-meta [nzTitle]="element.name" [nzDescription]="element.description" [nzAvatar]="checkbox">
+      <nz-list-item-meta [nzAvatar]="checkbox" [nzDescription]="element.description" [nzTitle]="element.name">
         <ng-template #checkbox>
-          <label nz-checkbox [ngModel]="false" (ngModelChange)="setSelection(element, $event)"></label>
+          <label (ngModelChange)="setSelection(element, $event)" [ngModel]="false" nz-checkbox></label>
         </ng-template>
       </nz-list-item-meta>
     </nz-list-item>
@@ -11,6 +11,6 @@
 </nz-list>
 
 <div fxLayout="row" fxLayoutGap="10px">
-  <button nz-button (click)="close()">{{'Confirm' | translate}}
+  <button (click)="close()" nz-button>{{'Confirm' | translate}}
   </button>
 </div>

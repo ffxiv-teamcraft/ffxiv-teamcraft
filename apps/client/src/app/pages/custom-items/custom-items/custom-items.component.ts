@@ -53,7 +53,7 @@ export class CustomItemsComponent {
 
   public availableCraftJobs: any[] = [];
 
-  @ViewChild('notificationRef')
+  @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
 
   public modifiedList: List;

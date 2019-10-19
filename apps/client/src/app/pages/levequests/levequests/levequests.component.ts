@@ -70,7 +70,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   startingLevel = 1;
 
-  @ViewChild('notificationRef')
+  @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
 
   constructor(private xivapi: XivapiService, private listsFacade: ListsFacade,

@@ -1,17 +1,17 @@
-<input type="text" placeholder="{{'ITEMS.Item_name' | translate}}" #searchInput nz-input
-       (keyup)="query$.next(searchInput.value)" nzAutoFocus>
-<nz-list [nzLoading]="loading" [nzRenderItem]="itemTemplate" [nzDataSource]="results$ | async">
+<input #searchInput (keyup)="query$.next(searchInput.value)" nz-input nzAutoFocus
+       placeholder="{{'ITEMS.Item_name' | translate}}" type="text">
+<nz-list [nzDataSource]="results$ | async" [nzLoading]="loading" [nzRenderItem]="itemTemplate">
   <ng-template #itemTemplate let-result>
     <nz-list-item [nzContent]="content">
       <nz-list-item-meta [nzAvatar]="avatar"
-                         [nzTitle]="result.isCustom ? (result.itemId | customItemName | async) : (result.itemId | itemName | i18n)"
-                         [nzDescription]="result.recipe !== undefined?description:null">
+                         [nzDescription]="result.recipe !== undefined?description:null"
+                         [nzTitle]="result.isCustom ? (result.itemId | customItemName | async) : (result.itemId | itemName | i18n)">
         <ng-template #avatar>
-          <app-item-icon [itemId]="result.itemId" [icon]="result.icon" [width]="32"></app-item-icon>
+          <app-item-icon [icon]="result.icon" [itemId]="result.itemId" [width]="32"></app-item-icon>
         </ng-template>
         <ng-template #description>
-          <img src="https://www.garlandtools.org/db/images/{{getJob(result.recipe.job)?.abbreviation}}.png"
-               alt="getJob(item.job)?.abbreviation" class="crafted-by">
+          <img alt="getJob(item.job)?.abbreviation"
+               class="crafted-by" src="https://www.garlandtools.org/db/images/{{getJob(result.recipe.job)?.abbreviation}}.png">
           {{result.recipe.lvl}}
           {{getStars(result.recipe.stars)}}
         </ng-template>
@@ -20,15 +20,15 @@
         <div fxLayout="row" fxLayoutGap="5px">
           <nz-input-group *ngIf="!hideAmount" [nzAddOnBefore]="result.recipe !== undefined?addCrafts:null"
                           [nzCompact]="true">
-            <input type="number" [(ngModel)]="result.amount" nz-input  class="amount-input">
+            <input [(ngModel)]="result.amount" class="amount-input" nz-input type="number">
             <ng-template #addCrafts>
-              <label nz-checkbox [(ngModel)]="result.addCrafts">
+              <label [(ngModel)]="result.addCrafts" nz-checkbox>
                 {{'Collectable_flag' | translate}}
               </label>
             </ng-template>
           </nz-input-group>
-          <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="close(result)">
-            <i nz-icon type="check"></i>
+          <button (click)="close(result)" [nzShape]="'circle'" [nzType]="'primary'" nz-button>
+            <i nz-icon nzType="check"></i>
           </button>
         </div>
       </ng-template>

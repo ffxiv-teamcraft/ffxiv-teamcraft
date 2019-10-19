@@ -164,7 +164,8 @@ export class AlarmsPageComponent implements OnInit {
       en: 'rp',
       de: 'wh',
       fr: 'rp',
-      ja: 'rp'
+      ja: 'rp',
+      ko: '반복'
     };
     return `/alarm "${display.alarm.itemId ? this.i18n.getName(this.l12n.getItem(display.alarm.itemId)).slice(0, 10) : display.alarm.name.slice(0, 10)
       }" et ${this.i18n.getName(rp)} ${display.nextSpawn.hours < 10 ? '0' : ''}${display.nextSpawn.hours}00 ${

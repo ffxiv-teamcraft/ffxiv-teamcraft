@@ -57,7 +57,8 @@ let todo = [
   'recipes',
   'actions',
   'monsterDrops',
-  'voyages'
+  'voyages',
+  'worlds'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -1139,7 +1140,7 @@ if (hasTodo('achievements')) {
 
 if (hasTodo('recipes')) {
   const recipes = [];
-  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,AmountResult,RecipeLevelTable.ClassJobLevel,ItemResultTargetID,ItemIngredient0TargetID,ItemIngredient1TargetID,ItemIngredient2TargetID,ItemIngredient3TargetID,ItemIngredient4TargetID,ItemIngredient5TargetID,ItemIngredient6TargetID,ItemIngredient7TargetID,ItemIngredient8TargetID,ItemIngredient9TargetID,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
+  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0TargetID,ItemIngredient1TargetID,ItemIngredient2TargetID,ItemIngredient3TargetID,ItemIngredient4TargetID,ItemIngredient5TargetID,ItemIngredient6TargetID,ItemIngredient7TargetID,ItemIngredient8TargetID,ItemIngredient9TargetID,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
     page.Results.forEach(recipe => {
       recipes.push({
         id: recipe.ID,
@@ -1148,6 +1149,8 @@ if (hasTodo('recipes')) {
         yields: recipe.AmountResult,
         result: recipe.ItemResultTargetID,
         stars: recipe.RecipeLevelTable.Stars,
+        qs: recipe.CanQuickSynth === 1,
+        rlvl: recipe.RecipeLevelTable.ID,
         ingredients: Object.keys(recipe)
           .filter(k => /ItemIngredient\dTargetID/.test(k))
           .sort((a, b) => a < b ? -1 : 1)
@@ -1365,5 +1368,16 @@ if (hasTodo('voyages')) {
     });
   }, null, () => {
     persistToTypescript('submarine-voyages', 'submarineVoyages', submarineVoyages);
+  });
+}
+
+if (hasTodo('worlds')) {
+  const worlds = {};
+  getAllPages('https://xivapi.com/World?columns=ID,Name').subscribe(page => {
+    page.Results.forEach(world => {
+      worlds[world.Name.toLowerCase()] = world.ID;
+    });
+  }, null, () => {
+    persistToTypescript('worlds', 'worlds', worlds);
   });
 }

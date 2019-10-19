@@ -8,6 +8,7 @@ const log = require('electron-log');
 log.transports.file.level = 'info';
 const express = require('express');
 const fs = require('fs');
+const Machina = require('./machina.js');
 
 const oauth = require('./oauth.js');
 
@@ -35,10 +36,13 @@ for (let i = 0; i < argv.length; i++) {
   if (argv[i] === '--noHardwareAcceleration' || argv[i] === '-noHA') {
     options.noHA = true;
   }
+  if (argv[i] === '--winpcap') {
+    options.winpcap = true;
+  }
 }
 
 if (isDev) {
-  autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
+  // autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
 }
 
 if (!options.multi) {
@@ -117,6 +121,10 @@ function createWindow() {
     win.maximize();
   }
 
+  if (config.get('machina') === true) {
+    Machina.start(win, config, options.winpcap);
+  }
+
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
   //// uncomment below to open the DevTools.
   // win.webContents.openDevTools();
@@ -170,6 +178,10 @@ function createWindow() {
 
   // save window size and position
   win.on('close', () => {
+
+    if (config.get('machina') === true) {
+      Machina.stop();
+    }
     config.set('win:bounds', win.getBounds());
     config.set('win:fullscreen', win.isMaximized());
     config.set('win:alwaysOnTop', win.isAlwaysOnTop());
@@ -275,6 +287,20 @@ ipcMain.on('app-ready', (event) => {
   }
 });
 
+ipcMain.on('toggle-machina', (event, enabled) => {
+  config.set('machina', enabled);
+  event.sender.send('toggle-machina:value', enabled);
+  if (enabled) {
+    Machina.start(win, config, options.winpcap);
+  } else {
+    Machina.stop();
+  }
+});
+
+ipcMain.on('toggle-machina:get', (event) => {
+  event.sender.send('toggle-machina:value', config.get('machina'));
+});
+
 // Create window on electron intialization
 app.on('ready', () => {
   createWindow();
@@ -355,6 +381,10 @@ ipcMain.on('language', (event, lang) => {
 
 ipcMain.on('show-devtools', () => {
   win.webContents.openDevTools();
+});
+
+ipcMain.on('log', (event, entry) => {
+  log[entry.level](entry.data);
 });
 
 ipcMain.on('notification', (event, config) => {

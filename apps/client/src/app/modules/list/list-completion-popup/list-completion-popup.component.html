@@ -2,16 +2,16 @@
   {{'LIST.COMPLETION_POPUP.Content' | translate}}
 </p>
 <div fxLayout="row wrap" fxLayoutGap="5px">
-  <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="clearList()">
+  <button (nzOnConfirm)="clearList()" [nzTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="danger">
     {{'LIST.COMPLETION_POPUP.Clear' | translate}}
   </button>
-  <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteList()">
+  <button (nzOnConfirm)="deleteList()" [nzTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="danger">
     {{'LIST.COMPLETION_POPUP.Delete' | translate}}
   </button>
-  <button nz-button nzType="primary" nz-popconfirm [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="resetList()">
+  <button (nzOnConfirm)="resetList()" [nzTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="primary">
     {{'LIST.COMPLETION_POPUP.Reset' | translate}}
   </button>
-  <button nz-button (click)="close()">
+  <button (click)="close()" nz-button>
     {{'LIST.COMPLETION_POPUP.Nothing' | translate}}
   </button>
 </div>

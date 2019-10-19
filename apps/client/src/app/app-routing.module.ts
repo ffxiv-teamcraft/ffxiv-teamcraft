@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DevGuard } from './core/guard/dev.guard';
 
 const routes: Routes = [
   {
@@ -140,6 +141,15 @@ const routes: Routes = [
   {
     path: 'reset-timers',
     loadChildren: './pages/reset-timers/reset-timers.module#ResetTimersModule'
+  },
+  {
+    path: 'inventory',
+    loadChildren: './pages/inventory/inventory.module#InventoryModule'
+  },
+  {
+    path: 'extractor',
+    loadChildren: './pages/extractor/extractor.module#ExtractorModule',
+    canLoad: [DevGuard]
   }
 ];
 

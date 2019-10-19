@@ -1,8 +1,8 @@
 <div *ngIf="!inProgress; else loader">
   <nz-form-item>
     <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" nzHasFeedback>
-      <input type="text" nz-input [(ngModel)]="importLink" (ngModelChange)="updateLinkSupport()"
-             [placeholder]="'LISTS.IMPORT.Paste_link_step_title' | translate">
+      <input (ngModelChange)="updateLinkSupport()" [(ngModel)]="importLink" [placeholder]="'LISTS.IMPORT.Paste_link_step_title' | translate" nz-input
+             type="text">
       <nz-form-explain
         *ngIf="importLinkSupported === undefined">{{'LISTS.IMPORT.Links_supported' | translate: { links: linkTypes } }}</nz-form-explain>
       <nz-form-explain
@@ -14,18 +14,21 @@
   <nz-form-item *ngIf="linkType === 'Ariyala'">
     <div fxLayout="column" fxLayoutGap="5px">
       <div>
-        <label nz-checkbox [(ngModel)]="materiaOptions.estimateOvermeldMateria">{{'LISTS.IMPORT.Estimate_overmeld_materia' | translate}}</label>
+        <label [(ngModel)]="materiaOptions.estimateOvermeldMateria"
+               nz-checkbox>{{'LISTS.IMPORT.Estimate_overmeld_materia' | translate}}</label>
       </div>
       <div>
-        <label nz-checkbox [(ngModel)]="materiaOptions.multiplyToolMateria" [nzDisabled]="!materiaOptions.estimateOvermeldMateria">{{'LISTS.IMPORT.Multiply_tool_materia' | translate}}</label>
+        <label [(ngModel)]="materiaOptions.multiplyToolMateria" [nzDisabled]="!materiaOptions.estimateOvermeldMateria"
+               nz-checkbox>{{'LISTS.IMPORT.Multiply_tool_materia' | translate}}</label>
       </div>
       <div>
-        <label nz-checkbox [(ngModel)]="materiaOptions.groupTogether">{{'LISTS.IMPORT.Group_together' | translate}}</label>
+        <label [(ngModel)]="materiaOptions.groupTogether"
+               nz-checkbox>{{'LISTS.IMPORT.Group_together' | translate}}</label>
       </div>
     </div>
   </nz-form-item>
-  <button nz-button nzType="primary" [disabled]="!importLinkSupported"
-          (click)="submit()">{{'Import' | translate}}</button>
+  <button (click)="submit()" [disabled]="!importLinkSupported" nz-button
+          nzType="primary">{{'Import' | translate}}</button>
 </div>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

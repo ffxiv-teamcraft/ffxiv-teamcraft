@@ -5,17 +5,17 @@
         <span [appItemRarity]="reduction.obj.i">{{reduction.obj.i | itemName | i18n}}</span>
       </ng-template>
       <ng-template #itemIcon>
-        <app-item-icon [icon]="reduction.obj.c" [itemName]="reduction.obj.i | itemName | i18n"
-                       [width]="32" [itemId]="reduction.obj.i"></app-item-icon>
+        <app-item-icon [icon]="reduction.obj.c" [itemId]="reduction.obj.i"
+                       [itemName]="reduction.obj.i | itemName | i18n" [width]="32"></app-item-icon>
       </ng-template>
     </nz-card-meta>
     <nz-list [nzDataSource]="getNodes(reduction)" [nzRenderItem]="nodeTemplate">
       <ng-template #nodeTemplate let-node>
         <nz-list-item [nzActions]="[openMap]">
-          <nz-list-item-meta [nzTitle]="node.zoneid | placeName | i18n" [nzDescription]="description">
+          <nz-list-item-meta [nzDescription]="description" [nzTitle]="node.zoneid | placeName | i18n">
             <ng-template #description>
               <div fxLayout="column" fxLayoutGap="5px">
-                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                     <div>lvl {{node.level}}</div>
                     <img [src]="node.type | nodeTypeIcon" alt="" class="node-type-icon">
@@ -23,15 +23,15 @@
                   <nz-tag *ngIf="node.limitType !== undefined" nzColor="orange">
                     {{node.limitType | i18n}}
                   </nz-tag>
-                  <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                    <img src="./assets/icons/status/fish_eyes.png" alt="" nz-tooltip
-                         [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+                  <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <img [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
+                         src="./assets/icons/status/fish_eyes.png">
                     <div
-                      *ngIf="node.itemId | fishEyesDuration as duration" nz-tooltip
-                      [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate">{{'COMMON.Minutes_duration' | translate: { amount: duration } }}</div>
+                      *ngIf="node.itemId | fishEyesDuration as duration" [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate"
+                      nz-tooltip>{{'COMMON.Minutes_duration' | translate: { amount: duration } }}</div>
                   </div>
-                  <img *ngIf="node.snagging" src="./assets/icons/status/snagging.png" alt="" nz-tooltip
-                       [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate">
+                  <img *ngIf="node.snagging" [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+                       src="./assets/icons/status/snagging.png">
                 </div>
 
                 <div fxLayout="row wrap" fxLayoutGap="5px">
@@ -43,30 +43,32 @@
                   </span>
                 </div>
                 <ng-container *ngIf="(generateAlarm(node) | alarmDisplay | async) as alarm">
-                  <div [class.spawned-timer]="alarm.spawned"
+                  <div *ngIf="alarm.remainingTime"
                        [class.played-timer]="alarm.played"
-                       *ngIf="alarm.remainingTime"
+                       [class.spawned-timer]="alarm.spawned"
                        fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                     <div>{{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}</div>
                     <ng-container>
                       <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
                            fxLayoutGap="5px">
-                        <button nz-button nzShape="circle" nzSize="small" (click)="addAlarm(alarm.alarm)" nz-tooltip
-                                [nzTitle]="'ALARMS.Add_alarm' | translate">
-                          <i nz-icon type="clock-circle"> </i>
+                        <button (click)="addAlarm(alarm.alarm)" [nzTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
+                                nzSize="small">
+                          <i nz-icon nzType="clock-circle"> </i>
                         </button>
                         <ng-container *ngIf="alarmGroups$ | async as groups">
                           <ng-container *ngIf="groups.length > 0">
-                            <nz-dropdown *ngIf="alarmsLoaded$ | async" [nzPlacement]="'bottomCenter'">
-                              <button nz-button nzShape="circle" nzSize="small" nz-dropdown>
-                                <i nz-icon type="folder-open"></i>
-                              </button>
+                            <button *ngIf="alarmsLoaded$ | async" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" nz-button
+                                    nz-dropdown
+                                    nzShape="circle" nzSize="small">
+                              <i nz-icon nzType="folder-open"></i>
+                            </button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
                               <ul nz-menu>
-                                <li nz-menu-item *ngFor="let group of groups" (click)="addAlarm(alarm.alarm, group)">
+                                <li (click)="addAlarm(alarm.alarm, group)" *ngFor="let group of groups" nz-menu-item>
                                   {{group.name}}
                                 </li>
                               </ul>
-                            </nz-dropdown>
+                            </nz-dropdown-menu>
                           </ng-container>
                         </ng-container>
                       </div>
@@ -78,50 +80,51 @@
                 </ng-container>
                 <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                   <div *ngFor="let weather of node.weathersFrom">
-                    <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
-                         [nzTitle]="weather | weatherName | i18n">
+                    <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                         nz-tooltip>
                   </div>
                 </div>
                 <div *ngIf="node.weathersFrom !== undefined">
-                  <i nz-icon type="right" theme="outline"></i>
+                  <i nz-icon nzType="right" theme="outline"></i>
                 </div>
                 <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                   <div *ngFor="let weather of node.weathers">
-                    <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
-                         [nzTitle]="weather | weatherName | i18n">
+                    <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                         nz-tooltip>
                   </div>
                 </div>
               </div>
             </ng-template>
             <ng-template #openMap>
               <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
-                <app-map-position [marker]="{x:node.x, y: node.y}"
-                                  [mapId]="node.mapId"
+                <app-map-position [mapId]="node.mapId"
+                                  [marker]="{x:node.x, y: node.y}"
                                   [zoneId]="node.zoneid"></app-map-position>
                 <div
                   *ngIf="node.mapId | closestAetheryte: { x: node.x, y: node.y } | async as aetheryte"
                   class="closest-tp">
-                  <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon">
+                  <img alt="" class="aetheryte-icon" src="./assets/icons/Aetheryte.png">
                   {{aetheryte.nameid | placeName | i18n}}
                 </div>
                 <ng-container *ngIf="node.baits !== undefined">
                   <app-fishing-bait [baits]="node.baits"></app-fishing-bait>
                 </ng-container>
                 <div *ngIf="node.gig">
-                  <img src="./assets/icons/gig/{{node.gig}}.png" nz-tooltip class="gig-icon"
-                       [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate">
-                  <img *ngIf="node.hookset" src="./assets/icons/hookset/{{node.hookset}}.png" nz-tooltip class="gig-icon"
-                       [nzTitle]="(node.hookset === 'precision'? 4179 : 4103) | actionName | i18n">
+                  <img [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate" class="gig-icon" nz-tooltip
+                       src="./assets/icons/gig/{{node.gig}}.png">
+                  <img *ngIf="node.hookset" [nzTitle]="(node.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="gig-icon"
+                       nz-tooltip
+                       src="./assets/icons/hookset/{{node.hookset}}.png">
                 </div>
-                <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutGap="10px"
-                     fxLayoutAlign="flex-start center">
-                  <img src="./assets/icons/status/predators.png" alt="" nz-tooltip
-                       [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate">
-                  <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutGap="5px"
-                       fxLayoutAlign="flex-start center">
+                <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
+                     fxLayoutGap="10px">
+                  <img [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+                       src="./assets/icons/status/predators.png">
+                  <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
+                       fxLayoutGap="5px">
                     <div>{{predator.amount}}x</div>
-                    <app-item-icon [width]="32" [icon]="predator.icon" [itemId]="predator.id"
-                                   [tooltipDisabled]="true" [appFishTooltip]="predator.id"></app-item-icon>
+                    <app-item-icon [appFishTooltip]="predator.id" [icon]="predator.icon" [itemId]="predator.id"
+                                   [tooltipDisabled]="true" [width]="32"></app-item-icon>
                   </div>
                 </div>
               </div>

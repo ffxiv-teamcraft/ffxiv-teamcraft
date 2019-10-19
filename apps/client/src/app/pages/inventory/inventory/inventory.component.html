@@ -1,0 +1,68 @@
+<ng-container *ngIf="display$ | async as display">
+  <div nz-row>
+    <div *ngFor="let inventory of display; trackBy: trackByInventory" class="bag-container" nz-col nzMd="12" nzSm="24">
+      <nz-spin [nzSpinning]="computingPrices[inventory.containerName]">
+        <nz-card [nzExtra]="extraTemplate"
+                 [nzTitle]="title">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div>
+                {{inventory.isRetainer ? inventory.containerName : (('INVENTORY.BAG.' + inventory.containerName) | translate) }}
+                ({{inventory.items.length}})
+              </div>
+              <div *ngIf="inventory.totalPrice" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
+                <div>{{inventory.totalPrice | number:'1.0-0'}}</div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template #extraTemplate>
+            <div fxLayout="row" fxLayoutGap="5px">
+              <button (cbOnSuccess)="inventoryCopied()" [cbContent]="getClipboardContent(inventory)" [nzTitle]="'INVENTORY.Copy_to_clipboard' | translate"
+                      ngxClipboard nz-button nz-tooltip
+                      nzShape="circle"
+                      nzSize="small">
+                <i nz-icon nzType="copy"></i>
+              </button>
+              <button (click)="computePrices(inventory)" [disabled]="computingPrices[inventory.containerName]" [nzTitle]="'INVENTORY.Estimate_total_price' | translate" nz-button
+                      nz-tooltip nzShape="circle"
+                      nzSize="small">
+                <i iconfont="icon-dollar" nz-icon></i>
+              </button>
+            </div>
+          </ng-template>
+          <div class="bag-container">
+            <cdk-virtual-scroll-viewport class="bag" itemSize="65">
+              <nz-list [nzItemLayout]="'horizontal'" [nzRenderItem]="itemTemplate" nzSize="small">
+                <nz-list-item *cdkVirtualFor="let item of inventory.items" [nzContent]="content" class="bag-item">
+                  <nz-list-item-meta
+                    [nzAvatar]="avatar"
+                    [nzTitle]="item.itemId | itemName | i18n"
+                    nzDescription="x{{item.quantity}}">
+                    <ng-template #avatar>
+                      <app-item-icon [hq]="item.hq" [icon]="item.itemId | lazyIcon"
+                                     [itemId]="item.itemId" width="32"></app-item-icon>
+                    </ng-template>
+                    <ng-template #content>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+                        <div *ngIf="item.price" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                          <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
+                          <div>{{item.price | number:'1.0-0'}}</div>
+                        </div>
+                        <app-db-button [id]="item.itemId" type="item"></app-db-button>
+                      </div>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
+              </nz-list>
+            </cdk-virtual-scroll-viewport>
+          </div>
+        </nz-card>
+      </nz-spin>
+    </div>
+  </div>
+  <app-fullpage-message *ngIf="display.length === 0">
+    {{'INVENTORY.Empty' | translate}}
+  </app-fullpage-message>
+</ng-container>
+

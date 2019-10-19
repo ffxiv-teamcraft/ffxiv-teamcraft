@@ -1,13 +1,13 @@
-<nz-list [nzRenderItem]="currencyTemplate" [nzDataSource]="totalPrice" nzSize="small">
+<nz-list [nzDataSource]="totalPrice" [nzRenderItem]="currencyTemplate" nzSize="small">
   <ng-template #currencyTemplate let-entry>
     <nz-list-item>
-      <nz-list-item-meta [nzTitle]="(entry.currencyId | itemName | i18n) || 'Gil'"
-                         [nzAvatar]="entry.currencyId === -1?'https://xivapi.com/i/065000/065002.png':avatar"
-                         [nzDescription]="description">
+      <nz-list-item-meta [nzAvatar]="entry.currencyId === -1?'https://xivapi.com/i/065000/065002.png':avatar"
+                         [nzDescription]="description"
+                         [nzTitle]="(entry.currencyId | itemName | i18n) || 'Gil'">
         <ng-template #avatar>
-          <app-item-icon [width]="32" [itemId]="entry.currencyId" *ngIf="entry.currencyId > -1"
+          <app-item-icon *ngIf="entry.currencyId > -1" [icon]="entry.currencyIcon" [itemId]="entry.currencyId"
                          [itemName]="entry.currencyId | itemName | i18n"
-                         [icon]="entry.currencyIcon"></app-item-icon>
+                         [width]="32"></app-item-icon>
         </ng-template>
         <ng-template #description>
           x{{entry.costs[0] | number}}

@@ -28,12 +28,14 @@ export enum ListsActionTypes {
   CreateList = '[Lists] Create List',
   CreateOptimisticListCompact = '[Lists] Create List Compact',
   UpdateList = '[Lists] Update List',
+  UpdateListAtomic = '[Lists] Update List Atomic',
   UpdateListIndex = '[Lists] Update List Index',
   DeleteList = '[Lists] Delete List',
   ConvertLists = '[Lists] Convert Lists',
   OfflineListsLoaded = '[Lists] Offline lists loaded',
 
-  NeedsVerification = '[Lists] Needs character verification'
+  NeedsVerification = '[Lists] Needs character verification',
+  ToggleAutocompletion = '[Lists] Toggle autocompletion',
 }
 
 export class LoadMyLists implements Action {
@@ -58,6 +60,13 @@ export class NeedsVerification implements Action {
   readonly type = ListsActionTypes.NeedsVerification;
 
   constructor(public readonly verificationNeeded: boolean) {
+  }
+}
+
+export class ToggleAutocompletion implements Action {
+  readonly type = ListsActionTypes.ToggleAutocompletion;
+
+  constructor(public readonly enabled: boolean) {
   }
 }
 
@@ -99,7 +108,7 @@ export class SetItemDone implements Action {
   constructor(public readonly itemId: number, public readonly itemIcon: number,
               public readonly finalItem: boolean, public readonly doneDelta: number,
               public readonly recipeId: string, public readonly totalNeeded: number,
-              public readonly external = false) {
+              public readonly external = false, public readonly fromPacket = false) {
   }
 }
 
@@ -169,7 +178,14 @@ export class CreateOptimisticListCompact implements Action {
 export class UpdateList implements Action {
   readonly type = ListsActionTypes.UpdateList;
 
-  constructor(public readonly payload: List, public readonly updateCompact = false, public force = false) {
+  constructor(public readonly payload: List, public readonly updateCompact = false, public force = false, public fromPacket = false) {
+  }
+}
+
+export class UpdateListAtomic implements Action {
+  readonly type = ListsActionTypes.UpdateListAtomic;
+
+  constructor(public readonly payload: List) {
   }
 }
 
@@ -217,4 +233,6 @@ export type ListsAction =
   | TeamListsLoaded
   | UnloadListDetails
   | ConvertLists
-  | OfflineListsLoaded;
+  | OfflineListsLoaded
+  | ToggleAutocompletion
+  | UpdateListAtomic;

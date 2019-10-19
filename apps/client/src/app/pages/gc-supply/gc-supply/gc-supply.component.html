@@ -1,49 +1,50 @@
 <h1>{{'GC_SUPPLY.Title' | translate}}</h1>
-<form nz-form [nzLayout]="'inline'" [formGroup]="form" (ngSubmit)="getSupplies(form)" *ngIf="form$ | async as form">
+<form (ngSubmit)="getSupplies(form)" *ngIf="form$ | async as form" [formGroup]="form" [nzLayout]="'inline'" nz-form>
   <nz-form-item *ngFor="let control of form.controls | keys">
     <nz-form-control>
       <nz-input-group [nzPrefix]="jobIcon">
-        <input [formControlName]="control" nz-input required type="number" min="0" nz-tooltip
-               [nzTitle]="+control | jobName | i18n" class="lvl-input"/>
+        <input [formControlName]="control" [nzTitle]="+control | jobName | i18n" class="lvl-input" min="0" nz-input nz-tooltip
+               required type="number"/>
       </nz-input-group>
       <ng-template #jobIcon>
-        <img src="https://garlandtools.org/db/images/{{(+control | jobAbbr)?.en}}.png" alt="" class="job-icon">
+        <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{(+control | jobAbbr)?.en}}.png">
       </ng-template>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-control>
-      <button nz-button nzType="primary" [disabled]="!form.valid">
-        <i nz-icon type="search"></i>{{'GC_SUPPLY.Search' | translate}}
+      <button [disabled]="!form.valid" nz-button nzType="primary">
+        <i nz-icon nzType="search"></i>{{'GC_SUPPLY.Search' | translate}}
       </button>
     </nz-form-control>
   </nz-form-item>
 </form>
 <div *ngIf="items$ | async as supplies" class="results" fxLayout="column" fxLayoutGap="10px">
   <div *ngFor="let row of supplies" nz-row nzGutter="10">
-    <div nz-col nzMd="6" nzSm="24" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-      <img src="https://garlandtools.org/db/images/{{(row.job | jobAbbr)?.en}}.png" alt="" class="job-icon">
+    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="6" nzSm="24">
+      <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{(row.job | jobAbbr)?.en}}.png">
       <div>{{row.job | jobName | i18n}}</div>
     </div>
-    <nz-select nz-col nzMd="6" nzSm="24" [ngModel]="null" (ngModelChange)="select(row.job, $event.itemId, $event.count)"
-               nzAllowClear nzShowSearch #selectBox
-               class="item-select">
-      <nz-option *ngFor="let item of row.items" [nzValue]="item" nzLabel="{{item.itemId | itemName | i18n}} x {{item.count}}"></nz-option>
+    <nz-select #selectBox (ngModelChange)="select(row.job, $event.itemId, $event.count)" [ngModel]="null" class="item-select" nz-col
+               nzAllowClear nzMd="6" nzShowSearch
+               nzSm="24">
+      <nz-option *ngFor="let item of row.items" [nzValue]="item"
+                 nzLabel="{{item.itemId | itemName | i18n}} x {{item.count}}"></nz-option>
     </nz-select>
-    <div nz-col nzMd="6" nzSm="24" *ngIf="selectBox.value" fxLayout="row" fxLayoutGap="5px"
-         fxLayoutAlign="flex-start center">
-      <img src="https://www.garlandtools.org/files/icons/item/20.png" alt="" class="reward-icon">
+    <div *ngIf="selectBox.value" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="6"
+         nzSm="24">
+      <img alt="" class="reward-icon" src="https://www.garlandtools.org/files/icons/item/20.png">
       <div>
         {{selectBox.value.reward.seals}}
       </div>
-      <img src="https://xivapi.com/img-misc/exp.png" alt="" class="reward-icon">
+      <img alt="" class="reward-icon" src="https://xivapi.com/img-misc/exp.png">
       <div>
         {{selectBox.value.reward.xp}}
       </div>
     </div>
   </div>
-  <button nz-button nzBlock [disabled]="selection.length === 0"
-          (click)="generateList()">{{'GC_SUPPLY.Generate_list' | translate}}</button>
+  <button (click)="generateList()" [disabled]="selection.length === 0" nz-button
+          nzBlock>{{'GC_SUPPLY.Generate_list' | translate}}</button>
 </div>
 <app-fullpage-message *ngIf="pristine" height="300px">
   {{'GC_SUPPLY.Intro' | translate}}

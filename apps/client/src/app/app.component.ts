@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, Injector, OnInit, Optional, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -46,7 +46,7 @@ import { BehaviorSubject, interval, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
-import { ObservableMedia } from '@angular/flex-layout';
+import { MediaObserver } from '@angular/flex-layout';
 import { LayoutsFacade } from './core/layout/+state/layouts.facade';
 import { LazyDataService } from './core/data/lazy-data.service';
 import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
@@ -56,6 +56,10 @@ import { Theme } from './modules/settings/theme';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
+import { MachinaService } from './core/electron/machina.service';
+import { UserInventoryService } from './core/database/user-inventory.service';
+import { UniversalisService } from './core/api/universalis.service';
+import { GubalService } from './core/api/gubal.service';
 
 declare const gtag: Function;
 
@@ -122,6 +126,8 @@ export class AppComponent implements OnInit {
 
   public downloading = false;
 
+  public emptyInventory$: Observable<boolean>;
+
   public randomTip$: Observable<string> = interval(600000).pipe(
     startWith(-1),
     map(() => {
@@ -151,10 +157,11 @@ export class AppComponent implements OnInit {
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
-              private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
+              private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: MediaObserver,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private message: NzMessageService, @Inject(PLATFORM_ID) private platform: Object) {
+              private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
+              private inventoryService: UserInventoryService, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object) {
 
     this.showGiveaway = false;
 
@@ -184,9 +191,21 @@ export class AppComponent implements OnInit {
 
     if (isPlatformServer(this.platform)) {
       this.dataLoaded = true;
+      this.emptyInventory$ = of(false);
     }
 
     if (isPlatformBrowser(this.platform)) {
+      if (this.platformService.isDesktop()) {
+        this.machina.init();
+        this.gubal.init();
+        this.emptyInventory$ = this.inventoryService.getUserInventory().pipe(
+          map(inventory => {
+            return Object.keys(inventory.items).length === 0;
+          })
+        );
+        this.universalis.initCapture();
+      }
+
       this.firebase.object('maintenance')
         .valueChanges()
         .pipe(
@@ -304,6 +323,12 @@ export class AppComponent implements OnInit {
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
+  }
+
+  enablePacketCapture(): void {
+    this.ipc.machinaToggle = true;
+    this.settings.enableUniversalisSourcing = true;
+    this.ipc.send('toggle-machina', true);
   }
 
   getPathname(): string {
@@ -461,7 +486,7 @@ export class AppComponent implements OnInit {
     this.settingsPopupService.openSettings();
   }
 
-  public goToDiscord1kGiveaway(event: MouseEvent): void {
+  public goToDiscord1kGiveaway(event: any): void {
     if (event.srcElement.tagName === 'A') {
       return;
     }

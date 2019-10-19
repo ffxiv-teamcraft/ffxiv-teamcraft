@@ -1,51 +1,51 @@
 <div class="config" fxLayout="column" fxLayoutGap="5px">
-  <nz-alert nzType="danger" [nzMessage]="'SIMULATOR.Too_many_aactions' | translate" *ngIf="tooManyAactions"
-            nzShowIcon></nz-alert>
-  <label nz-checkbox [(ngModel)]="addEcho" (ngModelChange)="generateMacros()">
+  <nz-alert *ngIf="tooManyAactions" [nzMessage]="'SIMULATOR.Too_many_aactions' | translate" nzShowIcon
+            nzType="danger"></nz-alert>
+  <label (ngModelChange)="generateMacros()" [(ngModel)]="addEcho" nz-checkbox>
     {{'SIMULATOR.Include_sound_end' | translate}}
   </label>
-  <label nz-checkbox [(ngModel)]="fixedEcho" [nzDisabled]="!addEcho" (ngModelChange)="generateMacros()">
+  <label (ngModelChange)="generateMacros()" [(ngModel)]="fixedEcho" [nzDisabled]="!addEcho" nz-checkbox>
     {{'SIMULATOR.Fixed_notification_number' | translate}}
   </label>
-  <label nz-checkbox [(ngModel)]="addConsumables" (ngModelChange)="generateMacros()">
+  <label (ngModelChange)="generateMacros()" [(ngModel)]="addConsumables" nz-checkbox>
     {{'SIMULATOR.Include_consumables_notification' | translate}}
   </label>
-  <label nz-checkbox [(ngModel)]="breakOnReclaim" (ngModelChange)="generateMacros()">
+  <label (ngModelChange)="generateMacros()" [(ngModel)]="breakOnReclaim" nz-checkbox>
     {{'SIMULATOR.Break_on_reclaim' | translate}}
   </label>
-  <label nz-checkbox [(ngModel)]="macroLock" (ngModelChange)="generateMacros()">
+  <label (ngModelChange)="generateMacros()" [(ngModel)]="macroLock" nz-checkbox>
     {{'SIMULATOR.Macrolock' | translate}}
   </label>
   <div class="fields">
     <nz-form-item>
       <nz-form-label>{{'SIMULATOR.Starting_echo_number' | translate}}</nz-form-label>
-      <nz-input-number [nzMin]="1" [nzMax]="16" [(ngModel)]="echoSeNumber" [nzDisabled]="!addEcho"
-                       (ngModelChange)="generateMacros()"></nz-input-number>
+      <nz-input-number (ngModelChange)="generateMacros()" [(ngModel)]="echoSeNumber" [nzDisabled]="!addEcho" [nzMax]="16"
+                       [nzMin]="1"></nz-input-number>
     </nz-form-item>
     <nz-form-item>
       <nz-form-label>{{'SIMULATOR.Extra_wait' | translate}}</nz-form-label>
-      <nz-input-number [nzMin]="0" [nzMax]="100" [(ngModel)]="extraWait"
-                       (ngModelChange)="generateMacros()"></nz-input-number>
+      <nz-input-number (ngModelChange)="generateMacros()" [(ngModel)]="extraWait" [nzMax]="100"
+                       [nzMin]="0"></nz-input-number>
     </nz-form-item>
   </div>
 </div>
 <div class="macro">
   <pre *ngFor="let macroFragment of macro" class="macro-fragment">
-    <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard
-            [cbContent]="getText(macroFragment)">
-        <i nz-icon type="copy"></i>
+    <button [cbContent]="getText(macroFragment)" class="copy-macro" ngxClipboard nz-button nzShape="circle"
+            nzSize="small">
+        <i nz-icon nzType="copy"></i>
     </button>
-    <span class="macro-line" *ngFor="let line of macroFragment">{{line}}<br></span>
+    <span *ngFor="let line of macroFragment" class="macro-line">{{line}}<br></span>
   </pre>
 </div>
 <b>{{'SIMULATOR.Cross_class_setup' | translate}}</b>
 <nz-divider></nz-divider>
 <div class="macro">
   <pre class="macro-fragment">
-    <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard
-            [cbContent]="getText(aactionsMacro)">
-        <i nz-icon type="copy"></i>
+    <button [cbContent]="getText(aactionsMacro)" class="copy-macro" ngxClipboard nz-button nzShape="circle"
+            nzSize="small">
+        <i nz-icon nzType="copy"></i>
     </button>
-    <span class="macro-line" *ngFor="let line of aactionsMacro">{{line}}<br></span>
+    <span *ngFor="let line of aactionsMacro" class="macro-line">{{line}}<br></span>
   </pre>
 </div>

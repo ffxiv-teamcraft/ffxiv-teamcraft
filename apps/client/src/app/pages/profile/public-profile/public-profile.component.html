@@ -1,40 +1,40 @@
 <div *ngIf="characterEntry$ | async as characterEntry">
   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start flex-start" fxLayoutAlign.lt-md="center center"
        fxLayoutGap="10px">
-    <img [src]="characterEntry.character.Portrait | ifMobile: characterEntry.character.Avatar " alt=""
-         [class.portrait]="true | ifMobile: false" [class.avatar]="false |ifMobile:true">
-    <div fxLayout="column" fxFlex="1 1 auto" fxLayoutAlign.lt-md="center center">
+    <img [class.avatar]="false |ifMobile:true" [class.portrait]="true | ifMobile: false"
+         [src]="characterEntry.character.Portrait | ifMobile: characterEntry.character.Avatar " alt="">
+    <div fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign.lt-md="center center">
       <h2>
         {{characterEntry.character.Name}}
-        <i nz-icon *ngIf="!characterEntry.verified" type="exclamation-circle" nz-tooltip
-           [nzTitle]="'Not_verified' | translate"></i>
+        <i *ngIf="!characterEntry.verified" [nzTitle]="'Not_verified' | translate" nz-icon nz-tooltip
+           type="exclamation-circle"></i>
       </h2>
       <span>{{characterEntry.character.Server}}</span>
       <div *ngIf="user$ | async as user" fxLayout="row wrap" fxLayoutGap="5px">
-        <nz-tag [nzColor]="'magenta'" *ngIf="user.admin">{{'COMMON.Admin' | translate}}</nz-tag>
-        <nz-tag [nzColor]="'purple'" *ngIf="user.patron">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
-        <nz-tag [nzColor]="'orange'"
-                *ngIf="user.stats?.listsCreated > 100">{{'PROFILE.More_than_100_lists_created' | translate}}</nz-tag>
+        <nz-tag *ngIf="user.admin" [nzColor]="'magenta'">{{'COMMON.Admin' | translate}}</nz-tag>
+        <nz-tag *ngIf="user.patron" [nzColor]="'purple'">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
+        <nz-tag *ngIf="user.stats?.listsCreated > 100"
+                [nzColor]="'orange'">{{'PROFILE.More_than_100_lists_created' | translate}}</nz-tag>
         <!-- Yup, this is one year in seconds-->
-        <nz-tag [nzColor]="'geekblue'"
-                *ngIf="now - user.createdAt?.getTime()/1000 > 365.25 * 86400">{{'PROFILE.Veteran' | translate}}</nz-tag>
+        <nz-tag *ngIf="now - user.createdAt?.getTime()/1000 > 365.25 * 86400"
+                [nzColor]="'geekblue'">{{'PROFILE.Veteran' | translate}}</nz-tag>
       </div>
       <div *ngIf="gearSets$ | async as sets" fxLayout="row wrap" fxLayoutAlign="space-evenly">
-        <div class="stat-row" *ngFor="let set of sets" fxLayout="column" fxLayoutAlign="center center">
-          <img src="https://garlandtools.org/db/images/{{(set.jobId | jobAbbr)?.en}}.png" alt="" class="job-icon">
+        <div *ngFor="let set of sets" class="stat-row" fxLayout="column" fxLayoutAlign="center center">
+          <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{(set.jobId | jobAbbr)?.en}}.png">
           <div>{{set.level}}</div>
         </div>
       </div>
-      <nz-list [nzHeader]="'Public_lists' | translate" [nzDataSource]="communityLists$ | async" [nzRenderItem]="list">
+      <nz-list [nzDataSource]="communityLists$ | async" [nzHeader]="'Public_lists' | translate" [nzRenderItem]="list">
         <ng-template #list let-list>
-          <app-list-panel [list]="list" [publicDisplay]="true" [hideAvatar]="true"></app-list-panel>
+          <app-list-panel [hideAvatar]="true" [list]="list" [publicDisplay]="true"></app-list-panel>
         </ng-template>
       </nz-list>
-      <nz-list [nzHeader]="'SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate"
-               [nzDataSource]="communityRotations$ | async"
+      <nz-list [nzDataSource]="communityRotations$ | async"
+               [nzHeader]="'SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate"
                [nzRenderItem]="rotation">
         <ng-template #rotation let-rotation>
-          <app-rotation-panel [rotation]="rotation" [publicDisplay]="true"></app-rotation-panel>
+          <app-rotation-panel [publicDisplay]="true" [rotation]="rotation"></app-rotation-panel>
         </ng-template>
       </nz-list>
     </div>

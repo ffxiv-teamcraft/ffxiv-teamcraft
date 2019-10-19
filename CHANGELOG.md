@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.0"></a>
+# [6.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.5...v6.0.0) (2019-10-19)
+
+
+### Bug Fixes
+
+* **i18n:** fixed "rp" label in ingame alarm macro generator ([d265bb5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d265bb5))
+* **log-tracker:** fixed wrong * label on other masterbook recipes ([52590ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/52590ff))
+* **search:** fixed an issue with debounce not being applied properly in some cases ([dbe0eeb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dbe0eeb))
+
+
+### Features
+
+* added chinese data for 5.0 update ([172bb0f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/172bb0f))
+* **lists:** implemented proper atomic update for list progression input ([840422e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/840422e))
+* **lists:** removed all the unnecessary persisted data from lists ([c866760](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c866760))
+* **simulator:** added starting quality input for when there's no ingredients data ([7f83248](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7f83248)), closes [#1117](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1117)
+* added packet capture features (https://wiki.ffxivteamcraft.com/advanced-features/packet-capture) ([#1113](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1113)) ([73e6eb9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73e6eb9))
+* added support for stats autofilling using packet capture ([e35da0c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e35da0c))
+
+
+
 <a name="5.8.5"></a>
 ## [5.8.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v5.8.4...v5.8.5) (2019-09-20)
 

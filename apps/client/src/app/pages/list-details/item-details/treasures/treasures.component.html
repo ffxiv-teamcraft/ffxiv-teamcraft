@@ -1,4 +1,4 @@
-<nz-list [nzRenderItem]="treasureTemplate" [nzDataSource]="item.treasures">
+<nz-list [nzDataSource]="item.treasures" [nzRenderItem]="treasureTemplate">
   <ng-template #treasureTemplate let-treasure>
     <nz-list-item>
       <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="title">
@@ -7,7 +7,7 @@
         <span [appItemRarity]="treasure.itemId">{{treasure.itemId | itemName | i18n}}</span>
       </ng-template>
       <ng-template #avatar>
-        <app-item-icon [width]="32" [icon]="treasure.icon" [itemId]="treasure.itemId"></app-item-icon>
+        <app-item-icon [icon]="treasure.icon" [itemId]="treasure.itemId" [width]="32"></app-item-icon>
       </ng-template>
     </nz-list-item>
   </ng-template>

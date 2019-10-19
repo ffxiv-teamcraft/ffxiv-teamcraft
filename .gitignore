@@ -1,4 +1,6 @@
 service-account.json
+service-account-beta.json
+lists.json
 ssr/output
 functions/dist
 *.log

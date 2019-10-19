@@ -6,6 +6,7 @@ export interface ListsState {
   compacts: List[];
   listDetails: List[];
   selectedId?: string; // which Lists record has been selected
+  autocompletionEnabled?: boolean;
   compactsConnected: boolean;
   needsVerification: boolean;
   deleted: string[];
@@ -29,6 +30,14 @@ export function listsReducer(
       state = {
         ...state,
         needsVerification: action.verificationNeeded
+      };
+      break;
+    }
+
+    case ListsActionTypes.ToggleAutocompletion: {
+      state = {
+        ...state,
+        autocompletionEnabled: action.enabled
       };
       break;
     }

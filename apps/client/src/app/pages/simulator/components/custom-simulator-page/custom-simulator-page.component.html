@@ -1,51 +1,51 @@
 <div fxLayout="column" fxLayoutGap="10px">
   <nz-collapse class="custom-config">
-    <nz-collapse-panel [nzHeader]="'SIMULATOR.CUSTOM.Recipe_configuration' | translate" [nzActive]="true">
-      <form nz-form [formGroup]="recipeForm" [nzLayout]="'inline'">
+    <nz-collapse-panel [nzActive]="true" [nzHeader]="'SIMULATOR.CUSTOM.Recipe_configuration' | translate">
+      <form [formGroup]="recipeForm" [nzLayout]="'inline'" nz-form>
         <nz-form-item>
           <nz-form-label nzFor="rlvl">rlvl</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="rlvl" name="rlvl" type="text" id="rlvl"></nz-input-number>
+            <nz-input-number formControlName="rlvl" id="rlvl" name="rlvl" type="text"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="durability">lvl</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="level" name="level"
-                             id="level"></nz-input-number>
+            <nz-input-number formControlName="level" id="level"
+                             name="level"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="progress">progress</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="progress" name="progress" type="text" id="progress"></nz-input-number>
+            <nz-input-number formControlName="progress" id="progress" name="progress" type="text"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="quality">quality</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="quality" name="quality" type="text" id="quality"></nz-input-number>
+            <nz-input-number formControlName="quality" id="quality" name="quality" type="text"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="durability">durability</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="durability" name="durability" type="text"
-                             id="durability"></nz-input-number>
+            <nz-input-number formControlName="durability" id="durability" name="durability"
+                             type="text"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="suggCraft">Suggested Craftsmanship</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="suggCraft" name="suggCraft" type="text"
-                             id="suggCraft"></nz-input-number>
+            <nz-input-number formControlName="suggCraft" id="suggCraft" name="suggCraft"
+                             type="text"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="suggCtrl">Suggested Control</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="suggCtrl" name="suggCtrl" type="text"
-                             id="suggCtrl"></nz-input-number>
+            <nz-input-number formControlName="suggCtrl" id="suggCtrl" name="suggCtrl"
+                             type="text"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
       </form>
