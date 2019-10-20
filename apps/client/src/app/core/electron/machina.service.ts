@@ -13,7 +13,8 @@ import {
   shareReplay,
   startWith,
   switchMap,
-  withLatestFrom
+  withLatestFrom,
+  tap
 } from 'rxjs/operators';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { interval, merge, Observable, of, Subject } from 'rxjs';
@@ -40,6 +41,7 @@ export class MachinaService {
   private retainerSpawns$: Observable<string> = this.ipc.npcSpawnPackets$.pipe(
     filter(spawn => spawn.modelType === 0x0A),
     map(spawn => spawn.name),
+    tap(name => this.ipc.log('Retainer spawn', name)),
     startWith('')
   );
 
@@ -62,9 +64,10 @@ export class MachinaService {
           && packet.slot < 32000
           && packet.catalogId < 40000;
       }),
-      buffer(this.ipc.itemInfoPackets$.pipe(debounceTime(50))),
+      buffer(this.ipc.itemInfoPackets$.pipe(debounceTime(1000))),
       filter(packets => packets.length > 0),
       withLatestFrom(this.retainerSpawns$),
+      tap(([itemInfos, lastRetainerSpawned]) => this.ipc.log('ItemInfos', itemInfos.length, lastRetainerSpawned)),
       switchMap(([itemInfos, lastRetainerSpawned]) => {
         return this.inventory$.pipe(
           first(),
@@ -127,7 +130,7 @@ export class MachinaService {
           ContainerType.FreeCompanyBag1,
           ContainerType.FreeCompanyBag2].indexOf(packet.toContainer) > -1;
         if (fromFCChest || toFCChest) {
-          return interval(1000);
+          return interval(2000);
         }
         return of(null);
       }),

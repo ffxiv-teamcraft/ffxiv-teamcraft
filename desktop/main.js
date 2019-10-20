@@ -384,7 +384,7 @@ ipcMain.on('show-devtools', () => {
 });
 
 ipcMain.on('log', (event, entry) => {
-  log[entry.level](entry.data);
+  log.log(...entry);
 });
 
 ipcMain.on('notification', (event, config) => {
