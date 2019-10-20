@@ -31,16 +31,19 @@ export class UserInventory extends DataWithPermissions {
     const previousQuantity = item ? item.quantity : 0;
     if (packet.quantity === 0 && packet.catalogId === 0) {
       delete this.items[containerKey][packet.slot];
-      return {
-        itemId: item.itemId,
-        quantity: -1 * item.quantity,
-        containerId: packet.containerId,
-        hq: item.hq,
-        spiritBond: item.spiritBond
-      };
+      if (item !== undefined) {
+        return {
+          itemId: item.itemId,
+          quantity: -1 * item.quantity,
+          containerId: packet.containerId,
+          hq: item.hq,
+          spiritBond: item.spiritBond
+        };
+      }
+      return null;
     }
     // Happens if you add an item that you never had in your inventory before (in an empty slot)
-    if (item === undefined) {
+    if (item === undefined && packet.quantity > 0) {
       const entry: InventoryItem = {
         itemId: packet.catalogId,
         quantity: packet.quantity,
