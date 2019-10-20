@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.4"></a>
+## [6.0.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.2...v6.0.4) (2019-10-20)
+
+
+### Bug Fixes
+
+* **quota:** atomic update will only be used for shared lists now ([ac47566](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ac47566))
+
+
+
 <a name="6.0.3"></a>
 ## [6.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.0...v6.0.3) (2019-10-20)
 

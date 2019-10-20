@@ -146,4 +146,8 @@ export class IpcService {
       console.info(packet.type, packet);
     }
   }
+
+  public log(...args: any[]):void{
+    this.send('log', args);
+  }
 }
