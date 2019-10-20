@@ -51,7 +51,6 @@ import { ListCompletionPopupComponent } from '../list-completion-popup/list-comp
 import { TranslateService } from '@ngx-translate/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { ListStore } from '../../../core/database/storage/list/list-store';
-import { groupBy } from 'lodash';
 
 @Injectable()
 export class ListsEffects {
@@ -262,12 +261,7 @@ export class ListsEffects {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
       }
-      const hasMultipleContributors = Object.keys(groupBy(action.payload.modificationsHistory, 'userId')).length > 1;
-      if (hasMultipleContributors) {
-        return this.listService.atomicUpdate(action.payload.$key, action.payload);
-      } else {
-        return this.listService.update(action.payload.$key, action.payload);
-      }
+      return this.listService.atomicUpdate(action.payload.$key, action.payload);
     })
   );
 
