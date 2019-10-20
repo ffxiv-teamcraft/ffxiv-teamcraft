@@ -372,7 +372,7 @@
     "Clickthrough_overlay": "오버레이 클릭 무시",
     "Disable_search_history": "검색 기록 비활성화",
     "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
-    "Enable_packet_capture": "패킷 캡쳐를 사용 (실시간 인벤토리 동기화 기능추가)",
+    "Enable_packet_capture": "패킷 캡쳐를 사용 (실시간 소지품 동기화 기능 추가)",
     "Packet_capture_info": "ACT와 마찬가지로 ToS기술을 이용하는 패킷 캡쳐는 이용약관에 위배됩니다. 하지만 스퀘어에닉스에서는 다른 사람들에게 알리지 않는 이상 이러한 프로그램들의 사용을 용인하므로 선택적으로 사용하시면 됩니다. 위험을 감수하고 싶지 않으시다면 사용을 하지 않으시면 됩니다.",
     "Contribute_to_universalis": "Universalis에 기여하기",
     "COLORS": {
@@ -1529,17 +1529,17 @@
     "Banner_title": "패킷 캡쳐를 사용할 수 있습니다",
     "Button_label": "패킷 캡쳐 활성화",
     "Banner_description": "팀크래프트가 게임 내의 패킷을 읽을 수 있도록 패킷 캡쳐를 활성화시킬 수 있습니다. (설정에 있는 체크박스로 활성화/비활성화 할 수 있음) 활성화시켰을 경우 아이템을 얻을 경우 자동으로 목록을 채워주며, 해당 정보를 Universalis에 제공하여 장터 애그리게이터(aggragator) 에 기여합니다.",
-    "Banner_description_warning": "ToS기술을 이용하는 패킷 캡쳐는 이용약관에 위배되므로 기본값은 비활성화 상태입니다. 게임 상에서 다른 사람들에게 이 기능을 사용한다는 것을 이야기하지 않는다면 이 기능을 사용하는 데에는 문제가 없을겁니다.",
+    "Banner_description_warning": "패킷 캡쳐는 이용약관(ToS) 에 위배되므로 기본값은 비활성화 상태입니다. 게임 상에서 다른 사람들에게 이 기능을 사용한다는 것을 이야기하지 않는다면 이 기능을 사용하는 데에는 문제가 없습니다.",
     "Empty_inventory": "소지품을 아직 불러오지 못했습니다",
     "Please_zone": "소지품 시스템을 초기화하려면 임의의 위치로 텔레포트 한 다음 초코보 가방을 열어주세요.",
     "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
     "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다.",
-    "Inventory_outdated": "Your inventory is outdated",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
+    "Inventory_outdated": "소지품 연동 정보가 오래되었습니다",
+    "Please_update_inventory_popup": "소지품 업데이트를 위하여 지역을 이동해주세요. 이 팝업은 지역을 이동하면 사라집니다. (텔레포를 사용하거나 하우징에 들어가세요)"
   },
   "INVENTORY": {
     "Title": "소지품",
-    "Empty": "빈 소지품",
+    "Empty": "소지품이 비어있습니다",
     "Estimate_total_price": "소지품의 총 가격을 측정합니다.",
     "Copy_to_clipboard": "소지품 내역을 클립보드로 복사",
     "Copied_to_clipboard": "소지품 내역이 클립보드에 복사되었습니다",
@@ -1547,7 +1547,7 @@
     "Contribute_to_universalis": "Universalis에 데이터를 기여하기",
     "BAG": {
       "SaddleBag": "초코보 가방",
-      "FC_chest": "FC chest",
+      "FC_chest": "부대 금고",
       "Bag": "소지품",
       "Other": "다른 소지품"
     }

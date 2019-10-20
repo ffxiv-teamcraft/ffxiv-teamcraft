@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.6"></a>
+## [6.0.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.4...v6.0.6) (2019-10-20)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an error happening randomly with log entries ([77ce7c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/77ce7c0))
+* **firestore:** fixed an issue exponentially breaking database usage ([29528ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/29528ab))
+* **inventory:** fixed an issue with retainer tracking for right click interactions ([a895508](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a895508))
+
+
+
 <a name="6.0.5"></a>
 ## [6.0.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.4...v6.0.5) (2019-10-20)
 
