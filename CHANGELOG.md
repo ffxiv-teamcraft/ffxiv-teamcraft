@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.3"></a>
+## [6.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.0...v6.0.3) (2019-10-20)
+
+
+### Bug Fixes
+
+* **import:** fixed an issue with list link importer ([a3b162b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a3b162b))
+* **inventory:** fixed an issue with premium saddlebag not being tracked properly ([a10d0cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a10d0cf))
+* **inventory:** fixed crystals and currencies tracking ([82b6467](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/82b6467))
+* **inventory:** fixed FC chest interactions ([6d6b0db](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6d6b0db))
+* **lists:** fixed a display bug happening in some lists created with 6.0.0 ([8ca37a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8ca37a7))
+* **lists:** fixed an issue with yield being forced to 1 ([7e77fda](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e77fda))
+* **permissions:** fixes permissions box crashing when opened ([1268840](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1268840))
+* **quota:** atomic update will only be used for shared lists now ([ac47566](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ac47566))
+* **rotation-picker:** fixed an issue with rotation picker not opening anymore ([7d517cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7d517cd))
+
+
+### Features
+
+* **lists:** added amount in inventory inside requirements popup ([a8ced2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a8ced2c))
+
+
+
 <a name="6.0.2"></a>
 ## [6.0.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.0...v6.0.2) (2019-10-19)
 
