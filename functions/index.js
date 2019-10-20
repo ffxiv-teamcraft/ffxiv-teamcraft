@@ -69,6 +69,9 @@ exports.createListCompacts = functions.runWith(runtimeOpts).firestore.document('
 });
 
 exports.updateListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((snap, context) => {
+  if (JSON.stringify(snap.before.data().finalItems) === JSON.stringify(snap.after.data().finalItems)) {
+    return Promise.resolve();
+  }
   const compact = getCompact(snap.after.data());
   return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).set(compact);
 });
