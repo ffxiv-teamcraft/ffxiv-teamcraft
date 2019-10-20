@@ -1547,6 +1547,7 @@
     "Contribute_to_universalis": "Contribute data to universalis",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
+      "FC_chest": "FC chest",
       "Bag": "Inventory",
       "Other": "Other inventory"
     }
