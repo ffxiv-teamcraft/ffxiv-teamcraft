@@ -1534,7 +1534,7 @@
     "Please_zone": "소지품 시스템을 초기화하려면 임의의 위치로 텔레포트 한 다음 초코보 가방을 열어주세요.",
     "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
     "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다.",
-    "Inventory_outdated": "Your inventory is outdated",
+    "Inventory_outdated": "소지품 연동 정보가 오래되었습니다",
     "Please_update_inventory_popup": "소지품 업데이트를 위하여 지역을 이동해주세요. 이 팝업은 지역을 이동하면 사라집니다. (텔레포를 사용하거나 하우징에 들어가세요)"
   },
   "INVENTORY": {
@@ -1547,7 +1547,7 @@
     "Contribute_to_universalis": "Universalis에 데이터를 기여하기",
     "BAG": {
       "SaddleBag": "초코보 가방",
-      "FC_chest": "FC chest",
+      "FC_chest": "부대 금고",
       "Bag": "소지품",
       "Other": "다른 소지품"
     }
