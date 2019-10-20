@@ -69,6 +69,9 @@ exports.createListCompacts = functions.runWith(runtimeOpts).firestore.document('
 });
 
 exports.updateListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((snap, context) => {
+  if (JSON.stringify(snap.before.data().finalItems) === JSON.stringify(snap.after.data().finalItems)) {
+    return Promise.resolve();
+  }
   const compact = getCompact(snap.after.data());
   return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).set(compact);
 });
@@ -94,14 +97,6 @@ exports.userIdValidator = functions.runWith(runtimeOpts).https.onRequest((reques
   return firestore.collection('users').doc(userId).get().then(snap => {
     response.status(200).set('Content-Type', 'application/json').send(`{"valid": ${snap.exists}}`);
   });
-});
-
-exports.app = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
-  try {
-    require(`${process.cwd()}/dist/client-webpack/server`).app(request, response);
-  } catch (e) {
-    // Ignoring the errors, this is ssr so specific stuff is to be expected.
-  }
 });
 
 exports.solver = functions.runWith(runtimeOpts).https.onRequest((req, res) => {

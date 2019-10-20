@@ -19,9 +19,8 @@ import {
   UnloadListDetails,
   UpdateItem,
   UpdateList,
-  UpdateListIndex,
   UpdateListAtomic,
-  ToggleAutocompletion
+  UpdateListIndex
 } from './lists.actions';
 import {
   catchError,
@@ -51,10 +50,8 @@ import { NzModalService } from 'ng-zorro-antd';
 import { ListCompletionPopupComponent } from '../list-completion-popup/list-completion-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { ListStore } from '../../../core/database/storage/list/list-store';
-import { UserInventoryService } from '../../../core/database/user-inventory.service';
-import { environment } from '../../../../environments/environment';
+import { groupBy } from 'lodash';
 
 @Injectable()
 export class ListsEffects {
@@ -260,12 +257,17 @@ export class ListsEffects {
   @Effect({ dispatch: false })
   atomicListUpdate = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateListAtomic),
-    switchMap(action => {
+    switchMap((action) => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
       }
-      return this.listService.atomicUpdate(action.payload.$key, action.payload);
+      const hasMultipleContributors = Object.keys(groupBy(action.payload.modificationsHistory, 'userId')).length > 1;
+      if (hasMultipleContributors) {
+        return this.listService.atomicUpdate(action.payload.$key, action.payload);
+      } else {
+        return this.listService.update(action.payload.$key, action.payload);
+      }
     })
   );
 

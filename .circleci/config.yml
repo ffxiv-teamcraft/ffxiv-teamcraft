@@ -83,7 +83,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 npm run build:prod
             else
-                npm run build:prod
+                npm run build:beta
             fi
       - save_cache:
           key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -137,24 +137,6 @@ jobs:
           name: Deploying web
           command: ./node_modules/.bin/firebase deploy -P beta --only hosting --token "$FIREBASE_TOKEN"
 
-  deploy-ssr-prod:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Deploying SSR fucntions
-          command: npm run build:ssr:ci && ./node_modules/.bin/firebase deploy -P default --only functions --token "$FIREBASE_TOKEN"
-
-  deploy-ssr-beta:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Deploying SSR fucntions
-          command: npm run build:ssr:ci && ls -lisah ./functions && ls -lisah ./dist && ./node_modules/.bin/firebase deploy -P beta --only functions --token "$FIREBASE_TOKEN"
-
 
 workflows:
   version: 2
@@ -189,19 +171,7 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy-ssr-prod:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
       - deploy-staging:
-          requires:
-            - build
-          filters:
-            branches:
-              only: staging
-      - deploy-ssr-beta:
           requires:
             - build
           filters:
