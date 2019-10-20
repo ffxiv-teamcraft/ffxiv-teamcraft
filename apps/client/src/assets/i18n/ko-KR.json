@@ -1535,7 +1535,7 @@
     "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
     "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다.",
     "Inventory_outdated": "Your inventory is outdated",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
+    "Please_update_inventory_popup": "소지품 업데이트를 위하여 지역을 이동해주세요. 이 팝업은 지역을 이동하면 사라집니다. (텔레포를 사용하거나 하우징에 들어가세요)"
   },
   "INVENTORY": {
     "Title": "소지품",
