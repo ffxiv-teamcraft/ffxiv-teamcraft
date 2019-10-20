@@ -96,14 +96,6 @@ exports.userIdValidator = functions.runWith(runtimeOpts).https.onRequest((reques
   });
 });
 
-exports.app = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
-  try {
-    require(`${process.cwd()}/dist/client-webpack/server`).app(request, response);
-  } catch (e) {
-    // Ignoring the errors, this is ssr so specific stuff is to be expected.
-  }
-});
-
 exports.solver = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
   res.set('Access-Control-Allow-Methods', 'POST');
   res.set('Access-Control-Allow-Origin', '*');
