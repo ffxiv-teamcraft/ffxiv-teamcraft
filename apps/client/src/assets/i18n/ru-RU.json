@@ -139,10 +139,10 @@
     "Bottom": "Внизу",
     "Amount": "Количество",
     "Undo": "Undo",
-    "User": "User",
+    "User": "Пользователь",
     "Tables": "Table",
     "Pie_charts": "Pie charts",
-    "Read_more_on_wiki": "Read more details on wiki"
+    "Read_more_on_wiki": "Подробнее на вики"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -374,7 +374,7 @@
     "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
     "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
-    "Contribute_to_universalis": "Contribute to Universalis",
+    "Contribute_to_universalis": "Внести данные в Universalis",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -416,7 +416,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Пожалуйста, подтвердите персонажа чтоб иметь доступ к спискам вашей ФК",
+    "Needs_verification": "Пожалуйста, подтвердите персонажа чтоб иметь доступ к спискам вашей FC",
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
     "Merge_lists": "Объединить списки",
@@ -884,7 +884,7 @@
       "Save_consumables": "Сохранить эти расходные материалы по умолчанию",
       "No_food": "Без еды",
       "No_medicine": "Нет медикаментов",
-      "No_fc_buffs": "Нет ФК баффов",
+      "No_fc_buffs": "Нет FC баффов",
       "Quest_warning": "Убедитесь, что вы выполнили задание 70 ур. для \"Stroke of Genius\"",
       "Starting_quality": "Начальное качество",
       "STATS": {
@@ -1030,7 +1030,7 @@
     "History": "История",
     "Purchase_date": "Дата",
     "More_on_mogboard": "Подробнее на mogboard'е",
-    "More_on_universalis": "More details on universalis",
+    "More_on_universalis": "Подробнее на Universalis",
     "Server": "Сервер"
   },
   "COMMENTS": {
@@ -1547,7 +1547,7 @@
     "Contribute_to_universalis": "Внести данные в universalis",
     "BAG": {
       "SaddleBag": "Сумка Чокобо",
-      "FC_chest": "FC chest",
+      "FC_chest": "FC сундук",
       "Bag": "Инвентарь",
       "Other": "Другой инвентарь"
     }
