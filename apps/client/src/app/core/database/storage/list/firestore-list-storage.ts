@@ -11,7 +11,9 @@ import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { diff } from 'deep-diff';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class FirestoreListStorage extends FirestoreStorage<List> implements ListStore {
 
   private static readonly PERSISTED_LIST_ROW_PROPERTIES = ['amount', 'done', 'amount_needed', 'used', 'id', 'icon', 'recipeId', 'yield', 'workingOnIt', 'requiredAsHQ', 'custom', 'attachedRotation', 'requires'];

@@ -10,7 +10,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { HttpClient } from '@angular/common/http';
 import { LogTrackingService } from './log-tracking.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService extends FirestoreStorage<TeamcraftUser> {
 
   userCache = {};
@@ -21,7 +23,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
-  public get(uid: string, external = false): Observable<TeamcraftUser> {
+  public get(uid: string, external = false, isCurrentUser = false): Observable<TeamcraftUser> {
     if (this.userCache[uid] === undefined) {
       if (!uid) {
         return EMPTY;
@@ -53,7 +55,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
           );
         }),
         switchMap(user => {
-          if (user.defaultLodestoneId) {
+          if (user.defaultLodestoneId && isCurrentUser) {
             return this.logTrackingService.get(`${user.$key}:${user.defaultLodestoneId.toString()}`).pipe(
               catchError(() => {
                 return of({

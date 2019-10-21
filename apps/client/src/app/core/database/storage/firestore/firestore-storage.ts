@@ -194,44 +194,22 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
 
   get(uid: string, uriParams?: any): Observable<T> {
     if (this.cache[uid] === undefined) {
-      this.cache[uid] = combineLatest([
-        this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).snapshotChanges(),
-        ...this.subcollections.map(subcollection => {
-          return this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).collection(subcollection).snapshotChanges()
-            .pipe(
-              map(changes => ({ changes: changes, subcollection: subcollection }))
-            );
-        })
-      ]).pipe(
-        debounceTime(250),
-        map((snaps: any[]) => {
-          const snap = snaps[0];
-          const valueWithKey: T = <T>{ $key: snap.payload.id, ...snap.payload.data() };
-          if (!snap.payload.exists) {
-            throw new Error(`${this.getBaseUri(uriParams)}/${uid} Not found`);
-          }
-          this.subcollections.forEach(subcollection => {
-            valueWithKey[subcollection] = valueWithKey[subcollection] || [];
-          });
-          snaps.slice(1).forEach(subSnaps => {
-            subSnaps.changes
-              .filter(change => change.payload !== undefined)
-              .forEach(change => {
-                const subValueWithKey = { $key: change.payload.doc.id, ...change.payload.doc.data() };
-                valueWithKey[subSnaps.subcollection].push(subValueWithKey);
-              });
-          });
-          const res = this.serializer.deserialize<T>(valueWithKey, this.getClass());
-          if ((res as any).afterDeserialized) {
-            (res as any).afterDeserialized();
-          }
-          this.subcollections.forEach(subcollection => {
-            res[subcollection] = uniqBy(res[subcollection], '$key');
-          });
-          return res;
-        }),
-        tap(res => this.syncCache[uid] = res)
-      );
+      console.log('GET', this.getBaseUri(uriParams), uid);
+      this.cache[uid] = this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).snapshotChanges()
+        .pipe(
+          map((snap: any) => {
+            const valueWithKey: T = <T>{ $key: snap.payload.id, ...snap.payload.data() };
+            if (!snap.payload.exists) {
+              throw new Error(`${this.getBaseUri(uriParams)}/${uid} Not found`);
+            }
+            const res = this.serializer.deserialize<T>(valueWithKey, this.getClass());
+            if ((res as any).afterDeserialized) {
+              (res as any).afterDeserialized();
+            }
+            return res;
+          }),
+          tap(res => this.syncCache[uid] = res)
+        );
     }
     return this.cache[uid].pipe(
       map(data => {

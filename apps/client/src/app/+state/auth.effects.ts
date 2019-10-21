@@ -111,14 +111,14 @@ export class AuthEffects {
   @Effect()
   fetchUserOnAuthenticated$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated),
-    switchMap((action: Authenticated) => this.userService.get(action.uid).pipe(
+    switchMap((action: Authenticated) => this.userService.get(action.uid, false, true).pipe(
       switchMap(user => {
         if (user.notFound) {
           delete this.userService.userCache[action.uid];
           return this.userService.set(action.uid, new TeamcraftUser()).pipe(
             delay(100),
             switchMap(() => {
-              return this.userService.get(action.uid);
+              return this.userService.get(action.uid, false, true);
             })
           );
         }
