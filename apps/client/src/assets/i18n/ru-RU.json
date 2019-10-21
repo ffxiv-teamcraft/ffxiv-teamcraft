@@ -1548,8 +1548,8 @@
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
       "FC_chest": "FC chest",
-      "Bag": "Inventory",
-      "Other": "Other inventory"
+      "Bag": "Инвентарь",
+      "Other": "Другой инвентарь"
     }
   }
 }
