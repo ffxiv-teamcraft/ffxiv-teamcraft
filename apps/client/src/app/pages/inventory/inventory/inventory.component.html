@@ -18,16 +18,24 @@
           </ng-template>
           <ng-template #extraTemplate>
             <div fxLayout="row" fxLayoutGap="5px">
-              <button (cbOnSuccess)="inventoryCopied()" [cbContent]="getClipboardContent(inventory)" [nzTitle]="'INVENTORY.Copy_to_clipboard' | translate"
+              <button (cbOnSuccess)="inventoryCopied()" [cbContent]="getClipboardContent(inventory)"
+                      [nzTitle]="'INVENTORY.Copy_to_clipboard' | translate"
                       ngxClipboard nz-button nz-tooltip
                       nzShape="circle"
                       nzSize="small">
                 <i nz-icon nzType="copy"></i>
               </button>
-              <button (click)="computePrices(inventory)" [disabled]="computingPrices[inventory.containerName]" [nzTitle]="'INVENTORY.Estimate_total_price' | translate" nz-button
+              <button (click)="computePrices(inventory)" [disabled]="computingPrices[inventory.containerName]"
+                      [nzTitle]="'INVENTORY.Estimate_total_price' | translate" nz-button
                       nz-tooltip nzShape="circle"
                       nzSize="small">
                 <i iconfont="icon-dollar" nz-icon></i>
+              </button>
+              <button (nzOnConfirm)="deleteInventory(inventory)" nz-popconfirm
+                      [nzPopconfirmTitle]="'Confirmation' | translate"
+                      [nzTitle]="'INVENTORY.Reset_inventory' | translate" nz-button
+                      nz-tooltip nzShape="circle" nzSize="small" nzType="danger">
+                <i nzType="delete" nz-icon></i>
               </button>
             </div>
           </ng-template>

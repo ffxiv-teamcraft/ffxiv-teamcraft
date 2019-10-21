@@ -1,7 +1,7 @@
 import { InventoryItem } from '../../model/user/inventory/inventory-item';
 
 export interface InventoryDisplay {
-  containerId: number;
+  containerIds: (number | string)[];
 
   isRetainer: boolean;
 
