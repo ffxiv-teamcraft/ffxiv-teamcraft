@@ -7,7 +7,7 @@
       {{'Back_to_list' | translate}}
     </button>
 
-    <label (ngModelChange)="updateCosts(list)" [(ngModel)]="settings.expectToSellEverything" nz-checkbox>
+    <label [(ngModel)]="settings.expectToSellEverything" (ngModelChange)="updateCosts(list)" nz-checkbox>
       {{'PRICING.Expect_to_sell_everything' | translate}}
     </label>
   </div>
@@ -163,10 +163,10 @@
   <nz-card [nzTitle]="'Discounts' | translate">
     <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="10px">
       <nz-input-group [nzAddOnBefore]="'Flat_discount' | translate" nzAddOnAfter="gil">
-        <input (ngModelChange)="saveDiscounts(list.$key)" [(ngModel)]="flatDiscount" nz-input type="number"/>
+        <input [(ngModel)]="flatDiscount" (ngModelChange)="saveDiscounts(list.$key)" nz-input type="number"/>
       </nz-input-group>
       <nz-input-group [nzAddOnBefore]="'Percent_discount' | translate" nzAddOnAfter="%">
-        <input (ngModelChange)="saveDiscounts(list.$key)" [(ngModel)]="discount" nz-input type="number"/>
+        <input [(ngModel)]="discount" (ngModelChange)="saveDiscounts(list.$key)" nz-input type="number"/>
       </nz-input-group>
     </div>
   </nz-card>

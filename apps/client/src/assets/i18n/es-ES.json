@@ -1545,6 +1545,7 @@
     "Copied_to_clipboard": "Inventario copiado al portapapeles",
     "Click_to_add_to_progression": "Haga clic para agregar a la progresión de artículos",
     "Contribute_to_universalis": "Contribuir datos a Universalis",
+    "Reset_inventory": "Reset this inventory",
     "BAG": {
       "SaddleBag": "Alforja de Chocobo",
       "FC_chest": "FC chest",

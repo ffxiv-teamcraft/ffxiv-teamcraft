@@ -15,7 +15,7 @@
     <div [nzXs]="8" nz-col>{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}</div>
     <nz-input-number [(ngModel)]="set.control" [nzXs]="16" nz-col></nz-input-number>
   </div>
-  <label (ngModelChange)="applySpecChange(set, $event)" *ngIf="jobId <= 15" [(ngModel)]="set.specialist"
+  <label [(ngModel)]="set.specialist" *ngIf="jobId <= 15" (ngModelChange)="applySpecChange(set, $event)"
          class="spec-checkbox" nz-checkbox>{{'SIMULATOR.CONFIGURATION.Specialist' | translate}}</label>
   <div fxLayout="row" fxLayoutGap="5px">
     <button (click)="save(set)" nz-button nzType="primary">{{'Save' | translate}}</button>

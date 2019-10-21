@@ -36,7 +36,7 @@
                 {{'TEAMS.Enable_discord_updates' | translate }}
               </button>
               <span>{{'COMMON.Language' | translate }}:</span>
-              <nz-select (ngModelChange)="updateTeam(team)" [(ngModel)]="team.language">
+              <nz-select [(ngModel)]="team.language" (ngModelChange)="updateTeam(team)">
                 <nz-option [nzLabel]="'en'" [nzValue]="'en'"></nz-option>
                 <nz-option [nzLabel]="'fr'" [nzValue]="'fr'"></nz-option>
                 <nz-option [nzLabel]="'de'" [nzValue]="'de'"></nz-option>

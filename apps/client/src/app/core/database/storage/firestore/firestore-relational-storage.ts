@@ -5,15 +5,17 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { METADATA_FOREIGN_KEY_REGISTRY } from '../../relational/foreign-key';
 import { Class } from '@kaiu/serializer';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { DataModel } from '../data-model';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export abstract class FirestoreRelationalStorage<T extends DataModel> extends FirestoreStorage<T> {
 
   private readonly modelInstance: T;
+
+  private foreignKeyCache: { [index: string]: Observable<T[]> } = {};
 
   protected constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService,
                         protected zone: NgZone, protected pendingChangesService: PendingChangesService) {
@@ -29,18 +31,26 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
       throw new Error(`No foreign key in class ${this.getClass().name} for entity ${foreignEntityClass.name}`);
     }
     const foreignPropertyKey = foreignPropertyEntry.property;
-    return this.firestore.collection(this.getBaseUri(uriParams), ref => ref.where(foreignPropertyKey, '==', foreignKeyValue))
-      .snapshotChanges()
-      .pipe(
-        map((snaps: DocumentChangeAction<T>[]) => {
-          const rotations = snaps
-            .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: T = <T>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
-              delete snap.payload;
-              return valueWithKey;
+    if (this.foreignKeyCache[foreignKeyValue] === undefined) {
+      this.foreignKeyCache[foreignKeyValue] = this.firestore.collection(this.getBaseUri(uriParams), ref => ref.where(foreignPropertyKey, '==', foreignKeyValue))
+        .snapshotChanges()
+        .pipe(
+          map((snaps: DocumentChangeAction<T>[]) => {
+            const rotations = snaps
+              .map((snap: DocumentChangeAction<any>) => {
+                const valueWithKey: T = <T>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+                delete snap.payload;
+                return valueWithKey;
+              });
+            return this.serializer.deserialize<T>(rotations, [this.getClass()]);
+          }),
+          tap(elements => {
+            elements.forEach(el => {
+              this.syncCache[el.$key] = el;
             });
-          return this.serializer.deserialize<T>(rotations, [this.getClass()]);
-        })
-      );
+          })
+        );
+    }
+    return this.foreignKeyCache[foreignKeyValue];
   }
 }

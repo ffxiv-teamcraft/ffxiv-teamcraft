@@ -54,7 +54,7 @@
         <div>{{'LEVEQUESTS.Compute_exp' | translate}}</div>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-        <nz-switch (ngModelChange)="globalExpChange$.next($event)" [(ngModel)]="globalExp" [nzDisabled]="!computeExp"
+        <nz-switch [(ngModel)]="globalExp" (ngModelChange)="globalExpChange$.next($event)" [nzDisabled]="!computeExp"
                    nzSize="small"></nz-switch>
         <div>{{'LEVEQUESTS.Global_exp' | translate}}</div>
       </div>
@@ -67,7 +67,7 @@
                      [nzPrecision]="0"></nz-input-number>
   </div>
   <div class="additional-buttons">
-    <label (ngModelChange)="selectAll(results, $event)" [(ngModel)]="allSelected" nz-checkbox>
+    <label [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)" nz-checkbox>
       {{'Select_all' | translate}}
     </label>
     <button (click)="addSelectedLevesToList(results)" nz-button>{{'LISTS.Add_selection' | translate}}</button>
@@ -78,7 +78,7 @@
         <div *ngFor="let leve of results;let odd=odd" [class.odd]="odd" class="leve-row">
           <div fxFlex="1 1 auto" fxLayout="row wrap" fxLayoutAlign="flex-start center" nz-row>
             <div fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzSm="4">
-              <label (ngModelChange)="updateAllSelected(results)" [(ngModel)]="leve.selected" class="select-box"
+              <label [(ngModel)]="leve.selected" (ngModelChange)="updateAllSelected(results)" class="select-box"
                      nz-checkbox></label>
               <div>
                 <app-item-icon [icon]="leve.itemIcon | xivapiIcon" [itemId]="leve.itemId" [width]="32"></app-item-icon>

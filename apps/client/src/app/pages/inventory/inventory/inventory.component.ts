@@ -49,7 +49,7 @@ export class InventoryComponent {
           ContainerType.PremiumSaddleBag1,
           ContainerType.FreeCompanyBag0,
           ContainerType.FreeCompanyBag1,
-          ContainerType.FreeCompanyBag2,
+          ContainerType.FreeCompanyBag2
         ].indexOf(item.containerId) > -1;
       }).reduce((bags: InventoryDisplay[], item: InventoryItem) => {
         const containerName = item.retainerName || this.inventoryService.getContainerName(item.containerId);
@@ -58,10 +58,13 @@ export class InventoryComponent {
           bags.push({
             isRetainer: item.retainerName !== undefined,
             containerName: containerName,
-            containerId: item.containerId,
+            containerIds: [item.containerId],
             items: []
           });
           bag = bags[bags.length - 1];
+        }
+        if (bag.containerIds.indexOf(item.containerId) === -1) {
+          bag.containerIds.push(item.containerId);
         }
         bag.items.push(item);
         return bags;
@@ -130,6 +133,21 @@ export class InventoryComponent {
 
   public inventoryCopied(): void {
     this.message.success(this.translate.instant('INVENTORY.Copied_to_clipboard'));
+  }
+
+  public deleteInventory(display: InventoryDisplay): void {
+    this.inventoryService.getUserInventory().pipe(
+      first(),
+      map(inventory => {
+        display.containerIds.forEach(containerId => {
+          delete inventory.items[containerId];
+        });
+        return inventory;
+      }),
+      switchMap(inventory => {
+        return this.inventoryService.set(inventory.$key, inventory);
+      })
+    ).subscribe();
   }
 
   trackByInventory(index: number, inventory: InventoryDisplay): string {

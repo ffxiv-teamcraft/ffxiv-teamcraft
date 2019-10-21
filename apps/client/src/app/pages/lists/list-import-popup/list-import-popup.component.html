@@ -1,7 +1,7 @@
 <div *ngIf="!inProgress; else loader">
   <nz-form-item>
     <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" nzHasFeedback>
-      <input (ngModelChange)="updateLinkSupport()" [(ngModel)]="importLink" [placeholder]="'LISTS.IMPORT.Paste_link_step_title' | translate" nz-input
+      <input [(ngModel)]="importLink" (ngModelChange)="updateLinkSupport()" [placeholder]="'LISTS.IMPORT.Paste_link_step_title' | translate" nz-input
              type="text">
       <nz-form-explain
         *ngIf="importLinkSupported === undefined">{{'LISTS.IMPORT.Links_supported' | translate: { links: linkTypes } }}</nz-form-explain>

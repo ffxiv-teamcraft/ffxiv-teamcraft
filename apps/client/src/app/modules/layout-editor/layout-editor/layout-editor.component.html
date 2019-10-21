@@ -33,7 +33,7 @@
             class="default-warning" nzShowIcon nzType="info"></nz-alert>
   <div fxLayout="column" fxLayoutGap="10px">
     <nz-input-group nzPrefixIcon="anticon anticon-edit">
-      <input (ngModelChange)="dirty = true" [(ngModel)]="layout.name" [disabled]="layout.name === 'Default Layout'"
+      <input [(ngModel)]="layout.name" (ngModelChange)="dirty = true" [disabled]="layout.name === 'Default Layout'"
              nz-input type="text">
     </nz-input-group>
     <button (click)="editRowButtons(layout)" [disabled]="layout.name === 'Default Layout'" nz-button nzBlock>
@@ -44,19 +44,19 @@
     </button>
     <nz-card [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Global_options' | translate">
       <div fxLayout="column" fxLayoutGap="10px">
-        <label (ngModelChange)="dirty = true" [(ngModel)]="layout.considerCrystalsAsItems"
+        <label [(ngModel)]="layout.considerCrystalsAsItems" (ngModelChange)="dirty = true"
                [nzDisabled]="layout.name === 'Default Layout'" nz-checkbox>
           {{"LIST.Enable_crystals_tracking" | translate}}
         </label>
       </div>
       <div fxLayout="column" fxLayoutGap="10px">
-        <label (ngModelChange)="dirty = true" [(ngModel)]="layout.showInventory"
+        <label [(ngModel)]="layout.showInventory" (ngModelChange)="dirty = true"
                [nzDisabled]="layout.name === 'Default Layout'" nz-checkbox>
           {{"LIST.Always_show_inventory" | translate}}
         </label>
       </div>
       <div fxLayout="column" fxLayoutGap="10px">
-        <label (ngModelChange)="dirty = true" [(ngModel)]="layout.showCraftableAmount"
+        <label [(ngModel)]="layout.showCraftableAmount" (ngModelChange)="dirty = true"
                [nzDisabled]="layout.name === 'Default Layout'" nz-checkbox>
           {{"LIST.Show_craftable_amount" | translate}}
         </label>
@@ -87,9 +87,9 @@
           <label [nzValue]="'default'" nz-radio-button>{{"Default" | translate}}</label>
           <label [nzValue]="'zoneBreakdown'" nz-radio-button>{{"Zone_breakdown" | translate}}</label>
         </nz-radio-group>
-        <label (ngModelChange)="dirty = true" [(ngModel)]="layout.recipeHideCompleted" nz-checkbox>{{"Hide_completed" |
+        <label [(ngModel)]="layout.recipeHideCompleted" (ngModelChange)="dirty = true" nz-checkbox>{{"Hide_completed" |
           translate}}</label>
-        <label (ngModelChange)="dirty = true" *ngIf="layout.recipeZoneBreakdown" [(ngModel)]="layout.recipeHideZoneDuplicates"
+        <label [(ngModel)]="layout.recipeHideZoneDuplicates" *ngIf="layout.recipeZoneBreakdown" (ngModelChange)="dirty = true"
                nz-checkbox>{{"Hide_zone_duplicates" | translate}}</label>
       </div>
     </nz-card>

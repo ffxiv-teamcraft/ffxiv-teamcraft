@@ -17,7 +17,7 @@
   </nz-input-group>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-  <nz-switch (ngModelChange)="saveCompactDisplay($event)" [(ngModel)]="compactDisplay"></nz-switch>
+  <nz-switch [(ngModel)]="compactDisplay" (ngModelChange)="saveCompactDisplay($event)"></nz-switch>
   <div>
     {{'Compact_display' | translate}}
   </div>

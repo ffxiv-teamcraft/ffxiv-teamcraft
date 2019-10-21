@@ -51,6 +51,7 @@ import { ListCompletionPopupComponent } from '../list-completion-popup/list-comp
 import { TranslateService } from '@ngx-translate/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { ListStore } from '../../../core/database/storage/list/list-store';
+import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 
 @Injectable()
 export class ListsEffects {
@@ -402,7 +403,7 @@ export class ListsEffects {
   constructor(
     private actions$: Actions,
     private authFacade: AuthFacade,
-    private listService: ListStore,
+    private listService: FirestoreListStorage,
     private listCompactsService: ListCompactsService,
     private listsFacade: ListsFacade,
     private teamsFacade: TeamsFacade,

@@ -19,7 +19,6 @@ import { CustomLinksService } from './custom-links/custom-links.service';
     WorkshopService,
     UserService,
     TeamInviteService,
-    { provide: ListStore, useClass: FirestoreListStorage },
     CustomLinksService,
     CraftingRotationService,
     CraftingRotationsFolderService,

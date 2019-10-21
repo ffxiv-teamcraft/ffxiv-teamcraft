@@ -383,7 +383,7 @@
   <div *ngIf="results$ | async as results">
     <div *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE  || searchType === searchTypes.ANY"
          class="addition-buttons">
-      <label (ngModelChange)="selectAll(results, $event)" [(ngModel)]="allSelected" nz-checkbox>{{'Select_all' |
+      <label [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)" nz-checkbox>{{'Select_all' |
         translate}}</label>
       <button (click)="addSelectedItemsToList(results)" nz-button>{{'LISTS.Add_selection' | translate}}</button>
     </div>
@@ -408,7 +408,7 @@
                fxLayoutGap="5px">
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div class="checkbox">
-                <label (ngModelChange)="updateAllSelected(results)" [(ngModel)]="row.selected"
+                <label [(ngModel)]="row.selected" (ngModelChange)="updateAllSelected(results)"
                        nz-checkbox></label>
               </div>
               <div class="avatar">
