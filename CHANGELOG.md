@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.7"></a>
+## [6.0.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.6...v6.0.7) (2019-10-21)
+
+
+### Bug Fixes
+
+* fixed an issue with checkbox values not being applied properly ([ec7e93e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec7e93e))
+* **inventory:** fixed an issue with inventory tracking not saving data properly ([366a5af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/366a5af))
+
+
+### Features
+
+* **inventory:** added a button to manually reset an inventory ([1a6494f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1a6494f))
+
+
+
 <a name="6.0.6"></a>
 ## [6.0.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.4...v6.0.6) (2019-10-20)
 
