@@ -89,7 +89,7 @@
         </nz-radio-group>
         <label [(ngModel)]="layout.recipeHideCompleted" (ngModelChange)="dirty = true" nz-checkbox>{{"Hide_completed" |
           translate}}</label>
-        <label (ngModelChange)="dirty = true" *ngIf="layout.recipeZoneBreakdown" [(ngModel)]="layout.recipeHideZoneDuplicates"
+        <label [(ngModel)]="layout.recipeHideZoneDuplicates" *ngIf="layout.recipeZoneBreakdown" (ngModelChange)="dirty = true"
                nz-checkbox>{{"Hide_zone_duplicates" | translate}}</label>
       </div>
     </nz-card>

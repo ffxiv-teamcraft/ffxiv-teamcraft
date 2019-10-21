@@ -51,7 +51,7 @@
         <label [(ngModel)]="row.collapsedByDefault" (ngModelChange)="rowChange.emit(row)" [nzDisabled]="readonly"
                nz-checkbox>{{"Collapse_by_default" |
           translate}}</label>
-        <label (ngModelChange)="rowChange.emit(row)" *ngIf="row.zoneBreakdown" [(ngModel)]="row.hideZoneDuplicates"
+        <label [(ngModel)]="row.hideZoneDuplicates" *ngIf="row.zoneBreakdown" (ngModelChange)="rowChange.emit(row)"
                nz-checkbox>{{"Hide_zone_duplicates" | translate}}</label>
       </div>
     </div>

@@ -38,7 +38,7 @@
 
   </div>
   <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="8" nzXs="24">
-    <label (ngModelChange)="saveCustomPrice()" *ngIf="preCraft" [(ngModel)]="customPrice" nz-checkbox></label>
+    <label [(ngModel)]="customPrice" *ngIf="preCraft" (ngModelChange)="saveCustomPrice()" nz-checkbox></label>
     <div class="amount-group" fxLayout="row" fxLayoutGap="5px">
       <div fxLayout="row">
         <nz-input-group [nzAddOnBefore]="addonBeforeNQ" nzCompact nzSize="small">
