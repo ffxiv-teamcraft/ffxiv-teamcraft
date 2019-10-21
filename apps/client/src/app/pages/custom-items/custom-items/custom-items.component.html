@@ -158,14 +158,14 @@
               <nz-form-item>
                 <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.ID' | translate}}</nz-form-label>
                 <nz-form-control>
-                  <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="item.realItemId"
+                  <nz-input-number [(ngModel)]="item.realItemId" (ngModelChange)="item.dirty = true"
                                    [nzMin]="0"></nz-input-number>
                 </nz-form-control>
               </nz-form-item>
               <nz-form-item>
                 <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Name' | translate}}</nz-form-label>
                 <nz-form-control>
-                  <input (ngModelChange)="item.dirty = true; autoCompleteItemID($event, item)" [(ngModel)]="item.name" nz-input
+                  <input [(ngModel)]="item.name" (ngModelChange)="item.dirty = true; autoCompleteItemID($event, item)" nz-input
                          type="text">
                 </nz-form-control>
               </nz-form-item>
@@ -191,7 +191,7 @@
                     <nz-form-item>
                       <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Job' | translate}}</nz-form-label>
                       <nz-form-control>
-                        <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="craft.jobId" class="job-select">
+                        <nz-select [(ngModel)]="craft.jobId" (ngModelChange)="item.dirty = true" class="job-select">
                           <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | jobAbbr | i18n"
                                      [nzValue]="job.id" nzCustomContent>
                             <img alt="" class="job-icon"
@@ -204,14 +204,14 @@
                     <nz-form-item>
                       <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Level' | translate}}</nz-form-label>
                       <nz-form-control>
-                        <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="craft.level" [nzMin]="1"
+                        <nz-input-number [(ngModel)]="craft.level" (ngModelChange)="item.dirty = true" [nzMin]="1"
                                          [nzStep]="1"></nz-input-number>
                       </nz-form-control>
                     </nz-form-item>
                     <nz-form-item>
                       <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Stars' | translate}}</nz-form-label>
                       <nz-form-control>
-                        <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="craft.stars_tooltip">
+                        <nz-select [(ngModel)]="craft.stars_tooltip" (ngModelChange)="item.dirty = true">
                           <nz-option [nzLabel]="'CUSTOM_ITEMS.DETAILS.None' | translate" [nzValue]="''">
                           </nz-option>
                           <nz-option [nzLabel]="'★'" [nzValue]="'★'">
@@ -228,7 +228,7 @@
                     <nz-form-item>
                       <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Yields' | translate}}</nz-form-label>
                       <nz-form-control>
-                        <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="item.yield" [nzMin]="1"
+                        <nz-input-number [(ngModel)]="item.yield" (ngModelChange)="item.dirty = true" [nzMin]="1"
                                          [nzStep]="1"></nz-input-number>
                       </nz-form-control>
                     </nz-form-item>
@@ -244,7 +244,7 @@
                        fxLayoutAlign="flex-start center"
                        fxLayoutGap="5px">
                     <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
-                      <input (ngModelChange)="item.dirty = true" [(ngModel)]="ingredient.amount" nz-input type="text">
+                      <input [(ngModel)]="ingredient.amount" (ngModelChange)="item.dirty = true" nz-input type="text">
                     </nz-input-group>
                     <ng-template #addOnBeforeTemplate>
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -282,7 +282,7 @@
                   <nz-form-label
                   >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Type' | translate}}</nz-form-label>
                   <nz-form-control>
-                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.type">
+                    <nz-select [(ngModel)]="item.gatheredBy.type" (ngModelChange)="item.dirty = true">
                       <nz-option [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(0 | nodeTypeName)) | translate" [nzValue]="0">
                       </nz-option>
                       <nz-option [nzLabel]="('ALARMS.CUSTOM.TYPE.'+(1 | nodeTypeName)) | translate" [nzValue]="1">
@@ -299,7 +299,7 @@
                 <nz-form-item>
                   <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.Level' | translate}}</nz-form-label>
                   <nz-form-control>
-                    <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.level" [nzMin]="1"
+                    <nz-input-number [(ngModel)]="item.gatheredBy.level" (ngModelChange)="item.dirty = true" [nzMin]="1"
                                      [nzStep]="1"></nz-input-number>
                   </nz-form-control>
                 </nz-form-item>
@@ -307,7 +307,7 @@
                   <nz-form-label
                   >{{'CUSTOM_ITEMS.DETAILS.Stars' | translate}}</nz-form-label>
                   <nz-form-control>
-                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.stars_tooltip">
+                    <nz-select [(ngModel)]="item.gatheredBy.stars_tooltip" (ngModelChange)="item.dirty = true">
                       <nz-option [nzLabel]="'CUSTOM_ITEMS.DETAILS.None' | translate" [nzValue]="''">
                       </nz-option>
                       <nz-option [nzLabel]="'★'" [nzValue]="'★'">
@@ -338,14 +338,14 @@
                 <nz-form-item>
                   <nz-form-label>X</nz-form-label>
                   <nz-form-control>
-                    <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.nodes[0].coords[0]"
+                    <nz-input-number [(ngModel)]="item.gatheredBy.nodes[0].coords[0]" (ngModelChange)="item.dirty = true"
                                      [nzMin]="0"></nz-input-number>
                   </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
                   <nz-form-label>Y</nz-form-label>
                   <nz-form-control>
-                    <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.nodes[0].coords[1]"
+                    <nz-input-number [(ngModel)]="item.gatheredBy.nodes[0].coords[1]" (ngModelChange)="item.dirty = true"
                                      [nzMin]="0"></nz-input-number>
                   </nz-form-control>
                 </nz-form-item>
@@ -353,7 +353,7 @@
                   <nz-form-label
                   >{{'CUSTOM_ITEMS.DETAILS.GATHERING.Slot' | translate}}</nz-form-label>
                   <nz-form-control>
-                    <nz-select (ngModelChange)="item.dirty = true" [(ngModel)]="item.gatheredBy.nodes[0].slot"
+                    <nz-select [(ngModel)]="item.gatheredBy.nodes[0].slot" (ngModelChange)="item.dirty = true"
                                class="slot-select">
                       <nz-option [nzLabel]="'?'" [nzValue]="'?'">
                       </nz-option>
@@ -439,7 +439,7 @@
                     <nz-form-item>
                       <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.VENDORS.Price' | translate}}</nz-form-label>
                       <nz-form-control>
-                        <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="vendor.price" [nzMin]="0"
+                        <nz-input-number [(ngModel)]="vendor.price" (ngModelChange)="item.dirty = true" [nzMin]="0"
                                          [nzStep]="1"></nz-input-number>
                       </nz-form-control>
                     </nz-form-item>
@@ -460,14 +460,14 @@
                     <nz-form-item>
                       <nz-form-label>X</nz-form-label>
                       <nz-form-control>
-                        <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="vendor.coords.x"
+                        <nz-input-number [(ngModel)]="vendor.coords.x" (ngModelChange)="item.dirty = true"
                                          [nzMin]="0"></nz-input-number>
                       </nz-form-control>
                     </nz-form-item>
                     <nz-form-item>
                       <nz-form-label>Y</nz-form-label>
                       <nz-form-control>
-                        <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="vendor.coords.y"
+                        <nz-input-number [(ngModel)]="vendor.coords.y" (ngModelChange)="item.dirty = true"
                                          [nzMin]="0"></nz-input-number>
                       </nz-form-control>
                     </nz-form-item>
@@ -499,7 +499,7 @@
                     <nz-form-item>
                       <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Shop_name' | translate}}</nz-form-label>
                       <nz-form-control>
-                        <input (ngModelChange)="item.dirty = true" [(ngModel)]="tradeSource.shopName" nz-input
+                        <input [(ngModel)]="tradeSource.shopName" (ngModelChange)="item.dirty = true" nz-input
                                type="text">
                       </nz-form-control>
                     </nz-form-item>
@@ -520,14 +520,14 @@
                     <nz-form-item>
                       <nz-form-label>X</nz-form-label>
                       <nz-form-control>
-                        <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="tradeSource.npcs[0].coords.x"
+                        <nz-input-number [(ngModel)]="tradeSource.npcs[0].coords.x" (ngModelChange)="item.dirty = true"
                                          [nzMin]="0"></nz-input-number>
                       </nz-form-control>
                     </nz-form-item>
                     <nz-form-item>
                       <nz-form-label>Y</nz-form-label>
                       <nz-form-control>
-                        <nz-input-number (ngModelChange)="item.dirty = true" [(ngModel)]="tradeSource.npcs[0].coords.y"
+                        <nz-input-number [(ngModel)]="tradeSource.npcs[0].coords.y" (ngModelChange)="item.dirty = true"
                                          [nzMin]="0"></nz-input-number>
                       </nz-form-control>
                     </nz-form-item>
@@ -552,7 +552,7 @@
                                fxLayoutAlign="flex-start center"
                                fxLayoutGap="5px">
                             <nz-input-group [nzAddOnAfter]="addOnAfterTemplate" [nzAddOnBefore]="addOnBeforeTemplate">
-                              <input (ngModelChange)="item.dirty = true" [(ngModel)]="currency.amount" nz-input
+                              <input [(ngModel)]="currency.amount" (ngModelChange)="item.dirty = true" nz-input
                                      type="text">
                             </nz-input-group>
                             <ng-template #addOnBeforeTemplate>
@@ -563,7 +563,7 @@
                               </div>
                             </ng-template>
                             <ng-template #addOnAfterTemplate>
-                              <label (ngModelChange)="item.dirty = true" [(ngModel)]="currency.hq"
+                              <label [(ngModel)]="currency.hq" (ngModelChange)="item.dirty = true"
                                      nz-checkbox>{{'HQ' | translate}}</label>
                             </ng-template>
                             <button (nzOnConfirm)="deleteCurrency(item, trade, currency)" [nzTitle]="'Confirm' | translate"
@@ -580,14 +580,14 @@
                         </div>
                         <i nz-icon nzType="arrow-down"></i>
                         <nz-input-group [nzAddOnAfter]="addOnAfterTemplate" [nzAddOnBefore]="addOnBeforeTemplate">
-                          <input (ngModelChange)="item.dirty = true" [(ngModel)]="trade.items[0].amount" nz-input
+                          <input [(ngModel)]="trade.items[0].amount" (ngModelChange)="item.dirty = true" nz-input
                                  type="number">
                         </nz-input-group>
                         <ng-template #addOnBeforeTemplate>
                           {{item.name}}
                         </ng-template>
                         <ng-template #addOnAfterTemplate>
-                          <label (ngModelChange)="item.dirty = true" [(ngModel)]="trade.items[0].hq"
+                          <label [(ngModel)]="trade.items[0].hq" (ngModelChange)="item.dirty = true"
                                  nz-checkbox>{{'HQ' | translate}}</label>
                         </ng-template>
                       </div>

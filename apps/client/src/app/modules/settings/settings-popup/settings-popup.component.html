@@ -282,7 +282,7 @@
   <nz-tab *ngIf="platform.isDesktop()" [nzTitle]="'SETTINGS.Desktop' | translate">
     <div fxLayout="column" fxLayoutGap="5px">
       <div>
-        <label (ngModelChange)="alwaysOnTopChange($event)" [(ngModel)]="alwaysOnTop" nz-checkbox>
+        <label [(ngModel)]="alwaysOnTop" (ngModelChange)="alwaysOnTopChange($event)" nz-checkbox>
           {{'SETTINGS.Always_on_top' | translate}}
         </label>
       </div>
@@ -294,7 +294,7 @@
       <nz-card>
         <div fxLayout="column">
           <div>
-            <label (ngModelChange)="machinaToggleChange($event)" [(ngModel)]="machinaToggle" nz-checkbox>
+            <label [(ngModel)]="machinaToggle" (ngModelChange)="machinaToggleChange($event)" nz-checkbox>
               {{'SETTINGS.Enable_packet_capture' | translate}}
             </label>
           </div>

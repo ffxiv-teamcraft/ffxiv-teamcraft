@@ -194,7 +194,6 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
 
   get(uid: string, uriParams?: any): Observable<T> {
     if (this.cache[uid] === undefined) {
-      console.log('GET', this.getBaseUri(uriParams), uid);
       this.cache[uid] = this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).snapshotChanges()
         .pipe(
           map((snap: any) => {

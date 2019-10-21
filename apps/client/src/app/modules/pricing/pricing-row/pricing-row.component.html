@@ -1,6 +1,6 @@
 <div [class.ignored]="!item.usePrice" [class.odd]="odd" class="row-container" fxLayout="row wrap" nz-row>
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="6" nzXs="24">
-    <label (ngModelChange)="save.emit()" [(ngModel)]="item.usePrice" nz-checkbox></label>
+    <label [(ngModel)]="item.usePrice" (ngModelChange)="save.emit()" nz-checkbox></label>
     <app-item-icon [icon]="item.icon" [itemId]="item.id" [itemName]="item.id | itemName| i18n"
                    [width]="24"></app-item-icon>
     <span (cbOnSuccess)="afterNameCopy($event.content)" *ngIf="settings.preferredCopyType === 'classic'" [cbContent]="item.id | itemName | i18n" [nzTitle]="'Copy_item_name_to_clipboard' | translate"
@@ -46,11 +46,11 @@
             <div class="server-span" nz-tooltip>NQ<span *ngIf="price.fromMB && price.nqServer"> ({{price.nqServer}}
               )</span></div>
           </ng-template>
-          <input (ngModelChange)="savePrice()" [(ngModel)]="price.nq" [disabled]="preCraft && !customPrice" class="price" lang="en-150" min="0"
+          <input [(ngModel)]="price.nq" (ngModelChange)="savePrice()" [disabled]="preCraft && !customPrice" class="price" lang="en-150" min="0"
                  nz-input type="number">
         </nz-input-group>
         <nz-input-group [nzAddOnBefore]="'x'" nzCompact nzSize="small">
-          <input (ngModelChange)="changeNQ()" [(ngModel)]="amount.nq" [max]="item.amount" [readonly]="isCrystal()" class="amount"
+          <input [(ngModel)]="amount.nq" (ngModelChange)="changeNQ()" [max]="item.amount" [readonly]="isCrystal()" class="amount"
                  min="0"
                  nz-input type="number">
         </nz-input-group>
@@ -61,11 +61,11 @@
             <div class="server-span" nz-tooltip>HQ<span *ngIf="price.fromMB && price.hqServer"> ({{price.hqServer}}
               )</span></div>
           </ng-template>
-          <input (ngModelChange)="savePrice()" [(ngModel)]="price.hq" [disabled]="preCraft && !customPrice" class="price" lang="en-150" min="0"
+          <input [(ngModel)]="price.hq" (ngModelChange)="savePrice()" [disabled]="preCraft && !customPrice" class="price" lang="en-150" min="0"
                  nz-input type="number">
         </nz-input-group>
         <nz-input-group [nzAddOnBefore]="'x'" nzCompact nzSize="small">
-          <input (ngModelChange)="changeHQ()" [(ngModel)]="amount.hq" [max]="item.amount" class="amount" lang="en-150" min="0"
+          <input [(ngModel)]="amount.hq" (ngModelChange)="changeHQ()" [max]="item.amount" class="amount" lang="en-150" min="0"
                  nz-input type="number">
         </nz-input-group>
       </div>
