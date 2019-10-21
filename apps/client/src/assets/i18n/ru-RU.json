@@ -1545,6 +1545,7 @@
     "Copied_to_clipboard": "Инвентарь скопирован в буфер обмена",
     "Click_to_add_to_progression": "Нажмите, чтобы добавить к прогрессу предмета",
     "Contribute_to_universalis": "Внести данные в universalis",
+    "Reset_inventory": "Reset this inventory",
     "BAG": {
       "SaddleBag": "Сумка Чокобо",
       "FC_chest": "FC сундук",
