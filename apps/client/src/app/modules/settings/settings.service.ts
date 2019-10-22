@@ -3,7 +3,9 @@ import { Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SettingsService {
 
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
@@ -258,6 +260,14 @@ export class SettingsService {
 
   public set enableUniversalisSourcing(enabled: boolean) {
     this.setSetting('universalis:enable-sourcing', enabled.toString());
+  }
+
+  public get persistInventory(): boolean {
+    return this.getSetting('inventory:persist', 'false') === 'true';
+  }
+
+  public set persistInventory(enabled: boolean) {
+    this.setSetting('inventory:persist', enabled.toString());
   }
 
   public get customTheme(): Theme {

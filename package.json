@@ -109,6 +109,10 @@
   },
   "private": true,
   "dependencies": {
+    "@ngrx/store": "8.4.0",
+    "@ngrx/effects": "^8.4.0",
+    "@ngrx/entity": "8.4.0",
+    "@ngrx/router-store": "8.4.0",
     "@angular/animations": "8.2.11",
     "@angular/cdk": "^8.2.3",
     "@angular/common": "9.0.0-next.11",
@@ -131,10 +135,6 @@
     "@kaiu/ng-serializer": "1.1.1",
     "@kaiu/serializer": "1.4.0",
     "@ng-toolkit/universal": "^7.1.2",
-    "@ngrx/effects": "^8.4.0",
-    "@ngrx/entity": "8.4.0",
-    "@ngrx/router-store": "8.4.0",
-    "@ngrx/store": "8.4.0",
     "@nguniversal/common": "^8.1.1",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
@@ -178,6 +178,8 @@
     "@nrwl/angular": "8.0.0"
   },
   "devDependencies": {
+    "@ngrx/store-devtools": "7.2.0",
+    "ngrx-store-freeze": "0.2.4",
     "@angular-builders/custom-webpack": "^8.2.0",
     "@angular-devkit/build-angular": "~0.803.10",
     "@angular-devkit/schematics": "^0.8.8",
@@ -186,7 +188,6 @@
     "@angular/language-service": "8.2.11",
     "@firebase/auth-types": "^0.7.0",
     "@ngrx/schematics": "7.2.0",
-    "@ngrx/store-devtools": "7.2.0",
     "@nguniversal/express-engine": "^8.1.1",
     "@nguniversal/module-map-ngfactory-loader": "^8.1.1",
     "@types/electron": "^1.6.10",

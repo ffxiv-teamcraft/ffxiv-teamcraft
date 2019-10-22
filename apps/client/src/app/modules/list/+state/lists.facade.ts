@@ -34,8 +34,8 @@ import { ListRow } from '../model/list-row';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
 import { SettingsService } from '../../settings/settings.service';
-import { UserInventoryService } from '../../../core/database/user-inventory.service';
 import { environment } from '../../../../environments/environment';
+import { InventoryFacade } from '../../inventory/+state/inventory.facade';
 
 declare const gtag: Function;
 
@@ -150,7 +150,7 @@ export class ListsFacade {
   autocompleteEnabled$ = this.store.select(listsQuery.getAutocompleteEnabled);
 
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: UserInventoryService) {
+              private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryFacade) {
   }
 
   getTeamLists(team: Team): Observable<List[]> {
@@ -261,7 +261,7 @@ export class ListsFacade {
   toggleAutocomplete(newValue: boolean): void {
     this.store.dispatch(new ToggleAutocompletion(newValue));
     if (newValue) {
-      this.userInventoryService.getUserInventory().pipe(
+      this.userInventoryService.inventory$.pipe(
         first(),
         filter((inventory) => {
           return (inventory.lastZone || 0) < environment.startTimestamp;
@@ -276,7 +276,7 @@ export class ListsFacade {
           });
         }),
         switchMap((modal) => {
-          return this.userInventoryService.getUserInventory().pipe(
+          return this.userInventoryService.inventory$.pipe(
             filter(inventory => (inventory.lastZone || 0) > environment.startTimestamp),
             first(),
             map(() => modal)

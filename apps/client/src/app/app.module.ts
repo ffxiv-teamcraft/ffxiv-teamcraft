@@ -94,6 +94,7 @@ import pt from '@angular/common/locales/pt';
 import hr from '@angular/common/locales/hr';
 import ko from '@angular/common/locales/ko';
 import { ClipboardModule } from 'ngx-clipboard';
+import { InventoryModule } from './modules/inventory/inventory.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -209,6 +210,8 @@ const nzConfig: NzConfig = {
 
     AlarmsModule,
     AlarmsSidebarModule,
+
+    InventoryModule,
 
     HttpClientModule,
 

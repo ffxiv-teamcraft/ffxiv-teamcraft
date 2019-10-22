@@ -4,7 +4,7 @@ import { ListRow } from '../../../../modules/list/model/list-row';
 import { ListsFacade } from '../../../../modules/list/+state/lists.facade';
 import { combineLatest, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { UserInventoryService } from '../../../../core/database/user-inventory.service';
+import { InventoryFacade } from '../../../../modules/inventory/+state/inventory.facade';
 
 @Component({
   selector: 'app-relationships',
@@ -21,7 +21,7 @@ export class RelationshipsComponent implements OnInit {
 
   public requiredBy$: Observable<ListRow[]>;
 
-  constructor(private listsFacade: ListsFacade, private inventoryService: UserInventoryService) {
+  constructor(private listsFacade: ListsFacade, private inventoryService: InventoryFacade) {
     this.list$ = this.listsFacade.selectedList$;
   }
 
@@ -33,7 +33,7 @@ export class RelationshipsComponent implements OnInit {
           .map(req => {
             let item: any = list.getItemById(req.id, true);
             item = { ...item, reqAmount: req.amount, canBeCrafted: list.canBeCrafted(item) };
-            return this.inventoryService.getUserInventory().pipe(
+            return this.inventoryService.inventory$.pipe(
               map(inventory => {
                 return inventory.getItem(item.id).map(entry => {
                   return {
