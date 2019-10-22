@@ -375,6 +375,7 @@
     "Enable_packet_capture": "패킷 캡쳐를 사용 (실시간 소지품 동기화 기능 추가)",
     "Packet_capture_info": "ACT와 마찬가지로 ToS기술을 이용하는 패킷 캡쳐는 이용약관에 위배됩니다. 하지만 스퀘어에닉스에서는 다른 사람들에게 알리지 않는 이상 이러한 프로그램들의 사용을 용인하므로 선택적으로 사용하시면 됩니다. 위험을 감수하고 싶지 않으시다면 사용을 하지 않으시면 됩니다.",
     "Contribute_to_universalis": "Universalis에 기여하기",
+    "Persist_inventory": "Save inventory in database (to share with web version)",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
