@@ -3,7 +3,6 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { InventoryActionTypes, InventoryLoaded, UpdateInventory } from './inventory.actions';
 import { UserInventoryService } from '../../../core/database/user-inventory.service';
 import { debounceTime, distinctUntilKeyChanged, map, switchMap, switchMapTo } from 'rxjs/operators';
-import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { SettingsService } from '../../settings/settings.service';
@@ -19,20 +18,13 @@ export class InventoryEffects {
   loadInventory$ = this.actions$.pipe(
     ofType(InventoryActionTypes.LoadInventory),
     switchMapTo(this.authFacade.user$),
-    distinctUntilKeyChanged('defaultLodestoneId'),
+    distinctUntilKeyChanged('$key'),
     switchMap((user) => {
       if (this.settings.persistInventory || !this.platform.isDesktop()) {
-        return this.inventoryService.getByForeignKey(TeamcraftUser, user.$key).pipe(
-          map((inventories: UserInventory[]) => {
-            if (user.defaultLodestoneId) {
-              return inventories.find(inventory => inventory.characterId === user.defaultLodestoneId);
-            }
-            return inventories[0];
-          }),
+        return this.inventoryService.get(user.$key).pipe(
           map(inventory => {
             if (inventory === undefined) {
               const newInventory = new UserInventory();
-              newInventory.authorId = user.$key;
               newInventory.characterId = user.defaultLodestoneId;
               return newInventory;
             }
@@ -43,7 +35,6 @@ export class InventoryEffects {
         const fromLocalStorage = localStorage.getItem(INVENTORY_FEATURE_KEY);
         if (fromLocalStorage === null) {
           const newInventory = new UserInventory();
-          newInventory.authorId = user.$key;
           newInventory.characterId = user.defaultLodestoneId;
           return of(newInventory);
         }

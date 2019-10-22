@@ -2,7 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { FirestoreRelationalStorage } from './storage/firestore/firestore-relational-storage';
+import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../+state/auth.facade';
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ import { diff } from 'deep-diff';
 @Injectable({
   providedIn: 'root'
 })
-export class UserInventoryService extends FirestoreRelationalStorage<UserInventory> {
+export class UserInventoryService extends FirestoreStorage<UserInventory> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService, private authFacade: AuthFacade) {
