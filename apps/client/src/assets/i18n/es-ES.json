@@ -375,6 +375,7 @@
     "Enable_packet_capture": "Habilitar captura de paquetes (añade características de inventario en tiempo real)",
     "Packet_capture_info": "Capturar paquetes es contra los TdS, la misma razón por la que usar ACT es contra los TdS. Pero Square Enix lo tolera a menos que lo presuma a todos en el juego. Simplemente no lo haga y no se arriesgará a nada.",
     "Contribute_to_universalis": "Contribuir a Universalis",
+    "Persist_inventory": "Save inventory in database (to share with web version)",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
