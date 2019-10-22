@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.9"></a>
+## [6.0.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.8...v6.0.9) (2019-10-22)
+
+
+### Features
+
+* **inventory:** inventory persistence in database is now optional ([e29105a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e29105a))
+
+
+
 <a name="6.0.8"></a>
 ## [6.0.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.6...v6.0.8) (2019-10-22)
 
