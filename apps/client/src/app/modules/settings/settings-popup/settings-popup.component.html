@@ -306,6 +306,11 @@
               {{'SETTINGS.Contribute_to_universalis' | translate}}
             </label>
           </div>
+          <div>
+            <label [(ngModel)]="settings.persistInventory" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Persist_inventory' | translate}}
+            </label>
+          </div>
         </div>
       </nz-card>
       <button (click)="openDesktopConsole()" nz-button>

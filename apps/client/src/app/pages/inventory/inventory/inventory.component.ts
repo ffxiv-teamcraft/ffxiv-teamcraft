@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UserInventoryService } from '../../../core/database/user-inventory.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { InventoryDisplay } from '../inventory-display';
 import { first, map, switchMap } from 'rxjs/operators';
@@ -9,6 +8,7 @@ import { UniversalisService } from '../../../core/api/universalis.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
+import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 
 @Component({
   selector: 'app-inventory',
@@ -21,7 +21,7 @@ export class InventoryComponent {
 
   public computingPrices: { [index: string]: boolean } = {};
 
-  private inventory$: Observable<InventoryDisplay[]> = this.inventoryService.getUserInventory().pipe(
+  private inventory$: Observable<InventoryDisplay[]> = this.inventoryService.inventory$.pipe(
     map(inventory => inventory.clone()),
     map(inventory => {
       return [].concat.apply([],
@@ -99,7 +99,7 @@ export class InventoryComponent {
     })
   );
 
-  constructor(private inventoryService: UserInventoryService, private universalis: UniversalisService,
+  constructor(private inventoryService: InventoryFacade, private universalis: UniversalisService,
               private authFacade: AuthFacade, private message: NzMessageService, private translate: TranslateService) {
   }
 
@@ -136,7 +136,7 @@ export class InventoryComponent {
   }
 
   public deleteInventory(display: InventoryDisplay): void {
-    this.inventoryService.getUserInventory().pipe(
+    this.inventoryService.inventory$.pipe(
       first(),
       map(inventory => {
         display.containerIds.forEach(containerId => {
@@ -148,11 +148,10 @@ export class InventoryComponent {
           }
         });
         return inventory;
-      }),
-      switchMap(inventory => {
-        return this.inventoryService.set(inventory.$key, inventory);
       })
-    ).subscribe();
+    ).subscribe(inventory => {
+      this.inventoryService.updateInventory(inventory, true);
+    });
   }
 
   trackByInventory(index: number, inventory: InventoryDisplay): string {

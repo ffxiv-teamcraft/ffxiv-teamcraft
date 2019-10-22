@@ -77,7 +77,7 @@ import { freeCompanyActions } from '../../../core/data/sources/free-company-acti
 import { ConsumablesService } from '../../simulator/model/consumables.service';
 import { FreeCompanyActionsService } from '../../simulator/model/free-company-actions.service';
 import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
-import { UserInventoryService } from '../../../core/database/user-inventory.service';
+import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 
 @Component({
   selector: 'app-item-row',
@@ -164,7 +164,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   amountInInventory$: Observable<{ containerName: string, amount: number, hq: boolean, isRetainer: boolean }[]> = this.item$.pipe(
     switchMap(item => {
-      return this.inventoryService.getUserInventory().pipe(
+      return this.inventoryService.inventory$.pipe(
         map(inventory => {
           return inventory.getItem(item.id).map(entry => {
             return {
@@ -235,7 +235,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               private notificationService: NzNotificationService,
               public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService,
-              private inventoryService: UserInventoryService) {
+              private inventoryService: InventoryFacade) {
     super();
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),

@@ -144,7 +144,7 @@ const routes: Routes = [
   },
   {
     path: 'inventory',
-    loadChildren: './pages/inventory/inventory.module#InventoryModule'
+    loadChildren: './pages/inventory/inventory-page.module#InventoryPageModule'
   },
   {
     path: 'extractor',

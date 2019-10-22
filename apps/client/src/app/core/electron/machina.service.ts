@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
-import { UserInventoryService } from '../database/user-inventory.service';
 import { UniversalisService } from '../api/universalis.service';
 import {
   buffer,
@@ -13,8 +12,8 @@ import {
   shareReplay,
   startWith,
   switchMap,
-  withLatestFrom,
-  tap
+  tap,
+  withLatestFrom
 } from 'rxjs/operators';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { interval, merge, Observable, of, Subject } from 'rxjs';
@@ -24,6 +23,7 @@ import { InventoryPatch } from '../../model/user/inventory/inventory-patch';
 import { ListsFacade } from '../../modules/list/+state/lists.facade';
 import { InventoryItem } from '../../model/user/inventory/inventory-item';
 import { ContainerType } from '../../model/user/inventory/container-type';
+import { InventoryFacade } from '../../modules/inventory/+state/inventory.facade';
 
 @Injectable({
   providedIn: 'root'
@@ -45,10 +45,10 @@ export class MachinaService {
     startWith('')
   );
 
-  constructor(private ipc: IpcService, private userInventoryService: UserInventoryService,
+  constructor(private ipc: IpcService, private userInventoryService: InventoryFacade,
               private universalis: UniversalisService, private authFacade: AuthFacade,
               private listsFacade: ListsFacade) {
-    this.inventory$ = this.userInventoryService.getUserInventory().pipe(
+    this.inventory$ = this.userInventoryService.inventory$.pipe(
       distinctUntilChanged((a, b) => {
         return _.isEqual(a, b);
       }),
@@ -110,16 +110,11 @@ export class MachinaService {
       }),
       filter(inventory => {
         return inventory !== null;
-      }),
-      switchMap(inventory => {
-        inventory.lastZone = Date.now();
-        if (inventory.$key) {
-          return this.userInventoryService.set(inventory.$key, inventory);
-        } else {
-          return this.userInventoryService.add(inventory);
-        }
       })
-    ).subscribe();
+    ).subscribe(inventory => {
+      inventory.lastZone = Date.now();
+      this.userInventoryService.updateInventory(inventory);
+    });
 
     this.ipc.inventoryModifyHandlerPackets$.pipe(
       delayWhen(packet => {
@@ -130,7 +125,7 @@ export class MachinaService {
           ContainerType.FreeCompanyBag1,
           ContainerType.FreeCompanyBag2].indexOf(packet.toContainer) > -1;
         if (fromFCChest || toFCChest) {
-          return interval(2000);
+          return interval(1500);
         }
         return of(null);
       }),
@@ -146,15 +141,11 @@ export class MachinaService {
             return inventory;
           })
         );
-      }),
-      switchMap(inventory => {
-        if (inventory.$key) {
-          return this.userInventoryService.update(inventory.$key, inventory);
-        } else {
-          return this.userInventoryService.add(inventory);
-        }
       })
-    ).subscribe();
+    ).subscribe(inventory => {
+      inventory.lastZone = Date.now();
+      this.userInventoryService.updateInventory(inventory);
+    });
 
     this.ipc.updateInventorySlotPackets$.pipe(
       filter(packet => {
@@ -172,15 +163,11 @@ export class MachinaService {
             return inventory;
           })
         );
-      }),
-      switchMap(inventory => {
-        if (inventory.$key) {
-          return this.userInventoryService.update(inventory.$key, inventory);
-        } else {
-          return this.userInventoryService.add(inventory);
-        }
       })
-    ).subscribe();
+    ).subscribe(inventory => {
+      inventory.lastZone = Date.now();
+      this.userInventoryService.updateInventory(inventory);
+    });
 
     this.inventoryPatches$
       .pipe(

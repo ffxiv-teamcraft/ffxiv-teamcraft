@@ -39,5 +39,5 @@ const routes: Routes = [
     ScrollingModule
   ]
 })
-export class InventoryModule {
+export class InventoryPageModule {
 }
