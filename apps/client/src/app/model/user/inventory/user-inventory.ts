@@ -1,9 +1,9 @@
-import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { InventoryItem } from './inventory-item';
 import { InventoryPatch } from './inventory-patch';
 import { InventoryContainer } from './inventory-container';
+import { DataModel } from '../../../core/database/storage/data-model';
 
-export class UserInventory extends DataWithPermissions {
+export class UserInventory extends DataModel {
 
   items: { [index: string]: InventoryContainer } = {};
 
@@ -143,7 +143,6 @@ export class UserInventory extends DataWithPermissions {
   public clone(): UserInventory {
     const clone = new UserInventory();
     clone.$key = this.$key;
-    clone.authorId = this.authorId;
     clone.items = JSON.parse(JSON.stringify(this.items));
     clone.characterId = this.characterId;
     clone.lastZone = this.lastZone;
