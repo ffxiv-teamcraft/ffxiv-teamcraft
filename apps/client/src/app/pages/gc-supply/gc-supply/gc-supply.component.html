@@ -3,7 +3,8 @@
   <nz-form-item *ngFor="let control of form.controls | keys">
     <nz-form-control>
       <nz-input-group [nzPrefix]="jobIcon">
-        <input [formControlName]="control" [nzTitle]="+control | jobName | i18n" class="lvl-input" min="0" nz-input nz-tooltip
+        <input [formControlName]="control" [nzTitle]="+control | jobName | i18n" class="lvl-input" min="0" nz-input
+               nz-tooltip
                required type="number"/>
       </nz-input-group>
       <ng-template #jobIcon>
@@ -25,7 +26,8 @@
       <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{(row.job | jobAbbr)?.en}}.png">
       <div>{{row.job | jobName | i18n}}</div>
     </div>
-    <nz-select #selectBox (ngModelChange)="select(row.job, $event.itemId, $event.count)" [ngModel]="null" class="item-select" nz-col
+    <nz-select #selectBox (ngModelChange)="select(row.job, $event.itemId, $event.count)" [ngModel]="null"
+               class="item-select" nz-col
                nzAllowClear nzMd="6" nzShowSearch
                nzSm="24">
       <nz-option *ngFor="let item of row.items" [nzValue]="item"
@@ -33,7 +35,7 @@
     </nz-select>
     <div *ngIf="selectBox.value" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="6"
          nzSm="24">
-      <img alt="" class="reward-icon" src="https://www.garlandtools.org/files/icons/item/20.png">
+      <img alt="" class="reward-icon" src="{{20 | lazyIcon}}">
       <div>
         {{selectBox.value.reward.seals}}
       </div>
