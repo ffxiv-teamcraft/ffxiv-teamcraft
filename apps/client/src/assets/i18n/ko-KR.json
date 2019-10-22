@@ -1545,7 +1545,7 @@
     "Copied_to_clipboard": "소지품 내역이 클립보드에 복사되었습니다",
     "Click_to_add_to_progression": "아이템 추가를 진행하려면 클릭하세요.",
     "Contribute_to_universalis": "Universalis에 데이터를 기여하기",
-    "Reset_inventory": "Reset this inventory",
+    "Reset_inventory": "소지품 초기화",
     "BAG": {
       "SaddleBag": "초코보 가방",
       "FC_chest": "부대 금고",
