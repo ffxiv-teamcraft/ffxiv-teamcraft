@@ -8,11 +8,13 @@ import {
   inventoryReducer
 } from './+state/inventory.reducer';
 import { InventoryEffects } from './+state/inventory.effects';
+import { CoreModule } from '../../core/core.module';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    CoreModule,
     StoreModule.forFeature(INVENTORY_FEATURE_KEY, inventoryReducer, {
       initialState: inventoryInitialState
     }),

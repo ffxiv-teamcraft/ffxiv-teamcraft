@@ -10,6 +10,7 @@ import { SettingsService } from '../../settings/settings.service';
 import { of } from 'rxjs';
 import { INVENTORY_FEATURE_KEY } from './inventory.reducer';
 import { NgSerializerService } from '@kaiu/ng-serializer';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 @Injectable()
 export class InventoryEffects {
@@ -20,7 +21,7 @@ export class InventoryEffects {
     switchMapTo(this.authFacade.user$),
     distinctUntilKeyChanged('defaultLodestoneId'),
     switchMap((user) => {
-      if (this.settings.persistInventory) {
+      if (this.settings.persistInventory || !this.platform.isDesktop()) {
         return this.inventoryService.getByForeignKey(TeamcraftUser, user.$key).pipe(
           map((inventories: UserInventory[]) => {
             if (user.defaultLodestoneId) {
@@ -77,7 +78,8 @@ export class InventoryEffects {
     private inventoryService: UserInventoryService,
     private authFacade: AuthFacade,
     private settings: SettingsService,
-    private serializer: NgSerializerService
+    private serializer: NgSerializerService,
+    private platform: PlatformService
   ) {
   }
 }
