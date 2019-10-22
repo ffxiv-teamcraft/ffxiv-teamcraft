@@ -140,7 +140,12 @@ export class InventoryComponent {
       first(),
       map(inventory => {
         display.containerIds.forEach(containerId => {
-          delete inventory.items[containerId];
+          const isRetainer = containerId >= 10000 && containerId < 20000;
+          if (isRetainer) {
+            delete inventory.items[`${display.containerName}:${containerId}`];
+          } else {
+            delete inventory.items[containerId];
+          }
         });
         return inventory;
       }),

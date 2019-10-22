@@ -262,7 +262,7 @@ export class ListsEffects {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
       }
-      return this.listService.atomicUpdate(action.payload.$key, action.payload);
+      return this.listService.update(action.payload.$key, action.payload);
     })
   );
 
