@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.10"></a>
+## [6.0.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.9...v6.0.10) (2019-10-23)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with alarms acting strange when being enabled/disabled ([7467e1c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7467e1c))
+* **auth:** changed the way user is persisted in order to fix user destruction bug ([c54fc53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c54fc53))
+* **autofill-stats:** added a message about food effects when updating stats ([f1427e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f1427e5))
+* **discord:** fixed item icons in discord hook messages ([3d708aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d708aa))
+* **gc-supply:** fixed broken seal icon ([2e66af0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2e66af0))
+* **inventory:** fixed an error randomly happening when autocompleting while afk ([daeec01](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/daeec01))
+* **inventory:** fixed an error when trying to load inventory ([b2340ac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b2340ac))
+* **universalis:** removed universalis console logs ([a6d80c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a6d80c7))
+* **ux:** removed warning banners on overlay ([1b7769e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1b7769e))
+
+
+### Features
+
+* **desktop:** added verbose mode for better KO debugging ([6142e3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6142e3b))
+
+
+
 <a name="6.0.9"></a>
 ## [6.0.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.8...v6.0.9) (2019-10-22)
 
