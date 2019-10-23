@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { InventoryActionTypes, InventoryLoaded, UpdateInventory } from './inventory.actions';
 import { UserInventoryService } from '../../../core/database/user-inventory.service';
-import { debounceTime, distinctUntilKeyChanged, map, switchMap, switchMapTo } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilKeyChanged, map, switchMap, switchMapTo } from 'rxjs/operators';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { SettingsService } from '../../settings/settings.service';
@@ -22,13 +22,11 @@ export class InventoryEffects {
     switchMap((user) => {
       if (this.settings.persistInventory || !this.platform.isDesktop()) {
         return this.inventoryService.get(user.$key).pipe(
-          map(inventory => {
-            if (inventory === undefined) {
-              const newInventory = new UserInventory();
-              newInventory.characterId = user.defaultLodestoneId;
-              return newInventory;
-            }
-            return inventory;
+          catchError(() => {
+            const newInventory = new UserInventory();
+            newInventory.characterId = user.defaultLodestoneId;
+            newInventory.$key = user.$key;
+            return of(newInventory);
           })
         );
       } else {
@@ -50,12 +48,10 @@ export class InventoryEffects {
     debounceTime(2000),
     switchMap(action => {
       if (this.settings.persistInventory) {
-        if (action.payload.$key && action.force) {
+        if (action.force) {
           return this.inventoryService.set(action.payload.$key, action.payload);
-        } else if (action.payload.$key) {
-          return this.inventoryService.update(action.payload.$key, action.payload);
         } else {
-          return this.inventoryService.add(action.payload);
+          return this.inventoryService.update(action.payload.$key, action.payload);
         }
       } else {
         localStorage.setItem(INVENTORY_FEATURE_KEY, JSON.stringify(action.payload));
