@@ -3,7 +3,10 @@
     <ng-template #commentTemplate let-comment>
       <nz-list-item [nzActions]="isAuthor?[delete]:null">
         <nz-list-item-meta [nzAvatar]="avatar" [nzDescription]="comment.date | date:'short'"
-                           [nzTitle]="comment.content">
+                           [nzTitle]="contentRef">
+          <ng-template #contentRef>
+            <p>{{comment.content}}</p>
+          </ng-template>
           <ng-template #avatar>
             <app-user-avatar [userId]="comment.authorId" [width]="32"></app-user-avatar>
           </ng-template>
@@ -17,7 +20,7 @@
       </nz-list-item>
     </ng-template>
   </nz-list>
-  <nz-input-group *ngIf="userId$ | async as userId" [nzSuffix]="suffix" nzSearch>
+  <nz-input-group *ngIf="userId$ | async as userId" [nzAddOnAfter]="suffix" nzSearch>
     <input (keydown.enter)="postComment(newCommentContent, userId)" [(ngModel)]="newCommentContent" nz-input
            type="text">
     <ng-template #suffix>
