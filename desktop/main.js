@@ -36,8 +36,8 @@ for (let i = 0; i < argv.length; i++) {
   if (argv[i] === '--noHardwareAcceleration' || argv[i] === '-noHA') {
     options.noHA = true;
   }
-  if (argv[i] === '--winpcap') {
-    options.winpcap = true;
+  if (argv[i] === '--verbose' || argv[i] === '-v') {
+    options.verbose = true;
   }
 }
 
@@ -122,7 +122,7 @@ function createWindow() {
   }
 
   if (config.get('machina') === true) {
-    Machina.start(win, config, options.winpcap);
+    Machina.start(win, config, options.verbose);
   }
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
