@@ -271,8 +271,8 @@
         <div nz-col nzMd="4">
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <nz-switch (click)="$event.stopPropagation();"
-                       (ngModelChange)="alarmsFacade.updateAlarm(row.alarm)"
                        [(ngModel)]="row.alarm.enabled"
+                       (ngModelChange)="alarmsFacade.updateAlarm(row.alarm)"
                        nzSize="small"></nz-switch>
             <app-item-icon *ngIf="row.alarm.icon; else customAlarmIcon" [icon]="row.alarm.itemId | lazyIcon"
                            [itemId]="row.alarm.itemId" [width]="32"></app-item-icon>
