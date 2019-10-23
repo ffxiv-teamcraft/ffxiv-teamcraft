@@ -93,8 +93,8 @@
                 {{'ALARMS.Delete_group_and_alarms' | translate}}
               </button>
               <nz-switch (click)="$event.stopPropagation();"
-                         (ngModelChange)="updateGroupMuteState(group.group)"
-                         [(ngModel)]="group.group.enabled"></nz-switch>
+                         [(ngModel)]="group.group.enabled"
+                         (ngModelChange)="updateGroupMuteState(group.group)"></nz-switch>
             </div>
           </ng-template>
         </nz-collapse>
@@ -134,8 +134,8 @@
                 <nz-avatar [nzText]="row.alarm.name[0]"></nz-avatar>
               </ng-template>
               <nz-switch (click)="$event.stopPropagation();"
-                         (ngModelChange)="alarmsFacade.updateAlarm(row.alarm)"
                          [(ngModel)]="row.alarm.enabled"
+                         (ngModelChange)="alarmsFacade.updateAlarm(row.alarm)"
                          nzSize="small"></nz-switch>
             </div>
           </ng-template>

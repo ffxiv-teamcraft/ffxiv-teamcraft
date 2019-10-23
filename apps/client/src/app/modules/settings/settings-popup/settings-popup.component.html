@@ -228,8 +228,8 @@
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Favorite_aetherytes' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
           <nz-select
-            (ngModelChange)="settings.favoriteAetherytes = favoriteAetherytes"
             [(ngModel)]="favoriteAetherytes"
+            (ngModelChange)="settings.favoriteAetherytes = favoriteAetherytes"
             [nzMaxMultipleCount]="4"
             nzAllowClear
             nzMode="multiple"

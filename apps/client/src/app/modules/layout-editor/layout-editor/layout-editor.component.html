@@ -66,16 +66,16 @@
       <div fxLayout="column" fxLayoutGap="10px">
         <div class="final-items-ordering">
           {{'LIST_DETAILS.LAYOUT.Order_by' | translate}}
-          <nz-select (ngModelChange)="dirty = true"
-                     [(ngModel)]="layout.recipeOrderBy"
+          <nz-select [(ngModel)]="layout.recipeOrderBy"
+                     (ngModelChange)="dirty = true"
                      [nzDisabled]="layout.name === 'Default Layout'">
             <nz-option nzLabel="NAME" nzValue="NAME"></nz-option>
             <nz-option nzLabel="NONE" nzValue="NONE"></nz-option>
             <nz-option nzLabel="LEVEL" nzValue="LEVEL"></nz-option>
             <nz-option nzLabel="JOB" nzValue="JOB"></nz-option>
           </nz-select>
-          <nz-select (ngModelChange)="dirty = true"
-                     [(ngModel)]="layout.recipeOrder"
+          <nz-select [(ngModel)]="layout.recipeOrder"
+                     (ngModelChange)="dirty = true"
                      [nzDisabled]="layout.name === 'Default Layout'">
             <nz-option [nzValue]="0" nzLabel="ASC"></nz-option>
             <nz-option [nzValue]="1" nzLabel="DESC"></nz-option>

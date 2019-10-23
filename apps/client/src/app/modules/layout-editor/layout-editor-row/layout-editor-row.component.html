@@ -72,8 +72,8 @@
       {{'LIST_DETAILS.LAYOUT.Tag_filter' | translate}}
       <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
         <ng-template #addOnBeforeTemplate>
-          <nz-select (ngModelChange)="$event === null? row.tag = '':null; rowChange.emit(row)"
-                     [(ngModel)]="row.hasTag"
+          <nz-select [(ngModel)]="row.hasTag"
+                     (ngModelChange)="$event === null? row.tag = '':null; rowChange.emit(row)"
                      [nzDisabled]="readonly"
                      class="tag-filter-select">
             <nz-option [nzValue]="null" nzLabel="NONE"></nz-option>
