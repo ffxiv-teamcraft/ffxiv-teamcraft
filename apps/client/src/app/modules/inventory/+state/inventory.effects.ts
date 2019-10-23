@@ -36,7 +36,11 @@ export class InventoryEffects {
           newInventory.characterId = user.defaultLodestoneId;
           return of(newInventory);
         }
-        return of(this.serializer.deserialize<UserInventory>(JSON.parse(fromLocalStorage), UserInventory));
+        const fromLS = this.serializer.deserialize<UserInventory>(JSON.parse(fromLocalStorage), UserInventory);
+        if (fromLS.$key === undefined) {
+          fromLS.$key = user.$key;
+        }
+        return of(fromLS);
       }
     }),
     map(inventory => new InventoryLoaded(inventory))
