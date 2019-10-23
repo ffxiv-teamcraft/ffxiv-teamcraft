@@ -512,7 +512,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       filter(list => list && list.teamId !== undefined),
       withLatestFrom(this.team$)
     ).subscribe(([list, team]) => {
-      this.discordWebhookService.notifyUserAssignment(team, this.item.icon, uid, this.item.id, list);
+      this.discordWebhookService.notifyUserAssignment(team, uid, this.item.id, list);
     });
   }
 
