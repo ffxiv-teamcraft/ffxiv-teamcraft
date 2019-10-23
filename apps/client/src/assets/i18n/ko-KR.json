@@ -407,7 +407,7 @@
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
     "Autofill_from_packets": "패킷 캡쳐를 이용하여 능력치를 자동으로 채우기",
-    "Autofill_stats_explain": "갱신을 하려면 원하는 잡으로 전환한 다음, 갱신이 완료되면 이 팝업을 닫으세요.",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done. Please make sure you don't have any active food, else it'll save your stats with the food active.",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
