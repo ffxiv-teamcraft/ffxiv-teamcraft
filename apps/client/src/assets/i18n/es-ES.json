@@ -407,7 +407,7 @@
     "More_than_100_lists_created": "Más de 100 listas creadas",
     "Veteran": "Veterano",
     "Autofill_from_packets": "Autocompletar estadísticas usando captura de paquetes",
-    "Autofill_stats_explain": "Cambie a la profesión deseada para actualizarla. Cierre esta ventana cuando haya terminado.",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done. Please make sure you don't have any active food, else it'll save your stats with the food active.",
     "VERIFICATION": {
       "Title": "Verificación de personaje",
       "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" dentro de su biografía en su perfil de Lodestone y haga clic en el botón de abajo. Más información en el <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
