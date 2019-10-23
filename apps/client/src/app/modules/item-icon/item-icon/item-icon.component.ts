@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-item-icon',
@@ -38,7 +39,7 @@ export class ItemIconComponent {
   @Input()
   disableClick = false;
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private lazyData: LazyDataService) {
   }
 
   getLink(): string {
@@ -49,7 +50,7 @@ export class ItemIconComponent {
     if (this.icon && this.icon.toString() === this.icon && this.icon.indexOf('custom/') === -1 && !this.icon.startsWith('t/')) {
       return this.icon;
     }
-    return `https://www.garlandtools.org/files/icons/item/${this.icon}.png`;
+    return `https://xivapi.com${this.lazyData.icons[this.itemId]}`;
   }
 
 }

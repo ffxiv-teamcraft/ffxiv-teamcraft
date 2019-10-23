@@ -375,7 +375,7 @@
     "Enable_packet_capture": "Capture de paquets activée (ajoute des fonctionnalités d'inventaire en temps réel)",
     "Packet_capture_info": "Capturer des paquets est contre le CLUF (Contrat de license de l'utilisateur final), la même raison pour laquelle ACT est contre le CLUF. Mais Square Enix le tolère à moins que vous ne vous soyez entrain de le répéter à tout le monde en jeu. Ne faites rien et vous ne risquerez rien.",
     "Contribute_to_universalis": "Contribuer à Universalis",
-    "Persist_inventory": "Save inventory in database (to share with web version)",
+    "Persist_inventory": "Enregistrer l'inventaire en base de données (pour partager avec la version web)",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -407,7 +407,7 @@
     "More_than_100_lists_created": "Plus de 100 listes créées",
     "Veteran": "Vétéran",
     "Autofill_from_packets": "Auto-remplir les statistiques en utilisant la capture de paquets",
-    "Autofill_stats_explain": "Passez sur le job souhaité pour le mettre à jour, fermez cette popup une fois que vous aurez terminé.",
+    "Autofill_stats_explain": "Passez à la tâche souhaitée pour la mettre à jour, fermez cette popup une fois que vous avez terminé. Assurez-vous que vous n'avez pas de nourriture active, sinon cela sauvera vos statistiques avec la nourriture active.",
     "VERIFICATION": {
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code: \"{{userId}}\" dans votre biographie de profil Lodestone et cliquez sur le bouton ci-dessous. Plus d'informations sur <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">le wiki</a>",
@@ -1546,7 +1546,7 @@
     "Copied_to_clipboard": "Inventaire copié dans le presse-papiers",
     "Click_to_add_to_progression": "Cliquez pour ajouter à la progression de l'élément",
     "Contribute_to_universalis": "Contribution des données à l'universalis",
-    "Reset_inventory": "Reset this inventory",
+    "Reset_inventory": "Réinitialiser cet inventaire",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",

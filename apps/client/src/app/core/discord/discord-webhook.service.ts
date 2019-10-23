@@ -9,6 +9,7 @@ import { LinkToolsService } from '../tools/link-tools.service';
 import { LocalizedDataService } from '../data/localized-data.service';
 import { CharacterService } from '../api/character.service';
 import { WebhookSettingType } from '../../model/team/webhook-setting-type';
+import { LazyDataService } from '../data/lazy-data.service';
 
 @Injectable()
 export class DiscordWebhookService {
@@ -19,7 +20,8 @@ export class DiscordWebhookService {
 
   constructor(private http: HttpClient, private translate: TranslateService,
               private i18n: I18nToolsService, private linkTools: LinkToolsService,
-              private l12n: LocalizedDataService, private characterService: CharacterService) {
+              private l12n: LocalizedDataService, private characterService: CharacterService,
+              private lazyData: LazyDataService) {
   }
 
   sendMessage(team: Team, contentKey: string, contentParams?: Object, iconUrl?: string, imageUrl?: string): void {
@@ -74,7 +76,7 @@ export class DiscordWebhookService {
     });
   }
 
-  notifyItemAddition(itemId: number, itemIcon: number, amount: number, list: List, team: Team): void {
+  notifyItemAddition(itemId: number, amount: number, list: List, team: Team): void {
     if (!team.hasSettingEnabled(WebhookSettingType.ITEM_ADDED)) {
       return;
     }
@@ -85,10 +87,10 @@ export class DiscordWebhookService {
       itemId: itemId,
       listName: list.name,
       listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`);
+    }, this.getIcon(itemId));
   }
 
-  notifyItemDeletion(itemId: number, itemIcon: number, amount: number, list: List, team: Team): void {
+  notifyItemDeletion(itemId: number, amount: number, list: List, team: Team): void {
     if (!team.hasSettingEnabled(WebhookSettingType.ITEM_REMOVED)) {
       return;
     }
@@ -99,14 +101,14 @@ export class DiscordWebhookService {
       itemId: itemId,
       listName: list.name,
       listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`);
+    }, this.getIcon(itemId));
   }
 
-  notifyItemChecked(team: Team, itemIcon: number, list: List, memberId: string, amount: number, itemId: number, totalNeeded: number, finalItem: boolean): void {
+  notifyItemChecked(team: Team, list: List, memberId: string, amount: number, itemId: number, totalNeeded: number, finalItem: boolean): void {
     const row = list.getItemById(itemId, !finalItem, finalItem);
     if (row.done + amount >= totalNeeded && !team.hasSettingEnabled(WebhookSettingType.ITEM_COMPLETION)) {
       return;
-    } else if(row.done + amount < totalNeeded) {
+    } else if (row.done + amount < totalNeeded) {
       amount = row.done + amount;
     }
     if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION) && !finalItem) {
@@ -128,12 +130,12 @@ export class DiscordWebhookService {
           itemId: itemId,
           listName: list.name,
           listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-        }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`, character ? character.character.Avatar : '');
+        }, this.getIcon(itemId), character ? character.character.Avatar : '');
       })
     ).subscribe();
   }
 
-  notifyCustomItemAddition(itemName: string, itemIcon: number, amount: number, list: List, team: Team): void {
+  notifyCustomItemAddition(itemName: string, itemId: number, amount: number, list: List, team: Team): void {
     if (!team.hasSettingEnabled(WebhookSettingType.ITEM_ADDED)) {
       return;
     }
@@ -142,10 +144,10 @@ export class DiscordWebhookService {
       itemName: itemName,
       listName: list.name,
       listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`);
+    }, this.getIcon(itemId));
   }
 
-  notifyCustomItemDeletion(itemName: string, itemIcon: number, amount: number, list: List, team: Team): void {
+  notifyCustomItemDeletion(itemName: string, itemId: number, amount: number, list: List, team: Team): void {
     if (!team.hasSettingEnabled(WebhookSettingType.ITEM_REMOVED)) {
       return;
     }
@@ -154,10 +156,10 @@ export class DiscordWebhookService {
       itemName: itemName,
       listName: list.name,
       listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`);
+    }, this.getIcon(itemId));
   }
 
-  notifyCustomItemChecked(team: Team, itemIcon: number, list: List, memberId: string, amount: number, itemName: string): void {
+  notifyCustomItemChecked(team: Team, itemId: number, list: List, memberId: string, amount: number, itemName: string): void {
     if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION)) {
       return;
     }
@@ -171,7 +173,7 @@ export class DiscordWebhookService {
           itemName: itemName,
           listName: list.name,
           listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-        }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`, character.character.Avatar);
+        }, this.getIcon(itemId), character.character.Avatar);
       })
     ).subscribe();
   }
@@ -208,7 +210,7 @@ export class DiscordWebhookService {
     ).subscribe();
   }
 
-  notifyUserAssignment(team: Team, itemIcon: number, memberId: string, itemId: number, list: List): void {
+  notifyUserAssignment(team: Team, memberId: string, itemId: number, list: List): void {
     if (!team.hasSettingEnabled(WebhookSettingType.USER_ASSIGNMENT)) {
       return;
     }
@@ -223,9 +225,13 @@ export class DiscordWebhookService {
           itemId: itemId,
           listName: list.name,
           listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-        }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`, character.character.Avatar);
+        }, this.getIcon(itemId), character.character.Avatar);
       })
     ).subscribe();
+  }
+
+  private getIcon(itemId: number): string {
+    return `https://xivapi.com${this.lazyData.icons[itemId]}`;
   }
 
   oauthUrl(state: string, redirectUri: string): string {

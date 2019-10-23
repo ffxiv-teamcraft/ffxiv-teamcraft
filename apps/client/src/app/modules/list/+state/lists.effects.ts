@@ -331,7 +331,7 @@ export class ListsEffects {
         });
       }
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
-        this.discordWebhookService.notifyItemChecked(team, action.itemIcon, list, userId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
+        this.discordWebhookService.notifyItemChecked(team, list, userId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
       return [action, list];
     }),

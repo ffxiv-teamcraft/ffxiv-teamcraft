@@ -11,7 +11,8 @@ import {
   mergeMap,
   switchMap,
   tap,
-  withLatestFrom
+  withLatestFrom,
+  first
 } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
@@ -40,10 +41,9 @@ import { User, UserCredential } from '@firebase/auth-types';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthFacade } from './auth.facade';
 import { PatreonService } from '../core/patreon/patreon.service';
+import { diff } from 'deep-diff';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthEffects {
 
   @Effect()
@@ -148,7 +148,7 @@ export class AuthEffects {
         user.defaultLodestoneId = user.lodestoneIds[0].id;
       }
     }),
-    distinctUntilChanged((a, b) => JSON.stringify(a) === JSON.stringify(b)),
+    distinctUntilChanged((a, b) => diff(a, b)),
     map(user => {
       const cachedUser: any = JSON.parse(localStorage.getItem('auth:user') || '{}');
       if (user.lodestoneIds.length === 0 && cachedUser.$key === user.$key) {
@@ -165,7 +165,7 @@ export class AuthEffects {
     ofType<UserFetched>(AuthActionTypes.UserFetched),
     distinctUntilChanged((a, b) => {
       return a.user.notFound !== b.user.notFound
-        && JSON.stringify(a.user.lodestoneIds) === JSON.stringify(b.user.lodestoneIds);
+        && diff(a.user.lodestoneIds, b.user.lodestoneIds);
     }),
     withLatestFrom(this.authFacade.loggedIn$),
     filter(([action, loggedIn]) => {
@@ -244,15 +244,17 @@ export class AuthEffects {
       AuthActionTypes.SetWorld
     ),
     debounceTime(100),
-    withLatestFrom(this.store),
-    switchMap(([, state]) => {
+    switchMap(() => {
+      return combineLatest([this.authFacade.loggedIn$, this.authFacade.user$, this.authFacade.userId$]).pipe(first());
+    }),
+    switchMap(([loggedIn, user, uid]) => {
       // Don't save if there is no associated lodestone id on a logged in account.
-      if (state.auth.loggedIn && state.auth.user.lodestoneIds.length === 0 && state.auth.user.customCharacters.length === 0) {
+      if (loggedIn && user.lodestoneIds.length === 0 && user.customCharacters.length === 0) {
         return of(null);
       }
       // Save to localstorage to have a backup check to avoid data loss
-      localStorage.setItem('auth:user', JSON.stringify(state.auth.user));
-      return this.userService.set(state.auth.uid, { ...state.auth.user }).pipe(
+      localStorage.setItem('auth:user', JSON.stringify(user));
+      return this.userService.set(uid, { ...user }).pipe(
         catchError(() => of(null))
       );
     }),
