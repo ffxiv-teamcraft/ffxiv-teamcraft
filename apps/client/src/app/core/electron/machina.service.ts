@@ -134,9 +134,14 @@ export class MachinaService {
         return this.inventory$.pipe(
           first(),
           map(inventory => {
-            const patch = inventory.operateTransaction(packet, lastSpawnedRetainer);
-            if (patch) {
-              this._inventoryPatches$.next(patch);
+            try {
+              const patch = inventory.operateTransaction(packet, lastSpawnedRetainer);
+              if (patch) {
+                this._inventoryPatches$.next(patch);
+              }
+            } catch (e) {
+              console.log(packet);
+              console.error(e);
             }
             return inventory;
           })

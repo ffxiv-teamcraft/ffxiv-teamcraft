@@ -14,7 +14,7 @@ function sendToRenderer(win, packet) {
   win && win.webContents && win.webContents.send('packet', packet);
 }
 
-module.exports.start = function(win, config, winpcap) {
+module.exports.start = function(win, config, verbose) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
@@ -36,11 +36,18 @@ module.exports.start = function(win, config, winpcap) {
           definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
         };
 
+      if (verbose) {
+        options.logger = log.log;
+      }
+
       Machina = new MachinaFFXIV(options);
       Machina.start(() => {
         log.info('Packet capture started');
       });
       Machina.on('any', (packet) => {
+        if (verbose) {
+          log.log(JSON.stringify(packet));
+        }
         const acceptedPackets = [
           'itemInfo',
           'updateInventorySlot',
