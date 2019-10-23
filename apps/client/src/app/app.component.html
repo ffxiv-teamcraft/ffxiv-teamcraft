@@ -412,7 +412,7 @@
               </div>
             </ng-template>
           </nz-alert>
-          <ng-container *ngIf="platformService.isDesktop() && ipc.machinaToggle">
+          <ng-container *ngIf="platformService.isDesktop() && ipc.machinaToggle && !overlay">
             <nz-alert *ngIf="emptyInventory$ | async" [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate" [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
                       class="new-version-alert"
                       nzBanner
@@ -420,7 +420,9 @@
                       nzType="warning">
             </nz-alert>
             <ng-container *ngIf="user$ | async as user">
-              <nz-alert *ngIf="user.cid === undefined && (loggedIn$ | async)" [nzDescription]="'PACKET_CAPTURE.Please_relog' | translate" [nzMessage]="'PACKET_CAPTURE.No_character_id' | translate"
+              <nz-alert *ngIf="user.cid === undefined && (loggedIn$ | async) && settings.enableUniversalisSourcing && !overlay"
+                        [nzDescription]="'PACKET_CAPTURE.Please_relog' | translate"
+                        [nzMessage]="'PACKET_CAPTURE.No_character_id' | translate"
                         class="new-version-alert"
                         nzBanner
                         nzShowIcon
