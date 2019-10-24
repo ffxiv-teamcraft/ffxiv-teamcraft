@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.11"></a>
+## [6.0.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.10...v6.0.11) (2019-10-24)
+
+
+### Bug Fixes
+
+* fixed an issue with some switch values not being applied properly ([bb7e34c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bb7e34c))
+* **comments:** fixed long comments not being shown properly ([ddbd135](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ddbd135))
+
+
+
 <a name="6.0.10"></a>
 ## [6.0.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.9...v6.0.10) (2019-10-23)
 
