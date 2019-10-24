@@ -8,8 +8,8 @@
           nzAvatar="/assets/icons/notice.png">
         </nz-list-item-meta>
         <ng-template #toggle>
-          <nz-switch (ngModelChange)="setEnabled(timer.label, $event)"
-                     [(ngModel)]="timer.enabled"></nz-switch>
+          <nz-switch [(ngModel)]="timer.enabled"
+                     (ngModelChange)="setEnabled(timer.label, $event)"></nz-switch>
         </ng-template>
       </nz-list-item>
     </ng-template>

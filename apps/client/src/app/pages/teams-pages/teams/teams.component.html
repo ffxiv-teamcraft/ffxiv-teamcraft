@@ -53,8 +53,8 @@
               <div nz-row>
                 <div *ngFor="let row of team.webhookSettings; trackBy: trackByPermission" [nzMd]="12" [nzSm]="24"
                      nz-col>
-                  <label (ngModelChange)="updateTeam(team)"
-                         [(ngModel)]="row.value"
+                  <label [(ngModel)]="row.value"
+                         (ngModelChange)="updateTeam(team)"
                          nz-checkbox>{{('TEAMS.PERMISSIONS.' + row.name) | translate}}</label>
                 </div>
               </div>

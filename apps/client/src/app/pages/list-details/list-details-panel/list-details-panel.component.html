@@ -45,7 +45,7 @@
         </div>
       </div>
     </div>
-    <button (click)="addItem()" *ngIf="finalItems && (permissionLevel$ | async) >= 30" nz-button nzBlock>
+    <button (click)="addItems()" *ngIf="finalItems && (permissionLevel$ | async) >= 30" nz-button nzBlock>
       + {{'LIST_DETAILS.Add_item' | translate}}
     </button>
   </nz-collapse-panel>

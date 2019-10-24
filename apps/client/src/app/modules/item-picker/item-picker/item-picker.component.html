@@ -1,37 +1,44 @@
 <input #searchInput (keyup)="query$.next(searchInput.value)" nz-input nzAutoFocus
        placeholder="{{'ITEMS.Item_name' | translate}}" type="text">
-<nz-list [nzDataSource]="results$ | async" [nzLoading]="loading" [nzRenderItem]="itemTemplate">
-  <ng-template #itemTemplate let-result>
-    <nz-list-item [nzContent]="content">
-      <nz-list-item-meta [nzAvatar]="avatar"
-                         [nzDescription]="result.recipe !== undefined?description:null"
-                         [nzTitle]="result.isCustom ? (result.itemId | customItemName | async) : (result.itemId | itemName | i18n)">
-        <ng-template #avatar>
-          <app-item-icon [icon]="result.icon" [itemId]="result.itemId" [width]="32"></app-item-icon>
+<ng-container *ngIf="results$ | async as results">
+  <nz-list [nzDataSource]="results" [nzLoading]="loading" [nzRenderItem]="itemTemplate">
+    <ng-template #itemTemplate let-result>
+      <nz-list-item [nzContent]="content">
+        <nz-list-item-meta [nzAvatar]="avatar"
+                           [nzDescription]="result.recipe !== undefined?description:null"
+                           [nzTitle]="result.isCustom ? (result.itemId | customItemName | async) : (result.itemId | itemName | i18n)">
+          <ng-template #avatar>
+            <div class="item-icon-container">
+              <label nz-checkbox [(ngModel)]="result.selected" *ngIf="multi"></label>
+              <app-item-icon [icon]="result.icon" [itemId]="result.itemId" [width]="32"></app-item-icon>
+            </div>
+          </ng-template>
+          <ng-template #description>
+            <img alt="getJob(item.job)?.abbreviation"
+                 class="crafted-by"
+                 src="https://www.garlandtools.org/db/images/{{getJob(result.recipe.job)?.abbreviation}}.png">
+            {{result.recipe.lvl}}
+            {{getStars(result.recipe.stars)}}
+          </ng-template>
+        </nz-list-item-meta>
+        <ng-template #content>
+          <div fxLayout="row" fxLayoutGap="5px">
+            <nz-input-group *ngIf="!hideAmount" [nzAddOnBefore]="result.recipe !== undefined?addCrafts:null"
+                            [nzCompact]="true">
+              <input [(ngModel)]="result.amount" class="amount-input" nz-input type="number">
+              <ng-template #addCrafts>
+                <label [(ngModel)]="result.addCrafts" nz-checkbox>
+                  {{'Collectable_flag' | translate}}
+                </label>
+              </ng-template>
+            </nz-input-group>
+            <button (click)="close(result)" [nzShape]="'circle'" [nzType]="'primary'" nz-button>
+              <i nz-icon nzType="check"></i>
+            </button>
+          </div>
         </ng-template>
-        <ng-template #description>
-          <img alt="getJob(item.job)?.abbreviation"
-               class="crafted-by" src="https://www.garlandtools.org/db/images/{{getJob(result.recipe.job)?.abbreviation}}.png">
-          {{result.recipe.lvl}}
-          {{getStars(result.recipe.stars)}}
-        </ng-template>
-      </nz-list-item-meta>
-      <ng-template #content>
-        <div fxLayout="row" fxLayoutGap="5px">
-          <nz-input-group *ngIf="!hideAmount" [nzAddOnBefore]="result.recipe !== undefined?addCrafts:null"
-                          [nzCompact]="true">
-            <input [(ngModel)]="result.amount" class="amount-input" nz-input type="number">
-            <ng-template #addCrafts>
-              <label [(ngModel)]="result.addCrafts" nz-checkbox>
-                {{'Collectable_flag' | translate}}
-              </label>
-            </ng-template>
-          </nz-input-group>
-          <button (click)="close(result)" [nzShape]="'circle'" [nzType]="'primary'" nz-button>
-            <i nz-icon nzType="check"></i>
-          </button>
-        </div>
-      </ng-template>
-    </nz-list-item>
-  </ng-template>
-</nz-list>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+  <button nz-button nzBlock (click)="pickMulti(results)" *ngIf="multi">{{'LISTS.Add_selection' | translate}}</button>
+</ng-container>

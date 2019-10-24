@@ -18,4 +18,15 @@ export class ItemPickerService {
       nzTitle: this.translate.instant('Pick_an_item')
     }).afterClose;
   }
+
+  public pickItems(): Observable<SearchResult[]> {
+    return this.dialog.create({
+      nzContent: ItemPickerComponent,
+      nzFooter: null,
+      nzComponentParams: {
+        multi: true
+      },
+      nzTitle: this.translate.instant('Pick_an_item')
+    }).afterClose;
+  }
 }

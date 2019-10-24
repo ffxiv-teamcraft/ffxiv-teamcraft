@@ -26,7 +26,9 @@ export class ItemPickerComponent implements OnInit {
 
   public includeCustomItems = false;
 
-  loading = false;
+  public loading = false;
+
+  public multi = false;
 
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
               private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
@@ -89,6 +91,10 @@ export class ItemPickerComponent implements OnInit {
 
   close(result: SearchResult): void {
     this.dialogRef.close(result);
+  }
+
+  pickMulti(results: SearchResult[]): void {
+    this.dialogRef.close(results.filter(r => r.selected));
   }
 
   ngOnInit(): void {
