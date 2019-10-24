@@ -13,7 +13,7 @@ import { NavigationMapComponent } from '../../../modules/map/navigation-map/navi
 import { NavigationObjective } from '../../../modules/map/navigation-objective';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, concat, Observable, of } from 'rxjs';
 import { ItemPickerService } from '../../../modules/item-picker/item-picker.service';
 import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
@@ -55,16 +55,29 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     this.permissionLevel$ = this.listsFacade.selectedListPermissionLevel$;
   }
 
-  addItem(): void {
+  addItems(): void {
     this.listsFacade.selectedList$.pipe(
       first(),
       switchMap(list => {
-        return this.itemPicker.pickItem().pipe(
-          filter(item => item !== undefined),
-          switchMap((item) => {
-            const operation = this.listManager.addToList(+item.itemId, list,
-              item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
-            return this.progress.showProgress(operation, 1);
+        return this.itemPicker.pickItems().pipe(
+          filter(items => items.length > 0),
+          switchMap((items) => {
+            const operations = items.map(item => {
+              return this.listManager.addToList(+item.itemId, list,
+                item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
+            });
+            let operation$: Observable<any>;
+            if (operations.length > 0) {
+              operation$ = concat(
+                ...operations
+              );
+            } else {
+              operation$ = of(list);
+            }
+            return this.progress.showProgress(operation$,
+              items.length,
+              'Adding_recipes',
+              { amount: items.length, listname: list.name });
           })
         );
       }),
