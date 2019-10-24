@@ -23,7 +23,9 @@ export class UserInventoryService extends FirestoreStorage<UserInventory> {
     if (changes.some(entry => entry.kind === 'D' || entry.kind === 'A')) {
       return super.update(uid, data, uriParams);
     }
-    const patch = changes.reduce((res, change) => {
+    const patch = changes
+      .filter(change => change !== undefined)
+      .reduce((res, change) => {
       res[change.path.join('.')] = change.rhs;
       return res;
     }, {});
