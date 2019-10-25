@@ -578,22 +578,6 @@
           </div>
           <div class="category-row">
             <div>
-              <h4>{{'SIMULATOR.CATEGORY.Cp_recovery' | translate}}</h4>
-              <div (drop)="disableEvent($event)" [copy]="true" class="actions-row ngx-dnd-container" ngxDroppable>
-                <app-action (actionclick)="addAction(action)" (onDragEnd)="tooltipsDisabled = false"
-                            (onDragStart)="tooltipsDisabled = true"
-                            *ngFor="let action of getCpRecoveryActions()"
-                            [action]="action"
-                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [model]="action"
-                            [ngxDraggable]="['action']" [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                            [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled"
-                            class="ngx-dnd-item action-from-bar"></app-action>
-              </div>
-            </div>
-            <div>
               <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
               <div (drop)="disableEvent($event)" [copy]="true" class="actions-row ngx-dnd-container" ngxDroppable>
                 <app-action (actionclick)="addAction(action)" (onDragEnd)="tooltipsDisabled = false"
@@ -609,30 +593,12 @@
                             class="ngx-dnd-item action-from-bar"></app-action>
               </div>
             </div>
-          </div>
-          <div class="category-row">
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
               <div (drop)="disableEvent($event)" [copy]="true" class="actions-row ngx-dnd-container" ngxDroppable>
                 <app-action (actionclick)="addAction(action)" (onDragEnd)="tooltipsDisabled = false"
                             (onDragStart)="tooltipsDisabled = true"
                             *ngFor="let action of getRepairActions()"
-                            [action]="action"
-                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [model]="action"
-                            [ngxDraggable]="['action']" [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                            [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled"
-                            class="ngx-dnd-item action-from-bar"></app-action>
-              </div>
-            </div>
-            <div>
-              <h4>{{'SIMULATOR.CATEGORY.Specialty' | translate}}</h4>
-              <div (drop)="disableEvent($event)" [copy]="true" class="actions-row ngx-dnd-container" ngxDroppable>
-                <app-action (actionclick)="addAction(action)" (onDragEnd)="tooltipsDisabled = false"
-                            (onDragStart)="tooltipsDisabled = true"
-                            *ngFor="let action of getSpecialtyActions()"
                             [action]="action"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             [model]="action"
