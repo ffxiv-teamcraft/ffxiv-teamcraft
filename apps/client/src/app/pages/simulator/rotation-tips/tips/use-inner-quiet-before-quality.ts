@@ -1,5 +1,5 @@
 import { RotationTip } from '../rotation-tip';
-import { InnerQuiet, SimulationResult, TrainedEye } from '@ffxiv-teamcraft/simulator';
+import { InnerQuiet, SimulationResult, TrainedEye, Reflect } from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
 
 export class UseInnerQuietBeforeQuality extends RotationTip {
@@ -13,7 +13,7 @@ export class UseInnerQuietBeforeQuality extends RotationTip {
   }
 
   matches(simulationResult: SimulationResult): boolean {
-    const iqIndex = simulationResult.steps.findIndex(step => step.action.is(InnerQuiet));
+    const iqIndex = simulationResult.steps.findIndex(step => step.action.is(InnerQuiet) || step.action.is(Reflect));
     const firstQualityAction = simulationResult.steps.findIndex(step => step.addedQuality > 0 && !step.action.is(TrainedEye));
     return firstQualityAction > -1 && iqIndex > firstQualityAction;
   }
