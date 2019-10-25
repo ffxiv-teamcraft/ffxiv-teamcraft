@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.12"></a>
+## [6.0.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.11...v6.0.12) (2019-10-25)
+
+
+### Bug Fixes
+
+* **i18n:** fixed grammar error in item picker context ([2e118cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2e118cc))
+* **inventory:** fixed an issue with retainers not reset properly ([eabab6e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eabab6e))
+* **item-picker:** fixed checkbox placement ([f3d3dd1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f3d3dd1))
+* **item-picker:** fixed checkbox placement ([c76a469](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c76a469))
+
+
+
 <a name="6.0.11"></a>
 ## [6.0.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.10...v6.0.11) (2019-10-24)
 
