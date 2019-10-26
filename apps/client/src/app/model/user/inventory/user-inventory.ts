@@ -37,7 +37,7 @@ export class UserInventory extends DataModel {
     return [].concat.apply([],
       Object.keys(this.items)
         .filter(key => {
-          return UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1;
+          return UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1 || key.indexOf(':') > -1;
         })
         .map(key => {
           return Object.keys(this.items[key])

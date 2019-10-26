@@ -23,7 +23,16 @@ import {
 } from './auth.actions';
 import { auth } from 'firebase/app';
 import { UserCredential } from '@firebase/auth-types';
-import { distinctUntilChanged, distinctUntilKeyChanged, filter, first, map, switchMap, tap, startWith } from 'rxjs/operators';
+import {
+  distinctUntilChanged,
+  distinctUntilKeyChanged,
+  filter,
+  first,
+  map,
+  startWith,
+  switchMap,
+  tap
+} from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
@@ -85,7 +94,8 @@ export class AuthFacade {
         ...lodestoneIdEntry,
         character: character.Character
       };
-    })
+    }),
+    filter(c => c !== undefined)
   );
 
   mainCharacter$ = this.mainCharacterEntry$.pipe(
@@ -94,10 +104,13 @@ export class AuthFacade {
     })
   );
 
-  fcId$ = this.mainCharacter$.pipe(
-    distinctUntilKeyChanged('FreeCompanyId'),
-    map((character) => {
-      if (character === null || character.FreeCompanyId === undefined || character.FreeCompanyId === null) {
+  fcId$ = combineLatest([this.mainCharacter$, this.user$]).pipe(
+    distinctUntilChanged(([a], [b]) => {
+      return a.FreeCompanyId === b.FreeCompanyId;
+    }),
+    map(([character, user]) => {
+      if (character === null || character.FreeCompanyId === undefined || character.FreeCompanyId === null
+        || character.FreeCompanyId.toString() === user.currentFcId) {
         return null;
       }
       return character.FreeCompanyId.toString();
