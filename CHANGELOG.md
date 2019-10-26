@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.14"></a>
+## [6.0.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.13...v6.0.14) (2019-10-26)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue resetting some user profiles ([9cd85bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9cd85bf))
+* **inventory:** fixed retainers not being displayed in inventory listings ([12976d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/12976d2))
+
+
+
 <a name="6.0.13"></a>
 ## [6.0.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.12...v6.0.13) (2019-10-26)
 
