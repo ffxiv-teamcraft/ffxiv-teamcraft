@@ -77,13 +77,13 @@ export class AuthEffects {
       return this.userService.get(action.uid).pipe(
         map(user => {
           return user;
+        }),
+        tap(user => {
+          if (user.notFound) {
+            this.store.dispatch(new RegisterUser(user.$key, new TeamcraftUser()));
+          }
         })
       );
-    }),
-    tap(user => {
-      if (user.notFound) {
-        this.store.dispatch(new RegisterUser(user.$key, new TeamcraftUser()));
-      }
     }),
     map((user: TeamcraftUser) => {
       // If token has been refreshed more than 3 weeks ago, refresh it now.
