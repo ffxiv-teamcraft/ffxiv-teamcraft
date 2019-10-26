@@ -9,6 +9,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { HttpClient } from '@angular/common/http';
 import { LogTrackingService } from './log-tracking.service';
+import { CharacterResponse, XivapiService } from '@xivapi/angular-client';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,19 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
 
   userCache = {};
 
+  characterCache: { [index: number]: Observable<CharacterResponse> } = {};
+
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService, private af: AngularFireAuth, private http: HttpClient,
-              private logTrackingService: LogTrackingService) {
+              private logTrackingService: LogTrackingService, private xivapi: XivapiService) {
     super(firestore, serializer, zone, pendingChangesService);
+  }
+
+  public getCharacter(id: number): Observable<CharacterResponse> {
+    if (this.characterCache[id] === undefined) {
+      this.characterCache[id] = this.xivapi.getCharacter(id).pipe(shareReplay(1));
+    }
+    return this.characterCache[id];
   }
 
   public get(uid: string, external = false, isCurrentUser = false): Observable<TeamcraftUser> {

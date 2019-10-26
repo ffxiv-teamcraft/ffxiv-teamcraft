@@ -4,23 +4,21 @@ import { AuthState } from './auth.reducer';
 import {
   catchError,
   debounceTime,
-  delay,
   distinctUntilChanged,
+  exhaustMap,
   filter,
   map,
   mergeMap,
   switchMap,
   tap,
-  withLatestFrom,
-  first
+  withLatestFrom
 } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest, EMPTY, from, of } from 'rxjs';
+import { EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
   AddCharacter,
   AuthActionTypes,
   Authenticated,
-  CharactersLoaded,
   LinkingCharacter,
   LoggedInAsAnonymous,
   LoginAsAnonymous,
@@ -35,7 +33,7 @@ import { Store } from '@ngrx/store';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { CharacterResponse, XivapiService } from '@xivapi/angular-client';
+import { XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
 import { User, UserCredential } from '@firebase/auth-types';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -73,22 +71,42 @@ export class AuthEffects {
   );
 
   @Effect()
-  fetchUserOnAnonymous$ = this.actions$.pipe(
-    ofType(AuthActionTypes.LoggedInAsAnonymous),
-    switchMap((action: Authenticated) => {
+  fetchUser$ = this.actions$.pipe(
+    ofType<LoggedInAsAnonymous | Authenticated>(AuthActionTypes.LoggedInAsAnonymous, AuthActionTypes.Authenticated),
+    exhaustMap((action: LoggedInAsAnonymous | Authenticated) => {
       return this.userService.get(action.uid).pipe(
         map(user => {
-          user.notFound = false;
           return user;
-        }),
-        switchMap(() => {
-          return this.userService.set(action.uid, new TeamcraftUser()).pipe(
-            switchMap(() => {
-              return this.userService.get(action.uid);
-            })
-          );
         })
       );
+    }),
+    tap(user => {
+      if (user.notFound) {
+        this.store.dispatch(new RegisterUser(user.$key, new TeamcraftUser()));
+      }
+    }),
+    map((user: TeamcraftUser) => {
+      // If token has been refreshed more than 3 weeks ago, refresh it now.
+      if (user.patron && Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
+        this.patreonService.refreshToken(user);
+      }
+      if (user.defaultLodestoneId === undefined && user.lodestoneIds.length > 0) {
+        user.defaultLodestoneId = user.lodestoneIds[0].id;
+      }
+      if (user.defaultLodestoneId && !user.lodestoneIds.some(entry => entry.id === user.defaultLodestoneId)) {
+        user.defaultLodestoneId = user.lodestoneIds[0].id;
+      }
+      return user;
+    }),
+    catchError((error) => {
+      if (error.message.toLowerCase().indexOf('not found') > -1) {
+        return of(new TeamcraftUser());
+      } else {
+        this.authFacade.logout();
+        console.error(error);
+        this.notificationService.error(this.translate.instant('COMMON.Error'), this.translate.instant('Network_error_logged_out'));
+        return EMPTY;
+      }
     }),
     map(user => new UserFetched(user))
   );
@@ -109,58 +127,6 @@ export class AuthEffects {
   );
 
   @Effect()
-  fetchUserOnAuthenticated$ = this.actions$.pipe(
-    ofType(AuthActionTypes.Authenticated),
-    switchMap((action: Authenticated) => this.userService.get(action.uid, false, true).pipe(
-      switchMap(user => {
-        if (user.notFound) {
-          delete this.userService.userCache[action.uid];
-          return this.userService.set(action.uid, new TeamcraftUser()).pipe(
-            delay(100),
-            switchMap(() => {
-              return this.userService.get(action.uid, false, true);
-            })
-          );
-        }
-        return of(user);
-      }),
-      map(user => {
-        user.createdAt = action.createdAt;
-        return user;
-      })
-    )),
-    catchError((error) => {
-      if (error.message.toLowerCase().indexOf('not found') > -1) {
-        return of(new TeamcraftUser());
-      } else {
-        this.authFacade.logout();
-        console.error(error);
-        this.notificationService.error(this.translate.instant('COMMON.Error'), this.translate.instant('Network_error_logged_out'));
-        return EMPTY;
-      }
-    }),
-    tap((user: TeamcraftUser) => {
-      // If token has been refreshed more than 3 weeks ago, refresh it now.
-      if (Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
-        this.patreonService.refreshToken(user);
-      }
-      if (user.defaultLodestoneId === undefined && user.lodestoneIds.length > 0) {
-        user.defaultLodestoneId = user.lodestoneIds[0].id;
-      }
-    }),
-    distinctUntilChanged((a, b) => diff(a, b)),
-    map(user => {
-      const cachedUser: any = JSON.parse(localStorage.getItem('auth:user') || '{}');
-      if (user.lodestoneIds.length === 0 && cachedUser.$key === user.$key) {
-        user.lodestoneIds = cachedUser.lodestoneIds;
-        user.defaultLodestoneId = cachedUser.defaultLodestoneId;
-      }
-      return user;
-    }),
-    map(user => new UserFetched(user))
-  );
-
-  @Effect()
   watchNoLinkedCharacter$ = this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
     distinctUntilChanged((a, b) => {
@@ -169,14 +135,9 @@ export class AuthEffects {
     }),
     withLatestFrom(this.authFacade.loggedIn$),
     filter(([action, loggedIn]) => {
-      let cachedUser: any = JSON.parse(localStorage.getItem('auth:user') || '{}');
-      if (!cachedUser.$key || cachedUser.$key === action.user.$key) {
-        cachedUser = {};
-      }
       return loggedIn
         && action.user && !action.user.notFound
-        && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0
-        && [...(cachedUser.customCharacters || []), ...(cachedUser.lodestoneIds || [])].length === 0;
+        && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0;
     }),
     map(() => new NoLinkedCharacter())
   );
@@ -200,35 +161,6 @@ export class AuthEffects {
   );
 
   @Effect()
-  updateCharactersList$ = this.actions$.pipe(
-    ofType(AuthActionTypes.AddCharacter, AuthActionTypes.UserFetched),
-    distinctUntilChanged((userFetched: UserFetched, previousUserFetched: UserFetched) => {
-      return (userFetched.user && userFetched.user.$key) === (previousUserFetched.user && previousUserFetched.user.$key);
-    }),
-    withLatestFrom(this.store),
-    mergeMap(([, state]) => {
-      const missingCharacters = state.auth.user ? state.auth.user.lodestoneIds.filter(lodestoneId => {
-        return lodestoneId.id > 0 && state.auth.characters.find(char => char.Character.ID === lodestoneId.id) === undefined;
-      }) : [];
-      const getMissingCharacters$ = missingCharacters.map(lodestoneId => {
-        const reloader = new BehaviorSubject<void>(null);
-        return reloader.pipe(
-          switchMap(() => {
-            return this.xivapi.getCharacter(lodestoneId.id);
-          })
-        );
-      });
-      if (missingCharacters.length === 0) {
-        return of(new CharactersLoaded([]));
-      }
-      return combineLatest(getMissingCharacters$)
-        .pipe(
-          map(characters => new CharactersLoaded(<CharacterResponse[]>characters))
-        );
-    })
-  );
-
-  @Effect()
   saveUserOnEdition$ = this.actions$.pipe(
     ofType(
       AuthActionTypes.AddCharacter,
@@ -244,21 +176,8 @@ export class AuthEffects {
       AuthActionTypes.SetWorld
     ),
     debounceTime(100),
-    switchMap(() => {
-      return combineLatest([this.authFacade.loggedIn$, this.authFacade.user$, this.authFacade.userId$]).pipe(first());
-    }),
-    switchMap(([loggedIn, user, uid]) => {
-      // Don't save if there is no associated lodestone id on a logged in account.
-      if (loggedIn && user.lodestoneIds.length === 0 && user.customCharacters.length === 0) {
-        return of(null);
-      }
-      // Save to localstorage to have a backup check to avoid data loss
-      localStorage.setItem('auth:user', JSON.stringify(user));
-      return this.userService.set(uid, { ...user }).pipe(
-        catchError(() => of(null))
-      );
-    }),
-    map(() => new UserPersisted())
+    withLatestFrom(this.authFacade.user$),
+    map(([, user]) => new UpdateUser(user))
   );
 
   @Effect()

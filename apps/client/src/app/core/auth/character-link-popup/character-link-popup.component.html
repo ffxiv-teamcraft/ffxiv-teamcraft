@@ -1,7 +1,4 @@
 <div *ngIf="servers$ | async as availableServers; else loading">
-  <nz-alert *ngIf="localstorageUser?.stats && localstorageUser?.stats !== {} && mandatory" [nzDescription]="'Character_add_warning' | translate" [nzMessage]="'COMMON.Warning' | translate"
-            nzShowIcon nzType="warning">
-  </nz-alert>
   <nz-form-item>
     <nz-form-label nzFor="serverName" nzRequired>{{'Server_name' | translate}}</nz-form-label>
     <input [formControl]="selectedServer" [nzAutocomplete]="auto" autofocus id="serverName" nz-input type="text">

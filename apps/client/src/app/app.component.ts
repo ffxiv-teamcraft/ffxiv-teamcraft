@@ -435,6 +435,8 @@ export class AppComponent implements OnInit {
       nzTitle: this.translate.instant('Registration'),
       nzContent: RegisterPopupComponent,
       nzFooter: null
+    }).afterClose.subscribe(() => {
+      window.location.reload();
     });
   }
 
