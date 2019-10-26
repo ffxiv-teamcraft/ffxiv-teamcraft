@@ -74,7 +74,7 @@ export class AuthEffects {
   fetchUser$ = this.actions$.pipe(
     ofType<LoggedInAsAnonymous | Authenticated>(AuthActionTypes.LoggedInAsAnonymous, AuthActionTypes.Authenticated),
     exhaustMap((action: LoggedInAsAnonymous | Authenticated) => {
-      return this.userService.get(action.uid).pipe(
+      return this.userService.get(action.uid, false, true).pipe(
         map(user => {
           return user;
         }),
