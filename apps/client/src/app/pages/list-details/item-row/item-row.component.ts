@@ -78,6 +78,7 @@ import { ConsumablesService } from '../../simulator/model/consumables.service';
 import { FreeCompanyActionsService } from '../../simulator/model/free-company-actions.service';
 import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
+import { UserInventory } from '../../../model/user/inventory/user-inventory';
 
 @Component({
   selector: 'app-item-row',
@@ -165,7 +166,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   amountInInventory$: Observable<{ containerName: string, amount: number, hq: boolean, isRetainer: boolean }[]> = this.item$.pipe(
     switchMap(item => {
       return this.inventoryService.inventory$.pipe(
-        map(inventory => {
+        map((inventory: UserInventory) => {
           return inventory.getItem(item.id).map(entry => {
             return {
               isRetainer: entry.retainerName !== undefined,

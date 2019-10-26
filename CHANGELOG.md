@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.13"></a>
+## [6.0.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.12...v6.0.13) (2019-10-26)
+
+
+### Bug Fixes
+
+* **inventory:** fixed an issue with temporary trade inventory ([066c050](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/066c050)), closes [#1147](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1147)
+* **list:** fixed item picker single selection ([3ce425c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3ce425c))
+
+
+### Features
+
+* added support for chinese servers in character linking system ([3f27d0b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f27d0b))
+
+
+
 <a name="6.0.12"></a>
 ## [6.0.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.11...v6.0.12) (2019-10-25)
 

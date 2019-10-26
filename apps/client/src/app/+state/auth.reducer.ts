@@ -15,7 +15,6 @@ export interface AuthState {
   uid: string;
   loggedIn: boolean;
   user: TeamcraftUser | null;
-  characters: CharacterResponse[];
   loading: boolean;
   linkingCharacter: boolean;
 }
@@ -23,7 +22,6 @@ export interface AuthState {
 export const initialState: AuthState = {
   uid: null,
   user: null,
-  characters: [],
   loggedIn: false,
   loading: false,
   linkingCharacter: false
@@ -186,6 +184,18 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       };
     }
 
+    case AuthActionTypes.RemoveCharacter: {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          lodestoneIds: [...(state.user.lodestoneIds || []).filter(entry => entry.id !== action.lodestoneId)],
+          defaultLodestoneId: state.user.lodestoneIds[0].id
+        },
+        linkingCharacter: false
+      };
+    }
+
     case AuthActionTypes.AddCustomCharacter: {
       if (state.user.customCharacters && state.user.customCharacters.find(c => c.ID === action.lodestoneId) !== undefined) {
         return state;
@@ -197,35 +207,11 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       };
     }
 
-
-    case AuthActionTypes.RemoveCharacter:
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          lodestoneIds: [...state.user.lodestoneIds.filter(entry => entry.id !== action.lodestoneId)],
-          defaultLodestoneId: state.user.lodestoneIds.filter(entry => entry.id !== action.lodestoneId)[0].id
-        },
-        characters: [
-          ...state.characters.filter(c => c.Character.ID !== action.lodestoneId)
-        ]
-      };
-
     case AuthActionTypes.SetDefaultCharacter:
       return { ...state, user: { ...state.user, defaultLodestoneId: action.lodestoneId } };
 
     case AuthActionTypes.SetCurrentFcId:
       return { ...state, user: { ...state.user, currentFcId: action.fcId } };
-
-    case AuthActionTypes.CharactersLoaded:
-      return {
-        ...state,
-        characters: [
-          ...state.characters,
-          ...action.characters.filter(char => state.characters.find(c => c.Character.ID === char.Character.ID) === undefined)
-        ],
-        loading: false
-      };
 
     case AuthActionTypes.Authenticated:
       return { ...state, ...action.payload, loading: true, loggedIn: true };

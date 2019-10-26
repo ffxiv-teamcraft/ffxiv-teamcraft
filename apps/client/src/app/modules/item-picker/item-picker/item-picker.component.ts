@@ -90,7 +90,11 @@ export class ItemPickerComponent implements OnInit {
   }
 
   close(result: SearchResult): void {
-    this.dialogRef.close(result);
+    if (this.multi) {
+      this.dialogRef.close([result]);
+    } else {
+      this.dialogRef.close(result);
+    }
   }
 
   pickMulti(results: SearchResult[]): void {
