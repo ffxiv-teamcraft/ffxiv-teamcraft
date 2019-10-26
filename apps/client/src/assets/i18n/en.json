@@ -645,6 +645,7 @@
     "Title": "Optimized navigation route",
     "Steps": "Steps",
     "Loading_path": "Loading optimized path (can take several seconds)",
+    "You_are_here": "You are here",
     "STEP": {
       "Gathering": "Gather {{amount}} (total: {{total}})",
       "Hunting": "Get {{amount}} on monsters (total: {{total}})",

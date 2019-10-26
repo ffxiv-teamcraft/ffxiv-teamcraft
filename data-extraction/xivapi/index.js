@@ -1381,3 +1381,14 @@ if (hasTodo('worlds')) {
     persistToTypescript('worlds', 'worlds', worlds);
   });
 }
+
+if (hasTodo('territories')) {
+  const territories = {};
+  getAllPages('https://xivapi.com/TerritoryType?columns=ID,PlaceName.ID').subscribe(page => {
+    page.Results.forEach(territory => {
+      territories[territory.ID] = territory.PlaceName.ID;
+    });
+  }, null, () => {
+    persistToTypescript('territories', 'territories', territories);
+  });
+}
