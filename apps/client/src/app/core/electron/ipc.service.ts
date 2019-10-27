@@ -7,7 +7,9 @@ import { Observable, Subject } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class IpcService {
 
   public static readonly ROTATION_DEFAULT_DIMENSIONS = { x: 600, y: 200 };
@@ -59,7 +61,7 @@ export class IpcService {
   }
 
   public get actorControlPackets$(): Observable<any> {
-    return this.packets$.pipe(ofPacketType('actorControl'))
+    return this.packets$.pipe(ofPacketType('actorControl'));
   }
 
   public packets$: Subject<any> = new Subject<any>();
@@ -147,7 +149,7 @@ export class IpcService {
     }
   }
 
-  public log(...args: any[]):void{
+  public log(...args: any[]): void {
     this.send('log', args);
   }
 }
