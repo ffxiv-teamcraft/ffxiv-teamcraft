@@ -67,7 +67,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         switchMap(user => {
           if (user.defaultLodestoneId && isCurrentUser) {
             return this.logTrackingService.get(`${user.$key}:${user.defaultLodestoneId.toString()}`).pipe(
-              catchError(() => {
+              catchError((e) => {
                 return of({
                   crafting: [],
                   gathering: []
