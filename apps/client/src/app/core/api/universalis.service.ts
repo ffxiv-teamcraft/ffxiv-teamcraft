@@ -164,6 +164,7 @@ export class UniversalisService {
                     };
                   }),
                   pricePerUnit: item.pricePerUnit,
+                  totalTax: item.totalTax,
                   quantity: item.quantity,
                   total: item.total,
                   retainerID: item.retainerID,

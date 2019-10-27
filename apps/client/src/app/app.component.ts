@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, Injector, OnInit, Optional, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -16,6 +16,7 @@ import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-f
 import fontawesome from '@fortawesome/fontawesome';
 import {
   catchError,
+  delay,
   distinctUntilChanged,
   filter,
   first,
@@ -435,7 +436,11 @@ export class AppComponent implements OnInit {
       nzTitle: this.translate.instant('Registration'),
       nzContent: RegisterPopupComponent,
       nzFooter: null
-    });
+    }).afterClose
+      .pipe(delay(1000))
+      .subscribe(() => {
+        window.location.reload();
+      });
   }
 
   openLoginPopup(): void {

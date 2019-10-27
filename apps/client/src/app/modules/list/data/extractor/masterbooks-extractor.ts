@@ -31,7 +31,15 @@ export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]>
       for (const craft of row.craftedBy) {
         if (craft.masterbook !== undefined) {
           if (res.find(m => m.id === craft.masterbook.id) === undefined) {
-            res.push(craft.masterbook);
+            const book = craft.masterbook;
+            if (book.id.toString().indexOf('draft') > -1) {
+              res.push({
+                ...craft.masterbook,
+                name: itemData.getPartial(book.id.toString(), 'item').obj.n
+              });
+            } else {
+              res.push(craft.masterbook);
+            }
           }
         }
       }

@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.16"></a>
+## [6.0.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.15...v6.0.16) (2019-10-27)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with custom characters loading ([154991e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/154991e))
+* **desktop:** overlay window sometimes not updating opacity properly ([c1e3237](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1e3237))
+* **list:** fixed an issue with workshop drafts not being shown anymore ([8dacdbe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8dacdbe))
+
+
+
+<a name="6.0.15"></a>
+## [6.0.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.13...v6.0.15) (2019-10-27)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue resetting some user profiles ([9cd85bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9cd85bf))
+* **inventory:** fixed an issue with inventory saving ([3ce8c93](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3ce8c93))
+* **inventory:** fixed retainers not being displayed in inventory listings ([12976d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/12976d2))
+* **log:** fixed wrong log tracking loading, showing it as empty ([883a6ef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/883a6ef))
+
+
+
+<a name="6.0.14"></a>
+## [6.0.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.13...v6.0.14) (2019-10-26)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue resetting some user profiles ([9cd85bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9cd85bf))
+* **inventory:** fixed retainers not being displayed in inventory listings ([12976d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/12976d2))
+
+
+
+<a name="6.0.13"></a>
+## [6.0.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.12...v6.0.13) (2019-10-26)
+
+
+### Bug Fixes
+
+* **inventory:** fixed an issue with temporary trade inventory ([066c050](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/066c050)), closes [#1147](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1147)
+* **list:** fixed item picker single selection ([3ce425c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3ce425c))
+
+
+### Features
+
+* added support for chinese servers in character linking system ([3f27d0b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f27d0b))
+
+
+
 <a name="6.0.12"></a>
 ## [6.0.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.11...v6.0.12) (2019-10-25)
 

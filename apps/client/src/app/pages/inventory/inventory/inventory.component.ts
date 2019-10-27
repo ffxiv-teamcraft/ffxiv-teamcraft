@@ -9,6 +9,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
+import { UserInventory } from '../../../model/user/inventory/user-inventory';
 
 @Component({
   selector: 'app-inventory',
@@ -31,26 +32,7 @@ export class InventoryComponent {
               .map(slot => inventory.items[key][slot]);
           })
       ).filter(item => {
-        return [
-          ContainerType.Bag0,
-          ContainerType.Bag1,
-          ContainerType.Bag2,
-          ContainerType.Bag3,
-          ContainerType.RetainerBag0,
-          ContainerType.RetainerBag1,
-          ContainerType.RetainerBag2,
-          ContainerType.RetainerBag3,
-          ContainerType.RetainerBag4,
-          ContainerType.RetainerBag5,
-          ContainerType.RetainerBag6,
-          ContainerType.SaddleBag0,
-          ContainerType.SaddleBag1,
-          ContainerType.PremiumSaddleBag0,
-          ContainerType.PremiumSaddleBag1,
-          ContainerType.FreeCompanyBag0,
-          ContainerType.FreeCompanyBag1,
-          ContainerType.FreeCompanyBag2
-        ].indexOf(item.containerId) > -1;
+        return UserInventory.DISPLAYED_CONTAINERS.indexOf(item.containerId) > -1;
       }).reduce((bags: InventoryDisplay[], item: InventoryItem) => {
         const containerName = item.retainerName || this.inventoryService.getContainerName(item.containerId);
         let bag = bags.find(i => i.containerName === containerName);
