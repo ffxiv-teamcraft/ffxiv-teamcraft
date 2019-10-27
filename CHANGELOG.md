@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.16"></a>
+## [6.0.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.15...v6.0.16) (2019-10-27)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with custom characters loading ([154991e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/154991e))
+* **desktop:** overlay window sometimes not updating opacity properly ([c1e3237](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1e3237))
+* **list:** fixed an issue with workshop drafts not being shown anymore ([8dacdbe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8dacdbe))
+
+
+
 <a name="6.0.15"></a>
 ## [6.0.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.13...v6.0.15) (2019-10-27)
 
