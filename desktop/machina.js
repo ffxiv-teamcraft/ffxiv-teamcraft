@@ -25,12 +25,12 @@ module.exports.start = function(win, config, verbose) {
 
       const options = isDev ?
         {
-          monitorType: 'WinPCap',
+          monitorType: 'RawSocket',
           parseAlgorithm: 'CPUHeavy'
         } : {
           parseAlgorithm: 'CPUHeavy',
           noData: true,
-          monitorType: 'WinPCap',
+          monitorType: 'RawSocket',
           machinaExePath: machinaExePath,
           remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
           definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
