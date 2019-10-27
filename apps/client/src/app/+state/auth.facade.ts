@@ -29,6 +29,7 @@ import {
   filter,
   first,
   map,
+  shareReplay,
   startWith,
   switchMap,
   tap
@@ -73,7 +74,8 @@ export class AuthFacade {
         });
       }));
     }),
-    distinctUntilChanged((a, b) => a.length === b.length)
+    distinctUntilChanged((a, b) => a.length === b.length),
+    shareReplay(1)
   );
 
   mainCharacterEntry$ = combineLatest([
