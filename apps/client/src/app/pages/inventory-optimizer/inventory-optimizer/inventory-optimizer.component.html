@@ -1,0 +1,71 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <h2>{{'INVENTORY_OPTIMIZER.Title' | translate}}</h2>
+  <div fxLayout="row" fxLayoutGap="5px">
+    <nz-switch [(ngModel)]="showIgnored" (ngModelChange)="reloader$.next(null)"></nz-switch>
+    <div>{{'INVENTORY_OPTIMIZER.Show_ignored' | translate}}</div>
+  </div>
+</div>
+
+<ng-container *ngIf="display$ | async as optimizations; else loader">
+  <app-fullpage-message *ngIf="optimizations.length === 0">
+    {{'INVENTORY_OPTIMIZER.No_optimizations' | translate}}
+  </app-fullpage-message>
+  <div fxLayout="column" fxLayoutGap="10px">
+    <nz-collapse *ngFor="let optimization of optimizations; trackBy: trackByTip">
+      <nz-collapse-panel [nzHeader]="header">
+        <ng-template #header>
+          {{'INVENTORY_OPTIMIZER.' + optimization.type + '.Title' | translate}} ({{optimization.totalLength}})
+        </ng-template>
+        <nz-collapse>
+          <nz-collapse-panel *ngFor="let container of optimization.entries; trackBy: trackByEntry"
+                             nzHeader="{{container.isRetainer ? container.containerName :('INVENTORY.BAG.' + container.containerName) | translate}} ({{container.totalLength}})">
+
+            <nz-list [nzDataSource]="container.items" [nzRenderItem]="entry" [nzItemLayout]="'horizontal'">
+              <ng-template #entry let-entry>
+                <nz-list-item [nzActions]="(showIgnored && entry.ignored)?[removeIgnore]:[ignore]"
+                              *ngIf="showIgnored || !entry.ignored">
+                  <ng-template #ignore>
+                    <button nz-button (click)="setIgnoreItemOptimization(entry.item.itemId, optimization.type, true)"
+                            nzShape="circle" nz-tooltip [nzTitle]="'INVENTORY_OPTIMIZER.Ignore_item' | translate"
+                            nzType="danger">
+                      <i nz-icon nzType="eye-invisible"></i>
+                    </button>
+                  </ng-template>
+                  <ng-template #removeIgnore>
+                    <button nz-button (click)="setIgnoreItemOptimization(entry.item.itemId, optimization.type, false)"
+                            nzShape="circle" nz-tooltip nzType="primary"
+                            [nzTitle]="'INVENTORY_OPTIMIZER.Remove_ignore_item' | translate">
+                      <i nz-icon nzType="eye"></i>
+                    </button>
+                  </ng-template>
+                  <nz-list-item-meta
+                    [nzTitle]="nzTitle"
+                    [nzAvatar]="avatar"
+                    [nzDescription]="('INVENTORY_OPTIMIZER.' + optimization.type + '.Message' | translate: entry.messageParams)"
+                  >
+                    <ng-template #avatar>
+                      <app-item-icon
+                        [hq]="entry.item.hq"
+                        [icon]="entry.item.itemId | lazyIcon"
+                        [itemId]="entry.item.itemId"
+                        width="32"></app-item-icon>
+                    </ng-template>
+                    <ng-template #nzTitle>
+                      {{entry.item.itemId | itemName | i18n}} x{{entry.item.quantity}}
+                      <span
+                        *ngIf="entry.item.hq">{{'Hq' | translate}}</span>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
+              </ng-template>
+            </nz-list>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </nz-collapse-panel>
+    </nz-collapse>
+  </div>
+</ng-container>
+
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

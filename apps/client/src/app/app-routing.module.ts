@@ -147,6 +147,10 @@ const routes: Routes = [
     loadChildren: './pages/inventory/inventory-page.module#InventoryPageModule'
   },
   {
+    path: 'inventory-optimizer',
+    loadChildren: './pages/inventory-optimizer/inventory-optimizer.module#InventoryOptimizerModule'
+  },
+  {
     path: 'extractor',
     loadChildren: './pages/extractor/extractor.module#ExtractorModule',
     canLoad: [DevGuard]

@@ -165,7 +165,17 @@ export class UserInventory extends DataModel {
     }
   }
 
-  public clone(): UserInventory {
+  toArray(): InventoryItem[] {
+    return [].concat.apply([], Object.keys(this.items)
+      .map(key => this.items[key])
+      .map(container => {
+        return Object.keys(container)
+          .map(key => container[key]);
+      })
+    );
+  }
+
+  clone(): UserInventory {
     const clone = new UserInventory();
     clone.$key = this.$key;
     clone.items = JSON.parse(JSON.stringify(this.items));
