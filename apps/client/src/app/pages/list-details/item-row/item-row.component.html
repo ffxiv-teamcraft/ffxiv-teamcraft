@@ -471,9 +471,11 @@
   </div>
   <div class="block books-and-input-block" nz-col nzMd="6" nzSm="12" nzXs="24">
     <div class="masterbooks">
-      <app-item-icon *ngFor="let masterbook of item.masterbooks" [disableClick]="+item.masterbooks[0].id !== item.masterbooks[0].id"
+      <app-item-icon *ngFor="let masterbook of item.masterbooks"
+                     [disableClick]="+item.masterbooks[0].id !== item.masterbooks[0].id"
+                     [tooltipDisabled]="+item.masterbooks[0].id !== item.masterbooks[0].id"
                      [icon]="masterbook.id | lazyIcon" [itemId]="masterbook.id"
-                     [itemName]="masterbook.id | itemName| i18n" [nzTitle]="masterbook.id | itemName | i18n"
+                     [itemName]="masterbook.id | itemName| i18n" [nzTitle]="masterbook.id | itemName:null:masterbook.name | i18n"
                      [width]="24" nz-tooltip></app-item-icon>
     </div>
     <div class="amount-input">

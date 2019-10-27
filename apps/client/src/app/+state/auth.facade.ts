@@ -29,6 +29,7 @@ import {
   filter,
   first,
   map,
+  shareReplay,
   startWith,
   switchMap,
   tap
@@ -65,10 +66,16 @@ export class AuthFacade {
   characters$ = this.user$.pipe(
     switchMap((user: TeamcraftUser) => {
       return combineLatest(user.lodestoneIds.map(entry => {
-        return this.userService.getCharacter(entry.id);
+        if (entry.id > 0) {
+          return this.userService.getCharacter(entry.id);
+        }
+        return of({
+          Character: user.customCharacters.find(c => c.ID === entry.id)
+        });
       }));
     }),
-    distinctUntilChanged((a, b) => a.length === b.length)
+    distinctUntilChanged((a, b) => a.length === b.length),
+    shareReplay(1)
   );
 
   mainCharacterEntry$ = combineLatest([
@@ -100,7 +107,7 @@ export class AuthFacade {
 
   mainCharacter$ = this.mainCharacterEntry$.pipe(
     map((entry) => {
-      return entry.character;
+      return entry.character as Character;
     })
   );
 

@@ -11,7 +11,7 @@ export class ItemNamePipe implements PipeTransform {
   constructor(private data: LocalizedDataService) {
   }
 
-  transform(id: number, item?: { name: string, custom?: boolean }): I18nName {
+  transform(id: number, item?: { name: string, custom?: boolean }, fallback?: string): I18nName {
     if (item && item.custom === true) {
       return {
         fr: item.name,
@@ -21,7 +21,14 @@ export class ItemNamePipe implements PipeTransform {
         ko: item.name
       };
     }
-    return this.data.getItem(id);
+    const fromData = this.data.getItem(id);
+    return fromData || {
+      fr: fallback,
+      en: fallback,
+      de: fallback,
+      ja: fallback,
+      ko: fallback
+    }
   }
 
 }
