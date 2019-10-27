@@ -99,8 +99,12 @@ export class UserInventory extends DataModel {
     const toContainerKey = isToRetainer ? `${lastSpawnedRetainer}:${packet.toContainer}` : `${packet.toContainer}`;
 
     const fromContainer = this.items[fromContainerKey];
-    const toContainer = this.items[toContainerKey];
-    if (fromContainer === undefined || (toContainer === undefined && packet.action === 'merge')) {
+    let toContainer = this.items[toContainerKey];
+    if (toContainer === undefined) {
+      this.items[toContainerKey] = {};
+      toContainer = this.items[toContainerKey];
+    }
+    if (toContainer === undefined && packet.action === 'merge') {
       console.warn('Tried to move an item to an inexisting container', JSON.stringify(packet));
       return null;
     }
