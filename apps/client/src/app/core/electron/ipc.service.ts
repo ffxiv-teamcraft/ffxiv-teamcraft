@@ -100,6 +100,12 @@ export class IpcService {
     }
   }
 
+  public once(channel: string, cb: Function): void {
+    if (this._ipc !== undefined) {
+      this._ipc.once(channel, cb);
+    }
+  }
+
   public send(channel: string, data?: any): void {
     if (this._ipc !== undefined) {
       return this._ipc.send(channel, data);
