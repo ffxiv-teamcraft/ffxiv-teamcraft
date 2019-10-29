@@ -58,7 +58,8 @@ let todo = [
   'actions',
   'monsterDrops',
   'voyages',
-  'worlds'
+  'worlds',
+  'territories'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -1138,10 +1139,13 @@ if (hasTodo('achievements')) {
   });
 }
 
-if (hasTodo('recipes')) {
+if (hasTodo('skipped')) {
   const recipes = [];
   getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0TargetID,ItemIngredient1TargetID,ItemIngredient2TargetID,ItemIngredient3TargetID,ItemIngredient4TargetID,ItemIngredient5TargetID,ItemIngredient6TargetID,ItemIngredient7TargetID,ItemIngredient8TargetID,ItemIngredient9TargetID,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
     page.Results.forEach(recipe => {
+      if (recipe.RecipeLevelTable === null) {
+        return;
+      }
       recipes.push({
         id: recipe.ID,
         job: recipe.ClassJob.ID,

@@ -17617,7 +17617,7 @@
   "1356": {
     "en": "Untucked",
     "ja": "製作依頼：カッコイイタック",
-    "de": "Schmucker Estoc",
+    "de": "Schmuckes Estoc",
     "fr": "Fabrication: un bel estoc",
     "job": {
       "en": "GSM",
@@ -19384,7 +19384,7 @@
   },
   "1492": {
     "en": "Mindful Medicine",
-    "ja": "大口依頼：治療着を洗浄する幻水",
+    "ja": "大口依頼：治療着を洗浄する幻薬",
     "de": "Die Lösung für Heilmagier",
     "fr": "Grosse commande: l'eau de l'esprit médical",
     "job": {
@@ -19475,7 +19475,7 @@
   },
   "1499": {
     "en": "A Tender Table",
-    "ja": "製作依頼：診療台作りのための皮革材",
+    "ja": "製作依頼：診療台作りのための糸",
     "de": "Feenhaft genähtes Bettzeug",
     "fr": "Fabrication: du fil solide pour des tables d'examen",
     "job": {
@@ -19709,9 +19709,9 @@
   },
   "1517": {
     "en": "Prophet of Profit",
-    "ja": "製作依頼：新時代の天球義",
+    "ja": "製作依頼：新時代の天球儀",
     "de": "Sternenglobus de luxe",
-    "fr": "Fabrication: des globes célestes à en perdre la boule",
+    "fr": "Fabrication: des sphères célestes à en perdre la boule",
     "job": {
       "en": "GSM",
       "ja": "彫金師",
