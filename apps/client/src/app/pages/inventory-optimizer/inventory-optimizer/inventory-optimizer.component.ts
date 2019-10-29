@@ -15,7 +15,7 @@ import * as _ from 'lodash';
 })
 export class InventoryOptimizerComponent {
 
-  private reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+  public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
   public optimizations$: Observable<InventoryOptimization[]> = this.inventoryFacade.inventory$.pipe(
     map(inventory => {
