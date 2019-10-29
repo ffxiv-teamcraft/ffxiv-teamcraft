@@ -176,7 +176,7 @@ export class TeamsComponent implements OnInit {
 
   discordOauth(team: Team): void {
     if (this.platform.isDesktop()) {
-      this.ipc.on('oauth-reply', (event, code) => {
+      this.ipc.once('oauth-reply', (event, code) => {
         this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/create-webhook?code=${code}&redirect_uri=http://localhost`)
           .pipe(
             switchMap((response: any) => {
