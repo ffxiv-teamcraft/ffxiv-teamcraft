@@ -61,7 +61,9 @@ module.exports.start = function(win, config, verbose) {
           'ping',
           'playerStats',
           'updateClassInfo',
-          'actorControl'
+          'actorControl',
+          'initZone',
+          'weatherChange'
         ];
         if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {
           sendToRenderer(win, packet);
