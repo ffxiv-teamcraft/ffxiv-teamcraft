@@ -201,7 +201,7 @@
                 <button form="ngForm" nz-button nzBlock nzType="primary" type="submit">
                   {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
                 </button>
-                <button (click)="saveSet()" *ngIf="loggedIn$ | async" [disabled]="!statsForm.dirty" nz-button nzBlock>
+                <button (click)="saveSet()" *ngIf="loggedIn$ | async" [disabled]="savedSet" nz-button nzBlock>
                   {{'SIMULATOR.CONFIGURATION.Save_on_profile' | translate}}
                 </button>
               </div>
