@@ -173,7 +173,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   public dirty = false;
 
-  public savedSet = false;
+  public savedSet = true;
   
   private formChangesSubscription: any;
   
