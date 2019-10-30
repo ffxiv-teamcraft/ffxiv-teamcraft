@@ -100,7 +100,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
               private media: MediaObserver, public ipc: IpcService) {
     super(seoService);
-    this.ipc.on('toggle-machina:value', (event, value) => {
+    this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
     this.ipc.send('toggle-machina:get');

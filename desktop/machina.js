@@ -25,12 +25,12 @@ module.exports.start = function(win, config, verbose) {
 
       const options = isDev ?
         {
-          monitorType: 'WinPCap',
+          monitorType: 'RawSocket',
           parseAlgorithm: 'CPUHeavy'
         } : {
           parseAlgorithm: 'CPUHeavy',
           noData: true,
-          monitorType: 'WinPCap',
+          monitorType: 'RawSocket',
           machinaExePath: machinaExePath,
           remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
           definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
@@ -61,7 +61,9 @@ module.exports.start = function(win, config, verbose) {
           'ping',
           'playerStats',
           'updateClassInfo',
-          'actorControl'
+          'actorControl',
+          'initZone',
+          'weatherChange'
         ];
         if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {
           sendToRenderer(win, packet);

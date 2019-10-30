@@ -288,38 +288,38 @@ export const submarineVoyages = [
   },
   {
     "id": 42,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sea of Ash 4",
+    "de": "Verbranntes Meer 4 (K)",
+    "ja": "K　灰海04",
+    "fr": "Mer de Cendre 4 (K)"
   },
   {
     "id": 43,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "the Midden Pit",
+    "de": "Das Schotterbecken (L)",
+    "ja": "L　砂利の海盆",
+    "fr": "Bassin sédimentaire (L)"
   },
   {
     "id": 44,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "the Lone Glove",
+    "de": "Insel der einsamen Hand (M)",
+    "ja": "M　片割れ手袋島",
+    "fr": "Île du gant esseulé (M)"
   },
   {
     "id": 45,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Coldtoe Isle",
+    "de": "Insel der nassen Socken (N)",
+    "ja": "N　穴あき靴下島",
+    "fr": "Île de la chaussette trouée (N)"
   },
   {
     "id": 46,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Smuggler's Knot",
+    "de": "Schmugglerbasar (O)",
+    "ja": "O　密輸業者の取引場",
+    "fr": "Repaire des contrebandiers (O)"
   },
   {
     "id": 47,

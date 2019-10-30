@@ -78,10 +78,10 @@ export class SettingsPopupComponent {
               private ipc: IpcService, private router: Router, private http: HttpClient,
               private userService: UserService, private customLinksFacade: CustomLinksFacade) {
 
-    this.ipc.on('always-on-top:value', (event, value) => {
+    this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
     });
-    this.ipc.on('toggle-machina:value', (event, value) => {
+    this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
     this.ipc.send('always-on-top:get');
@@ -114,7 +114,7 @@ export class SettingsPopupComponent {
 
   patreonOauth(): void {
     if (this.platform.isDesktop()) {
-      this.ipc.on('oauth-reply', (event, code) => {
+      this.ipc.once('oauth-reply', (event, code) => {
         this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-oauth?code=${code}&redirect_uri=http://localhost`)
           .pipe(
             switchMap((response: any) => {

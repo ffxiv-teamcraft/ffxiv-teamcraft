@@ -1,5 +1,5 @@
 import { RotationTip } from '../rotation-tip';
-import { RapidSynthesis, RapidSynthesisII, SimulationResult } from '@ffxiv-teamcraft/simulator';
+import { RapidSynthesis, SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
 
 export class UseRapidSynthesisEarlier extends RotationTip {
@@ -8,13 +8,13 @@ export class UseRapidSynthesisEarlier extends RotationTip {
   }
 
   canBeAppliedTo(simulationResult: SimulationResult): boolean {
-    return this.simulationHasAction(simulationResult, RapidSynthesis) || this.simulationHasAction(simulationResult, RapidSynthesisII);
+    return this.simulationHasAction(simulationResult, RapidSynthesis);
   }
 
   matches(simulationResult: SimulationResult): boolean {
     const simulation = simulationResult.simulation.clone();
     const finisher = simulation.actions[simulation.actions.length - 1];
-    return finisher.is(RapidSynthesis) || finisher.is(RapidSynthesisII);
+    return finisher.is(RapidSynthesis);
   }
 
 }

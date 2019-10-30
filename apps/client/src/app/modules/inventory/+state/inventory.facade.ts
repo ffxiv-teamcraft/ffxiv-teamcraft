@@ -48,6 +48,20 @@ export class InventoryFacade {
       case ContainerType.FreeCompanyBag1:
       case ContainerType.FreeCompanyBag2:
         return 'FC_chest';
+      case ContainerType.ArmoryOff:
+      case ContainerType.ArmoryHead:
+      case ContainerType.ArmoryBody:
+      case ContainerType.ArmoryHand:
+      case ContainerType.ArmoryWaist:
+      case ContainerType.ArmoryLegs:
+      case ContainerType.ArmoryFeet:
+      case ContainerType.ArmoryNeck:
+      case ContainerType.ArmoryEar:
+      case ContainerType.ArmoryWrist:
+      case ContainerType.ArmoryRing:
+      case ContainerType.ArmorySoulCrystal:
+      case ContainerType.ArmoryMain:
+        return 'Armory';
     }
     return 'Other';
   }

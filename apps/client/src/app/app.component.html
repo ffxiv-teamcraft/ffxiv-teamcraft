@@ -258,6 +258,13 @@
                   <i nz-icon nzType="appstore"></i>
                   <span>{{'SIDEBAR.Helpers' | translate}}</span>
                 </span>
+                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/inventory-optimizer"
+                   routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i nz-icon nzType="container"></i>
+                      <span class="nav-text">{{'INVENTORY_OPTIMIZER.Title' | translate}}</span>
+                  </span>
+                </a>
                 <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/levequests"
                    routerLinkActive="ant-menu-item-selected">
                   <span>

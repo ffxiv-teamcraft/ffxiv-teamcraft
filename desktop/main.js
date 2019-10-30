@@ -10,6 +10,8 @@ const express = require('express');
 const fs = require('fs');
 const Machina = require('./machina.js');
 
+ipcMain.setMaxListeners(0);
+
 const oauth = require('./oauth.js');
 
 const argv = process.argv.slice(1);

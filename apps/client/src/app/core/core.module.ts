@@ -10,7 +10,6 @@ import { PushNotificationsModule } from 'ng-push';
 import { AbstractNotification } from './notification/abstract-notification';
 import { ListCommentNotification } from '../model/notification/list-comment-notification';
 import { PendingChangesService } from './database/pending-changes/pending-changes.service';
-import { IpcService } from './electron/ipc.service';
 import { PlatformService } from './tools/platform.service';
 import { MathToolsService } from './tools/math-tools';
 import { I18nToolsService } from './tools/i18n-tools.service';
@@ -117,8 +116,8 @@ export class CoreModule {
         GarlandToolsService,
         EorzeanTimeService,
         CharacterService,
-        IpcService,
-        LocalizedDataService, { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+        LocalizedDataService,
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
       ]
     };
   }

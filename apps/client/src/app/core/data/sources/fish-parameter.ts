@@ -12514,5 +12514,223 @@ export const fishParameter = {
       'ja': '沖合',
       'fr': 'Pleine mer'
     }
+  },
+  '28065': {
+    'id': 809,
+    'itemId': 28065,
+    'level': 440,
+    'icon': '/i/029000/029995.png',
+    'mapId': 497,
+    'zoneId': 2951,
+    'timed': 1,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '28066': {
+    'id': 810,
+    'itemId': 28066,
+    'level': 440,
+    'icon': '/i/029000/029194.png',
+    'mapId': 498,
+    'zoneId': 2952,
+    'timed': 1,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '28067': {
+    'id': 811,
+    'itemId': 28067,
+    'level': 440,
+    'icon': '/i/029000/029996.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '28068': {
+    'id': 812,
+    'itemId': 28068,
+    'level': 440,
+    'icon': '/i/029000/029997.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '28069': {
+    'id': 813,
+    'itemId': 28069,
+    'level': 440,
+    'icon': '/i/029000/029620.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 1,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '28070': {
+    'id': 814,
+    'itemId': 28070,
+    'level': 440,
+    'icon': '/i/029000/029998.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 1,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '28071': {
+    'id': 815,
+    'itemId': 28071,
+    'level': 440,
+    'icon': '/i/029000/029999.png',
+    'mapId': 495,
+    'zoneId': 2957,
+    'timed': 1,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '28072': {
+    'id': 816,
+    'itemId': 28072,
+    'level': 440,
+    'icon': '/i/029000/029195.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 1,
+    'weathered': 1,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
+  },
+  '28189': {
+    'id': 817,
+    'itemId': 28189,
+    'level': 345,
+    'icon': '/i/029000/029418.png',
+    'mapId': 491,
+    'zoneId': 2953,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Lakes',
+      'de': 'Seen',
+      'ja': '湖沼',
+      'fr': 'Lacs et marais'
+    }
+  },
+  '28190': {
+    'id': 818,
+    'itemId': 28190,
+    'level': 350,
+    'icon': '/i/029000/029304.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '28191': {
+    'id': 819,
+    'itemId': 28191,
+    'level': 355,
+    'icon': '/i/029000/029047.png',
+    'mapId': 494,
+    'zoneId': 2956,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Rivers',
+      'de': 'Flüsse',
+      'ja': '河川',
+      'fr': 'Rivières'
+    }
+  },
+  '28192': {
+    'id': 820,
+    'itemId': 28192,
+    'level': 370,
+    'icon': '/i/029000/029519.png',
+    'mapId': 493,
+    'zoneId': 2955,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Sands',
+      'de': 'Dünen',
+      'ja': '砂海',
+      'fr': 'Oasis'
+    }
+  },
+  '28193': {
+    'id': 821,
+    'itemId': 28193,
+    'level': 380,
+    'icon': '/i/029000/029056.png',
+    'mapId': 492,
+    'zoneId': 2954,
+    'timed': 0,
+    'weathered': 0
+  },
+  '28719': {
+    'id': 808,
+    'itemId': 28719,
+    'level': 440,
+    'icon': '/i/029000/029196.png',
+    'mapId': 496,
+    'zoneId': 2958,
+    'timed': 0,
+    'weathered': 0,
+    'recordType': {
+      'en': 'Deep Sea',
+      'de': 'Hochsee',
+      'ja': '沖合',
+      'fr': 'Pleine mer'
+    }
   }
 };
