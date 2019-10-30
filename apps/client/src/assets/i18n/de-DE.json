@@ -645,7 +645,7 @@
     "Title": "Optimierte Navigationsroute",
     "Steps": "Stationen",
     "Loading_path": "Optimierter Pfad wird geladen (kann mehrere Sekunden dauern)",
-    "You_are_here": "You are here",
+    "You_are_here": "Du bist hier",
     "STEP": {
       "Gathering": "Sammel {{amount}} (Gesamt: {{total}})",
       "Hunting": "Erhalte {{amount}} von Monstern (Gesamt: {{total}})",
@@ -1558,12 +1558,12 @@
     }
   },
   "INVENTORY_OPTIMIZER": {
-    "Title": "Inventory optimizer",
-    "Ignore_item": "Ignore this tip for this item",
-    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
-    "Show_ignored": "Show ignored items",
+    "Title": "Inventaroptimierer",
+    "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
+    "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
+    "Show_ignored": "Ignorierte Gegenstände zeigen",
     "CAN_BE_BOUGHT": {
-      "Title": "Items that can be bought with gil",
+      "Title": "Gegenstände, die mit Gil gekauft werden können",
       "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
     },
     "DUPLICATES": {
