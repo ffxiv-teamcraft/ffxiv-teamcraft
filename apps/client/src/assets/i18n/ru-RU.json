@@ -645,6 +645,7 @@
     "Title": "Оптимизировать навигационный маршрут",
     "Steps": "Шаги",
     "Loading_path": "Загрузка оптимизированного пути (может занять несколько секунд)",
+    "You_are_here": "You are here",
     "STEP": {
       "Gathering": "Собрать{{amount}} (всего: {{total}})",
       "Hunting": "Собрать {{amount}} с монстров (всегоо: {{total}})",
@@ -1552,7 +1553,22 @@
       "SaddleBag": "Сумка Чокобо",
       "FC_chest": "FC сундук",
       "Bag": "Инвентарь",
-      "Other": "Другой инвентарь"
+      "Other": "Другой инвентарь",
+      "Armory": "Armory"
+    }
+  },
+  "INVENTORY_OPTIMIZER": {
+    "Title": "Inventory optimizer",
+    "Ignore_item": "Ignore this tip for this item",
+    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
+    "Show_ignored": "Show ignored items",
+    "CAN_BE_BOUGHT": {
+      "Title": "Items that can be bought with gil",
+      "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
+    },
+    "DUPLICATES": {
+      "Title": "Items that are duplicated accross multiple containers",
+      "Message": "This item is also present in: {{containers}}."
     }
   }
 }
