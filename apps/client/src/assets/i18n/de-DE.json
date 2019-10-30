@@ -375,7 +375,7 @@
     "Enable_packet_capture": "Paketerfassung aktivieren (für Echtzeit Inventar-Funktionen)",
     "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Square Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
     "Contribute_to_universalis": "Zu Universalis beitragen",
-    "Persist_inventory": "Inventar in Datenbank speicher (um es mit der Web-Version zu teilen)",
+    "Persist_inventory": "Inventar in Datenbank speichern (um es mit der Web-Version zu teilen)",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
