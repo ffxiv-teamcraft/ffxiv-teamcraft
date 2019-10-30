@@ -455,7 +455,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                         <Language>this.translate.currentLang));
                   }
                 } catch (ignoredAgain) {
-                  break;
                 }
               }
             }
