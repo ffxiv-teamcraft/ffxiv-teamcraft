@@ -66,7 +66,6 @@ export class InventoryOptimizerComponent {
               return entry;
             });
             opt.totalLength = totalLength;
-            console.log(opt.totalLength);
             return opt;
           }).filter(opt => opt.totalLength > 0);
         })
