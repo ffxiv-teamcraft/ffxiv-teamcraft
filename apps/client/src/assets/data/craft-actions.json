@@ -1206,51 +1206,51 @@
     "fr": "Ouvrage hâtif II"
   },
   "100203": {
-    "en": "Careful Synthesis III",
-    "de": "Sorgfältige Bearbeitung III",
-    "ja": "模範作業III",
+    "en": "Careful Synthesis",
+    "de": "Sorgfältige Bearbeitung",
+    "ja": "模範作業",
     "fr": "Travail prudent III"
   },
   "100204": {
-    "en": "Careful Synthesis III",
-    "de": "Sorgfältige Bearbeitung III",
-    "ja": "模範作業III",
+    "en": "Careful Synthesis",
+    "de": "Sorgfältige Bearbeitung",
+    "ja": "模範作業",
     "fr": "Travail prudent III"
   },
   "100205": {
-    "en": "Careful Synthesis III",
-    "de": "Sorgfältige Bearbeitung III",
-    "ja": "模範作業III",
+    "en": "Careful Synthesis",
+    "de": "Sorgfältige Bearbeitung",
+    "ja": "模範作業",
     "fr": "Travail prudent III"
   },
   "100206": {
-    "en": "Careful Synthesis III",
-    "de": "Sorgfältige Bearbeitung III",
-    "ja": "模範作業III",
+    "en": "Careful Synthesis",
+    "de": "Sorgfältige Bearbeitung",
+    "ja": "模範作業",
     "fr": "Travail prudent III"
   },
   "100207": {
-    "en": "Careful Synthesis III",
-    "de": "Sorgfältige Bearbeitung III",
-    "ja": "模範作業III",
+    "en": "Careful Synthesis",
+    "de": "Sorgfältige Bearbeitung",
+    "ja": "模範作業",
     "fr": "Travail prudent III"
   },
   "100208": {
-    "en": "Careful Synthesis III",
-    "de": "Sorgfältige Bearbeitung III",
-    "ja": "模範作業III",
+    "en": "Careful Synthesis",
+    "de": "Sorgfältige Bearbeitung",
+    "ja": "模範作業",
     "fr": "Travail prudent III"
   },
   "100209": {
-    "en": "Careful Synthesis III",
-    "de": "Sorgfältige Bearbeitung III",
-    "ja": "模範作業III",
+    "en": "Careful Synthesis",
+    "de": "Sorgfältige Bearbeitung",
+    "ja": "模範作業",
     "fr": "Travail prudent III"
   },
   "100210": {
-    "en": "Careful Synthesis III",
-    "de": "Sorgfältige Bearbeitung III",
-    "ja": "模範作業III",
+    "en": "Careful Synthesis",
+    "de": "Sorgfältige Bearbeitung",
+    "ja": "模範作業",
     "fr": "Travail prudent III"
   },
   "100211": {
@@ -2118,36 +2118,336 @@
     "fr": ""
   },
   "100355": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Hasty Touch",
+    "de": "Hastige Veredelung",
+    "ja": "ヘイスティタッチ",
+    "fr": "Ouvrage hâtif"
   },
   "100356": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Hasty Touch",
+    "de": "Hastige Veredelung",
+    "ja": "ヘイスティタッチ",
+    "fr": "Ouvrage hâtif"
   },
   "100357": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Hasty Touch",
+    "de": "Hastige Veredelung",
+    "ja": "ヘイスティタッチ",
+    "fr": "Ouvrage hâtif"
   },
   "100358": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Hasty Touch",
+    "de": "Hastige Veredelung",
+    "ja": "ヘイスティタッチ",
+    "fr": "Ouvrage hâtif"
   },
   "100359": {
+    "en": "Hasty Touch",
+    "de": "Hastige Veredelung",
+    "ja": "ヘイスティタッチ",
+    "fr": "Ouvrage hâtif"
+  },
+  "100360": {
+    "en": "Hasty Touch",
+    "de": "Hastige Veredelung",
+    "ja": "ヘイスティタッチ",
+    "fr": "Ouvrage hâtif"
+  },
+  "100361": {
+    "en": "Hasty Touch",
+    "de": "Hastige Veredelung",
+    "ja": "ヘイスティタッチ",
+    "fr": "Ouvrage hâtif"
+  },
+  "100362": {
+    "en": "Hasty Touch",
+    "de": "Hastige Veredelung",
+    "ja": "ヘイスティタッチ",
+    "fr": "Ouvrage hâtif"
+  },
+  "100363": {
+    "en": "Rapid Synthesis",
+    "de": "Schnelle Bearbeitung",
+    "ja": "突貫作業",
+    "fr": "Travail rapide"
+  },
+  "100364": {
+    "en": "Rapid Synthesis",
+    "de": "Schnelle Bearbeitung",
+    "ja": "突貫作業",
+    "fr": "Travail rapide"
+  },
+  "100365": {
+    "en": "Rapid Synthesis",
+    "de": "Schnelle Bearbeitung",
+    "ja": "突貫作業",
+    "fr": "Travail rapide"
+  },
+  "100366": {
+    "en": "Rapid Synthesis",
+    "de": "Schnelle Bearbeitung",
+    "ja": "突貫作業",
+    "fr": "Travail rapide"
+  },
+  "100367": {
+    "en": "Rapid Synthesis",
+    "de": "Schnelle Bearbeitung",
+    "ja": "突貫作業",
+    "fr": "Travail rapide"
+  },
+  "100368": {
+    "en": "Rapid Synthesis",
+    "de": "Schnelle Bearbeitung",
+    "ja": "突貫作業",
+    "fr": "Travail rapide"
+  },
+  "100369": {
+    "en": "Rapid Synthesis",
+    "de": "Schnelle Bearbeitung",
+    "ja": "突貫作業",
+    "fr": "Travail rapide"
+  },
+  "100370": {
+    "en": "Rapid Synthesis",
+    "de": "Schnelle Bearbeitung",
+    "ja": "突貫作業",
+    "fr": "Travail rapide"
+  },
+  "100371": {
+    "en": "Tricks of the Trade",
+    "de": "Kunstgriff",
+    "ja": "秘訣",
+    "fr": "Ficelles du métier"
+  },
+  "100372": {
+    "en": "Tricks of the Trade",
+    "de": "Kunstgriff",
+    "ja": "秘訣",
+    "fr": "Ficelles du métier"
+  },
+  "100373": {
+    "en": "Tricks of the Trade",
+    "de": "Kunstgriff",
+    "ja": "秘訣",
+    "fr": "Ficelles du métier"
+  },
+  "100374": {
+    "en": "Tricks of the Trade",
+    "de": "Kunstgriff",
+    "ja": "秘訣",
+    "fr": "Ficelles du métier"
+  },
+  "100375": {
+    "en": "Tricks of the Trade",
+    "de": "Kunstgriff",
+    "ja": "秘訣",
+    "fr": "Ficelles du métier"
+  },
+  "100376": {
+    "en": "Tricks of the Trade",
+    "de": "Kunstgriff",
+    "ja": "秘訣",
+    "fr": "Ficelles du métier"
+  },
+  "100377": {
+    "en": "Tricks of the Trade",
+    "de": "Kunstgriff",
+    "ja": "秘訣",
+    "fr": "Ficelles du métier"
+  },
+  "100378": {
+    "en": "Tricks of the Trade",
+    "de": "Kunstgriff",
+    "ja": "秘訣",
+    "fr": "Ficelles du métier"
+  },
+  "100379": {
+    "en": "Muscle Memory",
+    "de": "Motorisches Gedächtnis",
+    "ja": "確信",
+    "fr": "Mémoire musculaire"
+  },
+  "100380": {
+    "en": "Muscle Memory",
+    "de": "Motorisches Gedächtnis",
+    "ja": "確信",
+    "fr": "Mémoire musculaire"
+  },
+  "100381": {
+    "en": "Muscle Memory",
+    "de": "Motorisches Gedächtnis",
+    "ja": "確信",
+    "fr": "Mémoire musculaire"
+  },
+  "100382": {
+    "en": "Muscle Memory",
+    "de": "Motorisches Gedächtnis",
+    "ja": "確信",
+    "fr": "Mémoire musculaire"
+  },
+  "100383": {
+    "en": "Muscle Memory",
+    "de": "Motorisches Gedächtnis",
+    "ja": "確信",
+    "fr": "Mémoire musculaire"
+  },
+  "100384": {
+    "en": "Muscle Memory",
+    "de": "Motorisches Gedächtnis",
+    "ja": "確信",
+    "fr": "Mémoire musculaire"
+  },
+  "100385": {
+    "en": "Muscle Memory",
+    "de": "Motorisches Gedächtnis",
+    "ja": "確信",
+    "fr": "Mémoire musculaire"
+  },
+  "100386": {
+    "en": "Muscle Memory",
+    "de": "Motorisches Gedächtnis",
+    "ja": "確信",
+    "fr": "Mémoire musculaire"
+  },
+  "100387": {
+    "en": "Reflect",
+    "de": "Einkehr",
+    "ja": "真価",
+    "fr": "Véritable valeur"
+  },
+  "100388": {
+    "en": "Reflect",
+    "de": "Einkehr",
+    "ja": "真価",
+    "fr": "Véritable valeur"
+  },
+  "100389": {
+    "en": "Reflect",
+    "de": "Einkehr",
+    "ja": "真価",
+    "fr": "Véritable valeur"
+  },
+  "100390": {
+    "en": "Reflect",
+    "de": "Einkehr",
+    "ja": "真価",
+    "fr": "Véritable valeur"
+  },
+  "100391": {
+    "en": "Reflect",
+    "de": "Einkehr",
+    "ja": "真価",
+    "fr": "Véritable valeur"
+  },
+  "100392": {
+    "en": "Reflect",
+    "de": "Einkehr",
+    "ja": "真価",
+    "fr": "Véritable valeur"
+  },
+  "100393": {
+    "en": "Reflect",
+    "de": "Einkehr",
+    "ja": "真価",
+    "fr": "Véritable valeur"
+  },
+  "100394": {
+    "en": "Reflect",
+    "de": "Einkehr",
+    "ja": "真価",
+    "fr": "Véritable valeur"
+  },
+  "100395": {
+    "en": "Careful Observation",
+    "de": "Planänderung",
+    "ja": "設計変更",
+    "fr": "Changement de patron"
+  },
+  "100396": {
+    "en": "Careful Observation",
+    "de": "Planänderung",
+    "ja": "設計変更",
+    "fr": "Changement de patron"
+  },
+  "100397": {
+    "en": "Careful Observation",
+    "de": "Planänderung",
+    "ja": "設計変更",
+    "fr": "Changement de patron"
+  },
+  "100398": {
+    "en": "Careful Observation",
+    "de": "Planänderung",
+    "ja": "設計変更",
+    "fr": "Changement de patron"
+  },
+  "100399": {
+    "en": "Careful Observation",
+    "de": "Planänderung",
+    "ja": "設計変更",
+    "fr": "Changement de patron"
+  },
+  "100400": {
+    "en": "Careful Observation",
+    "de": "Planänderung",
+    "ja": "設計変更",
+    "fr": "Changement de patron"
+  },
+  "100401": {
+    "en": "Careful Observation",
+    "de": "Planänderung",
+    "ja": "設計変更",
+    "fr": "Changement de patron"
+  },
+  "100402": {
+    "en": "Careful Observation",
+    "de": "Planänderung",
+    "ja": "設計変更",
+    "fr": "Changement de patron"
+  },
+  "100403": {
     "en": "",
     "de": "",
     "ja": "",
     "fr": ""
   },
-  "100360": {
+  "100404": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "100405": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "100406": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "100407": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "100408": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "100409": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "100410": {
     "en": "",
     "de": "",
     "ja": "",

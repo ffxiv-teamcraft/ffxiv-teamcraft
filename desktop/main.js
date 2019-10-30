@@ -10,6 +10,8 @@ const express = require('express');
 const fs = require('fs');
 const Machina = require('./machina.js');
 
+ipcMain.setMaxListeners(0);
+
 const oauth = require('./oauth.js');
 
 const argv = process.argv.slice(1);
@@ -239,6 +241,7 @@ function openOverlay(overlayConfig) {
     config.set(`overlay:${url}:bounds`, overlay.getBounds());
     config.set(`overlay:${url}:opacity`, overlay.getOpacity());
     config.set(`overlay:${url}:on-top`, overlay.isAlwaysOnTop());
+    delete openedOverlays[url];
   });
 
 
@@ -427,7 +430,7 @@ ipcMain.on('overlay', (event, data) => {
 
 ipcMain.on('overlay:set-opacity', (event, data) => {
   const overlayWindow = openedOverlays[data.uri];
-  if (overlayWindow !== undefined) {
+  if (overlayWindow !== undefined && overlayWindow) {
     overlayWindow.setOpacity(data.opacity);
   }
 });

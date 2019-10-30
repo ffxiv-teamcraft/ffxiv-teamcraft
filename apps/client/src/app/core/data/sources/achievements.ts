@@ -5576,31 +5576,31 @@ export const achievements = {
   '930': {
     'en': 'Walk the Line I',
     'de': 'Frontkämpfer I',
-    'ja': 'アウトロー戦区：ランク1',
+    'ja': 'フロントライン：ランク1',
     'fr': 'Suer au Front I'
   },
   '931': {
     'en': 'Walk the Line II',
     'de': 'Frontkämpfer II',
-    'ja': 'アウトロー戦区：ランク2',
+    'ja': 'フロントライン：ランク2',
     'fr': 'Suer au Front II'
   },
   '932': {
     'en': 'Walk the Line III',
     'de': 'Frontkämpfer III',
-    'ja': 'アウトロー戦区：ランク3',
+    'ja': 'フロントライン：ランク3',
     'fr': 'Suer au Front III'
   },
   '933': {
     'en': 'Walk the Line IV',
     'de': 'Frontkämpfer IV',
-    'ja': 'アウトロー戦区：ランク4',
+    'ja': 'フロントライン：ランク4',
     'fr': 'Suer au Front IV'
   },
   '934': {
     'en': 'Walk the Line V',
     'de': 'Frontkämpfer V',
-    'ja': 'アウトロー戦区：ランク5',
+    'ja': 'フロントライン：ランク5',
     'fr': 'Suer au Front V'
   },
   '935': {
@@ -7730,37 +7730,37 @@ export const achievements = {
   '1289': {
     'en': 'I Made That (Worth Collecting) I',
     'de': 'Ich hab\'s sammelbar gemacht I',
-    'ja': '蒐集品の製作者：ランク1',
+    'ja': '収集品の製作者：ランク1',
     'fr': 'Facteur de merveilles I'
   },
   '1290': {
     'en': 'I Made That (Worth Collecting) II',
     'de': 'Ich hab\'s sammelbar gemacht II',
-    'ja': '蒐集品の製作者：ランク2',
+    'ja': '収集品の製作者：ランク2',
     'fr': 'Facteur de merveilles II'
   },
   '1291': {
     'en': 'I Made That (Worth Collecting) III',
     'de': 'Ich hab\'s sammelbar gemacht III',
-    'ja': '蒐集品の製作者：ランク3',
+    'ja': '収集品の製作者：ランク3',
     'fr': 'Facteur de merveilles III'
   },
   '1292': {
     'en': 'I Collected That I',
     'de': 'Ich hab\'s gesammelt I',
-    'ja': '蒐集品の採集者：ランク1',
+    'ja': '収集品の採集者：ランク1',
     'fr': 'Chasseur de merveilles I'
   },
   '1293': {
     'en': 'I Collected That II',
     'de': 'Ich hab\'s gesammelt II',
-    'ja': '蒐集品の採集者：ランク2',
+    'ja': '収集品の採集者：ランク2',
     'fr': 'Chasseur de merveilles II'
   },
   '1294': {
     'en': 'I Collected That III',
     'de': 'Ich hab\'s gesammelt III',
-    'ja': '蒐集品の採集者：ランク3',
+    'ja': '収集品の採集者：ランク3',
     'fr': 'Chasseur de merveilles III'
   },
   '1295': {
@@ -11432,13 +11432,13 @@ export const achievements = {
   '1906': {
     'en': 'I Made That (Worth Collecting) IV',
     'de': 'Ich hab\'s sammelbar gemacht IV',
-    'ja': '蒐集品の製作者：ランク4',
+    'ja': '収集品の製作者：ランク4',
     'fr': 'Facteur de merveilles IV'
   },
   '1907': {
     'en': 'I Collected That IV',
     'de': 'Ich hab\'s gesammelt IV',
-    'ja': '蒐集品の採集者：ランク4',
+    'ja': '収集品の採集者：ランク4',
     'fr': 'Chasseur de merveilles IV'
   },
   '1908': {
@@ -12846,10 +12846,10 @@ export const achievements = {
     'fr': 'Haut les chœurs !'
   },
   '2142': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mo Mochi! Mo Mochi! Mo Mochi!',
+    'de': 'Mochi-Bändiger',
+    'ja': 'もちもちお餅もちもちっちゃ',
+    'fr': 'La fortune sourit aux audacieux'
   },
   '2143': {
     'en': 'I\'ve Got It: Pyros Sword',
@@ -13742,13 +13742,13 @@ export const achievements = {
   '2291': {
     'en': 'I Made That (Worth Collecting) V',
     'de': 'Ich hab\'s sammelbar gemacht V',
-    'ja': '蒐集品の製作者：ランク5',
+    'ja': '収集品の製作者：ランク5',
     'fr': 'Facteur de merveilles V'
   },
   '2292': {
     'en': 'I Collected That V',
     'de': 'Ich hab\'s gesammelt V',
-    'ja': '蒐集品の採集者：ランク5',
+    'ja': '収集品の採集者：ランク5',
     'fr': 'Chasseur de merveilles V'
   },
   '2293': {
@@ -14403,49 +14403,49 @@ export const achievements = {
     'en': 'Beauty and Its Beasts I',
     'de': 'Im falschen Verlies der Fuath I',
     'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク1',
-    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah I'
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe Ghiah I'
   },
   '2402': {
     'en': 'Beauty and Its Beasts II',
     'de': 'Im falschen Verlies der Fuath II',
     'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク2',
-    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah II'
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe Ghiah II'
   },
   '2403': {
     'en': 'Beauty and Its Beasts III',
     'de': 'Im falschen Verlies der Fuath III',
     'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク3',
-    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah III'
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe Ghiah III'
   },
   '2404': {
     'en': 'Beauty and Its Beasts IV',
     'de': 'Im falschen Verlies der Fuath IV',
     'ja': 'リェー・ギア・ダンジョンに侵入せし者：ランク4',
-    'fr': 'Visiteur du Donjon hypogéen du Lyhe-Ghiah IV'
+    'fr': 'Visiteur du Donjon hypogéen du Lyhe Ghiah IV'
   },
   '2405': {
     'en': 'Happily Treasure After I',
     'de': 'Entkommen aus dem falschen Verlies der Fuath I',
     'ja': 'リェー・ギア・ダンジョンの覇者：ランク1',
-    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah I'
+    'fr': 'Maître du Donjon hypogéen du Lyhe Ghiah I'
   },
   '2406': {
     'en': 'Happily Treasure After II',
     'de': 'Entkommen aus dem falschen Verlies der Fuath II',
     'ja': 'リェー・ギア・ダンジョンの覇者：ランク2',
-    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah II'
+    'fr': 'Maître du Donjon hypogéen du Lyhe Ghiah II'
   },
   '2407': {
     'en': 'Happily Treasure After III',
     'de': 'Entkommen aus dem falschen Verlies der Fuath III',
     'ja': 'リェー・ギア・ダンジョンの覇者：ランク3',
-    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah III'
+    'fr': 'Maître du Donjon hypogéen du Lyhe Ghiah III'
   },
   '2408': {
     'en': 'Happily Treasure After IV',
     'de': 'Entkommen aus dem falschen Verlies der Fuath IV',
     'ja': 'リェー・ギア・ダンジョンの覇者：ランク4',
-    'fr': 'Maître du Donjon hypogéen du Lyhe-Ghiah IV'
+    'fr': 'Maître du Donjon hypogéen du Lyhe Ghiah IV'
   },
   '2409': {
     'en': 'Paradise Found I',
@@ -14484,22 +14484,22 @@ export const achievements = {
     'fr': 'Lendemain difficile III'
   },
   '2415': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Right on the Money I',
+    'de': 'Keinen Kopf kürzer I',
+    'ja': 'ヨウジンボウのお友達：ランク1',
+    'fr': 'Fan de Yojimbo I'
   },
   '2416': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Right on the Money II',
+    'de': 'Keinen Kopf kürzer II',
+    'ja': 'ヨウジンボウのお友達：ランク2',
+    'fr': 'Fan de Yojimbo II'
   },
   '2417': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Right on the Money III',
+    'de': 'Keinen Kopf kürzer III',
+    'ja': 'ヨウジンボウのお友達：ランク3',
+    'fr': 'Fan de Yojimbo III'
   },
   '2418': {
     'en': '',
@@ -14536,5 +14536,383 @@ export const achievements = {
     'de': '',
     'ja': '',
     'fr': ''
+  },
+  '2424': {
+    'en': 'Black and White',
+    'de': 'Ein Pakt und eine Meucheltat',
+    'ja': '白き誓約、黒き密約',
+    'fr': 'Corps et âmes'
+  },
+  '2425': {
+    'en': 'Satisfaction Guaranteed: Kai-Shirr I',
+    'de': 'Das fleißigste Bienchen I',
+    'ja': 'カイ・シル：ランク1',
+    'fr': 'Nul miel sans fiel I'
+  },
+  '2426': {
+    'en': 'Satisfaction Guaranteed: Kai-Shirr II',
+    'de': 'Das fleißigste Bienchen II',
+    'ja': 'カイ・シル：ランク2',
+    'fr': 'Nul miel sans fiel II'
+  },
+  '2427': {
+    'en': 'Satisfaction Guaranteed: Kai-Shirr III',
+    'de': 'Das fleißigste Bienchen III',
+    'ja': 'カイ・シル：ランク3',
+    'fr': 'Nul miel sans fiel III'
+  },
+  '2428': {
+    'en': 'Satisfaction Guaranteed: Kai-Shirr IV',
+    'de': 'Das fleißigste Bienchen IV',
+    'ja': 'カイ・シル：ランク4',
+    'fr': 'Nul miel sans fiel IV'
+  },
+  '2429': {
+    'en': 'Satisfaction Guaranteed: Kai-Shirr V',
+    'de': 'Das fleißigste Bienchen V',
+    'ja': 'カイ・シル：ランク5',
+    'fr': 'Nul miel sans fiel V'
+  },
+  '2430': {
+    'en': 'The Customer Is Always Right: Kai-Shirr I',
+    'de': 'Kundenfang mit Kai-Shirr I',
+    'ja': 'カイ・シルの得意先：ランク1',
+    'fr': 'Fournisseur officiel de Kai-Shirr I'
+  },
+  '2431': {
+    'en': 'The Customer Is Always Right: Kai-Shirr II',
+    'de': 'Kundenfang mit Kai-Shirr II',
+    'ja': 'カイ・シルの得意先：ランク2',
+    'fr': 'Fournisseur officiel de Kai-Shirr II'
+  },
+  '2432': {
+    'en': 'The Customer Is Always Right: Kai-Shirr III',
+    'de': 'Kundenfang mit Kai-Shirr III',
+    'ja': 'カイ・シルの得意先：ランク3',
+    'fr': 'Fournisseur officiel de Kai-Shirr III'
+  },
+  '2433': {
+    'en': 'The Customer Is Always Right: Kai-Shirr IV',
+    'de': 'Kundenfang mit Kai-Shirr IV',
+    'ja': 'カイ・シルの得意先：ランク4',
+    'fr': 'Fournisseur officiel de Kai-Shirr IV'
+  },
+  '2434': {
+    'en': 'The Customer Is Always Right: Kai-Shirr V',
+    'de': 'Kundenfang mit Kai-Shirr V',
+    'ja': 'カイ・シルの得意先：ランク5',
+    'fr': 'Fournisseur officiel de Kai-Shirr V'
+  },
+  '2435': {
+    'en': 'The Customer Is Always Right: Kai-Shirr VI',
+    'de': 'Kundenfang mit Kai-Shirr VI',
+    'ja': 'カイ・シルの得意先：ランク6',
+    'fr': 'Fournisseur officiel de Kai-Shirr VI'
+  },
+  '2436': {
+    'en': 'Bring Me a Dream I',
+    'de': 'Garten der Träume I',
+    'ja': '夢の園の妖精：ランク1',
+    'fr': 'On croit rêver I'
+  },
+  '2437': {
+    'en': 'Bring Me a Dream II',
+    'de': 'Garten der Träume II',
+    'ja': '夢の園の妖精：ランク2',
+    'fr': 'On croit rêver II'
+  },
+  '2438': {
+    'en': 'Bring Me a Dream III',
+    'de': 'Garten der Träume III',
+    'ja': '夢の園の妖精：ランク3',
+    'fr': 'On croit rêver III'
+  },
+  '2439': {
+    'en': 'Forever Young',
+    'de': 'Garten der Träume IV',
+    'ja': '夢の園の住人',
+    'fr': 'Tisse-rêve honoraire'
+  },
+  '2440': {
+    'en': 'Mapping the Realm: The Grand Cosmos',
+    'de': 'Kartograph: Chateau Cosmea',
+    'ja': 'グラン・コスモスを踏破せし者',
+    'fr': 'Cartographe du continent : Cosmos coruscant'
+  },
+  '2441': {
+    'en': 'Don\'t Look Back',
+    'de': 'Bezwinger des Herrn der Unterwelt',
+    'ja': '冥王を狩りし者',
+    'fr': 'Surpasser le Maître des Enfers'
+  },
+  '2442': {
+    'en': 'Mapping the Realm: The Copied Factory',
+    'de': 'Kartograph: Die kopierte Fabrik',
+    'ja': '複製サレタ工場廃墟を踏破せし者',
+    'fr': 'Cartographe du continent : réplique de l\'usine désaffectée'
+  },
+  '2443': {
+    'en': 'The First Law',
+    'de': 'Frisch vom Fließband',
+    'ja': '複製サレタ工場廃墟を制覇せし者',
+    'fr': 'Bizarroïdes androïdes'
+  },
+  '2444': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2445': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2446': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2447': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2448': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2449': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2450': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2451': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2452': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2453': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2454': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2455': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2456': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2457': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2458': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2459': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2460': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2461': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2462': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2463': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2464': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2465': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2466': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2467': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2468': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2469': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2470': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2471': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2472': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2473': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2474': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2475': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2476': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2477': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2478': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2479': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2480': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2481': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2482': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2483': {
+    'en': 'Starlight de Chocobo',
+    'de': 'Chocobo im Sternenlicht',
+    'ja': 'スターライト de チョコボ',
+    'fr': 'Un chocobo sachant chanter'
+  },
+  '2484': {
+    'en': 'Warrior of Love',
+    'de': 'Krieger der Liebe',
+    'ja': '愛の戦士たち',
+    'fr': '愛の戦士たち'
+  },
+  '2485': {
+    'en': '',
+    'de': '',
+    'ja': '',
+    'fr': ''
+  },
+  '2486': {
+    'en': 'Go Big Far from Home',
+    'de': 'Kapitalbeschaffung im ersten Splitter',
+    'ja': '第一世界の太公望',
+    'fr': 'Pêcheur de légendes itinérant'
   }
 };

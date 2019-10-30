@@ -1200,10 +1200,10 @@
     "fr": ""
   },
   "1769748": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Voyage Spoils",
+    "ja": "ボイジャースポイルの取引",
+    "de": "Expeditionsandenken",
+    "fr": "Espoilles d'expédition"
   },
   "1769749": {
     "en": "DoH Materia Exchange",
@@ -2292,10 +2292,10 @@
     "fr": "Précédents mémoquartz allagois inhabituels"
   },
   "1769931": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Past Irregular Tomestone Exchange",
+    "ja": "以前の希少トームストーンの取引",
+    "de": "Ungewöhnliche Allagische Steine (alt)",
+    "fr": "Anciens mémoquartz allagois inhabituels"
   },
   "1769932": {
     "en": "",
@@ -2522,13 +2522,13 @@
   "1769969": {
     "en": "Totem Gear (Innocence)",
     "ja": "大罪喰い装備の取引（イノセンス）",
-    "de": "Lichtbringer-Ausrüstung (Innozenz)",
+    "de": "Innozenz-Ausrüstung",
     "fr": "Équipements totémiques (Innocence)"
   },
   "1769970": {
     "en": "Totem Gear (Titania)",
     "ja": "大罪喰い装備の取引（ティターニア）",
-    "de": "Lichtbringer-Ausrüstung (Titania)",
+    "de": "Titania-Ausrüstung",
     "fr": "Équipements totémiques (Titania)"
   },
   "1769971": {
@@ -2802,6 +2802,156 @@
     "fr": "Objets"
   },
   "1770016": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770017": {
+    "en": "Totem Gear (Hades)",
+    "ja": "報酬装備の取引（ハーデス）",
+    "de": "Hades-Ausrüstung",
+    "fr": "Équipements totémiques (Hadès)"
+  },
+  "1770018": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770019": {
+    "en": "Eulmoran Certificates of Import (Weapons)",
+    "ja": "ユールモアの手形との交換（武器）",
+    "de": "Eulmore-Marken (Waffen)",
+    "fr": "Avoirs d'Eulmore (armes)"
+  },
+  "1770020": {
+    "en": "Eulmoran Certificates of Import (Gear)",
+    "ja": "ユールモアの手形との交換（防具）",
+    "de": "Eulmore-Marken (Rüstung)",
+    "fr": "Avoirs d'Eulmore (pièces d'armure)"
+  },
+  "1770021": {
+    "en": "Eulmoran Certificates of Import (Accessories)",
+    "ja": "ユールモアの手形との交換（アクセサリー）",
+    "de": "Eulmore-Marken (Accessoires)",
+    "fr": "Avoirs d'Eulmore (accessoires)"
+  },
+  "1770022": {
+    "en": "Eulmoran Certificates of Import (Weapons)",
+    "ja": "ユールモアの手形との交換（武器）",
+    "de": "Eulmore-Marken (Waffen)",
+    "fr": "Avoirs d'Eulmore (armes)"
+  },
+  "1770023": {
+    "en": "Eulmoran Certificates of Import (Gear)",
+    "ja": "ユールモアの手形との交換（防具）",
+    "de": "Eulmore-Marken (Rüstung)",
+    "fr": "Avoirs d'Eulmore (pièces d'armure)"
+  },
+  "1770024": {
+    "en": "Eulmoran Certificates of Import (Accessories)",
+    "ja": "ユールモアの手形との交換（アクセサリー）",
+    "de": "Eulmore-Marken (Accessoires)",
+    "fr": "Avoirs d'Eulmore (accessoires)"
+  },
+  "1770025": {
+    "en": "Augmented Facet Equipment (Weapons)",
+    "ja": "ミーン強化装備の取引（武器）",
+    "de": "Modifizierte Manufaktur-Ausrüstung (Waffen)",
+    "fr": "Amélioration d'armes de la halle"
+  },
+  "1770026": {
+    "en": "Augmented Facet Equipment (Gear)",
+    "ja": "ミーン強化装備の取引（防具）",
+    "de": "Modifizierte Manufaktur-Ausrüstung (Rüstung)",
+    "fr": "Amélioration de pièces d'armure de la halle"
+  },
+  "1770027": {
+    "en": "Augmented Facet Equipment (Accessories)",
+    "ja": "ミーン強化装備の取引（アクセサリー）",
+    "de": "Modifizierte Manufaktur-Ausrüstung (Accessoires)",
+    "fr": "Amélioration d'accessoires de la halle"
+  },
+  "1770028": {
+    "en": "Kholusian Rain Exchange",
+    "ja": "コルシアの強霊薬の取引",
+    "de": "Kholusia-Kondensat",
+    "fr": "Échange de lymphe quintessenciée de Kholusia"
+  },
+  "1770029": {
+    "en": "Delineation Collection",
+    "ja": "製図用紙の回収",
+    "de": "Handwerker-Abhandlungen",
+    "fr": "Récupération d'esquisses obsolètes"
+  },
+  "1770030": {
+    "en": "Use Wolf Marks (Shadowbringers)",
+    "ja": "対人戦績の取引（漆黒）",
+    "de": "Wolfsmarken (Shadowbringers)",
+    "fr": "Marques de loup (Shadowbringers)"
+  },
+  "1770031": {
+    "en": "Use Wolf Marks (Shadowbringers)",
+    "ja": "対人戦績の取引（漆黒）",
+    "de": "Wolfsmarken (Shadowbringers)",
+    "fr": "Marques de loup (Shadowbringers)"
+  },
+  "1770032": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770033": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770034": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770035": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770036": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770037": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770038": {
+    "en": "Sky Pirate Spoils (Brass)",
+    "ja": "スカイパイレーツスポイル:真鍮の取引",
+    "de": "Messing-Piratenandenken",
+    "fr": "Espoille de pirate des cieux en laiton"
+  },
+  "1770039": {
+    "en": "Sky Pirate Spoils (Steel)",
+    "ja": "スカイパイレーツスポイル:鋼鉄の取引",
+    "de": "Stahl-Piratenandenken",
+    "fr": "Espoille de pirate des cieux en acier"
+  },
+  "1770040": {
+    "en": "Fae Fancies",
+    "ja": "ピクシー幻晶貨の取引",
+    "de": "Pixie-Glitter",
+    "fr": "Échange d'objets tribaux"
+  },
+  "1770041": {
     "en": "",
     "ja": "",
     "de": "",

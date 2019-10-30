@@ -7,6 +7,7 @@ import { LazyDataService } from '../data/lazy-data.service';
 import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
 import { SettingsService } from '../../modules/settings/settings.service';
+import * as _ from 'lodash';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
@@ -71,47 +72,54 @@ export class UniversalisService {
     const dc = Object.keys(this.lazyData.datacenters).find(key => {
       return this.lazyData.datacenters[key].indexOf(server) > -1;
     });
-    return this.http.get<any>(`https://universalis.app/api/${dc}/${itemIds.join(',')}`)
-      .pipe(
-        map(response => {
-          const data = response.items || [response];
-          return data.map(res => {
-            const item: Partial<MarketboardItem> = {
-              ID: res.worldID,
-              ItemId: res.itemID,
-              History: [],
-              Prices: []
-            };
-            item.Prices = (res.listings || [])
-              .filter(listing => {
-                return listing.worldName.toLowerCase() === server.toLowerCase();
-              })
-              .map(listing => {
-                return {
-                  Server: listing.worldName,
-                  PricePerUnit: listing.pricePerUnit,
-                  ProceTotal: listing.total,
-                  IsHQ: listing.hq,
-                  Quantity: listing.quantity
-                };
-              });
-            item.History = (res.recentHistory || [])
-              .filter(listing => {
-                return listing.worldName.toLowerCase() === server.toLowerCase();
-              })
-              .map(listing => {
-                return {
-                  Server: listing.worldName,
-                  PricePerUnit: listing.pricePerUnit,
-                  ProceTotal: listing.total,
-                  IsHQ: listing.hq,
-                  Quantity: listing.quantity
-                };
-              });
-            return item as MarketboardItem;
-          });
-        })
-      );
+    const chunks = _.chunk(itemIds, 100);
+    return combineLatest(chunks.map(chunk => {
+      return this.http.get<any>(`https://universalis.app/api/${dc}/${chunk.join(',')}`)
+        .pipe(
+          map(response => {
+            const data = response.items || [response];
+            return data.map(res => {
+              const item: Partial<MarketboardItem> = {
+                ID: res.worldID,
+                ItemId: res.itemID,
+                History: [],
+                Prices: []
+              };
+              item.Prices = (res.listings || [])
+                .filter(listing => {
+                  return listing.worldName.toLowerCase() === server.toLowerCase();
+                })
+                .map(listing => {
+                  return {
+                    Server: listing.worldName,
+                    PricePerUnit: listing.pricePerUnit,
+                    ProceTotal: listing.total,
+                    IsHQ: listing.hq,
+                    Quantity: listing.quantity
+                  };
+                });
+              item.History = (res.recentHistory || [])
+                .filter(listing => {
+                  return listing.worldName.toLowerCase() === server.toLowerCase();
+                })
+                .map(listing => {
+                  return {
+                    Server: listing.worldName,
+                    PricePerUnit: listing.pricePerUnit,
+                    ProceTotal: listing.total,
+                    IsHQ: listing.hq,
+                    Quantity: listing.quantity
+                  };
+                });
+              return item as MarketboardItem;
+            });
+          })
+        );
+    })).pipe(
+      map(res => {
+        return [].concat.apply([], res);
+      })
+    );
   }
 
   public initCapture(): void {
@@ -164,6 +172,7 @@ export class UniversalisService {
                     };
                   }),
                   pricePerUnit: item.pricePerUnit,
+                  totalTax: item.totalTax,
                   quantity: item.quantity,
                   total: item.total,
                   retainerID: item.retainerID,

@@ -375,7 +375,7 @@
     "Enable_packet_capture": "Paketerfassung aktivieren (für Echtzeit Inventar-Funktionen)",
     "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Sqaure Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
     "Contribute_to_universalis": "Zu Universalis beitragen",
-    "Persist_inventory": "Save inventory in database (to share with web version)",
+    "Persist_inventory": "Inventar in Datenbank speicher (um es mit der Web-Version zu teilen)",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -407,7 +407,7 @@
     "More_than_100_lists_created": "Mehr als 100 Listen erzeugt",
     "Veteran": "Veteran",
     "Autofill_from_packets": "Attribute durch Paketerfassung automatisch ausfüllen",
-    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done. Please make sure you don't have any active food, else it'll save your stats with the food active.",
+    "Autofill_stats_explain": "Wechsel zum gewünschten Job, um diesen zu aktualisieren. Schließe diese Einblendung, wenn du damit fertig bist. Bitte achte darauf, dass du kein aktives Bufffood hast, ansonsten werden deine Werte mit diesem gespeichert und dadurch verfälscht.",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
@@ -425,6 +425,7 @@
     "Lists_merged": "Listen erfolgreich zusammengefasst!",
     "Shared_lists": "Mit dir geteilte Listen",
     "Add_selection": "Auswahl zu einer Liste hinzufügen",
+    "Add_selection_to_list": "Auswahl zu einer Liste hinzufügen",
     "Your_lists": "Deine Listen",
     "Outdated_tag": "veraltet",
     "No_lists": "Du hast keine Listen",
@@ -644,6 +645,7 @@
     "Title": "Optimierte Navigationsroute",
     "Steps": "Stationen",
     "Loading_path": "Optimierter Pfad wird geladen (kann mehrere Sekunden dauern)",
+    "You_are_here": "You are here",
     "STEP": {
       "Gathering": "Sammel {{amount}} (Gesamt: {{total}})",
       "Hunting": "Erhalte {{amount}} von Monstern (Gesamt: {{total}})",
@@ -1546,12 +1548,27 @@
     "Copied_to_clipboard": "Inventar wurde in die Zwischenablage kopiert",
     "Click_to_add_to_progression": "Klicken Sie hier, um zum Artikelverlauf hinzuzufügen",
     "Contribute_to_universalis": "Daten für Universalis beitragen",
-    "Reset_inventory": "Reset this inventory",
+    "Reset_inventory": "Dieses Inventar zurücksetzen",
     "BAG": {
       "SaddleBag": "Chocobo-Satteltasche",
       "FC_chest": "FG-Truhe",
       "Bag": "Inventar",
-      "Other": "Sonstige Vorräte"
+      "Other": "Sonstige Vorräte",
+      "Armory": "Armory"
+    }
+  },
+  "INVENTORY_OPTIMIZER": {
+    "Title": "Inventory optimizer",
+    "Ignore_item": "Ignore this tip for this item",
+    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
+    "Show_ignored": "Show ignored items",
+    "CAN_BE_BOUGHT": {
+      "Title": "Items that can be bought with gil",
+      "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
+    },
+    "DUPLICATES": {
+      "Title": "Items that are duplicated accross multiple containers",
+      "Message": "This item is also present in: {{containers}}."
     }
   }
 }

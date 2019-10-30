@@ -23,7 +23,17 @@ import {
 } from './auth.actions';
 import { auth } from 'firebase/app';
 import { UserCredential } from '@firebase/auth-types';
-import { filter, first, map, switchMap, tap } from 'rxjs/operators';
+import {
+  distinctUntilChanged,
+  distinctUntilKeyChanged,
+  filter,
+  first,
+  map,
+  shareReplay,
+  startWith,
+  switchMap,
+  tap
+} from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
@@ -38,21 +48,76 @@ import { Favorites } from '../model/other/favorites';
 import { LodestoneIdEntry } from '../model/user/lodestone-id-entry';
 import { OauthService } from '../core/auth/oauth.service';
 import { ConvertLists } from '../modules/list/+state/lists.actions';
+import { Character } from '@xivapi/angular-client';
+import { UserService } from '../core/database/user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthFacade {
+
   loaded$ = this.store.select(authQuery.getLoaded);
-  mainCharacter$ = this.store.select(authQuery.getMainCharacter).pipe(filter(c => c !== null));
   linkingCharacter$ = this.store.select(authQuery.getLinkingCharacter);
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
   userId$ = this.store.select(authQuery.getUserId).pipe(filter(uid => uid !== null));
   user$ = this.store.select(authQuery.getUser).pipe(filter(u => u !== undefined && u !== null));
   favorites$ = this.user$.pipe(map(user => user.favorites));
-  fcId$ = this.store.select(authQuery.getMainCharacter).pipe(
-    map((character) => {
-      if (character === null || character.FreeCompanyId === undefined || character.FreeCompanyId === null) {
+
+  characters$ = this.user$.pipe(
+    switchMap((user: TeamcraftUser) => {
+      return combineLatest(user.lodestoneIds.map(entry => {
+        if (entry.id > 0) {
+          return this.userService.getCharacter(entry.id);
+        }
+        return of({
+          Character: user.customCharacters.find(c => c.ID === entry.id)
+        });
+      }));
+    }),
+    distinctUntilChanged((a, b) => a.length === b.length),
+    shareReplay(1)
+  );
+
+  mainCharacterEntry$ = combineLatest([
+    this.user$.pipe(
+      distinctUntilKeyChanged('defaultLodestoneId')
+    ),
+    this.characters$
+  ]).pipe(
+    map(([user, characters]) => {
+      const character = characters
+        .filter(c => c.Character !== null)
+        .find(char => char.Character.ID === user.defaultLodestoneId);
+      const lodestoneIdEntry = user.lodestoneIds.find(entry => entry.id === user.defaultLodestoneId);
+      // If we couldn't find it, it's maybe because it's a custom one (for KR servers)
+      if (character === undefined) {
+        const custom = <Character>user.customCharacters.find(c => c.ID === user.defaultLodestoneId);
+        return {
+          ...lodestoneIdEntry,
+          character: custom
+        };
+      }
+      return {
+        ...lodestoneIdEntry,
+        character: character.Character
+      };
+    }),
+    filter(c => c !== undefined)
+  );
+
+  mainCharacter$ = this.mainCharacterEntry$.pipe(
+    map((entry) => {
+      return entry.character as Character;
+    })
+  );
+
+  fcId$ = combineLatest([this.mainCharacter$, this.user$]).pipe(
+    distinctUntilChanged(([a], [b]) => {
+      return a.FreeCompanyId === b.FreeCompanyId;
+    }),
+    map(([character, user]) => {
+      if (character === null || character.FreeCompanyId === undefined || character.FreeCompanyId === null
+        || character.FreeCompanyId.toString() === user.currentFcId) {
         return null;
       }
       return character.FreeCompanyId.toString();
@@ -61,17 +126,8 @@ export class AuthFacade {
       if (fcId !== null) {
         this.store.dispatch(new SetCurrentFcId(fcId));
       }
-    })
-  );
-  characters$ = this.store.select(authQuery.getCharacters);
-  mainCharacterEntry$ = combineLatest([this.mainCharacter$, this.user$]).pipe(
-    map(([char, user]) => {
-      const lodestoneIdEntry = user.lodestoneIds.find(entry => entry.id === user.defaultLodestoneId);
-      return {
-        ...lodestoneIdEntry,
-        character: char
-      };
-    })
+    }),
+    startWith('')
   );
 
   gearSets$ = this.loggedIn$.pipe(
@@ -121,7 +177,7 @@ export class AuthFacade {
   constructor(private store: Store<{ auth: AuthState }>, private af: AngularFireAuth,
               private platformService: PlatformService, private ipc: IpcService,
               private dialog: NzModalService, private translate: TranslateService,
-              private oauthService: OauthService) {
+              private oauthService: OauthService, private userService: UserService) {
     this.ipc.cid$.subscribe(packet => {
       this.setCID(packet.contentID);
     });

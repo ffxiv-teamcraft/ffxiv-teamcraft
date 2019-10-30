@@ -80,18 +80,6 @@ exports.deleteListCompacts = functions.runWith(runtimeOpts).firestore.document('
   return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).delete();
 });
 
-exports.updateUserListCount = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap) => {
-  return firestore.runTransaction(transaction => {
-    const userRef = firestore.collection('users').doc(snap.data().authorId);
-    return transaction.get(userRef).then(user => {
-      user.stats = user.stats || {};
-      user.stats.listsCreated = user.stats.listsCreated || 0;
-      user.stats.listsCreated += 1;
-      return transaction.update(userRef, { stats: user.stats });
-    });
-  });
-});
-
 exports.userIdValidator = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
   const userId = request.query.userId;
   return firestore.collection('users').doc(userId).get().then(snap => {

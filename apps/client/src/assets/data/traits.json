@@ -446,7 +446,7 @@
     "de": "Verbesserte Coeurl-Pfoten",
     "ja": "ステルス効果アップ",
     "fr": "Furtivité améliorée",
-    "icon": "/i/005000/005452.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 30.",
       "de": "Monster bis zur Stufe 30 können dich nicht aufspüren.",
@@ -459,7 +459,7 @@
     "de": "Verbesserte Coeurl-Pfoten II",
     "ja": "ステルス効果アップII",
     "fr": "Furtivité améliorée II",
-    "icon": "/i/005000/005453.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 40.",
       "de": "Monster bis zur Stufe 40 können dich nicht aufspüren.",
@@ -472,7 +472,7 @@
     "de": "Verbesserte Coeurl-Pfoten III",
     "ja": "ステルス効果アップIII",
     "fr": "Furtivité améliorée III",
-    "icon": "/i/005000/005454.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 50.",
       "de": "Monster bis zur Stufe 50 können dich nicht aufspüren.",
@@ -498,7 +498,7 @@
     "de": "Verbesserte Coeurl-Pfoten",
     "ja": "ステルス効果アップ",
     "fr": "Furtivité améliorée",
-    "icon": "/i/005000/005427.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 30.",
       "de": "Monster bis zur Stufe 30 können dich nicht aufspüren.",
@@ -511,7 +511,7 @@
     "de": "Verbesserte Coeurl-Pfoten II",
     "ja": "ステルス効果アップII",
     "fr": "Furtivité améliorée II",
-    "icon": "/i/005000/005428.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 40.",
       "de": "Monster bis zur Stufe 40 können dich nicht aufspüren.",
@@ -524,7 +524,7 @@
     "de": "Verbesserte Coeurl-Pfoten III",
     "ja": "ステルス効果アップIII",
     "fr": "Furtivité améliorée III",
-    "icon": "/i/005000/005429.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 50.",
       "de": "Monster bis zur Stufe 50 können dich nicht aufspüren.",
@@ -585,29 +585,29 @@
     }
   },
   "46": {
-    "en": "Ward of the Twelve",
-    "de": "Segen der Zwölf",
-    "ja": "属性加護効果アップ",
-    "fr": "Grâce des Douze",
+    "en": "Enhanced Twelve's Bounty",
+    "de": "Verbesserte Gunst der Zwölf",
+    "ja": "十二神の加護効果アップ",
+    "fr": "Bénédiction des Douze améliorée",
     "icon": "/i/005000/005459.png",
     "description": {
-      "en": "Extends gathering ward increases to crystals.",
-      "de": "Die Affinität zu Elementen wird durch den Segen der Zwölf auch beim Sammeln von Kristallen verstärkt.",
-      "ja": "クリスタルを属性加護効果の対象にする。",
-      "fr": "Le bonus de récolte conféré par les actions de type Grâce comprend également les cristaux."
+      "en": "<span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> now extends to crystals.",
+      "de": "Die Wirkung von <span style=\"color:#ffff66;\">Gunst der Zwölf</span> wird auf Kristalle erweitert.",
+      "ja": "クリスタルを十二神の加護効果の対象にする。",
+      "fr": "Le bonus de récolte conféré par Bénédiction des Douze comprend également les cristaux."
     }
   },
   "47": {
-    "en": "Ward of the Twelve II",
-    "de": "Segen der Zwölf II",
-    "ja": "属性加護効果アップII",
-    "fr": "Grâce des Douze II",
+    "en": "Enhanced Twelve's Bounty II",
+    "de": "Verbesserte Gunst der Zwölf II",
+    "ja": "十二神の加護効果アップII",
+    "fr": "Bénédiction des Douze améliorée II",
     "icon": "/i/005000/005460.png",
     "description": {
-      "en": "Extends gathering ward increases to clusters.",
-      "de": "Die Affinität zu Elementen wird durch den Segen der Zwölf auch beim Sammeln von Polykristallen verstärkt.",
-      "ja": "クラスターを属性加護効果の対象にする。",
-      "fr": "Le bonus de récolte conféré par les actions de type Grâce comprend également les agrégats."
+      "en": "<span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> now extends to clusters.",
+      "de": "Die Wirkung von <span style=\"color:#ffff66;\">Gunst der Zwölf</span> wird auf Polykristalle erweitert.",
+      "ja": "クラスターを十二神の加護効果の対象にする。",
+      "fr": "Le bonus de récolte conféré par Bénédiction des Douze comprend également les agrégats."
     }
   },
   "48": {
@@ -663,29 +663,29 @@
     }
   },
   "52": {
-    "en": "Ward of the Twelve",
-    "de": "Segen der Zwölf",
-    "ja": "属性加護効果アップ",
-    "fr": "Grâce des Douze",
+    "en": "Enhanced Twelve's Bounty",
+    "de": "Verbesserte Gunst der Zwölf",
+    "ja": "十二神の加護効果アップ",
+    "fr": "Bénédiction des Douze améliorée",
     "icon": "/i/005000/005434.png",
     "description": {
-      "en": "Extends gathering ward increases to crystals.",
-      "de": "Die Affinität zu Elementen wird auch beim Sammeln von Kristallen verstärkt.",
-      "ja": "クリスタルを属性加護効果の対象にする。",
-      "fr": "Le bonus de récolte conféré par les actions de type Grâce comprend également les cristaux."
+      "en": "<span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> now extends to crystals.",
+      "de": "Die Wirkung von <span style=\"color:#ffff66;\">Gunst der Zwölf</span> wird auf Kristalle erweitert.",
+      "ja": "クリスタルを十二神の加護効果の対象にする。",
+      "fr": "Le bonus de récolte conféré par Bénédiction des Douze comprend également les cristaux."
     }
   },
   "53": {
-    "en": "Ward of the Twelve II",
-    "de": "Segen der Zwölf II",
-    "ja": "属性加護効果アップII",
-    "fr": "Grâce des Douze II",
+    "en": "Enhanced Twelve's Bounty II",
+    "de": "Verbesserte Gunst der Zwölf II",
+    "ja": "十二神の加護効果アップII",
+    "fr": "Bénédiction des Douze améliorée II",
     "icon": "/i/005000/005435.png",
     "description": {
-      "en": "Extends gathering ward increases to clusters.",
-      "de": "Die Affinität zu Elementen wird auch beim Sammeln von Polykristallen verstärkt.",
-      "ja": "クラスターを属性加護効果の対象にする。",
-      "fr": "Le bonus de récolte conféré par les actions de type Grâce comprend également les agrégats."
+      "en": "<span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> now extends to clusters.",
+      "de": "Die Wirkung von <span style=\"color:#ffff66;\">Gunst der Zwölf</span> wird auf Polykristalle erweitert.",
+      "ja": "クラスターを十二神の加護効果の対象にする。",
+      "fr": "Le bonus de récolte conféré par Bénédiction des Douze comprend également les agrégats."
     }
   },
   "54": {
@@ -719,7 +719,7 @@
     "de": "Verbesserte Coeurl-Pfoten",
     "ja": "ステルス効果アップ",
     "fr": "Furtivité améliorée",
-    "icon": "/i/005000/005476.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 30.",
       "de": "Monster bis zur Stufe 30 können dich nicht aufspüren.",
@@ -732,7 +732,7 @@
     "de": "Verbesserte Coeurl-Pfoten II",
     "ja": "ステルス効果アップII",
     "fr": "Furtivité améliorée II",
-    "icon": "/i/005000/005477.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 40.",
       "de": "Monster bis zur Stufe 40 können dich nicht aufspüren.",
@@ -745,7 +745,7 @@
     "de": "Verbesserte Coeurl-Pfoten III",
     "ja": "ステルス効果アップIII",
     "fr": "Furtivité améliorée III",
-    "icon": "/i/005000/005478.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 50.",
       "de": "Monster bis zur Stufe 50 können dich nicht aufspüren.",
@@ -1239,7 +1239,7 @@
     "de": "Verbesserte Coeurl-Pfoten IV",
     "ja": "ステルス効果アップIV",
     "fr": "Furtivité améliorée IV",
-    "icon": "/i/005000/005438.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 54.",
       "de": "Monster bis zur Stufe 54 können dich nicht aufspüren.",
@@ -1252,7 +1252,7 @@
     "de": "Verbesserte Coeurl-Pfoten V",
     "ja": "ステルス効果アップV",
     "fr": "Furtivité améliorée V",
-    "icon": "/i/005000/005439.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 57.",
       "de": "Monster bis zur Stufe 57 können dich nicht aufspüren.",
@@ -1265,7 +1265,7 @@
     "de": "Verbesserte Coeurl-Pfoten VI",
     "ja": "ステルス効果アップVI",
     "fr": "Furtivité améliorée VI",
-    "icon": "/i/005000/005440.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 60.",
       "de": "Monster bis zur Stufe 60 können dich nicht aufspüren.",
@@ -1304,7 +1304,7 @@
     "de": "Verbesserte Coeurl-Pfoten IV",
     "ja": "ステルス効果アップIV",
     "fr": "Furtivité améliorée IV",
-    "icon": "/i/005000/005463.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 54.",
       "de": "Monster bis zur Stufe 54 können dich nicht aufspüren.",
@@ -1317,7 +1317,7 @@
     "de": "Verbesserte Coeurl-Pfoten V",
     "ja": "ステルス効果アップV",
     "fr": "Furtivité améliorée V",
-    "icon": "/i/005000/005464.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 57.",
       "de": "Monster bis zur Stufe 57 können dich nicht aufspüren.",
@@ -1330,7 +1330,7 @@
     "de": "Verbesserte Coeurl-Pfoten VI",
     "ja": "ステルス効果アップVI",
     "fr": "Furtivité améliorée VI",
-    "icon": "/i/005000/005465.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 60.",
       "de": "Monster bis zur Stufe 60 können dich nicht aufspüren.",
@@ -1382,7 +1382,7 @@
     "de": "Verbesserte Coeurl-Pfoten IV",
     "ja": "ステルス効果アップIV",
     "fr": "Furtivité améliorée IV",
-    "icon": "/i/005000/005485.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 54.",
       "de": "Monster bis zur Stufe 54 können dich nicht aufspüren.",
@@ -1395,7 +1395,7 @@
     "de": "Verbesserte Coeurl-Pfoten V",
     "ja": "ステルス効果アップV",
     "fr": "Furtivité améliorée V",
-    "icon": "/i/005000/005486.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 57.",
       "de": "Monster bis zur Stufe 57 können dich nicht aufspüren.",
@@ -1408,7 +1408,7 @@
     "de": "Verbesserte Coeurl-Pfoten VI",
     "ja": "ステルス効果アップVI",
     "fr": "Furtivité améliorée VI",
-    "icon": "/i/005000/005487.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 60.",
       "de": "Monster bis zur Stufe 60 können dich nicht aufspüren.",
@@ -1629,7 +1629,7 @@
     "de": "Verbesserte Coeurl-Pfoten VII",
     "ja": "ステルス効果アップVII",
     "fr": "Furtivité améliorée VII",
-    "icon": "/i/005000/005441.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 64.",
       "de": "Monster bis zur Stufe 64 können dich nicht aufspüren.",
@@ -1642,7 +1642,7 @@
     "de": "Verbesserte Coeurl-Pfoten VIII",
     "ja": "ステルス効果アップVIII",
     "fr": "Furtivité améliorée VIII",
-    "icon": "/i/005000/005442.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 67.",
       "de": "Monster bis zur Stufe 67 können dich nicht aufspüren.",
@@ -1655,7 +1655,7 @@
     "de": "Verbesserte Coeurl-Pfoten IX",
     "ja": "ステルス効果アップIX",
     "fr": "Furtivité améliorée IX",
-    "icon": "/i/005000/005443.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 70.",
       "de": "Monster bis zur Stufe 70 können dich nicht aufspüren.",
@@ -1668,7 +1668,7 @@
     "de": "Verbesserte Coeurl-Pfoten VII",
     "ja": "ステルス効果アップVII",
     "fr": "Furtivité améliorée VII",
-    "icon": "/i/005000/005466.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 64.",
       "de": "Monster bis zur Stufe 64 können dich nicht aufspüren.",
@@ -1681,7 +1681,7 @@
     "de": "Verbesserte Coeurl-Pfoten VIII",
     "ja": "ステルス効果アップVIII",
     "fr": "Furtivité améliorée VIII",
-    "icon": "/i/005000/005467.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 67.",
       "de": "Monster bis zur Stufe 67 können dich nicht aufspüren.",
@@ -1694,7 +1694,7 @@
     "de": "Verbesserte Coeurl-Pfoten IX",
     "ja": "ステルス効果アップIX",
     "fr": "Furtivité améliorée IX",
-    "icon": "/i/005000/005468.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 70.",
       "de": "Monster bis zur Stufe 70 können dich nicht aufspüren.",
@@ -1707,7 +1707,7 @@
     "de": "Verbesserte Coeurl-Pfoten VII",
     "ja": "ステルス効果アップVII",
     "fr": "Furtivité améliorée VII",
-    "icon": "/i/005000/005495.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 64.",
       "de": "Monster bis zur Stufe 64 können dich nicht aufspüren.",
@@ -1720,7 +1720,7 @@
     "de": "Verbesserte Coeurl-Pfoten VIII",
     "ja": "ステルス効果アップVIII",
     "fr": "Furtivité améliorée VIII",
-    "icon": "/i/005000/005496.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 67.",
       "de": "Monster bis zur Stufe 67 können dich nicht aufspüren.",
@@ -1733,7 +1733,7 @@
     "de": "Verbesserte Coeurl-Pfoten IX",
     "ja": "ステルス効果アップIX",
     "fr": "Furtivité améliorée IX",
-    "icon": "/i/005000/005497.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 70.",
       "de": "Monster bis zur Stufe 70 können dich nicht aufspüren.",
@@ -1787,7 +1787,7 @@
     "fr": "Examen des matériaux",
     "icon": "/i/006000/006976.png",
     "description": {
-      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ff7b1a;\">good</span>.",
+      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
       "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
@@ -1800,7 +1800,7 @@
     "fr": "Examen des matériaux",
     "icon": "/i/006000/006976.png",
     "description": {
-      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ff7b1a;\">good</span>.",
+      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
       "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
@@ -1813,7 +1813,7 @@
     "fr": "Examen des matériaux",
     "icon": "/i/006000/006976.png",
     "description": {
-      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ff7b1a;\">good</span>.",
+      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
       "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
@@ -1826,7 +1826,7 @@
     "fr": "Examen des matériaux",
     "icon": "/i/006000/006976.png",
     "description": {
-      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ff7b1a;\">good</span>.",
+      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
       "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
@@ -1839,7 +1839,7 @@
     "fr": "Examen des matériaux",
     "icon": "/i/006000/006976.png",
     "description": {
-      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ff7b1a;\">good</span>.",
+      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
       "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
@@ -1852,7 +1852,7 @@
     "fr": "Examen des matériaux",
     "icon": "/i/006000/006976.png",
     "description": {
-      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ff7b1a;\">good</span>.",
+      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
       "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
@@ -1865,7 +1865,7 @@
     "fr": "Examen des matériaux",
     "icon": "/i/006000/006976.png",
     "description": {
-      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ff7b1a;\">good</span>.",
+      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
       "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
@@ -1878,7 +1878,7 @@
     "fr": "Examen des matériaux",
     "icon": "/i/006000/006976.png",
     "description": {
-      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ff7b1a;\">good</span>.",
+      "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
       "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
@@ -1889,7 +1889,7 @@
     "de": "Genialer Funke",
     "ja": "魔匠の閃き",
     "fr": "Coup de génie",
-    "icon": "/i/006000/006977.png",
+    "icon": "",
     "description": {
       "en": "May increase maximum CP on the second step of synthesis. Increase guaranteed when a <span style=\"color:#ffff66;\">specialist</span>.",
       "de": "Gewährt mit einer gewissen Wahrscheinlichkeit den Status <span style=\"color:#ffff66;\">Genialer Funke</span>, der ab dem zweiten Arbeitsschritt die Maximal-HP erhöht.\n\nWenn Spezialist: 100 % Wahrscheinlichkeit",
@@ -1902,7 +1902,7 @@
     "de": "Genialer Funke",
     "ja": "魔匠の閃き",
     "fr": "Coup de génie",
-    "icon": "/i/006000/006977.png",
+    "icon": "",
     "description": {
       "en": "May increase maximum CP on the second step of synthesis. Increase guaranteed when a <span style=\"color:#ffff66;\">specialist</span>.",
       "de": "Gewährt mit einer gewissen Wahrscheinlichkeit den Status <span style=\"color:#ffff66;\">Genialer Funke</span>, der ab dem zweiten Arbeitsschritt die Maximal-HP erhöht.\n\nWenn Spezialist: 100 % Wahrscheinlichkeit",
@@ -1915,7 +1915,7 @@
     "de": "Genialer Funke",
     "ja": "魔匠の閃き",
     "fr": "Coup de génie",
-    "icon": "/i/006000/006977.png",
+    "icon": "",
     "description": {
       "en": "May increase maximum CP on the second step of synthesis. Increase guaranteed when a <span style=\"color:#ffff66;\">specialist</span>.",
       "de": "Gewährt mit einer gewissen Wahrscheinlichkeit den Status <span style=\"color:#ffff66;\">Genialer Funke</span>, der ab dem zweiten Arbeitsschritt die Maximal-HP erhöht.\n\nWenn Spezialist: 100 % Wahrscheinlichkeit",
@@ -1928,7 +1928,7 @@
     "de": "Genialer Funke",
     "ja": "魔匠の閃き",
     "fr": "Coup de génie",
-    "icon": "/i/006000/006977.png",
+    "icon": "",
     "description": {
       "en": "May increase maximum CP on the second step of synthesis. Increase guaranteed when a <span style=\"color:#ffff66;\">specialist</span>.",
       "de": "Gewährt mit einer gewissen Wahrscheinlichkeit den Status <span style=\"color:#ffff66;\">Genialer Funke</span>, der ab dem zweiten Arbeitsschritt die Maximal-HP erhöht.\n\nWenn Spezialist: 100 % Wahrscheinlichkeit",
@@ -1941,7 +1941,7 @@
     "de": "Genialer Funke",
     "ja": "魔匠の閃き",
     "fr": "Coup de génie",
-    "icon": "/i/006000/006977.png",
+    "icon": "",
     "description": {
       "en": "May increase maximum CP on the second step of synthesis. Increase guaranteed when a <span style=\"color:#ffff66;\">specialist</span>.",
       "de": "Gewährt mit einer gewissen Wahrscheinlichkeit den Status <span style=\"color:#ffff66;\">Genialer Funke</span>, der ab dem zweiten Arbeitsschritt die Maximal-HP erhöht.\n\nWenn Spezialist: 100 % Wahrscheinlichkeit",
@@ -1954,7 +1954,7 @@
     "de": "Genialer Funke",
     "ja": "魔匠の閃き",
     "fr": "Coup de génie",
-    "icon": "/i/006000/006977.png",
+    "icon": "",
     "description": {
       "en": "May increase maximum CP on the second step of synthesis. Increase guaranteed when a <span style=\"color:#ffff66;\">specialist</span>.",
       "de": "Gewährt mit einer gewissen Wahrscheinlichkeit den Status <span style=\"color:#ffff66;\">Genialer Funke</span>, der ab dem zweiten Arbeitsschritt die Maximal-HP erhöht.\n\nWenn Spezialist: 100 % Wahrscheinlichkeit",
@@ -1967,7 +1967,7 @@
     "de": "Genialer Funke",
     "ja": "魔匠の閃き",
     "fr": "Coup de génie",
-    "icon": "/i/006000/006977.png",
+    "icon": "",
     "description": {
       "en": "May increase maximum CP on the second step of synthesis. Increase guaranteed when a <span style=\"color:#ffff66;\">specialist</span>.",
       "de": "Gewährt mit einer gewissen Wahrscheinlichkeit den Status <span style=\"color:#ffff66;\">Genialer Funke</span>, der ab dem zweiten Arbeitsschritt die Maximal-HP erhöht.\n\nWenn Spezialist: 100 % Wahrscheinlichkeit",
@@ -1980,7 +1980,7 @@
     "de": "Genialer Funke",
     "ja": "魔匠の閃き",
     "fr": "Coup de génie",
-    "icon": "/i/006000/006977.png",
+    "icon": "",
     "description": {
       "en": "May increase maximum CP on the second step of synthesis. Increase guaranteed when a <span style=\"color:#ffff66;\">specialist</span>.",
       "de": "Gewährt mit einer gewissen Wahrscheinlichkeit den Status <span style=\"color:#ffff66;\">Genialer Funke</span>, der ab dem zweiten Arbeitsschritt die Maximal-HP erhöht.\n\nWenn Spezialist: 100 % Wahrscheinlichkeit",
@@ -2113,7 +2113,7 @@
     "icon": "/i/005000/005285.png",
     "description": {
       "en": "Allows for the strengthening of the gaze of the first brood upon using <span style=\"color:#ff7b1a;\">Mirage Dive</span> while under the effect of <span style=\"color:#ffff66;\">Blood of the Dragon</span>. When the gaze is its strongest (2 units), <span style=\"color:#ff7b1a;\">Geirskogul</span> will grant you the <span style=\"color:#ffff66;\">Life of the Dragon</span> status in place of <span style=\"color:#ffff66;\">Blood of the Dragon</span>. While under the effect of <span style=\"color:#ffff66;\">Life of the Dragon</span>, <span style=\"color:#ff7b1a;\">Geirskogul</span> will change to <span style=\"color:#ff7b1a;\">Nastrond</span>. <span style=\"color:#ffff66;\">Life of the Dragon</span> will revert to <span style=\"color:#ffff66;\">Blood of the Dragon</span> when duration expires.",
-      "de": "Gewährt dir ein Drachenauge, wenn du während <span style=\"color:#ffff66;\">Drachenherz</span> <span style=\"color:#40bfff;\">Illusionssprung</span> ausführst.\n\nWenn du <span style=\"color:#40bfff;\">Geirskogul</span> bei 2 aktiven Drachenaugen ausführst, erhältst du <span style=\"color:#ffff66;\">Drachengeist</span> statt <span style=\"color:#ffff66;\">Drachenherz</span> und der Drachenbalken färbt sich rot. In diesem Zustand ändert sich <span style=\"color:#40bfff;\">Geirskogul</span> zu <span style=\"color:#40bfff;\">Nastrond</span>. Bei Ende des Effekts erhältst du wieder <span style=\"color:#ffff66;\">Drachenherz</span>.",
+      "de": "Öffnet das Drachenauge (+ 1 Einheit), wenn du während <span style=\"color:#ffff66;\">Drachenherz</span> <span style=\"color:#40bfff;\">Illusionssprung</span> ausführst.\n\nWenn du <span style=\"color:#40bfff;\">Geirskogul</span> bei vollständig geöffnetem Drachenaugen (2 Einheiten) ausführst, erhältst du <span style=\"color:#ffff66;\">Drachengeist</span> statt <span style=\"color:#ffff66;\">Drachenherz</span> und der Drachenbalken färbt sich rot. In diesem Zustand ändert sich <span style=\"color:#40bfff;\">Geirskogul</span> zu <span style=\"color:#40bfff;\">Nastrond</span>. Bei Ende des Effekts erhältst du wieder <span style=\"color:#ffff66;\">Drachenherz</span>.",
       "ja": "自身に<span style=\"color:#ff7b1a;\">「ドラゴンアイ」</span>が付与される。\n\nドラゴンアイが2段階まで付与された状態でゲイルスコグルを実行すると、蒼の竜血が<span style=\"color:#ff7b1a;\">「紅の竜血」</span>に変化する。\n\n紅の竜血効果中はゲイルスコグルが<span style=\"color:#ff7b1a;\">「ナーストレンド」</span>に変化する。\n\n効果時間が切れると紅の竜血は蒼の竜血に戻る。\n\n<span style=\"color:#00cc22;\">発動条件：</span><span style=\"color:#ff7b1a;\">「蒼の竜血」</span>効果中のミラージュダイブ実行時",
       "fr": "Permet de recevoir <span style=\"color:#ff7b1a;\">Œil du dragon</span> lorsque vous utilisez <span style=\"color:#ff7b1a;\">Piqué mirage</span> avec <span style=\"color:#ff7b1a;\">Sang du dragon</span>.\n\nAu 2e degré d'<span style=\"color:#ff7b1a;\">Œil du dragon</span>, utiliser <span style=\"color:#ff7b1a;\">Geirskögul</span> change <span style=\"color:#ff7b1a;\">Sang du dragon</span> en <span style=\"color:#ff7b1a;\">Vie du dragon</span>. <span style=\"color:#ff7b1a;\">Geirskögul</span> est alors remplacé par <span style=\"color:#ff7b1a;\">Naströnd</span>.\n\nÀ la fin de cet effet, <span style=\"color:#ff7b1a;\">Vie du dragon</span> redevient <span style=\"color:#ff7b1a;\">Sang du dragon</span>."
     }
@@ -2138,10 +2138,10 @@
     "fr": "Shûkihô",
     "icon": "/i/005000/005411.png",
     "description": {
-      "en": "Increases <span style=\"color:#ff7b1a;\">Ninki Gauge</span> by 6 upon landing weaponskills or successfully completing combos.",
-      "de": "Füllt den Ninki-Balken bei einem Treffer einer Waffenfertigkeit oder einer erfolgreich ausgeführten Kombo um 6.",
-      "ja": "<span style=\"color:#ff7b1a;\">「忍気」</span>が6ずつ上昇するようになる。\n\n<span style=\"color:#00cc22;\">発動条件：</span>ウェポンスキルの命中時またはコンボ成功時",
-      "fr": "Permet à votre <span style=\"color:#40bfff;\">Jauge de Ninki</span> de se remplir de 6 lorsque vous utilisez une technique d'arme ou un combo avec succès."
+      "en": "Increases <span style=\"color:#ff7b1a;\">Ninki Gauge</span> by 5 upon successfully landing certain weaponskills or completing certain combos.",
+      "de": "Füllt den Ninki-Balken bei einem Treffer einer Waffenfertigkeit oder einer erfolgreich ausgeführten Kombo um 5.",
+      "ja": "<span style=\"color:#ff7b1a;\">「忍気」</span>が5ずつ上昇するようになる。\n\n<span style=\"color:#00cc22;\">発動条件：</span>ウェポンスキルの命中時またはコンボ成功時",
+      "fr": "Permet à votre <span style=\"color:#40bfff;\">Jauge de Ninki</span> de se remplir de 5 lorsque vous utilisez une technique d'arme ou un combo avec succès."
     }
   },
   "166": {
@@ -2281,10 +2281,10 @@
     "fr": "Extra Ruine améliorée",
     "icon": "/i/005000/005377.png",
     "description": {
-      "en": "Grants <span style=\"color:#ffff66;\">Further Ruin</span> upon using <span style=\"color:#ff7b1a;\">Egi Assault</span>.\n\n<span style=\"color:#00cc22;\">Maximum Stacks: </span>4",
+      "en": "Grants <span style=\"color:#ffff66;\">Further Ruin</span> upon using <span style=\"color:#ff7b1a;\">Egi Assault</span>.\n\n<span style=\"color:#00cc22;\">Maximum Stacks: </span>4\n\nThe <span style=\"color:#ff7b1a;\">Egi-Assault</span> used must be an attack action.",
       "de": "Wenn dein Egi erfolgreich eine Attacke ausführt, wird dir <span style=\"color:#ffff66;\">Verbessertes Ruinra</span> gewährt. Damit ändert sich das Kommando <span style=\"color:#40bfff;\">Ruinra</span> zu <span style=\"color:#40bfff;\">Ruinka</span>.\n\nMaximalstapelzahl: 4",
       "ja": "自身に<span style=\"color:#ff7b1a;\">「ルインラ強化」</span>を付与する。\n\nルインラがルインジャに変化する。\n\n<span style=\"color:#00cc22;\">最大スタック数：</span>4　<span style=\"color:#00cc22;\">効果時間：</span>永続\n\n<span style=\"color:#00cc22;\">発動条件：</span>エギアサルトIによる攻撃アクションの実行時",
-      "fr": "Permet d'obtenir <span style=\"color:#ff7b1a;\">Extra Ruine renforcée</span> quand Frappe Egi I est utilisée.\n\nCet effet remplace Extra Ruine par Giga Ruine et est cumulable 4 fois."
+      "fr": "Permet d'obtenir <span style=\"color:#ff7b1a;\">Extra Ruine renforcée</span> quand Frappe Egi I est utilisée par Garuda-Egi ou Ifrit-Egi.\n\nCet effet remplace Extra Ruine par Giga Ruine et est cumulable 4 fois."
     }
   },
   "177": {
@@ -2453,7 +2453,7 @@
       "en": "Reduces <span style=\"color:#ff7b1a;\">Lightspeed</span> recast time to 90 seconds.",
       "de": "Verkürzt die Reaktivierungszeit von <span style=\"color:#40bfff;\">Lichtgeschwindigkeit</span> auf 90 Sekunden.",
       "ja": "ライトスピードのリキャストタイムを90秒に短縮させる。",
-      "fr": "Réduit de 90s le temps de recharge de <span style=\"color:#ff7b1a;\">Vitesse de la lumière</span>."
+      "fr": "Réduit à 90s le temps de recharge de <span style=\"color:#ff7b1a;\">Vitesse de la lumière</span>."
     }
   },
   "190": {
@@ -2461,7 +2461,7 @@
     "de": "Gespür des Minenarbeiters",
     "ja": "オート山師の直感",
     "fr": "Labeur automatique du montagnard",
-    "icon": "/i/005000/005445.png",
+    "icon": "",
     "description": {
       "en": "Automatically renders all out-of-reach items reachable. Only available on mineral deposits or rocky outcrops level 60 and below.",
       "de": "Zu Beginn des Sammelns werden alle Gegenstände erreichbar.\n\n(Nur bei Sammelstellen der Stufe 60 und niedriger)",
@@ -2474,7 +2474,7 @@
     "de": "Gespür des Gärtners",
     "ja": "オート開拓者の手",
     "fr": "Labeur automatique du pionnier",
-    "icon": "/i/005000/005470.png",
+    "icon": "",
     "description": {
       "en": "Automatically renders all out-of-reach items reachable. Only available on mature trees or patches of lush vegetation level 60 and below.",
       "de": "Zu Beginn des Sammelns werden alle Gegenstände erreichbar.\n\n(Nur bei Sammelstellen der Stufe 60 und niedriger)",
@@ -2485,40 +2485,40 @@
   "192": {
     "en": "Enhanced GP Regeneration",
     "de": "Sammelregeneration",
-    "ja": "GP自然回復量アップ",
+    "ja": "GP回復量アップ",
     "fr": "Auto-récupération de PR augmentée",
     "icon": "/i/005000/005444.png",
     "description": {
-      "en": "Increases the amount of GP regenerated over time.",
-      "de": "Die Anzahl der regenerierten Sammelpunkte ist erhöht.",
-      "ja": "時間あたりのGP回復量を上昇する。",
-      "fr": "La récupération périodique de PR est augmentée."
+      "en": "Raises base GP regeneration rate by one.",
+      "de": "Das Grundpotenzial der Sammelregeneration ist um 1 erhöht.",
+      "ja": "GPの自然回復量がベース値から1上昇する。",
+      "fr": "Le taux de récupération de PR est augmenté de 1."
     }
   },
   "193": {
     "en": "Enhanced GP Regeneration",
     "de": "Sammelregeneration",
-    "ja": "GP自然回復量アップ",
+    "ja": "GP回復量アップ",
     "fr": "Auto-récupération de PR augmentée",
     "icon": "/i/005000/005469.png",
     "description": {
-      "en": "Increases the amount of GP regenerated over time.",
-      "de": "Die Anzahl der regenerierten Sammelpunkte ist erhöht.",
-      "ja": "時間あたりのGP回復量を上昇する。",
-      "fr": "La récupération périodique de PR est augmentée."
+      "en": "Raises base GP regeneration rate by one.",
+      "de": "Das Grundpotenzial der Sammelregeneration ist um 1 erhöht.",
+      "ja": "GPの自然回復量がベース値から1上昇する。",
+      "fr": "Le taux de récupération de PR est augmenté de 1."
     }
   },
   "194": {
     "en": "Enhanced GP Regeneration",
     "de": "Sammelregeneration",
-    "ja": "GP自然回復量アップ",
+    "ja": "GP回復量アップ",
     "fr": "Auto-récupération de PR augmentée",
     "icon": "/i/005000/005498.png",
     "description": {
-      "en": "Increases the amount of GP regenerated over time.",
-      "de": "Die Anzahl der regenerierten Sammelpunkte ist erhöht.",
-      "ja": "時間あたりのGP回復量を上昇する。",
-      "fr": "La récupération périodique de PR est augmentée."
+      "en": "Raises base GP regeneration rate by one.",
+      "de": "Das Grundpotenzial der Sammelregeneration ist um 1 erhöht.",
+      "ja": "GPの自然回復量がベース値から1上昇する。",
+      "fr": "Le taux de récupération de PR est augmenté de 1."
     }
   },
   "195": {
@@ -2528,10 +2528,10 @@
     "fr": "À-coup amélioré",
     "icon": "/i/006000/006201.png",
     "description": {
-      "en": "Upgrades <span style=\"color:#ff7b1a;\">Jolt</span> to <span style=\"color:#ff7b1a;\">Jolt II</span>.",
-      "de": "Verbessert <span style=\"color:#40bfff;\">Stoß</span> zu <span style=\"color:#40bfff;\">Stoß II</span>.",
-      "ja": "ジョルトがジョルラに変化する。",
-      "fr": "Remplace <span style=\"color:#ff7b1a;\">À-coup</span> par <span style=\"color:#ff7b1a;\">Extra À-coup</span>."
+      "en": "Upgrades <span style=\"color:#ff7b1a;\">Jolt</span> to <span style=\"color:#ff7b1a;\">Jolt II</span>. Also increases the potency of <span style=\"color:#ff7b1a;\">Verthunder</span> and <span style=\"color:#ff7b1a;\">Veraero</span> to 350, and the potency of <span style=\"color:#ff7b1a;\">Verfire</span> and <span style=\"color:#ff7b1a;\">Verstone</span> to 300.",
+      "de": "Verbessert <span style=\"color:#40bfff;\">Stoß</span> zu <span style=\"color:#40bfff;\">Stoß II</span>.\n\nAußerdem werden die Attacke-Werte von <span style=\"color:#40bfff;\">Erzblitz</span> und <span style=\"color:#40bfff;\">Erzwind</span> auf 350 und von <span style=\"color:#40bfff;\">Erzfeuer</span> und <span style=\"color:#40bfff;\">Erzstein</span> auf 300 erhöht.",
+      "ja": "ジョルトがジョルラに変化する。\n\nさらに、ヴァルサンダーとヴァルエアロの威力を350に、ヴァルファイアとヴァルストーンの威力を300に上昇させる。",
+      "fr": "Remplace <span style=\"color:#ff7b1a;\">À-coup</span> par <span style=\"color:#ff7b1a;\">Extra À-coup</span>.\n\nAugmente la puissance de <span style=\"color:#ff7b1a;\">VerFoudre</span> et <span style=\"color:#ff7b1a;\">VerVent</span> à 350.\n\nAugmente la puissance de <span style=\"color:#ff7b1a;\">VerFeu</span> et <span style=\"color:#ff7b1a;\">VerTerre</span> à 300."
     }
   },
   "196": {
@@ -2916,7 +2916,7 @@
     "de": "Verbesserte Coeurl-Pfoten X",
     "ja": "ステルス効果アップX",
     "fr": "Furtivité améliorée X",
-    "icon": "/i/005000/005446.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 74.",
       "de": "Monster bis zur Stufe 74 können dich nicht aufspüren.",
@@ -2929,7 +2929,7 @@
     "de": "Verbesserte Coeurl-Pfoten XI",
     "ja": "ステルス効果アップXI",
     "fr": "Furtivité améliorée XI",
-    "icon": "/i/005000/005447.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 77.",
       "de": "Monster bis zur Stufe 77 können dich nicht aufspüren.",
@@ -2942,7 +2942,7 @@
     "de": "Verbesserte Coeurl-Pfoten XII",
     "ja": "ステルス効果アップXII",
     "fr": "Furtivité améliorée XII",
-    "icon": "/i/005000/005448.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 80.",
       "de": "Monster bis zur Stufe 80 können dich nicht aufspüren.",
@@ -2955,7 +2955,7 @@
     "de": "Verbesserte Coeurl-Pfoten X",
     "ja": "ステルス効果アップX",
     "fr": "Furtivité améliorée X",
-    "icon": "/i/005000/005471.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 74.",
       "de": "Monster bis zur Stufe 74 können dich nicht aufspüren.",
@@ -2968,7 +2968,7 @@
     "de": "Verbesserte Coeurl-Pfoten XI",
     "ja": "ステルス効果アップXI",
     "fr": "Furtivité améliorée XI",
-    "icon": "/i/005000/005472.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 77.",
       "de": "Monster bis zur Stufe 77 können dich nicht aufspüren.",
@@ -2981,7 +2981,7 @@
     "de": "Verbesserte Coeurl-Pfoten XII",
     "ja": "ステルス効果アップXII",
     "fr": "Furtivité améliorée XII",
-    "icon": "/i/005000/005473.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 80.",
       "de": "Monster bis zur Stufe 80 können dich nicht aufspüren.",
@@ -2994,7 +2994,7 @@
     "de": "Verbesserte Coeurl-Pfoten X",
     "ja": "ステルス効果アップX",
     "fr": "Furtivité améliorée X",
-    "icon": "/i/006000/006955.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 74.",
       "de": "Monster bis zur Stufe 74 können dich nicht aufspüren.",
@@ -3007,7 +3007,7 @@
     "de": "Verbesserte Coeurl-Pfoten XI",
     "ja": "ステルス効果アップXI",
     "fr": "Furtivité améliorée XI",
-    "icon": "/i/006000/006956.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 77.",
       "de": "Monster bis zur Stufe 77 können dich nicht aufspüren.",
@@ -3020,7 +3020,7 @@
     "de": "Verbesserte Coeurl-Pfoten XII",
     "ja": "ステルス効果アップXII",
     "fr": "Furtivité améliorée XII",
-    "icon": "/i/006000/006957.png",
+    "icon": "",
     "description": {
       "en": "Increases the range of enemies avoidable when using <span style=\"color:#ff7b1a;\">Stealth</span> to level 80.",
       "de": "Monster bis zur Stufe 80 können dich nicht aufspüren.",
@@ -3057,40 +3057,40 @@
   "236": {
     "en": "Enhanced GP Regeneration II",
     "de": "Sammelregeneration II",
-    "ja": "GP自然回復量アップII",
+    "ja": "GP回復量アップII",
     "fr": "Auto-récupération de PR augmentée II",
     "icon": "/i/005000/005449.png",
     "description": {
-      "en": "Increases the amount of GP regenerated over time.",
-      "de": "Die Anzahl der regenerierten Sammelpunkte ist erhöht.",
-      "ja": "時間あたりのGP回復量を上昇する。",
-      "fr": "La récupération périodique de PR est augmentée."
+      "en": "Raises base GP regeneration rate by a total of two. When gathering, raises base regeneration rate by one.",
+      "de": "Das Grundpotenzial der Sammelregeneration ist um 2, das Potenzial während des Sammelns um 1 erhöht.",
+      "ja": "GPの自然回復量がベース値から2上昇する。さらに採集成功時のGP回復量がベース値から1上昇する。",
+      "fr": "Le taux de récupération de PR est augmenté de 2, et la récupération de PR après réussite d'une récolte est augmentée de 1."
     }
   },
   "237": {
     "en": "Enhanced GP Regeneration II",
     "de": "Sammelregeneration II",
-    "ja": "GP自然回復量アップII",
+    "ja": "GP回復量アップII",
     "fr": "Auto-récupération de PR augmentée II",
     "icon": "/i/005000/005474.png",
     "description": {
-      "en": "Increases the amount of GP regenerated over time.",
-      "de": "Die Anzahl der regenerierten Sammelpunkte ist erhöht.",
-      "ja": "時間あたりのGP回復量を上昇する。",
-      "fr": "La récupération périodique de PR est augmentée."
+      "en": "Raises base GP regeneration rate by a total of two. When gathering, raises base regeneration rate by one.",
+      "de": "Das Grundpotenzial der Sammelregeneration ist um 2, das Potenzial während des Sammelns um 1 erhöht.",
+      "ja": "GPの自然回復量がベース値から2上昇する。さらに採集成功時のGP回復量がベース値から1上昇する。",
+      "fr": "Le taux de récupération de PR est augmenté de 2, et la récupération de PR après réussite d'une récolte est augmentée de 1."
     }
   },
   "238": {
     "en": "Enhanced GP Regeneration II",
     "de": "Sammelregeneration II",
-    "ja": "GP自然回復量アップII",
+    "ja": "GP回復量アップII",
     "fr": "Auto-récupération de PR augmentée II",
     "icon": "/i/006000/006958.png",
     "description": {
-      "en": "Increases the amount of GP regenerated over time.",
-      "de": "Die Anzahl der regenerierten Sammelpunkte ist erhöht.",
-      "ja": "時間あたりのGP回復量を上昇する。",
-      "fr": "La récupération périodique de PR est augmentée."
+      "en": "Raises base GP regeneration rate by a total of two.",
+      "de": "Das Grundpotenzial der Sammelregeneration ist um 2 erhöht.",
+      "ja": "GPの自然回復量がベース値から2上昇する。",
+      "fr": "Le taux de récupération de PR est augmenté de 2."
     }
   },
   "239": {
@@ -3243,7 +3243,7 @@
     "fr": "Kassatsu amélioré",
     "icon": "/i/005000/005414.png",
     "description": {
-      "en": "Upgrades <span style=\"color:#ff7b1a;\">Katon</span> and <span style=\"color:#ff7b1a;\">Hyoton</span> to <span style=\"color:#ff7b1a;\">Goka Mekkyaku</span> and <span style=\"color:#ff7b1a;\">Hyosho Ranryu</span> while under the effect of <span style=\"color:#ff7b1a;\">Kassatsu</span>.",
+      "en": "Upgrades <span style=\"color:#ff7b1a;\">Katon</span> and <span style=\"color:#ff7b1a;\">Hyoton</span> to <span style=\"color:#ff7b1a;\">Goka Mekkyaku</span> and <span style=\"color:#ff7b1a;\">Hyosho Ranryu</span> while under the effect of <span style=\"color:#ffff66;\">Kassatsu</span>.",
       "de": "Während <span style=\"color:#ffff66;\">Kassatsu</span> aktiv ist, wird <span style=\"color:#40bfff;\">Katon</span> zu <span style=\"color:#40bfff;\">Goka Mekkyaku</span> und <span style=\"color:#40bfff;\">Hyoton</span> zu <span style=\"color:#40bfff;\">Hyosho Ranryu</span> verbessert.",
       "ja": "<span style=\"color:#ff7b1a;\">「活殺自在」</span>の効果中は、火遁の術と氷遁の術がそれぞれ<span style=\"color:#ff7b1a;\">「劫火滅却の術」</span>と<span style=\"color:#ff7b1a;\">「氷晶乱流の術」</span>に変化する。",
       "fr": "Sous l'effet de <span style=\"color:#ff7b1a;\">Kassatsu</span>, remplace <span style=\"color:#ff7b1a;\">Katon</span> par <span style=\"color:#ff7b1a;\">Gôka Mekkyaku</span>, et <span style=\"color:#ff7b1a;\">Hyôton</span> par <span style=\"color:#ff7b1a;\">Hyôshô Ranryû</span>."
@@ -3466,8 +3466,8 @@
     "description": {
       "en": "<span style=\"color:#ff7b1a;\">Infuriate</span> grants the effect of <span style=\"color:#ffff66;\">Nascent Chaos</span>, upgrading <span style=\"color:#ff7b1a;\">Decimate</span> to <span style=\"color:#ff7b1a;\">Chaotic Cyclone</span>. Upon reaching level 80, <span style=\"color:#ffff66;\">Nascent Chaos</span> will also upgrade <span style=\"color:#ff7b1a;\">Fell Cleave</span> to <span style=\"color:#ff7b1a;\">Inner Chaos</span>. \n\n<span style=\"color:#00cc22;\">Duration: </span>30s",
       "de": "Gewährt dir <span style=\"color:#ffff66;\">Saat des Chaos</span>, wenn du <span style=\"color:#40bfff;\">Schlachtruf</span> ausführst. Während <span style=\"color:#ffff66;\">Saat des Chaos</span> aktiv ist, wird <span style=\"color:#40bfff;\">Niedermähen</span> zu <span style=\"color:#40bfff;\">Inneres Chaos</span> und <span style=\"color:#40bfff;\">Kreiselklinge</span> zu <span style=\"color:#40bfff;\">Chaosklinge</span>, sobald erlernt.\n\nDauer: 30 Sekunden",
-      "ja": "自身に<span style=\"color:#ff7b1a;\">「原初の混沌」</span>が付与される。\n\n<span style=\"color:#00cc22;\">効果時間：</span>30秒\n\n<span style=\"color:#00cc22;\">原初の混沌効果：</span>デシメートがカオティックサイクロンに変化する。\n\nさらに、インナーカオスを修得するとフェルクリーヴがインナーカオスに変化するようになる。\n\n<span style=\"color:#00cc22;\">発動条件：</span><span style=\"color:#ff7b1a;\">「ウォークライ」</span>効果中",
-      "fr": "Permet de recevoir <span style=\"color:#ff7b1a;\">Chaos naissant</span> sous l'effet <span style=\"color:#ff7b1a;\">Cri de guerre</span>.\n\n<span style=\"color:#ffff66;\">Chaos naissant:</span> remplace <span style=\"color:#ff7b1a;\">Sape-fendeur</span> par <span style=\"color:#ff7b1a;\">Chaos intérieur</span> et <span style=\"color:#ff7b1a;\">Décimation</span> par <span style=\"color:#ff7b1a;\">Cyclone chaotique</span>.\n\n<span style=\"color:#ffff66;\">Durée:</span> 30s"
+      "ja": "自身に<span style=\"color:#ff7b1a;\">「原初の混沌」</span>が付与される。\n\n<span style=\"color:#00cc22;\">効果時間：</span>30秒\n\n<span style=\"color:#00cc22;\">原初の混沌効果：</span>デシメートがカオティックサイクロンに変化する。\n\nさらに、インナーカオスを修得するとフェルクリーヴがインナーカオスに変化するようになる。\n\n<span style=\"color:#00cc22;\">発動条件：</span><span style=\"color:#ff7b1a;\">「ウォークライ」</span>実行時",
+      "fr": "Permet de recevoir <span style=\"color:#ff7b1a;\">Chaos naissant</span> lors de l'utilisation de <span style=\"color:#ff7b1a;\">Cri de guerre</span>.\n\n<span style=\"color:#ffff66;\">Chaos naissant:</span> remplace <span style=\"color:#ff7b1a;\">Sape-fendeur</span> par <span style=\"color:#ff7b1a;\">Chaos intérieur</span> et <span style=\"color:#ff7b1a;\">Décimation</span> par <span style=\"color:#ff7b1a;\">Cyclone chaotique</span>.\n\n<span style=\"color:#ffff66;\">Durée:</span> 30s"
     }
   },
   "268": {
@@ -3545,7 +3545,7 @@
       "en": "Allows the stacking of a fourth <span style=\"color:#ffff66;\">Greased Lightning</span> while under the effect of <span style=\"color:#ffff66;\">Fists of Wind</span>.",
       "de": "Ermöglicht die Stapelung von vier <span style=\"color:#ffff66;\">Geölter Blitz</span>, während <span style=\"color:#ffff66;\">Beflügelnde Aura</span> aktiv ist.",
       "ja": "疾風迅雷が4つまでスタックするようになる。\n\n<span style=\"color:#00cc22;\">発動条件：</span><span style=\"color:#ff7b1a;\">「疾風の構え」</span>効果中",
-      "fr": "Permet de cumuler quatre degrés de <span style=\"color:#ff7b1a;\">Vitesse de l'éclair</span> sous l'effet <span style=\"color:#ff7b1a;\">Poings de vent</span>."
+      "fr": "Permet de cumuler quatre effets <span style=\"color:#ff7b1a;\">Vitesse de l'éclair</span> sous l'effet <span style=\"color:#ff7b1a;\">Poings de vent</span>."
     }
   },
   "274": {
@@ -3555,7 +3555,7 @@
     "fr": "Poings de feu améliorés",
     "icon": "/i/005000/005237.png",
     "description": {
-      "en": "Improves <span style=\"color:#ff7b1a;\">Fists of Fire</span>'s  damage increase to 10%.",
+      "en": "Improves <span style=\"color:#ff7b1a;\">Fists of Fire</span>'s damage increase to 10%.",
       "de": "Erhöht den Schadensbonus von <span style=\"color:#40bfff;\">Sengende Aura</span> auf 10%.",
       "ja": "効果量を10％に上昇させる。",
       "fr": "Augmente l'effet sur les dégâts infligés à 10%."
@@ -3602,7 +3602,7 @@
   },
   "278": {
     "en": "Enhanced Jinpu and Shifu",
-    "de": "Verbessertes Jinpu und  Shifu",
+    "de": "Verbessertes Jinpu und Shifu",
     "ja": "陣風・士風効果アップ",
     "fr": "Jinpû/Shifû améliorés",
     "icon": "/i/006000/006154.png",
@@ -3633,10 +3633,10 @@
     "fr": "Shûkihô II",
     "icon": "/i/005000/005416.png",
     "description": {
-      "en": "Increases <span style=\"color:#ff7b1a;\">Ninki Gauge</span> by 8 upon landing weaponskills or successfully completing combos.",
-      "de": "Treffer deiner Waffenfertigkeiten und erfolgreich ausgeführte Kombos füllen den Ninki-Balken jetzt um 8.",
-      "ja": "<span style=\"color:#ff7b1a;\">「忍気」</span>の上昇量が8に増加する。\n\n<span style=\"color:#00cc22;\">発動条件：</span>ウェポンスキルの命中時またはコンボ成功時",
-      "fr": "Permet à votre <span style=\"color:#40bfff;\">Jauge de Ninki</span> de se remplir de 8 lorsque vous utilisez une technique d'arme ou un combo avec succès."
+      "en": "Increases <span style=\"color:#ff7b1a;\">Ninki Gauge</span> by 10 upon successfully landing <span style=\"color:#ff7b1a;\">Shadow Fang</span>, or completing a combo with <span style=\"color:#ff7b1a;\">Aeolian Edge</span> or <span style=\"color:#ff7b1a;\">Armor Crush</span>.",
+      "de": "Füllt den Ninki-Balken um 10.\n\nBedingung: Treffer mit <span style=\"color:#40bfff;\">Schattenfang</span> oder Kombos mit <span style=\"color:#40bfff;\">Äolusklinge</span> und <span style=\"color:#40bfff;\">Harnischbrecher</span>",
+      "ja": "<span style=\"color:#ff7b1a;\">「忍気」</span>の上昇量が10に増加する。\n\n<span style=\"color:#00cc22;\">発動条件：</span>影牙の命中時および旋風刃と強甲破点突のコンボ成功時",
+      "fr": "Permet à votre <span style=\"color:#40bfff;\">Jauge de Ninki</span> de se remplir de 10 lorsque vous utilisez <span style=\"color:#ff7b1a;\">Croc d'ombre</span> avec succès ou réussissez un combo avec <span style=\"color:#ff7b1a;\">Lame éolienne</span> et <span style=\"color:#ff7b1a;\">Perce-armure</span>."
     }
   },
   "281": {
@@ -3673,7 +3673,7 @@
     "icon": "/i/005000/005304.png",
     "description": {
       "en": "Adds to <span style=\"color:#ff7b1a;\">Quick Nock</span> a 30% chance that the recast timer for <span style=\"color:#ff7b1a;\">Bloodletter</span> and <span style=\"color:#ff7b1a;\">Rain of Death</span> will be reset.",
-      "de": "Fügt <span style=\"color:#40bfff;\">Pfeilsalve</span> eine Wahrscheinlichkeit von 30% hinzu, dass der Reaktivierungs-Timer von <span style=\"color:#40bfff;\">Aderlass</span> und <span style=\"color:#40bfff;\">Tödlicher Regen</span> zurückstetzt wird.",
+      "de": "Fügt <span style=\"color:#40bfff;\">Pfeilsalve</span> eine Wahrscheinlichkeit von 30% hinzu, dass der Reaktivierungs-Timer von <span style=\"color:#40bfff;\">Aderlass</span> und <span style=\"color:#40bfff;\">Tödlicher Regen</span> zurückgesetzt wird.",
       "ja": "ブラッドレッターおよびレイン・オブ・デスのリキャストタイムをリセットする。\n\n<span style=\"color:#00cc22;\">発動条件：</span>クイックノックの命中時（発動確率30％）",
       "fr": "Accorde 30% de chances que les temps de recharge d'<span style=\"color:#ff7b1a;\">Hémorragie</span> et de <span style=\"color:#ff7b1a;\">Pluie mortelle</span> soient réinitialisés lorsque vous utilisez <span style=\"color:#ff7b1a;\">Salve fulgurante</span> avec succès."
     }
@@ -3805,7 +3805,7 @@
       "en": "Improves <span style=\"color:#ff7b1a;\">Wildfire</span>'s potency increase for landing weaponskills to 200.",
       "de": "Jede während <span style=\"color:#ffff66;\">Wildfeuer</span> erfolgreich ausgeführte Waffenfertigkeit ist nun einen Attacke-Wert von 200 wert.",
       "ja": "ワイルドファイアの「ウェポンスキル1回ごとの威力」が200に上昇する。",
-      "fr": "Augmente à 200 le bonus conféré à la puissance de <span style=\"color:#ff7b1a;\">Flambée</span> pour chaque technique d'arme utilisée pendant l'effet."
+      "fr": "Augmente le bonus conféré à la puissance de <span style=\"color:#ff7b1a;\">Flambée</span> à 200 pour chaque technique d'arme utilisée pendant l'effet."
     }
   },
   "294": {
@@ -3841,10 +3841,10 @@
     "fr": "Maîtrise des polarités",
     "icon": "/i/005000/005362.png",
     "description": {
-      "en": "Accumulating full stacks of either <span style=\"color:#ffff66;\">Astral Fire</span> or <span style=\"color:#ffff66;\">Umbral Ice</span> then casting a spell of the opposite element will consume no MP.",
-      "de": "Hat <span style=\"color:#ffff66;\">Schatteneis</span> oder  <span style=\"color:#ffff66;\">Lichtfeuer</span> die maximale Stapelanzahl erreicht, kosten Zauber des entgegengesetzten Elements keine MP.",
-      "ja": "自身に<span style=\"color:#ff7b1a;\">「アストラルファイア」</span>もしくは<span style=\"color:#ff7b1a;\">「アンブラルブリザード」</span>が最大スタック数まで付与されている場合、反対属性の魔法の消費ＭＰを0にする。",
-      "fr": "Réduit à 0 le coût en PM des sorts de la polarité opposée lorsque vous bénéficiez de <span style=\"color:#ff7b1a;\">Feu astral</span> ou de <span style=\"color:#ff7b1a;\">Glace ombrale</span> au degré maximal."
+      "en": "Accumulating full stacks of either <span style=\"color:#ffff66;\">Astral Fire</span> or <span style=\"color:#ffff66;\">Umbral Ice</span> then casting a spell of the opposite element will consume no MP.\n\nEffect does not apply to <span style=\"color:#ff7b1a;\">Flare</span>.",
+      "de": "Hat <span style=\"color:#ffff66;\">Schatteneis</span> oder  <span style=\"color:#ffff66;\">Lichtfeuer</span> die maximale Stapelanzahl erreicht, kosten Zauber des entgegengesetzten Elements keine MP.\n\nKeine Wirkung auf Flare.",
+      "ja": "自身に<span style=\"color:#ff7b1a;\">「アストラルファイア」</span>もしくは<span style=\"color:#ff7b1a;\">「アンブラルブリザード」</span>が最大スタック数まで付与されている場合、反対属性の魔法の消費ＭＰを0にする。\n\nただし、フレアには適用されない。",
+      "fr": "Réduit à 0 le coût en PM des sorts de la polarité opposée lorsque vous bénéficiez de <span style=\"color:#ff7b1a;\">Feu astral</span> ou de <span style=\"color:#ff7b1a;\">Glace ombrale</span> au degré maximal. Ne s'applique pas à Brasier."
     }
   },
   "297": {
@@ -3906,10 +3906,10 @@
     "fr": "Fléau amélioré",
     "icon": "/i/005000/005679.png",
     "description": {
-      "en": "<span style=\"color:#ff7b1a;\">Bane</span> also spreads the <span style=\"color:#ffff66;\">Ruination</span> effect to nearby enemies.",
-      "de": "<span style=\"color:#40bfff;\">Bann</span> lässt nun auch den den Effekt von <span style=\"color:#ffff66;\">Ruinierung</span>, den du bei einem Ziel bewirkt hast, auf die Gegner in seiner Umgebung übergreifen.",
-      "ja": "ベインの実行時に、自身が付与した<span style=\"color:#ff7b1a;\">「ルイネーション」</span>も拡散させることができるようになる。",
-      "fr": "Fléau propage également votre effet de <span style=\"color:#ff7b1a;\">Ruinance</span>."
+      "en": "Extends the duration of <span style=\"color:#ffff66;\">Bio</span> and <span style=\"color:#ffff66;\">Miasma</span> applied by <span style=\"color:#ff7b1a;\">Bane</span> to the full duration of their original effects.",
+      "de": "Löst den Zusatzeffekt von <span style=\"color:#40bfff;\">Bann</span> aus.",
+      "ja": "ベインの追加効果の発動確率が100％になる。",
+      "fr": "Permet à l'effet additionnel de Fléau de toujours se déclencher."
     }
   },
   "302": {
@@ -4212,406 +4212,406 @@
     }
   },
   "325": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "One with the Mountain",
+    "de": "Tellurische Meisterschaft",
+    "ja": "オートトゥルー・オブ・ミネラル",
+    "fr": "Auto Science des minéraux",
+    "icon": "/i/005000/005427.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Automatically activates <span style=\"color:#ffff66;\">Truth of Mountains</span> upon changing your class to miner.",
+      "de": "Aktiviert <span style=\"color:#ffff66;\">Tellurische Enthüllung</span> automatisch, sobald auf die Klasse Minenarbeiter gewechselt wird.",
+      "ja": "採掘師にクラスチェンジした際、自動でトゥルー・オブ・ミネラルの効果を得る。",
+      "fr": "Vous bénéficiez automatiquement de l'effet Science des minéraux lorsque vous devenez mineur."
     }
   },
   "326": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "One with the Forest",
+    "de": "Meisterschaft der Flure",
+    "ja": "オートトゥルー・オブ・フォレスト",
+    "fr": "Auto Science des végétaux",
+    "icon": "/i/005000/005452.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Automatically activates <span style=\"color:#ffff66;\">Truth of Forests</span> upon changing your class to botanist.",
+      "de": "Aktiviert <span style=\"color:#ffff66;\">Flurenthüllung</span> automatisch, sobald auf die Klasse Gärtner gewechselt wird.",
+      "ja": "園芸師にクラスチェンジした際、自動でトゥルー・オブ・フォレストの効果を得る。",
+      "fr": "Vous bénéficiez automatiquement de l'effet Science des végétaux lorsque vous devenez botaniste."
     }
   },
   "327": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "One with the Ocean",
+    "de": "Meisterschaft der Meere",
+    "ja": "オートトゥルー・オブ・オーシャン",
+    "fr": "Auto Science des océans",
+    "icon": "/i/005000/005476.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Automatically activates <span style=\"color:#ffff66;\">Truth of Oceans</span> upon changing your class to fisher.",
+      "de": "<span style=\"color:#ffff66;\">Jungfräuliches Meer</span> wird beim Klassenwechsel zu Fischer automatisch aktiviert.",
+      "ja": "漁師にクラスチェンジした際、自動でトゥルー・オブ・オーシャンの効果を得る。",
+      "fr": "Vous bénéficiez automatiquement de l'effet Science des océans lorsque vous devenez pêcheur."
     }
   },
   "328": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Auto Sneak",
+    "de": "Auto-Verstohlenheit",
+    "ja": "オートスニーク",
+    "fr": "Auto Discrétion",
+    "icon": "/i/005000/005428.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Automatically activates <span style=\"color:#ffff66;\">Sneak</span> upon changing your class to miner.",
+      "de": "<span style=\"color:#ffff66;\">Verstohlenheit</span> wird beim Klassenwechsel zu Minenarbeiter automatisch aktiviert, sofern dies am momentanen Ort möglich ist.",
+      "ja": "採掘師にクラスチェンジした際、自動でスニークの効果を得る。\n\n<span style=\"color:#00cc22;\">発動条件：スニークが実行できる場所</span>",
+      "fr": "Vous bénéficiez automatiquement de l'effet Discrétion lorsque vous devenez mineur, si l'endroit le permet."
     }
   },
   "329": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Auto Sneak",
+    "de": "Auto-Verstohlenheit",
+    "ja": "オートスニーク",
+    "fr": "Auto Discrétion",
+    "icon": "/i/005000/005453.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Automatically activates <span style=\"color:#ffff66;\">Sneak</span> upon changing your class to botanist.",
+      "de": "<span style=\"color:#ffff66;\">Verstohlenheit</span> wird beim Klassenwechsel zu Gärtner automatisch aktiviert, sofern dies am momentanen Ort möglich ist.",
+      "ja": "園芸師にクラスチェンジした際、自動でスニークの効果を得る。\n\n<span style=\"color:#00cc22;\">発動条件：スニークが実行できる場所</span>",
+      "fr": "Vous bénéficiez automatiquement de l'effet Discrétion lorsque vous devenez botaniste, si l'endroit le permet."
     }
   },
   "330": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Auto Sneak",
+    "de": "Auto-Verstohlenheit",
+    "ja": "オートスニーク",
+    "fr": "Auto Discrétion",
+    "icon": "/i/005000/005477.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Automatically activates <span style=\"color:#ffff66;\">Sneak</span> upon changing your class to fisher.",
+      "de": "<span style=\"color:#ffff66;\">Verstohlenheit</span> wird beim Klassenwechsel zu Fischer automatisch aktiviert, sofern dies am momentanen Ort möglich ist.",
+      "ja": "漁師にクラスチェンジした際、自動でスニークの効果を得る。\n\n<span style=\"color:#00cc22;\">発動条件：スニークが実行できる場所</span>",
+      "fr": "Vous bénéficiez automatiquement de l'effet Discrétion lorsque vous devenez pêcheur, si l'endroit le permet."
     }
   },
   "331": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Enhanced Twelve's Bounty III",
+    "de": "Verbesserte Gunst der Zwölf III",
+    "ja": "十二神の加護効果アップIII",
+    "fr": "Bénédiction des Douze améliorée III",
+    "icon": "/i/005000/005440.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Increases the base yield of <span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> by one.",
+      "de": "Der Grundertrag durch Gunst der Zwölf erhöht sich um 1.",
+      "ja": "十二神の加護による獲得個数がベース値から1上昇する。",
+      "fr": "L'effet de Bénédiction des Douze est amélioré de 1."
     }
   },
   "332": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Enhanced Twelve's Bounty III",
+    "de": "Verbesserte Gunst der Zwölf III",
+    "ja": "十二神の加護効果アップIII",
+    "fr": "Bénédiction des Douze améliorée III",
+    "icon": "/i/005000/005465.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Increases the base yield of <span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> by one.",
+      "de": "Der Grundertrag durch Gunst der Zwölf erhöht sich um 1.",
+      "ja": "十二神の加護による獲得個数がベース値から1上昇する。",
+      "fr": "L'effet de Bénédiction des Douze est amélioré de 1."
     }
   },
   "333": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bountiful Yield Mastery",
+    "de": "Reichste Ausbeute",
+    "ja": "バウンティフルイールドマスタリー",
+    "fr": "Maîtrise d'Extraction abondante",
+    "icon": "/i/005000/005429.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Upgrades <span style=\"color:#ff7b1a;\">Bountiful Yield</span> to <span style=\"color:#ff7b1a;\">Bountiful Yield II</span>.",
+      "de": "Verbessert <span style=\"color:#40bfff;\">Reiche Ausbeute</span> zu <span style=\"color:#40bfff;\">Reiche Ausbeute II</span>.",
+      "ja": "バウンティフルイールドがバウンティフルイールドIIに変化する。",
+      "fr": "Remplace <span style=\"color:#ff7b1a;\">Extraction abondante</span> par <span style=\"color:#ff7b1a;\">Extraction abondante II</span>."
     }
   },
   "334": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Unearth Mastery",
+    "de": "Meister des Exkavierens",
+    "ja": "アナースマスタリー",
+    "fr": "Maîtrise de Déterrage",
+    "icon": "/i/005000/005438.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Upgrades <span style=\"color:#ff7b1a;\">Unearth II</span> to <span style=\"color:#ff7b1a;\">Unearth III</span>.",
+      "de": "Verbessert <span style=\"color:#40bfff;\">Exkavieren II</span> zu <span style=\"color:#40bfff;\">Exkavieren III</span>.",
+      "ja": "アナースIIがアナースIIIに変化する。",
+      "fr": "Remplace <span style=\"color:#ff7b1a;\">Déterrage II</span> par <span style=\"color:#ff7b1a;\">Déterrage III</span>."
     }
   },
   "335": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Impulsive Appraisal Mastery",
+    "de": "Meister der Spontanen Begutachtung",
+    "ja": "直感選別マスタリー",
+    "fr": "Maîtrise d'Évaluation impulsive",
+    "icon": "/i/005000/005439.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Upgrades <span style=\"color:#ff7b1a;\">Impulsive Appraisal</span> to <span style=\"color:#ff7b1a;\">Impulsive Appraisal II</span>.",
+      "de": "Verbessert <span style=\"color:#40bfff;\">Spontane Begutachtung</span> zu <span style=\"color:#40bfff;\">Spontane Begutachtung II</span>.",
+      "ja": "直感選別が直感選別IIに変化する。",
+      "fr": "Remplace <span style=\"color:#ff7b1a;\">Évaluation impulsive</span> par <span style=\"color:#ff7b1a;\">Évaluation impulsive II</span>."
     }
   },
   "336": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bountiful Harvest Mastery",
+    "de": "Reichste Ernte",
+    "ja": "バウンティフルハーベストマスタリー",
+    "fr": "Maîtrise de Récolte abondante",
+    "icon": "/i/005000/005454.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Upgrades <span style=\"color:#ff7b1a;\">Bountiful Harvest</span> to <span style=\"color:#ff7b1a;\">Bountiful Harvest II</span>.",
+      "de": "Verbessert <span style=\"color:#40bfff;\">Reiche Ernte</span> zu <span style=\"color:#40bfff;\">Reiche Ernte II</span>.",
+      "ja": "バウンティフルハーベストがバウンティフルハーベストIIに変化する。",
+      "fr": "Remplace <span style=\"color:#ff7b1a;\">Récolte abondante</span> par <span style=\"color:#ff7b1a;\">Récolte abondante II</span>."
     }
   },
   "337": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Leaf Turn Mastery",
+    "de": "Höchste Ziele",
+    "ja": "リーフターンマスタリー",
+    "fr": "Maîtrise de Main verte",
+    "icon": "/i/005000/005463.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Upgrades <span style=\"color:#ff7b1a;\">Leaf Turn II</span> to <span style=\"color:#ff7b1a;\">Leaf Turn III</span>.",
+      "de": "Verbessert <span style=\"color:#40bfff;\">Höhere Ziele II</span> zu <span style=\"color:#40bfff;\">Höhere Ziele III</span>.",
+      "ja": "リーフターンIIがリーフターンIIIに変化する。",
+      "fr": "Remplace <span style=\"color:#ff7b1a;\">Main verte II</span> par <span style=\"color:#ff7b1a;\">Main verte III</span>."
     }
   },
   "338": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Impulsive Appraisal Mastery",
+    "de": "Meister der Spontanen Begutachtung",
+    "ja": "直感選別マスタリー",
+    "fr": "Maîtrise d'Évaluation impulsive",
+    "icon": "/i/005000/005464.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Upgrades <span style=\"color:#ff7b1a;\">Impulsive Appraisal</span> to <span style=\"color:#ff7b1a;\">Impulsive Appraisal II</span>.",
+      "de": "Verbessert <span style=\"color:#40bfff;\">Spontane Begutachtung</span> zu <span style=\"color:#40bfff;\">Spontane Begutachtung II</span>.",
+      "ja": "直感選別が直感選別IIに変化する。",
+      "fr": "Remplace <span style=\"color:#ff7b1a;\">Évaluation impulsive</span> par <span style=\"color:#ff7b1a;\">Évaluation impulsive II</span>."
     }
   },
   "339": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Basic Synthesis Mastery",
+    "de": "Meister der Bearbeitung",
+    "ja": "作業マスタリー",
+    "fr": "Maîtrise de Travail de base",
+    "icon": "/i/006000/006979.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 120%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "ja": "作業の効率が120に上昇する。",
+      "fr": "L'efficacité de Travail de base augmente à 120."
     }
   },
   "340": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Basic Synthesis Mastery",
+    "de": "Meister der Bearbeitung",
+    "ja": "作業マスタリー",
+    "fr": "Maîtrise de Travail de base",
+    "icon": "/i/006000/006980.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 120%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "ja": "作業の効率が120に上昇する。",
+      "fr": "L'efficacité de Travail de base augmente à 120."
     }
   },
   "341": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Basic Synthesis Mastery",
+    "de": "Meister der Bearbeitung",
+    "ja": "作業マスタリー",
+    "fr": "Maîtrise de Travail de base",
+    "icon": "/i/006000/006981.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 120%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "ja": "作業の効率が120に上昇する。",
+      "fr": "L'efficacité de Travail de base augmente à 120."
     }
   },
   "342": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Basic Synthesis Mastery",
+    "de": "Meister der Bearbeitung",
+    "ja": "作業マスタリー",
+    "fr": "Maîtrise de Travail de base",
+    "icon": "/i/006000/006982.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 120%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "ja": "作業の効率が120に上昇する。",
+      "fr": "L'efficacité de Travail de base augmente à 120."
     }
   },
   "343": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Basic Synthesis Mastery",
+    "de": "Meister der Bearbeitung",
+    "ja": "作業マスタリー",
+    "fr": "Maîtrise de Travail de base",
+    "icon": "/i/006000/006983.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 120%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "ja": "作業の効率が120に上昇する。",
+      "fr": "L'efficacité de Travail de base augmente à 120."
     }
   },
   "344": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Basic Synthesis Mastery",
+    "de": "Meister der Bearbeitung",
+    "ja": "作業マスタリー",
+    "fr": "Maîtrise de Travail de base",
+    "icon": "/i/006000/006984.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 120%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "ja": "作業の効率が120に上昇する。",
+      "fr": "L'efficacité de Travail de base augmente à 120."
     }
   },
   "345": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Basic Synthesis Mastery",
+    "de": "Meister der Bearbeitung",
+    "ja": "作業マスタリー",
+    "fr": "Maîtrise de Travail de base",
+    "icon": "/i/006000/006985.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 120%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "ja": "作業の効率が120に上昇する。",
+      "fr": "L'efficacité de Travail de base augmente à 120."
     }
   },
   "346": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Basic Synthesis Mastery",
+    "de": "Meister der Bearbeitung",
+    "ja": "作業マスタリー",
+    "fr": "Maîtrise de Travail de base",
+    "icon": "/i/006000/006986.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 120%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "ja": "作業の効率が120に上昇する。",
+      "fr": "L'efficacité de Travail de base augmente à 120."
     }
   },
   "347": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rapid Synthesis Mastery",
+    "de": "Meister der Schnellen Bearbeitung",
+    "ja": "突貫作業マスタリー",
+    "fr": "Maîtrise de Travail rapide",
+    "icon": "/i/006000/006978.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 500%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "ja": "突貫作業の効率が500に上昇する。",
+      "fr": "L'efficacité de Travail rapide augmente à 500."
     }
   },
   "348": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rapid Synthesis Mastery",
+    "de": "Meister der Schnellen Bearbeitung",
+    "ja": "突貫作業マスタリー",
+    "fr": "Maîtrise de Travail rapide",
+    "icon": "/i/006000/006978.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 500%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "ja": "突貫作業の効率が500に上昇する。",
+      "fr": "L'efficacité de Travail rapide augmente à 500."
     }
   },
   "349": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rapid Synthesis Mastery",
+    "de": "Meister der Schnellen Bearbeitung",
+    "ja": "突貫作業マスタリー",
+    "fr": "Maîtrise de Travail rapide",
+    "icon": "/i/006000/006978.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 500%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "ja": "突貫作業の効率が500に上昇する。",
+      "fr": "L'efficacité de Travail rapide augmente à 500."
     }
   },
   "350": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rapid Synthesis Mastery",
+    "de": "Meister der Schnellen Bearbeitung",
+    "ja": "突貫作業マスタリー",
+    "fr": "Maîtrise de Travail rapide",
+    "icon": "/i/006000/006978.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 500%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "ja": "突貫作業の効率が500に上昇する。",
+      "fr": "L'efficacité de Travail rapide augmente à 500."
     }
   },
   "351": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rapid Synthesis Mastery",
+    "de": "Meister der Schnellen Bearbeitung",
+    "ja": "突貫作業マスタリー",
+    "fr": "Maîtrise de Travail rapide",
+    "icon": "/i/006000/006978.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 500%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "ja": "突貫作業の効率が500に上昇する。",
+      "fr": "L'efficacité de Travail rapide augmente à 500."
     }
   },
   "352": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rapid Synthesis Mastery",
+    "de": "Meister der Schnellen Bearbeitung",
+    "ja": "突貫作業マスタリー",
+    "fr": "Maîtrise de Travail rapide",
+    "icon": "/i/006000/006978.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 500%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "ja": "突貫作業の効率が500に上昇する。",
+      "fr": "L'efficacité de Travail rapide augmente à 500."
     }
   },
   "353": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rapid Synthesis Mastery",
+    "de": "Meister der Schnellen Bearbeitung",
+    "ja": "突貫作業マスタリー",
+    "fr": "Maîtrise de Travail rapide",
+    "icon": "/i/006000/006978.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 500%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "ja": "突貫作業の効率が500に上昇する。",
+      "fr": "L'efficacité de Travail rapide augmente à 500."
     }
   },
   "354": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rapid Synthesis Mastery",
+    "de": "Meister der Schnellen Bearbeitung",
+    "ja": "突貫作業マスタリー",
+    "fr": "Maîtrise de Travail rapide",
+    "icon": "/i/006000/006978.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Efficiency is increased to 500%.",
+      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "ja": "突貫作業の効率が500に上昇する。",
+      "fr": "L'efficacité de Travail rapide augmente à 500."
     }
   },
   "355": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Enhanced Outburst",
+    "de": "Verbesserte Elementarkorona",
+    "ja": "アウトバースト効果アップ",
+    "fr": "Fracas élémentaire amélioré",
+    "icon": "/i/005000/005681.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Increases the potency of <span style=\"color:#ff7b1a;\">Outburst</span> to 90.",
+      "de": "Erhöht den Attacke-Wert von <span style=\"color:#40bfff;\">Elementarkorona</span> auf 90.",
+      "ja": "アウトバーストの威力を90に上昇させる。",
+      "fr": "Augmente la puissance de <span style=\"color:#ff7b1a;\">Fracas élémentaire</span> à 90."
     }
   },
   "356": {

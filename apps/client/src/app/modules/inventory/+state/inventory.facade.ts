@@ -7,7 +7,7 @@ import { inventoryQuery } from './inventory.selectors';
 import { LoadInventory, UpdateInventory } from './inventory.actions';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,8 @@ export class InventoryFacade {
 
   inventory$ = this.store.pipe(
     select(inventoryQuery.getInventory),
-    filter(inventory => inventory !== null)
+    filter(inventory => inventory !== null),
+    map(inventory => inventory.clone())
   );
 
   constructor(private store: Store<InventoryPartialState>) {
@@ -47,6 +48,20 @@ export class InventoryFacade {
       case ContainerType.FreeCompanyBag1:
       case ContainerType.FreeCompanyBag2:
         return 'FC_chest';
+      case ContainerType.ArmoryOff:
+      case ContainerType.ArmoryHead:
+      case ContainerType.ArmoryBody:
+      case ContainerType.ArmoryHand:
+      case ContainerType.ArmoryWaist:
+      case ContainerType.ArmoryLegs:
+      case ContainerType.ArmoryFeet:
+      case ContainerType.ArmoryNeck:
+      case ContainerType.ArmoryEar:
+      case ContainerType.ArmoryWrist:
+      case ContainerType.ArmoryRing:
+      case ContainerType.ArmorySoulCrystal:
+      case ContainerType.ArmoryMain:
+        return 'Armory';
     }
     return 'Other';
   }

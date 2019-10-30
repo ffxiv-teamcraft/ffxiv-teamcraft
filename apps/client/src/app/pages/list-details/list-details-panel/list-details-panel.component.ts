@@ -20,6 +20,7 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
+import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -47,11 +48,14 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   permissionLevel$: Observable<PermissionLevel>;
 
+  currentZoneId$: Observable<number> = this.eorzeaFacade.zoneId$;
+
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
               private message: NzMessageService, private translate: TranslateService,
               private dialog: NzModalService, private listsFacade: ListsFacade,
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
-              private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService) {
+              private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
+              private eorzeaFacade: EorzeaFacade) {
     this.permissionLevel$ = this.listsFacade.selectedListPermissionLevel$;
   }
 

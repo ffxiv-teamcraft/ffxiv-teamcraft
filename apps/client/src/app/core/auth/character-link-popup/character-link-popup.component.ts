@@ -3,7 +3,7 @@ import { Character, CharacterSearchResult, CharacterSearchResultRow, XivapiServi
 import { combineLatest, Observable } from 'rxjs';
 import { debounceTime, filter, map, mergeMap, startWith, tap } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { AddCharacter, AddCustomCharacter, Logout } from '../../../+state/auth.actions';
 import { NzModalRef } from 'ng-zorro-antd';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -37,14 +37,15 @@ export class CharacterLinkPopupComponent {
 
   private koreanServers = ['초코보', '모그리', '카벙클', '톤베리'];
 
-  public localstorageUser: TeamcraftUser = JSON.parse(localStorage.getItem('auth:user') || '{}');
+  private chineseServers = ['拉诺西亚', '紫水栈桥', '幻影群岛', '摩杜纳', '神意之地', '静语庄园', '萌芽池', '延夏', '红玉海', '潮风亭', '神拳痕', '白银乡', '白金幻象', '龙巢神殿', '旅人栈桥', '拂晓之间'];
 
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef) {
     this.servers$ = this.xivapi.getServerList().pipe(
       map(servers => {
         return [
           ...servers,
-          ...this.koreanServers.map(server => `Korean Server (${server})`)
+          ...this.koreanServers.map(server => `Korean Server (${server})`),
+          ...this.chineseServers.map(server => `Chinese Server (${server})`)
         ].sort();
       })
     );

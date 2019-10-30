@@ -195,12 +195,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private stepStates$: BehaviorSubject<{ [index: number]: StepState }> = new BehaviorSubject<{ [index: number]: StepState }>({});
 
-  // Regex stuff for macro import
   private findActionsRegex: RegExp =
-    new RegExp(/\/(ac|action)[\s]+(([\w]+)|"([^"]+)")?.*/, 'i');
+    new RegExp(/\/(ac|action|aaction|gaction|generalaction)[\s]+((\w|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|"[^"]+")?.*/, 'i');
 
   private findActionsAutoTranslatedRegex: RegExp =
-    new RegExp(/\/(ac|action)[\s]+([^<]+)?.*/, 'i');
+    new RegExp(/\/(ac|action|aaction|gaction|generalaction)[\s]+([^<]+)?.*/, 'i');
 
   private statsFromRotationApplied = false;
 
@@ -694,16 +693,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     return CraftingActionsRegistry.getActionsByType(ActionType.QUALITY);
   }
 
-  getCpRecoveryActions(): CraftingAction[] {
-    return CraftingActionsRegistry.getActionsByType(ActionType.CP_RECOVERY);
-  }
-
   getBuffActions(): CraftingAction[] {
     return CraftingActionsRegistry.getActionsByType(ActionType.BUFF);
-  }
-
-  getSpecialtyActions(): CraftingAction[] {
-    return CraftingActionsRegistry.getActionsByType(ActionType.SPECIALTY);
   }
 
   getRepairActions(): CraftingAction[] {
@@ -711,7 +702,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   getOtherActions(): CraftingAction[] {
-    return CraftingActionsRegistry.getActionsByType(ActionType.OTHER);
+    return [
+      ...CraftingActionsRegistry.getActionsByType(ActionType.OTHER),
+      ...CraftingActionsRegistry.getActionsByType(ActionType.CP_RECOVERY)
+    ];
   }
 
   saveSafeMode(value: boolean): void {
@@ -723,9 +717,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     if (stats.specialist) {
       stats.craftsmanship += 20;
       stats.control += 20;
-    } else if (stats.craftsmanship > 0 && stats.control > 0) {
+      stats.cp += 15;
+    } else if (stats.craftsmanship > 0 && stats.control > 0 && stats.cp > 0) {
       stats.craftsmanship -= 20;
       stats.control -= 20;
+      stats.cp -= 15;
     }
     this.statsForm.patchValue(stats, { emitEvent: false });
   }

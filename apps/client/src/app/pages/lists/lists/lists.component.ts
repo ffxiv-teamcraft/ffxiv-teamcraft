@@ -157,6 +157,7 @@ export class ListsComponent {
       }),
       shareReplay(1)
     );
+
     this.loading$ = combineLatest([this.lists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$]).pipe(
       map(() => false),
       startWith(true)

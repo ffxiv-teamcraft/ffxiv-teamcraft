@@ -78,9 +78,11 @@ export class StatsPopupComponent implements OnInit {
     if (spec) {
       set.craftsmanship += 20;
       set.control += 20;
+      set.cp += 15;
     } else {
       set.craftsmanship -= 20;
       set.control -= 20;
+      set.cp -= 15;
     }
   }
 
