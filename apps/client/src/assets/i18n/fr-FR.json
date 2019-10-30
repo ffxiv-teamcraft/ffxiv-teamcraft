@@ -425,7 +425,7 @@
     "Lists_merged": "Listes fusionnées avec succès !",
     "Shared_lists": "Listes partagées avec vous",
     "Add_selection": "Ajouter la sélection à une liste",
-    "Add_selection_to_list": "Add selection to list",
+    "Add_selection_to_list": "Ajouter la sélection la liste",
     "Your_lists": "Vos listes",
     "Outdated_tag": "Pas à jour",
     "No_lists": "Vous n'avez pas de listes",
@@ -645,7 +645,7 @@
     "Title": "Parcours optimisé",
     "Steps": "Étapes",
     "Loading_path": "Chargement du chemin optimisé (peut prendre plusieurs secondes)",
-    "You_are_here": "You are here",
+    "You_are_here": "Vous êtes ici",
     "STEP": {
       "Gathering": "Récolter {{amount}} (total : {{total}})",
       "Hunting": "Obtenir {{amount}} sur les monstres (total : {{total}})",
@@ -1554,21 +1554,21 @@
       "FC_chest": "Coffre de compagnie",
       "Bag": "Inventaire",
       "Other": "Autre inventaire",
-      "Armory": "Armory"
+      "Armory": "Arsenal"
     }
   },
   "INVENTORY_OPTIMIZER": {
-    "Title": "Inventory optimizer",
-    "Ignore_item": "Ignore this tip for this item",
-    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
-    "Show_ignored": "Show ignored items",
+    "Title": "Optimiseur d'inventaire",
+    "Ignore_item": "Ignorer cette astuce pour cet objet",
+    "Remove_ignore_item": "Ne plus ignorer cette astuce pour cet objet",
+    "Show_ignored": "Afficher les objets ignorés",
     "CAN_BE_BOUGHT": {
-      "Title": "Items that can be bought with gil",
-      "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
+      "Title": "Objets qui peuvent être achetés avec des gils",
+      "Message": "Cet objet peut être acheté aux PNJ avec gil et n'a pas besoin de réputation de tribu."
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated accross multiple containers",
-      "Message": "This item is also present in: {{containers}}."
+      "Title": "Objets qui sont dupliqués",
+      "Message": "Cet objet est également présent dans : {{containers}}."
     }
   }
 }
