@@ -9,8 +9,8 @@ export const fishingLog = [
     "spot": {
       "id": 2,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.9013671875,
+        "y": 22.1806640625
       }
     }
   },
@@ -24,8 +24,8 @@ export const fishingLog = [
     "spot": {
       "id": 2,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.9013671875,
+        "y": 22.1806640625
       }
     }
   },
@@ -39,8 +39,8 @@ export const fishingLog = [
     "spot": {
       "id": 2,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.9013671875,
+        "y": 22.1806640625
       }
     }
   },
@@ -54,8 +54,8 @@ export const fishingLog = [
     "spot": {
       "id": 2,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.9013671875,
+        "y": 22.1806640625
       }
     }
   },
@@ -69,8 +69,8 @@ export const fishingLog = [
     "spot": {
       "id": 2,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.9013671875,
+        "y": 22.1806640625
       }
     }
   },
@@ -84,8 +84,8 @@ export const fishingLog = [
     "spot": {
       "id": 2,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.9013671875,
+        "y": 22.1806640625
       }
     }
   },
@@ -99,8 +99,8 @@ export const fishingLog = [
     "spot": {
       "id": 2,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.9013671875,
+        "y": 22.1806640625
       }
     }
   },
@@ -114,8 +114,8 @@ export const fishingLog = [
     "spot": {
       "id": 2,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.9013671875,
+        "y": 22.1806640625
       }
     }
   },
@@ -129,8 +129,8 @@ export const fishingLog = [
     "spot": {
       "id": 3,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.544921875,
+        "y": 28.9873046875
       }
     }
   },
@@ -144,8 +144,8 @@ export const fishingLog = [
     "spot": {
       "id": 3,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.544921875,
+        "y": 28.9873046875
       }
     }
   },
@@ -159,8 +159,8 @@ export const fishingLog = [
     "spot": {
       "id": 3,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.544921875,
+        "y": 28.9873046875
       }
     }
   },
@@ -174,8 +174,8 @@ export const fishingLog = [
     "spot": {
       "id": 3,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.544921875,
+        "y": 28.9873046875
       }
     }
   },
@@ -189,8 +189,8 @@ export const fishingLog = [
     "spot": {
       "id": 3,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.544921875,
+        "y": 28.9873046875
       }
     }
   },
@@ -204,8 +204,8 @@ export const fishingLog = [
     "spot": {
       "id": 3,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.544921875,
+        "y": 28.9873046875
       }
     }
   },
@@ -219,8 +219,8 @@ export const fishingLog = [
     "spot": {
       "id": 3,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.544921875,
+        "y": 28.9873046875
       }
     }
   },
@@ -234,8 +234,8 @@ export const fishingLog = [
     "spot": {
       "id": 3,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.544921875,
+        "y": 28.9873046875
       }
     }
   },
@@ -249,8 +249,8 @@ export const fishingLog = [
     "spot": {
       "id": 4,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.6142578125,
+        "y": 24.142578125
       }
     }
   },
@@ -264,8 +264,8 @@ export const fishingLog = [
     "spot": {
       "id": 4,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.6142578125,
+        "y": 24.142578125
       }
     }
   },
@@ -279,8 +279,8 @@ export const fishingLog = [
     "spot": {
       "id": 4,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.6142578125,
+        "y": 24.142578125
       }
     }
   },
@@ -294,8 +294,8 @@ export const fishingLog = [
     "spot": {
       "id": 4,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.6142578125,
+        "y": 24.142578125
       }
     }
   },
@@ -309,8 +309,8 @@ export const fishingLog = [
     "spot": {
       "id": 4,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.6142578125,
+        "y": 24.142578125
       }
     }
   },
@@ -324,8 +324,8 @@ export const fishingLog = [
     "spot": {
       "id": 4,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.6142578125,
+        "y": 24.142578125
       }
     }
   },
@@ -339,8 +339,8 @@ export const fishingLog = [
     "spot": {
       "id": 4,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.6142578125,
+        "y": 24.142578125
       }
     }
   },
@@ -354,8 +354,8 @@ export const fishingLog = [
     "spot": {
       "id": 5,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.8134765625,
+        "y": 21.23974609375
       }
     }
   },
@@ -369,8 +369,8 @@ export const fishingLog = [
     "spot": {
       "id": 5,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.8134765625,
+        "y": 21.23974609375
       }
     }
   },
@@ -384,8 +384,8 @@ export const fishingLog = [
     "spot": {
       "id": 5,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.8134765625,
+        "y": 21.23974609375
       }
     }
   },
@@ -399,8 +399,8 @@ export const fishingLog = [
     "spot": {
       "id": 5,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.8134765625,
+        "y": 21.23974609375
       }
     }
   },
@@ -414,8 +414,8 @@ export const fishingLog = [
     "spot": {
       "id": 5,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.8134765625,
+        "y": 21.23974609375
       }
     }
   },
@@ -429,8 +429,8 @@ export const fishingLog = [
     "spot": {
       "id": 5,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.8134765625,
+        "y": 21.23974609375
       }
     }
   },
@@ -444,8 +444,8 @@ export const fishingLog = [
     "spot": {
       "id": 5,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.8134765625,
+        "y": 21.23974609375
       }
     }
   },
@@ -459,8 +459,8 @@ export const fishingLog = [
     "spot": {
       "id": 5,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.8134765625,
+        "y": 21.23974609375
       }
     }
   },
@@ -474,8 +474,8 @@ export const fishingLog = [
     "spot": {
       "id": 6,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.02783203125,
+        "y": 22.9013671875
       }
     }
   },
@@ -489,8 +489,8 @@ export const fishingLog = [
     "spot": {
       "id": 6,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.02783203125,
+        "y": 22.9013671875
       }
     }
   },
@@ -504,8 +504,8 @@ export const fishingLog = [
     "spot": {
       "id": 6,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.02783203125,
+        "y": 22.9013671875
       }
     }
   },
@@ -519,8 +519,8 @@ export const fishingLog = [
     "spot": {
       "id": 6,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.02783203125,
+        "y": 22.9013671875
       }
     }
   },
@@ -534,8 +534,8 @@ export const fishingLog = [
     "spot": {
       "id": 6,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.02783203125,
+        "y": 22.9013671875
       }
     }
   },
@@ -549,8 +549,8 @@ export const fishingLog = [
     "spot": {
       "id": 6,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.02783203125,
+        "y": 22.9013671875
       }
     }
   },
@@ -564,8 +564,8 @@ export const fishingLog = [
     "spot": {
       "id": 6,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.02783203125,
+        "y": 22.9013671875
       }
     }
   },
@@ -579,8 +579,8 @@ export const fishingLog = [
     "spot": {
       "id": 6,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.02783203125,
+        "y": 22.9013671875
       }
     }
   },
@@ -594,8 +594,8 @@ export const fishingLog = [
     "spot": {
       "id": 7,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 21.52001953125
       }
     }
   },
@@ -609,8 +609,8 @@ export const fishingLog = [
     "spot": {
       "id": 7,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 21.52001953125
       }
     }
   },
@@ -624,8 +624,8 @@ export const fishingLog = [
     "spot": {
       "id": 7,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 21.52001953125
       }
     }
   },
@@ -639,8 +639,8 @@ export const fishingLog = [
     "spot": {
       "id": 7,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 21.52001953125
       }
     }
   },
@@ -654,8 +654,8 @@ export const fishingLog = [
     "spot": {
       "id": 7,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 21.52001953125
       }
     }
   },
@@ -669,8 +669,8 @@ export const fishingLog = [
     "spot": {
       "id": 7,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 21.52001953125
       }
     }
   },
@@ -684,8 +684,8 @@ export const fishingLog = [
     "spot": {
       "id": 7,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 21.52001953125
       }
     }
   },
@@ -699,8 +699,8 @@ export const fishingLog = [
     "spot": {
       "id": 7,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 21.52001953125
       }
     }
   },
@@ -714,8 +714,8 @@ export const fishingLog = [
     "spot": {
       "id": 7,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 21.52001953125
       }
     }
   },
@@ -729,8 +729,8 @@ export const fishingLog = [
     "spot": {
       "id": 8,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 25.3037109375
       }
     }
   },
@@ -744,8 +744,8 @@ export const fishingLog = [
     "spot": {
       "id": 8,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 25.3037109375
       }
     }
   },
@@ -759,8 +759,8 @@ export const fishingLog = [
     "spot": {
       "id": 8,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 25.3037109375
       }
     }
   },
@@ -774,8 +774,8 @@ export const fishingLog = [
     "spot": {
       "id": 8,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 25.3037109375
       }
     }
   },
@@ -789,8 +789,8 @@ export const fishingLog = [
     "spot": {
       "id": 8,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 25.3037109375
       }
     }
   },
@@ -804,8 +804,8 @@ export const fishingLog = [
     "spot": {
       "id": 8,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 25.3037109375
       }
     }
   },
@@ -819,8 +819,8 @@ export const fishingLog = [
     "spot": {
       "id": 8,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 25.3037109375
       }
     }
   },
@@ -834,8 +834,8 @@ export const fishingLog = [
     "spot": {
       "id": 8,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 25.3037109375
       }
     }
   },
@@ -849,8 +849,8 @@ export const fishingLog = [
     "spot": {
       "id": 9,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.0244140625,
+        "y": 20.7392578125
       }
     }
   },
@@ -864,8 +864,8 @@ export const fishingLog = [
     "spot": {
       "id": 9,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.0244140625,
+        "y": 20.7392578125
       }
     }
   },
@@ -879,8 +879,8 @@ export const fishingLog = [
     "spot": {
       "id": 9,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.0244140625,
+        "y": 20.7392578125
       }
     }
   },
@@ -894,8 +894,8 @@ export const fishingLog = [
     "spot": {
       "id": 9,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.0244140625,
+        "y": 20.7392578125
       }
     }
   },
@@ -909,8 +909,8 @@ export const fishingLog = [
     "spot": {
       "id": 9,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.0244140625,
+        "y": 20.7392578125
       }
     }
   },
@@ -924,8 +924,8 @@ export const fishingLog = [
     "spot": {
       "id": 9,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.0244140625,
+        "y": 20.7392578125
       }
     }
   },
@@ -939,8 +939,8 @@ export const fishingLog = [
     "spot": {
       "id": 9,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.0244140625,
+        "y": 20.7392578125
       }
     }
   },
@@ -954,8 +954,8 @@ export const fishingLog = [
     "spot": {
       "id": 10,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.67626953125,
+        "y": 16.9755859375
       }
     }
   },
@@ -969,8 +969,8 @@ export const fishingLog = [
     "spot": {
       "id": 10,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.67626953125,
+        "y": 16.9755859375
       }
     }
   },
@@ -984,8 +984,8 @@ export const fishingLog = [
     "spot": {
       "id": 10,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.67626953125,
+        "y": 16.9755859375
       }
     }
   },
@@ -999,8 +999,8 @@ export const fishingLog = [
     "spot": {
       "id": 10,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.67626953125,
+        "y": 16.9755859375
       }
     }
   },
@@ -1014,8 +1014,8 @@ export const fishingLog = [
     "spot": {
       "id": 10,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.67626953125,
+        "y": 16.9755859375
       }
     }
   },
@@ -1029,8 +1029,8 @@ export const fishingLog = [
     "spot": {
       "id": 10,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.67626953125,
+        "y": 16.9755859375
       }
     }
   },
@@ -1044,8 +1044,8 @@ export const fishingLog = [
     "spot": {
       "id": 10,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.67626953125,
+        "y": 16.9755859375
       }
     }
   },
@@ -1059,8 +1059,8 @@ export const fishingLog = [
     "spot": {
       "id": 10,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.67626953125,
+        "y": 16.9755859375
       }
     }
   },
@@ -1074,8 +1074,8 @@ export const fishingLog = [
     "spot": {
       "id": 11,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 19.017578125
       }
     }
   },
@@ -1089,8 +1089,8 @@ export const fishingLog = [
     "spot": {
       "id": 11,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 19.017578125
       }
     }
   },
@@ -1104,8 +1104,8 @@ export const fishingLog = [
     "spot": {
       "id": 11,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 19.017578125
       }
     }
   },
@@ -1119,8 +1119,8 @@ export const fishingLog = [
     "spot": {
       "id": 11,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 19.017578125
       }
     }
   },
@@ -1134,8 +1134,8 @@ export const fishingLog = [
     "spot": {
       "id": 11,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 19.017578125
       }
     }
   },
@@ -1149,8 +1149,8 @@ export const fishingLog = [
     "spot": {
       "id": 11,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 19.017578125
       }
     }
   },
@@ -1164,8 +1164,8 @@ export const fishingLog = [
     "spot": {
       "id": 11,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 19.017578125
       }
     }
   },
@@ -1179,8 +1179,8 @@ export const fishingLog = [
     "spot": {
       "id": 11,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 19.017578125
       }
     }
   },
@@ -1194,8 +1194,8 @@ export const fishingLog = [
     "spot": {
       "id": 11,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 19.017578125
       }
     }
   },
@@ -1209,8 +1209,8 @@ export const fishingLog = [
     "spot": {
       "id": 12,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.95849609375,
+        "y": 22.541015625
       }
     }
   },
@@ -1224,8 +1224,8 @@ export const fishingLog = [
     "spot": {
       "id": 12,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.95849609375,
+        "y": 22.541015625
       }
     }
   },
@@ -1239,8 +1239,8 @@ export const fishingLog = [
     "spot": {
       "id": 12,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.95849609375,
+        "y": 22.541015625
       }
     }
   },
@@ -1254,8 +1254,8 @@ export const fishingLog = [
     "spot": {
       "id": 12,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.95849609375,
+        "y": 22.541015625
       }
     }
   },
@@ -1269,8 +1269,8 @@ export const fishingLog = [
     "spot": {
       "id": 12,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.95849609375,
+        "y": 22.541015625
       }
     }
   },
@@ -1284,8 +1284,8 @@ export const fishingLog = [
     "spot": {
       "id": 12,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.95849609375,
+        "y": 22.541015625
       }
     }
   },
@@ -1299,8 +1299,8 @@ export const fishingLog = [
     "spot": {
       "id": 12,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.95849609375,
+        "y": 22.541015625
       }
     }
   },
@@ -1314,8 +1314,8 @@ export const fishingLog = [
     "spot": {
       "id": 12,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.95849609375,
+        "y": 22.541015625
       }
     }
   },
@@ -1329,8 +1329,8 @@ export const fishingLog = [
     "spot": {
       "id": 12,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.95849609375,
+        "y": 22.541015625
       }
     }
   },
@@ -1344,8 +1344,8 @@ export const fishingLog = [
     "spot": {
       "id": 13,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.35693359375,
+        "y": 24.8232421875
       }
     }
   },
@@ -1359,8 +1359,8 @@ export const fishingLog = [
     "spot": {
       "id": 13,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.35693359375,
+        "y": 24.8232421875
       }
     }
   },
@@ -1374,8 +1374,8 @@ export const fishingLog = [
     "spot": {
       "id": 13,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.35693359375,
+        "y": 24.8232421875
       }
     }
   },
@@ -1389,8 +1389,8 @@ export const fishingLog = [
     "spot": {
       "id": 13,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.35693359375,
+        "y": 24.8232421875
       }
     }
   },
@@ -1404,8 +1404,8 @@ export const fishingLog = [
     "spot": {
       "id": 13,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.35693359375,
+        "y": 24.8232421875
       }
     }
   },
@@ -1419,8 +1419,8 @@ export const fishingLog = [
     "spot": {
       "id": 13,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.35693359375,
+        "y": 24.8232421875
       }
     }
   },
@@ -1434,8 +1434,8 @@ export const fishingLog = [
     "spot": {
       "id": 13,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.35693359375,
+        "y": 24.8232421875
       }
     }
   },
@@ -1449,8 +1449,8 @@ export const fishingLog = [
     "spot": {
       "id": 13,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.35693359375,
+        "y": 24.8232421875
       }
     }
   },
@@ -1464,8 +1464,8 @@ export const fishingLog = [
     "spot": {
       "id": 13,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.35693359375,
+        "y": 24.8232421875
       }
     }
   },
@@ -1479,8 +1479,8 @@ export const fishingLog = [
     "spot": {
       "id": 13,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.35693359375,
+        "y": 24.8232421875
       }
     }
   },
@@ -1494,8 +1494,8 @@ export const fishingLog = [
     "spot": {
       "id": 14,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.8623046875,
+        "y": 22.36083984375
       }
     }
   },
@@ -1509,8 +1509,8 @@ export const fishingLog = [
     "spot": {
       "id": 14,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.8623046875,
+        "y": 22.36083984375
       }
     }
   },
@@ -1524,8 +1524,8 @@ export const fishingLog = [
     "spot": {
       "id": 14,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.8623046875,
+        "y": 22.36083984375
       }
     }
   },
@@ -1539,8 +1539,8 @@ export const fishingLog = [
     "spot": {
       "id": 14,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.8623046875,
+        "y": 22.36083984375
       }
     }
   },
@@ -1554,8 +1554,8 @@ export const fishingLog = [
     "spot": {
       "id": 14,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.8623046875,
+        "y": 22.36083984375
       }
     }
   },
@@ -1569,8 +1569,8 @@ export const fishingLog = [
     "spot": {
       "id": 14,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.8623046875,
+        "y": 22.36083984375
       }
     }
   },
@@ -1584,8 +1584,8 @@ export const fishingLog = [
     "spot": {
       "id": 14,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.8623046875,
+        "y": 22.36083984375
       }
     }
   },
@@ -1599,8 +1599,8 @@ export const fishingLog = [
     "spot": {
       "id": 14,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.8623046875,
+        "y": 22.36083984375
       }
     }
   },
@@ -1614,8 +1614,8 @@ export const fishingLog = [
     "spot": {
       "id": 14,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.8623046875,
+        "y": 22.36083984375
       }
     }
   },
@@ -1629,8 +1629,8 @@ export const fishingLog = [
     "spot": {
       "id": 15,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.505859375,
+        "y": 21.47998046875
       }
     }
   },
@@ -1644,8 +1644,8 @@ export const fishingLog = [
     "spot": {
       "id": 15,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.505859375,
+        "y": 21.47998046875
       }
     }
   },
@@ -1659,8 +1659,8 @@ export const fishingLog = [
     "spot": {
       "id": 15,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.505859375,
+        "y": 21.47998046875
       }
     }
   },
@@ -1674,8 +1674,8 @@ export const fishingLog = [
     "spot": {
       "id": 15,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.505859375,
+        "y": 21.47998046875
       }
     }
   },
@@ -1689,8 +1689,8 @@ export const fishingLog = [
     "spot": {
       "id": 15,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.505859375,
+        "y": 21.47998046875
       }
     }
   },
@@ -1704,8 +1704,8 @@ export const fishingLog = [
     "spot": {
       "id": 15,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.505859375,
+        "y": 21.47998046875
       }
     }
   },
@@ -1719,8 +1719,8 @@ export const fishingLog = [
     "spot": {
       "id": 15,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.505859375,
+        "y": 21.47998046875
       }
     }
   },
@@ -1734,8 +1734,8 @@ export const fishingLog = [
     "spot": {
       "id": 15,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.505859375,
+        "y": 21.47998046875
       }
     }
   },
@@ -1749,8 +1749,8 @@ export const fishingLog = [
     "spot": {
       "id": 15,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.505859375,
+        "y": 21.47998046875
       }
     }
   },
@@ -1764,8 +1764,8 @@ export const fishingLog = [
     "spot": {
       "id": 15,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.505859375,
+        "y": 21.47998046875
       }
     }
   },
@@ -1779,8 +1779,8 @@ export const fishingLog = [
     "spot": {
       "id": 16,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.6171875,
+        "y": 29.04736328125
       }
     }
   },
@@ -1794,8 +1794,8 @@ export const fishingLog = [
     "spot": {
       "id": 16,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.6171875,
+        "y": 29.04736328125
       }
     }
   },
@@ -1809,8 +1809,8 @@ export const fishingLog = [
     "spot": {
       "id": 16,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.6171875,
+        "y": 29.04736328125
       }
     }
   },
@@ -1824,8 +1824,8 @@ export const fishingLog = [
     "spot": {
       "id": 16,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.6171875,
+        "y": 29.04736328125
       }
     }
   },
@@ -1839,8 +1839,8 @@ export const fishingLog = [
     "spot": {
       "id": 16,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.6171875,
+        "y": 29.04736328125
       }
     }
   },
@@ -1854,8 +1854,8 @@ export const fishingLog = [
     "spot": {
       "id": 16,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.6171875,
+        "y": 29.04736328125
       }
     }
   },
@@ -1869,8 +1869,8 @@ export const fishingLog = [
     "spot": {
       "id": 16,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.6171875,
+        "y": 29.04736328125
       }
     }
   },
@@ -1884,8 +1884,8 @@ export const fishingLog = [
     "spot": {
       "id": 17,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.55078125,
+        "y": 23.96240234375
       }
     }
   },
@@ -1899,8 +1899,8 @@ export const fishingLog = [
     "spot": {
       "id": 17,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.55078125,
+        "y": 23.96240234375
       }
     }
   },
@@ -1914,8 +1914,8 @@ export const fishingLog = [
     "spot": {
       "id": 17,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.55078125,
+        "y": 23.96240234375
       }
     }
   },
@@ -1929,8 +1929,8 @@ export const fishingLog = [
     "spot": {
       "id": 17,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.55078125,
+        "y": 23.96240234375
       }
     }
   },
@@ -1944,8 +1944,8 @@ export const fishingLog = [
     "spot": {
       "id": 17,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.55078125,
+        "y": 23.96240234375
       }
     }
   },
@@ -1959,8 +1959,8 @@ export const fishingLog = [
     "spot": {
       "id": 17,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.55078125,
+        "y": 23.96240234375
       }
     }
   },
@@ -1974,8 +1974,8 @@ export const fishingLog = [
     "spot": {
       "id": 17,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.55078125,
+        "y": 23.96240234375
       }
     }
   },
@@ -1989,8 +1989,8 @@ export const fishingLog = [
     "spot": {
       "id": 17,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.55078125,
+        "y": 23.96240234375
       }
     }
   },
@@ -2004,8 +2004,8 @@ export const fishingLog = [
     "spot": {
       "id": 17,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.55078125,
+        "y": 23.96240234375
       }
     }
   },
@@ -2019,8 +2019,8 @@ export const fishingLog = [
     "spot": {
       "id": 17,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.55078125,
+        "y": 23.96240234375
       }
     }
   },
@@ -2034,8 +2034,8 @@ export const fishingLog = [
     "spot": {
       "id": 18,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.384765625,
+        "y": 25.103515625
       }
     }
   },
@@ -2049,8 +2049,8 @@ export const fishingLog = [
     "spot": {
       "id": 18,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.384765625,
+        "y": 25.103515625
       }
     }
   },
@@ -2064,8 +2064,8 @@ export const fishingLog = [
     "spot": {
       "id": 18,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.384765625,
+        "y": 25.103515625
       }
     }
   },
@@ -2079,8 +2079,8 @@ export const fishingLog = [
     "spot": {
       "id": 18,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.384765625,
+        "y": 25.103515625
       }
     }
   },
@@ -2094,8 +2094,8 @@ export const fishingLog = [
     "spot": {
       "id": 18,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.384765625,
+        "y": 25.103515625
       }
     }
   },
@@ -2109,8 +2109,8 @@ export const fishingLog = [
     "spot": {
       "id": 18,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.384765625,
+        "y": 25.103515625
       }
     }
   },
@@ -2124,8 +2124,8 @@ export const fishingLog = [
     "spot": {
       "id": 18,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.384765625,
+        "y": 25.103515625
       }
     }
   },
@@ -2139,8 +2139,8 @@ export const fishingLog = [
     "spot": {
       "id": 19,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 24.6630859375
       }
     }
   },
@@ -2154,8 +2154,8 @@ export const fishingLog = [
     "spot": {
       "id": 19,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 24.6630859375
       }
     }
   },
@@ -2169,8 +2169,8 @@ export const fishingLog = [
     "spot": {
       "id": 19,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 24.6630859375
       }
     }
   },
@@ -2184,8 +2184,8 @@ export const fishingLog = [
     "spot": {
       "id": 19,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 24.6630859375
       }
     }
   },
@@ -2199,8 +2199,8 @@ export const fishingLog = [
     "spot": {
       "id": 19,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 24.6630859375
       }
     }
   },
@@ -2214,8 +2214,8 @@ export const fishingLog = [
     "spot": {
       "id": 19,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 24.6630859375
       }
     }
   },
@@ -2229,8 +2229,8 @@ export const fishingLog = [
     "spot": {
       "id": 19,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 24.6630859375
       }
     }
   },
@@ -2244,8 +2244,8 @@ export const fishingLog = [
     "spot": {
       "id": 19,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 24.6630859375
       }
     }
   },
@@ -2259,8 +2259,8 @@ export const fishingLog = [
     "spot": {
       "id": 19,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 24.6630859375
       }
     }
   },
@@ -2274,8 +2274,8 @@ export const fishingLog = [
     "spot": {
       "id": 20,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.8193359375,
+        "y": 20.8193359375
       }
     }
   },
@@ -2289,8 +2289,8 @@ export const fishingLog = [
     "spot": {
       "id": 20,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.8193359375,
+        "y": 20.8193359375
       }
     }
   },
@@ -2304,8 +2304,8 @@ export const fishingLog = [
     "spot": {
       "id": 20,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.8193359375,
+        "y": 20.8193359375
       }
     }
   },
@@ -2319,8 +2319,8 @@ export const fishingLog = [
     "spot": {
       "id": 20,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.8193359375,
+        "y": 20.8193359375
       }
     }
   },
@@ -2334,8 +2334,8 @@ export const fishingLog = [
     "spot": {
       "id": 20,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.8193359375,
+        "y": 20.8193359375
       }
     }
   },
@@ -2349,8 +2349,8 @@ export const fishingLog = [
     "spot": {
       "id": 20,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.8193359375,
+        "y": 20.8193359375
       }
     }
   },
@@ -2364,8 +2364,8 @@ export const fishingLog = [
     "spot": {
       "id": 20,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.8193359375,
+        "y": 20.8193359375
       }
     }
   },
@@ -2379,8 +2379,8 @@ export const fishingLog = [
     "spot": {
       "id": 20,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.8193359375,
+        "y": 20.8193359375
       }
     }
   },
@@ -2394,8 +2394,8 @@ export const fishingLog = [
     "spot": {
       "id": 20,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.8193359375,
+        "y": 20.8193359375
       }
     }
   },
@@ -2409,8 +2409,8 @@ export const fishingLog = [
     "spot": {
       "id": 21,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.81640625,
+        "y": 19.818359375
       }
     }
   },
@@ -2424,8 +2424,8 @@ export const fishingLog = [
     "spot": {
       "id": 21,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.81640625,
+        "y": 19.818359375
       }
     }
   },
@@ -2439,8 +2439,8 @@ export const fishingLog = [
     "spot": {
       "id": 21,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.81640625,
+        "y": 19.818359375
       }
     }
   },
@@ -2454,8 +2454,8 @@ export const fishingLog = [
     "spot": {
       "id": 21,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.81640625,
+        "y": 19.818359375
       }
     }
   },
@@ -2469,8 +2469,8 @@ export const fishingLog = [
     "spot": {
       "id": 21,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.81640625,
+        "y": 19.818359375
       }
     }
   },
@@ -2484,8 +2484,8 @@ export const fishingLog = [
     "spot": {
       "id": 21,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.81640625,
+        "y": 19.818359375
       }
     }
   },
@@ -2499,8 +2499,8 @@ export const fishingLog = [
     "spot": {
       "id": 21,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.81640625,
+        "y": 19.818359375
       }
     }
   },
@@ -2514,8 +2514,8 @@ export const fishingLog = [
     "spot": {
       "id": 21,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.81640625,
+        "y": 19.818359375
       }
     }
   },
@@ -2529,8 +2529,8 @@ export const fishingLog = [
     "spot": {
       "id": 21,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.81640625,
+        "y": 19.818359375
       }
     }
   },
@@ -2544,8 +2544,8 @@ export const fishingLog = [
     "spot": {
       "id": 22,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.08349609375,
+        "y": 13.0517578125
       }
     }
   },
@@ -2559,8 +2559,8 @@ export const fishingLog = [
     "spot": {
       "id": 22,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.08349609375,
+        "y": 13.0517578125
       }
     }
   },
@@ -2574,8 +2574,8 @@ export const fishingLog = [
     "spot": {
       "id": 22,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.08349609375,
+        "y": 13.0517578125
       }
     }
   },
@@ -2589,8 +2589,8 @@ export const fishingLog = [
     "spot": {
       "id": 22,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.08349609375,
+        "y": 13.0517578125
       }
     }
   },
@@ -2604,8 +2604,8 @@ export const fishingLog = [
     "spot": {
       "id": 22,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.08349609375,
+        "y": 13.0517578125
       }
     }
   },
@@ -2619,8 +2619,8 @@ export const fishingLog = [
     "spot": {
       "id": 22,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.08349609375,
+        "y": 13.0517578125
       }
     }
   },
@@ -2634,8 +2634,8 @@ export const fishingLog = [
     "spot": {
       "id": 22,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.08349609375,
+        "y": 13.0517578125
       }
     }
   },
@@ -2649,8 +2649,8 @@ export const fishingLog = [
     "spot": {
       "id": 22,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.08349609375,
+        "y": 13.0517578125
       }
     }
   },
@@ -2664,8 +2664,8 @@ export const fishingLog = [
     "spot": {
       "id": 22,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.08349609375,
+        "y": 13.0517578125
       }
     }
   },
@@ -2679,8 +2679,8 @@ export const fishingLog = [
     "spot": {
       "id": 23,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.7373046875,
+        "y": 17.67626953125
       }
     }
   },
@@ -2694,8 +2694,8 @@ export const fishingLog = [
     "spot": {
       "id": 23,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.7373046875,
+        "y": 17.67626953125
       }
     }
   },
@@ -2709,8 +2709,8 @@ export const fishingLog = [
     "spot": {
       "id": 23,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.7373046875,
+        "y": 17.67626953125
       }
     }
   },
@@ -2724,8 +2724,8 @@ export const fishingLog = [
     "spot": {
       "id": 23,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.7373046875,
+        "y": 17.67626953125
       }
     }
   },
@@ -2739,8 +2739,8 @@ export const fishingLog = [
     "spot": {
       "id": 23,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.7373046875,
+        "y": 17.67626953125
       }
     }
   },
@@ -2754,8 +2754,8 @@ export const fishingLog = [
     "spot": {
       "id": 23,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.7373046875,
+        "y": 17.67626953125
       }
     }
   },
@@ -2769,8 +2769,8 @@ export const fishingLog = [
     "spot": {
       "id": 23,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.7373046875,
+        "y": 17.67626953125
       }
     }
   },
@@ -2784,8 +2784,8 @@ export const fishingLog = [
     "spot": {
       "id": 23,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.7373046875,
+        "y": 17.67626953125
       }
     }
   },
@@ -2799,8 +2799,8 @@ export const fishingLog = [
     "spot": {
       "id": 23,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.7373046875,
+        "y": 17.67626953125
       }
     }
   },
@@ -2814,8 +2814,8 @@ export const fishingLog = [
     "spot": {
       "id": 23,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.7373046875,
+        "y": 17.67626953125
       }
     }
   },
@@ -2829,8 +2829,8 @@ export const fishingLog = [
     "spot": {
       "id": 24,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 13.31201171875
       }
     }
   },
@@ -2844,8 +2844,8 @@ export const fishingLog = [
     "spot": {
       "id": 24,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 13.31201171875
       }
     }
   },
@@ -2859,8 +2859,8 @@ export const fishingLog = [
     "spot": {
       "id": 24,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 13.31201171875
       }
     }
   },
@@ -2874,8 +2874,8 @@ export const fishingLog = [
     "spot": {
       "id": 24,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 13.31201171875
       }
     }
   },
@@ -2889,8 +2889,8 @@ export const fishingLog = [
     "spot": {
       "id": 24,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 13.31201171875
       }
     }
   },
@@ -2904,8 +2904,8 @@ export const fishingLog = [
     "spot": {
       "id": 24,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 13.31201171875
       }
     }
   },
@@ -2919,8 +2919,8 @@ export const fishingLog = [
     "spot": {
       "id": 24,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 13.31201171875
       }
     }
   },
@@ -2934,8 +2934,8 @@ export const fishingLog = [
     "spot": {
       "id": 24,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 13.31201171875
       }
     }
   },
@@ -2949,8 +2949,8 @@ export const fishingLog = [
     "spot": {
       "id": 24,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 13.31201171875
       }
     }
   },
@@ -2964,8 +2964,8 @@ export const fishingLog = [
     "spot": {
       "id": 25,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.91162109375,
+        "y": 11.5703125
       }
     }
   },
@@ -2979,8 +2979,8 @@ export const fishingLog = [
     "spot": {
       "id": 25,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.91162109375,
+        "y": 11.5703125
       }
     }
   },
@@ -2994,8 +2994,8 @@ export const fishingLog = [
     "spot": {
       "id": 25,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.91162109375,
+        "y": 11.5703125
       }
     }
   },
@@ -3009,8 +3009,8 @@ export const fishingLog = [
     "spot": {
       "id": 25,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.91162109375,
+        "y": 11.5703125
       }
     }
   },
@@ -3024,8 +3024,8 @@ export const fishingLog = [
     "spot": {
       "id": 25,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.91162109375,
+        "y": 11.5703125
       }
     }
   },
@@ -3039,8 +3039,8 @@ export const fishingLog = [
     "spot": {
       "id": 25,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.91162109375,
+        "y": 11.5703125
       }
     }
   },
@@ -3054,8 +3054,8 @@ export const fishingLog = [
     "spot": {
       "id": 25,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.91162109375,
+        "y": 11.5703125
       }
     }
   },
@@ -3069,8 +3069,8 @@ export const fishingLog = [
     "spot": {
       "id": 25,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.91162109375,
+        "y": 11.5703125
       }
     }
   },
@@ -3084,8 +3084,8 @@ export const fishingLog = [
     "spot": {
       "id": 25,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.91162109375,
+        "y": 11.5703125
       }
     }
   },
@@ -3099,8 +3099,8 @@ export const fishingLog = [
     "spot": {
       "id": 26,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.458984375,
+        "y": 30.5888671875
       }
     }
   },
@@ -3114,8 +3114,8 @@ export const fishingLog = [
     "spot": {
       "id": 26,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.458984375,
+        "y": 30.5888671875
       }
     }
   },
@@ -3129,8 +3129,8 @@ export const fishingLog = [
     "spot": {
       "id": 26,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.458984375,
+        "y": 30.5888671875
       }
     }
   },
@@ -3144,8 +3144,8 @@ export const fishingLog = [
     "spot": {
       "id": 26,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.458984375,
+        "y": 30.5888671875
       }
     }
   },
@@ -3159,8 +3159,8 @@ export const fishingLog = [
     "spot": {
       "id": 26,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.458984375,
+        "y": 30.5888671875
       }
     }
   },
@@ -3174,8 +3174,8 @@ export const fishingLog = [
     "spot": {
       "id": 26,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.458984375,
+        "y": 30.5888671875
       }
     }
   },
@@ -3189,8 +3189,8 @@ export const fishingLog = [
     "spot": {
       "id": 26,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.458984375,
+        "y": 30.5888671875
       }
     }
   },
@@ -3204,8 +3204,8 @@ export const fishingLog = [
     "spot": {
       "id": 26,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.458984375,
+        "y": 30.5888671875
       }
     }
   },
@@ -3219,8 +3219,8 @@ export const fishingLog = [
     "spot": {
       "id": 27,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.69189453125,
+        "y": 18.77734375
       }
     }
   },
@@ -3234,8 +3234,8 @@ export const fishingLog = [
     "spot": {
       "id": 27,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.69189453125,
+        "y": 18.77734375
       }
     }
   },
@@ -3249,8 +3249,8 @@ export const fishingLog = [
     "spot": {
       "id": 27,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.69189453125,
+        "y": 18.77734375
       }
     }
   },
@@ -3264,8 +3264,8 @@ export const fishingLog = [
     "spot": {
       "id": 27,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.69189453125,
+        "y": 18.77734375
       }
     }
   },
@@ -3279,8 +3279,8 @@ export const fishingLog = [
     "spot": {
       "id": 27,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.69189453125,
+        "y": 18.77734375
       }
     }
   },
@@ -3294,8 +3294,8 @@ export const fishingLog = [
     "spot": {
       "id": 27,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.69189453125,
+        "y": 18.77734375
       }
     }
   },
@@ -3309,8 +3309,8 @@ export const fishingLog = [
     "spot": {
       "id": 27,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.69189453125,
+        "y": 18.77734375
       }
     }
   },
@@ -3324,8 +3324,8 @@ export const fishingLog = [
     "spot": {
       "id": 27,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.69189453125,
+        "y": 18.77734375
       }
     }
   },
@@ -3339,8 +3339,8 @@ export const fishingLog = [
     "spot": {
       "id": 27,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.69189453125,
+        "y": 18.77734375
       }
     }
   },
@@ -3354,8 +3354,8 @@ export const fishingLog = [
     "spot": {
       "id": 28,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.63427734375,
+        "y": 21.39990234375
       }
     }
   },
@@ -3369,8 +3369,8 @@ export const fishingLog = [
     "spot": {
       "id": 28,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.63427734375,
+        "y": 21.39990234375
       }
     }
   },
@@ -3384,8 +3384,8 @@ export const fishingLog = [
     "spot": {
       "id": 28,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.63427734375,
+        "y": 21.39990234375
       }
     }
   },
@@ -3399,8 +3399,8 @@ export const fishingLog = [
     "spot": {
       "id": 28,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.63427734375,
+        "y": 21.39990234375
       }
     }
   },
@@ -3414,8 +3414,8 @@ export const fishingLog = [
     "spot": {
       "id": 28,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.63427734375,
+        "y": 21.39990234375
       }
     }
   },
@@ -3429,8 +3429,8 @@ export const fishingLog = [
     "spot": {
       "id": 28,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.63427734375,
+        "y": 21.39990234375
       }
     }
   },
@@ -3444,8 +3444,8 @@ export const fishingLog = [
     "spot": {
       "id": 28,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.63427734375,
+        "y": 21.39990234375
       }
     }
   },
@@ -3459,8 +3459,8 @@ export const fishingLog = [
     "spot": {
       "id": 28,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.63427734375,
+        "y": 21.39990234375
       }
     }
   },
@@ -3474,8 +3474,8 @@ export const fishingLog = [
     "spot": {
       "id": 28,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.63427734375,
+        "y": 21.39990234375
       }
     }
   },
@@ -3489,8 +3489,8 @@ export const fishingLog = [
     "spot": {
       "id": 29,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.52978515625,
+        "y": 7.50634765625
       }
     }
   },
@@ -3504,8 +3504,8 @@ export const fishingLog = [
     "spot": {
       "id": 29,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.52978515625,
+        "y": 7.50634765625
       }
     }
   },
@@ -3519,8 +3519,8 @@ export const fishingLog = [
     "spot": {
       "id": 29,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.52978515625,
+        "y": 7.50634765625
       }
     }
   },
@@ -3534,8 +3534,8 @@ export const fishingLog = [
     "spot": {
       "id": 29,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.52978515625,
+        "y": 7.50634765625
       }
     }
   },
@@ -3549,8 +3549,8 @@ export const fishingLog = [
     "spot": {
       "id": 29,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.52978515625,
+        "y": 7.50634765625
       }
     }
   },
@@ -3564,8 +3564,8 @@ export const fishingLog = [
     "spot": {
       "id": 29,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.52978515625,
+        "y": 7.50634765625
       }
     }
   },
@@ -3579,8 +3579,8 @@ export const fishingLog = [
     "spot": {
       "id": 29,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.52978515625,
+        "y": 7.50634765625
       }
     }
   },
@@ -3594,8 +3594,8 @@ export const fishingLog = [
     "spot": {
       "id": 29,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.52978515625,
+        "y": 7.50634765625
       }
     }
   },
@@ -3609,8 +3609,8 @@ export const fishingLog = [
     "spot": {
       "id": 30,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.90625,
+        "y": 16.935546875
       }
     }
   },
@@ -3624,8 +3624,8 @@ export const fishingLog = [
     "spot": {
       "id": 30,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.90625,
+        "y": 16.935546875
       }
     }
   },
@@ -3639,8 +3639,8 @@ export const fishingLog = [
     "spot": {
       "id": 30,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.90625,
+        "y": 16.935546875
       }
     }
   },
@@ -3654,8 +3654,8 @@ export const fishingLog = [
     "spot": {
       "id": 30,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.90625,
+        "y": 16.935546875
       }
     }
   },
@@ -3669,8 +3669,8 @@ export const fishingLog = [
     "spot": {
       "id": 30,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.90625,
+        "y": 16.935546875
       }
     }
   },
@@ -3684,8 +3684,8 @@ export const fishingLog = [
     "spot": {
       "id": 30,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.90625,
+        "y": 16.935546875
       }
     }
   },
@@ -3699,8 +3699,8 @@ export const fishingLog = [
     "spot": {
       "id": 30,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.90625,
+        "y": 16.935546875
       }
     }
   },
@@ -3714,8 +3714,8 @@ export const fishingLog = [
     "spot": {
       "id": 31,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.251953125,
+        "y": 22.80126953125
       }
     }
   },
@@ -3729,8 +3729,8 @@ export const fishingLog = [
     "spot": {
       "id": 31,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.251953125,
+        "y": 22.80126953125
       }
     }
   },
@@ -3744,8 +3744,8 @@ export const fishingLog = [
     "spot": {
       "id": 31,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.251953125,
+        "y": 22.80126953125
       }
     }
   },
@@ -3759,8 +3759,8 @@ export const fishingLog = [
     "spot": {
       "id": 31,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.251953125,
+        "y": 22.80126953125
       }
     }
   },
@@ -3774,8 +3774,8 @@ export const fishingLog = [
     "spot": {
       "id": 31,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.251953125,
+        "y": 22.80126953125
       }
     }
   },
@@ -3789,8 +3789,8 @@ export const fishingLog = [
     "spot": {
       "id": 31,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.251953125,
+        "y": 22.80126953125
       }
     }
   },
@@ -3804,8 +3804,8 @@ export const fishingLog = [
     "spot": {
       "id": 31,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.251953125,
+        "y": 22.80126953125
       }
     }
   },
@@ -3819,8 +3819,8 @@ export const fishingLog = [
     "spot": {
       "id": 32,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.4453125,
+        "y": 22.62109375
       }
     }
   },
@@ -3834,8 +3834,8 @@ export const fishingLog = [
     "spot": {
       "id": 32,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.4453125,
+        "y": 22.62109375
       }
     }
   },
@@ -3849,8 +3849,8 @@ export const fishingLog = [
     "spot": {
       "id": 32,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.4453125,
+        "y": 22.62109375
       }
     }
   },
@@ -3864,8 +3864,8 @@ export const fishingLog = [
     "spot": {
       "id": 32,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.4453125,
+        "y": 22.62109375
       }
     }
   },
@@ -3879,8 +3879,8 @@ export const fishingLog = [
     "spot": {
       "id": 32,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.4453125,
+        "y": 22.62109375
       }
     }
   },
@@ -3894,8 +3894,8 @@ export const fishingLog = [
     "spot": {
       "id": 33,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 3.162109375,
+        "y": 21.2998046875
       }
     }
   },
@@ -3909,8 +3909,8 @@ export const fishingLog = [
     "spot": {
       "id": 33,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 3.162109375,
+        "y": 21.2998046875
       }
     }
   },
@@ -3924,8 +3924,8 @@ export const fishingLog = [
     "spot": {
       "id": 33,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 3.162109375,
+        "y": 21.2998046875
       }
     }
   },
@@ -3939,8 +3939,8 @@ export const fishingLog = [
     "spot": {
       "id": 33,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 3.162109375,
+        "y": 21.2998046875
       }
     }
   },
@@ -3954,8 +3954,8 @@ export const fishingLog = [
     "spot": {
       "id": 33,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 3.162109375,
+        "y": 21.2998046875
       }
     }
   },
@@ -3969,8 +3969,8 @@ export const fishingLog = [
     "spot": {
       "id": 34,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.212890625,
+        "y": 13.412109375
       }
     }
   },
@@ -3984,8 +3984,8 @@ export const fishingLog = [
     "spot": {
       "id": 34,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.212890625,
+        "y": 13.412109375
       }
     }
   },
@@ -3999,8 +3999,8 @@ export const fishingLog = [
     "spot": {
       "id": 34,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.212890625,
+        "y": 13.412109375
       }
     }
   },
@@ -4014,8 +4014,8 @@ export const fishingLog = [
     "spot": {
       "id": 34,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.212890625,
+        "y": 13.412109375
       }
     }
   },
@@ -4029,8 +4029,8 @@ export const fishingLog = [
     "spot": {
       "id": 34,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.212890625,
+        "y": 13.412109375
       }
     }
   },
@@ -4044,8 +4044,8 @@ export const fishingLog = [
     "spot": {
       "id": 34,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.212890625,
+        "y": 13.412109375
       }
     }
   },
@@ -4059,8 +4059,8 @@ export const fishingLog = [
     "spot": {
       "id": 35,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.6865234375,
+        "y": 12.2109375
       }
     }
   },
@@ -4074,8 +4074,8 @@ export const fishingLog = [
     "spot": {
       "id": 35,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.6865234375,
+        "y": 12.2109375
       }
     }
   },
@@ -4089,8 +4089,8 @@ export const fishingLog = [
     "spot": {
       "id": 35,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.6865234375,
+        "y": 12.2109375
       }
     }
   },
@@ -4104,8 +4104,8 @@ export const fishingLog = [
     "spot": {
       "id": 35,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.6865234375,
+        "y": 12.2109375
       }
     }
   },
@@ -4119,8 +4119,8 @@ export const fishingLog = [
     "spot": {
       "id": 35,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.6865234375,
+        "y": 12.2109375
       }
     }
   },
@@ -4134,8 +4134,8 @@ export const fishingLog = [
     "spot": {
       "id": 35,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.6865234375,
+        "y": 12.2109375
       }
     }
   },
@@ -4149,8 +4149,8 @@ export const fishingLog = [
     "spot": {
       "id": 35,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.6865234375,
+        "y": 12.2109375
       }
     }
   },
@@ -4164,8 +4164,8 @@ export const fishingLog = [
     "spot": {
       "id": 35,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.6865234375,
+        "y": 12.2109375
       }
     }
   },
@@ -4179,8 +4179,8 @@ export const fishingLog = [
     "spot": {
       "id": 35,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.6865234375,
+        "y": 12.2109375
       }
     }
   },
@@ -4194,8 +4194,8 @@ export const fishingLog = [
     "spot": {
       "id": 36,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.30908203125,
+        "y": 11.330078125
       }
     }
   },
@@ -4209,8 +4209,8 @@ export const fishingLog = [
     "spot": {
       "id": 36,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.30908203125,
+        "y": 11.330078125
       }
     }
   },
@@ -4224,8 +4224,8 @@ export const fishingLog = [
     "spot": {
       "id": 36,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.30908203125,
+        "y": 11.330078125
       }
     }
   },
@@ -4239,8 +4239,8 @@ export const fishingLog = [
     "spot": {
       "id": 36,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.30908203125,
+        "y": 11.330078125
       }
     }
   },
@@ -4254,8 +4254,8 @@ export const fishingLog = [
     "spot": {
       "id": 36,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.30908203125,
+        "y": 11.330078125
       }
     }
   },
@@ -4269,8 +4269,8 @@ export const fishingLog = [
     "spot": {
       "id": 36,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.30908203125,
+        "y": 11.330078125
       }
     }
   },
@@ -4284,8 +4284,8 @@ export const fishingLog = [
     "spot": {
       "id": 36,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.30908203125,
+        "y": 11.330078125
       }
     }
   },
@@ -4299,8 +4299,8 @@ export const fishingLog = [
     "spot": {
       "id": 36,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.30908203125,
+        "y": 11.330078125
       }
     }
   },
@@ -4314,8 +4314,8 @@ export const fishingLog = [
     "spot": {
       "id": 36,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.30908203125,
+        "y": 11.330078125
       }
     }
   },
@@ -4329,8 +4329,8 @@ export const fishingLog = [
     "spot": {
       "id": 37,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.697265625,
+        "y": 22.00048828125
       }
     }
   },
@@ -4344,8 +4344,8 @@ export const fishingLog = [
     "spot": {
       "id": 37,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.697265625,
+        "y": 22.00048828125
       }
     }
   },
@@ -4359,8 +4359,8 @@ export const fishingLog = [
     "spot": {
       "id": 37,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.697265625,
+        "y": 22.00048828125
       }
     }
   },
@@ -4374,8 +4374,8 @@ export const fishingLog = [
     "spot": {
       "id": 37,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.697265625,
+        "y": 22.00048828125
       }
     }
   },
@@ -4389,8 +4389,8 @@ export const fishingLog = [
     "spot": {
       "id": 37,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.697265625,
+        "y": 22.00048828125
       }
     }
   },
@@ -4404,8 +4404,8 @@ export const fishingLog = [
     "spot": {
       "id": 37,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.697265625,
+        "y": 22.00048828125
       }
     }
   },
@@ -4419,8 +4419,8 @@ export const fishingLog = [
     "spot": {
       "id": 37,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.697265625,
+        "y": 22.00048828125
       }
     }
   },
@@ -4434,8 +4434,8 @@ export const fishingLog = [
     "spot": {
       "id": 37,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.697265625,
+        "y": 22.00048828125
       }
     }
   },
@@ -4449,8 +4449,8 @@ export const fishingLog = [
     "spot": {
       "id": 37,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.697265625,
+        "y": 22.00048828125
       }
     }
   },
@@ -4464,8 +4464,8 @@ export const fishingLog = [
     "spot": {
       "id": 37,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.697265625,
+        "y": 22.00048828125
       }
     }
   },
@@ -4479,8 +4479,8 @@ export const fishingLog = [
     "spot": {
       "id": 38,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.6533203125,
+        "y": 15.6943359375
       }
     }
   },
@@ -4494,8 +4494,8 @@ export const fishingLog = [
     "spot": {
       "id": 38,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.6533203125,
+        "y": 15.6943359375
       }
     }
   },
@@ -4509,8 +4509,8 @@ export const fishingLog = [
     "spot": {
       "id": 38,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.6533203125,
+        "y": 15.6943359375
       }
     }
   },
@@ -4524,8 +4524,8 @@ export const fishingLog = [
     "spot": {
       "id": 38,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.6533203125,
+        "y": 15.6943359375
       }
     }
   },
@@ -4539,8 +4539,8 @@ export const fishingLog = [
     "spot": {
       "id": 38,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.6533203125,
+        "y": 15.6943359375
       }
     }
   },
@@ -4554,8 +4554,8 @@ export const fishingLog = [
     "spot": {
       "id": 38,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.6533203125,
+        "y": 15.6943359375
       }
     }
   },
@@ -4569,8 +4569,8 @@ export const fishingLog = [
     "spot": {
       "id": 38,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.6533203125,
+        "y": 15.6943359375
       }
     }
   },
@@ -4584,8 +4584,8 @@ export const fishingLog = [
     "spot": {
       "id": 38,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.6533203125,
+        "y": 15.6943359375
       }
     }
   },
@@ -4599,8 +4599,8 @@ export const fishingLog = [
     "spot": {
       "id": 38,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.6533203125,
+        "y": 15.6943359375
       }
     }
   },
@@ -4614,8 +4614,8 @@ export const fishingLog = [
     "spot": {
       "id": 38,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.6533203125,
+        "y": 15.6943359375
       }
     }
   },
@@ -4629,8 +4629,8 @@ export const fishingLog = [
     "spot": {
       "id": 39,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.1005859375,
+        "y": 22.1806640625
       }
     }
   },
@@ -4644,8 +4644,8 @@ export const fishingLog = [
     "spot": {
       "id": 39,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.1005859375,
+        "y": 22.1806640625
       }
     }
   },
@@ -4659,8 +4659,8 @@ export const fishingLog = [
     "spot": {
       "id": 39,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.1005859375,
+        "y": 22.1806640625
       }
     }
   },
@@ -4674,8 +4674,8 @@ export const fishingLog = [
     "spot": {
       "id": 39,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.1005859375,
+        "y": 22.1806640625
       }
     }
   },
@@ -4689,8 +4689,8 @@ export const fishingLog = [
     "spot": {
       "id": 39,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.1005859375,
+        "y": 22.1806640625
       }
     }
   },
@@ -4704,8 +4704,8 @@ export const fishingLog = [
     "spot": {
       "id": 39,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.1005859375,
+        "y": 22.1806640625
       }
     }
   },
@@ -4719,8 +4719,8 @@ export const fishingLog = [
     "spot": {
       "id": 40,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.21875,
+        "y": 18.0166015625
       }
     }
   },
@@ -4734,8 +4734,8 @@ export const fishingLog = [
     "spot": {
       "id": 40,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.21875,
+        "y": 18.0166015625
       }
     }
   },
@@ -4749,8 +4749,8 @@ export const fishingLog = [
     "spot": {
       "id": 40,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.21875,
+        "y": 18.0166015625
       }
     }
   },
@@ -4764,8 +4764,8 @@ export const fishingLog = [
     "spot": {
       "id": 40,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.21875,
+        "y": 18.0166015625
       }
     }
   },
@@ -4779,8 +4779,8 @@ export const fishingLog = [
     "spot": {
       "id": 40,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.21875,
+        "y": 18.0166015625
       }
     }
   },
@@ -4794,8 +4794,8 @@ export const fishingLog = [
     "spot": {
       "id": 40,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.21875,
+        "y": 18.0166015625
       }
     }
   },
@@ -4809,8 +4809,8 @@ export const fishingLog = [
     "spot": {
       "id": 40,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.21875,
+        "y": 18.0166015625
       }
     }
   },
@@ -4824,8 +4824,8 @@ export const fishingLog = [
     "spot": {
       "id": 41,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.23681640625,
+        "y": 14.87353515625
       }
     }
   },
@@ -4839,8 +4839,8 @@ export const fishingLog = [
     "spot": {
       "id": 41,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.23681640625,
+        "y": 14.87353515625
       }
     }
   },
@@ -4854,8 +4854,8 @@ export const fishingLog = [
     "spot": {
       "id": 41,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.23681640625,
+        "y": 14.87353515625
       }
     }
   },
@@ -4869,8 +4869,8 @@ export const fishingLog = [
     "spot": {
       "id": 41,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.23681640625,
+        "y": 14.87353515625
       }
     }
   },
@@ -4884,8 +4884,8 @@ export const fishingLog = [
     "spot": {
       "id": 41,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.23681640625,
+        "y": 14.87353515625
       }
     }
   },
@@ -4899,8 +4899,8 @@ export const fishingLog = [
     "spot": {
       "id": 41,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.23681640625,
+        "y": 14.87353515625
       }
     }
   },
@@ -4914,8 +4914,8 @@ export const fishingLog = [
     "spot": {
       "id": 41,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.23681640625,
+        "y": 14.87353515625
       }
     }
   },
@@ -4929,8 +4929,8 @@ export const fishingLog = [
     "spot": {
       "id": 41,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.23681640625,
+        "y": 14.87353515625
       }
     }
   },
@@ -4944,8 +4944,8 @@ export const fishingLog = [
     "spot": {
       "id": 42,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.79931640625,
+        "y": 12.1708984375
       }
     }
   },
@@ -4959,8 +4959,8 @@ export const fishingLog = [
     "spot": {
       "id": 42,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.79931640625,
+        "y": 12.1708984375
       }
     }
   },
@@ -4974,8 +4974,8 @@ export const fishingLog = [
     "spot": {
       "id": 42,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.79931640625,
+        "y": 12.1708984375
       }
     }
   },
@@ -4989,8 +4989,8 @@ export const fishingLog = [
     "spot": {
       "id": 42,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.79931640625,
+        "y": 12.1708984375
       }
     }
   },
@@ -5004,8 +5004,8 @@ export const fishingLog = [
     "spot": {
       "id": 42,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.79931640625,
+        "y": 12.1708984375
       }
     }
   },
@@ -5019,8 +5019,8 @@ export const fishingLog = [
     "spot": {
       "id": 42,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.79931640625,
+        "y": 12.1708984375
       }
     }
   },
@@ -5034,8 +5034,8 @@ export const fishingLog = [
     "spot": {
       "id": 42,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.79931640625,
+        "y": 12.1708984375
       }
     }
   },
@@ -5049,8 +5049,8 @@ export const fishingLog = [
     "spot": {
       "id": 42,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.79931640625,
+        "y": 12.1708984375
       }
     }
   },
@@ -5064,8 +5064,8 @@ export const fishingLog = [
     "spot": {
       "id": 43,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.783203125,
+        "y": 23.021484375
       }
     }
   },
@@ -5079,8 +5079,8 @@ export const fishingLog = [
     "spot": {
       "id": 43,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.783203125,
+        "y": 23.021484375
       }
     }
   },
@@ -5094,8 +5094,8 @@ export const fishingLog = [
     "spot": {
       "id": 43,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.783203125,
+        "y": 23.021484375
       }
     }
   },
@@ -5109,8 +5109,8 @@ export const fishingLog = [
     "spot": {
       "id": 43,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.783203125,
+        "y": 23.021484375
       }
     }
   },
@@ -5124,8 +5124,8 @@ export const fishingLog = [
     "spot": {
       "id": 43,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.783203125,
+        "y": 23.021484375
       }
     }
   },
@@ -5139,8 +5139,8 @@ export const fishingLog = [
     "spot": {
       "id": 43,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.783203125,
+        "y": 23.021484375
       }
     }
   },
@@ -5154,8 +5154,8 @@ export const fishingLog = [
     "spot": {
       "id": 43,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.783203125,
+        "y": 23.021484375
       }
     }
   },
@@ -5169,8 +5169,8 @@ export const fishingLog = [
     "spot": {
       "id": 43,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.783203125,
+        "y": 23.021484375
       }
     }
   },
@@ -5184,8 +5184,8 @@ export const fishingLog = [
     "spot": {
       "id": 44,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.9052734375,
+        "y": 25.984375
       }
     }
   },
@@ -5199,8 +5199,8 @@ export const fishingLog = [
     "spot": {
       "id": 44,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.9052734375,
+        "y": 25.984375
       }
     }
   },
@@ -5214,8 +5214,8 @@ export const fishingLog = [
     "spot": {
       "id": 44,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.9052734375,
+        "y": 25.984375
       }
     }
   },
@@ -5229,8 +5229,8 @@ export const fishingLog = [
     "spot": {
       "id": 44,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.9052734375,
+        "y": 25.984375
       }
     }
   },
@@ -5244,8 +5244,8 @@ export const fishingLog = [
     "spot": {
       "id": 44,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.9052734375,
+        "y": 25.984375
       }
     }
   },
@@ -5259,8 +5259,8 @@ export const fishingLog = [
     "spot": {
       "id": 44,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.9052734375,
+        "y": 25.984375
       }
     }
   },
@@ -5274,8 +5274,8 @@ export const fishingLog = [
     "spot": {
       "id": 44,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.9052734375,
+        "y": 25.984375
       }
     }
   },
@@ -5289,8 +5289,8 @@ export const fishingLog = [
     "spot": {
       "id": 44,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.9052734375,
+        "y": 25.984375
       }
     }
   },
@@ -5304,8 +5304,8 @@ export const fishingLog = [
     "spot": {
       "id": 44,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.9052734375,
+        "y": 25.984375
       }
     }
   },
@@ -5319,8 +5319,8 @@ export const fishingLog = [
     "spot": {
       "id": 45,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2734375,
+        "y": 18.0166015625
       }
     }
   },
@@ -5334,8 +5334,8 @@ export const fishingLog = [
     "spot": {
       "id": 45,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2734375,
+        "y": 18.0166015625
       }
     }
   },
@@ -5349,8 +5349,8 @@ export const fishingLog = [
     "spot": {
       "id": 45,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2734375,
+        "y": 18.0166015625
       }
     }
   },
@@ -5364,8 +5364,8 @@ export const fishingLog = [
     "spot": {
       "id": 45,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2734375,
+        "y": 18.0166015625
       }
     }
   },
@@ -5379,8 +5379,8 @@ export const fishingLog = [
     "spot": {
       "id": 45,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2734375,
+        "y": 18.0166015625
       }
     }
   },
@@ -5394,8 +5394,8 @@ export const fishingLog = [
     "spot": {
       "id": 45,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2734375,
+        "y": 18.0166015625
       }
     }
   },
@@ -5409,8 +5409,8 @@ export const fishingLog = [
     "spot": {
       "id": 45,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2734375,
+        "y": 18.0166015625
       }
     }
   },
@@ -5424,8 +5424,8 @@ export const fishingLog = [
     "spot": {
       "id": 45,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2734375,
+        "y": 18.0166015625
       }
     }
   },
@@ -5439,8 +5439,8 @@ export const fishingLog = [
     "spot": {
       "id": 45,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2734375,
+        "y": 18.0166015625
       }
     }
   },
@@ -5454,8 +5454,8 @@ export const fishingLog = [
     "spot": {
       "id": 46,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.4248046875,
+        "y": 34.47265625
       }
     }
   },
@@ -5469,8 +5469,8 @@ export const fishingLog = [
     "spot": {
       "id": 46,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.4248046875,
+        "y": 34.47265625
       }
     }
   },
@@ -5484,8 +5484,8 @@ export const fishingLog = [
     "spot": {
       "id": 46,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.4248046875,
+        "y": 34.47265625
       }
     }
   },
@@ -5499,8 +5499,8 @@ export const fishingLog = [
     "spot": {
       "id": 46,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.4248046875,
+        "y": 34.47265625
       }
     }
   },
@@ -5514,8 +5514,8 @@ export const fishingLog = [
     "spot": {
       "id": 46,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.4248046875,
+        "y": 34.47265625
       }
     }
   },
@@ -5529,8 +5529,8 @@ export const fishingLog = [
     "spot": {
       "id": 46,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.4248046875,
+        "y": 34.47265625
       }
     }
   },
@@ -5544,8 +5544,8 @@ export const fishingLog = [
     "spot": {
       "id": 46,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.4248046875,
+        "y": 34.47265625
       }
     }
   },
@@ -5559,8 +5559,8 @@ export const fishingLog = [
     "spot": {
       "id": 46,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.4248046875,
+        "y": 34.47265625
       }
     }
   },
@@ -5574,8 +5574,8 @@ export const fishingLog = [
     "spot": {
       "id": 46,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.4248046875,
+        "y": 34.47265625
       }
     }
   },
@@ -5589,8 +5589,8 @@ export const fishingLog = [
     "spot": {
       "id": 47,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 39.7177734375
       }
     }
   },
@@ -5604,8 +5604,8 @@ export const fishingLog = [
     "spot": {
       "id": 47,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 39.7177734375
       }
     }
   },
@@ -5619,8 +5619,8 @@ export const fishingLog = [
     "spot": {
       "id": 47,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 39.7177734375
       }
     }
   },
@@ -5634,8 +5634,8 @@ export const fishingLog = [
     "spot": {
       "id": 47,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 39.7177734375
       }
     }
   },
@@ -5649,8 +5649,8 @@ export const fishingLog = [
     "spot": {
       "id": 47,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 39.7177734375
       }
     }
   },
@@ -5664,8 +5664,8 @@ export const fishingLog = [
     "spot": {
       "id": 47,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 39.7177734375
       }
     }
   },
@@ -5679,8 +5679,8 @@ export const fishingLog = [
     "spot": {
       "id": 47,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 39.7177734375
       }
     }
   },
@@ -5694,8 +5694,8 @@ export const fishingLog = [
     "spot": {
       "id": 47,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 39.7177734375
       }
     }
   },
@@ -5709,8 +5709,8 @@ export const fishingLog = [
     "spot": {
       "id": 48,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.3759765625,
+        "y": 36.07421875
       }
     }
   },
@@ -5724,8 +5724,8 @@ export const fishingLog = [
     "spot": {
       "id": 48,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.3759765625,
+        "y": 36.07421875
       }
     }
   },
@@ -5739,8 +5739,8 @@ export const fishingLog = [
     "spot": {
       "id": 48,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.3759765625,
+        "y": 36.07421875
       }
     }
   },
@@ -5754,8 +5754,8 @@ export const fishingLog = [
     "spot": {
       "id": 48,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.3759765625,
+        "y": 36.07421875
       }
     }
   },
@@ -5769,8 +5769,8 @@ export const fishingLog = [
     "spot": {
       "id": 48,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.3759765625,
+        "y": 36.07421875
       }
     }
   },
@@ -5784,8 +5784,8 @@ export const fishingLog = [
     "spot": {
       "id": 48,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.3759765625,
+        "y": 36.07421875
       }
     }
   },
@@ -5799,8 +5799,8 @@ export const fishingLog = [
     "spot": {
       "id": 48,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.3759765625,
+        "y": 36.07421875
       }
     }
   },
@@ -5814,8 +5814,8 @@ export const fishingLog = [
     "spot": {
       "id": 48,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.3759765625,
+        "y": 36.07421875
       }
     }
   },
@@ -5829,8 +5829,8 @@ export const fishingLog = [
     "spot": {
       "id": 48,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.3759765625,
+        "y": 36.07421875
       }
     }
   },
@@ -5844,8 +5844,8 @@ export const fishingLog = [
     "spot": {
       "id": 49,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 39.037109375
       }
     }
   },
@@ -5859,8 +5859,8 @@ export const fishingLog = [
     "spot": {
       "id": 49,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 39.037109375
       }
     }
   },
@@ -5874,8 +5874,8 @@ export const fishingLog = [
     "spot": {
       "id": 49,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 39.037109375
       }
     }
   },
@@ -5889,8 +5889,8 @@ export const fishingLog = [
     "spot": {
       "id": 49,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 39.037109375
       }
     }
   },
@@ -5904,8 +5904,8 @@ export const fishingLog = [
     "spot": {
       "id": 49,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 39.037109375
       }
     }
   },
@@ -5919,8 +5919,8 @@ export const fishingLog = [
     "spot": {
       "id": 49,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 39.037109375
       }
     }
   },
@@ -5934,8 +5934,8 @@ export const fishingLog = [
     "spot": {
       "id": 49,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 39.037109375
       }
     }
   },
@@ -5949,8 +5949,8 @@ export const fishingLog = [
     "spot": {
       "id": 49,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 39.037109375
       }
     }
   },
@@ -5964,8 +5964,8 @@ export const fishingLog = [
     "spot": {
       "id": 50,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.00048828125,
+        "y": 35.01318359375
       }
     }
   },
@@ -5979,8 +5979,8 @@ export const fishingLog = [
     "spot": {
       "id": 50,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.00048828125,
+        "y": 35.01318359375
       }
     }
   },
@@ -5994,8 +5994,8 @@ export const fishingLog = [
     "spot": {
       "id": 50,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.00048828125,
+        "y": 35.01318359375
       }
     }
   },
@@ -6009,8 +6009,8 @@ export const fishingLog = [
     "spot": {
       "id": 50,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.00048828125,
+        "y": 35.01318359375
       }
     }
   },
@@ -6024,8 +6024,8 @@ export const fishingLog = [
     "spot": {
       "id": 50,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.00048828125,
+        "y": 35.01318359375
       }
     }
   },
@@ -6039,8 +6039,8 @@ export const fishingLog = [
     "spot": {
       "id": 50,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.00048828125,
+        "y": 35.01318359375
       }
     }
   },
@@ -6054,8 +6054,8 @@ export const fishingLog = [
     "spot": {
       "id": 50,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.00048828125,
+        "y": 35.01318359375
       }
     }
   },
@@ -6069,8 +6069,8 @@ export const fishingLog = [
     "spot": {
       "id": 50,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.00048828125,
+        "y": 35.01318359375
       }
     }
   },
@@ -6084,8 +6084,8 @@ export const fishingLog = [
     "spot": {
       "id": 50,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.00048828125,
+        "y": 35.01318359375
       }
     }
   },
@@ -6099,8 +6099,8 @@ export const fishingLog = [
     "spot": {
       "id": 51,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.93115234375,
+        "y": 34.47265625
       }
     }
   },
@@ -6114,8 +6114,8 @@ export const fishingLog = [
     "spot": {
       "id": 51,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.93115234375,
+        "y": 34.47265625
       }
     }
   },
@@ -6129,8 +6129,8 @@ export const fishingLog = [
     "spot": {
       "id": 51,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.93115234375,
+        "y": 34.47265625
       }
     }
   },
@@ -6144,8 +6144,8 @@ export const fishingLog = [
     "spot": {
       "id": 51,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.93115234375,
+        "y": 34.47265625
       }
     }
   },
@@ -6159,8 +6159,8 @@ export const fishingLog = [
     "spot": {
       "id": 51,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.93115234375,
+        "y": 34.47265625
       }
     }
   },
@@ -6174,8 +6174,8 @@ export const fishingLog = [
     "spot": {
       "id": 51,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.93115234375,
+        "y": 34.47265625
       }
     }
   },
@@ -6189,8 +6189,8 @@ export const fishingLog = [
     "spot": {
       "id": 51,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.93115234375,
+        "y": 34.47265625
       }
     }
   },
@@ -6204,8 +6204,8 @@ export const fishingLog = [
     "spot": {
       "id": 51,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.93115234375,
+        "y": 34.47265625
       }
     }
   },
@@ -6219,8 +6219,8 @@ export const fishingLog = [
     "spot": {
       "id": 51,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.93115234375,
+        "y": 34.47265625
       }
     }
   },
@@ -6234,8 +6234,8 @@ export const fishingLog = [
     "spot": {
       "id": 51,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.93115234375,
+        "y": 34.47265625
       }
     }
   },
@@ -6249,8 +6249,8 @@ export const fishingLog = [
     "spot": {
       "id": 52,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.89111328125,
+        "y": 29.3076171875
       }
     }
   },
@@ -6264,8 +6264,8 @@ export const fishingLog = [
     "spot": {
       "id": 52,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.89111328125,
+        "y": 29.3076171875
       }
     }
   },
@@ -6279,8 +6279,8 @@ export const fishingLog = [
     "spot": {
       "id": 52,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.89111328125,
+        "y": 29.3076171875
       }
     }
   },
@@ -6294,8 +6294,8 @@ export const fishingLog = [
     "spot": {
       "id": 52,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.89111328125,
+        "y": 29.3076171875
       }
     }
   },
@@ -6309,8 +6309,8 @@ export const fishingLog = [
     "spot": {
       "id": 52,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.89111328125,
+        "y": 29.3076171875
       }
     }
   },
@@ -6324,8 +6324,8 @@ export const fishingLog = [
     "spot": {
       "id": 52,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.89111328125,
+        "y": 29.3076171875
       }
     }
   },
@@ -6339,8 +6339,8 @@ export const fishingLog = [
     "spot": {
       "id": 52,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.89111328125,
+        "y": 29.3076171875
       }
     }
   },
@@ -6354,8 +6354,8 @@ export const fishingLog = [
     "spot": {
       "id": 52,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.89111328125,
+        "y": 29.3076171875
       }
     }
   },
@@ -6369,8 +6369,8 @@ export const fishingLog = [
     "spot": {
       "id": 52,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.89111328125,
+        "y": 29.3076171875
       }
     }
   },
@@ -6384,8 +6384,8 @@ export const fishingLog = [
     "spot": {
       "id": 52,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.89111328125,
+        "y": 29.3076171875
       }
     }
   },
@@ -6399,8 +6399,8 @@ export const fishingLog = [
     "spot": {
       "id": 53,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.03125,
+        "y": 24.22265625
       }
     }
   },
@@ -6414,8 +6414,8 @@ export const fishingLog = [
     "spot": {
       "id": 53,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.03125,
+        "y": 24.22265625
       }
     }
   },
@@ -6429,8 +6429,8 @@ export const fishingLog = [
     "spot": {
       "id": 53,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.03125,
+        "y": 24.22265625
       }
     }
   },
@@ -6444,8 +6444,8 @@ export const fishingLog = [
     "spot": {
       "id": 53,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.03125,
+        "y": 24.22265625
       }
     }
   },
@@ -6459,8 +6459,8 @@ export const fishingLog = [
     "spot": {
       "id": 53,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.03125,
+        "y": 24.22265625
       }
     }
   },
@@ -6474,8 +6474,8 @@ export const fishingLog = [
     "spot": {
       "id": 53,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.03125,
+        "y": 24.22265625
       }
     }
   },
@@ -6489,8 +6489,8 @@ export const fishingLog = [
     "spot": {
       "id": 53,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.03125,
+        "y": 24.22265625
       }
     }
   },
@@ -6504,8 +6504,8 @@ export const fishingLog = [
     "spot": {
       "id": 53,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.03125,
+        "y": 24.22265625
       }
     }
   },
@@ -6519,8 +6519,8 @@ export const fishingLog = [
     "spot": {
       "id": 53,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.03125,
+        "y": 24.22265625
       }
     }
   },
@@ -6534,8 +6534,8 @@ export const fishingLog = [
     "spot": {
       "id": 53,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.03125,
+        "y": 24.22265625
       }
     }
   },
@@ -6549,8 +6549,8 @@ export const fishingLog = [
     "spot": {
       "id": 54,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.8291015625,
+        "y": 23.021484375
       }
     }
   },
@@ -6564,8 +6564,8 @@ export const fishingLog = [
     "spot": {
       "id": 54,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.8291015625,
+        "y": 23.021484375
       }
     }
   },
@@ -6579,8 +6579,8 @@ export const fishingLog = [
     "spot": {
       "id": 54,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.8291015625,
+        "y": 23.021484375
       }
     }
   },
@@ -6594,8 +6594,8 @@ export const fishingLog = [
     "spot": {
       "id": 54,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.8291015625,
+        "y": 23.021484375
       }
     }
   },
@@ -6609,8 +6609,8 @@ export const fishingLog = [
     "spot": {
       "id": 54,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.8291015625,
+        "y": 23.021484375
       }
     }
   },
@@ -6624,8 +6624,8 @@ export const fishingLog = [
     "spot": {
       "id": 54,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.8291015625,
+        "y": 23.021484375
       }
     }
   },
@@ -6639,8 +6639,8 @@ export const fishingLog = [
     "spot": {
       "id": 54,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.8291015625,
+        "y": 23.021484375
       }
     }
   },
@@ -6654,8 +6654,8 @@ export const fishingLog = [
     "spot": {
       "id": 55,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.19873046875,
+        "y": 25.96435546875
       }
     }
   },
@@ -6669,8 +6669,8 @@ export const fishingLog = [
     "spot": {
       "id": 55,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.19873046875,
+        "y": 25.96435546875
       }
     }
   },
@@ -6684,8 +6684,8 @@ export const fishingLog = [
     "spot": {
       "id": 55,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.19873046875,
+        "y": 25.96435546875
       }
     }
   },
@@ -6699,8 +6699,8 @@ export const fishingLog = [
     "spot": {
       "id": 55,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.19873046875,
+        "y": 25.96435546875
       }
     }
   },
@@ -6714,8 +6714,8 @@ export const fishingLog = [
     "spot": {
       "id": 55,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.19873046875,
+        "y": 25.96435546875
       }
     }
   },
@@ -6729,8 +6729,8 @@ export const fishingLog = [
     "spot": {
       "id": 55,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.19873046875,
+        "y": 25.96435546875
       }
     }
   },
@@ -6744,8 +6744,8 @@ export const fishingLog = [
     "spot": {
       "id": 55,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.19873046875,
+        "y": 25.96435546875
       }
     }
   },
@@ -6759,8 +6759,8 @@ export const fishingLog = [
     "spot": {
       "id": 55,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.19873046875,
+        "y": 25.96435546875
       }
     }
   },
@@ -6774,8 +6774,8 @@ export const fishingLog = [
     "spot": {
       "id": 55,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.19873046875,
+        "y": 25.96435546875
       }
     }
   },
@@ -6789,8 +6789,8 @@ export const fishingLog = [
     "spot": {
       "id": 56,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 30.2685546875
       }
     }
   },
@@ -6804,8 +6804,8 @@ export const fishingLog = [
     "spot": {
       "id": 56,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 30.2685546875
       }
     }
   },
@@ -6819,8 +6819,8 @@ export const fishingLog = [
     "spot": {
       "id": 56,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 30.2685546875
       }
     }
   },
@@ -6834,8 +6834,8 @@ export const fishingLog = [
     "spot": {
       "id": 56,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 30.2685546875
       }
     }
   },
@@ -6849,8 +6849,8 @@ export const fishingLog = [
     "spot": {
       "id": 56,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 30.2685546875
       }
     }
   },
@@ -6864,8 +6864,8 @@ export const fishingLog = [
     "spot": {
       "id": 56,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 30.2685546875
       }
     }
   },
@@ -6879,8 +6879,8 @@ export const fishingLog = [
     "spot": {
       "id": 56,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 30.2685546875
       }
     }
   },
@@ -6894,8 +6894,8 @@ export const fishingLog = [
     "spot": {
       "id": 56,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 30.2685546875
       }
     }
   },
@@ -6909,8 +6909,8 @@ export const fishingLog = [
     "spot": {
       "id": 56,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 30.2685546875
       }
     }
   },
@@ -6924,8 +6924,8 @@ export const fishingLog = [
     "spot": {
       "id": 56,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.47900390625,
+        "y": 30.2685546875
       }
     }
   },
@@ -6939,8 +6939,8 @@ export const fishingLog = [
     "spot": {
       "id": 57,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.83544921875,
+        "y": 32.0302734375
       }
     }
   },
@@ -6954,8 +6954,8 @@ export const fishingLog = [
     "spot": {
       "id": 57,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.83544921875,
+        "y": 32.0302734375
       }
     }
   },
@@ -6969,8 +6969,8 @@ export const fishingLog = [
     "spot": {
       "id": 57,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.83544921875,
+        "y": 32.0302734375
       }
     }
   },
@@ -6984,8 +6984,8 @@ export const fishingLog = [
     "spot": {
       "id": 57,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.83544921875,
+        "y": 32.0302734375
       }
     }
   },
@@ -6999,8 +6999,8 @@ export const fishingLog = [
     "spot": {
       "id": 57,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.83544921875,
+        "y": 32.0302734375
       }
     }
   },
@@ -7014,8 +7014,8 @@ export const fishingLog = [
     "spot": {
       "id": 57,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.83544921875,
+        "y": 32.0302734375
       }
     }
   },
@@ -7029,8 +7029,8 @@ export const fishingLog = [
     "spot": {
       "id": 57,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.83544921875,
+        "y": 32.0302734375
       }
     }
   },
@@ -7044,8 +7044,8 @@ export const fishingLog = [
     "spot": {
       "id": 57,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.83544921875,
+        "y": 32.0302734375
       }
     }
   },
@@ -7059,8 +7059,8 @@ export const fishingLog = [
     "spot": {
       "id": 58,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.35400390625,
+        "y": 27.4658203125
       }
     }
   },
@@ -7074,8 +7074,8 @@ export const fishingLog = [
     "spot": {
       "id": 58,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.35400390625,
+        "y": 27.4658203125
       }
     }
   },
@@ -7089,8 +7089,8 @@ export const fishingLog = [
     "spot": {
       "id": 58,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.35400390625,
+        "y": 27.4658203125
       }
     }
   },
@@ -7104,8 +7104,8 @@ export const fishingLog = [
     "spot": {
       "id": 58,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.35400390625,
+        "y": 27.4658203125
       }
     }
   },
@@ -7119,8 +7119,8 @@ export const fishingLog = [
     "spot": {
       "id": 58,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.35400390625,
+        "y": 27.4658203125
       }
     }
   },
@@ -7134,8 +7134,8 @@ export const fishingLog = [
     "spot": {
       "id": 58,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.35400390625,
+        "y": 27.4658203125
       }
     }
   },
@@ -7149,8 +7149,8 @@ export const fishingLog = [
     "spot": {
       "id": 58,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.35400390625,
+        "y": 27.4658203125
       }
     }
   },
@@ -7164,8 +7164,8 @@ export const fishingLog = [
     "spot": {
       "id": 58,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.35400390625,
+        "y": 27.4658203125
       }
     }
   },
@@ -7179,8 +7179,8 @@ export const fishingLog = [
     "spot": {
       "id": 58,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.35400390625,
+        "y": 27.4658203125
       }
     }
   },
@@ -7194,8 +7194,8 @@ export const fishingLog = [
     "spot": {
       "id": 59,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.85205078125,
+        "y": 31.8701171875
       }
     }
   },
@@ -7209,8 +7209,8 @@ export const fishingLog = [
     "spot": {
       "id": 59,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.85205078125,
+        "y": 31.8701171875
       }
     }
   },
@@ -7224,8 +7224,8 @@ export const fishingLog = [
     "spot": {
       "id": 59,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.85205078125,
+        "y": 31.8701171875
       }
     }
   },
@@ -7239,8 +7239,8 @@ export const fishingLog = [
     "spot": {
       "id": 59,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.85205078125,
+        "y": 31.8701171875
       }
     }
   },
@@ -7254,8 +7254,8 @@ export const fishingLog = [
     "spot": {
       "id": 59,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.85205078125,
+        "y": 31.8701171875
       }
     }
   },
@@ -7269,8 +7269,8 @@ export const fishingLog = [
     "spot": {
       "id": 59,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.85205078125,
+        "y": 31.8701171875
       }
     }
   },
@@ -7284,8 +7284,8 @@ export const fishingLog = [
     "spot": {
       "id": 59,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.85205078125,
+        "y": 31.8701171875
       }
     }
   },
@@ -7299,8 +7299,8 @@ export const fishingLog = [
     "spot": {
       "id": 59,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.85205078125,
+        "y": 31.8701171875
       }
     }
   },
@@ -7314,8 +7314,8 @@ export const fishingLog = [
     "spot": {
       "id": 59,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.85205078125,
+        "y": 31.8701171875
       }
     }
   },
@@ -7329,8 +7329,8 @@ export const fishingLog = [
     "spot": {
       "id": 59,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.85205078125,
+        "y": 31.8701171875
       }
     }
   },
@@ -7344,8 +7344,8 @@ export const fishingLog = [
     "spot": {
       "id": 60,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.68505859375,
+        "y": 26.9853515625
       }
     }
   },
@@ -7359,8 +7359,8 @@ export const fishingLog = [
     "spot": {
       "id": 60,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.68505859375,
+        "y": 26.9853515625
       }
     }
   },
@@ -7374,8 +7374,8 @@ export const fishingLog = [
     "spot": {
       "id": 60,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.68505859375,
+        "y": 26.9853515625
       }
     }
   },
@@ -7389,8 +7389,8 @@ export const fishingLog = [
     "spot": {
       "id": 60,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.68505859375,
+        "y": 26.9853515625
       }
     }
   },
@@ -7404,8 +7404,8 @@ export const fishingLog = [
     "spot": {
       "id": 60,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.68505859375,
+        "y": 26.9853515625
       }
     }
   },
@@ -7419,8 +7419,8 @@ export const fishingLog = [
     "spot": {
       "id": 60,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.68505859375,
+        "y": 26.9853515625
       }
     }
   },
@@ -7434,8 +7434,8 @@ export const fishingLog = [
     "spot": {
       "id": 60,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.68505859375,
+        "y": 26.9853515625
       }
     }
   },
@@ -7449,8 +7449,8 @@ export const fishingLog = [
     "spot": {
       "id": 60,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 26.68505859375,
+        "y": 26.9853515625
       }
     }
   },
@@ -7464,8 +7464,8 @@ export const fishingLog = [
     "spot": {
       "id": 61,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.55615234375,
+        "y": 20.9794921875
       }
     }
   },
@@ -7479,8 +7479,8 @@ export const fishingLog = [
     "spot": {
       "id": 61,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.55615234375,
+        "y": 20.9794921875
       }
     }
   },
@@ -7494,8 +7494,8 @@ export const fishingLog = [
     "spot": {
       "id": 61,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.55615234375,
+        "y": 20.9794921875
       }
     }
   },
@@ -7509,8 +7509,8 @@ export const fishingLog = [
     "spot": {
       "id": 61,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.55615234375,
+        "y": 20.9794921875
       }
     }
   },
@@ -7524,8 +7524,8 @@ export const fishingLog = [
     "spot": {
       "id": 61,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.55615234375,
+        "y": 20.9794921875
       }
     }
   },
@@ -7539,8 +7539,8 @@ export const fishingLog = [
     "spot": {
       "id": 61,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.55615234375,
+        "y": 20.9794921875
       }
     }
   },
@@ -7554,8 +7554,8 @@ export const fishingLog = [
     "spot": {
       "id": 61,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.55615234375,
+        "y": 20.9794921875
       }
     }
   },
@@ -7569,8 +7569,8 @@ export const fishingLog = [
     "spot": {
       "id": 61,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.55615234375,
+        "y": 20.9794921875
       }
     }
   },
@@ -7584,8 +7584,8 @@ export const fishingLog = [
     "spot": {
       "id": 62,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.47314453125,
+        "y": 29.908203125
       }
     }
   },
@@ -7599,8 +7599,8 @@ export const fishingLog = [
     "spot": {
       "id": 62,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.47314453125,
+        "y": 29.908203125
       }
     }
   },
@@ -7614,8 +7614,8 @@ export const fishingLog = [
     "spot": {
       "id": 62,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.47314453125,
+        "y": 29.908203125
       }
     }
   },
@@ -7629,8 +7629,8 @@ export const fishingLog = [
     "spot": {
       "id": 62,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.47314453125,
+        "y": 29.908203125
       }
     }
   },
@@ -7644,8 +7644,8 @@ export const fishingLog = [
     "spot": {
       "id": 62,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.47314453125,
+        "y": 29.908203125
       }
     }
   },
@@ -7659,8 +7659,8 @@ export const fishingLog = [
     "spot": {
       "id": 62,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.47314453125,
+        "y": 29.908203125
       }
     }
   },
@@ -7674,8 +7674,8 @@ export const fishingLog = [
     "spot": {
       "id": 62,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.47314453125,
+        "y": 29.908203125
       }
     }
   },
@@ -7689,8 +7689,8 @@ export const fishingLog = [
     "spot": {
       "id": 62,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.47314453125,
+        "y": 29.908203125
       }
     }
   },
@@ -7704,8 +7704,8 @@ export const fishingLog = [
     "spot": {
       "id": 62,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.47314453125,
+        "y": 29.908203125
       }
     }
   },
@@ -7719,8 +7719,8 @@ export const fishingLog = [
     "spot": {
       "id": 62,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.47314453125,
+        "y": 29.908203125
       }
     }
   },
@@ -7734,8 +7734,8 @@ export const fishingLog = [
     "spot": {
       "id": 63,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.8115234375,
+        "y": 36.234375
       }
     }
   },
@@ -7749,8 +7749,8 @@ export const fishingLog = [
     "spot": {
       "id": 63,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.8115234375,
+        "y": 36.234375
       }
     }
   },
@@ -7764,8 +7764,8 @@ export const fishingLog = [
     "spot": {
       "id": 63,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.8115234375,
+        "y": 36.234375
       }
     }
   },
@@ -7779,8 +7779,8 @@ export const fishingLog = [
     "spot": {
       "id": 63,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.8115234375,
+        "y": 36.234375
       }
     }
   },
@@ -7794,8 +7794,8 @@ export const fishingLog = [
     "spot": {
       "id": 63,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.8115234375,
+        "y": 36.234375
       }
     }
   },
@@ -7809,8 +7809,8 @@ export const fishingLog = [
     "spot": {
       "id": 63,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.8115234375,
+        "y": 36.234375
       }
     }
   },
@@ -7824,8 +7824,8 @@ export const fishingLog = [
     "spot": {
       "id": 63,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.8115234375,
+        "y": 36.234375
       }
     }
   },
@@ -7839,8 +7839,8 @@ export const fishingLog = [
     "spot": {
       "id": 63,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.8115234375,
+        "y": 36.234375
       }
     }
   },
@@ -7854,8 +7854,8 @@ export const fishingLog = [
     "spot": {
       "id": 63,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.8115234375,
+        "y": 36.234375
       }
     }
   },
@@ -7869,8 +7869,8 @@ export const fishingLog = [
     "spot": {
       "id": 63,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.8115234375,
+        "y": 36.234375
       }
     }
   },
@@ -7884,8 +7884,8 @@ export const fishingLog = [
     "spot": {
       "id": 64,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.1484375,
+        "y": 30.62890625
       }
     }
   },
@@ -7899,8 +7899,8 @@ export const fishingLog = [
     "spot": {
       "id": 64,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.1484375,
+        "y": 30.62890625
       }
     }
   },
@@ -7914,8 +7914,8 @@ export const fishingLog = [
     "spot": {
       "id": 64,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.1484375,
+        "y": 30.62890625
       }
     }
   },
@@ -7929,8 +7929,8 @@ export const fishingLog = [
     "spot": {
       "id": 64,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.1484375,
+        "y": 30.62890625
       }
     }
   },
@@ -7944,8 +7944,8 @@ export const fishingLog = [
     "spot": {
       "id": 64,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.1484375,
+        "y": 30.62890625
       }
     }
   },
@@ -7959,8 +7959,8 @@ export const fishingLog = [
     "spot": {
       "id": 64,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.1484375,
+        "y": 30.62890625
       }
     }
   },
@@ -7974,8 +7974,8 @@ export const fishingLog = [
     "spot": {
       "id": 64,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.1484375,
+        "y": 30.62890625
       }
     }
   },
@@ -7989,8 +7989,8 @@ export const fishingLog = [
     "spot": {
       "id": 64,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.1484375,
+        "y": 30.62890625
       }
     }
   },
@@ -8004,8 +8004,8 @@ export const fishingLog = [
     "spot": {
       "id": 65,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 36.07421875
       }
     }
   },
@@ -8019,8 +8019,8 @@ export const fishingLog = [
     "spot": {
       "id": 65,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 36.07421875
       }
     }
   },
@@ -8034,8 +8034,8 @@ export const fishingLog = [
     "spot": {
       "id": 65,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 36.07421875
       }
     }
   },
@@ -8049,8 +8049,8 @@ export const fishingLog = [
     "spot": {
       "id": 65,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 36.07421875
       }
     }
   },
@@ -8064,8 +8064,8 @@ export const fishingLog = [
     "spot": {
       "id": 65,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 36.07421875
       }
     }
   },
@@ -8079,8 +8079,8 @@ export const fishingLog = [
     "spot": {
       "id": 65,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 36.07421875
       }
     }
   },
@@ -8094,8 +8094,8 @@ export const fishingLog = [
     "spot": {
       "id": 65,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 36.07421875
       }
     }
   },
@@ -8109,8 +8109,8 @@ export const fishingLog = [
     "spot": {
       "id": 65,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 36.07421875
       }
     }
   },
@@ -8124,8 +8124,8 @@ export const fishingLog = [
     "spot": {
       "id": 65,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 36.07421875
       }
     }
   },
@@ -8139,8 +8139,8 @@ export const fishingLog = [
     "spot": {
       "id": 65,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 36.07421875
       }
     }
   },
@@ -8154,8 +8154,8 @@ export const fishingLog = [
     "spot": {
       "id": 66,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.59228515625,
+        "y": 24.302734375
       }
     }
   },
@@ -8169,8 +8169,8 @@ export const fishingLog = [
     "spot": {
       "id": 66,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.59228515625,
+        "y": 24.302734375
       }
     }
   },
@@ -8184,8 +8184,8 @@ export const fishingLog = [
     "spot": {
       "id": 66,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.59228515625,
+        "y": 24.302734375
       }
     }
   },
@@ -8199,8 +8199,8 @@ export const fishingLog = [
     "spot": {
       "id": 66,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.59228515625,
+        "y": 24.302734375
       }
     }
   },
@@ -8214,8 +8214,8 @@ export const fishingLog = [
     "spot": {
       "id": 66,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.59228515625,
+        "y": 24.302734375
       }
     }
   },
@@ -8229,8 +8229,8 @@ export const fishingLog = [
     "spot": {
       "id": 66,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.59228515625,
+        "y": 24.302734375
       }
     }
   },
@@ -8244,8 +8244,8 @@ export const fishingLog = [
     "spot": {
       "id": 66,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.59228515625,
+        "y": 24.302734375
       }
     }
   },
@@ -8259,8 +8259,8 @@ export const fishingLog = [
     "spot": {
       "id": 66,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.59228515625,
+        "y": 24.302734375
       }
     }
   },
@@ -8274,8 +8274,8 @@ export const fishingLog = [
     "spot": {
       "id": 66,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.59228515625,
+        "y": 24.302734375
       }
     }
   },
@@ -8289,8 +8289,8 @@ export const fishingLog = [
     "spot": {
       "id": 66,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.59228515625,
+        "y": 24.302734375
       }
     }
   },
@@ -8304,8 +8304,8 @@ export const fishingLog = [
     "spot": {
       "id": 67,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0478515625,
+        "y": 21.099609375
       }
     }
   },
@@ -8319,8 +8319,8 @@ export const fishingLog = [
     "spot": {
       "id": 67,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0478515625,
+        "y": 21.099609375
       }
     }
   },
@@ -8334,8 +8334,8 @@ export const fishingLog = [
     "spot": {
       "id": 67,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0478515625,
+        "y": 21.099609375
       }
     }
   },
@@ -8349,8 +8349,8 @@ export const fishingLog = [
     "spot": {
       "id": 67,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0478515625,
+        "y": 21.099609375
       }
     }
   },
@@ -8364,8 +8364,8 @@ export const fishingLog = [
     "spot": {
       "id": 67,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0478515625,
+        "y": 21.099609375
       }
     }
   },
@@ -8379,8 +8379,8 @@ export const fishingLog = [
     "spot": {
       "id": 67,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0478515625,
+        "y": 21.099609375
       }
     }
   },
@@ -8394,8 +8394,8 @@ export const fishingLog = [
     "spot": {
       "id": 67,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0478515625,
+        "y": 21.099609375
       }
     }
   },
@@ -8409,8 +8409,8 @@ export const fishingLog = [
     "spot": {
       "id": 67,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0478515625,
+        "y": 21.099609375
       }
     }
   },
@@ -8424,8 +8424,8 @@ export const fishingLog = [
     "spot": {
       "id": 67,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0478515625,
+        "y": 21.099609375
       }
     }
   },
@@ -8439,8 +8439,8 @@ export const fishingLog = [
     "spot": {
       "id": 67,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0478515625,
+        "y": 21.099609375
       }
     }
   },
@@ -8454,8 +8454,8 @@ export const fishingLog = [
     "spot": {
       "id": 68,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.146484375,
+        "y": 22.84130859375
       }
     }
   },
@@ -8469,8 +8469,8 @@ export const fishingLog = [
     "spot": {
       "id": 68,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.146484375,
+        "y": 22.84130859375
       }
     }
   },
@@ -8484,8 +8484,8 @@ export const fishingLog = [
     "spot": {
       "id": 68,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.146484375,
+        "y": 22.84130859375
       }
     }
   },
@@ -8499,8 +8499,8 @@ export const fishingLog = [
     "spot": {
       "id": 68,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.146484375,
+        "y": 22.84130859375
       }
     }
   },
@@ -8514,8 +8514,8 @@ export const fishingLog = [
     "spot": {
       "id": 68,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.146484375,
+        "y": 22.84130859375
       }
     }
   },
@@ -8529,8 +8529,8 @@ export const fishingLog = [
     "spot": {
       "id": 68,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.146484375,
+        "y": 22.84130859375
       }
     }
   },
@@ -8544,8 +8544,8 @@ export const fishingLog = [
     "spot": {
       "id": 68,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.146484375,
+        "y": 22.84130859375
       }
     }
   },
@@ -8559,8 +8559,8 @@ export const fishingLog = [
     "spot": {
       "id": 68,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.146484375,
+        "y": 22.84130859375
       }
     }
   },
@@ -8574,8 +8574,8 @@ export const fishingLog = [
     "spot": {
       "id": 68,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.146484375,
+        "y": 22.84130859375
       }
     }
   },
@@ -8589,8 +8589,8 @@ export const fishingLog = [
     "spot": {
       "id": 68,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.146484375,
+        "y": 22.84130859375
       }
     }
   },
@@ -8604,8 +8604,8 @@ export const fishingLog = [
     "spot": {
       "id": 69,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.5732421875,
+        "y": 29.5478515625
       }
     }
   },
@@ -8619,8 +8619,8 @@ export const fishingLog = [
     "spot": {
       "id": 69,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.5732421875,
+        "y": 29.5478515625
       }
     }
   },
@@ -8634,8 +8634,8 @@ export const fishingLog = [
     "spot": {
       "id": 69,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.5732421875,
+        "y": 29.5478515625
       }
     }
   },
@@ -8649,8 +8649,8 @@ export const fishingLog = [
     "spot": {
       "id": 69,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.5732421875,
+        "y": 29.5478515625
       }
     }
   },
@@ -8664,8 +8664,8 @@ export const fishingLog = [
     "spot": {
       "id": 69,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.5732421875,
+        "y": 29.5478515625
       }
     }
   },
@@ -8679,8 +8679,8 @@ export const fishingLog = [
     "spot": {
       "id": 69,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.5732421875,
+        "y": 29.5478515625
       }
     }
   },
@@ -8694,8 +8694,8 @@ export const fishingLog = [
     "spot": {
       "id": 69,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.5732421875,
+        "y": 29.5478515625
       }
     }
   },
@@ -8709,8 +8709,8 @@ export const fishingLog = [
     "spot": {
       "id": 69,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.5732421875,
+        "y": 29.5478515625
       }
     }
   },
@@ -8724,8 +8724,8 @@ export const fishingLog = [
     "spot": {
       "id": 70,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.5302734375,
+        "y": 12.5712890625
       }
     }
   },
@@ -8739,8 +8739,8 @@ export const fishingLog = [
     "spot": {
       "id": 70,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.5302734375,
+        "y": 12.5712890625
       }
     }
   },
@@ -8754,8 +8754,8 @@ export const fishingLog = [
     "spot": {
       "id": 70,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.5302734375,
+        "y": 12.5712890625
       }
     }
   },
@@ -8769,8 +8769,8 @@ export const fishingLog = [
     "spot": {
       "id": 70,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.5302734375,
+        "y": 12.5712890625
       }
     }
   },
@@ -8784,8 +8784,8 @@ export const fishingLog = [
     "spot": {
       "id": 70,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.5302734375,
+        "y": 12.5712890625
       }
     }
   },
@@ -8799,8 +8799,8 @@ export const fishingLog = [
     "spot": {
       "id": 70,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.5302734375,
+        "y": 12.5712890625
       }
     }
   },
@@ -8814,8 +8814,8 @@ export const fishingLog = [
     "spot": {
       "id": 70,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.5302734375,
+        "y": 12.5712890625
       }
     }
   },
@@ -8829,8 +8829,8 @@ export const fishingLog = [
     "spot": {
       "id": 71,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 19.2177734375
       }
     }
   },
@@ -8844,8 +8844,8 @@ export const fishingLog = [
     "spot": {
       "id": 71,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 19.2177734375
       }
     }
   },
@@ -8859,8 +8859,8 @@ export const fishingLog = [
     "spot": {
       "id": 71,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 19.2177734375
       }
     }
   },
@@ -8874,8 +8874,8 @@ export const fishingLog = [
     "spot": {
       "id": 71,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 19.2177734375
       }
     }
   },
@@ -8889,8 +8889,8 @@ export const fishingLog = [
     "spot": {
       "id": 71,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 19.2177734375
       }
     }
   },
@@ -8904,8 +8904,8 @@ export const fishingLog = [
     "spot": {
       "id": 71,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 19.2177734375
       }
     }
   },
@@ -8919,8 +8919,8 @@ export const fishingLog = [
     "spot": {
       "id": 71,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 19.2177734375
       }
     }
   },
@@ -8934,8 +8934,8 @@ export const fishingLog = [
     "spot": {
       "id": 71,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.57421875,
+        "y": 19.2177734375
       }
     }
   },
@@ -8949,8 +8949,8 @@ export const fishingLog = [
     "spot": {
       "id": 72,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 21.580078125
       }
     }
   },
@@ -8964,8 +8964,8 @@ export const fishingLog = [
     "spot": {
       "id": 72,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 21.580078125
       }
     }
   },
@@ -8979,8 +8979,8 @@ export const fishingLog = [
     "spot": {
       "id": 72,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 21.580078125
       }
     }
   },
@@ -8994,8 +8994,8 @@ export const fishingLog = [
     "spot": {
       "id": 72,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 21.580078125
       }
     }
   },
@@ -9009,8 +9009,8 @@ export const fishingLog = [
     "spot": {
       "id": 72,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 21.580078125
       }
     }
   },
@@ -9024,8 +9024,8 @@ export const fishingLog = [
     "spot": {
       "id": 72,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 21.580078125
       }
     }
   },
@@ -9039,8 +9039,8 @@ export const fishingLog = [
     "spot": {
       "id": 72,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 21.580078125
       }
     }
   },
@@ -9054,8 +9054,8 @@ export const fishingLog = [
     "spot": {
       "id": 72,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.5029296875,
+        "y": 21.580078125
       }
     }
   },
@@ -9069,8 +9069,8 @@ export const fishingLog = [
     "spot": {
       "id": 73,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.17578125,
+        "y": 15.6943359375
       }
     }
   },
@@ -9084,8 +9084,8 @@ export const fishingLog = [
     "spot": {
       "id": 73,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.17578125,
+        "y": 15.6943359375
       }
     }
   },
@@ -9099,8 +9099,8 @@ export const fishingLog = [
     "spot": {
       "id": 73,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.17578125,
+        "y": 15.6943359375
       }
     }
   },
@@ -9114,8 +9114,8 @@ export const fishingLog = [
     "spot": {
       "id": 73,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.17578125,
+        "y": 15.6943359375
       }
     }
   },
@@ -9129,8 +9129,8 @@ export const fishingLog = [
     "spot": {
       "id": 73,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.17578125,
+        "y": 15.6943359375
       }
     }
   },
@@ -9144,8 +9144,8 @@ export const fishingLog = [
     "spot": {
       "id": 73,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.17578125,
+        "y": 15.6943359375
       }
     }
   },
@@ -9159,8 +9159,8 @@ export const fishingLog = [
     "spot": {
       "id": 73,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.17578125,
+        "y": 15.6943359375
       }
     }
   },
@@ -9174,8 +9174,8 @@ export const fishingLog = [
     "spot": {
       "id": 73,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.17578125,
+        "y": 15.6943359375
       }
     }
   },
@@ -9189,8 +9189,8 @@ export const fishingLog = [
     "spot": {
       "id": 74,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.9287109375,
+        "y": 7.3662109375
       }
     }
   },
@@ -9204,8 +9204,8 @@ export const fishingLog = [
     "spot": {
       "id": 74,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.9287109375,
+        "y": 7.3662109375
       }
     }
   },
@@ -9219,8 +9219,8 @@ export const fishingLog = [
     "spot": {
       "id": 74,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.9287109375,
+        "y": 7.3662109375
       }
     }
   },
@@ -9234,8 +9234,8 @@ export const fishingLog = [
     "spot": {
       "id": 74,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.9287109375,
+        "y": 7.3662109375
       }
     }
   },
@@ -9249,8 +9249,8 @@ export const fishingLog = [
     "spot": {
       "id": 74,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.9287109375,
+        "y": 7.3662109375
       }
     }
   },
@@ -9264,8 +9264,8 @@ export const fishingLog = [
     "spot": {
       "id": 74,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.9287109375,
+        "y": 7.3662109375
       }
     }
   },
@@ -9279,8 +9279,8 @@ export const fishingLog = [
     "spot": {
       "id": 74,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.9287109375,
+        "y": 7.3662109375
       }
     }
   },
@@ -9294,8 +9294,8 @@ export const fishingLog = [
     "spot": {
       "id": 74,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.9287109375,
+        "y": 7.3662109375
       }
     }
   },
@@ -9309,8 +9309,8 @@ export const fishingLog = [
     "spot": {
       "id": 74,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.9287109375,
+        "y": 7.3662109375
       }
     }
   },
@@ -9324,8 +9324,8 @@ export const fishingLog = [
     "spot": {
       "id": 74,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.9287109375,
+        "y": 7.3662109375
       }
     }
   },
@@ -9339,8 +9339,8 @@ export const fishingLog = [
     "spot": {
       "id": 75,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.421875,
+        "y": 18.216796875
       }
     }
   },
@@ -9354,8 +9354,8 @@ export const fishingLog = [
     "spot": {
       "id": 75,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.421875,
+        "y": 18.216796875
       }
     }
   },
@@ -9369,8 +9369,8 @@ export const fishingLog = [
     "spot": {
       "id": 75,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.421875,
+        "y": 18.216796875
       }
     }
   },
@@ -9384,8 +9384,8 @@ export const fishingLog = [
     "spot": {
       "id": 75,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.421875,
+        "y": 18.216796875
       }
     }
   },
@@ -9399,8 +9399,8 @@ export const fishingLog = [
     "spot": {
       "id": 75,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.421875,
+        "y": 18.216796875
       }
     }
   },
@@ -9414,8 +9414,8 @@ export const fishingLog = [
     "spot": {
       "id": 75,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.421875,
+        "y": 18.216796875
       }
     }
   },
@@ -9429,8 +9429,8 @@ export const fishingLog = [
     "spot": {
       "id": 76,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 23.7822265625
       }
     }
   },
@@ -9444,8 +9444,8 @@ export const fishingLog = [
     "spot": {
       "id": 76,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 23.7822265625
       }
     }
   },
@@ -9459,8 +9459,8 @@ export const fishingLog = [
     "spot": {
       "id": 76,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 23.7822265625
       }
     }
   },
@@ -9474,8 +9474,8 @@ export const fishingLog = [
     "spot": {
       "id": 76,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 23.7822265625
       }
     }
   },
@@ -9489,8 +9489,8 @@ export const fishingLog = [
     "spot": {
       "id": 76,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 23.7822265625
       }
     }
   },
@@ -9504,8 +9504,8 @@ export const fishingLog = [
     "spot": {
       "id": 76,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 23.7822265625
       }
     }
   },
@@ -9519,8 +9519,8 @@ export const fishingLog = [
     "spot": {
       "id": 76,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 23.7822265625
       }
     }
   },
@@ -9534,8 +9534,8 @@ export const fishingLog = [
     "spot": {
       "id": 77,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.826171875,
+        "y": 19.2978515625
       }
     }
   },
@@ -9549,8 +9549,8 @@ export const fishingLog = [
     "spot": {
       "id": 77,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.826171875,
+        "y": 19.2978515625
       }
     }
   },
@@ -9564,8 +9564,8 @@ export const fishingLog = [
     "spot": {
       "id": 77,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.826171875,
+        "y": 19.2978515625
       }
     }
   },
@@ -9579,8 +9579,8 @@ export const fishingLog = [
     "spot": {
       "id": 77,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.826171875,
+        "y": 19.2978515625
       }
     }
   },
@@ -9594,8 +9594,8 @@ export const fishingLog = [
     "spot": {
       "id": 77,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.826171875,
+        "y": 19.2978515625
       }
     }
   },
@@ -9609,8 +9609,8 @@ export const fishingLog = [
     "spot": {
       "id": 77,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.826171875,
+        "y": 19.2978515625
       }
     }
   },
@@ -9624,8 +9624,8 @@ export const fishingLog = [
     "spot": {
       "id": 77,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.826171875,
+        "y": 19.2978515625
       }
     }
   },
@@ -9639,8 +9639,8 @@ export const fishingLog = [
     "spot": {
       "id": 77,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.826171875,
+        "y": 19.2978515625
       }
     }
   },
@@ -9654,8 +9654,8 @@ export const fishingLog = [
     "spot": {
       "id": 78,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.65234375,
+        "y": 20.69921875
       }
     }
   },
@@ -9669,8 +9669,8 @@ export const fishingLog = [
     "spot": {
       "id": 78,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.65234375,
+        "y": 20.69921875
       }
     }
   },
@@ -9684,8 +9684,8 @@ export const fishingLog = [
     "spot": {
       "id": 78,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.65234375,
+        "y": 20.69921875
       }
     }
   },
@@ -9699,8 +9699,8 @@ export const fishingLog = [
     "spot": {
       "id": 78,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.65234375,
+        "y": 20.69921875
       }
     }
   },
@@ -9714,8 +9714,8 @@ export const fishingLog = [
     "spot": {
       "id": 78,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.65234375,
+        "y": 20.69921875
       }
     }
   },
@@ -9729,8 +9729,8 @@ export const fishingLog = [
     "spot": {
       "id": 78,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.65234375,
+        "y": 20.69921875
       }
     }
   },
@@ -9744,8 +9744,8 @@ export const fishingLog = [
     "spot": {
       "id": 78,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.65234375,
+        "y": 20.69921875
       }
     }
   },
@@ -9759,8 +9759,8 @@ export const fishingLog = [
     "spot": {
       "id": 79,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.2158203125,
+        "y": 24.8232421875
       }
     }
   },
@@ -9774,8 +9774,8 @@ export const fishingLog = [
     "spot": {
       "id": 79,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.2158203125,
+        "y": 24.8232421875
       }
     }
   },
@@ -9789,8 +9789,8 @@ export const fishingLog = [
     "spot": {
       "id": 79,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.2158203125,
+        "y": 24.8232421875
       }
     }
   },
@@ -9804,8 +9804,8 @@ export const fishingLog = [
     "spot": {
       "id": 79,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.2158203125,
+        "y": 24.8232421875
       }
     }
   },
@@ -9819,8 +9819,8 @@ export const fishingLog = [
     "spot": {
       "id": 79,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.2158203125,
+        "y": 24.8232421875
       }
     }
   },
@@ -9834,8 +9834,8 @@ export const fishingLog = [
     "spot": {
       "id": 79,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.2158203125,
+        "y": 24.8232421875
       }
     }
   },
@@ -9849,8 +9849,8 @@ export const fishingLog = [
     "spot": {
       "id": 79,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.2158203125,
+        "y": 24.8232421875
       }
     }
   },
@@ -9864,8 +9864,8 @@ export const fishingLog = [
     "spot": {
       "id": 80,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.6640625,
+        "y": 22.6611328125
       }
     }
   },
@@ -9879,8 +9879,8 @@ export const fishingLog = [
     "spot": {
       "id": 80,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.6640625,
+        "y": 22.6611328125
       }
     }
   },
@@ -9894,8 +9894,8 @@ export const fishingLog = [
     "spot": {
       "id": 80,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.6640625,
+        "y": 22.6611328125
       }
     }
   },
@@ -9909,8 +9909,8 @@ export const fishingLog = [
     "spot": {
       "id": 80,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.6640625,
+        "y": 22.6611328125
       }
     }
   },
@@ -9924,8 +9924,8 @@ export const fishingLog = [
     "spot": {
       "id": 80,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.6640625,
+        "y": 22.6611328125
       }
     }
   },
@@ -9939,8 +9939,8 @@ export const fishingLog = [
     "spot": {
       "id": 80,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.6640625,
+        "y": 22.6611328125
       }
     }
   },
@@ -9954,8 +9954,8 @@ export const fishingLog = [
     "spot": {
       "id": 80,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.6640625,
+        "y": 22.6611328125
       }
     }
   },
@@ -9969,8 +9969,8 @@ export const fishingLog = [
     "spot": {
       "id": 81,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.545166015625,
+        "y": 6.30517578125
       }
     }
   },
@@ -9984,8 +9984,8 @@ export const fishingLog = [
     "spot": {
       "id": 81,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.545166015625,
+        "y": 6.30517578125
       }
     }
   },
@@ -9999,8 +9999,8 @@ export const fishingLog = [
     "spot": {
       "id": 81,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.545166015625,
+        "y": 6.30517578125
       }
     }
   },
@@ -10014,8 +10014,8 @@ export const fishingLog = [
     "spot": {
       "id": 81,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.545166015625,
+        "y": 6.30517578125
       }
     }
   },
@@ -10029,8 +10029,8 @@ export const fishingLog = [
     "spot": {
       "id": 81,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.545166015625,
+        "y": 6.30517578125
       }
     }
   },
@@ -10044,8 +10044,8 @@ export const fishingLog = [
     "spot": {
       "id": 81,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.545166015625,
+        "y": 6.30517578125
       }
     }
   },
@@ -10059,8 +10059,8 @@ export const fishingLog = [
     "spot": {
       "id": 81,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.545166015625,
+        "y": 6.30517578125
       }
     }
   },
@@ -10074,8 +10074,8 @@ export const fishingLog = [
     "spot": {
       "id": 82,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 24.703125
       }
     }
   },
@@ -10089,8 +10089,8 @@ export const fishingLog = [
     "spot": {
       "id": 82,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 24.703125
       }
     }
   },
@@ -10104,8 +10104,8 @@ export const fishingLog = [
     "spot": {
       "id": 82,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 24.703125
       }
     }
   },
@@ -10119,8 +10119,8 @@ export const fishingLog = [
     "spot": {
       "id": 82,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 24.703125
       }
     }
   },
@@ -10134,8 +10134,8 @@ export const fishingLog = [
     "spot": {
       "id": 82,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 24.703125
       }
     }
   },
@@ -10149,8 +10149,8 @@ export const fishingLog = [
     "spot": {
       "id": 82,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 24.703125
       }
     }
   },
@@ -10164,8 +10164,8 @@ export const fishingLog = [
     "spot": {
       "id": 82,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 24.703125
       }
     }
   },
@@ -10179,8 +10179,8 @@ export const fishingLog = [
     "spot": {
       "id": 82,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 24.703125
       }
     }
   },
@@ -10194,8 +10194,8 @@ export const fishingLog = [
     "spot": {
       "id": 82,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 24.703125
       }
     }
   },
@@ -10209,8 +10209,8 @@ export const fishingLog = [
     "spot": {
       "id": 82,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 24.703125
       }
     }
   },
@@ -10224,8 +10224,8 @@ export const fishingLog = [
     "spot": {
       "id": 83,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.740234375,
+        "y": 15.09375
       }
     }
   },
@@ -10239,8 +10239,8 @@ export const fishingLog = [
     "spot": {
       "id": 83,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.740234375,
+        "y": 15.09375
       }
     }
   },
@@ -10254,8 +10254,8 @@ export const fishingLog = [
     "spot": {
       "id": 83,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.740234375,
+        "y": 15.09375
       }
     }
   },
@@ -10269,8 +10269,8 @@ export const fishingLog = [
     "spot": {
       "id": 83,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.740234375,
+        "y": 15.09375
       }
     }
   },
@@ -10284,8 +10284,8 @@ export const fishingLog = [
     "spot": {
       "id": 83,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.740234375,
+        "y": 15.09375
       }
     }
   },
@@ -10299,8 +10299,8 @@ export const fishingLog = [
     "spot": {
       "id": 83,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.740234375,
+        "y": 15.09375
       }
     }
   },
@@ -10314,8 +10314,8 @@ export const fishingLog = [
     "spot": {
       "id": 84,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.3837890625,
+        "y": 21.01953125
       }
     }
   },
@@ -10329,8 +10329,8 @@ export const fishingLog = [
     "spot": {
       "id": 84,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.3837890625,
+        "y": 21.01953125
       }
     }
   },
@@ -10344,8 +10344,8 @@ export const fishingLog = [
     "spot": {
       "id": 84,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.3837890625,
+        "y": 21.01953125
       }
     }
   },
@@ -10359,8 +10359,8 @@ export const fishingLog = [
     "spot": {
       "id": 84,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.3837890625,
+        "y": 21.01953125
       }
     }
   },
@@ -10374,8 +10374,8 @@ export const fishingLog = [
     "spot": {
       "id": 84,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.3837890625,
+        "y": 21.01953125
       }
     }
   },
@@ -10389,8 +10389,8 @@ export const fishingLog = [
     "spot": {
       "id": 84,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.3837890625,
+        "y": 21.01953125
       }
     }
   },
@@ -10404,8 +10404,8 @@ export const fishingLog = [
     "spot": {
       "id": 84,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.3837890625,
+        "y": 21.01953125
       }
     }
   },
@@ -10419,8 +10419,8 @@ export const fishingLog = [
     "spot": {
       "id": 84,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.3837890625,
+        "y": 21.01953125
       }
     }
   },
@@ -10434,8 +10434,8 @@ export const fishingLog = [
     "spot": {
       "id": 85,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.654296875,
+        "y": 30.94921875
       }
     }
   },
@@ -10449,8 +10449,8 @@ export const fishingLog = [
     "spot": {
       "id": 85,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.654296875,
+        "y": 30.94921875
       }
     }
   },
@@ -10464,8 +10464,8 @@ export const fishingLog = [
     "spot": {
       "id": 85,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.654296875,
+        "y": 30.94921875
       }
     }
   },
@@ -10479,8 +10479,8 @@ export const fishingLog = [
     "spot": {
       "id": 85,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.654296875,
+        "y": 30.94921875
       }
     }
   },
@@ -10494,8 +10494,8 @@ export const fishingLog = [
     "spot": {
       "id": 85,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.654296875,
+        "y": 30.94921875
       }
     }
   },
@@ -10509,8 +10509,8 @@ export const fishingLog = [
     "spot": {
       "id": 85,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.654296875,
+        "y": 30.94921875
       }
     }
   },
@@ -10524,8 +10524,8 @@ export const fishingLog = [
     "spot": {
       "id": 85,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.654296875,
+        "y": 30.94921875
       }
     }
   },
@@ -10539,8 +10539,8 @@ export const fishingLog = [
     "spot": {
       "id": 85,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.654296875,
+        "y": 30.94921875
       }
     }
   },
@@ -10554,8 +10554,8 @@ export const fishingLog = [
     "spot": {
       "id": 86,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.37109375,
+        "y": 36.0341796875
       }
     }
   },
@@ -10569,8 +10569,8 @@ export const fishingLog = [
     "spot": {
       "id": 86,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.37109375,
+        "y": 36.0341796875
       }
     }
   },
@@ -10584,8 +10584,8 @@ export const fishingLog = [
     "spot": {
       "id": 86,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.37109375,
+        "y": 36.0341796875
       }
     }
   },
@@ -10599,8 +10599,8 @@ export const fishingLog = [
     "spot": {
       "id": 86,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.37109375,
+        "y": 36.0341796875
       }
     }
   },
@@ -10614,8 +10614,8 @@ export const fishingLog = [
     "spot": {
       "id": 86,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.37109375,
+        "y": 36.0341796875
       }
     }
   },
@@ -10629,8 +10629,8 @@ export const fishingLog = [
     "spot": {
       "id": 86,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.37109375,
+        "y": 36.0341796875
       }
     }
   },
@@ -10644,8 +10644,8 @@ export const fishingLog = [
     "spot": {
       "id": 86,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.37109375,
+        "y": 36.0341796875
       }
     }
   },
@@ -10659,8 +10659,8 @@ export const fishingLog = [
     "spot": {
       "id": 86,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.37109375,
+        "y": 36.0341796875
       }
     }
   },
@@ -10674,8 +10674,8 @@ export const fishingLog = [
     "spot": {
       "id": 86,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.37109375,
+        "y": 36.0341796875
       }
     }
   },
@@ -10689,8 +10689,8 @@ export const fishingLog = [
     "spot": {
       "id": 87,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.3056640625,
+        "y": 36.955078125
       }
     }
   },
@@ -10704,8 +10704,8 @@ export const fishingLog = [
     "spot": {
       "id": 87,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.3056640625,
+        "y": 36.955078125
       }
     }
   },
@@ -10719,8 +10719,8 @@ export const fishingLog = [
     "spot": {
       "id": 87,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.3056640625,
+        "y": 36.955078125
       }
     }
   },
@@ -10734,8 +10734,8 @@ export const fishingLog = [
     "spot": {
       "id": 87,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.3056640625,
+        "y": 36.955078125
       }
     }
   },
@@ -10749,8 +10749,8 @@ export const fishingLog = [
     "spot": {
       "id": 87,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.3056640625,
+        "y": 36.955078125
       }
     }
   },
@@ -10764,8 +10764,8 @@ export const fishingLog = [
     "spot": {
       "id": 87,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.3056640625,
+        "y": 36.955078125
       }
     }
   },
@@ -10779,8 +10779,8 @@ export const fishingLog = [
     "spot": {
       "id": 87,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.3056640625,
+        "y": 36.955078125
       }
     }
   },
@@ -10794,8 +10794,8 @@ export const fishingLog = [
     "spot": {
       "id": 87,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.3056640625,
+        "y": 36.955078125
       }
     }
   },
@@ -10809,8 +10809,8 @@ export const fishingLog = [
     "spot": {
       "id": 88,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.7392578125,
+        "y": 23.58203125
       }
     }
   },
@@ -10824,8 +10824,8 @@ export const fishingLog = [
     "spot": {
       "id": 88,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.7392578125,
+        "y": 23.58203125
       }
     }
   },
@@ -10839,8 +10839,8 @@ export const fishingLog = [
     "spot": {
       "id": 88,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.7392578125,
+        "y": 23.58203125
       }
     }
   },
@@ -10854,8 +10854,8 @@ export const fishingLog = [
     "spot": {
       "id": 88,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.7392578125,
+        "y": 23.58203125
       }
     }
   },
@@ -10869,8 +10869,8 @@ export const fishingLog = [
     "spot": {
       "id": 88,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.7392578125,
+        "y": 23.58203125
       }
     }
   },
@@ -10884,8 +10884,8 @@ export const fishingLog = [
     "spot": {
       "id": 88,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.7392578125,
+        "y": 23.58203125
       }
     }
   },
@@ -10899,8 +10899,8 @@ export const fishingLog = [
     "spot": {
       "id": 88,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.7392578125,
+        "y": 23.58203125
       }
     }
   },
@@ -10914,8 +10914,8 @@ export const fishingLog = [
     "spot": {
       "id": 88,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.7392578125,
+        "y": 23.58203125
       }
     }
   },
@@ -10929,8 +10929,8 @@ export const fishingLog = [
     "spot": {
       "id": 88,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.7392578125,
+        "y": 23.58203125
       }
     }
   },
@@ -10944,8 +10944,8 @@ export const fishingLog = [
     "spot": {
       "id": 89,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.142578125,
+        "y": 26.00439453125
       }
     }
   },
@@ -10959,8 +10959,8 @@ export const fishingLog = [
     "spot": {
       "id": 89,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.142578125,
+        "y": 26.00439453125
       }
     }
   },
@@ -10974,8 +10974,8 @@ export const fishingLog = [
     "spot": {
       "id": 89,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.142578125,
+        "y": 26.00439453125
       }
     }
   },
@@ -10989,8 +10989,8 @@ export const fishingLog = [
     "spot": {
       "id": 89,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.142578125,
+        "y": 26.00439453125
       }
     }
   },
@@ -11004,8 +11004,8 @@ export const fishingLog = [
     "spot": {
       "id": 89,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.142578125,
+        "y": 26.00439453125
       }
     }
   },
@@ -11019,8 +11019,8 @@ export const fishingLog = [
     "spot": {
       "id": 89,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.142578125,
+        "y": 26.00439453125
       }
     }
   },
@@ -11034,8 +11034,8 @@ export const fishingLog = [
     "spot": {
       "id": 89,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.142578125,
+        "y": 26.00439453125
       }
     }
   },
@@ -11049,8 +11049,8 @@ export const fishingLog = [
     "spot": {
       "id": 89,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.142578125,
+        "y": 26.00439453125
       }
     }
   },
@@ -11064,8 +11064,8 @@ export const fishingLog = [
     "spot": {
       "id": 89,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.142578125,
+        "y": 26.00439453125
       }
     }
   },
@@ -11079,8 +11079,8 @@ export const fishingLog = [
     "spot": {
       "id": 89,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.142578125,
+        "y": 26.00439453125
       }
     }
   },
@@ -11094,8 +11094,8 @@ export const fishingLog = [
     "spot": {
       "id": 90,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.611328125,
+        "y": 14.623291015625
       }
     }
   },
@@ -11109,8 +11109,8 @@ export const fishingLog = [
     "spot": {
       "id": 90,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.611328125,
+        "y": 14.623291015625
       }
     }
   },
@@ -11124,8 +11124,8 @@ export const fishingLog = [
     "spot": {
       "id": 90,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.611328125,
+        "y": 14.623291015625
       }
     }
   },
@@ -11139,8 +11139,8 @@ export const fishingLog = [
     "spot": {
       "id": 90,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.611328125,
+        "y": 14.623291015625
       }
     }
   },
@@ -11154,8 +11154,8 @@ export const fishingLog = [
     "spot": {
       "id": 90,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.611328125,
+        "y": 14.623291015625
       }
     }
   },
@@ -11169,8 +11169,8 @@ export const fishingLog = [
     "spot": {
       "id": 90,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.611328125,
+        "y": 14.623291015625
       }
     }
   },
@@ -11184,8 +11184,8 @@ export const fishingLog = [
     "spot": {
       "id": 90,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.611328125,
+        "y": 14.623291015625
       }
     }
   },
@@ -11199,8 +11199,8 @@ export const fishingLog = [
     "spot": {
       "id": 91,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.7294921875,
+        "y": 11.660400390625
       }
     }
   },
@@ -11214,8 +11214,8 @@ export const fishingLog = [
     "spot": {
       "id": 91,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.7294921875,
+        "y": 11.660400390625
       }
     }
   },
@@ -11229,8 +11229,8 @@ export const fishingLog = [
     "spot": {
       "id": 91,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.7294921875,
+        "y": 11.660400390625
       }
     }
   },
@@ -11244,8 +11244,8 @@ export const fishingLog = [
     "spot": {
       "id": 91,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.7294921875,
+        "y": 11.660400390625
       }
     }
   },
@@ -11259,8 +11259,8 @@ export const fishingLog = [
     "spot": {
       "id": 91,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.7294921875,
+        "y": 11.660400390625
       }
     }
   },
@@ -11274,8 +11274,8 @@ export const fishingLog = [
     "spot": {
       "id": 91,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.7294921875,
+        "y": 11.660400390625
       }
     }
   },
@@ -11289,8 +11289,8 @@ export const fishingLog = [
     "spot": {
       "id": 92,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.86962890625,
+        "y": 23.16162109375
       }
     }
   },
@@ -11304,8 +11304,8 @@ export const fishingLog = [
     "spot": {
       "id": 92,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.86962890625,
+        "y": 23.16162109375
       }
     }
   },
@@ -11319,8 +11319,8 @@ export const fishingLog = [
     "spot": {
       "id": 92,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.86962890625,
+        "y": 23.16162109375
       }
     }
   },
@@ -11334,8 +11334,8 @@ export const fishingLog = [
     "spot": {
       "id": 92,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.86962890625,
+        "y": 23.16162109375
       }
     }
   },
@@ -11349,8 +11349,8 @@ export const fishingLog = [
     "spot": {
       "id": 92,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.86962890625,
+        "y": 23.16162109375
       }
     }
   },
@@ -11364,8 +11364,8 @@ export const fishingLog = [
     "spot": {
       "id": 92,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.86962890625,
+        "y": 23.16162109375
       }
     }
   },
@@ -11379,8 +11379,8 @@ export const fishingLog = [
     "spot": {
       "id": 93,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 10.3291015625
       }
     }
   },
@@ -11394,8 +11394,8 @@ export const fishingLog = [
     "spot": {
       "id": 93,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 10.3291015625
       }
     }
   },
@@ -11409,8 +11409,8 @@ export const fishingLog = [
     "spot": {
       "id": 93,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 10.3291015625
       }
     }
   },
@@ -11424,8 +11424,8 @@ export const fishingLog = [
     "spot": {
       "id": 93,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 10.3291015625
       }
     }
   },
@@ -11439,8 +11439,8 @@ export const fishingLog = [
     "spot": {
       "id": 93,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 10.3291015625
       }
     }
   },
@@ -11454,8 +11454,8 @@ export const fishingLog = [
     "spot": {
       "id": 93,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 10.3291015625
       }
     }
   },
@@ -11469,8 +11469,8 @@ export const fishingLog = [
     "spot": {
       "id": 93,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 10.3291015625
       }
     }
   },
@@ -11484,8 +11484,8 @@ export const fishingLog = [
     "spot": {
       "id": 93,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 10.3291015625
       }
     }
   },
@@ -11499,8 +11499,8 @@ export const fishingLog = [
     "spot": {
       "id": 93,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.1474609375,
+        "y": 10.3291015625
       }
     }
   },
@@ -11514,8 +11514,8 @@ export const fishingLog = [
     "spot": {
       "id": 94,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.9892578125,
+        "y": 6.205078125
       }
     }
   },
@@ -11529,8 +11529,8 @@ export const fishingLog = [
     "spot": {
       "id": 94,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.9892578125,
+        "y": 6.205078125
       }
     }
   },
@@ -11544,8 +11544,8 @@ export const fishingLog = [
     "spot": {
       "id": 94,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.9892578125,
+        "y": 6.205078125
       }
     }
   },
@@ -11559,8 +11559,8 @@ export const fishingLog = [
     "spot": {
       "id": 94,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.9892578125,
+        "y": 6.205078125
       }
     }
   },
@@ -11574,8 +11574,8 @@ export const fishingLog = [
     "spot": {
       "id": 94,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.9892578125,
+        "y": 6.205078125
       }
     }
   },
@@ -11589,8 +11589,8 @@ export const fishingLog = [
     "spot": {
       "id": 94,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.9892578125,
+        "y": 6.205078125
       }
     }
   },
@@ -11604,8 +11604,8 @@ export const fishingLog = [
     "spot": {
       "id": 94,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.9892578125,
+        "y": 6.205078125
       }
     }
   },
@@ -11619,8 +11619,8 @@ export const fishingLog = [
     "spot": {
       "id": 94,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.9892578125,
+        "y": 6.205078125
       }
     }
   },
@@ -11634,8 +11634,8 @@ export const fishingLog = [
     "spot": {
       "id": 94,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.9892578125,
+        "y": 6.205078125
       }
     }
   },
@@ -11649,8 +11649,8 @@ export const fishingLog = [
     "spot": {
       "id": 94,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.9892578125,
+        "y": 6.205078125
       }
     }
   },
@@ -11664,8 +11664,8 @@ export const fishingLog = [
     "spot": {
       "id": 95,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.0537109375,
+        "y": 6.38525390625
       }
     }
   },
@@ -11679,8 +11679,8 @@ export const fishingLog = [
     "spot": {
       "id": 95,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.0537109375,
+        "y": 6.38525390625
       }
     }
   },
@@ -11694,8 +11694,8 @@ export const fishingLog = [
     "spot": {
       "id": 95,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.0537109375,
+        "y": 6.38525390625
       }
     }
   },
@@ -11709,8 +11709,8 @@ export const fishingLog = [
     "spot": {
       "id": 95,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.0537109375,
+        "y": 6.38525390625
       }
     }
   },
@@ -11724,8 +11724,8 @@ export const fishingLog = [
     "spot": {
       "id": 95,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.0537109375,
+        "y": 6.38525390625
       }
     }
   },
@@ -11739,8 +11739,8 @@ export const fishingLog = [
     "spot": {
       "id": 95,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.0537109375,
+        "y": 6.38525390625
       }
     }
   },
@@ -11754,8 +11754,8 @@ export const fishingLog = [
     "spot": {
       "id": 95,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.0537109375,
+        "y": 6.38525390625
       }
     }
   },
@@ -11769,8 +11769,8 @@ export const fishingLog = [
     "spot": {
       "id": 95,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.0537109375,
+        "y": 6.38525390625
       }
     }
   },
@@ -11784,8 +11784,8 @@ export const fishingLog = [
     "spot": {
       "id": 96,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.5478515625,
+        "y": 21.419921875
       }
     }
   },
@@ -11799,8 +11799,8 @@ export const fishingLog = [
     "spot": {
       "id": 96,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.5478515625,
+        "y": 21.419921875
       }
     }
   },
@@ -11814,8 +11814,8 @@ export const fishingLog = [
     "spot": {
       "id": 96,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.5478515625,
+        "y": 21.419921875
       }
     }
   },
@@ -11829,8 +11829,8 @@ export const fishingLog = [
     "spot": {
       "id": 96,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.5478515625,
+        "y": 21.419921875
       }
     }
   },
@@ -11844,8 +11844,8 @@ export const fishingLog = [
     "spot": {
       "id": 96,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.5478515625,
+        "y": 21.419921875
       }
     }
   },
@@ -11859,8 +11859,8 @@ export const fishingLog = [
     "spot": {
       "id": 96,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.5478515625,
+        "y": 21.419921875
       }
     }
   },
@@ -11874,8 +11874,8 @@ export const fishingLog = [
     "spot": {
       "id": 97,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.44580078125,
+        "y": 15.6943359375
       }
     }
   },
@@ -11889,8 +11889,8 @@ export const fishingLog = [
     "spot": {
       "id": 97,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.44580078125,
+        "y": 15.6943359375
       }
     }
   },
@@ -11904,8 +11904,8 @@ export const fishingLog = [
     "spot": {
       "id": 97,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.44580078125,
+        "y": 15.6943359375
       }
     }
   },
@@ -11919,8 +11919,8 @@ export const fishingLog = [
     "spot": {
       "id": 97,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.44580078125,
+        "y": 15.6943359375
       }
     }
   },
@@ -11934,8 +11934,8 @@ export const fishingLog = [
     "spot": {
       "id": 97,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.44580078125,
+        "y": 15.6943359375
       }
     }
   },
@@ -11949,8 +11949,8 @@ export const fishingLog = [
     "spot": {
       "id": 98,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.57177734375,
+        "y": 24.943359375
       }
     }
   },
@@ -11964,8 +11964,8 @@ export const fishingLog = [
     "spot": {
       "id": 98,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.57177734375,
+        "y": 24.943359375
       }
     }
   },
@@ -11979,8 +11979,8 @@ export const fishingLog = [
     "spot": {
       "id": 98,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.57177734375,
+        "y": 24.943359375
       }
     }
   },
@@ -11994,8 +11994,8 @@ export const fishingLog = [
     "spot": {
       "id": 98,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.57177734375,
+        "y": 24.943359375
       }
     }
   },
@@ -12009,8 +12009,8 @@ export const fishingLog = [
     "spot": {
       "id": 98,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.57177734375,
+        "y": 24.943359375
       }
     }
   },
@@ -12024,8 +12024,8 @@ export const fishingLog = [
     "spot": {
       "id": 98,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.57177734375,
+        "y": 24.943359375
       }
     }
   },
@@ -12039,8 +12039,8 @@ export const fishingLog = [
     "spot": {
       "id": 99,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.89453125,
+        "y": 11.330078125
       }
     }
   },
@@ -12054,8 +12054,8 @@ export const fishingLog = [
     "spot": {
       "id": 99,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.89453125,
+        "y": 11.330078125
       }
     }
   },
@@ -12069,8 +12069,8 @@ export const fishingLog = [
     "spot": {
       "id": 99,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.89453125,
+        "y": 11.330078125
       }
     }
   },
@@ -12084,8 +12084,8 @@ export const fishingLog = [
     "spot": {
       "id": 99,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.89453125,
+        "y": 11.330078125
       }
     }
   },
@@ -12099,8 +12099,8 @@ export const fishingLog = [
     "spot": {
       "id": 99,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.89453125,
+        "y": 11.330078125
       }
     }
   },
@@ -12114,8 +12114,8 @@ export const fishingLog = [
     "spot": {
       "id": 99,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.89453125,
+        "y": 11.330078125
       }
     }
   },
@@ -12129,8 +12129,8 @@ export const fishingLog = [
     "spot": {
       "id": 99,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.89453125,
+        "y": 11.330078125
       }
     }
   },
@@ -12144,8 +12144,8 @@ export const fishingLog = [
     "spot": {
       "id": 100,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.90771484375,
+        "y": 8.0068359375
       }
     }
   },
@@ -12159,8 +12159,8 @@ export const fishingLog = [
     "spot": {
       "id": 100,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.90771484375,
+        "y": 8.0068359375
       }
     }
   },
@@ -12174,8 +12174,8 @@ export const fishingLog = [
     "spot": {
       "id": 100,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.90771484375,
+        "y": 8.0068359375
       }
     }
   },
@@ -12189,8 +12189,8 @@ export const fishingLog = [
     "spot": {
       "id": 100,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.90771484375,
+        "y": 8.0068359375
       }
     }
   },
@@ -12204,8 +12204,8 @@ export const fishingLog = [
     "spot": {
       "id": 100,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.90771484375,
+        "y": 8.0068359375
       }
     }
   },
@@ -12219,8 +12219,8 @@ export const fishingLog = [
     "spot": {
       "id": 100,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.90771484375,
+        "y": 8.0068359375
       }
     }
   },
@@ -12234,8 +12234,8 @@ export const fishingLog = [
     "spot": {
       "id": 101,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 15.7744140625
       }
     }
   },
@@ -12249,8 +12249,8 @@ export const fishingLog = [
     "spot": {
       "id": 101,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 15.7744140625
       }
     }
   },
@@ -12264,8 +12264,8 @@ export const fishingLog = [
     "spot": {
       "id": 101,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 15.7744140625
       }
     }
   },
@@ -12279,8 +12279,8 @@ export const fishingLog = [
     "spot": {
       "id": 101,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 15.7744140625
       }
     }
   },
@@ -12294,8 +12294,8 @@ export const fishingLog = [
     "spot": {
       "id": 101,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 15.7744140625
       }
     }
   },
@@ -12309,8 +12309,8 @@ export const fishingLog = [
     "spot": {
       "id": 101,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 15.7744140625
       }
     }
   },
@@ -12324,8 +12324,8 @@ export const fishingLog = [
     "spot": {
       "id": 101,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.1357421875,
+        "y": 15.7744140625
       }
     }
   },
@@ -12339,8 +12339,8 @@ export const fishingLog = [
     "spot": {
       "id": 102,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.7724609375,
+        "y": 13.171875
       }
     }
   },
@@ -12354,8 +12354,8 @@ export const fishingLog = [
     "spot": {
       "id": 102,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.7724609375,
+        "y": 13.171875
       }
     }
   },
@@ -12369,8 +12369,8 @@ export const fishingLog = [
     "spot": {
       "id": 102,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.7724609375,
+        "y": 13.171875
       }
     }
   },
@@ -12384,8 +12384,8 @@ export const fishingLog = [
     "spot": {
       "id": 102,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.7724609375,
+        "y": 13.171875
       }
     }
   },
@@ -12399,8 +12399,8 @@ export const fishingLog = [
     "spot": {
       "id": 102,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.7724609375,
+        "y": 13.171875
       }
     }
   },
@@ -12414,8 +12414,8 @@ export const fishingLog = [
     "spot": {
       "id": 102,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.7724609375,
+        "y": 13.171875
       }
     }
   },
@@ -12429,8 +12429,8 @@ export const fishingLog = [
     "spot": {
       "id": 102,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.7724609375,
+        "y": 13.171875
       }
     }
   },
@@ -12444,8 +12444,8 @@ export const fishingLog = [
     "spot": {
       "id": 102,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.7724609375,
+        "y": 13.171875
       }
     }
   },
@@ -12459,8 +12459,8 @@ export const fishingLog = [
     "spot": {
       "id": 103,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 7.06591796875
       }
     }
   },
@@ -12474,8 +12474,8 @@ export const fishingLog = [
     "spot": {
       "id": 103,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 7.06591796875
       }
     }
   },
@@ -12489,8 +12489,8 @@ export const fishingLog = [
     "spot": {
       "id": 103,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 7.06591796875
       }
     }
   },
@@ -12504,8 +12504,8 @@ export const fishingLog = [
     "spot": {
       "id": 103,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 7.06591796875
       }
     }
   },
@@ -12519,8 +12519,8 @@ export const fishingLog = [
     "spot": {
       "id": 103,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 7.06591796875
       }
     }
   },
@@ -12534,8 +12534,8 @@ export const fishingLog = [
     "spot": {
       "id": 103,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.0166015625,
+        "y": 7.06591796875
       }
     }
   },
@@ -12549,8 +12549,8 @@ export const fishingLog = [
     "spot": {
       "id": 104,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12564,8 +12564,8 @@ export const fishingLog = [
     "spot": {
       "id": 104,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12579,8 +12579,8 @@ export const fishingLog = [
     "spot": {
       "id": 104,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12594,8 +12594,8 @@ export const fishingLog = [
     "spot": {
       "id": 104,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12609,8 +12609,8 @@ export const fishingLog = [
     "spot": {
       "id": 104,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12624,8 +12624,8 @@ export const fishingLog = [
     "spot": {
       "id": 104,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12639,8 +12639,8 @@ export const fishingLog = [
     "spot": {
       "id": 104,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12654,8 +12654,8 @@ export const fishingLog = [
     "spot": {
       "id": 104,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12669,8 +12669,8 @@ export const fishingLog = [
     "spot": {
       "id": 104,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12684,8 +12684,8 @@ export const fishingLog = [
     "spot": {
       "id": 105,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12699,8 +12699,8 @@ export const fishingLog = [
     "spot": {
       "id": 105,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12714,8 +12714,8 @@ export const fishingLog = [
     "spot": {
       "id": 105,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12729,8 +12729,8 @@ export const fishingLog = [
     "spot": {
       "id": 105,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12744,8 +12744,8 @@ export const fishingLog = [
     "spot": {
       "id": 105,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12759,8 +12759,8 @@ export const fishingLog = [
     "spot": {
       "id": 105,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12774,8 +12774,8 @@ export const fishingLog = [
     "spot": {
       "id": 105,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12789,8 +12789,8 @@ export const fishingLog = [
     "spot": {
       "id": 105,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12804,8 +12804,8 @@ export const fishingLog = [
     "spot": {
       "id": 105,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12819,8 +12819,8 @@ export const fishingLog = [
     "spot": {
       "id": 106,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12834,8 +12834,8 @@ export const fishingLog = [
     "spot": {
       "id": 106,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12849,8 +12849,8 @@ export const fishingLog = [
     "spot": {
       "id": 106,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12864,8 +12864,8 @@ export const fishingLog = [
     "spot": {
       "id": 106,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12879,8 +12879,8 @@ export const fishingLog = [
     "spot": {
       "id": 106,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12894,8 +12894,8 @@ export const fishingLog = [
     "spot": {
       "id": 106,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12909,8 +12909,8 @@ export const fishingLog = [
     "spot": {
       "id": 106,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12924,8 +12924,8 @@ export const fishingLog = [
     "spot": {
       "id": 106,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12939,8 +12939,8 @@ export const fishingLog = [
     "spot": {
       "id": 106,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 11.009765625
       }
     }
   },
@@ -12954,8 +12954,8 @@ export const fishingLog = [
     "spot": {
       "id": 107,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.6357421875,
+        "y": 22.8212890625
       }
     }
   },
@@ -12969,8 +12969,8 @@ export const fishingLog = [
     "spot": {
       "id": 107,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.6357421875,
+        "y": 22.8212890625
       }
     }
   },
@@ -12984,8 +12984,8 @@ export const fishingLog = [
     "spot": {
       "id": 107,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.6357421875,
+        "y": 22.8212890625
       }
     }
   },
@@ -12999,8 +12999,8 @@ export const fishingLog = [
     "spot": {
       "id": 107,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.6357421875,
+        "y": 22.8212890625
       }
     }
   },
@@ -13014,8 +13014,8 @@ export const fishingLog = [
     "spot": {
       "id": 107,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.6357421875,
+        "y": 22.8212890625
       }
     }
   },
@@ -13029,8 +13029,8 @@ export const fishingLog = [
     "spot": {
       "id": 107,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.6357421875,
+        "y": 22.8212890625
       }
     }
   },
@@ -13044,8 +13044,8 @@ export const fishingLog = [
     "spot": {
       "id": 107,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.6357421875,
+        "y": 22.8212890625
       }
     }
   },
@@ -13059,8 +13059,8 @@ export const fishingLog = [
     "spot": {
       "id": 107,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.6357421875,
+        "y": 22.8212890625
       }
     }
   },
@@ -13074,8 +13074,8 @@ export const fishingLog = [
     "spot": {
       "id": 107,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.6357421875,
+        "y": 22.8212890625
       }
     }
   },
@@ -13089,8 +13089,8 @@ export const fishingLog = [
     "spot": {
       "id": 107,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.6357421875,
+        "y": 22.8212890625
       }
     }
   },
@@ -13104,8 +13104,8 @@ export const fishingLog = [
     "spot": {
       "id": 108,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.2353515625,
+        "y": 24.0224609375
       }
     }
   },
@@ -13119,8 +13119,8 @@ export const fishingLog = [
     "spot": {
       "id": 108,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.2353515625,
+        "y": 24.0224609375
       }
     }
   },
@@ -13134,8 +13134,8 @@ export const fishingLog = [
     "spot": {
       "id": 108,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.2353515625,
+        "y": 24.0224609375
       }
     }
   },
@@ -13149,8 +13149,8 @@ export const fishingLog = [
     "spot": {
       "id": 108,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.2353515625,
+        "y": 24.0224609375
       }
     }
   },
@@ -13164,8 +13164,8 @@ export const fishingLog = [
     "spot": {
       "id": 108,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.2353515625,
+        "y": 24.0224609375
       }
     }
   },
@@ -13179,8 +13179,8 @@ export const fishingLog = [
     "spot": {
       "id": 108,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.2353515625,
+        "y": 24.0224609375
       }
     }
   },
@@ -13194,8 +13194,8 @@ export const fishingLog = [
     "spot": {
       "id": 108,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.2353515625,
+        "y": 24.0224609375
       }
     }
   },
@@ -13209,8 +13209,8 @@ export const fishingLog = [
     "spot": {
       "id": 108,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.2353515625,
+        "y": 24.0224609375
       }
     }
   },
@@ -13224,8 +13224,8 @@ export const fishingLog = [
     "spot": {
       "id": 108,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.2353515625,
+        "y": 24.0224609375
       }
     }
   },
@@ -13239,8 +13239,8 @@ export const fishingLog = [
     "spot": {
       "id": 108,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.2353515625,
+        "y": 24.0224609375
       }
     }
   },
@@ -13254,8 +13254,8 @@ export const fishingLog = [
     "spot": {
       "id": 109,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.86266447368421,
+        "y": 27.552220394736846
       }
     }
   },
@@ -13269,8 +13269,8 @@ export const fishingLog = [
     "spot": {
       "id": 109,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.86266447368421,
+        "y": 27.552220394736846
       }
     }
   },
@@ -13284,8 +13284,8 @@ export const fishingLog = [
     "spot": {
       "id": 109,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.86266447368421,
+        "y": 27.552220394736846
       }
     }
   },
@@ -13299,8 +13299,8 @@ export const fishingLog = [
     "spot": {
       "id": 109,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.86266447368421,
+        "y": 27.552220394736846
       }
     }
   },
@@ -13314,8 +13314,8 @@ export const fishingLog = [
     "spot": {
       "id": 110,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.56003289473684,
+        "y": 27.383634868421055
       }
     }
   },
@@ -13329,8 +13329,8 @@ export const fishingLog = [
     "spot": {
       "id": 110,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.56003289473684,
+        "y": 27.383634868421055
       }
     }
   },
@@ -13344,8 +13344,8 @@ export const fishingLog = [
     "spot": {
       "id": 110,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.56003289473684,
+        "y": 27.383634868421055
       }
     }
   },
@@ -13359,8 +13359,8 @@ export const fishingLog = [
     "spot": {
       "id": 110,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.56003289473684,
+        "y": 27.383634868421055
       }
     }
   },
@@ -13374,8 +13374,8 @@ export const fishingLog = [
     "spot": {
       "id": 110,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.56003289473684,
+        "y": 27.383634868421055
       }
     }
   },
@@ -13389,8 +13389,8 @@ export const fishingLog = [
     "spot": {
       "id": 110,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.56003289473684,
+        "y": 27.383634868421055
       }
     }
   },
@@ -13404,8 +13404,8 @@ export const fishingLog = [
     "spot": {
       "id": 111,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.43729440789474,
+        "y": 17.900699013157897
       }
     }
   },
@@ -13419,8 +13419,8 @@ export const fishingLog = [
     "spot": {
       "id": 111,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.43729440789474,
+        "y": 17.900699013157897
       }
     }
   },
@@ -13434,8 +13434,8 @@ export const fishingLog = [
     "spot": {
       "id": 111,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.43729440789474,
+        "y": 17.900699013157897
       }
     }
   },
@@ -13449,8 +13449,8 @@ export const fishingLog = [
     "spot": {
       "id": 111,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.43729440789474,
+        "y": 17.900699013157897
       }
     }
   },
@@ -13464,8 +13464,8 @@ export const fishingLog = [
     "spot": {
       "id": 111,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.43729440789474,
+        "y": 17.900699013157897
       }
     }
   },
@@ -13479,8 +13479,8 @@ export const fishingLog = [
     "spot": {
       "id": 111,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.43729440789474,
+        "y": 17.900699013157897
       }
     }
   },
@@ -13494,8 +13494,8 @@ export const fishingLog = [
     "spot": {
       "id": 111,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.43729440789474,
+        "y": 17.900699013157897
       }
     }
   },
@@ -13509,8 +13509,8 @@ export const fishingLog = [
     "spot": {
       "id": 112,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.78227796052632,
+        "y": 5.97327302631579
       }
     }
   },
@@ -13524,8 +13524,8 @@ export const fishingLog = [
     "spot": {
       "id": 112,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.78227796052632,
+        "y": 5.97327302631579
       }
     }
   },
@@ -13539,8 +13539,8 @@ export const fishingLog = [
     "spot": {
       "id": 112,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.78227796052632,
+        "y": 5.97327302631579
       }
     }
   },
@@ -13554,8 +13554,8 @@ export const fishingLog = [
     "spot": {
       "id": 112,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.78227796052632,
+        "y": 5.97327302631579
       }
     }
   },
@@ -13569,8 +13569,8 @@ export const fishingLog = [
     "spot": {
       "id": 112,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.78227796052632,
+        "y": 5.97327302631579
       }
     }
   },
@@ -13584,8 +13584,8 @@ export const fishingLog = [
     "spot": {
       "id": 112,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.78227796052632,
+        "y": 5.97327302631579
       }
     }
   },
@@ -13599,8 +13599,8 @@ export const fishingLog = [
     "spot": {
       "id": 112,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.78227796052632,
+        "y": 5.97327302631579
       }
     }
   },
@@ -13614,8 +13614,8 @@ export const fishingLog = [
     "spot": {
       "id": 112,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.78227796052632,
+        "y": 5.97327302631579
       }
     }
   },
@@ -13629,8 +13629,8 @@ export const fishingLog = [
     "spot": {
       "id": 112,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.78227796052632,
+        "y": 5.97327302631579
       }
     }
   },
@@ -13644,8 +13644,8 @@ export const fishingLog = [
     "spot": {
       "id": 113,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.71278782894737,
+        "y": 9.724300986842106
       }
     }
   },
@@ -13659,8 +13659,8 @@ export const fishingLog = [
     "spot": {
       "id": 113,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.71278782894737,
+        "y": 9.724300986842106
       }
     }
   },
@@ -13674,8 +13674,8 @@ export const fishingLog = [
     "spot": {
       "id": 113,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.71278782894737,
+        "y": 9.724300986842106
       }
     }
   },
@@ -13689,8 +13689,8 @@ export const fishingLog = [
     "spot": {
       "id": 113,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.71278782894737,
+        "y": 9.724300986842106
       }
     }
   },
@@ -13704,8 +13704,8 @@ export const fishingLog = [
     "spot": {
       "id": 113,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.71278782894737,
+        "y": 9.724300986842106
       }
     }
   },
@@ -13719,8 +13719,8 @@ export const fishingLog = [
     "spot": {
       "id": 114,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.778166118421055,
+        "y": 11.325863486842106
       }
     }
   },
@@ -13734,8 +13734,8 @@ export const fishingLog = [
     "spot": {
       "id": 114,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.778166118421055,
+        "y": 11.325863486842106
       }
     }
   },
@@ -13749,8 +13749,8 @@ export const fishingLog = [
     "spot": {
       "id": 114,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.778166118421055,
+        "y": 11.325863486842106
       }
     }
   },
@@ -13764,8 +13764,8 @@ export const fishingLog = [
     "spot": {
       "id": 114,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.778166118421055,
+        "y": 11.325863486842106
       }
     }
   },
@@ -13779,8 +13779,8 @@ export const fishingLog = [
     "spot": {
       "id": 114,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.778166118421055,
+        "y": 11.325863486842106
       }
     }
   },
@@ -13794,8 +13794,8 @@ export const fishingLog = [
     "spot": {
       "id": 114,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.778166118421055,
+        "y": 11.325863486842106
       }
     }
   },
@@ -13809,8 +13809,8 @@ export const fishingLog = [
     "spot": {
       "id": 114,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.778166118421055,
+        "y": 11.325863486842106
       }
     }
   },
@@ -13824,8 +13824,8 @@ export const fishingLog = [
     "spot": {
       "id": 114,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.778166118421055,
+        "y": 11.325863486842106
       }
     }
   },
@@ -13839,8 +13839,8 @@ export const fishingLog = [
     "spot": {
       "id": 114,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.778166118421055,
+        "y": 11.325863486842106
       }
     }
   },
@@ -13854,8 +13854,8 @@ export const fishingLog = [
     "spot": {
       "id": 114,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.778166118421055,
+        "y": 11.325863486842106
       }
     }
   },
@@ -13869,8 +13869,8 @@ export const fishingLog = [
     "spot": {
       "id": 115,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.065378289473685,
+        "y": 15.709087171052634
       }
     }
   },
@@ -13884,8 +13884,8 @@ export const fishingLog = [
     "spot": {
       "id": 115,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.065378289473685,
+        "y": 15.709087171052634
       }
     }
   },
@@ -13899,8 +13899,8 @@ export const fishingLog = [
     "spot": {
       "id": 115,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.065378289473685,
+        "y": 15.709087171052634
       }
     }
   },
@@ -13914,8 +13914,8 @@ export const fishingLog = [
     "spot": {
       "id": 115,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.065378289473685,
+        "y": 15.709087171052634
       }
     }
   },
@@ -13929,8 +13929,8 @@ export const fishingLog = [
     "spot": {
       "id": 115,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.065378289473685,
+        "y": 15.709087171052634
       }
     }
   },
@@ -13944,8 +13944,8 @@ export const fishingLog = [
     "spot": {
       "id": 115,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.065378289473685,
+        "y": 15.709087171052634
       }
     }
   },
@@ -13959,8 +13959,8 @@ export const fishingLog = [
     "spot": {
       "id": 115,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.065378289473685,
+        "y": 15.709087171052634
       }
     }
   },
@@ -13974,8 +13974,8 @@ export const fishingLog = [
     "spot": {
       "id": 115,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.065378289473685,
+        "y": 15.709087171052634
       }
     }
   },
@@ -13989,8 +13989,8 @@ export const fishingLog = [
     "spot": {
       "id": 116,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.264597039473685,
+        "y": 8.839226973684212
       }
     }
   },
@@ -14004,8 +14004,8 @@ export const fishingLog = [
     "spot": {
       "id": 116,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.264597039473685,
+        "y": 8.839226973684212
       }
     }
   },
@@ -14019,8 +14019,8 @@ export const fishingLog = [
     "spot": {
       "id": 116,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.264597039473685,
+        "y": 8.839226973684212
       }
     }
   },
@@ -14034,8 +14034,8 @@ export const fishingLog = [
     "spot": {
       "id": 116,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.264597039473685,
+        "y": 8.839226973684212
       }
     }
   },
@@ -14049,8 +14049,8 @@ export const fishingLog = [
     "spot": {
       "id": 116,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.264597039473685,
+        "y": 8.839226973684212
       }
     }
   },
@@ -14064,8 +14064,8 @@ export const fishingLog = [
     "spot": {
       "id": 116,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.264597039473685,
+        "y": 8.839226973684212
       }
     }
   },
@@ -14079,8 +14079,8 @@ export const fishingLog = [
     "spot": {
       "id": 116,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.264597039473685,
+        "y": 8.839226973684212
       }
     }
   },
@@ -14094,8 +14094,8 @@ export const fishingLog = [
     "spot": {
       "id": 116,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.264597039473685,
+        "y": 8.839226973684212
       }
     }
   },
@@ -14109,8 +14109,8 @@ export const fishingLog = [
     "spot": {
       "id": 117,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.387541118421055,
+        "y": 10.103618421052632
       }
     }
   },
@@ -14124,8 +14124,8 @@ export const fishingLog = [
     "spot": {
       "id": 117,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.387541118421055,
+        "y": 10.103618421052632
       }
     }
   },
@@ -14139,8 +14139,8 @@ export const fishingLog = [
     "spot": {
       "id": 117,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.387541118421055,
+        "y": 10.103618421052632
       }
     }
   },
@@ -14154,8 +14154,8 @@ export const fishingLog = [
     "spot": {
       "id": 117,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.387541118421055,
+        "y": 10.103618421052632
       }
     }
   },
@@ -14169,8 +14169,8 @@ export const fishingLog = [
     "spot": {
       "id": 117,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.387541118421055,
+        "y": 10.103618421052632
       }
     }
   },
@@ -14184,8 +14184,8 @@ export const fishingLog = [
     "spot": {
       "id": 117,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.387541118421055,
+        "y": 10.103618421052632
       }
     }
   },
@@ -14199,8 +14199,8 @@ export const fishingLog = [
     "spot": {
       "id": 117,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.387541118421055,
+        "y": 10.103618421052632
       }
     }
   },
@@ -14214,8 +14214,8 @@ export const fishingLog = [
     "spot": {
       "id": 117,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.387541118421055,
+        "y": 10.103618421052632
       }
     }
   },
@@ -14229,8 +14229,8 @@ export const fishingLog = [
     "spot": {
       "id": 118,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.628906250000004,
+        "y": 14.824013157894738
       }
     }
   },
@@ -14244,8 +14244,8 @@ export const fishingLog = [
     "spot": {
       "id": 118,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.628906250000004,
+        "y": 14.824013157894738
       }
     }
   },
@@ -14259,8 +14259,8 @@ export const fishingLog = [
     "spot": {
       "id": 118,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.628906250000004,
+        "y": 14.824013157894738
       }
     }
   },
@@ -14274,8 +14274,8 @@ export const fishingLog = [
     "spot": {
       "id": 118,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.628906250000004,
+        "y": 14.824013157894738
       }
     }
   },
@@ -14289,8 +14289,8 @@ export const fishingLog = [
     "spot": {
       "id": 118,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.628906250000004,
+        "y": 14.824013157894738
       }
     }
   },
@@ -14304,8 +14304,8 @@ export const fishingLog = [
     "spot": {
       "id": 118,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.628906250000004,
+        "y": 14.824013157894738
       }
     }
   },
@@ -14319,8 +14319,8 @@ export const fishingLog = [
     "spot": {
       "id": 118,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.628906250000004,
+        "y": 14.824013157894738
       }
     }
   },
@@ -14334,8 +14334,8 @@ export const fishingLog = [
     "spot": {
       "id": 119,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.276315789473685,
+        "y": 25.824218750000004
       }
     }
   },
@@ -14349,8 +14349,8 @@ export const fishingLog = [
     "spot": {
       "id": 119,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.276315789473685,
+        "y": 25.824218750000004
       }
     }
   },
@@ -14364,8 +14364,8 @@ export const fishingLog = [
     "spot": {
       "id": 119,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.276315789473685,
+        "y": 25.824218750000004
       }
     }
   },
@@ -14379,8 +14379,8 @@ export const fishingLog = [
     "spot": {
       "id": 119,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.276315789473685,
+        "y": 25.824218750000004
       }
     }
   },
@@ -14394,8 +14394,8 @@ export const fishingLog = [
     "spot": {
       "id": 119,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.276315789473685,
+        "y": 25.824218750000004
       }
     }
   },
@@ -14409,8 +14409,8 @@ export const fishingLog = [
     "spot": {
       "id": 119,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.276315789473685,
+        "y": 25.824218750000004
       }
     }
   },
@@ -14424,8 +14424,8 @@ export const fishingLog = [
     "spot": {
       "id": 119,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.276315789473685,
+        "y": 25.824218750000004
       }
     }
   },
@@ -14439,8 +14439,8 @@ export const fishingLog = [
     "spot": {
       "id": 120,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.619346217105267,
+        "y": 6.057565789473685
       }
     }
   },
@@ -14454,8 +14454,8 @@ export const fishingLog = [
     "spot": {
       "id": 120,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.619346217105267,
+        "y": 6.057565789473685
       }
     }
   },
@@ -14469,8 +14469,8 @@ export const fishingLog = [
     "spot": {
       "id": 120,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.619346217105267,
+        "y": 6.057565789473685
       }
     }
   },
@@ -14484,8 +14484,8 @@ export const fishingLog = [
     "spot": {
       "id": 120,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.619346217105267,
+        "y": 6.057565789473685
       }
     }
   },
@@ -14499,8 +14499,8 @@ export const fishingLog = [
     "spot": {
       "id": 120,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.619346217105267,
+        "y": 6.057565789473685
       }
     }
   },
@@ -14514,8 +14514,8 @@ export const fishingLog = [
     "spot": {
       "id": 120,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.619346217105267,
+        "y": 6.057565789473685
       }
     }
   },
@@ -14529,8 +14529,8 @@ export const fishingLog = [
     "spot": {
       "id": 120,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.619346217105267,
+        "y": 6.057565789473685
       }
     }
   },
@@ -14544,8 +14544,8 @@ export const fishingLog = [
     "spot": {
       "id": 121,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.138157894736842,
+        "y": 13.391036184210527
       }
     }
   },
@@ -14559,8 +14559,8 @@ export const fishingLog = [
     "spot": {
       "id": 121,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.138157894736842,
+        "y": 13.391036184210527
       }
     }
   },
@@ -14574,8 +14574,8 @@ export const fishingLog = [
     "spot": {
       "id": 121,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.138157894736842,
+        "y": 13.391036184210527
       }
     }
   },
@@ -14589,8 +14589,8 @@ export const fishingLog = [
     "spot": {
       "id": 121,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.138157894736842,
+        "y": 13.391036184210527
       }
     }
   },
@@ -14604,8 +14604,8 @@ export const fishingLog = [
     "spot": {
       "id": 121,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.138157894736842,
+        "y": 13.391036184210527
       }
     }
   },
@@ -14619,8 +14619,8 @@ export const fishingLog = [
     "spot": {
       "id": 121,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.138157894736842,
+        "y": 13.391036184210527
       }
     }
   },
@@ -14634,8 +14634,8 @@ export const fishingLog = [
     "spot": {
       "id": 122,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.64000822368421,
+        "y": 7.5326891447368425
       }
     }
   },
@@ -14649,8 +14649,8 @@ export const fishingLog = [
     "spot": {
       "id": 122,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.64000822368421,
+        "y": 7.5326891447368425
       }
     }
   },
@@ -14664,8 +14664,8 @@ export const fishingLog = [
     "spot": {
       "id": 122,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.64000822368421,
+        "y": 7.5326891447368425
       }
     }
   },
@@ -14679,8 +14679,8 @@ export const fishingLog = [
     "spot": {
       "id": 122,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.64000822368421,
+        "y": 7.5326891447368425
       }
     }
   },
@@ -14694,8 +14694,8 @@ export const fishingLog = [
     "spot": {
       "id": 122,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.64000822368421,
+        "y": 7.5326891447368425
       }
     }
   },
@@ -14709,8 +14709,8 @@ export const fishingLog = [
     "spot": {
       "id": 122,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.64000822368421,
+        "y": 7.5326891447368425
       }
     }
   },
@@ -14724,8 +14724,8 @@ export const fishingLog = [
     "spot": {
       "id": 123,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.46011513157895,
+        "y": 10.820106907894738
       }
     }
   },
@@ -14739,8 +14739,8 @@ export const fishingLog = [
     "spot": {
       "id": 123,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.46011513157895,
+        "y": 10.820106907894738
       }
     }
   },
@@ -14754,8 +14754,8 @@ export const fishingLog = [
     "spot": {
       "id": 123,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.46011513157895,
+        "y": 10.820106907894738
       }
     }
   },
@@ -14769,8 +14769,8 @@ export const fishingLog = [
     "spot": {
       "id": 123,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.46011513157895,
+        "y": 10.820106907894738
       }
     }
   },
@@ -14784,8 +14784,8 @@ export const fishingLog = [
     "spot": {
       "id": 123,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.46011513157895,
+        "y": 10.820106907894738
       }
     }
   },
@@ -14799,8 +14799,8 @@ export const fishingLog = [
     "spot": {
       "id": 123,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.46011513157895,
+        "y": 10.820106907894738
       }
     }
   },
@@ -14814,8 +14814,8 @@ export const fishingLog = [
     "spot": {
       "id": 123,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.46011513157895,
+        "y": 10.820106907894738
       }
     }
   },
@@ -14829,8 +14829,8 @@ export const fishingLog = [
     "spot": {
       "id": 124,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 5.425370065789474
       }
     }
   },
@@ -14844,8 +14844,8 @@ export const fishingLog = [
     "spot": {
       "id": 124,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 5.425370065789474
       }
     }
   },
@@ -14859,8 +14859,8 @@ export const fishingLog = [
     "spot": {
       "id": 124,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 5.425370065789474
       }
     }
   },
@@ -14874,8 +14874,8 @@ export const fishingLog = [
     "spot": {
       "id": 124,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 5.425370065789474
       }
     }
   },
@@ -14889,8 +14889,8 @@ export const fishingLog = [
     "spot": {
       "id": 124,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 5.425370065789474
       }
     }
   },
@@ -14904,8 +14904,8 @@ export const fishingLog = [
     "spot": {
       "id": 124,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 5.425370065789474
       }
     }
   },
@@ -14919,8 +14919,8 @@ export const fishingLog = [
     "spot": {
       "id": 124,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 5.425370065789474
       }
     }
   },
@@ -14934,8 +14934,8 @@ export const fishingLog = [
     "spot": {
       "id": 124,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 5.425370065789474
       }
     }
   },
@@ -14949,8 +14949,8 @@ export const fishingLog = [
     "spot": {
       "id": 125,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.16899671052632,
+        "y": 23.548314144736846
       }
     }
   },
@@ -14964,8 +14964,8 @@ export const fishingLog = [
     "spot": {
       "id": 125,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.16899671052632,
+        "y": 23.548314144736846
       }
     }
   },
@@ -14979,8 +14979,8 @@ export const fishingLog = [
     "spot": {
       "id": 125,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.16899671052632,
+        "y": 23.548314144736846
       }
     }
   },
@@ -14994,8 +14994,8 @@ export const fishingLog = [
     "spot": {
       "id": 125,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.16899671052632,
+        "y": 23.548314144736846
       }
     }
   },
@@ -15009,8 +15009,8 @@ export const fishingLog = [
     "spot": {
       "id": 125,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.16899671052632,
+        "y": 23.548314144736846
       }
     }
   },
@@ -15024,8 +15024,8 @@ export const fishingLog = [
     "spot": {
       "id": 125,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.16899671052632,
+        "y": 23.548314144736846
       }
     }
   },
@@ -15039,8 +15039,8 @@ export const fishingLog = [
     "spot": {
       "id": 125,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.16899671052632,
+        "y": 23.548314144736846
       }
     }
   },
@@ -15054,8 +15054,8 @@ export const fishingLog = [
     "spot": {
       "id": 125,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.16899671052632,
+        "y": 23.548314144736846
       }
     }
   },
@@ -15069,8 +15069,8 @@ export const fishingLog = [
     "spot": {
       "id": 126,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.325863486842106,
+        "y": 27.552220394736846
       }
     }
   },
@@ -15084,8 +15084,8 @@ export const fishingLog = [
     "spot": {
       "id": 126,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.325863486842106,
+        "y": 27.552220394736846
       }
     }
   },
@@ -15099,8 +15099,8 @@ export const fishingLog = [
     "spot": {
       "id": 126,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.325863486842106,
+        "y": 27.552220394736846
       }
     }
   },
@@ -15114,8 +15114,8 @@ export const fishingLog = [
     "spot": {
       "id": 126,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.325863486842106,
+        "y": 27.552220394736846
       }
     }
   },
@@ -15129,8 +15129,8 @@ export const fishingLog = [
     "spot": {
       "id": 126,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.325863486842106,
+        "y": 27.552220394736846
       }
     }
   },
@@ -15144,8 +15144,8 @@ export const fishingLog = [
     "spot": {
       "id": 126,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.325863486842106,
+        "y": 27.552220394736846
       }
     }
   },
@@ -15159,8 +15159,8 @@ export const fishingLog = [
     "spot": {
       "id": 126,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.325863486842106,
+        "y": 27.552220394736846
       }
     }
   },
@@ -15174,8 +15174,8 @@ export const fishingLog = [
     "spot": {
       "id": 126,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.325863486842106,
+        "y": 27.552220394736846
       }
     }
   },
@@ -15189,8 +15189,8 @@ export const fishingLog = [
     "spot": {
       "id": 127,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.958264802631582,
+        "y": 36.36081414473684
       }
     }
   },
@@ -15204,8 +15204,8 @@ export const fishingLog = [
     "spot": {
       "id": 127,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.958264802631582,
+        "y": 36.36081414473684
       }
     }
   },
@@ -15219,8 +15219,8 @@ export const fishingLog = [
     "spot": {
       "id": 127,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.958264802631582,
+        "y": 36.36081414473684
       }
     }
   },
@@ -15234,8 +15234,8 @@ export const fishingLog = [
     "spot": {
       "id": 127,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.958264802631582,
+        "y": 36.36081414473684
       }
     }
   },
@@ -15249,8 +15249,8 @@ export const fishingLog = [
     "spot": {
       "id": 127,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.958264802631582,
+        "y": 36.36081414473684
       }
     }
   },
@@ -15264,8 +15264,8 @@ export const fishingLog = [
     "spot": {
       "id": 127,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.958264802631582,
+        "y": 36.36081414473684
       }
     }
   },
@@ -15279,8 +15279,8 @@ export const fishingLog = [
     "spot": {
       "id": 127,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.958264802631582,
+        "y": 36.36081414473684
       }
     }
   },
@@ -15294,8 +15294,8 @@ export const fishingLog = [
     "spot": {
       "id": 127,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.958264802631582,
+        "y": 36.36081414473684
       }
     }
   },
@@ -15309,8 +15309,8 @@ export const fishingLog = [
     "spot": {
       "id": 127,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.958264802631582,
+        "y": 36.36081414473684
       }
     }
   },
@@ -15324,8 +15324,8 @@ export const fishingLog = [
     "spot": {
       "id": 127,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.958264802631582,
+        "y": 36.36081414473684
       }
     }
   },
@@ -15339,8 +15339,8 @@ export const fishingLog = [
     "spot": {
       "id": 128,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625000004,
+        "y": 25.023437500000004
       }
     }
   },
@@ -15354,8 +15354,8 @@ export const fishingLog = [
     "spot": {
       "id": 128,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625000004,
+        "y": 25.023437500000004
       }
     }
   },
@@ -15369,8 +15369,8 @@ export const fishingLog = [
     "spot": {
       "id": 128,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625000004,
+        "y": 25.023437500000004
       }
     }
   },
@@ -15384,8 +15384,8 @@ export const fishingLog = [
     "spot": {
       "id": 128,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625000004,
+        "y": 25.023437500000004
       }
     }
   },
@@ -15399,8 +15399,8 @@ export const fishingLog = [
     "spot": {
       "id": 128,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625000004,
+        "y": 25.023437500000004
       }
     }
   },
@@ -15414,8 +15414,8 @@ export const fishingLog = [
     "spot": {
       "id": 128,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625000004,
+        "y": 25.023437500000004
       }
     }
   },
@@ -15429,8 +15429,8 @@ export const fishingLog = [
     "spot": {
       "id": 128,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625000004,
+        "y": 25.023437500000004
       }
     }
   },
@@ -15444,8 +15444,8 @@ export const fishingLog = [
     "spot": {
       "id": 128,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625000004,
+        "y": 25.023437500000004
       }
     }
   },
@@ -15459,8 +15459,8 @@ export const fishingLog = [
     "spot": {
       "id": 128,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625000004,
+        "y": 25.023437500000004
       }
     }
   },
@@ -15474,8 +15474,8 @@ export const fishingLog = [
     "spot": {
       "id": 129,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.82442434210527,
+        "y": 30.50246710526316
       }
     }
   },
@@ -15489,8 +15489,8 @@ export const fishingLog = [
     "spot": {
       "id": 129,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.82442434210527,
+        "y": 30.50246710526316
       }
     }
   },
@@ -15504,8 +15504,8 @@ export const fishingLog = [
     "spot": {
       "id": 129,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.82442434210527,
+        "y": 30.50246710526316
       }
     }
   },
@@ -15519,8 +15519,8 @@ export const fishingLog = [
     "spot": {
       "id": 129,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.82442434210527,
+        "y": 30.50246710526316
       }
     }
   },
@@ -15534,8 +15534,8 @@ export const fishingLog = [
     "spot": {
       "id": 129,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.82442434210527,
+        "y": 30.50246710526316
       }
     }
   },
@@ -15549,8 +15549,8 @@ export const fishingLog = [
     "spot": {
       "id": 130,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.754934210526317,
+        "y": 34.37993421052632
       }
     }
   },
@@ -15564,8 +15564,8 @@ export const fishingLog = [
     "spot": {
       "id": 130,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.754934210526317,
+        "y": 34.37993421052632
       }
     }
   },
@@ -15579,8 +15579,8 @@ export const fishingLog = [
     "spot": {
       "id": 131,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.176398026315791,
+        "y": 8.080592105263158
       }
     }
   },
@@ -15594,8 +15594,8 @@ export const fishingLog = [
     "spot": {
       "id": 131,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.176398026315791,
+        "y": 8.080592105263158
       }
     }
   },
@@ -15609,8 +15609,8 @@ export const fishingLog = [
     "spot": {
       "id": 131,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.176398026315791,
+        "y": 8.080592105263158
       }
     }
   },
@@ -15624,8 +15624,8 @@ export const fishingLog = [
     "spot": {
       "id": 131,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.176398026315791,
+        "y": 8.080592105263158
       }
     }
   },
@@ -15639,8 +15639,8 @@ export const fishingLog = [
     "spot": {
       "id": 131,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.176398026315791,
+        "y": 8.080592105263158
       }
     }
   },
@@ -15654,8 +15654,8 @@ export const fishingLog = [
     "spot": {
       "id": 131,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.176398026315791,
+        "y": 8.080592105263158
       }
     }
   },
@@ -15669,8 +15669,8 @@ export const fishingLog = [
     "spot": {
       "id": 131,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.176398026315791,
+        "y": 8.080592105263158
       }
     }
   },
@@ -15684,8 +15684,8 @@ export const fishingLog = [
     "spot": {
       "id": 132,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.70168585526316,
+        "y": 25.360608552631582
       }
     }
   },
@@ -15699,8 +15699,8 @@ export const fishingLog = [
     "spot": {
       "id": 132,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.70168585526316,
+        "y": 25.360608552631582
       }
     }
   },
@@ -15714,8 +15714,8 @@ export const fishingLog = [
     "spot": {
       "id": 132,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.70168585526316,
+        "y": 25.360608552631582
       }
     }
   },
@@ -15729,8 +15729,8 @@ export const fishingLog = [
     "spot": {
       "id": 132,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.70168585526316,
+        "y": 25.360608552631582
       }
     }
   },
@@ -15744,8 +15744,8 @@ export const fishingLog = [
     "spot": {
       "id": 132,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.70168585526316,
+        "y": 25.360608552631582
       }
     }
   },
@@ -15759,8 +15759,8 @@ export const fishingLog = [
     "spot": {
       "id": 132,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.70168585526316,
+        "y": 25.360608552631582
       }
     }
   },
@@ -15774,8 +15774,8 @@ export const fishingLog = [
     "spot": {
       "id": 132,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.70168585526316,
+        "y": 25.360608552631582
       }
     }
   },
@@ -15789,8 +15789,8 @@ export const fishingLog = [
     "spot": {
       "id": 132,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.70168585526316,
+        "y": 25.360608552631582
       }
     }
   },
@@ -15804,8 +15804,8 @@ export const fishingLog = [
     "spot": {
       "id": 133,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.448601973684212,
+        "y": 40.36472039473685
       }
     }
   },
@@ -15819,8 +15819,8 @@ export const fishingLog = [
     "spot": {
       "id": 133,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.448601973684212,
+        "y": 40.36472039473685
       }
     }
   },
@@ -15834,8 +15834,8 @@ export const fishingLog = [
     "spot": {
       "id": 133,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.448601973684212,
+        "y": 40.36472039473685
       }
     }
   },
@@ -15849,8 +15849,8 @@ export const fishingLog = [
     "spot": {
       "id": 133,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.448601973684212,
+        "y": 40.36472039473685
       }
     }
   },
@@ -15864,8 +15864,8 @@ export const fishingLog = [
     "spot": {
       "id": 133,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.448601973684212,
+        "y": 40.36472039473685
       }
     }
   },
@@ -15879,8 +15879,8 @@ export const fishingLog = [
     "spot": {
       "id": 133,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.448601973684212,
+        "y": 40.36472039473685
       }
     }
   },
@@ -15894,8 +15894,8 @@ export const fishingLog = [
     "spot": {
       "id": 133,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.448601973684212,
+        "y": 40.36472039473685
       }
     }
   },
@@ -15909,8 +15909,8 @@ export const fishingLog = [
     "spot": {
       "id": 133,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 18.448601973684212,
+        "y": 40.36472039473685
       }
     }
   },
@@ -15924,8 +15924,8 @@ export const fishingLog = [
     "spot": {
       "id": 134,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.26089638157895,
+        "y": 6.394736842105264
       }
     }
   },
@@ -15939,8 +15939,8 @@ export const fishingLog = [
     "spot": {
       "id": 134,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.26089638157895,
+        "y": 6.394736842105264
       }
     }
   },
@@ -15954,8 +15954,8 @@ export const fishingLog = [
     "spot": {
       "id": 134,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.26089638157895,
+        "y": 6.394736842105264
       }
     }
   },
@@ -15969,8 +15969,8 @@ export const fishingLog = [
     "spot": {
       "id": 134,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.26089638157895,
+        "y": 6.394736842105264
       }
     }
   },
@@ -15984,8 +15984,8 @@ export const fishingLog = [
     "spot": {
       "id": 134,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.26089638157895,
+        "y": 6.394736842105264
       }
     }
   },
@@ -15999,8 +15999,8 @@ export const fishingLog = [
     "spot": {
       "id": 134,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.26089638157895,
+        "y": 6.394736842105264
       }
     }
   },
@@ -16014,8 +16014,8 @@ export const fishingLog = [
     "spot": {
       "id": 134,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.26089638157895,
+        "y": 6.394736842105264
       }
     }
   },
@@ -16029,8 +16029,8 @@ export const fishingLog = [
     "spot": {
       "id": 134,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.26089638157895,
+        "y": 6.394736842105264
       }
     }
   },
@@ -16044,8 +16044,8 @@ export const fishingLog = [
     "spot": {
       "id": 134,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.26089638157895,
+        "y": 6.394736842105264
       }
     }
   },
@@ -16059,8 +16059,8 @@ export const fishingLog = [
     "spot": {
       "id": 134,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.26089638157895,
+        "y": 6.394736842105264
       }
     }
   },
@@ -16074,8 +16074,8 @@ export const fishingLog = [
     "spot": {
       "id": 135,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.90090460526316,
+        "y": 34.92783717105264
       }
     }
   },
@@ -16089,8 +16089,8 @@ export const fishingLog = [
     "spot": {
       "id": 135,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.90090460526316,
+        "y": 34.92783717105264
       }
     }
   },
@@ -16104,8 +16104,8 @@ export const fishingLog = [
     "spot": {
       "id": 135,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.90090460526316,
+        "y": 34.92783717105264
       }
     }
   },
@@ -16119,8 +16119,8 @@ export const fishingLog = [
     "spot": {
       "id": 135,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.90090460526316,
+        "y": 34.92783717105264
       }
     }
   },
@@ -16134,8 +16134,8 @@ export const fishingLog = [
     "spot": {
       "id": 135,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.90090460526316,
+        "y": 34.92783717105264
       }
     }
   },
@@ -16149,8 +16149,8 @@ export const fishingLog = [
     "spot": {
       "id": 135,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.90090460526316,
+        "y": 34.92783717105264
       }
     }
   },
@@ -16164,8 +16164,8 @@ export const fishingLog = [
     "spot": {
       "id": 135,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.90090460526316,
+        "y": 34.92783717105264
       }
     }
   },
@@ -16179,8 +16179,8 @@ export const fishingLog = [
     "spot": {
       "id": 136,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.556126644736846,
+        "y": 39.606085526315795
       }
     }
   },
@@ -16194,8 +16194,8 @@ export const fishingLog = [
     "spot": {
       "id": 136,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.556126644736846,
+        "y": 39.606085526315795
       }
     }
   },
@@ -16209,8 +16209,8 @@ export const fishingLog = [
     "spot": {
       "id": 136,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.556126644736846,
+        "y": 39.606085526315795
       }
     }
   },
@@ -16224,8 +16224,8 @@ export const fishingLog = [
     "spot": {
       "id": 136,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.556126644736846,
+        "y": 39.606085526315795
       }
     }
   },
@@ -16239,8 +16239,8 @@ export const fishingLog = [
     "spot": {
       "id": 136,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.556126644736846,
+        "y": 39.606085526315795
       }
     }
   },
@@ -16254,8 +16254,8 @@ export const fishingLog = [
     "spot": {
       "id": 136,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.556126644736846,
+        "y": 39.606085526315795
       }
     }
   },
@@ -16269,8 +16269,8 @@ export const fishingLog = [
     "spot": {
       "id": 136,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.556126644736846,
+        "y": 39.606085526315795
       }
     }
   },
@@ -16284,8 +16284,8 @@ export const fishingLog = [
     "spot": {
       "id": 136,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.556126644736846,
+        "y": 39.606085526315795
       }
     }
   },
@@ -16299,8 +16299,8 @@ export const fishingLog = [
     "spot": {
       "id": 137,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.076891447368423,
+        "y": 38.594572368421055
       }
     }
   },
@@ -16314,8 +16314,8 @@ export const fishingLog = [
     "spot": {
       "id": 137,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.076891447368423,
+        "y": 38.594572368421055
       }
     }
   },
@@ -16329,8 +16329,8 @@ export const fishingLog = [
     "spot": {
       "id": 137,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.076891447368423,
+        "y": 38.594572368421055
       }
     }
   },
@@ -16344,8 +16344,8 @@ export const fishingLog = [
     "spot": {
       "id": 137,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.076891447368423,
+        "y": 38.594572368421055
       }
     }
   },
@@ -16359,8 +16359,8 @@ export const fishingLog = [
     "spot": {
       "id": 137,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.076891447368423,
+        "y": 38.594572368421055
       }
     }
   },
@@ -16374,8 +16374,8 @@ export const fishingLog = [
     "spot": {
       "id": 137,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.076891447368423,
+        "y": 38.594572368421055
       }
     }
   },
@@ -16389,8 +16389,8 @@ export const fishingLog = [
     "spot": {
       "id": 137,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.076891447368423,
+        "y": 38.594572368421055
       }
     }
   },
@@ -16404,8 +16404,8 @@ export const fishingLog = [
     "spot": {
       "id": 138,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 11.536595394736842
       }
     }
   },
@@ -16419,8 +16419,8 @@ export const fishingLog = [
     "spot": {
       "id": 138,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 11.536595394736842
       }
     }
   },
@@ -16434,8 +16434,8 @@ export const fishingLog = [
     "spot": {
       "id": 138,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 11.536595394736842
       }
     }
   },
@@ -16449,8 +16449,8 @@ export const fishingLog = [
     "spot": {
       "id": 138,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 11.536595394736842
       }
     }
   },
@@ -16464,8 +16464,8 @@ export const fishingLog = [
     "spot": {
       "id": 138,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 11.536595394736842
       }
     }
   },
@@ -16479,8 +16479,8 @@ export const fishingLog = [
     "spot": {
       "id": 138,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 11.536595394736842
       }
     }
   },
@@ -16494,8 +16494,8 @@ export const fishingLog = [
     "spot": {
       "id": 138,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 11.536595394736842
       }
     }
   },
@@ -16509,8 +16509,8 @@ export const fishingLog = [
     "spot": {
       "id": 138,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.659128289473685,
+        "y": 11.536595394736842
       }
     }
   },
@@ -16524,8 +16524,8 @@ export const fishingLog = [
     "spot": {
       "id": 139,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.329769736842106,
+        "y": 5.636101973684211
       }
     }
   },
@@ -16539,8 +16539,8 @@ export const fishingLog = [
     "spot": {
       "id": 139,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.329769736842106,
+        "y": 5.636101973684211
       }
     }
   },
@@ -16554,8 +16554,8 @@ export const fishingLog = [
     "spot": {
       "id": 139,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.329769736842106,
+        "y": 5.636101973684211
       }
     }
   },
@@ -16569,8 +16569,8 @@ export const fishingLog = [
     "spot": {
       "id": 139,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.329769736842106,
+        "y": 5.636101973684211
       }
     }
   },
@@ -16584,8 +16584,8 @@ export const fishingLog = [
     "spot": {
       "id": 139,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.329769736842106,
+        "y": 5.636101973684211
       }
     }
   },
@@ -16599,8 +16599,8 @@ export const fishingLog = [
     "spot": {
       "id": 139,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.329769736842106,
+        "y": 5.636101973684211
       }
     }
   },
@@ -16614,8 +16614,8 @@ export const fishingLog = [
     "spot": {
       "id": 139,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.329769736842106,
+        "y": 5.636101973684211
       }
     }
   },
@@ -16629,8 +16629,8 @@ export const fishingLog = [
     "spot": {
       "id": 139,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.329769736842106,
+        "y": 5.636101973684211
       }
     }
   },
@@ -16644,8 +16644,8 @@ export const fishingLog = [
     "spot": {
       "id": 140,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.847039473684212,
+        "y": 12.042351973684212
       }
     }
   },
@@ -16659,8 +16659,8 @@ export const fishingLog = [
     "spot": {
       "id": 140,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.847039473684212,
+        "y": 12.042351973684212
       }
     }
   },
@@ -16674,8 +16674,8 @@ export const fishingLog = [
     "spot": {
       "id": 140,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.847039473684212,
+        "y": 12.042351973684212
       }
     }
   },
@@ -16689,8 +16689,8 @@ export const fishingLog = [
     "spot": {
       "id": 140,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.847039473684212,
+        "y": 12.042351973684212
       }
     }
   },
@@ -16704,8 +16704,8 @@ export const fishingLog = [
     "spot": {
       "id": 140,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.847039473684212,
+        "y": 12.042351973684212
       }
     }
   },
@@ -16719,8 +16719,8 @@ export const fishingLog = [
     "spot": {
       "id": 141,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.13466282894737,
+        "y": 6.689761513157896
       }
     }
   },
@@ -16734,8 +16734,8 @@ export const fishingLog = [
     "spot": {
       "id": 141,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.13466282894737,
+        "y": 6.689761513157896
       }
     }
   },
@@ -16749,8 +16749,8 @@ export const fishingLog = [
     "spot": {
       "id": 141,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.13466282894737,
+        "y": 6.689761513157896
       }
     }
   },
@@ -16764,8 +16764,8 @@ export const fishingLog = [
     "spot": {
       "id": 141,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.13466282894737,
+        "y": 6.689761513157896
       }
     }
   },
@@ -16779,8 +16779,8 @@ export const fishingLog = [
     "spot": {
       "id": 141,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.13466282894737,
+        "y": 6.689761513157896
       }
     }
   },
@@ -16794,8 +16794,8 @@ export const fishingLog = [
     "spot": {
       "id": 141,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.13466282894737,
+        "y": 6.689761513157896
       }
     }
   },
@@ -16809,8 +16809,8 @@ export const fishingLog = [
     "spot": {
       "id": 142,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.900493421052632,
+        "y": 16.678453947368425
       }
     }
   },
@@ -16824,8 +16824,8 @@ export const fishingLog = [
     "spot": {
       "id": 142,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.900493421052632,
+        "y": 16.678453947368425
       }
     }
   },
@@ -16839,8 +16839,8 @@ export const fishingLog = [
     "spot": {
       "id": 142,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.900493421052632,
+        "y": 16.678453947368425
       }
     }
   },
@@ -16854,8 +16854,8 @@ export const fishingLog = [
     "spot": {
       "id": 142,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.900493421052632,
+        "y": 16.678453947368425
       }
     }
   },
@@ -16869,8 +16869,8 @@ export const fishingLog = [
     "spot": {
       "id": 142,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.900493421052632,
+        "y": 16.678453947368425
       }
     }
   },
@@ -16884,8 +16884,8 @@ export const fishingLog = [
     "spot": {
       "id": 142,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.900493421052632,
+        "y": 16.678453947368425
       }
     }
   },
@@ -16899,8 +16899,8 @@ export const fishingLog = [
     "spot": {
       "id": 143,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.08449835526316,
+        "y": 31.80900493421053
       }
     }
   },
@@ -16914,8 +16914,8 @@ export const fishingLog = [
     "spot": {
       "id": 143,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.08449835526316,
+        "y": 31.80900493421053
       }
     }
   },
@@ -16929,8 +16929,8 @@ export const fishingLog = [
     "spot": {
       "id": 143,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.08449835526316,
+        "y": 31.80900493421053
       }
     }
   },
@@ -16944,8 +16944,8 @@ export const fishingLog = [
     "spot": {
       "id": 143,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.08449835526316,
+        "y": 31.80900493421053
       }
     }
   },
@@ -16959,8 +16959,8 @@ export const fishingLog = [
     "spot": {
       "id": 143,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.08449835526316,
+        "y": 31.80900493421053
       }
     }
   },
@@ -16974,8 +16974,8 @@ export const fishingLog = [
     "spot": {
       "id": 143,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.08449835526316,
+        "y": 31.80900493421053
       }
     }
   },
@@ -16989,8 +16989,8 @@ export const fishingLog = [
     "spot": {
       "id": 144,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.77405427631579,
+        "y": 35.34930098684211
       }
     }
   },
@@ -17004,8 +17004,8 @@ export const fishingLog = [
     "spot": {
       "id": 144,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.77405427631579,
+        "y": 35.34930098684211
       }
     }
   },
@@ -17019,8 +17019,8 @@ export const fishingLog = [
     "spot": {
       "id": 144,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.77405427631579,
+        "y": 35.34930098684211
       }
     }
   },
@@ -17034,8 +17034,8 @@ export const fishingLog = [
     "spot": {
       "id": 144,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.77405427631579,
+        "y": 35.34930098684211
       }
     }
   },
@@ -17049,8 +17049,8 @@ export const fishingLog = [
     "spot": {
       "id": 144,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.77405427631579,
+        "y": 35.34930098684211
       }
     }
   },
@@ -17064,8 +17064,8 @@ export const fishingLog = [
     "spot": {
       "id": 144,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.77405427631579,
+        "y": 35.34930098684211
       }
     }
   },
@@ -17079,8 +17079,8 @@ export const fishingLog = [
     "spot": {
       "id": 145,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 40.196134868421055,
+        "y": 18.701480263157897
       }
     }
   },
@@ -17094,8 +17094,8 @@ export const fishingLog = [
     "spot": {
       "id": 145,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 40.196134868421055,
+        "y": 18.701480263157897
       }
     }
   },
@@ -17109,8 +17109,8 @@ export const fishingLog = [
     "spot": {
       "id": 145,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 40.196134868421055,
+        "y": 18.701480263157897
       }
     }
   },
@@ -17124,8 +17124,8 @@ export const fishingLog = [
     "spot": {
       "id": 145,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 40.196134868421055,
+        "y": 18.701480263157897
       }
     }
   },
@@ -17139,8 +17139,8 @@ export const fishingLog = [
     "spot": {
       "id": 145,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 40.196134868421055,
+        "y": 18.701480263157897
       }
     }
   },
@@ -17154,8 +17154,8 @@ export const fishingLog = [
     "spot": {
       "id": 145,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 40.196134868421055,
+        "y": 18.701480263157897
       }
     }
   },
@@ -17169,8 +17169,8 @@ export const fishingLog = [
     "spot": {
       "id": 145,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 40.196134868421055,
+        "y": 18.701480263157897
       }
     }
   },
@@ -17184,8 +17184,8 @@ export const fishingLog = [
     "spot": {
       "id": 145,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 40.196134868421055,
+        "y": 18.701480263157897
       }
     }
   },
@@ -17199,8 +17199,8 @@ export const fishingLog = [
     "spot": {
       "id": 145,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 40.196134868421055,
+        "y": 18.701480263157897
       }
     }
   },
@@ -17214,8 +17214,8 @@ export const fishingLog = [
     "spot": {
       "id": 146,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.073190789473685,
+        "y": 22.073190789473685
       }
     }
   },
@@ -17229,8 +17229,8 @@ export const fishingLog = [
     "spot": {
       "id": 146,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.073190789473685,
+        "y": 22.073190789473685
       }
     }
   },
@@ -17244,8 +17244,8 @@ export const fishingLog = [
     "spot": {
       "id": 146,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.073190789473685,
+        "y": 22.073190789473685
       }
     }
   },
@@ -17259,8 +17259,8 @@ export const fishingLog = [
     "spot": {
       "id": 146,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.073190789473685,
+        "y": 22.073190789473685
       }
     }
   },
@@ -17274,8 +17274,8 @@ export const fishingLog = [
     "spot": {
       "id": 146,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.073190789473685,
+        "y": 22.073190789473685
       }
     }
   },
@@ -17289,8 +17289,8 @@ export const fishingLog = [
     "spot": {
       "id": 146,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.073190789473685,
+        "y": 22.073190789473685
       }
     }
   },
@@ -17304,8 +17304,8 @@ export const fishingLog = [
     "spot": {
       "id": 146,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.073190789473685,
+        "y": 22.073190789473685
       }
     }
   },
@@ -17319,8 +17319,8 @@ export const fishingLog = [
     "spot": {
       "id": 146,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.073190789473685,
+        "y": 22.073190789473685
       }
     }
   },
@@ -17334,8 +17334,8 @@ export const fishingLog = [
     "spot": {
       "id": 155,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 18.216796875
       }
     }
   },
@@ -17349,8 +17349,8 @@ export const fishingLog = [
     "spot": {
       "id": 155,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 18.216796875
       }
     }
   },
@@ -17364,8 +17364,8 @@ export const fishingLog = [
     "spot": {
       "id": 155,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 18.216796875
       }
     }
   },
@@ -17379,8 +17379,8 @@ export const fishingLog = [
     "spot": {
       "id": 155,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 18.216796875
       }
     }
   },
@@ -17394,8 +17394,8 @@ export const fishingLog = [
     "spot": {
       "id": 155,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 18.216796875
       }
     }
   },
@@ -17409,8 +17409,8 @@ export const fishingLog = [
     "spot": {
       "id": 155,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 18.216796875
       }
     }
   },
@@ -17424,8 +17424,8 @@ export const fishingLog = [
     "spot": {
       "id": 155,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 18.216796875
       }
     }
   },
@@ -17439,8 +17439,8 @@ export const fishingLog = [
     "spot": {
       "id": 155,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 18.216796875
       }
     }
   },
@@ -17454,8 +17454,8 @@ export const fishingLog = [
     "spot": {
       "id": 155,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 18.216796875
       }
     }
   },
@@ -17469,8 +17469,8 @@ export const fishingLog = [
     "spot": {
       "id": 155,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 18.216796875
       }
     }
   },
@@ -17484,8 +17484,8 @@ export const fishingLog = [
     "spot": {
       "id": 156,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 26.625
       }
     }
   },
@@ -17499,8 +17499,8 @@ export const fishingLog = [
     "spot": {
       "id": 156,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 26.625
       }
     }
   },
@@ -17514,8 +17514,8 @@ export const fishingLog = [
     "spot": {
       "id": 156,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 26.625
       }
     }
   },
@@ -17529,8 +17529,8 @@ export const fishingLog = [
     "spot": {
       "id": 156,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 26.625
       }
     }
   },
@@ -17544,8 +17544,8 @@ export const fishingLog = [
     "spot": {
       "id": 156,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 26.625
       }
     }
   },
@@ -17559,8 +17559,8 @@ export const fishingLog = [
     "spot": {
       "id": 156,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 26.625
       }
     }
   },
@@ -17574,8 +17574,8 @@ export const fishingLog = [
     "spot": {
       "id": 156,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 26.625
       }
     }
   },
@@ -17589,8 +17589,8 @@ export const fishingLog = [
     "spot": {
       "id": 156,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 26.625
       }
     }
   },
@@ -17604,8 +17604,8 @@ export const fishingLog = [
     "spot": {
       "id": 156,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 26.625
       }
     }
   },
@@ -17619,8 +17619,8 @@ export const fishingLog = [
     "spot": {
       "id": 156,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 26.625
       }
     }
   },
@@ -17634,8 +17634,8 @@ export const fishingLog = [
     "spot": {
       "id": 157,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.50927734375,
+        "y": 11.009765625
       }
     }
   },
@@ -17649,8 +17649,8 @@ export const fishingLog = [
     "spot": {
       "id": 157,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.50927734375,
+        "y": 11.009765625
       }
     }
   },
@@ -17664,8 +17664,8 @@ export const fishingLog = [
     "spot": {
       "id": 157,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.50927734375,
+        "y": 11.009765625
       }
     }
   },
@@ -17679,8 +17679,8 @@ export const fishingLog = [
     "spot": {
       "id": 157,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.50927734375,
+        "y": 11.009765625
       }
     }
   },
@@ -17694,8 +17694,8 @@ export const fishingLog = [
     "spot": {
       "id": 157,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.50927734375,
+        "y": 11.009765625
       }
     }
   },
@@ -17709,8 +17709,8 @@ export const fishingLog = [
     "spot": {
       "id": 157,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.50927734375,
+        "y": 11.009765625
       }
     }
   },
@@ -17724,8 +17724,8 @@ export const fishingLog = [
     "spot": {
       "id": 157,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.50927734375,
+        "y": 11.009765625
       }
     }
   },
@@ -17739,8 +17739,8 @@ export const fishingLog = [
     "spot": {
       "id": 158,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 38.4365234375,
+        "y": 38.4365234375
       }
     }
   },
@@ -17754,8 +17754,8 @@ export const fishingLog = [
     "spot": {
       "id": 158,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 38.4365234375,
+        "y": 38.4365234375
       }
     }
   },
@@ -17769,8 +17769,8 @@ export const fishingLog = [
     "spot": {
       "id": 158,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 38.4365234375,
+        "y": 38.4365234375
       }
     }
   },
@@ -17784,8 +17784,8 @@ export const fishingLog = [
     "spot": {
       "id": 158,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 38.4365234375,
+        "y": 38.4365234375
       }
     }
   },
@@ -17799,8 +17799,8 @@ export const fishingLog = [
     "spot": {
       "id": 158,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 38.4365234375,
+        "y": 38.4365234375
       }
     }
   },
@@ -17814,8 +17814,8 @@ export const fishingLog = [
     "spot": {
       "id": 158,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 38.4365234375,
+        "y": 38.4365234375
       }
     }
   },
@@ -17829,8 +17829,8 @@ export const fishingLog = [
     "spot": {
       "id": 159,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 33.6318359375
       }
     }
   },
@@ -17844,8 +17844,8 @@ export const fishingLog = [
     "spot": {
       "id": 159,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 33.6318359375
       }
     }
   },
@@ -17859,8 +17859,8 @@ export const fishingLog = [
     "spot": {
       "id": 159,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 33.6318359375
       }
     }
   },
@@ -17874,8 +17874,8 @@ export const fishingLog = [
     "spot": {
       "id": 159,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 33.6318359375
       }
     }
   },
@@ -17889,8 +17889,8 @@ export const fishingLog = [
     "spot": {
       "id": 159,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 33.6318359375
       }
     }
   },
@@ -17904,8 +17904,8 @@ export const fishingLog = [
     "spot": {
       "id": 159,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 33.6318359375
       }
     }
   },
@@ -17919,8 +17919,8 @@ export const fishingLog = [
     "spot": {
       "id": 159,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 33.6318359375
       }
     }
   },
@@ -17934,8 +17934,8 @@ export const fishingLog = [
     "spot": {
       "id": 159,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 33.6318359375
       }
     }
   },
@@ -17949,8 +17949,8 @@ export const fishingLog = [
     "spot": {
       "id": 159,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 33.6318359375
       }
     }
   },
@@ -17964,8 +17964,8 @@ export const fishingLog = [
     "spot": {
       "id": 160,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.6328125,
+        "y": 20.21875
       }
     }
   },
@@ -17979,8 +17979,8 @@ export const fishingLog = [
     "spot": {
       "id": 160,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.6328125,
+        "y": 20.21875
       }
     }
   },
@@ -17994,8 +17994,8 @@ export const fishingLog = [
     "spot": {
       "id": 160,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.6328125,
+        "y": 20.21875
       }
     }
   },
@@ -18009,8 +18009,8 @@ export const fishingLog = [
     "spot": {
       "id": 160,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.6328125,
+        "y": 20.21875
       }
     }
   },
@@ -18024,8 +18024,8 @@ export const fishingLog = [
     "spot": {
       "id": 160,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.6328125,
+        "y": 20.21875
       }
     }
   },
@@ -18039,8 +18039,8 @@ export const fishingLog = [
     "spot": {
       "id": 160,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.6328125,
+        "y": 20.21875
       }
     }
   },
@@ -18054,8 +18054,8 @@ export const fishingLog = [
     "spot": {
       "id": 160,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.6328125,
+        "y": 20.21875
       }
     }
   },
@@ -18069,8 +18069,8 @@ export const fishingLog = [
     "spot": {
       "id": 160,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.6328125,
+        "y": 20.21875
       }
     }
   },
@@ -18084,8 +18084,8 @@ export const fishingLog = [
     "spot": {
       "id": 161,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 8.20703125
       }
     }
   },
@@ -18099,8 +18099,8 @@ export const fishingLog = [
     "spot": {
       "id": 161,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 8.20703125
       }
     }
   },
@@ -18114,8 +18114,8 @@ export const fishingLog = [
     "spot": {
       "id": 161,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 8.20703125
       }
     }
   },
@@ -18129,8 +18129,8 @@ export const fishingLog = [
     "spot": {
       "id": 161,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 8.20703125
       }
     }
   },
@@ -18144,8 +18144,8 @@ export const fishingLog = [
     "spot": {
       "id": 161,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 8.20703125
       }
     }
   },
@@ -18159,8 +18159,8 @@ export const fishingLog = [
     "spot": {
       "id": 161,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 8.20703125
       }
     }
   },
@@ -18174,8 +18174,8 @@ export const fishingLog = [
     "spot": {
       "id": 161,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 8.20703125
       }
     }
   },
@@ -18189,8 +18189,8 @@ export const fishingLog = [
     "spot": {
       "id": 161,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 8.20703125
       }
     }
   },
@@ -18204,8 +18204,8 @@ export const fishingLog = [
     "spot": {
       "id": 162,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.0205078125,
+        "y": 11.009765625
       }
     }
   },
@@ -18219,8 +18219,8 @@ export const fishingLog = [
     "spot": {
       "id": 162,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.0205078125,
+        "y": 11.009765625
       }
     }
   },
@@ -18234,8 +18234,8 @@ export const fishingLog = [
     "spot": {
       "id": 162,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.0205078125,
+        "y": 11.009765625
       }
     }
   },
@@ -18249,8 +18249,8 @@ export const fishingLog = [
     "spot": {
       "id": 162,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.0205078125,
+        "y": 11.009765625
       }
     }
   },
@@ -18264,8 +18264,8 @@ export const fishingLog = [
     "spot": {
       "id": 162,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.0205078125,
+        "y": 11.009765625
       }
     }
   },
@@ -18279,8 +18279,8 @@ export const fishingLog = [
     "spot": {
       "id": 162,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.0205078125,
+        "y": 11.009765625
       }
     }
   },
@@ -18294,8 +18294,8 @@ export const fishingLog = [
     "spot": {
       "id": 163,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0078125,
+        "y": 11.9306640625
       }
     }
   },
@@ -18309,8 +18309,8 @@ export const fishingLog = [
     "spot": {
       "id": 163,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0078125,
+        "y": 11.9306640625
       }
     }
   },
@@ -18324,8 +18324,8 @@ export const fishingLog = [
     "spot": {
       "id": 163,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0078125,
+        "y": 11.9306640625
       }
     }
   },
@@ -18339,8 +18339,8 @@ export const fishingLog = [
     "spot": {
       "id": 163,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0078125,
+        "y": 11.9306640625
       }
     }
   },
@@ -18354,8 +18354,8 @@ export const fishingLog = [
     "spot": {
       "id": 163,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0078125,
+        "y": 11.9306640625
       }
     }
   },
@@ -18369,8 +18369,8 @@ export const fishingLog = [
     "spot": {
       "id": 163,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0078125,
+        "y": 11.9306640625
       }
     }
   },
@@ -18384,8 +18384,8 @@ export const fishingLog = [
     "spot": {
       "id": 163,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0078125,
+        "y": 11.9306640625
       }
     }
   },
@@ -18399,8 +18399,8 @@ export const fishingLog = [
     "spot": {
       "id": 163,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.0078125,
+        "y": 11.9306640625
       }
     }
   },
@@ -18414,8 +18414,8 @@ export const fishingLog = [
     "spot": {
       "id": 164,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.30712890625,
+        "y": 26.625
       }
     }
   },
@@ -18429,8 +18429,8 @@ export const fishingLog = [
     "spot": {
       "id": 164,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.30712890625,
+        "y": 26.625
       }
     }
   },
@@ -18444,8 +18444,8 @@ export const fishingLog = [
     "spot": {
       "id": 164,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.30712890625,
+        "y": 26.625
       }
     }
   },
@@ -18459,8 +18459,8 @@ export const fishingLog = [
     "spot": {
       "id": 164,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.30712890625,
+        "y": 26.625
       }
     }
   },
@@ -18474,8 +18474,8 @@ export const fishingLog = [
     "spot": {
       "id": 164,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.30712890625,
+        "y": 26.625
       }
     }
   },
@@ -18489,8 +18489,8 @@ export const fishingLog = [
     "spot": {
       "id": 164,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.30712890625,
+        "y": 26.625
       }
     }
   },
@@ -18504,8 +18504,8 @@ export const fishingLog = [
     "spot": {
       "id": 165,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.8330078125,
+        "y": 14.0126953125
       }
     }
   },
@@ -18519,8 +18519,8 @@ export const fishingLog = [
     "spot": {
       "id": 165,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.8330078125,
+        "y": 14.0126953125
       }
     }
   },
@@ -18534,8 +18534,8 @@ export const fishingLog = [
     "spot": {
       "id": 165,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.8330078125,
+        "y": 14.0126953125
       }
     }
   },
@@ -18549,8 +18549,8 @@ export const fishingLog = [
     "spot": {
       "id": 165,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.8330078125,
+        "y": 14.0126953125
       }
     }
   },
@@ -18564,8 +18564,8 @@ export const fishingLog = [
     "spot": {
       "id": 166,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.833984375,
+        "y": 17.015625
       }
     }
   },
@@ -18579,8 +18579,8 @@ export const fishingLog = [
     "spot": {
       "id": 166,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.833984375,
+        "y": 17.015625
       }
     }
   },
@@ -18594,8 +18594,8 @@ export const fishingLog = [
     "spot": {
       "id": 166,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.833984375,
+        "y": 17.015625
       }
     }
   },
@@ -18609,8 +18609,8 @@ export const fishingLog = [
     "spot": {
       "id": 166,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.833984375,
+        "y": 17.015625
       }
     }
   },
@@ -18624,8 +18624,8 @@ export const fishingLog = [
     "spot": {
       "id": 167,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.52783203125,
+        "y": 15.6142578125
       }
     }
   },
@@ -18639,8 +18639,8 @@ export const fishingLog = [
     "spot": {
       "id": 167,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.52783203125,
+        "y": 15.6142578125
       }
     }
   },
@@ -18654,8 +18654,8 @@ export const fishingLog = [
     "spot": {
       "id": 168,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.626953125,
+        "y": 6.50537109375
       }
     }
   },
@@ -18669,8 +18669,8 @@ export const fishingLog = [
     "spot": {
       "id": 168,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.626953125,
+        "y": 6.50537109375
       }
     }
   },
@@ -18684,8 +18684,8 @@ export const fishingLog = [
     "spot": {
       "id": 168,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.626953125,
+        "y": 6.50537109375
       }
     }
   },
@@ -18699,8 +18699,8 @@ export const fishingLog = [
     "spot": {
       "id": 168,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.626953125,
+        "y": 6.50537109375
       }
     }
   },
@@ -18714,8 +18714,8 @@ export const fishingLog = [
     "spot": {
       "id": 168,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.626953125,
+        "y": 6.50537109375
       }
     }
   },
@@ -18729,8 +18729,8 @@ export const fishingLog = [
     "spot": {
       "id": 168,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.626953125,
+        "y": 6.50537109375
       }
     }
   },
@@ -18744,8 +18744,8 @@ export const fishingLog = [
     "spot": {
       "id": 168,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.626953125,
+        "y": 6.50537109375
       }
     }
   },
@@ -18759,8 +18759,8 @@ export const fishingLog = [
     "spot": {
       "id": 168,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.626953125,
+        "y": 6.50537109375
       }
     }
   },
@@ -18774,8 +18774,8 @@ export const fishingLog = [
     "spot": {
       "id": 168,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.626953125,
+        "y": 6.50537109375
       }
     }
   },
@@ -18789,8 +18789,8 @@ export const fishingLog = [
     "spot": {
       "id": 169,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.72998046875,
+        "y": 7.2060546875
       }
     }
   },
@@ -18804,8 +18804,8 @@ export const fishingLog = [
     "spot": {
       "id": 169,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.72998046875,
+        "y": 7.2060546875
       }
     }
   },
@@ -18819,8 +18819,8 @@ export const fishingLog = [
     "spot": {
       "id": 169,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.72998046875,
+        "y": 7.2060546875
       }
     }
   },
@@ -18834,8 +18834,8 @@ export const fishingLog = [
     "spot": {
       "id": 169,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.72998046875,
+        "y": 7.2060546875
       }
     }
   },
@@ -18849,8 +18849,8 @@ export const fishingLog = [
     "spot": {
       "id": 170,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 7.40625
       }
     }
   },
@@ -18864,8 +18864,8 @@ export const fishingLog = [
     "spot": {
       "id": 170,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 7.40625
       }
     }
   },
@@ -18879,8 +18879,8 @@ export const fishingLog = [
     "spot": {
       "id": 170,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 7.40625
       }
     }
   },
@@ -18894,8 +18894,8 @@ export const fishingLog = [
     "spot": {
       "id": 170,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 7.40625
       }
     }
   },
@@ -18909,8 +18909,8 @@ export const fishingLog = [
     "spot": {
       "id": 170,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 7.40625
       }
     }
   },
@@ -18924,8 +18924,8 @@ export const fishingLog = [
     "spot": {
       "id": 170,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 14.4130859375,
+        "y": 7.40625
       }
     }
   },
@@ -18939,8 +18939,8 @@ export const fishingLog = [
     "spot": {
       "id": 171,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.41015625,
+        "y": 14.0126953125
       }
     }
   },
@@ -18954,8 +18954,8 @@ export const fishingLog = [
     "spot": {
       "id": 171,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.41015625,
+        "y": 14.0126953125
       }
     }
   },
@@ -18969,8 +18969,8 @@ export const fishingLog = [
     "spot": {
       "id": 171,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.41015625,
+        "y": 14.0126953125
       }
     }
   },
@@ -18984,8 +18984,8 @@ export const fishingLog = [
     "spot": {
       "id": 171,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.41015625,
+        "y": 14.0126953125
       }
     }
   },
@@ -18999,8 +18999,8 @@ export const fishingLog = [
     "spot": {
       "id": 171,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.41015625,
+        "y": 14.0126953125
       }
     }
   },
@@ -19014,8 +19014,8 @@ export const fishingLog = [
     "spot": {
       "id": 172,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.0185546875,
+        "y": 24.22265625
       }
     }
   },
@@ -19029,8 +19029,8 @@ export const fishingLog = [
     "spot": {
       "id": 172,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.0185546875,
+        "y": 24.22265625
       }
     }
   },
@@ -19044,8 +19044,8 @@ export const fishingLog = [
     "spot": {
       "id": 172,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.0185546875,
+        "y": 24.22265625
       }
     }
   },
@@ -19059,8 +19059,8 @@ export const fishingLog = [
     "spot": {
       "id": 172,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.0185546875,
+        "y": 24.22265625
       }
     }
   },
@@ -19074,8 +19074,8 @@ export const fishingLog = [
     "spot": {
       "id": 172,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.0185546875,
+        "y": 24.22265625
       }
     }
   },
@@ -19089,8 +19089,8 @@ export const fishingLog = [
     "spot": {
       "id": 172,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.0185546875,
+        "y": 24.22265625
       }
     }
   },
@@ -19104,8 +19104,8 @@ export const fishingLog = [
     "spot": {
       "id": 172,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.0185546875,
+        "y": 24.22265625
       }
     }
   },
@@ -19119,8 +19119,8 @@ export const fishingLog = [
     "spot": {
       "id": 173,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 32.93115234375
       }
     }
   },
@@ -19134,8 +19134,8 @@ export const fishingLog = [
     "spot": {
       "id": 173,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 32.93115234375
       }
     }
   },
@@ -19149,8 +19149,8 @@ export const fishingLog = [
     "spot": {
       "id": 173,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 32.93115234375
       }
     }
   },
@@ -19164,8 +19164,8 @@ export const fishingLog = [
     "spot": {
       "id": 173,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 32.93115234375
       }
     }
   },
@@ -19179,8 +19179,8 @@ export const fishingLog = [
     "spot": {
       "id": 173,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 32.93115234375
       }
     }
   },
@@ -19194,8 +19194,8 @@ export const fishingLog = [
     "spot": {
       "id": 174,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 23.822265625
       }
     }
   },
@@ -19209,8 +19209,8 @@ export const fishingLog = [
     "spot": {
       "id": 174,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 23.822265625
       }
     }
   },
@@ -19224,8 +19224,8 @@ export const fishingLog = [
     "spot": {
       "id": 174,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 23.822265625
       }
     }
   },
@@ -19239,8 +19239,8 @@ export const fishingLog = [
     "spot": {
       "id": 174,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 23.822265625
       }
     }
   },
@@ -19254,8 +19254,8 @@ export const fishingLog = [
     "spot": {
       "id": 174,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 23.822265625
       }
     }
   },
@@ -19269,8 +19269,8 @@ export const fishingLog = [
     "spot": {
       "id": 174,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 36.0341796875,
+        "y": 23.822265625
       }
     }
   },
@@ -19284,8 +19284,8 @@ export const fishingLog = [
     "spot": {
       "id": 175,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.4306640625,
+        "y": 30.4287109375
       }
     }
   },
@@ -19299,8 +19299,8 @@ export const fishingLog = [
     "spot": {
       "id": 175,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.4306640625,
+        "y": 30.4287109375
       }
     }
   },
@@ -19314,8 +19314,8 @@ export const fishingLog = [
     "spot": {
       "id": 175,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.4306640625,
+        "y": 30.4287109375
       }
     }
   },
@@ -19329,8 +19329,8 @@ export const fishingLog = [
     "spot": {
       "id": 175,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.4306640625,
+        "y": 30.4287109375
       }
     }
   },
@@ -19344,8 +19344,8 @@ export const fishingLog = [
     "spot": {
       "id": 175,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.4306640625,
+        "y": 30.4287109375
       }
     }
   },
@@ -19359,8 +19359,8 @@ export const fishingLog = [
     "spot": {
       "id": 175,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.4306640625,
+        "y": 30.4287109375
       }
     }
   },
@@ -19374,8 +19374,8 @@ export const fishingLog = [
     "spot": {
       "id": 176,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 20.4189453125
       }
     }
   },
@@ -19389,8 +19389,8 @@ export const fishingLog = [
     "spot": {
       "id": 176,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 20.4189453125
       }
     }
   },
@@ -19404,8 +19404,8 @@ export const fishingLog = [
     "spot": {
       "id": 176,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 20.4189453125
       }
     }
   },
@@ -19419,8 +19419,8 @@ export const fishingLog = [
     "spot": {
       "id": 176,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 20.4189453125
       }
     }
   },
@@ -19434,8 +19434,8 @@ export const fishingLog = [
     "spot": {
       "id": 176,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 20.4189453125
       }
     }
   },
@@ -19449,8 +19449,8 @@ export const fishingLog = [
     "spot": {
       "id": 176,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 20.4189453125
       }
     }
   },
@@ -19464,8 +19464,8 @@ export const fishingLog = [
     "spot": {
       "id": 177,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.9365234375,
+        "y": 18.8173828125
       }
     }
   },
@@ -19479,8 +19479,8 @@ export const fishingLog = [
     "spot": {
       "id": 177,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.9365234375,
+        "y": 18.8173828125
       }
     }
   },
@@ -19494,8 +19494,8 @@ export const fishingLog = [
     "spot": {
       "id": 177,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.9365234375,
+        "y": 18.8173828125
       }
     }
   },
@@ -19509,8 +19509,8 @@ export const fishingLog = [
     "spot": {
       "id": 177,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.9365234375,
+        "y": 18.8173828125
       }
     }
   },
@@ -19524,8 +19524,8 @@ export const fishingLog = [
     "spot": {
       "id": 177,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.9365234375,
+        "y": 18.8173828125
       }
     }
   },
@@ -19539,8 +19539,8 @@ export const fishingLog = [
     "spot": {
       "id": 177,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.9365234375,
+        "y": 18.8173828125
       }
     }
   },
@@ -19554,8 +19554,8 @@ export const fishingLog = [
     "spot": {
       "id": 178,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.6201171875,
+        "y": 22.4208984375
       }
     }
   },
@@ -19569,8 +19569,8 @@ export const fishingLog = [
     "spot": {
       "id": 178,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.6201171875,
+        "y": 22.4208984375
       }
     }
   },
@@ -19584,8 +19584,8 @@ export const fishingLog = [
     "spot": {
       "id": 178,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.6201171875,
+        "y": 22.4208984375
       }
     }
   },
@@ -19599,8 +19599,8 @@ export const fishingLog = [
     "spot": {
       "id": 178,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.6201171875,
+        "y": 22.4208984375
       }
     }
   },
@@ -19614,8 +19614,8 @@ export const fishingLog = [
     "spot": {
       "id": 178,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.6201171875,
+        "y": 22.4208984375
       }
     }
   },
@@ -19629,8 +19629,8 @@ export const fishingLog = [
     "spot": {
       "id": 178,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.6201171875,
+        "y": 22.4208984375
       }
     }
   },
@@ -19644,8 +19644,8 @@ export const fishingLog = [
     "spot": {
       "id": 178,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.6201171875,
+        "y": 22.4208984375
       }
     }
   },
@@ -19659,8 +19659,8 @@ export const fishingLog = [
     "spot": {
       "id": 179,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.615234375,
+        "y": 14.4130859375
       }
     }
   },
@@ -19674,8 +19674,8 @@ export const fishingLog = [
     "spot": {
       "id": 179,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.615234375,
+        "y": 14.4130859375
       }
     }
   },
@@ -19689,8 +19689,8 @@ export const fishingLog = [
     "spot": {
       "id": 179,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.615234375,
+        "y": 14.4130859375
       }
     }
   },
@@ -19704,8 +19704,8 @@ export const fishingLog = [
     "spot": {
       "id": 179,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.615234375,
+        "y": 14.4130859375
       }
     }
   },
@@ -19719,8 +19719,8 @@ export const fishingLog = [
     "spot": {
       "id": 179,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.615234375,
+        "y": 14.4130859375
       }
     }
   },
@@ -19734,8 +19734,8 @@ export const fishingLog = [
     "spot": {
       "id": 179,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.615234375,
+        "y": 14.4130859375
       }
     }
   },
@@ -19749,8 +19749,8 @@ export const fishingLog = [
     "spot": {
       "id": 179,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.615234375,
+        "y": 14.4130859375
       }
     }
   },
@@ -19764,8 +19764,8 @@ export const fishingLog = [
     "spot": {
       "id": 180,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.62109375,
+        "y": 28.4267578125
       }
     }
   },
@@ -19779,8 +19779,8 @@ export const fishingLog = [
     "spot": {
       "id": 180,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.62109375,
+        "y": 28.4267578125
       }
     }
   },
@@ -19794,8 +19794,8 @@ export const fishingLog = [
     "spot": {
       "id": 180,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.62109375,
+        "y": 28.4267578125
       }
     }
   },
@@ -19809,8 +19809,8 @@ export const fishingLog = [
     "spot": {
       "id": 180,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.62109375,
+        "y": 28.4267578125
       }
     }
   },
@@ -19824,8 +19824,8 @@ export const fishingLog = [
     "spot": {
       "id": 180,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.62109375,
+        "y": 28.4267578125
       }
     }
   },
@@ -19839,8 +19839,8 @@ export const fishingLog = [
     "spot": {
       "id": 180,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.62109375,
+        "y": 28.4267578125
       }
     }
   },
@@ -19854,8 +19854,8 @@ export const fishingLog = [
     "spot": {
       "id": 181,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.51123046875,
+        "y": 33.2314453125
       }
     }
   },
@@ -19869,8 +19869,8 @@ export const fishingLog = [
     "spot": {
       "id": 181,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.51123046875,
+        "y": 33.2314453125
       }
     }
   },
@@ -19884,8 +19884,8 @@ export const fishingLog = [
     "spot": {
       "id": 181,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.51123046875,
+        "y": 33.2314453125
       }
     }
   },
@@ -19899,8 +19899,8 @@ export const fishingLog = [
     "spot": {
       "id": 181,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.51123046875,
+        "y": 33.2314453125
       }
     }
   },
@@ -19914,8 +19914,8 @@ export const fishingLog = [
     "spot": {
       "id": 182,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 14.0126953125
       }
     }
   },
@@ -19929,8 +19929,8 @@ export const fishingLog = [
     "spot": {
       "id": 182,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 14.0126953125
       }
     }
   },
@@ -19944,8 +19944,8 @@ export const fishingLog = [
     "spot": {
       "id": 182,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 14.0126953125
       }
     }
   },
@@ -19959,8 +19959,8 @@ export const fishingLog = [
     "spot": {
       "id": 182,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 14.0126953125
       }
     }
   },
@@ -19974,8 +19974,8 @@ export const fishingLog = [
     "spot": {
       "id": 182,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 14.0126953125
       }
     }
   },
@@ -19989,8 +19989,8 @@ export const fishingLog = [
     "spot": {
       "id": 182,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.009765625,
+        "y": 14.0126953125
       }
     }
   },
@@ -20004,8 +20004,8 @@ export const fishingLog = [
     "spot": {
       "id": 183,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 10.359130859375
       }
     }
   },
@@ -20019,8 +20019,8 @@ export const fishingLog = [
     "spot": {
       "id": 183,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 10.359130859375
       }
     }
   },
@@ -20034,8 +20034,8 @@ export const fishingLog = [
     "spot": {
       "id": 183,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 10.359130859375
       }
     }
   },
@@ -20049,8 +20049,8 @@ export const fishingLog = [
     "spot": {
       "id": 183,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 10.359130859375
       }
     }
   },
@@ -20064,8 +20064,8 @@ export const fishingLog = [
     "spot": {
       "id": 183,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 10.359130859375
       }
     }
   },
@@ -20079,8 +20079,8 @@ export const fishingLog = [
     "spot": {
       "id": 183,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 10.359130859375
       }
     }
   },
@@ -20094,8 +20094,8 @@ export const fishingLog = [
     "spot": {
       "id": 183,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 10.359130859375
       }
     }
   },
@@ -20109,8 +20109,8 @@ export const fishingLog = [
     "spot": {
       "id": 184,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.160888671875,
+        "y": 5.90478515625
       }
     }
   },
@@ -20124,8 +20124,8 @@ export const fishingLog = [
     "spot": {
       "id": 184,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.160888671875,
+        "y": 5.90478515625
       }
     }
   },
@@ -20139,8 +20139,8 @@ export const fishingLog = [
     "spot": {
       "id": 184,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.160888671875,
+        "y": 5.90478515625
       }
     }
   },
@@ -20154,8 +20154,8 @@ export const fishingLog = [
     "spot": {
       "id": 184,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.160888671875,
+        "y": 5.90478515625
       }
     }
   },
@@ -20169,8 +20169,8 @@ export const fishingLog = [
     "spot": {
       "id": 184,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.160888671875,
+        "y": 5.90478515625
       }
     }
   },
@@ -20184,8 +20184,8 @@ export const fishingLog = [
     "spot": {
       "id": 184,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.160888671875,
+        "y": 5.90478515625
       }
     }
   },
@@ -20199,8 +20199,8 @@ export const fishingLog = [
     "spot": {
       "id": 184,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.160888671875,
+        "y": 5.90478515625
       }
     }
   },
@@ -20214,8 +20214,8 @@ export const fishingLog = [
     "spot": {
       "id": 185,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.51025390625,
+        "y": 18.216796875
       }
     }
   },
@@ -20229,8 +20229,8 @@ export const fishingLog = [
     "spot": {
       "id": 185,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.51025390625,
+        "y": 18.216796875
       }
     }
   },
@@ -20244,8 +20244,8 @@ export const fishingLog = [
     "spot": {
       "id": 185,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.51025390625,
+        "y": 18.216796875
       }
     }
   },
@@ -20259,8 +20259,8 @@ export const fishingLog = [
     "spot": {
       "id": 185,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.51025390625,
+        "y": 18.216796875
       }
     }
   },
@@ -20274,8 +20274,8 @@ export const fishingLog = [
     "spot": {
       "id": 185,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.51025390625,
+        "y": 18.216796875
       }
     }
   },
@@ -20289,8 +20289,8 @@ export const fishingLog = [
     "spot": {
       "id": 185,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.51025390625,
+        "y": 18.216796875
       }
     }
   },
@@ -20304,8 +20304,8 @@ export const fishingLog = [
     "spot": {
       "id": 185,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.51025390625,
+        "y": 18.216796875
       }
     }
   },
@@ -20319,8 +20319,8 @@ export const fishingLog = [
     "spot": {
       "id": 186,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.6083984375,
+        "y": 29.02734375
       }
     }
   },
@@ -20334,8 +20334,8 @@ export const fishingLog = [
     "spot": {
       "id": 186,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.6083984375,
+        "y": 29.02734375
       }
     }
   },
@@ -20349,8 +20349,8 @@ export const fishingLog = [
     "spot": {
       "id": 186,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.6083984375,
+        "y": 29.02734375
       }
     }
   },
@@ -20364,8 +20364,8 @@ export const fishingLog = [
     "spot": {
       "id": 186,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.6083984375,
+        "y": 29.02734375
       }
     }
   },
@@ -20379,8 +20379,8 @@ export const fishingLog = [
     "spot": {
       "id": 186,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.6083984375,
+        "y": 29.02734375
       }
     }
   },
@@ -20394,8 +20394,8 @@ export const fishingLog = [
     "spot": {
       "id": 186,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.6083984375,
+        "y": 29.02734375
       }
     }
   },
@@ -20409,8 +20409,8 @@ export const fishingLog = [
     "spot": {
       "id": 186,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.6083984375,
+        "y": 29.02734375
       }
     }
   },
@@ -20424,8 +20424,8 @@ export const fishingLog = [
     "spot": {
       "id": 186,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.6083984375,
+        "y": 29.02734375
       }
     }
   },
@@ -20439,8 +20439,8 @@ export const fishingLog = [
     "spot": {
       "id": 187,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.91259765625,
+        "y": 31.029296875
       }
     }
   },
@@ -20454,8 +20454,8 @@ export const fishingLog = [
     "spot": {
       "id": 187,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.91259765625,
+        "y": 31.029296875
       }
     }
   },
@@ -20469,8 +20469,8 @@ export const fishingLog = [
     "spot": {
       "id": 187,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.91259765625,
+        "y": 31.029296875
       }
     }
   },
@@ -20484,8 +20484,8 @@ export const fishingLog = [
     "spot": {
       "id": 187,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.91259765625,
+        "y": 31.029296875
       }
     }
   },
@@ -20499,8 +20499,8 @@ export const fishingLog = [
     "spot": {
       "id": 187,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.91259765625,
+        "y": 31.029296875
       }
     }
   },
@@ -20514,8 +20514,8 @@ export const fishingLog = [
     "spot": {
       "id": 187,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.91259765625,
+        "y": 31.029296875
       }
     }
   },
@@ -20529,8 +20529,8 @@ export const fishingLog = [
     "spot": {
       "id": 187,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 13.91259765625,
+        "y": 31.029296875
       }
     }
   },
@@ -20544,8 +20544,8 @@ export const fishingLog = [
     "spot": {
       "id": 188,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.91650390625,
+        "y": 9.50830078125
       }
     }
   },
@@ -20559,8 +20559,8 @@ export const fishingLog = [
     "spot": {
       "id": 188,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.91650390625,
+        "y": 9.50830078125
       }
     }
   },
@@ -20574,8 +20574,8 @@ export const fishingLog = [
     "spot": {
       "id": 188,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.91650390625,
+        "y": 9.50830078125
       }
     }
   },
@@ -20589,8 +20589,8 @@ export const fishingLog = [
     "spot": {
       "id": 188,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.91650390625,
+        "y": 9.50830078125
       }
     }
   },
@@ -20604,8 +20604,8 @@ export const fishingLog = [
     "spot": {
       "id": 188,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.91650390625,
+        "y": 9.50830078125
       }
     }
   },
@@ -20619,8 +20619,8 @@ export const fishingLog = [
     "spot": {
       "id": 188,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 17.91650390625,
+        "y": 9.50830078125
       }
     }
   },
@@ -20634,8 +20634,8 @@ export const fishingLog = [
     "spot": {
       "id": 189,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.52587890625,
+        "y": 16.4150390625
       }
     }
   },
@@ -20649,8 +20649,8 @@ export const fishingLog = [
     "spot": {
       "id": 189,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.52587890625,
+        "y": 16.4150390625
       }
     }
   },
@@ -20664,8 +20664,8 @@ export const fishingLog = [
     "spot": {
       "id": 189,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.52587890625,
+        "y": 16.4150390625
       }
     }
   },
@@ -20679,8 +20679,8 @@ export const fishingLog = [
     "spot": {
       "id": 189,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.52587890625,
+        "y": 16.4150390625
       }
     }
   },
@@ -20694,8 +20694,8 @@ export const fishingLog = [
     "spot": {
       "id": 189,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.52587890625,
+        "y": 16.4150390625
       }
     }
   },
@@ -20709,8 +20709,8 @@ export const fishingLog = [
     "spot": {
       "id": 189,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.52587890625,
+        "y": 16.4150390625
       }
     }
   },
@@ -20724,8 +20724,8 @@ export const fishingLog = [
     "spot": {
       "id": 190,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.205078125,
+        "y": 15.013671875
       }
     }
   },
@@ -20739,8 +20739,8 @@ export const fishingLog = [
     "spot": {
       "id": 190,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.205078125,
+        "y": 15.013671875
       }
     }
   },
@@ -20754,8 +20754,8 @@ export const fishingLog = [
     "spot": {
       "id": 190,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.205078125,
+        "y": 15.013671875
       }
     }
   },
@@ -20769,8 +20769,8 @@ export const fishingLog = [
     "spot": {
       "id": 190,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.205078125,
+        "y": 15.013671875
       }
     }
   },
@@ -20784,8 +20784,8 @@ export const fishingLog = [
     "spot": {
       "id": 190,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.205078125,
+        "y": 15.013671875
       }
     }
   },
@@ -20799,8 +20799,8 @@ export const fishingLog = [
     "spot": {
       "id": 190,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.205078125,
+        "y": 15.013671875
       }
     }
   },
@@ -20814,8 +20814,8 @@ export const fishingLog = [
     "spot": {
       "id": 191,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.6220703125,
+        "y": 9.2080078125
       }
     }
   },
@@ -20829,8 +20829,8 @@ export const fishingLog = [
     "spot": {
       "id": 191,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.6220703125,
+        "y": 9.2080078125
       }
     }
   },
@@ -20844,8 +20844,8 @@ export const fishingLog = [
     "spot": {
       "id": 191,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.6220703125,
+        "y": 9.2080078125
       }
     }
   },
@@ -20859,8 +20859,8 @@ export const fishingLog = [
     "spot": {
       "id": 191,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.6220703125,
+        "y": 9.2080078125
       }
     }
   },
@@ -20874,8 +20874,8 @@ export const fishingLog = [
     "spot": {
       "id": 191,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.6220703125,
+        "y": 9.2080078125
       }
     }
   },
@@ -20889,8 +20889,8 @@ export const fishingLog = [
     "spot": {
       "id": 191,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.6220703125,
+        "y": 9.2080078125
       }
     }
   },
@@ -20904,8 +20904,8 @@ export const fishingLog = [
     "spot": {
       "id": 191,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 23.6220703125,
+        "y": 9.2080078125
       }
     }
   },
@@ -20919,8 +20919,8 @@ export const fishingLog = [
     "spot": {
       "id": 192,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 6.60546875
       }
     }
   },
@@ -20934,8 +20934,8 @@ export const fishingLog = [
     "spot": {
       "id": 192,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 6.60546875
       }
     }
   },
@@ -20949,8 +20949,8 @@ export const fishingLog = [
     "spot": {
       "id": 192,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 6.60546875
       }
     }
   },
@@ -20964,8 +20964,8 @@ export const fishingLog = [
     "spot": {
       "id": 192,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 6.60546875
       }
     }
   },
@@ -20979,8 +20979,8 @@ export const fishingLog = [
     "spot": {
       "id": 192,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 6.60546875
       }
     }
   },
@@ -20994,8 +20994,8 @@ export const fishingLog = [
     "spot": {
       "id": 192,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.630859375,
+        "y": 6.60546875
       }
     }
   },
@@ -21009,8 +21009,8 @@ export const fishingLog = [
     "spot": {
       "id": 193,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.0302734375,
+        "y": 17.015625
       }
     }
   },
@@ -21024,8 +21024,8 @@ export const fishingLog = [
     "spot": {
       "id": 193,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.0302734375,
+        "y": 17.015625
       }
     }
   },
@@ -21039,8 +21039,8 @@ export const fishingLog = [
     "spot": {
       "id": 193,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.0302734375,
+        "y": 17.015625
       }
     }
   },
@@ -21054,8 +21054,8 @@ export const fishingLog = [
     "spot": {
       "id": 193,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.0302734375,
+        "y": 17.015625
       }
     }
   },
@@ -21069,8 +21069,8 @@ export const fishingLog = [
     "spot": {
       "id": 193,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 32.0302734375,
+        "y": 17.015625
       }
     }
   },
@@ -21084,8 +21084,8 @@ export const fishingLog = [
     "spot": {
       "id": 194,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.5791015625,
+        "y": 32.6708984375
       }
     }
   },
@@ -21099,8 +21099,8 @@ export const fishingLog = [
     "spot": {
       "id": 194,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.5791015625,
+        "y": 32.6708984375
       }
     }
   },
@@ -21114,8 +21114,8 @@ export const fishingLog = [
     "spot": {
       "id": 194,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.5791015625,
+        "y": 32.6708984375
       }
     }
   },
@@ -21129,8 +21129,8 @@ export const fishingLog = [
     "spot": {
       "id": 194,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.5791015625,
+        "y": 32.6708984375
       }
     }
   },
@@ -21144,8 +21144,8 @@ export const fishingLog = [
     "spot": {
       "id": 194,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.5791015625,
+        "y": 32.6708984375
       }
     }
   },
@@ -21159,8 +21159,8 @@ export const fishingLog = [
     "spot": {
       "id": 194,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.5791015625,
+        "y": 32.6708984375
       }
     }
   },
@@ -21174,8 +21174,8 @@ export const fishingLog = [
     "spot": {
       "id": 194,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.5791015625,
+        "y": 32.6708984375
       }
     }
   },
@@ -21189,8 +21189,8 @@ export const fishingLog = [
     "spot": {
       "id": 195,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.2080078125,
+        "y": 37.435546875
       }
     }
   },
@@ -21204,8 +21204,8 @@ export const fishingLog = [
     "spot": {
       "id": 195,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.2080078125,
+        "y": 37.435546875
       }
     }
   },
@@ -21219,8 +21219,8 @@ export const fishingLog = [
     "spot": {
       "id": 195,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.2080078125,
+        "y": 37.435546875
       }
     }
   },
@@ -21234,8 +21234,8 @@ export const fishingLog = [
     "spot": {
       "id": 195,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.2080078125,
+        "y": 37.435546875
       }
     }
   },
@@ -21249,8 +21249,8 @@ export const fishingLog = [
     "spot": {
       "id": 195,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.2080078125,
+        "y": 37.435546875
       }
     }
   },
@@ -21264,8 +21264,8 @@ export const fishingLog = [
     "spot": {
       "id": 195,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.2080078125,
+        "y": 37.435546875
       }
     }
   },
@@ -21279,8 +21279,8 @@ export const fishingLog = [
     "spot": {
       "id": 195,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.2080078125,
+        "y": 37.435546875
       }
     }
   },
@@ -21294,8 +21294,8 @@ export const fishingLog = [
     "spot": {
       "id": 196,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.52001953125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21309,8 +21309,8 @@ export const fishingLog = [
     "spot": {
       "id": 196,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.52001953125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21324,8 +21324,8 @@ export const fishingLog = [
     "spot": {
       "id": 196,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.52001953125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21339,8 +21339,8 @@ export const fishingLog = [
     "spot": {
       "id": 196,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.52001953125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21354,8 +21354,8 @@ export const fishingLog = [
     "spot": {
       "id": 196,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.52001953125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21369,8 +21369,8 @@ export const fishingLog = [
     "spot": {
       "id": 196,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.52001953125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21384,8 +21384,8 @@ export const fishingLog = [
     "spot": {
       "id": 196,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.52001953125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21399,8 +21399,8 @@ export const fishingLog = [
     "spot": {
       "id": 196,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.52001953125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21414,8 +21414,8 @@ export const fishingLog = [
     "spot": {
       "id": 197,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.50732421875,
+        "y": 14.51318359375
       }
     }
   },
@@ -21429,8 +21429,8 @@ export const fishingLog = [
     "spot": {
       "id": 197,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.50732421875,
+        "y": 14.51318359375
       }
     }
   },
@@ -21444,8 +21444,8 @@ export const fishingLog = [
     "spot": {
       "id": 197,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.50732421875,
+        "y": 14.51318359375
       }
     }
   },
@@ -21459,8 +21459,8 @@ export const fishingLog = [
     "spot": {
       "id": 197,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.50732421875,
+        "y": 14.51318359375
       }
     }
   },
@@ -21474,8 +21474,8 @@ export const fishingLog = [
     "spot": {
       "id": 197,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.50732421875,
+        "y": 14.51318359375
       }
     }
   },
@@ -21489,8 +21489,8 @@ export const fishingLog = [
     "spot": {
       "id": 198,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.70947265625,
+        "y": 11.31005859375
       }
     }
   },
@@ -21504,8 +21504,8 @@ export const fishingLog = [
     "spot": {
       "id": 198,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.70947265625,
+        "y": 11.31005859375
       }
     }
   },
@@ -21519,8 +21519,8 @@ export const fishingLog = [
     "spot": {
       "id": 198,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.70947265625,
+        "y": 11.31005859375
       }
     }
   },
@@ -21534,8 +21534,8 @@ export const fishingLog = [
     "spot": {
       "id": 198,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.70947265625,
+        "y": 11.31005859375
       }
     }
   },
@@ -21549,8 +21549,8 @@ export const fishingLog = [
     "spot": {
       "id": 198,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.70947265625,
+        "y": 11.31005859375
       }
     }
   },
@@ -21564,8 +21564,8 @@ export const fishingLog = [
     "spot": {
       "id": 198,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.70947265625,
+        "y": 11.31005859375
       }
     }
   },
@@ -21579,8 +21579,8 @@ export const fishingLog = [
     "spot": {
       "id": 199,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.70751953125,
+        "y": 7.456298828125
       }
     }
   },
@@ -21594,8 +21594,8 @@ export const fishingLog = [
     "spot": {
       "id": 199,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.70751953125,
+        "y": 7.456298828125
       }
     }
   },
@@ -21609,8 +21609,8 @@ export const fishingLog = [
     "spot": {
       "id": 199,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.70751953125,
+        "y": 7.456298828125
       }
     }
   },
@@ -21624,8 +21624,8 @@ export const fishingLog = [
     "spot": {
       "id": 199,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.70751953125,
+        "y": 7.456298828125
       }
     }
   },
@@ -21639,8 +21639,8 @@ export const fishingLog = [
     "spot": {
       "id": 199,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.70751953125,
+        "y": 7.456298828125
       }
     }
   },
@@ -21654,8 +21654,8 @@ export const fishingLog = [
     "spot": {
       "id": 200,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.4091796875,
+        "y": 15.6142578125
       }
     }
   },
@@ -21669,8 +21669,8 @@ export const fishingLog = [
     "spot": {
       "id": 200,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.4091796875,
+        "y": 15.6142578125
       }
     }
   },
@@ -21684,8 +21684,8 @@ export const fishingLog = [
     "spot": {
       "id": 200,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.4091796875,
+        "y": 15.6142578125
       }
     }
   },
@@ -21699,8 +21699,8 @@ export const fishingLog = [
     "spot": {
       "id": 200,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 10.4091796875,
+        "y": 15.6142578125
       }
     }
   },
@@ -21714,8 +21714,8 @@ export const fishingLog = [
     "spot": {
       "id": 201,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.761474609375,
+        "y": 16.31494140625
       }
     }
   },
@@ -21729,8 +21729,8 @@ export const fishingLog = [
     "spot": {
       "id": 201,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.761474609375,
+        "y": 16.31494140625
       }
     }
   },
@@ -21744,8 +21744,8 @@ export const fishingLog = [
     "spot": {
       "id": 201,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.761474609375,
+        "y": 16.31494140625
       }
     }
   },
@@ -21759,8 +21759,8 @@ export const fishingLog = [
     "spot": {
       "id": 201,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.761474609375,
+        "y": 16.31494140625
       }
     }
   },
@@ -21774,8 +21774,8 @@ export const fishingLog = [
     "spot": {
       "id": 201,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.761474609375,
+        "y": 16.31494140625
       }
     }
   },
@@ -21789,8 +21789,8 @@ export const fishingLog = [
     "spot": {
       "id": 202,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.029296875,
+        "y": 11.91064453125
       }
     }
   },
@@ -21804,8 +21804,8 @@ export const fishingLog = [
     "spot": {
       "id": 202,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.029296875,
+        "y": 11.91064453125
       }
     }
   },
@@ -21819,8 +21819,8 @@ export const fishingLog = [
     "spot": {
       "id": 202,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.029296875,
+        "y": 11.91064453125
       }
     }
   },
@@ -21834,8 +21834,8 @@ export const fishingLog = [
     "spot": {
       "id": 202,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.029296875,
+        "y": 11.91064453125
       }
     }
   },
@@ -21849,8 +21849,8 @@ export const fishingLog = [
     "spot": {
       "id": 202,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.029296875,
+        "y": 11.91064453125
       }
     }
   },
@@ -21864,8 +21864,8 @@ export const fishingLog = [
     "spot": {
       "id": 203,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.91064453125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21879,8 +21879,8 @@ export const fishingLog = [
     "spot": {
       "id": 203,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.91064453125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21894,8 +21894,8 @@ export const fishingLog = [
     "spot": {
       "id": 203,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.91064453125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21909,8 +21909,8 @@ export const fishingLog = [
     "spot": {
       "id": 203,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.91064453125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21924,8 +21924,8 @@ export const fishingLog = [
     "spot": {
       "id": 203,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.91064453125,
+        "y": 21.52001953125
       }
     }
   },
@@ -21939,8 +21939,8 @@ export const fishingLog = [
     "spot": {
       "id": 204,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.71142578125,
+        "y": 29.6279296875
       }
     }
   },
@@ -21954,8 +21954,8 @@ export const fishingLog = [
     "spot": {
       "id": 204,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.71142578125,
+        "y": 29.6279296875
       }
     }
   },
@@ -21969,8 +21969,8 @@ export const fishingLog = [
     "spot": {
       "id": 204,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.71142578125,
+        "y": 29.6279296875
       }
     }
   },
@@ -21984,8 +21984,8 @@ export const fishingLog = [
     "spot": {
       "id": 204,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.71142578125,
+        "y": 29.6279296875
       }
     }
   },
@@ -21999,8 +21999,8 @@ export const fishingLog = [
     "spot": {
       "id": 204,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.71142578125,
+        "y": 29.6279296875
       }
     }
   },
@@ -22014,8 +22014,8 @@ export const fishingLog = [
     "spot": {
       "id": 204,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.71142578125,
+        "y": 29.6279296875
       }
     }
   },
@@ -22029,8 +22029,8 @@ export const fishingLog = [
     "spot": {
       "id": 204,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 12.71142578125,
+        "y": 29.6279296875
       }
     }
   },
@@ -22044,8 +22044,8 @@ export const fishingLog = [
     "spot": {
       "id": 205,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 35.833984375
       }
     }
   },
@@ -22059,8 +22059,8 @@ export const fishingLog = [
     "spot": {
       "id": 205,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 35.833984375
       }
     }
   },
@@ -22074,8 +22074,8 @@ export const fishingLog = [
     "spot": {
       "id": 205,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 35.833984375
       }
     }
   },
@@ -22089,8 +22089,8 @@ export const fishingLog = [
     "spot": {
       "id": 205,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 19.41796875,
+        "y": 35.833984375
       }
     }
   },
@@ -22104,8 +22104,8 @@ export const fishingLog = [
     "spot": {
       "id": 206,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.2080078125,
+        "y": 37.6357421875
       }
     }
   },
@@ -22119,8 +22119,8 @@ export const fishingLog = [
     "spot": {
       "id": 206,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.2080078125,
+        "y": 37.6357421875
       }
     }
   },
@@ -22134,8 +22134,8 @@ export const fishingLog = [
     "spot": {
       "id": 206,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.2080078125,
+        "y": 37.6357421875
       }
     }
   },
@@ -22149,8 +22149,8 @@ export const fishingLog = [
     "spot": {
       "id": 206,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.2080078125,
+        "y": 37.6357421875
       }
     }
   },
@@ -22164,8 +22164,8 @@ export const fishingLog = [
     "spot": {
       "id": 207,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.025390625,
+        "y": 14.4130859375
       }
     }
   },
@@ -22179,8 +22179,8 @@ export const fishingLog = [
     "spot": {
       "id": 207,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.025390625,
+        "y": 14.4130859375
       }
     }
   },
@@ -22194,8 +22194,8 @@ export const fishingLog = [
     "spot": {
       "id": 207,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.025390625,
+        "y": 14.4130859375
       }
     }
   },
@@ -22209,8 +22209,8 @@ export const fishingLog = [
     "spot": {
       "id": 207,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.025390625,
+        "y": 14.4130859375
       }
     }
   },
@@ -22224,8 +22224,8 @@ export const fishingLog = [
     "spot": {
       "id": 207,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 27.025390625,
+        "y": 14.4130859375
       }
     }
   },
@@ -22239,8 +22239,8 @@ export const fishingLog = [
     "spot": {
       "id": 208,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.427734375,
+        "y": 21.419921875
       }
     }
   },
@@ -22254,8 +22254,8 @@ export const fishingLog = [
     "spot": {
       "id": 208,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.427734375,
+        "y": 21.419921875
       }
     }
   },
@@ -22269,8 +22269,8 @@ export const fishingLog = [
     "spot": {
       "id": 208,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.427734375,
+        "y": 21.419921875
       }
     }
   },
@@ -22284,8 +22284,8 @@ export const fishingLog = [
     "spot": {
       "id": 208,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.427734375,
+        "y": 21.419921875
       }
     }
   },
@@ -22299,8 +22299,8 @@ export const fishingLog = [
     "spot": {
       "id": 209,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.228515625,
+        "y": 27.025390625
       }
     }
   },
@@ -22314,8 +22314,8 @@ export const fishingLog = [
     "spot": {
       "id": 209,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.228515625,
+        "y": 27.025390625
       }
     }
   },
@@ -22329,8 +22329,8 @@ export const fishingLog = [
     "spot": {
       "id": 209,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.228515625,
+        "y": 27.025390625
       }
     }
   },
@@ -22344,8 +22344,8 @@ export const fishingLog = [
     "spot": {
       "id": 209,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 30.228515625,
+        "y": 27.025390625
       }
     }
   },
@@ -22359,8 +22359,8 @@ export const fishingLog = [
     "spot": {
       "id": 210,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 24.22265625
       }
     }
   },
@@ -22374,8 +22374,8 @@ export const fishingLog = [
     "spot": {
       "id": 210,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 24.22265625
       }
     }
   },
@@ -22389,8 +22389,8 @@ export const fishingLog = [
     "spot": {
       "id": 210,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 24.22265625
       }
     }
   },
@@ -22404,8 +22404,8 @@ export const fishingLog = [
     "spot": {
       "id": 210,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 20.619140625,
+        "y": 24.22265625
       }
     }
   },
@@ -22419,8 +22419,8 @@ export const fishingLog = [
     "spot": {
       "id": 211,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.4072265625,
+        "y": 35.2333984375
       }
     }
   },
@@ -22434,8 +22434,8 @@ export const fishingLog = [
     "spot": {
       "id": 211,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.4072265625,
+        "y": 35.2333984375
       }
     }
   },
@@ -22449,8 +22449,8 @@ export const fishingLog = [
     "spot": {
       "id": 211,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.4072265625,
+        "y": 35.2333984375
       }
     }
   },
@@ -22464,8 +22464,8 @@ export const fishingLog = [
     "spot": {
       "id": 211,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.4072265625,
+        "y": 35.2333984375
       }
     }
   },
@@ -22479,8 +22479,8 @@ export const fishingLog = [
     "spot": {
       "id": 211,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.4072265625,
+        "y": 35.2333984375
       }
     }
   },
@@ -22494,8 +22494,8 @@ export const fishingLog = [
     "spot": {
       "id": 211,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.4072265625,
+        "y": 35.2333984375
       }
     }
   },
@@ -22509,8 +22509,8 @@ export const fishingLog = [
     "spot": {
       "id": 211,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.4072265625,
+        "y": 35.2333984375
       }
     }
   },
@@ -22524,8 +22524,8 @@ export const fishingLog = [
     "spot": {
       "id": 212,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.8154296875,
+        "y": 35.833984375
       }
     }
   },
@@ -22539,8 +22539,8 @@ export const fishingLog = [
     "spot": {
       "id": 212,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.8154296875,
+        "y": 35.833984375
       }
     }
   },
@@ -22554,8 +22554,8 @@ export const fishingLog = [
     "spot": {
       "id": 212,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.8154296875,
+        "y": 35.833984375
       }
     }
   },
@@ -22569,8 +22569,8 @@ export const fishingLog = [
     "spot": {
       "id": 212,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.8154296875,
+        "y": 35.833984375
       }
     }
   },
@@ -22584,8 +22584,8 @@ export const fishingLog = [
     "spot": {
       "id": 212,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.8154296875,
+        "y": 35.833984375
       }
     }
   },
@@ -22599,8 +22599,8 @@ export const fishingLog = [
     "spot": {
       "id": 213,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2333984375,
+        "y": 35.833984375
       }
     }
   },
@@ -22614,8 +22614,8 @@ export const fishingLog = [
     "spot": {
       "id": 213,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2333984375,
+        "y": 35.833984375
       }
     }
   },
@@ -22629,8 +22629,8 @@ export const fishingLog = [
     "spot": {
       "id": 213,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2333984375,
+        "y": 35.833984375
       }
     }
   },
@@ -22644,8 +22644,8 @@ export const fishingLog = [
     "spot": {
       "id": 213,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2333984375,
+        "y": 35.833984375
       }
     }
   },
@@ -22659,8 +22659,8 @@ export const fishingLog = [
     "spot": {
       "id": 213,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2333984375,
+        "y": 35.833984375
       }
     }
   },
@@ -22674,8 +22674,8 @@ export const fishingLog = [
     "spot": {
       "id": 213,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2333984375,
+        "y": 35.833984375
       }
     }
   },
@@ -22689,8 +22689,8 @@ export const fishingLog = [
     "spot": {
       "id": 213,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 35.2333984375,
+        "y": 35.833984375
       }
     }
   },
@@ -22704,8 +22704,8 @@ export const fishingLog = [
     "spot": {
       "id": 214,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 11.260009765625
       }
     }
   },
@@ -22719,8 +22719,8 @@ export const fishingLog = [
     "spot": {
       "id": 214,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 11.260009765625
       }
     }
   },
@@ -22734,8 +22734,8 @@ export const fishingLog = [
     "spot": {
       "id": 214,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 11.260009765625
       }
     }
   },
@@ -22749,8 +22749,8 @@ export const fishingLog = [
     "spot": {
       "id": 214,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 11.260009765625
       }
     }
   },
@@ -22764,8 +22764,8 @@ export const fishingLog = [
     "spot": {
       "id": 214,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 11.260009765625
       }
     }
   },
@@ -22779,8 +22779,8 @@ export const fishingLog = [
     "spot": {
       "id": 214,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 11.260009765625
       }
     }
   },
@@ -22794,8 +22794,8 @@ export const fishingLog = [
     "spot": {
       "id": 214,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.260009765625,
+        "y": 11.260009765625
       }
     }
   },
@@ -22809,8 +22809,8 @@ export const fishingLog = [
     "spot": {
       "id": 215,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.830078125,
+        "y": 12.71142578125
       }
     }
   },
@@ -22824,8 +22824,8 @@ export const fishingLog = [
     "spot": {
       "id": 215,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.830078125,
+        "y": 12.71142578125
       }
     }
   },
@@ -22839,8 +22839,8 @@ export const fishingLog = [
     "spot": {
       "id": 215,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.830078125,
+        "y": 12.71142578125
       }
     }
   },
@@ -22854,8 +22854,8 @@ export const fishingLog = [
     "spot": {
       "id": 215,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.830078125,
+        "y": 12.71142578125
       }
     }
   },
@@ -22869,8 +22869,8 @@ export const fishingLog = [
     "spot": {
       "id": 215,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.830078125,
+        "y": 12.71142578125
       }
     }
   },
@@ -22884,8 +22884,8 @@ export const fishingLog = [
     "spot": {
       "id": 215,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.830078125,
+        "y": 12.71142578125
       }
     }
   },
@@ -22899,8 +22899,8 @@ export const fishingLog = [
     "spot": {
       "id": 216,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.51416015625,
+        "y": 14.8134765625
       }
     }
   },
@@ -22914,8 +22914,8 @@ export const fishingLog = [
     "spot": {
       "id": 216,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.51416015625,
+        "y": 14.8134765625
       }
     }
   },
@@ -22929,8 +22929,8 @@ export const fishingLog = [
     "spot": {
       "id": 216,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.51416015625,
+        "y": 14.8134765625
       }
     }
   },
@@ -22944,8 +22944,8 @@ export const fishingLog = [
     "spot": {
       "id": 216,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.51416015625,
+        "y": 14.8134765625
       }
     }
   },
@@ -22959,8 +22959,8 @@ export const fishingLog = [
     "spot": {
       "id": 216,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.51416015625,
+        "y": 14.8134765625
       }
     }
   },
@@ -22974,8 +22974,8 @@ export const fishingLog = [
     "spot": {
       "id": 216,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 15.51416015625,
+        "y": 14.8134765625
       }
     }
   },
@@ -22989,8 +22989,8 @@ export const fishingLog = [
     "spot": {
       "id": 217,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.029296875,
+        "y": 31.6298828125
       }
     }
   },
@@ -23004,8 +23004,8 @@ export const fishingLog = [
     "spot": {
       "id": 217,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.029296875,
+        "y": 31.6298828125
       }
     }
   },
@@ -23019,8 +23019,8 @@ export const fishingLog = [
     "spot": {
       "id": 217,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.029296875,
+        "y": 31.6298828125
       }
     }
   },
@@ -23034,8 +23034,8 @@ export const fishingLog = [
     "spot": {
       "id": 217,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.029296875,
+        "y": 31.6298828125
       }
     }
   },
@@ -23049,8 +23049,8 @@ export const fishingLog = [
     "spot": {
       "id": 217,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.029296875,
+        "y": 31.6298828125
       }
     }
   },
@@ -23064,8 +23064,8 @@ export const fishingLog = [
     "spot": {
       "id": 217,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.029296875,
+        "y": 31.6298828125
       }
     }
   },
@@ -23079,8 +23079,8 @@ export const fishingLog = [
     "spot": {
       "id": 218,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 4.30322265625,
+        "y": 22.32080078125
       }
     }
   },
@@ -23094,8 +23094,8 @@ export const fishingLog = [
     "spot": {
       "id": 218,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 4.30322265625,
+        "y": 22.32080078125
       }
     }
   },
@@ -23109,8 +23109,8 @@ export const fishingLog = [
     "spot": {
       "id": 218,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 4.30322265625,
+        "y": 22.32080078125
       }
     }
   },
@@ -23124,8 +23124,8 @@ export const fishingLog = [
     "spot": {
       "id": 218,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 4.30322265625,
+        "y": 22.32080078125
       }
     }
   },
@@ -23139,8 +23139,8 @@ export const fishingLog = [
     "spot": {
       "id": 218,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 4.30322265625,
+        "y": 22.32080078125
       }
     }
   },
@@ -23154,8 +23154,8 @@ export const fishingLog = [
     "spot": {
       "id": 219,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 22.8212890625
       }
     }
   },
@@ -23169,8 +23169,8 @@ export const fishingLog = [
     "spot": {
       "id": 219,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 22.8212890625
       }
     }
   },
@@ -23184,8 +23184,8 @@ export const fishingLog = [
     "spot": {
       "id": 219,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 22.8212890625
       }
     }
   },
@@ -23199,8 +23199,8 @@ export const fishingLog = [
     "spot": {
       "id": 219,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 22.8212890625
       }
     }
   },
@@ -23214,8 +23214,8 @@ export const fishingLog = [
     "spot": {
       "id": 219,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 22.8212890625
       }
     }
   },
@@ -23229,8 +23229,8 @@ export const fishingLog = [
     "spot": {
       "id": 219,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 21.01953125,
+        "y": 22.8212890625
       }
     }
   },
@@ -23244,8 +23244,8 @@ export const fishingLog = [
     "spot": {
       "id": 220,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.0205078125,
+        "y": 9.10791015625
       }
     }
   },
@@ -23259,8 +23259,8 @@ export const fishingLog = [
     "spot": {
       "id": 220,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.0205078125,
+        "y": 9.10791015625
       }
     }
   },
@@ -23274,8 +23274,8 @@ export const fishingLog = [
     "spot": {
       "id": 220,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.0205078125,
+        "y": 9.10791015625
       }
     }
   },
@@ -23289,8 +23289,8 @@ export const fishingLog = [
     "spot": {
       "id": 220,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.0205078125,
+        "y": 9.10791015625
       }
     }
   },
@@ -23304,8 +23304,8 @@ export const fishingLog = [
     "spot": {
       "id": 220,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 22.0205078125,
+        "y": 9.10791015625
       }
     }
   },
@@ -23319,8 +23319,8 @@ export const fishingLog = [
     "spot": {
       "id": 221,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 9.0078125
       }
     }
   },
@@ -23334,8 +23334,8 @@ export const fishingLog = [
     "spot": {
       "id": 221,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 9.0078125
       }
     }
   },
@@ -23349,8 +23349,8 @@ export const fishingLog = [
     "spot": {
       "id": 221,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 9.0078125
       }
     }
   },
@@ -23364,8 +23364,8 @@ export const fishingLog = [
     "spot": {
       "id": 221,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 25.82421875,
+        "y": 9.0078125
       }
     }
   },
@@ -23379,8 +23379,8 @@ export const fishingLog = [
     "spot": {
       "id": 222,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.93017578125,
+        "y": 22.32080078125
       }
     }
   },
@@ -23394,8 +23394,8 @@ export const fishingLog = [
     "spot": {
       "id": 222,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.93017578125,
+        "y": 22.32080078125
       }
     }
   },
@@ -23409,8 +23409,8 @@ export const fishingLog = [
     "spot": {
       "id": 222,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.93017578125,
+        "y": 22.32080078125
       }
     }
   },
@@ -23424,8 +23424,8 @@ export const fishingLog = [
     "spot": {
       "id": 222,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 31.93017578125,
+        "y": 22.32080078125
       }
     }
   },
@@ -23439,8 +23439,8 @@ export const fishingLog = [
     "spot": {
       "id": 223,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.92724609375,
+        "y": 13.51220703125
       }
     }
   },
@@ -23454,8 +23454,8 @@ export const fishingLog = [
     "spot": {
       "id": 223,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.92724609375,
+        "y": 13.51220703125
       }
     }
   },
@@ -23469,8 +23469,8 @@ export const fishingLog = [
     "spot": {
       "id": 223,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.92724609375,
+        "y": 13.51220703125
       }
     }
   },
@@ -23484,8 +23484,8 @@ export const fishingLog = [
     "spot": {
       "id": 223,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 28.92724609375,
+        "y": 13.51220703125
       }
     }
   },
@@ -23499,8 +23499,8 @@ export const fishingLog = [
     "spot": {
       "id": 224,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.93310546875,
+        "y": 26.32470703125
       }
     }
   },
@@ -23514,8 +23514,8 @@ export const fishingLog = [
     "spot": {
       "id": 224,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.93310546875,
+        "y": 26.32470703125
       }
     }
   },
@@ -23529,8 +23529,8 @@ export const fishingLog = [
     "spot": {
       "id": 224,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.93310546875,
+        "y": 26.32470703125
       }
     }
   },
@@ -23544,8 +23544,8 @@ export const fishingLog = [
     "spot": {
       "id": 224,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 34.93310546875,
+        "y": 26.32470703125
       }
     }
   },
@@ -23559,8 +23559,8 @@ export const fishingLog = [
     "spot": {
       "id": 225,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.40625,
+        "y": 28.72705078125
       }
     }
   },
@@ -23574,8 +23574,8 @@ export const fishingLog = [
     "spot": {
       "id": 225,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.40625,
+        "y": 28.72705078125
       }
     }
   },
@@ -23589,8 +23589,8 @@ export const fishingLog = [
     "spot": {
       "id": 225,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.40625,
+        "y": 28.72705078125
       }
     }
   },
@@ -23604,8 +23604,8 @@ export const fishingLog = [
     "spot": {
       "id": 225,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.40625,
+        "y": 28.72705078125
       }
     }
   },
@@ -23619,8 +23619,8 @@ export const fishingLog = [
     "spot": {
       "id": 225,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.40625,
+        "y": 28.72705078125
       }
     }
   },
@@ -23634,8 +23634,8 @@ export const fishingLog = [
     "spot": {
       "id": 225,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.40625,
+        "y": 28.72705078125
       }
     }
   },
@@ -23649,8 +23649,8 @@ export const fishingLog = [
     "spot": {
       "id": 226,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.70849609375,
+        "y": 20.8193359375
       }
     }
   },
@@ -23664,8 +23664,8 @@ export const fishingLog = [
     "spot": {
       "id": 226,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.70849609375,
+        "y": 20.8193359375
       }
     }
   },
@@ -23679,8 +23679,8 @@ export const fishingLog = [
     "spot": {
       "id": 226,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.70849609375,
+        "y": 20.8193359375
       }
     }
   },
@@ -23694,8 +23694,8 @@ export const fishingLog = [
     "spot": {
       "id": 226,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.70849609375,
+        "y": 20.8193359375
       }
     }
   },
@@ -23709,8 +23709,8 @@ export const fishingLog = [
     "spot": {
       "id": 226,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 9.70849609375,
+        "y": 20.8193359375
       }
     }
   },
@@ -23724,8 +23724,8 @@ export const fishingLog = [
     "spot": {
       "id": 227,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.0146484375,
+        "y": 21.52001953125
       }
     }
   },
@@ -23739,8 +23739,8 @@ export const fishingLog = [
     "spot": {
       "id": 227,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.0146484375,
+        "y": 21.52001953125
       }
     }
   },
@@ -23754,8 +23754,8 @@ export const fishingLog = [
     "spot": {
       "id": 227,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.0146484375,
+        "y": 21.52001953125
       }
     }
   },
@@ -23769,8 +23769,8 @@ export const fishingLog = [
     "spot": {
       "id": 227,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.0146484375,
+        "y": 21.52001953125
       }
     }
   },
@@ -23784,8 +23784,8 @@ export const fishingLog = [
     "spot": {
       "id": 227,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 16.0146484375,
+        "y": 21.52001953125
       }
     }
   },
@@ -23799,8 +23799,8 @@ export const fishingLog = [
     "spot": {
       "id": 228,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 31.6298828125
       }
     }
   },
@@ -23814,8 +23814,8 @@ export const fishingLog = [
     "spot": {
       "id": 228,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 31.6298828125
       }
     }
   },
@@ -23829,8 +23829,8 @@ export const fishingLog = [
     "spot": {
       "id": 228,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 31.6298828125
       }
     }
   },
@@ -23844,8 +23844,8 @@ export const fishingLog = [
     "spot": {
       "id": 228,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 31.6298828125
       }
     }
   },
@@ -23859,8 +23859,8 @@ export const fishingLog = [
     "spot": {
       "id": 228,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 31.6298828125
       }
     }
   },
@@ -23874,8 +23874,8 @@ export const fishingLog = [
     "spot": {
       "id": 228,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 24.0224609375,
+        "y": 31.6298828125
       }
     }
   },
@@ -23889,8 +23889,8 @@ export const fishingLog = [
     "spot": {
       "id": 229,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.806640625,
+        "y": 16.21484375
       }
     }
   },
@@ -23904,8 +23904,8 @@ export const fishingLog = [
     "spot": {
       "id": 229,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.806640625,
+        "y": 16.21484375
       }
     }
   },
@@ -23919,8 +23919,8 @@ export const fishingLog = [
     "spot": {
       "id": 229,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.806640625,
+        "y": 16.21484375
       }
     }
   },
@@ -23934,8 +23934,8 @@ export const fishingLog = [
     "spot": {
       "id": 229,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 7.806640625,
+        "y": 16.21484375
       }
     }
   },
@@ -23949,8 +23949,8 @@ export const fishingLog = [
     "spot": {
       "id": 230,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.2099609375,
+        "y": 6.60546875
       }
     }
   },
@@ -23964,8 +23964,8 @@ export const fishingLog = [
     "spot": {
       "id": 230,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.2099609375,
+        "y": 6.60546875
       }
     }
   },
@@ -23979,8 +23979,8 @@ export const fishingLog = [
     "spot": {
       "id": 230,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.2099609375,
+        "y": 6.60546875
       }
     }
   },
@@ -23994,8 +23994,8 @@ export const fishingLog = [
     "spot": {
       "id": 230,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.2099609375,
+        "y": 6.60546875
       }
     }
   },
@@ -24009,8 +24009,8 @@ export const fishingLog = [
     "spot": {
       "id": 230,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.2099609375,
+        "y": 6.60546875
       }
     }
   },
@@ -24024,8 +24024,8 @@ export const fishingLog = [
     "spot": {
       "id": 231,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.73583984375,
+        "y": 7.005859375
       }
     }
   },
@@ -24039,8 +24039,8 @@ export const fishingLog = [
     "spot": {
       "id": 231,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.73583984375,
+        "y": 7.005859375
       }
     }
   },
@@ -24054,8 +24054,8 @@ export const fishingLog = [
     "spot": {
       "id": 231,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.73583984375,
+        "y": 7.005859375
       }
     }
   },
@@ -24069,8 +24069,8 @@ export const fishingLog = [
     "spot": {
       "id": 231,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.73583984375,
+        "y": 7.005859375
       }
     }
   },
@@ -24084,8 +24084,8 @@ export const fishingLog = [
     "spot": {
       "id": 231,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 37.73583984375,
+        "y": 7.005859375
       }
     }
   },
@@ -24099,8 +24099,8 @@ export const fishingLog = [
     "spot": {
       "id": 232,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.91064453125,
+        "y": 10.90966796875
       }
     }
   },
@@ -24114,8 +24114,8 @@ export const fishingLog = [
     "spot": {
       "id": 232,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.91064453125,
+        "y": 10.90966796875
       }
     }
   },
@@ -24129,8 +24129,8 @@ export const fishingLog = [
     "spot": {
       "id": 232,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.91064453125,
+        "y": 10.90966796875
       }
     }
   },
@@ -24144,8 +24144,8 @@ export const fishingLog = [
     "spot": {
       "id": 232,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.91064453125,
+        "y": 10.90966796875
       }
     }
   },
@@ -24159,8 +24159,8 @@ export const fishingLog = [
     "spot": {
       "id": 232,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.91064453125,
+        "y": 10.90966796875
       }
     }
   },
@@ -24174,8 +24174,8 @@ export const fishingLog = [
     "spot": {
       "id": 232,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 11.91064453125,
+        "y": 10.90966796875
       }
     }
   },
@@ -24189,8 +24189,8 @@ export const fishingLog = [
     "spot": {
       "id": 233,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.205078125,
+        "y": 13.51220703125
       }
     }
   },
@@ -24204,8 +24204,8 @@ export const fishingLog = [
     "spot": {
       "id": 233,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.205078125,
+        "y": 13.51220703125
       }
     }
   },
@@ -24219,8 +24219,8 @@ export const fishingLog = [
     "spot": {
       "id": 233,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.205078125,
+        "y": 13.51220703125
       }
     }
   },
@@ -24234,8 +24234,8 @@ export const fishingLog = [
     "spot": {
       "id": 233,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.205078125,
+        "y": 13.51220703125
       }
     }
   },
@@ -24249,8 +24249,8 @@ export const fishingLog = [
     "spot": {
       "id": 233,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 6.205078125,
+        "y": 13.51220703125
       }
     }
   },
@@ -24264,8 +24264,8 @@ export const fishingLog = [
     "spot": {
       "id": 234,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.50732421875,
+        "y": 15.6142578125
       }
     }
   },
@@ -24279,8 +24279,8 @@ export const fishingLog = [
     "spot": {
       "id": 234,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.50732421875,
+        "y": 15.6142578125
       }
     }
   },
@@ -24294,8 +24294,8 @@ export const fishingLog = [
     "spot": {
       "id": 234,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.50732421875,
+        "y": 15.6142578125
       }
     }
   },
@@ -24309,8 +24309,8 @@ export const fishingLog = [
     "spot": {
       "id": 234,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.50732421875,
+        "y": 15.6142578125
       }
     }
   },
@@ -24324,8 +24324,8 @@ export const fishingLog = [
     "spot": {
       "id": 234,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 8.50732421875,
+        "y": 15.6142578125
       }
     }
   },
@@ -24339,8 +24339,8 @@ export const fishingLog = [
     "spot": {
       "id": 235,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.6318359375,
+        "y": 30.62890625
       }
     }
   },
@@ -24354,8 +24354,8 @@ export const fishingLog = [
     "spot": {
       "id": 235,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.6318359375,
+        "y": 30.62890625
       }
     }
   },
@@ -24369,8 +24369,8 @@ export const fishingLog = [
     "spot": {
       "id": 235,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.6318359375,
+        "y": 30.62890625
       }
     }
   },
@@ -24384,8 +24384,8 @@ export const fishingLog = [
     "spot": {
       "id": 235,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.6318359375,
+        "y": 30.62890625
       }
     }
   },
@@ -24399,8 +24399,8 @@ export const fishingLog = [
     "spot": {
       "id": 235,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.6318359375,
+        "y": 30.62890625
       }
     }
   },
@@ -24414,8 +24414,8 @@ export const fishingLog = [
     "spot": {
       "id": 235,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 33.6318359375,
+        "y": 30.62890625
       }
     }
   },
@@ -24429,8 +24429,8 @@ export const fishingLog = [
     "spot": {
       "id": 236,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 14.91357421875
       }
     }
   },
@@ -24444,8 +24444,8 @@ export const fishingLog = [
     "spot": {
       "id": 236,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 14.91357421875
       }
     }
   },
@@ -24459,8 +24459,8 @@ export const fishingLog = [
     "spot": {
       "id": 236,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 14.91357421875
       }
     }
   },
@@ -24474,8 +24474,8 @@ export const fishingLog = [
     "spot": {
       "id": 236,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 14.91357421875
       }
     }
   },
@@ -24489,8 +24489,8 @@ export const fishingLog = [
     "spot": {
       "id": 236,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 14.91357421875
       }
     }
   },
@@ -24504,8 +24504,8 @@ export const fishingLog = [
     "spot": {
       "id": 236,
       "coords": {
-        "x": null,
-        "y": null
+        "x": 29.02734375,
+        "y": 14.91357421875
       }
     }
   }

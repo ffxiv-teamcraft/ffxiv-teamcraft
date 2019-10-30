@@ -1822,5 +1822,27 @@ export const weatherIndex = {
       "rate": 100,
       "weatherId": 127
     }
+  ],
+  "117": [
+    {
+      "rate": 50,
+      "weatherId": 2
+    },
+    {
+      "rate": 80,
+      "weatherId": 5
+    },
+    {
+      "rate": 90,
+      "weatherId": 7
+    },
+    {
+      "rate": 95,
+      "weatherId": 6
+    },
+    {
+      "rate": 100,
+      "weatherId": 4
+    }
   ]
 };
