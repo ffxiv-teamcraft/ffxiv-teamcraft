@@ -173,6 +173,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   public dirty = false;
 
+  public savedSet = true;
+  
+  private formChangesSubscription: any;
+  
   // HQ ingredients
   private hqIngredients$: BehaviorSubject<{ id: number, amount: number }[]> =
     new BehaviorSubject<{ id: number, amount: number }[]>([]);
@@ -455,7 +459,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                         <Language>this.translate.currentLang));
                   }
                 } catch (ignoredAgain) {
-                  break;
                 }
               }
             }
@@ -590,6 +593,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       specialist: rawForm.specialist
     };
     this.authFacade.saveSet(set);
+    this.savedSet = true;
   }
 
   saveDefaultConsumables(): void {
@@ -749,6 +753,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.formChangesSubscription.unsubscribe();
+    
     this.onDestroy$.next(null);
   }
 
@@ -924,6 +930,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         return this.rotationTipsService.getTips(result);
       })
     );
+    
+    this.formChangesSubscription = this.statsForm.valueChanges.subscribe(() => {
+      this.savedSet = false;
+    });    
   }
 
 }
