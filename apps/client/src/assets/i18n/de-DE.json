@@ -142,7 +142,7 @@
     "User": "Benutzer",
     "Tables": "Tabelle",
     "Pie_charts": "Kuchendiagramm",
-    "Read_more_on_wiki": "Details in der Wiki ansehen"
+    "Read_more_on_wiki": "Details im Wiki ansehen"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -371,9 +371,9 @@
     "Always_HQ_leves": "Freibrief-Routine immer mit HQ-Gegenständen berechnen",
     "Clickthrough_overlay": "Durchklickbares Overlay",
     "Disable_search_history": "Suchverlauf deaktivieren",
-    "Disable_search_debounce": "Deaktivieren Sie die Entprellung der Suche (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
+    "Disable_search_debounce": "Deaktivieren Sie die automatische Suche (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
     "Enable_packet_capture": "Paketerfassung aktivieren (für Echtzeit Inventar-Funktionen)",
-    "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Sqaure Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
+    "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Square Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
     "Contribute_to_universalis": "Zu Universalis beitragen",
     "Persist_inventory": "Inventar in Datenbank speicher (um es mit der Web-Version zu teilen)",
     "COLORS": {
