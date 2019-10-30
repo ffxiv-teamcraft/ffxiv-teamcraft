@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.16...v6.1.0) (2019-10-30)
+
+
+### Bug Fixes
+
+* **inventory:** fixed an issue with items being sent via mail or trade ([1bddd19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1bddd19))
+* **inventory:** fixed an issue with marketboard price estimate ([443f4b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/443f4b7))
+* **item-picker:** fixed single item pick in list item addition popup ([72e2fd0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72e2fd0))
+
+
+### Features
+
+* **data:** add support for 5.1 data ([d026269](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d026269))
+* **inventory:** added inventory optimizer under helpers ([20b8438](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/20b8438))
+* **list:** added realtime position marker on zone breakdowns ([ab171be](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ab171be))
+
+
+
 <a name="6.0.16"></a>
 ## [6.0.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.15...v6.0.16) (2019-10-27)
 
