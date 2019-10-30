@@ -145,6 +145,7 @@ export class MachinaService {
             } catch (e) {
               console.log(packet);
               console.error(e);
+              this.ipc.log(e.message, JSON.stringify(packet));
             }
             return inventory;
           })
