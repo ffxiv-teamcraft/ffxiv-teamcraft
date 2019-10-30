@@ -142,7 +142,7 @@
     "User": "Benutzer",
     "Tables": "Tabelle",
     "Pie_charts": "Kuchendiagramm",
-    "Read_more_on_wiki": "Details in der Wiki ansehen"
+    "Read_more_on_wiki": "Details im Wiki ansehen"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -371,11 +371,11 @@
     "Always_HQ_leves": "Freibrief-Routine immer mit HQ-Gegenständen berechnen",
     "Clickthrough_overlay": "Durchklickbares Overlay",
     "Disable_search_history": "Suchverlauf deaktivieren",
-    "Disable_search_debounce": "Deaktivieren Sie die Entprellung der Suche (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
+    "Disable_search_debounce": "Deaktivieren Sie die automatische Suche (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
     "Enable_packet_capture": "Paketerfassung aktivieren (für Echtzeit Inventar-Funktionen)",
-    "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Sqaure Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
+    "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Square Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
     "Contribute_to_universalis": "Zu Universalis beitragen",
-    "Persist_inventory": "Inventar in Datenbank speicher (um es mit der Web-Version zu teilen)",
+    "Persist_inventory": "Inventar in Datenbank speichern (um es mit der Web-Version zu teilen)",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -645,7 +645,7 @@
     "Title": "Optimierte Navigationsroute",
     "Steps": "Stationen",
     "Loading_path": "Optimierter Pfad wird geladen (kann mehrere Sekunden dauern)",
-    "You_are_here": "You are here",
+    "You_are_here": "Du bist hier",
     "STEP": {
       "Gathering": "Sammel {{amount}} (Gesamt: {{total}})",
       "Hunting": "Erhalte {{amount}} von Monstern (Gesamt: {{total}})",
@@ -697,7 +697,7 @@
     "Participate": "Beitragen",
     "Participate_description": "Ermöglicht es, zu der Liste beizutragen",
     "Write": "Ändern",
-    "Write_description": "Ermöglicht es, die Liste oder den Workshop um neue Gegenstände oder Listen zu ergänzen",
+    "Write_description": "Ermöglicht es, neue Gegenstände oder Listen (bei Werkstätten) hinzuzufügen",
     "Title": "Rechteverwaltung",
     "Everyone": "Jeder",
     "You": "Du",
@@ -709,7 +709,7 @@
     "User_id_tip": "Die Nutzer-ID kann in der unteren rechten Ecke auf der Profilseite eingesehen werden.",
     "Saving": "Rechte werden gespeichert",
     "No_anonymous": "Du brauchst einen Account, um Rechte zu verwalten",
-    "Propagate_changes": "Berechtigungen auch auf Listen des Workshops anwenden",
+    "Propagate_changes": "Berechtigungen auch auf Listen innerhalb der Werkstatt anwenden",
     "Propagate_changes_done": "Änderungen wurden auf Listen des Workshops angewendet",
     "Team_notice": "Das mit dieser Liste verbundene Team hat automatisch das BEITRAGEN Recht",
     "Default_permission_level": "Standardberechtigung",
@@ -1554,21 +1554,21 @@
       "FC_chest": "FG-Truhe",
       "Bag": "Inventar",
       "Other": "Sonstige Vorräte",
-      "Armory": "Armory"
+      "Armory": "Arsenal"
     }
   },
   "INVENTORY_OPTIMIZER": {
-    "Title": "Inventory optimizer",
-    "Ignore_item": "Ignore this tip for this item",
-    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
-    "Show_ignored": "Show ignored items",
+    "Title": "Inventaroptimierer",
+    "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
+    "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
+    "Show_ignored": "Ignorierte Gegenstände zeigen",
     "CAN_BE_BOUGHT": {
-      "Title": "Items that can be bought with gil",
-      "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
+      "Title": "Gegenstände, die mit Gil gekauft werden können",
+      "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen."
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated accross multiple containers",
-      "Message": "This item is also present in: {{containers}}."
+      "Title": "Gegenstände, die in mehreren Inventaren enthalten sind",
+      "Message": "Dieser Gegenstand ist ebenfalls in folgendem Inventar enthalten: {{containers}}."
     }
   }
 }
