@@ -113,9 +113,9 @@
                   </div>
                 </div>
                 <div nz-col nzSm="4">
-                  <b>EXP:</b> {{getLeveExp(leve) | number}} <span *ngIf="globalExp">({{leve.exp | number}}
+                  <b>EXP:</b> {{getLeveExp(leve) | number}} <span *ngIf="globalExp">({{leve.exp * (leve.allDeliveries ? leve.repeats + 1 : 1) * (leve.hq ? 2 : 1) | number}}
                   x {{leve.amount}})</span><br/>
-                  <b>Gil:</b> {{getLeveGil(leve) | number}} <span *ngIf="globalExp">({{leve.gil | number}}
+                  <b>Gil:</b> {{getLeveGil(leve) | number}} <span *ngIf="globalExp">({{leve.gil * (leve.allDeliveries ? leve.repeats + 1 : 1) * (leve.hq ? 2 : 1) | number}}
                   x {{leve.amount}})</span>
                 </div>
                 <div nz-col nzSm="6">
