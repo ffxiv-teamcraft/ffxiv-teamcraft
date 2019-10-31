@@ -4,7 +4,7 @@ import { FirestoreRelationalStorage } from '../../core/database/storage/firestor
 import { PendingChangesService } from '../../core/database/pending-changes/pending-changes.service';
 import { Observable, of } from 'rxjs';
 import { AngularFirestore, DocumentChangeAction, QueryFn } from '@angular/fire/firestore';
-import { map } from 'rxjs/operators';
+import { filter, map, takeUntil } from 'rxjs/operators';
 import { ListTag } from './model/list-tag.enum';
 import { CompactList } from './model/compact-list';
 
@@ -47,6 +47,7 @@ export class ListCompactsService extends FirestoreRelationalStorage<CompactList>
     return this.firestore.collection(this.getBaseUri(), query)
       .snapshotChanges()
       .pipe(
+        takeUntil(this.stop$.pipe(filter(stop => stop === 'community'))),
         map((snaps: DocumentChangeAction<CompactList>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
