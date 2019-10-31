@@ -767,10 +767,22 @@
     "de": "Ewiges Licht",
     "fr": "Clarté éternelle"
   },
+  "130": {
+    "en": "Eruptions",
+    "ja": "噴煙",
+    "de": "Rauchschwaden",
+    "fr": "Éruptions"
+  },
   "131": {
     "en": "Termination",
     "ja": "終末",
     "de": "Apokalyptisch",
     "fr": "Apocalypse"
+  },
+  "132": {
+    "en": "Fair Skies",
+    "ja": "晴れ",
+    "de": "Heiter",
+    "fr": "Clair"
   }
 }
