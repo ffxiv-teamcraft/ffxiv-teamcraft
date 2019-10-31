@@ -1567,7 +1567,7 @@
       "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated accross multiple containers",
+      "Title": "Items that are duplicated across multiple containers",
       "Message": "This item is also present in: {{containers}}."
     }
   }
