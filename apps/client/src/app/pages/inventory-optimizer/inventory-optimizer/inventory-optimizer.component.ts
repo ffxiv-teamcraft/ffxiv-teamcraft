@@ -8,6 +8,8 @@ import { InventoryOptimization } from '../inventory-optimization';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import * as _ from 'lodash';
 import { ContainerType } from '../../../model/user/inventory/container-type';
+import { NzMessageService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -81,11 +83,15 @@ export class InventoryOptimizerComponent {
 
   constructor(private inventoryFacade: InventoryFacade,
               @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService, private message: NzMessageService, private translate: TranslateService) {
   }
 
   private getContainerName(item: InventoryItem): string {
     return item.retainerName || this.inventoryFacade.getContainerName(item.containerId);
+  }
+
+  nameCopied(key: string, args?: any): void {
+    this.message.success(this.translate.instant(key, args));
   }
 
   public setIgnoreItemOptimization(itemId: number, optimization: string, ignore: boolean): void {
