@@ -645,7 +645,7 @@
     "Title": "추천 경로",
     "Steps": "단계",
     "Loading_path": "추천 경로 불러오는 중 (몇 초 정도 소요될 수 있습니다)",
-    "You_are_here": "You are here",
+    "You_are_here": "현재 위치",
     "STEP": {
       "Gathering": "채집으로 {{amount}}개 얻기 (총계: {{total}})",
       "Hunting": "몬스터에게 {{amount}}개 얻기 (총합: {{total}})",
@@ -725,6 +725,7 @@
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
+    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
     "Include_consumables_notification": "소모품 알림 포함",
     "Consumable_notification": "{{buffs}} 사용이 필요합니다",
     "Extra_wait": "매크로 지연시간",
@@ -789,6 +790,7 @@
     "Rotation_solver": "로테이션 생성기",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
+    "Remove_final_appraisal": "Remove Final Appraisal buff",
     "STATE": {
       "Excellent": "최고품질",
       "Good": "고품질",
@@ -1554,7 +1556,7 @@
       "FC_chest": "부대 금고",
       "Bag": "소지품",
       "Other": "다른 소지품",
-      "Armory": "Armory"
+      "Armory": "장비함"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1567,7 +1569,7 @@
       "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated accross multiple containers",
+      "Title": "Items that are duplicated across multiple containers",
       "Message": "This item is also present in: {{containers}}."
     }
   }

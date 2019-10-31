@@ -5,7 +5,7 @@ import { ListTag } from '../../../modules/list/model/list-tag.enum';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { debounceTime, first, map, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ListCompactsService } from '../../../modules/list/list-compacts.service';
+import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 
 @Component({
   selector: 'app-community-lists',
@@ -32,7 +32,7 @@ export class CommunityListsComponent implements OnDestroy {
 
   filteredLists$: Observable<List[]>;
 
-  constructor(private listsFacade: ListsFacade, private listCompactsService: ListCompactsService,
+  constructor(private listsFacade: ListsFacade, private listService: FirestoreListStorage,
               route: ActivatedRoute, router: Router) {
     this.tags = Object.keys(ListTag).map(key => {
       return {
@@ -70,7 +70,7 @@ export class CommunityListsComponent implements OnDestroy {
       tap(() => this.loading = true),
       debounceTime(250),
       switchMap((filters) => {
-        return this.listCompactsService.getCommunityLists(filters.tags, filters.name).pipe(
+        return this.listService.getCommunityLists(filters.tags, filters.name).pipe(
           tap(lists => {
             this.totalLength = lists.length;
           }),
@@ -91,7 +91,7 @@ export class CommunityListsComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.listCompactsService.stopListening('community');
+    this.listService.stopListening('community');
   }
 
 }

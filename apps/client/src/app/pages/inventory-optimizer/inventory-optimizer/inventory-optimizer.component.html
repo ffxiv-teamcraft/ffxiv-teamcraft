@@ -51,7 +51,12 @@
                         width="32"></app-item-icon>
                     </ng-template>
                     <ng-template #nzTitle>
-                      {{entry.item.itemId | itemName | i18n}} x{{entry.item.quantity}}
+                      <span (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})"
+                            [nzTitle]="'Copy_isearch' | translate"
+                            nz-tooltip
+                            cbContent="/isearch &quot;{{entry.item.itemId | itemName | i18n}}&quot;"
+                            class="item-name"
+                            ngxClipboard>{{entry.item.itemId | itemName | i18n}}</span> x{{entry.item.quantity}}
                       <span
                         *ngIf="entry.item.hq">{{'Hq' | translate}}</span>
                     </ng-template>

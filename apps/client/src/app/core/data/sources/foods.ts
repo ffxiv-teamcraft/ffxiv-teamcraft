@@ -103,4 +103,8 @@ export const foods = [{
   'itemId': 27876,
   'CP': [{ 'amount': 0.21, 'max': 53 }, { 'amount': 0.26, 'max': 66 }],
   'Control': [{ 'amount': 0.04, 'max': 51 }, { 'amount': 0.05, 'max': 64 }]
+}, {
+  'itemId': 28720,
+  'CP': [{ 'amount': 0.21, 'max': 56 }, { 'amount': 0.26, 'max': 70 }],
+  'Craftsmanship': [{ 'amount': 0.05, 'max': 84 }, { 'amount': 0.06, 'max': 105 }]
 }];

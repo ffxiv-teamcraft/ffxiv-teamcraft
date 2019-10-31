@@ -12,7 +12,6 @@ export enum ListsActionTypes {
 
   LoadListDetails = '[Lists] Load List',
   UnloadListDetails = '[Lists] Unload List',
-  LoadListCompact = '[Lists] Load List Compact',
   SelectList = '[Lists] Select List',
 
   SetItemDone = '[Lists] Set Item Done',
@@ -20,13 +19,11 @@ export enum ListsActionTypes {
 
   MyListsLoaded = '[Lists] My Lists Loaded',
   TeamListsLoaded = '[Lists] Team Lists Loaded',
-  ListCompactLoaded = '[Lists] List Compact Loaded',
   SharedListsLoaded = '[Lists] Shared Lists Loaded',
   ListDetailsLoaded = '[Lists] List Details Loaded',
 
 
   CreateList = '[Lists] Create List',
-  CreateOptimisticListCompact = '[Lists] Create List Compact',
   UpdateList = '[Lists] Update List',
   UpdateListAtomic = '[Lists] Update List Atomic',
   UpdateListIndex = '[Lists] Update List Index',
@@ -83,13 +80,6 @@ export class LoadListDetails implements Action {
 
 export class UnloadListDetails implements Action {
   readonly type = ListsActionTypes.UnloadListDetails;
-
-  constructor(public readonly key: string) {
-  }
-}
-
-export class LoadListCompact implements Action {
-  readonly type = ListsActionTypes.LoadListCompact;
 
   constructor(public readonly key: string) {
   }
@@ -154,24 +144,10 @@ export class ListDetailsLoaded implements Action {
   }
 }
 
-export class ListCompactLoaded implements Action {
-  readonly type = ListsActionTypes.ListCompactLoaded;
-
-  constructor(public payload: Partial<List>) {
-  }
-}
-
 export class CreateList implements Action {
   readonly type = ListsActionTypes.CreateList;
 
   constructor(public readonly payload: List) {
-  }
-}
-
-export class CreateOptimisticListCompact implements Action {
-  readonly type = ListsActionTypes.CreateOptimisticListCompact;
-
-  constructor(public readonly payload: List, public readonly key: string) {
   }
 }
 
@@ -220,10 +196,7 @@ export type ListsAction =
   | SelectList
   | SetItemDone
   | ListDetailsLoaded
-  | CreateOptimisticListCompact
   | UpdateListIndex
-  | LoadListCompact
-  | ListCompactLoaded
   | LoadSharedLists
   | SharedListsLoaded
   | UpdateItem

@@ -101,28 +101,6 @@ export class List extends DataWithPermissions {
     return clone;
   }
 
-  public getCompact(): List {
-    const compact = new List();
-    for (const prop of Object.keys(this)) {
-      if (['finalItems', 'note'].indexOf(prop) > -1) {
-        compact[prop] = JSON.parse(JSON.stringify(this[prop]));
-      }
-    }
-    compact.name = this.name;
-    compact.version = this.version || '1.0.0';
-    compact.tags = this.tags;
-    compact.everyone = this.everyone;
-    compact.offline = this.offline;
-    compact.registry = this.registry;
-    compact.authorId = this.authorId;
-    compact.$key = this.$key;
-    compact.ephemeral = this.ephemeral;
-    compact.index = this.index;
-    compact.teamId = this.teamId;
-    compact.createdAt = this.createdAt;
-    return compact;
-  }
-
   public reset(): void {
     this.finalItems.forEach(recipe => this.resetDone(recipe));
   }

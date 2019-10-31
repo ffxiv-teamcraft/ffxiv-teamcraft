@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.3"></a>
+## [6.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.2...v6.1.3) (2019-10-31)
+
+
+### Bug Fixes
+
+* **data:** added missing foods ands weathers ([917c578](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/917c578))
+* **i18n:** fixed typo in inventory optimizer ([6059a77](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6059a77))
+* **inventory-optimizer:** don't consider items that are on sale anymore ([d226c69](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d226c69))
+* **list:** fixed an issue with regeneration not taking WVR changes into account ([40fda6b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/40fda6b)), closes [#1173](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1173)
+* **stats:** fixed specialist CP bonus not being applied properly ([8882382](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8882382)), closes [#1179](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1179)
+* **tips:** fixed IQ tip when using Reflect instead ([bdd8ea3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bdd8ea3))
+
+
+### Features
+
+* **desktop:** switched back to winpcap monitor by default ([afe3770](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/afe3770))
+* **optimizer:** added copy isearch on item name click ([6f67847](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f67847))
+* **simulator:** added a custom action to remove final appraisal in rotation ([2f337d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f337d0))
+* **simulator:** Option to split macro before byregot's blessing ([1e43bbc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e43bbc))
+
+
+
 <a name="6.1.2"></a>
 ## [6.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.1...v6.1.2) (2019-10-31)
 

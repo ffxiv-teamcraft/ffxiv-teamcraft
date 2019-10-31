@@ -8,10 +8,10 @@ import { List } from '../../../modules/list/model/list';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { UserService } from '../../../core/database/user.service';
-import { ListCompactsService } from '../../../modules/list/list-compacts.service';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation/crafting-rotation.service';
+import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 
 @Component({
   selector: 'app-public-profile',
@@ -35,7 +35,7 @@ export class PublicProfileComponent {
   now = Math.floor(Date.now() / 1000);
 
   constructor(private route: ActivatedRoute, private characterService: CharacterService,
-              private listCompactsService: ListCompactsService, private authFacade: AuthFacade,
+              private listsService: FirestoreListStorage, private authFacade: AuthFacade,
               private userService: UserService, private craftingRotationsService: CraftingRotationService) {
     const userId$ = this.route.paramMap.pipe(
       map(params => params.get('userId')),
@@ -57,7 +57,7 @@ export class PublicProfileComponent {
     );
     this.communityLists$ = userId$.pipe(
       switchMap(userId => {
-        return this.listCompactsService.getUserCommunityLists(userId);
+        return this.listsService.getUserCommunityLists(userId);
       }),
       shareReplay(1)
     );
