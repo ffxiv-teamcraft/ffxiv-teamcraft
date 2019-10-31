@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { ListTag } from '../../../modules/list/model/list-tag.enum';
@@ -12,7 +12,7 @@ import { ListCompactsService } from '../../../modules/list/list-compacts.service
   templateUrl: './community-lists.component.html',
   styleUrls: ['./community-lists.component.less']
 })
-export class CommunityListsComponent {
+export class CommunityListsComponent implements OnDestroy {
 
   public tags: any[];
 
@@ -88,6 +88,10 @@ export class CommunityListsComponent {
 
   trackByList(index: number, list: List): string {
     return list.$key;
+  }
+
+  ngOnDestroy(): void {
+    this.listCompactsService.stopListening('community');
   }
 
 }

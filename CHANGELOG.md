@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.2"></a>
+## [6.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.1...v6.1.2) (2019-10-31)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with some alarms not showing properly ([37cc2e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/37cc2e0))
+* **data:** multiple missing data fixes ([8c0ee83](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c0ee83))
+* **db:** possible fix for quota exceeded ([ab805b1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ab805b1))
+
+
+
 <a name="6.1.1"></a>
 ## [6.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.0...v6.1.1) (2019-10-30)
 
