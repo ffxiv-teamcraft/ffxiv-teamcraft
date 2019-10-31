@@ -1567,7 +1567,7 @@
       "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen."
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated across multiple containers",
+      "Title": "Gegenstände, die in mehreren Inventaren enthalten sind",
       "Message": "Dieser Gegenstand ist ebenfalls in folgendem Inventar enthalten: {{containers}}."
     }
   }
