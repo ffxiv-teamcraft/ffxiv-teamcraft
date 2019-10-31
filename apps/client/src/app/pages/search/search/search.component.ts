@@ -1108,6 +1108,18 @@ export class SearchComponent implements OnInit {
     });
 
     this.submitFilters();
+
+    const params = this.route.snapshot.queryParams;
+
+    this.router.navigate(['.'], {
+      queryParamsHandling: 'merge',
+      queryParams: {
+        query: params.query,
+        type: params.type,
+        filters: null
+      },
+      relativeTo: this.route
+    });
   }
 
   submitFilters(): void {
