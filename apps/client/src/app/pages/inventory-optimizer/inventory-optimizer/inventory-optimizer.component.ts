@@ -7,6 +7,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { InventoryOptimization } from '../inventory-optimization';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import * as _ from 'lodash';
+import { ContainerType } from '../../../model/user/inventory/container-type';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -22,6 +23,7 @@ export class InventoryOptimizerComponent {
       return this.optimizers
         .map(optimizer => {
           const entries = inventory.toArray()
+            .filter(item => item.containerId !== ContainerType.RetainerMarket)
             .map(item => {
               return {
                 item: item,
