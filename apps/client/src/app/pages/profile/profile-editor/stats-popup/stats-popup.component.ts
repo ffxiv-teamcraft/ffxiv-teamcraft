@@ -64,9 +64,11 @@ export class StatsPopupComponent implements OnInit {
         if (set.specialist && previousSet && !previousSet.specialist) {
           newSet.craftsmanship -= 20;
           newSet.control -= 20;
+          newSet.cp -= 15;
         } else if (!set.specialist && previousSet && previousSet.specialist) {
           newSet.craftsmanship += 20;
           newSet.control += 20;
+          newSet.cp += 15;
         }
         this.authFacade.saveSet(newSet, true);
       });
