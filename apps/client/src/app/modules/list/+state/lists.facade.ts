@@ -7,7 +7,6 @@ import { listsQuery } from './lists.selectors';
 import {
   CreateList,
   DeleteList,
-  LoadListCompact,
   LoadListDetails,
   LoadMyLists,
   LoadSharedLists,
@@ -43,11 +42,10 @@ declare const gtag: Function;
   providedIn: 'root'
 })
 export class ListsFacade {
-  loadingMyLists$ = this.store.select(listsQuery.getCompactsLoading);
+  loadingMyLists$ = this.store.select(listsQuery.getListsLoading);
   allListDetails$ = this.store.select(listsQuery.getAllListDetails);
-  compacts$ = this.store.select(listsQuery.getCompacts);
 
-  myLists$ = combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.userId$]).pipe(
+  myLists$ = combineLatest([this.store.select(listsQuery.getAllListDetails), this.authFacade.userId$]).pipe(
     map(([compacts, userId]) => {
       return compacts.filter(c => c.authorId === userId);
     }),
@@ -60,7 +58,7 @@ export class ListsFacade {
   sharedLists$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
       if (!loggedIn) {
-        return combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.userId$]).pipe(
+        return combineLatest([this.store.select(listsQuery.getAllListDetails), this.authFacade.userId$]).pipe(
           map(([compacts, userId]) => {
             return compacts.filter(c => {
               return !c.notFound
@@ -71,7 +69,7 @@ export class ListsFacade {
           })
         );
       }
-      return combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$]).pipe(
+      return combineLatest([this.store.select(listsQuery.getAllListDetails), this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$]).pipe(
         map(([compacts, user, userId, fcId]) => {
           if (user !== null) {
             const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
@@ -154,13 +152,13 @@ export class ListsFacade {
   }
 
   getTeamLists(team: Team): Observable<List[]> {
-    return this.compacts$.pipe(
+    return this.allListDetails$.pipe(
       map(compacts => compacts.filter(compact => compact.teamId === team.$key))
     );
   }
 
   getWorkshopCompacts(keys: string[]): Observable<List[]> {
-    return this.compacts$.pipe(
+    return this.allListDetails$.pipe(
       map(compacts => keys.map(key => compacts.find(compact => compact.$key === key)))
     );
   }
@@ -243,10 +241,6 @@ export class ListsFacade {
 
   loadListsWithWriteAccess(): void {
     this.store.dispatch(new LoadSharedLists());
-  }
-
-  loadCompact(key: string): void {
-    this.store.dispatch(new LoadListCompact(key));
   }
 
   load(key: string): void {

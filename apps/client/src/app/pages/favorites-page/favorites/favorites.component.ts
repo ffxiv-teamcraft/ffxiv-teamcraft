@@ -3,7 +3,7 @@ import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { Observable } from 'rxjs/Observable';
 import { List } from '../../../modules/list/model/list';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { debounceTime, distinctUntilChanged, filter, map, switchMap, tap, mergeMap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, mergeMap, tap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { combineLatest } from 'rxjs';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
@@ -31,10 +31,10 @@ export class FavoritesComponent {
               private rotationsFacade: RotationsFacade, private rotationFoldersFacade: RotationFoldersFacade) {
     this.lists$ = this.authFacade.favorites$.pipe(
       map(favorites => (favorites.lists || [])),
-      tap(lists => lists.forEach(list => this.listsFacade.loadCompact(list))),
+      tap(lists => lists.forEach(list => this.listsFacade.load(list))),
       mergeMap(lists => {
-        return this.listsFacade.compacts$.pipe(
-          map(compacts => compacts.filter(c => lists.indexOf(c.$key) > -1 && !c.notFound))
+        return this.listsFacade.allListDetails$.pipe(
+          map(details => details.filter(c => lists.indexOf(c.$key) > -1 && !c.notFound))
         );
       })
     );
@@ -45,7 +45,7 @@ export class FavoritesComponent {
       tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
       mergeMap(rotations => {
         return this.rotationsFacade.allRotations$.pipe(
-          map(loadedRotations => loadedRotations.filter(r => rotations.indexOf(r.$key) > -1&& !r.notFound))
+          map(loadedRotations => loadedRotations.filter(r => rotations.indexOf(r.$key) > -1 && !r.notFound))
         );
       })
     );
@@ -57,12 +57,12 @@ export class FavoritesComponent {
         return this.workshopsFacade.allWorkshops$.pipe(
           map(ws => ws.filter(w => workshops.indexOf(w.$key) > -1)),
           filter(ws => ws.length === workshops.length),
-          tap(ws => ws.forEach(w => w.listIds.forEach(listId => this.listsFacade.loadCompact(listId))))
+          tap(ws => ws.forEach(w => w.listIds.forEach(listId => this.listsFacade.load(listId))))
         );
       })
     );
 
-    this.workshops$ = combineLatest(favoriteWorkshops$, this.listsFacade.compacts$).pipe(
+    this.workshops$ = combineLatest([favoriteWorkshops$, this.listsFacade.allListDetails$]).pipe(
       debounceTime(100),
       map(([workshops, compacts]) => {
         return workshops

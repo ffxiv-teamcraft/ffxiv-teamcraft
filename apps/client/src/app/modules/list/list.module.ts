@@ -27,7 +27,6 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ListCompactsService } from './list-compacts.service';
 import { ClipboardModule } from 'ngx-clipboard';
 import { AlarmsExtractor } from './data/extractor/alarms-extractor';
 import { BellNodesService } from '../../core/data/bell-nodes.service';
@@ -103,8 +102,7 @@ export const DATA_EXTRACTORS: Provider[] = [
   ],
   providers: [
     ...DATA_EXTRACTORS,
-    DataExtractorService,
-    ListCompactsService
+    DataExtractorService
   ],
   declarations: [ListPanelComponent, TagsPopupComponent, ListCompletionPopupComponent],
   entryComponents: [TagsPopupComponent, ListCompletionPopupComponent],
