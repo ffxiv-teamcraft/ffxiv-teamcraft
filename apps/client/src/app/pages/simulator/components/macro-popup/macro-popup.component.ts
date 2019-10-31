@@ -15,8 +15,6 @@ export class MacroPopupComponent implements OnInit {
 
   public macro: string[][] = [[]];
 
-  public aactionsMacro: string[] = [];
-
   private readonly maxMacroLines = 15;
 
   public addEcho = true;
@@ -52,7 +50,6 @@ export class MacroPopupComponent implements OnInit {
     localStorage.setItem('macros:macrolock', this.macroLock.toString());
     localStorage.setItem('macros:consumables', this.addConsumables.toString());
     this.macro = this.macroLock ? [['/mlock']] : [[]];
-    this.aactionsMacro = ['/aaction clear'];
     let totalLength = 0;
     const reclaimBreakpoint = this.simulation ? this.simulation.clone().run(true).simulation.lastPossibleReclaimStep : -1;
     this.rotation.forEach((action) => {
@@ -66,11 +63,6 @@ export class MacroPopupComponent implements OnInit {
       let actionName = this.i18n.getName(this.l12n.getAction(action.getIds()[0]));
       if (actionName.indexOf(' ') > -1 || this.translator.currentLang === 'ko') {
         actionName = `"${actionName}"`;
-      }
-      if (action.getLevelRequirement().job !== CraftingJob.ANY && action.getLevelRequirement().job !== this.job) {
-        if (this.aactionsMacro.indexOf(`/aaction ${actionName}`) === -1) {
-          this.aactionsMacro.push(`/aaction ${actionName}`);
-        }
       }
 
       macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration() + this.extraWait}>`);
@@ -103,21 +95,14 @@ export class MacroPopupComponent implements OnInit {
       }
       this.macro[this.macro.length - 1].push(`/echo Craft finished <se.${seNumber}>`);
     }
-    // 11 not 10 because /aactions clear takes the first line :)
-    if (this.aactionsMacro.length < 11 && this.aactionsMacro.indexOf(`/aaction "${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}"`) === -1) {
-      this.aactionsMacro.push(`/aaction "${this.i18n.getName(this.l12n.getAction(new HastyTouch().getIds()[0]))}"`);
-    }
-    if (this.aactionsMacro.length > 11) {
-      this.tooManyAactions = true;
-    }
-    if (this.aactionsMacro.length > 0) {
-      this.aactionsMacro.push('/echo Cross class setup finished <se.4>');
-    }
-
+    
+    /* Without the additional actions macro there is nothing to add the consumable macro to
+    
     const consumablesNotification = this.getConsumablesNotification();
     if (consumablesNotification !== undefined) {
       this.aactionsMacro.push(consumablesNotification);
     }
+    */
   }
 
   /**

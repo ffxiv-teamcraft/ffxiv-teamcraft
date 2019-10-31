@@ -31,10 +31,12 @@
   <div [nzMd]="{ span: 5, offset: 1, order: 3 }" [nzXXl]="{ span: 3 }" [nzXs]="{ span: 13, offset: 1, order: 2 }"
        nz-col>
     <nz-input-group class="levels" nzCompact>
-      <nz-input-number (ngModelChange)="setLevel(levelMin$, $event)" [ngModel]="levelMin$.value" [nzMax]="80" [nzMin]="1"
+      <nz-input-number (ngModelChange)="setLevel(levelMin$, $event)" [ngModel]="levelMin$.value" [nzMax]="80"
+                       [nzMin]="1"
                        [nzPrecision]="0"></nz-input-number>
       <input disabled nz-input placeholder="-" type="text">
-      <nz-input-number (ngModelChange)="setLevel(levelMax$, $event)" [ngModel]="levelMax$.value" [nzMax]="80" [nzMin]="levelMin$.value"
+      <nz-input-number (ngModelChange)="setLevel(levelMax$, $event)" [ngModel]="levelMax$.value" [nzMax]="80"
+                       [nzMin]="levelMin$.value"
                        [nzPrecision]="0"></nz-input-number>
     </nz-input-group>
   </div>
@@ -111,8 +113,10 @@
                   </div>
                 </div>
                 <div nz-col nzSm="4">
-                  <b>EXP:</b> {{getLeveExp(leve) | number}}<br/>
-                  <b>Gil:</b> {{getLeveGil(leve) | number}}
+                  <b>EXP:</b> {{getLeveExp(leve) | number}} <span *ngIf="globalExp">({{leve.exp * (leve.allDeliveries ? leve.repeats + 1 : 1) * (leve.hq ? 2 : 1) | number}}
+                  x {{leve.amount}})</span><br/>
+                  <b>Gil:</b> {{getLeveGil(leve) | number}} <span *ngIf="globalExp">({{leve.gil * (leve.allDeliveries ? leve.repeats + 1 : 1) * (leve.hq ? 2 : 1) | number}}
+                  x {{leve.amount}})</span>
                 </div>
                 <div nz-col nzSm="6">
                   <label [(ngModel)]="leve.hq" class="hq-checkbox" nz-checkbox>
@@ -126,11 +130,13 @@
                   </label>
                 </div>
                 <div class="actions" nz-col nzSm="4">
-                  <button (click)="addLevesToList([leve])" [nzTitle]="'LEVEQUESTS.Add_to_list' | translate" nz-button nz-tooltip
+                  <button (click)="addLevesToList([leve])" [nzTitle]="'LEVEQUESTS.Add_to_list' | translate" nz-button
+                          nz-tooltip
                           nzShape="circle" nzType="primary">
                     <i nz-icon nzType="plus"></i>
                   </button>
-                  <button (click)="createQuickList(leve)" [nzTitle]="'Quick_list_create' | translate" nz-button nz-tooltip
+                  <button (click)="createQuickList(leve)" [nzTitle]="'Quick_list_create' | translate" nz-button
+                          nz-tooltip
                           nzShape="circle" nzType="primary">
                     <i nz-icon nzType="clock-circle-o"></i>
                   </button>

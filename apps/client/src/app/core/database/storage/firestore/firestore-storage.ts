@@ -1,4 +1,4 @@
-import { combineLatest, from, Observable, of } from 'rxjs';
+import { combineLatest, from, Observable, of, Subject } from 'rxjs';
 import { DataModel } from '../data-model';
 import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
@@ -22,10 +22,20 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
 
   protected skipClone = false;
 
+  protected stop$: Subject<string> = new Subject<string>();
+
   protected constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
                         protected pendingChangesService: PendingChangesService) {
     super();
     this.subcollections = Reflect.getMetadata(METADATA_SUBCOLLECTIONS_INDEX, new (<Instantiable>this.getClass())()) || [];
+  }
+
+  public stopListening(key: string, cacheEntry?: string): void {
+    this.stop$.next(key);
+    if (cacheEntry) {
+      delete this.syncCache[cacheEntry];
+      delete this.cache[cacheEntry];
+    }
   }
 
   protected prepareData(data: Partial<T>): { parent: T, subcollections: { [index: string]: any[] } } {
