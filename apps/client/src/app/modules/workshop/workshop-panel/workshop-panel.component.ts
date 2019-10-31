@@ -55,7 +55,7 @@ export class WorkshopPanelComponent implements OnChanges {
               private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
               private listsFacade: ListsFacade, private customLinksFacade: CustomLinksFacade,
               private listPicker: ListPickerService) {
-    this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.workshop$).pipe(
+    this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.workshop$]).pipe(
       map(([links, workshop]) => links.find(link => link.redirectTo === `workshop/${workshop.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
@@ -70,7 +70,7 @@ export class WorkshopPanelComponent implements OnChanges {
   }
 
   addLists(): void {
-    combineLatest(this.listsFacade.myLists$, this.workshopsFacade.myWorkshops$).pipe(
+    combineLatest([this.listsFacade.myLists$, this.workshopsFacade.myWorkshops$]).pipe(
       first(),
       switchMap(([lists, workshops]) => {
         const elements = lists
@@ -200,8 +200,8 @@ export class WorkshopPanelComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     // Filter the lists we are missing and we need to load
     this._workshop.listIds.filter(id => this.lists.find(l => l.$key === id) === undefined)
-      .forEach((missingCompact) => {
-        this.listsFacade.loadCompact(missingCompact);
+      .forEach((missingList) => {
+        this.listsFacade.load(missingList);
       });
   }
 }

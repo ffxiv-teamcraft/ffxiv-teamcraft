@@ -1,20 +1,21 @@
 import { List } from '../../../../modules/list/model/list';
 import { Injectable, NgZone } from '@angular/core';
 import { ListStore } from './list-store';
-import { combineLatest, from, Observable } from 'rxjs';
+import { combineLatest, from, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { FirestoreStorage } from '../firestore/firestore-storage';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { first, map, switchMap } from 'rxjs/operators';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
+import { AngularFirestore, DocumentChangeAction, QueryFn } from '@angular/fire/firestore';
 import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { diff } from 'deep-diff';
+import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
+import { ListTag } from '../../../../modules/list/model/list-tag.enum';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FirestoreListStorage extends FirestoreStorage<List> implements ListStore {
+export class FirestoreListStorage extends FirestoreRelationalStorage<List> implements ListStore {
 
   private static readonly PERSISTED_LIST_ROW_PROPERTIES = ['amount', 'done', 'amount_needed', 'used', 'id', 'icon', 'recipeId', 'yield', 'workingOnIt', 'requiredAsHQ', 'custom', 'attachedRotation', 'requires'];
 
@@ -68,6 +69,74 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
         return this.completeListData(list);
       })
     );
+  }
+
+  public getShared(userId: string): Observable<List[]> {
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 20))
+      .snapshotChanges()
+      .pipe(
+        map((snaps: DocumentChangeAction<List>[]) => {
+          const lists = snaps
+            .map((snap: DocumentChangeAction<any>) => {
+              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              delete snap.payload;
+              return valueWithKey;
+            });
+          return this.serializer.deserialize<List>(lists, [this.getClass()]);
+        })
+      );
+  }
+
+  public getCommunityLists(tags: string[], name: string): Observable<List[]> {
+    if (tags.length === 0 && name.length < 3) {
+      return of([]);
+    }
+    const query: QueryFn = ref => {
+      let baseQuery = ref.where(`public`, '==', true);
+      if (tags.length > 0) {
+        baseQuery = baseQuery.where('tags', 'array-contains', tags[0]);
+      }
+      return baseQuery;
+    };
+    return this.firestore.collection(this.getBaseUri(), query)
+      .snapshotChanges()
+      .pipe(
+        takeUntil(this.stop$.pipe(filter(stop => stop === 'community'))),
+        map((snaps: DocumentChangeAction<List>[]) => {
+          const lists = snaps
+            .map((snap: DocumentChangeAction<any>) => {
+              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              delete snap.payload;
+              return valueWithKey;
+            })
+            .filter(list => {
+              return tags.reduce((res, tag) => res && list.tags.indexOf(<ListTag>tag) > -1, true);
+            })
+            .filter(list => {
+              return list.name.toLowerCase().indexOf(name.toLowerCase()) > -1;
+            });
+          return this.serializer.deserialize<List>(lists, [this.getClass()]);
+        })
+      );
+  }
+
+  public getUserCommunityLists(userId: string): Observable<List[]> {
+    const query: QueryFn = ref => {
+      return ref.where('authorId', '==', userId).where(`public`, '==', true);
+    };
+    return this.firestore.collection(this.getBaseUri(), query)
+      .snapshotChanges()
+      .pipe(
+        map((snaps: DocumentChangeAction<List>[]) => {
+          const lists = snaps
+            .map((snap: DocumentChangeAction<any>) => {
+              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              delete snap.payload;
+              return valueWithKey;
+            });
+          return this.serializer.deserialize<List>(lists, [this.getClass()]);
+        })
+      );
   }
 
   /**

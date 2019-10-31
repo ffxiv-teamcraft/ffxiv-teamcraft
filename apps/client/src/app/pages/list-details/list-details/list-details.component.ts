@@ -147,17 +147,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         map(([team, userId, permissionsLevel]) => team.leader === userId || permissionsLevel >= PermissionLevel.OWNER)
       );
 
-    combineLatest([this.list$, this.listsFacade.compacts$]).pipe(
-      filter(([list, compacts]) => list.notFound && compacts.some(l => l.$key === list.$key)),
-      switchMap(([list, compacts]) => {
-        const listCompact = compacts.find(l => l.$key === list.$key);
-        return this.listManager.upgradeList(listCompact);
-      }),
-      takeUntil(this.onDestroy$)
-    ).subscribe(regeneratedList => {
-      this.listsFacade.updateList(regeneratedList);
-    });
-
     combineLatest([this.list$, this.teamsFacade.allTeams$, this.teamsFacade.selectedTeam$]).pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(([list, teams]) => {

@@ -26,11 +26,11 @@ export class ListPickerDrawerComponent {
 
   constructor(private listsFacade: ListsFacade, private drawerRef: NzDrawerRef<List>, private workshopsFacade: WorkshopsFacade) {
 
-    this.listsWithWriteAccess$ = combineLatest(this.listsFacade.listsWithWriteAccess$, this.query$).pipe(
+    this.listsWithWriteAccess$ = combineLatest([this.listsFacade.listsWithWriteAccess$, this.query$]).pipe(
       map(([lists, query]) => lists.filter(l => !l.notFound && !l.isTooLarge() && l.name !== undefined && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1))
     );
 
-    this.workshops$ = combineLatest(this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$, this.query$).pipe(
+    this.workshops$ = combineLatest([this.workshopsFacade.myWorkshops$, this.listsFacade.allListDetails$, this.query$]).pipe(
       debounceTime(100),
       map(([workshops, compacts, query]) => {
         return workshops

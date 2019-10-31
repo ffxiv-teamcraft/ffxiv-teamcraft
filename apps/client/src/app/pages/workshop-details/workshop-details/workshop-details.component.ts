@@ -28,7 +28,7 @@ export class WorkshopDetailsComponent implements OnInit {
       filter(w => w !== undefined),
       tap(workshop => {
         if (!workshop.notFound) {
-          workshop.listIds.forEach(listId => this.listsFacade.loadCompact(listId));
+          workshop.listIds.forEach(listId => this.listsFacade.load(listId));
         }
       })
     );

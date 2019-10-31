@@ -3,13 +3,10 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import {
   ConvertLists,
   CreateList,
-  CreateOptimisticListCompact,
   DeleteList,
-  ListCompactLoaded,
   ListDetailsLoaded,
   ListsActionTypes,
   ListsForTeamsLoaded,
-  LoadListCompact,
   LoadListDetails,
   LoadTeamLists,
   MyListsLoaded,
@@ -39,7 +36,6 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, EMPTY, from, of } from 'rxjs';
 import { ListsFacade } from './lists.facade';
-import { ListCompactsService } from '../list-compacts.service';
 import { List } from '../model/list';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { Team } from '../../../model/team/team';
@@ -50,7 +46,6 @@ import { NzModalService } from 'ng-zorro-antd';
 import { ListCompletionPopupComponent } from '../list-completion-popup/list-completion-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { ListStore } from '../../../core/database/storage/list/list-store';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 
 @Injectable()
@@ -64,7 +59,7 @@ export class ListsEffects {
     switchMap((userId) => {
       this.localStore = this.serializer.deserialize<List>(JSON.parse(localStorage.getItem('offline-lists') || '[]'), [List]);
       this.listsFacade.offlineListsLoaded(this.localStore);
-      return this.listCompactsService.getByForeignKey(TeamcraftUser, userId)
+      return this.listService.getByForeignKey(TeamcraftUser, userId)
         .pipe(
           map(lists => new MyListsLoaded(lists, userId))
         );
@@ -75,7 +70,7 @@ export class ListsEffects {
   loadTeamLists$ = this.actions$.pipe(
     ofType<LoadTeamLists>(ListsActionTypes.LoadTeamLists),
     mergeMap((action) => {
-      return this.listCompactsService.getByForeignKey(Team, action.teamId)
+      return this.listService.getByForeignKey(Team, action.teamId)
         .pipe(
           map(lists => new TeamListsLoaded(lists, action.teamId))
         );
@@ -90,14 +85,14 @@ export class ListsEffects {
     distinctUntilChanged(),
     switchMap(([user, fcId]) => {
       // First of all, load using user Id
-      return this.listCompactsService.getShared(user.$key).pipe(
+      return this.listService.getShared(user.$key).pipe(
         switchMap((lists) => {
           // If we don't have fc informations yet, return the lists directly.
           if (!fcId) {
             return of(lists);
           }
           // Else add fc lists
-          return this.listCompactsService.getShared(fcId).pipe(
+          return this.listService.getShared(fcId).pipe(
             map(fcLists => {
               const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
               const verified = idEntry && idEntry.verified;
@@ -118,7 +113,7 @@ export class ListsEffects {
   @Effect()
   loadListsForTeam$ = this.teamsFacade.myTeams$.pipe(
     switchMap((teams) => {
-      return combineLatest(teams.map(team => this.listCompactsService.getByForeignKey(Team, team.$key)));
+      return combineLatest(teams.map(team => this.listService.getByForeignKey(Team, team.$key)));
     }),
     map(listsArrays => [].concat.apply([], ...listsArrays)),
     map(lists => new ListsForTeamsLoaded(lists))
@@ -194,17 +189,6 @@ export class ListsEffects {
   );
 
   @Effect()
-  createOptimisticListCompact$ = this.actions$.pipe(
-    ofType<CreateOptimisticListCompact>(ListsActionTypes.CreateOptimisticListCompact),
-    withLatestFrom(this.listsFacade.myLists$),
-    map(([action, lists]) => {
-      action.payload.$key = action.key;
-      delete action.payload.items;
-      return new MyListsLoaded([...lists, action.payload], action.payload.authorId);
-    })
-  );
-
-  @Effect()
   persistUpdateListIndex$ = this.actions$.pipe(
     ofType<UpdateListIndex>(ListsActionTypes.UpdateListIndex),
     mergeMap(action => {
@@ -212,10 +196,7 @@ export class ListsEffects {
         this.saveToLocalstorage(action.payload, false);
         return EMPTY;
       }
-      return combineLatest([
-        this.listCompactsService.pureUpdate(action.payload.$key, { index: action.payload.index }),
-        this.listService.pureUpdate(action.payload.$key, { index: action.payload.index })
-      ]);
+      return this.listService.pureUpdate(action.payload.$key, { index: action.payload.index });
     }),
     switchMap(() => EMPTY)
   );
@@ -234,10 +215,7 @@ export class ListsEffects {
           this.saveToLocalstorage(list, true);
           return EMPTY;
         }
-        return this.listService.add(list)
-          .pipe(
-            map((key) => new CreateOptimisticListCompact(list, key))
-          );
+        return this.listService.add(list);
       }
     )
   );
@@ -263,22 +241,6 @@ export class ListsEffects {
         return of(null);
       }
       return this.listService.update(action.payload.$key, action.payload);
-    })
-  );
-
-  @Effect({ dispatch: false })
-  updateCompactInDatabase$ = this.actions$.pipe(
-    ofType<UpdateList>(ListsActionTypes.UpdateList),
-    filter(action => action.updateCompact),
-    switchMap(action => {
-      if (action.payload.offline) {
-        return EMPTY;
-      }
-      if (action.force) {
-        return this.listCompactsService.set(action.payload.$key, action.payload.getCompact());
-      } else {
-        return this.listCompactsService.update(action.payload.$key, action.payload.getCompact());
-      }
     })
   );
 
@@ -368,17 +330,6 @@ export class ListsEffects {
   );
 
   @Effect()
-  loadCompact$ = this.actions$.pipe(
-    ofType<LoadListCompact>(ListsActionTypes.LoadListCompact),
-    withLatestFrom(this.listsFacade.compacts$),
-    filter(([action, compacts]) => compacts.find(list => list.$key === (<LoadListCompact>action).key) === undefined),
-    map(([action]) => action),
-    mergeMap(action => this.listCompactsService.get(action.key)),
-    catchError(() => of({ notFound: true })),
-    map(listCompact => new ListCompactLoaded(listCompact))
-  );
-
-  @Effect()
   openCompletionPopup$ = this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
     withLatestFrom(this.listsFacade.selectedList$, this.authFacade.userId$),
@@ -404,7 +355,6 @@ export class ListsEffects {
     private actions$: Actions,
     private authFacade: AuthFacade,
     private listService: FirestoreListStorage,
-    private listCompactsService: ListCompactsService,
     private listsFacade: ListsFacade,
     private teamsFacade: TeamsFacade,
     private router: Router,
