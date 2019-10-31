@@ -10,6 +10,9 @@
   <label [(ngModel)]="breakOnReclaim" (ngModelChange)="generateMacros()" nz-checkbox>
     {{'SIMULATOR.Break_on_reclaim' | translate}}
   </label>
+  <label [(ngModel)]="breakBeforeByregotsBlessing" (ngModelChange)="generateMacros()" nz-checkbox>
+    {{'SIMULATOR.Break_before_byregots_blessing' | translate}}
+  </label>
   <label [(ngModel)]="macroLock" (ngModelChange)="generateMacros()" nz-checkbox>
     {{'SIMULATOR.Macrolock' | translate}}
   </label>
