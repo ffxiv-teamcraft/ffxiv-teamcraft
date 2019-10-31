@@ -725,6 +725,7 @@
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
+    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
     "Include_consumables_notification": "消耗品の通知を含める",
     "Consumable_notification": "{{buffs}} を使用が必要とします",
     "Extra_wait": "追加待ち",
