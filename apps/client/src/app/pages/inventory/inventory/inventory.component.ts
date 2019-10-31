@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { InventoryDisplay } from '../inventory-display';
 import { first, map, switchMap } from 'rxjs/operators';
-import { ContainerType } from '../../../model/user/inventory/container-type';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { AuthFacade } from '../../../+state/auth.facade';

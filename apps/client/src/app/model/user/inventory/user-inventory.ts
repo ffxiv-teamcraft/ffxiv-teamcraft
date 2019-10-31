@@ -99,8 +99,12 @@ export class UserInventory extends DataModel {
     const toContainerKey = isToRetainer ? `${lastSpawnedRetainer}:${packet.toContainer}` : `${packet.toContainer}`;
 
     const fromContainer = this.items[fromContainerKey];
-    const toContainer = this.items[toContainerKey];
-    if (fromContainer === undefined || (toContainer === undefined && packet.action === 'merge')) {
+    let toContainer = this.items[toContainerKey];
+    if (toContainer === undefined) {
+      this.items[toContainerKey] = {};
+      toContainer = this.items[toContainerKey];
+    }
+    if (toContainer === undefined && packet.action === 'merge') {
       console.warn('Tried to move an item to an inexisting container', JSON.stringify(packet));
       return null;
     }
@@ -165,7 +169,17 @@ export class UserInventory extends DataModel {
     }
   }
 
-  public clone(): UserInventory {
+  toArray(): InventoryItem[] {
+    return [].concat.apply([], Object.keys(this.items)
+      .map(key => this.items[key])
+      .map(container => {
+        return Object.keys(container)
+          .map(key => container[key]);
+      })
+    );
+  }
+
+  clone(): UserInventory {
     const clone = new UserInventory();
     clone.$key = this.$key;
     clone.items = JSON.parse(JSON.stringify(this.items));

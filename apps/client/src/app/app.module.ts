@@ -95,6 +95,7 @@ import hr from '@angular/common/locales/hr';
 import ko from '@angular/common/locales/ko';
 import { ClipboardModule } from 'ngx-clipboard';
 import { InventoryModule } from './modules/inventory/inventory.module';
+import { EorzeaModule } from './modules/eorzea/eorzea.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -212,6 +213,7 @@ const nzConfig: NzConfig = {
     AlarmsSidebarModule,
 
     InventoryModule,
+    EorzeaModule,
 
     HttpClientModule,
 

@@ -173,6 +173,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   public dirty = false;
 
+  public savedSet = true;
+  
+  private formChangesSubscription: any;
+  
   // HQ ingredients
   private hqIngredients$: BehaviorSubject<{ id: number, amount: number }[]> =
     new BehaviorSubject<{ id: number, amount: number }[]>([]);
@@ -455,7 +459,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                         <Language>this.translate.currentLang));
                   }
                 } catch (ignoredAgain) {
-                  break;
                 }
               }
             }
@@ -590,6 +593,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       specialist: rawForm.specialist
     };
     this.authFacade.saveSet(set);
+    this.savedSet = true;
   }
 
   saveDefaultConsumables(): void {
@@ -693,16 +697,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     return CraftingActionsRegistry.getActionsByType(ActionType.QUALITY);
   }
 
-  getCpRecoveryActions(): CraftingAction[] {
-    return CraftingActionsRegistry.getActionsByType(ActionType.CP_RECOVERY);
-  }
-
   getBuffActions(): CraftingAction[] {
     return CraftingActionsRegistry.getActionsByType(ActionType.BUFF);
-  }
-
-  getSpecialtyActions(): CraftingAction[] {
-    return CraftingActionsRegistry.getActionsByType(ActionType.SPECIALTY);
   }
 
   getRepairActions(): CraftingAction[] {
@@ -710,7 +706,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   getOtherActions(): CraftingAction[] {
-    return CraftingActionsRegistry.getActionsByType(ActionType.OTHER);
+    return [
+      ...CraftingActionsRegistry.getActionsByType(ActionType.OTHER),
+      ...CraftingActionsRegistry.getActionsByType(ActionType.CP_RECOVERY)
+    ];
   }
 
   saveSafeMode(value: boolean): void {
@@ -722,9 +721,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     if (stats.specialist) {
       stats.craftsmanship += 20;
       stats.control += 20;
-    } else if (stats.craftsmanship > 0 && stats.control > 0) {
+      stats.cp += 15;
+    } else if (stats.craftsmanship > 0 && stats.control > 0 && stats.cp > 0) {
       stats.craftsmanship -= 20;
       stats.control -= 20;
+      stats.cp -= 15;
     }
     this.statsForm.patchValue(stats, { emitEvent: false });
   }
@@ -752,6 +753,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.formChangesSubscription.unsubscribe();
+    
     this.onDestroy$.next(null);
   }
 
@@ -927,6 +930,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         return this.rotationTipsService.getTips(result);
       })
     );
+    
+    this.formChangesSubscription = this.statsForm.valueChanges.subscribe(() => {
+      this.savedSet = false;
+    });    
   }
 
 }

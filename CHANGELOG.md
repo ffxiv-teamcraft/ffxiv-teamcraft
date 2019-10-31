@@ -2,6 +2,47 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.1"></a>
+## [6.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.0...v6.1.1) (2019-10-30)
+
+
+### Bug Fixes
+
+* **data:** fixed missing map backgrounds ([1bbf34d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1bbf34d))
+* **data:** fixed missing map data ([c990493](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c990493))
+* **simulator:** fixed final appraisal buff icon ([bd0f812](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bd0f812))
+* **simulator:** fixed macro import ([7417a02](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7417a02))
+* **simulator:** fixed multiple inaccuracies ([f78906d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f78906d))
+
+
+### Features
+
+* **levequests:** added label for exp computing with global exp mode ([c6607d1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c6607d1))
+* **simulator:** Allow saving stats to profile after apply ([4a09171](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4a09171))
+* **simulator:** removed additional actions macro ([f781e1d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f781e1d))
+* **simulator:** removed consumables checkbox ([48e0011](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/48e0011))
+
+
+
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.16...v6.1.0) (2019-10-30)
+
+
+### Bug Fixes
+
+* **inventory:** fixed an issue with items being sent via mail or trade ([1bddd19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1bddd19))
+* **inventory:** fixed an issue with marketboard price estimate ([443f4b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/443f4b7))
+* **item-picker:** fixed single item pick in list item addition popup ([72e2fd0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72e2fd0))
+
+
+### Features
+
+* **data:** add support for 5.1 data ([d026269](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d026269))
+* **inventory:** added inventory optimizer under helpers ([20b8438](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/20b8438))
+* **list:** added realtime position marker on zone breakdowns ([ab171be](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ab171be))
+
+
+
 <a name="6.0.16"></a>
 ## [6.0.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.0.15...v6.0.16) (2019-10-27)
 

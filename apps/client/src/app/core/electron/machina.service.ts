@@ -24,6 +24,9 @@ import { ListsFacade } from '../../modules/list/+state/lists.facade';
 import { InventoryItem } from '../../model/user/inventory/inventory-item';
 import { ContainerType } from '../../model/user/inventory/container-type';
 import { InventoryFacade } from '../../modules/inventory/+state/inventory.facade';
+import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
+import { ofPacketType } from '../rxjs/of-packet-type';
+import { territories } from '../data/sources/territories';
 
 @Injectable({
   providedIn: 'root'
@@ -47,7 +50,7 @@ export class MachinaService {
 
   constructor(private ipc: IpcService, private userInventoryService: InventoryFacade,
               private universalis: UniversalisService, private authFacade: AuthFacade,
-              private listsFacade: ListsFacade) {
+              private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade) {
     this.inventory$ = this.userInventoryService.inventory$.pipe(
       distinctUntilChanged((a, b) => {
         return _.isEqual(a, b);
@@ -142,6 +145,7 @@ export class MachinaService {
             } catch (e) {
               console.log(packet);
               console.error(e);
+              this.ipc.log(e.message, JSON.stringify(packet));
             }
             return inventory;
           })
@@ -189,5 +193,19 @@ export class MachinaService {
           this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount, false, true);
         }
       });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('initZone')
+    ).subscribe(packet => {
+      const realZoneId = territories[packet.zoneId];
+      this.eorzeaFacade.setZone(realZoneId);
+      this.eorzeaFacade.setWeather(packet.weatherId);
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('weatherChange')
+    ).subscribe(packet => {
+      this.eorzeaFacade.setWeather(packet.weatherId);
+    });
   }
 }
