@@ -1567,7 +1567,7 @@
       "Message": "Cet objet peut être acheté aux PNJ avec gil et n'a pas besoin de réputation de tribu."
     },
     "DUPLICATES": {
-      "Title": "Objets qui sont dupliqués",
+      "Title": "Items that are duplicated across multiple containers",
       "Message": "Cet objet est également présent dans : {{containers}}."
     }
   }
