@@ -645,7 +645,7 @@
     "Title": "추천 경로",
     "Steps": "단계",
     "Loading_path": "추천 경로 불러오는 중 (몇 초 정도 소요될 수 있습니다)",
-    "You_are_here": "You are here",
+    "You_are_here": "현재 위치",
     "STEP": {
       "Gathering": "채집으로 {{amount}}개 얻기 (총계: {{total}})",
       "Hunting": "몬스터에게 {{amount}}개 얻기 (총합: {{total}})",
@@ -1554,7 +1554,7 @@
       "FC_chest": "부대 금고",
       "Bag": "소지품",
       "Other": "다른 소지품",
-      "Armory": "Armory"
+      "Armory": "장비함"
     }
   },
   "INVENTORY_OPTIMIZER": {
