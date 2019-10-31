@@ -790,6 +790,7 @@
     "Rotation_solver": "Rotation solver",
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "Remove_final_appraisal": "Remove Final Appraisal buff",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Good",
@@ -1568,7 +1569,7 @@
       "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated accross multiple containers",
+      "Title": "Items that are duplicated across multiple containers",
       "Message": "This item is also present in: {{containers}}."
     }
   }
