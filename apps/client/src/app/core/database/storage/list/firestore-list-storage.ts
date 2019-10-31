@@ -11,6 +11,7 @@ import { ListRow } from '../../../../modules/list/model/list-row';
 import { diff } from 'deep-diff';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
 import { ListTag } from '../../../../modules/list/model/list-tag.enum';
+import { Class } from '@kaiu/serializer';
 
 @Injectable({
   providedIn: 'root'
@@ -63,6 +64,13 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return list;
   }
 
+  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, uriParams?: any): Observable<List[]> {
+    return super.getByForeignKey(foreignEntityClass, foreignKeyValue, uriParams)
+      .pipe(
+        map(lists => lists.map(list => this.completeListData(list)))
+      );
+  }
+
   get(uid: string): Observable<List> {
     return super.get(uid).pipe(
       map(list => {
@@ -82,7 +90,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
               delete snap.payload;
               return valueWithKey;
             });
-          return this.serializer.deserialize<List>(lists, [this.getClass()]);
+          return this.serializer.deserialize<List>(lists, [this.getClass()])
+            .map(list => this.completeListData(list));
         })
       );
   }
@@ -115,7 +124,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
             .filter(list => {
               return list.name.toLowerCase().indexOf(name.toLowerCase()) > -1;
             });
-          return this.serializer.deserialize<List>(lists, [this.getClass()]);
+          return this.serializer.deserialize<List>(lists, [this.getClass()])
+            .map(list => this.completeListData(list));
         })
       );
   }
@@ -134,7 +144,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
               delete snap.payload;
               return valueWithKey;
             });
-          return this.serializer.deserialize<List>(lists, [this.getClass()]);
+          return this.serializer.deserialize<List>(lists, [this.getClass()])
+            .map(list => this.completeListData(list));
         })
       );
   }
@@ -220,7 +231,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           delete data.$key;
           return this.completeListData(<List>{ $key: snap.payload.doc.id, ...data });
         })),
-        map((lists: List[]) => this.serializer.deserialize<List>(lists, [List]))
+        map((lists: List[]) => this.serializer.deserialize<List>(lists, [List]).map(list => this.completeListData(list)))
       );
   }
 }

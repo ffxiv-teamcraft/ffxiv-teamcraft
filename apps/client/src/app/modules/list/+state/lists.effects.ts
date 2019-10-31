@@ -201,7 +201,7 @@ export class ListsEffects {
     switchMap(() => EMPTY)
   );
 
-  @Effect()
+  @Effect({dispatch: false})
   createListInDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.CreateList),
     withLatestFrom(this.authFacade.userId$),
