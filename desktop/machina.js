@@ -14,7 +14,7 @@ function sendToRenderer(win, packet) {
   win && win.webContents && win.webContents.send('packet', packet);
 }
 
-module.exports.start = function(win, config, verbose) {
+module.exports.start = function(win, config, verbose, rawsocket) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
@@ -25,12 +25,12 @@ module.exports.start = function(win, config, verbose) {
 
       const options = isDev ?
         {
-          monitorType: 'RawSocket',
+          monitorType: rawsocket ? 'RawSocket' : 'WinPCap',
           parseAlgorithm: 'CPUHeavy'
         } : {
           parseAlgorithm: 'CPUHeavy',
           noData: true,
-          monitorType: 'RawSocket',
+          monitorType: rawsocket ? 'RawSocket' : 'WinPCap',
           machinaExePath: machinaExePath,
           remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
           definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
