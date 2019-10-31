@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CraftingAction, CraftingJob, HastyTouch, Simulation } from '@ffxiv-teamcraft/simulator';
+import { CraftingAction, CraftingJob, FinalAppraisal, Simulation } from '@ffxiv-teamcraft/simulator';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -60,13 +60,17 @@ export class MacroPopupComponent implements OnInit {
         this.macro.push(this.macroLock ? ['/mlock'] : []);
         macroFragment = this.macro[this.macro.length - 1];
       }
-      let actionName = this.i18n.getName(this.l12n.getAction(action.getIds()[0]));
-      if (actionName.indexOf(' ') > -1 || this.translator.currentLang === 'ko') {
-        actionName = `"${actionName}"`;
+      if (action.getIds()[0] === -1) {
+        macroFragment.push(`/statusoff "${this.i18n.getName(this.l12n.getAction(new FinalAppraisal().getIds()[0]))}"`);
+        totalLength++;
+      } else {
+        let actionName = this.i18n.getName(this.l12n.getAction(action.getIds()[0]));
+        if (actionName.indexOf(' ') > -1 || this.translator.currentLang === 'ko') {
+          actionName = `"${actionName}"`;
+        }
+        macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration() + this.extraWait}>`);
+        totalLength++;
       }
-
-      macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration() + this.extraWait}>`);
-      totalLength++;
 
       let doneWithChunk: boolean;
       if (this.breakOnReclaim && macroFragment.length === reclaimBreakpoint) {
@@ -95,9 +99,9 @@ export class MacroPopupComponent implements OnInit {
       }
       this.macro[this.macro.length - 1].push(`/echo Craft finished <se.${seNumber}>`);
     }
-    
+
     /* Without the additional actions macro there is nothing to add the consumable macro to
-    
+
     const consumablesNotification = this.getConsumablesNotification();
     if (consumablesNotification !== undefined) {
       this.aactionsMacro.push(consumablesNotification);
