@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.4"></a>
+## [6.1.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.3...v6.1.4) (2019-11-01)
+
+
+### Bug Fixes
+
+* **desktop:** switched back to raw socket as default capture mode ([86fea67](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/86fea67))
+* **list:** fixed an issue with lists page breaking on broken lists ([5dd201c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5dd201c))
+* **list:** fixed an issue with lists page breaking on broken lists ([cc12b2e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cc12b2e))
+* **lists:** fixed an issue with lists disappearing after you opened them ([55ac45f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/55ac45f))
+* **lists:** fixed an issue with lists not loaded properly ([6872ccd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6872ccd))
+* **optimizer:** fixed an issue with duplicates not being computed properly ([207b37f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/207b37f))
+* **search:** fixed list loading popup hanging ([de20d8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de20d8b))
+
+
+### Features
+
+* **layout:** added new ordering: SLOT ([cede9dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cede9dd))
+* **simulator:** support for statusoff Final Appraisal in macro import ([7023125](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7023125))
+* **solver:** updated solver for 5.1 rotations ([fde9be9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fde9be9))
+
+
+
 <a name="6.1.3"></a>
 ## [6.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.2...v6.1.3) (2019-10-31)
 
