@@ -16,7 +16,6 @@ import {
   SelectList,
   SetItemDone,
   ToggleAutocompletion,
-  UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndex
@@ -258,7 +257,6 @@ export class ListsFacade {
   }
 
   unload(key: string): void {
-    this.store.dispatch(new UnloadListDetails(key));
     this.store.dispatch(new SelectList(undefined));
   }
 

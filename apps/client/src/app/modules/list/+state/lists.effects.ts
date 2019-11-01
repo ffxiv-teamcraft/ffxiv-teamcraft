@@ -13,7 +13,6 @@ import {
   SetItemDone,
   SharedListsLoaded,
   TeamListsLoaded,
-  UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListAtomic,
@@ -119,11 +118,6 @@ export class ListsEffects {
     map(lists => new ListsForTeamsLoaded(lists))
   );
 
-  unloadListDetails$ = this.actions$.pipe(
-    ofType<UnloadListDetails>(ListsActionTypes.UnloadListDetails),
-    map(action => action.key)
-  );
-
   @Effect()
   loadListDetails$ = this.actions$.pipe(
     ofType<LoadListDetails>(ListsActionTypes.LoadListDetails),
@@ -142,10 +136,7 @@ export class ListsEffects {
             loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
             this.listService.get(action.key).pipe(catchError(() => of(null)))
           ]);
-        }),
-        takeUntil(this.unloadListDetails$.pipe(
-          filter(key => key === action.key)
-        ))
+        })
       );
     }),
     map(([listKey, user, userId, team, fcId, list]: [string, TeamcraftUser | null, string, Team, string | null, List]) => {

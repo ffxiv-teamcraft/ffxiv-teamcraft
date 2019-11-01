@@ -117,16 +117,6 @@ export function listsReducer(
       break;
     }
 
-    case ListsActionTypes.UnloadListDetails: {
-      state = {
-        ...state,
-        listDetails: [
-          ...state.listDetails.filter(list => list.$key !== action.key)
-        ]
-      };
-      break;
-    }
-
     case ListsActionTypes.UpdateListIndex: {
       state = {
         ...state,
