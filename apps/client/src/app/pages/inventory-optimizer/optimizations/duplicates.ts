@@ -4,6 +4,7 @@ import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
+import { stackSizes } from '../../../core/data/sources/stack-sizes';
 
 export class Duplicates extends InventoryOptimizer {
 
@@ -21,7 +22,7 @@ export class Duplicates extends InventoryOptimizer {
           && i.hq === item.hq
           && i.spiritBond === 0
           && i.slot !== item.slot
-          && item.quantity + i.quantity < 999;
+          && item.quantity + i.quantity < stackSizes[i.itemId];
       });
     if (dupes.length > 0) {
       return {
