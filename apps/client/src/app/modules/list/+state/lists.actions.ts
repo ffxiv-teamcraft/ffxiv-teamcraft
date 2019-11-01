@@ -78,13 +78,6 @@ export class LoadListDetails implements Action {
   }
 }
 
-export class UnloadListDetails implements Action {
-  readonly type = ListsActionTypes.UnloadListDetails;
-
-  constructor(public readonly key: string) {
-  }
-}
-
 export class SelectList implements Action {
   readonly type = ListsActionTypes.SelectList;
 
@@ -204,7 +197,6 @@ export type ListsAction =
   | NeedsVerification
   | LoadTeamLists
   | TeamListsLoaded
-  | UnloadListDetails
   | ConvertLists
   | OfflineListsLoaded
   | ToggleAutocompletion

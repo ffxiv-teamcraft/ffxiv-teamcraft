@@ -1415,7 +1415,7 @@ export class SearchComponent implements OnInit {
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
             map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
+            map(lists => lists.find(l => l.createdAt === list.createdAt)),
             filter(l => l !== undefined),
             first()
           ), 1, 'Saving_in_database');

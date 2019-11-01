@@ -16,7 +16,6 @@ import {
   SelectList,
   SetItemDone,
   ToggleAutocompletion,
-  UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndex
@@ -43,7 +42,17 @@ declare const gtag: Function;
 })
 export class ListsFacade {
   loadingMyLists$ = this.store.select(listsQuery.getListsLoading);
-  allListDetails$ = this.store.select(listsQuery.getAllListDetails);
+  allListDetails$ = this.store.select(listsQuery.getAllListDetails)
+    .pipe(
+      map(lists => {
+        return lists.filter(list => {
+          return list.finalItems !== undefined
+            && list.items !== undefined
+            && list.isOutDated
+            && typeof list.isOutDated === 'function';
+        });
+      })
+    );
 
   myLists$ = combineLatest([this.store.select(listsQuery.getAllListDetails), this.authFacade.userId$]).pipe(
     map(([compacts, userId]) => {
@@ -248,7 +257,6 @@ export class ListsFacade {
   }
 
   unload(key: string): void {
-    this.store.dispatch(new UnloadListDetails(key));
     this.store.dispatch(new SelectList(undefined));
   }
 

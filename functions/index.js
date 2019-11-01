@@ -33,9 +33,15 @@ exports.firestoreCountlistsDelete = functions.runWith(runtimeOpts).firestore.doc
   }).then(() => null);
 });
 
+validatedCache = {};
+
 exports.userIdValidator = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
   const userId = request.query.userId;
+  if (validatedCache[userId] !== undefined) {
+    return response.status(200).set('Content-Type', 'application/json').send(`{"valid": ${validatedCache[userId]}}`);
+  }
   return firestore.collection('users').doc(userId).get().then(snap => {
+    validatedCache[userId] = snap.exists;
     response.status(200).set('Content-Type', 'application/json').send(`{"valid": ${snap.exists}}`);
   });
 });

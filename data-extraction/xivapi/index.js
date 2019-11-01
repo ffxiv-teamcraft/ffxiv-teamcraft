@@ -1081,7 +1081,9 @@ if (hasTodo('items')) {
   const rarities = {};
   const itemIcons = {};
   const ilvls = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem').subscribe(page => {
+  const stackSizes = {};
+  const itemSlots = {};
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID').subscribe(page => {
     page.Results.forEach(item => {
       itemIcons[item.ID] = item.Icon;
       names[item.ID] = {
@@ -1092,12 +1094,16 @@ if (hasTodo('items')) {
       };
       rarities[item.ID] = item.Rarity;
       ilvls[item.ID] = item.LevelItem;
+      stackSizes[item.ID] = item.StackSize;
+      itemSlots[item.ID] = item.EquipSlotCategoryTargetID;
     });
   }, null, () => {
     persistToJsonAsset('item-icons', itemIcons);
     persistToJsonAsset('items', names);
     persistToTypescript('rarities', 'rarities', rarities);
     persistToTypescript('ilvls', 'ilvls', ilvls);
+    persistToTypescript('stack-sizes', 'stackSizes', stackSizes);
+    persistToTypescript('item-slots', 'itemSlots', itemSlots);
   });
 }
 
