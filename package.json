@@ -46,7 +46,7 @@
     "win": {
       "icon": "./tools/build/icon.ico",
       "publisherName": "FFXIV Teamcraft",
-      "requestedExecutionLevel": "admin",
+      "requestedExecutionLevel": "highestAvailable",
       "publish": {
         "provider": "github",
         "releaseType": "release"
