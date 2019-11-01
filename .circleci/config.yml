@@ -185,6 +185,12 @@ workflows:
           filters:
             branches:
               only: master
+      - deploy-functions:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
       - deploy-desktop:
           requires:
             - build
@@ -192,6 +198,12 @@ workflows:
             branches:
               only: master
       - deploy-staging:
+          requires:
+            - build
+          filters:
+            branches:
+              only: staging
+      - deploy-staging-functions:
           requires:
             - build
           filters:
