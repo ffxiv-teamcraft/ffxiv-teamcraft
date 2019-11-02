@@ -142,7 +142,8 @@
     "User": "用户",
     "Tables": "表格",
     "Pie_charts": "饼状图",
-    "Read_more_on_wiki": "在wiki上阅读更多详细信息"
+    "Read_more_on_wiki": "在wiki上阅读更多详细信息",
+    "Apply": "Apply"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -1571,6 +1572,11 @@
     "DUPLICATES": {
       "Title": "Items that are duplicated across multiple containers",
       "Message": "This item is also present in: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Items that you have in very small stacks",
+      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Threshold_amount": "Threshold value"
     }
   }
 }
