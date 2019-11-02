@@ -37,6 +37,7 @@ import { FateSearchResult } from '../../model/search/fate-search-result';
 import { MapSearchResult } from '../../model/search/map-search-result';
 import { mapIds } from '../data/sources/map-ids';
 import { LocalizedDataService } from '../data/localized-data.service';
+import { requestsWithDelay } from '../rxjs/requests-with-delay';
 
 @Injectable()
 export class DataService {
@@ -437,7 +438,7 @@ export class DataService {
   }
 
   searchAny(query: string, filters: SearchFilter[]): Observable<any[]> {
-    return combineLatest([
+    return requestsWithDelay([
       this.searchItem(query, filters, false).pipe(map(res => res.map(row => {
         row.type = SearchType.ITEM;
         return row;
@@ -486,7 +487,7 @@ export class DataService {
         row.type = SearchType.ACHIEVEMENT;
         return row;
       })))
-    ]).pipe(
+    ], 150).pipe(
       map(results => [].concat.apply([], results))
     );
   }
