@@ -1402,3 +1402,17 @@ if (hasTodo('territories')) {
     persistToTypescript('territories', 'territories', territories);
   });
 }
+
+if (hasTodo('suggestedValues')) {
+  const suggested = {};
+  getAllPages('https://xivapi.com/RecipeLevelTable?columns=ID,SuggestedControl,SuggestedCraftsmanship').subscribe(page => {
+    page.Results.forEach(entry => {
+      suggested[entry.ID] = {
+        craftsmanship: entry.SuggestedCraftsmanship,
+        control: entry.SuggestedControl
+      };
+    });
+  }, null, () => {
+    persistToTypescript('suggested', 'suggested', suggested);
+  });
+}
