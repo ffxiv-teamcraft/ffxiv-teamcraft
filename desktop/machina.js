@@ -44,6 +44,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
       Machina.start(() => {
         log.info('Packet capture started');
       });
+      Machina.setMaxListeners(0);
       Machina.on('any', (packet) => {
         if (verbose) {
           log.log(JSON.stringify(packet));

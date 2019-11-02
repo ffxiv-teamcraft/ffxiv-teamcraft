@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.5"></a>
+## [6.1.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.4...v6.1.5) (2019-11-02)
+
+
+### Bug Fixes
+
+* **community-lists:** fixed an out of memory error with community lists loading ([8fa0fb5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8fa0fb5))
+* **inventory:** fixed an issue with drag and drop actions not being tracked ([6446396](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6446396))
+* **list:** fixed an issue with attached rotations that have been deleted crashing the page ([f23acc2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f23acc2))
+* **lists:** fixed an issue with "saving in database" loading indefinitely ([d6154be](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d6154be))
+* **optimizer:** removed retainer gear from optimization checks ([f76fa5b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f76fa5b))
+* **simulator:** fixed an issue with Ingenuity import with FR language ([0db78e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0db78e5))
+* **simulator:** Use Durability Restorating Tip Later incorrectly triggering ([150c4f6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/150c4f6))
+
+
+### Features
+
+* **db:** added new search field to quickly hop to another db page ([dc7e227](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc7e227))
+* **list:** final items display is now persisted in inventory view ([beb944a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/beb944a))
+* **optimizer:** new optimizer: items that you have in very small stacks ([8127353](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8127353))
+
+
+
 <a name="6.1.4"></a>
 ## [6.1.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.3...v6.1.4) (2019-11-01)
 

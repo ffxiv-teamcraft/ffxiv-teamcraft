@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { List } from '../../../modules/list/model/list';
 import { Inventory } from '../../../model/other/inventory';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { NzMessageService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -22,10 +22,13 @@ export class InventoryViewComponent {
 
   public display$: Observable<{ id: number, icon: number, amount: number }[][]>;
 
-  public showFinalItems$ = new BehaviorSubject<boolean>(true);
+  public showFinalItems$ = new BehaviorSubject<boolean>(localStorage.getItem('inventory-view:show-final') !== 'false');
 
   public constructor(private messageService: NzMessageService, private translate: TranslateService) {
     this.display$ = combineLatest([this.list$, this.showFinalItems$]).pipe(
+      tap(([, showFinal]) => {
+        localStorage.setItem('inventory-view:show-final', showFinal.toString());
+      }),
       map(([list, showFinalitems]) => {
         const inventory = new Inventory();
         list.items.forEach(item => {

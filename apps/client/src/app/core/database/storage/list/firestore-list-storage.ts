@@ -105,6 +105,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       if (tags.length > 0) {
         baseQuery = baseQuery.where('tags', 'array-contains', tags[0]);
       }
+      if (name !== undefined) {
+        baseQuery = baseQuery.where('name', '>=', name);
+      }
       return baseQuery;
     };
     return this.firestore.collection(this.getBaseUri(), query)
