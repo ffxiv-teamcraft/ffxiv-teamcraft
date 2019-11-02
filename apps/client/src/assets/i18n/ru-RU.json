@@ -142,7 +142,8 @@
     "User": "Пользователь",
     "Tables": "Table",
     "Pie_charts": "Pie charts",
-    "Read_more_on_wiki": "Подробнее на вики"
+    "Read_more_on_wiki": "Подробнее на вики",
+    "Apply": "Apply"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -1571,6 +1572,11 @@
     "DUPLICATES": {
       "Title": "Items that are duplicated across multiple containers",
       "Message": "This item is also present in: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Items that you have in very small stacks",
+      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Threshold_amount": "Threshold value"
     }
   }
 }
