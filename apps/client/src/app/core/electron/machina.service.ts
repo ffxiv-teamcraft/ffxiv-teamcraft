@@ -89,6 +89,11 @@ export class MachinaService {
                 };
               })
               .value();
+            if (isRetainer) {
+              Object.keys(inventory)
+                .filter(key => key.startsWith(lastRetainerSpawned))
+                .forEach(key => inventory[key] = {});
+            }
             groupedInfos.forEach(group => {
               const containerKey = isRetainer ? `${lastRetainerSpawned}:${group.containerId}` : `${group.containerId}`;
               inventory.items[containerKey] = {};
