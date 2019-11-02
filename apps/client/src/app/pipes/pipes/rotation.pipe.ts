@@ -18,7 +18,7 @@ export class RotationPipe implements PipeTransform {
       map(rotations => {
         return rotations.find(rotation => rotation.$key === key);
       }),
-      filter(rotation => rotation !== undefined)
+      filter(rotation => rotation !== undefined && !rotation.notFound)
     );
   }
 
