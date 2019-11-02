@@ -142,7 +142,8 @@
     "User": "Benutzer",
     "Tables": "Tabelle",
     "Pie_charts": "Kuchendiagramm",
-    "Read_more_on_wiki": "Details im Wiki ansehen"
+    "Read_more_on_wiki": "Details im Wiki ansehen",
+    "Apply": "Apply"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -725,7 +726,7 @@
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Makros am letzten möglichen Schritt für Reklamation teilen",
-    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
+    "Break_before_byregots_blessing": "Makros vor Byregots Benediktion teilen",
     "Include_consumables_notification": "Benachrichtigung für Verzehrbares hinzufügen",
     "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
@@ -1292,6 +1293,7 @@
     "Currencies": "Währungen",
     "Rowena_splendor": "Rowenas Haus der Wunder",
     "Unlocks": "Freischaltung von",
+    "Jump_to_page": "Quick jump to another page",
     "ITEM": {
       "Masterpiece_base": "Basis",
       "Masterpiece_bonus": "Bonus"
@@ -1571,6 +1573,11 @@
     "DUPLICATES": {
       "Title": "Gegenstände, die in mehreren Inventaren enthalten sind",
       "Message": "Dieser Gegenstand ist ebenfalls in folgendem Inventar enthalten: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Items that you have in very small stacks",
+      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Threshold_amount": "Threshold value"
     }
   }
 }

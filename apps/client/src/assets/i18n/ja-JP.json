@@ -142,7 +142,8 @@
     "User": "User",
     "Tables": "Table",
     "Pie_charts": "Pie charts",
-    "Read_more_on_wiki": "Read more details on wiki"
+    "Read_more_on_wiki": "Read more details on wiki",
+    "Apply": "Apply"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -1292,6 +1293,7 @@
     "Currencies": "Currencies",
     "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
     "Unlocks": "Unlocks",
+    "Jump_to_page": "Quick jump to another page",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1571,6 +1573,11 @@
     "DUPLICATES": {
       "Title": "Items that are duplicated across multiple containers",
       "Message": "This item is also present in: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Items that you have in very small stacks",
+      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Threshold_amount": "Threshold value"
     }
   }
 }

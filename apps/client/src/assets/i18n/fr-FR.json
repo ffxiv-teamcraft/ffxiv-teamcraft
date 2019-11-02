@@ -142,7 +142,8 @@
     "User": "Utilisateur",
     "Tables": "Tableau",
     "Pie_charts": "Graphiques circulaires",
-    "Read_more_on_wiki": "Lire plus de détails sur le wiki"
+    "Read_more_on_wiki": "Lire plus de détails sur le wiki",
+    "Apply": "Appliquer"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -725,7 +726,7 @@
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
     "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
-    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
+    "Break_before_byregots_blessing": "Diviser les macros avant la bénédiction de Byregot",
     "Include_consumables_notification": "Inclure une notification pour les consommables",
     "Consumable_notification": "Utilisez {{buffs}}",
     "Extra_wait": "Temps d'attente supp.",
@@ -790,7 +791,7 @@
     "Rotation_solver": "Résolveur de rotations",
     "Recipe_picker_placeholder": "Entrez le nom de la recette que vous voulez simuler",
     "Could_not_find_minstats": "Impossible de trouver les statistiques minimales pour cette rotation",
-    "Remove_final_appraisal": "Remove Final Appraisal buff",
+    "Remove_final_appraisal": "Supprimer le buff \"Dernières vérifications\"",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Bon",
@@ -1292,6 +1293,7 @@
     "Currencies": "Devises",
     "Rowena_splendor": "Splendeurs de Rowena (étoile = +20% bonus)",
     "Unlocks": "Déverrouille",
+    "Jump_to_page": "Accès rapide à une autre page",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1569,8 +1571,13 @@
       "Message": "Cet objet peut être acheté aux PNJ avec gil et n'a pas besoin de réputation de tribu."
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated across multiple containers",
+      "Title": "Éléments qui sont dupliqués à travers plusieurs conteneurs",
       "Message": "Cet objet est également présent dans : {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Objets que vous avez en très petite quantité",
+      "Message": "Vous n'avez que {{amount}} de cet objet, est-ce nécessaire de les stocker?",
+      "Threshold_amount": "Seuil minimum"
     }
   }
 }
