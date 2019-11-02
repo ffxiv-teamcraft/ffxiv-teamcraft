@@ -129,7 +129,7 @@ export class InventoryOptimizerComponent {
         }
       ];
     } else {
-      this.ignoreArray = this.ignoreArray.filter(i => i.itemId !== itemId && i.id !== optimization);
+      this.ignoreArray = this.ignoreArray.filter(i => i.itemId !== itemId || i.id !== optimization);
     }
     this.setIgnoreArray(this.ignoreArray);
     this.reloader$.next();
