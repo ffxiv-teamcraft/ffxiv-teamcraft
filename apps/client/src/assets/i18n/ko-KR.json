@@ -142,7 +142,8 @@
     "User": "사용자",
     "Tables": "목록",
     "Pie_charts": "파이 차트",
-    "Read_more_on_wiki": "위키에서 자세히 보기"
+    "Read_more_on_wiki": "위키에서 자세히 보기",
+    "Apply": "Apply"
   },
   "ALARMS": {
     "Title": "알람",
@@ -1571,6 +1572,11 @@
     "DUPLICATES": {
       "Title": "Items that are duplicated across multiple containers",
       "Message": "This item is also present in: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Items that you have in very small stacks",
+      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Threshold_amount": "Threshold value"
     }
   }
 }
