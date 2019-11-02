@@ -26,7 +26,7 @@ export class UseDurabilityRestorationLater extends RotationTip {
     const usedMastersMendTooEarly = mastersMendIIIndexes.some((index) => {
       const clone = simulationResult.simulation.clone();
       clone.run(true, index);
-      const matches = clone.recipe.durability - clone.durability < 60;
+      const matches = clone.recipe.durability - clone.durability < 30;
       if (matches) {
         this.matchingIndex = index + 1;
       }
