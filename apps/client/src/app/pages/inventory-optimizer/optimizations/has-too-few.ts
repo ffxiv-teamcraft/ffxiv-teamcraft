@@ -10,7 +10,6 @@ export class HasTooFew extends InventoryOptimizer {
 
   _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): { [p: string]: number | string } {
     const threshold = +(localStorage.getItem(HasTooFew.THRESHOLD_KEY) || 3);
-    console.log(threshold);
     if (stackSizes[item.itemId] > 1 && item.quantity <= threshold) {
       return { amount: item.quantity };
     }
