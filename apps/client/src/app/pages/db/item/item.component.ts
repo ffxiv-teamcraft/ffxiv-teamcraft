@@ -717,7 +717,7 @@ export class ItemComponent extends TeamcraftPageComponent {
                     return duel;
                   });
                 }
-                if (card.sources.pack !== null) {
+                if (card.sources.pack) {
                   item.tripleTriadPack = {
                     id: [10128, 10129, 10130, 13380, 10077][card.sources.pack.id - 1],
                     price: card.sources.pack.cost
