@@ -1566,6 +1566,7 @@
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
     "Show_ignored": "Show ignored items",
+    "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
       "Title": "Items that can be bought with gil",
       "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
