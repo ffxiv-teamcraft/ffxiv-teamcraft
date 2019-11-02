@@ -25,7 +25,12 @@ export class InventoryOptimizerComponent {
       return this.optimizers
         .map(optimizer => {
           const entries = inventory.toArray()
-            .filter(item => item.containerId !== ContainerType.RetainerMarket)
+            .filter(item => {
+              return [
+                ContainerType.RetainerMarket,
+                ContainerType.RetainerEquippedGear
+              ].indexOf(item.containerId) === -1;
+            })
             .map(item => {
               return {
                 item: item,
