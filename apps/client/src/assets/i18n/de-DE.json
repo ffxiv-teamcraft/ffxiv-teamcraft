@@ -531,6 +531,10 @@
     "Contributions_popup": "Beitragsstatistiken",
     "Autofill_details": "Input-Fortschritt, wenn Sie Einträge ingame erhalten, indem Sie Paketerfassung verwenden. Dies ist deaktiviert, wenn Sie die Liste verlassen, um unerwünschte Eingaben zu vermeiden.",
     "Autofill": "Automatisch ausfüllen",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
