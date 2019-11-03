@@ -143,7 +143,7 @@
     "Tables": "Tabelle",
     "Pie_charts": "Kuchendiagramm",
     "Read_more_on_wiki": "Details im Wiki ansehen",
-    "Apply": "Apply"
+    "Apply": "Übernehmen"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -531,6 +531,10 @@
     "Contributions_popup": "Beitragsstatistiken",
     "Autofill_details": "Input-Fortschritt, wenn Sie Einträge ingame erhalten, indem Sie Paketerfassung verwenden. Dies ist deaktiviert, wenn Sie die Liste verlassen, um unerwünschte Eingaben zu vermeiden.",
     "Autofill": "Automatisch ausfüllen",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -1293,7 +1297,7 @@
     "Currencies": "Währungen",
     "Rowena_splendor": "Rowenas Haus der Wunder",
     "Unlocks": "Freischaltung von",
-    "Jump_to_page": "Quick jump to another page",
+    "Jump_to_page": "Schnellwechsel zu anderer Seite",
     "ITEM": {
       "Masterpiece_base": "Basis",
       "Masterpiece_bonus": "Bonus"
@@ -1566,6 +1570,7 @@
     "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
     "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
+    "No_optimizations": "Keine Optimierungen verfügbar",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
       "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen."
@@ -1575,9 +1580,9 @@
       "Message": "Dieser Gegenstand ist ebenfalls in folgendem Inventar enthalten: {{containers}}."
     },
     "HAS_TOO_FEW": {
-      "Title": "Items that you have in very small stacks",
-      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
-      "Threshold_amount": "Threshold value"
+      "Title": "Gegenstände, die du in sehr kleinen Stapeln hast",
+      "Message": "Du hast nur {{amount}} von diesem Gegenstand. Lohnt es sich, diesen zu behalten?",
+      "Threshold_amount": "Grenzwerte"
     }
   }
 }

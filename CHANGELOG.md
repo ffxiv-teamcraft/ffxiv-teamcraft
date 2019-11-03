@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.6"></a>
+## [6.1.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.5...v6.1.6) (2019-11-03)
+
+
+### Bug Fixes
+
+* **data:** fixed missing folklore book entries ([1a5aea9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1a5aea9))
+* **data:** fixed missing folklore book entries for fisher ([5d618b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d618b2))
+* **db:** fixed xivapi error when searching for ANY type ([017e9e1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/017e9e1))
+* **inventory:** don't show items on sale as if they were in retainer's inventory ([d1cfb41](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d1cfb41))
+* **list:** fixed realtime position tracking in zone breakdown ([78c0641](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/78c0641))
+* **log:** fixed first CRP page showing duplicates ([fd2aaa3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd2aaa3))
+* **optimizer:** fixed an issue with not ignoring a tip anymore clearing the ignored tips ([c60c972](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c60c972))
+* **optimizer:** fixed missing translation label ([9855a57](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9855a57))
+* **optimizer:** ignoring crystal containers ([f015a2f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f015a2f))
+* **simulator:** fixed ingenuity accuracy for lower levels ([aeedfb2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aeedfb2))
+
+
+### Features
+
+* **layout:** added new layout row filter: IS_HQ ([d5618d1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d5618d1))
+* **list:** you can now enable a notification when you finished an item with autofill ([6839738](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6839738))
+* **search:** Ignore HQ and Collectable symbols in search ([b110979](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b110979))
+
+
+
 <a name="6.1.5"></a>
 ## [6.1.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.4...v6.1.5) (2019-11-02)
 

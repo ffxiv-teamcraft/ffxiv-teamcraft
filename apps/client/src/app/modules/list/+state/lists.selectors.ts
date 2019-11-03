@@ -19,6 +19,11 @@ const getAutocompleteEnabled = createSelector(
   (state: ListsState) => state.autocompletionEnabled
 );
 
+const getCompletionNotificationEnabled = createSelector(
+  getListsState,
+  (state: ListsState) => state.completionNotificationEnabled
+);
+
 const getAllListDetails = createSelector(
   getListsState,
   (state: ListsState) => {
@@ -44,5 +49,6 @@ export const listsQuery = {
   getSelectedList,
   getNeedsVerification,
   getAutocompleteEnabled,
+  getCompletionNotificationEnabled,
   getListsLoading
 };

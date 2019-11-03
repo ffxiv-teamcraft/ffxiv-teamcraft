@@ -531,6 +531,10 @@
     "Contributions_popup": "Contributions stats",
     "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
     "Autofill": "Autofill",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -1566,6 +1570,7 @@
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
     "Show_ignored": "Show ignored items",
+    "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
       "Title": "Items that can be bought with gil",
       "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."

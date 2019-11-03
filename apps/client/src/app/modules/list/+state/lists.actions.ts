@@ -33,6 +33,7 @@ export enum ListsActionTypes {
 
   NeedsVerification = '[Lists] Needs character verification',
   ToggleAutocompletion = '[Lists] Toggle autocompletion',
+  ToggleCompletionNotification = '[Lists] Toggle completion notification',
 }
 
 export class LoadMyLists implements Action {
@@ -62,6 +63,13 @@ export class NeedsVerification implements Action {
 
 export class ToggleAutocompletion implements Action {
   readonly type = ListsActionTypes.ToggleAutocompletion;
+
+  constructor(public readonly enabled: boolean) {
+  }
+}
+
+export class ToggleCompletionNotification implements Action {
+  readonly type = ListsActionTypes.ToggleCompletionNotification;
 
   constructor(public readonly enabled: boolean) {
   }
@@ -200,4 +208,5 @@ export type ListsAction =
   | ConvertLists
   | OfflineListsLoaded
   | ToggleAutocompletion
+  | ToggleCompletionNotification
   | UpdateListAtomic;

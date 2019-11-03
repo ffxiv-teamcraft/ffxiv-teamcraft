@@ -19,6 +19,28 @@ export class LayoutRowFilter {
     return row.vendors !== undefined && row.vendors.length > 0;
   }, 'CAN_BE_BOUGHT');
 
+  static IS_HQ = new LayoutRowFilter((row, list) => {
+    const recipesNeedingItem = list.finalItems
+      .filter(item => item.requires !== undefined)
+      .filter(item => {
+        return (item.requires || []).some(req => req.id === row.id);
+      });
+    if (row.requiredAsHQ) {
+      return true;
+    }
+    if (list.disableHQSuggestions) {
+      return false;
+    }
+    if (recipesNeedingItem.length === 0 || row.requiredAsHQ === false) {
+      return false;
+    } else {
+      let count = 0;
+      recipesNeedingItem.forEach(recipe => {
+        count += recipe.requires.find(req => req.id === row.id).amount * recipe.amount;
+      });
+      return count > 0;
+    }
+  }, 'IS_HQ');
 
   static IS_FATE_ITEM = new LayoutRowFilter(row => {
     return row.tradeSources !== undefined
