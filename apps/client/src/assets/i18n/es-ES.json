@@ -531,6 +531,10 @@
     "Contributions_popup": "Estadísticas de contribuciones",
     "Autofill_details": "Ingrese su progreso cuando obtenga artículos en el juego, usando captura de paquetes. Esto estará deshabilitado si abandona la página de la lista, para evitar entradas no deseadas.",
     "Autofill": "Autocompletar",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -1566,6 +1570,7 @@
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
     "Show_ignored": "Show ignored items",
+    "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
       "Title": "Items that can be bought with gil",
       "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
