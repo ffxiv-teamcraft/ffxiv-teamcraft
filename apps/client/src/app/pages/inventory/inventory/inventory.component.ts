@@ -74,7 +74,7 @@ export class InventoryComponent {
           item.price = priceEntry ? priceEntry.price : 0;
           return item;
         });
-        inventory.totalPrice = inventory.items.reduce((total, item) => total + item.price, 0);
+        inventory.totalPrice = inventory.items.reduce((total, item) => total + item.price * item.quantity, 0);
         return inventory;
       });
     })
