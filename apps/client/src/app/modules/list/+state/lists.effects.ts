@@ -27,7 +27,6 @@ import {
   map,
   mergeMap,
   switchMap,
-  takeUntil,
   tap,
   withLatestFrom
 } from 'rxjs/operators';
@@ -41,11 +40,18 @@ import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { Router } from '@angular/router';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { ListCompletionPopupComponent } from '../list-completion-popup/list-completion-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
+import { PushNotificationsService } from 'ng-push';
+import { PlatformService } from '../../../core/tools/platform.service';
+import { IpcService } from '../../../core/electron/ipc.service';
+import { SettingsService } from '../../settings/settings.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Injectable()
 export class ListsEffects {
@@ -192,7 +198,7 @@ export class ListsEffects {
     switchMap(() => EMPTY)
   );
 
-  @Effect({dispatch: false})
+  @Effect({ dispatch: false })
   createListInDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.CreateList),
     withLatestFrom(this.authFacade.userId$),
@@ -264,8 +270,12 @@ export class ListsEffects {
   @Effect()
   updateItemDone$ = this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
-    withLatestFrom(this.listsFacade.selectedList$, this.teamsFacade.selectedTeam$, this.authFacade.userId$),
-    map(([action, list, team, userId]) => {
+    withLatestFrom(this.listsFacade.selectedList$,
+      this.teamsFacade.selectedTeam$,
+      this.authFacade.userId$,
+      this.listsFacade.autocompleteEnabled$,
+      this.listsFacade.completionNotificationEnabled$),
+    map(([action, list, team, userId, autocompleteEnabled, completionNotificationEnabled]) => {
       const historyEntry = list.modificationsHistory.find(entry => {
         return entry.itemId === action.itemId && (Date.now() - entry.date < 60000);
       });
@@ -285,6 +295,30 @@ export class ListsEffects {
       }
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
         this.discordWebhookService.notifyItemChecked(team, list, userId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
+      }
+      if (autocompleteEnabled && completionNotificationEnabled && action.fromPacket) {
+        const item = list.getItemById(action.itemId, !action.finalItem, action.finalItem);
+        const itemDone = item.done + action.doneDelta >= item.amount;
+        if (itemDone) {
+          const notificationTitle = this.translate.instant('LIST_DETAILS.Autofill_notification_title');
+          const notificationBody = this.translate.instant('LIST_DETAILS.Autofill_notification_body', {
+            itemName: this.i18n.getName(this.l12n.getItem(action.itemId)),
+            listName: list.name
+          });
+          const notificationIcon = `https://xivapi.com${this.lazyData.icons[action.itemId]}`;
+          const audio = new Audio(`./assets/audio/Feature_unlocked.mp3`);
+          audio.loop = false;
+          audio.volume = this.settings.alarmVolume;
+          audio.play();
+          if (this.platform.isDesktop()) {
+            this.ipc.send('notification', {
+              title: notificationTitle,
+              content: notificationBody,
+              icon: notificationIcon
+            });
+          }
+          this.notificationService.info(notificationTitle, notificationBody);
+        }
       }
       return [action, list];
     }),
@@ -352,7 +386,15 @@ export class ListsEffects {
     private dialog: NzModalService,
     private translate: TranslateService,
     private discordWebhookService: DiscordWebhookService,
-    private serializer: NgSerializerService
+    private serializer: NgSerializerService,
+    private pushNotificationsService: PushNotificationsService,
+    private notificationService: NzNotificationService,
+    private platform: PlatformService,
+    private ipc: IpcService,
+    private settings: SettingsService,
+    private i18n: I18nToolsService,
+    private l12n: LocalizedDataService,
+    private lazyData: LazyDataService
   ) {
   }
 

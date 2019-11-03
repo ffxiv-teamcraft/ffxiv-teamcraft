@@ -16,6 +16,7 @@ import {
   SelectList,
   SetItemDone,
   ToggleAutocompletion,
+  ToggleCompletionNotification,
   UpdateItem,
   UpdateList,
   UpdateListIndex
@@ -156,6 +157,8 @@ export class ListsFacade {
 
   autocompleteEnabled$ = this.store.select(listsQuery.getAutocompleteEnabled);
 
+  completionNotificationEnabled$ = this.store.select(listsQuery.getCompletionNotificationEnabled);
+
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryFacade) {
   }
@@ -288,6 +291,10 @@ export class ListsFacade {
         modal.close();
       });
     }
+  }
+
+  toggleCompletionNotification(newValue: boolean): void {
+    this.store.dispatch(new ToggleCompletionNotification(newValue));
   }
 
   setNeedsverification(needed: boolean): void {

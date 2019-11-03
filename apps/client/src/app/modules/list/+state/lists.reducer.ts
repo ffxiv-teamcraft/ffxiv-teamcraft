@@ -6,6 +6,7 @@ export interface ListsState {
   listDetails: List[];
   selectedId?: string; // which Lists record has been selected
   autocompletionEnabled?: boolean;
+  completionNotificationEnabled?: boolean;
   listsConnected: boolean;
   needsVerification: boolean;
   deleted: string[];
@@ -36,6 +37,14 @@ export function listsReducer(
       state = {
         ...state,
         autocompletionEnabled: action.enabled
+      };
+      break;
+    }
+
+    case ListsActionTypes.ToggleCompletionNotification: {
+      state = {
+        ...state,
+        completionNotificationEnabled: action.enabled
       };
       break;
     }
