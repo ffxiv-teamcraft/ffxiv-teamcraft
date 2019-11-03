@@ -64,6 +64,7 @@ export class AuthFacade {
   favorites$ = this.user$.pipe(map(user => user.favorites));
 
   characters$ = this.user$.pipe(
+    filter(u => u.lodestoneIds !== undefined),
     switchMap((user: TeamcraftUser) => {
       return combineLatest(user.lodestoneIds.map(entry => {
         if (entry.id > 0) {

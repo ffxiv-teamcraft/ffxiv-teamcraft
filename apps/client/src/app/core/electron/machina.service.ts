@@ -202,15 +202,15 @@ export class MachinaService {
     this.ipc.packets$.pipe(
       ofPacketType('initZone')
     ).subscribe(packet => {
-      const realZoneId = territories[packet.zoneId];
+      const realZoneId = territories[packet.zoneID.toString()];
       this.eorzeaFacade.setZone(realZoneId);
-      this.eorzeaFacade.setWeather(packet.weatherId);
+      this.eorzeaFacade.setWeather(packet.weatherID);
     });
 
     this.ipc.packets$.pipe(
       ofPacketType('weatherChange')
     ).subscribe(packet => {
-      this.eorzeaFacade.setWeather(packet.weatherId);
+      this.eorzeaFacade.setWeather(packet.weatherID);
     });
   }
 }
