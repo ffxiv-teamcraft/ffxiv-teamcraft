@@ -143,7 +143,7 @@
     "Tables": "목록",
     "Pie_charts": "파이 차트",
     "Read_more_on_wiki": "위키에서 자세히 보기",
-    "Apply": "Apply"
+    "Apply": "적용"
   },
   "ALARMS": {
     "Title": "알람",
@@ -426,7 +426,7 @@
     "Lists_merged": "목록 병합이 완료되었습니다!",
     "Shared_lists": "나와 공유된 목록",
     "Add_selection": "선택항목을 목록에 추가",
-    "Add_selection_to_list": "Add selection to list",
+    "Add_selection_to_list": "선택항목을 목록에 추가",
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
     "No_lists": "목록이 없습니다",
