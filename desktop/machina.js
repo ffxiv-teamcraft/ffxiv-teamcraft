@@ -40,7 +40,26 @@ module.exports.start = function(win, config, verbose, winpcap) {
         options.logger = log.log;
       }
 
+      const acceptedPackets = [
+        'itemInfo',
+        'updateInventorySlot',
+        'currencyCrystalInfo',
+        'marketBoardItemListing',
+        'marketBoardItemListingHistory',
+        'playerSetup',
+        'playerSpawn',
+        'inventoryModifyHandler',
+        'npcSpawn',
+        'ping',
+        'playerStats',
+        'updateClassInfo',
+        'actorControl',
+        'initZone',
+        'weatherChange'
+      ];
+
       Machina = new MachinaFFXIV(options);
+      Machina.filter(acceptedPackets);
       Machina.start(() => {
         log.info('Packet capture started');
       });
@@ -49,23 +68,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         if (verbose) {
           log.log(JSON.stringify(packet));
         }
-        const acceptedPackets = [
-          'itemInfo',
-          'updateInventorySlot',
-          'currencyCrystalInfo',
-          'marketBoardItemListing',
-          'marketBoardItemListingHistory',
-          'playerSetup',
-          'playerSpawn',
-          'inventoryModifyHandler',
-          'npcSpawn',
-          'ping',
-          'playerStats',
-          'updateClassInfo',
-          'actorControl',
-          'initZone',
-          'weatherChange'
-        ];
+
         if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {
           sendToRenderer(win, packet);
         }
