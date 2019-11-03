@@ -531,6 +531,10 @@
     "Contributions_popup": "Statistiques des contributions",
     "Autofill_details": "Saisissez la progression au fur et à mesure que vous obtenez des éléments ingame, en utilisant la capture de paquets. Ceci est désactivé si vous quittez la page de liste, pour éviter les entrées non désirées.",
     "Autofill": "Saisie auto",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
