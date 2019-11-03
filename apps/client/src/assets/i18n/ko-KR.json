@@ -1576,9 +1576,9 @@
       "Message": "이 아이템은 {{containers}} 에도 있습니다"
     },
     "HAS_TOO_FEW": {
-      "Title": "Items that you have in very small stacks",
-      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
-      "Threshold_amount": "Threshold value"
+      "Title": "매우 소량으로 소유하고 있는 아이템",
+      "Message": "이 아이템을 {{amount}} 만큼 가지고 있지만 처분을 추천 함",
+      "Threshold_amount": "한계값"
     }
   }
 }
