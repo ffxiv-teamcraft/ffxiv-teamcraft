@@ -26,9 +26,9 @@ module.exports.start = function(win, config, verbose, winpcap) {
       const options = isDev ?
         {
           monitorType: winpcap ? 'WinPCap' : 'RawSocket',
-          parseAlgorithm: 'CPUHeavy'
+          parseAlgorithm: 'PacketSpecific'
         } : {
-          parseAlgorithm: 'CPUHeavy',
+          parseAlgorithm: 'PacketSpecific',
           noData: true,
           monitorType: winpcap ? 'WinPCap' : 'RawSocket',
           machinaExePath: machinaExePath,
