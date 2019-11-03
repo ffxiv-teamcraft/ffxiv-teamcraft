@@ -239,7 +239,9 @@ export class DataService {
       map(results => {
         if (onlyCraftable) {
           return results.filter(row => {
-            return (row.Recipes && row.Recipes.length > 0) || (row.GameContentLinks && row.GameContentLinks.CompanyCraftSequence && row.GameContentLinks.CompanyCraftSequence.ResultItem);
+            return (row.Recipes && row.Recipes.length > 0)
+              || (row.GameContentLinks && row.GameContentLinks.CompanyCraftSequence && row.GameContentLinks.CompanyCraftSequence.ResultItem)
+              && !row.Name_en.startsWith('Dated');
           });
         }
         return results;
