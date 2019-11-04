@@ -143,6 +143,11 @@ export class UniversalisService {
           this.handleMarketboardListingHistoryPackets(listings);
         }
       });
+    this.ipc.marketTaxRatePackets$.subscribe(packet => {
+      if (this.settings.enableUniversalisSourcing) {
+        this.uploadMarketTaxRates(packet);
+      }
+    });
     this.ipc.cid$.subscribe(packet => {
       if (this.settings.enableUniversalisSourcing) {
         this.uploadCid(packet);
@@ -172,7 +177,6 @@ export class UniversalisService {
                     };
                   }),
                   pricePerUnit: item.pricePerUnit,
-                  totalTax: item.totalTax,
                   quantity: item.quantity,
                   total: item.total,
                   retainerID: item.retainerID,
@@ -225,6 +229,22 @@ export class UniversalisService {
         });
       })
     ).subscribe();
+  }
+
+  public uploadMarketTaxRates(packet: any): void {
+      const data = {
+          marketTaxRates: {
+              limsaLominsa: packet.limsaLominsa,
+              gridania: packet.gridania,
+              uldah: packet.uldah,
+              ishgard: packet.ishgard,
+              kugane: packet.kugane,
+              crystarium: packet.crystarium
+          }
+      };
+      this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+        headers: new HttpHeaders().append('Content-Type', 'application/json')
+      }).subscribe();
   }
 
   public uploadCid(packet: any): void {
