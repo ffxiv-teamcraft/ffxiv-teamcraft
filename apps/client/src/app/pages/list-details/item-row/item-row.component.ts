@@ -22,6 +22,8 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
 import {
+  distinctUntilChanged,
+  distinctUntilKeyChanged, exhaustMap,
   filter,
   first,
   map,
@@ -79,6 +81,7 @@ import { FreeCompanyActionsService } from '../../simulator/model/free-company-ac
 import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
+import { onlyWhenItemChanges } from '../../../core/rxjs/only-when-item-changes';
 
 @Component({
   selector: 'app-item-row',
@@ -97,14 +100,22 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this._item = item;
     this.handleAlarms(item);
     this.cdRef.detectChanges();
-    this.item$.next(item);
+    this.itemSubject$.next(item);
   }
 
   public get item(): ListRow | CustomItem {
     return this._item;
   }
 
-  private item$: Subject<ListRow> = new Subject<ListRow>();
+  private itemSubject$: Subject<ListRow> = new Subject<ListRow>();
+
+  private item$: Observable<ListRow> = this.itemSubject$.pipe(
+    distinctUntilChanged((a, b) => {
+      return a.amount === b.amount
+        && a.done === b.done
+        && a.id === b.id;
+    })
+  );
 
   @Input()
   finalItem = false;
@@ -160,6 +171,10 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   tagInputVisible = false;
 
   newTag: string;
+
+  private list$: Observable<List> = this.listsFacade.selectedList$.pipe(
+    onlyWhenItemChanges(this.item$)
+  );
 
   @ViewChild('inputElement', { static: false }) inputElement: ElementRef;
 
@@ -238,10 +253,14 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryFacade) {
     super();
-    this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
-      tap(() => this.cdRef.detectChanges()),
-      filter(list => !list.notFound && list.canBeCrafted !== undefined),
-      map(list => list.canBeCrafted(this.item)),
+    this.canBeCrafted$ = this.list$.pipe(
+      filter(list => {
+        return !list.notFound
+          && list.canBeCrafted !== undefined;
+      }),
+      map(list => {
+        return list.canBeCrafted(this.item);
+      }),
       shareReplay(1)
     );
 
@@ -262,7 +281,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
     this.userId$ = this.authFacade.userId$;
     this.loggedIn$ = this.authFacade.loggedIn$;
-    this.team$ = combineLatest([this.listsFacade.selectedList$, this.teamsFacade.selectedTeam$]).pipe(
+    this.team$ = combineLatest([this.list$, this.teamsFacade.selectedTeam$]).pipe(
       map(([list, team]) => {
         if (list.teamId === undefined || (team && list.teamId !== team.$key)) {
           return null;
@@ -272,7 +291,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       shareReplay(1)
     );
 
-    this.hasAllBaseIngredients$ = combineLatest([this.canBeCrafted$, this.listsFacade.selectedList$
+    this.hasAllBaseIngredients$ = combineLatest([this.canBeCrafted$, this.list$
       .pipe(
         map(list => !list.notFound && list.hasAllBaseIngredients(this.item))
       )
@@ -281,7 +300,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       shareReplay(1)
     );
 
-    this.requiredForFinalCraft$ = this.listsFacade.selectedList$.pipe(
+    this.requiredForFinalCraft$ = this.list$.pipe(
       map(list => {
         const recipesNeedingItem = list.finalItems
           .filter(item => item.requires !== undefined)
@@ -312,7 +331,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       this.cdRef.detectChanges();
     });
 
-    this.craftableAmount$ = this.listsFacade.selectedList$.pipe(
+    this.craftableAmount$ = this.list$.pipe(
       filter(() => this.layout.showCraftableAmount),
       tap(() => this.cdRef.detectChanges()),
       map(list => list.craftableAmount(this.item)),
@@ -320,7 +339,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     );
 
     this.commentBadge$ = this.commentBadgeReloader$.pipe(
-      switchMap(() => this.listsFacade.selectedList$),
+      exhaustMap(() => this.list$),
       switchMap((list) => {
         return this.commentsService.getComments(
           CommentTargetType.LIST,
