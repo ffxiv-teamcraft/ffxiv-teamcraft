@@ -46,6 +46,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'currencyCrystalInfo',
         'marketBoardItemListing',
         'marketBoardItemListingHistory',
+        'marketTaxRates',
         'playerSetup',
         'playerSpawn',
         'inventoryModifyHandler',
@@ -68,7 +69,6 @@ module.exports.start = function(win, config, verbose, winpcap) {
         if (verbose) {
           log.log(JSON.stringify(packet));
         }
-
         if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {
           sendToRenderer(win, packet);
         }

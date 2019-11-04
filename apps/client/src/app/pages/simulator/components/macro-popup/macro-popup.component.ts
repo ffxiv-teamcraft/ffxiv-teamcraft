@@ -17,7 +17,7 @@ export class MacroPopupComponent implements OnInit {
 
   private readonly maxMacroLines = 15;
 
-  public addEcho = true;
+  public addEcho = localStorage.getItem('macros:addecho') !== 'false';
 
   public echoSeNumber = 1;
 
@@ -49,6 +49,7 @@ export class MacroPopupComponent implements OnInit {
   public generateMacros(): void {
     localStorage.setItem('macros:macrolock', this.macroLock.toString());
     localStorage.setItem('macros:consumables', this.addConsumables.toString());
+    localStorage.setItem('macros:addecho', this.addEcho.toString());
     this.macro = this.macroLock ? [['/mlock']] : [[]];
     let totalLength = 0;
     this.rotation.forEach((action, actionIndex) => {
