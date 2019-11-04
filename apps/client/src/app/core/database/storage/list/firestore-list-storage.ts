@@ -4,7 +4,7 @@ import { ListStore } from './list-store';
 import { combineLatest, from, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
+import { filter, first, map, switchMap, switchMapTo, takeUntil } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, QueryFn } from '@angular/fire/firestore';
 import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
@@ -72,7 +72,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   get(uid: string): Observable<List> {
-    return super.get(uid).pipe(
+    return this.lazyData.loaded$.pipe(
+      filter(loaded => loaded),
+      switchMapTo(super.get(uid)),
       map(list => {
         return this.completeListData(list);
       })
