@@ -16,6 +16,8 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { InventoryFacade } from '../../modules/inventory/+state/inventory.facade';
 import { Duplicates } from './optimizations/duplicates';
 import { FormsModule } from '@angular/forms';
+import { ClipboardModule } from 'ngx-clipboard';
+import { HasTooFew } from './optimizations/has-too-few';
 
 const optimisations: Provider[] = [
   {
@@ -28,6 +30,11 @@ const optimisations: Provider[] = [
     useClass: Duplicates,
     multi: true,
     deps: [TranslateService, InventoryFacade]
+  },
+  {
+    provide: INVENTORY_OPTIMIZER,
+    useClass: HasTooFew,
+    multi: true
   }
 ];
 
@@ -54,7 +61,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     PageLoaderModule,
     FullpageMessageModule,
-    ItemIconModule
+    ItemIconModule,
+    ClipboardModule
   ],
   providers: [
     ...optimisations

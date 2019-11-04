@@ -41,6 +41,9 @@ for (let i = 0; i < argv.length; i++) {
   if (argv[i] === '--verbose' || argv[i] === '-v') {
     options.verbose = true;
   }
+  if (argv[i] === '--winpcap' || argv[i] === '-wp') {
+    options.winpcap = true;
+  }
 }
 
 if (isDev) {
@@ -124,7 +127,7 @@ function createWindow() {
   }
 
   if (config.get('machina') === true) {
-    Machina.start(win, config, options.verbose);
+    Machina.start(win, config, options.verbose, options.winpcap);
   }
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
@@ -294,7 +297,7 @@ ipcMain.on('toggle-machina', (event, enabled) => {
   config.set('machina', enabled);
   event.sender.send('toggle-machina:value', enabled);
   if (enabled) {
-    Machina.start(win, config, options.winpcap);
+    Machina.start(win, config, options.verbose, options.winpcap);
   } else {
     Machina.stop();
   }

@@ -9,7 +9,7 @@ export class XivapiIconPipe implements PipeTransform {
     if (!icon) {
       return fallback;
     }
-    if (icon.startsWith('https://xivapi.com')) {
+    if (icon.toString().startsWith('https://xivapi.com') || !icon.startsWith('/')) {
       return icon;
     }
     return `https://xivapi.com${icon}`;

@@ -78,6 +78,7 @@ export class IpcService {
       if (window.require) {
         try {
           this._ipc = window.require('electron').ipcRenderer;
+          this._ipc.setMaxListeners(0);
           this.connectListeners();
         } catch (e) {
           throw e;

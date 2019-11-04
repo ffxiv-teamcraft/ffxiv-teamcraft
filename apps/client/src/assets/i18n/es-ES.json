@@ -142,7 +142,8 @@
     "User": "Usuario",
     "Tables": "Tabla",
     "Pie_charts": "Gráfico de pastel",
-    "Read_more_on_wiki": "Leer más detalles en el wiki"
+    "Read_more_on_wiki": "Leer más detalles en el wiki",
+    "Apply": "Apply"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -530,6 +531,10 @@
     "Contributions_popup": "Estadísticas de contribuciones",
     "Autofill_details": "Ingrese su progreso cuando obtenga artículos en el juego, usando captura de paquetes. Esto estará deshabilitado si abandona la página de la lista, para evitar entradas no deseadas.",
     "Autofill": "Autocompletar",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -725,6 +730,7 @@
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
+    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
     "Include_consumables_notification": "Incluir notificación de consumibles",
     "Consumable_notification": "Usar {{buffs}}",
     "Extra_wait": "Espera extra",
@@ -789,6 +795,7 @@
     "Rotation_solver": "Resolvedor de rotación",
     "Recipe_picker_placeholder": "Introduzca el nombre de la receta que desea crear",
     "Could_not_find_minstats": "No se pudieron encontrar atributos mínimos para esta rotación",
+    "Remove_final_appraisal": "Remove Final Appraisal buff",
     "STATE": {
       "Excellent": "Excelente",
       "Good": "Bueno",
@@ -1290,6 +1297,7 @@
     "Currencies": "Divisas",
     "Rowena_splendor": "Esplendores de Rowena (Estrella = +20% de bonus)",
     "Unlocks": "Desbloqueos",
+    "Jump_to_page": "Quick jump to another page",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1562,13 +1570,19 @@
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
     "Show_ignored": "Show ignored items",
+    "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
       "Title": "Items that can be bought with gil",
       "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated accross multiple containers",
+      "Title": "Items that are duplicated across multiple containers",
       "Message": "This item is also present in: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Items that you have in very small stacks",
+      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Threshold_amount": "Threshold value"
     }
   }
 }

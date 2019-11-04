@@ -142,7 +142,8 @@
     "User": "Benutzer",
     "Tables": "Tabelle",
     "Pie_charts": "Kuchendiagramm",
-    "Read_more_on_wiki": "Details im Wiki ansehen"
+    "Read_more_on_wiki": "Details im Wiki ansehen",
+    "Apply": "Übernehmen"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -530,6 +531,10 @@
     "Contributions_popup": "Beitragsstatistiken",
     "Autofill_details": "Input-Fortschritt, wenn Sie Einträge ingame erhalten, indem Sie Paketerfassung verwenden. Dies ist deaktiviert, wenn Sie die Liste verlassen, um unerwünschte Eingaben zu vermeiden.",
     "Autofill": "Automatisch ausfüllen",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -725,6 +730,7 @@
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Makros am letzten möglichen Schritt für Reklamation teilen",
+    "Break_before_byregots_blessing": "Makros vor Byregots Benediktion teilen",
     "Include_consumables_notification": "Benachrichtigung für Verzehrbares hinzufügen",
     "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
@@ -789,6 +795,7 @@
     "Rotation_solver": "Rotations-Löser",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
+    "Remove_final_appraisal": "Remove Final Appraisal buff",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
@@ -1290,6 +1297,7 @@
     "Currencies": "Währungen",
     "Rowena_splendor": "Rowenas Haus der Wunder",
     "Unlocks": "Freischaltung von",
+    "Jump_to_page": "Schnellwechsel zu anderer Seite",
     "ITEM": {
       "Masterpiece_base": "Basis",
       "Masterpiece_bonus": "Bonus"
@@ -1562,6 +1570,7 @@
     "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
     "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
+    "No_optimizations": "Keine Optimierungen verfügbar",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
       "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen."
@@ -1569,6 +1578,11 @@
     "DUPLICATES": {
       "Title": "Gegenstände, die in mehreren Inventaren enthalten sind",
       "Message": "Dieser Gegenstand ist ebenfalls in folgendem Inventar enthalten: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Gegenstände, die du in sehr kleinen Stapeln hast",
+      "Message": "Du hast nur {{amount}} von diesem Gegenstand. Lohnt es sich, diesen zu behalten?",
+      "Threshold_amount": "Grenzwerte"
     }
   }
 }

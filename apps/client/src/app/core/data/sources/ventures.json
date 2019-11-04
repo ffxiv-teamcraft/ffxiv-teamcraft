@@ -4928,7 +4928,7 @@
   "828": {
     "en": "Pixie Floss Boll",
     "ja": "妖綿花",
-    "de": "Pixie-Baumwolle",
+    "de": "Pixiebaumwolle",
     "fr": "Fleur de coton pixie"
   },
   "829": {
@@ -5017,7 +5017,7 @@
   },
   "843": {
     "en": "Cherry Herring",
-    "ja": "チェリーへリング",
+    "ja": "チェリーヘリング",
     "de": "Rotkirschhering",
     "fr": "Hareng cerise"
   },
@@ -5062,5 +5062,29 @@
     "ja": "エディブルオイスター",
     "de": "Genussauster",
     "fr": "Huître pulpeuse"
+  },
+  "851": {
+    "en": "Field Exploration XXV",
+    "ja": "探索依頼：平地 G25",
+    "de": "Felderkundung XXV",
+    "fr": "Exploration en plaine XXV"
+  },
+  "852": {
+    "en": "Highland Exploration XXV",
+    "ja": "探索依頼：山岳 G25",
+    "de": "Hochlanderkundung XXV",
+    "fr": "Exploration en montagne XXV"
+  },
+  "853": {
+    "en": "Woodland Exploration XXV",
+    "ja": "探索依頼：森林 G25",
+    "de": "Forsterkundung XXV",
+    "fr": "Exploration en forêt XXV"
+  },
+  "854": {
+    "en": "Waterside Exploration XXV",
+    "ja": "探索依頼：水辺 G25",
+    "de": "Gewässererkundung XXV",
+    "fr": "Exploration en rivage XXV"
   }
 }

@@ -7,7 +7,6 @@ import { listsQuery } from './lists.selectors';
 import {
   CreateList,
   DeleteList,
-  LoadListCompact,
   LoadListDetails,
   LoadMyLists,
   LoadSharedLists,
@@ -17,7 +16,7 @@ import {
   SelectList,
   SetItemDone,
   ToggleAutocompletion,
-  UnloadListDetails,
+  ToggleCompletionNotification,
   UpdateItem,
   UpdateList,
   UpdateListIndex
@@ -43,11 +42,20 @@ declare const gtag: Function;
   providedIn: 'root'
 })
 export class ListsFacade {
-  loadingMyLists$ = this.store.select(listsQuery.getCompactsLoading);
-  allListDetails$ = this.store.select(listsQuery.getAllListDetails);
-  compacts$ = this.store.select(listsQuery.getCompacts);
+  loadingMyLists$ = this.store.select(listsQuery.getListsLoading);
+  allListDetails$ = this.store.select(listsQuery.getAllListDetails)
+    .pipe(
+      map(lists => {
+        return lists.filter(list => {
+          return list.finalItems !== undefined
+            && list.items !== undefined
+            && list.isOutDated
+            && typeof list.isOutDated === 'function';
+        });
+      })
+    );
 
-  myLists$ = combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.userId$]).pipe(
+  myLists$ = combineLatest([this.store.select(listsQuery.getAllListDetails), this.authFacade.userId$]).pipe(
     map(([compacts, userId]) => {
       return compacts.filter(c => c.authorId === userId);
     }),
@@ -60,7 +68,7 @@ export class ListsFacade {
   sharedLists$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
       if (!loggedIn) {
-        return combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.userId$]).pipe(
+        return combineLatest([this.store.select(listsQuery.getAllListDetails), this.authFacade.userId$]).pipe(
           map(([compacts, userId]) => {
             return compacts.filter(c => {
               return !c.notFound
@@ -71,7 +79,7 @@ export class ListsFacade {
           })
         );
       }
-      return combineLatest([this.store.select(listsQuery.getCompacts), this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$]).pipe(
+      return combineLatest([this.store.select(listsQuery.getAllListDetails), this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$]).pipe(
         map(([compacts, user, userId, fcId]) => {
           if (user !== null) {
             const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
@@ -149,18 +157,20 @@ export class ListsFacade {
 
   autocompleteEnabled$ = this.store.select(listsQuery.getAutocompleteEnabled);
 
+  completionNotificationEnabled$ = this.store.select(listsQuery.getCompletionNotificationEnabled);
+
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryFacade) {
   }
 
   getTeamLists(team: Team): Observable<List[]> {
-    return this.compacts$.pipe(
+    return this.allListDetails$.pipe(
       map(compacts => compacts.filter(compact => compact.teamId === team.$key))
     );
   }
 
   getWorkshopCompacts(keys: string[]): Observable<List[]> {
-    return this.compacts$.pipe(
+    return this.allListDetails$.pipe(
       map(compacts => keys.map(key => compacts.find(compact => compact.$key === key)))
     );
   }
@@ -245,16 +255,11 @@ export class ListsFacade {
     this.store.dispatch(new LoadSharedLists());
   }
 
-  loadCompact(key: string): void {
-    this.store.dispatch(new LoadListCompact(key));
-  }
-
   load(key: string): void {
     this.store.dispatch(new LoadListDetails(key));
   }
 
   unload(key: string): void {
-    this.store.dispatch(new UnloadListDetails(key));
     this.store.dispatch(new SelectList(undefined));
   }
 
@@ -286,6 +291,10 @@ export class ListsFacade {
         modal.close();
       });
     }
+  }
+
+  toggleCompletionNotification(newValue: boolean): void {
+    this.store.dispatch(new ToggleCompletionNotification(newValue));
   }
 
   setNeedsverification(needed: boolean): void {

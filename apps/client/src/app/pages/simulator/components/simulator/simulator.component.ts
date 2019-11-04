@@ -61,6 +61,7 @@ import {
   CraftingActionsRegistry,
   CraftingJob,
   EffectiveBuff,
+  FinalAppraisal,
   GearSet,
   Simulation,
   SimulationReliabilityReport,
@@ -174,9 +175,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public dirty = false;
 
   public savedSet = true;
-  
+
   private formChangesSubscription: any;
-  
+
   // HQ ingredients
   private hqIngredients$: BehaviorSubject<{ id: number, amount: number }[]> =
     new BehaviorSubject<{ id: number, amount: number }[]>([]);
@@ -200,10 +201,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   private stepStates$: BehaviorSubject<{ [index: number]: StepState }> = new BehaviorSubject<{ [index: number]: StepState }>({});
 
   private findActionsRegex: RegExp =
-    new RegExp(/\/(ac|action|aaction|gaction|generalaction)[\s]+((\w|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|"[^"]+")?.*/, 'i');
+    new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|"[^"]+")?.*/, 'i');
 
   private findActionsAutoTranslatedRegex: RegExp =
-    new RegExp(/\/(ac|action|aaction|gaction|generalaction)[\s]+([^<]+)?.*/, 'i');
+    new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
 
   private statsFromRotationApplied = false;
 
@@ -443,6 +444,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             let match = this.findActionsRegex.exec(line);
             if (match !== null && match !== undefined) {
               const skillName = match[2].replace(/"/g, '');
+
+              if (line.startsWith('/statusoff') && skillName === this.i18nTools.getName(this.localizedDataService.getAction(new FinalAppraisal().getIds()[0]))) {
+                actionIds.push(-1);
+                continue;
+              }
+
               // Get translated skill
               try {
                 actionIds
@@ -754,7 +761,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.formChangesSubscription.unsubscribe();
-    
+
     this.onDestroy$.next(null);
   }
 
@@ -930,10 +937,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         return this.rotationTipsService.getTips(result);
       })
     );
-    
+
     this.formChangesSubscription = this.statsForm.valueChanges.subscribe(() => {
       this.savedSet = false;
-    });    
+    });
   }
 
 }

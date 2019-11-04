@@ -3,6 +3,7 @@ import { BaseSearchResult } from './base-search-result';
 
 export interface SearchResult extends BaseSearchResult {
   itemId: number | string;
+  id?: number;
   icon: string;
   recipe?: Recipe;
   // Amount to add.

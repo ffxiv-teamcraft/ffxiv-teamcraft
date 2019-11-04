@@ -4,15 +4,9 @@ import { ListsState } from './lists.reducer';
 // Lookup the 'Lists' feature state managed by NgRx
 const getListsState = createFeatureSelector<ListsState>('lists');
 
-const getCompactsLoading = createSelector(
+const getListsLoading = createSelector(
   getListsState,
-  (state: ListsState) => !state.compactsConnected
-);
-
-const getCompacts = createSelector(
-  getListsState,
-  getCompactsLoading,
-  (state: ListsState, loading) => loading ? [] : state.compacts.filter(c => state.deleted.indexOf(c.$key) === -1)
+  (state: ListsState) => !state.listsConnected
 );
 
 const getNeedsVerification = createSelector(
@@ -23,6 +17,11 @@ const getNeedsVerification = createSelector(
 const getAutocompleteEnabled = createSelector(
   getListsState,
   (state: ListsState) => state.autocompletionEnabled
+);
+
+const getCompletionNotificationEnabled = createSelector(
+  getListsState,
+  (state: ListsState) => state.completionNotificationEnabled
 );
 
 const getAllListDetails = createSelector(
@@ -46,10 +45,10 @@ const getSelectedList = createSelector(
 );
 
 export const listsQuery = {
-  getCompactsLoading,
   getAllListDetails,
   getSelectedList,
-  getCompacts,
   getNeedsVerification,
-  getAutocompleteEnabled
+  getAutocompleteEnabled,
+  getCompletionNotificationEnabled,
+  getListsLoading
 };

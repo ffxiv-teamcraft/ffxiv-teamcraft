@@ -1,5 +1,6 @@
 <nz-badge [nzColor]="getColor(state)">
-  <div (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null" (contextmenu)="showStateMenu?contextMenu($event, template):null"
+  <div (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null"
+       (contextmenu)="showStateMenu?contextMenu($event, template):null"
        class="action-container">
     <div [appXivdbActionTooltipDisabled]="tooltipDisabled"
          [appXivdbActionTooltip]="action.getId(getJobId())"

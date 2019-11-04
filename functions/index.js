@@ -13,36 +13,6 @@ const runtimeOpts = {
   memory: '1GB'
 };
 
-function getCompact(list) {
-  const compact = list;
-  delete compact.items;
-  delete compact.modificationsHistory;
-  compact.finalItems = (compact.finalItems || []).map(item => {
-    const entry = {
-      amount: item.amount,
-      amount_needed: item.amount_needed
-    };
-    if (item.craftedBy) {
-      entry.craftedBy = item.craftedBy;
-    }
-    if (item.custom) {
-      entry.$key = item.$key;
-      entry.id = item.id;
-      entry.custom = true;
-      entry.name = item.name;
-      entry.icon = item.icon || '';
-    } else {
-      entry.id = item.id;
-      entry.icon = item.icon || '';
-    }
-    if (item.recipeId !== undefined) {
-      entry.recipeId = item.recipeId;
-    }
-    return entry;
-  });
-  return compact;
-}
-
 // Firestore counts
 exports.firestoreCountlistsCreate = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate(() => {
   const ref = admin.database().ref('/list_count');
@@ -63,26 +33,15 @@ exports.firestoreCountlistsDelete = functions.runWith(runtimeOpts).firestore.doc
   }).then(() => null);
 });
 
-exports.createListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate((snap, context) => {
-  const compact = getCompact(snap.data());
-  return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).set(compact);
-});
-
-exports.updateListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((snap, context) => {
-  if (JSON.stringify(snap.before.data().finalItems) === JSON.stringify(snap.after.data().finalItems)) {
-    return Promise.resolve();
-  }
-  const compact = getCompact(snap.after.data());
-  return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).set(compact);
-});
-
-exports.deleteListCompacts = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete((snap, context) => {
-  return firestore.collection('compacts').doc('collections').collection('lists').doc(context.params.uid).delete();
-});
+validatedCache = {};
 
 exports.userIdValidator = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
   const userId = request.query.userId;
+  if (validatedCache[userId] !== undefined) {
+    return response.status(200).set('Content-Type', 'application/json').send(`{"valid": ${validatedCache[userId]}}`);
+  }
   return firestore.collection('users').doc(userId).get().then(snap => {
+    validatedCache[userId] = snap.exists;
     response.status(200).set('Content-Type', 'application/json').send(`{"valid": ${snap.exists}}`);
   });
 });

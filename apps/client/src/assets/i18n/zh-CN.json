@@ -142,7 +142,8 @@
     "User": "用户",
     "Tables": "表格",
     "Pie_charts": "饼状图",
-    "Read_more_on_wiki": "在wiki上阅读更多详细信息"
+    "Read_more_on_wiki": "在wiki上阅读更多详细信息",
+    "Apply": "Apply"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -530,6 +531,10 @@
     "Contributions_popup": "贡献统计",
     "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
     "Autofill": "自动填写",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -725,6 +730,7 @@
     "Fixed_notification_number": "固定提示音",
     "Starting_echo_number": "提示音",
     "Break_on_reclaim": "在无法使用回收前拆分宏",
+    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
     "Include_consumables_notification": "添加消耗品提示",
     "Consumable_notification": "使用 {{buffs}}",
     "Extra_wait": "单独延迟",
@@ -789,6 +795,7 @@
     "Rotation_solver": "手法求解器",
     "Recipe_picker_placeholder": "输入您想要制作的配方",
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
+    "Remove_final_appraisal": "Remove Final Appraisal buff",
     "STATE": {
       "Excellent": "最高品质",
       "Good": "高品质",
@@ -1290,6 +1297,7 @@
     "Currencies": "货币",
     "Rowena_splendor": "罗薇娜显赫商会（带星=奖励+20%）",
     "Unlocks": "解锁",
+    "Jump_to_page": "Quick jump to another page",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "奖励"
@@ -1562,13 +1570,19 @@
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
     "Show_ignored": "Show ignored items",
+    "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
       "Title": "Items that can be bought with gil",
       "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated accross multiple containers",
+      "Title": "Items that are duplicated across multiple containers",
       "Message": "This item is also present in: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Items that you have in very small stacks",
+      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Threshold_amount": "Threshold value"
     }
   }
 }

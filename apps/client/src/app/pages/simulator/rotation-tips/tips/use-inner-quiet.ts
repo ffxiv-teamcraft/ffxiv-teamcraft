@@ -1,5 +1,5 @@
 import { RotationTip } from '../rotation-tip';
-import { InnerQuiet, SimulationResult } from '@ffxiv-teamcraft/simulator';
+import { InnerQuiet, SimulationResult, Reflect } from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
 
 export class UseInnerQuiet extends RotationTip {
@@ -9,11 +9,12 @@ export class UseInnerQuiet extends RotationTip {
   }
 
   canBeAppliedTo(simulationResult: SimulationResult): boolean {
-    return simulationResult.steps.some(step => step.addedQuality > 0) && this.crafterHasActions(simulationResult, InnerQuiet);
+    return simulationResult.steps.some(step => step.addedQuality > 0)
+      && this.crafterHasActions(simulationResult, InnerQuiet);
   }
 
   matches(simulationResult: SimulationResult): boolean {
-    return !simulationResult.steps.some(step => step.action.is(InnerQuiet));
+    return !simulationResult.steps.some(step => step.action.is(InnerQuiet) || step.action.is(Reflect));
   }
 
 }

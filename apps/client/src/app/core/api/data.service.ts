@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { GarlandToolsService } from './garland-tools.service';
 import { Recipe } from '../../model/search/recipe';
@@ -24,6 +24,20 @@ import {
   XivapiSearchOptions,
   XivapiService
 } from '@xivapi/angular-client';
+import { SearchType } from '../../pages/search/search-type';
+import { InstanceSearchResult } from '../../model/search/instance-search-result';
+import { QuestSearchResult } from '../../model/search/quest-search-result';
+import { ActionSearchResult } from '../../model/search/action-search-result';
+import { StatusSearchResult } from '../../model/search/status-search-result';
+import { LeveSearchResult } from '../../model/search/leve-search-result';
+import { NpcSearchResult } from '../../model/search/npc-search-result';
+import { MobSearchResult } from '../../model/search/mob-search-result';
+import * as monsters from '../data/sources/monsters.json';
+import { FateSearchResult } from '../../model/search/fate-search-result';
+import { MapSearchResult } from '../../model/search/map-search-result';
+import { mapIds } from '../data/sources/map-ids';
+import { LocalizedDataService } from '../data/localized-data.service';
+import { requestsWithDelay } from '../rxjs/requests-with-delay';
 
 @Injectable()
 export class DataService {
@@ -45,7 +59,9 @@ export class DataService {
               private gt: GarlandToolsService,
               private xivapi: XivapiService,
               private serializer: NgSerializerService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService,
+              private translate: TranslateService,
+              private l12n: LocalizedDataService) {
   }
 
   /**
@@ -127,6 +143,9 @@ export class DataService {
    * @returns {Observable<Recipe[]>}
    */
   public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc']): Observable<SearchResult[]> {
+    // Filter HQ and Collectable Symbols from search
+    query = query.replace(/[\ue03a-\ue03d]/g, "");
+
     let lang = this.i18n.currentLang;
     const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1 && query.length > 0;
     if (isKoOrZh) {
@@ -192,7 +211,7 @@ export class DataService {
         XivapiEndpoint.Item,
         {
           ids: this.mapToItemIds(query, this.i18n.currentLang as 'ko' | 'zh'),
-          columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks'],
+          columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks']
         }
       ).pipe(
         map(items => {
@@ -220,7 +239,9 @@ export class DataService {
       map(results => {
         if (onlyCraftable) {
           return results.filter(row => {
-            return (row.Recipes && row.Recipes.length > 0) || (row.GameContentLinks && row.GameContentLinks.CompanyCraftSequence && row.GameContentLinks.CompanyCraftSequence.ResultItem);
+            return (row.Recipes && row.Recipes.length > 0)
+              || (row.GameContentLinks && row.GameContentLinks.CompanyCraftSequence && row.GameContentLinks.CompanyCraftSequence.ResultItem)
+              && !row.Name_en.startsWith('Dated');
           });
         }
         return results;
@@ -258,6 +279,72 @@ export class DataService {
         return results;
       })
     );
+  }
+
+  public search(query: string, type: SearchType, filters: SearchFilter[], sort: [string, 'asc' | 'desc'] = [null, 'desc']): Observable<SearchResult[]> {
+    let searchRequest$: Observable<any[]>;
+    switch (type) {
+      case SearchType.ANY:
+        searchRequest$ = this.searchAny(query, filters);
+        break;
+      case SearchType.ITEM:
+        searchRequest$ = this.searchItem(query, filters, false, sort);
+        break;
+      case SearchType.RECIPE:
+        searchRequest$ = this.searchItem(query, filters, true, sort);
+        break;
+      case SearchType.INSTANCE:
+        searchRequest$ = this.searchInstance(query, filters);
+        break;
+      case SearchType.QUEST:
+        searchRequest$ = this.searchQuest(query, filters);
+        break;
+      case SearchType.NPC:
+        searchRequest$ = this.searchNpc(query, filters);
+        break;
+      case SearchType.LEVE:
+        searchRequest$ = this.searchLeve(query, filters);
+        break;
+      case SearchType.MONSTER:
+        searchRequest$ = this.searchMob(query, filters);
+        break;
+      case SearchType.LORE:
+        searchRequest$ = this.searchLore(query, filters);
+        break;
+      case SearchType.FATE:
+        searchRequest$ = this.searchFate(query, filters);
+        break;
+      case SearchType.MAP:
+        searchRequest$ = this.searchMap(query, filters);
+        break;
+      case SearchType.ACTION:
+        searchRequest$ = this.searchAction(query, filters);
+        break;
+      case SearchType.STATUS:
+        searchRequest$ = this.searchStatus(query, filters);
+        break;
+      case SearchType.TRAIT:
+        searchRequest$ = this.searchTrait(query, filters);
+        break;
+      case SearchType.ACHIEVEMENT:
+        searchRequest$ = this.searchAchievement(query, filters);
+        break;
+      default:
+        searchRequest$ = this.searchItem(query, filters, false, sort);
+        break;
+    }
+    if (type === SearchType.ANY) {
+      return searchRequest$;
+    } else {
+      return searchRequest$.pipe(
+        map(results => {
+          return results.map(row => {
+            row.type = type;
+            return row;
+          });
+        })
+      );
+    }
   }
 
   /**
@@ -345,5 +432,662 @@ export class DataService {
       .map(key => {
         return +key;
       });
+  }
+
+  getSearchLang(): string {
+    let lang = this.translate.currentLang;
+    if (['fr', 'en', 'ja', 'de'].indexOf(lang) === -1) {
+      lang = 'en';
+    }
+    return lang;
+  }
+
+  searchAny(query: string, filters: SearchFilter[]): Observable<any[]> {
+    return requestsWithDelay([
+      this.searchItem(query, filters, false).pipe(map(res => res.map(row => {
+        row.type = SearchType.ITEM;
+        return row;
+      }))),
+      this.searchInstance(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.INSTANCE;
+        return row;
+      }))),
+      this.searchQuest(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.QUEST;
+        return row;
+      }))),
+      this.searchAction(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.ACTION;
+        return row;
+      }))),
+      this.searchTrait(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.TRAIT;
+        return row;
+      }))),
+      this.searchStatus(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.STATUS;
+        return row;
+      }))),
+      this.searchLeve(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.LEVE;
+        return row;
+      }))),
+      this.searchNpc(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.NPC;
+        return row;
+      }))),
+      this.searchMob(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.MONSTER;
+        return row;
+      }))),
+      this.searchFate(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.FATE;
+        return row;
+      }))),
+      this.searchMap(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.MAP;
+        return row;
+      }))),
+      this.searchAchievement(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.ACHIEVEMENT;
+        return row;
+      })))
+    ], 150).pipe(
+      map(results => [].concat.apply([], results))
+    );
+  }
+
+  searchInstance(query: string, filters: SearchFilter[]): Observable<InstanceSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      indexes: [SearchIndex.INSTANCECONTENT],
+      columns: ['ID', 'Banner', 'Icon', 'ContentFinderCondition.ClassJobLevelRequired'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(instance => {
+          return {
+            id: instance.ID,
+            icon: instance.Icon,
+            banner: instance.Banner,
+            level: instance.ContentFinderCondition.ClassJobLevelRequired
+          };
+        });
+      })
+    );
+  }
+
+  searchQuest(query: string, filters: SearchFilter[]): Observable<QuestSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      indexes: [SearchIndex.QUEST],
+      columns: ['ID', 'Banner', 'Icon'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(quest => {
+          return {
+            id: quest.ID,
+            icon: quest.Icon,
+            banner: quest.Banner
+          };
+        });
+      })
+    );
+  }
+
+  searchAction(query: string, filters: SearchFilter[]): Observable<ActionSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      indexes: [SearchIndex.ACTION, <SearchIndex>'craftaction'],
+      columns: ['ID', 'Icon', 'ClassJobLevel', 'ClassJob', 'ClassJobCategory'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(action => {
+          return {
+            id: action.ID,
+            icon: action.Icon,
+            job: action.ClassJob || action.ClassJobCategory,
+            level: action.ClassJobLevel
+          };
+        });
+      })
+    );
+  }
+
+  searchTrait(query: string, filters: SearchFilter[]): Observable<ActionSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      indexes: [<SearchIndex>'trait'],
+      columns: ['ID', 'Icon', 'Level', 'ClassJob', 'ClassJobCategory'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(action => {
+          return {
+            id: action.ID,
+            icon: action.Icon,
+            job: action.ClassJob || action.ClassJobCategory,
+            level: action.Level
+          };
+        });
+      })
+    );
+  }
+
+  searchStatus(query: string, filters: SearchFilter[]): Observable<StatusSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      indexes: [SearchIndex.STATUS],
+      columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(status => {
+          return {
+            id: status.ID,
+            icon: status.Icon,
+            data: status
+          };
+        });
+      })
+    );
+  }
+
+  searchAchievement(query: string, filters: SearchFilter[]): Observable<StatusSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      indexes: [SearchIndex.ACHIEVEMENT],
+      columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(achievement => {
+          return {
+            id: achievement.ID,
+            icon: achievement.Icon,
+            data: achievement
+          };
+        });
+      })
+    );
+  }
+
+  searchLeve(query: string, filters: SearchFilter[]): Observable<LeveSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      indexes: [SearchIndex.LEVE],
+      columns: ['ID', 'Banner', 'Icon', 'ClassJobCategory', 'IconIssuer', 'ClassJobLevel'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(leve => {
+          return {
+            id: leve.ID,
+            icon: leve.Icon,
+            level: leve.ClassJobLevel,
+            banner: leve.IconIssuer,
+            job: {
+              en: leve.ClassJobCategory.Name_en,
+              de: leve.ClassJobCategory.Name_de,
+              ja: leve.ClassJobCategory.Name_ja,
+              fr: leve.ClassJobCategory.Name_fr
+            }
+          };
+        });
+      })
+    );
+  }
+
+  searchNpc(query: string, filters: SearchFilter[]): Observable<NpcSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      indexes: [SearchIndex.ENPCRESIDENT],
+      columns: ['ID', 'Title_*', 'Icon'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(npc => {
+          return {
+            id: npc.ID,
+            icon: npc.Icon,
+            title: {
+              en: npc.Title_en,
+              de: npc.Title_de,
+              ja: npc.Title_ja,
+              fr: npc.Title_fr
+            }
+          };
+        });
+      })
+    );
+  }
+
+  searchMob(query: string, filters: SearchFilter[]): Observable<MobSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      indexes: [SearchIndex.BNPCNAME],
+      columns: ['ID', 'Icon'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(mob => {
+          return {
+            id: mob.ID,
+            icon: mob.Icon,
+            zoneid: monsters[mob.ID] && monsters[mob.ID].positions[0] ? monsters[mob.ID].positions[0].zoneid : null
+          };
+        });
+      })
+    );
+  }
+
+  searchFate(query: string, filters: SearchFilter[]): Observable<FateSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      indexes: [SearchIndex.FATE],
+      columns: ['ID', 'IconMap', 'ClassJobLevel'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(fate => {
+          return {
+            id: fate.ID,
+            icon: fate.IconMap,
+            level: fate.ClassJobLevel
+          };
+        });
+      })
+    );
+  }
+
+  searchMap(query: string, filters: SearchFilter[]): Observable<MapSearchResult[]> {
+    return this.xivapi.search({
+      language: this.getSearchLang(),
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      indexes: [SearchIndex.PLACENAME],
+      columns: ['ID', 'Name_*'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(place => {
+          const entry = mapIds.find(m => m.zone === place.ID);
+          if (entry === undefined) {
+            return null;
+          }
+          return {
+            id: entry.id,
+            zoneid: place.ID
+          };
+        }).filter(r => r !== null);
+      })
+    );
+  }
+
+  searchLore(query: string, filters: SearchFilter[]): Observable<any[]> {
+    return this.xivapi.searchLore(query, this.getSearchLang(), true, ['Icon', 'Name_*', 'Banner']).pipe(
+      map(searchResult => {
+        return searchResult.Results.map(row => {
+          switch (row.Source.toLowerCase()) {
+            case 'item':
+            case 'leve':
+              row.Data.showButton = true;
+              break;
+            case 'quest': {
+              const quest = this.l12n.getQuest(row.SourceID);
+              row.Data.Icon = quest.icon;
+              row.Data.Name_en = quest.name.en;
+              row.Data.Name_ja = quest.name.ja;
+              row.Data.Name_de = quest.name.de;
+              row.Data.Name_fr = quest.name.fr;
+              row.Data.Name_ko = quest.name.ko || quest.name.en;
+              row.Data.showButton = true;
+              break;
+            }
+            case 'defaulttalk': {
+              const npcId = Object.keys(this.lazyData.npcs)
+                .find(key => this.lazyData.npcs[key].defaultTalks.indexOf(row.SourceID) > -1);
+              if (npcId === undefined) {
+                break;
+              }
+              row.Source = 'npc';
+              row.SourceID = +npcId;
+              row.Data.Icon = '/c/ENpcResident.png';
+              const npcEntry = this.l12n.getNpc(+npcId);
+              row.Data.Name_en = npcEntry.en;
+              row.Data.Name_ja = npcEntry.ja;
+              row.Data.Name_de = npcEntry.de;
+              row.Data.Name_fr = npcEntry.fr;
+              row.Data.Name_ko = npcEntry.ko || npcEntry.en;
+              row.Data.showButton = true;
+              break;
+            }
+            case 'balloon': {
+              const npcId = Object.keys(this.lazyData.npcs)
+                .find(key => this.lazyData.npcs[key].balloon === row.SourceID);
+              if (npcId === undefined) {
+                break;
+              }
+              row.Source = 'npc';
+              row.SourceID = +npcId;
+              row.Data.Icon = '/c/ENpcResident.png';
+              const npcEntry = this.l12n.getNpc(+npcId);
+              row.Data.Name_en = npcEntry.en;
+              row.Data.Name_ja = npcEntry.ja;
+              row.Data.Name_de = npcEntry.de;
+              row.Data.Name_fr = npcEntry.fr;
+              row.Data.Name_ko = npcEntry.ko || npcEntry.en;
+              row.Data.showButton = true;
+              break;
+            }
+            case 'instancecontenttextdata': {
+              const instanceId = Object.keys(this.lazyData.instances)
+                .find(key => (this.lazyData.instances[key].contentText || []).indexOf(row.SourceID) > -1);
+              if (instanceId === undefined) {
+                break;
+              }
+              const instanceEntry = this.l12n.getInstanceName(+instanceId);
+              row.Source = 'instance';
+              row.SourceID = +instanceId;
+              row.Data.Icon = instanceEntry.icon;
+              row.Data.Name_en = instanceEntry.en;
+              row.Data.Name_ja = instanceEntry.ja;
+              row.Data.Name_de = instanceEntry.de;
+              row.Data.Name_fr = instanceEntry.fr;
+              row.Data.Name_ko = instanceEntry.ko || instanceEntry.en;
+              row.Data.showButton = true;
+              break;
+            }
+          }
+          return row;
+        });
+      })
+    );
   }
 }

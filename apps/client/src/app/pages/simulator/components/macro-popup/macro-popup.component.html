@@ -7,8 +7,8 @@
   <label [(ngModel)]="fixedEcho" (ngModelChange)="generateMacros()" [nzDisabled]="!addEcho" nz-checkbox>
     {{'SIMULATOR.Fixed_notification_number' | translate}}
   </label>
-  <label [(ngModel)]="breakOnReclaim" (ngModelChange)="generateMacros()" nz-checkbox>
-    {{'SIMULATOR.Break_on_reclaim' | translate}}
+  <label [(ngModel)]="breakBeforeByregotsBlessing" (ngModelChange)="generateMacros()" nz-checkbox>
+    {{'SIMULATOR.Break_before_byregots_blessing' | translate}}
   </label>
   <label [(ngModel)]="macroLock" (ngModelChange)="generateMacros()" nz-checkbox>
     {{'SIMULATOR.Macrolock' | translate}}
