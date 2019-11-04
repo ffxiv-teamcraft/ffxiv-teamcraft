@@ -54,6 +54,7 @@ module.exports.start = function(win, config, verbose) {
           'currencyCrystalInfo',
           'marketBoardItemListing',
           'marketBoardItemListingHistory',
+          'marketTaxRates',
           'playerSetup',
           'playerSpawn',
           'inventoryModifyHandler',
