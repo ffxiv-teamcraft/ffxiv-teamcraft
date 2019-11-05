@@ -924,7 +924,7 @@
       "Use_more_quality_actions": "내구도가 남은 상태로 제작을 끝마쳤습니다. 남은 내구도를 이용하여 더 많은 가공스킬을 사용할 수 있습니다.",
       "Use_prudent_touch_manipulation": "66레벨 이상일 경우 '교묘한 손놀림' 과 '절약 가공'을 사용하여 확실하게 더 높은 품질을 얻어야 합니다",
       "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
-      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted"
+      "Avoid_using_good_actions": "매크로를 구상할때는 고품질을 요구하는 액션을 사용하지 마세요 고품질은 예측이 불가능합니다"
     }
   },
   "PRICING": {
