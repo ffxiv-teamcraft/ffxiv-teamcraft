@@ -278,7 +278,7 @@ export class ListsEffects {
       this.listsFacade.completionNotificationEnabled$),
     map(([action, list, team, userId, fcId, autocompleteEnabled, completionNotificationEnabled]) => {
       const historyEntry = list.modificationsHistory.find(entry => {
-        return entry.itemId === action.itemId && (Date.now() - entry.date < 60000);
+        return entry.itemId === action.itemId && (Date.now() - entry.date < 600000);
       });
       if (historyEntry !== undefined) {
         historyEntry.amount += action.doneDelta;
