@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.7"></a>
+## [6.1.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.6...v6.1.7) (2019-11-05)
+
+
+### Bug Fixes
+
+* fixed a case where the confirmation popup for unsaved change popped too often ([5b3db30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5b3db30))
+* **inventory:** fixed an issue with price not taking quantity into account ([53499b3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/53499b3))
+* **list:** fixed a case where lists would load before lazy data, making them empty ([ec43716](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec43716))
+* **list:** fixed high CPU usage when marking an item as done in a large list ([9fc0706](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9fc0706)), closes [#1196](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1196)
+* **search:** removed dated items from search results ([a7fd33f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7fd33f))
+* **team:** no more hook messages when user doesn't have permission to edit the list ([fa1e163](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fa1e163))
+
+
+### Features
+
+* **list:** you can now ignore a currency in total panel price popup ([5fcb2f5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5fcb2f5))
+* **simulator:** new rotation tip: avoid using actions that require Good ([39c7c64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/39c7c64))
+* **simulator:** remember end of macro sound option ([4551687](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4551687))
+
+
+
 <a name="6.1.6"></a>
 ## [6.1.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.5...v6.1.6) (2019-11-03)
 
