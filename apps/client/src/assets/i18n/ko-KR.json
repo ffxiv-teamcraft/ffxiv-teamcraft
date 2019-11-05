@@ -465,6 +465,7 @@
     "Copy_list_as_text": "전체 목록을 텍스트로 복사",
     "Copied_as_text": "클립보드로 내용이 복사되었습니다",
     "Total_price": "총 비용 (길 및 화폐)",
+    "Ignore_currency": "Ignore this currency",
     "Total_trade_price": "총합: ",
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "목록 변경내역",
