@@ -914,26 +914,17 @@
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Casi todas las rotaciones deberían incluir \"Inner Quiet\" si su objetivo es un objeto HQ. Proporciona un buen impulso de calidad y permite acciones como \"Byregot's Blessing\".",
       "Use_inner_quiet_before_quality_increase": "Debería aplicar \"Inner Quiet\" antes de cualquier aumento de calidad, no hacerlo significa que está desperdiciando cargas de \"Inner Quiet\".",
-      "Use_ingenuity_I_instead": "Debería usar Ingenuity I en lugar de II para reducir el costo en 8CP, ya que será suficiente para terminar la artesanía.",
-      "Use_cz_earlier": "Debería usar \"Comfort Zone\" antes para obtener el efecto de restauración antes",
-      "Use_reclaim": "Tiene suficiente CP restante para usar \"Reclaim\", debería añadirlo a la rotación para asegurarte de que reciba materiales de regreso si falla la artesanía",
-      "Use_byregot_brow_low_iq_stacks": "Utilizó \"Byregot Blessing\" con menos de 6 cargas. Usar \"Byregot Brow\" es mejor en este caso, ya que producirá más calidad.",
       "Use_byregot_blessing_high_iq_stacks": "Utilizó \"Byregot Brow\" con más de 6 cargas. Usar \"Byregot Blessing\" es mejor en este caso, ya que producirá más calidad.",
-      "Use_sh1_instead": "Utilizó \"Steady Hand II\" en el paso {{index}} mientras que utilizar \"Steady Hand I\" sería suficiente y costaría 3 CP menos.",
-      "Use_sh2_instead": "Utilizó \"Steady Hand I\" en el paso {{index}} mientras que utilizar \"Steady Hand II\" le daría más confiabilidad por 3 CP.",
-      "Use_pbp_first": "Debería usar \"Piece by Piece\" antes de cualquier otra acción de síntesis, ya que se escala con el progreso que falta por hacer",
-      "Use_mume_if_pbp": "Debería usar \"Muscle Memory\" en el paso 1 para reemplazar un \"Piece by Piece\" y obtener 9 CP extra",
       "Use_observe_before_focused": "Debería usar \"Observe\" antes de la acción \"enfocada\" en el paso {{index}} para obtener una tasa de éxito del 100% gratis.",
       "Use_durability_restoration_later": "Debería usar la acción de restauración de durabilidad en el paso {{index}} más tarde para evitar desperdiciar la restauración de durabilidad.",
       "Use_patient_touch_faster": "Debería usar \"Patient Touch\" antes de añadir cargas de \"Inner Quiet\", para minimizar las cargas desperdiciadas si la acción falla.",
-      "Use_advanced_touch_instead": "Usó \"Basic Touch\" seguido de \"Advanced Touch\" en el paso {{index}}, debería usar dos \"Standard Touch\" en su lugar para obtener la misma potencia por 2 CP menos.",
       "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos.",
       "Use_byregot_brow_5_stacks": "Debería usar \"Byregot's Brow\" en vez de \"Byregot's Blessing\" para obtener la misma calidad por 6 CP menos.",
       "Use_ingenuity_before_byregot": "Debería usar \"Ingenuity\" antes de la acción de \"Byregot\" para obtener un aumento en la ganancia de calidad.",
       "Use_more_quality_actions": "Le sobra durabilidad al final del proceso, probablemente debería usarla para más acciones relacionadas con la calidad.",
-      "Use_prudent_touch_manipulation": "Como usted es nivel 66+, debería usar el combo \"Manipulation II\" + \"Prudent Touch\" para obtener calidad para la mejor ganancia de calidad y más confiabilidad.",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
       "Use_rapid_synthesis_earlier": "No debería usar \"Rapid Synthesis\" como una acción de término, usarla antes para poder manejar el fracaso de la acción es mejor para la confiabilidad de su rotación.",
-      "Use_reflect_earlier": "Debería usar la acción de especialización \"Reflect\" antes para impulsar las acciones de calidad posteriores."
+      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted"
     }
   },
   "PRICING": {
