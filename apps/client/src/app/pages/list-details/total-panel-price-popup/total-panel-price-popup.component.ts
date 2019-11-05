@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { TradeIconPipe } from '../trade-icon.pipe';
 import { TradeSource } from '../../../modules/list/model/trade-source';
+import { TradeEntry } from '../../../modules/list/model/trade-entry';
 
 @Component({
   selector: 'app-total-panel-price-popup',
@@ -19,12 +20,18 @@ export class TotalPanelPricePopupComponent implements OnInit {
   getTradeSourceByPriority(tradeSources: TradeSource[]): TradeSource {
     return tradeSources
       .filter(source => {
-        return source.trades[0].currencies[0].id;
+        return this.getFilteredCurrencies(source.trades[0].currencies).length > 0;
       })
       .sort((a, b) => {
-      return TradeIconPipe.TRADE_SOURCES_PRIORITIES[a.trades[0].currencies[0].id]
-      > TradeIconPipe.TRADE_SOURCES_PRIORITIES[b.trades[0].currencies[0].id] ? -1 : 1;
-    })[0];
+        return TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getFilteredCurrencies(a.trades[0].currencies)[0].id]
+        > TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getFilteredCurrencies(b.trades[0].currencies)[0].id] ? 1 : -1;
+      })[0];
+  }
+
+  private getFilteredCurrencies(currencies: TradeEntry[]): TradeEntry[]{
+    return currencies.filter(c => {
+      return !this.ignoredSources.includes(c.id);
+    })
   }
 
   private computePrice(): void {
@@ -45,15 +52,15 @@ export class TotalPanelPricePopupComponent implements OnInit {
         const trade = tradeSource.trades[0];
         const itemsPerTrade = trade.items.find(item => item.id === row.id).amount;
         const costs = tradeSource.trades.sort((ta) => ta.items[0].hq ? 1 : -1).map(t => {
-          return Math.ceil(t.currencies[0].amount * (row.amount - row.done) / itemsPerTrade);
+          return Math.ceil(this.getFilteredCurrencies(t.currencies)[0].amount * (row.amount - row.done) / itemsPerTrade);
         });
 
-        const tradeRow = result.find(r => r.currencyId === trade.currencies[0].id);
+        const tradeRow = result.find(r => r.currencyId === this.getFilteredCurrencies(trade.currencies)[0].id);
 
         if (tradeRow === undefined) {
           result.push({
-            currencyId: trade.currencies[0].id,
-            currencyIcon: trade.currencies[0].icon,
+            currencyId: this.getFilteredCurrencies(trade.currencies)[0].id,
+            currencyIcon: this.getFilteredCurrencies(trade.currencies)[0].icon,
             costs: costs
           });
         } else {
