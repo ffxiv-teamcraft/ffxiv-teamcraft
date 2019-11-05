@@ -465,6 +465,7 @@
     "Copy_list_as_text": "Копировать весь список как текст",
     "Copied_as_text": "Скопировано в буфер обмена",
     "Total_price": "Всего сделок (гил и др. валюты)",
+    "Ignore_currency": "Ignore this currency",
     "Total_trade_price": "Всего: ",
     "Add_all_alarms": "Добавить все оповещения для этого списка",
     "History": "История",
