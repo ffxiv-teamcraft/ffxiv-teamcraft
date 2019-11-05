@@ -465,6 +465,7 @@
     "Copy_list_as_text": "全てこのリストをテキストにコピーする",
     "Copied_as_text": "テキストがクリップボードにコピーされました",
     "Total_price": "総費用(ギルや各種通貨)",
+    "Ignore_currency": "Ignore this currency",
     "Total_trade_price": "合計: ",
     "Add_all_alarms": "このリストに対する、アラームを追加する",
     "History": "履歴",
