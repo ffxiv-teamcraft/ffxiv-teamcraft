@@ -465,6 +465,7 @@
     "Copy_list_as_text": "Copier la liste en format textuel",
     "Copied_as_text": "Contenu copié dans le presse-papiers",
     "Total_price": "Prix total (échanges et gils)",
+    "Ignore_currency": "Ignore this currency",
     "Total_trade_price": "Total : ",
     "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
@@ -914,26 +915,17 @@
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Si vous souhaitez ajouter de la qualité sur votre rotation, elle se doit d'intégrer Calme Intérieur afin d'ajouter un bonus non négligeable et de pouvoir utiliser des actions comme la Bénédiction de Byregot.",
       "Use_inner_quiet_before_quality_increase": "Calme Intérieur doit être appliqué avant toute autre action afin de maximiser le gain en qualité.",
-      "Use_ingenuity_I_instead": "Utiliser Ingéniosité I au lieu d'Ingéniosité II est suffisant pour finir la fabrication et ainsi économiser 8 PS.",
-      "Use_cz_earlier": "Zone de confort devrait être placé plus tôt dans la rotation pour profiter plus rapidement de l'effet de restauration",
-      "Use_reclaim": "Vous disposez d'assez de PS pour utiliser Récupération, il peut être judicieux de l'ajouter pour récupérer les matériaux si jamais le fabrication venait à rater",
-      "Use_byregot_brow_low_iq_stacks": "Vous avez utilisé Bénédiction de Byregot avec moins de 6 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner plus de qualité.",
       "Use_byregot_blessing_high_iq_stacks": "Vous avez utilisé Contenance de Byregot avec plus de 6 cumuls de Calme Intérieur. Utiliser Bénédiction de Byregot à la place permettrait de gagner plus de qualité.",
-      "Use_sh1_instead": "Utiliser Main Sûre I au lieu de Main Sûre II au tour {{index}} produirait le même résultat pour 3 PS de moins.",
-      "Use_sh2_instead": "Utiliser Main Sûre II au lieu de Main Sûre I au tour {{index}} permettrait de gagner en fiabilité sur la rotation pour 3 PS de plus.",
-      "Use_pbp_first": "Pièce par pièce doit être utilisé avant toute autre action de progression afin de maximiser son effet car il se base sur la progression restante",
-      "Use_mume_if_pbp": "Vous devriez utiliser Mémoire Musculaire au premier tour pour remplacer Pièce par Pièce et gagner 9 PS",
       "Use_observe_before_focused": "Vous devriez utiliser Observation avant l'action au tour {{index}} afin de monter son taux de réussite à 100%.",
       "Use_durability_restoration_later": "Vous devriez utiliser l'action de réparation au tour {{index}} plus tôt afin d'éviter de gâcher une partie de son effet.",
       "Use_patient_touch_faster": "Vous devriez utiliser Ouvrage appliqué avant toute autre action de qualité afin de minimiser la perte de cumuls de Calme Intérieur en cas d'échec.",
-      "Use_advanced_touch_instead": "Vous avez utilisé Ouvrage de base puis Ouvrage avancé au tour {{index}}, utiliser deux Ouvrages standards produit le même résultat pour 2 PS de moins.",
       "Do_not_overlap_buffs": "Vous avez écrasé le buff appliqué au tour {{overlappedIndex}} avec le buff appliqué au tour {{overlappingIndex}}, vous appliquer le second buff plus tard pour éviter de perdre des tours d'effet sur le premier.",
       "Use_byregot_brow_5_stacks": "Vous avez utilisé Bénédiction de Byregot avec 5 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner autant de qualité en dépensant 6 PS de moins.",
       "Use_ingenuity_before_byregot": "Vous devriez utiliser Ingeniosité avant l'action de Byregot afin d'obtenir un bonus sur le gain de qualité.",
       "Use_more_quality_actions": "Vous avez encore de la solidité à la fin de l'artisanat, vous devriez probablement l'utiliser pour ajouter des actions de qualité.",
-      "Use_prudent_touch_manipulation": "Comme vous êtes niveau 66+, vous devriez utiliser le combo Manipulation II + Ouvrage parcimonieux afin d'obtenir un avantage maximum de qualité et plus de fiabilité.",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
       "Use_rapid_synthesis_earlier": "Vous ne devriez pas utiliser la Synthèse Rapide comme une action finale, la mettre plus tôt pour pouvoir gérer l'échec de l'action est mieux pour la fiabilité de votre rotation.",
-      "Use_reflect_earlier": "Vous devriez utiliser l'action \"Atout : Sérénité\" plus tôt pour augmenter a puissance des actions de qualité suivantes."
+      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted"
     }
   },
   "PRICING": {
