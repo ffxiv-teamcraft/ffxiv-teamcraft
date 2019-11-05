@@ -44,6 +44,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'itemInfo',
         'updateInventorySlot',
         'currencyCrystalInfo',
+        'marketBoardItemListingCount',
         'marketBoardItemListing',
         'marketBoardItemListingHistory',
         'marketTaxRates',
