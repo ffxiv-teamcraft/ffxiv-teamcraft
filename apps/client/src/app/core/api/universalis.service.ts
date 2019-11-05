@@ -212,7 +212,7 @@ export class UniversalisService {
               ...packet.listings
                 .map((item) => {
                   return {
-                    hq: item.hs,
+                    hq: item.hq,
                     pricePerUnit: item.salePrice,
                     quantity: item.quantity,
                     total: item.salePrice * item.quantity,
