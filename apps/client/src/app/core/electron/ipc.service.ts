@@ -32,6 +32,14 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('playerSpawn'), map(packet => packet.currentWorldId));
   }
 
+  public get marketTaxRatePackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('marketTaxRates'));
+  }
+
+  public get marketboardListingCount$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('marketBoardItemListingCount'));
+  }
+
   public get marketboardListing$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('marketBoardItemListing'));
   }

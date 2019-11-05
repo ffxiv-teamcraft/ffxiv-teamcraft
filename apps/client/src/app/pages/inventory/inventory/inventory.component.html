@@ -55,7 +55,7 @@
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
                         <div *ngIf="item.price" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                           <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
-                          <div>{{item.price | number:'1.0-0'}}</div>
+                          <div>{{item.price * item.quantity | number:'1.0-0'}}</div>
                         </div>
                         <app-db-button [id]="item.itemId" type="item"></app-db-button>
                       </div>

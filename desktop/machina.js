@@ -26,9 +26,9 @@ module.exports.start = function(win, config, verbose, winpcap) {
       const options = isDev ?
         {
           monitorType: winpcap ? 'WinPCap' : 'RawSocket',
-          parseAlgorithm: 'CPUHeavy'
+          parseAlgorithm: 'PacketSpecific'
         } : {
-          parseAlgorithm: 'CPUHeavy',
+          parseAlgorithm: 'PacketSpecific',
           noData: true,
           monitorType: winpcap ? 'WinPCap' : 'RawSocket',
           machinaExePath: machinaExePath,
@@ -40,7 +40,28 @@ module.exports.start = function(win, config, verbose, winpcap) {
         options.logger = log.log;
       }
 
+      const acceptedPackets = [
+        'itemInfo',
+        'updateInventorySlot',
+        'currencyCrystalInfo',
+        'marketBoardItemListingCount',
+        'marketBoardItemListing',
+        'marketBoardItemListingHistory',
+        'marketTaxRates',
+        'playerSetup',
+        'playerSpawn',
+        'inventoryModifyHandler',
+        'npcSpawn',
+        'ping',
+        'playerStats',
+        'updateClassInfo',
+        'actorControl',
+        'initZone',
+        'weatherChange'
+      ];
+
       Machina = new MachinaFFXIV(options);
+      Machina.filter(acceptedPackets);
       Machina.start(() => {
         log.info('Packet capture started');
       });
@@ -49,23 +70,6 @@ module.exports.start = function(win, config, verbose, winpcap) {
         if (verbose) {
           log.log(JSON.stringify(packet));
         }
-        const acceptedPackets = [
-          'itemInfo',
-          'updateInventorySlot',
-          'currencyCrystalInfo',
-          'marketBoardItemListing',
-          'marketBoardItemListingHistory',
-          'playerSetup',
-          'playerSpawn',
-          'inventoryModifyHandler',
-          'npcSpawn',
-          'ping',
-          'playerStats',
-          'updateClassInfo',
-          'actorControl',
-          'initZone',
-          'weatherChange'
-        ];
         if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {
           sendToRenderer(win, packet);
         }

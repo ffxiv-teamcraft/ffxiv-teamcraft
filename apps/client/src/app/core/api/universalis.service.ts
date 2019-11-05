@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MarketboardItem } from '@xivapi/angular-client/src/model/schema/market/marketboard-item';
 import { combineLatest, Observable } from 'rxjs';
-import { buffer, debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { buffer, bufferCount, debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
 import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
@@ -123,10 +123,11 @@ export class UniversalisService {
   }
 
   public initCapture(): void {
-    this.ipc.marketboardListing$
+    this.ipc.marketboardListingCount$
       .pipe(
-        buffer(this.ipc.marketboardListing$.pipe(debounceTime(2000))),
-        filter(packets => packets.length > 0)
+        switchMap(packet => {
+          return this.ipc.marketboardListing$.pipe(bufferCount(Math.ceil(packet.quantity / 10)))
+        })
       )
       .subscribe(listings => {
         if (this.settings.enableUniversalisSourcing) {
@@ -143,6 +144,11 @@ export class UniversalisService {
           this.handleMarketboardListingHistoryPackets(listings);
         }
       });
+    this.ipc.marketTaxRatePackets$.subscribe(packet => {
+      if (this.settings.enableUniversalisSourcing) {
+        this.uploadMarketTaxRates(packet);
+      }
+    });
     this.ipc.cid$.subscribe(packet => {
       if (this.settings.enableUniversalisSourcing) {
         this.uploadCid(packet);
@@ -172,7 +178,6 @@ export class UniversalisService {
                     };
                   }),
                   pricePerUnit: item.pricePerUnit,
-                  totalTax: item.totalTax,
                   quantity: item.quantity,
                   total: item.total,
                   retainerID: item.retainerID,
@@ -208,7 +213,7 @@ export class UniversalisService {
               ...packet.listings
                 .map((item) => {
                   return {
-                    hq: item.hs,
+                    hq: item.hq,
                     pricePerUnit: item.salePrice,
                     quantity: item.quantity,
                     total: item.salePrice * item.quantity,
@@ -225,6 +230,22 @@ export class UniversalisService {
         });
       })
     ).subscribe();
+  }
+
+  public uploadMarketTaxRates(packet: any): void {
+      const data = {
+          marketTaxRates: {
+              limsaLominsa: packet.limsaLominsa,
+              gridania: packet.gridania,
+              uldah: packet.uldah,
+              ishgard: packet.ishgard,
+              kugane: packet.kugane,
+              crystarium: packet.crystarium
+          }
+      };
+      this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+        headers: new HttpHeaders().append('Content-Type', 'application/json')
+      }).subscribe();
   }
 
   public uploadCid(packet: any): void {

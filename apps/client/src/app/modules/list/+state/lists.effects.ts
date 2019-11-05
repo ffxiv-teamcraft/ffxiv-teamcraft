@@ -273,9 +273,10 @@ export class ListsEffects {
     withLatestFrom(this.listsFacade.selectedList$,
       this.teamsFacade.selectedTeam$,
       this.authFacade.userId$,
+      this.authFacade.fcId$,
       this.listsFacade.autocompleteEnabled$,
       this.listsFacade.completionNotificationEnabled$),
-    map(([action, list, team, userId, autocompleteEnabled, completionNotificationEnabled]) => {
+    map(([action, list, team, userId, fcId, autocompleteEnabled, completionNotificationEnabled]) => {
       const historyEntry = list.modificationsHistory.find(entry => {
         return entry.itemId === action.itemId && (Date.now() - entry.date < 60000);
       });
@@ -294,7 +295,7 @@ export class ListsEffects {
         });
       }
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
-        this.discordWebhookService.notifyItemChecked(team, list, userId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
+        this.discordWebhookService.notifyItemChecked(team, list, userId, fcId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
       if (autocompleteEnabled && completionNotificationEnabled && action.fromPacket) {
         const item = list.getItemById(action.itemId, !action.finalItem, action.finalItem);
