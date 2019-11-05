@@ -14,17 +14,20 @@ export class TotalPanelPricePopupComponent implements OnInit {
 
   public panelContent: ListRow[] = [];
 
-  constructor() {
-  }
+  public ignoredSources = [];
 
   getTradeSourceByPriority(tradeSources: TradeSource[]): TradeSource {
-    return tradeSources.sort((a, b) => {
+    return tradeSources
+      .filter(source => {
+        return source.trades[0].currencies[0].id;
+      })
+      .sort((a, b) => {
       return TradeIconPipe.TRADE_SOURCES_PRIORITIES[a.trades[0].currencies[0].id]
       > TradeIconPipe.TRADE_SOURCES_PRIORITIES[b.trades[0].currencies[0].id] ? -1 : 1;
     })[0];
   }
 
-  ngOnInit(): void {
+  private computePrice(): void {
     this.totalPrice = this.panelContent.reduce((result, row) => {
       if (row.vendors !== null && row.vendors.length > 0) {
         const vendor = row.vendors
@@ -61,6 +64,10 @@ export class TotalPanelPricePopupComponent implements OnInit {
 
       return result;
     }, []);
+  }
+
+  ngOnInit(): void {
+    this.computePrice();
   }
 
 }
