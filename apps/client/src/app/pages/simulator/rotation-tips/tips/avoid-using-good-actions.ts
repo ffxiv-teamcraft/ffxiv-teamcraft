@@ -13,7 +13,7 @@ export class AvoidUsingGoodActions extends RotationTip {
   }
 
   matches(simulationResult: SimulationResult): boolean {
-    return !simulationResult.steps.some(step => {
+    return simulationResult.steps.some(step => {
       return step.action.is(PreciseTouch)
         || step.action.is(IntensiveSynthesis);
     });
