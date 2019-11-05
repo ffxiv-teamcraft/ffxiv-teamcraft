@@ -267,7 +267,6 @@ export class LazyDataService {
       this.zhMaps = zhMaps;
       this.zhStatuses = zhStatuses;
       this.loaded$.next(true);
-      this.loaded$.complete();
     });
   }
 
