@@ -465,7 +465,7 @@
     "Copy_list_as_text": "将整个清单复制为文本",
     "Copied_as_text": "内容已复制到剪贴板",
     "Total_price": "总费用(金币+其他货币)",
-    "Ignore_currency": "Ignore this currency",
+    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
     "Total_trade_price": "合计: ",
     "Add_all_alarms": "为该清单添加所有闹钟",
     "History": "历史记录",

@@ -14,8 +14,8 @@ export function onlyWhenItemChanges(
           source.pipe(first()),
           source.pipe(
             filter(list => {
-              const itemId = list.modificationsHistory[0].itemId;
-              return itemId === item.id || (item.requires || []).some(req => req.id === itemId);
+              const itemId = list.modificationsHistory[0] && list.modificationsHistory[0].itemId;
+              return !itemId || itemId === item.id || (item.requires || []).some(req => req.id === itemId);
             })
           )
         );
