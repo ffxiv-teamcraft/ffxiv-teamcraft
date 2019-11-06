@@ -173,6 +173,14 @@
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="trackItemsOnSale" nz-checkbox>
+            {{'SETTINGS.Track_items_on_sale' | translate}}
+          </label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
           <label [(ngModel)]="settings.autoMarkAsCompleted"
                  nz-checkbox>{{'SETTINGS.Auto_mark_as_done_in_log' | translate}}</label>
         </nz-form-control>

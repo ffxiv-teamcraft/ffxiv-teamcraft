@@ -72,6 +72,14 @@ export class SettingsPopupComponent {
 
   public favoriteAetherytes = this.settings.favoriteAetherytes;
 
+  public get trackItemsOnSale(): boolean {
+    return localStorage.getItem('trackItemsOnSale') === 'true';
+  }
+
+  public set trackItemsOnSale(trackItemsOnSale: boolean) {
+    localStorage.setItem('trackItemsOnSale', trackItemsOnSale.toString());
+  }
+
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,
