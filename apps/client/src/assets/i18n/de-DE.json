@@ -465,7 +465,7 @@
     "Copy_list_as_text": "Gesamte Liste als Text kopieren",
     "Copied_as_text": "Inhalt in die Zwischenablage kopiert",
     "Total_price": "Gesamtausgaben (Gil und andere Währungen)",
-    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
+    "Ignore_currency": "Diese Währung ignorieren (funktioniert nur, wenn es eine andere Möglichkeit zum Kauf gibt)",
     "Total_trade_price": "Gesamt: ",
     "Add_all_alarms": "Alle Alarme für diese Liste erstellen",
     "History": "Historie",
@@ -923,9 +923,9 @@
       "Use_byregot_brow_5_stacks": "Du solltest lieber Byregots Schwung anstelle von Byregots Benediktion benutzen, da dies die gleiche Qualität für 6HP weniger gibt.",
       "Use_ingenuity_before_byregot": "Du solltest Einfallsreichtum vor einem Byregots Kommando nutzen um mehr Qualität zu erhalten.",
       "Use_more_quality_actions": "Du hast nach Fertigstellung noch Belastbarkeit übrig. Diese solltest du am besten für Qualitäts-Kommandos nutzen.",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_prudent_touch_manipulation": "Da du Stufe 66+ bist, solltest du die Kombination Manipulation + Nachhaltige Veredelung nutzen, um die maximale Qualität und höhere Zuverlässigkeit zu erhalten.",
       "Use_rapid_synthesis_earlier": "Du solltest Schnelle Bearbeitung nicht zur Fertigstellung nutzen. Nutze es früher um einen Fehlschlag besser ausgleichen zu können und die Zuverlässigkeit der Rotation zu verbessern.",
-      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted"
+      "Avoid_using_good_actions": "Vermeide Aktionen die einen guten Zustand in einem Makro erfordern, da sie nicht vorhergesagt werden können"
     }
   },
   "PRICING": {
