@@ -29,35 +29,35 @@
       </button>
     </div>
   </div>
-  <nz-alert *ngIf="layout.name === 'Default Layout'" [nzMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Default_readonly_message' | translate"
+  <nz-alert *ngIf="layout.default" [nzMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Default_readonly_message' | translate"
             class="default-warning" nzShowIcon nzType="info"></nz-alert>
   <div fxLayout="column" fxLayoutGap="10px">
     <nz-input-group nzPrefixIcon="anticon anticon-edit">
-      <input [(ngModel)]="layout.name" (ngModelChange)="dirty = true" [disabled]="layout.name === 'Default Layout'"
+      <input [(ngModel)]="layout.name" (ngModelChange)="dirty = true" [disabled]="layout.default"
              nz-input type="text">
     </nz-input-group>
-    <button (click)="editRowButtons(layout)" [disabled]="layout.name === 'Default Layout'" nz-button nzBlock>
+    <button (click)="editRowButtons(layout)" [disabled]="layout.default" nz-button nzBlock>
       {{'LIST_DETAILS.LAYOUT_DIALOG.Edit_row_buttons_display' | translate}}
     </button>
-    <button (click)="openReorderPopup(layout)" [disabled]="layout.name === 'Default Layout'" nz-button nzBlock>
+    <button (click)="openReorderPopup(layout)" [disabled]="layout.default" nz-button nzBlock>
       {{'LIST_DETAILS.LAYOUT_DIALOG.Reorder_panels' | translate}}
     </button>
     <nz-card [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Global_options' | translate">
       <div fxLayout="column" fxLayoutGap="10px">
         <label [(ngModel)]="layout.considerCrystalsAsItems" (ngModelChange)="dirty = true"
-               [nzDisabled]="layout.name === 'Default Layout'" nz-checkbox>
+               [nzDisabled]="layout.default" nz-checkbox>
           {{"LIST.Enable_crystals_tracking" | translate}}
         </label>
       </div>
       <div fxLayout="column" fxLayoutGap="10px">
         <label [(ngModel)]="layout.showInventory" (ngModelChange)="dirty = true"
-               [nzDisabled]="layout.name === 'Default Layout'" nz-checkbox>
+               [nzDisabled]="layout.default" nz-checkbox>
           {{"LIST.Always_show_inventory" | translate}}
         </label>
       </div>
       <div fxLayout="column" fxLayoutGap="10px">
         <label [(ngModel)]="layout.showCraftableAmount" (ngModelChange)="dirty = true"
-               [nzDisabled]="layout.name === 'Default Layout'" nz-checkbox>
+               [nzDisabled]="layout.default" nz-checkbox>
           {{"LIST.Show_craftable_amount" | translate}}
         </label>
       </div>
@@ -68,7 +68,7 @@
           {{'LIST_DETAILS.LAYOUT.Order_by' | translate}}
           <nz-select [(ngModel)]="layout.recipeOrderBy"
                      (ngModelChange)="dirty = true"
-                     [nzDisabled]="layout.name === 'Default Layout'">
+                     [nzDisabled]="layout.default">
             <nz-option nzLabel="NAME" nzValue="NAME"></nz-option>
             <nz-option nzLabel="NONE" nzValue="NONE"></nz-option>
             <nz-option nzLabel="LEVEL" nzValue="LEVEL"></nz-option>
@@ -78,14 +78,14 @@
           </nz-select>
           <nz-select [(ngModel)]="layout.recipeOrder"
                      (ngModelChange)="dirty = true"
-                     [nzDisabled]="layout.name === 'Default Layout'">
+                     [nzDisabled]="layout.default">
             <nz-option [nzValue]="0" nzLabel="ASC"></nz-option>
             <nz-option [nzValue]="1" nzLabel="DESC"></nz-option>
           </nz-select>
         </div>
         <nz-radio-group (ngModelChange)="setItemsLayoutType(layout, $event)"
                         [ngModel]="getItemsLayoutType(layout)"
-                        [nzDisabled]="layout.name === 'Default Layout'">
+                        [nzDisabled]="layout.default">
           <label [nzValue]="'default'" nz-radio-button>{{"Default" | translate}}</label>
           <label [nzValue]="'zoneBreakdown'" nz-radio-button>{{"Zone_breakdown" | translate}}</label>
         </nz-radio-group>
@@ -96,13 +96,13 @@
       </div>
     </nz-card>
     <div (drop)="moveRow($event.value, $event.dropIndex, layout)" fxLayout="column" fxLayoutGap="10px" ngxDroppable>
-      <button (click)="addPanel(layout)" [disabled]="layout.name === 'Default Layout'" nz-button nzBlock
+      <button (click)="addPanel(layout)" [disabled]="layout.default" nz-button nzBlock
               nzType="primary">
         <i nz-icon nzType="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
       </button>
       <div *ngFor="let row of layout.rows; trackBy: trackByRow" [model]="row" ngxDraggable>
         <app-layout-editor-row (delete)="removePanel(layout, row)" (rowChange)="updatePanel(layout, $event)"
-                               [readonly]="layout.name === 'Default Layout'"
+                               [readonly]="layout.default"
                                [row]="row"></app-layout-editor-row>
       </div>
     </div>
