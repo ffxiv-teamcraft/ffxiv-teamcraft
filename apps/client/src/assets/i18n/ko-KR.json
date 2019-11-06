@@ -465,7 +465,7 @@
     "Copy_list_as_text": "전체 목록을 텍스트로 복사",
     "Copied_as_text": "클립보드로 내용이 복사되었습니다",
     "Total_price": "총 비용 (길 및 화폐)",
-    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
+    "Ignore_currency": "이 화폐를 무시함(다른 화폐로 구매/교환이 가능할 때만 적용)",
     "Total_trade_price": "총합: ",
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "목록 변경내역",
@@ -796,7 +796,7 @@
     "Rotation_solver": "로테이션 생성기",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
-    "Remove_final_appraisal": "Remove Final Appraisal buff",
+    "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
     "STATE": {
       "Excellent": "최고품질",
       "Good": "고품질",
