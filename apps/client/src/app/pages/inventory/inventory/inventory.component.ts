@@ -30,32 +30,34 @@ export class InventoryComponent {
             return Object.keys(inventory.items[key])
               .map(slot => inventory.items[key][slot]);
           })
-      ).filter(item => {
-        return UserInventory.DISPLAYED_CONTAINERS.indexOf(item.containerId) > -1;
-      }).reduce((bags: InventoryDisplay[], item: InventoryItem) => {
-        const containerName = item.retainerName || this.inventoryService.getContainerName(item.containerId);
-        let bag = bags.find(i => i.containerName === containerName);
-        if (bag === undefined) {
-          bags.push({
-            isRetainer: item.retainerName !== undefined,
-            containerName: containerName,
-            containerIds: [item.containerId],
-            items: []
-          });
-          bag = bags[bags.length - 1];
-        }
-        if (bag.containerIds.indexOf(item.containerId) === -1) {
-          bag.containerIds.push(item.containerId);
-        }
-        bag.items.push(item);
-        return bags;
-      }, []);
+      )
+        .filter(item => {
+          return UserInventory.DISPLAYED_CONTAINERS.indexOf(item.containerId) > -1;
+        })
+        .reduce((bags: InventoryDisplay[], item: InventoryItem) => {
+          const containerName = item.retainerName || this.inventoryService.getContainerName(item.containerId);
+          let bag = bags.find(i => i.containerName === containerName);
+          if (bag === undefined) {
+            bags.push({
+              isRetainer: item.retainerName !== undefined,
+              containerName: containerName,
+              containerIds: [item.containerId],
+              items: []
+            });
+            bag = bags[bags.length - 1];
+          }
+          if (bag.containerIds.indexOf(item.containerId) === -1) {
+            bag.containerIds.push(item.containerId);
+          }
+          bag.items.push(item);
+          return bags;
+        }, []);
     }),
     map(inventories => {
       return inventories
         .sort((a, b) => {
-          if (a.containerId !== b.containerId) {
-            return a.containerId - b.containerId;
+          if (a.containerIds[0] !== b.containerIds[0]) {
+            return a.containerIds[0] - b.containerIds[0];
           }
           return a.containerName > b.containerName ? -1 : 1;
         })
@@ -133,6 +135,10 @@ export class InventoryComponent {
     ).subscribe(inventory => {
       this.inventoryService.updateInventory(inventory, true);
     });
+  }
+
+  public deleteInventories(): void {
+    this.inventoryService.updateInventory(new UserInventory(), true);
   }
 
   trackByInventory(index: number, inventory: InventoryDisplay): string {

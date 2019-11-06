@@ -1,4 +1,8 @@
 <ng-container *ngIf="display$ | async as display">
+  <div>
+    <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
+            (nzOnConfirm)="deleteInventories()">{{'INVENTORY.Clean_all' | translate}}</button>
+  </div>
   <div nz-row>
     <div *ngFor="let inventory of display; trackBy: trackByInventory" class="bag-container" nz-col nzMd="12" nzSm="24">
       <nz-spin [nzSpinning]="computingPrices[inventory.containerName]">
