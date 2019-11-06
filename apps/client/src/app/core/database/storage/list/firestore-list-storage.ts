@@ -4,7 +4,7 @@ import { ListStore } from './list-store';
 import { combineLatest, from, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { filter, first, map, switchMap, switchMapTo, takeUntil } from 'rxjs/operators';
+import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, QueryFn } from '@angular/fire/firestore';
 import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
@@ -48,52 +48,55 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return super.prepareData(clone);
   }
 
-  private completeListData(list: List): List {
-    list.items = list.items.map(item => {
-      if (!(item.requires instanceof Array)) {
-        item.requires = [];
-      }
-      return Object.assign(item, this.lazyData.extracts.find(i => i.id === item.id));
-    });
-    list.finalItems = list.finalItems.map(item => {
-      if (!(item.requires instanceof Array)) {
-        item.requires = [];
-      }
-      return Object.assign(item, this.lazyData.extracts.find(i => i.id === item.id));
-    });
-    return list;
+  private completeListData(list: List): Observable<List> {
+    return this.lazyData.extracts$.pipe(
+      map(extracts => {
+        list.items = list.items.map(item => {
+          if (!(item.requires instanceof Array)) {
+            item.requires = [];
+          }
+          return Object.assign(item, extracts.find(i => i.id === item.id));
+        });
+        list.finalItems = list.finalItems.map(item => {
+          if (!(item.requires instanceof Array)) {
+            item.requires = [];
+          }
+          return Object.assign(item, extracts.find(i => i.id === item.id));
+        });
+        return list;
+      })
+    );
   }
 
   public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, uriParams?: any): Observable<List[]> {
     return super.getByForeignKey(foreignEntityClass, foreignKeyValue, uriParams)
       .pipe(
-        map(lists => lists.map(list => this.completeListData(list)))
+        switchMap(lists => combineLatest(lists.map(list => this.completeListData(list))))
       );
   }
 
   get(uid: string): Observable<List> {
-    return this.lazyData.loaded$.pipe(
-      filter(loaded => loaded),
-      switchMapTo(super.get(uid)),
-      map(list => {
-        return this.completeListData(list);
-      })
-    );
+    return super.get(uid)
+      .pipe(
+        switchMap(list => {
+          return this.completeListData(list);
+        })
+      );
   }
 
   public getShared(userId: string): Observable<List[]> {
     return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 20))
       .snapshotChanges()
       .pipe(
-        map((snaps: DocumentChangeAction<List>[]) => {
+        switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
               const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
               delete snap.payload;
               return valueWithKey;
             });
-          return this.serializer.deserialize<List>(lists, [this.getClass()])
-            .map(list => this.completeListData(list));
+          return combineLatest(this.serializer.deserialize<List>(lists, [this.getClass()])
+            .map(list => this.completeListData(list)));
         })
       );
   }
@@ -116,7 +119,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       .snapshotChanges()
       .pipe(
         takeUntil(this.stop$.pipe(filter(stop => stop === 'community'))),
-        map((snaps: DocumentChangeAction<List>[]) => {
+        switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
               const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
@@ -129,8 +132,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
             .filter(list => {
               return list.name.toLowerCase().indexOf(name.toLowerCase()) > -1;
             });
-          return this.serializer.deserialize<List>(lists, [this.getClass()])
-            .map(list => this.completeListData(list));
+          return combineLatest(this.serializer.deserialize<List>(lists, [this.getClass()])
+            .map(list => this.completeListData(list)));
         })
       );
   }
@@ -142,15 +145,15 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return this.firestore.collection(this.getBaseUri(), query)
       .snapshotChanges()
       .pipe(
-        map((snaps: DocumentChangeAction<List>[]) => {
+        switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
               const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
               delete snap.payload;
               return valueWithKey;
             });
-          return this.serializer.deserialize<List>(lists, [this.getClass()])
-            .map(list => this.completeListData(list));
+          return combineLatest(this.serializer.deserialize<List>(lists, [this.getClass()])
+            .map(list => this.completeListData(list)));
         })
       );
   }
@@ -186,7 +189,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return this.firestore.collection(this.getBaseUri(), ref => ref.where('public', '==', true))
       .snapshotChanges()
       .pipe(
-        map((snaps: any[]) => snaps.map(snap => this.completeListData({ $key: snap.payload.doc.id, ...snap.payload.doc.data() }))),
+        switchMap((snaps: any[]) => combineLatest(snaps.map(snap => this.completeListData({ $key: snap.payload.doc.id, ...snap.payload.doc.data() })))),
         map((lists: any[]) => this.serializer.deserialize<List>(lists, [List])),
         map((lists: List[]) => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())),
         first()
@@ -234,9 +237,11 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           // Resulting on an unreadable, undeletable list.
           const data = snap.payload.doc.data();
           delete data.$key;
-          return this.completeListData(<List>{ $key: snap.payload.doc.id, ...data });
+          return <List>{ $key: snap.payload.doc.id, ...data };
         })),
-        map((lists: List[]) => this.serializer.deserialize<List>(lists, [List]).map(list => this.completeListData(list)))
+        switchMap((lists: List[]) => {
+          return combineLatest(this.serializer.deserialize<List>(lists, [List]).map(list => this.completeListData(list)));
+        })
       );
   }
 }
