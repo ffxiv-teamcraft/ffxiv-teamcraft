@@ -465,7 +465,7 @@
     "Copy_list_as_text": "Copier la liste en format textuel",
     "Copied_as_text": "Contenu copié dans le presse-papiers",
     "Total_price": "Prix total (échanges et gils)",
-    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
+    "Ignore_currency": "Ignorer cette devise (ne fonctionne que s'il y a une autre façon d'acheter)",
     "Total_trade_price": "Total : ",
     "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
@@ -923,9 +923,9 @@
       "Use_byregot_brow_5_stacks": "Vous avez utilisé Bénédiction de Byregot avec 5 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner autant de qualité en dépensant 6 PS de moins.",
       "Use_ingenuity_before_byregot": "Vous devriez utiliser Ingeniosité avant l'action de Byregot afin d'obtenir un bonus sur le gain de qualité.",
       "Use_more_quality_actions": "Vous avez encore de la solidité à la fin de l'artisanat, vous devriez probablement l'utiliser pour ajouter des actions de qualité.",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_prudent_touch_manipulation": "Comme vous êtes niveau 66+, vous devriez utiliser le combo Manipulation + Ouvrage parcimonieux afin d'obtenir un avantage maximum de qualité et plus de fiabilité.",
       "Use_rapid_synthesis_earlier": "Vous ne devriez pas utiliser la Synthèse Rapide comme une action finale, la mettre plus tôt pour pouvoir gérer l'échec de l'action est mieux pour la fiabilité de votre rotation.",
-      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted"
+      "Avoid_using_good_actions": "Évitez d'utiliser des actions qui nécessitent un état \"Bon\" dans une macro, car cet état n'est pas prédictible"
     }
   },
   "PRICING": {
@@ -1549,7 +1549,7 @@
     "Click_to_add_to_progression": "Cliquez pour ajouter à la progression de l'élément",
     "Contribute_to_universalis": "Contribution des données à l'universalis",
     "Reset_inventory": "Réinitialiser cet inventaire",
-    "Clean_all": "Reset all your inventories",
+    "Clean_all": "Réinitialiser tous vos inventaires",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",
