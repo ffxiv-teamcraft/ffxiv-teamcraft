@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.10"></a>
+## [6.1.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.9...v6.1.10) (2019-11-06)
+
+
+### Bug Fixes
+
+* **list:** fixed an issue with some lists having no details on their items at all ([4ac02b3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ac02b3))
+* **optimizer:** performance optimizations for inventory optimizer ([68937bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68937bd))
+
+
+### Features
+
+* **fates:** added all positions of fates (kudos to Icarus for the data) ([fc1541d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fc1541d))
+* **inventory:** added a button to clear all your inventories at once ([c277e34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c277e34))
+* **inventory:** new setting to track retainer's market inventory too ([a51449c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a51449c)), closes [#1194](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1194)
+* **layout:** second default layout: Default layout without vendors ([98616e7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/98616e7))
+
+
+
 <a name="6.1.9"></a>
 ## [6.1.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.6...v6.1.9) (2019-11-05)
 
