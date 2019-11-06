@@ -2,12 +2,13 @@ const csv = require('csv-parser');
 const path = require('path');
 const fs = require('fs');
 const http = require('https');
-const { map, tap, switchMap, catchError, first } = require('rxjs/operators');
+const { map, switchMap, first, buffer, debounceTime } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
 const { aggregateAllPages, getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 const Multiprogress = require('multi-progress');
 const multi = new Multiprogress(process.stdout);
 const allMobs = require('../../apps/client/src/assets/data/mobs') || {};
+const fileStreamObservable = require('./file-stream-observable');
 
 const nodes = {};
 const gatheringPointToBaseId = {};
@@ -770,7 +771,7 @@ if (hasTodo('quests')) {
 if (hasTodo('fates')) {
   const fates = {};
   const fatesDone$ = new Subject();
-  getAllPages('https://xivapi.com/Fate?columns=ID,Name_*,Description_*,IconMap,ClassJobLevel').subscribe(page => {
+  getAllPages('https://xivapi.com/Fate?columns=ID,Name_*,Description_*,IconMap,ClassJobLevel,Location').subscribe(page => {
     page.Results.forEach(fate => {
       fates[fate.ID] = {
         name: {
@@ -786,29 +787,37 @@ if (hasTodo('fates')) {
           fr: fate.Description_fr
         },
         icon: fate.IconMap,
-        level: fate.ClassJobLevel
+        level: fate.ClassJobLevel,
+        location: fate.Location
       };
     });
   }, null, () => {
     fatesDone$.next();
   });
 
+  const mapData = require('../../apps/client/src/assets/data/maps.json');
+
+  const levelLGB$ = fileStreamObservable(path.join(__dirname, 'input/LevelLGB.csv'));
   fatesDone$.pipe(
-    first(),
     switchMap(() => {
-      return combineLatest(Object.keys(fates).map(fateId => {
-        return get(`http://www.garlandtools.org/db/doc/fate/en/2/${fateId}.json`);
-      }));
+      return levelLGB$.pipe(
+        buffer(levelLGB$.pipe(debounceTime(500)))
+      );
     })
-  ).subscribe((gtFates) => {
-    gtFates.forEach(gtFate => {
-      if (gtFate && gtFate.fate && gtFate.fate.zoneid && gtFate.fate.coords) {
-        fates[gtFate.fate.id].position = {
-          zoneid: gtFate.fate.zoneid,
-          x: gtFate.fate.coords[0],
-          y: gtFate.fate.coords[1]
-        };
+  ).subscribe(csvData => {
+    Object.keys(fates).forEach(key => {
+      const location = csvData.find(row => +row.LocationID === fates[key].location);
+      if (!location) {
+        delete fates[key].location;
+        return;
       }
+      const c = mapData[location.Map].size_factor / 100;
+      fates[key].position = {
+        zoneid: +mapData[location.Map].placename_id,
+        x: Math.floor(10 * (41.0 / c) * ((location.X) / 2048.0) + 1) / 10,
+        y: Math.floor(10 * (41.0 / c) * ((location.Z) / 2048.0) + 1) / 10
+      };
+      delete fates[key].location;
     });
     persistToJsonAsset('fates', fates);
   });

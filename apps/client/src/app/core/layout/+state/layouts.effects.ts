@@ -27,7 +27,11 @@ export class LayoutsEffects {
       return this.layoutService.getByForeignKey(TeamcraftUser, userId);
     }),
     // We do not allow empty layouts array, if it's empty, return default layout on index 0;
-    map(layouts => [this.layoutService.defaultLayout, ...layouts]),
+    map(layouts => [
+      this.layoutService.defaultLayout,
+      this.layoutService.defaultLayoutNoVendor,
+      ...layouts
+    ]),
     map(layouts => new LayoutsLoaded(layouts))
   );
 

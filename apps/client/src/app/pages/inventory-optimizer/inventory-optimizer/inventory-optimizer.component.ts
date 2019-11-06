@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -15,7 +15,8 @@ import { HasTooFew } from '../optimizations/has-too-few';
 @Component({
   selector: 'app-inventory-optimizer',
   templateUrl: './inventory-optimizer.component.html',
-  styleUrls: ['./inventory-optimizer.component.less']
+  styleUrls: ['./inventory-optimizer.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InventoryOptimizerComponent {
 
