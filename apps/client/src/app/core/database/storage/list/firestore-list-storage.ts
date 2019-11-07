@@ -68,10 +68,17 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     );
   }
 
+  private completeLists(lists: List[]): Observable<List[]> {
+    if (lists.length === 0) {
+      return of([]);
+    }
+    return combineLatest(lists.map(list => this.completeListData(list)));
+  }
+
   public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, uriParams?: any): Observable<List[]> {
     return super.getByForeignKey(foreignEntityClass, foreignKeyValue, uriParams)
       .pipe(
-        switchMap(lists => combineLatest(lists.map(list => this.completeListData(list))))
+        switchMap(lists => this.completeLists(lists))
       );
   }
 
@@ -95,8 +102,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
               delete snap.payload;
               return valueWithKey;
             });
-          return combineLatest(this.serializer.deserialize<List>(lists, [this.getClass()])
-            .map(list => this.completeListData(list)));
+          return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
         })
       );
   }
@@ -132,8 +138,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
             .filter(list => {
               return list.name.toLowerCase().indexOf(name.toLowerCase()) > -1;
             });
-          return combineLatest(this.serializer.deserialize<List>(lists, [this.getClass()])
-            .map(list => this.completeListData(list)));
+          return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
         })
       );
   }
@@ -152,8 +157,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
               delete snap.payload;
               return valueWithKey;
             });
-          return combineLatest(this.serializer.deserialize<List>(lists, [this.getClass()])
-            .map(list => this.completeListData(list)));
+          return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
         })
       );
   }
@@ -240,7 +244,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           return <List>{ $key: snap.payload.doc.id, ...data };
         })),
         switchMap((lists: List[]) => {
-          return combineLatest(this.serializer.deserialize<List>(lists, [List]).map(list => this.completeListData(list)));
+          return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
         })
       );
   }
