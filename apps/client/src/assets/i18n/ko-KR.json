@@ -1578,5 +1578,9 @@
       "Message": "이 아이템을 {{amount}} 만큼 가지고 있지만 처분을 추천 함",
       "Threshold_amount": "한계값"
     }
+  },
+  "VERSION_LOCK": {
+    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
+    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
   }
 }
