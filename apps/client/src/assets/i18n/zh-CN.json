@@ -377,6 +377,7 @@
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "Contribute_to_universalis": "Contribute to Universalis",
     "Persist_inventory": "Save inventory in database (to share with web version)",
+    "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -1577,5 +1578,9 @@
       "Message": "You only have {{amount}} of this item, is it worth keeping them?",
       "Threshold_amount": "Threshold value"
     }
+  },
+  "VERSION_LOCK": {
+    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
+    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
   }
 }

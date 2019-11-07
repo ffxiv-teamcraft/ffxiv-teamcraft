@@ -377,6 +377,7 @@
     "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Square Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
     "Contribute_to_universalis": "Zu Universalis beitragen",
     "Persist_inventory": "Inventar in Datenbank speichern (um es mit der Web-Version zu teilen)",
+    "Track_items_on_sale": "Zum Verkauf stehende Gegenstände von Gehilfen verfolgen (erfordert Neustart/Aktualisierung)",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -1577,5 +1578,9 @@
       "Message": "Du hast nur {{amount}} von diesem Gegenstand. Lohnt es sich, diesen zu behalten?",
       "Threshold_amount": "Grenzwerte"
     }
+  },
+  "VERSION_LOCK": {
+    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
+    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
   }
 }
