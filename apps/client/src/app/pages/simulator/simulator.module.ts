@@ -14,6 +14,7 @@ import { MacroPopupComponent } from './components/macro-popup/macro-popup.compon
 import { ClipboardModule } from 'ngx-clipboard';
 // import {CustomLinksModule} from '../custom-links/custom-links.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { SimulationMinStatsPopupComponent } from './components/simulation-min-stats-popup/simulation-min-stats-popup.component';
 import { ConsumablesService } from './model/consumables.service';
 import { FreeCompanyActionsService } from './model/free-company-actions.service';
@@ -50,52 +51,52 @@ const routes: Routes = [
   {
     path: 'simulator/custom/:rotationId',
     component: CustomSimulatorPageComponent,
-    canActivate: [MaintenanceGuard],
+    canActivate: [MaintenanceGuard, VersionLockGuard],
     canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator',
     component: SimulatorOpenerComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   },
   {
     path: 'simulator/custom',
     component: CustomSimulatorPageComponent,
-    canActivate: [MaintenanceGuard],
+    canActivate: [MaintenanceGuard, VersionLockGuard],
     canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator/:itemId/:recipeId',
     component: SimulatorPageComponent,
-    canActivate: [MaintenanceGuard],
+    canActivate: [MaintenanceGuard, VersionLockGuard],
     canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator/:itemId/:recipeId/:rotationId',
     component: SimulatorPageComponent,
-    canActivate: [MaintenanceGuard],
+    canActivate: [MaintenanceGuard, VersionLockGuard],
     canDeactivate: [DirtyGuard]
   },
   {
     path: 'simulator/:itemId',
     component: SimulatorPageComponent,
-    canActivate: [MaintenanceGuard],
+    canActivate: [MaintenanceGuard, VersionLockGuard],
     canDeactivate: [DirtyGuard]
   },
   {
     path: 'rotations',
     component: RotationsPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   },
   {
     path: 'community-rotations',
     component: CommunityRotationsPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   },
   {
     path: 'rotation-folder/:folderId',
     component: RotationFolderPageComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

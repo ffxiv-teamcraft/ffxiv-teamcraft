@@ -8,6 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 
@@ -16,7 +17,7 @@ const routes: Routes = [
   {
     path: '',
     component: ResetTimersComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

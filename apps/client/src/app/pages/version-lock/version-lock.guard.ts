@@ -5,9 +5,10 @@ import { environment } from '../../../environments/environment';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 import { isPlatformServer } from '@angular/common';
+import * as semver from 'semver';
 
 @Injectable()
-export class MaintenanceGuard implements CanActivate {
+export class VersionLockGuard implements CanActivate {
 
   constructor(private firebase: AngularFireDatabase, @Inject(PLATFORM_ID) private platform: Object) {
   }
@@ -17,10 +18,12 @@ export class MaintenanceGuard implements CanActivate {
       return of(true);
     }
     // We want to block the route if the maintenance mode is on, meaning that we want to allow it if it's not.
-    return this.firebase.object<boolean>('maintenance')
+    return this.firebase.object<string>('version_lock')
       .valueChanges()
       .pipe(
-        map(maintenance => !maintenance || !environment.production)
+        map(version => {
+          return semver.gte(environment.version, version);
+        })
       );
   }
 }

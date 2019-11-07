@@ -7,12 +7,13 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { CustomLinksModule } from '../../modules/custom-links/custom-links.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 
 const routes: Routes = [
   {
     path: ':nickname/:uri',
     component: LinkComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

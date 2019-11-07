@@ -4,6 +4,7 @@ import { BlogComponent } from './blog/blog.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { CoreModule } from '../../core/core.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
@@ -22,7 +23,7 @@ const routes: Routes = [
   {
     path: '',
     component: BlogComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   },
   {
     path: 'new',
@@ -32,7 +33,7 @@ const routes: Routes = [
   {
     path: ':slug',
     component: BlogComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

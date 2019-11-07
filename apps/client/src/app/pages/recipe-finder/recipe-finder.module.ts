@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 import { ClipboardImportPopupComponent } from './clipboard-import-popup/clipboard-import-popup.component';
@@ -20,7 +21,7 @@ const routes: Routes = [
   {
     path: '',
     component: RecipeFinderComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 
