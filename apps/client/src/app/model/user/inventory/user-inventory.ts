@@ -37,14 +37,13 @@ export class UserInventory extends DataModel {
     return [].concat.apply([],
       Object.keys(this.items)
         .filter(key => {
-          let matches = UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1;
-          const matchesEvenWithMarket = (key.indexOf(':') > -1
-            && !(+key.split(':')[1] === ContainerType.RetainerMarket)
-          );
+          const matches = UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1 || key.indexOf(':') > -1;
+          const matchesRetainerMarket = (+key.split(':')[1] === ContainerType.RetainerMarket);
           if (localStorage.getItem('trackItemsOnSale') === 'true') {
-            matches = matches || matchesEvenWithMarket;
+            return matches;
+          } else {
+            return matches && !matchesRetainerMarket;
           }
-          return matches;
         })
         .map(key => {
           return Object.keys(this.items[key])
