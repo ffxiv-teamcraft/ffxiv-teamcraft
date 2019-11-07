@@ -11,7 +11,7 @@ import { LazyRecipe } from './lazy-recipe';
 import { PlatformService } from '../tools/platform.service';
 import { environment } from '../../../environments/environment';
 import { ListRow } from '../../modules/list/model/list-row';
-import { shareReplay, tap } from 'rxjs/operators';
+import { shareReplay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -101,7 +101,6 @@ export class LazyDataService {
 
   public extracts: ListRow[];
   public extracts$: Observable<ListRow[]> = this.getData('/assets/data/extracts.json').pipe(
-    tap(data => this.extracts = data),
     shareReplay(1)
   );
 
@@ -165,7 +164,8 @@ export class LazyDataService {
         this.getData('/assets/data/zh/zh-instances.json'),
         this.getData('/assets/data/zh/zh-leves.json'),
         this.getData('/assets/data/zh/zh-maps.json'),
-        this.getData('/assets/data/zh/zh-statuses.json')
+        this.getData('/assets/data/zh/zh-statuses.json'),
+        this.getData('/assets/data/extracts.json')
       ]
     ).subscribe(([
                    items,
@@ -217,7 +217,8 @@ export class LazyDataService {
                    zhInstances,
                    zhLeves,
                    zhMaps,
-                   zhStatuses
+                   zhStatuses,
+                   extracts
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -269,6 +270,7 @@ export class LazyDataService {
       this.zhLeves = zhLeves;
       this.zhMaps = zhMaps;
       this.zhStatuses = zhStatuses;
+      this.extracts = extracts;
       this.loaded$.next(true);
     });
   }
