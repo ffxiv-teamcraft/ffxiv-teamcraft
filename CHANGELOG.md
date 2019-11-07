@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.11"></a>
+## [6.1.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.10...v6.1.11) (2019-11-07)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with deleted characters not being loaded properly ([39e87dc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/39e87dc))
+* **desktop:** fixed an issue with firewall permissions not updated properly ([d917d06](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d917d06))
+* **list:** fixed an issue with item color not changing properly ([6029fac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6029fac))
+* **lists:** fixed lists page not loading for some users ([2f8ff77](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f8ff77))
+
+
+### Features
+
+* **core:** added a version lock system, to avoid outdated versions after this one ([b73d67d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b73d67d))
+* **sidebar:** sidebar state is now saved in localstorage ([8d67645](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8d67645))
+
+
+
 <a name="6.1.10"></a>
 ## [6.1.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.9...v6.1.10) (2019-11-06)
 
