@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-fullpage-message',
@@ -11,4 +11,7 @@ export class FullpageMessageComponent {
 
   @Input()
   fontSize = '4rem';
+
+  @Input()
+  subtitle: TemplateRef<any>;
 }

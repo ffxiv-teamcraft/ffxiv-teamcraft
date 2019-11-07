@@ -18,12 +18,13 @@ import { MergeListsPopupComponent } from './merge-lists-popup/merge-lists-popup.
 import { FormsModule } from '@angular/forms';
 import { ListImportPopupComponent } from './list-import-popup/list-import-popup.component';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: ListsComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

@@ -36,6 +36,7 @@ import { PricingModule } from '../../modules/pricing/pricing.module';
 import { NumberQuestionPopupModule } from '../../modules/number-question-popup/number-question-popup.module';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { ItemPickerModule } from '../../modules/item-picker/item-picker.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
@@ -46,7 +47,7 @@ const routes: Routes = [
   {
     path: ':listId',
     component: ListDetailsComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

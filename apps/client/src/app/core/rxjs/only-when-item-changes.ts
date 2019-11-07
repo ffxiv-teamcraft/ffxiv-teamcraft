@@ -14,7 +14,10 @@ export function onlyWhenItemChanges(
           source.pipe(first()),
           source.pipe(
             filter(list => {
-              const itemId = list.modificationsHistory[0] && list.modificationsHistory[0].itemId;
+              const lastModifications = list.modificationsHistory.filter(entry => {
+                return Date.now() - entry.date < 600000
+              });
+              const itemId = lastModifications[0] && lastModifications[0].itemId;
               return !itemId || itemId === item.id || (item.requires || []).some(req => req.id === itemId);
             })
           )

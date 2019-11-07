@@ -15,17 +15,18 @@ import { FormsModule } from '@angular/forms';
 import { TeamInviteComponent } from './team-invite/team-invite.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: TeamsComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   },
   {
     path: 'invite/:inviteId',
     component: TeamInviteComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

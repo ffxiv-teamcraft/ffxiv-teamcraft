@@ -41,6 +41,7 @@ import { ErrorInterceptor } from './interceptor/error-interceptor';
 import { TeamcraftErrorHandler } from './error-handler/teamcraft-error-handler';
 import { DevGuard } from './guard/dev.guard';
 import { DATA_REPORTERS } from './data-reporting/data-reporters-index';
+import { VersionLockModule } from '../pages/version-lock/version-lock.module';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { DATA_REPORTERS } from './data-reporting/data-reporters-index';
     AngularFireDatabaseModule,
     PushNotificationsModule,
     MaintenanceModule,
+    VersionLockModule,
     NgZorroAntdModule,
     RouterModule
   ],

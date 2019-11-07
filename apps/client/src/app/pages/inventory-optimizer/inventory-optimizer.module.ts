@@ -10,6 +10,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { CanBeBought } from './optimizations/can-be-bought';
 import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
@@ -42,7 +43,7 @@ const routes: Routes = [
   {
     path: '',
     component: InventoryOptimizerComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

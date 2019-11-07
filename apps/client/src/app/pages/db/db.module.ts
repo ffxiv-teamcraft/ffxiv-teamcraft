@@ -20,6 +20,7 @@ import { ItemDetailsPopupsModule } from '../list-details/item-details/item-detai
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { ItemComponent } from './item/item.component';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { InstanceComponent } from './instance/instance.component';
 import { QuestComponent } from './quest/quest.component';
 import { NpcComponent } from './npc/npc.component';
@@ -47,150 +48,150 @@ const routes: Routes = [
       {
         path: 'item/:itemId',
         component: ItemComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'item/:itemId/:slug',
         component: ItemComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'instance/:instanceId',
         component: InstanceComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'instance/:instanceId/:slug',
         component: InstanceComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'quest/:questId',
         component: QuestComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'quest/:questId/:slug',
         component: QuestComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'npc/:npcId',
         component: NpcComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'npc/:npcId/:slug',
         component: NpcComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'leve/:leveId',
         component: LeveComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'leve/:leveId/:slug',
         component: LeveComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'mob/:mobId',
         component: MobComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'mob/:mobId/:slug',
         component: MobComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'fate/:fateId',
         component: FateComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'fate/:fateId/:slug',
         component: FateComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'map/:mapId',
         component: MapPageComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'map/:mapId/:slug',
         component: MapPageComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'node/:nodeId',
         component: NodeComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'action/:actionId',
         component: ActionComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'action/:actionId/:slug',
         component: ActionComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'status/:statusId',
         component: StatusComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'status/:statusId/:slug',
         component: StatusComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'trait/:traitId',
         component: TraitComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'trait/:traitId/:slug',
         component: TraitComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'achievement/:achievementId',
         component: AchievementComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'achievement/:achievementId/:slug',
         component: AchievementComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
         path: 'patch/:patchId',
         component: PatchComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'patch/:patchId/:slug',
         component: PatchComponent,
-        canActivate: [MaintenanceGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       }
     ]
   }

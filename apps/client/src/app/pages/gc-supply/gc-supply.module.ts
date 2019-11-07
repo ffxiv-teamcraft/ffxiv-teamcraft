@@ -10,6 +10,7 @@ import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -21,7 +22,7 @@ const routes: Routes = [
   {
     path: '',
     component: GcSupplyComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

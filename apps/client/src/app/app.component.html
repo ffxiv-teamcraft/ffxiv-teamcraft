@@ -170,7 +170,7 @@
         <div class="flex-container" fxLayout="column" fxLayoutAlign="space-between">
           <div>
             <ul [nzInlineCollapsed]="collapsedSidebar" [nzMode]="'inline'" [nzTheme]="'dark'" nz-menu>
-              <li [nzOpen]="true" nz-submenu>
+              <li [(nzOpen)]="sidebarState.general" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
                 <span title>
                   <i nz-icon nzType="home"></i>
                   <span>{{'SIDEBAR.General' | translate}}</span>
@@ -208,7 +208,7 @@
                 </a>
               </li>
 
-              <li [nzOpen]="true" nz-submenu>
+              <li [(nzOpen)]="sidebarState.sharing" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
                 <span title>
                   <i nz-icon nzType="share-alt"></i>
                   <span>{{'SIDEBAR.Sharing' | translate}}</span>
@@ -229,7 +229,7 @@
                 </a>
               </li>
 
-              <li [nzOpen]="true" nz-submenu>
+              <li [(nzOpen)]="sidebarState.gathering" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
                 <span title>
                   <i class="companion-svg anticon">
                     &#xF121;
@@ -253,7 +253,7 @@
                 </a>
               </li>
 
-              <li nz-submenu>
+              <li [(nzOpen)]="sidebarState.helpers" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
                 <span title>
                   <i nz-icon nzType="appstore"></i>
                   <span>{{'SIDEBAR.Helpers' | translate}}</span>
@@ -330,7 +330,7 @@
                 </a>
               </li>
 
-              <li nz-submenu>
+              <li [(nzOpen)]="sidebarState.other" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
                 <span title>
                   <i nz-icon nzType="info-circle"></i>
                   <span>{{'SIDEBAR.Other' | translate}}</span>
