@@ -1578,5 +1578,9 @@
       "Message": "You only have {{amount}} of this item, is it worth keeping them?",
       "Threshold_amount": "Threshold value"
     }
+  },
+  "VERSION_LOCK": {
+    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
+    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
   }
 }
