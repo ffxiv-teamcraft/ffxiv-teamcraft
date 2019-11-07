@@ -87,6 +87,8 @@ export class AppComponent implements OnInit {
 
   collapsedAlarmsBar = true;
 
+  sidebarState = this.settings.sidebarState;
+
   public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
     isPlatformServer(this.platform) ? first() : tap()
   );
