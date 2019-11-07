@@ -18,10 +18,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
-      if (!config.get('firewall')) {
-        exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
-        config.set('firewall', true);
-      }
+      exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
 
       const options = isDev ?
         {
