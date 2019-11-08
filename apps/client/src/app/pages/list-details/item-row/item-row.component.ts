@@ -3,17 +3,18 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
-  Input,
+  Input, OnChanges,
   OnInit,
   Type,
-  ViewChild
+  ViewChild,
+  SimpleChanges
 } from '@angular/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { Alarm } from '../../../core/alarms/alarm';
 import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
@@ -23,7 +24,7 @@ import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
 import {
   distinctUntilChanged,
-  distinctUntilKeyChanged, exhaustMap,
+  exhaustMap,
   filter,
   first,
   map,
@@ -91,34 +92,46 @@ import { onlyWhenItemChanges } from '../../../core/rxjs/only-when-item-changes';
 })
 export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
-  private _item: ListRow | CustomItem;
-
   private buttonsCache = {};
 
+  private itemId$: ReplaySubject<number> = new ReplaySubject<number>();
+
+  private finalItem$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
   @Input()
-  public set item(item: ListRow | CustomItem) {
-    this._item = item;
-    this.handleAlarms(item);
-    this.cdRef.detectChanges();
-    this.itemSubject$.next(item);
+  set itemId(itemId: number) {
+    this.itemId$.next(itemId);
   }
 
-  public get item(): ListRow | CustomItem {
-    return this._item;
-  }
-
-  private itemSubject$: Subject<ListRow> = new Subject<ListRow>();
-
-  private item$: Observable<ListRow> = this.itemSubject$.pipe(
+  private item$: Observable<ListRow> = combineLatest([
+    this.listsFacade.selectedList$,
+    this.itemId$.pipe(distinctUntilChanged()),
+    this.finalItem$
+  ]).pipe(
+    map(([list, itemId, finalItem]: [List, number, boolean]) => {
+      return list.getItemById(itemId, !finalItem, finalItem);
+    }),
+    filter(item => item !== undefined),
     distinctUntilChanged((a, b) => {
       return a.amount === b.amount
         && a.done === b.done
-        && a.id === b.id;
+        && a.id === b.id
+        && a.canBeCrafted === b.canBeCrafted
+        && a.hasAllBaseIngredients === b.hasAllBaseIngredients;
+    }),
+    tap(item => {
+      this.handleAlarms(item);
     })
   );
 
   @Input()
-  finalItem = false;
+  public set finalItem(final: boolean) {
+    this.finalItem$.next(final);
+  }
+
+  public get finalItem(): boolean {
+    return this.finalItem$.value;
+  }
 
   @Input()
   odd = false;
@@ -253,25 +266,17 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryFacade) {
     super();
-    this.canBeCrafted$ = this.list$.pipe(
-      filter(list => {
-        return !list.notFound
-          && list.canBeCrafted !== undefined;
-      }),
-      map(list => {
-        return list.canBeCrafted(this.item);
-      }),
-      shareReplay(1)
-    );
+    this.canBeCrafted$ = this.item$.pipe(map(item => item.canBeCrafted));
+    this.hasAllBaseIngredients$ = this.item$.pipe(map(item => item.hasAllBaseIngredients));
 
-    this.settings.settingsChange$.pipe(takeUntil(this.onDestroy$)).subscribe(() => {
-      this.handleAlarms(this.item);
+    combineLatest([this.settings.settingsChange$, this.item$]).pipe(takeUntil(this.onDestroy$)).subscribe(([, item]) => {
+      this.handleAlarms(item);
       this.cdRef.detectChanges();
     });
 
-    this.missingBooks$ = this.authFacade.mainCharacterEntry$.pipe(
-      map(entry => {
-        return (this.item.masterbooks || [])
+    this.missingBooks$ = combineLatest([this.authFacade.mainCharacterEntry$, this.item$]).pipe(
+      map(([entry, item]) => {
+        return (item.masterbooks || [])
         // Ignore string ids, as they are draft ids
           .filter(book => (<any>book.id.toString()) !== (<any>book.id))
           .filter(book => (entry.masterbooks || []).indexOf(book.id) === -1)
@@ -291,34 +296,25 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       shareReplay(1)
     );
 
-    this.hasAllBaseIngredients$ = combineLatest([this.canBeCrafted$, this.list$
-      .pipe(
-        map(list => !list.notFound && list.hasAllBaseIngredients(this.item))
-      )
-    ]).pipe(
-      map(([craftable, allIngredients]) => !craftable && this.item.amount > this.item.done && allIngredients),
-      shareReplay(1)
-    );
-
-    this.requiredForFinalCraft$ = this.list$.pipe(
-      map(list => {
+    this.requiredForFinalCraft$ = combineLatest([this.list$, this.item$]).pipe(
+      map(([list, item]) => {
         const recipesNeedingItem = list.finalItems
-          .filter(item => item.requires !== undefined)
-          .filter(item => {
-            return (item.requires || []).some(req => req.id === this.item.id);
+          .filter(i => i.requires !== undefined)
+          .filter(i => {
+            return (i.requires || []).some(req => req.id === item.id);
           });
-        if (this.item.requiredAsHQ) {
-          return this.item.amount;
+        if (item.requiredAsHQ) {
+          return item.amount;
         }
         if (list.disableHQSuggestions) {
           return 0;
         }
-        if (recipesNeedingItem.length === 0 || this.item.requiredAsHQ === false) {
+        if (recipesNeedingItem.length === 0 || item.requiredAsHQ === false) {
           return 0;
         } else {
           let count = 0;
           recipesNeedingItem.forEach(recipe => {
-            count += recipe.requires.find(req => req.id === this.item.id).amount * recipe.amount;
+            count += recipe.requires.find(req => req.id === item.id).amount * recipe.amount;
           });
           return count;
         }
@@ -331,20 +327,19 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       this.cdRef.detectChanges();
     });
 
-    this.craftableAmount$ = this.list$.pipe(
+    this.craftableAmount$ = this.item$.pipe(
       filter(() => this.layout.showCraftableAmount),
-      tap(() => this.cdRef.detectChanges()),
-      map(list => list.craftableAmount(this.item)),
+      map(item => item.craftableAmount),
       shareReplay(1)
     );
 
     this.commentBadge$ = this.commentBadgeReloader$.pipe(
-      exhaustMap(() => this.list$),
-      switchMap((list) => {
+      exhaustMap(() => combineLatest([this.list$, this.itemId$])),
+      switchMap(([list, itemId]) => {
         return this.commentsService.getComments(
           CommentTargetType.LIST,
           list.$key,
-          `${this.finalItem ? 'finalItems' : 'items'}:${this.item.id}`
+          `${this.finalItem ? 'finalItems' : 'items'}:${itemId}`
         );
       }),
       map(comments => comments.length > 0),
@@ -352,12 +347,12 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     );
   }
 
-  openMarketboardDialog(): void {
+  openMarketboardDialog(item: ListRow): void {
     this.modal.create({
-      nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${this.i18n.getName(this.l12n.getItem(this.item.id))}`,
+      nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${this.i18n.getName(this.l12n.getItem(item.id))}`,
       nzContent: MarketboardPopupComponent,
       nzComponentParams: {
-        itemId: this.item.id,
+        itemId: item.id,
         showHistory: true
       },
       nzFooter: null,
@@ -365,8 +360,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
-  attachRotation(): void {
-    const entry = this.item.craftedBy[0];
+  attachRotation(item: ListRow): void {
+    const entry = item.craftedBy[0];
     const craft: Partial<Craft> = {
       id: entry.recipeId,
       job: entry.jobId,
@@ -377,22 +372,22 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       progress: entry.progression,
       quality: entry.quality
     };
-    this.rotationPicker.pickRotation(this.item.id, craft.id, craft)
+    this.rotationPicker.pickRotation(item.id, craft.id, craft)
       .pipe(
         filter(rotation => rotation !== null)
       )
       .subscribe(rotation => {
-        this.item.attachedRotation = rotation.$key;
-        this.saveItem();
+        item.attachedRotation = rotation.$key;
+        this.saveItem(item);
       });
   }
 
-  detachRotation(): void {
-    delete this.item.attachedRotation;
-    this.saveItem();
+  detachRotation(item: ListRow): void {
+    delete item.attachedRotation;
+    this.saveItem(item);
   }
 
-  openRotationMacroPopup(rotation: CraftingRotation): void {
+  openRotationMacroPopup(rotation: CraftingRotation, item: ListRow): void {
     const foodsData = this.consumablesService.fromData(foods);
     const medicinesData = this.consumablesService.fromData(medicines);
     const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
@@ -400,7 +395,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       nzContent: MacroPopupComponent,
       nzComponentParams: {
         rotation: CraftingActionsRegistry.deserializeRotation(rotation.rotation),
-        job: this.item.craftedBy[0].jobId,
+        job: item.craftedBy[0].jobId,
         food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
         medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
         freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
@@ -436,12 +431,12 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
-  addTag(): void {
+  addTag(item: ListRow): void {
     this.authFacade.user$.pipe(
       first()
     ).subscribe(user => {
-      if (this.newTag && !user.itemTags.some(entry => entry.id === this.item.id && entry.tag === this.newTag)) {
-        user.itemTags.push({ id: this.item.id, tag: this.newTag });
+      if (this.newTag && !user.itemTags.some(entry => entry.id === item.id && entry.tag === this.newTag)) {
+        user.itemTags.push({ id: item.id, tag: this.newTag });
       }
       this.authFacade.updateUser(user);
       this.newTag = '';
@@ -450,11 +445,11 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
-  removeTag(tag: string): void {
+  removeTag(tag: string, item: ListRow): void {
     this.authFacade.user$.pipe(
       first()
     ).subscribe(user => {
-      user.itemTags = user.itemTags.filter(entry => entry.id !== this.item.id || entry.tag !== tag);
+      user.itemTags = user.itemTags.filter(entry => entry.id !== item.id || entry.tag !== tag);
       this.authFacade.updateUser(user);
     });
   }
@@ -463,13 +458,13 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.authFacade.saveMasterbooks(books.map(book => ({ id: book, checked: true })));
   }
 
-  changeAmount(): void {
+  changeAmount(item: ListRow): void {
     this.modal.create({
       nzTitle: this.translate.instant('Edit_amount'),
       nzFooter: null,
       nzContent: NumberQuestionPopupComponent,
       nzComponentParams: {
-        value: this.item.amount
+        value: item.amount
       }
     }).afterClose
       .pipe(
@@ -478,7 +473,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
           return this.listsFacade.selectedList$.pipe(
             first(),
             switchMap(list => {
-              return this.listManager.addToList(this.item.id, list, this.item.recipeId, amount - this.item.amount);
+              return this.listManager.addToList(item.id, list, item.recipeId, amount - item.amount);
             })
           );
         })
@@ -488,34 +483,34 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       });
   }
 
-  removeItem(): void {
+  removeItem(item: ListRow): void {
     this.listsFacade.selectedList$.pipe(
       first(),
       switchMap(list => {
-        return this.listManager.addToList(this.item.id, list, this.item.recipeId, -this.item.amount);
+        return this.listManager.addToList(item.id, list, item.recipeId, -item.amount);
       })
     ).subscribe((list) => {
       this.listsFacade.updateList(list, true);
     });
   }
 
-  removeWorkingOnIt(userId: string): void {
-    this.item.workingOnIt = (this.item.workingOnIt || []).filter(u => u !== userId);
-    this.saveItem();
+  removeWorkingOnIt(userId: string, item: ListRow): void {
+    item.workingOnIt = (item.workingOnIt || []).filter(u => u !== userId);
+    this.saveItem(item);
   }
 
-  openCommentsPopup(list: List, isAuthor: boolean): void {
+  openCommentsPopup(list: List, isAuthor: boolean, item: ListRow): void {
     this.modal.create({
-      nzTitle: `${this.i18n.getName(this.l12n.getItem(this.item.id))} - ${this.translate.instant('COMMENTS.Title')}`,
+      nzTitle: `${this.i18n.getName(this.l12n.getItem(item.id))} - ${this.translate.instant('COMMENTS.Title')}`,
       nzFooter: null,
       nzContent: CommentsPopupComponent,
       nzComponentParams: {
         targetType: CommentTargetType.LIST,
         targetId: list.$key,
-        targetDetails: `${this.finalItem ? 'finalItems' : 'items'}:${this.item.id}`,
+        targetDetails: `${this.finalItem ? 'finalItems' : 'items'}:${item.id}`,
         isAuthor: isAuthor,
         notificationFactory: (comment) => {
-          return new ListItemCommentNotification(list.$key, this.item.id, comment.content, list.name, list.authorId);
+          return new ListItemCommentNotification(list.$key, item.id, comment.content, list.name, list.authorId);
         }
       }
     }).afterClose.subscribe(() => {
@@ -523,54 +518,54 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
-  setWorkingOnIt(uid: string): void {
-    this.item.workingOnIt = this.item.workingOnIt || [];
-    this.item.workingOnIt.push(uid);
-    this.saveItem();
+  setWorkingOnIt(uid: string, item: ListRow): void {
+    item.workingOnIt = item.workingOnIt || [];
+    item.workingOnIt.push(uid);
+    this.saveItem(item);
     this.listsFacade.selectedList$.pipe(
       first(),
       filter(list => list && list.teamId !== undefined),
       withLatestFrom(this.team$)
     ).subscribe(([list, team]) => {
-      this.discordWebhookService.notifyUserAssignment(team, uid, this.item.id, list);
+      this.discordWebhookService.notifyUserAssignment(team, uid, item.id, list);
     });
   }
 
-  private saveItem(): void {
-    this.listsFacade.updateItem(this.item, this.finalItem);
+  private saveItem(item: ListRow): void {
+    this.listsFacade.updateItem(item, this.finalItem);
   }
 
-  assignTeamMember(team: Team, memberId: string): void {
-    this.setWorkingOnIt(memberId);
+  assignTeamMember(team: Team, memberId: string, item: ListRow): void {
+    this.setWorkingOnIt(memberId, item);
   }
 
-  itemDoneChanged(newValue: number): void {
+  itemDoneChanged(newValue: number, item: ListRow): void {
     if (this.settings.displayRemaining) {
-      newValue += this.item.used;
+      newValue += item.used;
     }
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, newValue - this.item.done, this.item.recipeId, this.item.amount);
+    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, newValue - item.done, item.recipeId, item.amount);
   }
 
 
-  add(amount: string, external = false): void {
+  add(amount: string | number, item: ListRow, external = false): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, +amount, this.item.recipeId, this.item.amount, external);
+    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, +amount, item.recipeId, item.amount, external);
   }
 
-  remove(amount: string, external = false): void {
+  remove(amount: string, item: ListRow, external = false): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, -1 * (+amount), this.item.recipeId, this.item.amount, external);
+    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, -1 * (+amount), item.recipeId, item.amount, external);
   }
 
-  markAsDone(): void {
+  markAsDone(item: ListRow): void {
     if (this.settings.autoMarkAsCompleted) {
-      this.markAsDoneInLog(this.item);
+      this.markAsDoneInLog(item);
     }
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, this.item.amount - this.item.done, this.item.recipeId, this.item.amount);
+    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, item.amount - item.done, item.recipeId, item.amount);
   }
 
-  resetDone(): void {
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, -1 * this.item.done, this.item.recipeId, this.item.amount);
+  resetDone(item: ListRow): void {
+    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, -1 * item.done, item.recipeId, item.amount);
   }
 
   toggleAlarm(display: AlarmDisplay): void {
@@ -638,69 +633,69 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     }
   }
 
-  addAllAlarms() {
+  addAllAlarms(item: ListRow) {
     this.alarmsFacade.allAlarms$
       .pipe(first())
       .subscribe(allAlarms => {
-        const alarmsToAdd = this.item.alarms.filter(a => {
+        const alarmsToAdd = item.alarms.filter(a => {
           return allAlarms.some(alarm => {
             return alarm.itemId === a.itemId && alarm.spawns === a.spawns && alarm.zoneId === a.zoneId;
           });
         });
-        this.alarmsFacade.addAlarmsAndGroup(alarmsToAdd, this.i18n.getName(this.l12n.getItem(this.item.id)));
+        this.alarmsFacade.addAlarmsAndGroup(alarmsToAdd, this.i18n.getName(this.l12n.getItem(item.id)));
       });
   }
 
-  public openGatheredByPopup(): void {
-    this.openDetailsPopup(GatheredByComponent);
+  public openGatheredByPopup(item: ListRow): void {
+    this.openDetailsPopup(GatheredByComponent, item);
   }
 
-  public openHuntingPopup(): void {
-    this.openDetailsPopup(HuntingComponent);
+  public openHuntingPopup(item: ListRow): void {
+    this.openDetailsPopup(HuntingComponent, item);
   }
 
-  public openInstancesPopup(): void {
-    this.openDetailsPopup(InstancesComponent);
+  public openInstancesPopup(item: ListRow): void {
+    this.openDetailsPopup(InstancesComponent, item);
   }
 
-  public openReducedFromPopup(): void {
-    this.openDetailsPopup(ReducedFromComponent);
+  public openReducedFromPopup(item: ListRow): void {
+    this.openDetailsPopup(ReducedFromComponent, item);
   }
 
-  public openDesynthsPopup(): void {
-    this.openDetailsPopup(DesynthsComponent);
+  public openDesynthsPopup(item: ListRow): void {
+    this.openDetailsPopup(DesynthsComponent, item);
   }
 
-  public openVendorsPopup(): void {
-    this.openDetailsPopup(VendorsComponent);
+  public openVendorsPopup(item: ListRow): void {
+    this.openDetailsPopup(VendorsComponent, item);
   }
 
-  public openVenturesPopup(): void {
-    this.openDetailsPopup(VenturesComponent);
+  public openVenturesPopup(item: ListRow): void {
+    this.openDetailsPopup(VenturesComponent, item);
   }
 
-  public openTreasuresPopup(): void {
-    this.openDetailsPopup(TreasuresComponent);
+  public openTreasuresPopup(item: ListRow): void {
+    this.openDetailsPopup(TreasuresComponent, item);
   }
 
-  public openFatesPopup(): void {
-    this.openDetailsPopup(FatesComponent);
+  public openFatesPopup(item: ListRow): void {
+    this.openDetailsPopup(FatesComponent, item);
   }
 
-  public openVoyagesPopup(): void {
-    this.openDetailsPopup(VoyagesComponent);
+  public openVoyagesPopup(item: ListRow): void {
+    this.openDetailsPopup(VoyagesComponent, item);
   }
 
-  public openTradesPopup(): void {
-    this.openDetailsPopup(TradesComponent);
+  public openTradesPopup(item: ListRow): void {
+    this.openDetailsPopup(TradesComponent, item);
   }
 
-  public openRequirementsPopup(): void {
-    this.openDetailsPopup(RelationshipsComponent);
+  public openRequirementsPopup(item: ListRow): void {
+    this.openDetailsPopup(RelationshipsComponent, item);
   }
 
-  public openSimulator(recipeId: string): void {
-    const entry = this.item.craftedBy.find(c => c.recipeId === recipeId);
+  public openSimulator(recipeId: string, item: ListRow): void {
+    const entry = item.craftedBy.find(c => c.recipeId === recipeId);
     const craft: Partial<Craft> = {
       id: recipeId,
       job: entry.jobId,
@@ -711,14 +706,14 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       progress: entry.progression,
       quality: entry.quality
     };
-    this.rotationPicker.openInSimulator(this.item.id, recipeId, craft);
+    this.rotationPicker.openInSimulator(item.id, recipeId, craft);
   }
 
-  private openDetailsPopup(component: Type<ItemDetailsPopup>): void {
+  private openDetailsPopup(component: Type<ItemDetailsPopup>, item: ListRow): void {
     this.modal.create({
-      nzTitle: this.i18n.getName(this.l12n.getItem(this.item.id), this.item as CustomItem),
+      nzTitle: this.i18n.getName(this.l12n.getItem(item.id), item as CustomItem),
       nzContent: component,
-      nzComponentParams: { item: this.item },
+      nzComponentParams: { item: item },
       nzFooter: null
     });
   }

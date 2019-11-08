@@ -254,6 +254,7 @@ export class List extends DataWithPermissions {
         }
       }
     }
+    this.updateAllStatuses();
   }
 
   canBeCrafted(item: ListRow): boolean {
@@ -286,6 +287,23 @@ export class List extends DataWithPermissions {
     return canCraft;
   }
 
+  updateAllStatuses(updatedItemId?: number): void {
+    const directRequirements = [...this.finalItems, ...this.items].filter(item => {
+      return (item.requires || []).length > 0
+        && (!updatedItemId || item.requires.some(req => req.id === updatedItemId));
+    });
+    directRequirements.forEach(item => {
+      item.canBeCrafted = this.canBeCrafted(item);
+      item.craftableAmount = this.craftableAmount(item);
+    });
+    this.finalItems.forEach(i => {
+      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && this.hasAllBaseIngredients(i);
+    });
+    this.items.forEach(i => {
+      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && this.hasAllBaseIngredients(i);
+    });
+  }
+
   craftableAmount(item: ListRow): number {
     if (item.craftedBy === undefined || item.craftedBy.length === 0 || item.requires === undefined) {
       return 0;
@@ -312,7 +330,7 @@ export class List extends DataWithPermissions {
       return item.done >= amount;
     }
     // If we already have the precraft done, don't go further into the requirements.
-    if (item.done >= amount) {
+    if (item.done >= amount || item.canBeCrafted) {
       return true;
     }
     // Don't mind crystals
@@ -550,6 +568,7 @@ export class List extends DataWithPermissions {
         this.setDone(row.id, row.amount_needed - previousDone, !recipe, recipe, false, data.recipeId);
       }
     }
+    this.updateAllStatuses();
     return added;
   }
 

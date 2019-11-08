@@ -20,6 +20,7 @@ import {
 } from './lists.actions';
 import {
   catchError,
+  debounceTime,
   delay,
   distinctUntilChanged,
   filter,
@@ -220,6 +221,7 @@ export class ListsEffects {
   @Effect({ dispatch: false })
   updateListInDatabase$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
+    debounceTime(500),
     switchMap(action => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
@@ -231,7 +233,7 @@ export class ListsEffects {
 
   @Effect({ dispatch: false })
   atomicListUpdate = this.actions$.pipe(
-    ofType<UpdateList>(ListsActionTypes.UpdateListAtomic),
+    ofType<UpdateListAtomic>(ListsActionTypes.UpdateListAtomic),
     switchMap((action) => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
