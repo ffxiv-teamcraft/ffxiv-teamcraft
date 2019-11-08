@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.12"></a>
+## [6.1.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.11...v6.1.12) (2019-11-08)
+
+
+### Bug Fixes
+
+* **list:** better fix for item rows not changing color ([4948dff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4948dff))
+* **list:** performance improvements for CPU usage in lists with autofill ([36127da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/36127da))
+
+
+### BREAKING CHANGES
+
+* **list:** Please make sure that everybody using your list has latest version, else you'll have to regenerate the list everytime someone contributes with an outdated version
+
+
+
 <a name="6.1.11"></a>
 ## [6.1.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.10...v6.1.11) (2019-11-07)
 
