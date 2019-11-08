@@ -15,10 +15,14 @@ export function onlyWhenItemChanges(
           source.pipe(
             filter(list => {
               const lastModifications = list.modificationsHistory.filter(entry => {
-                return Date.now() - entry.date < 600000
+                return Date.now() - entry.date < 600000;
               });
-              const itemId = lastModifications[0] && lastModifications[0].itemId;
-              return !itemId || itemId === item.id || (item.requires || []).some(req => req.id === itemId);
+              if (lastModifications.length === 0) {
+                return true;
+              }
+              return lastModifications.some(entry => {
+                return entry.itemId === item.id || (item.requires || []).some(req => req.id === entry.itemId);
+              });
             })
           )
         );

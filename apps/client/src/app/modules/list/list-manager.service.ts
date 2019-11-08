@@ -258,6 +258,8 @@ export class ListManagerService {
               }
             }
           });
+          resultList.updateAllStatuses();
+          console.log(resultList);
           resultList.registry = permissions;
           return resultList;
         })

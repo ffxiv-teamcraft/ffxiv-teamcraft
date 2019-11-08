@@ -18,7 +18,24 @@ import { Class } from '@kaiu/serializer';
 })
 export class FirestoreListStorage extends FirestoreRelationalStorage<List> implements ListStore {
 
-  private static readonly PERSISTED_LIST_ROW_PROPERTIES = ['amount', 'done', 'amount_needed', 'used', 'id', 'icon', 'recipeId', 'yield', 'workingOnIt', 'requiredAsHQ', 'custom', 'attachedRotation', 'requires'];
+  private static readonly PERSISTED_LIST_ROW_PROPERTIES: (keyof ListRow)[] = [
+    'amount',
+    'done',
+    'amount_needed',
+    'used',
+    'id',
+    'icon',
+    'recipeId',
+    'yield',
+    'workingOnIt',
+    'requiredAsHQ',
+    'custom',
+    'attachedRotation',
+    'requires',
+    'canBeCrafted',
+    'hasAllBaseIngredients',
+    'craftableAmount'
+  ];
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService, private lazyData: LazyDataService) {

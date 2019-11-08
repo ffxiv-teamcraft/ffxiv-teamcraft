@@ -374,7 +374,7 @@
     "Disable_search_history": "검색 기록 비활성화",
     "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
     "Enable_packet_capture": "패킷 캡쳐를 사용 (실시간 소지품 동기화 기능 추가)",
-    "Packet_capture_info": "ACT와 마찬가지로 ToS기술을 이용하는 패킷 캡쳐는 이용약관에 위배됩니다. 하지만 스퀘어에닉스에서는 다른 사람들에게 알리지 않는 이상 이러한 프로그램들의 사용을 용인하므로 선택적으로 사용하시면 됩니다. 위험을 감수하고 싶지 않으시다면 사용을 하지 않으시면 됩니다.",
+    "Packet_capture_info": "패킷 캡쳐는 ACT(미터기) 와 같이 이용약관(ToS) 에 위배됩니다. 하지만 스퀘어에닉스에서 ACT같은 프로그램을 사용하는것을 다른사람들에게 말하지않으면 묵인해줍니다. 그냥 말하지마세요. 그러면 문제될건 없습니다.",
     "Contribute_to_universalis": "Universalis에 기여하기",
     "Persist_inventory": "데이터베이스에 소지품을 저장(웹버젼과 공유됨)",
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
@@ -926,6 +926,7 @@
       "Use_more_quality_actions": "내구도가 남은 상태로 제작을 끝마쳤습니다. 남은 내구도를 이용하여 더 많은 가공스킬을 사용할 수 있습니다.",
       "Use_prudent_touch_manipulation": "66레벨 이상일 경우 '교묘한 손놀림' 과 '절약 가공'을 사용하여 확실하게 더 높은 품질을 얻어야 합니다",
       "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
+      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
       "Avoid_using_good_actions": "매크로를 구상할때는 고품질을 요구하는 액션을 사용하지 마세요 고품질은 예측이 불가능합니다"
     }
   },
@@ -1580,7 +1581,7 @@
     }
   },
   "VERSION_LOCK": {
-    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
-    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
+    "Outdated": "현재 팀크래프트 구버젼을 사용중이기 때문에 일부 기능이 정상적으로 작동하지 않을 수 있습니다",
+    "Refresh_or_download_latest": "만약 팀크래프트를 웹페이지에서 사용중이면 Ctrl + F5키를 눌러 완전히 새로고침 해주세요. 데스크톱 앱을 사용중이라면 최신버젼을 해당 링크에서 다운 받을 수 있습니다: "
   }
 }
