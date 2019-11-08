@@ -103,7 +103,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.itemId$.next(itemId);
   }
 
-  private item$: Observable<ListRow> = combineLatest([
+  public item$: Observable<ListRow> = combineLatest([
     this.listsFacade.selectedList$,
     this.itemId$.pipe(distinctUntilChanged()),
     this.finalItem$
