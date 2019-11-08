@@ -14,7 +14,6 @@ export class DoNotUseBrandWithoutName extends RotationTip {
 
   matches(simulationResult: SimulationResult): boolean {
     const nameIndex = simulationResult.steps.findIndex(step => step.action.is(NameOfTheElements));
-    console.log(nameIndex);
     return nameIndex < 0 || simulationResult.steps.some((step, index) => {
       return step.action.is(BrandOfTheElements) && index < nameIndex || index > nameIndex + 3;
     });
