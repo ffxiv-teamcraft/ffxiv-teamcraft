@@ -926,6 +926,7 @@
       "Use_more_quality_actions": "在结束制作前你还有剩余耐久，应使用更多加工系技能提升品质。",
       "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
       "Use_rapid_synthesis_earlier": "高速制作不是100%成功，不应将其用作收尾技能。建议更早地使用高速制作以备万一，即使失败也能调整后续手法。",
+      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
       "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted"
     }
   },
