@@ -107,7 +107,8 @@ export function listsReducer(
       break;
     }
 
-    case ListsActionTypes.UpdateList: {
+    case ListsActionTypes.UpdateList:
+    case ListsActionTypes.UpdateListAtomic: {
       state = {
         ...state,
         listDetails: [
