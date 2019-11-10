@@ -485,6 +485,7 @@
     "Offline_help": "Offline-Listen werden im Browser oder der App gespeichert. Sie sind nur dort verfügbar und können nicht geteilt werden. Sie sind schneller, da sie keine Netzwerk-Aufrufe benötigen.",
     "Mark_whole_panel_done": "Panelinhalt als erledigt markieren",
     "Set_color": "Set list color",
+    "Go_to_pinned": "Go to pinned list (right click to unpin)",
     "COLORS": {
       "RED": "Red",
       "GREEN": "Green",
