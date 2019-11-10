@@ -485,6 +485,7 @@
     "Offline_help": "오프라인 목록은 브라우저 혹은 앱 내에 저장됩니다. 해당 목록은 공유를 할 수 없지만 네트워크를 사용하지 않으며 더 빠르게 로딩됩니다.",
     "Mark_whole_panel_done": "패널의 내용을 완료됨으로 표시",
     "Set_color": "Set list color",
+    "Go_to_pinned": "Go to pinned list (right click to unpin)",
     "COLORS": {
       "RED": "Red",
       "GREEN": "Green",
