@@ -106,6 +106,7 @@ export class List extends DataWithPermissions {
 
   public reset(): void {
     this.finalItems.forEach(recipe => this.resetDone(recipe));
+    this.updateAllStatuses();
   }
 
   /**
@@ -452,7 +453,7 @@ export class List extends DataWithPermissions {
               used: 0,
               yield: 1,
               usePrice: true
-            })
+            });
           } else {
             this.add(this.items, {
               id: elementDetails.id,
