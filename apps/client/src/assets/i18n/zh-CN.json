@@ -390,6 +390,13 @@
     "COPY_TYPE": {
       "Classic": "复制物品名称",
       "Isearch": "复制搜索宏"
+    },
+    "CATEGORIES": {
+      "Autofill_completion": "Autofill completion sound",
+      "Packet_capture": "Packet capture",
+      "Theme": "Theme",
+      "Search": "Search",
+      "Other": "Other"
     }
   },
   "PROFILE": {
@@ -477,6 +484,17 @@
     "Offline": "离线",
     "Offline_help": "离线清单储存在您的浏览器或桌面APP中，因此不能通过其他渠道查看及分享，但是他们不受龟速网络影响——比较快。",
     "Mark_whole_panel_done": "将这一大类标记为已完成",
+    "Set_color": "Set list color",
+    "COLORS": {
+      "RED": "Red",
+      "GREEN": "Green",
+      "YELLOW": "Yellow",
+      "BLUE": "Blue",
+      "PURPLE": "Purple",
+      "ORANGE": "Orange",
+      "PINK": "Pink",
+      "NONE": "None"
+    },
     "ROTATION": {
       "Attach": "附加手法",
       "Detach": "删去手法",
