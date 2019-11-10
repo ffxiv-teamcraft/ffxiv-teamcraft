@@ -71,7 +71,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
           return (<any>data).clone(true);
         } else {
           const clone = new (<Instantiable>this.getClass())();
-          return Object.assign(clone, JSON.parse(JSON.stringify(data)));
+          return Object.assign(clone, {...data});
         }
       })
     );

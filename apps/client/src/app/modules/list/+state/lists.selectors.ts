@@ -36,7 +36,7 @@ const getSelectedId = createSelector(
   (state: ListsState) => state.selectedId
 );
 
-const getSelectedList = createSelector(
+const getSelectedList = () => createSelector(
   getAllListDetails,
   getSelectedId,
   (lists, id) => {

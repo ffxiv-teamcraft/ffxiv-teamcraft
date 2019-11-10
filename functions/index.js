@@ -76,7 +76,20 @@ exports.updateList = functions.runWith(runtimeOpts).https.onCall((data, context)
   return firestore.runTransaction(transaction => {
     return transaction.get(listRef).then(listDoc => {
       const list = listDoc.data();
-      applyPatch(list, data.diff);
+      const [standard, custom] = data.diff.reduce((acc, entry) => {
+        if (entry.custom) {
+          acc[1].push(entry);
+        } else {
+          acc[0].push(entry);
+        }
+        return acc;
+      }, [[], []]);
+      applyPatch(list, standard);
+      custom.forEach(customEntry => {
+        const explodedPath = customEntry.path.split('/');
+        explodedPath.shift();
+        list[explodedPath[0]][+explodedPath[1]][explodedPath[2]] += customEntry.offset;
+      });
       transaction.update(listRef, list);
       return Promise.resolve();
     });

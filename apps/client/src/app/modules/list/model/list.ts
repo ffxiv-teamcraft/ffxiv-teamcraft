@@ -575,15 +575,8 @@ export class List extends DataWithPermissions {
     return this.items && this.items.length >= 150 || this.finalItems && this.finalItems.length > 80;
   }
 
-  /**
-   * Gets payload size for firestore database.
-   */
-  public getSize(): number {
-    return JSON.stringify(this).length;
-  }
-
   public isTooLarge(): boolean {
-    return this.getSize() > 800000;
+    return this.items.length + this.finalItems.length > 1000;
   }
 
   /**

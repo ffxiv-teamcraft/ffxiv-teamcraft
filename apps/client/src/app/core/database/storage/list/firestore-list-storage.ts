@@ -4,7 +4,7 @@ import { ListStore } from './list-store';
 import { combineLatest, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, QueryFn } from '@angular/fire/firestore';
 import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
@@ -12,7 +12,7 @@ import { FirestoreRelationalStorage } from '../firestore/firestore-relational-st
 import { ListTag } from '../../../../modules/list/model/list-tag.enum';
 import { Class } from '@kaiu/serializer';
 import { AngularFireFunctions } from '@angular/fire/functions';
-import { compare } from 'fast-json-patch';
+import { compare, getValueByPointer } from 'fast-json-patch';
 
 @Injectable({
   providedIn: 'root'
@@ -45,15 +45,24 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   public update(uid: string, data: Partial<List>, uriParams?: any): Observable<void> {
-    const diff = compare(this.prepareData(this.syncCache[uid]), this.prepareData(data));
-    console.log(diff);
+    const preparedCache = this.prepareData(this.syncCache[uid]);
+    const preparedNew = this.prepareData(data);
+    let diff = compare(preparedCache, preparedNew);
+    diff = diff.map(entry => {
+      if (entry.path.startsWith('/items') || entry.path.startsWith('/finalItems') && entry.op === 'replace' && typeof entry.value === 'number') {
+        return {
+          ...entry,
+          offset: getValueByPointer(preparedNew, entry.path) - getValueByPointer(preparedCache, entry.path),
+          custom: true
+        };
+      }
+      return entry;
+    });
     return this.fns.httpsCallable('updateList')(
       {
         diff: diff,
         uid: uid
       }
-    ).pipe(
-      tap(res => console.log(res))
     );
   }
 

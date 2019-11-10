@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UniversalisService } from '../api/universalis.service';
 import {
-  buffer,
-  debounceTime,
   delayWhen,
   distinctUntilChanged,
   filter,
@@ -27,6 +25,7 @@ import { InventoryFacade } from '../../modules/inventory/+state/inventory.facade
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { territories } from '../data/sources/territories';
+import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
 
 @Injectable({
   providedIn: 'root'
@@ -67,7 +66,7 @@ export class MachinaService {
           && packet.slot < 32000
           && packet.catalogId < 40000;
       }),
-      buffer(this.ipc.itemInfoPackets$.pipe(debounceTime(1000))),
+      debounceBufferTime(1000),
       filter(packets => packets.length > 0),
       withLatestFrom(this.retainerSpawns$),
       tap(([itemInfos, lastRetainerSpawned]) => this.ipc.log('ItemInfos', itemInfos.length, lastRetainerSpawned)),
@@ -165,15 +164,18 @@ export class MachinaService {
       filter(packet => {
         return packet.catalogId < 40000;
       }),
+      debounceBufferTime(500),
       withLatestFrom(this.retainerSpawns$),
-      switchMap(([packet, lastRetainerSpawned]) => {
+      switchMap(([packets, lastRetainerSpawned]) => {
         return this.inventory$.pipe(
           first(),
           map(inventory => {
-            const patch = inventory.updateInventorySlot(packet, lastRetainerSpawned);
-            if (patch) {
-              this._inventoryPatches$.next(patch);
-            }
+            packets.forEach(packet => {
+              const patch = inventory.updateInventorySlot(packet, lastRetainerSpawned);
+              if (patch) {
+                this._inventoryPatches$.next(patch);
+              }
+            });
             return inventory;
           })
         );
