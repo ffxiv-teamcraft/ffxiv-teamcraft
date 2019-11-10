@@ -204,6 +204,22 @@ export class SettingsService {
     this.setSetting('alarm:volume', volume.toString());
   }
 
+  public get autofillCompletionSound(): string {
+    return this.getSetting('autofill:completion:sound', 'Full_Party');
+  }
+
+  public set autofillCompletionSound(sound: string) {
+    this.setSetting('autofill:completion:sound', sound);
+  }
+
+  public get autofillCompletionVolume(): number {
+    return +this.getSetting('autofill:completion:volume', '0.5');
+  }
+
+  public set autofillCompletionVolume(volume: number) {
+    this.setSetting('autofill:completion:volume', volume.toString());
+  }
+
   public get alarmsMuted(): boolean {
     return this.getSetting('alarms:muted', 'false') === 'true';
   }
