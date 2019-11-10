@@ -58,6 +58,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       }
       return entry;
     });
+    this.syncCache[uid] = data as List;
     return this.fns.httpsCallable('updateList')(
       {
         diff: diff,
