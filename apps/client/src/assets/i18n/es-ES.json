@@ -390,6 +390,13 @@
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
+    },
+    "CATEGORIES": {
+      "Autofill_completion": "Autofill completion sound",
+      "Packet_capture": "Packet capture",
+      "Theme": "Theme",
+      "Search": "Search",
+      "Other": "Other"
     }
   },
   "PROFILE": {
@@ -477,6 +484,17 @@
     "Offline": "Sin conexión",
     "Offline_help": "Las listas sin conexión se almacenan dentro del navegador o de la aplicación, sólo están disponibles dentro de esta instancia y no pueden ser compartidas, pero son más rápidas porque no requieren llamadas de red.",
     "Mark_whole_panel_done": "Marcar contenido del panel como completado",
+    "Set_color": "Set list color",
+    "COLORS": {
+      "RED": "Red",
+      "GREEN": "Green",
+      "YELLOW": "Yellow",
+      "BLUE": "Blue",
+      "PURPLE": "Purple",
+      "ORANGE": "Orange",
+      "PINK": "Pink",
+      "NONE": "None"
+    },
     "ROTATION": {
       "Attach": "Adjuntar rotación",
       "Detach": "Desligar rotación",
