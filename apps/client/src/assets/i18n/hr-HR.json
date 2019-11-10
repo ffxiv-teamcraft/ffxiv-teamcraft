@@ -390,6 +390,13 @@
     "COPY_TYPE": {
       "Classic": "Copy item name",
       "Isearch": "Copy /isearch macro"
+    },
+    "CATEGORIES": {
+      "Autofill_completion": "Autofill completion sound",
+      "Packet_capture": "Packet capture",
+      "Theme": "Theme",
+      "Search": "Search",
+      "Other": "Other"
     }
   },
   "PROFILE": {
@@ -477,6 +484,17 @@
     "Offline": "Offline",
     "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
     "Mark_whole_panel_done": "Mark panel content as done",
+    "Set_color": "Set list color",
+    "COLORS": {
+      "RED": "Red",
+      "GREEN": "Green",
+      "YELLOW": "Yellow",
+      "BLUE": "Blue",
+      "PURPLE": "Purple",
+      "ORANGE": "Orange",
+      "PINK": "Pink",
+      "NONE": "None"
+    },
     "ROTATION": {
       "Attach": "Attach rotation",
       "Detach": "Detach rotation",
