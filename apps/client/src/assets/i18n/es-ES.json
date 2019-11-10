@@ -485,6 +485,7 @@
     "Offline_help": "Las listas sin conexión se almacenan dentro del navegador o de la aplicación, sólo están disponibles dentro de esta instancia y no pueden ser compartidas, pero son más rápidas porque no requieren llamadas de red.",
     "Mark_whole_panel_done": "Marcar contenido del panel como completado",
     "Set_color": "Set list color",
+    "Go_to_pinned": "Go to pinned list (right click to unpin)",
     "COLORS": {
       "RED": "Red",
       "GREEN": "Green",
