@@ -485,6 +485,7 @@
     "Offline_help": "离线清单储存在您的浏览器或桌面APP中，因此不能通过其他渠道查看及分享，但是他们不受龟速网络影响——比较快。",
     "Mark_whole_panel_done": "将这一大类标记为已完成",
     "Set_color": "Set list color",
+    "Go_to_pinned": "Go to pinned list (right click to unpin)",
     "COLORS": {
       "RED": "Red",
       "GREEN": "Green",
