@@ -390,6 +390,13 @@
     "COPY_TYPE": {
       "Classic": "Gegenstandsnamen kopieren",
       "Isearch": "/isearch Makro kopieren"
+    },
+    "CATEGORIES": {
+      "Autofill_completion": "Autofill completion sound",
+      "Packet_capture": "Packet capture",
+      "Theme": "Theme",
+      "Search": "Search",
+      "Other": "Other"
     }
   },
   "PROFILE": {
@@ -477,6 +484,17 @@
     "Offline": "Offline",
     "Offline_help": "Offline-Listen werden im Browser oder der App gespeichert. Sie sind nur dort verfügbar und können nicht geteilt werden. Sie sind schneller, da sie keine Netzwerk-Aufrufe benötigen.",
     "Mark_whole_panel_done": "Panelinhalt als erledigt markieren",
+    "Set_color": "Set list color",
+    "COLORS": {
+      "RED": "Red",
+      "GREEN": "Green",
+      "YELLOW": "Yellow",
+      "BLUE": "Blue",
+      "PURPLE": "Purple",
+      "ORANGE": "Orange",
+      "PINK": "Pink",
+      "NONE": "None"
+    },
     "ROTATION": {
       "Attach": "Rotation hinzufügen",
       "Detach": "Rotation entfernen",
