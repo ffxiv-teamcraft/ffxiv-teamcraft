@@ -485,6 +485,7 @@
     "Offline_help": "Les listes hors ligne sont stockées dans le navigateur ou l'application, elles sont uniquement disponibles dans cette instance et ne peuvent pas être partagées, mais elles sont plus rapides car elles ne nécessitent pas d'appels réseau.",
     "Mark_whole_panel_done": "Marquer le contenu du panneau comme terminé",
     "Set_color": "Set list color",
+    "Go_to_pinned": "Go to pinned list (right click to unpin)",
     "COLORS": {
       "RED": "Red",
       "GREEN": "Green",
