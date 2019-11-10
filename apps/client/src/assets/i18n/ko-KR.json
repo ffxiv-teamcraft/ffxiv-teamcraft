@@ -390,6 +390,13 @@
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
+    },
+    "CATEGORIES": {
+      "Autofill_completion": "Autofill completion sound",
+      "Packet_capture": "Packet capture",
+      "Theme": "Theme",
+      "Search": "Search",
+      "Other": "Other"
     }
   },
   "PROFILE": {
@@ -477,6 +484,17 @@
     "Offline": "오프라인",
     "Offline_help": "오프라인 목록은 브라우저 혹은 앱 내에 저장됩니다. 해당 목록은 공유를 할 수 없지만 네트워크를 사용하지 않으며 더 빠르게 로딩됩니다.",
     "Mark_whole_panel_done": "패널의 내용을 완료됨으로 표시",
+    "Set_color": "Set list color",
+    "COLORS": {
+      "RED": "Red",
+      "GREEN": "Green",
+      "YELLOW": "Yellow",
+      "BLUE": "Blue",
+      "PURPLE": "Purple",
+      "ORANGE": "Orange",
+      "PINK": "Pink",
+      "NONE": "None"
+    },
     "ROTATION": {
       "Attach": "제작 로테이션 연동",
       "Detach": "제작 로테이션 연동해제",
