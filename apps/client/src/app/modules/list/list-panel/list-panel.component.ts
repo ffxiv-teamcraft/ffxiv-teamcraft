@@ -27,6 +27,7 @@ import { Router } from '@angular/router';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { SettingsService } from '../../settings/settings.service';
+import { ListColor } from '../model/list-color';
 
 @Component({
   selector: 'app-list-panel',
@@ -65,6 +66,13 @@ export class ListPanelComponent {
   private syncLinkUrl: string;
 
   private updateAmountDebounces: { [index: number]: Subject<any> } = {};
+
+  public availableColors = Object.keys(ListColor).map(key => {
+    return {
+      value: ListColor[key],
+      name: key
+    };
+  });
 
   permissionLevel$: Observable<PermissionLevel> = combineLatest(this.teamsFacade.myTeams$, this.authFacade.loggedIn$).pipe(
     switchMap(([teams, loggedIn]) => {
@@ -192,6 +200,11 @@ export class ListPanelComponent {
         });
     }
     updateSubject.next(inputValue);
+  }
+
+  setColor(color: ListColor, list: List): void {
+    list.color = color;
+    this.listsFacade.updateList(list);
   }
 
   getTags(): string[] {

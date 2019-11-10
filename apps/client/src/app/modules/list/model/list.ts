@@ -17,6 +17,7 @@ import { bufferCount, debounceTime, expand, map, skip, skipUntil, switchMap, tap
 import { DataService } from '../../../core/api/data.service';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { ListManagerService } from '../list-manager.service';
+import { ListColor } from './list-color';
 
 declare const gtag: Function;
 
@@ -57,6 +58,8 @@ export class List extends DataWithPermissions {
 
   // Used for the drag-and-drop feature.
   workshopId?: string;
+
+  color: ListColor;
 
   constructor() {
     super();
