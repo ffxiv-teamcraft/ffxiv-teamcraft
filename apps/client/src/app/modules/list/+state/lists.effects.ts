@@ -260,7 +260,11 @@ export class ListsEffects {
   @Effect({ dispatch: false })
   deleteListFromDatabase$ = this.actions$.pipe(
     ofType<DeleteList>(ListsActionTypes.DeleteList),
-    mergeMap(action => {
+    withLatestFrom(this.listsFacade.pinnedList$),
+    mergeMap(([action, pin]) => {
+      if (pin === action.key) {
+        this.listsFacade.unpin();
+      }
       if (action.offline) {
         this.removeFromLocalStorage(action.key);
         return EMPTY;

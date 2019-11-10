@@ -40,6 +40,12 @@
             <i nz-icon nzType="copy" theme="outline"></i>
           </button>
           <app-favorite-button *ngIf="!list.offline" [key]="list.$key" type="lists"></app-favorite-button>
+          <button nz-button nzShape="circle"
+                  *ngIf="pinnedList$ | async as pinnedList"
+                  (click)="pinnedList === list.$key ? unpinList() :pinList(list)"
+                  [nzType]="pinnedList === list.$key ? 'danger' : 'default'">
+            <i nz-icon nzType="pushpin" nzTheme="outline"></i>
+          </button>
           <div *ngIf="teams$ | async as teams">
             <button *ngIf="(permissionLevel$ | async) >= 20 && list.teamId === undefined"
                     [disabled]="teams.length === 0" [nzBackdrop]="false" [nzDropdownMenu]="menu"

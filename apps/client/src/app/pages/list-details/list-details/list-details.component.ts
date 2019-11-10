@@ -81,6 +81,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   public machinaToggle = false;
 
+  public pinnedList$ = this.listsFacade.pinnedList$;
+
   public get adaptativeFilter(): boolean {
     return this.adaptativeFilter$.value;
   }
@@ -410,6 +412,14 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         };
       })
     );
+  }
+
+  public pinList(list: List): void {
+    this.listsFacade.pin(list.$key);
+  }
+
+  public unpinList(): void {
+    this.listsFacade.unpin();
   }
 
 }
