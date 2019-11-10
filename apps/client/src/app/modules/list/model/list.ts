@@ -424,7 +424,7 @@ export class List extends DataWithPermissions {
         listManager.addDetails(this, crystal);
       } else {
         const elementDetails = (<ItemData>addition.data).getIngredient(+element.id);
-        if (elementDetails.isCraft()) {
+        if (elementDetails && elementDetails.isCraft()) {
           const yields = elementDetails.craft[0].yield || 1;
           const added = this.add(this.items, {
             id: elementDetails.id,
@@ -442,15 +442,28 @@ export class List extends DataWithPermissions {
             amount: added
           });
         } else {
-          this.add(this.items, {
-            id: elementDetails.id,
-            icon: elementDetails.icon,
-            amount: element.amount * addition.amount,
-            done: 0,
-            used: 0,
-            yield: 1,
-            usePrice: true
-          });
+          if (elementDetails === undefined) {
+            const partial = (<ItemData>addition.data).getPartial(element.id.toString(), 'item');
+            this.add(this.items, {
+              id: partial.obj.i,
+              icon: partial.obj.c,
+              amount: element.amount * addition.amount,
+              done: 0,
+              used: 0,
+              yield: 1,
+              usePrice: true
+            })
+          } else {
+            this.add(this.items, {
+              id: elementDetails.id,
+              icon: elementDetails.icon,
+              amount: element.amount * addition.amount,
+              done: 0,
+              used: 0,
+              yield: 1,
+              usePrice: true
+            });
+          }
         }
         listManager.addDetails(this, <ItemData>addition.data);
       }
