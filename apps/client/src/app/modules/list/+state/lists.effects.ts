@@ -309,9 +309,9 @@ export class ListsEffects {
             listName: list.name
           });
           const notificationIcon = `https://xivapi.com${this.lazyData.icons[action.itemId]}`;
-          const audio = new Audio(`./assets/audio/Feature_unlocked.mp3`);
+          const audio = new Audio(`./assets/audio/${this.settings.autofillCompletionSound}.mp3`);
           audio.loop = false;
-          audio.volume = this.settings.alarmVolume;
+          audio.volume = this.settings.autofillCompletionVolume;
           audio.play();
           if (this.platform.isDesktop()) {
             this.ipc.send('notification', {
