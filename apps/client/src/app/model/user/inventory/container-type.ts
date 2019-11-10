@@ -15,6 +15,7 @@ export enum ContainerType {
   HandIn = 2005,
   DamagedGear = 2007,
   //UNKNOWN_1 = 2008,
+  TradeInventory = 2009,
 
   ArmoryOff = 3200,
   ArmoryHead = 3201,

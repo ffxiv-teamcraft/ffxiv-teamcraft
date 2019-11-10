@@ -142,7 +142,8 @@
     "User": "Usuario",
     "Tables": "Tabla",
     "Pie_charts": "Gráfico de pastel",
-    "Read_more_on_wiki": "Leer más detalles en el wiki"
+    "Read_more_on_wiki": "Leer más detalles en el wiki",
+    "Apply": "Apply"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -376,6 +377,7 @@
     "Packet_capture_info": "Capturar paquetes es contra los TdS, la misma razón por la que usar ACT es contra los TdS. Pero Square Enix lo tolera a menos que lo presuma a todos en el juego. Simplemente no lo haga y no se arriesgará a nada.",
     "Contribute_to_universalis": "Contribuir a Universalis",
     "Persist_inventory": "Save inventory in database (to share with web version)",
+    "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -464,6 +466,7 @@
     "Copy_list_as_text": "Copiar toda la lista como texto",
     "Copied_as_text": "Contenido copiado en el portapapeles",
     "Total_price": "Total de compras (gil y otras monedas)",
+    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
     "Total_trade_price": "Total: ",
     "Add_all_alarms": "Agregar todas las alarmas de esta lista",
     "History": "Historial",
@@ -530,6 +533,10 @@
     "Contributions_popup": "Estadísticas de contribuciones",
     "Autofill_details": "Ingrese su progreso cuando obtenga artículos en el juego, usando captura de paquetes. Esto estará deshabilitado si abandona la página de la lista, para evitar entradas no deseadas.",
     "Autofill": "Autocompletar",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -645,6 +652,7 @@
     "Title": "Ruta de navegación optimizada",
     "Steps": "Pasos",
     "Loading_path": "Cargando ruta optimizada (puede tomar varios segundos)",
+    "You_are_here": "You are here",
     "STEP": {
       "Gathering": "Recolectar {{amount}} (total: {{total}})",
       "Hunting": "Conseguir {{amount}} en monstruos (total: {{total}})",
@@ -724,6 +732,7 @@
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
+    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
     "Include_consumables_notification": "Incluir notificación de consumibles",
     "Consumable_notification": "Usar {{buffs}}",
     "Extra_wait": "Espera extra",
@@ -788,6 +797,7 @@
     "Rotation_solver": "Resolvedor de rotación",
     "Recipe_picker_placeholder": "Introduzca el nombre de la receta que desea crear",
     "Could_not_find_minstats": "No se pudieron encontrar atributos mínimos para esta rotación",
+    "Remove_final_appraisal": "Remove Final Appraisal buff",
     "STATE": {
       "Excellent": "Excelente",
       "Good": "Bueno",
@@ -906,26 +916,18 @@
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Casi todas las rotaciones deberían incluir \"Inner Quiet\" si su objetivo es un objeto HQ. Proporciona un buen impulso de calidad y permite acciones como \"Byregot's Blessing\".",
       "Use_inner_quiet_before_quality_increase": "Debería aplicar \"Inner Quiet\" antes de cualquier aumento de calidad, no hacerlo significa que está desperdiciando cargas de \"Inner Quiet\".",
-      "Use_ingenuity_I_instead": "Debería usar Ingenuity I en lugar de II para reducir el costo en 8CP, ya que será suficiente para terminar la artesanía.",
-      "Use_cz_earlier": "Debería usar \"Comfort Zone\" antes para obtener el efecto de restauración antes",
-      "Use_reclaim": "Tiene suficiente CP restante para usar \"Reclaim\", debería añadirlo a la rotación para asegurarte de que reciba materiales de regreso si falla la artesanía",
-      "Use_byregot_brow_low_iq_stacks": "Utilizó \"Byregot Blessing\" con menos de 6 cargas. Usar \"Byregot Brow\" es mejor en este caso, ya que producirá más calidad.",
       "Use_byregot_blessing_high_iq_stacks": "Utilizó \"Byregot Brow\" con más de 6 cargas. Usar \"Byregot Blessing\" es mejor en este caso, ya que producirá más calidad.",
-      "Use_sh1_instead": "Utilizó \"Steady Hand II\" en el paso {{index}} mientras que utilizar \"Steady Hand I\" sería suficiente y costaría 3 CP menos.",
-      "Use_sh2_instead": "Utilizó \"Steady Hand I\" en el paso {{index}} mientras que utilizar \"Steady Hand II\" le daría más confiabilidad por 3 CP.",
-      "Use_pbp_first": "Debería usar \"Piece by Piece\" antes de cualquier otra acción de síntesis, ya que se escala con el progreso que falta por hacer",
-      "Use_mume_if_pbp": "Debería usar \"Muscle Memory\" en el paso 1 para reemplazar un \"Piece by Piece\" y obtener 9 CP extra",
       "Use_observe_before_focused": "Debería usar \"Observe\" antes de la acción \"enfocada\" en el paso {{index}} para obtener una tasa de éxito del 100% gratis.",
       "Use_durability_restoration_later": "Debería usar la acción de restauración de durabilidad en el paso {{index}} más tarde para evitar desperdiciar la restauración de durabilidad.",
       "Use_patient_touch_faster": "Debería usar \"Patient Touch\" antes de añadir cargas de \"Inner Quiet\", para minimizar las cargas desperdiciadas si la acción falla.",
-      "Use_advanced_touch_instead": "Usó \"Basic Touch\" seguido de \"Advanced Touch\" en el paso {{index}}, debería usar dos \"Standard Touch\" en su lugar para obtener la misma potencia por 2 CP menos.",
       "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos.",
       "Use_byregot_brow_5_stacks": "Debería usar \"Byregot's Brow\" en vez de \"Byregot's Blessing\" para obtener la misma calidad por 6 CP menos.",
       "Use_ingenuity_before_byregot": "Debería usar \"Ingenuity\" antes de la acción de \"Byregot\" para obtener un aumento en la ganancia de calidad.",
       "Use_more_quality_actions": "Le sobra durabilidad al final del proceso, probablemente debería usarla para más acciones relacionadas con la calidad.",
-      "Use_prudent_touch_manipulation": "Como usted es nivel 66+, debería usar el combo \"Manipulation II\" + \"Prudent Touch\" para obtener calidad para la mejor ganancia de calidad y más confiabilidad.",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
       "Use_rapid_synthesis_earlier": "No debería usar \"Rapid Synthesis\" como una acción de término, usarla antes para poder manejar el fracaso de la acción es mejor para la confiabilidad de su rotación.",
-      "Use_reflect_earlier": "Debería usar la acción de especialización \"Reflect\" antes para impulsar las acciones de calidad posteriores."
+      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
+      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted"
     }
   },
   "PRICING": {
@@ -1289,6 +1291,7 @@
     "Currencies": "Divisas",
     "Rowena_splendor": "Esplendores de Rowena (Estrella = +20% de bonus)",
     "Unlocks": "Desbloqueos",
+    "Jump_to_page": "Quick jump to another page",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1548,11 +1551,37 @@
     "Click_to_add_to_progression": "Haga clic para agregar a la progresión de artículos",
     "Contribute_to_universalis": "Contribuir datos a Universalis",
     "Reset_inventory": "Reset this inventory",
+    "Clean_all": "Reset all your inventories",
     "BAG": {
       "SaddleBag": "Alforja de Chocobo",
       "FC_chest": "FC chest",
       "Bag": "Inventario",
-      "Other": "Otro inventario"
+      "Other": "Otro inventario",
+      "Armory": "Armory"
     }
+  },
+  "INVENTORY_OPTIMIZER": {
+    "Title": "Inventory optimizer",
+    "Ignore_item": "Ignore this tip for this item",
+    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
+    "Show_ignored": "Show ignored items",
+    "No_optimizations": "No optimizations available",
+    "CAN_BE_BOUGHT": {
+      "Title": "Items that can be bought with gil",
+      "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
+    },
+    "DUPLICATES": {
+      "Title": "Items that are duplicated across multiple containers",
+      "Message": "This item is also present in: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Items that you have in very small stacks",
+      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Threshold_amount": "Threshold value"
+    }
+  },
+  "VERSION_LOCK": {
+    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
+    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
   }
 }

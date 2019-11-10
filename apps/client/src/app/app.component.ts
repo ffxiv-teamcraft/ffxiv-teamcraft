@@ -87,6 +87,8 @@ export class AppComponent implements OnInit {
 
   collapsedAlarmsBar = true;
 
+  sidebarState = this.settings.sidebarState;
+
   public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
     isPlatformServer(this.platform) ? first() : tap()
   );
@@ -208,7 +210,7 @@ export class AppComponent implements OnInit {
       }
       this.inventoryService.load();
 
-      this.firebase.object('maintenance')
+      this.firebase.object<boolean>('maintenance')
         .valueChanges()
         .pipe(
           isPlatformServer(this.platform) ? first() : tap()
@@ -216,6 +218,17 @@ export class AppComponent implements OnInit {
         .subscribe(maintenance => {
           if (maintenance && environment.production) {
             this.router.navigate(['maintenance']);
+          }
+        });
+
+      this.firebase.object<string>('version_lock')
+        .valueChanges()
+        .pipe(
+          isPlatformServer(this.platform) ? first() : tap()
+        )
+        .subscribe(version => {
+          if (semver.ltr(environment.version, version)) {
+            this.router.navigate(['version-lock']);
           }
         });
 

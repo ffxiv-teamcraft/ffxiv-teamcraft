@@ -97,6 +97,20 @@ export class SettingsService {
     this.setSetting('compact-sidebar', compact.toString());
   }
 
+  public get sidebarState(): {[index:string]:boolean} {
+    return JSON.parse(this.getSetting('sidebar-state', JSON.stringify({
+      general: true,
+      sharing: true,
+      gathering: true,
+      helpers: false,
+      other: false
+    })));
+  }
+
+  public set sidebarState(state: {[index:string]:boolean}) {
+    this.setSetting('sidebar-state', JSON.stringify(state));
+  }
+
   public get autoMarkAsCompleted(): boolean {
     return this.getSetting('auto-mark-as-completed', 'false') === 'true';
   }

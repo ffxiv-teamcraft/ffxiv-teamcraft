@@ -14,23 +14,20 @@ function sendToRenderer(win, packet) {
   win && win.webContents && win.webContents.send('packet', packet);
 }
 
-module.exports.start = function(win, config, verbose) {
+module.exports.start = function(win, config, verbose, winpcap) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
-      if (!config.get('firewall')) {
-        exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
-        config.set('firewall', true);
-      }
+      exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
 
       const options = isDev ?
         {
-          monitorType: 'RawSocket',
-          parseAlgorithm: 'CPUHeavy'
+          monitorType: winpcap ? 'WinPCap' : 'RawSocket',
+          parseAlgorithm: 'PacketSpecific'
         } : {
-          parseAlgorithm: 'CPUHeavy',
+          parseAlgorithm: 'PacketSpecific',
           noData: true,
-          monitorType: 'RawSocket',
+          monitorType: winpcap ? 'WinPCap' : 'RawSocket',
           machinaExePath: machinaExePath,
           remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
           definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
@@ -40,29 +37,36 @@ module.exports.start = function(win, config, verbose) {
         options.logger = log.log;
       }
 
+      const acceptedPackets = [
+        'itemInfo',
+        'updateInventorySlot',
+        'currencyCrystalInfo',
+        'marketBoardItemListingCount',
+        'marketBoardItemListing',
+        'marketBoardItemListingHistory',
+        'marketTaxRates',
+        'playerSetup',
+        'playerSpawn',
+        'inventoryModifyHandler',
+        'npcSpawn',
+        'ping',
+        'playerStats',
+        'updateClassInfo',
+        'actorControl',
+        'initZone',
+        'weatherChange'
+      ];
+
       Machina = new MachinaFFXIV(options);
+      Machina.filter(acceptedPackets);
       Machina.start(() => {
         log.info('Packet capture started');
       });
+      Machina.setMaxListeners(0);
       Machina.on('any', (packet) => {
         if (verbose) {
           log.log(JSON.stringify(packet));
         }
-        const acceptedPackets = [
-          'itemInfo',
-          'updateInventorySlot',
-          'currencyCrystalInfo',
-          'marketBoardItemListing',
-          'marketBoardItemListingHistory',
-          'playerSetup',
-          'playerSpawn',
-          'inventoryModifyHandler',
-          'npcSpawn',
-          'ping',
-          'playerStats',
-          'updateClassInfo',
-          'actorControl'
-        ];
         if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {
           sendToRenderer(win, packet);
         }

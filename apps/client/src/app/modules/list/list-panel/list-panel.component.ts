@@ -129,6 +129,10 @@ export class ListPanelComponent {
     );
   }
 
+  public outDated(): boolean {
+    return this.list && this.list.isOutDated && typeof this.list.isOutDated === 'function';
+  }
+
   deleteList(list: List): void {
     this.listsFacade.deleteList(list.$key, list.offline);
   }

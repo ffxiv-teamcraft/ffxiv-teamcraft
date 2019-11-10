@@ -20,6 +20,9 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
+import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -45,14 +48,18 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasNavigationMap = false;
 
-  permissionLevel$: Observable<PermissionLevel>;
+  permissionLevel$: Observable<PermissionLevel>  = this.listsFacade.selectedListPermissionLevel$;
+
+  alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
+
+  currentZoneId$: Observable<number> = this.eorzeaFacade.zoneId$;
 
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
               private message: NzMessageService, private translate: TranslateService,
               private dialog: NzModalService, private listsFacade: ListsFacade,
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
-              private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService) {
-    this.permissionLevel$ = this.listsFacade.selectedListPermissionLevel$;
+              private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
+              private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade) {
   }
 
   addItems(): void {
@@ -87,7 +94,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         return this.progress.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
             map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
+            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key !== undefined)),
             filter(l => l !== undefined),
             first()
           ), 1, 'Saving_in_database');

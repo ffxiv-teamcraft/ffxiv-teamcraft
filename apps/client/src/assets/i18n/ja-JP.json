@@ -142,7 +142,8 @@
     "User": "User",
     "Tables": "Table",
     "Pie_charts": "Pie charts",
-    "Read_more_on_wiki": "Read more details on wiki"
+    "Read_more_on_wiki": "Read more details on wiki",
+    "Apply": "Apply"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -376,6 +377,7 @@
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "Contribute_to_universalis": "Contribute to Universalis",
     "Persist_inventory": "Save inventory in database (to share with web version)",
+    "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -464,6 +466,7 @@
     "Copy_list_as_text": "全てこのリストをテキストにコピーする",
     "Copied_as_text": "テキストがクリップボードにコピーされました",
     "Total_price": "総費用(ギルや各種通貨)",
+    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
     "Total_trade_price": "合計: ",
     "Add_all_alarms": "このリストに対する、アラームを追加する",
     "History": "履歴",
@@ -530,6 +533,10 @@
     "Contributions_popup": "Contributions stats",
     "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
     "Autofill": "Autofill",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -645,6 +652,7 @@
     "Title": "最適化されたルート",
     "Steps": "段階",
     "Loading_path": "推奨経路を読み込み中(数秒くらい所要)",
+    "You_are_here": "You are here",
     "STEP": {
       "Gathering": "Gather {{amount}} (total: {{total}})",
       "Hunting": "Get {{amount}} on monsters (total: {{total}})",
@@ -724,6 +732,7 @@
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
+    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
     "Include_consumables_notification": "消耗品の通知を含める",
     "Consumable_notification": "{{buffs}} を使用が必要とします",
     "Extra_wait": "追加待ち",
@@ -788,6 +797,7 @@
     "Rotation_solver": "Rotation solver",
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "Could_not_find_minstats": "Could not find min stats for this rotation",
+    "Remove_final_appraisal": "Remove Final Appraisal buff",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Good",
@@ -906,26 +916,18 @@
     "ROTATION_TIPS": {
       "Use_inner_quiet": "殆どのすべてのスキル回しは、HQ制作を目指しにするには '精神集中' が含まれる必要があります。このスキルは、品質を向上させつつ 'ビエルゴの祝福' と同じようなスキルが使うことができます。",
       "Use_inner_quiet_before_quality_increase": "品質を向上される前に '精神集中' スキルを使用しなければなりません。使用しない場合 '精神集中' スキルのスタックが、無駄遣いになる恐れがあります。",
-      "Use_ingenuity_I_instead": "制作を完成するのに十分のため、'工面算段Ⅱ' の代わりに、CP 8を節約する '工面算段' を使わなければなりません。",
-      "Use_cz_earlier": "CP回復効果を早めに得るためには 'コンファートゾーン' をもっと早めに使用する必要があります。",
-      "Use_reclaim": "'リクレイム' を使用する CPが十分のため、もし制作が失敗した場合、素材回収のために 'リクレイム' を工程に追加する必要があります。",
-      "Use_byregot_brow_low_iq_stacks": "'精神集中' 6スタック以下で 'ビエルゴの祝福' を使用しました。この場合には 'ビエルゴの技巧' の方がより良い品質となります。",
       "Use_byregot_blessing_high_iq_stacks": "'精神集中' 7スタック以上で 'ビエルゴの技巧' を使用しました。この場合は 'ビエルゴの祝福' の方がより良い品質となります。",
-      "Use_sh1_instead": "{{index}} 回目の工程で 'ステディハンド' を使用するのが 'ステディハンドII' を使用することより CP 3が節約できます。",
-      "Use_sh2_instead": "{{index}} 回目の工程で CP 3を消耗して 'ステディハンドⅡ' を使用するのが 'ステディハンド' を使用することより信頼が高いです。",
-      "Use_pbp_first": "'ピース・バイ・ピース' を他の工程を進む前に使用して下さい。このスキルは残りの作業量によって効果が違います。",
-      "Use_mume_if_pbp": "初工程で '確信' を使用して下さい。このスキルは 'ピース・バイ・ピース' の変わりにしつつ CP 9が確保できます。",
       "Use_observe_before_focused": "注視作業/加工を100％の成功率を得るためには {{index}} 回目の工程で '経過観察' を使用して下さい。",
       "Use_durability_restoration_later": "耐久度の回復スキルを無駄遣いにしないためには、{{index}} 回目の工程で耐久度の回復スキルを使用して下さい。",
       "Use_patient_touch_faster": "'専心加工' は '精神集中' のスタックが積もる前に使用して下さい。もしスキルが失敗したら、スタックが無駄遣いになる恐れがあります。",
-      "Use_advanced_touch_instead": "{{index}} 回目の工程で '加工' と '上級加工' を使用しました。 '中級加工' を2回使用する場合、 CP 2を節約しつつ同じような効果が得られます。",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 回目の工程で使用したバフが {{overlappingIndex}} 回目の工程で使用したバフと重複されます。バフの効果が最大限貰えるように、少し遅れて使う必要があります。",
       "Use_byregot_brow_5_stacks": "'ビエルゴの祝福' の代わりに 'ビエルゴの技巧' を使用すると同じ品質量が上昇しながら CP 6が節約できます。",
       "Use_ingenuity_before_byregot": "もっと高い品質の向上するために 'ビエルゴ' アクションを使用する前に '工面算段' を使用しなければなりません",
       "Use_more_quality_actions": "耐久度が残ってる状態で制作が完了しました。残ってる耐久度を利用して、多い加工スキルに使用する事ができます。",
-      "Use_prudent_touch_manipulation": "66レベル以上の場合 'マニピュレーションⅡ' と '倹約加工'を使用して、もっと高い品質を得なければなりません",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
       "Use_rapid_synthesis_earlier": "'突貫作業'を工程の最後に入れないで下さい。失敗する恐れがありますので、早く使用するのが制作スキル回しの信頼性が向上します。",
-      "Use_reflect_earlier": "'マイスターの切札: 真価' を加工アクションを使用する前に前もって使用しなければなりません"
+      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
+      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted"
     }
   },
   "PRICING": {
@@ -1289,6 +1291,7 @@
     "Currencies": "Currencies",
     "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
     "Unlocks": "Unlocks",
+    "Jump_to_page": "Quick jump to another page",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1548,11 +1551,37 @@
     "Click_to_add_to_progression": "Click to add to item progression",
     "Contribute_to_universalis": "Contribute data to universalis",
     "Reset_inventory": "Reset this inventory",
+    "Clean_all": "Reset all your inventories",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
       "FC_chest": "FC chest",
       "Bag": "Inventory",
-      "Other": "Other inventory"
+      "Other": "Other inventory",
+      "Armory": "Armory"
     }
+  },
+  "INVENTORY_OPTIMIZER": {
+    "Title": "Inventory optimizer",
+    "Ignore_item": "Ignore this tip for this item",
+    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
+    "Show_ignored": "Show ignored items",
+    "No_optimizations": "No optimizations available",
+    "CAN_BE_BOUGHT": {
+      "Title": "Items that can be bought with gil",
+      "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
+    },
+    "DUPLICATES": {
+      "Title": "Items that are duplicated across multiple containers",
+      "Message": "This item is also present in: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Items that you have in very small stacks",
+      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Threshold_amount": "Threshold value"
+    }
+  },
+  "VERSION_LOCK": {
+    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
+    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
   }
 }

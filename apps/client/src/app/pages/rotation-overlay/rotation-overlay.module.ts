@@ -11,6 +11,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { SimulatorModule } from '../simulator/simulator.module';
 
@@ -18,7 +19,7 @@ const routes: Routes = [
   {
     path: ':rotationId',
     component: RotationOverlayComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

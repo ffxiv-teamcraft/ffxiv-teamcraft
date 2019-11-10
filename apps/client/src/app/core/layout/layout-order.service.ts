@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LocalizedDataService } from '../data/localized-data.service';
 import { craftingLog } from '../data/sources/crafting-log';
 import { I18nToolsService } from '../tools/i18n-tools.service';
+import { itemSlots } from '../data/sources/item-slots';
 
 @Injectable()
 export class LayoutOrderService {
@@ -54,6 +55,15 @@ export class LayoutOrderService {
         return this.orderFunctions['LEVEL'](a, b);
       } else {
         return aJobId - bJobId;
+      }
+    },
+    'SLOT': (a, b) => {
+      const aSlot = itemSlots[a.id];
+      const bSlot = itemSlots[b.id];
+      if (aSlot === bSlot) {
+        return this.orderFunctions['JOB'](a, b);
+      } else {
+        return aSlot - bSlot;
       }
     }
   };

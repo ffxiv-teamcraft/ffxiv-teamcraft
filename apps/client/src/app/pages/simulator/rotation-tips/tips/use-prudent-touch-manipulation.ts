@@ -1,6 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { HastyTouchII, ManipulationII, PrudentTouch, SimulationResult } from '@ffxiv-teamcraft/simulator';
+import { PrudentTouch, SimulationResult, Manipulation, HastyTouch } from '@ffxiv-teamcraft/simulator';
 
 export class UsePrudentTouchManipulation extends RotationTip {
 
@@ -10,13 +10,13 @@ export class UsePrudentTouchManipulation extends RotationTip {
 
   canBeAppliedTo(simulationResult: SimulationResult): boolean {
     return !this.simulationHasAction(simulationResult, PrudentTouch)
-      && !this.simulationHasAction(simulationResult, ManipulationII)
+      && !this.simulationHasAction(simulationResult, Manipulation)
       && simulationResult.simulation.crafterStats.level >= 66;
   }
 
   matches(simulationResult: SimulationResult): boolean {
     return simulationResult.simulation.progression < simulationResult.simulation.recipe.progress
-      && simulationResult.hqPercent > 1 && this.simulationHasAction(simulationResult, HastyTouchII);
+      && simulationResult.hqPercent > 1 && this.simulationHasAction(simulationResult, HastyTouch);
   }
 
 }

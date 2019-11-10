@@ -14,11 +14,12 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { ClipboardModule } from 'ngx-clipboard';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 
 const routes: Routes = [{
   path: '',
   component: CustomLinksComponent,
-  canActivate: [MaintenanceGuard]
+  canActivate: [MaintenanceGuard, VersionLockGuard]
 }];
 
 @NgModule({

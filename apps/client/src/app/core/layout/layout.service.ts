@@ -18,6 +18,8 @@ export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
 
   public get defaultLayout(): ListLayout {
     const layout = new ListLayout();
+    layout.$key = 'defaultLayout';
+    layout.default = true;
     layout.name = 'Default Layout';
     layout.rows = [
       new LayoutRow('Timed nodes', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_TIMED.name,
@@ -37,6 +39,35 @@ export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
         6, false, false, false, true, false, false, true),
       new LayoutRow('Pre_crafts', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_CRAFT.name,
         8, false, true, false, true, false, false, true),
+      new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name,
+        7, true, false, false, true, false, false, true)
+    ];
+    layout.recipeOrder = LayoutRowOrder.ASC;
+    layout.recipeOrderBy = 'JOB';
+    return layout;
+  }
+
+  public get defaultLayoutNoVendor(): ListLayout {
+    const layout = new ListLayout();
+    layout.$key = 'defaultLayoutNoVendor';
+    layout.default = true;
+    layout.name = 'Default Layout without vendors';
+    layout.rows = [
+      new LayoutRow('Timed nodes', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_TIMED.name,
+        0, true, false, false, true, false, false, true),
+      new LayoutRow('Reducible', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_REDUCTION.name,
+        1, false, false, false, true, false, false, true),
+      new LayoutRow('Tomes/Tokens/Scrips', 'NAME', LayoutRowOrder.DESC, 'IS_TOME_TRADE:or:IS_SCRIPT_TRADE',
+        2, false, false, false, true, false, false, true),
+      new LayoutRow('Fishing', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERED_BY_FSH.name,
+        3, false, false, false, true, false, false, true),
+      new LayoutRow('Gathering', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERING.name,
+        4, true, false, false, true, false, false, true),
+      new LayoutRow('Drops_or_GC', 'NAME', LayoutRowOrder.DESC,
+        LayoutRowFilter.IS_MONSTER_DROP.name + ':or:' + LayoutRowFilter.IS_GC_TRADE.name,
+        5, false, false, false, true, false, false, true),
+      new LayoutRow('Pre_crafts', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_CRAFT.name,
+        6, false, true, false, true, false, false, true),
       new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name,
         7, true, false, false, true, false, false, true)
     ];

@@ -142,7 +142,8 @@
     "User": "用户",
     "Tables": "表格",
     "Pie_charts": "饼状图",
-    "Read_more_on_wiki": "在wiki上阅读更多详细信息"
+    "Read_more_on_wiki": "在wiki上阅读更多详细信息",
+    "Apply": "Apply"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -376,6 +377,7 @@
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "Contribute_to_universalis": "Contribute to Universalis",
     "Persist_inventory": "Save inventory in database (to share with web version)",
+    "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -464,6 +466,7 @@
     "Copy_list_as_text": "将整个清单复制为文本",
     "Copied_as_text": "内容已复制到剪贴板",
     "Total_price": "总费用(金币+其他货币)",
+    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
     "Total_trade_price": "合计: ",
     "Add_all_alarms": "为该清单添加所有闹钟",
     "History": "历史记录",
@@ -530,6 +533,10 @@
     "Contributions_popup": "贡献统计",
     "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
     "Autofill": "自动填写",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -645,6 +652,7 @@
     "Title": "最优路线",
     "Steps": "步骤",
     "Loading_path": "正在加载最优路径 (可能需要几秒)",
+    "You_are_here": "You are here",
     "STEP": {
       "Gathering": "采集{{amount}}（总计：{{total}}）",
       "Hunting": "打怪获取{{amount}}（总计：{{total}}）",
@@ -724,6 +732,7 @@
     "Fixed_notification_number": "固定提示音",
     "Starting_echo_number": "提示音",
     "Break_on_reclaim": "在无法使用回收前拆分宏",
+    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
     "Include_consumables_notification": "添加消耗品提示",
     "Consumable_notification": "使用 {{buffs}}",
     "Extra_wait": "单独延迟",
@@ -788,6 +797,7 @@
     "Rotation_solver": "手法求解器",
     "Recipe_picker_placeholder": "输入您想要制作的配方",
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
+    "Remove_final_appraisal": "Remove Final Appraisal buff",
     "STATE": {
       "Excellent": "最高品质",
       "Good": "高品质",
@@ -906,26 +916,18 @@
     "ROTATION_TIPS": {
       "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
       "Use_inner_quiet_before_quality_increase": "应在提高制品品质前使用内静，否则就是在浪费内静层数。",
-      "Use_ingenuity_I_instead": "应使用新颖替换新颖II，这已经足够完成制作并可以节约 8 点 CP。",
-      "Use_cz_earlier": "应向前移动安逸，以更早获得回复效果。",
-      "Use_reclaim": "剩余 CP 足以使用回收，你应该将其加入循环确保你能在制作失败时回收素材。",
-      "Use_byregot_brow_low_iq_stacks": "低于6层内静时使用了比尔格的祝福。替换为比尔格的技巧更好，因为这将获得更高的品质。",
       "Use_byregot_blessing_high_iq_stacks": "高于6层内静时使用了比尔格的技巧。替换为比尔格的祝福更好，因为这将获得更高的品质。",
-      "Use_sh1_instead": "在第 {{index}} 步时使用的稳手II 替换为稳手也可以完成制作并可以节约3点CP。",
-      "Use_sh2_instead": "在第 {{index}} 步时使用的稳手I 替换为稳手II 会多消耗 3 点 CP 但提供更高的成功率。",
-      "Use_pbp_first": "应该在使用任何加工系技能前使用渐进，因为渐进是基于剩余加工进度推进的。",
-      "Use_mume_if_pbp": "在第一步时应当使用坚信而不是渐进，可以节约 9 点 CP",
       "Use_observe_before_focused": "在第 {{index}} 步的注视系技能前应该使用观察，以获得 100% 成功率。",
       "Use_durability_restoration_later": "在第 {{index}} 使用的耐久回复技能应该向后移动，避免浪费耐久回复。",
       "Use_patient_touch_faster": "应在增加内静层数前使用专心加工，避免失败时浪费内静层数。",
-      "Use_advanced_touch_instead": "在第 {{index}} 步的加工和上级加工应该被替换为两个中级加工，可以少消耗 2 点 CP 获得同样的效果。",
       "Do_not_overlap_buffs": "在第 {{overlappedIndex}} 步的 buff 和第 {{overlappingIndex}} 步已有的 buff 重叠了。第二个 buff 应当推迟以获得最佳效果。",
       "Use_byregot_brow_5_stacks": "应使用比尔格的技巧替换比尔格的祝福，可获得同样质量并节约 6 点 CP。",
       "Use_ingenuity_before_byregot": "应在使用比尔格技能前使用新颖以提升品质收益。",
       "Use_more_quality_actions": "在结束制作前你还有剩余耐久，应使用更多加工系技能提升品质。",
-      "Use_prudent_touch_manipulation": "66+ 级应使用 掌握II + 俭约加工 来提升品质，以获得最高稳定性和收益",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
       "Use_rapid_synthesis_earlier": "高速制作不是100%成功，不应将其用作收尾技能。建议更早地使用高速制作以备万一，即使失败也能调整后续手法。",
-      "Use_reflect_earlier": "应更早使用专精绝技：闲静使其增益后续加工系技能。"
+      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
+      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted"
     }
   },
   "PRICING": {
@@ -1289,6 +1291,7 @@
     "Currencies": "货币",
     "Rowena_splendor": "罗薇娜显赫商会（带星=奖励+20%）",
     "Unlocks": "解锁",
+    "Jump_to_page": "Quick jump to another page",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "奖励"
@@ -1548,11 +1551,37 @@
     "Click_to_add_to_progression": "Click to add to item progression",
     "Contribute_to_universalis": "Contribute data to universalis",
     "Reset_inventory": "Reset this inventory",
+    "Clean_all": "Reset all your inventories",
     "BAG": {
       "SaddleBag": "陆行鸟鞍囊",
       "FC_chest": "FC chest",
       "Bag": "物品栏",
-      "Other": "Other inventory"
+      "Other": "Other inventory",
+      "Armory": "Armory"
     }
+  },
+  "INVENTORY_OPTIMIZER": {
+    "Title": "Inventory optimizer",
+    "Ignore_item": "Ignore this tip for this item",
+    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
+    "Show_ignored": "Show ignored items",
+    "No_optimizations": "No optimizations available",
+    "CAN_BE_BOUGHT": {
+      "Title": "Items that can be bought with gil",
+      "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
+    },
+    "DUPLICATES": {
+      "Title": "Items that are duplicated across multiple containers",
+      "Message": "This item is also present in: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Items that you have in very small stacks",
+      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Threshold_amount": "Threshold value"
+    }
+  },
+  "VERSION_LOCK": {
+    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
+    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
   }
 }

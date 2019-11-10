@@ -142,7 +142,8 @@
     "User": "Benutzer",
     "Tables": "Tabelle",
     "Pie_charts": "Kuchendiagramm",
-    "Read_more_on_wiki": "Details in der Wiki ansehen"
+    "Read_more_on_wiki": "Details im Wiki ansehen",
+    "Apply": "Übernehmen"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -371,11 +372,12 @@
     "Always_HQ_leves": "Freibrief-Routine immer mit HQ-Gegenständen berechnen",
     "Clickthrough_overlay": "Durchklickbares Overlay",
     "Disable_search_history": "Suchverlauf deaktivieren",
-    "Disable_search_debounce": "Deaktivieren Sie die Entprellung der Suche (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
+    "Disable_search_debounce": "Deaktivieren Sie die automatische Suche (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
     "Enable_packet_capture": "Paketerfassung aktivieren (für Echtzeit Inventar-Funktionen)",
-    "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Sqaure Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
+    "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Square Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
     "Contribute_to_universalis": "Zu Universalis beitragen",
-    "Persist_inventory": "Inventar in Datenbank speicher (um es mit der Web-Version zu teilen)",
+    "Persist_inventory": "Inventar in Datenbank speichern (um es mit der Web-Version zu teilen)",
+    "Track_items_on_sale": "Zum Verkauf stehende Gegenstände von Gehilfen verfolgen (erfordert Neustart/Aktualisierung)",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -464,6 +466,7 @@
     "Copy_list_as_text": "Gesamte Liste als Text kopieren",
     "Copied_as_text": "Inhalt in die Zwischenablage kopiert",
     "Total_price": "Gesamtausgaben (Gil und andere Währungen)",
+    "Ignore_currency": "Diese Währung ignorieren (funktioniert nur, wenn es eine andere Möglichkeit zum Kauf gibt)",
     "Total_trade_price": "Gesamt: ",
     "Add_all_alarms": "Alle Alarme für diese Liste erstellen",
     "History": "Historie",
@@ -530,6 +533,10 @@
     "Contributions_popup": "Beitragsstatistiken",
     "Autofill_details": "Input-Fortschritt, wenn Sie Einträge ingame erhalten, indem Sie Paketerfassung verwenden. Dies ist deaktiviert, wenn Sie die Liste verlassen, um unerwünschte Eingaben zu vermeiden.",
     "Autofill": "Automatisch ausfüllen",
+    "Autofill_notification_details": "Benachrichtigung zeigen, wenn ein Gegenstand durch Paketerfassung vollständig erfasst wurde",
+    "Autofill_notification": "Benachrichtigung bei Fertigstellung",
+    "Autofill_notification_title": "Gegenstand fertiggestellt",
+    "Autofill_notification_body": "{{itemName}} wurde in der Liste {{listName}} fertiggestellt",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -645,6 +652,7 @@
     "Title": "Optimierte Navigationsroute",
     "Steps": "Stationen",
     "Loading_path": "Optimierter Pfad wird geladen (kann mehrere Sekunden dauern)",
+    "You_are_here": "Du bist hier",
     "STEP": {
       "Gathering": "Sammel {{amount}} (Gesamt: {{total}})",
       "Hunting": "Erhalte {{amount}} von Monstern (Gesamt: {{total}})",
@@ -696,7 +704,7 @@
     "Participate": "Beitragen",
     "Participate_description": "Ermöglicht es, zu der Liste beizutragen",
     "Write": "Ändern",
-    "Write_description": "Ermöglicht es, die Liste oder den Workshop um neue Gegenstände oder Listen zu ergänzen",
+    "Write_description": "Ermöglicht es, neue Gegenstände oder Listen (bei Werkstätten) hinzuzufügen",
     "Title": "Rechteverwaltung",
     "Everyone": "Jeder",
     "You": "Du",
@@ -708,7 +716,7 @@
     "User_id_tip": "Die Nutzer-ID kann in der unteren rechten Ecke auf der Profilseite eingesehen werden.",
     "Saving": "Rechte werden gespeichert",
     "No_anonymous": "Du brauchst einen Account, um Rechte zu verwalten",
-    "Propagate_changes": "Berechtigungen auch auf Listen des Workshops anwenden",
+    "Propagate_changes": "Berechtigungen auch auf Listen innerhalb der Werkstatt anwenden",
     "Propagate_changes_done": "Änderungen wurden auf Listen des Workshops angewendet",
     "Team_notice": "Das mit dieser Liste verbundene Team hat automatisch das BEITRAGEN Recht",
     "Default_permission_level": "Standardberechtigung",
@@ -724,6 +732,7 @@
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Makros am letzten möglichen Schritt für Reklamation teilen",
+    "Break_before_byregots_blessing": "Makros vor Byregots Benediktion teilen",
     "Include_consumables_notification": "Benachrichtigung für Verzehrbares hinzufügen",
     "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
@@ -788,6 +797,7 @@
     "Rotation_solver": "Rotations-Löser",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
+    "Remove_final_appraisal": "Remove Final Appraisal buff",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
@@ -906,26 +916,18 @@
     "ROTATION_TIPS": {
       "Use_inner_quiet": "So gut wie alle Rotationen sollten Innere Ruhe beinhalten, wenn das Ziel ist, den Gegenstand in HQ herzustellen. Es erhöht stark die Kontrolle und somit die Qualität, und erlaubt die Verwendung von Kommandos wie Byregots Benediktion.",
       "Use_inner_quiet_before_quality_increase": "Du solltest Innere Ruhe vor allen Veredelungen ausführen, da diese ansonsten den Innere Ruhe-Statuseffekt nicht erhöhen.",
-      "Use_ingenuity_I_instead": "Du solltest Einfallsreichtum anstatt Einfallsreichtum II verwenden, um die Kosten um 8 HP zu verringern, da die Synthese auch damit erfolgreich sein wird.",
-      "Use_cz_earlier": "Du solltest Komfortzone früher verwenden, um früher deine HP zu regenerieren.",
-      "Use_reclaim": "Du hast genug HP übrig um Reklamation zu verwenden. Du solltest dieses Kommando zur Rotation hinzufügen, um beim Fehlschlag eine höhere Wahrscheinlichkeit zu haben deine Materialien zurückzuerhalten.",
-      "Use_byregot_brow_low_iq_stacks": "Du hast Byregots Benediktion mit weniger als 6 Stacks von Innere Ruhe verwendet. Byregots Schwung erzielt an dieser Stelle einen höheren Gewinn an Qualität.",
       "Use_byregot_blessing_high_iq_stacks": "Du hast Byregots Schwung mit mehr als 6 Stacks von Innere Ruhe verwendet. Byregots Benediktion erzielt an dieser Stelle einen höheren Gewinn an Qualität.",
-      "Use_sh1_instead": "Du hast Ruhige Hand II bei Schritt {{index}} verwendet, dabei erzielt Ruhige Hand I das selbe Resultat und kostet 3 HP weniger.",
-      "Use_sh2_instead": "Du hast Ruhige Hand I bei Schritt {{index}} verwendet, dabei ist Ruhige Hand II an dieser Stelle zuverlässiger und kostet nur 3 HP mehr.",
-      "Use_pbp_first": "Du solltest Stück für Stück vor jedem anderen Synthese-Kommando verwenden, da es auf dem übrig gebliebenen Fortschritt basiert.",
-      "Use_mume_if_pbp": "Du solltest Motorisches Gedächtnis auf Schritt 1 verwenden, um einen Schritt Stück für Stück zu ersetzen und dabei 9 HP zu sparen.",
       "Use_observe_before_focused": "Du solltest Beobachten vor dem \"Aufmerksamen\" Kommando auf Schritt {{index}} verwenden, um die Erfolgsrate auf 100% zu erhöhen.",
       "Use_durability_restoration_later": "Du solltest das Kommando zum Wiederherstellen der Belastbarkeit in Schritt {{index}} später nutzen, um keine Belastbarkeit zu verschwenden.",
       "Use_patient_touch_faster": "Du solltest Hingebungsvolle Veredelung nutzen bevor du Innere Ruhe aufbaust, um den Verlust beim Fehlschlagen zu minimieren.",
-      "Use_advanced_touch_instead": "Du hast bei Schritt {{index}} Veredelung und Höhere Veredelung direkt nacheinander genutzt. Du solltest für 2 CP weniger 2 Solide Veredelungen für dieselbe Effizienz nutzen.",
       "Do_not_overlap_buffs": "Du hast den bei Schritt {{overlappedIndex}} genutzten Statuseffekt in Schritt {{overlappingIndex}} überschnitten. Du solltest den zweiten verzögern um den maximalen Nutzen aus den Effekten zu ziehen.",
       "Use_byregot_brow_5_stacks": "Du solltest lieber Byregots Schwung anstelle von Byregots Benediktion benutzen, da dies die gleiche Qualität für 6HP weniger gibt.",
       "Use_ingenuity_before_byregot": "Du solltest Einfallsreichtum vor einem Byregots Kommando nutzen um mehr Qualität zu erhalten.",
       "Use_more_quality_actions": "Du hast nach Fertigstellung noch Belastbarkeit übrig. Diese solltest du am besten für Qualitäts-Kommandos nutzen.",
-      "Use_prudent_touch_manipulation": "Da du Stufe 66+ bist, solltest du die Kombo Manipulation II + Nachhaltige Veredelung nutzen, um die maximale Qualität und höhere Zuverlässigkeit zu erhalten.",
+      "Use_prudent_touch_manipulation": "Da du Stufe 66+ bist, solltest du die Kombination Manipulation + Nachhaltige Veredelung nutzen, um die maximale Qualität und höhere Zuverlässigkeit zu erhalten.",
       "Use_rapid_synthesis_earlier": "Du solltest Schnelle Bearbeitung nicht zur Fertigstellung nutzen. Nutze es früher um einen Fehlschlag besser ausgleichen zu können und die Zuverlässigkeit der Rotation zu verbessern.",
-      "Use_reflect_earlier": "Du solltest Ass des Spezialisten: Einkehr früher nutzen um die nachfolgenden Qualitäts-Kommandos zu verstärken."
+      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
+      "Avoid_using_good_actions": "Vermeide Aktionen die einen guten Zustand in einem Makro erfordern, da sie nicht vorhergesagt werden können"
     }
   },
   "PRICING": {
@@ -1289,6 +1291,7 @@
     "Currencies": "Währungen",
     "Rowena_splendor": "Rowenas Haus der Wunder",
     "Unlocks": "Freischaltung von",
+    "Jump_to_page": "Schnellwechsel zu anderer Seite",
     "ITEM": {
       "Masterpiece_base": "Basis",
       "Masterpiece_bonus": "Bonus"
@@ -1548,11 +1551,37 @@
     "Click_to_add_to_progression": "Klicken Sie hier, um zum Artikelverlauf hinzuzufügen",
     "Contribute_to_universalis": "Daten für Universalis beitragen",
     "Reset_inventory": "Dieses Inventar zurücksetzen",
+    "Clean_all": "Alle Inventare zurücksetzen",
     "BAG": {
       "SaddleBag": "Chocobo-Satteltasche",
       "FC_chest": "FG-Truhe",
       "Bag": "Inventar",
-      "Other": "Sonstige Vorräte"
+      "Other": "Sonstige Vorräte",
+      "Armory": "Arsenal"
     }
+  },
+  "INVENTORY_OPTIMIZER": {
+    "Title": "Inventaroptimierer",
+    "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
+    "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
+    "Show_ignored": "Ignorierte Gegenstände zeigen",
+    "No_optimizations": "Keine Optimierungen verfügbar",
+    "CAN_BE_BOUGHT": {
+      "Title": "Gegenstände, die mit Gil gekauft werden können",
+      "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen."
+    },
+    "DUPLICATES": {
+      "Title": "Gegenstände, die in mehreren Inventaren enthalten sind",
+      "Message": "Dieser Gegenstand ist ebenfalls in folgendem Inventar enthalten: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Gegenstände, die du in sehr kleinen Stapeln hast",
+      "Message": "Du hast nur {{amount}} von diesem Gegenstand. Lohnt es sich, diesen zu behalten?",
+      "Threshold_amount": "Grenzwerte"
+    }
+  },
+  "VERSION_LOCK": {
+    "Outdated": "Du verwendest eine veraltete Version von Teamcraft die nicht mehr richtig funktioniert",
+    "Refresh_or_download_latest": "Wenn du die Website verwendest, drücke einfach Strg + F5, um sie vollständig zu aktualisieren. Wenn du die Desktop-App verwendest, lade hier die neueste Version herunter: "
   }
 }

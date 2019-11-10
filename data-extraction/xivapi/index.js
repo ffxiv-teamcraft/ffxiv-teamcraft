@@ -2,12 +2,13 @@ const csv = require('csv-parser');
 const path = require('path');
 const fs = require('fs');
 const http = require('https');
-const { map, tap, switchMap, catchError, first } = require('rxjs/operators');
+const { map, switchMap, first, buffer, debounceTime } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
 const { aggregateAllPages, getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 const Multiprogress = require('multi-progress');
 const multi = new Multiprogress(process.stdout);
 const allMobs = require('../../apps/client/src/assets/data/mobs') || {};
+const fileStreamObservable = require('./file-stream-observable');
 
 const nodes = {};
 const gatheringPointToBaseId = {};
@@ -58,7 +59,8 @@ let todo = [
   'actions',
   'monsterDrops',
   'voyages',
-  'worlds'
+  'worlds',
+  'territories'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -769,7 +771,7 @@ if (hasTodo('quests')) {
 if (hasTodo('fates')) {
   const fates = {};
   const fatesDone$ = new Subject();
-  getAllPages('https://xivapi.com/Fate?columns=ID,Name_*,Description_*,IconMap,ClassJobLevel').subscribe(page => {
+  getAllPages('https://xivapi.com/Fate?columns=ID,Name_*,Description_*,IconMap,ClassJobLevel,Location').subscribe(page => {
     page.Results.forEach(fate => {
       fates[fate.ID] = {
         name: {
@@ -785,29 +787,37 @@ if (hasTodo('fates')) {
           fr: fate.Description_fr
         },
         icon: fate.IconMap,
-        level: fate.ClassJobLevel
+        level: fate.ClassJobLevel,
+        location: fate.Location
       };
     });
   }, null, () => {
     fatesDone$.next();
   });
 
+  const mapData = require('../../apps/client/src/assets/data/maps.json');
+
+  const levelLGB$ = fileStreamObservable(path.join(__dirname, 'input/LevelLGB.csv'));
   fatesDone$.pipe(
-    first(),
     switchMap(() => {
-      return combineLatest(Object.keys(fates).map(fateId => {
-        return get(`http://www.garlandtools.org/db/doc/fate/en/2/${fateId}.json`);
-      }));
+      return levelLGB$.pipe(
+        buffer(levelLGB$.pipe(debounceTime(500)))
+      );
     })
-  ).subscribe((gtFates) => {
-    gtFates.forEach(gtFate => {
-      if (gtFate && gtFate.fate && gtFate.fate.zoneid && gtFate.fate.coords) {
-        fates[gtFate.fate.id].position = {
-          zoneid: gtFate.fate.zoneid,
-          x: gtFate.fate.coords[0],
-          y: gtFate.fate.coords[1]
-        };
+  ).subscribe(csvData => {
+    Object.keys(fates).forEach(key => {
+      const location = csvData.find(row => +row.LocationID === fates[key].location);
+      if (!location) {
+        delete fates[key].location;
+        return;
       }
+      const c = mapData[location.Map].size_factor / 100;
+      fates[key].position = {
+        zoneid: +mapData[location.Map].placename_id,
+        x: Math.floor(10 * (41.0 / c) * ((location.X) / 2048.0) + 1) / 10,
+        y: Math.floor(10 * (41.0 / c) * ((location.Z) / 2048.0) + 1) / 10
+      };
+      delete fates[key].location;
     });
     persistToJsonAsset('fates', fates);
   });
@@ -1080,7 +1090,9 @@ if (hasTodo('items')) {
   const rarities = {};
   const itemIcons = {};
   const ilvls = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem').subscribe(page => {
+  const stackSizes = {};
+  const itemSlots = {};
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID').subscribe(page => {
     page.Results.forEach(item => {
       itemIcons[item.ID] = item.Icon;
       names[item.ID] = {
@@ -1091,12 +1103,16 @@ if (hasTodo('items')) {
       };
       rarities[item.ID] = item.Rarity;
       ilvls[item.ID] = item.LevelItem;
+      stackSizes[item.ID] = item.StackSize;
+      itemSlots[item.ID] = item.EquipSlotCategoryTargetID;
     });
   }, null, () => {
     persistToJsonAsset('item-icons', itemIcons);
     persistToJsonAsset('items', names);
     persistToTypescript('rarities', 'rarities', rarities);
     persistToTypescript('ilvls', 'ilvls', ilvls);
+    persistToTypescript('stack-sizes', 'stackSizes', stackSizes);
+    persistToTypescript('item-slots', 'itemSlots', itemSlots);
   });
 }
 
@@ -1142,6 +1158,9 @@ if (hasTodo('recipes')) {
   const recipes = [];
   getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0TargetID,ItemIngredient1TargetID,ItemIngredient2TargetID,ItemIngredient3TargetID,ItemIngredient4TargetID,ItemIngredient5TargetID,ItemIngredient6TargetID,ItemIngredient7TargetID,ItemIngredient8TargetID,ItemIngredient9TargetID,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
     page.Results.forEach(recipe => {
+      if (recipe.RecipeLevelTable === null) {
+        return;
+      }
       recipes.push({
         id: recipe.ID,
         job: recipe.ClassJob.ID,
@@ -1379,5 +1398,30 @@ if (hasTodo('worlds')) {
     });
   }, null, () => {
     persistToTypescript('worlds', 'worlds', worlds);
+  });
+}
+
+if (hasTodo('territories')) {
+  const territories = {};
+  getAllPages('https://xivapi.com/TerritoryType?columns=ID,PlaceName.ID').subscribe(page => {
+    page.Results.forEach(territory => {
+      territories[territory.ID] = territory.PlaceName.ID;
+    });
+  }, null, () => {
+    persistToTypescript('territories', 'territories', territories);
+  });
+}
+
+if (hasTodo('suggestedValues')) {
+  const suggested = {};
+  getAllPages('https://xivapi.com/RecipeLevelTable?columns=ID,SuggestedControl,SuggestedCraftsmanship').subscribe(page => {
+    page.Results.forEach(entry => {
+      suggested[entry.ID] = {
+        craftsmanship: entry.SuggestedCraftsmanship,
+        control: entry.SuggestedControl
+      };
+    });
+  }, null, () => {
+    persistToTypescript('suggested', 'suggested', suggested);
   });
 }

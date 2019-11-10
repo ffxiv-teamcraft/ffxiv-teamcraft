@@ -23,7 +23,10 @@ export function dirtyReducer(
     case DirtyActionTypes.AddDirty: {
       state = {
         ...state,
-        entries: [...state.entries, action.payload]
+        entries: [
+          ...state.entries.filter(entry => entry.id !== action.payload.id || entry.scope !== action.payload.scope),
+          action.payload
+        ]
       };
       break;
     }

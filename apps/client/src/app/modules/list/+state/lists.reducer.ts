@@ -3,19 +3,18 @@ import { List } from '../model/list';
 
 
 export interface ListsState {
-  compacts: List[];
   listDetails: List[];
   selectedId?: string; // which Lists record has been selected
   autocompletionEnabled?: boolean;
-  compactsConnected: boolean;
+  completionNotificationEnabled?: boolean;
+  listsConnected: boolean;
   needsVerification: boolean;
   deleted: string[];
 }
 
 export const initialState: ListsState = {
-  compacts: [],
   listDetails: [],
-  compactsConnected: false,
+  listsConnected: false,
   needsVerification: false,
   deleted: []
 };
@@ -42,14 +41,22 @@ export function listsReducer(
       break;
     }
 
+    case ListsActionTypes.ToggleCompletionNotification: {
+      state = {
+        ...state,
+        completionNotificationEnabled: action.enabled
+      };
+      break;
+    }
+
     case ListsActionTypes.MyListsLoaded: {
       state = {
         ...state,
-        compacts: [
-          ...state.compacts.filter(compact => compact.authorId !== action.userId || compact.offline),
+        listDetails: [
+          ...state.listDetails.filter(list => list.authorId !== action.userId || list.offline),
           ...action.payload
         ],
-        compactsConnected: true
+        listsConnected: true
       };
       break;
     }
@@ -60,11 +67,7 @@ export function listsReducer(
         listDetails: [
           ...state.listDetails.filter(list => !list.offline),
           ...action.payload
-        ],
-        compacts: [
-          ...state.compacts.filter(compact => !compact.offline),
-          ...action.payload.map(list => list.getCompact())
-        ],
+        ]
       };
       break;
     }
@@ -72,20 +75,9 @@ export function listsReducer(
     case ListsActionTypes.TeamListsLoaded: {
       state = {
         ...state,
-        compacts: [
-          ...state.compacts.filter(compact => compact.teamId !== action.teamId),
+        listDetails: [
+          ...state.listDetails.filter(list => list.teamId !== action.teamId),
           ...action.payload
-        ]
-      };
-      break;
-    }
-
-    case ListsActionTypes.ListCompactLoaded: {
-      state = {
-        ...state,
-        compacts: [
-          ...state.compacts.filter(compact => action.payload.$key !== compact.$key),
-          <List>action.payload
         ]
       };
       break;
@@ -94,8 +86,8 @@ export function listsReducer(
     case ListsActionTypes.SharedListsLoaded: {
       state = {
         ...state,
-        compacts: [
-          ...state.compacts.filter(compact => action.payload.find(c => c.$key === compact.$key) === undefined),
+        listDetails: [
+          ...state.listDetails.filter(list => action.payload.find(c => c.$key === list.$key) === undefined),
           ...action.payload
         ]
       };
@@ -105,8 +97,8 @@ export function listsReducer(
     case ListsActionTypes.ListsForTeamsLoaded: {
       state = {
         ...state,
-        compacts: [
-          ...state.compacts.filter(compact => action.payload.find(c => c.$key === compact.$key) === undefined),
+        listDetails: [
+          ...state.listDetails.filter(list => action.payload.find(c => c.$key === list.$key) === undefined),
           ...action.payload
         ]
       };
@@ -120,16 +112,6 @@ export function listsReducer(
           ...state.listDetails.map(list => list.$key === action.payload.$key ? action.payload : list)
         ]
       };
-      if (action.updateCompact && state.compacts.find(l => l.$key === action.payload.$key) !== undefined) {
-        state.compacts = [
-          ...state.compacts.map(list => {
-            if (list.$key !== action.payload.$key) {
-              return list;
-            }
-            return action.payload.getCompact();
-          })
-        ];
-      }
       break;
     }
 
@@ -144,21 +126,11 @@ export function listsReducer(
       break;
     }
 
-    case ListsActionTypes.UnloadListDetails: {
-      state = {
-        ...state,
-        listDetails: [
-          ...state.listDetails.filter(list => list.$key !== action.key)
-        ]
-      };
-      break;
-    }
-
     case ListsActionTypes.UpdateListIndex: {
       state = {
         ...state,
-        compacts: [
-          ...state.compacts.map(list => list.$key === action.payload.$key ? action.payload : list)
+        listDetails: [
+          ...state.listDetails.map(list => list.$key === action.payload.$key ? action.payload : list)
         ]
       };
       break;
@@ -167,8 +139,8 @@ export function listsReducer(
     case ListsActionTypes.DeleteList: {
       state = {
         ...state,
-        compacts: [
-          ...state.compacts.filter(list => list.$key !== action.key)
+        listDetails: [
+          ...state.listDetails.filter(list => list.$key !== action.key)
         ],
         deleted: [...state.deleted, action.key]
       };

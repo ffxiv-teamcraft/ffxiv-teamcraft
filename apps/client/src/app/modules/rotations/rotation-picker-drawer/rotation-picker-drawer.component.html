@@ -30,7 +30,6 @@
   </div>
 </div>
 <div *ngIf="rotations$ | async as rotations">
-
   <nz-list [nzDataSource]="rotations" [nzHeader]="header" [nzRenderItem]="rotation">
     <ng-template #header><i nz-icon nzType="solution"></i>&nbsp;{{'SIMULATOR.Rotations' | translate}}</ng-template>
     <ng-template #rotation let-rotation>

@@ -14,12 +14,13 @@ import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 
 const routes: Routes = [
   {
     path: ':id',
     component: WorkshopDetailsComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

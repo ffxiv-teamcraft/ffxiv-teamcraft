@@ -42,16 +42,16 @@ export class MergeListsPopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.workshops$ = combineLatest(this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$).pipe(
+    this.workshops$ = combineLatest([this.workshopsFacade.myWorkshops$, this.listsFacade.allListDetails$]).pipe(
       debounceTime(100),
-      map(([workshops, compacts]) => {
+      map(([workshops, lists]) => {
         return workshops
           .map(workshop => {
             return {
               workshop: workshop,
               lists: workshop.listIds
                 .map(key => {
-                  const list = compacts.find(c => c.$key === key);
+                  const list = lists.find(c => c.$key === key);
                   if (list !== undefined) {
                     list.workshopId = workshop.$key;
                   }
@@ -65,7 +65,7 @@ export class MergeListsPopupComponent implements OnInit {
           .sort((a, b) => a.workshop.index - b.workshop.index);
       })
     );
-    this.lists$ = combineLatest(this.listsFacade.myLists$, this.workshops$).pipe(
+    this.lists$ = combineLatest([this.listsFacade.myLists$, this.workshops$]).pipe(
       debounceTime(100),
       map(([lists, workshops]) => {
         // lists category shows only lists that have no workshop.

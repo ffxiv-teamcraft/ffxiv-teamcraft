@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { combineLatest, Observable, of } from 'rxjs';
 import { CustomLinksFacade } from '../../../modules/custom-links/+state/custom-links.facade';
-import { distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
+import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { RotationsFacade } from '../../../modules/rotations/+state/rotations.facade';
@@ -32,16 +32,20 @@ export class CustomLinksComponent {
           return of([]);
         }
         return combineLatest(links.map(link => {
-          return this.loadTargetName(link).pipe(map(targetName => {
-            return {
-              link: link,
-              targetName: targetName
-            };
-          }));
-        }));
-      }),
-      distinctUntilChanged((a, b) => {
-        return JSON.stringify(a) === JSON.stringify(b);
+          return this.loadTargetName(link).pipe(
+            map(targetName => {
+              return {
+                link: link,
+                targetName: targetName
+              };
+            }));
+        })).pipe(
+          map(results => {
+            return results.filter(row => {
+              return !!row.targetName;
+            });
+          })
+        );
       })
     );
     this.customLinksFacade.loadMyCustomLinks();
@@ -53,13 +57,13 @@ export class CustomLinksComponent {
         this.listsFacade.load(link.getEntityId());
         return this.listsFacade.allListDetails$.pipe(
           map(lists => lists.find(l => l.$key === link.getEntityId())),
-          filter(l => l !== undefined),
           tap(list => {
-            if (list.notFound) {
+            if (!list || list.notFound) {
+              console.log('NOT FOUND', link.getEntityId());
               this.customLinksFacade.deleteCustomLink(link.$key);
             }
           }),
-          map(list => list.name)
+          map(list => list ? list.name : null)
         );
       }
       case 'workshop': {
@@ -69,6 +73,7 @@ export class CustomLinksComponent {
           filter(l => l !== undefined),
           tap(workshop => {
             if (workshop.notFound) {
+              console.log('NOT FOUND', link.getEntityId());
               this.customLinksFacade.deleteCustomLink(link.$key);
             }
           }),
@@ -82,6 +87,7 @@ export class CustomLinksComponent {
           filter(l => l !== undefined),
           tap(rotation => {
             if (rotation.notFound) {
+              console.log('NOT FOUND', link.getEntityId());
               this.customLinksFacade.deleteCustomLink(link.$key);
             }
           }),
@@ -95,6 +101,7 @@ export class CustomLinksComponent {
           filter(l => l !== undefined),
           tap(folder => {
             if (folder.notFound) {
+              console.log('NOT FOUND', link.getEntityId());
               this.customLinksFacade.deleteCustomLink(link.$key);
             }
           }),
@@ -105,13 +112,13 @@ export class CustomLinksComponent {
         this.listsFacade.load(link.getEntityId());
         return this.listsFacade.allListDetails$.pipe(
           map(lists => lists.find(l => l.$key === link.getEntityId())),
-          filter(l => l !== undefined),
           tap(list => {
-            if (list.notFound) {
+            if (!list || list.notFound) {
+              console.log('NOT FOUND', link.getEntityId());
               this.customLinksFacade.deleteCustomLink(link.$key);
             }
           }),
-          map(list => list.name)
+          map(list => list ? list.name : null)
         );
       }
     }

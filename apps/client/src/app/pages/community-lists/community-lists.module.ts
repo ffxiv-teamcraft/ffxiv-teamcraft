@@ -10,12 +10,13 @@ import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: CommunityListsComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 
