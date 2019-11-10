@@ -7,11 +7,8 @@
   <label [(ngModel)]="fixedEcho" (ngModelChange)="generateMacros()" [nzDisabled]="!addEcho" nz-checkbox>
     {{'SIMULATOR.Fixed_notification_number' | translate}}
   </label>
-  <label [(ngModel)]="addConsumables" (ngModelChange)="generateMacros()" nz-checkbox>
-    {{'SIMULATOR.Include_consumables_notification' | translate}}
-  </label>
-  <label [(ngModel)]="breakOnReclaim" (ngModelChange)="generateMacros()" nz-checkbox>
-    {{'SIMULATOR.Break_on_reclaim' | translate}}
+  <label [(ngModel)]="breakBeforeByregotsBlessing" (ngModelChange)="generateMacros()" nz-checkbox>
+    {{'SIMULATOR.Break_before_byregots_blessing' | translate}}
   </label>
   <label [(ngModel)]="macroLock" (ngModelChange)="generateMacros()" nz-checkbox>
     {{'SIMULATOR.Macrolock' | translate}}
@@ -36,16 +33,5 @@
         <i nz-icon nzType="copy"></i>
     </button>
     <span *ngFor="let line of macroFragment" class="macro-line">{{line}}<br></span>
-  </pre>
-</div>
-<b>{{'SIMULATOR.Cross_class_setup' | translate}}</b>
-<nz-divider></nz-divider>
-<div class="macro">
-  <pre class="macro-fragment">
-    <button [cbContent]="getText(aactionsMacro)" class="copy-macro" ngxClipboard nz-button nzShape="circle"
-            nzSize="small">
-        <i nz-icon nzType="copy"></i>
-    </button>
-    <span *ngFor="let line of aactionsMacro" class="macro-line">{{line}}<br></span>
   </pre>
 </div>

@@ -1,4 +1,8 @@
 <ng-container *ngIf="display$ | async as display">
+  <div>
+    <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
+            (nzOnConfirm)="deleteInventories()">{{'INVENTORY.Clean_all' | translate}}</button>
+  </div>
   <div nz-row>
     <div *ngFor="let inventory of display; trackBy: trackByInventory" class="bag-container" nz-col nzMd="12" nzSm="24">
       <nz-spin [nzSpinning]="computingPrices[inventory.containerName]">
@@ -55,7 +59,7 @@
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
                         <div *ngIf="item.price" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                           <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
-                          <div>{{item.price | number:'1.0-0'}}</div>
+                          <div>{{item.price * item.quantity | number:'1.0-0'}}</div>
                         </div>
                         <app-db-button [id]="item.itemId" type="item"></app-db-button>
                       </div>

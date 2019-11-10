@@ -3,6 +3,7 @@ import { FilterMethod } from './filter-method';
 import { FilterResult } from './filter-result';
 import { CraftedBy } from '../../modules/list/model/crafted-by';
 import { List } from '../../modules/list/model/list';
+import { beastTribeNpcs } from '../data/sources/beast-tribe-npcs';
 
 export class LayoutRowFilter {
 
@@ -18,6 +19,28 @@ export class LayoutRowFilter {
     return row.vendors !== undefined && row.vendors.length > 0;
   }, 'CAN_BE_BOUGHT');
 
+  static IS_HQ = new LayoutRowFilter((row, list) => {
+    const recipesNeedingItem = list.finalItems
+      .filter(item => item.requires !== undefined)
+      .filter(item => {
+        return (item.requires || []).some(req => req.id === row.id);
+      });
+    if (row.requiredAsHQ) {
+      return true;
+    }
+    if (list.disableHQSuggestions) {
+      return false;
+    }
+    if (recipesNeedingItem.length === 0 || row.requiredAsHQ === false) {
+      return false;
+    } else {
+      let count = 0;
+      recipesNeedingItem.forEach(recipe => {
+        count += recipe.requires.find(req => req.id === row.id).amount * recipe.amount;
+      });
+      return count > 0;
+    }
+  }, 'IS_HQ');
 
   static IS_FATE_ITEM = new LayoutRowFilter(row => {
     return row.tradeSources !== undefined
@@ -28,29 +51,6 @@ export class LayoutRowFilter {
     if (row.tradeSources === undefined || row.vendors === undefined) {
       return false;
     }
-    const beastTribeNpcs = [
-      // Sylphic Vendor
-      1005569,
-      // Kobald Vendor
-      1008909,
-      // Sahagin Vendo
-      1008907,
-      // Amalj'aa Vendor
-      1005554,
-      // Ixali Vendor
-      1009205,
-      // Vath Stickpeddler
-      1016804,
-      // Luna Vanu
-      1016093,
-      // Mogmul Mogbelly
-      1017172,
-      // Shikitahe
-      1024219,
-      // Madhura
-      1024774,
-      // Gyosho
-      1025604];
     return row.vendors.some(vendor => {
       return beastTribeNpcs.indexOf(vendor.npcId) > -1;
     }) || row.tradeSources.some(trade => {

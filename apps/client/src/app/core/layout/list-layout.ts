@@ -32,6 +32,8 @@ export class ListLayout extends DataModel {
 
   public name: string;
 
+  public default = false;
+
   public rowsDisplay: {
     buttons: ItemRowMenuElement[];
     menu: ItemRowMenuElement[];

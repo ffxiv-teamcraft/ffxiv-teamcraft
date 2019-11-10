@@ -142,7 +142,8 @@
     "User": "Utilisateur",
     "Tables": "Tableau",
     "Pie_charts": "Graphiques circulaires",
-    "Read_more_on_wiki": "Lire plus de détails sur le wiki"
+    "Read_more_on_wiki": "Lire plus de détails sur le wiki",
+    "Apply": "Appliquer"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -376,6 +377,7 @@
     "Packet_capture_info": "Capturer des paquets est contre le CLUF (Contrat de license de l'utilisateur final), la même raison pour laquelle ACT est contre le CLUF. Mais Square Enix le tolère à moins que vous ne vous soyez entrain de le répéter à tout le monde en jeu. Ne faites rien et vous ne risquerez rien.",
     "Contribute_to_universalis": "Contribuer à Universalis",
     "Persist_inventory": "Enregistrer l'inventaire en base de données (pour partager avec la version web)",
+    "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -425,7 +427,7 @@
     "Lists_merged": "Listes fusionnées avec succès !",
     "Shared_lists": "Listes partagées avec vous",
     "Add_selection": "Ajouter la sélection à une liste",
-    "Add_selection_to_list": "Add selection to list",
+    "Add_selection_to_list": "Ajouter la sélection la liste",
     "Your_lists": "Vos listes",
     "Outdated_tag": "Pas à jour",
     "No_lists": "Vous n'avez pas de listes",
@@ -464,6 +466,7 @@
     "Copy_list_as_text": "Copier la liste en format textuel",
     "Copied_as_text": "Contenu copié dans le presse-papiers",
     "Total_price": "Prix total (échanges et gils)",
+    "Ignore_currency": "Ignorer cette devise (ne fonctionne que s'il y a une autre façon d'acheter)",
     "Total_trade_price": "Total : ",
     "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
@@ -530,6 +533,10 @@
     "Contributions_popup": "Statistiques des contributions",
     "Autofill_details": "Saisissez la progression au fur et à mesure que vous obtenez des éléments ingame, en utilisant la capture de paquets. Ceci est désactivé si vous quittez la page de liste, pour éviter les entrées non désirées.",
     "Autofill": "Saisie auto",
+    "Autofill_notification_details": "Afficher une notification lorsqu'un élément est terminé avec le remplissage automatique.",
+    "Autofill_notification": "Notification de complétion",
+    "Autofill_notification_title": "Objet complété",
+    "Autofill_notification_body": "{{itemName}} est maintenant complété pour la liste {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -645,6 +652,7 @@
     "Title": "Parcours optimisé",
     "Steps": "Étapes",
     "Loading_path": "Chargement du chemin optimisé (peut prendre plusieurs secondes)",
+    "You_are_here": "Vous êtes ici",
     "STEP": {
       "Gathering": "Récolter {{amount}} (total : {{total}})",
       "Hunting": "Obtenir {{amount}} sur les monstres (total : {{total}})",
@@ -724,6 +732,7 @@
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
     "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
+    "Break_before_byregots_blessing": "Diviser les macros avant la bénédiction de Byregot",
     "Include_consumables_notification": "Inclure une notification pour les consommables",
     "Consumable_notification": "Utilisez {{buffs}}",
     "Extra_wait": "Temps d'attente supp.",
@@ -788,6 +797,7 @@
     "Rotation_solver": "Résolveur de rotations",
     "Recipe_picker_placeholder": "Entrez le nom de la recette que vous voulez simuler",
     "Could_not_find_minstats": "Impossible de trouver les statistiques minimales pour cette rotation",
+    "Remove_final_appraisal": "Supprimer le buff \"Dernières vérifications\"",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Bon",
@@ -906,26 +916,18 @@
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Si vous souhaitez ajouter de la qualité sur votre rotation, elle se doit d'intégrer Calme Intérieur afin d'ajouter un bonus non négligeable et de pouvoir utiliser des actions comme la Bénédiction de Byregot.",
       "Use_inner_quiet_before_quality_increase": "Calme Intérieur doit être appliqué avant toute autre action afin de maximiser le gain en qualité.",
-      "Use_ingenuity_I_instead": "Utiliser Ingéniosité I au lieu d'Ingéniosité II est suffisant pour finir la fabrication et ainsi économiser 8 PS.",
-      "Use_cz_earlier": "Zone de confort devrait être placé plus tôt dans la rotation pour profiter plus rapidement de l'effet de restauration",
-      "Use_reclaim": "Vous disposez d'assez de PS pour utiliser Récupération, il peut être judicieux de l'ajouter pour récupérer les matériaux si jamais le fabrication venait à rater",
-      "Use_byregot_brow_low_iq_stacks": "Vous avez utilisé Bénédiction de Byregot avec moins de 6 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner plus de qualité.",
       "Use_byregot_blessing_high_iq_stacks": "Vous avez utilisé Contenance de Byregot avec plus de 6 cumuls de Calme Intérieur. Utiliser Bénédiction de Byregot à la place permettrait de gagner plus de qualité.",
-      "Use_sh1_instead": "Utiliser Main Sûre I au lieu de Main Sûre II au tour {{index}} produirait le même résultat pour 3 PS de moins.",
-      "Use_sh2_instead": "Utiliser Main Sûre II au lieu de Main Sûre I au tour {{index}} permettrait de gagner en fiabilité sur la rotation pour 3 PS de plus.",
-      "Use_pbp_first": "Pièce par pièce doit être utilisé avant toute autre action de progression afin de maximiser son effet car il se base sur la progression restante",
-      "Use_mume_if_pbp": "Vous devriez utiliser Mémoire Musculaire au premier tour pour remplacer Pièce par Pièce et gagner 9 PS",
       "Use_observe_before_focused": "Vous devriez utiliser Observation avant l'action au tour {{index}} afin de monter son taux de réussite à 100%.",
       "Use_durability_restoration_later": "Vous devriez utiliser l'action de réparation au tour {{index}} plus tôt afin d'éviter de gâcher une partie de son effet.",
       "Use_patient_touch_faster": "Vous devriez utiliser Ouvrage appliqué avant toute autre action de qualité afin de minimiser la perte de cumuls de Calme Intérieur en cas d'échec.",
-      "Use_advanced_touch_instead": "Vous avez utilisé Ouvrage de base puis Ouvrage avancé au tour {{index}}, utiliser deux Ouvrages standards produit le même résultat pour 2 PS de moins.",
       "Do_not_overlap_buffs": "Vous avez écrasé le buff appliqué au tour {{overlappedIndex}} avec le buff appliqué au tour {{overlappingIndex}}, vous appliquer le second buff plus tard pour éviter de perdre des tours d'effet sur le premier.",
       "Use_byregot_brow_5_stacks": "Vous avez utilisé Bénédiction de Byregot avec 5 cumuls de Calme Intérieur. Utiliser Contenance de Byregot à la place permettrait de gagner autant de qualité en dépensant 6 PS de moins.",
       "Use_ingenuity_before_byregot": "Vous devriez utiliser Ingeniosité avant l'action de Byregot afin d'obtenir un bonus sur le gain de qualité.",
       "Use_more_quality_actions": "Vous avez encore de la solidité à la fin de l'artisanat, vous devriez probablement l'utiliser pour ajouter des actions de qualité.",
-      "Use_prudent_touch_manipulation": "Comme vous êtes niveau 66+, vous devriez utiliser le combo Manipulation II + Ouvrage parcimonieux afin d'obtenir un avantage maximum de qualité et plus de fiabilité.",
+      "Use_prudent_touch_manipulation": "Comme vous êtes niveau 66+, vous devriez utiliser le combo Manipulation + Ouvrage parcimonieux afin d'obtenir un avantage maximum de qualité et plus de fiabilité.",
       "Use_rapid_synthesis_earlier": "Vous ne devriez pas utiliser la Synthèse Rapide comme une action finale, la mettre plus tôt pour pouvoir gérer l'échec de l'action est mieux pour la fiabilité de votre rotation.",
-      "Use_reflect_earlier": "Vous devriez utiliser l'action \"Atout : Sérénité\" plus tôt pour augmenter a puissance des actions de qualité suivantes."
+      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
+      "Avoid_using_good_actions": "Évitez d'utiliser des actions qui nécessitent un état \"Bon\" dans une macro, car cet état n'est pas prédictible"
     }
   },
   "PRICING": {
@@ -1289,6 +1291,7 @@
     "Currencies": "Devises",
     "Rowena_splendor": "Splendeurs de Rowena (étoile = +20% bonus)",
     "Unlocks": "Déverrouille",
+    "Jump_to_page": "Accès rapide à une autre page",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1548,11 +1551,37 @@
     "Click_to_add_to_progression": "Cliquez pour ajouter à la progression de l'élément",
     "Contribute_to_universalis": "Contribution des données à l'universalis",
     "Reset_inventory": "Réinitialiser cet inventaire",
+    "Clean_all": "Réinitialiser tous vos inventaires",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",
       "Bag": "Inventaire",
-      "Other": "Autre inventaire"
+      "Other": "Autre inventaire",
+      "Armory": "Arsenal"
     }
+  },
+  "INVENTORY_OPTIMIZER": {
+    "Title": "Optimiseur d'inventaire",
+    "Ignore_item": "Ignorer cette astuce pour cet objet",
+    "Remove_ignore_item": "Ne plus ignorer cette astuce pour cet objet",
+    "Show_ignored": "Afficher les objets ignorés",
+    "No_optimizations": "Aucune optimisation disponible",
+    "CAN_BE_BOUGHT": {
+      "Title": "Objets qui peuvent être achetés avec des gils",
+      "Message": "Cet objet peut être acheté aux PNJ avec gil et n'a pas besoin de réputation de tribu."
+    },
+    "DUPLICATES": {
+      "Title": "Éléments qui sont dupliqués à travers plusieurs conteneurs",
+      "Message": "Cet objet est également présent dans : {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Objets que vous avez en très petite quantité",
+      "Message": "Vous n'avez que {{amount}} de cet objet, est-ce nécessaire de les stocker?",
+      "Threshold_amount": "Seuil minimum"
+    }
+  },
+  "VERSION_LOCK": {
+    "Outdated": "Vous utilisez une version obsolète de Teamcraft",
+    "Refresh_or_download_latest": "Si vous utilisez le site, appuyez simplement sur Ctrl + F5 pour rafraîchir la page et le cache, si vous utilisez l'application de bureau, téléchargez la dernière version ici : "
   }
 }

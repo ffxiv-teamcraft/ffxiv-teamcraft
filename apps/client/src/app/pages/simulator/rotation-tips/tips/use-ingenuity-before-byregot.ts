@@ -3,7 +3,6 @@ import {
   ByregotsBlessing,
   ByregotsMiracle,
   Ingenuity,
-  IngenuityII,
   SimulationResult,
   Tables
 } from '@ffxiv-teamcraft/simulator';
@@ -17,7 +16,7 @@ export class UseIngenuityBeforeByregot extends RotationTip {
   canBeAppliedTo(simulationResult: SimulationResult): boolean {
     return (this.simulationHasAction(simulationResult, ByregotsBlessing)
       || this.simulationHasAction(simulationResult, ByregotsMiracle))
-      && (this.simulationHasAction(simulationResult, Ingenuity) || this.simulationHasAction(simulationResult, IngenuityII));
+      && (this.simulationHasAction(simulationResult, Ingenuity));
   }
 
   matches(simulationResult: SimulationResult): boolean {

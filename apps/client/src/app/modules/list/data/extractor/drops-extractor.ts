@@ -56,7 +56,7 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
         return monsterDrops[key].indexOf(item.id) > -1;
       })
       .map(monsterId => {
-        if (monsters[monsterId] === undefined) {
+        if (monsters[monsterId] === undefined || monsters[monsterId].positions[0] === undefined) {
           return {
             id: +monsterId
           };

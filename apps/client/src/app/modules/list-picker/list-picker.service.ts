@@ -27,13 +27,6 @@ export class ListPickerService {
       .afterClose
       .pipe(
         filter(list => list !== null && list !== undefined),
-        // Let's ask for detailed list before we add stuff to a compact ;)
-        tap(list => {
-          // Only load details if it's an alreayd existing list
-          if (list.$key) {
-            this.listsFacade.load(list.$key);
-          }
-        }),
         mergeMap(list => {
           // If this isn't a new list, wait for it to be loaded;
           if (list.$key) {

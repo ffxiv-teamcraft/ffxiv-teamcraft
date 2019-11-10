@@ -17,7 +17,7 @@ export class MaintenanceGuard implements CanActivate {
       return of(true);
     }
     // We want to block the route if the maintenance mode is on, meaning that we want to allow it if it's not.
-    return this.firebase.object('maintenance')
+    return this.firebase.object<boolean>('maintenance')
       .valueChanges()
       .pipe(
         map(maintenance => !maintenance || !environment.production)

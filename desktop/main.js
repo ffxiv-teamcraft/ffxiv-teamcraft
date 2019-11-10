@@ -10,6 +10,8 @@ const express = require('express');
 const fs = require('fs');
 const Machina = require('./machina.js');
 
+ipcMain.setMaxListeners(0);
+
 const oauth = require('./oauth.js');
 
 const argv = process.argv.slice(1);
@@ -38,6 +40,9 @@ for (let i = 0; i < argv.length; i++) {
   }
   if (argv[i] === '--verbose' || argv[i] === '-v') {
     options.verbose = true;
+  }
+  if (argv[i] === '--winpcap' || argv[i] === '-wp') {
+    options.winpcap = true;
   }
 }
 
@@ -122,7 +127,7 @@ function createWindow() {
   }
 
   if (config.get('machina') === true) {
-    Machina.start(win, config, options.verbose);
+    Machina.start(win, config, options.verbose, options.winpcap);
   }
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
@@ -292,7 +297,7 @@ ipcMain.on('toggle-machina', (event, enabled) => {
   config.set('machina', enabled);
   event.sender.send('toggle-machina:value', enabled);
   if (enabled) {
-    Machina.start(win, config, options.winpcap);
+    Machina.start(win, config, options.verbose, options.winpcap);
   } else {
     Machina.stop();
   }

@@ -39,6 +39,8 @@ export class WorkshopPanelComponent implements OnChanges {
   @Input()
   lists: List[] = [];
 
+  private listsLoaded: string[] = [];
+
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.workshop$]).pipe(
     map(([userId, workshop]) => workshop.getPermissionLevel(userId)),
     distinctUntilChanged(),
@@ -55,7 +57,7 @@ export class WorkshopPanelComponent implements OnChanges {
               private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
               private listsFacade: ListsFacade, private customLinksFacade: CustomLinksFacade,
               private listPicker: ListPickerService) {
-    this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.workshop$).pipe(
+    this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.workshop$]).pipe(
       map(([links, workshop]) => links.find(link => link.redirectTo === `workshop/${workshop.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
@@ -70,7 +72,7 @@ export class WorkshopPanelComponent implements OnChanges {
   }
 
   addLists(): void {
-    combineLatest(this.listsFacade.myLists$, this.workshopsFacade.myWorkshops$).pipe(
+    combineLatest([this.listsFacade.myLists$, this.workshopsFacade.myWorkshops$]).pipe(
       first(),
       switchMap(([lists, workshops]) => {
         const elements = lists
@@ -86,7 +88,7 @@ export class WorkshopPanelComponent implements OnChanges {
                 $key: list.$key,
                 name: list.name,
                 description: list.note
-              }
+              };
             })
           },
           nzFooter: null
@@ -199,9 +201,14 @@ export class WorkshopPanelComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     // Filter the lists we are missing and we need to load
-    this._workshop.listIds.filter(id => this.lists.find(l => l.$key === id) === undefined)
-      .forEach((missingCompact) => {
-        this.listsFacade.loadCompact(missingCompact);
+    this._workshop.listIds
+      .filter(id => {
+        return this.lists.find(l => l.$key === id) === undefined
+          && !this.listsLoaded.includes(id);
+      })
+      .forEach((missingList) => {
+        this.listsFacade.load(missingList);
+        this.listsLoaded.push(missingList);
       });
   }
 }

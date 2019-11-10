@@ -72,16 +72,24 @@ export class SettingsPopupComponent {
 
   public favoriteAetherytes = this.settings.favoriteAetherytes;
 
+  public get trackItemsOnSale(): boolean {
+    return localStorage.getItem('trackItemsOnSale') === 'true';
+  }
+
+  public set trackItemsOnSale(trackItemsOnSale: boolean) {
+    localStorage.setItem('trackItemsOnSale', trackItemsOnSale.toString());
+  }
+
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,
               private ipc: IpcService, private router: Router, private http: HttpClient,
               private userService: UserService, private customLinksFacade: CustomLinksFacade) {
 
-    this.ipc.on('always-on-top:value', (event, value) => {
+    this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
     });
-    this.ipc.on('toggle-machina:value', (event, value) => {
+    this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
     this.ipc.send('always-on-top:get');
@@ -114,7 +122,7 @@ export class SettingsPopupComponent {
 
   patreonOauth(): void {
     if (this.platform.isDesktop()) {
-      this.ipc.on('oauth-reply', (event, code) => {
+      this.ipc.once('oauth-reply', (event, code) => {
         this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-oauth?code=${code}&redirect_uri=http://localhost`)
           .pipe(
             switchMap((response: any) => {

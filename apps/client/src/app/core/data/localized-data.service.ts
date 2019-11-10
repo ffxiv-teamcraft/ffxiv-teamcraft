@@ -233,9 +233,9 @@ export class LocalizedDataService {
         language = 'en';
       }
     }
-    let res = this.getIndexByName(this.lazyData.craftActions, name, language);
+    let res = this.getIndexByName(this.lazyData.craftActions, name, language, true);
     if (res === -1) {
-      res = this.getIndexByName(this.lazyData.actions, name, language);
+      res = this.getIndexByName(this.lazyData.actions, name, language, true);
     }
     if (res === -1) {
       throw new Error('Data row not found.');
@@ -321,9 +321,10 @@ export class LocalizedDataService {
    * @param  array
    * @param {string} name
    * @param language
+   * @param flip
    * @returns {number}
    */
-  public getIndexByName(array: any, name: string, language: string): number {
+  public getIndexByName(array: any, name: string, language: string, flip = false): number {
     if (array === undefined) {
       return -1;
     }
@@ -331,7 +332,10 @@ export class LocalizedDataService {
       language = 'en';
     }
     let res = -1;
-    const keys = Object.keys(array);
+    let keys = Object.keys(array);
+    if (flip) {
+      keys = keys.reverse();
+    }
     for (const key of keys) {
       if (!array[key]) {
         continue;

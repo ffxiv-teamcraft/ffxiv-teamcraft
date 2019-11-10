@@ -142,7 +142,8 @@
     "User": "사용자",
     "Tables": "목록",
     "Pie_charts": "파이 차트",
-    "Read_more_on_wiki": "위키에서 자세히 보기"
+    "Read_more_on_wiki": "위키에서 자세히 보기",
+    "Apply": "적용"
   },
   "ALARMS": {
     "Title": "알람",
@@ -373,9 +374,10 @@
     "Disable_search_history": "검색 기록 비활성화",
     "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
     "Enable_packet_capture": "패킷 캡쳐를 사용 (실시간 소지품 동기화 기능 추가)",
-    "Packet_capture_info": "ACT와 마찬가지로 ToS기술을 이용하는 패킷 캡쳐는 이용약관에 위배됩니다. 하지만 스퀘어에닉스에서는 다른 사람들에게 알리지 않는 이상 이러한 프로그램들의 사용을 용인하므로 선택적으로 사용하시면 됩니다. 위험을 감수하고 싶지 않으시다면 사용을 하지 않으시면 됩니다.",
+    "Packet_capture_info": "패킷 캡쳐는 ACT(미터기) 와 같이 이용약관(ToS) 에 위배됩니다. 하지만 스퀘어에닉스에서 ACT같은 프로그램을 사용하는것을 다른사람들에게 말하지않으면 묵인해줍니다. 그냥 말하지마세요. 그러면 문제될건 없습니다.",
     "Contribute_to_universalis": "Universalis에 기여하기",
     "Persist_inventory": "데이터베이스에 소지품을 저장(웹버젼과 공유됨)",
+    "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -425,7 +427,7 @@
     "Lists_merged": "목록 병합이 완료되었습니다!",
     "Shared_lists": "나와 공유된 목록",
     "Add_selection": "선택항목을 목록에 추가",
-    "Add_selection_to_list": "Add selection to list",
+    "Add_selection_to_list": "선택항목을 목록에 추가",
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
     "No_lists": "목록이 없습니다",
@@ -464,6 +466,7 @@
     "Copy_list_as_text": "전체 목록을 텍스트로 복사",
     "Copied_as_text": "클립보드로 내용이 복사되었습니다",
     "Total_price": "총 비용 (길 및 화폐)",
+    "Ignore_currency": "이 화폐를 무시함(다른 화폐로 구매/교환이 가능할 때만 적용)",
     "Total_trade_price": "총합: ",
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "목록 변경내역",
@@ -530,6 +533,10 @@
     "Contributions_popup": "해당 목록의 기여도 통계",
     "Autofill_details": "게임 상에서 아이템을 획득했을 때 데이터 입력이 진행되며, 원치 않는 데이터 입력을 방지하기 위해 목록 페이지를 떠날 시에는 이 기능이 종료됩니다.",
     "Autofill": "자동 채우기",
+    "Autofill_notification_details": "자동 채우기로 아이템이 완료되면 알리기",
+    "Autofill_notification": "완료 알림",
+    "Autofill_notification_title": "아이템 완료",
+    "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -645,6 +652,7 @@
     "Title": "추천 경로",
     "Steps": "단계",
     "Loading_path": "추천 경로 불러오는 중 (몇 초 정도 소요될 수 있습니다)",
+    "You_are_here": "현재 위치",
     "STEP": {
       "Gathering": "채집으로 {{amount}}개 얻기 (총계: {{total}})",
       "Hunting": "몬스터에게 {{amount}}개 얻기 (총합: {{total}})",
@@ -724,6 +732,7 @@
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
+    "Break_before_byregots_blessing": "'비레고의 축복'을 사용하기 전에 매크로를 분리하십시오",
     "Include_consumables_notification": "소모품 알림 포함",
     "Consumable_notification": "{{buffs}} 사용이 필요합니다",
     "Extra_wait": "매크로 지연시간",
@@ -788,6 +797,7 @@
     "Rotation_solver": "로테이션 생성기",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
+    "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
     "STATE": {
       "Excellent": "최고품질",
       "Good": "고품질",
@@ -906,26 +916,18 @@
     "ROTATION_TIPS": {
       "Use_inner_quiet": "거의 모든 로테이션은 HQ제작을 목표로 한다면 '정신집중'이 포함되어야 합니다. 이 스킬은 품질을 향상 시켜주며, '비레고의 축복'과 같은 스킬들을 사용할 수 있게 해줍니다.",
       "Use_inner_quiet_before_quality_increase": "품질을 향상시키기 전에 '정신 집중' 을 사용해야 합니다. 사용하지 않을 경우, '정신 집중' 스택이 낭비됩니다.",
-      "Use_ingenuity_I_instead": "제작을 완성하는데 충분하기 때문에, '독창적 발상 2' 대신 CP 8을 덜 소모하는 '독창적 발상 1'을 사용해야 합니다.",
-      "Use_cz_earlier": "CP회복효과를 빨리 적용받기 위해선 '작업 요령'을 좀 더 일찍 사용해야 합니다.",
-      "Use_reclaim": "'재활용'을 사용할 CP가 충분하기 때문에, 만약 제작이 실패했다면, 재료회수를 위해 '재활용' 을 공정에 추가해야 합니다.",
-      "Use_byregot_brow_low_iq_stacks": "'정신 집중' 6스택 이하에서 '비레고의 축복'을 사용했습니다. 이 경우에는 '비레고의 기교'가 더 나은 품질을 제공합니다.",
       "Use_byregot_blessing_high_iq_stacks": "'정신 집중' 7스택 이상에서 '비레고의 기교'을 사용했습니다. 이 경우에는 '비레고의 축복'이 더 나은 품질을 제공합니다.",
-      "Use_sh1_instead": "{{index}} 번째 공정에서 '안정된 솜씨' 를 사용하는 것이 '안정된 솜씨 2'를 사용하는 것보다 CP 3을 절약할 수 있습니다.",
-      "Use_sh2_instead": "{{index}} 번째 공정에서 CP 3을 더 소모하여 '안정된 솜씨 2'를 사용하는 것이 '안정된 솜씨'를 사용하는 것보다 신뢰도가 더 높습니다.",
-      "Use_pbp_first": "'꾸준한 진척'을 다른 작업공정을 진행하기 전에 사용하세요. 이 스킬은 남은 작업량에 따라 효과가 다르기 때문입니다.",
-      "Use_mume_if_pbp": "첫 공정에서는 '확신' 을 사용해야 합니다. 이 스킬은 '꾸준한 진척'을 대신하면서도 CP 9를 확보할 수 있습니다.",
       "Use_observe_before_focused": "주시작업/가공을 100% 성공을 하기 위해서는 {{index}} 번째 공정에서 '경과 관찰' 을 사용해야 합니다.",
       "Use_durability_restoration_later": "내구도 회복스킬을 낭비하지 않기 위해서는 {{index}} 번째 공정이후 내구도 회복스킬을 사용하세요.",
       "Use_patient_touch_faster": "'전념 가공'은 '정신집중'의 스택이 쌓이기 전에 사용하세요. 만약 스킬이 실패한다면 스택이 낭비될 수도 있습니다.",
-      "Use_advanced_touch_instead": "{{index}} 번째 공정에서 '가공' 과 '고급 가공' 을 사용했습니다. '중급 가공' 을 두번 사용할 경우 CP 2를 절약하면서도 같은 효과를 발휘할 수 있습니다.",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 번째 공정에서 사용한 버프가 {{overlappingIndex}} 번째 공정에서 사용한 버프와 중복됩니다. 버프의 효과를 최대한 받을 수 있도록 조금 늦게 사용해야 합니다.",
       "Use_byregot_brow_5_stacks": "'비레고의 축복' 대신 '비레고의 기교'를 사용하시면 같은 품질량이 상승하면서도 CP 6을 절약할 수 있습니다.",
       "Use_ingenuity_before_byregot": "더 높은 품질향상을 위해 '비레고' 스킬을 사용하기 전에 '독창적 발상' 을 사용해야 합니다",
       "Use_more_quality_actions": "내구도가 남은 상태로 제작을 끝마쳤습니다. 남은 내구도를 이용하여 더 많은 가공스킬을 사용할 수 있습니다.",
-      "Use_prudent_touch_manipulation": "66레벨 이상일 경우 '교묘한 손놀림 2' 와 '절약 가공'을 사용하여 확실하게 더 높은 품질을 얻어야 합니다",
+      "Use_prudent_touch_manipulation": "66레벨 이상일 경우 '교묘한 손놀림' 과 '절약 가공'을 사용하여 확실하게 더 높은 품질을 얻어야 합니다",
       "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
-      "Use_reflect_earlier": "'전문장인의 특기: 진가' 를 가공스킬을 사용하기 전에 미리 사용해야 합니다"
+      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
+      "Avoid_using_good_actions": "매크로를 구상할때는 고품질을 요구하는 액션을 사용하지 마세요 고품질은 예측이 불가능합니다"
     }
   },
   "PRICING": {
@@ -1289,6 +1291,7 @@
     "Currencies": "화폐",
     "Rowena_splendor": "로웨나 상회 거래 (별 = 20% 추가 경험치)",
     "Unlocks": "개방",
+    "Jump_to_page": "뛰어넘기",
     "ITEM": {
       "Masterpiece_base": "기본",
       "Masterpiece_bonus": "보너스"
@@ -1548,11 +1551,37 @@
     "Click_to_add_to_progression": "아이템 추가를 진행하려면 클릭하세요.",
     "Contribute_to_universalis": "Universalis에 데이터를 기여하기",
     "Reset_inventory": "소지품 초기화",
+    "Clean_all": "모든 소지품 초기화",
     "BAG": {
       "SaddleBag": "초코보 가방",
       "FC_chest": "부대 금고",
       "Bag": "소지품",
-      "Other": "다른 소지품"
+      "Other": "다른 소지품",
+      "Armory": "장비함"
     }
+  },
+  "INVENTORY_OPTIMIZER": {
+    "Title": "소지품 최적화",
+    "Ignore_item": "이 아이템에는 이 팁 무시하기",
+    "Remove_ignore_item": "이 아이템에는 더이상 이 팁을 무시하지 않기",
+    "Show_ignored": "무시된 항목 보여주기",
+    "No_optimizations": "최적화가 가능하지 않습니다",
+    "CAN_BE_BOUGHT": {
+      "Title": "구매가능: 길",
+      "Message": "구매가능: 길 / 야만족우호도: 중립"
+    },
+    "DUPLICATES": {
+      "Title": "아이템이 여러곳에 분산되어 있습니다",
+      "Message": "이 아이템은 {{containers}} 에도 있습니다"
+    },
+    "HAS_TOO_FEW": {
+      "Title": "매우 소량으로 소유하고 있는 아이템",
+      "Message": "이 아이템을 {{amount}} 만큼 가지고 있지만 처분을 추천 함",
+      "Threshold_amount": "한계값"
+    }
+  },
+  "VERSION_LOCK": {
+    "Outdated": "현재 팀크래프트 구버젼을 사용중이기 때문에 일부 기능이 정상적으로 작동하지 않을 수 있습니다",
+    "Refresh_or_download_latest": "만약 팀크래프트를 웹페이지에서 사용중이면 Ctrl + F5키를 눌러 완전히 새로고침 해주세요. 데스크톱 앱을 사용중이라면 최신버젼을 해당 링크에서 다운 받을 수 있습니다: "
   }
 }

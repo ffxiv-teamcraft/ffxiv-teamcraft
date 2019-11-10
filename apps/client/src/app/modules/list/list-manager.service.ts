@@ -228,7 +228,7 @@ export class ListManagerService {
     });
     const add: Observable<List>[] = [];
     list.finalItems.forEach((recipe) => {
-      add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount, recipe.yield === 1, true, true));
+      add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount, false, true, true));
     });
     list.items = [];
     list.finalItems = [];
@@ -258,6 +258,7 @@ export class ListManagerService {
               }
             }
           });
+          resultList.updateAllStatuses();
           resultList.registry = permissions;
           return resultList;
         })

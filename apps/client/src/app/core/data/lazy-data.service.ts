@@ -11,6 +11,7 @@ import { LazyRecipe } from './lazy-recipe';
 import { PlatformService } from '../tools/platform.service';
 import { environment } from '../../../environments/environment';
 import { ListRow } from '../../modules/list/model/list-row';
+import { shareReplay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -78,7 +79,6 @@ export class LazyDataService {
   public patches: any[] = [];
   public patchContents: any = {};
   public recipes: LazyRecipe[] = [];
-  public extracts: ListRow[] = [];
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -98,6 +98,11 @@ export class LazyDataService {
     });
     return res;
   }
+
+  public extracts: ListRow[];
+  public extracts$: Observable<ListRow[]> = this.getData('/assets/data/extracts.json').pipe(
+    shareReplay(1)
+  );
 
   constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) private platform: Object,
               private platformService: PlatformService) {
@@ -153,14 +158,14 @@ export class LazyDataService {
         this.getData('https://xivapi.com/patchlist'),
         this.getData('/assets/data/recipes.json'),
         this.getData('/assets/data/patch-content.json'),
-        this.getData('/assets/data/extracts.json'),
         this.getData('/assets/data/zh/zh-actions.json'),
         this.getData('/assets/data/zh/zh-fates.json'),
         this.getData('/assets/data/zh/zh-gathering-bonuses.json'),
         this.getData('/assets/data/zh/zh-instances.json'),
         this.getData('/assets/data/zh/zh-leves.json'),
         this.getData('/assets/data/zh/zh-maps.json'),
-        this.getData('/assets/data/zh/zh-statuses.json')
+        this.getData('/assets/data/zh/zh-statuses.json'),
+        this.getData('/assets/data/extracts.json')
       ]
     ).subscribe(([
                    items,
@@ -206,14 +211,14 @@ export class LazyDataService {
                    patches,
                    recipes,
                    patchContents,
-                   extracts,
                    zhActions,
                    zhFates,
                    zhGatheringBonuses,
                    zhInstances,
                    zhLeves,
                    zhMaps,
-                   zhStatuses
+                   zhStatuses,
+                   extracts
                  ]) => {
       this.items = items;
       this.zhItems = zhItems;
@@ -258,7 +263,6 @@ export class LazyDataService {
       this.patches = patches as any[];
       this.recipes = recipes as LazyRecipe[];
       this.patchContents = patchContents;
-      this.extracts = extracts;
       this.zhActions = zhActions;
       this.zhFates = zhFates;
       this.zhGatheringBonuses = zhGatheringBonuses;
@@ -266,8 +270,8 @@ export class LazyDataService {
       this.zhLeves = zhLeves;
       this.zhMaps = zhMaps;
       this.zhStatuses = zhStatuses;
+      this.extracts = extracts;
       this.loaded$.next(true);
-      this.loaded$.complete();
     });
   }
 

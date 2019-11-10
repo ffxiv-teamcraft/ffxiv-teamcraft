@@ -95,6 +95,8 @@ import hr from '@angular/common/locales/hr';
 import ko from '@angular/common/locales/ko';
 import { ClipboardModule } from 'ngx-clipboard';
 import { InventoryModule } from './modules/inventory/inventory.module';
+import { EorzeaModule } from './modules/eorzea/eorzea.module';
+import { AngularFireFunctionsModule, FUNCTIONS_ORIGIN } from '@angular/fire/functions';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -163,7 +165,8 @@ const nzConfig: NzConfig = {
     },
     { provide: FirestoreSettingsToken, useValue: {} },
     { provide: NZ_ICONS, useValue: icons },
-    { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
+    // { provide: FUNCTIONS_ORIGIN, useValue: 'https://us-central1-ffxiv-teamcraft-beta.cloudfunctions.net' }
   ],
   imports: [
     FlexLayoutModule,
@@ -185,6 +188,7 @@ const nzConfig: NzConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireFunctionsModule,
 
     XivapiClientModule.forRoot(),
 
@@ -212,6 +216,7 @@ const nzConfig: NzConfig = {
     AlarmsSidebarModule,
 
     InventoryModule,
+    EorzeaModule,
 
     HttpClientModule,
 

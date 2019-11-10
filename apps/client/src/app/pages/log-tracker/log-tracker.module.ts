@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { CoreModule } from '../../core/core.module';
 import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
@@ -27,7 +28,7 @@ const routes: Routes = [
   {
     path: ':type',
     component: LogTrackerComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

@@ -142,7 +142,8 @@
     "User": "Пользователь",
     "Tables": "Table",
     "Pie_charts": "Pie charts",
-    "Read_more_on_wiki": "Подробнее на вики"
+    "Read_more_on_wiki": "Подробнее на вики",
+    "Apply": "Apply"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -376,6 +377,7 @@
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "Contribute_to_universalis": "Внести данные в Universalis",
     "Persist_inventory": "Save inventory in database (to share with web version)",
+    "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -464,6 +466,7 @@
     "Copy_list_as_text": "Копировать весь список как текст",
     "Copied_as_text": "Скопировано в буфер обмена",
     "Total_price": "Всего сделок (гил и др. валюты)",
+    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
     "Total_trade_price": "Всего: ",
     "Add_all_alarms": "Добавить все оповещения для этого списка",
     "History": "История",
@@ -530,6 +533,10 @@
     "Contributions_popup": "Contributions stats",
     "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
     "Autofill": "Автозаполнение",
+    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification": "Completion notification",
+    "Autofill_notification_title": "Item completed",
+    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -645,6 +652,7 @@
     "Title": "Оптимизировать навигационный маршрут",
     "Steps": "Шаги",
     "Loading_path": "Загрузка оптимизированного пути (может занять несколько секунд)",
+    "You_are_here": "You are here",
     "STEP": {
       "Gathering": "Собрать{{amount}} (всего: {{total}})",
       "Hunting": "Собрать {{amount}} с монстров (всегоо: {{total}})",
@@ -724,6 +732,7 @@
     "Fixed_notification_number": "Фиксированное уведомление",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Разделить макросы на этапе невозвратности Reclaim'а",
+    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
     "Include_consumables_notification": "Включить уведомления о расходных материалах",
     "Consumable_notification": "Используйте {{buffs}}",
     "Extra_wait": "Дополнительное ожидание",
@@ -788,6 +797,7 @@
     "Rotation_solver": "Генератор ротаций",
     "Recipe_picker_placeholder": "Введите название рецепта, который вы хотите сделать",
     "Could_not_find_minstats": "Не удалось определить минимальные характеристики для этой ротации",
+    "Remove_final_appraisal": "Remove Final Appraisal buff",
     "STATE": {
       "Excellent": "Отличное",
       "Good": "Хорошее",
@@ -906,26 +916,18 @@
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Почти все ротации должны включать Inner Quiet, если целью будет HQ предмет. Это обеспечивает действительно хороший рост качества и позволяет действия, такие как Byregot's Blessing.",
       "Use_inner_quiet_before_quality_increase": "Вам следует применить Inner Quiet перед любым увеличением качества, иначе вы потратите впустую часть стаков Inner Quiet.",
-      "Use_ingenuity_I_instead": "Вам следует использовать Ingenuity I вместо II для снижения стоимости на 8CP, так как этого будет достаточно для завершения крафта.",
-      "Use_cz_earlier": "Вам следует использовать Comfort Zone раньше, чтобы получить эффект восстановления быстрее",
-      "Use_reclaim": "У вас достаточно оставшегося CP для использования Reclaim, вы должны добавить его в ротацию, чтобы убедиться, что вы получите материалы обратно, если вы провалите крафт",
-      "Use_byregot_brow_low_iq_stacks": "Вы использовали Byregot's Blessing с менее чем шестью стаками. Использование Byregot's Brow в этом случае лучше, так как оно даст больше качества.",
       "Use_byregot_blessing_high_iq_stacks": "Вы использовали Byregot's Brow с более чем шестью стаками. Использование Byregot's Blessing в этом случае лучше, так как оно даст больше качества.",
-      "Use_sh1_instead": "Вы использовали Steady Hand II на шаге {{index}}, но использования Steady Hand I будет достаточно и это дешевле на 3CP.",
-      "Use_sh2_instead": "Вы использовали Steady Hand I на шаге {{index}}, но использование Steady Hand II повысит надежность всего за 3 CP.",
-      "Use_pbp_first": "Вы должны использовать Piece by Piece перед любым другим действием на прогресс, так как оно рассчитывается пропорционально от оставшегося прогресса",
-      "Use_mume_if_pbp": "Вам следует использовать Muscle Memory на шаге 1, чтобы заменить один Piece by Piece и получить дополнительные 9CP",
       "Use_observe_before_focused": "Вы должны использовать Observe перед Focused action на шаге {{index}}, чтобы получить бесплатно 100% шанс успеха.",
       "Use_durability_restoration_later": "Вы должны использовать действие восстановления прочности на шаге {{index}} позже, чтобы избежать восстановления прочности впустую.",
       "Use_patient_touch_faster": "Вам следует использовать Patient Touch перед добавлением Inner Quiet, чтобы минимизировать потерю стаков если действие провалится.",
-      "Use_advanced_touch_instead": "Вы использовали Basic Touch непосредственно перед Advanced Touch на шаге {{index}}. Вместо этого лучше использовать два Standart Touch'а чтобы получить столько же потенции на 2 CP меньше.",
       "Do_not_overlap_buffs": "Ваш бафф с шага {{overlappedIndex}} пересекается с баффом на шаге {{overlappingIndex}}. Лучше отложить второй бафф чтобы максимизировать пользу от обоих.",
       "Use_byregot_brow_5_stacks": "Лучше использовать Byregot's Brow вместо Byregot's Blessing чтобы получить столько же качества на 6 CP дешевле.",
       "Use_ingenuity_before_byregot": "Чтобы получить бонус качества, лучше использовать Ingenuity перед Byregot'ом.",
       "Use_more_quality_actions": "У вас осталась прочность в конце крафта. Возможно, лучше бы её использовать для нескольких действий, повышающих качество.",
-      "Use_prudent_touch_manipulation": "Поскольку вы 66+ уровня, вам лучше использовать комбо из Manipulation II + Prudent Touch для набора качества. Это позволит получить максимальное качество с большей надёжностью.",
+      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
       "Use_rapid_synthesis_earlier": "Не нужно использовать Rapid Synthesis в качестве завершающего действия. Если переместить его ближе к началу ротации, будет проще обработать его провал и получить выше надёжность ротации.",
-      "Use_reflect_earlier": "Лучше использовать действие специалиста Reflect чтоб усилить все последующие действия влияющие на качество."
+      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
+      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted"
     }
   },
   "PRICING": {
@@ -1289,6 +1291,7 @@
     "Currencies": "Валюты",
     "Rowena_splendor": "Ровена (Звезда = бонус +20%)",
     "Unlocks": "Разблокирует",
+    "Jump_to_page": "Quick jump to another page",
     "ITEM": {
       "Masterpiece_base": "БАЗА",
       "Masterpiece_bonus": "БОНУС"
@@ -1548,11 +1551,37 @@
     "Click_to_add_to_progression": "Нажмите, чтобы добавить к прогрессу предмета",
     "Contribute_to_universalis": "Внести данные в universalis",
     "Reset_inventory": "Reset this inventory",
+    "Clean_all": "Reset all your inventories",
     "BAG": {
       "SaddleBag": "Сумка Чокобо",
       "FC_chest": "FC сундук",
       "Bag": "Инвентарь",
-      "Other": "Другой инвентарь"
+      "Other": "Другой инвентарь",
+      "Armory": "Armory"
     }
+  },
+  "INVENTORY_OPTIMIZER": {
+    "Title": "Inventory optimizer",
+    "Ignore_item": "Ignore this tip for this item",
+    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
+    "Show_ignored": "Show ignored items",
+    "No_optimizations": "No optimizations available",
+    "CAN_BE_BOUGHT": {
+      "Title": "Items that can be bought with gil",
+      "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
+    },
+    "DUPLICATES": {
+      "Title": "Items that are duplicated across multiple containers",
+      "Message": "This item is also present in: {{containers}}."
+    },
+    "HAS_TOO_FEW": {
+      "Title": "Items that you have in very small stacks",
+      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Threshold_amount": "Threshold value"
+    }
+  },
+  "VERSION_LOCK": {
+    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
+    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
   }
 }

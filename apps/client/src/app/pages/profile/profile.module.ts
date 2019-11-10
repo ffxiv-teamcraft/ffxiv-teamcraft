@@ -18,6 +18,7 @@ import { UserPickerModule } from '../../modules/user-picker/user-picker.module';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { VerificationPopupComponent } from './profile-editor/verification-popup/verification-popup.component';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { SimulatorModule } from '../simulator/simulator.module';
 import { AutofillStatsPopupComponent } from './profile-editor/autofill-stats-popup/autofill-stats-popup.component';
 
@@ -25,12 +26,12 @@ const routes: Routes = [
   {
     path: '',
     component: ProfileEditorComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   },
   {
     path: ':userId',
     component: PublicProfileComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

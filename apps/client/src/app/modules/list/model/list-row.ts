@@ -68,4 +68,10 @@ export class ListRow extends DataModel {
   custom?: boolean;
 
   attachedRotation?: string;
+
+  canBeCrafted?: boolean;
+
+  hasAllBaseIngredients?: boolean;
+
+  craftableAmount?: number;
 }

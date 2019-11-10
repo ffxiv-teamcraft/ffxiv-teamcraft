@@ -101,28 +101,6 @@ export class List extends DataWithPermissions {
     return clone;
   }
 
-  public getCompact(): List {
-    const compact = new List();
-    for (const prop of Object.keys(this)) {
-      if (['finalItems', 'note'].indexOf(prop) > -1) {
-        compact[prop] = JSON.parse(JSON.stringify(this[prop]));
-      }
-    }
-    compact.name = this.name;
-    compact.version = this.version || '1.0.0';
-    compact.tags = this.tags;
-    compact.everyone = this.everyone;
-    compact.offline = this.offline;
-    compact.registry = this.registry;
-    compact.authorId = this.authorId;
-    compact.$key = this.$key;
-    compact.ephemeral = this.ephemeral;
-    compact.index = this.index;
-    compact.teamId = this.teamId;
-    compact.createdAt = this.createdAt;
-    return compact;
-  }
-
   public reset(): void {
     this.finalItems.forEach(recipe => this.resetDone(recipe));
   }
@@ -308,6 +286,23 @@ export class List extends DataWithPermissions {
     return canCraft;
   }
 
+  updateAllStatuses(updatedItemId?: number): void {
+    const directRequirements = [...this.finalItems, ...this.items].filter(item => {
+      return (item.requires || []).length > 0
+        && (!updatedItemId || item.requires.some(req => req.id === updatedItemId));
+    });
+    directRequirements.forEach(item => {
+      item.canBeCrafted = this.canBeCrafted(item);
+      item.craftableAmount = this.craftableAmount(item);
+    });
+    this.finalItems.forEach(i => {
+      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && i.done < i.amount && this.hasAllBaseIngredients(i);
+    });
+    this.items.forEach(i => {
+      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && i.done < i.amount && this.hasAllBaseIngredients(i);
+    });
+  }
+
   craftableAmount(item: ListRow): number {
     if (item.craftedBy === undefined || item.craftedBy.length === 0 || item.requires === undefined) {
       return 0;
@@ -334,7 +329,7 @@ export class List extends DataWithPermissions {
       return item.done >= amount;
     }
     // If we already have the precraft done, don't go further into the requirements.
-    if (item.done >= amount) {
+    if (item.done >= amount || item.canBeCrafted) {
       return true;
     }
     // Don't mind crystals
@@ -572,6 +567,7 @@ export class List extends DataWithPermissions {
         this.setDone(row.id, row.amount_needed - previousDone, !recipe, recipe, false, data.recipeId);
       }
     }
+    this.updateAllStatuses();
     return added;
   }
 
@@ -579,15 +575,8 @@ export class List extends DataWithPermissions {
     return this.items && this.items.length >= 150 || this.finalItems && this.finalItems.length > 80;
   }
 
-  /**
-   * Gets payload size for firestore database.
-   */
-  public getSize(): number {
-    return JSON.stringify(this).length;
-  }
-
   public isTooLarge(): boolean {
-    return this.getSize() > 800000;
+    return this.items.length + this.finalItems.length > 1000;
   }
 
   /**

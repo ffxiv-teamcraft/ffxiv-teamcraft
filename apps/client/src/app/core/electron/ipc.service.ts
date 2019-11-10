@@ -7,7 +7,9 @@ import { Observable, Subject } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class IpcService {
 
   public static readonly ROTATION_DEFAULT_DIMENSIONS = { x: 600, y: 200 };
@@ -28,6 +30,14 @@ export class IpcService {
 
   public get worldId$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('playerSpawn'), map(packet => packet.currentWorldId));
+  }
+
+  public get marketTaxRatePackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('marketTaxRates'));
+  }
+
+  public get marketboardListingCount$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('marketBoardItemListingCount'));
   }
 
   public get marketboardListing$(): Observable<any> {
@@ -59,7 +69,7 @@ export class IpcService {
   }
 
   public get actorControlPackets$(): Observable<any> {
-    return this.packets$.pipe(ofPacketType('actorControl'))
+    return this.packets$.pipe(ofPacketType('actorControl'));
   }
 
   public packets$: Subject<any> = new Subject<any>();
@@ -72,6 +82,7 @@ export class IpcService {
       if (window.require) {
         try {
           this._ipc = window.require('electron').ipcRenderer;
+          this._ipc.setMaxListeners(0);
           this.connectListeners();
         } catch (e) {
           throw e;
@@ -95,6 +106,12 @@ export class IpcService {
   public on(channel: string, cb: Function): void {
     if (this._ipc !== undefined) {
       this._ipc.on(channel, cb);
+    }
+  }
+
+  public once(channel: string, cb: Function): void {
+    if (this._ipc !== undefined) {
+      this._ipc.once(channel, cb);
     }
   }
 
@@ -147,7 +164,7 @@ export class IpcService {
     }
   }
 
-  public log(...args: any[]):void{
+  public log(...args: any[]): void {
     this.send('log', args);
   }
 }

@@ -4,7 +4,8 @@ import { PendingChangesService } from './pending-changes/pending-changes.service
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { LogTracking } from '../../model/user/log-tracking';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { diff } from 'deep-diff';
 
 @Injectable({ providedIn: 'root' })
 export class LogTrackingService extends FirestoreStorage<LogTracking> {
@@ -15,7 +16,9 @@ export class LogTrackingService extends FirestoreStorage<LogTracking> {
   }
 
   public set(uid: string, data: LogTracking, uriParams?: any): Observable<void> {
-    console.log('SET', data, uid);
+    if (diff(data, this.syncCache[uid]) === undefined) {
+      return of(null);
+    }
     return super.set(uid, data, uriParams);
   }
 

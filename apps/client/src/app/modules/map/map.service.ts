@@ -8,7 +8,7 @@ import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
 import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { NavigationObjective } from './navigation-objective';
-import { map, shareReplay, switchMap } from 'rxjs/operators';
+import { map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
 import * as _ from 'lodash';
 import { WorldNavigationStep } from './world-navigation-step';
@@ -16,6 +16,7 @@ import { requestsWithDelay } from '../../core/rxjs/requests-with-delay';
 import { aetherstream } from '../../core/data/sources/aetherstream';
 import { SettingsService } from '../settings/settings.service';
 import { LazyDataService } from '../../core/data/lazy-data.service';
+import { EorzeaFacade } from '../eorzea/+state/eorzea.facade';
 
 @Injectable()
 export class MapService {
@@ -29,7 +30,7 @@ export class MapService {
   private cache: { [index: number]: Observable<MapData> } = {};
 
   constructor(private xivapi: XivapiService, private mathService: MathToolsService, private l12n: LocalizedDataService,
-              private settings: SettingsService, private lazyData: LazyDataService) {
+              private settings: SettingsService, private lazyData: LazyDataService, private eorzea: EorzeaFacade) {
   }
 
   getMapById(mapId: number): Observable<MapData> {
@@ -76,10 +77,12 @@ export class MapService {
                 );
             })
           ).pipe(
-            map((optimizedPaths: WorldNavigationStep[]) => {
+            withLatestFrom(this.eorzea.mapId$.pipe(startWith(0))),
+            map(([optimizedPaths, mapId]: [WorldNavigationStep[], number]) => {
               const res: WorldNavigationStep[] = [];
               const pool = [...optimizedPaths];
-              const startingPoint = this.getAetherytes(this.settings.startingPlace)[0];
+              const startingPoint = this.getAetherytes(mapId || this.settings.startingPlace)[0]
+                || this.getAetherytes(this.settings.startingPlace)[0];
               res.push(pool.sort((a, b) => {
                 const aCost = this.getTpCost(startingPoint, a.map.aetherytes[0]);
                 const bCost = this.getTpCost(startingPoint, b.map.aetherytes[0]);
@@ -113,6 +116,11 @@ export class MapService {
     if (fromCoords === undefined || toCoords === undefined) {
       return 999;
     }
+
+    if (from.map === to.map) {
+      return 100;
+    }
+
     const base = (Math.sqrt(Math.pow(fromCoords.x - toCoords.x, 2) + Math.pow(fromCoords.y - toCoords.y, 2)) / 2) + 100;
     if (this.settings.favoriteAetherytes.indexOf(to.nameid) > -1) {
       return Math.floor(Math.min(base, 999) / 2);

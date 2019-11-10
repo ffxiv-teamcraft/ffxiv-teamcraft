@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UniversalisService } from '../api/universalis.service';
 import {
-  buffer,
-  debounceTime,
   delayWhen,
   distinctUntilChanged,
   filter,
@@ -24,6 +22,10 @@ import { ListsFacade } from '../../modules/list/+state/lists.facade';
 import { InventoryItem } from '../../model/user/inventory/inventory-item';
 import { ContainerType } from '../../model/user/inventory/container-type';
 import { InventoryFacade } from '../../modules/inventory/+state/inventory.facade';
+import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
+import { ofPacketType } from '../rxjs/of-packet-type';
+import { territories } from '../data/sources/territories';
+import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
 
 @Injectable({
   providedIn: 'root'
@@ -47,7 +49,7 @@ export class MachinaService {
 
   constructor(private ipc: IpcService, private userInventoryService: InventoryFacade,
               private universalis: UniversalisService, private authFacade: AuthFacade,
-              private listsFacade: ListsFacade) {
+              private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade) {
     this.inventory$ = this.userInventoryService.inventory$.pipe(
       distinctUntilChanged((a, b) => {
         return _.isEqual(a, b);
@@ -64,7 +66,7 @@ export class MachinaService {
           && packet.slot < 32000
           && packet.catalogId < 40000;
       }),
-      buffer(this.ipc.itemInfoPackets$.pipe(debounceTime(1000))),
+      debounceBufferTime(1000),
       filter(packets => packets.length > 0),
       withLatestFrom(this.retainerSpawns$),
       tap(([itemInfos, lastRetainerSpawned]) => this.ipc.log('ItemInfos', itemInfos.length, lastRetainerSpawned)),
@@ -86,6 +88,11 @@ export class MachinaService {
                 };
               })
               .value();
+            if (isRetainer) {
+              Object.keys(inventory)
+                .filter(key => key.startsWith(lastRetainerSpawned))
+                .forEach(key => inventory[key] = {});
+            }
             groupedInfos.forEach(group => {
               const containerKey = isRetainer ? `${lastRetainerSpawned}:${group.containerId}` : `${group.containerId}`;
               inventory.items[containerKey] = {};
@@ -142,6 +149,7 @@ export class MachinaService {
             } catch (e) {
               console.log(packet);
               console.error(e);
+              this.ipc.log(e.message, JSON.stringify(packet));
             }
             return inventory;
           })
@@ -156,15 +164,18 @@ export class MachinaService {
       filter(packet => {
         return packet.catalogId < 40000;
       }),
+      debounceBufferTime(500),
       withLatestFrom(this.retainerSpawns$),
-      switchMap(([packet, lastRetainerSpawned]) => {
+      switchMap(([packets, lastRetainerSpawned]) => {
         return this.inventory$.pipe(
           first(),
           map(inventory => {
-            const patch = inventory.updateInventorySlot(packet, lastRetainerSpawned);
-            if (patch) {
-              this._inventoryPatches$.next(patch);
-            }
+            packets.forEach(packet => {
+              const patch = inventory.updateInventorySlot(packet, lastRetainerSpawned);
+              if (patch) {
+                this._inventoryPatches$.next(patch);
+              }
+            });
             return inventory;
           })
         );
@@ -189,5 +200,19 @@ export class MachinaService {
           this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount, false, true);
         }
       });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('initZone')
+    ).subscribe(packet => {
+      const realZoneId = territories[packet.zoneID.toString()];
+      this.eorzeaFacade.setZone(realZoneId);
+      this.eorzeaFacade.setWeather(packet.weatherID);
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('weatherChange')
+    ).subscribe(packet => {
+      this.eorzeaFacade.setWeather(packet.weatherID);
+    });
   }
 }

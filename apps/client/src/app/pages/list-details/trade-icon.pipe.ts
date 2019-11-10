@@ -15,6 +15,13 @@ export class TradeIconPipe implements PipeTransform {
     27: 30, // Allied
     10307: 30, // Centurio
     26533: 30, // Sack of nuts (lol)
+    // Scripts
+    10309: 0, // Red crafter
+    10311: 0, // Red gatherer
+    17833: 30, // Yellow crafter
+    17834: 30, // Yellow gatherer
+    25199: 30, // White crafter
+    25200: 30, // White gatherer
     // Tomestones
     28: 28, // Poetics
     35: 0, // Creation (can't obtain them anymore)
@@ -34,13 +41,6 @@ export class TradeIconPipe implements PipeTransform {
     23382: 27, // Thavnairian Rain
     24988: 27, // Rakshasa Token
     24989: 27, // Doman Reiyaku
-    // Scripts
-    10309: 0, // Red crafter
-    10311: 0, // Red gatherer
-    17833: 25, // Yellow crafter
-    17834: 25, // Yellow gatherer
-    25199: 25, // White crafter
-    25200: 25, // White gatherer
     // Fates stones
     26807: 23,
     // Just in case
@@ -202,6 +202,7 @@ export class TradeIconPipe implements PipeTransform {
     23973: 8, // Alphascape Datalog v4.0
     23974: 8, // Alphascape Crystalloid
     23979: 8, // Military-grade Tomestone
+    16783: 8, // Machi demimatter
     // Ultimate
     21197: 5, // Bahamut
     23175: 5, // Ultima Arma

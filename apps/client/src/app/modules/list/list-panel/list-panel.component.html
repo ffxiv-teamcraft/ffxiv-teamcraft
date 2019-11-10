@@ -54,7 +54,7 @@
                   nz-tooltip>
             {{'Public_list' | translate}}
           </nz-tag>
-          <nz-tag *ngIf="_list.isOutDated()" [nzColor]="'magenta'">{{'LIST_TAGS.OUTDATED' | translate}}</nz-tag>
+          <nz-tag *ngIf="outDated()" [nzColor]="'magenta'">{{'LIST_TAGS.OUTDATED' | translate}}</nz-tag>
           <nz-tag *ngFor="let tag of getTags()">{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
         </div>
         <div class="description">

@@ -16,13 +16,14 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AlarmsSidebarModule } from '../../modules/alarms-sidebar/alarms-sidebar.module';
 import { FormsModule } from '@angular/forms';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
 
 const routes: Routes = [
   {
     path: '',
     component: AlarmsOverlayComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -40,7 +40,8 @@ import { IpcService } from '../../../core/electron/ipc.service';
 @Component({
   selector: 'app-list-details',
   templateUrl: './list-details.component.html',
-  styleUrls: ['./list-details.component.less']
+  styleUrls: ['./list-details.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListDetailsComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
 
@@ -100,7 +101,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
               private media: MediaObserver, public ipc: IpcService) {
     super(seoService);
-    this.ipc.on('toggle-machina:value', (event, value) => {
+    this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
     this.ipc.send('toggle-machina:get');
@@ -146,17 +147,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       .pipe(
         map(([team, userId, permissionsLevel]) => team.leader === userId || permissionsLevel >= PermissionLevel.OWNER)
       );
-
-    combineLatest([this.list$, this.listsFacade.compacts$]).pipe(
-      filter(([list, compacts]) => list.notFound && compacts.some(l => l.$key === list.$key)),
-      switchMap(([list, compacts]) => {
-        const listCompact = compacts.find(l => l.$key === list.$key);
-        return this.listManager.upgradeList(listCompact);
-      }),
-      takeUntil(this.onDestroy$)
-    ).subscribe(regeneratedList => {
-      this.listsFacade.updateList(regeneratedList);
-    });
 
     combineLatest([this.list$, this.teamsFacade.allTeams$, this.teamsFacade.selectedTeam$]).pipe(
       takeUntil(this.onDestroy$)

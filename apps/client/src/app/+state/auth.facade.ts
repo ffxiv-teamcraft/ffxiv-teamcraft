@@ -24,6 +24,7 @@ import {
 import { auth } from 'firebase/app';
 import { UserCredential } from '@firebase/auth-types';
 import {
+  catchError,
   distinctUntilChanged,
   distinctUntilKeyChanged,
   filter,
@@ -64,16 +65,21 @@ export class AuthFacade {
   favorites$ = this.user$.pipe(map(user => user.favorites));
 
   characters$ = this.user$.pipe(
+    filter(u => u.lodestoneIds !== undefined),
     switchMap((user: TeamcraftUser) => {
       return combineLatest(user.lodestoneIds.map(entry => {
         if (entry.id > 0) {
-          return this.userService.getCharacter(entry.id);
+          return this.userService.getCharacter(entry.id)
+            .pipe(
+              catchError(err => of(null))
+            );
         }
         return of({
           Character: user.customCharacters.find(c => c.ID === entry.id)
         });
       }));
     }),
+    map(characters => characters.filter(c => c !== null)),
     distinctUntilChanged((a, b) => a.length === b.length),
     shareReplay(1)
   );

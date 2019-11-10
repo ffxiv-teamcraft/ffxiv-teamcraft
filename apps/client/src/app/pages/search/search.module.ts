@@ -19,13 +19,14 @@ import { RotationsModule } from '../../modules/rotations/rotations.module';
 import { SearchIntroComponent } from './search-intro/search-intro.component';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { ClipboardModule } from 'ngx-clipboard';
 
 const routes: Routes = [
   {
     path: '',
     component: SearchComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

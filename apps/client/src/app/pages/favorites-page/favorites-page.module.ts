@@ -11,12 +11,13 @@ import { RotationsModule } from '../../modules/rotations/rotations.module';
 import { SimulatorModule } from '../simulator/simulator.module';
 import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-folders.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { VersionLockGuard } from '../version-lock/version-lock.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: FavoritesComponent,
-    canActivate: [MaintenanceGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 
