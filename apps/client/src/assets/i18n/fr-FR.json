@@ -390,6 +390,13 @@
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
+    },
+    "CATEGORIES": {
+      "Autofill_completion": "Autofill completion sound",
+      "Packet_capture": "Packet capture",
+      "Theme": "Theme",
+      "Search": "Search",
+      "Other": "Other"
     }
   },
   "PROFILE": {
@@ -477,6 +484,17 @@
     "Offline": "Hors ligne",
     "Offline_help": "Les listes hors ligne sont stockées dans le navigateur ou l'application, elles sont uniquement disponibles dans cette instance et ne peuvent pas être partagées, mais elles sont plus rapides car elles ne nécessitent pas d'appels réseau.",
     "Mark_whole_panel_done": "Marquer le contenu du panneau comme terminé",
+    "Set_color": "Set list color",
+    "COLORS": {
+      "RED": "Red",
+      "GREEN": "Green",
+      "YELLOW": "Yellow",
+      "BLUE": "Blue",
+      "PURPLE": "Purple",
+      "ORANGE": "Orange",
+      "PINK": "Pink",
+      "NONE": "None"
+    },
     "ROTATION": {
       "Attach": "Attacher une rotation",
       "Detach": "Détacher la rotation",
