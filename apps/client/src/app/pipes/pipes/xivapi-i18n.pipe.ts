@@ -4,8 +4,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 
 @Pipe({
-  name: 'xivapiI18n',
-  pure: false
+  name: 'xivapiI18n'
 })
 export class XivapiI18nPipe implements PipeTransform {
 

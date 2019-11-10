@@ -254,7 +254,6 @@ export class List extends DataWithPermissions {
         }
       }
     }
-    this.updateAllStatuses();
   }
 
   canBeCrafted(item: ListRow): boolean {
@@ -297,10 +296,10 @@ export class List extends DataWithPermissions {
       item.craftableAmount = this.craftableAmount(item);
     });
     this.finalItems.forEach(i => {
-      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && this.hasAllBaseIngredients(i);
+      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && i.done < i.amount && this.hasAllBaseIngredients(i);
     });
     this.items.forEach(i => {
-      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && this.hasAllBaseIngredients(i);
+      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && i.done < i.amount && this.hasAllBaseIngredients(i);
     });
   }
 

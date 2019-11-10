@@ -157,15 +157,11 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   moreAlarmsAvailable = 0;
 
-  canBeCrafted$: Observable<boolean>;
+  @Input()
+  permissionLevel: PermissionLevel;
 
-  craftableAmount$: Observable<number>;
-
-  hasAllBaseIngredients$: Observable<boolean>;
-
-  permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
-
-  alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
+  @Input()
+  alarmGroups: AlarmGroup[];
 
   userId$: Observable<string>;
 
@@ -185,9 +181,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   newTag: string;
 
-  private list$: Observable<List> = this.listsFacade.selectedList$.pipe(
-    onlyWhenItemChanges(this.item$)
-  );
+  private list$: Observable<List> = this.listsFacade.selectedList$;
 
   @ViewChild('inputElement', { static: false }) inputElement: ElementRef;
 
@@ -266,8 +260,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryFacade) {
     super();
-    this.canBeCrafted$ = this.item$.pipe(map(item => item.canBeCrafted));
-    this.hasAllBaseIngredients$ = this.item$.pipe(map(item => item.hasAllBaseIngredients));
 
     combineLatest([this.settings.settingsChange$, this.item$]).pipe(takeUntil(this.onDestroy$)).subscribe(([, item]) => {
       this.handleAlarms(item);
@@ -326,12 +318,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     setTimeout(() => {
       this.cdRef.detectChanges();
     });
-
-    this.craftableAmount$ = this.item$.pipe(
-      filter(() => this.layout.showCraftableAmount),
-      map(item => item.craftableAmount),
-      shareReplay(1)
-    );
 
     this.commentBadge$ = this.commentBadgeReloader$.pipe(
       exhaustMap(() => combineLatest([this.list$, this.itemId$])),

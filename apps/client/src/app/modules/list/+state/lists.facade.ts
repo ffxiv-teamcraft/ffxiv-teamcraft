@@ -23,7 +23,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -127,13 +127,13 @@ export class ListsFacade {
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
-      return combineLatest(
+      return combineLatest([
         this.selectedList$,
         loggedIn ? this.authFacade.user$ : of(null),
         this.authFacade.userId$,
         this.teamsFacade.selectedTeam$,
         loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null)
-      );
+      ]);
     }),
     filter(([list]) => list !== undefined),
     map(([list, user, userId, team, fcId]) => {

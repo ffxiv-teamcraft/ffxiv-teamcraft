@@ -21,6 +21,8 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
 import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -46,7 +48,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasNavigationMap = false;
 
-  permissionLevel$: Observable<PermissionLevel>;
+  permissionLevel$: Observable<PermissionLevel>  = this.listsFacade.selectedListPermissionLevel$;
+
+  alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
   currentZoneId$: Observable<number> = this.eorzeaFacade.zoneId$;
 
@@ -55,8 +59,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               private dialog: NzModalService, private listsFacade: ListsFacade,
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
               private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
-              private eorzeaFacade: EorzeaFacade) {
-    this.permissionLevel$ = this.listsFacade.selectedListPermissionLevel$;
+              private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade) {
   }
 
   addItems(): void {

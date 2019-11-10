@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -40,7 +40,8 @@ import { IpcService } from '../../../core/electron/ipc.service';
 @Component({
   selector: 'app-list-details',
   templateUrl: './list-details.component.html',
-  styleUrls: ['./list-details.component.less']
+  styleUrls: ['./list-details.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListDetailsComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
 

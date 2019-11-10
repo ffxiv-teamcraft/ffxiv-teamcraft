@@ -327,6 +327,7 @@ export class ListsEffects {
     }),
     map(([action, list]: [SetItemDone, List]) => {
       list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+      list.updateAllStatuses(action.itemId);
       return new UpdateListAtomic(list);
     })
   );

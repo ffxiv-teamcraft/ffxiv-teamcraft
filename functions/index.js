@@ -1,3 +1,4 @@
+const { applyPatch } = require('fast-json-patch');
 const functions = require('firebase-functions');
 require('firebase/app');
 require('firebase/firestore');
@@ -68,5 +69,17 @@ exports.solver = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
     const seed = req.body.seed ? CraftingActionsRegistry.deserializeRotation(req.body.seed) : undefined;
     return res.json(CraftingActionsRegistry.serializeRotation(solver.run(seed)));
   }
+});
+
+exports.updateList = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  const listRef = firestore.collection('lists').doc(data.uid);
+  return firestore.runTransaction(transaction => {
+    return transaction.get(listRef).then(listDoc => {
+      const list = listDoc.data();
+      applyPatch(list, data.diff);
+      transaction.update(listRef, list);
+      return Promise.resolve();
+    });
+  });
 });
 
