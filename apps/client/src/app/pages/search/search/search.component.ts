@@ -258,7 +258,7 @@ export class SearchComponent implements OnInit {
           // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
           return query.length > 0 || filters.length > 0;
         }
-        return query.length > 3 || filters.length > 0;
+        return query.length > 3 || (this.translate.currentLang === 'ja' && query.length > 0) || filters.length > 0;
       }),
       tap(([query, type, filters, [sortBy, sortOrder]]) => {
         this.allSelected = false;
@@ -305,7 +305,7 @@ export class SearchComponent implements OnInit {
             });
           }
         }
-        return this.data.search(processedQuery, type, filters, sort)
+        return this.data.search(processedQuery, type, filters, sort);
       }),
       tap(() => {
         this.loading = false;
