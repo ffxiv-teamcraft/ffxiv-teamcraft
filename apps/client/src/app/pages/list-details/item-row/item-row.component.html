@@ -502,7 +502,7 @@
     </div>
     <div *ngIf="layout?.showCraftableAmount && item.craftedBy !== undefined && item.craftedBy.length > 0">
       <div *ngIf="item.craftableAmount" class="craftable-amount">
-        {{'LIST_DETAILS.Amount_craftable' | translate:{ amount: craftableAmount } }}
+        {{'LIST_DETAILS.Amount_craftable' | translate:{ amount: item.craftableAmount } }}
       </div>
     </div>
   </div>

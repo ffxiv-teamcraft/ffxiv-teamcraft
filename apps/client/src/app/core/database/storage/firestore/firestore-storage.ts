@@ -24,7 +24,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   protected prepareData(data: Partial<T>): T {
-    return { ...data } as T;
+    return JSON.parse(JSON.stringify(data));
   }
 
   public stopListening(key: string, cacheEntry?: string): void {
