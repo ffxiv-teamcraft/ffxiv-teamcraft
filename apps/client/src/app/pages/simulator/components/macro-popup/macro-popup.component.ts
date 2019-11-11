@@ -45,6 +45,21 @@ export class MacroPopupComponent implements OnInit {
   tooManyAactions = false;
 
   constructor(private l12n: LocalizedDataService, private i18n: I18nToolsService, private translator: TranslateService, private settings: SettingsService) {
+    // TEMP: load settings and clean up localStorage
+    if (localStorage.getItem("macros:addecho") !== null){
+      this.addEcho = this.settings.macroEcho = localStorage.getItem("macros:addecho") !== 'false';
+      localStorage.removeItem("macros:addecho");
+    }
+
+    if (localStorage.getItem("macros:macrolock") !== null){
+      this.macroLock = this.settings.macroLock = localStorage.getItem('macros:macrolock') === 'true';
+      localStorage.removeItem("macros:macrolock");
+    }
+
+    if (localStorage.getItem("macros:consumables") !== null){
+      this.addConsumables = this.settings.macroConsumables = localStorage.getItem('macros:consumables') === 'true';
+      localStorage.removeItem("macros:consumables");
+    }
   }
 
   public generateMacros(): void {
