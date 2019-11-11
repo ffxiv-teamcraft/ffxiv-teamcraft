@@ -21,4 +21,5 @@ export interface Levequest {
   selected?: boolean;
   // Option to complete all deliveries (3x turn-in) is selected from search results
   allDeliveries?: boolean;
+  allowanceCost: number;
 }

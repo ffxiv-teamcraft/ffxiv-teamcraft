@@ -66,6 +66,10 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   globalExpChange$ = new BehaviorSubject<boolean>(false);
 
+  hideLarge = this.settings.hideLargeLeves;
+
+  hideLargeChange$ = new BehaviorSubject<boolean>(this.settings.hideLargeLeves);
+
   startingExp = 0;
 
   startingLevel = 1;
@@ -118,7 +122,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
           columns: ['LevelLevemete.Map.ID', 'CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon',
             'CraftLeve.ItemCount0', 'CraftLeve.ItemCount1', 'CraftLeve.ItemCount2', 'CraftLeve.ItemCount3',
             'CraftLeve.Repeats', 'Name_*', 'GilReward', 'ExpReward', 'ClassJobCategoryTargetID', 'ClassJobLevel',
-            'LevelLevemete.Map.PlaceNameTargetID', 'LevelLevemete.Y', 'PlaceNameStart.ID', 'ID'],
+            'LevelLevemete.Map.PlaceNameTargetID', 'LevelLevemete.Y', 'PlaceNameStart.ID', 'ID', 'AllowanceCost'],
           // 105 is the amount of leves from 1 to 70 for a single job
           limit: 105
         });
@@ -126,8 +130,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       shareReplay(1)
     );
 
-    this.results$ = combineLatest([this.globalExpChange$, res$]).pipe(
-      map(([globalExp, list]) => {
+    this.results$ = combineLatest([this.globalExpChange$, res$, this.hideLargeChange$]).pipe(
+      map(([globalExp, list, hideLarge]) => {
+        this.settings.hideLargeLeves = hideLarge;
         const results: Levequest[] = [];
         (<any>list).Results.forEach(leve => {
           results.push({
@@ -153,7 +158,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
             },
             startPlaceId: leve.PlaceNameStart.ID,
             deliveryPlaceId: leve.LevelLevemete.Map.PlaceNameTargetID,
-            repeats: leve.CraftLeve.Repeats
+            repeats: leve.CraftLeve.Repeats,
+            allowanceCost: leve.AllowanceCost,
           });
         });
 
@@ -163,6 +169,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
           } else {
             return a.jobId - b.jobId;
           }
+        }).filter((a) =>{
+          return !hideLarge || a.allowanceCost === 1
         });
       }),
       tap(() => this.loading = false)
