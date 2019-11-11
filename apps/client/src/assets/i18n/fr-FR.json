@@ -392,11 +392,11 @@
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
     },
     "CATEGORIES": {
-      "Autofill_completion": "Autofill completion sound",
-      "Packet_capture": "Packet capture",
-      "Theme": "Theme",
-      "Search": "Search",
-      "Other": "Other"
+      "Autofill_completion": "Son de notification de complétion",
+      "Packet_capture": "Capture de paquets",
+      "Theme": "Thème",
+      "Search": "Recherche",
+      "Other": "Autre"
     }
   },
   "PROFILE": {
@@ -484,17 +484,17 @@
     "Offline": "Hors ligne",
     "Offline_help": "Les listes hors ligne sont stockées dans le navigateur ou l'application, elles sont uniquement disponibles dans cette instance et ne peuvent pas être partagées, mais elles sont plus rapides car elles ne nécessitent pas d'appels réseau.",
     "Mark_whole_panel_done": "Marquer le contenu du panneau comme terminé",
-    "Set_color": "Set list color",
-    "Go_to_pinned": "Go to pinned list (right click to unpin)",
+    "Set_color": "Attribuer une couleur",
+    "Go_to_pinned": "Aller à la liste épinglée (clic droit pour désépingler)",
     "COLORS": {
-      "RED": "Red",
-      "GREEN": "Green",
-      "YELLOW": "Yellow",
-      "BLUE": "Blue",
-      "PURPLE": "Purple",
+      "RED": "Rouge",
+      "GREEN": "Vert",
+      "YELLOW": "Jaune",
+      "BLUE": "Bleu",
+      "PURPLE": "Violet",
       "ORANGE": "Orange",
-      "PINK": "Pink",
-      "NONE": "None"
+      "PINK": "Rose",
+      "NONE": "Aucune"
     },
     "ROTATION": {
       "Attach": "Attacher une rotation",
@@ -945,7 +945,7 @@
       "Use_more_quality_actions": "Vous avez encore de la solidité à la fin de l'artisanat, vous devriez probablement l'utiliser pour ajouter des actions de qualité.",
       "Use_prudent_touch_manipulation": "Comme vous êtes niveau 66+, vous devriez utiliser le combo Manipulation + Ouvrage parcimonieux afin d'obtenir un avantage maximum de qualité et plus de fiabilité.",
       "Use_rapid_synthesis_earlier": "Vous ne devriez pas utiliser la Synthèse Rapide comme une action finale, la mettre plus tôt pour pouvoir gérer l'échec de l'action est mieux pour la fiabilité de votre rotation.",
-      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
+      "Do_not_use_brand_without_name": "N'utilisez pas de Marque des Éléments sans Nom des Éléments actifs.",
       "Avoid_using_good_actions": "Évitez d'utiliser des actions qui nécessitent un état \"Bon\" dans une macro, car cet état n'est pas prédictible"
     }
   },
@@ -1571,7 +1571,7 @@
     "Contribute_to_universalis": "Contribution des données à l'universalis",
     "Reset_inventory": "Réinitialiser cet inventaire",
     "Clean_all": "Réinitialiser tous vos inventaires",
-    "Search_for_an_item": "Search for an item",
+    "Search_for_an_item": "Rechercher un objet",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",
@@ -1584,8 +1584,8 @@
     "Title": "Optimiseur d'inventaire",
     "Ignore_item": "Ignorer cette astuce pour cet objet",
     "Remove_ignore_item": "Ne plus ignorer cette astuce pour cet objet",
-    "Ignore_contaier": "Ignore this tip for this container",
-    "Remove_ignore_contaier": "Don't ignore this tip for this container anymore",
+    "Ignore_contaier": "Ignorer cette astuce pour cet inventaire",
+    "Remove_ignore_contaier": "Ne plus ignorer cette astuce pour cet inventaire",
     "Show_ignored": "Afficher les objets ignorés",
     "No_optimizations": "Aucune optimisation disponible",
     "CAN_BE_BOUGHT": {
