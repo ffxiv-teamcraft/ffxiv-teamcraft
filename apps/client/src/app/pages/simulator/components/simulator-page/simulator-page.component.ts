@@ -71,17 +71,18 @@ export class SimulatorPageComponent extends SeoPageComponent {
               this.router.navigate([item.craft[0].id], { relativeTo: this.route });
               return item.craft.find(c => c.id.toString() === params.get('recipeId'));
             }
-            return item.craft.find(c => c.id.toString() === params.get('recipeId'));
+            return item.craft.find(c => c.id.toString() === params.get('recipeId')) || item.craft[0];
           })
         );
-      })
+      }),
+      shareReplay(1)
     );
   }
 
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return combineLatest([this.rotationsFacade.selectedRotation$, this.recipe$, this.item$]).pipe(
-      filter(([,recipe]) => recipe !== undefined),
+      filter(([, recipe]) => recipe !== undefined),
       map(([rotation, recipe, item]) => {
         return {
           title: rotation.getName(),
