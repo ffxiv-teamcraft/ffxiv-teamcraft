@@ -1571,6 +1571,7 @@
     "Contribute_to_universalis": "Contribution des données à l'universalis",
     "Reset_inventory": "Réinitialiser cet inventaire",
     "Clean_all": "Réinitialiser tous vos inventaires",
+    "Search_for_an_item": "Search for an item",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",
@@ -1583,6 +1584,8 @@
     "Title": "Optimiseur d'inventaire",
     "Ignore_item": "Ignorer cette astuce pour cet objet",
     "Remove_ignore_item": "Ne plus ignorer cette astuce pour cet objet",
+    "Ignore_contaier": "Ignore this tip for this container",
+    "Remove_ignore_contaier": "Don't ignore this tip for this container anymore",
     "Show_ignored": "Afficher les objets ignorés",
     "No_optimizations": "Aucune optimisation disponible",
     "CAN_BE_BOUGHT": {
