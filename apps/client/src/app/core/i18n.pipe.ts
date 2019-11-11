@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { I18nToolsService } from './tools/i18n-tools.service';
 
 @Pipe({
-  name: 'i18n'
+  name: 'i18n',
+  pure: false
 })
 export class I18nPipe implements PipeTransform {
 
