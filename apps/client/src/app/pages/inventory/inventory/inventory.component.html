@@ -1,5 +1,13 @@
 <ng-container *ngIf="display$ | async as display">
-  <div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input type="text" nz-input [placeholder]="'INVENTORY.Search_for_an_item' | translate"
+             #searchInput
+             (input)="search$.next(searchInput.value)"/>
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <i nz-icon nzType="search"></i>
+    </ng-template>
     <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
             (nzOnConfirm)="deleteInventories()">{{'INVENTORY.Clean_all' | translate}}</button>
   </div>

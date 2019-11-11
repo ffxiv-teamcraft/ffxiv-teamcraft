@@ -9,6 +9,8 @@ import { NzMessageService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 
 @Component({
   selector: 'app-inventory',
@@ -16,6 +18,8 @@ import { UserInventory } from '../../../model/user/inventory/user-inventory';
   styleUrls: ['./inventory.component.less']
 })
 export class InventoryComponent {
+
+  public search$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   private prices$: BehaviorSubject<{ itemId: number, price: number }[]> = new BehaviorSubject([]);
 
@@ -68,22 +72,35 @@ export class InventoryComponent {
     })
   );
 
-  public display$: Observable<InventoryDisplay[]> = combineLatest([this.inventory$, this.prices$]).pipe(
-    map(([inventories, prices]) => {
-      return inventories.map(inventory => {
-        inventory.items = inventory.items.map(item => {
-          const priceEntry = prices.find(p => p.itemId === item.itemId);
-          item.price = priceEntry ? priceEntry.price : 0;
-          return item;
+  public display$: Observable<InventoryDisplay[]> = combineLatest([this.inventory$, this.prices$, this.search$]).pipe(
+    map(([inventories, prices, search]) => {
+      return inventories
+        .map(inventory => {
+          const clone = {...inventory};
+          clone.items = inventory.items
+            .map(item => {
+              const priceEntry = prices.find(p => p.itemId === item.itemId);
+              item.price = priceEntry ? priceEntry.price : 0;
+              return item;
+            })
+            .filter(item => {
+              if (search === '' || !search) {
+                return true;
+              }
+              return search.split(' ').every(fragment => {
+                return this.i18n.getName(this.l12n.getItem(item.itemId)).indexOf(fragment) > -1;
+              });
+            });
+          clone.totalPrice = inventory.items.reduce((total, item) => total + item.price * item.quantity, 0);
+          return clone;
         });
-        inventory.totalPrice = inventory.items.reduce((total, item) => total + item.price * item.quantity, 0);
-        return inventory;
-      });
     })
   );
 
   constructor(private inventoryService: InventoryFacade, private universalis: UniversalisService,
-              private authFacade: AuthFacade, private message: NzMessageService, private translate: TranslateService) {
+              private authFacade: AuthFacade, private message: NzMessageService,
+              private translate: TranslateService, private l12n: LocalizedDataService,
+              private i18n: I18nToolsService) {
   }
 
   public computePrices(inventory: InventoryDisplay): void {
