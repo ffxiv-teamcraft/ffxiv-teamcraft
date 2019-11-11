@@ -312,6 +312,62 @@ export class SettingsService {
     this.setSetting('customTheme', JSON.stringify(theme));
   }
 
+  public get macroExtraWait(): number {
+    return Math.max(0, Math.floor(+this.getSetting('macroExtraWait', '0')));
+  }
+
+  public set macroExtraWait(extraWait: number) {
+    this.setSetting('macroExtraWait', extraWait.toString());
+  }
+
+  public get macroEchoSeNumber(): number {
+    return Math.min(16, Math.max(1, Math.floor(+this.getSetting('macroEchoSeNumber', '0'))));
+  }
+
+  public set macroEchoSeNumber(echoSeNumber: number) {
+    this.setSetting('macroEchoSeNumber', echoSeNumber.toString());
+  }
+
+  public get macroEcho(): boolean {
+    return this.getSetting('macroEcho', 'true') === 'true';
+  }
+
+  public set macroEcho(echo: boolean) {
+    this.setSetting('macroEcho', echo.toString());
+  }
+
+  public get macroFixedEcho(): boolean {
+    return this.getSetting('macroFixedEcho', 'true') === 'true';
+  }
+
+  public set macroFixedEcho(fixedEcho: boolean) {
+    this.setSetting('macroFixedEcho', fixedEcho.toString());
+  }
+
+  public get macroLock(): boolean {
+    return this.getSetting('macroLock', 'true') === 'true';
+  }
+
+  public set macroLock(lock: boolean) {
+    this.setSetting('macroLock', lock.toString());
+  }
+
+  public get macroConsumables(): boolean {
+    return this.getSetting('macroConsumables', 'true') === 'true';
+  }
+
+  public set macroConsumables(addConsumables: boolean) {
+    this.setSetting('macroConsumables', addConsumables.toString());
+  }
+
+  public get macroBreakBeforeByregot(): boolean {
+    return this.getSetting('macroBreakBeforeByregot', 'true') === 'true';
+  }
+
+  public set macroBreakBeforeByregot(breakBeforeByregot: boolean) {
+    this.setSetting('macroBreakBeforeByregot', breakBeforeByregot.toString());
+  }
+
   private getSetting(name: string, defaultValue: string): string {
     return this.cache[name] || defaultValue;
   }
