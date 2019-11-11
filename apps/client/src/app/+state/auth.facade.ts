@@ -122,7 +122,7 @@ export class AuthFacade {
       return a.FreeCompanyId === b.FreeCompanyId;
     }),
     map(([character, user]) => {
-      if (character === null || character.FreeCompanyId === undefined || character.FreeCompanyId === null
+      if (!character || !character.FreeCompanyId || !character.FreeCompanyId
         || character.FreeCompanyId.toString() === user.currentFcId) {
         return null;
       }

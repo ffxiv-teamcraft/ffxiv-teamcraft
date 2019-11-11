@@ -24,7 +24,9 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   protected prepareData(data: Partial<T>): T {
-    return JSON.parse(JSON.stringify(data));
+    const clone = JSON.parse(JSON.stringify(data));
+    delete clone.$key;
+    return clone;
   }
 
   public stopListening(key: string, cacheEntry?: string): void {
@@ -46,7 +48,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       this.cache[uid] = this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).snapshotChanges()
         .pipe(
           map((snap: any) => {
-            const valueWithKey: T = <T>{ $key: snap.payload.id, ...snap.payload.data() };
+            const valueWithKey: T = <T>{ ...snap.payload.data(), $key: snap.payload.id };
             if (!snap.payload.exists) {
               throw new Error(`${this.getBaseUri(uriParams)}/${uid} Not found`);
             }
@@ -57,7 +59,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
             return res;
           }),
           tap(res => {
-            this.syncCache[uid] = res
+            this.syncCache[uid] = res;
           }),
           takeUntil(this.stop$.pipe(filter(stop => stop === uid)))
         );
@@ -71,7 +73,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
           return (<any>data).clone(true);
         } else {
           const clone = new (<Instantiable>this.getClass())();
-          return Object.assign(clone, {...data});
+          return Object.assign(clone, { ...data });
         }
       })
     );

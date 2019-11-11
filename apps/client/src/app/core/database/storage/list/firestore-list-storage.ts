@@ -147,7 +147,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
         switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: List = <List>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             });
@@ -177,7 +177,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
         switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: List = <List>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             })
@@ -202,7 +202,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
         switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: List = <List>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             });
@@ -215,7 +215,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return this.firestore.collection(this.getBaseUri(), ref => ref.where('public', '==', true))
       .snapshotChanges()
       .pipe(
-        switchMap((snaps: any[]) => combineLatest(snaps.map(snap => this.completeListData({ $key: snap.payload.doc.id, ...snap.payload.doc.data() })))),
+        switchMap((snaps: any[]) => combineLatest(snaps.map(snap => this.completeListData({ ...snap.payload.doc.data(), $key: snap.payload.doc.id })))),
         map((lists: any[]) => this.serializer.deserialize<List>(lists, [List])),
         map((lists: List[]) => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())),
         first()

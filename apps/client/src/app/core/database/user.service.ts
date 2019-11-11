@@ -144,7 +144,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
       .snapshotChanges()
       .pipe(
         map((snaps: any[]) => {
-          const valueWithKey: TeamcraftUser[] = snaps.map(snap => ({ $key: snap.payload.doc.id, ...snap.payload.doc.data() }));
+          const valueWithKey: TeamcraftUser[] = snaps.map(snap => ({ ...snap.payload.doc.data(), $key: snap.payload.doc.id }));
           return this.serializer.deserialize<TeamcraftUser>(valueWithKey, [this.getClass()]);
         })
       );

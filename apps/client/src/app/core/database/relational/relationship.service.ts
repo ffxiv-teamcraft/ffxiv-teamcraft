@@ -18,7 +18,7 @@ export abstract class RelationshipService<T extends Relationship<any, any>> exte
     return this.firestore.collection(this.getBaseUri(), ref => ref.where('from', '==', from))
       .snapshotChanges()
       .pipe(
-        map((snaps: any[]) => snaps.map(snap => ({ $key: snap.payload.doc.id, ...snap.payload.doc.data() }))),
+        map((snaps: any[]) => snaps.map(snap => ({ ...snap.payload.doc.data(), $key: snap.payload.doc.id }))),
         map((lists: any[]) => this.serializer.deserialize<T>(lists, [this.getClass()]))
       );
   }
@@ -27,7 +27,7 @@ export abstract class RelationshipService<T extends Relationship<any, any>> exte
     return this.firestore.collection(this.getBaseUri(), ref => ref.where('to', '==', to))
       .snapshotChanges()
       .pipe(
-        map((snaps: any[]) => snaps.map(snap => ({ $key: snap.payload.doc.id, ...snap.payload.doc.data() }))),
+        map((snaps: any[]) => snaps.map(snap => ({ ...snap.payload.doc.data(), $key: snap.payload.doc.id }))),
         map((lists: any[]) => this.serializer.deserialize<T>(lists, [this.getClass()]))
       );
   }

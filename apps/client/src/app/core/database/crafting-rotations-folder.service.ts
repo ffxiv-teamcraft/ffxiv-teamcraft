@@ -22,7 +22,7 @@ export class CraftingRotationsFolderService extends FirestoreRelationalStorage<C
         map((snaps: DocumentChangeAction<CraftingRotationsFolder>[]) => {
           const folders = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: CraftingRotationsFolder = <CraftingRotationsFolder>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: CraftingRotationsFolder = <CraftingRotationsFolder>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             });
