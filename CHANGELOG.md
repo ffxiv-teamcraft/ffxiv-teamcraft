@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.12...v6.2.0) (2019-11-11)
+
+
+### Bug Fixes
+
+* **links:** fixed an issue with custom links not loading properly ([03e0ab9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/03e0ab9))
+* **list:** fixed a bug with colors not being reset properly after list reset ([3df9ced](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3df9ced))
+* **list:** fixed an issue with "show craftable amount" option ([7a7d2b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7a7d2b2))
+* **list:** fixed an issue with some replica items not being added properly to a list ([2f98db4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f98db4))
+* **list:** reduced bandwidth usage when updating a list by ~90% ([fd10f19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd10f19))
+* **marketboard:** fixed an issue with marketboard data sometimes crashing ([cdf7a47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cdf7a47))
+* **perf:** big performance optimization for CPU usage on big lists with autofill ([d2fda9c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d2fda9c)), closes [#1196](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1196)
+* **profile:** fixed an issue with character linking with lodestone ID ([6cd11cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6cd11cb))
+* **rotations:** fixed an issue with favorite rotations breaking in some cases ([ea420c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea420c7))
+* **search:** fixed an issue with japanese language not working with a short query ([f7d01c3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f7d01c3)), closes [#1211](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1211)
+* **settings:** added categories to the settings popup for better display ([b685da8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b685da8))
+* **simulator:** fix brand of elements tip incorrectly triggering ([9c34eb1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c34eb1))
+* **simulator:** possible fix for hq ingredients selection being empty ([e2655c9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2655c9))
+* **trades:** currency ignore button now disappears if there's no alternative ([5011e34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5011e34))
+
+
+### Features
+
+* **autofill:** added an option to change notification sound and volume ([47c62fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/47c62fc))
+* **inventory:** you can now search for an item in the inventory page ([24d6a95](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/24d6a95))
+* **list:** you can now pin a list to be able to access it easily from anywhere ([986de63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/986de63))
+* **list:** you can now set custom color for list panels ([0b9507b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0b9507b))
+* **optimizer:** you can now ignore an entire inventory ([f3948f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f3948f2))
+* **packet capture:** CN-region packet capture is now supported ^^ ([a21e382](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a21e382))
+* **simulator:** Remember all macro settings ([6db6f76](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6db6f76))
+
+
+
 <a name="6.1.12"></a>
 ## [6.1.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.11...v6.1.12) (2019-11-08)
 
