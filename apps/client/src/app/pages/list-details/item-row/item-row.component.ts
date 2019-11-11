@@ -1,20 +1,10 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  Input, OnChanges,
-  OnInit,
-  Type,
-  ViewChild,
-  SimpleChanges
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, Type, ViewChild } from '@angular/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { BehaviorSubject, combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { Alarm } from '../../../core/alarms/alarm';
 import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
@@ -82,7 +72,6 @@ import { FreeCompanyActionsService } from '../../simulator/model/free-company-ac
 import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
-import { onlyWhenItemChanges } from '../../../core/rxjs/only-when-item-changes';
 
 @Component({
   selector: 'app-item-row',
@@ -544,9 +533,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   markAsDone(item: ListRow): void {
-    if (this.settings.autoMarkAsCompleted) {
-      this.markAsDoneInLog(item);
-    }
     this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, item.amount - item.done, item.recipeId, item.amount);
   }
 

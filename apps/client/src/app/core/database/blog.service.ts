@@ -24,7 +24,7 @@ export class BlogService extends FirestoreStorage<BlogEntry> {
         map((snaps: DocumentChangeAction<BlogEntry>[]) => {
           const posts = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: BlogEntry = <BlogEntry>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: BlogEntry = <BlogEntry>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             });

@@ -24,7 +24,7 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
         map((snaps: DocumentChangeAction<DbComment>[]) => {
           const comments = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: DbComment = <DbComment>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: DbComment = <DbComment>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             });

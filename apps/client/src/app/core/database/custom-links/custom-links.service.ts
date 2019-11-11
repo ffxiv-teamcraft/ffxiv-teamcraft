@@ -22,7 +22,7 @@ export class CustomLinksService<T extends CustomLink = CustomLink> extends Fires
       .pipe(
         first(),
         map((snaps: DocumentChangeAction<any>[]) => snaps
-          .map(snap => ({ $key: snap.payload.doc.id, ...snap.payload.doc.data() }))
+          .map(snap => ({ ...snap.payload.doc.data(), $key: snap.payload.doc.id }))
           .map(l => this.serializer.deserialize<T>(l, this.getClass()))
         ),
         map((res: T[]) => res.filter(link => link.authorNickname === nickName)),

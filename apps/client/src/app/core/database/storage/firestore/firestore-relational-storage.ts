@@ -45,7 +45,7 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
           map((snaps: DocumentChangeAction<T>[]) => {
             const rotations = snaps
               .map((snap: DocumentChangeAction<any>) => {
-                const valueWithKey: T = <T>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+                const valueWithKey: T = <T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
                 delete snap.payload;
                 return valueWithKey;
               });
