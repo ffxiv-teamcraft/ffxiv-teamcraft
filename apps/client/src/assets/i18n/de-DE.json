@@ -392,11 +392,11 @@
       "Isearch": "/isearch Makro kopieren"
     },
     "CATEGORIES": {
-      "Autofill_completion": "Autofill completion sound",
-      "Packet_capture": "Packet capture",
+      "Autofill_completion": "Sound bei Auto-Vervollständigung",
+      "Packet_capture": "Paketerfassung",
       "Theme": "Theme",
-      "Search": "Search",
-      "Other": "Other"
+      "Search": "Suche",
+      "Other": "Anderes"
     }
   },
   "PROFILE": {
@@ -484,17 +484,17 @@
     "Offline": "Offline",
     "Offline_help": "Offline-Listen werden im Browser oder der App gespeichert. Sie sind nur dort verfügbar und können nicht geteilt werden. Sie sind schneller, da sie keine Netzwerk-Aufrufe benötigen.",
     "Mark_whole_panel_done": "Panelinhalt als erledigt markieren",
-    "Set_color": "Set list color",
-    "Go_to_pinned": "Go to pinned list (right click to unpin)",
+    "Set_color": "Listenfarbe festlegen",
+    "Go_to_pinned": "Zu angepinnter Liste springen (Rechtsklick zum entpinnen)",
     "COLORS": {
-      "RED": "Red",
-      "GREEN": "Green",
-      "YELLOW": "Yellow",
-      "BLUE": "Blue",
-      "PURPLE": "Purple",
+      "RED": "Rot",
+      "GREEN": "Grün",
+      "YELLOW": "Gelb",
+      "BLUE": "Blau",
+      "PURPLE": "Lila",
       "ORANGE": "Orange",
-      "PINK": "Pink",
-      "NONE": "None"
+      "PINK": "Rosa",
+      "NONE": "Keine"
     },
     "ROTATION": {
       "Attach": "Rotation hinzufügen",
