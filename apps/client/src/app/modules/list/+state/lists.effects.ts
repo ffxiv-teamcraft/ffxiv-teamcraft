@@ -18,19 +18,7 @@ import {
   UpdateListAtomic,
   UpdateListIndex
 } from './lists.actions';
-import {
-  catchError,
-  debounceTime,
-  delay,
-  distinctUntilChanged,
-  filter,
-  first,
-  map,
-  mergeMap,
-  switchMap,
-  tap,
-  withLatestFrom
-} from 'rxjs/operators';
+import { catchError, debounceTime, delay, distinctUntilChanged, filter, first, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, EMPTY, from, of } from 'rxjs';
@@ -332,6 +320,13 @@ export class ListsEffects {
     map(([action, list]: [SetItemDone, List]) => {
       list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
       list.updateAllStatuses(action.itemId);
+      if (this.settings.autoMarkAsCompleted && action.doneDelta > 0) {
+        if (action.recipeId) {
+          this.markAsDoneInDoHLog(+(action.recipeId));
+        } else {
+          this.markAsDoneInDoLLog(action.itemId);
+        }
+      }
       return new UpdateListAtomic(list);
     })
   );
@@ -404,6 +399,20 @@ export class ListsEffects {
     private l12n: LocalizedDataService,
     private lazyData: LazyDataService
   ) {
+  }
+
+  private markAsDoneInDoHLog(recipeId: number): void {
+    this.authFacade.user$.pipe(first()).subscribe(user => {
+      user.logProgression.push(recipeId);
+      this.authFacade.updateUser(user);
+    });
+  }
+
+  private markAsDoneInDoLLog(itemId: number): void {
+    this.authFacade.user$.pipe(first()).subscribe(user => {
+      user.gatheringLogProgression.push(itemId);
+      this.authFacade.updateUser(user);
+    });
   }
 
   private saveToLocalstorage(list: List, newList: boolean): void {
