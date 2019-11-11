@@ -189,7 +189,7 @@
           </ng-container>
 
           <ng-container *ngIf="isButton(itemRowTypes.EDIT_AMOUNT)">
-            <button (click)="changeAmount(item)" *ngIf="(finalItem$ | async) && (permissionLevel$ | async) >= 30"
+            <button (click)="changeAmount(item)" *ngIf="(finalItem$ | async) && permissionLevel >= 30"
                     [nzTitle]="'Edit_amount' | translate" nz-button
                     nz-tooltip nzShape="circle" nzSize="small">
               <i nz-icon nzType="diff"></i>
@@ -198,7 +198,7 @@
 
           <ng-container *ngIf="isButton(itemRowTypes.MARK_HQ)">
             <button (click)="item.requiredAsHQ = true; saveItem(item)"
-                    *ngIf=" (permissionLevel$ | async) >= 30 &&(requiredForFinalCraft$ | async) === 0 && !item.requiredAsHQ"
+                    *ngIf=" permissionLevel >= 30 &&(requiredForFinalCraft$ | async) === 0 && !item.requiredAsHQ"
                     [nzTitle]="'Mark_HQ' | translate"
                     nz-button
                     nz-tooltip
@@ -207,7 +207,7 @@
             </button>
 
             <button (click)="item.requiredAsHQ = false; saveItem(item)"
-                    *ngIf="((requiredForFinalCraft$ | async) >= 0 || item.requiredAsHQ) && (permissionLevel$ | async) >= 30"
+                    *ngIf="((requiredForFinalCraft$ | async) >= 0 || item.requiredAsHQ) && permissionLevel >= 30"
                     [nzTitle]="'Unmark_HQ' | translate" nz-button
                     nz-tooltip
                     nzShape="circle"
@@ -225,7 +225,7 @@
             </button>
           </ng-container>
 
-          <ng-container *ngIf="isButton(itemRowTypes.REMOVE_ITEM) && (finalItem$ | async) && (permissionLevel$ | async) >= 30">
+          <ng-container *ngIf="isButton(itemRowTypes.REMOVE_ITEM) && (finalItem$ | async) && permissionLevel >= 30">
             <button (nzOnConfirm)="removeItem(item)" [nzTitle]="'Confirmation' | translate" nz-button
                     nz-popconfirm
                     nzShape="circle"
@@ -245,7 +245,7 @@
             </button>
           </ng-container>
 
-          <button (click)="$event.stopPropagation()" [disabled]="(permissionLevel$ | async) < 20" [nzBackdrop]="false"
+          <button (click)="$event.stopPropagation()" [disabled]="permissionLevel < 20" [nzBackdrop]="false"
                   [nzDropdownMenu]="menu"
                   [nzPlacement]="'bottomLeft'" [nzShape]="'circle'"
                   [nzTrigger]="'click'"
@@ -363,19 +363,19 @@
               </ng-container>
 
               <ng-container *ngIf="!isButton(itemRowTypes.EDIT_AMOUNT)">
-                <li (click)="changeAmount(item)" *ngIf="(finalItem$ | async) && (permissionLevel$ | async) >= 30"
+                <li (click)="changeAmount(item)" *ngIf="(finalItem$ | async) && permissionLevel >= 30"
                     nz-menu-item>
                   {{'Edit_amount' | translate}}
                 </li>
               </ng-container>
               <ng-container *ngIf="!isButton(itemRowTypes.MARK_HQ)">
                 <li (click)="item.requiredAsHQ = true; saveItem(item)"
-                    *ngIf=" (permissionLevel$ | async) >= 30 &&(requiredForFinalCraft$ | async) === 0 && !item.requiredAsHQ"
+                    *ngIf=" permissionLevel >= 30 && (requiredForFinalCraft$ | async) === 0 && !item.requiredAsHQ"
                     nz-menu-item>
                   {{'Mark_HQ' | translate}}
                 </li>
                 <li (click)="item.requiredAsHQ = false; saveItem(item)"
-                    *ngIf="((requiredForFinalCraft$ | async) >= 0 || item.requiredAsHQ) && (permissionLevel$ | async) >= 30"
+                    *ngIf="((requiredForFinalCraft$ | async) >= 0 || item.requiredAsHQ) && permissionLevel >= 30"
                     nz-menu-item>
                   {{'Unmark_HQ' | translate}}
                 </li>
@@ -386,7 +386,7 @@
                 </li>
               </ng-container>
               <ng-container
-                *ngIf="!isButton(itemRowTypes.REMOVE_ITEM) && (finalItem$ | async) && (permissionLevel$ | async) >= 30">
+                *ngIf="!isButton(itemRowTypes.REMOVE_ITEM) && (finalItem$ | async) && permissionLevel >= 30">
                 <li (click)="removeItem(item)" nz-menu-item>
                   {{'LIST_DETAILS.LAYOUT_DIALOG.ITEMS.REMOVE_ITEM' | translate}}
                 </li>
@@ -481,21 +481,19 @@
             <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
             <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
           </button>
-          <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
-            <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu"
-                    [nzPlacement]="'bottomCenter'"
-                    [nzSize]="'small'" nz-button
-                    nz-dropdown>
-              <i nz-icon nzType="ellipsis"></i>
-            </button>
-            <nz-dropdown-menu #menu="nzDropdownMenu">
-              <ul nz-menu>
-                <li (click)="addAlarmWithGroup(alarm, group)" *ngFor="let group of alarmGroups" nz-menu-item>
-                  {{group.name}}
-                </li>
-              </ul>
-            </nz-dropdown-menu>
-          </ng-container>
+          <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu"
+                  [nzPlacement]="'bottomCenter'"
+                  [nzSize]="'small'" nz-button
+                  nz-dropdown>
+            <i nz-icon nzType="ellipsis"></i>
+          </button>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu>
+              <li (click)="addAlarmWithGroup(alarm, group)" *ngFor="let group of alarmGroups" nz-menu-item>
+                {{group.name}}
+              </li>
+            </ul>
+          </nz-dropdown-menu>
         </nz-button-group>
       </div>
       <nz-tag
@@ -504,7 +502,7 @@
     </div>
     <div *ngIf="layout?.showCraftableAmount && item.craftedBy !== undefined && item.craftedBy.length > 0">
       <div *ngIf="item.craftableAmount" class="craftable-amount">
-        {{'LIST_DETAILS.Amount_craftable' | translate:{ amount: craftableAmount } }}
+        {{'LIST_DETAILS.Amount_craftable' | translate:{ amount: item.craftableAmount } }}
       </div>
     </div>
   </div>
@@ -522,7 +520,7 @@
       <span *ngIf="item.requires !== undefined && item.requires.length > 0"
             [nzTitle]="'LIST_DETAILS.Add_from_external' | translate"
             nz-tooltip>
-        <button [disabled]="(permissionLevel$ | async) < 20" [nzContent]="externalCalc" nz-button
+        <button [disabled]="permissionLevel < 20" [nzContent]="externalCalc" nz-button
                 nz-popover
                 nzSize="small" nzTrigger="click">
           <i nz-icon nzType="select"></i>
@@ -536,7 +534,7 @@
         </button>
       </span>
       <span [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-tooltip>
-        <button [disabled]="(permissionLevel$ | async) < 20" [nzContent]="calculator"
+        <button [disabled]="permissionLevel < 20" [nzContent]="calculator"
                 [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-button
                 nz-popover
                 nzSize="small" nzTrigger="click">
@@ -552,7 +550,7 @@
         </button>
       </span>
       <nz-input-number #input (keypress.enter)="itemDoneChanged(input.ngModel, item)"
-                       (ngModelChange)="itemDoneChanged($event, item)" [disabled]="(permissionLevel$ | async) < 20"
+                       (ngModelChange)="itemDoneChanged($event, item)" [disabled]="permissionLevel < 20"
                        [ngModel]="settings.displayRemaining? item.done - item.used : item.done"
                        [nzMax]="item.amount"
                        [nzMin]="0"
@@ -566,7 +564,7 @@
         /{{item.amount - item.used}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
       </span>
       <button (click)="markAsDone(item)" *ngIf="item.amount > item.done; else done"
-              [disabled]="(permissionLevel$ | async) < 20" [nzShape]="'circle'"
+              [disabled]="permissionLevel < 20" [nzShape]="'circle'"
               [nzSize]="'small'" [nzType]="'primary'"
               class="done-button" nz-button>
         <i nz-icon nzType="check"></i>

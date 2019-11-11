@@ -96,6 +96,7 @@ import ko from '@angular/common/locales/ko';
 import { ClipboardModule } from 'ngx-clipboard';
 import { InventoryModule } from './modules/inventory/inventory.module';
 import { EorzeaModule } from './modules/eorzea/eorzea.module';
+import { AngularFireFunctionsModule, FUNCTIONS_ORIGIN } from '@angular/fire/functions';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -186,6 +187,7 @@ const nzConfig: NzConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireFunctionsModule,
 
     XivapiClientModule.forRoot(),
 

@@ -53,7 +53,7 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
           }),
           tap(elements => {
             elements.forEach(el => {
-              this.syncCache[el.$key] = el;
+              this.syncCache[el.$key] = JSON.parse(JSON.stringify(el));
             });
           })
         );

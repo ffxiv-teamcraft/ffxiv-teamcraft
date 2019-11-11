@@ -1,17 +1,18 @@
 import { List } from '../../../../modules/list/model/list';
 import { Injectable, NgZone } from '@angular/core';
 import { ListStore } from './list-store';
-import { combineLatest, from, Observable, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, QueryFn } from '@angular/fire/firestore';
 import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
-import { diff } from 'deep-diff';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
 import { ListTag } from '../../../../modules/list/model/list-tag.enum';
 import { Class } from '@kaiu/serializer';
+import { AngularFireFunctions } from '@angular/fire/functions';
+import { compare, getValueByPointer } from 'fast-json-patch';
 
 @Injectable({
   providedIn: 'root'
@@ -38,18 +39,47 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   ];
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataService) {
+              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataService,
+              private fns: AngularFireFunctions) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
-  protected prepareData(list: Partial<List>): { parent: List; subcollections: { [p: string]: any[] } } {
+  public update(uid: string, data: Partial<List>, uriParams?: any): Observable<void> {
+    const preparedCache = this.prepareData(this.syncCache[uid]);
+    const preparedNew = this.prepareData(data);
+    let diff = compare(preparedCache, preparedNew);
+    diff = diff.map(entry => {
+      if (entry.path.startsWith('/items') || entry.path.startsWith('/finalItems') && entry.op === 'replace' && typeof entry.value === 'number') {
+        return {
+          ...entry,
+          offset: getValueByPointer(preparedNew, entry.path) - getValueByPointer(preparedCache, entry.path),
+          custom: true
+        };
+      }
+      return entry;
+    });
+    this.syncCache[uid] = data as List;
+    this.zone.runOutsideAngular(() => {
+      this.fns.httpsCallable('updateList')(
+        {
+          diff: diff,
+          uid: uid
+        }
+      );
+    });
+    return of(null);
+  }
+
+  protected prepareData(list: Partial<List>): List {
     const clone: List = JSON.parse(JSON.stringify(list));
     clone.items = (clone.items || []).map(item => {
       if (item.custom) {
         return item;
       }
       return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
-        cleanedItem[property] = item[property];
+        if (property in item) {
+          cleanedItem[property] = item[property];
+        }
         return cleanedItem;
       }, {}) as ListRow;
     });
@@ -58,11 +88,13 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
         return item;
       }
       return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
-        cleanedItem[property] = item[property];
+        if (property in item) {
+          cleanedItem[property] = item[property];
+        }
         return cleanedItem;
       }, {}) as ListRow;
     });
-    return super.prepareData(clone);
+    return clone;
   }
 
   private completeListData(list: List): Observable<List> {
@@ -177,33 +209,6 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
         })
       );
-  }
-
-  /**
-   * Performs atomic update on every list item, must be used only for progression input
-   * @param uid
-   * @param data
-   * @param uriParams
-   */
-  atomicUpdate(uid: string, data: Partial<List>, uriParams?: any): Observable<void> {
-    const previousValue = this.prepareData(this.syncCache[uid]).parent;
-    const preparedList = this.prepareData(data).parent;
-    const itemsDiff = diff(previousValue.items, preparedList.items);
-    const finalItemsDiff = diff(previousValue.finalItems, preparedList.finalItems);
-    const listRef = this.firestore.collection(this.getBaseUri()).doc(uid).ref;
-    return from(this.firestore.firestore.runTransaction(transaction => {
-      return transaction.get(listRef).then(listDoc => {
-        const list = listDoc.data();
-        list.modificationsHistory = preparedList.modificationsHistory;
-        (itemsDiff || []).forEach(itemDiff => {
-          list.items[itemDiff.path[0]][itemDiff.path[1]] += itemDiff.rhs - itemDiff.lhs;
-        });
-        (finalItemsDiff || []).forEach(itemDiff => {
-          list.finalItems[itemDiff.path[0]][itemDiff.path[1]] += itemDiff.rhs - itemDiff.lhs;
-        });
-        transaction.set(listRef, list);
-      });
-    }));
   }
 
   getPublicLists(): Observable<List[]> {

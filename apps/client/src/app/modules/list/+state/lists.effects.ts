@@ -260,7 +260,11 @@ export class ListsEffects {
   @Effect({ dispatch: false })
   deleteListFromDatabase$ = this.actions$.pipe(
     ofType<DeleteList>(ListsActionTypes.DeleteList),
-    mergeMap(action => {
+    withLatestFrom(this.listsFacade.pinnedList$),
+    mergeMap(([action, pin]) => {
+      if (pin === action.key) {
+        this.listsFacade.unpin();
+      }
       if (action.offline) {
         this.removeFromLocalStorage(action.key);
         return EMPTY;
@@ -309,9 +313,9 @@ export class ListsEffects {
             listName: list.name
           });
           const notificationIcon = `https://xivapi.com${this.lazyData.icons[action.itemId]}`;
-          const audio = new Audio(`./assets/audio/Feature_unlocked.mp3`);
+          const audio = new Audio(`./assets/audio/${this.settings.autofillCompletionSound}.mp3`);
           audio.loop = false;
-          audio.volume = this.settings.alarmVolume;
+          audio.volume = this.settings.autofillCompletionVolume;
           audio.play();
           if (this.platform.isDesktop()) {
             this.ipc.send('notification', {
@@ -327,6 +331,7 @@ export class ListsEffects {
     }),
     map(([action, list]: [SetItemDone, List]) => {
       list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+      list.updateAllStatuses(action.itemId);
       return new UpdateListAtomic(list);
     })
   );

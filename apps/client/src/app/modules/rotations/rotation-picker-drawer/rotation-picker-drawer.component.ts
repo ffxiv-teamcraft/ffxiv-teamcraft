@@ -68,7 +68,7 @@ export class RotationPickerDrawerComponent {
             return folder.rotationIds.find(id => id === rotation.$key) !== undefined;
           }) === undefined;
         })
-          .filter(r => r.getName !== undefined)
+          .filter(r => !r.notFound)
           .sort((a, b) => a.index - b.index);
       })
     );

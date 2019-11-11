@@ -36,7 +36,7 @@ const getSelectedId = createSelector(
   (state: ListsState) => state.selectedId
 );
 
-const getSelectedList = createSelector(
+const getSelectedList = () => createSelector(
   getAllListDetails,
   getSelectedId,
   (lists, id) => {
@@ -44,9 +44,17 @@ const getSelectedList = createSelector(
   }
 );
 
+const getPinnedListKey = () => createSelector(
+  getListsState,
+  (state) => {
+    return state.pinned
+  }
+);
+
 export const listsQuery = {
   getAllListDetails,
   getSelectedList,
+  getPinnedListKey,
   getNeedsVerification,
   getAutocompleteEnabled,
   getCompletionNotificationEnabled,

@@ -13,10 +13,12 @@ import {
   LoadTeamLists,
   NeedsVerification,
   OfflineListsLoaded,
+  PinList,
   SelectList,
   SetItemDone,
   ToggleAutocompletion,
   ToggleCompletionNotification,
+  UnPinList,
   UpdateItem,
   UpdateList,
   UpdateListIndex
@@ -121,19 +123,20 @@ export class ListsFacade {
     })
   );
 
-  selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(
-    filter(list => list !== undefined)
+  selectedList$ = this.store.select(listsQuery.getSelectedList()).pipe(
+    filter(list => list !== undefined),
+    shareReplay(1)
   );
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
-      return combineLatest(
+      return combineLatest([
         this.selectedList$,
         loggedIn ? this.authFacade.user$ : of(null),
         this.authFacade.userId$,
         this.teamsFacade.selectedTeam$,
         loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null)
-      );
+      ]);
     }),
     filter(([list]) => list !== undefined),
     map(([list, user, userId, team, fcId]) => {
@@ -156,6 +159,8 @@ export class ListsFacade {
   needsVerification$ = this.store.select(listsQuery.getNeedsVerification);
 
   autocompleteEnabled$ = this.store.select(listsQuery.getAutocompleteEnabled);
+
+  pinnedList$ = this.store.select(listsQuery.getPinnedListKey());
 
   completionNotificationEnabled$ = this.store.select(listsQuery.getCompletionNotificationEnabled);
 
@@ -317,6 +322,14 @@ export class ListsFacade {
 
   select(key: string): void {
     this.store.dispatch(new SelectList(key));
+  }
+
+  pin(key: string): void {
+    this.store.dispatch(new PinList(key));
+  }
+
+  unpin(): void {
+    this.store.dispatch(new UnPinList());
   }
 
   sortLists(lists: List[]): List[] {

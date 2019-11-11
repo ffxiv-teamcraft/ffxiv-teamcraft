@@ -90,12 +90,15 @@ export class UserInventory extends DataModel {
       item = this.items[containerKey][packet.slot];
     }
     item.quantity = packet.quantity;
-    return {
-      itemId: packet.catalogId,
-      quantity: packet.quantity - previousQuantity,
-      containerId: packet.containerId,
-      hq: packet.hqFlag === 1
-    };
+    if (packet.quantity - previousQuantity !== 0) {
+      return {
+        itemId: packet.catalogId,
+        quantity: packet.quantity - previousQuantity,
+        containerId: packet.containerId,
+        hq: packet.hqFlag === 1
+      };
+    }
+    return null;
   }
 
   operateTransaction(packet: any, lastSpawnedRetainer: string): InventoryPatch | null {
@@ -188,7 +191,7 @@ export class UserInventory extends DataModel {
   clone(): UserInventory {
     const clone = new UserInventory();
     clone.$key = this.$key;
-    clone.items = JSON.parse(JSON.stringify(this.items));
+    clone.items = { ...this.items };
     clone.characterId = this.characterId;
     clone.lastZone = this.lastZone;
     return clone;

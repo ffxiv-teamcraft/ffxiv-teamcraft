@@ -17,6 +17,7 @@ import { bufferCount, debounceTime, expand, map, skip, skipUntil, switchMap, tap
 import { DataService } from '../../../core/api/data.service';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { ListManagerService } from '../list-manager.service';
+import { ListColor } from './list-color';
 
 declare const gtag: Function;
 
@@ -57,6 +58,8 @@ export class List extends DataWithPermissions {
 
   // Used for the drag-and-drop feature.
   workshopId?: string;
+
+  color: ListColor;
 
   constructor() {
     super();
@@ -103,6 +106,7 @@ export class List extends DataWithPermissions {
 
   public reset(): void {
     this.finalItems.forEach(recipe => this.resetDone(recipe));
+    this.updateAllStatuses();
   }
 
   /**
@@ -254,7 +258,6 @@ export class List extends DataWithPermissions {
         }
       }
     }
-    this.updateAllStatuses();
   }
 
   canBeCrafted(item: ListRow): boolean {
@@ -297,10 +300,10 @@ export class List extends DataWithPermissions {
       item.craftableAmount = this.craftableAmount(item);
     });
     this.finalItems.forEach(i => {
-      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && this.hasAllBaseIngredients(i);
+      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && i.done < i.amount && this.hasAllBaseIngredients(i);
     });
     this.items.forEach(i => {
-      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && this.hasAllBaseIngredients(i);
+      i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && i.done < i.amount && this.hasAllBaseIngredients(i);
     });
   }
 
@@ -422,7 +425,7 @@ export class List extends DataWithPermissions {
         listManager.addDetails(this, crystal);
       } else {
         const elementDetails = (<ItemData>addition.data).getIngredient(+element.id);
-        if (elementDetails.isCraft()) {
+        if (elementDetails && elementDetails.isCraft()) {
           const yields = elementDetails.craft[0].yield || 1;
           const added = this.add(this.items, {
             id: elementDetails.id,
@@ -440,15 +443,28 @@ export class List extends DataWithPermissions {
             amount: added
           });
         } else {
-          this.add(this.items, {
-            id: elementDetails.id,
-            icon: elementDetails.icon,
-            amount: element.amount * addition.amount,
-            done: 0,
-            used: 0,
-            yield: 1,
-            usePrice: true
-          });
+          if (elementDetails === undefined) {
+            const partial = (<ItemData>addition.data).getPartial(element.id.toString(), 'item');
+            this.add(this.items, {
+              id: partial.obj.i,
+              icon: partial.obj.c,
+              amount: element.amount * addition.amount,
+              done: 0,
+              used: 0,
+              yield: 1,
+              usePrice: true
+            });
+          } else {
+            this.add(this.items, {
+              id: elementDetails.id,
+              icon: elementDetails.icon,
+              amount: element.amount * addition.amount,
+              done: 0,
+              used: 0,
+              yield: 1,
+              usePrice: true
+            });
+          }
         }
         listManager.addDetails(this, <ItemData>addition.data);
       }
@@ -576,15 +592,8 @@ export class List extends DataWithPermissions {
     return this.items && this.items.length >= 150 || this.finalItems && this.finalItems.length > 80;
   }
 
-  /**
-   * Gets payload size for firestore database.
-   */
-  public getSize(): number {
-    return JSON.stringify(this).length;
-  }
-
   public isTooLarge(): boolean {
-    return this.getSize() > 800000;
+    return this.items.length + this.finalItems.length > 1000;
   }
 
   /**

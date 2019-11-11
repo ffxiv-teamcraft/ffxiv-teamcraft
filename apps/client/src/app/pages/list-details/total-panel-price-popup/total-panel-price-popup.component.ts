@@ -11,7 +11,7 @@ import { TradeEntry } from '../../../modules/list/model/trade-entry';
 })
 export class TotalPanelPricePopupComponent implements OnInit {
 
-  public totalPrice: { currencyId: number, currencyIcon: number, amount: number }[] = [];
+  public totalPrice: { currencyId: number, currencyIcon: number, amount: number, canIgnore: boolean }[] = [];
 
   public panelContent: ListRow[] = [];
 
@@ -28,10 +28,10 @@ export class TotalPanelPricePopupComponent implements OnInit {
       })[0];
   }
 
-  private getFilteredCurrencies(currencies: TradeEntry[]): TradeEntry[]{
+  private getFilteredCurrencies(currencies: TradeEntry[]): TradeEntry[] {
     return currencies.filter(c => {
       return !this.ignoredSources.includes(c.id);
-    })
+    });
   }
 
   private computePrice(): void {
@@ -61,7 +61,12 @@ export class TotalPanelPricePopupComponent implements OnInit {
           result.push({
             currencyId: this.getFilteredCurrencies(trade.currencies)[0].id,
             currencyIcon: this.getFilteredCurrencies(trade.currencies)[0].icon,
-            costs: costs
+            costs: costs,
+            canIgnore: [].concat.apply([], row.tradeSources.filter(source => {
+              return source.trades.some(t => {
+                return this.getFilteredCurrencies(t.currencies).length > 0;
+              });
+            })).length > 1
           });
         } else {
           tradeRow.costs[0] += costs[0];

@@ -11,6 +11,4 @@ export abstract class ListStore extends DataStore<List> {
   public abstract deleteByAuthor(uid: string): Observable<void>;
 
   public abstract getPublicListsByAuthor(uid: string): Observable<List[]>;
-
-  public abstract atomicUpdate(uid: string, list: Partial<List>): Observable<void>;
 }

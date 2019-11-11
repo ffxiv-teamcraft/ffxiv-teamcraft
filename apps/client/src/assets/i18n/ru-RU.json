@@ -390,6 +390,13 @@
     "COPY_TYPE": {
       "Classic": "Копировать имя предмета",
       "Isearch": "Копировать /isearch макрос"
+    },
+    "CATEGORIES": {
+      "Autofill_completion": "Autofill completion sound",
+      "Packet_capture": "Packet capture",
+      "Theme": "Theme",
+      "Search": "Search",
+      "Other": "Other"
     }
   },
   "PROFILE": {
@@ -477,6 +484,18 @@
     "Offline": "Оффлайн",
     "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
     "Mark_whole_panel_done": "Mark panel content as done",
+    "Set_color": "Set list color",
+    "Go_to_pinned": "Go to pinned list (right click to unpin)",
+    "COLORS": {
+      "RED": "Red",
+      "GREEN": "Green",
+      "YELLOW": "Yellow",
+      "BLUE": "Blue",
+      "PURPLE": "Purple",
+      "ORANGE": "Orange",
+      "PINK": "Pink",
+      "NONE": "None"
+    },
     "ROTATION": {
       "Attach": "Прикрепить ротацию",
       "Detach": "Открепить ротацию",
@@ -1552,6 +1571,7 @@
     "Contribute_to_universalis": "Внести данные в universalis",
     "Reset_inventory": "Reset this inventory",
     "Clean_all": "Reset all your inventories",
+    "Search_for_an_item": "Search for an item",
     "BAG": {
       "SaddleBag": "Сумка Чокобо",
       "FC_chest": "FC сундук",
@@ -1564,6 +1584,8 @@
     "Title": "Inventory optimizer",
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
+    "Ignore_contaier": "Ignore this tip for this container",
+    "Remove_ignore_contaier": "Don't ignore this tip for this container anymore",
     "Show_ignored": "Show ignored items",
     "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
