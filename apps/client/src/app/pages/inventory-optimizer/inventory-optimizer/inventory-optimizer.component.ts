@@ -67,6 +67,9 @@ export class InventoryOptimizerComponent {
           return optimizations.map(opt => {
             let totalLength = 0;
             opt.entries = opt.entries.map(entry => {
+              entry.ignored = this.ignoreArray.some(ignored => {
+                return ignored.containerName === entry.containerName && ignored.id === opt.type;
+              });
               entry.items = entry.items.map(item => {
                 item.ignored = this.ignoreArray.some(ignored => {
                   return ignored.itemId === item.item.itemId && ignored.id === opt.type;
@@ -89,7 +92,7 @@ export class InventoryOptimizerComponent {
     })
   );
 
-  public ignoreArray: { id: string, itemId: number }[] = JSON.parse(localStorage.getItem(`optimizations:ignored`) || '[]');
+  public ignoreArray: { id: string, itemId: number, containerName?: string }[] = JSON.parse(localStorage.getItem(`optimizations:ignored`) || '[]');
 
   public showIgnored = false;
 
@@ -131,6 +134,23 @@ export class InventoryOptimizerComponent {
       ];
     } else {
       this.ignoreArray = this.ignoreArray.filter(i => i.itemId !== itemId || i.id !== optimization);
+    }
+    this.setIgnoreArray(this.ignoreArray);
+    this.reloader$.next();
+  }
+
+  public setIgnoreContainer(containerName: string, optimization: string, ignore: boolean): void {
+    if (ignore) {
+      this.ignoreArray = [
+        ...this.ignoreArray,
+        {
+          id: optimization,
+          itemId: -1,
+          containerName: containerName
+        }
+      ];
+    } else {
+      this.ignoreArray = this.ignoreArray.filter(i => i.containerName !== containerName || i.id !== optimization);
     }
     this.setIgnoreArray(this.ignoreArray);
     this.reloader$.next();

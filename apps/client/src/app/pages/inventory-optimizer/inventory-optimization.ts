@@ -6,6 +6,7 @@ export interface InventoryOptimization {
     containerName: string,
     isRetainer: boolean,
     totalLength?: number,
+    ignored?: boolean,
     items: {
       item: InventoryItem,
       ignored?: boolean,
