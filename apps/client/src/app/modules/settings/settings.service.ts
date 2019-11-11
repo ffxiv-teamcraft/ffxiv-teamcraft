@@ -311,6 +311,14 @@ export class SettingsService {
     this.themeChange$.next({ previous: this.customTheme, next: theme });
     this.setSetting('customTheme', JSON.stringify(theme));
   }
+  
+  public get hideLargeLeves(): boolean {
+    return this.getSetting('hideLargeLeves', 'false') === 'true';
+  }
+
+  public set hideLargeLeves(hideLargeLeves: boolean) {
+    this.setSetting('hideLargeLeves', hideLargeLeves.toString());
+  }
 
   public get macroExtraWait(): number {
     return Math.max(0, Math.floor(+this.getSetting('macroExtraWait', '0')));
