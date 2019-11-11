@@ -5,6 +5,7 @@ import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Consumable } from '../../model/consumable';
 import { FreeCompanyAction } from '../../model/free-company-action';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-macro-popup',
@@ -17,19 +18,19 @@ export class MacroPopupComponent implements OnInit {
 
   private readonly maxMacroLines = 15;
 
-  public addEcho = localStorage.getItem('macros:addecho') !== 'false';
+  public addEcho = this.settings.macroEcho;
 
-  public echoSeNumber = 1;
+  public echoSeNumber = this.settings.macroEchoSeNumber;
 
-  public fixedEcho = false;
+  public fixedEcho = this.settings.macroFixedEcho;
 
-  public extraWait = 0;
+  public extraWait = this.settings.macroExtraWait;
 
-  public breakBeforeByregotsBlessing = false;
+  public breakBeforeByregotsBlessing = this.settings.macroBreakBeforeByregot;
 
-  public macroLock = localStorage.getItem('macros:macrolock') === 'true';
+  public macroLock = this.settings.macroLock;
 
-  public addConsumables = localStorage.getItem('macros:consumables') === 'true';
+  public addConsumables = this.settings.macroConsumables;
 
   rotation: CraftingAction[];
 
@@ -43,13 +44,18 @@ export class MacroPopupComponent implements OnInit {
 
   tooManyAactions = false;
 
-  constructor(private l12n: LocalizedDataService, private i18n: I18nToolsService, private translator: TranslateService) {
+  constructor(private l12n: LocalizedDataService, private i18n: I18nToolsService, private translator: TranslateService, private settings: SettingsService) {
   }
 
   public generateMacros(): void {
-    localStorage.setItem('macros:macrolock', this.macroLock.toString());
-    localStorage.setItem('macros:consumables', this.addConsumables.toString());
-    localStorage.setItem('macros:addecho', this.addEcho.toString());
+    this.settings.macroExtraWait = this.extraWait;
+    this.settings.macroLock = this.macroLock;
+    this.settings.macroConsumables = this.addConsumables;
+    this.settings.macroEcho = this.addEcho;
+    this.settings.macroBreakBeforeByregot = this.breakBeforeByregotsBlessing;
+    this.settings.macroFixedEcho = this.fixedEcho;
+    this.settings.macroEchoSeNumber = this.echoSeNumber;
+
     this.macro = this.macroLock ? [['/mlock']] : [[]];
     let totalLength = 0;
     this.rotation.forEach((action, actionIndex) => {
