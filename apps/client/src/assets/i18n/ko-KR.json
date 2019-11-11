@@ -1571,6 +1571,7 @@
     "Contribute_to_universalis": "Universalis에 데이터를 기여하기",
     "Reset_inventory": "소지품 초기화",
     "Clean_all": "모든 소지품 초기화",
+    "Search_for_an_item": "Search for an item",
     "BAG": {
       "SaddleBag": "초코보 가방",
       "FC_chest": "부대 금고",
@@ -1583,6 +1584,8 @@
     "Title": "소지품 최적화",
     "Ignore_item": "이 아이템에는 이 팁 무시하기",
     "Remove_ignore_item": "이 아이템에는 더이상 이 팁을 무시하지 않기",
+    "Ignore_contaier": "Ignore this tip for this container",
+    "Remove_ignore_contaier": "Don't ignore this tip for this container anymore",
     "Show_ignored": "무시된 항목 보여주기",
     "No_optimizations": "최적화가 가능하지 않습니다",
     "CAN_BE_BOUGHT": {
