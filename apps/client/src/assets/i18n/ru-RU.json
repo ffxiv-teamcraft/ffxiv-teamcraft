@@ -1571,6 +1571,7 @@
     "Contribute_to_universalis": "Внести данные в universalis",
     "Reset_inventory": "Reset this inventory",
     "Clean_all": "Reset all your inventories",
+    "Search_for_an_item": "Search for an item",
     "BAG": {
       "SaddleBag": "Сумка Чокобо",
       "FC_chest": "FC сундук",
@@ -1583,6 +1584,8 @@
     "Title": "Inventory optimizer",
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
+    "Ignore_contaier": "Ignore this tip for this container",
+    "Remove_ignore_contaier": "Don't ignore this tip for this container anymore",
     "Show_ignored": "Show ignored items",
     "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
