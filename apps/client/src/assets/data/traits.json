@@ -3907,7 +3907,7 @@
     "icon": "/i/005000/005679.png",
     "description": {
       "en": "Extends the duration of <span style=\"color:#ffff66;\">Bio</span> and <span style=\"color:#ffff66;\">Miasma</span> applied by <span style=\"color:#ff7b1a;\">Bane</span> to the full duration of their original effects.",
-      "de": "Löst den Zusatzeffekt von <span style=\"color:#40bfff;\">Bann</span> aus.",
+      "de": "Verlängert die Dauer von durch Bann verteilten <span style=\"color:#40bfff;\">Bio-</span> und <span style=\"color:#40bfff;\">Miasma-Zaubern</span> auf die volle Wirkungsdauer der Effekte.",
       "ja": "ベインの追加効果の発動確率が100％になる。",
       "fr": "Permet à l'effet additionnel de Fléau de toujours se déclencher."
     }

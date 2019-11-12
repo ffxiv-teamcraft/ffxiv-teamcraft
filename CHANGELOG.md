@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.2"></a>
+## [6.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.1...v6.2.2) (2019-11-12)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an issue when opening a link from website ([af543f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af543f4))
+* **list:** fixed an issue with lists not being updated properly ([a57644d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a57644d))
+* **macro:** fixed some checkboxes being checked by default ([a6c27d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a6c27d2))
+
+
+### Features
+
+* **data:** 5.11 content update ([0fa4afc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0fa4afc))
+* **packet-capture:** 5.11 packet structure updates ([dc0b154](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc0b154))
+
+
+
 <a name="6.2.1"></a>
 ## [6.2.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.1.12...v6.2.1) (2019-11-11)
 

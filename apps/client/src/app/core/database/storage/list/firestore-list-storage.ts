@@ -49,7 +49,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     const preparedNew = this.prepareData(data);
     let diff = compare(preparedCache, preparedNew);
     diff = diff.map(entry => {
-      if (entry.path.startsWith('/items') || entry.path.startsWith('/finalItems') && entry.op === 'replace' && typeof entry.value === 'number') {
+      if ((entry.path.startsWith('/items') || entry.path.startsWith('/finalItems'))
+        && entry.op === 'replace'
+        && typeof entry.value === 'number') {
         return {
           ...entry,
           offset: getValueByPointer(preparedNew, entry.path) - getValueByPointer(preparedCache, entry.path),

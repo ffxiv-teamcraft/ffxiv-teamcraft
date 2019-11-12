@@ -233,19 +233,26 @@ export class UniversalisService {
   }
 
   public uploadMarketTaxRates(packet: any): void {
-      const data = {
-          marketTaxRates: {
-              limsaLominsa: packet.limsaLominsa,
-              gridania: packet.gridania,
-              uldah: packet.uldah,
-              ishgard: packet.ishgard,
-              kugane: packet.kugane,
-              crystarium: packet.crystarium
-          }
-      };
-      this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
-        headers: new HttpHeaders().append('Content-Type', 'application/json')
-      }).subscribe();
+      combineLatest([this.cid$, this.worldId$]).pipe(
+        first(),
+        switchMap(([cid, worldId]) => {
+          const data = {
+            worldID: worldId,
+            uploaderID: cid,
+            marketTaxRates: {
+                limsaLominsa: packet.limsaLominsa,
+                gridania: packet.gridania,
+                uldah: packet.uldah,
+                ishgard: packet.ishgard,
+                kugane: packet.kugane,
+                crystarium: packet.crystarium
+            }
+          };
+          return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+            headers: new HttpHeaders().append('Content-Type', 'application/json')
+          });
+        })
+      ).subscribe();
   }
 
   public uploadCid(packet: any): void {

@@ -311,7 +311,7 @@ export class SettingsService {
     this.themeChange$.next({ previous: this.customTheme, next: theme });
     this.setSetting('customTheme', JSON.stringify(theme));
   }
-  
+
   public get hideLargeLeves(): boolean {
     return this.getSetting('hideLargeLeves', 'false') === 'true';
   }
@@ -345,7 +345,7 @@ export class SettingsService {
   }
 
   public get macroFixedEcho(): boolean {
-    return this.getSetting('macroFixedEcho', 'true') === 'true';
+    return this.getSetting('macroFixedEcho', 'false') === 'true';
   }
 
   public set macroFixedEcho(fixedEcho: boolean) {
@@ -353,7 +353,7 @@ export class SettingsService {
   }
 
   public get macroLock(): boolean {
-    return this.getSetting('macroLock', 'true') === 'true';
+    return this.getSetting('macroLock', 'false') === 'true';
   }
 
   public set macroLock(lock: boolean) {
@@ -369,7 +369,7 @@ export class SettingsService {
   }
 
   public get macroBreakBeforeByregot(): boolean {
-    return this.getSetting('macroBreakBeforeByregot', 'true') === 'true';
+    return this.getSetting('macroBreakBeforeByregot', 'false') === 'true';
   }
 
   public set macroBreakBeforeByregot(breakBeforeByregot: boolean) {

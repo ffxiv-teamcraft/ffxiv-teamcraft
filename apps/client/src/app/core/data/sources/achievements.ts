@@ -14658,10 +14658,10 @@ export const achievements = {
     'fr': 'Bizarroïdes androïdes'
   },
   '2444': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'When I Ruled the World',
+    'de': 'Bezwinger der Perfektion',
+    'ja': '絶アレキサンダーを破壊せし者',
+    'fr': 'Nul n\'est parfait'
   },
   '2445': {
     'en': '',

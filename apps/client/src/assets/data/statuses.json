@@ -14952,137 +14952,137 @@
     "icon": "/i/015000/015981.png"
   },
   "2137": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Decree Nisi γ",
+    "de": "Letztes Vorläufiges Urteil γ",
+    "ja": "最後の仮判決γ",
+    "fr": "Peine provisoire γ ultime",
+    "icon": "/i/015000/015201.png"
   },
   "2138": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Decree Nisi δ",
+    "de": "Letztes Vorläufiges Urteil δ",
+    "ja": "最後の仮判決δ",
+    "fr": "Peine provisoire δ ultime",
+    "icon": "/i/015000/015202.png"
   },
   "2139": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Judgment: Decree Nisi γ",
+    "de": "Prozess über Vorläufiges Urteil γ",
+    "ja": "最後の審判：仮判決γ",
+    "fr": "Injonction: peine provisoire γ",
+    "icon": "/i/015000/015203.png"
   },
   "2140": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Judgment: Decree Nisi δ",
+    "de": "Prozess über Vorläufiges Urteil δ",
+    "ja": "最後の審判：仮判決δ",
+    "fr": "Injonction: peine provisoire δ",
+    "icon": "/i/015000/015204.png"
   },
   "2141": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Judgment: Penalty IV",
+    "de": "Prozess über Schwächung 4",
+    "ja": "最後の審判：デバフ4",
+    "fr": "Injonction: 4 altérations",
+    "icon": "/i/015000/015205.png"
   },
   "2142": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Compressed Water",
+    "de": "Wasserkompression",
+    "ja": "水属性圧縮",
+    "fr": "Compression aqueuse",
+    "icon": "/i/015000/015696.png"
   },
   "2143": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Compressed Lightning",
+    "de": "Blitzkompression",
+    "ja": "雷属性圧縮",
+    "fr": "Compression électrique",
+    "icon": "/i/015000/015697.png"
   },
   "2144": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Water Resistance Down II",
+    "de": "Wasserresistenz - (stark)",
+    "ja": "水属性耐性低下［強］",
+    "fr": "Résistance à l'eau réduite+",
+    "icon": "/i/015000/015698.png"
   },
   "2145": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lightning Resistance Down II",
+    "de": "Blitzresistenz - (stark)",
+    "ja": "雷属性耐性低下［強］",
+    "fr": "Résistance à la foudre réduite+",
+    "icon": "/i/015000/015597.png"
   },
   "2146": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Enigma Codex",
+    "de": "Enigma-Kodex",
+    "ja": "エニグマ・コーデックス",
+    "fr": "Enigma Codex",
+    "icon": "/i/015000/015210.png"
   },
   "2147": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Enigma Codex",
+    "de": "Enigma-Kodex",
+    "ja": "エニグマ・コーデックス",
+    "fr": "Enigma Codex",
+    "icon": "/i/015000/015210.png"
   },
   "2148": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Contact Prohibition Ordained",
+    "de": "Kontaktverbot",
+    "ja": "接触禁止命令",
+    "fr": "Contact prohibé",
+    "icon": "/i/015000/015211.png"
   },
   "2149": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Contact Regulation Ordained",
+    "de": "Kontakt-Order",
+    "ja": "接触保護命令",
+    "fr": "Contact forcé",
+    "icon": "/i/015000/015212.png"
   },
   "2150": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Escape Prohibition Ordained",
+    "de": "Fluchtverbot",
+    "ja": "逃亡禁止命令",
+    "fr": "Fuite prohibée",
+    "icon": "/i/015000/015213.png"
   },
   "2151": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Escape Detection Ordained",
+    "de": "Fluchtbeobachtung",
+    "ja": "逃亡監察命令",
+    "fr": "Fuite forcée",
+    "icon": "/i/015000/015214.png"
   },
   "2152": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Word: Contact Prohibition",
+    "de": "Urteil: Kontaktverbot",
+    "ja": "確定判決：接触禁止命令",
+    "fr": "Jugement: contact prohibé",
+    "icon": "/i/015000/015215.png"
   },
   "2153": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Word: Contact Regulation",
+    "de": "Urteil: Kontakt-Order",
+    "ja": "確定判決：接触保護命令",
+    "fr": "Jugement: contact forcé",
+    "icon": "/i/015000/015216.png"
   },
   "2154": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Word: Escape Prohibition",
+    "de": "Urteil: Fluchtverbot",
+    "ja": "確定判決：逃亡禁止命令",
+    "fr": "Jugement: fuite prohibée",
+    "icon": "/i/015000/015217.png"
   },
   "2155": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Word: Escape Detection",
+    "de": "Urteil: Fluchtbeobachtung",
+    "ja": "確定判決：逃亡監察命令",
+    "fr": "Jugement: fuite forcée",
+    "icon": "/i/015000/015218.png"
   },
   "2156": {
     "en": "Suppuration",
@@ -15148,11 +15148,11 @@
     "icon": "/i/015000/015777.png"
   },
   "2165": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Temporal Displacement",
+    "de": "Zeitstillstand",
+    "ja": "時間停止",
+    "fr": "Stase temporelle",
+    "icon": "/i/015000/015579.png"
   },
   "2166": {
     "en": "",
@@ -15540,39 +15540,39 @@
     "icon": "/i/017000/017061.png"
   },
   "2221": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Judgment: Penalty III",
+    "de": "Prozess über Schwächung 3",
+    "ja": "最後の審判：デバフ3",
+    "fr": "Injonction: 3 altérations",
+    "icon": "/i/015000/015705.png"
   },
   "2222": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Decree Nisi α",
+    "de": "Letztes Vorläufiges Urteil α",
+    "ja": "最後の仮判決α",
+    "fr": "Peine provisoire α ultime",
+    "icon": "/i/015000/015221.png"
   },
   "2223": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Decree Nisi β",
+    "de": "Letztes Vorläufiges Urteil β",
+    "ja": "最後の仮判決β",
+    "fr": "Peine provisoire β ultime",
+    "icon": "/i/015000/015222.png"
   },
   "2224": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Judgment: Decree Nisi α",
+    "de": "Prozess über Vorläufiges Urteil α",
+    "ja": "最後の審判：仮判決α",
+    "fr": "Injonction: peine provisoire α",
+    "icon": "/i/015000/015223.png"
   },
   "2225": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Final Judgment: Decree Nisi β",
+    "de": "Prozess über Vorläufiges Urteil β",
+    "ja": "最後の審判：仮判決β",
+    "fr": "Injonction: peine provisoire β",
+    "icon": "/i/015000/015224.png"
   },
   "2226": {
     "en": "",
