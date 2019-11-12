@@ -54,7 +54,9 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'updateClassInfo',
         'actorControl',
         'initZone',
-        'weatherChange'
+        'weatherChange',
+        'aetherReductionDlg',
+        'desynthOrReductionResult'
       ];
 
       Machina = new MachinaFFXIV(options);
