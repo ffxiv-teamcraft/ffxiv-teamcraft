@@ -198948,6 +198948,2830 @@
     ]
   },
   {
+    "id": 33573,
+    "job": 8,
+    "level": 20,
+    "yields": 1,
+    "result": 28725,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 20,
+    "ingredients": [
+      {
+        "id": 28765,
+        "amount": 6
+      },
+      {
+        "id": 5386,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33574,
+    "job": 9,
+    "level": 20,
+    "yields": 1,
+    "result": 28726,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 20,
+    "ingredients": [
+      {
+        "id": 28766,
+        "amount": 6
+      },
+      {
+        "id": 5111,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33575,
+    "job": 10,
+    "level": 20,
+    "yields": 1,
+    "result": 28727,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 20,
+    "ingredients": [
+      {
+        "id": 28766,
+        "amount": 6
+      },
+      {
+        "id": 5111,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33576,
+    "job": 11,
+    "level": 20,
+    "yields": 1,
+    "result": 28728,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 20,
+    "ingredients": [
+      {
+        "id": 28767,
+        "amount": 6
+      },
+      {
+        "id": 5229,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33577,
+    "job": 12,
+    "level": 20,
+    "yields": 1,
+    "result": 28729,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 20,
+    "ingredients": [
+      {
+        "id": 28765,
+        "amount": 6
+      },
+      {
+        "id": 5296,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33578,
+    "job": 13,
+    "level": 20,
+    "yields": 1,
+    "result": 28730,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 20,
+    "ingredients": [
+      {
+        "id": 28768,
+        "amount": 6
+      },
+      {
+        "id": 5342,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33579,
+    "job": 14,
+    "level": 20,
+    "yields": 1,
+    "result": 28731,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 20,
+    "ingredients": [
+      {
+        "id": 28767,
+        "amount": 6
+      },
+      {
+        "id": 5496,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33580,
+    "job": 15,
+    "level": 20,
+    "yields": 1,
+    "result": 28732,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 20,
+    "ingredients": [
+      {
+        "id": 28768,
+        "amount": 6
+      },
+      {
+        "id": 4849,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33581,
+    "job": 8,
+    "level": 40,
+    "yields": 1,
+    "result": 28733,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 40,
+    "ingredients": [
+      {
+        "id": 28769,
+        "amount": 4
+      },
+      {
+        "id": 28770,
+        "amount": 4
+      },
+      {
+        "id": 5065,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33582,
+    "job": 9,
+    "level": 40,
+    "yields": 1,
+    "result": 28734,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 40,
+    "ingredients": [
+      {
+        "id": 28771,
+        "amount": 4
+      },
+      {
+        "id": 28772,
+        "amount": 4
+      },
+      {
+        "id": 5116,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33583,
+    "job": 10,
+    "level": 40,
+    "yields": 1,
+    "result": 28735,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 40,
+    "ingredients": [
+      {
+        "id": 28771,
+        "amount": 4
+      },
+      {
+        "id": 28772,
+        "amount": 4
+      },
+      {
+        "id": 5116,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33584,
+    "job": 11,
+    "level": 40,
+    "yields": 1,
+    "result": 28736,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 40,
+    "ingredients": [
+      {
+        "id": 28771,
+        "amount": 4
+      },
+      {
+        "id": 28772,
+        "amount": 4
+      },
+      {
+        "id": 5115,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33585,
+    "job": 12,
+    "level": 40,
+    "yields": 1,
+    "result": 28737,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 40,
+    "ingredients": [
+      {
+        "id": 28769,
+        "amount": 4
+      },
+      {
+        "id": 28916,
+        "amount": 4
+      },
+      {
+        "id": 5414,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33586,
+    "job": 13,
+    "level": 40,
+    "yields": 1,
+    "result": 28738,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 40,
+    "ingredients": [
+      {
+        "id": 28773,
+        "amount": 4
+      },
+      {
+        "id": 28774,
+        "amount": 4
+      },
+      {
+        "id": 5347,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33587,
+    "job": 14,
+    "level": 40,
+    "yields": 1,
+    "result": 28739,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 40,
+    "ingredients": [
+      {
+        "id": 28773,
+        "amount": 4
+      },
+      {
+        "id": 28916,
+        "amount": 4
+      },
+      {
+        "id": 5536,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33588,
+    "job": 15,
+    "level": 40,
+    "yields": 1,
+    "result": 28740,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 40,
+    "ingredients": [
+      {
+        "id": 28770,
+        "amount": 4
+      },
+      {
+        "id": 28774,
+        "amount": 4
+      },
+      {
+        "id": 4826,
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "id": 33589,
+    "job": 8,
+    "level": 60,
+    "yields": 1,
+    "result": 28741,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 150,
+    "ingredients": [
+      {
+        "id": 28775,
+        "amount": 6
+      },
+      {
+        "id": 28776,
+        "amount": 6
+      },
+      {
+        "id": 12524,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33590,
+    "job": 9,
+    "level": 60,
+    "yields": 1,
+    "result": 28742,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 150,
+    "ingredients": [
+      {
+        "id": 28777,
+        "amount": 6
+      },
+      {
+        "id": 28778,
+        "amount": 6
+      },
+      {
+        "id": 12581,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33591,
+    "job": 10,
+    "level": 60,
+    "yields": 1,
+    "result": 28743,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 150,
+    "ingredients": [
+      {
+        "id": 28777,
+        "amount": 6
+      },
+      {
+        "id": 28778,
+        "amount": 6
+      },
+      {
+        "id": 12581,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33592,
+    "job": 11,
+    "level": 60,
+    "yields": 1,
+    "result": 28744,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 150,
+    "ingredients": [
+      {
+        "id": 28777,
+        "amount": 6
+      },
+      {
+        "id": 28778,
+        "amount": 6
+      },
+      {
+        "id": 5998,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33593,
+    "job": 12,
+    "level": 60,
+    "yields": 1,
+    "result": 28745,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 150,
+    "ingredients": [
+      {
+        "id": 28779,
+        "amount": 6
+      },
+      {
+        "id": 28780,
+        "amount": 6
+      },
+      {
+        "id": 12570,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33594,
+    "job": 13,
+    "level": 60,
+    "yields": 1,
+    "result": 28746,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 150,
+    "ingredients": [
+      {
+        "id": 28776,
+        "amount": 6
+      },
+      {
+        "id": 28775,
+        "amount": 6
+      },
+      {
+        "id": 12595,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33595,
+    "job": 14,
+    "level": 60,
+    "yields": 1,
+    "result": 28747,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 150,
+    "ingredients": [
+      {
+        "id": 28776,
+        "amount": 6
+      },
+      {
+        "id": 28775,
+        "amount": 6
+      },
+      {
+        "id": 5517,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33596,
+    "job": 15,
+    "level": 60,
+    "yields": 1,
+    "result": 28748,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 150,
+    "ingredients": [
+      {
+        "id": 28779,
+        "amount": 6
+      },
+      {
+        "id": 28780,
+        "amount": 6
+      },
+      {
+        "id": 12888,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33597,
+    "job": 8,
+    "level": 70,
+    "yields": 1,
+    "result": 28749,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 290,
+    "ingredients": [
+      {
+        "id": 28781,
+        "amount": 6
+      },
+      {
+        "id": 28784,
+        "amount": 6
+      },
+      {
+        "id": 28785,
+        "amount": 6
+      },
+      {
+        "id": 19943,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33598,
+    "job": 9,
+    "level": 70,
+    "yields": 1,
+    "result": 28750,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 290,
+    "ingredients": [
+      {
+        "id": 28782,
+        "amount": 6
+      },
+      {
+        "id": 28784,
+        "amount": 6
+      },
+      {
+        "id": 28788,
+        "amount": 6
+      },
+      {
+        "id": 5372,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33599,
+    "job": 10,
+    "level": 70,
+    "yields": 1,
+    "result": 28751,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 290,
+    "ingredients": [
+      {
+        "id": 28782,
+        "amount": 6
+      },
+      {
+        "id": 28784,
+        "amount": 6
+      },
+      {
+        "id": 28788,
+        "amount": 6
+      },
+      {
+        "id": 19906,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33600,
+    "job": 11,
+    "level": 70,
+    "yields": 1,
+    "result": 28752,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 290,
+    "ingredients": [
+      {
+        "id": 28784,
+        "amount": 6
+      },
+      {
+        "id": 28788,
+        "amount": 6
+      },
+      {
+        "id": 28785,
+        "amount": 6
+      },
+      {
+        "id": 20008,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33601,
+    "job": 12,
+    "level": 70,
+    "yields": 1,
+    "result": 28753,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 290,
+    "ingredients": [
+      {
+        "id": 28783,
+        "amount": 6
+      },
+      {
+        "id": 28781,
+        "amount": 6
+      },
+      {
+        "id": 28789,
+        "amount": 6
+      },
+      {
+        "id": 19980,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33602,
+    "job": 13,
+    "level": 70,
+    "yields": 1,
+    "result": 28754,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 290,
+    "ingredients": [
+      {
+        "id": 28909,
+        "amount": 6
+      },
+      {
+        "id": 28787,
+        "amount": 6
+      },
+      {
+        "id": 28789,
+        "amount": 6
+      },
+      {
+        "id": 19995,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33603,
+    "job": 14,
+    "level": 70,
+    "yields": 1,
+    "result": 28755,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 290,
+    "ingredients": [
+      {
+        "id": 28909,
+        "amount": 6
+      },
+      {
+        "id": 28787,
+        "amount": 6
+      },
+      {
+        "id": 28781,
+        "amount": 6
+      },
+      {
+        "id": 12609,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33604,
+    "job": 15,
+    "level": 70,
+    "yields": 1,
+    "result": 28756,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 290,
+    "ingredients": [
+      {
+        "id": 28783,
+        "amount": 6
+      },
+      {
+        "id": 28787,
+        "amount": 6
+      },
+      {
+        "id": 28789,
+        "amount": 6
+      },
+      {
+        "id": 19917,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33605,
+    "job": 8,
+    "level": 80,
+    "yields": 1,
+    "result": 28757,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 430,
+    "ingredients": [
+      {
+        "id": 28790,
+        "amount": 8
+      },
+      {
+        "id": 28795,
+        "amount": 8
+      },
+      {
+        "id": 28793,
+        "amount": 8
+      },
+      {
+        "id": 27751,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33606,
+    "job": 9,
+    "level": 80,
+    "yields": 1,
+    "result": 28758,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 430,
+    "ingredients": [
+      {
+        "id": 28791,
+        "amount": 8
+      },
+      {
+        "id": 28792,
+        "amount": 8
+      },
+      {
+        "id": 28790,
+        "amount": 8
+      },
+      {
+        "id": 27711,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33607,
+    "job": 10,
+    "level": 80,
+    "yields": 1,
+    "result": 28759,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 430,
+    "ingredients": [
+      {
+        "id": 28791,
+        "amount": 8
+      },
+      {
+        "id": 28792,
+        "amount": 8
+      },
+      {
+        "id": 28796,
+        "amount": 8
+      },
+      {
+        "id": 27710,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33608,
+    "job": 11,
+    "level": 80,
+    "yields": 1,
+    "result": 28760,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 430,
+    "ingredients": [
+      {
+        "id": 28792,
+        "amount": 8
+      },
+      {
+        "id": 28796,
+        "amount": 8
+      },
+      {
+        "id": 28798,
+        "amount": 8
+      },
+      {
+        "id": 27710,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33609,
+    "job": 12,
+    "level": 80,
+    "yields": 1,
+    "result": 28761,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 430,
+    "ingredients": [
+      {
+        "id": 28794,
+        "amount": 8
+      },
+      {
+        "id": 28790,
+        "amount": 8
+      },
+      {
+        "id": 28793,
+        "amount": 8
+      },
+      {
+        "id": 27751,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33610,
+    "job": 13,
+    "level": 80,
+    "yields": 1,
+    "result": 28762,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 430,
+    "ingredients": [
+      {
+        "id": 28793,
+        "amount": 8
+      },
+      {
+        "id": 28797,
+        "amount": 8
+      },
+      {
+        "id": 28798,
+        "amount": 8
+      },
+      {
+        "id": 27740,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33611,
+    "job": 14,
+    "level": 80,
+    "yields": 1,
+    "result": 28763,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 430,
+    "ingredients": [
+      {
+        "id": 28794,
+        "amount": 8
+      },
+      {
+        "id": 28910,
+        "amount": 8
+      },
+      {
+        "id": 28797,
+        "amount": 8
+      },
+      {
+        "id": 27842,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33612,
+    "job": 15,
+    "level": 80,
+    "yields": 1,
+    "result": 28764,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 430,
+    "ingredients": [
+      {
+        "id": 28795,
+        "amount": 8
+      },
+      {
+        "id": 28797,
+        "amount": 8
+      },
+      {
+        "id": 28910,
+        "amount": 8
+      },
+      {
+        "id": 27850,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33613,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28808,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33614,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28809,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 28908,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33615,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28810,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33616,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28811,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19975,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33617,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28812,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33618,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28813,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33619,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28814,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 28908,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33620,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28815,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33621,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28816,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19975,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33622,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28817,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33623,
+    "job": 11,
+    "level": 61,
+    "yields": 1,
+    "result": 28818,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 5512,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33624,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28819,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 28908,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33625,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28820,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19975,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33626,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28821,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19975,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33627,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28822,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33628,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28823,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33629,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28824,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19975,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33630,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28825,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19975,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33631,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28826,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33632,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28827,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33633,
+    "job": 11,
+    "level": 61,
+    "yields": 1,
+    "result": 28828,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 5512,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33634,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28829,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 28908,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33635,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28830,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19975,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33636,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28831,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19975,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33637,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28832,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33638,
+    "job": 11,
+    "level": 61,
+    "yields": 1,
+    "result": 28833,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 5512,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33639,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28834,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33640,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28835,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19975,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33641,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28836,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33642,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28837,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33643,
+    "job": 11,
+    "level": 61,
+    "yields": 1,
+    "result": 28838,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 5512,
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": 33644,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28839,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33645,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28840,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19975,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33646,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28841,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33647,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28842,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33648,
+    "job": 11,
+    "level": 61,
+    "yields": 1,
+    "result": 28843,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 5512,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33649,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28844,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33650,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28845,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33651,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28846,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33652,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28847,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33653,
+    "job": 11,
+    "level": 61,
+    "yields": 1,
+    "result": 28848,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 5512,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33654,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28849,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33655,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28850,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33656,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28851,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33657,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28852,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33658,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28853,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33659,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28854,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 28908,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33660,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28855,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28908,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33661,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28856,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33662,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28857,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33663,
+    "job": 11,
+    "level": 61,
+    "yields": 1,
+    "result": 28858,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 5512,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33664,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28859,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 28908,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33665,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28860,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28908,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33666,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28861,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33667,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28862,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33668,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28863,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33669,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28864,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33670,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28865,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33671,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28866,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33672,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28867,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33673,
+    "job": 11,
+    "level": 61,
+    "yields": 1,
+    "result": 28868,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 5512,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33674,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28869,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33675,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28870,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33676,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28871,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33677,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28872,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33678,
+    "job": 11,
+    "level": 61,
+    "yields": 1,
+    "result": 28873,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28906,
+        "amount": 2
+      },
+      {
+        "id": 5512,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33679,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28874,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 2
+      },
+      {
+        "id": 28908,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33680,
+    "job": 12,
+    "level": 61,
+    "yields": 1,
+    "result": 28875,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28908,
+        "amount": 1
+      },
+      {
+        "id": 19974,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33681,
+    "job": 13,
+    "level": 61,
+    "yields": 1,
+    "result": 28876,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28908,
+        "amount": 2
+      },
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": 33682,
+    "job": 10,
+    "level": 61,
+    "yields": 1,
+    "result": 28877,
+    "stars": 0,
+    "qs": false,
+    "rlvl": 260,
+    "ingredients": [
+      {
+        "id": 28907,
+        "amount": 1
+      },
+      {
+        "id": 28906,
+        "amount": 1
+      },
+      {
+        "id": 19993,
+        "amount": 1
+      },
+      {
+        "id": 19939,
+        "amount": 1
+      }
+    ]
+  },
+  {
     "id": 33683,
     "job": 13,
     "level": 80,

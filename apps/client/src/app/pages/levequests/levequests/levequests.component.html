@@ -67,6 +67,13 @@
     <div>Exp</div>
     <nz-input-number [(ngModel)]="startingExp" [nzMax]="getMaxExp(startingLevel) - 1" [nzMin]="0"
                      [nzPrecision]="0"></nz-input-number>
+    <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <nz-switch [(ngModel)]="hideLarge" (ngModelChange)="hideLargeChange$.next($event)"
+                   nzSize="small"></nz-switch>
+        <div>{{'LEVEQUESTS.Hide_large' | translate}}</div>
+      </div>
+    </div>
   </div>
   <div class="additional-buttons">
     <label [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)" nz-checkbox>

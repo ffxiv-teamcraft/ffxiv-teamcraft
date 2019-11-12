@@ -10,13 +10,15 @@ export interface ListsState {
   listsConnected: boolean;
   needsVerification: boolean;
   deleted: string[];
+  pinned: string;
 }
 
 export const initialState: ListsState = {
   listDetails: [],
   listsConnected: false,
   needsVerification: false,
-  deleted: []
+  deleted: [],
+  pinned: 'none'
 };
 
 export function listsReducer(
@@ -105,7 +107,8 @@ export function listsReducer(
       break;
     }
 
-    case ListsActionTypes.UpdateList: {
+    case ListsActionTypes.UpdateList:
+    case ListsActionTypes.UpdateListAtomic: {
       state = {
         ...state,
         listDetails: [
@@ -152,6 +155,23 @@ export function listsReducer(
         ...state,
         selectedId: action.key
       };
+      break;
+    }
+
+    case ListsActionTypes.PinList: {
+      state = {
+        ...state,
+        pinned: action.uid
+      };
+      break;
+    }
+
+    case ListsActionTypes.UnPinList: {
+      state = {
+        ...state,
+        pinned: 'none'
+      };
+      break;
     }
   }
   return state;

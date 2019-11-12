@@ -390,6 +390,13 @@
     "COPY_TYPE": {
       "Classic": "Gegenstandsnamen kopieren",
       "Isearch": "/isearch Makro kopieren"
+    },
+    "CATEGORIES": {
+      "Autofill_completion": "Sound bei Auto-Vervollständigung",
+      "Packet_capture": "Paketerfassung",
+      "Theme": "Theme",
+      "Search": "Suche",
+      "Other": "Anderes"
     }
   },
   "PROFILE": {
@@ -477,6 +484,18 @@
     "Offline": "Offline",
     "Offline_help": "Offline-Listen werden im Browser oder der App gespeichert. Sie sind nur dort verfügbar und können nicht geteilt werden. Sie sind schneller, da sie keine Netzwerk-Aufrufe benötigen.",
     "Mark_whole_panel_done": "Panelinhalt als erledigt markieren",
+    "Set_color": "Listenfarbe festlegen",
+    "Go_to_pinned": "Zu angepinnter Liste springen (Rechtsklick zum entpinnen)",
+    "COLORS": {
+      "RED": "Rot",
+      "GREEN": "Grün",
+      "YELLOW": "Gelb",
+      "BLUE": "Blau",
+      "PURPLE": "Lila",
+      "ORANGE": "Orange",
+      "PINK": "Rosa",
+      "NONE": "Keine"
+    },
     "ROTATION": {
       "Attach": "Rotation hinzufügen",
       "Detach": "Rotation entfernen",
@@ -958,6 +977,7 @@
     "Global_exp": "Routine summieren",
     "More_on_gamerescape": "Mehr auf gamerescape (Englisch)",
     "Deliver_to": "Liefere nach {{placename}}",
+    "Hide_large": "Hide large leves",
     "INTRO": {
       "Title": "Freibriefe",
       "First_line": "Diese Seite stellt eine Suche nach einem oder mehreren Freibriefen zur Verfügung um von den Ergebnissen eine Liste zu erstellen",
@@ -1552,6 +1572,7 @@
     "Contribute_to_universalis": "Daten für Universalis beitragen",
     "Reset_inventory": "Dieses Inventar zurücksetzen",
     "Clean_all": "Alle Inventare zurücksetzen",
+    "Search_for_an_item": "Search for an item",
     "BAG": {
       "SaddleBag": "Chocobo-Satteltasche",
       "FC_chest": "FG-Truhe",
@@ -1564,6 +1585,8 @@
     "Title": "Inventaroptimierer",
     "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
     "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
+    "Ignore_contaier": "Ignore this tip for this container",
+    "Remove_ignore_contaier": "Don't ignore this tip for this container anymore",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
     "No_optimizations": "Keine Optimierungen verfügbar",
     "CAN_BE_BOUGHT": {

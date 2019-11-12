@@ -22,7 +22,7 @@ export class WorkshopService extends FirestoreRelationalStorage<Workshop> {
         map((snaps: DocumentChangeAction<Workshop>[]) => {
           const workshops = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: Workshop = <Workshop>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: Workshop = <Workshop>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             });

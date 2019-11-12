@@ -15,8 +15,8 @@
     <input [formControl]="characterName" id="characterName" nz-input type="text">
   </nz-form-item>
   <button (click)="setKoreanCharacter()" *ngIf="selectedServer.value
-   && (selectedServer.value.toString().toLowerCase().indexOf('korean server') !== -1
-      || selectedServer.value.toString().toLowerCase().indexOf('chinese server'))" nz-button
+   && (selectedServer.value.toString().toLowerCase().indexOf('korean server') > -1
+      || selectedServer.value.toString().toLowerCase().indexOf('chinese server')) > -1" nz-button
           nzType="primary">
     {{'Add_manual_character' | translate}}
   </button>
@@ -53,19 +53,21 @@
     <input [formControl]="lodestoneId" id="LodestoneId" nz-input type="number">
   </nz-form-item>
   <div *ngIf="lodestoneIdCharacter$ | async as lodestoneIdCharacter">
-    <nz-list-item [nzActions]="[selectAction]">
-      <ng-template #selectAction>
-        <button (click)="selectCharacter(lodestoneIdCharacter)" nz-button
-                nzType="primary">{{'COMMON.Select' | translate}}</button>
-      </ng-template>
-      <nz-list-item-meta
-        [nzAvatar]="lodestoneIdCharacter.Avatar"
-        [nzTitle]="nzTitle">
-        <ng-template #nzTitle>
-          <span>{{lodestoneIdCharacter.Name}}</span>
+    <nz-list>
+      <nz-list-item [nzActions]="[selectAction]">
+        <ng-template #selectAction>
+          <button (click)="selectCharacter(lodestoneIdCharacter)" nz-button
+                  nzType="primary">{{'COMMON.Select' | translate}}</button>
         </ng-template>
-      </nz-list-item-meta>
-    </nz-list-item>
+        <nz-list-item-meta
+          [nzAvatar]="lodestoneIdCharacter.Avatar"
+          [nzTitle]="nzTitle">
+          <ng-template #nzTitle>
+            <span>{{lodestoneIdCharacter.Name}}</span>
+          </ng-template>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </nz-list>
   </div>
 </div>
 

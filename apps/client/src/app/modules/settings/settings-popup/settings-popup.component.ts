@@ -41,6 +41,8 @@ export class SettingsPopupComponent {
 
   customTheme: Theme;
 
+  public sounds = ['Confirm', 'Full_Party', 'Feature_unlocked'];
+
   startingPlaces = [
     {
       id: 12,
@@ -189,6 +191,24 @@ export class SettingsPopupComponent {
     if (themeName === 'CUSTOM') {
       this.saveCustomTheme();
     }
+  }
+
+  public previewSound(): void {
+    let audio: HTMLAudioElement;
+    audio = new Audio(`./assets/audio/${this.settings.autofillCompletionSound}.mp3`);
+    audio.loop = false;
+    audio.volume = this.settings.autofillCompletionVolume;
+    audio.play();
+  }
+
+  public setVolume(volume: number): void {
+    this.settings.autofillCompletionVolume = volume;
+    this.previewSound();
+  }
+
+  public setSound(sound: string): void {
+    this.settings.autofillCompletionSound = sound;
+    this.previewSound();
   }
 
 }

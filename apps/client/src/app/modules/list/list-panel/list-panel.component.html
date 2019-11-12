@@ -1,4 +1,4 @@
-<nz-collapse>
+<nz-collapse [style.background-color]="_list?.color">
   <nz-collapse-panel #listContentPanel (nzActiveChange)="openStateChange()" [nzHeader]="panelHeader">
     <div *ngIf="listContentPanel.nzActive" fxLayout="column" fxLayoutGap="10px">
       <div *ngFor="let item of listContent$ | async; trackBy: trackByItem; let odd = odd" [class.odd]="odd" fxLayout="row"
@@ -7,7 +7,8 @@
         <app-item-icon [icon]="item.icon" [itemId]="item.id" [width]="32"></app-item-icon>
         <div>{{item.id | itemName:item | i18n}}</div>
         <div class="spacer"></div>
-        <nz-input-number #amountModifierInput (keypress.enter)="updateAmount(item, amountModifierInput.displayValue); amountModifierInput.blur()" (ngModelChange)="updateAmount(item, $event)"
+        <nz-input-number #amountModifierInput (keypress.enter)="updateAmount(item, amountModifierInput.displayValue); amountModifierInput.blur()"
+                         (ngModelChange)="updateAmount(item, $event)"
                          *ngIf="(permissionLevel$ | async) > 10; else publicAmountDisplay"
                          [disabled]="(permissionLevel$ | async) < 30"
                          [ngModel]="item.amount"
@@ -90,7 +91,8 @@
            routerLink="/list/{{_list.$key}}">
           <i nz-icon nzType="folder-open"></i>
         </a>
-        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteList(_list)" *ngIf="(permissionLevel$ | async) > 10" [disabled]="(permissionLevel$ | async) < 40" [nzShape]="'circle'"
+        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteList(_list)" *ngIf="(permissionLevel$ | async) > 10"
+                [disabled]="(permissionLevel$ | async) < 40" [nzShape]="'circle'"
                 [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate"
                 [nzType]="'danger'"
                 nz-button nz-popconfirm>
@@ -135,6 +137,14 @@
                   {{'TEAMS.Detach_team' | translate}}
                 </li>
               </ng-container>
+              <li *ngIf="(permissionLevel$ | async) >= 30" nz-submenu>
+                <span title>{{'LIST.Set_color' | translate}}</span>
+                <ul>
+                  <li nz-menu-item (click)="setColor(color.value, _list)"
+                      *ngFor="let color of availableColors"
+                      [nzSelected]="_list.color === color.value">{{('LIST.COLORS.' + color.name) | translate}}</li>
+                </ul>
+              </li>
             </ng-container>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">

@@ -44,9 +44,17 @@ const getSelectedList = () => createSelector(
   }
 );
 
+const getPinnedListKey = () => createSelector(
+  getListsState,
+  (state) => {
+    return state.pinned
+  }
+);
+
 export const listsQuery = {
   getAllListDetails,
   getSelectedList,
+  getPinnedListKey,
   getNeedsVerification,
   getAutocompleteEnabled,
   getCompletionNotificationEnabled,

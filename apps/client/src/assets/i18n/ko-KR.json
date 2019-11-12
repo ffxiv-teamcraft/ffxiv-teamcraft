@@ -390,6 +390,13 @@
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
+    },
+    "CATEGORIES": {
+      "Autofill_completion": "자동채우기 완료 소리",
+      "Packet_capture": "패킷 캡처",
+      "Theme": "테마",
+      "Search": "검색",
+      "Other": "기타"
     }
   },
   "PROFILE": {
@@ -477,6 +484,18 @@
     "Offline": "오프라인",
     "Offline_help": "오프라인 목록은 브라우저 혹은 앱 내에 저장됩니다. 해당 목록은 공유를 할 수 없지만 네트워크를 사용하지 않으며 더 빠르게 로딩됩니다.",
     "Mark_whole_panel_done": "패널의 내용을 완료됨으로 표시",
+    "Set_color": "목록 색상 설정",
+    "Go_to_pinned": "고정해둔 목록으로 가기 (우클릭시 고정해제)",
+    "COLORS": {
+      "RED": "빨간색",
+      "GREEN": "초록색",
+      "YELLOW": "노란색",
+      "BLUE": "파란색",
+      "PURPLE": "보라색",
+      "ORANGE": "주황색",
+      "PINK": "분홍색",
+      "NONE": "없음"
+    },
     "ROTATION": {
       "Attach": "제작 로테이션 연동",
       "Detach": "제작 로테이션 연동해제",
@@ -926,7 +945,7 @@
       "Use_more_quality_actions": "내구도가 남은 상태로 제작을 끝마쳤습니다. 남은 내구도를 이용하여 더 많은 가공스킬을 사용할 수 있습니다.",
       "Use_prudent_touch_manipulation": "66레벨 이상일 경우 '교묘한 손놀림' 과 '절약 가공'을 사용하여 확실하게 더 높은 품질을 얻어야 합니다",
       "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
-      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
+      "Do_not_use_brand_without_name": "\"XX의 인장\" 스킬은 \"XX의 예술\"스킬을 활성화 시키고 사용하십시오",
       "Avoid_using_good_actions": "매크로를 구상할때는 고품질을 요구하는 액션을 사용하지 마세요 고품질은 예측이 불가능합니다"
     }
   },
@@ -958,6 +977,7 @@
     "Global_exp": "현재 경험치만 표시",
     "More_on_gamerescape": "'Gamer Escape'에서 자세한 정보 보기",
     "Deliver_to": "{{placename}}에 납품",
+    "Hide_large": "Hide large leves",
     "INTRO": {
       "Title": "길드 의뢰",
       "First_line": "이 페이지에서는 주어진 길드의뢰나 여러 개의 길드의뢰에 대한 목록을 만들 수 있습니다.",
@@ -1552,6 +1572,7 @@
     "Contribute_to_universalis": "Universalis에 데이터를 기여하기",
     "Reset_inventory": "소지품 초기화",
     "Clean_all": "모든 소지품 초기화",
+    "Search_for_an_item": "아이템 검색",
     "BAG": {
       "SaddleBag": "초코보 가방",
       "FC_chest": "부대 금고",
@@ -1564,6 +1585,8 @@
     "Title": "소지품 최적화",
     "Ignore_item": "이 아이템에는 이 팁 무시하기",
     "Remove_ignore_item": "이 아이템에는 더이상 이 팁을 무시하지 않기",
+    "Ignore_contaier": "이 컨테이너에는 이 팁 무시하기",
+    "Remove_ignore_contaier": "이 컨테이너에는 더이상 이 팁을 무시하지 않기",
     "Show_ignored": "무시된 항목 보여주기",
     "No_optimizations": "최적화가 가능하지 않습니다",
     "CAN_BE_BOUGHT": {

@@ -131,6 +131,8 @@ export class AppComponent implements OnInit {
 
   public emptyInventory$: Observable<boolean>;
 
+  public pinnedList$ = this.listsFacade.pinnedList$;
+
   public randomTip$: Observable<string> = interval(600000).pipe(
     startWith(-1),
     map(() => {

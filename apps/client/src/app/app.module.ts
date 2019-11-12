@@ -165,8 +165,7 @@ const nzConfig: NzConfig = {
     },
     { provide: FirestoreSettingsToken, useValue: {} },
     { provide: NZ_ICONS, useValue: icons },
-    { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
-    // { provide: FUNCTIONS_ORIGIN, useValue: 'https://us-central1-ffxiv-teamcraft-beta.cloudfunctions.net' }
+    { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true }
   ],
   imports: [
     FlexLayoutModule,

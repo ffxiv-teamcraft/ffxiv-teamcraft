@@ -1,14 +1,6 @@
 <nz-tabset [nzSelectedIndex]="selectedTab" class="tabset" nzTabPosition="left">
   <nz-tab [nzTitle]="'SETTINGS.General' | translate">
     <div fxLayout="column" fxLayoutGap="10px">
-      <nz-form-item class="empty-label">
-        <nz-form-label [nzSpan]="5"></nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <button (click)="clearSearchHistory()" class="clear-search" fxFlexAlign="center center" nz-button>
-            {{'SETTINGS.Clear_search_history' | translate}}
-          </button>
-        </nz-form-control>
-      </nz-form-item>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'COMMON.Language' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
@@ -18,6 +10,7 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
+      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Theme' | translate"></nz-divider>
       <ng-container *ngIf="user$ | async as user">
         <nz-form-item>
           <nz-form-label [nzSpan]="5">{{'SETTINGS.Theme' | translate}}</nz-form-label>
@@ -94,25 +87,23 @@
                  nz-checkbox>{{'SETTINGS.no_panel_borders' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item class="empty-label">
-        <nz-form-label [nzSpan]="5"></nz-form-label>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Db_comments_position' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
-          <label [(ngModel)]="settings.showAllAlarms"
-                 nz-checkbox>{{'SETTINGS.Show_all_alarms' | translate}}</label>
+          <nz-select [(ngModel)]="settings.dbCommentsPosition">
+            <nz-option [nzLabel]="'COMMON.Top' | translate" [nzValue]="'TOP'"></nz-option>
+            <nz-option [nzLabel]="'COMMON.Bottom' | translate" [nzValue]="'BOTTOM'"></nz-option>
+          </nz-select>
         </nz-form-control>
       </nz-form-item>
+      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Search' | translate"></nz-divider>
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
-          <label [(ngModel)]="settings.disableCrossWorld"
-                 nz-checkbox>{{'SETTINGS.Disable_cross_world_prices' | translate}}</label>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item class="empty-label">
-        <nz-form-label [nzSpan]="5"></nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <label [(ngModel)]="settings.alwaysHQLeves"
-                 nz-checkbox>{{'SETTINGS.Always_HQ_leves' | translate}}</label>
+          <button (click)="clearSearchHistory()" class="clear-search" fxFlexAlign="center center" nz-button>
+            {{'SETTINGS.Clear_search_history' | translate}}
+          </button>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item class="empty-label">
@@ -127,6 +118,28 @@
         <nz-form-control [nzSpan]="12">
           <label [(ngModel)]="settings.disableSearchDebounce"
                  nz-checkbox>{{'SETTINGS.Disable_search_debounce' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.showAllAlarms"
+                 nz-checkbox>{{'SETTINGS.Show_all_alarms' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Other' | translate"></nz-divider>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.disableCrossWorld"
+                 nz-checkbox>{{'SETTINGS.Disable_cross_world_prices' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.alwaysHQLeves"
+                 nz-checkbox>{{'SETTINGS.Always_HQ_leves' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
@@ -157,16 +170,6 @@
             <nz-option [nzLabel]="'NONE' | translate" [nzValue]="1"></nz-option>
             <nz-option [nzLabel]="'READ' | translate" [nzValue]="10"></nz-option>
             <nz-option [nzLabel]="'PARTICIPATE' | translate" [nzValue]="20"></nz-option>
-          </nz-select>
-        </nz-form-control>
-      </nz-form-item>
-
-      <nz-form-item>
-        <nz-form-label [nzSpan]="5">{{'SETTINGS.Db_comments_position' | translate}}</nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <nz-select [(ngModel)]="settings.dbCommentsPosition">
-            <nz-option [nzLabel]="'COMMON.Top' | translate" [nzValue]="'TOP'"></nz-option>
-            <nz-option [nzLabel]="'COMMON.Bottom' | translate" [nzValue]="'BOTTOM'"></nz-option>
           </nz-select>
         </nz-form-control>
       </nz-form-item>
@@ -271,16 +274,19 @@
           <nz-input-group>
             <nz-form-label>{{'SETTINGS.Nickname' | translate}}</nz-form-label>
             <nz-form-control [nzValidateStatus]="nicknameAvailable === false ? 'error' : null">
-              <input #nickname (ngModelChange)="nicknameAvailable = undefined" [ngModel]="user.nickname" nz-input placeholder="Nickname"
+              <input #nickname (ngModelChange)="nicknameAvailable = undefined" [ngModel]="user.nickname" nz-input
+                     placeholder="Nickname"
                      type="text">
               <nz-form-explain
                 *ngIf="nicknameAvailable === false">{{'SETTINGS.Nickname_used' | translate}}</nz-form-explain>
             </nz-form-control>
           </nz-input-group>
-          <button (click)="checkNicknameAvailability(nickname.value)" *ngIf="!nicknameAvailable && nickname.value !== user.nickname" nz-button
+          <button (click)="checkNicknameAvailability(nickname.value)"
+                  *ngIf="!nicknameAvailable && nickname.value !== user.nickname" nz-button
                   nzBlock>Verify
           </button>
-          <button (click)="setNickname(user, nickname.value)" *ngIf="nicknameAvailable && nickname.value !== user.nickname" nz-button
+          <button (click)="setNickname(user, nickname.value)"
+                  *ngIf="nicknameAvailable && nickname.value !== user.nickname" nz-button
                   nzBlock nzType="primary">Apply
           </button>
         </div>
@@ -289,6 +295,7 @@
   </nz-tab>
   <nz-tab *ngIf="platform.isDesktop()" [nzTitle]="'SETTINGS.Desktop' | translate">
     <div fxLayout="column" fxLayoutGap="5px">
+      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.General' | translate"></nz-divider>
       <div>
         <label [(ngModel)]="alwaysOnTop" (ngModelChange)="alwaysOnTopChange($event)" nz-checkbox>
           {{'SETTINGS.Always_on_top' | translate}}
@@ -299,6 +306,19 @@
           {{'SETTINGS.Clickthrough_overlay' | translate}}
         </label>
       </div>
+      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Autofill_completion' | translate"></nz-divider>
+      <nz-form-item>
+        <nz-form-label nzFor="sound">{{'Sound' | translate}}</nz-form-label>
+        <nz-select (ngModelChange)="setSound($event)" [ngModel]="settings.autofillCompletionSound" class="select-box"
+                   id="sound">
+          <nz-option *ngFor="let sound of sounds" [nzLabel]="sound" [nzValue]="sound">
+          </nz-option>
+        </nz-select>
+      </nz-form-item>
+      <nz-slider (nzOnAfterChange)="setVolume($event/100)" [ngModel]="settings.autofillCompletionVolume * 100"
+                 [nzMax]="100" [nzMin]="1"
+                 [nzStep]="1"></nz-slider>
+      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Packet_capture' | translate"></nz-divider>
       <nz-card>
         <div fxLayout="column">
           <div>

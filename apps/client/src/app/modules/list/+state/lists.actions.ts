@@ -34,6 +34,8 @@ export enum ListsActionTypes {
   NeedsVerification = '[Lists] Needs character verification',
   ToggleAutocompletion = '[Lists] Toggle autocompletion',
   ToggleCompletionNotification = '[Lists] Toggle completion notification',
+  PinList = '[Lists] Pin list',
+  UnPinList = '[Lists] Unpin list',
 }
 
 export class LoadMyLists implements Action {
@@ -187,6 +189,17 @@ export class ConvertLists implements Action {
   }
 }
 
+export class PinList implements Action {
+  readonly type = ListsActionTypes.PinList;
+
+  constructor(public readonly uid: string) {
+  }
+}
+
+export class UnPinList implements Action {
+  readonly type = ListsActionTypes.UnPinList;
+}
+
 export type ListsAction =
   LoadMyLists
   | MyListsLoaded
@@ -209,4 +222,6 @@ export type ListsAction =
   | OfflineListsLoaded
   | ToggleAutocompletion
   | ToggleCompletionNotification
-  | UpdateListAtomic;
+  | UpdateListAtomic
+  | PinList
+  | UnPinList;

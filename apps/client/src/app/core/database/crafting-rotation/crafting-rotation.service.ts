@@ -37,7 +37,7 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
         map((snaps: DocumentChangeAction<CraftingRotation>[]) => {
           const rotations = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: CraftingRotation = <CraftingRotation>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: CraftingRotation = <CraftingRotation>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             })
@@ -87,7 +87,7 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
         map((snaps: DocumentChangeAction<CraftingRotation>[]) => {
           const rotations = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: CraftingRotation = <CraftingRotation>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: CraftingRotation = <CraftingRotation>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             });

@@ -46,6 +46,16 @@
           </div>
         </div>
         <ul [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu" nz-menu>
+          <ng-container *ngIf="pinnedList$ | async as pinnedList">
+            <li *ngIf="pinnedList !== 'none'"
+                class="ant-menu-item"
+                nzPlacement="bottom"
+                (contextmenu)="$event.preventDefault();listsFacade.unpin()"
+                nz-tooltip [nzTitle]="'LIST.Go_to_pinned' | translate"
+                routerLink="/list/{{pinnedList}}">
+              <i nz-icon nzType="pushpin" nzTheme="outline"></i>
+            </li>
+          </ng-container>
           <li class="ant-menu-item" fxFlex fxHide.lt-sm fxLayout="column" fxShow routerLink="/support-us"
               routerLinkActive="ant-menu-item-selected">
             {{'SUPPORT_US.Title' | translate}}
@@ -399,7 +409,8 @@
               {{'UPDATE.Web_instructions' | translate}}
             </ng-template>
           </nz-alert>
-          <nz-alert (nzOnClose)="settings.hideMachinaBanner = true" *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.machinaToggle" [nzCloseText]="'Close' | translate"
+          <nz-alert (nzOnClose)="settings.hideMachinaBanner = true" *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.machinaToggle"
+                    [nzCloseText]="'Close' | translate"
                     [nzDescription]="description"
                     [nzMessage]="'PACKET_CAPTURE.Banner_title' | translate"
                     class="new-version-alert"
@@ -420,7 +431,8 @@
             </ng-template>
           </nz-alert>
           <ng-container *ngIf="platformService.isDesktop() && ipc.machinaToggle && !overlay">
-            <nz-alert *ngIf="emptyInventory$ | async" [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate" [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
+            <nz-alert *ngIf="emptyInventory$ | async" [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate"
+                      [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
                       class="new-version-alert"
                       nzBanner
                       nzShowIcon

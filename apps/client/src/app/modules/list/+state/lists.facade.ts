@@ -13,17 +13,19 @@ import {
   LoadTeamLists,
   NeedsVerification,
   OfflineListsLoaded,
+  PinList,
   SelectList,
   SetItemDone,
   ToggleAutocompletion,
   ToggleCompletionNotification,
+  UnPinList,
   UpdateItem,
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -157,6 +159,8 @@ export class ListsFacade {
   needsVerification$ = this.store.select(listsQuery.getNeedsVerification);
 
   autocompleteEnabled$ = this.store.select(listsQuery.getAutocompleteEnabled);
+
+  pinnedList$ = this.store.select(listsQuery.getPinnedListKey());
 
   completionNotificationEnabled$ = this.store.select(listsQuery.getCompletionNotificationEnabled);
 
@@ -318,6 +322,14 @@ export class ListsFacade {
 
   select(key: string): void {
     this.store.dispatch(new SelectList(key));
+  }
+
+  pin(key: string): void {
+    this.store.dispatch(new PinList(key));
+  }
+
+  unpin(): void {
+    this.store.dispatch(new UnPinList());
   }
 
   sortLists(lists: List[]): List[] {

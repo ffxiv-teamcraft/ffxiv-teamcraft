@@ -49,7 +49,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     const preparedNew = this.prepareData(data);
     let diff = compare(preparedCache, preparedNew);
     diff = diff.map(entry => {
-      if (entry.path.startsWith('/items') || entry.path.startsWith('/finalItems') && entry.op === 'replace' && typeof entry.value === 'number') {
+      if ((entry.path.startsWith('/items') || entry.path.startsWith('/finalItems'))
+        && entry.op === 'replace'
+        && typeof entry.value === 'number') {
         return {
           ...entry,
           offset: getValueByPointer(preparedNew, entry.path) - getValueByPointer(preparedCache, entry.path),
@@ -59,12 +61,15 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       return entry;
     });
     this.syncCache[uid] = data as List;
-    return this.fns.httpsCallable('updateList')(
-      {
-        diff: diff,
-        uid: uid
-      }
-    );
+    this.zone.runOutsideAngular(() => {
+      this.fns.httpsCallable('updateList')(
+        {
+          diff: diff,
+          uid: uid
+        }
+      );
+    });
+    return of(null);
   }
 
   protected prepareData(list: Partial<List>): List {
@@ -144,7 +149,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
         switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: List = <List>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             });
@@ -174,7 +179,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
         switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: List = <List>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             })
@@ -199,7 +204,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
         switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              const valueWithKey: List = <List>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
               delete snap.payload;
               return valueWithKey;
             });
@@ -212,7 +217,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return this.firestore.collection(this.getBaseUri(), ref => ref.where('public', '==', true))
       .snapshotChanges()
       .pipe(
-        switchMap((snaps: any[]) => combineLatest(snaps.map(snap => this.completeListData({ $key: snap.payload.doc.id, ...snap.payload.doc.data() })))),
+        switchMap((snaps: any[]) => combineLatest(snaps.map(snap => this.completeListData({ ...snap.payload.doc.data(), $key: snap.payload.doc.id })))),
         map((lists: any[]) => this.serializer.deserialize<List>(lists, [List])),
         map((lists: List[]) => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())),
         first()
