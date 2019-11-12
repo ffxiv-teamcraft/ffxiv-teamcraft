@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.3"></a>
+## [6.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.2...v6.2.3) (2019-11-12)
+
+
+### Bug Fixes
+
+* Update opcode for class stats to fix stat autofill ([8b02a67](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8b02a67))
+
+
+
 <a name="6.2.2"></a>
 ## [6.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.1...v6.2.2) (2019-11-12)
 
