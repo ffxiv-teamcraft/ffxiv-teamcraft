@@ -26,6 +26,7 @@ import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { territories } from '../data/sources/territories';
 import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
+import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 
 @Injectable({
   providedIn: 'root'
@@ -213,6 +214,19 @@ export class MachinaService {
       ofPacketType('weatherChange')
     ).subscribe(packet => {
       this.eorzeaFacade.setWeather(packet.weatherID);
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketSubType('setBait')
+    ).subscribe(packet => {
+      this.eorzeaFacade.setBait(packet.baitID);
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('statusEffectList')
+    ).subscribe(packet => {
+      // TODO implement this properly to get only ids
+      this.eorzeaFacade.setStatuses(packet.statuses);
     });
   }
 }
