@@ -21,11 +21,11 @@
     "auth/wrong-password": "メールアドレスまたはパスワードが間違っています"
   },
   "TIMERS": {
-    "Days": "days",
-    "Day": "day",
-    "Hours": "h",
-    "Minutes": "m",
-    "Seconds": "s"
+    "Days": "日",
+    "Day": "日",
+    "Hours": "時",
+    "Minutes": "分",
+    "Seconds": "秒"
   },
   "ITEMS": {
     "Title": "検索",
@@ -76,7 +76,7 @@
     "Created_by": "{{name}} で作成されました",
     "Share_link_copied": "工房シェアリンクにコピーされました",
     "Not_found": "この工房に無いか、アクセスする権限がありません",
-    "Shared_workshops": "Workshops shared with you",
+    "Shared_workshops": "自分と共有されている工房",
     "Rename": "工房名を変更する",
     "Add_lists": "リストを追加する"
   },
@@ -94,7 +94,7 @@
   "Hide_if_empty": "空欄を隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
-  "Ephemeral_tag": "Ephemeral",
+  "Ephemeral_tag": "刻限",
   "Remove_ephemeral": "永続リストへのアップグレード",
   "Quick_list_create": "簡易リストを作成する　(完了した後、削除)",
   "Tag_filter": "タグ",
