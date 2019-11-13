@@ -142,8 +142,8 @@
     "User": "ユーザー",
     "Tables": "目録",
     "Pie_charts": "円グラフ",
-    "Read_more_on_wiki": "Read more details on wiki",
-    "Apply": "Apply"
+    "Read_more_on_wiki": "ウィキで詳しく見る",
+    "Apply": "適用"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -155,7 +155,7 @@
     "Custom_sound": "カスタムアラート音",
     "New_group": "新しいアラームグループ",
     "Confirm_group_delete": "本当にこのグループを削除しますか？",
-    "Delete_group_and_alarms": "Delete group with all alarms",
+    "Delete_group_and_alarms": "グループ内のすべてのアラームを消す",
     "Confirm_group_delete_with_alarms": "本当にこのグループや全てのアラームを削除しますか？",
     "Add_note": "メモを追加する",
     "Volume": "ボリューム",
@@ -166,8 +166,8 @@
     "Toggle_collapse": "グループ表示切り替わり",
     "Add_alarms_to_group": "グループにアラームを追加",
     "REALTIME": {
-      "Reset_timers": "Reset timers",
-      "WEEKLY_RESETS": "Weeklies",
+      "Reset_timers": "タイマーのリセット",
+      "WEEKLY_RESETS": "週制限",
       "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
       "ROULETTES_RESET": "Roulettes & Beast tribes",
       "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
