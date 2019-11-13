@@ -38,6 +38,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
       }
 
       const acceptedPackets = [
+        'statusEffectList',
         'itemInfo',
         'updateInventorySlot',
         'currencyCrystalInfo',
