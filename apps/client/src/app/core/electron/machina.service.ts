@@ -223,10 +223,18 @@ export class MachinaService {
     });
 
     this.ipc.packets$.pipe(
+      ofPacketSubType('playerSetup')
+    ).subscribe(packet => {
+      this.eorzeaFacade.setBait(packet.useBaitCatalogId);
+    });
+
+    this.ipc.packets$.pipe(
       ofPacketType('statusEffectList')
     ).subscribe(packet => {
       // TODO implement this properly to get only ids
-      this.eorzeaFacade.setStatuses(packet.statuses);
+      this.eorzeaFacade.setStatuses(packet.statusEffects.map(effect => {
+        return effect.ID;
+      }));
     });
   }
 }
