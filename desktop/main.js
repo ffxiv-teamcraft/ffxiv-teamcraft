@@ -175,9 +175,9 @@ function createWindow() {
     //
     //   api.listen(7331);
     // }
-    //
-    // win.focus();
-    // win.show();
+
+    win.focus();
+    win.show();
     autoUpdater.checkForUpdates();
   });
 
