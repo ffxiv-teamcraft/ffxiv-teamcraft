@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
 import { EorzeaPartialState } from './eorzea.reducer';
-import { SetWeather, SetZone } from './eorzea.actions';
+import { SetBait, SetStatuses, SetWeather, SetZone } from './eorzea.actions';
 import { eorzeaQuery } from './eorzea.selectors';
 import { map } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -34,5 +34,13 @@ export class EorzeaFacade {
 
   setWeather(weatherId: number) {
     this.store.dispatch(new SetWeather(weatherId));
+  }
+
+  setBait(baitId: number) {
+    this.store.dispatch(new SetBait(baitId));
+  }
+
+  setStatuses(effects: number[]) {
+    this.store.dispatch(new SetStatuses(effects));
   }
 }

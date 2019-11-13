@@ -5,7 +5,9 @@ export const EORZEA_FEATURE_KEY = 'eorzea';
 export interface EorzeaState {
   zoneId: number,
   weatherId: number,
-  previousWeatherId: number
+  previousWeatherId: number,
+  baitId: number,
+  statuses: number[]
 }
 
 export interface EorzeaPartialState {
@@ -15,7 +17,9 @@ export interface EorzeaPartialState {
 export const initialState: EorzeaState = {
   zoneId: 0,
   weatherId: 0,
-  previousWeatherId: 0
+  previousWeatherId: 0,
+  baitId: 0,
+  statuses: []
 };
 
 export function eorzeaReducer(
@@ -35,6 +39,20 @@ export function eorzeaReducer(
         ...state,
         previousWeatherId: state.weatherId > 0 ? state.weatherId : 0,
         weatherId: action.payload
+      };
+      break;
+    }
+    case EorzeaActionTypes.SetBait: {
+      state = {
+        ...state,
+        baitId: action.payload
+      };
+      break;
+    }
+    case EorzeaActionTypes.SetStatuses: {
+      state = {
+        ...state,
+        statuses: action.payload
       };
       break;
     }

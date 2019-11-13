@@ -1,18 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UniversalisService } from '../api/universalis.service';
-import {
-  delayWhen,
-  distinctUntilChanged,
-  filter,
-  first,
-  map,
-  shareReplay,
-  startWith,
-  switchMap,
-  tap,
-  withLatestFrom
-} from 'rxjs/operators';
+import { delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { interval, merge, Observable, of, Subject } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
@@ -26,6 +15,7 @@ import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { territories } from '../data/sources/territories';
 import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
+import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 
 @Injectable({
   providedIn: 'root'
@@ -213,6 +203,27 @@ export class MachinaService {
       ofPacketType('weatherChange')
     ).subscribe(packet => {
       this.eorzeaFacade.setWeather(packet.weatherID);
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketSubType('setBait')
+    ).subscribe(packet => {
+      this.eorzeaFacade.setBait(packet.baitID);
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketSubType('playerSetup')
+    ).subscribe(packet => {
+      this.eorzeaFacade.setBait(packet.useBaitCatalogId);
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('statusEffectList'),
+      filter(packet => packet.sourceActorSessionID === packet.targetActorSessionID)
+    ).subscribe(packet => {
+      this.eorzeaFacade.setStatuses(packet.effects.map(effect => {
+        return effect.effectID;
+      }));
     });
   }
 }

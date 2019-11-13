@@ -64,7 +64,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     this.zone.runOutsideAngular(() => {
       this.fns.httpsCallable('updateList')(
         {
-          diff: diff,
+          diff: JSON.stringify(diff),
           uid: uid
         }
       );

@@ -38,6 +38,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
       }
 
       const acceptedPackets = [
+        'statusEffectList',
         'itemInfo',
         'updateInventorySlot',
         'currencyCrystalInfo',
@@ -54,7 +55,10 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'updateClassInfo',
         'actorControl',
         'initZone',
-        'weatherChange'
+        'weatherChange',
+        'aetherReductionDlg',
+        'desynthOrReductionResult',
+        'persistentEffect'
       ];
 
       Machina = new MachinaFFXIV(options);

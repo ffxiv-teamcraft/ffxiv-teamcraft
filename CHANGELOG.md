@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.4"></a>
+## [6.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.3...v6.2.4) (2019-11-13)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an issue making Teamcraft start in tray bar ([6fad935](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6fad935))
+* **inventory:** saving inventory in database will now use less resources and be more reactive ([dd2a46c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd2a46c))
+
+
+
 <a name="6.2.3"></a>
 ## [6.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.2...v6.2.3) (2019-11-12)
 

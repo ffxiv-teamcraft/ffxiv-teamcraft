@@ -4,9 +4,10 @@ import { PendingChangesService } from './pending-changes/pending-changes.service
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
-import { AuthFacade } from '../../+state/auth.facade';
-import { Observable } from 'rxjs';
-import { diff } from 'deep-diff';
+import { Observable, of } from 'rxjs';
+import { compare, getValueByPointer } from 'fast-json-patch';
+import { AngularFireFunctions } from '@angular/fire/functions';
+import { List } from '../../modules/list/model/list';
 
 @Injectable({
   providedIn: 'root'
@@ -14,26 +15,40 @@ import { diff } from 'deep-diff';
 export class UserInventoryService extends FirestoreStorage<UserInventory> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private authFacade: AuthFacade) {
+              protected pendingChangesService: PendingChangesService,
+              private fns: AngularFireFunctions) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
+  set(uid: string, data: UserInventory, uriParams?: any): Observable<void> {
+    return this.update(uid, data, uriParams);
+  }
+
   update(uid: string, data: Partial<UserInventory>, uriParams?: any): Observable<void> {
-    const changes = (diff(this.syncCache[uid], data) || []);
-    if (changes.some(entry => entry.kind === 'D' || entry.kind === 'A')) {
-      return super.update(uid, data, uriParams);
-    }
-    try {
-      const patch = changes
-        .filter(change => change !== undefined)
-        .reduce((res, change) => {
-          res[change.path.join('.')] = change.rhs;
-          return res;
-        }, {});
-      return super.update(uid, patch, uriParams);
-    } catch (error) {
-      return super.set(uid, data as UserInventory, uriParams);
-    }
+    const diff = (compare((this.syncCache[uid] || {}), data) || [])
+      .map(entry => {
+        const splitPath = entry.path.split('/');
+        if (entry.op === 'replace'
+          && typeof entry.value === 'number'
+          && splitPath[splitPath.length - 1] === 'quantity') {
+          return {
+            ...entry,
+            offset: getValueByPointer(data, entry.path) - (getValueByPointer(this.syncCache[uid], entry.path) || 0),
+            custom: true
+          };
+        }
+        return entry;
+      });
+    this.syncCache[uid] = data as UserInventory;
+    this.zone.runOutsideAngular(() => {
+      this.fns.httpsCallable('updateInventory')(
+        {
+          diff: JSON.stringify(diff),
+          uid: uid
+        }
+      );
+    });
+    return of(null);
   }
 
   protected getBaseUri(): string {
