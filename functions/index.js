@@ -71,6 +71,19 @@ exports.solver = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
   }
 });
 
+function applyOffsets(data, entries) {
+  entries.forEach(customEntry => {
+    const explodedPath = customEntry.path.split('/');
+    explodedPath.shift();
+    let pointer = data;
+    for (let fragment of explodedPath.slice(-1)){
+      pointer = pointer[fragment]
+    }
+    pointer[explodedPath[explodedPath.length]] += customEntry.offset;
+  });
+  return data;
+}
+
 exports.updateList = functions.runWith(runtimeOpts).https.onCall((data, context) => {
   const listRef = firestore.collection('lists').doc(data.uid);
   return firestore.runTransaction(transaction => {
@@ -85,13 +98,28 @@ exports.updateList = functions.runWith(runtimeOpts).https.onCall((data, context)
         return acc;
       }, [[], []]);
       applyPatch(list, standard);
-      custom.forEach(customEntry => {
-        const explodedPath = customEntry.path.split('/');
-        explodedPath.shift();
-        list[explodedPath[0]][+explodedPath[1]][explodedPath[2]] += customEntry.offset;
-      });
-      transaction.update(listRef, list);
-      return Promise.resolve();
+      applyOffsets(list, custom);
+      return transaction.update(listRef, list).commit();
+    });
+  });
+});
+
+exports.updateInventory = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  const ref = firestore.collection('user-inventories').doc(data.uid);
+  return firestore.runTransaction(transaction => {
+    return transaction.get(ref).then(doc => {
+      const data = doc.data();
+      const [standard, custom] = data.diff.reduce((acc, entry) => {
+        if (entry.custom) {
+          acc[1].push(entry);
+        } else {
+          acc[0].push(entry);
+        }
+        return acc;
+      }, [[], []]);
+      applyPatch(data, standard);
+      applyOffsets(data, custom);
+      return transaction.update(ref, data).commit();
     });
   });
 });
