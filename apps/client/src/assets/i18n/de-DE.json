@@ -816,7 +816,7 @@
     "Rotation_solver": "Rotations-Löser",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
-    "Remove_final_appraisal": "Remove Final Appraisal buff",
+    "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
