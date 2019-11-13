@@ -673,10 +673,10 @@
     "Loading_path": "推奨経路を読み込み中(数秒くらい所要)",
     "You_are_here": "現在地",
     "STEP": {
-      "Gathering": "Gather {{amount}} (total: {{total}})",
-      "Hunting": "Get {{amount}} on monsters (total: {{total}})",
-      "Vendor": "Buy {{amount}} (total: {{total}})",
-      "Trade": "Trade {{amount}} (total: {{total}})"
+      "Gathering": "採集 {{amount}} (合計: {{total}})",
+      "Hunting": "モンスターに {{amount}} 個得る (合計: {{total}})",
+      "Vendor": "商人の購入で {{amount}} 個得る(合計: {{total}})",
+      "Trade": "交換で{{amount}} 個得る(合計: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -811,7 +811,7 @@
     "Quality_action_100_potency": "加工効率100％スキル使用時の品質量: {{value}}",
     "Current_control": "現在加工熟練度: {{value}}",
     "Current_control_bonus": "現在追加加工熟練度（最大3000）",
-    "Macrolock": "Include macro lock",
+    "Macrolock": "マクロロックを含む（マクロをキャンセルすることはできない/ mlockコマンド）",
     "Solve_rotation": "ローテーションの作成",
     "Rotation_solver": "ローテーションの作成機",
     "Recipe_picker_placeholder": "製作しようとするアイテム名を入力してください",
@@ -1020,9 +1020,9 @@
     "Officer": "オフィサー",
     "Promote_officer": "オフィサーに昇格",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
-      "Item_removed": "{{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** out of {{totalNeeded}} as done on **[{{listName}}]({{listUrl}})**.",
+      "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})**を追加されました。",
+      "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})**を削除されました。",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**が **[{{listName}}]({{listUrl}})**にある {{totalNeeded}}個中に {{amount}}個の **[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** を完了に表示する",
       "Webhook_setup_complete": "**{{teamName}}** チームをこのチャンネルから追跡し始めました。",
       "List_added_notification": "リスト **[{{listName}}]({{listUrl}})**がチームに追加されました。",
       "List_removed_notification": "リスト **[{{listName}}]({{listUrl}})**がチームから外されました。",
@@ -1585,20 +1585,20 @@
     "Title": "Inventory optimizer",
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
-    "Ignore_contaier": "Ignore this tip for this container",
-    "Remove_ignore_contaier": "Don't ignore this tip for this container anymore",
-    "Show_ignored": "Show ignored items",
-    "No_optimizations": "No optimizations available",
+    "Ignore_contaier": "このコンテナのヒントは無視する",
+    "Remove_ignore_contaier": "このコンテナのヒントはもう無視しない",
+    "Show_ignored": "無視された項目を示す",
+    "No_optimizations": "最適化ができません",
     "CAN_BE_BOUGHT": {
-      "Title": "Items that can be bought with gil",
-      "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
+      "Title": "購入可能：ギル",
+      "Message": "購入可能：ギル / 蛮族友好度：中立"
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated across multiple containers",
-      "Message": "This item is also present in: {{containers}}."
+      "Title": "アイテムが複数の場所に分散されています",
+      "Message": "このアイテムは{{containers}} もあります"
     },
     "HAS_TOO_FEW": {
-      "Title": "Items that you have in very small stacks",
+      "Title": "少量で所有しているアイテム",
       "Message": "このアイテムを{{amount}} ほど持っているが処分をお勧めする",
       "Threshold_amount": "限界値"
     }
