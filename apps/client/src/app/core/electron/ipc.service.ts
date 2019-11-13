@@ -158,7 +158,8 @@ export class IpcService {
 
   private handlePacket(packet: any): void {
     this.packets$.next(packet);
-    if ((<any>window).debugPackets) {
+    const debugPackets = (<any>window).debugPackets;
+    if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {
       // tslint:disable-next-line:no-console
       console.info(packet.type, packet);
     }

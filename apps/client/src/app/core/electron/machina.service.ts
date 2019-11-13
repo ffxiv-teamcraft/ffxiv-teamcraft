@@ -1,18 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UniversalisService } from '../api/universalis.service';
-import {
-  delayWhen,
-  distinctUntilChanged,
-  filter,
-  first,
-  map,
-  shareReplay,
-  startWith,
-  switchMap,
-  tap,
-  withLatestFrom
-} from 'rxjs/operators';
+import { delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { interval, merge, Observable, of, Subject } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
@@ -229,17 +218,12 @@ export class MachinaService {
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('statusEffectList')
+      ofPacketType('statusEffectList'),
+      filter(packet => packet.sourceActorSessionID === packet.targetActorSessionID)
     ).subscribe(packet => {
-      console.log(packet);
-      // TODO implement this properly to get only ids
-      this.eorzeaFacade.setStatuses(Object.keys(packet)
-        .filter(key => key.startsWith('effect_'))
-        .map(key => {
-          return packet[key].effect_id;
-        })
-        .filter(effectId => effectId > 0)
-      );
+      this.eorzeaFacade.setStatuses(packet.effects.map(effect => {
+        return effect.effectID;
+      }));
     });
   }
 }
