@@ -1553,32 +1553,32 @@
   "PACKET_CAPTURE": {
     "Banner_title": "パケットキャプチャを使用することができます",
     "Button_label": "パケットキャプチャ活性化",
-    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
-    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
-    "Empty_inventory": "Your inventory hasn't been loaded yet",
-    "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
-    "No_character_id": "No ingame character id set",
-    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once.",
-    "Inventory_outdated": "Your inventory is outdated",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
+    "Banner_description": "チームクラフトがゲーム内のパケットを読み取ることができるよう、パケットキャプチャを有効にすることができます。（設定のチェックボックスに有効/無効にすることができる）を有効にさせた場合のアイテムを取得する場合、自動的にリストを満たしてくれて、その情報をUniversalisに提供して市場アグリゲータ（aggragator）に貢献します。",
+    "Banner_description_warning": "パケットキャプチャは利用規約（ToS）に違反するので、デフォルトでは無効になっています。ゲーム上で他の人には、この機能を使用していることを言わなかったら、この機能を使用するには問題はありません。",
+    "Empty_inventory": "所持品をまだロードされていません",
+    "Please_zone": "所持品システムを初期化するには、任意の位置にテレポートしてチョコボバッグを開けてください。",
+    "No_character_id": "キャラクターidの設定が存在しません。",
+    "Please_relog": "Universalisに貢献するためには、ゲーム上で一度の再接続が必要です。",
+    "Inventory_outdated": "所持品連動情報が古くなっています",
+    "Please_update_inventory_popup": "所持品の更新のために、地域を移動してください。このポップアップは、地域を移動すると消えます。（テレポを使用するか、ハウジングに入って行ってください）"
   },
   "INVENTORY": {
     "Title": "所持品",
     "Empty": "所持品が空いています",
     "Estimate_total_price": "所持品の合計価格を測定します",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Copied_to_clipboard": "Inventory copied to clipboard",
-    "Click_to_add_to_progression": "Click to add to item progression",
-    "Contribute_to_universalis": "Contribute data to universalis",
-    "Reset_inventory": "Reset this inventory",
-    "Clean_all": "Reset all your inventories",
-    "Search_for_an_item": "Search for an item",
+    "Copy_to_clipboard": "所持品の名称をクリップボードにコピーする",
+    "Copied_to_clipboard": "所持品の名称がクリップボードにコピーされました。",
+    "Click_to_add_to_progression": "アイテム追加を続行するとクリックしてください。",
+    "Contribute_to_universalis": "Universalisにデータを貢献する",
+    "Reset_inventory": "所持品の初期化",
+    "Clean_all": "全所持品の初期化",
+    "Search_for_an_item": "所持状況を確認",
     "BAG": {
-      "SaddleBag": "Chocobo Saddlebag",
-      "FC_chest": "FC chest",
-      "Bag": "Inventory",
-      "Other": "Other inventory",
-      "Armory": "Armory"
+      "SaddleBag": "チョコボかばん",
+      "FC_chest": "カンパニーチェスト",
+      "Bag": "所持品",
+      "Other": "他の所持品",
+      "Armory": "アーマリーチェスト"
     }
   },
   "INVENTORY_OPTIMIZER": {
