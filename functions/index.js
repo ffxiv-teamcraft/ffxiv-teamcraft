@@ -76,10 +76,10 @@ function applyOffsets(data, entries) {
     const explodedPath = customEntry.path.split('/');
     explodedPath.shift();
     let pointer = data;
-    for (let fragment of explodedPath.slice(-1)){
-      pointer = pointer[fragment]
+    for (let fragment of explodedPath.slice(0, -1)) {
+      pointer = pointer[fragment];
     }
-    pointer[explodedPath[explodedPath.length]] += customEntry.offset;
+    pointer[explodedPath[explodedPath.length - 1]] += customEntry.offset;
   });
   return data;
 }
@@ -89,7 +89,7 @@ exports.updateList = functions.runWith(runtimeOpts).https.onCall((data, context)
   return firestore.runTransaction(transaction => {
     return transaction.get(listRef).then(listDoc => {
       const list = listDoc.data();
-      const [standard, custom] = data.diff.reduce((acc, entry) => {
+      const [standard, custom] = JSON.parse(data.diff).reduce((acc, entry) => {
         if (entry.custom) {
           acc[1].push(entry);
         } else {
@@ -99,7 +99,7 @@ exports.updateList = functions.runWith(runtimeOpts).https.onCall((data, context)
       }, [[], []]);
       applyPatch(list, standard);
       applyOffsets(list, custom);
-      return transaction.update(listRef, list).commit();
+      transaction.update(listRef, list);
     });
   });
 });
@@ -108,8 +108,8 @@ exports.updateInventory = functions.runWith(runtimeOpts).https.onCall((data, con
   const ref = firestore.collection('user-inventories').doc(data.uid);
   return firestore.runTransaction(transaction => {
     return transaction.get(ref).then(doc => {
-      const data = doc.data();
-      const [standard, custom] = data.diff.reduce((acc, entry) => {
+      const docData = doc.data();
+      const [standard, custom] = JSON.parse(data.diff).reduce((acc, entry) => {
         if (entry.custom) {
           acc[1].push(entry);
         } else {
@@ -117,9 +117,9 @@ exports.updateInventory = functions.runWith(runtimeOpts).https.onCall((data, con
         }
         return acc;
       }, [[], []]);
-      applyPatch(data, standard);
-      applyOffsets(data, custom);
-      return transaction.update(ref, data).commit();
+      applyPatch(docData, standard);
+      applyOffsets(docData, custom);
+      transaction.update(ref, docData);
     });
   });
 });

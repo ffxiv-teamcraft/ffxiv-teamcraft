@@ -231,10 +231,15 @@ export class MachinaService {
     this.ipc.packets$.pipe(
       ofPacketType('statusEffectList')
     ).subscribe(packet => {
+      console.log(packet);
       // TODO implement this properly to get only ids
-      this.eorzeaFacade.setStatuses(packet.statusEffects.map(effect => {
-        return effect.ID;
-      }));
+      this.eorzeaFacade.setStatuses(Object.keys(packet)
+        .filter(key => key.startsWith('effect_'))
+        .map(key => {
+          return packet[key].effect_id;
+        })
+        .filter(effectId => effectId > 0)
+      );
     });
   }
 }
