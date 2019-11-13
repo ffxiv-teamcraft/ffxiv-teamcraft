@@ -815,19 +815,19 @@
     "Solve_rotation": "ローテーションの作成",
     "Rotation_solver": "ローテーションの作成機",
     "Recipe_picker_placeholder": "製作しようとするアイテム名を入力してください",
-    "Could_not_find_minstats": "Could not find min stats for this rotation",
-    "Remove_final_appraisal": "Remove Final Appraisal buff",
+    "Could_not_find_minstats": "このローテーションで最小ステップを見つけることができません",
+    "Remove_final_appraisal": "'Final Appraisal' バフ削除",
     "STATE": {
-      "Excellent": "Excellent",
-      "Good": "Good",
-      "Poor": "Poor",
-      "Fail": "Fail",
-      "Normal": "Normal"
+      "Excellent": "最高品質",
+      "Good": "高品質",
+      "Poor": "低品質",
+      "Fail": "失敗",
+      "Normal": "普通"
     },
     "SOLVER": {
-      "Hq_target": "Target HQ%",
-      "Use_rotation_as_seed": "Use current rotation as starting point",
-      "Disclaimer": "The solver is a work in progress, please keep in mind that it's not made to create perfect rotations, it's an AI trying to improve with time that can yield very bad results as well as very good ones. Please do not report bad results as bug."
+      "Hq_target": "HQ目標値",
+      "Use_rotation_as_seed": "現在ローテーションを開始点から使用",
+      "Disclaimer": "この機能は、現在開発中です。この機能は、時間に応じて発電するAIであり、完璧なローテーションを構成するために作られたものはありません。悪い結果が出ることもありますが、良い結果も出てくることがあります。良くない結果が出ても、その結果をバグとして提出しないでください。"
     },
     "COMMUNITY_ROTATIONS": {
       "Title": "コミュニティースキル回し",
@@ -856,7 +856,7 @@
         "FOODLESS": "食事非使用",
         "MAKERS_MARK": "堅実の心得",
         "MUSCLE_MEMORY": "確信",
-        "REUSE": "Reuse"
+        "REUSE": "リユース"
       }
     },
     "CUSTOM": {
@@ -869,7 +869,7 @@
     "ROTATIONS": {
       "Search_placeholder": "制作スキル回しを検索",
       "FOLDERS": {
-        "Not_found": "Rotation folder not found",
+        "Not_found": "ローテーションフォルダを見つけることができません",
         "Folders": "スキル回しフォルダー",
         "Rename": "フォルダー名を変更する",
         "New_folder": "新しいフォルダー",
@@ -917,7 +917,7 @@
       "No_medicine": "薬なし",
       "No_fc_buffs": "フリーカンパニーのバフなし",
       "Quest_warning": "レベル70のジョブクエストから '魔匠の閃き' を獲得しましたか、必ずご確認下さい",
-      "Starting_quality": "Starting quality",
+      "Starting_quality": "初期品質",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "作業精度",
@@ -943,10 +943,10 @@
       "Use_byregot_brow_5_stacks": "'ビエルゴの祝福' の代わりに 'ビエルゴの技巧' を使用すると同じ品質量が上昇しながら CP 6が節約できます。",
       "Use_ingenuity_before_byregot": "もっと高い品質の向上するために 'ビエルゴ' アクションを使用する前に '工面算段' を使用しなければなりません",
       "Use_more_quality_actions": "耐久度が残ってる状態で制作が完了しました。残ってる耐久度を利用して、多い加工スキルに使用する事ができます。",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_prudent_touch_manipulation": "66レベル以上の場合 'マニピュレーションⅡ' と '倹約加工'を使用して、もっと高い品質を得なければなりません",
       "Use_rapid_synthesis_earlier": "'突貫作業'を工程の最後に入れないで下さい。失敗する恐れがありますので、早く使用するのが制作スキル回しの信頼性が向上します。",
-      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
-      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted"
+      "Do_not_use_brand_without_name": "「ブランド・オブ・エレメンタル\"スキルは\" アート・オブ・エレメンタルの芸術」スキルを活性化して使用してください",
+      "Avoid_using_good_actions": "マクロを構想する時、高品質を要求するアクションを使用しないでください。高品質は予測が不可能です"
     }
   },
   "PRICING": {
@@ -960,8 +960,8 @@
     "Content_copied": "クリップボードに内容がコピーされました。",
     "Cheaper_at_vendor": "NPC から購入した方が安い ({{price}} ギル)",
     "Copy_panel_as_text": "このパネルをテキストとしてコピーする",
-    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
-    "Craft_price": "Crafting price",
+    "Check_precraft_prices": "マーケットボードで最安値をチェックしてください",
+    "Craft_price": "製作単価",
     "Marketboard_price": "NQ 値段",
     "Marketboard_price_hq": "HQ 値段",
     "Enter_total_earnings": "総収入"
@@ -1442,11 +1442,11 @@
         "Instances": "ダンジョン ({{amount}})",
         "Items": "アイテム ({{amount}})",
         "Leves": "リーヴ ({{amount}})",
-        "Maps": "Maps ({{amount}})",
-        "Monsters": "Monsters ({{amount}})",
-        "Npcs": "Npcs ({{amount}})",
-        "Quests": "Quests ({{amount}})",
-        "Statuses": "Statuses ({{amount}})",
+        "Maps": "マップ ({{amount}})",
+        "Monsters": "モンスター ({{amount}})",
+        "Npcs": "NPC ({{amount}})",
+        "Quests": "クエスト ({{amount}})",
+        "Statuses": "ステータス ({{amount}})",
         "Traits": "特性 ({{amount}})"
       }
     }
@@ -1599,12 +1599,12 @@
     },
     "HAS_TOO_FEW": {
       "Title": "Items that you have in very small stacks",
-      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
-      "Threshold_amount": "Threshold value"
+      "Message": "このアイテムを{{amount}} ほど持っているが処分をお勧めする",
+      "Threshold_amount": "限界値"
     }
   },
   "VERSION_LOCK": {
-    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
+    "Outdated": "現在のチームクラフト旧バージョンを使用中であるため、一部の機能が正常に動作しないことがあります",
     "Refresh_or_download_latest": "もしチームクラフトをWebページで使用する場合は、Ctrl + F5キーを押して、完全にリフレッシュしてください。デスクトップアプリを使用中であれば、最新バージョンを、そのリンクからダウンロードすることができます："
   }
 }
