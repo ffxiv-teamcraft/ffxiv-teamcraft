@@ -460,7 +460,7 @@
       "Loading_items": "アイテム情報を読み込み中",
       "Estimate_overmeld_materia": "禁断に必要なマテリアの数予測",
       "Multiply_tool_materia": "ギャザラー(x2) とクラフター(x8) 道具に該当するマテリアを合算",
-      "Group_together": "Group materias together"
+      "Group_together": "マテリアルも一緒に結合"
     }
   },
   "LIST": {
@@ -473,7 +473,7 @@
     "Copy_list_as_text": "全てこのリストをテキストにコピーする",
     "Copied_as_text": "テキストがクリップボードにコピーされました",
     "Total_price": "総費用(ギルや各種通貨)",
-    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
+    "Ignore_currency": "この通貨を無視する（他の通貨で購入/交換が可能にのみ適用）",
     "Total_trade_price": "合計: ",
     "Add_all_alarms": "このリストに対する、アラームを追加する",
     "History": "履歴",
@@ -481,25 +481,25 @@
     "Show_craftable_amount": "制作可能な数量を表示する",
     "Optimized_full_path": "全ての推奨経路を表示(最安値)",
     "Quick_layout_swap": "クイックレイアウトの切り替え",
-    "Offline": "Offline",
-    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
-    "Mark_whole_panel_done": "Mark panel content as done",
-    "Set_color": "Set list color",
-    "Go_to_pinned": "Go to pinned list (right click to unpin)",
+    "Offline": "オフライン",
+    "Offline_help": "オフラインリストは、ブラウザやアプリ内に保存されます。このリストは、共有することができませんが、ネットワークを使用していないし、より早めにロードされます。",
+    "Mark_whole_panel_done": "パネルの内容を完了済みと表示する",
+    "Set_color": "リストカラー設定",
+    "Go_to_pinned": "固定しておいたリストに行く（右クリックすると固定解除）",
     "COLORS": {
-      "RED": "Red",
-      "GREEN": "Green",
-      "YELLOW": "Yellow",
-      "BLUE": "Blue",
-      "PURPLE": "Purple",
-      "ORANGE": "Orange",
-      "PINK": "Pink",
-      "NONE": "None"
+      "RED": "赤",
+      "GREEN": "緑",
+      "YELLOW": "黄",
+      "BLUE": "青",
+      "PURPLE": "紫",
+      "ORANGE": "オレンジ",
+      "PINK": "ピンク",
+      "NONE": "無し"
     },
     "ROTATION": {
-      "Attach": "Attach rotation",
-      "Detach": "Detach rotation",
-      "Click_to_copy_macro": "Click to open macro copy popup"
+      "Attach": "製作ローテーション連動",
+      "Detach": "製作ローテーション連動",
+      "Click_to_copy_macro": "マクロのコピーポップアップページを開く"
     },
     "INVENTORY": {
       "Show_final_items": "最終アイテムの表示",
@@ -548,13 +548,13 @@
     "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
     "Add_to_another_list": "別のリストに追加",
     "New_tag": "新しいタグ",
-    "Amount_ilvl": "Amount (ilvl)",
-    "Contributions_popup": "Contributions stats",
-    "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
-    "Autofill": "Autofill",
-    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
-    "Autofill_notification": "Completion notification",
-    "Autofill_notification_title": "Item completed",
+    "Amount_ilvl": "本数（ilvl）",
+    "Contributions_popup": "このリストの寄与度の統計",
+    "Autofill_details": "ゲーム上でアイテムを獲得したときに、データ入力が行われ、不要なデータの入力を防止するためにリストページを離れる時には、この機能が終了します。",
+    "Autofill": "自動入力",
+    "Autofill_notification_details": "オートフィルでアイテムが完了すると、通知する",
+    "Autofill_notification": "完了通知",
+    "Autofill_notification_title": "アイテム完了",
     "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
