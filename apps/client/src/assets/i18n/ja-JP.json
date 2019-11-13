@@ -376,8 +376,8 @@
     "Enable_packet_capture": "パケットキャプチャを使用（リアルタイム持ち物同期機能を追加）",
     "Packet_capture_info": "パケットキャプチャはACT（メーター）のように利用規約（ToS）に違反します。でも、スクウェア・エニックスからACTのようなプログラムを使用することを他の人に言わなければ黙認してくれます。ただ言わないでください。そうすれば、問題になることはありません。",
     "Contribute_to_universalis": "Universalisに貢献する",
-    "Persist_inventory": "Save inventory in database (to share with web version)",
-    "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
+    "Persist_inventory": "データベースに所持品を保存（ウェブバージョンと共有される）",
+    "Track_items_on_sale": "リテイナーが販売されている物品も同期させる（クライアントやり直し、リフレッシュが必要）",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -392,11 +392,11 @@
       "Isearch": "/isearchマクロをコピーする"
     },
     "CATEGORIES": {
-      "Autofill_completion": "Autofill completion sound",
-      "Packet_capture": "Packet capture",
-      "Theme": "Theme",
-      "Search": "Search",
-      "Other": "Other"
+      "Autofill_completion": "オートフィル完了音",
+      "Packet_capture": "パケットキャプチャ",
+      "Theme": "テーマ",
+      "Search": "検索",
+      "Other": "その他"
     }
   },
   "PROFILE": {
@@ -411,15 +411,15 @@
     "Patreon_features": "Patreonサポーターの特典",
     "Contacts": "連絡先",
     "Add_new_contact": "新しい連絡先",
-    "Save_for_all": "Save for all crafters",
+    "Save_for_all": "すべてのジョブに適用",
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "More_than_100_lists_created": "100個以上のリストを作成",
     "Veteran": "ベテラン",
-    "Autofill_from_packets": "Autofill stats using packet capture",
-    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done. Please make sure you don't have any active food, else it'll save your stats with the food active.",
+    "Autofill_from_packets": "パケットキャプチャを利用して、能力値を自動で埋める",
+    "Autofill_stats_explain": "更新のために必要なジョブに変更してください、また完了すると、このポップアップウィンドウを閉じます。（食品の効果が含まれていないようにしてください。シミュレータ使用時に食品の効果が含まれている能力だったら使用するときに問題が発生する可能性があります）",
     "VERIFICATION": {
       "Title": "キャラクター認証",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
+      "Guide": "アカウント認証のためにLodestone Profileに\"{{userId}}\"を貼り付け、下の認証ボタンを押してください。詳細については、<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\"> wikiの</a>を参照してください。",
       "Success": "キャラクターが認証されました！このポップアップを閉じてもよろしいです。プロフィールからコードを消してもよろしいです。",
       "Error": "Bioからコードを見つかりませんでした。コードを貼り付けてから、変更されたのか、ご確認下さい。そして約30秒後にやり直して下さい",
       "Validate": "認証"
@@ -432,9 +432,9 @@
     "Merge_lists": "リストを併合する",
     "Merge_lists_warning": "大規模のリストはデータベースの制限で、まとめることはできないため、表示できません。",
     "Lists_merged": "リスト併合が完了されました！",
-    "Shared_lists": "Lists shared with you",
+    "Shared_lists": "自分と共有されているリスト",
     "Add_selection": "選択項目をリストに追加する",
-    "Add_selection_to_list": "Add selection to list",
+    "Add_selection_to_list": "選択項目をリストに追加",
     "Your_lists": "マイリスト",
     "Outdated_tag": "古い",
     "No_lists": "リストがありません",
@@ -458,8 +458,8 @@
       "Final_step": "検証",
       "Creating_list": "リストを作成する",
       "Loading_items": "アイテム情報を読み込み中",
-      "Estimate_overmeld_materia": "Estimate required materias for overmelding",
-      "Multiply_tool_materia": "Multiply materia for DoL (×2) and DoH (×8) tools",
+      "Estimate_overmeld_materia": "禁断に必要なマテリアの数予測",
+      "Multiply_tool_materia": "ギャザラー(x2) とクラフター(x8) 道具に該当するマテリアを合算",
       "Group_together": "Group materias together"
     }
   },
