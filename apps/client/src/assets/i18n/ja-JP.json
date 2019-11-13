@@ -1029,7 +1029,7 @@
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** さんがチームに入りました!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** がチームから抜けました。",
       "Name_changed": "**{{oldName}}** から **{{newName}}** に名前が変更されました。",
-      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "**[{{itemName}}](http://ffxivteamcraft.com/db/en/item/{{itemId}})**が [{{listName}}]({{listUrl}})**の **[{{memberName}}]({{memberProfileUrl}})**に割り当てられました"
     },
     "PERMISSIONS": {
       "MEMBER_JOINED": "メンバー入りました",
@@ -1429,7 +1429,7 @@
       "Show_more": "{{amount}} 件のコメントを見る",
       "No_comments": "コメントなし",
       "Post": "投稿",
-      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "他のページへのリンクを作成するため<page type>：\"<Content Name>\"を入力してください。例：item：\"Curtana\"、action：\"Basic Synthesis\"、map：\"The Crystarium\"サポートしているページの種類：item、map、mob、achievement、leve、npc、instance、quest、trait、action、status"
     },
     "PATCH": {
       "Open_patch_page": "データベースのパッチ変更点はこちらをクリックしてください",
@@ -1503,38 +1503,38 @@
     "Add_item": "アイテム追加",
     "Clipboard_content_malformed": "クリップボードにコピーされた内容の形式が正しくありません",
     "Import_from_clipboard": "クリップボードから読み込む",
-    "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
-    "Extension_link": "Get the extension on chrome webstore",
-    "Clear": "Clear items list",
-    "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Extension_tip": "[グローバルサーバ専用] クローム拡張アプリ[Lodestone inventory grabber] を利用して、執事インベントリ内のアイテムをクリップボードにコピーすることができます： ",
+    "Extension_link": "ChromeのWebストアから拡張アプリをダウンロード",
+    "Clear": "アイテムリストの初期化",
+    "Clipboard_import_duplicates": "リストに重複しているアイテムがある場合があります。この機能は、ロードストーンと連動したリテイナーの所持品の状態を見せるので、リテイナー内の所持品で該当のアイテムが所持品の複数占める場合に重複して見えることがあります。",
     "Inventory": "所持品",
     "Copy_to_clipboard": "アイテム名をクリップボードにコピーする",
     "Pool_copied": "所持品の名称がクリップボードにコピーされました。",
     "Sort_alphabetically": "アルファベット順",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Pages_range_label": "総{{total}} 種類のアイテムの中で{{range0}} - {{range1}} のアイテム"
   },
   "CURRENCY_SPENDING": {
-    "Title": "Currency Spending guide",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Title": "通貨消費ガイド",
+    "Description": "[グローバルサーバ専用] 石板または通貨が多いですか？希望石板または通貨を選択して、数量を入力して、サーバーを選択してください。そうすると、現在の自分の通貨/石板に交換可能なアイテムの中で最も高価なアイテムを探してくれます！",
     "Pick_currency": "交換用アイテム追加",
     "You_can_buy": "{{amount}} 個購入可能",
-    "Disabled": "The currency spending guide isn't working anymore",
-    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
+    "Disabled": "通貨の消費ガイドはもう利用できません。",
+    "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。"
   },
   "BLOG": {
     "Title": "ブログ"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
+    "Http_request_error": "{{tool}} には問題があります。 #announcements ディスコードチャンネルを確認するとか #bugs チャンネルに情報提供してください。",
+    "Firebase_blocked": "データベースにアクセスできません。何か問題があるか、インターネットが切断される場合があります。"
   },
   "SEARCH": {
-    "Sort_by": "Sort by: ",
+    "Sort_by": "並べ替え: ",
     "Sort_asc": "昇順",
     "Sort_desc": "降順",
     "Add_stat_filter": "ステータスフィルタの追加",
     "Add_bonus_stat_filter": "ボーナスステータスフィルタの追加",
-    "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Search_tip": "<patch＃>を入力して、該当するバージョンでフィルタが可能です。例：patch：5.01",
     "SORT_BY": {
       "Relevance": "関連性",
       "ID": "ID",
@@ -1551,8 +1551,8 @@
     "Other": "その他"
   },
   "PACKET_CAPTURE": {
-    "Banner_title": "Packet capture is available",
-    "Button_label": "Enable packet capture",
+    "Banner_title": "パケットキャプチャを使用することができます",
+    "Button_label": "パケットキャプチャ活性化",
     "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
     "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
     "Empty_inventory": "Your inventory hasn't been loaded yet",
