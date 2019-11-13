@@ -106,7 +106,7 @@
   "Discounts": "割引",
   "Flat_discount": "金額",
   "Percent_discount": "比率",
-  "Path_copied_to_clipboard": "URL to the current page copied to clipboard",
+  "Path_copied_to_clipboard": "現在のページのURLがクリップボードにコピーされました",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "タグを使用してフィルタリング",
     "Tags_filter_reset": "フィルター初期化",
@@ -114,7 +114,7 @@
     "No_lists_matching": "フィルターに一致するリストがありません"
   },
   "COMMON": {
-    "Length": "Length",
+    "Length": "長さ",
     "Save": "保存",
     "Reset": "リセット",
     "Total": "合計",
@@ -135,13 +135,13 @@
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
     "None": "なし",
-    "Top": "Top",
-    "Bottom": "Bottom",
-    "Amount": "Amount",
-    "Undo": "Undo",
-    "User": "User",
-    "Tables": "Table",
-    "Pie_charts": "Pie charts",
+    "Top": "上部",
+    "Bottom": "下部",
+    "Amount": "数量",
+    "Undo": "やり直し",
+    "User": "ユーザー",
+    "Tables": "目録",
+    "Pie_charts": "円グラフ",
     "Read_more_on_wiki": "Read more details on wiki",
     "Apply": "Apply"
   },
