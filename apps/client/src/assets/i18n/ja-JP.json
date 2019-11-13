@@ -555,7 +555,7 @@
     "Autofill_notification_details": "オートフィルでアイテムが完了すると、通知する",
     "Autofill_notification": "完了通知",
     "Autofill_notification_title": "アイテム完了",
-    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
+    "Autofill_notification_body": "{{listName}} リストの{{itemName}} 作業が完了できました",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -583,8 +583,8 @@
         "REMOVE_ITEM": "リストからこのアイテムを削除",
         "ADD_TAG": "アイテムにタグを追加する",
         "MARK_AS_DONE_IN_LOG": "手帳に完了と表示する",
-        "MARKET_BOARD_INFORMATIONS": "Marketboard information",
-        "ATTACH_ROTATION": "Attach rotation"
+        "MARKET_BOARD_INFORMATIONS": "マーケットボード情報",
+        "ATTACH_ROTATION": "製作ローテーション連動"
       }
     },
     "LAYOUT": {
@@ -962,9 +962,9 @@
     "Copy_panel_as_text": "このパネルをテキストとしてコピーする",
     "Check_precraft_prices": "Check for cheaper prices inside marketboard",
     "Craft_price": "Crafting price",
-    "Marketboard_price": "NQ price",
-    "Marketboard_price_hq": "HQ price",
-    "Enter_total_earnings": "Enter total earnings"
+    "Marketboard_price": "NQ 値段",
+    "Marketboard_price_hq": "HQ 値段",
+    "Enter_total_earnings": "総収入"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -977,7 +977,7 @@
     "Global_exp": "現在の経験値のみ表示",
     "More_on_gamerescape": "Gamerescapeの詳細を見る",
     "Deliver_to": "{{placename}} に納品する",
-    "Hide_large": "Hide large leves",
+    "Hide_large": "大量依頼を隠す",
     "INTRO": {
       "Title": "ギルドリーヴ",
       "First_line": "このページでは、ギルドリーヴや様々なギルドリーヴに対するリストを作成することができます。",
@@ -991,7 +991,7 @@
     "List_item_comment_added": "{{listName}} の {{itemName}} にコメントが追加されました: \"{{content}}\"",
     "Db_comment": "新しいコメントが付けられました: \"{{comment}}\"",
     "Db_comment_reply": "貴方のコメントに新しいコメントが付けられました: \"{{comment}}\"",
-    "Blog_post": "New blog post: {{title}}",
+    "Blog_post": "新しいブログのポスト: {{title}}",
     "Mark_all_as_read": "全て既読にする",
     "No_notifications": "通知無し"
   },
@@ -1041,7 +1041,7 @@
       "LIST_PROGRESSION": "素材の進捗状況の一覧",
       "FINAL_LIST_PROGRESSION": "最終項目の進行状況をリストアップする",
       "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる",
-      "ITEM_COMPLETION": "Item completion"
+      "ITEM_COMPLETION": "アイテム完了"
     }
   },
   "MARKETBOARD": {
@@ -1054,7 +1054,7 @@
     "History": "取引履歴",
     "Purchase_date": "日付",
     "More_on_mogboard": "Mogboardで詳しく情報を見る",
-    "More_on_universalis": "More details on universalis",
+    "More_on_universalis": "Universalisで詳しく見る",
     "Server": "サーバー"
   },
   "COMMENTS": {
@@ -1089,7 +1089,7 @@
   },
   "UPDATE": {
     "New_update_available": "新しいアップデートがあります! ",
-    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
+    "New_update_available_desktop": "新しいアップデートが追加されました。\nここを押してダウンロードしてください。",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。"
   },
   "LOG_TRACKER": {
@@ -1107,7 +1107,7 @@
     "Required_for_achievement": "アチーブメントに適用された",
     "Select_spot": "表示する場所を選択して下さい。",
     "Hide_completed": "完了したレシピを隠す",
-    "Hide_completed_items": "Hide completed items",
+    "Hide_completed_items": "完了したレシピを隠す",
     "MIN_optimized_path": "全ての採掘師の採集物の推奨経路",
     "BTN_optimized_path": "全ての園芸師の採集物の推奨経路",
     "PAGE": {
@@ -1307,14 +1307,14 @@
     "Limited": "限定採集",
     "3d_model_viewer": "3Dモデルプレビュー",
     "3d_model_help": "3Dモデルプレビュー",
-    "Achievements": "Achievements",
-    "Currencies": "Currencies",
-    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
-    "Unlocks": "Unlocks",
-    "Jump_to_page": "Quick jump to another page",
+    "Achievements": "アチーブメント",
+    "Currencies": "通貨",
+    "Rowena_splendor": "ロウェナ商会取引（星付き= + 20％ボーナス）",
+    "Unlocks": "ロック解除",
+    "Jump_to_page": "別のページへクイックジャンプする",
     "ITEM": {
-      "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "BONUS"
+      "Masterpiece_base": "基本",
+      "Masterpiece_bonus": "ボーナス"
     },
     "NODE": {
       "Items": "アイテム",
@@ -1355,7 +1355,7 @@
       "Rewards": "獲得可能な報酬",
       "Client": "依頼人",
       "Issuer": "発行者",
-      "Turn_ins": "Turn-ins"
+      "Turn_ins": "旋回"
     },
     "MOB": {
       "Known_spawns": "モンスター出現場所",
@@ -1432,16 +1432,16 @@
       "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
     },
     "PATCH": {
-      "Open_patch_page": "Click here to open full patch changes in database",
+      "Open_patch_page": "データベースのパッチ変更点はこちらをクリックしてください",
       "CONTENT": {
-        "Title": "Patch content",
-        "Achievements": "Achievements ({{amount}})",
-        "Actions": "Actions ({{amount}})",
-        "Crafting_actions": "Crafting actions ({{amount}})",
-        "Fates": "Fates ({{amount}})",
-        "Instances": "Instance content ({{amount}})",
-        "Items": "Items ({{amount}})",
-        "Leves": "Leves ({{amount}})",
+        "Title": "パッチ内容",
+        "Achievements": "アチーブメント({{amount}})",
+        "Actions": "アクション({{amount}})",
+        "Crafting_actions": "クラフターアクション({{amount}})",
+        "Fates": "F. A. T. E. ({{amount}})",
+        "Instances": "ダンジョン ({{amount}})",
+        "Items": "アイテム ({{amount}})",
+        "Leves": "リーヴ ({{amount}})",
         "Maps": "Maps ({{amount}})",
         "Monsters": "Monsters ({{amount}})",
         "Npcs": "Npcs ({{amount}})",
