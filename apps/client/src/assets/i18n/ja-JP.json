@@ -1335,7 +1335,7 @@
       "Rewards": "報酬",
       "Repeatable": "繰り返し可能",
       "Beast_tribe_rank": "蛮族友好段階",
-      "Chain_length": "Following quests"
+      "Chain_length": "連携クエスト"
     },
     "NPC": {
       "Other_entries": "他の出現位置",
@@ -1582,9 +1582,9 @@
     }
   },
   "INVENTORY_OPTIMIZER": {
-    "Title": "Inventory optimizer",
-    "Ignore_item": "Ignore this tip for this item",
-    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
+    "Title": "所持品せいとん",
+    "Ignore_item": "このアイテムではこのヒントは無視する",
+    "Remove_ignore_item": "このアイテムではこのヒントは無視しない",
     "Ignore_contaier": "このコンテナのヒントは無視する",
     "Remove_ignore_contaier": "このコンテナのヒントはもう無視しない",
     "Show_ignored": "無視された項目を示す",
