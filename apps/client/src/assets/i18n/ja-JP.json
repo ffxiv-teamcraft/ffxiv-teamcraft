@@ -596,10 +596,10 @@
     }
   },
   "LIST_TAGS": {
-    "A_REALM_REBORN": "A Realm Reborn",
-    "HEAVENSWARD": "Heavensward",
-    "STORMBLOOD": "Stormblood",
-    "SHADOWBRINGERS": "Shadowbringers",
+    "A_REALM_REBORN": "レルムリボーン",
+    "HEAVENSWARD": "蒼天のイシュガルド",
+    "STORMBLOOD": "紅蓮のリベレーター",
+    "SHADOWBRINGERS": "漆黒のヴィランズ",
     "OUTDATED": "古い",
     "GEAR": "装備",
     "CONSUMABLE": "薬品・調理品",
@@ -620,7 +620,7 @@
     "PLD": "ナイト",
     "WAR": "戦士",
     "DRK": "暗黒戦士",
-    "GNB": "GNB",
+    "GNB": "ガンブレイカー",
     "WHM": "白魔道士",
     "SCH": "学者",
     "AST": "占星術師",
@@ -630,7 +630,7 @@
     "SAM": "侍",
     "BRD": "吟遊詩人",
     "MCH": "機工士",
-    "DNC": "DNC",
+    "DNC": "踊り子",
     "BLM": "黒魔道士",
     "SMN": "召喚士",
     "RDM": "赤魔道士",
@@ -671,7 +671,7 @@
     "Title": "最適化されたルート",
     "Steps": "段階",
     "Loading_path": "推奨経路を読み込み中(数秒くらい所要)",
-    "You_are_here": "You are here",
+    "You_are_here": "現在地",
     "STEP": {
       "Gathering": "Gather {{amount}} (total: {{total}})",
       "Hunting": "Get {{amount}} on monsters (total: {{total}})",
@@ -747,11 +747,11 @@
     "Not_found": "ページが見つかりません。"
   },
   "SIMULATOR": {
-    "Title": "Crafting simulator",
+    "Title": "制作シミュレーター",
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
-    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
+    "Break_before_byregots_blessing": "「ビエルゴの祝福」を使用する前に、マクロを取り外してください",
     "Include_consumables_notification": "消耗品の通知を含める",
     "Consumable_notification": "{{buffs}} を使用が必要とします",
     "Extra_wait": "追加待ち",
@@ -807,14 +807,14 @@
     "Safe_mode_tooltip": "成功率100％ではないスキルは使用不可(バフを含む)",
     "Quality_needed": "HQ 100%に到達するためには {{amount}} 分の品質が必要",
     "Rotation_tips": "スキル回しのヒント",
-    "Progress_action_100_potency": "Progress per 100% efficiency: {{value}}",
-    "Quality_action_100_potency": "Quality per 100% efficiency: {{value}}",
-    "Current_control": "Current control: {{value}}",
-    "Current_control_bonus": "Current bonus (limited to 3000)",
+    "Progress_action_100_potency": "作業効率100％スキル使用時の作業量: {{value}}",
+    "Quality_action_100_potency": "加工効率100％スキル使用時の品質量: {{value}}",
+    "Current_control": "現在加工熟練度: {{value}}",
+    "Current_control_bonus": "現在追加加工熟練度（最大3000）",
     "Macrolock": "Include macro lock",
-    "Solve_rotation": "Solve this rotation",
-    "Rotation_solver": "Rotation solver",
-    "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
+    "Solve_rotation": "ローテーションの作成",
+    "Rotation_solver": "ローテーションの作成機",
+    "Recipe_picker_placeholder": "製作しようとするアイテム名を入力してください",
     "Could_not_find_minstats": "Could not find min stats for this rotation",
     "Remove_final_appraisal": "Remove Final Appraisal buff",
     "STATE": {
@@ -1447,7 +1447,7 @@
         "Npcs": "Npcs ({{amount}})",
         "Quests": "Quests ({{amount}})",
         "Statuses": "Statuses ({{amount}})",
-        "Traits": "Traits ({{amount}})"
+        "Traits": "特性 ({{amount}})"
       }
     }
   },
@@ -1501,28 +1501,28 @@
     "Description": "現在お持ちの素材の数量を入力し \"レシピ検索\" をクリックすると現在の素材で制作可能な品目がご確認することができ、望みな品目をリストに作成するのができます。",
     "Empty_basket": "制作リストが空いています。",
     "Add_item": "アイテム追加",
-    "Clipboard_content_malformed": "Clipboard content malformed",
-    "Import_from_clipboard": "Import from clipboard",
+    "Clipboard_content_malformed": "クリップボードにコピーされた内容の形式が正しくありません",
+    "Import_from_clipboard": "クリップボードから読み込む",
     "Extension_tip": "You can copy your retainer's inventory to your clipboard using the inventory grabber extension: ",
     "Extension_link": "Get the extension on chrome webstore",
     "Clear": "Clear items list",
     "Clipboard_import_duplicates": "Items that show twice are here because lodestone shows stacks, so they are inside your retainer as separate stacks.",
-    "Inventory": "Inventory",
-    "Copy_to_clipboard": "Copy inventory to clipboard",
-    "Pool_copied": "Inventory copied to your clipboard",
-    "Sort_alphabetically": "Sort alphabetically",
+    "Inventory": "所持品",
+    "Copy_to_clipboard": "アイテム名をクリップボードにコピーする",
+    "Pool_copied": "所持品の名称がクリップボードにコピーされました。",
+    "Sort_alphabetically": "アルファベット順",
     "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
   },
   "CURRENCY_SPENDING": {
     "Title": "Currency Spending guide",
     "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
-    "Pick_currency": "Pick a currency",
-    "You_can_buy": "You can buy {{amount}}",
+    "Pick_currency": "交換用アイテム追加",
+    "You_can_buy": "{{amount}} 個購入可能",
     "Disabled": "The currency spending guide isn't working anymore",
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
   },
   "BLOG": {
-    "Title": "Blog"
+    "Title": "ブログ"
   },
   "ERRORS": {
     "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
@@ -1530,25 +1530,25 @@
   },
   "SEARCH": {
     "Sort_by": "Sort by: ",
-    "Sort_asc": "Ascending",
-    "Sort_desc": "Descending",
-    "Add_stat_filter": "Add stat filter",
-    "Add_bonus_stat_filter": "Add bonus stat filter",
+    "Sort_asc": "昇順",
+    "Sort_desc": "降順",
+    "Add_stat_filter": "ステータスフィルタの追加",
+    "Add_bonus_stat_filter": "ボーナスステータスフィルタの追加",
     "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
     "SORT_BY": {
-      "Relevance": "Relevance",
+      "Relevance": "関連性",
       "ID": "ID",
-      "Level": "Level",
-      "Ilvl": "Item level",
-      "Rlvl": "Recipe level"
+      "Level": "レベル",
+      "Ilvl": "アイテムレベル",
+      "Rlvl": "レシピレベル"
     }
   },
   "SIDEBAR": {
-    "General": "General",
-    "Sharing": "Sharing",
-    "Gathering": "Gathering",
-    "Helpers": "Helpers",
-    "Other": "Other"
+    "General": "一般",
+    "Sharing": "共有",
+    "Gathering": "採集",
+    "Helpers": "ヘルパー",
+    "Other": "その他"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Packet capture is available",
@@ -1563,9 +1563,9 @@
     "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
   },
   "INVENTORY": {
-    "Title": "Inventory",
-    "Empty": "Empty inventory",
-    "Estimate_total_price": "Estimate total inventory price",
+    "Title": "所持品",
+    "Empty": "所持品が空いています",
+    "Estimate_total_price": "所持品の合計価格を測定します",
     "Copy_to_clipboard": "Copy inventory to clipboard",
     "Copied_to_clipboard": "Inventory copied to clipboard",
     "Click_to_add_to_progression": "Click to add to item progression",
@@ -1605,6 +1605,6 @@
   },
   "VERSION_LOCK": {
     "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
-    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
+    "Refresh_or_download_latest": "もしチームクラフトをWebページで使用する場合は、Ctrl + F5キーを押して、完全にリフレッシュしてください。デスクトップアプリを使用中であれば、最新バージョンを、そのリンクからダウンロードすることができます："
   }
 }
