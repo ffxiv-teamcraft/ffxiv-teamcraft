@@ -1585,8 +1585,8 @@
     "Title": "Inventaroptimierer",
     "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
     "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
-    "Ignore_contaier": "Diesen Tipp für dieses Inventar ignorieren",
-    "Remove_ignore_contaier": "Diesen Tipp nicht länger für dieses Inventar ignorieren",
+    "Ignore_container": "Diesen Tipp für dieses Inventar ignorieren",
+    "Remove_ignore_container": "Diesen Tipp nicht länger für dieses Inventar ignorieren",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
     "No_optimizations": "Keine Optimierungen verfügbar",
     "CAN_BE_BOUGHT": {
