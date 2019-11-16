@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.5"></a>
+## [6.2.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.4...v6.2.5) (2019-11-16)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarm overlay toggle not working properly ([0738167](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0738167))
+* **inventory:** fixed an issue with ishgard deliveries counting as if they were obtained ([3bfc38a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3bfc38a))
+* **inventory:** inventory search is no longer case-sensitive ([eb88f1b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb88f1b))
+* **inventory:** inventory sync in database will only happen every 30 seconds now ([29e9bdb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/29e9bdb))
+* **list:** smaller lists will now be more reactive ([a96abb8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a96abb8))
+* **optimizer:** fixed an issue with inventory optimizer not loading properly ([85239fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/85239fc))
+* **rotation:** rotation picker search is no longer case-sensitive ([73469e4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73469e4))
+* **search:** removed dated items from search results ([7a2f264](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7a2f264))
+* **simulator:** fixed an issue with dirty warning popup spawning way too much ([6ce73ee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6ce73ee))
+
+
+### Features
+
+* **desktop:** added a button to open a website link in desktop ([7676b39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7676b39))
+* **simulator:** added Ishgard restoration collectability breakpoints ([a51459c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a51459c))
+* **simulator:** added total macro duration to macro popup ([65502bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/65502bf))
+
+
+
 <a name="6.2.4"></a>
 ## [6.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.3...v6.2.4) (2019-11-13)
 
