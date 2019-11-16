@@ -32,6 +32,7 @@ import { Craft } from '../../../model/garland-tools/craft';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { hwdSupplies } from '../../../core/data/sources/hwd-supplies';
 
 @Component({
   selector: 'app-item',
@@ -395,6 +396,15 @@ export class ItemComponent extends TeamcraftPageComponent {
             title: 'DB.Rowena_splendor',
             icon: './assets/icons/status/collectors_glove.png',
             masterpiece: data.item.masterpiece
+          });
+        }
+        if (hwdSupplies[data.item.id] !== undefined) {
+          usedFor.push({
+            type: UsedForType.ISHGARD_RESTORATION,
+            flex: '1 1 auto',
+            title: 'DB.Ishgard_restoration',
+            icon: './assets/icons/status/collectors_glove.png',
+            ishgardRestoration: hwdSupplies[data.item.id]
           });
         }
         if (data.item.desynthedTo !== undefined) {

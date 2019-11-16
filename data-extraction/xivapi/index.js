@@ -1425,3 +1425,32 @@ if (hasTodo('suggestedValues')) {
     persistToTypescript('suggested', 'suggested', suggested);
   });
 }
+
+if (hasTodo('HWDData')) {
+  const supplies = {};
+  getAllEntries('https://xivapi.com/HWDCrafterSupply').subscribe(completeFetch => {
+    completeFetch.forEach(supply => {
+      for (let i = 0; i < 5; i++) {
+        supplies[supply[`ItemTradeIn${i}TargetID`]] = {
+          level: supply[`Level${i}`],
+          base: {
+            rating: supply[`BaseCollectableRating${i}`],
+            exp: supply[`BaseCollectableReward${i}`].ExpReward,
+            scrip: supply[`BaseCollectableReward${i}`].ScriptRewardAmount
+          },
+          mid: {
+            rating: supply[`MidBaseCollectableRating${i}`],
+            exp: supply[`MidCollectableReward${i}`].ExpReward,
+            scrip: supply[`MidCollectableReward${i}`].ScriptRewardAmount
+          },
+          high: {
+            rating: supply[`HighBaseCollectableRating${i}`],
+            exp: supply[`HighCollectableReward${i}`].ExpReward,
+            scrip: supply[`HighCollectableReward${i}`].ScriptRewardAmount
+          }
+        };
+      }
+    });
+    persistToTypescript('hwd-supplies', 'hwdSupplies', supplies);
+  });
+}
