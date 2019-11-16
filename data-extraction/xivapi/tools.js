@@ -141,7 +141,7 @@ module.exports.getAllEntries = (endpoint, key, startsAt0) => {
   let progress;
   const allIds = startsAt0 ? ['0'] : [];
   const index$ = new Subject();
-  getAllPages(addQueryParam(addQueryParam(endpoint, 'key', key), 'columns', 'ID')).subscribe(page => {
+  getAllPages(addQueryParam(endpoint, 'columns', 'ID')).subscribe(page => {
     allIds.push(...page.Results.map(res => res.ID));
   }, null, () => {
     index$.next(0);

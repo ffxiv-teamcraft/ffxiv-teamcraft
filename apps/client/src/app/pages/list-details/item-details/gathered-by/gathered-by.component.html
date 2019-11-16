@@ -87,6 +87,7 @@
               </div>
               <div class="node-map">
                 <app-map [mapId]="node.mapid"
+                         *ngIf="node.coords"
                          [markers]="[{x:node.coords[0], y: node.coords[1]}]"></app-map>
               </div>
             </div>

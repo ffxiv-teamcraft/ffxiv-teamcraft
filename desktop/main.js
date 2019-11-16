@@ -370,6 +370,7 @@ ipcMain.on('apply-settings', (event, settings) => {
       overlay.setIgnoreMouseEvents(settings.clickthrough === 'true');
       overlay.webContents.send('update-settings', settings);
     });
+    win.webContents.send('update-settings', settings);
   } catch (e) {
     // Window already destroyed, so we don't care :)
   }

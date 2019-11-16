@@ -18,7 +18,20 @@ import {
   UpdateListAtomic,
   UpdateListIndex
 } from './lists.actions';
-import { catchError, debounceTime, delay, distinctUntilChanged, filter, first, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import {
+  catchError,
+  debounceTime,
+  delay,
+  distinctUntilChanged,
+  filter,
+  first,
+  map,
+  mergeMap,
+  switchMap,
+  tap,
+  throttleTime,
+  withLatestFrom
+} from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, EMPTY, from, of } from 'rxjs';
@@ -209,7 +222,7 @@ export class ListsEffects {
   @Effect({ dispatch: false })
   updateListInDatabase$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
-    debounceTime(500),
+    debounceTime(1000),
     switchMap(action => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);

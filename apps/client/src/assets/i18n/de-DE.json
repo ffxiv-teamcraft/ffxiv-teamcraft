@@ -143,7 +143,8 @@
     "Tables": "Tabelle",
     "Pie_charts": "Kuchendiagramm",
     "Read_more_on_wiki": "Details im Wiki ansehen",
-    "Apply": "Übernehmen"
+    "Apply": "Übernehmen",
+    "Open_link": "Webseite öffnen"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -817,6 +818,7 @@
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
     "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
+    "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
@@ -1312,6 +1314,7 @@
     "Rowena_splendor": "Rowenas Haus der Wunder",
     "Unlocks": "Freischaltung von",
     "Jump_to_page": "Schnellwechsel zu anderer Seite",
+    "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
       "Masterpiece_base": "Basis",
       "Masterpiece_bonus": "Bonus"
@@ -1585,8 +1588,8 @@
     "Title": "Inventaroptimierer",
     "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
     "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
-    "Ignore_contaier": "Diesen Tipp für dieses Inventar ignorieren",
-    "Remove_ignore_contaier": "Diesen Tipp nicht länger für dieses Inventar ignorieren",
+    "Ignore_container": "Diesen Tipp für dieses Inventar ignorieren",
+    "Remove_ignore_container": "Diesen Tipp nicht länger für dieses Inventar ignorieren",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
     "No_optimizations": "Keine Optimierungen verfügbar",
     "CAN_BE_BOUGHT": {

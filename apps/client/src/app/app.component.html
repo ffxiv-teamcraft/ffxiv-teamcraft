@@ -69,6 +69,10 @@
               <i iconfont="icon-openinapp" nz-icon></i>
             </a>
           </li>
+          <li *ngIf="platformService.isDesktop()" [nzTitle]="'COMMON.Open_link' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
+              nz-tooltip nzPlacement="bottom" (click)="openLink()">
+              <i nz-icon nzType="laptop" nzTheme="outline"></i>
+          </li>
           <li *ngIf="notifications$ | async as notifications" [nzContent]="notificationsTemplate" class="ant-menu-item" nz-popover
               nzPlacement="bottomRight">
             <nz-badge [nzCount]="notifications.length" class="notifications-count">

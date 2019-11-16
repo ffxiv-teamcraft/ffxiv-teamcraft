@@ -143,7 +143,8 @@
     "Tables": "目録",
     "Pie_charts": "円グラフ",
     "Read_more_on_wiki": "ウィキで詳しく見る",
-    "Apply": "適用"
+    "Apply": "適用",
+    "Open_link": "Open website link"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -817,6 +818,7 @@
     "Recipe_picker_placeholder": "製作しようとするアイテム名を入力してください",
     "Could_not_find_minstats": "このローテーションで最小ステップを見つけることができません",
     "Remove_final_appraisal": "'Final Appraisal' バフ削除",
+    "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "STATE": {
       "Excellent": "最高品質",
       "Good": "高品質",
@@ -1312,6 +1314,7 @@
     "Rowena_splendor": "ロウェナ商会取引（星付き= + 20％ボーナス）",
     "Unlocks": "ロック解除",
     "Jump_to_page": "別のページへクイックジャンプする",
+    "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
       "Masterpiece_base": "基本",
       "Masterpiece_bonus": "ボーナス"
@@ -1585,8 +1588,8 @@
     "Title": "所持品せいとん",
     "Ignore_item": "このアイテムではこのヒントは無視する",
     "Remove_ignore_item": "このアイテムではこのヒントは無視しない",
-    "Ignore_contaier": "このコンテナのヒントは無視する",
-    "Remove_ignore_contaier": "このコンテナのヒントはもう無視しない",
+    "Ignore_container": "このコンテナのヒントは無視する",
+    "Remove_ignore_container": "このコンテナのヒントはもう無視しない",
     "Show_ignored": "無視された項目を示す",
     "No_optimizations": "最適化ができません",
     "CAN_BE_BOUGHT": {
