@@ -143,7 +143,8 @@
     "Tables": "Table",
     "Pie_charts": "Pie charts",
     "Read_more_on_wiki": "Read more details on wiki",
-    "Apply": "Apply"
+    "Apply": "Apply",
+    "Open_link": "Open website link"
   },
   "ALARMS": {
     "Title": "Alarmi",
@@ -817,6 +818,7 @@
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "Could_not_find_minstats": "Could not find min stats for this rotation",
     "Remove_final_appraisal": "Remove Final Appraisal buff",
+    "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Good",
