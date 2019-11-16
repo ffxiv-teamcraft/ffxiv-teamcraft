@@ -143,7 +143,8 @@
     "Tables": "Tabla",
     "Pie_charts": "Gráfico de pastel",
     "Read_more_on_wiki": "Leer más detalles en el wiki",
-    "Apply": "Apply"
+    "Apply": "Apply",
+    "Open_link": "Open website link"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -817,6 +818,7 @@
     "Recipe_picker_placeholder": "Introduzca el nombre de la receta que desea crear",
     "Could_not_find_minstats": "No se pudieron encontrar atributos mínimos para esta rotación",
     "Remove_final_appraisal": "Remove Final Appraisal buff",
+    "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "STATE": {
       "Excellent": "Excelente",
       "Good": "Bueno",
@@ -1312,6 +1314,7 @@
     "Rowena_splendor": "Esplendores de Rowena (Estrella = +20% de bonus)",
     "Unlocks": "Desbloqueos",
     "Jump_to_page": "Quick jump to another page",
+    "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"

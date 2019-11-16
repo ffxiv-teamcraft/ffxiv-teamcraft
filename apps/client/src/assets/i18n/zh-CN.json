@@ -143,7 +143,8 @@
     "Tables": "表格",
     "Pie_charts": "饼状图",
     "Read_more_on_wiki": "在wiki上阅读更多详细信息",
-    "Apply": "Apply"
+    "Apply": "Apply",
+    "Open_link": "Open website link"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -817,6 +818,7 @@
     "Recipe_picker_placeholder": "输入您想要制作的配方",
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
     "Remove_final_appraisal": "Remove Final Appraisal buff",
+    "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "STATE": {
       "Excellent": "最高品质",
       "Good": "高品质",
@@ -1312,6 +1314,7 @@
     "Rowena_splendor": "罗薇娜显赫商会（带星=奖励+20%）",
     "Unlocks": "解锁",
     "Jump_to_page": "Quick jump to another page",
+    "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "奖励"

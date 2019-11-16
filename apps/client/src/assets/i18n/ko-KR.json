@@ -143,7 +143,8 @@
     "Tables": "목록",
     "Pie_charts": "파이 차트",
     "Read_more_on_wiki": "위키에서 자세히 보기",
-    "Apply": "적용"
+    "Apply": "적용",
+    "Open_link": "Open website link"
   },
   "ALARMS": {
     "Title": "알람",
@@ -817,6 +818,7 @@
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
     "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
+    "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "STATE": {
       "Excellent": "최고품질",
       "Good": "고품질",
@@ -1312,6 +1314,7 @@
     "Rowena_splendor": "로웨나 상회 거래 (별 = 20% 추가 경험치)",
     "Unlocks": "개방",
     "Jump_to_page": "뛰어넘기",
+    "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
       "Masterpiece_base": "기본",
       "Masterpiece_bonus": "보너스"
