@@ -50,7 +50,7 @@ export class RotationPickerDrawerComponent {
             return {
               folder: folder,
               rotations: folder.rotationIds.map(id => rotations.find(r => r.$key === id))
-                .filter(r => r !== undefined && r.getName().indexOf(query) > -1)
+                .filter(r => r !== undefined && r.getName().toLowerCase().indexOf(query.toLowerCase()) > -1)
                 .map(rotation => {
                   rotation.folderId = folder.$key;
                   return rotation;
