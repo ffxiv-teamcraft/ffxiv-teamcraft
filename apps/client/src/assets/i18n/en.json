@@ -1585,8 +1585,8 @@
     "Title": "Inventory optimizer",
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
-    "Ignore_contaier": "Ignore this tip for this container",
-    "Remove_ignore_contaier": "Don't ignore this tip for this container anymore",
+    "Ignore_container": "Ignore this tip for this container",
+    "Remove_ignore_container": "Don't ignore this tip for this container anymore",
     "Show_ignored": "Show ignored items",
     "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
