@@ -143,7 +143,8 @@
     "Tables": "Tabelle",
     "Pie_charts": "Kuchendiagramm",
     "Read_more_on_wiki": "Details im Wiki ansehen",
-    "Apply": "Übernehmen"
+    "Apply": "Übernehmen",
+    "Open_link": "Open website link"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -817,6 +818,7 @@
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
     "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
+    "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
