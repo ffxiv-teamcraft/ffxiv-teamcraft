@@ -1585,8 +1585,8 @@
     "Title": "Optimiseur d'inventaire",
     "Ignore_item": "Ignorer cette astuce pour cet objet",
     "Remove_ignore_item": "Ne plus ignorer cette astuce pour cet objet",
-    "Ignore_contaier": "Ignorer cette astuce pour cet inventaire",
-    "Remove_ignore_contaier": "Ne plus ignorer cette astuce pour cet inventaire",
+    "Ignore_container": "Ignore this tip for this container",
+    "Remove_ignore_container": "Don't ignore this tip for this container anymore",
     "Show_ignored": "Afficher les objets ignorés",
     "No_optimizations": "Aucune optimisation disponible",
     "CAN_BE_BOUGHT": {
