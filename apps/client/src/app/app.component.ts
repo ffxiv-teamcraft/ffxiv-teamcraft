@@ -61,6 +61,8 @@ import { MachinaService } from './core/electron/machina.service';
 import { UniversalisService } from './core/api/universalis.service';
 import { GubalService } from './core/api/gubal.service';
 import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
+import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
+import { ListLayout } from './core/layout/list-layout';
 
 declare const gtag: Function;
 
@@ -479,6 +481,20 @@ export class AppComponent implements OnInit {
         this.hasDesktopReloader$.next(null);
       }, 30000);
     }
+  }
+
+  openLink(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('COMMON.Open_link'),
+      nzContent: TextQuestionPopupComponent,
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined && res.startsWith('https://ffxivteamcraft.com/'))
+      )
+      .subscribe((data: string) => {
+        this.router.navigate(data.replace('https://ffxivteamcraft.com/', '').split('/'));
+      });
   }
 
   use(lang: string, fromIpc = false, skipStorage = false): void {
