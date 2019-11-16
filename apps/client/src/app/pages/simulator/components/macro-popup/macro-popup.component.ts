@@ -16,6 +16,8 @@ export class MacroPopupComponent implements OnInit {
 
   public macro: string[][] = [[]];
 
+  public totalDuration: number;
+
   private readonly maxMacroLines = 15;
 
   public addEcho = this.settings.macroEcho;
@@ -72,6 +74,7 @@ export class MacroPopupComponent implements OnInit {
     this.settings.macroEchoSeNumber = this.echoSeNumber;
 
     this.macro = this.macroLock ? [['/mlock']] : [[]];
+    this.totalDuration = 0;
     let totalLength = 0;
     this.rotation.forEach((action, actionIndex) => {
       let macroFragment = this.macro[this.macro.length - 1];
@@ -90,6 +93,7 @@ export class MacroPopupComponent implements OnInit {
           actionName = `"${actionName}"`;
         }
         macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration() + this.extraWait}>`);
+        this.totalDuration += action.getWaitDuration() + this.extraWait;
         totalLength++;
       }
 
@@ -120,14 +124,6 @@ export class MacroPopupComponent implements OnInit {
       }
       this.macro[this.macro.length - 1].push(`/echo Craft finished <se.${seNumber}>`);
     }
-
-    /* Without the additional actions macro there is nothing to add the consumable macro to
-
-    const consumablesNotification = this.getConsumablesNotification();
-    if (consumablesNotification !== undefined) {
-      this.aactionsMacro.push(consumablesNotification);
-    }
-    */
   }
 
   /**
