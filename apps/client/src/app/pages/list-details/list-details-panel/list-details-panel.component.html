@@ -7,6 +7,7 @@
       <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown && !displayRow.reverseTiers">
         <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd"
                       [permissionLevel]="permissionLevel"
+                      [finalItem]="finalItems"
                       [alarmGroups]="alarmGroups"
                       [item]="item"
                       [layout]="displayRow.layout"
@@ -22,6 +23,7 @@
           <nz-divider [nzText]="tierTitle" nzOrientation="left"></nz-divider>
           <app-item-row *ngFor="let item of tier; trackBy: trackByItem; let odd = odd"
                         [permissionLevel]="permissionLevel"
+                        [finalItem]="finalItems"
                         [alarmGroups]="alarmGroups"
                         [item]="item"
                         [layout]="displayRow.layout"
@@ -48,6 +50,7 @@
             <nz-divider [nzText]="zoneTitle" nzOrientation="left"></nz-divider>
             <app-item-row *ngFor="let item of row.items; trackBy: trackByItem; let odd = odd"
                           [permissionLevel]="permissionLevel"
+                          [finalItem]="finalItems"
                           [alarmGroups]="alarmGroups"
                           [item]="item"
                           [layout]="displayRow.layout"
