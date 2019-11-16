@@ -143,7 +143,8 @@
     "Tables": "Tableau",
     "Pie_charts": "Graphiques circulaires",
     "Read_more_on_wiki": "Lire plus de détails sur le wiki",
-    "Apply": "Appliquer"
+    "Apply": "Appliquer",
+    "Open_link": "Open website link"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -817,6 +818,7 @@
     "Recipe_picker_placeholder": "Entrez le nom de la recette que vous voulez simuler",
     "Could_not_find_minstats": "Impossible de trouver les statistiques minimales pour cette rotation",
     "Remove_final_appraisal": "Supprimer le buff \"Dernières vérifications\"",
+    "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Bon",
