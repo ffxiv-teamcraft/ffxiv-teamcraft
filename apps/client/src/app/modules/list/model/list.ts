@@ -81,9 +81,7 @@ export class List extends DataWithPermissions {
     clone.version = this.version || '1.0.0';
     clone.tags = this.tags;
     if (internal) {
-      for (const prop of Object.keys(this)) {
-        clone[prop] = JSON.parse(JSON.stringify(this[prop]));
-      }
+      Object.assign(clone, this);
     } else {
       for (const prop of Object.keys(this)) {
         if (['finalItems', 'items', 'note'].indexOf(prop) > -1) {

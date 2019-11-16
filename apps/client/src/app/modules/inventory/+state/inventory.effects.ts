@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { InventoryActionTypes, InventoryLoaded, UpdateInventory } from './inventory.actions';
 import { UserInventoryService } from '../../../core/database/user-inventory.service';
-import { catchError, debounceTime, distinctUntilKeyChanged, map, switchMap, switchMapTo } from 'rxjs/operators';
+import { auditTime, catchError, distinctUntilKeyChanged, map, switchMap, switchMapTo } from 'rxjs/operators';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { SettingsService } from '../../settings/settings.service';
@@ -49,7 +49,7 @@ export class InventoryEffects {
   @Effect({ dispatch: false })
   updateInventory$ = this.actions$.pipe(
     ofType<UpdateInventory>(InventoryActionTypes.UpdateInventory),
-    debounceTime(2000),
+    auditTime(30000),
     switchMap(action => {
       if (this.settings.persistInventory) {
         if (action.force) {

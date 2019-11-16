@@ -1588,8 +1588,8 @@
     "Title": "所持品せいとん",
     "Ignore_item": "このアイテムではこのヒントは無視する",
     "Remove_ignore_item": "このアイテムではこのヒントは無視しない",
-    "Ignore_container": "Ignore this tip for this container",
-    "Remove_ignore_container": "Don't ignore this tip for this container anymore",
+    "Ignore_container": "このコンテナのヒントは無視する",
+    "Remove_ignore_container": "このコンテナのヒントはもう無視しない",
     "Show_ignored": "無視された項目を示す",
     "No_optimizations": "最適化ができません",
     "CAN_BE_BOUGHT": {

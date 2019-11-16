@@ -138,6 +138,10 @@ export class UserInventory extends DataModel {
           moved.retainerName = lastSpawnedRetainer;
         }
         this.items[toContainerKey][packet.toSlot] = moved;
+        if (packet.toContainer === ContainerType.HandIn
+          || packet.fromContainer === ContainerType.HandIn) {
+          return null;
+        }
         return moved;
       case 'swap':
         const fromSlot = fromItem.slot;

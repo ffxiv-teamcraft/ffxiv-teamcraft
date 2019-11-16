@@ -630,6 +630,55 @@
                 </div>
               </div>
             </div>
+            <div *ngIf="row.ishgardRestoration" fxLayout="row wrap" fxLayoutGap="10px">
+              <div class="masterpiece-entry">
+                <div fxLayout="column" fxLayoutAlign="center center">
+                  <div class="masterpiece-rating">{{row.ishgardRestoration.base.rating}}
+                    - {{row.ishgardRestoration.mid.rating - 1}}</div>
+                  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-item-icon [icon]="28063 | lazyIcon" [itemId]="28063" width="32"></app-item-icon>
+                      <div>x{{row.ishgardRestoration.base.scrip | number}}</div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                      <div>x{{row.ishgardRestoration.base.exp | number}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="masterpiece-entry">
+                <div fxLayout="column" fxLayoutAlign="center center">
+                  <div class="masterpiece-rating">{{row.ishgardRestoration.mid.rating}}
+                    - {{row.ishgardRestoration.high.rating - 1}}</div>
+                  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-item-icon [icon]="28063 | lazyIcon" [itemId]="28063" width="32"></app-item-icon>
+                      <div>x{{row.ishgardRestoration.mid.scrip | number}}</div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                      <div>x{{row.ishgardRestoration.mid.exp | number}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="masterpiece-entry">
+                <div fxLayout="column" fxLayoutAlign="center center">
+                  <div class="masterpiece-rating">{{row.ishgardRestoration.high.rating}}</div>
+                  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-item-icon [icon]="28063 | lazyIcon" [itemId]="28063" width="32"></app-item-icon>
+                      <div>x{{row.ishgardRestoration.high.scrip | number}}</div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                      <div>x{{row.ishgardRestoration.high.exp | number}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div *ngIf="row.trades" fxLayout="column" fxLayoutGap="5px">
               <nz-card *ngFor="let source of row.trades" [nzTitle]="source.shopName | shopName | i18n">
                 <nz-table #basicTable [nzData]="source.trades">

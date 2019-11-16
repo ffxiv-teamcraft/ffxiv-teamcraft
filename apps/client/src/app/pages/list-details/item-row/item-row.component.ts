@@ -83,35 +83,15 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   private buttonsCache = {};
 
-  private itemId$: ReplaySubject<number> = new ReplaySubject<number>();
+  private item$: ReplaySubject<ListRow> = new ReplaySubject<ListRow>();
 
   private finalItem$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   @Input()
-  set itemId(itemId: number) {
-    this.itemId$.next(itemId);
+  set item(item: ListRow) {
+    this.item$.next(item);
+    this.handleAlarms(item);
   }
-
-  public item$: Observable<ListRow> = combineLatest([
-    this.listsFacade.selectedList$,
-    this.itemId$.pipe(distinctUntilChanged()),
-    this.finalItem$
-  ]).pipe(
-    map(([list, itemId, finalItem]: [List, number, boolean]) => {
-      return list.getItemById(itemId, !finalItem, finalItem);
-    }),
-    filter(item => item !== undefined),
-    distinctUntilChanged((a, b) => {
-      return a.amount === b.amount
-        && a.done === b.done
-        && a.id === b.id
-        && a.canBeCrafted === b.canBeCrafted
-        && a.hasAllBaseIngredients === b.hasAllBaseIngredients;
-    }),
-    tap(item => {
-      this.handleAlarms(item);
-    })
-  );
 
   @Input()
   public set finalItem(final: boolean) {
@@ -309,7 +289,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     });
 
     this.commentBadge$ = this.commentBadgeReloader$.pipe(
-      exhaustMap(() => combineLatest([this.list$, this.itemId$])),
+      exhaustMap(() => combineLatest([this.list$, this.item$.pipe(map(i => i.id))])),
       switchMap(([list, itemId]) => {
         return this.commentsService.getComments(
           CommentTargetType.LIST,

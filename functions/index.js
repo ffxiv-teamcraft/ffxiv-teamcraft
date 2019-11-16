@@ -89,17 +89,21 @@ exports.updateList = functions.runWith(runtimeOpts).https.onCall((data, context)
   return firestore.runTransaction(transaction => {
     return transaction.get(listRef).then(listDoc => {
       const list = listDoc.data();
-      const [standard, custom] = JSON.parse(data.diff).reduce((acc, entry) => {
-        if (entry.custom) {
-          acc[1].push(entry);
-        } else {
-          acc[0].push(entry);
-        }
-        return acc;
-      }, [[], []]);
-      applyPatch(list, standard);
-      applyOffsets(list, custom);
-      transaction.update(listRef, list);
+      try {
+        const [standard, custom] = JSON.parse(data.diff).reduce((acc, entry) => {
+          if (entry.custom) {
+            acc[1].push(entry);
+          } else {
+            acc[0].push(entry);
+          }
+          return acc;
+        }, [[], []]);
+        applyPatch(list, standard);
+        applyOffsets(list, custom);
+        transaction.set(listRef, list);
+      } catch (e) {
+        console.log(data.diff);
+      }
     });
   });
 });
@@ -108,18 +112,22 @@ exports.updateInventory = functions.runWith(runtimeOpts).https.onCall((data, con
   const ref = firestore.collection('user-inventories').doc(data.uid);
   return firestore.runTransaction(transaction => {
     return transaction.get(ref).then(doc => {
-      const docData = doc.data();
-      const [standard, custom] = JSON.parse(data.diff).reduce((acc, entry) => {
-        if (entry.custom) {
-          acc[1].push(entry);
-        } else {
-          acc[0].push(entry);
-        }
-        return acc;
-      }, [[], []]);
-      applyPatch(docData, standard);
-      applyOffsets(docData, custom);
-      transaction.update(ref, docData);
+      const docData = doc.data() || {};
+      try {
+        const [standard, custom] = JSON.parse(data.diff).reduce((acc, entry) => {
+          if (entry.custom) {
+            acc[1].push(entry);
+          } else {
+            acc[0].push(entry);
+          }
+          return acc;
+        }, [[], []]);
+        applyPatch(docData, standard);
+        applyOffsets(docData, custom);
+        transaction.set(ref, docData);
+      } catch (e) {
+        console.log(data.diff);
+      }
     });
   });
 });

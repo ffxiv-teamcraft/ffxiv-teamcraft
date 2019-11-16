@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd';
 import { DirtyScope } from './dirty-scope';
-import { switchMap, tap } from 'rxjs/operators';
+import { switchMap, tap, first } from 'rxjs/operators';
 
 @Injectable()
 export class DirtyGuard implements CanDeactivate<any> {
@@ -15,6 +15,7 @@ export class DirtyGuard implements CanDeactivate<any> {
 
   canDeactivate(component: any, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState?: RouterStateSnapshot): Observable<boolean> {
     return this.dirtyFacade.allEntries$.pipe(
+      first(),
       switchMap(entries => {
         const isDirty = entries.some(entry => entry.scope === DirtyScope.PAGE);
         if (!isDirty) {

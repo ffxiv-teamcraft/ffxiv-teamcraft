@@ -45,6 +45,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   public update(uid: string, data: Partial<List>, uriParams?: any): Observable<void> {
+    if (!data.isLarge()) {
+      return super.update(uid, data);
+    }
     const preparedCache = this.prepareData(this.syncCache[uid]);
     const preparedNew = this.prepareData(data);
     let diff = compare(preparedCache, preparedNew);
