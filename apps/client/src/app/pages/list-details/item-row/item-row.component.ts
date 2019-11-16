@@ -83,7 +83,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   private buttonsCache = {};
 
-  private item$: ReplaySubject<ListRow> = new ReplaySubject<ListRow>();
+  public item$: ReplaySubject<ListRow> = new ReplaySubject<ListRow>();
 
   private finalItem$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
