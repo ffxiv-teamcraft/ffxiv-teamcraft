@@ -52,7 +52,7 @@ export class FishingReporter implements DataReporter {
       map(packet => {
         return {
           timestamp: packet.timestamp,
-          mooch: packet.param5 === 375
+          mooch: packet.param5 === 275
         };
       })
     );
