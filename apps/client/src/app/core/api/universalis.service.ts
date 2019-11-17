@@ -19,9 +19,8 @@ export class UniversalisService {
     shareReplay(1)
   );
 
-  private worldId$: Observable<number> = this.authFacade.user$.pipe(
-    map(user => user.world),
-    filter(world => world !== undefined),
+  private worldId$: Observable<number> = this.ipc.worldId$.pipe(
+    filter(worldId => worldId !== undefined),
     distinctUntilChanged(),
     shareReplay(1)
   );
