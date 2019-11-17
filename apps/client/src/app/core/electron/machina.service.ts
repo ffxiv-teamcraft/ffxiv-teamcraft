@@ -201,7 +201,7 @@ export class MachinaService {
     this.ipc.packets$.pipe(
       ofPacketSubType('fishingBaitMsg')
     ).subscribe(packet => {
-      this.eorzeaFacade.setBait(packet.param1);
+      this.eorzeaFacade.setBait(packet.baitID);
     });
 
     this.ipc.packets$.pipe(
@@ -217,6 +217,13 @@ export class MachinaService {
       this.eorzeaFacade.setStatuses(packet.effects.map(effect => {
         return effect.effectID;
       }));
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('effectResult'),
+      filter(packet => packet.actorID1 === packet.actorID)
+    ).subscribe(packet => {
+      this.eorzeaFacade.addStatus(packet.effectID);
     });
   }
 }

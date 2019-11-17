@@ -44,6 +44,16 @@ export function eorzeaReducer(
       };
       break;
     }
+    case EorzeaActionTypes.AddStatus: {
+      state = {
+        ...state,
+        statuses: [
+          ...state.statuses,
+          action.payload
+        ]
+      };
+      break;
+    }
   }
   return state;
 }

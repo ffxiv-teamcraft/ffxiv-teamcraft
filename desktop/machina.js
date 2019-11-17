@@ -58,7 +58,12 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'weatherChange',
         'aetherReductionDlg',
         'desynthOrReductionResult',
-        'persistentEffect'
+        'persistentEffect',
+        'effectResult',
+        'eventPlay',
+        'eventStart',
+        'eventFinish',
+        'eventUnk0',
       ];
 
       Machina = new MachinaFFXIV(options);

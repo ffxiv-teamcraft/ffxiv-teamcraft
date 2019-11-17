@@ -1,8 +1,21 @@
 import { DataReporter } from './data-reporter';
-import { merge, Observable } from 'rxjs';
+import { BehaviorSubject, merge, Observable } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
-import { filter, map, shareReplay, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
+import { actionTimeline } from '../data/sources/action-timeline';
+
+enum Tug {
+  MEDIUM,
+  BIG,
+  LIGHT
+}
+
+enum Hookset {
+  NORMAL,
+  POWERFUL,
+  PRECISION
+}
 
 export class FishingReporter implements DataReporter {
 
@@ -30,22 +43,58 @@ export class FishingReporter implements DataReporter {
 
     const eventPlay$ = packets$.pipe(
       ofPacketType('eventPlay'),
-      filter(packet => packet.eventId === 0x150001)
+      filter(packet => packet.eventId === 0x150001),
+      tap(console.log)
     );
 
     const throw$ = eventPlay$.pipe(
       filter(packet => packet.scene === 1),
-      map(packet => packet.timestamp)
+      map(packet => {
+        return {
+          timestamp: packet.timestamp,
+          mooch: packet.param5 === 375
+        };
+      })
     );
 
     const bite$ = eventPlay$.pipe(
-      filter(packet => packet.scene === 2),
-      map(packet => packet.timestamp)
+      filter(packet => packet.scene === 5),
+      map(packet => {
+        return {
+          timestamp: packet.timestamp
+        };
+      })
     );
 
-    throw$.subscribe(a => console.log('throw$', a));
-    bite$.subscribe(a => console.log('bite$', a));
-    itemsObtained$.subscribe(a => console.log('itemsObtained$', a));
+    const actionTimeline$ = packets$.pipe(
+      ofPacketType('eventUnk0'),
+      map(packet => actionTimeline[packet.actionTimeline.toString()])
+    );
+
+    const tug$ = actionTimeline$.pipe(
+      map(key => {
+        if (key.indexOf('_big') > -1) {
+          return Tug.BIG;
+        }
+        return Tug.MEDIUM;
+      }),
+      startWith(Tug.MEDIUM)
+    );
+
+    const hookset$ = actionTimeline$.pipe(
+      map(key => {
+        if (key.indexOf('strong') > -1) {
+          return Hookset.POWERFUL;
+        }
+        if (key.indexOf('precision') > -1) {
+          return Hookset.PRECISION;
+        }
+        return Hookset.NORMAL;
+      }),
+      startWith(Hookset.NORMAL)
+    );
+
+    const lastFishCaught$ = new BehaviorSubject<number>(-1);
 
     return itemsObtained$.pipe(
       withLatestFrom(isFishing$),
@@ -56,20 +105,33 @@ export class FishingReporter implements DataReporter {
         this.eorzea.weatherId$,
         this.eorzea.previousWeatherId$,
         this.eorzea.baitId$,
+        this.eorzea.statuses$,
         throw$,
-        bite$
+        bite$,
+        lastFishCaught$,
+        tug$,
+        hookset$
       ),
-      map(([patch, mapId, weatherId, previousWeatherId, baitId, throwTime, biteTime]) => {
-        return [{
+      map(([patch, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, lastFishCaught, tug, hookset]) => {
+        lastFishCaught$.next(patch.catalogId);
+        const entry = {
           itemId: patch.catalogId,
           mapId,
           weatherId,
           previousWeatherId,
           baitId,
-          biteTime: biteTime - throwTime
-        }];
-      }),
-      tap(console.log)
+          biteTime: biteData.timestamp - throwData.timestamp,
+          fishEyes: statuses.indexOf(762) > -1,
+          snagging: statuses.indexOf(761) > -1,
+          mooch: throwData.mooch,
+          tug,
+          hookset
+        };
+        if (throwData.mooch) {
+          throwData.baitId = lastFishCaught;
+        }
+        return [entry];
+      })
     );
   }
 

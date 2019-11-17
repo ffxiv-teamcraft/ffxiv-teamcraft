@@ -60,7 +60,8 @@ let todo = [
   'monsterDrops',
   'voyages',
   'worlds',
-  'territories'
+  'territories',
+  'actionTimeline'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -1452,5 +1453,16 @@ if (hasTodo('HWDData')) {
       }
     });
     persistToTypescript('hwd-supplies', 'hwdSupplies', supplies);
+  });
+}
+
+if (hasTodo('actionTimeline')) {
+  const actionTimeline = {};
+  getAllPages('https://xivapi.com/ActionTimeline?columns=ID,Key').subscribe(page => {
+    page.Results.forEach(entry => {
+      actionTimeline[entry.ID] = entry.Key;
+    });
+  }, null, () => {
+    persistToTypescript('action-timeline', 'actionTimeline', actionTimeline);
   });
 }
