@@ -196,19 +196,12 @@ export class MachinaService {
     ).subscribe(packet => {
       const realZoneId = territories[packet.zoneID.toString()];
       this.eorzeaFacade.setZone(realZoneId);
-      this.eorzeaFacade.setWeather(packet.weatherID);
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('weatherChange')
+      ofPacketSubType('fishingBaitMsg')
     ).subscribe(packet => {
-      this.eorzeaFacade.setWeather(packet.weatherID);
-    });
-
-    this.ipc.packets$.pipe(
-      ofPacketSubType('setBait')
-    ).subscribe(packet => {
-      this.eorzeaFacade.setBait(packet.baitID);
+      this.eorzeaFacade.setBait(packet.param1);
     });
 
     this.ipc.packets$.pipe(
