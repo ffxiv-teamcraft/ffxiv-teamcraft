@@ -25,10 +25,10 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   protected prepareData(data: Partial<T>): T {
-    const clone: T = { data };
+    const clone: Partial<T> = { ...data };
     delete clone.$key;
     clone.appVersion = environment.version;
-    return clone;
+    return clone as T;
   }
 
   public stopListening(key: string, cacheEntry?: string): void {
