@@ -1594,7 +1594,7 @@
     "No_optimizations": "최적화가 가능하지 않습니다",
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
-      "Message": "구매가능: 길 / 야만족우호도: 중립"
+      "Message": "구매가능: 길 / 구매조건: 야만족퀘스트 오픈"
     },
     "DUPLICATES": {
       "Title": "아이템이 여러곳에 분산되어 있습니다",
