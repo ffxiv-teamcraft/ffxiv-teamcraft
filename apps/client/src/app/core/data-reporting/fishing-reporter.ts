@@ -1,9 +1,11 @@
 import { DataReporter } from './data-reporter';
-import { BehaviorSubject, merge, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
-import { filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { actionTimeline } from '../data/sources/action-timeline';
+import { LazyDataService } from '../data/lazy-data.service';
+import { fishingSpots } from '../data/sources/fishing-spots';
 
 enum Tug {
   MEDIUM,
@@ -19,7 +21,20 @@ enum Hookset {
 
 export class FishingReporter implements DataReporter {
 
-  constructor(private eorzea: EorzeaFacade) {
+  constructor(private eorzea: EorzeaFacade, private lazyData: LazyDataService) {
+  }
+
+  private getTug(value: number): Tug {
+    switch (value) {
+      case 292:
+        return Tug.LIGHT;
+      case 293:
+        return Tug.MEDIUM;
+      case 294:
+        return Tug.BIG;
+      default:
+        return Tug.MEDIUM;
+    }
   }
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
@@ -28,6 +43,37 @@ export class FishingReporter implements DataReporter {
       filter(packet => {
         return packet.containerId < 10 && packet.quantity > 0;
       })
+    );
+
+    const positionPackets$ = packets$.pipe(
+      ofPacketType('updatePositionHandler'),
+      debounceTime(1000)
+    );
+
+    const spot$ = combineLatest([this.eorzea.mapId$, positionPackets$]).pipe(
+      filter(([mapId]) => this.lazyData.maps[mapId.toString()] !== undefined),
+      map(([mapId, packet]) => {
+        const mapData = this.lazyData.maps[mapId.toString()];
+        const c = mapData.size_factor / 100;
+        const raw = {
+          x: (packet.pos.x + mapData.offset_x) * c,
+          y: (packet.pos.z + mapData.offset_y) * c,
+          z: (packet.pos.y) * c
+        };
+        return {
+          mapId: mapId,
+          x: (41 / c) * ((raw.x + 1024) / 2048) + 1,
+          y: (41 / c) * ((raw.y + 1024) / 2048) + 1,
+          z: (41 / c) * ((raw.z + 1024) / 2048) + 1
+        };
+      }),
+      map(position => {
+        const spots = fishingSpots.filter(spot => spot.mapId === position.mapId);
+        return spots.sort((a, b) => {
+          return Math.sqrt(Math.pow(a.coords.x - position.x, 2) + Math.pow(a.coords.y - position.y, 2));
+        })[0];
+      }),
+      shareReplay(1)
     );
 
     const isFishing$ = merge(
@@ -43,8 +89,7 @@ export class FishingReporter implements DataReporter {
 
     const eventPlay$ = packets$.pipe(
       ofPacketType('eventPlay'),
-      filter(packet => packet.eventId === 0x150001),
-      tap(console.log)
+      filter(packet => packet.eventId === 0x150001)
     );
 
     const throw$ = eventPlay$.pipe(
@@ -61,24 +106,17 @@ export class FishingReporter implements DataReporter {
       filter(packet => packet.scene === 5),
       map(packet => {
         return {
-          timestamp: packet.timestamp
+          timestamp: packet.timestamp,
+          tug: this.getTug(packet.param5)
         };
       })
     );
 
     const actionTimeline$ = packets$.pipe(
       ofPacketType('eventUnk0'),
-      map(packet => actionTimeline[packet.actionTimeline.toString()])
-    );
-
-    const tug$ = actionTimeline$.pipe(
-      map(key => {
-        if (key.indexOf('_big') > -1) {
-          return Tug.BIG;
-        }
-        return Tug.MEDIUM;
-      }),
-      startWith(Tug.MEDIUM)
+      map(packet => {
+        return actionTimeline[packet.actionTimeline.toString()];
+      })
     );
 
     const hookset$ = actionTimeline$.pipe(
@@ -109,10 +147,10 @@ export class FishingReporter implements DataReporter {
         throw$,
         bite$,
         lastFishCaught$,
-        tug$,
-        hookset$
+        hookset$,
+        spot$
       ),
-      map(([patch, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, lastFishCaught, tug, hookset]) => {
+      map(([patch, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, lastFishCaught, hookset, spot]) => {
         lastFishCaught$.next(patch.catalogId);
         const entry = {
           itemId: patch.catalogId,
@@ -124,8 +162,9 @@ export class FishingReporter implements DataReporter {
           fishEyes: statuses.indexOf(762) > -1,
           snagging: statuses.indexOf(761) > -1,
           mooch: throwData.mooch,
-          tug,
-          hookset
+          tug: biteData.tug,
+          hookset,
+          spot: spot.id
         };
         if (throwData.mooch) {
           throwData.baitId = lastFishCaught;

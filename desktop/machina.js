@@ -64,6 +64,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'eventStart',
         'eventFinish',
         'eventUnk0',
+        'updatePositionHandler'
       ];
 
       Machina = new MachinaFFXIV(options);
