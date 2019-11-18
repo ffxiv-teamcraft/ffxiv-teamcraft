@@ -7,6 +7,7 @@ import { PendingChangesService } from '../../pending-changes/pending-changes.ser
 import { catchError, filter, map, takeUntil, tap } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Instantiable } from '@kaiu/serializer';
+import { environment } from '../../../../../environments/environment';
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
 
@@ -24,8 +25,9 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   protected prepareData(data: Partial<T>): T {
-    const clone = JSON.parse(JSON.stringify(data));
+    const clone: T = { data };
     delete clone.$key;
+    clone.appVersion = environment.version;
     return clone;
   }
 
