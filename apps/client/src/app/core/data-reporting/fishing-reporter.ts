@@ -227,7 +227,7 @@ export class FishingReporter implements DataReporter {
   }
 
   getDataType(): string {
-    return 'fishings';
+    return 'fishingresults';
   }
 
 }
