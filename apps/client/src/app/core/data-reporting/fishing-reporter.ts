@@ -204,12 +204,12 @@ export class FishingReporter implements DataReporter {
         }
         const entry = {
           itemId: patch.catalogId,
-          hq: patch.hq,
+          hq: patch.hq || false,
           mapId,
           weatherId,
           previousWeatherId,
           baitId,
-          biteTime: Math.floor(biteData.timestamp - throwData.timestamp) / 100,
+          biteTime: Math.floor((biteData.timestamp - throwData.timestamp) / 100),
           fishEyes: statuses.indexOf(762) > -1,
           snagging: statuses.indexOf(761) > -1,
           mooch: throwData.mooch,
@@ -227,7 +227,7 @@ export class FishingReporter implements DataReporter {
   }
 
   getDataType(): string {
-    return 'fishing';
+    return 'fishings';
   }
 
 }
