@@ -96,7 +96,7 @@ export class FishingReporter implements DataReporter {
       filter(packet => packet.scene === 1),
       map(packet => {
         return {
-          timestamp: packet.timestamp,
+          timestamp: Date.now(),
           mooch: packet.param5 === 275
         };
       })
@@ -106,7 +106,7 @@ export class FishingReporter implements DataReporter {
       filter(packet => packet.scene === 5),
       map(packet => {
         return {
-          timestamp: packet.timestamp,
+          timestamp: Date.now(),
           tug: this.getTug(packet.param5)
         };
       })
@@ -134,6 +134,22 @@ export class FishingReporter implements DataReporter {
 
     const lastFishCaught$ = new BehaviorSubject<number>(-1);
 
+    const fisherStats$ = combineLatest([
+      packets$.pipe(ofPacketType('playerStats')),
+      packets$.pipe(ofPacketType('updateClassInfo'))
+    ]).pipe(
+      filter(([, classInfo]) => {
+        return classInfo.classId === 18
+      }),
+      map(([stats]) => {
+        return {
+          gathering: stats.gathering,
+          perception: stats.perception,
+          gp: stats.gp
+        }
+      })
+    );
+
     return itemsObtained$.pipe(
       withLatestFrom(isFishing$),
       filter(([, isFishing]) => isFishing),
@@ -148,23 +164,26 @@ export class FishingReporter implements DataReporter {
         bite$,
         lastFishCaught$,
         hookset$,
-        spot$
+        spot$,
+        fisherStats$
       ),
-      map(([patch, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, lastFishCaught, hookset, spot]) => {
+      map(([patch, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, lastFishCaught, hookset, spot, stats]) => {
         lastFishCaught$.next(patch.catalogId);
         const entry = {
           itemId: patch.catalogId,
+          hq: patch.hq,
           mapId,
           weatherId,
           previousWeatherId,
           baitId,
-          biteTime: biteData.timestamp - throwData.timestamp,
+          biteTime: Math.floor(biteData.timestamp - throwData.timestamp) / 100,
           fishEyes: statuses.indexOf(762) > -1,
           snagging: statuses.indexOf(761) > -1,
           mooch: throwData.mooch,
           tug: biteData.tug,
           hookset,
-          spot: spot.id
+          spot: spot.id,
+          ...stats
         };
         if (throwData.mooch) {
           throwData.baitId = lastFishCaught;
