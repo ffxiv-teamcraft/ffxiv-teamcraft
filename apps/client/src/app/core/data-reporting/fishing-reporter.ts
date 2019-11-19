@@ -119,6 +119,37 @@ export class FishingReporter implements DataReporter {
       })
     );
 
+    const misses$ = combineLatest([
+      packets$.pipe(
+        ofPacketType('eventUnk1'),
+        map(packet => {
+          return {
+            animation: packet.actionTimeline,
+            timestamp: Date.now()
+          };
+        })
+      ),
+      actionTimeline$.pipe(
+        map(animation => {
+          return {
+            animation: animation,
+            timestamp: Date.now()
+          };
+        })
+      )
+    ]).pipe(
+      filter(([rodAnimation, playerAnimation]) => {
+        return rodAnimation.animation === 283
+          && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 200;
+      }),
+      map(() => {
+        return {
+          catalogId: -1,
+          hq: false
+        };
+      })
+    );
+
     const hookset$ = actionTimeline$.pipe(
       map(key => {
         if (key.indexOf('strong') > -1) {
@@ -139,18 +170,18 @@ export class FishingReporter implements DataReporter {
       packets$.pipe(ofPacketType('updateClassInfo'))
     ]).pipe(
       filter(([, classInfo]) => {
-        return classInfo.classId === 18
+        return classInfo.classId === 18;
       }),
       map(([stats]) => {
         return {
           gathering: stats.gathering,
           perception: stats.perception,
           gp: stats.gp
-        }
+        };
       })
     );
 
-    return itemsObtained$.pipe(
+    return merge(misses$, itemsObtained$).pipe(
       withLatestFrom(isFishing$),
       filter(([, isFishing]) => isFishing),
       map(([patch]) => patch),
@@ -168,7 +199,9 @@ export class FishingReporter implements DataReporter {
         fisherStats$
       ),
       map(([patch, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, lastFishCaught, hookset, spot, stats]) => {
-        lastFishCaught$.next(patch.catalogId);
+        if (patch.catalogId) {
+          lastFishCaught$.next(patch.catalogId);
+        }
         const entry = {
           itemId: patch.catalogId,
           hq: patch.hq,
