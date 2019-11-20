@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
-import { debounceTime, filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, filter, map, pairwise, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { actionTimeline } from '../data/sources/action-timeline';
 import { LazyDataService } from '../data/lazy-data.service';
@@ -38,10 +38,22 @@ export class FishingReporter implements DataReporter {
   }
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
+    const lastFishCaught$ = new BehaviorSubject<number>(-1);
+
     const itemsObtained$ = packets$.pipe(
       ofPacketType('updateInventorySlot'),
       filter(packet => {
-        return packet.containerId < 10 && packet.quantity > 0;
+        return packet.containerId < 10;
+      })
+    );
+
+    const mooch$ = packets$.pipe(
+      ofPacketType('updateInventorySlot'),
+      pairwise(),
+      map(([before, after]) => {
+        return before.containerId < 10
+          && after.containerId < 10
+          && before.quantity - after.quantity === -1;
       })
     );
 
@@ -94,10 +106,9 @@ export class FishingReporter implements DataReporter {
 
     const throw$ = eventPlay$.pipe(
       filter(packet => packet.scene === 1),
-      map(packet => {
+      map(() => {
         return {
-          timestamp: Date.now(),
-          mooch: packet.param5 === 275
+          timestamp: Date.now()
         };
       })
     );
@@ -163,8 +174,6 @@ export class FishingReporter implements DataReporter {
       startWith(Hookset.NORMAL)
     );
 
-    const lastFishCaught$ = new BehaviorSubject<number>(-1);
-
     const fisherStats$ = combineLatest([
       packets$.pipe(ofPacketType('playerStats')),
       packets$.pipe(ofPacketType('updateClassInfo'))
@@ -181,6 +190,12 @@ export class FishingReporter implements DataReporter {
       })
     );
 
+    /**
+     * TODO:
+     *  - Better mooch detection (using inventory patches prolly)
+     *  - Do not send a second time when firing the mooch
+     */
+
     return merge(misses$, itemsObtained$).pipe(
       withLatestFrom(isFishing$),
       filter(([, isFishing]) => isFishing),
@@ -196,15 +211,16 @@ export class FishingReporter implements DataReporter {
         lastFishCaught$,
         hookset$,
         spot$,
-        fisherStats$
+        fisherStats$,
+        mooch$
       ),
-      map(([patch, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, lastFishCaught, hookset, spot, stats]) => {
+      map(([patch, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, lastFishCaught, hookset, spot, stats, mooch]) => {
         if (patch.catalogId) {
           lastFishCaught$.next(patch.catalogId);
         }
         const entry = {
           itemId: patch.catalogId,
-          hq: patch.hq || false,
+          hq: patch.hqFlag === 1,
           mapId,
           weatherId,
           previousWeatherId,
@@ -212,7 +228,7 @@ export class FishingReporter implements DataReporter {
           biteTime: Math.floor((biteData.timestamp - throwData.timestamp) / 100),
           fishEyes: statuses.indexOf(762) > -1,
           snagging: statuses.indexOf(761) > -1,
-          mooch: throwData.mooch,
+          mooch: mooch,
           tug: biteData.tug,
           hookset,
           spot: spot.id,
