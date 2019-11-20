@@ -170,12 +170,12 @@
       "Reset_timers": "Repor temporizadores",
       "WEEKLY_RESETS": "Semanais",
       "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
-      "ROULETTES_RESET": "Roulettes & Beast tribes",
+      "ROULETTES_RESET": "Roletas & Beast Tribes",
       "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
       "DELIVERIES_RESET": "Entregas",
-      "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
-      "LEVE_ALLOWANCES": "Leve allowances",
-      "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
+      "DELIVERIES_RESET_DESCRIPTION": "Reset das entregas da GC",
+      "LEVE_ALLOWANCES": "Permissões de Leves",
+      "LEVE_ALLOWANCES_DESCRIPTION": "Recebe mais 3 permissões de Leves"
     },
     "CUSTOM": {
       "Title": "Adicionar alarme personalizado",
@@ -204,20 +204,20 @@
   "No_quests_found": "Nenhuma quest encontrada",
   "No_npcs_found": "Nenhum NPC encontrado",
   "No_mobs_found": "Nenhum monstro encontrado",
-  "No_lore_entries": "No lore entries found",
+  "No_lore_entries": "Não foram encontrados nenhuns registos de Lore",
   "No_fates_found": "Nenhuma FATE encontrada",
   "No_maps_found": "Nenhum mapa encontrado",
   "No_actions_found": "Nenhuma acção encontrada",
   "No_statuses_found": "Nenhum status encontrado",
   "No_traits_found": "Nenhuma trait encontrada",
-  "No_achievements_found": "No achievements found",
+  "No_achievements_found": "Conquistas não encontradas",
   "Select_all": "Selecionar tudo",
   "Do you really want to reset the list?": "Você realmente quer resetar a lista?",
   "Yes": "Sim",
   "No": "Não",
   "Crystals": "Cristais",
   "Gathering": "Colher",
-  "Drops_or_GC": "Dungeons/Drops or GC",
+  "Drops_or_GC": "Dungeon/Drops ou GC",
   "Other": "Outro",
   "Pre_crafts": "Pré-crafts",
   "Items": "Itens",
@@ -275,8 +275,8 @@
   "filters/worn_by": "Usado por",
   "filters/crafted_by": "Craftado por:",
   "filters/item_category": "Tipo de item",
-  "filters/stats": "Stats filters",
-  "filters/bonuses": "Stat bonuses filters",
+  "filters/stats": "Filtros de Stats",
+  "filters/bonuses": "Filtros de bónus de Stats",
   "Adding_recipes": "Adicionar {{amount}} fórmulas a lista {{listname}}",
   "Recipe_Added": "Um item adicionado à lista {{listname}}",
   "Recipes_Added": "{{itemcount}} itens adicionados à lista {{listname}}",
@@ -395,9 +395,9 @@
     "CATEGORIES": {
       "Autofill_completion": "Autofill completion sound",
       "Packet_capture": "Packet capture",
-      "Theme": "Theme",
-      "Search": "Search",
-      "Other": "Other"
+      "Theme": "Tema",
+      "Search": "Pesquisa",
+      "Other": "Outro"
     }
   },
   "PROFILE": {
@@ -488,14 +488,14 @@
     "Set_color": "Set list color",
     "Go_to_pinned": "Go to pinned list (right click to unpin)",
     "COLORS": {
-      "RED": "Red",
-      "GREEN": "Green",
-      "YELLOW": "Yellow",
-      "BLUE": "Blue",
-      "PURPLE": "Purple",
-      "ORANGE": "Orange",
-      "PINK": "Pink",
-      "NONE": "None"
+      "RED": "Vermelho",
+      "GREEN": "Verde",
+      "YELLOW": "Amarelo",
+      "BLUE": "Azul",
+      "PURPLE": "Roxo",
+      "ORANGE": "Laranja",
+      "PINK": "Cor-de-Rosa",
+      "NONE": "Nenhum"
     },
     "ROTATION": {
       "Attach": "Attach rotation",
@@ -672,12 +672,12 @@
     "Title": "Rota de navegação optimizada",
     "Steps": "Passos",
     "Loading_path": "Loading optimized path (can take several seconds)",
-    "You_are_here": "You are here",
+    "You_are_here": "Está aqui",
     "STEP": {
-      "Gathering": "Gather {{amount}} (total: {{total}})",
+      "Gathering": "Colher {{amount}} (total: {{total}})",
       "Hunting": "Get {{amount}} on monsters (total: {{total}})",
-      "Vendor": "Buy {{amount}} (total: {{total}})",
-      "Trade": "Trade {{amount}} (total: {{total}})"
+      "Vendor": "Comprar {{amount}} (total: {{total}})",
+      "Trade": "Trocar {{amount}} (total: {{total}})"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -1203,11 +1203,11 @@
     "Dialog_description": "Leaving this page will delete all your unsaved changes, are you sure?"
   },
   "GC_SUPPLY": {
-    "Title": "Grand Company Supplies",
-    "Search": "Search",
-    "Generate_list": "Create a quick list",
-    "Intro": "Input your levels and click search to get started",
-    "Loading_message": "Loading possible deliveries, this can take up to a minute"
+    "Title": "Aprovisionamentos da Grande Compania",
+    "Search": "Pesquisa",
+    "Generate_list": "Criar uma lista rápida",
+    "Intro": "Insira os seus níveis e clique Pesquisar para começar",
+    "Loading_message": "A carregando possíveis entregas, pode demorar até um minuto"
   },
   "DESYNTH": {
     "Title": "Desynth guide",
@@ -1299,7 +1299,7 @@
     "Reputation_points": "Beast tribe reputation",
     "Map": "Map",
     "Leves": "Leves",
-    "GC_Delivery": "GC Delivery",
+    "GC_Delivery": "Entrega de GC",
     "Drop_rate": "Drop Rate",
     "Involved_monsters": "Involved monsters",
     "Reduces_to": "Reduces to",
@@ -1481,7 +1481,7 @@
   "TIPS": {
     "Title": "Tip",
     "Community_rotations": "Pode encontrar sequências para uma determinada fórmula dentro da página de sequências da comunidade.",
-    "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
+    "GC_Deliveries": "Pode preparar listas para entregas de GC dentro da página de entregas da mesma.",
     "Desynth": "You can find ideal items to level up desynth in desynth page.",
     "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
     "3D_model": "You can preview 3D model of items inside the database.",
