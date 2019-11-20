@@ -144,7 +144,7 @@
     "Pie_charts": "Gráfico circular",
     "Read_more_on_wiki": "Leia mais detalhes na wiki",
     "Apply": "Aplicar",
-    "Open_link": "Open website link"
+    "Open_link": "Abrir link do website"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -164,10 +164,10 @@
     "Open_overlay": "Abrir overlay",
     "More_available": "e mais {{amount}}...",
     "Node_content": "Conteúdo do node",
-    "Toggle_collapse": "Toggle groups collapse",
+    "Toggle_collapse": "Alternar fecho dos grupos",
     "Add_alarms_to_group": "Adicionar alarmes a este grupo",
     "REALTIME": {
-      "Reset_timers": "Reset timers",
+      "Reset_timers": "Repor temporizadores",
       "WEEKLY_RESETS": "Semanais",
       "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
       "ROULETTES_RESET": "Roulettes & Beast tribes",
