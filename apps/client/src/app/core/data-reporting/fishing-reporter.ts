@@ -50,7 +50,7 @@ export class FishingReporter implements DataReporter {
         return {
           id: packet.param1,
           hq: (packet.param3 >> 4 & 1) === 1,
-          moochable: (packet.param3 & 0x0000FFFF) === 5,
+          moochable: (packet.param3 & 0x0000000F) === 5,
           size: packet.param2 >> 16
         };
       })
