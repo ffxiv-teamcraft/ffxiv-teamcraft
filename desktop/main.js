@@ -175,9 +175,10 @@ function createWindow() {
     //
     //   api.listen(7331);
     // }
-
-    win.focus();
-    win.show();
+    if (!config.get('start-minimized')) {
+      win.focus();
+      win.show();
+    }
     autoUpdater.checkForUpdates();
   });
 
@@ -420,12 +421,12 @@ ipcMain.on('always-on-top:get', (event) => {
   event.sender.send('always-on-top:value', win.alwaysOnTop);
 });
 
-ipcMain.on('always-on-top', (event, onTop) => {
-  win.setAlwaysOnTop(onTop, 'floating');
+ipcMain.on('start-minimized', (event, flag) => {
+  config.set('start-minimized', flag);
 });
 
-ipcMain.on('always-on-top:get', (event) => {
-  event.sender.send('always-on-top:value', win.alwaysOnTop);
+ipcMain.on('start-minimized:get', (event) => {
+  event.sender.send('start-minimized:value', config.get('start-minimized'));
 });
 
 ipcMain.on('overlay', (event, data) => {

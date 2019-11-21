@@ -338,6 +338,7 @@
     "no_panel_borders": "Disable borders around various panels",
     "Desktop": "Desktop",
     "Always_on_top": "Always on top",
+    "Start_minimized": "Start minimized in tray",
     "Check_for_update": "Check for update",
     "Downloading_update": "Downloading update",
     "No_update_available": "No update available",

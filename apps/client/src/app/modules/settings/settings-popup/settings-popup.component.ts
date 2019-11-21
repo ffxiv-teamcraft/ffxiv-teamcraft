@@ -39,6 +39,8 @@ export class SettingsPopupComponent {
 
   machinaToggle = false;
 
+  startMinimized = false;
+
   customTheme: Theme;
 
   public sounds = ['Confirm', 'Full_Party', 'Feature_unlocked'];
@@ -94,13 +96,21 @@ export class SettingsPopupComponent {
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
+    this.ipc.once('start-minimized:value', (event, value) => {
+      this.startMinimized = value;
+    });
     this.ipc.send('always-on-top:get');
     this.ipc.send('toggle-machina:get');
+    this.ipc.send('start-minimized:get');
     this.customTheme = this.settings.customTheme;
   }
 
   alwaysOnTopChange(value: boolean): void {
     this.ipc.send('always-on-top', value);
+  }
+
+  startMinimizedChange(value: boolean): void {
+    this.ipc.send('start-minimized', value);
   }
 
   machinaToggleChange(value: boolean): void {
