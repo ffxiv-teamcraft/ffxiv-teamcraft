@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
-import { debounceTime, filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { actionTimeline } from '../data/sources/action-timeline';
 import { LazyDataService } from '../data/lazy-data.service';
@@ -82,7 +82,7 @@ export class FishingReporter implements DataReporter {
         const spots = fishingSpots.filter(spot => spot.mapId === position.mapId);
         return spots.sort((a, b) => {
           return Math.sqrt(Math.pow(a.coords.x - position.x, 2) + Math.pow(a.coords.y - position.y, 2))
-             - Math.sqrt(Math.pow(b.coords.x - position.x, 2) + Math.pow(b.coords.y - position.y, 2));
+            - Math.sqrt(Math.pow(b.coords.x - position.x, 2) + Math.pow(b.coords.y - position.y, 2));
         })[0];
       }),
       shareReplay(1)

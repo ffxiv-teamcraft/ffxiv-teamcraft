@@ -211,12 +211,10 @@ export class MachinaService {
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('statusEffectList'),
+      ofPacketSubType('statusEffectLose'),
       filter(packet => packet.sourceActorSessionID === packet.targetActorSessionID)
     ).subscribe(packet => {
-      this.eorzeaFacade.setStatuses(packet.effects.map(effect => {
-        return effect.effectID;
-      }));
+      this.eorzeaFacade.removeStatus(packet.param1);
     });
 
     this.ipc.packets$.pipe(

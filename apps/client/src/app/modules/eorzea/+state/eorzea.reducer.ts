@@ -37,10 +37,10 @@ export function eorzeaReducer(
       };
       break;
     }
-    case EorzeaActionTypes.SetStatuses: {
+    case EorzeaActionTypes.RemoveStatus: {
       state = {
         ...state,
-        statuses: action.payload
+        statuses: state.statuses.filter(s => s !== action.payload)
       };
       break;
     }

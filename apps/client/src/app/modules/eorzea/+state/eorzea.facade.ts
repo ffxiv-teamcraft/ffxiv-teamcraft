@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { EorzeaPartialState } from './eorzea.reducer';
-import { AddStatus, SetBait, SetStatuses, SetZone } from './eorzea.actions';
+import { AddStatus, RemoveStatus, SetBait, SetZone } from './eorzea.actions';
 import { eorzeaQuery } from './eorzea.selectors';
 import { filter, map, shareReplay } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -61,8 +61,8 @@ export class EorzeaFacade {
     this.store.dispatch(new SetBait(baitId));
   }
 
-  setStatuses(effects: number[]) {
-    this.store.dispatch(new SetStatuses(effects));
+  removeStatus(effect: number) {
+    this.store.dispatch(new RemoveStatus(effect));
   }
 
   addStatus(effect: number) {
