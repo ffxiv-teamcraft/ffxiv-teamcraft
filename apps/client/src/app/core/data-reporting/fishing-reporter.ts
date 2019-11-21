@@ -40,21 +40,22 @@ export class FishingReporter implements DataReporter {
   getDataReports(packets$: Observable<any>): Observable<any[]> {
     const lastFishCaught$ = new BehaviorSubject<number>(-1);
 
-    const itemsObtained$ = packets$.pipe(
-      ofPacketType('updateInventorySlot'),
-      filter(packet => {
-        return packet.containerId < 10;
+    const actorControlSelf$ = packets$.pipe(
+      ofPacketType('actorControlSelf')
+    );
+
+    const fishCaught$ = actorControlSelf$.pipe(
+      map(packet => {
+        return {
+          id: +packet.param1,
+          hq: +packet.param3 === 15
+        }
       })
     );
 
-    const mooch$ = packets$.pipe(
-      ofPacketType('updateInventorySlot'),
-      pairwise(),
-      map(([before, after]) => {
-        return before.containerId < 10
-          && after.containerId < 10
-          && before.quantity - after.quantity === -1;
-      })
+    // Fish size in cilms (fulm = 12 ilms = 120cilms)
+    const fishSize$ = actorControlSelf$.pipe(
+      map(packet => packet.param2 & 0x0000FFFF)
     );
 
     const positionPackets$ = packets$.pipe(
@@ -130,6 +131,14 @@ export class FishingReporter implements DataReporter {
       })
     );
 
+    const mooch$ = packets$.pipe(
+      ofPacketType('eventUnk1'),
+      map(packet => {
+        // Param1 is 0x04, TODO in wrapper
+        return packet.param1 === 1121;
+      })
+    );
+
     const misses$ = combineLatest([
       packets$.pipe(
         ofPacketType('eventUnk1'),
@@ -155,7 +164,7 @@ export class FishingReporter implements DataReporter {
       }),
       map(() => {
         return {
-          catalogId: -1,
+          id: -1,
           hq: false
         };
       })
@@ -193,13 +202,12 @@ export class FishingReporter implements DataReporter {
     /**
      * TODO:
      *  - Better mooch detection (using inventory patches prolly)
-     *  - Do not send a second time when firing the mooch
      */
 
-    return merge(misses$, itemsObtained$).pipe(
+    return merge(misses$, fishCaught$).pipe(
       withLatestFrom(isFishing$),
       filter(([, isFishing]) => isFishing),
-      map(([patch]) => patch),
+      map(([fishData]) => fishData),
       withLatestFrom(
         this.eorzea.mapId$,
         this.eorzea.weatherId$,
@@ -212,15 +220,16 @@ export class FishingReporter implements DataReporter {
         hookset$,
         spot$,
         fisherStats$,
+        fishSize$,
         mooch$
       ),
-      map(([patch, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, lastFishCaught, hookset, spot, stats, mooch]) => {
-        if (patch.catalogId) {
-          lastFishCaught$.next(patch.catalogId);
+      map(([fish, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, lastFishCaught, hookset, spot, stats, size, mooch]) => {
+        if (fish.id) {
+          lastFishCaught$.next(fish.id);
         }
         const entry = {
-          itemId: patch.catalogId,
-          hq: patch.hqFlag === 1,
+          itemId: fish.id,
+          hq: fish.hq,
           mapId,
           weatherId,
           previousWeatherId,
@@ -232,6 +241,7 @@ export class FishingReporter implements DataReporter {
           tug: biteData.tug,
           hookset,
           spot: spot.id,
+          size,
           ...stats
         };
         if (throwData.mooch) {
