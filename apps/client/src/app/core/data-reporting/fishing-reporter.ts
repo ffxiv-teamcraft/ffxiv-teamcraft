@@ -38,7 +38,7 @@ export class FishingReporter implements DataReporter {
   }
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
-    const lastFishCaught$ = new BehaviorSubject<number>(-1);
+    const possibleMooch$ = new BehaviorSubject<number>(-1);
 
     const actorControlSelf$ = packets$.pipe(
       ofPacketType('actorControlSelf')
@@ -48,7 +48,8 @@ export class FishingReporter implements DataReporter {
       map(packet => {
         return {
           id: +packet.param1,
-          hq: +packet.param3 > 0x10
+          hq: +packet.param3 > 0x10,
+          moochable: (+packet.param3 - 0x10) === 5
         }
       })
     );
@@ -199,11 +200,6 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-    /**
-     * TODO:
-     *  - Better mooch detection (using inventory patches prolly)
-     */
-
     return merge(misses$, fishCaught$).pipe(
       withLatestFrom(isFishing$),
       filter(([, isFishing]) => isFishing),
@@ -216,16 +212,16 @@ export class FishingReporter implements DataReporter {
         this.eorzea.statuses$,
         throw$,
         bite$,
-        lastFishCaught$,
+        possibleMooch$,
         hookset$,
         spot$,
         fisherStats$,
         fishSize$,
         mooch$
       ),
-      map(([fish, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, lastFishCaught, hookset, spot, stats, size, mooch]) => {
-        if (fish.id) {
-          lastFishCaught$.next(fish.id);
+      map(([fish, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, possibleMooch, hookset, spot, stats, size, mooch]) => {
+        if (fish.id && fish.moochable) {
+          possibleMooch$.next(fish.id);
         }
         const entry = {
           itemId: fish.id,
@@ -245,7 +241,7 @@ export class FishingReporter implements DataReporter {
           ...stats
         };
         if (throwData.mooch) {
-          throwData.baitId = lastFishCaught;
+          throwData.baitId = possibleMooch;
         }
         return [entry];
       })
