@@ -339,6 +339,7 @@
     "Desktop": "Desktop",
     "Always_on_top": "Always on top",
     "Start_minimized": "Start minimized in tray",
+    "Always_quit": "Quit when clicking on close button (instead of minimizing)",
     "Check_for_update": "Check for update",
     "Downloading_update": "Downloading update",
     "No_update_available": "No update available",
