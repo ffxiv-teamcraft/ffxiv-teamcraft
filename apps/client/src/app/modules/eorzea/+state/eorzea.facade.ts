@@ -30,7 +30,7 @@ export class EorzeaFacade {
   public weatherId$ = combineLatest([this.etime.getEorzeanTime(), this.mapId$]).pipe(
     filter(([, mapId]) => mapId > 0),
     map(([time, mapId]) => {
-      return this.weatherService.getWeather(time.getTime(), mapId, weatherIndex[mapIds.find(m => m.id === mapId).weatherRate]);
+      return this.weatherService.getWeather(mapId, time.getTime(), weatherIndex[mapIds.find(m => m.id === mapId).weatherRate]);
     }),
     shareReplay(1)
   );
@@ -38,7 +38,7 @@ export class EorzeaFacade {
   public previousWeatherId$ = combineLatest([this.etime.getEorzeanTime(), this.mapId$]).pipe(
     filter(([, mapId]) => mapId > 0),
     map(([time, mapId]) => {
-      return this.weatherService.getWeather(time.getTime() - 8 * 3600 * 1000, mapId, weatherIndex[mapIds.find(m => m.id === mapId).weatherRate]);
+      return this.weatherService.getWeather(mapId, time.getTime() - 8 * 3600 * 1000, weatherIndex[mapIds.find(m => m.id === mapId).weatherRate]);
     }),
     shareReplay(1)
   );

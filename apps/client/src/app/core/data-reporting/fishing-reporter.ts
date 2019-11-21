@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
-import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, merge, Observable, of } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
-import { debounceTime, filter, map, pairwise, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { actionTimeline } from '../data/sources/action-timeline';
 import { LazyDataService } from '../data/lazy-data.service';
@@ -41,22 +41,19 @@ export class FishingReporter implements DataReporter {
     const possibleMooch$ = new BehaviorSubject<number>(-1);
 
     const actorControlSelf$ = packets$.pipe(
-      ofPacketType('actorControlSelf')
+      ofPacketType('actorControlSelf'),
+      filter(packet => packet.category === 320)
     );
 
     const fishCaught$ = actorControlSelf$.pipe(
       map(packet => {
         return {
-          id: +packet.param1,
-          hq: +packet.param3 > 0x10,
-          moochable: (+packet.param3 - 0x10) === 5
-        }
+          id: packet.param1,
+          hq: (packet.param3 >> 4 & 1) === 1,
+          moochable: (packet.param3 & 0x0000FFFF) === 5,
+          size: packet.param2 >> 16
+        };
       })
-    );
-
-    // Fish size in cilms (fulm = 12 ilms = 120cilms)
-    const fishSize$ = actorControlSelf$.pipe(
-      map(packet => packet.param2 & 0x0000FFFF)
     );
 
     const positionPackets$ = packets$.pipe(
@@ -134,8 +131,8 @@ export class FishingReporter implements DataReporter {
 
     const mooch$ = packets$.pipe(
       ofPacketType('eventUnk1'),
+      filter(packet => packet.actionTimeline === 257),
       map(packet => {
-        // Param1 is 0x04, TODO in wrapper
         return packet.param1 === 1121;
       })
     );
@@ -216,10 +213,9 @@ export class FishingReporter implements DataReporter {
         hookset$,
         spot$,
         fisherStats$,
-        fishSize$,
         mooch$
       ),
-      map(([fish, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, possibleMooch, hookset, spot, stats, size, mooch]) => {
+      map(([fish, mapId, weatherId, previousWeatherId, baitId, statuses, throwData, biteData, possibleMooch, hookset, spot, stats, mooch]) => {
         if (fish.id && fish.moochable) {
           possibleMooch$.next(fish.id);
         }
@@ -237,11 +233,11 @@ export class FishingReporter implements DataReporter {
           tug: biteData.tug,
           hookset,
           spot: spot.id,
-          size,
+          size: fish.size,
           ...stats
         };
-        if (throwData.mooch) {
-          throwData.baitId = possibleMooch;
+        if (mooch) {
+          entry.baitId = possibleMooch;
         }
         return [entry];
       })
