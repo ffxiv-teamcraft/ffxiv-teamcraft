@@ -1588,7 +1588,7 @@
     "Title": "소지품 최적화",
     "Ignore_item": "이 아이템에는 이 팁 무시하기",
     "Remove_ignore_item": "이 아이템에는 더이상 이 팁을 무시하지 않기",
-    "Ignore_container": "이 컨테이너에는 이 팁 무시하기",
+    "Ignore_container": "이 집사는 팁 무시하기",
     "Remove_ignore_container": "이 컨테이너에는 더이상 이 팁을 무시하지 않기",
     "Show_ignored": "무시된 항목 보여주기",
     "No_optimizations": "최적화가 가능하지 않습니다",
