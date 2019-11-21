@@ -48,7 +48,7 @@ export class FishingReporter implements DataReporter {
       map(packet => {
         return {
           id: +packet.param1,
-          hq: +packet.param3 === 15
+          hq: +packet.param3 > 0x10
         }
       })
     );
