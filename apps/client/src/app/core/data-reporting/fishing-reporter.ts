@@ -81,7 +81,8 @@ export class FishingReporter implements DataReporter {
       map(position => {
         const spots = fishingSpots.filter(spot => spot.mapId === position.mapId);
         return spots.sort((a, b) => {
-          return Math.sqrt(Math.pow(a.coords.x - position.x, 2) + Math.pow(a.coords.y - position.y, 2));
+          return Math.sqrt(Math.pow(a.coords.x - position.x, 2) + Math.pow(a.coords.y - position.y, 2))
+             - Math.sqrt(Math.pow(b.coords.x - position.x, 2) + Math.pow(b.coords.y - position.y, 2));
         })[0];
       }),
       shareReplay(1)
