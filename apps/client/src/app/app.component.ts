@@ -3,29 +3,11 @@ import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from './core/electron/ipc.service';
-import {
-  NavigationCancel,
-  NavigationEnd,
-  NavigationError,
-  NavigationStart,
-  Router,
-  RouterEvent
-} from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import {
-  catchError,
-  delay,
-  distinctUntilChanged,
-  filter,
-  first,
-  map,
-  shareReplay,
-  startWith,
-  switchMap,
-  tap
-} from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -62,7 +44,6 @@ import { UniversalisService } from './core/api/universalis.service';
 import { GubalService } from './core/api/gubal.service';
 import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
 import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { ListLayout } from './core/layout/list-layout';
 
 declare const gtag: Function;
 
@@ -146,7 +127,8 @@ export class AppComponent implements OnInit {
         '3D_model',
         'Levequests',
         'Log_tracker',
-        'Desktop_app_overlay'
+        'Desktop_app_overlay',
+        'Start_desktop_before_game'
       ];
       return tips[Math.floor(Math.random() * tips.length)];
     }),
