@@ -196,17 +196,10 @@ export class MachinaService {
     ).subscribe(packet => {
       const realZoneId = territories[packet.zoneID.toString()];
       this.eorzeaFacade.setZone(realZoneId);
-      this.eorzeaFacade.setWeather(packet.weatherID);
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('weatherChange')
-    ).subscribe(packet => {
-      this.eorzeaFacade.setWeather(packet.weatherID);
-    });
-
-    this.ipc.packets$.pipe(
-      ofPacketSubType('setBait')
+      ofPacketSubType('fishingBaitMsg')
     ).subscribe(packet => {
       this.eorzeaFacade.setBait(packet.baitID);
     });
@@ -218,12 +211,17 @@ export class MachinaService {
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('statusEffectList'),
+      ofPacketSubType('statusEffectLose'),
       filter(packet => packet.sourceActorSessionID === packet.targetActorSessionID)
     ).subscribe(packet => {
-      this.eorzeaFacade.setStatuses(packet.effects.map(effect => {
-        return effect.effectID;
-      }));
+      this.eorzeaFacade.removeStatus(packet.param1);
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('effectResult'),
+      filter(packet => packet.actorID1 === packet.actorID)
+    ).subscribe(packet => {
+      this.eorzeaFacade.addStatus(packet.effectID);
     });
   }
 }

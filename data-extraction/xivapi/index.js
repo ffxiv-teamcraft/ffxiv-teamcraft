@@ -60,7 +60,8 @@ let todo = [
   'monsterDrops',
   'voyages',
   'worlds',
-  'territories'
+  'territories',
+  'actionTimeline'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -512,9 +513,24 @@ if (hasTodo('fishingLog')) {
   });
 
   getAllEntries('https://xivapi.com/FishingSpot', '63cc0045d7e847149c3f', true).subscribe((completeFetch) => {
+    const spots = [];
     completeFetch
       .filter(spot => spot.Item0 !== null && spot.TerritoryType !== null)
       .forEach(spot => {
+        const c = spot.TerritoryType.Map.SizeFactor / 100.0;
+        spots.push({
+          id: spot.ID,
+          mapId: spot.TerritoryType.Map.ID,
+          placeId: spot.TerritoryType.PlaceName.ID,
+          zoneId: spot.PlaceName.ID,
+          coords: {
+            x: (41.0 / c) * ((spot.X) / 2048.0) + 1,
+            y: (41.0 / c) * ((spot.Z) / 2048.0) + 1
+          },
+          fishes: Object.keys(spot)
+            .filter(key => /Item\dTargetID/.test(key))
+            .map(key => +spot[key])
+        });
         Object.keys(spot)
           .filter(key => {
             return /^Item\d+$/.test(key) && spot[key] && spot[key].ID !== -1 && spot[key].ID !== null;
@@ -544,6 +560,7 @@ if (hasTodo('fishingLog')) {
           });
       });
     persistToTypescript('fishing-log', 'fishingLog', fishingLog);
+    persistToTypescript('fishing-spots', 'fishingSpots', spots);
   });
 
 }
@@ -1452,5 +1469,16 @@ if (hasTodo('HWDData')) {
       }
     });
     persistToTypescript('hwd-supplies', 'hwdSupplies', supplies);
+  });
+}
+
+if (hasTodo('actionTimeline')) {
+  const actionTimeline = {};
+  getAllPages('https://xivapi.com/ActionTimeline?columns=ID,Key').subscribe(page => {
+    page.Results.forEach(entry => {
+      actionTimeline[entry.ID] = entry.Key;
+    });
+  }, null, () => {
+    persistToTypescript('action-timeline', 'actionTimeline', actionTimeline);
   });
 }

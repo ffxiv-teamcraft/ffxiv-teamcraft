@@ -302,6 +302,16 @@
         </label>
       </div>
       <div>
+        <label [(ngModel)]="startMinimized" (ngModelChange)="startMinimizedChange($event)" nz-checkbox>
+          {{'SETTINGS.Start_minimized' | translate}}
+        </label>
+      </div>
+      <div>
+        <label [(ngModel)]="alwaysQuit" (ngModelChange)="alwaysQuitChange($event)" nz-checkbox>
+          {{'SETTINGS.Always_quit' | translate}}
+        </label>
+      </div>
+      <div>
         <label [(ngModel)]="settings.clickthroughOverlay" nz-checkbox>
           {{'SETTINGS.Clickthrough_overlay' | translate}}
         </label>

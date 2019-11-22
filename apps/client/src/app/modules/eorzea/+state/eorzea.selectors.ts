@@ -9,13 +9,19 @@ const getZone = createSelector(
   (state: EorzeaState) => state.zoneId
 );
 
-const getWeather = createSelector(
+const getBait = createSelector(
   getEorzeaState,
-  (state: EorzeaState) => state.weatherId
+  (state: EorzeaState) => state.baitId
+);
+
+const getStatuses = createSelector(
+  getEorzeaState,
+  (state: EorzeaState) => state.statuses
 );
 
 
 export const eorzeaQuery = {
   getZone,
-  getWeather
+  getBait,
+  getStatuses
 };
