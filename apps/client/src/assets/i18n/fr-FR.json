@@ -338,6 +338,8 @@
     "no_panel_borders": "Désactiver les bordures autour des panneaux dans les pages du site",
     "Desktop": "Appli",
     "Always_on_top": "Toujours au premier plan",
+    "Start_minimized": "Start minimized in tray",
+    "Always_quit": "Quit when clicking on close button (instead of minimizing)",
     "Check_for_update": "Chercher une mise à jour",
     "Downloading_update": "Téléchargement en cours...",
     "No_update_available": "Pas de mise à jour disponible",
@@ -1487,7 +1489,8 @@
     "3D_model": "Vous pouvez visualiser le modèle 3D des éléments à l'intérieur de la base de données.",
     "Levequests": "Vous pouvez préparer des listes de mandats et prévisualiser leur exp dans la page Mandats.",
     "Log_tracker": "Vous pouvez suivre la progression de votre journal (collecte, fabrication, pêche) à l'intérieur de la page carnets.",
-    "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale."
+    "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale.",
+    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity"
   },
   "RECIPE_FINDER": {
     "Title": "Recherche de recette",
