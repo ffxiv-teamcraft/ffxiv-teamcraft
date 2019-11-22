@@ -120,7 +120,7 @@ export class SettingsPopupComponent {
   }
 
   alwaysQuitChange(value: boolean): void {
-    this.ipc.send('start-minimized', value);
+    this.ipc.send('always-quit', value);
   }
 
   machinaToggleChange(value: boolean): void {
