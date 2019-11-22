@@ -185,7 +185,8 @@ export class DataService {
       language: lang,
       filters: xivapiFilters,
       columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks'],
-      string_algo: SearchAlgo.WILDCARD_PLUS
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      limit: 250
     };
 
     if (sort[0]) {
