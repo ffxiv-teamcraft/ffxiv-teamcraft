@@ -39,6 +39,7 @@ import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { CommentLinksPipe } from './db-comments/comment-links.pipe';
 import { AchievementComponent } from './achievement/achievement.component';
 import { PatchComponent } from './patch/patch.component';
+import { FishComponent } from './fish/fish.component';
 
 const routes: Routes = [
   {
@@ -192,6 +193,17 @@ const routes: Routes = [
         path: 'patch/:patchId/:slug',
         component: PatchComponent,
         canActivate: [MaintenanceGuard, VersionLockGuard]
+      },
+
+      {
+        path: 'fish/:fishId',
+        component: FishComponent,
+        canActivate: [MaintenanceGuard, VersionLockGuard]
+      },
+      {
+        path: 'fish/:fishId/:slug',
+        component: FishComponent,
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       }
     ]
   }
@@ -216,7 +228,8 @@ const routes: Routes = [
     DbCommentsComponent,
     CommentLinksPipe,
     AchievementComponent,
-    PatchComponent
+    PatchComponent,
+    FishComponent
   ],
   entryComponents: [ModelViewerComponent],
   imports: [

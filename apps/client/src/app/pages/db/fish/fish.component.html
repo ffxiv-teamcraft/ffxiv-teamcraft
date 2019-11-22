@@ -1,0 +1,54 @@
+<ng-container *ngIf="xivapiFish$ | async as xivapiFish; else loader">
+  <div [style.padding]="'0 50px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
+    <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
+         fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
+      <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
+           fxLayoutAlign="space-between" fxLayoutGap="10px">
+        <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img [src]="xivapiFish.Icon | xivapiIcon" alt="{{xivapiFish.ID | mobName | i18n}}"
+               class="larger-img-icon">
+          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+            <h2 class="item-name">{{xivapiFish.ID | mobName | i18n}}</h2>
+            <div *ngIf="xivapiFish.GamePatch" class="patch">
+              {{xivapiFish.GamePatch | xivapiI18n}}
+              <app-db-button [id]="xivapiFish.GamePatch.ID" type="patch"></app-db-button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
+             fxLayoutGap="5px">
+          <a *ngFor="let link of links" [href]="link.url" [nzTitle]="link.title" nz-tooltip target="_blank">
+            <img [alt]="link.title" [src]="link.icon" class="link-icon">
+          </a>
+        </div>
+      </div>
+      <div fxFlex="1 1 auto">
+      </div>
+      <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="EN" class="language-flag" src="./assets/icons/english.png">
+          <div>{{xivapiFish.Name_en}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="DE" class="language-flag" src="./assets/icons/german.png">
+          <div>{{xivapiFish.Name_de}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="FR" class="language-flag" src="./assets/icons/french.png">
+          <div>{{xivapiFish.Name_fr}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
+          <div>{{xivapiFish.Name_ja}}</div>
+        </div>
+      </div>
+    </div>
+    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiFish.ID" type="fish"></app-db-comments>
+
+    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+  </div>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiFish.ID" type="fish"></app-db-comments>
+</ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

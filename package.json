@@ -148,6 +148,7 @@
     "@types/semver": "^5.4.0",
     "@xivapi/angular-client": "^1.4.1",
     "angular-feather": "^5.3.0",
+    "apollo-angular": "^1.8.0",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
     "deep-diff": "^1.0.2",
@@ -177,7 +178,13 @@
     "semver": "^5.4.1",
     "tslib": "^1.10.0",
     "web-animations-js": "^2.3.1",
-    "zone.js": "^0.9.1"
+    "zone.js": "^0.9.1",
+    "apollo-angular-link-http": "^1.9.0",
+    "apollo-link": "^1.2.11",
+    "apollo-client": "^2.6.0",
+    "apollo-cache-inmemory": "^1.6.0",
+    "graphql-tag": "^2.10.0",
+    "graphql": "^14.5.0"
   },
   "devDependencies": {
     "@ngrx/store-devtools": "7.2.0",
