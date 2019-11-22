@@ -5,6 +5,7 @@ export enum InventoryActionTypes {
   LoadInventory = '[Inventory] Load Inventory',
   InventoryLoaded = '[Inventory] Inventory Loaded',
   UpdateInventory = '[Inventory] Update Inventory',
+  ResetInventory = '[Inventory] Reset Inventory',
 }
 
 export class LoadInventory implements Action {
@@ -25,7 +26,12 @@ export class UpdateInventory implements Action {
   }
 }
 
+export class ResetInventory implements Action {
+  readonly type = InventoryActionTypes.ResetInventory;
+}
+
 export type InventoryAction =
   | LoadInventory
   | InventoryLoaded
-  | UpdateInventory;
+  | UpdateInventory
+  | ResetInventory;
