@@ -254,7 +254,7 @@
   "Password_Confirmation": "Bestätigung",
   "Submit": "Senden",
   "Invalid_credentials": "Ungültige Daten",
-  "Not_verified": "Deine E-Mail-Adresse ist noch nicht bestätigt, bitte prüfe dein Mail-Postfach",
+  "Not_verified": "Nicht verifiziert",
   "Anonymous_Warning": "Erstelle dir einen Account damit du deine Listen speichern kannst und andere Features nutzen kannst, wie den anpassbaren Filter",
   "Game_Term/DoH": "Handwerker",
   "Game_Term/DoL": "Sammler",
@@ -338,6 +338,8 @@
     "no_panel_borders": "Ränder um diverse Elemente deaktivieren",
     "Desktop": "Desktop",
     "Always_on_top": "Immer im Vordergrund",
+    "Start_minimized": "Start minimized in tray",
+    "Always_quit": "Quit when clicking on close button (instead of minimizing)",
     "Check_for_update": "Neues Update verfügbar?",
     "Downloading_update": "Lade Update herunter",
     "No_update_available": "Kein Update verfügbar",
@@ -1487,7 +1489,8 @@
     "3D_model": "Du kannst in der Datenbank die 3D-Modelle von Gegenständen betrachten.",
     "Levequests": "Auf der \"Freibriefe\"-Seite kannst du Listen für Freibriefe vorbereiten und sogar die Erfahrungspunkte dafür berechnen.",
     "Log_tracker": "Auf der Seite \"Notizbuch-Tracker\" kannst du den Fortschritt deiner Notizbücher (Sammler, Handwerker, Fischer) verfolgen.",
-    "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Seitenleiste)."
+    "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Seitenleiste).",
+    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity"
   },
   "RECIPE_FINDER": {
     "Title": "Rezeptfinder",
