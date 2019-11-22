@@ -338,6 +338,8 @@
     "no_panel_borders": "Deshabilitar bordes alrededor de varios paneles",
     "Desktop": "Escritorio",
     "Always_on_top": "Siempre arriba",
+    "Start_minimized": "Start minimized in tray",
+    "Always_quit": "Quit when clicking on close button (instead of minimizing)",
     "Check_for_update": "Buscar actualizaciones",
     "Downloading_update": "Descargando actualización",
     "No_update_available": "No hay actualización disponible",
@@ -1487,7 +1489,8 @@
     "3D_model": "Puede previsualizar modelos 3D de artículos en de la base de datos.",
     "Levequests": "Puede preparar listas de leve y previsualizar la experiencia recibida dentro de la página de misiones leve.",
     "Log_tracker": "Puede dar seguimiento a la progresión de su registro (recolección, fabricación, pesca) dentro de la página de seguimiento de registro.",
-    "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral)."
+    "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral).",
+    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity"
   },
   "RECIPE_FINDER": {
     "Title": "Buscador de recetas",
