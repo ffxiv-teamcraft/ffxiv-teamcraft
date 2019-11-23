@@ -66,6 +66,7 @@ export class AuthFacade {
   favorites$ = this.user$.pipe(map(user => user.favorites));
 
   idToken$ = this.af.user.pipe(
+    filter(user => user !== null),
     switchMap(user => {
       return from(user.getIdTokenResult())
         .pipe(
@@ -74,6 +75,7 @@ export class AuthFacade {
     }),
     switchMap(([user, token]: [any, any]) => {
       if (token.claims['https://hasura.io/jwt/claims'] === undefined) {
+        console.log('Token missing claims for hasura');
         return this.fns.httpsCallable('setCustomUserClaims')({
           uid: user.uid
         }).pipe(

@@ -164,7 +164,7 @@ const nzConfig: NzConfig = {
       provide: NZ_CONFIG,
       useValue: nzConfig
     },
-    { provide: FirestoreSettingsToken, useValue: {} },
+    { provide: FirestoreSettingsToken, useValue: { timestampsInSnapshots: false } },
     { provide: NZ_ICONS, useValue: icons },
     { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true }
   ],
