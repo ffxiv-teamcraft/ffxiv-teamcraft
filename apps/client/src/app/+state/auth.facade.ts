@@ -51,6 +51,7 @@ import { OauthService } from '../core/auth/oauth.service';
 import { ConvertLists } from '../modules/list/+state/lists.actions';
 import { Character } from '@xivapi/angular-client';
 import { UserService } from '../core/database/user.service';
+import { AngularFireFunctions } from '@angular/fire/functions';
 
 @Injectable({
   providedIn: 'root'
@@ -63,6 +64,28 @@ export class AuthFacade {
   userId$ = this.store.select(authQuery.getUserId).pipe(filter(uid => uid !== null));
   user$ = this.store.select(authQuery.getUser).pipe(filter(u => u !== undefined && u !== null));
   favorites$ = this.user$.pipe(map(user => user.favorites));
+
+  idToken$ = this.af.user.pipe(
+    switchMap(user => {
+      return from(user.getIdTokenResult())
+        .pipe(
+          map((token) => ([user, token]))
+        );
+    }),
+    switchMap(([user, token]: [any, any]) => {
+      if (token.claims['https://hasura.io/jwt/claims'] === undefined) {
+        return this.fns.httpsCallable('setCustomUserClaims')({
+          uid: user.uid
+        }).pipe(
+          switchMap(() => {
+            return from(user.getIdToken(true))
+          })
+        )
+      }
+      return of(token.token);
+    }),
+    shareReplay(1)
+  );
 
   characters$ = this.user$.pipe(
     filter(u => u.lodestoneIds !== undefined),
@@ -183,7 +206,8 @@ export class AuthFacade {
   constructor(private store: Store<{ auth: AuthState }>, private af: AngularFireAuth,
               private platformService: PlatformService, private ipc: IpcService,
               private dialog: NzModalService, private translate: TranslateService,
-              private oauthService: OauthService, private userService: UserService) {
+              private oauthService: OauthService, private userService: UserService,
+              private fns: AngularFireFunctions) {
     this.ipc.cid$.subscribe(packet => {
       this.setCID(packet.contentID);
     });

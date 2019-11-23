@@ -26,7 +26,7 @@ import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
 import { BehaviorSubject, interval, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
 import { MediaObserver } from '@angular/flex-layout';
@@ -44,6 +44,10 @@ import { UniversalisService } from './core/api/universalis.service';
 import { GubalService } from './core/api/gubal.service';
 import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
 import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
+import { Apollo } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular-link-http';
+import { ApolloLink, concat } from 'apollo-link';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
 declare const gtag: Function;
 
@@ -150,7 +154,25 @@ export class AppComponent implements OnInit {
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
-              private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object) {
+              private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
+              apollo: Apollo, httpLink: HttpLink) {
+
+    this.authFacade.idToken$.subscribe(idToken => {
+      const link = httpLink.create({ uri: 'http://35.236.87.103/v1/graphql' });
+      const authMiddleware = new ApolloLink((operation, forward) => {
+        // add the authorization to the headers
+        operation.setContext({
+          headers: new HttpHeaders().set('Authorization', `Bearer ${idToken}`)
+        });
+
+        return forward(operation);
+      });
+
+      apollo.create({
+        link: concat(authMiddleware, link),
+        cache: new InMemoryCache()
+      });
+    });
 
     this.showGiveaway = false;
 

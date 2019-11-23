@@ -97,6 +97,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { InventoryModule } from './modules/inventory/inventory.module';
 import { EorzeaModule } from './modules/eorzea/eorzea.module';
 import { AngularFireFunctionsModule, FUNCTIONS_ORIGIN } from '@angular/fire/functions';
+import { GraphQLModule } from './graphql.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -243,7 +244,8 @@ const nzConfig: NzConfig = {
     EffectsModule.forRoot([]),
     StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
     EffectsModule.forFeature([AuthEffects]),
-    ClipboardModule
+    ClipboardModule,
+    GraphQLModule
   ],
   bootstrap: [AppComponent]
 })
