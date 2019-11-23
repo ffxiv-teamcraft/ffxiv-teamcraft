@@ -6,6 +6,7 @@ export enum EorzeaActionTypes {
   SetBait = '[Eorzea] Set Bait',
   RemoveStatus = '[Eorzea] Remove Status',
   AddStatus = '[Eorzea] Add Status',
+  SetStatuses = '[Eorzea] Set Statuses',
 }
 
 export class SetZone implements Action {
@@ -43,4 +44,11 @@ export class AddStatus implements Action {
   }
 }
 
-export type EorzeaAction = SetZone | SetWeather | SetBait | RemoveStatus | AddStatus;
+export class SetStatuses implements Action {
+  readonly type = EorzeaActionTypes.SetStatuses;
+
+  constructor(public payload: number[]) {
+  }
+}
+
+export type EorzeaAction = SetZone | SetWeather | SetBait | RemoveStatus | AddStatus | SetStatuses;

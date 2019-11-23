@@ -218,6 +218,20 @@ export class MachinaService {
     });
 
     this.ipc.packets$.pipe(
+      ofPacketType('statusEffectList'),
+      filter(packet => packet.sourceActorSessionID === packet.targetActorSessionID)
+    ).subscribe(packet => {
+      this.eorzeaFacade.setStatuses(packet.effects.map(status => status.effectID));
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('actorControl'),
+      filter(packet => packet.category === 21)
+    ).subscribe(packet => {
+      this.eorzeaFacade.removeStatus(packet.param1);
+    });
+
+    this.ipc.packets$.pipe(
       ofPacketType('effectResult'),
       filter(packet => packet.actorID1 === packet.actorID)
     ).subscribe(packet => {

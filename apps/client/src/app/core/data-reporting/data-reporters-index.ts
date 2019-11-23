@@ -5,11 +5,12 @@ import { MachinaService } from '../electron/machina.service';
 import { FishingReporter } from './fishing-reporter';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { LazyDataService } from '../data/lazy-data.service';
+import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 
 export const DataReporters = new InjectionToken('DataReporters');
 
 export const DATA_REPORTERS: Provider[] = [
   { provide: DataReporters, useClass: DesynthResultReporter, multi: true },
   { provide: DataReporters, useClass: ReductionResultReporter, multi: true, deps: [MachinaService] },
-  { provide: DataReporters, useClass: FishingReporter, multi: true, deps: [EorzeaFacade, LazyDataService] }
+  { provide: DataReporters, useClass: FishingReporter, multi: true, deps: [EorzeaFacade, LazyDataService, EorzeanTimeService] }
 ];
