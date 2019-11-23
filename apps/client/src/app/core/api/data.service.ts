@@ -179,6 +179,14 @@ export class DataService {
         }];
       }));
 
+    if (onlyCraftable){
+      xivapiFilters.push({
+        column: "Recipes.ClassJobID",
+        operator: ">",
+        value: 0
+      });
+    }
+
     const searchOptions: XivapiSearchOptions = {
       indexes: [SearchIndex.ITEM],
       string: query,
