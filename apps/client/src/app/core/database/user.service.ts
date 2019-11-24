@@ -2,7 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { EMPTY, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
-import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -10,6 +10,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { HttpClient } from '@angular/common/http';
 import { LogTrackingService } from './log-tracking.service';
 import { CharacterResponse, XivapiService } from '@xivapi/angular-client';
+import * as firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -51,7 +52,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
           } else {
             delete user.notFound;
           }
-          user.createdAt = new Date(user.createdAt);
+          user.createdAt = firebase.firestore.Timestamp.now();
           if (user.patreonToken === undefined) {
             user.patron = false;
             return of(user);
@@ -85,6 +86,14 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
             );
           }
           return of(user);
+        }),
+        map(user => {
+          if (typeof user.createdAt !== 'object') {
+            user.createdAt = firebase.firestore.Timestamp.fromDate(new Date(user.createdAt));
+          } else if (!(user.createdAt instanceof firebase.firestore.Timestamp)) {
+            user.createdAt = new firebase.firestore.Timestamp((user.createdAt as any).seconds, (user.createdAt as any).nanoseconds);
+          }
+          return user;
         }),
         shareReplay(1)
       );

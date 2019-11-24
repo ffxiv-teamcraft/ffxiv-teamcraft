@@ -80,11 +80,11 @@ export class AuthFacade {
           uid: user.uid
         }).pipe(
           switchMap(() => {
-            return from(user.getIdToken(true))
+            return from(user.getIdTokenResult(true))
           })
         )
       }
-      return of(token.token);
+      return of(token);
     }),
     shareReplay(1)
   );

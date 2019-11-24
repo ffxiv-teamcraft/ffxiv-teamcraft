@@ -63,8 +63,7 @@ export class GatheredByComponent extends ItemDetailsPopup {
       map(alarms => {
         return !alarms.some(alarm => {
           return alarm.itemId === generatedAlarm.itemId
-            && alarm.zoneId === generatedAlarm.zoneId
-            && alarm.areaId === generatedAlarm.areaId;
+            && alarm.zoneId === generatedAlarm.zoneId;
         });
       })
     );
@@ -78,7 +77,6 @@ export class GatheredByComponent extends ItemDetailsPopup {
     const alarm: Partial<Alarm> = {
       duration: node.uptime / 60,
       zoneId: node.zoneid,
-      areaId: node.areaid,
       mapId: node.mapid,
       spawns: node.time,
       weathers: node.weathers,

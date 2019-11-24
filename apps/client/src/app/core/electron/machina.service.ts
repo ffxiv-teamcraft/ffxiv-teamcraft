@@ -16,6 +16,7 @@ import { ofPacketType } from '../rxjs/of-packet-type';
 import { territories } from '../data/sources/territories';
 import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
+import * as firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -108,8 +109,8 @@ export class MachinaService {
       filter(inventory => {
         return inventory !== null;
       })
-    ).subscribe(inventory => {
-      inventory.lastZone = Date.now();
+    ).subscribe((inventory: UserInventory) => {
+      inventory.lastZone = firebase.firestore.Timestamp.now();
       this.userInventoryService.updateInventory(inventory);
     });
 
@@ -146,7 +147,7 @@ export class MachinaService {
         );
       })
     ).subscribe(inventory => {
-      inventory.lastZone = Date.now();
+      inventory.lastZone = firebase.firestore.Timestamp.now();
       this.userInventoryService.updateInventory(inventory);
     });
 
@@ -171,7 +172,7 @@ export class MachinaService {
         );
       })
     ).subscribe(inventory => {
-      inventory.lastZone = Date.now();
+      inventory.lastZone = firebase.firestore.Timestamp.now();
       this.userInventoryService.updateInventory(inventory);
     });
 

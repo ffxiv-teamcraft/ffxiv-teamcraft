@@ -24,7 +24,6 @@ export class Alarm extends DataModel {
   slot: number | string;
   zoneId: number;
   mapId: number;
-  areaId: number;
   coords: Vector2;
   /**
    * Type of the node.

@@ -646,7 +646,7 @@ export class SearchComponent implements OnInit {
         tap(resultList => this.listsFacade.addList(resultList)),
         mergeMap(resultList => {
           return this.listsFacade.myLists$.pipe(
-            map(lists => lists.find(l => l.createdAt === resultList.createdAt && l.$key !== undefined)),
+            map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
             filter(l => l !== undefined),
             first()
           );
@@ -685,7 +685,7 @@ export class SearchComponent implements OnInit {
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
             map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt === list.createdAt)),
+            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis())),
             filter(l => l !== undefined),
             first()
           ), 1, 'Saving_in_database');

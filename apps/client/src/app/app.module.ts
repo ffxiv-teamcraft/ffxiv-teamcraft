@@ -96,7 +96,7 @@ import ko from '@angular/common/locales/ko';
 import { ClipboardModule } from 'ngx-clipboard';
 import { InventoryModule } from './modules/inventory/inventory.module';
 import { EorzeaModule } from './modules/eorzea/eorzea.module';
-import { AngularFireFunctionsModule, FUNCTIONS_ORIGIN } from '@angular/fire/functions';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { GraphQLModule } from './graphql.module';
 
 const icons: IconDefinition[] = [
@@ -164,7 +164,7 @@ const nzConfig: NzConfig = {
       provide: NZ_CONFIG,
       useValue: nzConfig
     },
-    { provide: FirestoreSettingsToken, useValue: { timestampsInSnapshots: false } },
+    { provide: FirestoreSettingsToken, useValue: {} },
     { provide: NZ_ICONS, useValue: icons },
     { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true }
   ],

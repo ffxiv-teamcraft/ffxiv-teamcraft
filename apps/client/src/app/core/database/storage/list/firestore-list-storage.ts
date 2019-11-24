@@ -13,6 +13,7 @@ import { ListTag } from '../../../../modules/list/model/list-tag.enum';
 import { Class } from '@kaiu/serializer';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { compare, getValueByPointer } from 'fast-json-patch';
+import * as firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -38,10 +39,10 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     'craftableAmount'
   ];
 
-  constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
+  constructor(protected af: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService, private lazyData: LazyDataService,
               private fns: AngularFireFunctions) {
-    super(firestore, serializer, zone, pendingChangesService);
+    super(af, serializer, zone, pendingChangesService);
   }
 
   public update(uid: string, data: Partial<List>, uriParams?: any): Observable<void> {
@@ -77,6 +78,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
 
   protected prepareData(list: Partial<List>): List {
     const clone: List = JSON.parse(JSON.stringify(list));
+    if (typeof clone.createdAt === 'string') {
+      clone.createdAt = firebase.firestore.Timestamp.fromDate(new Date(clone.createdAt));
+    }
     clone.items = (clone.items || []).map(item => {
       if (item.custom) {
         return item;
@@ -117,6 +121,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           }
           return Object.assign(item, extracts.find(i => i.id === item.id));
         });
+        list.afterDeserialized();
         return list;
       })
     );
@@ -222,7 +227,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       .pipe(
         switchMap((snaps: any[]) => combineLatest(snaps.map(snap => this.completeListData({ ...snap.payload.doc.data(), $key: snap.payload.doc.id })))),
         map((lists: any[]) => this.serializer.deserialize<List>(lists, [List])),
-        map((lists: List[]) => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())),
+        map((lists: List[]) => lists.sort((a, b) => b.createdAt.toMillis() - a.createdAt.toMillis())),
         first()
       );
   }

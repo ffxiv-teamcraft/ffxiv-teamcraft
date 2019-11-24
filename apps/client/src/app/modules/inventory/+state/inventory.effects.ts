@@ -51,7 +51,7 @@ export class InventoryEffects {
     ofType<UpdateInventory>(InventoryActionTypes.UpdateInventory),
     auditTime(30000),
     switchMap(action => {
-      if (this.settings.persistInventory) {
+      if (this.settings.persistInventory || !this.platform.isDesktop()) {
         if (action.force) {
           return this.inventoryService.set(action.payload.$key, action.payload);
         } else {

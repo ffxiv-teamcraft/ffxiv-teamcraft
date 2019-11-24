@@ -241,7 +241,7 @@ export class AlarmsFacade {
         // Else just compare remaining time.
         return timeBeforeA < timeBeforeB ? -1 : 1;
       });
-      if (alarm.weathers) {
+      if (alarm.weathers && alarm.weathers.length > 0) {
         this.nextSpawnCache[cacheKey] = {
           spawn: this.findWeatherSpawnCombination(alarm, sortedSpawns, time.getTime()),
           expires: this.etime.toEarthDate(time)
