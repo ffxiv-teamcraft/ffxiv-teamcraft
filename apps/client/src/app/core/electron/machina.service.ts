@@ -16,6 +16,7 @@ import { ofPacketType } from '../rxjs/of-packet-type';
 import { territories } from '../data/sources/territories';
 import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
+import * as firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -108,8 +109,8 @@ export class MachinaService {
       filter(inventory => {
         return inventory !== null;
       })
-    ).subscribe(inventory => {
-      inventory.lastZone = Date.now();
+    ).subscribe((inventory: UserInventory) => {
+      inventory.lastZone = firebase.firestore.Timestamp.now();
       this.userInventoryService.updateInventory(inventory);
     });
 
@@ -146,7 +147,7 @@ export class MachinaService {
         );
       })
     ).subscribe(inventory => {
-      inventory.lastZone = Date.now();
+      inventory.lastZone = firebase.firestore.Timestamp.now();
       this.userInventoryService.updateInventory(inventory);
     });
 
@@ -171,7 +172,7 @@ export class MachinaService {
         );
       })
     ).subscribe(inventory => {
-      inventory.lastZone = Date.now();
+      inventory.lastZone = firebase.firestore.Timestamp.now();
       this.userInventoryService.updateInventory(inventory);
     });
 
@@ -196,17 +197,10 @@ export class MachinaService {
     ).subscribe(packet => {
       const realZoneId = territories[packet.zoneID.toString()];
       this.eorzeaFacade.setZone(realZoneId);
-      this.eorzeaFacade.setWeather(packet.weatherID);
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('weatherChange')
-    ).subscribe(packet => {
-      this.eorzeaFacade.setWeather(packet.weatherID);
-    });
-
-    this.ipc.packets$.pipe(
-      ofPacketSubType('setBait')
+      ofPacketSubType('fishingBaitMsg')
     ).subscribe(packet => {
       this.eorzeaFacade.setBait(packet.baitID);
     });
@@ -218,12 +212,31 @@ export class MachinaService {
     });
 
     this.ipc.packets$.pipe(
+      ofPacketSubType('statusEffectLose'),
+      filter(packet => packet.sourceActorSessionID === packet.targetActorSessionID)
+    ).subscribe(packet => {
+      this.eorzeaFacade.removeStatus(packet.param1);
+    });
+
+    this.ipc.packets$.pipe(
       ofPacketType('statusEffectList'),
       filter(packet => packet.sourceActorSessionID === packet.targetActorSessionID)
     ).subscribe(packet => {
-      this.eorzeaFacade.setStatuses(packet.effects.map(effect => {
-        return effect.effectID;
-      }));
+      this.eorzeaFacade.setStatuses(packet.effects.map(status => status.effectID));
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('actorControl'),
+      filter(packet => packet.category === 21)
+    ).subscribe(packet => {
+      this.eorzeaFacade.removeStatus(packet.param1);
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('effectResult'),
+      filter(packet => packet.actorID1 === packet.actorID)
+    ).subscribe(packet => {
+      this.eorzeaFacade.addStatus(packet.effectID);
     });
   }
 }

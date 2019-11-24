@@ -131,7 +131,7 @@ export class LogTrackerComponent extends TrackerComponent {
         return this.progressService.showProgress(
           combineLatest(this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$).pipe(
             map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key !== undefined)),
+            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis() && l.$key !== undefined)),
             filter(l => l !== undefined),
             first()
           ), 1, 'Saving_in_database');

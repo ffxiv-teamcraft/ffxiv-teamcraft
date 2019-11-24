@@ -18,6 +18,7 @@ import { DataService } from '../../../core/api/data.service';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { ListManagerService } from '../list-manager.service';
 import { ListColor } from './list-color';
+import * as firebase from 'firebase/app';
 
 declare const gtag: Function;
 
@@ -36,7 +37,7 @@ export class List extends DataWithPermissions {
   note = '';
 
   // noinspection JSUnusedGlobalSymbols
-  createdAt: string = new Date().toISOString();
+  createdAt: firebase.firestore.Timestamp = firebase.firestore.Timestamp.fromDate(new Date());
 
   // Should we disable HQ suggestions for this list?
   disableHQSuggestions = false;
@@ -99,6 +100,7 @@ export class List extends DataWithPermissions {
       this.forks++;
       clone.reset();
     }
+    clone.createdAt = this.createdAt;
     return clone;
   }
 
@@ -614,5 +616,13 @@ export class List extends DataWithPermissions {
       }
     });
     return count;
+  }
+
+  afterDeserialized(): void {
+    if (typeof this.createdAt !== 'object') {
+      this.createdAt = firebase.firestore.Timestamp.fromDate(new Date(this.createdAt));
+    } else if (!(this.createdAt instanceof firebase.firestore.Timestamp)) {
+      this.createdAt = new firebase.firestore.Timestamp((this.createdAt as any).seconds, (this.createdAt as any).nanoseconds);
+    }
   }
 }

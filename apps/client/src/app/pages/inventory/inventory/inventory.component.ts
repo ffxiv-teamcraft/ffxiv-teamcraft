@@ -155,7 +155,7 @@ export class InventoryComponent {
   }
 
   public deleteInventories(): void {
-    this.inventoryService.updateInventory(new UserInventory(), true);
+    this.inventoryService.resetInventory();
   }
 
   trackByInventory(index: number, inventory: InventoryDisplay): string {

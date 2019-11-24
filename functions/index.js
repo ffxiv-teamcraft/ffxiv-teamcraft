@@ -132,3 +132,26 @@ exports.updateInventory = functions.runWith(runtimeOpts).https.onCall((data, con
   });
 });
 
+exports.setCustomUserClaims = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  // Check if user meets role criteria:
+  // Your custom logic here: to decide what roles and other `x-hasura-*` should the user get
+  let customClaims = {
+    'https://hasura.io/jwt/claims': {
+      'x-hasura-default-role': 'reporter',
+      'x-hasura-allowed-roles': ['reporter'],
+      'x-hasura-user-id': data.uid
+    }
+  };
+  // Set custom user claims on this newly created user.
+  return admin.auth().setCustomUserClaims(data.uid, customClaims)
+    .then(() => {
+      return admin.auth().getUser(data.uid);
+    })
+    .then(() => {
+      return { response: 'ok' };
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+

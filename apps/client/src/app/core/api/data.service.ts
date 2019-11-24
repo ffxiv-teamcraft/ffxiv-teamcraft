@@ -179,13 +179,22 @@ export class DataService {
         }];
       }));
 
+    if (onlyCraftable){
+      xivapiFilters.push({
+        column: "Recipes.ClassJobID",
+        operator: ">",
+        value: 0
+      });
+    }
+
     const searchOptions: XivapiSearchOptions = {
       indexes: [SearchIndex.ITEM],
       string: query,
       language: lang,
       filters: xivapiFilters,
       columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks'],
-      string_algo: SearchAlgo.WILDCARD_PLUS
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      limit: 250
     };
 
     if (sort[0]) {

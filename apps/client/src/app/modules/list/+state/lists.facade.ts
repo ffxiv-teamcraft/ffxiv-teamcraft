@@ -314,7 +314,6 @@ export class ListsFacade {
   loadAndWait(key: string): Observable<List> {
     this.load(key);
     return this.allListDetails$.pipe(
-      delay(500),
       map(details => details.find(l => l.$key === key)),
       filter(list => list !== undefined),
       first()
@@ -334,11 +333,12 @@ export class ListsFacade {
   }
 
   sortLists(lists: List[]): List[] {
-    return lists.sort((a, b) => {
-      if (a.index === b.index) {
-        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-      }
-      return a.index - b.index;
-    });
+    return lists
+      .sort((a, b) => {
+        if (a.index === b.index) {
+          return b.createdAt.toMillis() - a.createdAt.toMillis();
+        }
+        return a.index - b.index;
+      });
   }
 }

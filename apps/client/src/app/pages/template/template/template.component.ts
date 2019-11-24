@@ -55,7 +55,7 @@ export class TemplateComponent {
           }),
           switchMap(clone => {
             return this.listsFacade.myLists$.pipe(
-              map((lists: List[]) => lists.find(l => l.createdAt === clone.createdAt && l.$key !== undefined)),
+              map((lists: List[]) => lists.find(l => l.createdAt.toMillis() === clone.createdAt.toMillis() && l.$key !== undefined)),
               filter(l => l !== undefined)
             );
           })

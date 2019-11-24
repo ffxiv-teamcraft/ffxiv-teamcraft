@@ -1,8 +1,7 @@
 import { ListRow } from '../../list/model/list-row';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { Ingredient } from '../../../model/garland-tools/ingredient';
-import { CustomIngredient } from './custom-ingredient';
+import * as firebase from 'firebase/app';
 
 export class CustomItem extends ListRow {
 
@@ -26,5 +25,13 @@ export class CustomItem extends ListRow {
   // Used for display too
   dirty?: boolean;
 
-  createdAt: string = new Date().toISOString();
+  createdAt: firebase.firestore.Timestamp = firebase.firestore.Timestamp.now();
+
+  afterDeserialized(): void {
+    if (typeof this.createdAt !== 'object') {
+      this.createdAt = firebase.firestore.Timestamp.fromDate(new Date(this.createdAt));
+    } else if (!(this.createdAt instanceof firebase.firestore.Timestamp)) {
+      this.createdAt = new firebase.firestore.Timestamp((this.createdAt as any).seconds, (this.createdAt as any).nanoseconds);
+    }
+  }
 }

@@ -67,7 +67,7 @@
       </div>
       <div *ngIf="xivapiLeve.CraftLeve" class="details-block">
         <div class="detail-name">{{'DB.LEVE.Turn_ins' | translate}}</div>
-        <div class="detail-value">{{xivapiLeve.CraftLeve.Repeats}}</div>
+        <div class="detail-value">{{xivapiLeve.CraftLeve.Repeats + 1}}</div>
       </div>
     </div>
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiLeve.ID" type="leve"></app-db-comments>

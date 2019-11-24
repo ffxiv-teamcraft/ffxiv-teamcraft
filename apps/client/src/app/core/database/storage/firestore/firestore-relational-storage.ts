@@ -51,6 +51,14 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
               });
             return this.serializer.deserialize<T>(rotations, [this.getClass()]);
           }),
+          map(elements => {
+            return elements.map(el => {
+              if ((el as any).afterDeserialized) {
+                (el as any).afterDeserialized();
+              }
+              return el;
+            });
+          }),
           tap(elements => {
             elements.forEach(el => {
               this.syncCache[el.$key] = JSON.parse(JSON.stringify(el));

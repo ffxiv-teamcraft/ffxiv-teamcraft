@@ -134,8 +134,7 @@ export class NodeComponent extends TeamcraftPageComponent {
       map(alarms => {
         return !alarms.some(alarm => {
           return alarm.itemId === generatedAlarm.itemId
-            && alarm.zoneId === generatedAlarm.zoneId
-            && alarm.areaId === generatedAlarm.areaId;
+            && alarm.zoneId === generatedAlarm.zoneId;
         });
       })
     );
@@ -150,7 +149,6 @@ export class NodeComponent extends TeamcraftPageComponent {
       duration: node.uptime / 60,
       mapId: node.mapId,
       zoneId: node.zoneid,
-      areaId: node.areaid,
       type: node.type,
       coords: {
         x: node.x,

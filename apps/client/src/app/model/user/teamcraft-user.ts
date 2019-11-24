@@ -3,9 +3,10 @@ import { Favorites } from '../other/favorites';
 import { LodestoneIdEntry } from './lodestone-id-entry';
 import { Character } from '@xivapi/angular-client';
 import { DefaultConsumables } from './default-consumables';
+import * as firebase from 'firebase/app';
 
 export class TeamcraftUser extends DataModel {
-  createdAt: Date;
+  createdAt: firebase.firestore.Timestamp;
   defaultLodestoneId: number;
   // FC of the character currently selected
   currentFcId: string;

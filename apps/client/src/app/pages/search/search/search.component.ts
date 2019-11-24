@@ -16,24 +16,13 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { AbstractControl, FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { SearchFilter } from '../../../model/search/search-filter.interface';
-import { SearchAlgo, SearchIndex, XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../../model/common/i18n-name';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SearchType } from '../search-type';
-import { InstanceSearchResult } from '../../../model/search/instance-search-result';
-import { QuestSearchResult } from '../../../model/search/quest-search-result';
-import { NpcSearchResult } from '../../../model/search/npc-search-result';
-import { LeveSearchResult } from '../../../model/search/leve-search-result';
-import { MobSearchResult } from '../../../model/search/mob-search-result';
-import * as monsters from '../../../core/data/sources/monsters.json';
-import { FateSearchResult } from '../../../model/search/fate-search-result';
-import { mapIds } from '../../../core/data/sources/map-ids';
-import { MapSearchResult } from '../../../model/search/map-search-result';
-import { ActionSearchResult } from '../../../model/search/action-search-result';
-import { StatusSearchResult } from '../../../model/search/status-search-result';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
@@ -657,7 +646,7 @@ export class SearchComponent implements OnInit {
         tap(resultList => this.listsFacade.addList(resultList)),
         mergeMap(resultList => {
           return this.listsFacade.myLists$.pipe(
-            map(lists => lists.find(l => l.createdAt === resultList.createdAt && l.$key !== undefined)),
+            map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
             filter(l => l !== undefined),
             first()
           );
@@ -696,7 +685,7 @@ export class SearchComponent implements OnInit {
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
             map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt === list.createdAt)),
+            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis())),
             filter(l => l !== undefined),
             first()
           ), 1, 'Saving_in_database');
