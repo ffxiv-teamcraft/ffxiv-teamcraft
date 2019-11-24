@@ -338,6 +338,8 @@
     "no_panel_borders": "Desativar as bordas em torno de vários painéis",
     "Desktop": "Área de Trabalho",
     "Always_on_top": "Sempre no topo",
+    "Start_minimized": "Start minimized in tray",
+    "Always_quit": "Quit when clicking on close button (instead of minimizing)",
     "Check_for_update": "Verificar atualizações",
     "Downloading_update": "Baixando atualizações",
     "No_update_available": "Não há atualizações disponíveis",
@@ -1487,7 +1489,8 @@
     "3D_model": "You can preview 3D model of items inside the database.",
     "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
     "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
-    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar).",
+    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity"
   },
   "RECIPE_FINDER": {
     "Title": "Recipe finder",

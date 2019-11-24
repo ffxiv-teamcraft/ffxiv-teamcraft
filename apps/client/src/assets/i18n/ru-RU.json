@@ -338,6 +338,8 @@
     "no_panel_borders": "Отключить рамки вокруг различных панелей",
     "Desktop": "Рабочий стол",
     "Always_on_top": "Всегда cверху",
+    "Start_minimized": "Start minimized in tray",
+    "Always_quit": "Quit when clicking on close button (instead of minimizing)",
     "Check_for_update": "Проверить обновления",
     "Downloading_update": "Загрузка обновления",
     "No_update_available": "Нет доступных обновлений",
@@ -1487,7 +1489,8 @@
     "3D_model": "Вы можете просмотреть 3D модель предметов внутри базы данных.",
     "Levequests": "Вы можете подготовить списки ливквестов и предварительно посмотреть количество опыта за них в разделе Ливквесты.",
     "Log_tracker": "Вы можете отслеживать прогресс вашего журнала (сбор, крафт, рыбалка) на странице трекера журнала.",
-    "Desktop_app_overlay": "Вы можете включить оверлей для оповещений при использовании приложения на рабочем столе (ссылка внизу на боковой панели)."
+    "Desktop_app_overlay": "Вы можете включить оверлей для оповещений при использовании приложения на рабочем столе (ссылка внизу на боковой панели).",
+    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity"
   },
   "RECIPE_FINDER": {
     "Title": "Поиск рецептов",

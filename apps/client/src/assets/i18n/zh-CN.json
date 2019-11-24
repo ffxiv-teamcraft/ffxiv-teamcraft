@@ -338,6 +338,8 @@
     "no_panel_borders": "隐藏面板边框",
     "Desktop": "客户端",
     "Always_on_top": "总在最上层",
+    "Start_minimized": "Start minimized in tray",
+    "Always_quit": "Quit when clicking on close button (instead of minimizing)",
     "Check_for_update": "检查更新",
     "Downloading_update": "正在下载更新",
     "No_update_available": "已是最新版本",
@@ -1487,7 +1489,8 @@
     "3D_model": "您可以在数据库中预览物品的3D外观。",
     "Levequests": "您可以在理符任务页面内制作理符清单和预览理符任务经验。",
     "Log_tracker": "您可以在笔记追踪页面中追踪您的采集、生产、捕鱼等笔记进度。",
-    "Desktop_app_overlay": "使用桌面应用程序时，您可以开启闹钟悬浮窗(应用下载链接见侧边栏)。"
+    "Desktop_app_overlay": "使用桌面应用程序时，您可以开启闹钟悬浮窗(应用下载链接见侧边栏)。",
+    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity"
   },
   "RECIPE_FINDER": {
     "Title": "配方检索器",
