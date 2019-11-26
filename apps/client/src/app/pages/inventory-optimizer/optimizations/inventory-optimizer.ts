@@ -17,7 +17,10 @@ export abstract class InventoryOptimizer {
     ContainerType.RetainerMarket,
     ContainerType.RetainerEquippedGear,
     ContainerType.Crystal,
-    ContainerType.RetainerCrystal
+    ContainerType.RetainerCrystal,
+    ContainerType.HandIn,
+    ContainerType.RetainerGil,
+    ContainerType.FreeCompanyGil
   ];
 
   public getOptimization(item: InventoryItem, inventory: UserInventory, lazyData: LazyDataService): { [p: string]: number | string } | null {

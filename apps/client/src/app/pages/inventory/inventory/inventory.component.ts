@@ -76,7 +76,7 @@ export class InventoryComponent {
     map(([inventories, prices, search]) => {
       return inventories
         .map(inventory => {
-          const clone = {...inventory};
+          const clone = { ...inventory };
           clone.items = inventory.items
             .map(item => {
               const priceEntry = prices.find(p => p.itemId === item.itemId);
@@ -88,7 +88,7 @@ export class InventoryComponent {
                 return true;
               }
               return search.split(' ').every(fragment => {
-                return this.i18n.getName(this.l12n.getItem(item.itemId)).indexOf(fragment) > -1;
+                return this.i18n.getName(this.l12n.getItem(item.itemId)).toLowerCase().indexOf(fragment.toLowerCase()) > -1;
               });
             });
           clone.totalPrice = inventory.items.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -155,7 +155,7 @@ export class InventoryComponent {
   }
 
   public deleteInventories(): void {
-    this.inventoryService.updateInventory(new UserInventory(), true);
+    this.inventoryService.resetInventory();
   }
 
   trackByInventory(index: number, inventory: InventoryDisplay): string {

@@ -144,7 +144,7 @@ export class CustomItemsImportPopupComponent {
             }
             const previousReq = items.find(i => i.$key === req.id);
             const newReq = allItems.find(i => {
-              return i.name === previousReq.name && i.$key !== undefined && i.createdAt === previousReq.createdAt;
+              return i.name === previousReq.name && i.$key !== undefined && i.createdAt.toMillis() === previousReq.createdAt.toMillis();
             });
             req.id = newReq ? newReq.$key : 'missing item';
             return req;
@@ -157,7 +157,7 @@ export class CustomItemsImportPopupComponent {
         }
         return this.customItemsFacade.allCustomItems$.pipe(
           filter(availableItems => {
-            return availableItems.some(i => i.name === item.name && i.$key !== undefined && i.createdAt === item.createdAt);
+            return availableItems.some(i => i.name === item.name && i.$key !== undefined && i.createdAt.toMillis() === item.createdAt.toMillis());
           }),
           first()
         );

@@ -1,4 +1,4 @@
-<nz-collapse [style.background-color]="_list?.color">
+<nz-collapse [style.background-color]="publicDisplay?null:_list?.color">
   <nz-collapse-panel #listContentPanel (nzActiveChange)="openStateChange()" [nzHeader]="panelHeader">
     <div *ngIf="listContentPanel.nzActive" fxLayout="column" fxLayoutGap="10px">
       <div *ngFor="let item of listContent$ | async; trackBy: trackByItem; let odd = odd" [class.odd]="odd" fxLayout="row"

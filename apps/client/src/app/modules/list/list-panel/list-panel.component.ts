@@ -168,7 +168,7 @@ export class ListPanelComponent {
         this.listsFacade.addList(clone);
         return this.listsFacade.myLists$
           .pipe(
-            map(lists => lists.find(l => l.createdAt === clone.createdAt && l.$key !== undefined)),
+            map(lists => lists.find(l => l.createdAt.toMillis() === clone.createdAt.toMillis() && l.$key !== undefined)),
             filter(l => l !== undefined),
             first()
           );

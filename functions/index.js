@@ -71,28 +71,87 @@ exports.solver = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
   }
 });
 
+function applyOffsets(data, entries) {
+  entries.forEach(customEntry => {
+    const explodedPath = customEntry.path.split('/');
+    explodedPath.shift();
+    let pointer = data;
+    for (let fragment of explodedPath.slice(0, -1)) {
+      pointer = pointer[fragment];
+    }
+    pointer[explodedPath[explodedPath.length - 1]] += customEntry.offset;
+  });
+  return data;
+}
+
 exports.updateList = functions.runWith(runtimeOpts).https.onCall((data, context) => {
   const listRef = firestore.collection('lists').doc(data.uid);
   return firestore.runTransaction(transaction => {
     return transaction.get(listRef).then(listDoc => {
       const list = listDoc.data();
-      const [standard, custom] = data.diff.reduce((acc, entry) => {
-        if (entry.custom) {
-          acc[1].push(entry);
-        } else {
-          acc[0].push(entry);
-        }
-        return acc;
-      }, [[], []]);
-      applyPatch(list, standard);
-      custom.forEach(customEntry => {
-        const explodedPath = customEntry.path.split('/');
-        explodedPath.shift();
-        list[explodedPath[0]][+explodedPath[1]][explodedPath[2]] += customEntry.offset;
-      });
-      transaction.update(listRef, list);
-      return Promise.resolve();
+      try {
+        const [standard, custom] = JSON.parse(data.diff).reduce((acc, entry) => {
+          if (entry.custom) {
+            acc[1].push(entry);
+          } else {
+            acc[0].push(entry);
+          }
+          return acc;
+        }, [[], []]);
+        applyPatch(list, standard);
+        applyOffsets(list, custom);
+        transaction.set(listRef, list);
+      } catch (e) {
+        console.log(data.diff);
+      }
     });
   });
+});
+
+exports.updateInventory = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  const ref = firestore.collection('user-inventories').doc(data.uid);
+  return firestore.runTransaction(transaction => {
+    return transaction.get(ref).then(doc => {
+      const docData = doc.data() || {};
+      try {
+        const [standard, custom] = JSON.parse(data.diff).reduce((acc, entry) => {
+          if (entry.custom) {
+            acc[1].push(entry);
+          } else {
+            acc[0].push(entry);
+          }
+          return acc;
+        }, [[], []]);
+        applyPatch(docData, standard);
+        applyOffsets(docData, custom);
+        transaction.set(ref, docData);
+      } catch (e) {
+        console.log(data.diff);
+      }
+    });
+  });
+});
+
+exports.setCustomUserClaims = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  // Check if user meets role criteria:
+  // Your custom logic here: to decide what roles and other `x-hasura-*` should the user get
+  let customClaims = {
+    'https://hasura.io/jwt/claims': {
+      'x-hasura-default-role': 'reporter',
+      'x-hasura-allowed-roles': ['reporter'],
+      'x-hasura-user-id': data.uid
+    }
+  };
+  // Set custom user claims on this newly created user.
+  return admin.auth().setCustomUserClaims(data.uid, customClaims)
+    .then(() => {
+      return admin.auth().getUser(data.uid);
+    })
+    .then(() => {
+      return { response: 'ok' };
+    })
+    .catch(error => {
+      console.log(error);
+    });
 });
 

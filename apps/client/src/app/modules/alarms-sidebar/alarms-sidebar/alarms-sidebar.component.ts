@@ -51,8 +51,7 @@ export class AlarmsSidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.alarms$ = this.alarmsFacade.alarmsSidebarDisplay$;
-      this.alarmsFacade.loadAlarms();
-
+    this.alarmsFacade.loadAlarms();
   }
 
 }

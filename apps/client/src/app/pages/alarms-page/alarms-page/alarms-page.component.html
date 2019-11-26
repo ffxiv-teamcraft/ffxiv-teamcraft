@@ -268,7 +268,7 @@
            fxLayout="row"
            fxLayoutAlign="flex-start center"
            nz-row>
-        <div nz-col nzMd="4">
+        <div nz-col nzMd="3">
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <nz-switch (click)="$event.stopPropagation();"
                        [(ngModel)]="row.alarm.enabled"
@@ -352,7 +352,7 @@
           <img *ngIf="row.alarm.snagging" [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                src="./assets/icons/status/snagging.png">
         </div>
-        <div nz-col nzMd="4">
+        <div nz-col nzMd="5">
           <div fxLayout="column" fxLayoutAlign="center center">
             <div>
               {{(row.alarm.mapId | closestAetheryte: {

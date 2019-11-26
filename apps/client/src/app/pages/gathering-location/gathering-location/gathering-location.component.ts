@@ -86,7 +86,7 @@ export class GatheringLocationComponent {
           }
         }),
         map(aetheryte => {
-          if (aetheryte !== undefined) {
+          if (aetheryte !== undefined && aetheryte.aethernetCoords !== undefined) {
             alarm.aetheryte = aetheryte;
           }
           return alarm;
@@ -103,8 +103,7 @@ export class GatheringLocationComponent {
     const generatedAlarm = this.generateAlarm(node);
     return alarms.find(alarm => {
       return alarm.itemId === generatedAlarm.itemId
-        && alarm.zoneId === generatedAlarm.zoneId
-        && alarm.areaId === generatedAlarm.areaId;
+        && alarm.zoneId === generatedAlarm.zoneId;
     }) === undefined;
   }
 
@@ -119,7 +118,6 @@ export class GatheringLocationComponent {
       duration: node.uptime / 60,
       mapId: node.mapId,
       zoneId: node.zoneid,
-      areaId: node.areaid,
       type: node.type,
       coords: {
         x: node.x,
@@ -127,13 +125,13 @@ export class GatheringLocationComponent {
       },
       spawns: node.spawnTimes,
       folklore: node.folklore,
-      reduction: node.reduction,
-      ephemeral: node.ephemeral,
+      reduction: node.reduction || false,
+      ephemeral: node.ephemeral || false,
       nodeContent: node.items,
-      weathers: node.weathers,
-      weathersFrom: node.weathersFrom,
-      snagging: node.snagging,
-      fishEyes: node.fishEyes,
+      weathers: node.weathers || [],
+      weathersFrom: node.weathersFrom || [],
+      snagging: node.snagging || false,
+      fishEyes: node.fishEyes || false,
       predators: node.predators || []
     };
     if (node.slot) {

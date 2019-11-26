@@ -51,22 +51,27 @@ if (isDev) {
 }
 
 if (!options.multi) {
-
-  app.requestSingleInstanceLock();
-  app.on('second-instance', (event, commandLine, cwd) => {
-    // Someone tried to run a second instance, we should focus our window.
-    if (win && !options.multi) {
-      const cmdLine = commandLine[1];
-      if (cmdLine) {
-        let path = commandLine[1].substr(12);
-        log.info(`Opening from second-instance : `, path);
-        win && win.webContents.send('navigate', path);
+  const gotTheLock = app.requestSingleInstanceLock();
+  if (!gotTheLock) {
+    app.isQuitting = true;
+    app.quit();
+  } else {
+    app.on('second-instance', (event, commandLine, cwd) => {
+      // Someone tried to run a second instance, we should focus our window.
+      if (win && !options.multi) {
+        const cmdLine = commandLine[1];
+        if (cmdLine) {
+          let path = commandLine[1].substr(12);
+          log.info(`Opening from second-instance : `, path);
+          win && win.webContents.send('navigate', path);
+          win.focus();
+        }
+        if (win.isMinimized()) win.restore();
+        win.show();
         win.focus();
       }
-      if (win.isMinimized()) win.restore();
-      win.focus();
-    }
-  });
+    });
+  }
 }
 
 let deepLink = '';
@@ -159,31 +164,20 @@ function createWindow() {
   });
 
   win.once('ready-to-show', () => {
-    // if (api === undefined) {
-    //   // Start the api server for app detection
-    //   api = express();
-    //
-    //   api.use(function(req, res, next) {
-    //     res.header('Access-Control-Allow-Origin', '*');
-    //     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    //     next();
-    //   });
-    //
-    //   api.get('/', (req, res) => {
-    //     res.send('OK');
-    //   });
-    //
-    //   api.listen(7331);
-    // }
-    //
-    // win.focus();
-    // win.show();
+    if (!config.get('start-minimized')) {
+      win.focus();
+      win.show();
+    }
     autoUpdater.checkForUpdates();
   });
 
   // save window size and position
-  win.on('close', () => {
-
+  win.on('close', (event) => {
+    if (!app.isQuitting && !config.get('always-quit')) {
+      event.preventDefault();
+      win.hide();
+      return false;
+    }
     if (config.get('machina') === true) {
       Machina.stop();
     }
@@ -274,6 +268,14 @@ function createTray() {
       type: 'normal',
       click: () => {
         openOverlay({ url: '/alarms-overlay' });
+      }
+    },
+    {
+      label: 'Quit',
+      type: 'normal',
+      click: () => {
+        app.isQuitting = true;
+        app.quit();
       }
     }
   ]);
@@ -370,6 +372,7 @@ ipcMain.on('apply-settings', (event, settings) => {
       overlay.setIgnoreMouseEvents(settings.clickthrough === 'true');
       overlay.webContents.send('update-settings', settings);
     });
+    win.webContents.send('update-settings', settings);
   } catch (e) {
     // Window already destroyed, so we don't care :)
   }
@@ -419,12 +422,20 @@ ipcMain.on('always-on-top:get', (event) => {
   event.sender.send('always-on-top:value', win.alwaysOnTop);
 });
 
-ipcMain.on('always-on-top', (event, onTop) => {
-  win.setAlwaysOnTop(onTop, 'floating');
+ipcMain.on('always-quit', (event, flag) => {
+  config.set('always-quit', flag);
 });
 
-ipcMain.on('always-on-top:get', (event) => {
-  event.sender.send('always-on-top:value', win.alwaysOnTop);
+ipcMain.on('always-quit:get', (event) => {
+  event.sender.send('always-quit:value', config.get('always-quit'));
+});
+
+ipcMain.on('start-minimized', (event, flag) => {
+  config.set('start-minimized', flag);
+});
+
+ipcMain.on('start-minimized:get', (event) => {
+  event.sender.send('start-minimized:value', config.get('start-minimized'));
 });
 
 ipcMain.on('overlay', (event, data) => {

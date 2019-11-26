@@ -25,7 +25,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap, throttleTime } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -125,6 +125,7 @@ export class ListsFacade {
 
   selectedList$ = this.store.select(listsQuery.getSelectedList()).pipe(
     filter(list => list !== undefined),
+    throttleTime<List>(1000),
     shareReplay(1)
   );
 
@@ -313,7 +314,6 @@ export class ListsFacade {
   loadAndWait(key: string): Observable<List> {
     this.load(key);
     return this.allListDetails$.pipe(
-      delay(500),
       map(details => details.find(l => l.$key === key)),
       filter(list => list !== undefined),
       first()
@@ -333,11 +333,12 @@ export class ListsFacade {
   }
 
   sortLists(lists: List[]): List[] {
-    return lists.sort((a, b) => {
-      if (a.index === b.index) {
-        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-      }
-      return a.index - b.index;
-    });
+    return lists
+      .sort((a, b) => {
+        if (a.index === b.index) {
+          return b.createdAt.toMillis() - a.createdAt.toMillis();
+        }
+        return a.index - b.index;
+      });
   }
 }

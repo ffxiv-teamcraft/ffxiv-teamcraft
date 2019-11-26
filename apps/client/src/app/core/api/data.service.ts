@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { combineLatest, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { GarlandToolsService } from './garland-tools.service';
 import { Recipe } from '../../model/search/recipe';
@@ -16,14 +16,7 @@ import { NpcData } from '../../model/garland-tools/npc-data';
 import { LeveData } from '../../model/garland-tools/leve-data';
 import { MobData } from '../../model/garland-tools/mob-data';
 import { FateData } from '../../model/garland-tools/fate-data';
-import {
-  SearchAlgo,
-  SearchIndex,
-  XivapiEndpoint,
-  XivapiSearchFilter,
-  XivapiSearchOptions,
-  XivapiService
-} from '@xivapi/angular-client';
+import { SearchAlgo, SearchIndex, XivapiEndpoint, XivapiSearchFilter, XivapiSearchOptions, XivapiService } from '@xivapi/angular-client';
 import { SearchType } from '../../pages/search/search-type';
 import { InstanceSearchResult } from '../../model/search/instance-search-result';
 import { QuestSearchResult } from '../../model/search/quest-search-result';
@@ -186,13 +179,22 @@ export class DataService {
         }];
       }));
 
+    if (onlyCraftable){
+      xivapiFilters.push({
+        column: "Recipes.ClassJobID",
+        operator: ">",
+        value: 0
+      });
+    }
+
     const searchOptions: XivapiSearchOptions = {
       indexes: [SearchIndex.ITEM],
       string: query,
       language: lang,
       filters: xivapiFilters,
       columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks'],
-      string_algo: SearchAlgo.WILDCARD_PLUS
+      string_algo: SearchAlgo.WILDCARD_PLUS,
+      limit: 250
     };
 
     if (sort[0]) {
@@ -202,7 +204,7 @@ export class DataService {
 
     let results$ = this.xivapi.search(searchOptions).pipe(
       map((response) => {
-        return response.Results;
+        return response.Results.filter(item => !item.Name_en.startsWith('Dated'));
       })
     );
 

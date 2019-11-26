@@ -143,7 +143,8 @@
     "Tables": "Tabelle",
     "Pie_charts": "Kuchendiagramm",
     "Read_more_on_wiki": "Details im Wiki ansehen",
-    "Apply": "Übernehmen"
+    "Apply": "Übernehmen",
+    "Open_link": "Webseite öffnen"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -253,7 +254,7 @@
   "Password_Confirmation": "Bestätigung",
   "Submit": "Senden",
   "Invalid_credentials": "Ungültige Daten",
-  "Not_verified": "Deine E-Mail-Adresse ist noch nicht bestätigt, bitte prüfe dein Mail-Postfach",
+  "Not_verified": "Nicht verifiziert",
   "Anonymous_Warning": "Erstelle dir einen Account damit du deine Listen speichern kannst und andere Features nutzen kannst, wie den anpassbaren Filter",
   "Game_Term/DoH": "Handwerker",
   "Game_Term/DoL": "Sammler",
@@ -337,6 +338,8 @@
     "no_panel_borders": "Ränder um diverse Elemente deaktivieren",
     "Desktop": "Desktop",
     "Always_on_top": "Immer im Vordergrund",
+    "Start_minimized": "Minimiert im Tray starten",
+    "Always_quit": "Beim Klicken auf den Schließen-Button beenden anstatt zu minimieren",
     "Check_for_update": "Neues Update verfügbar?",
     "Downloading_update": "Lade Update herunter",
     "No_update_available": "Kein Update verfügbar",
@@ -372,7 +375,7 @@
     "Always_HQ_leves": "Freibrief-Routine immer mit HQ-Gegenständen berechnen",
     "Clickthrough_overlay": "Durchklickbares Overlay",
     "Disable_search_history": "Suchverlauf deaktivieren",
-    "Disable_search_debounce": "Deaktivieren Sie die automatische Suche (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
+    "Disable_search_debounce": "Automatische Suche deaktivieren (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
     "Enable_packet_capture": "Paketerfassung aktivieren (für Echtzeit Inventar-Funktionen)",
     "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Square Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
     "Contribute_to_universalis": "Zu Universalis beitragen",
@@ -550,7 +553,7 @@
     "New_tag": "Neue Markierung",
     "Amount_ilvl": "Betrag (ilvl)",
     "Contributions_popup": "Beitragsstatistiken",
-    "Autofill_details": "Input-Fortschritt, wenn Sie Einträge ingame erhalten, indem Sie Paketerfassung verwenden. Dies ist deaktiviert, wenn Sie die Liste verlassen, um unerwünschte Eingaben zu vermeiden.",
+    "Autofill_details": "Gegenstände durch Paketerfassung automatisch einfügen, wenn diese im Spiel erhalten werden. Diese Funktion wird deaktiviert, wenn du die Liste verlässt, um unerwünschte Eingaben zu vermeiden.",
     "Autofill": "Automatisch ausfüllen",
     "Autofill_notification_details": "Benachrichtigung zeigen, wenn ein Gegenstand durch Paketerfassung vollständig erfasst wurde",
     "Autofill_notification": "Benachrichtigung bei Fertigstellung",
@@ -816,7 +819,8 @@
     "Rotation_solver": "Rotations-Löser",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
-    "Remove_final_appraisal": "Remove Final Appraisal buff",
+    "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
+    "Total_macro_duration": "Gesamte Makrodauer: {{duration}}s.",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
@@ -945,7 +949,7 @@
       "Use_more_quality_actions": "Du hast nach Fertigstellung noch Belastbarkeit übrig. Diese solltest du am besten für Qualitäts-Kommandos nutzen.",
       "Use_prudent_touch_manipulation": "Da du Stufe 66+ bist, solltest du die Kombination Manipulation + Nachhaltige Veredelung nutzen, um die maximale Qualität und höhere Zuverlässigkeit zu erhalten.",
       "Use_rapid_synthesis_earlier": "Du solltest Schnelle Bearbeitung nicht zur Fertigstellung nutzen. Nutze es früher um einen Fehlschlag besser ausgleichen zu können und die Zuverlässigkeit der Rotation zu verbessern.",
-      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
+      "Do_not_use_brand_without_name": "Benutze nicht Zeichen der Elemente ohne Name der Elemente.",
       "Avoid_using_good_actions": "Vermeide Aktionen die einen guten Zustand in einem Makro erfordern, da sie nicht vorhergesagt werden können"
     }
   },
@@ -977,7 +981,7 @@
     "Global_exp": "Routine summieren",
     "More_on_gamerescape": "Mehr auf gamerescape (Englisch)",
     "Deliver_to": "Liefere nach {{placename}}",
-    "Hide_large": "Hide large leves",
+    "Hide_large": "Groß-Freibriefe ausblenden",
     "INTRO": {
       "Title": "Freibriefe",
       "First_line": "Diese Seite stellt eine Suche nach einem oder mehreren Freibriefen zur Verfügung um von den Ergebnissen eine Liste zu erstellen",
@@ -1312,6 +1316,7 @@
     "Rowena_splendor": "Rowenas Haus der Wunder",
     "Unlocks": "Freischaltung von",
     "Jump_to_page": "Schnellwechsel zu anderer Seite",
+    "Ishgard_restoration": "Wiederaufbau Ishgards",
     "ITEM": {
       "Masterpiece_base": "Basis",
       "Masterpiece_bonus": "Bonus"
@@ -1484,7 +1489,8 @@
     "3D_model": "Du kannst in der Datenbank die 3D-Modelle von Gegenständen betrachten.",
     "Levequests": "Auf der \"Freibriefe\"-Seite kannst du Listen für Freibriefe vorbereiten und sogar die Erfahrungspunkte dafür berechnen.",
     "Log_tracker": "Auf der Seite \"Notizbuch-Tracker\" kannst du den Fortschritt deiner Notizbücher (Sammler, Handwerker, Fischer) verfolgen.",
-    "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Seitenleiste)."
+    "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Seitenleiste).",
+    "Start_desktop_before_game": "Denk daran, die Desktop-App vor dem Spiel zu starten, um die maximale Datenintegrität zu gewährleisten"
   },
   "RECIPE_FINDER": {
     "Title": "Rezeptfinder",
@@ -1572,7 +1578,7 @@
     "Contribute_to_universalis": "Daten für Universalis beitragen",
     "Reset_inventory": "Dieses Inventar zurücksetzen",
     "Clean_all": "Alle Inventare zurücksetzen",
-    "Search_for_an_item": "Search for an item",
+    "Search_for_an_item": "Nach Gegenstand suchen",
     "BAG": {
       "SaddleBag": "Chocobo-Satteltasche",
       "FC_chest": "FG-Truhe",
@@ -1585,8 +1591,8 @@
     "Title": "Inventaroptimierer",
     "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
     "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
-    "Ignore_contaier": "Ignore this tip for this container",
-    "Remove_ignore_contaier": "Don't ignore this tip for this container anymore",
+    "Ignore_container": "Diesen Tipp für dieses Inventar ignorieren",
+    "Remove_ignore_container": "Diesen Tipp nicht länger für dieses Inventar ignorieren",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
     "No_optimizations": "Keine Optimierungen verfügbar",
     "CAN_BE_BOUGHT": {

@@ -143,7 +143,8 @@
     "Tables": "Tableau",
     "Pie_charts": "Graphiques circulaires",
     "Read_more_on_wiki": "Lire plus de détails sur le wiki",
-    "Apply": "Appliquer"
+    "Apply": "Appliquer",
+    "Open_link": "Ouvrir un lien du site web"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -337,6 +338,8 @@
     "no_panel_borders": "Désactiver les bordures autour des panneaux dans les pages du site",
     "Desktop": "Appli",
     "Always_on_top": "Toujours au premier plan",
+    "Start_minimized": "Démarrer en mode réduit",
+    "Always_quit": "Quitter en cliquant sur le bouton de fermeture (au lieu de minimiser)",
     "Check_for_update": "Chercher une mise à jour",
     "Downloading_update": "Téléchargement en cours...",
     "No_update_available": "Pas de mise à jour disponible",
@@ -817,6 +820,7 @@
     "Recipe_picker_placeholder": "Entrez le nom de la recette que vous voulez simuler",
     "Could_not_find_minstats": "Impossible de trouver les statistiques minimales pour cette rotation",
     "Remove_final_appraisal": "Supprimer le buff \"Dernières vérifications\"",
+    "Total_macro_duration": "Durée totale de la macro : {{duration}}s.",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Bon",
@@ -977,7 +981,7 @@
     "Global_exp": "Utiliser l'exp global",
     "More_on_gamerescape": "Plus d'informations sur gamerescape",
     "Deliver_to": "Remettre à {{placename}}",
-    "Hide_large": "Hide large leves",
+    "Hide_large": "Masquer les grands mandats",
     "INTRO": {
       "Title": "Mandats",
       "First_line": "Cette page vous permet de chercher un ou plusieurs mandat(s) pour créer une liste à partir d'un ou plusieurs résultat(s)",
@@ -1312,6 +1316,7 @@
     "Rowena_splendor": "Splendeurs de Rowena (étoile = +20% bonus)",
     "Unlocks": "Déverrouille",
     "Jump_to_page": "Accès rapide à une autre page",
+    "Ishgard_restoration": "Restauration d'Ishgard",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1484,7 +1489,8 @@
     "3D_model": "Vous pouvez visualiser le modèle 3D des éléments à l'intérieur de la base de données.",
     "Levequests": "Vous pouvez préparer des listes de mandats et prévisualiser leur exp dans la page Mandats.",
     "Log_tracker": "Vous pouvez suivre la progression de votre journal (collecte, fabrication, pêche) à l'intérieur de la page carnets.",
-    "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale."
+    "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale.",
+    "Start_desktop_before_game": "N'oubliez pas de démarrer l'application de bureau avant le jeu pour assurer l'intégrité maximale des données"
   },
   "RECIPE_FINDER": {
     "Title": "Recherche de recette",
@@ -1585,8 +1591,8 @@
     "Title": "Optimiseur d'inventaire",
     "Ignore_item": "Ignorer cette astuce pour cet objet",
     "Remove_ignore_item": "Ne plus ignorer cette astuce pour cet objet",
-    "Ignore_contaier": "Ignorer cette astuce pour cet inventaire",
-    "Remove_ignore_contaier": "Ne plus ignorer cette astuce pour cet inventaire",
+    "Ignore_container": "Ignorer cette astuce pour cet inventaire",
+    "Remove_ignore_container": "Ne plus ignorer cette astuce pour cet inventaire",
     "Show_ignored": "Afficher les objets ignorés",
     "No_optimizations": "Aucune optimisation disponible",
     "CAN_BE_BOUGHT": {

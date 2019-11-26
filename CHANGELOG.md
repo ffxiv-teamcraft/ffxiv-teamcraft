@@ -2,6 +2,104 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.7"></a>
+## [6.2.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.6...v6.2.7) (2019-11-24)
+
+
+### Bug Fixes
+
+* **alarms:** fixed a layout issue with compact display ([ad02575](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ad02575))
+* **db:** fixed leve turn-ins count for leves ([66e2944](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66e2944))
+* **desktop:** prevent too many firewall rules addition ([c7295ac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c7295ac))
+* **inventory:** fixed an issue with inventory persistence in database ([b1f4a96](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b1f4a96))
+* **optimizer:** added more ignored container for handins and gil inventories ([e8bb672](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8bb672))
+* **packets:** fixed packet capture for inventory stuff ([c1c730a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1c730a))
+* **search:** Fix recipe search not showing any items in some cases ([a13249c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a13249c))
+* **search:** fixed an issue with some search terms not returning results at all ([21d5abc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/21d5abc))
+* Correct world ID not changing for data uploads when appropriate ([8ab5186](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8ab5186))
+
+
+### Features
+
+* **core:** added new tip in the pool: Start_desktop_before_game ([d2bf3d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d2bf3d5))
+* **data:** added fishing data capture inside desktop app ([19b44cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/19b44cc))
+* **desktop:** app now stays in tray when closing (with an option to always quit) ([ee85a38](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ee85a38))
+* **desktop:** new option to start the app as minimized in tray ([a634072](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a634072))
+
+
+
+<a name="6.2.6"></a>
+## [6.2.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.4...v6.2.6) (2019-11-16)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarm overlay toggle not working properly ([0738167](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0738167))
+* **inventory:** fixed an issue with ishgard deliveries counting as if they were obtained ([3bfc38a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3bfc38a))
+* **inventory:** inventory search is no longer case-sensitive ([eb88f1b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb88f1b))
+* **inventory:** inventory sync in database will only happen every 30 seconds now ([29e9bdb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/29e9bdb))
+* **list:** fixed an issue with final items not being marked as done properly ([1ad8106](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ad8106))
+* **list:** smaller lists will now be more reactive ([a96abb8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a96abb8))
+* **optimizer:** fixed an issue with inventory optimizer not loading properly ([85239fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/85239fc))
+* **rotation:** rotation picker search is no longer case-sensitive ([73469e4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73469e4))
+* **search:** removed dated items from search results ([7a2f264](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7a2f264))
+* **simulator:** fixed an issue with dirty warning popup spawning way too much ([6ce73ee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6ce73ee))
+
+
+### Features
+
+* **desktop:** added a button to open a website link in desktop ([7676b39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7676b39))
+* **simulator:** added Ishgard restoration collectability breakpoints ([a51459c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a51459c))
+* **simulator:** added total macro duration to macro popup ([65502bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/65502bf))
+
+
+
+<a name="6.2.5"></a>
+## [6.2.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.4...v6.2.5) (2019-11-16)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarm overlay toggle not working properly ([0738167](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0738167))
+* **inventory:** fixed an issue with ishgard deliveries counting as if they were obtained ([3bfc38a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3bfc38a))
+* **inventory:** inventory search is no longer case-sensitive ([eb88f1b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb88f1b))
+* **inventory:** inventory sync in database will only happen every 30 seconds now ([29e9bdb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/29e9bdb))
+* **list:** smaller lists will now be more reactive ([a96abb8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a96abb8))
+* **optimizer:** fixed an issue with inventory optimizer not loading properly ([85239fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/85239fc))
+* **rotation:** rotation picker search is no longer case-sensitive ([73469e4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73469e4))
+* **search:** removed dated items from search results ([7a2f264](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7a2f264))
+* **simulator:** fixed an issue with dirty warning popup spawning way too much ([6ce73ee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6ce73ee))
+
+
+### Features
+
+* **desktop:** added a button to open a website link in desktop ([7676b39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7676b39))
+* **simulator:** added Ishgard restoration collectability breakpoints ([a51459c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a51459c))
+* **simulator:** added total macro duration to macro popup ([65502bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/65502bf))
+
+
+
+<a name="6.2.4"></a>
+## [6.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.3...v6.2.4) (2019-11-13)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an issue making Teamcraft start in tray bar ([6fad935](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6fad935))
+* **inventory:** saving inventory in database will now use less resources and be more reactive ([dd2a46c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd2a46c))
+
+
+
+<a name="6.2.3"></a>
+## [6.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.2...v6.2.3) (2019-11-12)
+
+
+### Bug Fixes
+
+* Update opcode for class stats to fix stat autofill ([8b02a67](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8b02a67))
+
+
+
 <a name="6.2.2"></a>
 ## [6.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.1...v6.2.2) (2019-11-12)
 

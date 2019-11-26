@@ -143,7 +143,8 @@
     "Tables": "Table",
     "Pie_charts": "Pie charts",
     "Read_more_on_wiki": "Read more details on wiki",
-    "Apply": "Apply"
+    "Apply": "Apply",
+    "Open_link": "Open website link"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -337,6 +338,8 @@
     "no_panel_borders": "Desativar as bordas em torno de vários painéis",
     "Desktop": "Área de Trabalho",
     "Always_on_top": "Sempre no topo",
+    "Start_minimized": "Start minimized in tray",
+    "Always_quit": "Quit when clicking on close button (instead of minimizing)",
     "Check_for_update": "Verificar atualizações",
     "Downloading_update": "Baixando atualizações",
     "No_update_available": "Não há atualizações disponíveis",
@@ -817,6 +820,7 @@
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "Could_not_find_minstats": "Could not find min stats for this rotation",
     "Remove_final_appraisal": "Remove Final Appraisal buff",
+    "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Good",
@@ -1312,6 +1316,7 @@
     "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
     "Unlocks": "Unlocks",
     "Jump_to_page": "Quick jump to another page",
+    "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
@@ -1484,7 +1489,8 @@
     "3D_model": "You can preview 3D model of items inside the database.",
     "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
     "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
-    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar)."
+    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar).",
+    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity"
   },
   "RECIPE_FINDER": {
     "Title": "Recipe finder",
@@ -1585,8 +1591,8 @@
     "Title": "Inventory optimizer",
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
-    "Ignore_contaier": "Ignore this tip for this container",
-    "Remove_ignore_contaier": "Don't ignore this tip for this container anymore",
+    "Ignore_container": "Ignore this tip for this container",
+    "Remove_ignore_container": "Don't ignore this tip for this container anymore",
     "Show_ignored": "Show ignored items",
     "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {

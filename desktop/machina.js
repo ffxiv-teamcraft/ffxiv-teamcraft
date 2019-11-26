@@ -18,7 +18,12 @@ module.exports.start = function(win, config, verbose, winpcap) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
-      exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
+      let line = 0;
+      exec('netsh advfirewall firewall show rule name="FFXIVTeamcraft"', (err, stdout) => {
+        if (stdout.indexOf('FFXIVTeamcraft') === -1) {
+          exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
+        }
+      });
 
       const options = isDev ?
         {
@@ -38,6 +43,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
       }
 
       const acceptedPackets = [
+        'statusEffectList',
         'itemInfo',
         'updateInventorySlot',
         'currencyCrystalInfo',
@@ -54,7 +60,18 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'updateClassInfo',
         'actorControl',
         'initZone',
-        'weatherChange'
+        'weatherChange',
+        'aetherReductionDlg',
+        'desynthOrReductionResult',
+        'persistentEffect',
+        'effectResult',
+        'eventPlay',
+        'eventStart',
+        'eventFinish',
+        'eventUnk0',
+        'eventUnk1',
+        'updatePositionHandler',
+        'actorControlSelf'
       ];
 
       Machina = new MachinaFFXIV(options);

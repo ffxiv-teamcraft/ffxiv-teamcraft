@@ -112,7 +112,7 @@ export function listsReducer(
       state = {
         ...state,
         listDetails: [
-          ...state.listDetails.map(list => list.$key === action.payload.$key ? action.payload : list)
+          ...state.listDetails.map(list => list.$key === action.payload.$key ? action.payload.clone(true) : list)
         ]
       };
       break;

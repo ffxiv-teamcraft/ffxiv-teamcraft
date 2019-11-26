@@ -3,29 +3,11 @@ import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from './core/electron/ipc.service';
-import {
-  NavigationCancel,
-  NavigationEnd,
-  NavigationError,
-  NavigationStart,
-  Router,
-  RouterEvent
-} from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import {
-  catchError,
-  delay,
-  distinctUntilChanged,
-  filter,
-  first,
-  map,
-  shareReplay,
-  startWith,
-  switchMap,
-  tap
-} from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -44,7 +26,7 @@ import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
 import { BehaviorSubject, interval, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
 import { MediaObserver } from '@angular/flex-layout';
@@ -61,6 +43,11 @@ import { MachinaService } from './core/electron/machina.service';
 import { UniversalisService } from './core/api/universalis.service';
 import { GubalService } from './core/api/gubal.service';
 import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
+import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
+import { Apollo } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular-link-http';
+import { ApolloLink, concat } from 'apollo-link';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
 declare const gtag: Function;
 
@@ -144,7 +131,8 @@ export class AppComponent implements OnInit {
         '3D_model',
         'Levequests',
         'Log_tracker',
-        'Desktop_app_overlay'
+        'Desktop_app_overlay',
+        'Start_desktop_before_game'
       ];
       return tips[Math.floor(Math.random() * tips.length)];
     }),
@@ -166,7 +154,29 @@ export class AppComponent implements OnInit {
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
-              private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object) {
+              private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
+              apollo: Apollo, httpLink: HttpLink) {
+
+    this.authFacade.idToken$
+      .pipe(
+        filter(token => token.claims['https://hasura.io/jwt/claims'] !== undefined)
+      )
+      .subscribe(idToken => {
+        const link = httpLink.create({ uri: 'http://35.236.87.103/v1/graphql' });
+        const authMiddleware = new ApolloLink((operation, forward) => {
+          // add the authorization to the headers
+          operation.setContext({
+            headers: new HttpHeaders().set('Authorization', `Bearer ${idToken.token}`)
+          });
+
+          return forward(operation);
+        });
+
+        apollo.create({
+          link: concat(authMiddleware, link),
+          cache: new InMemoryCache()
+        });
+      });
 
     this.showGiveaway = false;
 
@@ -479,6 +489,20 @@ export class AppComponent implements OnInit {
         this.hasDesktopReloader$.next(null);
       }, 30000);
     }
+  }
+
+  openLink(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('COMMON.Open_link'),
+      nzContent: TextQuestionPopupComponent,
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined && res.startsWith('https://ffxivteamcraft.com/'))
+      )
+      .subscribe((data: string) => {
+        this.router.navigate(data.replace('https://ffxivteamcraft.com/', '').split('/'));
+      });
   }
 
   use(lang: string, fromIpc = false, skipStorage = false): void {

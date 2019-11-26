@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { InventoryActionTypes, InventoryLoaded, UpdateInventory } from './inventory.actions';
+import { InventoryActionTypes, InventoryLoaded, ResetInventory, UpdateInventory } from './inventory.actions';
 import { UserInventoryService } from '../../../core/database/user-inventory.service';
-import { catchError, debounceTime, distinctUntilKeyChanged, map, switchMap, switchMapTo } from 'rxjs/operators';
+import { auditTime, catchError, distinctUntilKeyChanged, map, switchMap, switchMapTo, withLatestFrom } from 'rxjs/operators';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { SettingsService } from '../../settings/settings.service';
@@ -49,9 +49,9 @@ export class InventoryEffects {
   @Effect({ dispatch: false })
   updateInventory$ = this.actions$.pipe(
     ofType<UpdateInventory>(InventoryActionTypes.UpdateInventory),
-    debounceTime(2000),
+    auditTime(30000),
     switchMap(action => {
-      if (this.settings.persistInventory) {
+      if (this.settings.persistInventory || !this.platform.isDesktop()) {
         if (action.force) {
           return this.inventoryService.set(action.payload.$key, action.payload);
         } else {
@@ -61,6 +61,18 @@ export class InventoryEffects {
         localStorage.setItem(INVENTORY_FEATURE_KEY, JSON.stringify(action.payload));
         return of(null);
       }
+    })
+  );
+
+  @Effect()
+  resetInventory$ = this.actions$.pipe(
+    ofType<ResetInventory>(InventoryActionTypes.ResetInventory),
+    withLatestFrom(this.authFacade.user$),
+    map(([, user]) => {
+      const newInventory = new UserInventory();
+      newInventory.characterId = user.defaultLodestoneId;
+      newInventory.$key = user.$key;
+      return new UpdateInventory(newInventory, true);
     })
   );
 
