@@ -65,6 +65,7 @@ export class ListsEffects {
     distinctUntilChanged(),
     switchMap((userId) => {
       this.localStore = this.serializer.deserialize<List>(JSON.parse(localStorage.getItem('offline-lists') || '[]'), [List]);
+      this.localStore.forEach(list => list.afterDeserialized());
       this.listsFacade.offlineListsLoaded(this.localStore);
       return this.listService.getByForeignKey(TeamcraftUser, userId)
         .pipe(

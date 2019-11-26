@@ -51,22 +51,27 @@ if (isDev) {
 }
 
 if (!options.multi) {
-
-  app.requestSingleInstanceLock();
-  app.on('second-instance', (event, commandLine, cwd) => {
-    // Someone tried to run a second instance, we should focus our window.
-    if (win && !options.multi) {
-      const cmdLine = commandLine[1];
-      if (cmdLine) {
-        let path = commandLine[1].substr(12);
-        log.info(`Opening from second-instance : `, path);
-        win && win.webContents.send('navigate', path);
+  const gotTheLock = app.requestSingleInstanceLock();
+  if (!gotTheLock) {
+    app.isQuitting = true;
+    app.quit();
+  } else {
+    app.on('second-instance', (event, commandLine, cwd) => {
+      // Someone tried to run a second instance, we should focus our window.
+      if (win && !options.multi) {
+        const cmdLine = commandLine[1];
+        if (cmdLine) {
+          let path = commandLine[1].substr(12);
+          log.info(`Opening from second-instance : `, path);
+          win && win.webContents.send('navigate', path);
+          win.focus();
+        }
+        if (win.isMinimized()) win.restore();
+        win.show();
         win.focus();
       }
-      if (win.isMinimized()) win.restore();
-      win.focus();
-    }
-  });
+    });
+  }
 }
 
 let deepLink = '';
@@ -418,7 +423,7 @@ ipcMain.on('always-on-top:get', (event) => {
 });
 
 ipcMain.on('always-quit', (event, flag) => {
-  config.set('always-quit', flag)
+  config.set('always-quit', flag);
 });
 
 ipcMain.on('always-quit:get', (event) => {
