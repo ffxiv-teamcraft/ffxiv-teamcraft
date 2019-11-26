@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.9"></a>
+## [6.2.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.7...v6.2.9) (2019-11-26)
+
+
+### Bug Fixes
+
+* fix for playTime packet file in machina wrapper ([b4a3723](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b4a3723))
+* **desktop:** fixed an issue with desktop app being started again when in tray ([504ac4e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/504ac4e))
+* **list:** fixed an issue breaking offline lists entirely ([8bad892](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8bad892))
+
+
+
 <a name="6.2.8"></a>
 ## [6.2.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.7...v6.2.8) (2019-11-26)
 
