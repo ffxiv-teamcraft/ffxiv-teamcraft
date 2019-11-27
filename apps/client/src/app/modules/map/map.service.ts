@@ -172,7 +172,7 @@ export class MapService {
     return aetherytes
       .filter((aetheryte) => aetheryte.map === id)
       .map((aetheryte: Aetheryte) => {
-        aetheryte.aethernetCoords = aetherstream[id];
+        aetheryte.aethernetCoords = aetherstream[id] || { x: 0, y: 0 };
         return aetheryte;
       });
   }
