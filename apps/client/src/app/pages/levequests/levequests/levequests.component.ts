@@ -3,18 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  filter,
-  first,
-  map,
-  mergeMap,
-  shareReplay,
-  switchMap,
-  takeUntil,
-  tap
-} from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -89,8 +78,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const res$ = this.query$.pipe(
-      tap(query => {
+    const res$ = combineLatest([this.query$, this.job$, this.levelMin$, this.levelMax$]).pipe(
+      tap(([query]) => {
         this.router.navigate([], {
           queryParamsHandling: 'merge',
           queryParams: { query: query.length > 0 ? query : null },
@@ -98,24 +87,26 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
         });
       }),
       debounceTime(500),
-      filter((query) => (query.length > 3 || this.job$.value !== null) && this.levelMin$.value <= this.levelMax$.value),
+      filter(([query, job, levelMin, levelMax]) => {
+        return (query.length > 3 || job !== null) && levelMin <= levelMax;
+      }),
       tap(() => {
         this.showIntro = false;
         this.loading = true;
         this.allSelected = false;
       }),
-      switchMap(query => {
+      switchMap(([query, job, levelMin, levelMax]) => {
         let filters;
 
-        if (this.job$.value) {
-          filters = [{ column: 'ClassJobCategoryTargetID', operator: '=', value: +this.job$.value + 1 }];
+        if (job) {
+          filters = [{ column: 'ClassJobCategoryTargetID', operator: '=', value: +job + 1 }];
         } else {
           filters = [{ column: 'ClassJobCategoryTargetID', operator: '>=', value: 9 },
             { column: 'ClassJobCategoryTargetID', operator: '<=', value: 16 }];
         }
 
-        filters.push({ column: 'ClassJobLevel', operator: '>=', value: this.levelMin$.value },
-          { column: 'ClassJobLevel', operator: '<=', value: this.levelMax$.value });
+        filters.push({ column: 'ClassJobLevel', operator: '>=', value: levelMin },
+          { column: 'ClassJobLevel', operator: '<=', value: levelMax });
 
         return this.xivapi.search({
           indexes: [SearchIndex.LEVE], string: query, filters: filters,
@@ -159,7 +150,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
             startPlaceId: leve.PlaceNameStart.ID,
             deliveryPlaceId: leve.LevelLevemete.Map.PlaceNameTargetID,
             repeats: leve.CraftLeve.Repeats,
-            allowanceCost: leve.AllowanceCost,
+            allowanceCost: leve.AllowanceCost
           });
         });
 
@@ -169,15 +160,15 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
           } else {
             return a.jobId - b.jobId;
           }
-        }).filter((a) =>{
-          return !hideLarge || a.allowanceCost === 1
+        }).filter((a) => {
+          return !hideLarge || a.allowanceCost === 1;
         });
       }),
       tap(() => this.loading = false)
     );
 
     combineLatest([this.auth.gearSets$, this.job$]).pipe(
-      distinctUntilChanged(([, a],[, b]) => a === b),
+      distinctUntilChanged(([, a], [, b]) => a === b),
       map(([sets, job]) => {
         return sets.find(set => set.jobId === job);
       }),
@@ -191,9 +182,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
     this.route.queryParams
       .subscribe(params => {
         this.query$.next(params.query || '');
-        this.job$.next(params.job ? +params.job : null);
-        this.levelMin$.next(params.min || 1);
-        this.levelMax$.next(params.max || 10);
+        this.job$.next(+params.job ? +params.job : null);
+        this.levelMin$.next(+params.min || 1);
+        this.levelMax$.next(+params.max || 10);
       });
   }
 
