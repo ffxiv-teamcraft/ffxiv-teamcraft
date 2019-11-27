@@ -14,8 +14,10 @@ export class I18nPipe implements PipeTransform {
   }
 
   transform(value: any): string {
-    if ((this.cache === undefined && value)
-      || this.cache.lang !== this.translate.currentLang) {
+    if (this.cache === undefined || this.cache.lang !== this.translate.currentLang) {
+      if (!value) {
+        return value;
+      }
       let res: string;
       if (this.isI18nEntry(value.name)) {
         res = this.i18n.getName(value.name);
@@ -24,8 +26,10 @@ export class I18nPipe implements PipeTransform {
       } else {
         res = value.name;
       }
-      this.cache.value = res && (res.charAt(0).toUpperCase() + res.slice(1));
-      this.cache.lang = this.translate.currentLang;
+      this.cache = {
+        value: res && (res.charAt(0).toUpperCase() + res.slice(1)),
+        lang: this.translate.currentLang
+      };
     }
     return this.cache.value;
   }
