@@ -25,7 +25,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   protected prepareData(data: Partial<T>): T {
-    const clone: Partial<T> = { ...data };
+    const clone: Partial<T> = JSON.parse(JSON.stringify(data));
     delete clone.$key;
     Object.keys(clone).forEach(key => {
       if (clone[key] === undefined) {
