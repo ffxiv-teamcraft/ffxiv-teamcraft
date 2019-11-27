@@ -81,7 +81,9 @@ export class InventoryOptimizerComponent {
               } else {
                 entry.totalLength = entry.items.filter(i => !i.ignored).length;
               }
-              totalLength += entry.totalLength;
+              if (this.showIgnored || !entry.ignored) {
+                totalLength += entry.totalLength;
+              }
               return entry;
             });
             opt.totalLength = totalLength;
