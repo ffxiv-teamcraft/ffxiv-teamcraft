@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.10"></a>
+## [6.2.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.9...v6.2.10) (2019-11-27)
+
+
+### Bug Fixes
+
+* **alarms:** fixed a layout issue with compact display mode ([040309d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/040309d))
+* **alarms:** fixed an issue when creating an alarm for some items ([be4e1bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/be4e1bd))
+* **layout:** fixed an issue when creating a new layout ([08da8c5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08da8c5))
+* **levequests:** fixed an issue with levequests page being unresponsive ([b7889a1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b7889a1))
+* **optimizer:** fixed an issue with ignored containers not affecting total count ([0983e32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0983e32))
+
+
+
 <a name="6.2.9"></a>
 ## [6.2.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.7...v6.2.9) (2019-11-26)
 
