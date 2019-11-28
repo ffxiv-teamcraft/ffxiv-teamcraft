@@ -157,26 +157,13 @@ export class AppComponent implements OnInit {
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               apollo: Apollo, httpLink: HttpLink) {
 
-    this.authFacade.idToken$
-      .pipe(
-        filter(token => token.claims['https://hasura.io/jwt/claims'] !== undefined)
-      )
-      .subscribe(idToken => {
-        const link = httpLink.create({ uri: 'http://35.236.87.103/v1/graphql' });
-        const authMiddleware = new ApolloLink((operation, forward) => {
-          // add the authorization to the headers
-          operation.setContext({
-            headers: new HttpHeaders().set('Authorization', `Bearer ${idToken.token}`)
-          });
 
-          return forward(operation);
-        });
+    const link = httpLink.create({ uri: 'http://35.236.87.103/v1/graphql' });
 
-        apollo.create({
-          link: concat(authMiddleware, link),
-          cache: new InMemoryCache()
-        });
-      });
+    apollo.create({
+      link: link,
+      cache: new InMemoryCache()
+    });
 
     this.showGiveaway = false;
 
