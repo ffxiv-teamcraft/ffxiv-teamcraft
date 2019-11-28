@@ -10,18 +10,21 @@ export class ApolloInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    return this.authFacade.idToken$
-      .pipe(
-        filter(token => token.claims['https://hasura.io/jwt/claims'] !== undefined),
-        switchMap(idToken => {
-          const clone = req.clone({
-            setHeaders: {
-              Authorization: `Bearer ${idToken.token}`
-            }
-          });
-          return next.handle(clone);
-        })
-      );
+    if (req.url.indexOf('/graphql') > -1) {
+      return this.authFacade.idToken$
+        .pipe(
+          filter(token => token.claims['https://hasura.io/jwt/claims'] !== undefined),
+          switchMap(idToken => {
+            const clone = req.clone({
+              setHeaders: {
+                Authorization: `Bearer ${idToken.token}`
+              }
+            });
+            return next.handle(clone);
+          })
+        );
+    }
+    return next.handle(req);
   }
 }
 
