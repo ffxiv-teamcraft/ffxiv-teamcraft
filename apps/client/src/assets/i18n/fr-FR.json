@@ -1597,7 +1597,7 @@
     "No_optimizations": "Aucune optimisation disponible",
     "CAN_BE_BOUGHT": {
       "Title": "Objets qui peuvent être achetés avec des gils",
-      "Message": "Cet objet peut être acheté aux PNJ avec gil et n'a pas besoin de réputation de tribu."
+      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation."
     },
     "DUPLICATES": {
       "Title": "Éléments qui sont dupliqués à travers plusieurs conteneurs",
