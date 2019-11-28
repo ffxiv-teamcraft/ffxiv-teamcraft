@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.11"></a>
+## [6.2.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.10...v6.2.11) (2019-11-28)
+
+
+### Bug Fixes
+
+* **custom-items:** fixed an issue with custom items not importing properly ([dfc0693](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dfc0693))
+* **desktop:** fixed updateInventorySlot packet ([160980a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/160980a))
+* **inventory:** fixed an issue with inventory item names being wrong ([a91ee3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a91ee3a))
+* **optimizer:** updated grammar in optimizer l10n ([37e1c57](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/37e1c57))
+
+
+
 <a name="6.2.10"></a>
 ## [6.2.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.9...v6.2.10) (2019-11-27)
 
