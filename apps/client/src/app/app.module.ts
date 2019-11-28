@@ -98,6 +98,7 @@ import { InventoryModule } from './modules/inventory/inventory.module';
 import { EorzeaModule } from './modules/eorzea/eorzea.module';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { GraphQLModule } from './graphql.module';
+import { ApolloInterceptor } from './apollo-interceptor';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -166,7 +167,8 @@ const nzConfig: NzConfig = {
     },
     { provide: FirestoreSettingsToken, useValue: {} },
     { provide: NZ_ICONS, useValue: icons },
-    { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ApolloInterceptor, multi: true }
   ],
   imports: [
     FlexLayoutModule,

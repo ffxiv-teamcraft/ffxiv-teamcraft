@@ -8,13 +8,15 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class I18nPipe implements PipeTransform {
 
-  private cache: { lang: string, value: string };
+  private cache: { input: any, lang: string, value: string };
 
   constructor(private i18n: I18nToolsService, private translate: TranslateService) {
   }
 
   transform(value: any): string {
-    if (this.cache === undefined || this.cache.lang !== this.translate.currentLang) {
+    if (this.cache === undefined
+      || this.cache.input !== value
+      || this.cache.lang !== this.translate.currentLang) {
       if (!value) {
         return value;
       }
@@ -27,6 +29,7 @@ export class I18nPipe implements PipeTransform {
         res = value.name;
       }
       this.cache = {
+        input: value,
         value: res && (res.charAt(0).toUpperCase() + res.slice(1)),
         lang: this.translate.currentLang
       };

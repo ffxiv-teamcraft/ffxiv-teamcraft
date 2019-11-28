@@ -1597,7 +1597,7 @@
     "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
       "Title": "Items that can be bought with gil",
-      "Message": "This item can be bought to NPCs with gil and does not require beast tribe reputation."
+      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation."
     },
     "DUPLICATES": {
       "Title": "Items that are duplicated across multiple containers",
