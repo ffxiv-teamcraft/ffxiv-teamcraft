@@ -842,13 +842,13 @@ if (hasTodo('fates')) {
 
 if (hasTodo('instances')) {
   const instances = {};
-  getAllPages('https://xivapi.com/InstanceContent?columns=ID,Name_*,Icon,InstanceContentTextDataBossEndTargetID,InstanceContentTextDataBossStartTargetID,InstanceContentTextDataObjectiveEndTargetID,InstanceContentTextDataObjectiveStartTargetID').subscribe(page => {
+  getAllPages('https://xivapi.com/InstanceContent?columns=ID,ContentFinderCondition.Name_*,Icon,InstanceContentTextDataBossEndTargetID,InstanceContentTextDataBossStartTargetID,InstanceContentTextDataObjectiveEndTargetID,InstanceContentTextDataObjectiveStartTargetID').subscribe(page => {
     page.Results.forEach(instance => {
       instances[instance.ID] = {
-        en: instance.Name_en,
-        ja: instance.Name_ja,
-        de: instance.Name_de,
-        fr: instance.Name_fr,
+        en: instance.ContentFinderCondition.Name_en,
+        ja: instance.ContentFinderCondition.Name_ja,
+        de: instance.ContentFinderCondition.Name_de,
+        fr: instance.ContentFinderCondition.Name_fr,
         icon: instance.Icon
       };
       const contentText = [
