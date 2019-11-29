@@ -9,11 +9,12 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
+import * as shape from 'd3-shape';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 
 @Component({
@@ -30,6 +31,7 @@ export class FishComponent extends TeamcraftPageComponent {
   public gubalData$: Observable<any>;
 
   public highlightTime$ = this.etime.getEorzeanTime().pipe(
+    distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours()),
     map(time => {
       return [{
         name: `${time.getUTCHours()}:00`,
@@ -90,12 +92,27 @@ export class FishComponent extends TeamcraftPageComponent {
               baitId
               occurences
             }
+            hooksets_per_fish(where:{itemId: {_eq: ${fishId}}, hookset: {_neq: 0}}) {
+              hookset,
+              occurences
+            }
+            tug_per_fish(where:{itemId: {_eq: ${fishId}}}) {
+              tug,
+              occurences
+            }
+            bite_time_per_fish(where:{itemId: {_eq: ${fishId}}}) {
+              biteTime,
+              occurences
+            }
           }
         `;
         return this.apollo.query<any>({ query: dataQuery });
       }),
       map(result => {
         const hours = Array.from(Array(24).keys());
+        const totalHooksets = result.data.hooksets_per_fish.reduce((acc, row) => acc + row.occurences, 0);
+        const totalTugs = result.data.tug_per_fish.reduce((acc, row) => acc + row.occurences, 0);
+        const sortedBiteTimes = result.data.bite_time_per_fish.sort((a, b) => a.biteTime - b.biteTime);
         return {
           etimesChart: {
             view: [600, 300],
@@ -122,7 +139,38 @@ export class FishComponent extends TeamcraftPageComponent {
                   value: entry.occurences
                 };
               })
-          }
+          },
+          biteTimeChart: {
+            view: [600, 300],
+            data: [
+              {
+                name: '',
+                series: sortedBiteTimes.map(entry => {
+                  return {
+                    name: entry.biteTime / 10,
+                    value: entry.occurences
+                  };
+                })
+              }
+            ],
+            curve: shape.curveBasisOpen,
+            min: sortedBiteTimes[0].biteTime / 10,
+            max: sortedBiteTimes[sortedBiteTimes.length - 1].biteTime / 10
+          },
+          hooksets: result.data.hooksets_per_fish
+            .sort((a, b) => b.occurences - a.occurences)
+            .map(entry => {
+              entry.hookset = entry.hookset === 1 ? 4103 : 4179;
+              entry.percent = 100 * entry.occurences / totalHooksets;
+              return entry;
+            }),
+          tugs: result.data.tug_per_fish
+            .sort((a, b) => b.occurences - a.occurences)
+            .map(entry => {
+              entry.tugName = ['Medium', 'Light', 'Big'][entry.tug];
+              entry.percent = 100 * entry.occurences / totalTugs;
+              return entry;
+            })
         };
       })
     );

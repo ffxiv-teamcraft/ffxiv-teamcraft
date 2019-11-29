@@ -1,8 +1,29 @@
 @import '../common-db';
 
-::ng-deep .ngx-charts {
-  text {
-    fill: var(--text-color) !important;
+::ng-deep {
+  .ngx-charts {
+    text {
+      fill: var(--text-color) !important;
+    }
+  }
+
+  .legend-item:hover {
+    color: var(--text-color) !important;
+    opacity: .8;
+  }
+
+  .ant-card {
+    background-color: var(--topbar-color);
+
+    .ant-card-body {
+      border-top: 1px solid #444;
+    }
+
+    &.no-graph {
+      .ant-card-body {
+        padding: 12px 24px !important;
+      }
+    }
   }
 }
 

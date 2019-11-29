@@ -1323,7 +1323,18 @@
     },
     "FISH": {
       "Hour": "Hour of the day",
-      "Baits": "Bait used"
+      "Baits": "Bait used",
+      "Misc": "Other info",
+      "Hooksets": "Hooksets",
+      "Tugs": "Tugs",
+      "Seconds": "Seconds",
+      "Amount_of_bites": "# of bites",
+      "Bite_time": "Bite time",
+      "TUG": {
+        "Light": "Light",
+        "Medium": "Medium",
+        "Big": "Big"
+      }
     },
     "NODE": {
       "Items": "Items",

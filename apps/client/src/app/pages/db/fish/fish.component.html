@@ -47,29 +47,71 @@
 
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <ng-container *ngIf="settings.theme as theme">
-      <div *ngIf="gubalData$ | async as data" fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
-        <nz-card [nzTitle]="'DB.FISH.Hour' | translate" [style.width.px]="data.etimesChart.view[0] + 48">
-          <ngx-charts-bar-vertical
-            [view]="data.etimesChart.view"
-            [scheme]="{domain: [theme.primary]}"
-            [customColors]="highlightTime$ | async"
-            [gradient]="false"
-            [xAxis]="true"
-            [yAxis]="true"
-            [legend]="false"
-            [showXAxisLabel]="false"
-            [showYAxisLabel]="false"
-            barPadding="5"
-            [results]="data.etimesChart.data"
-          ></ngx-charts-bar-vertical>
-        </nz-card>
-        <nz-card [nzTitle]="'DB.FISH.Baits' | translate" [style.width.px]="data.baitsChart.view[0] + 48">
-          <ngx-charts-advanced-pie-chart
-            [view]="data.baitsChart.view"
-            [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
-            [results]="data.baitsChart.data"
-          ></ngx-charts-advanced-pie-chart>
-        </nz-card>
+      <div *ngIf="gubalData$ | async as data" fxLayout="column" fxLayoutGap="24px">
+        <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
+          <nz-card [nzTitle]="'DB.FISH.Hour' | translate" [style.width.px]="data.etimesChart.view[0] + 48">
+            <ngx-charts-bar-vertical
+              [view]="data.etimesChart.view"
+              [scheme]="{domain: [theme.primary]}"
+              [customColors]="highlightTime$ | async"
+              [gradient]="false"
+              [xAxis]="true"
+              [yAxis]="true"
+              [legend]="false"
+              [showXAxisLabel]="false"
+              [showYAxisLabel]="false"
+              barPadding="5"
+              [results]="data.etimesChart.data"
+            ></ngx-charts-bar-vertical>
+          </nz-card>
+          <nz-card [nzTitle]="'DB.FISH.Baits' | translate" [style.width.px]="data.baitsChart.view[0] + 48">
+            <ngx-charts-advanced-pie-chart
+              [view]="data.baitsChart.view"
+              [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
+              [results]="data.baitsChart.data"
+            ></ngx-charts-advanced-pie-chart>
+          </nz-card>
+          <nz-card [nzTitle]="'DB.FISH.Misc' | translate" class="no-graph">
+            <div fxLayout="column" fxLayoutGap="20px">
+              <div fxLayout="column" fxLayoutGap="10px">
+                <nz-divider [nzText]="'DB.FISH.Hooksets' | translate" nzOrientation="left"></nz-divider>
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.hooksets">
+                  <img src="{{row.hookset | actionIcon | xivapiIcon}}" alt="" class="round-icon">
+                  <div>
+                    <div>{{row.hookset | actionName | i18n}}</div>
+                    <div>{{row.percent | number:'1.0-1'}}%</div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <nz-divider [nzText]="'DB.FISH.Tugs' | translate" nzOrientation="left"></nz-divider>
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.tugs">
+                  <div>{{('DB.FISH.TUG.' + row.tugName) | translate}}</div>
+                  <div>{{row.percent | number:'1.0-1'}}%</div>
+                </div>
+              </div>
+            </div>
+          </nz-card>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
+          <nz-card nzTitle="{{'DB.FISH.Bite_time' | translate}} ({{data.biteTimeChart.min | number: '1.0-1'}}s - {{data.biteTimeChart.max | number: '1.0-1'}}s)" [style.width.px]="data.etimesChart.view[0] + 48">
+            <ngx-charts-line-chart
+              [view]="data.biteTimeChart.view"
+              [scheme]="{domain: [theme.primary]}"
+              [gradient]="false"
+              [xAxis]="true"
+              [yAxis]="true"
+              [showGridLines]="false"
+              [legend]="false"
+              [showXAxisLabel]="true"
+              [showYAxisLabel]="true"
+              [xAxisLabel]="'DB.FISH.Seconds' | translate"
+              [yAxisLabel]="'DB.FISH.Amount_of_bites' | translate"
+              [curve]="data.biteTimeChart.curve"
+              [results]="data.biteTimeChart.data"
+            ></ngx-charts-line-chart>
+          </nz-card>
+        </div>
       </div>
     </ng-container>
   </div>
