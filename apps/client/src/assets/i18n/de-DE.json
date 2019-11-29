@@ -1597,7 +1597,7 @@
     "No_optimizations": "Keine Optimierungen verfügbar",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
-      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation."
+      "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen."
     },
     "DUPLICATES": {
       "Title": "Gegenstände, die in mehreren Inventaren enthalten sind",
