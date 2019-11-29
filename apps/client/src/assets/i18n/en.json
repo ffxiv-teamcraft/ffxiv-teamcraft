@@ -1321,6 +1321,10 @@
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
     },
+    "FISH": {
+      "Hour": "Hour of the day",
+      "Baits": "Bait used"
+    },
     "NODE": {
       "Items": "Items",
       "Possible_bonuses": "Possible bonuses",

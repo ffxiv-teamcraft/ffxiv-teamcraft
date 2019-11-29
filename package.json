@@ -141,7 +141,7 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "@nrwl/angular": "8.0.0",
     "@swimlane/dragula": "^3.7.3",
-    "@swimlane/ngx-charts": "^12.0.1",
+    "@swimlane/ngx-charts": "^12.1.0",
     "@swimlane/ngx-dnd": "^7.0.0",
     "@types/jwt-decode": "^2.2.1",
     "@types/lodash": "^4.14.123",
