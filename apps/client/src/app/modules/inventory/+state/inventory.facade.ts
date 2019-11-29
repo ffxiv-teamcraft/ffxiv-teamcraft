@@ -7,7 +7,7 @@ import { inventoryQuery } from './inventory.selectors';
 import { LoadInventory, ResetInventory, UpdateInventory } from './inventory.actions';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, shareReplay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,8 @@ export class InventoryFacade {
   inventory$ = this.store.pipe(
     select(inventoryQuery.getInventory),
     filter(inventory => inventory !== null),
-    map(inventory => inventory.clone())
+    map((inventory: UserInventory) => inventory.clone()),
+    shareReplay(1)
   );
 
   constructor(private store: Store<InventoryPartialState>) {
