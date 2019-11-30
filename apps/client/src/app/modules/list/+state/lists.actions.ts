@@ -91,7 +91,7 @@ export class LoadListDetails implements Action {
 export class SelectList implements Action {
   readonly type = ListsActionTypes.SelectList;
 
-  constructor(public readonly key: string) {
+  constructor(public readonly key: string, public readonly autocomplete = false) {
   }
 }
 

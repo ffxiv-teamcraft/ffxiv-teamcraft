@@ -297,7 +297,7 @@ export class AppComponent implements OnInit {
           if (this.platformService.isDesktop() || isPlatformServer(this.platform)) {
             return of(false);
           }
-          if (url.endsWith('/')) {
+          if (url && url.endsWith('/')) {
             url = url.substring(0, url.length - 1);
           }
           return this.http.get('http://localhost:7331/', { responseType: 'text' }).pipe(
