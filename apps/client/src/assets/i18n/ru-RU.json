@@ -378,6 +378,7 @@
     "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
     "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
+    "Enable_autofill_by_default": "Enable autofill by default",
     "Contribute_to_universalis": "Внести данные в Universalis",
     "Persist_inventory": "Save inventory in database (to share with web version)",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
