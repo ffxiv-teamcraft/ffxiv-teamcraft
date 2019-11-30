@@ -43,7 +43,6 @@
         </div>
       </div>
     </div>
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiFish.ID" type="fish"></app-db-comments>
 
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <ng-container *ngIf="settings.theme as theme">
@@ -71,7 +70,7 @@
               [results]="data.baitsChart.data"
             ></ngx-charts-advanced-pie-chart>
           </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Misc' | translate" class="no-graph">
+          <nz-card [nzTitle]="'DB.FISH.Hookset_and_tug' | translate" class="no-graph">
             <div fxLayout="column" fxLayoutGap="20px">
               <div fxLayout="column" fxLayoutGap="10px">
                 <nz-divider [nzText]="'DB.FISH.Hooksets' | translate" nzOrientation="left"></nz-divider>
@@ -92,9 +91,36 @@
               </div>
             </div>
           </nz-card>
+          <nz-card [nzTitle]="'DB.FISH.Buffs' | translate" fxFlex="1 1 auto">
+            <div fxLayout="column" fxLayoutGap="20px">
+              <div fxLayout="column" fxLayoutGap="10px">
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+                  <img src="{{ 761 | statusIcon | xivapiIcon}}" alt="">
+                  <h3>{{761 | statusName | i18n}}</h3>
+                </div>
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.snagging">
+                  <div *ngIf="row.snagging">{{'Yes' | translate}}</div>
+                  <div *ngIf="!row.snagging">{{'No' | translate}}</div>
+                  <div>{{row.percent | number:'1.0-1'}}%</div>
+                </div>
+              </div>
+              <div fxLayout="column" fxLayoutGap="10px">
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+                  <img src="{{ 762 | statusIcon | xivapiIcon}}" alt="">
+                  <h3>{{762 | statusName | i18n}}</h3>
+                </div>
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.fishEyes">
+                  <div *ngIf="row.fishEyes">{{'Yes' | translate}}</div>
+                  <div *ngIf="!row.fishEyes">{{'No' | translate}}</div>
+                  <div>{{row.percent | number:'1.0-1'}}%</div>
+                </div>
+              </div>
+            </div>
+          </nz-card>
         </div>
         <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
-          <nz-card nzTitle="{{'DB.FISH.Bite_time' | translate}} ({{data.biteTimeChart.min | number: '1.0-1'}}s - {{data.biteTimeChart.max | number: '1.0-1'}}s)" [style.width.px]="data.etimesChart.view[0] + 48">
+          <nz-card nzTitle="{{'DB.FISH.Bite_time' | translate}} ({{data.biteTimeChart.min | number: '1.0-1'}}s - {{data.biteTimeChart.max | number: '1.0-1'}}s)"
+                   [style.width.px]="data.biteTimeChart.view[0] + 48">
             <ngx-charts-line-chart
               [view]="data.biteTimeChart.view"
               [scheme]="{domain: [theme.primary]}"
@@ -111,11 +137,35 @@
               [results]="data.biteTimeChart.data"
             ></ngx-charts-line-chart>
           </nz-card>
+          <nz-card [nzTitle]="'DB.FISH.Weathers' | translate" [style.width.px]="data.weathersChart.view[0] + 48">
+            <ngx-charts-advanced-pie-chart
+              [view]="data.weathersChart.view"
+              [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
+              [results]="data.weathersChart.data"
+            ></ngx-charts-advanced-pie-chart>
+          </nz-card>
+          <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 auto">
+            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.weatherTransitions; let last = last"
+                 [class.border-bottom]="!last" class="list-row">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div>
+                  <img src="{{row.previousWeatherId | weatherIcon | xivapiIcon}}" alt="">
+                  <span>{{row.previousWeatherId | weatherName | i18n}}</span>
+                </div>
+                <i nz-icon nzType="right" nzTheme="outline"></i>
+                <div>
+                  <img src="{{row.weatherId | weatherIcon | xivapiIcon}}" alt="">
+                  <span>{{row.weatherId | weatherName | i18n}}</span>
+                </div>
+              </div>
+              <div>{{row.percent | number:'1.0-1'}} %</div>
+            </div>
+          </nz-card>
         </div>
       </div>
     </ng-container>
   </div>
-  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiFish.ID" type="fish"></app-db-comments>
+  <app-db-comments [id]="xivapiFish.ID" type="fish"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

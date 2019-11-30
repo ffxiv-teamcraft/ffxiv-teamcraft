@@ -1324,7 +1324,10 @@
     "FISH": {
       "Hour": "Hour of the day",
       "Baits": "Bait used",
-      "Misc": "Other info",
+      "Hookset_and_tug": "Hooksets and tug",
+      "Buffs": "Buffs",
+      "Weathers": "Weathers",
+      "Weather_transitions": "Weather transitions",
       "Hooksets": "Hooksets",
       "Tugs": "Tugs",
       "Seconds": "Seconds",

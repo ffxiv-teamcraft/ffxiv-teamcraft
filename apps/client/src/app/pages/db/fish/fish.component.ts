@@ -104,6 +104,23 @@ export class FishComponent extends TeamcraftPageComponent {
               biteTime,
               occurences
             }
+            snagging_per_fish(where:{itemId: {_eq: ${fishId}}}) {
+              snagging,
+              occurences
+            }
+            fish_eyes_per_fish(where:{itemId: {_eq: ${fishId}}}) {
+              fishEyes,
+              occurences
+            }
+            weathers_per_fish(where:{itemId: {_eq: ${fishId}}}) {
+              weatherId,
+              occurences
+            }
+            weather_transitions_per_fish(where:{itemId: {_eq: ${fishId}}}) {
+              previousWeatherId,
+              weatherId,
+              occurences
+            }
           }
         `;
         return this.apollo.query<any>({ query: dataQuery });
@@ -112,7 +129,11 @@ export class FishComponent extends TeamcraftPageComponent {
         const hours = Array.from(Array(24).keys());
         const totalHooksets = result.data.hooksets_per_fish.reduce((acc, row) => acc + row.occurences, 0);
         const totalTugs = result.data.tug_per_fish.reduce((acc, row) => acc + row.occurences, 0);
+        const totalSnagging = result.data.snagging_per_fish.reduce((acc, row) => acc + row.occurences, 0);
+        const totalFishEyes = result.data.fish_eyes_per_fish.reduce((acc, row) => acc + row.occurences, 0);
+        const totalWeatherTransitions = result.data.weather_transitions_per_fish.reduce((acc, row) => acc + row.occurences, 0);
         const sortedBiteTimes = result.data.bite_time_per_fish.sort((a, b) => a.biteTime - b.biteTime);
+        const sortedWeathers = result.data.weathers_per_fish.sort((a, b) => b.occurences - a.occurences);
         return {
           etimesChart: {
             view: [600, 300],
@@ -128,7 +149,7 @@ export class FishComponent extends TeamcraftPageComponent {
             })
           },
           baitsChart: {
-            view: [600, 300],
+            view: [400, 300],
             data: result.data.baits_per_fish
               .sort((a, b) => {
                 return b.occurences - a.occurences;
@@ -141,7 +162,7 @@ export class FishComponent extends TeamcraftPageComponent {
               })
           },
           biteTimeChart: {
-            view: [600, 300],
+            view: [500, 300],
             data: [
               {
                 name: '',
@@ -157,6 +178,21 @@ export class FishComponent extends TeamcraftPageComponent {
             min: sortedBiteTimes[0].biteTime / 10,
             max: sortedBiteTimes[sortedBiteTimes.length - 1].biteTime / 10
           },
+          weathersChart: {
+            view: [400, 300],
+            data: sortedWeathers.map(entry => {
+              return {
+                name: this.i18n.getName(this.l12n.getWeather(entry.weatherId)),
+                value: entry.occurences
+              };
+            })
+          },
+          weatherTransitions: result.data.weather_transitions_per_fish
+            .sort((a, b) => b.occurences - a.occurences)
+            .map(entry => {
+              entry.percent = 100 * entry.occurences / totalWeatherTransitions
+              return entry;
+            }),
           hooksets: result.data.hooksets_per_fish
             .sort((a, b) => b.occurences - a.occurences)
             .map(entry => {
@@ -169,6 +205,18 @@ export class FishComponent extends TeamcraftPageComponent {
             .map(entry => {
               entry.tugName = ['Medium', 'Light', 'Big'][entry.tug];
               entry.percent = 100 * entry.occurences / totalTugs;
+              return entry;
+            }),
+          snagging: result.data.snagging_per_fish
+            .sort((a, b) => b.occurences - a.occurences)
+            .map(entry => {
+              entry.percent = 100 * entry.occurences / totalSnagging;
+              return entry;
+            }),
+          fishEyes: result.data.fish_eyes_per_fish
+            .sort((a, b) => b.occurences - a.occurences)
+            .map(entry => {
+              entry.percent = 100 * entry.occurences / totalFishEyes;
               return entry;
             })
         };
