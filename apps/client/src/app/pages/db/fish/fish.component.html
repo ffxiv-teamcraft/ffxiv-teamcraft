@@ -130,9 +130,8 @@
               [showGridLines]="false"
               [legend]="false"
               [showXAxisLabel]="true"
-              [showYAxisLabel]="true"
+              [showYAxisLabel]="false"
               [xAxisLabel]="'DB.FISH.Seconds' | translate"
-              [yAxisLabel]="'DB.FISH.Amount_of_bites' | translate"
               [curve]="data.biteTimeChart.curve"
               [results]="data.biteTimeChart.data"
             ></ngx-charts-line-chart>
@@ -144,7 +143,7 @@
               [results]="data.weathersChart.data"
             ></ngx-charts-advanced-pie-chart>
           </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 auto">
+          <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 auto" class="card-with-list">
             <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.weatherTransitions; let last = last"
                  [class.border-bottom]="!last" class="list-row">
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -161,6 +160,17 @@
               <div>{{row.percent | number:'1.0-1'}} %</div>
             </div>
           </nz-card>
+          <nz-card [nzTitle]="'DB.FISH.Spots' | translate" fxFlex="1 1 auto" class="card-with-list">
+            <div *ngFor="let spot of data.spots;let last = last" [class.border-bottom]="!last" class="list-row">
+              <app-map-position [mapId]="spot.spotData.mapId"
+                                [zoneId]="spot.spotData.zoneId"
+                                showMapName="true"
+                                showZoneName="true"
+                                [marker]="spot.spotData.coords"></app-map-position>
+            </div>
+          </nz-card>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
         </div>
       </div>
     </ng-container>

@@ -16,6 +16,7 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import * as shape from 'd3-shape';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
+import { fishingSpots } from '../../../core/data/sources/fishing-spots';
 
 @Component({
   selector: 'app-fish',
@@ -121,6 +122,9 @@ export class FishComponent extends TeamcraftPageComponent {
               weatherId,
               occurences
             }
+            spots_per_fish(where:{itemId: {_eq: ${fishId}}}) {
+              spot
+            }
           }
         `;
         return this.apollo.query<any>({ query: dataQuery });
@@ -151,6 +155,9 @@ export class FishComponent extends TeamcraftPageComponent {
           baitsChart: {
             view: [400, 300],
             data: result.data.baits_per_fish
+              .filter(entry => {
+                return this.l12n.getItem(entry.baitId) !== undefined;
+              })
               .sort((a, b) => {
                 return b.occurences - a.occurences;
               })
@@ -162,16 +169,18 @@ export class FishComponent extends TeamcraftPageComponent {
               })
           },
           biteTimeChart: {
-            view: [500, 300],
+            view: [400, 300],
             data: [
               {
                 name: '',
-                series: sortedBiteTimes.map(entry => {
-                  return {
-                    name: entry.biteTime / 10,
-                    value: entry.occurences
-                  };
-                })
+                series: sortedBiteTimes
+                  .filter(entry => entry.occurences > 5)
+                  .map(entry => {
+                    return {
+                      name: entry.biteTime / 10,
+                      value: entry.occurences
+                    };
+                  })
               }
             ],
             curve: shape.curveBasisOpen,
@@ -190,7 +199,7 @@ export class FishComponent extends TeamcraftPageComponent {
           weatherTransitions: result.data.weather_transitions_per_fish
             .sort((a, b) => b.occurences - a.occurences)
             .map(entry => {
-              entry.percent = 100 * entry.occurences / totalWeatherTransitions
+              entry.percent = 100 * entry.occurences / totalWeatherTransitions;
               return entry;
             }),
           hooksets: result.data.hooksets_per_fish
@@ -218,7 +227,11 @@ export class FishComponent extends TeamcraftPageComponent {
             .map(entry => {
               entry.percent = 100 * entry.occurences / totalFishEyes;
               return entry;
-            })
+            }),
+          spots: result.data.spots_per_fish.map(entry => {
+            entry.spotData = fishingSpots.find(row => row.id === entry.spot);
+            return entry;
+          })
         };
       })
     );
