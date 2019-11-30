@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.12"></a>
+## [6.2.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.11...v6.2.12) (2019-11-30)
+
+
+### Bug Fixes
+
+* **data:** fixed dungeon names ([1b014b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1b014b7))
+* **profile:** fixed an issue with stats filling not reloading stats after fill operation ([25dbce9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25dbce9))
+* **rotations:** fixed an issue with rotation picker when opening from list ([d3f0028](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d3f0028))
+
+
+### Features
+
+* **desktop:** added an option inside settings page to enable autofill by default ([ebd0e47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ebd0e47))
+
+
+
 <a name="6.2.11"></a>
 ## [6.2.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.10...v6.2.11) (2019-11-28)
 
