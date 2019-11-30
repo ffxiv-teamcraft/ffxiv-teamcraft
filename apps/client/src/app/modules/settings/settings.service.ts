@@ -284,6 +284,14 @@ export class SettingsService {
     this.setSetting('machina:hide-banner', hide.toString());
   }
 
+  public get enableAutofillByDefault(): boolean {
+    return this.getSetting('autofill:enable-by-default', 'false') === 'true';
+  }
+
+  public set enableAutofillByDefault(hide: boolean) {
+    this.setSetting('autofill:enable-by-default', hide.toString());
+  }
+
   public get enableUniversalisSourcing(): boolean {
     return this.getSetting('universalis:enable-sourcing', 'false') === 'true';
   }

@@ -153,7 +153,8 @@ export function listsReducer(
     case ListsActionTypes.SelectList: {
       state = {
         ...state,
-        selectedId: action.key
+        selectedId: action.key,
+        autocompletionEnabled: action.autocomplete
       };
       break;
     }
