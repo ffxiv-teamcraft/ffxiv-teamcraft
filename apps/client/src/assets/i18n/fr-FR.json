@@ -378,7 +378,7 @@
     "Disable_search_debounce": "Désactiver la recherche auto (seul appuyer sur Entrée déclenchera la recherche)",
     "Enable_packet_capture": "Capture de paquets activée (ajoute des fonctionnalités d'inventaire en temps réel)",
     "Packet_capture_info": "Capturer des paquets est contre le CLUF (Contrat de license de l'utilisateur final), la même raison pour laquelle ACT est contre le CLUF. Mais Square Enix le tolère à moins que vous ne vous soyez entrain de le répéter à tout le monde en jeu. Ne faites rien et vous ne risquerez rien.",
-    "Enable_autofill_by_default": "Enable autofill by default",
+    "Enable_autofill_by_default": "Activer le remplissage automatique par défaut",
     "Contribute_to_universalis": "Contribuer à Universalis",
     "Persist_inventory": "Enregistrer l'inventaire en base de données (pour partager avec la version web)",
     "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
@@ -1598,7 +1598,7 @@
     "No_optimizations": "Aucune optimisation disponible",
     "CAN_BE_BOUGHT": {
       "Title": "Objets qui peuvent être achetés avec des gils",
-      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation."
+      "Message": "Cet objet peut être acheté aux PNJ avec des gils et n'a pas besoin de réputation de tribu."
     },
     "DUPLICATES": {
       "Title": "Éléments qui sont dupliqués à travers plusieurs conteneurs",
