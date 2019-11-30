@@ -23,6 +23,7 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
+        <p *ngIf="xivapiFish.Description" [innerHTML]="xivapiFish | xivapiI18n: 'Description' | xivUIText"></p>
       </div>
       <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -43,136 +44,183 @@
         </div>
       </div>
     </div>
-
-    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <ng-container *ngIf="settings.theme as theme">
-      <div *ngIf="gubalData$ | async as data" fxLayout="column" fxLayoutGap="24px">
-        <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
-          <nz-card [nzTitle]="'DB.FISH.Hour' | translate" [style.width.px]="data.etimesChart.view[0] + 48">
-            <ngx-charts-bar-vertical
-              [view]="data.etimesChart.view"
-              [scheme]="{domain: [theme.primary]}"
-              [customColors]="highlightTime$ | async"
-              [gradient]="false"
-              [xAxis]="true"
-              [yAxis]="true"
-              [legend]="false"
-              [showXAxisLabel]="false"
-              [showYAxisLabel]="false"
-              barPadding="5"
-              [results]="data.etimesChart.data"
-            ></ngx-charts-bar-vertical>
-          </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Baits' | translate" [style.width.px]="data.baitsChart.view[0] + 48">
-            <ngx-charts-advanced-pie-chart
-              [view]="data.baitsChart.view"
-              [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
-              [results]="data.baitsChart.data"
-            ></ngx-charts-advanced-pie-chart>
-          </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Hookset_and_tug' | translate" class="no-graph">
-            <div fxLayout="column" fxLayoutGap="20px">
-              <div fxLayout="column" fxLayoutGap="10px">
-                <nz-divider [nzText]="'DB.FISH.Hooksets' | translate" nzOrientation="left"></nz-divider>
-                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.hooksets">
-                  <img src="{{row.hookset | actionIcon | xivapiIcon}}" alt="" class="round-icon">
-                  <div>
-                    <div>{{row.hookset | actionName | i18n}}</div>
+      <ng-container *ngIf="gubalData$ | async as data">
+        <app-page-loader [loading]="loading">
+        <div class="details-container" fxLayout="column">
+          <div class="main-attributes details" fxLayoutAlign="flex-start center" fxLayout="row wrap" fxLayoutGap="5px">
+            <div class="details-block">
+              <div class="detail-name">
+                {{'DB.FISH.Min_gathering' | translate}}
+              </div>
+              <div class="detail-value">
+                {{data.minGathering | number:'1.0-1'}}
+              </div>
+            </div>
+            <div class="details-block">
+              <div class="detail-name">
+                {{'DB.FISH.Min_size' | translate}}
+              </div>
+              <div class="detail-value">
+                {{(data.minSize / 10) | number:'1.0-1'}} ilm
+              </div>
+            </div>
+            <div class="details-block">
+              <div class="detail-name">
+                {{'DB.FISH.Max_size' | translate}}
+              </div>
+              <div class="detail-value">
+                {{(data.maxSize / 10) | number:'1.0-1'}} ilm
+              </div>
+            </div>
+            <div class="details-block">
+              <div class="detail-name">
+                {{'DB.FISH.Avg_size' | translate}}
+              </div>
+              <div class="detail-value">
+                {{(data.avgSize / 10) | number:'1.0-1'}} ilm
+              </div>
+            </div>
+            <div fxFlex="1 1 auto"></div>
+            <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'DB.FISH.Refresh_data' | translate" (click)="loading = true;reloader$.next(null)">
+              <i nz-icon nzType="reload" nzTheme="outline"></i>
+            </button>
+          </div>
+        </div>
+
+        <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+
+        <div fxLayout="column" fxLayoutGap="24px">
+          <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
+            <nz-card [nzTitle]="'DB.FISH.Hour' | translate" [style.width.px]="data.etimesChart.view[0] + 48">
+              <ngx-charts-bar-vertical
+                [view]="data.etimesChart.view"
+                [scheme]="{domain: [theme.primary]}"
+                [customColors]="highlightTime$ | async"
+                [gradient]="false"
+                [xAxis]="true"
+                [yAxis]="true"
+                [legend]="false"
+                [showXAxisLabel]="false"
+                [showYAxisLabel]="false"
+                barPadding="5"
+                [results]="data.etimesChart.data"
+              ></ngx-charts-bar-vertical>
+            </nz-card>
+            <nz-card [nzTitle]="'DB.FISH.Baits' | translate" [style.width.px]="data.baitsChart.view[0] + 48">
+              <ngx-charts-advanced-pie-chart
+                [view]="data.baitsChart.view"
+                [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
+                [results]="data.baitsChart.data"
+              ></ngx-charts-advanced-pie-chart>
+            </nz-card>
+            <nz-card [nzTitle]="'DB.FISH.Hookset_and_tug' | translate" class="no-graph">
+              <div fxLayout="column" fxLayoutGap="20px">
+                <div fxLayout="column" fxLayoutGap="10px">
+                  <nz-divider [nzText]="'DB.FISH.Hooksets' | translate" nzOrientation="left"></nz-divider>
+                  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.hooksets">
+                    <img src="{{row.hookset | actionIcon | xivapiIcon}}" alt="" class="round-icon">
+                    <div>
+                      <div>{{row.hookset | actionName | i18n}}</div>
+                      <div>{{row.percent | number:'1.0-1'}}%</div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <nz-divider [nzText]="'DB.FISH.Tugs' | translate" nzOrientation="left"></nz-divider>
+                  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.tugs">
+                    <div>{{('DB.FISH.TUG.' + row.tugName) | translate}}</div>
                     <div>{{row.percent | number:'1.0-1'}}%</div>
                   </div>
                 </div>
               </div>
-              <div>
-                <nz-divider [nzText]="'DB.FISH.Tugs' | translate" nzOrientation="left"></nz-divider>
-                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.tugs">
-                  <div>{{('DB.FISH.TUG.' + row.tugName) | translate}}</div>
-                  <div>{{row.percent | number:'1.0-1'}}%</div>
+            </nz-card>
+            <nz-card [nzTitle]="'DB.FISH.Buffs' | translate" fxFlex="1 1 auto">
+              <div fxLayout="column" fxLayoutGap="20px">
+                <div fxLayout="column" fxLayoutGap="10px">
+                  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+                    <img src="{{ 761 | statusIcon | xivapiIcon}}" alt="">
+                    <h3>{{761 | statusName | i18n}}</h3>
+                  </div>
+                  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.snagging">
+                    <div *ngIf="row.snagging">{{'Yes' | translate}}</div>
+                    <div *ngIf="!row.snagging">{{'No' | translate}}</div>
+                    <div>{{row.percent | number:'1.0-1'}}%</div>
+                  </div>
+                </div>
+                <div fxLayout="column" fxLayoutGap="10px">
+                  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+                    <img src="{{ 762 | statusIcon | xivapiIcon}}" alt="">
+                    <h3>{{762 | statusName | i18n}}</h3>
+                  </div>
+                  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.fishEyes">
+                    <div *ngIf="row.fishEyes">{{'Yes' | translate}}</div>
+                    <div *ngIf="!row.fishEyes">{{'No' | translate}}</div>
+                    <div>{{row.percent | number:'1.0-1'}}%</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Buffs' | translate" fxFlex="1 1 auto">
-            <div fxLayout="column" fxLayoutGap="20px">
-              <div fxLayout="column" fxLayoutGap="10px">
-                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-                  <img src="{{ 761 | statusIcon | xivapiIcon}}" alt="">
-                  <h3>{{761 | statusName | i18n}}</h3>
+            </nz-card>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
+            <nz-card
+              nzTitle="{{'DB.FISH.Bite_time' | translate}} ({{data.biteTimeChart.min | number: '1.0-1'}}s - {{data.biteTimeChart.max | number: '1.0-1'}}s)"
+              [style.width.px]="data.biteTimeChart.view[0] + 48">
+              <ngx-charts-line-chart
+                [view]="data.biteTimeChart.view"
+                [scheme]="{domain: [theme.primary]}"
+                [gradient]="false"
+                [xAxis]="true"
+                [yAxis]="true"
+                [showGridLines]="false"
+                [legend]="false"
+                [showXAxisLabel]="true"
+                [showYAxisLabel]="false"
+                [xAxisLabel]="'DB.FISH.Seconds' | translate"
+                [curve]="data.biteTimeChart.curve"
+                [results]="data.biteTimeChart.data"
+              ></ngx-charts-line-chart>
+            </nz-card>
+            <nz-card [nzTitle]="'DB.FISH.Weathers' | translate" [style.width.px]="data.weathersChart.view[0] + 48">
+              <ngx-charts-advanced-pie-chart
+                [view]="data.weathersChart.view"
+                [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
+                [results]="data.weathersChart.data"
+              ></ngx-charts-advanced-pie-chart>
+            </nz-card>
+            <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 auto" class="card-with-list">
+              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.weatherTransitions; let last = last"
+                   [class.border-bottom]="!last" class="list-row">
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                  <div>
+                    <img src="{{row.previousWeatherId | weatherIcon | xivapiIcon}}" alt="">
+                    <span>{{row.previousWeatherId | weatherName | i18n}}</span>
+                  </div>
+                  <i nz-icon nzType="right" nzTheme="outline"></i>
+                  <div>
+                    <img src="{{row.weatherId | weatherIcon | xivapiIcon}}" alt="">
+                    <span>{{row.weatherId | weatherName | i18n}}</span>
+                  </div>
                 </div>
-                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.snagging">
-                  <div *ngIf="row.snagging">{{'Yes' | translate}}</div>
-                  <div *ngIf="!row.snagging">{{'No' | translate}}</div>
-                  <div>{{row.percent | number:'1.0-1'}}%</div>
-                </div>
+                <div>{{row.percent | number:'1.0-1'}} %</div>
               </div>
-              <div fxLayout="column" fxLayoutGap="10px">
-                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-                  <img src="{{ 762 | statusIcon | xivapiIcon}}" alt="">
-                  <h3>{{762 | statusName | i18n}}</h3>
-                </div>
-                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.fishEyes">
-                  <div *ngIf="row.fishEyes">{{'Yes' | translate}}</div>
-                  <div *ngIf="!row.fishEyes">{{'No' | translate}}</div>
-                  <div>{{row.percent | number:'1.0-1'}}%</div>
-                </div>
+            </nz-card>
+            <nz-card [nzTitle]="'DB.FISH.Spots' | translate" fxFlex="1 1 auto" class="card-with-list">
+              <div *ngFor="let spot of data.spots;let last = last" [class.border-bottom]="!last" class="list-row">
+                <app-map-position [mapId]="spot.spotData.mapId"
+                                  [zoneId]="spot.spotData.zoneId"
+                                  showMapName="true"
+                                  showZoneName="true"
+                                  [marker]="spot.spotData.coords"></app-map-position>
               </div>
-            </div>
-          </nz-card>
+            </nz-card>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
+          </div>
         </div>
-        <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
-          <nz-card nzTitle="{{'DB.FISH.Bite_time' | translate}} ({{data.biteTimeChart.min | number: '1.0-1'}}s - {{data.biteTimeChart.max | number: '1.0-1'}}s)"
-                   [style.width.px]="data.biteTimeChart.view[0] + 48">
-            <ngx-charts-line-chart
-              [view]="data.biteTimeChart.view"
-              [scheme]="{domain: [theme.primary]}"
-              [gradient]="false"
-              [xAxis]="true"
-              [yAxis]="true"
-              [showGridLines]="false"
-              [legend]="false"
-              [showXAxisLabel]="true"
-              [showYAxisLabel]="false"
-              [xAxisLabel]="'DB.FISH.Seconds' | translate"
-              [curve]="data.biteTimeChart.curve"
-              [results]="data.biteTimeChart.data"
-            ></ngx-charts-line-chart>
-          </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Weathers' | translate" [style.width.px]="data.weathersChart.view[0] + 48">
-            <ngx-charts-advanced-pie-chart
-              [view]="data.weathersChart.view"
-              [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
-              [results]="data.weathersChart.data"
-            ></ngx-charts-advanced-pie-chart>
-          </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 auto" class="card-with-list">
-            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.weatherTransitions; let last = last"
-                 [class.border-bottom]="!last" class="list-row">
-              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                <div>
-                  <img src="{{row.previousWeatherId | weatherIcon | xivapiIcon}}" alt="">
-                  <span>{{row.previousWeatherId | weatherName | i18n}}</span>
-                </div>
-                <i nz-icon nzType="right" nzTheme="outline"></i>
-                <div>
-                  <img src="{{row.weatherId | weatherIcon | xivapiIcon}}" alt="">
-                  <span>{{row.weatherId | weatherName | i18n}}</span>
-                </div>
-              </div>
-              <div>{{row.percent | number:'1.0-1'}} %</div>
-            </div>
-          </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Spots' | translate" fxFlex="1 1 auto" class="card-with-list">
-            <div *ngFor="let spot of data.spots;let last = last" [class.border-bottom]="!last" class="list-row">
-              <app-map-position [mapId]="spot.spotData.mapId"
-                                [zoneId]="spot.spotData.zoneId"
-                                showMapName="true"
-                                showZoneName="true"
-                                [marker]="spot.spotData.coords"></app-map-position>
-            </div>
-          </nz-card>
-        </div>
-        <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
-        </div>
-      </div>
+
+        </app-page-loader>
+      </ng-container>
     </ng-container>
   </div>
   <app-db-comments [id]="xivapiFish.ID" type="fish"></app-db-comments>

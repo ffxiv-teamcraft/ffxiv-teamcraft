@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
@@ -9,7 +9,7 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { Apollo } from 'apollo-angular';
@@ -24,6 +24,8 @@ import { fishingSpots } from '../../../core/data/sources/fishing-spots';
   styleUrls: ['./fish.component.less']
 })
 export class FishComponent extends TeamcraftPageComponent {
+
+  public loading = true;
 
   public xivapiFish$: Observable<any>;
 
@@ -81,8 +83,9 @@ export class FishComponent extends TeamcraftPageComponent {
       shareReplay(1)
     );
 
-    this.gubalData$ = combineLatest([fishId$, this.reloader$]).pipe(
-      switchMap(([fishId]) => {
+    this.gubalData$ = this.reloader$.pipe(
+      switchMapTo(fishId$),
+      switchMap((fishId) => {
         const dataQuery = gql`
           query fishData {
             etimes_per_fish(where: {itemId: {_eq: ${fishId}}}) {
@@ -125,9 +128,23 @@ export class FishComponent extends TeamcraftPageComponent {
             spots_per_fish(where:{itemId: {_eq: ${fishId}}}) {
               spot
             }
+            fishingresults_aggregate(where: {itemId: {_eq: ${fishId}}}) {
+              aggregate {
+                min {
+                  size
+                  gathering
+                }
+                max {
+                  size
+                }
+                avg {
+                  size
+                }
+              }
+            }
           }
         `;
-        return this.apollo.query<any>({ query: dataQuery });
+        return this.apollo.query<any>({ query: dataQuery, fetchPolicy: 'no-cache' });
       }),
       map(result => {
         const hours = Array.from(Array(24).keys());
@@ -228,12 +245,18 @@ export class FishComponent extends TeamcraftPageComponent {
               entry.percent = 100 * entry.occurences / totalFishEyes;
               return entry;
             }),
-          spots: result.data.spots_per_fish.map(entry => {
-            entry.spotData = fishingSpots.find(row => row.id === entry.spot);
-            return entry;
-          })
+          spots: result.data.spots_per_fish
+            .map(entry => {
+              entry.spotData = fishingSpots.find(row => row.id === entry.spot);
+              return entry;
+            }),
+          minSize: result.data.fishingresults_aggregate.aggregate.min.size,
+          maxSize: result.data.fishingresults_aggregate.aggregate.max.size,
+          avgSize: result.data.fishingresults_aggregate.aggregate.avg.size,
+          minGathering: result.data.fishingresults_aggregate.aggregate.min.gathering
         };
-      })
+      }),
+      tap(() => this.loading = false)
     );
   }
 
