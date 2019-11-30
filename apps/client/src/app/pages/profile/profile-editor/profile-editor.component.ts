@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { combineLatest } from 'rxjs';
-import { filter, first, map, shareReplay } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest } from 'rxjs';
+import { filter, first, map, shareReplay, switchMapTo } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { MasterbooksPopupComponent } from './masterbooks-popup/masterbooks-popup.component';
 import { TranslateService } from '@ngx-translate/core';
@@ -19,6 +19,8 @@ import { AutofillStatsPopupComponent } from './autofill-stats-popup/autofill-sta
   styleUrls: ['./profile-editor.component.less']
 })
 export class ProfileEditorComponent {
+
+  private statsReloader$ = new BehaviorSubject(null);
 
   user$ = this.authFacade.user$;
 
@@ -41,7 +43,7 @@ export class ProfileEditorComponent {
     shareReplay(1)
   );
 
-  gearSets$ = this.authFacade.gearSets$;
+  gearSets$ = this.statsReloader$.pipe(switchMapTo(this.authFacade.gearSets$));
 
   now = Math.floor(Date.now() / 1000);
 
@@ -84,7 +86,10 @@ export class ProfileEditorComponent {
       nzContent: AutofillStatsPopupComponent,
       nzFooter: null,
       nzTitle: this.translate.instant('PROFILE.Autofill_from_packets')
-    });
+    }).afterClose
+      .subscribe(() => {
+        this.statsReloader$.next(null);
+      });
   }
 
   newContact(user: TeamcraftUser): void {
