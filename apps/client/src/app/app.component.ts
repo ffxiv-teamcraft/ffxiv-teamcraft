@@ -158,7 +158,7 @@ export class AppComponent implements OnInit {
               apollo: Apollo, httpLink: HttpLink) {
 
 
-    const link = httpLink.create({ uri: 'http://35.236.87.103/v1/graphql' });
+    const link = httpLink.create({ uri: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/gubal-proxy' });
 
     apollo.create({
       link: link,
