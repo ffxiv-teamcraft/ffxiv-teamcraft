@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.3.1"></a>
+## [6.3.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.3.0...v6.3.1) (2019-12-01)
+
+
+### Bug Fixes
+
+* **db:** hotfix for missing https cert in gubal API ([c6db630](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c6db630))
+
+
+
 <a name="6.3.0"></a>
 # [6.3.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.12...v6.3.0) (2019-12-01)
 
