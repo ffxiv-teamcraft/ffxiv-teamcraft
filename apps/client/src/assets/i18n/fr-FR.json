@@ -560,7 +560,7 @@
     "Autofill_notification": "Notification de complétion",
     "Autofill_notification_title": "Objet complété",
     "Autofill_notification_body": "{{itemName}} est maintenant complété pour la liste {{listName}}",
-    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
+    "Fill_with_inventory": "Remplir avec l'inventaire (utilise uniquement l'inventaire personnel)",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
