@@ -514,6 +514,7 @@ if (hasTodo('fishingLog')) {
 
   getAllEntries('https://xivapi.com/FishingSpot', '63cc0045d7e847149c3f', true).subscribe((completeFetch) => {
     const spots = [];
+    const fishes = [];
     completeFetch
       .filter(spot => spot.Item0 !== null && spot.TerritoryType !== null)
       .forEach(spot => {
@@ -540,6 +541,9 @@ if (hasTodo('fishingLog')) {
           })
           .forEach(key => {
             const fish = spot[key];
+            if (fishes.indexOf(fish.ID) === -1) {
+              fishes.push(fish.ID);
+            }
             const c = spot.TerritoryType.Map.SizeFactor / 100.0;
             const entry = {
               itemId: fish.ID,
@@ -561,6 +565,7 @@ if (hasTodo('fishingLog')) {
       });
     persistToTypescript('fishing-log', 'fishingLog', fishingLog);
     persistToTypescript('fishing-spots', 'fishingSpots', spots);
+    persistToTypescript('fishes', 'fishes', fishes);
   });
 
 }

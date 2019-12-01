@@ -1,14 +1,14 @@
 export const fishingSpots = [
   {
-    'id': 2,
-    'mapId': 4,
-    'placeId': 54,
-    'zoneId': 951,
-    'coords': {
-      'x': 22.9013671875,
-      'y': 22.1806640625
+    "id": 2,
+    "mapId": 4,
+    "placeId": 54,
+    "zoneId": 951,
+    "coords": {
+      "x": 22.9013671875,
+      "y": 22.1806640625
     },
-    'fishes': [
+    "fishes": [
       4925,
       4927,
       4932,
@@ -22,15 +22,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 3,
-    'mapId': 4,
-    'placeId': 54,
-    'zoneId': 952,
-    'coords': {
-      'x': 26.544921875,
-      'y': 28.9873046875
+    "id": 3,
+    "mapId": 4,
+    "placeId": 54,
+    "zoneId": 952,
+    "coords": {
+      "x": 26.544921875,
+      "y": 28.9873046875
     },
-    'fishes': [
+    "fishes": [
       4929,
       4932,
       4934,
@@ -44,15 +44,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 4,
-    'mapId': 4,
-    'placeId': 54,
-    'zoneId': 101,
-    'coords': {
-      'x': 15.6142578125,
-      'y': 24.142578125
+    "id": 4,
+    "mapId": 4,
+    "placeId": 54,
+    "zoneId": 101,
+    "coords": {
+      "x": 15.6142578125,
+      "y": 24.142578125
     },
-    'fishes': [
+    "fishes": [
       4958,
       4942,
       4975,
@@ -66,15 +66,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 5,
-    'mapId': 4,
-    'placeId': 54,
-    'zoneId': 104,
-    'coords': {
-      'x': 14.8134765625,
-      'y': 21.23974609375
+    "id": 5,
+    "mapId": 4,
+    "placeId": 54,
+    "zoneId": 104,
+    "coords": {
+      "x": 14.8134765625,
+      "y": 21.23974609375
     },
-    'fishes': [
+    "fishes": [
       4950,
       4958,
       4964,
@@ -88,15 +88,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 6,
-    'mapId': 5,
-    'placeId': 55,
-    'zoneId': 155,
-    'coords': {
-      'x': 9.02783203125,
-      'y': 22.9013671875
+    "id": 6,
+    "mapId": 5,
+    "placeId": 55,
+    "zoneId": 155,
+    "coords": {
+      "x": 9.02783203125,
+      "y": 22.9013671875
     },
-    'fishes': [
+    "fishes": [
       4929,
       4927,
       4932,
@@ -110,15 +110,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 7,
-    'mapId': 5,
-    'placeId': 55,
-    'zoneId': 953,
-    'coords': {
-      'x': 20.47900390625,
-      'y': 21.52001953125
+    "id": 7,
+    "mapId": 5,
+    "placeId": 55,
+    "zoneId": 953,
+    "coords": {
+      "x": 20.47900390625,
+      "y": 21.52001953125
     },
-    'fishes': [
+    "fishes": [
       4940,
       4941,
       4948,
@@ -132,15 +132,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 8,
-    'mapId': 5,
-    'placeId': 55,
-    'zoneId': 954,
-    'coords': {
-      'x': 24.0224609375,
-      'y': 25.3037109375
+    "id": 8,
+    "mapId": 5,
+    "placeId": 55,
+    "zoneId": 954,
+    "coords": {
+      "x": 24.0224609375,
+      "y": 25.3037109375
     },
-    'fishes': [
+    "fishes": [
       4935,
       4936,
       4940,
@@ -154,15 +154,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 9,
-    'mapId': 5,
-    'placeId': 55,
-    'zoneId': 955,
-    'coords': {
-      'x': 26.0244140625,
-      'y': 20.7392578125
+    "id": 9,
+    "mapId": 5,
+    "placeId": 55,
+    "zoneId": 955,
+    "coords": {
+      "x": 26.0244140625,
+      "y": 20.7392578125
     },
-    'fishes': [
+    "fishes": [
       4981,
       4982,
       4994,
@@ -176,15 +176,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 10,
-    'mapId': 5,
-    'placeId': 55,
-    'zoneId': 112,
-    'coords': {
-      'x': 17.67626953125,
-      'y': 16.9755859375
+    "id": 10,
+    "mapId": 5,
+    "placeId": 55,
+    "zoneId": 112,
+    "coords": {
+      "x": 17.67626953125,
+      "y": 16.9755859375
     },
-    'fishes': [
+    "fishes": [
       4929,
       4941,
       4944,
@@ -198,15 +198,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 11,
-    'mapId': 6,
-    'placeId': 56,
-    'zoneId': 956,
-    'coords': {
-      'x': 18.0166015625,
-      'y': 19.017578125
+    "id": 11,
+    "mapId": 6,
+    "placeId": 56,
+    "zoneId": 956,
+    "coords": {
+      "x": 18.0166015625,
+      "y": 19.017578125
     },
-    'fishes': [
+    "fishes": [
       4940,
       4941,
       4942,
@@ -220,15 +220,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 12,
-    'mapId': 6,
-    'placeId': 56,
-    'zoneId': 957,
-    'coords': {
-      'x': 19.95849609375,
-      'y': 22.541015625
+    "id": 12,
+    "mapId": 6,
+    "placeId": 56,
+    "zoneId": 957,
+    "coords": {
+      "x": 19.95849609375,
+      "y": 22.541015625
     },
-    'fishes': [
+    "fishes": [
       4940,
       4945,
       4961,
@@ -242,15 +242,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 13,
-    'mapId': 6,
-    'placeId': 56,
-    'zoneId': 958,
-    'coords': {
-      'x': 18.35693359375,
-      'y': 24.8232421875
+    "id": 13,
+    "mapId": 6,
+    "placeId": 56,
+    "zoneId": 958,
+    "coords": {
+      "x": 18.35693359375,
+      "y": 24.8232421875
     },
-    'fishes': [
+    "fishes": [
       4940,
       4942,
       4943,
@@ -264,15 +264,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 14,
-    'mapId': 6,
-    'placeId': 56,
-    'zoneId': 959,
-    'coords': {
-      'x': 23.8623046875,
-      'y': 22.36083984375
+    "id": 14,
+    "mapId": 6,
+    "placeId": 56,
+    "zoneId": 959,
+    "coords": {
+      "x": 23.8623046875,
+      "y": 22.36083984375
     },
-    'fishes': [
+    "fishes": [
       4940,
       4943,
       4945,
@@ -286,15 +286,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 15,
-    'mapId': 6,
-    'placeId': 56,
-    'zoneId': 960,
-    'coords': {
-      'x': 27.505859375,
-      'y': 21.47998046875
+    "id": 15,
+    "mapId": 6,
+    "placeId": 56,
+    "zoneId": 960,
+    "coords": {
+      "x": 27.505859375,
+      "y": 21.47998046875
     },
-    'fishes': [
+    "fishes": [
       4942,
       4950,
       4959,
@@ -308,15 +308,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 16,
-    'mapId': 6,
-    'placeId': 56,
-    'zoneId': 126,
-    'coords': {
-      'x': 18.6171875,
-      'y': 29.04736328125
+    "id": 16,
+    "mapId": 6,
+    "placeId": 56,
+    "zoneId": 126,
+    "coords": {
+      "x": 18.6171875,
+      "y": 29.04736328125
     },
-    'fishes': [
+    "fishes": [
       4929,
       4962,
       4972,
@@ -330,15 +330,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 17,
-    'mapId': 6,
-    'placeId': 56,
-    'zoneId': 82,
-    'coords': {
-      'x': 32.55078125,
-      'y': 23.96240234375
+    "id": 17,
+    "mapId": 6,
+    "placeId": 56,
+    "zoneId": 82,
+    "coords": {
+      "x": 32.55078125,
+      "y": 23.96240234375
     },
-    'fishes': [
+    "fishes": [
       4942,
       4975,
       4973,
@@ -352,15 +352,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 18,
-    'mapId': 7,
-    'placeId': 57,
-    'zoneId': 961,
-    'coords': {
-      'x': 26.384765625,
-      'y': 25.103515625
+    "id": 18,
+    "mapId": 7,
+    "placeId": 57,
+    "zoneId": 961,
+    "coords": {
+      "x": 26.384765625,
+      "y": 25.103515625
     },
-    'fishes': [
+    "fishes": [
       4935,
       4936,
       4940,
@@ -374,15 +374,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 19,
-    'mapId': 7,
-    'placeId': 57,
-    'zoneId': 962,
-    'coords': {
-      'x': 21.01953125,
-      'y': 24.6630859375
+    "id": 19,
+    "mapId": 7,
+    "placeId": 57,
+    "zoneId": 962,
+    "coords": {
+      "x": 21.01953125,
+      "y": 24.6630859375
     },
-    'fishes': [
+    "fishes": [
       4927,
       4935,
       4936,
@@ -396,15 +396,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 20,
-    'mapId': 7,
-    'placeId': 57,
-    'zoneId': 86,
-    'coords': {
-      'x': 20.8193359375,
-      'y': 20.8193359375
+    "id": 20,
+    "mapId": 7,
+    "placeId": 57,
+    "zoneId": 86,
+    "coords": {
+      "x": 20.8193359375,
+      "y": 20.8193359375
     },
-    'fishes': [
+    "fishes": [
       4954,
       4974,
       4976,
@@ -418,15 +418,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 21,
-    'mapId': 7,
-    'placeId': 57,
-    'zoneId': 963,
-    'coords': {
-      'x': 17.81640625,
-      'y': 19.818359375
+    "id": 21,
+    "mapId": 7,
+    "placeId": 57,
+    "zoneId": 963,
+    "coords": {
+      "x": 17.81640625,
+      "y": 19.818359375
     },
-    'fishes': [
+    "fishes": [
       4950,
       4954,
       4973,
@@ -440,15 +440,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 22,
-    'mapId': 25,
-    'placeId': 67,
-    'zoneId': 410,
-    'coords': {
-      'x': 25.08349609375,
-      'y': 13.0517578125
+    "id": 22,
+    "mapId": 25,
+    "placeId": 67,
+    "zoneId": 410,
+    "coords": {
+      "x": 25.08349609375,
+      "y": 13.0517578125
     },
-    'fishes': [
+    "fishes": [
       5544,
       4978,
       4989,
@@ -462,15 +462,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 23,
-    'mapId': 25,
-    'placeId': 67,
-    'zoneId': 414,
-    'coords': {
-      'x': 18.7373046875,
-      'y': 17.67626953125
+    "id": 23,
+    "mapId": 25,
+    "placeId": 67,
+    "zoneId": 414,
+    "coords": {
+      "x": 18.7373046875,
+      "y": 17.67626953125
     },
-    'fishes': [
+    "fishes": [
       5544,
       4978,
       4981,
@@ -484,15 +484,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 24,
-    'mapId': 25,
-    'placeId': 67,
-    'zoneId': 413,
-    'coords': {
-      'x': 14.4130859375,
-      'y': 13.31201171875
+    "id": 24,
+    "mapId": 25,
+    "placeId": 67,
+    "zoneId": 413,
+    "coords": {
+      "x": 14.4130859375,
+      "y": 13.31201171875
     },
-    'fishes': [
+    "fishes": [
       4929,
       4942,
       4978,
@@ -506,15 +506,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 25,
-    'mapId': 25,
-    'placeId': 67,
-    'zoneId': 966,
-    'coords': {
-      'x': 12.91162109375,
-      'y': 11.5703125
+    "id": 25,
+    "mapId": 25,
+    "placeId": 67,
+    "zoneId": 966,
+    "coords": {
+      "x": 12.91162109375,
+      "y": 11.5703125
     },
-    'fishes': [
+    "fishes": [
       4942,
       4959,
       4974,
@@ -528,15 +528,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 26,
-    'mapId': 53,
-    'placeId': 63,
-    'zoneId': 968,
-    'coords': {
-      'x': 20.458984375,
-      'y': 30.5888671875
+    "id": 26,
+    "mapId": 53,
+    "placeId": 63,
+    "zoneId": 968,
+    "coords": {
+      "x": 20.458984375,
+      "y": 30.5888671875
     },
-    'fishes': [
+    "fishes": [
       4927,
       4936,
       4940,
@@ -550,15 +550,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 27,
-    'mapId': 53,
-    'placeId': 63,
-    'zoneId': 389,
-    'coords': {
-      'x': 33.69189453125,
-      'y': 18.77734375
+    "id": 27,
+    "mapId": 53,
+    "placeId": 63,
+    "zoneId": 389,
+    "coords": {
+      "x": 33.69189453125,
+      "y": 18.77734375
     },
-    'fishes': [
+    "fishes": [
       5038,
       5039,
       5040,
@@ -572,15 +572,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 28,
-    'mapId': 53,
-    'placeId': 63,
-    'zoneId': 969,
-    'coords': {
-      'x': 15.63427734375,
-      'y': 21.39990234375
+    "id": 28,
+    "mapId": 53,
+    "placeId": 63,
+    "zoneId": 969,
+    "coords": {
+      "x": 15.63427734375,
+      "y": 21.39990234375
     },
-    'fishes': [
+    "fishes": [
       4927,
       4937,
       4981,
@@ -594,15 +594,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 29,
-    'mapId': 53,
-    'placeId': 63,
-    'zoneId': 392,
-    'coords': {
-      'x': 31.52978515625,
-      'y': 7.50634765625
+    "id": 29,
+    "mapId": 53,
+    "placeId": 63,
+    "zoneId": 392,
+    "coords": {
+      "x": 31.52978515625,
+      "y": 7.50634765625
     },
-    'fishes': [
+    "fishes": [
       5544,
       4937,
       4981,
@@ -616,15 +616,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 30,
-    'mapId': 53,
-    'placeId': 63,
-    'zoneId': 970,
-    'coords': {
-      'x': 27.90625,
-      'y': 16.935546875
+    "id": 30,
+    "mapId": 53,
+    "placeId": 63,
+    "zoneId": 970,
+    "coords": {
+      "x": 27.90625,
+      "y": 16.935546875
     },
-    'fishes': [
+    "fishes": [
       4927,
       4940,
       4937,
@@ -638,15 +638,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 31,
-    'mapId': 53,
-    'placeId': 63,
-    'zoneId': 398,
-    'coords': {
-      'x': 13.251953125,
-      'y': 22.80126953125
+    "id": 31,
+    "mapId": 53,
+    "placeId": 63,
+    "zoneId": 398,
+    "coords": {
+      "x": 13.251953125,
+      "y": 22.80126953125
     },
-    'fishes': [
+    "fishes": [
       4927,
       4938,
       5544,
@@ -660,15 +660,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 32,
-    'mapId': 53,
-    'placeId': 63,
-    'zoneId': 971,
-    'coords': {
-      'x': 6.4453125,
-      'y': 22.62109375
+    "id": 32,
+    "mapId": 53,
+    "placeId": 63,
+    "zoneId": 971,
+    "coords": {
+      "x": 6.4453125,
+      "y": 22.62109375
     },
-    'fishes': [
+    "fishes": [
       5544,
       4937,
       4997,
@@ -682,15 +682,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 33,
-    'mapId': 53,
-    'placeId': 63,
-    'zoneId': 404,
-    'coords': {
-      'x': 3.162109375,
-      'y': 21.2998046875
+    "id": 33,
+    "mapId": 53,
+    "placeId": 63,
+    "zoneId": 404,
+    "coords": {
+      "x": 3.162109375,
+      "y": 21.2998046875
     },
-    'fishes': [
+    "fishes": [
       4940,
       4976,
       4986,
@@ -704,15 +704,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 34,
-    'mapId': 53,
-    'placeId': 63,
-    'zoneId': 972,
-    'coords': {
-      'x': 14.212890625,
-      'y': 13.412109375
+    "id": 34,
+    "mapId": 53,
+    "placeId": 63,
+    "zoneId": 972,
+    "coords": {
+      "x": 14.212890625,
+      "y": 13.412109375
     },
-    'fishes': [
+    "fishes": [
       5038,
       5039,
       5040,
@@ -726,15 +726,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 35,
-    'mapId': 12,
-    'placeId': 29,
-    'zoneId': 29,
-    'coords': {
-      'x': 7.6865234375,
-      'y': 12.2109375
+    "id": 35,
+    "mapId": 12,
+    "placeId": 29,
+    "zoneId": 29,
+    "coords": {
+      "x": 7.6865234375,
+      "y": 12.2109375
     },
-    'fishes': [
+    "fishes": [
       4869,
       4870,
       4776,
@@ -748,15 +748,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 36,
-    'mapId': 11,
-    'placeId': 28,
-    'zoneId': 28,
-    'coords': {
-      'x': 10.30908203125,
-      'y': 11.330078125
+    "id": 36,
+    "mapId": 11,
+    "placeId": 28,
+    "zoneId": 28,
+    "coords": {
+      "x": 10.30908203125,
+      "y": 11.330078125
     },
-    'fishes': [
+    "fishes": [
       4869,
       4870,
       4776,
@@ -770,15 +770,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 37,
-    'mapId': 15,
-    'placeId': 30,
-    'zoneId': 973,
-    'coords': {
-      'x': 18.697265625,
-      'y': 22.00048828125
+    "id": 37,
+    "mapId": 15,
+    "placeId": 30,
+    "zoneId": 973,
+    "coords": {
+      "x": 18.697265625,
+      "y": 22.00048828125
     },
-    'fishes': [
+    "fishes": [
       4869,
       4870,
       4871,
@@ -792,15 +792,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 38,
-    'mapId': 15,
-    'placeId': 30,
-    'zoneId': 974,
-    'coords': {
-      'x': 14.6533203125,
-      'y': 15.6943359375
+    "id": 38,
+    "mapId": 15,
+    "placeId": 30,
+    "zoneId": 974,
+    "coords": {
+      "x": 14.6533203125,
+      "y": 15.6943359375
     },
-    'fishes': [
+    "fishes": [
       4869,
       4871,
       5460,
@@ -814,15 +814,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 39,
-    'mapId': 15,
-    'placeId': 30,
-    'zoneId': 182,
-    'coords': {
-      'x': 22.1005859375,
-      'y': 22.1806640625
+    "id": 39,
+    "mapId": 15,
+    "placeId": 30,
+    "zoneId": 182,
+    "coords": {
+      "x": 22.1005859375,
+      "y": 22.1806640625
     },
-    'fishes': [
+    "fishes": [
       4925,
       4926,
       4928,
@@ -836,15 +836,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 40,
-    'mapId': 15,
-    'placeId': 30,
-    'zoneId': 975,
-    'coords': {
-      'x': 20.21875,
-      'y': 18.0166015625
+    "id": 40,
+    "mapId": 15,
+    "placeId": 30,
+    "zoneId": 975,
+    "coords": {
+      "x": 20.21875,
+      "y": 18.0166015625
     },
-    'fishes': [
+    "fishes": [
       4925,
       4926,
       4928,
@@ -858,15 +858,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 41,
-    'mapId': 15,
-    'placeId': 30,
-    'zoneId': 193,
-    'coords': {
-      'x': 18.23681640625,
-      'y': 14.87353515625
+    "id": 41,
+    "mapId": 15,
+    "placeId": 30,
+    "zoneId": 193,
+    "coords": {
+      "x": 18.23681640625,
+      "y": 14.87353515625
     },
-    'fishes': [
+    "fishes": [
       4926,
       4928,
       4930,
@@ -880,15 +880,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 42,
-    'mapId': 15,
-    'placeId': 30,
-    'zoneId': 192,
-    'coords': {
-      'x': 20.79931640625,
-      'y': 12.1708984375
+    "id": 42,
+    "mapId": 15,
+    "placeId": 30,
+    "zoneId": 192,
+    "coords": {
+      "x": 20.79931640625,
+      "y": 12.1708984375
     },
-    'fishes': [
+    "fishes": [
       4928,
       4931,
       4941,
@@ -902,15 +902,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 43,
-    'mapId': 16,
-    'placeId': 31,
-    'zoneId': 197,
-    'coords': {
-      'x': 24.783203125,
-      'y': 23.021484375
+    "id": 43,
+    "mapId": 16,
+    "placeId": 31,
+    "zoneId": 197,
+    "coords": {
+      "x": 24.783203125,
+      "y": 23.021484375
     },
-    'fishes': [
+    "fishes": [
       4925,
       4926,
       4928,
@@ -924,15 +924,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 44,
-    'mapId': 16,
-    'placeId': 31,
-    'zoneId': 976,
-    'coords': {
-      'x': 26.9052734375,
-      'y': 25.984375
+    "id": 44,
+    "mapId": 16,
+    "placeId": 31,
+    "zoneId": 976,
+    "coords": {
+      "x": 26.9052734375,
+      "y": 25.984375
     },
-    'fishes': [
+    "fishes": [
       4869,
       4776,
       4872,
@@ -946,15 +946,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 45,
-    'mapId': 16,
-    'placeId': 31,
-    'zoneId': 977,
-    'coords': {
-      'x': 35.2734375,
-      'y': 18.0166015625
+    "id": 45,
+    "mapId": 16,
+    "placeId": 31,
+    "zoneId": 977,
+    "coords": {
+      "x": 35.2734375,
+      "y": 18.0166015625
     },
-    'fishes': [
+    "fishes": [
       4869,
       4872,
       4874,
@@ -968,15 +968,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 46,
-    'mapId': 16,
-    'placeId': 31,
-    'zoneId': 337,
-    'coords': {
-      'x': 26.4248046875,
-      'y': 34.47265625
+    "id": 46,
+    "mapId": 16,
+    "placeId": 31,
+    "zoneId": 337,
+    "coords": {
+      "x": 26.4248046875,
+      "y": 34.47265625
     },
-    'fishes': [
+    "fishes": [
       4872,
       4874,
       4877,
@@ -990,15 +990,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 47,
-    'mapId': 16,
-    'placeId': 31,
-    'zoneId': 341,
-    'coords': {
-      'x': 24.5029296875,
-      'y': 39.7177734375
+    "id": 47,
+    "mapId": 16,
+    "placeId": 31,
+    "zoneId": 341,
+    "coords": {
+      "x": 24.5029296875,
+      "y": 39.7177734375
     },
-    'fishes': [
+    "fishes": [
       4873,
       4875,
       4877,
@@ -1012,15 +1012,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 48,
-    'mapId': 16,
-    'placeId': 31,
-    'zoneId': 338,
-    'coords': {
-      'x': 17.3759765625,
-      'y': 36.07421875
+    "id": 48,
+    "mapId": 16,
+    "placeId": 31,
+    "zoneId": 338,
+    "coords": {
+      "x": 17.3759765625,
+      "y": 36.07421875
     },
-    'fishes': [
+    "fishes": [
       4873,
       4878,
       4880,
@@ -1034,15 +1034,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 49,
-    'mapId': 16,
-    'placeId': 31,
-    'zoneId': 339,
-    'coords': {
-      'x': 20.619140625,
-      'y': 39.037109375
+    "id": 49,
+    "mapId": 16,
+    "placeId": 31,
+    "zoneId": 339,
+    "coords": {
+      "x": 20.619140625,
+      "y": 39.037109375
     },
-    'fishes': [
+    "fishes": [
       4870,
       4875,
       4877,
@@ -1056,15 +1056,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 50,
-    'mapId': 16,
-    'placeId': 31,
-    'zoneId': 340,
-    'coords': {
-      'x': 22.00048828125,
-      'y': 35.01318359375
+    "id": 50,
+    "mapId": 16,
+    "placeId": 31,
+    "zoneId": 340,
+    "coords": {
+      "x": 22.00048828125,
+      "y": 35.01318359375
     },
-    'fishes': [
+    "fishes": [
       4931,
       4933,
       4943,
@@ -1078,15 +1078,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 51,
-    'mapId': 17,
-    'placeId': 32,
-    'zoneId': 978,
-    'coords': {
-      'x': 32.93115234375,
-      'y': 34.47265625
+    "id": 51,
+    "mapId": 17,
+    "placeId": 32,
+    "zoneId": 978,
+    "coords": {
+      "x": 32.93115234375,
+      "y": 34.47265625
     },
-    'fishes': [
+    "fishes": [
       4869,
       4876,
       4885,
@@ -1100,15 +1100,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 52,
-    'mapId': 17,
-    'placeId': 32,
-    'zoneId': 206,
-    'coords': {
-      'x': 32.89111328125,
-      'y': 29.3076171875
+    "id": 52,
+    "mapId": 17,
+    "placeId": 32,
+    "zoneId": 206,
+    "coords": {
+      "x": 32.89111328125,
+      "y": 29.3076171875
     },
-    'fishes': [
+    "fishes": [
       4883,
       4886,
       4891,
@@ -1122,15 +1122,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 53,
-    'mapId': 17,
-    'placeId': 32,
-    'zoneId': 979,
-    'coords': {
-      'x': 33.03125,
-      'y': 24.22265625
+    "id": 53,
+    "mapId": 17,
+    "placeId": 32,
+    "zoneId": 979,
+    "coords": {
+      "x": 33.03125,
+      "y": 24.22265625
     },
-    'fishes': [
+    "fishes": [
       4874,
       4888,
       4892,
@@ -1144,15 +1144,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 54,
-    'mapId': 17,
-    'placeId': 32,
-    'zoneId': 211,
-    'coords': {
-      'x': 30.8291015625,
-      'y': 23.021484375
+    "id": 54,
+    "mapId": 17,
+    "placeId": 32,
+    "zoneId": 211,
+    "coords": {
+      "x": 30.8291015625,
+      "y": 23.021484375
     },
-    'fishes': [
+    "fishes": [
       4933,
       4945,
       4974,
@@ -1166,15 +1166,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 55,
-    'mapId': 17,
-    'placeId': 32,
-    'zoneId': 980,
-    'coords': {
-      'x': 20.19873046875,
-      'y': 25.96435546875
+    "id": 55,
+    "mapId": 17,
+    "placeId": 32,
+    "zoneId": 980,
+    "coords": {
+      "x": 20.19873046875,
+      "y": 25.96435546875
     },
-    'fishes': [
+    "fishes": [
       4948,
       4965,
       4975,
@@ -1188,15 +1188,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 56,
-    'mapId': 17,
-    'placeId': 32,
-    'zoneId': 168,
-    'coords': {
-      'x': 20.47900390625,
-      'y': 30.2685546875
+    "id": 56,
+    "mapId": 17,
+    "placeId": 32,
+    "zoneId": 168,
+    "coords": {
+      "x": 20.47900390625,
+      "y": 30.2685546875
     },
-    'fishes': [
+    "fishes": [
       4948,
       4965,
       4974,
@@ -1210,15 +1210,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 57,
-    'mapId': 17,
-    'placeId': 32,
-    'zoneId': 981,
-    'coords': {
-      'x': 16.83544921875,
-      'y': 32.0302734375
+    "id": 57,
+    "mapId": 17,
+    "placeId": 32,
+    "zoneId": 981,
+    "coords": {
+      "x": 16.83544921875,
+      "y": 32.0302734375
     },
-    'fishes': [
+    "fishes": [
       4948,
       4950,
       4965,
@@ -1232,15 +1232,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 58,
-    'mapId': 17,
-    'placeId': 32,
-    'zoneId': 214,
-    'coords': {
-      'x': 15.35400390625,
-      'y': 27.4658203125
+    "id": 58,
+    "mapId": 17,
+    "placeId": 32,
+    "zoneId": 214,
+    "coords": {
+      "x": 15.35400390625,
+      "y": 27.4658203125
     },
-    'fishes': [
+    "fishes": [
       4974,
       4978,
       4979,
@@ -1254,15 +1254,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 59,
-    'mapId': 18,
-    'placeId': 33,
-    'zoneId': 218,
-    'coords': {
-      'x': 33.85205078125,
-      'y': 31.8701171875
+    "id": 59,
+    "mapId": 18,
+    "placeId": 33,
+    "zoneId": 218,
+    "coords": {
+      "x": 33.85205078125,
+      "y": 31.8701171875
     },
-    'fishes': [
+    "fishes": [
       4870,
       5460,
       4874,
@@ -1276,15 +1276,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 60,
-    'mapId': 18,
-    'placeId': 33,
-    'zoneId': 982,
-    'coords': {
-      'x': 26.68505859375,
-      'y': 26.9853515625
+    "id": 60,
+    "mapId": 18,
+    "placeId": 33,
+    "zoneId": 982,
+    "coords": {
+      "x": 26.68505859375,
+      "y": 26.9853515625
     },
-    'fishes': [
+    "fishes": [
       4869,
       4879,
       4881,
@@ -1298,15 +1298,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 61,
-    'mapId': 18,
-    'placeId': 33,
-    'zoneId': 983,
-    'coords': {
-      'x': 17.55615234375,
-      'y': 20.9794921875
+    "id": 61,
+    "mapId": 18,
+    "placeId": 33,
+    "zoneId": 983,
+    "coords": {
+      "x": 17.55615234375,
+      "y": 20.9794921875
     },
-    'fishes': [
+    "fishes": [
       4887,
       5461,
       4893,
@@ -1320,15 +1320,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 62,
-    'mapId': 18,
-    'placeId': 33,
-    'zoneId': 984,
-    'coords': {
-      'x': 14.47314453125,
-      'y': 29.908203125
+    "id": 62,
+    "mapId": 18,
+    "placeId": 33,
+    "zoneId": 984,
+    "coords": {
+      "x": 14.47314453125,
+      "y": 29.908203125
     },
-    'fishes': [
+    "fishes": [
       4869,
       4872,
       4898,
@@ -1342,15 +1342,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 63,
-    'mapId': 18,
-    'placeId': 33,
-    'zoneId': 985,
-    'coords': {
-      'x': 12.8115234375,
-      'y': 36.234375
+    "id": 63,
+    "mapId": 18,
+    "placeId": 33,
+    "zoneId": 985,
+    "coords": {
+      "x": 12.8115234375,
+      "y": 36.234375
     },
-    'fishes': [
+    "fishes": [
       4898,
       5462,
       5466,
@@ -1364,15 +1364,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 64,
-    'mapId': 18,
-    'placeId': 33,
-    'zoneId': 220,
-    'coords': {
-      'x': 30.1484375,
-      'y': 30.62890625
+    "id": 64,
+    "mapId": 18,
+    "placeId": 33,
+    "zoneId": 220,
+    "coords": {
+      "x": 30.1484375,
+      "y": 30.62890625
     },
-    'fishes': [
+    "fishes": [
       5460,
       4874,
       4880,
@@ -1386,15 +1386,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 65,
-    'mapId': 18,
-    'placeId': 33,
-    'zoneId': 228,
-    'coords': {
-      'x': 15.57421875,
-      'y': 36.07421875
+    "id": 65,
+    "mapId": 18,
+    "placeId": 33,
+    "zoneId": 228,
+    "coords": {
+      "x": 15.57421875,
+      "y": 36.07421875
     },
-    'fishes': [
+    "fishes": [
       4869,
       5462,
       4904,
@@ -1408,15 +1408,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 66,
-    'mapId': 19,
-    'placeId': 34,
-    'zoneId': 174,
-    'coords': {
-      'x': 13.59228515625,
-      'y': 24.302734375
+    "id": 66,
+    "mapId": 19,
+    "placeId": 34,
+    "zoneId": 174,
+    "coords": {
+      "x": 13.59228515625,
+      "y": 24.302734375
     },
-    'fishes': [
+    "fishes": [
       4941,
       4943,
       4953,
@@ -1430,15 +1430,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 67,
-    'mapId': 19,
-    'placeId': 34,
-    'zoneId': 234,
-    'coords': {
-      'x': 9.0478515625,
-      'y': 21.099609375
+    "id": 67,
+    "mapId": 19,
+    "placeId": 34,
+    "zoneId": 234,
+    "coords": {
+      "x": 9.0478515625,
+      "y": 21.099609375
     },
-    'fishes': [
+    "fishes": [
       4933,
       4941,
       4948,
@@ -1452,15 +1452,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 68,
-    'mapId': 19,
-    'placeId': 34,
-    'zoneId': 987,
-    'coords': {
-      'x': 28.146484375,
-      'y': 22.84130859375
+    "id": 68,
+    "mapId": 19,
+    "placeId": 34,
+    "zoneId": 987,
+    "coords": {
+      "x": 28.146484375,
+      "y": 22.84130859375
     },
-    'fishes': [
+    "fishes": [
       4953,
       4954,
       4957,
@@ -1474,15 +1474,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 69,
-    'mapId': 20,
-    'placeId': 42,
-    'zoneId': 266,
-    'coords': {
-      'x': 14.5732421875,
-      'y': 29.5478515625
+    "id": 69,
+    "mapId": 20,
+    "placeId": 42,
+    "zoneId": 266,
+    "coords": {
+      "x": 14.5732421875,
+      "y": 29.5478515625
     },
-    'fishes': [
+    "fishes": [
       4870,
       4878,
       4879,
@@ -1496,15 +1496,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 70,
-    'mapId': 20,
-    'placeId': 42,
-    'zoneId': 274,
-    'coords': {
-      'x': 11.5302734375,
-      'y': 12.5712890625
+    "id": 70,
+    "mapId": 20,
+    "placeId": 42,
+    "zoneId": 274,
+    "coords": {
+      "x": 11.5302734375,
+      "y": 12.5712890625
     },
-    'fishes': [
+    "fishes": [
       4870,
       4874,
       4878,
@@ -1518,15 +1518,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 71,
-    'mapId': 20,
-    'placeId': 42,
-    'zoneId': 272,
-    'coords': {
-      'x': 15.57421875,
-      'y': 19.2177734375
+    "id": 71,
+    "mapId": 20,
+    "placeId": 42,
+    "zoneId": 272,
+    "coords": {
+      "x": 15.57421875,
+      "y": 19.2177734375
     },
-    'fishes': [
+    "fishes": [
       4870,
       4884,
       4886,
@@ -1540,15 +1540,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 72,
-    'mapId': 20,
-    'placeId': 42,
-    'zoneId': 264,
-    'coords': {
-      'x': 24.5029296875,
-      'y': 21.580078125
+    "id": 72,
+    "mapId": 20,
+    "placeId": 42,
+    "zoneId": 264,
+    "coords": {
+      "x": 24.5029296875,
+      "y": 21.580078125
     },
-    'fishes': [
+    "fishes": [
       4929,
       4931,
       4934,
@@ -1562,15 +1562,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 73,
-    'mapId': 20,
-    'placeId': 42,
-    'zoneId': 245,
-    'coords': {
-      'x': 17.17578125,
-      'y': 15.6943359375
+    "id": 73,
+    "mapId": 20,
+    "placeId": 42,
+    "zoneId": 245,
+    "coords": {
+      "x": 17.17578125,
+      "y": 15.6943359375
     },
-    'fishes': [
+    "fishes": [
       4925,
       4939,
       4943,
@@ -1584,15 +1584,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 74,
-    'mapId': 20,
-    'placeId': 42,
-    'zoneId': 246,
-    'coords': {
-      'x': 9.9287109375,
-      'y': 7.3662109375
+    "id": 74,
+    "mapId": 20,
+    "placeId": 42,
+    "zoneId": 246,
+    "coords": {
+      "x": 9.9287109375,
+      "y": 7.3662109375
     },
-    'fishes': [
+    "fishes": [
       4869,
       4899,
       4900,
@@ -1606,15 +1606,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 75,
-    'mapId': 21,
-    'placeId': 43,
-    'zoneId': 990,
-    'coords': {
-      'x': 23.421875,
-      'y': 18.216796875
+    "id": 75,
+    "mapId": 21,
+    "placeId": 43,
+    "zoneId": 990,
+    "coords": {
+      "x": 23.421875,
+      "y": 18.216796875
     },
-    'fishes': [
+    "fishes": [
       4929,
       4931,
       4935,
@@ -1628,15 +1628,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 76,
-    'mapId': 21,
-    'placeId': 43,
-    'zoneId': 991,
-    'coords': {
-      'x': 17.1357421875,
-      'y': 23.7822265625
+    "id": 76,
+    "mapId": 21,
+    "placeId": 43,
+    "zoneId": 991,
+    "coords": {
+      "x": 17.1357421875,
+      "y": 23.7822265625
     },
-    'fishes': [
+    "fishes": [
       4929,
       4931,
       4935,
@@ -1650,15 +1650,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 77,
-    'mapId': 21,
-    'placeId': 43,
-    'zoneId': 297,
-    'coords': {
-      'x': 27.826171875,
-      'y': 19.2978515625
+    "id": 77,
+    "mapId": 21,
+    "placeId": 43,
+    "zoneId": 297,
+    "coords": {
+      "x": 27.826171875,
+      "y": 19.2978515625
     },
-    'fishes': [
+    "fishes": [
       4929,
       4936,
       4939,
@@ -1672,15 +1672,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 78,
-    'mapId': 22,
-    'placeId': 44,
-    'zoneId': 992,
-    'coords': {
-      'x': 13.65234375,
-      'y': 20.69921875
+    "id": 78,
+    "mapId": 22,
+    "placeId": 44,
+    "zoneId": 992,
+    "coords": {
+      "x": 13.65234375,
+      "y": 20.69921875
     },
-    'fishes': [
+    "fishes": [
       4931,
       4939,
       4943,
@@ -1694,15 +1694,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 79,
-    'mapId': 22,
-    'placeId': 44,
-    'zoneId': 993,
-    'coords': {
-      'x': 17.2158203125,
-      'y': 24.8232421875
+    "id": 79,
+    "mapId": 22,
+    "placeId": 44,
+    "zoneId": 993,
+    "coords": {
+      "x": 17.2158203125,
+      "y": 24.8232421875
     },
-    'fishes': [
+    "fishes": [
       4931,
       4939,
       4943,
@@ -1716,15 +1716,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 80,
-    'mapId': 22,
-    'placeId': 44,
-    'zoneId': 308,
-    'coords': {
-      'x': 25.6640625,
-      'y': 22.6611328125
+    "id": 80,
+    "mapId": 22,
+    "placeId": 44,
+    "zoneId": 308,
+    "coords": {
+      "x": 25.6640625,
+      "y": 22.6611328125
     },
-    'fishes': [
+    "fishes": [
       4955,
       4958,
       4959,
@@ -1738,15 +1738,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 81,
-    'mapId': 3,
-    'placeId': 53,
-    'zoneId': 1000,
-    'coords': {
-      'x': 16.545166015625,
-      'y': 6.30517578125
+    "id": 81,
+    "mapId": 3,
+    "placeId": 53,
+    "zoneId": 1000,
+    "coords": {
+      "x": 16.545166015625,
+      "y": 6.30517578125
     },
-    'fishes': [
+    "fishes": [
       4925,
       4932,
       4934,
@@ -1760,15 +1760,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 82,
-    'mapId': 22,
-    'placeId': 44,
-    'zoneId': 253,
-    'coords': {
-      'x': 29.1474609375,
-      'y': 24.703125
+    "id": 82,
+    "mapId": 22,
+    "placeId": 44,
+    "zoneId": 253,
+    "coords": {
+      "x": 29.1474609375,
+      "y": 24.703125
     },
-    'fishes': [
+    "fishes": [
       4967,
       4973,
       4987,
@@ -1782,15 +1782,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 83,
-    'mapId': 23,
-    'placeId': 45,
-    'zoneId': 314,
-    'coords': {
-      'x': 21.740234375,
-      'y': 15.09375
+    "id": 83,
+    "mapId": 23,
+    "placeId": 45,
+    "zoneId": 314,
+    "coords": {
+      "x": 21.740234375,
+      "y": 15.09375
     },
-    'fishes': [
+    "fishes": [
       4948,
       4955,
       4959,
@@ -1804,15 +1804,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 84,
-    'mapId': 23,
-    'placeId': 45,
-    'zoneId': 995,
-    'coords': {
-      'x': 25.3837890625,
-      'y': 21.01953125
+    "id": 84,
+    "mapId": 23,
+    "placeId": 45,
+    "zoneId": 995,
+    "coords": {
+      "x": 25.3837890625,
+      "y": 21.01953125
     },
-    'fishes': [
+    "fishes": [
       4947,
       4950,
       4966,
@@ -1826,15 +1826,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 85,
-    'mapId': 23,
-    'placeId': 45,
-    'zoneId': 323,
-    'coords': {
-      'x': 15.654296875,
-      'y': 30.94921875
+    "id": 85,
+    "mapId": 23,
+    "placeId": 45,
+    "zoneId": 323,
+    "coords": {
+      "x": 15.654296875,
+      "y": 30.94921875
     },
-    'fishes': [
+    "fishes": [
       4948,
       4955,
       4965,
@@ -1848,15 +1848,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 86,
-    'mapId': 23,
-    'placeId': 45,
-    'zoneId': 996,
-    'coords': {
-      'x': 12.37109375,
-      'y': 36.0341796875
+    "id": 86,
+    "mapId": 23,
+    "placeId": 45,
+    "zoneId": 996,
+    "coords": {
+      "x": 12.37109375,
+      "y": 36.0341796875
     },
-    'fishes': [
+    "fishes": [
       4977,
       5032,
       5034,
@@ -1870,15 +1870,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 87,
-    'mapId': 23,
-    'placeId': 45,
-    'zoneId': 997,
-    'coords': {
-      'x': 27.3056640625,
-      'y': 36.955078125
+    "id": 87,
+    "mapId": 23,
+    "placeId": 45,
+    "zoneId": 997,
+    "coords": {
+      "x": 27.3056640625,
+      "y": 36.955078125
     },
-    'fishes': [
+    "fishes": [
       5032,
       5033,
       5034,
@@ -1892,15 +1892,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 88,
-    'mapId': 24,
-    'placeId': 46,
-    'zoneId': 330,
-    'coords': {
-      'x': 20.7392578125,
-      'y': 23.58203125
+    "id": 88,
+    "mapId": 24,
+    "placeId": 46,
+    "zoneId": 330,
+    "coords": {
+      "x": 20.7392578125,
+      "y": 23.58203125
     },
-    'fishes': [
+    "fishes": [
       4970,
       4978,
       4989,
@@ -1914,15 +1914,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 89,
-    'mapId': 24,
-    'placeId': 46,
-    'zoneId': 998,
-    'coords': {
-      'x': 24.142578125,
-      'y': 26.00439453125
+    "id": 89,
+    "mapId": 24,
+    "placeId": 46,
+    "zoneId": 998,
+    "coords": {
+      "x": 24.142578125,
+      "y": 26.00439453125
     },
-    'fishes': [
+    "fishes": [
       4929,
       4978,
       4981,
@@ -1936,15 +1936,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 90,
-    'mapId': 2,
-    'placeId': 52,
-    'zoneId': 964,
-    'coords': {
-      'x': 12.611328125,
-      'y': 14.623291015625
+    "id": 90,
+    "mapId": 2,
+    "placeId": 52,
+    "zoneId": 964,
+    "coords": {
+      "x": 12.611328125,
+      "y": 14.623291015625
     },
-    'fishes': [
+    "fishes": [
       4925,
       4932,
       4934,
@@ -1958,15 +1958,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 91,
-    'mapId': 2,
-    'placeId': 52,
-    'zoneId': 965,
-    'coords': {
-      'x': 10.7294921875,
-      'y': 11.660400390625
+    "id": 91,
+    "mapId": 2,
+    "placeId": 52,
+    "zoneId": 965,
+    "coords": {
+      "x": 10.7294921875,
+      "y": 11.660400390625
     },
-    'fishes': [
+    "fishes": [
       4925,
       4932,
       4934,
@@ -1980,15 +1980,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 92,
-    'mapId': 4,
-    'placeId': 54,
-    'zoneId': 59,
-    'coords': {
-      'x': 10.86962890625,
-      'y': 23.16162109375
+    "id": 92,
+    "mapId": 4,
+    "placeId": 54,
+    "zoneId": 59,
+    "coords": {
+      "x": 10.86962890625,
+      "y": 23.16162109375
     },
-    'fishes': [
+    "fishes": [
       4939,
       4942,
       4950,
@@ -2002,15 +2002,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 93,
-    'mapId': 25,
-    'placeId': 67,
-    'zoneId': 417,
-    'coords': {
-      'x': 29.1474609375,
-      'y': 10.3291015625
+    "id": 93,
+    "mapId": 25,
+    "placeId": 67,
+    "zoneId": 417,
+    "coords": {
+      "x": 29.1474609375,
+      "y": 10.3291015625
     },
-    'fishes': [
+    "fishes": [
       4950,
       5544,
       4973,
@@ -2024,15 +2024,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 94,
-    'mapId': 25,
-    'placeId': 67,
-    'zoneId': 967,
-    'coords': {
-      'x': 30.9892578125,
-      'y': 6.205078125
+    "id": 94,
+    "mapId": 25,
+    "placeId": 67,
+    "zoneId": 967,
+    "coords": {
+      "x": 30.9892578125,
+      "y": 6.205078125
     },
-    'fishes': [
+    "fishes": [
       5544,
       4978,
       4981,
@@ -2046,15 +2046,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 95,
-    'mapId': 20,
-    'placeId': 42,
-    'zoneId': 276,
-    'coords': {
-      'x': 15.0537109375,
-      'y': 6.38525390625
+    "id": 95,
+    "mapId": 20,
+    "placeId": 42,
+    "zoneId": 276,
+    "coords": {
+      "x": 15.0537109375,
+      "y": 6.38525390625
     },
-    'fishes': [
+    "fishes": [
       4970,
       4978,
       4989,
@@ -2068,15 +2068,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 96,
-    'mapId': 21,
-    'placeId': 43,
-    'zoneId': 249,
-    'coords': {
-      'x': 29.5478515625,
-      'y': 21.419921875
+    "id": 96,
+    "mapId": 21,
+    "placeId": 43,
+    "zoneId": 249,
+    "coords": {
+      "x": 29.5478515625,
+      "y": 21.419921875
     },
-    'fishes': [
+    "fishes": [
       4929,
       4931,
       4935,
@@ -2090,15 +2090,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 97,
-    'mapId': 16,
-    'placeId': 31,
-    'zoneId': 202,
-    'coords': {
-      'x': 27.44580078125,
-      'y': 15.6943359375
+    "id": 97,
+    "mapId": 16,
+    "placeId": 31,
+    "zoneId": 202,
+    "coords": {
+      "x": 27.44580078125,
+      "y": 15.6943359375
     },
-    'fishes': [
+    "fishes": [
       4929,
       4944,
       4938,
@@ -2112,15 +2112,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 98,
-    'mapId': 19,
-    'placeId': 34,
-    'zoneId': 988,
-    'coords': {
-      'x': 33.57177734375,
-      'y': 24.943359375
+    "id": 98,
+    "mapId": 19,
+    "placeId": 34,
+    "zoneId": 988,
+    "coords": {
+      "x": 33.57177734375,
+      "y": 24.943359375
     },
-    'fishes': [
+    "fishes": [
       4933,
       4941,
       4943,
@@ -2134,15 +2134,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 99,
-    'mapId': 30,
-    'placeId': 350,
-    'zoneId': 989,
-    'coords': {
-      'x': 15.89453125,
-      'y': 11.330078125
+    "id": 99,
+    "mapId": 30,
+    "placeId": 350,
+    "zoneId": 989,
+    "coords": {
+      "x": 15.89453125,
+      "y": 11.330078125
     },
-    'fishes': [
+    "fishes": [
       4981,
       4989,
       4991,
@@ -2156,15 +2156,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 100,
-    'mapId': 3,
-    'placeId': 53,
-    'zoneId': 999,
-    'coords': {
-      'x': 8.90771484375,
-      'y': 8.0068359375
+    "id": 100,
+    "mapId": 3,
+    "placeId": 53,
+    "zoneId": 999,
+    "coords": {
+      "x": 8.90771484375,
+      "y": 8.0068359375
     },
-    'fishes': [
+    "fishes": [
       4925,
       4932,
       4934,
@@ -2178,15 +2178,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 101,
-    'mapId': 18,
-    'placeId': 33,
-    'zoneId': 363,
-    'coords': {
-      'x': 17.1357421875,
-      'y': 15.7744140625
+    "id": 101,
+    "mapId": 18,
+    "placeId": 33,
+    "zoneId": 363,
+    "coords": {
+      "x": 17.1357421875,
+      "y": 15.7744140625
     },
-    'fishes': [
+    "fishes": [
       4898,
       4900,
       5462,
@@ -2200,15 +2200,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 102,
-    'mapId': 18,
-    'placeId': 33,
-    'zoneId': 365,
-    'coords': {
-      'x': 13.7724609375,
-      'y': 13.171875
+    "id": 102,
+    "mapId": 18,
+    "placeId": 33,
+    "zoneId": 365,
+    "coords": {
+      "x": 13.7724609375,
+      "y": 13.171875
     },
-    'fishes': [
+    "fishes": [
       4870,
       4869,
       5462,
@@ -2222,15 +2222,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 103,
-    'mapId': 20,
-    'placeId': 42,
-    'zoneId': 275,
-    'coords': {
-      'x': 18.0166015625,
-      'y': 7.06591796875
+    "id": 103,
+    "mapId": 20,
+    "placeId": 42,
+    "zoneId": 275,
+    "coords": {
+      "x": 18.0166015625,
+      "y": 7.06591796875
     },
-    'fishes': [
+    "fishes": [
       4938,
       4970,
       4978,
@@ -2244,15 +2244,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 104,
-    'mapId': 72,
-    'placeId': 425,
-    'zoneId': 425,
-    'coords': {
-      'x': 11.009765625,
-      'y': 11.009765625
+    "id": 104,
+    "mapId": 72,
+    "placeId": 425,
+    "zoneId": 425,
+    "coords": {
+      "x": 11.009765625,
+      "y": 11.009765625
     },
-    'fishes': [
+    "fishes": [
       4874,
       4885,
       4886,
@@ -2266,15 +2266,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 105,
-    'mapId': 82,
-    'placeId': 426,
-    'zoneId': 426,
-    'coords': {
-      'x': 11.009765625,
-      'y': 11.009765625
+    "id": 105,
+    "mapId": 82,
+    "placeId": 426,
+    "zoneId": 426,
+    "coords": {
+      "x": 11.009765625,
+      "y": 11.009765625
     },
-    'fishes': [
+    "fishes": [
       4932,
       4945,
       4942,
@@ -2288,15 +2288,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 106,
-    'mapId': 83,
-    'placeId': 427,
-    'zoneId': 427,
-    'coords': {
-      'x': 11.009765625,
-      'y': 11.009765625
+    "id": 106,
+    "mapId": 83,
+    "placeId": 427,
+    "zoneId": 427,
+    "coords": {
+      "x": 11.009765625,
+      "y": 11.009765625
     },
-    'fishes': [
+    "fishes": [
       4935,
       4943,
       4948,
@@ -2310,15 +2310,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 107,
-    'mapId': 17,
-    'placeId': 32,
-    'zoneId': 1001,
-    'coords': {
-      'x': 37.6357421875,
-      'y': 22.8212890625
+    "id": 107,
+    "mapId": 17,
+    "placeId": 32,
+    "zoneId": 1001,
+    "coords": {
+      "x": 37.6357421875,
+      "y": 22.8212890625
     },
-    'fishes': [
+    "fishes": [
       4871,
       4874,
       4886,
@@ -2332,15 +2332,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 108,
-    'mapId': 17,
-    'placeId': 32,
-    'zoneId': 1002,
-    'coords': {
-      'x': 37.2353515625,
-      'y': 24.0224609375
+    "id": 108,
+    "mapId": 17,
+    "placeId": 32,
+    "zoneId": 1002,
+    "coords": {
+      "x": 37.2353515625,
+      "y": 24.0224609375
     },
-    'fishes': [
+    "fishes": [
       4869,
       4886,
       4897,
@@ -2354,15 +2354,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 109,
-    'mapId': 211,
-    'placeId': 2200,
-    'zoneId': 2201,
-    'coords': {
-      'x': 32.86266447368421,
-      'y': 27.552220394736846
+    "id": 109,
+    "mapId": 211,
+    "placeId": 2200,
+    "zoneId": 2201,
+    "coords": {
+      "x": 32.86266447368421,
+      "y": 27.552220394736846
     },
-    'fishes': [
+    "fishes": [
       4937,
       12718,
       12762,
@@ -2376,15 +2376,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 110,
-    'mapId': 211,
-    'placeId': 2200,
-    'zoneId': 2217,
-    'coords': {
-      'x': 35.56003289473684,
-      'y': 27.383634868421055
+    "id": 110,
+    "mapId": 211,
+    "placeId": 2200,
+    "zoneId": 2217,
+    "coords": {
+      "x": 35.56003289473684,
+      "y": 27.383634868421055
     },
-    'fishes': [
+    "fishes": [
       12714,
       12716,
       12724,
@@ -2398,15 +2398,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 111,
-    'mapId': 211,
-    'placeId': 2200,
-    'zoneId': 1003,
-    'coords': {
-      'x': 28.43729440789474,
-      'y': 17.900699013157897
+    "id": 111,
+    "mapId": 211,
+    "placeId": 2200,
+    "zoneId": 1003,
+    "coords": {
+      "x": 28.43729440789474,
+      "y": 17.900699013157897
     },
-    'fishes': [
+    "fishes": [
       4937,
       12713,
       12715,
@@ -2420,15 +2420,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 112,
-    'mapId': 211,
-    'placeId': 2200,
-    'zoneId': 1004,
-    'coords': {
-      'x': 36.78227796052632,
-      'y': 5.97327302631579
+    "id": 112,
+    "mapId": 211,
+    "placeId": 2200,
+    "zoneId": 1004,
+    "coords": {
+      "x": 36.78227796052632,
+      "y": 5.97327302631579
     },
-    'fishes': [
+    "fishes": [
       4937,
       12715,
       12718,
@@ -2442,15 +2442,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 113,
-    'mapId': 211,
-    'placeId': 2200,
-    'zoneId': 2227,
-    'coords': {
-      'x': 8.71278782894737,
-      'y': 9.724300986842106
+    "id": 113,
+    "mapId": 211,
+    "placeId": 2200,
+    "zoneId": 2227,
+    "coords": {
+      "x": 8.71278782894737,
+      "y": 9.724300986842106
     },
-    'fishes': [
+    "fishes": [
       12725,
       12824,
       12809,
@@ -2464,15 +2464,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 114,
-    'mapId': 211,
-    'placeId': 2200,
-    'zoneId': 1005,
-    'coords': {
-      'x': 21.778166118421055,
-      'y': 11.325863486842106
+    "id": 114,
+    "mapId": 211,
+    "placeId": 2200,
+    "zoneId": 1005,
+    "coords": {
+      "x": 21.778166118421055,
+      "y": 11.325863486842106
     },
-    'fishes': [
+    "fishes": [
       4937,
       12713,
       12715,
@@ -2486,15 +2486,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 115,
-    'mapId': 211,
-    'placeId': 2200,
-    'zoneId': 2211,
-    'coords': {
-      'x': 14.065378289473685,
-      'y': 15.709087171052634
+    "id": 115,
+    "mapId": 211,
+    "placeId": 2200,
+    "zoneId": 2211,
+    "coords": {
+      "x": 14.065378289473685,
+      "y": 15.709087171052634
     },
-    'fishes': [
+    "fishes": [
       4937,
       12715,
       12719,
@@ -2508,15 +2508,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 116,
-    'mapId': 211,
-    'placeId': 2200,
-    'zoneId': 1006,
-    'coords': {
-      'x': 13.264597039473685,
-      'y': 8.839226973684212
+    "id": 116,
+    "mapId": 211,
+    "placeId": 2200,
+    "zoneId": 1006,
+    "coords": {
+      "x": 13.264597039473685,
+      "y": 8.839226973684212
     },
-    'fishes': [
+    "fishes": [
       12719,
       12720,
       12715,
@@ -2530,15 +2530,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 117,
-    'mapId': 212,
-    'placeId': 2000,
-    'zoneId': 2019,
-    'coords': {
-      'x': 31.387541118421055,
-      'y': 10.103618421052632
+    "id": 117,
+    "mapId": 212,
+    "placeId": 2000,
+    "zoneId": 2019,
+    "coords": {
+      "x": 31.387541118421055,
+      "y": 10.103618421052632
     },
-    'fishes': [
+    "fishes": [
       12721,
       12741,
       12722,
@@ -2552,15 +2552,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 118,
-    'mapId': 212,
-    'placeId': 2000,
-    'zoneId': 2020,
-    'coords': {
-      'x': 30.628906250000004,
-      'y': 14.824013157894738
+    "id": 118,
+    "mapId": 212,
+    "placeId": 2000,
+    "zoneId": 2020,
+    "coords": {
+      "x": 30.628906250000004,
+      "y": 14.824013157894738
     },
-    'fishes': [
+    "fishes": [
       12721,
       12733,
       12741,
@@ -2574,15 +2574,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 119,
-    'mapId': 212,
-    'placeId': 2000,
-    'zoneId': 2004,
-    'coords': {
-      'x': 25.276315789473685,
-      'y': 25.824218750000004
+    "id": 119,
+    "mapId": 212,
+    "placeId": 2000,
+    "zoneId": 2004,
+    "coords": {
+      "x": 25.276315789473685,
+      "y": 25.824218750000004
     },
-    'fishes': [
+    "fishes": [
       12721,
       12733,
       12722,
@@ -2596,15 +2596,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 120,
-    'mapId': 212,
-    'placeId': 2000,
-    'zoneId': 2029,
-    'coords': {
-      'x': 31.619346217105267,
-      'y': 6.057565789473685
+    "id": 120,
+    "mapId": 212,
+    "placeId": 2000,
+    "zoneId": 2029,
+    "coords": {
+      "x": 31.619346217105267,
+      "y": 6.057565789473685
     },
-    'fishes': [
+    "fishes": [
       12741,
       12722,
       12764,
@@ -2618,15 +2618,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 121,
-    'mapId': 212,
-    'placeId': 2000,
-    'zoneId': 2008,
-    'coords': {
-      'x': 13.138157894736842,
-      'y': 13.391036184210527
+    "id": 121,
+    "mapId": 212,
+    "placeId": 2000,
+    "zoneId": 2008,
+    "coords": {
+      "x": 13.138157894736842,
+      "y": 13.391036184210527
     },
-    'fishes': [
+    "fishes": [
       12745,
       12754,
       12772,
@@ -2640,15 +2640,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 122,
-    'mapId': 212,
-    'placeId': 2000,
-    'zoneId': 1007,
-    'coords': {
-      'x': 9.64000822368421,
-      'y': 7.5326891447368425
+    "id": 122,
+    "mapId": 212,
+    "placeId": 2000,
+    "zoneId": 1007,
+    "coords": {
+      "x": 9.64000822368421,
+      "y": 7.5326891447368425
     },
-    'fishes': [
+    "fishes": [
       12754,
       12755,
       12759,
@@ -2662,15 +2662,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 123,
-    'mapId': 212,
-    'placeId': 2000,
-    'zoneId': 2064,
-    'coords': {
-      'x': 19.46011513157895,
-      'y': 10.820106907894738
+    "id": 123,
+    "mapId": 212,
+    "placeId": 2000,
+    "zoneId": 2064,
+    "coords": {
+      "x": 19.46011513157895,
+      "y": 10.820106907894738
     },
-    'fishes': [
+    "fishes": [
       12745,
       12754,
       12772,
@@ -2684,15 +2684,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 124,
-    'mapId': 212,
-    'placeId': 2000,
-    'zoneId': 2030,
-    'coords': {
-      'x': 7.659128289473685,
-      'y': 5.425370065789474
+    "id": 124,
+    "mapId": 212,
+    "placeId": 2000,
+    "zoneId": 2030,
+    "coords": {
+      "x": 7.659128289473685,
+      "y": 5.425370065789474
     },
-    'fishes': [
+    "fishes": [
       12754,
       12759,
       12787,
@@ -2706,15 +2706,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 125,
-    'mapId': 213,
-    'placeId': 2001,
-    'zoneId': 2039,
-    'coords': {
-      'x': 23.16899671052632,
-      'y': 23.548314144736846
+    "id": 125,
+    "mapId": 213,
+    "placeId": 2001,
+    "zoneId": 2039,
+    "coords": {
+      "x": 23.16899671052632,
+      "y": 23.548314144736846
     },
-    'fishes': [
+    "fishes": [
       12757,
       12780,
       12790,
@@ -2728,15 +2728,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 126,
-    'mapId': 213,
-    'placeId': 2001,
-    'zoneId': 2035,
-    'coords': {
-      'x': 11.325863486842106,
-      'y': 27.552220394736846
+    "id": 126,
+    "mapId": 213,
+    "placeId": 2001,
+    "zoneId": 2035,
+    "coords": {
+      "x": 11.325863486842106,
+      "y": 27.552220394736846
     },
-    'fishes': [
+    "fishes": [
       12722,
       12730,
       12757,
@@ -2750,15 +2750,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 127,
-    'mapId': 213,
-    'placeId': 2001,
-    'zoneId': 1008,
-    'coords': {
-      'x': 22.958264802631582,
-      'y': 36.36081414473684
+    "id": 127,
+    "mapId": 213,
+    "placeId": 2001,
+    "zoneId": 1008,
+    "coords": {
+      "x": 22.958264802631582,
+      "y": 36.36081414473684
     },
-    'fishes': [
+    "fishes": [
       12757,
       12747,
       12780,
@@ -2772,15 +2772,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 128,
-    'mapId': 213,
-    'placeId': 2001,
-    'zoneId': 1009,
-    'coords': {
-      'x': 20.619140625000004,
-      'y': 25.023437500000004
+    "id": 128,
+    "mapId": 213,
+    "placeId": 2001,
+    "zoneId": 1009,
+    "coords": {
+      "x": 20.619140625000004,
+      "y": 25.023437500000004
     },
-    'fishes': [
+    "fishes": [
       12790,
       12747,
       12780,
@@ -2794,15 +2794,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 129,
-    'mapId': 214,
-    'placeId': 2002,
-    'zoneId': 2013,
-    'coords': {
-      'x': 36.82442434210527,
-      'y': 30.50246710526316
+    "id": 129,
+    "mapId": 214,
+    "placeId": 2002,
+    "zoneId": 2013,
+    "coords": {
+      "x": 36.82442434210527,
+      "y": 30.50246710526316
     },
-    'fishes': [
+    "fishes": [
       12731,
       5544,
       12743,
@@ -2816,15 +2816,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 130,
-    'mapId': 214,
-    'placeId': 2002,
-    'zoneId': 2017,
-    'coords': {
-      'x': 8.754934210526317,
-      'y': 34.37993421052632
+    "id": 130,
+    "mapId": 214,
+    "placeId": 2002,
+    "zoneId": 2017,
+    "coords": {
+      "x": 8.754934210526317,
+      "y": 34.37993421052632
     },
-    'fishes': [
+    "fishes": [
       12758,
       16749,
       0,
@@ -2838,15 +2838,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 131,
-    'mapId': 214,
-    'placeId': 2002,
-    'zoneId': 2079,
-    'coords': {
-      'x': 9.176398026315791,
-      'y': 8.080592105263158
+    "id": 131,
+    "mapId": 214,
+    "placeId": 2002,
+    "zoneId": 2079,
+    "coords": {
+      "x": 9.176398026315791,
+      "y": 8.080592105263158
     },
-    'fishes': [
+    "fishes": [
       12731,
       12742,
       12792,
@@ -2860,15 +2860,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 132,
-    'mapId': 214,
-    'placeId': 2002,
-    'zoneId': 2014,
-    'coords': {
-      'x': 29.70168585526316,
-      'y': 25.360608552631582
+    "id": 132,
+    "mapId": 214,
+    "placeId": 2002,
+    "zoneId": 2014,
+    "coords": {
+      "x": 29.70168585526316,
+      "y": 25.360608552631582
     },
-    'fishes': [
+    "fishes": [
       12753,
       12795,
       12760,
@@ -2882,15 +2882,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 133,
-    'mapId': 214,
-    'placeId': 2002,
-    'zoneId': 1010,
-    'coords': {
-      'x': 18.448601973684212,
-      'y': 40.36472039473685
+    "id": 133,
+    "mapId": 214,
+    "placeId": 2002,
+    "zoneId": 1010,
+    "coords": {
+      "x": 18.448601973684212,
+      "y": 40.36472039473685
     },
-    'fishes': [
+    "fishes": [
       12753,
       12795,
       12760,
@@ -2904,15 +2904,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 134,
-    'mapId': 214,
-    'placeId': 2002,
-    'zoneId': 2048,
-    'coords': {
-      'x': 20.26089638157895,
-      'y': 6.394736842105264
+    "id": 134,
+    "mapId": 214,
+    "placeId": 2002,
+    "zoneId": 2048,
+    "coords": {
+      "x": 20.26089638157895,
+      "y": 6.394736842105264
     },
-    'fishes': [
+    "fishes": [
       12753,
       12760,
       12805,
@@ -2926,15 +2926,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 135,
-    'mapId': 215,
-    'placeId': 2100,
-    'zoneId': 2103,
-    'coords': {
-      'x': 28.90090460526316,
-      'y': 34.92783717105264
+    "id": 135,
+    "mapId": 215,
+    "placeId": 2100,
+    "zoneId": 2103,
+    "coords": {
+      "x": 28.90090460526316,
+      "y": 34.92783717105264
     },
-    'fishes': [
+    "fishes": [
       12757,
       12731,
       12730,
@@ -2948,15 +2948,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 136,
-    'mapId': 215,
-    'placeId': 2100,
-    'zoneId': 2120,
-    'coords': {
-      'x': 31.556126644736846,
-      'y': 39.606085526315795
+    "id": 136,
+    "mapId": 215,
+    "placeId": 2100,
+    "zoneId": 2120,
+    "coords": {
+      "x": 31.556126644736846,
+      "y": 39.606085526315795
     },
-    'fishes': [
+    "fishes": [
       12757,
       12731,
       12730,
@@ -2970,15 +2970,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 137,
-    'mapId': 215,
-    'placeId': 2100,
-    'zoneId': 2102,
-    'coords': {
-      'x': 15.076891447368423,
-      'y': 38.594572368421055
+    "id": 137,
+    "mapId": 215,
+    "placeId": 2100,
+    "zoneId": 2102,
+    "coords": {
+      "x": 15.076891447368423,
+      "y": 38.594572368421055
     },
-    'fishes': [
+    "fishes": [
       12723,
       12734,
       12732,
@@ -2992,15 +2992,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 138,
-    'mapId': 215,
-    'placeId': 2100,
-    'zoneId': 2105,
-    'coords': {
-      'x': 7.659128289473685,
-      'y': 11.536595394736842
+    "id": 138,
+    "mapId": 215,
+    "placeId": 2100,
+    "zoneId": 2105,
+    "coords": {
+      "x": 7.659128289473685,
+      "y": 11.536595394736842
     },
-    'fishes': [
+    "fishes": [
       12734,
       12753,
       12735,
@@ -3014,15 +3014,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 139,
-    'mapId': 215,
-    'placeId': 2100,
-    'zoneId': 2129,
-    'coords': {
-      'x': 15.329769736842106,
-      'y': 5.636101973684211
+    "id": 139,
+    "mapId": 215,
+    "placeId": 2100,
+    "zoneId": 2129,
+    "coords": {
+      "x": 15.329769736842106,
+      "y": 5.636101973684211
     },
-    'fishes': [
+    "fishes": [
       12723,
       12753,
       12810,
@@ -3036,15 +3036,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 140,
-    'mapId': 216,
-    'placeId': 2101,
-    'zoneId': 2109,
-    'coords': {
-      'x': 16.847039473684212,
-      'y': 12.042351973684212
+    "id": 140,
+    "mapId": 216,
+    "placeId": 2101,
+    "zoneId": 2109,
+    "coords": {
+      "x": 16.847039473684212,
+      "y": 12.042351973684212
     },
-    'fishes': [
+    "fishes": [
       12776,
       12773,
       12812,
@@ -3058,15 +3058,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 141,
-    'mapId': 216,
-    'placeId': 2101,
-    'zoneId': 1011,
-    'coords': {
-      'x': 31.13466282894737,
-      'y': 6.689761513157896
+    "id": 141,
+    "mapId": 216,
+    "placeId": 2101,
+    "zoneId": 1011,
+    "coords": {
+      "x": 31.13466282894737,
+      "y": 6.689761513157896
     },
-    'fishes': [
+    "fishes": [
       12776,
       12773,
       12812,
@@ -3080,15 +3080,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 142,
-    'mapId': 216,
-    'placeId': 2101,
-    'zoneId': 2177,
-    'coords': {
-      'x': 6.900493421052632,
-      'y': 16.678453947368425
+    "id": 142,
+    "mapId": 216,
+    "placeId": 2101,
+    "zoneId": 2177,
+    "coords": {
+      "x": 6.900493421052632,
+      "y": 16.678453947368425
     },
-    'fishes': [
+    "fishes": [
       12776,
       12778,
       12815,
@@ -3102,15 +3102,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 143,
-    'mapId': 216,
-    'placeId': 2101,
-    'zoneId': 2112,
-    'coords': {
-      'x': 12.08449835526316,
-      'y': 31.80900493421053
+    "id": 143,
+    "mapId": 216,
+    "placeId": 2101,
+    "zoneId": 2112,
+    "coords": {
+      "x": 12.08449835526316,
+      "y": 31.80900493421053
     },
-    'fishes': [
+    "fishes": [
       12791,
       12811,
       12777,
@@ -3124,15 +3124,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 144,
-    'mapId': 216,
-    'placeId': 2101,
-    'zoneId': 2173,
-    'coords': {
-      'x': 6.77405427631579,
-      'y': 35.34930098684211
+    "id": 144,
+    "mapId": 216,
+    "placeId": 2101,
+    "zoneId": 2173,
+    "coords": {
+      "x": 6.77405427631579,
+      "y": 35.34930098684211
     },
-    'fishes': [
+    "fishes": [
       12791,
       12779,
       12777,
@@ -3146,15 +3146,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 145,
-    'mapId': 216,
-    'placeId': 2101,
-    'zoneId': 2113,
-    'coords': {
-      'x': 40.196134868421055,
-      'y': 18.701480263157897
+    "id": 145,
+    "mapId": 216,
+    "placeId": 2101,
+    "zoneId": 2113,
+    "coords": {
+      "x": 40.196134868421055,
+      "y": 18.701480263157897
     },
-    'fishes': [
+    "fishes": [
       12753,
       12805,
       12808,
@@ -3168,15 +3168,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 146,
-    'mapId': 216,
-    'placeId': 2101,
-    'zoneId': 2114,
-    'coords': {
-      'x': 22.073190789473685,
-      'y': 22.073190789473685
+    "id": 146,
+    "mapId": 216,
+    "placeId": 2101,
+    "zoneId": 2114,
+    "coords": {
+      "x": 22.073190789473685,
+      "y": 22.073190789473685
     },
-    'fishes': [
+    "fishes": [
       12776,
       12778,
       12815,
@@ -3190,15 +3190,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 155,
-    'mapId': 30,
-    'placeId': 350,
-    'zoneId': 1012,
-    'coords': {
-      'x': 19.41796875,
-      'y': 18.216796875
+    "id": 155,
+    "mapId": 30,
+    "placeId": 350,
+    "zoneId": 1012,
+    "coords": {
+      "x": 19.41796875,
+      "y": 18.216796875
     },
-    'fishes': [
+    "fishes": [
       4953,
       4954,
       4957,
@@ -3212,15 +3212,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 156,
-    'mapId': 17,
-    'placeId': 32,
-    'zoneId': 1013,
-    'coords': {
-      'x': 36.0341796875,
-      'y': 26.625
+    "id": 156,
+    "mapId": 17,
+    "placeId": 32,
+    "zoneId": 1013,
+    "coords": {
+      "x": 36.0341796875,
+      "y": 26.625
     },
-    'fishes': [
+    "fishes": [
       4869,
       4886,
       4897,
@@ -3234,15 +3234,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 157,
-    'mapId': 370,
-    'placeId': 2404,
-    'zoneId': 2501,
-    'coords': {
-      'x': 10.50927734375,
-      'y': 11.009765625
+    "id": 157,
+    "mapId": 370,
+    "placeId": 2404,
+    "zoneId": 2501,
+    "coords": {
+      "x": 10.50927734375,
+      "y": 11.009765625
     },
-    'fishes': [
+    "fishes": [
       20092,
       20112,
       20113,
@@ -3256,15 +3256,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 158,
-    'mapId': 371,
-    'placeId': 2409,
-    'zoneId': 1027,
-    'coords': {
-      'x': 38.4365234375,
-      'y': 38.4365234375
+    "id": 158,
+    "mapId": 371,
+    "placeId": 2409,
+    "zoneId": 1027,
+    "coords": {
+      "x": 38.4365234375,
+      "y": 38.4365234375
     },
-    'fishes': [
+    "fishes": [
       20092,
       20093,
       20037,
@@ -3278,15 +3278,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 159,
-    'mapId': 371,
-    'placeId': 2409,
-    'zoneId': 1028,
-    'coords': {
-      'x': 25.82421875,
-      'y': 33.6318359375
+    "id": 159,
+    "mapId": 371,
+    "placeId": 2409,
+    "zoneId": 1028,
+    "coords": {
+      "x": 25.82421875,
+      "y": 33.6318359375
     },
-    'fishes': [
+    "fishes": [
       20092,
       20094,
       20112,
@@ -3300,15 +3300,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 160,
-    'mapId': 371,
-    'placeId': 2409,
-    'zoneId': 1029,
-    'coords': {
-      'x': 34.6328125,
-      'y': 20.21875
+    "id": 160,
+    "mapId": 371,
+    "placeId": 2409,
+    "zoneId": 1029,
+    "coords": {
+      "x": 34.6328125,
+      "y": 20.21875
     },
-    'fishes': [
+    "fishes": [
       20092,
       20094,
       20112,
@@ -3322,15 +3322,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 161,
-    'mapId': 371,
-    'placeId': 2409,
-    'zoneId': 1030,
-    'coords': {
-      'x': 32.630859375,
-      'y': 8.20703125
+    "id": 161,
+    "mapId": 371,
+    "placeId": 2409,
+    "zoneId": 1030,
+    "coords": {
+      "x": 32.630859375,
+      "y": 8.20703125
     },
-    'fishes': [
+    "fishes": [
       20092,
       20095,
       20096,
@@ -3344,15 +3344,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 162,
-    'mapId': 371,
-    'placeId': 2409,
-    'zoneId': 1031,
-    'coords': {
-      'x': 22.0205078125,
-      'y': 11.009765625
+    "id": 162,
+    "mapId": 371,
+    "placeId": 2409,
+    "zoneId": 1031,
+    "coords": {
+      "x": 22.0205078125,
+      "y": 11.009765625
     },
-    'fishes': [
+    "fishes": [
       20112,
       20101,
       20102,
@@ -3366,15 +3366,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 163,
-    'mapId': 371,
-    'placeId': 2409,
-    'zoneId': 1032,
-    'coords': {
-      'x': 9.0078125,
-      'y': 11.9306640625
+    "id": 163,
+    "mapId": 371,
+    "placeId": 2409,
+    "zoneId": 1032,
+    "coords": {
+      "x": 9.0078125,
+      "y": 11.9306640625
     },
-    'fishes': [
+    "fishes": [
       20093,
       20106,
       20107,
@@ -3388,15 +3388,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 164,
-    'mapId': 371,
-    'placeId': 2409,
-    'zoneId': 1033,
-    'coords': {
-      'x': 8.30712890625,
-      'y': 26.625
+    "id": 164,
+    "mapId": 371,
+    "placeId": 2409,
+    "zoneId": 1033,
+    "coords": {
+      "x": 8.30712890625,
+      "y": 26.625
     },
-    'fishes': [
+    "fishes": [
       20112,
       20104,
       20105,
@@ -3410,15 +3410,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 165,
-    'mapId': 354,
-    'placeId': 2410,
-    'zoneId': 1034,
-    'coords': {
-      'x': 34.8330078125,
-      'y': 14.0126953125
+    "id": 165,
+    "mapId": 354,
+    "placeId": 2410,
+    "zoneId": 1034,
+    "coords": {
+      "x": 34.8330078125,
+      "y": 14.0126953125
     },
-    'fishes': [
+    "fishes": [
       20123,
       20111,
       20787,
@@ -3432,15 +3432,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 166,
-    'mapId': 354,
-    'placeId': 2410,
-    'zoneId': 1035,
-    'coords': {
-      'x': 35.833984375,
-      'y': 17.015625
+    "id": 166,
+    "mapId": 354,
+    "placeId": 2410,
+    "zoneId": 1035,
+    "coords": {
+      "x": 35.833984375,
+      "y": 17.015625
     },
-    'fishes': [
+    "fishes": [
       20046,
       20123,
       20111,
@@ -3454,15 +3454,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 167,
-    'mapId': 354,
-    'placeId': 2410,
-    'zoneId': 1036,
-    'coords': {
-      'x': 29.52783203125,
-      'y': 15.6142578125
+    "id": 167,
+    "mapId": 354,
+    "placeId": 2410,
+    "zoneId": 1036,
+    "coords": {
+      "x": 29.52783203125,
+      "y": 15.6142578125
     },
-    'fishes': [
+    "fishes": [
       20137,
       24887,
       0,
@@ -3476,15 +3476,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 168,
-    'mapId': 354,
-    'placeId': 2410,
-    'zoneId': 1042,
-    'coords': {
-      'x': 28.626953125,
-      'y': 6.50537109375
+    "id": 168,
+    "mapId": 354,
+    "placeId": 2410,
+    "zoneId": 1042,
+    "coords": {
+      "x": 28.626953125,
+      "y": 6.50537109375
     },
-    'fishes': [
+    "fishes": [
       20052,
       20053,
       21177,
@@ -3498,15 +3498,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 169,
-    'mapId': 354,
-    'placeId': 2410,
-    'zoneId': 1043,
-    'coords': {
-      'x': 31.72998046875,
-      'y': 7.2060546875
+    "id": 169,
+    "mapId": 354,
+    "placeId": 2410,
+    "zoneId": 1043,
+    "coords": {
+      "x": 31.72998046875,
+      "y": 7.2060546875
     },
-    'fishes': [
+    "fishes": [
       20123,
       20111,
       20124,
@@ -3520,15 +3520,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 170,
-    'mapId': 354,
-    'placeId': 2410,
-    'zoneId': 1037,
-    'coords': {
-      'x': 14.4130859375,
-      'y': 7.40625
+    "id": 170,
+    "mapId": 354,
+    "placeId": 2410,
+    "zoneId": 1037,
+    "coords": {
+      "x": 14.4130859375,
+      "y": 7.40625
     },
-    'fishes': [
+    "fishes": [
       20123,
       20028,
       20115,
@@ -3542,15 +3542,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 171,
-    'mapId': 354,
-    'placeId': 2410,
-    'zoneId': 1038,
-    'coords': {
-      'x': 11.41015625,
-      'y': 14.0126953125
+    "id": 171,
+    "mapId": 354,
+    "placeId": 2410,
+    "zoneId": 1038,
+    "coords": {
+      "x": 11.41015625,
+      "y": 14.0126953125
     },
-    'fishes': [
+    "fishes": [
       20123,
       20027,
       20117,
@@ -3564,15 +3564,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 172,
-    'mapId': 354,
-    'placeId': 2410,
-    'zoneId': 1039,
-    'coords': {
-      'x': 20.0185546875,
-      'y': 24.22265625
+    "id": 172,
+    "mapId": 354,
+    "placeId": 2410,
+    "zoneId": 1039,
+    "coords": {
+      "x": 20.0185546875,
+      "y": 24.22265625
     },
-    'fishes': [
+    "fishes": [
       20118,
       20120,
       20123,
@@ -3586,15 +3586,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 173,
-    'mapId': 354,
-    'placeId': 2410,
-    'zoneId': 1040,
-    'coords': {
-      'x': 11.009765625,
-      'y': 32.93115234375
+    "id": 173,
+    "mapId": 354,
+    "placeId": 2410,
+    "zoneId": 1040,
+    "coords": {
+      "x": 11.009765625,
+      "y": 32.93115234375
     },
-    'fishes': [
+    "fishes": [
       20120,
       20123,
       20119,
@@ -3608,15 +3608,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 174,
-    'mapId': 354,
-    'placeId': 2410,
-    'zoneId': 1041,
-    'coords': {
-      'x': 36.0341796875,
-      'y': 23.822265625
+    "id": 174,
+    "mapId": 354,
+    "placeId": 2410,
+    "zoneId": 1041,
+    "coords": {
+      "x": 36.0341796875,
+      "y": 23.822265625
     },
-    'fishes': [
+    "fishes": [
       20123,
       20119,
       20122,
@@ -3630,15 +3630,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 175,
-    'mapId': 372,
-    'placeId': 2411,
-    'zoneId': 1046,
-    'coords': {
-      'x': 32.4306640625,
-      'y': 30.4287109375
+    "id": 175,
+    "mapId": 372,
+    "placeId": 2411,
+    "zoneId": 1046,
+    "coords": {
+      "x": 32.4306640625,
+      "y": 30.4287109375
     },
-    'fishes': [
+    "fishes": [
       20036,
       20126,
       20127,
@@ -3652,15 +3652,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 176,
-    'mapId': 372,
-    'placeId': 2411,
-    'zoneId': 2500,
-    'coords': {
-      'x': 29.02734375,
-      'y': 20.4189453125
+    "id": 176,
+    "mapId": 372,
+    "placeId": 2411,
+    "zoneId": 2500,
+    "coords": {
+      "x": 29.02734375,
+      "y": 20.4189453125
     },
-    'fishes': [
+    "fishes": [
       20127,
       20138,
       20129,
@@ -3674,15 +3674,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 177,
-    'mapId': 372,
-    'placeId': 2411,
-    'zoneId': 1049,
-    'coords': {
-      'x': 17.9365234375,
-      'y': 18.8173828125
+    "id": 177,
+    "mapId": 372,
+    "placeId": 2411,
+    "zoneId": 1049,
+    "coords": {
+      "x": 17.9365234375,
+      "y": 18.8173828125
     },
-    'fishes': [
+    "fishes": [
       20023,
       20127,
       20129,
@@ -3696,15 +3696,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 178,
-    'mapId': 372,
-    'placeId': 2411,
-    'zoneId': 1045,
-    'coords': {
-      'x': 21.6201171875,
-      'y': 22.4208984375
+    "id": 178,
+    "mapId": 372,
+    "placeId": 2411,
+    "zoneId": 1045,
+    "coords": {
+      "x": 21.6201171875,
+      "y": 22.4208984375
     },
-    'fishes': [
+    "fishes": [
       20126,
       20127,
       20130,
@@ -3718,15 +3718,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 179,
-    'mapId': 372,
-    'placeId': 2411,
-    'zoneId': 1047,
-    'coords': {
-      'x': 16.615234375,
-      'y': 14.4130859375
+    "id": 179,
+    "mapId": 372,
+    "placeId": 2411,
+    "zoneId": 1047,
+    "coords": {
+      "x": 16.615234375,
+      "y": 14.4130859375
     },
-    'fishes': [
+    "fishes": [
       20127,
       20129,
       20133,
@@ -3740,15 +3740,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 180,
-    'mapId': 372,
-    'placeId': 2411,
-    'zoneId': 1048,
-    'coords': {
-      'x': 22.62109375,
-      'y': 28.4267578125
+    "id": 180,
+    "mapId": 372,
+    "placeId": 2411,
+    "zoneId": 1048,
+    "coords": {
+      "x": 22.62109375,
+      "y": 28.4267578125
     },
-    'fishes': [
+    "fishes": [
       20126,
       20128,
       20132,
@@ -3762,15 +3762,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 181,
-    'mapId': 372,
-    'placeId': 2411,
-    'zoneId': 1044,
-    'coords': {
-      'x': 12.51123046875,
-      'y': 33.2314453125
+    "id": 181,
+    "mapId": 372,
+    "placeId": 2411,
+    "zoneId": 1044,
+    "coords": {
+      "x": 12.51123046875,
+      "y": 33.2314453125
     },
-    'fishes': [
+    "fishes": [
       20125,
       20080,
       24891,
@@ -3784,15 +3784,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 182,
-    'mapId': 366,
-    'placeId': 2403,
-    'zoneId': 2502,
-    'coords': {
-      'x': 11.009765625,
-      'y': 14.0126953125
+    "id": 182,
+    "mapId": 366,
+    "placeId": 2403,
+    "zoneId": 2502,
+    "coords": {
+      "x": 11.009765625,
+      "y": 14.0126953125
     },
-    'fishes': [
+    "fishes": [
       20042,
       20055,
       20058,
@@ -3806,15 +3806,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 183,
-    'mapId': 366,
-    'placeId': 2403,
-    'zoneId': 2504,
-    'coords': {
-      'x': 11.260009765625,
-      'y': 10.359130859375
+    "id": 183,
+    "mapId": 366,
+    "placeId": 2403,
+    "zoneId": 2504,
+    "coords": {
+      "x": 11.260009765625,
+      "y": 10.359130859375
     },
-    'fishes': [
+    "fishes": [
       20029,
       20062,
       20056,
@@ -3828,15 +3828,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 184,
-    'mapId': 366,
-    'placeId': 2403,
-    'zoneId': 2503,
-    'coords': {
-      'x': 12.160888671875,
-      'y': 5.90478515625
+    "id": 184,
+    "mapId": 366,
+    "placeId": 2403,
+    "zoneId": 2503,
+    "coords": {
+      "x": 12.160888671875,
+      "y": 5.90478515625
     },
-    'fishes': [
+    "fishes": [
       20026,
       20064,
       20065,
@@ -3850,15 +3850,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 185,
-    'mapId': 367,
-    'placeId': 2406,
-    'zoneId': 1014,
-    'coords': {
-      'x': 11.51025390625,
-      'y': 18.216796875
+    "id": 185,
+    "mapId": 367,
+    "placeId": 2406,
+    "zoneId": 1014,
+    "coords": {
+      "x": 11.51025390625,
+      "y": 18.216796875
     },
-    'fishes': [
+    "fishes": [
       20049,
       20058,
       20064,
@@ -3872,15 +3872,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 186,
-    'mapId': 367,
-    'placeId': 2406,
-    'zoneId': 1015,
-    'coords': {
-      'x': 9.6083984375,
-      'y': 29.02734375
+    "id": 186,
+    "mapId": 367,
+    "placeId": 2406,
+    "zoneId": 1015,
+    "coords": {
+      "x": 9.6083984375,
+      "y": 29.02734375
     },
-    'fishes': [
+    "fishes": [
       20058,
       20082,
       20083,
@@ -3894,15 +3894,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 187,
-    'mapId': 367,
-    'placeId': 2406,
-    'zoneId': 1016,
-    'coords': {
-      'x': 13.91259765625,
-      'y': 31.029296875
+    "id": 187,
+    "mapId": 367,
+    "placeId": 2406,
+    "zoneId": 1016,
+    "coords": {
+      "x": 13.91259765625,
+      "y": 31.029296875
     },
-    'fishes': [
+    "fishes": [
       20082,
       20084,
       20085,
@@ -3916,15 +3916,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 188,
-    'mapId': 367,
-    'placeId': 2406,
-    'zoneId': 1017,
-    'coords': {
-      'x': 17.91650390625,
-      'y': 9.50830078125
+    "id": 188,
+    "mapId": 367,
+    "placeId": 2406,
+    "zoneId": 1017,
+    "coords": {
+      "x": 17.91650390625,
+      "y": 9.50830078125
     },
-    'fishes': [
+    "fishes": [
       20087,
       20033,
       20057,
@@ -3938,15 +3938,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 189,
-    'mapId': 367,
-    'placeId': 2406,
-    'zoneId': 1018,
-    'coords': {
-      'x': 27.52587890625,
-      'y': 16.4150390625
+    "id": 189,
+    "mapId": 367,
+    "placeId": 2406,
+    "zoneId": 1018,
+    "coords": {
+      "x": 27.52587890625,
+      "y": 16.4150390625
     },
-    'fishes': [
+    "fishes": [
       20090,
       20047,
       20091,
@@ -3960,15 +3960,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 190,
-    'mapId': 368,
-    'placeId': 2407,
-    'zoneId': 1019,
-    'coords': {
-      'x': 6.205078125,
-      'y': 15.013671875
+    "id": 190,
+    "mapId": 368,
+    "placeId": 2407,
+    "zoneId": 1019,
+    "coords": {
+      "x": 6.205078125,
+      "y": 15.013671875
     },
-    'fishes': [
+    "fishes": [
       20066,
       20067,
       20068,
@@ -3982,15 +3982,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 191,
-    'mapId': 368,
-    'placeId': 2407,
-    'zoneId': 1020,
-    'coords': {
-      'x': 23.6220703125,
-      'y': 9.2080078125
+    "id": 191,
+    "mapId": 368,
+    "placeId": 2407,
+    "zoneId": 1020,
+    "coords": {
+      "x": 23.6220703125,
+      "y": 9.2080078125
     },
-    'fishes': [
+    "fishes": [
       20045,
       20070,
       20056,
@@ -4004,15 +4004,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 192,
-    'mapId': 368,
-    'placeId': 2407,
-    'zoneId': 1021,
-    'coords': {
-      'x': 32.630859375,
-      'y': 6.60546875
+    "id": 192,
+    "mapId": 368,
+    "placeId": 2407,
+    "zoneId": 1021,
+    "coords": {
+      "x": 32.630859375,
+      "y": 6.60546875
     },
-    'fishes': [
+    "fishes": [
       20072,
       20066,
       20071,
@@ -4026,15 +4026,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 193,
-    'mapId': 368,
-    'placeId': 2407,
-    'zoneId': 1022,
-    'coords': {
-      'x': 32.0302734375,
-      'y': 17.015625
+    "id": 193,
+    "mapId": 368,
+    "placeId": 2407,
+    "zoneId": 1022,
+    "coords": {
+      "x": 32.0302734375,
+      "y": 17.015625
     },
-    'fishes': [
+    "fishes": [
       20050,
       20073,
       20075,
@@ -4048,15 +4048,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 194,
-    'mapId': 368,
-    'placeId': 2407,
-    'zoneId': 1023,
-    'coords': {
-      'x': 20.5791015625,
-      'y': 32.6708984375
+    "id": 194,
+    "mapId": 368,
+    "placeId": 2407,
+    "zoneId": 1023,
+    "coords": {
+      "x": 20.5791015625,
+      "y": 32.6708984375
     },
-    'fishes': [
+    "fishes": [
       20066,
       20069,
       20076,
@@ -4070,15 +4070,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 195,
-    'mapId': 368,
-    'placeId': 2407,
-    'zoneId': 1025,
-    'coords': {
-      'x': 9.2080078125,
-      'y': 37.435546875
+    "id": 195,
+    "mapId": 368,
+    "placeId": 2407,
+    "zoneId": 1025,
+    "coords": {
+      "x": 9.2080078125,
+      "y": 37.435546875
     },
-    'fishes': [
+    "fishes": [
       20056,
       20079,
       20141,
@@ -4092,15 +4092,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 196,
-    'mapId': 369,
-    'placeId': 2408,
-    'zoneId': 1026,
-    'coords': {
-      'x': 21.52001953125,
-      'y': 21.52001953125
+    "id": 196,
+    "mapId": 369,
+    "placeId": 2408,
+    "zoneId": 1026,
+    "coords": {
+      "x": 21.52001953125,
+      "y": 21.52001953125
     },
-    'fishes': [
+    "fishes": [
       20025,
       20039,
       20035,
@@ -4114,15 +4114,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 197,
-    'mapId': 364,
-    'placeId': 2412,
-    'zoneId': 2505,
-    'coords': {
-      'x': 8.50732421875,
-      'y': 14.51318359375
+    "id": 197,
+    "mapId": 364,
+    "placeId": 2412,
+    "zoneId": 2505,
+    "coords": {
+      "x": 8.50732421875,
+      "y": 14.51318359375
     },
-    'fishes': [
+    "fishes": [
       20092,
       20112,
       20113,
@@ -4136,15 +4136,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 198,
-    'mapId': 364,
-    'placeId': 2412,
-    'zoneId': 2506,
-    'coords': {
-      'x': 10.70947265625,
-      'y': 11.31005859375
+    "id": 198,
+    "mapId": 364,
+    "placeId": 2412,
+    "zoneId": 2506,
+    "coords": {
+      "x": 10.70947265625,
+      "y": 11.31005859375
     },
-    'fishes': [
+    "fishes": [
       20137,
       20123,
       20036,
@@ -4158,15 +4158,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 199,
-    'mapId': 497,
-    'placeId': 2951,
-    'zoneId': 3289,
-    'coords': {
-      'x': 8.70751953125,
-      'y': 7.456298828125
+    "id": 199,
+    "mapId": 497,
+    "placeId": 2951,
+    "zoneId": 3289,
+    "coords": {
+      "x": 8.70751953125,
+      "y": 7.456298828125
     },
-    'fishes': [
+    "fishes": [
       27417,
       27411,
       27412,
@@ -4180,15 +4180,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 200,
-    'mapId': 497,
-    'placeId': 2951,
-    'zoneId': 3290,
-    'coords': {
-      'x': 10.4091796875,
-      'y': 15.6142578125
+    "id": 200,
+    "mapId": 497,
+    "placeId": 2951,
+    "zoneId": 3290,
+    "coords": {
+      "x": 10.4091796875,
+      "y": 15.6142578125
     },
-    'fishes': [
+    "fishes": [
       27417,
       27411,
       27415,
@@ -4202,15 +4202,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 201,
-    'mapId': 497,
-    'placeId': 2951,
-    'zoneId': 3291,
-    'coords': {
-      'x': 12.761474609375,
-      'y': 16.31494140625
+    "id": 201,
+    "mapId": 497,
+    "placeId": 2951,
+    "zoneId": 3291,
+    "coords": {
+      "x": 12.761474609375,
+      "y": 16.31494140625
     },
-    'fishes': [
+    "fishes": [
       27417,
       27411,
       27410,
@@ -4224,15 +4224,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 202,
-    'mapId': 491,
-    'placeId': 2953,
-    'zoneId': 3292,
-    'coords': {
-      'x': 31.029296875,
-      'y': 11.91064453125
+    "id": 202,
+    "mapId": 491,
+    "placeId": 2953,
+    "zoneId": 3292,
+    "coords": {
+      "x": 31.029296875,
+      "y": 11.91064453125
     },
-    'fishes': [
+    "fishes": [
       26746,
       27425,
       27427,
@@ -4246,15 +4246,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 203,
-    'mapId': 491,
-    'placeId': 2953,
-    'zoneId': 3293,
-    'coords': {
-      'x': 11.91064453125,
-      'y': 21.52001953125
+    "id": 203,
+    "mapId": 491,
+    "placeId": 2953,
+    "zoneId": 3293,
+    "coords": {
+      "x": 11.91064453125,
+      "y": 21.52001953125
     },
-    'fishes': [
+    "fishes": [
       27425,
       27427,
       27426,
@@ -4268,15 +4268,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 204,
-    'mapId': 491,
-    'placeId': 2953,
-    'zoneId': 3294,
-    'coords': {
-      'x': 12.71142578125,
-      'y': 29.6279296875
+    "id": 204,
+    "mapId": 491,
+    "placeId": 2953,
+    "zoneId": 3294,
+    "coords": {
+      "x": 12.71142578125,
+      "y": 29.6279296875
     },
-    'fishes': [
+    "fishes": [
       27425,
       27428,
       27429,
@@ -4290,15 +4290,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 205,
-    'mapId': 491,
-    'placeId': 2953,
-    'zoneId': 3295,
-    'coords': {
-      'x': 19.41796875,
-      'y': 35.833984375
+    "id": 205,
+    "mapId": 491,
+    "placeId": 2953,
+    "zoneId": 3295,
+    "coords": {
+      "x": 19.41796875,
+      "y": 35.833984375
     },
-    'fishes': [
+    "fishes": [
       27425,
       27429,
       27430,
@@ -4312,15 +4312,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 206,
-    'mapId': 491,
-    'placeId': 2953,
-    'zoneId': 3296,
-    'coords': {
-      'x': 9.2080078125,
-      'y': 37.6357421875
+    "id": 206,
+    "mapId": 491,
+    "placeId": 2953,
+    "zoneId": 3296,
+    "coords": {
+      "x": 9.2080078125,
+      "y": 37.6357421875
     },
-    'fishes': [
+    "fishes": [
       27425,
       27428,
       27436,
@@ -4334,15 +4334,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 207,
-    'mapId': 492,
-    'placeId': 2954,
-    'zoneId': 3297,
-    'coords': {
-      'x': 27.025390625,
-      'y': 14.4130859375
+    "id": 207,
+    "mapId": 492,
+    "placeId": 2954,
+    "zoneId": 3297,
+    "coords": {
+      "x": 27.025390625,
+      "y": 14.4130859375
     },
-    'fishes': [
+    "fishes": [
       27438,
       27439,
       27440,
@@ -4356,15 +4356,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 208,
-    'mapId': 492,
-    'placeId': 2954,
-    'zoneId': 3298,
-    'coords': {
-      'x': 29.427734375,
-      'y': 21.419921875
+    "id": 208,
+    "mapId": 492,
+    "placeId": 2954,
+    "zoneId": 3298,
+    "coords": {
+      "x": 29.427734375,
+      "y": 21.419921875
     },
-    'fishes': [
+    "fishes": [
       27438,
       27440,
       27443,
@@ -4378,15 +4378,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 209,
-    'mapId': 492,
-    'placeId': 2954,
-    'zoneId': 3299,
-    'coords': {
-      'x': 30.228515625,
-      'y': 27.025390625
+    "id": 209,
+    "mapId": 492,
+    "placeId": 2954,
+    "zoneId": 3299,
+    "coords": {
+      "x": 30.228515625,
+      "y": 27.025390625
     },
-    'fishes': [
+    "fishes": [
       27438,
       27439,
       27440,
@@ -4400,15 +4400,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 210,
-    'mapId': 492,
-    'placeId': 2954,
-    'zoneId': 3300,
-    'coords': {
-      'x': 20.619140625,
-      'y': 24.22265625
+    "id": 210,
+    "mapId": 492,
+    "placeId": 2954,
+    "zoneId": 3300,
+    "coords": {
+      "x": 20.619140625,
+      "y": 24.22265625
     },
-    'fishes': [
+    "fishes": [
       27438,
       27439,
       27445,
@@ -4422,15 +4422,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 211,
-    'mapId': 492,
-    'placeId': 2954,
-    'zoneId': 3301,
-    'coords': {
-      'x': 8.4072265625,
-      'y': 35.2333984375
+    "id": 211,
+    "mapId": 492,
+    "placeId": 2954,
+    "zoneId": 3301,
+    "coords": {
+      "x": 8.4072265625,
+      "y": 35.2333984375
     },
-    'fishes': [
+    "fishes": [
       27449,
       27448,
       27446,
@@ -4444,15 +4444,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 212,
-    'mapId': 492,
-    'placeId': 2954,
-    'zoneId': 3302,
-    'coords': {
-      'x': 16.8154296875,
-      'y': 35.833984375
+    "id": 212,
+    "mapId": 492,
+    "placeId": 2954,
+    "zoneId": 3302,
+    "coords": {
+      "x": 16.8154296875,
+      "y": 35.833984375
     },
-    'fishes': [
+    "fishes": [
       27449,
       27448,
       27447,
@@ -4466,15 +4466,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 213,
-    'mapId': 492,
-    'placeId': 2954,
-    'zoneId': 3303,
-    'coords': {
-      'x': 35.2333984375,
-      'y': 35.833984375
+    "id": 213,
+    "mapId": 492,
+    "placeId": 2954,
+    "zoneId": 3303,
+    "coords": {
+      "x": 35.2333984375,
+      "y": 35.833984375
     },
-    'fishes': [
+    "fishes": [
       27449,
       27446,
       27447,
@@ -4488,15 +4488,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 214,
-    'mapId': 498,
-    'placeId': 2952,
-    'zoneId': 3304,
-    'coords': {
-      'x': 11.260009765625,
-      'y': 11.260009765625
+    "id": 214,
+    "mapId": 498,
+    "placeId": 2952,
+    "zoneId": 3304,
+    "coords": {
+      "x": 11.260009765625,
+      "y": 11.260009765625
     },
-    'fishes': [
+    "fishes": [
       27419,
       27420,
       27422,
@@ -4510,15 +4510,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 215,
-    'mapId': 493,
-    'placeId': 2955,
-    'zoneId': 3305,
-    'coords': {
-      'x': 31.830078125,
-      'y': 12.71142578125
+    "id": 215,
+    "mapId": 493,
+    "placeId": 2955,
+    "zoneId": 3305,
+    "coords": {
+      "x": 31.830078125,
+      "y": 12.71142578125
     },
-    'fishes': [
+    "fishes": [
       27458,
       27459,
       27462,
@@ -4532,15 +4532,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 216,
-    'mapId': 493,
-    'placeId': 2955,
-    'zoneId': 3307,
-    'coords': {
-      'x': 15.51416015625,
-      'y': 14.8134765625
+    "id": 216,
+    "mapId": 493,
+    "placeId": 2955,
+    "zoneId": 3307,
+    "coords": {
+      "x": 15.51416015625,
+      "y": 14.8134765625
     },
-    'fishes': [
+    "fishes": [
       27465,
       27459,
       27461,
@@ -4554,15 +4554,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 217,
-    'mapId': 493,
-    'placeId': 2955,
-    'zoneId': 3306,
-    'coords': {
-      'x': 31.029296875,
-      'y': 31.6298828125
+    "id": 217,
+    "mapId": 493,
+    "placeId": 2955,
+    "zoneId": 3306,
+    "coords": {
+      "x": 31.029296875,
+      "y": 31.6298828125
     },
-    'fishes': [
+    "fishes": [
       27458,
       27459,
       27463,
@@ -4576,15 +4576,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 218,
-    'mapId': 494,
-    'placeId': 2956,
-    'zoneId': 3308,
-    'coords': {
-      'x': 4.30322265625,
-      'y': 22.32080078125
+    "id": 218,
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 3308,
+    "coords": {
+      "x": 4.30322265625,
+      "y": 22.32080078125
     },
-    'fishes': [
+    "fishes": [
       27470,
       27471,
       27475,
@@ -4598,15 +4598,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 219,
-    'mapId': 494,
-    'placeId': 2956,
-    'zoneId': 3309,
-    'coords': {
-      'x': 21.01953125,
-      'y': 22.8212890625
+    "id": 219,
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 3309,
+    "coords": {
+      "x": 21.01953125,
+      "y": 22.8212890625
     },
-    'fishes': [
+    "fishes": [
       27470,
       27479,
       27469,
@@ -4620,15 +4620,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 220,
-    'mapId': 494,
-    'placeId': 2956,
-    'zoneId': 3310,
-    'coords': {
-      'x': 22.0205078125,
-      'y': 9.10791015625
+    "id": 220,
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 3310,
+    "coords": {
+      "x": 22.0205078125,
+      "y": 9.10791015625
     },
-    'fishes': [
+    "fishes": [
       27470,
       27479,
       27469,
@@ -4642,15 +4642,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 221,
-    'mapId': 494,
-    'placeId': 2956,
-    'zoneId': 3311,
-    'coords': {
-      'x': 25.82421875,
-      'y': 9.0078125
+    "id": 221,
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 3311,
+    "coords": {
+      "x": 25.82421875,
+      "y": 9.0078125
     },
-    'fishes': [
+    "fishes": [
       27470,
       27479,
       27472,
@@ -4664,15 +4664,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 222,
-    'mapId': 494,
-    'placeId': 2956,
-    'zoneId': 3314,
-    'coords': {
-      'x': 31.93017578125,
-      'y': 22.32080078125
+    "id": 222,
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 3314,
+    "coords": {
+      "x": 31.93017578125,
+      "y": 22.32080078125
     },
-    'fishes': [
+    "fishes": [
       27470,
       27471,
       27469,
@@ -4686,15 +4686,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 223,
-    'mapId': 494,
-    'placeId': 2956,
-    'zoneId': 3312,
-    'coords': {
-      'x': 28.92724609375,
-      'y': 13.51220703125
+    "id": 223,
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 3312,
+    "coords": {
+      "x": 28.92724609375,
+      "y": 13.51220703125
     },
-    'fishes': [
+    "fishes": [
       26748,
       27470,
       27479,
@@ -4708,15 +4708,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 224,
-    'mapId': 494,
-    'placeId': 2956,
-    'zoneId': 3313,
-    'coords': {
-      'x': 34.93310546875,
-      'y': 26.32470703125
+    "id": 224,
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 3313,
+    "coords": {
+      "x": 34.93310546875,
+      "y": 26.32470703125
     },
-    'fishes': [
+    "fishes": [
       27470,
       27479,
       27472,
@@ -4730,15 +4730,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 225,
-    'mapId': 495,
-    'placeId': 2957,
-    'zoneId': 3315,
-    'coords': {
-      'x': 7.40625,
-      'y': 28.72705078125
+    "id": 225,
+    "mapId": 495,
+    "placeId": 2957,
+    "zoneId": 3315,
+    "coords": {
+      "x": 7.40625,
+      "y": 28.72705078125
     },
-    'fishes': [
+    "fishes": [
       27482,
       27486,
       27484,
@@ -4752,15 +4752,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 226,
-    'mapId': 495,
-    'placeId': 2957,
-    'zoneId': 3316,
-    'coords': {
-      'x': 9.70849609375,
-      'y': 20.8193359375
+    "id": 226,
+    "mapId": 495,
+    "placeId": 2957,
+    "zoneId": 3316,
+    "coords": {
+      "x": 9.70849609375,
+      "y": 20.8193359375
     },
-    'fishes': [
+    "fishes": [
       27482,
       27486,
       27487,
@@ -4774,15 +4774,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 227,
-    'mapId': 495,
-    'placeId': 2957,
-    'zoneId': 3317,
-    'coords': {
-      'x': 16.0146484375,
-      'y': 21.52001953125
+    "id": 227,
+    "mapId": 495,
+    "placeId": 2957,
+    "zoneId": 3317,
+    "coords": {
+      "x": 16.0146484375,
+      "y": 21.52001953125
     },
-    'fishes': [
+    "fishes": [
       27482,
       27486,
       27489,
@@ -4796,15 +4796,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 228,
-    'mapId': 495,
-    'placeId': 2957,
-    'zoneId': 3318,
-    'coords': {
-      'x': 24.0224609375,
-      'y': 31.6298828125
+    "id": 228,
+    "mapId": 495,
+    "placeId": 2957,
+    "zoneId": 3318,
+    "coords": {
+      "x": 24.0224609375,
+      "y": 31.6298828125
     },
-    'fishes': [
+    "fishes": [
       27482,
       27486,
       27489,
@@ -4818,15 +4818,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 229,
-    'mapId': 495,
-    'placeId': 2957,
-    'zoneId': 3319,
-    'coords': {
-      'x': 7.806640625,
-      'y': 16.21484375
+    "id": 229,
+    "mapId": 495,
+    "placeId": 2957,
+    "zoneId": 3319,
+    "coords": {
+      "x": 7.806640625,
+      "y": 16.21484375
     },
-    'fishes': [
+    "fishes": [
       27482,
       27487,
       27485,
@@ -4840,15 +4840,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 230,
-    'mapId': 496,
-    'placeId': 2958,
-    'zoneId': 3320,
-    'coords': {
-      'x': 11.2099609375,
-      'y': 6.60546875
+    "id": 230,
+    "mapId": 496,
+    "placeId": 2958,
+    "zoneId": 3320,
+    "coords": {
+      "x": 11.2099609375,
+      "y": 6.60546875
     },
-    'fishes': [
+    "fishes": [
       27497,
       27495,
       27499,
@@ -4862,15 +4862,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 231,
-    'mapId': 496,
-    'placeId': 2958,
-    'zoneId': 3321,
-    'coords': {
-      'x': 37.73583984375,
-      'y': 7.005859375
+    "id": 231,
+    "mapId": 496,
+    "placeId": 2958,
+    "zoneId": 3321,
+    "coords": {
+      "x": 37.73583984375,
+      "y": 7.005859375
     },
-    'fishes': [
+    "fishes": [
       27497,
       27495,
       27499,
@@ -4884,15 +4884,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 232,
-    'mapId': 496,
-    'placeId': 2958,
-    'zoneId': 3322,
-    'coords': {
-      'x': 11.91064453125,
-      'y': 10.90966796875
+    "id": 232,
+    "mapId": 496,
+    "placeId": 2958,
+    "zoneId": 3322,
+    "coords": {
+      "x": 11.91064453125,
+      "y": 10.90966796875
     },
-    'fishes': [
+    "fishes": [
       27497,
       27496,
       27499,
@@ -4906,15 +4906,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 233,
-    'mapId': 496,
-    'placeId': 2958,
-    'zoneId': 3323,
-    'coords': {
-      'x': 6.205078125,
-      'y': 13.51220703125
+    "id": 233,
+    "mapId": 496,
+    "placeId": 2958,
+    "zoneId": 3323,
+    "coords": {
+      "x": 6.205078125,
+      "y": 13.51220703125
     },
-    'fishes': [
+    "fishes": [
       27497,
       27496,
       27506,
@@ -4928,15 +4928,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 234,
-    'mapId': 496,
-    'placeId': 2958,
-    'zoneId': 3324,
-    'coords': {
-      'x': 8.50732421875,
-      'y': 15.6142578125
+    "id": 234,
+    "mapId": 496,
+    "placeId": 2958,
+    "zoneId": 3324,
+    "coords": {
+      "x": 8.50732421875,
+      "y": 15.6142578125
     },
-    'fishes': [
+    "fishes": [
       27497,
       27496,
       27500,
@@ -4950,15 +4950,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 235,
-    'mapId': 496,
-    'placeId': 2958,
-    'zoneId': 3325,
-    'coords': {
-      'x': 33.6318359375,
-      'y': 30.62890625
+    "id": 235,
+    "mapId": 496,
+    "placeId": 2958,
+    "zoneId": 3325,
+    "coords": {
+      "x": 33.6318359375,
+      "y": 30.62890625
     },
-    'fishes': [
+    "fishes": [
       27497,
       27496,
       27511,
@@ -4972,15 +4972,15 @@ export const fishingSpots = [
     ]
   },
   {
-    'id': 236,
-    'mapId': 496,
-    'placeId': 2958,
-    'zoneId': 3326,
-    'coords': {
-      'x': 29.02734375,
-      'y': 14.91357421875
+    "id": 236,
+    "mapId": 496,
+    "placeId": 2958,
+    "zoneId": 3326,
+    "coords": {
+      "x": 29.02734375,
+      "y": 14.91357421875
     },
-    'fishes': [
+    "fishes": [
       27497,
       27496,
       27513,

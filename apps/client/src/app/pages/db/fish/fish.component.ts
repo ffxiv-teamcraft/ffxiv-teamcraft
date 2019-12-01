@@ -1,33 +1,38 @@
-import { Component } from '@angular/core';
-import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { DataService } from '../../../core/api/data.service';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { SeoService } from '../../../core/seo/seo.service';
-import { distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
-import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
+import { distinctUntilChanged, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import * as shape from 'd3-shape';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { fishingSpots } from '../../../core/data/sources/fishing-spots';
+import { Router } from '@angular/router';
+import { fishes } from '../../../core/data/sources/fishes';
 
 @Component({
   selector: 'app-fish',
   templateUrl: './fish.component.html',
   styleUrls: ['./fish.component.less']
 })
-export class FishComponent extends TeamcraftPageComponent {
+export class FishComponent implements OnInit {
 
   public loading = true;
 
-  public xivapiFish$: Observable<any>;
+  public xivapiFish$: ReplaySubject<any> = new ReplaySubject<any>();
+
+  @Input()
+  public set xivapiFish(fish: any) {
+    this.loading = true;
+    this.xivapiFish$.next(fish);
+  }
+
+  @Input()
+  usedForTpl: TemplateRef<any>;
 
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
@@ -43,46 +48,14 @@ export class FishComponent extends TeamcraftPageComponent {
     })
   );
 
-  constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
-              private apollo: Apollo, private etime: EorzeanTimeService, seo: SeoService) {
-    super(seo);
+  constructor(private l12n: LocalizedDataService, private i18n: I18nToolsService,
+              private translate: TranslateService, private lazyData: LazyDataService,
+              public settings: SettingsService, private apollo: Apollo,
+              private etime: EorzeanTimeService, private router: Router) {
+  }
 
-    this.route.paramMap.subscribe(params => {
-      const slug = params.get('slug');
-      if (slug === null) {
-        this.router.navigate(
-          [this.i18n.getName(this.l12n.getItem(+params.get('fishId'))).split(' ').join('-')],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      } else if (slug !== this.i18n.getName(this.l12n.getItem(+params.get('fishId'))).split(' ').join('-')) {
-        this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getItem(+params.get('fishId'))).split(' ').join('-')],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      }
-    });
-
-    const fishId$ = this.route.paramMap.pipe(
-      filter(params => params.get('slug') !== null),
-      map(params => params.get('fishId'))
-    );
-
-    this.xivapiFish$ = fishId$.pipe(
-      switchMap(id => {
-        return this.xivapi.get(XivapiEndpoint.Item, +id);
-      }),
-      shareReplay(1)
-    );
-
+  ngOnInit(): void {
+    const fishId$ = this.xivapiFish$.pipe(map(fish => fish.ID));
     this.gubalData$ = this.reloader$.pipe(
       switchMapTo(fishId$),
       switchMap((fishId) => {
@@ -142,6 +115,9 @@ export class FishComponent extends TeamcraftPageComponent {
                 }
               }
             }
+            used_for_mooch:baits_per_fish(where: {baitId: {_eq: ${fishId}}}) {
+              itemId
+            }
           }
         `;
         return this.apollo.query<any>({ query: dataQuery, fetchPolicy: 'no-cache' });
@@ -151,10 +127,23 @@ export class FishComponent extends TeamcraftPageComponent {
         const totalHooksets = result.data.hooksets_per_fish.reduce((acc, row) => acc + row.occurences, 0);
         const totalTugs = result.data.tug_per_fish.reduce((acc, row) => acc + row.occurences, 0);
         const totalSnagging = result.data.snagging_per_fish.reduce((acc, row) => acc + row.occurences, 0);
+        const snaggingPercent = 100 * (result.data.snagging_per_fish.find(entry => {
+          return entry.snagging === true;
+        }) || {occurences: 0}).occurences / totalSnagging;
         const totalFishEyes = result.data.fish_eyes_per_fish.reduce((acc, row) => acc + row.occurences, 0);
+        const fishEyesPercent = 100 * (result.data.fish_eyes_per_fish.find(entry => {
+          return entry.fishEyes === true;
+        }) || {occurences: 0}).occurences / totalFishEyes;
         const totalWeatherTransitions = result.data.weather_transitions_per_fish.reduce((acc, row) => acc + row.occurences, 0);
         const sortedBiteTimes = result.data.bite_time_per_fish.sort((a, b) => a.biteTime - b.biteTime);
         const sortedWeathers = result.data.weathers_per_fish.sort((a, b) => b.occurences - a.occurences);
+        const sortedBaits = result.data.baits_per_fish
+          .filter(entry => {
+            return this.l12n.getItem(entry.baitId) !== undefined;
+          })
+          .sort((a, b) => {
+            return b.occurences - a.occurences;
+          });
         return {
           etimesChart: {
             view: [600, 300],
@@ -170,20 +159,16 @@ export class FishComponent extends TeamcraftPageComponent {
             })
           },
           baitsChart: {
-            view: [400, 300],
-            data: result.data.baits_per_fish
-              .filter(entry => {
-                return this.l12n.getItem(entry.baitId) !== undefined;
-              })
-              .sort((a, b) => {
-                return b.occurences - a.occurences;
-              })
+            view: [400, 250],
+            data: sortedBaits
               .map(entry => {
                 return {
+                  itemId: entry.baitId,
                   name: this.i18n.getName(this.l12n.getItem(entry.baitId)),
                   value: entry.occurences
                 };
-              })
+              }),
+            raw: sortedBaits
           },
           biteTimeChart: {
             view: [400, 300],
@@ -213,6 +198,8 @@ export class FishComponent extends TeamcraftPageComponent {
               };
             })
           },
+          usedAsMoochFor: result.data.used_for_mooch,
+          mooches: sortedBaits.filter(entry => fishes.includes(entry.baitId)),
           weatherTransitions: result.data.weather_transitions_per_fish
             .sort((a, b) => b.occurences - a.occurences)
             .map(entry => {
@@ -233,18 +220,8 @@ export class FishComponent extends TeamcraftPageComponent {
               entry.percent = 100 * entry.occurences / totalTugs;
               return entry;
             }),
-          snagging: result.data.snagging_per_fish
-            .sort((a, b) => b.occurences - a.occurences)
-            .map(entry => {
-              entry.percent = 100 * entry.occurences / totalSnagging;
-              return entry;
-            }),
-          fishEyes: result.data.fish_eyes_per_fish
-            .sort((a, b) => b.occurences - a.occurences)
-            .map(entry => {
-              entry.percent = 100 * entry.occurences / totalFishEyes;
-              return entry;
-            }),
+          snagging: snaggingPercent,
+          fishEyes: fishEyesPercent,
           spots: result.data.spots_per_fish
             .map(entry => {
               entry.spotData = fishingSpots.find(row => row.id === entry.spot);
@@ -257,29 +234,6 @@ export class FishComponent extends TeamcraftPageComponent {
         };
       }),
       tap(() => this.loading = false)
-    );
-  }
-
-  private getName(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
-  }
-
-  private getDescription(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Description_${this.translate.currentLang}`] || item.Description_en;
-  }
-
-  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.xivapiFish$.pipe(
-      map(item => {
-        return {
-          title: this.getName(item),
-          description: this.getDescription(item),
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/item/${item.ID}/${this.getName(item).split(' ').join('+')}`,
-          image: `https://xivapi.com/i2/ls/${item.ID}.png`
-        };
-      })
     );
   }
 }

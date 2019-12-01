@@ -1,55 +1,10 @@
-<ng-container *ngIf="xivapiFish$ | async as xivapiFish; else loader">
-  <div [style.padding]="'0 50px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
-    <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
-         fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
-      <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
-           fxLayoutAlign="space-between" fxLayoutGap="10px">
-        <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiFish.Icon | xivapiIcon" alt="{{xivapiFish.ID | itemName | i18n}}"
-               class="larger-img-icon">
-          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{xivapiFish.ID | itemName | i18n}}</h2>
-            <div *ngIf="xivapiFish.GamePatch" class="patch">
-              {{xivapiFish.GamePatch | xivapiI18n}}
-              <app-db-button [id]="xivapiFish.GamePatch.ID" type="patch"></app-db-button>
-            </div>
-          </div>
-        </div>
-        <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
-             fxLayoutGap="5px">
-          <a *ngFor="let link of links" [href]="link.url" [nzTitle]="link.title" nz-tooltip target="_blank">
-            <img [alt]="link.title" [src]="link.icon" class="link-icon">
-          </a>
-        </div>
-      </div>
-      <div fxFlex="1 1 auto">
-        <p *ngIf="xivapiFish.Description" [innerHTML]="xivapiFish | xivapiI18n: 'Description' | xivUIText"></p>
-      </div>
-      <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="EN" class="language-flag" src="./assets/icons/english.png">
-          <div>{{xivapiFish.Name_en}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="DE" class="language-flag" src="./assets/icons/german.png">
-          <div>{{xivapiFish.Name_de}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="FR" class="language-flag" src="./assets/icons/french.png">
-          <div>{{xivapiFish.Name_fr}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
-          <div>{{xivapiFish.Name_ja}}</div>
-        </div>
-      </div>
-    </div>
-    <ng-container *ngIf="settings.theme as theme">
+<ng-container *ngIf="xivapiFish$ | async as xivapiFish">
+  <ng-container *ngIf="settings.theme as theme">
+    <app-page-loader [loading]="loading">
       <ng-container *ngIf="gubalData$ | async as data">
-        <app-page-loader [loading]="loading">
         <div class="details-container" fxLayout="column">
-          <div class="main-attributes details" fxLayoutAlign="flex-start center" fxLayout="row wrap" fxLayoutGap="5px">
-            <div class="details-block">
+          <div class="details" fxLayoutAlign="flex-start center" fxLayout="row wrap" fxLayoutGap="5px">
+            <div class="details-block no-icon">
               <div class="detail-name">
                 {{'DB.FISH.Min_gathering' | translate}}
               </div>
@@ -57,7 +12,7 @@
                 {{data.minGathering | number:'1.0-1'}}
               </div>
             </div>
-            <div class="details-block">
+            <div class="details-block no-icon">
               <div class="detail-name">
                 {{'DB.FISH.Min_size' | translate}}
               </div>
@@ -65,7 +20,7 @@
                 {{(data.minSize / 10) | number:'1.0-1'}} ilm
               </div>
             </div>
-            <div class="details-block">
+            <div class="details-block no-icon">
               <div class="detail-name">
                 {{'DB.FISH.Max_size' | translate}}
               </div>
@@ -73,7 +28,7 @@
                 {{(data.maxSize / 10) | number:'1.0-1'}} ilm
               </div>
             </div>
-            <div class="details-block">
+            <div class="details-block no-icon">
               <div class="detail-name">
                 {{'DB.FISH.Avg_size' | translate}}
               </div>
@@ -81,8 +36,31 @@
                 {{(data.avgSize / 10) | number:'1.0-1'}} ilm
               </div>
             </div>
+            <div class="details-block">
+              <div class="detail-name">
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+                  <img src="{{ 761 | statusIcon | xivapiIcon}}" alt="">
+                  <span>{{761 | statusName | i18n}}</span>
+                </div>
+              </div>
+              <div class="detail-value">
+                <div>{{data.snagging | number:'1.0-1'}}%</div>
+              </div>
+            </div>
+            <div class="details-block">
+              <div class="detail-name">
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+                  <img src="{{ 762 | statusIcon | xivapiIcon}}" alt="">
+                  <span>{{762 | statusName | i18n}}</span>
+                </div>
+              </div>
+              <div class="detail-value">
+                <div>{{data.fishEyes | number:'1.0-1'}}%</div>
+              </div>
+            </div>
             <div fxFlex="1 1 auto"></div>
-            <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'DB.FISH.Refresh_data' | translate" (click)="loading = true;reloader$.next(null)">
+            <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'DB.FISH.Refresh_data' | translate"
+                    (click)="loading = true;reloader$.next(null)">
               <i nz-icon nzType="reload" nzTheme="outline"></i>
             </button>
           </div>
@@ -108,6 +86,12 @@
               ></ngx-charts-bar-vertical>
             </nz-card>
             <nz-card [nzTitle]="'DB.FISH.Baits' | translate" [style.width.px]="data.baitsChart.view[0] + 48">
+              <div fxLayout="row wrap" fxLayoutAlign="center center">
+                <div *ngFor="let row of data.baitsChart.raw;let last = last">
+                  <app-item-icon [itemId]="row.baitId" [icon]="row.icon" width="32"></app-item-icon>
+                  <nz-divider nzType="vertical" *ngIf="!last"></nz-divider>
+                </div>
+              </div>
               <ngx-charts-advanced-pie-chart
                 [view]="data.baitsChart.view"
                 [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
@@ -135,30 +119,19 @@
                 </div>
               </div>
             </nz-card>
-            <nz-card [nzTitle]="'DB.FISH.Buffs' | translate" fxFlex="1 1 auto">
-              <div fxLayout="column" fxLayoutGap="20px">
-                <div fxLayout="column" fxLayoutGap="10px">
-                  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-                    <img src="{{ 761 | statusIcon | xivapiIcon}}" alt="">
-                    <h3>{{761 | statusName | i18n}}</h3>
-                  </div>
-                  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.snagging">
-                    <div *ngIf="row.snagging">{{'Yes' | translate}}</div>
-                    <div *ngIf="!row.snagging">{{'No' | translate}}</div>
-                    <div>{{row.percent | number:'1.0-1'}}%</div>
-                  </div>
+            <nz-card [nzTitle]="'DB.FISH.Used_as_mooch_for' | translate" class="card-with-list" fxFlex="1 1 auto">
+              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.usedAsMoochFor; let last = last"
+                   [class.border-bottom]="!last" class="list-row">
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+                  <app-item-icon [itemId]="row.itemId" [icon]="row.itemId | lazyIcon" width="32"></app-item-icon>
+                  <span>{{row.itemId | itemName | i18n}}</span>
                 </div>
-                <div fxLayout="column" fxLayoutGap="10px">
-                  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-                    <img src="{{ 762 | statusIcon | xivapiIcon}}" alt="">
-                    <h3>{{762 | statusName | i18n}}</h3>
-                  </div>
-                  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.fishEyes">
-                    <div *ngIf="row.fishEyes">{{'Yes' | translate}}</div>
-                    <div *ngIf="!row.fishEyes">{{'No' | translate}}</div>
-                    <div>{{row.percent | number:'1.0-1'}}%</div>
-                  </div>
-                </div>
+              </div>
+              <div class="no-data">
+                <nz-empty *ngIf="data.usedAsMoochFor.length === 0" [nzNotFoundContent]="contentTpl"></nz-empty>
+                <ng-template #contentTpl>
+                  <span>{{'DB.FISH.No_known_mooch_usage' | translate}}</span>
+                </ng-template>
               </div>
             </nz-card>
           </div>
@@ -215,16 +188,14 @@
               </div>
             </nz-card>
           </div>
-          <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
-          </div>
         </div>
 
-        </app-page-loader>
+        <ng-container *ngIf="usedForTpl">
+          <ng-container *ngTemplateOutlet="usedForTpl"></ng-container>
+        </ng-container>
+
+        <app-db-comments [id]="xivapiFish.ID" type="item"></app-db-comments>
       </ng-container>
-    </ng-container>
-  </div>
-  <app-db-comments [id]="xivapiFish.ID" type="fish"></app-db-comments>
+    </app-page-loader>
+  </ng-container>
 </ng-container>
-<ng-template #loader>
-  <app-page-loader></app-page-loader>
-</ng-template>
