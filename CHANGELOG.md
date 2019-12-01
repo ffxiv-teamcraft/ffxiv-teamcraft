@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.3.0"></a>
+# [6.3.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.12...v6.3.0) (2019-12-01)
+
+
+### Bug Fixes
+
+* **list:** fixed an issue with item completion not being edited properly ([d2fbf38](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d2fbf38))
+* **lists:** fixed an issue with small lists drag events not registering properly ([67e5737](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/67e5737))
+
+
+### Features
+
+* **db:** added a lot of details on fish db pages, using data captured ([#1262](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1262)) ([7e53923](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e53923))
+* **list:** added a button to fill current list with inventory ([9432222](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9432222))
+* **solver:** solver is way faster, as it's now running as a web worker ([b9e51ad](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b9e51ad))
+
+
+
 <a name="6.2.12"></a>
 ## [6.2.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.2.11...v6.2.12) (2019-11-30)
 
