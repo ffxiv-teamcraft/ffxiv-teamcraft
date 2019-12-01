@@ -560,6 +560,7 @@
     "Autofill_notification": "完了通知",
     "Autofill_notification_title": "アイテム完了",
     "Autofill_notification_body": "{{listName}} リストの{{itemName}} 作業が完了できました",
+    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -1326,7 +1327,6 @@
       "Hour": "Hour of the day",
       "Baits": "Bait used",
       "Hookset_and_tug": "Hooksets and tugs",
-      "Buffs": "Buffs",
       "Weathers": "Weathers",
       "Weather_transitions": "Weather transitions",
       "Hooksets": "Hooksets",
