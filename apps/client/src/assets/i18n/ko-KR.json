@@ -378,7 +378,7 @@
     "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
     "Enable_packet_capture": "패킷 캡쳐를 사용 (실시간 소지품 동기화 기능 추가)",
     "Packet_capture_info": "패킷 캡쳐는 ACT(미터기) 와 같이 이용약관(ToS) 에 위배됩니다. 하지만 스퀘어에닉스에서는 ACT같은 외부 프로그램을 사용하는것을 다른사람들에게 말하지않으면 묵인해줍니다. 그냥 말하지마세요. 그러면 문제될건 없습니다.",
-    "Enable_autofill_by_default": "자동채우기를 기본으로 걸정하기",
+    "Enable_autofill_by_default": "자동채우기를 기본으로 설정하기",
     "Contribute_to_universalis": "Universalis에 기여하기",
     "Persist_inventory": "데이터베이스에 소지품을 저장(웹버젼과 공유됨)",
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
@@ -1321,6 +1321,30 @@
     "ITEM": {
       "Masterpiece_base": "기본",
       "Masterpiece_bonus": "보너스"
+    },
+    "FISH": {
+      "Hour": "Hour of the day",
+      "Baits": "Bait used",
+      "Hookset_and_tug": "Hooksets and tugs",
+      "Buffs": "Buffs",
+      "Weathers": "Weathers",
+      "Weather_transitions": "Weather transitions",
+      "Hooksets": "Hooksets",
+      "Tugs": "Tugs",
+      "Seconds": "Seconds",
+      "Bite_time": "Bite time",
+      "Spots": "Spots",
+      "Min_gathering": "Min. gathering",
+      "Min_size": "Min. size",
+      "Max_size": "Max. size",
+      "Avg_size": "Avg. size",
+      "Used_as_mooch_for": "Used as mooch for",
+      "No_known_mooch_usage": "No known mooch usage for this fish",
+      "TUG": {
+        "Light": "Light",
+        "Medium": "Medium",
+        "Big": "Big"
+      }
     },
     "NODE": {
       "Items": "아이템",
