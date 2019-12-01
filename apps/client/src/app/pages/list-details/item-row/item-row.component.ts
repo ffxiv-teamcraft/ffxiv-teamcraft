@@ -86,9 +86,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   private _item$: Subject<ListRow> = new Subject<ListRow>();
 
   public item$: Observable<ListRow> = this._item$.pipe(
-    distinctUntilChanged((a, b) => {
-      return a.id === b.id && a.amount === b.amount && a.done === b.done;
-    }),
     shareReplay(1)
   );
 
