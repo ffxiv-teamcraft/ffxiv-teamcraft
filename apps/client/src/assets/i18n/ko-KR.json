@@ -560,6 +560,7 @@
     "Autofill_notification": "완료 알림",
     "Autofill_notification_title": "아이템 완료",
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
+    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -1326,7 +1327,6 @@
       "Hour": "Hour of the day",
       "Baits": "Bait used",
       "Hookset_and_tug": "Hooksets and tugs",
-      "Buffs": "Buffs",
       "Weathers": "Weathers",
       "Weather_transitions": "Weather transitions",
       "Hooksets": "Hooksets",
