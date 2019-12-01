@@ -560,6 +560,7 @@
     "Autofill_notification": "Benachrichtigung bei Fertigstellung",
     "Autofill_notification_title": "Gegenstand fertiggestellt",
     "Autofill_notification_body": "{{itemName}} wurde in der Liste {{listName}} fertiggestellt",
+    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -1326,7 +1327,6 @@
       "Hour": "Hour of the day",
       "Baits": "Bait used",
       "Hookset_and_tug": "Hooksets and tugs",
-      "Buffs": "Buffs",
       "Weathers": "Weathers",
       "Weather_transitions": "Weather transitions",
       "Hooksets": "Hooksets",
