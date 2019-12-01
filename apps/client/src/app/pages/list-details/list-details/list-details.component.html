@@ -68,6 +68,10 @@
               {{team.name}}
             </nz-tag>
           </div>
+          <button nz-button nzType="primary" nzShape="circle" (click)="fillWithInventory(list)" nz-tooltip
+                  [nzTitle]="'LIST_DETAILS.Fill_with_inventory' | translate">
+            <i nz-icon nzType="shopping" nzTheme="outline"></i>
+          </button>
         </div>
         <div class="spacer"></div>
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
@@ -105,7 +109,7 @@
                     nzType="primary">
               <i class="material-icons">apps</i>
             </button>
-            <button (click)="openHistoryPopup(list)"
+            <button (click)="openHistoryPopup()"
                     [disabled]="list.modificationsHistory.length === 0 || (permissionLevel$ | async) < 20"
                     [nzTitle]="'LIST.History' | translate" nz-button
                     nz-tooltip

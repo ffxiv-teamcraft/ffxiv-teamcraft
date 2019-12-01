@@ -560,6 +560,7 @@
     "Autofill_notification": "Completion notification",
     "Autofill_notification_title": "Item completed",
     "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
+    "Fill_with_inventory": "Fill with inventory",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
