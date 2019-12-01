@@ -59,7 +59,7 @@ exports.solver = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
     const stats = new CrafterStats(
       req.body.stats.jobId,
       req.body.stats.craftsmanship,
-      req.body.stats.control,
+      req.body.stats._control,
       req.body.stats.cp,
       req.body.stats.specialist,
       req.body.stats.level,

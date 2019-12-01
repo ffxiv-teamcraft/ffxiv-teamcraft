@@ -36,6 +36,7 @@ import { MediaObserver } from '@angular/flex-layout';
 import { ListContributionsComponent } from '../list-contributions/list-contributions.component';
 import * as _ from 'lodash';
 import { IpcService } from '../../../core/electron/ipc.service';
+import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 
 @Component({
   selector: 'app-list-details',
@@ -101,7 +102,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
-              private media: MediaObserver, public ipc: IpcService) {
+              private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryFacade) {
     super(seoService);
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
@@ -382,11 +383,62 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     });
   }
 
-  openHistoryPopup(list: List): void {
+  openHistoryPopup(): void {
     this.dialog.create({
       nzTitle: this.translate.instant('LIST.History'),
       nzFooter: null,
       nzContent: ListHistoryPopupComponent
+    });
+  }
+
+  public fillWithInventory(list: List): void {
+    this.inventoryFacade.inventory$.pipe(
+      first(),
+      map(inventory => {
+        list.items.forEach(item => {
+          const inventoryItems = inventory.getItem(item.id, true);
+          if (inventoryItems.length > 0) {
+            const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
+            list.setDone(item.id, Math.min(item.done + totalAmount, item.amount), true);
+          }
+        });
+        list.finalItems.forEach(item => {
+          const inventoryItems = inventory.getItem(item.id, true);
+          if (inventoryItems.length > 0) {
+            const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
+            list.setDone(item.id, Math.min(item.done + totalAmount, item.amount), false, true);
+          }
+        });
+        list.updateAllStatuses();
+        return list;
+      })
+    ).subscribe(res => {
+      this.listsFacade.updateList(res);
+    });
+  }
+
+  public syncWithInventory(list: List): void {
+    this.inventoryFacade.inventory$.pipe(
+      first(),
+      map(inventory => {
+        list.items.forEach(item => {
+          const inventoryItems = inventory.getItem(item.id, true);
+          if (inventoryItems.length > 0) {
+            const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
+            list.setDone(item.id, Math.min(totalAmount, item.amount), true);
+          }
+        });
+        list.finalItems.forEach(item => {
+          const inventoryItems = inventory.getItem(item.id, true);
+          if (inventoryItems.length > 0) {
+            const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
+            list.setDone(item.id, Math.min(totalAmount, item.amount), false, true);
+          }
+        });
+        return list;
+      })
+    ).subscribe(res => {
+      this.listsFacade.updateList(res);
     });
   }
 

@@ -378,6 +378,7 @@
     "Disable_search_debounce": "Deshabilitar la búsqueda en tiempo real (sólo pulsar entrar activará la búsqueda)",
     "Enable_packet_capture": "Habilitar captura de paquetes (añade características de inventario en tiempo real)",
     "Packet_capture_info": "Capturar paquetes es contra los TdS, la misma razón por la que usar ACT es contra los TdS. Pero Square Enix lo tolera a menos que lo presuma a todos en el juego. Simplemente no lo haga y no se arriesgará a nada.",
+    "Enable_autofill_by_default": "Enable autofill by default",
     "Contribute_to_universalis": "Contribuir a Universalis",
     "Persist_inventory": "Guardar inventario en la base de datos (para compartir con la versión web)",
     "Track_items_on_sale": "Rastrear artículos a la venta en sus retenedores (requiere reiniciar/actualizar)",
@@ -559,6 +560,7 @@
     "Autofill_notification": "Notificación de finalización",
     "Autofill_notification_title": "Artículo completado",
     "Autofill_notification_body": "{{itemName}} se ha completado para la lista {{listName}}",
+    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -1321,6 +1323,29 @@
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
     },
+    "FISH": {
+      "Hour": "Hour of the day",
+      "Baits": "Bait used",
+      "Hookset_and_tug": "Hooksets and tugs",
+      "Weathers": "Weathers",
+      "Weather_transitions": "Weather transitions",
+      "Hooksets": "Hooksets",
+      "Tugs": "Tugs",
+      "Seconds": "Seconds",
+      "Bite_time": "Bite time",
+      "Spots": "Spots",
+      "Min_gathering": "Min. gathering",
+      "Min_size": "Min. size",
+      "Max_size": "Max. size",
+      "Avg_size": "Avg. size",
+      "Used_as_mooch_for": "Used as mooch for",
+      "No_known_mooch_usage": "No known mooch usage for this fish",
+      "TUG": {
+        "Light": "Light",
+        "Medium": "Medium",
+        "Big": "Big"
+      }
+    },
     "NODE": {
       "Items": "Artículos",
       "Possible_bonuses": "Bonos posibles",
@@ -1597,7 +1622,7 @@
     "No_optimizations": "No hay optimizaciones disponibles",
     "CAN_BE_BOUGHT": {
       "Title": "Artículos que se pueden comprar con gil",
-      "Message": "Este objeto se puede comprar a PNJ con gil y no requiere reputación de tribu de bestias."
+      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation."
     },
     "DUPLICATES": {
       "Title": "Artículos duplicados en múltiples contenedores",
