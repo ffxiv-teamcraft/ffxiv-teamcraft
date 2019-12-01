@@ -560,6 +560,7 @@
     "Autofill_notification": "Notification de complétion",
     "Autofill_notification_title": "Objet complété",
     "Autofill_notification_body": "{{itemName}} est maintenant complété pour la liste {{listName}}",
+    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -1326,7 +1327,6 @@
       "Hour": "Heure du jour",
       "Baits": "Appât utilisé",
       "Hookset_and_tug": "Ferrages et touches",
-      "Buffs": "Buffs",
       "Weathers": "Météo",
       "Weather_transitions": "Transitions météorologiques",
       "Hooksets": "Ferrages",
