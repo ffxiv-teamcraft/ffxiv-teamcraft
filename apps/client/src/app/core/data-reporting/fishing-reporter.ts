@@ -221,6 +221,10 @@ export class FishingReporter implements DataReporter {
         fisherStats$,
         mooch$
       ),
+      filter(([fish, , , , , , , possibleMooch, , spot, , mooch]) => {
+        return spot.fishes.indexOf(fish.id) > -1
+          && (!mooch || spot.fishes.indexOf(possibleMooch) > -1);
+      }),
       map(([fish, mapId, weatherId, previousWeatherId, baitId, throwData, biteData, possibleMooch, hookset, spot, stats, mooch]) => {
         if (fish.id && fish.moochable) {
           possibleMooch$.next(fish.id);
@@ -250,7 +254,7 @@ export class FishingReporter implements DataReporter {
         }
         return [entry];
       })
-    )
+    );
   }
 
   getDataType(): string {
