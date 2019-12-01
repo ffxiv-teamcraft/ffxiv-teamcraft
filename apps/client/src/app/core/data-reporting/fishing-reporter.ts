@@ -108,12 +108,16 @@ export class FishingReporter implements DataReporter {
 
     const throw$ = eventPlay$.pipe(
       filter(packet => packet.scene === 1),
-      withLatestFrom(this.eorzea.statuses$),
-      map(([packet, statuses]) => {
+      withLatestFrom(this.eorzea.statuses$,
+    this.eorzea.weatherId$,
+      this.eorzea.previousWeatherId$),
+      map(([packet, statuses, weatherId, previousWeatherId]) => {
         return {
           timestamp: Date.now(),
           etime: this.etime.toEorzeanDate(new Date()),
-          statuses: statuses
+          statuses,
+          weatherId,
+          previousWeatherId
         };
       })
     );
@@ -210,8 +214,6 @@ export class FishingReporter implements DataReporter {
       map(([fishData]) => fishData),
       withLatestFrom(
         this.eorzea.mapId$,
-        this.eorzea.weatherId$,
-        this.eorzea.previousWeatherId$,
         this.eorzea.baitId$,
         throw$,
         bite$,
@@ -221,11 +223,11 @@ export class FishingReporter implements DataReporter {
         fisherStats$,
         mooch$
       ),
-      filter(([fish, , , , , , , possibleMooch, , spot, , mooch]) => {
+      filter(([fish, , , , , possibleMooch, , spot, , mooch]) => {
         return spot.fishes.indexOf(fish.id) > -1
           && (!mooch || spot.fishes.indexOf(possibleMooch) > -1);
       }),
-      map(([fish, mapId, weatherId, previousWeatherId, baitId, throwData, biteData, possibleMooch, hookset, spot, stats, mooch]) => {
+      map(([fish, mapId, baitId, throwData, biteData, possibleMooch, hookset, spot, stats, mooch]) => {
         if (fish.id && fish.moochable) {
           possibleMooch$.next(fish.id);
         }
@@ -234,8 +236,8 @@ export class FishingReporter implements DataReporter {
           etime: throwData.etime.getUTCHours() + (throwData.etime.getUTCMinutes() / 60),
           hq: fish.hq,
           mapId,
-          weatherId,
-          previousWeatherId,
+          weatherId: throwData.weatherId,
+          previousWeatherId: throwData.previousWeatherId,
           baitId,
           biteTime: Math.floor((biteData.timestamp - throwData.timestamp) / 100),
           fishEyes: throwData.statuses.indexOf(762) > -1,
