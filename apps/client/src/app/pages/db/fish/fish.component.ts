@@ -186,8 +186,8 @@ export class FishComponent implements OnInit {
               }
             ],
             curve: shape.curveBasisOpen,
-            min: sortedBiteTimes[0].biteTime / 10,
-            max: sortedBiteTimes[sortedBiteTimes.length - 1].biteTime / 10
+            min: (sortedBiteTimes[0] || {biteTime: 0}).biteTime / 10,
+            max: (sortedBiteTimes[sortedBiteTimes.length - 1] || {biteTime: 0}).biteTime / 10
           },
           weathersChart: {
             view: [400, 300],
