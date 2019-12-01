@@ -1322,6 +1322,30 @@
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "BONUS"
     },
+    "FISH": {
+      "Hour": "Hour of the day",
+      "Baits": "Bait used",
+      "Hookset_and_tug": "Hooksets and tugs",
+      "Buffs": "Buffs",
+      "Weathers": "Weathers",
+      "Weather_transitions": "Weather transitions",
+      "Hooksets": "Hooksets",
+      "Tugs": "Tugs",
+      "Seconds": "Seconds",
+      "Bite_time": "Bite time",
+      "Spots": "Spots",
+      "Min_gathering": "Min. gathering",
+      "Min_size": "Min. size",
+      "Max_size": "Max. size",
+      "Avg_size": "Avg. size",
+      "Used_as_mooch_for": "Used as mooch for",
+      "No_known_mooch_usage": "No known mooch usage for this fish",
+      "TUG": {
+        "Light": "Light",
+        "Medium": "Medium",
+        "Big": "Big"
+      }
+    },
     "NODE": {
       "Items": "Items",
       "Possible_bonuses": "Possible bonuses",
