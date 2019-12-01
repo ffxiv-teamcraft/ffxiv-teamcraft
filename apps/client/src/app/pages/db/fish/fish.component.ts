@@ -216,7 +216,7 @@ export class FishComponent implements OnInit {
           tugs: result.data.tug_per_fish
             .sort((a, b) => b.occurences - a.occurences)
             .map(entry => {
-              entry.tugName = ['Medium', 'Light', 'Big'][entry.tug];
+              entry.tugName = ['Medium', 'Big', 'Light'][entry.tug];
               entry.percent = 100 * entry.occurences / totalTugs;
               return entry;
             }),
