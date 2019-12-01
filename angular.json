@@ -45,7 +45,8 @@
               "apps/client/src/styles.less",
               "apps/client/src/theme.less"
             ],
-            "scripts": ["node_modules/marked/lib/marked.js"]
+            "scripts": ["node_modules/marked/lib/marked.js"],
+            "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
             "production": {

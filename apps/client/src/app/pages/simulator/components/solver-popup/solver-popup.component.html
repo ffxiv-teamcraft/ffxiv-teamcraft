@@ -1,12 +1,5 @@
 <form (ngSubmit)="submit()" [formGroup]="configForm" nz-form>
   <nz-alert [nzMessage]="'SIMULATOR.SOLVER.Disclaimer' | translate" nzShowIcon nzType="info"></nz-alert>
-  <nz-form-item>
-    <nz-form-label [nzSpan]="6" nzFor="hqTarget"
-                   nzRequired>{{'SIMULATOR.SOLVER.Hq_target' | translate}}</nz-form-label>
-    <nz-form-control [nzSpan]="6">
-      <input formControlName="hqTarget" nz-input type="number"/>
-    </nz-form-control>
-  </nz-form-item>
   <nz-form-item nz-row>
     <nz-form-control *ngIf="seed?.length > 0" [nzOffset]="6" [nzSpan]="14">
       <label formControlName="seeded" nz-checkbox>

@@ -4,6 +4,13 @@
     "outDir": "../../dist/out-tsc",
     "types": []
   },
-  "exclude": ["test.ts", "**/*.spec.ts", "karma.conf.ts"],
-  "include": ["**/*.ts"]
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts",
+    "**/*.worker.ts",
+    "karma.conf.ts"
+  ],
+  "include": [
+    "**/*.ts"
+  ]
 }
