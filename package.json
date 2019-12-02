@@ -57,7 +57,8 @@
       "include": "./tools/build/nsis/include.nsh",
       "allowToChangeInstallationDirectory": true,
       "oneClick": false,
-      "differentialPackage": true
+      "differentialPackage": true,
+      "artifactName":  "${productName}-setup.${ext}"
     }
   },
   "scripts": {
