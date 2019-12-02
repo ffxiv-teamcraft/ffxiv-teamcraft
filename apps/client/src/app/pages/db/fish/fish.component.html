@@ -59,6 +59,12 @@
               </div>
             </div>
             <div fxFlex="1 1 auto"></div>
+            <nz-select nzShowSearch [ngModel]="spot$ | async" (ngModelChange)="spot$.next($event);loading=true">
+              <nz-option [nzLabel]="'DB.FISH.No_spot_filter' | translate" [nzValue]="-1"></nz-option>
+              <nz-option *ngFor="let spot of data.everySpots"
+                         [nzLabel]="spot.spotData.zoneId | placeName | i18n"
+                         [nzValue]="spot.spot"></nz-option>
+            </nz-select>
             <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'DB.FISH.Refresh_data' | translate"
                     (click)="loading = true;reloader$.next(null)">
               <i nz-icon nzType="reload" nzTheme="outline"></i>
@@ -160,22 +166,40 @@
                 [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
                 [results]="data.weathersChart.data"
               ></ngx-charts-advanced-pie-chart>
-            </nz-card>
-            <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 auto" class="card-with-list">
-              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.weatherTransitions; let last = last"
-                   [class.border-bottom]="!last" class="list-row">
-                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                  <div>
-                    <img src="{{row.previousWeatherId | weatherIcon | xivapiIcon}}" alt="">
-                    <span>{{row.previousWeatherId | weatherName | i18n}}</span>
-                  </div>
-                  <i nz-icon nzType="right" nzTheme="outline"></i>
-                  <div>
-                    <img src="{{row.weatherId | weatherIcon | xivapiIcon}}" alt="">
-                    <span>{{row.weatherId | weatherName | i18n}}</span>
+              <div fxLayout="column" *ngIf="data.weathersChart.chances.length > 0" class="weathers-list-block">
+                <h4>{{'DB.FISH.Weather_chances' | translate}}</h4>
+                <div fxLayout="column" fxLayoutAlign="center center">
+                  <div *ngFor="let row of data.weathersChart.chances;let last = last"
+                       fxLayout="row" fxLayoutAlign="space-between center"
+                       class="list-row" [class.border-bottom]="!last">
+                    <div>
+                      <img src="{{row.weatherId | weatherIcon | xivapiIcon}}" alt="">
+                      <span>{{row.weatherId | weatherName | i18n}}</span>
+                    </div>
+                    <div>{{row.chances | number:'1.0-1'}}%</div>
                   </div>
                 </div>
-                <div>{{row.percent | number:'1.0-1'}} %</div>
+              </div>
+            </nz-card>
+            <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 auto" class="card-with-list" [class.expanded]="(spot$ | async) > 0">
+              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.weatherTransitions; let last = last"
+                   [class.border-bottom]="!last" class="list-row">
+                <div fxLayout="column" fxFlex="1 1 auto">
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                    <div>
+                      <img src="{{row.previousWeatherId | weatherIcon | xivapiIcon}}" alt="">
+                      <span>{{row.previousWeatherId | weatherName | i18n}}</span>
+                    </div>
+                    <i nz-icon nzType="right" nzTheme="outline"></i>
+                    <div>
+                      <img src="{{row.weatherId | weatherIcon | xivapiIcon}}" alt="">
+                      <span>{{row.weatherId | weatherName | i18n}}</span>
+                    </div>
+                    <div fxFlex="1 1 auto"></div>
+                    <div>{{row.percent | number:'1.0-1'}} %</div>
+                  </div>
+                  <div *ngIf="row.transitionChances">{{'DB.FISH.Chances_for_transition' | translate}}: {{row.transitionChances | number:'1.0-2'}}%</div>
+                </div>
               </div>
             </nz-card>
             <nz-card [nzTitle]="'DB.FISH.Spots' | translate" fxFlex="1 1 auto" class="card-with-list">

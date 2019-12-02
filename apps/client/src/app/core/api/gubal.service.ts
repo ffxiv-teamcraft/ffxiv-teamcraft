@@ -32,7 +32,8 @@ export class GubalService {
           variables: {
             data: {
               ...data,
-              userId: userId
+              userId: userId,
+              date: new Date().toISOString()
             }
           }
         });
