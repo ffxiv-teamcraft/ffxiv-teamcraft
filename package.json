@@ -47,15 +47,17 @@
       "icon": "./tools/build/icon.ico",
       "publisherName": "FFXIV Teamcraft",
       "requestedExecutionLevel": "highestAvailable",
+      "target": "nsis-web",
       "publish": {
         "provider": "github",
         "releaseType": "release"
       }
     },
-    "nsis": {
+    "nsisWeb": {
       "include": "./tools/build/nsis/include.nsh",
       "allowToChangeInstallationDirectory": true,
-      "oneClick": false
+      "oneClick": false,
+      "differentialPackage": true
     }
   },
   "scripts": {
