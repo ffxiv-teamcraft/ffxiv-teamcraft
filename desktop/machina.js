@@ -69,7 +69,8 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'eventUnk0',
         'eventUnk1',
         'updatePositionHandler',
-        'actorControlSelf'
+        'actorControlSelf',
+        'useMooch'
       ];
 
       Machina = new MachinaFFXIV(options);
