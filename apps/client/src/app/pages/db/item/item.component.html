@@ -790,8 +790,8 @@
       </ng-template>
       <ng-template #classicItemDetails>
         <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiItem.ID" type="item"></app-db-comments>
-        <ng-container *ngTemplateOutlet="usedForTpl"></ng-container>
         <ng-container *ngTemplateOutlet="howToObtainTpl"></ng-container>
+        <ng-container *ngTemplateOutlet="usedForTpl"></ng-container>
         <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiItem.ID"
                          type="item"></app-db-comments>
       </ng-template>
