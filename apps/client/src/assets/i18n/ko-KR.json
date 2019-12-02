@@ -1340,6 +1340,9 @@
       "Avg_size": "평균 크기",
       "Used_as_mooch_for": "생미끼로 사용시 낚이는 물고기",
       "No_known_mooch_usage": "생미끼로 사용된 기록이 없습니다",
+      "No_spot_filter": "No spot filter",
+      "Chances_for_transition": "Chances for this transition to happen",
+      "Weather_chances": "Chances for each weather to appear",
       "TUG": {
         "Light": "소형",
         "Medium": "중형",
