@@ -560,7 +560,7 @@
     "Autofill_notification": "완료 알림",
     "Autofill_notification_title": "아이템 완료",
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
-    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
+    "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -1324,15 +1324,15 @@
       "Masterpiece_bonus": "보너스"
     },
     "FISH": {
-      "Hour": "Hour of the day",
-      "Baits": "사용되는 미끼",
-      "Hookset_and_tug": "Hooksets and tugs",
-      "Weathers": "날씨",
+      "Hour": "낚이는 시간",
+      "Baits": "사용된 미끼",
+      "Hookset_and_tug": "낚아채기 및 작살질",
+      "Weathers": "낚시 가능한 날씨",
       "Weather_transitions": "날씨 변경",
       "Hooksets": "낚아채기",
-      "Tugs": "작살",
+      "Tugs": "작살질",
       "Seconds": "초",
-      "Bite_time": "낚을수 있는 시간",
+      "Bite_time": "입질이 오는데까지 걸리는 시간",
       "Spots": "낚시터",
       "Min_gathering": "최소 획득력",
       "Min_size": "최소 크기",
@@ -1341,9 +1341,9 @@
       "Used_as_mooch_for": "생미끼로 사용시 낚이는 물고기",
       "No_known_mooch_usage": "생미끼로 사용된 기록이 없습니다",
       "TUG": {
-        "Light": "Light",
-        "Medium": "Medium",
-        "Big": "Big"
+        "Light": "소형",
+        "Medium": "중형",
+        "Big": "대형"
       }
     },
     "NODE": {
