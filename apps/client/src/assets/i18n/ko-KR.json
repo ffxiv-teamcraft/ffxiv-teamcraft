@@ -1324,11 +1324,11 @@
       "Masterpiece_bonus": "보너스"
     },
     "FISH": {
-      "Hour": "낚이는 시간",
+      "Hour": "시간 통계",
       "Baits": "사용된 미끼",
-      "Hookset_and_tug": "낚아채기 및 작살질",
-      "Weathers": "낚시 가능한 날씨",
-      "Weather_transitions": "날씨 변경",
+      "Hookset_and_tug": "낚아채기 및 입질",
+      "Weathers": "날씨 통계",
+      "Weather_transitions": "날씨 빈도",
       "Hooksets": "낚아채기",
       "Tugs": "작살질",
       "Seconds": "초",
