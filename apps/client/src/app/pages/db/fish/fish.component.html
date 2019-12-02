@@ -190,6 +190,10 @@
           </div>
         </div>
 
+        <ng-container *ngIf="obtentionTpl">
+          <ng-container *ngTemplateOutlet="obtentionTpl"></ng-container>
+        </ng-container>
+
         <ng-container *ngIf="usedForTpl">
           <ng-container *ngTemplateOutlet="usedForTpl"></ng-container>
         </ng-container>

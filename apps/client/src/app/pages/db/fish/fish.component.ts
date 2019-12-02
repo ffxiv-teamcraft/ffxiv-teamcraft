@@ -34,6 +34,9 @@ export class FishComponent implements OnInit {
   @Input()
   usedForTpl: TemplateRef<any>;
 
+  @Input()
+  obtentionTpl: TemplateRef<any>;
+
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
   public gubalData$: Observable<any>;
