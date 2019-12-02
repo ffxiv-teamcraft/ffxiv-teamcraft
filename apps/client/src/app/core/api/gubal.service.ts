@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IpcService } from '../electron/ipc.service';
-import { first, mapTo, switchMap } from 'rxjs/operators';
+import { debounceTime, first, mapTo, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../+state/auth.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { DataReporter } from '../data-reporting/data-reporter';
@@ -45,6 +45,7 @@ export class GubalService {
     combineLatest(this.reporters.map(reporter => {
       return reporter.getDataReports(this.ipc.packets$)
         .pipe(
+          debounceTime(500),
           switchMap(dataReports => {
             if (dataReports.length === 0) {
               return of(null);
