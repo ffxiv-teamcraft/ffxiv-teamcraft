@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IpcService } from '../electron/ipc.service';
-import { mapTo, switchMap } from 'rxjs/operators';
+import { first, mapTo, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../+state/auth.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { DataReporter } from '../data-reporting/data-reporter';
@@ -25,6 +25,7 @@ export class GubalService {
         }
       }`;
     return this.authFacade.userId$.pipe(
+      first(),
       switchMap(userId => {
         return this.apollo.mutate({
           mutation: query,

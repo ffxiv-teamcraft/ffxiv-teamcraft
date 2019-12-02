@@ -1,5 +1,5 @@
 import { DataReporter } from './data-reporter';
-import { BehaviorSubject, combineLatest, merge, Observable, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { debounceTime, filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
@@ -109,8 +109,8 @@ export class FishingReporter implements DataReporter {
     const throw$ = eventPlay$.pipe(
       filter(packet => packet.scene === 1),
       withLatestFrom(this.eorzea.statuses$,
-    this.eorzea.weatherId$,
-      this.eorzea.previousWeatherId$),
+        this.eorzea.weatherId$,
+        this.eorzea.previousWeatherId$),
       map(([packet, statuses, weatherId, previousWeatherId]) => {
         return {
           timestamp: Date.now(),
