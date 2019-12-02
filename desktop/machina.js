@@ -19,7 +19,12 @@ module.exports.start = function(win, config, verbose, winpcap) {
     log.info('elevated', elevated);
     if (elevated) {
       let line = 0;
+
       exec('netsh advfirewall firewall show rule name="FFXIVTeamcraft"', (err, stdout) => {
+        if ((stdout.match(/FFXIVTeamcraft/g) || []).length > 1) {
+          exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft"');
+          exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
+        }
         if (stdout.indexOf('FFXIVTeamcraft') === -1) {
           exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
         }
