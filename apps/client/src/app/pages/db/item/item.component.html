@@ -152,7 +152,7 @@
         </div>
       </div>
       <ng-container *ngIf="xivapiItem.IsFish;else classicItemDetails">
-        <app-fish [xivapiFish]="xivapiItem" [usedForTpl]="usedForTpl"></app-fish>
+        <app-fish [xivapiFish]="xivapiItem" [usedForTpl]="usedForTpl" [obtentionTpl]="howToObtainTpl"></app-fish>
       </ng-container>
       <ng-template #usedForTpl>
         <div *ngIf="usedFor$ | async as usedFor">
@@ -415,381 +415,382 @@
           </div>
         </div>
       </ng-template>
-      <ng-template #classicItemDetails>
-        <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiItem.ID" type="item"></app-db-comments>
-        <div>
-          <nz-divider [nzText]="'DB.How_to_obtain' | translate" nzOrientation="left"></nz-divider>
-          <app-fullpage-message *ngIf="noData" height="150px">
-            {{'DB.No_known_way_to_obtain' | translate}}
-          </app-fullpage-message>
-          <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
-            <nz-card *ngIf="data.drops !== undefined && data.drops.length > 0" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
-                  <div>
-                    {{'Hunting' | translate}}
-                  </div>
+      <ng-template #howToObtainTpl>
+        <nz-divider [nzText]="'DB.How_to_obtain' | translate" nzOrientation="left"></nz-divider>
+        <app-fullpage-message *ngIf="noData" height="150px">
+          {{'DB.No_known_way_to_obtain' | translate}}
+        </app-fullpage-message>
+        <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+          <nz-card *ngIf="data.drops !== undefined && data.drops.length > 0" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
+                <div>
+                  {{'Hunting' | translate}}
                 </div>
-              </ng-template>
-              <app-hunting [item]="data"></app-hunting>
-            </nz-card>
-            <nz-card *ngIf="data.tradeSources !== undefined && data.tradeSources.length > 0" [nzTitle]="title"
-                     class="details-card" fxFlex="1 1 auto"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img class="img-icon round-icon"
-                       src="https://www.garlandtools.org/db/images/Shop.png">
-                  <div>
-                    {{'Trade' | translate}}
-                  </div>
+              </div>
+            </ng-template>
+            <app-hunting [item]="data"></app-hunting>
+          </nz-card>
+          <nz-card *ngIf="data.tradeSources !== undefined && data.tradeSources.length > 0" [nzTitle]="title"
+                   class="details-card" fxFlex="1 1 auto"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img class="img-icon round-icon"
+                     src="https://www.garlandtools.org/db/images/Shop.png">
+                <div>
+                  {{'Trade' | translate}}
                 </div>
-              </ng-template>
-              <app-trades [dbDisplay]="true" [item]="data"></app-trades>
-            </nz-card>
-            <nz-card *ngIf="data.treasures !== undefined && data.treasures.length > 0" [nzTitle]="title"
-                     class="details-card" fxFlex="1 1 auto"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img class="img-icon round-icon"
-                       src="./assets/icons/chest_open.png">
-                  <div>
-                    {{'Treasures' | translate}}
-                  </div>
+              </div>
+            </ng-template>
+            <app-trades [dbDisplay]="true" [item]="data"></app-trades>
+          </nz-card>
+          <nz-card *ngIf="data.treasures !== undefined && data.treasures.length > 0" [nzTitle]="title"
+                   class="details-card" fxFlex="1 1 auto"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img class="img-icon round-icon"
+                     src="./assets/icons/chest_open.png">
+                <div>
+                  {{'Treasures' | translate}}
                 </div>
-              </ng-template>
-              <app-treasures [item]="data"></app-treasures>
-            </nz-card>
-            <nz-card *ngIf="data.fates !== undefined && data.fates.length > 0" [nzTitle]="title"
-                     class="details-card" fxFlex="1 1 60%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img [src]="(data.fates[0].id | fate).icon | xivapiIcon"
-                       class="img-icon round-icon">
-                  <div>
-                    {{'Fates' | translate}}
-                  </div>
+              </div>
+            </ng-template>
+            <app-treasures [item]="data"></app-treasures>
+          </nz-card>
+          <nz-card *ngIf="data.fates !== undefined && data.fates.length > 0" [nzTitle]="title"
+                   class="details-card" fxFlex="1 1 60%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img [src]="(data.fates[0].id | fate).icon | xivapiIcon"
+                     class="img-icon round-icon">
+                <div>
+                  {{'Fates' | translate}}
                 </div>
-              </ng-template>
-              <app-fates [item]="data"></app-fates>
-            </nz-card>
-            <nz-card *ngIf="data.craftedBy !== undefined && data.craftedBy.length > 0" [nzTitle]="title"
-                     class="details-card" fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img class="img-icon round-icon" src="./assets/icons/classjob/blacksmith.png">
-                  <div>
-                    {{'DB.Recipes' | translate}}
-                  </div>
+              </div>
+            </ng-template>
+            <app-fates [item]="data"></app-fates>
+          </nz-card>
+          <nz-card *ngIf="data.craftedBy !== undefined && data.craftedBy.length > 0" [nzTitle]="title"
+                   class="details-card" fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img class="img-icon round-icon" src="./assets/icons/classjob/blacksmith.png">
+                <div>
+                  {{'DB.Recipes' | translate}}
                 </div>
-              </ng-template>
-              <div class="recipes" fxLayout="column" fxLayoutGap="10px">
-                <nz-card *ngFor="let recipe of data.craftedBy" [nzActions]="recipe.jobId > 0 ?[addToList, openSimulator]: [addToList]"
-                         fxLayoutGap="5px">
-                  <nz-card-meta [nzTitle]="recipeTitle">
-                    <ng-template #recipeTitle>
-                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                        <ng-container *ngIf="recipe.jobId !== 0">
-                          <div class="recipe-title" fxLayout="column">
-                            <div fxLayout="row" fxLayoutGap="5px">
-                              <div>{{recipe.jobId | jobAbbr | i18n}}</div>
-                              <div>{{recipe.level}}{{recipe.stars_tooltip}}</div>
-                            </div>
-                            <div fxLayout="row" fxLayoutGap="5px">
-                              <b>rlvl</b>:
-                              <div>{{gtData.getCraft(recipe.recipeId).rlvl}}</div>
-                            </div>
-                            <div fxLayout="row" fxLayoutGap="5px">
-                              <b>{{'SIMULATOR.Durability' | translate}}</b>:
-                              <div>{{gtData.getCraft(recipe.recipeId).durability}}</div>
-                            </div>
-                            <div fxLayout="row" fxLayoutGap="5px">
-                              <b>{{'SIMULATOR.Progress' | translate}}</b>:
-                              <div>{{gtData.getCraft(recipe.recipeId).progress}}</div>
-                            </div>
-                            <div fxLayout="row" fxLayoutGap="5px">
-                              <b>{{'SIMULATOR.Quality' | translate}}</b>:
-                              <div>{{gtData.getCraft(recipe.recipeId).quality}}</div>
-                            </div>
+              </div>
+            </ng-template>
+            <div class="recipes" fxLayout="column" fxLayoutGap="10px">
+              <nz-card *ngFor="let recipe of data.craftedBy" [nzActions]="recipe.jobId > 0 ?[addToList, openSimulator]: [addToList]"
+                       fxLayoutGap="5px">
+                <nz-card-meta [nzTitle]="recipeTitle">
+                  <ng-template #recipeTitle>
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <ng-container *ngIf="recipe.jobId !== 0">
+                        <div class="recipe-title" fxLayout="column">
+                          <div fxLayout="row" fxLayoutGap="5px">
+                            <div>{{recipe.jobId | jobAbbr | i18n}}</div>
+                            <div>{{recipe.level}}{{recipe.stars_tooltip}}</div>
                           </div>
-                        </ng-container>
-                      </div>
-                    </ng-template>
-                  </nz-card-meta>
-                  <div *ngIf="gtData.getCraft(recipe.recipeId) as craft" fxLayout="column" fxLayoutGap="5px">
-                    <div *ngFor="let item of craft.ingredients">
-                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                        <app-item-icon [icon]="+item.id | lazyIcon" [itemId]="+item.id" width="32"></app-item-icon>
-                        <div fxLayout="column">
-                          <div [appItemRarity]="+item.id">
-                            {{+item.id | itemName | i18n}}
+                          <div fxLayout="row" fxLayoutGap="5px">
+                            <b>rlvl</b>:
+                            <div>{{gtData.getCraft(recipe.recipeId).rlvl}}</div>
                           </div>
-                          <div>
-                            x{{item.amount}}
+                          <div fxLayout="row" fxLayoutGap="5px">
+                            <b>{{'SIMULATOR.Durability' | translate}}</b>:
+                            <div>{{gtData.getCraft(recipe.recipeId).durability}}</div>
                           </div>
+                          <div fxLayout="row" fxLayoutGap="5px">
+                            <b>{{'SIMULATOR.Progress' | translate}}</b>:
+                            <div>{{gtData.getCraft(recipe.recipeId).progress}}</div>
+                          </div>
+                          <div fxLayout="row" fxLayoutGap="5px">
+                            <b>{{'SIMULATOR.Quality' | translate}}</b>:
+                            <div>{{gtData.getCraft(recipe.recipeId).quality}}</div>
+                          </div>
+                        </div>
+                      </ng-container>
+                    </div>
+                  </ng-template>
+                </nz-card-meta>
+                <div *ngIf="gtData.getCraft(recipe.recipeId) as craft" fxLayout="column" fxLayoutGap="5px">
+                  <div *ngFor="let item of craft.ingredients">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-item-icon [icon]="+item.id | lazyIcon" [itemId]="+item.id" width="32"></app-item-icon>
+                      <div fxLayout="column">
+                        <div [appItemRarity]="+item.id">
+                          {{+item.id | itemName | i18n}}
+                        </div>
+                        <div>
+                          x{{item.amount}}
                         </div>
                       </div>
                     </div>
                   </div>
-                  <ng-template #addToList>
-                    <ng-container *ngIf="toSearchResult(data) as searchResult">
-                      <nz-input-group [nzAddOnAfter]="addButton" [nzCompact]="true" class="amount-input">
-                        <input #amountInput (keydown.enter)="addItemsToList(searchResult, +amountInput.value)"
-                               [ngModel]="1"
-                               nz-input type="number">
-                      </nz-input-group>
-                      <ng-template #addButton>
-                        <i (click)="addItemsToList(searchResult, +amountInput.value)" [nzTitle]="'ITEMS.Add_to_list' | translate" nz-icon nz-tooltip
-                           nzType="plus"></i>
-                      </ng-template>
-                    </ng-container>
-                  </ng-template>
-                  <ng-template #openSimulator>
-                    <button (click)="openInSimulator(data, xivapiItem.ID, recipe.recipeId)" nz-button>
-                      {{'SIMULATOR.Simulate_tooltip' | translate}}
-                    </button>
-                  </ng-template>
-                </nz-card>
+                </div>
+                <ng-template #addToList>
+                  <ng-container *ngIf="toSearchResult(data) as searchResult">
+                    <nz-input-group [nzAddOnAfter]="addButton" [nzCompact]="true" class="amount-input">
+                      <input #amountInput (keydown.enter)="addItemsToList(searchResult, +amountInput.value)"
+                             [ngModel]="1"
+                             nz-input type="number">
+                    </nz-input-group>
+                    <ng-template #addButton>
+                      <i (click)="addItemsToList(searchResult, +amountInput.value)" [nzTitle]="'ITEMS.Add_to_list' | translate" nz-icon nz-tooltip
+                         nzType="plus"></i>
+                    </ng-template>
+                  </ng-container>
+                </ng-template>
+                <ng-template #openSimulator>
+                  <button (click)="openInSimulator(data, xivapiItem.ID, recipe.recipeId)" nz-button>
+                    {{'SIMULATOR.Simulate_tooltip' | translate}}
+                  </button>
+                </ng-template>
+              </nz-card>
+            </div>
+          </nz-card>
+          <nz-card *ngIf="data.gatheredBy !== undefined" [nzTitle]="title"
+                   class="details-card" fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img class="img-icon gathering-icon" src="{{data.gatheredBy.icon}}">
+                <div>
+                  {{'DB.Gathering' | translate}}
+                </div>
               </div>
-            </nz-card>
-            <nz-card *ngIf="data.gatheredBy !== undefined" [nzTitle]="title"
-                     class="details-card" fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img class="img-icon gathering-icon" src="{{data.gatheredBy.icon}}">
-                  <div>
-                    {{'DB.Gathering' | translate}}
-                  </div>
+            </ng-template>
+            <app-gathered-by [item]="data" [showAlarmsIntegration]="true"></app-gathered-by>
+          </nz-card>
+          <nz-card *ngIf="data.instances !== undefined && data.instances.length > 0" [nzTitle]="title"
+                   class="details-card"
+                   fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img [src]="data.instances[0].icon | instanceIcon" class="img-icon round-icon">
+                <div>
+                  {{'DB.Dungeons' | translate}}
                 </div>
-              </ng-template>
-              <app-gathered-by [item]="data" [showAlarmsIntegration]="true"></app-gathered-by>
-            </nz-card>
-            <nz-card *ngIf="data.instances !== undefined && data.instances.length > 0" [nzTitle]="title"
-                     class="details-card"
-                     fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img [src]="data.instances[0].icon | instanceIcon" class="img-icon round-icon">
-                  <div>
-                    {{'DB.Dungeons' | translate}}
-                  </div>
+              </div>
+            </ng-template>
+            <app-instances [item]="data"></app-instances>
+          </nz-card>
+          <nz-card *ngIf="data.reducedFrom !== undefined && data.reducedFrom.length > 0" [nzTitle]="title"
+                   class="details-card" fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
+                <div>
+                  {{'Reduction' | translate}}
                 </div>
-              </ng-template>
-              <app-instances [item]="data"></app-instances>
-            </nz-card>
-            <nz-card *ngIf="data.reducedFrom !== undefined && data.reducedFrom.length > 0" [nzTitle]="title"
-                     class="details-card" fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
-                  <div>
-                    {{'Reduction' | translate}}
-                  </div>
+              </div>
+            </ng-template>
+            <app-reduced-from [item]="data"></app-reduced-from>
+          </nz-card>
+          <nz-card *ngIf="data.desynths !== undefined && data.desynths.length > 0" [nzTitle]="title"
+                   class="details-card" fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <i iconfont="icon-vectorcombine" nz-icon></i>
+                <div>
+                  {{'Desynth' | translate}}
                 </div>
-              </ng-template>
-              <app-reduced-from [item]="data"></app-reduced-from>
-            </nz-card>
-            <nz-card *ngIf="data.desynths !== undefined && data.desynths.length > 0" [nzTitle]="title"
-                     class="details-card" fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <i iconfont="icon-vectorcombine" nz-icon></i>
-                  <div>
-                    {{'Desynth' | translate}}
-                  </div>
+              </div>
+            </ng-template>
+            <app-desynths [item]="data"></app-desynths>
+          </nz-card>
+          <nz-card *ngIf="data.vendors !== undefined && data.vendors.length > 0" [nzTitle]="title" class="details-card"
+                   fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
+                <div>
+                  {{'Vendors' | translate}}
                 </div>
-              </ng-template>
-              <app-desynths [item]="data"></app-desynths>
-            </nz-card>
-            <nz-card *ngIf="data.vendors !== undefined && data.vendors.length > 0" [nzTitle]="title" class="details-card"
-                     fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
-                  <div>
-                    {{'Vendors' | translate}}
-                  </div>
+              </div>
+            </ng-template>
+            <app-vendors [item]="data"></app-vendors>
+          </nz-card>
+          <nz-card *ngIf="data.voyages !== undefined && data.voyages.length > 0" [nzTitle]="title" class="details-card"
+                   fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
+                <div>
+                  {{'Voyages' | translate}}
                 </div>
-              </ng-template>
-              <app-vendors [item]="data"></app-vendors>
-            </nz-card>
-            <nz-card *ngIf="data.voyages !== undefined && data.voyages.length > 0" [nzTitle]="title" class="details-card"
-                     fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
-                  <div>
-                    {{'Voyages' | translate}}
-                  </div>
+              </div>
+            </ng-template>
+            <app-voyages [item]="data"></app-voyages>
+          </nz-card>
+          <nz-card *ngIf="data.ventures !== undefined && data.ventures.length > 0" [nzTitle]="title" class="details-card"
+                   fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img [src]="21072 | lazyIcon" alt="Ventures"
+                     class="img-icon round-icon">
+                <div>
+                  {{'Retainer_ventures' | translate}}
                 </div>
-              </ng-template>
-              <app-voyages [item]="data"></app-voyages>
-            </nz-card>
-            <nz-card *ngIf="data.ventures !== undefined && data.ventures.length > 0" [nzTitle]="title" class="details-card"
-                     fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img [src]="21072 | lazyIcon" alt="Ventures"
-                       class="img-icon round-icon">
-                  <div>
-                    {{'Retainer_ventures' | translate}}
-                  </div>
-                </div>
-              </ng-template>
-              <app-ventures [item]="data"></app-ventures>
-            </nz-card>
+              </div>
+            </ng-template>
+            <app-ventures [item]="data"></app-ventures>
+          </nz-card>
 
-            <nz-card *ngIf="data.tripleTriadDuels !== undefined && data.tripleTriadDuels.length > 0" [nzTitle]="title"
-                     class="details-card"
-                     fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img alt="TT" class="img-icon round-icon" src="https://triad.raelys.com/images/logo.png">
-                  <div>
-                    {{'DB.Triple_triad_duels' | translate}}
-                  </div>
+          <nz-card *ngIf="data.tripleTriadDuels !== undefined && data.tripleTriadDuels.length > 0" [nzTitle]="title"
+                   class="details-card"
+                   fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img alt="TT" class="img-icon round-icon" src="https://triad.raelys.com/images/logo.png">
+                <div>
+                  {{'DB.Triple_triad_duels' | translate}}
                 </div>
-              </ng-template>
-              <nz-list [nzDataSource]="data.tripleTriadDuels" [nzItemLayout]="'horizontal'" [nzRenderItem]="duelTemplate">
-                <ng-template #duelTemplate let-duel>
-                  <nz-list-item [nzContent]="duelContent">
-                    <nz-list-item-meta
-                      [nzDescription]="duelDescription"
-                      [nzTitle]="duelTitle">
-                      <ng-template #duelTitle>
-                        <a [nzTitle]="'DB.More_on_attt_npc' | translate" href="https://triad.raelys.com/npcs/{{duel.atttNpcId}}" nz-tooltip
-                           target="_blank">{{ duel.npcId | npcName | i18n }}</a>
-                      </ng-template>
-                      <ng-template #duelDescription>
-                        <div fxLayout="column">
-                          <div>
-                            {{'DB.TT_Rules' | translate}}: <span *ngFor="let rule of duel.rules; let last = last"
-                                                                 class="tt-rule">{{rule | ttRuleName | i18n}} <span
-                            *ngIf="!last">,</span></span>
-                          </div>
-                          <div *ngIf="duel.unlockingQuestId">{{'DB.Unlocked_by_quest' | translate}}:
-                            <b>{{duel.unlockingQuestId | questName | i18n}}</b></div>
+              </div>
+            </ng-template>
+            <nz-list [nzDataSource]="data.tripleTriadDuels" [nzItemLayout]="'horizontal'" [nzRenderItem]="duelTemplate">
+              <ng-template #duelTemplate let-duel>
+                <nz-list-item [nzContent]="duelContent">
+                  <nz-list-item-meta
+                    [nzDescription]="duelDescription"
+                    [nzTitle]="duelTitle">
+                    <ng-template #duelTitle>
+                      <a [nzTitle]="'DB.More_on_attt_npc' | translate" href="https://triad.raelys.com/npcs/{{duel.atttNpcId}}" nz-tooltip
+                         target="_blank">{{ duel.npcId | npcName | i18n }}</a>
+                    </ng-template>
+                    <ng-template #duelDescription>
+                      <div fxLayout="column">
+                        <div>
+                          {{'DB.TT_Rules' | translate}}: <span *ngFor="let rule of duel.rules; let last = last"
+                                                               class="tt-rule">{{rule | ttRuleName | i18n}} <span
+                          *ngIf="!last">,</span></span>
                         </div>
-                      </ng-template>
-                      <ng-template #duelContent>
-                        <app-map-position [mapId]="duel.mapId" [marker]="duel.coords"
-                                          [zoneId]="duel.zoneId" showZoneName="true"></app-map-position>
-                      </ng-template>
-                    </nz-list-item-meta>
-                  </nz-list-item>
-                </ng-template>
-              </nz-list>
-            </nz-card>
-            <nz-card *ngIf="data.achievements !== undefined" [nzTitle]="title"
-                     class="details-card"
-                     fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img alt="TT" class="img-icon round-icon" src="https://xivapi.com/c/Title.png">
-                  <div>
-                    {{'DB.Achievements' | translate}}
-                  </div>
-                </div>
+                        <div *ngIf="duel.unlockingQuestId">{{'DB.Unlocked_by_quest' | translate}}:
+                          <b>{{duel.unlockingQuestId | questName | i18n}}</b></div>
+                      </div>
+                    </ng-template>
+                    <ng-template #duelContent>
+                      <app-map-position [mapId]="duel.mapId" [marker]="duel.coords"
+                                        [zoneId]="duel.zoneId" showZoneName="true"></app-map-position>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
               </ng-template>
-              <nz-list [nzDataSource]="data.achievements" [nzItemLayout]="'horizontal'"
-                       [nzRenderItem]="achievementTemplate">
-                <ng-template #achievementTemplate let-achievement>
-                  <nz-list-item [nzContent]="content">
-                    <nz-list-item-meta
-                      [nzAvatar]="achievement | achievementIcon | xivapiIcon"
-                      [nzDescription]="achievementDescription"
-                      [nzTitle]="achievement | achievementName | i18n">
-                      <ng-template #content>
-                        <app-db-button [id]="achievement" type="achievement"></app-db-button>
-                      </ng-template>
-                    </nz-list-item-meta>
-                  </nz-list-item>
-                </ng-template>
-              </nz-list>
-            </nz-card>
-            <nz-card *ngIf="data.tripleTriadPack !== undefined" [nzTitle]="title"
-                     class="details-card"
-                     fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img alt="TT" class="img-icon round-icon" src="https://triad.raelys.com/images/logo.png">
-                  <div>
-                    {{'DB.Triple_triad_pack' | translate}}
-                  </div>
+            </nz-list>
+          </nz-card>
+          <nz-card *ngIf="data.achievements !== undefined" [nzTitle]="title"
+                   class="details-card"
+                   fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img alt="TT" class="img-icon round-icon" src="https://xivapi.com/c/Title.png">
+                <div>
+                  {{'DB.Achievements' | translate}}
                 </div>
+              </div>
+            </ng-template>
+            <nz-list [nzDataSource]="data.achievements" [nzItemLayout]="'horizontal'"
+                     [nzRenderItem]="achievementTemplate">
+              <ng-template #achievementTemplate let-achievement>
+                <nz-list-item [nzContent]="content">
+                  <nz-list-item-meta
+                    [nzAvatar]="achievement | achievementIcon | xivapiIcon"
+                    [nzDescription]="achievementDescription"
+                    [nzTitle]="achievement | achievementName | i18n">
+                    <ng-template #content>
+                      <app-db-button [id]="achievement" type="achievement"></app-db-button>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
               </ng-template>
-              <nz-list [nzDataSource]="[data.tripleTriadPack]" [nzItemLayout]="'horizontal'"
-                       [nzRenderItem]="packTemplate">
-                <ng-template #packTemplate let-pack>
-                  <nz-list-item>
-                    <nz-list-item-meta
-                      [nzAvatar]="packAvatar"
-                      [nzDescription]="packDescription"
-                      [nzTitle]="data.tripleTriadPack.id | itemName | i18n">
-                      <ng-template #packAvatar>
-                        <app-item-icon [icon]="data.tripleTriadPack.id | lazyIcon"
-                                       [itemId]="data.tripleTriadPack.id"></app-item-icon>
-                      </ng-template>
-                      <ng-template #packDescription>
-                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                          <app-item-icon [icon]="29 | lazyIcon" [itemId]="29" [width]="32"></app-item-icon>
-                          <div>{{data.tripleTriadPack.price}}</div>
-                        </div>
-                      </ng-template>
-                    </nz-list-item-meta>
-                  </nz-list-item>
-                </ng-template>
-              </nz-list>
-            </nz-card>
-            <nz-card *ngIf="data.quests !== undefined && data.quests.length > 0" [nzTitle]="title"
-                     class="details-card" fxFlex="1 1 30%"
-                     nzBordered="false">
-              <ng-template #title>
-                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img class="img-icon round-icon" src="./assets/icons/quest.png">
-                  <div>
-                    {{'Quests' | translate}}
-                  </div>
+            </nz-list>
+          </nz-card>
+          <nz-card *ngIf="data.tripleTriadPack !== undefined" [nzTitle]="title"
+                   class="details-card"
+                   fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img alt="TT" class="img-icon round-icon" src="https://triad.raelys.com/images/logo.png">
+                <div>
+                  {{'DB.Triple_triad_pack' | translate}}
                 </div>
+              </div>
+            </ng-template>
+            <nz-list [nzDataSource]="[data.tripleTriadPack]" [nzItemLayout]="'horizontal'"
+                     [nzRenderItem]="packTemplate">
+              <ng-template #packTemplate let-pack>
+                <nz-list-item>
+                  <nz-list-item-meta
+                    [nzAvatar]="packAvatar"
+                    [nzDescription]="packDescription"
+                    [nzTitle]="data.tripleTriadPack.id | itemName | i18n">
+                    <ng-template #packAvatar>
+                      <app-item-icon [icon]="data.tripleTriadPack.id | lazyIcon"
+                                     [itemId]="data.tripleTriadPack.id"></app-item-icon>
+                    </ng-template>
+                    <ng-template #packDescription>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <app-item-icon [icon]="29 | lazyIcon" [itemId]="29" [width]="32"></app-item-icon>
+                        <div>{{data.tripleTriadPack.price}}</div>
+                      </div>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
               </ng-template>
-              <nz-list [nzDataSource]="data.quests" [nzItemLayout]="'horizontal'"
-                       [nzRenderItem]="questTemplate">
-                <ng-template #questTemplate let-quest>
-                  <nz-list-item [nzContent]="more">
-                    <nz-list-item-meta
-                      [nzAvatar]="questAvatar"
-                      [nzTitle]="quest | questName | i18n">
-                      <ng-template #questAvatar>
-                        <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                          <img class="img-icon round-icon" src="./assets/icons/quest.png">
-                        </a>
-                        <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
-                      </ng-template>
-                      <ng-template #more>
-                        <app-db-button [id]="quest" type="quest"></app-db-button>
-                      </ng-template>
-                    </nz-list-item-meta>
-                  </nz-list-item>
-                </ng-template>
-              </nz-list>
-            </nz-card>
-          </div>
+            </nz-list>
+          </nz-card>
+          <nz-card *ngIf="data.quests !== undefined && data.quests.length > 0" [nzTitle]="title"
+                   class="details-card" fxFlex="1 1 30%"
+                   nzBordered="false">
+            <ng-template #title>
+              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img class="img-icon round-icon" src="./assets/icons/quest.png">
+                <div>
+                  {{'Quests' | translate}}
+                </div>
+              </div>
+            </ng-template>
+            <nz-list [nzDataSource]="data.quests" [nzItemLayout]="'horizontal'"
+                     [nzRenderItem]="questTemplate">
+              <ng-template #questTemplate let-quest>
+                <nz-list-item [nzContent]="more">
+                  <nz-list-item-meta
+                    [nzAvatar]="questAvatar"
+                    [nzTitle]="quest | questName | i18n">
+                    <ng-template #questAvatar>
+                      <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
+                        <img class="img-icon round-icon" src="./assets/icons/quest.png">
+                      </a>
+                      <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
+                    </ng-template>
+                    <ng-template #more>
+                      <app-db-button [id]="quest" type="quest"></app-db-button>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
+              </ng-template>
+            </nz-list>
+          </nz-card>
         </div>
+      </ng-template>
+      <ng-template #classicItemDetails>
+        <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiItem.ID" type="item"></app-db-comments>
+        <ng-container *ngTemplateOutlet="howToObtainTpl"></ng-container>
         <ng-container *ngTemplateOutlet="usedForTpl"></ng-container>
         <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiItem.ID"
                          type="item"></app-db-comments>

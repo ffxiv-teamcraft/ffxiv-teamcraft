@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.3.2"></a>
+## [6.3.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.3.1...v6.3.2) (2019-12-02)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an issue with desktop app creating too many firewall entries ([b143e4b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b143e4b))
+* **fish:** avoid multiple reports for the same event ([8efe8cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8efe8cf))
+* **fishing-data:** fixed statuses tracking and various issues ([ba420f8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba420f8))
+* **inventory:** fixed an issue with inventory updating in database ([066e6f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/066e6f0))
+* **log:** fixed duplicate entries for CRP ([bd18f5e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bd18f5e))
+* **resets:** fixed icon in reset timers page for desktop app ([af28c8d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af28c8d))
+
+
+### Features
+
+* **db:** add usual details about fishes below graphs ([ee52017](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ee52017))
+* **db:** add weather % chances and weather transition % chances when filtering on a spot ([697ff06](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/697ff06))
+* **db:** added fish links inside bait db pages ([a9f872e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a9f872e))
+* **desktop:** switching to nsis-web to enable differential updates (testing that) ([e758882](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e758882))
+
+
+
 <a name="6.3.1"></a>
 ## [6.3.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.3.0...v6.3.1) (2019-12-01)
 

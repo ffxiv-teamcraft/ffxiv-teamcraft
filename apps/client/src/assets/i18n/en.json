@@ -1340,6 +1340,10 @@
       "Avg_size": "Avg. size",
       "Used_as_mooch_for": "Used as mooch for",
       "No_known_mooch_usage": "No known mooch usage for this fish",
+      "No_spot_filter": "No spot filter",
+      "Chances_for_transition": "Chances for this transition to happen",
+      "Weather_chances": "Chances for each weather to appear",
+      "Bait": "Fishing bait",
       "TUG": {
         "Light": "Light",
         "Medium": "Medium",

@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
-import { BehaviorSubject, combineLatest, merge, Observable, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
-import { debounceTime, filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { actionTimeline } from '../data/sources/action-timeline';
 import { LazyDataService } from '../data/lazy-data.service';
@@ -40,7 +40,6 @@ export class FishingReporter implements DataReporter {
   }
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
-    const possibleMooch$ = new BehaviorSubject<number>(-1);
 
     const actorControlSelf$ = packets$.pipe(
       ofPacketType('actorControlSelf'),
@@ -106,15 +105,34 @@ export class FishingReporter implements DataReporter {
       filter(packet => packet.eventId === 0x150001)
     );
 
+    const moochId$ = new BehaviorSubject<number>(null);
+
+    packets$.pipe(
+      ofPacketType('useMooch')
+    ).subscribe(packet => {
+      moochId$.next(packet.moochID);
+    });
+
     const throw$ = eventPlay$.pipe(
       filter(packet => packet.scene === 1),
-      withLatestFrom(this.eorzea.statuses$),
-      map(([packet, statuses]) => {
+      withLatestFrom(
+        this.eorzea.statuses$,
+        this.eorzea.weatherId$,
+        this.eorzea.previousWeatherId$,
+        moochId$
+      ),
+      map(([, statuses, weatherId, previousWeatherId, mooch]) => {
         return {
           timestamp: Date.now(),
           etime: this.etime.toEorzeanDate(new Date()),
-          statuses: statuses
+          statuses,
+          weatherId,
+          previousWeatherId,
+          mooch
         };
+      }),
+      tap(() => {
+        moochId$.next(null);
       })
     );
 
@@ -210,32 +228,26 @@ export class FishingReporter implements DataReporter {
       map(([fishData]) => fishData),
       withLatestFrom(
         this.eorzea.mapId$,
-        this.eorzea.weatherId$,
-        this.eorzea.previousWeatherId$,
         this.eorzea.baitId$,
         throw$,
         bite$,
-        possibleMooch$,
         hookset$,
         spot$,
         fisherStats$,
         mooch$
       ),
-      filter(([fish, , , , , , , possibleMooch, , spot, , mooch]) => {
+      filter(([fish, , , throwData, , , spot, , mooch]) => {
         return spot.fishes.indexOf(fish.id) > -1
-          && (!mooch || spot.fishes.indexOf(possibleMooch) > -1);
+          && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1);
       }),
-      map(([fish, mapId, weatherId, previousWeatherId, baitId, throwData, biteData, possibleMooch, hookset, spot, stats, mooch]) => {
-        if (fish.id && fish.moochable) {
-          possibleMooch$.next(fish.id);
-        }
+      map(([fish, mapId, baitId, throwData, biteData, hookset, spot, stats, mooch]) => {
         const entry = {
           itemId: fish.id,
           etime: throwData.etime.getUTCHours() + (throwData.etime.getUTCMinutes() / 60),
           hq: fish.hq,
           mapId,
-          weatherId,
-          previousWeatherId,
+          weatherId: throwData.weatherId,
+          previousWeatherId: throwData.previousWeatherId,
           baitId,
           biteTime: Math.floor((biteData.timestamp - throwData.timestamp) / 100),
           fishEyes: throwData.statuses.indexOf(762) > -1,
@@ -250,10 +262,12 @@ export class FishingReporter implements DataReporter {
           ...stats
         };
         if (mooch) {
-          entry.baitId = possibleMooch;
+          entry.baitId = throwData.mooch;
         }
+        moochId$.next(null);
         return [entry];
-      })
+      }),
+      tap(console.log)
     );
   }
 

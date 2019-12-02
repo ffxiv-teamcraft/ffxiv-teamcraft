@@ -51,14 +51,10 @@ export class InventoryEffects {
     ofType<UpdateInventory>(InventoryActionTypes.UpdateInventory),
     auditTime(30000),
     switchMap(action => {
+      localStorage.setItem(INVENTORY_FEATURE_KEY, JSON.stringify(action.payload));
       if (this.settings.persistInventory || !this.platform.isDesktop()) {
-        if (action.force) {
-          return this.inventoryService.set(action.payload.$key, action.payload);
-        } else {
-          return this.inventoryService.update(action.payload.$key, action.payload);
-        }
+        return this.inventoryService.set(action.payload.$key, action.payload);
       } else {
-        localStorage.setItem(INVENTORY_FEATURE_KEY, JSON.stringify(action.payload));
         return of(null);
       }
     })
