@@ -17,14 +17,17 @@
            nz-tooltip target="_blank">
           <i nz-icon nzType="question-circle"></i>
         </a>
-        <div *ngIf="(newVersionAvailable$ | async) && platformService.isDesktop() && !downloading">
+        <div *ngIf="platformService.isDesktop() && !checkingForUpdate && !downloading">
           <button (click)="updateDesktopApp()" [nzTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
                   nzPlacement="bottom"
                   nzShape="circle"
                   nzType="primary"><i nz-icon nzType="download"></i></button>
         </div>
-        <div *ngIf="downloading" class="download-spinner">
+        <div *ngIf="checkingForUpdate" class="download-spinner">
           <nz-spin [nzSimple]="true"></nz-spin>
+        </div>
+        <div *ngIf="downloading" class="download-spinner">
+          {{downloading.percent | number: '1.0-0'}}%
         </div>
         <div class="tips-container" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
           <ng-container *ngIf="platformService.isDesktop()">
@@ -71,7 +74,7 @@
           </li>
           <li *ngIf="platformService.isDesktop()" [nzTitle]="'COMMON.Open_link' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
               nz-tooltip nzPlacement="bottom" (click)="openLink()">
-              <i nz-icon nzType="laptop" nzTheme="outline"></i>
+            <i nz-icon nzType="laptop" nzTheme="outline"></i>
           </li>
           <li *ngIf="notifications$ | async as notifications" [nzContent]="notificationsTemplate" class="ant-menu-item" nz-popover
               nzPlacement="bottomRight">

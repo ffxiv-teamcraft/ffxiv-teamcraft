@@ -31,6 +31,7 @@ module.exports = function(config) {
         autoHideMenuBar: true,
         webPreferences: {
           contextIsolation: false,
+          nodeIntegration: true,
           webviewTag: true
         },
         useContentSize: true

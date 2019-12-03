@@ -162,7 +162,7 @@
     "electron-config": "^2.0.0",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^3.0.6",
-    "electron-updater": "^4.0.6",
+    "electron-updater": "^4.2.0",
     "express": "^4.16.4",
     "fast-json-patch": "^3.0.0-1",
     "file-saver": "^2.0.1",

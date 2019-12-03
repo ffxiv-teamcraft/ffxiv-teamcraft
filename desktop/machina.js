@@ -93,7 +93,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         }
       });
     } else {
-      throw new Error('Not enough permissions to run packet capture');
+      log.error('Not enough permissions to run packet capture');
     }
   });
 
