@@ -17,7 +17,7 @@
            nz-tooltip target="_blank">
           <i nz-icon nzType="question-circle"></i>
         </a>
-        <div *ngIf="platformService.isDesktop() && !checkingForUpdate && !downloading">
+        <div *ngIf="(newVersionAvailable$ | async ) && platformService.isDesktop() && !checkingForUpdate && !downloading">
           <button (click)="updateDesktopApp()" [nzTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
                   nzPlacement="bottom"
                   nzShape="circle"
