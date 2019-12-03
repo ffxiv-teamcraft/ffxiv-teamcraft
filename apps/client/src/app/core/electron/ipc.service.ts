@@ -157,11 +157,14 @@ export class IpcService {
   }
 
   private handlePacket(packet: any): void {
-    this.packets$.next(packet);
-    const debugPackets = (<any>window).debugPackets;
-    if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {
-      // tslint:disable-next-line:no-console
-      console.info(packet.type, packet);
+    // If we're inside an overlay, don't do anything with the packet, we don't care.
+    if (this._overlayUri === undefined) {
+      this.packets$.next(packet);
+      const debugPackets = (<any>window).debugPackets;
+      if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {
+        // tslint:disable-next-line:no-console
+        console.info(packet.type, packet);
+      }
     }
   }
 
