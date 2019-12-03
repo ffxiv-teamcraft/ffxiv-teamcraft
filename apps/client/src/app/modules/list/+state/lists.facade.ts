@@ -321,7 +321,7 @@ export class ListsFacade {
   }
 
   select(key: string): void {
-    this.store.dispatch(new SelectList(key));
+    this.store.dispatch(new SelectList(key, this.settings.enableAutofillByDefault));
   }
 
   pin(key: string): void {

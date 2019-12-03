@@ -349,6 +349,11 @@
               {{'SETTINGS.Persist_inventory' | translate}}
             </label>
           </div>
+          <div>
+            <label [(ngModel)]="settings.enableAutofillByDefault" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Enable_autofill_by_default' | translate}}
+            </label>
+          </div>
         </div>
       </nz-card>
       <button (click)="openDesktopConsole()" nz-button>

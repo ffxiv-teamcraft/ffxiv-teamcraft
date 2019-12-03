@@ -378,6 +378,7 @@
     "Disable_search_debounce": "自動検索機能を使用しない（エンターキーを押すときのみ検索ができる）",
     "Enable_packet_capture": "パケットキャプチャを使用（リアルタイム持ち物同期機能を追加）",
     "Packet_capture_info": "パケットキャプチャはACT（メーター）のように利用規約（ToS）に違反します。でも、スクウェア・エニックスからACTのようなプログラムを使用することを他の人に言わなければ黙認してくれます。ただ言わないでください。そうすれば、問題になることはありません。",
+    "Enable_autofill_by_default": "Enable autofill by default",
     "Contribute_to_universalis": "Universalisに貢献する",
     "Persist_inventory": "データベースに所持品を保存（ウェブバージョンと共有される）",
     "Track_items_on_sale": "リテイナーが販売されている物品も同期させる（クライアントやり直し、リフレッシュが必要）",
@@ -559,6 +560,7 @@
     "Autofill_notification": "完了通知",
     "Autofill_notification_title": "アイテム完了",
     "Autofill_notification_body": "{{listName}} リストの{{itemName}} 作業が完了できました",
+    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -1321,6 +1323,32 @@
       "Masterpiece_base": "基本",
       "Masterpiece_bonus": "ボーナス"
     },
+    "FISH": {
+      "Hour": "Hour of the day",
+      "Baits": "Bait used",
+      "Hookset_and_tug": "Hooksets and tugs",
+      "Weathers": "Weathers",
+      "Weather_transitions": "Weather transitions",
+      "Hooksets": "Hooksets",
+      "Tugs": "Tugs",
+      "Seconds": "Seconds",
+      "Bite_time": "Bite time",
+      "Spots": "Spots",
+      "Min_gathering": "Min. gathering",
+      "Min_size": "Min. size",
+      "Max_size": "Max. size",
+      "Avg_size": "Avg. size",
+      "Used_as_mooch_for": "Used as mooch for",
+      "No_known_mooch_usage": "No known mooch usage for this fish",
+      "No_spot_filter": "No spot filter",
+      "Chances_for_transition": "Chances for this transition to happen",
+      "Weather_chances": "Chances for each weather to appear",
+      "TUG": {
+        "Light": "Light",
+        "Medium": "Medium",
+        "Big": "Big"
+      }
+    },
     "NODE": {
       "Items": "アイテム",
       "Possible_bonuses": "ロケーション・エフェクト",
@@ -1597,7 +1625,7 @@
     "No_optimizations": "最適化ができません",
     "CAN_BE_BOUGHT": {
       "Title": "購入可能：ギル",
-      "Message": "購入可能：ギル / 蛮族友好度：中立"
+      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation."
     },
     "DUPLICATES": {
       "Title": "アイテムが複数の場所に分散されています",

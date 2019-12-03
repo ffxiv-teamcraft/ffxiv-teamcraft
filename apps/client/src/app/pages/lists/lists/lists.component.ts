@@ -228,6 +228,9 @@ export class ListsComponent {
     if (list.workshopId !== undefined) {
       this.workshopsFacade.removeListFromWorkshop(list.$key, list.workshopId);
     }
+    if (index === list.index) {
+      return;
+    }
     // Remove list from the array
     lists = lists.filter(l => l.$key !== list.$key);
     // Insert it at new index

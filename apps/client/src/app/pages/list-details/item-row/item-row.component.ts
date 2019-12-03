@@ -4,7 +4,7 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { Alarm } from '../../../core/alarms/alarm';
 import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
@@ -83,13 +83,17 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   private buttonsCache = {};
 
-  public item$: ReplaySubject<ListRow> = new ReplaySubject<ListRow>();
+  private _item$: Subject<ListRow> = new Subject<ListRow>();
+
+  public item$: Observable<ListRow> = this._item$.pipe(
+    shareReplay(1)
+  );
 
   private finalItem$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   @Input()
   set item(item: ListRow) {
-    this.item$.next(item);
+    this._item$.next(item);
     this.handleAlarms(item);
   }
 

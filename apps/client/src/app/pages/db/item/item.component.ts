@@ -33,6 +33,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { hwdSupplies } from '../../../core/data/sources/hwd-supplies';
+import { fishes } from '../../../core/data/sources/fishes';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
 
 @Component({
   selector: 'app-item',
@@ -73,7 +76,8 @@ export class ItemComponent extends TeamcraftPageComponent {
               private progressService: ProgressPopupService, private listManager: ListManagerService,
               private notificationService: NzNotificationService, private rotationPicker: RotationPickerService,
               private attt: ATTTService, private lazyData: LazyDataService, private sanitizer: DomSanitizer,
-              private dialog: NzModalService, public settings: SettingsService, seo: SeoService) {
+              private dialog: NzModalService, public settings: SettingsService,
+              private apollo: Apollo, seo: SeoService) {
     super(seo);
 
     this.route.paramMap.subscribe(params => {
@@ -107,6 +111,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         return this.xivapi.get(XivapiEndpoint.Item, +itemId);
       }),
       switchMap((item) => {
+        item.IsFish = fishes.indexOf(item.ID) > -1;
         // If it's a  consumable, get item action details and put it inside item action itself.
         if (item.ItemAction && [844, 845, 846].indexOf(item.ItemAction.Type) > -1) {
           return this.xivapi.get(XivapiEndpoint.ItemFood, item.ItemAction.Data1).pipe(
@@ -358,6 +363,26 @@ export class ItemComponent extends TeamcraftPageComponent {
     );
 
     this.usedFor$ = combineLatest([this.garlandToolsItem$, this.xivapiItem$]).pipe(
+      switchMap(([data, xivapiItem]) => {
+        if (xivapiItem.ItemSearchCategoryTargetID === 30) {
+          return this.apollo.query<any>({
+            query: gql`
+          query fishData {
+            baits_per_fish(where: {baitId: {_eq: ${xivapiItem.ID}}}) {
+              itemId
+            }
+          }
+          `
+          })
+            .pipe(
+              map(result => {
+                xivapiItem.BaitInfo = result.data.baits_per_fish;
+                return [data, xivapiItem];
+              })
+            );
+        }
+        return of([data, xivapiItem]);
+      }),
       map(([data, xivapiItem]) => {
         const usedFor = [];
         if (data.item.ingredient_of !== undefined) {
@@ -371,6 +396,20 @@ export class ItemComponent extends TeamcraftPageComponent {
                 return {
                   itemId: +itemId,
                   recipes: this.lazyData.recipes.filter(r => r.result === +itemId)
+                };
+              })
+          });
+        }
+        if (xivapiItem.BaitInfo !== undefined && xivapiItem.BaitInfo.length > 0) {
+          usedFor.push({
+            type: UsedForType.FISH_BAIT,
+            flex: '1 1 auto',
+            title: 'DB.FISH.Bait',
+            icon: './assets/icons/classjob/fisher.png',
+            links: xivapiItem.BaitInfo
+              .map(row => {
+                return {
+                  itemId: +row.itemId
                 };
               })
           });

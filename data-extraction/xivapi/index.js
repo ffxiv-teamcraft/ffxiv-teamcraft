@@ -514,6 +514,7 @@ if (hasTodo('fishingLog')) {
 
   getAllEntries('https://xivapi.com/FishingSpot', '63cc0045d7e847149c3f', true).subscribe((completeFetch) => {
     const spots = [];
+    const fishes = [];
     completeFetch
       .filter(spot => spot.Item0 !== null && spot.TerritoryType !== null)
       .forEach(spot => {
@@ -540,6 +541,9 @@ if (hasTodo('fishingLog')) {
           })
           .forEach(key => {
             const fish = spot[key];
+            if (fishes.indexOf(fish.ID) === -1) {
+              fishes.push(fish.ID);
+            }
             const c = spot.TerritoryType.Map.SizeFactor / 100.0;
             const entry = {
               itemId: fish.ID,
@@ -561,6 +565,7 @@ if (hasTodo('fishingLog')) {
       });
     persistToTypescript('fishing-log', 'fishingLog', fishingLog);
     persistToTypescript('fishing-spots', 'fishingSpots', spots);
+    persistToTypescript('fishes', 'fishes', fishes);
   });
 
 }
@@ -842,13 +847,13 @@ if (hasTodo('fates')) {
 
 if (hasTodo('instances')) {
   const instances = {};
-  getAllPages('https://xivapi.com/InstanceContent?columns=ID,Name_*,Icon,InstanceContentTextDataBossEndTargetID,InstanceContentTextDataBossStartTargetID,InstanceContentTextDataObjectiveEndTargetID,InstanceContentTextDataObjectiveStartTargetID').subscribe(page => {
+  getAllPages('https://xivapi.com/InstanceContent?columns=ID,ContentFinderCondition.Name_*,Icon,InstanceContentTextDataBossEndTargetID,InstanceContentTextDataBossStartTargetID,InstanceContentTextDataObjectiveEndTargetID,InstanceContentTextDataObjectiveStartTargetID').subscribe(page => {
     page.Results.forEach(instance => {
       instances[instance.ID] = {
-        en: instance.Name_en,
-        ja: instance.Name_ja,
-        de: instance.Name_de,
-        fr: instance.Name_fr,
+        en: instance.ContentFinderCondition.Name_en,
+        ja: instance.ContentFinderCondition.Name_ja,
+        de: instance.ContentFinderCondition.Name_de,
+        fr: instance.ContentFinderCondition.Name_fr,
         icon: instance.Icon
       };
       const contentText = [

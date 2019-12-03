@@ -19,7 +19,12 @@ module.exports.start = function(win, config, verbose, winpcap) {
     log.info('elevated', elevated);
     if (elevated) {
       let line = 0;
+
       exec('netsh advfirewall firewall show rule name="FFXIVTeamcraft"', (err, stdout) => {
+        if ((stdout.match(/FFXIVTeamcraft/g) || []).length > 1) {
+          exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft"');
+          exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
+        }
         if (stdout.indexOf('FFXIVTeamcraft') === -1) {
           exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
         }
@@ -55,12 +60,10 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'playerSpawn',
         'inventoryModifyHandler',
         'npcSpawn',
-        'ping',
         'playerStats',
         'updateClassInfo',
         'actorControl',
         'initZone',
-        'weatherChange',
         'aetherReductionDlg',
         'desynthOrReductionResult',
         'persistentEffect',
@@ -71,7 +74,8 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'eventUnk0',
         'eventUnk1',
         'updatePositionHandler',
-        'actorControlSelf'
+        'actorControlSelf',
+        'useMooch'
       ];
 
       Machina = new MachinaFFXIV(options);

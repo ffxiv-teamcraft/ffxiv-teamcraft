@@ -1,1 +1,69 @@
 @import '../common-db';
+
+::ng-deep {
+  .ngx-charts {
+    text {
+      fill: var(--text-color) !important;
+    }
+  }
+
+  .legend-item:hover {
+    color: var(--text-color) !important;
+    opacity: .8;
+  }
+
+  .ant-card {
+    .ant-card-body {
+      border-top: 1px solid #444;
+    }
+
+    &.no-graph {
+      .ant-card-body {
+        padding: 12px 24px !important;
+      }
+    }
+
+    &.card-with-list:not(.expanded) {
+      .ant-card-body {
+        height: 348px;
+        overflow-y: auto;
+        padding: 0 !important;
+      }
+    }
+
+    &.card-with-list.expanded {
+      .ant-card-body {
+        padding: 0 !important;
+      }
+    }
+  }
+}
+
+.border-bottom {
+  border-bottom: 1px solid #444;
+}
+
+.card-list {
+  overflow-y: auto;
+  min-height: 348px;
+  height: 100%;
+  padding: 24px;
+}
+
+.list-row {
+  padding: 5px;
+  width: 100%;
+}
+
+.no-data {
+  padding: 24px;
+}
+
+.details-block.no-icon {
+  padding: 15.5px 10px;
+}
+
+.weathers-list-block {
+  margin-top: 10px;
+}
+

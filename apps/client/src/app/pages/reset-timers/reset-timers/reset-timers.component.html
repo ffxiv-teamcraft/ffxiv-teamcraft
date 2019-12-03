@@ -5,7 +5,7 @@
         <nz-list-item-meta
           [nzDescription]="('ALARMS.REALTIME.' + timer.label + '_DESCRIPTION') | translate"
           [nzTitle]="('ALARMS.REALTIME.' + timer.label) | translate"
-          nzAvatar="/assets/icons/notice.png">
+          nzAvatar="./assets/icons/notice.png">
         </nz-list-item-meta>
         <ng-template #toggle>
           <nz-switch [(ngModel)]="timer.enabled"

@@ -151,8 +151,271 @@
           <div class="detail-value">{{gtData.item.sell_price}}</div>
         </div>
       </div>
-      <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiItem.ID" type="item"></app-db-comments>
-      <div>
+      <ng-container *ngIf="xivapiItem.IsFish;else classicItemDetails">
+        <app-fish [xivapiFish]="xivapiItem" [usedForTpl]="usedForTpl" [obtentionTpl]="howToObtainTpl"></app-fish>
+      </ng-container>
+      <ng-template #usedForTpl>
+        <div *ngIf="usedFor$ | async as usedFor">
+          <nz-divider [nzText]="'DB.Used_for' | translate" nzOrientation="left"></nz-divider>
+          <app-fullpage-message *ngIf="usedFor.length === 0 && (xivapiItem.ID > 19 || xivapiItem.ID === 1)"
+                                height="300px">
+            {{'DB.Used_for_nothing' | translate}}
+          </app-fullpage-message>
+          <app-fullpage-message *ngIf="usedFor.length === 0 && xivapiItem.ID < 19 && xivapiItem.ID > 1" height="300px">
+            {{'DB.Crystal_used_for_everything' | translate}}
+          </app-fullpage-message>
+          <div fxLayout="row" fxLayoutGap="10px">
+            <nz-card *ngFor="let row of usedFor" [fxFlex]="row.flex" [nzTitle]="title" class="details-card"
+                     nzBordered="false">
+              <ng-template #title>
+                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                  <img [alt]="row.title | translate" [src]="row.icon" class="img-icon">
+                  <div>
+                    {{row.title | translate}}
+                  </div>
+                </div>
+              </ng-template>
+              <div *ngIf="row.type === 1" fxLayout="column" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img alt="" src="https://triad.raelys.com/images/cards/large/{{row.cardId}}.png">
+                <a href="https://triad.raelys.com/cards/{{row.cardId}}"
+                   target="_blank">{{'DB.Track_on_attt' | translate}}</a>
+              </div>
+              <div *ngIf="row.links" fxLayout="column" fxLayoutGap="5px">
+                <div *ngFor="let link of row.links">
+                  <div *ngIf="link.itemId" fxLayout="column">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-item-icon [icon]="link.itemId | lazyIcon" [itemId]="link.itemId" width="32"></app-item-icon>
+                      <div fxLayout="column">
+                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                          <div [appItemRarity]="link.itemId">
+                            {{link.itemId | itemName | i18n}}
+                          </div>
+                          <app-db-button [id]="link.itemId" type="item"></app-db-button>
+                        </div>
+                        <div *ngIf="link.recipes" fxLayout="row" fxLayoutAlign="flex-start center">
+                          <div *ngFor="let recipe of link.recipes; let last=last" fxLayoutAlign="flex-start center"
+                               fxLayoutGap="5px">
+                            <img alt="" class="smaller-img-icon"
+                                 src="https://garlandtools.org/db/images/{{(recipe.job | jobAbbr)?.en}}.png">
+                            <div>lvl {{recipe.level}} {{recipe.stars | ingameStars}}<span *ngIf="!last">,</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="row.masterpiece" fxLayout="row wrap" fxLayoutGap="10px">
+                <div class="masterpiece-entry">
+                  <div class="masterpiece-entry-title">{{'DB.ITEM.Masterpiece_base' | translate}}</div>
+                  <div fxLayout="column" fxLayoutAlign="center center">
+                    <div class="masterpiece-rating">{{row.masterpiece.rating[0]}}
+                      - {{row.masterpiece.rating[1] - 1}}</div>
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <app-item-icon [icon]="row.masterpiece.reward | lazyIcon"
+                                       [itemId]="row.masterpiece.reward"
+                                       width="32"></app-item-icon>
+                        <div>x{{row.masterpiece.rewardAmount[0] | number}}</div>
+                      </div>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                        <div>x{{row.masterpiece.xp[0] | number}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="masterpiece-entry" fxLayout="row" fxLayoutGap="20px">
+                  <div class="masterpiece-entry-title">{{'DB.ITEM.Masterpiece_bonus' | translate}}</div>
+                  <div fxLayout="column" fxLayoutAlign="center center">
+                    <div class="masterpiece-rating">{{row.masterpiece.rating[1]}}
+                      - {{row.masterpiece.rating[2] - 1}}</div>
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <app-item-icon [icon]="row.masterpiece.reward | lazyIcon"
+                                       [itemId]="row.masterpiece.reward"
+                                       width="32"></app-item-icon>
+                        <div>x{{row.masterpiece.rewardAmount[1] | number}}</div>
+                      </div>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                        <div>x{{row.masterpiece.xp[1] | number}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div fxLayout="column" fxLayoutAlign="center center">
+                    <div class="masterpiece-rating">{{row.masterpiece.rating[2]}}+</div>
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <app-item-icon [icon]="row.masterpiece.reward | lazyIcon"
+                                       [itemId]="row.masterpiece.reward"
+                                       width="32"></app-item-icon>
+                        <div>x{{row.masterpiece.rewardAmount[2] | number}}</div>
+                      </div>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                        <div>x{{row.masterpiece.xp[2] | number}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="row.ishgardRestoration" fxLayout="row wrap" fxLayoutGap="10px">
+                <div class="masterpiece-entry">
+                  <div fxLayout="column" fxLayoutAlign="center center">
+                    <div class="masterpiece-rating">{{row.ishgardRestoration.base.rating}}
+                      - {{row.ishgardRestoration.mid.rating - 1}}</div>
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <app-item-icon [icon]="28063 | lazyIcon" [itemId]="28063" width="32"></app-item-icon>
+                        <div>x{{row.ishgardRestoration.base.scrip | number}}</div>
+                      </div>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                        <div>x{{row.ishgardRestoration.base.exp | number}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="masterpiece-entry">
+                  <div fxLayout="column" fxLayoutAlign="center center">
+                    <div class="masterpiece-rating">{{row.ishgardRestoration.mid.rating}}
+                      - {{row.ishgardRestoration.high.rating - 1}}</div>
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <app-item-icon [icon]="28063 | lazyIcon" [itemId]="28063" width="32"></app-item-icon>
+                        <div>x{{row.ishgardRestoration.mid.scrip | number}}</div>
+                      </div>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                        <div>x{{row.ishgardRestoration.mid.exp | number}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="masterpiece-entry">
+                  <div fxLayout="column" fxLayoutAlign="center center">
+                    <div class="masterpiece-rating">{{row.ishgardRestoration.high.rating}}</div>
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <app-item-icon [icon]="28063 | lazyIcon" [itemId]="28063" width="32"></app-item-icon>
+                        <div>x{{row.ishgardRestoration.high.scrip | number}}</div>
+                      </div>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                        <div>x{{row.ishgardRestoration.high.exp | number}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="row.trades" fxLayout="column" fxLayoutGap="5px">
+                <nz-card *ngFor="let source of row.trades" [nzTitle]="source.shopName | shopName | i18n">
+                  <nz-table #basicTable [nzData]="source.trades">
+                    <thead>
+                    <tr>
+                      <th>{{'DB.Currencies' | translate}}</th>
+                      <th>{{'Items' | translate}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let trade of basicTable.data">
+                      <td>
+                        <div fxLayout="row wrap" fxLayoutGap="10px">
+                          <div *ngFor="let currency of trade.currencies" class="item-container" fxLayout="row"
+                               fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                            <app-item-icon [hq]="currency.hq" [icon]="currency.icon"
+                                           [itemId]="currency.id"
+                                           [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
+                            <div>{{currency.id | itemName | i18n}} <span>x{{currency.amount}}</span></div>
+                            <app-db-button [id]="currency.id" type="item"></app-db-button>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div fxLayout="row wrap" fxLayoutGap="10px">
+                          <div *ngFor="let item of trade.items" class="item-container" fxLayout="row"
+                               fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                            <app-item-icon [hq]="item.hq" [icon]="item.icon" [itemId]="item.id"
+                                           [itemName]="item.id | itemName | i18n" [width]="32"></app-item-icon>
+                            <div>{{item.id | itemName | i18n}} <span>x{{item.amount}}</span></div>
+                            <app-db-button [id]="item.id" type="item"></app-db-button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </nz-table>
+                </nz-card>
+              </div>
+              <div *ngIf="row.leves">
+                <nz-list [nzDataSource]="row.leves" [nzItemLayout]="'horizontal'"
+                         [nzRenderItem]="leveTemplate">
+                  <ng-template #leveTemplate let-leve>
+                    <nz-list-item [nzContent]="more">
+                      <nz-list-item-meta
+                        [nzAvatar]="leveAvatar"
+                        [nzTitle]="leve.leveId | leveName | i18n"
+                        nzDescription="lvl {{leve.level}}">
+                        <ng-template #leveAvatar>
+                          <a routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">
+                            <img class="img-icon round-icon"
+                                 src="./assets/icons/leve.png">
+                          </a>
+                          <a
+                            routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">{{leve.leveId | leveName | i18n}}</a>
+                        </ng-template>
+                        <ng-template #more>
+                          <app-db-button [id]="leve.leveId" type="leve"></app-db-button>
+                        </ng-template>
+                      </nz-list-item-meta>
+                    </nz-list-item>
+                  </ng-template>
+                </nz-list>
+              </div>
+              <div *ngIf="row.quests">
+                <nz-list [nzDataSource]="row.quests" [nzItemLayout]="'horizontal'"
+                         [nzRenderItem]="questTemplate">
+                  <ng-template #questTemplate let-quest>
+                    <nz-list-item [nzContent]="more">
+                      <nz-list-item-meta
+                        [nzAvatar]="questAvatar"
+                        [nzTitle]="quest | questName | i18n">
+                        <ng-template #questAvatar>
+                          <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
+                            <img class="img-icon round-icon" src="./assets/icons/quest.png">
+                          </a>
+                          <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
+                        </ng-template>
+                        <ng-template #more>
+                          <app-db-button [id]="quest" type="quest"></app-db-button>
+                        </ng-template>
+                      </nz-list-item-meta>
+                    </nz-list-item>
+                  </ng-template>
+                </nz-list>
+              </div>
+              <div *ngIf="row.supply">
+                <div fxLayout="column">
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <b>{{xivapiItem.ID | itemName | i18n}}</b>
+                    <div>x{{row.supply.amount}}</div>
+                  </div>
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                    <div>x{{row.supply.xp | number}}</div>
+                  </div>
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <img [src]="20 | lazyIcon" alt="GC Seals" class="img-icon">
+                    <div>x{{row.supply.seals}}</div>
+                  </div>
+                </div>
+              </div>
+            </nz-card>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template #howToObtainTpl>
         <nz-divider [nzText]="'DB.How_to_obtain' | translate" nzOrientation="left"></nz-divider>
         <app-fullpage-message *ngIf="noData" height="150px">
           {{'DB.No_known_way_to_obtain' | translate}}
@@ -524,268 +787,14 @@
             </nz-list>
           </nz-card>
         </div>
-      </div>
-      <div *ngIf="usedFor$ | async as usedFor">
-        <nz-divider [nzText]="'DB.Used_for' | translate" nzOrientation="left"></nz-divider>
-        <app-fullpage-message *ngIf="usedFor.length === 0 && (xivapiItem.ID > 19 || xivapiItem.ID === 1)"
-                              height="300px">
-          {{'DB.Used_for_nothing' | translate}}
-        </app-fullpage-message>
-        <app-fullpage-message *ngIf="usedFor.length === 0 && xivapiItem.ID < 19 && xivapiItem.ID > 1" height="300px">
-          {{'DB.Crystal_used_for_everything' | translate}}
-        </app-fullpage-message>
-        <div fxLayout="row" fxLayoutGap="10px">
-          <nz-card *ngFor="let row of usedFor" [fxFlex]="row.flex" [nzTitle]="title" class="details-card"
-                   nzBordered="false">
-            <ng-template #title>
-              <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                <img [alt]="row.title | translate" [src]="row.icon" class="img-icon">
-                <div>
-                  {{row.title | translate}}
-                </div>
-              </div>
-            </ng-template>
-            <div *ngIf="row.type === 1" fxLayout="column" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <img alt="" src="https://triad.raelys.com/images/cards/large/{{row.cardId}}.png">
-              <a href="https://triad.raelys.com/cards/{{row.cardId}}"
-                 target="_blank">{{'DB.Track_on_attt' | translate}}</a>
-            </div>
-            <div *ngIf="row.links" fxLayout="column" fxLayoutGap="5px">
-              <div *ngFor="let link of row.links">
-                <div *ngIf="link.itemId" fxLayout="column">
-                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                    <app-item-icon [icon]="link.itemId | lazyIcon" [itemId]="link.itemId" width="32"></app-item-icon>
-                    <div fxLayout="column">
-                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                        <div [appItemRarity]="link.itemId">
-                          {{link.itemId | itemName | i18n}}
-                        </div>
-                        <app-db-button [id]="link.itemId" type="item"></app-db-button>
-                      </div>
-                      <div *ngIf="link.recipes" fxLayout="row" fxLayoutAlign="flex-start center">
-                        <div *ngFor="let recipe of link.recipes; let last=last" fxLayoutAlign="flex-start center"
-                             fxLayoutGap="5px">
-                          <img alt="" class="smaller-img-icon"
-                               src="https://garlandtools.org/db/images/{{(recipe.job | jobAbbr)?.en}}.png">
-                          <div>lvl {{recipe.level}} {{recipe.stars | ingameStars}}<span *ngIf="!last">,</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div *ngIf="row.masterpiece" fxLayout="row wrap" fxLayoutGap="10px">
-              <div class="masterpiece-entry">
-                <div class="masterpiece-entry-title">{{'DB.ITEM.Masterpiece_base' | translate}}</div>
-                <div fxLayout="column" fxLayoutAlign="center center">
-                  <div class="masterpiece-rating">{{row.masterpiece.rating[0]}}
-                    - {{row.masterpiece.rating[1] - 1}}</div>
-                  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-item-icon [icon]="row.masterpiece.reward | lazyIcon"
-                                     [itemId]="row.masterpiece.reward"
-                                     width="32"></app-item-icon>
-                      <div>x{{row.masterpiece.rewardAmount[0] | number}}</div>
-                    </div>
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                      <div>x{{row.masterpiece.xp[0] | number}}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="masterpiece-entry" fxLayout="row" fxLayoutGap="20px">
-                <div class="masterpiece-entry-title">{{'DB.ITEM.Masterpiece_bonus' | translate}}</div>
-                <div fxLayout="column" fxLayoutAlign="center center">
-                  <div class="masterpiece-rating">{{row.masterpiece.rating[1]}}
-                    - {{row.masterpiece.rating[2] - 1}}</div>
-                  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-item-icon [icon]="row.masterpiece.reward | lazyIcon"
-                                     [itemId]="row.masterpiece.reward"
-                                     width="32"></app-item-icon>
-                      <div>x{{row.masterpiece.rewardAmount[1] | number}}</div>
-                    </div>
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                      <div>x{{row.masterpiece.xp[1] | number}}</div>
-                    </div>
-                  </div>
-                </div>
-                <div fxLayout="column" fxLayoutAlign="center center">
-                  <div class="masterpiece-rating">{{row.masterpiece.rating[2]}}+</div>
-                  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-item-icon [icon]="row.masterpiece.reward | lazyIcon"
-                                     [itemId]="row.masterpiece.reward"
-                                     width="32"></app-item-icon>
-                      <div>x{{row.masterpiece.rewardAmount[2] | number}}</div>
-                    </div>
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                      <div>x{{row.masterpiece.xp[2] | number}}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div *ngIf="row.ishgardRestoration" fxLayout="row wrap" fxLayoutGap="10px">
-              <div class="masterpiece-entry">
-                <div fxLayout="column" fxLayoutAlign="center center">
-                  <div class="masterpiece-rating">{{row.ishgardRestoration.base.rating}}
-                    - {{row.ishgardRestoration.mid.rating - 1}}</div>
-                  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-item-icon [icon]="28063 | lazyIcon" [itemId]="28063" width="32"></app-item-icon>
-                      <div>x{{row.ishgardRestoration.base.scrip | number}}</div>
-                    </div>
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                      <div>x{{row.ishgardRestoration.base.exp | number}}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="masterpiece-entry">
-                <div fxLayout="column" fxLayoutAlign="center center">
-                  <div class="masterpiece-rating">{{row.ishgardRestoration.mid.rating}}
-                    - {{row.ishgardRestoration.high.rating - 1}}</div>
-                  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-item-icon [icon]="28063 | lazyIcon" [itemId]="28063" width="32"></app-item-icon>
-                      <div>x{{row.ishgardRestoration.mid.scrip | number}}</div>
-                    </div>
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                      <div>x{{row.ishgardRestoration.mid.exp | number}}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="masterpiece-entry">
-                <div fxLayout="column" fxLayoutAlign="center center">
-                  <div class="masterpiece-rating">{{row.ishgardRestoration.high.rating}}</div>
-                  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-item-icon [icon]="28063 | lazyIcon" [itemId]="28063" width="32"></app-item-icon>
-                      <div>x{{row.ishgardRestoration.high.scrip | number}}</div>
-                    </div>
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                      <div>x{{row.ishgardRestoration.high.exp | number}}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div *ngIf="row.trades" fxLayout="column" fxLayoutGap="5px">
-              <nz-card *ngFor="let source of row.trades" [nzTitle]="source.shopName | shopName | i18n">
-                <nz-table #basicTable [nzData]="source.trades">
-                  <thead>
-                  <tr>
-                    <th>{{'DB.Currencies' | translate}}</th>
-                    <th>{{'Items' | translate}}</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr *ngFor="let trade of basicTable.data">
-                    <td>
-                      <div fxLayout="row wrap" fxLayoutGap="10px">
-                        <div *ngFor="let currency of trade.currencies" class="item-container" fxLayout="row"
-                             fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                          <app-item-icon [hq]="currency.hq" [icon]="currency.icon"
-                                         [itemId]="currency.id"
-                                         [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
-                          <div>{{currency.id | itemName | i18n}} <span>x{{currency.amount}}</span></div>
-                          <app-db-button [id]="currency.id" type="item"></app-db-button>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div fxLayout="row wrap" fxLayoutGap="10px">
-                        <div *ngFor="let item of trade.items" class="item-container" fxLayout="row"
-                             fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                          <app-item-icon [hq]="item.hq" [icon]="item.icon" [itemId]="item.id"
-                                         [itemName]="item.id | itemName | i18n" [width]="32"></app-item-icon>
-                          <div>{{item.id | itemName | i18n}} <span>x{{item.amount}}</span></div>
-                          <app-db-button [id]="item.id" type="item"></app-db-button>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  </tbody>
-                </nz-table>
-              </nz-card>
-            </div>
-            <div *ngIf="row.leves">
-              <nz-list [nzDataSource]="row.leves" [nzItemLayout]="'horizontal'"
-                       [nzRenderItem]="leveTemplate">
-                <ng-template #leveTemplate let-leve>
-                  <nz-list-item [nzContent]="more">
-                    <nz-list-item-meta
-                      [nzAvatar]="leveAvatar"
-                      [nzTitle]="leve.leveId | leveName | i18n"
-                      nzDescription="lvl {{leve.level}}">
-                      <ng-template #leveAvatar>
-                        <a routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">
-                          <img class="img-icon round-icon"
-                               src="./assets/icons/leve.png">
-                        </a>
-                        <a
-                          routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">{{leve.leveId | leveName | i18n}}</a>
-                      </ng-template>
-                      <ng-template #more>
-                        <app-db-button [id]="leve.leveId" type="leve"></app-db-button>
-                      </ng-template>
-                    </nz-list-item-meta>
-                  </nz-list-item>
-                </ng-template>
-              </nz-list>
-            </div>
-            <div *ngIf="row.quests">
-              <nz-list [nzDataSource]="row.quests" [nzItemLayout]="'horizontal'"
-                       [nzRenderItem]="questTemplate">
-                <ng-template #questTemplate let-quest>
-                  <nz-list-item [nzContent]="more">
-                    <nz-list-item-meta
-                      [nzAvatar]="questAvatar"
-                      [nzTitle]="quest | questName | i18n">
-                      <ng-template #questAvatar>
-                        <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                          <img class="img-icon round-icon" src="./assets/icons/quest.png">
-                        </a>
-                        <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
-                      </ng-template>
-                      <ng-template #more>
-                        <app-db-button [id]="quest" type="quest"></app-db-button>
-                      </ng-template>
-                    </nz-list-item-meta>
-                  </nz-list-item>
-                </ng-template>
-              </nz-list>
-            </div>
-            <div *ngIf="row.supply">
-              <div fxLayout="column">
-                <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <b>{{xivapiItem.ID | itemName | i18n}}</b>
-                  <div>x{{row.supply.amount}}</div>
-                </div>
-                <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                  <div>x{{row.supply.xp | number}}</div>
-                </div>
-                <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img [src]="20 | lazyIcon" alt="GC Seals" class="img-icon">
-                  <div>x{{row.supply.seals}}</div>
-                </div>
-              </div>
-            </div>
-          </nz-card>
-        </div>
-      </div>
-      <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiItem.ID"
-                       type="item"></app-db-comments>
+      </ng-template>
+      <ng-template #classicItemDetails>
+        <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiItem.ID" type="item"></app-db-comments>
+        <ng-container *ngTemplateOutlet="howToObtainTpl"></ng-container>
+        <ng-container *ngTemplateOutlet="usedForTpl"></ng-container>
+        <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiItem.ID"
+                         type="item"></app-db-comments>
+      </ng-template>
     </div>
   </ng-container>
 </ng-container>

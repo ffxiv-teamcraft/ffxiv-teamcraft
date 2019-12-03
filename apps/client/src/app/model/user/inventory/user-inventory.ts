@@ -34,11 +34,14 @@ export class UserInventory extends DataModel {
 
   lastZone: firebase.firestore.Timestamp;
 
-  getItem(itemId: number): InventoryItem[] {
+  getItem(itemId: number, onlyUserInventory = false): InventoryItem[] {
     return [].concat.apply([],
       Object.keys(this.items)
         .filter(key => {
-          const matches = UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1 || key.indexOf(':') > -1;
+          let matches = UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1 || key.indexOf(':') > -1;
+          if(onlyUserInventory){
+            matches = matches && +key < 10;
+          }
           const matchesRetainerMarket = (+key.split(':')[1] === ContainerType.RetainerMarket);
           if (localStorage.getItem('trackItemsOnSale') === 'true') {
             return matches;

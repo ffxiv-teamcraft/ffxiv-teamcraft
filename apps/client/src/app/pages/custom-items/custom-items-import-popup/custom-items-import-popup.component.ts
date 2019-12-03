@@ -4,19 +4,7 @@ import { BehaviorSubject, combineLatest, EMPTY, Observable, of, Subject, Subscri
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';
 import { CustomItemsFacade } from '../../../modules/custom-items/+state/custom-items.facade';
-import {
-  catchError,
-  delay,
-  expand,
-  filter,
-  first,
-  map,
-  mergeMap,
-  skip,
-  skipUntil,
-  switchMap,
-  tap
-} from 'rxjs/operators';
+import { catchError, delay, expand, filter, first, map, mergeMap, skip, skipUntil, switchMap, tap } from 'rxjs/operators';
 import * as Papa from 'papaparse';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -120,7 +108,12 @@ export class CustomItemsImportPopupComponent {
   private processTCImport(content: string): Observable<any> {
     const json = decodeURIComponent(escape(atob(content)));
     const data: any[] = JSON.parse(json);
-    const items: CustomItem[] = this.serializer.deserialize<CustomItem>(data, [CustomItem]);
+    const items: CustomItem[] = this.serializer
+      .deserialize<CustomItem>(data, [CustomItem])
+      .map(item => {
+        item.afterDeserialized();
+        return item;
+      });
     const sortedItems = this.topologicalSort(items);
     let index = -1;
     this.totalSaving = sortedItems.length;
@@ -211,22 +204,22 @@ export class CustomItemsImportPopupComponent {
     const parsedToItems = parsed.data
       .filter(row => row.length > 1)
       .map(row => {
-      const item = new CustomItem();
-      item.$key = this.customItemsFacade.createId();
-      item.name = row[4];
-      item.yield = +row[5];
-      item.realItemId = +row[45];
-      item.craftedBy = [{
-        recipeId: row[1],
-        jobId: +this.craftTypes.indexOf(row[2]) + 8,
-        icon: '',
-        itemId: +row[45],
-        level: 80,
-        stars_tooltip: ''
-      }];
-      item.craftedBy[0].icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === item.craftedBy[0].jobId).abbreviation}.png`;
-      return { item: item, meta: row };
-    });
+        const item = new CustomItem();
+        item.$key = this.customItemsFacade.createId();
+        item.name = row[4];
+        item.yield = +row[5];
+        item.realItemId = +row[45];
+        item.craftedBy = [{
+          recipeId: row[1],
+          jobId: +this.craftTypes.indexOf(row[2]) + 8,
+          icon: '',
+          itemId: +row[45],
+          level: 80,
+          stars_tooltip: ''
+        }];
+        item.craftedBy[0].icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === item.craftedBy[0].jobId).abbreviation}.png`;
+        return { item: item, meta: row };
+      });
     // Then, for each parsed row, let's populate an ingredient array, for the same purpose (will contain only the ones that aren't listed as recipe already)
     const ingredients: CustomItem[] = [];
     parsedToItems.forEach(entry => {

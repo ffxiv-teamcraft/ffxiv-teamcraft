@@ -40,6 +40,7 @@ import { CommentLinksPipe } from './db-comments/comment-links.pipe';
 import { AchievementComponent } from './achievement/achievement.component';
 import { PatchComponent } from './patch/patch.component';
 import { FishComponent } from './fish/fish.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 const routes: Routes = [
   {
@@ -242,6 +243,8 @@ const routes: Routes = [
     FormsModule,
 
     TranslateModule,
+
+    NgxChartsModule,
 
     MapModule,
     PipesModule,

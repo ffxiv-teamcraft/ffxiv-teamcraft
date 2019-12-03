@@ -37,7 +37,7 @@ export class List extends DataWithPermissions {
   note = '';
 
   // noinspection JSUnusedGlobalSymbols
-  createdAt: firebase.firestore.Timestamp = firebase.firestore.Timestamp.fromDate(new Date());
+  createdAt: firebase.firestore.Timestamp;
 
   // Should we disable HQ suggestions for this list?
   disableHQSuggestions = false;
@@ -64,6 +64,9 @@ export class List extends DataWithPermissions {
 
   constructor() {
     super();
+    if (!this.createdAt) {
+      this.createdAt = firebase.firestore.Timestamp.fromDate(new Date());
+    }
   }
 
   public get crystals(): ListRow[] {
