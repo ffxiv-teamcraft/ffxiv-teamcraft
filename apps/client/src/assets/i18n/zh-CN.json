@@ -1533,7 +1533,7 @@
     "Remove_from_basket": "从愿望篮中删除",
     "Search": "查找配方",
     "Generate_list": "添加到清单",
-    "Description": "输入您拥有的物品并点击“查询配方”，可以得到一系列的潜在可制作配方，并能够从其结果中生成相应的清单。",
+    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and easily generate a crafting list from the results.",
     "Empty_basket": "您的愿望篮为空",
     "Add_item": "添加物品",
     "Clipboard_content_malformed": "剪贴板内容格式不正确",
