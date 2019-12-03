@@ -1533,7 +1533,7 @@
     "Remove_from_basket": "Убрать из корзины",
     "Search": "Найти рецепты",
     "Generate_list": "Добавить в список",
-    "Description": "Введите предметы, которые у вас есть, и нажмите \"Найти рецепты\", чтобы получить список возможных рецептов и создать список для крафта из результатов.",
+    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and easily generate a crafting list from the results.",
     "Empty_basket": "Ваша корзина пустая",
     "Add_item": "Добавить предмет",
     "Clipboard_content_malformed": "Неправильный контент буфера обмена",
