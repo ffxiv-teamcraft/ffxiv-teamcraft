@@ -1533,7 +1533,7 @@
     "Remove_from_basket": "Retirer du panier",
     "Search": "Trouver des recettes",
     "Generate_list": "Ajouter à une liste",
-    "Description": "Saisissez les objets que vous avez et cliquez sur « Trouver des recettes » pour obtenir une liste de recettes possibles pour fabriquer et générer une liste d'artisanat à partir des résultats.",
+    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and easily generate a crafting list from the results.",
     "Empty_basket": "Votre panier est vide",
     "Add_item": "Ajouter un objet",
     "Clipboard_content_malformed": "Contenu du presse-papiers mal formé",
