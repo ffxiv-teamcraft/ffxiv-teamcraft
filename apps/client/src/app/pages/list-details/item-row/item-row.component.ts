@@ -12,7 +12,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
-import { exhaustMap, filter, first, map, mergeMap, shareReplay, startWith, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
+import { exhaustMap, filter, first, map, mergeMap, shareReplay, startWith, switchMap, switchMapTo, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import { HuntingComponent } from '../item-details/hunting/hunting.component';
 import { InstancesComponent } from '../item-details/instances/instances.component';
 import { ReducedFromComponent } from '../item-details/reduced-from/reduced-from.component';
@@ -228,7 +228,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       this.cdRef.detectChanges();
     });
 
-    this.missingBooks$ = combineLatest([this.authFacade.mainCharacterEntry$, this.item$, this.masterbooksReloader$]).pipe(
+    this.missingBooks$ = this.masterbooksReloader$.pipe(
+      switchMapTo(combineLatest([this.authFacade.mainCharacterEntry$, this.item$])),
       map(([entry, item]) => {
         return (item.masterbooks || [])
         // Ignore string ids, as they are draft ids
