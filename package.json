@@ -58,7 +58,7 @@
       "allowToChangeInstallationDirectory": true,
       "oneClick": false,
       "differentialPackage": true,
-      "artifactName":  "${productName}-setup.${ext}"
+      "artifactName": "${productName}-setup.${ext}"
     }
   },
   "scripts": {

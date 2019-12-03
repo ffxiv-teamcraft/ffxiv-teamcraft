@@ -8,14 +8,19 @@ import { DataReporter } from '../data-reporting/data-reporter';
 import { DataReporters } from '../data-reporting/data-reporters-index';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GubalService {
 
+  private readonly version: number;
+
   constructor(private http: HttpClient, private ipc: IpcService, private authFacade: AuthFacade,
               @Inject(DataReporters) private reporters: DataReporter[], private apollo: Apollo) {
+    const versionFragments = environment.version.split('.');
+    this.version = +versionFragments[0] * 100000 + +versionFragments[1] * 100 + +versionFragments[2];
   }
 
   private submitData(dataType: string, data: any): Observable<void> {
@@ -33,7 +38,7 @@ export class GubalService {
             data: {
               ...data,
               userId: userId,
-              date: new Date().toISOString()
+              version: this.version
             }
           }
         });
