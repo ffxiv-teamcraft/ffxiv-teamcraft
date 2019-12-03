@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "6.3.2",
+  "version": "6.3.3",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -58,7 +58,7 @@
       "allowToChangeInstallationDirectory": true,
       "oneClick": false,
       "differentialPackage": true,
-      "artifactName":  "${productName}-setup.${ext}"
+      "artifactName": "${productName}-setup.${ext}"
     }
   },
   "scripts": {
@@ -162,7 +162,7 @@
     "electron-config": "^2.0.0",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^3.0.6",
-    "electron-updater": "^4.0.6",
+    "electron-updater": "^4.2.0",
     "express": "^4.16.4",
     "fast-json-patch": "^3.0.0-1",
     "file-saver": "^2.0.1",
@@ -181,7 +181,7 @@
     "ngx-clipboard": "12.1.0",
     "ngx-color-picker": "^7.5.0",
     "ngx-markdown": "^1.6.0",
-    "node-machina-ffxiv": "^2.29.0",
+    "node-machina-ffxiv": "^2.29.1",
     "papaparse": "^4.6.3",
     "rxjs": "^6.5.3",
     "semver": "^5.4.1",

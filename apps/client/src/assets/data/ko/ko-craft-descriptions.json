@@ -84,7 +84,7 @@
     "ko": "내구도를 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 150\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
   },
   "100039": {
-    "ko": "내구도를 소비하여 남은 작업량의 약 1/3을 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+    "ko": "내구도를 소비하여 남은 작업량의 약 1/3을 진행합니다.(최대: 1000)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
   },
   "100040": {
     "ko": "1턴 동안 아무것도 하지 않고 지켜봅니다."
@@ -282,7 +282,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 이상일 때만 사용 가능합니다.\n내구도를 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 정신 집중 중첩 수+1(최대 11회)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%"
   },
   "100136": {
-    "ko": "내구도를 소비하여 남은 작업량의 약 1/3을 진행합니다.\n제작 공정이 1회라도 진행되면 사용할 수 없습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+    "ko": "내구도를 소비하여 남은 작업량의 약 1/3을 진행합니다.(최대: 1000)\n제작 공정이 1회라도 진행되면 사용할 수 없습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
   },
   "100137": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n내구도를 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: '혁신' 효과 부여\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 40%"
@@ -408,31 +408,31 @@
     "ko": ""
   },
   "100178": {
-    "ko": "남은 작업량에 비례한 횟수 동안, '견실한 작업'을 CP와 내구도 소비 없이 사용할 수 있게 됩니다.\n제작 공정이 1회라도 진행되면 사용할 수 없습니다."
+    "ko": "남은 작업량에 비례한 횟수(최대 25회) 동안 '견실한 작업'을 CP와 내구도 소비 없이 사용할 수 있게 됩니다.\n제작 공정이 1회라도 진행되면 사용할 수 없습니다."
   },
   "100179": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 '고품질' 상태가 발생할 확률이 높아집니다.\n사용 시 '목수의 제도용지'를 소비합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태가 발생할 확률이 높아집니다.\n실행 시 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>목수의 제도용지<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비합니다.\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>제작 중 최대 5번 사용 가능합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "100180": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 '고품질' 상태가 발생할 확률이 높아집니다.\n사용 시 '대장장이의 제도용지'를 소비합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태가 발생할 확률이 높아집니다.\n실행 시 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>대장장이의 제도용지<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비합니다.\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>제작 중 최대 5번 사용 가능합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "100181": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 '고품질' 상태가 발생할 확률이 높아집니다.\n사용 시 '갑주제작사의 제도용지'를 소비합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태가 발생할 확률이 높아집니다.\n실행 시 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>갑주제작사의 제도용지<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비합니다.\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>제작 중 최대 5번 사용 가능합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "100182": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 '고품질' 상태가 발생할 확률이 높아집니다.\n사용 시 '보석공예가의 제도용지'를 소비합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태가 발생할 확률이 높아집니다.\n실행 시 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>보석공예가의 제도용지<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비합니다.\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>제작 중 최대 5번 사용 가능합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "100183": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 '고품질' 상태가 발생할 확률이 높아집니다.\n사용 시 '가죽공예가의 제도용지'를 소비합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태가 발생할 확률이 높아집니다.\n실행 시 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>가죽공예가의 제도용지<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비합니다.\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>제작 중 최대 5번 사용 가능합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "100184": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 '고품질' 상태가 발생할 확률이 높아집니다.\n사용 시 '재봉사의 제도용지'를 소비합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태가 발생할 확률이 높아집니다.\n실행 시 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>재봉사의 제도용지<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비합니다.\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>제작 중 최대 5번 사용 가능합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "100185": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 '고품질' 상태가 발생할 확률이 높아집니다.\n사용 시 '연금술사의 제도용지'를 소비합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태가 발생할 확률이 높아집니다.\n실행 시 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>연금술사의 제도용지<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비합니다.\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>제작 중 최대 5번 사용 가능합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "100186": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 '고품질' 상태가 발생할 확률이 높아집니다.\n사용 시 '요리사의 제도용지'를 소비합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 7회 동안 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태가 발생할 확률이 높아집니다.\n실행 시 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>요리사의 제도용지<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비합니다.\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>제작 중 최대 5번 사용 가능합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "100187": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n11단계의 '노동요' 상태를 부여합니다.\n상태가 '고품질' 이상일 때마다 중첩 수가 1단계 감소하며, 0이 되면 내구도를 소비하여 작업을 진행하는 '마감 작업'을 발동한 후 효과가 종료됩니다.\n(마감 작업 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200, <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50%)\n중첩 수가 3의 배수일 때는 일부 작업 계열 기술의 효율이 향상됩니다."
@@ -721,5 +721,197 @@
   },
   "100282": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>첫 준비<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과를 소비하여 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>정신 집중<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow> 중첩 수 +3(최대 11) 효과를 얻습니다."
+  },
+  "100283": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 50%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100284": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 50%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100285": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 50%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100286": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 50%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100287": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 50%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100288": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 50%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100289": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 50%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100290": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 50%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100291": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 30%~100%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100292": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 30%~100%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100293": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 30%~100%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100294": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 30%~100%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100295": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 30%~100%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100296": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 30%~100%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100297": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 30%~100%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100298": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>레벨이 10 이상 낮은 제작법의 1번째 공정에서만 사용할 수 있습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최대 품질의 30%~100%만큼 품질이 상승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100299": {
+    "ko": "내구도를 20 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 정신 집중 중첩 수 +1(최대 11)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%"
+  },
+  "100300": {
+    "ko": "내구도를 20 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 정신 집중 중첩 수 +1(최대 11)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%"
+  },
+  "100301": {
+    "ko": "내구도를 20 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 정신 집중 중첩 수 +1(최대 11)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%"
+  },
+  "100302": {
+    "ko": "내구도를 20 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 정신 집중 중첩 수 +1(최대 11)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%"
+  },
+  "100303": {
+    "ko": "내구도를 20 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 정신 집중 중첩 수 +1(최대 11)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%"
+  },
+  "100304": {
+    "ko": "내구도를 20 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 정신 집중 중첩 수 +1(최대 11)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%"
+  },
+  "100305": {
+    "ko": "내구도를 20 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 정신 집중 중첩 수 +1(최대 11)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%"
+  },
+  "100306": {
+    "ko": "내구도를 20 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 정신 집중 중첩 수 +1(최대 11)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%"
+  },
+  "100307": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때도 사용할 수 있으나, 효율이 크게 떨어집니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 60%"
+  },
+  "100308": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때도 사용할 수 있으나, 효율이 크게 떨어집니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 60%"
+  },
+  "100309": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때도 사용할 수 있으나, 효율이 크게 떨어집니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 60%"
+  },
+  "100310": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때도 사용할 수 있으나, 효율이 크게 떨어집니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 60%"
+  },
+  "100311": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때도 사용할 수 있으나, 효율이 크게 떨어집니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 60%"
+  },
+  "100312": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때도 사용할 수 있으나, 효율이 크게 떨어집니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 60%"
+  },
+  "100313": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때도 사용할 수 있으나, 효율이 크게 떨어집니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 60%"
+  },
+  "100314": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때도 사용할 수 있으나, 효율이 크게 떨어집니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 60%"
+  },
+  "100315": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 이상일 때만 사용 가능합니다.\n내구도를 소비하여 작업을 대폭 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 80%"
+  },
+  "100316": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 이상일 때만 사용 가능합니다.\n내구도를 소비하여 작업을 대폭 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 80%"
+  },
+  "100317": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 이상일 때만 사용 가능합니다.\n내구도를 소비하여 작업을 대폭 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 80%"
+  },
+  "100318": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 이상일 때만 사용 가능합니다.\n내구도를 소비하여 작업을 대폭 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 80%"
+  },
+  "100319": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 이상일 때만 사용 가능합니다.\n내구도를 소비하여 작업을 대폭 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 80%"
+  },
+  "100320": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 이상일 때만 사용 가능합니다.\n내구도를 소비하여 작업을 대폭 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 80%"
+  },
+  "100321": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 이상일 때만 사용 가능합니다.\n내구도를 소비하여 작업을 대폭 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 80%"
+  },
+  "100322": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고품질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 이상일 때만 사용 가능합니다.\n내구도를 소비하여 작업을 대폭 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 80%"
+  },
+  "100323": {
+    "ko": "내구도를 소비하여 작업을 진행하고 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100324": {
+    "ko": "내구도를 소비하여 작업을 진행하고 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100325": {
+    "ko": "내구도를 소비하여 작업을 진행하고 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100326": {
+    "ko": "내구도를 소비하여 작업을 진행하고 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100327": {
+    "ko": "내구도를 소비하여 작업을 진행하고 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100328": {
+    "ko": "내구도를 소비하여 작업을 진행하고 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100329": {
+    "ko": "내구도를 소비하여 작업을 진행하고 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100330": {
+    "ko": "내구도를 소비하여 작업을 진행하고 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100331": {
+    "ko": "내구도를 소비하여 작업을 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100332": {
+    "ko": "내구도를 소비하여 작업을 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100333": {
+    "ko": "내구도를 소비하여 작업을 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100334": {
+    "ko": "내구도를 소비하여 작업을 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100335": {
+    "ko": "내구도를 소비하여 작업을 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100336": {
+    "ko": "내구도를 소비하여 작업을 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100337": {
+    "ko": "내구도를 소비하여 작업을 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100338": {
+    "ko": "내구도를 소비하여 작업을 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100339": {
+    "ko": "내구도를 소비하여 품질을 높입니다.\n'정신 집중'으로 능력치가 상승한 횟수×20만큼 효율이 향상됩니다.\n사용 후 '정신 집중' 효과가 종료됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 최소 100(정신 집중 중첩 수에 비례)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100340": {
+    "ko": "내구도를 소비하여 품질을 높입니다.\n'정신 집중'으로 능력치가 상승한 횟수×20만큼 효율이 향상됩니다.\n사용 후 '정신 집중' 효과가 종료됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 최소 100(정신 집중 중첩 수에 비례)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100341": {
+    "ko": "내구도를 소비하여 품질을 높입니다.\n'정신 집중'으로 능력치가 상승한 횟수×20만큼 효율이 향상됩니다.\n사용 후 '정신 집중' 효과가 종료됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 최소 100(정신 집중 중첩 수에 비례)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100342": {
+    "ko": "내구도를 소비하여 품질을 높입니다.\n'정신 집중'으로 능력치가 상승한 횟수×20만큼 효율이 향상됩니다.\n사용 후 '정신 집중' 효과가 종료됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 최소 100(정신 집중 중첩 수에 비례)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100343": {
+    "ko": "내구도를 소비하여 품질을 높입니다.\n'정신 집중'으로 능력치가 상승한 횟수×20만큼 효율이 향상됩니다.\n사용 후 '정신 집중' 효과가 종료됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 최소 100(정신 집중 중첩 수에 비례)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100344": {
+    "ko": "내구도를 소비하여 품질을 높입니다.\n'정신 집중'으로 능력치가 상승한 횟수×20만큼 효율이 향상됩니다.\n사용 후 '정신 집중' 효과가 종료됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 최소 100(정신 집중 중첩 수에 비례)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100345": {
+    "ko": "내구도를 소비하여 품질을 높입니다.\n'정신 집중'으로 능력치가 상승한 횟수×20만큼 효율이 향상됩니다.\n사용 후 '정신 집중' 효과가 종료됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 최소 100(정신 집중 중첩 수에 비례)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
+  },
+  "100346": {
+    "ko": "내구도를 소비하여 품질을 높입니다.\n'정신 집중'으로 능력치가 상승한 횟수×20만큼 효율이 향상됩니다.\n사용 후 '정신 집중' 효과가 종료됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 최소 100(정신 집중 중첩 수에 비례)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90%"
   }
 }

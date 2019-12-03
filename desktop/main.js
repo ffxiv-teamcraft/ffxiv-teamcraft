@@ -5,8 +5,7 @@ const Config = require('electron-config');
 const config = new Config();
 const isDev = require('electron-is-dev');
 const log = require('electron-log');
-log.transports.file.level = 'info';
-const express = require('express');
+log.transports.file.level = 'debug';
 const fs = require('fs');
 const Machina = require('./machina.js');
 
@@ -47,7 +46,7 @@ for (let i = 0; i < argv.length; i++) {
 }
 
 if (isDev) {
-  // autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
+  autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
 }
 
 if (!options.multi) {

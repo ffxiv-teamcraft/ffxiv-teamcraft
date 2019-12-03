@@ -183,7 +183,7 @@ export class FishingReporter implements DataReporter {
     ]).pipe(
       filter(([rodAnimation, playerAnimation]) => {
         return rodAnimation.animation === 283
-          && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 200;
+          && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 3000;
       }),
       map(() => {
         return {
@@ -237,8 +237,8 @@ export class FishingReporter implements DataReporter {
         mooch$
       ),
       filter(([fish, , , throwData, , , spot, , mooch]) => {
-        return spot.fishes.indexOf(fish.id) > -1
-          && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1);
+        return fish.id === -1 || (spot.fishes.indexOf(fish.id) > -1
+          && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1));
       }),
       map(([fish, mapId, baitId, throwData, biteData, hookset, spot, stats, mooch]) => {
         const entry = {

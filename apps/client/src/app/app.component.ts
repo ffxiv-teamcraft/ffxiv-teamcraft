@@ -26,7 +26,7 @@ import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
 import { BehaviorSubject, interval, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
 import { MediaObserver } from '@angular/flex-layout';
@@ -46,7 +46,6 @@ import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
 import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { Apollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular-link-http';
-import { ApolloLink, concat } from 'apollo-link';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 declare const gtag: Function;
@@ -114,7 +113,9 @@ export class AppComponent implements OnInit {
 
   private dirty = false;
 
-  public downloading = false;
+  public downloading: any;
+
+  public checkingForUpdate = false;
 
   public emptyInventory$: Observable<boolean>;
 
@@ -332,7 +333,8 @@ export class AppComponent implements OnInit {
         this.use(newLang, true);
       });
       this.ipc.on('download-progress', (event, progress: any) => {
-        this.downloading = true;
+        this.checkingForUpdate = false;
+        this.downloading = progress;
       });
     }
 
@@ -372,6 +374,7 @@ export class AppComponent implements OnInit {
 
   updateDesktopApp(): void {
     this.ipc.send('update:check');
+    this.checkingForUpdate = true;
   }
 
   ngOnInit(): void {

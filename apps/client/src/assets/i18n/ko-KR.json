@@ -1343,6 +1343,7 @@
       "No_spot_filter": "No spot filter",
       "Chances_for_transition": "Chances for this transition to happen",
       "Weather_chances": "Chances for each weather to appear",
+      "Bait": "Fishing bait",
       "TUG": {
         "Light": "소형",
         "Medium": "중형",

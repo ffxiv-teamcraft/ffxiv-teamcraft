@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.3.3"></a>
+## [6.3.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.3.2...v6.3.3) (2019-12-03)
+
+
+### Bug Fixes
+
+* **desktop:** various fixes for sign-in and auto updater ([80c1ad3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/80c1ad3)), closes [#1269](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1269)
+* **reporter:** fix for data reporting by adding version number to the data ([ea2420f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea2420f))
+* **solver:** fixed a small issue for when worker isn't supported ([27aa33c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/27aa33c))
+
+
+### Features
+
+* support for korean v5.00 update ([0fe1d39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0fe1d39))
+
+
+
 <a name="6.3.2"></a>
 ## [6.3.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.3.1...v6.3.2) (2019-12-02)
 
