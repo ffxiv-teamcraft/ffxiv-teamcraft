@@ -12,20 +12,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
-import {
-  distinctUntilChanged,
-  exhaustMap,
-  filter,
-  first,
-  map,
-  mergeMap,
-  shareReplay,
-  startWith,
-  switchMap,
-  takeUntil,
-  tap,
-  withLatestFrom
-} from 'rxjs/operators';
+import { exhaustMap, filter, first, map, mergeMap, shareReplay, startWith, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import { HuntingComponent } from '../item-details/hunting/hunting.component';
 import { InstancesComponent } from '../item-details/instances/instances.component';
 import { ReducedFromComponent } from '../item-details/reduced-from/reduced-from.component';
@@ -215,6 +202,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     shareReplay(1)
   );
 
+  masterbooksReloader$ = new BehaviorSubject<void>(null);
+
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
@@ -239,7 +228,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       this.cdRef.detectChanges();
     });
 
-    this.missingBooks$ = combineLatest([this.authFacade.mainCharacterEntry$, this.item$]).pipe(
+    this.missingBooks$ = combineLatest([this.authFacade.mainCharacterEntry$, this.item$, this.masterbooksReloader$]).pipe(
       map(([entry, item]) => {
         return (item.masterbooks || [])
         // Ignore string ids, as they are draft ids
@@ -415,6 +404,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   checkMasterbooks(books: number[]): void {
     this.authFacade.saveMasterbooks(books.map(book => ({ id: book, checked: true })));
+    setTimeout(() => {
+      this.masterbooksReloader$.next(null);
+    }, 500);
   }
 
   changeAmount(item: ListRow): void {
