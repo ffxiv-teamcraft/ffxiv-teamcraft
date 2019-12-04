@@ -369,7 +369,19 @@
               </li>
             </ul>
           </div>
-          <div [fxLayout]="collapsedSidebar?'column':'row'" class="social-buttons" fxLayoutAlign="center center"
+
+          <div fxFlex="1 1 auto"></div>
+
+          <div [fxLayout]="collapsedSidebar?'column':'row'" fxLayoutAlign="center center" fxLayoutGap="5px" class="overlay-buttons" *ngIf="desktop">
+            <button nz-button nzShape="circle" nz-tooltip [nzTitle]="'TODO'" (click)="openAlarmsOverlay()">
+              <i nz-icon nzType="bell"></i>
+            </button>
+            <button nz-button nzShape="circle" nz-tooltip [nzTitle]="'TODO'" (click)="openFishingOverlay()" class="button-with-img">
+              <img src="./assets/icons/classjob/fisher.png" alt="">
+            </button>
+          </div>
+
+          <div fxLayout="row" class="bottom-buttons" fxLayoutAlign="center center"
                fxLayoutGap="5px">
             <a *ngIf="!collapsedSidebar" class="social-fab twitter" href="https://twitter.com/FFXIVTeamcraft" nz-button
                nz-tooltip

@@ -24,6 +24,7 @@ let nativeIcon;
 let updateInterval;
 
 let openedOverlays = {};
+let openedOverlayUris = [];
 
 const options = {
   multi: false,
@@ -46,7 +47,7 @@ for (let i = 0; i < argv.length; i++) {
 }
 
 if (isDev) {
-  autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
+  // autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
 }
 
 if (!options.multi) {
@@ -180,6 +181,7 @@ function createWindow() {
     if (config.get('machina') === true) {
       Machina.stop();
     }
+    config.set('overlays', openedOverlayUris);
     config.set('win:bounds', win.getBounds());
     config.set('win:fullscreen', win.isMaximized());
     config.set('win:alwaysOnTop', win.isAlwaysOnTop());
@@ -204,6 +206,7 @@ function createWindow() {
   win.on('hide', () => {
     tray.setHighlightMode('never');
   });
+  (config.get('overlays') || []).forEach(overlayUri => openOverlay({ url: overlayUri }));
 }
 
 function openOverlay(overlayConfig) {
@@ -238,11 +241,13 @@ function openOverlay(overlayConfig) {
     config.set(`overlay:${url}:opacity`, overlay.getOpacity());
     config.set(`overlay:${url}:on-top`, overlay.isAlwaysOnTop());
     delete openedOverlays[url];
+    openedOverlayUris = openedOverlayUris.filter(uri => uri !== url);
   });
 
 
   overlay.loadURL(`file://${BASE_APP_PATH}/index.html#${url}?overlay=true`);
   openedOverlays[url] = overlay;
+  openedOverlayUris.push(url);
 }
 
 function createTray() {
@@ -288,6 +293,15 @@ function forEachOverlay(cb) {
     });
 }
 
+function broadcast(eventName, data) {
+  if (win) {
+    win.webContents.send(eventName, data);
+  }
+  forEachOverlay(overlay => {
+    overlay.webContents.send(eventName, data);
+  });
+}
+
 ipcMain.on('app-ready', (event) => {
   if (options.nativeDecorator) {
     event.sender.send('window-decorator', false);
@@ -307,6 +321,18 @@ ipcMain.on('toggle-machina', (event, enabled) => {
 ipcMain.on('toggle-machina:get', (event) => {
   event.sender.send('toggle-machina:value', config.get('machina'));
 });
+
+let fishingState = {};
+
+ipcMain.on('fishing-state:set', (_, data) => {
+  fishingState = data;
+  broadcast('fishing-state', data);
+});
+
+ipcMain.on('fishing-state:get', (event) => {
+  event.sender.send('fishing-state', fishingState);
+});
+
 
 // Create window on electron intialization
 app.on('ready', () => {

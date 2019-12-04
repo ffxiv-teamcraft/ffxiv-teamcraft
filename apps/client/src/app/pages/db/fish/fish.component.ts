@@ -244,7 +244,6 @@ export class FishComponent implements OnInit {
             })
           },
           usedAsMoochFor: result.data.used_for_mooch,
-          mooches: sortedBaits.filter(entry => fishes.includes(entry.baitId)),
           weatherTransitions: result.data.weather_transitions_per_fish
             .sort((a, b) => b.occurences - a.occurences)
             .map(entry => {

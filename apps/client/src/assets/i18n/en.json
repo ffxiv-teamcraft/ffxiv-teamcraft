@@ -144,7 +144,8 @@
     "Pie_charts": "Pie charts",
     "Read_more_on_wiki": "Read more details on wiki",
     "Apply": "Apply",
-    "Open_link": "Open website link"
+    "Open_link": "Open website link",
+    "Unknown": "Unknown"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -1349,6 +1350,29 @@
         "Light": "Light",
         "Medium": "Medium",
         "Big": "Big"
+      },
+      "OVERLAY": {
+        "Bait": "Attached bait",
+        "Tug": "Tug",
+        "Hookset": "Hookset",
+        "Fishing": "Fishing",
+        "Mooch": "Last throw was mooch",
+        "Mooch_report": "Mooch",
+        "Current_weather": "Current weather",
+        "Previous_weather": "Previous weather",
+        "Spot": "Spot",
+        "Possible_fish": "Possible fish",
+        "Stats": "Stats",
+        "Statuses": "Statuses",
+        "No_statuses": "No relevant statuses",
+        "Total_reports": "Total reports for this session",
+        "Last_report": "Last report",
+        "Fish": "Fish",
+        "Size": "Size",
+        "ERRORS": {
+          "Unknown_map": "Map unknown, change zone to load it.",
+          "No_bait": "No bait detected, switch bait once to fix."
+        }
       }
     },
     "NODE": {

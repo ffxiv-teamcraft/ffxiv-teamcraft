@@ -521,16 +521,12 @@ export class AppComponent implements OnInit {
     this.settingsPopupService.openSettings();
   }
 
-  public goToDiscord1kGiveaway(event: any): void {
-    if (event.srcElement.tagName === 'A') {
-      return;
-    }
-    window.open('https://gleam.io/J1tAD/ffxiv-teamcrafts-final-fantasy-xiv-shadowbringers-collectors-edition-giveaway', '_blank');
-    localStorage.setItem('giveaway:1kdiscord', '5');
+  public openAlarmsOverlay(): void {
+    this.ipc.openOverlay('/alarms-overlay', '/alarms-overlay');
   }
 
-  public closeDiscord1kGiveaway(): void {
-    localStorage.setItem('giveaway:1kdiscord', '5');
+  public openFishingOverlay(): void {
+    this.ipc.openOverlay('/fishing-reporter-overlay', '/fishing-reporter-overlay');
   }
 
   @HostListener('window:beforeunload', ['$event'])

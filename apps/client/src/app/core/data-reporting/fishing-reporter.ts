@@ -1,12 +1,13 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
-import { debounceTime, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { actionTimeline } from '../data/sources/action-timeline';
 import { LazyDataService } from '../data/lazy-data.service';
 import { fishingSpots } from '../data/sources/fishing-spots';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
+import { IpcService } from '../electron/ipc.service';
 
 enum Tug {
   MEDIUM,
@@ -22,8 +23,18 @@ enum Hookset {
 
 export class FishingReporter implements DataReporter {
 
+  private state: any = {};
+
   constructor(private eorzea: EorzeaFacade, private lazyData: LazyDataService,
-              private etime: EorzeanTimeService) {
+              private etime: EorzeanTimeService, private ipc: IpcService) {
+  }
+
+  private setState(newState: any): void {
+    this.state = {
+      ...this.state,
+      ...newState
+    };
+    this.ipc.send('fishing-state:set', this.state);
   }
 
   private getTug(value: number): Tug {
@@ -35,12 +46,11 @@ export class FishingReporter implements DataReporter {
       case 294:
         return Tug.BIG;
       default:
-        return Tug.MEDIUM;
+        return null;
     }
   }
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
-
     const actorControlSelf$ = packets$.pipe(
       ofPacketType('actorControlSelf'),
       filter(packet => packet.category === 320)
@@ -97,6 +107,7 @@ export class FishingReporter implements DataReporter {
       map(packet => {
         return packet.type === 'eventStart';
       }),
+      startWith(false),
       shareReplay(1)
     );
 
@@ -130,9 +141,6 @@ export class FishingReporter implements DataReporter {
           previousWeatherId,
           mooch
         };
-      }),
-      tap(() => {
-        moochId$.next(null);
       })
     );
 
@@ -222,6 +230,35 @@ export class FishingReporter implements DataReporter {
       })
     );
 
+    /**
+     * Let's subscribe everything to update the global fishing state for debug overlay.
+     */
+    combineLatest([
+      isFishing$,
+      this.eorzea.mapId$,
+      this.eorzea.baitId$.pipe(startWith(null)),
+      spot$.pipe(startWith(null)),
+      fisherStats$.pipe(startWith(null)),
+      mooch$.pipe(startWith(false)),
+      this.eorzea.statuses$,
+      this.eorzea.weatherId$.pipe(startWith(null), distinctUntilChanged()),
+      this.eorzea.previousWeatherId$.pipe(startWith(null), distinctUntilChanged()),
+      moochId$.pipe(startWith(null))
+    ]).subscribe(([isFishing, mapId, baitId, spot, stats, mooch, statuses, weatherId, previousWeatherId, moochId]) => {
+      this.setState({
+        isFishing,
+        mapId,
+        baitId,
+        spot,
+        stats,
+        mooch,
+        statuses,
+        weatherId,
+        previousWeatherId,
+        moochId
+      });
+    });
+
     return merge(misses$, fishCaught$).pipe(
       withLatestFrom(isFishing$),
       filter(([, isFishing]) => isFishing),
@@ -236,8 +273,9 @@ export class FishingReporter implements DataReporter {
         fisherStats$,
         mooch$
       ),
-      filter(([fish, , , throwData, , , spot, , mooch]) => {
-        return fish.id === -1 || (spot.fishes.indexOf(fish.id) > -1
+      filter(([fish, , , throwData, biteData, , spot, , mooch]) => {
+        return fish.id === -1 || (biteData.tug !== null &&
+          spot.fishes.indexOf(fish.id) > -1
           && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1));
       }),
       map(([fish, mapId, baitId, throwData, biteData, hookset, spot, stats, mooch]) => {
@@ -264,10 +302,16 @@ export class FishingReporter implements DataReporter {
         if (mooch) {
           entry.baitId = throwData.mooch;
         }
-        moochId$.next(null);
         return [entry];
       }),
-      tap(console.log)
+      tap(reports => {
+        this.setState({
+          reports: [
+            ...(this.state.reports || []),
+            ...reports
+          ]
+        });
+      })
     );
   }
 
