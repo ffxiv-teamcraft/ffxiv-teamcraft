@@ -144,7 +144,8 @@
     "Pie_charts": "파이 차트",
     "Read_more_on_wiki": "위키에서 자세히 보기",
     "Apply": "적용",
-    "Open_link": "웹사이트 열기"
+    "Open_link": "웹사이트 열기",
+    "Unknown": "Unknown"
   },
   "ALARMS": {
     "Title": "알람",
@@ -162,6 +163,7 @@
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
     "Open_overlay": "오버레이 열기",
+    "Open_alarms_overlay": "Open alarms overlay",
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
@@ -1344,10 +1346,35 @@
       "Chances_for_transition": "Chances for this transition to happen",
       "Weather_chances": "Chances for each weather to appear",
       "Bait": "Fishing bait",
+      "Refresh_data": "Refresh data",
       "TUG": {
         "Light": "소형",
         "Medium": "중형",
         "Big": "대형"
+      },
+      "OVERLAY": {
+        "Open": "Open fishing report overlay",
+        "Bait": "Attached bait",
+        "Tug": "Tug",
+        "Hookset": "Hookset",
+        "Fishing": "Fishing",
+        "Mooch": "Last throw was mooch",
+        "Mooch_report": "Mooch",
+        "Current_weather": "Current weather",
+        "Previous_weather": "Previous weather",
+        "Spot": "Spot",
+        "Possible_fish": "Possible fish",
+        "Stats": "Stats",
+        "Statuses": "Statuses",
+        "No_statuses": "No relevant statuses",
+        "Total_reports": "Total reports for this session",
+        "Last_report": "Last report",
+        "Fish": "Fish",
+        "Size": "Size",
+        "ERRORS": {
+          "Unknown_map": "Map unknown, change zone to load it.",
+          "No_bait": "No bait detected, switch bait once to fix."
+        }
       }
     },
     "NODE": {
