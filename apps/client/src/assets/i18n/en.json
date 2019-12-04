@@ -1344,6 +1344,7 @@
       "Chances_for_transition": "Chances for this transition to happen",
       "Weather_chances": "Chances for each weather to appear",
       "Bait": "Fishing bait",
+      "Refresh_data": "Refresh data",
       "TUG": {
         "Light": "Light",
         "Medium": "Medium",
