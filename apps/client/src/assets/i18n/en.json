@@ -163,6 +163,7 @@
     "Volume": "Volume",
     "Macro_copied": "Macro copied to your clipboard",
     "Open_overlay": "Open overlay",
+    "Open_alarms_overlay": "Open alarms overlay",
     "More_available": "and {{amount}} more...",
     "Node_content": "Node content",
     "Toggle_collapse": "Toggle groups collapse",
@@ -1352,6 +1353,7 @@
         "Big": "Big"
       },
       "OVERLAY": {
+        "Open": "Open fishing report overlay",
         "Bait": "Attached bait",
         "Tug": "Tug",
         "Hookset": "Hookset",

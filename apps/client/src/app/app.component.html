@@ -373,10 +373,13 @@
           <div fxFlex="1 1 auto"></div>
 
           <div [fxLayout]="collapsedSidebar?'column':'row'" fxLayoutAlign="center center" fxLayoutGap="5px" class="overlay-buttons" *ngIf="desktop">
-            <button nz-button nzShape="circle" nz-tooltip [nzTitle]="'TODO'" (click)="openAlarmsOverlay()">
+            <button nz-button nzShape="circle" nz-tooltip [nzTitle]="'ALARMS.Open_alarms_overlay' | translate" (click)="openAlarmsOverlay()">
               <i nz-icon nzType="bell"></i>
             </button>
-            <button nz-button nzShape="circle" nz-tooltip [nzTitle]="'TODO'" (click)="openFishingOverlay()" class="button-with-img">
+            <button nz-button nzShape="circle"
+                    *ngIf="ipc.machinaToggle"
+                    nz-tooltip [nzTitle]="'DB.FISH.OVERLAY.Open' | translate"
+                    (click)="openFishingOverlay()" class="button-with-img">
               <img src="./assets/icons/classjob/fisher.png" alt="">
             </button>
           </div>
