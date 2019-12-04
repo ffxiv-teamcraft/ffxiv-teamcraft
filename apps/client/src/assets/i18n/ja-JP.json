@@ -144,7 +144,8 @@
     "Pie_charts": "円グラフ",
     "Read_more_on_wiki": "ウィキで詳しく見る",
     "Apply": "適用",
-    "Open_link": "Open website link"
+    "Open_link": "Open website link",
+    "Unknown": "Unknown"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -162,6 +163,7 @@
     "Volume": "ボリューム",
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイ開く",
+    "Open_alarms_overlay": "Open alarms overlay",
     "More_available": "{{amount}} 回 もっと",
     "Node_content": "採集物情報",
     "Toggle_collapse": "グループ表示切り替わり",
@@ -1344,10 +1346,35 @@
       "Chances_for_transition": "Chances for this transition to happen",
       "Weather_chances": "Chances for each weather to appear",
       "Bait": "Fishing bait",
+      "Refresh_data": "Refresh data",
       "TUG": {
         "Light": "Light",
         "Medium": "Medium",
         "Big": "Big"
+      },
+      "OVERLAY": {
+        "Open": "Open fishing report overlay",
+        "Bait": "Attached bait",
+        "Tug": "Tug",
+        "Hookset": "Hookset",
+        "Fishing": "Fishing",
+        "Mooch": "Last throw was mooch",
+        "Mooch_report": "Mooch",
+        "Current_weather": "Current weather",
+        "Previous_weather": "Previous weather",
+        "Spot": "Spot",
+        "Possible_fish": "Possible fish",
+        "Stats": "Stats",
+        "Statuses": "Statuses",
+        "No_statuses": "No relevant statuses",
+        "Total_reports": "Total reports for this session",
+        "Last_report": "Last report",
+        "Fish": "Fish",
+        "Size": "Size",
+        "ERRORS": {
+          "Unknown_map": "Map unknown, change zone to load it.",
+          "No_bait": "No bait detected, switch bait once to fix."
+        }
       }
     },
     "NODE": {
