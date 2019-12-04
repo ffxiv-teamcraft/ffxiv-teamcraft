@@ -72,7 +72,10 @@
         <div fxLayout="column" *ngIf="state.reports[state.reports.length - 1] as report">
           <div fxLayout="row" fxLayoutAlign="space-between center">
             <div>{{'DB.FISH.OVERLAY.Fish' | translate}}</div>
-            <div *ngIf="report.itemId; else unknown">{{report.itemId | itemName | i18n}}</div>
+            <div *ngIf="report.itemId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+              <img class="fish-icon" src="{{report.itemId | lazyIcon | xivapiIcon}}">
+              <div>{{report.itemId | itemName | i18n}}</div>
+            </div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between center">
             <div>{{'DB.FISH.OVERLAY.Size' | translate}}</div>
