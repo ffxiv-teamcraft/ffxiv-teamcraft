@@ -145,7 +145,10 @@
     "Read_more_on_wiki": "在wiki上阅读更多详细信息",
     "Apply": "Apply",
     "Open_link": "Open website link",
-    "Unknown": "Unknown"
+    "Unknown": "Unknown",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Average": "Average"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -485,6 +488,7 @@
     "History": "历史记录",
     "Items_count": "{{amount}} 个物品",
     "Show_craftable_amount": "显示可制作的数量",
+    "Show_vendors": "Show first available vendor for each item",
     "Optimized_full_path": "显示完整最优路径 (最便宜且最快)",
     "Quick_layout_swap": "快速布局切换",
     "Offline": "离线",
