@@ -145,7 +145,10 @@
     "Read_more_on_wiki": "ウィキで詳しく見る",
     "Apply": "適用",
     "Open_link": "Open website link",
-    "Unknown": "Unknown"
+    "Unknown": "Unknown",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Average": "Average"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -485,6 +488,7 @@
     "History": "履歴",
     "Items_count": "{{amount}} アイテム",
     "Show_craftable_amount": "制作可能な数量を表示する",
+    "Show_vendors": "Show first available vendor for each item",
     "Optimized_full_path": "全ての推奨経路を表示(最安値)",
     "Quick_layout_swap": "クイックレイアウトの切り替え",
     "Offline": "オフライン",
