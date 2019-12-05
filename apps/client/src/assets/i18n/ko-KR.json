@@ -145,7 +145,10 @@
     "Read_more_on_wiki": "위키에서 자세히 보기",
     "Apply": "적용",
     "Open_link": "웹사이트 열기",
-    "Unknown": "Unknown"
+    "Unknown": "Unknown",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Average": "Average"
   },
   "ALARMS": {
     "Title": "알람",
@@ -485,6 +488,7 @@
     "History": "목록 변경내역",
     "Items_count": "아이템 {{amount}}개",
     "Show_craftable_amount": "제작 가능한 수량 표시",
+    "Show_vendors": "Show first available vendor for each item",
     "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
     "Quick_layout_swap": "빠른 레이아웃 전환",
     "Offline": "오프라인",
