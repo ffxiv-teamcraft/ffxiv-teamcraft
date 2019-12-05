@@ -8,10 +8,8 @@ import { distinctUntilChanged, map, switchMap, switchMapTo, tap } from 'rxjs/ope
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import * as shape from 'd3-shape';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { fishingSpots } from '../../../core/data/sources/fishing-spots';
-import { fishes } from '../../../core/data/sources/fishes';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
 

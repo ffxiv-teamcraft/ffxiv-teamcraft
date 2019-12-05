@@ -1381,6 +1381,11 @@
         }
       }
     },
+    "FISHING_SPOT": {
+      "Next": "Next",
+      "Possible_weathers": "Possible weathers",
+      "Available_fishes": "Available fishes"
+    },
     "NODE": {
       "Items": "Items",
       "Possible_bonuses": "Possible bonuses",

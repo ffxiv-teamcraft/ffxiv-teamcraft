@@ -29,7 +29,8 @@ export class WeatherService {
     return step2 % 100;
   }
 
-  public getWeather(mapId: number, timestamp: number, weatherRate: any): number {
+  public getWeather(mapId: number, timestamp: number, weatherRate?: any): number {
+    weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
     const weatherRateValue = this.getWeatherRateValue(timestamp);
     const match = (weatherRate || []).find(rate => weatherRateValue < rate.rate);
     if (match !== undefined) {
@@ -49,7 +50,8 @@ export class WeatherService {
     return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(timestamp), weatherRate);
   }
 
-  public getNextWeatherTransition(mapId: number, fromWeatherIds: number[], weatherId: number, timestamp: number, weatherRate: any, iteration = 0): Date | null {
+  public getNextWeatherTransition(mapId: number, fromWeatherIds: number[], weatherId: number, timestamp: number, weatherRate?: any, iteration = 0): Date | null {
+    weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
     // 8 hours before
     const dateForPreviousWeather = timestamp - 8 * 60 * 60 * 1000 - 1;
     const previousWeather = this.getWeather(mapId, dateForPreviousWeather, weatherRate);

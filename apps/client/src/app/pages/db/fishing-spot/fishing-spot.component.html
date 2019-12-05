@@ -1,3 +1,121 @@
-<p>
-  fishing-spot works!
-</p>
+<ng-container *ngIf="xivapiFishingSpot$ | async as spot; else loader">
+  <div [style.padding]="'0 50px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
+
+    <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
+         fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
+      <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
+           fxLayoutAlign="space-between" fxLayoutGap="10px">
+        <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img src="./assets/icons/classjob/fisher.png" fxFlex="0 0 auto">
+          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+            <h2 class="item-name">{{spot.PlaceName | xivapiI18n}}</h2>
+            <div class="item-kind">{{spot.TerritoryType.PlaceName | xivapiI18n}}</div>
+          </div>
+        </div>
+        <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <a *ngFor="let link of links" [href]="link.url" [nzTitle]="link.title" nz-tooltip target="_blank">
+            <img [alt]="link.title" [src]="link.icon" class="link-icon">
+          </a>
+        </div>
+      </div>
+      <div fxFlex="1 1 auto"></div>
+    </div>
+    <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
+      <div class="details-block">
+        <div class="detail-name">{{'DB.Level' | translate}}</div>
+        <div class="detail-value">{{spot.GatheringLevel}}</div>
+      </div>
+      <div fxFlex="1 1 auto"></div>
+      <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'DB.FISH.Refresh_data' | translate"
+              (click)="loading = true;reloader$.next(null)">
+        <i nz-icon nzType="reload" nzTheme="outline"></i>
+      </button>
+    </div>
+
+    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="spot.ID" type="fishing-spot"></app-db-comments>
+
+    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+
+    <app-page-loader [loading]="loading">
+      <ng-container *ngIf="gubalData$ | async as data">
+        <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+
+          <nz-card [nzTitle]="'DB.Position' | translate" class="card-with-list expanded" fxFlex="0 0 360px">
+            <app-map
+              [hideDbButton]="true"
+              [mapId]="spot.TerritoryType.MapTargetID"
+              [markers]="[{
+                x: spot.customData.coords.x,
+                y: spot.customData.coords.y
+              }]"
+            ></app-map>
+          </nz-card>
+
+          <nz-card [nzTitle]="'DB.FISHING_SPOT.Possible_weathers' | translate" class="card-with-list" fxFlex="1 1 300px">
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <div *ngFor="let row of data.weathers;let last = last"
+                   fxLayout="row" fxLayoutAlign="space-between center"
+                   class="list-row" [class.border-bottom]="!last"
+                   [class.highlighted]="row.active">
+                <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                  <img src="{{row.weatherId | weatherIcon | xivapiIcon}}" alt="">
+                  <div fxLayout="column">
+                    <div>{{row.weatherId | weatherName | i18n}}</div>
+                    <div>
+                      <span>{{'DB.FISHING_SPOT.Next' | translate}}: {{row.next | date: 'short':undefined:translate.currentLang}}</span>
+                    </div>
+                  </div>
+                </div>
+                <div>{{row.chances | number:'1.0-1'}}%</div>
+              </div>
+            </div>
+          </nz-card>
+
+          <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 300px" class="card-with-list">
+            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.weatherTransitions; let last = last"
+                 [class.border-bottom]="!last"
+                 [class.highlighted]="row.active"
+                 class="list-row">
+              <div fxLayout="column">
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                  <div>
+                    <img src="{{row.previousWeatherId | weatherIcon | xivapiIcon}}" alt="">
+                    <span>{{row.previousWeatherId | weatherName | i18n}}</span>
+                  </div>
+                  <i nz-icon nzType="right" nzTheme="outline"></i>
+                  <div>
+                    <img src="{{row.weatherId | weatherIcon | xivapiIcon}}" alt="">
+                    <span>{{row.weatherId | weatherName | i18n}}</span>
+                  </div>
+                </div>
+                <div>
+                  <span>{{'DB.FISHING_SPOT.Next' | translate}}: {{row.next | date: 'short':undefined:translate.currentLang}}</span>
+                </div>
+              </div>
+              <div>{{row.chances | number:'1.0-1'}}%</div>
+            </div>
+          </nz-card>
+
+          <nz-card [nzTitle]="'DB.FISHING_SPOT.Available_fishes' | translate" fxFlex="1 1 300px" class="card-with-list">
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <div *ngFor="let fishId of data.fishes;let last = last"
+                   fxLayout="row" fxLayoutAlign="flex-start center"
+                   fxLayoutGap="5px"
+                   class="list-row" [class.border-bottom]="!last">
+                <app-item-icon [itemId]="fishId" [icon]="fishId | lazyIcon" width="32"></app-item-icon>
+                <span>{{fishId | itemName | i18n}}</span>
+              </div>
+            </div>
+          </nz-card>
+
+
+        </div>
+      </ng-container>
+    </app-page-loader>
+
+    <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="spot.ID" type="fishing-spot"></app-db-comments>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

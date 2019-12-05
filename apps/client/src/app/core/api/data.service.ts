@@ -977,7 +977,7 @@ export class DataService {
   searchFishingSpot(query: string, filters: SearchFilter[]): Observable<FishingSpotSearchResult[]> {
     return of(fishingSpots
       .filter(spot => {
-        return this.i18n.getName(this.l12n.getPlace(spot.placeId)).toLowerCase().indexOf(query.toLowerCase()) > -1
+        return this.i18n.getName(this.l12n.getPlace(spot.zoneId)).toLowerCase().indexOf(query.toLowerCase()) > -1
           || this.i18n.getName(this.l12n.getMapName(spot.mapId)).toLowerCase().indexOf(query.toLowerCase()) > -1;
       })
       .map(spot => {

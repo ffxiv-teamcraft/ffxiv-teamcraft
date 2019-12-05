@@ -198,13 +198,13 @@ const routes: Routes = [
       },
 
       {
-        path: 'fish/:fishId',
-        component: FishComponent,
+        path: 'fishing-spot/:spotId',
+        component: FishingSpotComponent,
         canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
-        path: 'fish/:fishId/:slug',
-        component: FishComponent,
+        path: 'fishing-spot/:spotId/:slug',
+        component: FishingSpotComponent,
         canActivate: [MaintenanceGuard, VersionLockGuard]
       }
     ]
