@@ -98,7 +98,12 @@
             <ng-template #openMap>
               <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
                 <app-map-position [mapId]="node.mapId"
-                                  [marker]="{x:node.x, y: node.y}"
+                                  [marker]="{
+                                   x:node.x,
+                                   y: node.y,
+                                   iconType: 'img',
+                                   iconImg: node.type | nodeTypeIcon
+                                  }"
                                   [zoneId]="node.zoneid"></app-map-position>
                 <div
                   *ngIf="node.mapId | closestAetheryte: { x: node.x, y: node.y } | async as aetheryte"
