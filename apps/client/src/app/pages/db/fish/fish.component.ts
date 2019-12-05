@@ -280,7 +280,12 @@ export class FishComponent implements OnInit {
           minGathering: result.data.fishingresults_aggregate.aggregate.min.gathering
         };
       }),
-      tap(() => this.loading = false)
+      tap((data) => {
+        if (this.spot$.value === -1 && data.everySpots.length === 1) {
+          this.spot$.next(data.everySpots[0].id);
+        }
+        this.loading = false;
+      })
     );
   }
 }
