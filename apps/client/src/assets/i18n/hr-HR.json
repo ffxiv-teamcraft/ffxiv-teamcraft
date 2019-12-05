@@ -145,7 +145,10 @@
     "Read_more_on_wiki": "Read more details on wiki",
     "Apply": "Apply",
     "Open_link": "Open website link",
-    "Unknown": "Unknown"
+    "Unknown": "Unknown",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Average": "Average"
   },
   "ALARMS": {
     "Title": "Alarmi",
@@ -485,6 +488,7 @@
     "History": "History",
     "Items_count": "{{amount}} items",
     "Show_craftable_amount": "Show craftable amount",
+    "Show_vendors": "Show first available vendor for each item",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "Quick_layout_swap": "Quick layout swap",
     "Offline": "Offline",
