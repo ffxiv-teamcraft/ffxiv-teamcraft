@@ -485,6 +485,7 @@
     "History": "History",
     "Items_count": "{{amount}} items",
     "Show_craftable_amount": "Show craftable amount",
+    "Show_vendors": "Show first available vendor for each item",
     "Optimized_full_path": "Show full optimized path (cheapest and fastest)",
     "Quick_layout_swap": "Quick layout swap",
     "Offline": "Offline",

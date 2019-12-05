@@ -465,7 +465,7 @@
       </div>
     </div>
   </div>
-  <div [class.empty]="!alarms || alarms.length < 0" class="block center-block" nz-col nzMd="7" nzSm="12"
+  <div [class.empty]="((alarms || []).length === 0) && (item.vendors || []).length === 0" class="block center-block" nz-col nzMd="7" nzSm="12"
        nzXs="24">
     <div class="timers" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <div *ngFor="let alarm of alarms; trackBy: trackByAlarm">
@@ -500,10 +500,21 @@
         *ngIf="moreAlarmsAvailable > 0"
         class="more-badge">{{'ALARMS.More_available' | translate: { amount: moreAlarmsAvailable } }}</nz-tag>
     </div>
-    <div *ngIf="layout?.showCraftableAmount && item.craftedBy !== undefined && item.craftedBy.length > 0">
-      <div *ngIf="item.craftableAmount" class="craftable-amount">
+    <ng-container *ngIf="layout?.showCraftableAmount && item.craftedBy !== undefined && item.craftedBy.length > 0">
+      <div *ngIf="item.craftableAmount">
         {{'LIST_DETAILS.Amount_craftable' | translate:{ amount: item.craftableAmount } }}
       </div>
+    </ng-container>
+    <div *ngIf="layout?.showVendors && (item.vendors || []).length > 0" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <b>
+        {{item.vendors[0].npcId | npcName | i18n}},
+      </b>
+      <app-map-position [mapId]="item.vendors[0].mapId"
+                        [zoneId]="item.vendors[0].zoneId"
+                        [marker]="item.vendors[0].coords"
+                        showMapName="true"
+                        flex="row"></app-map-position>
+      <span *ngIf="item.vendors.length > 1">{{'ALARMS.More_available' | translate:{ amount: item.vendors.length - 1 } }}</span>
     </div>
   </div>
   <div class="block books-and-input-block" nz-col nzMd="6" nzSm="12" nzXs="24">

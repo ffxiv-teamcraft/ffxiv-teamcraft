@@ -61,6 +61,12 @@
           {{"LIST.Show_craftable_amount" | translate}}
         </label>
       </div>
+      <div fxLayout="column" fxLayoutGap="10px">
+        <label [(ngModel)]="layout.showVendors" (ngModelChange)="dirty = true"
+               [nzDisabled]="layout.default" nz-checkbox>
+          {{"LIST.Show_vendors" | translate}}
+        </label>
+      </div>
     </nz-card>
     <nz-card [nzTitle]="'Items' | translate">
       <div fxLayout="column" fxLayoutGap="10px">
