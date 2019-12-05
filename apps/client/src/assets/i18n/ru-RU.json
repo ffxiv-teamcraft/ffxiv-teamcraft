@@ -145,7 +145,10 @@
     "Read_more_on_wiki": "Подробнее на вики",
     "Apply": "Apply",
     "Open_link": "Open website link",
-    "Unknown": "Unknown"
+    "Unknown": "Unknown",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Average": "Average"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -485,6 +488,7 @@
     "History": "История",
     "Items_count": "{{amount}} предметов",
     "Show_craftable_amount": "Показать количество, которое можно скрафтить",
+    "Show_vendors": "Show first available vendor for each item",
     "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
     "Quick_layout_swap": "Быстрое переключение раскладки",
     "Offline": "Оффлайн",
