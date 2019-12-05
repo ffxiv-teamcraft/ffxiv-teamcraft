@@ -92,7 +92,7 @@
                          {
                           x:node.coords[0],
                           y: node.coords[1],
-                          iconImg: node.type | nodeTypeIcon,
+                          iconImg: node.type | nodeTypeIcon: (node.time || []).length > 0,
                           iconType: 'img'
                          }
                          ]"></app-map>

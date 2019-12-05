@@ -479,7 +479,7 @@
             <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
             {{display.remainingTime | timer}}
             <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
-            <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
+            <img [src]="display.alarm.type | nodeTypeIcon: true" alt="" class="node-type-icon">
           </button>
           <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu"
                   [nzPlacement]="'bottomCenter'"
