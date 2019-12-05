@@ -173,7 +173,10 @@ export class FishComponent implements OnInit {
           return entry.fishEyes === true;
         }) || { occurences: 0 }).occurences / totalFishEyes;
         const totalWeatherTransitions = result.data.weather_transitions_per_fish.reduce((acc, row) => acc + row.occurences, 0);
-        const sortedBiteTimes = result.data.bite_time_per_fish.sort((a, b) => a.biteTime - b.biteTime);
+        const totalBiteTimes = result.data.bite_time_per_fish.reduce((acc, row) => acc + row.occurences, 0);
+        const sortedBiteTimes = result.data.bite_time_per_fish
+          .filter(entry => entry.occurences > 5 || entry.occurences > totalBiteTimes / 2)
+          .sort((a, b) => a.biteTime - b.biteTime);
         const sortedWeathers = result.data.weathers_per_fish.sort((a, b) => b.occurences - a.occurences);
         const sortedBaits = result.data.baits_per_fish
           .filter(entry => {
@@ -209,26 +212,15 @@ export class FishComponent implements OnInit {
             raw: sortedBaits
           },
           biteTimeChart: {
-            view: [400, 300],
-            data: [
-              {
-                name: '',
-                series: sortedBiteTimes
-                  .filter(entry => entry.occurences > 5)
-                  .map(entry => {
-                    return {
-                      name: entry.biteTime / 10,
-                      value: entry.occurences
-                    };
-                  })
-              }
-            ],
-            curve: shape.curveBasisOpen,
             min: (sortedBiteTimes[0] || { biteTime: 0 }).biteTime / 10,
-            max: (sortedBiteTimes[sortedBiteTimes.length - 1] || { biteTime: 0 }).biteTime / 10
+            max: (sortedBiteTimes[sortedBiteTimes.length - 1] || { biteTime: 0 }).biteTime / 10,
+            avg: sortedBiteTimes
+              .reduce((acc, entry) => {
+                return entry.biteTime * entry.occurences + acc;
+              }, 0) / totalBiteTimes / 10
           },
           weathersChart: {
-            view: [400, this.spot$.value === -1 ? 300 : 200],
+            view: [500, this.spot$.value === -1 ? 300 : 200],
             data: sortedWeathers.map(entry => {
               return {
                 name: this.i18n.getName(this.l12n.getWeather(entry.weatherId)),

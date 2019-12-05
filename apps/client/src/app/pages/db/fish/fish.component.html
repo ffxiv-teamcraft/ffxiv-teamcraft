@@ -142,23 +142,13 @@
             </nz-card>
           </div>
           <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
-            <nz-card
-              nzTitle="{{'DB.FISH.Bite_time' | translate}} ({{data.biteTimeChart.min | number: '1.0-1'}}s - {{data.biteTimeChart.max | number: '1.0-1'}}s)"
-              [style.width.px]="data.biteTimeChart.view[0] + 48">
-              <ngx-charts-line-chart
-                [view]="data.biteTimeChart.view"
-                [scheme]="{domain: [theme.primary]}"
-                [gradient]="false"
-                [xAxis]="true"
-                [yAxis]="true"
-                [showGridLines]="false"
-                [legend]="false"
-                [showXAxisLabel]="true"
-                [showYAxisLabel]="false"
-                [xAxisLabel]="'DB.FISH.Seconds' | translate"
-                [curve]="data.biteTimeChart.curve"
-                [results]="data.biteTimeChart.data"
-              ></ngx-charts-line-chart>
+            <nz-card [nzTitle]="'DB.FISH.Bite_time' | translate" class="bite-times">
+              <nz-statistic [nzSuffix]="'s'" [nzValue]="data.biteTimeChart.min | number: '1.0-1'"
+                            [nzTitle]="'COMMON.Minimum' | translate"></nz-statistic>
+              <nz-statistic [nzSuffix]="'s'" [nzValue]="data.biteTimeChart.max | number: '1.0-1'"
+                            [nzTitle]="'COMMON.Maximum' | translate"></nz-statistic>
+              <nz-statistic [nzSuffix]="'s'" [nzValue]="data.biteTimeChart.avg | number: '1.0-1'"
+                            [nzTitle]="'COMMON.Average' | translate"></nz-statistic>
             </nz-card>
             <nz-card [nzTitle]="'DB.FISH.Weathers' | translate" [style.width.px]="data.weathersChart.view[0] + 48">
               <ngx-charts-advanced-pie-chart
