@@ -41,6 +41,7 @@ import { AchievementComponent } from './achievement/achievement.component';
 import { PatchComponent } from './patch/patch.component';
 import { FishComponent } from './fish/fish.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { FishingSpotComponent } from './fishing-spot/fishing-spot.component';
 
 const routes: Routes = [
   {
@@ -230,7 +231,8 @@ const routes: Routes = [
     CommentLinksPipe,
     AchievementComponent,
     PatchComponent,
-    FishComponent
+    FishComponent,
+    FishingSpotComponent
   ],
   entryComponents: [ModelViewerComponent],
   imports: [

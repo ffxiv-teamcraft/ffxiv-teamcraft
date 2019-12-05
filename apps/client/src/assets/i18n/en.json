@@ -1532,7 +1532,8 @@
     "Status": "Status",
     "Trait": "Trait",
     "Any": "Any",
-    "Achievement": "Achievement"
+    "Achievement": "Achievement",
+    "Fishing_spot": "Fishing spot"
   },
   "SEARCH_FILTERS": {
     "Level": "Level",

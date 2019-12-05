@@ -31,6 +31,9 @@ import { MapSearchResult } from '../../model/search/map-search-result';
 import { mapIds } from '../data/sources/map-ids';
 import { LocalizedDataService } from '../data/localized-data.service';
 import { requestsWithDelay } from '../rxjs/requests-with-delay';
+import { FishingSpotSearchResult } from '../../model/search/fishing-spot-search-result';
+import { fishingSpots } from '../data/sources/fishing-spots';
+import { I18nToolsService } from '../tools/i18n-tools.service';
 
 @Injectable()
 export class DataService {
@@ -48,7 +51,7 @@ export class DataService {
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 
   constructor(private http: HttpClient,
-              private i18n: TranslateService,
+              private i18n: I18nToolsService,
               private gt: GarlandToolsService,
               private xivapi: XivapiService,
               private serializer: NgSerializerService,
@@ -139,8 +142,8 @@ export class DataService {
     // Filter HQ and Collectable Symbols from search
     query = query.replace(/[\ue03a-\ue03d]/g, '');
 
-    let lang = this.i18n.currentLang;
-    const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1 && query.length > 0;
+    let lang = this.translate.currentLang;
+    const isKoOrZh = ['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1 && query.length > 0;
     if (isKoOrZh) {
       lang = 'en';
     }
@@ -179,10 +182,10 @@ export class DataService {
         }];
       }));
 
-    if (onlyCraftable){
+    if (onlyCraftable) {
       xivapiFilters.push({
-        column: "Recipes.ClassJobID",
-        operator: ">",
+        column: 'Recipes.ClassJobID',
+        operator: '>',
         value: 0
       });
     }
@@ -212,7 +215,7 @@ export class DataService {
       results$ = this.xivapi.getList(
         XivapiEndpoint.Item,
         {
-          ids: this.mapToItemIds(query, this.i18n.currentLang as 'ko' | 'zh'),
+          ids: this.mapToItemIds(query, this.translate.currentLang as 'ko' | 'zh'),
           columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks']
         }
       ).pipe(
@@ -331,6 +334,9 @@ export class DataService {
       case SearchType.ACHIEVEMENT:
         searchRequest$ = this.searchAchievement(query, filters);
         break;
+      case SearchType.FISHING_SPOT:
+        searchRequest$ = this.searchFishingSpot(query, filters);
+        break;
       default:
         searchRequest$ = this.searchItem(query, filters, false, sort);
         break;
@@ -357,15 +363,15 @@ export class DataService {
    * @returns {Observable<ItemData[]>}
    */
   public searchGathering(name: string): Observable<any[]> {
-    let lang = this.i18n.currentLang;
-    const isKoOrZh = ['ko', 'zh'].indexOf(this.i18n.currentLang.toLowerCase()) > -1;
+    let lang = this.translate.currentLang;
+    const isKoOrZh = ['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1;
     if (isKoOrZh) {
       if (name.length > 0) {
         lang = 'en';
       } else {
         return of([]);
       }
-    } else if (name.length < 3 && (this.i18n.currentLang !== 'ja' && name.length === 0)) {
+    } else if (name.length < 3 && (this.translate.currentLang !== 'ja' && name.length === 0)) {
       return of([]);
     }
 
@@ -376,7 +382,7 @@ export class DataService {
 
     // If the lang is korean, handle it properly to map to item ids.
     if (isKoOrZh) {
-      const ids = this.mapToItemIds(name, this.i18n.currentLang as 'ko' | 'zh');
+      const ids = this.mapToItemIds(name, this.translate.currentLang as 'ko' | 'zh');
       params = params.set('ids', ids.join(','));
     } else {
       params = params.set('text', name);
@@ -492,6 +498,10 @@ export class DataService {
       }))),
       this.searchAchievement(query, filters).pipe(map(res => res.map(row => {
         row.type = SearchType.ACHIEVEMENT;
+        return row;
+      }))),
+      this.searchFishingSpot(query, filters).pipe(map(res => res.map(row => {
+        row.type = SearchType.FISHING_SPOT;
         return row;
       })))
     ], 150).pipe(
@@ -960,6 +970,21 @@ export class DataService {
             level: fate.ClassJobLevel
           };
         });
+      })
+    );
+  }
+
+  searchFishingSpot(query: string, filters: SearchFilter[]): Observable<FishingSpotSearchResult[]> {
+    return of(fishingSpots
+      .filter(spot => {
+        return this.i18n.getName(this.l12n.getPlace(spot.placeId)).toLowerCase().indexOf(query.toLowerCase()) > -1
+          || this.i18n.getName(this.l12n.getMapName(spot.mapId)).toLowerCase().indexOf(query.toLowerCase()) > -1;
+      })
+      .map(spot => {
+        return {
+          id: spot.id,
+          spot: spot
+        };
       })
     );
   }

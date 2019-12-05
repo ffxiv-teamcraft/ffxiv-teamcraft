@@ -8,14 +8,15 @@ import { version } from './version';
 export const environment = {
   production: false,
   version: version,
-  ssrHost: 'https://beta.ffxivteamcraft.com',
+  ssrHost: 'https://ffxivteamcraft.com',
   startTimestamp: Date.now(),
   firebase: {
-    apiKey: 'AIzaSyCkrNPf7XlyuxQeqNtynvDFDnQ-XigG3WA',
-    authDomain: 'ffxiv-teamcraft-beta.firebaseapp.com',
-    databaseURL: 'https://ffxiv-teamcraft-beta.firebaseio.com',
-    projectId: 'ffxiv-teamcraft-beta',
-    storageBucket: 'ffxiv-teamcraft-beta.appspot.com',
-    messagingSenderId: '716469847404'
+    apiKey: 'AIzaSyDZPSJj-nXHLIATOz3IBESUTFk8zvFaUc0',
+    authDomain: 'ffxivteamcraft.firebaseapp.com',
+    databaseURL: 'https://ffxivteamcraft.firebaseio.com',
+    projectId: 'ffxivteamcraft',
+    storageBucket: 'ffxivteamcraft.appspot.com',
+    messagingSenderId: '1082504004791'
   }
 };
+
