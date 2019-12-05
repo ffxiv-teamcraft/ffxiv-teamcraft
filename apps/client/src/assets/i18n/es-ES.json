@@ -145,7 +145,10 @@
     "Read_more_on_wiki": "Leer más detalles en el wiki",
     "Apply": "Aplicar",
     "Open_link": "Abrir enlace del sitio web",
-    "Unknown": "Unknown"
+    "Unknown": "Unknown",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Average": "Average"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -485,6 +488,7 @@
     "History": "Historial",
     "Items_count": "{{amount}} artículos",
     "Show_craftable_amount": "Mostrar cantidad fabricable",
+    "Show_vendors": "Show first available vendor for each item",
     "Optimized_full_path": "Mostrar ruta optimizada completa (más barata y más rápida)",
     "Quick_layout_swap": "Intercambio rápido de diseño",
     "Offline": "Sin conexión",
