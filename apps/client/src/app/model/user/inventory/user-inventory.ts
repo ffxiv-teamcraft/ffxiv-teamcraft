@@ -25,7 +25,20 @@ export class UserInventory extends DataModel {
     ContainerType.PremiumSaddleBag1,
     ContainerType.FreeCompanyBag0,
     ContainerType.FreeCompanyBag1,
-    ContainerType.FreeCompanyBag2
+    ContainerType.FreeCompanyBag2,
+    ContainerType.ArmoryOff,
+    ContainerType.ArmoryHead,
+    ContainerType.ArmoryBody,
+    ContainerType.ArmoryHand,
+    ContainerType.ArmoryWaist,
+    ContainerType.ArmoryLegs,
+    ContainerType.ArmoryFeet,
+    ContainerType.ArmoryNeck,
+    ContainerType.ArmoryEar,
+    ContainerType.ArmoryWrist,
+    ContainerType.ArmoryRing,
+    ContainerType.ArmorySoulCrystal,
+    ContainerType.ArmoryMain
   ];
 
   items: { [index: string]: InventoryContainer } = {};
