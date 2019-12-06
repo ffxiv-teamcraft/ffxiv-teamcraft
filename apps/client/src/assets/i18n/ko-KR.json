@@ -146,9 +146,9 @@
     "Apply": "적용",
     "Open_link": "웹사이트 열기",
     "Unknown": "Unknown",
-    "Minimum": "Minimum",
-    "Maximum": "Maximum",
-    "Average": "Average"
+    "Minimum": "최소",
+    "Maximum": "최대",
+    "Average": "평균"
   },
   "ALARMS": {
     "Title": "알람",
@@ -488,7 +488,7 @@
     "History": "목록 변경내역",
     "Items_count": "아이템 {{amount}}개",
     "Show_craftable_amount": "제작 가능한 수량 표시",
-    "Show_vendors": "Show first available vendor for each item",
+    "Show_vendors": "아이템 별 첫번째로 구매 가능한 상점 보기",
     "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
     "Quick_layout_swap": "빠른 레이아웃 전환",
     "Offline": "오프라인",
@@ -1346,7 +1346,7 @@
       "Avg_size": "평균 크기",
       "Used_as_mooch_for": "생미끼로 사용시 낚이는 물고기",
       "No_known_mooch_usage": "생미끼로 사용된 기록이 없습니다",
-      "No_spot_filter": "No spot filter",
+      "No_spot_filter": "필터링 없음",
       "Chances_for_transition": "Chances for this transition to happen",
       "Weather_chances": "Chances for each weather to appear",
       "Bait": "Fishing bait",
@@ -1377,7 +1377,7 @@
         "Size": "Size",
         "ERRORS": {
           "Unknown_map": "Map unknown, change zone to load it.",
-          "No_bait": "No bait detected, switch bait once to fix."
+          "No_bait": "미끼가 확인되지 않습니다. 교정을 위해 미끼를 한번 바꿔주세요"
         }
       }
     },
