@@ -145,10 +145,10 @@
     "Read_more_on_wiki": "Details im Wiki ansehen",
     "Apply": "Übernehmen",
     "Open_link": "Webseite öffnen",
-    "Unknown": "Unknown",
+    "Unknown": "Unbekannt",
     "Minimum": "Minimum",
     "Maximum": "Maximum",
-    "Average": "Average"
+    "Average": "Durchschnittlich"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -166,7 +166,7 @@
     "Volume": "Lautstärke",
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert",
     "Open_overlay": "Overlay öffnen",
-    "Open_alarms_overlay": "Open alarms overlay",
+    "Open_alarms_overlay": "Alarm-Overlay öffnen",
     "More_available": "und {{amount}} mehr...",
     "Node_content": "Knoteninhalt",
     "Toggle_collapse": "Gruppen zusammenfalten umschalten",
@@ -488,7 +488,7 @@
     "History": "Historie",
     "Items_count": "{{amount}} Gegenstände",
     "Show_craftable_amount": "Herstellbare Mengen zeigen",
-    "Show_vendors": "Show first available vendor for each item",
+    "Show_vendors": "Ersten verfügbaren Händler für jeden Gegenstand anzeigen",
     "Optimized_full_path": "Volloptimierten Pfad anzeigen (am günstigsten und schnellsten)",
     "Quick_layout_swap": "Layout-Schnellwechsel",
     "Offline": "Offline",
@@ -566,7 +566,7 @@
     "Autofill_notification": "Benachrichtigung bei Fertigstellung",
     "Autofill_notification_title": "Gegenstand fertiggestellt",
     "Autofill_notification_body": "{{itemName}} wurde in der Liste {{listName}} fertiggestellt",
-    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
+    "Fill_with_inventory": "Mit Inventar füllen (gilt nur für Gegenstände aus dem persönlichen Inventar)",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -1330,14 +1330,14 @@
       "Masterpiece_bonus": "Bonus"
     },
     "FISH": {
-      "Hour": "Hour of the day",
-      "Baits": "Bait used",
+      "Hour": "Eorzea-Zeit",
+      "Baits": "Verwendeter Köder",
       "Hookset_and_tug": "Hooksets and tugs",
-      "Weathers": "Weathers",
+      "Weathers": "Wetter",
       "Weather_transitions": "Weather transitions",
       "Hooksets": "Hooksets",
       "Tugs": "Tugs",
-      "Seconds": "Seconds",
+      "Seconds": "Sekunden",
       "Bite_time": "Bite time",
       "Spots": "Spots",
       "Min_gathering": "Min. gathering",
