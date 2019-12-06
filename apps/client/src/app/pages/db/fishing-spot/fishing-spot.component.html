@@ -18,8 +18,28 @@
           </a>
         </div>
       </div>
-      <div fxFlex="1 1 auto"></div>
+      <div fxFlex="1 1 auto">
+      </div>
+      <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="EN" class="language-flag" src="./assets/icons/english.png">
+          <div>{{spot.PlaceName.Name_en}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="DE" class="language-flag" src="./assets/icons/german.png">
+          <div>{{spot.PlaceName.Name_de}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="FR" class="language-flag" src="./assets/icons/french.png">
+          <div>{{spot.PlaceName.Name_fr}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
+          <div>{{spot.PlaceName.Name_ja}}</div>
+        </div>
+      </div>
     </div>
+
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
         <div class="detail-name">{{'DB.Level' | translate}}</div>
@@ -37,7 +57,7 @@
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
 
     <app-page-loader [loading]="loading">
-      <ng-container *ngIf="gubalData$ | async as data">
+      <div *ngIf="gubalData$ | async as data" fxLayout="column" fxLayoutGap="10px">
         <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
 
           <nz-card [nzTitle]="'DB.Position' | translate" class="card-with-list expanded" fxFlex="0 0 360px">
@@ -51,12 +71,12 @@
             ></app-map>
           </nz-card>
 
-          <nz-card [nzTitle]="'DB.FISHING_SPOT.Possible_weathers' | translate" class="card-with-list" fxFlex="1 1 300px">
+          <nz-card [nzTitle]="'DB.FISHING_SPOT.Possible_weathers' | translate" class="card-with-list" fxFlex="1 1 auto">
             <div fxLayout="column" fxLayoutAlign="center center">
               <div *ngFor="let row of data.weathers;let last = last"
                    fxLayout="row" fxLayoutAlign="space-between center"
                    class="list-row" [class.border-bottom]="!last"
-                   [class.highlighted]="row.active">
+                   [style.background-color]="row.active?getColor(0.5):''">
                 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                   <img src="{{row.weatherId | weatherIcon | xivapiIcon}}" alt="">
                   <div fxLayout="column">
@@ -71,10 +91,10 @@
             </div>
           </nz-card>
 
-          <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 300px" class="card-with-list">
+          <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 auto" class="card-with-list">
             <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.weatherTransitions; let last = last"
                  [class.border-bottom]="!last"
-                 [class.highlighted]="row.active"
+                 [style.background-color]="row.active?getColor(0.5):''"
                  class="list-row">
               <div fxLayout="column">
                 <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -96,7 +116,7 @@
             </div>
           </nz-card>
 
-          <nz-card [nzTitle]="'DB.FISHING_SPOT.Available_fishes' | translate" fxFlex="1 1 300px" class="card-with-list">
+          <nz-card [nzTitle]="'DB.FISHING_SPOT.Available_fishes' | translate" fxFlex="1 1 auto" class="card-with-list">
             <div fxLayout="column" fxLayoutAlign="center center">
               <div *ngFor="let fishId of data.fishes;let last = last"
                    fxLayout="row" fxLayoutAlign="flex-start center"
@@ -107,10 +127,56 @@
               </div>
             </div>
           </nz-card>
-
-
         </div>
-      </ng-container>
+
+        <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+          <nz-card [nzTitle]="'DB.FISHING_SPOT.Fish_per_bait' | translate" class="card-with-list expanded">
+            <table *ngIf="data.fishesPerBait as baitTable" class="grid-table">
+              <thead>
+              <tr class="grid-header-line">
+                <th class="empty-head"></th>
+                <th *ngFor="let header of baitTable.headers" class="grid-cell grid-header">
+                  <app-item-icon [itemId]="header" width="32"></app-item-icon>
+                </th>
+              </tr>
+              </thead>
+              <tbody class="grid-body">
+              <tr *ngFor="let row of baitTable.data;let i = index">
+                <td class="grid-cell grid-sider">
+                  <app-item-icon [itemId]="baitTable.siders[i]" width="32"></app-item-icon>
+                </td>
+                <td *ngFor="let cell of row" class="grid-cell" [style.background-color]="getColor(cell / baitTable.totals[i])">
+                  <ng-container *ngIf="cell && cell > 0.1">{{(100 * cell / baitTable.totals[i]) | number:'1.0-1'}}%</ng-container>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </nz-card>
+
+          <nz-card [nzTitle]="'DB.FISHING_SPOT.Fish_per_weather' | translate" class="card-with-list expanded">
+            <table *ngIf="data.fishesPerWeather as weatherTable" class="grid-table">
+              <thead>
+              <tr class="grid-header-line">
+                <th class="empty-head"></th>
+                <th *ngFor="let header of weatherTable.headers" class="grid-cell grid-header">
+                  <app-item-icon [itemId]="header" width="32"></app-item-icon>
+                </th>
+              </tr>
+              </thead>
+              <tbody class="grid-body">
+              <tr *ngFor="let row of weatherTable.data;let i = index">
+                <td class="grid-cell grid-sider" nz-tooltip [nzTitle]="weatherTable.siders[i] | weatherName | i18n">
+                  <img [src]="weatherTable.siders[i] | weatherIcon" alt="">
+                </td>
+                <td *ngFor="let cell of row" class="grid-cell" [style.background-color]="getColor(cell / weatherTable.totals[i])">
+                  <ng-container *ngIf="cell && cell > 0.1">{{(100 * cell / weatherTable.totals[i]) | number:'1.0-1'}}%</ng-container>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </nz-card>
+        </div>
+      </div>
     </app-page-loader>
 
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="spot.ID" type="fishing-spot"></app-db-comments>

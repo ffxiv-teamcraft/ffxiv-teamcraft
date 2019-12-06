@@ -1384,7 +1384,9 @@
     "FISHING_SPOT": {
       "Next": "Next",
       "Possible_weathers": "Possible weathers",
-      "Available_fishes": "Available fishes"
+      "Available_fishes": "Available fishes",
+      "Fish_per_weather": "Fish per weather",
+      "Fish_per_bait": "Fish per bait"
     },
     "NODE": {
       "Items": "Items",
@@ -1538,7 +1540,7 @@
     "Trait": "Trait",
     "Any": "Any",
     "Achievement": "Achievement",
-    "Fishing_spot": "Fishing spot"
+    "Fishing-spot": "Fishing spot"
   },
   "SEARCH_FILTERS": {
     "Level": "Level",

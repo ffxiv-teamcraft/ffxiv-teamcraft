@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
+import { Component } from '@angular/core';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { fishingSpots } from '../../../core/data/sources/fishing-spots';
@@ -46,6 +46,8 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
   );
 
   public loading = true;
+
+  private highlightColor: number[] = [];
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -98,6 +100,18 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         return [];
       })
     );
+
+    this.highlightColor = this.settings.theme.highlight.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
+      , (m, r, g, b) => '#' + r + r + g + g + b + b)
+      .substring(1).match(/.{2}/g)
+      .map(x => parseInt(x, 16));
+
+    this.settings.themeChange$.subscribe(({ next }) => {
+      this.highlightColor = next.highlight.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
+        , (m, r, g, b) => '#' + r + r + g + g + b + b)
+        .substring(1).match(/.{2}/g)
+        .map(x => parseInt(x, 16));
+    });
 
     this.gubalData$ = this.reloader$.pipe(
       switchMapTo(spotId$),
@@ -162,10 +176,16 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
             }
             return a.next - b.next;
           }),
-          fishes: fishingSpots.find(s => s.id === spot.ID).fishes.filter(f => f > 0)
+          fishes: fishingSpots.find(s => s.id === spot.ID).fishes.filter(f => f > 0),
+          fishesPerBait: this.dataToTable(gubalData.data.baits_per_fish_per_spot.sort((a, b) => {
+            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
+          }), 'itemId', 'baitId', 'occurences'),
+          fishesPerWeather: this.dataToTable(gubalData.data.weathers_per_fish_per_spot.sort((a, b) => {
+            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
+          }), 'itemId', 'weatherId', 'occurences')
         };
       }),
-      tap((data) => {
+      tap(() => {
         this.loading = false;
       })
     );
@@ -199,16 +219,6 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
               occurences,
               itemId
             }
-            snagging_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
-              snagging,
-              occurences,
-              itemId
-            }
-            fish_eyes_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
-              fishEyes,
-              occurences,
-              itemId
-            }
             weathers_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
               weatherId,
               occurences,
@@ -222,6 +232,38 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
             }
           }
         `;
+  }
+
+  private dataToTable(data: any[], headerProperty: string, siderProperty: string, valueProperty: string): { headers: number[], siders: number[], total: number, totals: number[], data: number[][] } {
+    const res = data.reduce((result, row) => {
+      let headerIndex = result.headers.findIndex(r => r === row[headerProperty]);
+      if (headerIndex === -1) {
+        result.headers.push(row[headerProperty]);
+        headerIndex = result.headers.length - 1;
+      }
+      let siderIndex = result.siders.findIndex(r => r === row[siderProperty]);
+      if (siderIndex === -1) {
+        result.siders.push(row[siderProperty]);
+        siderIndex = result.siders.length - 1;
+      }
+      result.data[siderIndex] = result.data[siderIndex] || [];
+      result.data[siderIndex][headerIndex] = row[valueProperty];
+      result.total += row[valueProperty];
+      result.totals[siderIndex] = (result.totals[siderIndex] || 0) + row[valueProperty];
+      return result;
+    }, { headers: [], siders: [], data: [[]], total: 0, totals: [] });
+
+    res.data.forEach(row => {
+      if (row.length !== res.headers.length) {
+        row.push(...new Array(res.headers.length - row.length));
+      }
+    });
+    console.log(res);
+    return res;
+  }
+
+  private getColor(weight: number): string {
+    return `rgba(${this.highlightColor[0]}, ${this.highlightColor[1]}, ${this.highlightColor[2]}, ${Math.floor(weight * 100) / 100})`;
   }
 
   private getWeatherChances(mapId: number, weatherId: number): number {
