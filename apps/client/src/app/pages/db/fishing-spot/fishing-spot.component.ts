@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { fishingSpots } from '../../../core/data/sources/fishing-spots';
@@ -48,6 +48,8 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
   public loading = true;
 
   private highlightColor: number[] = [];
+
+  public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -182,8 +184,24 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
           }), 'itemId', 'baitId', 'occurences'),
           fishesPerWeather: this.dataToTable(gubalData.data.weathers_per_fish_per_spot.sort((a, b) => {
             return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
-          }), 'itemId', 'weatherId', 'occurences')
+          }), 'itemId', 'weatherId', 'occurences'),
+          fishesPerTug: this.dataToTable(gubalData.data.tug_per_fish_per_spot.sort((a, b) => {
+            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
+          }), 'itemId', 'tug', 'occurences')
         };
+      }),
+      switchMap((display: any) => {
+        return this.highlightedFish$.pipe(
+          map(highlightedFish => {
+            display.highlighted = highlightedFish;
+            if (highlightedFish > -1) {
+              display.highlightedIndex = display.fishes.findIndex(h => h === highlightedFish);
+            } else {
+              display.highlightedIndex = -1;
+            }
+            return display;
+          })
+        );
       }),
       tap(() => {
         this.loading = false;
@@ -204,11 +222,6 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
               occurences,
               itemId
             }
-            hooksets_per_fish_per_spot(where: {spot: {_eq: ${spotId}}, hookset: {_neq: 0}}) {
-              hookset,
-              occurences,
-              itemId
-            }
             tug_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
               tug,
               occurences,
@@ -220,12 +233,6 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
               itemId
             }
             weathers_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
-              weatherId,
-              occurences,
-              itemId
-            }
-            weather_transitions_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
-              previousWeatherId,
               weatherId,
               occurences,
               itemId
@@ -258,12 +265,11 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         row.push(...new Array(res.headers.length - row.length));
       }
     });
-    console.log(res);
     return res;
   }
 
   private getColor(weight: number): string {
-    return `rgba(${this.highlightColor[0]}, ${this.highlightColor[1]}, ${this.highlightColor[2]}, ${Math.floor(weight * 100) / 100})`;
+    return `rgba(${this.highlightColor[0]}, ${this.highlightColor[1]}, ${this.highlightColor[2]}, ${Math.floor(weight * 90) / 100})`;
   }
 
   private getWeatherChances(mapId: number, weatherId: number): number {
