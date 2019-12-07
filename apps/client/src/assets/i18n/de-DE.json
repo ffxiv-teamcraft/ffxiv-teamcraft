@@ -384,8 +384,8 @@
     "Enable_packet_capture": "Paketerfassung aktivieren (für Echtzeit Inventar-Funktionen)",
     "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Square Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
     "Enable_autofill_by_default": "Auto-Vervollständigung standardmäßig aktivieren",
+    "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Zu Universalis beitragen",
-    "Persist_inventory": "Inventar in Datenbank speichern (um es mit der Web-Version zu teilen)",
     "Track_items_on_sale": "Zum Verkauf stehende Gegenstände von Gehilfen verfolgen (erfordert Neustart/Aktualisierung)",
     "COLORS": {
       "Background": "Hintergrundfarbe",
