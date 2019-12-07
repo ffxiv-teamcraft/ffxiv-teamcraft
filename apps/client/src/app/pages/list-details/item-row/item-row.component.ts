@@ -253,26 +253,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
     this.requiredForFinalCraft$ = combineLatest([this.list$, this.item$]).pipe(
       map(([list, item]) => {
-        const recipesNeedingItem = list.finalItems
-          .filter(i => i.requires !== undefined)
-          .filter(i => {
-            return (i.requires || []).some(req => req.id === item.id);
-          });
-        if (item.requiredAsHQ) {
-          return item.amount;
-        }
-        if (list.disableHQSuggestions) {
-          return 0;
-        }
-        if (recipesNeedingItem.length === 0 || item.requiredAsHQ === false) {
-          return 0;
-        } else {
-          let count = 0;
-          recipesNeedingItem.forEach(recipe => {
-            count += recipe.requires.find(req => req.id === item.id).amount * recipe.amount;
-          });
-          return count;
-        }
+        return list.requiredAsHQ(item);
       })
     );
   }

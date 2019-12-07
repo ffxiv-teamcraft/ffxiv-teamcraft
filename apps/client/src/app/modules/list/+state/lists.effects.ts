@@ -284,7 +284,20 @@ export class ListsEffects {
       this.authFacade.fcId$,
       this.listsFacade.autocompleteEnabled$,
       this.listsFacade.completionNotificationEnabled$),
-    map(([action, list, team, userId, fcId, autocompleteEnabled, completionNotificationEnabled]) => {
+    filter(([action, list, , , , autofillEnabled, completionNotificationEnabled]) => {
+      const item = list.getItemById(action.itemId, !action.finalItem, action.finalItem);
+      if (autofillEnabled && this.settings.enableAutofillHQFilter && (list as List).requiredAsHQ(item) > 0) {
+        return !action.fromPacket || action.hq;
+      }
+      return true;
+    }),
+    map(([action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled]) => {
+      const item = list.getItemById(action.itemId, !action.finalItem, action.finalItem);
+      if (autofillEnabled && this.settings.enableAutofillHQFilter) {
+        if (!(list as List).requiredAsHQ(item)) {
+          return !action.fromPacket || action.hq;
+        }
+      }
       const historyEntry = list.modificationsHistory.find(entry => {
         return entry.itemId === action.itemId && (Date.now() - entry.date < 600000);
       });
@@ -305,8 +318,7 @@ export class ListsEffects {
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
         this.discordWebhookService.notifyItemChecked(team, list, userId, fcId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
-      if (autocompleteEnabled && completionNotificationEnabled && action.fromPacket) {
-        const item = list.getItemById(action.itemId, !action.finalItem, action.finalItem);
+      if (autofillEnabled && completionNotificationEnabled && action.fromPacket) {
         const itemDone = item.done + action.doneDelta >= item.amount;
         if (itemDone) {
           const notificationTitle = this.translate.instant('LIST_DETAILS.Autofill_notification_title');

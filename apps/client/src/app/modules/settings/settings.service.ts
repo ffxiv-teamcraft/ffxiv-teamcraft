@@ -292,6 +292,14 @@ export class SettingsService {
     this.setSetting('autofill:enable-by-default', hide.toString());
   }
 
+  public get enableAutofillHQFilter(): boolean {
+    return this.getSetting('autofill:enable-hq-filter', 'false') === 'true';
+  }
+
+  public set enableAutofillHQFilter(enabled: boolean) {
+    this.setSetting('autofill:enable-hq-filter', enabled.toString());
+  }
+
   public get enableUniversalisSourcing(): boolean {
     return this.getSetting('universalis:enable-sourcing', 'false') === 'true';
   }
