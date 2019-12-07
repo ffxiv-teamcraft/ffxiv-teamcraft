@@ -384,8 +384,8 @@
     "Enable_packet_capture": "Capture de paquets activée (ajoute des fonctionnalités d'inventaire en temps réel)",
     "Packet_capture_info": "Capturer des paquets est contre le CLUF (Contrat de license de l'utilisateur final), la même raison pour laquelle ACT est contre le CLUF. Mais Square Enix le tolère à moins que vous ne vous soyez entrain de le répéter à tout le monde en jeu. Ne faites rien et vous ne risquerez rien.",
     "Enable_autofill_by_default": "Activer le remplissage automatique par défaut",
+    "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Contribuer à Universalis",
-    "Persist_inventory": "Enregistrer l'inventaire en base de données (pour partager avec la version web)",
     "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
