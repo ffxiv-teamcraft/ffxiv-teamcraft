@@ -1381,6 +1381,14 @@
         }
       }
     },
+    "FISHING_SPOT": {
+      "Next": "Next",
+      "Possible_weathers": "Possible weathers",
+      "Available_fishes": "Available fishes",
+      "Fish_per_weather": "Fish per weather",
+      "Fish_per_bait": "Fish per bait",
+      "Fish_per_tug": "Fish per tug"
+    },
     "NODE": {
       "Items": "物品",
       "Possible_bonuses": "随机加成",
@@ -1532,7 +1540,8 @@
     "Status": "状态",
     "Trait": "特性",
     "Any": "任何",
-    "Achievement": "成就"
+    "Achievement": "成就",
+    "Fishing-spot": "Fishing spot"
   },
   "SEARCH_FILTERS": {
     "Level": "等级",
