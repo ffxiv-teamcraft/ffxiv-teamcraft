@@ -78,7 +78,7 @@
     "Not_found": "Oficina não encontrada ou não há acesso à mesma",
     "Shared_workshops": "Workshops shared with you",
     "Rename": "Renomear a oficina",
-    "Add_lists": "Add lists"
+    "Add_lists": "Adicionar listas"
   },
   "ABOUT": {
     "title": "Sobre",
@@ -94,7 +94,7 @@
   "Hide_if_empty": "Esconder se estiver vazio",
   "No_favorites": "Nenhum favorito",
   "Ephemeral_list": "Será eliminado assim que completo",
-  "Ephemeral_tag": "Ephemeral",
+  "Ephemeral_tag": "Efêmero",
   "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Criar uma lista rápida (removida assim que se completar)",
   "Tag_filter": "Tags",
@@ -177,7 +177,7 @@
       "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo cactpot, Challenge log, Fashion report, B-Rank Hunt marks.",
       "ROULETTES_RESET": "Roulettes & Beast tribes",
       "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini cactpot.",
-      "DELIVERIES_RESET": "Deliveries",
+      "DELIVERIES_RESET": "Entregas",
       "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
       "LEVE_ALLOWANCES": "Leve allowances",
       "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances"
@@ -192,7 +192,7 @@
       "Slot": "Vaga",
       "Type": "Tipo de Node",
       "Map": "Mapa",
-      "Weather": "Weather",
+      "Weather": "Clima",
       "Weather_from": "Transition from",
       "TYPE": {
         "Mineral": "Depósito mineral",
