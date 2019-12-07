@@ -1381,6 +1381,14 @@
         }
       }
     },
+    "FISHING_SPOT": {
+      "Next": "Next",
+      "Possible_weathers": "Possible weathers",
+      "Available_fishes": "Available fishes",
+      "Fish_per_weather": "Fish per weather",
+      "Fish_per_bait": "Fish per bait",
+      "Fish_per_tug": "Fish per tug"
+    },
     "NODE": {
       "Items": "아이템",
       "Possible_bonuses": "장소 특성",
@@ -1532,7 +1540,8 @@
     "Status": "상태",
     "Trait": "특성",
     "Any": "모두",
-    "Achievement": "업적"
+    "Achievement": "업적",
+    "Fishing-spot": "Fishing spot"
   },
   "SEARCH_FILTERS": {
     "Level": "레벨",
