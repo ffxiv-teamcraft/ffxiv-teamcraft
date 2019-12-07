@@ -1381,6 +1381,14 @@
         }
       }
     },
+    "FISHING_SPOT": {
+      "Next": "Next",
+      "Possible_weathers": "Possible weathers",
+      "Available_fishes": "Available fishes",
+      "Fish_per_weather": "Fish per weather",
+      "Fish_per_bait": "Fish per bait",
+      "Fish_per_tug": "Fish per tug"
+    },
     "NODE": {
       "Items": "Предметы",
       "Possible_bonuses": "Возможные бонусы",
@@ -1532,7 +1540,8 @@
     "Status": "Статус",
     "Trait": "Особенность",
     "Any": "Любое",
-    "Achievement": "Достижение"
+    "Achievement": "Достижение",
+    "Fishing-spot": "Fishing spot"
   },
   "SEARCH_FILTERS": {
     "Level": "Уровень",
