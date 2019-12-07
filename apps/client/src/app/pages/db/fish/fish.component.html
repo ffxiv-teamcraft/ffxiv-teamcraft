@@ -193,12 +193,14 @@
               </div>
             </nz-card>
             <nz-card [nzTitle]="'DB.FISH.Spots' | translate" fxFlex="1 1 auto" class="card-with-list">
-              <div *ngFor="let spot of data.spots;let last = last" [class.border-bottom]="!last" class="list-row">
+              <div *ngFor="let spot of data.spots;let last = last" [class.border-bottom]="!last" class="list-row" fxLayout="column"
+                   fxLayoutAlign="center center" fxLayoutGap="5px">
                 <app-map-position [mapId]="spot.spotData.mapId"
                                   [zoneId]="spot.spotData.zoneId"
                                   showMapName="true"
                                   showZoneName="true"
                                   [marker]="spot.spotData.coords"></app-map-position>
+                <app-db-button [id]="spot.spot" type="fishing-spot"></app-db-button>
               </div>
             </nz-card>
           </div>

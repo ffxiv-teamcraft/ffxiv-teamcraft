@@ -124,6 +124,7 @@
                    class="list-row" [class.border-bottom]="!last">
                 <app-item-icon [itemId]="fishId" [icon]="fishId | lazyIcon" width="32"></app-item-icon>
                 <span>{{fishId | itemName | i18n}}</span>
+                <app-db-button [id]="fishId" type="item"></app-db-button>
               </div>
             </div>
           </nz-card>
