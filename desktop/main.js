@@ -440,11 +440,12 @@ ipcMain.on('run-update', () => {
 });
 
 ipcMain.on('always-on-top', (event, onTop) => {
+  config.set('win:alwaysOnTop', onTop);
   win.setAlwaysOnTop(onTop, 'floating');
 });
 
 ipcMain.on('always-on-top:get', (event) => {
-  event.sender.send('always-on-top:value', win.alwaysOnTop);
+  event.sender.send('always-on-top:value', config.get('win:alwaysOnTop'));
 });
 
 ipcMain.on('always-quit', (event, flag) => {
