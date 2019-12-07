@@ -308,14 +308,6 @@ export class SettingsService {
     this.setSetting('universalis:enable-sourcing', enabled.toString());
   }
 
-  public get persistInventory(): boolean {
-    return this.getSetting('inventory:persist', 'false') === 'true';
-  }
-
-  public set persistInventory(enabled: boolean) {
-    this.setSetting('inventory:persist', enabled.toString());
-  }
-
   public get customTheme(): Theme {
     return {
       ...Theme.DEFAULT,

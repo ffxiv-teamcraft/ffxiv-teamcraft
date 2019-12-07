@@ -275,7 +275,10 @@ export class ListsFacade {
       this.userInventoryService.inventory$.pipe(
         first(),
         filter((inventory) => {
-          return (inventory.lastZone || 0) < environment.startTimestamp;
+          if (!inventory.lastZone) {
+            return true;
+          }
+          return inventory.lastZone.seconds < environment.startTimestamp / 1000;
         }),
         map(() => {
           return this.dialog.create({
@@ -288,7 +291,7 @@ export class ListsFacade {
         }),
         switchMap((modal) => {
           return this.userInventoryService.inventory$.pipe(
-            filter(inventory => (inventory.lastZone || 0) > environment.startTimestamp),
+            filter(inventory => inventory.lastZone.seconds > environment.startTimestamp / 1000),
             first(),
             map(() => modal)
           );
