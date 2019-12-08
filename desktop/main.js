@@ -268,6 +268,13 @@ function createTray() {
   tray.setToolTip('FFXIV Teamcraft');
   const contextMenu = Menu.buildFromTemplate([
     {
+      label: 'Fishing Overlay',
+      type: 'normal',
+      click: () => {
+        openOverlay({ url: '/fishing-reporter-overlay' });
+      }
+    },
+    {
       label: 'Alarm Overlay',
       type: 'normal',
       click: () => {

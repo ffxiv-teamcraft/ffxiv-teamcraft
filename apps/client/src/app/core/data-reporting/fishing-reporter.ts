@@ -180,18 +180,11 @@ export class FishingReporter implements DataReporter {
           };
         })
       ),
-      actionTimeline$.pipe(
-        map(animation => {
-          return {
-            animation: animation,
-            timestamp: Date.now()
-          };
-        })
-      )
+      bite$
     ]).pipe(
       filter(([rodAnimation, playerAnimation]) => {
-        return rodAnimation.animation === 283
-          && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 3000;
+        return rodAnimation.animation > 10000
+          && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
       }),
       map(() => {
         return {
@@ -259,6 +252,8 @@ export class FishingReporter implements DataReporter {
       });
     });
 
+    misses$.subscribe(console.log);
+
     return merge(misses$, fishCaught$).pipe(
       withLatestFrom(isFishing$),
       filter(([, isFishing]) => isFishing),
@@ -281,7 +276,7 @@ export class FishingReporter implements DataReporter {
       map(([fish, mapId, baitId, throwData, biteData, hookset, spot, stats, mooch]) => {
         const entry = {
           itemId: fish.id,
-          etime: throwData.etime.getUTCHours() + (throwData.etime.getUTCMinutes() / 60),
+          etime: throwData.etime.getUTCHours(),
           hq: fish.hq,
           mapId,
           weatherId: throwData.weatherId,
