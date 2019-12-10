@@ -144,7 +144,11 @@
     "Pie_charts": "Gráfico circular",
     "Read_more_on_wiki": "Leia mais detalhes na wiki",
     "Apply": "Aplicar",
-    "Open_link": "Abrir link do website"
+    "Open_link": "Abrir link do website",
+    "Unknown": "Unknown",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Average": "Average"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -162,6 +166,7 @@
     "Volume": "Volume de som",
     "Macro_copied": "Macro copiado para a área de transferência",
     "Open_overlay": "Abrir overlay",
+    "Open_alarms_overlay": "Open alarms overlay",
     "More_available": "e mais {{amount}}...",
     "Node_content": "Conteúdo do node",
     "Toggle_collapse": "Alternar fecho dos grupos",
@@ -379,8 +384,8 @@
     "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "Enable_autofill_by_default": "Enable autofill by default",
+    "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Contribute to Universalis",
-    "Persist_inventory": "Save inventory in database (to share with web version)",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "COLORS": {
       "Background": "Cor de fundo",
@@ -483,6 +488,7 @@
     "History": "Histórico",
     "Items_count": "{{amount}} itens",
     "Show_craftable_amount": "Mostrar quantidade produzíveis",
+    "Show_vendors": "Show first available vendor for each item",
     "Optimized_full_path": "Mostrar rota optimizado (mais barata e rápida)",
     "Quick_layout_swap": "Troca rápida de layout",
     "Offline": "Offline",
@@ -1344,11 +1350,44 @@
       "Chances_for_transition": "Chances for this transition to happen",
       "Weather_chances": "Chances for each weather to appear",
       "Bait": "Fishing bait",
+      "Refresh_data": "Refresh data",
       "TUG": {
         "Light": "Light",
         "Medium": "Medium",
         "Big": "Big"
+      },
+      "OVERLAY": {
+        "Open": "Open fishing report overlay",
+        "Bait": "Attached bait",
+        "Tug": "Tug",
+        "Hookset": "Hookset",
+        "Fishing": "Fishing",
+        "Mooch": "Last throw was mooch",
+        "Mooch_report": "Mooch",
+        "Current_weather": "Current weather",
+        "Previous_weather": "Previous weather",
+        "Spot": "Spot",
+        "Possible_fish": "Possible fish",
+        "Stats": "Stats",
+        "Statuses": "Statuses",
+        "No_statuses": "No relevant statuses",
+        "Total_reports": "Total reports for this session",
+        "Last_report": "Last report",
+        "Fish": "Fish",
+        "Size": "Size",
+        "ERRORS": {
+          "Unknown_map": "Map unknown, change zone to load it.",
+          "No_bait": "No bait detected, switch bait once to fix."
+        }
       }
+    },
+    "FISHING_SPOT": {
+      "Next": "Next",
+      "Possible_weathers": "Possible weathers",
+      "Available_fishes": "Available fishes",
+      "Fish_per_weather": "Fish per weather",
+      "Fish_per_bait": "Fish per bait",
+      "Fish_per_tug": "Fish per tug"
     },
     "NODE": {
       "Items": "Items",
@@ -1501,7 +1540,8 @@
     "Status": "Status",
     "Trait": "Trait",
     "Any": "Any",
-    "Achievement": "Achievement"
+    "Achievement": "Achievement",
+    "Fishing-spot": "Fishing spot"
   },
   "SEARCH_FILTERS": {
     "Level": "Level",
@@ -1533,7 +1573,7 @@
     "Remove_from_basket": "Remove from basket",
     "Search": "Find recipes",
     "Generate_list": "Add to list",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and resily generate a crafting list from the results.",
+    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and easily generate a crafting list from the results.",
     "Empty_basket": "Your basket is empty",
     "Add_item": "Add item",
     "Clipboard_content_malformed": "Clipboard content malformed",

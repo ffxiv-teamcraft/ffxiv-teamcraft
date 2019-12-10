@@ -144,7 +144,11 @@
     "Pie_charts": "Pie charts",
     "Read_more_on_wiki": "Подробнее на вики",
     "Apply": "Apply",
-    "Open_link": "Open website link"
+    "Open_link": "Open website link",
+    "Unknown": "Unknown",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Average": "Average"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -162,6 +166,7 @@
     "Volume": "Громкость",
     "Macro_copied": "Макрос скопирован в буфер обмена",
     "Open_overlay": "Открыть оверлей",
+    "Open_alarms_overlay": "Open alarms overlay",
     "More_available": "добавить ещё {{amount}}...",
     "Node_content": "Содержимое ноды",
     "Toggle_collapse": "Свернуть группы оповещений",
@@ -379,8 +384,8 @@
     "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "Enable_autofill_by_default": "Enable autofill by default",
+    "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Внести данные в Universalis",
-    "Persist_inventory": "Save inventory in database (to share with web version)",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "COLORS": {
       "Background": "Цвет фона",
@@ -483,6 +488,7 @@
     "History": "История",
     "Items_count": "{{amount}} предметов",
     "Show_craftable_amount": "Показать количество, которое можно скрафтить",
+    "Show_vendors": "Show first available vendor for each item",
     "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
     "Quick_layout_swap": "Быстрое переключение раскладки",
     "Offline": "Оффлайн",
@@ -1344,11 +1350,44 @@
       "Chances_for_transition": "Chances for this transition to happen",
       "Weather_chances": "Chances for each weather to appear",
       "Bait": "Fishing bait",
+      "Refresh_data": "Refresh data",
       "TUG": {
         "Light": "Light",
         "Medium": "Medium",
         "Big": "Big"
+      },
+      "OVERLAY": {
+        "Open": "Open fishing report overlay",
+        "Bait": "Attached bait",
+        "Tug": "Tug",
+        "Hookset": "Hookset",
+        "Fishing": "Fishing",
+        "Mooch": "Last throw was mooch",
+        "Mooch_report": "Mooch",
+        "Current_weather": "Current weather",
+        "Previous_weather": "Previous weather",
+        "Spot": "Spot",
+        "Possible_fish": "Possible fish",
+        "Stats": "Stats",
+        "Statuses": "Statuses",
+        "No_statuses": "No relevant statuses",
+        "Total_reports": "Total reports for this session",
+        "Last_report": "Last report",
+        "Fish": "Fish",
+        "Size": "Size",
+        "ERRORS": {
+          "Unknown_map": "Map unknown, change zone to load it.",
+          "No_bait": "No bait detected, switch bait once to fix."
+        }
       }
+    },
+    "FISHING_SPOT": {
+      "Next": "Next",
+      "Possible_weathers": "Possible weathers",
+      "Available_fishes": "Available fishes",
+      "Fish_per_weather": "Fish per weather",
+      "Fish_per_bait": "Fish per bait",
+      "Fish_per_tug": "Fish per tug"
     },
     "NODE": {
       "Items": "Предметы",
@@ -1501,7 +1540,8 @@
     "Status": "Статус",
     "Trait": "Особенность",
     "Any": "Любое",
-    "Achievement": "Достижение"
+    "Achievement": "Достижение",
+    "Fishing-spot": "Fishing spot"
   },
   "SEARCH_FILTERS": {
     "Level": "Уровень",
@@ -1533,7 +1573,7 @@
     "Remove_from_basket": "Убрать из корзины",
     "Search": "Найти рецепты",
     "Generate_list": "Добавить в список",
-    "Description": "Введите предметы, которые у вас есть, и нажмите \"Найти рецепты\", чтобы получить список возможных рецептов и создать список для крафта из результатов.",
+    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and easily generate a crafting list from the results.",
     "Empty_basket": "Ваша корзина пустая",
     "Add_item": "Добавить предмет",
     "Clipboard_content_malformed": "Неправильный контент буфера обмена",

@@ -144,7 +144,11 @@
     "Pie_charts": "円グラフ",
     "Read_more_on_wiki": "ウィキで詳しく見る",
     "Apply": "適用",
-    "Open_link": "Open website link"
+    "Open_link": "Open website link",
+    "Unknown": "Unknown",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Average": "Average"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -162,6 +166,7 @@
     "Volume": "ボリューム",
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイ開く",
+    "Open_alarms_overlay": "Open alarms overlay",
     "More_available": "{{amount}} 回 もっと",
     "Node_content": "採集物情報",
     "Toggle_collapse": "グループ表示切り替わり",
@@ -379,8 +384,8 @@
     "Enable_packet_capture": "パケットキャプチャを使用（リアルタイム持ち物同期機能を追加）",
     "Packet_capture_info": "パケットキャプチャはACT（メーター）のように利用規約（ToS）に違反します。でも、スクウェア・エニックスからACTのようなプログラムを使用することを他の人に言わなければ黙認してくれます。ただ言わないでください。そうすれば、問題になることはありません。",
     "Enable_autofill_by_default": "Enable autofill by default",
+    "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Universalisに貢献する",
-    "Persist_inventory": "データベースに所持品を保存（ウェブバージョンと共有される）",
     "Track_items_on_sale": "リテイナーが販売されている物品も同期させる（クライアントやり直し、リフレッシュが必要）",
     "COLORS": {
       "Background": "背景色",
@@ -483,6 +488,7 @@
     "History": "履歴",
     "Items_count": "{{amount}} アイテム",
     "Show_craftable_amount": "制作可能な数量を表示する",
+    "Show_vendors": "Show first available vendor for each item",
     "Optimized_full_path": "全ての推奨経路を表示(最安値)",
     "Quick_layout_swap": "クイックレイアウトの切り替え",
     "Offline": "オフライン",
@@ -1344,11 +1350,44 @@
       "Chances_for_transition": "Chances for this transition to happen",
       "Weather_chances": "Chances for each weather to appear",
       "Bait": "Fishing bait",
+      "Refresh_data": "Refresh data",
       "TUG": {
         "Light": "Light",
         "Medium": "Medium",
         "Big": "Big"
+      },
+      "OVERLAY": {
+        "Open": "Open fishing report overlay",
+        "Bait": "Attached bait",
+        "Tug": "Tug",
+        "Hookset": "Hookset",
+        "Fishing": "Fishing",
+        "Mooch": "Last throw was mooch",
+        "Mooch_report": "Mooch",
+        "Current_weather": "Current weather",
+        "Previous_weather": "Previous weather",
+        "Spot": "Spot",
+        "Possible_fish": "Possible fish",
+        "Stats": "Stats",
+        "Statuses": "Statuses",
+        "No_statuses": "No relevant statuses",
+        "Total_reports": "Total reports for this session",
+        "Last_report": "Last report",
+        "Fish": "Fish",
+        "Size": "Size",
+        "ERRORS": {
+          "Unknown_map": "Map unknown, change zone to load it.",
+          "No_bait": "No bait detected, switch bait once to fix."
+        }
       }
+    },
+    "FISHING_SPOT": {
+      "Next": "Next",
+      "Possible_weathers": "Possible weathers",
+      "Available_fishes": "Available fishes",
+      "Fish_per_weather": "Fish per weather",
+      "Fish_per_bait": "Fish per bait",
+      "Fish_per_tug": "Fish per tug"
     },
     "NODE": {
       "Items": "アイテム",
@@ -1501,7 +1540,8 @@
     "Status": "ステータス",
     "Trait": "特性",
     "Any": "任意",
-    "Achievement": "アチーブメント"
+    "Achievement": "アチーブメント",
+    "Fishing-spot": "Fishing spot"
   },
   "SEARCH_FILTERS": {
     "Level": "レベル",
@@ -1533,7 +1573,7 @@
     "Remove_from_basket": "制作リストから削除",
     "Search": "レシピ検索",
     "Generate_list": "リストに追加",
-    "Description": "現在お持ちの素材の数量を入力し \"レシピ検索\" をクリックすると現在の素材で制作可能な品目がご確認することができ、望みな品目をリストに作成するのができます。",
+    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and easily generate a crafting list from the results.",
     "Empty_basket": "制作リストが空いています。",
     "Add_item": "アイテム追加",
     "Clipboard_content_malformed": "クリップボードにコピーされた内容の形式が正しくありません",

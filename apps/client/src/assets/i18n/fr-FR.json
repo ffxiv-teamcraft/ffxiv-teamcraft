@@ -144,7 +144,11 @@
     "Pie_charts": "Graphiques circulaires",
     "Read_more_on_wiki": "Lire plus de détails sur le wiki",
     "Apply": "Appliquer",
-    "Open_link": "Ouvrir un lien du site web"
+    "Open_link": "Ouvrir un lien du site web",
+    "Unknown": "Inconnu",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Average": "Moyenne"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -162,6 +166,7 @@
     "Volume": "Volume",
     "Macro_copied": "Macro copiée dans votre presse-papiers",
     "Open_overlay": "Ouvrir l'overlay",
+    "Open_alarms_overlay": "Ouvrir l'overlay des alarmes",
     "More_available": "et {{amount}} autres...",
     "Node_content": "Contenu du point de récolte",
     "Toggle_collapse": "Ouvrir/fermer tous les groupes",
@@ -379,8 +384,8 @@
     "Enable_packet_capture": "Capture de paquets activée (ajoute des fonctionnalités d'inventaire en temps réel)",
     "Packet_capture_info": "Capturer des paquets est contre le CLUF (Contrat de license de l'utilisateur final), la même raison pour laquelle ACT est contre le CLUF. Mais Square Enix le tolère à moins que vous ne vous soyez entrain de le répéter à tout le monde en jeu. Ne faites rien et vous ne risquerez rien.",
     "Enable_autofill_by_default": "Activer le remplissage automatique par défaut",
+    "Enable_autofill_hq_filter": "Remplissage automatique uniquement en utilisant des éléments hq lorsque l'élément est requis comme HQ",
     "Contribute_to_universalis": "Contribuer à Universalis",
-    "Persist_inventory": "Enregistrer l'inventaire en base de données (pour partager avec la version web)",
     "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
@@ -483,6 +488,7 @@
     "History": "Historique",
     "Items_count": "{{amount}} items",
     "Show_craftable_amount": "Voir la quantité fabricable",
+    "Show_vendors": "Afficher le premier vendeur disponible pour chaque objet",
     "Optimized_full_path": "Afficher le chemin optimisé complet (le moins cher et le plus rapide)",
     "Quick_layout_swap": "Changement de layout rapide",
     "Offline": "Hors ligne",
@@ -1339,16 +1345,49 @@
       "Max_size": "Taille max",
       "Avg_size": "Taille moy",
       "Used_as_mooch_for": "Utilisé comme vif pour",
-      "No_known_mooch_usage": "Aucune utilisation en tant que vif connue",
-      "No_spot_filter": "No spot filter",
-      "Chances_for_transition": "Chances for this transition to happen",
-      "Weather_chances": "Chances for each weather to appear",
-      "Bait": "Fishing bait",
+      "No_known_mooch_usage": "Aucune utilisation en tant que vif connue pour ce poisson",
+      "No_spot_filter": "Aucun filtre de spot",
+      "Chances_for_transition": "Chances que cette transition se produise",
+      "Weather_chances": "Chances pour chaque météo d'apparaître",
+      "Bait": "Appât",
+      "Refresh_data": "Actualiser les données",
       "TUG": {
         "Light": "Légère",
         "Medium": "Normale",
         "Big": "Puissante"
+      },
+      "OVERLAY": {
+        "Open": "Ouvrir l'overlay de pêche",
+        "Bait": "Appât utilisé",
+        "Tug": "Touche",
+        "Hookset": "Ferrage",
+        "Fishing": "Pêche",
+        "Mooch": "Dernier lancé était un vif",
+        "Mooch_report": "Vif",
+        "Current_weather": "Météo actuelle",
+        "Previous_weather": "Météo précédente",
+        "Spot": "Point de pêche",
+        "Possible_fish": "Poissons possibles",
+        "Stats": "Stats",
+        "Statuses": "Buffs",
+        "No_statuses": "Aucun buff pertinent",
+        "Total_reports": "Nombre de rapports pour cette session",
+        "Last_report": "Dernier rapport",
+        "Fish": "Poisson",
+        "Size": "Taille",
+        "ERRORS": {
+          "Unknown_map": "Carte inconnue, changer de zone pour la charger.",
+          "No_bait": "Aucun appât détecté, changez d'appât une fois pour régler le soucis."
+        }
       }
+    },
+    "FISHING_SPOT": {
+      "Next": "Suivant",
+      "Possible_weathers": "Météos possibles",
+      "Available_fishes": "Poissons disponibles",
+      "Fish_per_weather": "Poisson par météo",
+      "Fish_per_bait": "Poisson par appât",
+      "Fish_per_tug": "Poisson par touche"
     },
     "NODE": {
       "Items": "Objets",
@@ -1501,7 +1540,8 @@
     "Status": "État ",
     "Trait": "Trait",
     "Any": "Tout",
-    "Achievement": "Haut-fait"
+    "Achievement": "Haut-fait",
+    "Fishing-spot": "Point de pêche"
   },
   "SEARCH_FILTERS": {
     "Level": "Niveau",
