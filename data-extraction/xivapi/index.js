@@ -373,23 +373,21 @@ const gatheringLogPages = [
 
 
 function addToCraftingLogPage(entry, pageId) {
-  craftingLogPages[entry.CraftType.ID] = craftingLogPages[entry.CraftType.ID] || [];
-  let page = craftingLogPages[entry.CraftType.ID].find(page => page.id === pageId);
+  craftingLogPages[entry.CraftType] = craftingLogPages[entry.CraftType] || [];
+  let page = craftingLogPages[entry.CraftType].find(page => page.id === pageId);
   if (page === undefined) {
-    craftingLogPages[entry.CraftType.ID].push({
+    craftingLogPages[entry.CraftType].push({
       id: pageId,
       masterbook: entry.SecretRecipeBookTargetID,
       startLevel: entry.RecipeLevelTable,
       recipes: []
     });
-    page = craftingLogPages[entry.CraftType.ID].find(page => page.id === pageId);
+    page = craftingLogPages[entry.CraftType].find(page => page.id === pageId);
   }
   page.recipes.push({
     recipeId: entry.ID,
-    itemId: entry.ItemResultTargetID,
-    rlvl: entry.RecipeLevelTable.ID,
-    icon: entry.ItemResult.Icon,
-    category: entry.ItemResult.ItemUICategoryTargetID
+    itemId: entry.ItemResult,
+    rlvl: entry.RecipeLevelTable.ID
   });
 }
 
@@ -414,7 +412,18 @@ function addToGatheringLogPage(entry, pageId, gathererIndex) {
 
 
 if (hasTodo('craftingLog')) {
-  getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+  const recipeLevelTable = {};
+  const RecipeLevelTable$ = new Subject();
+  getAllPages('https://xivapi.com/RecipeLevelTable?columns=ClassJobLevel,Difficulty,ID,Quality,Stars,SuggestedControl,SuggestedCraftsmanship').subscribe(page => {
+    page.Results.forEach(entry => {
+      recipeLevelTable[entry.ID] = entry;
+    });
+  }, null, () => RecipeLevelTable$.next(recipeLevelTable));
+
+  combineLatest([
+    getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', true),
+    RecipeLevelTable$
+  ]).subscribe(([completeFetch, rlvlTable]) => {
     completeFetch.forEach(page => {
       // If it's an empty page, don't go further
       if (!page.Recipe0 || page.Recipe0.ID === -1) {
@@ -429,8 +438,8 @@ if (hasTodo('craftingLog')) {
         })
         .forEach(key => {
           const entry = page[key];
-          craftingLog[entry.CraftType.ID] = craftingLog[entry.CraftType.ID] || [];
-          craftingLog[entry.CraftType.ID].push(entry.ID);
+          entry.RecipeLevelTable = rlvlTable[entry.RecipeLevelTable];
+          craftingLog[entry.CraftType].push(entry.ID);
           addToCraftingLogPage(entry, page.ID);
         });
     });

@@ -41,7 +41,7 @@
                        fxLayoutAlign="flex-start center"
                        fxLayoutGap="5px">
                     <app-item-icon *ngIf="true | ifMobile: false"
-                                   [icon]="recipe.icon | xivapiIcon"
+                                   [icon]="recipe.itemId | lazyIcon"
                                    [itemId]="recipe.itemId"
                                    [width]="32"></app-item-icon>
                     <div fxLayout="column">
