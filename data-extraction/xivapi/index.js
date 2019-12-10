@@ -61,7 +61,9 @@ let todo = [
   'voyages',
   'worlds',
   'territories',
-  'actionTimeline'
+  'actionTimeline',
+  'suggestedValues',
+  'patchContent'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');
@@ -371,6 +373,7 @@ const gatheringLogPages = [
 
 
 function addToCraftingLogPage(entry, pageId) {
+  craftingLogPages[entry.CraftType.ID] = craftingLogPages[entry.CraftType.ID] || [];
   let page = craftingLogPages[entry.CraftType.ID].find(page => page.id === pageId);
   if (page === undefined) {
     craftingLogPages[entry.CraftType.ID].push({
@@ -426,6 +429,7 @@ if (hasTodo('craftingLog')) {
         })
         .forEach(key => {
           const entry = page[key];
+          craftingLog[entry.CraftType.ID] = craftingLog[entry.CraftType.ID] || [];
           craftingLog[entry.CraftType.ID].push(entry.ID);
           addToCraftingLogPage(entry, page.ID);
         });

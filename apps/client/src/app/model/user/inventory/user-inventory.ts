@@ -25,7 +25,20 @@ export class UserInventory extends DataModel {
     ContainerType.PremiumSaddleBag1,
     ContainerType.FreeCompanyBag0,
     ContainerType.FreeCompanyBag1,
-    ContainerType.FreeCompanyBag2
+    ContainerType.FreeCompanyBag2,
+    ContainerType.ArmoryOff,
+    ContainerType.ArmoryHead,
+    ContainerType.ArmoryBody,
+    ContainerType.ArmoryHand,
+    ContainerType.ArmoryWaist,
+    ContainerType.ArmoryLegs,
+    ContainerType.ArmoryFeet,
+    ContainerType.ArmoryNeck,
+    ContainerType.ArmoryEar,
+    ContainerType.ArmoryWrist,
+    ContainerType.ArmoryRing,
+    ContainerType.ArmorySoulCrystal,
+    ContainerType.ArmoryMain
   ];
 
   items: { [index: string]: InventoryContainer } = {};
@@ -39,7 +52,7 @@ export class UserInventory extends DataModel {
       Object.keys(this.items)
         .filter(key => {
           let matches = UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1 || key.indexOf(':') > -1;
-          if(onlyUserInventory){
+          if (onlyUserInventory) {
             matches = matches && +key < 10;
           }
           const matchesRetainerMarket = (+key.split(':')[1] === ContainerType.RetainerMarket);
@@ -143,7 +156,8 @@ export class UserInventory extends DataModel {
         }
         this.items[toContainerKey][packet.toSlot] = moved;
         if (packet.toContainer === ContainerType.HandIn
-          || packet.fromContainer === ContainerType.HandIn) {
+          || packet.fromContainer === ContainerType.HandIn
+          || (packet.fromContainer < 10 && packet.toContainer < 10)) {
           return null;
         }
         return moved;

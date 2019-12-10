@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { InventoryActionTypes, InventoryLoaded, ResetInventory, UpdateInventory } from './inventory.actions';
 import { UserInventoryService } from '../../../core/database/user-inventory.service';
-import { auditTime, catchError, distinctUntilKeyChanged, map, switchMap, switchMapTo, withLatestFrom } from 'rxjs/operators';
+import { auditTime, distinctUntilKeyChanged, map, switchMap, switchMapTo, withLatestFrom } from 'rxjs/operators';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { SettingsService } from '../../settings/settings.service';
@@ -20,28 +20,17 @@ export class InventoryEffects {
     switchMapTo(this.authFacade.user$),
     distinctUntilKeyChanged('$key'),
     switchMap((user) => {
-      if (this.settings.persistInventory || !this.platform.isDesktop()) {
-        return this.inventoryService.get(user.$key).pipe(
-          catchError(() => {
-            const newInventory = new UserInventory();
-            newInventory.characterId = user.defaultLodestoneId;
-            newInventory.$key = user.$key;
-            return of(newInventory);
-          })
-        );
-      } else {
-        const fromLocalStorage = localStorage.getItem(INVENTORY_FEATURE_KEY);
-        if (fromLocalStorage === null) {
-          const newInventory = new UserInventory();
-          newInventory.characterId = user.defaultLodestoneId;
-          return of(newInventory);
-        }
-        const fromLS = this.serializer.deserialize<UserInventory>(JSON.parse(fromLocalStorage), UserInventory);
-        if (fromLS.$key === undefined) {
-          fromLS.$key = user.$key;
-        }
-        return of(fromLS);
+      const fromLocalStorage = localStorage.getItem(INVENTORY_FEATURE_KEY);
+      if (fromLocalStorage === null) {
+        const newInventory = new UserInventory();
+        newInventory.characterId = user.defaultLodestoneId;
+        return of(newInventory);
       }
+      const fromLS = this.serializer.deserialize<UserInventory>(JSON.parse(fromLocalStorage), UserInventory);
+      if (fromLS.$key === undefined) {
+        fromLS.$key = user.$key;
+      }
+      return of(fromLS);
     }),
     map(inventory => new InventoryLoaded(inventory))
   );
@@ -50,13 +39,8 @@ export class InventoryEffects {
   updateInventory$ = this.actions$.pipe(
     ofType<UpdateInventory>(InventoryActionTypes.UpdateInventory),
     auditTime(30000),
-    switchMap(action => {
+    map(action => {
       localStorage.setItem(INVENTORY_FEATURE_KEY, JSON.stringify(action.payload));
-      if (this.settings.persistInventory || !this.platform.isDesktop()) {
-        return this.inventoryService.set(action.payload.$key, action.payload);
-      } else {
-        return of(null);
-      }
     })
   );
 

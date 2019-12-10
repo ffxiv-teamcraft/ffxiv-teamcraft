@@ -9,7 +9,7 @@
           <ng-template #description>
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                <span>{{node.areaid | placeName | i18n}} - lvl {{node.level}}
+                <span>{{node.mapid | mapName | i18n}} - lvl {{node.level}}
                   <app-db-button *ngIf="node.id" [id]="node.id" type="node"></app-db-button></span>
                 <nz-tag *ngIf="node.limitType !== undefined" nzColor="#108ee9">
                   {{node.limitType | i18n}}
@@ -88,7 +88,14 @@
               <div class="node-map">
                 <app-map [mapId]="node.mapid"
                          *ngIf="node.coords"
-                         [markers]="[{x:node.coords[0], y: node.coords[1]}]"></app-map>
+                         [markers]="[
+                         {
+                          x:node.coords[0],
+                          y: node.coords[1],
+                          iconImg: node.type | nodeTypeIcon: (node.time || []).length > 0,
+                          iconType: 'img'
+                         }
+                         ]"></app-map>
               </div>
             </div>
           </ng-template>

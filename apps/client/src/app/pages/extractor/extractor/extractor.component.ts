@@ -54,7 +54,7 @@ export class ExtractorComponent implements OnInit {
           this.done$.next(this.done$.value + 1);
         })
       );
-    }), 10).subscribe(items => {
+    }), 200).subscribe(items => {
       const blob = new Blob([JSON.stringify([].concat.apply([], items))], { type: 'text/plain;charset:utf-8' });
       saveAs(blob, `extracts.json`);
     });

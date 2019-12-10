@@ -14670,226 +14670,226 @@ export const achievements = {
     'fr': ''
   },
   '2446': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Da Ba Dee VI',
+    'de': 'Meisterschaft über die Blaumagie VI',
+    'ja': '青魔道士：レベル60',
+    'fr': 'Mage bleu émérite'
   },
   '2447': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'The More You Know VI',
+    'de': 'Das Wissen der Blauen Künste VI',
+    'ja': 'ラーニングマニア：ランク6',
+    'fr': 'Incollable VI'
   },
   '2448': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'The More You Know VII',
+    'de': 'Das Wissen der Blauen Künste VII',
+    'ja': 'ラーニングマニア：ランク7',
+    'fr': 'Incollable VII'
   },
   '2449': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Smokin\' VII',
+    'de': 'Manege frei VII',
+    'ja': 'マスクカーニバル：ランク7',
+    'fr': 'Spectacle grandiose VII'
   },
   '2450': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'None More Blue',
+    'de': 'Blauer Erdseim',
+    'ja': 'セルリウムブルー',
+    'fr': 'Bleu céruléen'
   },
   '2451': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Jack of All Trades I',
+    'de': 'Blau zielt besser I',
+    'ja': '青魔道士ログ：ランク1',
+    'fr': 'Tout un palmarès I'
   },
   '2452': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Jack of All Trades II',
+    'de': 'Blau zielt besser II',
+    'ja': '青魔道士ログ：ランク2',
+    'fr': 'Tout un palmarès II'
   },
   '2453': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Jack of All Trades III',
+    'de': 'Blau zielt besser III',
+    'ja': '青魔道士ログ：ランク3',
+    'fr': 'Tout un palmarès III'
   },
   '2454': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Inferno',
+    'de': 'Team Blau gegen Ifrit',
+    'ja': '焔神を屠りし青魔道士',
+    'fr': 'Des bleus pour le Seigneur des flammes'
   },
   '2455': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Crag',
+    'de': 'Team Blau gegen Titan',
+    'ja': '岩神を屠りし青魔道士',
+    'fr': 'Des bleus pour l\'Ébranleur des terres'
   },
   '2456': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Vortex',
+    'de': 'Team Blau gegen Garuda',
+    'ja': '嵐神を屠りし青魔道士',
+    'fr': 'Des bleus pour la Souffleuse de rafales'
   },
   '2457': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the King',
+    'de': 'Team Blau gegen Mogul Mog',
+    'ja': '極王を屠りし青魔道士',
+    'fr': 'Des bleus pour le bon roi'
   },
   '2458': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Whorl',
+    'de': 'Team Blau gegen Leviathan',
+    'ja': '水神を屠りし青魔道士',
+    'fr': 'Des bleus pour le Déchaîneur des marées'
   },
   '2459': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than Levin',
+    'de': 'Team Blau gegen Ramuh',
+    'ja': '雷神を屠りし青魔道士',
+    'fr': 'Des bleus pour le Patriarche fulgurant'
   },
   '2460': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Frost',
+    'de': 'Team Blau gegen Shiva',
+    'ja': '氷神を屠りし青魔道士',
+    'fr': 'Des bleus pour la Furie des neiges'
   },
   '2461': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Dragon',
+    'de': 'Team Blau gegen Bahamut I',
+    'ja': '始まりの大迷宮を制覇せし青魔道士',
+    'fr': 'Des bleus pour Bahamut I'
   },
   '2462': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Raven',
+    'de': 'Team Blau gegen Bahamut II',
+    'ja': '第ニの大迷宮を制覇せし青魔道士',
+    'fr': 'Des bleus pour Bahamut II'
   },
   '2463': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Dreadwyrm',
+    'de': 'Team Blau gegen Bahamut III',
+    'ja': '終わりの大迷宮を制覇せし青魔道士',
+    'fr': 'Des bleus pour Bahamut III'
   },
   '2464': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Hive',
+    'de': 'Team Blau gegen Ravana',
+    'ja': '武神を屠りし青魔道士',
+    'fr': 'Des bleus pour le Maître des lames'
   },
   '2465': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Expanse',
+    'de': 'Team Blau gegen Bismarck',
+    'ja': '雲神を屠りし青魔道士',
+    'fr': 'Des bleus pour le Migrateur des brumes'
   },
   '2466': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Round',
+    'de': 'Team Blau gegen Thordan',
+    'ja': '騎神を屠りし青魔道士',
+    'fr': 'Des bleus pour le Roi des rois'
   },
   '2467': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Fiend',
+    'de': 'Team Blau gegen Sephirot',
+    'ja': '魔神を屠りし青魔道士',
+    'fr': 'Des bleus pour Sephirot'
   },
   '2468': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Horde',
+    'de': 'Team Blau gegen Nidhogg',
+    'ja': '邪竜を屠りし青魔道士',
+    'fr': 'Des bleus pour le dragon maléfique'
   },
   '2469': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Goddess',
+    'de': 'Team Blau gegen Sophia',
+    'ja': '女神を屠りし青魔道士',
+    'fr': 'Des bleus pour Sophia'
   },
   '2470': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Demon',
+    'de': 'Team Blau gegen Zurvan',
+    'ja': '鬼神を屠りし青魔道士',
+    'fr': 'Des bleus pour Zurvan'
   },
   '2471': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Manipulator',
+    'de': 'Team Blau gegen Alexander I',
+    'ja': '起動せし機工城を制覇せし青魔道士',
+    'fr': 'Des bleus pour Alexander I'
   },
   '2472': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than Justice',
+    'de': 'Team Blau gegen Alexander II',
+    'ja': '律動せし機工城を制覇せし青魔道士',
+    'fr': 'Des bleus pour Alexander II'
   },
   '2473': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Mightier than the Prime',
+    'de': 'Team Blau gegen Alexander III',
+    'ja': '天動せし機工城を制覇せし青魔道士',
+    'fr': 'Des bleus pour Alexander III'
   },
   '2474': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Blue Unchained',
+    'de': 'Team Blau 3, Bahamut 0',
+    'ja': '大迷宮を極めし青魔道士',
+    'fr': 'Conte bleu de Bahamut'
   },
   '2475': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'Masked Conqueror',
+    'de': 'Team Blau 3, Alexander 0',
+    'ja': '機工城を極めし青魔道士',
+    'fr': 'Conte bleu d\'Alexander'
   },
   '2476': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'True Blue',
+    'de': 'Team Blau ist Sieger',
+    'ja': '豪傑の青魔道士',
+    'fr': 'L\'épopée des bleus d\'Éorzéa'
   },
   '2477': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'One Steppe at a Time I',
+    'de': 'Triumphator von Onsal Hakair I',
+    'ja': 'オンサル・ハカイル：ランク1',
+    'fr': 'Conquérant de la terre immaculée I'
   },
   '2478': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'One Steppe at a Time II',
+    'de': 'Triumphator von Onsal Hakair II',
+    'ja': 'オンサル・ハカイル：ランク2',
+    'fr': 'Conquérant de la terre immaculée II'
   },
   '2479': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'One Steppe at a Time III',
+    'de': 'Triumphator von Onsal Hakair III',
+    'ja': 'オンサル・ハカイル：ランク3',
+    'fr': 'Conquérant de la terre immaculée III'
   },
   '2480': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'One Steppe at a Time IV',
+    'de': 'Triumphator von Onsal Hakair IV',
+    'ja': 'オンサル・ハカイル：ランク4',
+    'fr': 'Conquérant de la terre immaculée IV'
   },
   '2481': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'One Steppe at a Time V',
+    'de': 'Triumphator von Onsal Hakair V',
+    'ja': 'オンサル・ハカイル：ランク5',
+    'fr': 'Conquérant de la terre immaculée V'
   },
   '2482': {
-    'en': '',
-    'de': '',
-    'ja': '',
-    'fr': ''
+    'en': 'One Steppe at a Time VI',
+    'de': 'Triumphator von Onsal Hakair VI',
+    'ja': 'オンサル・ハカイル：ランク6',
+    'fr': 'Conquérant de la terre immaculée VI'
   },
   '2483': {
     'en': 'Starlight de Chocobo',
@@ -14901,7 +14901,7 @@ export const achievements = {
     'en': 'Warrior of Love',
     'de': 'Krieger der Liebe',
     'ja': '愛の戦士たち',
-    'fr': '愛の戦士たち'
+    'fr': 'Rencontres de n\'importe quel type'
   },
   '2485': {
     'en': '',

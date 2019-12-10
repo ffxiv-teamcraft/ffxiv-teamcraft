@@ -48,7 +48,6 @@ module.exports.start = function(win, config, verbose, winpcap) {
       }
 
       const acceptedPackets = [
-        'statusEffectList',
         'itemInfo',
         'updateInventorySlot',
         'currencyCrystalInfo',
@@ -64,9 +63,6 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'updateClassInfo',
         'actorControl',
         'initZone',
-        'aetherReductionDlg',
-        'desynthOrReductionResult',
-        'persistentEffect',
         'effectResult',
         'eventPlay',
         'eventStart',
@@ -93,7 +89,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         }
       });
     } else {
-      throw new Error('Not enough permissions to run packet capture');
+      log.error('Not enough permissions to run packet capture');
     }
   });
 

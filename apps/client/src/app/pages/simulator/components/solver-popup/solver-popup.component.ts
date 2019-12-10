@@ -36,7 +36,7 @@ export class SolverPopupComponent implements OnInit {
   public submit(): void {
     this.loading = true;
     const formRaw = this.configForm.getRawValue();
-    if (this.solver.isSupported()) {
+    if (this.solver && this.solver.isSupported()) {
       this.solver.solveRotation(this.recipe, this.stats, formRaw.seeded ? this.seed : undefined)
         .subscribe(result => {
           this.ref.close(result);

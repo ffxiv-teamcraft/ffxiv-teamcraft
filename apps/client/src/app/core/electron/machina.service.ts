@@ -186,9 +186,9 @@ export class MachinaService {
         const itemsEntry = list.items.find(i => i.id === patch.itemId);
         const finalItemsEntry = list.finalItems.find(i => i.id === patch.itemId);
         if (itemsEntry && itemsEntry.done < itemsEntry.amount) {
-          this.listsFacade.setItemDone(patch.itemId, itemsEntry.icon, false, patch.quantity, itemsEntry.recipeId, itemsEntry.amount, false, true);
+          this.listsFacade.setItemDone(patch.itemId, itemsEntry.icon, false, patch.quantity, itemsEntry.recipeId, itemsEntry.amount, false, true, patch.hq);
         } else if (!itemsEntry && finalItemsEntry && finalItemsEntry.done < finalItemsEntry.amount) {
-          this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount, false, true);
+          this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount, false, true, patch.hq);
         }
       });
 
@@ -220,21 +220,23 @@ export class MachinaService {
 
     this.ipc.packets$.pipe(
       ofPacketType('actorControl'),
-      filter(packet => packet.category === 21)
+      filter(packet => packet.category === 21 && packet.sourceActorSessionID === packet.targetActorSessionID)
     ).subscribe(packet => {
       this.eorzeaFacade.removeStatus(packet.param1);
     });
 
     this.ipc.packets$.pipe(
       ofPacketType('actorControl'),
-      filter(packet => packet.category === 20)
+      filter(packet => packet.category === 20 && packet.sourceActorSessionID === packet.targetActorSessionID)
     ).subscribe(packet => {
       this.eorzeaFacade.addStatus(packet.param1);
     });
 
     this.ipc.packets$.pipe(
       ofPacketType('effectResult'),
-      filter(packet => packet.actorID1 === packet.actorID)
+      filter(packet => {
+        return packet.sourceActorSessionID === packet.targetActorSessionID && packet.actorID === packet.actorID1
+      })
     ).subscribe(packet => {
       this.eorzeaFacade.addStatus(packet.effectID);
     });

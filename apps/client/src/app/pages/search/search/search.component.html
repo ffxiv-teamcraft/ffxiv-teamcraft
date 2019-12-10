@@ -63,6 +63,8 @@
                    [nzValue]="searchTypes.TRAIT"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ACHIEVEMENT) | translate"
                    [nzValue]="searchTypes.ACHIEVEMENT"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.FISHING_SPOT) | translate"
+                   [nzValue]="searchTypes.FISHING_SPOT"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -454,7 +456,8 @@
                         nz-button nz-tooltip>
                   <i nz-icon nzType="clock-circle-o"></i>
                 </button>
-                <button (click)="openInSimulator(row.itemId, row.recipe.recipeId)" *ngIf="row.recipe !== undefined" [nzShape]="'circle'" [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate" [nzType]="'primary'"
+                <button (click)="openInSimulator(row.itemId, row.recipe.recipeId)" *ngIf="row.recipe !== undefined" [nzShape]="'circle'"
+                        [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate" [nzType]="'primary'"
                         nz-button
                         nz-tooltip>
                   <i class="material-icons">gavel</i>
@@ -721,6 +724,28 @@
                   </div>
                 </div>
                 <app-db-button [id]="row.id" type="achievement"></app-db-button>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="row.type === searchTypes.FISHING_SPOT" [class.odd]="odd"
+               class="result-row"
+               fxLayout="row"
+               fxLayout.lt-md="column"
+               fxLayoutAlign="flex-start flex-start"
+               fxLayoutAlign.lt-md="center center"
+               fxLayoutGap="5px">
+            <img src="./assets/icons/classjob/fisher.png" alt="" class="quest-icon" fxFlex="0 0 auto">
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <div fxLayout="column">
+                  <div fxLayout="row" fxLayoutGap="5px">
+                    <div>{{row.spot.zoneId | placeName | i18n}} - {{row.spot.placeId | placeName | i18n}}</div>
+                    <app-db-button [id]="row.id" type="fishing-spot"></app-db-button>
+                  </div>
+                  <div fxLayout="row" fxLayoutGap="5px">
+                    <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

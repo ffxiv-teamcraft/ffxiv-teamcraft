@@ -13,5 +13,6 @@ export enum SearchType {
   ACTION = 'Action',
   STATUS = 'Status',
   TRAIT = 'Trait',
-  ACHIEVEMENT = 'Achievement'
+  ACHIEVEMENT = 'Achievement',
+  FISHING_SPOT = 'Fishing-spot',
 }
