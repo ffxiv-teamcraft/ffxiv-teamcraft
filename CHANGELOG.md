@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.4.0"></a>
+# [6.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.3.3...v6.4.0) (2019-12-10)
+
+
+### Bug Fixes
+
+* **db:** changed bite times display for easier reading (graph was useless) ([0f1808f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f1808f))
+* **db:** fixed an issue with some place names not displayed properly ([655ba1a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/655ba1a))
+* **db:** fixed position name for some npcs ([d08d294](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d08d294))
+* **desktop:** fixed an issue with always on top option not saved properly ([4c73767](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c73767)), closes [#1278](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1278)
+* **desktop:** ignore packets inside overlays ([59cfe15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/59cfe15))
+* **fish:** fixed misses detection on fishing reporter ([f4d3c72](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f4d3c72))
+* **i18n:** fixed a typo in recipe finder ([76c64c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/76c64c4))
+* **i18n:** fixed missing translation for fishing data reloader ([df3a6dc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/df3a6dc))
+* **list:** fixed a bug with item move event counted as item obtention ([80a85e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/80a85e6))
+* **list:** fixed an issue with masterbooks button not being reloaded properly ([0414e32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0414e32))
+* **permissions:** fixed an issue with list permissions propagation ([85f1c24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/85f1c24))
+
+
+### Features
+
+* **core:** 5.15 content update ([b6e4683](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b6e4683))
+* **core:** gathering popups now use node type as icon ([dc7c259](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc7c259))
+* **db:** automatically select spot if there's only one available ([9122f22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9122f22))
+* **db:** fishing spot pages ([#1282](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1282)) ([f499c27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f499c27))
+* **desktop:** added an option to autofill only using HQ items when item has HQ flag ([8b34727](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8b34727)), closes [#1281](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1281)
+* **desktop:** added overlay for fishing data reporter ([17ebb89](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/17ebb89))
+* **desktop:** removed sync in database option entirely, as it was causing too many issues ([0ef7173](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ef7173))
+* **inventory:** added armory containers as tracked inventories ([f287a45](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f287a45))
+* **layout:** added an option to show first available vendor on each item of the list ([0d94635](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d94635))
+
+
+
 <a name="6.3.3"></a>
 ## [6.3.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.3.2...v6.3.3) (2019-12-03)
 
