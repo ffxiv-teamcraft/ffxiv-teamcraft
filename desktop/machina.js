@@ -48,7 +48,6 @@ module.exports.start = function(win, config, verbose, winpcap) {
       }
 
       const acceptedPackets = [
-        'statusEffectList',
         'itemInfo',
         'updateInventorySlot',
         'currencyCrystalInfo',
@@ -64,9 +63,6 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'updateClassInfo',
         'actorControl',
         'initZone',
-        'aetherReductionDlg',
-        'desynthOrReductionResult',
-        'persistentEffect',
         'effectResult',
         'eventPlay',
         'eventStart',

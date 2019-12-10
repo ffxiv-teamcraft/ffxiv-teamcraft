@@ -3474,39 +3474,39 @@
     "icon": "/i/061000/061836.png"
   },
   "35026": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Papa Mia",
+    "ja": "豪腕の父親「フンババ・パパ」",
+    "de": "Papa Mia",
+    "fr": "Papa Humbaba, le paternel aux gros bras",
+    "icon": "/i/061000/061836.png"
   },
   "35027": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Lock up Your Snorters",
+    "ja": "はないき爆破デスマッチ",
+    "de": "Explosives Schnaufen",
+    "fr": "Fungaaah! Et boum!",
+    "icon": "/i/061000/061836.png"
   },
   "35028": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Dangerous When Dead",
+    "ja": "至妙の傀儡子「ドゥリン」",
+    "de": "Begnadeter Puppenspieler",
+    "fr": "Durinn, marionnettiste d'outre-tombe",
+    "icon": "/i/061000/061836.png"
   },
   "35029": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Red, Fraught, and Blue",
+    "ja": "水と炎の歌",
+    "de": "Die Melodie von Feuer und Wasser",
+    "fr": "La mélodie du feu et de l'eau",
+    "icon": "/i/061000/061836.png"
   },
   "35030": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "The Catch of the Siegfried",
+    "ja": "世界一の剣士「ジークフリード」",
+    "de": "Siegfried, der beste Schwertkämpfer der Welt!",
+    "fr": "Siegfried, le plus grand bretteur du monde",
+    "icon": "/i/061000/061836.png"
   },
   "35031": {
     "en": null,
@@ -3766,11 +3766,15 @@
     ]
   },
   "50006": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Onsal Hakair (Danshig Naadam)",
+    "ja": "オンサル・ハカイル (終節戦)",
+    "de": "Onsal Hakair (Danshig Naadam)",
+    "fr": "Onsal Hakair (Danshig Naadam)",
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      23701,
+      23700
+    ]
   },
   "50007": {
     "en": null,

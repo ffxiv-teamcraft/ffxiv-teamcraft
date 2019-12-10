@@ -4538,10 +4538,10 @@ export const mapIds = [
   {
     'id': 568,
     'zone': 3378,
-    'name': '',
+    'name': 'Onsal Hakair',
     'territory': 888,
     'scale': 100,
-    'weatherRate': 0
+    'weatherRate': 117
   },
   {
     'id': 569,

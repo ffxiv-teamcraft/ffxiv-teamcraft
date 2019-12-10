@@ -14087,7 +14087,7 @@
   },
   "747": {
     "name": {
-      "en": "From Dusk Till Gone",
+      "en": "From Dusk till Gone",
       "ja": "薄暮の飛竜「ミナルジャ」",
       "de": "Tag der Abrechnung",
       "fr": "Défi: la vengeance du Vigile"
@@ -24220,7 +24220,7 @@
   },
   "1275": {
     "name": {
-      "en": "Dusk Till Abaddon",
+      "en": "Dusk till Abaddon",
       "ja": "騒音アバドン",
       "de": "Froschbelästigung",
       "fr": "Pollution sonore"
@@ -29598,195 +29598,195 @@
   },
   "1538": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 1st Stage: First Shift",
+      "ja": "名も無き者たちの広場：第一期整備計画着工",
+      "de": "Platz der Habenichtse: Erste Phase - Beginn",
+      "fr": "Esplanade des démunis, phase 1: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for the restoration effort. Obtain material from a supply pile, process it into a component at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten Gebäude, um den Wiederaufbau Ishgards voranzutreiben. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1539": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 1st Stage: Last Shift",
+      "ja": "名も無き者たちの広場：第一期整備計画完工",
+      "de": "Platz der Habenichtse: Erste Phase - Abschluss",
+      "fr": "Esplanade des démunis, phase 1: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for the restoration effort. Obtain material from a supply pile, process it into a component at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten Gebäude, um den Wiederaufbau Ishgards voranzutreiben. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1540": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 2nd Stage: First Shift",
+      "ja": "名も無き者たちの広場：第二期整備計画着工",
+      "de": "Platz der Habenichtse: Zweite Phase - Beginn",
+      "fr": "Esplanade des démunis, phase 2: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for the restoration effort. Obtain material from a supply pile, process it into a component at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten Gebäude, um den Wiederaufbau Ishgards voranzutreiben. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1541": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 2nd Stage: Last Shift",
+      "ja": "名も無き者たちの広場：第二期整備計画完工",
+      "de": "Platz der Habenichtse: Zweite Phase - Abschluss",
+      "fr": "Esplanade des démunis, phase 2: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for the restoration effort. Obtain material from a supply pile, process it into a component at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten Gebäude, um den Wiederaufbau Ishgards voranzutreiben. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1542": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 3rd Stage: First Shift",
+      "ja": "名も無き者たちの広場：第三期整備計画着工",
+      "de": "Platz der Habenichtse: Dritte Phase - Beginn",
+      "fr": "Esplanade des démunis, phase 3: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Better lighting is needed for the restoration effort. Obtain material from a supply pile, process it into fuel at a work station, and feed it to a brazier.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で燃料に加工して\n\n篝火に投入せよ",
+      "de": "Wir brauchen eine bessere Beleuchtung auf der Baustelle. Besorge dir Material vom Materialstapel, verarbeite es zu Brennstoff und befeuere damit eine der Feuerschalen.",
+      "fr": "Notre chantier a besoin d'être mieux éclairé. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le jeter dans un brasier."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1543": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 3rd Stage: Last Shift",
+      "ja": "名も無き者たちの広場：第三期整備計画完工",
+      "de": "Platz der Habenichtse: Dritte Phase - Abschluss",
+      "fr": "Esplanade des démunis, phase 3: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Equipment is being upgraded and facilities built for the restoration effort. Obtain material from a supply pile, process it into a component at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n設備と施設の建築を進めろ",
+      "de": "Wir müssen unsere Ausrüstung verbessern und weitere Gebäude errichten. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "Il faut mettre en place des équipements et construire d'autres installations. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1544": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 1st Stage: First Shift",
+      "ja": "名も無き者たちの広場：第一期整備計画着工",
+      "de": "Platz der Habenichtse: Erste Phase - Beginn",
+      "fr": "Esplanade des démunis, phase 1: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for the restoration effort. Obtain material from a supply pile, process it into a component at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten Gebäude, um den Wiederaufbau Ishgards voranzutreiben. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1545": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 1st Stage: Last Shift",
+      "ja": "名も無き者たちの広場：第一期整備計画完工",
+      "de": "Platz der Habenichtse: Erste Phase - Abschluss",
+      "fr": "Esplanade des démunis, phase 1: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for the restoration effort. Obtain material from a supply pile, process it into a component at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten Gebäude, um den Wiederaufbau Ishgards voranzutreiben. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1546": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 2nd Stage: First Shift",
+      "ja": "名も無き者たちの広場：第二期整備計画着工",
+      "de": "Platz der Habenichtse: Zweite Phase - Beginn",
+      "fr": "Esplanade des démunis, phase 2: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for the restoration effort. Obtain material from a supply pile, process it into a component at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten Gebäude, um den Wiederaufbau Ishgards voranzutreiben. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1547": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 2nd Stage: Last Shift",
+      "ja": "名も無き者たちの広場：第二期整備計画完工",
+      "de": "Platz der Habenichtse: Zweite Phase - Abschluss",
+      "fr": "Esplanade des démunis, phase 2: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for the restoration effort. Obtain material from a supply pile, process it into a component at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten Gebäude, um den Wiederaufbau Ishgards voranzutreiben. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1548": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 3rd Stage: First Shift",
+      "ja": "名も無き者たちの広場：第三期整備計画着工",
+      "de": "Platz der Habenichtse: Dritte Phase - Beginn",
+      "fr": "Esplanade des démunis, phase 3: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Better lighting is needed for the restoration effort. Obtain material from a supply pile, process it into fuel at a work station, and feed it to a brazier.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で燃料に加工して\n\n篝火に投入せよ",
+      "de": "Wir brauchen eine bessere Beleuchtung auf der Baustelle. Besorge dir Material vom Materialstapel, verarbeite es zu Brennstoff und befeuere damit eine der Feuerschalen.",
+      "fr": "Notre chantier a besoin d'être mieux éclairé. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le jeter dans un brasier."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1549": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mendicant's Court, 3rd Stage: Last Shift",
+      "ja": "名も無き者たちの広場：第三期整備計画完工",
+      "de": "Platz der Habenichtse: Dritte Phase - Abschluss",
+      "fr": "Esplanade des démunis, phase 3: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Equipment is being upgraded and facilities built for the restoration effort. Obtain material from a supply pile, process it into a component at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n設備と施設の建築を進めろ",
+      "de": "Wir müssen unsere Ausrüstung verbessern und weitere Gebäude errichten. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "Il faut mettre en place des équipements et construire d'autres installations. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1550": {
     "name": {

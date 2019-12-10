@@ -13629,11 +13629,11 @@
     "icon": "/i/015000/015013.png"
   },
   "1948": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Magic Damage Down",
+    "de": "Magieschaden -",
+    "ja": "魔法ダメージ低下",
+    "fr": "Malus de dégâts magiques",
+    "icon": "/i/015000/015055.png"
   },
   "1949": {
     "en": "Splashing Waters",
@@ -14791,95 +14791,95 @@
     "icon": "/i/013000/013708.png"
   },
   "2114": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Gobskin",
+    "de": "Gobhaut",
+    "ja": "ゴブスキン",
+    "fr": "Gobépiderme",
+    "icon": "/i/013000/013517.png"
   },
   "2115": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Conked",
+    "de": "Stumpfsinn",
+    "ja": "ＩＮＴ・ＭＮＤ低下",
+    "fr": "Malus d'intelligence et d'esprit",
+    "icon": "/i/013000/013518.png"
   },
   "2116": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Meatily Shielded",
+    "de": "Absichern",
+    "ja": "防御指示",
+    "fr": "Ordre défensif",
+    "icon": "/i/013000/013519.png"
   },
   "2117": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Meat Shield",
+    "de": "Absichern",
+    "ja": "防御指示［被］",
+    "fr": "Cible d'ordre défensif",
+    "icon": "/i/013000/013520.png"
   },
   "2118": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Harmonized",
+    "de": "Angriffsbereit",
+    "ja": "攻撃準備",
+    "fr": "Attaque préméditée",
+    "icon": "/i/013000/013521.png"
   },
   "2119": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Cactguard",
+    "de": "Sukkulentenschild",
+    "ja": "カクトガード",
+    "fr": "Cactugarde",
+    "icon": "/i/013000/013522.png"
   },
   "2120": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "HP Boost",
+    "de": "LP-Bonus",
+    "ja": "最大ＨＰ増加",
+    "fr": "PV maximum augmentés",
+    "icon": "/i/013000/013523.png"
   },
   "2121": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Astral Attenuation",
+    "de": "Lichtschwäche",
+    "ja": "星極性耐性低下",
+    "fr": "Résistance astrale diminuée",
+    "icon": "/i/013000/013524.png"
   },
   "2122": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Umbral Attenuation",
+    "de": "Schattenschwäche",
+    "ja": "霊極性耐性低下",
+    "fr": "Résistance ombrale diminuée",
+    "icon": "/i/013000/013525.png"
   },
   "2123": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Physical Attenuation",
+    "de": "Leibesschwäche",
+    "ja": "被物理ダメージ増加",
+    "fr": "Vulnérabilité physique augmentée",
+    "icon": "/i/013000/013526.png"
   },
   "2124": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Aetherial Mimicry: Tank",
+    "de": "Äther-Mimikry: Verteidiger",
+    "ja": "エーテルコピー：タンク",
+    "fr": "Éther de protecteur",
+    "icon": "/i/013000/013527.png"
   },
   "2125": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Aetherial Mimicry: DPS",
+    "de": "Äther-Mimikry: Angreifer",
+    "ja": "エーテルコピー：ＤＰＳ",
+    "fr": "Éther de combattant",
+    "icon": "/i/013000/013528.png"
   },
   "2126": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Aetherial Mimicry: Healer",
+    "de": "Äther-Mimikry: Heiler",
+    "ja": "エーテルコピー：ヒーラー",
+    "fr": "Éther de soigneur",
+    "icon": "/i/013000/013529.png"
   },
   "2127": {
     "en": "Brush with Death",
@@ -14903,45 +14903,45 @@
     "icon": "/i/015000/015999.png"
   },
   "2130": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Surpanakha's Fury",
+    "de": "Verbessertes Surpanakha",
+    "ja": "徹甲散弾強化",
+    "fr": "Surpanakha renforcée",
+    "icon": "/i/019000/019581.png"
   },
   "2131": {
     "en": "Battle High I",
     "de": "Euphorie I",
     "ja": "戦意高揚I",
-    "fr": "Extase du combat I",
+    "fr": "Ivresse du combat I",
     "icon": "/i/014000/014877.png"
   },
   "2132": {
     "en": "Battle High II",
     "de": "Euphorie II",
     "ja": "戦意高揚II",
-    "fr": "Extase du combat II",
+    "fr": "Ivresse du combat II",
     "icon": "/i/014000/014878.png"
   },
   "2133": {
     "en": "Battle High III",
     "de": "Euphorie III",
     "ja": "戦意高揚III",
-    "fr": "Extase du combat III",
+    "fr": "Ivresse du combat III",
     "icon": "/i/014000/014879.png"
   },
   "2134": {
     "en": "Battle High IV",
     "de": "Euphorie IV",
     "ja": "戦意高揚IV",
-    "fr": "Extase du combat IV",
+    "fr": "Ivresse du combat IV",
     "icon": "/i/014000/014880.png"
   },
   "2135": {
     "en": "Battle High V",
     "de": "Euphorie V",
     "ja": "戦意高揚V",
-    "fr": "Extase du combat V",
+    "fr": "Ivresse du combat V",
     "icon": "/i/014000/014881.png"
   },
   "2136": {
@@ -15099,11 +15099,11 @@
     "icon": "/i/015000/015989.png"
   },
   "2158": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Heavy",
+    "de": "Gewicht",
+    "ja": "ヘヴィ",
+    "fr": "Pesanteur",
+    "icon": "/i/015000/015002.png"
   },
   "2159": {
     "en": "Red Light",
@@ -15155,11 +15155,11 @@
     "icon": "/i/015000/015579.png"
   },
   "2166": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Magitek Field",
+    "de": "Magitek-Feld",
+    "ja": "魔導フィールド",
+    "fr": "Champ de force magitek",
+    "icon": "/i/015000/015220.png"
   },
   "2167": {
     "en": "",
@@ -15372,11 +15372,11 @@
     "icon": "/i/015000/015987.png"
   },
   "2197": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Death Becomes You",
+    "de": "Halb-Zombie",
+    "ja": "半分ゾンビー",
+    "fr": "Semi-zombification",
+    "icon": "/i/015000/015728.png"
   },
   "2198": {
     "en": "Vulnerability Down",
