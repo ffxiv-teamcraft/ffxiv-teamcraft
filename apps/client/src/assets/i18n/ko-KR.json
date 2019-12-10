@@ -144,7 +144,11 @@
     "Pie_charts": "파이 차트",
     "Read_more_on_wiki": "위키에서 자세히 보기",
     "Apply": "적용",
-    "Open_link": "웹사이트 열기"
+    "Open_link": "웹사이트 열기",
+    "Unknown": "알 수 없음",
+    "Minimum": "최소",
+    "Maximum": "최대",
+    "Average": "평균"
   },
   "ALARMS": {
     "Title": "알람",
@@ -162,6 +166,7 @@
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
     "Open_overlay": "오버레이 열기",
+    "Open_alarms_overlay": "알람 오버레이 열기",
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
@@ -379,8 +384,8 @@
     "Enable_packet_capture": "패킷 캡쳐를 사용 (실시간 소지품 동기화 기능 추가)",
     "Packet_capture_info": "패킷 캡쳐는 ACT(미터기) 와 같이 이용약관(ToS) 에 위배됩니다. 하지만 스퀘어에닉스에서는 ACT같은 외부 프로그램을 사용하는것을 다른사람들에게 말하지않으면 묵인해줍니다. 그냥 말하지마세요. 그러면 문제될건 없습니다.",
     "Enable_autofill_by_default": "자동채우기를 기본으로 설정하기",
+    "Enable_autofill_hq_filter": "자동채우기에서 HQ아이템이 필요할 때만 HQ아이템 사용하기",
     "Contribute_to_universalis": "Universalis에 기여하기",
-    "Persist_inventory": "데이터베이스에 소지품을 저장(웹버젼과 공유됨)",
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
     "COLORS": {
       "Background": "배경 색상",
@@ -483,6 +488,7 @@
     "History": "목록 변경내역",
     "Items_count": "아이템 {{amount}}개",
     "Show_craftable_amount": "제작 가능한 수량 표시",
+    "Show_vendors": "아이템 별 첫번째로 구매 가능한 상점 보기",
     "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
     "Quick_layout_swap": "빠른 레이아웃 전환",
     "Offline": "오프라인",
@@ -1340,15 +1346,48 @@
       "Avg_size": "평균 크기",
       "Used_as_mooch_for": "생미끼로 사용시 낚이는 물고기",
       "No_known_mooch_usage": "생미끼로 사용된 기록이 없습니다",
-      "No_spot_filter": "No spot filter",
-      "Chances_for_transition": "Chances for this transition to happen",
-      "Weather_chances": "Chances for each weather to appear",
-      "Bait": "Fishing bait",
+      "No_spot_filter": "필터링 없음",
+      "Chances_for_transition": "이 날씨로 변환될 확률",
+      "Weather_chances": "각 날씨별 나올수 있는 확률",
+      "Bait": "미끼",
+      "Refresh_data": "새로고침",
       "TUG": {
         "Light": "소형",
         "Medium": "중형",
         "Big": "대형"
+      },
+      "OVERLAY": {
+        "Open": "낚시 보고용 오버레이 열기",
+        "Bait": "현재 미끼",
+        "Tug": "입질",
+        "Hookset": "낚아채기",
+        "Fishing": "낚시",
+        "Mooch": "생미끼로 최종 캐스팅 했습니다.",
+        "Mooch_report": "생미끼",
+        "Current_weather": "현재 날씨",
+        "Previous_weather": "이전 날씨",
+        "Spot": "낚싯터",
+        "Possible_fish": "낚일수 있는 물고기",
+        "Stats": "능력치",
+        "Statuses": "상태",
+        "No_statuses": "최신 상태 없음",
+        "Total_reports": "이 세션에서 총 보고된 것들",
+        "Last_report": "최근 보고",
+        "Fish": "물고기",
+        "Size": "크기",
+        "ERRORS": {
+          "Unknown_map": "알수없는 지역입니다. 지역확인을 위해 임의의 위치로 텔레포트 해주세요.",
+          "No_bait": "미끼가 확인되지 않습니다. 교정을 위해 미끼를 한번 바꿔주세요"
+        }
       }
+    },
+    "FISHING_SPOT": {
+      "Next": "다음",
+      "Possible_weathers": "가능한 날씨",
+      "Available_fishes": "낚을수 있는 물고기",
+      "Fish_per_weather": "날씨당 물고기",
+      "Fish_per_bait": "미끼당 물고기",
+      "Fish_per_tug": "입질당 물고기"
     },
     "NODE": {
       "Items": "아이템",
@@ -1501,7 +1540,8 @@
     "Status": "상태",
     "Trait": "특성",
     "Any": "모두",
-    "Achievement": "업적"
+    "Achievement": "업적",
+    "Fishing-spot": "낚싯터"
   },
   "SEARCH_FILTERS": {
     "Level": "레벨",
@@ -1533,7 +1573,7 @@
     "Remove_from_basket": "제작 목록에서 제거",
     "Search": "제작법 찾기",
     "Generate_list": "목록에 추가",
-    "Description": "현재 가지고 있는 재료의 수량을 입력하고 \"제작법 찾기\" 를 클릭하면 현재 재료로 제작이 가능한 품목들을 확인할 수 있으며, 원하는 품목들을 목록으로 만들 수 있습니다.",
+    "Description": "현재 가지고 있는 재료의 수량을 입력하고 \"제작법 찾기\" 를 클릭하면 현재 재료로 제작이 가능한 품목들을 확인할 수 있으며, 원하는 품목들을 쉽게 목록으로 만들 수 있습니다.",
     "Empty_basket": "제작 목록이 비어있습니다",
     "Add_item": "아이템 추가",
     "Clipboard_content_malformed": "클립보드에 복사된 내용의 형식이 잘못되었습니다",

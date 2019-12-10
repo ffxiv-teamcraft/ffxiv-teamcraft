@@ -8,6 +8,7 @@ export interface StoredNode {
   mapid: number;
   level: number;
   limitType?: I18nName;
+  type?: number;
   coords?: number[];
   time?: number[];
   uptime?: number;

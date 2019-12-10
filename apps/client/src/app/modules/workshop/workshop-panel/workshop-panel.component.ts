@@ -174,7 +174,7 @@ export class WorkshopPanelComponent implements OnChanges {
       })
     ).subscribe((updatedLists: List[]) => {
       updatedLists.forEach(list => {
-        this.listsFacade.updateList(list, true);
+        this.listsFacade.updateList(list, true, true);
       });
       this.message.success(this.translate.instant('PERMISSIONS.Propagate_changes_done'));
     });

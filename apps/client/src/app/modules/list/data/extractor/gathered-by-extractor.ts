@@ -71,7 +71,8 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             id: +partial.i,
             zoneid: partial.z,
             level: +partial.l,
-            areaid: this.localized.getAreaIdByENName(partial.n)
+            areaid: this.localized.getAreaIdByENName(partial.n),
+            type: partial.t
           };
           if (details !== undefined) {
             const detailsItem = details.items.find(i => i.id === item.id);
@@ -141,7 +142,8 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             coords: spot.coords as number[],
             level: spot.lvl,
             fishEyes: spot.fishEyes || fishEyes[item.id] !== undefined,
-            snagging: spot.snagging
+            snagging: spot.snagging,
+            type: 4
           };
           if (spot.during !== undefined) {
             node.time = [spot.during.start];
@@ -186,7 +188,8 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
               areaid: partial.obj.z,
               mapid: mapId,
               level: partial.obj.l,
-              coords: [partial.obj.x, partial.obj.y]
+              coords: [partial.obj.x, partial.obj.y],
+              type: 4
             };
             gatheredBy.level = (gatheredBy.level === 0 || gatheredBy.level > partial.obj.l) ? partial.obj.l : gatheredBy.level;
             gatheredBy.nodes.push(node);

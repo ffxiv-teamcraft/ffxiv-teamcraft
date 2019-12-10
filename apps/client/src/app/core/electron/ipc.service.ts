@@ -3,7 +3,7 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcRenderer } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
-import { Observable, Subject } from 'rxjs';
+import { Observable, ReplaySubject, Subject } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 
@@ -76,6 +76,8 @@ export class IpcService {
 
   public machinaToggle: boolean;
 
+  public fishingState$: ReplaySubject<any> = new ReplaySubject<any>();
+
   constructor(private platformService: PlatformService, private router: Router) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
@@ -144,6 +146,7 @@ export class IpcService {
       }
       this.router.navigate(url.split('/'));
     });
+    this.on('fishing-state', (event, data) => this.fishingState$.next(data));
     // If we don't get a ping for an entire minute, something is wrong.
     this.packets$.pipe(
       ofPacketType('ping'),
@@ -157,11 +160,14 @@ export class IpcService {
   }
 
   private handlePacket(packet: any): void {
-    this.packets$.next(packet);
-    const debugPackets = (<any>window).debugPackets;
-    if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {
-      // tslint:disable-next-line:no-console
-      console.info(packet.type, packet);
+    // If we're inside an overlay, don't do anything with the packet, we don't care.
+    if (this._overlayUri === undefined) {
+      this.packets$.next(packet);
+      const debugPackets = (<any>window).debugPackets;
+      if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {
+        // tslint:disable-next-line:no-console
+        console.info(packet.type, packet);
+      }
     }
   }
 

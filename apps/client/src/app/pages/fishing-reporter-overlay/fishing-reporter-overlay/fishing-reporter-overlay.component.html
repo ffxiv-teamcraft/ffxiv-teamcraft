@@ -1,0 +1,149 @@
+<app-overlay-container uri="/fishing-reporter-overlay">
+  <div *ngIf="state$ | async as state" class="state-container">
+    <ng-container *ngIf="getErrors(state) as errors">
+      <div class="errors" fxLayout="column" *ngIf="errors.length > 0">
+        <div class="error" *ngFor="let error of errors">- {{error | translate}}</div>
+      </div>
+    </ng-container>
+    <ng-template #unknown>
+      <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+    </ng-template>
+    <div fxLayout="column" fxLayoutGap="5px">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'DB.FISH.OVERLAY.Fishing' | translate}}</div>
+        <div>{{(state.isFishing ? 'Yes' : 'No') | translate}}</div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'DB.FISH.OVERLAY.Bait' | translate}}</div>
+        <div *ngIf="state.baitId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+          <img class="fish-icon" src="{{(state.mooch ? (state.moochId || state.baitId) : state.baitId) | lazyIcon | xivapiIcon}}">
+          <div>{{(state.mooch ? (state.moochId || state.baitId) : state.baitId) | itemName | i18n}}</div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'DB.FISH.OVERLAY.Mooch' | translate}}</div>
+        <div>{{(state.mooch ? 'Yes' : 'No') | translate}}</div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'DB.FISH.OVERLAY.Spot' | translate}}</div>
+        <div *ngIf="state.spot; else unknown">{{state.spot.zoneId | placeName | i18n}}</div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'DB.FISH.OVERLAY.Current_weather' | translate}}</div>
+        <div *ngIf="state.weatherId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+          <img class="fish-icon" *ngIf="state.weatherId > 0"
+               src="{{state.weatherId | weatherIcon | xivapiIcon}}"
+               alt="{{state.weatherId | weatherName | i18n}}">
+          <div>{{state.weatherId | weatherName | i18n}}</div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'DB.FISH.OVERLAY.Previous_weather' | translate}}</div>
+        <div *ngIf="state.previousWeatherId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+          <img class="fish-icon" *ngIf="state.previousWeatherId > 0"
+               src="{{state.previousWeatherId | weatherIcon | xivapiIcon}}"
+               alt="{{state.previousWeatherId | weatherName | i18n}}">
+          <div>{{state.previousWeatherId | weatherName | i18n}}</div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'DB.FISH.OVERLAY.Stats' | translate}}</div>
+        <div *ngIf="state.stats; else unknown">{{state.stats.gathering}} / {{state.stats.perception}} / {{state.stats.gp}}</div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'DB.FISH.OVERLAY.Statuses' | translate}}</div>
+        <div *ngIf="state.statuses; else unknown" fxLayout="row" fxLayoutGap="5px">
+          <img *ngFor="let status of state.statuses" src="{{status | statusIcon | xivapiIcon}}" nz-tooltip [nzTitle]="status | statusName | i18n"
+               alt="{{status | statusName | i18n}}">
+          <span *ngIf="state.statuses.length === 0">
+            {{'DB.FISH.OVERLAY.No_statuses' | translate}}
+          </span>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'DB.FISH.OVERLAY.Total_reports' | translate}}</div>
+        <div>{{(state.reports || []).length}}</div>
+      </div>
+      <nz-divider [nzText]="'DB.FISH.OVERLAY.Last_report' | translate"></nz-divider>
+      <div *ngIf="(state.reports || []).length === 0; else lastReport">
+        {{'COMMON.None' | translate}}
+      </div>
+      <ng-template #lastReport>
+        <div fxLayout="column" *ngIf="state.reports[state.reports.length - 1] as report">
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'DB.FISH.OVERLAY.Fish' | translate}}</div>
+            <div *ngIf="report.itemId && report.itemId > 0; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+              <img class="fish-icon" src="{{report.itemId | lazyIcon | xivapiIcon}}">
+              <div>{{report.itemId | itemName | i18n}}</div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'DB.FISH.OVERLAY.Size' | translate}}</div>
+            <div *ngIf="report.size; else unknown">{{(report.size / 10) | number: '1.0-1'}} ilm</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'DB.FISH.Bite_time' | translate}}</div>
+            <div *ngIf="report.biteTime; else unknown">{{(report.biteTime / 10) | number: '1.0-1'}} s</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'Hq' | translate}}</div>
+            <div>{{(report.hq ? 'Yes' : 'No') | translate}}</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'DB.FISH.Baits' | translate}}</div>
+            <div *ngIf="report.baitId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+              <img class="fish-icon" src="{{report.baitId | lazyIcon | xivapiIcon}}">
+              <div>{{report.baitId | itemName | i18n}}</div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{762 | statusName | i18n}}</div>
+            <div>{{(report.fishEyes ? 'Yes' : 'No') | translate}}</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{761 | statusName | i18n}}</div>
+            <div>{{(report.snagging ? 'Yes' : 'No') | translate}}</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{763 | statusName | i18n}}</div>
+            <div>{{(report.chum ? 'Yes' : 'No') | translate}}</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'DB.FISH.OVERLAY.Mooch_report' | translate}}</div>
+            <div>{{(report.mooch ? 'Yes' : 'No') | translate}}</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'DB.FISH.OVERLAY.Tug' | translate}}</div>
+            <div>{{('DB.FISH.TUG.' + getTugName(report.tug)) | translate}}</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'DB.FISH.OVERLAY.Hookset' | translate}}</div>
+            <div>{{getHooksetActionId(report.hookset) | actionName | i18n}}</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'DB.FISH.OVERLAY.Current_weather' | translate}}</div>
+            <div *ngIf="report.weatherId; else unknown" fxLayout="row" fxLayoutGap="5px">
+              <img class="fish-icon" *ngIf="report.weatherId > 0"
+                   src="{{report.weatherId | weatherIcon | xivapiIcon}}"
+                   nz-tooltip
+                   [nzTitle]="report.weatherId | weatherName | i18n"
+                   alt="{{report.weatherId | weatherName | i18n}}">
+              <div>{{report.weatherId | weatherName | i18n}}</div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'DB.FISH.OVERLAY.Previous_weather' | translate}}</div>
+            <div *ngIf="report.previousWeatherId; else unknown" fxLayout="row" fxLayoutGap="5px">
+              <img class="fish-icon" *ngIf="report.previousWeatherId > 0"
+                   src="{{report.previousWeatherId | weatherIcon | xivapiIcon}}"
+                   nz-tooltip
+                   [nzTitle]="report.previousWeatherId | weatherName | i18n"
+                   alt="{{report.previousWeatherId | weatherName | i18n}}">
+              <div>{{report.previousWeatherId | weatherName | i18n}}</div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</app-overlay-container>

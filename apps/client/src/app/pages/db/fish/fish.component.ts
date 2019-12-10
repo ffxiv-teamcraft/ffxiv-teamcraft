@@ -8,10 +8,8 @@ import { distinctUntilChanged, map, switchMap, switchMapTo, tap } from 'rxjs/ope
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import * as shape from 'd3-shape';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { fishingSpots } from '../../../core/data/sources/fishing-spots';
-import { fishes } from '../../../core/data/sources/fishes';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
 
@@ -173,7 +171,10 @@ export class FishComponent implements OnInit {
           return entry.fishEyes === true;
         }) || { occurences: 0 }).occurences / totalFishEyes;
         const totalWeatherTransitions = result.data.weather_transitions_per_fish.reduce((acc, row) => acc + row.occurences, 0);
-        const sortedBiteTimes = result.data.bite_time_per_fish.sort((a, b) => a.biteTime - b.biteTime);
+        const totalBiteTimes = result.data.bite_time_per_fish.reduce((acc, row) => acc + row.occurences, 0);
+        const sortedBiteTimes = result.data.bite_time_per_fish
+          .filter(entry => entry.occurences > 5 || entry.occurences > totalBiteTimes / 2)
+          .sort((a, b) => a.biteTime - b.biteTime);
         const sortedWeathers = result.data.weathers_per_fish.sort((a, b) => b.occurences - a.occurences);
         const sortedBaits = result.data.baits_per_fish
           .filter(entry => {
@@ -209,26 +210,15 @@ export class FishComponent implements OnInit {
             raw: sortedBaits
           },
           biteTimeChart: {
-            view: [400, 300],
-            data: [
-              {
-                name: '',
-                series: sortedBiteTimes
-                  .filter(entry => entry.occurences > 5)
-                  .map(entry => {
-                    return {
-                      name: entry.biteTime / 10,
-                      value: entry.occurences
-                    };
-                  })
-              }
-            ],
-            curve: shape.curveBasisOpen,
             min: (sortedBiteTimes[0] || { biteTime: 0 }).biteTime / 10,
-            max: (sortedBiteTimes[sortedBiteTimes.length - 1] || { biteTime: 0 }).biteTime / 10
+            max: (sortedBiteTimes[sortedBiteTimes.length - 1] || { biteTime: 0 }).biteTime / 10,
+            avg: sortedBiteTimes
+              .reduce((acc, entry) => {
+                return entry.biteTime * entry.occurences + acc;
+              }, 0) / totalBiteTimes / 10
           },
           weathersChart: {
-            view: [400, this.spot$.value === -1 ? 300 : 200],
+            view: [500, this.spot$.value === -1 ? 300 : 200],
             data: sortedWeathers.map(entry => {
               return {
                 name: this.i18n.getName(this.l12n.getWeather(entry.weatherId)),
@@ -244,7 +234,6 @@ export class FishComponent implements OnInit {
             })
           },
           usedAsMoochFor: result.data.used_for_mooch,
-          mooches: sortedBaits.filter(entry => fishes.includes(entry.baitId)),
           weatherTransitions: result.data.weather_transitions_per_fish
             .sort((a, b) => b.occurences - a.occurences)
             .map(entry => {
@@ -289,7 +278,12 @@ export class FishComponent implements OnInit {
           minGathering: result.data.fishingresults_aggregate.aggregate.min.gathering
         };
       }),
-      tap(() => this.loading = false)
+      tap((data) => {
+        if (this.spot$.value === -1 && data.everySpots.length === 1) {
+          this.spot$.next(data.everySpots[0].spot);
+        }
+        this.loading = false;
+      })
     );
   }
 }

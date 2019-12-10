@@ -217,8 +217,8 @@ export class ListsFacade {
     return list;
   }
 
-  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false): void {
-    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external, fromPacket));
+  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false, hq = false): void {
+    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external, fromPacket, hq));
   }
 
   updateItem(item: ListRow, finalItem: boolean): void {
@@ -275,7 +275,10 @@ export class ListsFacade {
       this.userInventoryService.inventory$.pipe(
         first(),
         filter((inventory) => {
-          return (inventory.lastZone || 0) < environment.startTimestamp;
+          if (!inventory.lastZone) {
+            return true;
+          }
+          return inventory.lastZone.seconds < environment.startTimestamp / 1000;
         }),
         map(() => {
           return this.dialog.create({
@@ -288,7 +291,7 @@ export class ListsFacade {
         }),
         switchMap((modal) => {
           return this.userInventoryService.inventory$.pipe(
-            filter(inventory => (inventory.lastZone || 0) > environment.startTimestamp),
+            filter(inventory => inventory.lastZone.seconds > environment.startTimestamp / 1000),
             first(),
             map(() => modal)
           );

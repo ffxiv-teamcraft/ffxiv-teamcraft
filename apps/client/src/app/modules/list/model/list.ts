@@ -177,6 +177,29 @@ export class List extends DataWithPermissions {
     return this.finalItems.length === 0;
   }
 
+  public requiredAsHQ(item: ListRow): number {
+    const recipesNeedingItem = this.finalItems
+      .filter(i => i.requires !== undefined)
+      .filter(i => {
+        return (i.requires || []).some(req => req.id === item.id);
+      });
+    if (item.requiredAsHQ) {
+      return item.amount;
+    }
+    if (this.disableHQSuggestions) {
+      return 0;
+    }
+    if (recipesNeedingItem.length === 0 || item.requiredAsHQ === false) {
+      return 0;
+    } else {
+      let count = 0;
+      recipesNeedingItem.forEach(recipe => {
+        count += recipe.requires.find(req => req.id === item.id).amount * recipe.amount;
+      });
+      return count;
+    }
+  }
+
   public getItemById(id: number | string, excludeFinalItems: boolean = false, onlyFinalItems = false, recipeId?: string): ListRow {
     let array = this.items;
     if (!excludeFinalItems && !onlyFinalItems) {
