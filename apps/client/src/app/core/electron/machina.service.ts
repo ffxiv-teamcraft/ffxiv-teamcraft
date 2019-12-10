@@ -234,7 +234,9 @@ export class MachinaService {
 
     this.ipc.packets$.pipe(
       ofPacketType('effectResult'),
-      filter(packet => packet.sourceActorSessionID === packet.targetActorSessionID)
+      filter(packet => {
+        return packet.sourceActorSessionID === packet.targetActorSessionID && packet.actorID === packet.actorID1
+      })
     ).subscribe(packet => {
       this.eorzeaFacade.addStatus(packet.effectID);
     });
