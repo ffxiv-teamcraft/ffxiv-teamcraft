@@ -53,7 +53,7 @@
           </ng-template>
           <div class="bag-container">
             <cdk-virtual-scroll-viewport class="bag" itemSize="65">
-              <nz-list [nzItemLayout]="'horizontal'" [nzRenderItem]="itemTemplate" nzSize="small">
+              <nz-list [nzItemLayout]="'horizontal'" nzSize="small">
                 <nz-list-item *cdkVirtualFor="let item of inventory.items" [nzContent]="content" class="bag-item">
                   <nz-list-item-meta
                     [nzAvatar]="avatar"
