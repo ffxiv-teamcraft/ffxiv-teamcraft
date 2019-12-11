@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { AuthFacade } from './+state/auth.facade';
-import { filter, switchMap } from 'rxjs/operators';
+import { filter, switchMap, first } from 'rxjs/operators';
 
 @Injectable()
 export class ApolloInterceptor implements HttpInterceptor {
@@ -14,6 +14,7 @@ export class ApolloInterceptor implements HttpInterceptor {
       return this.authFacade.idToken$
         .pipe(
           filter(token => token.claims['https://hasura.io/jwt/claims'] !== undefined),
+          first(),
           switchMap(idToken => {
             const clone = req.clone({
               setHeaders: {

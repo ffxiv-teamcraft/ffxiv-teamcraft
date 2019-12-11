@@ -189,7 +189,8 @@ export class FishingReporter implements DataReporter {
       map(() => {
         return {
           id: -1,
-          hq: false
+          hq: false,
+          size: 0
         };
       })
     );

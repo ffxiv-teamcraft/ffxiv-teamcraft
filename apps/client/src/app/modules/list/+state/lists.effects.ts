@@ -293,11 +293,6 @@ export class ListsEffects {
     }),
     map(([action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled]) => {
       const item = list.getItemById(action.itemId, !action.finalItem, action.finalItem);
-      if (autofillEnabled && this.settings.enableAutofillHQFilter) {
-        if (!(list as List).requiredAsHQ(item)) {
-          return !action.fromPacket || action.hq;
-        }
-      }
       const historyEntry = list.modificationsHistory.find(entry => {
         return entry.itemId === action.itemId && (Date.now() - entry.date < 600000);
       });

@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "6.4.0",
+  "version": "6.4.1",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -55,7 +55,6 @@
     },
     "nsisWeb": {
       "include": "./tools/build/nsis/include.nsh",
-      "allowToChangeInstallationDirectory": true,
       "oneClick": false,
       "differentialPackage": true,
       "artifactName": "${productName}-setup.${ext}"

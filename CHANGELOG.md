@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.4.1"></a>
+## [6.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.4.0...v6.4.1) (2019-12-11)
+
+
+### Bug Fixes
+
+* **inventory:** fixed an issue with autofill not taking armory into account ([7579b30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7579b30))
+* **list:** fixed an issue with HQ filter in setting blocking input somehow ([74d5657](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/74d5657))
+* **log-tracker:** fixed empty pages in log tracker ([2d12345](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d12345))
+
+
+### Features
+
+* **inventory:** added retainer sale as inventories in the inventory page ([c369a67](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c369a67))
+
+
+
 <a name="6.4.0"></a>
 # [6.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.3.3...v6.4.0) (2019-12-10)
 

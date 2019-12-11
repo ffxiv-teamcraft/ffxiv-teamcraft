@@ -1653,7 +1653,8 @@
       "FC_chest": "Coffre de compagnie",
       "Bag": "Inventaire",
       "Other": "Autre inventaire",
-      "Armory": "Arsenal"
+      "Armory": "Arsenal",
+      "RetainerMarket": "On sale by retainers"
     }
   },
   "INVENTORY_OPTIMIZER": {

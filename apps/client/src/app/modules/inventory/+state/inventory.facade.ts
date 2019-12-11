@@ -41,6 +41,8 @@ export class InventoryFacade {
       case ContainerType.RetainerBag5:
       case ContainerType.RetainerBag6:
         return 'RetainerBag';
+      case ContainerType.RetainerMarket:
+        return 'RetainerMarket';
       case ContainerType.SaddleBag0:
       case ContainerType.SaddleBag1:
       case ContainerType.PremiumSaddleBag0:

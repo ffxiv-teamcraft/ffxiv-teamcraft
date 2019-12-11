@@ -38,7 +38,8 @@ export class UserInventory extends DataModel {
     ContainerType.ArmoryWrist,
     ContainerType.ArmoryRing,
     ContainerType.ArmorySoulCrystal,
-    ContainerType.ArmoryMain
+    ContainerType.ArmoryMain,
+    ContainerType.RetainerMarket
   ];
 
   items: { [index: string]: InventoryContainer } = {};

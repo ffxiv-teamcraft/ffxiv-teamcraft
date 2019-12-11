@@ -1653,7 +1653,8 @@
       "FC_chest": "FC chest",
       "Bag": "物品栏",
       "Other": "Other inventory",
-      "Armory": "Armory"
+      "Armory": "Armory",
+      "RetainerMarket": "On sale by retainers"
     }
   },
   "INVENTORY_OPTIMIZER": {
