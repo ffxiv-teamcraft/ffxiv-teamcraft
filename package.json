@@ -55,7 +55,6 @@
     },
     "nsisWeb": {
       "include": "./tools/build/nsis/include.nsh",
-      "allowToChangeInstallationDirectory": true,
       "oneClick": false,
       "differentialPackage": true,
       "artifactName": "${productName}-setup.${ext}"
