@@ -63,7 +63,8 @@ let todo = [
   'territories',
   'actionTimeline',
   'suggestedValues',
-  'patchContent'
+  'patchContent',
+  'places'
 ];
 
 const onlyIndex = process.argv.indexOf('--only');

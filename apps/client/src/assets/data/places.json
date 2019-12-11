@@ -7470,10 +7470,10 @@
     "fr": "Embarcadère"
   },
   "1246": {
-    "en": "Airship Landing",
-    "ja": "飛空艇乗り場",
-    "de": "Luftschiff-Landeplatz",
-    "fr": "Aérodrome"
+    "en": "Landing",
+    "ja": "発着場",
+    "de": "Landeplatz",
+    "fr": "Embarcadère"
   },
   "1247": {
     "en": "Settlement",
@@ -15348,10 +15348,10 @@
     "fr": "Halle du Juste"
   },
   "2559": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Skybuilders' Board",
+    "ja": "復興事業掲示板",
+    "de": "Schwarzes Brett der Himmelsstadt",
+    "fr": "Panneau d'informations"
   },
   "2560": {
     "en": "",
@@ -18072,7 +18072,7 @@
     "fr": "Institut Mitron"
   },
   "3013": {
-    "en": "The Words of Halmarult",
+    "en": "The Words of Halmarut",
     "ja": "ハルマルト院",
     "de": "Halmarults Worte",
     "fr": "Institut Halmarut"
@@ -18096,10 +18096,10 @@
     "fr": "Toit"
   },
   "3017": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Liminal Space",
+    "ja": "階差閉宇宙",
+    "de": "Geschlossene Raumzeit",
+    "fr": "Univers différentiel"
   },
   "3018": {
     "en": "The Qitana Ravel",
@@ -18945,7 +18945,7 @@
     "en": "Sextuplet Shallow",
     "ja": "六つ子の浅瀬",
     "de": "Sechslingssyrte",
-    "fr": "Bas-fond des Sextuplets"
+    "fr": "Bas-fond des Sextuplés"
   },
   "3159": {
     "en": "The Church at Dammroen Field",
@@ -18980,8 +18980,8 @@
   "3164": {
     "en": "Lyhe Ghiah",
     "ja": "リェー・ギア城",
-    "de": "Schloss Lyhe-Ghiah",
-    "fr": "Lyhe-Ghiah"
+    "de": "Schloss Lyhe Ghiah",
+    "fr": "Lyhe Ghiah"
   },
   "3165": {
     "en": "The Citia Swamps",
@@ -19280,7 +19280,7 @@
   "3214": {
     "en": "The Core",
     "ja": "エデンコア",
-    "de": "Der Kern",
+    "de": "Das Herz",
     "fr": "Cœur d'Éden"
   },
   "3215": {
@@ -19370,8 +19370,8 @@
   "3229": {
     "en": "The Dungeons of Lyhe Ghiah",
     "ja": "リェー・ギア・ダンジョン",
-    "de": "Verliese von Lyhe-Ghiah",
-    "fr": "Donjon hypogéen du Lyhe-Ghiah"
+    "de": "Verliese von Lyhe Ghiah",
+    "fr": "Donjon hypogéen du Lyhe Ghiah"
   },
   "3230": {
     "en": "The Point of No Return",
@@ -19896,10 +19896,10 @@
     "fr": "Calice rouge"
   },
   "3317": {
-    "en": "The Rotzatl",
+    "en": "The Lozatl",
     "ja": "ロツァトル川",
-    "de": "Lotzaltl",
-    "fr": "Rotzatl"
+    "de": "Lozatl",
+    "fr": "Lozatl"
   },
   "3318": {
     "en": "South Mjrl's Regret",
@@ -20060,8 +20060,8 @@
   "3344": {
     "en": "North Lyhe Ghiah",
     "ja": "リェー・ギア城北",
-    "de": "Schloss Lyhe-Ghiah (Norden)",
-    "fr": "Nord du Lyhe-Ghiah"
+    "de": "Schloss Lyhe Ghiah (Norden)",
+    "fr": "Nord du Lyhe Ghiah"
   },
   "3345": {
     "en": "Deepwood Swim",
@@ -20139,13 +20139,13 @@
     "en": "The March of the Marchioness",
     "ja": "花侯爵の凱旋路",
     "de": "Prachtparade der Blumengräfin",
-    "fr": "Arches des nobles Veuves"
+    "fr": "Arches de la Marquise"
   },
   "3358": {
     "en": "The Woolen Way",
     "ja": "羊毛街道",
     "de": "Wollweg",
-    "fr": "Route de la Laine"
+    "fr": "Route de la laine"
   },
   "3359": {
     "en": "Mithai Glorianda",
@@ -20178,10 +20178,10 @@
     "fr": "Géant accroupi"
   },
   "3364": {
-    "en": "The Rotzatl",
+    "en": "The Lozatl",
     "ja": "ロツァトル川",
-    "de": "Lotzaltl",
-    "fr": "Rotzatl"
+    "de": "Lozatl",
+    "fr": "Lozatl"
   },
   "3365": {
     "en": "The Red Chalice",
@@ -20244,57 +20244,405 @@
     "fr": "Relais à amaros"
   },
   "3375": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Martial Court",
+    "ja": "兵棋の間",
+    "de": "Kleine Stufenarkade",
+    "fr": "La Cour martiale"
   },
   "3376": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Font of Quintessence",
+    "ja": "春の泉",
+    "de": "Broderieparterre",
+    "fr": "La Source de Quintessence"
   },
   "3377": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Chamber of Celestial Song",
+    "ja": "演奏の間",
+    "de": "Die Großen Vergnügungen",
+    "fr": "Le Chœur céleste"
   },
   "3378": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Onsal Hakair",
+    "ja": "オンサル・ハカイル",
+    "de": "Onsal Hakair",
+    "fr": "Onsal Hakair"
   },
   "3379": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Western Onsal Hakair",
+    "ja": "オンサル・ハカイル西部",
+    "de": "Westliches Onsal Hakair",
+    "fr": "Ouest d'Onsal Hakair"
   },
   "3380": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Eastern Onsal Hakair",
+    "ja": "オンサル・ハカイル東部",
+    "de": "Östliches Onsal Hakair",
+    "fr": "Est d'Onsal Hakair"
   },
   "3381": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Southern Onsal Hakair",
+    "ja": "オンサル・ハカイル南部",
+    "de": "Südliches Onsal Hakair",
+    "fr": "Sud d'Onsal Hakair"
   },
   "3382": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bagurchi Abjiya",
+    "ja": "聖者バグルチの神託",
+    "de": "Bagurchi Abjiya",
+    "fr": "Révélation de Bagurchi"
   },
   "3383": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bagurchi's Vindication",
+    "ja": "侮られしバグルチの不屈",
+    "de": "Bagurchis Sühne",
+    "fr": "Rigueur de Bagurchi"
+  },
+  "3384": {
+    "en": "Bagurchi's Foresight",
+    "ja": "聡きバグルチの旅程",
+    "de": "Bagurchis Vision",
+    "fr": "Clairvoyance de Bagurchi"
+  },
+  "3385": {
+    "en": "The Grand Cosmos",
+    "ja": "グラン・コスモス",
+    "de": "Chateau Cosmea",
+    "fr": "Cosmos coruscant"
+  },
+  "3386": {
+    "en": "The Chivalric Sphere",
+    "ja": "騎士の城館",
+    "de": "Marmorflügel",
+    "fr": "Quartiers des chevaliers"
+  },
+  "3387": {
+    "en": "The Regal Sphere",
+    "ja": "王妃の庭園",
+    "de": "Blumenhof der Königlichen Gattin",
+    "fr": "Jardin de la reine"
+  },
+  "3388": {
+    "en": "The Divine Sphere",
+    "ja": "王の宮殿",
+    "de": "Palais des Monarchen",
+    "fr": "Résidence du roi"
+  },
+  "3389": {
+    "en": "The Presence Chamber",
+    "ja": "騎士の間",
+    "de": "Rittersaal",
+    "fr": "Salle des chevaliers"
+  },
+  "3390": {
+    "en": "The Cross of Blades",
+    "ja": "剣槍の間",
+    "de": "Waffenkammer",
+    "fr": "Salle des lames"
+  },
+  "3391": {
+    "en": "The Myrhinne Hall",
+    "ja": "蛍石のホール",
+    "de": "Drachenbecken",
+    "fr": "Bassin murrhin"
+  },
+  "3392": {
+    "en": "The Chamber of Raised Cups",
+    "ja": "会食の間",
+    "de": "Fliedersaal",
+    "fr": "Salle des banquets"
+  },
+  "3393": {
+    "en": "The Chamber of Immortal Legacy",
+    "ja": "英雄の間",
+    "de": "Heldengalerie",
+    "fr": "Salle des héros"
+  },
+  "3394": {
+    "en": "The Chamber of Courtly Love",
+    "ja": "舞踏の間",
+    "de": "Prunksaal",
+    "fr": "Salle de bal"
+  },
+  "3395": {
+    "en": "Upper Stratum",
+    "ja": "工場廃墟：上層",
+    "de": "Obergeschoss",
+    "fr": "Niveau supérieur"
+  },
+  "3396": {
+    "en": "Middle Stratum",
+    "ja": "工場廃墟：中層",
+    "de": "Mittelbau",
+    "fr": "Niveau médian"
+  },
+  "3397": {
+    "en": "Lower Stratum",
+    "ja": "工場廃墟：下層",
+    "de": "Untergeschoss",
+    "fr": "Niveau inférieur"
+  },
+  "3398": {
+    "en": "Deep Stratum",
+    "ja": "工場廃墟：深層",
+    "de": "Fabriktiefen",
+    "fr": "Profondeurs"
+  },
+  "3399": {
+    "en": "Zone 1",
+    "ja": "第1区画",
+    "de": "Sektor 1",
+    "fr": "Secteur 1"
+  },
+  "3400": {
+    "en": "Zone 2",
+    "ja": "第2区画",
+    "de": "Sektor 2",
+    "fr": "Secteur 2"
+  },
+  "3401": {
+    "en": "Zone 3",
+    "ja": "第3区画",
+    "de": "Sektor 3",
+    "fr": "Secteur 3"
+  },
+  "3402": {
+    "en": "Zone 4",
+    "ja": "第4区画",
+    "de": "Sektor 4",
+    "fr": "Secteur 4"
+  },
+  "3403": {
+    "en": "Zone 5",
+    "ja": "第5区画",
+    "de": "Sektor 5",
+    "fr": "Secteur 5"
+  },
+  "3404": {
+    "en": "Warehouse A",
+    "ja": "倉庫A",
+    "de": "Warenlager A",
+    "fr": "Entrepôt A"
+  },
+  "3405": {
+    "en": "Warehouse B",
+    "ja": "倉庫B",
+    "de": "Warenlager B",
+    "fr": "Entrepôt B"
+  },
+  "3406": {
+    "en": "Quality Assurance",
+    "ja": "検品場",
+    "de": "Warenkontrollhalle",
+    "fr": "Salle de test"
+  },
+  "3407": {
+    "en": "Waste Disposal",
+    "ja": "廃棄物処理室",
+    "de": "Abfalldeponie",
+    "fr": "Salle de traitement des déchets"
+  },
+  "3408": {
+    "en": "Warehouse C",
+    "ja": "倉庫C",
+    "de": "Warenlager C",
+    "fr": "Entrepôt C"
+  },
+  "3409": {
+    "en": "Winding Walkway",
+    "ja": "螺旋通路",
+    "de": "Helixgang",
+    "fr": "Colimaçon"
+  },
+  "3410": {
+    "en": "Forward Deck",
+    "ja": "前部甲板",
+    "de": "Vorderes Deck",
+    "fr": "Plate-forme avant"
+  },
+  "3411": {
+    "en": "Rear Deck",
+    "ja": "後部甲板",
+    "de": "Hinteres Deck",
+    "fr": "Plate-forme arrière"
+  },
+  "3412": {
+    "en": "Ovoo 1",
+    "ja": "無垢の土地01",
+    "de": "Unschuldsfleck 1",
+    "fr": "Terre immaculée 1"
+  },
+  "3413": {
+    "en": "Ovoo 2",
+    "ja": "無垢の土地02",
+    "de": "Unschuldsfleck 2",
+    "fr": "Terre immaculée 2"
+  },
+  "3414": {
+    "en": "Ovoo 3",
+    "ja": "無垢の土地03",
+    "de": "Unschuldsfleck 3",
+    "fr": "Terre immaculée 3"
+  },
+  "3415": {
+    "en": "Ovoo 4",
+    "ja": "無垢の土地04",
+    "de": "Unschuldsfleck 4",
+    "fr": "Terre immaculée 4"
+  },
+  "3416": {
+    "en": "Ovoo 5",
+    "ja": "無垢の土地05",
+    "de": "Unschuldsfleck 5",
+    "fr": "Terre immaculée 5"
+  },
+  "3417": {
+    "en": "Ovoo 6",
+    "ja": "無垢の土地06",
+    "de": "Unschuldsfleck 6",
+    "fr": "Terre immaculée 6"
+  },
+  "3418": {
+    "en": "Ovoo 7",
+    "ja": "無垢の土地07",
+    "de": "Unschuldsfleck 7",
+    "fr": "Terre immaculée 7"
+  },
+  "3419": {
+    "en": "Ovoo 8",
+    "ja": "無垢の土地08",
+    "de": "Unschuldsfleck 8",
+    "fr": "Terre immaculée 8"
+  },
+  "3420": {
+    "en": "Ovoo 9",
+    "ja": "無垢の土地09",
+    "de": "Unschuldsfleck 9",
+    "fr": "Terre immaculée 9"
+  },
+  "3421": {
+    "en": "Ovoo 10",
+    "ja": "無垢の土地10",
+    "de": "Unschuldsfleck 10",
+    "fr": "Terre immaculée 10"
+  },
+  "3422": {
+    "en": "Ovoo 11",
+    "ja": "無垢の土地11",
+    "de": "Unschuldsfleck 11",
+    "fr": "Terre immaculée 11"
+  },
+  "3423": {
+    "en": "Ovoo 12",
+    "ja": "無垢の土地12",
+    "de": "Unschuldsfleck 12",
+    "fr": "Terre immaculée 12"
+  },
+  "3424": {
+    "en": "Ovoo 13",
+    "ja": "無垢の土地13",
+    "de": "Unschuldsfleck 13",
+    "fr": "Terre immaculée 13"
+  },
+  "3425": {
+    "en": "The Copied Factory",
+    "ja": "複製サレタ工場廃墟",
+    "de": "Die kopierte Fabrik",
+    "fr": "Réplique de l'usine désaffectée"
+  },
+  "3426": {
+    "en": "Ruined Warehouse",
+    "ja": "廃倉庫",
+    "de": "Verlassenes Warenlager",
+    "fr": "Entrepôt abandonné"
+  },
+  "3427": {
+    "en": "Excavation Tunnels",
+    "ja": "機械遺跡の坑道",
+    "de": "Alter Stollen",
+    "fr": "Entrée des ruines mécaniques"
+  },
+  "3428": {
+    "en": "Lyhe Mheg",
+    "ja": "リェー・メグ",
+    "de": "Lyhe Mheg",
+    "fr": "Lyhe Mheg"
+  },
+  "3429": {
+    "en": "The Imperial Palace",
+    "ja": "帝都魔導城",
+    "de": "Kaiserpalast",
+    "fr": "Palais impérial"
+  },
+  "3430": {
+    "en": "The Imperial Way",
+    "ja": "皇族区画通路",
+    "de": "Innere Passage",
+    "fr": "Voie impériale"
+  },
+  "3431": {
+    "en": "Emperor's Crossroads",
+    "ja": "皇族区大広間",
+    "de": "Innerer Kaiserhof",
+    "fr": "Croisée de l'Empereur"
+  },
+  "3432": {
+    "en": "Connecting Corridor",
+    "ja": "連絡通路",
+    "de": "Verbindungsgang",
+    "fr": "Corridor de liaison"
+  },
+  "3433": {
+    "en": "Principle Dynamics",
+    "ja": "動力区",
+    "de": "Hauptversorgung",
+    "fr": "Salle des machines"
+  },
+  "3434": {
+    "en": "Magitek Installation",
+    "ja": "魔導兵器格納庫",
+    "de": "Maschinenhangar",
+    "fr": "Hangar magitek"
+  },
+  "3435": {
+    "en": "The Firmament",
+    "ja": "蒼天街",
+    "de": "Himmelsstadt",
+    "fr": "Azurée"
+  },
+  "3436": {
+    "en": "The Mendicant's Court",
+    "ja": "名も無き者たちの広場",
+    "de": "Platz der Habenichtse",
+    "fr": "Esplanade des démunis"
+  },
+  "3437": {
+    "en": "Upper Stratum",
+    "ja": "工場廃墟：上層",
+    "de": "Obergeschoss",
+    "fr": "Niveau supérieur"
+  },
+  "3438": {
+    "en": "Middle Stratum",
+    "ja": "工場廃墟：中層",
+    "de": "Mittelbau",
+    "fr": "Niveau médian"
+  },
+  "3439": {
+    "en": "Lower Stratum",
+    "ja": "工場廃墟：下層",
+    "de": "Untergeschoss",
+    "fr": "Niveau inférieur"
+  },
+  "3440": {
+    "en": "Deep Stratum",
+    "ja": "工場廃墟：深層",
+    "de": "Fabriktiefen",
+    "fr": "Profondeurs"
+  },
+  "3441": {
+    "en": "The Copied Factory",
+    "ja": "複製サレタ工場廃墟",
+    "de": "Die kopierte Fabrik",
+    "fr": "Réplique de l'usine désaffectée"
   }
 }
