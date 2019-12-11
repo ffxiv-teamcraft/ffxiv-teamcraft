@@ -1654,7 +1654,7 @@
       "Bag": "소지품",
       "Other": "다른 소지품",
       "Armory": "장비함",
-      "RetainerMarket": "On sale by retainers"
+      "RetainerMarket": "집사 상점에서 구입 가능"
     }
   },
   "INVENTORY_OPTIMIZER": {
