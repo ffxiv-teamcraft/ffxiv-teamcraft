@@ -178,7 +178,11 @@ export class MachinaService {
 
     this.inventoryPatches$
       .pipe(
-        filter(patch => patch.containerId < 10 || patch.containerId === ContainerType.Crystal),
+        filter(patch => {
+          return patch.containerId < 10
+            || patch.containerId === ContainerType.Crystal
+            || (patch.containerId >= 3200 && patch.containerId <= 3500);
+        }),
         withLatestFrom(this.listsFacade.autocompleteEnabled$, this.listsFacade.selectedList$),
         filter(([patch, autocompleteEnabled]) => autocompleteEnabled && patch.quantity > 0)
       )
@@ -235,7 +239,7 @@ export class MachinaService {
     this.ipc.packets$.pipe(
       ofPacketType('effectResult'),
       filter(packet => {
-        return packet.sourceActorSessionID === packet.targetActorSessionID && packet.actorID === packet.actorID1
+        return packet.sourceActorSessionID === packet.targetActorSessionID && packet.actorID === packet.actorID1;
       })
     ).subscribe(packet => {
       this.eorzeaFacade.addStatus(packet.effectID);
