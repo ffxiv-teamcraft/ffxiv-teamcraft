@@ -1653,7 +1653,8 @@
       "FC_chest": "FG-Truhe",
       "Bag": "Inventar",
       "Other": "Sonstige Vorräte",
-      "Armory": "Arsenal"
+      "Armory": "Arsenal",
+      "RetainerMarket": "On sale by retainers"
     }
   },
   "INVENTORY_OPTIMIZER": {
