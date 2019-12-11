@@ -1653,7 +1653,8 @@
       "FC_chest": "Cofre FC",
       "Bag": "Inventario",
       "Other": "Otro inventario",
-      "Armory": "Armería"
+      "Armory": "Armería",
+      "RetainerMarket": "On sale by retainers"
     }
   },
   "INVENTORY_OPTIMIZER": {
