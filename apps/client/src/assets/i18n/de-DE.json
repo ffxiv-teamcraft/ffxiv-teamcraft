@@ -1654,7 +1654,7 @@
       "Bag": "Inventar",
       "Other": "Sonstige Vorräte",
       "Armory": "Arsenal",
-      "RetainerMarket": "On sale by retainers"
+      "RetainerMarket": "Im Verkauf bei Gehilfen"
     }
   },
   "INVENTORY_OPTIMIZER": {
