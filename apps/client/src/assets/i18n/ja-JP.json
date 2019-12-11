@@ -1653,7 +1653,8 @@
       "FC_chest": "カンパニーチェスト",
       "Bag": "所持品",
       "Other": "他の所持品",
-      "Armory": "アーマリーチェスト"
+      "Armory": "アーマリーチェスト",
+      "RetainerMarket": "On sale by retainers"
     }
   },
   "INVENTORY_OPTIMIZER": {
