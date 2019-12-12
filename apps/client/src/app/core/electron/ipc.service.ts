@@ -36,6 +36,10 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('marketTaxRates'));
   }
 
+  public get marketBoardSearchResult$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('marketBoardSearchResult'));
+  }
+
   public get marketboardListingCount$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('marketBoardItemListingCount'));
   }
