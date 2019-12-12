@@ -54,6 +54,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'marketBoardItemListingCount',
         'marketBoardItemListing',
         'marketBoardItemListingHistory',
+        'marketBoardSearchResult',
         'marketTaxRates',
         'playerSetup',
         'playerSpawn',
