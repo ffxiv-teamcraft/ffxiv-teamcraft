@@ -183,7 +183,7 @@ export class FishingReporter implements DataReporter {
       bite$
     ]).pipe(
       filter(([rodAnimation, playerAnimation]) => {
-        return rodAnimation.animation > 10000
+        return rodAnimation.animation > 10000 && rodAnimation.animation < 10000000
           && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
       }),
       map(() => {
