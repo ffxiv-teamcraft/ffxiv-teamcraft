@@ -958,7 +958,8 @@
       "Use_prudent_touch_manipulation": "66レベル以上の場合 'マニピュレーションⅡ' と '倹約加工'を使用して、もっと高い品質を得なければなりません",
       "Use_rapid_synthesis_earlier": "'突貫作業'を工程の最後に入れないで下さい。失敗する恐れがありますので、早く使用するのが制作スキル回しの信頼性が向上します。",
       "Do_not_use_brand_without_name": "「ブランド・オブ・エレメンタル\"スキルは\" アート・オブ・エレメンタルの芸術」スキルを活性化して使用してください",
-      "Avoid_using_good_actions": "マクロを構想する時、高品質を要求するアクションを使用しないでください。高品質は予測が不可能です"
+      "Avoid_using_good_actions": "マクロを構想する時、高品質を要求するアクションを使用しないでください。高品質は予測が不可能です",
+      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc."
     }
   },
   "PRICING": {
