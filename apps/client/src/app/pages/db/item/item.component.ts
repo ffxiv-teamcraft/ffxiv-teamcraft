@@ -376,7 +376,7 @@ export class ItemComponent extends TeamcraftPageComponent {
           })
             .pipe(
               map(result => {
-                xivapiItem.BaitInfo = result.data.baits_per_fish;
+                xivapiItem.BaitInfo = result.data.baits_per_fish.filter(bait => bait.id > 0);
                 return [data, xivapiItem];
               })
             );

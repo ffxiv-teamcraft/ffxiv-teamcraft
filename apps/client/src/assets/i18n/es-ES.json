@@ -958,7 +958,8 @@
       "Use_prudent_touch_manipulation": "Como usted es nivel 66+, debería usar el combo \"Manipulation\" + \"Prudent Touch\" para obtener calidad para la mejor ganancia de calidad y más confiabilidad.",
       "Use_rapid_synthesis_earlier": "No debería usar \"Rapid Synthesis\" como una acción de término, usarla antes para poder manejar el fracaso de la acción es mejor para la confiabilidad de su rotación.",
       "Do_not_use_brand_without_name": "No utilice Brand of the Elements sin Name of the Elements activo.",
-      "Avoid_using_good_actions": "Evite el uso de acciones que requieran de \"Buen\" estado en una macro, ya que no son predecibles"
+      "Avoid_using_good_actions": "Evite el uso de acciones que requieran de \"Buen\" estado en una macro, ya que no son predecibles",
+      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc."
     }
   },
   "PRICING": {

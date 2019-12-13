@@ -230,6 +230,12 @@ export class MachinaService {
     });
 
     this.ipc.packets$.pipe(
+      ofPacketType('updateClassInfo')
+    ).subscribe(packet => {
+      this.eorzeaFacade.resetStatuses();
+    });
+
+    this.ipc.packets$.pipe(
       ofPacketType('actorControl'),
       filter(packet => packet.category === 20 && packet.sourceActorSessionID === packet.targetActorSessionID)
     ).subscribe(packet => {

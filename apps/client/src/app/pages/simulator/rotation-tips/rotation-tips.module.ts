@@ -12,7 +12,8 @@ import { UseRapidSynthesisEarlier } from './tips/use-rapid-synthesis-earlier';
 import { UseMoreQualityActions } from './tips/use-more-quality-actions';
 import { UsePrudentTouchManipulation } from './tips/use-prudent-touch-manipulation';
 import { AvoidUsingGoodActions } from './tips/avoid-using-good-actions';
-import { DoNotUseBrandWithoutName } from "./tips/do-not-use-brand-without-name";
+import { DoNotUseBrandWithoutName } from './tips/do-not-use-brand-without-name';
+import { RequiresReuseToProc } from './tips/requires-reuse-to-proc';
 
 export const ROTATION_TIPS = new InjectionToken('ROTATION_TIPS');
 
@@ -28,7 +29,8 @@ const tips: Class<RotationTip>[] = [
   UseMoreQualityActions,
   UsePrudentTouchManipulation,
   DoNotUseBrandWithoutName,
-  AvoidUsingGoodActions
+  AvoidUsingGoodActions,
+  RequiresReuseToProc
 ];
 
 @NgModule({

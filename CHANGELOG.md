@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.4.2"></a>
+## [6.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.4.1...v6.4.2) (2019-12-13)
+
+
+### Bug Fixes
+
+* **core:** go away from version lock when it's up to date ([f3bdc5c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f3bdc5c))
+* **db:** removed empty line for used as bait db block ([3ba4ada](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3ba4ada))
+* **fishing-reporter:** fixed an issue with Release reporting as miss ([209e767](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/209e767))
+* **packets:** reset statuses when switching job ([e8c76e1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8c76e1))
+
+
+### Features
+
+* **simulation:** new rotation tip for rotations that require reuse to proc to work ([a7c3344](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7c3344))
+
+
+
 <a name="6.4.1"></a>
 ## [6.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.4.0...v6.4.1) (2019-12-11)
 
