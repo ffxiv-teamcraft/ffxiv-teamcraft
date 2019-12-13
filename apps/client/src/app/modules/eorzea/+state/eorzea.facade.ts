@@ -65,6 +65,10 @@ export class EorzeaFacade {
     this.store.dispatch(new RemoveStatus(effect));
   }
 
+  resetStatuses() {
+    this.store.dispatch(new SetStatuses([]));
+  }
+
   addStatus(effect: number) {
     this.store.dispatch(new AddStatus(effect));
   }
