@@ -51,6 +51,18 @@ export class MachinaService {
   }
 
   public init(): void {
+    const isCrafting$ = merge(
+      this.ipc.packets$.pipe(ofPacketType('eventStart')),
+      this.ipc.packets$.pipe(ofPacketType('eventFinish'))
+    ).pipe(
+      filter(packet => packet.eventId === 0xA0001),
+      map(packet => {
+        return packet.type === 'eventStart';
+      }),
+      startWith(false),
+      shareReplay(1)
+    );
+
     merge(this.ipc.itemInfoPackets$, this.ipc.currencyCrystalInfoPackets$).pipe(
       filter(packet => {
         return packet.slot >= 0
@@ -181,8 +193,14 @@ export class MachinaService {
         filter(patch => {
           return patch.containerId < 10
             || patch.containerId === ContainerType.Crystal
-            || (patch.containerId >= 3200 && patch.containerId <= 3500);
+            || (patch.containerId >= ContainerType.ArmoryOff && patch.containerId <= ContainerType.ArmoryMain);
         }),
+        withLatestFrom(isCrafting$),
+        filter(([patch, isCrafting]) => {
+          return (patch.containerId < ContainerType.ArmoryOff || patch.containerId > ContainerType.ArmoryMain)
+            || isCrafting;
+        }),
+        map(([patch]) => patch),
         withLatestFrom(this.listsFacade.autocompleteEnabled$, this.listsFacade.selectedList$),
         filter(([patch, autocompleteEnabled]) => autocompleteEnabled && patch.quantity > 0)
       )
