@@ -288,8 +288,16 @@ export class SettingsService {
     return this.getSetting('autofill:enable-by-default', 'false') === 'true';
   }
 
-  public set enableAutofillByDefault(hide: boolean) {
-    this.setSetting('autofill:enable-by-default', hide.toString());
+  public set enableAutofillByDefault(enable: boolean) {
+    this.setSetting('autofill:enable-by-default', enable.toString());
+  }
+
+  public get enableAutofillNotificationByDefault(): boolean {
+    return this.getSetting('autofill:enable-notification-by-default', 'false') === 'true';
+  }
+
+  public set enableAutofillNotificationByDefault(enable: boolean) {
+    this.setSetting('autofill:enable-notification-by-default', enable.toString());
   }
 
   public get enableAutofillHQFilter(): boolean {

@@ -350,6 +350,11 @@
             </label>
           </div>
           <div>
+            <label [(ngModel)]="settings.enableAutofillNotificationByDefault" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Enable_autofill_notification_by_default' | translate}}
+            </label>
+          </div>
+          <div>
             <label [(ngModel)]="settings.enableAutofillHQFilter" [nzDisabled]="!machinaToggle" nz-checkbox>
               {{'SETTINGS.Enable_autofill_hq_filter' | translate}}
             </label>
