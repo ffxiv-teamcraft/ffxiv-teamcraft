@@ -1,8 +1,8 @@
 <div fxLayout="column">
   <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
-    lvl {{item.gatheredBy.level}}{{item.gatheredBy.stars_tooltip}}
+    lvl {{details.level}}{{details.stars_tooltip}}
   </div>
-  <nz-list [nzDataSource]="item.gatheredBy.nodes" [nzRenderItem]="nodeTemplate">
+  <nz-list [nzDataSource]="details.nodes" [nzRenderItem]="nodeTemplate">
     <ng-template #nodeTemplate let-node>
       <nz-list-item [nzActions]="[openMap]">
         <nz-list-item-meta [nzDescription]="description" [nzTitle]="node.zoneid | placeName | i18n">

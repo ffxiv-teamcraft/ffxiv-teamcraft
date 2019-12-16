@@ -1,17 +1,9 @@
-import { I18nName } from '../../../model/common/i18n-name';
-import { CraftedBy } from './crafted-by';
-import { GatheredBy } from './gathered-by';
-import { TradeSource } from './trade-source';
-import { Instance } from './instance';
-import { Vendor } from './vendor';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { DataModel } from '../../../core/database/storage/data-model';
-import { Drop } from './drop';
 import { Alarm } from '../../../core/alarms/alarm';
 import { CompactMasterbook } from '../../../model/common/compact-masterbook';
-import { TripleTriadDuel } from '../../../pages/db/model/attt/triple-triad-duel';
-import { Treasure } from './treasure';
-import { FateData } from './fate-data';
+import { ItemSource } from './item-source';
+import { DataType } from '../data/data-type';
 
 export class ListRow extends DataModel {
   icon?: number;
@@ -25,26 +17,10 @@ export class ListRow extends DataModel {
   requires?: Ingredient[] = [];
   recipeId?: string;
   yield = 1;
-
-  craftedBy?: CraftedBy[] = [];
-  gatheredBy?: GatheredBy;
-  gardening?: number;
-  drops?: Drop[] = [];
-  tradeSources?: TradeSource[] = [];
-  instances?: Instance[];
-  reducedFrom?: any[] = [];
-  desynths?: number[] = [];
-  vendors?: Vendor[] = [];
-  voyages?: I18nName[] = [];
-  ventures?: number[] = [];
   alarms?: Alarm[] = [];
   masterbooks?: CompactMasterbook[] = [];
-  tripleTriadDuels?: TripleTriadDuel[] = [];
-  tripleTriadPack?: { id: number, price: number };
-  quests?: number[] = [];
-  treasures?: Treasure[] = [];
-  fates?: FateData[] = [];
-  achievements?: number[] = [];
+
+  sources?: ItemSource[] = [];
 
   /**
    * Is someone working on it?
@@ -74,4 +50,19 @@ export class ListRow extends DataModel {
   hasAllBaseIngredients?: boolean;
 
   craftableAmount?: number;
+}
+
+const cache = {};
+
+export function getItemSource(item: ListRow, type: DataType, isObject = false): any {
+  const key = `${item.id}:${type}`;
+  if (!cache[key]) {
+    const source = item.sources.find(s => s.type === type);
+    if (source === undefined) {
+      cache[key] = isObject ? {} : [];
+    } else {
+      cache[key] = source.data;
+    }
+  }
+  return cache[key];
 }

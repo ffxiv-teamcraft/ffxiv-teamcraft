@@ -1,4 +1,4 @@
-import { ListRow } from './list-row';
+import { getItemSource, ListRow } from './list-row';
 import { CraftAddition } from './craft-addition';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import * as semver from 'semver';
@@ -19,6 +19,7 @@ import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { ListManagerService } from '../list-manager.service';
 import { ListColor } from './list-color';
 import * as firebase from 'firebase/app';
+import { DataType } from '../data/data-type';
 
 declare const gtag: Function;
 
@@ -287,7 +288,8 @@ export class List extends DataWithPermissions {
   }
 
   canBeCrafted(item: ListRow): boolean {
-    if (item.craftedBy === undefined || item.craftedBy.length === 0 || item.requires === undefined) {
+    const craftedBy = getItemSource(item,  DataType.CRAFTED_BY);
+    if (craftedBy === undefined || item.requires === undefined) {
       return false;
     }
     let canCraft = true;
@@ -334,7 +336,7 @@ export class List extends DataWithPermissions {
   }
 
   craftableAmount(item: ListRow): number {
-    if (item.craftedBy === undefined || item.craftedBy.length === 0 || item.requires === undefined) {
+    if (getItemSource(item, DataType.CRAFTED_BY).length === 0 || item.requires === undefined) {
       return 0;
     }
     let amount = 0;
@@ -354,7 +356,7 @@ export class List extends DataWithPermissions {
 
   hasAllBaseIngredients(item: ListRow, amount = item.amount): boolean {
     // If it's not a craft, break recursion
-    if (item.craftedBy === undefined || item.craftedBy.length === 0 || item.requires === undefined) {
+    if (getItemSource(item, DataType.CRAFTED_BY).length === 0 || item.requires === undefined) {
       // Simply return the amount of the item being equal to the amount needed.
       return item.done >= amount;
     }

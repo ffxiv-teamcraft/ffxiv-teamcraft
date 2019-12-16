@@ -13,12 +13,13 @@ import { map, shareReplay, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
-import { ListRow } from '../../../modules/list/model/list-row';
+import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
 import { ListDisplay } from '../list-display';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LayoutRow } from '../layout-row';
 import { LayoutRowOrder } from '../layout-row-order.enum';
 import { LayoutRowFilter } from '../layout-row-filter';
+import { DataType } from '../../../modules/list/data/data-type';
 
 @Injectable()
 export class LayoutsFacade {
@@ -87,13 +88,15 @@ export class LayoutsFacade {
                 }
                 if (adaptativeFilter) {
                   orderedAccepted = orderedAccepted.filter(item => {
-                    if (item.gatheredBy !== undefined) {
-                      const gatherJob = [16, 16, 17, 17, 18, 18][item.gatheredBy.type];
+                    const gatheredBy = getItemSource(item,  DataType.GATHERED_BY);
+                    const craftedBy = getItemSource(item,  DataType.CRAFTED_BY);
+                    if (gatheredBy !== undefined) {
+                      const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.data.type];
                       const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
-                      return set && set.level >= item.gatheredBy.level;
+                      return set && set.level >= gatheredBy.data.level;
                     }
-                    if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
-                      return item.craftedBy.reduce((canCraft, craft) => {
+                    if (craftedBy) {
+                      return craftedBy.data.reduce((canCraft, craft) => {
                         const jobId = craft.jobId;
                         const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
                         return (set && set.level >= craft.level) || canCraft;
@@ -133,13 +136,15 @@ export class LayoutsFacade {
           .filter(row => layout.recipeHideCompleted ? row.done < row.amount : true);
         if (adaptativeFilter) {
           rows = rows.filter(item => {
-            if (item.gatheredBy !== undefined) {
-              const gatherJob = [16, 16, 17, 17, 18, 18].indexOf(item.gatheredBy.type);
+            const gatheredBy = getItemSource(item,  DataType.GATHERED_BY);
+            const craftedBy = getItemSource(item,  DataType.CRAFTED_BY);
+            if (gatheredBy.type !== undefined) {
+              const gatherJob = [16, 16, 17, 17, 18, 18].indexOf(gatheredBy.data.type);
               const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
-              return set && set.level >= item.gatheredBy.level;
+              return set && set.level >= gatheredBy.data.level;
             }
-            if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
-              return item.craftedBy.reduce((canCraft, craft) => {
+            if (craftedBy) {
+              return craftedBy.data.reduce((canCraft, craft) => {
                 const jobId = craft.jobId;
                 const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
                 return (set && set.level >= craft.level) || canCraft;

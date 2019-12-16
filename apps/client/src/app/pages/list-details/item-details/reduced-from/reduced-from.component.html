@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayoutGap="10px">
-  <nz-card *ngFor="let reduction of item.reducedFrom" fxFlex="1 1 auto">
+  <nz-card *ngFor="let reduction of details" fxFlex="1 1 auto">
     <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title">
       <ng-template #title>
         <span [appItemRarity]="reduction.obj.i">{{reduction.obj.i | itemName | i18n}}</span>

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ListRow } from '../list/model/list-row';
+import { getItemSource, ListRow } from '../list/model/list-row';
 import { Price } from './model/price';
 import { ItemAmount } from './model/item-amount';
 import { Subject } from 'rxjs';
+import { DataType } from '../list/data/data-type';
 
 @Injectable()
 export class PricingService {
@@ -84,8 +85,8 @@ export class PricingService {
       storedValue.fromVendor = false;
       return storedValue;
     }
-    if (item.vendors !== undefined && item.vendors.length > 0) {
-      const cheapest = item.vendors.sort((a, b) => {
+    if (getItemSource(item, DataType.VENDORS).length > 0) {
+      const cheapest = getItemSource(item, DataType.VENDORS).sort((a, b) => {
         return a.price - b.price;
       })[0];
       return { nq: cheapest.price, hq: 0, fromVendor: true, fromMB: false };
@@ -101,8 +102,8 @@ export class PricingService {
    * @returns {number}
    */
   getVendorPrice(item: ListRow): Price {
-    if (item.vendors !== undefined && item.vendors.length > 0) {
-      const cheapest = item.vendors.sort((a, b) => {
+    if (getItemSource(item, DataType.VENDORS).length > 0) {
+      const cheapest = getItemSource(item, DataType.VENDORS).sort((a, b) => {
         return a.price - b.price;
       })[0];
       return { nq: cheapest.price, hq: 0, fromVendor: true, fromMB: false };

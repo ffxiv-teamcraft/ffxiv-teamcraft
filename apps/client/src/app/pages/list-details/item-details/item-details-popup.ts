@@ -4,4 +4,7 @@ import { Input } from '@angular/core';
 export class ItemDetailsPopup {
   @Input()
   public item: ListRow;
+
+  @Input()
+  public details?: any;
 }

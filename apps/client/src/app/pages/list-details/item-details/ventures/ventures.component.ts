@@ -2,6 +2,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { Venture } from '../../../../model/garland-tools/venture';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
+import { getItemSource } from '../../../../modules/list/model/list-row';
+import { DataType } from '../../../../modules/list/data/data-type';
 
 @Component({
   selector: 'app-ventures',
@@ -34,7 +36,7 @@ export class VenturesComponent extends ItemDetailsPopup implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ventures = this.gt.getVentures(this.item.ventures).map(venture => {
+    this.ventures = this.gt.getVentures(getItemSource(this.item, DataType.VENTURES)).map(venture => {
       venture.amountsDetails = this.ventureAmounts(venture);
       return venture;
     });
