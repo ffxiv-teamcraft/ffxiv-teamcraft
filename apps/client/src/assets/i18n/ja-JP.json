@@ -1055,7 +1055,8 @@
       "LIST_PROGRESSION": "素材の進捗状況の一覧",
       "FINAL_LIST_PROGRESSION": "最終項目の進行状況をリストアップする",
       "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる",
-      "ITEM_COMPLETION": "アイテム完了"
+      "ITEM_COMPLETION": "アイテム完了",
+      "ITEM_PROGRESSION": "Item progression"
     }
   },
   "MARKETBOARD": {
