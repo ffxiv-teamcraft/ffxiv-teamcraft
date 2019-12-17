@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ListRow } from '../../../modules/list/model/list-row';
+import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
 import { TradeIconPipe } from '../trade-icon.pipe';
 import { TradeSource } from '../../../modules/list/model/trade-source';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
+import { DataType } from '../../../modules/list/data/data-type';
 
 @Component({
   selector: 'app-total-panel-price-popup',
@@ -36,8 +37,10 @@ export class TotalPanelPricePopupComponent implements OnInit {
 
   private computePrice(): void {
     this.totalPrice = this.panelContent.reduce((result, row) => {
-      if (row.vendors !== null && row.vendors.length > 0) {
-        const vendor = row.vendors
+      const vendors = getItemSource(row, DataType.VENDORS);
+      const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
+      if (vendors) {
+        const vendor = vendors.data
           .sort((a, b) => {
             return a.price - b.price;
           })[0];
@@ -47,8 +50,8 @@ export class TotalPanelPricePopupComponent implements OnInit {
         } else {
           gilsRow.costs[0] += vendor.price * (row.amount - row.done);
         }
-      } else if (row.tradeSources !== undefined && row.tradeSources.length > 0) {
-        const tradeSource = this.getTradeSourceByPriority(row.tradeSources);
+      } else if (tradeSources) {
+        const tradeSource = this.getTradeSourceByPriority(tradeSources.data);
         const trade = tradeSource.trades[0];
         const itemsPerTrade = trade.items.find(item => item.id === row.id).amount;
         const costs = tradeSource.trades.sort((ta) => ta.items[0].hq ? 1 : -1).map(t => {
@@ -62,7 +65,7 @@ export class TotalPanelPricePopupComponent implements OnInit {
             currencyId: this.getFilteredCurrencies(trade.currencies)[0].id,
             currencyIcon: this.getFilteredCurrencies(trade.currencies)[0].icon,
             costs: costs,
-            canIgnore: [].concat.apply([], row.tradeSources.filter(source => {
+            canIgnore: [].concat.apply([], tradeSources.data.filter(source => {
               return source.trades.some(t => {
                 return this.getFilteredCurrencies(t.currencies).length > 0;
               });

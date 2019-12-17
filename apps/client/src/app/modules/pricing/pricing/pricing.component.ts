@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Output } from '@angular/core';
 import { List } from '../../list/model/list';
 import { PricingService } from '../pricing.service';
-import { ListRow } from '../../list/model/list-row';
+import { getItemSource, ListRow } from '../../list/model/list-row';
 import { MediaObserver } from '@angular/flex-layout';
 import { SettingsService } from '../../settings/settings.service';
 import { interval, Observable, Subject } from 'rxjs';
@@ -18,6 +18,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { PriceCheckResultComponent } from '../price-check-result/price-check-result.component';
 import { NumberQuestionPopupComponent } from '../../number-question-popup/number-question-popup/number-question-popup.component';
 import { UniversalisService } from '../../../core/api/universalis.service';
+import { DataType } from '../../list/data/data-type';
 
 @Component({
   selector: 'app-pricing',
@@ -73,12 +74,12 @@ export class PricingComponent implements AfterViewInit {
     );
 
     this.items$ = this.list$.pipe(
-      map(list => list.items.filter(i => (i.craftedBy === undefined || i.craftedBy.length === 0) && i.id >= 20)),
+      map(list => list.items.filter(i => (getItemSource(i, DataType.CRAFTED_BY).length === 0) && i.id >= 20)),
       shareReplay(1)
     );
 
     this.preCrafts$ = this.list$.pipe(
-      map(list => list.items.filter(i => i.craftedBy && i.craftedBy.length > 0)),
+      map(list => list.items.filter(i => getItemSource(i, DataType.CRAFTED_BY).length > 0)),
       shareReplay(1)
     );
   }

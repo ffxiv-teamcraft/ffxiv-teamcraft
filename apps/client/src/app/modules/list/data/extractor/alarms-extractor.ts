@@ -3,7 +3,7 @@ import { Alarm } from '../../../../core/alarms/alarm';
 import { Item } from '../../../../model/garland-tools/item';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { ListRow } from '../../model/list-row';
+import { getItemSource, ListRow } from '../../model/list-row';
 import { BellNodesService } from '../../../../core/data/bell-nodes.service';
 import { folklores } from '../../../../core/data/sources/folklores';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
@@ -28,8 +28,8 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
 
   protected doExtract(item: Item, itemData: ItemData, row: ListRow): Partial<Alarm>[] {
     const alarms: Partial<Alarm>[] = [];
-    if (row.gatheredBy !== undefined) {
-      alarms.push(...row.gatheredBy.nodes
+    if (getItemSource(row, DataType.GATHERED_BY, true).type !== undefined) {
+      alarms.push(...getItemSource(row, DataType.GATHERED_BY, true).nodes
         .filter(node => node.uptime !== undefined || node.weathers !== undefined)
         .map(node => {
           const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(row.id) > -1);
@@ -40,7 +40,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
             zoneId: node.zoneid,
             mapId: node.mapid,
             slot: +node.slot,
-            type: row.gatheredBy.type,
+            type: getItemSource(row, DataType.GATHERED_BY, true).type,
             ephemeral: node.limitType && node.limitType.en === 'Ephemeral',
             coords: {
               x: node.coords[0],
@@ -60,15 +60,15 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
           if (folklore !== undefined) {
             alarm.folklore = {
               id: +folklore,
-              icon: [7012, 7012, 7127, 7127, 7128, 7128][row.gatheredBy.type]
+              icon: [7012, 7012, 7127, 7127, 7128, 7128][getItemSource(row, DataType.GATHERED_BY, true).type]
             };
           }
           return alarm;
         })
       );
     }
-    if (row.reducedFrom !== undefined) {
-      alarms.push(...[].concat.apply([], row.reducedFrom
+    if (getItemSource(row, DataType.REDUCED_FROM)) {
+      alarms.push(...[].concat.apply([], getItemSource(row, DataType.REDUCED_FROM)
         .filter(reduction => reduction.obj !== undefined && this.bellNodes.getNodesByItemId(reduction.obj.i).length > 0)
         .map(reduction => {
           const nodes = this.bellNodes.getNodesByItemId(reduction.obj.i);
@@ -92,7 +92,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
             if (folklore !== undefined) {
               alarm.folklore = {
                 id: +folklore,
-                icon: [7012, 7012, 7127, 7127, 7128, 7128][row.gatheredBy.type]
+                icon: [7012, 7012, 7127, 7127, 7128, 7128][getItemSource(row, DataType.GATHERED_BY, true).type]
               };
             }
             return alarm;

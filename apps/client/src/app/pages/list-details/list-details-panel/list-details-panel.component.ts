@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
-import { ListRow } from '../../../modules/list/model/list-row';
+import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
@@ -23,6 +23,7 @@ import { WorldNavigationMapComponent } from '../../../modules/map/world-navigati
 import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { DataType } from '../../../modules/list/data/data-type';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -48,11 +49,13 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasNavigationMap = false;
 
-  permissionLevel$: Observable<PermissionLevel>  = this.listsFacade.selectedListPermissionLevel$;
+  permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
   currentZoneId$: Observable<number> = this.eorzeaFacade.zoneId$;
+
+  hasAlreadyBeenOpened: boolean;
 
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
               private message: NzMessageService, private translate: TranslateService,
@@ -104,6 +107,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
 
   public activeChange(event: boolean): void {
+    if (event) {
+      this.hasAlreadyBeenOpened = true;
+    }
     this.collapsed = !event;
   }
 
@@ -111,6 +117,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     if (this.displayRow && this.displayRow.collapsedByDefault) {
       this.collapsed = true;
     }
+  }
+
+  getData(row: ListRow, type: DataType, isObject = false): any {
+    return getItemSource(row, type, isObject);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -121,13 +131,13 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates());
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
-      return (row.tradeSources && row.tradeSources.length > 0) || (row.vendors && row.vendors.length > 0) || hasTrades;
+      return (this.getData(row, DataType.TRADE_SOURCES).length > 0) || (this.getData(row, DataType.VENDORS).length > 0) || hasTrades;
     }, false);
     this.hasNavigationMap = this.displayRow.rows.reduce((hasMap, row) => {
-      const hasMonstersWithPosition = row.drops && row.drops.some(d => d.position && (d.position.x !== undefined));
-      const hasNodesWithPosition = row.gatheredBy && row.gatheredBy.nodes.some(n => n.coords !== undefined && n.coords.length > 0);
-      const hasVendorsWithPosition = row.vendors && row.vendors.some(d => d.coords && (d.coords.x !== undefined));
-      const hasTradesWithPosition = row.tradeSources && row.tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined));
+      const hasMonstersWithPosition = this.getData(row, DataType.DROPS).some(d => d.position && (d.position.x !== undefined));
+      const hasNodesWithPosition = (this.getData(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.coords !== undefined && n.coords.length > 0);
+      const hasVendorsWithPosition = this.getData(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined));
+      const hasTradesWithPosition = this.getData(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined));
       return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
     }, false);
   }
@@ -212,16 +222,20 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   private getPosition(row: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Partial<NavigationObjective> {
-    if (row.vendors && row.vendors.some(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId)) {
-      const vendor = row.vendors.find(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId);
+    const vendors = this.getData(row, DataType.VENDORS);
+    const tradeSources = this.getData(row, DataType.TRADE_SOURCES);
+    const gatheredBy = this.getData(row, DataType.GATHERED_BY);
+    const drops = this.getData(row, DataType.DROPS);
+    if (vendors.some(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId)) {
+      const vendor = vendors.find(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId);
       return {
         x: vendor.coords.x,
         y: vendor.coords.y,
         type: 'Vendor'
       };
     }
-    if (row.tradeSources && row.tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && npc.zoneId === zoneBreakdownRow.zoneId))) {
-      const trade = row.tradeSources.find(d => d.npcs.some(n => n.coords && n.coords.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId));
+    if (tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && npc.zoneId === zoneBreakdownRow.zoneId))) {
+      const trade = tradeSources.find(d => d.npcs.some(n => n.coords && n.coords.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId));
       const npc = trade.npcs.find(n => n.coords && n.coords.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId);
       return {
         x: npc.coords.x,
@@ -229,16 +243,16 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         type: 'Trade'
       };
     }
-    if (row.gatheredBy && row.gatheredBy.nodes.some(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId)) {
-      const node = row.gatheredBy.nodes.find(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId);
+    if (gatheredBy.nodes.some(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId)) {
+      const node = gatheredBy.nodes.find(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId);
       return {
         x: node.coords[0],
         y: node.coords[1],
         type: 'Gathering'
       };
     }
-    if (row.drops && row.drops.some(d => d.position && (d.position.x !== undefined) && d.position.zoneid === zoneBreakdownRow.zoneId)) {
-      const drop = row.drops.find(d => d.position && (d.position.x !== undefined) && d.position.zoneid === zoneBreakdownRow.zoneId);
+    if (drops.some(d => d.position && (d.position.x !== undefined) && d.position.zoneid === zoneBreakdownRow.zoneId)) {
+      const drop = drops.find(d => d.position && (d.position.x !== undefined) && d.position.zoneid === zoneBreakdownRow.zoneId);
       return {
         x: drop.position.x,
         y: drop.position.y,

@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { List } from './model/list';
 import { combineLatest, concat, Observable, of } from 'rxjs';
-import { ListRow } from './model/list-row';
+import { ListRow, getItemSource } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { Ingredient } from '../../model/garland-tools/ingredient';
@@ -15,6 +15,7 @@ import { Team } from '../../model/team/team';
 import { environment } from '../../../environments/environment';
 import { CustomItemsFacade } from '../custom-items/+state/custom-items.facade';
 import { CustomItem } from '../custom-items/model/custom-item';
+import { DataType } from './data/data-type';
 
 @Injectable({
   providedIn: 'root'
@@ -118,7 +119,7 @@ export class ListManagerService {
   }
 
   private processItemAddition(data: ItemData, itemId: number, amount: number, collectible: boolean, recipeId: string | number): Observable<List> {
-    const crafted = this.extractor.extractCraftedBy(+itemId, data);
+    const crafted = this.extractor.extract(DataType.CRAFTED_BY, +itemId, data);
     const addition = new List();
     const toAdd: ListRow = new ListRow();
     // If this is a craft
@@ -200,16 +201,15 @@ export class ListManagerService {
       if (item.id > 20 && data.item.id !== item.id && !data.ingredients.some(i => i.id === item.id)) {
         return;
       }
+      item = this.extractor.addDataToItem(item, data);
       if (data.isCraft()) {
+        const craftedBy = getItemSource(item,  DataType.CRAFTED_BY);
         if (recipeId !== undefined && data.item.id === item.id) {
-          item.craftedBy = this.extractor.extractCraftedBy(item.id, data).filter(row => {
+          craftedBy.data = craftedBy.data.filter(row => {
             return row.recipeId.toString() === recipeId.toString();
           });
-        } else {
-          item.craftedBy = this.extractor.extractCraftedBy(item.id, data);
         }
       }
-      item = this.extractor.addDataToItem(item, data, true);
     });
     return list;
   }

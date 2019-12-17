@@ -11,6 +11,8 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
 import { DataService } from '../../../core/api/data.service';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
+import { DataType } from '../../../modules/list/data/data-type';
+import { getItemSource } from '../../../modules/list/model/list-row';
 
 @Component({
   selector: 'app-custom-items-import-popup',
@@ -209,15 +211,18 @@ export class CustomItemsImportPopupComponent {
         item.name = row[4];
         item.yield = +row[5];
         item.realItemId = +row[45];
-        item.craftedBy = [{
-          recipeId: row[1],
-          jobId: +this.craftTypes.indexOf(row[2]) + 8,
-          icon: '',
-          itemId: +row[45],
-          level: 80,
-          stars_tooltip: ''
-        }];
-        item.craftedBy[0].icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === item.craftedBy[0].jobId).abbreviation}.png`;
+        item.sources.push({
+          type: DataType.CRAFTED_BY,
+          data: [{
+            recipeId: row[1],
+            jobId: +this.craftTypes.indexOf(row[2]) + 8,
+            icon: '',
+            itemId: +row[45],
+            level: 80,
+            stars_tooltip: ''
+          }]
+        });
+        getItemSource(item, DataType.CRAFTED_BY).icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === getItemSource(item, DataType.CRAFTED_BY)[0].jobId).abbreviation}.png`;
         return { item: item, meta: row };
       });
     // Then, for each parsed row, let's populate an ingredient array, for the same purpose (will contain only the ones that aren't listed as recipe already)

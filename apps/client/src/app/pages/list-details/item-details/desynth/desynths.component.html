@@ -1,4 +1,4 @@
-<nz-list [nzDataSource]="item.desynths" [nzRenderItem]="desynthTemplate">
+<nz-list [nzDataSource]="details" [nzRenderItem]="desynthTemplate">
   <ng-template #desynthTemplate let-desynth>
     <nz-list-item>
       <nz-list-item-meta [nzAvatar]="avatar"
@@ -10,7 +10,7 @@
           </div>
         </ng-template>
         <ng-template #avatar>
-          <app-item-icon [icon]="desynth | lazyIcon" [itemId]="desynth"></app-item-icon>
+          <app-item-icon [icon]="desynth | lazyIcon" [itemId]="desynth" width="32"></app-item-icon>
         </ng-template>
       </nz-list-item-meta>
     </nz-list-item>

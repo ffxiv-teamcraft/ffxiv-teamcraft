@@ -20,7 +20,7 @@ export class TradesComponent extends ItemDetailsPopup {
 
   public get tradeSources(): TradeSource[] {
     if (this.externalTradeSources.length === 0) {
-      return this.item.tradeSources;
+      return this.details;
     }
     return this.externalTradeSources;
   }

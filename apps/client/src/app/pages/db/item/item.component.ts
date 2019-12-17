@@ -12,7 +12,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DataExtractorService } from '../../../modules/list/data/data-extractor.service';
-import { ListRow } from '../../../modules/list/model/list-row';
+import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
 import { SearchResult } from '../../../model/search/search-result';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -36,6 +36,7 @@ import { hwdSupplies } from '../../../core/data/sources/hwd-supplies';
 import { fishes } from '../../../core/data/sources/fishes';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
+import { DataType } from '../../../modules/list/data/data-type';
 
 @Component({
   selector: 'app-item',
@@ -67,6 +68,8 @@ export class ItemComponent extends TeamcraftPageComponent {
   itemsAdded = 0;
 
   modifiedList: List;
+
+  dataTypes = DataType;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -259,23 +262,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         return this.handleAdditionalData(item, data, xivapiItem);
       }),
       tap(item => {
-        this.noData = (item.craftedBy === undefined || item.craftedBy.length === 0)
-          && (item.tradeSources === undefined || item.tradeSources.length === 0)
-          && (item.vendors === undefined || item.vendors.length === 0)
-          && (item.reducedFrom === undefined || item.reducedFrom.length === 0)
-          && (item.desynths === undefined || item.desynths.length === 0)
-          && (item.instances === undefined || item.instances.length === 0)
-          && (!item.gardening)
-          && (item.voyages === undefined || item.voyages.length === 0)
-          && (item.drops === undefined || item.drops.length === 0)
-          && (item.ventures === undefined || item.ventures.length === 0)
-          && (!item.gatheredBy)
-          && (item.alarms === undefined || item.alarms.length === 0)
-          && (item.tripleTriadDuels === undefined || item.tripleTriadDuels.length === 0)
-          && (item.treasures === undefined || item.treasures.length === 0)
-          && (item.fates === undefined || item.fates.length === 0)
-          && (item.quests === undefined || item.quests.length === 0)
-          && !item.tripleTriadPack;
+        this.noData = item.sources.length === 0;
       })
     );
 
@@ -300,11 +287,12 @@ export class ItemComponent extends TeamcraftPageComponent {
             url: `https://mogboard.com/market/${xivapiItem.ID}`
           });
         }
-        if (listRow.gardening) {
+        const gardening = getItemSource(listRow, DataType.GARDENING);
+        if (gardening) {
           links.push({
             title: 'FFXIV Gardening',
             icon: './assets/icons/Gardening.png',
-            url: `https://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${listRow.gardening}`
+            url: `https://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${gardening}`
           });
         }
         if (xivapiItem.ItemActionTargetID === 1389) {
@@ -610,7 +598,7 @@ export class ItemComponent extends TeamcraftPageComponent {
   }
 
   public openInSimulator(item: ListRow, itemId: number, recipeId: string): void {
-    const entry = item.craftedBy.find(c => c.recipeId === recipeId);
+    const entry = getItemSource(item,  DataType.CRAFTED_BY).data.find(c => c.recipeId === recipeId);
     const craft: Partial<Craft> = {
       id: recipeId,
       job: entry.jobId,
@@ -747,30 +735,36 @@ export class ItemComponent extends TeamcraftPageComponent {
             .pipe(
               map(card => {
                 if (card.sources.npcs.length > 0) {
-                  item.tripleTriadDuels = card.sources.npcs.map(npc => {
-                    const npcPosition = this.lazyData.npcs[npc.resident_id].position;
-                    const duel: TripleTriadDuel = {
-                      atttNpcId: npc.id,
-                      npcId: npc.resident_id,
-                      mapId: npcPosition ? npcPosition.map : 0,
-                      zoneId: npcPosition ? npcPosition.zoneid : 0,
-                      coords: {
-                        x: npc.location.x,
-                        y: npc.location.y
-                      },
-                      rules: npc.rule_ids
-                    };
-                    if (npc.quest !== undefined) {
-                      duel.unlockingQuestId = npc.quest.id;
-                    }
-                    return duel;
+                  item.sources.push({
+                    type: DataType.TRIPLE_TRIAD_DUELS,
+                    data: card.sources.npcs.map(npc => {
+                      const npcPosition = this.lazyData.npcs[npc.resident_id].position;
+                      const duel: TripleTriadDuel = {
+                        atttNpcId: npc.id,
+                        npcId: npc.resident_id,
+                        mapId: npcPosition ? npcPosition.map : 0,
+                        zoneId: npcPosition ? npcPosition.zoneid : 0,
+                        coords: {
+                          x: npc.location.x,
+                          y: npc.location.y
+                        },
+                        rules: npc.rule_ids
+                      };
+                      if (npc.quest !== undefined) {
+                        duel.unlockingQuestId = npc.quest.id;
+                      }
+                      return duel;
+                    })
                   });
                 }
                 if (card.sources.pack) {
-                  item.tripleTriadPack = {
-                    id: [10128, 10129, 10130, 13380, 10077][card.sources.pack.id - 1],
-                    price: card.sources.pack.cost
-                  };
+                  item.sources.push({
+                    type: DataType.TRIPLE_TRIAD_DUELS,
+                    data: {
+                      id: [10128, 10129, 10130, 13380, 10077][card.sources.pack.id - 1],
+                      price: card.sources.pack.cost
+                    }
+                  });
                 }
                 return item;
               })
@@ -782,7 +776,10 @@ export class ItemComponent extends TeamcraftPageComponent {
       if (xivapiItem.GameContentLinks.Achievement && xivapiItem.GameContentLinks.Achievement.Item) {
         res$ = res$.pipe(
           map(res => {
-            res.achievements = xivapiItem.GameContentLinks.Achievement.Item;
+            res.sources.push({
+              type: DataType.ACHIEVEMENTS,
+              data: xivapiItem.GameContentLinks.Achievement.Item
+            });
             return res;
           })
         );
@@ -791,7 +788,10 @@ export class ItemComponent extends TeamcraftPageComponent {
     if (gtData.item.quests) {
       res$ = res$.pipe(
         map(res => {
-          res.quests = gtData.item.quests;
+          res.sources.push({
+            type: DataType.QUESTS,
+            data: gtData.item.quests
+          });
           return res;
         })
       );

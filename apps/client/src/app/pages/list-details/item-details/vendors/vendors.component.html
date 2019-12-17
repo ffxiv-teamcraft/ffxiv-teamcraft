@@ -1,4 +1,4 @@
-<nz-list [nzDataSource]="item.vendors" [nzRenderItem]="vendorTemplate">
+<nz-list [nzDataSource]="details" [nzRenderItem]="vendorTemplate">
   <ng-template #vendorTemplate let-vendor>
     <nz-list-item [nzContent]="vendor.zoneId !== undefined?position:null">
       <nz-list-item-meta [nzDescription]="price"

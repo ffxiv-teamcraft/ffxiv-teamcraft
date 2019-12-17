@@ -90,7 +90,7 @@ export class GatheredByComponent extends ItemDetailsPopup {
       },
       icon: this.item.icon,
       itemId: this.item.id,
-      type: this.item.gatheredBy.type,
+      type: this.details.type,
       reduction: false,
       ephemeral: node.limitType && node.limitType.en === 'Ephemeral'
     };

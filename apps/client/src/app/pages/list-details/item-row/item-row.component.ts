@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, Type, ViewChild } from '@angular/core';
-import { ListRow } from '../../../modules/list/model/list-row';
+import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
@@ -59,6 +59,8 @@ import { FreeCompanyActionsService } from '../../simulator/model/free-company-ac
 import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
+import { DataType } from '../../../modules/list/data/data-type';
+import { CraftedBy } from '../../../modules/list/model/crafted-by';
 
 @Component({
   selector: 'app-item-row',
@@ -73,6 +75,13 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   private _item$: Subject<ListRow> = new Subject<ListRow>();
 
   public item$: Observable<ListRow> = this._item$.pipe(
+    map(item => {
+      const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
+      const vendors = getItemSource(item, DataType.VENDORS);
+      (<any>item).craftedBy = craftedBy ? craftedBy : null;
+      (<any>item).vendors = vendors ? vendors : null;
+      return item;
+    }),
     shareReplay(1)
   );
 
@@ -192,9 +201,11 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   showLogCompletionButton$ = combineLatest([this.authFacade.user$, this.item$]).pipe(
     map(([user, item]) => {
-      if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
-        return user.logProgression.indexOf(+item.recipeId || +item.craftedBy[0].recipeId) === -1;
-      } else if (item.gatheredBy !== undefined) {
+      const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
+      const gatheredBy = getItemSource(item, DataType.GATHERED_BY, true);
+      if (craftedBy.length > 0) {
+        return user.logProgression.indexOf(+item.recipeId || +craftedBy[0].recipeId) === -1;
+      } else if (gatheredBy.type !== undefined) {
         return user.gatheringLogProgression.indexOf(+item.id) === -1;
       }
       return false;
@@ -203,6 +214,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   );
 
   masterbooksReloader$ = new BehaviorSubject<void>(null);
+
+  dataTypes = DataType;
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
@@ -291,7 +304,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   attachRotation(item: ListRow): void {
-    const entry = item.craftedBy[0];
+    const entry = (<any>item).craftedBy[0];
     const craft: Partial<Craft> = {
       id: entry.recipeId,
       job: entry.jobId,
@@ -325,7 +338,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       nzContent: MacroPopupComponent,
       nzComponentParams: {
         rotation: CraftingActionsRegistry.deserializeRotation(rotation.rotation),
-        job: item.craftedBy[0].jobId,
+        job: (<any>item).craftedBy[0].jobId,
         food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
         medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
         freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
@@ -346,12 +359,14 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.authFacade.user$.pipe(
       first()
     ).subscribe(user => {
-      if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
+      const craftedBy = item.sources.find(source => source.type = DataType.CRAFTED_BY);
+      const gatheredBy = item.sources.find(source => source.type = DataType.GATHERED_BY);
+      if (craftedBy !== undefined) {
         user.logProgression = _.uniq([
           ...user.logProgression,
-          +(item.recipeId || item.craftedBy[0].recipeId)
+          +(item.recipeId || craftedBy.data[0].recipeId)
         ]);
-      } else if (item.gatheredBy !== undefined) {
+      } else if (gatheredBy !== undefined) {
         user.gatheringLogProgression = _.uniq([
           ...user.gatheringLogProgression,
           +item.id
@@ -624,8 +639,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.openDetailsPopup(RelationshipsComponent, item);
   }
 
-  public openSimulator(recipeId: string, item: ListRow): void {
-    const entry = item.craftedBy.find(c => c.recipeId === recipeId);
+  public openSimulator(recipeId: string, item: ListRow, entry: CraftedBy): void {
     const craft: Partial<Craft> = {
       id: recipeId,
       job: entry.jobId,
