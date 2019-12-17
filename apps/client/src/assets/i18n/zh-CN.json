@@ -36,7 +36,8 @@
     "Reset_filters": "重置筛选",
     "Too_many_results_warning": "此搜索返回了超过 100 个物品。由于我们的数据源仅限 100 个，您可能需要增加筛选来找到所需的物品。",
     "Share_url": "将搜索链接复制到剪贴板",
-    "Share_url_copied": "搜索链接已复制到剪贴板"
+    "Share_url_copied": "搜索链接已复制到剪贴板",
+    "Only_craftable": "Only recipes"
   },
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
