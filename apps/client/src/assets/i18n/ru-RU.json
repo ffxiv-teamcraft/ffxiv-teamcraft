@@ -1055,7 +1055,8 @@
       "LIST_PROGRESSION": "Прогресс списка материалов",
       "FINAL_LIST_PROGRESSION": "Прогресс списка итоговых предметов",
       "USER_ASSIGNMENT": "Назначение пользователей",
-      "ITEM_COMPLETION": "Обозначение выполнения"
+      "ITEM_COMPLETION": "Обозначение выполнения",
+      "ITEM_PROGRESSION": "Item progression"
     }
   },
   "MARKETBOARD": {
