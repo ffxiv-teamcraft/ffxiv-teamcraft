@@ -1055,7 +1055,8 @@
       "LIST_PROGRESSION": "Fortschritt bei Materialien sehen",
       "FINAL_LIST_PROGRESSION": "Fortschritt bei Resultaten sehen",
       "USER_ASSIGNMENT": "Benutzerzuweisung",
-      "ITEM_COMPLETION": "Gegenstand erledigen"
+      "ITEM_COMPLETION": "Gegenstand erledigen",
+      "ITEM_PROGRESSION": "Item progression"
     }
   },
   "MARKETBOARD": {
