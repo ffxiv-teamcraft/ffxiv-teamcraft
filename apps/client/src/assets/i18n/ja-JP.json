@@ -36,7 +36,8 @@
     "Reset_filters": "フィルターをリセットする",
     "Too_many_results_warning": "検索結果が100件を超えてます。データソースの制限のため、正確なアイテムを探すためには、追加フィルター設定が必要とします。",
     "Share_url": "検索URLをクリップボードにコピーする",
-    "Share_url_copied": "検索URLがクリップボードにコピーされました"
+    "Share_url_copied": "検索URLがクリップボードにコピーされました",
+    "Only_craftable": "Only recipes"
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
