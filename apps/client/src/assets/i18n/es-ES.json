@@ -36,7 +36,8 @@
     "Reset_filters": "Resetear filtros",
     "Too_many_results_warning": "Esta búsqueda devuelve más de 100 artículos. Como nuestro origen de datos esta limitado a 100 resultados, puede que necesite filtros adicionales para encontrar un artículo específico.",
     "Share_url": "Copiar el url de búsqueda al portapapeles",
-    "Share_url_copied": "URL de búsqueda copiado al portapapeles"
+    "Share_url_copied": "URL de búsqueda copiado al portapapeles",
+    "Only_craftable": "Only recipes"
   },
   "Use_as_default_character": "Usar como personaje por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
