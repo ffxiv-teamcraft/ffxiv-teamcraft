@@ -1,5 +1,10 @@
-<input #searchInput (keyup)="query$.next(searchInput.value)" nz-input nzAutoFocus
-       placeholder="{{'ITEMS.Item_name' | translate}}" type="text">
+<nz-input-group [nzAddOnAfter]="suffix">
+  <input #searchInput (keyup)="query$.next(searchInput.value)" nz-input nzAutoFocus
+         placeholder="{{'ITEMS.Item_name' | translate}}" type="text">
+  <ng-template #suffix>
+    <label nz-checkbox [(ngModel)]="onlyCraftable">{{'ITEMS.Only_craftable' | translate}}</label>
+  </ng-template>
+</nz-input-group>
 <ng-container *ngIf="results$ | async as results">
   <nz-list [nzDataSource]="results" [nzLoading]="loading" [nzRenderItem]="itemTemplate">
     <ng-template #itemTemplate let-result>
