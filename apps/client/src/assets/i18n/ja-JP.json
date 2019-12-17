@@ -499,6 +499,7 @@
     "Mark_whole_panel_done": "パネルの内容を完了済みと表示する",
     "Set_color": "リストカラー設定",
     "Go_to_pinned": "固定しておいたリストに行く（右クリックすると固定解除）",
+    "Reset_panel": "Reset all the items of this panel",
     "COLORS": {
       "RED": "赤",
       "GREEN": "緑",
