@@ -55,6 +55,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   currentZoneId$: Observable<number> = this.eorzeaFacade.zoneId$;
 
+  hasAlreadyBeenOpened: boolean;
+
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
               private message: NzMessageService, private translate: TranslateService,
               private dialog: NzModalService, private listsFacade: ListsFacade,
@@ -105,6 +107,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
 
   public activeChange(event: boolean): void {
+    if (event) {
+      this.hasAlreadyBeenOpened = true;
+    }
     this.collapsed = !event;
   }
 

@@ -388,6 +388,8 @@
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Contribute to Universalis",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
+    "Performance_mode": "Performance mode",
+    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -555,6 +557,8 @@
     "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "You can craft {{amount}}",
     "Add_item": "Add an item",
+    "List_large": "This is a large list",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
     "List_too_large": "List too large",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "Add_to_another_list": "Add to another list",

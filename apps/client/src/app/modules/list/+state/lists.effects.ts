@@ -223,7 +223,7 @@ export class ListsEffects {
   @Effect({ dispatch: false })
   updateListInDatabase$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
-    debounceTime(1000),
+    debounceTime(2000),
     switchMap(action => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);

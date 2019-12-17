@@ -37,6 +37,7 @@ import { ListContributionsComponent } from '../list-contributions/list-contribut
 import * as _ from 'lodash';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-list-details',
@@ -102,7 +103,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
-              private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryFacade) {
+              private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryFacade,
+              public settings: SettingsService) {
     super(seoService);
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
