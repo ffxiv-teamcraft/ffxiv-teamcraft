@@ -388,6 +388,8 @@
     "Enable_autofill_hq_filter": "HQ-Gegenstände nur automatisch füllen, wenn der Gegenstand als HQ benötigt wird",
     "Contribute_to_universalis": "Zu Universalis beitragen",
     "Track_items_on_sale": "Zum Verkauf stehende Gegenstände von Gehilfen verfolgen (erfordert Neustart/Aktualisierung)",
+    "Performance_mode": "Performance mode",
+    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -555,6 +557,8 @@
     "Disable_HQ_suggestions": "Automatische HQ-Markierungen ausschalten",
     "Amount_craftable": "Du kannst {{amount}} herstellen",
     "Add_item": "Gegenstand hinzufügen",
+    "List_large": "This is a large list",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
     "List_too_large": "Liste zu lang",
     "List_too_large_description": "Diese Liste ist zu groß und stößt möglicherweise an die Datenbanklimitierungen aufgrund der vielen Informationen. Du darfst keine weiteren Gegenstände hinzufügen, um zu verhindern, dass du die Liste verlierst.",
     "Add_to_another_list": "Zu einer anderen Liste hinzufügen",
