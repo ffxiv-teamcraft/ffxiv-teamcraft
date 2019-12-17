@@ -960,7 +960,7 @@
       "Use_rapid_synthesis_earlier": "Vous ne devriez pas utiliser la Synthèse Rapide comme une action finale, la mettre plus tôt pour pouvoir gérer l'échec de l'action est mieux pour la fiabilité de votre rotation.",
       "Do_not_use_brand_without_name": "N'utilisez pas de Marque des Éléments sans Nom des Éléments actifs.",
       "Avoid_using_good_actions": "Évitez d'utiliser des actions qui nécessitent un état \"Bon\" dans une macro, car cet état n'est pas prédictible",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc."
+      "Requires_reuse_to_proc": "Votre rotation nécessite récupération de chutes pour fonctionner correctement, assurez-vous qu'elle peut fonctionner sans proc."
     }
   },
   "PRICING": {
@@ -1656,7 +1656,7 @@
       "Bag": "Inventaire",
       "Other": "Autre inventaire",
       "Armory": "Arsenal",
-      "RetainerMarket": "On sale by retainers"
+      "RetainerMarket": "En vente par les servants"
     }
   },
   "INVENTORY_OPTIMIZER": {
