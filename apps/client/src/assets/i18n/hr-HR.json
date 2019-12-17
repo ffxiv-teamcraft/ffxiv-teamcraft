@@ -36,7 +36,8 @@
     "Reset_filters": "Reset filters",
     "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copy search url to your clipboard",
-    "Share_url_copied": "Search url copied to your clipboard"
+    "Share_url_copied": "Search url copied to your clipboard",
+    "Only_craftable": "Only recipes"
   },
   "Use_as_default_character": "Odaberite glavnog lika",
   "Download_desktop_app": "Preuzmite aplikaciju za radnu površinu",
