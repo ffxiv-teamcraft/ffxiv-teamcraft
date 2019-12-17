@@ -388,6 +388,8 @@
     "Enable_autofill_hq_filter": "자동채우기에서 HQ아이템이 필요할 때만 HQ아이템 사용하기",
     "Contribute_to_universalis": "Universalis에 기여하기",
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
+    "Performance_mode": "Performance mode",
+    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -555,6 +557,8 @@
     "Disable_HQ_suggestions": "HQ 자동표시 해제",
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
     "Add_item": "아이템 추가",
+    "List_large": "This is a large list",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
     "List_too_large": "너무 큰 목록",
     "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
     "Add_to_another_list": "다른 목록에 추가",
