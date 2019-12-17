@@ -499,6 +499,7 @@
     "Mark_whole_panel_done": "Marcar contenido del panel como completado",
     "Set_color": "Establecer color de lista",
     "Go_to_pinned": "Ir a la lista anclada (clic derecho para quitar)",
+    "Reset_panel": "Reset all the items of this panel",
     "COLORS": {
       "RED": "Rojo",
       "GREEN": "Verde",
