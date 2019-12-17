@@ -29,12 +29,13 @@ describe('PricingService', () => {
     row.sources = [
       {
         type: DataType.VENDORS,
-        data: {
+        data: [{
           npcId: 123465,
           zoneId: 654987,
           price: 9001
-        }
-      }];
+        }]
+      }
+    ];
     expect(service.getPrice(row).nq).toBe(9001);
   }));
 
