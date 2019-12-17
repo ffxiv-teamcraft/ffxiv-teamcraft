@@ -1055,7 +1055,8 @@
       "LIST_PROGRESSION": "재료 진행상황",
       "FINAL_LIST_PROGRESSION": "최종 아이템 진행상황",
       "USER_ASSIGNMENT": "팀원 할당",
-      "ITEM_COMPLETION": "아이템 완료"
+      "ITEM_COMPLETION": "아이템 완료",
+      "ITEM_PROGRESSION": "Item progression"
     }
   },
   "MARKETBOARD": {
