@@ -1,0 +1,111 @@
+<div class="search-box">
+  <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null">
+    <nz-select
+      class="search-input"
+      nzShowSearch
+      nzServerSearch
+      [nzPlaceHolder]="'DB.Jump_to_page' | translate"
+      [ngModel]="null"
+      (ngModelChange)="navigateTo($event)"
+      [nzShowArrow]="false"
+      (nzOnSearch)="query$.next($event)"
+      [nzLoading]="loading"
+    >
+      <nz-option *ngFor="let row of results$ | async"
+                 nzCustomContent
+                 [nzValue]="row">
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div [ngSwitch]="row.type">
+            <img class="result-icon" *ngSwitchCase="searchTypes.ITEM" src="{{row.icon}}" alt="">
+            <img class="result-icon" *ngSwitchCase="searchTypes.RECIPE" src="{{row.icon}}" alt="">
+            <img class="result-icon" *ngSwitchCase="searchTypes.RECIPE" src="{{row.icon}}" alt="">
+            <img class="result-icon" *ngSwitchCase="searchTypes.MAP" src="{{'/c/PlaceName.png' | xivapiIcon}}" alt="">
+            <img class="result-icon" *ngSwitchCase="searchTypes.FISHING_SPOT" src="./assets/icons/classjob/fisher.png" alt="">
+            <img class="result-icon" *ngSwitchDefault src="{{row.icon | xivapiIcon}}" alt="">
+          </div>
+          <div fxLayout="column">
+            <div class="result-name" [ngSwitch]="row.type">
+                <span *ngSwitchCase="searchTypes.ITEM">
+                  {{row.itemId | itemName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.RECIPE">
+                  {{row.itemId | itemName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.INSTANCE">
+                  {{row.id | instanceName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.QUEST">
+                  {{row.id | questName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.NPC">
+                  {{row.id | npcName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.LEVE">
+                  {{row.id | leveName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.MONSTER">
+                  {{row.id | mobName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.FATE">
+                  {{row.id | fate | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.MAP">
+                  {{row.zoneid | placeName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.ACTION">
+                  {{row.id | actionName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.STATUS">
+                  {{row.id | statusName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.TRAIT">
+                  {{row.id | traitName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.ACHIEVEMENT">
+                  {{row.id | achievementName | i18n}}
+                </span>
+              <span *ngSwitchCase="searchTypes.FISHING_SPOT">
+                  {{row.spot.zoneId | placeName | i18n}}
+                </span>
+            </div>
+            <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+          </div>
+        </div>
+      </nz-option>
+    </nz-select>
+    <ng-template #searchType>
+      <nz-select (ngModelChange)="searchType$.next($event);" [ngModel]="searchType$ | async"
+                 class="search-type"
+                 nzShowSearch>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ANY) | translate"
+                   [nzValue]="searchTypes.ANY"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate"
+                   [nzValue]="searchTypes.ITEM"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.RECIPE) | translate"
+                   [nzValue]="searchTypes.RECIPE"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.INSTANCE) | translate"
+                   [nzValue]="searchTypes.INSTANCE"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.QUEST) | translate"
+                   [nzValue]="searchTypes.QUEST"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.NPC) | translate" [nzValue]="searchTypes.NPC"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.LEVE) | translate"
+                   [nzValue]="searchTypes.LEVE"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.MONSTER) | translate"
+                   [nzValue]="searchTypes.MONSTER"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.FATE) | translate"
+                   [nzValue]="searchTypes.FATE"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.MAP) | translate" [nzValue]="searchTypes.MAP"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ACTION) | translate"
+                   [nzValue]="searchTypes.ACTION"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.STATUS) | translate"
+                   [nzValue]="searchTypes.STATUS"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.TRAIT) | translate"
+                   [nzValue]="searchTypes.TRAIT"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ACHIEVEMENT) | translate"
+                   [nzValue]="searchTypes.ACHIEVEMENT"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.FISHING_SPOT) | translate"
+                   [nzValue]="searchTypes.FISHING_SPOT"></nz-option>
+      </nz-select>
+    </ng-template>
+  </nz-input-group>
+</div>

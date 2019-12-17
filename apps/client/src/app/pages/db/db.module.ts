@@ -42,6 +42,7 @@ import { PatchComponent } from './patch/patch.component';
 import { FishComponent } from './fish/fish.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { FishingSpotComponent } from './fishing-spot/fishing-spot.component';
+import { QuickSearchModule } from '../../modules/quick-search/quick-search.module';
 
 const routes: Routes = [
   {
@@ -262,7 +263,8 @@ const routes: Routes = [
     MarketboardModule,
 
     NgZorroAntdModule,
-    UserAvatarModule
+    UserAvatarModule,
+    QuickSearchModule
   ]
 })
 export class DbModule {

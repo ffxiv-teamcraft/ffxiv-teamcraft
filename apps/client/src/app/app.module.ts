@@ -99,6 +99,7 @@ import { EorzeaModule } from './modules/eorzea/eorzea.module';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { GraphQLModule } from './graphql.module';
 import { ApolloInterceptor } from './apollo-interceptor';
+import { QuickSearchModule } from './modules/quick-search/quick-search.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -216,6 +217,8 @@ const nzConfig: NzConfig = {
 
     AlarmsModule,
     AlarmsSidebarModule,
+
+    QuickSearchModule,
 
     InventoryModule,
     EorzeaModule,

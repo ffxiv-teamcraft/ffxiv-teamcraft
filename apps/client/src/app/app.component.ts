@@ -7,7 +7,7 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { buffer, catchError, debounceTime, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -25,7 +25,7 @@ import { AbstractNotification } from './core/notification/abstract-notification'
 import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
-import { BehaviorSubject, interval, of } from 'rxjs';
+import { BehaviorSubject, fromEvent, interval, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
@@ -47,6 +47,7 @@ import { TextQuestionPopupComponent } from './modules/text-question-popup/text-q
 import { Apollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import { QuickSearchService } from './modules/quick-search/quick-search.service';
 
 declare const gtag: Function;
 
@@ -156,8 +157,17 @@ export class AppComponent implements OnInit {
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
-              apollo: Apollo, httpLink: HttpLink) {
+              private quickSearch: QuickSearchService, apollo: Apollo, httpLink: HttpLink) {
 
+
+    fromEvent(document, 'keypress').pipe(
+      filter((event: KeyboardEvent) => {
+        console.log(event, event.ctrlKey, event.shiftKey, event.code === 'KeyF');
+        return event.ctrlKey && event.shiftKey && event.code === 'KeyF';
+      })
+    ).subscribe(() => {
+      this.quickSearch.openQuickSearch();
+    });
 
     const link = httpLink.create({ uri: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/gubal-proxy' });
 
