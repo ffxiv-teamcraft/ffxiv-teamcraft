@@ -36,7 +36,8 @@
     "Reset_filters": "Filter zurücksetzen",
     "Too_many_results_warning": "Die Suche lieferte über 100 Gegenstände. Da unsere Datenquelle auf 100 Einträge begrenzt ist, brauchst du möglicherweise weitere Filter um einen bestimmten Gegenstand zu finden.",
     "Share_url": "Kopiere Link zur Suche in die Zwischenablage",
-    "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert"
+    "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert",
+    "Only_craftable": "Only recipes"
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
