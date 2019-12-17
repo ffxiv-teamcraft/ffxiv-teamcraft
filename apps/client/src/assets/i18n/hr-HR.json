@@ -499,6 +499,7 @@
     "Mark_whole_panel_done": "Mark panel content as done",
     "Set_color": "Set list color",
     "Go_to_pinned": "Go to pinned list (right click to unpin)",
+    "Reset_panel": "Reset all the items of this panel",
     "COLORS": {
       "RED": "Red",
       "GREEN": "Green",
