@@ -201,11 +201,11 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   showLogCompletionButton$ = combineLatest([this.authFacade.user$, this.item$]).pipe(
     map(([user, item]) => {
-      const craftedBy = item.sources.find(source => source.type = DataType.CRAFTED_BY);
-      const gatheredBy = item.sources.find(source => source.type = DataType.GATHERED_BY);
-      if (craftedBy) {
-        return user.logProgression.indexOf(+item.recipeId || +craftedBy.data[0].recipeId) === -1;
-      } else if (gatheredBy) {
+      const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
+      const gatheredBy = getItemSource(item, DataType.GATHERED_BY, true);
+      if (craftedBy.length > 0) {
+        return user.logProgression.indexOf(+item.recipeId || +craftedBy[0].recipeId) === -1;
+      } else if (gatheredBy.type !== undefined) {
         return user.gatheringLogProgression.indexOf(+item.id) === -1;
       }
       return false;

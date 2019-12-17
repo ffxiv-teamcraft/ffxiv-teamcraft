@@ -1,4 +1,5 @@
 export enum DataType {
+  NONE,
   CRAFTED_BY,
   TRADE_SOURCES,
   VENDORS,

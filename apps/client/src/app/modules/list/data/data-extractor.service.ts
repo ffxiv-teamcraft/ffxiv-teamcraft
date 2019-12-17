@@ -16,7 +16,7 @@ export class DataExtractorService {
   addDataToItem(item: ListRow, data: ItemData, skipCraft = false): ListRow {
     item.sources = item.sources || [];
     Object.values(DataType)
-      .filter(value => value !== DataType.ALARMS)
+      .filter(value => value !== DataType.ALARMS && +value === value)
       .forEach(value => {
         if (value === DataType.CRAFTED_BY && skipCraft) {
           return;

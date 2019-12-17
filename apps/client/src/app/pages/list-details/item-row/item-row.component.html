@@ -588,7 +588,6 @@
     <div class="obtentions-container" fxFlex="0 1 auto" fxLayout="row wrap" fxLayoutAlign="flex-start flex-start"
          fxLayoutGap="2px">
       <ng-container *ngFor="let source of item.sources">
-        {{source.type}}
         <ng-container [ngSwitch]="source.type">
           <a *ngSwitchCase="dataTypes.GARDENING"
              href="{{source.data | ffxivgardening | i18n}}"
