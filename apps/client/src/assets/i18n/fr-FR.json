@@ -499,6 +499,7 @@
     "Mark_whole_panel_done": "Marquer le contenu du panneau comme terminé",
     "Set_color": "Attribuer une couleur",
     "Go_to_pinned": "Aller à la liste épinglée (clic droit pour désépingler)",
+    "Reset_panel": "Reset all the items of this panel",
     "COLORS": {
       "RED": "Rouge",
       "GREEN": "Vert",
