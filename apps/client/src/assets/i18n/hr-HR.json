@@ -611,6 +611,11 @@
       "Order_by": "Sort by",
       "Order": "Order",
       "Tag_filter": "Tag filter"
+    },
+    "OVERLAY": {
+      "Open": "Open list overlay",
+      "No_display": "Open a list in main window to get started",
+      "No_panel_selected": "Select a panel using the buttons above"
     }
   },
   "LIST_TAGS": {
