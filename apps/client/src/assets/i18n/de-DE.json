@@ -37,7 +37,7 @@
     "Too_many_results_warning": "Die Suche lieferte über 100 Gegenstände. Da unsere Datenquelle auf 100 Einträge begrenzt ist, brauchst du möglicherweise weitere Filter um einen bestimmten Gegenstand zu finden.",
     "Share_url": "Kopiere Link zur Suche in die Zwischenablage",
     "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert",
-    "Only_craftable": "Only recipes"
+    "Only_craftable": "Nur Rezepte"
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -559,7 +559,7 @@
     "Disable_HQ_suggestions": "Automatische HQ-Markierungen ausschalten",
     "Amount_craftable": "Du kannst {{amount}} herstellen",
     "Add_item": "Gegenstand hinzufügen",
-    "List_large": "This is a large list",
+    "List_large": "Dies ist eine große Liste",
     "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
     "List_too_large": "Liste zu lang",
     "List_too_large_description": "Diese Liste ist zu groß und stößt möglicherweise an die Datenbanklimitierungen aufgrund der vielen Informationen. Du darfst keine weiteren Gegenstände hinzufügen, um zu verhindern, dass du die Liste verlierst.",
@@ -611,6 +611,11 @@
       "Order_by": "Sortiere nach",
       "Order": "Sortierung",
       "Tag_filter": "Markierungs-Filter"
+    },
+    "OVERLAY": {
+      "Open": "Open list overlay",
+      "No_display": "Open a list in main window to get started",
+      "No_panel_selected": "Select a panel using the buttons above"
     }
   },
   "LIST_TAGS": {
