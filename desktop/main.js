@@ -341,6 +341,18 @@ ipcMain.on('fishing-state:get', (event) => {
 });
 
 
+let appState = {};
+
+ipcMain.on('app-state:set', (_, data) => {
+  appState = data;
+  broadcast('app-state', data);
+});
+
+ipcMain.on('app-state:get', (event) => {
+  event.sender.send('app-state', appState);
+});
+
+
 // Create window on electron intialization
 app.on('ready', () => {
   createWindow();

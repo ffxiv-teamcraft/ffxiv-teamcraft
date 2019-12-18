@@ -6,6 +6,7 @@ import { Vector2 } from '../tools/vector2';
 import { Observable, ReplaySubject, Subject } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
+import { Store } from '@ngrx/store';
 
 @Injectable({
   providedIn: 'root'
@@ -82,7 +83,10 @@ export class IpcService {
 
   public fishingState$: ReplaySubject<any> = new ReplaySubject<any>();
 
-  constructor(private platformService: PlatformService, private router: Router) {
+  public mainWindowState$: ReplaySubject<any> = new ReplaySubject<any>();
+
+  constructor(private platformService: PlatformService, private router: Router,
+              private store: Store<any>) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
       if (window.require) {
@@ -161,6 +165,16 @@ export class IpcService {
         data: 'No ping received from the server during 60 seconds'
       });
     });
+    if (this.overlayUri) {
+      this.on('app-state', (event, state) => {
+        this.mainWindowState$.next(state);
+      });
+      this.send('app-state:get');
+    } else {
+      this.store.subscribe(state => {
+        this.send('app-state:set', state);
+      });
+    }
   }
 
   private handlePacket(packet: any): void {
