@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
-import { BellNodesService } from '../../../../core/data/bell-nodes.service';
-import { Alarm } from '../../../../core/alarms/alarm';
-import { AlarmGroup } from '../../../../core/alarms/alarm-group';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
-import { MapService } from '../../../../modules/map/map.service';
+import { Alarm } from '../../../core/alarms/alarm';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { BellNodesService } from '../../../core/data/bell-nodes.service';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { MapService } from '../../map/map.service';
 
 @Component({
   selector: 'app-reduced-from',

@@ -47,6 +47,12 @@ import { ProgressPopupModule } from '../progress-popup/progress-popup.module';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { TreasuresExtractor } from './data/extractor/treasures-extractor';
 import { FatesExtractor } from './data/extractor/fates-extractor';
+import { ListDetailsPanelComponent } from './list-details-panel/list-details-panel.component';
+import { ItemRowComponent } from './item-row/item-row.component';
+import { MarketboardModule } from '../marketboard/marketboard.module';
+import { AlarmsModule } from '../../core/alarms/alarms.module';
+import { MapModule } from '../map/map.module';
+import { ItemDetailsPopupsModule } from '../item-details/item-details-popups.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -96,6 +102,10 @@ export const DATA_EXTRACTORS: Provider[] = [
     ClipboardModule,
     NgZorroAntdModule,
     FlexLayoutModule,
+    MarketboardModule,
+    AlarmsModule,
+    MapModule,
+    ItemDetailsPopupsModule,
 
     StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
     EffectsModule.forFeature([ListsEffects])
@@ -104,9 +114,10 @@ export const DATA_EXTRACTORS: Provider[] = [
     ...DATA_EXTRACTORS,
     DataExtractorService
   ],
-  declarations: [ListPanelComponent, TagsPopupComponent, ListCompletionPopupComponent],
+  declarations: [ListPanelComponent, ListDetailsPanelComponent,
+    ItemRowComponent, TagsPopupComponent, ListCompletionPopupComponent],
   entryComponents: [TagsPopupComponent, ListCompletionPopupComponent],
-  exports: [ListPanelComponent]
+  exports: [ListPanelComponent, ListDetailsPanelComponent]
 })
 export class ListModule {
 

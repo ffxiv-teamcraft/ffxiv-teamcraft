@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
-import { TradeEntry } from '../../../../modules/list/model/trade-entry';
-import { Trade } from '../../../../modules/list/model/trade';
-import { TradeSource } from '../../../../modules/list/model/trade-source';
+import { TradeSource } from '../../list/model/trade-source';
+import { Trade } from '../../list/model/trade';
+import { TradeEntry } from '../../list/model/trade-entry';
 
 @Component({
   selector: 'app-trades',

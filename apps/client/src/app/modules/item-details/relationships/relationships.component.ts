@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { List } from '../../../../modules/list/model/list';
-import { ListRow } from '../../../../modules/list/model/list-row';
-import { ListsFacade } from '../../../../modules/list/+state/lists.facade';
 import { combineLatest, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { InventoryFacade } from '../../../../modules/inventory/+state/inventory.facade';
+import { ListRow } from '../../list/model/list-row';
+import { List } from '../../list/model/list';
+import { InventoryFacade } from '../../inventory/+state/inventory.facade';
+import { ListsFacade } from '../../list/+state/lists.facade';
 
 @Component({
   selector: 'app-relationships',

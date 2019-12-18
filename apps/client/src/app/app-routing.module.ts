@@ -63,6 +63,10 @@ const routes: Routes = [
     loadChildren: './pages/fishing-reporter-overlay/fishing-reporter-overlay.module#FishingReporterOverlayModule'
   },
   {
+    path: 'list-panel-overlay',
+    loadChildren: './pages/list-panel-overlay/list-panel-overlay.module#ListPanelOverlayModule'
+  },
+  {
     path: 'rotation-overlay',
     loadChildren: './pages/rotation-overlay/rotation-overlay.module#RotationOverlayModule'
   },

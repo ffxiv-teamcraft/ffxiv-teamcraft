@@ -61,8 +61,7 @@
             </button>
           </ng-container>
 
-          <ng-container
-            *ngIf="isButton(itemRowTypes.ATTACH_ROTATION) && item.craftedBy && item.craftedBy.length > 0">
+          <ng-container *ngIf="!overlay && isButton(itemRowTypes.ATTACH_ROTATION) && item.craftedBy && item.craftedBy.length > 0">
             <button (click)="attachRotation(item)" *ngIf="!item.attachedRotation; else detachRotationRef"
                     [nzTitle]="'LIST.ROTATION.Attach' | translate" nz-button
                     nz-tooltip nzShape="circle"
@@ -245,7 +244,7 @@
             </button>
           </ng-container>
 
-          <ng-container *ngIf="!settings.performanceMode">
+          <ng-container *ngIf="!settings.performanceMode && !overlay">
             <button (click)="$event.stopPropagation()" [disabled]="permissionLevel < 20" [nzBackdrop]="false"
                     [nzDropdownMenu]="menu"
                     [nzPlacement]="'bottomLeft'" [nzShape]="'circle'"
@@ -427,18 +426,20 @@
             </nz-tag>
           </ng-container>
         </div>
-        <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
-             fxLayoutGap="5px">
-          <nz-tag (click)="add(entry.amount, item)"
-                  *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
-                  [nzTitle]="'INVENTORY.Click_to_add_to_progression' | translate" nz-tooltip>
-            {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
-            : {{entry.amount}}
-            <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
-          </nz-tag>
-        </div>
+        <ng-container *ngIf="!overlay">
+          <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
+               fxLayoutGap="5px">
+            <nz-tag (click)="add(entry.amount, item)"
+                    *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
+                    [nzTitle]="'INVENTORY.Click_to_add_to_progression' | translate" nz-tooltip>
+              {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
+              : {{entry.amount}}
+              <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
+            </nz-tag>
+          </div>
+        </ng-container>
       </div>
-      <div *ngIf="settings.itemTagsEnabled && (loggedIn$ | async)">
+      <div *ngIf="settings.itemTagsEnabled && (loggedIn$ | async) && !overlay">
         <nz-tag
           (nzAfterClose)="removeTag(tag, item)"
           *ngFor="let tag of itemTags$ | async"
@@ -467,7 +468,7 @@
       </div>
     </div>
   </div>
-  <div class="block center-block" nz-col nzMd="7" nzSm="12" nzXs="24">
+  <div class="block center-block" nz-col nzMd="7" nzSm="12" nzXs="24" *ngIf="!overlay">
     <div class="timers" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <div *ngFor="let alarm of alarms; trackBy: trackByAlarm">
         <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
@@ -532,7 +533,7 @@
       <span *ngIf="item.requires !== undefined && item.requires.length > 0"
             [nzTitle]="'LIST_DETAILS.Add_from_external' | translate"
             nz-tooltip>
-        <button [disabled]="permissionLevel < 20" [nzContent]="externalCalc" nz-button
+        <button [disabled]="permissionLevel < 20" *ngIf="!overlay" [nzContent]="externalCalc" nz-button
                 nz-popover
                 nzSize="small" nzTrigger="click">
           <i nz-icon nzType="select"></i>
@@ -547,6 +548,7 @@
       </span>
       <span [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-tooltip>
         <button [disabled]="permissionLevel < 20" [nzContent]="calculator"
+                *ngIf="!overlay"
                 [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-button
                 nz-popover
                 nzSize="small" nzTrigger="click">
@@ -575,20 +577,22 @@
       <span *ngIf="settings.displayRemaining" class="amount-max">
         /{{item.amount - item.used}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
       </span>
-      <button (click)="markAsDone(item)" *ngIf="item.amount > item.done; else done"
-              [disabled]="permissionLevel < 20" [nzShape]="'circle'"
-              [nzSize]="'small'" [nzType]="'primary'"
-              class="done-button" nz-button>
-        <i nz-icon nzType="check"></i>
-      </button>
-      <ng-template #done>
-        <i (click)="resetDone(item)" class="done-icon" nz-icon nzType="check"></i>
-      </ng-template>
+      <ng-container *ngIf="!overlay">
+        <button (click)="markAsDone(item)" *ngIf="item.amount > item.done; else done"
+                [disabled]="permissionLevel < 20" [nzShape]="'circle'"
+                [nzSize]="'small'" [nzType]="'primary'"
+                class="done-button" nz-button>
+          <i nz-icon nzType="check"></i>
+        </button>
+        <ng-template #done>
+          <i (click)="resetDone(item)" class="done-icon" nz-icon nzType="check"></i>
+        </ng-template>
+      </ng-container>
     </div>
   </div>
   <div class="item-obtention" nz-col nzMd="3" nzSm="6" nzXs="24">
     <div class="obtentions-container" fxFlex="0 1 auto" fxLayout="row wrap" fxLayoutAlign="flex-start flex-start"
-         fxLayoutGap="2px">
+         fxLayoutAlign.lt-md="center center" fxLayoutGap="2px">
       <ng-container *ngFor="let source of item.sources">
         <ng-container [ngSwitch]="source.type">
           <a *ngSwitchCase="dataTypes.GARDENING"
@@ -654,7 +658,7 @@
                  [fxLayoutGap]="source.data.length > 1?'0px':'5px'"
                  [fxLayout]="source.data.length > 1?'column':'row'"
                  fxLayoutAlign="center center">
-              <button (click)="openSimulator(craft.recipeId, item, craft)" *ngIf="craft.icon !== ''" [nzShape]="'circle'"
+              <button (click)="overlay?null:openSimulator(craft.recipeId, item, craft)" *ngIf="craft.icon !== ''" [nzShape]="'circle'"
                       nz-button>
                 <img [src]="craft.icon" alt="" class="img-icon">
               </button>

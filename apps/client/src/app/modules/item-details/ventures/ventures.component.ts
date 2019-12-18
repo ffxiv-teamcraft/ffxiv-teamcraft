@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
-import { Venture } from '../../../../model/garland-tools/venture';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
-import { getItemSource } from '../../../../modules/list/model/list-row';
-import { DataType } from '../../../../modules/list/data/data-type';
+import { Venture } from '../../../model/garland-tools/venture';
+import { GarlandToolsService } from '../../../core/api/garland-tools.service';
+import { getItemSource } from '../../list/model/list-row';
+import { DataType } from '../../list/data/data-type';
 
 @Component({
   selector: 'app-ventures',

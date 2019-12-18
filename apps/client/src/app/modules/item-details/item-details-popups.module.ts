@@ -2,16 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
-import { IconsModule } from '../../../core/icons/icons.module';
-import { ItemIconModule } from '../../../modules/item-icon/item-icon.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { PipesModule } from '../../../pipes/pipes.module';
 import { ClipboardModule } from 'ngx-clipboard';
-import { MapModule } from '../../../modules/map/map.module';
-import { AlarmsModule } from '../../../core/alarms/alarms.module';
-import { FishingBaitModule } from '../../../modules/fishing-bait/fishing-bait.module';
 import { LayoutModule } from '@angular/cdk/layout';
-import { TooltipModule } from '../../../modules/tooltip/tooltip.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { HuntingComponent } from './hunting/hunting.component';
 import { GatheredByComponent } from './gathered-by/gathered-by.component';
@@ -21,11 +14,19 @@ import { VoyagesComponent } from './voyages/voyages.component';
 import { ReducedFromComponent } from './reduced-from/reduced-from.component';
 import { VenturesComponent } from './ventures/ventures.component';
 import { TradesComponent } from './trades/trades.component';
-import { CoreModule } from '../../../core/core.module';
 import { TreasuresComponent } from './treasures/treasures.component';
 import { FatesComponent } from './fates/fates.component';
 import { RouterModule } from '@angular/router';
 import { DesynthsComponent } from './desynth/desynths.component';
+import { RelationshipsComponent } from './relationships/relationships.component';
+import { IconsModule } from '../../core/icons/icons.module';
+import { ItemIconModule } from '../item-icon/item-icon.module';
+import { AlarmsModule } from '../../core/alarms/alarms.module';
+import { PipesModule } from '../../pipes/pipes.module';
+import { FishingBaitModule } from '../fishing-bait/fishing-bait.module';
+import { MapModule } from '../map/map.module';
+import { TooltipModule } from '../tooltip/tooltip.module';
+import { CoreModule } from '../../core/core.module';
 
 @NgModule({
   imports: [
@@ -60,7 +61,8 @@ import { DesynthsComponent } from './desynth/desynths.component';
     TradesComponent,
     TreasuresComponent,
     FatesComponent,
-    DesynthsComponent
+    DesynthsComponent,
+    RelationshipsComponent
   ],
   exports: [
     GatheredByComponent,
@@ -73,7 +75,8 @@ import { DesynthsComponent } from './desynth/desynths.component';
     TradesComponent,
     TreasuresComponent,
     FatesComponent,
-    DesynthsComponent
+    DesynthsComponent,
+    RelationshipsComponent
   ],
   entryComponents: [
     GatheredByComponent,
@@ -86,7 +89,8 @@ import { DesynthsComponent } from './desynth/desynths.component';
     TradesComponent,
     TreasuresComponent,
     FatesComponent,
-    DesynthsComponent
+    DesynthsComponent,
+    RelationshipsComponent
   ]
 })
 export class ItemDetailsPopupsModule {

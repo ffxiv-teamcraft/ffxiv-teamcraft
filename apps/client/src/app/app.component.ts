@@ -162,7 +162,6 @@ export class AppComponent implements OnInit {
 
     fromEvent(document, 'keypress').pipe(
       filter((event: KeyboardEvent) => {
-        console.log(event, event.ctrlKey, event.shiftKey, event.code === 'KeyF');
         return event.ctrlKey && event.shiftKey && event.code === 'KeyF';
       })
     ).subscribe(() => {
@@ -537,6 +536,10 @@ export class AppComponent implements OnInit {
 
   public openFishingOverlay(): void {
     this.ipc.openOverlay('/fishing-reporter-overlay', '/fishing-reporter-overlay');
+  }
+
+  public openListPanelOverlay(): void {
+    this.ipc.openOverlay('/list-panel-overlay', '/list-panel-overlay');
   }
 
   @HostListener('window:beforeunload', ['$event'])

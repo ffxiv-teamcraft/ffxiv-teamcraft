@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
-import { Alarm } from '../../../../core/alarms/alarm';
-import { StoredNode } from '../../../../modules/list/model/stored-node';
-import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
 import { map } from 'rxjs/operators';
-import { MapService } from '../../../../modules/map/map.service';
-import { AlarmGroup } from '../../../../core/alarms/alarm-group';
 import { Observable } from 'rxjs';
-import { BellNodesService } from '../../../../core/data/bell-nodes.service';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { Alarm } from '../../../core/alarms/alarm';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { BellNodesService } from '../../../core/data/bell-nodes.service';
+import { MapService } from '../../map/map.service';
+import { StoredNode } from '../../list/model/stored-node';
 
 @Component({
   selector: 'app-gathered-by',

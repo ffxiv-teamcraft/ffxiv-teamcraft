@@ -1,13 +1,12 @@
-<ng-container *ngIf="alarmGroups$ | async as alarmGroups">
+<span [class.overlay]="overlay">
+  <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
   <nz-collapse *ngIf="permissionLevel$ | async as permissionLevel">
-    <nz-collapse-panel (nzActiveChange)="activeChange($event)"
-                       [class.panel-done]="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)"
-                       [nzActive]="!(displayRow.collapsed || collapsed)"
-                       [nzHeader]="panelHeader">
+    <ng-template #display>
       <ng-container *ngIf="hasAlreadyBeenOpened || !collapsed">
         <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown && !displayRow.reverseTiers">
           <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd"
-                        [permissionLevel]="permissionLevel"
+                        [permissionLevel]="overlay ? 10 : permissionLevel"
+                        [overlay]="overlay"
                         [finalItem]="finalItems"
                         [alarmGroups]="alarmGroups"
                         [item]="item"
@@ -23,7 +22,8 @@
             </ng-template>
             <nz-divider [nzText]="tierTitle" nzOrientation="left"></nz-divider>
             <app-item-row *ngFor="let item of tier; trackBy: trackByItem; let odd = odd"
-                          [permissionLevel]="permissionLevel"
+                          [permissionLevel]="overlay ? 10 : permissionLevel"
+                          [overlay]="overlay"
                           [finalItem]="finalItems"
                           [alarmGroups]="alarmGroups"
                           [item]="item"
@@ -36,11 +36,11 @@
             <div *ngIf="row.items.length > 0">
               <ng-template #zoneTitle>
                 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                <span class="zone-title">{{getLocation(row.zoneId) | i18n}}
-                  <i *ngIf="(currentZoneId$ | async) === row.zoneId" nz-icon nzType="environment-o"
-                     nz-tooltip [nzTitle]="'NAVIGATION.You_are_here' | translate"></i>
-                </span>
-                  <button (click)="openNavigationMap(row)" *ngIf="hasNavigationMap"
+                  <span class="zone-title">{{getLocation(row.zoneId) | i18n}}
+                    <i *ngIf="(currentZoneId$ | async) === row.zoneId" nz-icon nzType="environment-o"
+                       nz-tooltip [nzTitle]="'NAVIGATION.You_are_here' | translate"></i>
+                  </span>
+                  <button (click)="openNavigationMap(row)" *ngIf="hasNavigationMap && !overlay"
                           [nzTitle]="'NAVIGATION.Title' | translate" nz-button
                           nz-tooltip
                           nzShape="circle" nzSize="small">
@@ -50,7 +50,8 @@
               </ng-template>
               <nz-divider [nzText]="zoneTitle" nzOrientation="left"></nz-divider>
               <app-item-row *ngFor="let item of row.items; trackBy: trackByItem; let odd = odd"
-                            [permissionLevel]="permissionLevel"
+                            [permissionLevel]="overlay ? 10 : permissionLevel"
+                            [overlay]="overlay"
                             [finalItem]="finalItems"
                             [alarmGroups]="alarmGroups"
                             [item]="item"
@@ -60,10 +61,20 @@
           </div>
         </div>
       </ng-container>
-      <button (click)="addItems()" *ngIf="finalItems && permissionLevel >= 30" nz-button nzBlock>
+    </ng-template>
+    <nz-collapse-panel (nzActiveChange)="activeChange($event)"
+                       *ngIf="!overlay"
+                       [class.panel-done]="!overlay && displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)"
+                       [nzActive]="!(displayRow.collapsed || collapsed)"
+                       [nzHeader]="panelHeader">
+      <ng-container *ngTemplateOutlet="display"></ng-container>
+      <button (click)="addItems()" *ngIf="!overlay && finalItems && permissionLevel >= 30" nz-button nzBlock>
         + {{'LIST_DETAILS.Add_item' | translate}}
       </button>
     </nz-collapse-panel>
+    <ng-container *ngIf="overlay">
+      <ng-container *ngTemplateOutlet="display"></ng-container>
+    </ng-container>
     <ng-template #panelHeader>
       <div class="panel-header" fxLayout="row" fxLayoutAlign="space-between center">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -112,3 +123,4 @@
     </ng-template>
   </nz-collapse>
 </ng-container>
+</span>

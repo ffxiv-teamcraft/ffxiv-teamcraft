@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
-import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
+import { getItemSource, ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
@@ -8,22 +8,22 @@ import { I18nName } from '../../../model/common/i18n-name';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { ZoneBreakdown } from '../../../model/common/zone-breakdown';
-import { TotalPanelPricePopupComponent } from '../total-panel-price-popup/total-panel-price-popup.component';
-import { NavigationMapComponent } from '../../../modules/map/navigation-map/navigation-map.component';
-import { NavigationObjective } from '../../../modules/map/navigation-objective';
-import { ListsFacade } from '../../../modules/list/+state/lists.facade';
+import { TotalPanelPricePopupComponent } from '../../../pages/list-details/total-panel-price-popup/total-panel-price-popup.component';
+import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.component';
+import { NavigationObjective } from '../../map/navigation-objective';
+import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { combineLatest, concat, Observable, of } from 'rxjs';
-import { ItemPickerService } from '../../../modules/item-picker/item-picker.service';
+import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
-import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { ListManagerService } from '../list-manager.service';
+import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
-import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
-import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
+import { WorldNavigationMapComponent } from '../../map/world-navigation-map/world-navigation-map.component';
+import { EorzeaFacade } from '../../eorzea/+state/eorzea.facade';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { DataType } from '../../../modules/list/data/data-type';
+import { DataType } from '../data/data-type';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -40,6 +40,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   @Input()
   collapsed = false;
+
+  @Input()
+  overlay = false;
 
   tiers: ListRow[][];
 

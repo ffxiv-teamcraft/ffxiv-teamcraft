@@ -88,8 +88,8 @@ export class LayoutsFacade {
                 }
                 if (adaptativeFilter) {
                   orderedAccepted = orderedAccepted.filter(item => {
-                    const gatheredBy = getItemSource(item,  DataType.GATHERED_BY);
-                    const craftedBy = getItemSource(item,  DataType.CRAFTED_BY);
+                    const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
+                    const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
                     if (gatheredBy !== undefined) {
                       const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.data.type];
                       const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
@@ -136,8 +136,8 @@ export class LayoutsFacade {
           .filter(row => layout.recipeHideCompleted ? row.done < row.amount : true);
         if (adaptativeFilter) {
           rows = rows.filter(item => {
-            const gatheredBy = getItemSource(item,  DataType.GATHERED_BY);
-            const craftedBy = getItemSource(item,  DataType.CRAFTED_BY);
+            const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
+            const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
             if (gatheredBy.type !== undefined) {
               const gatherJob = [16, 16, 17, 17, 18, 18].indexOf(gatheredBy.data.type);
               const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
@@ -190,6 +190,10 @@ export class LayoutsFacade {
   select(layout: ListLayout): void {
     this.store.dispatch(new SelectLayout(layout.$key));
     localStorage.setItem('layout:selected', layout.$key);
+  }
+
+  selectFromOverlay(key: string): void {
+    this.store.dispatch(new SelectLayout(key));
   }
 
   loadAll() {

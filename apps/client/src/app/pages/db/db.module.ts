@@ -16,7 +16,6 @@ import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.modul
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { ListModule } from '../../modules/list/list.module';
 import { RotationsModule } from '../../modules/rotations/rotations.module';
-import { ItemDetailsPopupsModule } from '../list-details/item-details/item-details-popups.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { ItemComponent } from './item/item.component';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
@@ -43,6 +42,7 @@ import { FishComponent } from './fish/fish.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { FishingSpotComponent } from './fishing-spot/fishing-spot.component';
 import { QuickSearchModule } from '../../modules/quick-search/quick-search.module';
+import { ItemDetailsPopupsModule } from '../../modules/item-details/item-details-popups.module';
 
 const routes: Routes = [
   {

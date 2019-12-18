@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
-import { TradeIconPipe } from '../trade-icon.pipe';
+import { TradeIconPipe } from '../../../pipes/pipes/trade-icon.pipe';
 import { TradeSource } from '../../../modules/list/model/trade-source';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { DataType } from '../../../modules/list/data/data-type';
