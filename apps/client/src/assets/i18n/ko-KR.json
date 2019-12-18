@@ -611,6 +611,11 @@
       "Order_by": "정렬 기준",
       "Order": "순서",
       "Tag_filter": "태그 필터"
+    },
+    "OVERLAY": {
+      "Open": "Open list overlay",
+      "No_display": "Open a list in main window to get started",
+      "No_panel_selected": "Select a panel using the buttons above"
     }
   },
   "LIST_TAGS": {
