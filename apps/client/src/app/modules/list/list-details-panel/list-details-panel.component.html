@@ -1,4 +1,4 @@
-<span [class.overlay]="overlay">
+<span [class.overlay]="overlay" *ngIf="displayRow">
   <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
   <nz-collapse *ngIf="permissionLevel$ | async as permissionLevel">
     <ng-template #display>

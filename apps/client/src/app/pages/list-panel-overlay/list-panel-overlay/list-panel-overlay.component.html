@@ -1,4 +1,4 @@
-<app-overlay-container uri="/fishing-reporter-overlay">
+<app-overlay-container uri="/list-panel-overlay">
   <div *ngIf="display$ | async as display; else noDisplay" class="state-container" fxLayout="column" fxLayoutGap="10px">
     <div fxLayout="row wrap" fxLayoutGap="5px">
       <button *ngFor="let panel of display" nz-button class="panel-button"

@@ -84,10 +84,10 @@ export class LayoutOrderService {
 
   private getLogIndex(row: ListRow): number {
     const craftedBy = getItemSource(row, DataType.CRAFTED_BY);
-    if (!craftedBy) {
+    if (craftedBy.length === 0) {
       return -1;
     }
-    const craft = craftedBy.data[0];
+    const craft = craftedBy[0];
     const logEntry = craftingLog[craft.jobId - 8];
     // Log entry is undefined if it's an airship
     if (logEntry === undefined) {
@@ -100,15 +100,15 @@ export class LayoutOrderService {
   private getJobId(row: ListRow): number {
     const craftedBy = getItemSource(row, DataType.CRAFTED_BY);
     const gatheredBy = getItemSource(row, DataType.GATHERED_BY);
-    if (craftedBy) {
+    if (craftedBy.length > 0) {
       // Returns the lowest level available for the craft.
-      const jobName = LayoutOrderService.JOBS.find(job => craftedBy.data[0].icon.indexOf(job) > -1);
+      const jobName = LayoutOrderService.JOBS.find(job => craftedBy[0].icon.indexOf(job) > -1);
       if (jobName !== undefined) {
         return LayoutOrderService.JOBS.indexOf(jobName);
       }
       return 0;
     }
-    if (gatheredBy) {
+    if (gatheredBy.type !== undefined) {
       const jobName = ['miner', 'miner', 'botanist', 'botanist', 'fisher'][gatheredBy.data.type];
       if (jobName !== undefined) {
         return LayoutOrderService.JOBS.indexOf(jobName);
@@ -121,11 +121,11 @@ export class LayoutOrderService {
   private getLevel(row: ListRow): number {
     const craftedBy = getItemSource(row, DataType.CRAFTED_BY);
     const gatheredBy = getItemSource(row, DataType.GATHERED_BY);
-    if (craftedBy) {
+    if (craftedBy.length > 0) {
       // Returns the lowest level available for the craft.
       return craftedBy.data.map(craft => craft.level).sort((a, b) => a - b)[0];
     }
-    if (gatheredBy) {
+    if (gatheredBy.type !== undefined) {
       return gatheredBy.data.level;
     }
     return 0;

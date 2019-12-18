@@ -35,7 +35,7 @@ export class ListPanelOverlayComponent {
               private layoutsFacade: LayoutsFacade) {
     this.ipc.mainWindowState$.pipe(
       filter(state => {
-        return state.lists && state.layouts;
+        return state.lists && state.lists.selectedId && state.layouts;
       }),
       distinctUntilChanged((a, b) => {
         return a.lists.selectedId === b.lists.selectedId && a.layouts.selectedKey === b.layouts.selectedKey;
