@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, Optional, PLATFORM_ID } from '@angular/core';
 import { SearchType } from '../../../pages/search/search-type';
 import { BehaviorSubject, combineLatest, merge, Subject } from 'rxjs';
 import { SearchResult } from '../../../model/search/search-result';
@@ -8,6 +8,7 @@ import { SettingsService } from '../../settings/settings.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { NzModalRef } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-quick-search',
@@ -38,7 +39,8 @@ export class QuickSearchComponent extends TeamcraftComponent {
 
   constructor(private route: ActivatedRoute, private settings: SettingsService,
               private translate: TranslateService, private router: Router,
-              private data: DataService, @Inject(PLATFORM_ID) private platform: Object) {
+              private data: DataService, @Inject(PLATFORM_ID) private platform: Object,
+              @Optional() private modal: NzModalRef) {
     super();
   }
 
@@ -59,6 +61,9 @@ export class QuickSearchComponent extends TeamcraftComponent {
         row.id || row.itemId
       ]);
     }, 10);
+    if (this.modal) {
+      this.modal.close();
+    }
   }
 
 }
