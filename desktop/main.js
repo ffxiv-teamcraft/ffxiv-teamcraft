@@ -127,9 +127,6 @@ function createWindow() {
     opts.alwaysOnTop = true;
   }
   win = new BrowserWindow(opts);
-  if (config.get('win:fullscreen')) {
-    win.maximize();
-  }
 
   if (config.get('machina') === true) {
     Machina.start(win, config, options.verbose, options.winpcap);
@@ -167,6 +164,9 @@ function createWindow() {
     if (!config.get('start-minimized')) {
       win.focus();
       win.show();
+    }
+    if (config.get('win:fullscreen')) {
+      win.maximize();
     }
     autoUpdater.checkForUpdates();
   });
