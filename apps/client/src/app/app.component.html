@@ -491,7 +491,7 @@
         <ng-template #alarmsTrigger>
           <i nz-icon nzType="bell"></i>
         </ng-template>
-        <app-alarms-sidebar *ngIf="!(loading$ | async)"></app-alarms-sidebar>
+        <app-alarms-sidebar *ngIf="!(loading$ | async)" appLazyComponent></app-alarms-sidebar>
       </nz-sider>
     </nz-layout>
     <nz-footer [fxHide]="!overlay" class="footer" fxShow.lt-sm>

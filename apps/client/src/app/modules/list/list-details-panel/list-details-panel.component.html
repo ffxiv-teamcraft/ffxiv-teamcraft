@@ -1,4 +1,4 @@
-<span [class.overlay]="overlay" *ngIf="displayRow">
+<span [class.overlay]="overlay" *ngIf="displayRow" appLazyComponent>
   <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
   <nz-collapse *ngIf="permissionLevel$ | async as permissionLevel">
     <ng-template #display>
@@ -11,7 +11,7 @@
                         [alarmGroups]="alarmGroups"
                         [item]="item"
                         [layout]="displayRow.layout"
-                        [odd]="odd"></app-item-row>
+                        [odd]="odd" appLazyComponent></app-item-row>
         </div>
         <div *ngIf="displayRow.tiers || displayRow.reverseTiers">
           <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
@@ -28,7 +28,7 @@
                           [alarmGroups]="alarmGroups"
                           [item]="item"
                           [layout]="displayRow.layout"
-                          [odd]="odd"></app-item-row>
+                          [odd]="odd" appLazyComponent></app-item-row>
           </div>
         </div>
         <div *ngIf="displayRow.zoneBreakdown">
@@ -56,7 +56,7 @@
                             [alarmGroups]="alarmGroups"
                             [item]="item"
                             [layout]="displayRow.layout"
-                            [odd]="odd"></app-item-row>
+                            [odd]="odd" appLazyComponent></app-item-row>
             </div>
           </div>
         </div>
