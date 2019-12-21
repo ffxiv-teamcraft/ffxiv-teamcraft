@@ -42,6 +42,7 @@ import { TeamcraftErrorHandler } from './error-handler/teamcraft-error-handler';
 import { DevGuard } from './guard/dev.guard';
 import { DATA_REPORTERS } from './data-reporting/data-reporters-index';
 import { VersionLockModule } from '../pages/version-lock/version-lock.module';
+import { LazyComponentDirective } from './tools/lazy-component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { VersionLockModule } from '../pages/version-lock/version-lock.module';
     I18nPipe,
     TimerPipe,
     DbButtonComponent,
-    ItemRarityDirective
+    ItemRarityDirective,
+    LazyComponentDirective
   ],
   exports: [
     I18nPipe,
@@ -107,7 +109,8 @@ import { VersionLockModule } from '../pages/version-lock/version-lock.module';
     MaintenanceModule,
     TimerPipe,
     DbButtonComponent,
-    ItemRarityDirective
+    ItemRarityDirective,
+    LazyComponentDirective
   ]
 })
 export class CoreModule {

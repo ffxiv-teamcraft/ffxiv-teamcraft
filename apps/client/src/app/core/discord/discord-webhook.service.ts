@@ -110,7 +110,9 @@ export class DiscordWebhookService {
       return;
     }
     const row = list.getItemById(itemId, !finalItem, finalItem);
-    if (row.done + amount >= totalNeeded && !team.hasSettingEnabled(WebhookSettingType.ITEM_COMPLETION)) {
+    if (row.done + amount < totalNeeded && !team.hasSettingEnabled(WebhookSettingType.ITEM_PROGRESSION)) {
+      return;
+    } else if (row.done + amount >= totalNeeded && !team.hasSettingEnabled(WebhookSettingType.ITEM_COMPLETION)) {
       return;
     } else if (row.done + amount < totalNeeded) {
       amount = row.done + amount;

@@ -1,0 +1,20 @@
+<nz-list [nzDataSource]="details" [nzRenderItem]="instanceTemplate">
+  <ng-template #instanceTemplate let-instance>
+    <nz-list-item>
+      <nz-list-item-meta [nzAvatar]="avatar"
+                         [nzTitle]="title">
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <div>{{(instance.id | instanceName | i18n) || instance.name}}</div>
+            <app-db-button [id]="instance.id" type="instance"></app-db-button>
+          </div>
+        </ng-template>
+        <ng-template #avatar>
+          <a routerLink="/db/{{translate.currentLang}}/instance/{{instance.id}}">
+            <img [src]="instance.icon | instanceIcon" alt="">
+          </a>
+        </ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+  </ng-template>
+</nz-list>

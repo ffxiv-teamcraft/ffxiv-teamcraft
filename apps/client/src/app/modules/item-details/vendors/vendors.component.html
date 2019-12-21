@@ -1,0 +1,29 @@
+<nz-list [nzDataSource]="details" [nzRenderItem]="vendorTemplate">
+  <ng-template #vendorTemplate let-vendor>
+    <nz-list-item [nzContent]="vendor.zoneId !== undefined?position:null">
+      <nz-list-item-meta [nzDescription]="price"
+                         [nzTitle]="title">
+      </nz-list-item-meta>
+      <ng-template #title>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>{{vendor.npcId | npcName | i18n}}</div>
+          <app-db-button [id]="vendor.npcId" type="npc"></app-db-button>
+        </div>
+      </ng-template>
+      <ng-template #price>
+        <img alt="Gil" src="https://xivapi.com/i/065000/065002.png">{{vendor.price}}
+      </ng-template>
+      <ng-template #position>
+        <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
+          <div>{{vendor.zoneId | placeName | i18n}}</div>
+          <app-map-position [mapId]="vendor.mapId" [marker]="vendor.coords" [zoneId]="vendor.zoneId"></app-map-position>
+          <div *ngIf="vendor.mapId | closestAetheryte: vendor.coords | async as aetheryte"
+               class="closest-tp">
+            <img alt="" class="aetheryte-icon"
+                 src="./assets/icons/Aetheryte.png"> {{aetheryte.nameid | placeName | i18n}}
+          </div>
+        </div>
+      </ng-template>
+    </nz-list-item>
+  </ng-template>
+</nz-list>

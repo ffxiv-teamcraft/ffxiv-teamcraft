@@ -1,33 +1,34 @@
 import { ZoneBreakdownRow } from './zone-breakdown-row';
-import { ListRow } from '../../modules/list/model/list-row';
+import { getItemSource, ListRow } from '../../modules/list/model/list-row';
 import { tpWindowEntries } from '../../core/data/sources/tp-window-entries';
 import { LayoutRowFilter } from '../../core/layout/layout-row-filter';
+import { DataType } from '../../modules/list/data/data-type';
 
 export class ZoneBreakdown {
 
   constructor(rows: ListRow[], filterChain?: string, hideZoneDuplicates = false) {
     rows.forEach(row => {
-      if (row.gatheredBy !== undefined && row.gatheredBy.nodes !== undefined && row.gatheredBy.nodes.length !== 0
+      if (getItemSource(row, DataType.GATHERED_BY, true).nodes !== undefined && getItemSource(row, DataType.GATHERED_BY, true).nodes.length !== 0
         && this.hasOneFilter(filterChain, LayoutRowFilter.IS_GATHERING, LayoutRowFilter.IS_GATHERED_BY_BTN, LayoutRowFilter.IS_GATHERED_BY_MIN, LayoutRowFilter.IS_GATHERED_BY_FSH)) {
-        row.gatheredBy.nodes.forEach(node => {
+        getItemSource(row, DataType.GATHERED_BY, true).nodes.forEach(node => {
           this.addToBreakdown(node.zoneid, node.mapid, row, hideZoneDuplicates);
         });
-      } else if (row.drops !== undefined && row.drops.length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_DUNGEON_DROP, LayoutRowFilter.IS_MONSTER_DROP)) {
-        row.drops.forEach(drop => {
+      } else if (getItemSource(row, DataType.DROPS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_DUNGEON_DROP, LayoutRowFilter.IS_MONSTER_DROP)) {
+        getItemSource(row, DataType.DROPS).forEach(drop => {
           this.addToBreakdown(drop.zoneid, drop.mapid, row, hideZoneDuplicates);
         });
       } else if (row.alarms !== undefined && row.alarms.length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TIMED, LayoutRowFilter.IS_REDUCTION)) {
         row.alarms.forEach(alarm => {
           this.addToBreakdown(alarm.zoneId, alarm.mapId, row, hideZoneDuplicates);
         });
-      } else if (row.vendors !== undefined && row.vendors.length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.CAN_BE_BOUGHT)) {
-        row.vendors.forEach(vendor => {
+      } else if (getItemSource(row, DataType.VENDORS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.CAN_BE_BOUGHT)) {
+        getItemSource(row, DataType.VENDORS).forEach(vendor => {
           this.addToBreakdown(vendor.zoneId, vendor.mapId, row, hideZoneDuplicates);
         });
-      } else if (row.tradeSources !== undefined && row.tradeSources.length > 0
+      } else if (getItemSource(row, DataType.TRADE_SOURCES).length > 0
         && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TRADE, LayoutRowFilter.IS_TOKEN_TRADE, LayoutRowFilter.IS_TOME_TRADE, LayoutRowFilter.IS_GC_TRADE, LayoutRowFilter.IS_SCRIPT_TRADE)
       ) {
-        row.tradeSources.forEach(source => {
+        getItemSource(row, DataType.TRADE_SOURCES).forEach(source => {
           source.npcs.forEach(npc => {
             this.addToBreakdown(npc.zoneId, npc.mapId, row, hideZoneDuplicates);
           });
@@ -65,8 +66,7 @@ export class ZoneBreakdown {
     const existingRow = this.rows.find(r => r.zoneId === zoneId);
     // If we hide duplicates and it's bicolor gems, ignore eulmore and crystarium
     if (hideZoneDuplicates
-      && item.tradeSources
-      && item.tradeSources.some(ts => ts.trades.some(t => t.currencies.some(c => c.id === 26807)))
+      && getItemSource(item, DataType.TRADE_SOURCES).some(ts => ts.trades.some(t => t.currencies.some(c => c.id === 26807)))
       && (mapId === 498 || mapId === 497)) {
       return;
     }

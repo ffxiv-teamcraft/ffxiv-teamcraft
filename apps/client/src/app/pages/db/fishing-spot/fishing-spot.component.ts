@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { fishingSpots } from '../../../core/data/sources/fishing-spots';
@@ -34,16 +34,6 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
   public gubalData$: Observable<any>;
-
-  public highlightTime$ = this.etime.getEorzeanTime().pipe(
-    distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours()),
-    map(time => {
-      return [{
-        name: `${time.getUTCHours()}:00`,
-        value: this.settings.theme.highlight
-      }];
-    })
-  );
 
   public loading = true;
 

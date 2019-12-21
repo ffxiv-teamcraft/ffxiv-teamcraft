@@ -382,6 +382,11 @@
                     (click)="openFishingOverlay()" class="button-with-img">
               <img src="./assets/icons/classjob/fisher.png" alt="">
             </button>
+            <button nz-button nzShape="circle"
+                    nz-tooltip [nzTitle]="'LIST_DETAILS.OVERLAY.Open' | translate"
+                    (click)="openListPanelOverlay()">
+              <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
+            </button>
           </div>
 
           <div fxLayout="row" class="bottom-buttons" fxLayoutAlign="center center"
@@ -486,7 +491,7 @@
         <ng-template #alarmsTrigger>
           <i nz-icon nzType="bell"></i>
         </ng-template>
-        <app-alarms-sidebar *ngIf="!(loading$ | async)"></app-alarms-sidebar>
+        <app-alarms-sidebar *ngIf="!(loading$ | async)" appLazyComponent></app-alarms-sidebar>
       </nz-sider>
     </nz-layout>
     <nz-footer [fxHide]="!overlay" class="footer" fxShow.lt-sm>

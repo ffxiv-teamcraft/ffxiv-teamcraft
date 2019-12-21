@@ -1,0 +1,24 @@
+<app-overlay-container uri="/list-panel-overlay">
+  <div *ngIf="display$ | async as display; else noDisplay" class="state-container" fxLayout="column" fxLayoutGap="10px">
+    <div fxLayout="row wrap" fxLayoutGap="5px">
+      <button *ngFor="let panel of display" nz-button class="panel-button"
+              [nzType]="(selectedPanel$ | async) === panel.title ? 'primary' : 'default'"
+              (click)="selectedPanel$.next(panel.title)">
+        {{panel.title | translate}}
+      </button>
+    </div>
+    <div *ngIf="selectedPanelDisplay$ | async as panelDisplay; else noPanel">
+      <app-list-details-panel [displayRow]="panelDisplay" [overlay]="true" [finalItems]="(selectedPanel$ | async) === 'Items'"></app-list-details-panel>
+    </div>
+  </div>
+  <ng-template #noDisplay>
+    <app-fullpage-message>
+      {{'LIST_DETAILS.OVERLAY.No_display' | translate}}
+    </app-fullpage-message>
+  </ng-template>
+  <ng-template #noPanel>
+    <app-fullpage-message>
+      {{'LIST_DETAILS.OVERLAY.No_panel_selected' | translate}}
+    </app-fullpage-message>
+  </ng-template>
+</app-overlay-container>

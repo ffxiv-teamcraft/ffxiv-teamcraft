@@ -36,7 +36,8 @@
     "Reset_filters": "Resetear filtros",
     "Too_many_results_warning": "Esta búsqueda devuelve más de 100 artículos. Como nuestro origen de datos esta limitado a 100 resultados, puede que necesite filtros adicionales para encontrar un artículo específico.",
     "Share_url": "Copiar el url de búsqueda al portapapeles",
-    "Share_url_copied": "URL de búsqueda copiado al portapapeles"
+    "Share_url_copied": "URL de búsqueda copiado al portapapeles",
+    "Only_craftable": "Only recipes"
   },
   "Use_as_default_character": "Usar como personaje por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
@@ -384,9 +385,12 @@
     "Enable_packet_capture": "Habilitar captura de paquetes (añade características de inventario en tiempo real)",
     "Packet_capture_info": "Capturar paquetes es contra los TdS, la misma razón por la que usar ACT es contra los TdS. Pero Square Enix lo tolera a menos que lo presuma a todos en el juego. Simplemente no lo haga y no se arriesgará a nada.",
     "Enable_autofill_by_default": "Enable autofill by default",
+    "Enable_autofill_notification_by_default": "Enable autofill notification by default",
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Contribuir a Universalis",
     "Track_items_on_sale": "Rastrear artículos a la venta en sus retenedores (requiere reiniciar/actualizar)",
+    "Performance_mode": "Performance mode",
+    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -496,6 +500,7 @@
     "Mark_whole_panel_done": "Marcar contenido del panel como completado",
     "Set_color": "Establecer color de lista",
     "Go_to_pinned": "Ir a la lista anclada (clic derecho para quitar)",
+    "Reset_panel": "Reset all the items of this panel",
     "COLORS": {
       "RED": "Rojo",
       "GREEN": "Verde",
@@ -554,6 +559,8 @@
     "Disable_HQ_suggestions": "Deshabilitar las banderas HQ automáticas",
     "Amount_craftable": "Puede crear {{amount}}",
     "Add_item": "Agregar un artículo",
+    "List_large": "This is a large list",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
     "List_too_large": "Lista demasiado larga",
     "List_too_large_description": "Esta lista es muy larga y puede llegar al limite de tamaño de la base de datos debido a toda la información que lleva. No le será permitido añadir más elementos para asegurar que no pierda la lista.",
     "Add_to_another_list": "Añadir a otra lista",
@@ -604,6 +611,11 @@
       "Order_by": "Ordenar por",
       "Order": "Orden",
       "Tag_filter": "Filtro de etiquetas"
+    },
+    "OVERLAY": {
+      "Open": "Open list overlay",
+      "No_display": "Open a list in main window to get started",
+      "No_panel_selected": "Select a panel using the buttons above"
     }
   },
   "LIST_TAGS": {
@@ -1054,7 +1066,8 @@
       "LIST_PROGRESSION": "Progresar materiales de la lista",
       "FINAL_LIST_PROGRESSION": "Progresar artículos finales de la lista",
       "USER_ASSIGNMENT": "Asignación de usuario",
-      "ITEM_COMPLETION": "Completar el artículo"
+      "ITEM_COMPLETION": "Completar el artículo",
+      "ITEM_PROGRESSION": "Item progression"
     }
   },
   "MARKETBOARD": {

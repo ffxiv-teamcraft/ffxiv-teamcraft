@@ -3,9 +3,10 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcRenderer } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
-import { Observable, ReplaySubject, Subject } from 'rxjs';
+import { Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
+import { Store } from '@ngrx/store';
 
 @Injectable({
   providedIn: 'root'
@@ -82,7 +83,12 @@ export class IpcService {
 
   public fishingState$: ReplaySubject<any> = new ReplaySubject<any>();
 
-  constructor(private platformService: PlatformService, private router: Router) {
+  public mainWindowState$: ReplaySubject<any> = new ReplaySubject<any>();
+
+  private stateSubscription: Subscription;
+
+  constructor(private platformService: PlatformService, private router: Router,
+              private store: Store<any>) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
       if (window.require) {
@@ -107,6 +113,7 @@ export class IpcService {
 
   public set overlayUri(uri: string) {
     this._overlayUri = uri;
+    this.handleOverlayChange();
   }
 
   public on(channel: string, cb: Function): void {
@@ -161,6 +168,25 @@ export class IpcService {
         data: 'No ping received from the server during 60 seconds'
       });
     });
+    this.handleOverlayChange();
+  }
+
+  private handleOverlayChange(): void {
+    if (this.overlayUri) {
+      if (this.stateSubscription) {
+        this.stateSubscription.unsubscribe();
+        delete this.stateSubscription;
+      }
+      this.on('app-state', (event, state) => {
+        this.mainWindowState$.next(state);
+      });
+      this.send('app-state:get');
+    } else {
+      this._ipc.removeAllListeners('app-state');
+      this.stateSubscription = this.store.subscribe(state => {
+        this.send('app-state:set', state);
+      });
+    }
   }
 
   private handlePacket(packet: any): void {

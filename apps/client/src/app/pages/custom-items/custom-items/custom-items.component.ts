@@ -33,6 +33,8 @@ import { saveAs } from 'file-saver';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { CustomItemsImportPopupComponent } from '../custom-items-import-popup/custom-items-import-popup.component';
 import { CustomItemsExportPopupComponent } from '../custom-items-export-popup/custom-items-export-popup.component';
+import { getItemSource } from '../../../modules/list/model/list-row';
+import { DataType } from '../../../modules/list/data/data-type';
 
 @Component({
   selector: 'app-custom-items',
@@ -224,28 +226,45 @@ export class CustomItemsComponent {
 
 
   private beforeSave(item: CustomItem): CustomItem {
-    if (item.gatheredBy !== undefined) {
-      item.gatheredBy.icon = NodeTypeIconPipe.icons[item.gatheredBy.type];
-      item.gatheredBy.nodes[0].zoneid = item.gatheredBy.nodes[0].mapid;
-      item.gatheredBy.nodes[0].areaid = item.gatheredBy.nodes[0].mapid;
-      item.gatheredBy.nodes[0].level = item.gatheredBy.level;
+    if (getItemSource(item, DataType.GATHERED_BY, true).type !== undefined) {
+      getItemSource(item, DataType.GATHERED_BY, true).icon = NodeTypeIconPipe.icons[getItemSource(item, DataType.GATHERED_BY, true).type];
+      getItemSource(item, DataType.GATHERED_BY, true).nodes[0].zoneid = getItemSource(item, DataType.GATHERED_BY, true).nodes[0].mapid;
+      getItemSource(item, DataType.GATHERED_BY, true).nodes[0].areaid = getItemSource(item, DataType.GATHERED_BY, true).nodes[0].mapid;
+      getItemSource(item, DataType.GATHERED_BY, true).nodes[0].level = getItemSource(item, DataType.GATHERED_BY, true).level;
     }
-    if (item.vendors && item.vendors.length > 0) {
-      item.vendors = item.vendors.map(vendor => {
-        vendor.areaId = vendor.zoneId = vendor.mapId;
-        return vendor;
+    if (getItemSource(item, DataType.VENDORS).length > 0) {
+      item.sources = item.sources.map(source => {
+        if (source.type === DataType.VENDORS) {
+          source.data = source.data.map(
+            vendor => {
+              vendor.areaId = vendor.zoneId = vendor.mapId;
+              return vendor;
+            });
+        }
+        return source;
       });
     }
-    if (item.tradeSources && item.tradeSources.length > 0) {
-      item.tradeSources = item.tradeSources.map(tradeSource => {
-        tradeSource.npcs[0].areaId = tradeSource.npcs[0].zoneId = tradeSource.npcs[0].mapId;
-        return tradeSource;
+    if (getItemSource(item, DataType.TRADE_SOURCES).length > 0) {
+      item.sources = item.sources.map(source => {
+        if (source.type === DataType.TRADE_SOURCES) {
+          source.data = source.data.map(
+            tradeSource => {
+              tradeSource.npcs[0].areaId = tradeSource.npcs[0].zoneId = tradeSource.npcs[0].mapId;
+              return tradeSource;
+            });
+        }
+        return source;
       });
     }
-    if (item.craftedBy !== undefined) {
-      item.craftedBy = item.craftedBy.map(craft => {
-        craft.icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === craft.jobId).abbreviation}.png`;
-        return craft;
+    if (getItemSource(item, DataType.CRAFTED_BY).length > 0) {
+      item.sources = item.sources.map(source => {
+        if (source.type === DataType.CRAFTED_BY) {
+          source.data = source.data.map(craft => {
+            craft.icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === craft.jobId).abbreviation}.png`;
+            return craft;
+          });
+        }
+        return source;
       });
     }
     return item;
@@ -299,7 +318,7 @@ export class CustomItemsComponent {
           a = ((a << 5) - a) + b.charCodeAt(0);
           return a & a;
         }, 0)
-        }.tcitem`);
+      }.tcitem`);
   }
 
   renameFolder(folder: CustomItemFolder): void {
@@ -329,14 +348,17 @@ export class CustomItemsComponent {
    */
   public addCraft(item: CustomItem): void {
     // We allow only one craft for now, handling multiple ones would be kinda hard and p much useless.
-    item.craftedBy = [{
-      jobId: 8,
-      level: 1,
-      icon: '',
-      stars_tooltip: '',
-      itemId: item.$key,
-      recipeId: `${item.$key}:recipe`
-    }];
+    item.sources.push({
+      type: DataType.CRAFTED_BY,
+      data: [{
+        jobId: 8,
+        level: 1,
+        icon: '',
+        stars_tooltip: '',
+        itemId: item.$key,
+        recipeId: `${item.$key}:recipe`
+      }]
+    });
     item.dirty = true;
   }
 
@@ -370,7 +392,7 @@ export class CustomItemsComponent {
   }
 
   public deleteCraft(item: CustomItem): void {
-    delete item.craftedBy;
+    item.sources = item.sources.filter(s => s.type !== DataType.CRAFTED_BY);
     item.dirty = true;
   }
 
@@ -380,28 +402,31 @@ export class CustomItemsComponent {
    *
    */
   public addGathering(item: CustomItem): void {
-    item.gatheredBy = {
-      type: 0,
-      folklore: 0,
-      icon: '',
-      level: 70,
-      nodes: [
-        {
-          mapid: 0,
-          zoneid: 0,
-          areaid: 1,
-          level: 1,
-          coords: [0, 0],
-          slot: '?'
-        }
-      ],
-      stars_tooltip: ''
-    };
+    item.sources.push({
+      type: DataType.GATHERED_BY,
+      data: {
+        type: 0,
+        folklore: 0,
+        icon: '',
+        level: 70,
+        nodes: [
+          {
+            mapid: 0,
+            zoneid: 0,
+            areaid: 1,
+            level: 1,
+            coords: [0, 0],
+            slot: '?'
+          }
+        ],
+        stars_tooltip: ''
+      }
+    });
     item.dirty = true;
   }
 
   public deleteGathering(item: CustomItem): void {
-    delete item.gatheredBy;
+    item.sources = item.sources.filter(s => s.type !== DataType.GATHERED_BY);
     item.dirty = true;
   }
 
@@ -414,13 +439,13 @@ export class CustomItemsComponent {
   public addAlarm(item: CustomItem): void {
     item.alarms = item.alarms || [];
     let componentParams: Partial<CustomAlarmPopupComponent> = { returnAlarm: true, name: item.name };
-    if (item.gatheredBy !== undefined) {
+    if (getItemSource(item, DataType.GATHERED_BY, true).type !== undefined) {
       componentParams = {
         ...componentParams,
-        x: item.gatheredBy.nodes[0].coords[0],
-        y: item.gatheredBy.nodes[0].coords[1],
-        mapId: item.gatheredBy.nodes[0].mapid,
-        type: item.gatheredBy.type
+        x: getItemSource(item, DataType.GATHERED_BY, true).nodes[0].coords[0],
+        y: getItemSource(item, DataType.GATHERED_BY, true).nodes[0].coords[1],
+        mapId: getItemSource(item, DataType.GATHERED_BY, true).nodes[0].mapid,
+        type: getItemSource(item, DataType.GATHERED_BY, true).type
       };
     }
     this.dialog.create({
@@ -478,7 +503,6 @@ export class CustomItemsComponent {
    */
 
   public addVendor(item: CustomItem): void {
-    item.vendors = item.vendors || [];
     this.dialog.create({
       nzTitle: this.translate.instant('CUSTOM_ITEMS.NPC_PICKER.Title'),
       nzFooter: null,
@@ -488,21 +512,38 @@ export class CustomItemsComponent {
         filter(res => res !== undefined)
       )
       .subscribe(npc => {
-        item.vendors.push({
-          // 21 is "eorzea" :)
-          zoneId: npc.position === null ? 21 : npc.position.zoneid,
-          price: 1,
-          coords: npc.position === null ? { x: 1, y: 1 } : { x: npc.position.x, y: npc.position.y },
-          mapId: npc.position === null ? 2 : npc.position.map,
-          areaId: npc.position === null ? 21 : npc.position.zoneid,
-          npcId: npc.id
-        });
+        const vendors = getItemSource(item, DataType.VENDORS);
+        if (vendors.length === 0) {
+          item.sources.push({
+            type: DataType.VENDORS,
+            data: [{
+              // 21 is "eorzea" :)
+              zoneId: npc.position === null ? 21 : npc.position.zoneid,
+              price: 1,
+              coords: npc.position === null ? { x: 1, y: 1 } : { x: npc.position.x, y: npc.position.y },
+              mapId: npc.position === null ? 2 : npc.position.map,
+              areaId: npc.position === null ? 21 : npc.position.zoneid,
+              npcId: npc.id
+            }]
+          });
+        } else {
+          vendors.push({
+            // 21 is "eorzea" :)
+            zoneId: npc.position === null ? 21 : npc.position.zoneid,
+            price: 1,
+            coords: npc.position === null ? { x: 1, y: 1 } : { x: npc.position.x, y: npc.position.y },
+            mapId: npc.position === null ? 2 : npc.position.map,
+            areaId: npc.position === null ? 21 : npc.position.zoneid,
+            npcId: npc.id
+          });
+        }
         item.dirty = true;
       });
   }
 
   public deleteVendor(item: CustomItem, vendor: Vendor): void {
-    item.vendors = item.vendors.filter(v => v !== vendor);
+    const vendors = getItemSource(item, DataType.VENDORS);
+    vendors.data = vendors.data.filter(v => v !== vendor);
     item.dirty = true;
   }
 
@@ -513,7 +554,6 @@ export class CustomItemsComponent {
    */
 
   public addTrade(item: CustomItem): void {
-    item.tradeSources = item.tradeSources || [];
     this.dialog.create({
       nzTitle: this.translate.instant('CUSTOM_ITEMS.NPC_PICKER.Title'),
       nzFooter: null,
@@ -523,7 +563,8 @@ export class CustomItemsComponent {
         filter(res => res !== undefined)
       )
       .subscribe(npc => {
-        item.tradeSources.push({
+        const tradeSources = getItemSource(item, DataType.TRADE_SOURCES);
+        const ts = {
           npcs: [
             {
               id: npc.id,
@@ -548,7 +589,15 @@ export class CustomItemsComponent {
               ]
             }
           ]
-        });
+        };
+        if (tradeSources.length === 0) {
+          item.sources.push({
+            type: DataType.TRADE_SOURCES,
+            data: [ts]
+          });
+        } else {
+          tradeSources.push(ts);
+        }
         item.dirty = true;
       });
   }
@@ -582,7 +631,8 @@ export class CustomItemsComponent {
   }
 
   public deleteTrade(item: CustomItem, tradeSources: TradeSource): void {
-    item.tradeSources = item.tradeSources.filter(t => t !== tradeSources);
+    const tradeSourceData = getItemSource(item, DataType.TRADE_SOURCES);
+    tradeSourceData.data = tradeSourceData.data.filter(t => t !== tradeSources);
     item.dirty = true;
   }
 
@@ -605,18 +655,28 @@ export class CustomItemsComponent {
         filter(res => res !== undefined)
       )
       .subscribe((res: SearchResult) => {
-        item.reducedFrom.push({
+        const reducedFrom = getItemSource(item, DataType.REDUCED_FROM);
+        const data = {
           obj: {
             i: res.itemId,
             c: res.icon
           }
-        });
+        };
+        if (reducedFrom.length === 0) {
+          item.sources.push({
+            type: DataType.REDUCED_FROM,
+            data: data
+          });
+        } else {
+          reducedFrom.data.push(data);
+        }
         item.dirty = true;
       });
   }
 
   public deleteReduction(item: CustomItem, reduction: any): void {
-    item.reducedFrom = item.reducedFrom.filter(r => r !== reduction);
+    const tradeSourceData = getItemSource(item, DataType.REDUCED_FROM);
+    tradeSourceData.data = tradeSourceData.data.filter(r => r !== reduction);
     item.dirty = true;
   }
 

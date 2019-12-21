@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
+import { CraftingRotation } from '../../../model/other/crafting-rotation';
 
 @Component({
   selector: 'app-rotation-overlay',
@@ -12,7 +13,7 @@ import { CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
 })
 export class RotationOverlayComponent {
 
-  public rotation$: Observable<any>;
+  public rotation$: Observable<CraftingRotation>;
 
   constructor(private rotationsFacade: RotationsFacade, private route: ActivatedRoute) {
     this.rotation$ = this.route.paramMap.pipe(

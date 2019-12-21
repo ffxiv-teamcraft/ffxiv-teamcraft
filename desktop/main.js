@@ -127,9 +127,6 @@ function createWindow() {
     opts.alwaysOnTop = true;
   }
   win = new BrowserWindow(opts);
-  if (config.get('win:fullscreen')) {
-    win.maximize();
-  }
 
   if (config.get('machina') === true) {
     Machina.start(win, config, options.verbose, options.winpcap);
@@ -167,6 +164,9 @@ function createWindow() {
     if (!config.get('start-minimized')) {
       win.focus();
       win.show();
+    }
+    if (config.get('win:fullscreen')) {
+      win.maximize();
     }
     autoUpdater.checkForUpdates();
   });
@@ -338,6 +338,18 @@ ipcMain.on('fishing-state:set', (_, data) => {
 
 ipcMain.on('fishing-state:get', (event) => {
   event.sender.send('fishing-state', fishingState);
+});
+
+
+let appState = {};
+
+ipcMain.on('app-state:set', (_, data) => {
+  appState = data;
+  broadcast('app-state', data);
+});
+
+ipcMain.on('app-state:get', (event) => {
+  event.sender.send('app-state', appState);
 });
 
 

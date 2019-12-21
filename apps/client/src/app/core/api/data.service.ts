@@ -182,7 +182,7 @@ export class DataService {
         }];
       }));
 
-    if (onlyCraftable) {
+    if (onlyCraftable && !isKoOrZh) {
       xivapiFilters.push({
         column: 'Recipes.ClassJobID',
         operator: '>',
@@ -221,7 +221,8 @@ export class DataService {
       ).pipe(
         map(items => {
           return items.Results.filter(item => {
-            return xivapiFilters.reduce((matches, filter) => {
+            const matchesRecipeFilter = onlyCraftable ? item.Recipes.length > 0 : true;
+            return matchesRecipeFilter && xivapiFilters.reduce((matches, filter) => {
               switch (filter.operator) {
                 case '>=':
                   return matches && item[filter.column] >= filter.value;
@@ -244,6 +245,7 @@ export class DataService {
       map(results => {
         if (onlyCraftable) {
           return results.filter(row => {
+            console.log(row);
             return (row.Recipes && row.Recipes.length > 0)
               || (row.GameContentLinks && row.GameContentLinks.CompanyCraftSequence && row.GameContentLinks.CompanyCraftSequence.ResultItem)
               && !row.Name_en.startsWith('Dated');

@@ -2,12 +2,13 @@ import { ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, O
 import { PricingService } from '../pricing.service';
 import { Price } from '../model/price';
 import { ItemAmount } from '../model/item-amount';
-import { ListRow } from '../../list/model/list-row';
+import { getItemSource, ListRow } from '../../list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { SettingsService } from '../../settings/settings.service';
+import { DataType } from '../../list/data/data-type';
 
 @Component({
   selector: 'app-pricing-row',
@@ -115,7 +116,7 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   }
 
   private setAutoCost(): void {
-    if (this.preCraft && !this.customPrice && this.item.vendors.length === 0) {
+    if (this.preCraft && !this.customPrice && getItemSource(this.item, DataType.VENDORS).length === 0) {
       this.price.nq = this.price.hq = Math.ceil(this._craftCost) || 0;
       this.priceFromCrafting = true;
     }

@@ -1,4 +1,5 @@
 export enum DataType {
+  NONE,
   CRAFTED_BY,
   TRADE_SOURCES,
   VENDORS,
@@ -13,5 +14,10 @@ export enum DataType {
   ALARMS,
   MASTERBOOKS,
   TREASURES,
-  FATES
+  FATES,
+  VENTURES,
+  TRIPLE_TRIAD_DUELS,
+  TRIPLE_TRIAD_PACK,
+  QUESTS,
+  ACHIEVEMENTS,
 }

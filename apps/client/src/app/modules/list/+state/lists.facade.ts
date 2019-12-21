@@ -25,7 +25,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap, throttleTime } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, throttleTime } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -325,6 +325,9 @@ export class ListsFacade {
 
   select(key: string): void {
     this.store.dispatch(new SelectList(key, this.settings.enableAutofillByDefault));
+    if (this.settings.enableAutofillNotificationByDefault) {
+      this.store.dispatch(new ToggleCompletionNotification(true));
+    }
   }
 
   pin(key: string): void {

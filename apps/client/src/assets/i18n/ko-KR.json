@@ -36,7 +36,8 @@
     "Reset_filters": "필터 초기화",
     "Too_many_results_warning": "검색 결과가 100개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다.",
     "Share_url": "검색URL을 클립보드로 복사하기",
-    "Share_url_copied": "검색URL이 클립보드에 복사되었습니다"
+    "Share_url_copied": "검색URL이 클립보드에 복사되었습니다",
+    "Only_craftable": "제작법만 검색"
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
@@ -384,9 +385,12 @@
     "Enable_packet_capture": "패킷 캡쳐를 사용 (실시간 소지품 동기화 기능 추가)",
     "Packet_capture_info": "패킷 캡쳐는 ACT(미터기) 와 같이 이용약관(ToS) 에 위배됩니다. 하지만 스퀘어에닉스에서는 ACT같은 외부 프로그램을 사용하는것을 다른사람들에게 말하지않으면 묵인해줍니다. 그냥 말하지마세요. 그러면 문제될건 없습니다.",
     "Enable_autofill_by_default": "자동채우기를 기본으로 설정하기",
+    "Enable_autofill_notification_by_default": "자동채우기 알람을 기본으로 설정하기",
     "Enable_autofill_hq_filter": "자동채우기에서 HQ아이템이 필요할 때만 HQ아이템 사용하기",
     "Contribute_to_universalis": "Universalis에 기여하기",
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
+    "Performance_mode": "성능 모드",
+    "Performance_mode_explain": "성능 향상을 위해 아이템 사진과 메뉴를 제거(버튼만 남게됨) 합니다",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -496,6 +500,7 @@
     "Mark_whole_panel_done": "패널의 내용을 완료됨으로 표시",
     "Set_color": "목록 색상 설정",
     "Go_to_pinned": "고정해둔 목록으로 가기 (우클릭시 고정해제)",
+    "Reset_panel": "이 패널에 있는 모든 아이템 초기화하기",
     "COLORS": {
       "RED": "빨강",
       "GREEN": "초록",
@@ -554,6 +559,8 @@
     "Disable_HQ_suggestions": "HQ 자동표시 해제",
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
     "Add_item": "아이템 추가",
+    "List_large": "큰 목록입니다",
+    "Enable_performance_mode": "더 빠른 랜더링을 위해 성능모드 켜기",
     "List_too_large": "너무 큰 목록",
     "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
     "Add_to_another_list": "다른 목록에 추가",
@@ -604,6 +611,11 @@
       "Order_by": "정렬 기준",
       "Order": "순서",
       "Tag_filter": "태그 필터"
+    },
+    "OVERLAY": {
+      "Open": "목록 오버레이 열기",
+      "No_display": "실행시 목록화면을 매인화면으로 열기",
+      "No_panel_selected": "위에 있는 버튼을 사용하여 패널을 선택하세요"
     }
   },
   "LIST_TAGS": {
@@ -1054,7 +1066,8 @@
       "LIST_PROGRESSION": "재료 진행상황",
       "FINAL_LIST_PROGRESSION": "최종 아이템 진행상황",
       "USER_ASSIGNMENT": "팀원 할당",
-      "ITEM_COMPLETION": "아이템 완료"
+      "ITEM_COMPLETION": "아이템 완료",
+      "ITEM_PROGRESSION": "아이템 초기화"
     }
   },
   "MARKETBOARD": {

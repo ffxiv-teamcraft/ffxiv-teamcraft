@@ -4,6 +4,7 @@
       <h3>{{rotation.getName()}}</h3>
       <div fxLayout="row wrap" fxLayoutGap="5px">
         <app-action *ngFor="let action of rotation.actions" [action]="action" [tooltipDisabled]="true"
+                    [jobId]="rotation.recipe?.job"
                     class="action"></app-action>
       </div>
     </div>

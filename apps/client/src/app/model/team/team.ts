@@ -44,5 +44,14 @@ export class Team extends DataModel {
         }
       ];
     }
+    if (!this.webhookSettings.some(setting => setting.name === WebhookSettingType.ITEM_PROGRESSION)) {
+      this.webhookSettings = [
+        ...this.webhookSettings,
+        {
+          name: WebhookSettingType.ITEM_PROGRESSION,
+          value: true
+        }
+      ];
+    }
   }
 }

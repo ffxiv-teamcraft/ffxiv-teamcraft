@@ -2,6 +2,7 @@ import { inject, TestBed } from '@angular/core/testing';
 
 import { PricingService } from './pricing.service';
 import { ListRow } from '../list/model/list-row';
+import { DataType } from '../list/data/data-type';
 
 
 describe('PricingService', () => {
@@ -25,11 +26,16 @@ describe('PricingService', () => {
   it('should be able to get default price for item bought in vendor', inject([PricingService], (service: PricingService) => {
     const row = new ListRow();
     row.id = 654987;
-    row.vendors = [{
-      npcId: 123465,
-      zoneId: 654987,
-      price: 9001
-    }];
+    row.sources = [
+      {
+        type: DataType.VENDORS,
+        data: [{
+          npcId: 123465,
+          zoneId: 654987,
+          price: 9001
+        }]
+      }
+    ];
     expect(service.getPrice(row).nq).toBe(9001);
   }));
 

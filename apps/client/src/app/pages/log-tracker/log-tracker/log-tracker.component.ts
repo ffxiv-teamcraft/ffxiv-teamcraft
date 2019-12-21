@@ -345,9 +345,6 @@ export class LogTrackerComponent extends TrackerComponent {
       const masterbookNumber = Math.floor((page.id - 1000) / 8) + 1;
       return `${this.translate.instant('LOG_TRACKER.PAGE.Master_recipes', { number: masterbookNumber })}`;
     }
-    if (page.id === 1079) {
-      return this.translate.instant('LOG_TRACKER.PAGE.Housing_items', { number: 1 });
-    }
     if (page.id > 1063 && page.id < 1080) {
       return `${this.translate.instant('LOG_TRACKER.PAGE.Housing_items', { number: page.id < 1072 ? 1 : 2 })}`;
     }

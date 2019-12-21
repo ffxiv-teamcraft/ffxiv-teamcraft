@@ -143,6 +143,22 @@ export class SettingsService {
     this.setSetting('compact-alarms', compact.toString());
   }
 
+  public get performanceMode(): boolean {
+    return this.getSetting('lists:perf-mode', 'false') === 'true';
+  }
+
+  public set performanceMode(enabled: boolean) {
+    this.setSetting('lists:perf-mode', enabled.toString());
+  }
+
+  public get hideLargeListMessage(): boolean {
+    return this.getSetting('lists:hide-large-list-message', 'false') === 'true';
+  }
+
+  public set hideLargeListMessage(hidden: boolean) {
+    this.setSetting('lists:hide-large-list-message', hidden.toString());
+  }
+
   public get disableSearchHistory(): boolean {
     return this.getSetting('disable-search-history', 'false') === 'true';
   }
@@ -288,8 +304,16 @@ export class SettingsService {
     return this.getSetting('autofill:enable-by-default', 'false') === 'true';
   }
 
-  public set enableAutofillByDefault(hide: boolean) {
-    this.setSetting('autofill:enable-by-default', hide.toString());
+  public set enableAutofillByDefault(enable: boolean) {
+    this.setSetting('autofill:enable-by-default', enable.toString());
+  }
+
+  public get enableAutofillNotificationByDefault(): boolean {
+    return this.getSetting('autofill:enable-notification-by-default', 'false') === 'true';
+  }
+
+  public set enableAutofillNotificationByDefault(enable: boolean) {
+    this.setSetting('autofill:enable-notification-by-default', enable.toString());
   }
 
   public get enableAutofillHQFilter(): boolean {

@@ -36,7 +36,8 @@
     "Reset_filters": "Reset filters",
     "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copy search url to your clipboard",
-    "Share_url_copied": "Search url copied to your clipboard"
+    "Share_url_copied": "Search url copied to your clipboard",
+    "Only_craftable": "Only recipes"
   },
   "Use_as_default_character": "Use as default character",
   "Download_desktop_app": "Download desktop app",
@@ -384,9 +385,12 @@
     "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "Enable_autofill_by_default": "Enable autofill by default",
+    "Enable_autofill_notification_by_default": "Enable autofill notification by default",
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Contribute to Universalis",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
+    "Performance_mode": "Performance mode",
+    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -496,6 +500,7 @@
     "Mark_whole_panel_done": "Mark panel content as done",
     "Set_color": "Set list color",
     "Go_to_pinned": "Go to pinned list (right click to unpin)",
+    "Reset_panel": "Reset all the items of this panel",
     "COLORS": {
       "RED": "Red",
       "GREEN": "Green",
@@ -554,6 +559,8 @@
     "Disable_HQ_suggestions": "Disable automatic HQ flags",
     "Amount_craftable": "You can craft {{amount}}",
     "Add_item": "Add an item",
+    "List_large": "This is a large list",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
     "List_too_large": "List too large",
     "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
     "Add_to_another_list": "Add to another list",
@@ -604,6 +611,11 @@
       "Order_by": "Sort by",
       "Order": "Order",
       "Tag_filter": "Tag filter"
+    },
+    "OVERLAY":  {
+      "Open": "Open list overlay",
+      "No_display": "Open a list in main window to get started",
+      "No_panel_selected": "Select a panel using the buttons above"
     }
   },
   "LIST_TAGS": {
@@ -1054,7 +1066,8 @@
       "LIST_PROGRESSION": "List materials progression",
       "FINAL_LIST_PROGRESSION": "List final items progression",
       "USER_ASSIGNMENT": "User assignment",
-      "ITEM_COMPLETION": "Item completion"
+      "ITEM_COMPLETION": "Item completion",
+      "ITEM_PROGRESSION": "Item progression"
     }
   },
   "MARKETBOARD": {

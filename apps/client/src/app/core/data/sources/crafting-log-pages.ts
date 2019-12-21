@@ -2,6 +2,7 @@ export const craftingLogPages = [
   [
     {
       "id": 0,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -56,6 +57,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 6,
         "Difficulty": 36,
@@ -120,6 +122,7 @@ export const craftingLogPages = [
     },
     {
       "id": 2,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 11,
         "Difficulty": 48,
@@ -189,6 +192,7 @@ export const craftingLogPages = [
     },
     {
       "id": 3,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
         "Difficulty": 63,
@@ -258,6 +262,7 @@ export const craftingLogPages = [
     },
     {
       "id": 4,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 21,
         "Difficulty": 75,
@@ -332,6 +337,7 @@ export const craftingLogPages = [
     },
     {
       "id": 5,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 26,
         "Difficulty": 90,
@@ -396,6 +402,7 @@ export const craftingLogPages = [
     },
     {
       "id": 6,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 31,
         "Difficulty": 106,
@@ -465,6 +472,7 @@ export const craftingLogPages = [
     },
     {
       "id": 7,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 36,
         "Difficulty": 124,
@@ -534,6 +542,7 @@ export const craftingLogPages = [
     },
     {
       "id": 8,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 41,
         "Difficulty": 143,
@@ -608,6 +617,7 @@ export const craftingLogPages = [
     },
     {
       "id": 9,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 46,
         "Difficulty": 159,
@@ -732,6 +742,7 @@ export const craftingLogPages = [
     },
     {
       "id": 10,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 51,
         "Difficulty": 339,
@@ -836,6 +847,7 @@ export const craftingLogPages = [
     },
     {
       "id": 11,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 56,
         "Difficulty": 752,
@@ -945,6 +957,7 @@ export const craftingLogPages = [
     },
     {
       "id": 12,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1116,
@@ -1079,6 +1092,7 @@ export const craftingLogPages = [
     },
     {
       "id": 13,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -1203,6 +1217,7 @@ export const craftingLogPages = [
     },
     {
       "id": 14,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 71,
         "Difficulty": 3149,
@@ -1377,6 +1392,7 @@ export const craftingLogPages = [
     },
     {
       "id": 15,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 76,
         "Difficulty": 3526,
@@ -1491,6 +1507,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1000,
+      "masterbook": 1,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 233,
@@ -1590,6 +1607,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1008,
+      "masterbook": 24,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 586,
@@ -1649,6 +1667,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1016,
+      "masterbook": 32,
       "startLevel": {
         "ClassJobLevel": 58,
         "Difficulty": 863,
@@ -1823,6 +1842,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1024,
+      "masterbook": 40,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 1436,
@@ -2142,6 +2162,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1032,
+      "masterbook": 48,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3149,
@@ -2241,6 +2262,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1040,
+      "masterbook": 56,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3543,
@@ -2490,6 +2512,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1048,
+      "masterbook": 64,
       "startLevel": {
         "ClassJobLevel": 80,
         "Difficulty": 4143,
@@ -2549,6 +2572,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1056,
+      "masterbook": 9,
       "startLevel": {
         "ClassJobLevel": 15,
         "Difficulty": 55,
@@ -2598,6 +2622,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1064,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 12,
         "Difficulty": 53,
@@ -3052,6 +3077,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1072,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 12,
         "Difficulty": 53,
@@ -3751,6 +3777,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1080,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
         "Difficulty": 102,
@@ -3890,6 +3917,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1088,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 195,
@@ -3919,6 +3947,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1096,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
         "Difficulty": 1968,
@@ -3953,6 +3982,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1112,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -3997,6 +4027,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1128,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -4206,6 +4237,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1136,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 186,
@@ -4350,6 +4382,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1144,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
         "Difficulty": 863,
@@ -4499,6 +4532,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1152,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
         "Difficulty": 808,
@@ -4563,6 +4597,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1160,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 956,
@@ -4627,6 +4662,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1168,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
         "Difficulty": 1684,
@@ -4691,6 +4727,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1176,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -4755,6 +4792,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1184,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -4794,6 +4832,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1192,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
         "Difficulty": 74,
@@ -4835,6 +4874,7 @@ export const craftingLogPages = [
   [
     {
       "id": 40,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -4914,6 +4954,7 @@ export const craftingLogPages = [
     },
     {
       "id": 41,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 6,
         "Difficulty": 36,
@@ -5008,6 +5049,7 @@ export const craftingLogPages = [
     },
     {
       "id": 42,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 11,
         "Difficulty": 48,
@@ -5112,6 +5154,7 @@ export const craftingLogPages = [
     },
     {
       "id": 43,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
         "Difficulty": 63,
@@ -5246,6 +5289,7 @@ export const craftingLogPages = [
     },
     {
       "id": 44,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 21,
         "Difficulty": 75,
@@ -5380,6 +5424,7 @@ export const craftingLogPages = [
     },
     {
       "id": 45,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 26,
         "Difficulty": 90,
@@ -5519,6 +5564,7 @@ export const craftingLogPages = [
     },
     {
       "id": 46,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 31,
         "Difficulty": 106,
@@ -5663,6 +5709,7 @@ export const craftingLogPages = [
     },
     {
       "id": 47,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 36,
         "Difficulty": 124,
@@ -5797,6 +5844,7 @@ export const craftingLogPages = [
     },
     {
       "id": 48,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 41,
         "Difficulty": 143,
@@ -5996,6 +6044,7 @@ export const craftingLogPages = [
     },
     {
       "id": 49,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 46,
         "Difficulty": 159,
@@ -6205,6 +6254,7 @@ export const craftingLogPages = [
     },
     {
       "id": 50,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 51,
         "Difficulty": 339,
@@ -6459,6 +6509,7 @@ export const craftingLogPages = [
     },
     {
       "id": 51,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 56,
         "Difficulty": 752,
@@ -6673,6 +6724,7 @@ export const craftingLogPages = [
     },
     {
       "id": 52,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1116,
@@ -6987,6 +7039,7 @@ export const craftingLogPages = [
     },
     {
       "id": 53,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -7251,6 +7304,7 @@ export const craftingLogPages = [
     },
     {
       "id": 54,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 71,
         "Difficulty": 3149,
@@ -7545,6 +7599,7 @@ export const craftingLogPages = [
     },
     {
       "id": 55,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 76,
         "Difficulty": 3526,
@@ -7814,6 +7869,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1001,
+      "masterbook": 2,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 233,
@@ -7903,6 +7959,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1009,
+      "masterbook": 25,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 586,
@@ -7987,6 +8044,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1017,
+      "masterbook": 33,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 956,
@@ -8156,6 +8214,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1025,
+      "masterbook": 41,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 1436,
@@ -8605,6 +8664,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1033,
+      "masterbook": 49,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3543,
@@ -8694,6 +8754,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1041,
+      "masterbook": 57,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3543,
@@ -8883,6 +8944,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1049,
+      "masterbook": 65,
       "startLevel": {
         "ClassJobLevel": 80,
         "Difficulty": 4343,
@@ -9022,6 +9084,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1057,
+      "masterbook": 10,
       "startLevel": {
         "ClassJobLevel": 15,
         "Difficulty": 55,
@@ -9146,6 +9209,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1065,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 15,
         "Difficulty": 55,
@@ -9305,6 +9369,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1073,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 17,
         "Difficulty": 66,
@@ -9479,6 +9544,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1081,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
         "Difficulty": 102,
@@ -9618,6 +9684,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1089,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 195,
@@ -9662,6 +9729,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1097,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
         "Difficulty": 1968,
@@ -9696,6 +9764,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1105,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -9740,6 +9809,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1129,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -9949,6 +10019,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1137,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 186,
@@ -10093,6 +10164,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1145,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
         "Difficulty": 863,
@@ -10242,6 +10314,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1153,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
         "Difficulty": 808,
@@ -10306,6 +10379,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1161,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 956,
@@ -10370,6 +10444,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1169,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
         "Difficulty": 1684,
@@ -10434,6 +10509,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1177,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -10498,6 +10574,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1185,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -10537,6 +10614,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1193,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
         "Difficulty": 74,
@@ -10578,6 +10656,7 @@ export const craftingLogPages = [
   [
     {
       "id": 80,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -10627,6 +10706,7 @@ export const craftingLogPages = [
     },
     {
       "id": 81,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 6,
         "Difficulty": 36,
@@ -10681,6 +10761,7 @@ export const craftingLogPages = [
     },
     {
       "id": 82,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 11,
         "Difficulty": 48,
@@ -10765,6 +10846,7 @@ export const craftingLogPages = [
     },
     {
       "id": 83,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
         "Difficulty": 63,
@@ -10839,6 +10921,7 @@ export const craftingLogPages = [
     },
     {
       "id": 84,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 21,
         "Difficulty": 75,
@@ -10933,6 +11016,7 @@ export const craftingLogPages = [
     },
     {
       "id": 85,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 26,
         "Difficulty": 90,
@@ -11042,6 +11126,7 @@ export const craftingLogPages = [
     },
     {
       "id": 86,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 31,
         "Difficulty": 106,
@@ -11161,6 +11246,7 @@ export const craftingLogPages = [
     },
     {
       "id": 87,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 36,
         "Difficulty": 124,
@@ -11270,6 +11356,7 @@ export const craftingLogPages = [
     },
     {
       "id": 88,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 41,
         "Difficulty": 143,
@@ -11454,6 +11541,7 @@ export const craftingLogPages = [
     },
     {
       "id": 89,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 46,
         "Difficulty": 159,
@@ -11738,6 +11826,7 @@ export const craftingLogPages = [
     },
     {
       "id": 90,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 51,
         "Difficulty": 339,
@@ -11927,6 +12016,7 @@ export const craftingLogPages = [
     },
     {
       "id": 91,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 56,
         "Difficulty": 752,
@@ -12121,6 +12211,7 @@ export const craftingLogPages = [
     },
     {
       "id": 92,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1116,
@@ -12305,6 +12396,7 @@ export const craftingLogPages = [
     },
     {
       "id": 93,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -12469,6 +12561,7 @@ export const craftingLogPages = [
     },
     {
       "id": 94,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 71,
         "Difficulty": 3149,
@@ -12743,6 +12836,7 @@ export const craftingLogPages = [
     },
     {
       "id": 95,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 76,
         "Difficulty": 3526,
@@ -12922,6 +13016,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1002,
+      "masterbook": 3,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 233,
@@ -13026,6 +13121,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1010,
+      "masterbook": 26,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 586,
@@ -13095,6 +13191,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1018,
+      "masterbook": 34,
       "startLevel": {
         "ClassJobLevel": 55,
         "Difficulty": 697,
@@ -13309,6 +13406,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1026,
+      "masterbook": 42,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 1436,
@@ -13778,6 +13876,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1034,
+      "masterbook": 50,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3543,
@@ -13852,6 +13951,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1042,
+      "masterbook": 58,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3543,
@@ -14006,6 +14106,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1050,
+      "masterbook": 66,
       "startLevel": {
         "ClassJobLevel": 80,
         "Difficulty": 4343,
@@ -14115,6 +14216,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1058,
+      "masterbook": 11,
       "startLevel": {
         "ClassJobLevel": 15,
         "Difficulty": 55,
@@ -14144,6 +14246,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1066,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
         "Difficulty": 63,
@@ -14308,6 +14411,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1074,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 14,
         "Difficulty": 54,
@@ -14462,6 +14566,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1082,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
         "Difficulty": 102,
@@ -14601,6 +14706,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1090,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 195,
@@ -14675,6 +14781,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1098,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
         "Difficulty": 1968,
@@ -14709,6 +14816,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1106,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -14753,6 +14861,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1130,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -14962,6 +15071,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1138,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 186,
@@ -15106,6 +15216,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1146,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
         "Difficulty": 863,
@@ -15255,6 +15366,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1154,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
         "Difficulty": 808,
@@ -15319,6 +15431,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1162,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 956,
@@ -15383,6 +15496,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1170,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
         "Difficulty": 1684,
@@ -15447,6 +15561,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1178,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -15511,6 +15626,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1186,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -15550,6 +15666,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1194,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
         "Difficulty": 74,
@@ -15589,6 +15706,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1202,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1400,
@@ -15680,6 +15798,7 @@ export const craftingLogPages = [
   [
     {
       "id": 120,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -15729,6 +15848,7 @@ export const craftingLogPages = [
     },
     {
       "id": 121,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 6,
         "Difficulty": 36,
@@ -15798,6 +15918,7 @@ export const craftingLogPages = [
     },
     {
       "id": 122,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 11,
         "Difficulty": 48,
@@ -15897,6 +16018,7 @@ export const craftingLogPages = [
     },
     {
       "id": 123,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
         "Difficulty": 63,
@@ -16001,6 +16123,7 @@ export const craftingLogPages = [
     },
     {
       "id": 124,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 21,
         "Difficulty": 75,
@@ -16155,6 +16278,7 @@ export const craftingLogPages = [
     },
     {
       "id": 125,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 26,
         "Difficulty": 90,
@@ -16334,6 +16458,7 @@ export const craftingLogPages = [
     },
     {
       "id": 126,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 31,
         "Difficulty": 106,
@@ -16543,6 +16668,7 @@ export const craftingLogPages = [
     },
     {
       "id": 127,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 36,
         "Difficulty": 124,
@@ -16762,6 +16888,7 @@ export const craftingLogPages = [
     },
     {
       "id": 128,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 41,
         "Difficulty": 143,
@@ -17031,6 +17158,7 @@ export const craftingLogPages = [
     },
     {
       "id": 129,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 46,
         "Difficulty": 159,
@@ -17415,6 +17543,7 @@ export const craftingLogPages = [
     },
     {
       "id": 130,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 51,
         "Difficulty": 339,
@@ -17814,6 +17943,7 @@ export const craftingLogPages = [
     },
     {
       "id": 131,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 56,
         "Difficulty": 752,
@@ -18123,6 +18253,7 @@ export const craftingLogPages = [
     },
     {
       "id": 132,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1116,
@@ -18567,6 +18698,7 @@ export const craftingLogPages = [
     },
     {
       "id": 133,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -18946,6 +19078,7 @@ export const craftingLogPages = [
     },
     {
       "id": 134,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 71,
         "Difficulty": 3149,
@@ -19315,6 +19448,7 @@ export const craftingLogPages = [
     },
     {
       "id": 135,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 76,
         "Difficulty": 3526,
@@ -19614,6 +19748,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1003,
+      "masterbook": 4,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 233,
@@ -19708,6 +19843,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1011,
+      "masterbook": 27,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 586,
@@ -19857,6 +19993,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1019,
+      "masterbook": 35,
       "startLevel": {
         "ClassJobLevel": 59,
         "Difficulty": 919,
@@ -20101,6 +20238,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1027,
+      "masterbook": 43,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 1436,
@@ -20550,6 +20688,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1035,
+      "masterbook": 51,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3149,
@@ -20664,6 +20803,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1043,
+      "masterbook": 59,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3543,
@@ -20943,6 +21083,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1051,
+      "masterbook": 67,
       "startLevel": {
         "ClassJobLevel": 80,
         "Difficulty": 4343,
@@ -21097,6 +21238,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1059,
+      "masterbook": 12,
       "startLevel": {
         "ClassJobLevel": 15,
         "Difficulty": 55,
@@ -21316,6 +21458,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1067,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
         "Difficulty": 74,
@@ -21725,6 +21868,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1075,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 15,
         "Difficulty": 55,
@@ -22014,6 +22158,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1083,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
         "Difficulty": 102,
@@ -22153,6 +22298,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1091,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 195,
@@ -22297,6 +22443,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1099,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
         "Difficulty": 1968,
@@ -22331,6 +22478,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1107,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -22375,6 +22523,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1131,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -22584,6 +22733,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1139,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 186,
@@ -22728,6 +22878,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1147,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
         "Difficulty": 863,
@@ -22877,6 +23028,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1155,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
         "Difficulty": 808,
@@ -22941,6 +23093,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1163,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 956,
@@ -23005,6 +23158,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1171,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
         "Difficulty": 1684,
@@ -23069,6 +23223,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1179,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -23133,6 +23288,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1187,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -23172,6 +23328,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1195,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
         "Difficulty": 74,
@@ -23211,6 +23368,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1203,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1400,
@@ -23272,6 +23430,7 @@ export const craftingLogPages = [
   [
     {
       "id": 160,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -23361,6 +23520,7 @@ export const craftingLogPages = [
     },
     {
       "id": 161,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 6,
         "Difficulty": 36,
@@ -23460,6 +23620,7 @@ export const craftingLogPages = [
     },
     {
       "id": 162,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 11,
         "Difficulty": 48,
@@ -23584,6 +23745,7 @@ export const craftingLogPages = [
     },
     {
       "id": 163,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
         "Difficulty": 63,
@@ -23678,6 +23840,7 @@ export const craftingLogPages = [
     },
     {
       "id": 164,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 21,
         "Difficulty": 75,
@@ -23782,6 +23945,7 @@ export const craftingLogPages = [
     },
     {
       "id": 165,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 26,
         "Difficulty": 90,
@@ -23886,6 +24050,7 @@ export const craftingLogPages = [
     },
     {
       "id": 166,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 31,
         "Difficulty": 106,
@@ -24005,6 +24170,7 @@ export const craftingLogPages = [
     },
     {
       "id": 167,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 36,
         "Difficulty": 124,
@@ -24164,6 +24330,7 @@ export const craftingLogPages = [
     },
     {
       "id": 168,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 41,
         "Difficulty": 143,
@@ -24378,6 +24545,7 @@ export const craftingLogPages = [
     },
     {
       "id": 169,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 46,
         "Difficulty": 159,
@@ -24832,6 +25000,7 @@ export const craftingLogPages = [
     },
     {
       "id": 170,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 51,
         "Difficulty": 339,
@@ -25266,6 +25435,7 @@ export const craftingLogPages = [
     },
     {
       "id": 171,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 56,
         "Difficulty": 752,
@@ -25470,6 +25640,7 @@ export const craftingLogPages = [
     },
     {
       "id": 172,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1116,
@@ -25864,6 +26035,7 @@ export const craftingLogPages = [
     },
     {
       "id": 173,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -26198,6 +26370,7 @@ export const craftingLogPages = [
     },
     {
       "id": 174,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 71,
         "Difficulty": 3149,
@@ -26557,6 +26730,7 @@ export const craftingLogPages = [
     },
     {
       "id": 175,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 76,
         "Difficulty": 3526,
@@ -26796,6 +26970,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1004,
+      "masterbook": 5,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 233,
@@ -26935,6 +27110,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1012,
+      "masterbook": 28,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 586,
@@ -27059,6 +27235,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1020,
+      "masterbook": 36,
       "startLevel": {
         "ClassJobLevel": 55,
         "Difficulty": 697,
@@ -27633,6 +27810,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1028,
+      "masterbook": 44,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 1436,
@@ -28172,6 +28350,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1036,
+      "masterbook": 52,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3543,
@@ -28301,6 +28480,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1044,
+      "masterbook": 60,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3543,
@@ -28545,6 +28725,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1052,
+      "masterbook": 68,
       "startLevel": {
         "ClassJobLevel": 80,
         "Difficulty": 4143,
@@ -28669,6 +28850,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1060,
+      "masterbook": 13,
       "startLevel": {
         "ClassJobLevel": 15,
         "Difficulty": 55,
@@ -28768,6 +28950,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1068,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
         "Difficulty": 102,
@@ -28812,6 +28995,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1076,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 15,
         "Difficulty": 55,
@@ -28956,6 +29140,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1084,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
         "Difficulty": 102,
@@ -29095,6 +29280,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1092,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 195,
@@ -29164,6 +29350,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1100,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
         "Difficulty": 1968,
@@ -29198,6 +29385,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1116,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -29242,6 +29430,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1132,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -29451,6 +29640,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1140,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 186,
@@ -29595,6 +29785,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1148,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
         "Difficulty": 863,
@@ -29744,6 +29935,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1156,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
         "Difficulty": 808,
@@ -29808,6 +30000,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1164,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 956,
@@ -29872,6 +30065,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1172,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
         "Difficulty": 1684,
@@ -29936,6 +30130,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1180,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -30000,6 +30195,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1188,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -30039,6 +30235,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1196,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
         "Difficulty": 74,
@@ -30078,6 +30275,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1204,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1400,
@@ -30239,6 +30437,7 @@ export const craftingLogPages = [
   [
     {
       "id": 200,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -30358,6 +30557,7 @@ export const craftingLogPages = [
     },
     {
       "id": 201,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 6,
         "Difficulty": 36,
@@ -30462,6 +30662,7 @@ export const craftingLogPages = [
     },
     {
       "id": 202,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 11,
         "Difficulty": 48,
@@ -30586,6 +30787,7 @@ export const craftingLogPages = [
     },
     {
       "id": 203,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
         "Difficulty": 63,
@@ -30700,6 +30902,7 @@ export const craftingLogPages = [
     },
     {
       "id": 204,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 21,
         "Difficulty": 75,
@@ -30819,6 +31022,7 @@ export const craftingLogPages = [
     },
     {
       "id": 205,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 26,
         "Difficulty": 90,
@@ -30938,6 +31142,7 @@ export const craftingLogPages = [
     },
     {
       "id": 206,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 31,
         "Difficulty": 106,
@@ -31092,6 +31297,7 @@ export const craftingLogPages = [
     },
     {
       "id": 207,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 36,
         "Difficulty": 124,
@@ -31271,6 +31477,7 @@ export const craftingLogPages = [
     },
     {
       "id": 208,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 41,
         "Difficulty": 143,
@@ -31560,6 +31767,7 @@ export const craftingLogPages = [
     },
     {
       "id": 209,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 46,
         "Difficulty": 159,
@@ -32029,6 +32237,7 @@ export const craftingLogPages = [
     },
     {
       "id": 210,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 51,
         "Difficulty": 339,
@@ -32433,6 +32642,7 @@ export const craftingLogPages = [
     },
     {
       "id": 211,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 56,
         "Difficulty": 752,
@@ -32617,6 +32827,7 @@ export const craftingLogPages = [
     },
     {
       "id": 212,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1116,
@@ -32936,6 +33147,7 @@ export const craftingLogPages = [
     },
     {
       "id": 213,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -33170,6 +33382,7 @@ export const craftingLogPages = [
     },
     {
       "id": 214,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 71,
         "Difficulty": 3149,
@@ -33489,6 +33702,7 @@ export const craftingLogPages = [
     },
     {
       "id": 215,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 76,
         "Difficulty": 3526,
@@ -33703,6 +33917,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1005,
+      "masterbook": 6,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 233,
@@ -33812,6 +34027,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1013,
+      "masterbook": 29,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 586,
@@ -33916,6 +34132,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1021,
+      "masterbook": 37,
       "startLevel": {
         "ClassJobLevel": 55,
         "Difficulty": 697,
@@ -34395,6 +34612,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1029,
+      "masterbook": 45,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 1436,
@@ -34854,6 +35072,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1037,
+      "masterbook": 53,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3149,
@@ -34998,6 +35217,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1045,
+      "masterbook": 61,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3543,
@@ -35357,6 +35577,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1053,
+      "masterbook": 69,
       "startLevel": {
         "ClassJobLevel": 80,
         "Difficulty": 4343,
@@ -35486,6 +35707,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1061,
+      "masterbook": 14,
       "startLevel": {
         "ClassJobLevel": 15,
         "Difficulty": 55,
@@ -35570,6 +35792,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1069,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 17,
         "Difficulty": 66,
@@ -35719,6 +35942,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1077,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
         "Difficulty": 63,
@@ -35988,6 +36212,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1085,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
         "Difficulty": 102,
@@ -36127,6 +36352,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1093,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 195,
@@ -36211,6 +36437,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1101,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
         "Difficulty": 1968,
@@ -36245,6 +36472,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1117,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -36289,6 +36517,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1133,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -36498,6 +36727,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1141,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 186,
@@ -36642,6 +36872,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1149,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
         "Difficulty": 863,
@@ -36791,6 +37022,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1157,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
         "Difficulty": 808,
@@ -36855,6 +37087,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1165,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 956,
@@ -36919,6 +37152,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1173,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
         "Difficulty": 1684,
@@ -36983,6 +37217,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1181,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -37047,6 +37282,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1189,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -37086,6 +37322,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1197,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
         "Difficulty": 74,
@@ -37125,6 +37362,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1205,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1400,
@@ -37226,6 +37464,7 @@ export const craftingLogPages = [
   [
     {
       "id": 240,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -37280,6 +37519,7 @@ export const craftingLogPages = [
     },
     {
       "id": 241,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 6,
         "Difficulty": 36,
@@ -37334,6 +37574,7 @@ export const craftingLogPages = [
     },
     {
       "id": 242,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 11,
         "Difficulty": 48,
@@ -37388,6 +37629,7 @@ export const craftingLogPages = [
     },
     {
       "id": 243,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
         "Difficulty": 63,
@@ -37457,6 +37699,7 @@ export const craftingLogPages = [
     },
     {
       "id": 244,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 21,
         "Difficulty": 75,
@@ -37531,6 +37774,7 @@ export const craftingLogPages = [
     },
     {
       "id": 245,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 26,
         "Difficulty": 90,
@@ -37605,6 +37849,7 @@ export const craftingLogPages = [
     },
     {
       "id": 246,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 31,
         "Difficulty": 106,
@@ -37719,6 +37964,7 @@ export const craftingLogPages = [
     },
     {
       "id": 247,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 36,
         "Difficulty": 124,
@@ -37788,6 +38034,7 @@ export const craftingLogPages = [
     },
     {
       "id": 248,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 41,
         "Difficulty": 143,
@@ -37862,6 +38109,7 @@ export const craftingLogPages = [
     },
     {
       "id": 249,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 46,
         "Difficulty": 159,
@@ -38131,6 +38379,7 @@ export const craftingLogPages = [
     },
     {
       "id": 250,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 51,
         "Difficulty": 339,
@@ -38460,6 +38709,7 @@ export const craftingLogPages = [
     },
     {
       "id": 251,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 56,
         "Difficulty": 752,
@@ -38539,6 +38789,7 @@ export const craftingLogPages = [
     },
     {
       "id": 252,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1116,
@@ -38643,6 +38894,7 @@ export const craftingLogPages = [
     },
     {
       "id": 253,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -39002,6 +39254,7 @@ export const craftingLogPages = [
     },
     {
       "id": 254,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 71,
         "Difficulty": 3149,
@@ -39106,6 +39359,7 @@ export const craftingLogPages = [
     },
     {
       "id": 255,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 76,
         "Difficulty": 3526,
@@ -39190,6 +39444,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1006,
+      "masterbook": 7,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 233,
@@ -39439,6 +39694,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1014,
+      "masterbook": 30,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 586,
@@ -39543,6 +39799,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1022,
+      "masterbook": 38,
       "startLevel": {
         "ClassJobLevel": 58,
         "Difficulty": 863,
@@ -39742,6 +39999,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1030,
+      "masterbook": 46,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 1436,
@@ -39991,6 +40249,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1038,
+      "masterbook": 54,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3149,
@@ -40070,6 +40329,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1046,
+      "masterbook": 62,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3543,
@@ -40279,6 +40539,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1054,
+      "masterbook": 70,
       "startLevel": {
         "ClassJobLevel": 80,
         "Difficulty": 4343,
@@ -40363,6 +40624,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1062,
+      "masterbook": 15,
       "startLevel": {
         "ClassJobLevel": 15,
         "Difficulty": 55,
@@ -40507,6 +40769,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1070,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 17,
         "Difficulty": 66,
@@ -40851,6 +41114,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1078,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 12,
         "Difficulty": 53,
@@ -40985,6 +41249,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1086,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
         "Difficulty": 102,
@@ -41124,6 +41389,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1094,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 195,
@@ -41158,6 +41424,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1102,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
         "Difficulty": 1968,
@@ -41192,6 +41459,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1126,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -41236,6 +41504,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1134,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -41445,6 +41714,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1142,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 186,
@@ -41589,6 +41859,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1150,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
         "Difficulty": 863,
@@ -41738,6 +42009,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1158,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
         "Difficulty": 808,
@@ -41802,6 +42074,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1166,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 956,
@@ -41866,6 +42139,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1174,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
         "Difficulty": 1684,
@@ -41930,6 +42204,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1182,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -41994,6 +42269,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1190,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -42033,6 +42309,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1198,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
         "Difficulty": 74,
@@ -42074,6 +42351,7 @@ export const craftingLogPages = [
   [
     {
       "id": 280,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -42163,6 +42441,7 @@ export const craftingLogPages = [
     },
     {
       "id": 281,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 6,
         "Difficulty": 36,
@@ -42242,6 +42521,7 @@ export const craftingLogPages = [
     },
     {
       "id": 282,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 11,
         "Difficulty": 48,
@@ -42321,6 +42601,7 @@ export const craftingLogPages = [
     },
     {
       "id": 283,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
         "Difficulty": 63,
@@ -42410,6 +42691,7 @@ export const craftingLogPages = [
     },
     {
       "id": 284,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 21,
         "Difficulty": 75,
@@ -42489,6 +42771,7 @@ export const craftingLogPages = [
     },
     {
       "id": 285,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 26,
         "Difficulty": 90,
@@ -42583,6 +42866,7 @@ export const craftingLogPages = [
     },
     {
       "id": 286,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 31,
         "Difficulty": 106,
@@ -42652,6 +42936,7 @@ export const craftingLogPages = [
     },
     {
       "id": 287,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 36,
         "Difficulty": 124,
@@ -42721,6 +43006,7 @@ export const craftingLogPages = [
     },
     {
       "id": 288,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 41,
         "Difficulty": 143,
@@ -42780,6 +43066,7 @@ export const craftingLogPages = [
     },
     {
       "id": 289,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 46,
         "Difficulty": 159,
@@ -42929,6 +43216,7 @@ export const craftingLogPages = [
     },
     {
       "id": 290,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 51,
         "Difficulty": 421,
@@ -43018,6 +43306,7 @@ export const craftingLogPages = [
     },
     {
       "id": 291,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 56,
         "Difficulty": 752,
@@ -43107,6 +43396,7 @@ export const craftingLogPages = [
     },
     {
       "id": 292,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
         "Difficulty": 1116,
@@ -43211,6 +43501,7 @@ export const craftingLogPages = [
     },
     {
       "id": 293,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -43315,6 +43606,7 @@ export const craftingLogPages = [
     },
     {
       "id": 294,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 71,
         "Difficulty": 3149,
@@ -43424,6 +43716,7 @@ export const craftingLogPages = [
     },
     {
       "id": 295,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 76,
         "Difficulty": 3526,
@@ -43523,6 +43816,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1007,
+      "masterbook": 8,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 233,
@@ -43592,6 +43886,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1015,
+      "masterbook": 31,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 586,
@@ -43626,6 +43921,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1023,
+      "masterbook": 39,
       "startLevel": {
         "ClassJobLevel": 56,
         "Difficulty": 752,
@@ -43695,6 +43991,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1031,
+      "masterbook": 47,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 1436,
@@ -43794,6 +44091,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1039,
+      "masterbook": 55,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3543,
@@ -43833,6 +44131,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1047,
+      "masterbook": 63,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 3943,
@@ -43937,6 +44236,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1055,
+      "masterbook": 71,
       "startLevel": {
         "ClassJobLevel": 80,
         "Difficulty": 4343,
@@ -44011,6 +44311,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1071,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 78,
         "Difficulty": 3645,
@@ -44045,6 +44346,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1079,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 15,
         "Difficulty": 55,
@@ -44224,6 +44526,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1087,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
         "Difficulty": 102,
@@ -44363,6 +44666,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1103,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
         "Difficulty": 1968,
@@ -44397,6 +44701,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1127,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -44441,6 +44746,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1135,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
         "Difficulty": 19,
@@ -44650,6 +44956,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1143,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
         "Difficulty": 186,
@@ -44794,6 +45101,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1151,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
         "Difficulty": 863,
@@ -44943,6 +45251,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1159,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
         "Difficulty": 808,
@@ -45007,6 +45316,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1167,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
         "Difficulty": 956,
@@ -45071,6 +45381,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1175,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
         "Difficulty": 1684,
@@ -45135,6 +45446,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1183,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
         "Difficulty": 2411,
@@ -45199,6 +45511,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1191,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
         "Difficulty": 2952,
@@ -45238,6 +45551,7 @@ export const craftingLogPages = [
     },
     {
       "id": 1199,
+      "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
         "Difficulty": 74,

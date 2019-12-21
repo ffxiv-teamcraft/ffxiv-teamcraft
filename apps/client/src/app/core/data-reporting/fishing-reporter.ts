@@ -253,8 +253,6 @@ export class FishingReporter implements DataReporter {
       });
     });
 
-    misses$.subscribe(console.log);
-
     return merge(misses$, fishCaught$).pipe(
       withLatestFrom(isFishing$),
       filter(([, isFishing]) => isFishing),
