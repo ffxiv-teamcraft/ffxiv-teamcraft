@@ -127,6 +127,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    if (!this.displayRow) {
+      return;
+    }
     if (this.displayRow && (this.displayRow.tiers || this.displayRow.reverseTiers)) {
       this.generateTiers(this.displayRow.reverseTiers);
     }
