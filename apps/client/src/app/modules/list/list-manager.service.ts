@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { List } from './model/list';
 import { combineLatest, concat, Observable, of } from 'rxjs';
-import { ListRow, getItemSource } from './model/list-row';
+import { ListRow } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { Ingredient } from '../../model/garland-tools/ingredient';
@@ -203,7 +203,7 @@ export class ListManagerService {
       }
       item = this.extractor.addDataToItem(item, data);
       if (data.isCraft()) {
-        const craftedBy = getItemSource(item,  DataType.CRAFTED_BY);
+        const craftedBy = item.sources.find(s => s.type === DataType.CRAFTED_BY);
         if (recipeId !== undefined && data.item.id === item.id) {
           craftedBy.data = craftedBy.data.filter(row => {
             return row.recipeId.toString() === recipeId.toString();

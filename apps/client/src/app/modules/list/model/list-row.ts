@@ -56,6 +56,9 @@ const cache = {};
 
 export function getItemSource(item: ListRow, type: DataType, isObject = false): any {
   const key = `${item.id}:${type}`;
+  if (item.sources === undefined) {
+    return isObject ? {} : [];
+  }
   if (!cache[key]) {
     const source = item.sources.find(s => s.type === type);
     if (source === undefined) {

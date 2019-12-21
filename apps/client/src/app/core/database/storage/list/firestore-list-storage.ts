@@ -106,7 +106,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return clone;
   }
 
-  private completeListData(list: List): Observable<List> {
+  public completeListData(list: List): Observable<List> {
     return this.lazyData.extracts$.pipe(
       map(extracts => {
         list.items = list.items.map(item => {
