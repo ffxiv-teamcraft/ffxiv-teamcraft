@@ -36,7 +36,8 @@
     "Reset_filters": "Réinitialiser les filtres",
     "Too_many_results_warning": "Cette recherche a donné plus de 100 résultats. Notre source de données est limitée à 100 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
     "Share_url": "Copier l'url de recherche dans le presse-papiers",
-    "Share_url_copied": "Url de recherche copié dans le presse-papiers"
+    "Share_url_copied": "Url de recherche copié dans le presse-papiers",
+    "Only_craftable": "Recettes uniquement"
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
@@ -384,9 +385,12 @@
     "Enable_packet_capture": "Capture de paquets activée (ajoute des fonctionnalités d'inventaire en temps réel)",
     "Packet_capture_info": "Capturer des paquets est contre le CLUF (Contrat de license de l'utilisateur final), la même raison pour laquelle ACT est contre le CLUF. Mais Square Enix le tolère à moins que vous ne vous soyez entrain de le répéter à tout le monde en jeu. Ne faites rien et vous ne risquerez rien.",
     "Enable_autofill_by_default": "Activer le remplissage automatique par défaut",
+    "Enable_autofill_notification_by_default": "Activer la notification de complétion automatique par défaut",
     "Enable_autofill_hq_filter": "Remplissage automatique uniquement en utilisant des éléments hq lorsque l'élément est requis comme HQ",
     "Contribute_to_universalis": "Contribuer à Universalis",
     "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
+    "Performance_mode": "Mode hautes perfs",
+    "Performance_mode_explain": "Supprime les images des éléments dans les listes, ainsi que les menus (conserve uniquement les boutons) pour réduire le stress sur le navigateur et l'application",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -496,6 +500,7 @@
     "Mark_whole_panel_done": "Marquer le contenu du panneau comme terminé",
     "Set_color": "Attribuer une couleur",
     "Go_to_pinned": "Aller à la liste épinglée (clic droit pour désépingler)",
+    "Reset_panel": "Réinitialiser tous les objets de ce panneau",
     "COLORS": {
       "RED": "Rouge",
       "GREEN": "Vert",
@@ -554,6 +559,8 @@
     "Disable_HQ_suggestions": "Désactiver les suggestions HQ",
     "Amount_craftable": "Vous pouvez fabriquer {{amount}}",
     "Add_item": "Ajouter un objet",
+    "List_large": "Ceci est une grande liste",
+    "Enable_performance_mode": "Vous pouvez activer le mode hautes performances dans les paramètres afin d'obtenir un rendu plus rapide",
     "List_too_large": "Liste trop longue",
     "List_too_large_description": "Cette liste est trop longue et pourrait être supprimée automatiquement par le système de base de données en raison de quotas imposés si vous y ajoutez plus d'objets.",
     "Add_to_another_list": "Ajouter à une autre liste",
@@ -604,6 +611,11 @@
       "Order_by": "Trier par",
       "Order": "Ordre",
       "Tag_filter": "Filtre de tags"
+    },
+    "OVERLAY": {
+      "Open": "Ouvrir l'overlay de liste",
+      "No_display": "Ouvrir une liste dans la fenêtre principale pour commencer",
+      "No_panel_selected": "Sélectionnez un panneau en utilisant les boutons ci-dessus"
     }
   },
   "LIST_TAGS": {
@@ -959,7 +971,7 @@
       "Use_rapid_synthesis_earlier": "Vous ne devriez pas utiliser la Synthèse Rapide comme une action finale, la mettre plus tôt pour pouvoir gérer l'échec de l'action est mieux pour la fiabilité de votre rotation.",
       "Do_not_use_brand_without_name": "N'utilisez pas de Marque des Éléments sans Nom des Éléments actifs.",
       "Avoid_using_good_actions": "Évitez d'utiliser des actions qui nécessitent un état \"Bon\" dans une macro, car cet état n'est pas prédictible",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc."
+      "Requires_reuse_to_proc": "Votre rotation nécessite récupération de chutes pour fonctionner correctement, assurez-vous qu'elle peut fonctionner sans proc."
     }
   },
   "PRICING": {
@@ -1054,7 +1066,8 @@
       "LIST_PROGRESSION": "Avancement des matériaux",
       "FINAL_LIST_PROGRESSION": "Avancement des objets finaux",
       "USER_ASSIGNMENT": "Affectation d'un utilisateur",
-      "ITEM_COMPLETION": "Progression"
+      "ITEM_COMPLETION": "Progression",
+      "ITEM_PROGRESSION": "Progression d'un objet"
     }
   },
   "MARKETBOARD": {
@@ -1655,7 +1668,7 @@
       "Bag": "Inventaire",
       "Other": "Autre inventaire",
       "Armory": "Arsenal",
-      "RetainerMarket": "On sale by retainers"
+      "RetainerMarket": "En vente par les servants"
     }
   },
   "INVENTORY_OPTIMIZER": {

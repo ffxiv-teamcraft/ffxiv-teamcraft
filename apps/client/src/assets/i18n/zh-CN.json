@@ -36,7 +36,8 @@
     "Reset_filters": "重置筛选",
     "Too_many_results_warning": "此搜索返回了超过 100 个物品。由于我们的数据源仅限 100 个，您可能需要增加筛选来找到所需的物品。",
     "Share_url": "将搜索链接复制到剪贴板",
-    "Share_url_copied": "搜索链接已复制到剪贴板"
+    "Share_url_copied": "搜索链接已复制到剪贴板",
+    "Only_craftable": "Only recipes"
   },
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
@@ -384,9 +385,12 @@
     "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "Enable_autofill_by_default": "Enable autofill by default",
+    "Enable_autofill_notification_by_default": "Enable autofill notification by default",
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Contribute to Universalis",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
+    "Performance_mode": "Performance mode",
+    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -496,6 +500,7 @@
     "Mark_whole_panel_done": "将这一大类标记为已完成",
     "Set_color": "Set list color",
     "Go_to_pinned": "Go to pinned list (right click to unpin)",
+    "Reset_panel": "Reset all the items of this panel",
     "COLORS": {
       "RED": "Red",
       "GREEN": "Green",
@@ -554,6 +559,8 @@
     "Disable_HQ_suggestions": "禁用自动显示HQ图标",
     "Amount_craftable": "你可以制作 {{amount}} 个",
     "Add_item": "添加物品",
+    "List_large": "This is a large list",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
     "List_too_large": "清单过长",
     "List_too_large_description": "该清单过长，携带了太多信息，可能会受到数据库大小限制。为确保你不会丢失信息，该清单无法再添加物品了。",
     "Add_to_another_list": "添加到另一个清单",
@@ -604,6 +611,11 @@
       "Order_by": "排序方式",
       "Order": "顺序",
       "Tag_filter": "标签筛选"
+    },
+    "OVERLAY": {
+      "Open": "Open list overlay",
+      "No_display": "Open a list in main window to get started",
+      "No_panel_selected": "Select a panel using the buttons above"
     }
   },
   "LIST_TAGS": {
@@ -1054,7 +1066,8 @@
       "LIST_PROGRESSION": "查看材料进度",
       "FINAL_LIST_PROGRESSION": "查看产出进度",
       "USER_ASSIGNMENT": "用户分配",
-      "ITEM_COMPLETION": "项目完成"
+      "ITEM_COMPLETION": "项目完成",
+      "ITEM_PROGRESSION": "Item progression"
     }
   },
   "MARKETBOARD": {

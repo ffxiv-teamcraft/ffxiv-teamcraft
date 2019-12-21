@@ -36,7 +36,8 @@
     "Reset_filters": "フィルターをリセットする",
     "Too_many_results_warning": "検索結果が100件を超えてます。データソースの制限のため、正確なアイテムを探すためには、追加フィルター設定が必要とします。",
     "Share_url": "検索URLをクリップボードにコピーする",
-    "Share_url_copied": "検索URLがクリップボードにコピーされました"
+    "Share_url_copied": "検索URLがクリップボードにコピーされました",
+    "Only_craftable": "Only recipes"
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
@@ -384,9 +385,12 @@
     "Enable_packet_capture": "パケットキャプチャを使用（リアルタイム持ち物同期機能を追加）",
     "Packet_capture_info": "パケットキャプチャはACT（メーター）のように利用規約（ToS）に違反します。でも、スクウェア・エニックスからACTのようなプログラムを使用することを他の人に言わなければ黙認してくれます。ただ言わないでください。そうすれば、問題になることはありません。",
     "Enable_autofill_by_default": "Enable autofill by default",
+    "Enable_autofill_notification_by_default": "Enable autofill notification by default",
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Universalisに貢献する",
     "Track_items_on_sale": "リテイナーが販売されている物品も同期させる（クライアントやり直し、リフレッシュが必要）",
+    "Performance_mode": "Performance mode",
+    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -496,6 +500,7 @@
     "Mark_whole_panel_done": "パネルの内容を完了済みと表示する",
     "Set_color": "リストカラー設定",
     "Go_to_pinned": "固定しておいたリストに行く（右クリックすると固定解除）",
+    "Reset_panel": "Reset all the items of this panel",
     "COLORS": {
       "RED": "赤",
       "GREEN": "緑",
@@ -554,6 +559,8 @@
     "Disable_HQ_suggestions": "HQ自動表示を解除する",
     "Amount_craftable": "{{amount}} 個 作られます",
     "Add_item": "アイテムを追加する",
+    "List_large": "This is a large list",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
     "List_too_large": "リストが大き過ぎます",
     "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
     "Add_to_another_list": "別のリストに追加",
@@ -604,6 +611,11 @@
       "Order_by": "整列基準",
       "Order": "順番",
       "Tag_filter": "タグフィルター"
+    },
+    "OVERLAY": {
+      "Open": "Open list overlay",
+      "No_display": "Open a list in main window to get started",
+      "No_panel_selected": "Select a panel using the buttons above"
     }
   },
   "LIST_TAGS": {
@@ -1054,7 +1066,8 @@
       "LIST_PROGRESSION": "素材の進捗状況の一覧",
       "FINAL_LIST_PROGRESSION": "最終項目の進行状況をリストアップする",
       "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる",
-      "ITEM_COMPLETION": "アイテム完了"
+      "ITEM_COMPLETION": "アイテム完了",
+      "ITEM_PROGRESSION": "Item progression"
     }
   },
   "MARKETBOARD": {
