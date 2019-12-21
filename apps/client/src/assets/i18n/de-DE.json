@@ -36,7 +36,8 @@
     "Reset_filters": "Filter zurücksetzen",
     "Too_many_results_warning": "Die Suche lieferte über 100 Gegenstände. Da unsere Datenquelle auf 100 Einträge begrenzt ist, brauchst du möglicherweise weitere Filter um einen bestimmten Gegenstand zu finden.",
     "Share_url": "Kopiere Link zur Suche in die Zwischenablage",
-    "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert"
+    "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert",
+    "Only_craftable": "Nur Rezepte"
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -384,9 +385,12 @@
     "Enable_packet_capture": "Paketerfassung aktivieren (für Echtzeit Inventar-Funktionen)",
     "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Square Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
     "Enable_autofill_by_default": "Auto-Vervollständigung standardmäßig aktivieren",
+    "Enable_autofill_notification_by_default": "Enable autofill notification by default",
     "Enable_autofill_hq_filter": "HQ-Gegenstände nur automatisch füllen, wenn der Gegenstand als HQ benötigt wird",
     "Contribute_to_universalis": "Zu Universalis beitragen",
     "Track_items_on_sale": "Zum Verkauf stehende Gegenstände von Gehilfen verfolgen (erfordert Neustart/Aktualisierung)",
+    "Performance_mode": "Performance mode",
+    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -496,6 +500,7 @@
     "Mark_whole_panel_done": "Panelinhalt als erledigt markieren",
     "Set_color": "Listenfarbe festlegen",
     "Go_to_pinned": "Zu angepinnter Liste springen (Rechtsklick zum entpinnen)",
+    "Reset_panel": "Reset all the items of this panel",
     "COLORS": {
       "RED": "Rot",
       "GREEN": "Grün",
@@ -554,6 +559,8 @@
     "Disable_HQ_suggestions": "Automatische HQ-Markierungen ausschalten",
     "Amount_craftable": "Du kannst {{amount}} herstellen",
     "Add_item": "Gegenstand hinzufügen",
+    "List_large": "Dies ist eine große Liste",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
     "List_too_large": "Liste zu lang",
     "List_too_large_description": "Diese Liste ist zu groß und stößt möglicherweise an die Datenbanklimitierungen aufgrund der vielen Informationen. Du darfst keine weiteren Gegenstände hinzufügen, um zu verhindern, dass du die Liste verlierst.",
     "Add_to_another_list": "Zu einer anderen Liste hinzufügen",
@@ -604,6 +611,11 @@
       "Order_by": "Sortiere nach",
       "Order": "Sortierung",
       "Tag_filter": "Markierungs-Filter"
+    },
+    "OVERLAY": {
+      "Open": "Open list overlay",
+      "No_display": "Open a list in main window to get started",
+      "No_panel_selected": "Select a panel using the buttons above"
     }
   },
   "LIST_TAGS": {
@@ -1054,7 +1066,8 @@
       "LIST_PROGRESSION": "Fortschritt bei Materialien sehen",
       "FINAL_LIST_PROGRESSION": "Fortschritt bei Resultaten sehen",
       "USER_ASSIGNMENT": "Benutzerzuweisung",
-      "ITEM_COMPLETION": "Gegenstand erledigen"
+      "ITEM_COMPLETION": "Gegenstand erledigen",
+      "ITEM_PROGRESSION": "Item progression"
     }
   },
   "MARKETBOARD": {

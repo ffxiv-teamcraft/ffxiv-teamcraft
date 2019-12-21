@@ -36,7 +36,8 @@
     "Reset_filters": "Сбросить фильтры",
     "Too_many_results_warning": "Мы нашли более 100 совпадений. Поскольку наш источник данных ограничен 100 результатами, вам могут потребоваться дополнительные фильтры чтобы найти конкретный предмет.",
     "Share_url": "Скопировать ссылку в буфер обмена",
-    "Share_url_copied": "Ссылка скопирована в буфер обмена"
+    "Share_url_copied": "Ссылка скопирована в буфер обмена",
+    "Only_craftable": "Only recipes"
   },
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте десктопное приложение",
@@ -384,9 +385,12 @@
     "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "Enable_autofill_by_default": "Enable autofill by default",
+    "Enable_autofill_notification_by_default": "Enable autofill notification by default",
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Внести данные в Universalis",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
+    "Performance_mode": "Performance mode",
+    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -496,6 +500,7 @@
     "Mark_whole_panel_done": "Mark panel content as done",
     "Set_color": "Set list color",
     "Go_to_pinned": "Go to pinned list (right click to unpin)",
+    "Reset_panel": "Reset all the items of this panel",
     "COLORS": {
       "RED": "Red",
       "GREEN": "Green",
@@ -554,6 +559,8 @@
     "Disable_HQ_suggestions": "Отключить автоматические флаги HQ",
     "Amount_craftable": "Вы можете сделать {{amount}}",
     "Add_item": "Добавить предмет",
+    "List_large": "This is a large list",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
     "List_too_large": "Список слишком большой",
     "List_too_large_description": "Этот список слишком велик и может достичь ограничений размера базы данных из-за всей информации, которую он несет. Вы не можете добавить больше предметов, дабы избежать потери списка.",
     "Add_to_another_list": "Добавить в другой список",
@@ -604,6 +611,11 @@
       "Order_by": "Сортировка по",
       "Order": "Порядок",
       "Tag_filter": "Фильтр по тегам"
+    },
+    "OVERLAY": {
+      "Open": "Open list overlay",
+      "No_display": "Open a list in main window to get started",
+      "No_panel_selected": "Select a panel using the buttons above"
     }
   },
   "LIST_TAGS": {
@@ -1054,7 +1066,8 @@
       "LIST_PROGRESSION": "Прогресс списка материалов",
       "FINAL_LIST_PROGRESSION": "Прогресс списка итоговых предметов",
       "USER_ASSIGNMENT": "Назначение пользователей",
-      "ITEM_COMPLETION": "Обозначение выполнения"
+      "ITEM_COMPLETION": "Обозначение выполнения",
+      "ITEM_PROGRESSION": "Item progression"
     }
   },
   "MARKETBOARD": {
