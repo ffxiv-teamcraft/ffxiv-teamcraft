@@ -379,7 +379,7 @@ function addToCraftingLogPage(entry, pageId) {
   if (page === undefined) {
     craftingLogPages[entry.CraftType].push({
       id: pageId,
-      masterbook: entry.SecretRecipeBookTargetID,
+      masterbook: entry.SecretRecipeBook,
       startLevel: entry.RecipeLevelTable,
       recipes: []
     });
