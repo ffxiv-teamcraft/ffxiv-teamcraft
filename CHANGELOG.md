@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.2"></a>
+## [6.5.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.4.2...v6.5.2) (2019-12-21)
+
+
+### Bug Fixes
+
+* **autofill:** fixed an issue with autofill on gear pieces ([164e7be](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/164e7be))
+* **desktop:** fixed an issue with fullscreen state not saved properly ([8588fe4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8588fe4))
+* **fishing-spot:** fixed missalignment for hover focus ([62291d1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62291d1))
+* **inventory:** fixed an issue with split action in retainer ([01de086](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01de086))
+* **list:** fixed an issue with gatherable final items not showing properly ([40897ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/40897ab))
+* **list:** fixed an issue with lists not being created properly ([721900e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/721900e))
+* **list:** hotfix for list details not loading properly ([bbbd7a6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bbbd7a6))
+* **log-tracker:** fixed pages labels for masterbook recipes and housing ([1e15213](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e15213))
+* **performances:** added performance mode for large lists and improved performances in general ([57eeb19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/57eeb19))
+* **rotation-overlay:** fixed an issue with overlay using wrong icons ([d1f8d8f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d1f8d8f))
+* **search:** fixed an issue with recipe toggle on kr and cn data ([1b1bf4c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1b1bf4c))
+
+
+### Features
+
+* **desktop:** new overlay: list details ([743f81e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/743f81e))
+* added only recipe flag in item picker ([14e90de](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/14e90de))
+* added quick search shortcut: Ctrl + Shift + F ([03d76f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/03d76f4))
+* **list:** added a button to reset items of a given display panel ([1009aaa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1009aaa))
+* **lists:** added a setting to enable autofill notification by default ([e0f6f01](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e0f6f01))
+* **teams:** added new webhook setting: item progression ([64dd0d3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/64dd0d3))
+
+
+
 <a name="6.5.1"></a>
 ## [6.5.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.4.2...v6.5.1) (2019-12-21)
 

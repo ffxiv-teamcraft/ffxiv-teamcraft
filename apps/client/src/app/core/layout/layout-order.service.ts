@@ -108,8 +108,8 @@ export class LayoutOrderService {
       }
       return 0;
     }
-    if (gatheredBy !== undefined && gatheredBy.type !== undefined) {
-      const jobName = ['miner', 'miner', 'botanist', 'botanist', 'fisher'][gatheredBy.data.type];
+    if (gatheredBy.type !== undefined) {
+      const jobName = ['miner', 'miner', 'botanist', 'botanist', 'fisher'][gatheredBy.type];
       if (jobName !== undefined) {
         return LayoutOrderService.JOBS.indexOf(jobName);
       }
