@@ -16,7 +16,7 @@ export class VenturesExtractor extends AbstractExtractor<number[]> {
   }
 
   getDataType(): DataType {
-    return DataType.VENTURE;
+    return DataType.VENTURES;
   }
 
   protected canExtract(item: Item): boolean {

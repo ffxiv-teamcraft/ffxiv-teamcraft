@@ -20,6 +20,7 @@ export class LazyComponentDirective implements AfterViewInit {
     ).subscribe((visible) => {
       if (visible) {
         this.cdRef.reattach();
+        this.cdRef.detectChanges();
       } else {
         this.cdRef.detach();
       }

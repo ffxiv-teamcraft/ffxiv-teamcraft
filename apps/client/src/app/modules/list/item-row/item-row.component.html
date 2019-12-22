@@ -502,7 +502,7 @@
         *ngIf="moreAlarmsAvailable > 0"
         class="more-badge">{{'ALARMS.More_available' | translate: { amount: moreAlarmsAvailable } }}</nz-tag>
     </div>
-    <ng-container *ngIf="layout?.showCraftableAmount && item.craftedBy !== null">
+    <ng-container *ngIf="layout?.showCraftableAmount && item.craftedBy.length > 0">
       <div *ngIf="item.craftableAmount">
         {{'LIST_DETAILS.Amount_craftable' | translate:{ amount: item.craftableAmount } }}
       </div>
@@ -657,12 +657,14 @@
                  [fxLayoutGap]="source.data.length > 1?'0px':'5px'"
                  [fxLayout]="source.data.length > 1?'column':'row'"
                  fxLayoutAlign="center center">
-              <button (click)="overlay?null:openSimulator(craft.recipeId, item, craft)" *ngIf="craft.icon !== ''" [nzShape]="'circle'"
-                      nz-button>
-                <img [src]="craft.icon" alt="" class="img-icon">
-              </button>
-              <div>{{craft.level}}</div>
-              <div *ngIf="craft.stars_tooltip !== undefined">{{craft.stars_tooltip}}</div>
+              <ng-container *ngIf="craft.jobId > 0">
+                <button (click)="overlay?null:openSimulator(craft.recipeId, item, craft)" *ngIf="craft.icon !== ''" [nzShape]="'circle'"
+                        nz-button>
+                  <img [src]="craft.icon" alt="" class="img-icon">
+                </button>
+                <div>{{craft.level}}</div>
+                <div *ngIf="craft.stars_tooltip !== undefined">{{craft.stars_tooltip}}</div>
+              </ng-container>
             </div>
           </ng-container>
           <div *ngSwitchCase="dataTypes.GATHERED_BY" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">

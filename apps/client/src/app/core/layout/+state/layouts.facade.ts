@@ -90,13 +90,13 @@ export class LayoutsFacade {
                   orderedAccepted = orderedAccepted.filter(item => {
                     const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
                     const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
-                    if (gatheredBy !== undefined) {
-                      const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.data.type];
+                    if (gatheredBy.type !== undefined) {
+                      const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.type];
                       const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
-                      return set && set.level >= gatheredBy.data.level;
+                      return set && set.level >= gatheredBy.level;
                     }
-                    if (craftedBy) {
-                      return craftedBy.data.reduce((canCraft, craft) => {
+                    if (craftedBy.length > 0) {
+                      return craftedBy.reduce((canCraft, craft) => {
                         const jobId = craft.jobId;
                         const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
                         return (set && set.level >= craft.level) || canCraft;
@@ -139,12 +139,12 @@ export class LayoutsFacade {
             const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
             const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
             if (gatheredBy.type !== undefined) {
-              const gatherJob = [16, 16, 17, 17, 18, 18].indexOf(gatheredBy.data.type);
+              const gatherJob = [16, 16, 17, 17, 18, 18].indexOf(gatheredBy.type);
               const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
-              return set && set.level >= gatheredBy.data.level;
+              return set && set.level >= gatheredBy.level;
             }
-            if (craftedBy) {
-              return craftedBy.data.reduce((canCraft, craft) => {
+            if (craftedBy.length > 0) {
+              return craftedBy.reduce((canCraft, craft) => {
                 const jobId = craft.jobId;
                 const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
                 return (set && set.level >= craft.level) || canCraft;
