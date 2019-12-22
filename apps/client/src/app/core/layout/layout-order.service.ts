@@ -123,7 +123,7 @@ export class LayoutOrderService {
     const gatheredBy = getItemSource(row, DataType.GATHERED_BY);
     if (craftedBy.length > 0) {
       // Returns the lowest level available for the craft.
-      return craftedBy.data.map(craft => craft.level).sort((a, b) => a - b)[0];
+      return craftedBy.map(craft => craft.level).sort((a, b) => a - b)[0];
     }
     if (gatheredBy.type !== undefined) {
       return gatheredBy.level;

@@ -10,7 +10,6 @@ export enum DataType {
   GARDENING,
   VOYAGES,
   DROPS,
-  VENTURE,
   ALARMS,
   MASTERBOOKS,
   TREASURES,

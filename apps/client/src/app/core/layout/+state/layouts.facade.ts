@@ -96,7 +96,7 @@ export class LayoutsFacade {
                       return set && set.level >= gatheredBy.level;
                     }
                     if (craftedBy.length > 0) {
-                      return craftedBy.data.reduce((canCraft, craft) => {
+                      return craftedBy.reduce((canCraft, craft) => {
                         const jobId = craft.jobId;
                         const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
                         return (set && set.level >= craft.level) || canCraft;
@@ -143,8 +143,8 @@ export class LayoutsFacade {
               const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
               return set && set.level >= gatheredBy.level;
             }
-            if (craftedBy) {
-              return craftedBy.data.reduce((canCraft, craft) => {
+            if (craftedBy.length > 0) {
+              return craftedBy.reduce((canCraft, craft) => {
                 const jobId = craft.jobId;
                 const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
                 return (set && set.level >= craft.level) || canCraft;

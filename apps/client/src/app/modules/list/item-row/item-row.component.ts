@@ -362,14 +362,14 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.authFacade.user$.pipe(
       first()
     ).subscribe(user => {
-      const craftedBy = item.sources.find(source => source.type = DataType.CRAFTED_BY);
-      const gatheredBy = item.sources.find(source => source.type = DataType.GATHERED_BY);
-      if (craftedBy !== undefined) {
+      const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
+      const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
+      if (craftedBy.length > 0) {
         user.logProgression = _.uniq([
           ...user.logProgression,
-          +(item.recipeId || craftedBy.data[0].recipeId)
+          +(item.recipeId || craftedBy[0].recipeId)
         ]);
-      } else if (gatheredBy !== undefined) {
+      } else if (gatheredBy.type !== undefined) {
         user.gatheringLogProgression = _.uniq([
           ...user.gatheringLogProgression,
           +item.id
