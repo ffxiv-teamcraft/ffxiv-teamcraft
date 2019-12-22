@@ -160,7 +160,7 @@ export class List extends DataWithPermissions {
         // We don't want to check the amount of items required for recipes, as they can't be wrong (provided by the user only).
         if (prop !== 'finalItems') {
           this[prop].forEach(row => {
-            if (row.craftedBy === undefined || row.craftedBy.length === 0) {
+            if (getItemSource(row, DataType.CRAFTED_BY).length === 0) {
               row.amount = row.amount_needed = this.totalAmountRequired(row);
             } else {
               row.amount = this.totalAmountRequired(row);
@@ -288,7 +288,7 @@ export class List extends DataWithPermissions {
   }
 
   canBeCrafted(item: ListRow): boolean {
-    const craftedBy = getItemSource(item,  DataType.CRAFTED_BY);
+    const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
     if (craftedBy === undefined || item.requires === undefined) {
       return false;
     }

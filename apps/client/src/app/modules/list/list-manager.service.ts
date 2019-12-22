@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { List } from './model/list';
 import { combineLatest, concat, Observable, of } from 'rxjs';
-import { ListRow } from './model/list-row';
+import { ListRow, getItemSource } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { Ingredient } from '../../model/garland-tools/ingredient';
@@ -247,7 +247,7 @@ export class ListManagerService {
               }
               listRow.done = row.item.done || 0;
               listRow.used = row.item.used || 0;
-              if (row.item.craftedBy !== undefined && row.item.craftedBy.length > 0) {
+              if (getItemSource(row.item, DataType.CRAFTED_BY).length > 0) {
                 if (listRow.done > listRow.amount) {
                   listRow.done = listRow.amount;
                 }
