@@ -61,6 +61,7 @@ import { VoyagesComponent } from '../../item-details/voyages/voyages.component';
 import { TradesComponent } from '../../item-details/trades/trades.component';
 import { RelationshipsComponent } from '../../item-details/relationships/relationships.component';
 import { ItemDetailsPopup } from '../../item-details/item-details-popup';
+import { ItemSource } from '../model/item-source';
 
 @Component({
   selector: 'app-item-row',
@@ -678,6 +679,10 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   public trackByAlarm(index: number, alarm: Alarm): string {
     return alarm.$key;
+  }
+
+  public trackByItemSource(index: number, source: ItemSource): DataType {
+    return source.type;
   }
 
   public trackByInventoryEntry(index: number, entry: { containerName: string, amount: number, hq: boolean }): string {
