@@ -126,7 +126,7 @@ export class LayoutOrderService {
       return craftedBy.data.map(craft => craft.level).sort((a, b) => a - b)[0];
     }
     if (gatheredBy.type !== undefined) {
-      return gatheredBy.data.level;
+      return gatheredBy.level;
     }
     return 0;
   }
