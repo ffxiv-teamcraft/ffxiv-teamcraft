@@ -598,7 +598,7 @@ export class ItemComponent extends TeamcraftPageComponent {
   }
 
   public openInSimulator(item: ListRow, itemId: number, recipeId: string): void {
-    const entry = getItemSource(item,  DataType.CRAFTED_BY).data.find(c => c.recipeId === recipeId);
+    const entry = getItemSource(item,  DataType.CRAFTED_BY).find(c => c.recipeId === recipeId);
     const craft: Partial<Craft> = {
       id: recipeId,
       job: entry.jobId,
