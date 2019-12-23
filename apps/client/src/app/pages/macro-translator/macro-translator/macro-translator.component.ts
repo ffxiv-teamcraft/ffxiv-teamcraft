@@ -55,7 +55,7 @@ export class MacroTranslatorComponent {
 
           // Push translated line to each language
           Object.keys(macroTranslated).forEach(key => {
-            if ((key === 'ko' || key === 'zh') && line.indexOf('"') === -1) {
+            if (((key === 'ko' || key === 'zh') && line.indexOf('"') === -1) || translatedSkill[key].indexOf(" ") > -1) {
               macroTranslated[key].push(line.replace(skillName, `"${translatedSkill[key]}"`));
             } else {
               macroTranslated[key].push(line.replace(skillName, translatedSkill[key]));
