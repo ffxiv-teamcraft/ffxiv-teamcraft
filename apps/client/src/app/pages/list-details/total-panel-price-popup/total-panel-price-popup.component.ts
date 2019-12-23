@@ -39,8 +39,8 @@ export class TotalPanelPricePopupComponent implements OnInit {
     this.totalPrice = this.panelContent.reduce((result, row) => {
       const vendors = getItemSource(row, DataType.VENDORS);
       const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
-      if (vendors) {
-        const vendor = vendors.data
+      if (vendors.length > 0) {
+        const vendor = vendors
           .sort((a, b) => {
             return a.price - b.price;
           })[0];
@@ -50,31 +50,33 @@ export class TotalPanelPricePopupComponent implements OnInit {
         } else {
           gilsRow.costs[0] += vendor.price * (row.amount - row.done);
         }
-      } else if (tradeSources) {
-        const tradeSource = this.getTradeSourceByPriority(tradeSources.data);
+      } else if (tradeSources.length > 0) {
+        const tradeSource = this.getTradeSourceByPriority(tradeSources);
         const trade = tradeSource.trades[0];
         const itemsPerTrade = trade.items.find(item => item.id === row.id).amount;
-        const costs = tradeSource.trades.sort((ta) => ta.items[0].hq ? 1 : -1).map(t => {
-          return Math.ceil(this.getFilteredCurrencies(t.currencies)[0].amount * (row.amount - row.done) / itemsPerTrade);
-        });
-
-        const tradeRow = result.find(r => r.currencyId === this.getFilteredCurrencies(trade.currencies)[0].id);
-
-        if (tradeRow === undefined) {
-          result.push({
-            currencyId: this.getFilteredCurrencies(trade.currencies)[0].id,
-            currencyIcon: this.getFilteredCurrencies(trade.currencies)[0].icon,
-            costs: costs,
-            canIgnore: [].concat.apply([], tradeSources.data.filter(source => {
-              return source.trades.some(t => {
-                return this.getFilteredCurrencies(t.currencies).length > 0;
-              });
-            })).length > 1
+        this.getFilteredCurrencies(trade.currencies).forEach(currency => {
+          const costs = tradeSource.trades.sort((ta) => ta.items[0].hq ? 1 : -1).map(t => {
+            return Math.ceil(currency.amount * (row.amount - row.done) / itemsPerTrade);
           });
-        } else {
-          tradeRow.costs[0] += costs[0];
-          tradeRow.costs[1] += costs[1];
-        }
+
+          const tradeRow = result.find(r => r.currencyId === currency.id);
+
+          if (tradeRow === undefined) {
+            result.push({
+              currencyId: currency.id,
+              currencyIcon: currency.icon,
+              costs: costs,
+              canIgnore: [].concat.apply([], tradeSources.filter(source => {
+                return source.trades.some(t => {
+                  return this.getFilteredCurrencies(t.currencies).length > 0;
+                });
+              })).length > 1
+            });
+          } else {
+            tradeRow.costs[0] += costs[0];
+            tradeRow.costs[1] += costs[1];
+          }
+        });
       }
 
       return result;
