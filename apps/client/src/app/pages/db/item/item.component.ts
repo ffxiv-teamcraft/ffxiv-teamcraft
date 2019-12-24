@@ -288,7 +288,6 @@ export class ItemComponent extends TeamcraftPageComponent {
           });
         }
         const gardening = getItemSource(listRow, DataType.GARDENING);
-        console.log(gardening);
         if (Number.isInteger(gardening)) {
           links.push({
             title: 'FFXIV Gardening',
