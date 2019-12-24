@@ -288,11 +288,12 @@ export class ItemComponent extends TeamcraftPageComponent {
           });
         }
         const gardening = getItemSource(listRow, DataType.GARDENING);
-        if (gardening) {
+        console.log(gardening);
+        if (Number.isInteger(gardening)) {
           links.push({
             title: 'FFXIV Gardening',
             icon: './assets/icons/Gardening.png',
-            url: `https://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${gardening}`
+            url: `http://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${gardening}`
           });
         }
         if (xivapiItem.ItemActionTargetID === 1389) {
