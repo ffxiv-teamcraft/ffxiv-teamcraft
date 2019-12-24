@@ -13020,7 +13020,7 @@
     "ko": "HQ 획득률이 0%로 감소하지만, 채집 아이템과 크리스탈을 동시에 획득할 수 있습니다."
   },
   "4591": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>작살질<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n직전에 잡은 물고기가 현재 어장에서 잡히지 않게 됩니다.\n한 어장에서 채집하는 동안에는 효과가 유지됩니다.\n단, 효과가 없는 물고기도 있습니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>작살질<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n직전에 잡은 물고기가 다시 잡히게 만듭니다.\n한 어장에서 채집하는 동안에는 효과가 유지됩니다.\n단, 효과가 없는 물고기도 있습니다."
   },
   "4592": {
     "ko": "변신 주술을 쓸어담아 사용할 수 없게 만듭니다.\n※ 전투 효과는 없습니다."
@@ -13032,10 +13032,10 @@
     "ko": "아이템을 선별합니다.\n희귀도 상승: 감별력에 따른 기본값×0.5\n손상도 상승: 0\n채집 중에 1번만 사용할 수 있으며, 채집 횟수를 1회 소비합니다."
   },
   "4595": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>낚시<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 1회에 한해, 방금 잡은 물고기가 잡히지 않게 만듭니다.\n대상 물고기를 잡은 후 15초 안에 실행해야 합니다.\n생미끼 낚시로 잡은 물고기를 비롯하여 일부 물고기에는 적용되지 않습니다.\n실행 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>생미끼 낚시<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>한결같은 챔질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과를 취소합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>낚시<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n직전에 잡은 물고기가 잡히지 않게 만듭니다.\n대상 물고기를 잡은 후 15초 안에 실행해야 합니다.\n생미끼 낚시로 잡은 물고기를 비롯하여 일부 물고기에는 적용되지 않습니다.\n실행 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>생미끼 낚시<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>한결같은 챔질<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과를 취소합니다."
   },
   "4596": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>낚시<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다음 1회에 한해, 방금 잡은 물고기가 다시 잡히게 만듭니다.\n대상 물고기를 잡은 후 15초 안에 실행해야 하며, 연속으로 실행할 수 없습니다.\n생미끼 낚시로 잡은 물고기를 비롯하여 일부 물고기에는 적용되지 않습니다.\n실행 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>생미끼 낚시<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>교환 방생<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과를 취소합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>낚시<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n직전에 잡은 물고기가 다시 잡히게 만듭니다.\n대상 물고기를 잡은 후 15초 안에 실행해야 하며, 연속으로 실행할 수 없습니다.\n생미끼 낚시로 잡은 물고기를 비롯하여 일부 물고기에는 적용되지 않습니다.\n실행 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>생미끼 낚시<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>교환 방생<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과를 취소합니다."
   },
   "4597": {
     "ko": "품질이 최대일 때 일정 확률로 실행할 수 있습니다.\n아이템 완성 시, 사용한 재료 일부를 돌려받습니다."
@@ -24747,7 +24747,7 @@
     "ko": "자신에게 부여된 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>질풍번개<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 지속시간을 최대로 연장합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 질풍번개"
   },
   "8787": {
-    "ko": "대상에게 신속하게 접근하여 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신에게 15초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>질풍번개<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>질풍번개 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신이 주는 피해량 5% 증가, 무기 기술의 재사용 대기 시간 5% 단축\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 3\n속박 상태에서는 사용할 수 없습니다."
+    "ko": "대상에게 신속하게 접근하여 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신에게 15초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>질풍번개<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>질풍번개 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신이 주는 피해량 5% 증가, 무기 기술의 재사용 대기 시간 5% 감소\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>질풍 태세<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n속박 상태에서는 사용할 수 없습니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "8788": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>금강의 극의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 발동합니다. \n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>금강의 극의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 10초 안에 최대 HP의 50%이상 피해를 받으면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>질풍번개<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 지속시간을 초기화하고 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>금강의 결의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 발동합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>금강의 결의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 10초 동안 주는 피해량이 10% 증가하고 받는 피해량이 10% 감소합니다."
@@ -24918,7 +24918,7 @@
     "ko": "대상에게 마법 공격을 가하고, 30초 동안 여행신의 무곡을 노래합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>시상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>(최대 3중첩)을 모두 소비하여 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>절대음감<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 시전할 수 있습니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 노래가 시작된 후 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>절대음감<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "8844": {
-    "ko": "대상에게 마법 공격을 가하고, 30초 동안 군신의 찬가를 노래합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>시상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>(최대 4중첩) 하나당 자신의 무기 기술 재사용 대기 시간이 5%씩 단축됩니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 노래가 시작된 후 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>마구 쏘기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "대상에게 마법 공격을 가하고, 30초 동안 군신의 찬가를 노래합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>시상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>(최대 4중첩) 하나당 자신의 무기 기술 재사용 대기 시간이 5%씩 단축됩니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 노래가 시작된 후 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>마구 쏘기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "8845": {
     "ko": "대상에게 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 750\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>가우스 총열 추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>열기 5 증가<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>열기 50 이상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>일 경우 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>열분열탄<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
@@ -43760,6 +43760,54 @@
   "15725": {
     "ko": ""
   },
+  "15764": {
+    "ko": ""
+  },
+  "15767": {
+    "ko": ""
+  },
+  "15772": {
+    "ko": ""
+  },
+  "15773": {
+    "ko": ""
+  },
+  "15774": {
+    "ko": ""
+  },
+  "15775": {
+    "ko": ""
+  },
+  "15776": {
+    "ko": ""
+  },
+  "15777": {
+    "ko": ""
+  },
+  "15778": {
+    "ko": ""
+  },
+  "15779": {
+    "ko": ""
+  },
+  "15780": {
+    "ko": ""
+  },
+  "15781": {
+    "ko": ""
+  },
+  "15782": {
+    "ko": ""
+  },
+  "15783": {
+    "ko": ""
+  },
+  "15784": {
+    "ko": ""
+  },
+  "15785": {
+    "ko": ""
+  },
   "15786": {
     "ko": ""
   },
@@ -44157,6 +44205,72 @@
     "ko": ""
   },
   "15929": {
+    "ko": ""
+  },
+  "15930": {
+    "ko": ""
+  },
+  "15931": {
+    "ko": ""
+  },
+  "15932": {
+    "ko": ""
+  },
+  "15933": {
+    "ko": ""
+  },
+  "15934": {
+    "ko": ""
+  },
+  "15935": {
+    "ko": ""
+  },
+  "15936": {
+    "ko": ""
+  },
+  "15937": {
+    "ko": ""
+  },
+  "15938": {
+    "ko": ""
+  },
+  "15939": {
+    "ko": ""
+  },
+  "15940": {
+    "ko": ""
+  },
+  "15941": {
+    "ko": ""
+  },
+  "15942": {
+    "ko": ""
+  },
+  "15943": {
+    "ko": ""
+  },
+  "15944": {
+    "ko": ""
+  },
+  "15945": {
+    "ko": ""
+  },
+  "15946": {
+    "ko": ""
+  },
+  "15947": {
+    "ko": ""
+  },
+  "15949": {
+    "ko": ""
+  },
+  "15950": {
+    "ko": ""
+  },
+  "15981": {
+    "ko": ""
+  },
+  "15982": {
     "ko": ""
   },
   "15989": {
@@ -44652,13 +44766,13 @@
     "ko": "자신을 중심으로 주위 적에게 물리 공격을 가하고, 대상에게 15초 동안 지속 피해를 줍니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 90"
   },
   "16160": {
-    "ko": "15초 동안 자신과 주위 파티원이 받는 피해량이 10% 감소합니다."
+    "ko": "15초 동안 자신과 주위 파티원이 받는 마법 피해량이 10% 감소합니다."
   },
   "16161": {
     "ko": "자신 또는 파티원 1명을 대상으로, 7초 동안 받는 피해를 15% 감소시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>잔혹한 탄피<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 부여되어 있을 때 파티원에게 사용하면, 대상도 10초 동안 동일한 효과를 얻습니다."
   },
   "16162": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>소일<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 1단계 소비하여 대상에게 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 500\n"
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>소일<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 1단계 소비하여 대상에게 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 500"
   },
   "16163": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>소일<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 1단계 소비하여 자신을 중심으로 주위 적에게 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 320"
@@ -45033,6 +45147,81 @@
     "ko": ""
   },
   "16298": {
+    "ko": ""
+  },
+  "16324": {
+    "ko": ""
+  },
+  "16325": {
+    "ko": ""
+  },
+  "16326": {
+    "ko": ""
+  },
+  "16327": {
+    "ko": ""
+  },
+  "16328": {
+    "ko": ""
+  },
+  "16329": {
+    "ko": ""
+  },
+  "16330": {
+    "ko": ""
+  },
+  "16331": {
+    "ko": ""
+  },
+  "16332": {
+    "ko": ""
+  },
+  "16333": {
+    "ko": ""
+  },
+  "16334": {
+    "ko": ""
+  },
+  "16335": {
+    "ko": ""
+  },
+  "16336": {
+    "ko": ""
+  },
+  "16337": {
+    "ko": ""
+  },
+  "16338": {
+    "ko": ""
+  },
+  "16339": {
+    "ko": ""
+  },
+  "16340": {
+    "ko": ""
+  },
+  "16341": {
+    "ko": ""
+  },
+  "16342": {
+    "ko": ""
+  },
+  "16343": {
+    "ko": ""
+  },
+  "16344": {
+    "ko": ""
+  },
+  "16345": {
+    "ko": ""
+  },
+  "16346": {
+    "ko": ""
+  },
+  "16347": {
+    "ko": ""
+  },
+  "16401": {
     "ko": ""
   },
   "16402": {
@@ -45503,6 +45692,24 @@
   "16560": {
     "ko": "대상에게 30초 동안 지속되는 수면 효과를 부여합니다.\n실행 후 자동 공격이 정지됩니다."
   },
+  "16563": {
+    "ko": ""
+  },
+  "16564": {
+    "ko": ""
+  },
+  "16565": {
+    "ko": ""
+  },
+  "16566": {
+    "ko": ""
+  },
+  "16567": {
+    "ko": ""
+  },
+  "16568": {
+    "ko": ""
+  },
   "16572": {
     "ko": ""
   },
@@ -45624,6 +45831,105 @@
     "ko": ""
   },
   "16613": {
+    "ko": ""
+  },
+  "16614": {
+    "ko": ""
+  },
+  "16615": {
+    "ko": ""
+  },
+  "16616": {
+    "ko": ""
+  },
+  "16617": {
+    "ko": ""
+  },
+  "16618": {
+    "ko": ""
+  },
+  "16619": {
+    "ko": ""
+  },
+  "16620": {
+    "ko": ""
+  },
+  "16621": {
+    "ko": ""
+  },
+  "16622": {
+    "ko": ""
+  },
+  "16623": {
+    "ko": ""
+  },
+  "16624": {
+    "ko": ""
+  },
+  "16625": {
+    "ko": ""
+  },
+  "16626": {
+    "ko": ""
+  },
+  "16627": {
+    "ko": ""
+  },
+  "16628": {
+    "ko": ""
+  },
+  "16629": {
+    "ko": ""
+  },
+  "16630": {
+    "ko": ""
+  },
+  "16631": {
+    "ko": ""
+  },
+  "16632": {
+    "ko": ""
+  },
+  "16633": {
+    "ko": ""
+  },
+  "16634": {
+    "ko": ""
+  },
+  "16635": {
+    "ko": ""
+  },
+  "16636": {
+    "ko": ""
+  },
+  "16637": {
+    "ko": ""
+  },
+  "16638": {
+    "ko": ""
+  },
+  "16639": {
+    "ko": ""
+  },
+  "16640": {
+    "ko": ""
+  },
+  "16641": {
+    "ko": ""
+  },
+  "16642": {
+    "ko": ""
+  },
+  "16643": {
+    "ko": ""
+  },
+  "16644": {
+    "ko": ""
+  },
+  "16701": {
+    "ko": ""
+  },
+  "16705": {
     "ko": ""
   },
   "16712": {
@@ -45912,6 +46218,9 @@
     "ko": ""
   },
   "16819": {
+    "ko": ""
+  },
+  "16820": {
     "ko": ""
   },
   "16822": {
@@ -47492,6 +47801,9 @@
   "17381": {
     "ko": ""
   },
+  "17382": {
+    "ko": ""
+  },
   "17387": {
     "ko": ""
   },
@@ -47625,6 +47937,9 @@
     "ko": ""
   },
   "17434": {
+    "ko": ""
+  },
+  "17435": {
     "ko": ""
   },
   "17437": {
@@ -48161,6 +48476,42 @@
   "17635": {
     "ko": ""
   },
+  "17636": {
+    "ko": ""
+  },
+  "17637": {
+    "ko": ""
+  },
+  "17638": {
+    "ko": ""
+  },
+  "17639": {
+    "ko": ""
+  },
+  "17640": {
+    "ko": ""
+  },
+  "17641": {
+    "ko": ""
+  },
+  "17642": {
+    "ko": ""
+  },
+  "17643": {
+    "ko": ""
+  },
+  "17644": {
+    "ko": ""
+  },
+  "17645": {
+    "ko": ""
+  },
+  "17661": {
+    "ko": ""
+  },
+  "17663": {
+    "ko": ""
+  },
   "17665": {
     "ko": ""
   },
@@ -48375,7 +48726,7 @@
     "ko": "대상에게 물리 공격을 가하고 30초 동안 지속 피해를 줍니다.\n지속시간 동안 대상이 받는 회복 효과가 10% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 800\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n지속시간 안에 대상이 쓰러지면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>검기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 50 증가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신이 부여한 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피안화<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 대상에게 남아 있을 경우 지속시간이 30초 연장됩니다.(최대 60초)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피안화<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 직후\n고유 재사용 대기 시간이 적용됩니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "17742": {
-    "ko": "대상을 향해 전방 부채꼴 범위 물리 공격을 가하고, 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>검압<UIGlow>01</UIGlow><UIForeground>01</UIForeground>(최대 5중첩)을 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 명중한 대상 1명당 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>검기 10씩 증가<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천하오검<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 직후\n고유 재사용 대기 시간이 적용됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "대상을 향해 전방 부채꼴 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 명중한 대상 1명당 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>검기 10씩 증가<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천하오검<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 직후\n고유 재사용 대기 시간이 적용됩니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "17743": {
     "ko": "대상에게 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>검기 20 증가<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>난설월화<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 직후\n고유 재사용 대기 시간이 적용됩니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
@@ -48414,7 +48765,7 @@
     "ko": "대상에게 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1000\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>앞걸음<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과 중에는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>리버스 캐스케이드<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 무도 중에는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>장미의 앙부아떼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "17757": {
-    "ko": "대상에게 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 캐스케이드 또는 리버스 캐스케이드\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 보너스<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>환상부채<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>앞걸음<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과 중에는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>파운틴 폴<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 무도 중에는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>장미의 앙부아떼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "대상에게 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 캐스케이드 또는 리버스 캐스케이드\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 시 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 보너스<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>환상부채<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>앞걸음<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과 중에는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>파운틴 폴<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 무도 중에는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>장미의 앙부아떼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "17758": {
     "ko": "대상에게 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1800\n실행 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>앞걸음<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과가 사라집니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>앞걸음<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 무도 중에는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>장미의 앙부아떼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
