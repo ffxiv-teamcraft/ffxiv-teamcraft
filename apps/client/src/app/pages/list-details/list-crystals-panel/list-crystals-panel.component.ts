@@ -23,10 +23,8 @@ export class ListCrystalsPanelComponent {
   }
 
   public getTextExport(): string {
-    let exportString = "Crystals:\n";
-    for (const crystal in this.crystals) {
-      exportString += `${this.crystals[crystal].amount}x ${this.i18nTools.getName(this.l12n.getItem(this.crystals[crystal].id))}\n`;
-    }
+    let exportString = `${this.translate.instant('Crystals')}\n`;
+    Object.keys(this.crystals).forEach(crystal => exportString += `${this.crystals[crystal].amount}x ${this.i18nTools.getName(this.l12n.getItem(this.crystals[crystal].id))}\n`);
     return exportString;
   }
 
