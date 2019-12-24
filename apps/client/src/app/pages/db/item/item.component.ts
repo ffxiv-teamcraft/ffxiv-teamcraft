@@ -282,9 +282,9 @@ export class ItemComponent extends TeamcraftPageComponent {
         ];
         if (!xivapiItem.IsUntradable) {
           links.push({
-            title: 'Mogboard',
-            icon: 'https://mogboard.com/i/mog/mog.png',
-            url: `https://mogboard.com/market/${xivapiItem.ID}`
+            title: 'Universalis',
+            icon: 'https://universalis.app/i/universalis/universalis.png',
+            url: `https://universalis.app/market/${xivapiItem.ID}`
           });
         }
         const gardening = getItemSource(listRow, DataType.GARDENING);
