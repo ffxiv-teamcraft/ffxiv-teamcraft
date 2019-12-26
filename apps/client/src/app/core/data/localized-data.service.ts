@@ -51,22 +51,6 @@ export class LocalizedDataService {
     return this.getPlace(entry ? entry.zone : 1);
   }
 
-  public getItemIdsByName(name: string, language: Language): number[] {
-    if (['en', 'fr', 'de', 'ja', 'zh', 'ko'].indexOf(language) === -1) {
-      language = 'en';
-    }
-    const regex = new RegExp(`${name}`, 'i');
-    const res = [];
-    const keys = Object.keys({ ...this.lazyData.items, ...this.lazyData.zhItems, ...this.lazyData.koItems });
-    for (const key of keys) {
-      if (regex.test(this.lazyData.items[key][language])) {
-        res.push(key);
-      }
-    }
-    // Return a number array with the keys as values, so we have to convert them to numbers.
-    return res.map(id => +id);
-  }
-
   public getPlace(id: number): I18nName {
     const row = this.getRow(this.lazyData.places, id);
     const zhRow = this.getRow(this.lazyData.zhPlaces, id);
@@ -304,21 +288,6 @@ export class LocalizedDataService {
       return undefined;
     }
     return array[id];
-  }
-
-  /**
-   * Specific case for weather, might be usefule for other data.
-   * @param array
-   * @param name
-   * @param language
-   * @returns {I18nName}
-   */
-  private getRowByName(array: any, name: string, language: Language): I18nName {
-    const res = this.getIndexByName(array, name, language);
-    if (res === -1) {
-      return undefined;
-    }
-    return array[res];
   }
 
   /**
