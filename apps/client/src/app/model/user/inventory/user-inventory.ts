@@ -108,6 +108,7 @@ export class UserInventory extends DataModel {
       item = this.items[containerKey][packet.slot];
     }
     item.quantity = packet.quantity;
+    item.hq = packet.hqFlag === 1;
     if (packet.quantity - previousQuantity !== 0) {
       return {
         itemId: packet.catalogId,
