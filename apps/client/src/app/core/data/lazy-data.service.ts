@@ -79,6 +79,19 @@ export class LazyDataService {
   public patches: any[] = [];
   public patchContents: any = {};
   public recipes: LazyRecipe[] = [];
+  public extracts: ListRow[];
+  public extracts$: Observable<ListRow[]> = this.getData('/assets/data/extracts.json').pipe(
+    shareReplay(1)
+  );
+
+  constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) private platform: Object,
+              private platformService: PlatformService) {
+    if (isPlatformServer(platform)) {
+      this.loaded$.next(true);
+    } else {
+      this.load();
+    }
+  }
 
   public get allItems(): any {
     const res = { ...this.items };
@@ -99,18 +112,21 @@ export class LazyDataService {
     return res;
   }
 
-  public extracts: ListRow[];
-  public extracts$: Observable<ListRow[]> = this.getData('/assets/data/extracts.json').pipe(
-    shareReplay(1)
-  );
-
-  constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) private platform: Object,
-              private platformService: PlatformService) {
-    if (isPlatformServer(platform)) {
-      this.loaded$.next(true);
-    } else {
-      this.load();
-    }
+  public merge(...dataEntries: any[]): any {
+    return dataEntries.reduce((merged, entry) => {
+      Object.keys(entry)
+        .forEach(key => {
+          if (merged[key] !== undefined) {
+            Object.keys(entry[key])
+              .forEach(lang => {
+                merged[key][lang] = entry[key][lang];
+              });
+          } else {
+            merged[key] = merged[key] || entry[key];
+          }
+        });
+      return merged;
+    }, {});
   }
 
   private load(): void {
@@ -273,23 +289,6 @@ export class LazyDataService {
       this.extracts = extracts;
       this.loaded$.next(true);
     });
-  }
-
-  public merge(...dataEntries: any[]): any {
-    return dataEntries.reduce((merged, entry) => {
-      Object.keys(entry)
-        .forEach(key => {
-          if (merged[key] !== undefined) {
-            Object.keys(entry[key])
-              .forEach(lang => {
-                merged[key][lang] = entry[key][lang];
-              });
-          } else {
-            merged[key] = merged[key] || entry[key];
-          }
-        });
-      return merged;
-    }, {});
   }
 
   private getData(path: string): Observable<any> {

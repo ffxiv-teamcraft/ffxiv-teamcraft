@@ -294,28 +294,6 @@ export class LocalizedDataService {
     return result;
   }
 
-  private getRow<T = I18nName>(array: any, id: number | string): T {
-    if (array === undefined) {
-      return undefined;
-    }
-    return array[id];
-  }
-
-  /**
-   * Specific case for weather, might be usefule for other data.
-   * @param array
-   * @param name
-   * @param language
-   * @returns {I18nName}
-   */
-  private getRowByName(array: any, name: string, language: Language): I18nName {
-    const res = this.getIndexByName(array, name, language);
-    if (res === -1) {
-      return undefined;
-    }
-    return array[res];
-  }
-
   /**
    * Gets the id of a row by name.
    * @param  array
@@ -353,5 +331,27 @@ export class LocalizedDataService {
       return this.getIndexByName(array, name, 'en');
     }
     return res;
+  }
+
+  private getRow<T = I18nName>(array: any, id: number | string): T {
+    if (array === undefined) {
+      return undefined;
+    }
+    return array[id];
+  }
+
+  /**
+   * Specific case for weather, might be usefule for other data.
+   * @param array
+   * @param name
+   * @param language
+   * @returns {I18nName}
+   */
+  private getRowByName(array: any, name: string, language: Language): I18nName {
+    const res = this.getIndexByName(array, name, language);
+    if (res === -1) {
+      return undefined;
+    }
+    return array[res];
   }
 }
