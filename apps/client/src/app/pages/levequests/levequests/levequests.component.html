@@ -1,4 +1,4 @@
-<div class="top-part" fxLayout="row wrap" nz-row>
+<div class="top-part" fxLayout="row wrap" fxLayoutAlign="center center" nz-row>
   <div [nzMd]="{ span: 4 }" [nzXXl]="{ span: 3 }" [nzXs]="{ span: 10, order: 1 }" nz-col>
     <nz-select (ngModelChange)="setJob($event)" [ngModel]="job$.value" [nzAllowClear]="true"
                [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
@@ -84,9 +84,9 @@
   <div class="results">
     <app-page-loader [loading]="loading">
       <div fxLayout="column" fxLayoutGap="5px">
-        <div *ngFor="let leve of results;let odd=odd" [class.odd]="odd" class="leve-row">
+        <div *ngFor="let leve of results;let odd=odd; trackBy: trackByLeve" [class.odd]="odd" class="leve-row">
           <div fxFlex="1 1 auto" fxLayout="row wrap" fxLayoutAlign="flex-start center" nz-row>
-            <div fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzSm="4">
+            <div fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzSm="5">
               <label [(ngModel)]="leve.selected" (ngModelChange)="updateAllSelected(results)" class="select-box"
                      nz-checkbox></label>
               <div>
@@ -120,9 +120,11 @@
                   </div>
                 </div>
                 <div nz-col nzSm="4">
-                  <b>EXP:</b> {{getLeveExp(leve) | number}} <span *ngIf="globalExp">({{leve.exp * (leve.allDeliveries ? leve.repeats + 1 : 1) * (leve.hq ? 2 : 1) | number}}
+                  <b>EXP:</b> {{getLeveExp(leve, results) | number}} <span
+                  *ngIf="globalExp">({{leve.exp * (leve.allDeliveries ? leve.repeats + 1 : 1) * (leve.hq ? 2 : 1) | number}}
                   x {{leve.amount}})</span><br/>
-                  <b>Gil:</b> {{getLeveGil(leve) | number}} <span *ngIf="globalExp">({{leve.gil * (leve.allDeliveries ? leve.repeats + 1 : 1) * (leve.hq ? 2 : 1) | number}}
+                  <b>Gil:</b> {{getLeveGil(leve) | number}} <span
+                  *ngIf="globalExp">({{leve.gil * (leve.allDeliveries ? leve.repeats + 1 : 1) * (leve.hq ? 2 : 1) | number}}
                   x {{leve.amount}})</span>
                 </div>
                 <div nz-col nzSm="6">
@@ -150,7 +152,7 @@
                 </div>
               </div>
               <ng-container *ngIf="computeExp">
-                <div *ngIf="getExp(getLeveExp(leve), results) as resultExp" fxLayout="row" fxLayoutAlign="center center"
+                <div *ngIf="getExp(leve, results) as resultExp" fxLayout="row" fxLayoutAlign="center center"
                      fxLayoutGap="5px">
                   <div>Lvl.{{resultExp.level}}</div>
                   <nz-progress [nzPercent]="resultExp.expPercent"

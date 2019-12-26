@@ -10,11 +10,11 @@ export class LayoutRowFilter {
 
   static NONE = new LayoutRowFilter(() => false, 'NONE');
 
-  static IS_CRAFT = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.CRAFTED_BY), 'IS_CRAFT');
+  static IS_CRAFT = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.CRAFTED_BY).length > 0, 'IS_CRAFT');
 
   static IS_GATHERING = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.GATHERED_BY, true).type !== undefined, 'IS_GATHERING');
 
-  static IS_TRADE = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.TRADE_SOURCES), 'IS_TRADE');
+  static IS_TRADE = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.TRADE_SOURCES).length > 0, 'IS_TRADE');
 
   static CAN_BE_BOUGHT = new LayoutRowFilter(row => {
     return LayoutRowFilter.getData(row, DataType.VENDORS).length > 0;

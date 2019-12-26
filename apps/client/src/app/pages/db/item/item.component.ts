@@ -282,17 +282,17 @@ export class ItemComponent extends TeamcraftPageComponent {
         ];
         if (!xivapiItem.IsUntradable) {
           links.push({
-            title: 'Mogboard',
-            icon: 'https://mogboard.com/i/mog/mog.png',
-            url: `https://mogboard.com/market/${xivapiItem.ID}`
+            title: 'Universalis',
+            icon: 'https://universalis.app/i/universalis/universalis.png',
+            url: `https://universalis.app/market/${xivapiItem.ID}`
           });
         }
         const gardening = getItemSource(listRow, DataType.GARDENING);
-        if (gardening) {
+        if (Number.isInteger(gardening)) {
           links.push({
             title: 'FFXIV Gardening',
             icon: './assets/icons/Gardening.png',
-            url: `https://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${gardening}`
+            url: `http://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${gardening}`
           });
         }
         if (xivapiItem.ItemActionTargetID === 1389) {
@@ -598,7 +598,7 @@ export class ItemComponent extends TeamcraftPageComponent {
   }
 
   public openInSimulator(item: ListRow, itemId: number, recipeId: string): void {
-    const entry = getItemSource(item,  DataType.CRAFTED_BY).data.find(c => c.recipeId === recipeId);
+    const entry = getItemSource(item,  DataType.CRAFTED_BY).find(c => c.recipeId === recipeId);
     const craft: Partial<Craft> = {
       id: recipeId,
       job: entry.jobId,

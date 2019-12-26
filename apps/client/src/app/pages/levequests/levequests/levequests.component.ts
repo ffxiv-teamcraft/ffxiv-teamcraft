@@ -19,6 +19,12 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { SettingsService } from '../../../modules/settings/settings.service';
 
+interface ExpObj {
+  exp: number,
+  level: number,
+  totalExp: number
+}
+
 @Component({
   selector: 'app-levequests',
   templateUrl: './levequests.component.html',
@@ -192,30 +198,6 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
     return this.gt.getMaxXp(level);
   }
 
-  public getExp(leveExp: number, leves: Levequest[]): { level: number, exp: number, expPercent: number } {
-    let exp: number;
-    if (this.globalExp) {
-      exp = this.startingExp + leves.reduce((total, leve) => this.getLeveExp(leve) + total, 0);
-    } else {
-      exp = this.startingExp + leveExp;
-    }
-    let level = this.startingLevel;
-    while (exp - this.getMaxExp(level) >= 0 && level < 79) {
-      exp -= this.getMaxExp(level);
-      level++;
-    }
-    // Handle special case for lvl 80
-    if (exp >= this.getMaxExp(level) && level >= 79) {
-      level = 80;
-      exp = 0;
-    }
-    return {
-      level: level,
-      expPercent: Math.min(100, Math.floor(100 * exp / this.getMaxExp(level))),
-      exp: Math.min(exp, this.getMaxExp(level))
-    };
-  }
-
   public setJob(value: number): void {
     this.job$.next(value);
 
@@ -301,9 +283,64 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       });
   }
 
-  public getLeveExp(leve: Levequest): number {
-    const res = leve.exp * this.craftAmount(leve);
-    return leve.hq ? res * 2 : res;
+  public getExp(leve: Levequest, allLeves: Levequest[]): { level: number, exp: number, expPercent: number, totalExp: number } {
+    let expObj = {
+      level: this.startingLevel,
+      exp: this.startingExp,
+      totalExp: 0
+    };
+    if (this.globalExp) {
+      allLeves.forEach(globalLeve => {
+        expObj = this.applyLeveExp(expObj, globalLeve);
+      });
+    }
+    expObj = this.applyLeveExp(expObj, leve);
+    return {
+      level: expObj.level,
+      expPercent: Math.min(100, Math.floor(100 * expObj.exp / this.getMaxExp(expObj.level))),
+      exp: Math.min(expObj.exp, this.getMaxExp(expObj.level)),
+      totalExp: expObj.totalExp
+    };
+  }
+
+  private applyLeveExp(expObj: ExpObj, leve: Levequest): ExpObj {
+    for (let repeat = 0; repeat < leve.amount; repeat++) {
+      for (let i = 0; i < (leve.allDeliveries ? leve.repeats + 1 : 1); i++) {
+        let leveExp = leve.exp;
+        if (leve.hq) {
+          leveExp *= 2;
+        }
+        if (leve.level < 70 && expObj.level >= 70) {
+          leveExp = 3000;
+        }
+        expObj = {
+          ...this.applyExp(expObj.exp, expObj.level, leveExp),
+          totalExp: expObj.totalExp + leveExp
+        };
+      }
+    }
+    return expObj;
+  }
+
+  private applyExp(exp: number, level: number, expToAdd: number): { exp: number, level: number } {
+    exp += expToAdd;
+    while (exp - this.getMaxExp(level) >= 0 && level < 79) {
+      exp -= this.getMaxExp(level);
+      level++;
+    }
+    // Handle special case for lvl 80
+    if (exp >= this.getMaxExp(level) && level >= 79) {
+      level = 80;
+      exp = 0;
+    }
+    return {
+      exp,
+      level
+    };
+  }
+
+  public getLeveExp(leve: Levequest, allLeves: Levequest[]): number {
+    return this.getExp(leve, allLeves).totalExp;
   }
 
   public getLeveGil(leve: Levequest): number {
@@ -325,5 +362,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   public updateAllSelected(leves: Levequest[]): void {
     this.allSelected = leves.reduce((res, item) => item.selected && res, true);
+  }
+
+  trackByLeve(index: number, leve: Levequest): number {
+    return leve.id;
   }
 }

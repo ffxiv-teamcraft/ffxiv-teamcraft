@@ -1,19 +1,7 @@
 import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject, Subject } from 'rxjs';
 import { Craft } from '../../../../model/garland-tools/craft';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  filter,
-  first,
-  map,
-  pairwise,
-  shareReplay,
-  startWith,
-  switchMap,
-  takeUntil,
-  tap
-} from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, pairwise, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { Item } from '../../../../model/garland-tools/item';
@@ -377,7 +365,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         filter(res => res !== undefined && res !== null && res.length > 0 && res.indexOf('[') > -1),
         map(res => CraftingActionsRegistry.importFromCraftOpt(JSON.parse(res))),
         first()
-      ).subscribe(actions => this.actions$.next(actions));
+      ).subscribe(actions => {
+      this.actions$.next(actions);
+      this.stepStates$.next({});
+    });
   }
 
   openMacroPopup(simulation: Simulation): void {
@@ -474,7 +465,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         }),
         map(actionIds => CraftingActionsRegistry.createFromIds(actionIds)),
         first()
-      ).subscribe(actions => this.actions$.next(actions));
+      ).subscribe(actions => {
+      this.actions$.next(actions);
+      this.stepStates$.next({});
+    });
   }
 
   saveRotation(rotation: CraftingRotation): void {
@@ -529,6 +523,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       const actions = this.actions$.value;
       actions.splice(index, 0, action);
       this.actions$.next([...actions]);
+      const stepStates = { ...this.stepStates$.value };
+      for (let i = index; i < actions.length; i++) {
+        delete stepStates[i];
+      }
+      this.stepStates$.next(stepStates);
     }
     this.dirty = true;
     this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
@@ -560,6 +559,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     const actions = this.actions$.value;
     actions.splice(index, 1);
     this.actions$.next([...actions]);
+    const stepStates = { ...this.stepStates$.value };
+    for (let i = index; i < actions.length; i++) {
+      delete stepStates[i];
+    }
+    this.stepStates$.next(stepStates);
     this.dirty = true;
     this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
   }
@@ -877,6 +881,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     ).subscribe(([rotation, stats, rotationChanged]: [CraftingRotation, CrafterStats, boolean]) => {
       if (this.actions$.value.length === 0 || rotationChanged) {
         this.actions$.next(CraftingActionsRegistry.deserializeRotation(rotation.rotation));
+        this.stepStates$.next({});
       }
       if (rotation.food && this.selectedFood === undefined) {
         this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);

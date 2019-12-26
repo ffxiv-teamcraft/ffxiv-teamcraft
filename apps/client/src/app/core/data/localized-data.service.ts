@@ -51,22 +51,6 @@ export class LocalizedDataService {
     return this.getPlace(entry ? entry.zone : 1);
   }
 
-  public getItemIdsByName(name: string, language: Language): number[] {
-    if (['en', 'fr', 'de', 'ja', 'zh', 'ko'].indexOf(language) === -1) {
-      language = 'en';
-    }
-    const regex = new RegExp(`${name}`, 'i');
-    const res = [];
-    const keys = Object.keys({ ...this.lazyData.items, ...this.lazyData.zhItems, ...this.lazyData.koItems });
-    for (const key of keys) {
-      if (regex.test(this.lazyData.items[key][language])) {
-        res.push(key);
-      }
-    }
-    // Return a number array with the keys as values, so we have to convert them to numbers.
-    return res.map(id => +id);
-  }
-
   public getPlace(id: number): I18nName {
     const row = this.getRow(this.lazyData.places, id);
     const zhRow = this.getRow(this.lazyData.zhPlaces, id);
@@ -244,8 +228,9 @@ export class LocalizedDataService {
   }
 
   public getCraftingActionByName(name: string, language: Language): I18nName {
+    const koData: any[] = Object.values({ ...this.lazyData.koActions, ...this.lazyData.koCraftActions });
     if (language === 'ko') {
-      const koRow = koActions.find(a => a.ko === name);
+      const koRow = koData.find(a => a.ko === name);
       if (koRow !== undefined) {
         name = koRow.en;
         language = 'en';
@@ -258,11 +243,15 @@ export class LocalizedDataService {
         language = 'en';
       }
     }
-    const result = this.getRowByName(this.lazyData.craftActions, name, language) || this.getRowByName(this.lazyData.actions, name, language);
-    if (result === undefined) {
+    let resultIndex = this.getIndexByName(this.lazyData.craftActions, name, language);
+    if (resultIndex === -1) {
+      resultIndex = this.getIndexByName(this.lazyData.actions, name, language);
+    }
+    const result = this.lazyData.craftActions[resultIndex] || this.lazyData.actions[resultIndex];
+    if (resultIndex === -1) {
       throw new Error('Data row not found.');
     }
-    const koResultRow = koActions.find(a => a.en === result.en);
+    const koResultRow = koData[resultIndex];
     if (koResultRow !== undefined) {
       result.ko = koResultRow.ko;
     }
@@ -299,21 +288,6 @@ export class LocalizedDataService {
       return undefined;
     }
     return array[id];
-  }
-
-  /**
-   * Specific case for weather, might be usefule for other data.
-   * @param array
-   * @param name
-   * @param language
-   * @returns {I18nName}
-   */
-  private getRowByName(array: any, name: string, language: Language): I18nName {
-    const res = this.getIndexByName(array, name, language);
-    if (res === -1) {
-      return undefined;
-    }
-    return array[res];
   }
 
   /**
