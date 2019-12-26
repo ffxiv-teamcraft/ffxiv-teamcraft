@@ -214,7 +214,7 @@
     "cypress": "3.2.0",
     "cz-conventional-changelog": "^2.1.0",
     "del-cli": "^1.1.0",
-    "electron": "5.0.3",
+    "electron": "^7.1.7",
     "electron-builder": "20.43.0",
     "firebase-tools": "^4.0.1",
     "firestore-export-import": "^0.2.9",

@@ -200,12 +200,6 @@ function createWindow() {
 
   win.webContents.on('will-navigate', handleRedirect);
   win.webContents.on('new-window', handleRedirect);
-  win.on('show', () => {
-    tray.setHighlightMode('always');
-  });
-  win.on('hide', () => {
-    tray.setHighlightMode('never');
-  });
   (config.get('overlays') || []).forEach(overlayUri => openOverlay({ url: overlayUri }));
 }
 

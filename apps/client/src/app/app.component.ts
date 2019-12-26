@@ -284,7 +284,7 @@ export class AppComponent implements OnInit {
           this.windowDecorator = value;
         });
         if (this.overlay) {
-          this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (value) => {
+          this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (e, value) => {
             this.overlayOpacity = value;
           });
           this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });

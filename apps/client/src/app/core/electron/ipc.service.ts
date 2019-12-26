@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { PlatformService } from '../tools/platform.service';
-import { IpcRenderer } from 'electron';
+import { IpcRenderer, IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
 import { Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { Store } from '@ngrx/store';
+
+type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
 @Injectable({
   providedIn: 'root'
@@ -116,13 +118,13 @@ export class IpcService {
     this.handleOverlayChange();
   }
 
-  public on(channel: string, cb: Function): void {
+  public on(channel: string, cb: EventCallback): void {
     if (this._ipc !== undefined) {
       this._ipc.on(channel, cb);
     }
   }
 
-  public once(channel: string, cb: Function): void {
+  public once(channel: string, cb: EventCallback): void {
     if (this._ipc !== undefined) {
       this._ipc.once(channel, cb);
     }
