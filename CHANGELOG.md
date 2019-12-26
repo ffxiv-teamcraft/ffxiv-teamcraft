@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.4"></a>
+## [6.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.3...v6.5.4) (2019-12-26)
+
+
+### Bug Fixes
+
+* **db:** Fixed gardening showing up on all items and updated link as HTTPS is no longer supported ([b4cf0dc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b4cf0dc))
+* **db:** Remove forgotten console.log ([744aa67](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/744aa67))
+* **layout:** fixed an issue with IS_CRAFT filter also accepting non-craft rows ([86f6968](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/86f6968))
+* **levequests:** leves below lvl 70 now give 3k exp when you're above lvl 70 ([69ce689](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/69ce689))
+* **list:** fixed a possible performance issue with item sources ([6ca7eb5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6ca7eb5))
+* **list:** fixed an issue with "open in simulator" button crashing ([d5ef37b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d5ef37b))
+* **macro-translator:** fixed an issue with new skills not being translated to korean properly ([81d9550](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/81d9550))
+* **simulator:** fixed behavior for step state modification system ([1635daf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1635daf))
+* **total-trades:** fixed an issue with augmentation tokens not being accounted properly ([8f72a28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f72a28))
+
+
+### Features
+
+* support for korean v5.01 update ([0129db8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0129db8))
+* **db:** added 5.18 data ([15d50e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/15d50e6))
+* **list:** added a 'copy to clipboard" button to crystals panel ([12838dc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/12838dc))
+* **pcap:** support for 5.18 packets update ([3cc578f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3cc578f))
+
+
+
 <a name="6.5.3"></a>
 ## [6.5.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.4.2...v6.5.3) (2019-12-22)
 
