@@ -47,17 +47,15 @@
       "icon": "./tools/build/icon.ico",
       "publisherName": "FFXIV Teamcraft",
       "requestedExecutionLevel": "highestAvailable",
-      "target": "nsis-web",
+      "target": "squirrel",
       "publish": {
         "provider": "github",
         "releaseType": "release"
       }
     },
-    "nsisWeb": {
-      "include": "./tools/build/nsis/include.nsh",
-      "oneClick": false,
-      "differentialPackage": true,
-      "artifactName": "${productName}-setup.${ext}"
+    "squirrelWindows": {
+      "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico",
+      "remoteReleases": true
     }
   },
   "scripts": {
@@ -158,6 +156,7 @@
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
     "deep-diff": "^1.0.2",
+    "electron-builder-squirrel-windows": "^22.2.0",
     "electron-config": "^2.0.0",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^3.0.6",
