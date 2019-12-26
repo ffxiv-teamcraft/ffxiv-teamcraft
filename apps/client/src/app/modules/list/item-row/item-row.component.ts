@@ -81,6 +81,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       const vendors = getItemSource(item, DataType.VENDORS);
       (<any>item).craftedBy = craftedBy ? craftedBy : null;
       (<any>item).vendors = vendors ? vendors : null;
+      (<any>item).masterbooks = getItemSource(item, DataType.MASTERBOOKS);
       return item;
     }),
     shareReplay(1)
@@ -248,9 +249,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.missingBooks$ = this.masterbooksReloader$.pipe(
       switchMapTo(combineLatest([this.authFacade.mainCharacterEntry$, this.item$])),
       map(([entry, item]) => {
-        return (item.masterbooks || [])
+        return getItemSource(item, DataType.MASTERBOOKS)
         // Ignore string ids, as they are draft ids
-          .filter(book => (<any>book.id.toString()) !== (<any>book.id))
+          .filter(book => Number.isInteger(book.id))
           .filter(book => (entry.masterbooks || []).indexOf(book.id) === -1)
           .map(book => book.id);
       })
