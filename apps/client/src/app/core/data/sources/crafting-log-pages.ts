@@ -52,46 +52,6 @@ export const craftingLogPages = [
           'recipeId': 1014,
           'itemId': 2219,
           'rlvl': 5
-        },
-        {
-          'recipeId': 1008,
-          'itemId': 5361,
-          'rlvl': 1
-        },
-        {
-          'recipeId': 1009,
-          'itemId': 3742,
-          'rlvl': 1
-        },
-        {
-          'recipeId': 1010,
-          'itemId': 1891,
-          'rlvl': 2
-        },
-        {
-          'recipeId': 1011,
-          'itemId': 1820,
-          'rlvl': 3
-        },
-        {
-          'recipeId': 1013,
-          'itemId': 2405,
-          'rlvl': 4
-        },
-        {
-          'recipeId': 1012,
-          'itemId': 3763,
-          'rlvl': 4
-        },
-        {
-          'recipeId': 1015,
-          'itemId': 2456,
-          'rlvl': 5
-        },
-        {
-          'recipeId': 1014,
-          'itemId': 2219,
-          'rlvl': 5
         }
       ]
     },
