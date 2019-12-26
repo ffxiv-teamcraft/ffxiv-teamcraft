@@ -12,5 +12,19 @@
       </div>
     </div>
   </nz-collapse-panel>
-  <ng-template #panelHeader>{{'Crystals' | translate}}</ng-template>
+  <ng-template #panelHeader>
+    <div class="panel-header" fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div>{{'Crystals' | translate}}</div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px">
+        <button (cbOnSuccess)="textCopied()" (click)="$event.stopPropagation()" [cbContent]="getTextExport()"
+                [nzTitle]="'LIST.Copy_as_text' | translate"
+                ngxClipboard
+                nz-button nz-tooltip nzShape="circle" nzSize="small">
+          <i nz-icon nzType="copy"></i>
+        </button>
+      </div>
+    </div>
+  </ng-template>
 </nz-collapse>

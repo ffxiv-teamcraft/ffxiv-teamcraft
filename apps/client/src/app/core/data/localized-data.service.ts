@@ -244,8 +244,9 @@ export class LocalizedDataService {
   }
 
   public getCraftingActionByName(name: string, language: Language): I18nName {
+    const koData: any[] = Object.values({ ...this.lazyData.koActions, ...this.lazyData.koCraftActions });
     if (language === 'ko') {
-      const koRow = koActions.find(a => a.ko === name);
+      const koRow = koData.find(a => a.ko === name);
       if (koRow !== undefined) {
         name = koRow.en;
         language = 'en';
@@ -258,11 +259,15 @@ export class LocalizedDataService {
         language = 'en';
       }
     }
-    const result = this.getRowByName(this.lazyData.craftActions, name, language) || this.getRowByName(this.lazyData.actions, name, language);
-    if (result === undefined) {
+    let resultIndex = this.getIndexByName(this.lazyData.craftActions, name, language);
+    if (resultIndex === -1) {
+      resultIndex = this.getIndexByName(this.lazyData.actions, name, language);
+    }
+    const result = this.lazyData.craftActions[resultIndex] || this.lazyData.actions[resultIndex];
+    if (resultIndex === -1) {
       throw new Error('Data row not found.');
     }
-    const koResultRow = koActions.find(a => a.en === result.en);
+    const koResultRow = koData[resultIndex];
     if (koResultRow !== undefined) {
       result.ko = koResultRow.ko;
     }
@@ -292,6 +297,28 @@ export class LocalizedDataService {
       result.ko = koRow.ko;
     }
     return result;
+  }
+
+  private getRow<T = I18nName>(array: any, id: number | string): T {
+    if (array === undefined) {
+      return undefined;
+    }
+    return array[id];
+  }
+
+  /**
+   * Specific case for weather, might be usefule for other data.
+   * @param array
+   * @param name
+   * @param language
+   * @returns {I18nName}
+   */
+  private getRowByName(array: any, name: string, language: Language): I18nName {
+    const res = this.getIndexByName(array, name, language);
+    if (res === -1) {
+      return undefined;
+    }
+    return array[res];
   }
 
   /**
@@ -331,27 +358,5 @@ export class LocalizedDataService {
       return this.getIndexByName(array, name, 'en');
     }
     return res;
-  }
-
-  private getRow<T = I18nName>(array: any, id: number | string): T {
-    if (array === undefined) {
-      return undefined;
-    }
-    return array[id];
-  }
-
-  /**
-   * Specific case for weather, might be usefule for other data.
-   * @param array
-   * @param name
-   * @param language
-   * @returns {I18nName}
-   */
-  private getRowByName(array: any, name: string, language: Language): I18nName {
-    const res = this.getIndexByName(array, name, language);
-    if (res === -1) {
-      return undefined;
-    }
-    return array[res];
   }
 }

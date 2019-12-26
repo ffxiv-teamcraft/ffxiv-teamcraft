@@ -542,7 +542,7 @@ export class CustomItemsComponent {
   }
 
   public deleteVendor(item: CustomItem, vendor: Vendor): void {
-    const vendors = getItemSource(item, DataType.VENDORS);
+    const vendors = item.sources.find(source => source.type === DataType.VENDORS);
     vendors.data = vendors.data.filter(v => v !== vendor);
     item.dirty = true;
   }
@@ -631,7 +631,7 @@ export class CustomItemsComponent {
   }
 
   public deleteTrade(item: CustomItem, tradeSources: TradeSource): void {
-    const tradeSourceData = getItemSource(item, DataType.TRADE_SOURCES);
+    const tradeSourceData = item.sources.find(source => source.type === DataType.TRADE_SOURCES);
     tradeSourceData.data = tradeSourceData.data.filter(t => t !== tradeSources);
     item.dirty = true;
   }
@@ -675,7 +675,7 @@ export class CustomItemsComponent {
   }
 
   public deleteReduction(item: CustomItem, reduction: any): void {
-    const tradeSourceData = getItemSource(item, DataType.REDUCED_FROM);
+    const tradeSourceData = item.sources.find(source => source.type === DataType.REDUCED_FROM);
     tradeSourceData.data = tradeSourceData.data.filter(r => r !== reduction);
     item.dirty = true;
   }
