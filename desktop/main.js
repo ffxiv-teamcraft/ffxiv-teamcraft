@@ -142,9 +142,9 @@ function createWindow() {
     if (!config.get('start-minimized')) {
       win.focus();
       win.show();
-    }
-    if (config.get('win:fullscreen')) {
-      win.maximize();
+      if (config.get('win:fullscreen')) {
+        win.maximize();
+      }
     }
     autoUpdater.checkForUpdates();
   });
