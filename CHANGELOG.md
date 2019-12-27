@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.5"></a>
+## [6.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.4...v6.5.5) (2019-12-27)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an issue with start minimized option not being applied properly ([af2cf3d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af2cf3d))
+* **inventory:** fixed an issue with quality lower action not being tracked properly ([d9d0e54](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d9d0e54))
+* **list:** fixed an issue with masterbooks not showing properly ([2463cd1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2463cd1))
+
+
+### Features
+
+* **auth:** added change email button in settings, account section ([69ccaee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/69ccaee))
+* **desktop:** app will now open on the same page you left it ([ff89b8c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff89b8c))
+* **patreon:** new god of the hand: Post Mortem ([af37616](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af37616))
+
+
+
 <a name="6.5.4"></a>
 ## [6.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.3...v6.5.4) (2019-12-26)
 
