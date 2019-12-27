@@ -82,7 +82,6 @@ import { LoadingScreenModule } from './pages/loading-screen/loading-screen.modul
 import { WorkshopModule } from './modules/workshop/workshop.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CustomItemsModule } from './modules/custom-items/custom-items.module';
-import { TransferHttpCacheModule } from '@nguniversal/common';
 import en from '@angular/common/locales/en';
 import fr from '@angular/common/locales/fr';
 import de from '@angular/common/locales/de';
@@ -227,8 +226,7 @@ const nzConfig: NzConfig = {
 
     BrowserAnimationsModule,
 
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    TransferHttpCacheModule,
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
 

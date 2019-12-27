@@ -391,6 +391,8 @@
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "Performance_mode": "Performance mode",
     "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
+    "Change_email": "Change email",
+    "Change_email_success": "Email changed",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",

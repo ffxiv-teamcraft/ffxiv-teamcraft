@@ -391,6 +391,8 @@
     "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
     "Performance_mode": "Mode hautes perfs",
     "Performance_mode_explain": "Supprime les images des éléments dans les listes, ainsi que les menus (conserve uniquement les boutons) pour réduire le stress sur le navigateur et l'application",
+    "Change_email": "Change email",
+    "Change_email_success": "Email changed",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",

@@ -1,5 +1,5 @@
 <form (submit)="submit()" [formGroup]="control" fxLayout="column" fxLayoutGap="5px">
-  <input autofocus formControlName="name" nz-input placeholder="{{'Please_enter_a_name' | translate}}" type="text">
+  <input autofocus formControlName="name" nz-input placeholder="{{'Please_enter_a_name' | translate}}" [type]="type">
   <label *ngIf="showEphemeralCheckbox" formControlName="ephemeral" nz-checkbox>{{'Ephemeral_tag' | translate}}</label>
   <label *ngIf="showEphemeralCheckbox" [nzTitle]="'LIST.Offline_help' | translate" formControlName="offline"
          nz-checkbox nz-tooltip>{{'LIST.Offline' | translate}}</label>

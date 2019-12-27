@@ -27,14 +27,10 @@ let openedOverlays = {};
 let openedOverlayUris = [];
 
 const options = {
-  multi: false,
   noHA: false
 };
 
 for (let i = 0; i < argv.length; i++) {
-  if (argv[i] === '--multi' || argv[i] === '-m') {
-    options.multi = true;
-  }
   if (argv[i] === '--noHardwareAcceleration' || argv[i] === '-noHA') {
     options.noHA = true;
   }
@@ -50,28 +46,10 @@ if (isDev) {
   // autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
 }
 
-if (!options.multi) {
-  const gotTheLock = app.requestSingleInstanceLock();
-  if (!gotTheLock) {
-    app.isQuitting = true;
-    app.quit();
-  } else {
-    app.on('second-instance', (event, commandLine, cwd) => {
-      // Someone tried to run a second instance, we should focus our window.
-      if (win && !options.multi) {
-        const cmdLine = commandLine[1];
-        if (cmdLine) {
-          let path = commandLine[1].substr(12);
-          log.info(`Opening from second-instance : `, path);
-          win && win.webContents.send('navigate', path);
-          win.focus();
-        }
-        if (win.isMinimized()) win.restore();
-        win.show();
-        win.focus();
-      }
-    });
-  }
+const gotTheLock = app.requestSingleInstanceLock();
+if (!gotTheLock) {
+  app.isQuitting = true;
+  app.quit();
 }
 
 let deepLink = '';
@@ -105,7 +83,7 @@ function createWindow() {
       deepLink = deepLink.substr(0, deepLink.length - 1);
     }
   });
-  if (process.platform === 'win32') {
+  if (process.platform === 'win32' && process.argv.slice(1).toString().indexOf('--') === -1 && process.argv.slice(1).toString().indexOf('.js') === -1) {
     log.info(`Opening from argv : `, process.argv.slice(1));
     deepLink = process.argv.slice(1).toString().substr(12);
   } else {
@@ -164,9 +142,9 @@ function createWindow() {
     if (!config.get('start-minimized')) {
       win.focus();
       win.show();
-    }
-    if (config.get('win:fullscreen')) {
-      win.maximize();
+      if (config.get('win:fullscreen')) {
+        win.maximize();
+      }
     }
     autoUpdater.checkForUpdates();
   });
@@ -200,12 +178,6 @@ function createWindow() {
 
   win.webContents.on('will-navigate', handleRedirect);
   win.webContents.on('new-window', handleRedirect);
-  win.on('show', () => {
-    tray.setHighlightMode('always');
-  });
-  win.on('hide', () => {
-    tray.setHighlightMode('never');
-  });
   (config.get('overlays') || []).forEach(overlayUri => openOverlay({ url: overlayUri }));
 }
 
