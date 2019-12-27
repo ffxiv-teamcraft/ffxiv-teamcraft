@@ -215,7 +215,7 @@
     "cz-conventional-changelog": "^2.1.0",
     "del-cli": "^1.1.0",
     "electron": "^7.1.7",
-    "electron-builder": "20.43.0",
+    "electron-builder": "21.2.0",
     "firebase-tools": "^4.0.1",
     "firestore-export-import": "^0.2.9",
     "fs-extra": "^7.0.1",
