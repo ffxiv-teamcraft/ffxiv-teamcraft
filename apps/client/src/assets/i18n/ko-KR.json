@@ -391,6 +391,8 @@
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
     "Performance_mode": "성능 모드",
     "Performance_mode_explain": "성능 향상을 위해 아이템 사진과 메뉴를 제거(버튼만 남게됨) 합니다",
+    "Change_email": "Change email",
+    "Change_email_success": "Email changed",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
