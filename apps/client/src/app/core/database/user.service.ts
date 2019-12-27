@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { EMPTY, Observable, of } from 'rxjs';
+import { EMPTY, from, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
@@ -132,20 +132,6 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
       .pipe(
         map(res => res.length === 0)
       );
-  }
-
-  /**
-   * Updates email associated with a given account.
-   * @param {string} currentMail
-   * @param {string} password
-   * @param {string} newMail
-   * @returns {Promise<void>}
-   */
-  public changeEmail(currentMail: string, password: string, newMail: string): Promise<void> {
-    return this.af.auth.signInWithEmailAndPassword(currentMail, password).then(user => {
-      user.user.updateEmail(newMail)
-        .then(() => user.user.sendEmailVerification());
-    });
   }
 
   public getUsersByLodestoneId(id: number): Observable<TeamcraftUser[]> {

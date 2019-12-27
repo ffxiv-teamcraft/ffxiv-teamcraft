@@ -266,6 +266,9 @@
       <button (nzOnConfirm)="resetPassword()" [nzTitle]="'SETTINGS.Reset_password_warning'" nz-button nz-popconfirm>
         {{'SETTINGS.Reset_password' | translate}}
       </button>
+      <button (click)="updateEmail()" nz-button nz-popconfirm>
+        {{'SETTINGS.Change_email' | translate}}
+      </button>
       <ng-container *ngIf="user$ | async as user">
         <div>UserID: {{user.$key}}</div>
         <button (click)="patreonOauth()" *ngIf="user.patreonToken === undefined; else connectedWithPatreon" nz-button

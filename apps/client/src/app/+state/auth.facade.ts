@@ -23,18 +23,7 @@ import {
 } from './auth.actions';
 import { auth } from 'firebase/app';
 import { UserCredential } from '@firebase/auth-types';
-import {
-  catchError,
-  distinctUntilChanged,
-  distinctUntilKeyChanged,
-  filter,
-  first,
-  map,
-  shareReplay,
-  startWith,
-  switchMap,
-  tap
-} from 'rxjs/operators';
+import { catchError, distinctUntilChanged, distinctUntilKeyChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
@@ -80,9 +69,9 @@ export class AuthFacade {
           uid: user.uid
         }).pipe(
           switchMap(() => {
-            return from(user.getIdTokenResult(true))
+            return from(user.getIdTokenResult(true));
           })
-        )
+        );
       }
       return of(token);
     }),
@@ -221,6 +210,15 @@ export class AuthFacade {
 
   resetPassword(email: string): void {
     this.af.auth.sendPasswordResetEmail(email);
+  }
+
+  changeEmail(newEmail: string): Observable<void> {
+    return this.af.user.pipe(
+      first(),
+      switchMap(user => {
+        return from(user.updateEmail(newEmail));
+      })
+    );
   }
 
   public addCharacter(useAsDefault = false, disableClose = false): void {
