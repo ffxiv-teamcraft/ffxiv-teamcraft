@@ -64,7 +64,7 @@
     "ng-high-memory": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng",
     "ng": "ng",
     "start-high-memory": "node ./tools/build/prebuild.js && ng-high-memory serve --project=client",
-    "start": "node ./tools/build/prebuild.js && npm run ng-high-memory serve -- --project=client --port 3000",
+    "start": "node ./tools/build/prebuild.js && npm run ng-high-memory serve -- --project=client",
     "build:watch": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --watch --configuration=electron-dev",
     "build:prod": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --prod --no-progress",
     "build:functions": "node ./tools/build/prebuild.js && npm run ng-high-memory build -- --project=client --configuration=functions --no-progress",

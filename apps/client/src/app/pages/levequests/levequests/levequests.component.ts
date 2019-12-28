@@ -293,8 +293,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       allLeves.forEach(globalLeve => {
         expObj = this.applyLeveExp(expObj, globalLeve);
       });
+    } else {
+      expObj = this.applyLeveExp(expObj, leve);
     }
-    expObj = this.applyLeveExp(expObj, leve);
     return {
       level: expObj.level,
       expPercent: Math.min(100, Math.floor(100 * expObj.exp / this.getMaxExp(expObj.level))),
