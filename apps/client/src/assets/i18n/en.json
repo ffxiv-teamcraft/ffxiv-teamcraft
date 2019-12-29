@@ -257,7 +257,7 @@
   "Login": "Login",
   "Disconnect": "Disconnect",
   "Password": "Password",
-  "Password_Confirmation": "Confirmation",
+  "Password_Confirmation": "Confirm Password",
   "Submit": "Submit",
   "Invalid_credentials": "Invalid credentials",
   "Not_verified": "Not verified",
