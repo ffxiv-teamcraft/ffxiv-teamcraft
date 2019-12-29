@@ -38,6 +38,7 @@ import * as _ from 'lodash';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { DataType } from '../../../modules/list/data/data-type';
 
 @Component({
   selector: 'app-list-details',
