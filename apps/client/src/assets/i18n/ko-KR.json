@@ -257,7 +257,7 @@
   "Login": "로그인",
   "Disconnect": "로그아웃",
   "Password": "비밀번호",
-  "Password_Confirmation": "패스워드 재확인",
+  "Password_Confirmation": "Confirm Password",
   "Submit": "제출",
   "Invalid_credentials": "로그인 정보가 틀립니다",
   "Not_verified": "미인증",
