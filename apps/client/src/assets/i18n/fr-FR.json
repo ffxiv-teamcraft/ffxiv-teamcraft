@@ -257,7 +257,7 @@
   "Login": "Identification",
   "Disconnect": "Déconnexion",
   "Password": "Mot de passe",
-  "Password_Confirmation": "Confirmation",
+  "Password_Confirmation": "Confirm Password",
   "Submit": "Soumettre",
   "Invalid_credentials": "Mauvais email ou mot de passe",
   "Not_verified": "Non vérifié",
