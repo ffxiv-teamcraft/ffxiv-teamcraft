@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.6"></a>
+## [6.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.5...v6.5.6) (2019-12-29)
+
+
+### Bug Fixes
+
+* **desktop:** fixed log-in with google system ([00a46e4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00a46e4))
+* **desktop:** fixed memory leak when moving to a crowded area ([d5adf18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d5adf18))
+* **levequests:** fixed an issue with global exp not reporting properly ([52c0737](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/52c0737))
+
+
+
 <a name="6.5.5"></a>
 ## [6.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.4...v6.5.5) (2019-12-27)
 
