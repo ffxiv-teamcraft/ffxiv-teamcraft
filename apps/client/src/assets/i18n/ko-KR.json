@@ -257,7 +257,7 @@
   "Login": "로그인",
   "Disconnect": "로그아웃",
   "Password": "비밀번호",
-  "Password_Confirmation": "Confirm Password",
+  "Password_Confirmation": "비밀번호 확인",
   "Submit": "제출",
   "Invalid_credentials": "로그인 정보가 틀립니다",
   "Not_verified": "미인증",
@@ -617,7 +617,7 @@
     "OVERLAY": {
       "Open": "목록 오버레이 열기",
       "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
-      "No_panel_selected": "위 버튼을 사용하여 패널을 선택하세요"
+      "No_panel_selected": "대분류를 선택해주세요"
     }
   },
   "LIST_TAGS": {
