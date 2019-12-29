@@ -257,7 +257,7 @@
   "Login": "Войти",
   "Disconnect": "Выйти",
   "Password": "Пароль",
-  "Password_Confirmation": "Подтверждение",
+  "Password_Confirmation": "Confirm Password",
   "Submit": "Отправить",
   "Invalid_credentials": "Неверные учетные данные",
   "Not_verified": "Не подтверждён",

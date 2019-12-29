@@ -50,6 +50,8 @@ module.exports = function(config) {
         let code = query.code;
         let error = query.error;
 
+        console.log(error, code);
+
         if (error !== undefined) {
           reject(error);
           if (authWindow) {
@@ -81,11 +83,11 @@ module.exports = function(config) {
 
       // Prepare to filter only the callbacks for my redirectUri
       const filter = {
-        urls: [config.redirect_uri + '*']
+        urls: ['http://localhost/*']
       };
 
       // intercept all the requests for that includes my redirect uri
-      session.defaultSession.webRequest.onBeforeRequest(filter, function (details, callback) {
+      session.defaultSession.webRequest.onBeforeRequest(filter, function(details, callback) {
         const url = details.url;
         // process the callback url and get any param you need
         onCallback(url);

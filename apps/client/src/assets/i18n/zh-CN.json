@@ -257,7 +257,7 @@
   "Login": "登录",
   "Disconnect": "注销",
   "Password": "密码",
-  "Password_Confirmation": "确认密码",
+  "Password_Confirmation": "Confirm Password",
   "Submit": "提交",
   "Invalid_credentials": "账号或密码错误",
   "Not_verified": "未验证",

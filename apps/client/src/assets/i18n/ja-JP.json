@@ -257,7 +257,7 @@
   "Login": "ログイン",
   "Disconnect": "ログアウト",
   "Password": "パスワード",
-  "Password_Confirmation": "確認のため再入力",
+  "Password_Confirmation": "Confirm Password",
   "Submit": "提出する",
   "Invalid_credentials": "無効なログイン認証情報",
   "Not_verified": "未確認",

@@ -257,7 +257,7 @@
   "Login": "로그인",
   "Disconnect": "로그아웃",
   "Password": "비밀번호",
-  "Password_Confirmation": "패스워드 재확인",
+  "Password_Confirmation": "비밀번호 확인",
   "Submit": "제출",
   "Invalid_credentials": "로그인 정보가 틀립니다",
   "Not_verified": "미인증",
@@ -391,8 +391,8 @@
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
     "Performance_mode": "성능 모드",
     "Performance_mode_explain": "성능 향상을 위해 아이템 사진과 메뉴를 제거(버튼만 남게됨) 합니다",
-    "Change_email": "Change email",
-    "Change_email_success": "Email changed",
+    "Change_email": "메일 주소 변경",
+    "Change_email_success": "메일 주소가 변경되었습니다",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -616,8 +616,8 @@
     },
     "OVERLAY": {
       "Open": "목록 오버레이 열기",
-      "No_display": "실행시 목록화면을 매인화면으로 열기",
-      "No_panel_selected": "위 버튼을 사용하여 패널을 선택하세요"
+      "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
+      "No_panel_selected": "대분류를 선택해주세요"
     }
   },
   "LIST_TAGS": {
