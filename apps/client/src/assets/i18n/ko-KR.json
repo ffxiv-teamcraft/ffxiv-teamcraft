@@ -390,7 +390,7 @@
     "Contribute_to_universalis": "Universalis에 기여하기",
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
     "Performance_mode": "성능 모드",
-    "Performance_mode_explain": "성능 향상을 위해 아이템 사진과 메뉴를 제거(버튼만 남게됨) 합니다",
+    "Performance_mode_explain": "성능 향상을 위해 아이템의 아이콘과 메뉴를 제거(버튼만 남게됨) 합니다",
     "Change_email": "메일 주소 변경",
     "Change_email_success": "메일 주소가 변경되었습니다",
     "COLORS": {
@@ -973,7 +973,7 @@
       "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
       "Do_not_use_brand_without_name": "\"XX의 인장\" 스킬은 \"XX의 예술\"스킬을 활성화 시키고 사용하십시오",
       "Avoid_using_good_actions": "매크로를 구상할때는 고품질을 요구하는 액션을 사용하지 마세요 고품질은 예측이 불가능합니다",
-      "Requires_reuse_to_proc": "매크로에 재사용 프록이 요구됩니다. 재사용 프록이 없어도 매크로가 작동하도록 수정하세요"
+      "Requires_reuse_to_proc": "로테이션에 재사용 프록이 요구됩니다. 재사용이 없어도 해당 로테이션이 작동하는지 확인하세요"
     }
   },
   "PRICING": {
@@ -1670,7 +1670,7 @@
       "Bag": "소지품",
       "Other": "다른 소지품",
       "Armory": "장비함",
-      "RetainerMarket": "집사 상점에서 구입 가능"
+      "RetainerMarket": "집사가 판매중"
     }
   },
   "INVENTORY_OPTIMIZER": {
