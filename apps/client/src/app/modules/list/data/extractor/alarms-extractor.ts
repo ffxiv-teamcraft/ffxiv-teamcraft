@@ -67,7 +67,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
         })
       );
     }
-    if (getItemSource(row, DataType.REDUCED_FROM)) {
+    if (getItemSource(row, DataType.REDUCED_FROM).length > 0) {
       alarms.push(...[].concat.apply([], getItemSource(row, DataType.REDUCED_FROM)
         .filter(reduction => reduction.obj !== undefined && this.bellNodes.getNodesByItemId(reduction.obj.i).length > 0)
         .map(reduction => {
