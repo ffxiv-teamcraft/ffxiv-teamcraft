@@ -97,6 +97,16 @@ module.exports = function(config) {
           cancel: false
         });
       });
+
+      let googleLoginURLs = ['accounts.google.com/signin/oauth', 'accounts.google.com/ServiceLogin'];
+      session.defaultSession.webRequest.onBeforeSendHeaders((details, callback) => {
+        googleLoginURLs.forEach((loginURL) => {
+          if (details.url.indexOf(loginURL) > -1) {
+            details.requestHeaders['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:58.0) Gecko/20100101 Firefox/58.0';
+          }
+        });
+        callback({ cancel: false, requestHeaders: details.requestHeaders });
+      });
     });
   }
 
