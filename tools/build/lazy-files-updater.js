@@ -2,6 +2,7 @@ const path = require('path');
 const colors = require('colors/safe');
 const fs = require('fs');
 const _ = require('lodash');
+const hashFiles = require('hash-files');
 
 console.log(colors.cyan(`Updating lazy loaded files list`));
 
@@ -10,9 +11,18 @@ const koFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/asset
 const zhFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/assets/data/zh/')).map(row => `/zh/${row}`);
 
 fs.writeFileSync(path.join(__dirname, '../../apps/client/src/app/core/data/lazy-files-list.ts'),
-  `export const lazyFilesList = ${JSON.stringify([...baseFiles, ...koFiles, ...zhFiles].filter(row => {
-    return row.indexOf('.json') > -1;
-  }), null, 2)};`.replace(/"/g, '\'')
+  `export const lazyFilesList = ${JSON.stringify([...baseFiles, ...koFiles, ...zhFiles]
+      .filter(row => {
+        return row.indexOf('.json') > -1;
+      })
+      .map(row => {
+        const hash = hashFiles.sync({ files: [path.join(__dirname, '../../apps/client/src/assets/data/', row)] });
+        return {
+          fileName: row,
+          propertyName: _.camelCase(row.replace('.json', '').replace(/\/\w+\//, ''))
+        };
+      })
+    , null, 2)};`.replace(/"/g, '\'')
 );
 
 console.log(colors.green('Lazy loaded files list updated'));

@@ -81,11 +81,11 @@ export class LazyDataService {
         this.patches = patches as any[];
       });
 
-    combineLatest(lazyFilesList.map(file => {
-      return this.getData(`./assets/data/${file}`).pipe(
+    combineLatest(lazyFilesList.map(row => {
+      return this.getData(`./assets/data/${row.fileName}`).pipe(
         map(data => {
           return {
-            fileName: file,
+            ...row,
             data: data
           };
         })
@@ -93,7 +93,7 @@ export class LazyDataService {
     })).subscribe((results) => {
       const lazyData: Partial<LazyData> = {};
       results.forEach(row => {
-        lazyData[camelCase(row.fileName.replace('.json', '').replace(/\/\w+\//, ''))] = row.data;
+        lazyData[row.propertyName] = row.data;
       });
       this.data = lazyData as LazyData;
       this.loaded$.next(true);

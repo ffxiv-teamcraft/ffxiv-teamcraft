@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
 import * as weathers from './sources/weathers.json';
-import * as ventures from './sources/ventures.json';
 import * as freeCompanyActions from './sources/free-company-actions.json';
 import * as jobNames from './sources/job-name.json';
 import * as jobAbbrs from './sources/job-abbr.json';
@@ -140,7 +139,7 @@ export class LocalizedDataService {
   }
 
   public getVenture(id: number): I18nName {
-    return this.getRow(ventures, id);
+    return this.getRow(this.lazyData.data.ventures, id);
   }
 
   public getQuest(id: number): Quest {

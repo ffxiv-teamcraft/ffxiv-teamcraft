@@ -3,10 +3,9 @@ import { Injectable } from '@angular/core';
 import { getItemSource, ListRow } from '../../modules/list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizedDataService } from '../data/localized-data.service';
-import { craftingLog } from '../data/sources/crafting-log';
 import { I18nToolsService } from '../tools/i18n-tools.service';
-import { itemSlots } from '../data/sources/item-slots';
 import { DataType } from '../../modules/list/data/data-type';
+import { LazyDataService } from '../data/lazy-data.service';
 
 @Injectable()
 export class LayoutOrderService {
@@ -59,8 +58,8 @@ export class LayoutOrderService {
       }
     },
     'SLOT': (a, b) => {
-      const aSlot = itemSlots[a.id];
-      const bSlot = itemSlots[b.id];
+      const aSlot = this.lazyData.data.itemSlots[a.id];
+      const bSlot = this.lazyData.data.itemSlots[b.id];
       if (aSlot === bSlot) {
         return this.orderFunctions['JOB'](a, b);
       } else {
@@ -70,7 +69,7 @@ export class LayoutOrderService {
   };
 
   constructor(private translate: TranslateService, private localizedData: LocalizedDataService,
-              private i18n: I18nToolsService) {
+              private i18n: I18nToolsService, private lazyData: LazyDataService) {
   }
 
   public order(data: ListRow[], orderBy: string, order: LayoutRowOrder): ListRow[] {
@@ -88,7 +87,7 @@ export class LayoutOrderService {
       return -1;
     }
     const craft = craftedBy[0];
-    const logEntry = craftingLog[craft.jobId - 8];
+    const logEntry = this.lazyData.data.craftingLog[craft.jobId - 8];
     // Log entry is undefined if it's an airship
     if (logEntry === undefined) {
       return -1;

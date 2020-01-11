@@ -7,7 +7,6 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { DbComment } from './model/db-comment';
 import { Language } from '../../../core/data/language';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { achievements } from '../../../core/data/sources/achievements';
 
 @Pipe({
   name: 'commentLinks',
@@ -106,7 +105,7 @@ export class CommentLinksPipe implements PipeTransform {
       case 'trait':
         return this.l12n.getTrait(id);
       case 'achievement':
-        return achievements[id];
+        return this.lazyData.data.achievements[id];
       default:
         return null;
     }
@@ -140,7 +139,7 @@ export class CommentLinksPipe implements PipeTransform {
         data = [this.lazyData.data.npcs, this.lazyData.data.koNpcs];
         break;
       case 'achievement':
-        data = [achievements];
+        data = [this.lazyData.data.achievements];
         break;
       case 'status':
         data = [this.lazyData.data.statuses, this.lazyData.data.koStatuses];

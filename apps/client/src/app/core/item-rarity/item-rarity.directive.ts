@@ -1,5 +1,5 @@
 import { Directive, HostBinding, Input, OnInit } from '@angular/core';
-import { rarities } from '../data/sources/rarities';
+import { LazyDataService } from '../data/lazy-data.service';
 
 @Directive({
   selector: '[appItemRarity]'
@@ -20,8 +20,11 @@ export class ItemRarityDirective implements OnInit {
   @Input()
   appItemRarity: number;
 
+  constructor(private lazyData: LazyDataService) {
+  }
+
   ngOnInit(): void {
-    const rarity = rarities[this.appItemRarity];
+    const rarity = this.lazyData.data.rarities[this.appItemRarity];
     this.color = this.colors[rarity] || '#f3f3f3';
   }
 }

@@ -25,14 +25,12 @@ import { StatusSearchResult } from '../../model/search/status-search-result';
 import { LeveSearchResult } from '../../model/search/leve-search-result';
 import { NpcSearchResult } from '../../model/search/npc-search-result';
 import { MobSearchResult } from '../../model/search/mob-search-result';
-import * as monsters from '../data/sources/monsters.json';
 import { FateSearchResult } from '../../model/search/fate-search-result';
 import { MapSearchResult } from '../../model/search/map-search-result';
 import { mapIds } from '../data/sources/map-ids';
 import { LocalizedDataService } from '../data/localized-data.service';
 import { requestsWithDelay } from '../rxjs/requests-with-delay';
 import { FishingSpotSearchResult } from '../../model/search/fishing-spot-search-result';
-import { fishingSpots } from '../data/sources/fishing-spots';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 
 @Injectable()
@@ -923,7 +921,7 @@ export class DataService {
           return {
             id: mob.ID,
             icon: mob.Icon,
-            zoneid: monsters[mob.ID] && monsters[mob.ID].positions[0] ? monsters[mob.ID].positions[0].zoneid : null
+            zoneid: this.lazyData.data.monsters[mob.ID] && this.lazyData.data.monsters[mob.ID].positions[0] ? this.lazyData.data.monsters[mob.ID].positions[0].zoneid : null
           };
         });
       })
@@ -976,7 +974,7 @@ export class DataService {
   }
 
   searchFishingSpot(query: string, filters: SearchFilter[]): Observable<FishingSpotSearchResult[]> {
-    return of(fishingSpots
+    return of(this.lazyData.data.fishingSpots
       .filter(spot => {
         return this.i18n.getName(this.l12n.getPlace(spot.zoneId)).toLowerCase().indexOf(query.toLowerCase()) > -1
           || this.i18n.getName(this.l12n.getMapName(spot.mapId)).toLowerCase().indexOf(query.toLowerCase()) > -1;
