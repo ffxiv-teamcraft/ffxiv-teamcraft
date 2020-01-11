@@ -73,9 +73,9 @@ export class FishingReporter implements DataReporter {
     );
 
     const spot$ = combineLatest([this.eorzea.mapId$, positionPackets$]).pipe(
-      filter(([mapId]) => this.lazyData.maps[mapId.toString()] !== undefined),
+      filter(([mapId]) => this.lazyData.data.maps[mapId.toString()] !== undefined),
       map(([mapId, packet]) => {
-        const mapData = this.lazyData.maps[mapId.toString()];
+        const mapData = this.lazyData.data.maps[mapId.toString()];
         const c = mapData.size_factor / 100;
         const raw = {
           x: (packet.pos.x + mapData.offset_x) * c,

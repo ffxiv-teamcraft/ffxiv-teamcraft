@@ -117,10 +117,10 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
 
           if (spot.predator) {
             result.predators = spot.predator.map(predator => {
-              const itemId = +Object.keys(this.lazyData.items).find(key => this.lazyData.items[key].en === predator.name);
+              const itemId = +Object.keys(this.lazyData.data.items).find(key => this.lazyData.data.items[key].en === predator.name);
               return {
                 id: itemId,
-                icon: this.lazyData.icons[itemId],
+                icon: this.lazyData.data.itemIcons[itemId],
                 amount: predator.predatorAmount
               };
             });

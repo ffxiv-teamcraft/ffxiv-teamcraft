@@ -1,7 +1,6 @@
 export const lazyFilesList = [
   'actions.json',
   'craft-actions.json',
-  'extracts.json',
   'fates.json',
   'gathering-bonuses.json',
   'instances.json',

@@ -264,7 +264,7 @@ export class LogTrackerComponent extends TrackerComponent {
         const bellNode = this.bell.getNode(+node.nodeId);
         node.timed = bellNode !== undefined;
         node.itemId = itemId;
-        node.icon = this.lazyData.icons[itemId];
+        node.icon = this.lazyData.data.itemIcons[itemId];
         if (node.timed) {
           const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === itemId);
           node.spawnTimes = bellNode.time;

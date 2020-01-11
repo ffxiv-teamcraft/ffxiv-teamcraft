@@ -20,9 +20,9 @@ export class EorzeaFacade {
 
   public mapId$ = this.zoneId$.pipe(
     map(zoneId => {
-      return +Object.keys(this.lazyData.maps)
+      return +Object.keys(this.lazyData.data.maps)
         .find(key => {
-          return zoneId === this.lazyData.maps[+key].placename_id;
+          return zoneId === this.lazyData.data.maps[+key].placename_id;
         });
     })
   );

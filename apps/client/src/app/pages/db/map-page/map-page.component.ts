@@ -224,10 +224,10 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   private getFates(placeNameId: number): MapRelatedElement[] {
-    return Object.keys(this.lazyData.fates)
+    return Object.keys(this.lazyData.data.fates)
       .map(key => {
-        const position = this.lazyData.fates[key].position;
-        return position ? { ...this.lazyData.fates[key], id: +key } : null;
+        const position = this.lazyData.data.fates[key].position;
+        return position ? { ...this.lazyData.data.fates[key], id: +key } : null;
       })
       .filter(fate => fate !== null && fate.position.zoneid === placeNameId)
       .map(fate => {
@@ -253,10 +253,10 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   private getNpcs(placeNameId: number): MapRelatedElement[] {
-    return Object.keys(this.lazyData.npcs)
+    return Object.keys(this.lazyData.data.npcs)
       .map(key => {
-        const position = this.lazyData.npcs[key].position;
-        return position ? { ...this.lazyData.npcs[key], id: +key } : null;
+        const position = this.lazyData.data.npcs[key].position;
+        return position ? { ...this.lazyData.data.npcs[key], id: +key } : null;
       })
       .filter(npc => npc !== null && npc.position.zoneid === placeNameId && npc.en !== '')
       .map(npc => {

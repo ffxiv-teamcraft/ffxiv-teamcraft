@@ -151,7 +151,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               fr: leve.Name_fr,
               de: leve.Name_de,
               ja: leve.Name_ja,
-              ko: this.lazyData.koLeves[leve.ID] ? this.lazyData.koLeves[leve.ID].ko : leve.Name_en
+              ko: this.lazyData.data.koLeves[leve.ID] ? this.lazyData.data.koLeves[leve.ID].ko : leve.Name_en
             },
             startPlaceId: leve.PlaceNameStart.ID,
             deliveryPlaceId: leve.LevelLevemete.Map.PlaceNameTargetID,

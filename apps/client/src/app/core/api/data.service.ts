@@ -255,7 +255,7 @@ export class DataService {
       map(xivapiSearchResults => {
         const results: SearchResult[] = [];
         xivapiSearchResults.forEach(item => {
-          const recipes = this.lazyData.recipes.filter(recipe => recipe.result === item.ID);
+          const recipes = this.lazyData.data.recipes.filter(recipe => recipe.result === item.ID);
           if (recipes.length > 0) {
             recipes
               .forEach(recipe => {
@@ -433,7 +433,7 @@ export class DataService {
   }
 
   private mapToItemIds(terms: string, lang: 'ko' | 'zh'): number[] {
-    const data = lang === 'ko' ? this.lazyData.koItems : this.lazyData.zhItems;
+    const data = lang === 'ko' ? this.lazyData.data.koItems : this.lazyData.data.zhItems;
     return Object.keys(data)
       .filter(key => {
         return data[key][lang].indexOf(terms) > -1 && !/(\D+)/.test(key);
@@ -1059,8 +1059,8 @@ export class DataService {
               break;
             }
             case 'defaulttalk': {
-              const npcId = Object.keys(this.lazyData.npcs)
-                .find(key => this.lazyData.npcs[key].defaultTalks.indexOf(row.SourceID) > -1);
+              const npcId = Object.keys(this.lazyData.data.npcs)
+                .find(key => this.lazyData.data.npcs[key].defaultTalks.indexOf(row.SourceID) > -1);
               if (npcId === undefined) {
                 break;
               }
@@ -1077,8 +1077,8 @@ export class DataService {
               break;
             }
             case 'balloon': {
-              const npcId = Object.keys(this.lazyData.npcs)
-                .find(key => this.lazyData.npcs[key].balloon === row.SourceID);
+              const npcId = Object.keys(this.lazyData.data.npcs)
+                .find(key => this.lazyData.data.npcs[key].balloon === row.SourceID);
               if (npcId === undefined) {
                 break;
               }
@@ -1095,8 +1095,8 @@ export class DataService {
               break;
             }
             case 'instancecontenttextdata': {
-              const instanceId = Object.keys(this.lazyData.instances)
-                .find(key => (this.lazyData.instances[key].contentText || []).indexOf(row.SourceID) > -1);
+              const instanceId = Object.keys(this.lazyData.data.instances)
+                .find(key => (this.lazyData.data.instances[key].contentText || []).indexOf(row.SourceID) > -1);
               if (instanceId === undefined) {
                 break;
               }

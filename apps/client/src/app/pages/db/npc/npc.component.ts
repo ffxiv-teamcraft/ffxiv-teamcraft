@@ -91,7 +91,7 @@ export class NpcComponent extends TeamcraftPageComponent {
         return gtData.npc.shops
           .filter(shop => +shop.entries[0] !== shop.entries[0])
           .map(shop => {
-            const npcEntry = this.lazyData.npcs[gtData.npc.id];
+            const npcEntry = this.lazyData.data.npcs[gtData.npc.id];
             const npc: TradeNpc = { id: gtData.npc.id };
             if (npcEntry.position !== null) {
               npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };

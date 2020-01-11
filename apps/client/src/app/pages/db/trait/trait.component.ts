@@ -71,7 +71,7 @@ export class TraitComponent extends TeamcraftPageComponent {
     this.relatedActions$ = this.xivapiTrait$.pipe(
       map(trait => {
         const description = trait.Description_en;
-        return Object.keys({ ...this.lazyData.actions, ...this.lazyData.craftActions })
+        return Object.keys({ ...this.lazyData.data.actions, ...this.lazyData.data.craftActions })
           .filter(key => {
             return description.indexOf(`>${this.l12n.getAction(+key).en}<`) > -1 && actionIcons[+key] !== undefined;
           })

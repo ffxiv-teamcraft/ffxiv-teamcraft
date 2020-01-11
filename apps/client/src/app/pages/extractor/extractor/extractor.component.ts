@@ -33,7 +33,7 @@ export class ExtractorComponent implements OnInit {
   }
 
   ngOnInit() {
-    const chunks = _.chunk(Object.keys(this.lazyData.items), 100);
+    const chunks = _.chunk(Object.keys(this.lazyData.data.items), 100);
     this.totalTodo$.next(chunks.length);
     requestsWithDelay(chunks.map(itemIds => {
       return this.http.get<any[]>(`https://www.garlandtools.org/db/doc/item/en/3/${itemIds.join(',')}.json`).pipe(

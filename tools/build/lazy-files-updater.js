@@ -1,8 +1,9 @@
 const path = require('path');
 const colors = require('colors/safe');
 const fs = require('fs');
+const _ = require('lodash');
 
-console.log(colors.green(`Updating lazy loaded files list`));
+console.log(colors.cyan(`Updating lazy loaded files list`));
 
 const baseFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/assets/data/'));
 const koFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/assets/data/ko/')).map(row => `/ko/${row}`);
@@ -15,3 +16,22 @@ fs.writeFileSync(path.join(__dirname, '../../apps/client/src/app/core/data/lazy-
 );
 
 console.log(colors.green('Lazy loaded files list updated'));
+
+console.log(colors.cyan(`Updating lazy loaded data interface`));
+
+fs.writeFileSync(path.join(__dirname, '../../apps/client/src/app/core/data/lazy-data.ts'),
+  `export interface LazyData { 
+  ${
+    [...baseFiles, ...koFiles, ...zhFiles]
+      .filter(row => {
+        return row.indexOf('.json') > -1;
+      })
+      .map(row => {
+        return `${_.camelCase(row.replace('.json', '').replace(/\/\w+\//, ''))}`;
+      })
+      .join(': any;\n  ')
+  }: any;
+}`.replace(/"/g, '\'')
+);
+
+console.log(colors.green(`Lazy loaded data interface updated`));

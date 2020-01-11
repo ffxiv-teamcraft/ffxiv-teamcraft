@@ -102,9 +102,9 @@ export class ActionComponent extends TeamcraftPageComponent {
 
     this.relatedTraits$ = this.xviapiAction$.pipe(
       map(action => {
-        return Object.keys(this.lazyData.traits)
+        return Object.keys(this.lazyData.data.traits)
           .filter(key => {
-            return this.lazyData.traits[key].description.en.indexOf(`>${action.Name_en}<`) > -1;
+            return this.lazyData.data.traits[key].description.en.indexOf(`>${action.Name_en}<`) > -1;
           })
           .map(key => +key);
       })
